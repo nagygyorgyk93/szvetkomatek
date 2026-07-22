@@ -11,7 +11,6 @@
 </head>
 <body data-tagozat="1e">
 <div id="progress"></div>
-
 <header class="fejlec">
   <div class="fejlec-bel">
     <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
@@ -19,345 +18,177 @@
     <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
   </div>
 </header>
-
 <nav class="morzsa">
   <a href="../../index.html">Főoldal</a> ›
   <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
   <a href="index.html">Logika, halmazok, függvények</a> ›
   <span class="itt">Függvények — feladatok</span>
 </nav>
-
 <div class="hero">
   <h1>Függvények — feladatgyűjtemény</h1>
-  <p class="alcim">Három szint: haladj sorban, vagy ugorj a szintedre. A végeredmény minden
-  feladatnál lenyitható — előbb számolj, csak utána nézd meg!</p>
+  <p class="alcim">Három szint: haladj sorban, vagy ugorj a szintedre. A végeredmény minden feladatnál lenyitható — előbb számolj, csak utána nézd meg!</p>
   <div class="meta-sor">
     <span class="chip alap">Alap</span><span class="chip kozep">Közép</span>
     <span class="chip nehez">Nehéz</span><span class="chip joker">Joker</span>
   </div>
 </div>
-
 <main class="lap toc-os">
   <div class="tartalom">
-
     <h2 id="alap">🟢 Alapszint</h2>
     <article class="feladat" id="alap-1">
       <div class="fejsor"><span class="szam">1.</span><span class="chip alap">Alap</span></div>
-      <p>Adott az <span class="math inline">\(A = \{ 1,2,3,4\}\)</span> és a <span class="math inline">\(B = \{ a,b,c,d\}\)</span> halmaz. Az alábbi relációk közül melyek függvények <span class="math inline">\(A \rightarrow B\)</span> típusúak? Indokolj! a) <span class="math inline">\(\rho_{1} = \{\left( 1,b \right),\left( 2,a \right),\left( 3,d \right),\left( 4,c \right)\}\)</span>; b) <span class="math inline">\(\rho_{2} = \{\left( 1,a \right),\left( 2,c \right),\left( 4,d \right)\}\)</span>; c) <span class="math inline">\(\rho_{3} = \{\left( 1,a \right),\left( 2,a \right),\left( 3,a \right),\left( 4,a \right)\}\)</span>; d) <span class="math inline">\(\rho_{4} = \{\left( 1,a \right),\left( 2,b \right),\left( 2,c \right),\left( 3,d \right)\}\)</span>.</p>
+      <p><b>I.</b> <span class="math inline">\(A=\{1,2,3,4\}\)</span>, <span class="math inline">\(B=\{a,b,c,d\}\)</span>. Melyek függvények <span class="math inline">\(A\to B\)</span> típusúak? Indokolj! a) <span class="math inline">\(\rho_1=\{(1,b),(2,a),(3,d),(4,c)\}\)</span>; b) <span class="math inline">\(\rho_2=\{(1,a),(2,c),(4,d)\}\)</span>; c) <span class="math inline">\(\rho_3=\{(1,a),(2,a),(3,a),(4,a)\}\)</span>; d) <span class="math inline">\(\rho_4=\{(1,a),(2,b),(2,c),(3,d)\}\)</span>. <b>II.</b> Injektív, szürjektív, bijektív-e? e) <span class="math inline">\(f:A\to B\)</span> (<span class="math inline">\(A=\{1,2,3\}\)</span>, <span class="math inline">\(B=\{p,q,r,s\}\)</span>), <span class="math inline">\(f(1)=p,f(2)=q,f(3)=p\)</span>; f) <span class="math inline">\(g:A\to A\)</span>, <span class="math inline">\(g(1)=2,g(2)=3,g(3)=1\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) függvény; b) nem (a <span class="math inline">\(3\)</span> elemnek nincs képe); c) függvény (konstans); d) nem (a <span class="math inline">\(2\)</span> elemhez két képelem tartozik).</p></div>
+        <div class="bel"><p>I. a) függvény; b) nem (a 3-nak nincs képe); c) függvény (konstans); d) nem (a 2-höz két kép). II. e) nem injektív (<span class="math inline">\(f(1)=f(3)\)</span>), nem szürjektív (<span class="math inline">\(s\)</span> nincs képként) → nem bijektív; f) injektív és szürjektív → bijektív.</p></div>
       </details>
     </article>
     <article class="feladat" id="alap-2">
       <div class="fejsor"><span class="szam">2.</span><span class="chip alap">Alap</span></div>
-      <p>Adott az <span class="math inline">\(f:{\mathbb{R}} \rightarrow {\mathbb{R}}\)</span> függvény az <span class="math inline">\(f\left( x \right) = 3x - 5\)</span> képlettel. Számítsd ki: <span class="math inline">\(f\left( 0 \right)\)</span>, <span class="math inline">\(f\left( 2 \right)\)</span>, <span class="math inline">\(f\left( - 1 \right)\)</span>, <span class="math inline">\(f\left( \frac{1}{3} \right)\)</span> és <span class="math inline">\(f\left( a \right)\)</span>.</p>
+      <p>Számítsd ki a helyettesítési értékeket! a) <span class="math inline">\(f(x)=3x-5\)</span>: <span class="math inline">\(f(0)\)</span>, <span class="math inline">\(f(2)\)</span>, <span class="math inline">\(f(-1)\)</span>, <span class="math inline">\(f\!\left(\tfrac13\right)\)</span>, <span class="math inline">\(f(a)\)</span>. b) <span class="math inline">\(f(x)=\tfrac{x}{2}-3\)</span>: <span class="math inline">\(f(4)\)</span>, <span class="math inline">\(f(-6)\)</span>, <span class="math inline">\(f(2a)\)</span>, <span class="math inline">\(f(b+6)\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(f\left( 0 \right) = - 5\)</span>, <span class="math inline">\(f\left( 2 \right) = 1\)</span>, <span class="math inline">\(f\left( - 1 \right) = - 8\)</span>, <span class="math inline">\(f\left( \frac{1}{3} \right) = - 4\)</span>, <span class="math inline">\(f\left( a \right) = 3a - 5\)</span>.</p></div>
+        <div class="bel"><p>a) <span class="math inline">\(f(0)=-5\)</span>, <span class="math inline">\(f(2)=1\)</span>, <span class="math inline">\(f(-1)=-8\)</span>, <span class="math inline">\(f\!\left(\tfrac13\right)=-4\)</span>, <span class="math inline">\(f(a)=3a-5\)</span>. b) <span class="math inline">\(f(4)=-1\)</span>, <span class="math inline">\(f(-6)=-6\)</span>, <span class="math inline">\(f(2a)=a-3\)</span>, <span class="math inline">\(f(b+6)=\tfrac{b}{2}\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="alap-3">
       <div class="fejsor"><span class="szam">3.</span><span class="chip alap">Alap</span></div>
-      <p>Adott az <span class="math inline">\(f\left( x \right) = \frac{x}{2} - 3\)</span> függvény. Számítsd ki: <span class="math inline">\(f\left( 4 \right)\)</span>, <span class="math inline">\(f\left( - 6 \right)\)</span>, <span class="math inline">\(f\left( 2a \right)\)</span> és <span class="math inline">\(f\left( b + 6 \right)\)</span>.</p>
+      <p>a) <span class="math inline">\(f=\{(1,3),(2,3),(3,5),(4,7)\}\)</span> (<span class="math inline">\(A=\{1,2,3,4\}\)</span>): add meg az értelmezési tartományt <span class="math inline">\(D_f\)</span>-et és az értékkészletet <span class="math inline">\(R_f\)</span>-et; injektív-e? b) <span class="math inline">\(f(x)=2x+1\)</span> a <span class="math inline">\(C=\{0,1,2,3\}\)</span> halmazon: írd fel rendezett párok halmazaként és add meg <span class="math inline">\(R_f\)</span>-et.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(f\left( 4 \right) = - 1\)</span>, <span class="math inline">\(f\left( - 6 \right) = - 6\)</span>, <span class="math inline">\(f\left( 2a \right) = a - 3\)</span>, <span class="math inline">\(f\left( b + 6 \right) = \frac{b}{2}\)</span>.</p></div>
+        <div class="bel"><p>a) <span class="math inline">\(D_f=\{1,2,3,4\}\)</span>, <span class="math inline">\(R_f=\{3,5,7\}\)</span>; nem injektív (<span class="math inline">\(f(1)=f(2)=3\)</span>). b) <span class="math inline">\(f=\{(0,1),(1,3),(2,5),(3,7)\}\)</span>, <span class="math inline">\(R_f=\{1,3,5,7\}\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="alap-4">
       <div class="fejsor"><span class="szam">4.</span><span class="chip alap">Alap</span></div>
-      <p>Az <span class="math inline">\(f:A \rightarrow B\)</span> függvényt a <span class="math inline">\(f = \{\left( 1,3 \right),\left( 2,3 \right),\left( 3,5 \right),\left( 4,7 \right)\}\)</span> rendezett párok adják meg, ahol <span class="math inline">\(A = \{ 1,2,3,4\}\)</span>. Add meg az értelmezési tartományt <span class="math inline">\(D_{f}\)</span> és az értékkészletet <span class="math inline">\(R_{f}\)</span>. Injektív-e a függvény?</p>
+      <p>Határozd meg a kompozíciókat! a) <span class="math inline">\(f(x)=2x-1\)</span>, <span class="math inline">\(g(x)=x+4\)</span>: <span class="math inline">\((f\circ g)(x)\)</span>, <span class="math inline">\((g\circ f)(x)\)</span>. b) <span class="math inline">\(f(x)=3x\)</span>, <span class="math inline">\(g(x)=x-2\)</span>: <span class="math inline">\((f\circ g)(x)\)</span>, <span class="math inline">\((g\circ f)(x)\)</span>, <span class="math inline">\((f\circ f)(x)\)</span>, <span class="math inline">\((g\circ g)(x)\)</span>. c) <span class="math inline">\(f(x)=x+1\)</span>, <span class="math inline">\(g(x)=2x\)</span>, <span class="math inline">\(h(x)=x-3\)</span>: <span class="math inline">\((f\circ g)(x)\)</span>, <span class="math inline">\((g\circ h)(x)\)</span>, <span class="math inline">\((h\circ f)(x)\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(D_{f} = \{ 1,2,3,4\}\)</span>, <span class="math inline">\(R_{f} = \{ 3,5,7\}\)</span>. Nem injektív, mert <span class="math inline">\(f\left( 1 \right) = f\left( 2 \right) = 3\)</span>.</p></div>
+        <div class="bel"><p>a) <span class="math inline">\(2x+7\)</span>; <span class="math inline">\(2x+3\)</span>. b) <span class="math inline">\(3x-6\)</span>; <span class="math inline">\(3x-2\)</span>; <span class="math inline">\(9x\)</span>; <span class="math inline">\(x-4\)</span>. c) <span class="math inline">\(2x+1\)</span>; <span class="math inline">\(2x-6\)</span>; <span class="math inline">\(x-2\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="alap-5">
       <div class="fejsor"><span class="szam">5.</span><span class="chip alap">Alap</span></div>
-      <p>Az <span class="math inline">\(f\left( x \right) = 2x + 1\)</span> függvényt a <span class="math inline">\(C = \{ 0,1,2,3\}\)</span> halmazon értelmezzük. Írd fel a függvényt rendezett párok halmazaként, és add meg az értékkészletét!</p>
+      <p>Határozd meg az inverzet! a) <span class="math inline">\(f(x)=2x-6\)</span>; b) <span class="math inline">\(f(x)=\tfrac{-x}{3}+2\)</span>; c) <span class="math inline">\(f(x)=5x-2\)</span> — majd oldd meg: melyik <span class="math inline">\(x\)</span>-re lesz <span class="math inline">\(f(x)=13\)</span>, és melyikre <span class="math inline">\(f(x)=0\)</span>?</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(f = \{\left( 0,1 \right),\left( 1,3 \right),\left( 2,5 \right),\left( 3,7 \right)\}\)</span>, <span class="math inline">\(R_{f} = \{ 1,3,5,7\}\)</span>.</p></div>
+        <div class="bel"><p>a) <span class="math inline">\(f^{-1}(x)=\tfrac{x}{2}+3\)</span>; b) <span class="math inline">\(f^{-1}(x)=-3x+6\)</span>; c) <span class="math inline">\(f^{-1}(x)=\tfrac{x+2}{5}\)</span>; <span class="math inline">\(f(x)=13\Rightarrow x=3\)</span>; <span class="math inline">\(f(x)=0\Rightarrow x=\tfrac25\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="alap-6">
       <div class="fejsor"><span class="szam">6.</span><span class="chip alap">Alap</span></div>
-      <p>Adott az <span class="math inline">\(f\left( x \right) = 2x - 1\)</span> és a <span class="math inline">\(g\left( x \right) = x + 4\)</span> függvény. Határozd meg a <span class="math inline">\(\left( f \circ g \right)\left( x \right)\)</span> és a <span class="math inline">\(\left( g \circ f \right)\left( x \right)\)</span> függvényt!</p>
+      <p>a) <span class="math inline">\(g(x)=2x+1\)</span>, és <span class="math inline">\((g\circ f)(x)=4x-3\)</span>: határozd meg <span class="math inline">\(f(x)\)</span>-et. b) Az <span class="math inline">\(f(x)=-2x+6\)</span> lineáris függvény grafikonja hol metszi a koordináta-tengelyeket?</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(\left( f \circ g \right)\left( x \right) = 2x + 7\)</span>, <span class="math inline">\(\left( g \circ f \right)\left( x \right) = 2x + 3\)</span>.</p></div>
+        <div class="bel"><p>a) <span class="math inline">\(f(x)=2x-2\)</span>. b) x-tengely: <span class="math inline">\((3,0)\)</span>; y-tengely: <span class="math inline">\((0,6)\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="alap-7">
       <div class="fejsor"><span class="szam">7.</span><span class="chip alap">Alap</span></div>
-      <p>Adott az <span class="math inline">\(f\left( x \right) = 3x\)</span> és a <span class="math inline">\(g\left( x \right) = x - 2\)</span> függvény. Határozd meg: a) <span class="math inline">\(\left( f \circ g \right)\left( x \right)\)</span>; b) <span class="math inline">\(\left( g \circ f \right)\left( x \right)\)</span>; c) <span class="math inline">\(\left( f \circ f \right)\left( x \right)\)</span>; d) <span class="math inline">\(\left( g \circ g \right)\left( x \right)\)</span>.</p>
+      <p>A Celsius-fokot a <span class="math inline">\(F(x)=\tfrac{9x}{5}+32\)</span> képlettel váltjuk Fahrenheit-fokba. a) Hány <span class="math inline">\(°F\)</span> a <span class="math inline">\(20\,°C\)</span>? b) Fejezd ki a képletből a Celsius-fokot! c) Hány <span class="math inline">\(°C\)</span> a <span class="math inline">\(95\,°F\)</span>?</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(3x - 6\)</span>; b) <span class="math inline">\(3x - 2\)</span>; c) <span class="math inline">\(9x\)</span>; d) <span class="math inline">\(x - 4\)</span>.</p></div>
+        <div class="bel"><p>a) <span class="math inline">\(68\,°F\)</span>; b) <span class="math inline">\(x=\tfrac{5(F-32)}{9}\)</span>; c) <span class="math inline">\(35\,°C\)</span>.</p></div>
       </details>
     </article>
-    <article class="feladat" id="alap-8">
-      <div class="fejsor"><span class="szam">8.</span><span class="chip alap">Alap</span></div>
-      <p>Adott az <span class="math inline">\(f\left( x \right) = x + 1\)</span>, a <span class="math inline">\(g\left( x \right) = 2x\)</span> és a <span class="math inline">\(h\left( x \right) = x - 3\)</span> függvény. Határozd meg: a) <span class="math inline">\(\left( f \circ g \right)\left( x \right)\)</span>; b) <span class="math inline">\(\left( g \circ h \right)\left( x \right)\)</span>; c) <span class="math inline">\(\left( h \circ f \right)\left( x \right)\)</span>.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(2x + 1\)</span>; b) <span class="math inline">\(2x - 6\)</span>; c) <span class="math inline">\(x - 2\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="alap-9">
-      <div class="fejsor"><span class="szam">9.</span><span class="chip alap">Alap</span></div>
-      <p>Vizsgáld meg, injektív, szürjektív, illetve bijektív-e az <span class="math inline">\(f:A \rightarrow B\)</span> függvény, ha <span class="math inline">\(A = \{ 1,2,3\}\)</span>, <span class="math inline">\(B = \{ p,q,r,s\}\)</span> és a) <span class="math inline">\(f\left( 1 \right) = p,f\left( 2 \right) = q,f\left( 3 \right) = p\)</span>; b) <span class="math inline">\(g:A \rightarrow A\)</span>, <span class="math inline">\(g\left( 1 \right) = 2,g\left( 2 \right) = 3,g\left( 3 \right) = 1\)</span>.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(f\)</span> nem injektív (<span class="math inline">\(f\left( 1 \right) = f\left( 3 \right)\)</span>), nem szürjektív (<span class="math inline">\(s\)</span> nincs képként) → nem bijektív; b) <span class="math inline">\(g\)</span> injektív és szürjektív → bijektív.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="alap-10">
-      <div class="fejsor"><span class="szam">10.</span><span class="chip alap">Alap</span></div>
-      <p>Határozd meg az <span class="math inline">\(f\left( x \right) = 2x - 6\)</span> függvény inverzét, <span class="math inline">\(f^{\left( - 1 \right)}\left( x \right)\)</span>!</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(f^{\left( - 1 \right)}\left( x \right) = \frac{x}{2} + 3\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="alap-11">
-      <div class="fejsor"><span class="szam">11.</span><span class="chip alap">Alap</span></div>
-      <p>Határozd meg az <span class="math inline">\(f\left( x \right) = \frac{- x}{3} + 2\)</span> függvény inverzét!</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(f^{\left( - 1 \right)}\left( x \right) = - 3x + 6\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="alap-12">
-      <div class="fejsor"><span class="szam">12.</span><span class="chip alap">Alap</span></div>
-      <p>Adott a <span class="math inline">\(g\left( x \right) = 2x + 1\)</span> függvény, és tudjuk, hogy <span class="math inline">\(\left( g \circ f \right)\left( x \right) = 4x - 3\)</span>. Határozd meg az <span class="math inline">\(f\left( x \right)\)</span> függvényt!</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(f\left( x \right) = 2x - 2\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="alap-13">
-      <div class="fejsor"><span class="szam">13.</span><span class="chip alap">Alap</span></div>
-      <p>A Celsius-fokban megadott hőmérsékletet az <span class="math inline">\(F\left( x \right) = \frac{9x}{5} + 32\)</span> képlettel váltjuk át Fahrenheit-fokba. a) Hány Fahrenheit-fok a <span class="math inline">\(20{^\circ}C\)</span>? b) Fejezd ki a képletből a Celsius-fokot! c) Hány Celsius-fok a <span class="math inline">\(95{^\circ}F\)</span>?</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(68{^\circ}F\)</span>; b) <span class="math inline">\(x = \frac{5\left( F - 32 \right)}{9}\)</span>; c) <span class="math inline">\(35{^\circ}C\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="alap-14">
-      <div class="fejsor"><span class="szam">14.</span><span class="chip alap">Alap</span></div>
-      <p>Adott az <span class="math inline">\(f\left( x \right) = 5x - 2\)</span> függvény. a) Oldd meg az <span class="math inline">\(f\left( x \right) = 13\)</span> egyenletet. b) Melyik <span class="math inline">\(x\)</span>-re lesz <span class="math inline">\(f\left( x \right) = 0\)</span>?</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(x = 3\)</span>; b) <span class="math inline">\(x = \frac{2}{5}\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="alap-15">
-      <div class="fejsor"><span class="szam">15.</span><span class="chip alap">Alap</span></div>
-      <p>Az <span class="math inline">\(f\left( x \right) = - 2x + 6\)</span> lineáris függvény grafikonja hol metszi a koordináta-tengelyeket? (Add meg az <span class="math inline">\(x\)</span>-tengellyel és az <span class="math inline">\(y\)</span>-tengellyel való metszéspontot.)</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>x-tengely: <span class="math inline">\(\left( 3,0 \right)\)</span>; y-tengely: <span class="math inline">\(\left( 0,6 \right)\)</span>.</p></div>
-      </details>
-    </article>
-
     <h2 id="kozep">🟡 Középszint</h2>
     <article class="feladat" id="kozep-1">
-      <div class="fejsor"><span class="szam">1.</span><span class="chip kozep">Közép</span></div>
-      <p>Adott az <span class="math inline">\(f\left( x \right) = 2x - 3\)</span> és a <span class="math inline">\(h\left( x \right) = x^{2} + 1\)</span> függvény. Határozd meg: a) <span class="math inline">\(\left( f \circ h \right)\left( x \right)\)</span>; b) <span class="math inline">\(\left( h \circ f \right)\left( x \right)\)</span>.</p>
+      <div class="fejsor"><span class="szam">1.</span><span class="chip kozep">Kozep</span></div>
+      <p>a) <span class="math inline">\(f(x)=2x-3\)</span>, <span class="math inline">\(h(x)=x^2+1\)</span>: <span class="math inline">\((f\circ h)(x)\)</span>, <span class="math inline">\((h\circ f)(x)\)</span>. b) <span class="math inline">\(A=\{1,2,3,4\}\)</span>, <span class="math inline">\(f=\{(1,2),(2,4),(3,1),(4,3)\}\)</span>, <span class="math inline">\(g=\{(1,3),(2,1),(3,2),(4,4)\}\)</span>: add meg <span class="math inline">\(f\circ g\)</span> és <span class="math inline">\(g\circ f\)</span> (párokként). c) <span class="math inline">\(g(x)=2x+1\)</span>: add meg <span class="math inline">\(f(x)=g(g(x))-g(x)\)</span>. d) <span class="math inline">\(f(x)=4x-3\)</span>, és <span class="math inline">\((f\circ g)(x)=8x+1\)</span>: add meg <span class="math inline">\(g(x)\)</span>-et.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(\left( f \circ h \right)\left( x \right) = 2x^{2} - 1\)</span>; b) <span class="math inline">\(\left( h \circ f \right)\left( x \right) = 4x^{2} - 12x + 10\)</span>.</p></div>
+        <div class="bel"><p>a) <span class="math inline">\((f\circ h)(x)=2x^2-1\)</span>; <span class="math inline">\((h\circ f)(x)=4x^2-12x+10\)</span>. b) <span class="math inline">\(f\circ g=\{(1,1),(2,2),(3,4),(4,3)\}\)</span>, <span class="math inline">\(g\circ f=\{(1,1),(2,4),(3,3),(4,2)\}\)</span>. c) <span class="math inline">\(f(x)=2x+2\)</span>. d) <span class="math inline">\(g(x)=2x+1\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="kozep-2">
-      <div class="fejsor"><span class="szam">2.</span><span class="chip kozep">Közép</span></div>
-      <p>Határozd meg az <span class="math inline">\(f\left( x \right)\)</span> függvényt, ha <span class="math inline">\(f\left( x + 2 \right) = 3x - 1\)</span>.</p>
+      <div class="fejsor"><span class="szam">2.</span><span class="chip kozep">Kozep</span></div>
+      <p>Határozd meg az <span class="math inline">\(f(x)\)</span> függvényt! a) <span class="math inline">\(f(x+2)=3x-1\)</span>; b) <span class="math inline">\(f(2x-1)=4x+3\)</span>; c) <span class="math inline">\(f\!\left(\tfrac{x+2}{2}\right)=x-4\)</span>; d) <span class="math inline">\(f(2x+1)=4x^2+4x\)</span> (majd számítsd ki <span class="math inline">\(f(3)\)</span>-at).</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(f\left( x \right) = 3x - 7\)</span>.</p></div>
+        <div class="bel"><p>a) <span class="math inline">\(f(x)=3x-7\)</span>; b) <span class="math inline">\(f(x)=2x+5\)</span>; c) <span class="math inline">\(f(x)=2x-6\)</span>; d) <span class="math inline">\(f(x)=x^2-1\)</span>, <span class="math inline">\(f(3)=8\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="kozep-3">
-      <div class="fejsor"><span class="szam">3.</span><span class="chip kozep">Közép</span></div>
-      <p>Határozd meg az <span class="math inline">\(f\left( x \right)\)</span> függvényt, ha <span class="math inline">\(f\left( 2x - 1 \right) = 4x + 3\)</span>.</p>
+      <div class="fejsor"><span class="szam">3.</span><span class="chip kozep">Kozep</span></div>
+      <p>a) <span class="math inline">\(A=\{1,2,3,4,5\}\)</span>, <span class="math inline">\(f=\{(1,4),(2,1),(3,5),(4,2),(5,3)\}\)</span> bijektív: add meg <span class="math inline">\(f^{-1}\)</span>-et. b) <span class="math inline">\(f(x)=3-2x\)</span>, <span class="math inline">\(g(x)=2x-1\)</span>: <span class="math inline">\(f^{-1}(x)\)</span>, <span class="math inline">\(g^{-1}(x)\)</span>, <span class="math inline">\((f\circ g^{-1})(x)\)</span>. c) Bizonyítsd be, hogy <span class="math inline">\(f(x)=2x+4\)</span> bijektív, és add meg az inverzét. d) <span class="math inline">\(f(3x-1)=6x-8\)</span>: add meg <span class="math inline">\(f(x)\)</span>-et és <span class="math inline">\(f^{-1}(x)\)</span>-et.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(f\left( x \right) = 2x + 5\)</span>.</p></div>
+        <div class="bel"><p>a) <span class="math inline">\(f^{-1}=\{(1,2),(2,4),(3,5),(4,1),(5,3)\}\)</span>. b) <span class="math inline">\(f^{-1}(x)=\tfrac{3-x}{2}\)</span>, <span class="math inline">\(g^{-1}(x)=\tfrac{x+1}{2}\)</span>, <span class="math inline">\((f\circ g^{-1})(x)=2-x\)</span>. c) injektív (<span class="math inline">\(2x_1+4=2x_2+4\Rightarrow x_1=x_2\)</span>) és szürjektív; <span class="math inline">\(f^{-1}(x)=\tfrac{x}{2}-2\)</span>. d) <span class="math inline">\(f(x)=2x-6\)</span>, <span class="math inline">\(f^{-1}(x)=\tfrac{x}{2}+3\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="kozep-4">
-      <div class="fejsor"><span class="szam">4.</span><span class="chip kozep">Közép</span></div>
-      <p>Határozd meg az <span class="math inline">\(f\left( x \right)\)</span> függvényt, ha <span class="math inline">\(f\left( \frac{\left( x + 2 \right)}{2} \right) = x - 4\)</span>.</p>
+      <div class="fejsor"><span class="szam">4.</span><span class="chip kozep">Kozep</span></div>
+      <p><b>Valós alkalmazások.</b> a) A <span class="math inline">\(F(x)=\tfrac{9x}{5}+32\)</span> képlet Celsiusból Fahrenheitbe vált; add meg <span class="math inline">\(F^{-1}\)</span>-et, és hány <span class="math inline">\(°C\)</span> a <span class="math inline">\(68\,°F\)</span>? b) Egy taxi viteldíja <span class="math inline">\(f(x)=80x+250\)</span> dinár <span class="math inline">\(x\)</span> km után: mennyit fizetünk 10 km-ért, és hány km-t tettünk meg 890 dinárért? c) Egy mobiltarifa havi számlája <span class="math inline">\(f(x)=1200+15x\)</span> dinár <span class="math inline">\(x\)</span> lebeszélt perc után: mennyi 40 percnél, és hány perc 2100 dinárnál?</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(f\left( x \right) = 2x - 6\)</span>.</p></div>
+        <div class="bel"><p>a) <span class="math inline">\(F^{-1}(x)=\tfrac{5(x-32)}{9}\)</span>, <span class="math inline">\(68\,°F=20\,°C\)</span>. b) <span class="math inline">\(f(10)=1050\)</span> dinár; <span class="math inline">\(890=80x+250\Rightarrow x=8\)</span> km. c) <span class="math inline">\(f(40)=1800\)</span> dinár; <span class="math inline">\(2100=1200+15x\Rightarrow x=60\)</span> perc.</p></div>
       </details>
     </article>
-    <article class="feladat" id="kozep-5">
-      <div class="fejsor"><span class="szam">5.</span><span class="chip kozep">Közép</span></div>
-      <p>Az <span class="math inline">\(A = \{ 1,2,3,4\}\)</span> halmazon adott az <span class="math inline">\(f = \{\left( 1,2 \right),\left( 2,4 \right),\left( 3,1 \right),\left( 4,3 \right)\}\)</span> és a <span class="math inline">\(g = \{\left( 1,3 \right),\left( 2,1 \right),\left( 3,2 \right),\left( 4,4 \right)\}\)</span> függvény. Add meg az <span class="math inline">\(f \circ g\)</span> és a <span class="math inline">\(g \circ f\)</span> függvényt rendezett párok halmazaként!</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(f \circ g = \{\left( 1,1 \right),\left( 2,2 \right),\left( 3,4 \right),\left( 4,3 \right)\}\)</span>, <span class="math inline">\(g \circ f = \{\left( 1,1 \right),\left( 2,4 \right),\left( 3,3 \right),\left( 4,2 \right)\}\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="kozep-6">
-      <div class="fejsor"><span class="szam">6.</span><span class="chip kozep">Közép</span></div>
-      <p>Az <span class="math inline">\(A = \{ 1,2,3,4,5\}\)</span> halmazon a <span class="math inline">\(f = \{\left( 1,4 \right),\left( 2,1 \right),\left( 3,5 \right),\left( 4,2 \right),\left( 5,3 \right)\}\)</span> függvény bijektív. Add meg az inverzét, <span class="math inline">\(f^{\left( - 1 \right)}\)</span>!</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(f^{\left( - 1 \right)} = \{\left( 1,2 \right),\left( 2,4 \right),\left( 3,5 \right),\left( 4,1 \right),\left( 5,3 \right)\}\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="kozep-7">
-      <div class="fejsor"><span class="szam">7.</span><span class="chip kozep">Közép</span></div>
-      <p>Adott az <span class="math inline">\(f\left( x \right) = 3 - 2x\)</span> és a <span class="math inline">\(g\left( x \right) = 2x - 1\)</span> függvény. Határozd meg: a) <span class="math inline">\(f^{\left( - 1 \right)}\left( x \right)\)</span>; b) <span class="math inline">\(g^{\left( - 1 \right)}\left( x \right)\)</span>; c) <span class="math inline">\(\left( f \circ g^{\left( - 1 \right)} \right)\left( x \right)\)</span>.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(f^{\left( - 1 \right)}\left( x \right) = \frac{\left( 3 - x \right)}{2}\)</span>; b) <span class="math inline">\(g^{\left( - 1 \right)}\left( x \right) = \frac{\left( x + 1 \right)}{2}\)</span>; c) <span class="math inline">\(\left( f \circ g^{\left( - 1 \right)} \right)\left( x \right) = 2 - x\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="kozep-8">
-      <div class="fejsor"><span class="szam">8.</span><span class="chip kozep">Közép</span></div>
-      <p>Bizonyítsd be, hogy az <span class="math inline">\(f:{\mathbb{R}} \rightarrow {\mathbb{R}}\)</span>, <span class="math inline">\(f\left( x \right) = 2x + 4\)</span> függvény bijektív, majd határozd meg az inverzét!</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>Injektív (<span class="math inline">\(2x_{1} + 4 = 2x_{2} + 4 \Rightarrow x_{1} = x_{2}\)</span>), szürjektív (minden <span class="math inline">\(y\)</span>-hoz <span class="math inline">\(x = \frac{\left( y - 4 \right)}{2}\)</span>). <span class="math inline">\(f^{\left( - 1 \right)}\left( x \right) = \frac{x}{2} - 2\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="kozep-9">
-      <div class="fejsor"><span class="szam">9.</span><span class="chip kozep">Közép</span></div>
-      <p>Adott az <span class="math inline">\(f\left( 3x - 1 \right) = 6x - 8\)</span> függvényegyenlet. Határozd meg az <span class="math inline">\(f\left( x \right)\)</span> és az <span class="math inline">\(f^{\left( - 1 \right)}\left( x \right)\)</span> függvényt!</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(f\left( x \right) = 2x - 6\)</span>, <span class="math inline">\(f^{\left( - 1 \right)}\left( x \right) = \frac{x}{2} + 3\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="kozep-10">
-      <div class="fejsor"><span class="szam">10.</span><span class="chip kozep">Közép</span></div>
-      <p>Adott az <span class="math inline">\(f\left( 2x + 1 \right) = 4x^{2} + 4x\)</span> függvényegyenlet. Határozd meg az <span class="math inline">\(f\left( x \right)\)</span> függvényt, majd számítsd ki <span class="math inline">\(f\left( 3 \right)\)</span> értékét!</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(f\left( x \right) = x^{2} - 1\)</span>, <span class="math inline">\(f\left( 3 \right) = 8\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="kozep-11">
-      <div class="fejsor"><span class="szam">11.</span><span class="chip kozep">Közép</span></div>
-      <p>A Fahrenheit–Celsius átváltás képlete <span class="math inline">\(F\left( x \right) = \frac{9x}{5} + 32\)</span>. Fejezd ki a Celsius-fokot a Fahrenheit-fok függvényében (add meg <span class="math inline">\(F^{\left( - 1 \right)}\)</span>-et), majd számítsd ki, hány <span class="math inline">\({^\circ}C\)</span> a <span class="math inline">\(68{^\circ}F\)</span>!</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(F^{\left( - 1 \right)}\left( x \right) = \frac{5\left( x - 32 \right)}{9}\)</span>, <span class="math inline">\(68{^\circ}F = 20{^\circ}C\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="kozep-12">
-      <div class="fejsor"><span class="szam">12.</span><span class="chip kozep">Közép</span></div>
-      <p>Adott az <span class="math inline">\(f\left( x \right) = 4x - 3\)</span> függvény, és tudjuk, hogy <span class="math inline">\(\left( f \circ g \right)\left( x \right) = 8x + 1\)</span>. Határozd meg a <span class="math inline">\(g\left( x \right)\)</span> függvényt!</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(g\left( x \right) = 2x + 1\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="kozep-13">
-      <div class="fejsor"><span class="szam">13.</span><span class="chip kozep">Közép</span></div>
-      <p>Adott a <span class="math inline">\(g\left( x \right) = 2x + 1\)</span> függvény. Határozd meg az <span class="math inline">\(f\left( x \right) = g\left( g\left( x \right) \right) - g\left( x \right)\)</span> függvényt!</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(f\left( x \right) = 2x + 2\)</span>.</p></div>
-      </details>
-    </article>
-
     <h2 id="nehez">🔴 Nehéz</h2>
     <article class="feladat" id="nehez-1">
-      <div class="fejsor"><span class="szam">1.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Határozd meg az <span class="math inline">\(f\left( x \right)\)</span> függvényt, ha <span class="math inline">\(f\left( \frac{\left( x - 1 \right)}{2} \right) = 3x - 2\)</span>.</p>
+      <div class="fejsor"><span class="szam">1.</span><span class="chip nehez">Nehez</span></div>
+      <p>Határozd meg az <span class="math inline">\(f(x)\)</span> függvényt, ha <span class="math inline">\(f\!\left(\tfrac{x-1}{2}\right)=3x-2\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(f\left( x \right) = 6x + 1\)</span>.</p></div>
+        <div class="bel"><p><span class="math inline">\(f(x)=6x+1\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="nehez-2">
-      <div class="fejsor"><span class="szam">2.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Adottak az <span class="math inline">\(f\left( x \right) = 1 - x\)</span>, <span class="math inline">\(g\left( x \right) = \frac{1}{\left( 1 - x \right)}\)</span> és <span class="math inline">\(h\left( x \right) = \frac{x}{\left( x - 1 \right)}\)</span> függvények (<span class="math inline">\(x \neq 1\)</span>). Bizonyítsd be, hogy <span class="math inline">\(g\left( h\left( x \right) \right) = f\left( x \right)\)</span>.</p>
+      <div class="fejsor"><span class="szam">2.</span><span class="chip nehez">Nehez</span></div>
+      <p>Adottak <span class="math inline">\(f(x)=1-x\)</span>, <span class="math inline">\(g(x)=\tfrac{1}{1-x}\)</span> és <span class="math inline">\(h(x)=\tfrac{x}{x-1}\)</span> (<span class="math inline">\(x\ne 1\)</span>). Bizonyítsd be, hogy <span class="math inline">\(g(h(x))=f(x)\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>Behelyettesítve <span class="math inline">\(g\left( h\left( x \right) \right) = \frac{1}{\left( 1 - h\left( x \right) \right)} = \frac{1}{\left( \frac{1 - x}{\left( x - 1 \right)} \right)}\)</span>; a nevező <span class="math inline">\(\frac{\left( \left( x - 1 \right) - x \right)}{\left( x - 1 \right)} = \frac{- 1}{\left( x - 1 \right)}\)</span>, így <span class="math inline">\(g\left( h\left( x \right) \right) = - \left( x - 1 \right) = 1 - x = f\left( x \right)\)</span>.</p></div>
+        <div class="bel"><p><span class="math inline">\(g(h(x))=\tfrac{1}{1-h(x)}\)</span>; a nevező <span class="math inline">\(\tfrac{(x-1)-x}{x-1}=\tfrac{-1}{x-1}\)</span>, így <span class="math inline">\(g(h(x))=-(x-1)=1-x=f(x)\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="nehez-3">
-      <div class="fejsor"><span class="szam">3.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Adott az <span class="math inline">\(f\left( \frac{\left( x - 2 \right)}{2} \right) = \frac{\left( 3x - 5 \right)}{2}\)</span> függvényegyenlet. Határozd meg az <span class="math inline">\(f\left( x \right)\)</span> függvényt!</p>
+      <div class="fejsor"><span class="szam">3.</span><span class="chip nehez">Nehez</span></div>
+      <p>Határozd meg az <span class="math inline">\(f(x)\)</span> függvényt, ha <span class="math inline">\(f\!\left(\tfrac{x-2}{2}\right)=\tfrac{3x-5}{2}\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(f\left( x \right) = 3x + \frac{1}{2}\)</span>.</p></div>
+        <div class="bel"><p><span class="math inline">\(f(x)=3x+\tfrac12\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="nehez-4">
-      <div class="fejsor"><span class="szam">4.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Adott az <span class="math inline">\(f\left( x \right) = 2 - 3x\)</span> és a <span class="math inline">\(g\left( x \right) = 3x - 1\)</span> függvény. Határozd meg az <span class="math inline">\(\left( f^{\left( - 1 \right)} \circ g^{\left( - 1 \right)} \right)\left( x \right)\)</span> függvényt!</p>
+      <div class="fejsor"><span class="szam">4.</span><span class="chip nehez">Nehez</span></div>
+      <p><span class="math inline">\(f(x)=2-3x\)</span>, <span class="math inline">\(g(x)=3x-1\)</span>. Határozd meg az <span class="math inline">\((f^{-1}\circ g^{-1})(x)\)</span> függvényt!</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(\left( f^{\left( - 1 \right)} \circ g^{\left( - 1 \right)} \right)\left( x \right) = \frac{\left( 5 - x \right)}{9}\)</span>.</p></div>
+        <div class="bel"><p><span class="math inline">\((f^{-1}\circ g^{-1})(x)=\tfrac{5-x}{9}\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="nehez-5">
-      <div class="fejsor"><span class="szam">5.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Adott az <span class="math inline">\(f\left( 5 - 2x \right) = 4x - 7\)</span> függvényegyenlet. Határozd meg az <span class="math inline">\(f\left( x \right)\)</span> és az <span class="math inline">\(\left( f \circ f \right)\left( x \right)\)</span> függvényt!</p>
+      <div class="fejsor"><span class="szam">5.</span><span class="chip nehez">Nehez</span></div>
+      <p><span class="math inline">\(f(5-2x)=4x-7\)</span>. Határozd meg <span class="math inline">\(f(x)\)</span>-et és <span class="math inline">\((f\circ f)(x)\)</span>-et!</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(f\left( x \right) = - 2x + 3\)</span>, <span class="math inline">\(\left( f \circ f \right)\left( x \right) = 4x - 3\)</span>.</p></div>
+        <div class="bel"><p><span class="math inline">\(f(x)=-2x+3\)</span>, <span class="math inline">\((f\circ f)(x)=4x-3\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="nehez-6">
-      <div class="fejsor"><span class="szam">6.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Bizonyítsd be, hogy minden <span class="math inline">\(f\left( x \right) = ax + b\)</span> alakú függvény (<span class="math inline">\(a \neq 0\)</span>, <span class="math inline">\(f:{\mathbb{R}} \rightarrow {\mathbb{R}}\)</span>) bijektív, és add meg az inverzét általánosan!</p>
+      <div class="fejsor"><span class="szam">6.</span><span class="chip nehez">Nehez</span></div>
+      <p>Bizonyítsd be, hogy minden <span class="math inline">\(f(x)=ax+b\)</span> alakú függvény (<span class="math inline">\(a\ne 0\)</span>, <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span>) bijektív, és add meg az inverzét általánosan!</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>Injektív és szürjektív <span class="math inline">\(a \neq 0\)</span> miatt; <span class="math inline">\(f^{\left( - 1 \right)}\left( x \right) = \frac{\left( x - b \right)}{a}\)</span>.</p></div>
+        <div class="bel"><p>Injektív és szürjektív <span class="math inline">\(a\ne 0\)</span> miatt; <span class="math inline">\(f^{-1}(x)=\tfrac{x-b}{a}\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="nehez-7">
-      <div class="fejsor"><span class="szam">7.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Adott az <span class="math inline">\(f\left( x \right) = \frac{x}{\left( x - 1 \right)}\)</span> függvény (<span class="math inline">\(x \neq 1\)</span>). Bizonyítsd be, hogy <span class="math inline">\(\left( f \circ f \right)\left( x \right) = x\)</span> (azaz <span class="math inline">\(f\)</span> önmaga inverze).</p>
+      <div class="fejsor"><span class="szam">7.</span><span class="chip nehez">Nehez</span></div>
+      <p><span class="math inline">\(f(x)=\tfrac{x}{x-1}\)</span> (<span class="math inline">\(x\ne 1\)</span>). Bizonyítsd be, hogy <span class="math inline">\((f\circ f)(x)=x\)</span> (azaz <span class="math inline">\(f\)</span> önmaga inverze).</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>Behelyettesítve <span class="math inline">\(\left( f \circ f \right)\left( x \right) = \frac{f\left( x \right)}{\left( f\left( x \right) - 1 \right)}\)</span> a nevező <span class="math inline">\(\frac{\left( x - \left( x - 1 \right) \right)}{\left( x - 1 \right)} = \frac{1}{\left( x - 1 \right)}\)</span>, így az eredmény <span class="math inline">\(x\)</span>.</p></div>
+        <div class="bel"><p><span class="math inline">\((f\circ f)(x)=\tfrac{f(x)}{f(x)-1}\)</span>; a nevező <span class="math inline">\(\tfrac{x-(x-1)}{x-1}=\tfrac{1}{x-1}\)</span>, így az eredmény <span class="math inline">\(x\)</span>.</p></div>
       </details>
     </article>
-
-    <h2 id="gyakorlo-teszt">📝 Gyakorló teszt (dolgozatra) — függvények</h2>
-
-    <article class="feladat" id="gyt-1">
-      <div class="fejsor"><span class="szam">1.</span></div>
-      <p>Adott az <span class="math inline">\(f\left( x \right) = 2x - 5\)</span> és a <span class="math inline">\(g\left( x \right) = 4 - 3x\)</span> függvény. Határozd meg a <span class="math inline">\(\left( f \circ g \right)\left( x \right)\)</span> és a <span class="math inline">\(\left( g \circ f \right)\left( x \right)\)</span> függvényt!</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(\left( f \circ g \right)\left( x \right) = - 6x + 3\)</span>, <span class="math inline">\(\left( g \circ f \right)\left( x \right) = - 6x + 19\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="gyt-2">
-      <div class="fejsor"><span class="szam">2.</span></div>
-      <p>Az <span class="math inline">\(A = \{ 1,2,3,4\}\)</span> halmazon adott az <span class="math inline">\(f = \{\left( 1,3 \right),\left( 2,1 \right),\left( 3,4 \right),\left( 4,2 \right)\}\)</span> és a <span class="math inline">\(g = \{\left( 1,2 \right),\left( 2,3 \right),\left( 3,1 \right),\left( 4,4 \right)\}\)</span> függvény. Határozd meg: a) <span class="math inline">\(\left( f \circ g \right)\left( x \right)\)</span>; b) <span class="math inline">\(f^{\left( - 1 \right)}\)</span>; c) <span class="math inline">\(g^{\left( - 1 \right)}\)</span> (rendezett párok halmazaként).</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(f \circ g = \{\left( 1,1 \right),\left( 2,4 \right),\left( 3,3 \right),\left( 4,2 \right)\}\)</span>; b) <span class="math inline">\(f^{\left( - 1 \right)} = \{\left( 1,2 \right),\left( 2,4 \right),\left( 3,1 \right),\left( 4,3 \right)\}\)</span>; c) <span class="math inline">\(g^{\left( - 1 \right)} = \{\left( 1,3 \right),\left( 2,1 \right),\left( 3,2 \right),\left( 4,4 \right)\}\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="gyt-3">
-      <div class="fejsor"><span class="szam">3.</span></div>
-      <p>Adott az <span class="math inline">\(f\left( x \right) = - 2x + 6\)</span> függvény. Határozd meg az inverzét, <span class="math inline">\(f^{\left( - 1 \right)}\left( x \right)\)</span>, majd számítsd ki <span class="math inline">\(f^{\left( - 1 \right)}\left( 2 \right)\)</span> értékét!</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(f^{\left( - 1 \right)}\left( x \right) = \frac{\left( 6 - x \right)}{2}\)</span>, <span class="math inline">\(f^{\left( - 1 \right)}\left( 2 \right) = 2\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="gyt-4">
-      <div class="fejsor"><span class="szam">4.</span></div>
-      <p>Határozd meg az <span class="math inline">\(f\left( x \right)\)</span> függvényt, ha <span class="math inline">\(f\left( 2x - 1 \right) = 6x + 1\)</span>.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(f\left( x \right) = 3x + 4\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="gyt-5">
-      <div class="fejsor"><span class="szam">5.</span></div>
-      <p>Egy taxi viteldíja <span class="math inline">\(f\left( x \right) = 80x + 250\)</span> dinár <span class="math inline">\(x\)</span> kilométer után. a) Mennyit fizetünk <span class="math inline">\(10\)</span> km-ért? b) Hány km-t tettünk meg, ha <span class="math inline">\(890\)</span> dinárt fizettünk?</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(f\left( 10 \right) = 1050\)</span> dinár; b) <span class="math inline">\(x = 8\)</span> km.</p></div>
-      </details>
-    </article>
+    <h2 id="joker-cim">⭐ Joker</h2>
     <article class="feladat" id="joker">
       <div class="fejsor"><span class="szam">★</span><span class="chip joker">Joker</span></div>
-      <p>Joker (bónusz). Az <span class="math inline">\(f\left( x \right) = ax + b\)</span> lineáris függvényről tudjuk, hogy <span class="math inline">\(f\left( 1 \right) = 5\)</span> és <span class="math inline">\(f\left( 3 \right) = 11\)</span>. Határozd meg az <span class="math inline">\(a\)</span> és <span class="math inline">\(b\)</span> értékét, majd add meg az <span class="math inline">\(f^{\left( - 1 \right)}\left( x \right)\)</span> inverzet!</p>
+      <p>Az <span class="math inline">\(f(x)=ax+b\)</span> lineáris függvényről tudjuk, hogy <span class="math inline">\(f(1)=5\)</span> és <span class="math inline">\(f(3)=11\)</span>. Határozd meg <span class="math inline">\(a\)</span>-t és <span class="math inline">\(b\)</span>-t, majd add meg az <span class="math inline">\(f^{-1}(x)\)</span> inverzet!</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(a = 3\)</span>, <span class="math inline">\(b = 2\)</span>, <span class="math inline">\(f\left( x \right) = 3x + 2\)</span>, <span class="math inline">\(f^{\left( - 1 \right)}\left( x \right) = \frac{\left( x - 2 \right)}{3}\)</span>.</p></div>
+        <div class="bel"><p><span class="math inline">\(a=3\)</span>, <span class="math inline">\(b=2\)</span>, tehát <span class="math inline">\(f(x)=3x+2\)</span> és <span class="math inline">\(f^{-1}(x)=\tfrac{x-2}{3}\)</span>.</p></div>
       </details>
     </article>
 
     <div class="gyakorolj">
       <span class="ikon">📖</span>
-      <p>Elakadtál? Nézd át a <a href="tananyag-fuggveny-fogalma.html">tananyagot</a> vagy a
-      <a href="osszefoglalo.html">tömör összefoglalót</a>.</p>
+      <p>Elakadtál? Nézd át a <a href="tananyag-fuggveny-fogalma.html">tananyagot</a> vagy a <a href="osszefoglalo.html">tömör összefoglalót</a>.</p>
     </div>
-
-        <div class="lapozo">
+    <div class="lapozo">
       <a class="elozo" href="tananyag-kompozicio-inverz.html"><span class="irany">← Előző</span><span class="hova">Kompozíció és inverz függvény</span></a>
       <a class="kov" href="osszefoglalo.html"><span class="irany">Következő →</span><span class="hova">Tömör összefoglaló</span></a>
     </div>
   </div>
-
   <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
 </main>
-
 <footer class="lablec">
   <div class="lablec-bel">
     <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
     <span>Legyél szvetkós!</span>
   </div>
 </footer>
-
 <script src="../../assets/katex/katex.min.js"></script>
 <script src="../../assets/katex/auto-render.min.js"></script>
 <script>
@@ -367,5 +198,6 @@
   ]});
 </script>
 <script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
 </body>
 </html>

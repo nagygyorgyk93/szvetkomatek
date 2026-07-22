@@ -11,7 +11,6 @@
 </head>
 <body data-tagozat="1e">
 <div id="progress"></div>
-
 <header class="fejlec">
   <div class="fejlec-bel">
     <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
@@ -19,345 +18,235 @@
     <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
   </div>
 </header>
-
 <nav class="morzsa">
   <a href="../../index.html">Főoldal</a> ›
   <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
   <a href="index.html">Logika, halmazok, függvények</a> ›
   <span class="itt">Halmazok — feladatok</span>
 </nav>
-
 <div class="hero">
   <h1>Halmazok — feladatgyűjtemény</h1>
-  <p class="alcim">Három szint: haladj sorban, vagy ugorj a szintedre. A végeredmény minden
-  feladatnál lenyitható — előbb számolj, csak utána nézd meg!</p>
+  <p class="alcim">Három szint: haladj sorban, vagy ugorj a szintedre. A végeredmény minden feladatnál lenyitható — előbb számolj, csak utána nézd meg!</p>
   <div class="meta-sor">
     <span class="chip alap">Alap</span><span class="chip kozep">Közép</span>
     <span class="chip nehez">Nehéz</span><span class="chip joker">Joker</span>
   </div>
 </div>
-
 <main class="lap toc-os">
   <div class="tartalom">
-
     <h2 id="alap">🟢 Alapszint</h2>
     <article class="feladat" id="alap-1">
       <div class="fejsor"><span class="szam">1.</span><span class="chip alap">Alap</span></div>
-      <p>Sorold fel az elemeit: a) <span class="math inline">\(A = \{ x|x \in {\mathbb{N}} \land x \leq 5\}\)</span>; b) <span class="math inline">\(B = \{ x|x \in {\mathbb{Z}} \land - 3 \leq x \leq 2\}\)</span>; c) <span class="math inline">\(C = \{ a“\text{matematika}"szóbetűi\}\)</span>; d) <span class="math inline">\(D = \{ 2n|n \in {\mathbb{N}} \land n \leq 4\}\)</span>.</p>
+      <p>Sorold fel az elemeit! a) <span class="math inline">\(A=\{x\mid x\in\mathbb{N}\land x\le 5\}\)</span>; b) <span class="math inline">\(B=\{x\mid x\in\mathbb{Z}\land -3\le x\le 2\}\)</span>; c) <span class="math inline">\(C=\{\)</span>a „matematika” szó betűi<span class="math inline">\(\}\)</span>; d) <span class="math inline">\(D=\{2n\mid n\in\mathbb{N}\land n\le 4\}\)</span>; e) <span class="math inline">\(P=\{x\mid x\in\mathbb{Z}\land x^2\lt 10\}\)</span>; f) <span class="math inline">\(Q=\{x\mid x\in\mathbb{N}\land 2\mid x\land x\lt 12\}\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(\{ 1,2,3,4,5\}\)</span>; b) <span class="math inline">\(\{ - 3, - 2, - 1,0,1,2\}\)</span>; c) <span class="math inline">\(\{ m,a,t,e,i,k\}\)</span>; d) <span class="math inline">\(\{ 2,4,6,8\}\)</span>.</p></div>
+        <div class="bel"><p>a) <span class="math inline">\(\{1,2,3,4,5\}\)</span>; b) <span class="math inline">\(\{-3,-2,-1,0,1,2\}\)</span>; c) <span class="math inline">\(\{m,a,t,e,i,k\}\)</span>; d) <span class="math inline">\(\{2,4,6,8\}\)</span>; e) <span class="math inline">\(\{-3,-2,-1,0,1,2,3\}\)</span>; f) <span class="math inline">\(\{2,4,6,8,10\}\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="alap-2">
       <div class="fejsor"><span class="szam">2.</span><span class="chip alap">Alap</span></div>
-      <p>Igaz vagy hamis? a) <span class="math inline">\(5 \in \{ 1,3,5,7\}\)</span>; b) <span class="math inline">\(\{ 2\} \in \{ 1,2,3\}\)</span>; c) <span class="math inline">\(\varnothing \subseteq \{ a,b\}\)</span>; d) <span class="math inline">\(0 \in \varnothing\)</span>; e) <span class="math inline">\(\{ 1,2\} \subseteq \{ 1,2,3\}\)</span>; f) <span class="math inline">\(\{\varnothing\} = \varnothing\)</span>.</p>
+      <p>Igaz vagy hamis? a) <span class="math inline">\(5\in\{1,3,5,7\}\)</span>; b) <span class="math inline">\(\{2\}\in\{1,2,3\}\)</span>; c) <span class="math inline">\(\varnothing\subseteq\{a,b\}\)</span>; d) <span class="math inline">\(0\in\varnothing\)</span>; e) <span class="math inline">\(\{1,2\}\subseteq\{1,2,3\}\)</span>; f) <span class="math inline">\(\{\varnothing\}=\varnothing\)</span>; g) <span class="math inline">\(\mathbb{N}\subseteq\mathbb{Z}\)</span>; h) <span class="math inline">\(\mathbb{Z}\subseteq\mathbb{Q}\)</span>; i) <span class="math inline">\(\mathbb{Q}\subseteq\mathbb{R}\)</span>; j) <span class="math inline">\(\mathbb{R}\subseteq\mathbb{Q}\)</span>; k) <span class="math inline">\(\{1,2\}\subset\{1,2\}\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) I; b) H (az <span class="math inline">\(\{ 2\}\)</span> halmaz, nem elem); c) I; d) H; e) I; f) H.</p></div>
+        <div class="bel"><p>a) I; b) H (az <span class="math inline">\(\{2\}\)</span> halmaz, nem elem); c) I; d) H; e) I; f) H; g) I; h) I; i) I; j) H; k) H (nem valódi részhalmaz).</p></div>
       </details>
     </article>
     <article class="feladat" id="alap-3">
       <div class="fejsor"><span class="szam">3.</span><span class="chip alap">Alap</span></div>
-      <p>Adott <span class="math inline">\(A = \{ 1,2,3,4,5\}\)</span> és <span class="math inline">\(B = \{ 2,4,6,8\}\)</span>. Határozd meg: <span class="math inline">\(A \cup B\)</span>, <span class="math inline">\(A \cap B\)</span>, <span class="math inline">\(A \smallsetminus B\)</span>, <span class="math inline">\(B \smallsetminus A\)</span>.</p>
+      <p><b>I.</b> <span class="math inline">\(A=\{1,2,3,4,5\}\)</span>, <span class="math inline">\(B=\{2,4,6,8\}\)</span>: add meg <span class="math inline">\(A\cup B\)</span>, <span class="math inline">\(A\cap B\)</span>, <span class="math inline">\(A\setminus B\)</span>, <span class="math inline">\(B\setminus A\)</span>. <b>II.</b> <span class="math inline">\(A=\{1,2,3,4,5,6,7,8\}\)</span>, <span class="math inline">\(B=\{2,3,5,7\}\)</span>, <span class="math inline">\(C=\{1,2,4,8\}\)</span>: a) <span class="math inline">\(A\setminus(B\cup C)\)</span>; b) <span class="math inline">\((A\cap B)\cup C\)</span>; c) <span class="math inline">\(B\cap C\)</span>; d) <span class="math inline">\((A\setminus B)\setminus C\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(A \cup B = \{ 1,2,3,4,5,6,8\}\)</span>, <span class="math inline">\(A \cap B = \{ 2,4\}\)</span>, <span class="math inline">\(A \smallsetminus B = \{ 1,3,5\}\)</span>, <span class="math inline">\(B \smallsetminus A = \{ 6,8\}\)</span>.</p></div>
+        <div class="bel"><p>I. <span class="math inline">\(A\cup B=\{1,2,3,4,5,6,8\}\)</span>, <span class="math inline">\(A\cap B=\{2,4\}\)</span>, <span class="math inline">\(A\setminus B=\{1,3,5\}\)</span>, <span class="math inline">\(B\setminus A=\{6,8\}\)</span>. II. a) <span class="math inline">\(\{6\}\)</span>; b) <span class="math inline">\(\{1,2,3,4,5,7,8\}\)</span>; c) <span class="math inline">\(\{2\}\)</span>; d) <span class="math inline">\(\{6\}\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="alap-4">
       <div class="fejsor"><span class="szam">4.</span><span class="chip alap">Alap</span></div>
-      <p>Adott <span class="math inline">\(A = \{ 1,2,3,4,5,6,7,8\}\)</span>, <span class="math inline">\(B = \{ 2,3,5,7\}\)</span> és <span class="math inline">\(C = \{ 1,2,4,8\}\)</span>. Számítsd ki: a) <span class="math inline">\(A \smallsetminus \left( B \cup C \right)\)</span>; b) <span class="math inline">\(\left( A \cap B \right) \cup C\)</span>; c) <span class="math inline">\(B \cap C\)</span>; d) <span class="math inline">\(\left( A \smallsetminus B \right) \smallsetminus C\)</span>.</p>
+      <p>Alaphalmaz <span class="math inline">\(S=\{1,2,3,4,5,6,7,8,9,10\}\)</span>, <span class="math inline">\(A=\{2,4,6,8,10\}\)</span>, <span class="math inline">\(B=\{1,2,3,4,5\}\)</span>. a) Add meg <span class="math inline">\(\overline{A}\)</span>-t és <span class="math inline">\(\overline{B}\)</span>-t; b) <span class="math inline">\(\overline{A}\cap\overline{B}\)</span>; c) <span class="math inline">\(\overline{A}\cup\overline{B}\)</span>. d) Ellenőrizd a De Morgan-azonosságot: <span class="math inline">\(\overline{A\cup B}=\overline{A}\cap\overline{B}\)</span> (számold ki mindkét oldalt).</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(\{ 6\}\)</span>; b) <span class="math inline">\(\{ 1,2,3,4,5,7,8\}\)</span>; c) <span class="math inline">\(\{ 2\}\)</span>; d) <span class="math inline">\(\{ 6\}\)</span>.</p></div>
+        <div class="bel"><p><span class="math inline">\(\overline{A}=\{1,3,5,7,9\}\)</span>, <span class="math inline">\(\overline{B}=\{6,7,8,9,10\}\)</span>; b) <span class="math inline">\(\{7,9\}\)</span>; c) <span class="math inline">\(\{1,3,5,6,7,8,9,10\}\)</span>. d) <span class="math inline">\(\overline{A\cup B}=\overline{\{1,2,3,4,5,6,8,10\}}=\{7,9\}=\overline{A}\cap\overline{B}\)</span> — igaz.</p></div>
       </details>
     </article>
     <article class="feladat" id="alap-5">
       <div class="fejsor"><span class="szam">5.</span><span class="chip alap">Alap</span></div>
-      <p>Legyen az alaphalmaz <span class="math inline">\(S = \{ 1,2,3,4,5,6,7,8,9,10\}\)</span>, <span class="math inline">\(A = \{ 2,4,6,8,10\}\)</span> és <span class="math inline">\(B = \{ 1,2,3,4,5\}\)</span>. Add meg a komplementereket <span class="math inline">\(\overline{A}\)</span>, <span class="math inline">\(\overline{B}\)</span>, majd <span class="math inline">\(\overline{A} \cap \overline{B}\)</span> és <span class="math inline">\(\overline{A} \cup \overline{B}\)</span>.</p>
+      <p><b>I.</b> <span class="math inline">\(A=\{1,2\}\)</span>, <span class="math inline">\(B=\{a,b,c\}\)</span>: add meg <span class="math inline">\(A\times B\)</span>, <span class="math inline">\(B\times A\)</span> és <span class="math inline">\(A^2=A\times A\)</span>. <b>II.</b> <span class="math inline">\(A=\{1,2,3,4\}\)</span>, <span class="math inline">\(B=\{3,4,5,6\}\)</span>: add meg a szimmetrikus különbséget <span class="math inline">\(A\triangle B\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(\overline{A} = \{ 1,3,5,7,9\}\)</span>, <span class="math inline">\(\overline{B} = \{ 6,7,8,9,10\}\)</span>, <span class="math inline">\(\overline{A} \cap \overline{B} = \{ 7,9\}\)</span>, <span class="math inline">\(\overline{A} \cup \overline{B} = \{ 1,3,5,6,7,8,9,10\}\)</span>.</p></div>
+        <div class="bel"><p>I. <span class="math inline">\(A\times B=\{(1,a),(1,b),(1,c),(2,a),(2,b),(2,c)\}\)</span>; <span class="math inline">\(B\times A=\{(a,1),(a,2),(b,1),(b,2),(c,1),(c,2)\}\)</span>; <span class="math inline">\(A^2=\{(1,1),(1,2),(2,1),(2,2)\}\)</span>. II. <span class="math inline">\(A\triangle B=\{1,2,5,6\}\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="alap-6">
       <div class="fejsor"><span class="szam">6.</span><span class="chip alap">Alap</span></div>
-      <p>Adott <span class="math inline">\(A = \{ 1,2\}\)</span> és <span class="math inline">\(B = \{ a,b,c\}\)</span>. Határozd meg: <span class="math inline">\(A \times B\)</span>, <span class="math inline">\(B \times A\)</span> és <span class="math inline">\(A^{2} = A \times A\)</span>.</p>
+      <p><b>I.</b> Írd fel az <span class="math inline">\(\{a,b,c\}\)</span> halmaz összes részhalmazát, azaz a <span class="math inline">\(\mathcal{P}(\{a,b,c\})\)</span> hatványhalmazt. <b>II.</b> Számold ki az elemszámot: a) <span class="math inline">\(|A|\)</span>, ha <span class="math inline">\(A=\{x\mid x\in\mathbb{N}\land x\le 7\}\)</span>; b) <span class="math inline">\(|A\times B|\)</span>, ha <span class="math inline">\(|A|=4\)</span>, <span class="math inline">\(|B|=5\)</span>; c) <span class="math inline">\(|\mathcal{P}(A)|\)</span>, ha <span class="math inline">\(|A|=3\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(A \times B = \{\left( 1,a \right),\left( 1,b \right),\left( 1,c \right),\left( 2,a \right),\left( 2,b \right),\left( 2,c \right)\}\)</span>; <span class="math inline">\(B \times A = \{\left( a,1 \right),\left( a,2 \right),\left( b,1 \right),\left( b,2 \right),\left( c,1 \right),\left( c,2 \right)\}\)</span>; <span class="math inline">\(A^{2} = \{\left( 1,1 \right),\left( 1,2 \right),\left( 2,1 \right),\left( 2,2 \right)\}\)</span>.</p></div>
+        <div class="bel"><p>I. <span class="math inline">\(\mathcal{P}=\{\varnothing,\{a\},\{b\},\{c\},\{a,b\},\{a,c\},\{b,c\},\{a,b,c\}\}\)</span> (8 elem). II. a) 7; b) 20; c) 8.</p></div>
       </details>
     </article>
     <article class="feladat" id="alap-7">
       <div class="fejsor"><span class="szam">7.</span><span class="chip alap">Alap</span></div>
-      <p>Adott <span class="math inline">\(A = \{ 1,2,3,4\}\)</span> és <span class="math inline">\(B = \{ 3,4,5,6\}\)</span>. Határozd meg a szimmetrikus különbséget: <span class="math inline">\(A \bigtriangleup B\)</span>.</p>
+      <p><b>I.</b> Határozd meg <span class="math inline">\(x\)</span> és <span class="math inline">\(y\)</span> értékét, ha a rendezett párok egyenlők: <span class="math inline">\((x+1,\,5)=(3,\,y-2)\)</span>. <b>II.</b> Egy 30 fős osztályban 18-an sportolnak, 12-en zenélnek, 5-en mindkettőt. a) Hányan sportolnak csak? b) Hányan zenélnek csak? c) Hányan egyiket sem?</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(A \bigtriangleup B = \{ 1,2,5,6\}\)</span>.</p></div>
+        <div class="bel"><p>I. <span class="math inline">\(x=2\)</span>, <span class="math inline">\(y=7\)</span>. II. a) 13; b) 7; c) 5.</p></div>
       </details>
     </article>
-    <article class="feladat" id="alap-8">
-      <div class="fejsor"><span class="szam">8.</span><span class="chip alap">Alap</span></div>
-      <p>Írd fel az <span class="math inline">\(\{ a,b,c\}\)</span> halmaz összes részhalmazát, azaz a <span class="math inline">\(\mathcal{P}\left( \{ a,b,c\} \right)\)</span> hatványhalmazt.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(\mathcal{P} = \{\varnothing,\{ a\},\{ b\},\{ c\},\{ a,b\},\{ a,c\},\{ b,c\},\{ a,b,c\}\}\)</span> (8 elem).</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="alap-9">
-      <div class="fejsor"><span class="szam">9.</span><span class="chip alap">Alap</span></div>
-      <p>Add meg elemeik felsorolásával: a) <span class="math inline">\(P = \{ x|x \in {\mathbb{Z}} \land x^{2} &lt; 10\}\)</span>; b) <span class="math inline">\(Q = \{ x|x \in {\mathbb{N}} \land 2|x \land x &lt; 12\}\)</span>.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(P = \{ - 3, - 2, - 1,0,1,2,3\}\)</span>; b) <span class="math inline">\(Q = \{ 2,4,6,8,10\}\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="alap-10">
-      <div class="fejsor"><span class="szam">10.</span><span class="chip alap">Alap</span></div>
-      <p>Számold ki az elemszámot: a) <span class="math inline">\(|A|\)</span>, ha <span class="math inline">\(A = \{ x|x \in {\mathbb{N}} \land x \leq 7\}\)</span>; b) <span class="math inline">\(|A \times B|\)</span>, ha <span class="math inline">\(|A| = 4\)</span> és <span class="math inline">\(|B| = 5\)</span>; c) <span class="math inline">\(|\mathcal{P}\left( A \right)|\)</span>, ha <span class="math inline">\(|A| = 3\)</span>.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) 7; b) 20; c) 8.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="alap-11">
-      <div class="fejsor"><span class="szam">11.</span><span class="chip alap">Alap</span></div>
-      <p>Egy 30 fős osztályban 18-an sportolnak, 12-en zenélnek, 5-en pedig mindkettőt csinálják. a) Hányan sportolnak csak? b) Hányan zenélnek csak? c) Hányan nem csinálják egyiket sem?</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) 13; b) 7; c) 5.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="alap-12">
-      <div class="fejsor"><span class="szam">12.</span><span class="chip alap">Alap</span></div>
-      <p>Igaz vagy hamis? a) <span class="math inline">\({\mathbb{N}} \subseteq {\mathbb{Z}}\)</span>; b) <span class="math inline">\({\mathbb{Z}} \subseteq {\mathbb{Q}}\)</span>; c) <span class="math inline">\({\mathbb{Q}} \subseteq {\mathbb{R}}\)</span>; d) <span class="math inline">\({\mathbb{R}} \subseteq {\mathbb{Q}}\)</span>; e) <span class="math inline">\(\{ 1,2\} \subset \{ 1,2\}\)</span>.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) I; b) I; c) I; d) H; e) H (nem valódi részhalmaz).</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="alap-13">
-      <div class="fejsor"><span class="szam">13.</span><span class="chip alap">Alap</span></div>
-      <p>Adott <span class="math inline">\(A = \{ 1,3,5,7,9\}\)</span>, <span class="math inline">\(B = \{ 1,2,3,4,5\}\)</span> és <span class="math inline">\(C = \{ 5,6,7,8,9\}\)</span>. Add meg: a) <span class="math inline">\(A \cap B \cap C\)</span>; b) <span class="math inline">\(A \cup B \cup C\)</span>; c) <span class="math inline">\(\left( A \cap B \right) \cup \left( A \cap C \right)\)</span>.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(\{ 5\}\)</span>; b) <span class="math inline">\(\{ 1,2,3,4,5,6,7,8,9\}\)</span>; c) <span class="math inline">\(\{ 1,3,5,7,9\} = A\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="alap-14">
-      <div class="fejsor"><span class="szam">14.</span><span class="chip alap">Alap</span></div>
-      <p>Határozd meg <span class="math inline">\(x\)</span> és <span class="math inline">\(y\)</span> értékét, ha a rendezett párok egyenlők: <span class="math inline">\(\left( x + 1,5 \right) = \left( 3,y - 2 \right)\)</span>.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(x = 2\)</span>, <span class="math inline">\(y = 7\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="alap-15">
-      <div class="fejsor"><span class="szam">15.</span><span class="chip alap">Alap</span></div>
-      <p>Legyen <span class="math inline">\(S = \{ 1,2,3,4,5,6\}\)</span>, <span class="math inline">\(A = \{ 1,2,3\}\)</span> és <span class="math inline">\(B = \{ 3,4,5\}\)</span>. Ellenőrizd a De Morgan-azonosságot: számold ki külön <span class="math inline">\(\overline{\left( A \cup B \right)}\)</span> és <span class="math inline">\(\overline{A} \cap \overline{B}\)</span> értékét, majd hasonlítsd össze.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(\overline{\left( A \cup B \right)} = \{ 6\}\)</span> és <span class="math inline">\(\overline{A} \cap \overline{B} = \{ 6\}\)</span> — egyenlők.</p></div>
-      </details>
-    </article>
-
     <h2 id="kozep">🟡 Középszint</h2>
     <article class="feladat" id="kozep-1">
-      <div class="fejsor"><span class="szam">1.</span><span class="chip kozep">Közép</span></div>
-      <p>Adott <span class="math inline">\(A = \{ x|x \in {\mathbb{N}} \land xosztója24 - nek\}\)</span> és <span class="math inline">\(B = \{ x|x \in {\mathbb{N}} \land xosztója36 - nak\}\)</span>. Add meg a közös osztók halmazát <span class="math inline">\(A \cap B\)</span>, majd az <span class="math inline">\(A \cup B\)</span>, <span class="math inline">\(A \smallsetminus B\)</span> halmazokat és az <span class="math inline">\(|A \cap B|\)</span> elemszámot.</p>
+      <div class="fejsor"><span class="szam">1.</span><span class="chip kozep">Kozep</span></div>
+      <p><b>I.</b> <span class="math inline">\(A=\{x\mid x\in\mathbb{N}\land x\mid 24\}\)</span>, <span class="math inline">\(B=\{x\mid x\in\mathbb{N}\land x\mid 36\}\)</span>: add meg <span class="math inline">\(A\cap B\)</span>-t (közös osztók), <span class="math inline">\(A\cup B\)</span>-t, <span class="math inline">\(A\setminus B\)</span>-t és <span class="math inline">\(|A\cap B|\)</span>-t. <b>II.</b> <span class="math inline">\(A=\{a,b,c,d,e\}\)</span>, <span class="math inline">\(B=\{b,d,f,g\}\)</span>, <span class="math inline">\(C=\{a,c,d,h\}\)</span>: ellenőrizd, hogy <span class="math inline">\(A\setminus(B\cup C)=(A\setminus B)\cap(A\setminus C)\)</span> (mindkét oldalt).</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(A = \{ 1,2,3,4,6,8,12,24\}\)</span>, <span class="math inline">\(B = \{ 1,2,3,4,6,9,12,18,36\}\)</span>; <span class="math inline">\(A \cap B = \{ 1,2,3,4,6,12\}\)</span>, <span class="math inline">\(A \cup B = \{ 1,2,3,4,6,8,9,12,18,24,36\}\)</span>, <span class="math inline">\(A \smallsetminus B = \{ 8,24\}\)</span>, <span class="math inline">\(|A \cap B| = 6\)</span>.</p></div>
+        <div class="bel"><p>I. <span class="math inline">\(A=\{1,2,3,4,6,8,12,24\}\)</span>, <span class="math inline">\(B=\{1,2,3,4,6,9,12,18,36\}\)</span>; <span class="math inline">\(A\cap B=\{1,2,3,4,6,12\}\)</span>, <span class="math inline">\(A\cup B=\{1,2,3,4,6,8,9,12,18,24,36\}\)</span>, <span class="math inline">\(A\setminus B=\{8,24\}\)</span>, <span class="math inline">\(|A\cap B|=6\)</span>. II. mindkét oldal <span class="math inline">\(\{e\}\)</span> — igaz.</p></div>
       </details>
     </article>
     <article class="feladat" id="kozep-2">
-      <div class="fejsor"><span class="szam">2.</span><span class="chip kozep">Közép</span></div>
-      <p>Adott <span class="math inline">\(A = \{ a,b,c\}\)</span> és <span class="math inline">\(B = \{ b,c,d\}\)</span>. Határozd meg: a) <span class="math inline">\(\left( A \times A \right) \cap \left( B \times B \right)\)</span>; b) <span class="math inline">\(\left( A \times A \right) \cap \left( A \times B \right)\)</span>.</p>
+      <div class="fejsor"><span class="szam">2.</span><span class="chip kozep">Kozep</span></div>
+      <p><b>I.</b> <span class="math inline">\(A=\{a,b,c\}\)</span>, <span class="math inline">\(B=\{b,c,d\}\)</span>: a) <span class="math inline">\((A\times A)\cap(B\times B)\)</span>; b) <span class="math inline">\((A\times A)\cap(A\times B)\)</span>. <b>II.</b> <span class="math inline">\(A=\{1,2\}\)</span>, <span class="math inline">\(B=\{3,4\}\)</span>: hány eleme van <span class="math inline">\(A\times B\)</span>-nek, és hány eleme van <span class="math inline">\(\mathcal{P}(A\times B)\)</span>-nek?</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(\{\left( b,b \right),\left( b,c \right),\left( c,b \right),\left( c,c \right)\}\)</span>; b) <span class="math inline">\(\{\left( a,b \right),\left( a,c \right),\left( b,b \right),\left( b,c \right),\left( c,b \right),\left( c,c \right)\}\)</span>.</p></div>
+        <div class="bel"><p>I. a) <span class="math inline">\(\{(b,b),(b,c),(c,b),(c,c)\}\)</span>; b) <span class="math inline">\(\{(a,b),(a,c),(b,b),(b,c),(c,b),(c,c)\}\)</span>. II. <span class="math inline">\(|A\times B|=4\)</span>, <span class="math inline">\(|\mathcal{P}(A\times B)|=16\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="kozep-3">
-      <div class="fejsor"><span class="szam">3.</span><span class="chip kozep">Közép</span></div>
-      <p>Egy 20 fős csoportban matematikából 12-en, fizikából 10-en, kémiából 8-an értek el kitűnőt. Matematikából és fizikából 5-en, matematikából és kémiából 4-en, fizikából és kémiából 3-an, mindhárom tárgyból 2-en. a) Hányan kitűnőek csak matematikából? b) Hányan pontosan két tárgyból? c) Hányan egyik tárgyból sem?</p>
+      <div class="fejsor"><span class="szam">3.</span><span class="chip kozep">Kozep</span></div>
+      <p>Egy 20 fős csoportban matematikából 12-en, fizikából 10-en, kémiából 8-an értek el kitűnőt. Matek–fizika 5, matek–kémia 4, fizika–kémia 3, mindhárom 2. a) Hányan kitűnőek csak matematikából? b) Hányan pontosan két tárgyból? c) Hányan egyik tárgyból sem?</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p>a) 5; b) 6; c) 0 (az unió mind a 20 főt lefedi).</p></div>
       </details>
     </article>
     <article class="feladat" id="kozep-4">
-      <div class="fejsor"><span class="szam">4.</span><span class="chip kozep">Közép</span></div>
-      <p>Határozd meg a <span class="math inline">\(P\)</span> és <span class="math inline">\(Q\)</span> halmazt, ha <span class="math inline">\(P \cup Q = \{ a,b,c,d,e,f,g,h\}\)</span>, <span class="math inline">\(P \cap Q = \{ c,f,h\}\)</span>, <span class="math inline">\(P \cup \{ c,d,f\} = \{ a,c,d,f,g,h\}\)</span> és <span class="math inline">\(Q \cup \{ a,f,h\} = \{ a,b,c,d,e,f,h\}\)</span>.</p>
+      <div class="fejsor"><span class="szam">4.</span><span class="chip kozep">Kozep</span></div>
+      <p><b>I.</b> Határozd meg <span class="math inline">\(P\)</span>-t és <span class="math inline">\(Q\)</span>-t, ha <span class="math inline">\(P\cup Q=\{a,b,c,d,e,f,g,h\}\)</span>, <span class="math inline">\(P\cap Q=\{c,f,h\}\)</span>, <span class="math inline">\(P\cup\{c,d,f\}=\{a,c,d,f,g,h\}\)</span>, <span class="math inline">\(Q\cup\{a,f,h\}=\{a,b,c,d,e,f,h\}\)</span>. <b>II.</b> Add meg <span class="math inline">\(A,B,C\)</span>-t, ha <span class="math inline">\(A\cup B\cup C=\{1,2,3,4,5,6\}\)</span>, <span class="math inline">\((A\cap C)\cup(B\cap C)=\varnothing\)</span>, <span class="math inline">\(A\setminus B=\{1,3,5\}\)</span>, <span class="math inline">\(C\setminus B=\{2,4\}\)</span>, <span class="math inline">\((A\cap B)\setminus C=\{6\}\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(P = \{ a,c,f,g,h\}\)</span>, <span class="math inline">\(Q = \{ b,c,d,e,f,h\}\)</span>.</p></div>
+        <div class="bel"><p>I. <span class="math inline">\(P=\{a,c,f,g,h\}\)</span>, <span class="math inline">\(Q=\{b,c,d,e,f,h\}\)</span>. II. <span class="math inline">\(A=\{1,3,5,6\}\)</span>, <span class="math inline">\(B=\{6\}\)</span>, <span class="math inline">\(C=\{2,4\}\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="kozep-5">
-      <div class="fejsor"><span class="szam">5.</span><span class="chip kozep">Közép</span></div>
-      <p>Az <span class="math inline">\(A = \{ - 2, - 1,0,1,2\}\)</span> halmazon értelmezett a <span class="math inline">\(\rho\)</span> reláció úgy, hogy <span class="math inline">\(x\rho y \Leftrightarrow |x| = |y|\)</span>. Sorold fel a reláció elemeit, ábrázold nyíldiagrammal, és állapítsd meg, mely tulajdonságokkal rendelkezik (reflexív, szimmetrikus, antiszimmetrikus, tranzitív). Ekvivalenciareláció-e?</p>
+      <div class="fejsor"><span class="szam">5.</span><span class="chip kozep">Kozep</span></div>
+      <p>Állapítsd meg a relációk tulajdonságait (reflexív, szimmetrikus, antiszimmetrikus, tranzitív)! a) <span class="math inline">\(A=\{-2,-1,0,1,2\}\)</span>, <span class="math inline">\(x\rho y\Leftrightarrow |x|=|y|\)</span> (sorold fel az elemeket is; ekvivalencia-e?); b) <span class="math inline">\(\rho=\{(1,1),(1,2),(2,2),(2,3),(3,3)\}\)</span>; c) <span class="math inline">\(\rho=\{(1,2),(2,1),(2,3),(3,2)\}\)</span>; d) az <span class="math inline">\(\mathbb{N}\)</span>-en <span class="math inline">\(x\rho y\Leftrightarrow x\mid y\)</span> (milyen típusú?).</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(\rho = \{\left( - 2, - 2 \right),\left( - 2,2 \right),\left( 2, - 2 \right),\left( 2,2 \right),\left( - 1, - 1 \right),\left( - 1,1 \right),\left( 1, - 1 \right),\left( 1,1 \right),\left( 0,0 \right)\}\)</span>; R, S, T (antiszimmetrikus nem, pl. <span class="math inline">\(\left( - 2,2 \right)\)</span> és <span class="math inline">\(\left( 2, - 2 \right)\)</span>). Ekvivalenciareláció.</p></div>
+        <div class="bel"><p>a) <span class="math inline">\(\rho=\{(-2,-2),(-2,2),(2,-2),(2,2),(-1,-1),(-1,1),(1,-1),(1,1),(0,0)\}\)</span>; R, S, T (nem AS: <span class="math inline">\((-2,2),(2,-2)\)</span>) → ekvivalenciareláció. b) R, AS, T; c) S; d) R, AS, T — rendezési reláció (pl. <span class="math inline">\(2\mid 4\)</span>, de <span class="math inline">\(4\nmid 2\)</span>).</p></div>
       </details>
     </article>
     <article class="feladat" id="kozep-6">
-      <div class="fejsor"><span class="szam">6.</span><span class="chip kozep">Közép</span></div>
-      <p>Legyen <span class="math inline">\(\rho \subseteq \{ 1,2,3\}\hat{}2\)</span>. Állapítsd meg mindegyik reláció tulajdonságait (R, S, AS, T): a) <span class="math inline">\(\rho = \{\left( 1,1 \right),\left( 1,2 \right),\left( 2,2 \right),\left( 2,3 \right),\left( 3,3 \right)\}\)</span>; b) <span class="math inline">\(\rho = \{\left( 1,2 \right),\left( 2,1 \right),\left( 2,3 \right),\left( 3,2 \right)\}\)</span>; c) <span class="math inline">\(\rho = \{\left( 1,1 \right),\left( 2,2 \right),\left( 3,3 \right)\}\)</span>.</p>
+      <div class="fejsor"><span class="szam">6.</span><span class="chip kozep">Kozep</span></div>
+      <p><b>I.</b> Két halmazra <span class="math inline">\(|A|=20\)</span>, <span class="math inline">\(|B|=15\)</span>, <span class="math inline">\(|A\cup B|=28\)</span>. Mennyi <span class="math inline">\(|A\cap B|\)</span> és <span class="math inline">\(|A\setminus B|\)</span>? <b>II.</b> <span class="math inline">\(P=\{1,2,3,4,5\}\)</span>, <span class="math inline">\(Q=\{1,2,3,7\}\)</span>: a) <span class="math inline">\(P\triangle Q\)</span>; b) <span class="math inline">\(Q\triangle P\)</span>; c) <span class="math inline">\((P\triangle Q)\triangle(P\cup Q)\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) R, AS, T; b) S; c) R, S, AS, T.</p></div>
+        <div class="bel"><p>I. <span class="math inline">\(|A\cap B|=7\)</span>, <span class="math inline">\(|A\setminus B|=13\)</span>. II. a) <span class="math inline">\(\{4,5,7\}\)</span>; b) <span class="math inline">\(\{4,5,7\}\)</span>; c) <span class="math inline">\(\{1,2,3\}\)</span>.</p></div>
       </details>
     </article>
-    <article class="feladat" id="kozep-7">
-      <div class="fejsor"><span class="szam">7.</span><span class="chip kozep">Közép</span></div>
-      <p>Adott <span class="math inline">\(A = \{ a,b,c,d,e\}\)</span>, <span class="math inline">\(B = \{ b,d,f,g\}\)</span> és <span class="math inline">\(C = \{ a,c,d,h\}\)</span>. Ellenőrizd a <span class="math inline">\(A \smallsetminus \left( B \cup C \right) = \left( A \smallsetminus B \right) \cap \left( A \smallsetminus C \right)\)</span> egyenlőséget: számold ki mindkét oldalt.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>Mindkét oldal <span class="math inline">\(\{ e\}\)</span> — az egyenlőség igaz.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="kozep-8">
-      <div class="fejsor"><span class="szam">8.</span><span class="chip kozep">Közép</span></div>
-      <p>Adott <span class="math inline">\(P = \{ 1,2,3,4,5\}\)</span> és <span class="math inline">\(Q = \{ 1,2,3,7\}\)</span>. Határozd meg: a) <span class="math inline">\(P \bigtriangleup Q\)</span>; b) <span class="math inline">\(Q \bigtriangleup P\)</span>; c) <span class="math inline">\(\left( P \bigtriangleup Q \right) \bigtriangleup \left( P \cup Q \right)\)</span>.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(P \bigtriangleup Q = \{ 4,5,7\}\)</span>; b) <span class="math inline">\(Q \bigtriangleup P = \{ 4,5,7\}\)</span>; c) <span class="math inline">\(\{ 1,2,3\}\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="kozep-9">
-      <div class="fejsor"><span class="szam">9.</span><span class="chip kozep">Közép</span></div>
-      <p>Legyen <span class="math inline">\(S = \{ 1,2,3,4,5,6\}\)</span>, <span class="math inline">\(A = \{ 2,4,5\}\)</span> és <span class="math inline">\(B = \{ 1,4,5,6\}\)</span>. A komplementerek <span class="math inline">\(\overline{A}\)</span>, <span class="math inline">\(\overline{B}\)</span> felhasználásával add meg: <span class="math inline">\(X = \left( \right)\overline{A} \cap B) \cup \left( A \cap \right)\overline{B}) \cup \left( A \cap B \right)\)</span>. Melyik ismert halmazt kaptad?</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(X = \{ 1,2,4,5,6\} = A \cup B\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="kozep-10">
-      <div class="fejsor"><span class="szam">10.</span><span class="chip kozep">Közép</span></div>
-      <p>Két halmazra <span class="math inline">\(|A| = 20\)</span>, <span class="math inline">\(|B| = 15\)</span> és <span class="math inline">\(|A \cup B| = 28\)</span>. Mennyi <span class="math inline">\(|A \cap B|\)</span> és <span class="math inline">\(|A \smallsetminus B|\)</span>?</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(|A \cap B| = 7\)</span>, <span class="math inline">\(|A \smallsetminus B| = 13\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="kozep-11">
-      <div class="fejsor"><span class="szam">11.</span><span class="chip kozep">Közép</span></div>
-      <p>Adott <span class="math inline">\(A = \{ 1,2\}\)</span> és <span class="math inline">\(B = \{ 3,4\}\)</span>. Hány eleme van a <span class="math inline">\(A \times B\)</span> halmaznak, és hány eleme van a <span class="math inline">\(\mathcal{P}\left( A \times B \right)\)</span> hatványhalmaznak?</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(|A \times B| = 4\)</span>, <span class="math inline">\(|\mathcal{P}\left( A \times B \right)| = 16\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="kozep-12">
-      <div class="fejsor"><span class="szam">12.</span><span class="chip kozep">Közép</span></div>
-      <p>A természetes számok halmazán értelmezzük a <span class="math inline">\(\rho\)</span> relációt: <span class="math inline">\(x\rho y \Leftrightarrow x|y\)</span> (x osztója y-nak). Mely tulajdonságokkal rendelkezik (R, S, AS, T)? Milyen típusú reláció ez? Indokold.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>R, AS, T — rendezési reláció (nem szimmetrikus, pl. <span class="math inline">\(2|4\)</span>, de <span class="math inline">\(4 \nmid 2\)</span>).</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="kozep-13">
-      <div class="fejsor"><span class="szam">13.</span><span class="chip kozep">Közép</span></div>
-      <p>Határozd meg az <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span> halmazokat, ha <span class="math inline">\(A \cup B \cup C = \{ 1,2,3,4,5,6\}\)</span>, <span class="math inline">\(\left( A \cap C \right) \cup \left( B \cap C \right) = \varnothing\)</span>, <span class="math inline">\(A \smallsetminus B = \{ 1,3,5\}\)</span>, <span class="math inline">\(C \smallsetminus B = \{ 2,4\}\)</span> és <span class="math inline">\(\left( A \cap B \right) \smallsetminus C = \{ 6\}\)</span>.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(A = \{ 1,3,5,6\}\)</span>, <span class="math inline">\(B = \{ 6\}\)</span>, <span class="math inline">\(C = \{ 2,4\}\)</span>.</p></div>
-      </details>
-    </article>
-
     <h2 id="nehez">🔴 Nehéz</h2>
     <article class="feladat" id="nehez-1">
-      <div class="fejsor"><span class="szam">1.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Az egész számok halmazán értelmezzük a <span class="math inline">\(\rho\)</span> relációt: <span class="math inline">\(x\rho y \Leftrightarrow 3|\left( x - y \right)\)</span>. Bizonyítsd be, hogy ez ekvivalenciareláció (reflexív, szimmetrikus, tranzitív), majd add meg az ekvivalenciaosztályokat.</p>
+      <div class="fejsor"><span class="szam">1.</span><span class="chip nehez">Nehez</span></div>
+      <p>Az egész számok halmazán <span class="math inline">\(x\rho y\Leftrightarrow 3\mid(x-y)\)</span>. Bizonyítsd be, hogy ekvivalenciareláció (R, S, T), és add meg az ekvivalenciaosztályokat.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>Reflexív: <span class="math inline">\(3|\left( x - x \right) = 0\)</span>. Szimmetrikus: ha <span class="math inline">\(3|\left( x - y \right)\)</span>, akkor <span class="math inline">\(3|\left( y - x \right)\)</span>. Tranzitív: <span class="math inline">\(3|\left( x - y \right)\)</span> és <span class="math inline">\(3|\left( y - z \right)\)</span> összegéből <span class="math inline">\(3|\left( x - z \right)\)</span>. Három osztály: a 3-mal osztva 0, 1, illetve 2 maradékot adó számok.</p></div>
+        <div class="bel"><p>R: <span class="math inline">\(3\mid(x-x)=0\)</span>. S: ha <span class="math inline">\(3\mid(x-y)\)</span>, akkor <span class="math inline">\(3\mid(y-x)\)</span>. T: <span class="math inline">\(3\mid(x-y)\)</span> és <span class="math inline">\(3\mid(y-z)\)</span> összegéből <span class="math inline">\(3\mid(x-z)\)</span>. Három osztály: a 3-mal osztva 0, 1, illetve 2 maradékú számok.</p></div>
       </details>
     </article>
     <article class="feladat" id="nehez-2">
-      <div class="fejsor"><span class="szam">2.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Bizonyítsd be elemenkénti gondolatmenettel a De Morgan-azonosságot: <span class="math inline">\(A \smallsetminus \left( B \cap C \right) = \left( A \smallsetminus B \right) \cup \left( A \smallsetminus C \right)\)</span>.</p>
+      <div class="fejsor"><span class="szam">2.</span><span class="chip nehez">Nehez</span></div>
+      <p>Bizonyítsd be elemenkénti gondolatmenettel a De Morgan-azonosságot: <span class="math inline">\(A\setminus(B\cap C)=(A\setminus B)\cup(A\setminus C)\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>Ha <span class="math inline">\(x \in A \smallsetminus \left( B \cap C \right)\)</span>, akkor <span class="math inline">\(x \in A\)</span> és <span class="math inline">\(x \notin B \cap C\)</span>, azaz <span class="math inline">\(x \notin B\)</span> vagy <span class="math inline">\(x \notin C\)</span> — így <span class="math inline">\(x \in \left( A \smallsetminus B \right) \cup \left( A \smallsetminus C \right)\)</span>. A lépések megfordíthatók, tehát a két halmaz egyenlő.</p></div>
+        <div class="bel"><p>Ha <span class="math inline">\(x\in A\setminus(B\cap C)\)</span>: <span class="math inline">\(x\in A\)</span> és <span class="math inline">\(x\notin B\cap C\)</span>, azaz <span class="math inline">\(x\notin B\)</span> vagy <span class="math inline">\(x\notin C\)</span> → <span class="math inline">\(x\in(A\setminus B)\cup(A\setminus C)\)</span>. A lépések megfordíthatók, tehát a két halmaz egyenlő.</p></div>
       </details>
     </article>
     <article class="feladat" id="nehez-3">
-      <div class="fejsor"><span class="szam">3.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Egy iskolában 330 tanuló franciát, 470 angolt, 420 oroszt tanul; 140-en franciát és angolt, 180-an franciát és oroszt, 250-en angolt és oroszt, 120-an pedig mindhárom nyelvet. a) Hány tanuló tanul legalább egy nyelvet? b) Hányan tanulnak pontosan egy nyelvet?</p>
+      <div class="fejsor"><span class="szam">3.</span><span class="chip nehez">Nehez</span></div>
+      <p>Egy iskolában 330 tanuló franciát, 470 angolt, 420 oroszt tanul; 140-en franciát és angolt, 180-an franciát és oroszt, 250-en angolt és oroszt, 120-an mindhárom nyelvet. a) Hányan tanulnak legalább egy nyelvet? b) Hányan pontosan egy nyelvet?</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p>a) 770; b) 440.</p></div>
       </details>
     </article>
     <article class="feladat" id="nehez-4">
-      <div class="fejsor"><span class="szam">4.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Bizonyítsd be a Descartes-szorzat disztributív tulajdonságát: <span class="math inline">\(A \times \left( B \cap C \right) = \left( A \times B \right) \cap \left( A \times C \right)\)</span>.</p>
+      <div class="fejsor"><span class="szam">4.</span><span class="chip nehez">Nehez</span></div>
+      <p>Bizonyítsd be a Descartes-szorzat disztributivitását: <span class="math inline">\(A\times(B\cap C)=(A\times B)\cap(A\times C)\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>Ha <span class="math inline">\(\left( x,y \right) \in A \times \left( B \cap C \right)\)</span>, akkor <span class="math inline">\(x \in A\)</span>, <span class="math inline">\(y \in B\)</span> és <span class="math inline">\(y \in C\)</span>, vagyis <span class="math inline">\(\left( x,y \right) \in A \times B\)</span> és <span class="math inline">\(\left( x,y \right) \in A \times C\)</span>. A lépések megfordíthatók, így az egyenlőség igaz.</p></div>
+        <div class="bel"><p>Ha <span class="math inline">\((x,y)\in A\times(B\cap C)\)</span>: <span class="math inline">\(x\in A\)</span>, <span class="math inline">\(y\in B\)</span> és <span class="math inline">\(y\in C\)</span>, vagyis <span class="math inline">\((x,y)\in A\times B\)</span> és <span class="math inline">\((x,y)\in A\times C\)</span>. A lépések megfordíthatók, így az egyenlőség igaz.</p></div>
       </details>
     </article>
     <article class="feladat" id="nehez-5">
-      <div class="fejsor"><span class="szam">5.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Adott az <span class="math inline">\(A = \{ 1,2,3,4\}\)</span> halmaz. a) Hány reláció értelmezhető az <span class="math inline">\(A\)</span> halmazon? b) Hány közülük reflexív?</p>
+      <div class="fejsor"><span class="szam">5.</span><span class="chip nehez">Nehez</span></div>
+      <p>Adott az <span class="math inline">\(A=\{1,2,3,4\}\)</span> halmaz. a) Hány reláció értelmezhető <span class="math inline">\(A\)</span>-n? b) Hány közülük reflexív?</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(2^{16} = 65536\)</span>; b) <span class="math inline">\(2^{12} = 4096\)</span> (a 4 átlós pár kötelező, a maradék 12 szabad).</p></div>
+        <div class="bel"><p>a) <span class="math inline">\(2^{16}=65536\)</span>; b) <span class="math inline">\(2^{12}=4096\)</span> (a 4 átlós pár kötelező, a maradék 12 szabad).</p></div>
       </details>
     </article>
     <article class="feladat" id="nehez-6">
-      <div class="fejsor"><span class="szam">6.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Legyenek <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span> az <span class="math inline">\(S = \{ a,b,c,d,e\}\)</span> részhalmazai, amelyekre <span class="math inline">\(A \cap B = \{ b,d\}\)</span>, <span class="math inline">\(A \cup B = \{ b,c,d,e\}\)</span>, <span class="math inline">\(A \cap C = \{ b,c\}\)</span> és <span class="math inline">\(A \cup C = \{ a,b,c,d\}\)</span>. Határozd meg az <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span> halmazokat.</p>
+      <div class="fejsor"><span class="szam">6.</span><span class="chip nehez">Nehez</span></div>
+      <p>Legyenek <span class="math inline">\(A,B,C\subseteq S=\{a,b,c,d,e\}\)</span>, amelyekre <span class="math inline">\(A\cap B=\{b,d\}\)</span>, <span class="math inline">\(A\cup B=\{b,c,d,e\}\)</span>, <span class="math inline">\(A\cap C=\{b,c\}\)</span>, <span class="math inline">\(A\cup C=\{a,b,c,d\}\)</span>. Add meg <span class="math inline">\(A,B,C\)</span>-t.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(A = \{ b,c,d\}\)</span>, <span class="math inline">\(B = \{ b,d,e\}\)</span>, <span class="math inline">\(C = \{ a,b,c\}\)</span>.</p></div>
+        <div class="bel"><p><span class="math inline">\(A=\{b,c,d\}\)</span>, <span class="math inline">\(B=\{b,d,e\}\)</span>, <span class="math inline">\(C=\{a,b,c\}\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="nehez-7">
-      <div class="fejsor"><span class="szam">7.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Adottak a következő halmazok: <span class="math inline">\(A = \{ x|x \in {\mathbb{N}} \land xosztója12 - nek\}\)</span>, <span class="math inline">\(B = \{ x|x \in {\mathbb{N}} \land xosztója18 - nak\}\)</span> és <span class="math inline">\(C = \{ x|x \in {\mathbb{N}} \land xosztója8 - nak\}\)</span>. Add meg: a) <span class="math inline">\(A \cap B\)</span>; b) <span class="math inline">\(A \cup C\)</span>; c) <span class="math inline">\(\left( A \cap B \right) \smallsetminus C\)</span>; d) <span class="math inline">\(\mathcal{P}\left( A \cap B \cap C \right)\)</span>.</p>
+      <div class="fejsor"><span class="szam">7.</span><span class="chip nehez">Nehez</span></div>
+      <p><span class="math inline">\(A=\{x\mid x\in\mathbb{N}\land x\mid 12\}\)</span>, <span class="math inline">\(B=\{x\mid x\in\mathbb{N}\land x\mid 18\}\)</span>, <span class="math inline">\(C=\{x\mid x\in\mathbb{N}\land x\mid 8\}\)</span>. Add meg: a) <span class="math inline">\(A\cap B\)</span>; b) <span class="math inline">\(A\cup C\)</span>; c) <span class="math inline">\((A\cap B)\setminus C\)</span>; d) <span class="math inline">\(\mathcal{P}(A\cap B\cap C)\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(\{ 1,2,3,6\}\)</span>; b) <span class="math inline">\(\{ 1,2,3,4,6,8,12\}\)</span>; c) <span class="math inline">\(\{ 3,6\}\)</span>; d) <span class="math inline">\(\mathcal{P}\left( \{ 1,2\} \right) = \{\varnothing,\{ 1\},\{ 2\},\{ 1,2\}\}\)</span>.</p></div>
+        <div class="bel"><p>a) <span class="math inline">\(\{1,2,3,6\}\)</span>; b) <span class="math inline">\(\{1,2,3,4,6,8,12\}\)</span>; c) <span class="math inline">\(\{3,6\}\)</span>; d) <span class="math inline">\(\mathcal{P}(\{1,2\})=\{\varnothing,\{1\},\{2\},\{1,2\}\}\)</span>.</p></div>
       </details>
     </article>
-
-    <h2 id="gyakorlo-teszt">📝 Gyakorló teszt (ellenőrzőre) — halmazok</h2>
-
+    <h2 id="gyakorlo-ellenorzo">📝 Gyakorló ellenőrző (logika + halmazok)</h2>
+    <p>Az ellenőrző a halmazok után következik, és a <b>logikát és a halmazokat</b> méri (a függvények és a trigonometria a későbbi dolgozatba kerül). Ez a feladatsor mindkét témakörből tartalmaz feladatot — más számokkal, mint az éles ellenőrző.</p>
     <article class="feladat" id="gyt-1">
       <div class="fejsor"><span class="szam">1.</span></div>
-      <p>Adott <span class="math inline">\(A = \{ 2,4,6,8\}\)</span>, <span class="math inline">\(B = \{ 1,2,3,4\}\)</span> és <span class="math inline">\(C = \{ 3,4,5,6\}\)</span>. a) Ábrázold a három halmazt közös Venn-diagramon! b) <span class="math inline">\(A \smallsetminus B\)</span> = ; c) <span class="math inline">\(B \cup C\)</span> = ; d) <span class="math inline">\(\left( A \cap C \right) \smallsetminus B\)</span> = ; e) Mely elem van mindhárom halmazban?</p>
+      <p><b>Logika.</b> Határozd meg az <span class="math inline">\(((\top\Rightarrow\bot)\lor\neg\bot)\Leftrightarrow(\bot\lor\top)\)</span> kijelentésformula igazságértékét.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>b) <span class="math inline">\(A \smallsetminus B = \{ 6,8\}\)</span>; c) <span class="math inline">\(B \cup C = \{ 1,2,3,4,5,6\}\)</span>; d) <span class="math inline">\(\left( A \cap C \right) \smallsetminus B = \{ 6\}\)</span>; e) a <span class="math inline">\(4\)</span>.</p></div>
+        <div class="bel"><p><span class="math inline">\(\top\Rightarrow\bot=\bot\)</span>, <span class="math inline">\(\neg\bot=\top\)</span>, bal oldal <span class="math inline">\(\bot\lor\top=\top\)</span>; jobb oldal <span class="math inline">\(\bot\lor\top=\top\)</span>; <span class="math inline">\(\top\Leftrightarrow\top=\)</span> <b>igaz (<span class="math inline">\(\top\)</span>)</b>.</p></div>
       </details>
     </article>
     <article class="feladat" id="gyt-2">
       <div class="fejsor"><span class="szam">2.</span></div>
-      <p>Legyen <span class="math inline">\(A = \{ x|x \in {\mathbb{N}} \land x \leq 6\}\)</span> és <span class="math inline">\(B = \{ x|x \in {\mathbb{Z}} \land |x| &lt; 3\}\)</span>. Add meg: <span class="math inline">\(A \cup B\)</span>, <span class="math inline">\(A \cap B\)</span>, <span class="math inline">\(A \smallsetminus B\)</span>, <span class="math inline">\(B \smallsetminus A\)</span>.</p>
+      <p><b>Logika.</b> Értéktáblázat segítségével döntsd el, tautológia-e: <span class="math inline">\(\neg(p\lor q)\Leftrightarrow(\neg p\land\neg q)\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(A \cup B = \{ - 2, - 1,0,1,2,3,4,5,6\}\)</span>, <span class="math inline">\(A \cap B = \{ 1,2\}\)</span>, <span class="math inline">\(A \smallsetminus B = \{ 3,4,5,6\}\)</span>, <span class="math inline">\(B \smallsetminus A = \{ - 2, - 1,0\}\)</span>.</p></div>
+        <div class="bel"><p>Tautológia (De Morgan): mind a 4 sorban a két oldal megegyezik.</p></div>
       </details>
     </article>
     <article class="feladat" id="gyt-3">
       <div class="fejsor"><span class="szam">3.</span></div>
-      <p>Adott <span class="math inline">\(A = \{ 1,2,3\}\)</span> és <span class="math inline">\(B = \{ x,y\}\)</span>. Add meg az <span class="math inline">\(A \times B\)</span> halmazt és a <span class="math inline">\(|A \times B|\)</span> elemszámot.</p>
+      <p><b>Logika.</b> a) Formalizáld: „Minden természetes szám kisebb a rákövetkezőjénél.” és „Van olyan egész szám, amelynek négyzete 4.” b) Írd fel az első tagadását jelekkel és szavakkal.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(A \times B = \{\left( 1,x \right),\left( 1,y \right),\left( 2,x \right),\left( 2,y \right),\left( 3,x \right),\left( 3,y \right)\}\)</span>, <span class="math inline">\(|A \times B| = 6\)</span>.</p></div>
+        <div class="bel"><p>a) <span class="math inline">\(\forall x\in\mathbb{N}(x\lt x+1)\)</span>; <span class="math inline">\(\exists x\in\mathbb{Z}(x^2=4)\)</span>. b) <span class="math inline">\(\exists x\in\mathbb{N}(x\ge x+1)\)</span> — „Van olyan természetes szám, amely nem kisebb a rákövetkezőjénél.” (hamis).</p></div>
       </details>
     </article>
     <article class="feladat" id="gyt-4">
       <div class="fejsor"><span class="szam">4.</span></div>
-      <p>Az <span class="math inline">\(A = \{ 1,2,3,4\}\)</span> halmazon adott a <span class="math inline">\(\rho\)</span> reláció: <span class="math inline">\(x\rho y \Leftrightarrow x|y\)</span> (x osztója y-nak). Sorold fel a reláció elemeit, ábrázold nyíldiagrammal, és állapítsd meg a tulajdonságait (R, S, AS, T).</p>
+      <p><b>Halmazok.</b> <span class="math inline">\(A=\{1,2,3,6\}\)</span>, <span class="math inline">\(B=\{2,4,6\}\)</span>, <span class="math inline">\(C=\{1,2,4,8\}\)</span>. a) Ábrázold Venn-diagramon! b) <span class="math inline">\(A\cap B\)</span>; c) <span class="math inline">\(A\cup C\)</span>; d) <span class="math inline">\((A\setminus B)\cup C\)</span>; e) <span class="math inline">\(\mathcal{P}(B)\)</span> elemszáma.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(\rho = \{\left( 1,1 \right),\left( 1,2 \right),\left( 1,3 \right),\left( 1,4 \right),\left( 2,2 \right),\left( 2,4 \right),\left( 3,3 \right),\left( 4,4 \right)\}\)</span>; R, AS, T (rendezési reláció).</p></div>
+        <div class="bel"><p>b) <span class="math inline">\(A\cap B=\{2,6\}\)</span>; c) <span class="math inline">\(A\cup C=\{1,2,3,6,8\}\)</span>; d) <span class="math inline">\(A\setminus B=\{1,3\}\)</span>, <span class="math inline">\(\cup C=\{1,2,3,4,8\}\)</span>; e) <span class="math inline">\(|\mathcal{P}(B)|=2^3=8\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="gyt-5">
       <div class="fejsor"><span class="szam">5.</span></div>
-      <p>Egy 28 fős osztályban 20-an fociznak, 15-en kosaraznak, 4-en pedig egyiket sem. Hányan űzik mindkét sportot?</p>
+      <p><b>Reláció.</b> Az <span class="math inline">\(A=\{1,2,3\}\)</span> halmazon <span class="math inline">\(\rho=\{(1,1),(2,2),(3,3),(1,2),(2,1)\}\)</span>. Mely tulajdonságai vannak (R, S, AS, T)? Ekvivalenciareláció-e?</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>11-en (<span class="math inline">\(20 + 15 - \left( 28 - 4 \right) = 11\)</span>).</p></div>
+        <div class="bel"><p>Reflexív ✓, szimmetrikus ✓, tranzitív ✓; <b>nem antiszimmetrikus</b> (<span class="math inline">\((1,2)\)</span> és <span class="math inline">\((2,1)\)</span> is eleme). Ez ekvivalenciareláció.</p></div>
       </details>
     </article>
+    <article class="feladat" id="gyt-6">
+      <div class="fejsor"><span class="szam">6.</span></div>
+      <p><b>Szöveges.</b> Egy 25 fős osztályban 15-en tanulnak angolt, 12-en németet, 6-an mindkettőt. a) Hányan tanulnak csak angolt? b) Hányan egyik nyelvet sem?</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>a) <span class="math inline">\(15-6=9\)</span>; b) legalább egyet tanul <span class="math inline">\(15+12-6=21\)</span>, így egyiket sem <span class="math inline">\(25-21=4\)</span>.</p></div>
+      </details>
+    </article>
+    <h2 id="joker-cim">⭐ Joker</h2>
     <article class="feladat" id="joker">
       <div class="fejsor"><span class="szam">★</span><span class="chip joker">Joker</span></div>
-      <p>Joker (bónusz). Egy 100 fős rendezvényen mindenki kávét vagy teát iszik (van, aki mindkettőt). 80-an isznak kávét, 60-an teát. Legkevesebb és legfeljebb hányan ihatnak mindkettőt? Indokolj!</p>
+      <p><b>Kézfogások.</b> Egy társaságban mindenki kezet fogott mindenkivel, összesen 15 kézfogás történt. Hányan voltak a társaságban?</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>Legkevesebb 40 (<span class="math inline">\(80 + 60 - 100\)</span>), legfeljebb 60 (a teázók száma).</p></div>
+        <div class="bel"><p>Ha <span class="math inline">\(n\)</span> ember van, a kézfogások száma <span class="math inline">\(\frac{n(n-1)}{2}=15\)</span>, innen <span class="math inline">\(n(n-1)=30\)</span>, tehát <span class="math inline">\(n=6\)</span>.</p></div>
       </details>
     </article>
 
     <div class="gyakorolj">
       <span class="ikon">📖</span>
-      <p>Elakadtál? Nézd át a <a href="tananyag-halmaz-fogalma.html">tananyagot</a> vagy a
-      <a href="osszefoglalo.html">tömör összefoglalót</a>.</p>
+      <p>Elakadtál? Nézd át a <a href="tananyag-halmaz-fogalma.html">tananyagot</a> vagy a <a href="osszefoglalo.html">tömör összefoglalót</a>.</p>
     </div>
-
-        <div class="lapozo">
+    <div class="lapozo">
       <a class="elozo" href="tananyag-descartes-relaciok.html"><span class="irany">← Előző</span><span class="hova">Descartes-szorzat és relációk</span></a>
       <a class="kov" href="tananyag-fuggveny-fogalma.html"><span class="irany">Következő →</span><span class="hova">A függvény fogalma és megadása</span></a>
     </div>
   </div>
-
   <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
 </main>
-
 <footer class="lablec">
   <div class="lablec-bel">
     <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
     <span>Legyél szvetkós!</span>
   </div>
 </footer>
-
 <script src="../../assets/katex/katex.min.js"></script>
 <script src="../../assets/katex/auto-render.min.js"></script>
 <script>
@@ -367,5 +256,6 @@
   ]});
 </script>
 <script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
 </body>
 </html>

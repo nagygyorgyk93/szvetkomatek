@@ -11,7 +11,6 @@
 </head>
 <body data-tagozat="1e">
 <div id="progress"></div>
-
 <header class="fejlec">
   <div class="fejlec-bel">
     <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
@@ -19,352 +18,184 @@
     <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
   </div>
 </header>
-
 <nav class="morzsa">
   <a href="../../index.html">Főoldal</a> ›
   <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
   <a href="index.html">Logika, halmazok, függvények</a> ›
   <span class="itt">Matematikai logika — feladatok</span>
 </nav>
-
 <div class="hero">
   <h1>Matematikai logika — feladatgyűjtemény</h1>
-  <p class="alcim">Három szint: haladj sorban, vagy ugorj a szintedre. A végeredmény minden
-  feladatnál lenyitható — előbb számolj, csak utána nézd meg!</p>
+  <p class="alcim">Három szint: haladj sorban, vagy ugorj a szintedre. A végeredmény minden feladatnál lenyitható — előbb számolj, csak utána nézd meg!</p>
   <div class="meta-sor">
     <span class="chip alap">Alap</span><span class="chip kozep">Közép</span>
     <span class="chip nehez">Nehéz</span><span class="chip joker">Joker</span>
   </div>
 </div>
-
 <main class="lap toc-os">
   <div class="tartalom">
-
     <h2 id="alap">🟢 Alapszint</h2>
     <article class="feladat" id="alap-1">
       <div class="fejsor"><span class="szam">1.</span><span class="chip alap">Alap</span></div>
-      <p>Döntsd el, melyik mondat kijelentés! A kijelentésekhez add meg az igazságértéket is. a) A 6 osztható 3-mal. b) Hány óra van? c) Minden négyzet téglalap. d) Mosd meg a kezed! e) A 7 páros szám. f) Vajdaság Szerbiában van.</p>
+      <p>Döntsd el, melyik <b>kijelentés</b> (állítás), melyik <b>nyitott mondat</b> (logikai függvény), és a kijelentésekhez add meg az igazságértéket! a) A 6 osztható 3-mal. b) Hány óra van? c) Minden négyzet téglalap. d) Mosd meg a kezed! e) A 7 páros szám. f) Vajdaság Szerbiában van. g) <span class="math inline">\(x^2=9\)</span>. h) Minden prímszám páratlan. i) <span class="math inline">\(x+3\gt 0\)</span>. j) <span class="math inline">\(5\in\mathbb{N}\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>Kijelentések: a) igaz, c) igaz, e) hamis, f) igaz; nem kijelentés: b), d).</p></div>
+        <div class="bel"><p>Kijelentések: a) igaz; c) igaz; e) hamis; f) igaz; h) hamis (a 2 prím és páros); j) igaz. Nyitott mondat: g), i). Nem kijelentés (kérdés/felszólítás): b), d).</p></div>
       </details>
     </article>
     <article class="feladat" id="alap-2">
       <div class="fejsor"><span class="szam">2.</span><span class="chip alap">Alap</span></div>
-      <p>Kijelentés vagy logikai függvény (nyitott mondat)? a) <span class="math inline">\(x^{2} = 9\)</span> b) Minden prímszám páratlan. c) <span class="math inline">\(x + 3 &gt; 0\)</span> d) Az <span class="math inline">\(M\)</span> halmaz egyelemű. e) <span class="math inline">\(5 \in {\mathbb{N}}\)</span>.</p>
+      <p>Add meg az igazságértéket! <b>I.</b> Aritmetikai állítások: a) <span class="math inline">\(2+3=6\)</span>; b) <span class="math inline">\(4\cdot 5=20\)</span>; c) 7 osztója 21-nek; d) <span class="math inline">\(3\in\mathbb{Z}\)</span>; e) <span class="math inline">\(-2\in\mathbb{N}\)</span>; f) <span class="math inline">\(0{,}5\lt 1\)</span>. <b>II.</b> Formulák (<span class="math inline">\(\top\)</span> = igaz, <span class="math inline">\(\bot\)</span> = hamis): g) <span class="math inline">\(\top\land\bot\)</span>; h) <span class="math inline">\(\top\lor\bot\)</span>; i) <span class="math inline">\(\bot\Rightarrow\top\)</span>; j) <span class="math inline">\(\top\Rightarrow\bot\)</span>; k) <span class="math inline">\(\neg\top\lor\top\)</span>; l) <span class="math inline">\(\neg(\top\land\bot)\)</span>. <b>III.</b> Ha <span class="math inline">\(\tau(p)=\top\)</span> és <span class="math inline">\(\tau(q)=\bot\)</span>: m) <span class="math inline">\(p\land q\)</span>; n) <span class="math inline">\(\neg p\lor q\)</span>; o) <span class="math inline">\(p\Leftrightarrow\neg q\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>Nyitott mondat (logikai függvény): a), c). Kijelentés: b) hamis (a 2 prím és páros), d) kijelentés, e) igaz.</p></div>
+        <div class="bel"><p>I. a) <span class="math inline">\(\bot\)</span>; b) <span class="math inline">\(\top\)</span>; c) <span class="math inline">\(\top\)</span>; d) <span class="math inline">\(\top\)</span>; e) <span class="math inline">\(\bot\)</span>; f) <span class="math inline">\(\top\)</span>. II. g) <span class="math inline">\(\bot\)</span>; h) <span class="math inline">\(\top\)</span>; i) <span class="math inline">\(\top\)</span>; j) <span class="math inline">\(\bot\)</span>; k) <span class="math inline">\(\top\)</span>; l) <span class="math inline">\(\top\)</span>. III. m) <span class="math inline">\(\bot\)</span>; n) <span class="math inline">\(\bot\)</span>; o) <span class="math inline">\(\top\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="alap-3">
       <div class="fejsor"><span class="szam">3.</span><span class="chip alap">Alap</span></div>
-      <p>Add meg az alábbi kijelentések igazságértékét: a) <span class="math inline">\(2 + 3 = 6\)</span> b) <span class="math inline">\(4 \cdot 5 = 20\)</span> c) 7 osztója 21-nek d) <span class="math inline">\(3 \in {\mathbb{Z}}\)</span> e) <span class="math inline">\(- 2 \in {\mathbb{N}}\)</span> f) <span class="math inline">\(0,5 &lt; 1\)</span>.</p>
+      <p><b>I.</b> Legyen <span class="math inline">\(p\)</span>: „A 2 prímszám.” és <span class="math inline">\(q\)</span>: „A 2 páratlan.” Fogalmazd meg magyarul és add meg az igazságértékét: a) <span class="math inline">\(p\land q\)</span>; b) <span class="math inline">\(p\lor q\)</span>; c) <span class="math inline">\(\neg q\)</span>; d) <span class="math inline">\(p\Rightarrow q\)</span>. <b>II.</b> Írd fel logikai jelekkel: e) „A 3 prímszám és páratlan.”; f) „Ha esik az eső, akkor vizes az út.”; g) „A 4 nem prímszám.”; h) „A háromszögnek 3 vagy 4 oldala van.”</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(\bot\)</span> b) <span class="math inline">\(\top\)</span> c) <span class="math inline">\(\top\)</span> d) <span class="math inline">\(\top\)</span> e) <span class="math inline">\(\bot\)</span> f) <span class="math inline">\(\top\)</span>.</p></div>
+        <div class="bel"><p>I. a) <span class="math inline">\(p\land q=\bot\)</span> (a 2 nem páratlan); b) <span class="math inline">\(p\lor q=\top\)</span>; c) <span class="math inline">\(\neg q=\top\)</span>; d) <span class="math inline">\(p\Rightarrow q=\bot\)</span>. II. e) <span class="math inline">\(p\land q\)</span>; f) <span class="math inline">\(p\Rightarrow q\)</span>; g) <span class="math inline">\(\neg p\)</span>; h) <span class="math inline">\(p\lor q\)</span> (megengedő).</p></div>
       </details>
     </article>
     <article class="feladat" id="alap-4">
       <div class="fejsor"><span class="szam">4.</span><span class="chip alap">Alap</span></div>
-      <p>Legyen <span class="math inline">\(p\)</span>: „A 2 prímszám.” és <span class="math inline">\(q\)</span>: „A 2 páratlan.” Fogalmazd meg magyarul és add meg az igazságértékét: a) <span class="math inline">\(p \land q\)</span> b) <span class="math inline">\(p \vee q\)</span> c) <span class="math inline">\(\neg q\)</span> d) <span class="math inline">\(p \Rightarrow q\)</span>.</p>
+      <p>Igaz vagy hamis? Indokolj (kvantoros kijelentések)! a) <span class="math inline">\(\forall x\in\mathbb{N}\,(x\ge 1)\)</span>; b) <span class="math inline">\(\exists x\in\mathbb{Z}\,(x\lt 0)\)</span>; c) <span class="math inline">\(\forall x\in\mathbb{N}\)</span> (<span class="math inline">\(x\)</span> páros); d) <span class="math inline">\(\exists x\in\mathbb{N}\,(x+1=1)\)</span>; e) <span class="math inline">\(\exists x\in\mathbb{Z}\,(2x=6)\)</span>; f) <span class="math inline">\(\forall x\in\mathbb{R}\,(x^2\ge 0)\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(p \land q = \bot\)</span> (a 2 nem páratlan) b) <span class="math inline">\(p \vee q = \top\)</span> c) <span class="math inline">\(\neg q = \top\)</span> d) <span class="math inline">\(p \Rightarrow q = \bot\)</span>.</p></div>
+        <div class="bel"><p>a) igaz; b) igaz (<span class="math inline">\(x=-1\)</span>); c) hamis (<span class="math inline">\(x=1\)</span> páratlan); d) hamis (<span class="math inline">\(\mathbb{N}\)</span>-ben nincs 0); e) igaz (<span class="math inline">\(x=3\)</span>); f) igaz.</p></div>
       </details>
     </article>
     <article class="feladat" id="alap-5">
       <div class="fejsor"><span class="szam">5.</span><span class="chip alap">Alap</span></div>
-      <p>Határozd meg a formulák igazságértékét (<span class="math inline">\(\top\)</span> = igaz, <span class="math inline">\(\bot\)</span> = hamis): a) <span class="math inline">\(\top \land \bot\)</span> b) <span class="math inline">\(\top \vee \bot\)</span> c) <span class="math inline">\(\bot \Rightarrow \top\)</span> d) <span class="math inline">\(\top \Rightarrow \bot\)</span> e) <span class="math inline">\(\neg\top \vee \top\)</span> f) <span class="math inline">\(\neg\left( \top \land \bot \right)\)</span>.</p>
+      <p><b>I.</b> Írd fel kvantorral: a) „Minden természetes szám pozitív.”; b) „Van olyan egész szám, amelyet 5-tel szorozva <span class="math inline">\(-10\)</span>-et kapunk.”; c) „Minden valós szám négyzete nemnegatív.” <b>II.</b> Írd le szavakkal: d) <span class="math inline">\(\exists x\in\mathbb{N}\,(x\gt 100)\)</span>; e) <span class="math inline">\(\forall x\in\mathbb{Z}\,(x+0=x)\)</span>; f) <span class="math inline">\(\exists x\in\mathbb{R}\,(x^2=2)\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(\bot\)</span> b) <span class="math inline">\(\top\)</span> c) <span class="math inline">\(\top\)</span> d) <span class="math inline">\(\bot\)</span> e) <span class="math inline">\(\top\)</span> f) <span class="math inline">\(\top\)</span>.</p></div>
+        <div class="bel"><p>I. a) <span class="math inline">\(\forall x\in\mathbb{N}\,(x\gt 0)\)</span>; b) <span class="math inline">\(\exists x\in\mathbb{Z}\,(5x=-10)\)</span>; c) <span class="math inline">\(\forall x\in\mathbb{R}\,(x^2\ge 0)\)</span>. II. d) „Van olyan természetes szám, amely nagyobb 100-nál.” (igaz); e) „Minden egész számhoz 0-t adva önmagát kapjuk.” (igaz); f) „Van olyan valós szám, amelynek négyzete 2.” (igaz).</p></div>
       </details>
     </article>
     <article class="feladat" id="alap-6">
       <div class="fejsor"><span class="szam">6.</span><span class="chip alap">Alap</span></div>
-      <p>Tudjuk, hogy <span class="math inline">\(\tau\left( p \right) = \top\)</span> és <span class="math inline">\(\tau\left( q \right) = \bot\)</span>. Add meg: a) <span class="math inline">\(p \land q\)</span> b) <span class="math inline">\(p \vee q\)</span> c) <span class="math inline">\(p \Rightarrow q\)</span> d) <span class="math inline">\(\neg p \vee q\)</span> e) <span class="math inline">\(p \Leftrightarrow \neg q\)</span>.</p>
+      <p><b>I.</b> Tagadd (elég magyarul): a) „Minden madár tud repülni.”; b) „Van olyan tanuló, aki zongorázik.”; c) „Minden természetes szám páros.” <b>II.</b> Add meg <span class="math inline">\(\neg\neg p\)</span> igazságértékét, ha d) <span class="math inline">\(\tau(p)=\top\)</span>; e) <span class="math inline">\(\tau(p)=\bot\)</span>. Milyen összefüggést látsz <span class="math inline">\(p\)</span> és <span class="math inline">\(\neg\neg p\)</span> között?</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(\bot\)</span> b) <span class="math inline">\(\top\)</span> c) <span class="math inline">\(\bot\)</span> d) <span class="math inline">\(\bot\)</span> e) <span class="math inline">\(\top\)</span>.</p></div>
+        <div class="bel"><p>I. a) „Van olyan madár, amely nem tud repülni.”; b) „Egyetlen tanuló sem zongorázik.”; c) „Van olyan természetes szám, amely nem páros.” II. d) <span class="math inline">\(\top\)</span>; e) <span class="math inline">\(\bot\)</span>; <span class="math inline">\(\tau(\neg\neg p)=\tau(p)\)</span> (a kétszeres tagadás visszaadja az eredetit).</p></div>
       </details>
     </article>
     <article class="feladat" id="alap-7">
       <div class="fejsor"><span class="szam">7.</span><span class="chip alap">Alap</span></div>
-      <p>Írd fel logikai jelekkel: a) „A 3 prímszám és páratlan.” b) „Ha esik az eső, akkor vizes az út.” c) „A 4 nem prímszám.” d) „A háromszögnek 3 vagy 4 oldala van.”</p>
+      <p>a) Töltsd ki az igazságtáblázatot mind a 4 sorban: <span class="math inline">\(p\land q\)</span>, <span class="math inline">\(p\lor q\)</span>, <span class="math inline">\(p\Rightarrow q\)</span>. b) Megengedő vagy kizáró „vagy”? „Előételnek levest vagy salátát kérek.”; „A jegy 1-es vagy 5-ös.”; „Kávét vagy teát iszom (akár mindkettőt).” c) Fejezd ki „ha …, akkor …” alakban, majd írd fel jelekkel: „Az oszthatóság 6-tal maga után vonja a 2-vel való oszthatóságot.”</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(p \land q\)</span> ahol <span class="math inline">\(p\)</span>: a 3 prím, <span class="math inline">\(q\)</span>: a 3 páratlan. b) <span class="math inline">\(p \Rightarrow q\)</span>. c) <span class="math inline">\(\neg p\)</span>. d) <span class="math inline">\(p \vee q\)</span> (megengedő).</p></div>
+        <div class="bel"><p>a) <span class="math inline">\((p,q)\)</span>: ⊤⊤, ⊤⊥, ⊥⊤, ⊥⊥ → <span class="math inline">\(p\land q\)</span>: ⊤,⊥,⊥,⊥; <span class="math inline">\(p\lor q\)</span>: ⊤,⊤,⊤,⊥; <span class="math inline">\(p\Rightarrow q\)</span>: ⊤,⊥,⊤,⊤. b) megengedő; kizáró (<span class="math inline">\(p\veebar q\)</span>); megengedő. c) <span class="math inline">\(6\mid a\Rightarrow 2\mid a\)</span>.</p></div>
       </details>
     </article>
-    <article class="feladat" id="alap-8">
-      <div class="fejsor"><span class="szam">8.</span><span class="chip alap">Alap</span></div>
-      <p>Igaz vagy hamis? Indokolj (kvantoros kijelentések): a) <span class="math inline">\(\forall x \in {\mathbb{N}}\left( x \geq 1 \right)\)</span> b) <span class="math inline">\(\exists x \in {\mathbb{Z}}\left( x &lt; 0 \right)\)</span> c) <span class="math inline">\(\forall x \in {\mathbb{N}}\)</span>(<span class="math inline">\(x\)</span> páros) d) <span class="math inline">\(\exists x \in {\mathbb{N}}\left( x + 1 = 1 \right)\)</span>.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) igaz b) igaz (pl. <span class="math inline">\(x = - 1\)</span>) c) hamis (pl. <span class="math inline">\(x = 1\)</span> páratlan) d) hamis (<span class="math inline">\(\mathbb{N}\)</span>-ben nincs 0).</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="alap-9">
-      <div class="fejsor"><span class="szam">9.</span><span class="chip alap">Alap</span></div>
-      <p>Írd fel kvantorral: a) „Minden természetes szám pozitív.” b) „Van olyan egész szám, amelyet 5-tel szorozva <span class="math inline">\(- 10\)</span>-et kapunk.” c) „Minden valós szám négyzete nemnegatív.”</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(\forall x \in {\mathbb{N}}\left( x &gt; 0 \right)\)</span> b) <span class="math inline">\(\exists x \in {\mathbb{Z}}\left( 5x = - 10 \right)\)</span> c) <span class="math inline">\(\forall x \in {\mathbb{R}}\left( x^{2} \geq 0 \right)\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="alap-10">
-      <div class="fejsor"><span class="szam">10.</span><span class="chip alap">Alap</span></div>
-      <p>Írd le szavakkal: a) <span class="math inline">\(\exists x \in {\mathbb{N}}\left( x &gt; 100 \right)\)</span> b) <span class="math inline">\(\forall x \in {\mathbb{Z}}\left( x + 0 = x \right)\)</span> c) <span class="math inline">\(\exists x \in {\mathbb{R}}\left( x^{2} = 2 \right)\)</span>.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) „Van olyan természetes szám, amely nagyobb 100-nál.” (igaz) b) „Minden egész számhoz hozzáadva 0-t önmagát kapjuk.” (igaz) c) „Van olyan valós szám, amelynek négyzete 2.” (igaz)</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="alap-11">
-      <div class="fejsor"><span class="szam">11.</span><span class="chip alap">Alap</span></div>
-      <p>Tagadd az alábbi kijelentéseket (elég magyarul): a) „Minden madár tud repülni.” b) „Van olyan tanuló, aki zongorázik.” c) „Minden természetes szám páros.”</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) „Van olyan madár, amely nem tud repülni.” b) „Egyetlen tanuló sem zongorázik.” c) „Van olyan természetes szám, amely nem páros.”</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="alap-12">
-      <div class="fejsor"><span class="szam">12.</span><span class="chip alap">Alap</span></div>
-      <p>Add meg <span class="math inline">\(\neg\neg p\)</span> igazságértékét, ha a) <span class="math inline">\(\tau\left( p \right) = \top\)</span> b) <span class="math inline">\(\tau\left( p \right) = \bot\)</span>. Milyen összefüggést figyelsz meg <span class="math inline">\(p\)</span> és <span class="math inline">\(\neg\neg p\)</span> között?</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(\top\)</span> b) <span class="math inline">\(\bot\)</span>; <span class="math inline">\(\tau\left( \neg\neg p \right) = \tau\left( p \right)\)</span> (a kétszeres tagadás visszaadja az eredetit).</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="alap-13">
-      <div class="fejsor"><span class="szam">13.</span><span class="chip alap">Alap</span></div>
-      <p>Töltsd ki az igazságtáblázatot a következő műveletekre (mind a 4 sorban): <span class="math inline">\(p \land q\)</span>, <span class="math inline">\(p \vee q\)</span>, <span class="math inline">\(p \Rightarrow q\)</span>.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>Sorok (<span class="math inline">\(p,q\)</span>): ⊤⊤, ⊤⊥, ⊥⊤, ⊥⊥ → <span class="math inline">\(p \land q\)</span>: ⊤,⊥,⊥,⊥; <span class="math inline">\(p \vee q\)</span>: ⊤,⊤,⊤,⊥; <span class="math inline">\(p \Rightarrow q\)</span>: ⊤,⊥,⊤,⊤.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="alap-14">
-      <div class="fejsor"><span class="szam">14.</span><span class="chip alap">Alap</span></div>
-      <p>Megengedő vagy kizáró „vagy”? a) „Előételnek levest vagy salátát kérek.” b) „A jegy 1-es vagy 5-ös.” c) „Kávét vagy teát iszom (akár mindkettőt).” Írd fel a kizáró vagy jelével azt, amelyik kizáró: <span class="math inline">\(p \veebar q\)</span>.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) megengedő b) kizáró: <span class="math inline">\(p \veebar q\)</span> c) megengedő.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="alap-15">
-      <div class="fejsor"><span class="szam">15.</span><span class="chip alap">Alap</span></div>
-      <p>Fejezd ki „ha …, akkor …” alakban, majd írd fel jelekkel: a) „Az oszthatóság 6-tal maga után vonja a 2-vel való oszthatóságot.” b) „A <span class="math inline">\(- 3\)</span> egész szám elég ahhoz, hogy racionális is legyen.”</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(6 \mid a \Rightarrow 2 \mid a\)</span> b) <span class="math inline">\(x = - 3 \Rightarrow x \in {\mathbb{Q}}\)</span>.</p></div>
-      </details>
-    </article>
-
     <h2 id="kozep">🟡 Középszint</h2>
     <article class="feladat" id="kozep-1">
-      <div class="fejsor"><span class="szam">1.</span><span class="chip kozep">Közép</span></div>
-      <p>Határozd meg a formulák igazságértékét: a) <span class="math inline">\(\left( \neg\top \vee \bot \right) \Rightarrow \left( \bot \land \top \right)\)</span> b) <span class="math inline">\(\neg\left( \bot \Rightarrow \top \right) \vee \left( \top \Leftrightarrow \top \right)\)</span> c) <span class="math inline">\(\left( \top \land \neg\bot \right) \Leftrightarrow \left( \top \Rightarrow \bot \right)\)</span>.</p>
+      <div class="fejsor"><span class="szam">1.</span><span class="chip kozep">Kozep</span></div>
+      <p><b>I.</b> Határozd meg a formula igazságértékét: a) <span class="math inline">\((\neg\top\lor\bot)\Rightarrow(\bot\land\top)\)</span>; b) <span class="math inline">\(\neg(\bot\Rightarrow\top)\lor(\top\Leftrightarrow\top)\)</span>; c) <span class="math inline">\((\top\land\neg\bot)\Leftrightarrow(\top\Rightarrow\bot)\)</span>. <b>II.</b> Add meg a kijelentések igazságértékét, majd a formuláét: d) <span class="math inline">\(p:\forall x\in\mathbb{N}(x+2\gt x)\)</span>, <span class="math inline">\(q:\exists x\in\mathbb{N}(x^2=x)\)</span>, <span class="math inline">\(r:\forall x\in\mathbb{Z}(x^2\gt 0)\)</span>; formula: <span class="math inline">\((p\Rightarrow q)\land(\neg r\lor q)\)</span>. e) <span class="math inline">\(p:\forall x\in\mathbb{Z}(x\cdot 1=x)\)</span>, <span class="math inline">\(q:\exists x\in\mathbb{N}(x+3=1)\)</span>, <span class="math inline">\(r:\forall x\in\mathbb{R}(x\lt x+1)\)</span>; formula: <span class="math inline">\((p\lor q)\land(r\Rightarrow q)\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(\top\)</span> b) <span class="math inline">\(\top\)</span> c) <span class="math inline">\(\bot\)</span>.</p></div>
+        <div class="bel"><p>I. a) <span class="math inline">\(\top\)</span>; b) <span class="math inline">\(\top\)</span>; c) <span class="math inline">\(\bot\)</span>. II. d) <span class="math inline">\(p=\top,q=\top,r=\bot\)</span>; <span class="math inline">\((\top\Rightarrow\top)\land(\top\lor\top)=\top\)</span>. e) <span class="math inline">\(p=\top,q=\bot,r=\top\)</span>; <span class="math inline">\((\top\lor\bot)\land(\top\Rightarrow\bot)=\bot\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="kozep-2">
-      <div class="fejsor"><span class="szam">2.</span><span class="chip kozep">Közép</span></div>
-      <p>Add meg a kijelentések igazságértékét, majd ezek alapján a formuláét. <span class="math inline">\(p:\forall x \in {\mathbb{N}}\left( x + 2 &gt; x \right)\)</span>, <span class="math inline">\(q:\exists x \in {\mathbb{N}}\left( x^{2} = x \right)\)</span>, <span class="math inline">\(r:\forall x \in {\mathbb{Z}}\left( x^{2} &gt; 0 \right)\)</span>; formula: <span class="math inline">\(\left( p \Rightarrow q \right) \land \left( \neg r \vee q \right)\)</span>.</p>
+      <div class="fejsor"><span class="szam">2.</span><span class="chip kozep">Kozep</span></div>
+      <p>Értéktáblázat segítségével döntsd el, tautológia-e (amelyik nem az, arra adj ellenpéldát)! a) <span class="math inline">\((p\Rightarrow q)\Leftrightarrow(\neg q\Rightarrow\neg p)\)</span>; b) <span class="math inline">\(\neg(p\land q)\Leftrightarrow(\neg p\lor\neg q)\)</span>; c) <span class="math inline">\((p\Rightarrow q)\Leftrightarrow(p\land\neg q)\)</span>; d) <span class="math inline">\((p\lor q)\Leftrightarrow(\neg p\Rightarrow q)\)</span>; e) <span class="math inline">\(((p\Rightarrow q)\land p)\Rightarrow q\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(p = \top\)</span>, <span class="math inline">\(q = \top\)</span> (pl. <span class="math inline">\(x = 1\)</span>), <span class="math inline">\(r = \bot\)</span> (<span class="math inline">\(x = 0\)</span>); formula: <span class="math inline">\(\left( \top \Rightarrow \top \right) \land \left( \top \vee \top \right) = \top\)</span>.</p></div>
+        <div class="bel"><p>a) tautológia (kontrapozíció); b) tautológia (De Morgan); c) nem — ellenpélda <span class="math inline">\(p=\top,q=\top\)</span>; d) tautológia; e) tautológia (modus ponens).</p></div>
       </details>
     </article>
     <article class="feladat" id="kozep-3">
-      <div class="fejsor"><span class="szam">3.</span><span class="chip kozep">Közép</span></div>
-      <p>Add meg a kijelentések igazságértékét, majd a formuláét. <span class="math inline">\(p:\forall x \in {\mathbb{Z}}\left( x \cdot 1 = x \right)\)</span>, <span class="math inline">\(q:\exists x \in {\mathbb{N}}\left( x + 3 = 1 \right)\)</span>, <span class="math inline">\(r:\forall x \in {\mathbb{R}}\left( x &lt; x + 1 \right)\)</span>; formula: <span class="math inline">\(\left( p \vee q \right) \land \left( r \Rightarrow q \right)\)</span>.</p>
+      <div class="fejsor"><span class="szam">3.</span><span class="chip kozep">Kozep</span></div>
+      <p>Formalizáld (írd fel jelekkel)! a) „Esik az eső, de süt a nap.”; b) „Ha esik az eső és nincs szél, akkor otthon maradok.”; c) „Nem igaz, hogy fázom vagy fáradt vagyok.”; d) „Akkor és csak akkor megyek uszodába, ha süt a nap.”</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(p = \top\)</span>, <span class="math inline">\(q = \bot\)</span> (nincs ilyen <span class="math inline">\(\mathbb{N}\)</span>-beli), <span class="math inline">\(r = \top\)</span>; formula: <span class="math inline">\(\left( \top \vee \bot \right) \land \left( \top \Rightarrow \bot \right) = \bot\)</span>.</p></div>
+        <div class="bel"><p>a) <span class="math inline">\(p\land q\)</span>; b) <span class="math inline">\((p\land\neg q)\Rightarrow r\)</span>; c) <span class="math inline">\(\neg(p\lor q)\)</span>; d) <span class="math inline">\(p\Leftrightarrow q\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="kozep-4">
-      <div class="fejsor"><span class="szam">4.</span><span class="chip kozep">Közép</span></div>
-      <p>Értéktáblázat segítségével döntsd el, tautológia-e: a) <span class="math inline">\(\left( p \Rightarrow q \right) \Leftrightarrow \left( \neg q \Rightarrow \neg p \right)\)</span> b) <span class="math inline">\(\neg\left( p \land q \right) \Leftrightarrow \left( \neg p \vee \neg q \right)\)</span>.</p>
+      <div class="fejsor"><span class="szam">4.</span><span class="chip kozep">Kozep</span></div>
+      <p><b>a)</b> Írd fel jelekkel és tagadd (jelekkel és szavakkal): „Minden egész szám racionális.” <b>b)</b> Írd le szavakkal és döntsd el (hamishoz ellenpélda): <span class="math inline">\(\forall x\in\mathbb{Z}(x^2\ge x)\)</span>; <span class="math inline">\(\exists x\in\mathbb{N}(x^2=2x)\)</span>. <b>c)</b> Legyen <span class="math inline">\(S(x,y)\)</span>: „<span class="math inline">\(x\)</span> szereti <span class="math inline">\(y\)</span>-t” (<span class="math inline">\(E\)</span> = emberek). Írd fel: „Mindenki szeret valakit.”; „Van, aki mindenkit szeret.”; „Senki sem szereti önmagát.” <b>d)</b> De Morgannal tagadd: <span class="math inline">\(\forall x\in\mathbb{N}(x\gt 0\land x\ne 1)\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) tautológia (kontrapozíció) b) tautológia (De Morgan).</p></div>
+        <div class="bel"><p>a) <span class="math inline">\(\forall x\in\mathbb{Z}(x\in\mathbb{Q})\)</span>; tagadás <span class="math inline">\(\exists x\in\mathbb{Z}(x\notin\mathbb{Q})\)</span> — „Van olyan egész, amely nem racionális.” (hamis). b) „Minden egész négyzete legalább akkora, mint önmaga.” igaz; „Van olyan természetes, hogy <span class="math inline">\(x^2=2x\)</span>.” igaz (<span class="math inline">\(x=2\)</span>). c) <span class="math inline">\(\forall x\in E\,\exists y\in E\,S(x,y)\)</span>; <span class="math inline">\(\exists x\in E\,\forall y\in E\,S(x,y)\)</span>; <span class="math inline">\(\forall x\in E\,\neg S(x,x)\)</span>. d) <span class="math inline">\(\exists x\in\mathbb{N}(x\le 0\lor x=1)\)</span>, azaz <span class="math inline">\(\exists x\in\mathbb{N}(x=1)\)</span> (igaz).</p></div>
       </details>
     </article>
     <article class="feladat" id="kozep-5">
-      <div class="fejsor"><span class="szam">5.</span><span class="chip kozep">Közép</span></div>
-      <p>Értéktáblázat segítségével döntsd el, tautológia-e: a) <span class="math inline">\(\left( p \Rightarrow q \right) \Leftrightarrow \left( p \land \neg q \right)\)</span> b) <span class="math inline">\(\left( p \vee q \right) \Leftrightarrow \left( \neg p \Rightarrow q \right)\)</span>. Amelyik nem az, adj rá ellenpéldát!</p>
+      <div class="fejsor"><span class="szam">5.</span><span class="chip kozep">Kozep</span></div>
+      <p>Logikai következménye-e a premisszáknak a konklúzió? Döntsd el értéktáblázattal! a) <span class="math inline">\(P_1:p\Rightarrow q\)</span>, <span class="math inline">\(P_2:p\)</span>, <span class="math inline">\(K:q\)</span>; b) <span class="math inline">\(P_1:p\Rightarrow q\)</span>, <span class="math inline">\(P_2:\neg q\)</span>, <span class="math inline">\(K:\neg p\)</span>; c) <span class="math inline">\(P_1:p\Rightarrow q\)</span>, <span class="math inline">\(P_2:q\)</span>, <span class="math inline">\(K:p\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) nem tautológia, ellenpélda <span class="math inline">\(p = \top,q = \top\)</span> (bal <span class="math inline">\(\top\)</span>, jobb <span class="math inline">\(\bot\)</span>) b) tautológia.</p></div>
+        <div class="bel"><p>a) igen (modus ponens); b) igen (modus tollens); c) nem — ellenpélda <span class="math inline">\(p=\bot,q=\top\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat" id="kozep-6">
-      <div class="fejsor"><span class="szam">6.</span><span class="chip kozep">Közép</span></div>
-      <p>Igazold értéktáblázattal, hogy tautológia (modus ponens): <span class="math inline">\(\left( \left( p \Rightarrow q \right) \land p \right) \Rightarrow q\)</span>.</p>
+      <div class="fejsor"><span class="szam">6.</span><span class="chip kozep">Kozep</span></div>
+      <p><b>I.</b> Írd át az implikációt <span class="math inline">\(\neg p\lor q\)</span> alakban, és add meg a kontrapozícióját: a) <span class="math inline">\(p\Rightarrow\neg q\)</span>; b) <span class="math inline">\(\neg p\Rightarrow q\)</span>. <b>II.</b> Nevezd meg, melyik ismert tautológiával egyezik meg: c) <span class="math inline">\(p\land q\Leftrightarrow q\land p\)</span>; d) <span class="math inline">\(\neg(p\lor q)\Leftrightarrow\neg p\land\neg q\)</span>; e) <span class="math inline">\(p\lor\neg p\)</span>; f) <span class="math inline">\(p\land(p\lor q)\Leftrightarrow p\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>Tautológia: mind a 4 sorban <span class="math inline">\(\top\)</span> (modus ponens).</p></div>
+        <div class="bel"><p>I. a) <span class="math inline">\(\neg p\lor\neg q\)</span>, kontrapozíció <span class="math inline">\(q\Rightarrow\neg p\)</span>; b) <span class="math inline">\(p\lor q\)</span>, kontrapozíció <span class="math inline">\(\neg q\Rightarrow\neg p\)</span>. II. c) kommutativitás; d) De Morgan; e) harmadik kizárása; f) abszorpció (elnyelés).</p></div>
       </details>
     </article>
-    <article class="feladat" id="kozep-7">
-      <div class="fejsor"><span class="szam">7.</span><span class="chip kozep">Közép</span></div>
-      <p>Formalizáld (írd fel jelekkel): a) „Esik az eső, de süt a nap.” b) „Ha esik az eső és nincs szél, akkor otthon maradok.” c) „Nem igaz, hogy fázom vagy fáradt vagyok.”</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(p \land q\)</span> b) <span class="math inline">\(\left( p \land \neg q \right) \Rightarrow r\)</span> c) <span class="math inline">\(\neg\left( p \vee q \right)\)</span> (ahol pl. <span class="math inline">\(p\)</span>: fázom, <span class="math inline">\(q\)</span>: fáradt vagyok).</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="kozep-8">
-      <div class="fejsor"><span class="szam">8.</span><span class="chip kozep">Közép</span></div>
-      <p>Kvantoros formalizálás és tagadás. a) Írd fel jelekkel: „Minden egész szám racionális.” és „Van olyan természetes szám, amelynek négyzete 1.” b) Írd fel az első állítás tagadását jelekkel és szavakkal is.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(\forall x \in {\mathbb{Z}}\left( x \in {\mathbb{Q}} \right)\)</span>, <span class="math inline">\(\exists x \in {\mathbb{N}}\left( x^{2} = 1 \right)\)</span>. b) <span class="math inline">\(\neg\forall x \in {\mathbb{Z}}\left( x \in {\mathbb{Q}} \right) \Leftrightarrow \exists x \in {\mathbb{Z}}\left( x \notin {\mathbb{Q}} \right)\)</span>; szavakkal: „Van olyan egész szám, amely nem racionális.” (hamis).</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="kozep-9">
-      <div class="fejsor"><span class="szam">9.</span><span class="chip kozep">Közép</span></div>
-      <p>Írd le szavakkal, majd döntsd el, igaz-e (ha hamis, adj ellenpéldát): a) <span class="math inline">\(\forall x \in {\mathbb{Z}}\left( x^{2} \geq x \right)\)</span> b) <span class="math inline">\(\exists x \in {\mathbb{N}}\left( x^{2} = 2x \right)\)</span> c) <span class="math inline">\(\forall x \in {\mathbb{R}}\left( x &lt; 0 \Rightarrow x^{2} &gt; 0 \right)\)</span>.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) „Minden egész szám négyzete legalább akkora, mint önmaga.” igaz. b) „Van olyan természetes szám, amelyre <span class="math inline">\(x^{2} = 2x\)</span>.” igaz (<span class="math inline">\(x = 2\)</span>). c) „Minden negatív valós szám négyzete pozitív.” igaz.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="kozep-10">
-      <div class="fejsor"><span class="szam">10.</span><span class="chip kozep">Közép</span></div>
-      <p>Legyen <span class="math inline">\(E\)</span> az emberek halmaza, <span class="math inline">\(S\left( x,y \right)\)</span>: „<span class="math inline">\(x\)</span> szereti <span class="math inline">\(y\)</span>-t”. Írd fel jelekkel: a) „Mindenki szeret valakit.” b) „Van olyan, aki mindenkit szeret.” c) „Senki sem szereti önmagát.”</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(\forall x \in E\exists y \in ES\left( x,y \right)\)</span> b) <span class="math inline">\(\exists x \in E\forall y \in ES\left( x,y \right)\)</span> c) <span class="math inline">\(\forall x \in E\neg S\left( x,x \right)\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="kozep-11">
-      <div class="fejsor"><span class="szam">11.</span><span class="chip kozep">Közép</span></div>
-      <p>Logikai következménye-e a premisszáknak a konklúzió? Döntsd el értéktáblázattal! a) <span class="math inline">\(P_{1}:p \Rightarrow q\)</span>, <span class="math inline">\(P_{2}:p\)</span>, <span class="math inline">\(K:q\)</span> b) <span class="math inline">\(P_{1}:p \Rightarrow q\)</span>, <span class="math inline">\(P_{2}:\neg q\)</span>, <span class="math inline">\(K:\neg p\)</span> c) <span class="math inline">\(P_{1}:p \Rightarrow q\)</span>, <span class="math inline">\(P_{2}:q\)</span>, <span class="math inline">\(K:p\)</span>.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) igen (modus ponens) b) igen (modus tollens) c) nem – ellenpélda <span class="math inline">\(p = \bot,q = \top\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="kozep-12">
-      <div class="fejsor"><span class="szam">12.</span><span class="chip kozep">Közép</span></div>
-      <p>A De Morgan-szabály segítségével tagadd (jelekkel): a) <span class="math inline">\(p \land \neg q\)</span> b) <span class="math inline">\(\neg p \vee q\)</span> c) <span class="math inline">\(\forall x \in {\mathbb{N}}\left( x &gt; 0 \land x \neq 1 \right)\)</span>.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(\neg p \vee q\)</span> b) <span class="math inline">\(p \land \neg q\)</span> c) <span class="math inline">\(\exists x \in {\mathbb{N}}\left( x \leq 0 \vee x = 1 \right)\)</span>, azaz <span class="math inline">\(\exists x \in {\mathbb{N}}\left( x = 1 \right)\)</span> (igaz).</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="kozep-13">
-      <div class="fejsor"><span class="szam">13.</span><span class="chip kozep">Közép</span></div>
-      <p>Írd át az implikációt <span class="math inline">\(\neg p \vee q\)</span> alakban, és add meg a kontrapozícióját: a) <span class="math inline">\(p \Rightarrow \neg q\)</span> b) <span class="math inline">\(\neg p \Rightarrow q\)</span>.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(\neg p \vee \neg q\)</span>, kontrapozíció: <span class="math inline">\(q \Rightarrow \neg p\)</span> b) <span class="math inline">\(p \vee q\)</span>, kontrapozíció: <span class="math inline">\(\neg q \Rightarrow \neg p\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="kozep-14">
-      <div class="fejsor"><span class="szam">14.</span><span class="chip kozep">Közép</span></div>
-      <p>Nevezd meg, melyik ismert tautológiával egyezik meg: a) <span class="math inline">\(p \land q \Leftrightarrow q \land p\)</span> b) <span class="math inline">\(\neg\left( p \vee q \right) \Leftrightarrow \neg p \land \neg q\)</span> c) <span class="math inline">\(p \vee \neg p\)</span> d) <span class="math inline">\(p \land \left( p \vee q \right) \Leftrightarrow p\)</span>.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) kommutativitás b) De Morgan c) harmadik kizárása d) abszorpció (elnyelés).</p></div>
-      </details>
-    </article>
-
     <h2 id="nehez">🔴 Nehéz</h2>
     <article class="feladat" id="nehez-1">
-      <div class="fejsor"><span class="szam">1.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Bizonyítsd be értéktáblázattal, hogy tautológia (hipotetikus szillogizmus): <span class="math inline">\(\left( \left( p \Rightarrow q \right) \land \left( q \Rightarrow r \right) \right) \Rightarrow \left( p \Rightarrow r \right)\)</span>.</p>
+      <div class="fejsor"><span class="szam">1.</span><span class="chip nehez">Nehez</span></div>
+      <p>Bizonyítsd be értéktáblázattal, hogy tautológia (hipotetikus szillogizmus): <span class="math inline">\(((p\Rightarrow q)\land(q\Rightarrow r))\Rightarrow(p\Rightarrow r)\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p>Tautológia: az utolsó oszlop mind a 8 sorban <span class="math inline">\(\top\)</span> (hipotetikus szillogizmus).</p></div>
       </details>
     </article>
     <article class="feladat" id="nehez-2">
-      <div class="fejsor"><span class="szam">2.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Tautológia-e? Igazold: a) <span class="math inline">\(\left( \left( p \vee q \right) \land \neg p \right) \Rightarrow q\)</span> b) <span class="math inline">\(\left( p \Leftrightarrow q \right) \Leftrightarrow \left( \left( p \land q \right) \vee \left( \neg p \land \neg q \right) \right)\)</span>.</p>
+      <div class="fejsor"><span class="szam">2.</span><span class="chip nehez">Nehez</span></div>
+      <p>Tautológia-e? Igazold! a) <span class="math inline">\(((p\lor q)\land\neg p)\Rightarrow q\)</span>; b) <span class="math inline">\((p\Leftrightarrow q)\Leftrightarrow((p\land q)\lor(\neg p\land\neg q))\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) tautológia (diszjunktív szillogizmus) b) tautológia.</p></div>
+        <div class="bel"><p>a) tautológia (diszjunktív szillogizmus); b) tautológia.</p></div>
       </details>
     </article>
     <article class="feladat" id="nehez-3">
-      <div class="fejsor"><span class="szam">3.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Egyszerűsítsd az ismert tautológiák (De Morgan, disztributivitás, abszorpció) segítségével: a) <span class="math inline">\(\neg\left( \neg p \vee \neg q \right)\)</span> b) <span class="math inline">\(\left( p \land q \right) \vee \left( p \land \neg q \right)\)</span>.</p>
+      <div class="fejsor"><span class="szam">3.</span><span class="chip nehez">Nehez</span></div>
+      <p>Egyszerűsítsd az ismert tautológiák (De Morgan, disztributivitás, abszorpció) segítségével: a) <span class="math inline">\(\neg(\neg p\lor\neg q)\)</span>; b) <span class="math inline">\((p\land q)\lor(p\land\neg q)\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(p \land q\)</span> b) <span class="math inline">\(p\)</span> (mert <span class="math inline">\(\left( p \land q \right) \vee \left( p \land \neg q \right) = p \land \left( q \vee \neg q \right) = p\)</span>).</p></div>
+        <div class="bel"><p>a) <span class="math inline">\(p\land q\)</span>; b) <span class="math inline">\(p\)</span> (mert <span class="math inline">\((p\land q)\lor(p\land\neg q)=p\land(q\lor\neg q)=p\)</span>).</p></div>
       </details>
     </article>
     <article class="feladat" id="nehez-4">
-      <div class="fejsor"><span class="szam">4.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Hány sorban igaz a formula a (négysoros) értéktáblázatában? a) <span class="math inline">\(\left( p \Rightarrow q \right) \vee \left( q \Rightarrow p \right)\)</span> b) <span class="math inline">\(p \veebar q\)</span>. Mit mondhatunk az a) formuláról?</p>
+      <div class="fejsor"><span class="szam">4.</span><span class="chip nehez">Nehez</span></div>
+      <p>Hány sorban igaz a formula a (négysoros) értéktáblázatában? a) <span class="math inline">\((p\Rightarrow q)\lor(q\Rightarrow p)\)</span>; b) <span class="math inline">\(p\veebar q\)</span>. Mit mondhatunk az a) formuláról?</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) mind a 4 sorban igaz → tautológia b) 2 sorban igaz. Az a) formula mindig igaz (bármely két kijelentés közül legalább az egyik implikáció fennáll).</p></div>
+        <div class="bel"><p>a) mind a 4 sorban igaz → tautológia; b) 2 sorban igaz. Az a) formula mindig igaz (bármely két kijelentés közül legalább az egyik irányú implikáció fennáll).</p></div>
       </details>
     </article>
     <article class="feladat" id="nehez-5">
-      <div class="fejsor"><span class="szam">5.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Kevert kvantorok. Legyen a tárgyalási univerzum <span class="math inline">\(\mathbb{R}\)</span>. Döntsd el, igaz-e, és fogalmazd meg a tagadását szavakkal: a) <span class="math inline">\(\forall x\exists y\left( x + y = 0 \right)\)</span> b) <span class="math inline">\(\exists y\forall x\left( x + y = 0 \right)\)</span>.</p>
+      <div class="fejsor"><span class="szam">5.</span><span class="chip nehez">Nehez</span></div>
+      <p>Kevert kvantorok, univerzum <span class="math inline">\(\mathbb{R}\)</span>. Döntsd el, igaz-e, és fogalmazd meg a tagadását szavakkal: a) <span class="math inline">\(\forall x\,\exists y\,(x+y=0)\)</span>; b) <span class="math inline">\(\exists y\,\forall x\,(x+y=0)\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) igaz; tagadás: „Van olyan <span class="math inline">\(x\)</span>, amelyhez nincs olyan <span class="math inline">\(y\)</span>, hogy <span class="math inline">\(x + y = 0\)</span>.” (hamis) b) hamis (nincs minden <span class="math inline">\(x\)</span>-re jó közös <span class="math inline">\(y\)</span>); tagadás: „Nincs olyan <span class="math inline">\(y\)</span>, amely minden <span class="math inline">\(x\)</span>-szel <span class="math inline">\(x + y = 0\)</span>-t ad.” (igaz)</p></div>
+        <div class="bel"><p>a) igaz; tagadás: „Van olyan <span class="math inline">\(x\)</span>, amelyhez nincs olyan <span class="math inline">\(y\)</span>, hogy <span class="math inline">\(x+y=0\)</span>.” (hamis). b) hamis (nincs minden <span class="math inline">\(x\)</span>-re jó közös <span class="math inline">\(y\)</span>); tagadás: „Nincs olyan <span class="math inline">\(y\)</span>, amely minden <span class="math inline">\(x\)</span>-szel <span class="math inline">\(x+y=0\)</span>-t ad.” (igaz).</p></div>
       </details>
     </article>
     <article class="feladat" id="nehez-6">
-      <div class="fejsor"><span class="szam">6.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Indirekt (kontrapozíciós) gondolatmenettel indokold: ha <span class="math inline">\(n^{2}\)</span> páros egész szám, akkor <span class="math inline">\(n\)</span> is páros. (Elég a gondolatmenetet leírni.)</p>
+      <div class="fejsor"><span class="szam">6.</span><span class="chip nehez">Nehez</span></div>
+      <p>Indirekt (kontrapozíciós) gondolatmenettel indokold: ha <span class="math inline">\(n^2\)</span> páros egész, akkor <span class="math inline">\(n\)</span> is páros. (Elég a gondolatmenet.)</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>Kontrapozíció: ha <span class="math inline">\(n\)</span> páratlan, akkor <span class="math inline">\(n = 2k + 1\)</span>, így <span class="math inline">\(n^{2} = 4k^{2} + 4k + 1\)</span> páratlan. Tehát ha <span class="math inline">\(n^{2}\)</span> páros, <span class="math inline">\(n\)</span> is páros.</p></div>
+        <div class="bel"><p>Kontrapozíció: ha <span class="math inline">\(n\)</span> páratlan, <span class="math inline">\(n=2k+1\)</span>, így <span class="math inline">\(n^2=4k^2+4k+1\)</span> páratlan. Tehát ha <span class="math inline">\(n^2\)</span> páros, <span class="math inline">\(n\)</span> is páros.</p></div>
       </details>
     </article>
-    <article class="feladat" id="nehez-7">
-      <div class="fejsor"><span class="szam">7.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Lovag–lókötő sziget (a lovag mindig igazat mond, a lókötő mindig hazudik). Anna azt mondja: „Én lókötő vagyok, vagy Bea lovag.” Ki micsoda? Indokolj!</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>Ha Anna lókötő, akkor állítása hamis, ám az „…vagy…” akkor hamis, ha mindkét tag hamis: „Anna lókötő” viszont igaz volna – ellentmondás. Tehát <span class="math inline">\(\text{Anna}\text{lovag}\)</span>, állítása igaz, és mivel „Anna lókötő” hamis, „Bea lovag” igaz. <span class="math inline">\(Beais\text{lovag}\)</span>.</p></div>
-      </details>
-    </article>
-
-    <h2 id="gyakorlo-teszt">📝 Gyakorló teszt (ellenőrzőre) — logika</h2>
-<p><em>A teljes ellenőrző a logika mellett a halmazok és relációk témakörét is tartalmazza (azok gyakorlótesztje a halmazok gyűjteményében lesz). Itt a logika-részre készülünk. 45 perc, a Joker bónuszfeladat.</em></p>
-    <article class="feladat" id="gyt-1">
-      <div class="fejsor"><span class="szam">1.</span></div>
-      <p>Add meg a kijelentések igazságértékét, majd a formuláét. <span class="math inline">\(p:\forall x \in {\mathbb{N}}\left( x + 2 &gt; x \right)\)</span>, <span class="math inline">\(q:\exists x \in {\mathbb{N}}\left( x^{2} = x \right)\)</span>, <span class="math inline">\(r:\forall x \in {\mathbb{Z}}\left( x^{2} &gt; 0 \right)\)</span>; formula: <span class="math inline">\(\neg\left( p \land q \right) \vee \left( q \Rightarrow r \right)\)</span>.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(p = \top\)</span>, <span class="math inline">\(q = \top\)</span>, <span class="math inline">\(r = \bot\)</span>; formula: <span class="math inline">\(\neg\left( \top \land \top \right) \vee \left( \top \Rightarrow \bot \right) = \bot \vee \bot = \bot\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="gyt-2">
-      <div class="fejsor"><span class="szam">2.</span></div>
-      <p>Egy diák szerint <span class="math inline">\(\left( p \Rightarrow q \right) \Leftrightarrow \left( q \Rightarrow p \right)\)</span>. Értéktáblázattal döntsd el, igaza van-e! Ha nincs, írd fel a helyes ekvivalens alakot.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>Nincs igaza (nem tautológia), ellenpélda <span class="math inline">\(p = \top,q = \bot\)</span>. Helyes alak: <span class="math inline">\(\left( p \Rightarrow q \right) \Leftrightarrow \left( \neg q \Rightarrow \neg p \right)\)</span>.</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="gyt-3">
-      <div class="fejsor"><span class="szam">3.</span></div>
-      <p>a) Formalizáld: „Minden valós szám négyzete nemnegatív.” és „Van olyan egész szám, amely osztható 3-mal.” b) Írd fel az első állítás tagadását jelekkel és szavakkal is.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(\forall x \in {\mathbb{R}}\left( x^{2} \geq 0 \right)\)</span>, <span class="math inline">\(\exists x \in {\mathbb{Z}}\left( 3 \mid x \right)\)</span>. b) <span class="math inline">\(\neg\forall x \in {\mathbb{R}}\left( x^{2} \geq 0 \right) \Leftrightarrow \exists x \in {\mathbb{R}}\left( x^{2} &lt; 0 \right)\)</span>; szavakkal: „Van olyan valós szám, amelynek négyzete negatív.” (hamis).</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="gyt-4">
-      <div class="fejsor"><span class="szam">4.</span></div>
-      <p>Írd le szavakkal, majd döntsd el, igaz-e (hamishoz ellenpélda): a) <span class="math inline">\(\forall x \in {\mathbb{N}}\left( x \geq 1 \right)\)</span> b) <span class="math inline">\(\exists x \in {\mathbb{Z}}\left( x + 5 &lt; 0 \right)\)</span> c) <span class="math inline">\(\forall x \in {\mathbb{R}}\left( x^{2} &gt; x \right)\)</span>.</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) „Minden természetes szám legalább 1.” igaz. b) „Van olyan egész szám, amelyre <span class="math inline">\(x + 5 &lt; 0\)</span>.” igaz (<span class="math inline">\(x = - 6\)</span>). c) „Minden valós szám négyzete nagyobb önmagánál.” hamis (<span class="math inline">\(x = 1\)</span>: <span class="math inline">\(1 = 1\)</span>).</p></div>
-      </details>
-    </article>
-    <article class="feladat" id="gyt-5">
-      <div class="fejsor"><span class="szam">5.</span></div>
-      <p>Legyen <span class="math inline">\(P\left( x \right)\)</span>: „<span class="math inline">\(x\)</span> prímszám”, <span class="math inline">\(E\left( x \right)\)</span>: „<span class="math inline">\(x\)</span> páros”. a) Írd le szavakkal: <span class="math inline">\(\forall x \in {\mathbb{N}}\left( P\left( x \right) \land E\left( x \right) \Rightarrow x = 2 \right)\)</span> b) Írd fel jelekkel: „Van olyan prímszám, amely páratlan.”</p>
-      <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) „Minden természetes szám, amely prím és páros, egyenlő 2-vel.” (az egyetlen páros prím a 2) b) <span class="math inline">\(\exists x \in {\mathbb{N}}\left( P\left( x \right) \land \neg E\left( x \right) \right)\)</span>.</p></div>
-      </details>
-    </article>
+    <h2 id="joker-cim">⭐ Joker</h2>
     <article class="feladat" id="joker">
       <div class="fejsor"><span class="szam">★</span><span class="chip joker">Joker</span></div>
-      <p>Joker (bónusz). Egy szigeten csak lovagok és lókötők élnek. <span class="math inline">\(A\)</span> lakos azt mondja: „Legalább egyikünk (<span class="math inline">\(A\)</span> vagy <span class="math inline">\(B\)</span>) lókötő.” Milyen típusú <span class="math inline">\(A\)</span> és <span class="math inline">\(B\)</span>? Indokolj!</p>
+      <p><b>Lovag–lókötő sziget.</b> A lovag mindig igazat mond, a lókötő mindig hazudik. Anna azt mondja: „Én lókötő vagyok, vagy Bea lovag.” Ki micsoda? Indokolj!</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>Joker: ha <span class="math inline">\(A\)</span> lókötő, állítása hamis volna, azaz egyikük sem lókötő – de akkor <span class="math inline">\(A\)</span> sem, ellentmondás. Tehát <span class="math inline">\(A\text{lovag}\)</span> (állítása igaz), és mivel <span class="math inline">\(A\)</span> nem lókötő, a „legalább egyikünk lókötő” miatt <span class="math inline">\(Blókötő\)</span>.</p></div>
+        <div class="bel"><p>Ha Anna lókötő volna, a kijelentése hamis lenne — de a „vagy” csak akkor hamis, ha mindkét tag hamis, ekkor viszont „Anna lókötő” igaz volna: ellentmondás. Tehát <b>Anna lovag</b>; a kijelentése igaz, és mivel „Anna lókötő” hamis, „Bea lovag” igaz → <b>Bea is lovag</b>.</p></div>
       </details>
     </article>
 
     <div class="gyakorolj">
       <span class="ikon">📖</span>
-      <p>Elakadtál? Nézd át a <a href="tananyag-kijelentesek.html">tananyagot</a> vagy a
-      <a href="osszefoglalo.html">tömör összefoglalót</a>.</p>
+      <p>Elakadtál? Nézd át a <a href="tananyag-kijelentesek.html">tananyagot</a> vagy a <a href="osszefoglalo.html">tömör összefoglalót</a>.</p>
     </div>
-
-        <div class="lapozo">
+    <div class="lapozo">
       <a class="elozo" href="tananyag-kovetkeztetesek-kvantorok.html"><span class="irany">← Előző</span><span class="hova">Tautológiák, következtetések, kvantorok</span></a>
       <a class="kov" href="tananyag-halmaz-fogalma.html"><span class="irany">Következő →</span><span class="hova">A halmaz fogalma és részhalmazok</span></a>
     </div>
   </div>
-
   <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
 </main>
-
 <footer class="lablec">
   <div class="lablec-bel">
     <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
     <span>Legyél szvetkós!</span>
   </div>
 </footer>
-
 <script src="../../assets/katex/katex.min.js"></script>
 <script src="../../assets/katex/auto-render.min.js"></script>
 <script>
@@ -374,5 +205,6 @@
   ]});
 </script>
 <script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
 </body>
 </html>
