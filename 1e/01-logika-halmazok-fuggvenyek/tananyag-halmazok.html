@@ -144,6 +144,7 @@ h1,h2,h3,h4,header.top b{font-family:'Space Grotesk','Inter',system-ui,sans-seri
 header.top small a{color:inherit;}
 a.logo{text-decoration:none;}
 </style>
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 </head>
 <body>
 <div id="progress"></div>
@@ -205,34 +206,34 @@ a.logo{text-decoration:none;}
       <div class="box def">
         <div class="t">📘 Definíció — halmaz és elem (alapfogalmak)</div>
         <p>A <b>halmaz</b> bizonyos meghatározott, egymástól különböző dolgok összessége. Egy halmaz akkor adott, ha bármely dologról egyértelműen eldönthető, hogy <b>hozzátartozik-e</b>. A halmaz „tagjait" <b>elemeknek</b> hívjuk.</p>
-        <p>Halmazokat nagybetűvel (<span class="math">A, B, C…</span>), elemeket kisbetűvel (<span class="math">a, b, x…</span>) jelölünk. Ha <span class="math">x</span> eleme <span class="math">A</span>-nak: <span class="math opn">x ∈ A</span>; ha nem: <span class="math opn">x ∉ A</span>.</p>
+        <p>Halmazokat nagybetűvel (<span class="math">\(A, B, C\ldots\)</span>), elemeket kisbetűvel (<span class="math">\(a, b, x\ldots\)</span>) jelölünk. Ha <span class="math">\(x\)</span> eleme <span class="math">\(A\)</span>-nak: <span class="math opn">x ∈ A</span>; ha nem: <span class="math opn">x ∉ A</span>.</p>
       </div>
       <h3 class="sub2">1.1 Kétféleképp adhatsz meg egy halmazt</h3>
       <div class="box thm">
         <div class="t">📝 Megadási módok</div>
-        <p><b>1) Felsorolással</b> (elemek listája): <span class="math">A = {1, 3, 5, 7, 9}</span></p>
-        <p><b>2) Utasítással / halmazépítővel</b> (közös tulajdonság): <span class="math">A = {x | x ∈ ℕ ∧ x páratlan ∧ x &lt; 10}</span></p>
-        <p>A <span class="math">|</span> jel olvasata: <i>„olyan x, amelyre…"</i>. Ugyanaz a halmaz sokféleképp leírható!</p>
+        <p><b>1) Felsorolással</b> (elemek listája): <span class="math">\(A = \{1, 3, 5, 7, 9\}\)</span></p>
+        <p><b>2) Utasítással / halmazépítővel</b> (közös tulajdonság): <span class="math">\(A = \{x | x \in  \mathbb{N} \land  x \text{páratlan }\land  x &lt; 10\}\)</span></p>
+        <p>A <span class="math">\(|\)</span> jel olvasata: <i>„olyan x, amelyre…"</i>. Ugyanaz a halmaz sokféleképp leírható!</p>
       </div>
       <div class="box def">
         <div class="t">🔢 A leggyakoribb számhalmazok</div>
-        <p><span class="math">ℕ</span> = természetes számok <span class="math">= {1, 2, 3, …}</span> · <span class="math">ℤ</span> = egészek · <span class="math">ℚ</span> = racionálisak · <span class="math">ℝ</span> = valósak.</p>
+        <p><span class="math">\(\mathbb{N}\)</span> = természetes számok <span class="math">\(= \{1, 2, 3, \ldots \}\)</span> · <span class="math">\(\mathbb{Z}\)</span> = egészek · <span class="math">\(\mathbb{Q}\)</span> = racionálisak · <span class="math">\(\mathbb{R}\)</span> = valósak.</p>
         <p class="pill">Megegyezés ebben a tananyagban: ℕ a pozitív egészekkel kezdődik (1-től).</p>
       </div>
       <div class="box ex">
         <div class="t">✏️ Példa</div>
-        <p><span class="math">C = {a „matematika" szó betűi} = {m, a, t, e, i, k}</span> — az ismétlődő betűk csak egyszer számítanak, így 6 eleme van.</p>
-        <p>Az elemszámot <span class="math">|C| = 6</span> jelöli.</p>
+        <p><span class="math">\(C = \{a “\text{matematika}"\text{ szó }\text{betűi}\} = \{m, a, t, e, i, k\}\)</span> — az ismétlődő betűk csak egyszer számítanak, így 6 eleme van.</p>
+        <p>Az elemszámot <span class="math">\(|C| = 6\)</span> jelöli.</p>
       </div>
       <div class="box trap">
         <div class="t">⚠️ Csapda!</div>
-        <p>A halmazban a <b>sorrend</b> és az <b>ismétlés</b> nem számít: <span class="math">{a, b, c} = {c, a, b} = {a, a, b, c}</span>. Két halmaz akkor egyenlő, ha <b>pontosan ugyanazok az elemeik</b>.</p>
+        <p>A halmazban a <b>sorrend</b> és az <b>ismétlés</b> nem számít: <span class="math">\(\{a, b, c\} = \{c, a, b\} = \{a, a, b, c\}\)</span>. Két halmaz akkor egyenlő, ha <b>pontosan ugyanazok az elemeik</b>.</p>
       </div>
       <div class="quiz" data-answer="1">
-        <div class="q"><span class="ic">🧩</span> Melyik halmazépítő adja meg a <span class="math">{2, 4, 6, 8}</span> halmazt?</div>
-        <label><input type="radio" name="q1"> <span class="math">{x | x ∈ ℕ ∧ x &lt; 8}</span></label>
-        <label><input type="radio" name="q1"> <span class="math">{2x | x ∈ ℕ ∧ x ≤ 4}</span></label>
-        <label><input type="radio" name="q1"> <span class="math">{x | x ∈ ℤ ∧ x páros}</span></label>
+        <div class="q"><span class="ic">🧩</span> Melyik halmazépítő adja meg a <span class="math">\(\{2, 4, 6, 8\}\)</span> halmazt?</div>
+        <label><input type="radio" name="q1"> <span class="math">\(\{x | x \in  \mathbb{N} \land  x &lt; 8\}\)</span></label>
+        <label><input type="radio" name="q1"> <span class="math">\(\{2x | x \in  \mathbb{N} \land  x \leq  4\}\)</span></label>
+        <label><input type="radio" name="q1"> <span class="math">\(\{x | x \in  \mathbb{Z} \land  x \text{páros}\}\)</span></label>
         <button class="btn" onclick="checkQuiz(this)">Ellenőrzés</button>
         <div class="fb"></div>
       </div>
@@ -243,32 +244,32 @@ a.logo{text-decoration:none;}
       <h2 class="sec"><span class="dot">2</span>Részhalmaz, üres halmaz, hatványhalmaz</h2>
       <div class="box def">
         <div class="t">📘 Egyenlőség és részhalmaz</div>
-        <p><b>Egyenlőség:</b> <span class="math">A = B ⇔ (∀x)(x ∈ A ⇔ x ∈ B)</span> — pontosan ugyanazok az elemeik.</p>
-        <p><b>Részhalmaz:</b> <span class="math">A ⊆ B ⇔ (∀x)(x ∈ A ⇒ x ∈ B)</span> — A minden eleme B-nek is eleme.</p>
-        <p><b>Valódi részhalmaz:</b> <span class="math">A ⊂ B ⇔ (A ⊆ B ∧ A ≠ B)</span> — részhalmaz, de nem az egész.</p>
+        <p><b>Egyenlőség:</b> <span class="math">\(A = B \Leftrightarrow  (\forall x)(x \in  A \Leftrightarrow  x \in  B)\)</span> — pontosan ugyanazok az elemeik.</p>
+        <p><b>Részhalmaz:</b> <span class="math">\(A \subseteq  B \Leftrightarrow  (\forall x)(x \in  A \Rightarrow  x \in  B)\)</span> — A minden eleme B-nek is eleme.</p>
+        <p><b>Valódi részhalmaz:</b> <span class="math">\(A \subset  B \Leftrightarrow  (A \subseteq  B \land  A \neq  B)\)</span> — részhalmaz, de nem az egész.</p>
       </div>
       <div class="box thm">
         <div class="t">📐 Fontos tények</div>
-        <p>Minden halmaz részhalmaza önmagának: <span class="math">A ⊆ A</span>. A számhalmazok láncot alkotnak: <span class="math">ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ</span>.</p>
+        <p>Minden halmaz részhalmaza önmagának: <span class="math">\(A \subseteq  A\)</span>. A számhalmazok láncot alkotnak: <span class="math">\(\mathbb{N} \subset  \mathbb{Z} \subset  \mathbb{Q} \subset  \mathbb{R}\)</span>.</p>
       </div>
       <div class="box def">
         <div class="t">∅ Üres halmaz és univerzum</div>
-        <p><b>Üres halmaz</b> <span class="math">∅ = { }</span>: nincs eleme. Minden halmaznak részhalmaza: <span class="math">∅ ⊆ A</span>.</p>
-        <p><b>Univerzum (alaphalmaz)</b> <span class="math">U</span>: az a „keret", amelyen belül dolgozunk (minden vizsgált halmaz része).</p>
+        <p><b>Üres halmaz</b> <span class="math">\(\varnothing  = \{ \}\)</span>: nincs eleme. Minden halmaznak részhalmaza: <span class="math">\(\varnothing  \subseteq  A\)</span>.</p>
+        <p><b>Univerzum (alaphalmaz)</b> <span class="math">\(U\)</span>: az a „keret", amelyen belül dolgozunk (minden vizsgált halmaz része).</p>
       </div>
       <div class="box def">
         <div class="t">🧰 Hatványhalmaz</div>
-        <p>Az <span class="math">A</span> <b>hatványhalmaza</b> az összes részhalmazának halmaza: <span class="math">𝒫(A) = {X | X ⊆ A}</span>.</p>
-        <p>Ha <span class="math">A</span>-nak <span class="math">n</span> eleme van, akkor <span class="math">|𝒫(A)| = 2ⁿ</span>.</p>
+        <p>Az <span class="math">\(A\)</span> <b>hatványhalmaza</b> az összes részhalmazának halmaza: <span class="math">\(\mathcal{P}(A) = \{X | X \subseteq  A\}\)</span>.</p>
+        <p>Ha <span class="math">\(A\)</span>-nak <span class="math">\(n\)</span> eleme van, akkor <span class="math">\(|\mathcal{P}(A)| = 2^{n}\)</span>.</p>
       </div>
       <div class="box ex">
         <div class="t">✏️ Példa — 𝒫({a, b, c})</div>
-        <p><span class="math">𝒫({a,b,c}) = {∅, {a}, {b}, {c}, {a,b}, {a,c}, {b,c}, {a,b,c}}</span> — összesen <span class="math">2³ = 8</span> részhalmaz.</p>
+        <p><span class="math">\(\mathcal{P}(\{a,b,c\}) = \{\varnothing , \{a\}, \{b\}, \{c\}, \{a,b\}, \{a,c\}, \{b,c\}, \{a,b,c\}\}\)</span> — összesen <span class="math">\(2^{3} = 8\)</span> részhalmaz.</p>
       </div>
       <div class="box trap">
         <div class="t">⚠️ Csapda — ∈ vagy ⊆?</div>
-        <p><span class="math">2 ∈ {1,2,3}</span> ✅ (2 egy <i>elem</i>), de <span class="math">{2} ⊆ {1,2,3}</span> ✅ (a <span class="math">{2}</span> egy <i>részhalmaz</i>). Ezzel szemben <span class="math">{2} ∈ {1,2,3}</span> ❌!</p>
-        <p>Szintén: <span class="math">∅ ≠ {∅}</span> — az üres halmaznak nincs eleme, a <span class="math">{∅}</span>-nak viszont egy (maga az ∅).</p>
+        <p><span class="math">\(2 \in  \{1,2,3\}\)</span> ✅ (2 egy <i>elem</i>), de <span class="math">\(\{2\} \subseteq  \{1,2,3\}\)</span> ✅ (a <span class="math">\(\{2\}\)</span> egy <i>részhalmaz</i>). Ezzel szemben <span class="math">\(\{2\} \in  \{1,2,3\}\)</span> ❌!</p>
+        <p>Szintén: <span class="math">\(\varnothing  \neq  \{\varnothing \}\)</span> — az üres halmaznak nincs eleme, a <span class="math">\(\{\varnothing \}\)</span>-nak viszont egy (maga az ∅).</p>
       </div>
       <div class="quiz" data-answer="2">
         <div class="q"><span class="ic">🧩</span> Hány részhalmaza van egy 4 elemű halmaznak?</div>
@@ -287,33 +288,33 @@ a.logo{text-decoration:none;}
 
       <h3 class="sub2">3.1 Unió (∪) — „VAGY"</h3>
       <div class="box def"><div class="t">📘 Definíció</div>
-        <p><span class="math">A ∪ B = {x | x ∈ A ∨ x ∈ B}</span> — minden elem, ami legalább az egyik halmazban benne van.</p></div>
+        <p><span class="math">\(A \cup  B = \{x | x \in  A \lor  x \in  B\}\)</span> — minden elem, ami legalább az egyik halmazban benne van.</p></div>
       <figure class="venn"><div class="vbox"><svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" role="img"><defs></defs><rect x="6" y="6" width="228" height="148" rx="12" fill="#fbfbff" stroke="#c9cfe0" stroke-width="2"/><circle cx="95" cy="86" r="52" fill="#ff5da2" opacity="0.5"/><circle cx="145" cy="86" r="52" fill="#ff5da2" opacity="0.5"/><circle cx="95" cy="86" r="52" fill="none" stroke="#5b4be0" stroke-width="2.5"/><circle cx="145" cy="86" r="52" fill="none" stroke="#5b4be0" stroke-width="2.5"/><text x="20" y="28" font-size="15" fill="#8a93a8" font-style="italic" font-family="Cambria Math,serif">U</text><text x="52" y="92" font-size="19" fill="#3a2fb0" font-weight="700" font-family="Cambria Math,serif">A</text><text x="176" y="92" font-size="19" fill="#3a2fb0" font-weight="700" font-family="Cambria Math,serif">B</text></svg></div><figcaption>A ∪ B — ami A-ban VAGY B-ben van</figcaption></figure>
 
       <h3 class="sub2">3.2 Metszet (∩) — „ÉS"</h3>
       <div class="box def"><div class="t">📘 Definíció</div>
-        <p><span class="math">A ∩ B = {x | x ∈ A ∧ x ∈ B}</span> — a közös elemek. Ha <span class="math">A ∩ B = ∅</span>, a két halmaz <b>diszjunkt</b> (nincs közös elemük).</p></div>
+        <p><span class="math">\(A \cap  B = \{x | x \in  A \land  x \in  B\}\)</span> — a közös elemek. Ha <span class="math">\(A \cap  B = \varnothing\)</span>, a két halmaz <b>diszjunkt</b> (nincs közös elemük).</p></div>
       <figure class="venn"><div class="vbox"><svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" role="img"><defs><clipPath id="cA_inter"><circle cx="95" cy="86" r="52"/></clipPath></defs><rect x="6" y="6" width="228" height="148" rx="12" fill="#fbfbff" stroke="#c9cfe0" stroke-width="2"/><circle cx="145" cy="86" r="52" fill="#ff5da2" opacity="0.6" clip-path="url(#cA_inter)"/><circle cx="95" cy="86" r="52" fill="none" stroke="#5b4be0" stroke-width="2.5"/><circle cx="145" cy="86" r="52" fill="none" stroke="#5b4be0" stroke-width="2.5"/><text x="20" y="28" font-size="15" fill="#8a93a8" font-style="italic" font-family="Cambria Math,serif">U</text><text x="52" y="92" font-size="19" fill="#3a2fb0" font-weight="700" font-family="Cambria Math,serif">A</text><text x="176" y="92" font-size="19" fill="#3a2fb0" font-weight="700" font-family="Cambria Math,serif">B</text></svg></div><figcaption>A ∩ B — ami A-ban ÉS B-ben is benne van</figcaption></figure>
 
       <h3 class="sub2">3.3 Különbség (∖) — „csak az egyikben"</h3>
       <div class="box def"><div class="t">📘 Definíció</div>
-        <p><span class="math">A ∖ B = {x | x ∈ A ∧ x ∉ B}</span> — ami A-ban van, de B-ben nincs. Vigyázz: <span class="math">A ∖ B ≠ B ∖ A</span>!</p></div>
+        <p><span class="math">\(A \setminus  B = \{x | x \in  A \land  x \notin  B\}\)</span> — ami A-ban van, de B-ben nincs. Vigyázz: <span class="math">\(A \setminus  B \neq  B \setminus  A\)</span>!</p></div>
       <div class="vennrow"><figure class="venn"><div class="vbox"><svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" role="img"><defs><clipPath id="cA_adiff"><circle cx="95" cy="86" r="52"/></clipPath></defs><rect x="6" y="6" width="228" height="148" rx="12" fill="#fbfbff" stroke="#c9cfe0" stroke-width="2"/><path d="M6,6 H234 V154 H6 Z M93,86 a52,52 0 1,0 104,0 a52,52 0 1,0 -104,0 Z" fill-rule="evenodd" fill="#ff5da2" opacity="0.55" clip-path="url(#cA_adiff)"/><circle cx="95" cy="86" r="52" fill="none" stroke="#5b4be0" stroke-width="2.5"/><circle cx="145" cy="86" r="52" fill="none" stroke="#5b4be0" stroke-width="2.5"/><text x="20" y="28" font-size="15" fill="#8a93a8" font-style="italic" font-family="Cambria Math,serif">U</text><text x="52" y="92" font-size="19" fill="#3a2fb0" font-weight="700" font-family="Cambria Math,serif">A</text><text x="176" y="92" font-size="19" fill="#3a2fb0" font-weight="700" font-family="Cambria Math,serif">B</text></svg></div><figcaption>A ∖ B — A-ban, de B-ben NEM</figcaption></figure><figure class="venn"><div class="vbox"><svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" role="img"><defs><clipPath id="cB_bdiff"><circle cx="145" cy="86" r="52"/></clipPath></defs><rect x="6" y="6" width="228" height="148" rx="12" fill="#fbfbff" stroke="#c9cfe0" stroke-width="2"/><path d="M6,6 H234 V154 H6 Z M43,86 a52,52 0 1,0 104,0 a52,52 0 1,0 -104,0 Z" fill-rule="evenodd" fill="#ff5da2" opacity="0.55" clip-path="url(#cB_bdiff)"/><circle cx="95" cy="86" r="52" fill="none" stroke="#5b4be0" stroke-width="2.5"/><circle cx="145" cy="86" r="52" fill="none" stroke="#5b4be0" stroke-width="2.5"/><text x="20" y="28" font-size="15" fill="#8a93a8" font-style="italic" font-family="Cambria Math,serif">U</text><text x="52" y="92" font-size="19" fill="#3a2fb0" font-weight="700" font-family="Cambria Math,serif">A</text><text x="176" y="92" font-size="19" fill="#3a2fb0" font-weight="700" font-family="Cambria Math,serif">B</text></svg></div><figcaption>B ∖ A — B-ben, de A-ban NEM</figcaption></figure></div>
 
       <h3 class="sub2">3.4 Szimmetrikus különbség (△)</h3>
       <div class="box def"><div class="t">📘 Definíció</div>
-        <p><span class="math">A △ B = (A ∖ B) ∪ (B ∖ A)</span> — ami <b>pontosan az egyikben</b> van (a közös részt kihagyjuk).</p></div>
+        <p><span class="math">\(A \,\triangle\, B = (A \setminus  B) \cup  (B \setminus  A)\)</span> — ami <b>pontosan az egyikben</b> van (a közös részt kihagyjuk).</p></div>
       <figure class="venn"><div class="vbox"><svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" role="img"><defs></defs><rect x="6" y="6" width="228" height="148" rx="12" fill="#fbfbff" stroke="#c9cfe0" stroke-width="2"/><path d="M43,86 a52,52 0 1,0 104,0 a52,52 0 1,0 -104,0 Z M93,86 a52,52 0 1,0 104,0 a52,52 0 1,0 -104,0 Z" fill-rule="evenodd" fill="#ff5da2" opacity="0.55"/><circle cx="95" cy="86" r="52" fill="none" stroke="#5b4be0" stroke-width="2.5"/><circle cx="145" cy="86" r="52" fill="none" stroke="#5b4be0" stroke-width="2.5"/><text x="20" y="28" font-size="15" fill="#8a93a8" font-style="italic" font-family="Cambria Math,serif">U</text><text x="52" y="92" font-size="19" fill="#3a2fb0" font-weight="700" font-family="Cambria Math,serif">A</text><text x="176" y="92" font-size="19" fill="#3a2fb0" font-weight="700" font-family="Cambria Math,serif">B</text></svg></div><figcaption>A △ B — pontosan az egyik halmazban</figcaption></figure>
 
       <h3 class="sub2">3.5 Komplementer (kiegészítő halmaz)</h3>
       <div class="box def"><div class="t">📘 Definíció</div>
-        <p>Ha <span class="math">A ⊆ U</span>, akkor A komplementere az univerzumra nézve: <span class="math"><span class="ov">A</span> = 𝒞ᵤ(A) = U ∖ A</span> — minden, ami <b>nincs</b> A-ban.</p></div>
+        <p>Ha <span class="math">\(A \subseteq  U\)</span>, akkor A komplementere az univerzumra nézve: <span class="math">\(\overline{A} = \mathcal{C}_{U}(A) = U \setminus  A\)</span> — minden, ami <b>nincs</b> A-ban.</p></div>
       <figure class="venn"><div class="vbox"><svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" role="img"><rect x="6" y="6" width="228" height="148" rx="12" fill="#fbfbff" stroke="#c9cfe0" stroke-width="2"/><path d="M6,6 H234 V154 H6 Z M66,86 a54,54 0 1,0 108,0 a54,54 0 1,0 -108,0 Z" fill-rule="evenodd" fill="#ff5da2" opacity="0.5"/><circle cx="120" cy="86" r="54" fill="none" stroke="#5b4be0" stroke-width="2.5"/><text x="20" y="28" font-size="15" fill="#8a93a8" font-style="italic" font-family="Cambria Math,serif">U</text><text x="112" y="92" font-size="19" fill="#3a2fb0" font-weight="700" font-family="Cambria Math,serif">A</text></svg></div><figcaption>Ā = U ∖ A — minden, ami A-n KÍVÜL van</figcaption></figure>
 
       <div class="box ex">
         <div class="t">✏️ Kidolgozott példa</div>
-        <p>Legyen <span class="math">A = {1,2,3,4,5}</span>, <span class="math">B = {2,4,6,8}</span>. Ekkor:</p>
-        <p><span class="math">A ∪ B = {1,2,3,4,5,6,8}</span> · <span class="math">A ∩ B = {2,4}</span> · <span class="math">A ∖ B = {1,3,5}</span> · <span class="math">B ∖ A = {6,8}</span> · <span class="math">A △ B = {1,3,5,6,8}</span></p>
+        <p>Legyen <span class="math">\(A = \{1,2,3,4,5\}\)</span>, <span class="math">\(B = \{2,4,6,8\}\)</span>. Ekkor:</p>
+        <p><span class="math">\(A \cup  B = \{1,2,3,4,5,6,8\}\)</span> · <span class="math">\(A \cap  B = \{2,4\}\)</span> · <span class="math">\(A \setminus  B = \{1,3,5\}\)</span> · <span class="math">\(B \setminus  A = \{6,8\}\)</span> · <span class="math">\(A \,\triangle\, B = \{1,3,5,6,8\}\)</span></p>
       </div>
 
       <figure>
@@ -322,10 +323,10 @@ a.logo{text-decoration:none;}
       </figure>
 
       <div class="quiz" data-answer="0">
-        <div class="q"><span class="ic">🧩</span> Ha <span class="math">A = {1,2,3,4}</span> és <span class="math">B = {3,4,5,6}</span>, mennyi <span class="math">A ∖ B</span>?</div>
-        <label><input type="radio" name="q3"> <span class="math">{1, 2}</span></label>
-        <label><input type="radio" name="q3"> <span class="math">{3, 4}</span></label>
-        <label><input type="radio" name="q3"> <span class="math">{5, 6}</span></label>
+        <div class="q"><span class="ic">🧩</span> Ha <span class="math">\(A = \{1,2,3,4\}\)</span> és <span class="math">\(B = \{3,4,5,6\}\)</span>, mennyi <span class="math">\(A \setminus  B\)</span>?</div>
+        <label><input type="radio" name="q3"> <span class="math">\(\{1, 2\}\)</span></label>
+        <label><input type="radio" name="q3"> <span class="math">\(\{3, 4\}\)</span></label>
+        <label><input type="radio" name="q3"> <span class="math">\(\{5, 6\}\)</span></label>
         <button class="btn" onclick="checkQuiz(this)">Ellenőrzés</button>
         <div class="fb"></div>
       </div>
@@ -343,27 +344,27 @@ a.logo{text-decoration:none;}
       </div>
       <div class="box thm">
         <div class="t">⭐ De Morgan-azonosságok (a sztárok!)</div>
-        <p><span class="math"><span class="ov">A ∪ B</span> = <span class="ov">A</span> ∩ <span class="ov">B</span></span> &nbsp;&nbsp;és&nbsp;&nbsp; <span class="math"><span class="ov">A ∩ B</span> = <span class="ov">A</span> ∪ <span class="ov">B</span></span></p>
-        <p>Szavakban: az <b>unió komplementere</b> = a komplementerek <b>metszete</b>, és fordítva. (Ugyanaz a szabály, mint a logikában a <span class="math">¬(p ∨ q) = ¬p ∧ ¬q</span>!)</p>
+        <p><span class="math">\(\overline{A \cup  B} = \overline{A} \cap  \overline{B}\)</span> &nbsp;&nbsp;és&nbsp;&nbsp; <span class="math">\(\overline{A \cap  B} = \overline{A} \cup  \overline{B}\)</span></p>
+        <p>Szavakban: az <b>unió komplementere</b> = a komplementerek <b>metszete</b>, és fordítva. (Ugyanaz a szabály, mint a logikában a <span class="math">\(\lnot (p \lor  q) = \lnot p \land  \lnot q\)</span>!)</p>
       </div>
       <details>
         <summary>🔎 Nézzük meg konkrét halmazon (bizonyítás-ízelítő)</summary>
         <div class="inside">
-          <p><span class="math">U = {1,2,3,4,5,6}</span>, <span class="math">A = {1,2,3}</span>, <span class="math">B = {3,4,5}</span>.</p>
-          <p><span class="math">A ∪ B = {1,2,3,4,5}</span> ⟹ <span class="math"><span class="ov">A ∪ B</span> = {6}</span>.</p>
-          <p><span class="math"><span class="ov">A</span> = {4,5,6}</span>, <span class="math"><span class="ov">B</span> = {1,2,6}</span> ⟹ <span class="math"><span class="ov">A</span> ∩ <span class="ov">B</span> = {6}</span>. ✅ Ugyanaz!</p>
+          <p><span class="math">\(U = \{1,2,3,4,5,6\}\)</span>, <span class="math">\(A = \{1,2,3\}\)</span>, <span class="math">\(B = \{3,4,5\}\)</span>.</p>
+          <p><span class="math">\(A \cup  B = \{1,2,3,4,5\}\)</span> ⟹ <span class="math">\(\overline{A \cup  B} = \{6\}\)</span>.</p>
+          <p><span class="math">\(\overline{A} = \{4,5,6\}\)</span>, <span class="math">\(\overline{B} = \{1,2,6\}\)</span> ⟹ <span class="math">\(\overline{A} \cap  \overline{B} = \{6\}\)</span>. ✅ Ugyanaz!</p>
         </div>
       </details>
       <div class="box ex">
         <div class="t">🧮 Számolós alkalmazás — a „logikai szita"</div>
-        <p>Két halmaz elemszáma: <span class="math">|A ∪ B| = |A| + |B| − |A ∩ B|</span>. (A közös részt egyszer levonjuk, hogy ne számoljuk kétszer.)</p>
+        <p>Két halmaz elemszáma: <span class="math">\(|A \cup  B| = |A| + |B| - |A \cap  B|\)</span>. (A közös részt egyszer levonjuk, hogy ne számoljuk kétszer.)</p>
         <p>Ez a képlet oldja meg a „hányan járnak fociba <i>és</i> úszásba" típusú feladatokat — Venn-diagrammal a legkönnyebb!</p>
       </div>
       <div class="quiz" data-answer="1">
-        <div class="q"><span class="ic">🧩</span> De Morgan szerint <span class="math"><span class="ov">A ∩ B</span></span> egyenlő…</div>
-        <label><input type="radio" name="q4"> <span class="math"><span class="ov">A</span> ∩ <span class="ov">B</span></span></label>
-        <label><input type="radio" name="q4"> <span class="math"><span class="ov">A</span> ∪ <span class="ov">B</span></span></label>
-        <label><input type="radio" name="q4"> <span class="math">A ∪ B</span></label>
+        <div class="q"><span class="ic">🧩</span> De Morgan szerint <span class="math">\(\overline{A \cap  B}\)</span> egyenlő…</div>
+        <label><input type="radio" name="q4"> <span class="math">\(\overline{A} \cap  \overline{B}\)</span></label>
+        <label><input type="radio" name="q4"> <span class="math">\(\overline{A} \cup  \overline{B}\)</span></label>
+        <label><input type="radio" name="q4"> <span class="math">\(A \cup  B\)</span></label>
         <button class="btn" onclick="checkQuiz(this)">Ellenőrzés</button>
         <div class="fb"></div>
       </div>
@@ -375,23 +376,23 @@ a.logo{text-decoration:none;}
       <p class="lead">Innen ered a koordináta-rendszer! René Descartes (1596–1650) nevét viseli.</p>
       <div class="box def">
         <div class="t">📘 Rendezett pár</div>
-        <p>A <span class="math">(x, y)</span> <b>rendezett pár</b>-ban számít a sorrend. Egyenlőség: <span class="math">(x, y) = (a, b) ⇔ x = a ∧ y = b</span>. Ezért <span class="math">(1, 2) ≠ (2, 1)</span>.</p>
+        <p>A <span class="math">\((x, y)\)</span> <b>rendezett pár</b>-ban számít a sorrend. Egyenlőség: <span class="math">\((x, y) = (a, b) \Leftrightarrow  x = a \land  y = b\)</span>. Ezért <span class="math">\((1, 2) \neq  (2, 1)\)</span>.</p>
       </div>
       <div class="box def">
         <div class="t">📘 Definíció — Descartes-szorzat</div>
-        <p><span class="math">A × B = {(x, y) | x ∈ A ∧ y ∈ B}</span> — az <b>összes</b> rendezett pár, ahol az első tag A-ból, a második B-ből való.</p>
-        <p>Elemszám: <span class="math">|A × B| = |A| · |B|</span>. Nem kommutatív: <span class="math">A × B ≠ B × A</span>.</p>
+        <p><span class="math">\(A \times  B = \{(x, y) | x \in  A \land  y \in  B\}\)</span> — az <b>összes</b> rendezett pár, ahol az első tag A-ból, a második B-ből való.</p>
+        <p>Elemszám: <span class="math">\(|A \times  B| = |A| \cdot  |B|\)</span>. Nem kommutatív: <span class="math">\(A \times  B \neq  B \times  A\)</span>.</p>
       </div>
       <div class="box ex">
         <div class="t">✏️ Példa</div>
-        <p><span class="math">A = {1, 2}</span>, <span class="math">B = {a, b, c}</span> ⟹ <span class="math">A × B = {(1,a),(1,b),(1,c),(2,a),(2,b),(2,c)}</span> — összesen <span class="math">2 · 3 = 6</span> pár.</p>
+        <p><span class="math">\(A = \{1, 2\}\)</span>, <span class="math">\(B = \{a, b, c\}\)</span> ⟹ <span class="math">\(A \times  B = \{(1,a),(1,b),(1,c),(2,a),(2,b),(2,c)\}\)</span> — összesen <span class="math">\(2 \cdot  3 = 6\)</span> pár.</p>
       </div>
       <div class="box fun">
         <div class="t">💡 Jó tudni</div>
-        <p><span class="math">ℝ × ℝ = ℝ²</span> a teljes koordinátasík: minden <span class="math">(x, y)</span> pár a sík egy pontja. A halmazok szorzata tehát szó szerint „koordináta-rendszert gyárt". 📈</p>
+        <p><span class="math">\(\mathbb{R} \times  \mathbb{R} = \mathbb{R}^{2}\)</span> a teljes koordinátasík: minden <span class="math">\((x, y)\)</span> pár a sík egy pontja. A halmazok szorzata tehát szó szerint „koordináta-rendszert gyárt". 📈</p>
       </div>
       <div class="quiz" data-answer="2">
-        <div class="q"><span class="ic">🧩</span> Ha <span class="math">|A| = 3</span> és <span class="math">|B| = 4</span>, mennyi <span class="math">|A × B|</span>?</div>
+        <div class="q"><span class="ic">🧩</span> Ha <span class="math">\(|A| = 3\)</span> és <span class="math">\(|B| = 4\)</span>, mennyi <span class="math">\(|A \times  B|\)</span>?</div>
         <label><input type="radio" name="q5"> 7</label>
         <label><input type="radio" name="q5"> 34</label>
         <label><input type="radio" name="q5"> 12</label>
@@ -406,7 +407,7 @@ a.logo{text-decoration:none;}
       <p class="lead">A reláció megmondja, hogy egy halmaz elemei hogyan „kapcsolódnak" egymáshoz — például: „osztója", „kisebb", „egyenlő".</p>
       <div class="box def">
         <div class="t">📘 Definíció — reláció</div>
-        <p>Az <span class="math">A</span> halmazon értelmezett <b>reláció</b> az <span class="math">A × A</span> egy részhalmaza: <span class="math">ρ ⊆ A × A</span>. Ha <span class="math">(x, y) ∈ ρ</span>, azt írjuk: <span class="math">x ρ y</span> („x relációban van y-nal").</p>
+        <p>Az <span class="math">\(A\)</span> halmazon értelmezett <b>reláció</b> az <span class="math">\(A \times  A\)</span> egy részhalmaza: <span class="math">\(\rho  \subseteq  A \times  A\)</span>. Ha <span class="math">\((x, y) \in  \rho\)</span>, azt írjuk: <span class="math">\(x \rho  y\)</span> („x relációban van y-nal").</p>
       </div>
       <div class="box thm">
         <div class="t">🎨 Ábrázolás háromféleképp</div>
@@ -414,23 +415,23 @@ a.logo{text-decoration:none;}
       </div>
       <div class="box def">
         <div class="t">📘 A négy fő tulajdonság</div>
-        <p><b>Reflexív (R):</b> <span class="math">(∀x)(x ρ x)</span> — minden elem relációban van önmagával.</p>
-        <p><b>Szimmetrikus (S):</b> <span class="math">(∀x,y)(x ρ y ⇒ y ρ x)</span> — a nyíl „visszafelé" is megy.</p>
-        <p><b>Antiszimmetrikus (AS):</b> <span class="math">(∀x,y)(x ρ y ∧ y ρ x ⇒ x = y)</span>.</p>
-        <p><b>Tranzitív (T):</b> <span class="math">(∀x,y,z)(x ρ y ∧ y ρ z ⇒ x ρ z)</span> — a nyilak „láncolhatók".</p>
+        <p><b>Reflexív (R):</b> <span class="math">\((\forall x)(x \rho  x)\)</span> — minden elem relációban van önmagával.</p>
+        <p><b>Szimmetrikus (S):</b> <span class="math">\((\forall x,y)(x \rho  y \Rightarrow  y \rho  x)\)</span> — a nyíl „visszafelé" is megy.</p>
+        <p><b>Antiszimmetrikus (AS):</b> <span class="math">\((\forall x,y)(x \rho  y \land  y \rho  x \Rightarrow  x = y)\)</span>.</p>
+        <p><b>Tranzitív (T):</b> <span class="math">\((\forall x,y,z)(x \rho  y \land  y \rho  z \Rightarrow  x \rho  z)\)</span> — a nyilak „láncolhatók".</p>
       </div>
       <div class="box thm">
         <div class="t">⭐ Két különleges reláció</div>
         <p><b>Ekvivalenciareláció</b> = <b>R + S + T</b> (pl. egyenlőség, párhuzamosság, egybevágóság). Az elemeket <b>ekvivalenciaosztályokba</b> sorolja.</p>
-        <p><b>Rendezési reláció</b> = <b>R + AS + T</b> (pl. <span class="math">≤</span>, <span class="math">⊆</span>, „osztója").</p>
+        <p><b>Rendezési reláció</b> = <b>R + AS + T</b> (pl. <span class="math">\(\leq\)</span>, <span class="math">\(\subseteq\)</span>, „osztója").</p>
       </div>
       <div class="box ex">
         <div class="t">✏️ Példa</div>
-        <p><span class="math">A = {−2,−1,0,1,2}</span>, és <span class="math">x ρ y ⇔ |x| = |y|</span>. Elemei: <span class="math">{(−2,−2),(−2,2),(2,−2),(2,2),(−1,−1),(−1,1),(1,−1),(1,1),(0,0)}</span>.</p>
+        <p><span class="math">\(A = \{-2,-1,0,1,2\}\)</span>, és <span class="math">\(x \rho  y \Leftrightarrow  |x| = |y|\)</span>. Elemei: <span class="math">\(\{(-2,-2),(-2,2),(2,-2),(2,2),(-1,-1),(-1,1),(1,-1),(1,1),(0,0)\}\)</span>.</p>
         <p>Ez <b>R, S, T</b> → <b>ekvivalenciareláció</b> (az azonos abszolút értékű számok kerülnek egy osztályba).</p>
       </div>
       <div class="quiz" data-answer="0">
-        <div class="q"><span class="ic">🧩</span> Az „<span class="math">x osztója y-nak</span>" reláció (ℕ-en) milyen típusú?</div>
+        <div class="q"><span class="ic">🧩</span> Az „<span class="math">\(x \text{osztója }y-\text{nak}\)</span>" reláció (ℕ-en) milyen típusú?</div>
         <label><input type="radio" name="q6"> Rendezési (R, AS, T)</label>
         <label><input type="radio" name="q6"> Ekvivalencia (R, S, T)</label>
         <label><input type="radio" name="q6"> Egyik sem</label>
@@ -516,6 +517,14 @@ function checkQuiz(btn){
 document.querySelectorAll('nav.toc a').forEach(function(a){
   a.addEventListener('click',function(){document.querySelector('nav.toc').classList.remove('open');});
 });
+</script>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
 </script>
 </body>
 </html>
