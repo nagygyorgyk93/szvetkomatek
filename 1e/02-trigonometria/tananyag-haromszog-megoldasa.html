@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A derékszögű háromszög megoldása és alkalmazásai — tananyag | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Trigonometria</a> ›
+  <span class="itt">A derékszögű háromszög megoldása és alkalmazásai — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A derékszögű háromszög megoldása és alkalmazásai</h1>
+  <p class="alcim">Adott adatokból az összes hiányzó oldal és szög — és mindez a valóságra alkalmazva (magasság-, távolságmérés).</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">🎬 Miért tanuljuk?</h2>
+    <p>A derékszögű háromszöget <b>megoldani</b> annyit jelent: néhány adott adatból meghatározzuk az <b>összes</b> hiányzó oldalt és szöget. Ez a trigonometria leggyakorlatibb haszna — így mérünk meg magasságokat és távolságokat, amelyekhez közvetlenül nem férünk hozzá.</p>
+    <h2 id="s1">Az alapelv</h2>
+    <p>Három lépés: <b>1.</b> Rajzold le a háromszöget, és jelöld be az adott adatokat. <b>2.</b> Válaszd azt a szögfüggvényt, amelyik az <i>adott</i> és a <i>keresett</i> oldalt/szöget köti össze. <b>3.</b> Rendezd az egyenletet a keresettre. A hiányzó szöget gyakran a <span class="math inline">\(\alpha+\beta=90^\circ\)</span> adja, a hiányzó oldalt olykor a Pitagorasz-tétel.</p>
+    <div class="doboz pelda" id="pelda-atfogo-szog">
+      <p class="cim"><span class="ikon">✏️</span> Példa</p>
+      Oldd meg a háromszöget: átfogó <span class="math inline">\(c=14\)</span> cm, <span class="math inline">\(\alpha=24^\circ\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(a=c\sin\alpha=14\sin 24^\circ\approx 5{,}69\)</span> cm; <span class="math inline">\(b=c\cos\alpha=14\cos 24^\circ\approx 12{,}79\)</span> cm; <span class="math inline">\(\beta=90^\circ-24^\circ=66^\circ\)</span>.</p></div></details>
+    </div>
+    <div class="doboz pelda" id="pelda-ket-oldal">
+      <p class="cim"><span class="ikon">✏️</span> Példa</p>
+      Oldd meg a háromszöget, ha a két befogó <span class="math inline">\(a=5\)</span> cm és <span class="math inline">\(b=10\)</span> cm.
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(\operatorname{tg}\alpha=\frac{a}{b}=\frac{5}{10}=0{,}5\Rightarrow \alpha=\operatorname{tg}^{-1}(0{,}5)\approx 26{,}57^\circ\)</span>; <span class="math inline">\(\beta\approx 63{,}43^\circ\)</span>; az átfogó <span class="math inline">\(c=\sqrt{5^2+10^2}=\sqrt{125}=5\sqrt5\approx 11{,}18\)</span> cm.</p></div></details>
+    </div>
+    <div class="kviz" data-answer="0" data-jo="✔ sin α = a/c, innen a = c·sin α." data-nem="✘ Indulj a sin α = a/c definícióból.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Adott az átfogó <span class="math inline">\(c\)</span> és az <span class="math inline">\(\alpha\)</span> szög. Melyik képlet adja a szemközti befogót, <span class="math inline">\(a\)</span>-t?</p>
+      <div class="opciok"><button><span class="math inline">\(a=c\sin\alpha\)</span></button><button><span class="math inline">\(a=c\cos\alpha\)</span></button><button><span class="math inline">\(a=\frac{c}{\sin\alpha}\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+    <h2 id="s2">Valós alkalmazások — emelkedési és depressziós szög</h2>
+    <div class="doboz definicio" id="def-emelkedesi-szog">
+      <p class="cim"><span class="ikon">📗</span> Definíció</p>
+      <p>Az <b>emelkedési szög</b> a vízszintes irány és a <i>felfelé</i> mutató látóvonal közötti szög (pl. amikor egy torony csúcsára nézünk föl). A <b>depressziós szög</b> a vízszintes és a <i>lefelé</i> mutató látóvonal szöge (pl. egy világítótoronyból lenézve egy hajóra).</p>
+    </div>
+    <figure class="abra">
+    <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Emelkedési szög: megfigyelő, torony és látóvonal">
+      <line x1="30" y1="170" x2="290" y2="170" stroke="#64748b" stroke-width="2"/>
+      <line x1="250" y1="170" x2="250" y2="60" stroke="#047857" stroke-width="3"/>
+      <line x1="40" y1="170" x2="250" y2="60" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5 3"/>
+      <path d="M 90,170 A 50,50 0 0 0 82,156" fill="none" stroke="#b45309" stroke-width="2"/>
+      <text x="96" y="164" font-size="14" fill="#b45309" font-style="italic">α</text>
+      <text x="258" y="115" font-size="14" fill="#0f172a" font-style="italic">m</text>
+      <text x="140" y="188" font-size="13" fill="#475569">d (vízszintes táv)</text>
+      <text x="30" y="188" font-size="18">🧍</text>
+      <text x="150" y="105" font-size="13" fill="#b45309">látóvonal</text>
+    </svg>
+    <figcaption>Emelkedési szög: a vízszintes és a felfelé mutató látóvonal szöge. <span class="math inline">\(\operatorname{tg}\alpha=\dfrac{m}{d}\)</span>.</figcaption>
+    </figure>
+    <div class="doboz pelda" id="pelda-torony">
+      <p class="cim"><span class="ikon">✏️</span> Példa</p>
+      A torony talpától <span class="math inline">\(15\)</span> m-re állva a csúcs <span class="math inline">\(40^\circ\)</span>-os emelkedési szögben látszik. Milyen magas a torony?
+      <details><summary>Megoldás</summary><div class="bel"><p>A vízszintes táv <span class="math inline">\(d=15\)</span> m, a keresett magasság <span class="math inline">\(m\)</span>. <span class="math inline">\(\operatorname{tg}40^\circ=\frac{m}{15}\)</span>, ezért <span class="math inline">\(m=15\operatorname{tg}40^\circ\approx 12{,}59\)</span> m.</p></div></details>
+    </div>
+    <div class="doboz pelda" id="pelda-fa-arnyek">
+      <p class="cim"><span class="ikon">✏️</span> Példa</p>
+      A fa árnyéka <span class="math inline">\(28\)</span> m hosszú, a csúcsa az árnyék végpontjából <span class="math inline">\(23^\circ\)</span>-os szögben látszik. Milyen magas a fa?
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(m=28\operatorname{tg}23^\circ\approx 11{,}88\)</span> m.</p></div></details>
+    </div>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Vigyázz, csapda!</p>
+      Az emelkedési/depressziós szöget mindig a <b>vízszinteshez</b> mérjük, nem a függőlegeshez! Ha a függőlegestől mért szöget kapnád, vond ki <span class="math inline">\(90^\circ\)</span>-ból.
+    </div>
+    <div class="kviz" data-answer="0" data-jo="✔ A magasság a szemközti, az árnyék a szomszédos: tg α = 12/9." data-nem="✘ A magasság a szemközti, az árnyék a szomszédos befogó → tangens.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy <span class="math inline">\(12\)</span> m magas fa árnyéka <span class="math inline">\(9\)</span> m. Mekkora a Nap emelkedési szöge?</p>
+      <div class="opciok"><button><span class="math inline">\(\operatorname{tg}^{-1}\frac{12}{9}\approx 53^\circ\)</span></button><button><span class="math inline">\(\operatorname{tg}^{-1}\frac{9}{12}\approx 37^\circ\)</span></button><button><span class="math inline">\(\sin^{-1}\frac{12}{9}\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+    <h2 id="s4">Kétlépéses feladatok</h2>
+    <p>Bonyolultabb helyzetben (pl. amikor a magasság egy másik magasságra épül) a feladatot két derékszögű háromszögre bontjuk, és lépésenként oldjuk meg — előbb a közös vízszintes távolságot, majd a keresett magasságot. Ilyen a feladatgyűjtemény Joker-feladata (világítótorony).</p>
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Érdekesség</p>
+      A földmérők <b>teodolittal</b> mérik az emelkedési szöget, és trigonometriával számolják a magasságot vagy távolságot. A GPS előtt így készültek a térképek és így mérték meg a hegycsúcsokat — a Mount Everest magasságát is (1856-ban) így határozták meg először.
+    </div>
+    <div class="gyakorolj">
+      <span class="ikon">🏋️</span>
+      <p><b>Gyakorolj!</b> Kapcsolódó feladatok: <a href="feladatok-trigonometria.html#kozep-13">háromszög megoldása (Közép 13–15.)</a> · <a href="feladatok-trigonometria.html#nehez-8">valós alkalmazások (Nehéz 8–11.)</a> · <a href="feladatok-trigonometria.html#gyt-1">gyakorló dolgozat (Gyakorló dolgozat 1–6.)</a></p>
+    </div>
+
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-nevezetes-szogek.html"><span class="irany">← Előző</span><span class="hova">Nevezetes szögek</span></a>
+      <a class="kov" href="feladatok-trigonometria.html"><span class="irany">Következő →</span><span class="hova">Feladatgyűjtemény</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

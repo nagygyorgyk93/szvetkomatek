@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hegyesszögek szögfüggvényei — tananyag | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Trigonometria</a> ›
+  <span class="itt">Hegyesszögek szögfüggvényei — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Hegyesszögek szögfüggvényei</h1>
+  <p class="alcim">Hogyan lesz a háromszög oldalaiból a sin, cos, tg és ctg négyese — és miért csak a szögtől függenek.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">🎬 Miért tanuljuk?</h2>
+    <p>Hogyan mérjük meg egy fa, egy torony vagy egy hegy magasságát anélkül, hogy megmásznánk? Hogyan tudja egy hajó, milyen messze van a parttól? A válasz a <b>derékszögű háromszög</b> oldalai és szögei közötti kapcsolat — ez a trigonometria. Egyetlen megmért szög és egy távolság elég, hogy a többit kiszámoljuk.</p>
+    <h2 id="s1">A hegyesszög szögfüggvényei</h2>
+    <p>Vegyünk egy derékszögű háromszöget, és nézzük az egyik <b>hegyesszögét</b>, <span class="math inline">\(\alpha\)</span>-t. A három oldalt a szöghöz viszonyítva nevezzük el: a szöggel <b>szemközti</b> befogó (<span class="math inline">\(a\)</span>), a szög <b>melletti</b> (szomszédos) befogó (<span class="math inline">\(b\)</span>), és a derékszöggel szemközti <b>átfogó</b> (<span class="math inline">\(c\)</span>).</p>
+    <figure class="abra">
+    <svg viewBox="0 0 300 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Derékszögű háromszög, a C csúcsnál derékszög, az A csúcsnál az alfa hegyesszög">
+      <polygon points="55,175 250,175 55,45" fill="#d1fae5" stroke="#047857" stroke-width="2.5"/>
+      <rect x="55" y="160" width="15" height="15" fill="none" stroke="#64748b" stroke-width="1.5"/>
+      <path d="M 220,175 A 30,30 0 0 0 210,153" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+      <text x="232" y="168" font-size="15" fill="#b45309" font-style="italic">α</text>
+      <text x="34" y="115" font-size="15" fill="#0f172a" font-style="italic">a</text>
+      <text x="148" y="193" font-size="15" fill="#0f172a" font-style="italic">b</text>
+      <text x="150" y="103" font-size="15" fill="#0f172a" font-style="italic">c</text>
+      <text x="44" y="42" font-size="13" fill="#475569">B</text>
+      <text x="256" y="182" font-size="13" fill="#475569">A</text>
+      <text x="40" y="188" font-size="13" fill="#475569">C</text>
+    </svg>
+    <figcaption>A derékszög a <span class="math inline">\(C\)</span> csúcsnál. Az <span class="math inline">\(\alpha\)</span> szöghöz képest: <span class="math inline">\(a\)</span> a szemközti, <span class="math inline">\(b\)</span> a szomszédos befogó, <span class="math inline">\(c\)</span> az átfogó.</figcaption>
+    </figure>
+    <div class="doboz definicio" id="def-szogfuggveny">
+      <p class="cim"><span class="ikon">📗</span> Definíció</p>
+      <p>Az <span class="math inline">\(\alpha\)</span> hegyesszög <b>szögfüggvényei</b> (trigonometrikus függvényei):</p><p>\[\sin\alpha=\frac{\text{szemközti}}{\text{átfogó}}=\frac{a}{c},\qquad \cos\alpha=\frac{\text{szomszédos}}{\text{átfogó}}=\frac{b}{c},\]\[\operatorname{tg}\alpha=\frac{\text{szemközti}}{\text{szomszédos}}=\frac{a}{b},\qquad \operatorname{ctg}\alpha=\frac{\text{szomszédos}}{\text{szemközti}}=\frac{b}{a}.\]</p>
+    </div>
+    <div class="doboz pelda" id="pelda-harom-negy-ot">
+      <p class="cim"><span class="ikon">✏️</span> Példa</p>
+      Egy derékszögű háromszög befogói <span class="math inline">\(a=3\)</span>, <span class="math inline">\(b=4\)</span>, átfogója <span class="math inline">\(c=5\)</span>. Mennyi az <span class="math inline">\(a\)</span>-val szemközti <span class="math inline">\(\alpha\)</span> szög négy szögfüggvénye?
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(\sin\alpha=\dfrac{3}{5}\)</span>, <span class="math inline">\(\cos\alpha=\dfrac{4}{5}\)</span>, <span class="math inline">\(\operatorname{tg}\alpha=\dfrac{3}{4}\)</span>, <span class="math inline">\(\operatorname{ctg}\alpha=\dfrac{4}{3}\)</span>. Figyeld meg: <span class="math inline">\(\operatorname{tg}\alpha\)</span> és <span class="math inline">\(\operatorname{ctg}\alpha\)</span> egymás reciprokai.</p></div></details>
+    </div>
+    <div class="kviz" data-answer="0" data-jo="✔ Így van: szemközti / átfogó." data-nem="✘ A szinusz a szemközti befogó és az átfogó hányadosa.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy derékszögű háromszögben az <span class="math inline">\(\alpha\)</span> szöggel szemközti befogó <span class="math inline">\(6\)</span>, az átfogó <span class="math inline">\(10\)</span>. Mennyi <span class="math inline">\(\sin\alpha\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(\frac{6}{10}=\frac{3}{5}\)</span></button><button><span class="math inline">\(\frac{10}{6}=\frac{5}{3}\)</span></button><button><span class="math inline">\(\frac{6}{8}=\frac{3}{4}\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+    <h2 id="s2">A méret nem számít — csak a szög</h2>
+    <div class="doboz tetel" id="tetel-meretfuggetlen">
+      <p class="cim"><span class="ikon">📘</span> Tétel</p>
+      <p>Egy adott <span class="math inline">\(\alpha\)</span> hegyesszög szögfüggvényeinek értéke <b>nem függ a háromszög méretétől</b>, csak magától a szögtől.</p>
+      <details><summary>Bizonyítás</summary><div class="bel"><p>Ha két derékszögű háromszögnek van egy közös <span class="math inline">\(\alpha\)</span> hegyesszöge, akkor a szögeik megegyeznek (mindkettőben van <span class="math inline">\(90^\circ\)</span> és <span class="math inline">\(\alpha\)</span>), tehát a háromszögek <b>hasonlók</b>. Hasonló háromszögekben a megfelelő oldalak aránya egyenlő — így az <span class="math inline">\(\frac{a}{c}\)</span>, <span class="math inline">\(\frac{b}{c}\)</span>, <span class="math inline">\(\frac{a}{b}\)</span> arányok is ugyanazok. Ezért a szögfüggvények csak a szögtől függenek. ∎</p></div></details>
+    </div>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Vigyázz, csapda!</p>
+      Hegyesszögnél <span class="math inline">\(0<\sin\alpha<1\)</span> és <span class="math inline">\(0<\cos\alpha<1\)</span>, mert a befogó mindig rövidebb az átfogónál. Ha <span class="math inline">\(\sin\alpha=1{,}2\)</span> jött ki, biztosan hiba van! A <span class="math inline">\(\operatorname{tg}\alpha\)</span> viszont lehet <span class="math inline">\(1\)</span>-nél nagyobb is.
+    </div>
+    <h2 id="s3">Pótszögek szögfüggvényei</h2>
+    <p>A derékszögű háromszög másik hegyesszöge <span class="math inline">\(\beta=90^\circ-\alpha\)</span> (a két hegyesszög összege <span class="math inline">\(90^\circ\)</span>). Ezt <span class="math inline">\(\alpha\)</span> <b>pótszögének</b> nevezzük. A <span class="math inline">\(\beta\)</span> szemszögéből a szemközti és a szomszédos befogó épp felcserélődik — innen a következő összefüggések:</p>
+    <div class="doboz tetel" id="tetel-potszog">
+      <p class="cim"><span class="ikon">📘</span> Tétel</p>
+      <p>\[\sin(90^\circ-\alpha)=\cos\alpha,\qquad \cos(90^\circ-\alpha)=\sin\alpha,\]\[\operatorname{tg}(90^\circ-\alpha)=\operatorname{ctg}\alpha,\qquad \operatorname{ctg}(90^\circ-\alpha)=\operatorname{tg}\alpha.\]</p>
+      <details><summary>Bizonyítás</summary><div class="bel"><p>A <span class="math inline">\(\beta=90^\circ-\alpha\)</span> szögre nézve az <span class="math inline">\(a\)</span> befogó a <i>szomszédos</i>, a <span class="math inline">\(b\)</span> befogó a <i>szemközti</i>. Így <span class="math inline">\(\sin\beta=\frac{b}{c}=\cos\alpha\)</span>, és hasonlóan a többi. ∎</p></div></details>
+    </div>
+    <div class="doboz pelda">
+      <p class="cim"><span class="ikon">✏️</span> Példa</p>
+      Fejezd ki a pótszög függvényével: <span class="math inline">\(\sin 28^\circ\)</span>, <span class="math inline">\(\cos 49^\circ\)</span>, <span class="math inline">\(\operatorname{tg}62^\circ\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(\sin 28^\circ=\cos 62^\circ\)</span>, <span class="math inline">\(\cos 49^\circ=\sin 41^\circ\)</span>, <span class="math inline">\(\operatorname{tg}62^\circ=\operatorname{ctg}28^\circ\)</span>.</p></div></details>
+    </div>
+    <div class="kviz" data-answer="0" data-jo="✔ Pótszögek: 70° + 20° = 90°." data-nem="✘ Keresd a 90°-ra kiegészítő szöget.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik igaz?</p>
+      <div class="opciok"><button><span class="math inline">\(\cos 70^\circ=\sin 20^\circ\)</span></button><button><span class="math inline">\(\cos 70^\circ=\sin 70^\circ\)</span></button><button><span class="math inline">\(\cos 70^\circ=\operatorname{tg}20^\circ\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+    <h2 id="s4">Alapvető trigonometrikus azonosságok</h2>
+    <div class="doboz tetel" id="tetel-azonossagok">
+      <p class="cim"><span class="ikon">📘</span> Tétel</p>
+      <p>Minden <span class="math inline">\(0^\circ<\alpha<90^\circ\)</span> hegyesszögre:</p><p>\[\sin^2\alpha+\cos^2\alpha=1,\qquad \operatorname{tg}\alpha=\frac{\sin\alpha}{\cos\alpha},\qquad \operatorname{ctg}\alpha=\frac{\cos\alpha}{\sin\alpha},\]\[\operatorname{tg}\alpha\cdot\operatorname{ctg}\alpha=1,\qquad 1+\operatorname{tg}^2\alpha=\frac{1}{\cos^2\alpha},\qquad 1+\operatorname{ctg}^2\alpha=\frac{1}{\sin^2\alpha}.\]</p>
+      <details><summary>Bizonyítás</summary><div class="bel"><p>A legfontosabb a <span class="math inline">\(\sin^2\alpha+\cos^2\alpha=1\)</span>. Bizonyítás: <span class="math inline">\(\sin\alpha=\frac{a}{c}\)</span>, <span class="math inline">\(\cos\alpha=\frac{b}{c}\)</span>, ezért <span class="math inline">\(\sin^2\alpha+\cos^2\alpha=\frac{a^2+b^2}{c^2}\)</span>. A Pitagorasz-tétel szerint <span class="math inline">\(a^2+b^2=c^2\)</span>, így az érték <span class="math inline">\(\frac{c^2}{c^2}=1\)</span>. A többi ebből és a <span class="math inline">\(\operatorname{tg}\)</span> definíciójából levezethető. ∎</p></div></details>
+    </div>
+    <div class="doboz pelda" id="pelda-egy-arany">
+      <p class="cim"><span class="ikon">✏️</span> Példa</p>
+      Egy hegyesszögre <span class="math inline">\(\sin\alpha=\frac{3}{5}\)</span>. Mennyi <span class="math inline">\(\cos\alpha\)</span> és <span class="math inline">\(\operatorname{tg}\alpha\)</span>?
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(\cos^2\alpha=1-\sin^2\alpha=1-\frac{9}{25}=\frac{16}{25}\)</span>, és mivel <span class="math inline">\(\alpha\)</span> hegyesszög, <span class="math inline">\(\cos\alpha=\frac{4}{5}\)</span>. Ekkor <span class="math inline">\(\operatorname{tg}\alpha=\frac{\sin\alpha}{\cos\alpha}=\frac{3/5}{4/5}=\frac{3}{4}\)</span>.</p></div></details>
+    </div>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Vigyázz, csapda!</p>
+      A <span class="math inline">\(\sin^2\alpha\)</span> jelölés a <span class="math inline">\((\sin\alpha)^2\)</span> rövidítése — nem <span class="math inline">\(\sin(\alpha^2)\)</span>! Előbb veszed a szinuszt, aztán négyzetre emeled.
+    </div>
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Érdekesség</p>
+      A „trigonometria” szó a görög <i>trigōnon</i> (háromszög) és <i>metron</i> (mérés) szavakból ered. Az ókori csillagászok (pl. Hipparkhosz) a csillagok helyzetét számolták vele — a szögfüggvény-táblázatok évszázadokig a tudomány legfontosabb segédeszközei voltak.
+    </div>
+    <div class="gyakorolj">
+      <span class="ikon">🏋️</span>
+      <p><b>Gyakorolj!</b> Kapcsolódó feladatok: <a href="feladatok-trigonometria.html#alap-1">definíciók (Alap 1–2.)</a> · <a href="feladatok-trigonometria.html#kozep-1">egy arány → a többi (Közép 1–7.)</a> · <a href="feladatok-trigonometria.html#nehez-1">azonosságok bizonyítása (Nehéz 1–4.)</a> · <a href="feladatok-trigonometria.html#nehez-6">pótszöges kifejezések (Nehéz 6–7.)</a></p>
+    </div>
+
+    <div class="lapozo">
+      <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">A témakör áttekintése</span></a>
+      <a class="kov" href="tananyag-nevezetes-szogek.html"><span class="irany">Következő →</span><span class="hova">Nevezetes szögek</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trigonometria — összefoglaló | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Trigonometria</a> ›
+  <span class="itt">Tömör összefoglaló</span>
+</nav>
+<div class="hero">
+  <h1>Trigonometria — tömör összefoglaló</h1>
+  <p class="alcim">Minden fontos definíció, érték és képlet egy helyen. Ismétléshez, dolgozat
+  előtti átfutáshoz — nyomtasd ki, ez a hivatalos „puska”. 😉</p>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s1">Szögfüggvények</h2>
+    <p>A derékszögű háromszög <span class="math inline">\(\alpha\)</span> hegyesszögére (szemközti befogó <span class="math inline">\(a\)</span>, szomszédos <span class="math inline">\(b\)</span>, átfogó <span class="math inline">\(c\)</span>):
+    <span class="math inline">\(\sin\alpha=\frac{a}{c}\)</span>, <span class="math inline">\(\cos\alpha=\frac{b}{c}\)</span>, <span class="math inline">\(\operatorname{tg}\alpha=\frac{a}{b}\)</span>,
+    <span class="math inline">\(\operatorname{ctg}\alpha=\frac{b}{a}\)</span>. Részletek: <a href="tananyag-szogfuggvenyek.html#def-szogfuggveny">→ tananyag</a>.</p>
+    <p><b>Pótszögek:</b> <span class="math inline">\(\sin(90^\circ-\alpha)=\cos\alpha\)</span>, <span class="math inline">\(\operatorname{tg}(90^\circ-\alpha)=\operatorname{ctg}\alpha\)</span>
+    (<a href="tananyag-szogfuggvenyek.html#tetel-potszog">→</a>).</p>
+    <p><b>Alapazonosságok:</b> <span class="math inline">\(\sin^2\alpha+\cos^2\alpha=1\)</span>; <span class="math inline">\(\operatorname{tg}\alpha=\frac{\sin\alpha}{\cos\alpha}\)</span>;
+    <span class="math inline">\(\operatorname{tg}\alpha\cdot\operatorname{ctg}\alpha=1\)</span>; <span class="math inline">\(1+\operatorname{tg}^2\alpha=\frac{1}{\cos^2\alpha}\)</span>
+    (<a href="tananyag-szogfuggvenyek.html#tetel-azonossagok">→</a>). Hegyesszögnél <span class="math inline">\(0<\sin\alpha<1\)</span>, <span class="math inline">\(0<\cos\alpha<1\)</span>.</p>
+
+    <h2 id="s2">Nevezetes szögek</h2>
+    <table class="tabla-nevezetes">
+      <thead><tr><th>&nbsp;</th><th>30°</th><th>45°</th><th>60°</th></tr></thead>
+      <tbody>
+      <tr><th>sin</th><td>\(\frac12\)</td><td>\(\frac{\sqrt2}{2}\)</td><td>\(\frac{\sqrt3}{2}\)</td></tr>
+      <tr><th>cos</th><td>\(\frac{\sqrt3}{2}\)</td><td>\(\frac{\sqrt2}{2}\)</td><td>\(\frac12\)</td></tr>
+      <tr><th>tg</th><td>\(\frac{\sqrt3}{3}\)</td><td>\(1\)</td><td>\(\sqrt3\)</td></tr>
+      <tr><th>ctg</th><td>\(\sqrt3\)</td><td>\(1\)</td><td>\(\frac{\sqrt3}{3}\)</td></tr>
+      </tbody></table>
+    <p>Levezetés: <span class="math inline">\(45^\circ\)</span> az egyenlő szárú, <span class="math inline">\(30^\circ/60^\circ\)</span> az egyenlő oldalú háromszögből
+    (<a href="tananyag-nevezetes-szogek.html#def-harminc-hatvan">→ tananyag</a>). Nem nevezetes szögnél
+    számológép <b>fok (DEG)</b> módban; szögkereséshez inverz gomb (<span class="math inline">\(\operatorname{tg}^{-1}\)</span> stb.).</p>
+
+    <h2 id="s3">A derékszögű háromszög megoldása</h2>
+    <p>Cél: minden hiányzó oldal és szög. Válaszd az adott + keresett mennyiséget összekötő szögfüggvényt.
+    A hiányzó hegyesszög: <span class="math inline">\(\beta=90^\circ-\alpha\)</span>; a hiányzó oldal olykor Pitagorasszal.</p>
+    <ul>
+      <li>Átfogó + szög: <span class="math inline">\(a=c\sin\alpha\)</span>, <span class="math inline">\(b=c\cos\alpha\)</span>.</li>
+      <li>Befogó + szög: <span class="math inline">\(c=\frac{a}{\sin\alpha}\)</span>, <span class="math inline">\(b=\frac{a}{\operatorname{tg}\alpha}\)</span>.</li>
+      <li>Két befogó: <span class="math inline">\(\operatorname{tg}\alpha=\frac{a}{b}\Rightarrow\alpha=\operatorname{tg}^{-1}\frac{a}{b}\)</span>, <span class="math inline">\(c=\sqrt{a^2+b^2}\)</span>.</li>
+    </ul>
+    <p><b>Alkalmazás:</b> emelkedési/depressziós szög a vízszinteshez mérve; magasság <span class="math inline">\(m=d\cdot\operatorname{tg}\alpha\)</span>
+    (<a href="tananyag-haromszog-megoldasa.html#def-emelkedesi-szog">→ tananyag</a>).</p>
+
+    <h2 id="kulcsotletek">🧠 Kulcsötletek</h2>
+    <ul>
+      <li>Mindig <b>rajzolj</b>, és jelöld, melyik oldal a szemközti / szomszédos / átfogó az adott szöghöz.</li>
+      <li>Ha egy szögfüggvény adott, a többit a <span class="math inline">\(\sin^2+\cos^2=1\)</span> és a definíciók adják — pitagoraszi számhármasnál pontosan.</li>
+      <li>A pótszög-összefüggések sok kifejezést egyszerűsítenek (<span class="math inline">\(\sin 50^\circ-\cos 40^\circ=0\)</span>).</li>
+      <li>Pontos érték = nevezetes szög (számológép nélkül); közelítő = tetszőleges szög (DEG mód).</li>
+      <li>Szög keresése két oldalból: inverz szögfüggvény (<span class="math inline">\(\operatorname{tg}^{-1}\)</span>).</li>
+    </ul>
+    <div class="lapozo">
+      <a class="elozo" href="index.html"><span class="irany">← Vissza</span><span class="hova">Trigonometria főoldala</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+</body>
+</html>
