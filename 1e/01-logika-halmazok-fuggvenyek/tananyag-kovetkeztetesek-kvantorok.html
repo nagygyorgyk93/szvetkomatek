@@ -1,498 +1,55 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="hu" data-root="../..">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Matematikai logika — 1e interaktív tananyag | Szvetkó matek</title>
-<style>
-:root{
-  --bg:#f4f6fb; --card:#ffffff; --ink:#1d2333; --muted:#5b6478;
-  --brand:#5b4be0; --brand2:#8b5cf6; --accent:#ff5da2;
-  --def:#2563eb; --def-bg:#eaf1ff;
-  --thm:#7c3aed; --thm-bg:#f2ebff;
-  --ex:#0f9d58; --ex-bg:#e7f8ef;
-  --trap:#e0392b; --trap-bg:#fdeceb;
-  --fun:#f59e0b; --fun-bg:#fff5e0;
-  --prac:#0891b2; --prac-bg:#e2f7fb;
-  --true:#0f9d58; --false:#e0392b;
-  --line:#e4e8f1; --shadow:0 6px 22px rgba(30,40,90,.08);
-  --radius:16px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0; background:var(--bg); color:var(--ink);
-  font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
-  line-height:1.65; font-size:17px;
-}
-.math{font-family:"Cambria Math",Cambria,"Georgia",serif; font-size:1.06em; white-space:nowrap}
-.opn{color:var(--brand);font-weight:700}
-.tt{color:var(--true);font-weight:700}
-.ff{color:var(--false);font-weight:700}
-
-/* ---- progress bar ---- */
-#progress{position:fixed;top:0;left:0;height:5px;width:0;z-index:60;
-  background:linear-gradient(90deg,var(--brand),var(--accent))}
-
-/* ---- top bar ---- */
-header.top{position:sticky;top:0;z-index:50;
-  background:linear-gradient(120deg,#4c3ad6,#7c3aed 55%,#e83e8c);
-  color:#fff;padding:10px 18px;display:flex;align-items:center;gap:14px;
-  box-shadow:0 4px 18px rgba(60,40,150,.25)}
-header.top .logo{font-size:1.5rem}
-header.top b{font-weight:800;letter-spacing:.2px}
-header.top small{opacity:.85;font-weight:500}
-button.menu{margin-left:auto;background:rgba(255,255,255,.18);border:0;color:#fff;
-  font-size:1.4rem;border-radius:10px;padding:4px 12px;cursor:pointer}
-@media(min-width:1050px){button.menu{display:none}}
-
-/* ---- layout ---- */
-.wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:250px 1fr;gap:26px;padding:22px 18px 80px}
-@media(max-width:1049px){.wrap{grid-template-columns:1fr}}
-nav.toc{position:sticky;top:74px;align-self:start;background:var(--card);
-  border:1px solid var(--line);border-radius:var(--radius);padding:16px 14px;box-shadow:var(--shadow);max-height:calc(100vh - 96px);overflow:auto}
-nav.toc h3{margin:.1rem 0 .6rem;font-size:.8rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}
-nav.toc a{display:block;color:var(--ink);text-decoration:none;padding:7px 10px;border-radius:9px;font-size:.94rem;font-weight:600}
-nav.toc a:hover{background:var(--def-bg);color:var(--def)}
-nav.toc a .n{display:inline-block;width:22px;color:var(--brand);font-weight:800}
-@media(max-width:1049px){nav.toc{display:none;position:static;max-height:none}
-  nav.toc.open{display:block}}
-
-main{min-width:0}
-section.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-  padding:26px 30px;margin-bottom:26px;box-shadow:var(--shadow)}
-@media(max-width:560px){section.card{padding:20px 18px}}
-
-/* ---- hero ---- */
-.hero{background:radial-gradient(1200px 400px at 10% -20%,#efe9ff,transparent),
-  linear-gradient(135deg,#ffffff,#f7f4ff);border:1px solid var(--line)}
-.hero h1{font-size:2.05rem;margin:.1rem 0 .3rem;line-height:1.15}
-.hero .sub{color:var(--muted);font-weight:600;margin-bottom:16px}
-.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.badge{background:var(--def-bg);color:var(--def);border-radius:999px;padding:5px 13px;font-size:.82rem;font-weight:700}
-.badge.b2{background:#f2ebff;color:var(--thm)}
-.badge.b3{background:var(--ex-bg);color:var(--ex)}
-.badge.b4{background:var(--fun-bg);color:#b26b00}
-
-h2.sec{font-size:1.5rem;margin:.1rem 0 .2rem;display:flex;align-items:center;gap:12px}
-h2.sec .dot{background:linear-gradient(135deg,var(--brand),var(--accent));color:#fff;
-  width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-size:1.15rem;font-weight:800;flex:0 0 auto}
-.lead{color:var(--muted);font-weight:600;margin-top:0}
-h3.sub2{font-size:1.13rem;margin:1.4rem 0 .4rem;color:var(--brand)}
-
-/* ---- boxes ---- */
-.box{border-radius:14px;padding:15px 18px 15px 20px;margin:16px 0;border-left:6px solid;position:relative}
-.box .t{font-weight:800;display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:.95rem;letter-spacing:.3px}
-.box.def{background:var(--def-bg);border-color:var(--def)} .box.def .t{color:var(--def)}
-.box.thm{background:var(--thm-bg);border-color:var(--thm)} .box.thm .t{color:var(--thm)}
-.box.ex{background:var(--ex-bg);border-color:var(--ex)} .box.ex .t{color:var(--ex)}
-.box.trap{background:var(--trap-bg);border-color:var(--trap)} .box.trap .t{color:var(--trap)}
-.box.fun{background:var(--fun-bg);border-color:var(--fun)} .box.fun .t{color:#b26b00}
-.box.prac{background:var(--prac-bg);border-color:var(--prac)} .box.prac .t{color:var(--prac)}
-.box p:last-child{margin-bottom:0}
-
-/* ---- practice link ---- */
-.practice{display:flex;gap:10px;align-items:flex-start;background:var(--prac-bg);
-  border:1px dashed var(--prac);border-radius:12px;padding:11px 15px;margin:16px 0;font-weight:600;color:#0a6b81}
-.practice b{color:var(--prac)}
-
-/* ---- truth tables ---- */
-table.tt-table{border-collapse:collapse;margin:14px 0;font-family:"Cambria Math",Cambria,Georgia,serif;
-  min-width:min(100%,420px);box-shadow:var(--shadow);border-radius:10px;overflow:hidden}
-table.tt-table th,table.tt-table td{border:1px solid var(--line);padding:8px 14px;text-align:center;font-size:1.05rem}
-table.tt-table thead th{background:linear-gradient(135deg,#5b4be0,#8b5cf6);color:#fff;font-weight:700}
-table.tt-table tbody tr:nth-child(even){background:#f7f8fd}
-table.tt-table .res{font-weight:800;background:#faf7ff}
-.tblwrap{overflow-x:auto}
-
-/* ---- reference tautology grid ---- */
-.taut{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
-@media(max-width:640px){.taut{grid-template-columns:1fr}}
-.taut .c{background:#faf9ff;border:1px solid var(--line);border-radius:12px;padding:10px 14px}
-.taut .c .lbl{font-size:.78rem;font-weight:800;color:var(--thm);text-transform:uppercase;letter-spacing:.4px}
-.taut .c .f{font-family:"Cambria Math",Cambria,Georgia,serif;font-size:1.08rem;margin-top:3px}
-
-/* ---- collapsible ---- */
-details{background:#fbfbff;border:1px solid var(--line);border-radius:12px;padding:2px 16px;margin:14px 0}
-details[open]{background:#fff}
-summary{cursor:pointer;font-weight:700;color:var(--brand);padding:10px 0;list-style:none;display:flex;align-items:center;gap:9px}
-summary::-webkit-details-marker{display:none}
-summary::before{content:"▶";font-size:.75rem;transition:transform .2s;color:var(--accent)}
-details[open] summary::before{transform:rotate(90deg)}
-details .inside{padding:2px 0 14px}
-
-/* ---- quiz ---- */
-.quiz{background:linear-gradient(135deg,#fff,#f7f4ff);border:2px solid var(--brand2);
-  border-radius:16px;padding:18px 20px;margin:18px 0}
-.quiz .q{font-weight:800;margin-bottom:10px;display:flex;gap:9px;align-items:center}
-.quiz .q .ic{font-size:1.2rem}
-.quiz label{display:block;background:#fff;border:1.5px solid var(--line);border-radius:11px;
-  padding:10px 14px;margin:7px 0;cursor:pointer;transition:.15s;font-weight:600}
-.quiz label:hover{border-color:var(--brand2);background:#faf7ff}
-.quiz input{margin-right:9px;accent-color:var(--brand)}
-.quiz .btn{margin-top:10px;background:linear-gradient(135deg,var(--brand),var(--accent));
-  color:#fff;border:0;border-radius:11px;padding:10px 22px;font-weight:800;cursor:pointer;font-size:.95rem}
-.quiz .btn:hover{filter:brightness(1.06)}
-.quiz .fb{margin-top:12px;font-weight:700;border-radius:10px;padding:10px 14px;display:none}
-.quiz .fb.ok{display:block;background:var(--ex-bg);color:var(--ex)}
-.quiz .fb.no{display:block;background:var(--trap-bg);color:var(--trap)}
-label.correct{border-color:var(--ex)!important;background:var(--ex-bg)!important}
-label.wrong{border-color:var(--trap)!important;background:var(--trap-bg)!important}
-
-figure{margin:18px 0;text-align:center}
-figure img{max-width:100%;border-radius:14px;box-shadow:var(--shadow);border:1px solid var(--line)}
-figure figcaption{color:var(--muted);font-size:.86rem;margin-top:8px;font-weight:600}
-.imgrow{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
-.imgrow figure{flex:1 1 300px;max-width:420px}
-
-.kbd{font-family:"Cambria Math",Cambria,Georgia,serif;background:#eef0f7;border:1px solid var(--line);
-  border-radius:6px;padding:1px 7px;font-size:1.02em}
-ul.clean{list-style:none;padding-left:0}
-ul.clean li{padding:7px 0 7px 30px;position:relative;border-bottom:1px solid var(--line)}
-ul.clean li:last-child{border-bottom:0}
-ul.clean li::before{content:"✦";position:absolute;left:4px;color:var(--accent)}
-.pill{display:inline-block;background:#eef0f7;border-radius:8px;padding:1px 9px;font-size:.85em;font-weight:700;color:var(--muted)}
-
-footer{max-width:1180px;margin:0 auto;padding:10px 18px 60px;color:var(--muted);font-size:.86rem;text-align:center}
-
-/* ---- print / PDF ---- */
-@media print{
-  :root{--shadow:none}
-  body{background:#fff;font-size:12pt}
-  #progress,header.top,nav.toc,button.menu,.quiz .btn{display:none!important}
-  .wrap{display:block;max-width:100%;padding:0}
-  section.card{box-shadow:none;border:1px solid #ccc;break-inside:avoid;page-break-inside:avoid;margin-bottom:14px}
-  details{border:1px solid #ccc}
-  details:not([open]) .inside{display:block}
-  details summary::before{display:none}
-  .box,table.tt-table,figure{break-inside:avoid}
-  a{color:inherit;text-decoration:none}
-}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tautológiák, következtetések, kvantorok — tananyag | 1e | Szvetkó matek</title>
 <link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
-<style id="szvetko-brand">
-@font-face{font-family:'Space Grotesk';font-weight:700;font-display:swap;src:url('../../assets/fonts/space-grotesk-latin-700-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F}
-@font-face{font-family:'Space Grotesk';font-weight:700;font-display:swap;src:url('../../assets/fonts/space-grotesk-latin-ext-700-normal.woff2') format('woff2');unicode-range:U+0100-024F}
-@font-face{font-family:'Inter';font-weight:400;font-display:swap;src:url('../../assets/fonts/inter-latin-400-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F}
-@font-face{font-family:'Inter';font-weight:400;font-display:swap;src:url('../../assets/fonts/inter-latin-ext-400-normal.woff2') format('woff2');unicode-range:U+0100-024F}
-@font-face{font-family:'Inter';font-weight:600;font-display:swap;src:url('../../assets/fonts/inter-latin-600-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F}
-@font-face{font-family:'Inter';font-weight:600;font-display:swap;src:url('../../assets/fonts/inter-latin-ext-600-normal.woff2') format('woff2');unicode-range:U+0100-024F}
-@font-face{font-family:'Inter';font-weight:700;font-display:swap;src:url('../../assets/fonts/inter-latin-700-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F}
-@font-face{font-family:'Inter';font-weight:700;font-display:swap;src:url('../../assets/fonts/inter-latin-ext-700-normal.woff2') format('woff2');unicode-range:U+0100-024F}
-:root{--brand:#047857;--brand2:#10b981;--accent:#0d9488;--bg:#f8fafc;}
-body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;}
-h1,h2,h3,h4,header.top b{font-family:'Space Grotesk','Inter',system-ui,sans-serif;}
-header.top small a{color:inherit;}
-a.logo{text-decoration:none;}
-</style>
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
 <link rel="stylesheet" href="../../assets/katex/katex.min.css">
 </head>
-<body>
+<body data-tagozat="1e">
 <div id="progress"></div>
 
-<header class="top">
-  <a class="logo" href="../../index.html" title="Szvetkó matek — főoldal">🧠</a>
-  <div>
-    <b>Matematikai logika</b><br>
-    <small><a href="../../index.html">Szvetkó matek</a> › <a href="../index.html">1e</a> › <a href="index.html">Logika, halmazok, függvények</a> › tananyag</small>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
   </div>
-  <button class="menu" onclick="document.querySelector('nav.toc').classList.toggle('open')">☰</button>
 </header>
 
-<div class="wrap">
-  <!-- ===================== TOC ===================== -->
-  <nav class="toc">
-    <h3>Tartalom</h3>
-    <a href="#intro"><span class="n">0</span>Miért? — a logika haszna</a>
-    <a href="#kijelentes"><span class="n">1</span>Kijelentés és igazságérték</a>
-    <a href="#muveletek"><span class="n">2</span>Logikai műveletek</a>
-    <a href="#formula"><span class="n">3</span>Formula és igazságtáblázat</a>
-    <a href="#tautologia"><span class="n">4</span>Tautológiák</a>
-    <a href="#kovetkeztetes"><span class="n">5</span>Következtetési szabályok</a>
-    <a href="#kvantorok"><span class="n">6</span>Kvantorok</a>
-    <a href="#osszefoglalo"><span class="n">7</span>Összefoglaló + puska</a>
-  </nav>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Logika, halmazok, függvények</a> ›
+  <span class="itt">Tautológiák, következtetések, kvantorok</span>
+</nav>
 
-  <main>
-    <!-- ===================== HERO ===================== -->
-    <section class="card hero">
-      <h1>Matematikai logika 🧠⚡</h1>
-      <p class="sub">A matematika titkos anyanyelve — amivel eldöntheted, mi <span class="tt">igaz</span> és mi <span class="ff">hamis</span>.</p>
-      <p>Ebben a tananyagban megtanulsz úgy gondolkodni, ahogy a matematikusok (és a legjobb ügyvédek, programozók és detektívek): pontosan, csapdamentesen, lépésről lépésre. A végén már fejből tudod majd, mikor hazudik egy „lókötő", és miért nem lehet vitatkozni egy jól felírt igazságtáblázattal. 😎</p>
-      <div class="badges">
-        <span class="badge">✅ Precíz definíciók</span>
-        <span class="badge b2">🧩 Interaktív kvízek</span>
-        <span class="badge b3">💡 Valós példák</span>
-        <span class="badge b4">🖨️ Nyomtatható / PDF</span>
-      </div>
-      <div class="box fun" style="margin-top:18px">
-        <div class="t">🧭 Hogyan használd?</div>
-        <p>Haladj a bal oldali tartalomjegyzék szerint. Útközben nyiss le minden <b>▶ lenyílót</b> (megoldások, bizonyítások), oldd meg a <b>🧩 mini-kvízeket</b>, és a <span class="pill">Gyakorolj</span> dobozoknál ugorj a <i>Feladatgyűjtemény — Matematikai logika</i> megfelelő feladataihoz.</p>
-      </div>
-    </section>
+<div class="hero">
+  <h1>Tautológiák, következtetések, kvantorok</h1>
+  <p class="alcim">A mindig igaz formulák, a helyes érvelés szabályai és a „minden”/„van olyan” pontos nyelve.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip ora">Logika · 3/3</span></div>
+</div>
 
-    <!-- ===================== 0. INTRO ===================== -->
-    <section class="card" id="intro">
-      <h2 class="sec"><span class="dot">0</span>Miért tanuljunk logikát?</h2>
-      <p class="lead">Mert a logika az a nyelv, amin a matematika minden állítása meg van fogalmazva.</p>
-      <p>Amikor azt mondod, hogy „ha esik az eső, akkor vizes az út", vagy „minden ember halandó", akkor logikai állításokat mondasz. A matematikai logika ezt teszi pontossá: egyértelmű jelekkel és szabályokkal dolgozik, hogy soha ne lehessen félreérteni, és soha ne lehessen becsapni.</p>
-      <div class="box prac">
-        <div class="t">🌍 Hol találkozol vele?</div>
-        <ul class="clean" style="margin:0">
-          <li><b>Programozás:</b> minden <span class="kbd">if</span> feltétel egy logikai kifejezés (<span class="math">\(\text{és}\)</span>, <span class="math">\(\text{vagy}\)</span>, <span class="math">\(\text{nem}\)</span>).</li>
-          <li><b>Jog és vita:</b> egy érvelés akkor jó, ha a következtetés logikailag helyes — pont ezt tanuljuk itt.</li>
-          <li><b>Keresés a neten:</b> „macska AND kutya", „nyaralás NOT Görögország" — ezek logikai műveletek.</li>
-          <li><b>Áramkörök, chipek:</b> a számítógép <i>logikai kapukból</i> épül fel (erről a végén egy mém is vár 👀).</li>
-        </ul>
-      </div>
-      <p>A fejezet végére hat szuperképességed lesz: felismered a <b>kijelentéseket</b>, kombinálod őket <b>műveletekkel</b>, kiszámolod egy <b>formula</b> igazságértékét, felismered a <b>tautológiákat</b>, helyesen <b>következtetsz</b>, és bánni tudsz a <b>kvantorokkal</b>. Menjünk! 🚀</p>
-    </section>
+<main class="lap toc-os">
+  <div class="tartalom">
 
-    <!-- ===================== 1. KIJELENTÉS ===================== -->
-    <section class="card" id="kijelentes">
-      <h2 class="sec"><span class="dot">1</span>Kijelentés és igazságérték</h2>
-      <p class="lead">Az első kérdés mindig ez: eldönthető-e a mondatról, hogy igaz vagy hamis?</p>
+    <h2 id="s0">🎬 Miért tanuljuk?</h2>
+    <p>Vannak formulák, amelyek mindig igazak — bármit is helyettesítesz beléjük. Ezek a tautológiák adják a helyes következtetés szabályait: tőlük működik egy matematikai bizonyítás és egy jó érvelés a vitában. A kvantorokkal pedig végre pontosan ki tudod mondani, hogy „minden…” vagy „van olyan…” — és azt is, hogyan kell ezeket tagadni.</p>
 
-      <div class="box def">
-        <div class="t">📘 Definíció — logikai kijelentés (ítélet)</div>
-        <p><b>Kijelentés</b> az olyan kijelentő mondat, amelyről egyértelműen eldönthető, hogy <span class="tt">igaz</span> vagy <span class="ff">hamis</span> — de a kettő közül pontosan az egyik.</p>
-      </div>
+    <h2 id="s1">Tautológiák</h2>
+<span id="tautologia" class="regi-horgony"></span>
+<p class="lead">Vannak formulák, amelyek MINDIG igazak — bárhogy is állítjuk be a változókat. Ezek a logika „örökérvényű törvényei".</p>
 
-      <p>A kijelentéseket kis betűkkel jelöljük: <span class="math">\(p, q, r, \ldots\)</span> A kijelentés <b>igazságértéke</b> (logikai értéke) kétféle lehet:</p>
-      <ul class="clean">
-        <li><span class="math tt">⊤</span> — „té", az <b>igaz</b> érték;</li>
-        <li><span class="math ff">⊥</span> — „nem té", a <b>hamis</b> érték.</li>
-      </ul>
-      <p>Egy <span class="math">\(p\)</span> kijelentés igazságértékét így jelöljük: <span class="math">\(\tau (p)\)</span> (olvasd: „tau pé"). Tehát</p>
-      <p style="text-align:center" class="math">τ(p) = ⊤, ha p igaz &nbsp;&nbsp;•&nbsp;&nbsp; τ(p) = ⊥, ha p hamis.</p>
-
-      <div class="box thm">
-        <div class="t">⚖️ Arisztotelész két aranyszabálya</div>
-        <p><b>Ellentmondástalanság elve:</b> egy kijelentés nem lehet egyszerre igaz is és hamis is.<br>
-        <b>Harmadik kizárásának elve</b> (<i>tertium non datur</i>): ha egy kijelentés nem igaz, akkor hamis — harmadik lehetőség nincs.</p>
-      </div>
-
-      <div class="box def">
-        <div class="t">📘 Definíció — logikai függvény (nyitott mondat)</div>
-        <p>Az olyan mondatot, amely <b>változót</b> tartalmaz, és a változó konkrét értékére válik csak kijelentéssé, <b>logikai függvénynek</b> (nyitott mondatnak) nevezzük. Jelölése: <span class="math">\(P(x)\)</span>.</p>
-      </div>
-      <div class="box ex">
-        <div class="t">✏️ Példa</div>
-        <p><span class="math">\(x^{2} = 4\)</span> önmagában <b>nem</b> kijelentés (nem tudjuk, igaz-e, amíg nem tudjuk, mi az <span class="math">\(x\)</span>). De <span class="math">\(x = 2\)</span> esetén már igaz kijelentés, <span class="math">\(x = 5\)</span> esetén hamis. Ez tehát logikai függvény.</p>
-      </div>
-
-      <div class="box trap">
-        <div class="t">⚠️ Csapda!</div>
-        <p>Nem minden mondat kijelentés! A <b>kérdés</b> („Hány óra van?"), a <b>felszólítás</b> („Mosd meg a kezed!") és a <b>vélemény/ízlés</b> („A csokifagyi a legfinomabb") nem kijelentés, mert nincs egyértelmű igaz/hamis értéke.</p>
-      </div>
-
-      <div class="quiz" data-answer="2">
-        <div class="q"><span class="ic">🧩</span> Melyik NEM kijelentés?</div>
-        <label><input type="radio" name="q1"> A 6 osztható 3-mal.</label>
-        <label><input type="radio" name="q1"> Minden négyzet téglalap.</label>
-        <label><input type="radio" name="q1"> Menj ki a táblához!</label>
-        <label><input type="radio" name="q1"> A 7 páros szám.</label>
-        <button class="btn" onclick="checkQuiz(this)">Ellenőrzés</button>
-        <div class="fb"></div>
-      </div>
-
-      <div class="box fun">
-        <div class="t">🔎 Megegyezés (fontos az egész tananyagban!)</div>
-        <p>A természetes számok halmaza nálunk <span class="math">\(\mathbb{N} = \{1, 2, 3, \ldots \}\)</span> — a <b>0-t nem</b> tekintjük természetes számnak. Így pl. „minden természetes szám pozitív" (<span class="math">\(\forall x\in \mathbb{N}: x &gt; 0\)</span>) igaz állítás.</p>
-      </div>
-
-      <div class="practice">🎯 <div><b>Gyakorolj:</b> Feladatgyűjtemény — <i><a href="feladatok-logika.html#alap-1">Alapszint 1–4</a>.</i> (kijelentés-e; nyitott mondat vagy kijelentés; igazságérték megadása).</div></div>
-    </section>
-
-    <!-- ===================== 2. MŰVELETEK ===================== -->
-    <section class="card" id="muveletek">
-      <h2 class="sec"><span class="dot">2</span>Logikai műveletek</h2>
-      <p class="lead">Egyszerű kijelentésekből — kötőszavak segítségével — összetetteket építünk. Öt művelet van: négy kétváltozós és egy egyváltozós.</p>
-
-      <figure>
-        <img src="data:image/jpeg;base64,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" alt="A négy fő logikai művelet: tagadás, és, vagy, következtetés">
-        <figcaption>A logikai műveletek négy „nagy" szereplője — tagadás (nem), és, vagy, következtetés.</figcaption>
-      </figure>
-
-      <h3 class="sub2">2.1 Negáció (¬) — „nem …"</h3>
-      <div class="box def">
-        <div class="t">📘 Definíció</div>
-        <p>A <span class="math">\(p\)</span> kijelentés <b>negációja</b> a „nem <span class="math">\(p\)</span>" kijelentés, jele <span class="math">\(\lnot p\)</span>. Igazságértéke akkor igaz, ha <span class="math">\(p\)</span> hamis.</p>
-      </div>
-      <div class="tblwrap"><table class="tt-table">
-        <thead><tr><th>p</th><th class="res">¬p</th></tr></thead>
-        <tbody>
-          <tr><td class="tt">⊤</td><td class="res ff">⊥</td></tr>
-          <tr><td class="ff">⊥</td><td class="res tt">⊤</td></tr>
-        </tbody>
-      </table></div>
-      <div class="box fun"><div class="t">💡 Jó tudni</div><p>A kétszeres tagadás visszaadja az eredetit: <span class="math">\(\tau (\lnot \lnot p) = \tau (p)\)</span>. „Nem igaz, hogy nem esik" = „esik". 🌧️</p></div>
-
-      <h3 class="sub2">2.2 Konjunkció (∧) — „… és …"</h3>
-      <div class="box def">
-        <div class="t">📘 Definíció</div>
-        <p><span class="math">\(p \land  q\)</span> („<span class="math">\(p\)</span> és <span class="math">\(q\)</span>") csakis akkor <b>igaz</b>, ha <span class="math">\(p\)</span> is és <span class="math">\(q\)</span> is igaz.</p>
-      </div>
-      <p>Ide tartoznak ezek a kötőszavak is: <i>de, noha, bár, meg, viszont, pedig, …is …is</i>. („Esik az eső, <b>de</b> süt a nap" = <span class="math">\(p \land  q\)</span>.)</p>
-      <div class="tblwrap"><table class="tt-table">
-        <thead><tr><th>p</th><th>q</th><th class="res">p ∧ q</th></tr></thead>
-        <tbody>
-          <tr><td class="tt">⊤</td><td class="tt">⊤</td><td class="res tt">⊤</td></tr>
-          <tr><td class="tt">⊤</td><td class="ff">⊥</td><td class="res ff">⊥</td></tr>
-          <tr><td class="ff">⊥</td><td class="tt">⊤</td><td class="res ff">⊥</td></tr>
-          <tr><td class="ff">⊥</td><td class="ff">⊥</td><td class="res ff">⊥</td></tr>
-        </tbody>
-      </table></div>
-
-      <h3 class="sub2">2.3 Diszjunkció (∨) — „… vagy …"</h3>
-      <div class="box def">
-        <div class="t">📘 Definíció</div>
-        <p><span class="math">\(p \lor  q\)</span> („<span class="math">\(p\)</span> vagy <span class="math">\(q\)</span>") csakis akkor <b>hamis</b>, ha <span class="math">\(p\)</span> is és <span class="math">\(q\)</span> is hamis. Ez a <b>megengedő „vagy"</b>: lehet mindkettő is igaz.</p>
-      </div>
-      <div class="tblwrap"><table class="tt-table">
-        <thead><tr><th>p</th><th>q</th><th class="res">p ∨ q</th></tr></thead>
-        <tbody>
-          <tr><td class="tt">⊤</td><td class="tt">⊤</td><td class="res tt">⊤</td></tr>
-          <tr><td class="tt">⊤</td><td class="ff">⊥</td><td class="res tt">⊤</td></tr>
-          <tr><td class="ff">⊥</td><td class="tt">⊤</td><td class="res tt">⊤</td></tr>
-          <tr><td class="ff">⊥</td><td class="ff">⊥</td><td class="res ff">⊥</td></tr>
-        </tbody>
-      </table></div>
-      <div class="box trap">
-        <div class="t">⚠️ Csapda — megengedő vs. kizáró „vagy"</div>
-        <p>A hétköznapi „vagy" néha <b>kizáró</b>: „A jegyed 1-es <b>vagy</b> 5-ös" — nem lehet mindkettő! A kizáró vagy jele <span class="math">\(\veebar\)</span> (jele: <span class="math">\(p \veebar  q\)</span>), és pont akkor <b>hamis</b>, ha a két tag <b>egyforma</b>. „Kávét vagy teát iszom (akár mindkettőt)" viszont <b>megengedő</b> (<span class="math">\(\lor\)</span>). ☕🍵</p>
-      </div>
-      <details>
-        <summary>Kíváncsi vagy a kizáró vagy (⊻) táblázatára?</summary>
-        <div class="inside">
-        <div class="tblwrap"><table class="tt-table">
-          <thead><tr><th>p</th><th>q</th><th class="res">p ⊻ q</th></tr></thead>
-          <tbody>
-            <tr><td class="tt">⊤</td><td class="tt">⊤</td><td class="res ff">⊥</td></tr>
-            <tr><td class="tt">⊤</td><td class="ff">⊥</td><td class="res tt">⊤</td></tr>
-            <tr><td class="ff">⊥</td><td class="tt">⊤</td><td class="res tt">⊤</td></tr>
-            <tr><td class="ff">⊥</td><td class="ff">⊥</td><td class="res ff">⊥</td></tr>
-          </tbody>
-        </table></div>
-        <p>Röviden: <span class="math">\(p \veebar  q\)</span> = „különböznek". 🎯</p>
-        </div>
-      </details>
-
-      <h3 class="sub2">2.4 Implikáció (⇒) — „ha …, akkor …"</h3>
-      <div class="box def">
-        <div class="t">📘 Definíció</div>
-        <p><span class="math">\(p \Rightarrow  q\)</span> („ha <span class="math">\(p\)</span>, akkor <span class="math">\(q\)</span>") csakis akkor <b>hamis</b>, ha <span class="math">\(p\)</span> igaz és <span class="math">\(q\)</span> hamis. Itt <span class="math">\(p\)</span> az <b>előtag</b> (feltétel), <span class="math">\(q\)</span> az <b>utótag</b> (következmény).</p>
-      </div>
-      <div class="tblwrap"><table class="tt-table">
-        <thead><tr><th>p</th><th>q</th><th class="res">p ⇒ q</th></tr></thead>
-        <tbody>
-          <tr><td class="tt">⊤</td><td class="tt">⊤</td><td class="res tt">⊤</td></tr>
-          <tr><td class="tt">⊤</td><td class="ff">⊥</td><td class="res ff">⊥</td></tr>
-          <tr><td class="ff">⊥</td><td class="tt">⊤</td><td class="res tt">⊤</td></tr>
-          <tr><td class="ff">⊥</td><td class="ff">⊥</td><td class="res tt">⊤</td></tr>
-        </tbody>
-      </table></div>
-      <div class="box trap">
-        <div class="t">⚠️ A leghíresebb logikai csapda</div>
-        <p>Ha az előtag <b>hamis</b>, az implikáció <b>igaz</b> — bármi is az utótag! „Ha a Hold sajtból van, akkor 2 + 2 = 5" logikailag <span class="tt">igaz</span> állítás. 🌚🧀 A hamis feltételből „bármi következhet". Az implikáció csak a <b>⊤ ⇒ ⊥</b> esetben bukik meg.</p>
-      </div>
-      <div class="box fun">
-        <div class="t">🗣️ Ugyanaz sokféleképp</div>
-        <p><span class="math">\(p \Rightarrow  q\)</span> mind ugyanaz: „<span class="math">\(p\)</span>-ből következik <span class="math">\(q\)</span>", „<span class="math">\(q\)</span> következménye <span class="math">\(p\)</span>-nek", „<span class="math">\(p\)</span> elégséges feltétele <span class="math">\(q\)</span>-nak", „<span class="math">\(q\)</span> szükséges feltétele <span class="math">\(p\)</span>-nek".</p>
-      </div>
-
-      <h3 class="sub2">2.5 Ekvivalencia (⇔) — „… akkor és csakis akkor …"</h3>
-      <div class="box def">
-        <div class="t">📘 Definíció</div>
-        <p><span class="math">\(p \Leftrightarrow  q\)</span> csakis akkor <b>igaz</b>, ha <span class="math">\(p\)</span> és <span class="math">\(q\)</span> igazságértéke <b>megegyezik</b>. Szavakkal: „<span class="math">\(p\)</span> szükséges és elégséges feltétele <span class="math">\(q\)</span>-nak".</p>
-      </div>
-      <div class="tblwrap"><table class="tt-table">
-        <thead><tr><th>p</th><th>q</th><th class="res">p ⇔ q</th></tr></thead>
-        <tbody>
-          <tr><td class="tt">⊤</td><td class="tt">⊤</td><td class="res tt">⊤</td></tr>
-          <tr><td class="tt">⊤</td><td class="ff">⊥</td><td class="res ff">⊥</td></tr>
-          <tr><td class="ff">⊥</td><td class="tt">⊤</td><td class="res ff">⊥</td></tr>
-          <tr><td class="ff">⊥</td><td class="ff">⊥</td><td class="res tt">⊤</td></tr>
-        </tbody>
-      </table></div>
-      <div class="box ex">
-        <div class="t">✏️ Példa matekból</div>
-        <p><span class="math">\(a\cdot b = 0 \Leftrightarrow  a = 0 \lor  b = 0\)</span> — egy szorzat pontosan akkor 0, ha valamelyik tényezője 0. Ez oda-vissza igaz, ezért ekvivalencia. ✅</p>
-      </div>
-
-      <div class="quiz" data-answer="1">
-        <div class="q"><span class="ic">🧩</span> Melyik esetben lesz <span class="math">\(p \Rightarrow  q\)</span> hamis?</div>
-        <label><input type="radio" name="q2"> p igaz, q igaz</label>
-        <label><input type="radio" name="q2"> p igaz, q hamis</label>
-        <label><input type="radio" name="q2"> p hamis, q igaz</label>
-        <label><input type="radio" name="q2"> p hamis, q hamis</label>
-        <button class="btn" onclick="checkQuiz(this)">Ellenőrzés</button>
-        <div class="fb"></div>
-      </div>
-
-      <div class="practice">🎯 <div><b>Gyakorolj:</b> Feladatgyűjtemény — <i><a href="feladatok-logika.html#alap-4">Alapszint 4–7</a>, 13–15.</i> (műveletek magyarul és jelekkel, igazságtáblázat, megengedő/kizáró vagy, „ha…, akkor…").</div></div>
-    </section>
-
-    <!-- ===================== 3. FORMULA ===================== -->
-    <section class="card" id="formula">
-      <h2 class="sec"><span class="dot">3</span>Logikai formula és igazságtáblázat</h2>
-      <p class="lead">A műveletekből tetszőlegesen bonyolult kifejezéseket — formulákat — rakhatunk össze.</p>
-
-      <div class="box def">
-        <div class="t">📘 Miből épül egy formula?</div>
-        <ul class="clean" style="margin:.2rem 0">
-          <li><b>Logikai állandók:</b> <span class="math">\(\top , \bot\)</span></li>
-          <li><b>Logikai változók:</b> <span class="math">\(p, q, r, \ldots\)</span></li>
-          <li><b>Műveletek:</b> <span class="math">\(\lnot , \land , \lor , \Rightarrow , \Leftrightarrow\)</span></li>
-          <li><b>Zárójelek:</b> <span class="math">\(( )\)</span> — a műveletek hatáskörét szabják meg.</li>
-        </ul>
-      </div>
-
-      <div class="box thm">
-        <div class="t">🎚️ Műveleti sorrend (mint a +, · a számoknál)</div>
-        <p>1. <span class="math">\(\lnot\)</span> (a legerősebb) → 2. <span class="math">\(\land\)</span> és <span class="math">\(\lor\)</span> (egyenrangúak) → 3. <span class="math">\(\Rightarrow\)</span> és <span class="math">\(\Leftrightarrow\)</span> (leggyengébbek). Kétség esetén <b>tegyél zárójelet!</b></p>
-      </div>
-
-      <div class="box ex">
-        <div class="t">✏️ Kidolgozott példa</div>
-        <p>Számítsuk ki <span class="math">\(F: p \Rightarrow  \top  \land  \lnot q\)</span> értékét, ha <span class="math">\(\tau (p)=\bot\)</span> és <span class="math">\(\tau (q)=\top\)</span>:</p>
-        <p class="math">⊥ ⇒ ⊤ ∧ ¬⊤ = ⊥ ⇒ ⊤ ∧ ⊥ = ⊥ ⇒ ⊥ = ⊤</p>
-        <p>A negációt bontottuk fel előbb, aztán a konjunkciót, végül az implikációt — pont a sorrend szerint. ✅</p>
-      </div>
-
-      <p>Ha az <b>összes</b> lehetséges esetre kíváncsi vagy, készíts <b>igazságtáblázatot</b>. <span class="math">\(n\)</span> változóhoz <span class="math">\(2^{n}\)</span> sor tartozik (2 változó → 4 sor, 3 változó → 8 sor).</p>
-
-      <details>
-        <summary>Nézzük végig lépésről lépésre: <span class="math">\(F: p \Rightarrow  \top  \land  \lnot q\)</span> teljes táblázata</summary>
-        <div class="inside">
-          <div class="tblwrap"><table class="tt-table">
-            <thead><tr><th>p</th><th>q</th><th>¬q</th><th>⊤ ∧ ¬q</th><th class="res">F: p ⇒ ⊤∧¬q</th></tr></thead>
-            <tbody>
-              <tr><td class="tt">⊤</td><td class="tt">⊤</td><td class="ff">⊥</td><td class="ff">⊥</td><td class="res ff">⊥</td></tr>
-              <tr><td class="tt">⊤</td><td class="ff">⊥</td><td class="tt">⊤</td><td class="tt">⊤</td><td class="res tt">⊤</td></tr>
-              <tr><td class="ff">⊥</td><td class="tt">⊤</td><td class="ff">⊥</td><td class="ff">⊥</td><td class="res tt">⊤</td></tr>
-              <tr><td class="ff">⊥</td><td class="ff">⊥</td><td class="tt">⊤</td><td class="tt">⊤</td><td class="res tt">⊤</td></tr>
-            </tbody>
-          </table></div>
-          <p>Balról jobbra töltjük ki a segédoszlopokat, és az utolsó oszlop a végeredmény. 🧮</p>
-        </div>
-      </details>
-
-      <div class="practice">🎯 <div><b>Gyakorolj:</b> Feladatgyűjtemény — <i><a href="feladatok-logika.html#alap-5">Alapszint 5</a>, 12; <a href="feladatok-logika.html#kozep-1">Középszint 1–3</a>.</i> (formulák igazságértéke, teljes igazságtáblázat kitöltése).</div></div>
-    </section>
-
-    <!-- ===================== 4. TAUTOLÓGIÁK ===================== -->
-    <section class="card" id="tautologia">
-      <h2 class="sec"><span class="dot">4</span>Tautológiák</h2>
-      <p class="lead">Vannak formulák, amelyek MINDIG igazak — bárhogy is állítjuk be a változókat. Ezek a logika „örökérvényű törvényei".</p>
-
-      <div class="box def">
-        <div class="t">📘 Definíció</div>
+      <div class="doboz definicio">
+        <p class="cim"><span class="ikon">📗</span> Definíció</p>
         <p>Azt a formulát, amely a benne szereplő változók <b>minden</b> lehetséges igazságértékére <span class="tt">igaz</span>, <b>tautológiának</b> nevezzük. (Az igazságtáblázatában az utolsó oszlop csupa <span class="math tt">⊤</span>.)</p>
       </div>
 
-      <div class="box ex">
-        <div class="t">✏️ Példa — az elnyelési (abszorpciós) törvény</div>
+      <div class="doboz pelda">
+        <p class="cim"><span class="ikon">✏️</span> Példa — az elnyelési (abszorpciós) törvény</p>
         <p>Mutassuk meg, hogy <span class="math">\(p \lor  (p \land  q) \Leftrightarrow  p\)</span> tautológia:</p>
         <div class="tblwrap"><table class="tt-table">
           <thead><tr><th>p</th><th>q</th><th>p ∧ q</th><th>p ∨ (p∧q)</th><th class="res">⇔ p</th></tr></thead>
@@ -506,7 +63,7 @@ a.logo{text-decoration:none;}
         <p>Csupa <span class="math tt">⊤</span> → tautológia. ✅</p>
       </div>
 
-      <h3 class="sub2">A legfontosabb ismert tautológiák (érdemes megjegyezni!)</h3>
+      <h3>A legfontosabb ismert tautológiák (érdemes megjegyezni!)</h3>
       <div class="taut">
         <div class="c"><div class="lbl">Idempotencia</div><div class="f">p ∧ p ⇔ p &nbsp;|&nbsp; p ∨ p ⇔ p</div></div>
         <div class="c"><div class="lbl">Kommutativitás</div><div class="f">p ∧ q ⇔ q ∧ p &nbsp;|&nbsp; p ∨ q ⇔ q ∨ p</div></div>
@@ -520,45 +77,45 @@ a.logo{text-decoration:none;}
         <div class="c"><div class="lbl">Implikáció felbontása</div><div class="f">(p ⇒ q) ⇔ ¬p ∨ q</div></div>
       </div>
 
-      <div class="box fun">
-        <div class="t">🧠 De Morgan a mindennapokban</div>
+      <div class="doboz erdekesseg">
+        <p class="cim"><span class="ikon">💡</span> De Morgan a mindennapokban</p>
         <p>„Nem igaz, hogy <b>fázom vagy fáradt vagyok</b>" = „<b>nem fázom és nem is vagyok fáradt</b>". A tagadás „bemegy" a zárójelbe, és a <span class="math">\(\lor\)</span> átvált <span class="math">\(\land\)</span>-ra. Ez a trükk később a halmazoknál és a matematikai bizonyításokban is visszaköszön! 🔁</p>
       </div>
 
-      <div class="quiz" data-answer="2">
-        <div class="q"><span class="ic">🧩</span> Mivel egyenértékű <span class="math">\(\lnot (p \lor  q)\)</span> a De Morgan-szabály szerint?</div>
-        <label><input type="radio" name="q3"> ¬p ∨ ¬q</label>
-        <label><input type="radio" name="q3"> p ∧ q</label>
-        <label><input type="radio" name="q3"> ¬p ∧ ¬q</label>
-        <label><input type="radio" name="q3"> ¬p ⇒ q</label>
-        <button class="btn" onclick="checkQuiz(this)">Ellenőrzés</button>
-        <div class="fb"></div>
+      <div class="kviz" data-answer="2">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mivel egyenértékű <span class="math">\(\lnot (p \lor  q)\)</span> a De Morgan-szabály szerint?</p>
+      <div class="opciok">
+        <button>¬p ∨ ¬q</button>
+        <button>p ∧ q</button>
+        <button>¬p ∧ ¬q</button>
+        <button>¬p ⇒ q</button>
       </div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
 
-      <div class="practice">🎯 <div><b>Gyakorolj:</b> Feladatgyűjtemény — <i><a href="feladatok-logika.html#kozep-4">Középszint 4–6</a>, 12–14; <a href="feladatok-logika.html#nehez-2">Nehéz 2–4</a>.</i> (tautológia-e; De Morgannal tagadás; kontrapozíció; ismert tautológia felismerése; egyszerűsítés).</div></div>
-    </section>
+      <div class="gyakorolj"><span class="ikon">🎯</span><p><b>Gyakorolj:</b> Feladatgyűjtemény — <i><a href="feladatok-logika.html#kozep-4">Középszint 4–6</a>, 12–14; <a href="feladatok-logika.html#nehez-2">Nehéz 2–4</a>.</i> (tautológia-e; De Morgannal tagadás; kontrapozíció; ismert tautológia felismerése; egyszerűsítés).</p></div>
 
-    <!-- ===================== 5. KÖVETKEZTETÉS ===================== -->
-    <section class="card" id="kovetkeztetes">
-      <h2 class="sec"><span class="dot">5</span>Logikai következtetés</h2>
-      <p class="lead">A logika legfőbb haszna: eldönteni, hogy egy érvelés HELYES-e. Innentől a matematikai bizonyítások motorja.</p>
+    <h2 id="s2">Logikai következtetés</h2>
+<span id="kovetkeztetes" class="regi-horgony"></span>
+<p class="lead">A logika legfőbb haszna: eldönteni, hogy egy érvelés HELYES-e. Innentől a matematikai bizonyítások motorja.</p>
 
-      <div class="box def">
-        <div class="t">📘 Premissza és konklúzió</div>
+      <div class="doboz definicio">
+        <p class="cim"><span class="ikon">📗</span> Premissza és konklúzió</p>
         <p>A feltételeket <b>premisszáknak</b> (<span class="math">\(P₁, P₂, \ldots\)</span>), a belőlük levont következtetést <b>konklúziónak</b> (<span class="math">\(K\)</span>) hívjuk. A következtetés akkor <b>helyes</b>, ha a</p>
         <p style="text-align:center" class="math">P₁ ∧ P₂ ∧ … ⇒ K</p>
         <p>formula <b>tautológia</b> — vagyis a premisszák igazságából mindig következik a konklúzió.</p>
       </div>
 
-      <div class="box ex">
-        <div class="t">✏️ A minta-következtetés (modus ponens)</div>
+      <div class="doboz pelda">
+        <p class="cim"><span class="ikon">✏️</span> A minta-következtetés (modus ponens)</p>
         <p><span class="math">\(P₁:\)</span> Ha vasárnap van, együtt ebédel a család. <span class="math">\((p \Rightarrow  q)\)</span><br>
         <span class="math">\(P₂:\)</span> Ma vasárnap van. <span class="math">\((p)\)</span><br>
         <span class="math">\(K:\)</span> Együtt ebédel a család. <span class="math">\((q)\)</span></p>
         <p>Helyes, mert <span class="math">\((p \Rightarrow  q) \land  p \Rightarrow  q\)</span> tautológia. 👨‍👩‍👧‍👦</p>
       </div>
 
-      <h3 class="sub2">A négy „aranyszabály"</h3>
+      <h3>A négy „aranyszabály"</h3>
       <div class="taut">
         <div class="c"><div class="lbl">Modus ponens</div><div class="f">p ⇒ q , &nbsp; p &nbsp;⊢&nbsp; q</div></div>
         <div class="c"><div class="lbl">Modus tollens</div><div class="f">p ⇒ q , &nbsp; ¬q &nbsp;⊢&nbsp; ¬p</div></div>
@@ -566,51 +123,51 @@ a.logo{text-decoration:none;}
         <div class="c"><div class="lbl">Diszjunktív szillogizmus</div><div class="f">p ∨ q , &nbsp; ¬p &nbsp;⊢&nbsp; q</div></div>
       </div>
 
-      <div class="box thm">
-        <div class="t">🔄 Kontrapozíció és indirekt bizonyítás</div>
+      <div class="doboz tetel">
+        <p class="cim"><span class="ikon">📘</span> Kontrapozíció és indirekt bizonyítás</p>
         <p><b>Kontrapozíció:</b> <span class="math">\(p \Rightarrow  q\)</span> mindig egyenértékű a fordított-tagadott alakjával: <span class="math">\(\lnot q \Rightarrow  \lnot p\)</span>. („Ha esik, vizes az út" = „ha nem vizes az út, nem esik".)</p>
         <p><b>Indirekt (reductio ad absurdum):</b> feltesszük a bizonyítandó állítás ellenkezőjét, és ellentmondásra jutunk — így az eredeti állítás igaz.</p>
       </div>
 
-      <div class="box ex">
-        <div class="t">✏️ Indirekt gondolatmenet klasszikusa</div>
+      <div class="doboz pelda">
+        <p class="cim"><span class="ikon">✏️</span> Indirekt gondolatmenet klasszikusa</p>
         <p>Állítás: <b>ha <span class="math">\(n^{2}\)</span> páros, akkor <span class="math">\(n\)</span> is páros.</b> Kontrapozícióval: tegyük fel, hogy <span class="math">\(n\)</span> páratlan, azaz <span class="math">\(n = 2k+1\)</span>. Akkor <span class="math">\(n^{2} = 4k^{2}+4k+1\)</span> páratlan. Tehát ha <span class="math">\(n^{2}\)</span> páros, <span class="math">\(n\)</span> nem lehet páratlan → <span class="math">\(n\)</span> páros. ∎</p>
       </div>
 
-      <h3 class="sub2">🏝️ Lovag–lókötő fejtörő</h3>
-      <div class="box fun">
-        <div class="t">🗡️ A sziget szabálya</div>
+      <h3>🏝️ Lovag–lókötő fejtörő</h3>
+      <div class="doboz erdekesseg">
+        <p class="cim"><span class="ikon">💡</span> A sziget szabálya</p>
         <p>Egy szigeten csak <b>lovagok</b> (mindig igazat mondanak) és <b>lókötők</b> (mindig hazudnak) élnek. <b>Anna</b> azt mondja: <i>„Én lókötő vagyok, VAGY Bea lovag."</i> Ki micsoda?</p>
       </div>
       <details>
         <summary>Gondolkodtál rajta? Kattints a megoldásért 🔍</summary>
-        <div class="inside">
+        <div class="bel">
           <p>Tegyük fel, hogy <b>Anna lókötő</b>. Akkor a mondata hamis. De egy „… vagy …" csak akkor hamis, ha <b>mindkét</b> tagja hamis — vagyis „Anna lókötő" is hamis lenne. Ez ellentmondás (épp azt tettük fel, hogy lókötő)! 🚫</p>
           <p>Tehát <b>Anna lovag</b>, így a mondata igaz. Mivel „Anna lókötő" hamis, a „vagy" másik tagjának kell igaznak lennie: <b>Bea lovag</b>. ✅</p>
           <p><b>Anna = lovag, Bea = lovag.</b></p>
         </div>
       </details>
 
-      <div class="quiz" data-answer="2">
-        <div class="q"><span class="ic">🧩</span> „Ha esik, vizes az út. Az út NEM vizes." Mi következik helyesen?</div>
-        <label><input type="radio" name="q4"> Esik az eső.</label>
-        <label><input type="radio" name="q4"> Nem tudunk semmit.</label>
-        <label><input type="radio" name="q4"> Nem esik az eső.</label>
-        <label><input type="radio" name="q4"> Süt a nap.</label>
-        <button class="btn" onclick="checkQuiz(this)">Ellenőrzés</button>
-        <div class="fb"></div>
+      <div class="kviz" data-answer="2">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>„Ha esik, vizes az út. Az út NEM vizes." Mi következik helyesen?</p>
+      <div class="opciok">
+        <button>Esik az eső.</button>
+        <button>Nem tudunk semmit.</button>
+        <button>Nem esik az eső.</button>
+        <button>Süt a nap.</button>
       </div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
 
-      <div class="practice">🎯 <div><b>Gyakorolj:</b> Feladatgyűjtemény — <i><a href="feladatok-logika.html#kozep-11">Középszint 11</a>; <a href="feladatok-logika.html#nehez-1">Nehéz 1</a>, 6, 7.</i> (logikai következmény-e; hipotetikus szillogizmus; indirekt gondolatmenet; lovag–lókötő).</div></div>
-    </section>
+      <div class="gyakorolj"><span class="ikon">🎯</span><p><b>Gyakorolj:</b> Feladatgyűjtemény — <i><a href="feladatok-logika.html#kozep-11">Középszint 11</a>; <a href="feladatok-logika.html#nehez-1">Nehéz 1</a>, 6, 7.</i> (logikai következmény-e; hipotetikus szillogizmus; indirekt gondolatmenet; lovag–lókötő).</p></div>
 
-    <!-- ===================== 6. KVANTOROK ===================== -->
-    <section class="card" id="kvantorok">
-      <h2 class="sec"><span class="dot">6</span>Kvantorok</h2>
-      <p class="lead">Mit kezdjünk a nyitott mondatokkal, mint <span class="math">\(x^{2} \geq  0\)</span>? „Megmondjuk, hány x-re" — ez a kvantorok dolga.</p>
+    <h2 id="s3">Kvantorok</h2>
+<span id="kvantorok" class="regi-horgony"></span>
+<p class="lead">Mit kezdjünk a nyitott mondatokkal, mint <span class="math">\(x^{2} \geq  0\)</span>? „Megmondjuk, hány x-re" — ez a kvantorok dolga.</p>
 
-      <div class="box def">
-        <div class="t">📘 A két kvantor</div>
+      <div class="doboz definicio">
+        <p class="cim"><span class="ikon">📗</span> A két kvantor</p>
         <p><b>Univerzális kvantor</b> <span class="math">\(\forall\)</span> — „minden, bármely, tetszőleges". (Az angol <i>All</i> megfordított A-ja.)<br>
         <b>Egzisztenciális kvantor</b> <span class="math">\(\exists\)</span> — „van olyan, létezik". (Az angol <i>Exist</i> megfordított E-je.)</p>
       </div>
@@ -620,43 +177,45 @@ a.logo{text-decoration:none;}
         <figcaption>∀ = „mindenki/minden", ∃ = „van, aki/ami" — és az alsó sor a tagadásukról szól. 👀</figcaption>
       </figure>
 
-      <div class="box trap">
-        <div class="t">⚠️ Mindig kell egy „univerzum"!</div>
+      <div class="doboz csapda">
+        <p class="cim"><span class="ikon">⚠️</span> Mindig kell egy „univerzum"!</p>
         <p>A kvantornak mindig meg kell mondani, <b>milyen halmaz</b> elemeire vonatkozik — ez a <b>tárgyalási univerzum</b>. „Mindenki jelen van" → az osztály tanulói; <span class="math">\(\forall x\in \mathbb{R}\)</span> → a valós számok. Univerzum nélkül a kijelentésnek nincs értelme!</p>
       </div>
 
-      <div class="box ex">
-        <div class="t">✏️ Formalizálás — kétféle írásmód</div>
+      <div class="doboz pelda">
+        <p class="cim"><span class="ikon">✏️</span> Formalizálás — kétféle írásmód</p>
         <p style="margin:.2rem 0" class="math">„Minden természetes szám négyzete 4":&nbsp; (∀x)(x∈ℕ ⇒ x²=4)&nbsp; = &nbsp;(∀x∈ℕ)(x²=4)</p>
         <p style="margin:.2rem 0" class="math">„Van olyan valós szám, melynek négyzete 4":&nbsp; (∃x)(x∈ℝ ∧ x²=4)&nbsp; = &nbsp;(∃x∈ℝ)(x²=4)</p>
         <p>Figyeld meg: a <span class="math">\(\forall\)</span> mellé <b>implikáció</b> (<span class="math">\(\Rightarrow\)</span>), a <span class="math">\(\exists\)</span> mellé <b>konjunkció</b> (<span class="math">\(\land\)</span>) kerül. 🔑</p>
       </div>
 
-      <div class="box thm">
-        <div class="t">🔁 Kvantoros kijelentés tagadása (a lelke!)</div>
+      <div class="doboz tetel">
+        <p class="cim"><span class="ikon">📘</span> Kvantoros kijelentés tagadása (a lelke!)</p>
         <p style="text-align:center" class="math">¬(∀x)P(x) ⇔ (∃x)¬P(x) &nbsp;&nbsp;&nbsp; ¬(∃x)P(x) ⇔ (∀x)¬P(x)</p>
         <p>A kvantor „átvált" (∀ ↔ ∃), és a tagadás bemegy a mondatba. „Nem minden madár tud repülni" = „van olyan madár, amely nem tud repülni". 🐦</p>
       </div>
 
-      <div class="box ex">
-        <div class="t">✏️ Példa a tagadásra</div>
+      <div class="doboz pelda">
+        <p class="cim"><span class="ikon">✏️</span> Példa a tagadásra</p>
         <p>„Van olyan természetes szám, amely kisebb 0-nál": <span class="math">\((\exists x\in \mathbb{N})(x &lt; 0)\)</span>.<br>
         Tagadása: <span class="math">\(\lnot (\exists x\in \mathbb{N})(x&lt;0) \Leftrightarrow  (\forall x\in \mathbb{N})(x \geq  0)\)</span> — „minden természetes szám nemnegatív" (ami igaz ✅, tehát az eredeti hamis volt).</p>
       </div>
 
-      <div class="quiz" data-answer="1">
-        <div class="q"><span class="ic">🧩</span> Mi a tagadása ennek: „Minden tanuló zongorázik"?</div>
-        <label><input type="radio" name="q5"> Egyetlen tanuló sem zongorázik.</label>
-        <label><input type="radio" name="q5"> Van olyan tanuló, aki nem zongorázik.</label>
-        <label><input type="radio" name="q5"> Minden tanuló nem zongorázik.</label>
-        <label><input type="radio" name="q5"> Van olyan tanuló, aki zongorázik.</label>
-        <button class="btn" onclick="checkQuiz(this)">Ellenőrzés</button>
-        <div class="fb"></div>
+      <div class="kviz" data-answer="1">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mi a tagadása ennek: „Minden tanuló zongorázik"?</p>
+      <div class="opciok">
+        <button>Egyetlen tanuló sem zongorázik.</button>
+        <button>Van olyan tanuló, aki nem zongorázik.</button>
+        <button>Minden tanuló nem zongorázik.</button>
+        <button>Van olyan tanuló, aki zongorázik.</button>
       </div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
 
       <details>
         <summary>Haladó: kevert kvantorok — számít a sorrend? 🤔</summary>
-        <div class="inside">
+        <div class="bel">
           <p>Igen, nagyon! Az univerzum legyen <span class="math">\(\mathbb{Z}\)</span>.</p>
           <p><span class="math">\((\forall x)(\exists y)(x + y = 0)\)</span> — „minden <span class="math">\(x\)</span>-hez van <span class="math">\(y\)</span>, hogy összegük 0". <span class="tt">Igaz</span> (válaszd <span class="math">\(y = -x\)</span>).</p>
           <p><span class="math">\((\exists y)(\forall x)(x + y = 0)\)</span> — „van egy <span class="math">\(y\)</span>, ami MINDEN <span class="math">\(x\)</span>-szel 0-t ad". <span class="ff">Hamis</span> (nincs ilyen közös <span class="math">\(y\)</span>).</p>
@@ -664,15 +223,13 @@ a.logo{text-decoration:none;}
         </div>
       </details>
 
-      <div class="practice">🎯 <div><b>Gyakorolj:</b> Feladatgyűjtemény — <i><a href="feladatok-logika.html#alap-8">Alapszint 8–11</a>; <a href="feladatok-logika.html#kozep-8">Középszint 8–10</a>; <a href="feladatok-logika.html#nehez-5">Nehéz 5</a>.</i> (kvantoros formalizálás, szavakba öntés, igaz/hamis + ellenpélda, tagadás, kevert kvantorok).</div></div>
-    </section>
+      <div class="gyakorolj"><span class="ikon">🎯</span><p><b>Gyakorolj:</b> Feladatgyűjtemény — <i><a href="feladatok-logika.html#alap-8">Alapszint 8–11</a>; <a href="feladatok-logika.html#kozep-8">Középszint 8–10</a>; <a href="feladatok-logika.html#nehez-5">Nehéz 5</a>.</i> (kvantoros formalizálás, szavakba öntés, igaz/hamis + ellenpélda, tagadás, kevert kvantorok).</p></div>
 
-    <!-- ===================== 7. ÖSSZEFOGLALÓ ===================== -->
-    <section class="card" id="osszefoglalo">
-      <h2 class="sec"><span class="dot">7</span>Összefoglaló + gyors puska 📝</h2>
-      <p class="lead">Ha ezt fejből tudod, a logika-ellenőrzőn nincs mitől félned.</p>
+    <h2 id="s4">🧾 Gyorsismétlő</h2>
+<span id="osszefoglalo" class="regi-horgony"></span>
+<p class="lead">Ha ezt fejből tudod, a logika-ellenőrzőn nincs mitől félned.</p>
 
-      <h3 class="sub2">A négy „nagy" táblázat egyben</h3>
+      <h3>A négy „nagy" táblázat egyben</h3>
       <div class="tblwrap"><table class="tt-table">
         <thead><tr><th>p</th><th>q</th><th>p ∧ q</th><th>p ∨ q</th><th>p ⇒ q</th><th>p ⇔ q</th></tr></thead>
         <tbody>
@@ -683,8 +240,8 @@ a.logo{text-decoration:none;}
         </tbody>
       </table></div>
 
-      <div class="box fun">
-        <div class="t">🎵 Memóriahorgok</div>
+      <div class="doboz erdekesseg">
+        <p class="cim"><span class="ikon">💡</span> Memóriahorgok</p>
         <ul class="clean" style="margin:0">
           <li><b>∧ (és):</b> zsugori — csak akkor igaz, ha MINDKETTŐ igaz.</li>
           <li><b>∨ (vagy):</b> nagyvonalú — csak akkor hamis, ha MINDKETTŐ hamis.</li>
@@ -694,8 +251,8 @@ a.logo{text-decoration:none;}
         </ul>
       </div>
 
-      <div class="box fun">
-        <div class="t">🖥️ Érdekesség — a logika a chipek belsejében</div>
+      <div class="doboz erdekesseg">
+        <p class="cim"><span class="ikon">💡</span> Érdekesség — a logika a chipek belsejében</p>
         <p>A számítógéped a logikai műveletekből épül fel: <b>AND, OR, NOT, XOR</b> (a mi <span class="math">\(\land , \lor , \lnot , \veebar\)</span> jeleink!) — ezek a <i>logikai kapuk</i>. Minden, amit a géped csinál, végső soron ⊤ és ⊥ (1 és 0) kombinálása. 👇</p>
       </div>
       <figure>
@@ -703,75 +260,43 @@ a.logo{text-decoration:none;}
         <figcaption>Logikai kapuk kicsit ijesztőbben 🎃 — a jövő félévben a halmazoknál a Venn-diagramok ugyanígy fognak kinézni!</figcaption>
       </figure>
 
-      <div class="box prac">
-        <div class="t">🏁 Készülj az ellenőrzőre!</div>
+      <div class="doboz erdekesseg">
+        <p class="cim"><span class="ikon">💡</span> Készülj az ellenőrzőre!</p>
         <p>A feladatgyűjtemény végén külön <b>„Gyakorló teszt (ellenőrzőre) — logika"</b> blokk vár (45 perc, Joker bónusszal). Ugyanazok a feladattípusok, mint az ellenőrzőn — csak más számokkal. Old meg időre, aztán nézd meg a végén a <b>Végeredmények</b> kulcsot! 💪</p>
       </div>
 
-      <div class="quiz" data-answer="0">
-        <div class="q"><span class="ic">🏆</span> Utolsó próba! Melyik állítás IGAZ?</div>
-        <label><input type="radio" name="q6"> ⊥ ⇒ ⊤ igaz.</label>
-        <label><input type="radio" name="q6"> ⊤ ⇒ ⊥ igaz.</label>
-        <label><input type="radio" name="q6"> ⊤ ∧ ⊥ igaz.</label>
-        <label><input type="radio" name="q6"> ⊤ ⇔ ⊥ igaz.</label>
-        <button class="btn" onclick="checkQuiz(this)">Ellenőrzés</button>
-        <div class="fb"></div>
+      <div class="kviz" data-answer="0">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Utolsó próba! Melyik állítás IGAZ?</p>
+      <div class="opciok">
+        <button>⊥ ⇒ ⊤ igaz.</button>
+        <button>⊤ ⇒ ⊥ igaz.</button>
+        <button>⊤ ∧ ⊥ igaz.</button>
+        <button>⊤ ⇔ ⊥ igaz.</button>
       </div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
 
-      <div class="box thm" style="text-align:center">
+      <div class="doboz tetel" style="text-align:center">
         <div class="t" style="justify-content:center">🎓 Gratulálok!</div>
         <p>Végigvitted a matematikai logikát. Mostantól pontosan tudod, mi az, hogy „igaz" — és ez az egész matematika alapja. A következő állomás: <b>halmazok</b>, ahol a De Morgan és a kvantorok újra elővesznek. Viszlát ott! 👋</p>
       </div>
-    </section>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-logikai-muveletek.html"><span class="irany">← Előző</span><span class="hova">Logikai műveletek és formulák</span></a>
+      <a class="kov" href="feladatok-logika.html"><span class="irany">Következő →</span><span class="hova">Logika — feladatok</span></a>
+    </div>
+  </div>
 
-  
-<section class="card" id="tovabb">
-  <h2>📍 Merre tovább?</h2>
-  <p>🏋️ <a href="feladatok-logika.html"><b>Feladatgyűjtemény — Matematikai logika</b></a> — gyakorold be, amit itt tanultál!</p>
-  <p>➡️ Következő: <a href="tananyag-halmazok.html">Halmazok (tananyag)</a> ·
-     🧠 <a href="osszefoglalo.html">Tömör összefoglaló</a> ·
-     🗂️ <a href="index.html">Témakör főoldala</a></p>
-</section>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
 </main>
-</div>
 
-<footer>
-  Matematikai logika — interaktív tananyag · 1e osztály (társadalmi-nyelvi szak) · Svetozar Marković Gimnázium<br>
-  Tantervi kapcsolódás: MAT.A.SO.O.1.3 · alapszint (O) + középszint (S) alsó sáv · Készült a projekt órai anyagai alapján.
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
 </footer>
 
-<script>
-// scroll progress
-var pb=document.getElementById('progress');
-window.addEventListener('scroll',function(){
-  var h=document.documentElement,b=document.body;
-  var st=h.scrollTop||b.scrollTop, sh=(h.scrollHeight||b.scrollHeight)-h.clientHeight;
-  pb.style.width=(sh>0?(st/sh*100):0)+'%';
-});
-// quiz checker
-function checkQuiz(btn){
-  var quiz=btn.closest('.quiz');
-  var ans=parseInt(quiz.getAttribute('data-answer'),10);
-  var labels=quiz.querySelectorAll('label');
-  var inputs=quiz.querySelectorAll('input');
-  var chosen=-1;
-  inputs.forEach(function(inp,i){if(inp.checked)chosen=i;});
-  var fb=quiz.querySelector('.fb');
-  labels.forEach(function(l){l.classList.remove('correct','wrong');});
-  if(chosen<0){fb.className='fb no';fb.textContent='Válassz egy lehetőséget! ☝️';return;}
-  labels[ans].classList.add('correct');
-  if(chosen===ans){
-    fb.className='fb ok';fb.textContent='Pontosan! Szép munka. 🎉';
-  }else{
-    labels[chosen].classList.add('wrong');
-    fb.className='fb no';fb.textContent='Nem egészen — a zölddel jelölt a helyes. Nézd át még egyszer! 🔁';
-  }
-}
-// close mobile TOC on link click
-document.querySelectorAll('nav.toc a').forEach(function(a){
-  a.addEventListener('click',function(){document.querySelector('nav.toc').classList.remove('open');});
-});
-</script>
 <script src="../../assets/katex/katex.min.js"></script>
 <script src="../../assets/katex/auto-render.min.js"></script>
 <script>
@@ -780,5 +305,7 @@ document.querySelectorAll('nav.toc a').forEach(function(a){
     {left:'\\[', right:'\\]', display:true}
   ]});
 </script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
 </body>
 </html>

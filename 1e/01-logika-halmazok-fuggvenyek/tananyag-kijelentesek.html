@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A kijelentés és az igazságérték — tananyag | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Logika, halmazok, függvények</a> ›
+  <span class="itt">A kijelentés és az igazságérték</span>
+</nav>
+
+<div class="hero">
+  <h1>A kijelentés és az igazságérték</h1>
+  <p class="alcim">Mi számít kijelentésnek, és honnan tudjuk, hogy igaz vagy hamis? Itt kezdődik a logika.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip ora">Logika · 1/3</span></div>
+</div>
+
+<main class="lap toc-os">
+  <div class="tartalom">
+
+    <h2 id="s0">🎬 Miért tanuljuk?</h2>
+<span id="intro" class="regi-horgony"></span>
+<p class="lead">Mert a logika az a nyelv, amin a matematika minden állítása meg van fogalmazva.</p>
+      <p>Amikor azt mondod, hogy „ha esik az eső, akkor vizes az út", vagy „minden ember halandó", akkor logikai állításokat mondasz. A matematikai logika ezt teszi pontossá: egyértelmű jelekkel és szabályokkal dolgozik, hogy soha ne lehessen félreérteni, és soha ne lehessen becsapni.</p>
+      <div class="doboz erdekesseg">
+        <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+        <ul class="clean" style="margin:0">
+          <li><b>Programozás:</b> minden <span class="kbd">if</span> feltétel egy logikai kifejezés (<span class="math">\(\text{és}\)</span>, <span class="math">\(\text{vagy}\)</span>, <span class="math">\(\text{nem}\)</span>).</li>
+          <li><b>Jog és vita:</b> egy érvelés akkor jó, ha a következtetés logikailag helyes — pont ezt tanuljuk itt.</li>
+          <li><b>Keresés a neten:</b> „macska AND kutya", „nyaralás NOT Görögország" — ezek logikai műveletek.</li>
+          <li><b>Áramkörök, chipek:</b> a számítógép <i>logikai kapukból</i> épül fel (erről a végén egy mém is vár 👀).</li>
+        </ul>
+      </div>
+      <p>A fejezet végére hat szuperképességed lesz: felismered a <b>kijelentéseket</b>, kombinálod őket <b>műveletekkel</b>, kiszámolod egy <b>formula</b> igazságértékét, felismered a <b>tautológiákat</b>, helyesen <b>következtetsz</b>, és bánni tudsz a <b>kvantorokkal</b>. Menjünk! 🚀</p>
+
+    <h2 id="s1">Kijelentés és igazságérték</h2>
+<span id="kijelentes" class="regi-horgony"></span>
+<p class="lead">Az első kérdés mindig ez: eldönthető-e a mondatról, hogy igaz vagy hamis?</p>
+
+      <div class="doboz definicio">
+        <p class="cim"><span class="ikon">📗</span> Definíció — logikai kijelentés (ítélet)</p>
+        <p><b>Kijelentés</b> az olyan kijelentő mondat, amelyről egyértelműen eldönthető, hogy <span class="tt">igaz</span> vagy <span class="ff">hamis</span> — de a kettő közül pontosan az egyik.</p>
+      </div>
+
+      <p>A kijelentéseket kis betűkkel jelöljük: <span class="math">\(p, q, r, \ldots\)</span> A kijelentés <b>igazságértéke</b> (logikai értéke) kétféle lehet:</p>
+      <ul class="clean">
+        <li><span class="math tt">⊤</span> — „té", az <b>igaz</b> érték;</li>
+        <li><span class="math ff">⊥</span> — „nem té", a <b>hamis</b> érték.</li>
+      </ul>
+      <p>Egy <span class="math">\(p\)</span> kijelentés igazságértékét így jelöljük: <span class="math">\(\tau (p)\)</span> (olvasd: „tau pé"). Tehát</p>
+      <p style="text-align:center" class="math">τ(p) = ⊤, ha p igaz &nbsp;&nbsp;•&nbsp;&nbsp; τ(p) = ⊥, ha p hamis.</p>
+
+      <div class="doboz tetel">
+        <p class="cim"><span class="ikon">📘</span> Arisztotelész két aranyszabálya</p>
+        <p><b>Ellentmondástalanság elve:</b> egy kijelentés nem lehet egyszerre igaz is és hamis is.<br>
+        <b>Harmadik kizárásának elve</b> (<i>tertium non datur</i>): ha egy kijelentés nem igaz, akkor hamis — harmadik lehetőség nincs.</p>
+      </div>
+
+      <div class="doboz definicio">
+        <p class="cim"><span class="ikon">📗</span> Definíció — logikai függvény (nyitott mondat)</p>
+        <p>Az olyan mondatot, amely <b>változót</b> tartalmaz, és a változó konkrét értékére válik csak kijelentéssé, <b>logikai függvénynek</b> (nyitott mondatnak) nevezzük. Jelölése: <span class="math">\(P(x)\)</span>.</p>
+      </div>
+      <div class="doboz pelda">
+        <p class="cim"><span class="ikon">✏️</span> Példa</p>
+        <p><span class="math">\(x^{2} = 4\)</span> önmagában <b>nem</b> kijelentés (nem tudjuk, igaz-e, amíg nem tudjuk, mi az <span class="math">\(x\)</span>). De <span class="math">\(x = 2\)</span> esetén már igaz kijelentés, <span class="math">\(x = 5\)</span> esetén hamis. Ez tehát logikai függvény.</p>
+      </div>
+
+      <div class="doboz csapda">
+        <p class="cim"><span class="ikon">⚠️</span> Csapda!</p>
+        <p>Nem minden mondat kijelentés! A <b>kérdés</b> („Hány óra van?"), a <b>felszólítás</b> („Mosd meg a kezed!") és a <b>vélemény/ízlés</b> („A csokifagyi a legfinomabb") nem kijelentés, mert nincs egyértelmű igaz/hamis értéke.</p>
+      </div>
+
+      <div class="kviz" data-answer="2">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik NEM kijelentés?</p>
+      <div class="opciok">
+        <button>A 6 osztható 3-mal.</button>
+        <button>Minden négyzet téglalap.</button>
+        <button>Menj ki a táblához!</button>
+        <button>A 7 páros szám.</button>
+      </div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+      <div class="doboz erdekesseg">
+        <p class="cim"><span class="ikon">💡</span> Megegyezés (fontos az egész tananyagban!)</p>
+        <p>A természetes számok halmaza nálunk <span class="math">\(\mathbb{N} = \{1, 2, 3, \ldots \}\)</span> — a <b>0-t nem</b> tekintjük természetes számnak. Így pl. „minden természetes szám pozitív" (<span class="math">\(\forall x\in \mathbb{N}: x &gt; 0\)</span>) igaz állítás.</p>
+      </div>
+
+      <div class="gyakorolj"><span class="ikon">🎯</span><p><b>Gyakorolj:</b> Feladatgyűjtemény — <i><a href="feladatok-logika.html#alap-1">Alapszint 1–4</a>.</i> (kijelentés-e; nyitott mondat vagy kijelentés; igazságérték megadása).</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">Témakör főoldala</span></a>
+      <a class="kov" href="tananyag-logikai-muveletek.html"><span class="irany">Következő →</span><span class="hova">Logikai műveletek és formulák</span></a>
+    </div>
+  </div>
+
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

@@ -233,6 +233,33 @@ a.kartya:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(15,23,42,.1
 .katex{font-size:1.06em;}
 .katex-display{overflow-x:auto;overflow-y:hidden;padding:.2rem 0;}
 
+/* ---------- Tartalmi segédosztályok (tananyag-egységek kánonja) ---------- */
+.lead{color:var(--szurke-600);font-size:1.06rem;}
+.tt{color:var(--zold-700);font-weight:700;}          /* igaz (⊤) */
+.ff{color:var(--piros);font-weight:700;}             /* hamis (⊥) */
+table.tt-table{width:auto;min-width:min(100%,420px);margin:14px auto;border-radius:10px;
+  overflow:hidden;box-shadow:var(--arny);}
+table.tt-table th,table.tt-table td{padding:.4rem .9rem;}
+table.tt-table .res{font-weight:800;background:var(--zold-50);}
+.tblwrap{overflow-x:auto;}
+.kbd{font-family:'Cambria Math',Cambria,Georgia,serif;background:var(--zold-50);
+  border:1px solid var(--szurke-300);border-radius:6px;padding:1px 7px;font-size:1.02em;}
+.pill{display:inline-block;background:var(--zold-100);color:var(--zold-900);
+  border-radius:999px;padding:.05rem .6rem;font-size:.8rem;font-weight:700;font-family:var(--fej);}
+.ic{margin-right:.3rem;}
+.venn{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:1rem 0;}
+.venn .vbox,.svgcard{background:var(--kartya);border:1px solid var(--szurke-300);
+  border-radius:var(--r);padding:8px;box-shadow:var(--arny);}
+.venn .vbox{width:210px;}
+.venn svg,.svgwrap svg,.svgcard svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.svgwrap{text-align:center;margin:1rem 0;}
+.svgwrap,.svgcard,.venn .vbox{break-inside:avoid;}
+.cap{font-size:.86rem;font-weight:600;color:var(--szurke-600);text-align:center;padding:4px 4px 6px;}
+.clean{list-style:none;padding-left:0;}
+.clean li{padding:7px 0 7px 4px;border-bottom:1px solid var(--szurke-300);}
+.clean li:last-child{border-bottom:0;}
+.regi-horgony{position:relative;top:-4rem;}
+
 /* ---------- Mobil ---------- */
 @media(max-width:640px){
   .hero-nagy h1{font-size:2rem;}

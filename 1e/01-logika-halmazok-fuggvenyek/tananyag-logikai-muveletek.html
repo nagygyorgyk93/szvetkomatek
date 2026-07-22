@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Logikai műveletek és formulák — tananyag | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Logika, halmazok, függvények</a> ›
+  <span class="itt">Logikai műveletek és formulák</span>
+</nav>
+
+<div class="hero">
+  <h1>Logikai műveletek és formulák</h1>
+  <p class="alcim">Nem, és, vagy, ha–akkor: az öt alapművelet és az igazságtáblázatok művészete.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip ora">Logika · 2/3</span></div>
+</div>
+
+<main class="lap toc-os">
+  <div class="tartalom">
+
+    <h2 id="s0">🎬 Miért tanuljuk?</h2>
+    <p>A kijelentések önmagukban csak építőkockák — az igazi erő az összekapcsolásukban van. A „nem”, az „és”, a „vagy”, a „ha…, akkor…” és az „akkor és csak akkor” pontos jelentése a matematika nyelvtana: erre épül minden bizonyítás, sőt a számítógéped minden áramköre is. Ebben a részben a műveleteket és a belőlük épített formulák igazságtáblázatait tanulod meg.</p>
+
+    <h2 id="s1">Logikai műveletek</h2>
+<span id="muveletek" class="regi-horgony"></span>
+<p class="lead">Egyszerű kijelentésekből — kötőszavak segítségével — összetetteket építünk. Öt művelet van: négy kétváltozós és egy egyváltozós.</p>
+
+      <figure>
+        <img src="data:image/jpeg;base64,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" alt="A négy fő logikai művelet: tagadás, és, vagy, következtetés">
+        <figcaption>A logikai műveletek négy „nagy" szereplője — tagadás (nem), és, vagy, következtetés.</figcaption>
+      </figure>
+
+      <h3>Negáció (¬) — „nem …"</h3>
+      <div class="doboz definicio">
+        <p class="cim"><span class="ikon">📗</span> Definíció</p>
+        <p>A <span class="math">\(p\)</span> kijelentés <b>negációja</b> a „nem <span class="math">\(p\)</span>" kijelentés, jele <span class="math">\(\lnot p\)</span>. Igazságértéke akkor igaz, ha <span class="math">\(p\)</span> hamis.</p>
+      </div>
+      <div class="tblwrap"><table class="tt-table">
+        <thead><tr><th>p</th><th class="res">¬p</th></tr></thead>
+        <tbody>
+          <tr><td class="tt">⊤</td><td class="res ff">⊥</td></tr>
+          <tr><td class="ff">⊥</td><td class="res tt">⊤</td></tr>
+        </tbody>
+      </table></div>
+      <div class="doboz erdekesseg"><p class="cim"><span class="ikon">💡</span> Jó tudni</p><p>A kétszeres tagadás visszaadja az eredetit: <span class="math">\(\tau (\lnot \lnot p) = \tau (p)\)</span>. „Nem igaz, hogy nem esik" = „esik". 🌧️</p></div>
+
+      <h3>Konjunkció (∧) — „… és …"</h3>
+      <div class="doboz definicio">
+        <p class="cim"><span class="ikon">📗</span> Definíció</p>
+        <p><span class="math">\(p \land  q\)</span> („<span class="math">\(p\)</span> és <span class="math">\(q\)</span>") csakis akkor <b>igaz</b>, ha <span class="math">\(p\)</span> is és <span class="math">\(q\)</span> is igaz.</p>
+      </div>
+      <p>Ide tartoznak ezek a kötőszavak is: <i>de, noha, bár, meg, viszont, pedig, …is …is</i>. („Esik az eső, <b>de</b> süt a nap" = <span class="math">\(p \land  q\)</span>.)</p>
+      <div class="tblwrap"><table class="tt-table">
+        <thead><tr><th>p</th><th>q</th><th class="res">p ∧ q</th></tr></thead>
+        <tbody>
+          <tr><td class="tt">⊤</td><td class="tt">⊤</td><td class="res tt">⊤</td></tr>
+          <tr><td class="tt">⊤</td><td class="ff">⊥</td><td class="res ff">⊥</td></tr>
+          <tr><td class="ff">⊥</td><td class="tt">⊤</td><td class="res ff">⊥</td></tr>
+          <tr><td class="ff">⊥</td><td class="ff">⊥</td><td class="res ff">⊥</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>Diszjunkció (∨) — „… vagy …"</h3>
+      <div class="doboz definicio">
+        <p class="cim"><span class="ikon">📗</span> Definíció</p>
+        <p><span class="math">\(p \lor  q\)</span> („<span class="math">\(p\)</span> vagy <span class="math">\(q\)</span>") csakis akkor <b>hamis</b>, ha <span class="math">\(p\)</span> is és <span class="math">\(q\)</span> is hamis. Ez a <b>megengedő „vagy"</b>: lehet mindkettő is igaz.</p>
+      </div>
+      <div class="tblwrap"><table class="tt-table">
+        <thead><tr><th>p</th><th>q</th><th class="res">p ∨ q</th></tr></thead>
+        <tbody>
+          <tr><td class="tt">⊤</td><td class="tt">⊤</td><td class="res tt">⊤</td></tr>
+          <tr><td class="tt">⊤</td><td class="ff">⊥</td><td class="res tt">⊤</td></tr>
+          <tr><td class="ff">⊥</td><td class="tt">⊤</td><td class="res tt">⊤</td></tr>
+          <tr><td class="ff">⊥</td><td class="ff">⊥</td><td class="res ff">⊥</td></tr>
+        </tbody>
+      </table></div>
+      <div class="doboz csapda">
+        <p class="cim"><span class="ikon">⚠️</span> Csapda — megengedő vs. kizáró „vagy"</p>
+        <p>A hétköznapi „vagy" néha <b>kizáró</b>: „A jegyed 1-es <b>vagy</b> 5-ös" — nem lehet mindkettő! A kizáró vagy jele <span class="math">\(\veebar\)</span> (jele: <span class="math">\(p \veebar  q\)</span>), és pont akkor <b>hamis</b>, ha a két tag <b>egyforma</b>. „Kávét vagy teát iszom (akár mindkettőt)" viszont <b>megengedő</b> (<span class="math">\(\lor\)</span>). ☕🍵</p>
+      </div>
+      <details>
+        <summary>Kíváncsi vagy a kizáró vagy (⊻) táblázatára?</summary>
+        <div class="bel">
+        <div class="tblwrap"><table class="tt-table">
+          <thead><tr><th>p</th><th>q</th><th class="res">p ⊻ q</th></tr></thead>
+          <tbody>
+            <tr><td class="tt">⊤</td><td class="tt">⊤</td><td class="res ff">⊥</td></tr>
+            <tr><td class="tt">⊤</td><td class="ff">⊥</td><td class="res tt">⊤</td></tr>
+            <tr><td class="ff">⊥</td><td class="tt">⊤</td><td class="res tt">⊤</td></tr>
+            <tr><td class="ff">⊥</td><td class="ff">⊥</td><td class="res ff">⊥</td></tr>
+          </tbody>
+        </table></div>
+        <p>Röviden: <span class="math">\(p \veebar  q\)</span> = „különböznek". 🎯</p>
+        </div>
+      </details>
+
+      <h3>Implikáció (⇒) — „ha …, akkor …"</h3>
+      <div class="doboz definicio">
+        <p class="cim"><span class="ikon">📗</span> Definíció</p>
+        <p><span class="math">\(p \Rightarrow  q\)</span> („ha <span class="math">\(p\)</span>, akkor <span class="math">\(q\)</span>") csakis akkor <b>hamis</b>, ha <span class="math">\(p\)</span> igaz és <span class="math">\(q\)</span> hamis. Itt <span class="math">\(p\)</span> az <b>előtag</b> (feltétel), <span class="math">\(q\)</span> az <b>utótag</b> (következmény).</p>
+      </div>
+      <div class="tblwrap"><table class="tt-table">
+        <thead><tr><th>p</th><th>q</th><th class="res">p ⇒ q</th></tr></thead>
+        <tbody>
+          <tr><td class="tt">⊤</td><td class="tt">⊤</td><td class="res tt">⊤</td></tr>
+          <tr><td class="tt">⊤</td><td class="ff">⊥</td><td class="res ff">⊥</td></tr>
+          <tr><td class="ff">⊥</td><td class="tt">⊤</td><td class="res tt">⊤</td></tr>
+          <tr><td class="ff">⊥</td><td class="ff">⊥</td><td class="res tt">⊤</td></tr>
+        </tbody>
+      </table></div>
+      <div class="doboz csapda">
+        <p class="cim"><span class="ikon">⚠️</span> A leghíresebb logikai csapda</p>
+        <p>Ha az előtag <b>hamis</b>, az implikáció <b>igaz</b> — bármi is az utótag! „Ha a Hold sajtból van, akkor 2 + 2 = 5" logikailag <span class="tt">igaz</span> állítás. 🌚🧀 A hamis feltételből „bármi következhet". Az implikáció csak a <b>⊤ ⇒ ⊥</b> esetben bukik meg.</p>
+      </div>
+      <div class="doboz erdekesseg">
+        <p class="cim"><span class="ikon">💡</span> Ugyanaz sokféleképp</p>
+        <p><span class="math">\(p \Rightarrow  q\)</span> mind ugyanaz: „<span class="math">\(p\)</span>-ből következik <span class="math">\(q\)</span>", „<span class="math">\(q\)</span> következménye <span class="math">\(p\)</span>-nek", „<span class="math">\(p\)</span> elégséges feltétele <span class="math">\(q\)</span>-nak", „<span class="math">\(q\)</span> szükséges feltétele <span class="math">\(p\)</span>-nek".</p>
+      </div>
+
+      <h3>Ekvivalencia (⇔) — „… akkor és csakis akkor …"</h3>
+      <div class="doboz definicio">
+        <p class="cim"><span class="ikon">📗</span> Definíció</p>
+        <p><span class="math">\(p \Leftrightarrow  q\)</span> csakis akkor <b>igaz</b>, ha <span class="math">\(p\)</span> és <span class="math">\(q\)</span> igazságértéke <b>megegyezik</b>. Szavakkal: „<span class="math">\(p\)</span> szükséges és elégséges feltétele <span class="math">\(q\)</span>-nak".</p>
+      </div>
+      <div class="tblwrap"><table class="tt-table">
+        <thead><tr><th>p</th><th>q</th><th class="res">p ⇔ q</th></tr></thead>
+        <tbody>
+          <tr><td class="tt">⊤</td><td class="tt">⊤</td><td class="res tt">⊤</td></tr>
+          <tr><td class="tt">⊤</td><td class="ff">⊥</td><td class="res ff">⊥</td></tr>
+          <tr><td class="ff">⊥</td><td class="tt">⊤</td><td class="res ff">⊥</td></tr>
+          <tr><td class="ff">⊥</td><td class="ff">⊥</td><td class="res tt">⊤</td></tr>
+        </tbody>
+      </table></div>
+      <div class="doboz pelda">
+        <p class="cim"><span class="ikon">✏️</span> Példa matekból</p>
+        <p><span class="math">\(a\cdot b = 0 \Leftrightarrow  a = 0 \lor  b = 0\)</span> — egy szorzat pontosan akkor 0, ha valamelyik tényezője 0. Ez oda-vissza igaz, ezért ekvivalencia. ✅</p>
+      </div>
+
+      <div class="kviz" data-answer="1">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik esetben lesz <span class="math">\(p \Rightarrow  q\)</span> hamis?</p>
+      <div class="opciok">
+        <button>p igaz, q igaz</button>
+        <button>p igaz, q hamis</button>
+        <button>p hamis, q igaz</button>
+        <button>p hamis, q hamis</button>
+      </div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+      <div class="gyakorolj"><span class="ikon">🎯</span><p><b>Gyakorolj:</b> Feladatgyűjtemény — <i><a href="feladatok-logika.html#alap-4">Alapszint 4–7</a>, 13–15.</i> (műveletek magyarul és jelekkel, igazságtáblázat, megengedő/kizáró vagy, „ha…, akkor…").</p></div>
+
+    <h2 id="s2">Logikai formula és igazságtáblázat</h2>
+<span id="formula" class="regi-horgony"></span>
+<p class="lead">A műveletekből tetszőlegesen bonyolult kifejezéseket — formulákat — rakhatunk össze.</p>
+
+      <div class="doboz definicio">
+        <p class="cim"><span class="ikon">📗</span> Miből épül egy formula?</p>
+        <ul class="clean" style="margin:.2rem 0">
+          <li><b>Logikai állandók:</b> <span class="math">\(\top , \bot\)</span></li>
+          <li><b>Logikai változók:</b> <span class="math">\(p, q, r, \ldots\)</span></li>
+          <li><b>Műveletek:</b> <span class="math">\(\lnot , \land , \lor , \Rightarrow , \Leftrightarrow\)</span></li>
+          <li><b>Zárójelek:</b> <span class="math">\(( )\)</span> — a műveletek hatáskörét szabják meg.</li>
+        </ul>
+      </div>
+
+      <div class="doboz tetel">
+        <p class="cim"><span class="ikon">📘</span> Műveleti sorrend (mint a +, · a számoknál)</p>
+        <p>1. <span class="math">\(\lnot\)</span> (a legerősebb) → 2. <span class="math">\(\land\)</span> és <span class="math">\(\lor\)</span> (egyenrangúak) → 3. <span class="math">\(\Rightarrow\)</span> és <span class="math">\(\Leftrightarrow\)</span> (leggyengébbek). Kétség esetén <b>tegyél zárójelet!</b></p>
+      </div>
+
+      <div class="doboz pelda">
+        <p class="cim"><span class="ikon">✏️</span> Kidolgozott példa</p>
+        <p>Számítsuk ki <span class="math">\(F: p \Rightarrow  \top  \land  \lnot q\)</span> értékét, ha <span class="math">\(\tau (p)=\bot\)</span> és <span class="math">\(\tau (q)=\top\)</span>:</p>
+        <p class="math">⊥ ⇒ ⊤ ∧ ¬⊤ = ⊥ ⇒ ⊤ ∧ ⊥ = ⊥ ⇒ ⊥ = ⊤</p>
+        <p>A negációt bontottuk fel előbb, aztán a konjunkciót, végül az implikációt — pont a sorrend szerint. ✅</p>
+      </div>
+
+      <p>Ha az <b>összes</b> lehetséges esetre kíváncsi vagy, készíts <b>igazságtáblázatot</b>. <span class="math">\(n\)</span> változóhoz <span class="math">\(2^{n}\)</span> sor tartozik (2 változó → 4 sor, 3 változó → 8 sor).</p>
+
+      <details>
+        <summary>Nézzük végig lépésről lépésre: <span class="math">\(F: p \Rightarrow  \top  \land  \lnot q\)</span> teljes táblázata</summary>
+        <div class="bel">
+          <div class="tblwrap"><table class="tt-table">
+            <thead><tr><th>p</th><th>q</th><th>¬q</th><th>⊤ ∧ ¬q</th><th class="res">F: p ⇒ ⊤∧¬q</th></tr></thead>
+            <tbody>
+              <tr><td class="tt">⊤</td><td class="tt">⊤</td><td class="ff">⊥</td><td class="ff">⊥</td><td class="res ff">⊥</td></tr>
+              <tr><td class="tt">⊤</td><td class="ff">⊥</td><td class="tt">⊤</td><td class="tt">⊤</td><td class="res tt">⊤</td></tr>
+              <tr><td class="ff">⊥</td><td class="tt">⊤</td><td class="ff">⊥</td><td class="ff">⊥</td><td class="res tt">⊤</td></tr>
+              <tr><td class="ff">⊥</td><td class="ff">⊥</td><td class="tt">⊤</td><td class="tt">⊤</td><td class="res tt">⊤</td></tr>
+            </tbody>
+          </table></div>
+          <p>Balról jobbra töltjük ki a segédoszlopokat, és az utolsó oszlop a végeredmény. 🧮</p>
+        </div>
+      </details>
+
+      <div class="gyakorolj"><span class="ikon">🎯</span><p><b>Gyakorolj:</b> Feladatgyűjtemény — <i><a href="feladatok-logika.html#alap-5">Alapszint 5</a>, 12; <a href="feladatok-logika.html#kozep-1">Középszint 1–3</a>.</i> (formulák igazságértéke, teljes igazságtáblázat kitöltése).</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-kijelentesek.html"><span class="irany">← Előző</span><span class="hova">A kijelentés és az igazságérték</span></a>
+      <a class="kov" href="tananyag-kovetkeztetesek-kvantorok.html"><span class="irany">Következő →</span><span class="hova">Tautológiák, következtetések, kvantorok</span></a>
+    </div>
+  </div>
+
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

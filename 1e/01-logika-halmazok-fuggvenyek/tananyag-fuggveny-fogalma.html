@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A függvény fogalma és megadása — tananyag | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Logika, halmazok, függvények</a> ›
+  <span class="itt">A függvény fogalma és megadása</span>
+</nav>
+
+<div class="hero">
+  <h1>A függvény fogalma és megadása</h1>
+  <p class="alcim">Hozzárendelések, domén és értékkészlet — mitől függvény egy reláció?</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip ora">Függvények · 1/3</span></div>
+</div>
+
+<main class="lap toc-os">
+  <div class="tartalom">
+
+    <h2 id="s0">🎬 Miért tanuljuk?</h2>
+<span id="miert" class="regi-horgony"></span>
+<p class="lead">Ahol valamiből <em>egyértelműen</em> következik valami más, ott függvény bújik meg.</p>
+    <ul class="clean">
+      <li><b>Hőmérséklet-átváltás:</b> minden Celsius-értékhez pontosan egy Fahrenheit-érték tartozik — ez egy függvény: <span class="math">\(F(x)=\frac{9x}{5}+32\)</span>.</li>
+      <li><b>Bolti ár:</b> a fizetendő összeg a megvett mennyiség függvénye. 3&nbsp;kg alma ára egyértelmű.</li>
+      <li><b>Személyi szám (JMBG):</b> minden állampolgárhoz pontosan egy szám tartozik — függvény. Fordítva is: a számból visszakereshető a személy → ez lesz az <b>inverz</b>.</li>
+      <li><b>Programozás:</b> a <span class="kbd">függvény</span> (function) a kód alapköve — kap egy bemenetet, visszaad egy kimenetet.</li>
+    </ul>
+    <div class="doboz erdekesseg"><p class="cim"><span class="ikon">💡</span> A nagy ötlet</p>
+      A függvény = <b>megbízható hozzárendelés</b>. „Megbízható", mert ugyanabból a bemenetből mindig ugyanaz a kimenet jön ki. Ha egy bemenethez két különböző kimenet is tartozhatna, az már <b>nem</b> függvény.</div>
+
+    <h2 id="s1">A függvény fogalma és megadása</h2>
+<span id="fogalom" class="regi-horgony"></span>
+<p class="lead">A reláció megengedő, a függvény szigorú: nála minden őselemnek pontosan egy párja van.</p>
+
+    <h3>Relációból függvény</h3>
+    <p>A <b>relációnál</b> az <span class="math">\(A\)</span> halmaz egy eleméhez a <span class="math">\(B\)</span> több eleme is tartozhat, sőt lehet, hogy egyikhez sem. A <b>függvény</b> két dolgot követel meg:</p>
+    <div class="doboz definicio"><p class="cim"><span class="ikon">📗</span> Definíció — függvény (leképezés)</p>
+      Adott két nem üres halmaz, <span class="math">\(A\)</span> és <span class="math">\(B\)</span>. Az <span class="math">\(f\)</span> hozzárendelés <b>függvény</b> <span class="math">\(A\)</span>-ból <span class="math">\(B\)</span>-be, jelben <span class="math">\(f:A\to B\)</span>, ha
+      <ul class="clean" style="margin:8px 0">
+        <li><b>(1) mindenhez van kép:</b> <span class="math">\(A\)</span> <em>minden</em> eleméhez tartozik <span class="math">\(B\)</span>-beli elem — <span class="math">\((\forall x\in A)(\exists y\in B)\)</span>;</li>
+        <li><b>(2) pontosan egy:</b> egy őselemhez <em>nem</em> tartozhat két különböző kép — ha <span class="math">\(y=f(x)\)</span> és <span class="math">\(z=f(x)\)</span>, akkor <span class="math">\(y=z\)</span>.</li>
+      </ul>
+      Ekkor <span class="math">\(y=f(x)\)</span> az <span class="math">\(x\)</span> <b>képe</b>, <span class="math">\(x\)</span> pedig az <span class="math">\(y\)</span> egyik <b>őseleme</b> (argumentuma).</div>
+
+    <div class="svgrow">
+      <div class="svgcard">
+        <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Függvény nyíldiagram">
+          <ellipse cx="60" cy="90" rx="42" ry="72" fill="#eaf1ff" stroke="#2563eb" stroke-width="2"/>
+          <ellipse cx="180" cy="90" rx="42" ry="72" fill="#e7f8ef" stroke="#0f9d58" stroke-width="2"/>
+          <text x="60" y="30" text-anchor="middle" font-size="13" font-weight="700" fill="#2563eb">A</text>
+          <text x="180" y="30" text-anchor="middle" font-size="13" font-weight="700" fill="#0f9d58">B</text>
+          <g fill="#1d2333" font-size="12">
+            <circle cx="60" cy="66" r="4"/><text x="46" y="70">1</text>
+            <circle cx="60" cy="96" r="4"/><text x="46" y="100">2</text>
+            <circle cx="60" cy="126" r="4"/><text x="46" y="130">3</text>
+            <circle cx="180" cy="60" r="4"/><text x="192" y="64">a</text>
+            <circle cx="180" cy="96" r="4"/><text x="192" y="100">b</text>
+            <circle cx="180" cy="132" r="4"/><text x="192" y="136">c</text>
+          </g>
+          <g stroke="#5b4be0" stroke-width="2" marker-end="url(#ar1)">
+            <line x1="64" y1="66" x2="176" y2="60"/>
+            <line x1="64" y1="96" x2="176" y2="96"/>
+            <line x1="64" y1="126" x2="176" y2="98"/>
+          </g>
+          <defs><marker id="ar1" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5b4be0"/></marker></defs>
+        </svg>
+        <div class="cap">✅ Függvény: minden A-beli elemből <b>pontosan egy</b> nyíl indul.</div>
+      </div>
+      <div class="svgcard">
+        <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nem függvény nyíldiagram">
+          <ellipse cx="60" cy="90" rx="42" ry="72" fill="#fdeceb" stroke="#e0392b" stroke-width="2"/>
+          <ellipse cx="180" cy="90" rx="42" ry="72" fill="#e7f8ef" stroke="#0f9d58" stroke-width="2"/>
+          <text x="60" y="30" text-anchor="middle" font-size="13" font-weight="700" fill="#e0392b">A</text>
+          <text x="180" y="30" text-anchor="middle" font-size="13" font-weight="700" fill="#0f9d58">B</text>
+          <g fill="#1d2333" font-size="12">
+            <circle cx="60" cy="66" r="4"/><text x="46" y="70">1</text>
+            <circle cx="60" cy="96" r="4"/><text x="46" y="100">2</text>
+            <circle cx="60" cy="126" r="4"/><text x="46" y="130">3</text>
+            <circle cx="180" cy="60" r="4"/><text x="192" y="64">a</text>
+            <circle cx="180" cy="96" r="4"/><text x="192" y="100">b</text>
+            <circle cx="180" cy="132" r="4"/><text x="192" y="136">c</text>
+          </g>
+          <g stroke="#e0392b" stroke-width="2" marker-end="url(#ar2)">
+            <line x1="64" y1="66" x2="176" y2="60"/>
+            <line x1="64" y1="66" x2="176" y2="96"/>
+            <line x1="64" y1="126" x2="176" y2="132"/>
+          </g>
+          <defs><marker id="ar2" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#e0392b"/></marker></defs>
+        </svg>
+        <div class="cap">❌ Nem függvény: az <b>1</b>-hez két nyíl, a <b>2</b>-höz egy sem.</div>
+      </div>
+    </div>
+
+    <h3>Domén, kodomén, értékkészlet</h3>
+    <table class="tt-table"><tbody>
+      <tr><td><b>Értelmezési tartomány</b> (domén)</td><td><span class="math">\(D_{f}=A\)</span></td><td>az őselemek halmaza</td></tr>
+      <tr><td><b>Képtartomány</b> (kodomén)</td><td><span class="math">\(B\)</span></td><td>ahová leképezünk</td></tr>
+      <tr><td><b>Értékkészlet</b> (képhalmaz)</td><td><span class="math">\(R_{f}\subseteq B\)</span></td><td>a <em>ténylegesen</em> felvett képek</td></tr>
+    </tbody></table>
+    <div class="doboz csapda"><p class="cim"><span class="ikon">⚠️</span> Vigyázz, csapda!</p>
+      A <b>kodomén</b> és az <b>értékkészlet</b> nem ugyanaz! A kodomén az a halmaz, „ahová megcélozzuk" a leképezést; az értékkészlet csak azok az elemek, amelyeket <em>tényleg</em> eltalálunk. Mindig <span class="math">\(R_{f}\subseteq B\)</span>, de nem feltétlenül egyenlők.</div>
+
+    <h3>Megadási módok</h3>
+    <p>Ugyanaz a függvény többféleképpen leírható:</p>
+    <ul class="clean">
+      <li><b>Rendezett párokkal:</b> <span class="math">\(f=\{(1,7),(2,8),(3,9),(4,10)\}\)</span>.</li>
+      <li><b>Táblázattal:</b> az <span class="math">\(x\)</span> értékek alatt a <span class="math">\(f(x)\)</span> értékek.</li>
+      <li><b>Képlettel (utasítással):</b> <span class="math">\(f(x)=2x+5\)</span>.</li>
+      <li><b>Nyíldiagrammal</b> vagy <b>grafikonnal</b> (koordináta-rendszerben).</li>
+    </ul>
+
+    <h3>Függvényérték — behelyettesítés</h3>
+    <p>Az <span class="math">\(f(x)\)</span> „helyettesítési érték": az <span class="math">\(x\)</span> helyére beírjuk a konkrét számot.</p>
+    <div class="doboz pelda"><p class="cim"><span class="ikon">✏️</span> Példa</p>
+      Legyen <span class="math">\(f(x)=3x-5\)</span>. Ekkor
+      <span class="math">\(f(2)=3\cdot 2-5=1\)</span>,&nbsp; <span class="math">\(f(-1)=3\cdot (-1)-5=-8\)</span>,&nbsp; <span class="math">\(f(a)=3a-5\)</span>.<br>
+      A behelyettesítés bármit tűr: <span class="math">\(f(2m)=3\cdot 2m-5=6m-5\)</span>.</div>
+
+    <h3>Grafikon mint megadás</h3>
+    <p>Ha <span class="math">\(D_{f}=\mathbb{R}\)</span>, a függvényt a koordináta-rendszerben pontonként ábrázolhatjuk. A lineáris <span class="math">\(f(x)=2x-1\)</span> grafikonja egyenes:</p>
+    <div class="svgwrap">
+      <svg viewBox="0 0 320 300" width="360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Az f(x)=2x-1 grafikonja">
+        <defs><marker id="axr" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5b6478"/></marker></defs>
+        <g stroke="#eef0f7" stroke-width="1">
+          <line x1="56" y1="20" x2="56" y2="288"/><line x1="108" y1="20" x2="108" y2="288"/><line x1="212" y1="20" x2="212" y2="288"/><line x1="264" y1="20" x2="264" y2="288"/>
+          <line x1="24" y1="46" x2="300" y2="46"/><line x1="24" y1="98" x2="300" y2="98"/><line x1="24" y1="202" x2="300" y2="202"/><line x1="24" y1="254" x2="300" y2="254"/>
+        </g>
+        <!-- axes: origin at (160,150), unit 26px -->
+        <line x1="16" y1="150" x2="304" y2="150" stroke="#5b6478" stroke-width="1.6" marker-end="url(#axr)"/>
+        <line x1="160" y1="292" x2="160" y2="14" stroke="#5b6478" stroke-width="1.6" marker-end="url(#axr)"/>
+        <text x="298" y="166" font-size="12" fill="#5b6478">x</text>
+        <text x="168" y="24" font-size="12" fill="#5b6478">y</text>
+        <text x="150" y="166" font-size="11" fill="#5b6478">0</text>
+        <text x="182" y="166" font-size="11" fill="#5b6478">1</text>
+        <text x="146" y="128" font-size="11" fill="#5b6478">1</text>
+        <!-- f(x)=2x-1 : (-1,-3)->(212, 228)? compute: x_px=160+26x, y_px=150-26f  ; use x from -1.6..2.1 -->
+        <line x1="118.4" y1="217.6" x2="214.6" y2="25.6" stroke="#5b4be0" stroke-width="3"/>
+        <circle cx="160" cy="176" r="4" fill="#ff5da2"/><text x="120" y="192" font-size="11" fill="#ff5da2">f(0)=−1</text>
+        <circle cx="186" cy="124" r="4" fill="#ff5da2"/><text x="196" y="120" font-size="11" fill="#ff5da2">f(1)=1</text>
+        <text x="222" y="40" font-size="12" font-weight="700" fill="#5b4be0">f(x)=2x−1</text>
+      </svg>
+    </div>
+
+    <div class="kviz" data-answer="2">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Kvíz — melyik <em>nem</em> függvény <span class="math">\(A\to B\)</span>?</p>
+      <div class="opciok">
+        <button><span class="math">\(\{(1,a),(2,a),(3,a)\}\)</span> — minden elemhez ugyanaz</button>
+        <button><span class="math">\(\{(1,a),(2,b),(3,c)\}\)</span> — csupa különböző</button>
+        <button><span class="math">\(\{(1,a),(1,b),(2,c)\}\)</span> — az 1-hez két kép</button>
+        <button><span class="math">\(\{(1,c),(2,c),(3,a)\}\)</span></button>
+      </div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">📝</span><p><b>Gyakorolj a feladatgyűjteményből:</b> <a href="feladatok-fuggvenyek.html#alap-1">Alapszint 1–5</a>. (reláció-e függvény, függvényérték, domén/értékkészlet).</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-halmazok.html"><span class="irany">← Előző</span><span class="hova">Halmazok — feladatok</span></a>
+      <a class="kov" href="tananyag-fuggvenytulajdonsagok.html"><span class="irany">Következő →</span><span class="hova">Függvénytulajdonságok</span></a>
+    </div>
+  </div>
+
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
