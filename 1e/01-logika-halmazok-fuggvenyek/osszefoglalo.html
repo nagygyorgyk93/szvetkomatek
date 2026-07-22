@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Logika, halmazok, függvények — összefoglaló | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Logika, halmazok, függvények</a> ›
+  <span class="itt">Tömör összefoglaló</span>
+</nav>
+
+<div class="hero">
+  <h1>Logika, halmazok, függvények — tömör összefoglaló</h1>
+  <p class="alcim">Minden fontos definíció, tétel és jelölés egy helyen. Ismétléshez,
+  dolgozat előtti átfutáshoz — nyomtasd ki, ez a hivatalos „puska”. 😉</p>
+</div>
+
+<main class="lap toc-os">
+  <div class="tartalom">
+
+<p><em>1e osztály (társadalmi-nyelvi szak) — matematika · alapszintű tanári referencia</em></p>
+<p>Tömör áttekintés: pontos definíciók, jelölések és kulcstételek. A kombinatorika (véges halmazok elemszáma) nem része ennek az összefoglalónak.</p>
+<h2 id="i.-matematikai-logika">I. Matematikai logika</h2>
+<h3 id="kijelentés-és-igazságérték">1. Kijelentés és igazságérték</h3>
+<p><strong>Definíció.</strong> Kijelentés (logikai ítélet) az olyan kijelentő mondat, amelyről egyértelműen eldönthető, hogy igaz vagy hamis.</p>
+<p><strong>Jelölés.</strong> Kijelentéseket a <span class="math inline">\(p,q,r,\ldots\)</span> betűkkel jelöljük; a <span class="math inline">\(p\)</span> kijelentés igazságértéke <span class="math inline">\(\tau\left( p \right)\)</span>, amely <span class="math inline">\(\top\)</span> (igaz) vagy <span class="math inline">\(\bot\)</span> (hamis).</p>
+<p><strong>Alapelvek.</strong> Az ellentmondástalanság elve szerint egy kijelentés nem lehet egyszerre igaz és hamis; a harmadik kizárásának elve szerint ha egy kijelentés nem igaz, akkor hamis.</p>
+<p><strong>Logikai függvény</strong> (nyitott mondat) az olyan mondat, amely változót tartalmaz, és a változó konkrét értékére kijelentéssé válik (pl. <span class="math inline">\(x^{2} = 4\)</span>).</p>
+<h3 id="logikai-műveletek">2. Logikai műveletek</h3>
+<p>Öt alapművelet — négy kétváltozós és egy egyváltozós — az elemi kijelentésekből összetett kijelentéseket képez:</p>
+<p><strong>Konjunkció:</strong> <span class="math inline">\(p \land q\)</span> — akkor és csak akkor igaz, ha p is és q is igaz («… és …»).</p>
+<p><strong>Diszjunkció:</strong> <span class="math inline">\(p \vee q\)</span> — akkor és csak akkor hamis, ha p is és q is hamis («… vagy …»).</p>
+<p><strong>Implikáció:</strong> <span class="math inline">\(p \Rightarrow q\)</span> — akkor és csak akkor hamis, ha p igaz és q hamis («ha p, akkor q»).</p>
+<p><strong>Ekvivalencia:</strong> <span class="math inline">\(p \Leftrightarrow q\)</span> — akkor és csak akkor igaz, ha p és q igazságértéke megegyezik.</p>
+<p><strong>Negáció:</strong> <span class="math inline">\(\neg p\)</span> — akkor és csak akkor igaz, ha p hamis («nem p»).</p>
+<p>A kizáró vagy <span class="math inline">\(p \veebar q\)</span> akkor és csak akkor hamis, ha p és q igazságértéke megegyezik. Az implikációnál «p elégséges feltétele q-nak», «q szükséges feltétele p-nak».</p>
+<p><strong>Igazságtáblázat</strong> (⊤ = igaz, ⊥ = hamis):</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(p\)</span></th>
+<th><span class="math inline">\(q\)</span></th>
+<th><span class="math inline">\(p \land q\)</span></th>
+<th><span class="math inline">\(p \vee q\)</span></th>
+<th><span class="math inline">\(p \Rightarrow q\)</span></th>
+<th><span class="math inline">\(p \Leftrightarrow q\)</span></th>
+<th><span class="math inline">\(\neg p\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>⊤</td>
+<td>⊤</td>
+<td>⊤</td>
+<td>⊤</td>
+<td>⊤</td>
+<td>⊤</td>
+<td>⊥</td>
+</tr>
+<tr class="even">
+<td>⊤</td>
+<td>⊥</td>
+<td>⊥</td>
+<td>⊤</td>
+<td>⊥</td>
+<td>⊥</td>
+<td>⊥</td>
+</tr>
+<tr class="odd">
+<td>⊥</td>
+<td>⊤</td>
+<td>⊥</td>
+<td>⊤</td>
+<td>⊤</td>
+<td>⊥</td>
+<td>⊤</td>
+</tr>
+<tr class="even">
+<td>⊥</td>
+<td>⊥</td>
+<td>⊥</td>
+<td>⊥</td>
+<td>⊤</td>
+<td>⊤</td>
+<td>⊤</td>
+</tr>
+</tbody>
+</table>
+<h3 id="logikai-formula-és-tautológia">3. Logikai formula és tautológia</h3>
+<p>A logikai formulákat logikai állandókból (<span class="math inline">\(\top,\bot\)</span>), logikai változókból (<span class="math inline">\(p,q,r,\ldots\)</span>), a műveletekből (<span class="math inline">\(\land , \vee , \Rightarrow , \Leftrightarrow ,\neg\)</span>) és zárójelekből építjük. Műveleti sorrend: a negáció a legerősebb, utána a <span class="math inline">\(\land\)</span> és <span class="math inline">\(\vee\)</span>, végül az <span class="math inline">\(\Rightarrow\)</span> és <span class="math inline">\(\Leftrightarrow\)</span>.</p>
+<p><strong>Definíció.</strong> Tautológia az a logikai formula, amely a benne szereplő változók minden lehetséges igazságértékére igaz.</p>
+<p><strong>Nevezetes tautológiák:</strong></p>
+<p><strong>Idempotencia:</strong> <span class="math inline">\(p \land p \Leftrightarrow p\)</span>; <span class="math inline">\(p \vee p \Leftrightarrow p\)</span>.</p>
+<p><strong>Kommutativitás:</strong> <span class="math inline">\(p \land q \Leftrightarrow q \land p\)</span>; <span class="math inline">\(p \vee q \Leftrightarrow q \vee p\)</span>.</p>
+<p><strong>Asszociativitás:</strong> <span class="math inline">\(p \land \left( q \land r \right) \Leftrightarrow \left( p \land q \right) \land r\)</span>; <span class="math inline">\(p \vee \left( q \vee r \right) \Leftrightarrow \left( p \vee q \right) \vee r\)</span>.</p>
+<p><strong>Disztributivitás:</strong> <span class="math inline">\(p \land \left( q \vee r \right) \Leftrightarrow \left( p \land q \right) \vee \left( p \land r \right)\)</span>; <span class="math inline">\(p \vee \left( q \land r \right) \Leftrightarrow \left( p \vee q \right) \land \left( p \vee r \right)\)</span>.</p>
+<p><strong>Abszorpció:</strong> <span class="math inline">\(p \land \left( p \vee q \right) \Leftrightarrow p\)</span>; <span class="math inline">\(p \vee \left( p \land q \right) \Leftrightarrow p\)</span>.</p>
+<p><strong>De Morgan:</strong> <span class="math inline">\(\neg\left( p \land q \right) \Leftrightarrow \neg p \vee \neg q\)</span>; <span class="math inline">\(\neg\left( p \vee q \right) \Leftrightarrow \neg p \land \neg q\)</span>.</p>
+<p><strong>Harmadik kizárása:</strong> <span class="math inline">\(p \vee \neg p\)</span>.</p>
+<p><strong>Ellentmondástalanság:</strong> <span class="math inline">\(\neg\left( p \land \neg p \right)\)</span>.</p>
+<p><strong>Az ekvivalencia felbontása:</strong> <span class="math inline">\(\left( p \Leftrightarrow q \right) \Leftrightarrow \left( p \Rightarrow q \right) \land \left( q \Rightarrow p \right)\)</span>.</p>
+<p><strong>Az implikáció felbontása:</strong> <span class="math inline">\(\left( p \Rightarrow q \right) \Leftrightarrow \neg p \vee q\)</span>.</p>
+<h3 id="következtetési-szabályok">4. Következtetési szabályok</h3>
+<p>A <span class="math inline">\(P_{1},P_{2},\ldots\)</span> premisszákból a <span class="math inline">\(K\)</span> konklúzió helyes következtetés, ha a <span class="math inline">\(P_{1} \land P_{2} \land \ldots \Rightarrow K\)</span> formula tautológia.</p>
+<p><strong>Modus ponens:</strong> <span class="math inline">\(\left( \left( p \Rightarrow q \right) \land p \right) \Rightarrow q\)</span>.</p>
+<p><strong>Modus tollens:</strong> <span class="math inline">\(\left( \left( p \Rightarrow q \right) \land \neg q \right) \Rightarrow \neg p\)</span>.</p>
+<p><strong>Kontrapozíció:</strong> <span class="math inline">\(\left( p \Rightarrow q \right) \Leftrightarrow \left( \neg q \Rightarrow \neg p \right)\)</span>.</p>
+<p><strong>Indirekt (reductio ad absurdum) bizonyítás:</strong> a bizonyítandó állítás tagadásából ellentmondásra jutunk, ezért az eredeti állítás igaz.</p>
+<h3 id="kvantorok">5. Kvantorok</h3>
+<p>Univerzális kvantor <span class="math inline">\(\forall\)</span> («minden», «bármely»), egzisztenciális kvantor <span class="math inline">\(\exists\)</span> («van olyan», «létezik»). A kvantor mindig egy tárgyalási univerzum elemeire vonatkozik.</p>
+<p><strong>Kvantoros kijelentés tagadása.</strong></p>
+<p><span class="math display">\[\neg\left( \forall x \right)P\left( x \right) \Leftrightarrow \left( \exists x \right)\neg P\left( x \right)\]</span></p>
+<p><span class="math display">\[\neg\left( \exists x \right)P\left( x \right) \Leftrightarrow \left( \forall x \right)\neg P\left( x \right)\]</span></p>
+<p><strong>Példa:</strong> <span class="math inline">\(\neg\left( \exists x \in {\mathbb{N}} \right)\left( x &lt; 0 \right) \Leftrightarrow \left( \forall x \in {\mathbb{N}} \right)\left( x \geq 0 \right)\)</span>.</p>
+<h2 id="ii.-halmazok">II. Halmazok</h2>
+<h3 id="egyenlőség-és-részhalmaz">1. Egyenlőség és részhalmaz</h3>
+<p><strong>Definíció (egyenlőség).</strong></p>
+<p><span class="math display">\[A = B \Leftrightarrow \left( \forall x \right)\left( x \in A \Leftrightarrow x \in B \right)\]</span></p>
+<p><strong>Definíció (részhalmaz).</strong></p>
+<p><span class="math display">\[A \subseteq B \Leftrightarrow \left( \forall x \right)\left( x \in A \Rightarrow x \in B \right)\]</span></p>
+<p><span class="math display">\[A \subset B \Leftrightarrow \left( A \subseteq B \land A \neq B \right)\]</span></p>
+<p><strong>Tétel.</strong> Két halmaz akkor és csak akkor egyenlő, ha kölcsönösen részhalmazai egymásnak: <span class="math inline">\(A = B \Leftrightarrow \left( A \subseteq B \land B \subseteq A \right)\)</span>.</p>
+<h3 id="halmazműveletek">2. Halmazműveletek</h3>
+<p><strong>Definíció.</strong> Metszet, unió és különbség (halmazépítő jelöléssel):</p>
+<p><span class="math display">\[A \cap B = \left\{ x|x \in A \land x \in B \right\}\]</span></p>
+<p><span class="math display">\[A \cup B = \left\{ x|x \in A \vee x \in B \right\}\]</span></p>
+<p><span class="math display">\[A \smallsetminus B = \left\{ x|x \in A \land x \notin B \right\}\]</span></p>
+<p><strong>Definíció (komplementer).</strong> Az <span class="math inline">\(A\)</span> halmaz <span class="math inline">\(S\)</span> alaphalmazra vonatkozó komplementere <span class="math inline">\(C_{S}\left( A \right) = S \smallsetminus A\)</span> (jelölése <span class="math inline">\(Ā\)</span> is).</p>
+<h3 id="műveleti-tulajdonságok">3. Műveleti tulajdonságok</h3>
+<p><strong>Tétel (alaptulajdonságok).</strong> <span class="math inline">\(A \subseteq A\)</span>, <span class="math inline">\(\varnothing \subset A\)</span>, <span class="math inline">\(A \cap \varnothing = \varnothing\)</span>, <span class="math inline">\(A \cup \varnothing = A\)</span>, <span class="math inline">\(A \smallsetminus \varnothing = A\)</span>, <span class="math inline">\(A \smallsetminus A = \varnothing\)</span>.</p>
+<p><strong>Kommutativitás:</strong> <span class="math inline">\(A \cap B = B \cap A\)</span>; <span class="math inline">\(A \cup B = B \cup A\)</span>.</p>
+<p><strong>Asszociativitás:</strong> <span class="math inline">\(A \cap \left( B \cap C \right) = \left( A \cap B \right) \cap C\)</span>; <span class="math inline">\(A \cup \left( B \cup C \right) = \left( A \cup B \right) \cup C\)</span>.</p>
+<p><strong>Disztributivitás:</strong> <span class="math inline">\(A \cap \left( B \cup C \right) = \left( A \cap B \right) \cup \left( A \cap C \right)\)</span>; <span class="math inline">\(A \cup \left( B \cap C \right) = \left( A \cup B \right) \cap \left( A \cup C \right)\)</span>.</p>
+<p><strong>Idempotencia:</strong> <span class="math inline">\(A \cap A = A\)</span>; <span class="math inline">\(A \cup A = A\)</span>.</p>
+<p><strong>De Morgan-szabályok:</strong> <span class="math inline">\(C_{S}\left( A \cap B \right) = C_{S}\left( A \right) \cup C_{S}\left( B \right)\)</span>; <span class="math inline">\(C_{S}\left( A \cup B \right) = C_{S}\left( A \right) \cap C_{S}\left( B \right)\)</span>.</p>
+<h3 id="descartes-szorzat">4. Descartes-szorzat</h3>
+<p><strong>Definíció.</strong></p>
+<p><span class="math display">\[A \times B = \left\{ \left( x,y \right)|x \in A \land y \in B \right\}\]</span></p>
+<p>Elemei rendezett párok; általában nem kommutatív: <span class="math inline">\(A \times B \neq B \times A\)</span>.</p>
+<h2 id="iii.-relációk">III. Relációk</h2>
+<h3 id="a-reláció-fogalma">1. A reláció fogalma</h3>
+<p><strong>Definíció.</strong> Az <span class="math inline">\(A\)</span> és <span class="math inline">\(B\)</span> nem üres halmazok Descartes-szorzatának bármely részhalmaza reláció: <span class="math inline">\(\rho \subseteq A \times B\)</span>. Ha <span class="math inline">\(\left( x,y \right) \in \rho\)</span>, azt mondjuk, hogy <span class="math inline">\(x\)</span> relációban van <span class="math inline">\(y\)</span>-nal (jelölés <span class="math inline">\(x\rho y\)</span>). A továbbiakban <span class="math inline">\(A = B\)</span>, azaz <span class="math inline">\(\rho \subseteq A^{2}\)</span>.</p>
+<h3 id="tulajdonságok">2. Tulajdonságok</h3>
+<p><strong>Reflexív:</strong> <span class="math inline">\(\left( \forall x \in A \right)\left( x\rho x \right)\)</span>.</p>
+<p><strong>Szimmetrikus:</strong> <span class="math inline">\(\left( \forall x,y \in A \right)\left( x\rho y \Rightarrow y\rho x \right)\)</span>.</p>
+<p><strong>Antiszimmetrikus:</strong> <span class="math inline">\(\left( \forall x,y \in A \right)\left( x\rho y \land y\rho x \Rightarrow x = y \right)\)</span>.</p>
+<p><strong>Tranzitív:</strong> <span class="math inline">\(\left( \forall x,y,z \in A \right)\left( x\rho y \land y\rho z \Rightarrow x\rho z \right)\)</span>.</p>
+<p><strong>Definíció.</strong> Az ekvivalenciareláció reflexív, szimmetrikus és tranzitív (RST); a rendezési reláció reflexív, antiszimmetrikus és tranzitív (RAT). Minden ekvivalenciareláció ekvivalenciaosztályokra bontja a halmazt.</p>
+<h2 id="iv.-függvények">IV. Függvények</h2>
+<h3 id="a-függvény-fogalma-és-megadása">1. A függvény fogalma és megadása</h3>
+<p><strong>Definíció.</strong> Az <span class="math inline">\(A\)</span> halmaz <span class="math inline">\(B\)</span> halmazba való függvénye (leképezése) olyan <span class="math inline">\(\rho \subseteq A \times B\)</span> reláció, amelyben <span class="math inline">\(A\)</span> minden eleme pontosan egy <span class="math inline">\(B\)</span>-beli elemmel van relációban:</p>
+<p><span class="math display">\[\left( \forall x \in A \right)\left( \exists y \in B \right)\left( \left( x,y \right) \in \rho \right) \land \left( \left( x,y \right) \in \rho \land \left( x,z \right) \in \rho \Rightarrow y = z \right)\]</span></p>
+<p><strong>Jelölés:</strong> <span class="math inline">\(f:A \rightarrow B\)</span>, <span class="math inline">\(y = f\left( x \right)\)</span>.</p>
+<p><strong>Alapfogalmak.</strong> Értelmezési tartomány (domén) <span class="math inline">\(D_{f} = A\)</span> (elemei az őselemek / argumentumok); képtartomány (kodomén) <span class="math inline">\(B\)</span>; értékkészlet <span class="math inline">\(R_{f} \subseteq B\)</span> (a ténylegesen felvett képelemek halmaza).</p>
+<h3 id="tulajdonságok-1">2. Tulajdonságok</h3>
+<p><strong>Injektív (1-1):</strong> különböző őselemek képe különböző, <span class="math inline">\(f\left( x_{1} \right) = f\left( x_{2} \right) \Rightarrow x_{1} = x_{2}\)</span>.</p>
+<p><strong>Szürjektív:</strong> a képtartomány minden eleme képelem, <span class="math inline">\(\left( \forall y \in B \right)\left( \exists x \in A \right)\left( y = f\left( x \right) \right)\)</span>, azaz <span class="math inline">\(R_{f} = B\)</span>.</p>
+<p><strong>Bijektív:</strong> injektív és szürjektív egyszerre.</p>
+<h3 id="függvények-kompozíciója">3. Függvények kompozíciója</h3>
+<p><strong>Definíció.</strong> Ha <span class="math inline">\(f:A \rightarrow B\)</span> és <span class="math inline">\(g:B \rightarrow C\)</span>, akkor kompozíciójuk <span class="math inline">\(g \circ f:A \rightarrow C\)</span>:</p>
+<p><span class="math display">\[\left( g \circ f \right)\left( x \right) = g\left( f\left( x \right) \right)\]</span></p>
+<h3 id="inverz-függvény">4. Inverz függvény</h3>
+<p><strong>Definíció (identikus leképezés).</strong> Az <span class="math inline">\(id_{A}:A \rightarrow A\)</span> minden elemet önmagára képez: <span class="math inline">\(id_{A}\left( x \right) = x\)</span>.</p>
+<p><strong>Definíció (inverz).</strong> Ha <span class="math inline">\(f:A \rightarrow B\)</span> bijektív, akkor létezik <span class="math inline">\(f^{- 1}:B \rightarrow A\)</span> inverze, amelyre:</p>
+<p><span class="math display">\[f^{- 1}\left( f\left( x \right) \right) = x,f\left( f^{- 1}\left( y \right) \right) = y\]</span></p>
+<p>azaz <span class="math inline">\(f^{- 1} \circ f = id_{A}\)</span> és <span class="math inline">\(f \circ f^{- 1} = id_{B}\)</span>.</p>
+<h2 id="tantervi-kapcsolódás">Tantervi kapcsolódás</h2>
+<p><strong>Logika és halmazok (1. ishod):</strong> MAT.A.SO.O.1.3, kapcsolódó középszint MAT.A.SO.S.1.3.</p>
+<p><strong>Relációk és függvények (2. ishod):</strong> MAT.F.SO.O.1.8, MAT.A.SO.S.1.3.</p>
+<p>A célszint az alapszint (O), a differenciáláshoz a középszint (S) alsó sávja. A kombinatorika (3. ishod) itt nem szerepel.</p>
+
+    <div class="gyakorolj">
+      <span class="ikon">📖</span>
+      <p>Részletes magyarázatokért: <a href="tananyag-logika.html">Logika</a> ·
+      <a href="tananyag-halmazok.html">Halmazok</a> ·
+      <a href="tananyag-fuggvenyek.html">Függvények</a> — gyakorláshoz:
+      <a href="feladatok-logika.html">feladatok</a>.</p>
+    </div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-fuggvenyek.html"><span class="irany">← Előző</span><span class="hova">Függvények — feladatok</span></a>
+      <a class="kov" href="index.html"><span class="irany">Vissza →</span><span class="hova">Témakör főoldala</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+</body>
+</html>
