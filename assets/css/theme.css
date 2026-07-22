@@ -260,6 +260,42 @@ table.tt-table .res{font-weight:800;background:var(--zold-50);}
 .clean li:last-child{border-bottom:0;}
 .regi-horgony{position:relative;top:-4rem;}
 
+/* ---------- Részfeladatok (egymás alá tördelve) ---------- */
+.reszfeladatok{margin:.5rem 0 .3rem;padding-left:1.7rem;}
+ol.reszfeladatok{list-style:lower-alpha;}
+ol.reszfeladatok>li{padding:.35rem 0;margin:0;}
+ol.reszfeladatok>li::marker{font-family:var(--fej);font-weight:700;color:var(--zold-700);}
+ol.reszfeladatok.rovid{list-style:none;padding-left:.2rem;counter-reset:rf;display:flex;flex-wrap:wrap;gap:.35rem 2.4rem;}
+ol.reszfeladatok.rovid>li{counter-increment:rf;padding:.12rem 0;}
+ol.reszfeladatok.rovid>li::before{content:counter(rf,lower-alpha) ") ";font-family:var(--fej);font-weight:700;color:var(--zold-700);}
+.reszcsoport{font-family:var(--fej);font-weight:700;color:var(--szurke-600);margin:.7rem 0 .1rem;font-size:.95rem;}
+
+/* ---------- Differenciált „Gyakorolj” sávok (Hangya/Hulk) ---------- */
+.savok{display:flex;flex-wrap:wrap;gap:.6rem;margin:.45rem 0 0;}
+.sav{display:inline-flex;align-items:center;gap:.45rem;padding:.4rem .95rem;border-radius:999px;
+  font-family:var(--fej);font-weight:700;font-size:.9rem;text-decoration:none;border:1.5px solid;transition:transform .12s;}
+.sav:hover{transform:translateY(-1px);}
+.sav .cimke{font-size:.76rem;font-weight:600;opacity:.85;}
+.sav.hangya{background:var(--zold-50);border-color:var(--zold-500);color:var(--zold-700);}
+.sav.hulk{background:#f5f3ff;border-color:var(--lila);color:#5b21b6;}
+
+/* ---------- Gyakorló-figyelmeztetés (nincs garancia) ---------- */
+.diszklemer{font-size:.9rem;color:#92400e;background:var(--sarga-100);border-left:3px solid var(--sarga);
+  border-radius:8px;padding:.5rem .85rem;margin:.5rem 0 1.1rem;}
+
+/* ---------- Kvíz „másik kérdés” / lánc ---------- */
+.kviz .ujra{margin-top:.55rem;border:1px solid var(--szurke-300);background:#fff;border-radius:999px;
+  padding:.32rem .85rem;font:inherit;font-size:.85rem;cursor:pointer;color:var(--szurke-600);}
+.kviz .ujra:hover{border-color:var(--zold-500);color:var(--zold-700);}
+.kviz .valtozat[hidden]{display:none;}
+
+/* ---------- Utility-osztályok (inline stílusok kiváltása) ---------- */
+.dolt{font-style:italic;}
+.kozepre{text-align:center;}
+.halvany{color:var(--szurke-600);}
+.m0{margin:0;} .mt0{margin-top:0;} .my8{margin:8px 0;} .my02{margin:.2rem 0;}
+.nagyobb{font-size:1.1em;}
+
 /* ---------- Mobil ---------- */
 @media(max-width:640px){
   .hero-nagy h1{font-size:2rem;}
