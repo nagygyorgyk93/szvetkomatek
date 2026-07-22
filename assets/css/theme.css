@@ -261,13 +261,12 @@ table.tt-table .res{font-weight:800;background:var(--zold-50);}
 .regi-horgony{position:relative;top:-4rem;}
 
 /* ---------- Részfeladatok (egymás alá tördelve) ---------- */
-.reszfeladatok{margin:.5rem 0 .3rem;padding-left:1.7rem;}
-ol.reszfeladatok{list-style:lower-alpha;}
-ol.reszfeladatok>li{padding:.35rem 0;margin:0;}
-ol.reszfeladatok>li::marker{font-family:var(--fej);font-weight:700;color:var(--zold-700);}
-ol.reszfeladatok.rovid{list-style:none;padding-left:.2rem;counter-reset:rf;display:flex;flex-wrap:wrap;gap:.35rem 2.4rem;}
-ol.reszfeladatok.rovid>li{counter-increment:rf;padding:.12rem 0;}
-ol.reszfeladatok.rovid>li::before{content:counter(rf,lower-alpha) ") ";font-family:var(--fej);font-weight:700;color:var(--zold-700);}
+/* Egységes „a)” jelölés stacked ÉS rövid módban egyaránt (counter + ::before). */
+.reszfeladatok{margin:.5rem 0 .3rem;padding-left:1.7rem;list-style:none;counter-reset:rf;}
+.reszfeladatok>li{counter-increment:rf;padding:.35rem 0;margin:0;text-indent:-1.5rem;}
+.reszfeladatok>li::before{content:counter(rf,lower-alpha) ") ";font-family:var(--fej);font-weight:700;color:var(--zold-700);}
+.reszfeladatok.rovid{padding-left:0;display:flex;flex-wrap:wrap;gap:.35rem 2.4rem;}
+.reszfeladatok.rovid>li{padding:.12rem 0;text-indent:0;}
 .reszcsoport{font-family:var(--fej);font-weight:700;color:var(--szurke-600);margin:.7rem 0 .1rem;font-size:.95rem;}
 
 /* ---------- Differenciált „Gyakorolj” sávok (Hangya/Hulk) ---------- */
