@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- SABLON: témakör-nyitóoldal (a NN-slug/ mappa index.html-je).
+     Felsorolja a témakör oldalait ajánlott sorrendben, státusszal. -->
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{TÉMAKÖR}} | {{TAGOZAT}} | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+</head>
+<body data-tagozat="{{TAGOZAT}}">
+<div id="progress"></div>
+
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">{{TAGOZAT}}</span></a> ›
+  <span class="itt">{{TÉMAKÖR}}</span>
+</nav>
+
+<div class="hero">
+  <h1>{{TÉMAKÖR}}</h1>
+  <p class="alcim">{{1–2 MONDATOS BEVEZETŐ — miről szól a témakör}}</p>
+  <div class="meta-sor"><span class="chip ora">{{N}} óra</span></div>
+</div>
+
+<main class="lap">
+  <div class="tartalom">
+    <h2>Tananyag</h2>
+    <div class="racs">
+      <a class="kartya" href="tananyag-{{altema1}}.html">
+        <h3>📖 {{1. ALTÉMA}}</h3>
+        <p class="le">{{rövid leírás}}</p>
+      </a>
+      <!-- további altémák… -->
+    </div>
+
+    <h2>Feladatgyűjtemény</h2>
+    <div class="racs">
+      <a class="kartya" href="feladatok-{{altema1}}.html">
+        <h3>🏋️ {{1. ALTÉMA}} — feladatok</h3>
+        <p class="le">Alap · Közép · Nehéz + gyakorló teszt</p>
+      </a>
+      <!-- további altémák… -->
+    </div>
+
+    <h2>Összefoglaló</h2>
+    <div class="racs">
+      <a class="kartya" href="osszefoglalo.html">
+        <h3>🧠 Tömör összefoglaló</h3>
+        <p class="le">A teljes témakör „puskája" — ismétléshez, dolgozat előtt</p>
+      </a>
+    </div>
+
+    <p class="le" style="color:var(--szurke-600)">Ajánlott sorrend: tananyag → feladatok
+    altémánként; a végén az összefoglalóval ismételj.</p>
+  </div>
+</main>
+
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+
+<script src="../../assets/js/ui.js"></script>
+</body>
+</html>

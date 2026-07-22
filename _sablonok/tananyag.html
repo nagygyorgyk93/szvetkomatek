@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!-- SABLON: tananyag-oldal. Helyőrzők: {{...}} — mindet cserélni!
+     Fájlnév-konvenció: tananyag-<altema>.html a tagozat/NN-slug/ mappában.
+     Horgonyok: definíció #def-slug, tétel #tetel-slug, példa #pelda-slug, szakasz #s1… -->
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ALTÉMA}} — tananyag | {{TAGOZAT}} | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="{{TAGOZAT}}">
+<div id="progress"></div>
+
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">{{TAGOZAT}}</span></a> ›
+  <a href="index.html">{{TÉMAKÖR}}</a> ›
+  <span class="itt">{{ALTÉMA}} — tananyag</span>
+</nav>
+
+<div class="hero">
+  <h1>{{ALTÉMA}}</h1>
+  <p class="alcim">{{RÖVID, KEDVCSINÁLÓ ALCÍM — mire jó ez az anyag, miért érdekes}}</p>
+  <div class="meta-sor">
+    <span class="chip ora">tananyag</span>
+    <!-- opcionális: <span class="chip ora">kb. N óra anyaga</span> -->
+  </div>
+</div>
+
+<main class="lap toc-os">
+  <div class="tartalom">
+
+    <h2 id="s0">🎬 Miért tanuljuk?</h2>
+    <p>{{MOTIVÁCIÓ, VALÓS ALKALMAZÁSOK}}</p>
+
+    <h2 id="s1">{{1. SZAKASZ CÍME}}</h2>
+
+    <div class="doboz definicio" id="def-{{slug}}">
+      <p class="cim"><span class="ikon">📗</span> Definíció</p>
+      <p>{{PRECÍZ DEFINÍCIÓ — képlet: \( ... \) inline, \[ ... \] kiemelt}}</p>
+    </div>
+
+    <div class="doboz tetel" id="tetel-{{slug}}">
+      <p class="cim"><span class="ikon">📘</span> Tétel</p>
+      <p>{{TÉTEL}}</p>
+      <details><summary>Bizonyítás</summary><div class="bel"><p>{{BIZONYÍTÁS}}</p></div></details>
+    </div>
+
+    <div class="doboz pelda">
+      <p class="cim"><span class="ikon">✏️</span> Példa</p>
+      <p>{{KIDOLGOZOTT PÉLDA}}</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>{{MEGOLDÁS}}</p></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Vigyázz, csapda!</p>
+      <p>{{TIPIKUS HIBA}}</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Érdekesség</p>
+      <p>{{ÉRDEKESSÉG / TÖRTÉNET / ALKALMAZÁS}}</p>
+    </div>
+
+    <div class="kviz" data-answer="0">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>{{KVÍZKÉRDÉS}}</p>
+      <div class="opciok">
+        <button>{{HELYES VÁLASZ (a data-answer 0-alapú indexén!)}}</button>
+        <button>{{ROSSZ VÁLASZ}}</button>
+        <button>{{ROSSZ VÁLASZ}}</button>
+      </div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj">
+      <span class="ikon">🏋️</span>
+      <p><b>Gyakorolj!</b> A témához tartozó feladatok:
+      <a href="feladatok-{{altema}}.html#alap-1">Alap 1–4.</a> ·
+      <a href="feladatok-{{altema}}.html#kozep-1">Közép 1–3.</a></p>
+    </div>
+
+    <!-- további szakaszok: h2 id="s2"… -->
+
+    <div class="lapozo">
+      <a class="elozo" href="{{ELŐZŐ-OLDAL}}.html"><span class="irany">← Előző</span><span class="hova">{{ELŐZŐ CÍME}}</span></a>
+      <a class="kov" href="{{KÖVETKEZŐ-OLDAL}}.html"><span class="irany">Következő →</span><span class="hova">{{KÖVETKEZŐ CÍME}}</span></a>
+    </div>
+  </div>
+
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

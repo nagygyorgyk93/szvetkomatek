@@ -1,0 +1,17 @@
+/* Szvetkó matek — nyomtatási / PDF nézet */
+@media print{
+  #progress,.fejlec,.toc,.kereso-mini,.lapozo,.gyakorolj,.kviz{display:none !important;}
+  body{background:#fff;font-size:11pt;color:#000;}
+  .lap{display:block;max-width:none;padding:0;}
+  .hero{padding:0 0 .5rem;}
+  .hero-nagy{background:#fff;border:0;}
+  a{color:#000;text-decoration:none;}
+  .doboz,.feladat,details{box-shadow:none;break-inside:avoid;}
+  details{border:1px solid #999;}
+  details summary::before{display:none;}
+  details:not([open]) .bel{display:block !important;} /* JS nyitja; tartalék szabály */
+  .morzsa{display:none;}
+  .lablec{margin-top:1.5rem;}
+  h2{break-after:avoid;}
+  figure{break-inside:avoid;}
+}

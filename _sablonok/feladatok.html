@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- SABLON: feladatgyűjtemény-oldal. Fájlnév: feladatok-<altema>.html.
+     Horgonyok VÉGLEGESEK: #alap-N, #kozep-N, #nehez-N, #gyt-N, #joker.
+     Utólagos beszúrás mindig a szint végére, új sorszámmal — átszámozni TILOS. -->
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ALTÉMA}} — feladatok | {{TAGOZAT}} | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="{{TAGOZAT}}">
+<div id="progress"></div>
+
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">{{TAGOZAT}}</span></a> ›
+  <a href="index.html">{{TÉMAKÖR}}</a> ›
+  <span class="itt">{{ALTÉMA}} — feladatok</span>
+</nav>
+
+<div class="hero">
+  <h1>{{ALTÉMA}} — feladatgyűjtemény</h1>
+  <p class="alcim">Három szint: haladj sorban, vagy ugorj a szintedre. A végeredmény
+  minden feladatnál lenyitható — előbb számolj, csak utána nézd meg!</p>
+  <div class="meta-sor">
+    <span class="chip alap">Alap</span><span class="chip kozep">Közép</span>
+    <span class="chip nehez">Nehéz</span><span class="chip joker">Joker</span>
+  </div>
+</div>
+
+<main class="lap toc-os">
+  <div class="tartalom">
+
+    <h2 id="alap">🟢 Alapszint</h2>
+
+    <article class="feladat" id="alap-1">
+      <div class="fejsor"><span class="szam">1.</span><span class="chip alap">Alap</span></div>
+      <p>{{FELADAT SZÖVEGE — képletek: \( ... \)}}</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>{{TÖMÖR VÉGEREDMÉNY}}</p></div>
+      </details>
+    </article>
+    <!-- további feladatok: id="alap-2", "alap-3"… -->
+
+    <h2 id="kozep">🟡 Középszint</h2>
+
+    <article class="feladat" id="kozep-1">
+      <div class="fejsor"><span class="szam">1.</span><span class="chip kozep">Közép</span></div>
+      <p>{{FELADAT}}</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>{{VÉGEREDMÉNY}}</p></div>
+      </details>
+    </article>
+
+    <h2 id="nehez">🔴 Nehéz</h2>
+
+    <article class="feladat" id="nehez-1">
+      <div class="fejsor"><span class="szam">1.</span><span class="chip nehez">Nehéz</span></div>
+      <p>{{FELADAT}}</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>{{VÉGEREDMÉNY}}</p></div>
+      </details>
+    </article>
+
+    <h2 id="gyakorlo-teszt">📝 Gyakorló teszt ({{ellenőrzőre/dolgozatra}})</h2>
+    <p>A felmérő típusfeladatai — más számokkal, más körítéssel. Ha ezek mennek,
+    készen állsz.</p>
+
+    <article class="feladat" id="gyt-1">
+      <div class="fejsor"><span class="szam">1.</span></div>
+      <p>{{FELADAT}}</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>{{VÉGEREDMÉNY}}</p></div>
+      </details>
+    </article>
+
+    <article class="feladat" id="joker">
+      <div class="fejsor"><span class="szam">★</span><span class="chip joker">Joker</span></div>
+      <p>{{JOKER-FELADAT — játékosabb, gondolkodtató}}</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>{{VÉGEREDMÉNY}}</p></div>
+      </details>
+    </article>
+
+    <div class="gyakorolj">
+      <span class="ikon">📖</span>
+      <p>Elakadtál? Nézd át a <a href="tananyag-{{altema}}.html">tananyagot</a> vagy a
+      <a href="osszefoglalo.html">tömör összefoglalót</a>.</p>
+    </div>
+
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-{{altema}}.html"><span class="irany">← Tananyag</span><span class="hova">{{ALTÉMA}}</span></a>
+      <a class="kov" href="{{KÖVETKEZŐ}}.html"><span class="irany">Következő →</span><span class="hova">{{KÖVETKEZŐ CÍME}}</span></a>
+    </div>
+  </div>
+
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="hu" data-root=".">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Keresés — Szvetkó matek</title>
+<link rel="icon" href="assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/theme.css">
+<link rel="stylesheet" href="assets/css/print.css">
+</head>
+<body>
+<div id="progress"></div>
+
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+  </div>
+</header>
+
+<nav class="morzsa"><a href="index.html">Főoldal</a> › <span class="itt">Keresés</span></nav>
+
+<main class="lap">
+  <div class="tartalom">
+    <h1>Keresés</h1>
+    <form id="kereso-form" class="kereso-nagy">
+      <input id="q" type="search" placeholder="Pl. halmazműveletek, De Morgan, derivált…" aria-label="Keresőkifejezés" autofocus>
+      <button type="submit">Keresés</button>
+    </form>
+    <p id="osszegzo" class="alcim"></p>
+    <div id="talalatok"></div>
+  </div>
+</main>
+
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/search.js"></script>
+</body>
+</html>
