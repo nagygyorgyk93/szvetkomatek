@@ -197,6 +197,7 @@ a.kartya:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(15,23,42,.1
 .statusz.kesz{background:var(--zold-100);color:var(--zold-900);}
 .statusz.keszul{background:var(--sarga-100);color:#92400e;}
 .statusz.tervezett{background:#e2e8f0;color:var(--szurke-600);}
+.statusz.reszleges{background:#ede9fe;color:#6d28d9;}
 .kartya.inaktiv{opacity:.75;}
 .kartya.inaktiv h3{color:var(--szurke-600);}
 
