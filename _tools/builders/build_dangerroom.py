@@ -1,0 +1,194 @@
+# -*- coding: utf-8 -*-
+"""Danger Room (Veszélyterem) — témakörönként EGY, teljes témakört lefedő házi feladatsor.
+FONTOS: a Végeredmény KIZÁRÓLAG a végső választ tartalmazza, levezetés/indoklás NÉLKÜL."""
+import sys, os, glob
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from fgy_common import cards, w
+
+def dr_page(dest, topic_link, topic_name, fname, title, alcim, brief, sections, prev, prevc, nxt, nxtc, help_html):
+    html = f'''<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{title} | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="{topic_link}">{topic_name}</a> ›
+  <span class="itt">Danger Room — házi</span>
+</nav>
+<div class="hero">
+  <h1>{title}</h1>
+  <p class="alcim">{w(alcim)}</p>
+  <div class="meta-sor">
+    <span class="chip alap">Alap</span><span class="chip kozep">Közép</span><span class="chip nehez">Nehéz</span>
+  </div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <div class="brief"><p>{brief}</p></div>
+{sections}
+    <div class="gyakorolj">
+      <span class="ikon">📖</span>
+      <p>{help_html}</p>
+    </div>
+    <div class="lapozo">
+      <a class="elozo" href="{prev}"><span class="irany">← Előző</span><span class="hova">{prevc}</span></a>
+      <a class="kov" href="{nxt}"><span class="irany">Következő →</span><span class="hova">{nxtc}</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {{delimiters:[
+    {{left:'\\\\(', right:'\\\\)', display:false}},
+    {{left:'\\\\[', right:'\\\\]', display:true}}
+  ]}});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
+'''
+    open(os.path.join(dest, fname), "w", encoding="utf-8").write(html)
+    return fname
+
+def sect(alap, kozep, nehez):
+    return (f'    <h2 id="alap">🟢 Alapszint</h2>\n{cards(alap,"alap","alap")}\n'
+            f'    <h2 id="kozep">🟡 Középszint</h2>\n{cards(kozep,"kozep","kozep")}\n'
+            f'    <h2 id="nehez">🔴 Nehéz (emelt)</h2>\n{cards(nehez,"nehez","nehez")}\n')
+
+# =========================================================== 01
+DEST01 = glob.glob("/sessions/*/mnt/Claude/web/1e/01-logika-halmazok-fuggvenyek")[0]
+
+A01 = [
+ ("Döntsd el, melyik <b>kijelentés</b>, és ha az, mi az igazságértéke!",
+  ["„A 7 prímszám.”","„$x+2=5$.”","„Minden négyzet téglalap.”","„Hány óra van?”","„A 12 osztható 5-tel.”"],
+  "a) kijelentés, igaz; b) nem kijelentés; c) kijelentés, igaz; d) nem kijelentés; e) kijelentés, hamis.", True),
+ ("Legyen $p$ igaz, $q$ hamis. Add meg az alábbiak igazságértékét!",
+  ["$\\neg p$","$p\\land q$","$p\\lor q$","$p\\Rightarrow q$","$q\\Rightarrow p$","$p\\Leftrightarrow q$"],
+  "a) hamis; b) hamis; c) igaz; d) hamis; e) igaz; f) hamis.", True),
+ ("Írd fel a <b>tagadását</b>!",
+  ["„Minden diák szereti a matekot.”","„Van olyan szám, amely páros.”","„$x>3$.”"],
+  ["„Van olyan diák, aki nem szereti a matekot.”","„Egyetlen szám sem páros.”","$x\\le 3$."]),
+ ("Legyen $A=\\{1,2,3,4,5\\}$, $B=\\{2,4,6,8\\}$. Add meg:",
+  ["$A\\cup B$","$A\\cap B$","$A\\setminus B$","$B\\setminus A$"],
+  ["$\\{1,2,3,4,5,6,8\\}$","$\\{2,4\\}$","$\\{1,3,5\\}$","$\\{6,8\\}$"], True),
+ ("Az alaphalmaz $U=\\{1,2,\\dots,10\\}$, és $A=\\{2,3,5,7\\}$. Add meg $A$ komplementerét ($A^{c}$) és elemszámát, $|A|$-t!",
+  None, "$A^{c}=\\{1,4,6,8,9,10\\}$; $|A|=4$."),
+ ("Sorold fel a $\\{a,b,c\\}$ halmaz <b>összes részhalmazát</b>! Hány van?",
+  None, "$\\varnothing,\\ \\{a\\},\\{b\\},\\{c\\},\\ \\{a,b\\},\\{a,c\\},\\{b,c\\},\\ \\{a,b,c\\}$; összesen $8$."),
+ ("<b>Menü.</b> Egy étterem 3-féle levest és 4-féle főételt kínál. Hányféle (leves + főétel) menü állítható össze? (szorzási szabály)",
+  None, "$12$ menü."),
+ ("<b>Nyelvórák.</b> Egy 30 fős osztályban 18-an tanulnak angolt, 12-en németet, 5-en mindkettőt. Rajzolj Venn-diagramot, és számold ki: hányan tanulnak legalább egy nyelvet, és hányan egyet sem?",
+  None, "Legalább egy: $25$; egyik sem: $5$."),
+ ("$f(x)=3x-4$. Számítsd ki:",
+  ["$f(0)$","$f(2)$","$f(-1)$","$f\\!\\left(\\tfrac13\\right)$"],
+  "a) $-4$; b) $2$; c) $-7$; d) $-3$.", True),
+ ("Az $A=\\{1,2,3,4\\}$ halmazon $f=\\{(1,3),(2,5),(3,3),(4,7)\\}$. Add meg az értelmezési tartományt ($D_f$) és az értékkészletet ($R_f$)! Injektív-e?",
+  None, "$D_f=\\{1,2,3,4\\}$, $R_f=\\{3,5,7\\}$; nem injektív."),
+ ("$f(x)=2x+1$, $g(x)=x-3$. Határozd meg a kompozíciókat!",
+  ["$(f\\circ g)(x)$","$(g\\circ f)(x)$"],
+  ["$2x-5$","$2x-2$"]),
+]
+K01 = [
+ ("Igazságtáblázattal döntsd el, <b>tautológia-e</b>: $(p\\land q)\\Rightarrow p$.",
+  None, "Igen, tautológia."),
+ ("Írd fel kvantoros alakban, majd <b>tagadd</b> (és döntsd el, igaz-e az eredeti)!",
+  ["„Minden valós $x$-re $x^2\\ge 0$.”","„Van olyan természetes szám, amely osztható 3-mal.”"],
+  ["$\\forall x\\in\\mathbb{R}\\,(x^2\\ge 0)$ — igaz; tagadása $\\exists x\\in\\mathbb{R}\\,(x^2<0)$.",
+   "$\\exists x\\in\\mathbb{N}\\,(3\\mid x)$ — igaz; tagadása $\\forall x\\in\\mathbb{N}\\,(3\\nmid x)$."]),
+ ("Adott $A=\\{x\\in\\mathbb{Z}\\mid -2\\le x<3\\}$ és $B=\\{x\\in\\mathbb{Z}\\mid 0<x\\le 5\\}$. Sorold fel a halmazokat, majd add meg $A\\cup B$-t, $A\\cap B$-t és $A\\setminus B$-t!",
+  None, "$A=\\{-2,-1,0,1,2\\}$, $B=\\{1,2,3,4,5\\}$; $A\\cup B=\\{-2,-1,0,1,2,3,4,5\\}$, $A\\cap B=\\{1,2\\}$, $A\\setminus B=\\{-2,-1,0\\}$."),
+ ("<b>De Morgan.</b> $U=\\{1,2,\\dots,8\\}$, $A=\\{1,2,3,4\\}$, $B=\\{3,4,5,6\\}$. Számold ki mindkét oldalt, és ellenőrizd: $(A\\cup B)^{c}=A^{c}\\cap B^{c}$.",
+  None, "$(A\\cup B)^{c}=\\{7,8\\}$ és $A^{c}\\cap B^{c}=\\{7,8\\}$ — egyenlők."),
+ ("$f(x)=2x-6$. Add meg az <b>inverzét</b>, $f^{-1}(x)$-et, és számítsd ki $f^{-1}(4)$-et!",
+  None, "$f^{-1}(x)=\\dfrac{x+6}{2}$; $f^{-1}(4)=5$."),
+ ("Az $f(x)=ax+b$ lineáris függvényről tudjuk: $f(1)=5$ és $f(3)=11$. Határozd meg $a$-t, $b$-t, majd írd fel $f(x)$-et!",
+  None, "$a=3$, $b=2$; $f(x)=3x+2$."),
+ ("<b>Jelszó.</b> Egy kód 2 betűből (az $A,B,C,D$ közül) és 2 számjegyből ($0$–$9$) áll, az ismétlés megengedett. Hány különböző kód lehetséges?",
+  None, "$1600$."),
+]
+N01 = [
+ ("<b>Sziget-akták.</b> A lovag mindig igazat mond, a lókötő mindig hazudik. $A$ azt mondja: „$B$ lókötő.”, $B$ azt mondja: „$A$ és én azonos típusúak vagyunk.” Ki micsoda? Indokolj!",
+  None, "$A$ lovag, $B$ lókötő."),
+ ("<b>Fordított szita.</b> Egy 40 fős csoportban 25-en sportolnak ($S$), 20-an zenélnek ($Z$), 8-an egyiket sem. Rajzolj Venn-diagramot, és számold ki, hányan csinálják <b>mindkettőt</b>!",
+  None, "Mindkettőt: $13$."),
+ ("$f(x)=2x+1$, $g(x)=x^2$. Add meg $(f\\circ g)(x)$-et és $(g\\circ f)(x)$-et — egyenlők-e? Számítsd ki mindkettőt $x=3$-ra!",
+  None, "$(f\\circ g)(x)=2x^2+1$, $(g\\circ f)(x)=4x^2+4x+1$; nem egyenlők. $(f\\circ g)(3)=19$, $(g\\circ f)(3)=49$."),
+]
+brief01 = ("🕹️ <b>SZVETI:</b> Üdv a <b>Veszélyteremben</b>, kadét! Ez a <b>Danger Room</b> — a kampusz "
+ "szimulációs edzőterme (a technológiát a Xavier-intézet X-Menjeitől licenceltük). Itt otthon, a saját "
+ "tempódban gyakorolsz két küldetés között. A szimuláció a <b>teljes témakört</b> lefedi: logika, halmazok, "
+ "függvények. Haladj a fokozatokon: zöld (alap) → sárga (közép) → piros (nehéz). A végeredményt minden "
+ "feladatnál lenyithatod — de előbb küzdd le magad!")
+dr_page(DEST01, "index.html", "Logika, halmazok, függvények", "feladatok-hazi.html",
+ "🕹️ Danger Room — házi feladatgyűjtemény",
+ "Egyetlen, a teljes témakört lefedő házi feladatsor: logika, halmazok és függvények. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
+ brief01, sect(A01, K01, N01),
+ "index.html", "Témakör főoldala", "osszefoglalo.html", "Tömör összefoglaló",
+ "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
+print("01 Danger Room kész: Alap", len(A01), "Közép", len(K01), "Nehéz", len(N01))
+
+# =========================================================== 02
+DEST02 = glob.glob("/sessions/*/mnt/Claude/web/1e/02-trigonometria")[0]
+A02 = [
+ ("Egy derékszögű háromszögben a befogók $a=6$, $b=8$, az átfogó $c=10$. Írd fel az $a$-val szemközti $\\alpha$ hegyesszög mind a négy szögfüggvényét!",
+  None, "$\\sin\\alpha=\\tfrac35$, $\\cos\\alpha=\\tfrac45$, $\\operatorname{tg}\\alpha=\\tfrac34$, $\\operatorname{ctg}\\alpha=\\tfrac43$."),
+ ("Add meg <b>fejből, pontosan</b>!",
+  ["$\\sin 30^\\circ$","$\\cos 30^\\circ$","$\\operatorname{tg}45^\\circ$","$\\sin 60^\\circ$","$\\cos 45^\\circ$","$\\operatorname{tg}30^\\circ$"],
+  "a) $\\tfrac12$; b) $\\tfrac{\\sqrt3}{2}$; c) $1$; d) $\\tfrac{\\sqrt3}{2}$; e) $\\tfrac{\\sqrt2}{2}$; f) $\\tfrac{\\sqrt3}{3}$.", True),
+ ("Számológéppel, <b>öt tizedesre</b> (DEG mód)!",
+  ["$\\sin 37^\\circ$","$\\cos 52^\\circ$","$\\operatorname{tg}19^\\circ$","$\\operatorname{ctg}64^\\circ$"],
+  "a) $0{,}60182$; b) $0{,}61566$; c) $0{,}34433$; d) $0{,}48773$.", True),
+ ("Számítsd ki <b>pontosan</b> (nevezetes szögek)!",
+  ["$\\sin 30^\\circ+\\cos 60^\\circ$","$\\operatorname{tg}45^\\circ\\cdot\\cos 45^\\circ$"],
+  ["$1$","$\\tfrac{\\sqrt2}{2}$"]),
+]
+K02 = [
+ ("Egy $\\alpha$ hegyesszögre $\\sin\\alpha=0{,}6$. Számítsd ki <b>pontosan</b> $\\cos\\alpha$-t, $\\operatorname{tg}\\alpha$-t és $\\operatorname{ctg}\\alpha$-t!",
+  None, "$\\cos\\alpha=\\tfrac45$, $\\operatorname{tg}\\alpha=\\tfrac34$, $\\operatorname{ctg}\\alpha=\\tfrac43$."),
+ ("Oldd meg a derékszögű háromszöget: az átfogó $c=12\\,\\text{cm}$, az egyik hegyesszög $\\alpha=35^\\circ$ (az $a$-val szemközti). Számítsd ki a másik hegyesszöget és a két befogót (2 tizedesre)!",
+  None, "$\\beta=55^\\circ$; $a\\approx 6{,}88\\,\\text{cm}$; $b\\approx 9{,}83\\,\\text{cm}$."),
+ ("Számold ki <b>számológép nélkül</b> (pótszög + alapazonosság)!",
+  ["$\\sin^2 25^\\circ+\\cos^2 25^\\circ$","$\\sin 40^\\circ-\\cos 50^\\circ$"],
+  ["$1$","$0$"]),
+]
+N02 = [
+ ("<b>Terep-alkalmazás.</b> Egy fa árnyéka $12\\,\\text{m}$ hosszú, amikor a napsugarak $40^\\circ$-os emelkedési szöget zárnak be a vízszintessel. Milyen magas a fa? Rajzolj, és számolj 2 tizedesre!",
+  None, "$m\\approx 10{,}07\\,\\text{m}$."),
+]
+brief02 = ("🕹️ <b>SZVETI:</b> <b>Veszélyterem</b>-szimuláció, célzó modul. Ez a <b>Danger Room</b> otthoni "
+ "edzésváltozata — itt gyakorolsz a terepküldetés előtt és után. A szimuláció a <b>teljes trigonometria-témakört</b> "
+ "lefedi: szögfüggvények, nevezetes szögek, a derékszögű háromszög megoldása és valós mérések. Tartsd a "
+ "<b>kerekítési szabályt</b> (szögfüggvény-érték 5 tizedes, hossz és szög 2 tizedes). Fokozatok: zöld → sárga → piros.")
+dr_page(DEST02, "index.html", "Trigonometria", "feladatok-hazi.html",
+ "🕹️ Danger Room — házi feladatgyűjtemény",
+ "Egyetlen, a teljes trigonometria-témakört lefedő házi feladatsor. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
+ brief02, sect(A02, K02, N02),
+ "index.html", "Témakör főoldala", "osszefoglalo.html", "Tömör összefoglaló",
+ "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
+print("02 Danger Room kész: Alap", len(A02), "Közép", len(K02), "Nehéz", len(N02))
