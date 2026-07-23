@@ -41,10 +41,8 @@
     <h2 id="hogyan">📋 A küldetés menete</h2>
     <p>Három állomás, sorban. Minden állomásnál a fő feladat megoldása egy <b>kódszámjegyet</b> ad
     (ezt a küldetési naplóba jegyzed). A megoldásokat <b>indoklással</b> kell leadni — a puszta
-    végeredmény kevés, hiszen éppen az indoklás az, amivel Kang hazugságát leleplezed. Az egyes
-    állomások alján lenyitható a <b>bevetési jelentés</b> (megoldókulcs) — de csak azután nézd meg,
-    hogy magad is nekifutottál! A küldetés végén állítsd össze a zárókódot, és készítsd el a
-    <a href="#leadas">küldetési naplót</a>.</p>
+    végeredmény kevés, hiszen éppen az indoklás az, amivel Kang hazugságát leleplezed. A küldetés
+    végén állítsd össze a zárókódot, és készítsd el a <a href="#leadas">küldetési naplót</a>.</p>
 
     <h2 id="a1">🟢 1. állomás — Loki kapui <span class="halvany">(logika)</span></h2>
     <div class="brief"><p>🎭 <b>Loki:</b> Á, egy friss kadét! Három kaput látsz, mindegyiknél egy őr.
@@ -63,23 +61,6 @@
       <p>Döntsd el mindegyik őrről, hogy <b>Igazmondó</b>-e vagy <b>Hazug</b> — és <b>indokold</b>
       (mutasd meg, hogy csak egyetlen lehetőség ad ellentmondásmentes megoldást)!</p>
       <p class="dolt halvany">🔑 <b>Kódszámjegy (1):</b> az <b>Igazmondók száma</b> a három őr között.</p>
-      <details class="vegeredmeny"><summary>Bevetési jelentés</summary>
-        <div class="bel">
-          <p><b>Módszer:</b> jelölje egy őr típusát az „igaz-e, amit mond” érték. Egy Igazmondó
-          állítása igaz, egy Hazugé hamis — tehát mindenkinél teljesülnie kell: <em>a típusa
-          megegyezik az állítása igazságértékével</em>. Végignézzük a lehetőségeket.</p>
-          <p><b>Tegyük fel, hogy A Igazmondó.</b> Akkor A állítása igaz: A és B különböző → B Hazug.
-          B Hazug, tehát B állítása hamis: „A és C ugyanolyan” hamis → A és C különböző → mivel A
-          Igazmondó, C Hazug. C Hazug, tehát állítása hamis: „B hazug” hamis → B Igazmondó.
-          <b>Ellentmondás</b> (fentebb B Hazug lett). Ez az ág tehát lehetetlen.</p>
-          <p><b>Marad: A Hazug.</b> Akkor A állítása hamis: „különbözőek” hamis → A és B ugyanolyan →
-          B is Hazug. B Hazug, állítása hamis: „A és C ugyanolyan” hamis → A és C különböző → mivel A
-          Hazug, C Igazmondó. C Igazmondó, állítása igaz: „B hazug” igaz → B tényleg Hazug. ✔️
-          Minden konzisztens.</p>
-          <p><b>Megoldás:</b> A = Hazug, B = Hazug, C = Igazmondó. Az Igazmondók száma
-          <b>\(1\)</b>. → <b>Kódszámjegy (1) = 1.</b></p>
-        </div>
-      </details>
     </article>
 
     <article class="feladat kozep" id="loki-csapda">
@@ -88,25 +69,6 @@
       „<em>Ez a kapu biztonságos, tehát az őre Igazmondó.</em>” Formalizáld mindkét mondatot
       (\(p\): „az őr igazmondó”, \(q\): „a kapu biztonságos”), majd <b>igazságtáblázattal</b> döntsd el,
       hogy Kang következtetése helyes-e!</p>
-      <details class="vegeredmeny"><summary>Bevetési jelentés</summary>
-        <div class="bel">
-          <p>A szabály: \(p \to q\). Kang következtetése a fordítottját állítja: \(q \to p\).
-          A kettő <b>nem ugyanaz</b>:</p>
-          <table class="tabla-nevezetes">
-            <thead><tr><th>\(p\)</th><th>\(q\)</th><th>\(p\to q\)</th><th>\(q\to p\)</th></tr></thead>
-            <tbody>
-              <tr><td>i</td><td>i</td><td>i</td><td>i</td></tr>
-              <tr><td>i</td><td>h</td><td>h</td><td>i</td></tr>
-              <tr><td>h</td><td>i</td><td>i</td><td>h</td></tr>
-              <tr><td>h</td><td>h</td><td>i</td><td>i</td></tr>
-            </tbody>
-          </table>
-          <p>A 3. sorban (\(p\) hamis, \(q\) igaz) \(p\to q\) igaz, de \(q\to p\) hamis — a két
-          oszlop eltér. Tehát abból, hogy „a kapu biztonságos”, <b>nem következik</b>, hogy „az őr
-          igazmondó”: egy kapu másért is lehet biztonságos. Ez a klasszikus hiba a
-          <b>következmény igazolása</b> (Kang kedvenc trükkje). A következtetés <b>érvénytelen</b>.</p>
-        </div>
-      </details>
     </article>
 
     <h2 id="a2">🟡 2. állomás — Doctor Strange multiverzuma <span class="halvany">(halmazok)</span></h2>
@@ -124,25 +86,12 @@
         <li>Hányan <em>egyiket sem</em>?</li>
       </ol>
       <p class="dolt halvany">🔑 <b>Kódszámjegy (2):</b> ahányan <b>egyiket sem</b> észlelték.</p>
-      <details class="vegeredmeny"><summary>Bevetési jelentés</summary>
-        <div class="bel">
-          <p>Csak A: \(18-7=11\); csak B: \(14-7=7\). Legalább az egyik (logikai szita):
-          \(|A\cup B| = 18+14-7 = 25\). Egyiket sem: \(30-25 = 5\).</p>
-          <p>→ <b>Kódszámjegy (2) = 5.</b></p>
-        </div>
-      </details>
     </article>
 
     <article class="feladat alap" id="strange-descartes">
       <p><span class="szam">2.</span> <b>Portál-koordináták.</b> Egy portál rácsának két tengelye
       \(X=\{1,2,3\}\) és \(Y=\{K,L\}\). A portál minden „csomópontja” egy \((x,y)\) rendezett pár.
       Hány csomópont van, és sorold fel őket (ez az \(X\times Y\) Descartes-szorzat)!</p>
-      <details class="vegeredmeny"><summary>Bevetési jelentés</summary>
-        <div class="bel">
-          <p>\(|X\times Y| = 3\cdot 2 = 6\). A párok:
-          \((1,K),(1,L),(2,K),(2,L),(3,K),(3,L)\).</p>
-        </div>
-      </details>
     </article>
 
     <article class="feladat kozep" id="strange-sajat">
@@ -152,14 +101,6 @@
       (\(B\) halmaz). Rögzítsd az adatokat, rajzold meg a <b>Venn-diagramot</b> a négy tartománnyal,
       és számold ki: \(|A|\), \(|B|\), \(|A\cap B|\), \(|A\cup B|\) és ahányan egyiket sem. Ellenőrizd
       a logikai szitával, hogy a részek összege kiadja-e az \(U\) létszámát!</p>
-      <details class="vegeredmeny"><summary>Bevetési jelentés</summary>
-        <div class="bel">
-          <p>Itt a <em>saját</em> adataid szerepelnek, nincs egységes számválasz. Az <b>ellenőrzés</b>
-          a lényeg: a négy tartomány (csak A, csak B, mindkettő, egyik sem) darabszámának összege
-          pontosan \(|U|\)-t kell adja, és teljesülnie kell:
-          \(|A\cup B| = |A| + |B| - |A\cap B|\). Ha ez stimmel, a felmérésed konzisztens.</p>
-        </div>
-      </details>
     </article>
 
     <h2 id="a3">🔴 3. állomás — Spider-Man hálója <span class="halvany">(függvények)</span></h2>
@@ -176,33 +117,18 @@
         <li>Add meg az inverzét, \(f^{-1}\)-et (rendezett párokként)!</li>
       </ol>
       <p class="dolt halvany">🔑 <b>Kódszámjegy (3):</b> az \(f^{-1}(4)\) érték.</p>
-      <details class="vegeredmeny"><summary>Bevetési jelentés</summary>
-        <div class="bel">
-          <p><b>a)</b> Igen: minden bemenethez (1, 2, 3, 4) pontosan egy kép tartozik.</p>
-          <p><b>b)</b> A képek \(\{3,1,4,2\}\) mind különbözőek → <b>injektív</b>; és kiadják a teljes
-          \(\{1,2,3,4\}\) érkezési halmazt → <b>szürjektív</b>; tehát <b>bijektív</b>.</p>
-          <p><b>c)</b> Megfordítjuk a párokat:
-          \(f^{-1}=\{(3,1),(1,2),(4,3),(2,4)\}\), azaz \(f^{-1}(1)=2,\ f^{-1}(2)=4,\ f^{-1}(3)=1,\
-          f^{-1}(4)=3\).</p>
-          <p>→ \(f^{-1}(4)=3\), tehát <b>Kódszámjegy (3) = 3.</b></p>
-        </div>
-      </details>
     </article>
 
     <h2 id="kod">🔐 A zárókód összeállítása</h2>
-    <p>A három állomás számjegye rendre: <b>Loki</b> → \(1\), <b>Doctor Strange</b> → \(5\),
-    <b>Spider-Man</b> → \(3\). Ez a nyers hozzáférési kód: <b>1–5–3</b>. Írd be a küldetési naplóba!</p>
+    <p>Írd egymás mellé a három állomáson kiszámolt kódszámjegyet — a <b>Loki</b>-, a
+    <b>Doctor Strange</b>- és a <b>Spider-Man</b>-állomásét, ebben a sorrendben. Ez a nyers
+    hozzáférési kód; ezt jegyezd be a küldetési naplóba.</p>
 
     <article class="feladat nehez" id="elit">
       <p><span class="szam">★</span> <b>Elit-szint (Nova kadét kihívása).</b> SZVETI szerint a végső
       <em>stabilizáló</em> kód nem maga a három számjegy, hanem a \(g(x)=2x+1\) „kód-generátor”
-      függvénybe táplált számjegyek <b>összege</b>: \(g(1)+g(5)+g(3)\). Számold ki!</p>
-      <details class="vegeredmeny"><summary>Bevetési jelentés</summary>
-        <div class="bel">
-          <p>\(g(1)=3,\ g(5)=11,\ g(3)=7\), összeg \(=3+11+7=\mathbf{21}\). A stabilizáló kód:
-          <b>21</b>. (Így a függvény, amit ma tanultál, közvetlenül zárja le a szakadást. 😉)</p>
-        </div>
-      </details>
+      függvénybe táplált három számjegy <b>összege</b>: \(g(a)+g(b)+g(c)\), ahol \(a,b,c\) a három
+      állomás kódszámjegye. Számold ki!</p>
     </article>
 
     <h2 id="leadas">📓 Mit adj le? — küldetési napló</h2>
@@ -215,7 +141,7 @@
           <li>a <b>Loki-kapuk</b> megoldását indoklással + a „Kang csapdája” igazságtáblát;</li>
           <li>a hírszerzői számítást és a <b>saját osztály Venn-diagramját</b> a négy tartománnyal;</li>
           <li>a <b>Spider-háló</b> függvény-elemzését (függvény? bijektív? inverz?);</li>
-          <li>a <b>zárókódot</b> (1–5–3), és ha vállaltad, az elit stabilizáló kódot (21).</li>
+          <li>a <b>zárókódot</b> (a három állomás számjegye egymás után), és ha vállaltad, az elit stabilizáló kódot.</li>
         </ol>
       </div>
     </div>
