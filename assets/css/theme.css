@@ -295,6 +295,14 @@ table.tt-table .res{font-weight:800;background:var(--zold-50);}
 .m0{margin:0;} .mt0{margin-top:0;} .my8{margin:8px 0;} .my02{margin:.2rem 0;}
 .nagyobb{font-size:1.1em;}
 
+/* ---------- Küldetés-eligazítás (HQ-adás — a gamifikált köntös) ---------- */
+.brief{background:linear-gradient(135deg,#0f172a,#1e293b);color:#e2e8f0;border-radius:var(--r);
+  padding:.85rem 1.15rem;margin:.9rem 0 1.3rem;border-left:4px solid var(--accent);
+  box-shadow:var(--arny);font-size:.98rem;}
+.brief p{margin:0;}
+.brief b{color:#fff;}
+.brief a{color:var(--zold-500);}
+
 /* ---------- Mobil ---------- */
 @media(max-width:640px){
   .hero-nagy h1{font-size:2rem;}
