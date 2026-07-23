@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Terepküldetés — A Célzó | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Trigonometria</a> ›
+  <span class="itt">Terepküldetés</span>
+</nav>
+<div class="hero">
+  <h1>Terepküldetés — A Célzó</h1>
+  <p class="alcim">Igazi <b>terepmérés</b>: saját kezűleg mérsz meg egy magasságot és egy távolságot —
+  közvetlen odajutás nélkül, csak szöggel és háromszögeléssel. Csoportban, 2–3 fő.</p>
+  <div class="meta-sor"><span class="chip ora">projekt</span><span class="chip alap">2 bevetés</span><span class="chip nehez">+ elit</span></div>
+  <div class="brief"><p>🏹 <b>Hawkeye:</b> Kadét, az anomália forrása egy magas szerkezet tetején ül —
+  nem tudsz odamászni, és nem is kell. Egy jó íjász <b>bemér</b>: szögből és egyetlen ismert
+  távolságból kiszámolja, amit közvetlenül nem érhet el. Építs egy szögmérőt, menj ki a terepbe, és
+  hozd nekem a számokat. <b>A célzás fél siker — a másik fele a pontos számítás.</b></p></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+
+    <h2 id="hogyan">📋 A küldetés menete</h2>
+    <p>Előbb elkészíted az eszközt (egy egyszerű <b>szögmérőt</b>), majd két bevetést hajtasz végre a
+    terepen: egy <b>magasságmérést</b> és egy <b>távolságmérést</b>. Mindkettőnél <b>rajzot</b>
+    készítesz a derékszögű háromszögről, felírod a mért adatokat, és kiszámolod a keresett mennyiséget.
+    A vállalkozó szelleműeknek van egy <b>elit</b> bevetés is. Minden mérésnél tartsd a
+    kerekítési szabályt: a <b>szögfüggvény-értékek 5 tizedesre</b>, a <b>szögek és hosszak 2 tizedesre</b>.</p>
+
+    <h2 id="eszkoz">🛠️ Az eszköz — szögmérő (klinométer)</h2>
+    <div class="gyakorolj">
+      <span class="ikon">📐</span>
+      <div>
+        <p>Kell hozzá: egy <b>szögmérő</b> (félkör alakú vonalzó), egy <b>szívószál</b> vagy egyenes
+        pálcika, kb. <b>20 cm zsineg</b> és egy kis <b>súly</b> (pl. anyacsavar, gyurma).</p>
+        <ol class="reszfeladatok">
+          <li>Ragaszd a szívószálat a szögmérő egyenes (átmérő menti) éléhez — ezen fogsz „célozni”.</li>
+          <li>Kösd a zsineget a szögmérő középpontjához (a \(90^\circ\)-os jelnél lévő lyukhoz), a
+          végére a súlyt: ez egy <b>függőón</b>, ami mindig lefelé mutat.</li>
+          <li>Amikor a szívászálon át egy magas pont <em>tetejére</em> célzol, a zsineg kimutat egy
+          számot a skálán. Az <b>emelkedési szög</b>: \(\alpha = 90^\circ - (\text{leolvasott érték})\).
+          Érdemes párszor „bemérni” egy ismert szögön, hogy biztos jól olvasod.</li>
+        </ol>
+      </div>
+    </div>
+
+    <h2 id="b1">🟢 1. bevetés — Magasságmérés</h2>
+    <p>Válassz egy magas, de a <b>talpánál megközelíthető</b> tárgyat: az iskola épülete, egy fa, egy
+    kosárpalánk vagy egy lámpaoszlop. Cél a <b>teljes magasság</b>, közvetlen mérés nélkül.</p>
+    <article class="feladat alap" id="magassag">
+      <p><span class="szam">1.</span> <b>Protokoll.</b></p>
+      <ol class="reszfeladatok">
+        <li>Állj a tárgytól egy kényelmes, <b>lemért</b> \(d\) vízszintes távolságra
+        (lépéssel vagy mérőszalaggal).</li>
+        <li>Célozz a tárgy <em>tetejére</em>, olvasd le az \(\alpha\) emelkedési szöget.</li>
+        <li>Mérd meg a saját <b>szemmagasságod</b>, \(e\)-t (a talajtól a szemedig).</li>
+        <li>A magasság: \[ m = e + d\cdot \operatorname{tg}\alpha. \]</li>
+      </ol>
+      <p>Végezd el <b>legalább kétszer</b>, két különböző \(d\) távolságról (vagy két csoporttaggal),
+      és hasonlítsd össze az eredményeket!</p>
+      <details class="vegeredmeny"><summary>Bevetési jelentés — kidolgozott minta</summary>
+        <div class="bel">
+          <p>Tegyük fel: \(d = 20\ \text{m}\), \(\alpha = 32^\circ\), \(e = 1{,}60\ \text{m}\).</p>
+          <p>\(\operatorname{tg}32^\circ = 0{,}62487\), így
+          \(m = 1{,}60 + 20\cdot 0{,}62487 = 1{,}60 + 12{,}4974 \approx \mathbf{14{,}10\ \text{m}}.\)</p>
+          <p>Miért kell az \(e\) tag? Mert az emelkedési szöget a <em>szemed</em> magasságából méred,
+          nem a talajról — a \(d\cdot\operatorname{tg}\alpha\) csak a szemvonal <em>fölötti</em> részt adja.</p>
+        </div>
+      </details>
+    </article>
+
+    <h2 id="b2">🟡 2. bevetés — Távolság/szélesség mérése</h2>
+    <p>Most egy olyan szakaszt mérsz meg, amelyet nem tudsz közvetlenül végigmérni: az udvar
+    egy „árka”, egy kerítéssel elzárt sáv, vagy egy képzeletbeli „szakadék” két pontja. A trükk egy
+    <b>derékszögű</b> elrendezés.</p>
+    <article class="feladat kozep" id="tavolsag">
+      <p><span class="szam">1.</span> <b>Protokoll.</b> Jelölj ki a túloldalon egy jól látható \(P\)
+      pontot (pl. egy fa vagy oszlop).</p>
+      <ol class="reszfeladatok">
+        <li>Állj a \(P\)-vel <em>szemközti</em> \(A\) pontba az innenső oldalon úgy, hogy az \(AP\)
+        szakasz <b>merőleges</b> legyen a partvonaladra (a sávra, amin mozogsz).</li>
+        <li>Menj végig a saját oldaladon egy <b>lemért</b> \(d\) távolságot a \(B\) pontig
+        (\(AB\) a partvonalad mentén).</li>
+        <li>A \(B\) pontból célozz \(P\)-re, és mérd meg a \(\beta\) szöget az \(AB\) iránytól.</li>
+        <li>A keresett szélesség: \[ AP = d\cdot \operatorname{tg}\beta. \]</li>
+      </ol>
+      <details class="vegeredmeny"><summary>Bevetési jelentés — kidolgozott minta</summary>
+        <div class="bel">
+          <p>Az \(A\) csúcsnál derékszög van (\(AP\perp AB\)). A derékszögű \(ABP\) háromszögben a
+          \(\beta\) szög melletti befogó \(AB=d\), a szemközti befogó a keresett \(AP\), így
+          \(\operatorname{tg}\beta = \dfrac{AP}{d}\).</p>
+          <p>Tegyük fel: \(d = 15\ \text{m}\), \(\beta = 51^\circ\). Ekkor
+          \(\operatorname{tg}51^\circ = 1{,}23490\), és
+          \(AP = 15\cdot 1{,}23490 \approx \mathbf{18{,}52\ \text{m}}.\)</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="feladat nehez" id="elit">
+      <p><span class="szam">★</span> <b>Elit-bevetés — magasság megközelíthetetlen talppal.</b>
+      Mi van, ha a magas pont talpához <em>nem</em> tudsz odaállni (pl. túlparton áll)? Két állásból
+      is menni fog. Célozz a tetőpontra egy távolabbi \(A\) helyről (szög: \(\alpha\)), majd lépj
+      <b>egyenesen felé</b> egy lemért \(k\) távolságot a közelebbi \(B\) helyig (szög: \(\beta\)).
+      A szemvonal fölötti magasság:
+      \[ h = \frac{k}{\operatorname{ctg}\alpha - \operatorname{ctg}\beta}, \qquad m = e + h. \]
+      Mérd le \(k\)-t, \(\alpha\)-t, \(\beta\)-t és \(e\)-t, és számold ki \(m\)-et!</p>
+      <details class="vegeredmeny"><summary>Bevetési jelentés — kidolgozott minta</summary>
+        <div class="bel">
+          <p><b>Honnan a képlet?</b> Legyen a tetőpont talpától a közelebbi \(B\)-ig mért vízszintes
+          táv \(x\). A két derékszögű háromszögből \(x = h\cdot\operatorname{ctg}\beta\) és
+          \(x+k = h\cdot\operatorname{ctg}\alpha\). Kivonva: \(k = h(\operatorname{ctg}\alpha -
+          \operatorname{ctg}\beta)\), innen \(h\) a fenti képlet.</p>
+          <p>Minta: \(k = 10\ \text{m}\), \(\alpha = 28^\circ\) (távoli), \(\beta = 40^\circ\) (közeli),
+          \(e = 1{,}60\ \text{m}\).</p>
+          <p>\(\operatorname{ctg}28^\circ = 1{,}88073\), \(\operatorname{ctg}40^\circ = 1{,}19175\),
+          különbségük \(0{,}68898\). Így
+          \(h = \dfrac{10}{0{,}68898} \approx 14{,}51\ \text{m}\), és
+          \(m = 1{,}60 + 14{,}51 \approx \mathbf{16{,}11\ \text{m}}.\)</p>
+        </div>
+      </details>
+    </article>
+
+    <h2 id="leadas">📓 Mit adj le? — mérési jegyzőkönyv</h2>
+    <div class="gyakorolj">
+      <span class="ikon">🎯</span>
+      <div>
+        <p><b>Csoport:</b> 2–3 kadét. <b>Forma:</b> mérési jegyzőkönyv (kézzel írt táblázat is jó),
+        lehetőleg egy fotóval vagy vázlatrajzzal a felállásról. Tartalmazza:</p>
+        <ol class="reszfeladatok">
+          <li>a mért nyers adatokat (\(d\), \(\alpha\), \(e\), a távolságnál \(d\), \(\beta\));</li>
+          <li>a derékszögű háromszög <b>rajzát</b> a jelölt oldalakkal/szögekkel;</li>
+          <li>a <b>számítást</b> lépésről lépésre, a kerekítési szabály betartásával
+          (érték 5, hossz/szög 2 tizedes);</li>
+          <li>a magasságmérés <b>két</b> eredményét és az eltérésüket — mit gondolsz, mi okozza a
+          különbséget?</li>
+        </ol>
+      </div>
+    </div>
+    <p class="le halvany"><b>Biztonság:</b> ne mássz fel semmire és ne mérj forgalmas úton — a talajról,
+    nyugodt helyről minden kimérhető. <b>Hogyan értékelem?</b> Helyes felállás/rajz ~30%, helyes
+    szögfüggvény és számítás ~40%, kerekítés + két mérés összevetése ~20%, igényes jegyzőkönyv ~10%.
+    A köntös csak keret — <b>a mérés és a matek pontossága az igazi cél</b>.</p>
+
+    <div class="lapozo">
+      <a class="elozo" href="osszefoglalo.html"><span class="irany">← Előző</span><span class="hova">Tömör összefoglaló</span></a>
+      <a class="kov" href="index.html"><span class="irany">Vissza →</span><span class="hova">Témakör főoldala</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+</body>
+</html>
