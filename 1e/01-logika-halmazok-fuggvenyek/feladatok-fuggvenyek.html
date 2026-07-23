@@ -35,208 +35,179 @@
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="alap">🟢 Alapszint</h2>
-    <article class="feladat" id="alap-1">
-      <div class="fejsor"><span class="szam">1.</span><span class="chip alap">Alap</span></div>
-      <p><span class="math inline">\(A=\{1,2,3,4\}\)</span>, <span class="math inline">\(B=\{a,b,c,d\}\)</span>. Melyek függvények <span class="math inline">\(A\to B\)</span> típusúak? Indokolj! Majd az e)–f)-nél döntsd el, injektív / szürjektív / bijektív-e.</p><ol class="reszfeladatok"><li><span class="math inline">\(\rho_1=\{(1,b),(2,a),(3,d),(4,c)\}\)</span></li><li><span class="math inline">\(\rho_2=\{(1,a),(2,c),(4,d)\}\)</span></li><li><span class="math inline">\(\rho_3=\{(1,a),(2,a),(3,a),(4,a)\}\)</span></li><li><span class="math inline">\(\rho_4=\{(1,a),(2,b),(2,c),(3,d)\}\)</span></li><li><span class="math inline">\(f:\{1,2,3\}\to\{p,q,r,s\}\)</span>, <span class="math inline">\(f(1)=p,f(2)=q,f(3)=p\)</span></li><li><span class="math inline">\(g:\{1,2,3\}\to\{1,2,3\}\)</span>, <span class="math inline">\(g(1)=2,g(2)=3,g(3)=1\)</span></li></ol>
+    <article class="feladat alap" id="alap-1">
+      <p><span class="szam">1.</span> <span class="math inline">\(A=\{1,2,3,4\}\)</span>, <span class="math inline">\(B=\{a,b,c,d\}\)</span>. Melyek függvények <span class="math inline">\(A\to B\)</span> típusúak? Indokolj! Majd az e)–f)-nél döntsd el, injektív / szürjektív / bijektív-e.</p><ol class="reszfeladatok"><li><span class="math inline">\(\rho_1=\{(1,b),(2,a),(3,d),(4,c)\}\)</span></li><li><span class="math inline">\(\rho_2=\{(1,a),(2,c),(4,d)\}\)</span></li><li><span class="math inline">\(\rho_3=\{(1,a),(2,a),(3,a),(4,a)\}\)</span></li><li><span class="math inline">\(\rho_4=\{(1,a),(2,b),(2,c),(3,d)\}\)</span></li><li><span class="math inline">\(f:\{1,2,3\}\to\{p,q,r,s\}\)</span>, <span class="math inline">\(f(1)=p,f(2)=q,f(3)=p\)</span></li><li><span class="math inline">\(g:\{1,2,3\}\to\{1,2,3\}\)</span>, <span class="math inline">\(g(1)=2,g(2)=3,g(3)=1\)</span></li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p>a) függvény; b) nem (a 3-nak nincs képe); c) függvény (konstans); d) nem (a 2-höz két kép); e) nem injektív (<span class="math inline">\(f(1)=f(3)\)</span>), nem szürjektív (<span class="math inline">\(s\)</span> nincs) → nem bijektív; f) injektív és szürjektív → bijektív.</p></div>
       </details>
     </article>
-    <article class="feladat" id="alap-2">
-      <div class="fejsor"><span class="szam">2.</span><span class="chip alap">Alap</span></div>
-      <p>Számítsd ki a helyettesítési értékeket!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(f(x)=3x-5\)</span>: <span class="math inline">\(f(0)\)</span></li><li><span class="math inline">\(f(2)\)</span></li><li><span class="math inline">\(f(-1)\)</span></li><li><span class="math inline">\(f\!\left(\tfrac13\right)\)</span></li><li><span class="math inline">\(f(a)\)</span></li><li><span class="math inline">\(g(x)=\tfrac{x}{2}-3\)</span>: <span class="math inline">\(g(4)\)</span></li><li><span class="math inline">\(g(-6)\)</span></li><li><span class="math inline">\(g(2a)\)</span></li><li><span class="math inline">\(g(b+6)\)</span></li><li><span class="math inline">\(h(x)=x^2-2x\)</span>: <span class="math inline">\(h(3)\)</span></li><li><span class="math inline">\(h(-1)\)</span></li><li><span class="math inline">\(h(0)\)</span></li></ol>
+    <article class="feladat alap" id="alap-2">
+      <p><span class="szam">2.</span> Számítsd ki a helyettesítési értékeket!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(f(x)=3x-5\)</span>: <span class="math inline">\(f(0)\)</span></li><li><span class="math inline">\(f(2)\)</span></li><li><span class="math inline">\(f(-1)\)</span></li><li><span class="math inline">\(f\!\left(\tfrac13\right)\)</span></li><li><span class="math inline">\(f(a)\)</span></li><li><span class="math inline">\(g(x)=\tfrac{x}{2}-3\)</span>: <span class="math inline">\(g(4)\)</span></li><li><span class="math inline">\(g(-6)\)</span></li><li><span class="math inline">\(g(2a)\)</span></li><li><span class="math inline">\(g(b+6)\)</span></li><li><span class="math inline">\(h(x)=x^2-2x\)</span>: <span class="math inline">\(h(3)\)</span></li><li><span class="math inline">\(h(-1)\)</span></li><li><span class="math inline">\(h(0)\)</span></li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p>a) <span class="math inline">\(-5\)</span>; b) <span class="math inline">\(1\)</span>; c) <span class="math inline">\(-8\)</span>; d) <span class="math inline">\(-4\)</span>; e) <span class="math inline">\(3a-5\)</span>; f) <span class="math inline">\(-1\)</span>; g) <span class="math inline">\(-6\)</span>; h) <span class="math inline">\(a-3\)</span>; i) <span class="math inline">\(\tfrac{b}{2}\)</span>; j) <span class="math inline">\(3\)</span>; k) <span class="math inline">\(3\)</span>; l) <span class="math inline">\(0\)</span>.</p></div>
       </details>
     </article>
-    <article class="feladat" id="alap-3">
-      <div class="fejsor"><span class="szam">3.</span><span class="chip alap">Alap</span></div>
-      <p>Függvény megadása, értelmezési tartomány, értékkészlet.</p><ol class="reszfeladatok"><li><span class="math inline">\(f=\{(1,3),(2,3),(3,5),(4,7)\}\)</span> (<span class="math inline">\(A=\{1,2,3,4\}\)</span>): add meg <span class="math inline">\(D_f\)</span>-et és <span class="math inline">\(R_f\)</span>-et; injektív-e?</li><li><span class="math inline">\(f(x)=2x+1\)</span> a <span class="math inline">\(C=\{0,1,2,3\}\)</span>-on: írd fel rendezett párokként és add meg <span class="math inline">\(R_f\)</span>-et.</li></ol>
+    <article class="feladat alap" id="alap-3">
+      <p><span class="szam">3.</span> Függvény megadása, értelmezési tartomány, értékkészlet.</p><ol class="reszfeladatok"><li><span class="math inline">\(f=\{(1,3),(2,3),(3,5),(4,7)\}\)</span> (<span class="math inline">\(A=\{1,2,3,4\}\)</span>): add meg <span class="math inline">\(D_f\)</span>-et és <span class="math inline">\(R_f\)</span>-et; injektív-e?</li><li><span class="math inline">\(f(x)=2x+1\)</span> a <span class="math inline">\(C=\{0,1,2,3\}\)</span>-on: írd fel rendezett párokként és add meg <span class="math inline">\(R_f\)</span>-et.</li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(D_f=\{1,2,3,4\}\)</span>, <span class="math inline">\(R_f=\{3,5,7\}\)</span>; nem injektív (<span class="math inline">\(f(1)=f(2)\)</span>).</li><li><span class="math inline">\(f=\{(0,1),(1,3),(2,5),(3,7)\}\)</span>, <span class="math inline">\(R_f=\{1,3,5,7\}\)</span>.</li></ol></div>
       </details>
     </article>
-    <article class="feladat" id="alap-4">
-      <div class="fejsor"><span class="szam">4.</span><span class="chip alap">Alap</span></div>
-      <p>Határozd meg a kompozíciókat!</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=2x-1\)</span>, <span class="math inline">\(g(x)=x+4\)</span>: <span class="math inline">\((f\circ g)(x)\)</span> és <span class="math inline">\((g\circ f)(x)\)</span></li><li><span class="math inline">\(f(x)=3x\)</span>, <span class="math inline">\(g(x)=x-2\)</span>: <span class="math inline">\((f\circ g)(x)\)</span>, <span class="math inline">\((g\circ f)(x)\)</span>, <span class="math inline">\((f\circ f)(x)\)</span>, <span class="math inline">\((g\circ g)(x)\)</span></li><li><span class="math inline">\(f(x)=x+1\)</span>, <span class="math inline">\(g(x)=2x\)</span>, <span class="math inline">\(h(x)=x-3\)</span>: <span class="math inline">\((f\circ g)(x)\)</span>, <span class="math inline">\((g\circ h)(x)\)</span>, <span class="math inline">\((h\circ f)(x)\)</span></li></ol>
+    <article class="feladat alap" id="alap-4">
+      <p><span class="szam">4.</span> Határozd meg a kompozíciókat!</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=2x-1\)</span>, <span class="math inline">\(g(x)=x+4\)</span>: <span class="math inline">\((f\circ g)(x)\)</span> és <span class="math inline">\((g\circ f)(x)\)</span></li><li><span class="math inline">\(f(x)=3x\)</span>, <span class="math inline">\(g(x)=x-2\)</span>: <span class="math inline">\((f\circ g)(x)\)</span>, <span class="math inline">\((g\circ f)(x)\)</span>, <span class="math inline">\((f\circ f)(x)\)</span>, <span class="math inline">\((g\circ g)(x)\)</span></li><li><span class="math inline">\(f(x)=x+1\)</span>, <span class="math inline">\(g(x)=2x\)</span>, <span class="math inline">\(h(x)=x-3\)</span>: <span class="math inline">\((f\circ g)(x)\)</span>, <span class="math inline">\((g\circ h)(x)\)</span>, <span class="math inline">\((h\circ f)(x)\)</span></li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(2x+7\)</span>; <span class="math inline">\(2x+3\)</span>.</li><li><span class="math inline">\(3x-6\)</span>; <span class="math inline">\(3x-2\)</span>; <span class="math inline">\(9x\)</span>; <span class="math inline">\(x-4\)</span>.</li><li><span class="math inline">\(2x+1\)</span>; <span class="math inline">\(2x-6\)</span>; <span class="math inline">\(x-2\)</span>.</li></ol></div>
       </details>
     </article>
-    <article class="feladat" id="alap-5">
-      <div class="fejsor"><span class="szam">5.</span><span class="chip alap">Alap</span></div>
-      <p>Határozd meg az inverzet!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(f(x)=2x-6\)</span></li><li><span class="math inline">\(f(x)=\tfrac{-x}{3}+2\)</span></li><li><span class="math inline">\(f(x)=5x-2\)</span></li><li><span class="math inline">\(f(x)=x+7\)</span></li><li><span class="math inline">\(f(x)=\tfrac{x-3}{2}\)</span></li></ol>
+    <article class="feladat alap" id="alap-5">
+      <p><span class="szam">5.</span> Határozd meg az inverzet!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(f(x)=2x-6\)</span></li><li><span class="math inline">\(f(x)=\tfrac{-x}{3}+2\)</span></li><li><span class="math inline">\(f(x)=5x-2\)</span></li><li><span class="math inline">\(f(x)=x+7\)</span></li><li><span class="math inline">\(f(x)=\tfrac{x-3}{2}\)</span></li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p>a) <span class="math inline">\(\tfrac{x}{2}+3\)</span>; b) <span class="math inline">\(-3x+6\)</span>; c) <span class="math inline">\(\tfrac{x+2}{5}\)</span>; d) <span class="math inline">\(x-7\)</span>; e) <span class="math inline">\(2x+3\)</span>.</p></div>
       </details>
     </article>
-    <article class="feladat" id="alap-6">
-      <div class="fejsor"><span class="szam">6.</span><span class="chip alap">Alap</span></div>
-      <p>Vegyes.</p><ol class="reszfeladatok"><li><span class="math inline">\(g(x)=2x+1\)</span>, és <span class="math inline">\((g\circ f)(x)=4x-3\)</span>: határozd meg <span class="math inline">\(f(x)\)</span>-et.</li><li>Az <span class="math inline">\(f(x)=-2x+6\)</span> grafikonja hol metszi a tengelyeket?</li><li><span class="math inline">\(f(x)=5x-2\)</span>: melyik <span class="math inline">\(x\)</span>-re lesz <span class="math inline">\(f(x)=13\)</span>, és melyikre <span class="math inline">\(f(x)=0\)</span>?</li></ol>
+    <article class="feladat alap" id="alap-6">
+      <p><span class="szam">6.</span> Vegyes.</p><ol class="reszfeladatok"><li><span class="math inline">\(g(x)=2x+1\)</span>, és <span class="math inline">\((g\circ f)(x)=4x-3\)</span>: határozd meg <span class="math inline">\(f(x)\)</span>-et.</li><li>Az <span class="math inline">\(f(x)=-2x+6\)</span> grafikonja hol metszi a tengelyeket?</li><li><span class="math inline">\(f(x)=5x-2\)</span>: melyik <span class="math inline">\(x\)</span>-re lesz <span class="math inline">\(f(x)=13\)</span>, és melyikre <span class="math inline">\(f(x)=0\)</span>?</li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=2x-2\)</span>.</li><li>x-tengely: <span class="math inline">\((3,0)\)</span>; y-tengely: <span class="math inline">\((0,6)\)</span>.</li><li><span class="math inline">\(f(x)=13\Rightarrow x=3\)</span>; <span class="math inline">\(f(x)=0\Rightarrow x=\tfrac25\)</span>.</li></ol></div>
       </details>
     </article>
-    <article class="feladat" id="alap-7">
-      <div class="fejsor"><span class="szam">7.</span><span class="chip alap">Alap</span></div>
-      <p>A Celsius-fokot a <span class="math inline">\(F(x)=\tfrac{9x}{5}+32\)</span> képlettel váltjuk Fahrenheit-fokba.</p><ol class="reszfeladatok"><li>Hány <span class="math inline">\(°F\)</span> a <span class="math inline">\(20\,°C\)</span>?</li><li>Fejezd ki a képletből a Celsius-fokot.</li><li>Hány <span class="math inline">\(°C\)</span> a <span class="math inline">\(95\,°F\)</span>?</li></ol>
+    <article class="feladat alap" id="alap-7">
+      <p><span class="szam">7.</span> A Celsius-fokot a <span class="math inline">\(F(x)=\tfrac{9x}{5}+32\)</span> képlettel váltjuk Fahrenheit-fokba.</p><ol class="reszfeladatok"><li>Hány <span class="math inline">\(°F\)</span> a <span class="math inline">\(20\,°C\)</span>?</li><li>Fejezd ki a képletből a Celsius-fokot.</li><li>Hány <span class="math inline">\(°C\)</span> a <span class="math inline">\(95\,°F\)</span>?</li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(68\,°F\)</span></li><li><span class="math inline">\(x=\tfrac{5(F-32)}{9}\)</span></li><li><span class="math inline">\(35\,°C\)</span></li></ol></div>
       </details>
     </article>
-    <article class="feladat" id="alap-8">
-      <div class="fejsor"><span class="szam">8.</span><span class="chip alap">Alap</span></div>
-      <p><b>Stark-reaktor.</b> Egy ívreaktor teljesítménye <span class="math inline">\(t\)</span> perc működés után <span class="math inline">\(P(t)=3t+50\)</span> (MW).</p><ol class="reszfeladatok"><li>Mennyi a teljesítmény 10 perc után?</li><li>Hány perc múlva éri el a 200 MW-ot?</li><li>Add meg <span class="math inline">\(P^{-1}\)</span>-et (a teljesítményből az időt).</li></ol>
+    <article class="feladat alap" id="alap-8">
+      <p><span class="szam">8.</span> <b>Stark-reaktor.</b> Egy ívreaktor teljesítménye <span class="math inline">\(t\)</span> perc működés után <span class="math inline">\(P(t)=3t+50\)</span> (MW).</p><ol class="reszfeladatok"><li>Mennyi a teljesítmény 10 perc után?</li><li>Hány perc múlva éri el a 200 MW-ot?</li><li>Add meg <span class="math inline">\(P^{-1}\)</span>-et (a teljesítményből az időt).</li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(P(10)=80\)</span> MW</li><li><span class="math inline">\(3t+50=200\Rightarrow t=50\)</span> perc</li><li><span class="math inline">\(P^{-1}(x)=\tfrac{x-50}{3}\)</span></li></ol></div>
       </details>
     </article>
-    <article class="feladat" id="alap-9">
-      <div class="fejsor"><span class="szam">9.</span><span class="chip alap">Alap</span></div>
-      <p>Lineáris függvény grafikonja. <span class="math inline">\(f(x)=-2x+6\)</span>.</p><ol class="reszfeladatok rovid"><li>Mennyi a meredekség?</li><li>Hol metszi az <span class="math inline">\(y\)</span>-tengelyt?</li><li>Növekvő vagy csökkenő?</li><li>Számítsd ki <span class="math inline">\(f(4)\)</span>-et.</li></ol>
+    <article class="feladat alap" id="alap-9">
+      <p><span class="szam">9.</span> Lineáris függvény grafikonja. <span class="math inline">\(f(x)=-2x+6\)</span>.</p><ol class="reszfeladatok rovid"><li>Mennyi a meredekség?</li><li>Hol metszi az <span class="math inline">\(y\)</span>-tengelyt?</li><li>Növekvő vagy csökkenő?</li><li>Számítsd ki <span class="math inline">\(f(4)\)</span>-et.</li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p>a) <span class="math inline">\(-2\)</span>; b) <span class="math inline">\((0,6)\)</span>; c) csökkenő (<span class="math inline">\(-2\lt 0\)</span>); d) <span class="math inline">\(f(4)=-2\)</span>.</p></div>
       </details>
     </article>
-    <article class="feladat" id="alap-10">
-      <div class="fejsor"><span class="szam">10.</span><span class="chip alap">Alap</span></div>
-      <p>Ismeretlen függvény.</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x-3)=2x+1\)</span>: határozd meg <span class="math inline">\(f(x)\)</span>-et.</li><li><span class="math inline">\(g(x)=3x-1\)</span>, és <span class="math inline">\((g\circ f)(x)=6x+2\)</span>: határozd meg <span class="math inline">\(f(x)\)</span>-et.</li></ol>
+    <article class="feladat alap" id="alap-10">
+      <p><span class="szam">10.</span> Ismeretlen függvény.</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x-3)=2x+1\)</span>: határozd meg <span class="math inline">\(f(x)\)</span>-et.</li><li><span class="math inline">\(g(x)=3x-1\)</span>, és <span class="math inline">\((g\circ f)(x)=6x+2\)</span>: határozd meg <span class="math inline">\(f(x)\)</span>-et.</li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=2x+7\)</span>.</li><li><span class="math inline">\(f(x)=2x+1\)</span>.</li></ol></div>
       </details>
     </article>
-    <article class="feladat" id="alap-11">
-      <div class="fejsor"><span class="szam">11.</span><span class="chip alap">Alap</span></div>
-      <p><b>Spider-taxi.</b> Egy taxi viteldíja <span class="math inline">\(f(x)=90x+300\)</span> dinár <span class="math inline">\(x\)</span> km után.</p><ol class="reszfeladatok"><li>Mennyit fizetünk 8 km-ért?</li><li>Hány km-t tettünk meg 1200 dinárért?</li><li>Add meg <span class="math inline">\(f^{-1}\)</span>-et.</li></ol>
+    <article class="feladat alap" id="alap-11">
+      <p><span class="szam">11.</span> <b>Spider-taxi.</b> Egy taxi viteldíja <span class="math inline">\(f(x)=90x+300\)</span> dinár <span class="math inline">\(x\)</span> km után.</p><ol class="reszfeladatok"><li>Mennyit fizetünk 8 km-ért?</li><li>Hány km-t tettünk meg 1200 dinárért?</li><li>Add meg <span class="math inline">\(f^{-1}\)</span>-et.</li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(f(8)=1020\)</span> dinár</li><li><span class="math inline">\(90x+300=1200\Rightarrow x=10\)</span> km</li><li><span class="math inline">\(f^{-1}(x)=\tfrac{x-300}{90}\)</span></li></ol></div>
       </details>
     </article>
-    <article class="feladat" id="alap-12">
-      <div class="fejsor"><span class="szam">12.</span><span class="chip alap">Alap</span></div>
-      <p>Kompozíció rendezett párokkal. <span class="math inline">\(A=\{1,2,3,4\}\)</span>, <span class="math inline">\(f=\{(1,2),(2,4),(3,1),(4,3)\}\)</span>, <span class="math inline">\(g=\{(1,3),(2,1),(3,2),(4,4)\}\)</span>.</p><ol class="reszfeladatok"><li><span class="math inline">\((f\circ g)\)</span> (párokként)</li><li><span class="math inline">\((g\circ f)\)</span> (párokként)</li><li><span class="math inline">\(f^{-1}\)</span> (párokként)</li></ol>
+    <article class="feladat alap" id="alap-12">
+      <p><span class="szam">12.</span> Kompozíció rendezett párokkal. <span class="math inline">\(A=\{1,2,3,4\}\)</span>, <span class="math inline">\(f=\{(1,2),(2,4),(3,1),(4,3)\}\)</span>, <span class="math inline">\(g=\{(1,3),(2,1),(3,2),(4,4)\}\)</span>.</p><ol class="reszfeladatok"><li><span class="math inline">\((f\circ g)\)</span> (párokként)</li><li><span class="math inline">\((g\circ f)\)</span> (párokként)</li><li><span class="math inline">\(f^{-1}\)</span> (párokként)</li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(f\circ g=\{(1,1),(2,2),(3,4),(4,3)\}\)</span></li><li><span class="math inline">\(g\circ f=\{(1,1),(2,4),(3,3),(4,2)\}\)</span></li><li><span class="math inline">\(f^{-1}=\{(2,1),(4,2),(1,3),(3,4)\}\)</span></li></ol></div>
       </details>
     </article>
     <h2 id="kozep">🟡 Középszint</h2>
-    <article class="feladat" id="kozep-1">
-      <div class="fejsor"><span class="szam">1.</span><span class="chip kozep">Közép</span></div>
-      <p>Kompozíció (nemlineáris is).</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=2x-3\)</span>, <span class="math inline">\(h(x)=x^2+1\)</span>: <span class="math inline">\((f\circ h)(x)\)</span> és <span class="math inline">\((h\circ f)(x)\)</span></li><li><span class="math inline">\(g(x)=2x+1\)</span>: add meg <span class="math inline">\(f(x)=g(g(x))-g(x)\)</span>-et</li><li><span class="math inline">\(f(x)=4x-3\)</span>, <span class="math inline">\((f\circ g)(x)=8x+1\)</span>: add meg <span class="math inline">\(g(x)\)</span>-et</li></ol>
+    <article class="feladat kozep" id="kozep-1">
+      <p><span class="szam">1.</span> Kompozíció (nemlineáris is).</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=2x-3\)</span>, <span class="math inline">\(h(x)=x^2+1\)</span>: <span class="math inline">\((f\circ h)(x)\)</span> és <span class="math inline">\((h\circ f)(x)\)</span></li><li><span class="math inline">\(g(x)=2x+1\)</span>: add meg <span class="math inline">\(f(x)=g(g(x))-g(x)\)</span>-et</li><li><span class="math inline">\(f(x)=4x-3\)</span>, <span class="math inline">\((f\circ g)(x)=8x+1\)</span>: add meg <span class="math inline">\(g(x)\)</span>-et</li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\((f\circ h)(x)=2x^2-1\)</span>; <span class="math inline">\((h\circ f)(x)=4x^2-12x+10\)</span>.</li><li><span class="math inline">\(f(x)=2x+2\)</span>.</li><li><span class="math inline">\(g(x)=2x+1\)</span>.</li></ol></div>
       </details>
     </article>
-    <article class="feladat" id="kozep-2">
-      <div class="fejsor"><span class="szam">2.</span><span class="chip kozep">Közép</span></div>
-      <p>Határozd meg az <span class="math inline">\(f(x)\)</span> függvényt!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(f(x+2)=3x-1\)</span></li><li><span class="math inline">\(f(2x-1)=4x+3\)</span></li><li><span class="math inline">\(f\!\left(\tfrac{x+2}{2}\right)=x-4\)</span></li><li><span class="math inline">\(f(2x+1)=4x^2+4x\)</span> (majd <span class="math inline">\(f(3)\)</span>)</li></ol>
+    <article class="feladat kozep" id="kozep-2">
+      <p><span class="szam">2.</span> Határozd meg az <span class="math inline">\(f(x)\)</span> függvényt!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(f(x+2)=3x-1\)</span></li><li><span class="math inline">\(f(2x-1)=4x+3\)</span></li><li><span class="math inline">\(f\!\left(\tfrac{x+2}{2}\right)=x-4\)</span></li><li><span class="math inline">\(f(2x+1)=4x^2+4x\)</span> (majd <span class="math inline">\(f(3)\)</span>)</li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p>a) <span class="math inline">\(f(x)=3x-7\)</span>; b) <span class="math inline">\(f(x)=2x+5\)</span>; c) <span class="math inline">\(f(x)=2x-6\)</span>; d) <span class="math inline">\(f(x)=x^2-1\)</span>, <span class="math inline">\(f(3)=8\)</span>.</p></div>
       </details>
     </article>
-    <article class="feladat" id="kozep-3">
-      <div class="fejsor"><span class="szam">3.</span><span class="chip kozep">Közép</span></div>
-      <p>Inverz és bijektivitás.</p><ol class="reszfeladatok"><li><span class="math inline">\(A=\{1,2,3,4,5\}\)</span>, <span class="math inline">\(f=\{(1,4),(2,1),(3,5),(4,2),(5,3)\}\)</span> bijektív: add meg <span class="math inline">\(f^{-1}\)</span>-et.</li><li><span class="math inline">\(f(x)=3-2x\)</span>, <span class="math inline">\(g(x)=2x-1\)</span>: <span class="math inline">\(f^{-1}(x)\)</span>, <span class="math inline">\(g^{-1}(x)\)</span>, <span class="math inline">\((f\circ g^{-1})(x)\)</span>.</li><li>Bizonyítsd be, hogy <span class="math inline">\(f(x)=2x+4\)</span> bijektív, és add meg az inverzét.</li><li><span class="math inline">\(f(3x-1)=6x-8\)</span>: add meg <span class="math inline">\(f(x)\)</span>-et és <span class="math inline">\(f^{-1}(x)\)</span>-et.</li></ol>
+    <article class="feladat kozep" id="kozep-3">
+      <p><span class="szam">3.</span> Inverz és bijektivitás.</p><ol class="reszfeladatok"><li><span class="math inline">\(A=\{1,2,3,4,5\}\)</span>, <span class="math inline">\(f=\{(1,4),(2,1),(3,5),(4,2),(5,3)\}\)</span> bijektív: add meg <span class="math inline">\(f^{-1}\)</span>-et.</li><li><span class="math inline">\(f(x)=3-2x\)</span>, <span class="math inline">\(g(x)=2x-1\)</span>: <span class="math inline">\(f^{-1}(x)\)</span>, <span class="math inline">\(g^{-1}(x)\)</span>, <span class="math inline">\((f\circ g^{-1})(x)\)</span>.</li><li>Bizonyítsd be, hogy <span class="math inline">\(f(x)=2x+4\)</span> bijektív, és add meg az inverzét.</li><li><span class="math inline">\(f(3x-1)=6x-8\)</span>: add meg <span class="math inline">\(f(x)\)</span>-et és <span class="math inline">\(f^{-1}(x)\)</span>-et.</li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(f^{-1}=\{(4,1),(1,2),(5,3),(2,4),(3,5)\}\)</span>.</li><li><span class="math inline">\(f^{-1}(x)=\tfrac{3-x}{2}\)</span>, <span class="math inline">\(g^{-1}(x)=\tfrac{x+1}{2}\)</span>, <span class="math inline">\((f\circ g^{-1})(x)=2-x\)</span>.</li><li>injektív (<span class="math inline">\(2x_1+4=2x_2+4\Rightarrow x_1=x_2\)</span>) és szürjektív; <span class="math inline">\(f^{-1}(x)=\tfrac{x}{2}-2\)</span>.</li><li><span class="math inline">\(f(x)=2x-6\)</span>, <span class="math inline">\(f^{-1}(x)=\tfrac{x}{2}+3\)</span>.</li></ol></div>
       </details>
     </article>
-    <article class="feladat" id="kozep-4">
-      <div class="fejsor"><span class="szam">4.</span><span class="chip kozep">Közép</span></div>
-      <p><b>Valós alkalmazások.</b></p><ol class="reszfeladatok"><li>A <span class="math inline">\(F(x)=\tfrac{9x}{5}+32\)</span> képlet Celsiusból Fahrenheitbe vált; add meg <span class="math inline">\(F^{-1}\)</span>-et, és hány <span class="math inline">\(°C\)</span> a <span class="math inline">\(68\,°F\)</span>?</li><li>Egy taxi díja <span class="math inline">\(f(x)=80x+250\)</span> dinár <span class="math inline">\(x\)</span> km-re: mennyit fizetünk 10 km-ért, és hány km-t tettünk meg 890 dinárért?</li><li>Egy mobiltarifa havi számlája <span class="math inline">\(f(x)=1200+15x\)</span> dinár <span class="math inline">\(x\)</span> perc után: mennyi 40 percnél, és hány perc 2100 dinárnál?</li></ol>
+    <article class="feladat kozep" id="kozep-4">
+      <p><span class="szam">4.</span> <b>Valós alkalmazások.</b></p><ol class="reszfeladatok"><li>A <span class="math inline">\(F(x)=\tfrac{9x}{5}+32\)</span> képlet Celsiusból Fahrenheitbe vált; add meg <span class="math inline">\(F^{-1}\)</span>-et, és hány <span class="math inline">\(°C\)</span> a <span class="math inline">\(68\,°F\)</span>?</li><li>Egy taxi díja <span class="math inline">\(f(x)=80x+250\)</span> dinár <span class="math inline">\(x\)</span> km-re: mennyit fizetünk 10 km-ért, és hány km-t tettünk meg 890 dinárért?</li><li>Egy mobiltarifa havi számlája <span class="math inline">\(f(x)=1200+15x\)</span> dinár <span class="math inline">\(x\)</span> perc után: mennyi 40 percnél, és hány perc 2100 dinárnál?</li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(F^{-1}(x)=\tfrac{5(x-32)}{9}\)</span>, <span class="math inline">\(68\,°F=20\,°C\)</span>.</li><li><span class="math inline">\(f(10)=1050\)</span> dinár; <span class="math inline">\(890=80x+250\Rightarrow x=8\)</span> km.</li><li><span class="math inline">\(f(40)=1800\)</span> dinár; <span class="math inline">\(2100=1200+15x\Rightarrow x=60\)</span> perc.</li></ol></div>
       </details>
     </article>
-    <article class="feladat" id="kozep-5">
-      <div class="fejsor"><span class="szam">5.</span><span class="chip kozep">Közép</span></div>
-      <p>Kompozíció rendezett párokkal. <span class="math inline">\(A=\{1,2,3,4\}\)</span>, <span class="math inline">\(f=\{(1,2),(2,4),(3,1),(4,3)\}\)</span>, <span class="math inline">\(g=\{(1,3),(2,1),(3,2),(4,4)\}\)</span>.</p><ol class="reszfeladatok"><li><span class="math inline">\(f\circ g\)</span></li><li><span class="math inline">\(g\circ f\)</span></li><li><span class="math inline">\(f^{-1}\)</span></li></ol>
+    <article class="feladat kozep" id="kozep-5">
+      <p><span class="szam">5.</span> Kompozíció rendezett párokkal. <span class="math inline">\(A=\{1,2,3,4\}\)</span>, <span class="math inline">\(f=\{(1,2),(2,4),(3,1),(4,3)\}\)</span>, <span class="math inline">\(g=\{(1,3),(2,1),(3,2),(4,4)\}\)</span>.</p><ol class="reszfeladatok"><li><span class="math inline">\(f\circ g\)</span></li><li><span class="math inline">\(g\circ f\)</span></li><li><span class="math inline">\(f^{-1}\)</span></li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\{(1,1),(2,2),(3,4),(4,3)\}\)</span></li><li><span class="math inline">\(\{(1,1),(2,4),(3,3),(4,2)\}\)</span></li><li><span class="math inline">\(\{(2,1),(4,2),(1,3),(3,4)\}\)</span></li></ol></div>
       </details>
     </article>
-    <article class="feladat" id="kozep-6">
-      <div class="fejsor"><span class="szam">6.</span><span class="chip kozep">Közép</span></div>
-      <p><b>Dupla-ügynök.</b> <span class="math inline">\(f(x)=2x-5\)</span>, <span class="math inline">\(g(x)=4-3x\)</span>.</p><ol class="reszfeladatok rovid"><li><span class="math inline">\((f\circ g)(x)\)</span></li><li><span class="math inline">\((g\circ f)(x)\)</span></li><li><span class="math inline">\(f^{-1}(x)\)</span></li><li><span class="math inline">\(g^{-1}(x)\)</span></li></ol>
+    <article class="feladat kozep" id="kozep-6">
+      <p><span class="szam">6.</span> <b>Dupla-ügynök.</b> <span class="math inline">\(f(x)=2x-5\)</span>, <span class="math inline">\(g(x)=4-3x\)</span>.</p><ol class="reszfeladatok rovid"><li><span class="math inline">\((f\circ g)(x)\)</span></li><li><span class="math inline">\((g\circ f)(x)\)</span></li><li><span class="math inline">\(f^{-1}(x)\)</span></li><li><span class="math inline">\(g^{-1}(x)\)</span></li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p>a) <span class="math inline">\(-6x+3\)</span>; b) <span class="math inline">\(-6x+19\)</span>; c) <span class="math inline">\(\tfrac{x+5}{2}\)</span>; d) <span class="math inline">\(\tfrac{4-x}{3}\)</span>.</p></div>
       </details>
     </article>
-    <article class="feladat" id="kozep-7">
-      <div class="fejsor"><span class="szam">7.</span><span class="chip kozep">Közép</span></div>
-      <p>Függvény adott feltételekből.</p><ol class="reszfeladatok"><li>Az <span class="math inline">\(f(x)=ax+b\)</span> lineáris függvényről tudjuk, hogy <span class="math inline">\(f(1)=5\)</span> és <span class="math inline">\(f(3)=11\)</span>. Add meg <span class="math inline">\(a\)</span>-t és <span class="math inline">\(b\)</span>-t.</li><li>Ezután add meg <span class="math inline">\(f^{-1}(x)\)</span>-et.</li></ol>
+    <article class="feladat kozep" id="kozep-7">
+      <p><span class="szam">7.</span> Függvény adott feltételekből.</p><ol class="reszfeladatok"><li>Az <span class="math inline">\(f(x)=ax+b\)</span> lineáris függvényről tudjuk, hogy <span class="math inline">\(f(1)=5\)</span> és <span class="math inline">\(f(3)=11\)</span>. Add meg <span class="math inline">\(a\)</span>-t és <span class="math inline">\(b\)</span>-t.</li><li>Ezután add meg <span class="math inline">\(f^{-1}(x)\)</span>-et.</li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(a=3\)</span>, <span class="math inline">\(b=2\)</span>, tehát <span class="math inline">\(f(x)=3x+2\)</span>.</li><li><span class="math inline">\(f^{-1}(x)=\tfrac{x-2}{3}\)</span>.</li></ol></div>
       </details>
     </article>
-    <article class="feladat" id="kozep-8">
-      <div class="fejsor"><span class="szam">8.</span><span class="chip kozep">Közép</span></div>
-      <p>Ismételt kompozíció. <span class="math inline">\(g(x)=x+2\)</span>.</p><ol class="reszfeladatok rovid"><li><span class="math inline">\((g\circ g)(x)\)</span></li><li><span class="math inline">\((g\circ g\circ g)(x)\)</span></li><li>Általánosan: <span class="math inline">\(\underbrace{(g\circ\dots\circ g)}_{n}(x)\)</span></li></ol>
+    <article class="feladat kozep" id="kozep-8">
+      <p><span class="szam">8.</span> Ismételt kompozíció. <span class="math inline">\(g(x)=x+2\)</span>.</p><ol class="reszfeladatok rovid"><li><span class="math inline">\((g\circ g)(x)\)</span></li><li><span class="math inline">\((g\circ g\circ g)(x)\)</span></li><li>Általánosan: <span class="math inline">\(\underbrace{(g\circ\dots\circ g)}_{n}(x)\)</span></li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p>a) <span class="math inline">\(x+4\)</span>; b) <span class="math inline">\(x+6\)</span>; c) <span class="math inline">\(x+2n\)</span>.</p></div>
       </details>
     </article>
     <h2 id="nehez">🔴 Nehéz</h2>
-    <article class="feladat" id="nehez-1">
-      <div class="fejsor"><span class="szam">1.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Határozd meg az <span class="math inline">\(f(x)\)</span> függvényt, ha <span class="math inline">\(f\!\left(\tfrac{x-1}{2}\right)=3x-2\)</span>.</p>
+    <article class="feladat nehez" id="nehez-1">
+      <p><span class="szam">1.</span> Határozd meg az <span class="math inline">\(f(x)\)</span> függvényt, ha <span class="math inline">\(f\!\left(\tfrac{x-1}{2}\right)=3x-2\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\(f(x)=6x+1\)</span>.</p></div>
       </details>
     </article>
-    <article class="feladat" id="nehez-2">
-      <div class="fejsor"><span class="szam">2.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Adottak <span class="math inline">\(f(x)=1-x\)</span>, <span class="math inline">\(g(x)=\tfrac{1}{1-x}\)</span>, <span class="math inline">\(h(x)=\tfrac{x}{x-1}\)</span> (<span class="math inline">\(x\ne 1\)</span>). Bizonyítsd be, hogy <span class="math inline">\(g(h(x))=f(x)\)</span>.</p>
+    <article class="feladat nehez" id="nehez-2">
+      <p><span class="szam">2.</span> Adottak <span class="math inline">\(f(x)=1-x\)</span>, <span class="math inline">\(g(x)=\tfrac{1}{1-x}\)</span>, <span class="math inline">\(h(x)=\tfrac{x}{x-1}\)</span> (<span class="math inline">\(x\ne 1\)</span>). Bizonyítsd be, hogy <span class="math inline">\(g(h(x))=f(x)\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\(g(h(x))=\tfrac{1}{1-h(x)}\)</span>; a nevező <span class="math inline">\(\tfrac{(x-1)-x}{x-1}=\tfrac{-1}{x-1}\)</span>, így <span class="math inline">\(g(h(x))=-(x-1)=1-x=f(x)\)</span>.</p></div>
       </details>
     </article>
-    <article class="feladat" id="nehez-3">
-      <div class="fejsor"><span class="szam">3.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Határozd meg az <span class="math inline">\(f(x)\)</span> függvényt, ha <span class="math inline">\(f\!\left(\tfrac{x-2}{2}\right)=\tfrac{3x-5}{2}\)</span>.</p>
+    <article class="feladat nehez" id="nehez-3">
+      <p><span class="szam">3.</span> Határozd meg az <span class="math inline">\(f(x)\)</span> függvényt, ha <span class="math inline">\(f\!\left(\tfrac{x-2}{2}\right)=\tfrac{3x-5}{2}\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\(f(x)=3x+\tfrac12\)</span>.</p></div>
       </details>
     </article>
-    <article class="feladat" id="nehez-4">
-      <div class="fejsor"><span class="szam">4.</span><span class="chip nehez">Nehéz</span></div>
-      <p><span class="math inline">\(f(x)=2-3x\)</span>, <span class="math inline">\(g(x)=3x-1\)</span>. Határozd meg az <span class="math inline">\((f^{-1}\circ g^{-1})(x)\)</span> függvényt!</p>
+    <article class="feladat nehez" id="nehez-4">
+      <p><span class="szam">4.</span> <span class="math inline">\(f(x)=2-3x\)</span>, <span class="math inline">\(g(x)=3x-1\)</span>. Határozd meg az <span class="math inline">\((f^{-1}\circ g^{-1})(x)\)</span> függvényt!</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\((f^{-1}\circ g^{-1})(x)=\tfrac{5-x}{9}\)</span>.</p></div>
       </details>
     </article>
-    <article class="feladat" id="nehez-5">
-      <div class="fejsor"><span class="szam">5.</span><span class="chip nehez">Nehéz</span></div>
-      <p><span class="math inline">\(f(5-2x)=4x-7\)</span>. Határozd meg <span class="math inline">\(f(x)\)</span>-et és <span class="math inline">\((f\circ f)(x)\)</span>-et!</p>
+    <article class="feladat nehez" id="nehez-5">
+      <p><span class="szam">5.</span> <span class="math inline">\(f(5-2x)=4x-7\)</span>. Határozd meg <span class="math inline">\(f(x)\)</span>-et és <span class="math inline">\((f\circ f)(x)\)</span>-et!</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\(f(x)=-2x+3\)</span>, <span class="math inline">\((f\circ f)(x)=4x-3\)</span>.</p></div>
       </details>
     </article>
-    <article class="feladat" id="nehez-6">
-      <div class="fejsor"><span class="szam">6.</span><span class="chip nehez">Nehéz</span></div>
-      <p>Bizonyítsd be, hogy minden <span class="math inline">\(f(x)=ax+b\)</span> (<span class="math inline">\(a\ne 0\)</span>) bijektív, és add meg az inverzét általánosan!</p>
+    <article class="feladat nehez" id="nehez-6">
+      <p><span class="szam">6.</span> Bizonyítsd be, hogy minden <span class="math inline">\(f(x)=ax+b\)</span> (<span class="math inline">\(a\ne 0\)</span>) bijektív, és add meg az inverzét általánosan!</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p>Injektív és szürjektív <span class="math inline">\(a\ne 0\)</span> miatt; <span class="math inline">\(f^{-1}(x)=\tfrac{x-b}{a}\)</span>.</p></div>
       </details>
     </article>
-    <article class="feladat" id="nehez-7">
-      <div class="fejsor"><span class="szam">7.</span><span class="chip nehez">Nehéz</span></div>
-      <p><span class="math inline">\(f(x)=\tfrac{x}{x-1}\)</span> (<span class="math inline">\(x\ne 1\)</span>). Bizonyítsd be, hogy <span class="math inline">\((f\circ f)(x)=x\)</span>.</p>
+    <article class="feladat nehez" id="nehez-7">
+      <p><span class="szam">7.</span> <span class="math inline">\(f(x)=\tfrac{x}{x-1}\)</span> (<span class="math inline">\(x\ne 1\)</span>). Bizonyítsd be, hogy <span class="math inline">\((f\circ f)(x)=x\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\((f\circ f)(x)=\tfrac{f(x)}{f(x)-1}\)</span>; a nevező <span class="math inline">\(\tfrac{x-(x-1)}{x-1}=\tfrac{1}{x-1}\)</span>, így az eredmény <span class="math inline">\(x\)</span>.</p></div>
       </details>
     </article>
-    <article class="feladat" id="nehez-8">
-      <div class="fejsor"><span class="szam">8.</span><span class="chip nehez">Nehéz</span></div>
-      <p><b>Időhurok.</b> Egy <span class="math inline">\(f(x)=ax+b\)</span> függvényre <span class="math inline">\(f(f(x))=x\)</span> minden <span class="math inline">\(x\)</span>-re (önmaga inverze). Mit mondhatunk <span class="math inline">\(a\)</span>-ról és <span class="math inline">\(b\)</span>-ről? Adj két különböző példát!</p>
+    <article class="feladat nehez" id="nehez-8">
+      <p><span class="szam">8.</span> <b>Időhurok.</b> Egy <span class="math inline">\(f(x)=ax+b\)</span> függvényre <span class="math inline">\(f(f(x))=x\)</span> minden <span class="math inline">\(x\)</span>-re (önmaga inverze). Mit mondhatunk <span class="math inline">\(a\)</span>-ról és <span class="math inline">\(b\)</span>-ről? Adj két különböző példát!</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\(f(f(x))=a(ax+b)+b=a^2x+ab+b=x\)</span>, ezért <span class="math inline">\(a^2=1\)</span> és <span class="math inline">\(ab+b=0\)</span>. Így <span class="math inline">\(a=1,b=0\)</span> (azonosság) vagy <span class="math inline">\(a=-1\)</span>, <span class="math inline">\(b\)</span> tetszőleges. Pl. <span class="math inline">\(f(x)=-x+4\)</span> és <span class="math inline">\(f(x)=-x\)</span>.</p></div>
       </details>
     </article>
     <h2 id="joker-cim">⭐ Joker</h2>
-    <article class="feladat" id="joker">
-      <div class="fejsor"><span class="szam">★</span><span class="chip joker">Joker</span></div>
-      <p>Az <span class="math inline">\(f(x)=ax+b\)</span> lineáris függvényről tudjuk, hogy <span class="math inline">\(f(f(x))=9x+8\)</span>. Határozd meg az összes lehetséges <span class="math inline">\(a\)</span>-t és <span class="math inline">\(b\)</span>-t!</p>
+    <article class="feladat joker" id="joker">
+      <p><span class="szam">★</span> Az <span class="math inline">\(f(x)=ax+b\)</span> lineáris függvényről tudjuk, hogy <span class="math inline">\(f(f(x))=9x+8\)</span>. Határozd meg az összes lehetséges <span class="math inline">\(a\)</span>-t és <span class="math inline">\(b\)</span>-t!</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\(f(f(x))=a^2x+ab+b=9x+8\)</span>, ezért <span class="math inline">\(a^2=9\)</span> és <span class="math inline">\(b(a+1)=8\)</span>. Ha <span class="math inline">\(a=3\)</span>: <span class="math inline">\(4b=8\Rightarrow b=2\)</span> → <span class="math inline">\(f(x)=3x+2\)</span>. Ha <span class="math inline">\(a=-3\)</span>: <span class="math inline">\(-2b=8\Rightarrow b=-4\)</span> → <span class="math inline">\(f(x)=-3x-4\)</span>.</p></div>
       </details>
