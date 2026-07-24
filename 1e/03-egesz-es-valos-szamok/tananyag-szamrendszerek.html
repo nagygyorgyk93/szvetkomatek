@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pozíciós számrendszerek — tananyag | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Egész és valós számok</a> ›
+  <span class="itt">Pozíciós számrendszerek — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Pozíciós számrendszerek</h1>
+  <p class="alcim">Ugyanaz a szám, más „nyelven”: helyiérték, kettes, nyolcas és tizenhatos számrendszer, valamint az átváltás oda-vissza.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Kódtörő · 2/2</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+      <div class="brief"><p>📡 <b>Shuri:</b> Az anomália kódját nem tízes számrendszerben írták. A gépek a <b>kettes</b> (bináris) nyelvet beszélik: minden áramkör csak <b>be (1)</b> vagy <b>ki (0)</b>. Ha át tudod váltani a számokat a rendszerek között, olvasod a kódot.</p></div>
+    <p>A számjegyek önmagukban keveset érnek — a <b>helyük</b> adja meg az értéküket. A tízes rendszert megszoktuk, de a számítógépek kettes, a programozók gyakran nyolcas és tizenhatos rendszerben dolgoznak. A logika mindegyikben ugyanaz.</p>
+
+    <h2 id="s1">Helyiérték: a tízes rendszer</h2>
+    <p>A <span class="math inline">\(2536\)</span> szám valójában egy összeg, ahol minden jegy a helye szerinti <b>tízhatvánnyal</b> szorzódik: \[2536=2\cdot 10^3+5\cdot 10^2+3\cdot 10^1+6\cdot 10^0.\] A <b>10</b> az <b>alapszám</b>; a felhasználható jegyek: <span class="math inline">\(0,1,2,\dots,9\)</span> (mindig eggyel kevesebb az alapnál).</p>
+
+    <h2 id="s2">Más alapú számrendszerek</h2>
+    <p>Bármely <span class="math inline">\(b\ge 2\)</span> egész alapszám lehet. A jegyek ekkor <span class="math inline">\(0\)</span>-tól <span class="math inline">\((b-1)\)</span>-ig terjednek, a helyiértékek pedig <span class="math inline">\(b\)</span> hatványai. Az alapszámot alsó indexben jelöljük: <span class="math inline">\(1011_{2}\)</span>, <span class="math inline">\(321_{4}\)</span>, <span class="math inline">\(57_{10}\)</span>.</p>
+    <figure class="abra"><table class="tabla-nevezetes">
+      <thead><tr><th>Rendszer</th><th>Alap</th><th>Jegyek</th></tr></thead>
+      <tbody>
+      <tr><th>kettes (bináris)</th><td>2</td><td>0, 1</td></tr>
+      <tr><th>hármas</th><td>3</td><td>0, 1, 2</td></tr>
+      <tr><th>nyolcas</th><td>8</td><td>0, 1, …, 7</td></tr>
+      <tr><th>tízes</th><td>10</td><td>0, 1, …, 9</td></tr>
+      <tr><th>tizenhatos</th><td>16</td><td>0–9, majd A=10, B=11, …, F=15</td></tr>
+      </tbody></table>
+      <figcaption>Tíznél nagyobb alapnál betűkkel pótoljuk a hiányzó „egyjegyű” jeleket (A, B, C, …).</figcaption>
+    </figure>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Kang csapdája</p>
+      Egy jegy értéke sosem érheti el az alapot! A kettes rendszerben nincs <span class="math inline">\(2\)</span>-es jegy, a hármasban nincs <span class="math inline">\(3\)</span>-as. Ha egy „<span class="math inline">\(1013_{2}\)</span>” alakot látsz, az hibás — nincs benne <span class="math inline">\(3\)</span>-as a kettes rendszerben.
+    </div>
+
+    <h2 id="s3">Átváltás tízes számrendszerbe</h2>
+    <p>Írd fel a jegyeket a helyiértékükkel (az alap hatványaival), és add össze — pontosan úgy, mint a tízes rendszerben, csak más alappal.</p>
+    <div class="doboz pelda" id="pelda-tizesbe">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Váltsd át tízes rendszerbe: <span class="math inline">\(321_{4}\)</span> és <span class="math inline">\(1011_{2}\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(321_{4}=3\cdot 4^2+2\cdot 4+1=48+8+1=57\)</span>.</p><p><span class="math inline">\(1011_{2}=1\cdot 8+0\cdot 4+1\cdot 2+1=11\)</span>.</p></div></details>
+    </div>
+    <div class="kviz" data-answer="0" data-jo="✔ 1·4 + 0·2 + 1 = 5." data-nem="✘ 101₂ = 1·4 + 0·2 + 1·1 = 5.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi <span class="math inline">\(101_{2}\)</span> a tízes rendszerben?</p>
+      <div class="opciok"><button><span class="math inline">\(5\)</span></button><button><span class="math inline">\(101\)</span></button><button><span class="math inline">\(3\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Átváltás tízesből más alapba</h2>
+    <p>A számot <b>ismételten elosztjuk</b> az alappal, és a <b>maradékokat</b> jegyezzük fel. A számot a maradékokból <b>alulról felfelé</b> (az utolsótól az első felé) olvassuk össze.</p>
+    <div class="doboz pelda" id="pelda-masikba">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Váltsd át <span class="math inline">\(77\)</span>-et hármas számrendszerbe.
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(77:3=25\)</span> maradék <span class="math inline">\(2\)</span>; <span class="math inline">\(25:3=8\)</span> m. <span class="math inline">\(1\)</span>; <span class="math inline">\(8:3=2\)</span> m. <span class="math inline">\(2\)</span>; <span class="math inline">\(2:3=0\)</span> m. <span class="math inline">\(2\)</span>. Alulról felfelé: <span class="math inline">\(77=2212_{3}\)</span>. Ellenőrzés: <span class="math inline">\(2\cdot 27+2\cdot 9+1\cdot 3+2=77\)</span>. ✓</p></div></details>
+    </div>
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      Minden digitális eszköz kettes rendszerben számol; egy <b>bájt</b> 8 bit (nyolc 0/1 jegy). A színkódok (<span class="math inline">\(\texttt{\#FF8800}\)</span>) tizenhatos rendszerűek, az internetes és fájlrendszerek gyakran nyolcas jogosultságokat (pl. <span class="math inline">\(755\)</span>) használnak.
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-egesz-es-valos-szamok.html#alap-5">🐜 Ant-Man-bevetés <span class="cimke">A 5–6</span></a><a class="sav hulk" href="feladatok-egesz-es-valos-szamok.html#kozep-4">💥 Hulk-bevetés <span class="cimke">K 4</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Shuri:</b> A kódot feltörted — a számok nyelvét mindegyik rendszerben érted. Most Bruce veszi át: a valós méréseknél a számkör kitágul. Irány <b>A Kalibrálás</b>.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-oszthatosag.html"><span class="irany">← Előző</span><span class="hova">Oszthatóság, prímek, kanonikus alak</span></a>
+      <a class="kov" href="tananyag-szamhalmazok.html"><span class="irany">Következő →</span><span class="hova">Számhalmazok: ℕ, ℤ, ℚ, ℝ</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

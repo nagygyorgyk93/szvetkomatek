@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Számhalmazok: ℕ, ℤ, ℚ, ℝ — tananyag | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Egész és valós számok</a> ›
+  <span class="itt">Számhalmazok: ℕ, ℤ, ℚ, ℝ — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Számhalmazok: ℕ, ℤ, ℚ, ℝ</h1>
+  <p class="alcim">A számkör bővülése a természetes számoktól a valós számokig, a racionális szám alakjai (tört, tizedes, százalék) és az abszolútérték.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Kalibrálás · 1/2</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+      <div class="brief"><p>📡 <b>Bruce Banner:</b> A műszereim méréseihez tudnom kell, <b>milyen számmal</b> dolgozom. Egész? Tört? Vagy olyan, amit tört alakban le sem lehet írni? A <b>számegyenesen</b> minden valós szám elfér — kalibráljuk együtt a számkört.</p></div>
+    <p>A számfogalom nem egyszerre született meg: a számláláshoz elég volt a természetes szám, de a kivonás, az osztás és a mérés újra meg újra kitágította a számkört. A végállomás — ebben az évben — a <b>valós számok</b> halmaza.</p>
+
+    <h2 id="s1">A számkör bővülése</h2>
+    <p>Minden bővítésnek oka van: olyan műveletet vagy feladatot akarunk elvégezni, ami a szűkebb halmazban nem megy.</p>
+    <ul>
+      <li><b>Természetes számok</b> <span class="math inline">\(\mathbb{N}=\{1,2,3,\dots\}\)</span> — a számláláshoz. (A nullával bővítve: <span class="math inline">\(\mathbb{N}_0\)</span>.) A kivonás nem mindig végezhető el (<span class="math inline">\(2-5\)</span>).</li>
+      <li><b>Egész számok</b> <span class="math inline">\(\mathbb{Z}=\{\dots,-2,-1,0,1,2,\dots\}\)</span> — a kivonás már mindig megy. De az osztás nem (<span class="math inline">\(3:2\)</span>).</li>
+      <li><b>Racionális számok</b> <span class="math inline">\(\mathbb{Q}\)</span> — a nemnulla számmal való osztás is megy.</li>
+      <li><b>Valós számok</b> <span class="math inline">\(\mathbb{R}\)</span> — a mérés is mindig megy (pl. az egységnégyzet átlója <span class="math inline">\(\sqrt2\)</span>).</li>
+    </ul>
+    <figure class="abra">
+    <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Egymásba ágyazott számhalmazok: N a Z-ben, a Q-ban, az R-ben">
+      <rect x="8" y="8" width="344" height="204" rx="12" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
+      <rect x="26" y="30" width="292" height="164" rx="11" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+      <rect x="48" y="54" width="220" height="120" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+      <rect x="70" y="78" width="150" height="74" rx="9" fill="#d1fae5" stroke="#047857" stroke-width="2"/>
+      <text x="300" y="26" font-size="15" fill="#6d28d9" font-style="italic">ℝ</text>
+      <text x="300" y="48" font-size="15" fill="#1d4ed8" font-style="italic">ℚ</text>
+      <text x="250" y="72" font-size="15" fill="#047857" font-style="italic">ℤ</text>
+      <text x="90" y="100" font-size="14" fill="#065f46" font-style="italic">ℕ</text>
+      <text x="96" y="122" font-size="11" fill="#065f46">1, 2, 3…</text>
+      <text x="150" y="140" font-size="11" fill="#047857">−3, 0</text>
+      <text x="120" y="166" font-size="11" fill="#1d4ed8">½, −0,75</text>
+      <text x="285" y="150" font-size="11" fill="#6d28d9">√2, π</text>
+    </svg>
+    <figcaption><span class="math inline">\(\mathbb{N}\subset\mathbb{Z}\subset\mathbb{Q}\subset\mathbb{R}\)</span> — minden szűkebb halmaz része a tágabbnak.</figcaption>
+    </figure>
+
+    <h2 id="s2">Racionális számok és alakjaik</h2>
+    <div class="doboz definicio" id="def-racionalis">
+      <p class="cim"><span class="ikon">📗</span> Definíció</p>
+      <p><b>Racionális szám</b> minden olyan szám, amely felírható <span class="math inline">\(\dfrac{p}{q}\)</span> alakban, ahol <span class="math inline">\(p\)</span> egész, <span class="math inline">\(q\)</span> nemnulla egész. Jele <span class="math inline">\(\mathbb{Q}\)</span>. Tizedes alakban a racionális számok <b>végesek</b> (<span class="math inline">\(\tfrac34=0{,}75\)</span>) vagy <b>szakaszos végtelenek</b> (<span class="math inline">\(\tfrac13=0{,}333\ldots\)</span>).</p>
+    </div>
+    <p>Ugyanaz a racionális szám <b>háromféle alakban</b> is felírható — és oda-vissza átváltható:</p>
+    <div class="doboz pelda" id="pelda-alakok">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Váltsd át mindhárom alakba (tört, tizedes, százalék): <span class="math inline">\(\tfrac{3}{4}\)</span>, majd <span class="math inline">\(0{,}6\)</span>, majd <span class="math inline">\(35\%\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(\tfrac34=0{,}75=75\%\)</span> (a tizedes tört <span class="math inline">\(\cdot 100\)</span> ad százalékot).</p><p><span class="math inline">\(0{,}6=\tfrac{6}{10}=\tfrac35=60\%\)</span>.</p><p><span class="math inline">\(35\%=\tfrac{35}{100}=\tfrac{7}{20}=0{,}35\)</span>.</p></div></details>
+    </div>
+    <div class="kviz" data-answer="2" data-jo="✔ 2/5 = 0,4 = 40%." data-nem="✘ 2/5 = 0,4, azaz 40%.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Hány százalék a <span class="math inline">\(\tfrac{2}{5}\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(25\%\)</span></button><button><span class="math inline">\(2{,}5\%\)</span></button><button><span class="math inline">\(40\%\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Irracionális és valós számok</h2>
+    <p>Vannak számok, amelyek <b>nem</b> írhatók fel két egész hányadosaként — ezek az <b>irracionális számok</b>. Tizedes alakjuk végtelen és <b>nem</b> szakaszos.</p>
+    <div class="doboz tetel" id="tetel-gyok2">
+      <p class="cim"><span class="ikon">📘</span> Tétel</p>
+      <p>A <span class="math inline">\(\sqrt2\)</span> nem racionális szám — nincs olyan <span class="math inline">\(\tfrac{p}{q}\)</span> tört, amelynek négyzete <span class="math inline">\(2\)</span>. Hasonlóan irracionális pl. <span class="math inline">\(\sqrt3\)</span>, <span class="math inline">\(\pi\)</span> és <span class="math inline">\(e\)</span>.</p>
+    </div>
+    <div class="doboz definicio" id="def-valos">
+      <p class="cim"><span class="ikon">📗</span> Definíció</p>
+      <p>A racionális és az irracionális számok együtt alkotják a <b>valós számok</b> halmazát: <span class="math inline">\(\mathbb{R}=\mathbb{Q}\cup\mathbb{I}\)</span>. A valós számok pontosan kitöltik a <b>számegyenest</b>: minden pontnak egy valós szám felel meg, és fordítva.</p>
+    </div>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Kang csapdája</p>
+      Nem minden gyök irracionális! A <span class="math inline">\(\sqrt9=3\)</span> és a <span class="math inline">\(\sqrt{16}=4\)</span> <b>természetes szám</b>. Besoroláskor mindig <b>egyszerűsíts először</b>: a <span class="math inline">\(\sqrt{9}\)</span> a legszűkebb halmazban (<span class="math inline">\(\mathbb{N}\)</span>) van, nem <span class="math inline">\(\mathbb{R}\)</span>-ben „ragad”.
+    </div>
+
+    <h2 id="s4">Abszolútérték</h2>
+    <div class="doboz definicio" id="def-abszolut">
+      <p class="cim"><span class="ikon">📗</span> Definíció</p>
+      <p>Egy szám <b>abszolútértéke</b> a számegyenesen a <b>0-tól mért távolsága</b>: \[|x|=\begin{cases}x,&\text{ha } x\ge 0\\[2pt]-x,&\text{ha } x<0.\end{cases}\] A távolság sosem negatív: <span class="math inline">\(|x|\ge 0\)</span>, és <span class="math inline">\(|{-}7|=|7|=7\)</span>.</p>
+    </div>
+    <figure class="abra">
+    <svg viewBox="0 0 360 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Számegyenes: −3 és 3 egyaránt 3 távolságra a 0-tól">
+      <line x1="20" y1="55" x2="340" y2="55" stroke="#0f172a" stroke-width="1.5"/>
+      <polygon points="340,55 332,51 332,59" fill="#0f172a"/>
+      <line x1="180" y1="48" x2="180" y2="62" stroke="#0f172a" stroke-width="1.5"/><text x="176" y="78" font-size="12">0</text>
+      <line x1="100" y1="48" x2="100" y2="62" stroke="#ef4444" stroke-width="2"/><text x="92" y="78" font-size="12" fill="#ef4444">−3</text>
+      <line x1="260" y1="48" x2="260" y2="62" stroke="#10b981" stroke-width="2"/><text x="256" y="78" font-size="12" fill="#047857">3</text>
+      <path d="M100 40 Q140 20 180 40" fill="none" stroke="#ef4444" stroke-width="1.5"/><text x="126" y="24" font-size="11" fill="#ef4444">3</text>
+      <path d="M180 40 Q220 20 260 40" fill="none" stroke="#10b981" stroke-width="1.5"/><text x="212" y="24" font-size="11" fill="#047857">3</text>
+    </svg>
+    <figcaption><span class="math inline">\(|-3|=|3|=3\)</span>: mindkettő <span class="math inline">\(3\)</span> egység távol a 0-tól.</figcaption>
+    </figure>
+    <p>Egyszerű egyenletek és egyenlőtlenségek (a távolság-jelentés alapján):</p>
+    <ul>
+      <li><span class="math inline">\(|x|=a\)</span> (<span class="math inline">\(a\ge 0\)</span>) <span class="math inline">\(\Rightarrow x=a\)</span> vagy <span class="math inline">\(x=-a\)</span>;</li>
+      <li><span class="math inline">\(|x|<a\)</span> <span class="math inline">\(\Rightarrow -a<x<a\)</span> (a 0-hoz közeli sáv);</li>
+      <li><span class="math inline">\(|x|>a\)</span> <span class="math inline">\(\Rightarrow x<-a\)</span> vagy <span class="math inline">\(x>a\)</span> (a széleken).</li>
+    </ul>
+    <div class="doboz pelda" id="pelda-abszolut">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Oldd meg: <span class="math inline">\(|x+6|=3\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(x+6=3\)</span> vagy <span class="math inline">\(x+6=-3\)</span>, tehát <span class="math inline">\(x=-3\)</span> vagy <span class="math inline">\(x=-9\)</span>.</p></div></details>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-egesz-es-valos-szamok.html#alap-7">🐜 Ant-Man-bevetés <span class="cimke">A 7–9</span></a><a class="sav hulk" href="feladatok-egesz-es-valos-szamok.html#kozep-7">💥 Hulk-bevetés <span class="cimke">K 7–8</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Bruce Banner:</b> A számkör kész, a számegyenes kalibrálva. De a valódi mérés sosem tökéletes — a következő lépés a <b>közelítés</b> és a <b>hiba</b> kezelése.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-szamrendszerek.html"><span class="irany">← Előző</span><span class="hova">Pozíciós számrendszerek</span></a>
+      <a class="kov" href="tananyag-kozelites.html"><span class="irany">Következő →</span><span class="hova">Közelítés, kerekítés, normál alak</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
