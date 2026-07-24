@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Egész és valós számok — összefoglaló | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Egész és valós számok</a> ›
+  <span class="itt">Tömör összefoglaló</span>
+</nav>
+<div class="hero">
+  <h1>Egész és valós számok — tömör összefoglaló</h1>
+  <p class="alcim">Minden fontos definíció, szabály és képlet egy helyen — a bevetési kártya.
+  Ismétléshez, dolgozat előtti átfutáshoz, nyomtatáshoz. 😉</p>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s1">Oszthatóság, prímek, kanonikus alak</h2>
+    <p><b>Oszthatóság:</b> <span class="math inline">\(a\mid b\)</span>, ha van <span class="math inline">\(k\)</span> egész, amelyre <span class="math inline">\(b=a\cdot k\)</span>
+    (<a href="tananyag-oszthatosag.html#def-oszthatosag">→ tananyag</a>). <b>Maradékos osztás:</b> <span class="math inline">\(a=q\cdot b+r\)</span>, <span class="math inline">\(0\le r<b\)</span>
+    (<a href="tananyag-oszthatosag.html#def-maradekos">→</a>).</p>
+    <p><b>Oszthatósági szabályok</b> (<a href="tananyag-oszthatosag.html#s2">→</a>):</p>
+    <table class="tabla-nevezetes">
+      <thead><tr><th>Osztó</th><th>Feltétel</th></tr></thead>
+      <tbody>
+      <tr><th>2, 5, 10</th><td>az utolsó számjegy (10-nél: 0)</td></tr>
+      <tr><th>4, 25</th><td>az utolsó két számjegy</td></tr>
+      <tr><th>8, 125</th><td>az utolsó három számjegy</td></tr>
+      <tr><th>3, 9</th><td>a számjegyek összege</td></tr>
+      <tr><th>6, 12, 15…</th><td>a relatív prím osztóira bontva</td></tr>
+      </tbody></table>
+    <p><b>Kanonikus alak:</b> minden <span class="math inline">\(1\)</span>-nél nagyobb egész egyértelműen prímek szorzata, pl. <span class="math inline">\(120=2^3\cdot 3\cdot 5\)</span>
+    (<a href="tananyag-oszthatosag.html#tetel-alaptetel">→</a>). Prím = pontosan 2 osztó; az <span class="math inline">\(1\)</span> se nem prím, se nem összetett.</p>
+    <p><b>LKO / LKT</b> a kanonikus alakból (<a href="tananyag-oszthatosag.html#def-lko-lkt">→</a>): <b>LKO</b> = közös prímek a <b>kisebb</b> kitevőn; <b>LKT</b> = minden prím a <b>nagyobb</b> kitevőn.
+    Összefüggés: <span class="math inline">\(\text{LKO}(a,b)\cdot\text{LKT}(a,b)=a\cdot b\)</span>; relatív prímek, ha <span class="math inline">\(\text{LKO}=1\)</span>.</p>
+
+    <h2 id="s2">Pozíciós számrendszerek</h2>
+    <p>Alapszám <span class="math inline">\(b\)</span>: a jegyek <span class="math inline">\(0\)</span>-tól <span class="math inline">\((b-1)\)</span>-ig, a helyiértékek <span class="math inline">\(b\)</span> hatványai
+    (<a href="tananyag-szamrendszerek.html#s2">→ tananyag</a>). Tíznél nagyobb alapnál betűk: A=10, B=11, …, F=15.</p>
+    <ul>
+      <li><b>Más alapból tízesbe:</b> helyiérték-összeg, pl. <span class="math inline">\(321_{4}=3\cdot 16+2\cdot 4+1=57\)</span> (<a href="tananyag-szamrendszerek.html#pelda-tizesbe">→</a>).</li>
+      <li><b>Tízesből más alapba:</b> ismételt osztás az alappal, a maradékok <b>alulról felfelé</b>, pl. <span class="math inline">\(77=2212_{3}\)</span> (<a href="tananyag-szamrendszerek.html#pelda-masikba">→</a>).</li>
+    </ul>
+
+    <h2 id="s3">Számhalmazok és abszolútérték</h2>
+    <p><b>A számkör:</b> <span class="math inline">\(\mathbb{N}\subset\mathbb{Z}\subset\mathbb{Q}\subset\mathbb{R}\)</span>, és <span class="math inline">\(\mathbb{R}=\mathbb{Q}\cup\mathbb{I}\)</span>
+    (<a href="tananyag-szamhalmazok.html#s1">→ tananyag</a>). <b>Racionális</b>: <span class="math inline">\(\tfrac{p}{q}\)</span> alakú (véges vagy szakaszos tizedes); <b>irracionális</b>: pl. <span class="math inline">\(\sqrt2,\pi\)</span>
+    (<a href="tananyag-szamhalmazok.html#tetel-gyok2">→</a>). Besoroláskor <b>egyszerűsíts</b>: <span class="math inline">\(\sqrt9=3\in\mathbb{N}\)</span>.</p>
+    <p><b>Racionális alakok:</b> tört ↔ tizedes ↔ százalék, pl. <span class="math inline">\(\tfrac34=0{,}75=75\%\)</span> (<a href="tananyag-szamhalmazok.html#def-racionalis">→</a>).</p>
+    <p><b>Abszolútérték</b> = a 0-tól mért távolság (<a href="tananyag-szamhalmazok.html#def-abszolut">→</a>): <span class="math inline">\(|x|=a\Rightarrow x=\pm a\)</span>; <span class="math inline">\(|x|<a\Rightarrow -a<x<a\)</span>; <span class="math inline">\(|x|>a\Rightarrow x<-a\)</span> vagy <span class="math inline">\(x>a\)</span>.</p>
+
+    <h2 id="s4">Közelítés, hiba, normál alak</h2>
+    <p><b>Kerekítés</b> <span class="math inline">\(n\)</span> tizedesre: az <span class="math inline">\((n{+}1)\)</span>-edik jegy dönt (<span class="math inline">\(<5\)</span> le, <span class="math inline">\(\ge 5\)</span> fel) (<a href="tananyag-kozelites.html#def-kerekites">→ tananyag</a>).</p>
+    <p><b>Hiba</b> (<a href="tananyag-kozelites.html#def-hiba">→</a>): abszolút <span class="math inline">\(\Delta=|x-x^{*}|\)</span>; relatív <span class="math inline">\(\delta=\dfrac{\Delta}{|x|}\)</span> (gyakran <span class="math inline">\(\%\)</span>-ban).</p>
+    <p><b>Normál alak</b> (<a href="tananyag-kozelites.html#def-normal">→</a>): <span class="math inline">\(a\cdot 10^{k}\)</span>, ahol <span class="math inline">\(1\le a<10\)</span>, <span class="math inline">\(k\in\mathbb{Z}\)</span>. Pl. <span class="math inline">\(450\,000\,000\,000=4{,}5\cdot 10^{11}\)</span>, <span class="math inline">\(0{,}000\,000\,000\,067=6{,}7\cdot 10^{-11}\)</span>.</p>
+
+    <h2 id="kulcsotletek">🧠 Kulcsötletek</h2>
+    <ul>
+      <li>Szinte minden számelméleti feladat kulcsa a <b>kanonikus alak</b> — abból jön az LKO, LKT, az osztók száma, a négyzetszám-vizsgálat.</li>
+      <li>A <b>6, 12, 15…</b> oszthatóságát mindig <b>relatív prím</b> tényezőkre bontva ellenőrizd (6 → 2 és 3).</li>
+      <li>Számrendszer-átváltásnál a <b>maradékokat alulról felfelé</b> olvasd; ellenőrizz visszaszorzással.</li>
+      <li>Besoroláskor előbb <b>egyszerűsíts</b> (<span class="math inline">\(\sqrt{16}=4\)</span>), és a <b>legszűkebb</b> halmazt add meg.</li>
+      <li>Abszolútérték = <b>távolság</b>: az <span class="math inline">\(=\)</span> két esetet, a <span class="math inline">\(<\)</span> egy sávot, a <span class="math inline">\(>\)</span> két szélső tartományt ad.</li>
+      <li>Normál alaknál a mantissza mindig <span class="math inline">\(1\)</span> és <span class="math inline">\(10\)</span> között van; a kitevő előjele a szám nagyságát mutatja.</li>
+    </ul>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-egesz-es-valos-szamok.html"><span class="irany">← Előző</span><span class="hova">Egész és valós számok — feladatok</span></a>
+      <a class="kov" href="terepkuldetes.html"><span class="irany">Következő →</span><span class="hova">Terepküldetés — projekt</span></a>
+    </div>
+    </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+</body>
+</html>

@@ -192,3 +192,66 @@ dr_page(DEST02, "index.html", "Trigonometria", "feladatok-hazi.html",
  "index.html", "Témakör főoldala", "osszefoglalo.html", "Tömör összefoglaló",
  "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
 print("02 Danger Room kész: Alap", len(A02), "Közép", len(K02), "Nehéz", len(N02))
+
+# =========================================================== 03
+from math import gcd as _gcd
+def _lcm(a,b): return a*b//_gcd(a,b)
+def _tob(n,b):
+    if n==0: return "0"
+    d=""
+    while n: d="0123456789ABCDEF"[n%b]+d; n//=b
+    return d
+assert 84==2**2*3*7 and 250==2*5**3 and _gcd(84,250)==2
+assert [n for n in [1080,2358,4526,7200] if n%4==0]==[1080,7200]
+assert [n for n in [1080,2358,4526,7200] if n%9==0]==[1080,2358,7200]
+assert int("231",4)==45 and int("10110",2)==22 and _tob(50,2)=="110010" and _tob(200,8)=="310"
+assert _lcm(_lcm(8,12),20)==120
+assert [x for x in range(10) if (470+x)%3==0]==[1,4,7]
+assert [x for x in range(10) if (5800+x*10)%8==0]==[0,4,8]
+assert 600==2**3*3*5**2 and 600*45==30**3 and round(7.64983,2)==7.65
+DEST03 = glob.glob("/sessions/*/mnt/Claude/web/1e/03-egesz-es-valos-szamok")[0]
+A03 = [
+ ("Írd fel a $84$ és $250$ kanonikus (prímtényezős) alakját, majd add meg $\\text{LKO}(84,250)$-et!",
+  None, "$84=2^2\\cdot 3\\cdot 7$, $250=2\\cdot 5^3$; $\\text{LKO}=2$."),
+ ("A megadott számok közül melyek oszthatók? $1080,\\ 2358,\\ 4526,\\ 7200$.",
+  ["$4$-gyel","$9$-cel"], ["$1080,\\ 7200$","$1080,\\ 2358,\\ 7200$"]),
+ ("Számrendszer-váltás.",
+  ["$231_4$ tízesbe","$10110_2$ tízesbe","$50$ kettesbe","$200$ nyolcasba"],
+  ["$45$","$22$","$110010_2$","$310_8$"]),
+ ("Sorold be mindegyik számot a legszűkebb számhalmazba ($\\mathbb{N},\\mathbb{Z},\\mathbb{Q},\\mathbb{R}$)!",
+  ["$-7$","$\\tfrac{5}{2}$","$\\sqrt{49}$","$\\sqrt{3}$","$0{,}2$","$\\sqrt{10}$"],
+  "$-7\\in\\mathbb{Z}$; $\\tfrac52\\in\\mathbb{Q}$; $\\sqrt{49}=7\\in\\mathbb{N}$; $\\sqrt3\\in\\mathbb{R}$; $0{,}2\\in\\mathbb{Q}$; $\\sqrt{10}\\in\\mathbb{R}$.", True),
+ ("Töltsd ki a hiányzó alakokat!",
+  ["$\\tfrac14$ tizedes törtként és százalékként","$0{,}45$ törtként és százalékként","$30\\%$ törtként és tizedes törtként"],
+  ["$0{,}25$; $25\\%$","$\\tfrac{9}{20}$; $45\\%$","$\\tfrac{3}{10}$; $0{,}3$"]),
+ ("Oldd meg, illetve írd fel normál alakban!",
+  ["$|x|=15$","$|x-2|=6$","$73\\,000\\,000$","$0{,}0004$"],
+  ["$x=\\pm 15$","$x=8$ vagy $x=-4$","$7{,}3\\cdot 10^{7}$","$4\\cdot 10^{-4}$"]),
+]
+K03 = [
+ ("Három jelzőfény $8$, $12$ és $20$ másodpercenként villan; most együtt villantak. Hány másodperc múlva villannak legközelebb megint mind együtt? (Prímtényezős alak, majd LKT.)",
+  None, "$\\text{LKT}(8,12,20)=120$ másodperc."),
+ ("Határozd meg a hiányzó számjegyet — add meg az összes megoldást!",
+  ["$\\overline{47x}$ osztható $3$-mal","$\\overline{58x0}$ osztható $8$-cal"],
+  ["$x\\in\\{1,4,7\\}$","$x\\in\\{0,4,8\\}$"]),
+ ("Az $x=7{,}64983$ értéket kerekítsd 2 tizedesre, add meg az abszolút hibát; majd számold ki normál alakban: $(4\\cdot 10^{6})\\cdot(2{,}5\\cdot 10^{-3})$.",
+  None, "$x^{*}=7{,}65$; $\\Delta=0{,}00017$; a szorzat $1\\cdot 10^{4}$."),
+]
+N03 = [
+ ("Bizonyítsd be, hogy $n^3-n$ osztható $6$-tal minden egész $n$-re!",
+  None, "$n^3-n=(n-1)\\,n\\,(n+1)$ — három egymást követő egész szorzata, ezért osztható $6$-tal."),
+ ("Melyik a legkisebb pozitív egész szám, amivel a $600$-at szorozva köbszámot kapunk? (Kanonikus alak.)",
+  None, "$45$."),
+]
+brief03 = ("🕹️ <b>SZVETI:</b> <b>Veszélyterem</b>-szimuláció, kódtörő + kalibráló modul. Ez a <b>Danger Room</b> "
+ "otthoni edzésváltozata — itt gyakorolsz a saját tempódban. A szimuláció a <b>teljes témakört</b> lefedi: "
+ "számelmélet és számrendszerek (Shuri szektora), valamint a valós számok, a közelítés és a normál alak (Banner "
+ "szektora). Haladj a fokozatokon: zöld (alap) → sárga (közép) → piros (nehéz). A végeredményt minden feladatnál "
+ "lenyithatod — de előbb küzdd le magad!")
+dr_page(DEST03, "index.html", "Egész és valós számok", "feladatok-hazi.html",
+ "🕹️ Danger Room — házi feladatgyűjtemény",
+ "Egyetlen, a teljes témakört lefedő házi feladatsor: számelmélet, számrendszerek, számhalmazok, közelítés. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
+ brief03, sect(A03, K03, N03),
+ "index.html", "Témakör főoldala", "osszefoglalo.html", "Tömör összefoglaló",
+ "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
+print("03 Danger Room kész: Alap", len(A03), "Közép", len(K03), "Nehéz", len(N03))

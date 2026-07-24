@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Terepküldetés — A Kódtörő | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Egész és valós számok</a> ›
+  <span class="itt">Terepküldetés</span>
+</nav>
+<div class="hero">
+  <h1>Terepküldetés — A Kódtörő</h1>
+  <p class="alcim">Számelmélet és számrendszerek a gyakorlatban: titkos üzenetet kódolsz, kiszámolod, mikor
+  esnek egybe ismétlődő jelek, és nagyságrendekre vadászol. Csoportban, 2–3 fő.</p>
+  <div class="meta-sor"><span class="chip ora">projekt</span><span class="chip alap">2 bevetés</span><span class="chip nehez">+ elit</span></div>
+  <div class="brief"><p>🛡️ <b>Shuri:</b> Kadét, az anomália kódját nem véletlenül rejtették számokba.
+  Aki érti a <b>számrendszereket</b>, a <b>prímeket</b> és a <b>ritmusokat</b>, az kódot fejt és jövőt jósol.
+  Három bevetés vár: kódolj, jósolj együttállást, és mérd fel a nagyságrendeket. <b>A trükk nem varázslat — tiszta matek.</b></p></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+
+    <h2 id="hogyan">📋 A küldetés menete</h2>
+    <p>Három bevetést hajtasz végre, mindegyikben van egy <b>fix feladat</b> (mindenkinek ugyanaz — ezt
+    fejtsd meg), és egy <b>saját rész</b> (a csoportod alkotása vagy gyűjtése). Minden lépést
+    <b>írj le</b>: a számítást, az átváltásokat, az indoklást. A megoldásokat a végén a tanár ellenőrzi —
+    a lényeg a <b>pontos, követhető matek</b>.</p>
+
+    <h2 id="b1">🟢 1. bevetés — Titkos üzenet kettes számrendszerrel</h2>
+    <p>A kadétok kódolt üzenetekkel kommunikálnak. A kód egyszerű: minden betű a helyi értéke az ábécében
+    (<span class="math inline">\(A=1,\ B=2,\ \dots,\ Z=26\)</span>), ezt pedig <b>kettes számrendszerben</b>, egységesen
+    <b>5 bites</b> csoportokban írjuk le (mert <span class="math inline">\(26<2^5=32\)</span>).</p>
+    <article class="feladat alap" id="kod">
+      <p><span class="szam">1.</span> <b>Fejtsd meg a HQ üzenetét!</b> Minden 5 jegyű csoport egy betű
+      (kettes → tízes → betű):</p>
+      <p style="text-align:center"><span class="math inline">\(01000\ \ 00001\ \ 01110\ \ 00111\ \ 00001\ \ 10010\)</span></p>
+      <ol class="reszfeladatok">
+        <li>Váltsd át mindegyik 5 bites csoportot tízes számrendszerbe.</li>
+        <li>A kapott számokból (a betűsorrend alapján) állítsd össze a szót.</li>
+      </ol>
+      <p><span class="szam">2.</span> <b>Saját kód.</b> Válasszatok egy <b>4–6 betűs</b> szót (kód-nevet),
+      kódoljátok le ugyanígy, majd cseréljetek üzenetet egy másik csapattal, és <b>fejtsétek meg</b> az övékét.</p>
+    </article>
+
+    <h2 id="b2">🟡 2. bevetés — Együttállás és igazságos elosztás</h2>
+    <p>A számelmélet megjósolja, <b>mikor</b> esik egybe több ismétlődő esemény (LKT), és hogyan lehet
+    <b>maradék nélkül, egyenlően</b> szétosztani készleteket (LKO).</p>
+    <article class="feladat kozep" id="egyuttallas">
+      <p><span class="szam">1.</span> <b>Riasztó-szinkron (LKT).</b> A kampusz három riasztója különböző
+      ütemben villan: <span class="math inline">\(12\)</span>, <span class="math inline">\(18\)</span>, illetve <span class="math inline">\(30\)</span> másodpercenként.
+      Ha az imént mind egyszerre villantak, <b>hány másodperc múlva</b> villannak legközelebb megint mind együtt?
+      (Prímtényezős alak, majd LKT.)</p>
+      <p><span class="szam">2.</span> <b>Készlet-csomagolás (LKO).</b> <span class="math inline">\(180\)</span> energiacellát és
+      <span class="math inline">\(126\)</span> mikrochipet kell <b>azonos összetételű</b> csomagokba osztani, maradék nélkül,
+      a <b>lehető legtöbb</b> csomagba. Hány csomag legyen, és mi kerül egy csomagba?</p>
+      <p><span class="szam">3.</span> <b>Saját eset.</b> Keressetek egy <b>valódi</b> ismétlődő párost
+      (közlekedési lámpák ciklusa, óra ütése, buszmenetrend, bolygók keringési ideje), és számoljátok ki,
+      mikor esnek egybe!</p>
+    </article>
+
+    <article class="feladat nehez" id="elit">
+      <p><span class="szam">★</span> <b>Elit-bevetés — nagyságrend-nyomozás (normál alak).</b>
+      A Kalibrálás szektor kérdése: mekkorák valójában a számok? Becsüljetek meg egy nagyon nagy vagy
+      nagyon kicsi mennyiséget, és adjátok meg <b>normál alakban</b>.</p>
+      <ol class="reszfeladatok">
+        <li><b>Fix:</b> hány másodperc egy <span class="math inline">\(80\)</span> éves emberi élet? Add meg normál alakban
+        (1 évet <span class="math inline">\(365{,}25\)</span> napnak véve).</li>
+        <li><b>Saját:</b> válasszatok egy másik mennyiséget (hány szívdobbanás egy élet alatt; hány bájt fér el a
+        telefonotokon; hány vízcsepp egy fürdőkádban), becsüljétek meg, és írjátok fel normál alakban.
+        Jelöljétek, hol <b>közelítettetek</b>, és mekkora lehet a hiba.</li>
+      </ol>
+    </article>
+
+    <h2 id="leadas">📓 Mit adj le? — kódfejtő napló</h2>
+    <div class="gyakorolj">
+      <span class="ikon">🎯</span>
+      <div>
+        <p><b>Csoport:</b> 2–3 kadét. <b>Forma:</b> rövid beszámoló (kézzel írt is jó), amely tartalmazza:</p>
+        <ol class="reszfeladatok">
+          <li>az 1. bevetés <b>megfejtett szavát</b>, a saját kódotokat és a másik csapat üzenetének megfejtését;</li>
+          <li>a 2. bevetés <b>prímtényezős alakjait</b>, az LKT- és LKO-számítást, és a saját valós esetet;</li>
+          <li>az elit-bevetés becslését <b>normál alakban</b>, a közelítés megjelölésével;</li>
+          <li>minden résznél a <b>számítás lépéseit</b> — a puszta végeredmény kevés.</li>
+        </ol>
+      </div>
+    </div>
+    <p class="le halvany"><b>Hogyan értékelem?</b> Helyes kódolás/megfejtés ~30%, LKT + LKO számítás és a valós
+    eset ~35%, normál alakú becslés + hibajelzés ~20%, igényes, követhető napló ~15%. A köntös csak keret —
+    <b>a matematika pontossága az igazi cél</b>.</p>
+
+    <div class="lapozo">
+      <a class="elozo" href="osszefoglalo.html"><span class="irany">← Előző</span><span class="hova">Tömör összefoglaló</span></a>
+      <a class="kov" href="index.html"><span class="irany">Vissza →</span><span class="hova">Témakör főoldala</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+</body>
+</html>

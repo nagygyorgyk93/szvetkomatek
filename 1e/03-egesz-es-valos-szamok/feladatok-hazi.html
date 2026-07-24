@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🕹️ Danger Room — házi feladatgyűjtemény | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Egész és valós számok</a> ›
+  <span class="itt">Danger Room — házi</span>
+</nav>
+<div class="hero">
+  <h1>🕹️ Danger Room — házi feladatgyűjtemény</h1>
+  <p class="alcim">Egyetlen, a teljes témakört lefedő házi feladatsor: számelmélet, számrendszerek, számhalmazok, közelítés. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!</p>
+  <div class="meta-sor">
+    <span class="chip alap">Alap</span><span class="chip kozep">Közép</span><span class="chip nehez">Nehéz</span>
+  </div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Veszélyterem</b>-szimuláció, kódtörő + kalibráló modul. Ez a <b>Danger Room</b> otthoni edzésváltozata — itt gyakorolsz a saját tempódban. A szimuláció a <b>teljes témakört</b> lefedi: számelmélet és számrendszerek (Shuri szektora), valamint a valós számok, a közelítés és a normál alak (Banner szektora). Haladj a fokozatokon: zöld (alap) → sárga (közép) → piros (nehéz). A végeredményt minden feladatnál lenyithatod — de előbb küzdd le magad!</p></div>
+    <h2 id="alap">🟢 Alapszint</h2>
+    <article class="feladat alap" id="alap-1">
+      <p><span class="szam">1.</span> Írd fel a <span class="math inline">\(84\)</span> és <span class="math inline">\(250\)</span> kanonikus (prímtényezős) alakját, majd add meg <span class="math inline">\(\text{LKO}(84,250)\)</span>-et!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(84=2^2\cdot 3\cdot 7\)</span>, <span class="math inline">\(250=2\cdot 5^3\)</span>; <span class="math inline">\(\text{LKO}=2\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-2">
+      <p><span class="szam">2.</span> A megadott számok közül melyek oszthatók? <span class="math inline">\(1080,\ 2358,\ 4526,\ 7200\)</span>.</p><ol class="reszfeladatok"><li><span class="math inline">\(4\)</span>-gyel</li><li><span class="math inline">\(9\)</span>-cel</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(1080,\ 7200\)</span></li><li><span class="math inline">\(1080,\ 2358,\ 7200\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-3">
+      <p><span class="szam">3.</span> Számrendszer-váltás.</p><ol class="reszfeladatok"><li><span class="math inline">\(231_4\)</span> tízesbe</li><li><span class="math inline">\(10110_2\)</span> tízesbe</li><li><span class="math inline">\(50\)</span> kettesbe</li><li><span class="math inline">\(200\)</span> nyolcasba</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(45\)</span></li><li><span class="math inline">\(22\)</span></li><li><span class="math inline">\(110010_2\)</span></li><li><span class="math inline">\(310_8\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-4">
+      <p><span class="szam">4.</span> Sorold be mindegyik számot a legszűkebb számhalmazba (<span class="math inline">\(\mathbb{N},\mathbb{Z},\mathbb{Q},\mathbb{R}\)</span>)!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(-7\)</span></li><li><span class="math inline">\(\tfrac{5}{2}\)</span></li><li><span class="math inline">\(\sqrt{49}\)</span></li><li><span class="math inline">\(\sqrt{3}\)</span></li><li><span class="math inline">\(0{,}2\)</span></li><li><span class="math inline">\(\sqrt{10}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(-7\in\mathbb{Z}\)</span>; <span class="math inline">\(\tfrac52\in\mathbb{Q}\)</span>; <span class="math inline">\(\sqrt{49}=7\in\mathbb{N}\)</span>; <span class="math inline">\(\sqrt3\in\mathbb{R}\)</span>; <span class="math inline">\(0{,}2\in\mathbb{Q}\)</span>; <span class="math inline">\(\sqrt{10}\in\mathbb{R}\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-5">
+      <p><span class="szam">5.</span> Töltsd ki a hiányzó alakokat!</p><ol class="reszfeladatok"><li><span class="math inline">\(\tfrac14\)</span> tizedes törtként és százalékként</li><li><span class="math inline">\(0{,}45\)</span> törtként és százalékként</li><li><span class="math inline">\(30\%\)</span> törtként és tizedes törtként</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(0{,}25\)</span>; <span class="math inline">\(25\%\)</span></li><li><span class="math inline">\(\tfrac{9}{20}\)</span>; <span class="math inline">\(45\%\)</span></li><li><span class="math inline">\(\tfrac{3}{10}\)</span>; <span class="math inline">\(0{,}3\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-6">
+      <p><span class="szam">6.</span> Oldd meg, illetve írd fel normál alakban!</p><ol class="reszfeladatok"><li><span class="math inline">\(|x|=15\)</span></li><li><span class="math inline">\(|x-2|=6\)</span></li><li><span class="math inline">\(73\,000\,000\)</span></li><li><span class="math inline">\(0{,}0004\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(x=\pm 15\)</span></li><li><span class="math inline">\(x=8\)</span> vagy <span class="math inline">\(x=-4\)</span></li><li><span class="math inline">\(7{,}3\cdot 10^{7}\)</span></li><li><span class="math inline">\(4\cdot 10^{-4}\)</span></li></ol></div>
+      </details>
+    </article>
+    <h2 id="kozep">🟡 Középszint</h2>
+    <article class="feladat kozep" id="kozep-1">
+      <p><span class="szam">1.</span> Három jelzőfény <span class="math inline">\(8\)</span>, <span class="math inline">\(12\)</span> és <span class="math inline">\(20\)</span> másodpercenként villan; most együtt villantak. Hány másodperc múlva villannak legközelebb megint mind együtt? (Prímtényezős alak, majd LKT.)</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(\text{LKT}(8,12,20)=120\)</span> másodperc.</p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-2">
+      <p><span class="szam">2.</span> Határozd meg a hiányzó számjegyet — add meg az összes megoldást!</p><ol class="reszfeladatok"><li><span class="math inline">\(\overline{47x}\)</span> osztható <span class="math inline">\(3\)</span>-mal</li><li><span class="math inline">\(\overline{58x0}\)</span> osztható <span class="math inline">\(8\)</span>-cal</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(x\in\{1,4,7\}\)</span></li><li><span class="math inline">\(x\in\{0,4,8\}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-3">
+      <p><span class="szam">3.</span> Az <span class="math inline">\(x=7{,}64983\)</span> értéket kerekítsd 2 tizedesre, add meg az abszolút hibát; majd számold ki normál alakban: <span class="math inline">\((4\cdot 10^{6})\cdot(2{,}5\cdot 10^{-3})\)</span>.</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(x^{*}=7{,}65\)</span>; <span class="math inline">\(\Delta=0{,}00017\)</span>; a szorzat <span class="math inline">\(1\cdot 10^{4}\)</span>.</p></div>
+      </details>
+    </article>
+    <h2 id="nehez">🔴 Nehéz (emelt)</h2>
+    <article class="feladat nehez" id="nehez-1">
+      <p><span class="szam">1.</span> Bizonyítsd be, hogy <span class="math inline">\(n^3-n\)</span> osztható <span class="math inline">\(6\)</span>-tal minden egész <span class="math inline">\(n\)</span>-re!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(n^3-n=(n-1)\,n\,(n+1)\)</span> — három egymást követő egész szorzata, ezért osztható <span class="math inline">\(6\)</span>-tal.</p></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-2">
+      <p><span class="szam">2.</span> Melyik a legkisebb pozitív egész szám, amivel a <span class="math inline">\(600\)</span>-at szorozva köbszámot kapunk? (Kanonikus alak.)</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(45\)</span>.</p></div>
+      </details>
+    </article>
+
+    <div class="gyakorolj">
+      <span class="ikon">📖</span>
+      <p>Elakadtál? Nézd át a <a href="index.html">témakör tananyagait</a> vagy a <a href="osszefoglalo.html">tömör összefoglalót</a>.</p>
+    </div>
+    <div class="lapozo">
+      <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">Témakör főoldala</span></a>
+      <a class="kov" href="osszefoglalo.html"><span class="irany">Következő →</span><span class="hova">Tömör összefoglaló</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
