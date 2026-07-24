@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arányosság — összefoglaló | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Arányosság</a> ›
+  <span class="itt">Tömör összefoglaló</span>
+</nav>
+<div class="hero">
+  <h1>Arányosság — tömör összefoglaló</h1>
+  <p class="alcim">A Pym-protokoll minden definíciója, szabálya és képlete egy helyen — a bevetési kártya. Ismétléshez, ellenőrző előtti átfutáshoz, nyomtatáshoz. 😉</p>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s1">Arány, aránypár, összetett arány</h2>
+    <p><b>Arány:</b> <span class="math inline">\(a:b=\dfrac{a}{b}\)</span> (<span class="math inline">\(ab\neq 0\)</span>) — az előtag és az utótag hányadosa (<a href="tananyag-arany-es-aranyossag.html#def-arany">→ tananyag</a>). <b>Aránypár:</b> <span class="math inline">\(a:b=c:d\)</span>; a <span class="math inline">\(a,d\)</span> a kültagok, a <span class="math inline">\(b,c\)</span> a beltagok (<a href="tananyag-arany-es-aranyossag.html#def-aranypar">→</a>).</p>
+    <p><b>Alaptétel (keresztszorzat):</b> <span class="math inline">\(a:b=c:d\iff a d=b c\)</span> — ezzel oldunk meg minden ismeretlenes aránypárt (<a href="tananyag-arany-es-aranyossag.html#tetel-keresztszorzat">→</a>).</p>
+    <p><b>Összetett arány:</b> <span class="math inline">\(a:b:c\)</span>; két láncból (<span class="math inline">\(x:y\)</span> és <span class="math inline">\(y:z\)</span>) a közös tag egyenlővé tételével kapjuk (<a href="tananyag-arany-es-aranyossag.html#def-osszetett">→</a>).</p>
+    <p><b>Méretarány:</b> a rajzon mért és a valós hossz aránya azonos egységben, pl. <span class="math inline">\(1:150\,000\)</span> (<a href="tananyag-arany-es-aranyossag.html#def-meretarany">→</a>).</p>
+    <p><b>Arányos elosztás:</b> <span class="math inline">\(S\)</span>-et <span class="math inline">\(a:b:c\)</span> arányban egy rész <span class="math inline">\(\dfrac{S}{a+b+c}\)</span>, az adagok ennek <span class="math inline">\(a\)</span>-, <span class="math inline">\(b\)</span>-, <span class="math inline">\(c\)</span>-szorosa (<a href="tananyag-arany-es-aranyossag.html#def-osztas">→</a>).</p>
+
+    <h2 id="s2">Egyenes és fordított arányosság</h2>
+    <table class="tabla-nevezetes">
+      <thead><tr><th></th><th>Egyenes</th><th>Fordított</th></tr></thead>
+      <tbody>
+      <tr><th>feltétel</th><td>hányados állandó: <span class="math inline">\(\dfrac{y}{x}=k\)</span></td><td>szorzat állandó: <span class="math inline">\(x\cdot y=l\)</span></td></tr>
+      <tr><th>összefüggés</th><td><span class="math inline">\(y=kx\)</span></td><td><span class="math inline">\(y=\dfrac{l}{x}\)</span></td></tr>
+      <tr><th>aránypár</th><td><span class="math inline">\(\dfrac{y_1}{y_2}=\dfrac{x_1}{x_2}\)</span></td><td><span class="math inline">\(\dfrac{y_1}{y_2}=\dfrac{x_2}{x_1}\)</span></td></tr>
+      </tbody></table>
+    <p>Több szereplő egyszerre változik (munkás · óra · nap): mindig gondold végig, melyik hogyan hat — a naiv „ugyanannyi” gyakran csapda (<a href="tananyag-arany-es-aranyossag.html#s4">→ tananyag</a>).</p>
+
+    <h2 id="s3">Százalék és ezrelék</h2>
+    <p><b>Alapösszefüggés:</b> <span class="math inline">\(G:P=100:p\)</span>, azaz <span class="math inline">\(P=\dfrac{G\,p}{100}\)</span>; <span class="math inline">\(p=\dfrac{P\cdot 100}{G}\)</span>; <span class="math inline">\(G=\dfrac{P\cdot 100}{p}\)</span> — alapérték <span class="math inline">\(G\)</span>, százalékérték <span class="math inline">\(P\)</span>, százalékláb <span class="math inline">\(p\)</span> (<a href="tananyag-szazalek-es-keverek.html#def-gpp">→ tananyag</a>). <b>Ezrelék</b> (jele: ‰): az ezred rész, <span class="math inline">\(\dfrac{p}{1000}\)</span>.</p>
+    <p><b>Növelés/csökkentés szorzóval:</b> <span class="math inline">\(G\cdot\big(1\pm\tfrac{p}{100}\big)\)</span>; a fordított feladatnál <b>osztunk</b> ezzel a szorzóval (<a href="tananyag-szazalek-es-keverek.html#tetel-novel-csokkent">→</a>).</p>
+    <p><b>Egymás utáni változás:</b> a szorzók <b>összeszorzódnak</b>, nem összeadódnak: <span class="math inline">\(G\big(1\pm\tfrac{p_1}{100}\big)\big(1\pm\tfrac{p_2}{100}\big)\)</span>. Pl. <span class="math inline">\(+25\%\)</span> és <span class="math inline">\(-25\%\)</span> területre <span class="math inline">\(0{,}9375\)</span> (<span class="math inline">\(-6{,}25\%\)</span>) (<a href="tananyag-szazalek-es-keverek.html#tetel-egymasutan">→</a>).</p>
+
+    <h2 id="s4">Keverékszámítás</h2>
+    <p><b>Keverési szabály</b> (idealizált, lineáris; azonos mértékegység!): \[m_1+m_2=m,\qquad c_1 m_1+c_2 m_2=c\,m,\] ahol <span class="math inline">\(c\)</span> a keverék töménysége (koncentráció, ár, hőmérséklet). A két egyenletből az ismeretlen mennyiségek adódnak (<a href="tananyag-szazalek-es-keverek.html#def-keverek">→ tananyag</a>).</p>
+
+    <h2 id="s5">Kamatszámítás</h2>
+    <p><b>Egyszerű kamat</b> (a tőke végig változatlan): <span class="math inline">\(T:K=100:p\)</span>, azaz <span class="math inline">\(K=\dfrac{T\,p}{100}\)</span> egy évre (<a href="tananyag-kamatszamitas.html#def-kamat">→ tananyag</a>). Tőke <span class="math inline">\(T\)</span>, kamat <span class="math inline">\(K\)</span>, kamatláb <span class="math inline">\(p\)</span>.</p>
+    <p><b>Rövidebb futamidő:</b> <span class="math inline">\(K=\dfrac{T\,p\,h}{1200}\)</span> hónapra, <span class="math inline">\(K=\dfrac{T\,p\,n}{36000}\)</span> napra (az évet <span class="math inline">\(360\)</span> nappal) (<a href="tananyag-kamatszamitas.html#tetel-honap-nap">→</a>). <b>Kamatos kamat:</b> <span class="math inline">\(T_n=T\big(1+\tfrac{p}{100}\big)^n\)</span>.</p>
+
+    <div class="gyakorolj">
+      <span class="ikon">🎯</span>
+      <p>Élesben: a <a href="feladatok-aranyossag.html">feladatgyűjtemény</a> gyakorló ellenőrzőjével mérd fel magad, majd a <a href="terepkuldetes.html">Pym-protokoll terepküldetésen</a> alkalmazd!</p>
+    </div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-aranyossag.html"><span class="irany">← Előző</span><span class="hova">Feladatgyűjtemény</span></a>
+      <a class="kov" href="terepkuldetes.html"><span class="irany">Következő →</span><span class="hova">Terepküldetés — A Pym-protokoll</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+</body>
+</html>

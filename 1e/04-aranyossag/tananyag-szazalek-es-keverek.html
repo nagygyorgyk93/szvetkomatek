@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Százalék, ezrelék és keverék — tananyag | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Arányosság</a> ›
+  <span class="itt">Százalék, ezrelék és keverék — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Százalék, ezrelék és keverékszámítás</h1>
+  <p class="alcim">A százalék mint arány: alapérték, százalékérték, százalékláb. Növelés és csökkentés, a fordított százalék, az egymás utáni változás — és a kétkomponensű keverékek.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Pym-protokoll · 2/3</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+      <div class="brief"><p>📡 <b>Hank Pym:</b> A Pym Technologies nem varázslat — <b>erőforrás-gazdálkodás</b>. Minden döntés százalékban mérhető: mennyi energiát veszít a jelmez, mekkora a hozam, milyen arányban keverd az anyagokat. Aki a <b>százalékot</b> érti, az átlát az árcédulákon, a kamatokon és a „kedvezményeken” — és nem lehet becsapni. Kang trükkjeinek fele éppen egy elrejtett százalék.</p></div>
+    <p>A <b>százalék</b> egy század rész, az <b>ezrelék</b> egy ezred rész. Nem új matematika — csak az arány kényelmes, mindennapi nyelve: kedvezmény, ÁFA, kamat, koncentráció, valószínűség. Aki gyorsan vált tört, tizedes és százalék között, az fél lépéssel a probléma előtt jár.</p>
+
+    <h2 id="s1">A százalék és az ezrelék</h2>
+    <div class="doboz definicio" id="def-szazalek">
+      <p class="cim"><span class="ikon">📗</span> Definíció</p>
+      <p>Egy <span class="math inline">\(a\)</span> mennyiség <b>egy százaléka</b> a század része: <span class="math inline">\(\dfrac{a}{100}\)</span>. Egy mennyiség <span class="math inline">\(p\)</span> százaléka <span class="math inline">\(a\cdot\dfrac{p}{100}\)</span>. Az <b>ezrelék</b> az ezred rész (jele: ‰): <span class="math inline">\(p\)</span> ezrelék annyi, mint <span class="math inline">\(\dfrac{p}{1000}\)</span>.</p>
+    </div>
+    <div class="doboz definicio" id="def-gpp">
+      <p class="cim"><span class="ikon">📗</span> A három szereplő</p>
+      <p>A százalékszámításban három mennyiség szerepel: az <b>alapérték</b> <span class="math inline">\(G\)</span> (a „száz százalék”), a <b>százalékérték</b> <span class="math inline">\(P\)</span> (a kiszámolt rész) és a <b>százalékláb</b> <span class="math inline">\(p\)</span> (hány százalék). Összefüggésük egyetlen aránypár: \[G:P=100:p,\qquad\text{azaz}\qquad P=\dfrac{G\cdot p}{100}.\]</p>
+    </div>
+    <div class="doboz pelda" id="pelda-alap">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Mennyi <span class="math inline">\(55\,400\)</span> dinár <span class="math inline">\(15\%\)</span>-a?
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(P=\dfrac{55\,400\cdot 15}{100}=8310\)</span> dinár.</p></div></details>
+    </div>
+
+    <h2 id="s2">A három alaptípus</h2>
+    <p>A <span class="math inline">\(G:P=100:p\)</span> aránypárból bármelyik ismeretlent kiszámolhatjuk, ha a másik kettőt ismerjük:</p>
+    <figure class="abra"><table class="tabla-nevezetes">
+      <thead><tr><th>Mit keresünk?</th><th>Képlet</th><th>Példa</th></tr></thead>
+      <tbody>
+      <tr><th>a rész (<span class="math inline">\(P\)</span>)</th><td><span class="math inline">\(P=\dfrac{G\cdot p}{100}\)</span></td><td><span class="math inline">\(800\)</span> <span class="math inline">\(20\%\)</span>-a <span class="math inline">\(=160\)</span></td></tr>
+      <tr><th>a százalékláb (<span class="math inline">\(p\)</span>)</th><td><span class="math inline">\(p=\dfrac{P\cdot 100}{G}\)</span></td><td><span class="math inline">\(160\)</span> a <span class="math inline">\(800\)</span> <span class="math inline">\(20\%\)</span>-a</td></tr>
+      <tr><th>az alapérték (<span class="math inline">\(G\)</span>)</th><td><span class="math inline">\(G=\dfrac{P\cdot 100}{p}\)</span></td><td><span class="math inline">\(160\)</span> a <span class="math inline">\(?\)</span> <span class="math inline">\(20\%\)</span>-a <span class="math inline">\(\Rightarrow 800\)</span></td></tr>
+      </tbody></table>
+      <figcaption>Ugyanaz az aránypár, három nézőpontból. Mindig azt kérdezd: <b>mi a 100%</b> (az alapérték)?</figcaption>
+    </figure>
+    <div class="doboz pelda" id="pelda-ezrelek">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció (ezrelék)</p>
+      Egy iroda jutalékként <span class="math inline">\(2800\)</span> dinárt kapott, ami az ügylet <span class="math inline">\(5\)</span>‰-e. Mekkora volt az ügylet összege?
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(G=\dfrac{P\cdot 1000}{p}=\dfrac{2800\cdot 1000}{5}=560\,000\)</span> dinár.</p></div></details>
+    </div>
+    <div class="kviz" data-answer="2" data-jo="✔ G = P·100/p = 30·100/12 = 250." data-nem="✘ Itt az alapértéket keressük: G = P·100/p = 30·100/12 = 250.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy szám <span class="math inline">\(12\%\)</span>-a <span class="math inline">\(30\)</span>. Melyik a szám?</p>
+      <div class="opciok"><button><span class="math inline">\(360\)</span></button><button><span class="math inline">\(250\)</span></button><button><span class="math inline">\(3{,}6\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Növelés, csökkentés és a fordított százalék</h2>
+    <div class="doboz tetel" id="tetel-novel-csokkent">
+      <p class="cim"><span class="ikon">📘</span> Szorzós alak</p>
+      <p>Ha egy <span class="math inline">\(G\)</span> értéket <span class="math inline">\(p\%\)</span>-kal <b>növelünk</b>, az új érték <span class="math inline">\(G\cdot\Big(1+\dfrac{p}{100}\Big)\)</span>; ha <span class="math inline">\(p\%\)</span>-kal <b>csökkentünk</b>, akkor <span class="math inline">\(G\cdot\Big(1-\dfrac{p}{100}\Big)\)</span>. Például a <span class="math inline">\(10\%\)</span> engedmény szorzója <span class="math inline">\(0{,}9\)</span>, a <span class="math inline">\(25\%\)</span> nyereségé <span class="math inline">\(1{,}25\)</span>.</p>
+    </div>
+    <div class="doboz pelda" id="pelda-forditott-szazalek">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció (fordított százalék)</p>
+      Egy terméket <span class="math inline">\(10\%\)</span> engedménnyel <span class="math inline">\(105\,219\)</span> dinárért adtak el. Mennyi volt az eredeti ár?
+      <details><summary>Megoldás</summary><div class="bel"><p>Az eladási ár az eredeti <span class="math inline">\(90\%\)</span>-a, tehát <span class="math inline">\(0{,}9\cdot G=105\,219\)</span>, innen <span class="math inline">\(G=105\,219:0{,}9=116\,910\)</span> dinár.</p></div></details>
+    </div>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Kang csapdája</p>
+      A <b>fordított</b> feladatnál (eladási árból az eredetit keressük) <b>nem</b> szorzunk vissza ugyanannyi százalékkal! Ha <span class="math inline">\(10\%\)</span>-kal <b>emelték</b> az árat, akkor az eredetit nem úgy kapod, hogy levonsz <span class="math inline">\(10\%\)</span>-ot — hanem <b>osztasz</b> <span class="math inline">\(1{,}1\)</span>-del. (<span class="math inline">\(128\,601:1{,}1=116\,910\)</span>, nem <span class="math inline">\(128\,601\cdot 0{,}9\)</span>.)
+    </div>
+
+    <h2 id="s4">Egymás utáni százalékváltozás</h2>
+    <div class="doboz tetel" id="tetel-egymasutan">
+      <p class="cim"><span class="ikon">📘</span> A szorzók összeszorzódnak</p>
+      <p>Több egymás utáni százalékváltozás hatását a szorzóik <b>szorzata</b> adja — <b>nem</b> az összegük. Előbb <span class="math inline">\(p_1\%\)</span>, majd <span class="math inline">\(p_2\%\)</span> változás után az érték <span class="math inline">\(G\cdot\Big(1\pm\dfrac{p_1}{100}\Big)\Big(1\pm\dfrac{p_2}{100}\Big)\)</span>.</p>
+    </div>
+    <div class="doboz pelda" id="pelda-fogyokura">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Valaki <span class="math inline">\(72\ \text{kg}\)</span>-ról <span class="math inline">\(8\%\)</span>-ot fogyott, majd (a diéta után) <span class="math inline">\(10\%\)</span>-ot hízott. Eredményes volt a fogyókúra?
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(72\cdot 0{,}92\cdot 1{,}10=72{,}864\ \text{kg}\)</span> — <b>nem</b>: a végén nehezebb, mint kezdetben (a <span class="math inline">\(10\%\)</span> egy nagyobb alapból nagyobb, mint a <span class="math inline">\(8\%\)</span>).</p></div></details>
+    </div>
+    <div class="doboz pelda" id="pelda-terulet">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció (terület-csapda)</p>
+      Megváltozik-e egy téglalap területe, ha a szélességét <span class="math inline">\(25\%\)</span>-kal megnöveljük, a hosszát pedig <span class="math inline">\(25\%\)</span>-kal csökkentjük?
+      <details><summary>Megoldás</summary><div class="bel"><p>Az új terület az eredeti <span class="math inline">\(1{,}25\cdot 0{,}75=0{,}9375\)</span>-szorosa, azaz <span class="math inline">\(6{,}25\%\)</span>-kal <b>csökken</b>. A két változás nem oltja ki egymást!</p></div></details>
+    </div>
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Jó tudni</p>
+      Ha egy árat <span class="math inline">\(50\%\)</span>-kal megemelnek, akkor a visszaállításhoz nem <span class="math inline">\(50\%\)</span>-ot, hanem csak <span class="math inline">\(33\tfrac13\%\)</span>-ot kell csökkenteni (<span class="math inline">\(1{,}5\cdot\tfrac23=1\)</span>). Ezért csábító a „<span class="math inline">\(+50\%\)</span>, aztán <span class="math inline">\(-40\%\)</span>” akció: a végén <b>drágább</b>, mint az eredeti.
+    </div>
+
+    <h2 id="s5">Keverékszámítás</h2>
+    <div class="doboz definicio" id="def-keverek">
+      <p class="cim"><span class="ikon">📗</span> A keverési szabály</p>
+      <p>Ha két anyagot keverünk, amelyek mennyisége <span class="math inline">\(m_1\)</span> és <span class="math inline">\(m_2\)</span>, „töménysége” (koncentrációja, ára, hőmérséklete) pedig <span class="math inline">\(c_1\)</span> és <span class="math inline">\(c_2\)</span>, akkor a keverékre \[m_1+m_2=m,\qquad c_1 m_1+c_2 m_2=c\,m,\] ahol <span class="math inline">\(c\)</span> a keverék töménysége. A két egyenletből az ismeretlen mennyiségek kiszámolhatók.</p>
+    </div>
+    <div class="doboz pelda" id="pelda-keverek">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Hány liter <span class="math inline">\(40\%\)</span>-os és hány liter <span class="math inline">\(85\%\)</span>-os alkoholt kell összekeverni, hogy <span class="math inline">\(20\)</span> liter <span class="math inline">\(58\%\)</span>-osat kapjunk?
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(x+y=20\)</span> és <span class="math inline">\(0{,}40x+0{,}85y=0{,}58\cdot 20=11{,}6\)</span>. Az elsőből <span class="math inline">\(y=20-x\)</span>, behelyettesítve <span class="math inline">\(x=12\)</span>, <span class="math inline">\(y=8\)</span>. Tehát <span class="math inline">\(12\)</span> liter <span class="math inline">\(40\%\)</span>-os és <span class="math inline">\(8\)</span> liter <span class="math inline">\(85\%\)</span>-os.</p></div></details>
+    </div>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Kang csapdája</p>
+      A keverési szabály <b>idealizált</b>, <b>lineáris</b> modell: feltételezzük, hogy a mennyiségek egyszerűen összeadódnak, és a töménység a súlyozott átlaguk. Ügyelj a <b>közös mértékegységre</b> — csak azonos egységeket (liter a literrel, gramm a grammal) szabad összekeverni. Egy hőmérséklet-keverésnél is így számolunk, bár a valóság ennél összetettebb.
+    </div>
+    <div class="kviz" data-answer="1" data-jo="✔ x + y = 20 és 20x + 75y = 42·20 = 840 → x = 12 liter (20 °C-os)." data-nem="✘ Keverési szabály: x + y = 20 és 20x + 75y = 42·20 = 840, innen x = 12 liter a 20 °C-os vízből.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Hány liter <span class="math inline">\(20\ ^\circ\text{C}\)</span>-os víz kell <span class="math inline">\(20\)</span> liter <span class="math inline">\(42\ ^\circ\text{C}\)</span>-os vízhez, ha a másik komponens <span class="math inline">\(75\ ^\circ\text{C}\)</span>-os?</p>
+      <div class="opciok"><button><span class="math inline">\(12\)</span> liter</button><button><span class="math inline">\(8\)</span> liter</button><button><span class="math inline">\(10\)</span> liter</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-aranyossag.html#alap-5">🐜 Ant-Man-bevetés <span class="cimke">A 5–7</span></a><a class="sav hulk" href="feladatok-aranyossag.html#kozep-4">💥 Hulk-bevetés <span class="cimke">K 4–6</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Hank Pym:</b> Most már látod, hogyan mozog a pénz és az anyag. Egyetlen dolog maradt: az <b>idő</b> hatása a pénzre. Irány a <b>kamatszámítás</b> — ahol a Pym Tech vagyona (vagy adóssága) magától nő.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-arany-es-aranyossag.html"><span class="irany">← Előző</span><span class="hova">Arány, aránypár és arányosság</span></a>
+      <a class="kov" href="tananyag-kamatszamitas.html"><span class="irany">Következő →</span><span class="hova">Kamatszámítás</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

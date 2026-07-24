@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arány, aránypár és arányosság — tananyag | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Arányosság</a> ›
+  <span class="itt">Arány, aránypár és arányosság — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Arány, aránypár és arányosság</h1>
+  <p class="alcim">Arány és aránypár, összetett arány, méretarány, arányos elosztás, valamint az egyenes és a fordított arányosság — a Pym-protokoll skálázási törvényei.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Pym-protokoll · 1/3</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+      <div class="brief"><p>📡 <b>Hope van Dyne (The Wasp):</b> A Pym-részecske egyetlen dolgot csinál: <b>skáláz</b> — megnöveli vagy lecsökkenti a méretet, de a <b>arányokat</b> érintetlenül hagyja. Ha érted az <b>arányt</b> és az <b>arányosságot</b>, akkor tudod, mi marad állandó, miközben minden más változik. Ez a Pym-protokoll első törvénye: <b>a helyes arány stabilizálja a rendszert</b> — a rosszul beállított arány pedig szétszakítja. Kang pontosan ezzel játszik.</p></div>
+    <p>Az <b>arány</b> két mennyiség összemérése: hányszor akkora az egyik, mint a másik. Az <b>arányosság</b> pedig az a szabály, amely szerint két mennyiség együtt változik. Erre épül a térkép, a recept, a valutaváltás, a sebesség–idő összefüggés — és Scott jelmezének minden zsugorodása.</p>
+
+    <h2 id="s1">Arány és aránypár</h2>
+    <div class="doboz definicio" id="def-arany">
+      <p class="cim"><span class="ikon">📗</span> Definíció</p>
+      <p>Az <span class="math inline">\(a\)</span> és <span class="math inline">\(b\)</span> valós számok (<span class="math inline">\(a b\neq 0\)</span>) <b>aránya</b> a hányadosuk: <span class="math inline">\(a:b=\dfrac{a}{b}\)</span>. Az <span class="math inline">\(a\)</span> az arány <b>előtagja</b>, a <span class="math inline">\(b\)</span> az <b>utótagja</b>.</p>
+    </div>
+    <div class="doboz definicio" id="def-aranypar">
+      <p class="cim"><span class="ikon">📗</span> Aránypár</p>
+      <p>Ha két arány egyenlő, <span class="math inline">\(a:b=c:d\)</span>, akkor az <span class="math inline">\(a,b,c,d\)</span> számok (ebben a sorrendben) <b>aránypárt</b> alkotnak. Az <span class="math inline">\(a\)</span> és <span class="math inline">\(d\)</span> a <b>kültagok</b>, a <span class="math inline">\(b\)</span> és <span class="math inline">\(c\)</span> a <b>beltagok</b>.</p>
+    </div>
+    <div class="doboz tetel" id="tetel-keresztszorzat">
+      <p class="cim"><span class="ikon">📘</span> Az aránypár alaptétele</p>
+      <p>Ha <span class="math inline">\(a:b=c:d\)</span> és <span class="math inline">\(k\neq 0\)</span>, akkor \[a d=b c\quad(\text{a kültagok szorzata} = \text{a beltagok szorzata}),\] továbbá <span class="math inline">\(a:c=b:d\)</span> és <span class="math inline">\(ka:kb=c:d\)</span>. Az <span class="math inline">\(a d=b c\)</span> (a „keresztszorzat”) az aránypárok legfontosabb eszköze: ezzel oldunk meg minden ismeretlent tartalmazó aránypárt.</p>
+    </div>
+    <div class="doboz pelda" id="pelda-aranypar">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Oldd meg az aránypárt: <span class="math inline">\((x+5):4=x:3\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p>Keresztszorzat: <span class="math inline">\(3(x+5)=4x\)</span>, azaz <span class="math inline">\(3x+15=4x\)</span>, innen <span class="math inline">\(x=15\)</span>. Ellenőrzés: <span class="math inline">\(20:4=5\)</span> és <span class="math inline">\(15:3=5\)</span>. ✔</p></div></details>
+    </div>
+    <div class="kviz" data-answer="1" data-jo="✔ A kültagok szorzata egyenlő a beltagok szorzatával." data-nem="✘ Aránypárban a kültagok szorzata = a beltagok szorzata, azaz ad = bc.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik igaz minden <span class="math inline">\(a:b=c:d\)</span> aránypárra?</p>
+      <div class="opciok"><button><span class="math inline">\(a+d=b+c\)</span></button><button><span class="math inline">\(a d=b c\)</span></button><button><span class="math inline">\(a c=b d\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Összetett arány és arányos elosztás</h2>
+    <div class="doboz definicio" id="def-osszetett">
+      <p class="cim"><span class="ikon">📗</span> Összetett arány</p>
+      <p>Három vagy több mennyiség együttes aránya az <b>összetett arány</b>: <span class="math inline">\(a:b:c\)</span>. Két „láncszemből” (<span class="math inline">\(x:y\)</span> és <span class="math inline">\(y:z\)</span>) úgy állítjuk össze, hogy a <b>közös tagot</b> (<span class="math inline">\(y\)</span>) egyenlővé tesszük.</p>
+    </div>
+    <div class="doboz pelda" id="pelda-osszetett">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Az <span class="math inline">\(x:y=3:6\)</span> és <span class="math inline">\(y:z=2:5\)</span> arányokból állítsd össze az <span class="math inline">\(x:y:z\)</span> összetett arányt.
+      <details><summary>Megoldás</summary><div class="bel"><p>A közös tag az <span class="math inline">\(y\)</span>. Az elsőben <span class="math inline">\(y=6\)</span>, a másodikban <span class="math inline">\(y=2\)</span>; közös érték a <span class="math inline">\(6\)</span>. A második arányt <span class="math inline">\(3\)</span>-mal bővítjük: <span class="math inline">\(y:z=6:15\)</span>. Így <span class="math inline">\(x:y:z=3:6:15=1:2:5\)</span>.</p></div></details>
+    </div>
+    <div class="doboz definicio" id="def-osztas">
+      <p class="cim"><span class="ikon">📗</span> Arányos elosztás</p>
+      <p>Ha egy <span class="math inline">\(S\)</span> mennyiséget adott <span class="math inline">\(a:b:c\)</span> arányban osztunk szét, akkor egy „rész” értéke <span class="math inline">\(\dfrac{S}{a+b+c}\)</span>, és a három adag ennek <span class="math inline">\(a\)</span>-, <span class="math inline">\(b\)</span>-, illetve <span class="math inline">\(c\)</span>-szorosa.</p>
+    </div>
+    <div class="doboz pelda" id="pelda-osztas">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Osszunk szét <span class="math inline">\(4200\)</span> dinárt <span class="math inline">\(3:7:5\)</span> arányban.
+      <details><summary>Megoldás</summary><div class="bel"><p>Egy rész: <span class="math inline">\(4200:(3+7+5)=4200:15=280\)</span>. A három adag: <span class="math inline">\(3\cdot 280=840\)</span>, <span class="math inline">\(7\cdot 280=1960\)</span>, <span class="math inline">\(5\cdot 280=1400\)</span> dinár. Ellenőrzés: <span class="math inline">\(840+1960+1400=4200\)</span>. ✔</p></div></details>
+    </div>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Kang csapdája</p>
+      Arányos elosztásnál <b>nem</b> a végösszeget osztod a tagok számával! Előbb az <b>arányszámok összegével</b> osztasz (egy „rész”), és <b>azt</b> szorzod fel az egyes arányszámokkal. A <span class="math inline">\(3:7:5\)</span> nem három egyenlő adagot jelent.
+    </div>
+
+    <h2 id="s3">Méretarány — a Pym-skálázás</h2>
+    <div class="doboz definicio" id="def-meretarany">
+      <p class="cim"><span class="ikon">📗</span> Definíció</p>
+      <p>A <b>méretarány</b> a rajzon (térképen, modellen) mért hossz és a valós hossz aránya, azonos mértékegységben. Az <span class="math inline">\(1:150\,000\)</span> azt jelenti: a rajzon <span class="math inline">\(1\)</span> egység a valóságban <span class="math inline">\(150\,000\)</span> egység.</p>
+    </div>
+    <div class="doboz pelda" id="pelda-meretarany">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Egy <span class="math inline">\(1:150\,000\)</span> méretarányú térképen két helység távolsága <span class="math inline">\(6\ \text{cm}\)</span>. Mekkora ez a valóságban?
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(6\cdot 150\,000=900\,000\ \text{cm}=9000\ \text{m}=9\ \text{km}\)</span>.</p></div></details>
+    </div>
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      Amikor Scott Ant-Manné zsugorodik, a teste <b>arányosan</b> kicsinyedik: minden hossza ugyanazzal a méretaránnyal szorzódik, ezért a formája nem torzul. Ugyanez a méretarány működik a térképeken, az építészeti maketteken és a modellvasúton (pl. <span class="math inline">\(1:87\)</span>).
+    </div>
+
+    <h2 id="s4">Egyenes és fordított arányosság</h2>
+    <div class="doboz definicio" id="def-egyenes-forditott">
+      <p class="cim"><span class="ikon">📗</span> Definíció</p>
+      <p>Két egymástól függő mennyiség, <span class="math inline">\(x\)</span> és <span class="math inline">\(y\)</span>:</p>
+      <ul>
+        <li><b>egyenesen arányos</b>, ha a <b>hányadosuk állandó</b>: <span class="math inline">\(\dfrac{y}{x}=k\)</span>, azaz <span class="math inline">\(y=kx\)</span> (ha az egyik hányszorosára nő, a másik ugyanannyiszorosára);</li>
+        <li><b>fordítottan arányos</b>, ha a <b>szorzatuk állandó</b>: <span class="math inline">\(x\cdot y=l\)</span>, azaz <span class="math inline">\(y=\dfrac{l}{x}\)</span> (ha az egyik hányszorosára nő, a másik ugyanannyiad részére csökken).</li>
+      </ul>
+    </div>
+    <p>Két mennyiségpárra a szabály tömören:</p>
+    <div class="doboz tetel" id="tetel-arany-szabaly">
+      <p class="cim"><span class="ikon">📘</span> A számítás szabálya</p>
+      <p>Egyenes arányosságnál <span class="math inline">\(\dfrac{y_1}{y_2}=\dfrac{x_1}{x_2}\)</span> (azonos irányú aránypár), fordítottnál <span class="math inline">\(\dfrac{y_1}{y_2}=\dfrac{x_2}{x_1}\)</span> (a jobb oldal „felcserélődik”).</p>
+    </div>
+    <div class="doboz pelda" id="pelda-egyenes">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció (egyenes)</p>
+      <span class="math inline">\(15\)</span> tekercs tapétával <span class="math inline">\(78\ \text{m}^2\)</span> falat lehet beborítani. Mekkora falfelület jut <span class="math inline">\(9\)</span> tekercsből?
+      <details><summary>Megoldás</summary><div class="bel"><p>Több tekercs → több felület: egyenes. <span class="math inline">\(\dfrac{78}{15}=5{,}2\ \text{m}^2/\text{tekercs}\)</span>, így <span class="math inline">\(9\cdot 5{,}2=46{,}8\ \text{m}^2\)</span>.</p></div></details>
+    </div>
+    <div class="doboz pelda" id="pelda-forditott">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció (fordított)</p>
+      <span class="math inline">\(3\)</span> szerelő egy munkát <span class="math inline">\(14\)</span> nap alatt végez el. Hány nap alatt végezné el ugyanezt <span class="math inline">\(7\)</span> szerelő, azonos tempóval?
+      <details><summary>Megoldás</summary><div class="bel"><p>Több szerelő → kevesebb nap: fordított. Az összmunka <span class="math inline">\(3\cdot 14=42\)</span> (szerelő-nap), így <span class="math inline">\(42:7=6\)</span> nap.</p></div></details>
+    </div>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Kang csapdája</p>
+      <p>„Ha <span class="math inline">\(5\)</span> kadét <span class="math inline">\(5\)</span> perc alatt <span class="math inline">\(5\)</span> energiacellát tölt fel, akkor <span class="math inline">\(25\)</span> kadét <span class="math inline">\(25\)</span> perc alatt hányat?” — A csábító (hibás) válasz: <span class="math inline">\(25\)</span>. Ne dőlj be! Itt <b>két</b> dolog is változik. Egy kadét <span class="math inline">\(5\)</span> perc alatt <span class="math inline">\(1\)</span> cellát tölt, tehát <span class="math inline">\(25\)</span> perc alatt <span class="math inline">\(5\)</span>-öt; <span class="math inline">\(25\)</span> kadét pedig <span class="math inline">\(25\cdot 5=125\)</span> cellát. A helyes válasz <b><span class="math inline">\(125\)</span></b>. Mindig gondold végig, <b>melyik</b> mennyiség hogyan függ a másiktól.</p>
+    </div>
+    <div class="kviz" data-answer="2" data-jo="✔ Fordított: több munkás → kevesebb idő; a szorzat állandó (6·10 = 60)." data-nem="✘ Több munkás kevesebb idő alatt végez — ez fordított arányosság: 6·10 = 4·x.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p><span class="math inline">\(6\)</span> munkás egy munkát <span class="math inline">\(10\)</span> nap alatt végez el. Hány nap alatt végezné el <span class="math inline">\(4\)</span> munkás?</p>
+      <div class="opciok"><button><span class="math inline">\(6{,}7\)</span> nap</button><button><span class="math inline">\(20\)</span> nap</button><button><span class="math inline">\(15\)</span> nap</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-aranyossag.html#alap-1">🐜 Ant-Man-bevetés <span class="cimke">A 1–4</span></a><a class="sav hulk" href="feladatok-aranyossag.html#kozep-1">💥 Hulk-bevetés <span class="cimke">K 1–3</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>The Wasp:</b> Megvan a skálázás alaptörvénye. A következő modul az <b>erőforrás-gazdálkodás</b> nyelve: a százalék, az ezrelék és a keverékek. Ott derül ki, mennyibe kerül egy döntés.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">Témakör-nyitó</span></a>
+      <a class="kov" href="tananyag-szazalek-es-keverek.html"><span class="irany">Következő →</span><span class="hova">Százalék, ezrelék és keverék</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

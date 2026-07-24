@@ -255,3 +255,53 @@ dr_page(DEST03, "index.html", "Egész és valós számok", "feladatok-hazi.html"
  "index.html", "Témakör főoldala", "osszefoglalo.html", "Tömör összefoglaló",
  "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
 print("03 Danger Room kész: Alap", len(A03), "Közép", len(K03), "Nehéz", len(N03))
+
+# =========================================================== 04
+assert 8*12/3==32 and 3*(6+4)==5*6 and 7*20000==140000
+assert 5400//9==600 and 6*9//9==6 and 520/4*7==910
+assert 2400*35/100==840 and 180/720==0.25 and 40/0.08==500
+assert 30*3+70*7==58*10 and 96000/0.8==120000
+assert 154000//7==22000 and 50000*1.2*0.9==54000 and 13*7==91
+assert 120000*9*8/1200==7200 and 2000*36000/(200000*60)==6
+assert 400000*(100+10*2)//100==480000 and 400000*109*109//10000==475240
+DEST04 = glob.glob("/sessions/*/mnt/Claude/web/1e/04-aranyossag")[0]
+A04 = [
+ ("Aránypár és méretarány.",
+  ["$8:x=3:12$","$(x+4):5=x:3$","Egy $1:20\\,000$ méretarányú térképen a táv $7$ cm — mennyi a valóságban?"],
+  ["$x=32$","$x=6$","$1{,}4$ km"], True),
+ ("Elosztás és arányosság.",
+  ["Ossz szét $5400$ dinárt $4:5$ arányban.","$6$ pumpa $9$ óra alatt tölt fel egy tartályt — hány óra kell $9$ pumpának?","$4$ kg alma $520$ din — mennyibe kerül $7$ kg?"],
+  ["$2400$ és $3000$ din","$6$ óra","$910$ din"]),
+ ("Százalék — a három alaptípus.",
+  ["$2400$ $35\\%$-a","$180$ hány $\\%$-a a $720$-nak?","Egy szám $8\\%$-a $40$ — mennyi a szám?"],
+  ["$840$","$25\\%$","$500$"], True),
+ ("Keverék és fordított százalék.",
+  ["$30\\%$-os és $70\\%$-os oldatból $10$ l $58\\%$-osat kell keverni — hány liter kell mindkettőből?","$20\\%$ engedmény után egy termék $96\\,000$ din — mennyi volt az eredeti ára?"],
+  ["$3$ l ($30\\%$) és $7$ l ($70\\%$)","$120\\,000$ din"]),
+]
+K04 = [
+ ("Összetett arány és munkaidő-elosztás.",
+  ["$x:y=2:5$ és $y:z=3:4$ — add meg $x:y:z$-t","$154\\,000$ din: egyik $10$ napot napi $8$ órával, másik $12$ napot napi $5$ órával dolgozott — mennyit kap fejenként?"],
+  ["$6:15:20$","$88\\,000$ és $66\\,000$ din"]),
+ ("Egymás utáni százalékváltozás.",
+  ["$50\\,000$ din-t előbb $20\\%$-kal emelnek, majd $10\\%$-kal csökkentenek — mennyi a végső ár?","Egy téglalap szélessége $+30\\%$, hossza $-30\\%$ — hány $\\%$-kal változik a terület?"],
+  ["$54\\,000$ din","$9\\%$-kal csökken"]),
+ ("Kamatszámítás.",
+  ["$120\\,000$ din $9\\%$-os kamatlábbal $8$ hónap alatt mennyi kamatot hoz?","Mekkora kamatláb hoz $200\\,000$ din után $60$ nap alatt $2000$ din kamatot?"],
+  ["$7200$ din","$6\\%$"]),
+]
+N04 = [
+ ("A Pym Tech $400\\,000$ dinárt fektet be $2$ évre. Az <b>A</b> bank $10\\%$ egyszerű kamatot, a <b>B</b> bank $9\\%$ kamatos kamatot kínál. Melyiknél lesz több pénz $2$ év múlva, és mennyivel?",
+  None, "$A$: $480\\,000$, $B$: $475\\,240$ → az $A$ a jobb, $4760$ dinárral."),
+]
+brief04 = ("🕹️ <b>SZVETI:</b> <b>Veszélyterem</b>-szimuláció, Pym-protokoll modul. Ez a <b>Danger Room</b> otthoni "
+ "edzésváltozata — itt gyakorolsz a saját tempódban. A szimuláció a <b>teljes témakört</b> lefedi: arány és arányos "
+ "osztás, egyenes és fordított arányosság, méretarány, keverék, százalék, ezrelék és kamat. Haladj a fokozatokon: "
+ "zöld (alap) → sárga (közép) → piros (nehéz). A végeredményt minden feladatnál lenyithatod — de előbb küzdd le magad!")
+dr_page(DEST04, "index.html", "Arányosság", "feladatok-hazi.html",
+ "🕹️ Danger Room — házi feladatgyűjtemény",
+ "Egyetlen, a teljes témakört lefedő házi feladatsor: arány, arányos osztás, egyenes és fordított arányosság, méretarány, keverék, százalék és kamat. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
+ brief04, sect(A04, K04, N04),
+ "index.html", "Témakör főoldala", "osszefoglalo.html", "Tömör összefoglaló",
+ "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
+print("04 Danger Room kész: Alap", len(A04), "Közép", len(K04), "Nehéz", len(N04))
