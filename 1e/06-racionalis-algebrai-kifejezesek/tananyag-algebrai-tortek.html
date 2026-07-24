@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Algebrai törtek — tananyag | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Racionális algebrai kifejezések</a> ›
+  <span class="itt">Algebrai törtek — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Algebrai törtek</h1>
+  <p class="alcim">A racionális algebrai tört fogalma és értelmezési tartománya, egyszerűsítés (csak közös tényezővel!), a négy alapművelet és az összetett (emeletes) törtek — a hatalom nyelvének legmagasabb szintje.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Hatalom Nyelve · 3/3</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+      <div class="brief"><p>📡 <b>Iron Man &amp; Shuri:</b> A törtek a tech <b>arányai</b>: teljesítmény per tömeg, jel per zaj. De egy törtnek csak akkor van értelme, ha a <b>nevező nem nulla</b> — ezt hívjuk értelmezési tartománynak. Aki ezt figyelmen kívül hagyja, annak a rendszere lefagy (nullával osztás = Kang kedvenc rése). Ebben a modulban megtanulsz <b>értelmezni</b>, <b>egyszerűsíteni</b> és a <b>négy alapműveletet</b> elvégezni törtekkel — a legbonyolultabb emeletes törtet is letisztítod.</p></div>
+    <p>A <b>racionális algebrai tört</b> két polinom hányadosa: <span class="math inline">\(\dfrac{P(x)}{Q(x)}\)</span>, ahol <span class="math inline">\(Q(x)\)</span> nem az azonosan nulla polinom. Az egyszerűsítés, a bővítés és a műveletek mind a törtek ismerős szabályaira épülnek — csak most számok helyett polinomok állnak a helyükön.</p>
+
+    <h2 id="s1">Értelmezési tartomány (mikor van értelme?)</h2>
+    <div class="doboz definicio" id="def-ert">
+      <p class="cim"><span class="ikon">📗</span> Értelmezési tartomány (ÉT)</p>
+      <p>Egy algebrai tört <b>értelmezési tartománya</b> azon értékek halmaza, amelyekre a <b>nevező nem nulla</b>. A tört értéke ezeken kívül nincs értelmezve. Feladatokban a nevezőt <span class="math inline">\(0\)</span>-val egyenlővé téve megkeressük a <b>kizárt</b> értékeket.</p>
+    </div>
+    <div class="doboz pelda" id="pelda-ert">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Mely értékekre értelmezett? <span class="math inline">\(\dfrac{1}{x-3}\)</span> és <span class="math inline">\(\dfrac{x+1}{x^2-4}\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(\dfrac{1}{x-3}\)</span>: <span class="math inline">\(x-3\neq 0\)</span>, tehát <span class="math inline">\(x\neq 3\)</span>.</p><p><span class="math inline">\(\dfrac{x+1}{x^2-4}\)</span>: <span class="math inline">\(x^2-4=(x-2)(x+2)\neq 0\)</span>, tehát <span class="math inline">\(x\neq 2\)</span> és <span class="math inline">\(x\neq -2\)</span>.</p></div></details>
+    </div>
+    <div class="kviz" data-answer="0" data-jo="✔ x ≠ 2 — a nevező x − 2, ez nem lehet 0." data-nem="✘ A nevező x − 2 ≠ 0, tehát x ≠ 2.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mikor értelmezett a <span class="math inline">\(\dfrac{5}{x-2}\)</span> tört?</p>
+      <div class="opciok"><button><span class="math inline">\(x\neq 2\)</span></button><button><span class="math inline">\(x\neq -2\)</span></button><button>minden <span class="math inline">\(x\)</span>-re</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Törtek egyszerűsítése</h2>
+    <div class="doboz tetel" id="tetel-egyszerusites">
+      <p class="cim"><span class="ikon">📘</span> Az egyszerűsítés szabálya</p>
+      <p>Törtet a számláló és a nevező <b>közös tényezőjével</b> lehet egyszerűsíteni: <span class="math inline">\(\dfrac{a\cdot c}{b\cdot c}=\dfrac{a}{b}\)</span> (ha <span class="math inline">\(c\neq 0\)</span>). Ezért <b>először szorzattá alakítunk</b>, és csak azután egyszerűsítünk. Taggal (összeadandóval) <b>soha</b> nem egyszerűsítünk!</p>
+    </div>
+    <div class="doboz pelda" id="pelda-egyszerusites">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Egyszerűsítsd: <span class="math inline">\(\dfrac{x^2-9}{x-3}\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(\dfrac{x^2-9}{x-3}=\dfrac{(x-3)(x+3)}{x-3}=x+3\)</span> (ÉT: <span class="math inline">\(x\neq 3\)</span>).</p></div></details>
+    </div>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Kang csapdája</p>
+      Kang szereti „kihúzni” az azonos betűket: azt állítja, hogy <span class="math inline">\(\dfrac{x+5}{x+7}=\dfrac{5}{7}\)</span>. <b>Hamis!</b> Az <span class="math inline">\(x\)</span> itt <b>tag</b>, nem tényező — nem ejthető ki. A tört nem is egyszerűsíthető. Csak <b>közös szorzótényezővel</b> szabad egyszerűsíteni.
+    </div>
+    <div class="kviz" data-answer="1" data-jo="✔ Nem: x tag, nem tényező — a tört nem egyszerűsíthető." data-nem="✘ x itt tag (nem szorzótényező), így nem húzható ki.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egyszerűsíthető-e a <span class="math inline">\(\dfrac{x+2}{x+5}\)</span> tört?</p>
+      <div class="opciok"><button>Igen, <span class="math inline">\(=\dfrac{2}{5}\)</span></button><button>Nem</button><button>Igen, <span class="math inline">\(=x\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Szorzás és osztás</h2>
+    <div class="doboz tetel" id="tetel-szorzas-osztas">
+      <p class="cim"><span class="ikon">📘</span> Szabály</p>
+      <p><b>Szorzás:</b> <span class="math inline">\(\dfrac{a}{b}\cdot\dfrac{c}{d}=\dfrac{ac}{bd}\)</span> (számláló a számlálóval, nevező a nevezővel). <b>Osztás:</b> a <b>reciprokkal</b> szorzunk: <span class="math inline">\(\dfrac{a}{b}:\dfrac{c}{d}=\dfrac{a}{b}\cdot\dfrac{d}{c}\)</span>. Számolás előtt érdemes <b>szorzattá alakítani és egyszerűsíteni</b>.</p>
+    </div>
+    <div class="doboz pelda" id="pelda-szorzas-osztas">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Végezd el: <span class="math inline">\(\dfrac{a^2-b^2}{a+b}:\dfrac{a-b}{2}\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(\dfrac{(a-b)(a+b)}{a+b}\cdot\dfrac{2}{a-b}=(a-b)\cdot\dfrac{2}{a-b}=2\)</span>.</p></div></details>
+    </div>
+
+    <h2 id="s4">Összeadás és kivonás</h2>
+    <div class="doboz tetel" id="tetel-osszeadas">
+      <p class="cim"><span class="ikon">📘</span> Szabály</p>
+      <p>Azonos nevezőjű törteknél a számlálókat adjuk össze / vonjuk ki. Különböző nevezőnél <b>közös nevezőre</b> hozunk (a közös nevező a nevezők LKT-je), bővítjük a törteket, majd a számlálókkal számolunk: <span class="math inline">\(\dfrac{a}{b}\pm\dfrac{c}{d}=\dfrac{ad\pm bc}{bd}\)</span>.</p>
+    </div>
+    <div class="doboz pelda" id="pelda-osszeadas">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Végezd el: <span class="math inline">\(\dfrac{1}{x-y}+\dfrac{1}{x+y}\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p>Közös nevező <span class="math inline">\((x-y)(x+y)=x^2-y^2\)</span>: <span class="math inline">\(\dfrac{(x+y)+(x-y)}{x^2-y^2}=\dfrac{2x}{x^2-y^2}\)</span>.</p></div></details>
+    </div>
+
+    <h2 id="s5">Összetett (emeletes) törtek</h2>
+    <p>Az <b>emeletes tört</b> olyan tört, amelynek számlálójában és/vagy nevezőjében újabb tört áll. Két úton bontható: vagy külön elvégezzük a számláló és a nevező műveleteit, majd osztunk, vagy a fő törtvonalat osztásnak tekintjük és reciprokkal szorzunk.</p>
+    <div class="doboz pelda" id="pelda-emeletes">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Egyszerűsítsd: <span class="math inline">\(\dfrac{\dfrac{x}{y}-\dfrac{y}{x}}{\dfrac{1}{y}+\dfrac{1}{x}}\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p>Számláló: <span class="math inline">\(\dfrac{x^2-y^2}{xy}\)</span>; nevező: <span class="math inline">\(\dfrac{x+y}{xy}\)</span>. Osztás: <span class="math inline">\(\dfrac{x^2-y^2}{xy}\cdot\dfrac{xy}{x+y}=\dfrac{(x-y)(x+y)}{x+y}=x-y\)</span>.</p></div></details>
+    </div>
+
+    <h2 id="s6">💡 Bővítés — Kang legmélyebb csapdája (emelt, nem kötelező)</h2>
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> A négyzet sosem negatív</p>
+      <p>Egy fontos igazság, amit érdemes ismerni: minden valós <span class="math inline">\(t\)</span>-re <span class="math inline">\(t^2\ge 0\)</span>. Ebből egy elegáns azonosság-egyenlőtlenség fakad: mivel <span class="math inline">\((a-b)^2\ge 0\)</span>, kibontva <span class="math inline">\(a^2-2ab+b^2\ge 0\)</span>, azaz \[a^2+b^2\ge 2ab.\] Egyenlőség pontosan akkor, ha <span class="math inline">\(a=b\)</span>. Ez a <b>számtani–mértani közép</b> közötti összefüggés előszobája — a felsőbb évek egyik kulcsa. <b>Ez emelt-szintű kitekintés: az ellenőrzőn nem kérjük, de jó, ha látod, hova vezet a nyelv.</b></p>
+    </div>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Kang csapdája</p>
+      Kang azt sugallja, hogy „ha <span class="math inline">\(a^2+b^2\)</span> és <span class="math inline">\(2ab\)</span> is pozitív, akkor bármelyik lehet a nagyobb”. Nem: a fenti bizonyítás szerint <span class="math inline">\(a^2+b^2\)</span> <b>mindig</b> legalább akkora, mint <span class="math inline">\(2ab\)</span> — a különbség épp egy teljes négyzet, ami sosem negatív.
+    </div>
+
+    <h2 id="s7">🧾 Gyorsismétlő</h2>
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> A teljes témakör egy lapon</p>
+      <p><b>Polinomok:</b> összevonás, szorzás, nevezetes azonosságok, osztás, Bézout (<span class="math inline">\(M=P(a)\)</span>). <b>Szorzattá alakítás:</b> kiemelés, <span class="math inline">\(a^2-b^2\)</span>, teljes négyzet, köbök, csoportosítás, LKO/LKT. <b>Törtek:</b> előbb az <b>ÉT</b> (nevező <span class="math inline">\(\neq 0\)</span>), egyszerűsítés csak <b>közös tényezővel</b>, a négy alapművelet, emeletes törtek. Egyetlen szabály mindenre: <b>előbb szorzattá alakíts, azután számolj.</b></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-racionalis-algebrai-kifejezesek.html#alap-10">🐜 Ant-Man-bevetés <span class="cimke">A 10–12</span></a><a class="sav hulk" href="feladatok-racionalis-algebrai-kifejezesek.html#kozep-7">💥 Hulk-bevetés <span class="cimke">K 7–9</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Shuri:</b> Uralod a hatalom nyelvét — a kifejezésektől a legbonyolultabb törtekig. Most élesben: a <b>kiképzési adattárban</b> gyakorolj, majd a <b>terepküldetésen</b> építsd meg a saját tech-képleteidet.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-szorzatta-alakitas.html"><span class="irany">← Előző</span><span class="hova">Szorzattá alakítás</span></a>
+      <a class="kov" href="feladatok-racionalis-algebrai-kifejezesek.html"><span class="irany">Következő →</span><span class="hova">Feladatgyűjtemény</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

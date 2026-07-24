@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Terepküldetés — A Hatalom Nyelve | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Racionális algebrai kifejezések</a> ›
+  <span class="itt">Terepküldetés</span>
+</nav>
+<div class="hero">
+  <h1>Terepküldetés — A Hatalom Nyelve</h1>
+  <p class="alcim">A racionális kifejezések a gyakorlatban: tech-képleteket bontasz ki, tisztítasz le és optimalizálsz Shuri és Iron Man laborjában. Csoportban, 2–3 fő.</p>
+  <div class="meta-sor"><span class="chip ora">projekt</span><span class="chip alap">3 bevetés</span><span class="chip nehez">+ saját képlet</span></div>
+  <div class="brief"><p>🛡️ <b>Shuri &amp; Iron Man:</b> Kadét, a tech nyelve a képlet — de csak a <b>tiszta</b> képlet stabil. Három bevetés vár: <b>bontsd ki</b> a modul képletét, <b>tisztítsd le</b> a túlbonyolított kifejezéseket, és <b>optimalizáld</b> a rendszert törtekkel és a Bézout-teszttel. Kang mindenhová hibás, „majdnem jó” képleteket rejtett — a te dolgod, hogy a pontos alakot megtaláld. <b>Minden lépést írj le és indokolj.</b></p></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+
+    <h2 id="hogyan">📋 A küldetés menete</h2>
+    <p>Három bevetést hajtotok végre. Mindegyikben van egy <b>fix feladat</b> (mindenkinek ugyanaz — ezt oldd meg pontosan), és egy <b>saját rész</b> (a csoportod alkotása). Minden lépést <b>írj le</b>: az átalakítást, a tényezőkre bontást, az egyszerűsítést, az indoklást. A tanár a leadott naplót értékeli — a lényeg a <b>pontos, követhető matek</b>.</p>
+
+    <h2 id="b1">🟢 1. bevetés — A képlet kibontása</h2>
+    <p>Egy új modul terve nevezetes azonosságokra épül. A tervrajzot kanonikus (kibontott) alakra kell hozni, hogy a gyártósor értelmezni tudja.</p>
+    <article class="feladat alap" id="kibontas">
+      <p><span class="szam">1.</span> <b>Fix — energiapajzs.</b> A pajzs teljesítménye a <span class="math inline">\((2x+3)^2\)</span> képlettel adott. Írd fel kibontva, kanonikus alakban!</p>
+      <p><span class="szam">2.</span> <b>Fix — hűtőmodul.</b> Két állapot szorzata: <span class="math inline">\((a+5)(a-5)\)</span>. Add meg a legegyszerűbb alakot!</p>
+      <p><span class="szam">3.</span> <b>Fix — meghajtójel.</b> A jel erőssége <span class="math inline">\((x-1)^3\)</span>. Bontsd ki!</p>
+      <p><span class="szam">4.</span> <b>Saját.</b> Tervezzetek egy „modul-képletet” két tag négyzeteként vagy köbeként (pl. <span class="math inline">\((2a+b)^2\)</span>), és bontsátok ki kanonikus alakra. Írjátok le, melyik azonosságot használtátok.</p>
+    </article>
+
+    <h2 id="b2">🟡 2. bevetés — A tisztogatás</h2>
+    <p>Kang túlbonyolított kifejezéseket injektált a rendszerbe. Bontsátok tényezőkre, és tisztítsátok le a törteket — de csak közös tényezővel egyszerűsítsetek!</p>
+    <article class="feladat kozep" id="tisztogatas">
+      <p><span class="szam">1.</span> <b>Fix — tényezőkre bontás.</b> Bontsátok a lehető legtöbb tényezőre: <span class="math inline">\(3x^3-12x\)</span>.</p>
+      <p><span class="szam">2.</span> <b>Fix — szenzor-kalibráció.</b> Egyszerűsítsétek, és adjátok meg az értelmezési tartományt: <span class="math inline">\(\dfrac{x^2-16}{x^2-8x+16}\)</span>.</p>
+      <p><span class="szam">3.</span> <b>Fix — adatáram.</b> Bontsátok tényezőkre: <span class="math inline">\(a^3-b^3\)</span>.</p>
+      <p><span class="szam">4.</span> <b>Saját.</b> Írjatok egy „zajos” törtet, amelynek számlálója és nevezője <b>közös tényezőt</b> tartalmaz (tehát egyszerűsíthető), és tisztítsátok le. Adjátok meg az értelmezési tartományt is.</p>
+    </article>
+
+    <h2 id="b3">🔴 3. bevetés — A rendszer optimalizálása</h2>
+    <p>A végső lépés: a részrendszerek jeleit egyetlen tiszta kifejezéssé kell vonni, és stabilitási tesztet futtatni a Bézout-tétellel.</p>
+    <article class="feladat nehez" id="optimalizalas">
+      <p><span class="szam">1.</span> <b>Fix — jelösszegzés.</b> Vonjátok egyetlen törtté: <span class="math inline">\(\dfrac{1}{x-2}+\dfrac{1}{x+2}\)</span>.</p>
+      <p><span class="szam">2.</span> <b>Fix — vezérlő.</b> Egyszerűsítsétek az emeletes törtet: <span class="math inline">\(\dfrac{\dfrac{1}{a}-\dfrac{1}{b}}{\dfrac{1}{a}+\dfrac{1}{b}}\)</span>.</p>
+      <p><span class="szam">3.</span> <b>Fix — stabilitási teszt.</b> A meghajtó polinomja <span class="math inline">\(P(x)=x^3+kx-6\)</span>. A rendszer akkor stabil, ha az <span class="math inline">\((x-2)\)</span>-vel való osztás maradéka <span class="math inline">\(0\)</span>. Határozzátok meg a <span class="math inline">\(k\)</span> paramétert! (Bézout-tétel.)</p>
+      <p><span class="szam">4.</span> <b>Saját.</b> Alkossatok egy harmadfokú <span class="math inline">\(P(x)\)</span> polinomot és egy <span class="math inline">\((x-a)\)</span> osztót, számítsátok ki a Bézout-maradékot, és döntsétek el, „stabil-e” a rendszer (osztható-e).</p>
+    </article>
+
+    <h2 id="leadas">📓 Mit adj le? — bevetési napló</h2>
+    <div class="gyakorolj">
+      <span class="ikon">🎯</span>
+      <div>
+        <p><b>Csoport:</b> 2–3 kadét. <b>Forma:</b> rövid beszámoló (kézzel írt is jó), amely tartalmazza:</p>
+        <ol class="reszfeladatok">
+          <li>az 1. bevetés <b>kibontásait</b> (a felhasznált azonosságok megjelölésével) és a saját modul-képletet;</li>
+          <li>a 2. bevetés <b>tényezőkre bontásait és tört-egyszerűsítését</b> az értelmezési tartománnyal, plusz a saját törtet;</li>
+          <li>a 3. bevetés <b>tört-összevonását, emeletes törtjét és a Bézout-tesztet</b>, plusz a saját polinomot;</li>
+          <li>minden résznél a <b>számítás lépéseit</b> — a puszta végeredmény kevés.</li>
+        </ol>
+      </div>
+    </div>
+    <p class="le halvany"><b>Hogyan értékelem?</b> Kibontás + azonosságok ~25%, tényezőkre bontás + tört-egyszerűsítés (ÉT-vel) ~30%, törtműveletek + Bézout-teszt ~30%, igényes, követhető napló ~15%. A köntös csak keret — <b>a matematika pontossága az igazi cél</b>.</p>
+
+    <div class="lapozo">
+      <a class="elozo" href="osszefoglalo.html"><span class="irany">← Előző</span><span class="hova">Tömör összefoglaló</span></a>
+      <a class="kov" href="index.html"><span class="irany">Vissza →</span><span class="hova">Témakör főoldala</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Racionális algebrai kifejezések — összefoglaló | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Racionális algebrai kifejezések</a> ›
+  <span class="itt">Tömör összefoglaló</span>
+</nav>
+<div class="hero">
+  <h1>Racionális algebrai kifejezések — tömör összefoglaló</h1>
+  <p class="alcim">A Hatalom Nyelvének minden definíciója, azonossága és eljárása egy helyen — a bevetési kártya. Ismétléshez, ellenőrző előtti átfutáshoz, nyomtatáshoz. 😉</p>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s1">Polinomok és műveletek</h2>
+    <p><b>Egytag:</b> számok és változók szorzata; <b>polinom:</b> egytagok összege, rendezett (kanonikus) alakban a kitevők csökkenő sorrendjében (<a href="tananyag-polinomok.html#def-polinom">→ tananyag</a>). Összeadás/kivonás: egynemű tagok összevonása; szorzás: minden tag minden taggal.</p>
+    <p><b>Polinomosztás:</b> <span class="math inline">\(P(x)=Q(x)\,H(x)+M(x)\)</span>, a maradék foka kisebb az osztóénál (<a href="tananyag-polinomok.html#pelda-osztas">→</a>). <b>Bézout-tétel:</b> az <span class="math inline">\((x-a)\)</span>-val való osztás maradéka <span class="math inline">\(M=P(a)\)</span>; osztható <span class="math inline">\(\iff P(a)=0\)</span> (<a href="tananyag-polinomok.html#tetel-bezout">→</a>).</p>
+
+    <h2 id="s2">Nevezetes azonosságok</h2>
+    <div class="doboz tetel">
+      <p class="cim"><span class="ikon">📘</span> Fejből kell</p>
+      \[(a\pm b)^2=a^2\pm 2ab+b^2,\qquad (a+b)(a-b)=a^2-b^2,\]
+      \[(a\pm b)^3=a^3\pm 3a^2b+3ab^2\pm b^3,\]
+      \[a^3\pm b^3=(a\pm b)(a^2\mp ab+b^2).\]
+      <p>Oda-vissza: balról jobbra <b>kibontás</b>, jobbról balra <b>tényezőkre bontás</b> (<a href="tananyag-polinomok.html#tetel-azonossagok">→ tananyag</a>).</p>
+    </div>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Két klasszikus csapda</p>
+      <p><span class="math inline">\((a+b)^2\neq a^2+b^2\)</span> (ott a <span class="math inline">\(+2ab\)</span>); és a négyzetek <b>összege</b> <span class="math inline">\((a^2+b^2)\)</span> valósban <b>nem</b> bontható.</p>
+    </div>
+
+    <h2 id="s3">Szorzattá alakítás</h2>
+    <p><b>Négy eszköz:</b> (1) közös tényező kiemelése <span class="math inline">\(ab+ac=a(b+c)\)</span> (<a href="tananyag-szorzatta-alakitas.html#def-kiemeles">→</a>); (2) nevezetes azonosságok visszafelé (négyzetkülönbség, teljes négyzet, köbök) (<a href="tananyag-szorzatta-alakitas.html#tetel-bontas-azonossagok">→</a>); (3) csoportosítás <span class="math inline">\(ax+ay+bx+by=(a+b)(x+y)\)</span> (<a href="tananyag-szorzatta-alakitas.html#def-csoportositas">→</a>); (4) ezek kombinációja.</p>
+    <p><b>Polinomok LKO/LKT-je:</b> szorzat alakból — LKO = a közös tényezők (legkisebb kitevőn), LKT = az összes tényező (legnagyobb kitevőn) (<a href="tananyag-szorzatta-alakitas.html#pelda-lko-lkt">→</a>).</p>
+
+    <h2 id="s4">Algebrai törtek</h2>
+    <p><b>Értelmezési tartomány:</b> a nevező <span class="math inline">\(\neq 0\)</span> — mindig ezzel kezdd (<a href="tananyag-algebrai-tortek.html#def-ert">→</a>). <b>Egyszerűsítés:</b> csak <b>közös tényezővel</b>, ezért előbb szorzattá alakíts; taggal soha (<a href="tananyag-algebrai-tortek.html#tetel-egyszerusites">→</a>).</p>
+    <p><b>Műveletek:</b> szorzás <span class="math inline">\(\dfrac{a}{b}\cdot\dfrac{c}{d}=\dfrac{ac}{bd}\)</span>, osztás a reciprokkal (<a href="tananyag-algebrai-tortek.html#tetel-szorzas-osztas">→</a>); összeadás/kivonás közös nevezőre (LKT) hozva: <span class="math inline">\(\dfrac{a}{b}\pm\dfrac{c}{d}=\dfrac{ad\pm bc}{bd}\)</span> (<a href="tananyag-algebrai-tortek.html#tetel-osszeadas">→</a>). <b>Emeletes tört:</b> a fő törtvonal osztás — reciprokkal szorozz (<a href="tananyag-algebrai-tortek.html#pelda-emeletes">→</a>).</p>
+    <p class="le halvany">Egyetlen aranyszabály mindenre: <b>előbb szorzattá alakíts, azután számolj</b> — így egyszerűsödik minden.</p>
+
+    <div class="gyakorolj">
+      <span class="ikon">🎯</span>
+      <p>Élesben: a <a href="feladatok-racionalis-algebrai-kifejezesek.html">feladatgyűjtemény</a> gyakorló ellenőrzőjével mérd fel magad, majd <a href="terepkuldetes.html">A Hatalom Nyelve terepküldetésen</a> alkalmazd!</p>
+    </div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-racionalis-algebrai-kifejezesek.html"><span class="irany">← Előző</span><span class="hova">Feladatgyűjtemény</span></a>
+      <a class="kov" href="terepkuldetes.html"><span class="irany">Következő →</span><span class="hova">Terepküldetés — A Hatalom Nyelve</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+</body>
+</html>

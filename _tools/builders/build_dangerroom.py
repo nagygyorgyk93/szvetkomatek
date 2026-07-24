@@ -381,3 +381,65 @@ dr_page(DEST05, "index.html", "Geometria", "feladatok-hazi.html",
  "index.html", "Témakör főoldala", "osszefoglalo.html", "Tömör összefoglaló",
  "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
 print("05 Danger Room kész: Alap", len(A05), "Közép", len(K05), "Nehéz", len(N05))
+
+# =========================================================== 06 (Racionális algebrai kifejezések)
+# A teljes témakört fedi (ishod 20): polinomműveletek, azonosságok, osztás+Bézout, bontás, törtek.
+# Ishod 21 (x²≥0 / AM–GM) NEM kerül ide (felhasználói döntés) — csak a tananyagban, Kang-csapdaként.
+assert (1-2+1+1)==1 and (8-12+2+2)==0  # Bézout ellenőrzők (A5: P(1)=1; N3: m=1 -> P(2)=0)
+DEST06 = glob.glob("/sessions/*/mnt/Claude/web/1e/06-racionalis-algebrai-kifejezesek")[0]
+A06 = [
+ ("Végezd el a műveleteket!",
+  ["$3a^2+5a^2-a^2$","$2x(3x-4)$","$(x+6)^2$","$(a-3)(a+3)$"],
+  "a) $7a^2$; b) $6x^2-8x$; c) $x^2+12x+36$; d) $a^2-9$.", True),
+ ("Írd fel kanonikus alakban: $(x+4)^2-(x^2+3x)$.",
+  None, "$5x+16$."),
+ ("Bontsd tényezőkre!",
+  ["$10x+15$","$x^2-49$","$x^2+10x+25$"],
+  "a) $5(2x+3)$; b) $(x-7)(x+7)$; c) $(x+5)^2$.", True),
+ ("Bontsd tényezőkre!",
+  ["$6a^2-9a$","$9x^2-16$"],
+  ["$3a(2a-3)$","$(3x-4)(3x+4)$"]),
+ ("A Bézout-tétellel add meg a maradékot: $P(x)=x^3-2x^2+x+1$ osztva $x-1$-gyel.",
+  None, "$1$."),
+ ("Mely értékekre értelmezett?",
+  ["$\\dfrac{1}{x+5}$","$\\dfrac{3}{x^2-9}$"],
+  ["$x\\neq -5$","$x\\neq \\pm 3$"]),
+ ("Egyszerűsítsd, és add meg az értelmezési tartományt: $\\dfrac{x^2-1}{x+1}$.",
+  None, "$x-1$, ÉT: $x\\neq -1$."),
+ ("Végezd el a törtek műveleteit!",
+  ["$\\dfrac{1}{x}+\\dfrac{2}{x}$","$\\dfrac{a}{2}\\cdot\\dfrac{4}{a}$"],
+  ["$\\dfrac{3}{x}$","$2$"]),
+]
+K06 = [
+ ("Írd fel kanonikus alakban: $(2x+1)^2-(x-1)(x+2)$.",
+  None, "$3x^2+3x+3$."),
+ ("Végezd el a polinomosztást: $(x^3+2x^2-5x+1):(x-1)$.",
+  None, "$x^2+3x-2$, a maradék $-1$."),
+ ("Bontsd tényezőkre!",
+  ["$x^3+64$","$x^3-x$"],
+  ["$(x+4)(x^2-4x+16)$","$x(x-1)(x+1)$"]),
+ ("Egyszerűsítsd, és add meg az értelmezési tartományt: $\\dfrac{x^2+5x+6}{x^2-4}$.",
+  None, "$\\dfrac{x+3}{x-2}$, ÉT: $x\\neq \\pm 2$."),
+ ("Add össze: $\\dfrac{1}{x-3}+\\dfrac{1}{x+3}$.",
+  None, "$\\dfrac{2x}{x^2-9}$."),
+]
+N06 = [
+ ("Egyszerűsítsd az emeletes törtet: $\\dfrac{\\dfrac{1}{x}-\\dfrac{1}{y}}{\\dfrac{1}{x}+\\dfrac{1}{y}}$.",
+  None, "$\\dfrac{y-x}{y+x}$."),
+ ("Vond egyetlen törtté: $\\dfrac{1}{a-2}-\\dfrac{1}{a+2}+\\dfrac{4}{a^2-4}$.",
+  None, "$\\dfrac{8}{a^2-4}$."),
+ ("Határozd meg az $m$ paramétert úgy, hogy $P(x)=x^3-3x^2+mx+2$ osztható legyen $x-2$-vel!",
+  None, "$m=1$."),
+]
+brief06 = ("🕹️ <b>SZVETI:</b> <b>Veszélyterem</b>-szimuláció, A Hatalom Nyelve modul. Ez a <b>Danger Room</b> otthoni "
+ "edzésváltozata — itt gyakorolsz a saját tempódban. A szimuláció a <b>teljes témakört</b> lefedi: polinomműveletek "
+ "és nevezetes azonosságok, polinomosztás és a Bézout-tétel, tényezőkre bontás, valamint az algebrai törtek "
+ "(értelmezési tartomány, egyszerűsítés, alapműveletek). Haladj a fokozatokon: zöld (alap) → sárga (közép) → piros "
+ "(nehéz). A végeredményt minden feladatnál lenyithatod — de előbb küzdd le magad!")
+dr_page(DEST06, "index.html", "Racionális algebrai kifejezések", "feladatok-hazi.html",
+ "🕹️ Danger Room — házi feladatgyűjtemény",
+ "Egyetlen, a teljes témakört lefedő házi feladatsor: polinomok, nevezetes azonosságok, tényezőkre bontás, Bézout-tétel és algebrai törtek. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
+ brief06, sect(A06, K06, N06),
+ "index.html", "Témakör főoldala", "osszefoglalo.html", "Tömör összefoglaló",
+ "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
+print("06 Danger Room kész: Alap", len(A06), "Közép", len(K06), "Nehéz", len(N06))

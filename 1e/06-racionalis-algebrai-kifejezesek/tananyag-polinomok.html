@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Polinomok — az egész algebrai kifejezések — tananyag | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Racionális algebrai kifejezések</a> ›
+  <span class="itt">Polinomok — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Polinomok — az egész algebrai kifejezések</h1>
+  <p class="alcim">Egytag és polinom, fokszám és rendezett alak; összeadás, kivonás, szorzás; a nevezetes azonosságok; polinomosztás és a Bézout-tétel — a tech képleteinek nyelvtana.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Hatalom Nyelve · 1/3</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+      <div class="brief"><p>📡 <b>Iron Man (Tony Stark) &amp; Shuri:</b> Kadét, a technológia nyelve a <b>képlet</b>. Egy algebrai kifejezés olyan, mint egy gép terve: ugyanazt a működést sokféleképpen le lehet írni, de mindig van egy <b>legtisztább, kanonikus alak</b>. Aki uralja a polinomok műveleteit és a <b>nevezetes azonosságokat</b>, az bármilyen bonyolult kifejezést a legegyszerűbb formájára hoz — és azonnal kiszúrja, ha Kang egy <b>hibás képletet</b> csempészett a rendszerbe. Ez „A Hatalom Nyelve” első leckéje: <b>a tiszta alak a hatalom</b>.</p></div>
+    <p>Az <b>algebrai kifejezés</b> számokból és betűkkel jelölt (ismeretlen vagy változó) mennyiségekből, műveleti jelekkel felépített kifejezés. Ha csak összeadás, kivonás és szorzás (illetve természetes kitevős hatványozás) szerepel benne, <b>egész</b> algebrai kifejezésről beszélünk — ezek a <b>polinomok</b>. Ebben az egységben ezekkel dolgozunk.</p>
+
+    <h2 id="s1">Egytag, polinom, fokszám</h2>
+    <div class="doboz definicio" id="def-egytag">
+      <p class="cim"><span class="ikon">📗</span> Egytag (monom)</p>
+      <p>Az <b>egytag</b> számok és változók szorzata, pl. <span class="math inline">\(-3x^2y\)</span>. A szám a monom <b>együtthatója</b> (itt <span class="math inline">\(-3\)</span>), a változók kitevőinek összege a monom <b>foka</b> (itt <span class="math inline">\(2+1=3\)</span>). Az <b>egynemű</b> egytagok ugyanazokat a változókat ugyanazokon a kitevőkön tartalmazzák (pl. <span class="math inline">\(5x^2y\)</span> és <span class="math inline">\(-2x^2y\)</span>) — ezeket össze lehet vonni.</p>
+    </div>
+    <div class="doboz definicio" id="def-polinom">
+      <p class="cim"><span class="ikon">📗</span> Polinom</p>
+      <p>A <b>polinom</b> egytagok (a <b>tagok</b>) összege. Egy változóban a <b>rendezett (kanonikus) alak</b> a kitevők csökkenő sorrendje szerint írja fel, pl. <span class="math inline">\(P(x)=2x^3-5x^2+9x-1\)</span>. A polinom <b>foka</b> a legmagasabb fokú tag foka (itt <span class="math inline">\(3\)</span>), a <b>főegyütthatója</b> a legmagasabb fokú tag együtthatója (itt <span class="math inline">\(2\)</span>).</p>
+    </div>
+    <div class="doboz pelda" id="pelda-osszevonas">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Vond össze: <span class="math inline">\(8x^3+17x^3-32x^3\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p>Egynemű tagok, csak az együtthatókat adjuk össze: <span class="math inline">\((8+17-32)x^3=-7x^3\)</span>.</p></div></details>
+    </div>
+
+    <h2 id="s2">Műveletek polinomokkal</h2>
+    <p>Polinomokat úgy <b>adunk össze / vonunk ki</b>, hogy az egynemű tagokat összevonjuk (kivonásnál a kivonandó minden tagjának előjelét megfordítjuk). <b>Szorzásnál</b> minden tagot minden taggal megszorzunk (disztributivitás), majd összevonunk.</p>
+    <div class="doboz pelda" id="pelda-szorzas">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Végezd el: <span class="math inline">\(3a(2-5b)\)</span> és <span class="math inline">\((x-2)(x+7)\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(3a(2-5b)=6a-15ab\)</span>.</p><p><span class="math inline">\((x-2)(x+7)=x^2+7x-2x-14=x^2+5x-14\)</span>.</p></div></details>
+    </div>
+    <div class="doboz pelda" id="pelda-kanonikus">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Írd fel kanonikus alakban: <span class="math inline">\((x+2)^2-(x-1)(x+1)\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\((x^2+4x+4)-(x^2-1)=4x+5\)</span>.</p></div></details>
+    </div>
+
+    <h2 id="s3">Nevezetes azonosságok</h2>
+    <p>Néhány szorzat annyiszor tér vissza, hogy érdemes fejből tudni. Ezek „A Hatalom Nyelvének” alapszavai — oda-vissza (kibontáshoz és tényezőkre bontáshoz egyaránt).</p>
+    <div class="doboz tetel" id="tetel-azonossagok">
+      <p class="cim"><span class="ikon">📘</span> A nevezetes azonosságok</p>
+      \[(a+b)^2=a^2+2ab+b^2,\qquad (a-b)^2=a^2-2ab+b^2,\]
+      \[(a+b)(a-b)=a^2-b^2,\]
+      \[(a+b)^3=a^3+3a^2b+3ab^2+b^3,\qquad (a-b)^3=a^3-3a^2b+3ab^2-b^3.\]
+    </div>
+    <div class="doboz pelda" id="pelda-azonossag">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Számítsd ki: <span class="math inline">\((2x+1)^2\)</span> és <span class="math inline">\((x+1)^3\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\((2x+1)^2=(2x)^2+2\cdot 2x\cdot 1+1^2=4x^2+4x+1\)</span>.</p><p><span class="math inline">\((x+1)^3=x^3+3x^2+3x+1\)</span>.</p></div></details>
+    </div>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Kang csapdája</p>
+      <span class="math inline">\((a+b)^2\)</span> <b>nem</b> egyenlő <span class="math inline">\(a^2+b^2\)</span>-tel! Mindig ott a <b>kétszeres szorzat</b>: <span class="math inline">\(+2ab\)</span>. Aki ezt lehagyja, annak a képlete „majdnem jó” — és pont ezzel nyit rést Kang.
+    </div>
+    <div class="kviz" data-answer="1" data-jo="✔ (x−3)² = x² − 6x + 9 — ott a −2·x·3 = −6x középső tag." data-nem="✘ Ne feledd a kétszeres szorzatot: (x−3)² = x² − 6x + 9.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi <span class="math inline">\((x-3)^2\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(x^2-9\)</span></button><button><span class="math inline">\(x^2-6x+9\)</span></button><button><span class="math inline">\(x^2-6x-9\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Polinom osztása polinommal</h2>
+    <p>A polinomosztás ugyanúgy működik, mint a számok maradékos osztása: minden lépésben a maradék legmagasabb fokú tagját osztjuk az osztó legmagasabb fokú tagjával. A vége: <span class="math inline">\(P(x)=Q(x)\cdot H(x)+M(x)\)</span>, ahol a <span class="math inline">\(M(x)\)</span> maradék foka kisebb az osztóénál.</p>
+    <div class="doboz pelda" id="pelda-osztas">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Végezd el: <span class="math inline">\((2x^3+3x^2-6x+5):(x+2)\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p>A hányados <span class="math inline">\(2x^2-x-4\)</span>, a maradék <span class="math inline">\(13\)</span>, azaz <span class="math inline">\(2x^3+3x^2-6x+5=(x+2)(2x^2-x-4)+13\)</span>.</p></div></details>
+    </div>
+
+    <h2 id="s5">A Bézout-tétel</h2>
+    <div class="doboz tetel" id="tetel-bezout">
+      <p class="cim"><span class="ikon">📘</span> Bézout-tétel</p>
+      <p>A <span class="math inline">\(P(x)\)</span> polinomnak az <span class="math inline">\((x-a)\)</span> elsőfokú binommal való osztási <b>maradéka</b> éppen a helyettesítési érték: <span class="math inline">\(M=P(a)\)</span>. Következmény: <span class="math inline">\(P(x)\)</span> pontosan akkor osztható <span class="math inline">\((x-a)\)</span>-val, ha <span class="math inline">\(P(a)=0\)</span>.</p>
+    </div>
+    <div class="doboz pelda" id="pelda-bezout">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Mennyi a <span class="math inline">\(P(x)=x^3-4x^2-5x+6\)</span> polinom maradéka <span class="math inline">\((x+3)\)</span>-mal osztva?
+      <details><summary>Megoldás</summary><div class="bel"><p>Itt <span class="math inline">\(a=-3\)</span>: <span class="math inline">\(P(-3)=-27-36+15+6=-42\)</span>. A maradék <span class="math inline">\(-42\)</span> (nem osztható).</p></div></details>
+    </div>
+    <div class="kviz" data-answer="1" data-jo="✔ P(1) = 1 + 2 − 5 = −2 — a Bézout-tétel szerint ez a maradék." data-nem="✘ A maradék P(1) = 1 + 2 − 5 = −2.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi a <span class="math inline">\(P(x)=x^2+2x-5\)</span> maradéka <span class="math inline">\((x-1)\)</span>-gyel osztva?</p>
+      <div class="opciok"><button><span class="math inline">\(5\)</span></button><button><span class="math inline">\(-2\)</span></button><button><span class="math inline">\(0\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-racionalis-algebrai-kifejezesek.html#alap-1">🐜 Ant-Man-bevetés <span class="cimke">A 1–6</span></a><a class="sav hulk" href="feladatok-racionalis-algebrai-kifejezesek.html#kozep-2">💥 Hulk-bevetés <span class="cimke">K 2–4</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Shuri:</b> Megvannak a nyelv alapszavai. A következő modulban <b>visszafelé</b> tanulsz meg olvasni: hogyan bontasz egy bonyolult kifejezést a <b>legegyszerűbb tényezőire</b> — ez a tisztogatás művészete.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">Témakör-nyitó</span></a>
+      <a class="kov" href="tananyag-szorzatta-alakitas.html"><span class="irany">Következő →</span><span class="hova">Szorzattá alakítás</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
