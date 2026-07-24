@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Négyszögek — tananyag | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Geometria</a> ›
+  <span class="itt">Négyszögek — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Négyszögek</h1>
+  <p class="alcim">A négyszög szögösszege; a paralelogramma, téglalap, rombusz, négyzet, deltoid és trapéz
+  tulajdonságai; valamint a húr- és az érintőnégyszög.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Tükör-világ · 4/7</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+      <div class="brief"><p>📡 <b>Wanda:</b> A négyszögek adják a kereteket, a paneleket, a képernyőket — a Tükör-világ
+      építőelemeit. Mindegyiknek van egy-egy „szuperképessége”: a paralelogramma átlói felezik egymást, a rombuszé
+      merőlegesek, a téglalapé egyenlők. Ha ismered a család szabályait, egyetlen adatból kiszámolod az összes többit.</p></div>
+    <p>A négyszögnek négy csúcsa, négy oldala és két átlója van. Kezdjük a legfontosabb tétellel.</p>
+
+    <h2 id="s1">A négyszög szögösszege</h2>
+    <div class="doboz tetel" id="tetel-negyszog-szogosszeg">
+      <p class="cim"><span class="ikon">📘</span> A belső szögek összege</p>
+      <p>Bármely négyszög belső szögeinek összege <span class="math inline">\(360^\circ\)</span> (egy átlóval két háromszögre bontható,
+      <span class="math inline">\(2\cdot 180^\circ=360^\circ\)</span>):</p>
+      \[\alpha+\beta+\gamma+\delta=360^\circ.\]
+    </div>
+    <div class="doboz pelda" id="pelda-negyszog-szog">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Egy négyszög három szöge <span class="math inline">\(81^\circ\)</span>, <span class="math inline">\(105^\circ\)</span> és <span class="math inline">\(99^\circ\)</span>. Mekkora a negyedik?
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(\delta=360^\circ-(81^\circ+105^\circ+99^\circ)=360^\circ-285^\circ=75^\circ\)</span>.</p></div></details>
+    </div>
+
+    <h2 id="s2">A négyszögek családja</h2>
+    <div class="doboz definicio" id="def-specialis-negyszogek">
+      <p class="cim"><span class="ikon">📗</span> A speciális négyszögek</p>
+      <ul>
+        <li><b>Trapéz</b>: van egy pár párhuzamos oldala (az alapok).</li>
+        <li><b>Paralelogramma</b>: két pár párhuzamos oldala van.</li>
+        <li><b>Téglalap</b>: paralelogramma, amelynek szögei derékszögek.</li>
+        <li><b>Rombusz</b>: paralelogramma, amelynek minden oldala egyenlő.</li>
+        <li><b>Négyzet</b>: téglalap is és rombusz is.</li>
+        <li><b>Deltoid</b>: két-két szomszédos oldala egyenlő.</li>
+      </ul>
+    </div>
+    <div class="doboz tetel" id="tetel-negyszog-tulajdonsagok">
+      <p class="cim"><span class="ikon">📘</span> Az átlók és oldalak tulajdonságai</p>
+      <ul>
+        <li><b>Paralelogramma</b>: a szemközti oldalak és szögek egyenlők, az átlók <b>felezik</b> egymást.</li>
+        <li><b>Téglalap</b>: az átlók egyenlők (és felezik egymást).</li>
+        <li><b>Rombusz</b>: az átlók <b>merőlegesek</b>, felezik egymást és a belső szögeket is.</li>
+        <li><b>Deltoid</b>: az átlói merőlegesek, a szimmetriaátló felezi a másikat.</li>
+      </ul>
+    </div>
+    <div class="venn">
+      <div class="vbox">
+        <svg viewBox="0 0 220 150" width="220" height="150" role="img" aria-label="Paralelogramma az átlóival">
+          <polygon points="30,120 150,120 190,40 70,40" fill="#d1fae5" stroke="#047857" stroke-width="2"/>
+          <line x1="30" y1="120" x2="190" y2="40" stroke="#8b5cf6" stroke-width="1.4"/>
+          <line x1="150" y1="120" x2="70" y2="40" stroke="#8b5cf6" stroke-width="1.4"/>
+          <circle cx="110" cy="80" r="3" fill="#ef4444"/>
+        </svg>
+        <div class="cap">paralelogramma — átlói felezik egymást</div>
+      </div>
+      <div class="vbox">
+        <svg viewBox="0 0 220 150" width="220" height="150" role="img" aria-label="Trapéz párhuzamos alapokkal">
+          <polygon points="25,120 195,120 155,40 70,40" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+          <text x="105" y="137" font-size="12" fill="#0f172a">a</text>
+          <text x="108" y="35" font-size="12" fill="#0f172a">c</text>
+        </svg>
+        <div class="cap">trapéz — \(a\parallel c\) (alapok)</div>
+      </div>
+    </div>
+
+    <h2 id="s3">Trapéz</h2>
+    <div class="doboz tetel" id="tetel-trapez">
+      <p class="cim"><span class="ikon">📘</span> A trapéz szárán fekvő szögek</p>
+      <p>A trapéz <b>ugyanazon száron</b> fekvő két belső szöge <b>kiegészítő</b> (összegük <span class="math inline">\(180^\circ\)</span>), mert az alapok
+      párhuzamosak (társszögek). Az <b>egyenlő szárú</b> trapézban az alapon fekvő szögek egyenlők, és az átlók is egyenlők.</p>
+    </div>
+
+    <h2 id="s4">Húrnégyszög és érintőnégyszög</h2>
+    <div class="doboz definicio" id="def-hurnegyszog">
+      <p class="cim"><span class="ikon">📗</span> Húrnégyszög</p>
+      <p>A <b>húrnégyszög</b> köré <b>kör írható</b> (mind a négy csúcsa egy körön van). Ekkor a <b>szemközti szögek
+      összege</b> <span class="math inline">\(180^\circ\)</span>: <span class="math inline">\(\alpha+\gamma=\beta+\delta=180^\circ\)</span>.</p>
+    </div>
+    <div class="doboz definicio" id="def-erintonegyszog">
+      <p class="cim"><span class="ikon">📗</span> Érintőnégyszög</p>
+      <p>Az <b>érintőnégyszögbe kör írható</b> (a kör mind a négy oldalt érinti). Ekkor a <b>szemközti oldalak
+      összege egyenlő</b>: <span class="math inline">\(a+c=b+d\)</span>.</p>
+    </div>
+    <div class="venn">
+      <div class="vbox">
+        <svg viewBox="0 0 300 240" width="300" height="240" role="img" aria-label="Húrnégyszög a körülírt körrel">
+          <circle cx="150" cy="120" r="90" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+          <polygon points="119,35 235,89 202,194 65,151" fill="none" stroke="#047857" stroke-width="2.5"/>
+          <text x="112" y="30" font-size="12" fill="#0f172a">A</text><text x="240" y="86" font-size="12" fill="#0f172a">B</text>
+          <text x="206" y="205" font-size="12" fill="#0f172a">C</text><text x="46" y="152" font-size="12" fill="#0f172a">D</text>
+        </svg>
+        <div class="cap">húrnégyszög — \(\alpha+\gamma=180^\circ\)</div>
+      </div>
+      <div class="vbox">
+        <svg viewBox="0 0 290 250" width="290" height="250" role="img" aria-label="Érintőnégyszög a beírt körrel">
+          <polygon points="184.2,46.6 230.2,145.3 127.3,204.7 55.9,81" fill="none" stroke="#047857" stroke-width="2.5"/>
+          <circle cx="150" cy="120" r="62" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+          <text x="212" y="92" font-size="12" fill="#0f172a" font-style="italic">a</text>
+          <text x="182" y="185" font-size="12" fill="#0f172a" font-style="italic">b</text>
+          <text x="82" y="152" font-size="12" fill="#0f172a" font-style="italic">c</text>
+          <text x="112" y="62" font-size="12" fill="#0f172a" font-style="italic">d</text>
+        </svg>
+        <div class="cap">érintőnégyszög — \(a+c=b+d\)</div>
+      </div>
+    </div>
+    <div class="doboz pelda" id="pelda-erintonegyszog">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Egy érintőnégyszög három oldala <span class="math inline">\(BC=13\)</span>, <span class="math inline">\(CD=23\)</span> és <span class="math inline">\(AD=33\)</span>. Mekkora az <span class="math inline">\(AB\)</span> oldal?
+      <details><summary>Megoldás</summary><div class="bel"><p>Az érintőnégyszögben <span class="math inline">\(AB+CD=BC+AD\)</span>, ezért <span class="math inline">\(AB=BC+AD-CD=13+33-23=23\)</span>.</p></div></details>
+    </div>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Kang csapdája</p>
+      Ne cseréld fel a két szabályt! A <b>húr</b>négyszögnél a <b>szemközti szögek</b> összege <span class="math inline">\(180^\circ\)</span>; az
+      <b>érintő</b>négyszögnél a <b>szemközti oldalak</b> összege egyenlő. Az egyik szögekről, a másik oldalakról szól.
+    </div>
+    <div class="kviz" data-answer="0" data-jo="✔ Húrnégyszög: a szemközti szögek összege 180°, tehát 180° − 110° = 70°." data-nem="✘ Húrnégyszögben a szemközti szögek kiegészítők: 180° − 110° = 70°.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy húrnégyszög egyik szöge <span class="math inline">\(110^\circ\)</span>. Mekkora a vele <b>szemközti</b> szög?</p>
+      <div class="opciok"><button><span class="math inline">\(70^\circ\)</span></button><button><span class="math inline">\(110^\circ\)</span></button><button><span class="math inline">\(90^\circ\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-geometria.html#alap-9">🐜 Ant-Man-bevetés <span class="cimke">Alap 9–11</span></a><a class="sav hulk" href="feladatok-geometria.html#kozep-6">💥 Hulk-bevetés <span class="cimke">Közép 6–7</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Pietro:</b> A négyszögek megvannak. Most tágítsuk ki a képet a <b>sokszögekre</b> és a
+    <b>körre</b> — ott derül ki, hány átlója van egy alakzatnak, és mi a titka a kerületi szögnek.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-nevezetes-pontok.html"><span class="irany">← Előző</span><span class="hova">A háromszög nevezetes pontjai</span></a>
+      <a class="kov" href="tananyag-sokszogek-es-kor.html"><span class="irany">Következő →</span><span class="hova">Sokszögek és a kör</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

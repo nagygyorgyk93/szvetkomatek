@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A háromszög nevezetes pontjai — tananyag | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Geometria</a> ›
+  <span class="itt">A háromszög nevezetes pontjai — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A háromszög nevezetes pontjai</h1>
+  <p class="alcim">Oldalfelező merőlegesek és a körülírt kör, szögfelezők és a beírt kör, súlyvonalak és a súlypont,
+  magasságvonalak és a magasságpont.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Tükör-világ · 3/7</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+      <div class="brief"><p>📡 <b>Wanda:</b> Minden háromszögnek van négy „rejtett” pontja, ahol három-három vonal
+      <b>mindig egy pontban</b> találkozik — bármilyen is a háromszög. Ezek a nevezetes pontok. Kettőjükhöz egy-egy
+      <b>kör</b> tartozik: az egyik köré rajzolható, a másik belé. Ha ismered őket, egyetlen ponttal stabilizálod az
+      egész alakzatot.</p></div>
+    <p>Négy vonaltípust vizsgálunk: az oldalfelező merőlegeseket, a szögfelezőket, a súlyvonalakat és a
+    magasságvonalakat. Mindegyikből három van, és mindegyik hármas <b>egy közös pontban</b> metszi egymást.</p>
+
+    <h2 id="s1">Oldalfelező merőlegesek — a körülírt kör</h2>
+    <div class="doboz definicio" id="def-oldalfelezo-meroleges">
+      <p class="cim"><span class="ikon">📗</span> Oldalfelező merőleges</p>
+      <p>Egy szakasz <b>oldalfelező merőlegese</b> (felezőmerőlegese) a szakasz felezőpontján áthaladó, rá merőleges
+      egyenes. Pontjai <b>egyenlő távol</b> vannak a szakasz két végpontjától.</p>
+    </div>
+    <div class="doboz tetel" id="tetel-korulirt">
+      <p class="cim"><span class="ikon">📘</span> A körülírt kör középpontja</p>
+      <p>A háromszög három oldalfelező merőlegese <b>egy pontban</b> metszi egymást. Ez a pont (<span class="math inline">\(O\)</span>) egyenlő
+      távol van mindhárom csúcstól, ezért ő a <b>körülírt kör</b> középpontja.</p>
+    </div>
+    <div class="svgcard">
+      <svg viewBox="0 0 330 300" width="330" height="300" role="img" aria-label="Háromszög a körülírt körével és O középponttal">
+        <circle cx="165" cy="166" r="121.5" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+        <polygon points="45,185 285,185 175,45" fill="none" stroke="#047857" stroke-width="2.5"/>
+        <line x1="165" y1="166" x2="165" y2="185" stroke="#64748b" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <line x1="165" y1="166" x2="230" y2="115" stroke="#64748b" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <line x1="165" y1="166" x2="110" y2="115" stroke="#64748b" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <circle cx="165" cy="166" r="4" fill="#ef4444"/><text x="171" y="162" font-size="14" fill="#ef4444">O</text>
+        <text x="34" y="198" font-size="13" fill="#0f172a">A</text><text x="288" y="198" font-size="13" fill="#0f172a">B</text><text x="170" y="40" font-size="13" fill="#0f172a">C</text>
+      </svg>
+      <div class="cap">A körülírt kör átmegy mind a három csúcson; középpontja \(O\) az oldalfelező merőlegesek metszéspontja.</div>
+    </div>
+
+    <h2 id="s2">Szögfelezők — a beírt kör</h2>
+    <div class="doboz definicio" id="def-szogfelezo">
+      <p class="cim"><span class="ikon">📗</span> Szögfelező</p>
+      <p>A <b>szögfelező</b> a szöget két egyenlő részre osztó félegyenes. Pontjai <b>egyenlő távol</b> vannak a szög
+      két szárától.</p>
+    </div>
+    <div class="doboz tetel" id="tetel-beirt">
+      <p class="cim"><span class="ikon">📘</span> A beírt kör középpontja</p>
+      <p>A háromszög három belső szögfelezője <b>egy pontban</b> metszi egymást. Ez a pont (<span class="math inline">\(I\)</span>) egyenlő távol
+      van mindhárom oldaltól, ezért ő a <b>beírt kör</b> középpontja.</p>
+    </div>
+    <div class="svgcard">
+      <svg viewBox="0 0 330 210" width="330" height="210" role="img" aria-label="Háromszög a beírt körével és I középponttal">
+        <polygon points="45,185 285,185 175,45" fill="none" stroke="#047857" stroke-width="2.5"/>
+        <circle cx="171.5" cy="129.8" r="55.2" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+        <line x1="45" y1="185" x2="171.5" y2="129.8" stroke="#64748b" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <line x1="285" y1="185" x2="171.5" y2="129.8" stroke="#64748b" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <line x1="175" y1="45" x2="171.5" y2="129.8" stroke="#64748b" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <circle cx="171.5" cy="129.8" r="4" fill="#ef4444"/><text x="177" y="126" font-size="14" fill="#ef4444">I</text>
+        <text x="34" y="198" font-size="13" fill="#0f172a">A</text><text x="288" y="198" font-size="13" fill="#0f172a">B</text><text x="170" y="40" font-size="13" fill="#0f172a">C</text>
+      </svg>
+      <div class="cap">A beírt kör érinti mind a három oldalt; középpontja \(I\) a belső szögfelezők metszéspontja.</div>
+    </div>
+
+    <h2 id="s3">Súlyvonalak — a súlypont</h2>
+    <div class="doboz definicio" id="def-sulyvonal">
+      <p class="cim"><span class="ikon">📗</span> Súlyvonal és súlypont</p>
+      <p>A <b>súlyvonal</b> a csúcsot a szemközti oldal felezőpontjával összekötő szakasz. A három súlyvonal <b>egy
+      pontban</b> metszi egymást: ez a <b>súlypont</b> (<span class="math inline">\(S\)</span>). A súlypont a súlyvonalat a csúcstól számítva
+      <span class="math inline">\(2:1\)</span> arányban osztja.</p>
+    </div>
+    <div class="svgcard">
+      <svg viewBox="0 0 330 210" width="330" height="210" role="img" aria-label="Háromszög a három súlyvonalával és S súlyponttal">
+        <polygon points="45,185 285,185 175,45" fill="none" stroke="#047857" stroke-width="2.5"/>
+        <line x1="45" y1="185" x2="230" y2="115" stroke="#8b5cf6" stroke-width="1.6"/>
+        <line x1="285" y1="185" x2="110" y2="115" stroke="#8b5cf6" stroke-width="1.6"/>
+        <line x1="175" y1="45" x2="165" y2="185" stroke="#8b5cf6" stroke-width="1.6"/>
+        <circle cx="168.3" cy="138.3" r="4" fill="#ef4444"/><text x="174" y="135" font-size="14" fill="#ef4444">S</text>
+        <text x="34" y="198" font-size="13" fill="#0f172a">A</text><text x="288" y="198" font-size="13" fill="#0f172a">B</text><text x="170" y="40" font-size="13" fill="#0f172a">C</text>
+      </svg>
+      <div class="cap">A súlypont \(S\) a súlyvonalakat a csúcstól \(2:1\) arányban osztja.</div>
+    </div>
+
+    <h2 id="s4">Magasságvonalak — a magasságpont</h2>
+    <div class="doboz definicio" id="def-magassag">
+      <p class="cim"><span class="ikon">📗</span> Magasságvonal és magasságpont</p>
+      <p>A <b>magasságvonal</b> a csúcsból a szemközti oldal egyenesére bocsátott merőleges. A három magasságvonal
+      egyenese <b>egy pontban</b> metszi egymást: ez a <b>magasságpont</b> (<span class="math inline">\(M\)</span>).</p>
+    </div>
+    <div class="tblwrap">
+    <table>
+      <tr><th>Vonal (3 db)</th><th>Metszéspont</th><th>Kapcsolódó kör</th></tr>
+      <tr><td>oldalfelező merőlegesek</td><td>körülírt kör közép, <span class="math inline">\(O\)</span></td><td>körülírt kör (a csúcsokon át)</td></tr>
+      <tr><td>szögfelezők</td><td>beírt kör közép, <span class="math inline">\(I\)</span></td><td>beírt kör (érinti az oldalakat)</td></tr>
+      <tr><td>súlyvonalak</td><td>súlypont, <span class="math inline">\(S\)</span></td><td>—</td></tr>
+      <tr><td>magasságvonalak</td><td>magasságpont, <span class="math inline">\(M\)</span></td><td>—</td></tr>
+    </table>
+    </div>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Kang csapdája</p>
+      Könnyű felcserélni: a <b>szögfelezők</b> adják a <b>beírt</b> kör közepét, az <b>oldalfelező merőlegesek</b> a
+      <b>körülírt</b> kör közepét. Segít a logika: a szögfelező az oldalaktól egyenlő távol → a kör az oldalakat
+      érinti (beírt); a felezőmerőleges a csúcsoktól egyenlő távol → a kör a csúcsokon megy át (körülírt).
+    </div>
+    <div class="kviz" data-answer="0" data-jo="✔ A szögfelezők metszéspontja a beírt kör középpontja." data-nem="✘ A szögfelezők pontjai az oldalaktól egyenlő távol vannak → a beírt kör középpontját adják.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik három vonal metszéspontja a <b>beírt</b> kör középpontja?</p>
+      <div class="opciok"><button>a szögfelezők</button><button>az oldalfelező merőlegesek</button><button>a magasságvonalak</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-geometria.html#alap-6">🐜 Ant-Man-bevetés <span class="cimke">Alap 6–8</span></a><a class="sav hulk" href="feladatok-geometria.html#kozep-4">💥 Hulk-bevetés <span class="cimke">Közép 4–5</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Pietro:</b> A háromszög minden titkát ismered. Ideje kitágítani a világot: jönnek a
+    <b>négyszögek</b> — a paralelogrammától a húr- és érintőnégyszögig.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-haromszogek.html"><span class="irany">← Előző</span><span class="hova">Háromszögek és egybevágóság</span></a>
+      <a class="kov" href="tananyag-negyszogek.html"><span class="irany">Következő →</span><span class="hova">Négyszögek</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

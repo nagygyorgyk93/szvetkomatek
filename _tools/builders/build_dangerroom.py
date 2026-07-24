@@ -305,3 +305,79 @@ dr_page(DEST04, "index.html", "Arányosság", "feladatok-hazi.html",
  "index.html", "Témakör főoldala", "osszefoglalo.html", "Tömör összefoglaló",
  "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
 print("04 Danger Room kész: Alap", len(A04), "Közép", len(K04), "Nehéz", len(N04))
+
+# =========================================================== 05 (Geometria)
+# A házi a TESZTELT magot fedi (szögek, alakzatok, egybevágóság, vektorok) —
+# izometria és szerkesztés NEM (felhasználói döntés).
+assert 90-34==56 and 180-34==146 and 180-72==108 and 180-118==62
+assert 180-(55+80)==45 and (5+7>11) and not (3+4>8) and (6+6>6)
+assert 360-(100+90+85)==85 and 10+14-8==16 and 360//15==24 and 180-24==156 and 130//2==65
+assert 4*20==80 and 5*20==100 and 3*20+15==75 and 5*20-25==75
+assert 2*15==30 and 3*15==45 and 7*15==105 and 180-105==75
+assert (8-2)*180==1080 and 8*5//2==20
+assert 180-95==85 and 180-70==110 and 90+76//2==128
+DEST05 = glob.glob("/sessions/*/mnt/Claude/web/1e/05-geometria")[0]
+A05 = [
+ ("Add meg a $34^\\circ$-os szög pótszögét és kiegészítő szögét!",
+  None, "pótszög $56^\\circ$; kiegészítő $146^\\circ$."),
+ ("Két egyenes metszéspontjánál az egyik szög $72^\\circ$. Mekkora a csúcsszöge és a mellékszöge?",
+  None, "csúcsszög $72^\\circ$; mellékszög $108^\\circ$."),
+ ("Az $a\\parallel b$ egyeneseket transzverzális metszi; az egyik szög $118^\\circ$. Add meg az egyállású, a váltó- és a társszögét!",
+  None, "egyállású $118^\\circ$; váltószög $118^\\circ$; társszög $62^\\circ$."),
+ ("Egy háromszög két belső szöge $55^\\circ$ és $80^\\circ$. Mekkora a harmadik?",
+  None, "$45^\\circ$."),
+ ("Melyik szakaszhármasból szerkeszthető háromszög?",
+  ["$5,\\ 7,\\ 11$","$3,\\ 4,\\ 8$","$6,\\ 6,\\ 6$"],
+  "a) igen; b) nem; c) igen.", True),
+ ("Párosítsd a vonalhármast a metszéspontjával!",
+  ["szögfelezők","oldalfelező merőlegesek","súlyvonalak","magasságvonalak"],
+  ["beírt kör közép","körülírt kör közép","súlypont","magasságpont"], True),
+ ("Egy négyszög három belső szöge $100^\\circ$, $90^\\circ$ és $85^\\circ$. Mekkora a negyedik?",
+  None, "$85^\\circ$."),
+ ("Egy érintőnégyszög oldalai (sorban) $AB=10$, $BC=8$, $CD=14$. Mekkora az $AD$?",
+  None, "$AD=16$."),
+ ("A szabályos $15$-szögről.",
+  ["Mekkora egy külső szöge?","Mekkora egy belső szöge?"],
+  ["$24^\\circ$","$156^\\circ$"]),
+ ("Egy ívhez $130^\\circ$-os középponti szög tartozik. Mekkora a kerületi szög ugyanezen az íven?",
+  None, "$65^\\circ$."),
+ ("Egészítsd ki!",
+  ["$\\overrightarrow{AB}+\\overrightarrow{BC}+\\overrightarrow{CA}$","$\\overrightarrow{AB}+\\overrightarrow{BA}$"],
+  ["$\\vec{0}$ (nullvektor)","$\\vec{0}$ (nullvektor)"]),
+]
+K05 = [
+ ("Két szög egymás kiegészítő szöge, és úgy aránylanak, mint $4:5$. Mekkorák?",
+  None, "$80^\\circ$ és $100^\\circ$."),
+ ("Az $a\\parallel b$ egyeneseket transzverzális metszi; a váltószögpár tagjai $(3x+15)^\\circ$ és $(5x-25)^\\circ$. Mekkorák ezek a szögek?",
+  None, "$75^\\circ$ (mindkettő)."),
+ ("Egy háromszög belső szögei úgy aránylanak, mint $2:3:7$. Mekkorák, és mekkora a legnagyobb szög külső szöge?",
+  None, "$30^\\circ,\\ 45^\\circ,\\ 105^\\circ$; a legnagyobb külső szöge $75^\\circ$."),
+ ("Egy derékszögű trapéz egyik (nem derékszögű) szöge $68^\\circ$. Add meg mind a négy belső szöget!",
+  None, "$90^\\circ,\\ 90^\\circ,\\ 68^\\circ,\\ 112^\\circ$."),
+ ("Egy sokszög belső szögeinek összege $1080^\\circ$. Hány oldala van, és hány átlója?",
+  None, "$8$ oldal; $20$ átló."),
+ ("Egy húrnégyszög két szomszédos szöge $95^\\circ$ és $70^\\circ$. Add meg mind a négy szöget!",
+  None, "$95^\\circ,\\ 70^\\circ,\\ 85^\\circ,\\ 110^\\circ$."),
+ ("Az $ABCD$ paralelogramma átlóinak metszéspontja $S$, $\\overrightarrow{SA}=\\vec{m}$, $\\overrightarrow{SB}=\\vec{n}$. Fejezd ki $\\overrightarrow{AB}$-t és $\\overrightarrow{BC}$-t!",
+  None, "$\\overrightarrow{AB}=\\vec{n}-\\vec{m}$; $\\overrightarrow{BC}=-\\vec{m}-\\vec{n}$."),
+]
+N05 = [
+ ("Egy háromszög két belső szögének belső szögfelezői $128^\\circ$-os szöget zárnak be. Mekkora a harmadik belső szög?",
+  None, "$76^\\circ$."),
+ ("Egy húrnégyszög két szemközti szöge úgy aránylik, mint $4:5$. Mekkorák?",
+  None, "$80^\\circ$ és $100^\\circ$."),
+ ("Bizonyítsd be, hogy a paralelogramma szemközti oldalai egyenlők!",
+  None, "Egy átló a paralelogrammát két egybevágó háromszögre bontja (SOS: a váltószögek egyenlők, az átló közös), ezért a szemközti oldalak egyenlők."),
+]
+brief05 = ("🕹️ <b>SZVETI:</b> <b>Veszélyterem</b>-szimuláció, geometriai modul. Ez a <b>Danger Room</b> otthoni "
+ "edzésváltozata — itt gyakorolsz a saját tempódban. A szimuláció a témakör <b>vizsgára menő magját</b> fedi le: "
+ "szögek és szögpárok, háromszögek és egybevágóság, nevezetes pontok, négyszögek, sokszögek, a kör kerületi szöge és "
+ "a vektorok. Haladj a fokozatokon: zöld (alap) → sárga (közép) → piros (nehéz). A végeredményt minden feladatnál "
+ "lenyithatod — de előbb küzdd le magad!")
+dr_page(DEST05, "index.html", "Geometria", "feladatok-hazi.html",
+ "🕹️ Danger Room — házi feladatgyűjtemény",
+ "Egyetlen, a témakör vizsgára menő magját lefedő házi feladatsor: szögek, háromszögek, egybevágóság, négyszögek, sokszögek, kör és vektorok. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
+ brief05, sect(A05, K05, N05),
+ "index.html", "Témakör főoldala", "osszefoglalo.html", "Tömör összefoglaló",
+ "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
+print("05 Danger Room kész: Alap", len(A05), "Közép", len(K05), "Nehéz", len(N05))

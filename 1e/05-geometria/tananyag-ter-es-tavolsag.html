@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A tér: kölcsönös helyzet és távolság — tananyag | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Geometria</a> ›
+  <span class="itt">A tér: kölcsönös helyzet és távolság — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A tér: kölcsönös helyzet és távolság</h1>
+  <p class="alcim">Egyenesek, egyenes és sík, két sík kölcsönös helyzete a térben; merőlegesség és a távolság
+  fogalma — a harctér három dimenziója.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Csatatér-térkép · 2/2</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+      <div class="brief"><p>📡 <b>Doctor Strange:</b> A síkbeli térkép csak vetület. A valódi ütközet a <b>térben</b> zajlik —
+      ott két egyenes úgy is elkerülheti egymást, hogy közben nem is párhuzamos. Meg kell tanulnod olvasni a
+      három dimenziót: mikor metsz, mikor párhuzamos, mikor <b>kitérő</b>, és mit jelent a <b>merőlegesség</b> egy sík
+      felé. Enélkül nem tudod bemérni a portál pontos helyét.</p></div>
+    <p>A síkban két egyenes csak metsző vagy párhuzamos lehet. A térben egy <b>harmadik</b> lehetőség is megjelenik.
+    Nézzük végig a lehetséges helyzeteket.</p>
+
+    <h2 id="s1">Két egyenes a térben</h2>
+    <div class="doboz definicio" id="def-ket-egyenes">
+      <p class="cim"><span class="ikon">📗</span> Három lehetőség</p>
+      <ul>
+        <li><b>metsző</b>: van közös pontjuk (és egy közös síkban vannak);</li>
+        <li><b>párhuzamos</b>: nincs közös pontjuk, de <b>egy síkban</b> vannak, <span class="math inline">\(a\parallel b\)</span>;</li>
+        <li><b>kitérő</b>: nincs közös pontjuk, és <b>nincs</b> közös síkjuk sem.</li>
+      </ul>
+    </div>
+    <div class="svgcard">
+      <svg viewBox="0 0 300 210" width="300" height="210" role="img" aria-label="Téglatest, benne egy alsó él és egy hátsó függőleges él mint kitérő egyenesek">
+        <!-- hátsó lap -->
+        <polygon points="100,40 240,40 240,130 100,130" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+        <!-- összekötők -->
+        <line x1="40" y1="80" x2="100" y2="40" stroke="#cbd5e1" stroke-width="1.5"/>
+        <line x1="180" y1="80" x2="240" y2="40" stroke="#cbd5e1" stroke-width="1.5"/>
+        <line x1="40" y1="170" x2="100" y2="130" stroke="#cbd5e1" stroke-width="1.5"/>
+        <line x1="180" y1="170" x2="240" y2="130" stroke="#cbd5e1" stroke-width="1.5"/>
+        <!-- első lap -->
+        <polygon points="40,80 180,80 180,170 40,170" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+        <!-- kitérő pár: első-alsó él (zöld) és hátsó-jobb függőleges él (piros) -->
+        <line x1="40" y1="170" x2="180" y2="170" stroke="#047857" stroke-width="3.5"/>
+        <text x="100" y="192" font-size="14" fill="#047857" font-style="italic">a</text>
+        <line x1="240" y1="40" x2="240" y2="130" stroke="#ef4444" stroke-width="3.5"/>
+        <text x="248" y="90" font-size="14" fill="#ef4444" font-style="italic">b</text>
+      </svg>
+      <div class="cap">Kitérő egyenesek: az \(a\) él és a \(b\) él nem metszik egymást, és nincs közös síkjuk.</div>
+    </div>
+
+    <h2 id="s2">Egyenes és sík</h2>
+    <div class="doboz definicio" id="def-egyenes-sik">
+      <p class="cim"><span class="ikon">📗</span> Három lehetőség</p>
+      <ul>
+        <li>az egyenes a <b>síkban fekszik</b> (minden pontja a síkban van);</li>
+        <li>az egyenes <b>párhuzamos</b> a síkkal (nincs közös pontjuk);</li>
+        <li>az egyenes <b>döfi</b> (metszi) a síkot: pontosan egy közös pontjuk van.</li>
+      </ul>
+    </div>
+    <div class="doboz definicio" id="def-meroleges-egyenes-sik">
+      <p class="cim"><span class="ikon">📗</span> Merőleges egyenes és sík</p>
+      <p>Az egyenes akkor <b>merőleges</b> a síkra (<span class="math inline">\(e\perp\alpha\)</span>), ha merőleges a sík <b>minden</b> rajta áthaladó
+      egyenesére. Elég ellenőrizni: ha a döféspontban a sík <b>két</b> különböző egyenesére merőleges, akkor az egész síkra merőleges.</p>
+    </div>
+    <div class="svgcard">
+      <svg viewBox="0 0 300 200" width="300" height="200" role="img" aria-label="Vízszintes sík és rá merőleges függőleges egyenes derékszög-jellel">
+        <polygon points="40,150 210,150 260,110 90,110" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+        <text x="224" y="128" font-size="14" fill="#10b981" font-style="italic">α</text>
+        <line x1="150" y1="130" x2="150" y2="30" stroke="#3b82f6" stroke-width="2.5"/>
+        <text x="156" y="44" font-size="14" fill="#3b82f6" font-style="italic">e</text>
+        <rect x="150" y="115" width="15" height="15" fill="none" stroke="#64748b" stroke-width="1.5"/>
+        <circle cx="150" cy="130" r="3.5" fill="#0f172a"/><text x="126" y="146" font-size="13" fill="#0f172a">T</text>
+      </svg>
+      <div class="cap">\(e\perp\alpha\): az \(e\) egyenes merőleges az \(\alpha\) síkra, \(T\) a döféspont.</div>
+    </div>
+
+    <h2 id="s3">Két sík</h2>
+    <div class="doboz definicio" id="def-ket-sik">
+      <p class="cim"><span class="ikon">📗</span> Két lehetőség</p>
+      <p>Két különböző sík vagy <b>párhuzamos</b> (nincs közös pontjuk), vagy <b>metsző</b>: ekkor a közös részük egy
+      egyenes, a <b>metszésvonal</b>. Ha a két sík derékszöget zár be, akkor <b>merőlegesek</b>.</p>
+    </div>
+    <div class="venn">
+      <div class="vbox">
+        <svg viewBox="0 0 200 160" width="200" height="160" role="img" aria-label="Két metsző sík közös metszésvonallal">
+          <polygon points="100,20 100,150 30,170 30,40" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8"/>
+          <polygon points="100,20 100,150 175,135 175,5" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.8"/>
+          <line x1="100" y1="20" x2="100" y2="150" stroke="#ef4444" stroke-width="3"/>
+          <text x="104" y="90" font-size="12" fill="#ef4444">m</text>
+        </svg>
+        <div class="cap">Metsző síkok: \(m\) a metszésvonal</div>
+      </div>
+      <div class="vbox">
+        <svg viewBox="0 0 200 160" width="200" height="160" role="img" aria-label="Két párhuzamos sík egymás felett">
+          <polygon points="30,70 150,70 190,40 70,40" fill="#ecfdf5" stroke="#10b981" stroke-width="1.8"/>
+          <polygon points="30,130 150,130 190,100 70,100" fill="#ecfdf5" stroke="#10b981" stroke-width="1.8"/>
+          <text x="158" y="60" font-size="13" fill="#10b981" font-style="italic">α</text>
+          <text x="158" y="120" font-size="13" fill="#10b981" font-style="italic">β</text>
+        </svg>
+        <div class="cap">Párhuzamos síkok: \(\alpha\parallel\beta\)</div>
+      </div>
+    </div>
+
+    <h2 id="s4">Távolság a térben</h2>
+    <div class="doboz definicio" id="def-tavolsag">
+      <p class="cim"><span class="ikon">📗</span> A távolság mindig merőleges</p>
+      <p>Két alakzat <b>távolsága</b> a legrövidebb szakasz hossza közöttük — ez mindig a <b>merőleges</b> szakasz.</p>
+      <ul>
+        <li><b>Pont és egyenes</b> távolsága: a pontból az egyenesre bocsátott merőleges szakasz hossza.</li>
+        <li><b>Pont és sík</b> távolsága: a pontból a síkra bocsátott merőleges szakasz hossza.</li>
+        <li><b>Két párhuzamos</b> egyenes / sík távolsága: bármely merőleges „híd” hossza közöttük.</li>
+      </ul>
+    </div>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Kang csapdája</p>
+      A távolság <b>nem</b> akármelyik összekötő szakasz! Egy pontból az egyenesig sok szakaszt húzhatsz — a
+      <b>távolság</b> ezek közül a <b>legrövidebb</b>, ami mindig <b>merőleges</b> az egyenesre. A ferde szakasz mindig hosszabb.
+    </div>
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      Egy repülőgép „magassága” a talaj felett a <b>merőleges</b> távolság a földsíktól — nem a rézsútos táv a
+      kifutópálya végéig. A GPS és a radar is mindig a merőleges távolsággal számol.
+    </div>
+    <div class="kviz" data-answer="2" data-jo="✔ A térben van harmadik eset is: a kitérő egyenesek — nincs közös pontjuk és nincs közös síkjuk." data-nem="✘ A térben két egyenes lehet metsző, párhuzamos VAGY kitérő — ez utóbbi a síkban nem fordul elő.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Két egyenesnek a térben nincs közös pontja, és <b>nincs</b> közös síkja sem. Milyen a helyzetük?</p>
+      <div class="opciok"><button>Párhuzamos</button><button>Metsző</button><button>Kitérő</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-geometria.html#alap-1">🐜 Ant-Man-bevetés <span class="cimke">Alap 1–2</span></a><a class="sav hulk" href="feladatok-geometria.html#kozep-1">💥 Hulk-bevetés <span class="cimke">Közép 1</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Doctor Strange:</b> A harctér feltérképezve. Innen átadom a stafétát Wandának és
+    Pietrónak: a <b>Tükör-világ</b> következik — a szögek, az alakzatok és az egybevágóság. Ott már nem csak nézed a
+    formákat, hanem <b>mozgatod</b> is őket.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-alapfogalmak.html"><span class="irany">← Előző</span><span class="hova">Alapfogalmak és a sík</span></a>
+      <a class="kov" href="tananyag-szogek.html"><span class="irany">Következő →</span><span class="hova">Szögek és szögpárok</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

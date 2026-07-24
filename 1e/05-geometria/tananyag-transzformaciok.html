@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Egybevágósági transzformációk — tananyag | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Geometria</a> ›
+  <span class="itt">Egybevágósági transzformációk — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Egybevágósági transzformációk</h1>
+  <p class="alcim">Az eltolás, a tengelyes és a középpontos tükrözés, valamint a forgatás — a távolságtartó
+  (izometrikus) transzformációk és az egybevágóság.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Tükör-világ · 7/7</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+      <div class="brief"><p>📡 <b>Scarlet Witch (Wanda):</b> Most jön a szektor névadója. A <b>Tükör-világ</b> nem más, mint a
+      tér <b>mozgatása</b>: eltolom, elforgatom, tükrözöm — de az alakzat mérete és formája <b>nem változik</b>. Ezek az
+      <b>izometrikus</b> (távolságtartó) transzformációk, és épp ezek adják az egybevágóság igazi értelmét: két alakzat
+      akkor egybevágó, ha az egyik ilyen mozgatással a másikba vihető.</p></div>
+    <p>Egy <b>izometria</b> minden ponthoz egy képpontot rendel úgy, hogy a <b>távolságok megmaradnak</b>. Ezért az
+    eredeti alakzat és a képe mindig <b>egybevágó</b>. Négy alaptranszformációt nézünk meg.</p>
+
+    <h2 id="s1">Eltolás</h2>
+    <div class="doboz definicio" id="def-eltolas">
+      <p class="cim"><span class="ikon">📗</span> Eltolás (transzláció)</p>
+      <p>Az <b>eltolás</b> minden pontot ugyanazzal a <span class="math inline">\(\vec{v}\)</span> vektorral mozdít el. Az alakzat mérete, alakja és
+      <b>irányítása</b> is változatlan; csak a helye tolódik.</p>
+    </div>
+    <div class="svgcard">
+      <svg viewBox="0 0 300 200" width="300" height="200" role="img" aria-label="Háromszög eltolása egy vektorral">
+        <defs><marker id="el" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L6.5,3 L0,6 Z" fill="#8b5cf6"/></marker></defs>
+        <polygon points="70,55 120,150 55,140" fill="#d1fae5" stroke="#047857" stroke-width="2.5"/>
+        <polygon points="190,80 240,175 175,165" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="5 3"/>
+        <line x1="70" y1="55" x2="190" y2="80" stroke="#8b5cf6" stroke-width="2" marker-end="url(#el)"/>
+        <text x="120" y="60" font-size="14" fill="#8b5cf6" font-style="italic">v</text>
+      </svg>
+      <div class="cap">Minden pont ugyanazzal a \(\vec{v}\) vektorral tolódik el; a kép egybevágó az eredetivel.</div>
+    </div>
+
+    <h2 id="s2">Tengelyes tükrözés</h2>
+    <div class="doboz definicio" id="def-tengelyes">
+      <p class="cim"><span class="ikon">📗</span> Tengelyes tükrözés</p>
+      <p>Egy <span class="math inline">\(t\)</span> egyenesre (a <b>tengelyre</b>) tükrözve minden <span class="math inline">\(P\)</span> pont képe az a <span class="math inline">\(P'\)</span> pont, amelyre a
+      tengely a <span class="math inline">\(PP'\)</span> szakasz <b>felezőmerőlegese</b>. A tengelyen lévő pontok helyben maradnak. A tükrözés
+      <b>megfordítja</b> a körüljárás irányát.</p>
+    </div>
+    <div class="svgcard">
+      <svg viewBox="0 0 300 200" width="300" height="200" role="img" aria-label="Háromszög tengelyes tükrözése függőleges tengelyre">
+        <line x1="150" y1="20" x2="150" y2="185" stroke="#3b82f6" stroke-width="1.8" stroke-dasharray="6 4"/>
+        <text x="156" y="34" font-size="13" fill="#3b82f6" font-style="italic">t</text>
+        <polygon points="70,55 120,150 55,140" fill="#d1fae5" stroke="#047857" stroke-width="2.5"/>
+        <polygon points="230,55 180,150 245,140" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="5 3"/>
+      </svg>
+      <div class="cap">A \(t\) tengely a megfelelő pontpárok (\(P,P'\)) szakaszának felezőmerőlegese.</div>
+    </div>
+    <div class="doboz definicio" id="def-kozeppontos">
+      <p class="cim"><span class="ikon">📗</span> Középpontos tükrözés</p>
+      <p>Egy <span class="math inline">\(O\)</span> pontra (a <b>centrumra</b>) tükrözve minden <span class="math inline">\(P\)</span> képe az a <span class="math inline">\(P'\)</span>, amelyre <span class="math inline">\(O\)</span> a <span class="math inline">\(PP'\)</span>
+      szakasz <b>felezőpontja</b>. Ez pontosan egy <span class="math inline">\(180^\circ\)</span>-os forgatás az <span class="math inline">\(O\)</span> körül; az irányítás megmarad.</p>
+    </div>
+
+    <h2 id="s3">Forgatás</h2>
+    <div class="doboz definicio" id="def-forgatas">
+      <p class="cim"><span class="ikon">📗</span> Forgatás (rotáció)</p>
+      <p>Az <span class="math inline">\(O\)</span> <b>középpont</b> körüli, <span class="math inline">\(\alpha\)</span> szögű forgatás minden <span class="math inline">\(P\)</span> pontot úgy visz <span class="math inline">\(P'\)</span>-be, hogy
+      <span class="math inline">\(|OP|=|OP'|\)</span> és a <span class="math inline">\(POP'\)</span> szög éppen <span class="math inline">\(\alpha\)</span>. A középpont helyben marad; az irányítás megmarad.</p>
+    </div>
+    <div class="svgcard">
+      <svg viewBox="0 0 230 275" width="230" height="275" role="img" aria-label="Háromszög forgatása egy O középpont körül">
+        <polygon points="70,55 120,150 55,140" fill="#d1fae5" stroke="#047857" stroke-width="2.5"/>
+        <polygon points="30.6,208.7 136.9,194.2 105.3,251.8" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="5 3"/>
+        <circle cx="160" cy="160" r="3.5" fill="#ef4444"/><text x="166" y="157" font-size="13" fill="#ef4444">O</text>
+        <path d="M 120 150 A 60 60 0 0 0 136.9 194.2" fill="none" stroke="#8b5cf6" stroke-width="1.6"/>
+      </svg>
+      <div class="cap">Forgatás az \(O\) középpont körül: a távolságok a középponttól változatlanok.</div>
+    </div>
+
+    <h2 id="s4">Az izometriák közös tulajdonságai</h2>
+    <div class="doboz tetel" id="tetel-izometria">
+      <p class="cim"><span class="ikon">📘</span> Mit tartanak meg?</p>
+      <ul>
+        <li>a <b>távolságokat</b> és a <b>szögeket</b> — ezért az eredeti és a kép <b>egybevágó</b>;</li>
+        <li>az egyenes képe egyenes, a kör képe ugyanakkora sugarú kör;</li>
+        <li>az <b>eltolás</b>, a <b>forgatás</b> és a <b>középpontos tükrözés</b> megtartja a körüljárás irányát; a
+        <b>tengelyes tükrözés</b> megfordítja.</li>
+      </ul>
+    </div>
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      A tapéta- és csempeminták, a hópehely szimmetriája, a logók tükrözése mind izometria. A videojátékok is így
+      „mozgatják” a karaktereket: eltolás + forgatás, miközben az alak sosem torzul.
+    </div>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Kang csapdája</p>
+      A nagyítás (kicsinyítés) <b>nem</b> izometria! Az megváltoztatja a távolságokat — az a <b>hasonlóság</b> világa
+      (a következő nagy témakör). Az izometria a méretet <b>mindig</b> megőrzi.
+    </div>
+    <div class="kviz" data-answer="2" data-jo="✔ A tengelyes tükrözés az egyetlen a felsoroltak közül, amely megfordítja a körüljárás irányát." data-nem="✘ Az eltolás és a forgatás megtartja az irányítást; a tengelyes tükrözés fordítja meg.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik transzformáció <b>fordítja meg</b> a körüljárás irányát?</p>
+      <div class="opciok"><button>eltolás</button><button>forgatás</button><button>tengelyes tükrözés</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-geometria.html#alap-14">🐜 Ant-Man-bevetés <span class="cimke">Alap 14–15</span></a><a class="sav hulk" href="feladatok-geometria.html#kozep-9">💥 Hulk-bevetés <span class="cimke">Közép 9</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Wanda:</b> A Tükör-világ meghajolt előtted — a teljes geometriai szektor a kezedben van.
+    Most jöhet a <b>kiképzési adattár</b>: gyakorolj a feladatgyűjteménnyel, majd zárd le a <b>bevetési kártyával</b>.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-vektorok.html"><span class="irany">← Előző</span><span class="hova">Vektorok</span></a>
+      <a class="kov" href="feladatok-geometria.html"><span class="irany">Következő →</span><span class="hova">Geometria — feladatgyűjtemény</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Háromszögek és egybevágóság — tananyag | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Geometria</a> ›
+  <span class="itt">Háromszögek és egybevágóság — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Háromszögek és egybevágóság</h1>
+  <p class="alcim">Háromszögfajták, a belső és külső szögek összefüggései, a háromszög-egyenlőtlenség, a négy
+  egybevágósági tétel és egyszerű bizonyítások.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Tükör-világ · 2/7</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+      <div class="brief"><p>📡 <b>Wanda:</b> A háromszög a legerősebb alakzat — ezért épül belőle híd, daru, keret.
+      A Tükör-világ egyik alaptörvénye az <b>egybevágóság</b>: két alakzat egybevágó, ha <b>tükrözéssel, forgatással,
+      eltolással pontosan fedésbe hozható</b>. <b>Pietro:</b> És a legjobb: nem kell mindent lemérni! Elég <b>néhány</b>
+      adat — a többi már kötelezően következik. Ezek az <b>egybevágósági tételek</b>.</p></div>
+    <p>A háromszög három oldalból és három szögből áll. Csúcsai <span class="math inline">\(A,B,C\)</span>, a velük szemközti oldalak
+    <span class="math inline">\(a,b,c\)</span>, a szögei <span class="math inline">\(\alpha,\beta,\gamma\)</span>.</p>
+
+    <h2 id="s1">Háromszögfajták</h2>
+    <div class="doboz definicio" id="def-haromszogfajtak">
+      <p class="cim"><span class="ikon">📗</span> Oldalak és szögek szerint</p>
+      <p><b>Oldalak szerint:</b> általános (mind különböző), <b>egyenlő szárú</b> (két oldala egyenlő), <b>szabályos</b>
+      (mindhárom oldala egyenlő). <b>Szögek szerint:</b> <b>hegyesszögű</b> (mind hegyes), <b>derékszögű</b> (van
+      <span class="math inline">\(90^\circ\)</span>-os szöge), <b>tompaszögű</b> (van tompaszöge).</p>
+    </div>
+    <div class="venn">
+      <div class="vbox">
+        <svg viewBox="0 0 150 120" width="150" height="120" role="img" aria-label="Egyenlő szárú háromszög">
+          <polygon points="75,20 25,100 125,100" fill="#d1fae5" stroke="#047857" stroke-width="2"/>
+          <text x="40" y="60" font-size="12" fill="#0f172a">b</text><text x="104" y="60" font-size="12" fill="#0f172a">b</text>
+        </svg>
+        <div class="cap">egyenlő szárú</div>
+      </div>
+      <div class="vbox">
+        <svg viewBox="0 0 150 120" width="150" height="120" role="img" aria-label="Szabályos háromszög">
+          <polygon points="75,22 27,102 123,102" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+          <text x="44" y="66" font-size="12" fill="#0f172a">a</text><text x="100" y="66" font-size="12" fill="#0f172a">a</text><text x="72" y="115" font-size="12" fill="#0f172a">a</text>
+        </svg>
+        <div class="cap">szabályos</div>
+      </div>
+      <div class="vbox">
+        <svg viewBox="0 0 150 120" width="150" height="120" role="img" aria-label="Derékszögű háromszög">
+          <polygon points="30,100 130,100 30,25" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+          <rect x="30" y="85" width="15" height="15" fill="none" stroke="#64748b" stroke-width="1.5"/>
+        </svg>
+        <div class="cap">derékszögű</div>
+      </div>
+    </div>
+
+    <h2 id="s2">Belső és külső szögek</h2>
+    <div class="doboz tetel" id="tetel-belso-szogosszeg">
+      <p class="cim"><span class="ikon">📘</span> A belső szögek összege</p>
+      <p>Bármely háromszög belső szögeinek összege egyenesszög:</p>
+      \[\alpha+\beta+\gamma=180^\circ.\]
+    </div>
+    <div class="doboz tetel" id="tetel-kulso-szog">
+      <p class="cim"><span class="ikon">📘</span> A külső szög tétele</p>
+      <p>A háromszög <b>külső szöge</b> egyenlő a nem mellette fekvő két <b>belső szög összegével</b>. Például a
+      <span class="math inline">\(\gamma\)</span>-nál lévő külső szög: <span class="math inline">\(\gamma'=\alpha+\beta\)</span>. A három külső szög összege <span class="math inline">\(360^\circ\)</span>.</p>
+    </div>
+    <div class="svgcard">
+      <svg viewBox="0 0 320 170" width="320" height="170" role="img" aria-label="Háromszög egy meghosszabbított oldallal és a külső szöggel">
+        <polygon points="60,130 210,130 130,45" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+        <line x1="210" y1="130" x2="290" y2="130" stroke="#0f172a" stroke-width="2" stroke-dasharray="4 3"/>
+        <text x="120" y="150" font-size="13" fill="#0f172a" font-style="italic">α</text>
+        <text x="196" y="123" font-size="13" fill="#0f172a" font-style="italic">β</text>
+        <text x="128" y="70" font-size="13" fill="#0f172a" font-style="italic">γ</text>
+        <path d="M 232 130 A 22 22 0 0 0 224 114" fill="none" stroke="#ef4444" stroke-width="2.5"/>
+        <text x="236" y="120" font-size="13" fill="#ef4444" font-style="italic">β′</text>
+      </svg>
+      <div class="cap">A \(\beta\)-nál lévő külső szög: \(\beta'=\alpha+\gamma\) (a másik két belső szög összege).</div>
+    </div>
+    <div class="doboz pelda" id="pelda-szogosszeg">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Egy háromszög belső szögei úgy aránylanak, mint <span class="math inline">\(\alpha:\beta:\gamma=2:3:4\)</span>. Mekkorák a szögek?
+      <details><summary>Megoldás</summary><div class="bel"><p>Egy „rész”: <span class="math inline">\(180^\circ:(2+3+4)=180^\circ:9=20^\circ\)</span>. Így <span class="math inline">\(\alpha=40^\circ\)</span>, <span class="math inline">\(\beta=60^\circ\)</span>, <span class="math inline">\(\gamma=80^\circ\)</span>. Ellenőrzés: <span class="math inline">\(40+60+80=180\)</span>. ✔</p></div></details>
+    </div>
+
+    <h2 id="s3">A háromszög-egyenlőtlenség</h2>
+    <div class="doboz tetel" id="tetel-haromszog-egyenlotlenseg">
+      <p class="cim"><span class="ikon">📘</span> Mikor van háromszög?</p>
+      <p>Háromszög oldalaira mindig teljesül: <b>bármely két oldal összege nagyobb a harmadiknál</b>:</p>
+      \[a<b+c,\quad b<a+c,\quad c<a+b.\]
+      <p>Fordítva: három szakaszból pontosan akkor szerkeszthető háromszög, ha a <b>leghosszabb</b> rövidebb a másik
+      kettő összegénél.</p>
+    </div>
+    <div class="doboz pelda" id="pelda-szerkesztheto">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Szerkeszthető-e háromszög a <span class="math inline">\(4\,\text{cm}\)</span>, <span class="math inline">\(5\,\text{cm}\)</span> és <span class="math inline">\(10\,\text{cm}\)</span> oldalakból?
+      <details><summary>Megoldás</summary><div class="bel"><p>A leghosszabb oldal <span class="math inline">\(10\)</span>, a másik kettő összege <span class="math inline">\(4+5=9\)</span>. Mivel <span class="math inline">\(10>9\)</span>, <b>nem</b> szerkeszthető.</p></div></details>
+    </div>
+
+    <h2 id="s4">Az egybevágóság és a négy tétel</h2>
+    <div class="doboz definicio" id="def-egybevagosag">
+      <p class="cim"><span class="ikon">📗</span> Egybevágóság</p>
+      <p>Két alakzat <b>egybevágó</b> (jelben <span class="math inline">\(\cong\)</span>), ha egybevágósági transzformációval (eltolás, forgatás,
+      tükrözés) pontosan fedésbe hozható. Egybevágó háromszögek <b>megfelelő</b> oldalai és szögei rendre egyenlők.</p>
+    </div>
+    <div class="doboz tetel" id="tetel-egybevagosagi-tetelek">
+      <p class="cim"><span class="ikon">📘</span> A négy egybevágósági tétel</p>
+      <p>Két háromszög egybevágó, ha megegyeznek:</p>
+      <ul>
+        <li><b>I. (OOO):</b> mindhárom oldalukban;</li>
+        <li><b>II. (OSO):</b> két oldalukban és az <b>általuk bezárt</b> szögben;</li>
+        <li><b>III. (SOS):</b> egy oldalukban és a rajta fekvő <b>két</b> szögben;</li>
+        <li><b>IV.:</b> két oldalukban és a <b>nagyobbikkal szemközti</b> szögben.</li>
+      </ul>
+    </div>
+    <div class="doboz pelda" id="pelda-bizonyitas">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció — bizonyítás</p>
+      Bizonyítsd be, hogy az <b>egyenlő szárú háromszög alapon fekvő szögei egyenlők</b>!
+      <details><summary>Megoldás</summary><div class="bel"><p>Legyen az <span class="math inline">\(ABC\triangle\)</span> egyenlő szárú, <span class="math inline">\(CA=CB\)</span>. Húzzuk be a <span class="math inline">\(C\)</span> csúcsból a <span class="math inline">\(\gamma\)</span> szög
+      <b>szögfelezőjét</b>, ez az <span class="math inline">\(AB\)</span> oldalt <span class="math inline">\(F\)</span>-ben metszi. Az <span class="math inline">\(ACF\triangle\)</span> és <span class="math inline">\(BCF\triangle\)</span> egybevágó a
+      <b>II. (OSO)</b> tétel szerint: <span class="math inline">\(CA=CB\)</span>, a felezővel keletkező két szög egyenlő, és a <span class="math inline">\(CF\)</span> oldal közös.
+      Egybevágó háromszögek megfelelő szögei egyenlők, ezért <span class="math inline">\(\alpha=\beta\)</span>. <b>Q.E.D.</b></p></div></details>
+    </div>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Kang csapdája</p>
+      Két oldal és egy „akármelyik” szög egyezése <b>nem</b> elég! A II. tételben a szögnek a két oldal <b>közé</b> kell
+      esnie. Ha a szög nem a közbezárt (és nem a nagyobb oldallal szemközti), két különböző háromszög is illeszkedhet
+      az adatokra.
+    </div>
+    <div class="kviz" data-answer="2" data-jo="✔ 6 + 7 = 13 < 14, tehát a leghosszabb oldal túl hosszú — nem szerkeszthető." data-nem="✘ Nézd a leghosszabbat: 6 + 7 = 13, ami kisebb 14-nél, így nem szerkeszthető háromszög.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik <b>NEM</b> alkot háromszöget?</p>
+      <div class="opciok"><button><span class="math inline">\(5,\ 6,\ 8\)</span></button><button><span class="math inline">\(6,\ 7,\ 14\)</span></button><button><span class="math inline">\(7,\ 7,\ 7\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-geometria.html#alap-6">🐜 Ant-Man-bevetés <span class="cimke">Alap 6–8</span></a><a class="sav hulk" href="feladatok-geometria.html#kozep-4">💥 Hulk-bevetés <span class="cimke">Közép 4–5</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Pietro:</b> Megvan a háromszög és az egybevágóság. Most nézzük meg, hol rejtőznek a
+    háromszög <b>nevezetes pontjai</b> — a súlypont, a magasságpont és a két kör középpontja.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-szogek.html"><span class="irany">← Előző</span><span class="hova">Szögek és szögpárok</span></a>
+      <a class="kov" href="tananyag-nevezetes-pontok.html"><span class="irany">Következő →</span><span class="hova">A háromszög nevezetes pontjai</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

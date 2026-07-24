@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vektorok — tananyag | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Geometria</a> ›
+  <span class="itt">Vektorok — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Vektorok</h1>
+  <p class="alcim">Irányított szakasz és vektor, egyenlő és ellentett vektorok, összeadás és kivonás, skalárral
+  szorzás, valamint a vektorok geometriai alkalmazása.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Tükör-világ · 6/7</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+      <div class="brief"><p>📡 <b>Quicksilver (Pietro):</b> A vektor az én nyelvem: nem elég tudni, <b>milyen messze</b> —
+      azt is tudni kell, <b>merre</b>. Egy vektornak <b>nagysága</b> és <b>iránya</b> van. Ha összefűzöm őket, megkapom a
+      teljes mozgást; ha ötszörösére nyújtom, ötször olyan messzire lódulok — ugyanabba az irányba. A Tükör-világban
+      minden elmozdulás egy-egy vektor.</p></div>
+    <p>A vektorral irányított mennyiségeket írunk le: elmozdulást, sebességet, erőt. Jelölése <span class="math inline">\(\vec{a}\)</span> vagy
+    <span class="math inline">\(\overrightarrow{AB}\)</span>, ahol <span class="math inline">\(A\)</span> a kezdő-, <span class="math inline">\(B\)</span> a végpont.</p>
+
+    <h2 id="s1">Irányított szakasz és egyenlőség</h2>
+    <div class="doboz definicio" id="def-vektor">
+      <p class="cim"><span class="ikon">📗</span> Vektor</p>
+      <p>A <b>vektor</b> irányított szakasz: van <b>nagysága</b> (hossza, <span class="math inline">\(|\vec{a}|\)</span>) és <b>iránya</b>. Két vektor
+      <b>egyenlő</b>, ha azonos hosszúak, párhuzamosak és azonos irányításúak (a hely nem számít). A <b>nullvektor</b>
+      (<span class="math inline">\(\vec{0}\)</span>) hossza <span class="math inline">\(0\)</span>. A <span class="math inline">\(\vec{a}\)</span> <b>ellentettje</b> <span class="math inline">\(-\vec{a}\)</span>: ugyanolyan hosszú, de ellentétes irányú.</p>
+    </div>
+    <div class="svgcard">
+      <svg viewBox="0 0 240 90" width="240" height="90" role="img" aria-label="Egy vektor mint irányított szakasz">
+        <defs><marker id="v1" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L6.5,3 L0,6 Z" fill="#047857"/></marker></defs>
+        <line x1="30" y1="50" x2="200" y2="50" stroke="#047857" stroke-width="2.5" marker-end="url(#v1)"/>
+        <circle cx="30" cy="50" r="3" fill="#0f172a"/><text x="24" y="70" font-size="13" fill="#0f172a">A</text>
+        <text x="196" y="70" font-size="13" fill="#0f172a">B</text>
+        <text x="105" y="40" font-size="15" fill="#047857" font-style="italic">a</text>
+      </svg>
+      <div class="cap">Az \(\overrightarrow{AB}=\vec{a}\) vektor: \(A\)-ból \(B\)-be mutat.</div>
+    </div>
+
+    <h2 id="s2">Összeadás és kivonás</h2>
+    <div class="doboz tetel" id="tetel-osszeadas">
+      <p class="cim"><span class="ikon">📘</span> Két szabály</p>
+      <p><b>Háromszög-szabály:</b> a második vektort az első végpontjához illesztjük; az összeg az első kezdőpontjától
+      a második végpontjáig mutat. <b>Paralelogramma-szabály:</b> közös kezdőpontból indítva az összeg a
+      paralelogramma átlója. A <b>kivonás</b> az ellentett hozzáadása: <span class="math inline">\(\vec{a}-\vec{b}=\vec{a}+(-\vec{b})\)</span>.</p>
+    </div>
+    <div class="venn">
+      <div class="vbox">
+        <svg viewBox="0 0 290 190" width="290" height="190" role="img" aria-label="Vektorösszeadás háromszög-szabállyal">
+          <defs>
+            <marker id="tg" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L6.5,3 L0,6 Z" fill="#047857"/></marker>
+            <marker id="tb" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L6.5,3 L0,6 Z" fill="#3b82f6"/></marker>
+            <marker id="tp" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L6.5,3 L0,6 Z" fill="#8b5cf6"/></marker>
+          </defs>
+          <line x1="45" y1="150" x2="150" y2="55" stroke="#047857" stroke-width="2.5" marker-end="url(#tg)"/>
+          <line x1="150" y1="55" x2="255" y2="150" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#tb)"/>
+          <line x1="45" y1="150" x2="255" y2="150" stroke="#8b5cf6" stroke-width="2.5" marker-end="url(#tp)"/>
+          <text x="82" y="98" font-size="14" fill="#047857" font-style="italic">a</text>
+          <text x="208" y="98" font-size="14" fill="#3b82f6" font-style="italic">b</text>
+          <text x="140" y="172" font-size="14" fill="#8b5cf6" font-style="italic">a + b</text>
+        </svg>
+        <div class="cap">háromszög-szabály</div>
+      </div>
+      <div class="vbox">
+        <svg viewBox="0 0 290 190" width="290" height="190" role="img" aria-label="Vektorösszeadás paralelogramma-szabállyal">
+          <defs>
+            <marker id="pg" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L6.5,3 L0,6 Z" fill="#047857"/></marker>
+            <marker id="pb" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L6.5,3 L0,6 Z" fill="#3b82f6"/></marker>
+            <marker id="pp" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L6.5,3 L0,6 Z" fill="#8b5cf6"/></marker>
+          </defs>
+          <line x1="45" y1="155" x2="175" y2="155" stroke="#047857" stroke-width="2.5" marker-end="url(#pg)"/>
+          <line x1="45" y1="155" x2="120" y2="55" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#pb)"/>
+          <line x1="175" y1="155" x2="250" y2="55" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <line x1="120" y1="55" x2="250" y2="55" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <line x1="45" y1="155" x2="250" y2="55" stroke="#8b5cf6" stroke-width="2.5" marker-end="url(#pp)"/>
+          <text x="105" y="172" font-size="14" fill="#047857" font-style="italic">a</text>
+          <text x="70" y="105" font-size="14" fill="#3b82f6" font-style="italic">b</text>
+          <text x="150" y="100" font-size="14" fill="#8b5cf6" font-style="italic">a + b</text>
+        </svg>
+        <div class="cap">paralelogramma-szabály</div>
+      </div>
+    </div>
+
+    <h2 id="s3">Skalárral szorzás</h2>
+    <div class="doboz definicio" id="def-skalar">
+      <p class="cim"><span class="ikon">📗</span> A <span class="math inline">\(k\vec{a}\)</span> vektor</p>
+      <p>Egy <span class="math inline">\(\vec{a}\)</span> vektor <span class="math inline">\(k\)</span> valós számszorosa, <span class="math inline">\(k\vec{a}\)</span>: hossza <span class="math inline">\(|k|\cdot|\vec{a}|\)</span>. Ha
+      <span class="math inline">\(k>0\)</span>, iránya változatlan; ha <span class="math inline">\(k<0\)</span>, iránya megfordul; ha <span class="math inline">\(k=0\)</span>, az eredmény a nullvektor. Két nemnulla
+      vektor pontosan akkor <b>párhuzamos</b>, ha egyik a másik számszorosa: <span class="math inline">\(\vec{b}=k\vec{a}\)</span>.</p>
+    </div>
+
+    <h2 id="s4">Vektorok a geometriában</h2>
+    <div class="doboz pelda" id="pelda-parvektorok">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Az <span class="math inline">\(ABCD\)</span> paralelogramma átlóinak felezőpontja <span class="math inline">\(S\)</span>. Legyen <span class="math inline">\(\vec{n}=\overrightarrow{SD}\)</span> és
+      <span class="math inline">\(\vec{m}=\overrightarrow{SA}\)</span>. Fejezd ki <span class="math inline">\(\vec{m}\)</span> és <span class="math inline">\(\vec{n}\)</span> segítségével: <span class="math inline">\(\overrightarrow{DC}\)</span>,
+      <span class="math inline">\(\overrightarrow{BA}\)</span>, <span class="math inline">\(\overrightarrow{BC}\)</span>, <span class="math inline">\(\overrightarrow{CA}\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(S\)</span> mindkét átlót felezi, ezért <span class="math inline">\(\overrightarrow{SC}=-\vec{m}\)</span> és <span class="math inline">\(\overrightarrow{SB}=-\vec{n}\)</span>. Innen:</p>
+      \[\overrightarrow{DC}=-\vec{m}-\vec{n},\quad \overrightarrow{BA}=\vec{m}+\vec{n},\quad \overrightarrow{BC}=\vec{n}-\vec{m},\quad \overrightarrow{CA}=2\vec{m}.\]</div></details>
+    </div>
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      Pietro elmozdulása két lépésben: előbb <span class="math inline">\(\vec{a}\)</span>, majd <span class="math inline">\(\vec{b}\)</span> irányba. Az eredő elmozdulás pontosan
+      <span class="math inline">\(\vec{a}+\vec{b}\)</span> — ugyanoda ér, mintha egyenesen odafutott volna. A GPS is így adja össze a szakaszokat.
+    </div>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Kang csapdája</p>
+      A <span class="math inline">\(-\vec{a}\)</span> <b>nem</b> „kisebb” vektor — ugyanolyan <b>hosszú</b>, csak <b>ellentétes irányú</b>. És
+      <span class="math inline">\(\overrightarrow{AB}=-\overrightarrow{BA}\)</span>: a sorrend megfordítja az irányt.
+    </div>
+    <div class="kviz" data-answer="2" data-jo="✔ A BA a fordított irány: BA = −AB." data-nem="✘ A végpontok cseréje megfordítja a vektort: BA = −AB.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik igaz mindig?</p>
+      <div class="opciok"><button><span class="math inline">\(\overrightarrow{AB}=\overrightarrow{BA}\)</span></button><button><span class="math inline">\(\overrightarrow{AB}=2\,\overrightarrow{BA}\)</span></button><button><span class="math inline">\(\overrightarrow{AB}=-\overrightarrow{BA}\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-geometria.html#alap-12">🐜 Ant-Man-bevetés <span class="cimke">Alap 12–13</span></a><a class="sav hulk" href="feladatok-geometria.html#kozep-8">💥 Hulk-bevetés <span class="cimke">Közép 8</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Wanda:</b> A mozgás nyelve megvan. Az utolsó kulcs a <b>Tükör-világ</b> igazi neve: az
+    <b>egybevágósági transzformációk</b> — eltolás, tükrözés, forgatás. Itt mozdítom el és tükrözöm az egész teret.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-sokszogek-es-kor.html"><span class="irany">← Előző</span><span class="hova">Sokszögek és a kör</span></a>
+      <a class="kov" href="tananyag-transzformaciok.html"><span class="irany">Következő →</span><span class="hova">Egybevágósági transzformációk</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

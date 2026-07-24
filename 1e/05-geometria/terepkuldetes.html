@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Terepküldetés — A Csatatér-térkép | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Geometria</a> ›
+  <span class="itt">Terepküldetés</span>
+</nav>
+<div class="hero">
+  <h1>Terepküldetés — A Csatatér-térkép</h1>
+  <p class="alcim">A geometria a gyakorlatban: szögekkel felméred a terepet, egybevágó alakzatokat és nevezetes
+  pontokat vizsgálsz, majd a Tükör-világban szimmetriát tervezel és vektorokkal navigálsz. Csoportban, 2–3 fő.</p>
+  <div class="meta-sor"><span class="chip ora">projekt</span><span class="chip alap">3 bevetés</span><span class="chip joker">+ Tükör-világ</span></div>
+  <div class="brief"><p>🛡️ <b>Doctor Strange, Scarlet Witch &amp; Quicksilver:</b> Kadét, a szektor lezárásához fel kell térképezned
+  a harcteret és uralnod kell a formák mozgását. Három bevetés vár — <b>mérj szöget</b>, <b>ismerd fel az alakzatok
+  törvényeit</b>, és <b>tükrözz, forgass, navigálj</b> a Tükör-világban. Minden döntést <b>számolással és indoklással</b> igazolj.</p></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+
+    <h2 id="hogyan">📋 A küldetés menete</h2>
+    <p>Három bevetést hajtotok végre. Mindegyikben van <b>fix feladat</b> (mindenkinek ugyanaz — ezt oldd meg
+    pontosan) és <b>saját rész</b> (a csoportod mérése vagy alkotása). Minden lépést <b>írj le</b>: a rajzot, a
+    számítást, az indoklást. A tanár a leadott <b>bevetési naplót</b> értékeli — a lényeg a <b>pontos, követhető matek</b>.</p>
+
+    <h2 id="b1">🟢 1. bevetés — Terepfelmérés szögekkel</h2>
+    <p>Doctor Strange feltérképezi a harcteret: a szögek elárulják a vonalak és utak viszonyát.</p>
+    <article class="feladat alap" id="szogek">
+      <p><span class="szam">1.</span> <b>Fix — a folyosók.</b> A kampusz két párhuzamos folyosóját (<span class="math inline">\(a\parallel b\)</span>) egy átlós vészjárat
+      metszi. Az egyik keletkező szög <span class="math inline">\(118^\circ\)</span>. Add meg a vele <b>egyállású</b>, a <b>váltó-</b> és a <b>társszögét</b>!</p>
+      <p><span class="szam">2.</span> <b>Fix — a háromszög-udvar.</b> Egy háromszög alakú udvar két szöge <span class="math inline">\(52^\circ\)</span> és <span class="math inline">\(71^\circ\)</span>.
+      Mekkora a harmadik szög, és a mellette lévő <b>külső</b> szög?</p>
+      <p><span class="szam">3.</span> <b>Fix — az őrtorony.</b> Egy háromszög két belső szögének belső szögfelezői <span class="math inline">\(132^\circ\)</span>-os szöget
+      zárnak be. Mekkora a háromszög harmadik belső szöge?</p>
+      <p><span class="szam">4.</span> <b>Saját.</b> Mérjetek meg a suliban <b>két valós szöget</b> (pl. lépcső hajlása, tetősík, nyitott ajtó),
+      és adjátok meg mindkettő pótszögét és kiegészítő szögét.</p>
+    </article>
+
+    <h2 id="b2">🟡 2. bevetés — Alakzatok és nevezetes pontok</h2>
+    <p>Wanda a formák törvényeit olvassa: a háromszög körei, a négyszögek és az érintőkör szabályai.</p>
+    <article class="feladat kozep" id="alakzatok">
+      <p><span class="szam">1.</span> <b>Fix — a park.</b> A park <b>derékszögű</b> háromszög alakú, az átfogója <span class="math inline">\(40\ \text{m}\)</span>. Hol van a
+      <b>körülírt kör</b> középpontja, és mekkora a sugara?</p>
+      <p><span class="szam">2.</span> <b>Fix — a telek.</b> Egy négyszög alakú telek három belső szöge <span class="math inline">\(96^\circ\)</span>, <span class="math inline">\(88^\circ\)</span> és
+      <span class="math inline">\(74^\circ\)</span>. Mekkora a negyedik?</p>
+      <p><span class="szam">3.</span> <b>Fix — a kert.</b> Egy <b>érintőnégyszög</b> alakú kert oldalai sorban <span class="math inline">\(AB=18\ \text{m}\)</span>,
+      <span class="math inline">\(BC=25\ \text{m}\)</span>, <span class="math inline">\(CD=30\ \text{m}\)</span>. Mekkora az <span class="math inline">\(AD\)</span> oldal?</p>
+      <p><span class="szam">4.</span> <b>Saját.</b> Válasszatok egy valós, sokszög alakú területet (pl. az iskola alaprajza vagy egy tér),
+      számoljátok ki a <b>belső szögeinek összegét</b>, és nézzétek meg, hány <b>átlója</b> van.</p>
+    </article>
+
+    <h2 id="b3">🔴 3. bevetés — A Tükör-világ: szimmetria és vektorok</h2>
+    <p>Pietro és Wanda mozgatja a teret: tükrözés, forgatás és vektoros navigáció — a méret közben sosem változik.</p>
+    <article class="feladat nehez" id="tukor">
+      <p><span class="szam">1.</span> <b>Fix — Quicksilver útvonala.</b> Pietro <span class="math inline">\(A\)</span>-ból <span class="math inline">\(B\)</span>-be fut az
+      <span class="math inline">\(\vec{a}=(3;4)\)</span> elmozdulással (3 egység kelet, 4 észak), majd <span class="math inline">\(B\)</span>-ből <span class="math inline">\(C\)</span>-be a
+      <span class="math inline">\(\vec{b}=(5;-1)\)</span> elmozdulással. Add meg az <b>eredő</b> elmozdulást (<span class="math inline">\(\overrightarrow{AC}\)</span>) komponensekkel!</p>
+      <p><span class="szam">2.</span> <b>Fix — az embléma.</b> A Szvetkó-egység emblémáját <b>tengelyesen szimmetrikusra</b> tervezitek.
+      Rajzoljátok meg a minta felét, majd <b>tükrözzétek</b> a tengelyre. Írjátok le: a tükrözés hogyan hat egy pontra
+      (mi a tengely szerepe a <span class="math inline">\(PP'\)</span> szakaszra nézve)?</p>
+      <p><span class="szam">3.</span> <b>Fix — a platform.</b> Egy <b>szabályos hatszög</b> alakú platform. Mekkora a legkisebb pozitív
+      <b>forgásszög</b>, amely önmagába viszi, és hány <b>szimmetriatengelye</b> van?</p>
+      <p><span class="szam">4.</span> <b>Saját.</b> Keressetek a suliban egy <b>tengelyesen szimmetrikus</b> és egy <b>középpontosan
+      szimmetrikus</b> tárgyat. Jelöljétek a tengelyt, illetve a centrumot, és fotózzátok/rajzoljátok le.</p>
+    </article>
+
+    <h2 id="leadas">📓 Mit adj le? — bevetési napló</h2>
+    <div class="gyakorolj">
+      <span class="ikon">🎯</span>
+      <div>
+        <p><b>Csoport:</b> 2–3 kadét. <b>Forma:</b> rövid beszámoló (kézzel írt is jó), amely tartalmazza:</p>
+        <ol class="reszfeladatok">
+          <li>az 1. bevetés <b>szögszámításait</b> (folyosók, udvar, őrtorony) és a saját mérést;</li>
+          <li>a 2. bevetés <b>alakzat-számításait</b> (körülírt kör, négyszög szöge, érintőnégyszög) és a saját területet;</li>
+          <li>a 3. bevetés <b>vektor-, tükrözés- és forgatás-részét</b> az emblémarajzzal és a saját szimmetriapéldákkal;</li>
+          <li>minden résznél a <b>rajzot és a számítás lépéseit</b> — a puszta végeredmény kevés.</li>
+        </ol>
+      </div>
+    </div>
+    <p class="le halvany"><b>Hogyan értékelem?</b> Szögfelmérés ~30%, alakzatok és nevezetes pontok ~30%, a Tükör-világ
+    (vektor + szimmetria) ~25%, igényes, követhető napló ~15%. A köntös csak keret — <b>a matematika pontossága az igazi cél</b>.</p>
+
+    <div class="lapozo">
+      <a class="elozo" href="osszefoglalo.html"><span class="irany">← Előző</span><span class="hova">Tömör összefoglaló</span></a>
+      <a class="kov" href="index.html"><span class="irany">Vissza →</span><span class="hova">Témakör főoldala</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+</body>
+</html>
