@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lineáris egyenlőtlenségek — tananyag | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Lineáris egyenletek és rendszerek</a> ›
+  <span class="itt">Egyenlőtlenségek — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Lineáris egyenlőtlenségek</h1>
+  <p class="alcim">Az egyenlőtlenség fogalma és megoldáshalmaza, az ekvivalens átalakítások (és az előjelfordítás szabálya), a megoldás ábrázolása számegyenesen és intervallummal.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Végső Egyenlet · 2/4</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+      <div class="brief"><p>📡 <b>Black Widow:</b> A terepen ritkán van pontos érték — inkább <b>korlátok</b> vannak: „legalább ennyi üzemanyag", „legfeljebb ennyi idő". Az <b>egyenlőtlenség</b> ezeket a taktikai határokat írja le, és a megoldása nem egyetlen szám, hanem egy egész <b>tartomány</b>. A megoldás majdnem ugyanúgy megy, mint az egyenletnél — egyetlen csavarral, amit Kang imád kihasználni.</p></div>
+    <p>A <b>lineáris egyenlőtlenség</b> az egyenlethez hasonló, de az <span class="math inline">\(=\)</span> helyett <span class="math inline">\(<,\ >,\ \le,\ \ge\)</span> reláció áll. A <b>megoldáshalmaz</b> azoknak az <span class="math inline">\(x\)</span> értékeknek a halmaza, amelyekre a reláció igaz.</p>
+
+    <h2 id="s1">Megoldás és az előjelfordítás szabálya</h2>
+    <div class="doboz tetel" id="tetel-atalakitas">
+      <p class="cim"><span class="ikon">📘</span> Ekvivalens átalakítások</p>
+      <p>Mindkét oldalhoz hozzáadhatunk/kivonhatunk ugyanannyit, és szorozhatunk/oszthatunk ugyanazzal a <b>pozitív</b> számmal — a reláció iránya marad. <b>Negatív</b> számmal való szorzáskor / osztáskor viszont a reláció iránya <b>megfordul</b>: <span class="math inline">\(<\)</span> ből <span class="math inline">\(>\)</span> lesz, és fordítva.</p>
+    </div>
+    <div class="doboz pelda" id="pelda-alap">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Oldd meg: <span class="math inline">\(-3x\ge 9\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p>Osztunk <span class="math inline">\(-3\)</span>-mal, ezért a reláció <b>megfordul</b>: <span class="math inline">\(x\le -3\)</span>.</p></div></details>
+    </div>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Kang csapdája</p>
+      A leggyakoribb hiba: negatívval szorzol/osztasz, de <b>elfelejted megfordítani</b> a relációt. Kang pontosan erre a résre épít. Mindig kérdezd meg magadtól: „negatívval osztottam? akkor fordul!"
+    </div>
+
+    <h2 id="s2">Ábrázolás: számegyenes és intervallum</h2>
+    <p>A megoldáshalmazt kétféleképpen adjuk meg. A <b>számegyenesen</b> a határ <b>üres karika</b>, ha nem tartozik bele (<span class="math inline">\(<,\ >\)</span>), és <b>tele karika</b>, ha beletartozik (<span class="math inline">\(\le,\ \ge\)</span>). <b>Intervallummal</b>: nyitott végpont <span class="math inline">\(( \ )\)</span>, zárt végpont <span class="math inline">\([\ ]\)</span>.</p>
+    <div class="doboz pelda" id="pelda-intervallum">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Add meg intervallummal: <span class="math inline">\(x>2\)</span>; <span class="math inline">\(x\le -1\)</span>; <span class="math inline">\(-3\le x<4\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\((2,\infty)\)</span>; <span class="math inline">\((-\infty,-1]\)</span>; <span class="math inline">\([-3,4)\)</span>.</p></div></details>
+    </div>
+
+    <h2 id="s3">Zárójeles és törtes egyenlőtlenségek</h2>
+    <p>Mint az egyenleteknél: előbb zárójelbontás és felszorzás (pozitív nevezővel!), majd rendezés. Az iránnyal csak akkor kell foglalkozni, ha közben negatív számmal szorzunk/osztunk.</p>
+    <div class="doboz pelda" id="pelda-zarojeles">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Oldd meg: <span class="math inline">\(4(x-1)-3(x+2)>-8\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(4x-4-3x-6>-8\)</span>, azaz <span class="math inline">\(x-10>-8\)</span>, innen <span class="math inline">\(x>2\)</span>.</p></div></details>
+    </div>
+    <div class="kviz" data-answer="1" data-jo="✔ x < −2: osztunk −2-vel, a reláció megfordul." data-nem="✘ Negatívval osztunk, ezért fordul a reláció: x < −2.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mi a megoldása: <span class="math inline">\(-2x>4\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(x>-2\)</span></button><button><span class="math inline">\(x<-2\)</span></button><button><span class="math inline">\(x>2\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-linearis-egyenletek-es-rendszerek.html#alap-3">🐜 Ant-Man-bevetés <span class="cimke">A 3</span></a><a class="sav hulk" href="feladatok-linearis-egyenletek-es-rendszerek.html#kozep-3">💥 Hulk-bevetés <span class="cimke">K 3</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Spider-Man:</b> Egyenletek, egyenlőtlenségek — mind számokról szól. De van, aki képben gondolkodik. A következő modulban <b>rajzolunk</b>: a lineáris függvény egy egyenes, és minden titkát elárulja a grafikonja.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-linearis-egyenletek.html"><span class="irany">← Előző</span><span class="hova">Lineáris egyenletek</span></a>
+      <a class="kov" href="tananyag-linearis-fuggveny.html"><span class="irany">Következő →</span><span class="hova">Lineáris függvény</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

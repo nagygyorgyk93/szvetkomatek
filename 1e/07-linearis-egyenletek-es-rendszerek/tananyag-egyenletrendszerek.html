@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Egyenletrendszerek — tananyag | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Lineáris egyenletek és rendszerek</a> ›
+  <span class="itt">Egyenletrendszerek — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Lineáris egyenletrendszerek</h1>
+  <p class="alcim">Kétismeretlenes rendszerek behelyettesítéssel, az együtthatók kiküszöbölésével és grafikusan; a háromismeretlenes rendszer és a Gauss-módszer; szöveges feladatok modellezése; a megoldások száma.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Végső Egyenlet · 4/4</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+      <div class="brief"><p>📡 <b>Captain America &amp; a teljes csapat:</b> Ez az. A <b>Végső Egyenlet</b> nem egyetlen feltétel, hanem <b>több feltétel egyszerre</b> — egy egyenletrendszer, amelynek közös megoldása lezárja a Nullpont-anomáliát. Mindenki hozza a maga szálát: Iron Man az egyenleteket, Spider-Man a grafikont, Black Widow a korlátokat. A rendszer megoldása ott van, ahol <b>minden feltétel egyszerre teljesül</b>. Csapat, gyülekező!</p></div>
+    <p>A <b>lineáris egyenletrendszer</b> több lineáris egyenlet együttese, közös ismeretlenekkel. A megoldás az az érték-<b>együttes</b>, amely <b>minden</b> egyenletet egyszerre kielégít. Kétismeretlenes rendszernél három egyenértékű módszerünk van.</p>
+
+    <h2 id="s1">Behelyettesítő módszer</h2>
+    <p>Az egyik egyenletből kifejezzük az egyik ismeretlent, és behelyettesítjük a másik egyenletbe — így egyismeretlenes egyenletet kapunk.</p>
+    <div class="doboz pelda" id="pelda-behelyettesites">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Oldd meg: <span class="math inline">\(x+y=5\)</span>, <span class="math inline">\(x-y=1\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p>Az elsőből <span class="math inline">\(y=5-x\)</span>. Behelyettesítve a másodikba: <span class="math inline">\(x-(5-x)=1\)</span>, azaz <span class="math inline">\(2x-5=1\)</span>, innen <span class="math inline">\(x=3\)</span>, majd <span class="math inline">\(y=2\)</span>.</p></div></details>
+    </div>
+
+    <h2 id="s2">Az együtthatók kiküszöbölése</h2>
+    <p>A két egyenletet úgy szorozzuk (ha kell), hogy az egyik ismeretlen együtthatói ellentettek legyenek, majd <b>összeadjuk</b> az egyenleteket — az egyik ismeretlen kiesik.</p>
+    <div class="doboz pelda" id="pelda-kikuszoboles">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Oldd meg: <span class="math inline">\(2x+y=7\)</span>, <span class="math inline">\(x-y=2\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p>A két egyenletet összeadva az <span class="math inline">\(y\)</span> kiesik: <span class="math inline">\(3x=9\)</span>, innen <span class="math inline">\(x=3\)</span>, majd <span class="math inline">\(y=1\)</span>.</p></div></details>
+    </div>
+
+    <h2 id="s3">Grafikus megoldás</h2>
+    <p>Mindkét egyenlet egy-egy <b>egyenest</b> határoz meg a koordináta-rendszerben. A rendszer megoldása a két egyenes <b>metszéspontja</b> — az egyetlen pont, amely mindkét egyenesen (tehát mindkét egyenletben) rajta van.</p>
+    <div class="svgwrap svgcard">
+      <svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Két egyenes metszéspontja az (1,2) pontban">
+        <line x1="20" y1="200" x2="300" y2="200" stroke="#94a3b8" stroke-width="1.5"/>
+        <line x1="60" y1="220" x2="60" y2="20" stroke="#94a3b8" stroke-width="1.5"/>
+        <polygon points="300,200 292,196 292,204" fill="#94a3b8"/>
+        <polygon points="60,20 56,28 64,28" fill="#94a3b8"/>
+        <text x="304" y="204" font-size="11" fill="#64748b" font-style="italic">x</text>
+        <text x="52" y="20" font-size="11" fill="#64748b" font-style="italic">y</text>
+        <line x1="20" y1="200" x2="220" y2="0" stroke="#3b82f6" stroke-width="2.5"/>
+        <line x1="20" y1="40" x2="180" y2="200" stroke="#f59e0b" stroke-width="2.5"/>
+        <circle cx="100" cy="120" r="4.5" fill="#047857"/>
+        <text x="108" y="116" font-size="11" fill="#047857">(1, 2)</text>
+        <text x="188" y="30" font-size="11" fill="#3b82f6">y = x + 1</text>
+        <text x="150" y="196" font-size="11" fill="#b45309">y = −x + 3</text>
+      </svg>
+      <p class="cap">Az <span class="math inline">\(y=x+1\)</span> és <span class="math inline">\(y=-x+3\)</span> egyenesek metszéspontja <span class="math inline">\((1,2)\)</span> — ez a rendszer megoldása.</p>
+    </div>
+
+    <h2 id="s4">Háromismeretlenes rendszer — a Gauss-módszer</h2>
+    <p>Három ismeretlennél a cél a <b>lépcsős alak</b>: az egyenletekből sorra kiküszöböljük az ismeretleneket, míg egy egyismeretlenes egyenlet marad, majd <b>visszafelé</b> behelyettesítünk.</p>
+    <div class="doboz pelda" id="pelda-gauss">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Oldd meg: <span class="math inline">\(x+y+z=6\)</span>, <span class="math inline">\(x-y+z=2\)</span>, <span class="math inline">\(2x+y-z=1\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p>Az első két egyenlet különbségéből <span class="math inline">\(2y=4\)</span>, azaz <span class="math inline">\(y=2\)</span>. Ekkor <span class="math inline">\(x+z=4\)</span> (az elsőből) és <span class="math inline">\(2x-z=-1\)</span> (a harmadikból, <span class="math inline">\(y=2\)</span>-vel). Ezeket összeadva <span class="math inline">\(3x=3\)</span>, innen <span class="math inline">\(x=1\)</span>, majd <span class="math inline">\(z=3\)</span>. Megoldás: <span class="math inline">\((1,2,3)\)</span>.</p></div></details>
+    </div>
+
+    <h2 id="s5">Szöveges feladatok rendszerrel</h2>
+    <p>A modellezés lépései: (1) <b>vezess be ismeretleneket</b> (mit keresünk?); (2) a szöveg minden feltételéből írj fel egy <b>egyenletet</b>; (3) oldd meg a rendszert; (4) <b>értelmezd</b> a választ a feladat szövegében (és ellenőrizd).</p>
+    <div class="doboz pelda" id="pelda-szoveges">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Egy panzióban három- és kétágyas szobák vannak: összesen <span class="math inline">\(14\)</span> szoba, <span class="math inline">\(34\)</span> férőhely. Hány szoba van mindkét fajtából?
+      <details><summary>Megoldás</summary><div class="bel"><p>Legyen <span class="math inline">\(h\)</span> a háromágyas, <span class="math inline">\(k\)</span> a kétágyas. Ekkor <span class="math inline">\(h+k=14\)</span> és <span class="math inline">\(3h+2k=34\)</span>. Behelyettesítve <span class="math inline">\(h=6,\ k=8\)</span>: <b>6 háromágyas</b> és <b>8 kétágyas</b>.</p></div></details>
+    </div>
+
+    <h2 id="s6">Hány megoldás van? — a geometriai kép</h2>
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Metsző, párhuzamos, egybeeső</p>
+      <p>Két egyenes háromféleképpen helyezkedhet el, és ez a rendszer megoldásainak számát is megadja: <b>metsző</b> egyenesek → pontosan <b>egy</b> megoldás; <b>párhuzamos</b> (nem egybeeső) egyenesek → <b>nincs</b> megoldás; <b>egybeeső</b> egyenesek → <b>végtelen sok</b> megoldás. Ugyanaz a három eset, mint a paraméteres egyenletnél!</p>
+    </div>
+
+    <h2 id="s7">🧾 Gyorsismétlő</h2>
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> A teljes témakör egy lapon</p>
+      <p><b>Egyenlet:</b> mérlegelv, zárójel/tört felszorzás, <span class="math inline">\(ax=b\)</span> eset-vizsgálat. <b>Egyenlőtlenség:</b> mint az egyenlet, de negatívval szorzáskor a reláció <b>fordul</b>; megoldás számegyenesen/intervallummal. <b>Függvény:</b> <span class="math inline">\(f(x)=kx+n\)</span> — meredekség, tengelymetszet, nullahely, két pontból ábra. <b>Rendszer:</b> behelyettesítés / kiküszöbölés / grafikus; 3 ismeretlen → Gauss; szövegesnél modellezz. Megoldások száma: egy / nincs / végtelen.</p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-linearis-egyenletek-es-rendszerek.html#alap-6">🐜 Ant-Man-bevetés <span class="cimke">A 6–7</span></a><a class="sav hulk" href="feladatok-linearis-egyenletek-es-rendszerek.html#kozep-4">💥 Hulk-bevetés <span class="cimke">K 4, 6–18</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>SZVETI:</b> A Végső Egyenlet összeállt — a szakadás zárul. Most élesben: a <b>kiképzési adattárban</b> gyakorolj (ott vár a 16 valós szöveges bevetés is), majd a <b>terepküldetésen</b> vezesd le a saját fináléd.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-linearis-fuggveny.html"><span class="irany">← Előző</span><span class="hova">Lineáris függvény</span></a>
+      <a class="kov" href="feladatok-linearis-egyenletek-es-rendszerek.html"><span class="irany">Következő →</span><span class="hova">Feladatgyűjtemény</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lineáris egyenletek és rendszerek — összefoglaló | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Lineáris egyenletek és rendszerek</a> ›
+  <span class="itt">Tömör összefoglaló</span>
+</nav>
+<div class="hero">
+  <h1>Lineáris egyenletek és rendszerek — tömör összefoglaló</h1>
+  <p class="alcim">A Végső Egyenlet minden szabálya és módszere egy helyen — a bevetési kártya. Ismétléshez, dolgozat előtti átfutáshoz, nyomtatáshoz. 😉</p>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s1">Lineáris egyenletek</h2>
+    <p><b>Alak:</b> rendezés után <span class="math inline">\(ax=b\)</span>. <b>Mérlegelv:</b> mindkét oldallal ugyanazt tesszük (nemnulla számmal szorzunk/osztunk) (<a href="tananyag-linearis-egyenletek.html#tetel-merlegelv">→ tananyag</a>). Zárójel- és törtes egyenletnél előbb <b>bontunk és felszorzunk</b> a nevezők LKT-jével.</p>
+    <p><b>Eset-vizsgálat</b> (<span class="math inline">\(ax=b\)</span>): <span class="math inline">\(a\neq 0\)</span> → egy megoldás <span class="math inline">\(x=\tfrac{b}{a}\)</span>; <span class="math inline">\(a=0,\ b\neq 0\)</span> → nincs; <span class="math inline">\(a=0,\ b=0\)</span> → minden szám megoldás (<a href="tananyag-linearis-egyenletek.html#tetel-parameter">→</a>).</p>
+
+    <h2 id="s2">Egyenlőtlenségek</h2>
+    <p>Megoldásuk mint az egyenleté, egyetlen szabállyal: <b>negatív</b> számmal szorozva/osztva a reláció <b>iránya megfordul</b> (<a href="tananyag-egyenlotlensegek.html#tetel-atalakitas">→ tananyag</a>). A megoldáshalmaz egy <b>tartomány</b>: számegyenesen (üres/tele karika) vagy intervallummal (<span class="math inline">\(( \,)\)</span> nyitott, <span class="math inline">\([\,]\)</span> zárt).</p>
+
+    <h2 id="s3">Lineáris függvény</h2>
+    <p><b>Alak:</b> <span class="math inline">\(f(x)=kx+n\)</span> — <span class="math inline">\(k\)</span> a meredekség (<span class="math inline">\(k>0\)</span> növekvő, <span class="math inline">\(k<0\)</span> csökkenő), <span class="math inline">\(n\)</span> a tengelymetszet <span class="math inline">\((0,n)\)</span> (<a href="tananyag-linearis-fuggveny.html#def-meredekseg">→</a>). <b>Ábra:</b> két pontból. <b>Nullahely:</b> <span class="math inline">\(kx+n=0\Rightarrow x=-\tfrac{n}{k}\)</span>. <b>Ponton áthaladás:</b> a pont koordinátáit behelyettesítjük.</p>
+
+    <h2 id="s4">Egyenletrendszerek</h2>
+    <p><b>Kétismeretlenes módszerek:</b> behelyettesítés (<a href="tananyag-egyenletrendszerek.html#pelda-behelyettesites">→</a>), az együtthatók kiküszöbölése (<a href="tananyag-egyenletrendszerek.html#pelda-kikuszoboles">→</a>), grafikus — a két egyenes metszéspontja (<a href="tananyag-egyenletrendszerek.html#s3">→</a>). <b>Három ismeretlen:</b> Gauss-módszer (lépcsős alak, visszahelyettesítés) (<a href="tananyag-egyenletrendszerek.html#pelda-gauss">→</a>).</p>
+    <p><b>Megoldások száma</b> (két egyenes): metsző → egy; párhuzamos → nincs; egybeeső → végtelen sok (<a href="tananyag-egyenletrendszerek.html#s6">→</a>). <b>Szöveges feladat:</b> ismeretlenek felvétele → egyenletek felírása → megoldás → értelmezés/ellenőrzés (<a href="tananyag-egyenletrendszerek.html#s5">→</a>).</p>
+
+    <div class="gyakorolj">
+      <span class="ikon">🎯</span>
+      <p>Élesben: a <a href="feladatok-linearis-egyenletek-es-rendszerek.html">feladatgyűjtemény</a> gyakorló dolgozatával mérd fel magad (és a 16 szöveges bevetéssel), majd <a href="terepkuldetes.html">A Végső Egyenlet terepküldetésen</a> alkalmazd!</p>
+    </div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-linearis-egyenletek-es-rendszerek.html"><span class="irany">← Előző</span><span class="hova">Feladatgyűjtemény</span></a>
+      <a class="kov" href="terepkuldetes.html"><span class="irany">Következő →</span><span class="hova">Terepküldetés — A Végső Egyenlet</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+</body>
+</html>

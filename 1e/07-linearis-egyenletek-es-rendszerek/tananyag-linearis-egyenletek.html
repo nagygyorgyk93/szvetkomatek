@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lineáris egyenletek — tananyag | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Lineáris egyenletek és rendszerek</a> ›
+  <span class="itt">Lineáris egyenletek — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Lineáris egyenletek</h1>
+  <p class="alcim">Az elsőfokú egyenlet fogalma és a mérlegelv, zárójeles és törtes egyenletek, lineárisra visszavezethető egyenletek, valamint a paraméteres eset — az ismeretlen megtalálása.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Végső Egyenlet · 1/4</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+      <div class="brief"><p>📡 <b>Iron Man (Tony Stark):</b> Kadét, ez a finálé. A Nullpont-anomáliát egyetlen dolog zárja le: a <b>Végső Egyenlet</b> — és minden egyenlet ugyanarról szól, hogy megtaláljuk az <b>ismeretlent</b>. Az elsőfokú egyenlet a legtisztább eszközünk: a <b>mérlegelv</b> szerint amit az egyik oldallal teszel, azt a másikkal is meg kell tenned — így „hámozod ki" az <span class="math inline">\(x\)</span>-et. Aki ezt biztosan kezeli, az a csapat gerince.</p></div>
+    <p>A <b>lineáris (elsőfokú) egyenlet</b> olyan egyenlet, amely rendezés után <span class="math inline">\(ax=b\)</span> alakra hozható (<span class="math inline">\(a\neq 0\)</span>). Megoldani annyit tesz: megkeresni azt az <span class="math inline">\(x\)</span> értéket, amelyre az egyenlőség igaz.</p>
+
+    <h2 id="s1">A mérlegelv és az ekvivalens átalakítások</h2>
+    <div class="doboz tetel" id="tetel-merlegelv">
+      <p class="cim"><span class="ikon">📘</span> Ekvivalens átalakítások</p>
+      <p>Az egyenlet megoldáshalmaza nem változik, ha: mindkét oldalhoz ugyanazt a számot/kifejezést hozzáadjuk vagy kivonjuk; mindkét oldalt ugyanazzal a <b>nemnulla</b> számmal szorozzuk vagy osztjuk. A cél: az ismeretlent az egyik oldalra, a számokat a másikra rendezni.</p>
+    </div>
+    <div class="doboz pelda" id="pelda-alap">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Oldd meg: <span class="math inline">\(5x+1=3x-7\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(5x-3x=-7-1\)</span>, azaz <span class="math inline">\(2x=-8\)</span>, innen <span class="math inline">\(x=-4\)</span>.</p></div></details>
+    </div>
+
+    <h2 id="s2">Zárójeles és törtes egyenletek</h2>
+    <p>Ha az egyenletben zárójel vagy tört szerepel, először <b>bontsuk fel a zárójeleket</b>, illetve <b>szorozzunk fel a nevezők legkisebb közös többszörösével</b> — így tört-mentes, zárójel-mentes lineáris egyenletet kapunk.</p>
+    <div class="doboz pelda" id="pelda-tortes">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Oldd meg: <span class="math inline">\(\dfrac{x+1}{2}-\dfrac{x-1}{3}=1\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p>Szorzunk <span class="math inline">\(6\)</span>-tal: <span class="math inline">\(3(x+1)-2(x-1)=6\)</span>, azaz <span class="math inline">\(3x+3-2x+2=6\)</span>, innen <span class="math inline">\(x+5=6\)</span>, tehát <span class="math inline">\(x=1\)</span>.</p></div></details>
+    </div>
+    <div class="kviz" data-answer="2" data-jo="✔ x = 5 — szorozz 6-tal, bontsd a zárójelet, rendezz." data-nem="✘ Szorozz a nevezők 6-os közös többszörösével; a megoldás x = 5.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi a megoldása: <span class="math inline">\(\dfrac{3x+1}{2}-\dfrac{x-2}{3}=7\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(x=3\)</span></button><button><span class="math inline">\(x=7\)</span></button><button><span class="math inline">\(x=5\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Lineárisra visszavezethető egyenletek</h2>
+    <p>Sok egyenlet első ránézésre nem lineáris (zárójelek szorzata, „elrejtett" magasabb fokú tagok), de <b>kibontás és összevonás után</b> lineárissá válik, mert a magasabb fokú tagok kiesnek.</p>
+    <div class="doboz pelda" id="pelda-visszavezetheto">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Oldd meg: <span class="math inline">\((x+3)(x-2)-(x-1)(x+4)=4\)</span>.
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\((x^2+x-6)-(x^2+3x-4)=4\)</span>, azaz <span class="math inline">\(-2x-2=4\)</span>, innen <span class="math inline">\(-2x=6\)</span>, tehát <span class="math inline">\(x=-3\)</span>. (Az <span class="math inline">\(x^2\)</span> kiesett — az egyenlet valójában lineáris.)</p></div></details>
+    </div>
+
+    <h2 id="s4">Paraméteres lineáris egyenletek</h2>
+    <div class="doboz tetel" id="tetel-parameter">
+      <p class="cim"><span class="ikon">📘</span> Az <span class="math inline">\(ax=b\)</span> eset-vizsgálata</p>
+      <p>A megoldások száma az együtthatóktól függ: ha <span class="math inline">\(a\neq 0\)</span>, akkor pontosan <b>egy</b> megoldás van, <span class="math inline">\(x=\dfrac{b}{a}\)</span>; ha <span class="math inline">\(a=0\)</span> és <span class="math inline">\(b\neq 0\)</span>, akkor <b>nincs</b> megoldás; ha <span class="math inline">\(a=0\)</span> és <span class="math inline">\(b=0\)</span>, akkor <b>minden</b> valós szám megoldás (azonosság).</p>
+    </div>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Kang csapdája</p>
+      Kang szereti a „megoldás nélküli" és a „végtelen sok megoldású" egyenleteket összekeverni. Ha az ismeretlen <b>kiesik</b> és <b>hamis</b> állítás marad (pl. <span class="math inline">\(5=1\)</span>) → nincs megoldás; ha <b>igaz</b> állítás marad (pl. <span class="math inline">\(3=3\)</span>) → minden szám megoldás. Sosem „x = 0" automatikusan!
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-linearis-egyenletek-es-rendszerek.html#alap-1">🐜 Ant-Man-bevetés <span class="cimke">A 1–2</span></a><a class="sav hulk" href="feladatok-linearis-egyenletek-es-rendszerek.html#kozep-1">💥 Hulk-bevetés <span class="cimke">K 1–2</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Black Widow:</b> Az egyenlet megmondja, mi <b>pontosan</b> egyenlő. De a való életben gyakran csak <b>határokat</b> ismerünk — „legalább", „legfeljebb". A következő modul az egyenlőtlenségeké: a taktikai korlátok nyelve.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">Témakör-nyitó</span></a>
+      <a class="kov" href="tananyag-egyenlotlensegek.html"><span class="irany">Következő →</span><span class="hova">Egyenlőtlenségek</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

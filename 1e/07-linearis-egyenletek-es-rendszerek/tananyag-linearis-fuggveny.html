@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lineáris függvény — tananyag | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Lineáris egyenletek és rendszerek</a> ›
+  <span class="itt">Lineáris függvény — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Lineáris függvény és grafikonja</h1>
+  <p class="alcim">Az <span class="math inline">\(f(x)=kx+n\)</span> alak, a meredekség és a tengelymetszet, a grafikon megrajzolása két pontból, a nullahely, valamint az adott ponton áthaladó egyenes.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Végső Egyenlet · 3/4</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+      <div class="brief"><p>📡 <b>Spider-Man:</b> A hálóm egyenes szálakból áll — és a matek egyenese, a <b>lineáris függvény</b>, pontosan ilyen: állandó „dőléssel" halad. Ha ismered a <b>meredekséget</b> és egyetlen pontját, az egész egyenest ismered. A grafikon nem dísz: egy pillantással megmutatja a nullahelyet, a növekedést, két egyenes metszését. Ez a képi gondolkodás fegyvere a Végső Egyenlethez.</p></div>
+    <p>A <b>lineáris függvény</b> alakja <span class="math inline">\(f(x)=kx+n\)</span>, ahol <span class="math inline">\(k\)</span> a <b>meredekség</b> (iránytényező) és <span class="math inline">\(n\)</span> a függvény <b>tengelymetszete</b> az <span class="math inline">\(y\)</span>-tengelyen. A grafikonja mindig egy <b>egyenes</b>.</p>
+
+    <h2 id="s1">Meredekség és tengelymetszet</h2>
+    <div class="doboz definicio" id="def-meredekseg">
+      <p class="cim"><span class="ikon">📗</span> <span class="math inline">\(k\)</span> és <span class="math inline">\(n\)</span> jelentése</p>
+      <p>A <b>meredekség</b> <span class="math inline">\(k\)</span> azt mondja meg, mennyit változik <span class="math inline">\(y\)</span>, ha <span class="math inline">\(x\)</span> eggyel nő. Ha <span class="math inline">\(k>0\)</span>, a függvény <b>növekvő</b>; ha <span class="math inline">\(k<0\)</span>, <b>csökkenő</b>; ha <span class="math inline">\(k=0\)</span>, <b>állandó</b> (vízszintes egyenes). A <b>tengelymetszet</b> <span class="math inline">\(n\)</span> az a pont, ahol a grafikon metszi az <span class="math inline">\(y\)</span>-tengelyt: <span class="math inline">\((0,n)\)</span>.</p>
+    </div>
+
+    <h2 id="s2">Ábrázolás és nullahely</h2>
+    <p>Az egyenest <b>két pontja</b> egyértelműen meghatározza — érdemes a két tengelymetszetet választani. A <b>nullahely</b> az az <span class="math inline">\(x\)</span>, ahol <span class="math inline">\(f(x)=0\)</span> (a grafikon itt metszi az <span class="math inline">\(x\)</span>-tengelyt): az <span class="math inline">\(kx+n=0\)</span> egyenletből <span class="math inline">\(x=-\dfrac{n}{k}\)</span>.</p>
+    <div class="doboz pelda" id="pelda-abrazolas">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Ábrázold: <span class="math inline">\(f(x)=2x-4\)</span>. Add meg a nullahelyét és a tengelymetszetét!
+      <details><summary>Megoldás</summary><div class="bel"><p>Tengelymetszet: <span class="math inline">\((0,-4)\)</span>. Nullahely: <span class="math inline">\(2x-4=0\Rightarrow x=2\)</span>, tehát a <span class="math inline">\((2,0)\)</span> pont. E két ponton át húzzuk az egyenest. Meredeksége <span class="math inline">\(k=2\)</span> (növekvő).</p></div></details>
+    </div>
+
+    <h2 id="s3">Adott ponton áthaladó egyenes</h2>
+    <p>Ha ismerjük egy egyenes egy pontját és valamely paraméterét, behelyettesítéssel megkapjuk a hiányzót: a pont koordinátáit beírjuk <span class="math inline">\(f(x)=kx+n\)</span>-be, és megoldjuk a keletkező (általában lineáris) egyenletet.</p>
+    <div class="doboz pelda" id="pelda-pont">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Milyen <span class="math inline">\(m\)</span> esetén halad át az <span class="math inline">\(y=(2m-1)x+3\)</span> egyenes a <span class="math inline">\(P(2,5)\)</span> ponton?
+      <details><summary>Megoldás</summary><div class="bel"><p>Behelyettesítjük <span class="math inline">\(x=2,\ y=5\)</span>-öt: <span class="math inline">\(5=(2m-1)\cdot 2+3\)</span>, azaz <span class="math inline">\(2=(2m-1)\cdot 2\)</span>, innen <span class="math inline">\(2m-1=1\)</span>, tehát <span class="math inline">\(m=1\)</span>.</p></div></details>
+    </div>
+    <div class="kviz" data-answer="0" data-jo="✔ Nullahely x = 3: az 5 − x/... azaz f(x)=0 megoldása." data-nem="✘ A nullahely f(x)=0-ból: 6 − 2x = 0 → x = 3.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Hol van az <span class="math inline">\(f(x)=6-2x\)</span> függvény nullahelye?</p>
+      <div class="opciok"><button><span class="math inline">\(x=3\)</span></button><button><span class="math inline">\(x=-3\)</span></button><button><span class="math inline">\(x=6\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-linearis-egyenletek-es-rendszerek.html#alap-4">🐜 Ant-Man-bevetés <span class="cimke">A 4–5</span></a><a class="sav hulk" href="feladatok-linearis-egyenletek-es-rendszerek.html#kozep-5">💥 Hulk-bevetés <span class="cimke">K 5</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Captain America:</b> Kadét, összeáll a kép. Egyetlen egyenes egy feltétel — de a Végső Egyenlethez <b>több</b> feltételt kell egyszerre teljesíteni. A finálé az <b>egyenletrendszereké</b>: ahol a szálak összeérnek, ott zárul a szakadás. Az egész csapat ott lesz.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-egyenlotlensegek.html"><span class="irany">← Előző</span><span class="hova">Egyenlőtlenségek</span></a>
+      <a class="kov" href="tananyag-egyenletrendszerek.html"><span class="irany">Következő →</span><span class="hova">Egyenletrendszerek</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
