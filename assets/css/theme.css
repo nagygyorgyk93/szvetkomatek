@@ -63,20 +63,33 @@ body[data-tagozat="4im"]{--accent:#6366f1;}
 /* ---------- Alap ---------- */
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;scroll-padding-top:5.5rem;}
-body{margin:0;font-family:var(--szoveg);color:var(--tinta);background:var(--papir);
-  line-height:1.65;font-size:1.02rem;}
-h1,h2,h3,h4{font-family:var(--fej);line-height:1.25;color:var(--tinta);}
-h1{font-size:2rem;} h2{font-size:1.5rem;margin-top:2.2rem;} h3{font-size:1.2rem;}
-a{color:var(--zold-500);text-decoration-thickness:1px;text-underline-offset:2px;transition: color 0.2s;}
-a:hover{color:var(--marvel-green-neon);}
-img{max-width:100%;height:auto;border-radius:10px;}
-figure{margin:1.2rem 0;text-align:center;}
-figcaption{font-size:.88rem;color:var(--szurke-600);margin-top:.4rem;}
-table{border-collapse:collapse;margin:1rem 0;width:100%;}
-th,td{border:1px solid var(--szurke-300);padding:.45rem .7rem;text-align:center;}
-th{background:var(--zold-50);font-family:var(--fej);}
-code{background:var(--zold-50);padding:.1em .35em;border-radius:6px;font-size:.92em;color:var(--marvel-green-neon);}
-::selection{background:var(--marvel-glass-border);color:var(--marvel-green-neon);}
+body{
+  margin:0;
+  font-family:var(--szoveg);
+  color:var(--tinta);
+  
+  /* S.H.I.E.L.D. Tervrajz / Tech Rács Háttér (CSS alapú) */
+  background-color: var(--papir);
+  background-image: 
+    /* Finom, holografikus rács, ami a Veszélytermet idézi */
+    linear-gradient(rgba(0, 255, 102, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 102, 0.03) 1px, transparent 1px),
+    /* Sötét mélység-effektus, egy nagyon enyhe zöldes fénnyel fentről */
+    radial-gradient(circle at 50% 0%, #0a2918 0%, #0f172a 80%);
+  background-size: 30px 30px, 30px 30px, 100% 100%;
+  background-attachment: fixed; /* Görgetésnél a háttér egy helyben marad */
+  background-position: center top;
+  
+  /* AMIKOR MEGLESZ A VÉGLEGES KÉP:
+     Töröld ki a fenti background-image és background-size sorokat, és használd ezt:
+     background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('../img/kampusz-hatter.jpg');
+     background-size: cover;
+     (A linear-gradient egy sötétítő réteget tesz a képre, így a matek képletek tökéletesen olvashatóak maradnak!)
+  */
+
+  line-height:1.65;
+  font-size:1.02rem;
+}
 
 /* ---------- Fejléc + morzsa + progress ---------- */
 #progress{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--zold-500),var(--marvel-green-neon));z-index:60;transition:width .1s;box-shadow: 0 0 10px var(--marvel-green-neon);}
