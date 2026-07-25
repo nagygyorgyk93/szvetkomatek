@@ -27,7 +27,7 @@ def dr_page(dest, topic_link, topic_name, fname, title, alcim, brief, sections, 
   </div>
 </header>
 <nav class="morzsa">
-  <a href="../../index.html">Főoldal</a> ›
+  <a href="../../index.html">Főhadiszállás</a> ›
   <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
   <a href="{topic_link}">{topic_name}</a> ›
   <span class="itt">Danger Room — házi</span>
@@ -149,7 +149,7 @@ dr_page(DEST01, "index.html", "Logika, halmazok, függvények", "feladatok-hazi.
  "🕹️ Danger Room — házi feladatgyűjtemény",
  "Egyetlen, a teljes témakört lefedő házi feladatsor: logika, halmazok és függvények. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
  brief01, sect(A01, K01, N01),
- "index.html", "Témakör főoldala", "osszefoglalo.html", "Tömör összefoglaló",
+ "index.html", "Témakör Főhadiszállása", "osszefoglalo.html", "Tömör összefoglaló",
  "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
 print("01 Danger Room kész: Alap", len(A01), "Közép", len(K01), "Nehéz", len(N01))
 
@@ -189,7 +189,7 @@ dr_page(DEST02, "index.html", "Trigonometria", "feladatok-hazi.html",
  "🕹️ Danger Room — házi feladatgyűjtemény",
  "Egyetlen, a teljes trigonometria-témakört lefedő házi feladatsor. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
  brief02, sect(A02, K02, N02),
- "index.html", "Témakör főoldala", "osszefoglalo.html", "Tömör összefoglaló",
+ "index.html", "Témakör Főhadiszállása", "osszefoglalo.html", "Tömör összefoglaló",
  "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
 print("02 Danger Room kész: Alap", len(A02), "Közép", len(K02), "Nehéz", len(N02))
 
@@ -252,7 +252,7 @@ dr_page(DEST03, "index.html", "Egész és valós számok", "feladatok-hazi.html"
  "🕹️ Danger Room — házi feladatgyűjtemény",
  "Egyetlen, a teljes témakört lefedő házi feladatsor: számelmélet, számrendszerek, számhalmazok, közelítés. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
  brief03, sect(A03, K03, N03),
- "index.html", "Témakör főoldala", "osszefoglalo.html", "Tömör összefoglaló",
+ "index.html", "Témakör Főhadiszállása", "osszefoglalo.html", "Tömör összefoglaló",
  "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
 print("03 Danger Room kész: Alap", len(A03), "Közép", len(K03), "Nehéz", len(N03))
 
@@ -302,7 +302,7 @@ dr_page(DEST04, "index.html", "Arányosság", "feladatok-hazi.html",
  "🕹️ Danger Room — házi feladatgyűjtemény",
  "Egyetlen, a teljes témakört lefedő házi feladatsor: arány, arányos osztás, egyenes és fordított arányosság, méretarány, keverék, százalék és kamat. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
  brief04, sect(A04, K04, N04),
- "index.html", "Témakör főoldala", "osszefoglalo.html", "Tömör összefoglaló",
+ "index.html", "Témakör Főhadiszállása", "osszefoglalo.html", "Tömör összefoglaló",
  "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
 print("04 Danger Room kész: Alap", len(A04), "Közép", len(K04), "Nehéz", len(N04))
 
@@ -378,7 +378,7 @@ dr_page(DEST05, "index.html", "Geometria", "feladatok-hazi.html",
  "🕹️ Danger Room — házi feladatgyűjtemény",
  "Egyetlen, a témakör vizsgára menő magját lefedő házi feladatsor: szögek, háromszögek, egybevágóság, négyszögek, sokszögek, kör és vektorok. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
  brief05, sect(A05, K05, N05),
- "index.html", "Témakör főoldala", "osszefoglalo.html", "Tömör összefoglaló",
+ "index.html", "Témakör Főhadiszállása", "osszefoglalo.html", "Tömör összefoglaló",
  "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
 print("05 Danger Room kész: Alap", len(A05), "Közép", len(K05), "Nehéz", len(N05))
 
@@ -440,7 +440,7 @@ dr_page(DEST06, "index.html", "Racionális algebrai kifejezések", "feladatok-ha
  "🕹️ Danger Room — házi feladatgyűjtemény",
  "Egyetlen, a teljes témakört lefedő házi feladatsor: polinomok, nevezetes azonosságok, tényezőkre bontás, Bézout-tétel és algebrai törtek. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
  brief06, sect(A06, K06, N06),
- "index.html", "Témakör főoldala", "osszefoglalo.html", "Tömör összefoglaló",
+ "index.html", "Témakör Főhadiszállása", "osszefoglalo.html", "Tömör összefoglaló",
  "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
 print("06 Danger Room kész: Alap", len(A06), "Közép", len(K06), "Nehéz", len(N06))
 
@@ -501,6 +501,6 @@ dr_page(DEST07, "index.html", "Lineáris egyenletek és rendszerek", "feladatok-
  "🕹️ Danger Room — házi feladatgyűjtemény",
  "Egyetlen, a teljes témakört lefedő házi feladatsor: egyenletek, egyenlőtlenségek, lineáris függvény, rendszerek és szöveges feladatok. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
  brief07, sect(A07, K07, N07),
- "index.html", "Témakör főoldala", "osszefoglalo.html", "Tömör összefoglaló",
+ "index.html", "Témakör Főhadiszállása", "osszefoglalo.html", "Tömör összefoglaló",
  "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
 print("07 Danger Room kész: Alap", len(A07), "Közép", len(K07), "Nehéz", len(N07))

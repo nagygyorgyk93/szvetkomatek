@@ -65,7 +65,7 @@ def page(fname, altema_cim, tananyag_link, sections_html, prev, prevc, nxt, nxtc
   </div>
 </header>
 <nav class="morzsa">
-  <a href="../../index.html">Főoldal</a> ›
+  <a href="../../index.html">Főhadiszállás</a> ›
   <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
   <a href="index.html">Logika, halmazok, függvények</a> ›
   <span class="itt">{altema_cim} — feladatok</span>

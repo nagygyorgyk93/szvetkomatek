@@ -240,7 +240,7 @@ html = f'''<!DOCTYPE html>
   </div>
 </header>
 <nav class="morzsa">
-  <a href="../../index.html">Főoldal</a> ›
+  <a href="../../index.html">Főhadiszállás</a> ›
   <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
   <a href="index.html">Racionális algebrai kifejezések</a> ›
   <span class="itt">Feladatok</span>
