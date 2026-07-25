@@ -1,6 +1,6 @@
 /* ============================================================
    Szvetkó matek — közös design-rendszer
-   PERMANENS SÖTÉT TÉMA (MÉLYVÖRÖS HÁTTÉR + ZÖLD HOLOGRAFIA)
+   PERMANENS SÖTÉT TÉMA (MÉLYVÖRÖS BÁZIS + ZÖLD HOLOGRAFIA)
    ============================================================ */
 
 /* ---------- Betűtípusok (self-host, latin + latin-ext!) ---------- */
@@ -25,17 +25,17 @@
 @font-face{font-family:'Inter';font-weight:700;font-style:normal;font-display:swap;
   src:url('../fonts/inter-latin-ext-700-normal.woff2') format('woff2');unicode-range:U+0100-024F,U+1E00-1EFF;}
 
-/* ---------- Tokenek (Sötét, Mélyvörös Bázis) ---------- */
+/* ---------- Tokenek (Sötét Vörös Bázis + Zöld Neon) ---------- */
 :root{
   --zold-900:#064e3b; --zold-700:#047857; --zold-500:#10b981;
   --zold-100: rgba(16, 185, 129, 0.15); --zold-50: rgba(16, 185, 129, 0.05);
   
-  /* Sötét mód alapszínei (Kicserélve mély, obszidián-vörös árnyalatokra) */
-  --papir: #110608; /* Majdnem fekete, mélyvörös háttér */
-  --kartya: #1a0b0e; /* Kártyák sötét, bordós panel háttere */
-  --tinta: #fdfbfb; /* Világos szöveg */
-  --szurke-600: #9e8e92; /* Világosabb, melegebb szürke a leírásokhoz */
-  --szurke-300: #3f2a2e; /* Sötét, de látható meleg szegélyek */
+  /* Sötét mód alapszínei (Átállítva mélyvörös / fekete árnyalatokra) */
+  --papir: #170404; /* Éjszakai mélyvörös/fekete bázis */
+  --kartya: #240808; /* Kártyák sötétebb panel háttere */
+  --tinta: #f8fafc; /* Világos szöveg */
+  --szurke-600: #a89494; /* Világosabb, picit meleg tónusú szürke a leírásokhoz */
+  --szurke-300: #422626; /* Sötét vöröses szegélyek */
 
   --kek:#3b82f6; --kek-100: rgba(59, 130, 246, 0.15);
   --sarga:#f59e0b; --sarga-100: rgba(245, 158, 11, 0.15);
@@ -43,11 +43,11 @@
   --lila:#8b5cf6; --lila-100: rgba(139, 92, 246, 0.15);
   
   --accent:var(--zold-500);
-  --r:14px; --arny:0 4px 6px rgba(0,0,0,0.5),0 10px 15px rgba(0,0,0,0.4);
+  --r:14px; --arny:0 4px 6px rgba(0,0,0,0.4),0 10px 15px rgba(0,0,0,0.3);
   --fej:'Space Grotesk','Inter',system-ui,sans-serif;
   --szoveg:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
   
-  /* Zöld Tech Paletta (MARVEL S.H.I.E.L.D.) - Ez adja a brutális kontrasztot */
+  /* Zöld Tech Paletta (MARVEL S.H.I.E.L.D.) - Érintetlenül hagyva */
   --marvel-green-neon: #00ff66;
   --marvel-green-dark: #0a2918;
   --marvel-glass-bg: rgba(0, 255, 102, 0.05);
@@ -68,22 +68,23 @@ body{
   font-family:var(--szoveg);
   color:var(--tinta);
   
-  /* S.H.I.E.L.D. Tervrajz / Veszélyterem Rács Háttér (Mélyvörös) */
+  /* Cerebro / Tech Rács Háttér (Hajlított illúzióval) */
   background-color: var(--papir);
   background-image: 
-    /* Finom, vöröses rács, ami a Veszélytermet idézi */
-    linear-gradient(rgba(239, 68, 68, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(239, 68, 68, 0.04) 1px, transparent 1px),
-    /* Sötét mélység-effektus, egy nagyon enyhe, sötétvörös fénnyel fentről */
-    radial-gradient(circle at 50% 0%, #2d0a13 0%, #0a0204 80%);
-  background-size: 30px 30px, 30px 30px, 100% 100%;
+    /* Cerebro stílus: koncentrikus hullámok a középpontból */
+    repeating-radial-gradient(circle at 50% 50%, transparent 0, transparent 48px, rgba(0, 255, 102, 0.03) 50px),
+    /* Alap holografikus rács */
+    linear-gradient(rgba(0, 255, 102, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 102, 0.02) 1px, transparent 1px),
+    /* Sötétvörös mélység-effektus, enyhe megvilágítással fentről */
+    radial-gradient(circle at 50% 0%, #3a0808 0%, #170404 80%);
+  background-size: 100% 100%, 50px 50px, 50px 50px, 100% 100%;
   background-attachment: fixed;
   background-position: center top;
 
   line-height:1.65;
   font-size:1.02rem;
 }
-
 h1,h2,h3,h4{font-family:var(--fej);line-height:1.25;color:var(--tinta);}
 h1{font-size:2rem;} h2{font-size:1.5rem;margin-top:2.2rem;} h3{font-size:1.2rem;}
 a{color:var(--zold-500);text-decoration-thickness:1px;text-underline-offset:2px;transition: color 0.2s;}
@@ -99,7 +100,7 @@ code{background:var(--zold-50);padding:.1em .35em;border-radius:6px;font-size:.9
 
 /* ---------- Fejléc + morzsa + progress ---------- */
 #progress{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--zold-500),var(--marvel-green-neon));z-index:60;transition:width .1s;box-shadow: 0 0 10px var(--marvel-green-neon);}
-.fejlec{position:sticky;top:0;z-index:50;background:rgba(13,5,7,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+.fejlec{position:sticky;top:0;z-index:50;background:rgba(23,4,4,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
   border-bottom:1px solid var(--marvel-glass-border);}
 .fejlec-bel{max-width:1120px;margin:0 auto;padding:.6rem 1.2rem;display:flex;align-items:center;gap:1rem;}
 .logo{display:flex;align-items:center;gap:.55rem;font-family:var(--fej);font-weight:700;
@@ -112,7 +113,7 @@ code{background:var(--zold-50);padding:.1em .35em;border-radius:6px;font-size:.9
 /* S.H.I.E.L.D. GOMB STÍLUSOK (Fejléc kereső) */
 .kereso-mini{display:flex;gap:.4rem;}
 .kereso-mini input{border:1px solid var(--szurke-300);border-radius:999px;padding:.42rem .95rem;
-  font:inherit;font-size:.92rem;width:11.5rem;background:var(--papir);color:var(--tinta);}
+  font:inherit;font-size:.92rem;width:11.5rem;background:#170404;color:var(--tinta);}
 .kereso-mini input:focus{outline:none;border-color:var(--marvel-green-neon);box-shadow: 0 0 8px var(--marvel-glass-border);}
 .kereso-mini button{border:1px solid var(--marvel-green-neon);border-radius:999px;padding:.42rem .9rem;
   background:var(--marvel-green-dark);color:var(--marvel-green-neon);font:inherit;font-size:.92rem;font-weight:700;text-transform:uppercase;cursor:pointer;transition:all 0.3s ease;box-shadow: 0 0 5px rgba(0, 255, 102, 0.2);}
@@ -122,14 +123,14 @@ code{background:var(--zold-50);padding:.1em .35em;border-radius:6px;font-size:.9
 .morzsa a{color:var(--szurke-600);}
 .morzsa .itt{color:var(--tinta);font-weight:600;}
 .morzsa .tagozat-jel{display:inline-block;padding:.05rem .5rem;border-radius:999px;
-  background:var(--accent);color:#0f172a;font-weight:700;font-size:.8rem;margin-right:.3rem;box-shadow: 0 0 8px rgba(0,255,102,0.3);}
+  background:var(--accent);color:#170404;font-weight:700;font-size:.8rem;margin-right:.3rem;box-shadow: 0 0 8px rgba(0,255,102,0.3);}
 
 /* ---------- Hero ---------- */
 .hero{max-width:1120px;margin:0 auto;padding:2.2rem 1.2rem 1rem;position:relative;}
 .hero h1{margin:.2rem 0 .4rem;}
 .hero .alcim{color:var(--szurke-600);font-size:1.08rem;max-width:46rem;margin:0;}
 .hero-nagy{background:
-  radial-gradient(60rem 24rem at 85% -20%, rgba(220, 38, 38, 0.12), transparent),
+  radial-gradient(60rem 24rem at 85% -20%, rgba(0, 255, 102, 0.1), transparent),
   var(--papir);
   border-bottom:1px solid var(--szurke-300);}
 .hero-nagy .hero{padding:3.2rem 1.2rem 2.6rem;}
@@ -157,7 +158,7 @@ code{background:var(--zold-50);padding:.1em .35em;border-radius:6px;font-size:.9
 
 /* ---------- Kiemelődobozok (HOLOGRAFIKUS UPDATE) ---------- */
 .doboz{border-radius:var(--r);padding:1rem 1.2rem;margin:1.3rem 0;border:1px solid var(--marvel-glass-border);
-  box-shadow:0 4px 6px rgba(0,0,0,0.4);background:var(--marvel-glass-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:all 0.3s ease;}
+  box-shadow:0 4px 6px rgba(0,0,0,0.3);background:var(--marvel-glass-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:all 0.3s ease;}
 .doboz:hover{box-shadow:var(--marvel-glow);border-color:var(--marvel-green-neon);}
 .doboz>.cim{display:flex;align-items:center;gap:.5rem;font-family:var(--fej);font-weight:700;
   margin:0 0 .45rem;font-size:1rem;}
@@ -167,13 +168,13 @@ code{background:var(--zold-50);padding:.1em .35em;border-radius:6px;font-size:.9
 .doboz.definicio{background:rgba(16,185,129,0.05);border-color:rgba(16,185,129,0.3);}
 .doboz.definicio>.cim{color:var(--zold-500);}
 .doboz.tetel{background:rgba(59,130,246,0.05);border-color:rgba(59,130,246,0.3);}
-.doboz.tetel>.cim{color:#60a5fa;} /* Világosabb kék */
+.doboz.tetel>.cim{color:#60a5fa;}
 .doboz.pelda{background:rgba(245,158,11,0.05);border-color:rgba(245,158,11,0.3);}
-.doboz.pelda>.cim{color:#fbbf24;} /* Világosabb sárga */
+.doboz.pelda>.cim{color:#fbbf24;}
 .doboz.csapda{background:rgba(239,68,68,0.05);border-color:rgba(239,68,68,0.3);}
-.doboz.csapda>.cim{color:#f87171;} /* Világosabb piros */
+.doboz.csapda>.cim{color:#f87171;}
 .doboz.erdekesseg{background:rgba(139,92,246,0.05);border-color:rgba(139,92,246,0.3);}
-.doboz.erdekesseg>.cim{color:#c084fc;} /* Világosabb lila */
+.doboz.erdekesseg>.cim{color:#c084fc;}
 
 /* ---------- Lenyílók (HOLOGRAFIKUS) ---------- */
 details{border:1px solid var(--marvel-glass-border);border-radius:12px;margin:.8rem 0;background:var(--marvel-glass-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:all 0.3s ease;}
@@ -187,7 +188,7 @@ details.vegeredmeny summary{color:var(--szurke-600);font-size:.92rem;}
 
 /* ---------- Feladatkártyák (HOLOGRAFIKUS) ---------- */
 .feladat{background:var(--marvel-glass-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--marvel-glass-border);border-radius:var(--r);
-  padding:.9rem 1.1rem;margin:.9rem 0;box-shadow:0 4px 6px rgba(0,0,0,0.4);transition:all 0.3s ease;}
+  padding:.9rem 1.1rem;margin:.9rem 0;box-shadow:0 4px 6px rgba(0,0,0,0.3);transition:all 0.3s ease;}
 .feladat:hover{box-shadow:var(--marvel-glow);border-color:var(--marvel-green-neon);}
 .feladat .fejsor{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.3rem;}
 .feladat .szam{font-family:var(--fej);font-weight:700;color:var(--zold-500);white-space:nowrap;}
@@ -202,13 +203,13 @@ details.vegeredmeny summary{color:var(--szurke-600);font-size:.92rem;}
 
 /* ---------- Mini-kvíz (HOLOGRAFIKUS) ---------- */
 .kviz{background:var(--marvel-glass-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--marvel-glass-border);
-  border-radius:var(--r);padding:1rem 1.2rem;margin:1.5rem 0;transition:all 0.3s ease;box-shadow:0 4px 6px rgba(0,0,0,0.4);}
+  border-radius:var(--r);padding:1rem 1.2rem;margin:1.5rem 0;transition:all 0.3s ease;box-shadow:0 4px 6px rgba(0,0,0,0.3);}
 .kviz:hover{box-shadow:var(--marvel-glow);border-color:var(--marvel-green-neon);}
 .kviz .kviz-cim{font-family:var(--fej);font-weight:700;color:var(--zold-500);margin:0 0 .4rem;
   display:flex;gap:.5rem;align-items:center;}
 .kviz .opciok{display:flex;flex-direction:column;gap:.5rem;margin:.6rem 0;}
 .kviz .opciok button{text-align:left;font:inherit;padding:.55rem .9rem;border-radius:10px;
-  border:1px solid var(--szurke-300);background:rgba(30,12,16,0.8);color:var(--tinta);cursor:pointer;transition:all .2s;}
+  border:1px solid var(--szurke-300);background:rgba(36,8,8,0.8);color:var(--tinta);cursor:pointer;transition:all .2s;}
 .kviz .opciok button:hover{border-color:var(--marvel-green-neon);box-shadow:0 0 8px rgba(0,255,102,0.3);}
 .kviz .opciok button.helyes{border-color:var(--zold-500);background:var(--zold-100);box-shadow:0 0 10px rgba(16,185,129,0.5);color:#fff;}
 .kviz .opciok button.rossz{border-color:var(--piros);background:var(--piros-100);color:#fff;}
@@ -232,7 +233,7 @@ details.vegeredmeny summary{color:var(--szurke-600);font-size:.92rem;}
 /* ---------- Kártyarácsok (index-oldalak - HOLOGRAFIKUS) ---------- */
 .racs{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(15.5rem,1fr));margin:1.4rem 0;}
 .kartya{display:block;background:var(--marvel-glass-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--marvel-glass-border);border-radius:var(--r);
-  padding:1.1rem 1.2rem;box-shadow:0 4px 6px rgba(0,0,0,0.4);text-decoration:none;color:var(--tinta);
+  padding:1.1rem 1.2rem;box-shadow:0 4px 6px rgba(0,0,0,0.3);text-decoration:none;color:var(--tinta);
   transition:transform .2s,box-shadow .2s,border-color .2s;position:relative;overflow:hidden;}
 a.kartya:hover{transform:translateY(-2px);box-shadow:var(--marvel-glow);border-color:var(--marvel-green-neon);}
 .kartya::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--marvel-green-neon);box-shadow:2px 0 10px rgba(0,255,102,0.6);transition:background .3s ease;}
@@ -245,23 +246,23 @@ a.kartya:hover{transform:translateY(-2px);box-shadow:var(--marvel-glow);border-c
   font-family:var(--fej);}
 .statusz.kesz{background:var(--zold-100);color:#34d399;}
 .statusz.keszul{background:var(--sarga-100);color:#fbbf24;}
-.statusz.tervezett{background:rgba(158,142,146,0.2);color:var(--szurke-600);}
+.statusz.tervezett{background:rgba(148,163,184,0.15);color:var(--szurke-600);}
 .statusz.reszleges{background:var(--lila-100);color:#c084fc;}
-.kartya.inaktiv{opacity:.6;background:rgba(100,50,60,0.08);border-color:rgba(150,100,110,0.15);box-shadow:none;}
+.kartya.inaktiv{opacity:.6;background:rgba(150,150,150,0.05);border-color:rgba(150,150,150,0.1);box-shadow:none;}
 .kartya.inaktiv h3{color:var(--szurke-600);}
 .kartya.inaktiv::before{background:var(--szurke-600);box-shadow:none;}
 
 /* ---------- Előző/következő ---------- */
 .lapozo{display:flex;justify-content:space-between;gap:1rem;margin:2.5rem 0 1rem;flex-wrap:wrap;}
 .lapozo a{flex:1;min-width:14rem;background:var(--marvel-glass-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--marvel-glass-border);
-  border-radius:var(--r);padding:.8rem 1rem;text-decoration:none;box-shadow:0 4px 6px rgba(0,0,0,0.4);transition:all 0.3s ease;}
+  border-radius:var(--r);padding:.8rem 1rem;text-decoration:none;box-shadow:0 4px 6px rgba(0,0,0,0.3);transition:all 0.3s ease;}
 .lapozo a:hover{box-shadow:var(--marvel-glow);border-color:var(--marvel-green-neon);transform:translateY(-1px);}
 .lapozo a .irany{font-size:.8rem;color:var(--szurke-600);display:block;}
 .lapozo a .hova{font-family:var(--fej);font-weight:700;color:var(--zold-500);}
 .lapozo a.kov{text-align:right;}
 
 /* ---------- Lábléc ---------- */
-.lablec{border-top:1px solid var(--marvel-glass-border);margin-top:3rem;background:rgba(13,5,7,0.85);backdrop-filter:blur(8px);}
+.lablec{border-top:1px solid var(--marvel-glass-border);margin-top:3rem;background:rgba(23,4,4,.85);backdrop-filter:blur(8px);}
 .lablec-bel{max-width:1120px;margin:0 auto;padding:1.4rem 1.2rem;display:flex;flex-wrap:wrap;
   gap:.8rem;justify-content:space-between;color:var(--szurke-600);font-size:.9rem;}
 .lablec b{color:var(--zold-500);}
@@ -275,7 +276,7 @@ a.kartya:hover{transform:translateY(-2px);box-shadow:var(--marvel-glow);border-c
 .kereso-nagy button:hover{background:var(--marvel-green-neon);color:var(--marvel-green-dark);box-shadow:var(--marvel-glow);}
 
 .talalat{background:var(--marvel-glass-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--marvel-glass-border);border-radius:var(--r);
-  padding:.9rem 1.1rem;margin:.8rem 0;box-shadow:0 4px 6px rgba(0,0,0,0.4);transition:all 0.3s ease;}
+  padding:.9rem 1.1rem;margin:.8rem 0;box-shadow:0 4px 6px rgba(0,0,0,0.3);transition:all 0.3s ease;}
 .talalat:hover{box-shadow:var(--marvel-glow);border-color:var(--marvel-green-neon);}
 .talalat .hol{font-size:.82rem;color:var(--szurke-600);}
 .talalat .hol .tagozat-jel{display:inline-block;padding:0 .5rem;border-radius:999px;background:var(--marvel-green-neon);
@@ -344,7 +345,7 @@ table.tt-table .res{font-weight:800;background:rgba(16,185,129,0.15);}
 .nagyobb{font-size:1.1em;}
 
 /* ---------- Küldetés-eligazítás (HQ-adás) - HOLOGRAFIKUS ---------- */
-.brief{background:linear-gradient(135deg,rgba(26,11,14,0.8),rgba(17,6,8,0.8));backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#e2e8f0;border-radius:var(--r);
+.brief{background:linear-gradient(135deg,rgba(23,4,4,0.8),rgba(36,8,8,0.8));backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#e2e8f0;border-radius:var(--r);
   padding:.85rem 1.15rem;margin:.9rem 0 1.3rem;border:1px solid var(--marvel-glass-border);border-left:4px solid var(--marvel-green-neon);
   box-shadow:var(--marvel-glow);font-size:.98rem;}
 .brief p{margin:0;}
@@ -388,7 +389,7 @@ table.tt-table .res{font-weight:800;background:rgba(16,185,129,0.15);}
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--marvel-glass-border);
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
 }
 
