@@ -39,6 +39,12 @@
   --r:14px; --arny:0 1px 3px rgba(15,23,42,.08),0 4px 14px rgba(15,23,42,.06);
   --fej:'Space Grotesk','Inter',system-ui,sans-serif;
   --szoveg:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  /* Zöld Tech Paletta */
+  --marvel-green-neon: #00ff66; /* Élénk neon zöld */
+  --marvel-green-dark: #0a2918; /* Mélyzöld, szinte fekete háttérárnyalat */
+  --marvel-glass-bg: rgba(0, 255, 102, 0.05); /* Nagyon halvány, áttetsző zöld */
+  --marvel-glass-border: rgba(0, 255, 102, 0.2); /* Áttetsző zöld szegély */
+  --marvel-glow: 0 0 15px rgba(0, 255, 102, 0.4), inset 0 0 10px rgba(0, 255, 102, 0.1);
 }
 body[data-tagozat="1e"]{--accent:#10b981;}
 body[data-tagozat="2e"]{--accent:#14b8a6;}
@@ -317,4 +323,65 @@ table.tt-table .res{font-weight:800;background:var(--zold-50);}
   .hero-nagy h1{font-size:2rem;}
   .kereso-mini input{width:7.5rem;}
   .matek-dekor{display:none;}
+}
+
+/* =========================================================
+   MARVEL S.H.I.E.L.D. HOLOGRAFIKUS UI (ZÖLD TÉMA)
+   ========================================================= */
+
+/* 1. Üveg-effektus (Glassmorphism) a kártyákhoz, menükhöz, dobozokhoz */
+.hologram-panel {
+  background: var(--marvel-glass-bg);
+  backdrop-filter: blur(12px); /* Ez adja a homályos üveg hatást */
+  -webkit-backdrop-filter: blur(12px); /* Safari támogatás */
+  border: 1px solid var(--marvel-glass-border);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+/* 2. HUD Ragyogás Hover (Egérráhúzás) esetén */
+.hologram-panel:hover, 
+.tech-hover:hover {
+  border-color: var(--marvel-green-neon);
+  box-shadow: var(--marvel-glow);
+  transform: translateY(-2px); /* Enyhe emelkedés, mintha lebegne */
+}
+
+/* 3. Holografikus Gombok S.H.I.E.L.D. stílusban */
+.btn-marvel {
+  background: transparent;
+  color: var(--marvel-green-neon);
+  border: 1px solid var(--marvel-green-neon);
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-marvel:hover {
+  background: var(--marvel-green-neon);
+  color: #000; /* Fekete szöveg a világító zöld gombon */
+  box-shadow: 0 0 20px var(--marvel-green-neon);
+}
+
+/* 4. Egyedi tech-gördítősáv (Scrollbar) az oldalon */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--marvel-green-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--marvel-glass-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--marvel-green-neon);
 }
