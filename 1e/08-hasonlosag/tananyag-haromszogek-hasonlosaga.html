@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Háromszögek hasonlósága és alkalmazásai — tananyag | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Hasonlóság</a> ›
+  <span class="itt">Háromszögek hasonlósága — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Háromszögek hasonlósága és alkalmazásai</h1>
+  <p class="alcim">A háromszögek hasonlósági alapesetei, valós mérési feladatok (magasság, távolság), valamint a hasonlóság alkalmazása a derékszögű háromszögben: az Euklidészi tételek és a Pitagorasz-tétel.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Skála Törvénye · 3/3</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+      <div class="brief"><p>📡 <b>Ant-Man:</b> Utolsó bevetés, kadét. A háromszög a legerősebb mérőeszközünk: pár egyszerű ismérv, és két háromszögről kiderül, hogy <b>hasonló</b> — onnantól minden hiányzó adat egy aránypár. Ezzel mérünk meg <b>elérhetetlen</b> magasságokat és távolságokat, és ebből fakad a derékszögű háromszög két legszebb tétele. Ez zárja le a szakadást.</p></div>
+    <p>Háromszögeknél nem kell minden adatot ellenőrizni a hasonlósághoz — elég néhány. Ez teszi a hasonló háromszögeket a geometria (és a terepmérés) legpraktikusabb eszközévé.</p>
+
+    <h2 id="s1">A hasonlósági alapesetek</h2>
+    <div class="doboz tetel" id="tetel-alapesetek">
+      <p class="cim"><span class="ikon">📘</span> Mikor hasonló két háromszög?</p>
+      <p>Két háromszög hasonló, ha teljesül az alábbiak <b>bármelyike</b>:</p>
+      <ul>
+        <li><b>(SzSz)</b> két-két szögük egyenlő (a harmadik ekkor magától egyenlő);</li>
+        <li><b>(OOO)</b> a megfelelő oldalaik aránya páronként egyenlő: <span class="math inline">\(\dfrac{a_1}{a}=\dfrac{b_1}{b}=\dfrac{c_1}{c}\)</span>;</li>
+        <li><b>(OSzO)</b> két-két oldaluk aránya egyenlő, és az általuk <b>közbezárt szög</b> is egyenlő.</li>
+      </ul>
+    </div>
+    <div class="svgwrap svgcard">
+      <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Két hasonló háromszög: egy kisebb és egy nagyobb, azonos szögekkel">
+        <polygon points="20,150 120,150 40,80" fill="none" stroke="#3b82f6" stroke-width="2"/>
+        <polygon points="160,160 310,160 190,55" fill="none" stroke="#f59e0b" stroke-width="2"/>
+        <text x="14" y="164" font-size="11" fill="#3b82f6">A</text><text x="120" y="164" font-size="11" fill="#3b82f6">B</text><text x="30" y="76" font-size="11" fill="#3b82f6">C</text>
+        <text x="152" y="174" font-size="11" fill="#b45309">A₁</text><text x="310" y="174" font-size="11" fill="#b45309">B₁</text><text x="182" y="50" font-size="11" fill="#b45309">C₁</text>
+        <text x="120" y="30" font-size="12" fill="#047857">△ABC ∼ △A₁B₁C₁</text>
+      </svg>
+      <p class="cap">A megfelelő szögek egyenlők, a megfelelő oldalak aránya állandó (a hasonlósági arány).</p>
+    </div>
+    <div class="kviz" data-answer="1" data-jo="✔ 10: a 2:5 arány miatt a nagyobb oldal 4·(5/2) = 10." data-nem="✘ A hasonlósági arány 2:5, ezért a megfelelő oldal 4·(5/2) = 10.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Két hasonló háromszög aránya <span class="math inline">\(2:5\)</span>. A kisebb egyik oldala <span class="math inline">\(4\)</span>. Mekkora a nagyobb megfelelő oldala?</p>
+      <div class="opciok"><button><span class="math inline">\(7\)</span></button><button><span class="math inline">\(10\)</span></button><button><span class="math inline">\(20\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Valós mérés hasonló háromszögekkel</h2>
+    <p>Elérhetetlen magasságot vagy távolságot úgy mérünk, hogy egy <b>ismert</b> és egy <b>ismeretlen</b> háromszöget hasonlóság köt össze — a hiányzó adat egy aránypárból adódik.</p>
+    <div class="doboz pelda" id="pelda-meres">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Egy fa árnyéka <span class="math inline">\(12\ \text{m}\)</span>, ugyanakkor egy <span class="math inline">\(1\ \text{m}\)</span> magas bot árnyéka <span class="math inline">\(1{,}5\ \text{m}\)</span>. Milyen magas a fa?
+      <details><summary>Megoldás</summary><div class="bel"><p>A fa és a bot a napsugárral hasonló háromszöget alkot: <span class="math inline">\(\dfrac{m}{12}=\dfrac{1}{1{,}5}\)</span>, innen <span class="math inline">\(m=\dfrac{12}{1{,}5}=8\ \text{m}\)</span>.</p></div></details>
+    </div>
+
+    <h2 id="s3">A derékszögű háromszög: Euklidész és Pitagorasz</h2>
+    <p>A derékszögű háromszögben az átfogóhoz tartozó magasság <b>két hasonló</b> kis háromszögre bontja az eredetit — ebből fakad a geometria két klasszikus tétele.</p>
+    <div class="doboz tetel" id="tetel-euklidesz">
+      <p class="cim"><span class="ikon">📘</span> Euklidészi tételek</p>
+      <p>Legyen az átfogó <span class="math inline">\(c\)</span>, a hozzá tartozó magasság <span class="math inline">\(m\)</span>, amely az átfogót <span class="math inline">\(p\)</span> és <span class="math inline">\(q\)</span> szeletekre osztja (a befogók <span class="math inline">\(a,b\)</span>). Ekkor:</p>
+      \[m^2=p\cdot q\quad(\text{magasságtétel}),\qquad a^2=c\cdot p,\ \ b^2=c\cdot q\quad(\text{befogótételek}).\]
+    </div>
+    <div class="doboz pelda" id="pelda-euklidesz">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      Egy derékszögű háromszögben az átfogó szeletei <span class="math inline">\(p=9\)</span> és <span class="math inline">\(q=16\)</span>. Számítsd ki a magasságot, a befogókat és az átfogót!
+      <details><summary>Megoldás</summary><div class="bel"><p>Átfogó: <span class="math inline">\(c=p+q=25\)</span>. Magasság: <span class="math inline">\(m=\sqrt{p\cdot q}=\sqrt{144}=12\)</span>. Befogók: <span class="math inline">\(a=\sqrt{c\cdot p}=\sqrt{225}=15\)</span>, <span class="math inline">\(b=\sqrt{c\cdot q}=\sqrt{400}=20\)</span>.</p></div></details>
+    </div>
+    <div class="doboz tetel" id="tetel-pitagorasz">
+      <p class="cim"><span class="ikon">📘</span> A Pitagorasz-tétel (a befogótételekből)</p>
+      <p>A két befogótételt összeadva: <span class="math inline">\(a^2+b^2=c\cdot p+c\cdot q=c(p+q)=c\cdot c=c^2\)</span>. Így a hasonlóságból egyenesen következik a <b>Pitagorasz-tétel</b>: \[a^2+b^2=c^2.\] (A fenti példában <span class="math inline">\(15^2+20^2=225+400=625=25^2\)</span>. ✔)</p>
+    </div>
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Egy lépéssel tovább — a pont hatványa</p>
+      A hasonlóság a körnél is működik: egy ponton át húzott két szelő szakaszainak szorzata állandó (a pont <b>hatványa</b> a körre nézve). Ez már a felsőbb évek anyaga — de jó tudni, hogy a Skála Törvénye a köröket is átfogja.
+    </div>
+
+    <div class="brief" data-outro><p>📡 <b>SZVETI &amp; a teljes csapat:</b> Kadét — a Nullpont-anomália <b>lezárva</b>. A Végső Egyenlettől a Skála Törvényéig minden diszciplínát a helyére tettél: a valóság méretei helyreálltak. Az Akadémia első éve teljesítve. 🎓 <b>Legyél szvetkós!</b></p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-homotecia-es-hasonlosag.html"><span class="irany">← Előző</span><span class="hova">Homotécia és hasonlóság</span></a>
+      <a class="kov" href="index.html"><span class="irany">Vissza →</span><span class="hova">Témakör főoldala</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Homotécia és hasonlóság — tananyag | 1e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="1e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főoldal</a> ›
+  <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
+  <a href="index.html">Hasonlóság</a> ›
+  <span class="itt">Homotécia és hasonlóság — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Homotécia és hasonlóság</h1>
+  <p class="alcim">A homotécia (középpontos nagyítás) fogalma és tulajdonságai, a hasonlóság fogalma és a hasonlósági arány, valamint a hasonló alakzatok kerületének és területének aránya.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Skála Törvénye · 2/3</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+      <div class="brief"><p>📡 <b>Ant-Man &amp; Hank Pym:</b> A Pym-részecske egy középpontból <b>skáláz</b>: minden pontot ugyanabból az irányból, ugyanazzal a tényezővel tol ki vagy húz be. Ez a <b>homotécia</b> — a szabályos nagyítás/kicsinyítés. Ami így keletkezik, az az eredetihez <b>hasonló</b>: azonos alak, más méret. Ez a Skála Törvénye szíve.</p></div>
+    <p>A homotécia a nagyítás/kicsinyítés pontos matematikai leírása; a hasonlóság pedig az az általánosabb fogalom, amely szerint két alakzat „ugyanolyan alakú", csak más méretű.</p>
+
+    <h2 id="s1">A homotécia</h2>
+    <div class="doboz definicio" id="def-homotecia">
+      <p class="cim"><span class="ikon">📗</span> Homotécia (középpontos nagyítás)</p>
+      <p>Adott egy <span class="math inline">\(O\)</span> középpont és egy <span class="math inline">\(k\neq 0\)</span> szám. A homotécia minden <span class="math inline">\(M\)</span> ponthoz azt az <span class="math inline">\(M_1\)</span> pontot rendeli, amelyre <span class="math inline">\(\overrightarrow{OM_1}=k\cdot\overrightarrow{OM}\)</span>. A <span class="math inline">\(k\)</span> a homotécia <b>aránya</b> (hasonlósági együtthatója).</p>
+    </div>
+    <div class="svgwrap svgcard">
+      <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Homotécia: az O középpontból kétszeresére nagyított háromszög">
+        <line x1="30" y1="180" x2="250" y2="40" stroke="#cbd5e1" stroke-width="1"/>
+        <line x1="30" y1="180" x2="170" y2="150" stroke="#cbd5e1" stroke-width="1"/>
+        <line x1="30" y1="180" x2="150" y2="70" stroke="#cbd5e1" stroke-width="1"/>
+        <polygon points="140,110 100,165 90,125" fill="none" stroke="#3b82f6" stroke-width="2"/>
+        <polygon points="250,40 170,150 150,70" fill="none" stroke="#f59e0b" stroke-width="2"/>
+        <circle cx="30" cy="180" r="3.5" fill="#0f172a"/><text x="16" y="184" font-size="12" fill="#0f172a">O</text>
+        <text x="96" y="128" font-size="11" fill="#3b82f6">F</text>
+        <text x="196" y="96" font-size="11" fill="#b45309">F₁ (k = 2)</text>
+      </svg>
+      <p class="cap">Az <span class="math inline">\(O\)</span> középpontú, <span class="math inline">\(k=2\)</span> arányú homotécia az <span class="math inline">\(F\)</span> háromszöget a kétszeresére nagyított <span class="math inline">\(F_1\)</span>-be viszi.</p>
+    </div>
+    <div class="doboz tetel" id="tetel-homotecia">
+      <p class="cim"><span class="ikon">📘</span> A homotécia tulajdonságai</p>
+      <p>Egyenest önmagával párhuzamos egyenesbe visz; a szakaszokat a <span class="math inline">\(|k|\)</span>-szorosára változtatja (<span class="math inline">\(\overrightarrow{A_1B_1}=k\cdot\overrightarrow{AB}\)</span>); a <b>szögeket megtartja</b>. Speciális esetek: <span class="math inline">\(k=1\)</span> az identikus leképezés; <span class="math inline">\(k=-1\)</span> az <span class="math inline">\(O\)</span> körüli középpontos tükrözés.</p>
+    </div>
+
+    <h2 id="s2">A hasonlóság fogalma</h2>
+    <div class="doboz definicio" id="def-hasonlosag">
+      <p class="cim"><span class="ikon">📗</span> Hasonló alakzatok</p>
+      <p>Két alakzat <b>hasonló</b> (<span class="math inline">\(\sim\)</span>), ha az egyik a másikból nagyítással/kicsinyítéssel (és esetleg egybevágósági mozgatással) megkapható. Hasonló sokszögeknél a <b>megfelelő szögek egyenlők</b>, a <b>megfelelő oldalak aránya</b> pedig állandó — ez a <b>hasonlósági arány</b> <span class="math inline">\(k\)</span>. Pl. <span class="math inline">\(\triangle ABC\sim\triangle A_1B_1C_1\)</span> esetén \[\frac{A_1B_1}{AB}=\frac{B_1C_1}{BC}=\frac{A_1C_1}{AC}=k.\]</p>
+    </div>
+
+    <h2 id="s3">Kerület és terület aránya</h2>
+    <div class="doboz tetel" id="tetel-kerulet-terulet">
+      <p class="cim"><span class="ikon">📘</span> A skálázás törvénye</p>
+      <p>Ha két alakzat hasonlósági aránya <span class="math inline">\(k\)</span>, akkor a <b>kerületük</b> aránya szintén <span class="math inline">\(k\)</span>, a <b>területük</b> aránya viszont <span class="math inline">\(k^2\)</span>: \[\frac{K_1}{K}=k,\qquad \frac{T_1}{T}=k^2.\] (Térben a térfogat aránya <span class="math inline">\(k^3\)</span> lenne.)</p>
+    </div>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Kang csapdája</p>
+      Ha egy alakzatot kétszeresére nagyítasz, a területe <b>nem</b> kétszeres, hanem <b>négyszeres</b> (<span class="math inline">\(k^2=2^2=4\)</span>)! Kang szereti összekeverni a hossz- és a területarányt. A hossz <span class="math inline">\(k\)</span>-szoros, a terület <span class="math inline">\(k^2\)</span>-szeres.
+    </div>
+    <div class="kviz" data-answer="2" data-jo="✔ A terület k² = 3² = 9-szeresére nő." data-nem="✘ A területarány a hasonlósági arány négyzete: 3² = 9.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Ha a hasonlósági arány <span class="math inline">\(k=3\)</span>, hányszorosára nő a <b>terület</b>?</p>
+      <div class="opciok"><button><span class="math inline">\(3\)</span></button><button><span class="math inline">\(6\)</span></button><button><span class="math inline">\(9\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Visszakötés az arányossághoz</p>
+      A hasonlóság az <b>arányosság</b> (04. témakör) geometriai arca: a hasonlósági arány egy állandó szorzó, épp mint az egyenes arányosság <span class="math inline">\(k\)</span> tényezője. A Pym-protokoll és a Skála Törvénye ugyanazt mondja, csak más nyelven.
+    </div>
+
+    <div class="brief" data-outro><p>📡 <b>Ant-Man:</b> Uralod a skálázást. Az utolsó bevetés a <b>háromszögek hasonlósága</b>: pár egyszerű ismérv, amivel bármit bemérsz — magasságot, távolságot —, és lezárul a szakadás.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-aranyos-szakaszok.html"><span class="irany">← Előző</span><span class="hova">Arányos szakaszok és Thalész</span></a>
+      <a class="kov" href="tananyag-haromszogek-hasonlosaga.html"><span class="irany">Következő →</span><span class="hova">Háromszögek hasonlósága</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
