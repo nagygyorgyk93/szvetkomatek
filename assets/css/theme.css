@@ -1,6 +1,6 @@
 /* ============================================================
    Szvetkó matek — közös design-rendszer
-   PERMANENS SÖTÉT TÉMA (MARVEL S.H.I.E.L.D. HOLOGRAFIKUS)
+   PERMANENS SÖTÉT TÉMA (MARVEL S.H.I.E.L.D. / CEREBRO)
    ============================================================ */
 
 /* ---------- Betűtípusok (self-host, latin + latin-ext!) ---------- */
@@ -31,7 +31,7 @@
   --zold-100: rgba(16, 185, 129, 0.15); --zold-50: rgba(16, 185, 129, 0.05);
   
   /* Sötét mód alapszínei */
-  --papir: #0f172a; /* Éjszakai égbolt kék/fekete */
+  --papir: #0a0101; /* Mély, sötét-vöröses fekete a Cerebro háttérhez */
   --kartya: #1e293b; /* Kártyák sötétebb panel háttere */
   --tinta: #f8fafc; /* Világos szöveg */
   --szurke-600: #94a3b8; /* Világosabb szürke a leírásokhoz */
@@ -68,26 +68,20 @@ body{
   font-family:var(--szoveg);
   color:var(--tinta);
   
-  /* S.H.I.E.L.D. / CEREBRO Vészhelyzeti Tervrajz Háttér */
-  background-color: var(--papir); /* Marad a sötét szürkés-éjkék alap */
+  /* CEREBRO Vészhelyzeti / Mutáns Tervrajz Háttér (Sötét-Vöröses) */
+  background-color: var(--papir);
   background-image: 
-    /* 1. Vörös vészlámpa glow felülről (félkör) */
-    radial-gradient(ellipse at 50% 0%, rgba(220, 38, 38, 0.18) 0%, rgba(220, 38, 38, 0.05) 35%, transparent 70%),
-    /* 2. Sötétítő átmenet lefelé a szürkés háttérbe */
-    linear-gradient(to bottom, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.95) 100%),
-    /* 3. Cerebro "hosszúsági körök" (kicsit világosabbra állítva: 0.1) */
-    repeating-conic-gradient(from 0deg at 50% -10%, transparent 0deg, transparent 4deg, rgba(0, 255, 102, 0.1) 4.1deg, transparent 4.3deg),
-    /* 4. Cerebro "szélességi körök" (kicsit világosabbra állítva: 0.1) */
-    repeating-radial-gradient(circle at 50% -10%, transparent 0, transparent 50px, rgba(0, 255, 102, 0.1) 51px, transparent 52px);
+    /* 1. Vörös vészlámpa / Cerebro központi fény (félkör felülről) */
+    radial-gradient(ellipse at 50% 0%, rgba(220, 38, 38, 0.35) 0%, rgba(220, 38, 38, 0) 60%),
+    /* 2. Sötétítő átmenet lefelé a térhatásért */
+    linear-gradient(to bottom, rgba(10, 1, 1, 0) 0%, rgba(10, 1, 1, 0.95) 100%),
+    /* 3. Cerebro "hosszúsági körök" (sugaras vonalak - Fényesebb kivitel) */
+    repeating-conic-gradient(from 0deg at 50% -20%, transparent 0deg, transparent 3.8deg, rgba(255, 60, 60, 0.25) 4deg, transparent 4.2deg),
+    /* 4. Cerebro "szélességi körök" (koncentrikus ívek - Fényesebb kivitel) */
+    repeating-radial-gradient(ellipse at 50% -20%, transparent 0, transparent 48px, rgba(255, 60, 60, 0.25) 50px, transparent 52px);
   
   background-attachment: fixed;
   background-position: center top;
-  
-  /* AMIKOR MEGLESZ A VÉGLEGES KÉP:
-     Töröld ki a fenti background-image és background-size sorokat, és használd ezt:
-     background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('../img/kampusz-hatter.jpg');
-     background-size: cover;
-  */
 
   line-height:1.65;
   font-size:1.02rem;
@@ -172,17 +166,42 @@ code{background:var(--zold-50);padding:.1em .35em;border-radius:6px;font-size:.9
   margin:0 0 .45rem;font-size:1rem;}
 .doboz>.cim .ikon{font-size:1.05rem;}
 .doboz p:last-child{margin-bottom:0;}
-/* Tematikus háttér színezések megtartása üveg-effektussal sötét módra hangolva */
+
+/* Tematikus háttér színezések és EGYEDI HOVER EFFEKTEK */
 .doboz.definicio{background:rgba(16,185,129,0.05);border-color:rgba(16,185,129,0.3);}
 .doboz.definicio>.cim{color:var(--zold-500);}
+.doboz.definicio:hover {
+  border-color: #34d399 !important;
+  box-shadow: 0 0 15px rgba(16,185,129,0.5), inset 0 0 10px rgba(16,185,129,0.15) !important;
+}
+
 .doboz.tetel{background:rgba(59,130,246,0.05);border-color:rgba(59,130,246,0.3);}
-.doboz.tetel>.cim{color:#60a5fa;} /* Világosabb kék */
+.doboz.tetel>.cim{color:#60a5fa;} 
+.doboz.tetel:hover {
+  border-color: #60a5fa !important;
+  box-shadow: 0 0 15px rgba(59,130,246,0.5), inset 0 0 10px rgba(59,130,246,0.15) !important;
+}
+
 .doboz.pelda{background:rgba(245,158,11,0.05);border-color:rgba(245,158,11,0.3);}
-.doboz.pelda>.cim{color:#fbbf24;} /* Világosabb sárga */
+.doboz.pelda>.cim{color:#fbbf24;} 
+.doboz.pelda:hover {
+  border-color: #fbbf24 !important;
+  box-shadow: 0 0 15px rgba(245,158,11,0.5), inset 0 0 10px rgba(245,158,11,0.15) !important;
+}
+
 .doboz.csapda{background:rgba(239,68,68,0.05);border-color:rgba(239,68,68,0.3);}
-.doboz.csapda>.cim{color:#f87171;} /* Világosabb piros */
+.doboz.csapda>.cim{color:#f87171;} 
+.doboz.csapda:hover {
+  border-color: #f87171 !important;
+  box-shadow: 0 0 15px rgba(239,68,68,0.5), inset 0 0 10px rgba(239,68,68,0.15) !important;
+}
+
 .doboz.erdekesseg{background:rgba(139,92,246,0.05);border-color:rgba(139,92,246,0.3);}
-.doboz.erdekesseg>.cim{color:#c084fc;} /* Világosabb lila */
+.doboz.erdekesseg>.cim{color:#c084fc;} 
+.doboz.erdekesseg:hover {
+  border-color: #c084fc !important;
+  box-shadow: 0 0 15px rgba(139,92,246,0.5), inset 0 0 10px rgba(139,92,246,0.15) !important;
+}
 
 /* ---------- Lenyílók (HOLOGRAFIKUS) ---------- */
 details{border:1px solid var(--marvel-glass-border);border-radius:12px;margin:.8rem 0;background:var(--marvel-glass-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:all 0.3s ease;}
