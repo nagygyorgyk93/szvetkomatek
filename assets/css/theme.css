@@ -72,13 +72,13 @@ body{
   background-color: var(--papir);
   background-image: 
     /* 1. Vörös vészlámpa / Cerebro központi fény (félkör felülről) */
-    radial-gradient(ellipse at 50% 0%, rgba(220, 38, 38, 0.35) 0%, rgba(220, 38, 38, 0) 60%),
+    radial-gradient(ellipse at 50% 0%, rgba(220, 38, 38, 0.4) 0%, rgba(220, 38, 38, 0) 65%),
     /* 2. Sötétítő átmenet lefelé a térhatásért */
     linear-gradient(to bottom, rgba(10, 1, 1, 0) 0%, rgba(10, 1, 1, 0.95) 100%),
-    /* 3. Cerebro "hosszúsági körök" (sugaras vonalak - Fényesebb kivitel) */
-    repeating-conic-gradient(from 0deg at 50% -20%, transparent 0deg, transparent 3.8deg, rgba(255, 60, 60, 0.25) 4deg, transparent 4.2deg),
-    /* 4. Cerebro "szélességi körök" (koncentrikus ívek - Fényesebb kivitel) */
-    repeating-radial-gradient(ellipse at 50% -20%, transparent 0, transparent 48px, rgba(255, 60, 60, 0.25) 50px, transparent 52px);
+    /* 3. Cerebro "hosszúsági körök" (függőlegesebb, ritkított, magas fókuszpontú sugarak) */
+    repeating-conic-gradient(from 0deg at 50% -100%, transparent 0deg, transparent 5.8deg, rgba(255, 60, 60, 0.4) 6deg, transparent 6.2deg),
+    /* 4. Cerebro "szélességi körök" (gömbölydedebb, ritkított ellipszisek) */
+    repeating-radial-gradient(ellipse 200% 100% at 50% -10%, transparent 0, transparent 73px, rgba(255, 60, 60, 0.4) 75px, transparent 77px);
   
   background-attachment: fixed;
   background-position: center top;
@@ -158,7 +158,7 @@ code{background:var(--zold-50);padding:.1em .35em;border-radius:6px;font-size:.9
   .toc a.aktiv{color:var(--marvel-green-neon);font-weight:600;border-left: 2px solid var(--marvel-green-neon); margin-left: -1rem; padding-left: 1rem;}
 }
 
-/* ---------- Kiemelődobozok (HOLOGRAFIKUS UPDATE) ---------- */
+/* ---------- Kiemelődobozok (HOLOGRAFIKUS UPDATE - ÉLÉNK SZÍNEK) ---------- */
 .doboz{border-radius:var(--r);padding:1rem 1.2rem;margin:1.3rem 0;border:1px solid var(--marvel-glass-border);
   box-shadow:0 4px 6px rgba(0,0,0,0.3);background:var(--marvel-glass-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:all 0.3s ease;}
 .doboz:hover{box-shadow:var(--marvel-glow);border-color:var(--marvel-green-neon);}
@@ -167,40 +167,40 @@ code{background:var(--zold-50);padding:.1em .35em;border-radius:6px;font-size:.9
 .doboz>.cim .ikon{font-size:1.05rem;}
 .doboz p:last-child{margin-bottom:0;}
 
-/* Tematikus háttér színezések és EGYEDI HOVER EFFEKTEK */
-.doboz.definicio{background:rgba(16,185,129,0.05);border-color:rgba(16,185,129,0.3);}
-.doboz.definicio>.cim{color:var(--zold-500);}
+/* Tematikus háttér színezések és EGYEDI HOVER EFFEKTEK saját színekkel */
+.doboz.definicio{background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.5);}
+.doboz.definicio>.cim{color:#34d399;}
 .doboz.definicio:hover {
   border-color: #34d399 !important;
-  box-shadow: 0 0 15px rgba(16,185,129,0.5), inset 0 0 10px rgba(16,185,129,0.15) !important;
+  box-shadow: 0 0 20px rgba(16,185,129,0.6), inset 0 0 12px rgba(16,185,129,0.2) !important;
 }
 
-.doboz.tetel{background:rgba(59,130,246,0.05);border-color:rgba(59,130,246,0.3);}
+.doboz.tetel{background:rgba(59,130,246,0.1);border-color:rgba(59,130,246,0.5);}
 .doboz.tetel>.cim{color:#60a5fa;} 
 .doboz.tetel:hover {
   border-color: #60a5fa !important;
-  box-shadow: 0 0 15px rgba(59,130,246,0.5), inset 0 0 10px rgba(59,130,246,0.15) !important;
+  box-shadow: 0 0 20px rgba(59,130,246,0.6), inset 0 0 12px rgba(59,130,246,0.2) !important;
 }
 
-.doboz.pelda{background:rgba(245,158,11,0.05);border-color:rgba(245,158,11,0.3);}
+.doboz.pelda{background:rgba(245,158,11,0.1);border-color:rgba(245,158,11,0.5);}
 .doboz.pelda>.cim{color:#fbbf24;} 
 .doboz.pelda:hover {
   border-color: #fbbf24 !important;
-  box-shadow: 0 0 15px rgba(245,158,11,0.5), inset 0 0 10px rgba(245,158,11,0.15) !important;
+  box-shadow: 0 0 20px rgba(245,158,11,0.6), inset 0 0 12px rgba(245,158,11,0.2) !important;
 }
 
-.doboz.csapda{background:rgba(239,68,68,0.05);border-color:rgba(239,68,68,0.3);}
+.doboz.csapda{background:rgba(239,68,68,0.1);border-color:rgba(239,68,68,0.5);}
 .doboz.csapda>.cim{color:#f87171;} 
 .doboz.csapda:hover {
   border-color: #f87171 !important;
-  box-shadow: 0 0 15px rgba(239,68,68,0.5), inset 0 0 10px rgba(239,68,68,0.15) !important;
+  box-shadow: 0 0 20px rgba(239,68,68,0.6), inset 0 0 12px rgba(239,68,68,0.2) !important;
 }
 
-.doboz.erdekesseg{background:rgba(139,92,246,0.05);border-color:rgba(139,92,246,0.3);}
+.doboz.erdekesseg{background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.5);}
 .doboz.erdekesseg>.cim{color:#c084fc;} 
 .doboz.erdekesseg:hover {
   border-color: #c084fc !important;
-  box-shadow: 0 0 15px rgba(139,92,246,0.5), inset 0 0 10px rgba(139,92,246,0.15) !important;
+  box-shadow: 0 0 20px rgba(139,92,246,0.6), inset 0 0 12px rgba(139,92,246,0.2) !important;
 }
 
 /* ---------- Lenyílók (HOLOGRAFIKUS) ---------- */
@@ -371,13 +371,13 @@ table.tt-table .res{font-weight:800;background:rgba(16,185,129,0.15);}
 .m0{margin:0;} .mt0{margin-top:0;} .my8{margin:8px 0;} .my02{margin:.2rem 0;}
 .nagyobb{font-size:1.1em;}
 
-/* ---------- Küldetés-eligazítás (HQ-adás) - HOLOGRAFIKUS ---------- */
+/* ---------- Küldetés-eligazítás (HQ-adás) - KÉK HOLOGRAFIKUS ---------- */
 .brief{background:linear-gradient(135deg,rgba(15,23,42,0.8),rgba(30,41,59,0.8));backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#e2e8f0;border-radius:var(--r);
-  padding:.85rem 1.15rem;margin:.9rem 0 1.3rem;border:1px solid var(--marvel-glass-border);border-left:4px solid var(--marvel-green-neon);
-  box-shadow:var(--marvel-glow);font-size:.98rem;}
+  padding:.85rem 1.15rem;margin:.9rem 0 1.3rem;border:1px solid rgba(59, 130, 246, 0.3);border-left:4px solid #3b82f6;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4), inset 0 0 10px rgba(59, 130, 246, 0.1);font-size:.98rem;}
 .brief p{margin:0;}
 .brief b{color:#fff;}
-.brief a{color:var(--marvel-green-neon);text-shadow:0 0 5px rgba(0,255,102,0.4);}
+.brief a{color:#60a5fa;text-shadow:0 0 5px rgba(59, 130, 246, 0.4);}
 
 /* ---------- Feladatkártya szint-színek ---------- */
 .feladat.alap{border:1.5px solid rgba(16,185,129,0.4);background:rgba(16,185,129,0.05);}
