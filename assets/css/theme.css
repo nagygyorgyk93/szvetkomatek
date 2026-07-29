@@ -31,7 +31,7 @@
   --zold-100: rgba(16, 185, 129, 0.15); --zold-50: rgba(16, 185, 129, 0.05);
   
   /* Sötét mód alapszínei */
-  --papir: #0a0101; /* Mély, sötét-vöröses fekete a Cerebro háttérhez */
+  --papir: #080101; /* Mély, sötét-vöröses fekete a Cerebro háttérhez */
   --kartya: #1e293b; /* Kártyák sötétebb panel háttere */
   --tinta: #f8fafc; /* Világos szöveg */
   --szurke-600: #94a3b8; /* Világosabb szürke a leírásokhoz */
@@ -71,14 +71,14 @@ body{
   /* CEREBRO Vészhelyzeti / Mutáns Tervrajz Háttér (Sötét-Vöröses) */
   background-color: var(--papir);
   background-image: 
-    /* 1. Vörös vészlámpa / Cerebro központi fény (félkör felülről) */
-    radial-gradient(ellipse at 50% 0%, rgba(220, 38, 38, 0.4) 0%, rgba(220, 38, 38, 0) 65%),
+    /* 1. Vörös vészlámpa / Cerebro központi fény (Tompább, rövidebb félkör) */
+    radial-gradient(ellipse at 50% 0%, rgba(220, 20, 20, 0.2) 0%, rgba(220, 20, 20, 0) 40%),
     /* 2. Sötétítő átmenet lefelé a térhatásért */
-    linear-gradient(to bottom, rgba(10, 1, 1, 0) 0%, rgba(10, 1, 1, 0.95) 100%),
-    /* 3. Cerebro "hosszúsági körök" (függőlegesebb, ritkított, magas fókuszpontú sugarak) */
-    repeating-conic-gradient(from 0deg at 50% -100%, transparent 0deg, transparent 5.8deg, rgba(255, 60, 60, 0.4) 6deg, transparent 6.2deg),
-    /* 4. Cerebro "szélességi körök" (gömbölydedebb, ritkított ellipszisek) */
-    repeating-radial-gradient(ellipse 200% 100% at 50% -10%, transparent 0, transparent 73px, rgba(255, 60, 60, 0.4) 75px, transparent 77px);
+    linear-gradient(to bottom, rgba(8, 1, 1, 0) 0%, rgba(8, 1, 1, 0.95) 100%),
+    /* 3. Cerebro "hosszúsági körök" (Gömbölydedebb fókusz, élénkvörös lemez-rések, 2.5x ritkább) */
+    repeating-conic-gradient(from 0deg at 50% -5%, transparent 0deg, transparent 14.8deg, rgba(255, 20, 20, 0.5) 15deg, transparent 15.2deg),
+    /* 4. Cerebro "szélességi körök" (Élénkvörös, 2.5x nagyobb térköz: kb. 185px) */
+    repeating-radial-gradient(ellipse 200% 100% at 50% -10%, transparent 0, transparent 183px, rgba(255, 20, 20, 0.5) 185px, transparent 187px);
   
   background-attachment: fixed;
   background-position: center top;
@@ -374,7 +374,11 @@ table.tt-table .res{font-weight:800;background:rgba(16,185,129,0.15);}
 /* ---------- Küldetés-eligazítás (HQ-adás) - KÉK HOLOGRAFIKUS ---------- */
 .brief{background:linear-gradient(135deg,rgba(15,23,42,0.8),rgba(30,41,59,0.8));backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#e2e8f0;border-radius:var(--r);
   padding:.85rem 1.15rem;margin:.9rem 0 1.3rem;border:1px solid rgba(59, 130, 246, 0.3);border-left:4px solid #3b82f6;
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4), inset 0 0 10px rgba(59, 130, 246, 0.1);font-size:.98rem;}
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4), inset 0 0 10px rgba(59, 130, 246, 0.1);font-size:.98rem; transition: all 0.3s ease;}
+.brief:hover {
+  border-color: #60a5fa !important;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.6), inset 0 0 15px rgba(59, 130, 246, 0.2) !important;
+}
 .brief p{margin:0;}
 .brief b{color:#fff;}
 .brief a{color:#60a5fa;text-shadow:0 0 5px rgba(59, 130, 246, 0.4);}
