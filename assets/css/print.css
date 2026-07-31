@@ -20,7 +20,7 @@
   #progress,.fejlec,.toc,.kereso-mini,.kereso-nagy,.lapozo,.gyakorolj,.kviz,
   .morzsa,.matek-dekor,.savok,.video-panel,.hang-gomb{display:none !important;}
 
-  body{font-size:11pt;line-height:1.45;}
+  body{font-size:11pt;line-height:1.45;display:block !important;min-height:0 !important;}
   .lap{display:block;max-width:none;padding:0;}
   .lap.toc-os{grid-template-columns:none;}
   .hero{padding:0 0 .5rem;}

@@ -70,6 +70,20 @@
     if(lassit){ v.removeAttribute('autoplay'); v.pause(); }
     else { var p = v.play(); if(p && p.catch) p.catch(function(){}); }
 
+    /* Átlátszóság-teszt: a videó sarka átlátszó-e? Ha a böngésző nem tudja a VP9-alfát
+       (pl. Safari), a keret `nincs-alfa` osztályt kap → CSS-ből screen-keverés. */
+    v.addEventListener('loadeddata', function proba(){
+      v.removeEventListener('loadeddata', proba);
+      try{
+        var c = document.createElement('canvas'); c.width = 8; c.height = 8;
+        var cx = c.getContext('2d');
+        cx.clearRect(0, 0, 8, 8);
+        cx.drawImage(v, 0, 0, 8, 8);
+        if(cx.getImageData(0, 0, 1, 1).data[3] > 250 && v.parentNode)
+          v.parentNode.classList.add('nincs-alfa');
+      }catch(e){ /* ha bármi gond van, marad az alapértelmezett megjelenés */ }
+    });
+
     var eredetiSzoveg = gomb.textContent;
     gomb.addEventListener('click', function(){
       v.muted = false; v.loop = false; v.currentTime = 0;

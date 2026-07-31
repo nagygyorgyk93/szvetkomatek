@@ -73,7 +73,13 @@ body{
   margin:0;
   font-family:var(--szoveg);
   color:var(--tinta);
-  
+
+  /* Rövid oldalakon (pl. tagozat-index) is az ablak aljára feszül a lábléc */
+  min-height:100vh;
+  min-height:100dvh;
+  display:flex;
+  flex-direction:column;
+
   /* CEREBRO Vészhelyzeti / Mutáns Tervrajz Háttér (Sötét-Vöröses) */
   background-color: var(--papir);
   background-image: 
@@ -194,7 +200,8 @@ code{background:var(--zold-50);padding:.1em .35em;border-radius:6px;font-size:.9
 .meta-sor{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;}
 
 /* ---------- Elrendezés (tartalom + TOC) ---------- */
-.lap{max-width:1120px;margin:0 auto;padding:1.2rem;display:grid;grid-template-columns:minmax(0,1fr);gap:2rem;}
+.lap{max-width:1120px;width:100%;margin:0 auto;padding:1.2rem 1.2rem 3rem;display:grid;
+  grid-template-columns:minmax(0,1fr);gap:2rem;}
 @media(min-width:960px){.lap.toc-os{grid-template-columns:minmax(0,1fr) 240px;}}
 .tartalom{min-width:0;}
 .toc{display:none;}
@@ -346,7 +353,9 @@ a.kartya:hover::after{transform:translateX(130%);}
 .lapozo a.kov{text-align:right;}
 
 /* ---------- Lábléc ---------- */
-.lablec{border-top:1px solid var(--marvel-glass-border);margin-top:3rem;background:rgba(15,23,42,0.85);backdrop-filter:blur(8px);}
+/* `margin-top:auto` → a flex-oszlopban a lábléc mindig az aljára kerül (rövid oldalon is);
+   a tartalom alatti 3rem térközt a `.lap` alsó belső margója adja. */
+.lablec{border-top:1px solid var(--marvel-glass-border);margin-top:auto;background:rgba(15,23,42,0.85);backdrop-filter:blur(8px);}
 .lablec-bel{max-width:1120px;margin:0 auto;padding:1.4rem 1.2rem;display:flex;flex-wrap:wrap;
   gap:.8rem;justify-content:space-between;color:var(--szurke-600);font-size:.9rem;}
 .lablec b{color:var(--zold-500);}
@@ -457,12 +466,15 @@ table.tt-table .res{font-weight:800;background:rgba(16,185,129,0.15);}
 .mentor-sor .avatar{border-color:var(--marvel-glass-border);box-shadow:0 0 16px rgba(0,255,102,.35);}
 .mentor-sor p{margin:0;}
 
+/* A videó háttere ki van vágva (WebM + alfa), ezért nincs körülötte keret/panel —
+   a figura „lebeg" az oldalon. Ha a böngésző nem tudja a VP9-alfát (pl. Safari), az
+   ui.js `nincs-alfa` osztályt tesz a panelre: a `screen` keverés a sötét lapon akkor is
+   eltünteti a fekete hátteret. */
 .video-panel{flex:0 0 15rem;max-width:15rem;margin:0;position:relative;padding:.5rem;
-  border-radius:var(--r);border:1px solid var(--marvel-glass-border);background:var(--marvel-glass-bg);
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 4px 6px rgba(0,0,0,.35);
-  transition:all .3s ease;}
-.video-panel:hover{border-color:var(--marvel-green-neon);box-shadow:var(--marvel-glow);}
-.video-panel video{display:block;width:100%;height:auto;border-radius:10px;background:#000;}
+  background:transparent;border:0;box-shadow:none;}
+.video-panel video{display:block;width:100%;height:auto;
+  filter:drop-shadow(0 0 18px rgba(0,255,102,.22));}
+.video-panel.nincs-alfa video{mix-blend-mode:screen;filter:none;}
 .video-panel figcaption{margin-top:.35rem;font-size:.8rem;color:var(--szurke-600);text-align:center;}
 .hang-gomb{position:absolute;right:.9rem;bottom:2.6rem;border:1px solid var(--marvel-green-neon);
   border-radius:999px;padding:.28rem .8rem;background:rgba(10,41,24,.85);color:var(--marvel-green-neon);
