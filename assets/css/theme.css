@@ -50,9 +50,15 @@
   /* Zöld Tech Paletta (MARVEL S.H.I.E.L.D.) */
   --marvel-green-neon: #00ff66;
   --marvel-green-dark: #0a2918;
-  --marvel-glass-bg: rgba(0, 255, 102, 0.05);
+  --marvel-glass-bg: rgba(6, 20, 15, 0.58);   /* sötét üveg-alap (a helyszínfotók fölött is olvasható) */
+  --uveg-alap: rgba(6, 20, 15, 0.62);         /* színes dobozok sötét alapja */
   --marvel-glass-border: rgba(0, 255, 102, 0.25);
   --marvel-glow: 0 0 15px rgba(0, 255, 102, 0.4), inset 0 0 10px rgba(0, 255, 102, 0.1);
+
+  /* Helyszín-háttér (a body[data-hatter] állítja be) */
+  --hatter-fekvo: none;   /* fekvő (16:9-es) változat */
+  --hatter-allo: none;    /* álló (9:16-os) változat */
+  --hatter-sotet: .82;    /* sötétítő fátyol erőssége (0–1) */
 }
 body[data-tagozat="1e"]{--accent:#10b981;}
 body[data-tagozat="2e"]{--accent:#14b8a6;}
@@ -87,6 +93,51 @@ body{
   font-size:1.02rem;
 }
 
+/* ---------- Helyszín-háttérréteg (FIX, torzításmentes) ----------
+   A kép egy fixen pozicionált pszeudo-elemen ül (nem background-attachment:fixed,
+   mert azt a mobil böngészők rosszul kezelik). A `cover` gondoskodik róla, hogy a
+   kép sose torzuljon: a rövidebb irányra feszít, a fölösleg lelóg. 1:1-nél
+   keskenyebb (álló) kijelzőn az álló, egyébként a fekvő változat jön. */
+body::before{
+  content:'';
+  position:fixed; inset:-12px; z-index:-1;  /* a -12px a lágyítás széli elmosódását nyeli el */
+  pointer-events:none;
+  background-image:
+    radial-gradient(ellipse at 50% -10%, rgba(220,20,20,.16), rgba(220,20,20,0) 55%),
+    linear-gradient(to bottom,
+      rgba(8,1,1,calc(var(--hatter-sotet) - .07)) 0%,
+      rgba(8,1,1,var(--hatter-sotet)) 45%,
+      rgba(8,1,1,calc(var(--hatter-sotet) + .06)) 100%),
+    var(--hatter-kep, none);
+  background-size: cover, cover, cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+body{--hatter-kep: var(--hatter-fekvo);}
+@media (max-aspect-ratio: 1/1){
+  body{--hatter-kep: var(--hatter-allo);}
+}
+
+/* Oldaltípus → helyszín (a data-hatter attribútumot a _tools/set_hatter.py írja) */
+body[data-hatter="foepulet"]{      /* Szvetkó-kampusz főépülete — belépő oldalak */
+  --hatter-fekvo:url('../img/foepulet_1.webp');      --hatter-allo:url('../img/foepulet_2.webp');      --hatter-sotet:.70;}
+body[data-hatter="diszterem"]{     /* Holografikus eligazító / közösségi tér */
+  --hatter-fekvo:url('../img/diszterem_1.webp');     --hatter-allo:url('../img/diszterem_2.webp');     --hatter-sotet:.72;}
+body[data-hatter="altalanos"]{     /* Taktikai és Elemző Központ — tananyag */
+  --hatter-fekvo:url('../img/altalanos_terem_1.webp');--hatter-allo:url('../img/altalanos_terem_2.webp');--hatter-sotet:.80;}
+body[data-hatter="digitalis"]{     /* Tech-Labor / Páncélműhely — feladatok, összefoglaló */
+  --hatter-fekvo:url('../img/digitalis_terem_1.webp');--hatter-allo:url('../img/digitalis_terem_2.webp');--hatter-sotet:.80;}
+body[data-hatter="tornaterem"]{    /* Veszélyterem (Danger Room) — házi feladatok */
+  --hatter-fekvo:url('../img/tornaterem_1.webp');    --hatter-allo:url('../img/tornaterem_2.webp');    --hatter-sotet:.80;}
+body[data-hatter="rajzterem"]{     /* Misztikus Művészetek Műterme — terepküldetés */
+  --hatter-fekvo:url('../img/rajzterem_1.webp');     --hatter-allo:url('../img/rajzterem_2.webp');     --hatter-sotet:.76;}
+
+/* Hosszú, szöveges oldalakon a háttér lágyítva — a hangulat marad, a részletek
+   nem versenyeznek a folyószöveggel. */
+body[data-hatter="altalanos"]::before,
+body[data-hatter="digitalis"]::before,
+body[data-hatter="tornaterem"]::before{filter:blur(2.5px) saturate(.8);}
+
 h1,h2,h3,h4{font-family:var(--fej);line-height:1.25;color:var(--tinta);}
 h1{font-size:2rem;} h2{font-size:1.5rem;margin-top:2.2rem;} h3{font-size:1.2rem;}
 a{color:var(--zold-500);text-decoration-thickness:1px;text-underline-offset:2px;transition: color 0.2s;}
@@ -94,7 +145,7 @@ a:hover{color:var(--marvel-green-neon);}
 img{max-width:100%;height:auto;border-radius:10px;}
 figure{margin:1.2rem 0;text-align:center;}
 figcaption{font-size:.88rem;color:var(--szurke-600);margin-top:.4rem;}
-table{border-collapse:collapse;margin:1rem 0;width:100%;}
+table{border-collapse:collapse;margin:1rem 0;width:100%;background:var(--uveg-alap);}
 th,td{border:1px solid var(--szurke-300);padding:.45rem .7rem;text-align:center;}
 th{background:var(--zold-50);font-family:var(--fej);}
 code{background:var(--zold-50);padding:.1em .35em;border-radius:6px;font-size:.92em;color:var(--marvel-green-neon);}
@@ -132,8 +183,8 @@ code{background:var(--zold-50);padding:.1em .35em;border-radius:6px;font-size:.9
 .hero h1{margin:.2rem 0 .4rem;}
 .hero .alcim{color:var(--szurke-600);font-size:1.08rem;max-width:46rem;margin:0;}
 .hero-nagy{background:
-  radial-gradient(60rem 24rem at 85% -20%, rgba(0, 255, 102, 0.1), transparent),
-  var(--papir);
+  radial-gradient(60rem 24rem at 85% -20%, rgba(0, 255, 102, 0.12), transparent),
+  linear-gradient(to bottom, rgba(8,1,1,.55), rgba(8,1,1,.25));
   border-bottom:1px solid var(--szurke-300);}
 .hero-nagy .hero{padding:3.2rem 1.2rem 2.6rem;}
 .hero-nagy h1{font-size:2.7rem;margin:0 0 .5rem;}
@@ -168,35 +219,35 @@ code{background:var(--zold-50);padding:.1em .35em;border-radius:6px;font-size:.9
 .doboz p:last-child{margin-bottom:0;}
 
 /* Tematikus háttér színezések és EGYEDI HOVER EFFEKTEK saját színekkel */
-.doboz.definicio{background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.5);}
+.doboz.definicio{background:linear-gradient(rgba(16,185,129,.16),rgba(16,185,129,.16)),var(--uveg-alap);border-color:rgba(16,185,129,0.5);}
 .doboz.definicio>.cim{color:#34d399;}
 .doboz.definicio:hover {
   border-color: #34d399 !important;
   box-shadow: 0 0 20px rgba(16,185,129,0.6), inset 0 0 12px rgba(16,185,129,0.2) !important;
 }
 
-.doboz.tetel{background:rgba(59,130,246,0.1);border-color:rgba(59,130,246,0.5);}
+.doboz.tetel{background:linear-gradient(rgba(59,130,246,.16),rgba(59,130,246,.16)),var(--uveg-alap);border-color:rgba(59,130,246,0.5);}
 .doboz.tetel>.cim{color:#60a5fa;} 
 .doboz.tetel:hover {
   border-color: #60a5fa !important;
   box-shadow: 0 0 20px rgba(59,130,246,0.6), inset 0 0 12px rgba(59,130,246,0.2) !important;
 }
 
-.doboz.pelda{background:rgba(245,158,11,0.1);border-color:rgba(245,158,11,0.5);}
+.doboz.pelda{background:linear-gradient(rgba(245,158,11,.16),rgba(245,158,11,.16)),var(--uveg-alap);border-color:rgba(245,158,11,0.5);}
 .doboz.pelda>.cim{color:#fbbf24;} 
 .doboz.pelda:hover {
   border-color: #fbbf24 !important;
   box-shadow: 0 0 20px rgba(245,158,11,0.6), inset 0 0 12px rgba(245,158,11,0.2) !important;
 }
 
-.doboz.csapda{background:rgba(239,68,68,0.1);border-color:rgba(239,68,68,0.5);}
+.doboz.csapda{background:linear-gradient(rgba(239,68,68,.16),rgba(239,68,68,.16)),var(--uveg-alap);border-color:rgba(239,68,68,0.5);}
 .doboz.csapda>.cim{color:#f87171;} 
 .doboz.csapda:hover {
   border-color: #f87171 !important;
   box-shadow: 0 0 20px rgba(239,68,68,0.6), inset 0 0 12px rgba(239,68,68,0.2) !important;
 }
 
-.doboz.erdekesseg{background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.5);}
+.doboz.erdekesseg{background:linear-gradient(rgba(139,92,246,.16),rgba(139,92,246,.16)),var(--uveg-alap);border-color:rgba(139,92,246,0.5);}
 .doboz.erdekesseg>.cim{color:#c084fc;} 
 .doboz.erdekesseg:hover {
   border-color: #c084fc !important;
@@ -263,7 +314,13 @@ details.vegeredmeny summary{color:var(--szurke-600);font-size:.92rem;}
   padding:1.1rem 1.2rem;box-shadow:0 4px 6px rgba(0,0,0,0.3);text-decoration:none;color:var(--tinta);
   transition:transform .2s,box-shadow .2s,border-color .2s;position:relative;overflow:hidden;}
 a.kartya:hover{transform:translateY(-2px);box-shadow:var(--marvel-glow);border-color:var(--marvel-green-neon);}
-.kartya::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--marvel-green-neon);box-shadow:2px 0 10px rgba(0,255,102,0.6);transition:background .3s ease;}
+.kartya::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;
+  background:var(--kartya-szin,var(--marvel-green-neon));box-shadow:2px 0 10px rgba(0,255,102,0.6);transition:background .3s ease;}
+/* finom fény-pásztázás hoverre */
+a.kartya::after{content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(105deg,transparent 35%,rgba(0,255,102,.10) 50%,transparent 65%);
+  transform:translateX(-130%);transition:transform .65s ease;}
+a.kartya:hover::after{transform:translateX(130%);}
 .kartya h3{margin:.1rem 0 .3rem;color:var(--tinta);}
 .kartya .le{color:var(--szurke-600);font-size:.92rem;margin:0;}
 .kartya .sor{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin-top:.6rem;}
@@ -331,8 +388,12 @@ table.tt-table .res{font-weight:800;background:rgba(16,185,129,0.15);}
   border-radius:999px;padding:.05rem .6rem;font-size:.8rem;font-weight:700;font-family:var(--fej);}
 .ic{margin-right:.3rem;}
 .venn{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:1rem 0;}
-.venn .vbox,.svgcard{background:var(--kartya);border:1px solid var(--szurke-300);
-  border-radius:var(--r);padding:8px;box-shadow:var(--arny);}
+/* Az ábrák „tervrajz-lapon" ülnek: az inline SVG-k sötét tintával (#0f172a)
+   rajzolnak és világos kitöltéseket használnak, ezért a keretük VILÁGOS marad —
+   így a feliratok a sötét témában is élesen olvashatók. */
+.venn .vbox,.svgcard,.svgwrap>svg{background:#eef2f6;border:1px solid var(--marvel-glass-border);
+  border-radius:var(--r);padding:8px;box-shadow:0 0 14px rgba(0,255,102,.12),var(--arny);}
+.venn .vbox .cap,.svgcard .cap{color:#334155;}
 .venn .vbox{width:210px;}
 .venn svg,.svgwrap svg,.svgcard svg{max-width:100%;height:auto;display:block;margin:0 auto;}
 .svgwrap{text-align:center;margin:1rem 0;}
@@ -361,7 +422,7 @@ table.tt-table .res{font-weight:800;background:rgba(16,185,129,0.15);}
 .sav.hulk{color:#c084fc;border-color:rgba(139,92,246,0.4);}
 
 /* ---------- Gyakorló-figyelmeztetés (nincs garancia) ---------- */
-.diszklemer{font-size:.9rem;color:#fbbf24;background:rgba(245,158,11,0.1);border-left:3px solid var(--sarga);
+.diszklemer{font-size:.9rem;color:#fbbf24;background:linear-gradient(rgba(245,158,11,.12),rgba(245,158,11,.12)),var(--uveg-alap);border-left:3px solid var(--sarga);
   border-radius:8px;padding:.5rem .85rem;margin:.5rem 0 1.1rem;}
 
 /* ---------- Utility-osztályok ---------- */
@@ -383,11 +444,42 @@ table.tt-table .res{font-weight:800;background:rgba(16,185,129,0.15);}
 .brief b{color:#fff;}
 .brief a{color:#60a5fa;text-shadow:0 0 5px rgba(59, 130, 246, 0.4);}
 
+/* ---------- Fogadó blokk: SZVETI-eligazítás + üdvözlő videó ---------- */
+.fogado{display:flex;gap:1.4rem;align-items:flex-start;flex-wrap:wrap;margin:.4rem 0 1.6rem;}
+.fogado .brief{flex:1 1 22rem;margin:0;}
+.brief.szveti{display:flex;gap:1rem;align-items:flex-start;}
+.brief .avatar,.mentor-sor .avatar{width:5.2rem;height:5.2rem;border-radius:50%;object-fit:cover;
+  flex:none;border:1px solid rgba(59,130,246,.55);box-shadow:0 0 16px rgba(59,130,246,.45);}
+.mentor-sor{display:flex;gap:1rem;align-items:center;margin:1.4rem 0;padding:.9rem 1.1rem;
+  border-radius:var(--r);border:1px solid var(--marvel-glass-border);background:var(--marvel-glass-bg);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:all .3s ease;}
+.mentor-sor:hover{border-color:var(--marvel-green-neon);box-shadow:var(--marvel-glow);}
+.mentor-sor .avatar{border-color:var(--marvel-glass-border);box-shadow:0 0 16px rgba(0,255,102,.35);}
+.mentor-sor p{margin:0;}
+
+.video-panel{flex:0 0 15rem;max-width:15rem;margin:0;position:relative;padding:.5rem;
+  border-radius:var(--r);border:1px solid var(--marvel-glass-border);background:var(--marvel-glass-bg);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 4px 6px rgba(0,0,0,.35);
+  transition:all .3s ease;}
+.video-panel:hover{border-color:var(--marvel-green-neon);box-shadow:var(--marvel-glow);}
+.video-panel video{display:block;width:100%;height:auto;border-radius:10px;background:#000;}
+.video-panel figcaption{margin-top:.35rem;font-size:.8rem;color:var(--szurke-600);text-align:center;}
+.hang-gomb{position:absolute;right:.9rem;bottom:2.6rem;border:1px solid var(--marvel-green-neon);
+  border-radius:999px;padding:.28rem .8rem;background:rgba(10,41,24,.85);color:var(--marvel-green-neon);
+  font:inherit;font-size:.8rem;font-weight:700;letter-spacing:.02em;cursor:pointer;transition:all .3s ease;
+  box-shadow:0 0 8px rgba(0,255,102,.3);backdrop-filter:blur(6px);}
+.hang-gomb:hover{background:var(--marvel-green-neon);color:var(--marvel-green-dark);box-shadow:var(--marvel-glow);}
+.hang-gomb[disabled]{opacity:.55;cursor:default;}
+@media(max-width:640px){
+  .video-panel{flex:1 1 100%;max-width:13rem;margin:0 auto;}
+  .brief .avatar,.mentor-sor .avatar{width:4rem;height:4rem;}
+}
+
 /* ---------- Feladatkártya szint-színek ---------- */
-.feladat.alap{border:1.5px solid rgba(16,185,129,0.4);background:rgba(16,185,129,0.05);}
-.feladat.kozep{border:1.5px solid rgba(245,158,11,0.4);background:rgba(245,158,11,0.05);}
-.feladat.nehez{border:1.5px solid rgba(239,68,68,0.4);background:rgba(239,68,68,0.05);}
-.feladat.joker{border:1.5px solid rgba(139,92,246,0.4);background:rgba(139,92,246,0.05);}
+.feladat.alap{border:1.5px solid rgba(16,185,129,0.45);background:linear-gradient(rgba(16,185,129,.10),rgba(16,185,129,.10)),var(--uveg-alap);}
+.feladat.kozep{border:1.5px solid rgba(245,158,11,0.45);background:linear-gradient(rgba(245,158,11,.10),rgba(245,158,11,.10)),var(--uveg-alap);}
+.feladat.nehez{border:1.5px solid rgba(239,68,68,0.45);background:linear-gradient(rgba(239,68,68,.10),rgba(239,68,68,.10)),var(--uveg-alap);}
+.feladat.joker{border:1.5px solid rgba(139,92,246,0.45);background:linear-gradient(rgba(139,92,246,.10),rgba(139,92,246,.10)),var(--uveg-alap);}
 .feladat>p:first-child{margin-top:.15rem;}
 .feladat .szam{margin-right:.15rem;}
 
@@ -398,7 +490,17 @@ table.tt-table .res{font-weight:800;background:rgba(16,185,129,0.15);}
   .matek-dekor{display:none;}
 }
 
+/* ---------- Akadálymentesség + mozgásérzékenység ---------- */
+:focus-visible{outline:2px solid var(--marvel-green-neon);outline-offset:2px;border-radius:6px;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{transition-duration:.001ms !important;animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;}
+  a.kartya:hover{transform:none;}
+}
+
 /* ---------- EGYEDI TECH GÖRDÍTŐSÁV (SCROLLBAR) ---------- */
+html{scrollbar-color:var(--marvel-glass-border) var(--papir);scrollbar-width:thin;}
 ::-webkit-scrollbar {
   width: 8px;
 }

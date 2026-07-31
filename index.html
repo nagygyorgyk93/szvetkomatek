@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="assets/css/theme.css">
 <link rel="stylesheet" href="assets/css/print.css">
 </head>
-<body>
+<body data-hatter="foepulet">
 <div id="progress"></div>
 
 <header class="fejlec">
@@ -33,10 +33,24 @@
 
 <main class="lap">
   <div class="tartalom">
-    <div class="brief"><p>📡 <b>SZVETI:</b> Üdv a kampuszon, kadét! <b>Kang</b> hamis állításokkal
-    tágítja a valóság szakadását — a te fegyvered a <b>tiszta gondolkodás és a pontos számítás</b>.
-    Válaszd ki a kiképzési szintedet, és kezdheted is. A mentoraid — Loki, Doctor Strange,
-    Spider-Man, Hawkeye… — már várnak.</p></div>
+    <div class="fogado">
+      <div class="brief szveti">
+        <img class="avatar" src="assets/img/svetozar.webp" alt="SZVETI — a Szvetkó-kampusz mesterséges intelligenciája" width="640" height="640" loading="lazy">
+        <p>📡 <b>SZVETI:</b> Üdv a kampuszon, kadét! <b>Kang</b> hamis állításokkal
+        tágítja a valóság szakadását — a te fegyvered a <b>tiszta gondolkodás és a pontos számítás</b>.
+        Válaszd ki a kiképzési szintedet, és kezdheted is. A mentoraid — Loki, Doctor Strange,
+        Spider-Man, Hawkeye… — már várnak.</p>
+      </div>
+
+      <figure class="video-panel">
+        <video id="udv-video" playsinline muted loop autoplay preload="metadata"
+               poster="assets/img/welcome-poster.webp" width="1080" height="1920">
+          <source src="assets/img/welcome.mp4" type="video/mp4">
+        </video>
+        <button type="button" class="hang-gomb" data-video="udv-video">🔊 Hang be</button>
+        <figcaption>Kiképzőtiszti fogadás</figcaption>
+      </figure>
+    </div>
 
     <h2>🎖️ Válaszd ki az osztályodat</h2>
     <div class="racs">
@@ -70,6 +84,13 @@
         <p class="le">specializált informatikai tagozat · érettségi évfolyam</p>
         <div class="sor"><span class="chip ora">heti 5 óra</span></div>
       </a>
+    </div>
+
+    <div class="mentor-sor">
+      <img class="avatar" src="assets/img/me.webp" alt="Nagygyörgy Kristóf, kiképzőtiszt" width="640" height="640" loading="lazy">
+      <p><b>A kiképzőtiszted:</b> <b>Nagygyörgy Kristóf</b> matematikatanár — a Szvetkó-kampusz
+      kiképzési programjának felelőse. A küldetések mögött végig a hivatalos tanterv áll:
+      minden témakör, minden kimenet a helyén.</p>
     </div>
 
     <h2>Hogyan zajlik a kiképzés?</h2>

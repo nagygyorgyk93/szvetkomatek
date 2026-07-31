@@ -60,6 +60,31 @@
     nyitottak = [];
   });
 
+  /* Üdvözlő videó: néma automata lejátszás + „Hang be” (egyszer, hanggal).
+     A böngészők a hangos automata indítást tiltják, ezért a hang mindig
+     felhasználói kattintásra szólal meg; utána visszaáll a néma ismétlésre. */
+  document.querySelectorAll('.hang-gomb').forEach(function(gomb){
+    var v = document.getElementById(gomb.getAttribute('data-video'));
+    if(!v){ gomb.hidden = true; return; }
+    var lassit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(lassit){ v.removeAttribute('autoplay'); v.pause(); }
+    else { var p = v.play(); if(p && p.catch) p.catch(function(){}); }
+
+    var eredetiSzoveg = gomb.textContent;
+    gomb.addEventListener('click', function(){
+      v.muted = false; v.loop = false; v.currentTime = 0;
+      gomb.disabled = true; gomb.textContent = '🔊 Szól…';
+      var p2 = v.play();
+      if(p2 && p2.catch) p2.catch(function(){ vissza(); });
+    });
+    function vissza(){
+      v.muted = true; v.loop = true;
+      gomb.disabled = false; gomb.textContent = eredetiSzoveg;
+      if(!lassit){ var p3 = v.play(); if(p3 && p3.catch) p3.catch(function(){}); }
+    }
+    v.addEventListener('ended', function(){ if(!v.loop) vissza(); });
+  });
+
   /* Fejléc mini-kereső → search.html?q=... */
   var form = document.querySelector('.kereso-mini');
   if(form){
