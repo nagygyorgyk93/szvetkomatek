@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Az i hatványai és egyenletek — tananyag | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Hatványozás, gyökvonás, komplex számok</a> ›
+  <span class="itt">Az i hatványai és egyenletek — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Az <span class="math inline">\(i\)</span> hatványai és egyenletek <span class="math inline">\(\mathbb{C}\)</span>-ben</h1>
+  <p class="alcim">A képzetes egység hatványainak négyes ciklusa, összetett kifejezések kiszámítása, lineáris egyenletek, valamint a <span class="math inline">\(z\)</span> és <span class="math inline">\(\overline{z}\)</span> együttes előfordulása.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Képzelet Határa · 8/8</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Professor X:</b> Az utolsó lecke a fejezetben: a <b>minta</b> felismerése. Sinister kódjai hatalmas kitevőket használnak, hogy elrejtsék az egyszerű szerkezetet. De az <span class="math inline">\(i\)</span> hatványai négyesével ismétlődnek — ez a ciklus a kulcs az egész titkosításhoz. Aztán megoldunk pár egyenletet, és a fejezet lezárul.</p></div>
+
+    <h2 id="s1">A képzetes egység hatványai</h2>
+
+    Számoljuk ki sorban: <span class="math inline">\(i^{1}=i\)</span>, <span class="math inline">\(i^{2}=-1\)</span>, <span class="math inline">\(i^{3}=i^{2}\cdot i=-i\)</span>, <span class="math inline">\(i^{4}=i^{2}\cdot i^{2}=(-1)(-1)=1\)</span>. És innentől minden ismétlődik, hiszen <span class="math inline">\(i^{5}=i^{4}\cdot i=1\cdot i=i\)</span>.
+
+    <div class="doboz tetel" id="tetel-i-hatvanyai">
+      <p class="cim"><span class="ikon">📘</span> Négyes ciklus</p>
+      <span class="math display">\[i^{1}=i,\qquad i^{2}=-1,\qquad i^{3}=-i,\qquad i^{4}=1\]</span><p>Általánosan: <span class="math inline">\(i^{n}\)</span> értéke csak attól függ, hogy <span class="math inline">\(n\)</span> <b>4-gyel osztva</b> mennyi maradékot ad:</p><span class="math display">\[i^{4k}=1,\qquad i^{4k+1}=i,\qquad i^{4k+2}=-1,\qquad i^{4k+3}=-i.\]</span>
+    </div>
+
+    <div class="doboz pelda" id="pelda-i-hatvany">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Mennyi <span class="math inline">\(i^{27}\)</span>, <span class="math inline">\(i^{100}\)</span> és <span class="math inline">\(i^{2026}\)</span>?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(27=4\cdot 6+3\)</span>, tehát <span class="math inline">\(i^{27}=i^{3}=-i\)</span>.</p><p><span class="math inline">\(100=4\cdot 25+0\)</span>, tehát <span class="math inline">\(i^{100}=i^{0}=1\)</span>.</p><p><span class="math inline">\(2026=4\cdot 506+2\)</span>, tehát <span class="math inline">\(i^{2026}=i^{2}=-1\)</span>. <b>Gyorsteszt:</b> elég az utolsó <b>két</b> jegyet nézni, mert <span class="math inline">\(100\)</span> osztható <span class="math inline">\(4\)</span>-gyel — itt <span class="math inline">\(26\)</span>, aminek a 4-es maradéka <span class="math inline">\(2\)</span>.</p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ 35 = 4·8 + 3, tehát i³ = −i." data-nem="✘ Oszd 35-öt 4-gyel: a maradék 3, és i³ = −i.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi <span class="math inline">\(i^{35}\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(-i\)</span></button><button><span class="math inline">\(i\)</span></button><button><span class="math inline">\(-1\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Összetett kifejezések kiszámítása</h2>
+
+    A recept: minden <span class="math inline">\(i\)</span>-hatványt visszavezetünk a négyes ciklussal, majd összevonjuk a valós és a képzetes tagokat.
+
+    <div class="doboz pelda" id="pelda-osszetett-i">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Számítsd ki: <span class="math inline">\(2i^{5}-3i^{11}+i^{22}\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(5=4+1\Rightarrow i^{5}=i\)</span> · <span class="math inline">\(11=4\cdot2+3\Rightarrow i^{11}=-i\)</span> · <span class="math inline">\(22=4\cdot5+2\Rightarrow i^{22}=-1\)</span>. Behelyettesítve:</p><span class="math display">\[2i-3\cdot(-i)+(-1)=2i+3i-1=-1+5i.\]</span></div></details>
+    </div>
+
+    <h2 id="s3">Lineáris egyenletek a komplex számok halmazán</h2>
+
+    Az <span class="math inline">\(a\cdot z=b\)</span> alakú egyenletet ugyanúgy oldjuk meg, mint a valós számoknál: osztunk <span class="math inline">\(a\)</span>-val. Az osztást pedig már ismerjük — bővítés a konjugálttal.
+
+    <div class="doboz pelda" id="pelda-linearis-egyenlet">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Oldd meg a komplex számok halmazán: <span class="math inline">\((2-i)z=5+5i\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(z=\dfrac{5+5i}{2-i}\)</span>. A nevező konjugáltja <span class="math inline">\(2+i\)</span>, <span class="math inline">\(|2-i|^{2}=4+1=5\)</span>:</p><span class="math display">\[z=\frac{(5+5i)(2+i)}{5}=\frac{10+5i+10i+5i^{2}}{5}=\frac{10-5+15i}{5}=\frac{5+15i}{5}=1+3i.\]</span><p><b>Ellenőrzés:</b> <span class="math inline">\((2-i)(1+3i)=2+6i-i+3=5+5i\)</span> ✔</p></div></details>
+    </div>
+
+    <h2 id="s4">Ha $z$ és $\overline{z}$ is szerepel</h2>
+
+    Itt nem lehet egyszerűen „átosztani": <span class="math inline">\(z\)</span> és <span class="math inline">\(\overline z\)</span> két különböző dolog. A megoldás kulcsa az egyenlőség tétele — <b>egy</b> komplex egyenlet <b>két</b> valós egyenletet jelent.
+
+    <div class="doboz pelda" id="pelda-z-es-konjugalt">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Oldd meg: <span class="math inline">\(2z+3\overline{z}=10-4i\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>Legyen <span class="math inline">\(z=x+yi\)</span>, ekkor <span class="math inline">\(\overline z=x-yi\)</span>. Behelyettesítve:</p><span class="math display">\[2(x+yi)+3(x-yi)=5x-yi.\]</span><p>Ez akkor egyenlő <span class="math inline">\(10-4i\)</span>-vel, ha a valós és a képzetes részek is megegyeznek:</p><span class="math display">\[5x=10\ \Rightarrow\ x=2,\qquad -y=-4\ \Rightarrow\ y=4.\]</span><p>Tehát <span class="math inline">\(z=2+4i\)</span>. <b>Ellenőrzés:</b> <span class="math inline">\(2(2+4i)+3(2-4i)=4+8i+6-12i=10-4i\)</span> ✔</p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ Két komplex szám akkor egyenlő, ha a valós ÉS a képzetes részük is egyenlő." data-nem="✘ Kettőre: külön a valós, külön a képzetes részek egyenlősége.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Hány valós egyenletre bomlik szét egyetlen komplex egyenlőség?</p>
+      <div class="opciok"><button>Kettőre — a valós és a képzetes részekre.</button><button>Egyre, csak komplex számokkal.</button><button>Négyre.</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-komplex-szamok.html#alap-13">🐾 Beast-protokoll <span class="cimke">A 13–18</span></a><a class="sav hulk" href="feladatok-komplex-szamok.html#kozep-10">🔥 Phoenix-protokoll <span class="cimke">K 10–14</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Professor X:</b> Kadét, a fejezet lezárult. Kibővítette a valóságát, és megtanult mozogni benne. De figyeljen: az <span class="math inline">\(x^{2}=-1\)</span> csak a kezdet volt. A következő küldetésben olyan egyenletekkel találkozik, amelyeknek <b>néha</b> van valós megoldásuk, néha nincs — és ez a „néha" egyetlen számon fog múlni. Wolverine és Cyclops már várja a Veszélyteremben. Az X-Faktor küldetés indul.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-muveletek-komplex-szamokkal.html"><span class="irany">← Előző</span><span class="hova">Műveletek a komplex számokkal</span></a>
+      <a class="kov" href="feladatok-komplex-szamok.html"><span class="irany">Következő →</span><span class="hova">Feladatok — komplex számok</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

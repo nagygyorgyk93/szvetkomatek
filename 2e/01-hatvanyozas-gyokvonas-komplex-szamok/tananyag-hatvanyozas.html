@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hatványozás egész kitevővel — tananyag | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Hatványozás, gyökvonás, komplex számok</a> ›
+  <span class="itt">Hatványozás egész kitevővel — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Hatványozás egész kitevővel</h1>
+  <p class="alcim">A hatvány fogalma és azonosságai, a nulla és a negatív kitevő értelmezése, előjelszabályok, összetett szám- és betűs kifejezések egyszerűsítése.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Képzelet Határa · 1/8</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Storm:</b> Kadét, a vihar ereje nem összeadódik — <b>szorzódik</b>. Egy villám feszültsége nem „valamivel több" a másiknál: <b>nagyságrendekkel</b> nagyobb. Ez a hatványozás nyelve, és az M-Hullám is ezen a nyelven beszél. Ha nem tudod egyetlen tömör alakba sűríteni a kaotikus kifejezéseket, Sinister mutációi olvashatatlanná torzítják a műszereinket. Kezdjük az alapoknál.</p></div>
+
+    Az általánosban a hatványozás csak rövidítés volt az ismételt szorzásra. Idén <b>kitágítjuk</b>: lesz nulla, negatív, majd (a témakör végére) <b>tört</b> kitevő is. A trükk mindvégig ugyanaz — úgy bővítünk, hogy a megszokott <b>azonosságok érvényben maradjanak</b>.
+
+    <h2 id="s1">A hatvány fogalma</h2>
+
+    <div class="doboz definicio" id="def-hatvany">
+      <p class="cim"><span class="ikon">📗</span> Természetes kitevőjű hatvány</p>
+      <p>Ha <span class="math inline">\(a\in\mathbb{R}\)</span> és <span class="math inline">\(n\in\mathbb{N}\)</span>, akkor az <span class="math inline">\(a\)</span> szám <span class="math inline">\(n\)</span>-edik hatványa az az <span class="math inline">\(n\)</span> tényezős szorzat, amelynek minden tényezője <span class="math inline">\(a\)</span>:</p><span class="math display">\[a^{n}=\underbrace{a\cdot a\cdot\ldots\cdot a}_{n\ \text{tényező}}\]</span><p>Itt <span class="math inline">\(a\)</span> a hatvány <b>alapja</b>, <span class="math inline">\(n\)</span> pedig a <b>kitevője</b>.</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele? — a normálalak</p>
+      <p>A természettudomány a nagyon nagy és nagyon kicsi mennyiségeket <b>normálalakban</b> (tudományos jelöléssel) írja: <span class="math inline">\(a\cdot 10^{k}\)</span>, ahol <span class="math inline">\(1\le a&lt;10\)</span> és <span class="math inline">\(k\in\mathbb{Z}\)</span>. Egy fényév kb. <span class="math inline">\(9{,}46\cdot 10^{15}\ \text{m}\)</span>, egy elektron tömege <span class="math inline">\(9{,}11\cdot 10^{-31}\ \text{kg}\)</span>. A két szám kiírva 16, illetve 31 jegyű volna — a hatvány itt nem dísz, hanem <b>olvashatóság</b>.</p>
+    </div>
+
+    <h2 id="s2">A hatványozás azonosságai</h2>
+
+    Ezek a szabályok a definícióból egyenesen következnek: elég megszámolni, hány tényező van.
+
+    <div class="doboz tetel" id="tetel-hatvany-azonossagok">
+      <p class="cim"><span class="ikon">📘</span> A hatványozás öt alapazonossága</p>
+      <p>Ha <span class="math inline">\(a,b\in\mathbb{R}\)</span> és <span class="math inline">\(m,n\in\mathbb{N}\)</span>, akkor</p><span class="math display">\[a^{m}\cdot a^{n}=a^{m+n}\qquad \frac{a^{m}}{a^{n}}=a^{m-n}\ (a\neq 0)\qquad \left(a^{m}\right)^{n}=a^{m\cdot n}\]</span><span class="math display">\[a^{m}\cdot b^{m}=(a\cdot b)^{m}\qquad \frac{a^{m}}{b^{m}}=\left(\frac{a}{b}\right)^{m}\ (b\neq 0)\]</span>
+      <details><summary>Miért igaz az első?</summary><div class="bel"><p>Az <span class="math inline">\(a^{m}\)</span> pontosan <span class="math inline">\(m\)</span> darab <span class="math inline">\(a\)</span> tényező szorzata, az <span class="math inline">\(a^{n}\)</span> pedig <span class="math inline">\(n\)</span> darabé. Egymás mellé írva összesen <span class="math inline">\(m+n\)</span> tényezőt kapunk — ez éppen <span class="math inline">\(a^{m+n}\)</span>. A többi azonosság ugyanígy, tényezőszámlálással igazolható.</p></div></details>
+    </div>
+
+    <div class="doboz tetel" id="tetel-hatvany-elojel">
+      <p class="cim"><span class="ikon">📘</span> Előjel és nagyságrend</p>
+      <p><span class="math inline">\(1^{m}=1\)</span>, továbbá <span class="math inline">\(0^{m}=0\)</span> minden <span class="math inline">\(m&gt;0\)</span> esetén, és</p><span class="math display">\[(-1)^{m}=\begin{cases}\ \ 1,&\text{ha } m \text{ páros},\\ -1,&\text{ha } m \text{ páratlan}.\end{cases}\]</span><p>Ha <span class="math inline">\(m&gt;n\)</span>, akkor <span class="math inline">\(a&gt;1\)</span> esetén <span class="math inline">\(a^{m}&gt;a^{n}\)</span>, viszont <span class="math inline">\(0&lt;a&lt;1\)</span> esetén <span class="math inline">\(a^{m}&lt;a^{n}\)</span> — a törtszám hatványai <b>csökkennek</b>.</p>
+    </div>
+
+    <div class="doboz pelda">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Állítsd növekvő sorrendbe: <span class="math inline">\(A=\dfrac{1}{3}\)</span>, <span class="math inline">\(B=-\dfrac{1}{3}\)</span>, <span class="math inline">\(C=\left(-\dfrac{1}{3}\right)^{2}\)</span>, <span class="math inline">\(D=\left(-\dfrac{1}{3}\right)^{3}\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(C=\dfrac{1}{9}\)</span> (páros kitevő → pozitív), <span class="math inline">\(D=-\dfrac{1}{27}\)</span> (páratlan kitevő → negatív). A két negatív közül <span class="math inline">\(B=-\dfrac{1}{3}\)</span> a kisebb, a két pozitív közül <span class="math inline">\(C=\dfrac19\)</span> a kisebb. Tehát</p><span class="math display">\[B&lt;D&lt;C&lt;A.\]</span></div></details>
+    </div>
+
+    <h2 id="s3">Nulla és negatív kitevő</h2>
+
+    Mi legyen <span class="math inline">\(a^{0}\)</span> vagy <span class="math inline">\(a^{-3}\)</span>? A definíció („ennyi tényező szorzata") itt már nem segít — nem lehet nulla darab vagy mínusz három darab tényezőt összeszorozni. Ezért nem <i>kitaláljuk</i> az értéküket, hanem <b>kikényszerítjük</b>: úgy definiáljuk őket, hogy a fenti azonosságok továbbra is igazak maradjanak. Ezt hívják <b>permanenciaelvnek</b>.
+
+    <div class="doboz tetel" id="tetel-permanencia">
+      <p class="cim"><span class="ikon">📘</span> Így jön ki a nulla és a negatív kitevő</p>
+      <p>Legyen <span class="math inline">\(a\neq 0\)</span>. Ha az <span class="math inline">\(\dfrac{a^{m}}{a^{n}}=a^{m-n}\)</span> szabály <span class="math inline">\(m=n\)</span>-re is érvényes:</p><span class="math display">\[1=\frac{a^{n}}{a^{n}}=a^{n-n}=a^{0}.\]</span><p>Ha pedig <span class="math inline">\(m=0\)</span>-ra is érvényes:</p><span class="math display">\[\frac{1}{a^{n}}=\frac{a^{0}}{a^{n}}=a^{0-n}=a^{-n}.\]</span><p>Nincs választásunk: <b>ez az egyetlen</b> értelmezés, amivel az azonosságok megmaradnak.</p>
+    </div>
+
+    <div class="doboz definicio" id="def-egesz-kitevo">
+      <p class="cim"><span class="ikon">📗</span> Egész kitevőjű hatvány</p>
+      <p>Ha <span class="math inline">\(a\in\mathbb{R}\)</span>, <span class="math inline">\(a\neq 0\)</span> és <span class="math inline">\(n\in\mathbb{N}\)</span>, akkor</p><span class="math display">\[a^{0}=1,\qquad a^{-n}=\frac{1}{a^{n}}=\left(\frac{1}{a}\right)^{n}.\]</span><p>Speciálisan <span class="math inline">\(\left(\dfrac{a}{b}\right)^{-n}=\left(\dfrac{b}{a}\right)^{n}\)</span> — a negatív kitevő a törtet <b>megfordítja</b>. Ezek után az öt azonosság már <b>minden egész</b> kitevőre érvényes.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A negatív kitevő megfordítja a törtet: (5/2)² = 25/4." data-nem="✘ Fordítsd meg a törtet, majd emelj négyzetre: (2/5)⁻² = (5/2)² = 25/4.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi <span class="math inline">\(\left(\dfrac{2}{5}\right)^{-2}\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(\dfrac{25}{4}\)</span></button><button><span class="math inline">\(-\dfrac{4}{25}\)</span></button><button><span class="math inline">\(\dfrac{4}{25}\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Előjelek — ahol Sinister a leggyakrabban támad</h2>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p>A mutálódott kód négy klasszikus hibát rejt. Mindegyik <b>hamis</b>:</p><ol class="reszfeladatok"><li><span class="math inline">\(-2^{4}=16\)</span> — <b>nem</b>: a hatványozás előbb jön, mint az előjel, tehát <span class="math inline">\(-2^{4}=-\left(2^{4}\right)=-16\)</span>. Ezzel szemben <span class="math inline">\((-2)^{4}=16\)</span>.</li><li><span class="math inline">\((-2)^{-2}=-\dfrac14\)</span> — <b>nem</b>: <span class="math inline">\((-2)^{-2}=\dfrac{1}{(-2)^{2}}=\dfrac14\)</span>. A negatív <b>kitevő</b> soha nem tesz negatívvá egy hatványt.</li><li><span class="math inline">\(a^{-n}=-a^{n}\)</span> — <b>nem</b>: a negatív kitevő <b>reciprokot</b> jelent, nem ellentettet.</li><li><span class="math inline">\(0^{0}=1\)</span> — <b>nem</b>: a <span class="math inline">\(0^{0}\)</span> kifejezés <b>nincs értelmezve</b> (a <span class="math inline">\(a^{0}=1\)</span> szabály csak <span class="math inline">\(a\neq0\)</span> mellett érvényes).</li></ol>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ −3² = −9, (−3)² = 9, az összegük 0." data-nem="✘ Figyelj a zárójelre: −3² = −(3²) = −9, de (−3)² = +9. Az összeg 0.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi <span class="math inline">\(-3^{2}+(-3)^{2}\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(0\)</span></button><button><span class="math inline">\(18\)</span></button><button><span class="math inline">\(-18\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s5">Összetett hatványkifejezések</h2>
+
+    A vizsgahelyzetek nagy része két típus: <b>számkifejezés pontos értéke</b> és <b>betűs kifejezés egyszerűsítése</b>. Mindkettőnél ugyanaz a stratégia — előbb minden hatványt közös alapra hozunk, aztán az azonosságokkal összevonunk.
+
+    <div class="doboz pelda" id="pelda-szamkifejezes">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció — számkifejezés</p>
+      <p>Számítsd ki: <span class="math inline">\(\left(\dfrac{3}{5}\right)^{2}-\dfrac{3}{5^{2}}+\left(-\dfrac{3}{5}\right)^{2}-\left(\dfrac{5}{3}\right)^{-2}\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>Tagonként: <span class="math inline">\(\left(\dfrac35\right)^{2}=\dfrac{9}{25}\)</span>; <span class="math inline">\(\dfrac{3}{5^{2}}=\dfrac{3}{25}\)</span> (itt csak az 5 van négyzeten!); <span class="math inline">\(\left(-\dfrac35\right)^{2}=\dfrac{9}{25}\)</span>; <span class="math inline">\(\left(\dfrac53\right)^{-2}=\left(\dfrac35\right)^{2}=\dfrac{9}{25}\)</span>. Így</p><span class="math display">\[\frac{9}{25}-\frac{3}{25}+\frac{9}{25}-\frac{9}{25}=\frac{6}{25}.\]</span></div></details>
+    </div>
+
+    <div class="doboz pelda" id="pelda-betus">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció — betűs kifejezés</p>
+      <p>Egyszerűsítsd (<span class="math inline">\(a,b,c&gt;0\)</span>): <span class="math inline">\(\left(\dfrac{a^{-1}}{b^{2}c}\right)^{2}\cdot\dfrac{a^{3}b^{-2}}{c^{4}}\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>Az első tényező: <span class="math inline">\(\dfrac{a^{-2}}{b^{4}c^{2}}=a^{-2}b^{-4}c^{-2}\)</span>. A második: <span class="math inline">\(a^{3}b^{-2}c^{-4}\)</span>. Kitevőnként összeadva: <span class="math inline">\(a\)</span>: <span class="math inline">\(-2+3=1\)</span>; <span class="math inline">\(b\)</span>: <span class="math inline">\(-4-2=-6\)</span>; <span class="math inline">\(c\)</span>: <span class="math inline">\(-2-4=-6\)</span>. Tehát</p><span class="math display">\[a^{1}b^{-6}c^{-6}=\frac{a}{b^{6}c^{6}}.\]</span></div></details>
+    </div>
+
+    <div class="doboz pelda" id="pelda-kitevoben-betu">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció — kitevőben betű</p>
+      <p>Hozd egyszerűbb alakra (<span class="math inline">\(n\in\mathbb{N}\)</span>): <span class="math inline">\(\dfrac{3^{n+2}-3^{n}}{3^{n+1}}\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>A kulcs a <b>kiemelés</b>: a számlálóban <span class="math inline">\(3^{n+2}=3^{n}\cdot 3^{2}\)</span> és <span class="math inline">\(3^{n}=3^{n}\cdot 1\)</span>, a nevezőben <span class="math inline">\(3^{n+1}=3^{n}\cdot 3\)</span>. Így</p><span class="math display">\[\frac{3^{n}\left(9-1\right)}{3^{n}\cdot 3}=\frac{8}{3}.\]</span><p>A <span class="math inline">\(3^{n}\)</span> kiesik — az eredmény <b>nem függ</b> <span class="math inline">\(n\)</span>-től.</p></div></details>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-hatvanyozas.html#alap-1">🐾 Beast-protokoll <span class="cimke">A 1–6</span></a><a class="sav hulk" href="feladatok-hatvanyozas.html#kozep-1">🔥 Phoenix-protokoll <span class="cimke">K 1–5</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Storm:</b> A hatvány mostantól nem csak szám — <b>függvény</b> is. Ha az alapot rögzítjük és a kitevőt változtatjuk, exponenciális görbét kapunk (az a tavaszi küldetés). Ha viszont a <b>kitevőt</b> rögzítjük és az alapot változtatjuk, megkapjuk a <b>hatványfüggvényt</b> — és annak a képe elárulja, hogyan viselkedik a rendszer. Nézzük meg.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">Témakör-nyitó</span></a>
+      <a class="kov" href="tananyag-hatvanyfuggveny.html"><span class="irany">Következő →</span><span class="hova">A hatványfüggvény és grafikonja</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

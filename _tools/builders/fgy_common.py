@@ -8,7 +8,10 @@ Feladat = (intro, subs, ans[, rovid]) :
 """
 import re, os, glob
 DEST=glob.glob("/sessions/*/mnt/Claude/web/1e/01-logika-halmazok-fuggvenyek")[0]
-def w(t): return re.sub(r'\$([^$]*)\$', r'<span class="math inline">\\(\1\\)</span>', t)
+def w(t):
+    """$…$ → inline, $$…$$ → kiemelt (display) KaTeX-span. A $$ MINDIG elöl!"""
+    t = re.sub(r'\$\$(.+?)\$\$', r'<span class="math display">\\[\1\\]</span>', t, flags=re.S)
+    return re.sub(r'\$([^$]*)\$', r'<span class="math inline">\\(\1\\)</span>', t)
 
 def _subs(subs, rovid):
     if not subs: return ''
@@ -41,6 +44,90 @@ def gyt_cards(items, prefix="gyt"):
 
 def joker_card(intro, ans, subs=None):
     return _one('joker', 1, 'joker', (intro, subs, ans))
+
+DISZKLEMER = ('<p class="diszklemer">⚠️ Ez <b>gyakorló</b> anyag: nincs garancia, hogy az éles '
+              'felmérőn pontosan ennyi vagy pont ilyen feladat lesz. A típusok viszont ismerősek '
+              'lesznek — érdemes végigcsinálni.</p>')
+
+
+def oldal(*, tagozat, mappa, fajl, cim, temakor, alcim, sections_html, prev, prevc, nxt, nxtc,
+          h1=None, itt=None, chipek=None):
+    """Általános (tagozatfüggetlen) feladatgyűjtemény-oldal. A `page()` az 1e/01 örökség."""
+    h1 = h1 or f"{cim} — Kiképzési Adattár"
+    itt = itt or f"{cim} — feladatok"
+    chipek = chipek if chipek is not None else (
+        '<span class="chip alap">Alap</span><span class="chip kozep">Közép</span>'
+        '<span class="chip nehez">Nehéz</span><span class="chip joker">Joker</span>')
+    html = f'''<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{itt} | {tagozat} | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="{tagozat}">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">{tagozat}</span></a> ›
+  <a href="index.html">{temakor}</a> ›
+  <span class="itt">{itt}</span>
+</nav>
+<div class="hero">
+  <h1>{h1}</h1>
+  <p class="alcim">{w(alcim)}</p>
+  <div class="meta-sor">{chipek}</div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+{sections_html}
+    <div class="gyakorolj">
+      <span class="ikon">📖</span>
+      <p>Elakadtál? Nézd át a <a href="index.html">témakör tananyagait</a> vagy a <a href="osszefoglalo.html">Taktikai memóriakártyát</a>.</p>
+    </div>
+    <div class="lapozo">
+      <a class="elozo" href="{prev}"><span class="irany">← Előző</span><span class="hova">{prevc}</span></a>
+      <a class="kov" href="{nxt}"><span class="irany">Következő →</span><span class="hova">{nxtc}</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {{delimiters:[
+    {{left:'\\\\(', right:'\\\\)', display:false}},
+    {{left:'\\\\[', right:'\\\\]', display:true}}
+  ]}});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
+'''
+    gyoker = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+    ut = os.path.join(gyoker, tagozat, mappa, fajl)
+    os.makedirs(os.path.dirname(ut), exist_ok=True)
+    open(ut, "w", encoding="utf-8").write(html)
+    return ut
+
 
 def page(fname, altema_cim, tananyag_link, sections_html, prev, prevc, nxt, nxtc):
     alcim="Három szint: haladj sorban, vagy ugorj a szintedre. A végeredmény minden feladatnál lenyitható — előbb számolj, csak utána nézd meg!"

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gyökvonás — tananyag | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Hatványozás, gyökvonás, komplex számok</a> ›
+  <span class="itt">Gyökvonás — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Gyökvonás</h1>
+  <p class="alcim">Az <span class="math inline">\(n\)</span>-edik gyök definíciója páros és páratlan gyökkitevőre, a <span class="math inline">\(\sqrt[n]{a^{n}}=|a|\)</span> csapda, valamint a gyökvonás hat azonossága.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Képzelet Határa · 3/8</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Storm:</b> Eddig előre néztünk: adott alap, adott kitevő, mekkora az eredmény? Most fordítsd meg a kérdést. Ismerem a vihar <b>energiáját</b> — mekkora volt a kiváltó ok? Ez a gyökvonás: a hatványozás visszafejtése. És itt van az évad első igazi csapdája — a <b>páros</b> gyökkitevő nem viselkedik úgy, mint a páratlan. Sinister pontosan ezen a résen fér be.</p></div>
+
+    A gyökvonás a hatványozás <b>inverz művelete</b>: azt a számot keressük, amelynek adott kitevőjű hatványa a megadott szám. A definíciót viszont <b>két külön esetre</b> kell bontanunk — és ennek a kettéválasztásnak messzemenő következményei lesznek.
+
+    <h2 id="s1">Az $n$-edik gyök fogalma</h2>
+
+    <div class="doboz definicio" id="def-nedik-gyok">
+      <p class="cim"><span class="ikon">📗</span> Az <span class="math inline">\(n\)</span>-edik gyök</p>
+      <p>Legyen <span class="math inline">\(a\in\mathbb{R}\)</span> és <span class="math inline">\(n\in\mathbb{N}\)</span>, <span class="math inline">\(n\ge 2\)</span>. Az <span class="math inline">\(a\)</span> szám <b><span class="math inline">\(n\)</span>-edik gyöke</b>, jelben <span class="math inline">\(\sqrt[n]{a}\)</span>:</p><ul><li>ha <span class="math inline">\(n\)</span> <b>páratlan</b>: az az <b>egyetlen</b> valós szám, amelynek <span class="math inline">\(n\)</span>-edik hatványa <span class="math inline">\(a\)</span> — ilyen <b>minden</b> valós <span class="math inline">\(a\)</span> esetén létezik;</li><li>ha <span class="math inline">\(n\)</span> <b>páros</b>: az az egyetlen <b>nemnegatív</b> valós szám, amelynek <span class="math inline">\(n\)</span>-edik hatványa <span class="math inline">\(a\)</span> — ez csak <span class="math inline">\(a\ge 0\)</span> esetén létezik.</li></ul><p>Az <span class="math inline">\(a\)</span> a <b>gyök alapja</b> (a gyökjel alatti mennyiség), <span class="math inline">\(n\)</span> a <b>gyökkitevő</b>. A négyzetgyöknél (<span class="math inline">\(n=2\)</span>) a gyökkitevőt nem szoktuk kiírni: <span class="math inline">\(\sqrt{a}\)</span>.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-gyok-ertekek">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Számítsd ki, ahol létezik: <span class="math inline">\(\sqrt{144}\)</span>, <span class="math inline">\(\sqrt[3]{-125}\)</span>, <span class="math inline">\(\sqrt[4]{16}\)</span>, <span class="math inline">\(\sqrt[5]{-32}\)</span>, <span class="math inline">\(\sqrt{-49}\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(\sqrt{144}=12\)</span> (nem <span class="math inline">\(\pm12\)</span>! a négyzetgyök definíció szerint <b>nemnegatív</b>) · <span class="math inline">\(\sqrt[3]{-125}=-5\)</span> (páratlan gyökkitevő, negatív alap megengedett) · <span class="math inline">\(\sqrt[4]{16}=2\)</span> · <span class="math inline">\(\sqrt[5]{-32}=-2\)</span> · <span class="math inline">\(\sqrt{-49}\)</span> a valós számok halmazán <b>nem értelmezett</b> (páros gyökkitevő, negatív alap).</p></div></details>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Miért csak a nemnegatív gyök?</p>
+      <p>A <span class="math inline">\(x^{2}=9\)</span> egyenletnek <b>két</b> megoldása van: <span class="math inline">\(x=3\)</span> és <span class="math inline">\(x=-3\)</span>. A <span class="math inline">\(\sqrt{9}\)</span> jel viszont <b>egy</b> konkrét számot kell hogy jelöljön — különben nem lehetne vele számolni. Megállapodás szerint ez a <b>nemnegatív</b>, tehát <span class="math inline">\(\sqrt{9}=3\)</span>. Az egyenlet két megoldását ezért írjuk <span class="math inline">\(x=\pm\sqrt{9}\)</span> alakban.</p>
+    </div>
+
+    <h2 id="s2">A definíció két következménye</h2>
+
+    <div class="doboz tetel" id="tetel-gyok-hatvany">
+      <p class="cim"><span class="ikon">📘</span> Gyök és hatvány egymás után</p>
+      <p>Ha <span class="math inline">\(\sqrt[n]{a}\)</span> létezik, akkor</p><span class="math display">\[\left(\sqrt[n]{a}\right)^{n}=a,\]</span><p>viszont fordított sorrendben <b>nem</b> mindig ez jön ki:</p><span class="math display">\[\sqrt[n]{a^{n}}=\begin{cases} a, &\text{ha } n \text{ páratlan},\\[2pt] |a|, &\text{ha } n \text{ páros}.\end{cases}\]</span>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p>A mutálódott kódban ez áll: <span class="math inline">\(\sqrt{a^{2}}=a\)</span> <b>minden valós <span class="math inline">\(a\)</span>-ra</b>. <b>Hamis.</b> Próbáld ki <span class="math inline">\(a=-7\)</span>-tel:</p><span class="math display">\[\sqrt{(-7)^{2}}=\sqrt{49}=7\neq -7.\]</span><p>A helyes alak <span class="math inline">\(\sqrt{a^{2}}=|a|\)</span>. Páratlan gyökkitevőnél viszont nincs baj: <span class="math inline">\(\sqrt[3]{(-7)^{3}}=\sqrt[3]{-343}=-7\)</span>. <b>Ökölszabály:</b> ha a gyökkitevő páros és a betűről nem tudod, hogy nemnegatív, <b>abszolút érték kell</b>. Ha a feladat kiköti, hogy a betűk pozitívak, akkor elhagyható.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ Páros gyökkitevő: az eredmény |−3| = 3." data-nem="✘ (−3)⁴ = 81, és ⁴√81 = 3. Páros gyökkitevőnél az eredmény |a|.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi <span class="math inline">\(\sqrt[4]{(-3)^{4}}\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(3\)</span></button><button><span class="math inline">\(-3\)</span></button><button>Nincs értelmezve.</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">A gyökvonás azonosságai</h2>
+
+    Az alábbi szabályok <span class="math inline">\(a,b\ge 0\)</span> és <span class="math inline">\(m,n,k\in\mathbb{N}\)</span> mellett mindig érvényesek. (Páratlan gyökkitevőnél negatív alapra is igazak, de a biztonság kedvéért a feladatokban többnyire nemnegatív alapokkal dolgozunk.)
+
+    <div class="doboz tetel" id="tetel-gyok-azonossagok">
+      <p class="cim"><span class="ikon">📘</span> A gyökvonás hat azonossága</p>
+      <span class="math display">\[\sqrt[n]{a}\cdot\sqrt[n]{b}=\sqrt[n]{a\cdot b}\qquad\qquad \frac{\sqrt[n]{a}}{\sqrt[n]{b}}=\sqrt[n]{\frac{a}{b}}\ \ (b\neq 0)\]</span><span class="math display">\[\left(\sqrt[n]{a}\right)^{m}=\sqrt[n]{a^{m}}\qquad\qquad \sqrt[m]{\sqrt[n]{a}}=\sqrt[m\cdot n]{a}\]</span><span class="math display">\[\sqrt[n]{a^{m}}=\sqrt[n\cdot k]{a^{m\cdot k}}\qquad\qquad b\cdot\sqrt[n]{a}=\sqrt[n]{a\cdot b^{n}}\]</span><p>Az ötödik a gyökkitevő <b>bővítése</b> és <b>egyszerűsítése</b> (mint a törteknél!), a hatodik a tényező <b>bevitele</b> a gyökjel alá.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p>Nincs olyan azonosság, hogy <span class="math inline">\(\sqrt{a+b}=\sqrt{a}+\sqrt{b}\)</span>. Ellenpélda:</p><span class="math display">\[\sqrt{9+16}=\sqrt{25}=5,\qquad\text{de}\qquad \sqrt{9}+\sqrt{16}=3+4=7.\]</span><p>A gyökvonás a <b>szorzással és osztással</b> barátkozik — az összeadással soha.</p>
+    </div>
+
+    <div class="doboz pelda">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Egyszerűsítsd (<span class="math inline">\(a&gt;0\)</span>): <span class="math inline">\(\sqrt[6]{a^{4}}\)</span>, valamint számítsd ki <span class="math inline">\(\sqrt[3]{\sqrt{64}}\)</span> értékét.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(\sqrt[6]{a^{4}}=\sqrt[6:2]{a^{4:2}}=\sqrt[3]{a^{2}}\)</span> — a gyökkitevőt és a hatványkitevőt ugyanazzal a számmal egyszerűsíthetjük. <span class="math inline">\(\sqrt[3]{\sqrt{64}}=\sqrt[6]{64}=2\)</span>, mert <span class="math inline">\(2^{6}=64\)</span>.</p></div></details>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-gyokvonas.html#alap-1">🐾 Beast-protokoll <span class="cimke">A 1–5</span></a><a class="sav hulk" href="feladatok-gyokvonas.html#kozep-1">🔥 Phoenix-protokoll <span class="cimke">K 1–4</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Storm:</b> Megvan a nyelvtan — jöjjön a mondatalkotás. A gyököket össze kell tudnod vonni, szorozni, egymásba ágyazni. Ez a rész tiszta kézügyesség: sok kis lépés, mindegyik egyszerű, de egyetlen elrontott előjel az egész számítást viszi.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-hatvanyozas.html"><span class="irany">← Előző</span><span class="hova">Feladatok — hatványozás</span></a>
+      <a class="kov" href="tananyag-muveletek-gyokokkel.html"><span class="irany">Következő →</span><span class="hova">Műveletek a gyökökkel</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Műveletek a komplex számokkal — tananyag | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Hatványozás, gyökvonás, komplex számok</a> ›
+  <span class="itt">Műveletek a komplex számokkal — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Műveletek a komplex számokkal</h1>
+  <p class="alcim">Összeadás, kivonás, szorzás, valamint osztás a nevező konjugáltjával való bővítéssel — és a konjugálás számolási szabályai.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Képzelet Határa · 7/8</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Professor X:</b> A jó hír, kadét: nem kell új algebrát tanulnia. A komplex számokkal <b>pontosan úgy</b> számolunk, mint az <span class="math inline">\(a+bx\)</span> alakú kéttagú kifejezésekkel — összevonunk, kibontunk, nevezetes azonosságokat használunk. Egyetlen extra szabály van: valahányszor <span class="math inline">\(i^{2}\)</span> keletkezik, azonnal helyettesítse be, hogy <span class="math inline">\(i^{2}=-1\)</span>. Ettől lesz a szorzat mindig ugyanolyan <span class="math inline">\(x+yi\)</span> alakú, mint amiből indultunk.</p></div>
+
+    <h2 id="s1">Összeadás és kivonás</h2>
+
+    <div class="doboz tetel" id="tetel-komplex-osszeadas">
+      <p class="cim"><span class="ikon">📘</span> Tagonként</p>
+      <p>Ha <span class="math inline">\(z_{1}=x_{1}+y_{1}i\)</span> és <span class="math inline">\(z_{2}=x_{2}+y_{2}i\)</span>, akkor</p><span class="math display">\[z_{1}\pm z_{2}=\left(x_{1}\pm x_{2}\right)+\left(y_{1}\pm y_{2}\right)i.\]</span><p>A valós részek a valós részekkel, a képzetesek a képzetesekkel — mint a hasonló tagok összevonása.</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Geometriai jelentés</p>
+      <p>A Gauss-síkon a komplex számok <b>helyvektorok</b>, és az összeadásuk pontosan a vektorok összeadása: a paralelogramma-szabály. Ezért viselkedik a komplex összeadás olyan „jól" — geometriailag eltolás.</p>
+    </div>
+
+    <div class="doboz pelda">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Legyen <span class="math inline">\(z_{1}=5+3i\)</span> és <span class="math inline">\(z_{2}=2-7i\)</span>. Számítsd ki <span class="math inline">\(z_{1}+z_{2}\)</span> és <span class="math inline">\(z_{1}-z_{2}\)</span> értékét!</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(z_{1}+z_{2}=(5+2)+(3-7)i=7-4i\)</span>.</p><p><span class="math inline">\(z_{1}-z_{2}=(5-2)+\left(3-(-7)\right)i=3+10i\)</span> — figyelj a kivonásnál a <b>második</b> tag előjelére!</p></div></details>
+    </div>
+
+    <h2 id="s2">Szorzás</h2>
+
+    Bontsuk ki a szorzatot úgy, ahogy két kéttagú kifejezést szoktunk, majd használjuk az <span class="math inline">\(i^{2}=-1\)</span> helyettesítést.
+
+    <div class="doboz tetel" id="tetel-komplex-szorzas">
+      <p class="cim"><span class="ikon">📘</span> A szorzás szabálya</p>
+      <span class="math display">\[\left(x_{1}+y_{1}i\right)\left(x_{2}+y_{2}i\right)=\left(x_{1}x_{2}-y_{1}y_{2}\right)+\left(x_{1}y_{2}+x_{2}y_{1}\right)i\]</span><p>Nem érdemes bemagolni — elég kibontani és <span class="math inline">\(i^{2}\)</span> helyére <span class="math inline">\(-1\)</span>-et írni. A képlet csak azt mutatja, hogy az eredmény <b>mindig</b> <span class="math inline">\(x+yi\)</span> alakú marad.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-szorzas">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Számítsd ki: <span class="math inline">\((4+3i)(2-5i)\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>Kibontva: <span class="math inline">\(8-20i+6i-15i^{2}\)</span>. Mivel <span class="math inline">\(i^{2}=-1\)</span>, a <span class="math inline">\(-15i^{2}=+15\)</span>, tehát</p><span class="math display">\[8+15+(-20+6)i=23-14i.\]</span></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p>„<span class="math inline">\((2i)^{2}=2i^{2}=-2\)</span>." — <b>Hamis.</b> A négyzetre emelés a <b>teljes</b> tényezőre vonatkozik: <span class="math inline">\((2i)^{2}=2^{2}\cdot i^{2}=4\cdot(-1)=-4\)</span>. Ugyanez a hiba a <span class="math inline">\(-15i^{2}\)</span> kezelésénél: az eredmény <span class="math inline">\(+15\)</span>, nem <span class="math inline">\(-15\)</span>.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ 1 + 2i + i² = 1 + 2i − 1 = 2i." data-nem="✘ Bontsd ki: 1 + 2i + i², és i² = −1, tehát az eredmény 2i.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi <span class="math inline">\((1+i)^{2}\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(2i\)</span></button><button><span class="math inline">\(1+i^{2}\)</span></button><button><span class="math inline">\(2+2i\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Osztás — bővítés a konjugálttal</h2>
+
+    Mit jelent az, hogy <span class="math inline">\(\dfrac{5+i}{2-3i}\)</span>? A cél mindig ugyanaz: hozzuk az eredményt <span class="math inline">\(x+yi\)</span> alakra. Ehhez a <b>nevezőből el kell tüntetni az <span class="math inline">\(i\)</span>-t</b> — és pontosan erre való a <span class="math inline">\(z\cdot\overline z=|z|^{2}\)</span> összefüggés.
+
+    <div class="doboz tetel" id="tetel-komplex-osztas">
+      <p class="cim"><span class="ikon">📘</span> Az osztás algoritmusa</p>
+      <p>Bővítsük a törtet a <b>nevező konjugáltjával</b>:</p><span class="math display">\[\frac{z_{1}}{z_{2}}=\frac{z_{1}\cdot\overline{z_{2}}}{z_{2}\cdot\overline{z_{2}}}=\frac{z_{1}\cdot\overline{z_{2}}}{\left|z_{2}\right|^{2}}.\]</span><p>A nevező így <b>valós</b> szám lesz, a számlálót pedig már csak ki kell bontani. Ez szó szerint ugyanaz a fogás, mint a gyöktelenítés a kéttagú nevezőnél.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-osztas">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Számítsd ki: <span class="math inline">\(\dfrac{5+i}{2-3i}\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>A nevező konjugáltja <span class="math inline">\(2+3i\)</span>, és <span class="math inline">\(|2-3i|^{2}=4+9=13\)</span>. Bővítve:</p><span class="math display">\[\frac{(5+i)(2+3i)}{13}=\frac{10+15i+2i+3i^{2}}{13}=\frac{10-3+17i}{13}=\frac{7+17i}{13}.\]</span><p>Végalak: <span class="math inline">\(\dfrac{7}{13}+\dfrac{17}{13}i\)</span>.</p></div></details>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Ugyanaz a trükk, kétszer</p>
+      <p>Vesd össze a két lépést:</p><span class="math display">\[\frac{4}{\sqrt7-\sqrt3}\cdot\frac{\sqrt7+\sqrt3}{\sqrt7+\sqrt3},\qquad\qquad \frac{5+i}{2-3i}\cdot\frac{2+3i}{2+3i}\]</span><p>Mindkettőben a „konjugálttal" bővítünk, hogy a nevező <b>racionális</b>, illetve <b>valós</b> legyen. A matematika ugyanazt a jó ötletet szereti többször is elsütni.</p>
+    </div>
+
+    <h2 id="s4">A konjugálás és a modulusz tulajdonságai</h2>
+
+    <div class="doboz tetel" id="tetel-konjugalas-tulajdonsagok">
+      <p class="cim"><span class="ikon">📘</span> Számolási szabályok</p>
+      <p>Bármely <span class="math inline">\(z,w\in\mathbb{C}\)</span> esetén:</p><span class="math display">\[\overline{z+w}=\overline{z}+\overline{w},\qquad \overline{z\cdot w}=\overline{z}\cdot\overline{w},\qquad \overline{\overline{z}}=z\]</span><span class="math display">\[z+\overline{z}=2\operatorname{Re}(z),\qquad z-\overline{z}=2\operatorname{Im}(z)\cdot i,\qquad \left|z\cdot w\right|=|z|\cdot|w|\]</span><p>A negyedik és ötödik különösen hasznos: velük egy komplex szám valós és képzetes része <b>kiszámolható</b>, ha ismerjük <span class="math inline">\(z\)</span>-t és <span class="math inline">\(\overline z\)</span>-t.</p>
+    </div>
+
+    <div class="doboz pelda">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Legyen <span class="math inline">\(z=6-2i\)</span>. Mennyi <span class="math inline">\(z+\overline{z}\)</span> és <span class="math inline">\(z\cdot\overline{z}\)</span>?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(\overline z=6+2i\)</span>, ezért <span class="math inline">\(z+\overline z=12=2\cdot 6=2\operatorname{Re}(z)\)</span> ✔, és <span class="math inline">\(z\cdot\overline z=36+4=40=|z|^{2}\)</span> (valóban <span class="math inline">\(|z|=\sqrt{36+4}=\sqrt{40}\)</span>). Mindkét eredmény <b>valós</b>.</p></div></details>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-komplex-szamok.html#alap-7">🐾 Beast-protokoll <span class="cimke">A 7–12</span></a><a class="sav hulk" href="feladatok-komplex-szamok.html#kozep-5">🔥 Phoenix-protokoll <span class="cimke">K 5–9</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Professor X:</b> Van még egy dolog, amit Sinister kihasznál: az <span class="math inline">\(i\)</span> hatványai <b>ismétlődnek</b>. Négyes ciklusban. Aki ezt észreveszi, másodpercek alatt kiszámolja <span class="math inline">\(i^{2026}\)</span> értékét — aki nem, az órákig szorozgat. Az utolsó kiképzési egység erről szól, és arról, hogyan oldunk meg egyenletet ebben az új világban.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-komplex-szam-fogalma.html"><span class="irany">← Előző</span><span class="hova">A komplex szám fogalma</span></a>
+      <a class="kov" href="tananyag-i-hatvanyai-es-egyenletek.html"><span class="irany">Következő →</span><span class="hova">Az $i$ hatványai és egyenletek</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

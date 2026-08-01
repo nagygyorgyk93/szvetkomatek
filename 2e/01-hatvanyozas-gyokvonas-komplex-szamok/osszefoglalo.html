@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Taktikai memóriakártya | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="digitalis">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Hatványozás, gyökvonás, komplex számok</a> ›
+  <span class="itt">Taktikai memóriakártya</span>
+</nav>
+<div class="hero">
+  <h1>Taktikai memóriakártya</h1>
+  <p class="alcim">A Képzelet Határa minden definíciója, azonossága és fogása egy helyen — ismétléshez, dolgozat előtti átfutáshoz, nyomtatáshoz.</p>
+  <div class="meta-sor"><span class="chip ora">összefoglaló</span><span class="chip">A Képzelet Határa · összefoglaló</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📇 Hatványozás</h2>
+
+    <p><b>Definíció:</b> <span class="math inline">\(a^{n}\)</span> az <span class="math inline">\(n\)</span> tényezős szorzat (<a href="tananyag-hatvanyozas.html#def-hatvany">→ tananyag</a>). <b>Egész kitevő</b> (<span class="math inline">\(a\neq 0\)</span>): <span class="math inline">\(a^{0}=1\)</span>, <span class="math inline">\(a^{-n}=\dfrac{1}{a^{n}}\)</span>, <span class="math inline">\(\left(\dfrac{a}{b}\right)^{-n}=\left(\dfrac{b}{a}\right)^{n}\)</span> (<a href="tananyag-hatvanyozas.html#def-egesz-kitevo">→</a>). A <span class="math inline">\(0^{0}\)</span> <b>nincs értelmezve</b>.</p>
+
+    <p><b>Azonosságok</b> (<a href="tananyag-hatvanyozas.html#tetel-hatvany-azonossagok">→</a>): <span class="math inline">\(a^{m}a^{n}=a^{m+n}\)</span> · <span class="math inline">\(\dfrac{a^{m}}{a^{n}}=a^{m-n}\)</span> · <span class="math inline">\(\left(a^{m}\right)^{n}=a^{mn}\)</span> · <span class="math inline">\(a^{m}b^{m}=(ab)^{m}\)</span> · <span class="math inline">\(\dfrac{a^{m}}{b^{m}}=\left(\dfrac{a}{b}\right)^{m}\)</span>.</p>
+
+    <p><b>Előjel:</b> <span class="math inline">\(-2^{4}=-16\)</span>, de <span class="math inline">\((-2)^{4}=16\)</span>; a negatív <b>kitevő</b> soha nem tesz negatívvá (<span class="math inline">\((-2)^{-2}=\frac14\)</span>) (<a href="tananyag-hatvanyozas.html#s4">→</a>). <b>Nagyságrend:</b> <span class="math inline">\(a&gt;1\)</span> és <span class="math inline">\(m&gt;n\)</span> → <span class="math inline">\(a^{m}&gt;a^{n}\)</span>; <span class="math inline">\(0&lt;a&lt;1\)</span> esetén fordítva (<a href="tananyag-hatvanyozas.html#tetel-hatvany-elojel">→</a>).</p>
+
+    <p><b>Kitevőben betű:</b> emelj ki! Pl. <span class="math inline">\(\dfrac{3^{n+2}-3^{n}}{3^{n+1}}=\dfrac{3^{n}(9-1)}{3^{n}\cdot 3}=\dfrac{8}{3}\)</span> (<a href="tananyag-hatvanyozas.html#pelda-kitevoben-betu">→</a>).</p>
+
+    <h2 id="s1">A hatványfüggvény</h2>
+
+    <p><b>Páros kitevő</b> (<span class="math inline">\(y=x^{2k}\)</span>): <span class="math inline">\(D=\mathbb{R}\)</span>, <span class="math inline">\(\mathcal{R}=[0,+\infty)\)</span>, <span class="math inline">\(y\)</span>-tengelyre <b>tükrös</b>, egy zérushely (<span class="math inline">\(x=0\)</span>), konvex (<a href="tananyag-hatvanyfuggveny.html#tetel-paros-kitevo">→</a>).</p>
+
+    <p><b>Páratlan kitevő</b> (<span class="math inline">\(y=x^{2k+1}\)</span>): <span class="math inline">\(D=\mathcal{R}=\mathbb{R}\)</span>, <b>origóra</b> szimmetrikus, mindenütt növekvő (<a href="tananyag-hatvanyfuggveny.html#tetel-paratlan-kitevo">→</a>).</p>
+
+    <p><b>Negatív kitevő</b> (<span class="math inline">\(y=x^{-n}\)</span>): <span class="math inline">\(D=\mathbb{R}\setminus\{0\}\)</span>, hiperbola, a két tengely <b>aszimptota</b>; páros <span class="math inline">\(n\)</span> → mindkét ág fent, páratlan <span class="math inline">\(n\)</span> → 1. és 3. síknegyed (<a href="tananyag-hatvanyfuggveny.html#tetel-negativ-kitevo">→</a>).</p>
+
+    <p><b>Kölcsönös helyzet:</b> ha <span class="math inline">\(x\in(0,1)\)</span>: <span class="math inline">\(x&gt;x^{2}&gt;x^{3}&gt;\ldots\)</span>; ha <span class="math inline">\(x&gt;1\)</span>: <span class="math inline">\(x&lt;x^{2}&lt;x^{3}&lt;\ldots\)</span> (<a href="tananyag-hatvanyfuggveny.html#tetel-kolcsonos-helyzet">→</a>).</p>
+
+    <h2 id="s2">Gyökvonás</h2>
+
+    <p><b>Definíció:</b> <span class="math inline">\(\sqrt[n]{a}\)</span> — <b>páratlan</b> <span class="math inline">\(n\)</span>: minden valós <span class="math inline">\(a\)</span>-ra létezik, egyértelmű; <b>páros</b> <span class="math inline">\(n\)</span>: csak <span class="math inline">\(a\ge 0\)</span>-ra, és az érték <b>nemnegatív</b> (<a href="tananyag-gyokvonas.html#def-nedik-gyok">→</a>).</p>
+
+    <p><b>A nagy csapda:</b> <span class="math inline">\(\left(\sqrt[n]{a}\right)^{n}=a\)</span> mindig, de</p><span class="math display">\[\sqrt[n]{a^{n}}=\begin{cases} a, &amp; n \text{ páratlan},\\ |a|, &amp; n \text{ páros}.\end{cases}\]</span><p>(<a href="tananyag-gyokvonas.html#tetel-gyok-hatvany">→</a>) Ha a feladat kiköti, hogy a betűk pozitívak, az abszolút érték elhagyható.</p>
+
+    <p><b>Azonosságok</b> (<span class="math inline">\(a,b\ge0\)</span>) (<a href="tananyag-gyokvonas.html#tetel-gyok-azonossagok">→</a>): <span class="math inline">\(\sqrt[n]{a}\sqrt[n]{b}=\sqrt[n]{ab}\)</span> · <span class="math inline">\(\dfrac{\sqrt[n]{a}}{\sqrt[n]{b}}=\sqrt[n]{\dfrac{a}{b}}\)</span> · <span class="math inline">\(\left(\sqrt[n]{a}\right)^{m}=\sqrt[n]{a^{m}}\)</span> · <span class="math inline">\(\sqrt[m]{\sqrt[n]{a}}=\sqrt[mn]{a}\)</span> · <span class="math inline">\(\sqrt[n]{a^{m}}=\sqrt[nk]{a^{mk}}\)</span> · <span class="math inline">\(b\sqrt[n]{a}=\sqrt[n]{ab^{n}}\)</span>. <b>Nincs</b> ilyen: <span class="math inline">\(\sqrt{a+b}=\sqrt{a}+\sqrt{b}\)</span> — ellenpélda <span class="math inline">\(9\)</span> és <span class="math inline">\(16\)</span>.</p>
+
+    <h2 id="s3">Műveletek és gyöktelenítés</h2>
+
+    <p><b>Kihozatal/bevitel:</b> keresd a legnagyobb teljes hatvány osztót — <span class="math inline">\(\sqrt{72}=6\sqrt2\)</span>; visszafelé <span class="math inline">\(3\sqrt5=\sqrt{45}\)</span> (<a href="tananyag-muveletek-gyokokkel.html#pelda-kihozatal">→</a>). <b>Összevonás:</b> csak <b>hasonló</b> (azonos gyök alatti) tagok (<a href="tananyag-muveletek-gyokokkel.html#pelda-osszevonas">→</a>).</p>
+
+    <p><b>Nevezetes azonosságok:</b> <span class="math inline">\(\left(\sqrt a+\sqrt b\right)\left(\sqrt a-\sqrt b\right)=a-b\)</span> és <span class="math inline">\(\left(\sqrt a\pm\sqrt b\right)^{2}=a\pm 2\sqrt{ab}+b\)</span> (<a href="tananyag-muveletek-gyokokkel.html#tetel-gyokos-nevezetes">→</a>).</p>
+
+    <p><b>Gyöktelenítés:</b> egytagú nevezőnél olyan tényezővel bővíts, hogy teljes hatvány keletkezzen (<span class="math inline">\(\frac{5}{\sqrt[3]{4}}\to\sqrt[3]2\)</span>-vel) (<a href="tananyag-gyoktelenites-es-racionalis-kitevo.html#pelda-egytagu">→</a>); kéttagúnál a <b>konjugálttal</b> — és a <b>számlálót is</b> szorozd! (<a href="tananyag-gyoktelenites-es-racionalis-kitevo.html#pelda-kettagu">→</a>)</p>
+
+    <p><b>Összehasonlítás:</b> hozd közös gyökkitevőre (a gyökkitevők LKT-ja), aztán elég a gyök alatti számokat összevetni (<a href="tananyag-muveletek-gyokokkel.html#pelda-osszehasonlitas">→</a>).</p>
+
+    <h2 id="s4">Racionális kitevőjű hatvány</h2>
+
+    <p><b>Definíció</b> (<span class="math inline">\(a&gt;0\)</span>): <span class="math inline">\(a^{\frac{m}{n}}=\sqrt[n]{a^{m}}\)</span> (<a href="tananyag-gyoktelenites-es-racionalis-kitevo.html#def-racionalis-kitevo">→</a>). Ezzel a hatványozás <b>öt azonossága minden racionális kitevőre</b> érvényes.</p>
+
+    <p><b>Miért kell <span class="math inline">\(a&gt;0\)</span>?</b> Negatív alapnál <span class="math inline">\(\sqrt[3]{-8}=-2\)</span>, de <span class="math inline">\(\sqrt[6]{(-8)^{2}}=2\)</span> — pedig <span class="math inline">\(\frac13=\frac26\)</span>. <b>Stratégia:</b> írj mindent tört kitevőre, add össze a kitevőket, majd — ha kell — írd vissza gyökös alakba (<a href="tananyag-gyoktelenites-es-racionalis-kitevo.html#pelda-vegyes">→</a>).</p>
+
+    <h2 id="s5">Komplex számok</h2>
+
+    <p><b>Képzetes egység:</b> <span class="math inline">\(i^{2}=-1\)</span>; <b>algebrai alak:</b> <span class="math inline">\(z=x+yi\)</span>, ahol <span class="math inline">\(x=\operatorname{Re}(z)\)</span>, <span class="math inline">\(y=\operatorname{Im}(z)\)</span> — mindkettő <b>valós</b> (<a href="tananyag-komplex-szam-fogalma.html#def-komplex-szam">→</a>). <b>Egyenlőség:</b> <span class="math inline">\(z_{1}=z_{2}\)</span> pontosan akkor, ha a valós ÉS a képzetes részek egyenlők — egy komplex egyenlet <b>két</b> valós egyenlet (<a href="tananyag-komplex-szam-fogalma.html#tetel-komplex-egyenloseg">→</a>).</p>
+
+    <p><b>Gauss-sík:</b> <span class="math inline">\(z=x+yi\)</span> ↔ az <span class="math inline">\((x;y)\)</span> pont. <b>Konjugált:</b> <span class="math inline">\(\overline{z}=x-yi\)</span> (tükrözés a valós tengelyre); <b>modulusz:</b> <span class="math inline">\(|z|=\sqrt{x^{2}+y^{2}}\)</span> (a helyvektor hossza) (<a href="tananyag-komplex-szam-fogalma.html#def-konjugalt-modulusz">→</a>). Kulcs: <span class="math inline">\(z\cdot\overline{z}=|z|^{2}\)</span> — mindig <b>valós</b> (<a href="tananyag-komplex-szam-fogalma.html#tetel-z-zkonj">→</a>).</p>
+
+    <p><b>Műveletek:</b> összeadás/kivonás tagonként; szorzás kibontással, <span class="math inline">\(i^{2}\to-1\)</span> helyettesítéssel; <b>osztás:</b> bővíts a nevező konjugáltjával — ugyanaz a fogás, mint a gyöktelenítés (<a href="tananyag-muveletek-komplex-szamokkal.html#tetel-komplex-osztas">→</a>).</p>
+
+    <p><b><span class="math inline">\(i\)</span> hatványai — négyes ciklus:</b> <span class="math inline">\(i^{4k}=1\)</span>, <span class="math inline">\(i^{4k+1}=i\)</span>, <span class="math inline">\(i^{4k+2}=-1\)</span>, <span class="math inline">\(i^{4k+3}=-i\)</span>; oszd a kitevőt <span class="math inline">\(4\)</span>-gyel és nézd a maradékot (<a href="tananyag-i-hatvanyai-es-egyenletek.html#tetel-i-hatvanyai">→</a>).</p>
+
+    <p><b>Egyenletek:</b> <span class="math inline">\(az=b\)</span> → osztás (konjugálttal bővítve). Ha <span class="math inline">\(z\)</span> és <span class="math inline">\(\overline{z}\)</span> is szerepel: írd <span class="math inline">\(z=x+yi\)</span> alakban, és bontsd két valós egyenletre (<a href="tananyag-i-hatvanyai-es-egyenletek.html#pelda-z-es-konjugalt">→</a>).</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Amire a dolgozaton a legtöbben ráfutnak</p>
+      <p>1) <span class="math inline">\(\sqrt{a^{2}}=|a|\)</span>, nem <span class="math inline">\(a\)</span>. &nbsp; 2) <span class="math inline">\(-2^{4}\neq(-2)^{4}\)</span>. &nbsp; 3) <span class="math inline">\((2i)^{2}=-4\)</span>, nem <span class="math inline">\(-2\)</span>. &nbsp; 4) Bővítéskor a <b>számlálót is</b> szorozd. &nbsp; 5) Negatív szám négyzetgyökét ne írd <span class="math inline">\(\sqrt{-9}\)</span> alakban — az <span class="math inline">\(x^{2}=-9\)</span> megoldásai <span class="math inline">\(\pm 3i\)</span>.</p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><p>Élesben: a <a href="feladatok-komplex-szamok.html#gyak-dolgozat">gyakorló dolgozattal</a> mérd fel magad, majd indulj a <a href="terepkuldetes.html">Genoshai terepküldetésre</a>!</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-komplex-szamok.html"><span class="irany">← Előző</span><span class="hova">Feladatok — komplex számok</span></a>
+      <a class="kov" href="terepkuldetes.html"><span class="irany">Következő →</span><span class="hova">Genoshai terepküldetés</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Műveletek a gyökökkel — tananyag | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Hatványozás, gyökvonás, komplex számok</a> ›
+  <span class="itt">Műveletek a gyökökkel — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Műveletek a gyökökkel</h1>
+  <p class="alcim">Tényező kivitele és bevitele, hasonló tagok összevonása, szorzás nevezetes azonosságokkal, beágyazott gyökök és gyökök összehasonlítása.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Képzelet Határa · 4/8</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Storm:</b> A műszerek tucatnyi gyökös jelet dobnak ki egyszerre, és ránézésre mind különbözőnek látszik. Pedig <span class="math inline">\(\sqrt{20}\)</span>, <span class="math inline">\(\sqrt{45}\)</span> és <span class="math inline">\(\sqrt{80}\)</span> ugyanannak a jelnek a többszörösei — csak <b>ki kell hozni</b> belőlük a közös részt. Aki ezt látja, két sorban rendet tesz ott, ahol más fél oldalt számol.</p></div>
+
+    Ebben az egységben megtanuljuk a gyökös kifejezések „házimunkáját": tényezőt viszünk ki és be, összevonjuk a hasonló tagokat, szorzunk, és egymásba ágyazott gyököket bontunk.
+
+    <h2 id="s1">Tényező kivitele és bevitele</h2>
+
+    A <span class="math inline">\(b\cdot\sqrt[n]{a}=\sqrt[n]{a\cdot b^{n}}\)</span> azonosság <b>mindkét irányban</b> használható. Balról jobbra <b>bevisszük</b> a tényezőt a gyökjel alá, jobbról balra <b>kihozzuk</b>.
+
+    <div class="doboz pelda" id="pelda-kihozatal">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció — kihozatal</p>
+      <p>Hozd ki a gyökjel alól a lehető legnagyobb tényezőt: <span class="math inline">\(\sqrt{72}\)</span>, <span class="math inline">\(\sqrt[3]{54}\)</span>, <span class="math inline">\(\sqrt{50a^{3}}\)</span> (<span class="math inline">\(a&gt;0\)</span>).</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>A trükk: keresd meg a legnagyobb <b>teljes hatvány</b> osztót.</p><p><span class="math inline">\(\sqrt{72}=\sqrt{36\cdot 2}=6\sqrt{2}\)</span> · <span class="math inline">\(\sqrt[3]{54}=\sqrt[3]{27\cdot 2}=3\sqrt[3]{2}\)</span> · <span class="math inline">\(\sqrt{50a^{3}}=\sqrt{25a^{2}\cdot 2a}=5a\sqrt{2a}\)</span>.</p></div></details>
+    </div>
+
+    <div class="doboz pelda">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció — bevitel</p>
+      <p>Vidd be a gyökjel alá: <span class="math inline">\(3\sqrt{5}\)</span> és <span class="math inline">\(2\sqrt[3]{7}\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(3\sqrt{5}=\sqrt{5\cdot 3^{2}}=\sqrt{45}\)</span> · <span class="math inline">\(2\sqrt[3]{7}=\sqrt[3]{7\cdot 2^{3}}=\sqrt[3]{56}\)</span>. Figyelj: a tényező a <b>gyökkitevő</b> hatványán megy be.</p></div></details>
+    </div>
+
+    <h2 id="s2">Hasonló gyökös tagok összevonása</h2>
+
+    Két gyökös tag akkor <b>hasonló</b>, ha kihozatal után ugyanaz marad a gyökjel alatt. A hasonló tagokat úgy vonjuk össze, mint az algebrai kifejezésekben az <span class="math inline">\(x\)</span>-eket: az együtthatókat adjuk össze.
+
+    <div class="doboz pelda" id="pelda-osszevonas">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Végezd el a műveleteket: <span class="math inline">\(3\sqrt{20}-\sqrt{45}+2\sqrt{80}-\sqrt{125}\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>Először mindent <span class="math inline">\(\sqrt{5}\)</span>-re hozunk: <span class="math inline">\(\sqrt{20}=2\sqrt5\)</span>, <span class="math inline">\(\sqrt{45}=3\sqrt5\)</span>, <span class="math inline">\(\sqrt{80}=4\sqrt5\)</span>, <span class="math inline">\(\sqrt{125}=5\sqrt5\)</span>. Így</p><span class="math display">\[3\cdot 2\sqrt5-3\sqrt5+2\cdot 4\sqrt5-5\sqrt5=(6-3+8-5)\sqrt5=6\sqrt5.\]</span></div></details>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ √18 = 3√2 és √8 = 2√2, összegük 5√2." data-nem="✘ Gyököt nem adhatunk össze a gyökjel alatt! Hozd ki: 3√2 + 2√2 = 5√2.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi <span class="math inline">\(\sqrt{18}+\sqrt{8}\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(5\sqrt{2}\)</span></button><button><span class="math inline">\(\sqrt{26}\)</span></button><button><span class="math inline">\(2\sqrt{13}\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Szorzás, osztás, nevezetes azonosságok</h2>
+
+    Gyökös kifejezéseket ugyanúgy szorzunk, mint bármely kéttagú kifejezést — és a nevezetes azonosságok itt különösen hasznosak, mert a négyzetre emelés <b>eltünteti</b> a négyzetgyököt.
+
+    <div class="doboz tetel" id="tetel-gyokos-nevezetes">
+      <p class="cim"><span class="ikon">📘</span> A két leghasznosabb alak</p>
+      <span class="math display">\[\left(\sqrt{a}+\sqrt{b}\right)\left(\sqrt{a}-\sqrt{b}\right)=a-b\]</span><span class="math display">\[\left(\sqrt{a}\pm\sqrt{b}\right)^{2}=a\pm 2\sqrt{ab}+b\]</span><p>Az elsőben a gyökök <b>teljesen eltűnnek</b> — ez lesz a gyöktelenítés motorja a következő egységben.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-nevezetes">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Számítsd ki: <b>a)</b> <span class="math inline">\(\left(\sqrt{11}+\sqrt{7}\right)\left(\sqrt{11}-\sqrt{7}\right)\)</span>; <b>b)</b> <span class="math inline">\(\left(\sqrt{5}+\sqrt{3}\right)^{2}\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(11-7=4\)</span> — egyetlen lépés, nem kell kibontani.</p><p><b>b)</b> <span class="math inline">\(5+2\sqrt{5\cdot 3}+3=8+2\sqrt{15}\)</span>.</p></div></details>
+    </div>
+
+    <h2 id="s4">Beágyazott gyökök és a gyökök összehasonlítása</h2>
+
+    Az egymásba ágyazott gyököket a <span class="math inline">\(\sqrt[m]{\sqrt[n]{a}}=\sqrt[m\cdot n]{a}\)</span> azonosság bontja fel. Ha a gyökök alatt hatványok is vannak, a legbiztosabb út a <b>közös gyökkitevőre hozás</b> — pontosan úgy, ahogy a törteket közös nevezőre hozzuk.
+
+    <div class="doboz pelda" id="pelda-beagyazott">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció — beágyazott gyök</p>
+      <p>Egyszerűsítsd (<span class="math inline">\(x&gt;0\)</span>): <span class="math inline">\(\sqrt[3]{x\sqrt{x}}\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>Belül: <span class="math inline">\(x\cdot\sqrt{x}=\sqrt{x^{2}}\cdot\sqrt{x}=\sqrt{x^{3}}\)</span>. Így</p><span class="math display">\[\sqrt[3]{\sqrt{x^{3}}}=\sqrt[6]{x^{3}}=\sqrt[6:3]{x^{3:3}}=\sqrt{x}.\]</span></div></details>
+    </div>
+
+    <div class="doboz pelda" id="pelda-osszehasonlitas">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció — összehasonlítás</p>
+      <p>Állítsd növekvő sorrendbe: <span class="math inline">\(\sqrt{2}\)</span>, <span class="math inline">\(\sqrt[3]{3}\)</span>, <span class="math inline">\(\sqrt[6]{10}\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>A gyökkitevők legkisebb közös többszöröse <span class="math inline">\(6\)</span>, ezért mindet 6-odik gyökre bővítjük:</p><span class="math display">\[\sqrt{2}=\sqrt[6]{2^{3}}=\sqrt[6]{8},\qquad \sqrt[3]{3}=\sqrt[6]{3^{2}}=\sqrt[6]{9},\qquad \sqrt[6]{10}.\]</span><p>Azonos gyökkitevőnél már csak a gyök alatti számokat kell összevetni:</p><span class="math display">\[\sqrt{2}&lt;\sqrt[3]{3}&lt;\sqrt[6]{10}.\]</span></div></details>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A gyökkitevők összeszorzódnak: 2 · 3 = 6." data-nem="✘ Egymásba ágyazott gyököknél a gyökkitevők szorzódnak: 2 · 3 = 6.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mivel egyenlő <span class="math inline">\(\sqrt{\sqrt[3]{a}}\)</span>, ha <span class="math inline">\(a&gt;0\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(\sqrt[6]{a}\)</span></button><button><span class="math inline">\(\sqrt[5]{a}\)</span></button><button><span class="math inline">\(\sqrt[3]{a^{2}}\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-gyokvonas.html#alap-6">🐾 Beast-protokoll <span class="cimke">A 6–11</span></a><a class="sav hulk" href="feladatok-gyokvonas.html#kozep-5">🔥 Phoenix-protokoll <span class="cimke">K 5–9</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Storm:</b> Egy dolog maradt, ami elrontja a jelentéseinket: a <b>nevezőben álló gyök</b>. Ki kell onnan takarítani — és közben rájössz, hogy a hatvány és a gyök valójában ugyanaz a művelet, két különböző jelöléssel.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-gyokvonas.html"><span class="irany">← Előző</span><span class="hova">Gyökvonás</span></a>
+      <a class="kov" href="tananyag-gyoktelenites-es-racionalis-kitevo.html"><span class="irany">Következő →</span><span class="hova">Gyöktelenítés és racionális kitevő</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
