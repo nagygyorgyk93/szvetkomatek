@@ -142,7 +142,7 @@ body[data-hatter="rajzterem"]{     /* Misztikus Művészetek Műterme — terepk
    nem versenyeznek a folyószöveggel. */
 body[data-hatter="altalanos"]::before,
 body[data-hatter="digitalis"]::before,
-body[data-hatter="tornaterem"]::before{filter:blur(2.5px) saturate(.8);}
+body[data-hatter="tornaterem"]::before{saturate(.8);}
 
 h1,h2,h3,h4{font-family:var(--fej);line-height:1.25;color:var(--tinta);}
 h1{font-size:2rem;} h2{font-size:1.5rem;margin-top:2.2rem;} h3{font-size:1.2rem;}
