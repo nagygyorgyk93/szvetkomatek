@@ -67,8 +67,26 @@
     var v = document.getElementById(gomb.getAttribute('data-video'));
     if(!v){ gomb.hidden = true; return; }
     var lassit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(lassit){ v.removeAttribute('autoplay'); v.pause(); }
-    else { var p = v.play(); if(p && p.catch) p.catch(function(){}); }
+    /* Csökkentett mozgás esetén sem tiltjuk le a lejátszást (a köszöntés elmaradna),
+       csak nem ismételjük. */
+    if(lassit) v.loop = false;
+    v.muted = true; v.defaultMuted = true;   /* a néma automata indítás feltétele */
+    nemaInditas();
+
+    function nemaInditas(){
+      var p = v.play();
+      if(p && p.catch) p.catch(function(){
+        /* a böngésző blokkolta (energiatakarékos mód, beállítás, iOS): az első
+           felhasználói mozdulatra újrapróbáljuk */
+        var esem = ['pointerdown','keydown','touchstart','scroll'];
+        var ujra = function(){
+          esem.forEach(function(e){ window.removeEventListener(e, ujra, true); });
+          v.muted = true;
+          var q = v.play(); if(q && q.catch) q.catch(function(){});
+        };
+        esem.forEach(function(e){ window.addEventListener(e, ujra, {capture:true, passive:true}); });
+      });
+    }
 
     /* Átlátszóság-teszt: a videó sarka átlátszó-e? Ha a böngésző nem tudja a VP9-alfát
        (pl. Safari), a keret `nincs-alfa` osztályt kap → CSS-ből screen-keverés. */
@@ -92,11 +110,20 @@
       if(p2 && p2.catch) p2.catch(function(){ vissza(); });
     });
     function vissza(){
-      v.muted = true; v.loop = true;
+      v.muted = true;
+      if(!lassit) v.loop = true;
       gomb.disabled = false; gomb.textContent = eredetiSzoveg;
-      if(!lassit){ var p3 = v.play(); if(p3 && p3.catch) p3.catch(function(){}); }
+      var p3 = v.play(); if(p3 && p3.catch) p3.catch(function(){});
     }
     v.addEventListener('ended', function(){ if(!v.loop) vissza(); });
+  });
+
+  /* Küldetésnapló + mikro-animációk betöltése (így nem kell minden oldal
+     <head>-jébe felvenni őket) */
+  ['naplo.js', 'effekt.js'].forEach(function(f){
+    var s = document.createElement('script');
+    s.src = ROOT + '/assets/js/' + f; s.defer = true;
+    document.body.appendChild(s);
   });
 
   /* Fejléc mini-kereső → search.html?q=... */

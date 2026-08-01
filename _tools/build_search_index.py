@@ -10,7 +10,7 @@ from html.parser import HTMLParser
 
 GYOKER = Path(__file__).resolve().parent.parent
 KIHAGY = {"_sablonok", "_tools", "assets", "node_modules", ".git"}
-KIHAGY_FAJL = {"search.html"}
+KIHAGY_FAJL = {"search.html", "kuldetesnaplo.html"}
 
 class Kinyero(HTMLParser):
     def __init__(self):

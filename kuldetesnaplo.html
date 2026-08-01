@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="hu" data-root=".">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Küldetésnapló — Szvetkó matek</title>
+<meta name="description" content="A kadét haladása: rang, XP, témakörönkénti előrehaladás. A napló a saját böngésződben tárolódik.">
+<link rel="icon" href="assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/theme.css">
+<link rel="stylesheet" href="assets/css/print.css">
+</head>
+<body data-hatter="diszterem">
+<div id="progress"></div>
+
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+
+<nav class="morzsa"><a href="index.html">Főhadiszállás</a> › <span class="itt">Küldetésnapló</span></nav>
+
+<div class="hero">
+  <h1>Küldetésnapló</h1>
+  <p class="alcim">A kiképzésed állása: rang, tapasztalati pontok és témakörönkénti haladás.</p>
+</div>
+
+<main class="lap">
+  <div class="tartalom">
+
+    <div class="brief szveti">
+      <img class="avatar" src="assets/img/svetozar.webp" alt="SZVETI — a Szvetkó-kampusz mesterséges intelligenciája" width="640" height="640" loading="lazy">
+      <p>📡 <b>SZVETI:</b> A naplód <b>ebben a böngészőben</b> tárolódik — nem küldünk sehova
+      semmit, és a tanárod sem látja. Ha másik gépen vagy telefonon folytatnád, alul készíts
+      <b>napló-kódot</b>, és illeszd be a másik eszközön.</p>
+    </div>
+
+    <div class="naplo-fejsor">
+      <div class="rang-jelveny">
+        <span class="nagyjel" id="rang-jel">🔰</span>
+        <span>
+          <span class="nev" id="rang-nev">Újonc</span>
+          <span class="pill" id="rang-xp">0 XP</span>
+          <div class="sav-kulso" style="width:14rem"><div class="sav-belso" id="rang-sav"></div></div>
+          <span class="alatta" id="rang-alatta"></span>
+        </span>
+      </div>
+      <div class="racs" style="flex:1;min-width:16rem;grid-template-columns:repeat(auto-fit,minmax(7rem,1fr));">
+        <div class="kartya" style="padding:.7rem .9rem"><h3 id="sz-oldal">0</h3><p class="le">📗 teljesített tananyag-egység</p></div>
+        <div class="kartya" style="padding:.7rem .9rem"><h3 id="sz-kviz">0</h3><p class="le">🎯 megoldott gyors kérdés</p></div>
+        <div class="kartya" style="padding:.7rem .9rem"><h3 id="sz-feladat">0</h3><p class="le">✏️ kipipált feladat</p></div>
+        <div class="kartya" style="padding:.7rem .9rem"><h3 id="sz-projekt">0</h3><p class="le">🛰️ teljesített terepküldetés</p></div>
+      </div>
+    </div>
+
+    <h2>Haladás témakörönként</h2>
+    <div id="naplo-lista"><p class="halvany">Betöltés…</p></div>
+
+    <h2>Napló-kód: átvitel másik eszközre</h2>
+    <p class="lead">A kód a teljes haladásodat tartalmazza. Készítsd el itt, másold ki, és a másik
+    eszközön ugyanezen az oldalon illeszd be, majd nyomd meg a <b>Napló betöltése</b> gombot.</p>
+    <div class="naplo-eszkoz">
+      <button type="button" class="btn-marvel" id="kod-keszit">Napló-kód készítése</button>
+      <button type="button" class="btn-marvel" id="kod-betolt">Napló betöltése</button>
+      <span class="naplo-uzenet" id="naplo-uzenet"></span>
+    </div>
+    <textarea id="naplo-kod" spellcheck="false" placeholder="Ide kerül a kód — vagy ide illeszd be a másik eszközön készítettet."></textarea>
+
+    <h2>Beállítások</h2>
+    <div class="naplo-eszkoz">
+      <label class="fel-pipa" style="font-size:.95rem;margin-left:0">
+        <input type="checkbox" id="effekt-kapcs"> <span>látványelemek (pukkanások, beúszás)</span>
+      </label>
+      <button type="button" class="btn-marvel" id="naplo-torles">Napló törlése</button>
+    </div>
+
+    <div class="lapozo">
+      <a class="elozo" href="index.html"><span class="irany">← Vissza</span><span class="hova">Főhadiszállás</span></a>
+    </div>
+  </div>
+</main>
+
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/naplo-oldal.js" defer></script>
+</body>
+</html>

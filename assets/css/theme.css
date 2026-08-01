@@ -142,7 +142,7 @@ body[data-hatter="rajzterem"]{     /* Misztikus Művészetek Műterme — terepk
    nem versenyeznek a folyószöveggel. */
 body[data-hatter="altalanos"]::before,
 body[data-hatter="digitalis"]::before,
-body[data-hatter="tornaterem"]::before{saturate(.8);}
+body[data-hatter="tornaterem"]::before{filter:saturate(.85);}
 
 h1,h2,h3,h4{font-family:var(--fej);line-height:1.25;color:var(--tinta);}
 h1{font-size:2rem;} h2{font-size:1.5rem;margin-top:2.2rem;} h3{font-size:1.2rem;}
@@ -501,6 +501,125 @@ table.tt-table .res{font-weight:800;background:rgba(16,185,129,0.15);}
   .kereso-mini input{width:7.5rem;}
   .matek-dekor{display:none;}
 }
+
+/* ============================================================
+   KÜLDETÉSNAPLÓ (haladáskövetés) — a naplo.js injektálja
+   ============================================================ */
+
+/* Fejléc-chip: rang + XP */
+.naplo-chip{display:inline-flex;align-items:center;gap:.4rem;text-decoration:none;white-space:nowrap;
+  padding:.3rem .7rem;border-radius:999px;font-family:var(--fej);font-size:.85rem;
+  border:1px solid var(--marvel-glass-border);background:var(--marvel-glass-bg);
+  color:var(--tinta);transition:all .25s ease;}
+.naplo-chip:hover{border-color:var(--marvel-green-neon);box-shadow:var(--marvel-glow);color:var(--tinta);}
+.naplo-chip b{color:var(--zold-500);font-weight:700;}
+.naplo-chip .xp{color:var(--szurke-600);font-size:.8rem;}
+.naplo-chip .jel{font-size:1rem;line-height:1;}
+.naplo-chip.lobban{animation:chip-lobban .6s ease;}
+@keyframes chip-lobban{0%{box-shadow:none;} 35%{box-shadow:0 0 22px rgba(0,255,102,.75);transform:scale(1.06);} 100%{box-shadow:none;transform:none;}}
+@media(max-width:640px){.naplo-chip b{display:none;} }
+
+/* „Egység teljesítve” sáv a lap alján */
+.egyseg-kesz{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin:2rem 0 .5rem;
+  padding:.9rem 1.1rem;border-radius:var(--r);border:1px dashed var(--marvel-glass-border);
+  background:var(--marvel-glass-bg);}
+.kesz-gomb{border:1px solid var(--marvel-green-neon);background:var(--marvel-green-dark);
+  color:var(--marvel-green-neon);border-radius:999px;padding:.45rem 1.1rem;font:inherit;
+  font-family:var(--fej);font-weight:700;cursor:pointer;transition:all .25s ease;}
+.kesz-gomb:hover{background:var(--marvel-green-neon);color:var(--marvel-green-dark);box-shadow:var(--marvel-glow);}
+.kesz-gomb.kesz{background:var(--zold-100);border-color:var(--zold-500);color:#34d399;}
+.kesz-cimke{color:var(--szurke-600);font-size:.9rem;}
+
+/* Feladatkártya-pipa (a kártya aljára, jobbra igazítva) */
+.fel-pipa{display:flex;align-items:center;justify-content:flex-end;gap:.35rem;margin:.5rem 0 0 auto;
+  width:max-content;cursor:pointer;font-size:.8rem;color:var(--szurke-600);font-family:var(--fej);
+  user-select:none;transition:color .2s;}
+.fel-pipa:hover{color:var(--marvel-green-neon);}
+.feladat .fel-pipa{margin-top:.6rem;padding-top:.4rem;border-top:1px dashed var(--marvel-glass-border);}
+.fel-pipa input{accent-color:var(--zold-500);width:1rem;height:1rem;cursor:pointer;}
+.feladat .fejsor{gap:.6rem;}
+.feladat.megoldva{opacity:.82;}
+.feladat.megoldva .szam::after{content:' ✔';color:#34d399;}
+
+/* Haladás-gyűrű a kártyákon */
+a.kartya.gyuruvel{padding-right:4.2rem;}
+a.kartya .gyuru{position:absolute;right:.9rem;bottom:.8rem;width:3rem;height:3rem;transform:rotate(-90deg);}
+a.kartya .gyuru circle{fill:none;stroke-width:3;}
+a.kartya .gyuru .hatso{stroke:rgba(148,163,184,.25);}
+a.kartya .gyuru .elso{stroke:var(--kartya-szin,var(--marvel-green-neon));stroke-linecap:round;
+  transition:stroke-dasharray .8s ease;}
+a.kartya .gyuru text{transform:rotate(90deg);transform-origin:18px 18px;text-anchor:middle;
+  font-family:var(--fej);font-size:9px;font-weight:700;fill:var(--szurke-600);}
+a.kartya.teljes .gyuru text{fill:#34d399;}
+a.kartya.teljes{border-color:rgba(16,185,129,.55);}
+
+/* Küldetésnapló-oldal */
+.naplo-fejsor{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;margin:.5rem 0 1.4rem;}
+.rang-jelveny{display:flex;align-items:center;gap:.9rem;padding:1rem 1.3rem;border-radius:var(--r);
+  border:1px solid var(--marvel-glass-border);background:var(--marvel-glass-bg);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
+.rang-jelveny .nagyjel{font-size:2.4rem;line-height:1;}
+.rang-jelveny .nev{font-family:var(--fej);font-weight:700;font-size:1.3rem;color:var(--zold-500);}
+.rang-jelveny .alatta{color:var(--szurke-600);font-size:.9rem;}
+.sav-kulso{height:.7rem;border-radius:999px;background:rgba(148,163,184,.2);overflow:hidden;margin:.35rem 0;}
+.sav-belso{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--zold-700),var(--marvel-green-neon));
+  box-shadow:0 0 10px rgba(0,255,102,.5);width:0;transition:width 1s ease;}
+.naplo-sor{padding:.9rem 1.1rem;margin:.7rem 0;border-radius:var(--r);
+  border:1px solid var(--marvel-glass-border);background:var(--marvel-glass-bg);}
+.naplo-sor h3{margin:.1rem 0 .3rem;font-size:1.05rem;}
+.naplo-sor .reszek{display:flex;gap:1rem;flex-wrap:wrap;color:var(--szurke-600);font-size:.86rem;margin-top:.35rem;}
+.naplo-sor .reszek b{color:var(--tinta);}
+.naplo-eszkoz{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin:.6rem 0 1.4rem;}
+.naplo-eszkoz textarea{width:100%;min-height:4.5rem;border-radius:10px;border:1px solid var(--szurke-300);
+  background:rgba(15,23,42,.75);color:var(--tinta);font:inherit;font-size:.85rem;padding:.6rem .8rem;}
+.naplo-uzenet{color:#34d399;font-size:.9rem;min-height:1.2em;}
+
+/* ============================================================
+   MIKRO-ANIMÁCIÓK — az effekt.js rétege
+   ============================================================ */
+.effekt-reteg{position:fixed;inset:0;pointer-events:none;z-index:70;}
+.effekt-reteg>*{position:absolute;transform:translate(-50%,-50%);pointer-events:none;}
+
+.pukkanas{font-family:var(--fej);font-weight:700;font-size:2rem;letter-spacing:.02em;
+  color:#fff;text-shadow:0 0 10px rgba(0,255,102,.9),3px 3px 0 var(--zold-700),-1px -1px 0 #000;
+  animation:pukkan .9s cubic-bezier(.2,1.4,.4,1) forwards;}
+@keyframes pukkan{
+  0%{opacity:0;transform:translate(-50%,-50%) scale(.3) rotate(var(--dol,0deg));}
+  25%{opacity:1;transform:translate(-50%,-50%) scale(1.18) rotate(var(--dol,0deg));}
+  60%{opacity:1;transform:translate(-50%,-58%) scale(1) rotate(var(--dol,0deg));}
+  100%{opacity:0;transform:translate(-50%,-95%) scale(.92) rotate(var(--dol,0deg));}}
+
+.xp-lebego{font-family:var(--fej);font-weight:700;font-size:1.05rem;color:var(--marvel-green-neon);
+  text-shadow:0 0 8px rgba(0,255,102,.7);animation:xp-fel 1.1s ease-out forwards;}
+@keyframes xp-fel{0%{opacity:0;transform:translate(-50%,-40%) scale(.8);}
+  20%{opacity:1;transform:translate(-50%,-60%) scale(1);}
+  100%{opacity:0;transform:translate(-50%,-160%) scale(1);}}
+
+.rang-szalag{left:50% !important;top:22% !important;display:flex;align-items:center;gap:1rem;
+  padding:1rem 1.6rem;border-radius:var(--r);border:1px solid var(--marvel-green-neon);
+  background:rgba(10,41,24,.92);box-shadow:0 0 34px rgba(0,255,102,.55);
+  font-family:var(--fej);color:#fff;text-align:left;animation:rang-be 2.6s ease forwards;}
+.rang-szalag .jel{font-size:2.2rem;}
+.rang-szalag b{color:var(--marvel-green-neon);letter-spacing:.08em;font-size:.8rem;}
+@keyframes rang-be{0%{opacity:0;transform:translate(-50%,-50%) scale(.85);}
+  10%{opacity:1;transform:translate(-50%,-50%) scale(1);}
+  85%{opacity:1;transform:translate(-50%,-50%) scale(1);}
+  100%{opacity:0;transform:translate(-50%,-70%) scale(.97);}}
+
+.szikra{width:8px;height:8px;border-radius:50%;background:var(--marvel-green-neon);
+  box-shadow:0 0 12px rgba(0,255,102,.9);animation:szikra-ki .6s ease-out forwards;}
+@keyframes szikra-ki{0%{opacity:.9;transform:translate(-50%,-50%) scale(.4);}
+  100%{opacity:0;transform:translate(-50%,-50%) scale(6);}}
+
+.razas{animation:razas .34s ease;}
+@keyframes razas{0%,100%{transform:translateX(0);} 20%{transform:translateX(-5px);}
+  45%{transform:translateX(5px);} 70%{transform:translateX(-3px);}}
+
+/* Beúszás görgetéskor (csak ha a JS bekapcsolta) */
+html.anim-be .kartya,html.anim-be .doboz,html.anim-be .feladat,
+html.anim-be .kviz,html.anim-be .brief,html.anim-be .talalat,html.anim-be .naplo-sor{
+  opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease;}
+html.anim-be .lathato{opacity:1;transform:none;}
 
 /* ---------- Akadálymentesség + mozgásérzékenység ---------- */
 :focus-visible{outline:2px solid var(--marvel-green-neon);outline-offset:2px;border-radius:6px;}
