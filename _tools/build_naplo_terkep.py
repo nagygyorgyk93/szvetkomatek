@@ -17,6 +17,20 @@ GYOKER = Path(__file__).resolve().parent.parent
 KI = GYOKER / "assets" / "naplo-terkep.json"
 TAGOZATOK = ["1e", "2e", "3e", "4e", "4im"]
 
+# Témakör-jelvények: küldetés-cím + mentor + jel (a `_WEBOLDAL_tortenet_[osztály].md`
+# fejezet-térképe szerint). Új témakörnél ide is fel kell venni egy sort — ha kimarad,
+# a jelvény a semleges 🛡️ jelet és a témakör címét kapja.
+JELVENY = {
+    "1e/01-logika-halmazok-fuggvenyek":        ("🃏", "Az Igazság Csarnoka", "Loki · Doctor Strange · Spider-Man"),
+    "1e/02-trigonometria":                     ("🏹", "A Célzó", "Hawkeye"),
+    "1e/03-egesz-es-valos-szamok":             ("🔢", "A Kódtörő · A Kalibrálás", "Shuri · Bruce Banner"),
+    "1e/04-aranyossag":                        ("🐜", "A Pym-protokoll", "Ant-Man & The Wasp"),
+    "1e/05-geometria":                         ("🔮", "A Csatatér-térkép · A Tükör-világ", "Doctor Strange · Scarlet Witch & Quicksilver"),
+    "1e/06-racionalis-algebrai-kifejezesek":   ("⚙️", "A Hatalom Nyelve", "Shuri & Iron Man"),
+    "1e/07-linearis-egyenletek-es-rendszerek": ("🛡️", "A Végső Egyenlet", "a teljes csapat"),
+    "1e/08-hasonlosag":                        ("📐", "A Skála Törvénye", "Ant-Man (Hank Pym)"),
+}
+
 H1 = re.compile(r"<h1[^>]*>(.*?)</h1>", re.S)
 KVIZ = re.compile(r'class="kviz\b')
 FELADAT = re.compile(r'<article class="feladat\b')
@@ -58,10 +72,12 @@ def main() -> None:
                                 "hazi": f.name == "feladatok-hazi.html"})
             if not oldalak and not fgy:
                 continue
+            jel, kuldetes, mentor = JELVENY.get(f"{tag}/{tema.name}", ("🛡️", "", ""))
             temak.append({
                 "mappa": tema.name,
                 "url": f"{tag}/{tema.name}/index.html",
                 "cim": cim(tema / "index.html") if (tema / "index.html").exists() else tema.name,
+                "jel": jel, "kuldetes": kuldetes, "mentor": mentor,
                 "oldalak": oldalak,
                 "fgy": fgy,
                 "db": {"oldal": sum(1 for o in oldalak if o["t"] != "projekt"),

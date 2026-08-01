@@ -31,8 +31,32 @@
     document.getElementById('sz-feladat').textContent  = N.db(A.feladatok);
     document.getElementById('sz-projekt').textContent  = N.db(A.projektek);
 
+    /* --- jelvényfal --- */
+    function jelvenyfal(T) {
+      var hova = document.getElementById('jelvenyfal');
+      if (!hova) return;
+      var html = '', db = 0, ossz = 0;
+      for (var tag in T.tagozatok) {
+        T.tagozatok[tag].temakorok.forEach(function (t) {
+          var o = N.teljesitheto(t), m = N.elert(t), sz = Math.round(m / (o || 1) * 100);
+          var kesz = sz >= 100;
+          ossz++; if (kesz) db++;
+          html += '<a class="jelveny' + (kesz ? ' megszerezve' : '') + '" href="' + t.url + '" title="' +
+                    (t.kuldetes || t.cim) + (t.mentor ? ' — ' + t.mentor : '') +
+                    (kesz ? '' : ' · ' + sz + '%') + '">' +
+                    '<span class="pajzs"><span class="jel">' + (t.jel || '🛡️') + '</span></span>' +
+                    '<span class="nev">' + (t.kuldetes || t.cim) + '</span>' +
+                    '<span class="allas">' + (kesz ? 'megszerezve' : sz + '%') + '</span>' +
+                  '</a>';
+        });
+      }
+      document.getElementById('jelveny-szam').textContent = db + ' / ' + ossz;
+      hova.innerHTML = html;
+    }
+
     /* --- témakörönkénti haladás --- */
     N.terkep(function (T) {
+      if (T) jelvenyfal(T);
       var hova = document.getElementById('naplo-lista');
       if (!T) {
         hova.innerHTML = '<p class="halvany">A részletes haladás csak a webhelyről betöltve látszik ' +

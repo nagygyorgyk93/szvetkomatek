@@ -19,7 +19,8 @@
   /* --- képernyő-only elemek --- */
   #progress,.fejlec,.toc,.kereso-mini,.kereso-nagy,.lapozo,.gyakorolj,.kviz,
   .morzsa,.matek-dekor,.savok,.video-panel,.hang-gomb,
-  .naplo-chip,.egyseg-kesz,.fel-pipa,.effekt-reteg,.gyuru,.naplo-eszkoz{display:none !important;}
+  .naplo-chip,.egyseg-kesz,.fel-pipa,.effekt-reteg,.gyuru,.naplo-eszkoz,.tetejere{display:none !important;}
+  .brief::after{display:none !important;}
   /* a beúszás-animáció nem rejtheti el a nyomtatott tartalmat */
   html.anim-be .kartya,html.anim-be .doboz,html.anim-be .feladat,html.anim-be .brief,
   html.anim-be .talalat,html.anim-be .naplo-sor{opacity:1 !important;transform:none !important;}

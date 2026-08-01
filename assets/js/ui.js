@@ -118,6 +118,35 @@
     v.addEventListener('ended', function(){ if(!v.loop) vissza(); });
   });
 
+  /* „Vissza a tetejére” rakéta — hosszú lapokon, 600 px görgetés után */
+  (function(){
+    if(document.body.scrollHeight < 2200) return;
+    var g = document.createElement('button');
+    g.type = 'button'; g.className = 'tetejere'; g.title = 'Vissza a tetejére';
+    g.setAttribute('aria-label','Vissza a lap tetejére');
+    g.textContent = '🚀';
+    document.body.appendChild(g);
+    g.addEventListener('click', function(){
+      var lassit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({top:0, behavior: lassit ? 'auto' : 'smooth'});
+      g.classList.add('kilo');
+      setTimeout(function(){ g.classList.remove('kilo'); }, 700);
+    });
+    var lat = function(){ g.classList.toggle('mutat', document.documentElement.scrollTop > 600); };
+    document.addEventListener('scroll', lat, {passive:true}); lat();
+  })();
+
+  /* „/” → ugrás a keresőbe (ha épp nem beviteli mezőben vagyunk) */
+  document.addEventListener('keydown', function(ev){
+    if(ev.key !== '/' || ev.ctrlKey || ev.altKey || ev.metaKey) return;
+    var a = document.activeElement;
+    if(a && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)) return;
+    if(a && a.isContentEditable) return;
+    var mezo = document.querySelector('.kereso-mini input, .kereso-nagy input');
+    if(mezo){ ev.preventDefault(); mezo.focus(); mezo.select(); }
+    else { ev.preventDefault(); window.location.href = ROOT + '/search.html'; }
+  });
+
   /* Küldetésnapló + mikro-animációk betöltése (így nem kell minden oldal
      <head>-jébe felvenni őket) */
   ['naplo.js', 'effekt.js'].forEach(function(f){
