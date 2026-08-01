@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Viète-képletek és szorzattá alakítás — tananyag | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Másodfokú egyenletek és függvények</a> ›
+  <span class="itt">Viète-képletek és szorzattá alakítás — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Viète-képletek és szorzattá alakítás</h1>
+  <p class="alcim">A gyökök összege és szorzata az együtthatókból, szimmetrikus kifejezések számolása, egyenlet felírása a gyökeiből és a trinom tényezőkre bontása.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az X-Faktor · 3/8</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Wolverine:</b> Van egy trükk, amit François Viète francia matematikus talált ki a 16. században, és azóta minden vizsgázó hálás érte. A gyökök <b>összege</b> és <b>szorzata</b> ránézésre kiolvasható az együtthatókból — megoldóképlet nélkül. Ez nemcsak gyorsít: ezzel lehet <b>szétvágni</b> a másodfokú kifejezést két elsőfokú tényezőre. Az én szakterületem.</p></div>
+
+    <h2 id="s1">A Viète-képletek</h2>
+
+    <div class="doboz tetel" id="tetel-viete">
+      <p class="cim"><span class="ikon">📘</span> Viète-képletek</p>
+      <p>Ha az <span class="math inline">\(ax^{2}+bx+c=0\)</span> egyenlet gyökei <span class="math inline">\(x_{1}\)</span> és <span class="math inline">\(x_{2}\)</span>, akkor</p><span class="math display">\[x_{1}+x_{2}=-\frac{b}{a},\qquad x_{1}\cdot x_{2}=\frac{c}{a}.\]</span><p>Az <span class="math inline">\(x^{2}+px+q=0\)</span> alakú (normált) egyenletnél még egyszerűbb: <span class="math inline">\(x_{1}+x_{2}=-p\)</span> és <span class="math inline">\(x_{1}x_{2}=q\)</span>.</p>
+      <details><summary>Levezetés</summary><div class="bel"><p>A megoldóképletből <span class="math inline">\(x_{1}=\dfrac{-b+\sqrt D}{2a}\)</span> és <span class="math inline">\(x_{2}=\dfrac{-b-\sqrt D}{2a}\)</span>. Összeadva a <span class="math inline">\(\sqrt D\)</span> kiesik:</p><span class="math display">\[x_{1}+x_{2}=\frac{-2b}{2a}=-\frac{b}{a}.\]</span><p>Összeszorozva a négyzetek különbsége azonosságot használjuk:</p><span class="math display">\[x_{1}x_{2}=\frac{b^{2}-D}{4a^{2}}=\frac{b^{2}-(b^{2}-4ac)}{4a^{2}}=\frac{4ac}{4a^{2}}=\frac{c}{a}.\]</span><p>Figyeld meg: a levezetés <b>nem használta</b>, hogy <span class="math inline">\(D\ge0\)</span> — a képletek a komplex gyökökre is érvényesek.</p></div></details>
+    </div>
+
+    <div class="doboz pelda">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Ellenőrizd a Viète-képleteket a <span class="math inline">\(2x^{2}-10x+8=0\)</span> egyenleten!</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>A képletek szerint <span class="math inline">\(x_{1}+x_{2}=\dfrac{10}{2}=5\)</span> és <span class="math inline">\(x_{1}x_{2}=\dfrac{8}{2}=4\)</span>. Megoldva: <span class="math inline">\(D=100-64=36\)</span>, <span class="math inline">\(x_{1,2}=\dfrac{10\pm 6}{4}\)</span>, tehát <span class="math inline">\(x_{1}=4\)</span> és <span class="math inline">\(x_{2}=1\)</span>. Valóban <span class="math inline">\(4+1=5\)</span> és <span class="math inline">\(4\cdot 1=4\)</span> ✔</p></div></details>
+    </div>
+
+    <h2 id="s2">Szimmetrikus kifejezések — számolás gyökök nélkül</h2>
+
+    A Viète-képletek igazi haszna: olyan kifejezéseket is ki tudunk számolni, amelyekben a két gyök <b>szimmetrikusan</b> szerepel — anélkül, hogy a gyököket megkeresnénk. A trükk: alakítsuk át a kifejezést úgy, hogy csak az <b>összeg</b> és a <b>szorzat</b> szerepeljen benne.
+
+    <div class="doboz tetel" id="tetel-szimmetrikus">
+      <p class="cim"><span class="ikon">📘</span> A két leggyakoribb átalakítás</p>
+      <span class="math display">\[\frac{1}{x_{1}}+\frac{1}{x_{2}}=\frac{x_{1}+x_{2}}{x_{1}x_{2}}\]</span><span class="math display">\[x_{1}^{2}+x_{2}^{2}=\left(x_{1}+x_{2}\right)^{2}-2x_{1}x_{2}\]</span><p>A második az <span class="math inline">\((u+v)^{2}=u^{2}+2uv+v^{2}\)</span> azonosság átrendezése. Hasonlóan: <span class="math inline">\(\left(x_{1}-x_{2}\right)^{2}=\left(x_{1}+x_{2}\right)^{2}-4x_{1}x_{2}\)</span>.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-szimmetrikus">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Az <span class="math inline">\(x^{2}-7x+10=0\)</span> egyenlet megoldása <b>nélkül</b> számítsd ki: <b>a)</b> <span class="math inline">\(\dfrac{1}{x_{1}}+\dfrac{1}{x_{2}}\)</span>; <b>b)</b> <span class="math inline">\(x_{1}^{2}+x_{2}^{2}\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>Viète: <span class="math inline">\(x_{1}+x_{2}=7\)</span>, <span class="math inline">\(x_{1}x_{2}=10\)</span>.</p><p><b>a)</b> <span class="math inline">\(\dfrac{x_{1}+x_{2}}{x_{1}x_{2}}=\dfrac{7}{10}\)</span>.</p><p><b>b)</b> <span class="math inline">\(7^{2}-2\cdot 10=49-20=29\)</span>.</p><p>(Ellenőrzésképp a gyökök <span class="math inline">\(2\)</span> és <span class="math inline">\(5\)</span>: <span class="math inline">\(\tfrac12+\tfrac15=\tfrac{7}{10}\)</span> ✔ és <span class="math inline">\(4+25=29\)</span> ✔)</p></div></details>
+    </div>
+
+    <h2 id="s3">Egyenlet felírása adott gyökökből</h2>
+
+    A Viète-képletek visszafelé is működnek: ha ismerem a két gyököt, fel tudom írni az egyenletet.
+
+    <div class="doboz tetel" id="tetel-egyenlet-gyokokbol">
+      <p class="cim"><span class="ikon">📘</span> Az egyenlet a gyökeiből</p>
+      <p>Ha a keresett gyökök <span class="math inline">\(x_{1}\)</span> és <span class="math inline">\(x_{2}\)</span>, akkor</p><span class="math display">\[x^{2}-\left(x_{1}+x_{2}\right)x+x_{1}x_{2}=0\]</span><p>egy megfelelő egyenlet. (Bármely nem nulla számmal szorozva szintén jó.)</p>
+    </div>
+
+    <div class="doboz pelda">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Írj fel másodfokú egyenletet, amelynek gyökei <span class="math inline">\(-3\)</span> és <span class="math inline">\(5\)</span>!</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>Az összeg <span class="math inline">\(-3+5=2\)</span>, a szorzat <span class="math inline">\(-3\cdot 5=-15\)</span>, tehát</p><span class="math display">\[x^{2}-2x-15=0.\]</span></div></details>
+    </div>
+
+    <h2 id="s4">A másodfokú trinom szorzattá bontása</h2>
+
+    Most jön a „szétvágás”. Ha ismerjük a gyököket, a másodfokú kifejezés két elsőfokú tényező szorzatára esik szét.
+
+    <div class="doboz tetel" id="tetel-szorzatta-alakitas">
+      <p class="cim"><span class="ikon">📘</span> Szorzattá alakítás</p>
+      <p>Ha az <span class="math inline">\(ax^{2}+bx+c\)</span> trinom gyökei <span class="math inline">\(x_{1}\)</span> és <span class="math inline">\(x_{2}\)</span>, akkor</p><span class="math display">\[ax^{2}+bx+c=a\left(x-x_{1}\right)\left(x-x_{2}\right).\]</span>
+    </div>
+
+    <div class="doboz pelda" id="pelda-szorzatta">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Bontsd tényezőkre: <b>a)</b> <span class="math inline">\(x^{2}-x-12\)</span>; <b>b)</b> <span class="math inline">\(2x^{2}-10x+12\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(D=1+48=49\)</span>, a gyökök <span class="math inline">\(4\)</span> és <span class="math inline">\(-3\)</span>, a főegyüttható <span class="math inline">\(1\)</span>:</p><span class="math display">\[x^{2}-x-12=(x-4)(x+3).\]</span><p><b>b)</b> <span class="math inline">\(D=100-96=4\)</span>, a gyökök <span class="math inline">\(3\)</span> és <span class="math inline">\(2\)</span>, a főegyüttható <span class="math inline">\(2\)</span>:</p><span class="math display">\[2x^{2}-10x+12=2(x-3)(x-2).\]</span></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p>A mutálódott kód a <span class="math inline">\(2x^{2}+5x-3\)</span> bontását így írja: gyökök <span class="math inline">\(\tfrac12\)</span> és <span class="math inline">\(-3\)</span>, tehát <span class="math inline">\(\left(x-\tfrac12\right)(x+3)\)</span>. <b>Hiányos!</b> A <b>főegyüttható</b> lemaradt — így a szorzat kibontva <span class="math inline">\(x^{2}+\tfrac52x-\tfrac32\)</span> lenne, nem az eredeti. Helyesen:</p><span class="math display">\[2x^{2}+5x-3=2\left(x-\tfrac12\right)(x+3)=(2x-1)(x+3).\]</span><p>Az utolsó lépésben a <span class="math inline">\(2\)</span>-t „beszoroztuk” az első tényezőbe — így szebb az alak.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A gyökök 4 és 5; az összegük 9, a szorzatuk 20." data-nem="✘ Keresd azt a két számot, amelynek összege 9 és szorzata 20: ezek a 4 és az 5.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Bontsd tényezőkre: <span class="math inline">\(x^{2}-9x+20\)</span>.</p>
+      <div class="opciok"><button><span class="math inline">\((x-4)(x-5)\)</span></button><button><span class="math inline">\((x+4)(x+5)\)</span></button><button><span class="math inline">\((x-2)(x-10)\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-masodfoku-egyenletek.html#alap-11">🐾 Beast-protokoll <span class="cimke">A 11–15</span></a><a class="sav hulk" href="feladatok-masodfoku-egyenletek.html#kozep-9">🔥 Phoenix-protokoll <span class="cimke">K 9–13</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Wolverine:</b> Utolsó kör az egyenletekből. Sinister néha <b>negyedfokú</b> kódot küld — de ha jól nézed, az is csak egy másodfokú, álruhában. Egyetlen jó helyettesítés, és összeomlik.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-diszkriminans.html"><span class="irany">← Előző</span><span class="hova">A diszkrimináns</span></a>
+      <a class="kov" href="tananyag-bikvadratikus.html"><span class="irany">Következő →</span><span class="hova">Másodfokúra visszavezethető egyenletek</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

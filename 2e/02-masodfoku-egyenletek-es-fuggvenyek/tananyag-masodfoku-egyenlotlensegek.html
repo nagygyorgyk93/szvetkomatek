@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Másodfokú egyenlőtlenségek — tananyag | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Másodfokú egyenletek és függvények</a> ›
+  <span class="itt">Másodfokú egyenlőtlenségek — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Másodfokú egyenlőtlenségek</h1>
+  <p class="alcim">A megoldás leolvasása a parabola képéről, a három diszkrimináns-eset, a negatív főegyüttható kezelése és az intervallumos írásmód.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az X-Faktor · 7/8</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Cyclops:</b> A védőpajzs nem egyetlen pontban működik, hanem egy egész <b>tartományon</b>. Az „hol nulla?” kérdésre egy vagy két szám a válasz — a „hol pozitív?” kérdésre viszont intervallumok. És itt jön a jó hír: ha megvan a parabola képe, az egyenlőtlenséget <b>le lehet olvasni</b>. Nem kell új módszer, csak az, amit az előző egységben megtanultál.</p></div>
+
+    <h2 id="s1">Mit jelent a megoldás?</h2>
+
+    A másodfokú egyenlőtlenség — például <span class="math inline">\(x^{2}-5x+6&gt;0\)</span> — azt kérdezi: <b>mely <span class="math inline">\(x\)</span> értékekre</b> pozitív a bal oldal? Ez pontosan azt jelenti: hol van a parabola az <span class="math inline">\(x\)</span>-tengely <b>fölött</b>.
+
+    <div class="svgcard">
+    <svg viewBox="0 0 380 250" width="380" height="250" role="img" aria-label="Az y = x² − 5x + 6 parabola: a 2 és a 3 között a tengely alatt, azon kívül fölötte">
+      <defs><marker id="nyil" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="117.2" y1="228.0" x2="117.2" y2="14.0"/>
+        <line x1="174.2" y1="228.0" x2="174.2" y2="14.0"/>
+        <line x1="231.2" y1="228.0" x2="231.2" y2="14.0"/>
+        <line x1="288.2" y1="228.0" x2="288.2" y2="14.0"/>
+        <line x1="345.2" y1="228.0" x2="345.2" y2="14.0"/>
+        <line x1="26.0" y1="135.3" x2="368.0" y2="135.3"/>
+        <line x1="26.0" y1="99.6" x2="368.0" y2="99.6"/>
+        <line x1="26.0" y1="63.9" x2="368.0" y2="63.9"/>
+        <line x1="26.0" y1="28.3" x2="368.0" y2="28.3"/>
+      </g>
+      <line x1="26.0" y1="170.9" x2="368.0" y2="170.9" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <line x1="60.2" y1="228.0" x2="60.2" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <text x="364.0" y="184.9" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="52.2" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="117.2" y="183.9" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="55.2" y="139.3" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <polyline points="76.8,6.0 79.5,13.1 82.1,20.2 84.7,27.0 87.3,33.7 90.0,40.3 92.6,46.7 95.2,53.0 97.8,59.1 100.4,65.1 103.1,70.9 105.7,76.5 108.3,82.0 110.9,87.4 113.6,92.6 116.2,97.7 118.8,102.6 121.4,107.3 124.0,111.9 126.7,116.4 129.3,120.7 131.9,124.8 134.5,128.8 137.1,132.7 139.8,136.4 142.4,139.9 145.0,143.3 147.6,146.6 150.3,149.7 152.9,152.6 155.5,155.4 158.1,158.0 160.7,160.5 163.4,162.9 166.0,165.1 168.6,167.1 171.2,169.0 173.9,170.7 176.5,172.3 179.1,173.7 181.7,175.0 184.3,176.2 187.0,177.1 189.6,178.0 192.2,178.6 194.8,179.2 197.5,179.5 200.1,179.8 202.7,179.8 205.3,179.8 207.9,179.5 210.6,179.2 213.2,178.6 215.8,178.0 218.4,177.1 221.1,176.2 223.7,175.0 226.3,173.7 228.9,172.3 231.5,170.7 234.2,169.0 236.8,167.1 239.4,165.1 242.0,162.9 244.7,160.5 247.3,158.0 249.9,155.4 252.5,152.6 255.1,149.7 257.8,146.6 260.4,143.3 263.0,139.9 265.6,136.4 268.2,132.7 270.9,128.8 273.5,124.8 276.1,120.7 278.7,116.4 281.4,111.9 284.0,107.3 286.6,102.6 289.2,97.7 291.8,92.6 294.5,87.4 297.1,82.0 299.7,76.5 302.3,70.9 305.0,65.1 307.6,59.1 310.2,53.0 312.8,46.7 315.4,40.3 318.1,33.7 320.7,27.0 323.3,20.2 325.9,13.1 328.6,6.0" fill="none" stroke="#047857" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="174.2" cy="170.9" r="4" fill="#ef4444"/>
+      <text x="170.2" y="162.9" font-size="11" fill="#ef4444" font-weight="600">2</text>
+      <circle cx="231.2" cy="170.9" r="4" fill="#ef4444"/>
+      <text x="235.2" y="162.9" font-size="11" fill="#ef4444" font-weight="600">3</text>
+      <rect x="245" y="13" width="129" height="23" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="249" y1="22" x2="267" y2="22" stroke="#047857" stroke-width="2.4"/>
+      <text x="272" y="26" font-size="11" fill="#0f172a">y = x² − 5x + 6</text>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(y=x^{2}-5x+6\)</span> parabola zérushelyei <span class="math inline">\(2\)</span> és <span class="math inline">\(3\)</span>. A két gyök <b>között</b> a görbe a tengely alatt van (negatív), azon kívül fölötte (pozitív).</p>
+
+    <div class="doboz tetel" id="tetel-egyenlotlenseg-menete">
+      <p class="cim"><span class="ikon">📘</span> A megoldás menete</p>
+      <p><b>1.</b> Rendezd az egyenlőtlenséget nullára (a jobb oldalon <span class="math inline">\(0\)</span> álljon).</p><p><b>2.</b> Oldd meg a hozzá tartozó <b>egyenletet</b> — keresd meg a zérushelyeket.</p><p><b>3.</b> Nézd meg az <span class="math inline">\(a\)</span> előjelét (merre nyílik a parabola), és a képről <b>olvasd le</b> a megoldást.</p><p>Ha <span class="math inline">\(a&gt;0\)</span> és két zérushely van (<span class="math inline">\(x_{1}&lt;x_{2}\)</span>):</p><ul><li>a kifejezés <b>negatív</b> a gyökök <b>között</b>: <span class="math inline">\(x\in(x_{1};x_{2})\)</span>;</li><li><b>pozitív</b> a gyökökön <b>kívül</b>: <span class="math inline">\(x\in(-\infty;x_{1})\cup(x_{2};+\infty)\)</span>.</li></ul><p>Ha <span class="math inline">\(a&lt;0\)</span>, a két eset <b>felcserélődik</b>.</p>
+    </div>
+
+    <h2 id="s2">A három diszkrimináns-eset</h2>
+
+    <div class="doboz tetel" id="tetel-egyenlotlenseg-D">
+      <p class="cim"><span class="ikon">📘</span> Amikor nincs két gyök</p>
+      <p><b><span class="math inline">\(D=0\)</span></b> (egy kettős gyök, <span class="math inline">\(x_{0}\)</span>): <span class="math inline">\(a&gt;0\)</span> esetén a kifejezés <b>mindenütt nemnegatív</b>, és csak <span class="math inline">\(x_{0}\)</span>-ban nulla. Tehát <span class="math inline">\(ax^{2}+bx+c&gt;0\)</span> megoldása <span class="math inline">\(\mathbb{R}\setminus\{x_{0}\}\)</span>, míg <span class="math inline">\(ax^{2}+bx+c&lt;0\)</span>-nak <b>nincs</b> megoldása.</p><p><b><span class="math inline">\(D&lt;0\)</span></b> (nincs valós gyök): a parabola <b>végig</b> a tengely egyik oldalán van. Ha <span class="math inline">\(a&gt;0\)</span>, a kifejezés minden <span class="math inline">\(x\)</span>-re pozitív; ha <span class="math inline">\(a&lt;0\)</span>, minden <span class="math inline">\(x\)</span>-re negatív.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-egyenlotlensegek">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Oldd meg: <b>a)</b> <span class="math inline">\(x^{2}-5x+6&gt;0\)</span>; <b>b)</b> <span class="math inline">\(x^{2}-5x+6\le 0\)</span>; <b>c)</b> <span class="math inline">\(x^{2}-4x+4&gt;0\)</span>; <b>d)</b> <span class="math inline">\(x^{2}+x+1&gt;0\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> A zérushelyek <span class="math inline">\(2\)</span> és <span class="math inline">\(3\)</span>, <span class="math inline">\(a&gt;0\)</span> → a gyökökön kívül pozitív:</p><span class="math display">\[x\in(-\infty;2)\cup(3;+\infty).\]</span><p><b>b)</b> Ugyanaz a parabola, most a nem pozitív rész kell — a gyökök között, <b>zárt</b> végpontokkal (az egyenlőség is megengedett):</p><span class="math display">\[x\in[2;3].\]</span><p><b>c)</b> <span class="math inline">\(D=16-16=0\)</span>, a kettős gyök <span class="math inline">\(x=2\)</span>. A kifejezés <span class="math inline">\((x-2)^{2}\)</span>, ami mindenütt nemnegatív, és csak <span class="math inline">\(2\)</span>-ben nulla:</p><span class="math display">\[x\in\mathbb{R}\setminus\{2\}.\]</span><p><b>d)</b> <span class="math inline">\(D=1-4=-3&lt;0\)</span> és <span class="math inline">\(a=1&gt;0\)</span> → a parabola végig a tengely fölött van, tehát az egyenlőtlenség <b>minden valós <span class="math inline">\(x\)</span>-re</b> teljesül: <span class="math inline">\(x\in\mathbb{R}\)</span>.</p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A zérushelyek −3 és 3; a>0, tehát a kifejezés a gyökök között negatív." data-nem="✘ a > 0 esetén a parabola a két gyök KÖZÖTT van a tengely alatt: (−3; 3).">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mi az <span class="math inline">\(x^{2}-9&lt;0\)</span> egyenlőtlenség megoldása?</p>
+      <div class="opciok"><button><span class="math inline">\(x\in(-3;3)\)</span></button><button><span class="math inline">\(x\in(-\infty;-3)\cup(3;+\infty)\)</span></button><button><span class="math inline">\(x\in\mathbb{R}\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Negatív főegyüttható és a szigorú végpontok</h2>
+
+    <div class="doboz pelda" id="pelda-negativ-fo">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Oldd meg: <b>a)</b> <span class="math inline">\(-x^{2}+3x-2\ge 0\)</span>; <b>b)</b> <span class="math inline">\(2x^{2}-7x+3&lt;0\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> Két út van. Vagy <span class="math inline">\(-1\)</span>-gyel szorzunk — ilyenkor a reláció <b>megfordul</b>: <span class="math inline">\(x^{2}-3x+2\le 0\)</span>, aminek a gyökei <span class="math inline">\(1\)</span> és <span class="math inline">\(2\)</span>, tehát <span class="math inline">\(x\in[1;2]\)</span>. Vagy meghagyjuk: <span class="math inline">\(a=-1&lt;0\)</span>, a parabola lefelé nyílik, így a gyökök <b>között</b> van a tengely fölött — ugyanaz jön ki.</p><p><b>b)</b> <span class="math inline">\(D=49-24=25\)</span>, a gyökök <span class="math inline">\(\tfrac12\)</span> és <span class="math inline">\(3\)</span>. Mivel <span class="math inline">\(a=2&gt;0\)</span> és negatív értéket keresünk, a gyökök közötti <b>nyílt</b> intervallum a megoldás: <span class="math inline">\(x\in\left(\tfrac12;3\right)\)</span>.</p></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p>Három klasszikus hiba:</p><ol class="reszfeladatok"><li><b>Negatív számmal szorozni a reláció megfordítása nélkül.</b> A <span class="math inline">\(-x^{2}+3x-2\ge 0\)</span>-ból <span class="math inline">\(x^{2}-3x+2\le 0\)</span> lesz — a jel <b>átfordul</b>.</li><li><b>Zárt zárójel a végtelennél.</b> A <span class="math inline">\(+\infty\)</span> és a <span class="math inline">\(-\infty\)</span> nem szám, nem lehet „elérni” — mellettük <b>mindig nyitott</b> zárójel áll: <span class="math inline">\((3;+\infty)\)</span>, sosem <span class="math inline">\((3;+\infty]\)</span>.</li><li><b>Az uniót metszetnek írni.</b> Ha a megoldás két különálló darabból áll, azok <b>uniója</b> (<span class="math inline">\(\cup\)</span>) a válasz, nem a metszetük — az utóbbi üres lenne.</li></ol>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ a < 0, a parabola lefelé nyílik → a gyökök között van a tengely fölött." data-nem="✘ Szorozz −1-gyel (a jel fordul): x² − 4 < 0, azaz x ∈ (−2; 2).">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik a helyes megoldás: <span class="math inline">\(-x^{2}+4&gt;0\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(x\in(-2;2)\)</span></button><button><span class="math inline">\(x\in(-\infty;-2)\cup(2;+\infty)\)</span></button><button>Nincs megoldás.</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-egyenlotlensegek-es-rendszerek.html#alap-1">🐾 Beast-protokoll <span class="cimke">A 1–6</span></a><a class="sav hulk" href="feladatok-egyenlotlensegek-es-rendszerek.html#kozep-1">🔥 Phoenix-protokoll <span class="cimke">K 1–5</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Cyclops:</b> Utolsó feladat a fejezetben. Eddig egyetlen görbét néztünk. Most kettőt teszünk egymásra — egy parabolát és egy egyenest —, és megkeressük, <b>hol találkoznak</b>. Ez a bemérés utolsó lépése.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-masodfoku-fuggveny.html"><span class="irany">← Előző</span><span class="hova">Feladatok — másodfokú függvény</span></a>
+      <a class="kov" href="tananyag-masodfoku-linearis-rendszer.html"><span class="irany">Következő →</span><span class="hova">Másodfokú és lineáris egyenletből álló rendszer</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

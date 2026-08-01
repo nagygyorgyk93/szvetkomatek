@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A másodfokú függvény vizsgálata — tananyag | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Másodfokú egyenletek és függvények</a> ›
+  <span class="itt">A másodfokú függvény vizsgálata — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A másodfokú függvény vizsgálata</h1>
+  <p class="alcim">A vizsgálat rögzített szempontsora, teljes kidolgozott példák konvex és konkáv esetre, valamint szélsőérték-feladatok valós helyzetekben.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az X-Faktor · 6/8</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Cyclops:</b> A csapatnak protokoll kell, nem ötletelés. A függvényvizsgálat is protokoll: ugyanaz a néhány kérdés, mindig ugyanabban a sorrendben. Ha végigmész rajta, a végén ott a teljes kép — és a grafikon már csak a jegyzőkönyv. Sinister energiagörbéit is így mérjük be.</p></div>
+
+    <h2 id="s1">A vizsgálat protokollja</h2>
+
+    <div class="doboz definicio" id="def-vizsgalat-protokoll">
+      <p class="cim"><span class="ikon">📗</span> Mit kérdezünk meg?</p>
+      <ol class="reszfeladatok"><li><b>Nyílásirány:</b> az <span class="math inline">\(a\)</span> előjele — konvex (felfelé) vagy konkáv (lefelé)?</li><li><b>Zérushelyek:</b> az <span class="math inline">\(ax^{2}+bx+c=0\)</span> egyenlet megoldásai — itt metszi a görbe az <span class="math inline">\(x\)</span>-tengelyt.</li><li><b><span class="math inline">\(y\)</span>-tengelymetszet:</b> <span class="math inline">\(f(0)=c\)</span>.</li><li><b>Csúcspont:</b> <span class="math inline">\(C(u;v)\)</span>, ahol <span class="math inline">\(u=-\dfrac{b}{2a}\)</span> és <span class="math inline">\(v=f(u)\)</span>.</li><li><b>Szélsőérték:</b> <span class="math inline">\(a&gt;0\)</span> esetén <b>minimum</b>, <span class="math inline">\(a&lt;0\)</span> esetén <b>maximum</b>; az értéke <span class="math inline">\(v\)</span>.</li><li><b>Értékkészlet:</b> <span class="math inline">\(a&gt;0\)</span> esetén <span class="math inline">\([v,+\infty)\)</span>, <span class="math inline">\(a&lt;0\)</span> esetén <span class="math inline">\((-\infty,v]\)</span>.</li></ol><p>Az értelmezési tartomány mindig a teljes <span class="math inline">\(\mathbb{R}\)</span> — ezt nem kell keresni.</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Miért ilyen sorrendben?</p>
+      <p>Mert minden lépés a következőt készíti elő. A nyílásirányból már tudod, minimum vagy maximum lesz-e; a csúcspontból jön a szélsőérték; a szélsőértékből az értékkészlet. Ha a sorrendet betartod, <b>nem kell gondolkodni</b> — csak számolni.</p>
+    </div>
+
+    <h2 id="s2">Teljes kidolgozott vizsgálat</h2>
+
+    <div class="doboz pelda" id="pelda-teljes-vizsgalat">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Vizsgáld meg és ábrázold: <span class="math inline">\(y=x^{2}-2x-3\)</span>.</p>
+      <details><summary>Megoldás — lépésről lépésre</summary><div class="bel"><p><b>1. Nyílásirány:</b> <span class="math inline">\(a=1&gt;0\)</span> → felfelé nyílik, <b>konvex</b>, minimuma lesz.</p><p><b>2. Zérushelyek:</b> <span class="math inline">\(D=4+12=16\)</span>, <span class="math inline">\(x_{1,2}=\dfrac{2\pm 4}{2}\)</span> → <span class="math inline">\(x_{1}=-1\)</span>, <span class="math inline">\(x_{2}=3\)</span>.</p><p><b>3. <span class="math inline">\(y\)</span>-tengelymetszet:</b> <span class="math inline">\(f(0)=-3\)</span>.</p><p><b>4. Csúcspont:</b> <span class="math inline">\(u=-\dfrac{-2}{2}=1\)</span>, <span class="math inline">\(v=f(1)=1-2-3=-4\)</span> → <span class="math inline">\(C(1;-4)\)</span>.</p><p><b>5. Szélsőérték:</b> minimum, értéke <span class="math inline">\(-4\)</span> (az <span class="math inline">\(x=1\)</span> helyen).</p><p><b>6. Értékkészlet:</b> <span class="math inline">\([-4,+\infty)\)</span>.</p></div></details>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 400 290" width="400" height="290" role="img" aria-label="Az y = x² − 2x − 3 parabola a zérushelyekkel, a csúcsponttal és az y-tengelymetszettel">
+      <defs><marker id="nyil" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="26.0" y1="268.0" x2="26.0" y2="14.0"/>
+        <line x1="71.2" y1="268.0" x2="71.2" y2="14.0"/>
+        <line x1="116.5" y1="268.0" x2="116.5" y2="14.0"/>
+        <line x1="207.0" y1="268.0" x2="207.0" y2="14.0"/>
+        <line x1="252.2" y1="268.0" x2="252.2" y2="14.0"/>
+        <line x1="297.5" y1="268.0" x2="297.5" y2="14.0"/>
+        <line x1="342.8" y1="268.0" x2="342.8" y2="14.0"/>
+        <line x1="388.0" y1="268.0" x2="388.0" y2="14.0"/>
+        <line x1="26.0" y1="222.3" x2="388.0" y2="222.3"/>
+        <line x1="26.0" y1="196.9" x2="388.0" y2="196.9"/>
+        <line x1="26.0" y1="171.5" x2="388.0" y2="171.5"/>
+        <line x1="26.0" y1="120.7" x2="388.0" y2="120.7"/>
+        <line x1="26.0" y1="95.3" x2="388.0" y2="95.3"/>
+        <line x1="26.0" y1="69.9" x2="388.0" y2="69.9"/>
+        <line x1="26.0" y1="44.5" x2="388.0" y2="44.5"/>
+        <line x1="26.0" y1="19.1" x2="388.0" y2="19.1"/>
+      </g>
+      <line x1="26.0" y1="146.1" x2="388.0" y2="146.1" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <line x1="161.8" y1="268.0" x2="161.8" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <text x="384.0" y="160.1" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="153.8" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="207.0" y="159.1" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="156.8" y="124.7" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <polyline points="69.6,13.6 72.6,23.6 75.6,33.5 78.6,43.1 81.6,52.5 84.6,61.7 87.5,70.7 90.5,79.4 93.5,87.9 96.5,96.2 99.5,104.3 102.5,112.1 105.5,119.8 108.4,127.2 111.4,134.4 114.4,141.4 117.4,148.1 120.4,154.6 123.4,160.9 126.4,167.0 129.4,172.9 132.3,178.5 135.3,183.9 138.3,189.2 141.3,194.1 144.3,198.9 147.3,203.4 150.3,207.7 153.2,211.8 156.2,215.7 159.2,219.4 162.2,222.8 165.2,226.0 168.2,229.0 171.2,231.7 174.1,234.3 177.1,236.6 180.1,238.7 183.1,240.6 186.1,242.3 189.1,243.7 192.1,244.9 195.1,245.9 198.0,246.7 201.0,247.2 204.0,247.6 207.0,247.7 210.0,247.6 213.0,247.2 216.0,246.7 218.9,245.9 221.9,244.9 224.9,243.7 227.9,242.3 230.9,240.6 233.9,238.7 236.9,236.6 239.9,234.3 242.8,231.7 245.8,229.0 248.8,226.0 251.8,222.8 254.8,219.4 257.8,215.7 260.8,211.8 263.7,207.7 266.7,203.4 269.7,198.9 272.7,194.1 275.7,189.2 278.7,183.9 281.7,178.5 284.6,172.9 287.6,167.0 290.6,160.9 293.6,154.6 296.6,148.1 299.6,141.4 302.6,134.4 305.6,127.2 308.5,119.8 311.5,112.1 314.5,104.3 317.5,96.2 320.5,87.9 323.5,79.4 326.5,70.7 329.4,61.7 332.4,52.5 335.4,43.1 338.4,33.5 341.4,23.6 344.4,13.6" fill="none" stroke="#047857" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="116.5" cy="146.1" r="4" fill="#ef4444"/>
+      <text x="70.5" y="138.1" font-size="11" fill="#ef4444" font-weight="600">(−1; 0)</text>
+      <circle cx="297.5" cy="146.1" r="4" fill="#ef4444"/>
+      <text x="303.5" y="138.1" font-size="11" fill="#ef4444" font-weight="600">(3; 0)</text>
+      <circle cx="207.0" cy="247.7" r="4" fill="#047857"/>
+      <text x="215.0" y="263.7" font-size="11" fill="#047857" font-weight="600">C(1; −4)</text>
+      <circle cx="161.8" cy="222.3" r="4" fill="#8b5cf6"/>
+      <text x="109.8" y="236.3" font-size="11" fill="#8b5cf6" font-weight="600">(0; −3)</text>
+      <rect x="265" y="13" width="129" height="23" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="269" y1="22" x2="287" y2="22" stroke="#047857" stroke-width="2.4"/>
+      <text x="292" y="26" font-size="11" fill="#0f172a">y = x² − 2x − 3</text>
+    </svg>
+    </div>
+    <p class="cap">A grafikonhoz elég három adat: a <b>két zérushely</b>, a <b>csúcspont</b> és az <b><span class="math inline">\(y\)</span>-tengelymetszet</b>. A parabola szimmetrikus az <span class="math inline">\(x=1\)</span> egyenesre.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p>Három visszatérő hiba:</p><ol class="reszfeladatok"><li><b>A csúcs <span class="math inline">\(y\)</span>-koordinátáját „megsaccolni".</b> Nem a két zérushely átlagának képe, hanem <span class="math inline">\(f(u)\)</span> — <b>be kell helyettesíteni</b>. (Az <span class="math inline">\(u\)</span> viszont valóban a két zérushely átlaga, ha vannak.)</li><li><b>Az értékkészletet <span class="math inline">\(\mathbb{R}\)</span>-nek írni.</b> Az az <b>értelmezési tartomány</b>. Az értékkészlet a csúcstól indul.</li><li><b>A minimum és a minimumhely összekeverése.</b> A minimum <b>értéke</b> <span class="math inline">\(v=-4\)</span>; a minimum<b>hely</b> <span class="math inline">\(x=1\)</span>.</li></ol>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ u = 3, v = 9 − 18 + 8 = −1, és a > 0 → [−1, +∞)." data-nem="✘ Számold ki a csúcsot: u = 3, v = f(3) = −1. Mivel a > 0, az értékkészlet [−1, +∞).">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mi az <span class="math inline">\(y=x^{2}-6x+8\)</span> függvény értékkészlete?</p>
+      <div class="opciok"><button><span class="math inline">\([-1,+\infty)\)</span></button><button><span class="math inline">\(\mathbb{R}\)</span></button><button><span class="math inline">\([8,+\infty)\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Ha a parabola lefelé nyílik</h2>
+
+    <div class="doboz pelda" id="pelda-konkav">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Vizsgáld meg: <span class="math inline">\(y=-x^{2}+4x-3\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>1.</b> <span class="math inline">\(a=-1&lt;0\)</span> → lefelé nyílik, <b>konkáv</b>, maximuma lesz.</p><p><b>2.</b> <span class="math inline">\(D=16-12=4\)</span>, <span class="math inline">\(x_{1,2}=\dfrac{-4\pm 2}{-2}\)</span> → <span class="math inline">\(x_{1}=1\)</span>, <span class="math inline">\(x_{2}=3\)</span>.</p><p><b>3.</b> <span class="math inline">\(f(0)=-3\)</span>.</p><p><b>4.</b> <span class="math inline">\(u=-\dfrac{4}{-2}=2\)</span>, <span class="math inline">\(v=f(2)=-4+8-3=1\)</span> → <span class="math inline">\(C(2;1)\)</span>.</p><p><b>5.</b> <b>Maximum</b>, értéke <span class="math inline">\(1\)</span>.</p><p><b>6.</b> Értékkészlet: <span class="math inline">\((-\infty,1]\)</span>.</p></div></details>
+    </div>
+
+    <h2 id="s4">Szélsőérték-feladatok</h2>
+
+    A másodfokú függvény leggyakoribb valós alkalmazása: valamit <b>maximalizálni</b> vagy <b>minimalizálni</b> kell. A recept: írd fel a keresett mennyiséget egyetlen változó másodfokú függvényeként, majd keresd meg a csúcspontot.
+
+    <div class="doboz pelda" id="pelda-szelsoertek">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció — a kerítés</p>
+      <p>A kampusz fala mellé téglalap alakú edzőterületet kerítenek be. A fal felőli oldalra nem kell kerítés, a másik három oldalra összesen <span class="math inline">\(20\)</span> méter kerítés áll rendelkezésre. Mekkora a lehető legnagyobb bekeríthető terület?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>Legyen a fallal <b>párhuzamos</b> oldal <span class="math inline">\(y\)</span>, a rá merőleges kettő pedig <span class="math inline">\(x\)</span>-<span class="math inline">\(x\)</span>. Ekkor <span class="math inline">\(2x+y=20\)</span>, tehát <span class="math inline">\(y=20-2x\)</span>.</p><p>A terület:</p><span class="math display">\[T(x)=x\left(20-2x\right)=-2x^{2}+20x.\]</span><p>Ez másodfokú függvény <span class="math inline">\(a=-2&lt;0\)</span> főegyütthatóval → van <b>maximuma</b> a csúcspontban: <span class="math inline">\(u=-\dfrac{20}{-4}=5\)</span>, és <span class="math inline">\(T(5)=-50+100=50\)</span>.</p><p><b>Válasz:</b> a merőleges oldalak <span class="math inline">\(5\)</span> m-esek, a fallal párhuzamos <span class="math inline">\(10\)</span> m, a legnagyobb terület <span class="math inline">\(50\ \text{m}^{2}\)</span>.</p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ u = −12/(−2) = 6, és T(6) = −36 + 72 = 36." data-nem="✘ A csúcs u = −b/(2a) = −12/(−2) = 6, ahol T(6) = 36.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy <span class="math inline">\(T(x)=-x^{2}+12x\)</span> területfüggvény hol veszi fel a maximumát?</p>
+      <div class="opciok"><button><span class="math inline">\(x=6\)</span>-nál, az értéke <span class="math inline">\(36\)</span>.</button><button><span class="math inline">\(x=12\)</span>-nél, az értéke <span class="math inline">\(0\)</span>.</button><button><span class="math inline">\(x=-6\)</span>-nál, az értéke <span class="math inline">\(36\)</span>.</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-masodfoku-fuggveny.html#alap-6">🐾 Beast-protokoll <span class="cimke">A 6–11</span></a><a class="sav hulk" href="feladatok-masodfoku-fuggveny.html#kozep-5">🔥 Phoenix-protokoll <span class="cimke">K 5–10</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Cyclops:</b> Eddig azt kérdeztük, <b>hol nulla</b> a függvény. A következő lépés: hol <b>pozitív</b> és hol <b>negatív</b>? Ez már nem egy pont, hanem egy egész <b>tartomány</b> — és pontosan ilyen a védőpajzs hatósugara is. Jöjjenek a másodfokú egyenlőtlenségek.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-masodfoku-fuggveny.html"><span class="irany">← Előző</span><span class="hova">A másodfokú függvény és grafikonja</span></a>
+      <a class="kov" href="feladatok-masodfoku-fuggveny.html"><span class="irany">Következő →</span><span class="hova">Feladatok — másodfokú függvény</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A másodfokú egyenlet — tananyag | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Másodfokú egyenletek és függvények</a> ›
+  <span class="itt">A másodfokú egyenlet — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A másodfokú egyenlet</h1>
+  <p class="alcim">Az egyenlet alakja, a hiányos esetek gyors megoldása, a megoldóképlet és annak levezetése, valamint a rendezést igénylő feladatok.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az X-Faktor · 1/8</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Wolverine:</b> Kölyök, az első félévben minden szépen sorban állt: ha nőtt a baj, <b>egyenletesen</b> nőtt. Ennek vége. Sinister új fegyvere <b>másodfokon</b> terjed — a fenyegetés nem lineárisan, hanem <b>négyzetesen</b> gyorsul. Az ilyet nem lehet átrendezéssel elintézni: fel kell darabolni. Én ehhez a karmomat használom, te a <b>megoldóképletet</b>. Ugyanaz az elv: megkeresed a gyenge pontot, és két részre vágod.</p></div>
+
+    A másodfokú egyenlet a matematika egyik legjobban kidolgozott eszköze: van rá <b>képlet</b>, ami mindig működik. De mielőtt előrántanád, érdemes megnézni — sokszor sokkal gyorsabb út is van.
+
+    <h2 id="s1">A másodfokú egyenlet alakja</h2>
+
+    <div class="doboz definicio" id="def-masodfoku-egyenlet">
+      <p class="cim"><span class="ikon">📗</span> Másodfokú egyenlet</p>
+      <p>Az egyismeretlenes <b>másodfokú egyenlet</b> általános alakja</p><span class="math display">\[ax^{2}+bx+c=0,\qquad a,b,c\in\mathbb{R},\ a\neq 0.\]</span><p>Itt <span class="math inline">\(a\)</span> a <b>főegyüttható</b>, <span class="math inline">\(b\)</span> a lineáris tag együtthatója, <span class="math inline">\(c\)</span> a <b>konstans tag</b>. Az <span class="math inline">\(a\neq 0\)</span> kikötés lényeges: ha <span class="math inline">\(a=0\)</span> lenne, az egyenlet <b>elsőfokúvá</b> esne szét.</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>Ferde hajításnál a test pályája parabola, és a „mikor ér földet?” kérdés másodfokú egyenlet. Ugyanígy másodfokú a szabadesés úttörvénye, egy téglalap területének maximalizálása adott kerület mellett, és a fizika szinte minden olyan képlete, amelyben egy mennyiség <b>négyzete</b> szerepel.</p>
+    </div>
+
+    <h2 id="s2">Hiányos másodfokú egyenletek</h2>
+
+    Ha <span class="math inline">\(b=0\)</span> vagy <span class="math inline">\(c=0\)</span> (esetleg mindkettő), az egyenletet <b>hiányosnak</b> nevezzük. Ezeket <b>nem érdemes</b> megoldóképlettel bántani — sokkal gyorsabb út is van.
+
+    <div class="doboz tetel" id="tetel-hianyos">
+      <p class="cim"><span class="ikon">📘</span> A három hiányos eset</p>
+      <p><b>1.</b> <span class="math inline">\(ax^{2}=0\)</span> &nbsp;→&nbsp; egyetlen (kettős) megoldás: <span class="math inline">\(x=0\)</span>.</p><p><b>2.</b> <span class="math inline">\(ax^{2}+bx=0\)</span> &nbsp;→&nbsp; <b>kiemelés</b>: <span class="math inline">\(x(ax+b)=0\)</span>, tehát <span class="math inline">\(x_{1}=0\)</span> és <span class="math inline">\(x_{2}=-\dfrac{b}{a}\)</span>.</p><p><b>3.</b> <span class="math inline">\(ax^{2}+c=0\)</span> &nbsp;→&nbsp; rendezés és <b>négyzetgyökvonás</b>: <span class="math inline">\(x^{2}=-\dfrac{c}{a}\)</span>, tehát <span class="math inline">\(x_{1,2}=\pm\sqrt{-\dfrac{c}{a}}\)</span> — ha a jobb oldal negatív, a megoldások <b>komplexek</b>.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-hianyos">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Oldd meg: <b>a)</b> <span class="math inline">\(3x^{2}-27=0\)</span>; <b>b)</b> <span class="math inline">\(5x^{2}+20x=0\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(3x^{2}=27\Rightarrow x^{2}=9\Rightarrow x_{1,2}=\pm 3\)</span>.</p><p><b>b)</b> Kiemeléssel <span class="math inline">\(5x(x+4)=0\)</span>, és egy szorzat pontosan akkor nulla, ha valamelyik tényezője nulla: <span class="math inline">\(x_{1}=0\)</span>, <span class="math inline">\(x_{2}=-4\)</span>.</p></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p>Az <span class="math inline">\(x^{2}=5x\)</span> egyenletet a mutálódott kód így „oldja meg”: elosztja mindkét oldalt <span class="math inline">\(x\)</span>-szel, és kihozza, hogy <span class="math inline">\(x=5\)</span>. <b>Hibás!</b> Az osztás csak akkor megengedett, ha <span class="math inline">\(x\neq 0\)</span> — és épp az <span class="math inline">\(x=0\)</span> is <b>megoldás</b>. Helyesen rendezünk és kiemelünk:</p><span class="math display">\[x^{2}-5x=0\ \Rightarrow\ x(x-5)=0\ \Rightarrow\ x_{1}=0,\ x_{2}=5.\]</span><p><b>Ökölszabály:</b> ismeretlent tartalmazó kifejezéssel <b>soha</b> ne oszd az egyenletet — kiemelj helyette.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ Kiemelés: x(4x−9)=0 → x₁=0, x₂=9/4." data-nem="✘ Emelj ki x-et: x(4x−9)=0. Az x=0 is megoldás — ne oszd el x-szel!">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Hány valós megoldása van a <span class="math inline">\(4x^{2}-9x=0\)</span> egyenletnek?</p>
+      <div class="opciok"><button>Kettő: <span class="math inline">\(0\)</span> és <span class="math inline">\(\dfrac{9}{4}\)</span>.</button><button>Egy: <span class="math inline">\(\dfrac{9}{4}\)</span>.</button><button>Egy sem.</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">A teljes egyenlet és a megoldóképlet</h2>
+
+    Ha mindhárom együttható nem nulla, <b>teljes</b> másodfokú egyenletről beszélünk. Ilyenkor jön a nehéztüzérség.
+
+    <div class="doboz tetel" id="tetel-megoldokeplet">
+      <p class="cim"><span class="ikon">📘</span> A megoldóképlet</p>
+      <p>Az <span class="math inline">\(ax^{2}+bx+c=0\)</span> (<span class="math inline">\(a\neq 0\)</span>) egyenlet megoldásai</p><span class="math display">\[x_{1,2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}.\]</span>
+      <details><summary>Honnan jön? — teljes négyzetté alakítás</summary><div class="bel"><p>Osszunk <span class="math inline">\(a\)</span>-val, majd egészítsük ki teljes négyzetté:</p><span class="math display">\[x^{2}+\frac{b}{a}x+\frac{c}{a}=0\ \Rightarrow\ \left(x+\frac{b}{2a}\right)^{2}=\frac{b^{2}}{4a^{2}}-\frac{c}{a}=\frac{b^{2}-4ac}{4a^{2}}.\]</span><p>Innen gyököt vonva <span class="math inline">\(x+\dfrac{b}{2a}=\pm\dfrac{\sqrt{b^{2}-4ac}}{2a}\)</span>, és átrendezve épp a megoldóképletet kapjuk. Vagyis a képlet nem varázslat: a teljes négyzetté alakítás <b>egyszer s mindenkorra</b> elvégzett változata.</p></div></details>
+    </div>
+
+    <div class="doboz pelda" id="pelda-teljes">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Oldd meg: <span class="math inline">\(2x^{2}-7x+3=0\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(a=2\)</span>, <span class="math inline">\(b=-7\)</span>, <span class="math inline">\(c=3\)</span>, tehát <span class="math inline">\(b^{2}-4ac=49-24=25\)</span>, és <span class="math inline">\(\sqrt{25}=5\)</span>:</p><span class="math display">\[x_{1,2}=\frac{7\pm 5}{4}\ \Rightarrow\ x_{1}=3,\quad x_{2}=\frac{1}{2}.\]</span><p><b>Ellenőrzés:</b> <span class="math inline">\(2\cdot 9-21+3=0\)</span> ✔</p></div></details>
+    </div>
+
+    <h2 id="s4">Amikor nem látszik, hogy másodfokú</h2>
+
+    A feladatok jó része <b>nem</b> rendezett alakban érkezik. Az első lépés mindig ugyanaz: bontsd fel a zárójeleket, vonj össze, és rendezz nullára.
+
+    <div class="doboz pelda" id="pelda-rendezes">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Oldd meg: <span class="math inline">\((x-3)(x+2)=6\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>Kibontva <span class="math inline">\(x^{2}-x-6=6\)</span>, rendezve <span class="math inline">\(x^{2}-x-12=0\)</span>. Itt <span class="math inline">\(D=1+48=49\)</span>, <span class="math inline">\(\sqrt{49}=7\)</span>:</p><span class="math display">\[x_{1,2}=\frac{1\pm 7}{2}\ \Rightarrow\ x_{1}=4,\quad x_{2}=-3.\]</span></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p>A mutálódott kód a <span class="math inline">\((x-3)(x+2)=6\)</span> egyenletre azt írja: „szorzat, tehát <span class="math inline">\(x-3=6\)</span> vagy <span class="math inline">\(x+2=6\)</span>". <b>Hibás!</b> A „szorzat = 0” szabály <b>kizárólag</b> akkor működik, ha a jobb oldalon <b>nulla</b> áll. Hatnak végtelen sok szorzatfelbontása van — nullának viszont csak úgy, ha valamelyik tényező nulla.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A „szorzat = 0” szabály csak nulla jobb oldal mellett használható." data-nem="✘ A jobb oldal nem nulla, ezért előbb ki kell bontani és rendezni: x²−3x−10=0.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik lépés helyes elsőként az <span class="math inline">\((x+1)(x-4)=6\)</span> egyenletnél?</p>
+      <div class="opciok"><button>Kibontás és rendezés nullára.</button><button><span class="math inline">\(x+1=6\)</span> és <span class="math inline">\(x-4=6\)</span> külön megoldása.</button><button>Osztás <span class="math inline">\((x-4)\)</span>-gyel.</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-masodfoku-egyenletek.html#alap-1">🐾 Beast-protokoll <span class="cimke">A 1–6</span></a><a class="sav hulk" href="feladatok-masodfoku-egyenletek.html#kozep-1">🔥 Phoenix-protokoll <span class="cimke">K 1–4</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Wolverine:</b> Megvan a képlet. De nekem nem elég <b>megoldani</b> — előre tudni akarom, <b>mi vár rám</b>, mielőtt belemegyek. Van a képletben egy szám, a gyökjel alatt, ami mindent elárul: hány megoldás lesz, és egyáltalán valósak-e. Ez a következő lecke.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">Témakör-nyitó</span></a>
+      <a class="kov" href="tananyag-diszkriminans.html"><span class="irany">Következő →</span><span class="hova">A diszkrimináns</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

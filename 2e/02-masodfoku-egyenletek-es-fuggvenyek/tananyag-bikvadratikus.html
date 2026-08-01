@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Másodfokúra visszavezethető egyenletek — tananyag | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Másodfokú egyenletek és függvények</a> ›
+  <span class="itt">Másodfokúra visszavezethető egyenletek — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Másodfokúra visszavezethető egyenletek</h1>
+  <p class="alcim">A bikvadratikus egyenlet és a <span class="math inline">\(t=x^{2}\)</span> helyettesítés, a visszahelyettesítés buktatói, valós és komplex gyökök.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az X-Faktor · 4/8</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Wolverine:</b> Ez a kód négyzetre emelt négyzeteket tartalmaz — <span class="math inline">\(x^{4}\)</span>-es tagot. Ne ijedj meg tőle. Ha csak <b>páros</b> kitevők szerepelnek, egyetlen jelöléscserével visszavezetheted arra, amit már tudsz. A neve <b>bikvadratikus</b>, és a leggyakoribb hiba nem a megoldásában, hanem a <b>visszahelyettesítésben</b> van.</p></div>
+
+    <h2 id="s1">A helyettesítés módszere</h2>
+
+    <div class="doboz definicio" id="def-bikvadratikus">
+      <p class="cim"><span class="ikon">📗</span> Bikvadratikus egyenlet</p>
+      <p><b>Bikvadratikusnak</b> nevezzük az</p><span class="math display">\[ax^{4}+bx^{2}+c=0,\qquad a\neq 0\]</span><p>alakú egyenletet. Csak <b>páros</b> kitevők szerepelnek benne — épp ezért lehet másodfokúra visszavezetni.</p>
+    </div>
+
+    <div class="doboz tetel" id="tetel-bikvadratikus">
+      <p class="cim"><span class="ikon">📘</span> Az eljárás</p>
+      <p><b>1.</b> Vezessük be a <span class="math inline">\(t=x^{2}\)</span> új ismeretlent. Ekkor <span class="math inline">\(x^{4}=t^{2}\)</span>, és az egyenlet <span class="math inline">\(at^{2}+bt+c=0\)</span> alakú — <b>közönséges másodfokú</b>.</p><p><b>2.</b> Oldjuk meg <span class="math inline">\(t\)</span>-re.</p><p><b>3.</b> <b>Helyettesítsünk vissza:</b> minden kapott <span class="math inline">\(t\)</span> értékre oldjuk meg az <span class="math inline">\(x^{2}=t\)</span> egyenletet — ez gyökönként <b>két</b> megoldást ad.</p>
+    </div>
+
+    <h2 id="s2">Kidolgozott példák</h2>
+
+    <div class="doboz pelda" id="pelda-bikv-valos">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció — négy valós gyök</p>
+      <p>Oldd meg: <span class="math inline">\(x^{4}-13x^{2}+36=0\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>Legyen <span class="math inline">\(t=x^{2}\)</span>: <span class="math inline">\(t^{2}-13t+36=0\)</span>, ahol <span class="math inline">\(D=169-144=25\)</span>, tehát</p><span class="math display">\[t_{1,2}=\frac{13\pm 5}{2}\ \Rightarrow\ t_{1}=9,\quad t_{2}=4.\]</span><p>Visszahelyettesítve: <span class="math inline">\(x^{2}=9\Rightarrow x=\pm 3\)</span>, és <span class="math inline">\(x^{2}=4\Rightarrow x=\pm 2\)</span>.</p><p><b>Négy megoldás:</b> <span class="math inline">\(-3,\ -2,\ 2,\ 3\)</span>.</p></div></details>
+    </div>
+
+    <div class="doboz pelda" id="pelda-bikv-komplex">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció — komplex gyökökkel</p>
+      <p>Oldd meg a komplex számok halmazán: <span class="math inline">\(x^{4}-5x^{2}-36=0\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(t=x^{2}\)</span>: <span class="math inline">\(t^{2}-5t-36=0\)</span>, <span class="math inline">\(D=25+144=169\)</span>:</p><span class="math display">\[t_{1,2}=\frac{5\pm 13}{2}\ \Rightarrow\ t_{1}=9,\quad t_{2}=-4.\]</span><p><span class="math inline">\(x^{2}=9\Rightarrow x=\pm 3\)</span> (valós), és <span class="math inline">\(x^{2}=-4\Rightarrow x=\pm 2i\)</span> (komplex).</p><p><b>Négy megoldás:</b> <span class="math inline">\(\pm 3\)</span> és <span class="math inline">\(\pm 2i\)</span>.</p></div></details>
+    </div>
+
+    <h2 id="s3">A visszahelyettesítés buktatói</h2>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p>Két klasszikus hiba:</p><ol class="reszfeladatok"><li><b>Megállni <span class="math inline">\(t\)</span>-nél.</b> A kód azt írja: „a megoldások <span class="math inline">\(9\)</span> és <span class="math inline">\(4\)</span>”. Nem — azok a <b>segédismeretlen</b> értékei! A kérdés <span class="math inline">\(x\)</span>-re szólt, tehát vissza kell helyettesíteni.</li><li><b>Elhagyni a ± jelet.</b> Az <span class="math inline">\(x^{2}=9\)</span> egyenletnek <b>két</b> megoldása van, nem egy. Egy bikvadratikus egyenletnek — a komplexeket is beleszámítva — mindig <b>négy</b> gyöke van (a többszörösöket többszörösen számolva).</li></ol>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Ha csak valós megoldást keresünk</p>
+      <p>Ha a feladat kifejezetten a <b>valós</b> megoldásokat kéri, a negatív <span class="math inline">\(t\)</span> értékeket egyszerűen elvetjük (hiszen <span class="math inline">\(x^{2}\ge 0\)</span> minden valós <span class="math inline">\(x\)</span>-re). A komplex számok halmazán viszont ezek is gyököket adnak — mostantól tehát <b>oda kell figyelni, melyik halmazon dolgozunk</b>.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ t = 1 vagy t = −4; csak a t = 1 ad valós x-et: ±1." data-nem="✘ t² + 3t − 4 = 0 → t = 1 vagy t = −4. A t = −4-hez nincs valós x, tehát csak ±1.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Hány megoldása van az <span class="math inline">\(x^{4}+3x^{2}-4=0\)</span> egyenletnek a valós számok halmazán?</p>
+      <div class="opciok"><button>Kettő: <span class="math inline">\(\pm 1\)</span>.</button><button>Négy: <span class="math inline">\(\pm 1\)</span> és <span class="math inline">\(\pm 2\)</span>.</button><button>Egy sem.</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-masodfoku-egyenletek.html#alap-16">🐾 Beast-protokoll <span class="cimke">A 16–18</span></a><a class="sav hulk" href="feladatok-masodfoku-egyenletek.html#kozep-14">🔥 Phoenix-protokoll <span class="cimke">K 14–16</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Cyclops:</b> Wolverine elvégezte a durva munkát — innen én veszem át. Eddig azt kérdeztük: <b>hol nulla</b> a kifejezés. Most azt fogjuk kérdezni: <b>hogyan viselkedik mindenütt</b>. Az optikai sugaraim röppályája ugyanaz a görbe, mint amit a másodfokú függvény rajzol — és ha ismered a görbét, egyetlen pillantással látod azt is, amit az egyenlet csak hosszú számolás után árul el.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-viete-es-szorzatta-alakitas.html"><span class="irany">← Előző</span><span class="hova">Viète-képletek és szorzattá alakítás</span></a>
+      <a class="kov" href="feladatok-masodfoku-egyenletek.html"><span class="irany">Következő →</span><span class="hova">Feladatok — másodfokú egyenletek</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

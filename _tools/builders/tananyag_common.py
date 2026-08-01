@@ -82,7 +82,9 @@ def abra(svg: str, felirat: str = "") -> str:
 
 
 def svg_fuggvenyek(gorbek, xr=(-2.6, 2.6), yr=(-2.6, 4.2), w=360, h=250,
-                   leiras="Függvénygrafikonok koordináta-rendszerben", jelmagyarazat=True):
+                   leiras="Függvénygrafikonok koordináta-rendszerben", jelmagyarazat=True,
+                   pontok=None):
+    """`pontok` = [(x, y, felirat, szin, dx, dy), …] — kiemelt pontok felirattal."""
     """Koordináta-rendszer + görbék inline SVG-ként, SÖTÉT tintával, világos lapon.
 
     `gorbek` = [(f, szin, cimke, [(lo, hi), …] szakaszok), …]
@@ -145,15 +147,24 @@ def svg_fuggvenyek(gorbek, xr=(-2.6, 2.6), yr=(-2.6, 4.2), w=360, h=250,
             if len(pts) > 1:
                 ki.append(f'  <polyline points="{" ".join(pts)}" fill="none" stroke="{szin}" '
                           'stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>')
+    for pt in (pontok or []):
+        px_, py_, felirat, szin = pt[0], pt[1], pt[2], pt[3]
+        dx, dy = (pt[4] if len(pt) > 4 else 8), (pt[5] if len(pt) > 5 else -8)
+        ki.append(f'  <circle cx="{X(px_):.1f}" cy="{Y(py_):.1f}" r="4" fill="{szin}"/>')
+        if felirat:
+            ki.append(f'  <text x="{X(px_) + dx:.1f}" y="{Y(py_) + dy:.1f}" font-size="11" '
+                      f'fill="{szin}" font-weight="600">{felirat}</text>')
     if jelmagyarazat:
         ly = fent + 4
-        szeles = 4 + max(len(c) for _, _, c, _ in gorbek) * 6.6 + 24
-        ki.append(f'  <rect x="{w - 96}" y="{fent - 1}" width="{szeles:.0f}" '
+        szeles = 4 + max(len(c) for _, _, c, _ in gorbek) * 6.6 + 26
+        bx = max(6, w - szeles - 6)          # a doboz mindig beleférjen a rajzterületbe
+        ki.append(f'  <rect x="{bx:.0f}" y="{fent - 1}" width="{szeles:.0f}" '
                   f'height="{len(gorbek) * 17 + 6}" rx="4" fill="#ffffff" fill-opacity=".88"/>')
         for f, szin, cimke, _ in gorbek:
-            ki.append(f'  <line x1="{w - 92}" y1="{ly + 4}" x2="{w - 74}" y2="{ly + 4}" '
+            ki.append(f'  <line x1="{bx + 4:.0f}" y1="{ly + 4}" x2="{bx + 22:.0f}" y2="{ly + 4}" '
                       f'stroke="{szin}" stroke-width="2.4"/>')
-            ki.append(f'  <text x="{w - 69}" y="{ly + 8}" font-size="11" fill="#0f172a">{cimke}</text>')
+            ki.append(f'  <text x="{bx + 27:.0f}" y="{ly + 8}" font-size="11" '
+                      f'fill="#0f172a">{cimke}</text>')
             ly += 17
     ki.append('</svg>')
     return "\n".join(ki)

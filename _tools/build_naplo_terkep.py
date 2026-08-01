@@ -30,6 +30,7 @@ JELVENY = {
     "1e/07-linearis-egyenletek-es-rendszerek": ("🛡️", "A Végső Egyenlet", "a teljes csapat"),
     "1e/08-hasonlosag":                        ("📐", "A Skála Törvénye", "Ant-Man (Hank Pym)"),
     "2e/01-hatvanyozas-gyokvonas-komplex-szamok": ("🧬", "A Képzelet Határa", "Storm · Professor X"),
+    "2e/02-masodfoku-egyenletek-es-fuggvenyek":   ("⚔️", "Az X-Faktor", "Wolverine · Cyclops"),
 }
 
 H1 = re.compile(r"<h1[^>]*>(.*?)</h1>", re.S)

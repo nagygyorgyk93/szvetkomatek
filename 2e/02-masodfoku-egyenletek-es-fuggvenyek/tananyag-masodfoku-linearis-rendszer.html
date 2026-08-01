@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Másodfokú és lineáris egyenletből álló rendszer — tananyag | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Másodfokú egyenletek és függvények</a> ›
+  <span class="itt">Másodfokú és lineáris egyenletből álló rendszer — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Másodfokú és lineáris egyenletből álló rendszer</h1>
+  <p class="alcim">A behelyettesítés módszere, a metszéspontok száma a diszkrimináns alapján, valamint az összeg–szorzat típusú rendszerek Viète-képletekkel.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az X-Faktor · 8/8</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Cyclops:</b> Két feltétel, két egyenlet. Az egyik <b>lineáris</b>, a másik <b>másodfokú</b>. Tavaly két egyenes metszéspontját kerested — most egy egyenes és egy parabola találkozási pontjait. A módszer ugyanaz, mint akkor: <b>behelyettesítés</b>. A különbség csak annyi, hogy a végén másodfokú egyenletet kapsz — és így akár <b>két</b> megoldás is lehet.</p></div>
+
+    <h2 id="s1">A behelyettesítés módszere</h2>
+
+    <div class="doboz tetel" id="tetel-rendszer-menete">
+      <p class="cim"><span class="ikon">📘</span> Az eljárás</p>
+      <p>Egy másodfokú és egy lineáris egyenletből álló rendszer megoldása:</p><p><b>1.</b> A <b>lineáris</b> egyenletből fejezd ki az egyik ismeretlent (azt, amelyiket könnyebb).</p><p><b>2.</b> Helyettesítsd be a másodfokú egyenletbe — így egyismeretlenes másodfokú egyenletet kapsz.</p><p><b>3.</b> Oldd meg, majd <b>minden</b> gyökhöz számold ki a másik ismeretlent is.</p><p><b>4.</b> A megoldás <b>számpárokból</b> áll: <span class="math inline">\((x_{1};y_{1})\)</span> és <span class="math inline">\((x_{2};y_{2})\)</span>.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-rendszer">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Oldd meg a rendszert: <span class="math inline">\(y=x^{2}-2x\)</span> &nbsp;és&nbsp; <span class="math inline">\(y=x-2\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>Mindkét egyenlet <span class="math inline">\(y\)</span>-ra van rendezve, ezért egyenlővé tehetjük őket:</p><span class="math display">\[x^{2}-2x=x-2\ \Rightarrow\ x^{2}-3x+2=0.\]</span><p>Innen <span class="math inline">\(D=9-8=1\)</span>, tehát <span class="math inline">\(x_{1}=1\)</span> és <span class="math inline">\(x_{2}=2\)</span>.</p><p>Visszahelyettesítve a <b>lineáris</b> egyenletbe: <span class="math inline">\(y_{1}=1-2=-1\)</span> és <span class="math inline">\(y_{2}=2-2=0\)</span>.</p><p><b>Megoldás:</b> <span class="math inline">\((1;-1)\)</span> és <span class="math inline">\((2;0)\)</span>.</p></div></details>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 380 270" width="380" height="270" role="img" aria-label="Az y = x² − 2x parabola és az y = x − 2 egyenes két metszéspontja">
+      <defs><marker id="nyil" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="185.6" y1="248.0" x2="185.6" y2="14.0"/>
+        <line x1="242.6" y1="248.0" x2="242.6" y2="14.0"/>
+        <line x1="299.6" y1="248.0" x2="299.6" y2="14.0"/>
+        <line x1="356.6" y1="248.0" x2="356.6" y2="14.0"/>
+        <line x1="26.0" y1="204.9" x2="368.0" y2="204.9"/>
+        <line x1="26.0" y1="174.1" x2="368.0" y2="174.1"/>
+        <line x1="26.0" y1="112.5" x2="368.0" y2="112.5"/>
+        <line x1="26.0" y1="81.7" x2="368.0" y2="81.7"/>
+        <line x1="26.0" y1="50.9" x2="368.0" y2="50.9"/>
+        <line x1="26.0" y1="20.2" x2="368.0" y2="20.2"/>
+      </g>
+      <line x1="26.0" y1="143.3" x2="368.0" y2="143.3" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <line x1="128.6" y1="248.0" x2="128.6" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <text x="364.0" y="157.3" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="120.6" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="185.6" y="156.3" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="123.6" y="116.5" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <polyline points="54.5,11.2 57.1,17.7 59.7,24.0 62.4,30.2 65.0,36.2 67.6,42.2 70.2,48.0 72.9,53.6 75.5,59.2 78.1,64.6 80.7,69.9 83.3,75.0 86.0,80.0 88.6,84.9 91.2,89.7 93.8,94.3 96.5,98.8 99.1,103.2 101.7,107.4 104.3,111.5 106.9,115.5 109.6,119.3 112.2,123.0 114.8,126.6 117.4,130.1 120.0,133.4 122.7,136.6 125.3,139.6 127.9,142.6 130.5,145.4 133.2,148.0 135.8,150.6 138.4,153.0 141.0,155.3 143.6,157.4 146.3,159.4 148.9,161.3 151.5,163.1 154.1,164.7 156.8,166.2 159.4,167.6 162.0,168.8 164.6,169.9 167.2,170.9 169.9,171.8 172.5,172.5 175.1,173.1 177.7,173.5 180.4,173.8 183.0,174.0 185.6,174.1 188.2,174.0 190.8,173.8 193.5,173.5 196.1,173.1 198.7,172.5 201.3,171.8 204.0,170.9 206.6,169.9 209.2,168.8 211.8,167.6 214.4,166.2 217.1,164.7 219.7,163.1 222.3,161.3 224.9,159.4 227.6,157.4 230.2,155.3 232.8,153.0 235.4,150.6 238.0,148.0 240.7,145.4 243.3,142.6 245.9,139.6 248.5,136.6 251.2,133.4 253.8,130.1 256.4,126.6 259.0,123.0 261.6,119.3 264.3,115.5 266.9,111.5 269.5,107.4 272.1,103.2 274.7,98.8 277.4,94.3 280.0,89.7 282.6,84.9 285.2,80.0 287.9,75.0 290.5,69.9 293.1,64.6 295.7,59.2 298.3,53.6 301.0,48.0 303.6,42.2 306.2,36.2 308.8,30.2 311.5,24.0 314.1,17.7 316.7,11.2" fill="none" stroke="#047857" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="43.1,251.1 46.2,249.4 49.4,247.7 52.5,246.0 55.6,244.3 58.8,242.6 61.9,240.9 65.0,239.2 68.2,237.5 71.3,235.8 74.5,234.1 77.6,232.5 80.7,230.8 83.9,229.1 87.0,227.4 90.1,225.7 93.3,224.0 96.4,222.3 99.5,220.6 102.7,218.9 105.8,217.2 108.9,215.5 112.1,213.8 115.2,212.1 118.3,210.4 121.5,208.7 124.6,207.1 127.7,205.4 130.9,203.7 134.0,202.0 137.2,200.3 140.3,198.6 143.4,196.9 146.6,195.2 149.7,193.5 152.8,191.8 156.0,190.1 159.1,188.4 162.2,186.7 165.4,185.0 168.5,183.3 171.6,181.6 174.8,180.0 177.9,178.3 181.0,176.6 184.2,174.9 187.3,173.2 190.4,171.5 193.6,169.8 196.7,168.1 199.8,166.4 203.0,164.7 206.1,163.0 209.3,161.3 212.4,159.6 215.5,157.9 218.7,156.2 221.8,154.6 224.9,152.9 228.1,151.2 231.2,149.5 234.3,147.8 237.5,146.1 240.6,144.4 243.7,142.7 246.9,141.0 250.0,139.3 253.1,137.6 256.3,135.9 259.4,134.2 262.6,132.5 265.7,130.8 268.8,129.2 272.0,127.5 275.1,125.8 278.2,124.1 281.4,122.4 284.5,120.7 287.6,119.0 290.8,117.3 293.9,115.6 297.0,113.9 300.2,112.2 303.3,110.5 306.4,108.8 309.6,107.1 312.7,105.4 315.8,103.8 319.0,102.1 322.1,100.4 325.2,98.7 328.4,97.0 331.5,95.3 334.7,93.6 337.8,91.9 340.9,90.2 344.1,88.5 347.2,86.8 350.3,85.1 353.5,83.4 356.6,81.7" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="185.6" cy="174.1" r="4" fill="#8b5cf6"/>
+      <text x="135.6" y="190.1" font-size="11" fill="#8b5cf6" font-weight="600">(1; −1)</text>
+      <circle cx="242.6" cy="143.3" r="4" fill="#8b5cf6"/>
+      <text x="250.6" y="135.3" font-size="11" fill="#8b5cf6" font-weight="600">(2; 0)</text>
+      <rect x="271" y="13" width="103" height="40" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="275" y1="22" x2="293" y2="22" stroke="#047857" stroke-width="2.4"/>
+      <text x="298" y="26" font-size="11" fill="#0f172a">y = x² − 2x</text>
+      <line x1="275" y1="39" x2="293" y2="39" stroke="#3b82f6" stroke-width="2.4"/>
+      <text x="298" y="43" font-size="11" fill="#0f172a">y = x − 2</text>
+    </svg>
+    </div>
+    <p class="cap">A rendszer megoldásai a két görbe <b>metszéspontjai</b>. Az algebrai számolás és a kép ugyanazt mondja.</p>
+
+    <h2 id="s2">Hány megoldás lehet?</h2>
+
+    A behelyettesítés után másodfokú egyenletet kapunk — és annak a diszkriminánsa dönti el a megoldások számát. Geometriailag: hányszor metszi az egyenes a parabolát?
+
+    <div class="doboz tetel" id="tetel-rendszer-esetek">
+      <p class="cim"><span class="ikon">📘</span> Három eset</p>
+      <p><b><span class="math inline">\(D&gt;0\)</span>:</b> az egyenes <b>két pontban</b> metszi a parabolát → két megoldáspár.</p><p><b><span class="math inline">\(D=0\)</span>:</b> az egyenes <b>érinti</b> a parabolát → egy (kettős) megoldás.</p><p><b><span class="math inline">\(D&lt;0\)</span>:</b> nincs közös pontjuk → a rendszernek <b>nincs valós megoldása</b>.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-metszespontok">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Hány közös pontja van az <span class="math inline">\(y=x^{2}\)</span> parabolának <b>a)</b> az <span class="math inline">\(y=2x-1\)</span>, <b>b)</b> az <span class="math inline">\(y=2x-5\)</span> egyenessel?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(x^{2}=2x-1\Rightarrow x^{2}-2x+1=0\)</span>, <span class="math inline">\(D=4-4=0\)</span> → <b>egy</b> közös pont (<span class="math inline">\(x=1\)</span>, <span class="math inline">\(y=1\)</span>): az egyenes <b>érinti</b> a parabolát.</p><p><b>b)</b> <span class="math inline">\(x^{2}=2x-5\Rightarrow x^{2}-2x+5=0\)</span>, <span class="math inline">\(D=4-20=-16&lt;0\)</span> → <b>nincs</b> valós közös pont; az egyenes elhalad a parabola mellett.</p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ x² + 1 = x → x² − x + 1 = 0, ahol D = 1 − 4 = −3 < 0." data-nem="✘ x² − x + 1 = 0 diszkriminánsa −3 < 0, tehát nincs valós metszéspont.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Hány valós megoldása van az <span class="math inline">\(y=x^{2}+1\)</span>, <span class="math inline">\(y=x\)</span> rendszernek?</p>
+      <div class="opciok"><button>Egy sem.</button><button>Egy.</button><button>Kettő.</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Ha összeg és szorzat van megadva</h2>
+
+    Van egy különösen elegáns eset, ahol a Viète-képletek jönnek segítségül: ha a két ismeretlen <b>összegét</b> és <b>szorzatát</b> ismerjük.
+
+    <div class="doboz pelda" id="pelda-osszeg-szorzat">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Oldd meg: <span class="math inline">\(x+y=7\)</span> &nbsp;és&nbsp; <span class="math inline">\(x\cdot y=12\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>A Viète-képletek szerint <span class="math inline">\(x\)</span> és <span class="math inline">\(y\)</span> épp annak a másodfokú egyenletnek a gyökei, amelynek a gyökök összege <span class="math inline">\(7\)</span>, a szorzatuk <span class="math inline">\(12\)</span>:</p><span class="math display">\[t^{2}-7t+12=0.\]</span><p>Innen <span class="math inline">\(D=49-48=1\)</span>, tehát <span class="math inline">\(t_{1}=4\)</span> és <span class="math inline">\(t_{2}=3\)</span>.</p><p><b>Megoldás:</b> <span class="math inline">\((3;4)\)</span> és <span class="math inline">\((4;3)\)</span> — a rendszer szimmetrikus, ezért a két szám <b>felcserélhető</b>.</p></div></details>
+    </div>
+
+    <div class="doboz pelda" id="pelda-vegyes-rendszer">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció — vegyes rendszer</p>
+      <p>Oldd meg: <span class="math inline">\(x-y=2\)</span> &nbsp;és&nbsp; <span class="math inline">\(x^{2}+y^{2}=10\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>A lineáris egyenletből <span class="math inline">\(x=y+2\)</span>. Behelyettesítve:</p><span class="math display">\[(y+2)^{2}+y^{2}=10\ \Rightarrow\ 2y^{2}+4y-6=0\ \Rightarrow\ y^{2}+2y-3=0.\]</span><p>Innen <span class="math inline">\(y_{1}=1\)</span> és <span class="math inline">\(y_{2}=-3\)</span>, tehát <span class="math inline">\(x_{1}=3\)</span> és <span class="math inline">\(x_{2}=-1\)</span>.</p><p><b>Megoldás:</b> <span class="math inline">\((3;1)\)</span> és <span class="math inline">\((-1;-3)\)</span>. <b>Ellenőrzés:</b> <span class="math inline">\(9+1=10\)</span> ✔ és <span class="math inline">\(1+9=10\)</span> ✔</p></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p>A leggyakoribb hiba: <b>megállni <span class="math inline">\(x\)</span>-nél</b>. A rendszer megoldása nem szám, hanem <b>számpár</b> — minden <span class="math inline">\(x\)</span>-hez ki kell számolni a hozzá tartozó <span class="math inline">\(y\)</span>-t. És vigyázz: a visszahelyettesítést a <b>lineáris</b> egyenletbe végezd, mert a másodfokúból két <span class="math inline">\(y\)</span> is jöhetne, amelyek közül csak az egyik jó.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A t² − 5t + 6 = 0 egyenlet gyökei 2 és 3; a rendszer szimmetrikus." data-nem="✘ Írd fel a t² − 5t + 6 = 0 egyenletet: gyökei 2 és 3, tehát mindkét sorrend megoldás.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Az <span class="math inline">\(x+y=5\)</span>, <span class="math inline">\(xy=6\)</span> rendszer megoldásai:</p>
+      <div class="opciok"><button><span class="math inline">\((2;3)\)</span> és <span class="math inline">\((3;2)\)</span></button><button>Csak <span class="math inline">\((2;3)\)</span></button><button><span class="math inline">\((1;6)\)</span> és <span class="math inline">\((6;1)\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-egyenlotlensegek-es-rendszerek.html#alap-7">🐾 Beast-protokoll <span class="cimke">A 7–12</span></a><a class="sav hulk" href="feladatok-egyenlotlensegek-es-rendszerek.html#kozep-6">🔥 Phoenix-protokoll <span class="cimke">K 6–10</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Beast:</b> Kadétok, jó munka — a Parabola-csapást elhárítottuk. De miközben ti a röppályákkal foglalkoztatok, én a laborban mértem valamit, és nem tetszik: Sinister vírusa nem másodfokon terjed többé. <b>Megduplázódik</b> minden lépésben. Az ilyen növekedést a másodfokú függvény már nem írja le — sokkal gyorsabb annál. A következő küldetés az <b>Evolúciós Ugrás</b>, és a fegyverünk az exponenciális függvény lesz.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-masodfoku-egyenlotlensegek.html"><span class="irany">← Előző</span><span class="hova">Másodfokú egyenlőtlenségek</span></a>
+      <a class="kov" href="feladatok-egyenlotlensegek-es-rendszerek.html"><span class="irany">Következő →</span><span class="hova">Feladatok — egyenlőtlenségek és rendszerek</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

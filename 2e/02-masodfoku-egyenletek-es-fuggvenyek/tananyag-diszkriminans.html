@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A diszkrimináns — tananyag | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Másodfokú egyenletek és függvények</a> ›
+  <span class="itt">A diszkrimináns — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A diszkrimináns</h1>
+  <p class="alcim">A <span class="math inline">\(D=b^{2}-4ac\)</span> szám és a megoldások természete, paraméteres feladatok, valamint a komplex gyökpárok.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az X-Faktor · 2/8</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Wolverine:</b> A jó felderítő nem akkor tudja meg, hogy csapdába sétált, amikor már benne van. A megoldóképlet gyökjele alatt álló szám — a <b>diszkrimináns</b> — egyetlen számolással megmondja, mi vár rád: két különböző megoldás, egyetlen kettős, vagy olyan gyökök, amelyek kiléptek a valós világból. Sinister paraméteres egyenletei pontosan ezen a ponton támadnak.</p></div>
+
+    A „diszkriminál” szó itt a régi értelmében szerepel: <b>megkülönböztet</b>. Ez a szám különbözteti meg egymástól a három lehetséges esetet.
+
+    <h2 id="s1">Mi a diszkrimináns?</h2>
+
+    <div class="doboz definicio" id="def-diszkriminans">
+      <p class="cim"><span class="ikon">📗</span> Diszkrimináns</p>
+      <p>Az <span class="math inline">\(ax^{2}+bx+c=0\)</span> egyenlet <b>diszkriminánsa</b></p><span class="math display">\[D=b^{2}-4ac.\]</span><p>A megoldóképlet ezzel <span class="math inline">\(x_{1,2}=\dfrac{-b\pm\sqrt{D}}{2a}\)</span> alakot ölt — látszik, hogy minden a <span class="math inline">\(\sqrt{D}\)</span>-n múlik.</p>
+    </div>
+
+    <h2 id="s2">A megoldások természete</h2>
+
+    <div class="doboz tetel" id="tetel-megoldasok-termeszete">
+      <p class="cim"><span class="ikon">📘</span> Három eset</p>
+      <p><b><span class="math inline">\(D&gt;0\)</span>:</b> <span class="math inline">\(\sqrt{D}\)</span> pozitív valós szám → <b>két különböző valós</b> megoldás.</p><p><b><span class="math inline">\(D=0\)</span>:</b> <span class="math inline">\(\sqrt{D}=0\)</span> → <b>egy (kettős)</b> valós megoldás, <span class="math inline">\(x_{1}=x_{2}=-\dfrac{b}{2a}\)</span>.</p><p><b><span class="math inline">\(D&lt;0\)</span>:</b> negatív szám gyöke a valósban nincs → <b>két konjugált komplex</b> megoldás. (Az I. témakör után ez már nem akadály!)</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-harom-eset">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció — mindhárom eset</p>
+      <p>Vizsgáld meg és oldd meg: <b>a)</b> <span class="math inline">\(x^{2}-6x+5=0\)</span>; <b>b)</b> <span class="math inline">\(x^{2}-6x+9=0\)</span>; <b>c)</b> <span class="math inline">\(x^{2}-6x+13=0\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(D=36-20=16&gt;0\)</span> → <span class="math inline">\(x_{1,2}=\dfrac{6\pm 4}{2}\)</span>, tehát <span class="math inline">\(x_{1}=5\)</span>, <span class="math inline">\(x_{2}=1\)</span>.</p><p><b>b)</b> <span class="math inline">\(D=36-36=0\)</span> → <span class="math inline">\(x_{1}=x_{2}=3\)</span> (kettős gyök).</p><p><b>c)</b> <span class="math inline">\(D=36-52=-16&lt;0\)</span> → <span class="math inline">\(\sqrt{-16}\)</span> helyett <span class="math inline">\(4i\)</span>-vel számolunk: <span class="math inline">\(x_{1,2}=\dfrac{6\pm 4i}{2}=3\pm 2i\)</span>.</p><p>Figyeld meg: a három egyenlet csak a konstans tagban különbözik — mégis három egészen más eredmény.</p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ D = 16 − 16 = 0, tehát x = −2 kettős gyök." data-nem="✘ D = 4² − 4·1·4 = 0 → egyetlen (kettős) valós gyök, x = −2.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi az <span class="math inline">\(x^{2}+4x+4=0\)</span> egyenlet diszkriminánsa, és mit jelent?</p>
+      <div class="opciok"><button><span class="math inline">\(D=0\)</span> — egy kettős valós gyök.</button><button><span class="math inline">\(D=16\)</span> — két valós gyök.</button><button><span class="math inline">\(D=-16\)</span> — két komplex gyök.</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Paraméteres feladatok</h2>
+
+    A vizsgahelyzetek kedvence: az egyenletben egy <b>paraméter</b> szerepel, és arra kérdeznek rá, mikor hányféle megoldás van. A recept mindig ugyanaz: <b>írd fel <span class="math inline">\(D\)</span>-t a paraméterrel</b>, aztán oldd meg a <span class="math inline">\(D&gt;0\)</span>, <span class="math inline">\(D=0\)</span>, <span class="math inline">\(D&lt;0\)</span> egyenlőtlenségeket.
+
+    <div class="doboz pelda" id="pelda-parameteres">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Az <span class="math inline">\(m\)</span> paraméter mely értékeire van az <span class="math inline">\(x^{2}-4x+m=0\)</span> egyenletnek két különböző valós megoldása? Mikor van egy kettős, és mikor komplex?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(D=(-4)^{2}-4\cdot 1\cdot m=16-4m\)</span>.</p><p><span class="math inline">\(16-4m&gt;0\iff m&lt;4\)</span> → két különböző valós megoldás.</p><p><span class="math inline">\(16-4m=0\iff m=4\)</span> → egy kettős megoldás (<span class="math inline">\(x=2\)</span>).</p><p><span class="math inline">\(16-4m&lt;0\iff m&gt;4\)</span> → két konjugált komplex megoldás.</p></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p>Ha a paraméter a <b>főegyütthatóban</b> áll, egy külön esetet is meg kell vizsgálni. Például az <span class="math inline">\((m-2)x^{2}+4x+1=0\)</span> egyenlet <b>nem másodfokú</b>, ha <span class="math inline">\(m=2\)</span> — akkor a <span class="math inline">\(4x+1=0\)</span> elsőfokú egyenletet kapjuk, egyetlen megoldással (<span class="math inline">\(x=-\tfrac14\)</span>). A diszkriminánst tehát csak <span class="math inline">\(m\neq 2\)</span> mellett szabad használni.</p><p><b>Ellenőrző kérdés minden paraméteres feladatnál:</b> hol áll a paraméter? Ha a főegyütthatóban, akkor van egy „elfajuló” eset is.</p>
+    </div>
+
+    <h2 id="s4">Amikor a gyökök komplexek</h2>
+
+    A <span class="math inline">\(D&lt;0\)</span> eset korábban azt jelentette: „nincs megoldás”. Az I. témakör után már tudjuk, hogy <b>van</b> — csak nem a valós számok között.
+
+    <div class="doboz pelda" id="pelda-komplex-gyokok">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Oldd meg a komplex számok halmazán: <span class="math inline">\(x^{2}+2x+5=0\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(D=4-20=-16\)</span>. A <span class="math inline">\(\sqrt{-16}\)</span> helyett írjuk azt, hogy <span class="math inline">\(4i\)</span> (hiszen <span class="math inline">\((4i)^{2}=-16\)</span>):</p><span class="math display">\[x_{1,2}=\frac{-2\pm 4i}{2}=-1\pm 2i.\]</span><p><b>Ellenőrzés:</b> <span class="math inline">\((-1+2i)^{2}+2(-1+2i)+5=(1-4i-4)+(-2+4i)+5=0\)</span> ✔</p></div></details>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> A gyökök mindig párban járnak</p>
+      <p>Ha egy <b>valós együtthatós</b> másodfokú egyenletnek van komplex gyöke, akkor a másik gyök annak <b>konjugáltja</b>: ha <span class="math inline">\(x_{1}=p+qi\)</span>, akkor <span class="math inline">\(x_{2}=p-qi\)</span>. Ez a megoldóképletből azonnal látszik — a <span class="math inline">\(\pm\)</span> jel csak a képzetes rész előjelét fordítja meg.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ Valós együtthatóknál a komplex gyökök konjugált párt alkotnak." data-nem="✘ A megoldóképlet ± jele csak a képzetes rész előjelét váltja: 1 − 3i.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Az <span class="math inline">\(x^{2}-2x+10=0\)</span> egyenlet egyik gyöke <span class="math inline">\(1+3i\)</span>. Mi a másik?</p>
+      <div class="opciok"><button><span class="math inline">\(1-3i\)</span></button><button><span class="math inline">\(-1-3i\)</span></button><button><span class="math inline">\(-1+3i\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-masodfoku-egyenletek.html#alap-7">🐾 Beast-protokoll <span class="cimke">A 7–10</span></a><a class="sav hulk" href="feladatok-masodfoku-egyenletek.html#kozep-5">🔥 Phoenix-protokoll <span class="cimke">K 5–8</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Wolverine:</b> Most jön a rész, amit a legjobban szeretek. Kiderül, hogy a gyököket <b>nem is kell kiszámolni</b> ahhoz, hogy tudjunk róluk. Az összegük és a szorzatuk közvetlenül az együtthatókból leolvasható — és ezzel az egész egyenletet darabokra lehet szedni.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-masodfoku-egyenlet.html"><span class="irany">← Előző</span><span class="hova">A másodfokú egyenlet</span></a>
+      <a class="kov" href="tananyag-viete-es-szorzatta-alakitas.html"><span class="irany">Következő →</span><span class="hova">Viète-képletek és szorzattá alakítás</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
