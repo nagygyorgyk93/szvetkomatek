@@ -9,11 +9,14 @@
 (function () {
   'use strict';
 
-  var lassit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function enged() {
-    if (lassit) return false;
-    return !window.Naplo || window.Naplo.effektBe();
-  }
+  /* A rendszer „mozgás csökkentése” beállítását CSAK alapértelmezésnek vesszük:
+     a Küldetésnapló kapcsolója felülírja (ha a kadét bekapcsolva hagyja, látja az
+     effekteket). A `html.effekt-be` osztály jelzi a CSS-nek, hogy a mozgáscsökkentő
+     médiablokk ne fojtsa el az animációkat. */
+  function enged() { return !window.Naplo || window.Naplo.effektBe(); }
+  function jelzes() { document.documentElement.classList.toggle('effekt-be', enged()); }
+  jelzes();
+  document.addEventListener('naplo-kesz', jelzes);
 
   /* ---------- réteg a látványelemeknek ---------- */
   var reteg = null;
@@ -90,7 +93,7 @@
 
   /* ---------- 4) beúszás görgetéskor ---------- */
   function beuszas() {
-    if (lassit || !window.IntersectionObserver) return;
+    if (!enged() || !window.IntersectionObserver) return;
     var cel = document.querySelectorAll('.kartya, .doboz, .feladat, .kviz, .brief, .talalat, .naplo-sor');
     if (!cel.length || cel.length > 400) return;      /* nagyon hosszú lapon kihagyjuk */
     document.documentElement.classList.add('anim-be');

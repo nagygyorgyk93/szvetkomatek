@@ -535,6 +535,7 @@ table.tt-table .res{font-weight:800;background:rgba(16,185,129,0.15);}
   width:max-content;cursor:pointer;font-size:.8rem;color:var(--szurke-600);font-family:var(--fej);
   user-select:none;transition:color .2s;}
 .fel-pipa:hover{color:var(--marvel-green-neon);}
+.fel-pipa .pont{color:var(--zold-500);font-weight:700;}
 .feladat .fel-pipa{margin-top:.6rem;padding-top:.4rem;border-top:1px dashed var(--marvel-glass-border);}
 .fel-pipa input{accent-color:var(--zold-500);width:1rem;height:1rem;cursor:pointer;}
 .feladat .fejsor{gap:.6rem;}
@@ -672,11 +673,15 @@ html.anim-be .brief.lathato::after{content:'';position:absolute;inset:0;pointer-
 
 /* ---------- Akadálymentesség + mozgásérzékenység ---------- */
 :focus-visible{outline:2px solid var(--marvel-green-neon);outline-offset:2px;border-radius:6px;}
+/* A rendszer mozgáscsökkentő beállítása alapból mindent lefog — DE ha a kadét a
+   Küldetésnaplóban bekapcsolva hagyta a látványelemeket (html.effekt-be), akkor
+   nem szólunk bele. */
 @media (prefers-reduced-motion: reduce){
-  html{scroll-behavior:auto;}
-  *,*::before,*::after{transition-duration:.001ms !important;animation-duration:.001ms !important;
+  html:not(.effekt-be){scroll-behavior:auto;}
+  html:not(.effekt-be) *,html:not(.effekt-be) *::before,html:not(.effekt-be) *::after{
+    transition-duration:.001ms !important;animation-duration:.001ms !important;
     animation-iteration-count:1 !important;}
-  a.kartya:hover{transform:none;}
+  html:not(.effekt-be) a.kartya:hover{transform:none;}
 }
 
 /* ---------- EGYEDI TECH GÖRDÍTŐSÁV (SCROLLBAR) ---------- */

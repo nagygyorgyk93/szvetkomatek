@@ -15,14 +15,23 @@
 
   var ROOT   = document.documentElement.getAttribute('data-root') || '.';
   var KULCS  = 'szvetko-naplo-v1';
-  var PONT   = { oldal: 10, kviz: 5, feladat: 2, projekt: 30 };
+  /* A feladatok pontja a NEHÉZSÉGGEL nő; a szintet a kártya osztálya adja
+     (a gyakorló blokkok kártyáin nincs szint → alapszintnek számítanak). */
+  var FPONT  = { a: 2, k: 3, n: 5, j: 5, g: 2 };
+  var PONT   = { oldal: 10, kviz: 5, feladat: FPONT, projekt: 30 };
+  function szintKod(el) {
+    var c = el.classList;
+    return c.contains('nehez') ? 'n' : c.contains('kozep') ? 'k'
+         : c.contains('joker') ? 'j' : c.contains('alap') ? 'a' : 'g';
+  }
+  function fpont(v) { return FPONT[v] || FPONT.g; }
   var RANGOK = [
     { tol: 0,    nev: 'Újonc',       jel: '🔰' },
-    { tol: 150,  nev: 'Kadét',       jel: '🎖️' },
-    { tol: 420,  nev: 'Ügynök',      jel: '🛡️' },
-    { tol: 800,  nev: 'Elit ügynök', jel: '⚡' },
-    { tol: 1300, nev: 'Bosszúálló',  jel: '🦸' },
-    { tol: 1850, nev: 'Legenda',     jel: '🏆' }
+    { tol: 180,  nev: 'Kadét',       jel: '🎖️' },
+    { tol: 500,  nev: 'Ügynök',      jel: '🛡️' },
+    { tol: 950,  nev: 'Elit ügynök', jel: '⚡' },
+    { tol: 1550, nev: 'Bosszúálló',  jel: '🦸' },
+    { tol: 2200, nev: 'Legenda',     jel: '🏆' }
   ];
 
   /* ---------- tároló ---------- */
@@ -36,15 +45,22 @@
         A = b;
         ['oldalak', 'projektek', 'feladatok', 'kvizek'].forEach(function (k) { A[k] = A[k] || {}; });
         A.beall = A.beall || { effekt: 1 };
+        /* korábbi verzió: a feladat értéke időbélyeg volt → alapszintnek vesszük */
+        for (var f in A.feladatok) if (typeof A.feladatok[f] !== 'string') A.feladatok[f] = 'a';
       }
     }
   } catch (e) { /* privát mód / letiltott tároló → memóriában marad */ }
 
   function ment() { try { localStorage.setItem(KULCS, JSON.stringify(A)); } catch (e) {} }
   function db(o) { return Object.keys(o || {}).length; }
+  function feladatXp(elotag) {
+    var s = 0;
+    for (var k in A.feladatok) if (!elotag || k.indexOf(elotag) === 0) s += fpont(A.feladatok[k]);
+    return s;
+  }
   function xp() {
     return db(A.oldalak) * PONT.oldal + db(A.projektek) * PONT.projekt +
-           db(A.feladatok) * PONT.feladat + db(A.kvizek) * PONT.kviz;
+           feladatXp(null) + db(A.kvizek) * PONT.kviz;
   }
   function rang(p) {
     var i = 0;
@@ -129,11 +145,13 @@
     else tartalom.appendChild(sav);
 
     function rajzol() {
-      var kesz = !!tar[OK];
+      var kesz = !!tar[OK], p = projekt ? PONT.projekt : PONT.oldal;
       gomb.classList.toggle('kesz', kesz);
       gomb.textContent = kesz ? '✅ Teljesítve' : (projekt ? '🎯 Küldetés teljesítve' : '✅ Egység teljesítve');
-      cimke.textContent = kesz ? ('+' + (projekt ? PONT.projekt : PONT.oldal) + ' XP a naplódban')
-                               : 'Ha végeztél, jelöld be — vagy görgesd végig a lapot.';
+      cimke.textContent = kesz
+        ? '+' + p + ' XP a naplódban — a gombra kattintva visszavonhatod.'
+        : (projekt ? 'A terepküldetést magadnak kell bejelölnöd, ha elkészültél.'
+                   : 'Ha végeztél, jelöld be — vagy olvasd végig a lapot.');
     }
     function jelol(auto) {
       if (tar[OK]) return;
@@ -146,15 +164,20 @@
     });
     rajzol();
 
-    /* automatikus jelölés a lap aljához érve */
-    if (!tar[OK]) {
+    /* Automatikus jelölés — CSAK tananyagnál és összefoglalónál (a terepküldetést
+       mindig kézzel kell bejelölni). Feltétel: a lap 90%-áig eljutott ÉS legalább
+       25 másodpercet töltött rajta — így egy rövid lap nem pipálódik ki azonnal. */
+    if (!projekt && !tar[OK]) {
+      var indulas = Date.now();
       var fig = function () {
+        if (tar[OK]) { vege(); return; }
         var h = document.documentElement;
-        var arany = (h.scrollTop + h.clientHeight) / h.scrollHeight;
-        if (arany > 0.9) { jelol(true); window.removeEventListener('scroll', fig); }
+        var arany = (h.scrollTop + h.clientHeight) / Math.max(1, h.scrollHeight);
+        if (arany > 0.9 && Date.now() - indulas > 25000) { jelol(true); vege(); }
       };
+      var ora = setInterval(fig, 4000);
+      function vege() { clearInterval(ora); window.removeEventListener('scroll', fig); }
       window.addEventListener('scroll', fig, { passive: true });
-      setTimeout(fig, 1200);   /* rövid lapnál nincs mit görgetni */
     }
   }
 
@@ -163,16 +186,17 @@
     var kartyak = document.querySelectorAll('article.feladat[id]');
     if (!kartyak.length) return;
     kartyak.forEach(function (k) {
-      var azon = OK + '#' + k.id;
+      var azon = OK + '#' + k.id, kod = szintKod(k), ero = fpont(kod);
       var cimke = document.createElement('label');
       cimke.className = 'fel-pipa';
-      cimke.title = 'Megoldottam';
+      cimke.title = 'Megoldottam (+' + ero + ' XP)';
       var be = document.createElement('input');
       be.type = 'checkbox'; be.checked = !!A.feladatok[azon];
-      var sz = document.createElement('span'); sz.textContent = 'megoldva';
+      var sz = document.createElement('span');
+      sz.innerHTML = 'megoldva <span class="pont">+' + ero + ' XP</span>';
       cimke.appendChild(be); cimke.appendChild(sz);
       be.addEventListener('change', function () {
-        if (be.checked) { A.feladatok[azon] = Date.now(); ment(); jutalom(cimke, PONT.feladat); }
+        if (be.checked) { A.feladatok[azon] = kod; ment(); jutalom(cimke, ero); }
         else { delete A.feladatok[azon]; ment(); chipFrissit(); }
         k.classList.toggle('megoldva', be.checked);
       });
@@ -210,7 +234,7 @@
   }
   function teljesitheto(t) {
     return t.db.oldal * PONT.oldal + t.db.projekt * PONT.projekt +
-           t.db.kviz * PONT.kviz + t.db.feladat * PONT.feladat;
+           t.db.kviz * PONT.kviz + (t.db.feladat_xp || t.db.feladat * FPONT.a);
   }
   function elert(t) {
     var p = 0, i;
@@ -220,7 +244,7 @@
       else if (A.oldalak[o.u]) p += PONT.oldal;
     }
     var elotag = t.url.replace(/index\.html$/, '');
-    for (var k in A.feladatok) if (k.indexOf(elotag) === 0) p += PONT.feladat;
+    p += feladatXp(elotag);
     for (var k2 in A.kvizek) if (k2.indexOf(elotag) === 0) p += PONT.kviz;
     return p;
   }
