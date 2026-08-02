@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Taktikai memóriakártya | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="digitalis">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Trigonometrikus függvények</a> ›
+  <span class="itt">Taktikai memóriakártya</span>
+</nav>
+<div class="hero">
+  <h1>Taktikai memóriakártya</h1>
+  <p class="alcim">A Fázisugrás minden képlete, protokollja és tipikus csapdája egy helyen — ismétléshez, dolgozat előtti átfutáshoz, nyomtatáshoz.</p>
+  <div class="meta-sor"><span class="chip ora">összefoglaló</span><span class="chip">A Fázisugrás · összefoglaló</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📇 Szögmérés és a trigonometrikus kör</h2>
+
+    <p><b>Forgásszög:</b> pozitív irány az óramutatóval <b>ellentétes</b>. Az <span class="math inline">\(\alpha\)</span> és az <span class="math inline">\(\alpha+k\cdot 360^\circ\)</span> ugyanaz az irány, tehát minden szögfüggvényük megegyezik (<a href="tananyag-szogmeres-es-radian.html#tetel-tarsszogek">→</a>).</p>
+
+    <p><b>Radián:</b> <span class="math inline">\(180^\circ=\pi\)</span>. Fokból radiánba: <span class="math inline">\(\cdot\tfrac{\pi}{180}\)</span>; radiánból fokba: a <span class="math inline">\(\pi\)</span> helyére <span class="math inline">\(180^\circ\)</span> (<a href="tananyag-szogmeres-es-radian.html#tetel-atvaltas">→</a>).</p><div class="tblwrap"><table><tr><th>fok</th><td><span class="math inline">\(30^\circ\)</span></td><td><span class="math inline">\(45^\circ\)</span></td><td><span class="math inline">\(60^\circ\)</span></td><td><span class="math inline">\(90^\circ\)</span></td><td><span class="math inline">\(180^\circ\)</span></td><td><span class="math inline">\(270^\circ\)</span></td><td><span class="math inline">\(360^\circ\)</span></td></tr><tr><th>rad</th><td><span class="math inline">\(\tfrac{\pi}{6}\)</span></td><td><span class="math inline">\(\tfrac{\pi}{4}\)</span></td><td><span class="math inline">\(\tfrac{\pi}{3}\)</span></td><td><span class="math inline">\(\tfrac{\pi}{2}\)</span></td><td><span class="math inline">\(\pi\)</span></td><td><span class="math inline">\(\tfrac{3\pi}{2}\)</span></td><td><span class="math inline">\(2\pi\)</span></td></tr></table></div>
+
+    <p><b>Definíció az egységkörön:</b> <span class="math inline">\(P(\cos\alpha;\sin\alpha)\)</span> — előbb a koszinusz! <span class="math inline">\(\operatorname{tg}\alpha=\tfrac{\sin\alpha}{\cos\alpha}\)</span>, <span class="math inline">\(\operatorname{ctg}\alpha=\tfrac{\cos\alpha}{\sin\alpha}\)</span> (<a href="tananyag-trigonometrikus-kor.html#def-trigonometrikus-kor">→</a>). Ebből azonnal: <span class="math inline">\(-1\le\sin\alpha\le 1\)</span> és <span class="math inline">\(-1\le\cos\alpha\le 1\)</span>.</p>
+
+    <p><b>Előjelek:</b> I. mind + · II. csak <span class="math inline">\(\sin\)</span> · III. csak <span class="math inline">\(\operatorname{tg}\)</span> és <span class="math inline">\(\operatorname{ctg}\)</span> · IV. csak <span class="math inline">\(\cos\)</span> (<a href="tananyag-trigonometrikus-kor.html#tetel-eljelek">→</a>).</p>
+
+    <p><b>Jellegzetes szögek:</b> a <span class="math inline">\(\sin\)</span> sora <span class="math inline">\(0,\ \tfrac12,\ \tfrac{\sqrt2}{2},\ \tfrac{\sqrt3}{2},\ 1\)</span>; a <span class="math inline">\(\cos\)</span> ugyanez visszafelé (<a href="tananyag-trigonometrikus-kor.html#tetel-jellegzetes">→</a>).</p>
+
+    <p><b>Visszavezetés:</b> ① teljes fordulatok le · ② alapszög az I. negyedben · ③ előjel a negyed szerint. <span class="math inline">\(\sin(-\alpha)=-\sin\alpha\)</span> (páratlan), <span class="math inline">\(\cos(-\alpha)=\cos\alpha\)</span> (páros) (<a href="tananyag-visszavezetes.html#tetel-visszavezetes">→</a>).</p>
+
+    <h2 id="s1">Azonosságok</h2>
+
+    <p><b>Alapazonosságok:</b></p><span class="math display">\[\sin^{2}\alpha+\cos^{2}\alpha=1,\qquad\operatorname{tg}\alpha\cdot\operatorname{ctg}\alpha=1,\qquad1+\operatorname{tg}^{2}\alpha=\frac{1}{\cos^{2}\alpha}\]</span><p>⚠️ A gyökvonásnál az előjelet <b>a negyed</b> dönti el (<a href="tananyag-alapazonossagok.html#tetel-alapazonossagok">→</a>).</p>
+
+    <p><b>Addíciós képletek:</b></p><span class="math display">\[\sin(\alpha\pm\beta)=\sin\alpha\cos\beta\pm\cos\alpha\sin\beta\]</span><span class="math display">\[\cos(\alpha\pm\beta)=\cos\alpha\cos\beta\mp\sin\alpha\sin\beta\]</span><p>A koszinusznál a jel <b>megfordul</b> (<a href="tananyag-addicios-kepletek.html#tetel-addicios">→</a>).</p>
+
+    <p><b>Kétszeres szög:</b></p><span class="math display">\[\sin 2\alpha=2\sin\alpha\cos\alpha,\qquad\cos 2\alpha=\cos^{2}\alpha-\sin^{2}\alpha=2\cos^{2}\alpha-1=1-2\sin^{2}\alpha\]</span><p>(<a href="tananyag-addicios-kepletek.html#tetel-ketszeres">→</a>)</p>
+
+    <p><b>Félszög:</b> <span class="math inline">\(\sin\tfrac{\alpha}{2}=\pm\sqrt{\tfrac{1-\cos\alpha}{2}}\)</span>, <span class="math inline">\(\cos\tfrac{\alpha}{2}=\pm\sqrt{\tfrac{1+\cos\alpha}{2}}\)</span> — az előjelet a <b>felezett</b> szög negyede adja (<a href="tananyag-felszog-es-szorzatta-alakitas.html#tetel-felszog">→</a>).</p>
+
+    <p><b>Szorzattá alakítás:</b></p><span class="math display">\[\sin u\pm\sin v=2\begin{Bmatrix}\sin\\ \cos\end{Bmatrix}\frac{u+v}{2}\begin{Bmatrix}\cos\\ \sin\end{Bmatrix}\frac{u-v}{2}\]</span><span class="math display">\[\cos u+\cos v=2\cos\frac{u+v}{2}\cos\frac{u-v}{2},\qquad\cos u-\cos v=-2\sin\frac{u+v}{2}\sin\frac{u-v}{2}\]</span><p>(<a href="tananyag-felszog-es-szorzatta-alakitas.html#tetel-szorzatta">→</a>)</p>
+
+    <h2 id="s2">Függvények és egyenletek</h2>
+
+    <div class="tblwrap"><table><tr><th></th><th><span class="math inline">\(\sin x\)</span></th><th><span class="math inline">\(\cos x\)</span></th><th><span class="math inline">\(\operatorname{tg}x\)</span></th></tr><tr><td>ÉT</td><td colspan="2"><span class="math inline">\(\mathbb{R}\)</span></td><td><span class="math inline">\(x\neq\tfrac{\pi}{2}+k\pi\)</span></td></tr><tr><td>ÉK</td><td colspan="2"><span class="math inline">\([-1;1]\)</span></td><td><span class="math inline">\(\mathbb{R}\)</span></td></tr><tr><td>Periódus</td><td colspan="2"><span class="math inline">\(2\pi\)</span></td><td><b><span class="math inline">\(\pi\)</span></b></td></tr><tr><td>Nullahely</td><td><span class="math inline">\(k\pi\)</span></td><td><span class="math inline">\(\tfrac{\pi}{2}+k\pi\)</span></td><td><span class="math inline">\(k\pi\)</span></td></tr><tr><td>Szimmetria</td><td>páratlan</td><td>páros</td><td>páratlan</td></tr></table></div><p>(<a href="tananyag-trig-fuggvenyek-grafikonja.html#tetel-sincos">→</a>)</p>
+
+    <p><b><span class="math inline">\(y=A\sin(bx+c)+d\)</span>:</b> amplitúdó <span class="math inline">\(|A|\)</span> · periódus <span class="math inline">\(\tfrac{2\pi}{|b|}\)</span> · vízszintes eltolás <b><span class="math inline">\(-\tfrac{c}{b}\)</span></b> (a <span class="math inline">\(b\)</span>-t ki kell emelni!) · középvonal <span class="math inline">\(d\)</span>, értékkészlet <span class="math inline">\([d-|A|;\,d+|A|]\)</span> (<a href="tananyag-osszetett-trig-fuggvenyek.html#tetel-teljes-alak">→</a>).</p>
+
+    <p><b>Egyenletek:</b> <span class="math inline">\(\sin x=a\)</span> és <span class="math inline">\(\cos x=a\)</span> csak <span class="math inline">\(|a|\le 1\)</span> esetén oldható meg, és <b>két</b> megoldáscsaládot ad (<span class="math inline">\(+2k\pi\)</span>); a <span class="math inline">\(\operatorname{tg}x=a\)</span> bármely <span class="math inline">\(a\)</span>-ra megoldható, és <b>egy</b> családot ad (<span class="math inline">\(+k\pi\)</span>) (<a href="tananyag-trigonometrikus-egyenletek.html#tetel-alaptipusok">→</a>).</p>
+
+    <p><b><span class="math inline">\(bx\)</span> alakú szög:</b> oldd meg a <span class="math inline">\(bx\)</span>-re, és <b>a legvégén</b> ossz <span class="math inline">\(b\)</span>-vel — a <span class="math inline">\(2k\pi\)</span>-t is! Így a periódus <span class="math inline">\(\tfrac{2\pi}{b}\)</span> lesz (<a href="tananyag-trigonometrikus-egyenletek.html#tetel-bx">→</a>).</p>
+
+    <h2 id="s3">Háromszögek</h2>
+
+    <p><b>Szinusztétel:</b> <span class="math inline">\(\dfrac{a}{\sin\alpha}=\dfrac{b}{\sin\beta}=\dfrac{c}{\sin\gamma}=2R\)</span> — akkor, ha van teljes <b>oldal–szög pár</b> (<a href="tananyag-szinusz-es-koszinusztetel.html#tetel-szinusztetel">→</a>).</p>
+
+    <p><b>Koszinusztétel:</b> <span class="math inline">\(a^{2}=b^{2}+c^{2}-2bc\cos\alpha\)</span>, illetve <span class="math inline">\(\cos\alpha=\dfrac{b^{2}+c^{2}-a^{2}}{2bc}\)</span> — SAS és SSS esetén (<a href="tananyag-szinusz-es-koszinusztetel.html#tetel-koszinusztetel">→</a>).</p>
+
+    <p><b>Terület:</b> <span class="math inline">\(T=\tfrac12 ab\sin\gamma\)</span> — a szög a két oldal <b>között</b> (<a href="tananyag-haromszog-megoldasa.html#tetel-terulet">→</a>).</p>
+
+    <div class="tblwrap"><table><tr><th>Adat</th><th>Első lépés</th></tr><tr><td>ASA / AAS</td><td>harmadik szög, majd szinusztétel</td></tr><tr><td>SAS</td><td>koszinusztétel, majd a <b>kisebbik</b> oldal szöge</td></tr><tr><td>SSS</td><td>koszinusztétel a <b>legnagyobb</b> oldal szögére</td></tr><tr><td>SSA</td><td>szinusztétel — ⚠️ lehet <b>két</b> megoldás</td></tr></table></div><p>(<a href="tananyag-haromszog-megoldasa.html#tetel-recept">→</a>)</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Amire a dolgozaton a legtöbben ráfutnak</p>
+      <p>1) A negyed <b>előbb</b>, az érték utána — írd ki az előjelet, mielőtt számolsz. &nbsp; 2) <span class="math inline">\(\sin(\alpha+\beta)\neq\sin\alpha+\sin\beta\)</span> és <span class="math inline">\(\cos 2\alpha\neq 2\cos\alpha\)</span>. &nbsp; 3) A koszinuszos addíciós képletben a jel <b>megfordul</b>. &nbsp; 4) A félszögnél a <b>felezett</b> szög negyede számít. &nbsp; 5) Az egyenletnél ne felejtsd a <span class="math inline">\(+2k\pi\)</span>-t és a <b>második</b> megoldáscsaládot. &nbsp; 6) A <span class="math inline">\(\operatorname{tg}\)</span> periódusa <span class="math inline">\(\pi\)</span>. &nbsp; 7) A számológép <b>DEG</b> módban legyen. &nbsp; 8) Kerekítés: szögfüggvényérték <b>öt</b>, oldalhossz <b>két</b> tizedes.</p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><p>Élesben: nézd át a négy <a href="feladatok-haromszogek.html">feladatgyűjteményt</a>, majd indulj <a href="terepkuldetes.html">A Fantom-frekvencia terepküldetésre</a>!</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-haromszogek.html"><span class="irany">← Előző</span><span class="hova">Feladatok — háromszögek</span></a>
+      <a class="kov" href="terepkuldetes.html"><span class="irany">Következő →</span><span class="hova">A Fantom-frekvencia terepküldetés</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

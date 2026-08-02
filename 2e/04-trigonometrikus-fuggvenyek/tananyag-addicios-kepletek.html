@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Addíciós képletek és a kétszeres szög — tananyag | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Trigonometrikus függvények</a> ›
+  <span class="itt">Addíciós képletek és a kétszeres szög — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Addíciós képletek és a kétszeres szög</h1>
+  <p class="alcim">Két szög összegének és különbségének szögfüggvényei, a képletek felismerése visszafelé, és a kétszeres szög három koszinusz-alakja.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Fázisugrás · 5/11</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Nightcrawler:</b> Eddig csak a <span class="math inline">\(30\)</span>–<span class="math inline">\(45\)</span>–<span class="math inline">\(60\)</span>-as szögeket tudtuk pontosan. De mi van, ha <span class="math inline">\(75^\circ\)</span>-ra kell ugranom? Egyszerű: <span class="math inline">\(75=45+30\)</span> — <b>két ugrás egymás után</b>. Az addíciós képletek pontosan ezt mondják meg: hogyan lehet két szög összegének a szögfüggvényét a külön-külön ismert értékekből kiszámolni.</p></div>
+
+    <h2 id="s1">Az addíciós képletek</h2>
+
+    <div class="doboz tetel" id="tetel-addicios">
+      <p class="cim"><span class="ikon">📘</span> Két szög összege és különbsége</p>
+      <span class="math display">\[\sin(\alpha\pm\beta)=\sin\alpha\cos\beta\pm\cos\alpha\sin\beta\]</span><span class="math display">\[\cos(\alpha\pm\beta)=\cos\alpha\cos\beta\mp\sin\alpha\sin\beta\]</span><span class="math display">\[\operatorname{tg}(\alpha\pm\beta)=\frac{\operatorname{tg}\alpha\pm\operatorname{tg}\beta}{1\mp\operatorname{tg}\alpha\operatorname{tg}\beta}\]</span><p>Figyeld meg a <b>jelek</b> viselkedését: a szinusznál a jel „átmegy”, a koszinusznál <b>megfordul</b> (<span class="math inline">\(\mp\)</span>). Ez a legtöbbet elrontott részlet.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p><b>A szögfüggvény nem „szorzó”!</b></p><p>✘ <span class="math inline">\(\sin(\alpha+\beta)=\sin\alpha+\sin\beta\)</span> &nbsp;&nbsp; ✔ <span class="math inline">\(\sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta\)</span></p><p>Próbáld ki: <span class="math inline">\(\sin(30^\circ+60^\circ)=\sin 90^\circ=1\)</span>, míg <span class="math inline">\(\sin 30^\circ+\sin 60^\circ=\tfrac12+\tfrac{\sqrt3}{2}\approx 1{,}37\)</span> — nem egyenlők.</p><p>A koszinusznál pedig <b>ellentétes</b> a jel: <span class="math inline">\(\cos(\alpha+\beta)\)</span>-ban <b>mínusz</b> áll, <span class="math inline">\(\cos(\alpha-\beta)\)</span>-ban <b>plusz</b>.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-addicios">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p><b>a)</b> Számold ki pontosan: <span class="math inline">\(\cos 75^\circ\)</span>.<br><b>b)</b> Számold ki <span class="math inline">\(\sin(\alpha+\beta)\)</span>-t, ha <span class="math inline">\(\sin\alpha=\tfrac35\)</span> és <span class="math inline">\(\cos\beta=\tfrac{5}{13}\)</span>, mindkét szög hegyesszög.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(75^\circ=45^\circ+30^\circ\)</span>:</p><span class="math display">\[\cos 75^\circ=\cos 45^\circ\cos 30^\circ-\sin 45^\circ\sin 30^\circ=\frac{\sqrt2}{2}\cdot\frac{\sqrt3}{2}-\frac{\sqrt2}{2}\cdot\frac12=\boxed{\frac{\sqrt6-\sqrt2}{4}}\approx 0{,}25882\]</span><p><b>b)</b> Előbb a hiányzó értékek (hegyesszög → minden pozitív): <span class="math inline">\(\cos\alpha=\tfrac45\)</span>, <span class="math inline">\(\sin\beta=\tfrac{12}{13}\)</span>.</p><span class="math display">\[\sin(\alpha+\beta)=\frac35\cdot\frac{5}{13}+\frac45\cdot\frac{12}{13}=\frac{15+48}{65}=\boxed{\frac{63}{65}}\]</span></div></details>
+    </div>
+
+    <h2 id="s2">Felismerés — a képlet visszafelé</h2>
+
+    A vizsgákon gyakoribb az a feladat, amelyben a képlet <b>jobb</b> oldala van megadva, és a bal oldalt kell felismerni. Ez sokkal gyorsabb, mint kiszámolni.
+
+    <div class="doboz pelda" id="pelda-felismeres">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Számold ki az értéküket! <b>a)</b> <span class="math inline">\(\sin 25^\circ\cos 35^\circ+\cos 25^\circ\sin 35^\circ\)</span>; <b>b)</b> <span class="math inline">\(\cos 70^\circ\cos 25^\circ+\sin 70^\circ\sin 25^\circ\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> Ez pontosan a <span class="math inline">\(\sin(\alpha+\beta)\)</span> képlet jobb oldala <span class="math inline">\(\alpha=25^\circ\)</span>, <span class="math inline">\(\beta=35^\circ\)</span> mellett:</p><span class="math display">\[=\sin(25^\circ+35^\circ)=\sin 60^\circ=\boxed{\frac{\sqrt3}{2}}\]</span><p><b>b)</b> Két koszinusz szorzata <b>plusz</b> két szinuszé → <span class="math inline">\(\cos(\alpha-\beta)\)</span>:</p><span class="math display">\[=\cos(70^\circ-25^\circ)=\cos 45^\circ=\boxed{\frac{\sqrt2}{2}}\]</span></div></details>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ cos α cos β + sin α sin β = cos(α − β) = cos 30°." data-nem="✘ A PLUSZ jel a koszinusznál KÜLÖNBSÉGET jelent: cos(50° − 20°) = cos 30°.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mivel egyenlő <span class="math inline">\(\cos 50^\circ\cos 20^\circ+\sin 50^\circ\sin 20^\circ\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(\cos 30^\circ\)</span></button><button><span class="math inline">\(\cos 70^\circ\)</span></button><button><span class="math inline">\(\sin 70^\circ\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">A kétszeres szög</h2>
+
+    Ha az addíciós képletben <span class="math inline">\(\beta=\alpha\)</span>, azonnal megkapjuk a kétszeres szög képleteit — nem kell külön megjegyezni őket, csak levezetni.
+
+    <div class="doboz tetel" id="tetel-ketszeres">
+      <p class="cim"><span class="ikon">📘</span> Kétszeres szög</p>
+      <span class="math display">\[\sin 2\alpha=2\sin\alpha\cos\alpha\]</span><span class="math display">\[\cos 2\alpha=\cos^{2}\alpha-\sin^{2}\alpha=2\cos^{2}\alpha-1=1-2\sin^{2}\alpha\]</span><span class="math display">\[\operatorname{tg}2\alpha=\frac{2\operatorname{tg}\alpha}{1-\operatorname{tg}^{2}\alpha}\]</span><p>A koszinusznak <b>három</b> alakja van — mindig azt válaszd, amelyikben szereplő függvény értékét ismered.</p>
+      <details><summary>Honnan a másik két alak?</summary><div class="bel"><p>Az alapazonosságból <span class="math inline">\(\sin^{2}\alpha=1-\cos^{2}\alpha\)</span>, ezt beírva</p><span class="math display">\[\cos 2\alpha=\cos^{2}\alpha-(1-\cos^{2}\alpha)=2\cos^{2}\alpha-1.\]</span><p>Ugyanígy <span class="math inline">\(\cos^{2}\alpha=1-\sin^{2}\alpha\)</span> helyettesítéssel jön a harmadik alak.</p></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p>✘ <span class="math inline">\(\sin 2\alpha=2\sin\alpha\)</span> &nbsp;&nbsp; ✘ <span class="math inline">\(\cos 2\alpha=2\cos\alpha\)</span></p><p>A „<span class="math inline">\(2\)</span>” a <b>szögre</b> vonatkozik, nem a függvényértékre! Ellenőrzés: <span class="math inline">\(\sin(2\cdot 30^\circ)=\sin 60^\circ\approx 0{,}87\)</span>, míg <span class="math inline">\(2\sin 30^\circ=1\)</span>.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-ketszeres">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Számold ki <span class="math inline">\(\sin 2\alpha\)</span> és <span class="math inline">\(\cos 2\alpha\)</span> pontos értékét, ha <span class="math inline">\(\sin\alpha=\tfrac45\)</span> és <span class="math inline">\(\alpha\)</span> hegyesszög!</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>Hegyesszög → <span class="math inline">\(\cos\alpha=\sqrt{1-\tfrac{16}{25}}=\tfrac35\)</span>.</p><span class="math display">\[\sin 2\alpha=2\cdot\frac45\cdot\frac35=\boxed{\frac{24}{25}}\]</span><span class="math display">\[\cos 2\alpha=\left(\frac35\right)^{2}-\left(\frac45\right)^{2}=\frac{9-16}{25}=\boxed{-\frac{7}{25}}\]</span><p><b>Ellenőrzés:</b> <span class="math inline">\(\left(\tfrac{24}{25}\right)^{2}+\left(\tfrac{7}{25}\right)^{2}=\tfrac{576+49}{625}=1\)</span> ✔ — a <span class="math inline">\(2\alpha\)</span>-ra is teljesül az alapazonosság.</p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ cos 2α = 2cos²α − 1 = 2/9 − 1 = −7/9." data-nem="✘ Használd a 2cos²α − 1 alakot: 2·(1/9) − 1 = −7/9.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Ha <span class="math inline">\(\cos\alpha=\tfrac13\)</span>, mennyi <span class="math inline">\(\cos 2\alpha\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(-\tfrac79\)</span></button><button><span class="math inline">\(\tfrac23\)</span></button><button><span class="math inline">\(\tfrac19\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-azonossagok.html#alap-7">🐾 Beast-protokoll <span class="cimke">A 7–13</span></a><a class="sav hulk" href="feladatok-azonossagok.html#kozep-5">🔥 Phoenix-protokoll <span class="cimke">K 5–10</span></a></div></div></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-alapazonossagok.html"><span class="irany">← Előző</span><span class="hova">Alapazonosságok</span></a>
+      <a class="kov" href="tananyag-felszog-es-szorzatta-alakitas.html"><span class="irany">Következő →</span><span class="hova">Félszög és szorzattá alakítás</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

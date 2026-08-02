@@ -32,6 +32,7 @@ JELVENY = {
     "2e/01-hatvanyozas-gyokvonas-komplex-szamok": ("🧬", "A Képzelet Határa", "Storm · Professor X"),
     "2e/02-masodfoku-egyenletek-es-fuggvenyek":   ("⚔️", "Az X-Faktor", "Wolverine · Cyclops"),
     "2e/03-exponencialis-es-logaritmus-fuggveny": ("🧬", "Az Evolúciós Ugrás", "Beast"),
+    "2e/04-trigonometrikus-fuggvenyek":           ("🌀", "A Fázisugrás", "Nightcrawler · Jean Grey"),
 }
 
 H1 = re.compile(r"<h1[^>]*>(.*?)</h1>", re.S)

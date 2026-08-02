@@ -170,6 +170,67 @@ def svg_fuggvenyek(gorbek, xr=(-2.6, 2.6), yr=(-2.6, 4.2), w=360, h=250,
     return "\n".join(ki)
 
 
+def svg_egysegkor(szogek=(), w=340, h=340, leiras="A trigonometrikus kör",
+                  negyedek=False, tengelycimke=True, sugar_cimke=None, extra=""):
+    """Trigonometrikus (egység)kör sötét tintával, világos lapon.
+
+    `szogek` = [(fok, felirat, szin), …] — sugár + pont + felirat a körvonalon.
+    `negyedek` = True → I–IV római számok a negyedekben.
+    `sugar_cimke` = pl. "r = 1" — felirat az első sugárra.
+    `extra` = tetszőleges nyers SVG-részlet a végére (pl. tangensegyenes).
+    """
+    import math
+    cx, cy = w / 2, h / 2
+    R = min(w, h) / 2 - 46
+
+    def X(fok, r=1.0):
+        return cx + R * r * math.cos(math.radians(fok))
+
+    def Y(fok, r=1.0):
+        return cy - R * r * math.sin(math.radians(fok))
+
+    ki = [f'<svg viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="{leiras}">',
+          '  <defs><marker id="nyilk" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" '
+          'markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>']
+    # tengelyek
+    ki.append(f'  <line x1="{cx - R - 26:.1f}" y1="{cy:.1f}" x2="{cx + R + 26:.1f}" y2="{cy:.1f}" '
+              'stroke="#0f172a" stroke-width="1.3" marker-end="url(#nyilk)"/>')
+    ki.append(f'  <line x1="{cx:.1f}" y1="{cy + R + 26:.1f}" x2="{cx:.1f}" y2="{cy - R - 26:.1f}" '
+              'stroke="#0f172a" stroke-width="1.3" marker-end="url(#nyilk)"/>')
+    # kör
+    ki.append(f'  <circle cx="{cx:.1f}" cy="{cy:.1f}" r="{R:.1f}" fill="none" '
+              'stroke="#334155" stroke-width="1.6"/>')
+    if tengelycimke:
+        ki.append(f'  <text x="{cx + R + 22:.1f}" y="{cy + 15:.1f}" font-size="11" '
+                  'font-style="italic" fill="#0f172a" text-anchor="end">x</text>')
+        ki.append(f'  <text x="{cx - 8:.1f}" y="{cy - R - 20:.1f}" font-size="11" '
+                  'font-style="italic" fill="#0f172a" text-anchor="end">y</text>')
+        for fok, txt, dx, dy in ((0, "1", 4, 14), (90, "1", -8, -6),
+                                 (180, "−1", -4, 14), (270, "−1", -10, 12)):
+            ki.append(f'  <text x="{X(fok) + dx:.1f}" y="{Y(fok) + dy:.1f}" font-size="10" '
+                      f'fill="#475569" text-anchor="middle">{txt}</text>')
+    if negyedek:
+        for fok, txt in ((45, "I."), (135, "II."), (225, "III."), (315, "IV.")):
+            ki.append(f'  <text x="{X(fok, 0.62):.1f}" y="{Y(fok, 0.62) + 4:.1f}" font-size="13" '
+                      f'fill="#94a3b8" font-weight="700" text-anchor="middle">{txt}</text>')
+    for i, (fok, felirat, szin) in enumerate(szogek):
+        ki.append(f'  <line x1="{cx:.1f}" y1="{cy:.1f}" x2="{X(fok):.1f}" y2="{Y(fok):.1f}" '
+                  f'stroke="{szin}" stroke-width="2"/>')
+        ki.append(f'  <circle cx="{X(fok):.1f}" cy="{Y(fok):.1f}" r="4" fill="{szin}"/>')
+        if felirat:
+            r = 1.20
+            anchor = "middle"
+            ki.append(f'  <text x="{X(fok, r):.1f}" y="{Y(fok, r) + 4:.1f}" font-size="11" '
+                      f'fill="{szin}" font-weight="600" text-anchor="{anchor}">{felirat}</text>')
+        if i == 0 and sugar_cimke:
+            ki.append(f'  <text x="{X(fok, 0.5):.1f}" y="{Y(fok, 0.5) - 6:.1f}" font-size="10" '
+                      f'fill="{szin}" text-anchor="middle">{sugar_cimke}</text>')
+    if extra:
+        ki.append(extra)
+    ki.append('</svg>')
+    return "\n".join(ki)
+
+
 # ------------------------------------------------------------------ oldalváz
 
 VAZ = """<!DOCTYPE html>

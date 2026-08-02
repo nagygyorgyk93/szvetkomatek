@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Szinusz- és koszinusztétel — tananyag | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Trigonometrikus függvények</a> ›
+  <span class="itt">Szinusz- és koszinusztétel — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Szinusz- és koszinusztétel</h1>
+  <p class="alcim">A két tétel, a bizonyítás gondolata, és a legfontosabb kérdés: melyiket mikor kell használni.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Fázisugrás · 10/11</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Jean Grey:</b> Bemérés. Ez a legrégibb és legpraktikusabb feladat: ismerek <b>néhány</b> adatot egy háromszögből, és tudni akarom a többit. Nem kell derékszög, nem kell hozzáférnem a célponthoz — elég két mérési pont és egy szögmérő. Két tétel visz el idáig, és mindegyiknek pontosan megvan a maga helyzete.</p></div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 400 250" width="400" height="250" role="img" aria-label="A háromszög szokásos jelölései: az oldal a vele szemközti szög betűjét kapja">
+      <polygon points="60,200 330,200 230,55" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.8" stroke-linejoin="round"/>
+      <text x="46" y="206" font-size="14" font-weight="700" fill="#0f172a" text-anchor="middle">A</text>
+      <text x="340" y="206" font-size="14" font-weight="700" fill="#0f172a" text-anchor="middle">B</text>
+      <text x="230" y="43" font-size="14" font-weight="700" fill="#0f172a" text-anchor="middle">C</text>
+      <text x="195" y="217" font-size="13" font-style="italic" fill="#047857" text-anchor="middle">c</text>
+      <text x="296" y="128" font-size="13" font-style="italic" fill="#047857" text-anchor="middle">a</text>
+      <text x="129" y="128" font-size="13" font-style="italic" fill="#047857" text-anchor="middle">b</text>
+      <text x="86" y="192" font-size="12" fill="#3b82f6" text-anchor="middle">α</text>
+      <text x="302" y="192" font-size="12" fill="#3b82f6" text-anchor="middle">β</text>
+      <text x="232" y="81" font-size="12" fill="#3b82f6" text-anchor="middle">γ</text>
+    </svg>
+    </div>
+    <p class="cap">A megszokott jelölés: az <span class="math inline">\(a\)</span> oldal az <span class="math inline">\(\alpha\)</span> szöggel <b>szemközt</b> van, a <span class="math inline">\(b\)</span> a <span class="math inline">\(\beta\)</span>-val, a <span class="math inline">\(c\)</span> a <span class="math inline">\(\gamma\)</span>-val.</p>
+
+    <h2 id="s1">A szinusztétel</h2>
+
+    <div class="doboz tetel" id="tetel-szinusztetel">
+      <p class="cim"><span class="ikon">📘</span> Szinusztétel</p>
+      <p>Bármely háromszögben</p><span class="math display">\[\frac{a}{\sin\alpha}=\frac{b}{\sin\beta}=\frac{c}{\sin\gamma}=2R,\]</span><p>ahol <span class="math inline">\(R\)</span> a háromszög <b>köré írt</b> körének sugara.</p><p>Szavakban: <b>az oldalak úgy aránylanak egymáshoz, mint a velük szemközti szögek szinuszai</b>. Ezért a leghosszabb oldallal szemben van a legnagyobb szög.</p>
+      <details><summary>Miért igaz?</summary><div class="bel"><p>Húzzuk be a <span class="math inline">\(C\)</span> csúcsból az <span class="math inline">\(m\)</span> magasságot az <span class="math inline">\(AB\)</span> oldalra. Az így keletkező két derékszögű háromszögből</p><span class="math display">\[m=b\sin\alpha\quad\text{és}\quad m=a\sin\beta,\]</span><p>tehát <span class="math inline">\(b\sin\alpha=a\sin\beta\)</span>, ami átrendezve épp <span class="math inline">\(\dfrac{a}{\sin\alpha}=\dfrac{b}{\sin\beta}\)</span>.</p></div></details>
+    </div>
+
+    <div class="doboz tetel" id="tetel-mikor-szinusz">
+      <p class="cim"><span class="ikon">📘</span> Mikor használjuk?</p>
+      <p>Akkor, ha van egy <b>teljes oldal–szög pár</b> (egy oldal és a vele szemközti szög):</p><ul><li><b>ASA / AAS</b> — két szög és egy oldal. A harmadik szög a <span class="math inline">\(180^\circ\)</span>-ból jön, a hiányzó oldalak a szinusztételből.</li><li><b>SSA</b> — két oldal és az egyikkel szemközti szög. ⚠️ Ez a <b>kétértelmű</b> eset.</li></ul>
+    </div>
+
+    <div class="doboz pelda" id="pelda-szinusztetel">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Oldd meg a háromszöget: <span class="math inline">\(\alpha=40^\circ\)</span>, <span class="math inline">\(\beta=75^\circ\)</span>, <span class="math inline">\(a=12\)</span>. (A szögfüggvényeket öt, az oldalakat két tizedesre kerekítsd.)</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>A harmadik szög: <span class="math inline">\(\gamma=180^\circ-40^\circ-75^\circ=65^\circ\)</span>.</p><span class="math display">\[b=\frac{a\sin\beta}{\sin\alpha}=\frac{12\cdot 0{,}96593}{0{,}64279}\approx\boxed{18{,}03}\]</span><span class="math display">\[c=\frac{a\sin\gamma}{\sin\alpha}=\frac{12\cdot 0{,}90631}{0{,}64279}\approx\boxed{16{,}92}\]</span><p><b>Ellenőrzés:</b> a legnagyobb szög <span class="math inline">\(\beta=75^\circ\)</span>, és valóban a <span class="math inline">\(b\)</span> a leghosszabb oldal ✔</p></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p><b>A kétértelmű (SSA) eset.</b> Ha két oldalt és a <b>kisebbikkel</b> szemközti szöget ismerjük, két különböző háromszög is illeszkedhet az adatokra — mert <span class="math inline">\(\sin\varphi=\sin(180^\circ-\varphi)\)</span>.</p><p>Gyakorlati szabály: a szinusztétellel <b>mindig a kisebbik oldallal szemközti szöget</b> számold ki. Az biztosan hegyesszög, tehát egyértelmű.</p>
+    </div>
+
+    <h2 id="s2">A koszinusztétel</h2>
+
+    <div class="doboz tetel" id="tetel-koszinusztetel">
+      <p class="cim"><span class="ikon">📘</span> Koszinusztétel</p>
+      <span class="math display">\[a^{2}=b^{2}+c^{2}-2bc\cos\alpha\]</span><span class="math display">\[b^{2}=a^{2}+c^{2}-2ac\cos\beta,\qquad c^{2}=a^{2}+b^{2}-2ab\cos\gamma\]</span><p>Ez a <b>Pitagorasz-tétel általánosítása</b>: ha <span class="math inline">\(\alpha=90^\circ\)</span>, akkor <span class="math inline">\(\cos\alpha=0\)</span>, és marad <span class="math inline">\(a^{2}=b^{2}+c^{2}\)</span>.</p><p>Átrendezve a szög is kifejezhető:</p><span class="math display">\[\cos\alpha=\frac{b^{2}+c^{2}-a^{2}}{2bc}.\]</span>
+    </div>
+
+    <div class="doboz tetel" id="tetel-mikor-koszinusz">
+      <p class="cim"><span class="ikon">📘</span> Mikor használjuk?</p>
+      <p>Akkor, ha <b>nincs</b> teljes oldal–szög pár:</p><ul><li><b>SAS</b> — két oldal és a <b>közbezárt</b> szög → a harmadik oldal.</li><li><b>SSS</b> — mindhárom oldal → bármelyik szög.</li></ul><p>Utána már van teljes pár, tehát a többit a szinusztétellel is folytathatod.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-koszinusztetel">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p><b>a)</b> <span class="math inline">\(b=7\)</span>, <span class="math inline">\(c=10\)</span>, <span class="math inline">\(\alpha=60^\circ\)</span> — mekkora <span class="math inline">\(a\)</span>?<br><b>b)</b> <span class="math inline">\(a=6\)</span>, <span class="math inline">\(b=7\)</span>, <span class="math inline">\(c=9\)</span> — mekkora <span class="math inline">\(\gamma\)</span>?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(a^{2}=49+100-2\cdot 7\cdot 10\cdot 0{,}5=149-70=79\)</span>, tehát <span class="math inline">\(a=\sqrt{79}\approx\boxed{8{,}89}\)</span>.</p><p><b>b)</b> A <span class="math inline">\(\gamma\)</span> a <span class="math inline">\(c=9\)</span> oldallal szemközt van:</p><span class="math display">\[\cos\gamma=\frac{36+49-81}{2\cdot 6\cdot 7}=\frac{4}{84}\approx 0{,}04762\ \Longrightarrow\ \gamma\approx\boxed{87{,}27^\circ}\]</span><p>A <span class="math inline">\(\cos\gamma\)</span> <b>pozitív</b>, tehát a szög hegyesszög — épp csak.</p></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p><b>A képlet nem szimmetrikus!</b> A bal oldalon álló oldal mindig azzal a szöggel van párban, amely a jobb oldalon a koszinuszban szerepel. A <span class="math inline">\(-2bc\cos\alpha\)</span> tagban a <span class="math inline">\(b\)</span> és a <span class="math inline">\(c\)</span> épp a <b>másik két</b> oldal.</p><p>És ha a <span class="math inline">\(\cos\)</span> eredménye <b>negatív</b>, az nem hiba: azt jelenti, hogy a szög <b>tompaszög</b>. Ilyenkor a számológép helyesen ad <span class="math inline">\(90^\circ\)</span> fölötti értéket.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ Két oldal és a közbezárt szög (SAS) → koszinusztétel." data-nem="✘ Nincs teljes oldal–szög pár, viszont a szög a két oldal KÖZÖTT van → koszinusztétel.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik tétel kell, ha <span class="math inline">\(a=5\)</span>, <span class="math inline">\(b=8\)</span> és <span class="math inline">\(\gamma=40^\circ\)</span> ismert?</p>
+      <div class="opciok"><button>Koszinusztétel</button><button>Szinusztétel</button><button>Pitagorasz-tétel</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-haromszogek.html#alap-1">🐾 Beast-protokoll <span class="cimke">A 1–6</span></a><a class="sav hulk" href="feladatok-haromszogek.html#kozep-1">🔥 Phoenix-protokoll <span class="cimke">K 1–4</span></a></div></div></div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-trig-fuggvenyek-egyenletek.html"><span class="irany">← Előző</span><span class="hova">Feladatok — függvények és egyenletek</span></a>
+      <a class="kov" href="tananyag-haromszog-megoldasa.html"><span class="irany">Következő →</span><span class="hova">Háromszög megoldása és alkalmazások</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

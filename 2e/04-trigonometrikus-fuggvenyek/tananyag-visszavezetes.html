@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Visszavezetés az első negyedre — tananyag | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Trigonometrikus függvények</a> ›
+  <span class="itt">Visszavezetés az első negyedre — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Visszavezetés az első negyedre</h1>
+  <p class="alcim">Az alapszög megkeresése, a négy társszög és az előjelek — bármely szög pontos értéke két lépésben.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Fázisugrás · 3/11</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Nightcrawler:</b> Ne ijedj meg a <span class="math inline">\(217^\circ\)</span>-tól. Minden szögnek van egy <b>alapszöge</b> az első negyedben — az, amennyire a legközelebbi vízszintes tengelytől eltér. A függvényérték <b>nagysága</b> ugyanaz, mint az alapszögé; már csak az <b>előjelet</b> kell hozzátenni. Két lépés, és bármelyik szöget visszahoztad ismerős terepre.</p></div>
+
+    <h2 id="s1">A módszer</h2>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 380 360" width="380" height="360" role="img" aria-label="Ugyanaz az alapszög a négy negyedben: a négy társszög">
+      <defs><marker id="nyilk" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <line x1="30.0" y1="180.0" x2="350.0" y2="180.0" stroke="#0f172a" stroke-width="1.3" marker-end="url(#nyilk)"/>
+      <line x1="190.0" y1="340.0" x2="190.0" y2="20.0" stroke="#0f172a" stroke-width="1.3" marker-end="url(#nyilk)"/>
+      <circle cx="190.0" cy="180.0" r="134.0" fill="none" stroke="#334155" stroke-width="1.6"/>
+      <text x="346.0" y="195.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="182.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="328.0" y="194.0" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="182.0" y="40.0" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="52.0" y="194.0" font-size="10" fill="#475569" text-anchor="middle">−1</text>
+      <text x="180.0" y="326.0" font-size="10" fill="#475569" text-anchor="middle">−1</text>
+      <line x1="190.0" y1="180.0" x2="292.6" y2="93.9" stroke="#047857" stroke-width="2"/>
+      <circle cx="292.6" cy="93.9" r="4" fill="#047857"/>
+      <text x="313.2" y="80.6" font-size="11" fill="#047857" font-weight="600" text-anchor="middle">α</text>
+      <line x1="190.0" y1="180.0" x2="87.4" y2="93.9" stroke="#ef4444" stroke-width="2"/>
+      <circle cx="87.4" cy="93.9" r="4" fill="#ef4444"/>
+      <text x="66.8" y="80.6" font-size="11" fill="#ef4444" font-weight="600" text-anchor="middle">180° − α</text>
+      <line x1="190.0" y1="180.0" x2="87.4" y2="266.1" stroke="#3b82f6" stroke-width="2"/>
+      <circle cx="87.4" cy="266.1" r="4" fill="#3b82f6"/>
+      <text x="66.8" y="287.4" font-size="11" fill="#3b82f6" font-weight="600" text-anchor="middle">180° + α</text>
+      <line x1="190.0" y1="180.0" x2="292.6" y2="266.1" stroke="#8b5cf6" stroke-width="2"/>
+      <circle cx="292.6" cy="266.1" r="4" fill="#8b5cf6"/>
+      <text x="313.2" y="287.4" font-size="11" fill="#8b5cf6" font-weight="600" text-anchor="middle">360° − α</text>
+    </svg>
+    </div>
+    <p class="cap">Ugyanaz az <span class="math inline">\(\alpha\)</span> alapszög négy különböző szöget ad meg: <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(180^\circ-\alpha\)</span>, <span class="math inline">\(180^\circ+\alpha\)</span> és <span class="math inline">\(360^\circ-\alpha\)</span>. A négy pont a tengelyekre tükrös.</p>
+
+    <div class="doboz tetel" id="tetel-visszavezetes">
+      <p class="cim"><span class="ikon">📘</span> Visszavezetés az első negyedre</p>
+      <p><b>1. lépés:</b> ha a szög nincs <span class="math inline">\([0^\circ;360^\circ)\)</span>-ban, vidd oda teljes fordulatokkal.</p><p><b>2. lépés:</b> keresd meg az <b>alapszöget</b> <span class="math inline">\(\alpha\)</span>:</p><div class="tblwrap"><table><tr><th>Negyed</th><th>A szög alakja</th><th>Alapszög</th></tr><tr><td>I.</td><td><span class="math inline">\(\alpha\)</span></td><td>maga a szög</td></tr><tr><td>II.</td><td><span class="math inline">\(180^\circ-\alpha\)</span></td><td><span class="math inline">\(180^\circ-\)</span> szög</td></tr><tr><td>III.</td><td><span class="math inline">\(180^\circ+\alpha\)</span></td><td>szög <span class="math inline">\(-180^\circ\)</span></td></tr><tr><td>IV.</td><td><span class="math inline">\(360^\circ-\alpha\)</span></td><td><span class="math inline">\(360^\circ-\)</span> szög</td></tr></table></div><p><b>3. lépés:</b> a függvényérték <b>abszolút értéke</b> az alapszögé, az <b>előjelet</b> az előjeltáblázat adja.</p>
+    </div>
+
+    <div class="doboz tetel" id="tetel-kepletek">
+      <p class="cim"><span class="ikon">📘</span> A négy összefüggés képlettel</p>
+      <span class="math display">\[\sin(180^\circ-\alpha)=\sin\alpha,\qquad \cos(180^\circ-\alpha)=-\cos\alpha,\]</span><span class="math display">\[\sin(180^\circ+\alpha)=-\sin\alpha,\qquad \cos(180^\circ+\alpha)=-\cos\alpha,\]</span><span class="math display">\[\sin(360^\circ-\alpha)=-\sin\alpha,\qquad \cos(360^\circ-\alpha)=\cos\alpha.\]</span><p>Speciálisan <span class="math inline">\(\sin(-\alpha)=-\sin\alpha\)</span> (a szinusz <b>páratlan</b>) és <span class="math inline">\(\cos(-\alpha)=\cos\alpha\)</span> (a koszinusz <b>páros</b>) — ezt a grafikonon is látni fogod.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-visszavezetes">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Vezesd vissza az első negyedre, és add meg a pontos értéket! <b>a)</b> <span class="math inline">\(\sin 150^\circ\)</span>; <b>b)</b> <span class="math inline">\(\cos 210^\circ\)</span>; <b>c)</b> <span class="math inline">\(\operatorname{tg}300^\circ\)</span>; <b>d)</b> <span class="math inline">\(\sin 1000^\circ\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(150^\circ\)</span> a II. negyedben, alapszöge <span class="math inline">\(30^\circ\)</span>; ott a szinusz <b>pozitív</b>: <span class="math inline">\(\sin 150^\circ=\sin 30^\circ=\boxed{\tfrac12}\)</span>.</p><p><b>b)</b> <span class="math inline">\(210^\circ\)</span> a III. negyedben, alapszöge <span class="math inline">\(30^\circ\)</span>; ott a koszinusz <b>negatív</b>: <span class="math inline">\(\cos 210^\circ=-\cos 30^\circ=\boxed{-\tfrac{\sqrt3}{2}}\)</span>.</p><p><b>c)</b> <span class="math inline">\(300^\circ\)</span> a IV. negyedben, alapszöge <span class="math inline">\(60^\circ\)</span>; ott a tangens <b>negatív</b>: <span class="math inline">\(\operatorname{tg}300^\circ=-\operatorname{tg}60^\circ=\boxed{-\sqrt3}\)</span>.</p><p><b>d)</b> Előbb a fordulatok: <span class="math inline">\(1000-2\cdot 360=280\)</span>. A <span class="math inline">\(280^\circ\)</span> a IV. negyedben van, alapszöge <span class="math inline">\(360-280=80^\circ\)</span>, és ott a szinusz negatív: <span class="math inline">\(\sin 1000^\circ=-\sin 80^\circ\approx\boxed{-0{,}98481}\)</span>.</p></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p><b>Az előjelet a SZÖG negyede dönti el, nem a végeredmény „érzése”.</b> Sokan a <span class="math inline">\(\cos 210^\circ\)</span>-nál helyesen megtalálják a <span class="math inline">\(30^\circ\)</span>-ot, aztán elfelejtik a mínuszt. Írd fel <b>előbb</b> az előjelet, csak utána az értéket:</p><p><span class="math inline">\(\cos 210^\circ = -\;\cos 30^\circ = -\tfrac{\sqrt3}{2}\)</span></p><p>És vigyázz: a <span class="math inline">\(180^\circ+\alpha\)</span> alaknál az <b>alapszög</b> <span class="math inline">\(\alpha\)</span>, nem <span class="math inline">\(180^\circ+\alpha\)</span> — a <span class="math inline">\(217^\circ\)</span> alapszöge <span class="math inline">\(37^\circ\)</span>.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ 330° a IV. negyedben van (alapszög 30°), ott a koszinusz pozitív." data-nem="✘ 330° a IV. negyedben van — ott a koszinusz POZITÍV, az alapszög pedig 30°.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi <span class="math inline">\(\cos 330^\circ\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(\tfrac{\sqrt3}{2}\)</span></button><button><span class="math inline">\(-\tfrac{\sqrt3}{2}\)</span></button><button><span class="math inline">\(\tfrac12\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-trigonometrikus-kor.html#alap-13">🐾 Beast-protokoll <span class="cimke">A 13–18</span></a><a class="sav hulk" href="feladatok-trigonometrikus-kor.html#kozep-8">🔥 Phoenix-protokoll <span class="cimke">K 8–12</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Nightcrawler:</b> Ezzel a kör a kezedben van: bármelyik szöget vissza tudod vinni ismerős terepre. A következő blokkban viszont már nem <b>egy</b> szöggel dolgozunk, hanem kettővel — mert ha a <span class="math inline">\(75^\circ\)</span>-ot fel tudod bontani <span class="math inline">\(45^\circ+30^\circ\)</span>-ra, akkor a pontos értékét is ki tudod számolni. Jönnek az <b>azonosságok</b>.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-trigonometrikus-kor.html"><span class="irany">← Előző</span><span class="hova">A trigonometrikus kör</span></a>
+      <a class="kov" href="feladatok-trigonometrikus-kor.html"><span class="irany">Következő →</span><span class="hova">Feladatok — a trigonometrikus kör</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

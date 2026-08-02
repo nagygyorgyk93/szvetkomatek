@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Félszög és szorzattá alakítás — tananyag | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Trigonometrikus függvények</a> ›
+  <span class="itt">Félszög és szorzattá alakítás — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Félszög és szorzattá alakítás</h1>
+  <p class="alcim">A félszög függvényei és az előjel kérdése, valamint az összeg és a különbség szorzattá alakításának négy képlete.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Fázisugrás · 6/11</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Nightcrawler:</b> Ha a kétszeres szög működik, működnie kell <b>visszafelé</b> is: a felére. És van még egy trükk, ami a terepen a leghasznosabb — két szögfüggvény <b>összegét szorzattá</b> alakítani. Miért jó ez? Mert a szorzattal lehet egyszerűsíteni, nullára hozni, egyenletet megoldani. Az összeggel nem.</p></div>
+
+    <h2 id="s1">A félszög függvényei</h2>
+
+    <div class="doboz tetel" id="tetel-felszog">
+      <p class="cim"><span class="ikon">📘</span> Félszög-képletek</p>
+      <span class="math display">\[\sin\frac{\alpha}{2}=\pm\sqrt{\frac{1-\cos\alpha}{2}},\qquad\cos\frac{\alpha}{2}=\pm\sqrt{\frac{1+\cos\alpha}{2}}\]</span><span class="math display">\[\operatorname{tg}\frac{\alpha}{2}=\pm\sqrt{\frac{1-\cos\alpha}{1+\cos\alpha}}=\frac{\sin\alpha}{1+\cos\alpha}\]</span><p>Az előjelet <b>mindig az <span class="math inline">\(\tfrac{\alpha}{2}\)</span> negyede</b> dönti el — nem az <span class="math inline">\(\alpha\)</span>-é!</p>
+      <details><summary>Honnan jönnek?</summary><div class="bel"><p>A <span class="math inline">\(\cos 2u=1-2\sin^{2}u\)</span> alakba írjunk <span class="math inline">\(u=\tfrac{\alpha}{2}\)</span>-t:</p><span class="math display">\[\cos\alpha=1-2\sin^{2}\frac{\alpha}{2}\ \Longrightarrow\ \sin^{2}\frac{\alpha}{2}=\frac{1-\cos\alpha}{2}.\]</span><p>A koszinuszos alak a <span class="math inline">\(\cos 2u=2\cos^{2}u-1\)</span> képletből ugyanígy jön.</p></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p>Ha <span class="math inline">\(\alpha\in\left(\tfrac{\pi}{2};\pi\right)\)</span> (II. negyed), akkor <span class="math inline">\(\tfrac{\alpha}{2}\in\left(\tfrac{\pi}{4};\tfrac{\pi}{2}\right)\)</span> — vagyis az <b>első</b> negyedben, ahol minden pozitív. A felezés <b>negyedet válthat</b>, ezért az előjelet mindig a <b>felezett</b> szögre kell megállapítani.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-felszog">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p><b>a)</b> Számold ki <span class="math inline">\(\sin\tfrac{\alpha}{2}\)</span> és <span class="math inline">\(\cos\tfrac{\alpha}{2}\)</span> pontos értékét, ha <span class="math inline">\(\cos\alpha=\tfrac{7}{25}\)</span> és <span class="math inline">\(\alpha\in\left(0;\tfrac{\pi}{2}\right)\)</span>.<br><b>b)</b> Számold ki <span class="math inline">\(\sin 22^\circ 30'\)</span> pontos értékét.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(\alpha\)</span> az I. negyedben van, tehát <span class="math inline">\(\tfrac{\alpha}{2}\in\left(0;\tfrac{\pi}{4}\right)\)</span> — szintén az I. negyedben, minden <b>pozitív</b>.</p><span class="math display">\[\sin\frac{\alpha}{2}=\sqrt{\frac{1-\tfrac{7}{25}}{2}}=\sqrt{\frac{18}{50}}=\boxed{\frac35},\qquad\cos\frac{\alpha}{2}=\sqrt{\frac{1+\tfrac{7}{25}}{2}}=\sqrt{\frac{32}{50}}=\boxed{\frac45}\]</span><p><b>b)</b> <span class="math inline">\(22^\circ 30'\)</span> a <span class="math inline">\(45^\circ\)</span> fele, és <span class="math inline">\(\cos 45^\circ=\tfrac{\sqrt2}{2}\)</span>:</p><span class="math display">\[\sin 22^\circ30'=\sqrt{\frac{1-\tfrac{\sqrt2}{2}}{2}}=\boxed{\frac{\sqrt{2-\sqrt2}}{2}}\approx 0{,}38268\]</span></div></details>
+    </div>
+
+    <h2 id="s2">Összeg és különbség szorzattá alakítása</h2>
+
+    <div class="doboz tetel" id="tetel-szorzatta">
+      <p class="cim"><span class="ikon">📘</span> A négy képlet</p>
+      <span class="math display">\[\sin u+\sin v=2\sin\frac{u+v}{2}\cos\frac{u-v}{2}\]</span><span class="math display">\[\sin u-\sin v=2\cos\frac{u+v}{2}\sin\frac{u-v}{2}\]</span><span class="math display">\[\cos u+\cos v=2\cos\frac{u+v}{2}\cos\frac{u-v}{2}\]</span><span class="math display">\[\cos u-\cos v=-2\sin\frac{u+v}{2}\sin\frac{u-v}{2}\]</span><p>Mind a négyben ugyanaz a két szög szerepel: a <b>félösszeg</b> és a <b>félkülönbség</b>. Csak az kérdés, melyik függvény kerül hova — és hogy az utolsóban ott a <b>mínusz</b>.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-szorzatta">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Alakítsd szorzattá, majd egyszerűsítsd! <b>a)</b> <span class="math inline">\(\sin 75^\circ+\sin 15^\circ\)</span>; <b>b)</b> <span class="math inline">\(\cos 40^\circ+\cos 20^\circ\)</span>; <b>c)</b> <span class="math inline">\(\cos 20^\circ-\cos 80^\circ\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> Félösszeg <span class="math inline">\(45^\circ\)</span>, félkülönbség <span class="math inline">\(30^\circ\)</span>:</p><span class="math display">\[2\sin 45^\circ\cos 30^\circ=2\cdot\frac{\sqrt2}{2}\cdot\frac{\sqrt3}{2}=\boxed{\frac{\sqrt6}{2}}\approx 1{,}22474\]</span><p><b>b)</b> Félösszeg <span class="math inline">\(30^\circ\)</span>, félkülönbség <span class="math inline">\(10^\circ\)</span>:</p><span class="math display">\[2\cos 30^\circ\cos 10^\circ=\boxed{\sqrt3\cos 10^\circ}\approx 1{,}70574\]</span><p><b>c)</b> Félösszeg <span class="math inline">\(50^\circ\)</span>, félkülönbség <span class="math inline">\(-30^\circ\)</span>:</p><span class="math display">\[-2\sin 50^\circ\sin(-30^\circ)=2\sin 50^\circ\cdot\frac12=\boxed{\sin 50^\circ}\approx 0{,}76604\]</span><p>(A <span class="math inline">\(\sin(-30^\circ)=-\sin 30^\circ\)</span> előjelváltás vitte el a mínuszt — a szinusz páratlan függvény.)</p></div></details>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Miért éri meg a szorzat?</p>
+      <p>Egy <b>szorzat</b> akkor nulla, ha valamelyik tényezője nulla — ezért a trigonometrikus egyenleteknél az első lépés szinte mindig a szorzattá alakítás. Az összeggel ilyet nem lehet kezdeni. Ugyanez az ok, amiért a másodfokú egyenletnél is szorzattá bontottunk.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ 2 sin 50° cos 30° = 2 · sin 50° · (√3/2) = √3 sin 50°." data-nem="✘ sin u + sin v = 2 sin((u+v)/2) cos((u−v)/2) = 2 sin 50° cos 30° = √3 sin 50°.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mivel egyenlő <span class="math inline">\(\sin 80^\circ+\sin 20^\circ\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(\sqrt3\sin 50^\circ\)</span></button><button><span class="math inline">\(\sin 100^\circ\)</span></button><button><span class="math inline">\(2\sin 50^\circ\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-azonossagok.html#alap-14">🐾 Beast-protokoll <span class="cimke">A 14–18</span></a><a class="sav hulk" href="feladatok-azonossagok.html#kozep-11">🔥 Phoenix-protokoll <span class="cimke">K 11–14</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Nightcrawler:</b> Az azonosságok készen vannak — ez a <b>4. ellenőrző</b> anyagának a gerince. Innentől viszont átadom a szót Jean-nek: ő nem egyetlen szöggel dolgozik, hanem a <b>teljes hullámmal</b>. Meglátod, hogy néz ki a szinusz, ha nem egy pontban nézed, hanem végig.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-addicios-kepletek.html"><span class="irany">← Előző</span><span class="hova">Addíciós képletek és a kétszeres szög</span></a>
+      <a class="kov" href="feladatok-azonossagok.html"><span class="irany">Következő →</span><span class="hova">Feladatok — azonosságok</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

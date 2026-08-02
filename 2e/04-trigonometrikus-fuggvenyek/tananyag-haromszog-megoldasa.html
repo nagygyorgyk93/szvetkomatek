@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Háromszög megoldása és alkalmazások — tananyag | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Trigonometrikus függvények</a> ›
+  <span class="itt">Háromszög megoldása és alkalmazások — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Háromszög megoldása és alkalmazások</h1>
+  <p class="alcim">A négy alapeset döntési receptje, a trigonometrikus területképlet, valamint magasság- és távolságmérés a terepen.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Fázisugrás · 11/11</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Jean Grey:</b> Utolsó bevetés. Most már mindkét tétel a kezedben van — a kérdés csak az, <b>melyiket mikor</b>. Van rá egy egyszerű recept, és ha követed, bármelyik háromszög megoldható. Utána pedig jön a legjobb rész: ezzel a tudással megmérhető egy torony magassága anélkül, hogy hozzáérnél.</p></div>
+
+    <h2 id="s1">A háromszög megoldása — a döntési recept</h2>
+
+    <div class="doboz tetel" id="tetel-recept">
+      <p class="cim"><span class="ikon">📘</span> Melyik tétel kell?</p>
+      <div class="tblwrap"><table><tr><th>Ismert adatok</th><th>Első lépés</th><th>Folytatás</th></tr><tr><td><b>ASA / AAS</b><br>két szög + egy oldal</td><td>a harmadik szög <span class="math inline">\(180^\circ\)</span>-ból</td><td>szinusztétel a két oldalra</td></tr><tr><td><b>SAS</b><br>két oldal + közbezárt szög</td><td>koszinusztétel a harmadik oldalra</td><td>szinusztétel a <b>kisebbik</b> oldal szögére, a harmadik <span class="math inline">\(180^\circ\)</span>-ból</td></tr><tr><td><b>SSS</b><br>három oldal</td><td>koszinusztétel a <b>legnagyobb</b> oldal szögére</td><td>szinusztétel a másodikra, a harmadik <span class="math inline">\(180^\circ\)</span>-ból</td></tr><tr><td><b>SSA</b><br>két oldal + nem közbezárt szög</td><td>szinusztétel</td><td>⚠️ ellenőrizd, van-e <b>két</b> megoldás</td></tr></table></div><p>A háromszög akkor és csak akkor létezik, ha a szögek összege <span class="math inline">\(180^\circ\)</span>, és teljesül a <b>háromszög-egyenlőtlenség</b>: bármely két oldal összege nagyobb a harmadiknál.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p><b>Miért a legnagyobb oldal szögével kezdünk SSS-nél?</b> Mert az lehet tompaszög — és a koszinusztétel a tompaszöget is helyesen adja vissza (negatív koszinusszal). Ha utána a szinusztételt már csak <b>kisebb</b> oldalakra használod, azok biztosan hegyesszögek, tehát nincs kétértelműség.</p><p>És a kerekítés: a <b>szögfüggvényértékeket</b> öt tizedesre, az <b>oldalhosszakat</b> két tizedesre — ha a köztes értékeket túl korán kerekíted, a végeredmény több tizedessel is elcsúszhat.</p>
+    </div>
+
+    <h2 id="s2">A háromszög területe</h2>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 400 250" width="400" height="250" role="img" aria-label="A háromszög területe két oldalból és a közbezárt szögből">
+      <line x1="230" y1="55" x2="230" y2="200" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="5 4"/>
+      <rect x="230" y="189" width="11" height="11" fill="none" stroke="#94a3b8" stroke-width="1"/>
+      <text x="238" y="128" font-size="11" fill="#64748b">m</text>
+      <polygon points="60,200 330,200 230,55" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.8" stroke-linejoin="round"/>
+      <text x="46" y="206" font-size="14" font-weight="700" fill="#0f172a" text-anchor="middle">A</text>
+      <text x="340" y="206" font-size="14" font-weight="700" fill="#0f172a" text-anchor="middle">B</text>
+      <text x="230" y="43" font-size="14" font-weight="700" fill="#0f172a" text-anchor="middle">C</text>
+      <text x="195" y="217" font-size="13" font-style="italic" fill="#047857" text-anchor="middle">c</text>
+      <text x="296" y="128" font-size="13" font-style="italic" fill="#047857" text-anchor="middle">a</text>
+      <text x="129" y="128" font-size="13" font-style="italic" fill="#047857" text-anchor="middle">b</text>
+      <text x="86" y="192" font-size="12" fill="#3b82f6" text-anchor="middle">α</text>
+      <text x="302" y="192" font-size="12" fill="#3b82f6" text-anchor="middle">β</text>
+      <text x="232" y="81" font-size="12" fill="#3b82f6" text-anchor="middle">γ</text>
+    </svg>
+    </div>
+    <p class="cap">A <span class="math inline">\(T=\tfrac{a\cdot m}{2}\)</span> képletben a magasság kifejezhető: <span class="math inline">\(m=b\sin\gamma\)</span> — innen jön a trigonometrikus területképlet.</p>
+
+    <div class="doboz tetel" id="tetel-terulet">
+      <p class="cim"><span class="ikon">📘</span> Terület két oldalból és a közbezárt szögből</p>
+      <span class="math display">\[T=\frac{1}{2}ab\sin\gamma=\frac{1}{2}bc\sin\alpha=\frac{1}{2}ac\sin\beta\]</span><p>A szögnek mindig a <b>két megadott oldal közötti</b> szögnek kell lennie.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-terulet">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Mekkora annak a háromszögnek a területe, amelyben <span class="math inline">\(a=8\)</span>, <span class="math inline">\(b=11\)</span> és a közbezárt szög <span class="math inline">\(\gamma=35^\circ\)</span>?</p>
+      <details><summary>Megoldás</summary><div class="bel"><span class="math display">\[T=\frac12\cdot 8\cdot 11\cdot\sin 35^\circ=44\cdot 0{,}57358\approx\boxed{25{,}24}\]</span><p>(területegység)</p></div></details>
+    </div>
+
+    <h2 id="s3">Alkalmazások: bemérés a terepen</h2>
+
+    <div class="doboz pelda" id="pelda-torony">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció — a torony magassága</p>
+      <p>Egy torony tövéhez nem tudunk odajutni. Az <span class="math inline">\(A\)</span> pontból a torony csúcsát <span class="math inline">\(32^\circ\)</span>-os emelkedési szögben látjuk; <span class="math inline">\(50\)</span> métert közelebb menve, a <span class="math inline">\(B\)</span> pontból már <span class="math inline">\(48^\circ\)</span>-osban. Milyen magas a torony?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>Nézzük az <span class="math inline">\(ABT\)</span> háromszöget (<span class="math inline">\(T\)</span> a torony csúcsa). Az <span class="math inline">\(A\)</span>-nál lévő szög <span class="math inline">\(32^\circ\)</span>. A <span class="math inline">\(B\)</span>-nél lévő <b>belső</b> szög a <span class="math inline">\(48^\circ\)</span> mellékszöge: <span class="math inline">\(180^\circ-48^\circ=132^\circ\)</span>. Ezért</p><span class="math display">\[\angle ATB=180^\circ-32^\circ-132^\circ=16^\circ.\]</span><p>Szinusztétel az <span class="math inline">\(ABT\)</span> háromszögben:</p><span class="math display">\[BT=\frac{AB\cdot\sin 32^\circ}{\sin 16^\circ}=\frac{50\cdot 0{,}52992}{0{,}27564}\approx 96{,}13\ \text{m}\]</span><p>Végül a <span class="math inline">\(BT\)</span> szakaszból a derékszögű háromszögben:</p><span class="math display">\[h=BT\cdot\sin 48^\circ\approx 96{,}13\cdot 0{,}74314\approx\boxed{71{,}44\ \text{m}}\]</span></div></details>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 460 240" width="460" height="240" role="img" aria-label="Toronymagasság meghatározása két mérési pontból">
+      <line x1="30" y1="200" x2="430" y2="200" stroke="#0f172a" stroke-width="1.8"/>
+      <line x1="360" y1="200" x2="360" y2="60" stroke="#0f172a" stroke-width="2.4"/>
+      <rect x="360" y="60" width="11" height="11" fill="none" stroke="#94a3b8"/>
+      <line x1="70" y1="200" x2="360" y2="60" stroke="#3b82f6" stroke-width="1.6"/>
+      <line x1="215" y1="200" x2="360" y2="60" stroke="#ef4444" stroke-width="1.6"/>
+      <circle cx="70" cy="200" r="4" fill="#3b82f6"/>
+      <circle cx="215" cy="200" r="4" fill="#ef4444"/>
+      <text x="70" y="218" font-size="12" fill="#3b82f6" text-anchor="middle">A</text>
+      <text x="215" y="218" font-size="12" fill="#ef4444" text-anchor="middle">B</text>
+      <text x="360" y="218" font-size="12" fill="#0f172a" text-anchor="middle">T</text>
+      <text x="142" y="218" font-size="11" fill="#475569" text-anchor="middle">50 m</text>
+      <text x="98" y="194" font-size="11" fill="#3b82f6">32°</text>
+      <text x="240" y="194" font-size="11" fill="#ef4444">48°</text>
+      <text x="374" y="135" font-size="12" font-style="italic" fill="#047857">h</text>
+    </svg>
+    </div>
+    <p class="cap">A két mérési pont és a torony egyetlen háromszöget alkot — a <span class="math inline">\(16^\circ\)</span>-os csúcsszög a két emelkedési szög <b>különbsége</b>.</p>
+
+    <div class="doboz pelda" id="pelda-navigacio">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció — navigáció</p>
+      <p>Egy hajó a kikötőből <span class="math inline">\(30\)</span> km-t halad egyenesen, majd <span class="math inline">\(115^\circ\)</span>-kal elfordul, és további <span class="math inline">\(40\)</span> km-t tesz meg. Milyen messze van a kikötőtől?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>A két útszakasz és a keresett távolság háromszöget alkot. A <b>belső</b> szög nem <span class="math inline">\(115^\circ\)</span>, hanem a mellékszöge: <span class="math inline">\(180^\circ-115^\circ=65^\circ\)</span>.</p><span class="math display">\[d^{2}=30^{2}+40^{2}-2\cdot 30\cdot 40\cdot\cos 65^\circ=2500-2400\cdot 0{,}42262\approx 1485{,}7\]</span><span class="math display">\[d\approx\boxed{38{,}54\ \text{km}}\]</span><p>⚠️ Az „elfordul <span class="math inline">\(115^\circ\)</span>-kal” az <b>iránytól</b> való eltérés — a háromszög belső szöge ennek a mellékszöge. Ez a leggyakoribb hiba a navigációs feladatokban.</p></div></details>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Így mérték meg a Földet</p>
+      <p>A <b>háromszögelés</b> évszázadokig a térképészet alapmódszere volt: kijelöltek egy pontosan lemért alapvonalat, majd szögméréssel, szinusztétellel terjeszkedtek tovább, háromszögről háromszögre. Így készült a Nagy Trigonometriai Felmérés Indiában is, amely a Mount Everest magasságát megadta — <span class="math inline">\(8840\)</span> méternek, alig <span class="math inline">\(8\)</span> méterrel a mai értéktől.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ T = ½ · 6 · 9 · sin 30° = 27 · 0,5 = 13,5." data-nem="✘ T = ½ab sin γ = ½ · 6 · 9 · 0,5 = 13,5.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy háromszögben <span class="math inline">\(a=6\)</span>, <span class="math inline">\(b=9\)</span>, <span class="math inline">\(\gamma=30^\circ\)</span>. Mekkora a területe?</p>
+      <div class="opciok"><button><span class="math inline">\(13{,}5\)</span></button><button><span class="math inline">\(27\)</span></button><button><span class="math inline">\(54\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-haromszogek.html#alap-7">🐾 Beast-protokoll <span class="cimke">A 7–14</span></a><a class="sav hulk" href="feladatok-haromszogek.html#kozep-5">🔥 Phoenix-protokoll <span class="cimke">K 5–12</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Jean Grey:</b> A Fázisugrás teljesítve, kadétok — és ezzel a második évad is a végéhez ért. Ez az anyag a <b>4. írásbeli dolgozat</b> teljes terjedelme. Nézd át a taktikai memóriakártyát, aztán jöhet a terepküldetés: egy valódi jelet kell megfejtened, és be kell mérned egy bázist.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-szinusz-es-koszinusztetel.html"><span class="irany">← Előző</span><span class="hova">Szinusz- és koszinusztétel</span></a>
+      <a class="kov" href="feladatok-haromszogek.html"><span class="irany">Következő →</span><span class="hova">Feladatok — háromszögek</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
