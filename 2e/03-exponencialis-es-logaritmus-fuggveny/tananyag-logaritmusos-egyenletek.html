@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Logaritmusos egyenletek és egyenlőtlenségek — tananyag | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Exponenciális és logaritmusfüggvény</a> ›
+  <span class="itt">Logaritmusos egyenletek és egyenlőtlenségek — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Logaritmusos egyenletek és egyenlőtlenségek</h1>
+  <p class="alcim">Az értelmezési tartomány mint első lépés, az összevonás, a jelfordulás és a hamis gyökök kiszűrése.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az Evolúciós Ugrás · 8/8</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Beast:</b> Utolsó szakasz. A logaritmusos egyenletnél van egy lépés, amit <b>soha nem hagyhatsz ki</b>: az <b>értelmezési tartomány</b>. Nem azért, mert a tanár kéri — hanem mert a megoldás közben olyan gyök is előbukkanhat, amelyre az eredeti egyenletnek semmi értelme. Az ÉT a szűrő, ami ezeket kifogja. Kezdd vele, ne a végén told hozzá.</p></div>
+
+    <h2 id="s1">Az értelmezési tartomány — az első lépés</h2>
+
+    <div class="doboz tetel" id="tetel-log-egyenlet-menete">
+      <p class="cim"><span class="ikon">📘</span> A munkamenet</p>
+      <p><b>1.</b> Írd fel az <b>értelmezési tartományt</b>: minden logaritmus argumentuma legyen pozitív. Több logaritmus esetén a feltételek <b>metszete</b> az ÉT.</p><p><b>2.</b> Az azonosságokkal <b>vond össze</b> a logaritmusokat, hogy mindkét oldalon egyetlen logaritmus (vagy egy szám) maradjon.</p><p><b>3.</b> Hagyd el a logaritmust — a függvény kölcsönösen egyértelmű:</p><span class="math display">\[\log_{a}u=\log_{a}v\iff u=v,\qquad \log_{a}u=c\iff u=a^{c}.\]</span><p><b>4.</b> Oldd meg a kapott egyenletet, és <b>vesd össze az ÉT-vel</b>: ami kilóg belőle, azt eldobod.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-log-egyenletek">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Oldd meg: <b>a)</b> <span class="math inline">\(\log_{2}(x-3)=3\)</span>; <b>b)</b> <span class="math inline">\(\log_{5}(2x+1)=2\)</span>; <b>c)</b> <span class="math inline">\(\lg(3x-2)=\lg(x+6)\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> ÉT: <span class="math inline">\(x-3&gt;0\)</span>, azaz <span class="math inline">\(x&gt;3\)</span>. A definíció szerint <span class="math inline">\(x-3=2^{3}=8\)</span>, tehát <span class="math inline">\(x=11\)</span>. Ez nagyobb <span class="math inline">\(3\)</span>-nál, így <span class="math inline">\(\boxed{x=11}\)</span>.</p><p><b>b)</b> ÉT: <span class="math inline">\(2x+1&gt;0\)</span>, azaz <span class="math inline">\(x&gt;-\tfrac12\)</span>. Innen <span class="math inline">\(2x+1=5^{2}=25\)</span>, tehát <span class="math inline">\(2x=24\)</span> és <span class="math inline">\(\boxed{x=12}\)</span> — az ÉT-ben van.</p><p><b>c)</b> ÉT: <span class="math inline">\(3x-2&gt;0\)</span> <b>és</b> <span class="math inline">\(x+6&gt;0\)</span>, azaz <span class="math inline">\(x&gt;\tfrac23\)</span> és <span class="math inline">\(x&gt;-6\)</span> — a metszet <span class="math inline">\(x&gt;\tfrac23\)</span>. A logaritmust elhagyva <span class="math inline">\(3x-2=x+6\)</span>, tehát <span class="math inline">\(2x=8\)</span> és <span class="math inline">\(\boxed{x=4}\)</span>.</p></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p><b>A hamis gyök.</b> Oldd meg gondolatban: <span class="math inline">\(\lg(x^{2}-4x)=\lg 5\)</span>. A logaritmust elhagyva <span class="math inline">\(x^{2}-4x-5=0\)</span>, ahonnan <span class="math inline">\(x_{1}=5\)</span> és <span class="math inline">\(x_{2}=-1\)</span>. A <span class="math inline">\(-1\)</span> elsőre gyanús — pedig <b>jó megoldás</b>: az argumentum értéke <span class="math inline">\((-1)^{2}-4\cdot(-1)=5&gt;0\)</span>.</p><p>Tanulság: <b>nem az <span class="math inline">\(x\)</span> előjelét kell nézni, hanem az argumentum értékét</b>. Mindig helyettesíts vissza az ÉT-feltételbe, ne találgass.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ x + 2 = 3² = 9, tehát x = 7 (és 7 + 2 > 0, az ÉT rendben)." data-nem="✘ A definíció szerint x + 2 = 3² = 9, ahonnan x = 7.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mi a <span class="math inline">\(\log_{3}(x+2)=2\)</span> egyenlet megoldása?</p>
+      <div class="opciok"><button><span class="math inline">\(x=7\)</span></button><button><span class="math inline">\(x=9\)</span></button><button><span class="math inline">\(x=4\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Logaritmusos egyenlőtlenségek</h2>
+
+    Itt a két korábbi szempont <b>találkozik</b>: kell az értelmezési tartomány (mint az egyenleteknél), és figyelni kell a <b>jelfordulásra</b> (mint az exponenciális egyenlőtlenségeknél). A végeredmény mindig a kettő <b>metszete</b>.
+
+    <div class="doboz tetel" id="tetel-log-egyenlotlenseg">
+      <p class="cim"><span class="ikon">📘</span> Logaritmusos egyenlőtlenség</p>
+      <p>Tegyük fel, hogy az egyenlőtlenség <span class="math inline">\(\log_{a}u&lt;\log_{a}v\)</span> alakú (az ÉT: <span class="math inline">\(u&gt;0\)</span> és <span class="math inline">\(v&gt;0\)</span>).</p><ul><li>Ha <b><span class="math inline">\(a&gt;1\)</span></b> (növekvő): <span class="math inline">\(u&lt;v\)</span> — a <b>jel marad</b>.</li><li>Ha <b><span class="math inline">\(0&lt;a&lt;1\)</span></b> (csökkenő): <span class="math inline">\(u&gt;v\)</span> — a <b>jel megfordul</b>.</li></ul><p>A megoldás a kapott egyenlőtlenség megoldáshalmazának és az <b>értelmezési tartománynak a metszete</b>.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-log-egyenlotlensegek">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Oldd meg: <b>a)</b> <span class="math inline">\(\log_{2}(x-1)&lt;4\)</span>; <b>b)</b> <span class="math inline">\(\log_{3}(2x-6)&gt;2\)</span>; <b>c)</b> <span class="math inline">\(\log_{0,5}(4x+1)\ge\log_{0,5}(x+7)\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> ÉT: <span class="math inline">\(x-1&gt;0\)</span>, azaz <span class="math inline">\(x&gt;1\)</span>. Az alap <span class="math inline">\(2&gt;1\)</span>, a jel marad: <span class="math inline">\(x-1&lt;2^{4}=16\)</span>, tehát <span class="math inline">\(x&lt;17\)</span>. A metszet: <span class="math inline">\(\boxed{x\in(1;17)}\)</span>.</p><p><b>b)</b> ÉT: <span class="math inline">\(2x-6&gt;0\)</span>, azaz <span class="math inline">\(x&gt;3\)</span>. Az alap <span class="math inline">\(3&gt;1\)</span>: <span class="math inline">\(2x-6&gt;3^{2}=9\)</span>, tehát <span class="math inline">\(2x&gt;15\)</span> és <span class="math inline">\(x&gt;\tfrac{15}{2}\)</span>. Ez szigorúbb az ÉT-nél, tehát <span class="math inline">\(\boxed{x\in\left(\tfrac{15}{2};+\infty\right)}\)</span>.</p><p><b>c)</b> ÉT: <span class="math inline">\(4x+1&gt;0\)</span> és <span class="math inline">\(x+7&gt;0\)</span>, azaz <span class="math inline">\(x&gt;-\tfrac14\)</span> (ez a szigorúbb). Az alap <span class="math inline">\(0&lt;0{,}5&lt;1\)</span>, ezért a jel <b>megfordul</b>: <span class="math inline">\(4x+1\le x+7\)</span>, tehát <span class="math inline">\(3x\le 6\)</span> és <span class="math inline">\(x\le 2\)</span>. A metszet: <span class="math inline">\(\boxed{x\in\left(-\tfrac14;2\right]}\)</span>.</p></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p>A három leggyakoribb hiba:</p><ol class="reszfeladatok"><li><b>Az ÉT kihagyása.</b> A c) feladatban ÉT nélkül <span class="math inline">\(x\le 2\)</span> jönne ki — de a <span class="math inline">\(-5\)</span> például nem megoldás, mert ott <span class="math inline">\(4x+1\)</span> negatív.</li><li><b>A jelfordulás elfelejtése.</b> Nézd meg az alapot, mielőtt elhagyod a logaritmust.</li><li><b>Uniót írni metszet helyett.</b> Az ÉT és a kapott halmaz között <b>metszet</b> van: mindkét feltételnek egyszerre kell teljesülnie.</li></ol>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A 0,2 alapú logaritmusfüggvény csökkenő, ezért a reláció megfordul." data-nem="✘ Az alap dönt: 0 < 0,2 < 1 → a függvény csökkenő → a jel megfordul.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>A <span class="math inline">\(\log_{0,2}(x+1)&gt;\log_{0,2}(2x-3)\)</span> megoldásánál mi történik a jellel?</p>
+      <div class="opciok"><button>Megfordul, mert az alap kisebb 1-nél.</button><button>Marad, mert mindkét oldalon logaritmus áll.</button><button>Megfordul, mert az argumentumok pozitívak.</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-logaritmusfuggveny.html#alap-7">🐾 Beast-protokoll <span class="cimke">A 7–14</span></a><a class="sav hulk" href="feladatok-logaritmusfuggveny.html#kozep-4">🔥 Phoenix-protokoll <span class="cimke">K 4–12</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Beast:</b> Küldetés teljesítve, kadétok. Az <b>Evolúciós Ugrás</b> megvan: tudjuk modellezni a robbanásszerű növekedést, és — ami fontosabb — tudunk <b>visszafelé</b> is számolni. Ez az anyag a <b>3. dolgozat</b> teljes terjedelme; a gyűjtemény végén találsz hozzá felkészítő sávot. Nézd át a taktikai memóriakártyát, aztán jöhet a terepküldetés.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-inverz-es-logaritmusfuggveny.html"><span class="irany">← Előző</span><span class="hova">Az inverz függvény és a logaritmusfüggvény</span></a>
+      <a class="kov" href="feladatok-logaritmusfuggveny.html"><span class="irany">Következő →</span><span class="hova">Feladatok — logaritmusfüggvény</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

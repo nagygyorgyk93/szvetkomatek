@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Az exponenciális függvény — tananyag | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Exponenciális és logaritmusfüggvény</a> ›
+  <span class="itt">Az exponenciális függvény — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Az exponenciális függvény</h1>
+  <p class="alcim">A fogalom és a két alapeset (<span class="math inline">\(a&gt;1\)</span> és <span class="math inline">\(0&lt;a&lt;1\)</span>), a függvény tulajdonságai, valamint a grafikon eltolása és tükrözése.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az Evolúciós Ugrás · 1/8</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Beast:</b> Kadétok, a laborban rossz hírt kaptam. Sinister vírusa nem lineárisan és nem is másodfokon terjed: minden órában <b>megkétszereződik</b> a fertőzött sejtek száma. Egy óra múlva 2, kettő múlva 4, tíz óra múlva már több mint ezer. Ez az <b>exponenciális növekedés</b> — a természet leggyorsabb hétköznapi mechanizmusa. Ha meg akarjuk állítani, előbb le kell írnunk. Kezdjük a görbével.</p></div>
+
+    Eddig a hatványozásnál az <b>alap</b> volt a változó (<span class="math inline">\(x^{2}\)</span>, <span class="math inline">\(x^{3}\)</span> — <a href="../01-hatvanyozas-gyokvonas-komplex-szamok/tananyag-hatvanyfuggveny.html">hatványfüggvény</a>). Most cserét hajtunk végre: az alap lesz <b>rögzített</b>, és a <b>kitevő</b> válik változóvá. Ez az egyetlen csere gyökeresen más viselkedésű függvényt ad.
+
+    <h2 id="s1">Az exponenciális függvény fogalma</h2>
+
+    <div class="doboz definicio" id="def-exponencialis">
+      <p class="cim"><span class="ikon">📗</span> Exponenciális függvény</p>
+      <p><b>Exponenciális függvénynek</b> nevezzük az <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}^{+}\)</span>,</p><span class="math display">\[f(x)=a^{x},\qquad a&gt;0,\ a\neq 1\]</span><p>alakú valós függvényt. Az <span class="math inline">\(a\)</span> szám a függvény <b>alapja</b>.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p>Miért kell a két kikötés?</p><ul><li><b><span class="math inline">\(a&gt;0\)</span>:</b> ha az alap negatív lenne, a hatvány sok <span class="math inline">\(x\)</span>-re nem lenne értelmezhető a valós számok között — például <span class="math inline">\((-4)^{1/2}=\sqrt{-4}\)</span> nem valós szám. A függvény „lyukas” lenne.</li><li><b><span class="math inline">\(a\neq 1\)</span>:</b> az <span class="math inline">\(1^{x}\)</span> minden <span class="math inline">\(x\)</span>-re <span class="math inline">\(1\)</span> — ez a konstans függvény, nem mond semmit a kitevőről.</li></ul><p>Az <span class="math inline">\(a=0\)</span> eset szintén kiesik: <span class="math inline">\(0^{x}\)</span> negatív kitevőre nullával való osztás lenne.</p>
+    </div>
+
+    A <b>kitevő bármely valós szám</b> lehet — nemcsak egész. Hogy ennek van értelme, azt épp az I. témakörben alapoztuk meg: a <a href="../01-hatvanyozas-gyokvonas-komplex-szamok/tananyag-gyoktelenites-es-racionalis-kitevo.html">racionális kitevőjű hatvány</a> a gyökvonással definiálható, az irracionális kitevő pedig ezekből közelítéssel adódik.
+
+    <div class="kviz" data-answer="0" data-jo="✔ Az x³-ben a KITEVŐ állandó és az ALAP változik — ez hatványfüggvény." data-nem="✘ Nézd meg, hol van az x: exponenciálisnál a KITEVŐBEN, hatványfüggvénynél az ALAPBAN.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik NEM exponenciális függvény?</p>
+      <div class="opciok"><button><span class="math inline">\(f(x)=x^{3}\)</span></button><button><span class="math inline">\(f(x)=3^{x}\)</span></button><button><span class="math inline">\(f(x)=\left(\tfrac13\right)^{x}\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">A két alapeset: növekvő és csökkenő</h2>
+
+    Az egész témakör legfontosabb megkülönböztetése az, hogy az alap <b>nagyobb</b> vagy <b>kisebb</b> <span class="math inline">\(1\)</span>-nél. Ez dönti el, hogy a függvény nő vagy csökken — és később ez fogja eldönteni az egyenlőtlenségek irányát is.
+
+    <div class="svgcard">
+    <svg viewBox="0 0 380 260" width="380" height="260" role="img" aria-label="Növekvő exponenciális függvények: minél nagyobb az alap, annál meredekebb a görbe">
+      <defs><marker id="nyil" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="96.4" y1="238.0" x2="96.4" y2="14.0"/>
+        <line x1="146.7" y1="238.0" x2="146.7" y2="14.0"/>
+        <line x1="247.3" y1="238.0" x2="247.3" y2="14.0"/>
+        <line x1="297.6" y1="238.0" x2="297.6" y2="14.0"/>
+        <line x1="347.9" y1="238.0" x2="347.9" y2="14.0"/>
+        <line x1="26.0" y1="158.5" x2="368.0" y2="158.5"/>
+        <line x1="26.0" y1="122.4" x2="368.0" y2="122.4"/>
+        <line x1="26.0" y1="86.3" x2="368.0" y2="86.3"/>
+        <line x1="26.0" y1="50.1" x2="368.0" y2="50.1"/>
+        <line x1="26.0" y1="14.0" x2="368.0" y2="14.0"/>
+      </g>
+      <line x1="26.0" y1="194.6" x2="368.0" y2="194.6" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <line x1="197.0" y1="238.0" x2="197.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <text x="364.0" y="208.6" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="189.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="247.3" y="207.6" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="192.0" y="162.5" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <polyline points="26.0,191.2 28.9,191.1 31.7,190.9 34.6,190.8 37.5,190.6 40.3,190.5 43.2,190.3 46.1,190.1 48.9,190.0 51.8,189.8 54.7,189.6 57.5,189.4 60.4,189.1 63.3,188.9 66.1,188.7 69.0,188.5 71.9,188.2 74.7,187.9 77.6,187.7 80.5,187.4 83.3,187.1 86.2,186.8 89.1,186.5 91.9,186.2 94.8,185.8 97.7,185.5 100.5,185.1 103.4,184.7 106.3,184.3 109.1,183.9 112.0,183.4 114.9,183.0 117.7,182.5 120.6,182.0 123.5,181.5 126.3,181.0 129.2,180.5 132.1,179.9 134.9,179.3 137.8,178.7 140.7,178.0 143.5,177.4 146.4,176.7 149.3,175.9 152.1,175.2 155.0,174.4 157.9,173.6 160.7,172.7 163.6,171.8 166.5,170.9 169.3,170.0 172.2,169.0 175.1,167.9 177.9,166.9 180.8,165.7 183.7,164.6 186.5,163.4 189.4,162.1 192.3,160.8 195.1,159.4 198.0,158.0 200.9,156.5 203.7,155.0 206.6,153.4 209.5,151.7 212.3,150.0 215.2,148.2 218.1,146.3 220.9,144.4 223.8,142.4 226.7,140.3 229.5,138.1 232.4,135.8 235.3,133.4 238.1,131.0 241.0,128.4 243.9,125.7 246.7,122.9 249.6,120.0 252.5,117.0 255.3,113.9 258.2,110.7 261.1,107.3 263.9,103.8 266.8,100.1 269.7,96.3 272.5,92.3 275.4,88.2 278.3,83.9 281.1,79.4 284.0,74.8 286.9,70.0 289.7,64.9 292.6,59.7 295.5,54.3 298.3,48.6 301.2,42.7 304.1,36.6 306.9,30.2 309.8,23.6 312.7,16.7" fill="none" stroke="#047857" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="26.0,193.8 28.5,193.7 31.0,193.7 33.5,193.6 36.1,193.6 38.6,193.5 41.1,193.4 43.6,193.4 46.1,193.3 48.6,193.2 51.1,193.2 53.7,193.1 56.2,193.0 58.7,192.9 61.2,192.8 63.7,192.7 66.2,192.6 68.8,192.5 71.3,192.3 73.8,192.2 76.3,192.1 78.8,191.9 81.3,191.8 83.8,191.6 86.4,191.4 88.9,191.2 91.4,191.0 93.9,190.8 96.4,190.6 98.9,190.4 101.4,190.2 104.0,189.9 106.5,189.6 109.0,189.4 111.5,189.1 114.0,188.7 116.5,188.4 119.0,188.1 121.6,187.7 124.1,187.3 126.6,186.9 129.1,186.4 131.6,186.0 134.1,185.5 136.6,185.0 139.2,184.4 141.7,183.9 144.2,183.2 146.7,182.6 149.2,181.9 151.7,181.2 154.2,180.4 156.8,179.6 159.3,178.8 161.8,177.9 164.3,177.0 166.8,176.0 169.3,174.9 171.9,173.8 174.4,172.6 176.9,171.4 179.4,170.0 181.9,168.7 184.4,167.2 186.9,165.6 189.5,164.0 192.0,162.3 194.5,160.4 197.0,158.5 199.5,156.5 202.0,154.3 204.5,152.0 207.1,149.6 209.6,147.1 212.1,144.4 214.6,141.6 217.1,138.6 219.6,135.4 222.1,132.1 224.7,128.5 227.2,124.8 229.7,120.9 232.2,116.7 234.7,112.3 237.2,107.6 239.8,102.7 242.3,97.5 244.8,92.1 247.3,86.3 249.8,80.1 252.3,73.7 254.8,66.8 257.4,59.6 259.9,52.0 262.4,43.9 264.9,35.4 267.4,26.4 269.9,16.9 272.4,6.9" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="26.0,185.5 29.4,185.3 32.8,185.0 36.3,184.8 39.7,184.5 43.1,184.2 46.5,183.9 49.9,183.6 53.4,183.3 56.8,183.0 60.2,182.7 63.6,182.3 67.0,182.0 70.5,181.6 73.9,181.3 77.3,180.9 80.7,180.5 84.1,180.1 87.6,179.7 91.0,179.3 94.4,178.8 97.8,178.4 101.2,178.0 104.7,177.5 108.1,177.0 111.5,176.5 114.9,176.0 118.3,175.5 121.8,174.9 125.2,174.4 128.6,173.8 132.0,173.2 135.4,172.7 138.9,172.0 142.3,171.4 145.7,170.8 149.1,170.1 152.5,169.4 156.0,168.7 159.4,168.0 162.8,167.2 166.2,166.5 169.6,165.7 173.1,164.9 176.5,164.0 179.9,163.2 183.3,162.3 186.7,161.4 190.2,160.5 193.6,159.5 197.0,158.5 200.4,157.5 203.8,156.5 207.3,155.4 210.7,154.3 214.1,153.2 217.5,152.0 220.9,150.8 224.4,149.6 227.8,148.3 231.2,147.0 234.6,145.7 238.0,144.3 241.5,142.9 244.9,141.5 248.3,140.0 251.7,138.5 255.1,136.9 258.6,135.3 262.0,133.6 265.4,131.9 268.8,130.2 272.2,128.4 275.7,126.5 279.1,124.6 282.5,122.7 285.9,120.7 289.3,118.6 292.8,116.5 296.2,114.3 299.6,112.0 303.0,109.7 306.4,107.3 309.9,104.9 313.3,102.4 316.7,99.8 320.1,97.2 323.5,94.4 327.0,91.6 330.4,88.8 333.8,85.8 337.2,82.8 340.6,79.6 344.1,76.4 347.5,73.1 350.9,69.7 354.3,66.2 357.7,62.6 361.2,58.9 364.6,55.1 368.0,51.2" fill="none" stroke="#8b5cf6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="197.0" cy="158.5" r="4" fill="#ef4444"/>
+      <text x="205.0" y="174.5" font-size="11" fill="#ef4444" font-weight="600">(0; 1)</text>
+      <rect x="291" y="13" width="83" height="57" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="295" y1="22" x2="313" y2="22" stroke="#047857" stroke-width="2.4"/>
+      <text x="318" y="26" font-size="11" fill="#0f172a">y = 2ˣ</text>
+      <line x1="295" y1="39" x2="313" y2="39" stroke="#3b82f6" stroke-width="2.4"/>
+      <text x="318" y="43" font-size="11" fill="#0f172a">y = 3ˣ</text>
+      <line x1="295" y1="56" x2="313" y2="56" stroke="#8b5cf6" stroke-width="2.4"/>
+      <text x="318" y="60" font-size="11" fill="#0f172a">y = 1,5ˣ</text>
+    </svg>
+    </div>
+    <p class="cap"><span class="math inline">\(a&gt;1\)</span> esetén a függvény <b>növekvő</b>. Minél nagyobb az alap, annál meredekebben emelkedik — de mindegyik görbe átmegy a <span class="math inline">\((0;1)\)</span> ponton.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 380 260" width="380" height="260" role="img" aria-label="Az y = 2 az x-edik és az y = fél az x-edik függvény grafikonja egymás tükörképe az y-tengelyre">
+      <defs><marker id="nyil" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="96.4" y1="238.0" x2="96.4" y2="14.0"/>
+        <line x1="146.7" y1="238.0" x2="146.7" y2="14.0"/>
+        <line x1="247.3" y1="238.0" x2="247.3" y2="14.0"/>
+        <line x1="297.6" y1="238.0" x2="297.6" y2="14.0"/>
+        <line x1="347.9" y1="238.0" x2="347.9" y2="14.0"/>
+        <line x1="26.0" y1="158.5" x2="368.0" y2="158.5"/>
+        <line x1="26.0" y1="122.4" x2="368.0" y2="122.4"/>
+        <line x1="26.0" y1="86.3" x2="368.0" y2="86.3"/>
+        <line x1="26.0" y1="50.1" x2="368.0" y2="50.1"/>
+        <line x1="26.0" y1="14.0" x2="368.0" y2="14.0"/>
+      </g>
+      <line x1="26.0" y1="194.6" x2="368.0" y2="194.6" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <line x1="197.0" y1="238.0" x2="197.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <text x="364.0" y="208.6" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="189.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="247.3" y="207.6" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="192.0" y="162.5" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <polyline points="26.0,191.2 28.9,191.1 31.7,190.9 34.6,190.8 37.5,190.6 40.3,190.5 43.2,190.3 46.1,190.1 48.9,190.0 51.8,189.8 54.7,189.6 57.5,189.4 60.4,189.1 63.3,188.9 66.1,188.7 69.0,188.5 71.9,188.2 74.7,187.9 77.6,187.7 80.5,187.4 83.3,187.1 86.2,186.8 89.1,186.5 91.9,186.2 94.8,185.8 97.7,185.5 100.5,185.1 103.4,184.7 106.3,184.3 109.1,183.9 112.0,183.4 114.9,183.0 117.7,182.5 120.6,182.0 123.5,181.5 126.3,181.0 129.2,180.5 132.1,179.9 134.9,179.3 137.8,178.7 140.7,178.0 143.5,177.4 146.4,176.7 149.3,175.9 152.1,175.2 155.0,174.4 157.9,173.6 160.7,172.7 163.6,171.8 166.5,170.9 169.3,170.0 172.2,169.0 175.1,167.9 177.9,166.9 180.8,165.7 183.7,164.6 186.5,163.4 189.4,162.1 192.3,160.8 195.1,159.4 198.0,158.0 200.9,156.5 203.7,155.0 206.6,153.4 209.5,151.7 212.3,150.0 215.2,148.2 218.1,146.3 220.9,144.4 223.8,142.4 226.7,140.3 229.5,138.1 232.4,135.8 235.3,133.4 238.1,131.0 241.0,128.4 243.9,125.7 246.7,122.9 249.6,120.0 252.5,117.0 255.3,113.9 258.2,110.7 261.1,107.3 263.9,103.8 266.8,100.1 269.7,96.3 272.5,92.3 275.4,88.2 278.3,83.9 281.1,79.4 284.0,74.8 286.9,70.0 289.7,64.9 292.6,59.7 295.5,54.3 298.3,48.6 301.2,42.7 304.1,36.6 306.9,30.2 309.8,23.6 312.7,16.7" fill="none" stroke="#047857" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="81.3,16.7 84.2,23.6 87.1,30.2 89.9,36.6 92.8,42.7 95.7,48.6 98.5,54.3 101.4,59.7 104.3,64.9 107.1,70.0 110.0,74.8 112.9,79.4 115.7,83.9 118.6,88.2 121.5,92.3 124.3,96.3 127.2,100.1 130.1,103.8 132.9,107.3 135.8,110.7 138.7,113.9 141.5,117.0 144.4,120.0 147.3,122.9 150.1,125.7 153.0,128.4 155.9,131.0 158.7,133.4 161.6,135.8 164.5,138.1 167.3,140.3 170.2,142.4 173.1,144.4 175.9,146.3 178.8,148.2 181.7,150.0 184.5,151.7 187.4,153.4 190.3,155.0 193.1,156.5 196.0,158.0 198.9,159.4 201.7,160.8 204.6,162.1 207.5,163.4 210.3,164.6 213.2,165.7 216.1,166.9 218.9,167.9 221.8,169.0 224.7,170.0 227.5,170.9 230.4,171.8 233.3,172.7 236.1,173.6 239.0,174.4 241.9,175.2 244.7,175.9 247.6,176.7 250.5,177.4 253.3,178.0 256.2,178.7 259.1,179.3 261.9,179.9 264.8,180.5 267.7,181.0 270.5,181.5 273.4,182.0 276.3,182.5 279.1,183.0 282.0,183.4 284.9,183.9 287.7,184.3 290.6,184.7 293.5,185.1 296.3,185.5 299.2,185.8 302.1,186.2 304.9,186.5 307.8,186.8 310.7,187.1 313.5,187.4 316.4,187.7 319.3,187.9 322.1,188.2 325.0,188.5 327.9,188.7 330.7,188.9 333.6,189.1 336.5,189.4 339.3,189.6 342.2,189.8 345.1,190.0 347.9,190.1 350.8,190.3 353.7,190.5 356.5,190.6 359.4,190.8 362.3,190.9 365.1,191.1 368.0,191.2" fill="none" stroke="#ef4444" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="197.0" cy="158.5" r="4" fill="#8b5cf6"/>
+      <text x="205.0" y="174.5" font-size="11" fill="#8b5cf6" font-weight="600">(0; 1)</text>
+      <rect x="291" y="13" width="83" height="40" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="295" y1="22" x2="313" y2="22" stroke="#047857" stroke-width="2.4"/>
+      <text x="318" y="26" font-size="11" fill="#0f172a">y = 2ˣ</text>
+      <line x1="295" y1="39" x2="313" y2="39" stroke="#ef4444" stroke-width="2.4"/>
+      <text x="318" y="43" font-size="11" fill="#0f172a">y = (½)ˣ</text>
+    </svg>
+    </div>
+    <p class="cap"><span class="math inline">\(0&lt;a&lt;1\)</span> esetén a függvény <b>csökkenő</b>. Az <span class="math inline">\(y=\left(\tfrac12\right)^{x}\)</span> az <span class="math inline">\(y=2^{x}\)</span> tükörképe az <span class="math inline">\(y\)</span>-tengelyre, hiszen <span class="math inline">\(\left(\tfrac12\right)^{x}=2^{-x}\)</span>.</p>
+
+    <div class="doboz tetel" id="tetel-monotonitas">
+      <p class="cim"><span class="ikon">📘</span> Monotonitás</p>
+      <p>Az <span class="math inline">\(f(x)=a^{x}\)</span> függvény</p><ul><li><b>szigorúan növekvő</b>, ha <span class="math inline">\(a&gt;1\)</span>;</li><li><b>szigorúan csökkenő</b>, ha <span class="math inline">\(0&lt;a&lt;1\)</span>.</li></ul><p>Mindkét esetben <b>kölcsönösen egyértelmű</b> (injektív): különböző kitevőkhöz különböző értékek tartoznak. Ez az a tulajdonság, amire az összes exponenciális egyenlet megoldása épül.</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Miért ilyen gyors?</p>
+      <p>Ha egy papírlapot elméletben <span class="math inline">\(42\)</span>-szer félbehajtanál, a vastagsága <span class="math inline">\(0{,}1\ \text{mm}\cdot 2^{42}\)</span> lenne — nagyjából <b>440 000 km</b>, több mint a Föld–Hold távolság. Ez ugyanaz a <span class="math inline">\(2^{x}\)</span>, amit a grafikonon látsz: a bal oldalon szinte rátapad a tengelyre, a jobb oldalon pedig elszalad.</p>
+    </div>
+
+    <h2 id="s3">Tulajdonságok</h2>
+
+    <div class="doboz tetel" id="tetel-tulajdonsagok">
+      <p class="cim"><span class="ikon">📘</span> Az <span class="math inline">\(f(x)=a^{x}\)</span> függvény tulajdonságai</p>
+      <div class="tblwrap"><table><tr><th>Tulajdonság</th><th><span class="math inline">\(a&gt;1\)</span></th><th><span class="math inline">\(0&lt;a&lt;1\)</span></th></tr><tr><td>Értelmezési tartomány</td><td colspan="2"><span class="math inline">\(\mathbb{R}\)</span> — minden valós szám</td></tr><tr><td>Értékkészlet</td><td colspan="2"><span class="math inline">\((0;+\infty)\)</span> — <b>mindig pozitív</b></td></tr><tr><td>Nullahely</td><td colspan="2">nincs (a görbe sosem éri el a tengelyt)</td></tr><tr><td>Metszés az <span class="math inline">\(y\)</span>-tengellyel</td><td colspan="2"><span class="math inline">\((0;1)\)</span>, mert <span class="math inline">\(a^{0}=1\)</span></td></tr><tr><td>Monotonitás</td><td>szigorúan növekvő</td><td>szigorúan csökkenő</td></tr><tr><td>Aszimptota</td><td colspan="2">az <span class="math inline">\(x\)</span>-tengely (<span class="math inline">\(y=0\)</span>)</td></tr></table></div>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p><b>Az exponenciális függvény értéke SOHA nem nulla és soha nem negatív.</b> A görbe tetszőlegesen közel kerül az <span class="math inline">\(x\)</span>-tengelyhez, de nem éri el. Ezért:</p><ul><li>a <span class="math inline">\(2^{x}=0\)</span> egyenletnek <b>nincs</b> megoldása;</li><li>a <span class="math inline">\(3^{x}=-5\)</span> egyenletnek <b>nincs</b> megoldása;</li><li>a <span class="math inline">\(2^{x}&gt;0\)</span> egyenlőtlenség <b>minden</b> valós <span class="math inline">\(x\)</span>-re teljesül.</li></ul><p>Ez a későbbi helyettesítéses feladatoknál kulcsfontosságú lesz: ha <span class="math inline">\(t=a^{x}\)</span>, akkor <b><span class="math inline">\(t&gt;0\)</span></b>, és a negatív <span class="math inline">\(t\)</span>-gyököket el kell dobni.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ Minden pozitív értéket felvesz, de a nullát soha." data-nem="✘ A görbe végig a tengely FÖLÖTT halad, és a nullát sem éri el: (0; +∞).">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi az <span class="math inline">\(f(x)=5^{x}\)</span> függvény értékkészlete?</p>
+      <div class="opciok"><button><span class="math inline">\((0;+\infty)\)</span></button><button><span class="math inline">\(\mathbb{R}\)</span></button><button><span class="math inline">\([0;+\infty)\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Eltolás és tükrözés</h2>
+
+    A grafikon rajzolásához nem kell értéktáblázat: elég az alapgörbe, és rá a már ismert <b>transzformációk</b>.
+
+    <div class="svgcard">
+    <svg viewBox="0 0 380 280" width="380" height="280" role="img" aria-label="Az alapgörbe függőleges és vízszintes eltolása">
+      <defs><marker id="nyil" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="88.2" y1="258.0" x2="88.2" y2="14.0"/>
+        <line x1="132.6" y1="258.0" x2="132.6" y2="14.0"/>
+        <line x1="221.4" y1="258.0" x2="221.4" y2="14.0"/>
+        <line x1="265.8" y1="258.0" x2="265.8" y2="14.0"/>
+        <line x1="310.3" y1="258.0" x2="310.3" y2="14.0"/>
+        <line x1="354.7" y1="258.0" x2="354.7" y2="14.0"/>
+        <line x1="26.0" y1="212.6" x2="368.0" y2="212.6"/>
+        <line x1="26.0" y1="184.2" x2="368.0" y2="184.2"/>
+        <line x1="26.0" y1="127.5" x2="368.0" y2="127.5"/>
+        <line x1="26.0" y1="99.1" x2="368.0" y2="99.1"/>
+        <line x1="26.0" y1="70.7" x2="368.0" y2="70.7"/>
+        <line x1="26.0" y1="42.4" x2="368.0" y2="42.4"/>
+        <line x1="26.0" y1="14.0" x2="368.0" y2="14.0"/>
+      </g>
+      <line x1="26.0" y1="155.9" x2="368.0" y2="155.9" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <line x1="177.0" y1="258.0" x2="177.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <text x="364.0" y="169.9" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="169.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="221.4" y="168.9" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="172.0" y="131.5" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <polyline points="26.0,153.2 28.5,153.1 31.1,153.0 33.6,152.8 36.1,152.7 38.7,152.6 41.2,152.5 43.7,152.3 46.3,152.2 48.8,152.0 51.3,151.9 53.8,151.7 56.4,151.5 58.9,151.4 61.4,151.2 64.0,151.0 66.5,150.8 69.0,150.6 71.6,150.4 74.1,150.2 76.6,149.9 79.2,149.7 81.7,149.5 84.2,149.2 86.8,148.9 89.3,148.6 91.8,148.4 94.4,148.1 96.9,147.7 99.4,147.4 102.0,147.1 104.5,146.7 107.0,146.3 109.5,146.0 112.1,145.6 114.6,145.1 117.1,144.7 119.7,144.3 122.2,143.8 124.7,143.3 127.3,142.8 129.8,142.3 132.3,141.7 134.9,141.2 137.4,140.6 139.9,140.0 142.5,139.3 145.0,138.6 147.5,138.0 150.1,137.2 152.6,136.5 155.1,135.7 157.6,134.9 160.2,134.0 162.7,133.2 165.2,132.2 167.8,131.3 170.3,130.3 172.8,129.3 175.4,128.2 177.9,127.1 180.4,125.9 183.0,124.7 185.5,123.5 188.0,122.2 190.6,120.8 193.1,119.4 195.6,117.9 198.2,116.4 200.7,114.8 203.2,113.2 205.7,111.4 208.3,109.6 210.8,107.8 213.3,105.8 215.9,103.8 218.4,101.7 220.9,99.5 223.5,97.3 226.0,94.9 228.5,92.5 231.1,89.9 233.6,87.2 236.1,84.5 238.7,81.6 241.2,78.6 243.7,75.5 246.3,72.3 248.8,68.9 251.3,65.4 253.9,61.7 256.4,57.9 258.9,54.0 261.4,49.9 264.0,45.6 266.5,41.2 269.0,36.6 271.6,31.8 274.1,26.8 276.6,21.6 279.2,16.1" fill="none" stroke="#94a3b8" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="26.0,238.3 28.8,238.2 31.6,238.0 34.4,237.9 37.2,237.8 40.0,237.6 42.8,237.5 45.6,237.3 48.4,237.2 51.2,237.0 54.0,236.8 56.8,236.6 59.6,236.4 62.4,236.2 65.2,236.0 68.0,235.8 70.8,235.6 73.6,235.3 76.4,235.1 79.2,234.8 82.0,234.5 84.8,234.3 87.6,234.0 90.4,233.6 93.2,233.3 96.0,233.0 98.8,232.6 101.6,232.2 104.3,231.8 107.1,231.4 109.9,231.0 112.7,230.6 115.5,230.1 118.3,229.6 121.1,229.1 123.9,228.6 126.7,228.0 129.5,227.5 132.3,226.8 135.1,226.2 137.9,225.6 140.7,224.9 143.5,224.2 146.3,223.4 149.1,222.6 151.9,221.8 154.7,220.9 157.5,220.0 160.3,219.1 163.1,218.1 165.9,217.1 168.7,216.1 171.5,214.9 174.3,213.8 177.1,212.6 179.9,211.3 182.7,210.0 185.5,208.6 188.3,207.1 191.1,205.6 193.9,204.1 196.7,202.4 199.5,200.7 202.3,198.9 205.1,197.0 207.9,195.0 210.7,193.0 213.5,190.9 216.3,188.6 219.1,186.3 221.9,183.8 224.7,181.3 227.5,178.6 230.3,175.8 233.1,172.9 235.9,169.9 238.7,166.7 241.5,163.4 244.3,159.9 247.1,156.3 249.9,152.6 252.7,148.6 255.5,144.5 258.2,140.2 261.0,135.7 263.8,131.0 266.6,126.1 269.4,120.9 272.2,115.6 275.0,110.0 277.8,104.1 280.6,98.0 283.4,91.6 286.2,85.0 289.0,78.0 291.8,70.7 294.6,63.1 297.4,55.2 300.2,46.9 303.0,38.2 305.8,29.2" fill="none" stroke="#047857" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="26.0,155.2 29.4,155.2 32.8,155.1 36.3,155.1 39.7,155.0 43.1,155.0 46.5,154.9 49.9,154.9 53.4,154.8 56.8,154.8 60.2,154.7 63.6,154.7 67.0,154.6 70.5,154.5 73.9,154.4 77.3,154.4 80.7,154.3 84.1,154.2 87.6,154.1 91.0,154.0 94.4,153.9 97.8,153.8 101.2,153.7 104.7,153.6 108.1,153.4 111.5,153.3 114.9,153.2 118.3,153.0 121.8,152.9 125.2,152.7 128.6,152.5 132.0,152.3 135.4,152.2 138.9,151.9 142.3,151.7 145.7,151.5 149.1,151.3 152.5,151.0 156.0,150.8 159.4,150.5 162.8,150.2 166.2,149.9 169.6,149.5 173.1,149.2 176.5,148.8 179.9,148.4 183.3,148.0 186.7,147.6 190.2,147.2 193.6,146.7 197.0,146.2 200.4,145.6 203.8,145.1 207.3,144.5 210.7,143.9 214.1,143.2 217.5,142.5 220.9,141.8 224.4,141.0 227.8,140.2 231.2,139.3 234.6,138.4 238.0,137.5 241.5,136.5 244.9,135.4 248.3,134.3 251.7,133.1 255.1,131.9 258.6,130.5 262.0,129.1 265.4,127.7 268.8,126.1 272.2,124.5 275.7,122.8 279.1,121.0 282.5,119.1 285.9,117.0 289.3,114.9 292.8,112.7 296.2,110.3 299.6,107.8 303.0,105.2 306.4,102.4 309.9,99.5 313.3,96.4 316.7,93.1 320.1,89.7 323.5,86.0 327.0,82.2 330.4,78.2 333.8,73.9 337.2,69.4 340.6,64.7 344.1,59.7 347.5,54.4 350.9,48.9 354.3,43.0 357.7,36.8 361.2,30.3 364.6,23.4 368.0,16.1" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="278" y="13" width="96" height="57" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="282" y1="22" x2="300" y2="22" stroke="#94a3b8" stroke-width="2.4"/>
+      <text x="305" y="26" font-size="11" fill="#0f172a">y = 2ˣ</text>
+      <line x1="282" y1="39" x2="300" y2="39" stroke="#047857" stroke-width="2.4"/>
+      <text x="305" y="43" font-size="11" fill="#0f172a">y = 2ˣ − 3</text>
+      <line x1="282" y1="56" x2="300" y2="56" stroke="#3b82f6" stroke-width="2.4"/>
+      <text x="305" y="60" font-size="11" fill="#0f172a">y = 2ˣ⁻²</text>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(y=2^{x}-3\)</span> három egységgel <b>lefelé</b> tolt görbe (az aszimptota is levándorol az <span class="math inline">\(y=-3\)</span> egyenesre), az <span class="math inline">\(y=2^{x-2}\)</span> pedig két egységgel <b>jobbra</b> tolt (az aszimptota marad az <span class="math inline">\(x\)</span>-tengely).</p>
+
+    <div class="doboz tetel" id="tetel-transzformaciok">
+      <p class="cim"><span class="ikon">📘</span> A négy alapmozgás</p>
+      <div class="tblwrap"><table><tr><th>Alak</th><th>Mit csinál?</th><th>Aszimptota</th></tr><tr><td><span class="math inline">\(y=a^{x}+c\)</span></td><td><span class="math inline">\(c\)</span> egységgel <b>fel</b> (ha <span class="math inline">\(c&gt;0\)</span>)</td><td><span class="math inline">\(y=c\)</span></td></tr><tr><td><span class="math inline">\(y=a^{x-b}\)</span></td><td><span class="math inline">\(b\)</span> egységgel <b>jobbra</b> (ha <span class="math inline">\(b&gt;0\)</span>)</td><td><span class="math inline">\(y=0\)</span></td></tr><tr><td><span class="math inline">\(y=a^{-x}\)</span></td><td>tükrözés az <b><span class="math inline">\(y\)</span>-tengelyre</b></td><td><span class="math inline">\(y=0\)</span></td></tr><tr><td><span class="math inline">\(y=-a^{x}\)</span></td><td>tükrözés az <b><span class="math inline">\(x\)</span>-tengelyre</b></td><td><span class="math inline">\(y=0\)</span></td></tr></table></div><p>Figyelj a <b>vízszintes</b> eltolás előjelére: az <span class="math inline">\(y=2^{x-2}\)</span> <b>jobbra</b> tol, nem balra — a kitevőben a <span class="math inline">\(-2\)</span> „késlelteti” a függvényt.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-transzformacio">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Ábrázold és jellemezd: <b>a)</b> <span class="math inline">\(y=3^{x}-1\)</span>; <b>b)</b> <span class="math inline">\(y=\left(\tfrac12\right)^{x+2}\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> Az <span class="math inline">\(y=3^{x}\)</span> görbét <span class="math inline">\(1\)</span>-gyel lefelé toljuk. Az aszimptota <span class="math inline">\(y=-1\)</span>, az értékkészlet <span class="math inline">\((-1;+\infty)\)</span>. Most már <b>van</b> nullahelye: <span class="math inline">\(3^{x}=1\)</span>, tehát <span class="math inline">\(x=0\)</span> — a görbe az origón megy át.</p><p><b>b)</b> Az <span class="math inline">\(y=\left(\tfrac12\right)^{x}\)</span> csökkenő görbét <span class="math inline">\(2\)</span>-vel <b>balra</b> toljuk. Az aszimptota marad az <span class="math inline">\(x\)</span>-tengely, az értékkészlet <span class="math inline">\((0;+\infty)\)</span>, és a görbe a <span class="math inline">\((0;\tfrac14)\)</span> ponton halad át, mert <span class="math inline">\(\left(\tfrac12\right)^{2}=\tfrac14\)</span>.</p></div></details>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-exponencialis.html#alap-1">🐾 Beast-protokoll <span class="cimke">A 1–6</span></a><a class="sav hulk" href="feladatok-exponencialis.html#kozep-1">🔥 Phoenix-protokoll <span class="cimke">K 1–3</span></a></div></div></div>
+    <div class="lapozo">
+      <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">Exponenciális és logaritmusfüggvény</span></a>
+      <a class="kov" href="tananyag-exponencialis-egyenletek.html"><span class="irany">Következő →</span><span class="hova">Exponenciális egyenletek</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

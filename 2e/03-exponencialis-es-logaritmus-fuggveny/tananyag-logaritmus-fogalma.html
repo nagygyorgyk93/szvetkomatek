@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A logaritmus fogalma — tananyag | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Exponenciális és logaritmusfüggvény</a> ›
+  <span class="itt">A logaritmus fogalma — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A logaritmus fogalma</h1>
+  <p class="alcim">A hatványozás második fordított művelete, a definíció szerinti számolás, a négy alapösszefüggés, valamint a tizes és a természetes alapú logaritmus.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az Evolúciós Ugrás · 4/8</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Beast:</b> Az előző küldetésben azt kérdeztük: <i>mennyi lesz a fertőzöttek száma <span class="math inline">\(x\)</span> óra múlva?</i> A válasz <span class="math inline">\(2^{x}\)</span> volt. De a valódi kérdés a labor szempontjából fordított: <b>hány óra kell ahhoz</b>, hogy elérje a milliót? Ez az <span class="math inline">\(x\)</span> a <b>kitevőben</b> ül, és eddig csak akkor tudtuk kihalászni, ha a két oldal szerencsésen közös alapra hozható volt. Most kapunk egy eszközt, amely <b>mindig</b> működik: a <b>logaritmust</b>.</p></div>
+
+    A logaritmus nem új művelet a semmiből — a hatványozás <b>fordítottja</b>, ugyanúgy, ahogy a kivonás az összeadásé vagy a gyökvonás a négyzetre emelésé. A hatványozásnak azonban <b>két</b> fordított művelete van, mert két adata van:
+
+    <div class="doboz tetel" id="tetel-ket-fordított">
+      <p class="cim"><span class="ikon">📘</span> A hatványozás két fordítottja</p>
+      <p>A <span class="math inline">\(2^{3}=8\)</span> egyenlőségben három szám szerepel. Attól függően, melyiket keressük, más művelet kell:</p><div class="tblwrap"><table><tr><th>Mit keresünk?</th><th>Kérdés</th><th>Művelet</th></tr><tr><td>az eredményt</td><td><span class="math inline">\(2^{3}=?\)</span></td><td>hatványozás</td></tr><tr><td>az <b>alapot</b></td><td><span class="math inline">\(?^{3}=8\)</span></td><td><b>gyökvonás</b>: <span class="math inline">\(\sqrt[3]{8}=2\)</span></td></tr><tr><td>a <b>kitevőt</b></td><td><span class="math inline">\(2^{?}=8\)</span></td><td><b>logaritmus</b>: <span class="math inline">\(\log_{2}8=3\)</span></td></tr></table></div>
+    </div>
+
+    <h2 id="s1">A logaritmus fogalma</h2>
+
+    <div class="doboz definicio" id="def-logaritmus">
+      <p class="cim"><span class="ikon">📗</span> Logaritmus</p>
+      <p>Legyen <span class="math inline">\(a&gt;0\)</span>, <span class="math inline">\(a\neq 1\)</span> és <span class="math inline">\(b&gt;0\)</span>. A <span class="math inline">\(b\)</span> szám <b><span class="math inline">\(a\)</span> alapú logaritmusán</b> azt a kitevőt értjük, amelyre az <span class="math inline">\(a\)</span>-t emelve <span class="math inline">\(b\)</span>-t kapunk:</p><span class="math display">\[\log_{a}b=c\iff a^{c}=b.\]</span><p>Az <span class="math inline">\(a\)</span> a logaritmus <b>alapja</b>, a <span class="math inline">\(b\)</span> a <b>hatványérték</b> (argumentum), a <span class="math inline">\(c\)</span> pedig maga a logaritmus.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p><b>Csak pozitív szám logaritmusa létezik!</b> A <span class="math inline">\(\log_{2}(-8)\)</span> nem értelmezhető, mert nincs olyan <span class="math inline">\(c\)</span> kitevő, amelyre <span class="math inline">\(2^{c}=-8\)</span> lenne — a <span class="math inline">\(2^{c}\)</span> mindig pozitív (ezt épp az exponenciális függvény értékkészleténél láttuk). Ugyanígy <span class="math inline">\(\log_{2}0\)</span> sem létezik.</p><p>Ez lesz később az <b>értelmezési tartomány</b> vizsgálatának az alapja: a <span class="math inline">\(\log_{a}\big(f(x)\big)\)</span> kifejezésnél mindig ki kell kötni, hogy <span class="math inline">\(f(x)&gt;0\)</span>.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-definicio">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Számold ki a definíció alapján: <b>a)</b> <span class="math inline">\(\log_{2}8\)</span>; <b>b)</b> <span class="math inline">\(\log_{3}\tfrac19\)</span>; <b>c)</b> <span class="math inline">\(\log_{4}2\)</span>; <b>d)</b> <span class="math inline">\(\log_{\frac13}27\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>Minden esetben ugyanaz a kérdés: <i>hányadik hatványra kell emelni az alapot?</i></p><p><b>a)</b> <span class="math inline">\(2^{?}=8\)</span>, és <span class="math inline">\(2^{3}=8\)</span>, tehát <span class="math inline">\(\boxed{\log_{2}8=3}\)</span>.</p><p><b>b)</b> <span class="math inline">\(3^{?}=\tfrac19\)</span>. Mivel <span class="math inline">\(\tfrac19=3^{-2}\)</span>, <span class="math inline">\(\boxed{\log_{3}\tfrac19=-2}\)</span>.</p><p><b>c)</b> <span class="math inline">\(4^{?}=2\)</span>. Mivel <span class="math inline">\(\sqrt{4}=2\)</span>, azaz <span class="math inline">\(4^{1/2}=2\)</span>, <span class="math inline">\(\boxed{\log_{4}2=\tfrac12}\)</span> — a logaritmus <b>törtszám is lehet</b>.</p><p><b>d)</b> <span class="math inline">\(\left(\tfrac13\right)^{?}=27\)</span>. Mivel <span class="math inline">\(\left(\tfrac13\right)^{-3}=3^{3}=27\)</span>, <span class="math inline">\(\boxed{\log_{\frac13}27=-3}\)</span>.</p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ 5³ = 125, tehát a keresett kitevő 3." data-nem="✘ A kérdés: 5 hányadik hatványa 125? Mivel 5³ = 125, a válasz 3.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi <span class="math inline">\(\log_{5}125\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(3\)</span></button><button><span class="math inline">\(25\)</span></button><button><span class="math inline">\(\tfrac{125}{5}\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">A négy alapösszefüggés</h2>
+
+    <div class="doboz tetel" id="tetel-alaposszefuggesek">
+      <p class="cim"><span class="ikon">📘</span> Amit fejből kell tudni</p>
+      <p>Bármely <span class="math inline">\(a&gt;0\)</span>, <span class="math inline">\(a\neq 1\)</span> és <span class="math inline">\(b&gt;0\)</span> esetén:</p><span class="math display">\[\log_{a}1=0,\qquad \log_{a}a=1,\]</span><span class="math display">\[\log_{a}a^{k}=k,\qquad a^{\log_{a}b}=b.\]</span><p>Az első kettő közvetlenül a definícióból jön (<span class="math inline">\(a^{0}=1\)</span>, <span class="math inline">\(a^{1}=a\)</span>). A harmadik és a negyedik azt fejezi ki, hogy a <b>logaritmus és a hatványozás kioltják egymást</b> — pontosan úgy, ahogy a négyzetre emelés és a négyzetgyök.</p>
+      <details><summary>Miért igaz a negyedik?</summary><div class="bel"><p>A <span class="math inline">\(\log_{a}b\)</span> definíció szerint az a kitevő, amelyre <span class="math inline">\(a\)</span>-t emelve <span class="math inline">\(b\)</span>-t kapunk. Ha tehát <span class="math inline">\(a\)</span>-t épp erre a kitevőre emeljük, definíció szerint <span class="math inline">\(b\)</span>-t kell kapnunk. Ez a legfontosabb azonosság a logaritmusos egyenletek megoldásánál.</p></div></details>
+    </div>
+
+    <div class="doboz definicio" id="def-lg-ln">
+      <p class="cim"><span class="ikon">📗</span> Két kitüntetett alap</p>
+      <p><b>Tizes alapú (Briggs-féle) logaritmus:</b> ha az alap <span class="math inline">\(10\)</span>, gyakran elhagyjuk a jelölésből:</p><span class="math display">\[\log_{10}b=\lg b\quad(\text{vagy egyszerűen }\log b).\]</span><p><b>Természetes alapú logaritmus:</b> az alap az <span class="math inline">\(e\approx 2{,}71828\)</span> Euler-féle szám:</p><span class="math display">\[\log_{e}b=\ln b.\]</span><p>A számológépeden ez a két gomb szerepel — minden más alapú logaritmust ezekre kell visszavezetni (lásd a következő egységben).</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Miért találták ki?</p>
+      <p>John Napier 1614-ben azért publikálta a logaritmustáblákat, hogy a csillagászok megússzák a többjegyű <b>szorzásokat</b>: a logaritmus a szorzást összeadássá alakítja. Négyszáz évig a logarléc volt a mérnökök „számológépe” — az Apollo-program számításai is részben ezzel készültek.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ log₇1 = 0 és log₄4 = 1, az összeg 1." data-nem="✘ Bármely alap esetén log 1 = 0, és logₐa = 1 — az összeg 0 + 1 = 1.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi <span class="math inline">\(\log_{7}1+\log_{4}4\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(1\)</span></button><button><span class="math inline">\(0\)</span></button><button><span class="math inline">\(2\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-logaritmus.html#alap-1">🐾 Beast-protokoll <span class="cimke">A 1–6</span></a><a class="sav hulk" href="feladatok-logaritmus.html#kozep-1">🔥 Phoenix-protokoll <span class="cimke">K 1–3</span></a></div></div></div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-exponencialis.html"><span class="irany">← Előző</span><span class="hova">Feladatok — exponenciális függvény</span></a>
+      <a class="kov" href="tananyag-logaritmus-azonossagai.html"><span class="irany">Következő →</span><span class="hova">A logaritmus azonosságai</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

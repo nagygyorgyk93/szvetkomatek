@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Taktikai memóriakártya | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="digitalis">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Exponenciális és logaritmusfüggvény</a> ›
+  <span class="itt">Taktikai memóriakártya</span>
+</nav>
+<div class="hero">
+  <h1>Taktikai memóriakártya</h1>
+  <p class="alcim">Az Evolúciós Ugrás minden képlete, protokollja és tipikus csapdája egy helyen — ismétléshez, dolgozat előtti átfutáshoz, nyomtatáshoz.</p>
+  <div class="meta-sor"><span class="chip ora">összefoglaló</span><span class="chip">Az Evolúciós Ugrás · összefoglaló</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📇 Az exponenciális függvény</h2>
+
+    <p><span class="math inline">\(f(x)=a^{x}\)</span>, ahol <span class="math inline">\(a&gt;0\)</span> és <span class="math inline">\(a\neq 1\)</span> (<a href="tananyag-exponencialis-fuggveny.html#def-exponencialis">→</a>). <b>ÉT:</b> <span class="math inline">\(\mathbb{R}\)</span> · <b>ÉK:</b> <span class="math inline">\((0;+\infty)\)</span> — az érték <b>sosem nulla és sosem negatív</b> · áthalad a <span class="math inline">\((0;1)\)</span> ponton · aszimptota az <span class="math inline">\(x\)</span>-tengely · nullahelye <b>nincs</b>.</p>
+
+    <p><b>Monotonitás:</b> <span class="math inline">\(a&gt;1\)</span> → szigorúan <b>növekvő</b>; <span class="math inline">\(0&lt;a&lt;1\)</span> → szigorúan <b>csökkenő</b>. Mindkettő kölcsönösen egyértelmű — erre épül minden egyenlet (<a href="tananyag-exponencialis-fuggveny.html#tetel-monotonitas">→</a>).</p>
+
+    <p><b>Transzformációk:</b> <span class="math inline">\(y=a^{x}+c\)</span> függőleges eltolás (az aszimptota is mozdul, <span class="math inline">\(y=c\)</span>) · <span class="math inline">\(y=a^{x-b}\)</span> vízszintes eltolás <b>jobbra</b> · <span class="math inline">\(y=a^{-x}\)</span> tükrözés az <span class="math inline">\(y\)</span>-tengelyre · <span class="math inline">\(y=-a^{x}\)</span> tükrözés az <span class="math inline">\(x\)</span>-tengelyre (<a href="tananyag-exponencialis-fuggveny.html#tetel-transzformaciok">→</a>).</p>
+
+    <h2 id="s1">Exponenciális egyenletek</h2>
+
+    <p><b>Alapelv:</b> <span class="math inline">\(a^{u}=a^{v}\iff u=v\)</span> — hozd <b>közös alapra</b> a két oldalt, majd hagyd el az alapot (<a href="tananyag-exponencialis-egyenletek.html#tetel-alapelv">→</a>).</p>
+
+    <p><b>Kiemelés:</b> <span class="math inline">\(a^{x+k}=a^{x}\cdot a^{k}\)</span>, tehát <span class="math inline">\(a^{x}\)</span> minden tagból kiemelhető. ⚠️ <span class="math inline">\(2^{x+2}\neq 2^{x}+4\)</span> — a kitevőben álló összeg <b>szorzattá</b> bomlik (<a href="tananyag-exponencialis-egyenletek.html#tetel-kiemeles">→</a>).</p>
+
+    <p><b>Másodfokúra visszavezethető:</b> ha <span class="math inline">\(a^{2x}\)</span> és <span class="math inline">\(a^{x}\)</span> is szerepel, legyen <span class="math inline">\(t=a^{x}\)</span>, ahol <b><span class="math inline">\(t&gt;0\)</span></b>. Ekkor <span class="math inline">\(a^{2x}=t^{2}\)</span>, és másodfokú egyenlet marad. ⚠️ A <span class="math inline">\(t\)</span>-t <b>vissza kell helyettesíteni</b>, a nem pozitív gyököt pedig <b>eldobni</b> (<a href="tananyag-exponencialis-egyenletek.html#tetel-helyettesites">→</a>).</p>
+
+    <h2 id="s2">Exponenciális egyenlőtlenségek</h2>
+
+    <p>Közös alapra hozás után az alap dönt:</p><div class="tblwrap"><table><tr><th>Alap</th><th>Monotonitás</th><th><span class="math inline">\(a^{u}&lt;a^{v}\)</span> ⟹</th></tr><tr><td><span class="math inline">\(a&gt;1\)</span></td><td>növekvő</td><td><span class="math inline">\(u&lt;v\)</span> — a jel <b>marad</b></td></tr><tr><td><span class="math inline">\(0&lt;a&lt;1\)</span></td><td>csökkenő</td><td><span class="math inline">\(u&gt;v\)</span> — a jel <b>MEGFORDUL</b></td></tr></table></div><p>(<a href="tananyag-exponencialis-egyenlotlensegek.html#tetel-jelfordulas">→</a>) ⚠️ A <span class="math inline">\(\pm\infty\)</span> mellett <b>mindig nyitott</b> zárójel áll.</p>
+
+    <h2 id="s3">A logaritmus fogalma és azonosságai</h2>
+
+    <p><b>Definíció:</b> <span class="math inline">\(\log_{a}b=c\iff a^{c}=b\)</span>, ahol <span class="math inline">\(a&gt;0\)</span>, <span class="math inline">\(a\neq 1\)</span> és <b><span class="math inline">\(b&gt;0\)</span></b> (<a href="tananyag-logaritmus-fogalma.html#def-logaritmus">→</a>). Negatív szám és a nulla logaritmusa <b>nem létezik</b>.</p>
+
+    <p><b>Alapösszefüggések:</b> <span class="math inline">\(\log_{a}1=0\)</span> · <span class="math inline">\(\log_{a}a=1\)</span> · <span class="math inline">\(\log_{a}a^{k}=k\)</span> · <span class="math inline">\(a^{\log_{a}b}=b\)</span> (<a href="tananyag-logaritmus-fogalma.html#tetel-alaposszefuggesek">→</a>). Jelölés: <span class="math inline">\(\lg b=\log_{10}b\)</span> és <span class="math inline">\(\ln b=\log_{e}b\)</span>.</p>
+
+    <p><b>Azonosságok</b> (<span class="math inline">\(u,v&gt;0\)</span>):</p><span class="math display">\[\log_{a}(uv)=\log_{a}u+\log_{a}v,\qquad\log_{a}\frac{u}{v}=\log_{a}u-\log_{a}v,\qquad\log_{a}u^{k}=k\log_{a}u.\]</span><p>⚠️ <span class="math inline">\(\log_{a}(u+v)\neq\log_{a}u+\log_{a}v\)</span> — a logaritmusnak az <b>összeadásról nincs mondanivalója</b> (<a href="tananyag-logaritmus-azonossagai.html#tetel-azonossagok">→</a>).</p>
+
+    <h2 id="s4">Áttérés más alapra és alkalmazások</h2>
+
+    <p><span class="math display">\[\log_{a}b=\frac{\log_{c}b}{\log_{c}a}=\frac{\lg b}{\lg a}\]</span><p>Felül az <b>argumentum</b>, alul az <b>alap</b> — és <b>osztás</b>, nem kivonás (<a href="tananyag-attetes-mas-alapra.html#tetel-attetes">→</a>). Ellenőrzés fejben: <span class="math inline">\(\log_{2}7\)</span> a <span class="math inline">\(2\)</span> és a <span class="math inline">\(3\)</span> között van, mert <span class="math inline">\(4&lt;7&lt;8\)</span>.</p>
+
+    <p><b>Logaritmikus skálák:</b> <span class="math inline">\(\mathrm{pH}=-\lg[\mathrm{H}^{+}]\)</span> · Richter · decibel (<span class="math inline">\(L=10\lg\frac{I}{I_{0}}\)</span>) — minden egység <b>tízszeres</b> különbség (<a href="tananyag-attetes-mas-alapra.html#pelda-alkalmazas">→</a>).</p>
+
+    <p><b>Növekedési feladat:</b> a modell <span class="math inline">\(q^{n}=k\)</span> alakú, a megoldás <span class="math inline">\(n=\log_{q}k=\dfrac{\lg k}{\lg q}\)</span>. Kamat: <span class="math inline">\(1{,}05^{n}=2\)</span>; felezés: <span class="math inline">\(\left(\tfrac12\right)^{t/T}=r\)</span>.</p>
+
+    <h2 id="s5">A logaritmusfüggvény, egyenletek és egyenlőtlenségek</h2>
+
+    <p><b><span class="math inline">\(f(x)=\log_{a}x\)</span> az <span class="math inline">\(y=a^{x}\)</span> inverze</b>, a grafikonjuk az <span class="math inline">\(y=x\)</span> egyenesre tükrös (<a href="tananyag-inverz-es-logaritmusfuggveny.html#tetel-inverz-grafikon">→</a>). <b>ÉT:</b> <span class="math inline">\((0;+\infty)\)</span> · <b>ÉK:</b> <span class="math inline">\(\mathbb{R}\)</span> · nullahely <span class="math inline">\(x=1\)</span> · aszimptota az <span class="math inline">\(y\)</span>-tengely · <span class="math inline">\(a&gt;1\)</span> → növekvő, <span class="math inline">\(0&lt;a&lt;1\)</span> → csökkenő.</p>
+
+    <p><b>Egyenlet — a munkamenet:</b> ① ÉT (minden argumentum pozitív, több feltétel esetén a <b>metszetük</b>) → ② azonosságokkal <b>összevonás</b> → ③ <span class="math inline">\(\log_{a}u=\log_{a}v\iff u=v\)</span>, illetve <span class="math inline">\(\log_{a}u=c\iff u=a^{c}\)</span> → ④ <b>összevetés az ÉT-vel</b> (<a href="tananyag-logaritmusos-egyenletek.html#tetel-log-egyenlet-menete">→</a>).</p>
+
+    <p><b>Egyenlőtlenség:</b> ugyanez, de az alap szerint <b>fordulhat a jel</b>, és a végeredmény mindig az ÉT és a kapott halmaz <b>metszete</b> (<a href="tananyag-logaritmusos-egyenletek.html#tetel-log-egyenlotlenseg">→</a>).</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Amire a dolgozaton a legtöbben ráfutnak</p>
+      <p>1) <b>Jelfordulás</b>: mielőtt elhagyod az alapot, kérdezd meg, nagyobb-e <span class="math inline">\(1\)</span>-nél. &nbsp; 2) <span class="math inline">\(a^{x+k}=a^{x}\cdot a^{k}\)</span>, <b>nem</b> <span class="math inline">\(a^{x}+a^{k}\)</span>. &nbsp; 3) A helyettesítésnél <span class="math inline">\(t&gt;0\)</span> — a negatív gyököt <b>eldobod</b>, és a <span class="math inline">\(t\)</span>-ből <b>vissza kell számolni</b> <span class="math inline">\(x\)</span>-et. &nbsp; 4) Logaritmusnál <b>mindig ÉT-tel kezdj</b>; nem az <span class="math inline">\(x\)</span> előjelét nézed, hanem az <b>argumentum értékét</b>. &nbsp; 5) <span class="math inline">\(\lg(u+v)\neq\lg u+\lg v\)</span>. &nbsp; 6) Áttérésnél <b>osztás</b>, felül az argumentum. &nbsp; 7) A végtelen mellett <b>nyitott</b> zárójel; az ÉT és a megoldás között <b>metszet</b> van, nem unió.</p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><p>Élesben: a <a href="feladatok-logaritmusfuggveny.html#gyak-dolgozat">gyakorló dolgozattal</a> mérd fel magad, majd indulj <a href="terepkuldetes.html">A Vírusgörbe terepküldetésre</a>!</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-logaritmusfuggveny.html"><span class="irany">← Előző</span><span class="hova">Feladatok — logaritmusfüggvény</span></a>
+      <a class="kov" href="terepkuldetes.html"><span class="irany">Következő →</span><span class="hova">A Vírusgörbe terepküldetés</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

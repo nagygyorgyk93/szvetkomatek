@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Áttérés más alapra és alkalmazások — tananyag | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Exponenciális és logaritmusfüggvény</a> ›
+  <span class="itt">Áttérés más alapra és alkalmazások — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Áttérés más alapra és alkalmazások</h1>
+  <p class="alcim">Az áttérési képlet, a számológép használata, valamint a logaritmikus skálák és a növekedési feladatok.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az Evolúciós Ugrás · 6/8</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Beast:</b> Itt az igazság pillanata. A számológépeden két logaritmus-gomb van: <b>lg</b> és <b>ln</b>. De a vírus kettesével szaporodik, tehát nekem <span class="math inline">\(\log_{2}\)</span> kellene. Elakadtunk? Nem — létezik egy képlet, amely <b>bármely</b> alapot visszavezet egy másikra. Ezzel a logaritmus végre használható eszközzé válik a laborban is.</p></div>
+
+    <h2 id="s1">Áttérés más alapra</h2>
+
+    <div class="doboz tetel" id="tetel-attetes">
+      <p class="cim"><span class="ikon">📘</span> Az áttérési képlet</p>
+      <p>Legyen <span class="math inline">\(a,c&gt;0\)</span>, <span class="math inline">\(a\neq 1\)</span>, <span class="math inline">\(c\neq 1\)</span> és <span class="math inline">\(b&gt;0\)</span>. Ekkor</p><span class="math display">\[\log_{a}b=\frac{\log_{c}b}{\log_{c}a}.\]</span><p>A gyakorlatban <span class="math inline">\(c=10\)</span> (vagy <span class="math inline">\(c=e\)</span>), így a számológéppel bármi kiszámolható:</p><span class="math display">\[\log_{a}b=\frac{\lg b}{\lg a}=\frac{\ln b}{\ln a}.\]</span>
+      <details><summary>Miért igaz?</summary><div class="bel"><p>Legyen <span class="math inline">\(\log_{a}b=p\)</span>, azaz <span class="math inline">\(a^{p}=b\)</span>. Vegyük mindkét oldal <span class="math inline">\(c\)</span> alapú logaritmusát:</p><span class="math display">\[\log_{c}a^{p}=\log_{c}b\ \Longrightarrow\ p\cdot\log_{c}a=\log_{c}b.\]</span><p>Mivel <span class="math inline">\(a\neq 1\)</span>, a <span class="math inline">\(\log_{c}a\neq 0\)</span>, tehát oszthatunk vele: <span class="math inline">\(p=\dfrac{\log_{c}b}{\log_{c}a}\)</span>.</p></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p><b>Ne keverd össze!</b> A képletben <b>osztás</b> áll, nem kivonás, és a számláló az <b>argumentum</b>, a nevező az <b>alap</b> logaritmusa:</p><p>✔ <span class="math inline">\(\log_{2}7=\dfrac{\lg 7}{\lg 2}\)</span> &nbsp;&nbsp;&nbsp; ✘ <span class="math inline">\(\log_{2}7=\dfrac{\lg 2}{\lg 7}\)</span> &nbsp;&nbsp;&nbsp; ✘ <span class="math inline">\(\log_{2}7=\lg 7-\lg 2\)</span></p><p>Ellenőrzés fejben: <span class="math inline">\(\log_{2}7\)</span> valahol <span class="math inline">\(2\)</span> és <span class="math inline">\(3\)</span> között van (mert <span class="math inline">\(2^{2}=4&lt;7&lt;8=2^{3}\)</span>). Ha a géped <span class="math inline">\(0{,}36\)</span>-ot ad, felcserélted a törtet.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-attetes">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Számold ki négy tizedesjegy pontossággal: <b>a)</b> <span class="math inline">\(\log_{11}12\)</span>; <b>b)</b> <span class="math inline">\(\log_{7}23\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(\log_{11}12=\dfrac{\lg 12}{\lg 11}\approx\dfrac{1{,}07918}{1{,}04139}\approx\boxed{1{,}0363}\)</span>.</p><p>Józan ész: a <span class="math inline">\(12\)</span> épp csak nagyobb <span class="math inline">\(11\)</span>-nél, tehát a kitevőnek kicsit <span class="math inline">\(1\)</span> fölött kell lennie. ✔</p><p><b>b)</b> <span class="math inline">\(\log_{7}23=\dfrac{\lg 23}{\lg 7}\approx\dfrac{1{,}36173}{0{,}84510}\approx\boxed{1{,}6113}\)</span>.</p><p>Ellenőrzés: <span class="math inline">\(7^{1}=7&lt;23&lt;49=7^{2}\)</span>, tehát a válasznak <span class="math inline">\(1\)</span> és <span class="math inline">\(2\)</span> között kell lennie. ✔</p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A számlálóba az argumentum, a nevezőbe az alap kerül." data-nem="✘ logₐb = lg b / lg a — felül az argumentum (20), alul az alap (3).">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik alakban írható át <span class="math inline">\(\log_{3}20\)</span> a számológéphez?</p>
+      <div class="opciok"><button><span class="math inline">\(\dfrac{\lg 20}{\lg 3}\)</span></button><button><span class="math inline">\(\dfrac{\lg 3}{\lg 20}\)</span></button><button><span class="math inline">\(\lg 20-\lg 3\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Mire jó a logaritmus?</h2>
+
+    A logaritmus azért fontos, mert <b>a nagyságrendeket kezelhetővé teszi</b>. Ahol a mért mennyiségek több nagyságrendet fognak át, ott szinte biztosan logaritmikus skálát találsz.
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Logaritmikus skálák a természetben</p>
+      <div class="tblwrap"><table><tr><th>Skála</th><th>Képlet</th><th>Mit mér?</th></tr><tr><td>pH</td><td><span class="math inline">\(\mathrm{pH}=-\lg[\mathrm{H}^{+}]\)</span></td><td>a savasságot; egy egység = <b>tízszeres</b> különbség</td></tr><tr><td>Richter</td><td><span class="math inline">\(M=\lg\dfrac{A}{A_{0}}\)</span></td><td>a földrengés erősségét; 6-os ≠ kétszer akkora, mint a 3-as, hanem <b>ezerszer</b></td></tr><tr><td>decibel</td><td><span class="math inline">\(L=10\lg\dfrac{I}{I_{0}}\)</span></td><td>a hangerőt</td></tr></table></div>
+    </div>
+
+    <div class="doboz pelda" id="pelda-alkalmazas">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p><b>a)</b> A fertőzött sejtek száma óránként megkétszereződik, egyetlen sejtből indulva. Hány óra múlva éri el az egymilliót?<br><b>b)</b> Egy bankban a pénz évi <span class="math inline">\(5\%\)</span>-kal gyarapszik. Hány év alatt duplázódik meg?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> A modell: <span class="math inline">\(2^{x}=1\,000\,000\)</span>. Innen</p><span class="math display">\[x=\log_{2}1\,000\,000=\frac{\lg 10^{6}}{\lg 2}=\frac{6}{0{,}30103}\approx 19{,}93.\]</span><p>Tehát a <b>20. óra</b> folyamán lépi át az egymilliót. Figyeld meg: a millió hatalmas szám, de a logaritmusa csak <span class="math inline">\(20\)</span> — ez a nagyságrend-kezelés lényege.</p><p><b>b)</b> A modell: <span class="math inline">\(1{,}05^{n}=2\)</span>, tehát</p><span class="math display">\[n=\log_{1,05}2=\frac{\lg 2}{\lg 1{,}05}\approx\frac{0{,}30103}{0{,}02119}\approx 14{,}21.\]</span><p>Vagyis nagyjából <b>15 év</b> alatt duplázódik meg a pénz (a 14. év végén még nincs meg a kétszeres).</p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A Richter-skála logaritmikus: 3 egység különbség = 10³ = 1000-szeres." data-nem="✘ A skála logaritmikus — minden egység tízszeres kilengést jelent, tehát 10³ = 1000.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy 7-es erősségű földrengés hányszor nagyobb kilengésű, mint egy 4-es?</p>
+      <div class="opciok"><button>1000-szer</button><button>3-szor</button><button><span class="math inline">\(\tfrac74\)</span>-szer</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-logaritmus.html#alap-13">🐾 Beast-protokoll <span class="cimke">A 13–18</span></a><a class="sav hulk" href="feladatok-logaritmus.html#kozep-9">🔥 Phoenix-protokoll <span class="cimke">K 9–14</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Beast:</b> Megvan az eszköz. Most már bármelyik exponenciális egyenletet meg tudjuk oldani — akkor is, ha a két oldal nem hozható közös alapra. Egy dolog maradt hátra: ha a logaritmus a hatványozás fordítottja, akkor a <b>logaritmusfüggvény</b> az exponenciális függvény <b>inverze</b>. A következő küldetésben ezt a tükörképet nézzük meg.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-logaritmus-azonossagai.html"><span class="irany">← Előző</span><span class="hova">A logaritmus azonosságai</span></a>
+      <a class="kov" href="feladatok-logaritmus.html"><span class="irany">Következő →</span><span class="hova">Feladatok — logaritmus</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

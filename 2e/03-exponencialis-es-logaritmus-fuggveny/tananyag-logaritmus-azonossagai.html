@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A logaritmus azonosságai — tananyag | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Exponenciális és logaritmusfüggvény</a> ›
+  <span class="itt">A logaritmus azonosságai — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A logaritmus azonosságai</h1>
+  <p class="alcim">Szorzat, hányados és hatvány logaritmusa — kifejezések bontása és összevonása, a leggyakoribb hibákkal együtt.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az Evolúciós Ugrás · 5/8</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Beast:</b> A definíció szép, de lassú. Ha minden logaritmust fejben kellene visszafejtenünk, sosem érnénk a küldetés végére. Szerencsére a logaritmus <b>örökli</b> a hatványozás azonosságait — méghozzá egy fokkal <b>egyszerűbb</b> alakban: a szorzásból összeadás lesz, az osztásból kivonás, a hatványozásból szorzás. Ez a logaritmus igazi ereje.</p></div>
+
+    <h2 id="s1">A három azonosság</h2>
+
+    <div class="doboz tetel" id="tetel-azonossagok">
+      <p class="cim"><span class="ikon">📘</span> A logaritmus azonosságai</p>
+      <p>Legyen <span class="math inline">\(a&gt;0\)</span>, <span class="math inline">\(a\neq 1\)</span>, továbbá <span class="math inline">\(u&gt;0\)</span> és <span class="math inline">\(v&gt;0\)</span>. Ekkor</p><span class="math display">\[\log_{a}(u\cdot v)=\log_{a}u+\log_{a}v,\]</span><span class="math display">\[\log_{a}\frac{u}{v}=\log_{a}u-\log_{a}v,\]</span><span class="math display">\[\log_{a}u^{k}=k\cdot\log_{a}u\qquad(k\in\mathbb{R}).\]</span><p>Vagyis a logaritmus <b>egy szinttel lejjebb viszi</b> a műveletet: szorzás → összeadás, osztás → kivonás, hatványozás → szorzás.</p>
+      <details><summary>Miért igaz a szorzatra vonatkozó?</summary><div class="bel"><p>Legyen <span class="math inline">\(\log_{a}u=p\)</span> és <span class="math inline">\(\log_{a}v=q\)</span>. Definíció szerint ez azt jelenti, hogy <span class="math inline">\(u=a^{p}\)</span> és <span class="math inline">\(v=a^{q}\)</span>. Ekkor</p><span class="math display">\[u\cdot v=a^{p}\cdot a^{q}=a^{p+q},\]</span><p>ami épp azt mondja, hogy <span class="math inline">\(\log_{a}(uv)=p+q=\log_{a}u+\log_{a}v\)</span>. A másik kettő ugyanígy, az <span class="math inline">\(a^{p}:a^{q}=a^{p-q}\)</span> és az <span class="math inline">\(\left(a^{p}\right)^{k}=a^{pk}\)</span> azonosságból jön.</p></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p>A leggyakoribb — és legköltségesebb — hiba az azonosságok <b>összegre</b> való alkalmazása:</p><p>✘ <span class="math inline">\(\log_{a}(u+v)=\log_{a}u+\log_{a}v\)</span> &nbsp;&nbsp; ✔ <span class="math inline">\(\log_{a}(u\cdot v)=\log_{a}u+\log_{a}v\)</span></p><p>Próbáld ki: <span class="math inline">\(\lg(1+9)=\lg 10=1\)</span>, míg <span class="math inline">\(\lg 1+\lg 9=0+\lg 9\approx 0{,}95\)</span> — nem egyenlők. <b>A logaritmusnak a szorzásról van mondanivalója, az összeadásról nincs.</b></p><p>Ugyanígy hibás: <span class="math inline">\(\dfrac{\log_{a}u}{\log_{a}v}=\log_{a}\dfrac{u}{v}\)</span> — a hányados azonossága a <b>különbségre</b> szól, nem a hányadosra.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-azonossagok">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Számold ki: <b>a)</b> <span class="math inline">\(\lg 50+\lg 2\)</span>; <b>b)</b> <span class="math inline">\(\log_{2}48-\log_{2}3\)</span>; <b>c)</b> <span class="math inline">\(\log_{3}\sqrt{27}\)</span>; <b>d)</b> <span class="math inline">\(2\log_{3}9\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(\lg 50+\lg 2=\lg(50\cdot 2)=\lg 100=\boxed{2}\)</span>.</p><p><b>b)</b> <span class="math inline">\(\log_{2}48-\log_{2}3=\log_{2}\tfrac{48}{3}=\log_{2}16=\boxed{4}\)</span>.</p><p><b>c)</b> <span class="math inline">\(\sqrt{27}=27^{1/2}=3^{3/2}\)</span>, tehát <span class="math inline">\(\log_{3}3^{3/2}=\boxed{\tfrac32}\)</span>. (Vagy: <span class="math inline">\(\log_{3}\sqrt{27}=\tfrac12\log_{3}27=\tfrac12\cdot 3\)</span>.)</p><p><b>d)</b> <span class="math inline">\(\log_{3}9=2\)</span>, tehát <span class="math inline">\(2\cdot 2=\boxed{4}\)</span>.</p></div></details>
+    </div>
+
+    <h2 id="s2">Kifejezések bontása és összevonása</h2>
+
+    Az azonosságokat <b>mindkét irányban</b> használjuk. Egyenletmegoldásnál általában <b>összevonunk</b> (hogy egyetlen logaritmus maradjon), számoláskor pedig <b>szétbontunk</b> (hogy ismert értékekre jussunk).
+
+    <div class="doboz pelda" id="pelda-bontas">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p><b>a)</b> Bontsd fel: <span class="math inline">\(\log_{a}\dfrac{x^{3}\sqrt{y}}{z}\)</span>.<br><b>b)</b> Vond össze egyetlen logaritmussá: <span class="math inline">\(2\log_{a}x+\tfrac12\log_{a}y-3\log_{a}z\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> Először a hányados, majd a szorzat, végül a hatvány:</p><span class="math display">\[\log_{a}\frac{x^{3}\sqrt{y}}{z}=\log_{a}x^{3}+\log_{a}\sqrt{y}-\log_{a}z=3\log_{a}x+\frac12\log_{a}y-\log_{a}z.\]</span><p><b>b)</b> Fordított sorrendben: az együtthatók kitevővé válnak, az összeadás szorzattá, a kivonás hányadossá:</p><span class="math display">\[2\log_{a}x+\frac12\log_{a}y-3\log_{a}z=\log_{a}\frac{x^{2}\sqrt{y}}{z^{3}}.\]</span></div></details>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ Az összeg szorzattá válik az argumentumban: log₂(5·4) = log₂20." data-nem="✘ A logaritmusok ÖSSZEGE az argumentumok SZORZATÁnak logaritmusa: log₂20.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mivel egyenlő <span class="math inline">\(\log_{2}5+\log_{2}4\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(\log_{2}20\)</span></button><button><span class="math inline">\(\log_{2}9\)</span></button><button><span class="math inline">\(\log_{2}\tfrac54\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-logaritmus.html#alap-7">🐾 Beast-protokoll <span class="cimke">A 7–12</span></a><a class="sav hulk" href="feladatok-logaritmus.html#kozep-4">🔥 Phoenix-protokoll <span class="cimke">K 4–8</span></a></div></div></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-logaritmus-fogalma.html"><span class="irany">← Előző</span><span class="hova">A logaritmus fogalma</span></a>
+      <a class="kov" href="tananyag-attetes-mas-alapra.html"><span class="irany">Következő →</span><span class="hova">Áttérés más alapra és alkalmazások</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

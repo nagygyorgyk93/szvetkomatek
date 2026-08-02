@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exponenciális egyenlőtlenségek — tananyag | 2e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="2e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
+  <a href="index.html">Exponenciális és logaritmusfüggvény</a> ›
+  <span class="itt">Exponenciális egyenlőtlenségek — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Exponenciális egyenlőtlenségek</h1>
+  <p class="alcim">A monotonitásból következő jelfordulás, a megoldás intervallumos alakja és a tipikus hibák.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az Evolúciós Ugrás · 3/8</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Beast:</b> Az egyenlet arra felel, <b>mikor pontosan</b> — de a valóságban sokkal fontosabb, hogy <b>meddig</b> maradunk biztonságban. Ez már egyenlőtlenség. És itt van a témakör egyetlen igazi buktatója: ha az alap <b>kisebb <span class="math inline">\(1\)</span>-nél</b>, a reláció jele <b>megfordul</b>. Ne tanuld be — értsd meg. A grafikon megmutatja, miért.</p></div>
+
+    <h2 id="s1">Az alapelv és a jelfordulás</h2>
+
+    A gondolat ugyanaz, mint az egyenleteknél: közös alapra hozunk, majd elhagyjuk az alapot. A különbség, hogy most a <b>monotonitásra</b> is figyelnünk kell.
+
+    <div class="doboz tetel" id="tetel-jelfordulas">
+      <p class="cim"><span class="ikon">📘</span> Exponenciális egyenlőtlenség</p>
+      <p>Tegyük fel, hogy az egyenlőtlenség <span class="math inline">\(a^{u}&lt;a^{v}\)</span> alakú.</p><ul><li>Ha <b><span class="math inline">\(a&gt;1\)</span></b> (a függvény <b>növekvő</b>): a nagyobb kitevőhöz nagyobb érték tartozik, ezért <span class="math inline">\(u&lt;v\)</span> — a <b>reláció iránya megmarad</b>.</li><li>Ha <b><span class="math inline">\(0&lt;a&lt;1\)</span></b> (a függvény <b>csökkenő</b>): a nagyobb kitevőhöz <b>kisebb</b> érték tartozik, ezért <span class="math inline">\(u&gt;v\)</span> — a <b>reláció MEGFORDUL</b>.</li></ul>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 380 260" width="380" height="260" role="img" aria-label="Az y = 2 az x-edik és az y = fél az x-edik függvény grafikonja egymás tükörképe az y-tengelyre">
+      <defs><marker id="nyil" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="96.4" y1="238.0" x2="96.4" y2="14.0"/>
+        <line x1="146.7" y1="238.0" x2="146.7" y2="14.0"/>
+        <line x1="247.3" y1="238.0" x2="247.3" y2="14.0"/>
+        <line x1="297.6" y1="238.0" x2="297.6" y2="14.0"/>
+        <line x1="347.9" y1="238.0" x2="347.9" y2="14.0"/>
+        <line x1="26.0" y1="158.5" x2="368.0" y2="158.5"/>
+        <line x1="26.0" y1="122.4" x2="368.0" y2="122.4"/>
+        <line x1="26.0" y1="86.3" x2="368.0" y2="86.3"/>
+        <line x1="26.0" y1="50.1" x2="368.0" y2="50.1"/>
+        <line x1="26.0" y1="14.0" x2="368.0" y2="14.0"/>
+      </g>
+      <line x1="26.0" y1="194.6" x2="368.0" y2="194.6" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <line x1="197.0" y1="238.0" x2="197.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <text x="364.0" y="208.6" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="189.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="247.3" y="207.6" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="192.0" y="162.5" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <polyline points="26.0,191.2 28.9,191.1 31.7,190.9 34.6,190.8 37.5,190.6 40.3,190.5 43.2,190.3 46.1,190.1 48.9,190.0 51.8,189.8 54.7,189.6 57.5,189.4 60.4,189.1 63.3,188.9 66.1,188.7 69.0,188.5 71.9,188.2 74.7,187.9 77.6,187.7 80.5,187.4 83.3,187.1 86.2,186.8 89.1,186.5 91.9,186.2 94.8,185.8 97.7,185.5 100.5,185.1 103.4,184.7 106.3,184.3 109.1,183.9 112.0,183.4 114.9,183.0 117.7,182.5 120.6,182.0 123.5,181.5 126.3,181.0 129.2,180.5 132.1,179.9 134.9,179.3 137.8,178.7 140.7,178.0 143.5,177.4 146.4,176.7 149.3,175.9 152.1,175.2 155.0,174.4 157.9,173.6 160.7,172.7 163.6,171.8 166.5,170.9 169.3,170.0 172.2,169.0 175.1,167.9 177.9,166.9 180.8,165.7 183.7,164.6 186.5,163.4 189.4,162.1 192.3,160.8 195.1,159.4 198.0,158.0 200.9,156.5 203.7,155.0 206.6,153.4 209.5,151.7 212.3,150.0 215.2,148.2 218.1,146.3 220.9,144.4 223.8,142.4 226.7,140.3 229.5,138.1 232.4,135.8 235.3,133.4 238.1,131.0 241.0,128.4 243.9,125.7 246.7,122.9 249.6,120.0 252.5,117.0 255.3,113.9 258.2,110.7 261.1,107.3 263.9,103.8 266.8,100.1 269.7,96.3 272.5,92.3 275.4,88.2 278.3,83.9 281.1,79.4 284.0,74.8 286.9,70.0 289.7,64.9 292.6,59.7 295.5,54.3 298.3,48.6 301.2,42.7 304.1,36.6 306.9,30.2 309.8,23.6 312.7,16.7" fill="none" stroke="#047857" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="81.3,16.7 84.2,23.6 87.1,30.2 89.9,36.6 92.8,42.7 95.7,48.6 98.5,54.3 101.4,59.7 104.3,64.9 107.1,70.0 110.0,74.8 112.9,79.4 115.7,83.9 118.6,88.2 121.5,92.3 124.3,96.3 127.2,100.1 130.1,103.8 132.9,107.3 135.8,110.7 138.7,113.9 141.5,117.0 144.4,120.0 147.3,122.9 150.1,125.7 153.0,128.4 155.9,131.0 158.7,133.4 161.6,135.8 164.5,138.1 167.3,140.3 170.2,142.4 173.1,144.4 175.9,146.3 178.8,148.2 181.7,150.0 184.5,151.7 187.4,153.4 190.3,155.0 193.1,156.5 196.0,158.0 198.9,159.4 201.7,160.8 204.6,162.1 207.5,163.4 210.3,164.6 213.2,165.7 216.1,166.9 218.9,167.9 221.8,169.0 224.7,170.0 227.5,170.9 230.4,171.8 233.3,172.7 236.1,173.6 239.0,174.4 241.9,175.2 244.7,175.9 247.6,176.7 250.5,177.4 253.3,178.0 256.2,178.7 259.1,179.3 261.9,179.9 264.8,180.5 267.7,181.0 270.5,181.5 273.4,182.0 276.3,182.5 279.1,183.0 282.0,183.4 284.9,183.9 287.7,184.3 290.6,184.7 293.5,185.1 296.3,185.5 299.2,185.8 302.1,186.2 304.9,186.5 307.8,186.8 310.7,187.1 313.5,187.4 316.4,187.7 319.3,187.9 322.1,188.2 325.0,188.5 327.9,188.7 330.7,188.9 333.6,189.1 336.5,189.4 339.3,189.6 342.2,189.8 345.1,190.0 347.9,190.1 350.8,190.3 353.7,190.5 356.5,190.6 359.4,190.8 362.3,190.9 365.1,191.1 368.0,191.2" fill="none" stroke="#ef4444" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="197.0" cy="158.5" r="4" fill="#8b5cf6"/>
+      <text x="205.0" y="174.5" font-size="11" fill="#8b5cf6" font-weight="600">(0; 1)</text>
+      <rect x="291" y="13" width="83" height="40" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="295" y1="22" x2="313" y2="22" stroke="#047857" stroke-width="2.4"/>
+      <text x="318" y="26" font-size="11" fill="#0f172a">y = 2ˣ</text>
+      <line x1="295" y1="39" x2="313" y2="39" stroke="#ef4444" stroke-width="2.4"/>
+      <text x="318" y="43" font-size="11" fill="#0f172a">y = (½)ˣ</text>
+    </svg>
+    </div>
+    <p class="cap">A csökkenő görbén jobbra haladva a függvényérték <b>csökken</b>. Ezért ha <span class="math inline">\(\left(\tfrac12\right)^{u}&lt;\left(\tfrac12\right)^{v}\)</span>, akkor <span class="math inline">\(u\)</span>-nak <b>nagyobbnak</b> kell lennie <span class="math inline">\(v\)</span>-nél — ez a jelfordulás oka.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Ismerős?</p>
+      <p>Ugyanez a szabály, amit már ismersz: negatív számmal osztva vagy szorozva az egyenlőtlenséget, a jel megfordul. Mindkét esetben ugyanaz az ok — egy <b>csökkenő</b> művelet sorrendet cserél.</p>
+    </div>
+
+    <h2 id="s2">Megoldott feladatok</h2>
+
+    <div class="doboz pelda" id="pelda-egyenlotlensegek">
+      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p>Oldd meg: <b>a)</b> <span class="math inline">\(2^{2x-1}&lt;8\)</span>; <b>b)</b> <span class="math inline">\(\left(\tfrac12\right)^{x}\ge\tfrac{1}{16}\)</span>; <b>c)</b> <span class="math inline">\(\left(\tfrac13\right)^{2x+3}&gt;3\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(8=2^{3}\)</span>, az alap <span class="math inline">\(2&gt;1\)</span>, a jel <b>marad</b>: <span class="math inline">\(2x-1&lt;3\)</span>, tehát <span class="math inline">\(2x&lt;4\)</span> és <span class="math inline">\(\boxed{x&lt;2}\)</span>, azaz <span class="math inline">\(x\in(-\infty;2)\)</span>.</p><p><b>b)</b> <span class="math inline">\(\tfrac{1}{16}=\left(\tfrac12\right)^{4}\)</span>, az alap <span class="math inline">\(0&lt;\tfrac12&lt;1\)</span>, a jel <b>fordul</b>: <span class="math inline">\(x\le 4\)</span>, azaz <span class="math inline">\(\boxed{x\in(-\infty;4]}\)</span>.</p><p><b>c)</b> <span class="math inline">\(3=\left(\tfrac13\right)^{-1}\)</span>, az alap kisebb <span class="math inline">\(1\)</span>-nél, a jel <b>fordul</b>: <span class="math inline">\(2x+3&lt;-1\)</span>, tehát <span class="math inline">\(2x&lt;-4\)</span> és <span class="math inline">\(\boxed{x&lt;-2}\)</span>, azaz <span class="math inline">\(x\in(-\infty;-2)\)</span>.</p></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p>Három hiba, amit a dolgozatokon a legtöbbször látni:</p><ol class="reszfeladatok"><li><b>A jelfordulás elfelejtése.</b> Mielőtt elhagyod az alapot, mindig kérdezd meg: <i>nagyobb ez az alap <span class="math inline">\(1\)</span>-nél?</i> Írd is oda a lap szélére.</li><li><b>Rossz irányba fordítani.</b> A jel csak akkor fordul, ha <span class="math inline">\(0&lt;a&lt;1\)</span> — az <span class="math inline">\(a&gt;1\)</span> eset változatlan.</li><li><b>Zárt zárójel a végtelennél.</b> A <span class="math inline">\(\pm\infty\)</span> mellett <b>mindig nyitott</b> zárójel áll: <span class="math inline">\((-\infty;2)\)</span>, sosem <span class="math inline">\((-\infty;2]\)</span> a végtelen oldalán.</li></ol>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ Az alap ¼ < 1, ezért a jel megfordul: x < 3." data-nem="✘ 1/64 = (¼)³, és az alap kisebb 1-nél — a reláció megfordul: x < 3.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mi a megoldása a <span class="math inline">\(\left(\tfrac14\right)^{x}&gt;\tfrac{1}{64}\)</span> egyenlőtlenségnek?</p>
+      <div class="opciok"><button><span class="math inline">\(x&lt;3\)</span></button><button><span class="math inline">\(x&gt;3\)</span></button><button><span class="math inline">\(x&gt;\tfrac{1}{64}\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-exponencialis.html#alap-15">🐾 Beast-protokoll <span class="cimke">A 15–20</span></a><a class="sav hulk" href="feladatok-exponencialis.html#kozep-11">🔥 Phoenix-protokoll <span class="cimke">K 11–14</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Beast:</b> Kiváló. Az exponenciális blokk kész — ez a <b>3. ellenőrző</b> anyaga. A gyűjtemény végén találsz egy külön felkészítő sávot hozzá. Utána viszont megfordítjuk a kérdést: eddig azt kérdeztük, <i>mennyi lesz <span class="math inline">\(x\)</span> óra múlva</i>. A következő küldetésben azt: <b>hány óra kell hozzá?</b> Ehhez új eszköz kell — a <b>logaritmus</b>.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-exponencialis-egyenletek.html"><span class="irany">← Előző</span><span class="hova">Exponenciális egyenletek</span></a>
+      <a class="kov" href="feladatok-exponencialis.html"><span class="irany">Következő →</span><span class="hova">Feladatok — exponenciális függvény</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
