@@ -168,7 +168,7 @@ C2 = [
                   '$2x+1=5^{2}=25$, tehát $2x=24$ és $\\boxed{x=12}$ — az ÉT-ben van.</p>'
                   '<p><b>c)</b> ÉT: $3x-2&gt;0$ <b>és</b> $x+6&gt;0$, azaz $x&gt;\\tfrac23$ '
                   'és $x&gt;-6$ — a metszet $x&gt;\\tfrac23$. A logaritmust elhagyva '
-                  '$3x-2=x+6$, tehát $2x=8$ és $\\boxed{x=4}$.</p>')),
+                  '$3x-2=x+6$, tehát $2x=8$ és $x=4$. Ellenőrzés: $4&gt;\\tfrac23$, tehát benne van az ÉT-ben — $\\boxed{x=4}$.</p>')),
    doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p><b>A hamis gyök.</b> Oldd meg gondolatban: $\\lg(x^{2}-4x)=\\lg 5$. '
          'A logaritmust elhagyva $x^{2}-4x-5=0$, ahonnan $x_{1}=5$ és $x_{2}=-1$. '

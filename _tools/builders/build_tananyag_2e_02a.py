@@ -330,8 +330,12 @@ A3 = [
    'tényező szorzatára esik szét.',
    doboz("tetel", "Szorzattá alakítás",
          '<p>Ha az $ax^{2}+bx+c$ trinom gyökei $x_{1}$ és $x_{2}$, akkor</p>'
-         '$$ax^{2}+bx+c=a\\left(x-x_{1}\\right)\\left(x-x_{2}\\right).$$',
+         '$$ax^{2}+bx+c=a\\left(x-x_{1}\\right)\\left(x-x_{2}\\right).$$'
+         '<p><b>Mikor ad ez valós tényezőket?</b> Akkor, ha $D\\ge 0$ — vagyis ha vannak valós gyökök. Ha $D&lt;0$, a trinom a <b>valós</b> számok körében <b>nem</b> bontható két elsőfokú tényezőre; a fenti alak ilyenkor is felírható, de a gyökök konjugált komplex párt alkotnak.</p>',
          hid="tetel-szorzatta-alakitas"),
+   doboz("csapda", "Dr. Baljós vírus-kódja",
+         '<p>„Minden másodfokú kifejezés felbontható két zárójel szorzatára.” — <b>A valós számok körében nem.</b> Nézd meg az $x^{2}+1$ kifejezést: $D=0-4=-4&lt;0$, tehát nincs valós gyöke — a grafikonja végig az $x$ tengely fölött halad, sehol nem metszi.</p>'
+         '<p>Mielőtt tényezőkre bontasz, <b>számold ki a diszkriminánst</b>. Ha negatív, a valós körben készen vagy: a kifejezés tovább nem bontható.</p>'),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Bontsd tényezőkre: <b>a)</b> $x^{2}-x-12$; <b>b)</b> $2x^{2}-10x+12$.</p>',
          hid="pelda-szorzatta",

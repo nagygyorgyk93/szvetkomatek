@@ -200,6 +200,41 @@ def kanon_ellenorzes(ut: Path) -> tuple[list[str], list[str]]:
         elif gombok and not (0 <= int(val) < gombok):
             hibak.append(f'data-answer="{val}" kívül van a {gombok} gomb tartományán')
 
+    # A megjelölt helyes válasz és a data-jo visszajelzés ÖSSZHANGJA.
+    # Tipikus hiba: az index elcsúszik, és a kvíz a rossz gombot jelöli helyesnek —
+    # a diák megerősítést kap egy hibás válaszra. (2026-08 audit: 3 ilyen eset volt.)
+    for m in re.finditer(r'<div class="(?:kviz|valtozat)"([^>]*)>', s):
+        attr = m.group(1)
+        ai = re.search(r'data-answer="(\d+)"', attr)
+        jo = re.search(r'data-jo="([^"]*)"', attr)
+        if not (ai and jo):
+            continue
+        o = s.find('class="opciok"', m.end())
+        if o < 0:
+            continue
+        blokk = s[o:s.find('</div>', o)]
+        opciok = [_szoveg(x) for x in re.findall(r'<button[^>]*>(.*?)</button>', blokk, re.S)]
+        idx = int(ai.group(1))
+        if not (0 <= idx < len(opciok)):
+            continue
+        jotxt = _szoveg(jo.group(1)).replace('\\', '').replace('\u2212', '-')
+        # ELŐJEL NÉLKÜLI számcsoportok: a kötőjel a kifejezésben nem előjel
+        # (az $x-4$ nem „mínusz négy”), a Unicode-mínuszt pedig egységesítjük.
+        szam = lambda x: set(re.findall(r'\d+', x.replace('\\', '').replace('\u2212', '-')))
+        # a törtes/gyökös opciókban a jegyek összeolvadnak ($\tfrac32$ → „32”),
+        # ott ez az összevetés nem megbízható — kihagyjuk
+        if re.search(r'frac|sqrt|circ\}|\^\{', opciok[idx].replace('\\', '')):
+            continue
+        helyes = szam(opciok[idx])
+        # csak akkor szólunk, ha a helyes opció EGYETLEN száma sem szerepel a
+        # visszajelzésben, viszont egy MÁSIK opcióé teljesen igen — ez erős jel
+        if helyes and not (helyes & szam(jotxt)):
+            masik = [i for i, op in enumerate(opciok)
+                     if i != idx and szam(op) and szam(op) <= szam(jotxt)
+                     and not re.search(r'frac|sqrt', op.replace('\\', ''))]
+            if masik:
+                hibak.append(f'data-answer="{idx}" a(z) „{opciok[idx]}” gombra mutat, de a data-jo a(z) „{opciok[masik[0]]}” választ magyarázza — elcsúszott index?')
+
     # --- differenciált sávok ---
     if 'class="savok"' in s:
         if "sav henrik" not in s or "sav bruno" not in s:
