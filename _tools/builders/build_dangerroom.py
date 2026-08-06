@@ -121,7 +121,7 @@ K01 = [
   ["„Minden valós $x$-re $x^2\\ge 0$.”","„Van olyan természetes szám, amely osztható 3-mal.”"],
   ["$\\forall x\\in\\mathbb{R}\\,(x^2\\ge 0)$ — igaz; tagadása $\\exists x\\in\\mathbb{R}\\,(x^2<0)$.",
    "$\\exists x\\in\\mathbb{N}\\,(3\\mid x)$ — igaz; tagadása $\\forall x\\in\\mathbb{N}\\,(3\\nmid x)$."]),
- ("Adott $A=\\{x\\in\\mathbb{Z}\\mid -2\\le x<3\\}$ és $B=\\{x\\in\\mathbb{Z}\\mid 0<x\\le 5\\}$. Sorold fel a halmazokat, majd add meg $A\\cup B$-t, $A\\cap B$-t és $A\\setminus B$-t!",
+ ("Adott $A=\\{x\\in\\mathbb{Z}\\mid -2\\le x<3\\}$ és $B=\\{x\\in\\mathbb{Z}\\mid 0&lt;x\\le 5\\}$. Sorold fel a halmazokat, majd add meg $A\\cup B$-t, $A\\cap B$-t és $A\\setminus B$-t!",
   None, "$A=\\{-2,-1,0,1,2\\}$, $B=\\{1,2,3,4,5\\}$; $A\\cup B=\\{-2,-1,0,1,2,3,4,5\\}$, $A\\cap B=\\{1,2\\}$, $A\\setminus B=\\{-2,-1,0\\}$."),
  ("<b>De Morgan.</b> $U=\\{1,2,\\dots,8\\}$, $A=\\{1,2,3,4\\}$, $B=\\{3,4,5,6\\}$. Számold ki mindkét oldalt, és ellenőrizd: $(A\\cup B)^{c}=A^{c}\\cap B^{c}$.",
   None, "$(A\\cup B)^{c}=\\{7,8\\}$ és $A^{c}\\cap B^{c}=\\{7,8\\}$ — egyenlők."),

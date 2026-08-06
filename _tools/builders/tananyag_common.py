@@ -304,7 +304,9 @@ def lap(*, tagozat: str, mappa: str, fajl: str, temakor: str, cim: str, cim_tisz
     """
     reszek = []
     for i, (h2, blokkok) in enumerate(szakaszok):
-        reszek.append(f'    <h2 id="s{i}">{h2}</h2>')
+        # A h2 cím IS átmegy a mat()-on: különben a címben lévő $…$ nyersen jelenik
+        # meg (a diák dollárjeleket lát), és a TOC-ban duplán is. 2026-08-06-ig hiányzott.
+        reszek.append(f'    <h2 id="s{i}">{mat(h2)}</h2>')
         for b in blokkok:
             reszek.append("    " + mat(b).replace("\n", "\n    "))
     torzs = "\n\n".join(reszek)

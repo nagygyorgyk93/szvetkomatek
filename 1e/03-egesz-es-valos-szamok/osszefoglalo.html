@@ -33,7 +33,7 @@
   <div class="tartalom">
     <h2 id="s1">Oszthatóság, prímek, kanonikus alak</h2>
     <p><b>Oszthatóság:</b> <span class="math inline">\(a\mid b\)</span>, ha van <span class="math inline">\(k\)</span> egész, amelyre <span class="math inline">\(b=a\cdot k\)</span>
-    (<a href="tananyag-oszthatosag.html#def-oszthatosag">→ tananyag</a>). <b>Maradékos osztás:</b> <span class="math inline">\(a=q\cdot b+r\)</span>, <span class="math inline">\(0\le r<b\)</span>
+    (<a href="tananyag-oszthatosag.html#def-oszthatosag">→ tananyag</a>). <b>Maradékos osztás:</b> <span class="math inline">\(a=q\cdot b+r\)</span>, <span class="math inline">\(0\le r&lt;b\)</span>
     (<a href="tananyag-oszthatosag.html#def-maradekos">→</a>).</p>
     <p><b>Oszthatósági szabályok</b> (<a href="tananyag-oszthatosag.html#s2">→</a>):</p>
     <table class="tabla-nevezetes">
@@ -63,12 +63,12 @@
     (<a href="tananyag-szamhalmazok.html#s1">→ tananyag</a>). <b>Racionális</b>: <span class="math inline">\(\tfrac{p}{q}\)</span> alakú (véges vagy szakaszos tizedes); <b>irracionális</b>: pl. <span class="math inline">\(\sqrt2,\pi\)</span>
     (<a href="tananyag-szamhalmazok.html#tetel-gyok2">→</a>). Besoroláskor <b>egyszerűsíts</b>: <span class="math inline">\(\sqrt9=3\in\mathbb{N}\)</span>.</p>
     <p><b>Racionális alakok:</b> tört ↔ tizedes ↔ százalék, pl. <span class="math inline">\(\tfrac34=0{,}75=75\%\)</span> (<a href="tananyag-szamhalmazok.html#def-racionalis">→</a>).</p>
-    <p><b>Abszolútérték</b> = a 0-tól mért távolság (<a href="tananyag-szamhalmazok.html#def-abszolut">→</a>): <span class="math inline">\(|x|=a\Rightarrow x=\pm a\)</span>; <span class="math inline">\(|x|<a\Rightarrow -a<x<a\)</span>; <span class="math inline">\(|x|>a\Rightarrow x<-a\)</span> vagy <span class="math inline">\(x>a\)</span>.</p>
+    <p><b>Abszolútérték</b> = a 0-tól mért távolság (<a href="tananyag-szamhalmazok.html#def-abszolut">→</a>): <span class="math inline">\(|x|=a\Rightarrow x=\pm a\)</span>; <span class="math inline">\(|x|&lt;a\Rightarrow -a&lt;x&lt;a\)</span>; <span class="math inline">\(|x|>a\Rightarrow x&lt;-a\)</span> vagy <span class="math inline">\(x>a\)</span>.</p>
 
     <h2 id="s4">Közelítés, hiba, normál alak</h2>
-    <p><b>Kerekítés</b> <span class="math inline">\(n\)</span> tizedesre: az <span class="math inline">\((n{+}1)\)</span>-edik jegy dönt (<span class="math inline">\(<5\)</span> le, <span class="math inline">\(\ge 5\)</span> fel) (<a href="tananyag-kozelites.html#def-kerekites">→ tananyag</a>).</p>
+    <p><b>Kerekítés</b> <span class="math inline">\(n\)</span> tizedesre: az <span class="math inline">\((n{+}1)\)</span>-edik jegy dönt (<span class="math inline">\(&lt;5\)</span> le, <span class="math inline">\(\ge 5\)</span> fel) (<a href="tananyag-kozelites.html#def-kerekites">→ tananyag</a>).</p>
     <p><b>Hiba</b> (<a href="tananyag-kozelites.html#def-hiba">→</a>): abszolút <span class="math inline">\(\Delta=|x-x^{*}|\)</span>; relatív <span class="math inline">\(\delta=\dfrac{\Delta}{|x|}\)</span> (gyakran <span class="math inline">\(\%\)</span>-ban).</p>
-    <p><b>Normál alak</b> (<a href="tananyag-kozelites.html#def-normal">→</a>): <span class="math inline">\(a\cdot 10^{k}\)</span>, ahol <span class="math inline">\(1\le a<10\)</span>, <span class="math inline">\(k\in\mathbb{Z}\)</span>. Pl. <span class="math inline">\(450\,000\,000\,000=4{,}5\cdot 10^{11}\)</span>, <span class="math inline">\(0{,}000\,000\,000\,067=6{,}7\cdot 10^{-11}\)</span>.</p>
+    <p><b>Normál alak</b> (<a href="tananyag-kozelites.html#def-normal">→</a>): <span class="math inline">\(a\cdot 10^{k}\)</span>, ahol <span class="math inline">\(1\le a&lt;10\)</span>, <span class="math inline">\(k\in\mathbb{Z}\)</span>. Pl. <span class="math inline">\(450\,000\,000\,000=4{,}5\cdot 10^{11}\)</span>, <span class="math inline">\(0{,}000\,000\,000\,067=6{,}7\cdot 10^{-11}\)</span>.</p>
 
     <h2 id="kulcsotletek">🧠 Kulcsötletek</h2>
     <ul>
@@ -76,7 +76,7 @@
       <li>A <b>6, 12, 15…</b> oszthatóságát mindig <b>relatív prím</b> tényezőkre bontva ellenőrizd (6 → 2 és 3).</li>
       <li>Számrendszer-átváltásnál a <b>maradékokat alulról felfelé</b> olvasd; ellenőrizz visszaszorzással.</li>
       <li>Besoroláskor előbb <b>egyszerűsíts</b> (<span class="math inline">\(\sqrt{16}=4\)</span>), és a <b>legszűkebb</b> halmazt add meg.</li>
-      <li>Abszolútérték = <b>távolság</b>: az <span class="math inline">\(=\)</span> két esetet, a <span class="math inline">\(<\)</span> egy sávot, a <span class="math inline">\(>\)</span> két szélső tartományt ad.</li>
+      <li>Abszolútérték = <b>távolság</b>: az <span class="math inline">\(=\)</span> két esetet, a <span class="math inline">\(&lt;\)</span> egy sávot, a <span class="math inline">\(>\)</span> két szélső tartományt ad.</li>
       <li>Normál alaknál a mantissza mindig <span class="math inline">\(1\)</span> és <span class="math inline">\(10\)</span> között van; a kitevő előjele a szám nagyságát mutatja.</li>
     </ul>
     <div class="lapozo">

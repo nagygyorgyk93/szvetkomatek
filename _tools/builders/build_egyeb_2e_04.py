@@ -385,7 +385,8 @@ print("✓ feladatok-hazi.html | Alap", len(DR_A), "Közép", len(DR_K), "Nehéz
 
 
 def kartya(href, cim, le):
-    return ('      <a class="kartya" href="' + href + '">\n        <h3>' + cim + '</h3>\n'
+    # a kártyacím is átmegy a matek-konverzión (pl. „Az $i$ hatványai")
+    return ('      <a class="kartya" href="' + href + '">\n        <h3>' + w(cim) + '</h3>\n'
             '        <p class="le">' + w(le) + '</p>\n      </a>')
 
 
