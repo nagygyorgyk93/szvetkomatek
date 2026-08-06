@@ -346,6 +346,11 @@ A3 = [
          'dolgozunk, hanem kettővel — mert ha a $75^\\circ$-ot fel tudod bontani '
          '$45^\\circ+30^\\circ$-ra, akkor a pontos értékét is ki tudod számolni. '
          'Jönnek az <b>azonosságok</b>.', outro=True),
+   kviz('Mekkora $\\sin 150^\\circ$?',
+        ['$\\tfrac12$', '$-\\tfrac12$', '$\\tfrac{\\sqrt3}{2}$'], 0,
+        jo="✔ A 150° a II. negyedben van, ahol a szinusz pozitív; az alapszöge 180° − 150° = 30°, tehát 1/2.",
+        nem="✘ Két lépés: alapszög 180° − 150° = 30°, innen az érték nagysága 1/2. "
+            "A II. negyedben a szinusz POZITÍV, tehát +1/2."),
  ]),
 ]
 

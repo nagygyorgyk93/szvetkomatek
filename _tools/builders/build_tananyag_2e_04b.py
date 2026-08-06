@@ -80,6 +80,12 @@ B1 = [
          'feladatszöveg <b>mindig</b> ad egy második információt ($\\cos\\alpha&lt;0$, '
          '$\\operatorname{tg}\\alpha&gt;0$, $\\alpha\\in\\left(\\tfrac{\\pi}{2};\\pi\\right)$…) — '
          'ez nem díszítés, hanem a feladat fele.</p>'),
+   kviz('Mennyi $\\sin^{2}x+\\cos^{2}x$ értéke?',
+        ['$1$ — minden valós $x$-re', '$x$', 'Az $x$-től függ'], 0,
+        jo="✔ Ez a Pitagorasz-azonosság. Az egységkörön a P pont koordinátái cos x és sin x, "
+           "az origótól mért távolsága pedig mindig 1.",
+        nem="✘ Ez a trigonometria legfontosabb azonossága: minden valós x-re 1. "
+            "Az egységkörön a koordináták négyzetösszege a sugár négyzete, azaz 1."),
  ]),
 
  ("A tipikus feladat: egy érték + a negyed", [
