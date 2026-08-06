@@ -256,11 +256,12 @@ A2 = [
          '<b>a)</b> $135^\\circ$; <b>b)</b> $\\tfrac{4\\pi}{3}$.</p>',
          hid="pelda-jellegzetes",
          lenyilo=("Megoldás",
+                  '<p>Mindkét résznél ugyanaz a menet: megkeressük, melyik negyedbe esik a szög, majd az <b>alapszögét</b> — azt a hegyesszöget, amelyet a szög szára a vízszintes tengellyel bezár. A függvényértékek nagysága az alapszögé, az előjelet pedig a negyed adja.</p>'
                   '<p><b>a)</b> $135^\\circ$ a <b>II.</b> negyedben van, az alapszöge '
                   '$180^\\circ-135^\\circ=45^\\circ$. A II. negyedben csak a szinusz pozitív:</p>'
                   '<p>$\\sin=\\tfrac{\\sqrt2}{2}$, &nbsp; $\\cos=-\\tfrac{\\sqrt2}{2}$, &nbsp; '
                   '$\\operatorname{tg}=-1$, &nbsp; $\\operatorname{ctg}=-1$.</p>'
-                  '<p><b>b)</b> $\\tfrac{4\\pi}{3}=240^\\circ$, a <b>III.</b> negyedben; '
+                  '<p><b>b)</b> Előbb váltsuk fokra: $\\tfrac{4\\pi}{3}=\\tfrac{4}{3}\\cdot180^\\circ=240^\\circ$ — ez a <b>III.</b> negyedbe esik; '
                   'alapszöge $240^\\circ-180^\\circ=60^\\circ$. Ott a $\\sin$ és a $\\cos$ '
                   'negatív, a $\\operatorname{tg}$ és a $\\operatorname{ctg}$ pozitív:</p>'
                   '<p>$\\sin=-\\tfrac{\\sqrt3}{2}$, &nbsp; $\\cos=-\\tfrac12$, &nbsp; '

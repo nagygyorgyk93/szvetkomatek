@@ -93,6 +93,25 @@
       <p>Két egyenes háromféleképpen helyezkedhet el, és ez a rendszer megoldásainak számát is megadja: <b>metsző</b> egyenesek → pontosan <b>egy</b> megoldás; <b>párhuzamos</b> (nem egybeeső) egyenesek → <b>nincs</b> megoldás; <b>egybeeső</b> egyenesek → <b>végtelen sok</b> megoldás. Ugyanaz a három eset, mint a paraméteres egyenletnél!</p>
     </div>
 
+    
+    <div class="doboz pelda" id="pelda-fajulo">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció — amikor eltűnik az ismeretlen</p>
+      <p>A geometriai kép szép, de a füzetben nem rajzolunk minden rendszert. Honnan veszed észre <b>számolás közben</b>, hogy nincs megoldás, vagy hogy végtelen sok van? Onnan, hogy <b>mindkét ismeretlen kiesik</b> — és ilyenkor a megmaradt számegyenlőség dönt.</p>
+      <p><b>a)</b> Küszöböljük ki az <span class="math">\(x\)</span>-et:</p><span class="math display">\[\begin{aligned}2x+3y&=7\quad\Big/\cdot(-2)\\ 4x+6y&=1\end{aligned}\]</span>      <p>Az elsőt <span class="math">\(-2\)</span>-vel szorozva <span class="math">\(-4x-6y=-14\)</span>, és ezt a másodikhoz adva mindkét ismeretlen kiesik:</p><span class="math display">\[0=-13.\]</span>      <p>Ez <b>hamis</b> számegyenlőség, tehát nincs olyan <span class="math">\((x;y)\)</span> pár, amely mindkét egyenletet kielégítené: a rendszernek <b>nincs megoldása</b>. A két egyenes párhuzamos.</p>
+      <p><b>b)</b> Most a második egyenlet jobb oldala legyen <span class="math">\(14\)</span>:</p><span class="math display">\[\begin{aligned}2x+3y&=7\quad\Big/\cdot(-2)\\ 4x+6y&=14\end{aligned}\]</span>      <p>Ugyanígy összeadva:</p><span class="math display">\[0=0.\]</span>      <p>Ez <b>mindig igaz</b>, tehát a második egyenlet nem mond semmi újat — pontosan az első kétszerese. A rendszernek <b>végtelen sok megoldása</b> van: minden pár, amelyre <span class="math">\(2x+3y=7\)</span>. A két egyenes egybeesik.</p>
+    </div>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Kán csapdája — a „0 = 0” nem azt jelenti, hogy nincs megoldás</p>
+      <p>A két fajuló eset könnyen összekeverhető, mert mindkettőnél eltűnnek az ismeretlenek. Csakhogy az eredmény <b>ellentétes</b>:</p>
+      <ul><li><span class="math">\(0=13\)</span> — hamis állítás → <b>nincs megoldás</b> (üres halmaz);</li><li><span class="math">\(0=0\)</span> — igaz állítás → <b>végtelen sok</b> megoldás.</li></ul>
+      <p>Ha a végén <span class="math">\(0=0\)</span>-t kapsz, ne írd oda, hogy „<span class="dolt">nincs megoldás</span>”, és ne is hagyd üresen a választ: add meg a megoldáshalmazt a megmaradt egyenlettel. Ugyanez a különbség köszön vissza az <span class="math">\(ax=b\)</span> alakú egyenletnél is.</p>
+    </div>
+    <div class="kviz" data-answer="1" data-jo="✔ Így van: a 0 = 0 azonosság azt jelenti, hogy a második egyenlet nem hoz új információt — a megoldások a megmaradt egyenlet összes megoldása." data-nem="✘ Gondold végig: a 0 = 0 IGAZ állítás. Ha hamisat kaptunk volna (pl. 0 = 5), akkor nem lenne megoldás.">
+      <p class="kviz-cim"><span class="ikon">🎯</span> Gyors kérdés</p>
+      <p>Egy kétismeretlenes rendszer kiküszöbölése után <span class="math">\(0=0\)</span>-t kapsz. Hány megoldása van a rendszernek?</p>
+      <div class="opciok"><button>Egy sem</button><button>Végtelen sok</button><button>Pontosan egy</button></div>
+      <p class="visszajelzes"></p>
+    </div>
     <h2 id="s7">🧾 Gyorsismétlő</h2>
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> A teljes témakör egy lapon</p>
