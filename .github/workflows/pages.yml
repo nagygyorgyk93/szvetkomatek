@@ -1,0 +1,54 @@
+# Szvetkó matek — statikus oldal publikálása GitHub Pages-re.
+#
+# FONTOS: ehhez a Settings → Pages → Source alatt a "GitHub Actions" opciónak
+# kell beállítva lennie (nem a "Deploy from a branch"). Enélkül a workflow
+# lefut, de nem publikál semmit.
+#
+# Az action-verziók 2026-08-06-i állapot szerint a legfrissebbek és mind
+# Node 24-en futnak — így nem jön a Node 20 elavulási figyelmeztetés.
+
+name: Deploy to Pages
+
+on:
+  push:
+    branches: [main]
+  # Kézzel is indítható az Actions fülről
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Egyszerre egy deploy fusson. A cancel-in-progress: true azért kell, hogy egy
+# beragadt futást egy új push felül tudjon írni — a klasszikus Pages-workflow
+# épp azért volt kezelhetetlen, mert ezt nem engedte.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
+        with:
+          # 15 perc (ms-ban) — a klasszikus workflow 10 perces korlátjánál bővebb
+          timeout: 900000
