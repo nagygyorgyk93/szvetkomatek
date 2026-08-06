@@ -228,6 +228,152 @@ print("gyakorló assertek OK")
 def sec(cim, ikon, html):
     return f'    <h2 id="{ikon}">{cim}</h2>\n{html}\n'
 
+
+# ==================================================================
+# ÁBRÁS SZÖGSZÁMÍTÓ BLOKK  (2026-08 — a hiányzó feladattípus pótlása)
+# Transzverzálisok, háromszög külső szögei, egyenlő szárú, négyszög,
+# paralelogramma, trapéz, húrnégyszög, kerületi szög.
+# ==================================================================
+import math as _m
+from abra_common import svg_parhuzamosok, svg_sokszog_szogek
+
+def _ker(svg):
+    return '<div class="svgwrap">' + svg + '</div>'
+
+def _perc(f, p): return f * 60 + p
+def _fp(m):      return f"{m // 60}°{m % 60}′"
+
+assert 180 // 6 == 30 and 5 * 30 == 150
+assert 180 // 4 == 45 and 3 * 45 == 135
+assert 180 // 3 == 60 and 2 * 60 == 120
+assert (180 - 20) // 2 == 80 and 80 + 20 == 100
+assert _fp(_perc(180, 0) - _perc(48, 23)) == "131°37′"
+assert 180 - 130 == 50 and 180 - 110 == 70 and 180 - 50 - 70 == 60
+assert 180 - 2 * 70 == 40
+assert 360 - (107 + 62 + 54) == 137
+assert 180 - 80 == 100 and 80 - 23 == 57 and 23 + 100 + 57 == 180
+assert 3 * 20 + 50 == 110 and 70 + 110 == 180 and 89 - 19 == 70
+assert _fp(_perc(180, 0) - _perc(46, 30)) == "133°30′"
+assert _fp((_perc(180, 0) - _perc(46, 30)) // 2) == "66°45′"
+assert (90 + 22) // 2 == 56 and (90 - 22) // 2 == 34 and 56 - 34 == 22
+assert 180 - 62 == 118
+assert 4 * 30 == 120 and 3 * 30 + 20 == 110 and 30 + 40 == 70 and 110 + 70 == 180
+assert 180 - 88 == 92
+assert 360 // 6 == 60 and 5 * 60 == 300 and 60 // 2 == 30 and 300 // 2 == 150
+print("szög-blokk assertek OK")
+
+_A2 = _ker(svg_parhuzamosok(szog=62, cimkek={2: "48°23′", 1: "α", 5: "β", 6: "γ"},
+      leiras="Két párhuzamos egyenest transzverzális metsz; a felső metszéspont jobb felső szöge 48 fok 23 perc"))
+_A3 = _ker(svg_sokszog_szogek([(0, 0), (5.4, 0), (1.7, 2.9)], cimkek=["A", "B", "C"],
+      szogek={1: "α"}, kulso=[(0, 1, "130°"), (2, 0, "110°")], w=400, h=250,
+      leiras="Háromszög, amelynek két külső szöge 130 és 110 fok"))
+_A4 = _ker(svg_sokszog_szogek([(0, 0), (4.2, 0), (2.1, 3.3)], cimkek=["B", "C", "A"],
+      szogek={0: "70°", 1: "β", 2: "α"}, oldaljelek={1: 1, 2: 1}, w=340, h=280,
+      leiras="Egyenlő szárú háromszög 70 fokos alapszöggel"))
+_A5 = _ker(svg_sokszog_szogek([(0, 0), (4.4, 0), (5.0, 3.0), (0.9, 3.4)],
+      szogek={0: "62°", 1: "54°", 2: "m", 3: "107°"}, w=380, h=275,
+      leiras="Négyszög, amelynek három belső szöge 107, 62 és 54 fok"))
+_K1 = _ker(svg_sokszog_szogek([(0, 0), (4.8, 0), (6.3, 2.8), (1.5, 2.8)],
+      cimkek=["A", "B", "C", "D"], szogek={0: "80°"}, atlok=[(0, 2)], parhuzamos=[0, 2],
+      w=410, h=255, leiras="Paralelogramma az AC átlóval, az A csúcsnál 80 fok"))
+_K2 = _ker(svg_sokszog_szogek([(0, 0), (5.6, 0), (4.3, 3.1), (1.3, 3.1)],
+      cimkek=["A", "B", "C", "D"], szogek={0: "70°", 1: "(y−19)°", 3: "(3x+50)°"},
+      oldaljelek={1: 1, 3: 1}, parhuzamos=[0, 2], w=420, h=275,
+      leiras="Egyenlő szárú trapéz, betűs kifejezésekkel megadott szögekkel"))
+_K3 = _ker(svg_parhuzamosok(szog=52, cimkek={1: "46°30′", 4: "2α", 7: "β"},
+      leiras="Két párhuzamost transzverzális metsz; az egyik szög 46 fok 30 perc, a szomszédja 2 alfa"))
+_K5 = _ker(svg_parhuzamosok(szog=66, cimkek={2: "62°", 5: "α"},
+      leiras="Két párhuzamost transzverzális metsz; a felső szög 62 fok, alfa a másik metszéspont belső szöge"))
+_N1c = [(_m.cos(_m.radians(t)), _m.sin(_m.radians(t))) for t in (10, 54, 194, 274)]
+_N1 = _ker(svg_sokszog_szogek(_N1c, cimkek=["A", "B", "C", "D"],
+      szogek={0: "(3x+20)°", 1: "88°", 2: "(x+40)°", 3: "δ"}, kor=True, w=400, h=340,
+      leiras="Húrnégyszög a körülírt körével"))
+
+SZOG_ALAP = [
+ ("Két szög <b>kiegészítő</b>, ha az összegük $180^\\circ$. Mekkorák azok a kiegészítő szögek, amelyeknél",
+  ["az egyik ötszöröse a másiknak?", "az egyik háromszorosa a másiknak?",
+   "az egyik kétszerese a másiknak?", "az egyik $20^\\circ$-kal nagyobb a másiknál?"],
+  ["$30^\\circ$ és $150^\\circ$", "$45^\\circ$ és $135^\\circ$",
+   "$60^\\circ$ és $120^\\circ$", "$80^\\circ$ és $100^\\circ$"], True),
+
+ (_A2 + "Az ábrán $a\\parallel b$. Számítsd ki a megjelölt szögeket, majd nevezd meg a kért szögpárt!",
+  ["$\\alpha$", "$\\beta$", "$\\gamma$",
+   "Milyen szögpárt alkot $\\gamma$ a megadott $48^\\circ 23'$-es szöggel?"],
+  ["$131^\\circ 37'$ (a $48^\\circ 23'$ mellékszöge)",
+   "$131^\\circ 37'$ ($\\alpha$-val egyállású)",
+   "$48^\\circ 23'$",
+   "Egyállású szögek — párhuzamosoknál egyenlők."]),
+
+ (_A3 + "A háromszög két külső szöge $130^\\circ$ és $110^\\circ$. Számítsd ki mind a három belső szöget!",
+  None,
+  "Az $A$ csúcsnál $180^\\circ-130^\\circ=50^\\circ$, a $C$ csúcsnál $180^\\circ-110^\\circ=70^\\circ$, "
+  "így $\\alpha=180^\\circ-50^\\circ-70^\\circ=60^\\circ$."),
+
+ (_A4 + "A háromszögnek két egyenlő hosszú oldala van (lásd a vonalkákat), az egyik alapszöge $70^\\circ$. "
+        "Számítsd ki $\\alpha$-t és $\\beta$-t!",
+  None,
+  "$\\beta=70^\\circ$ (egyenlő oldalakkal szemközt egyenlő szögek), $\\alpha=180^\\circ-2\\cdot 70^\\circ=40^\\circ$."),
+
+ (_A5 + "Számítsd ki a négyszög hiányzó $m$ belső szögét!", None,
+  "A négyszög belső szögeinek összege $360^\\circ$, ezért $m=360^\\circ-(107^\\circ+62^\\circ+54^\\circ)=137^\\circ$."),
+]
+
+SZOG_KOZEP = [
+ (_K1 + "Az $ABCD$ paralelogramma $A$ csúcsánál lévő szöge $80^\\circ$. Az $AC$ átló ezt a szöget úgy "
+        "bontja két részre, hogy $\\angle BAC=23^\\circ$. Számítsd ki:",
+  ["a paralelogramma másik három belső szögét", "az $\\angle ACB$ szöget",
+   "Miért lesz $\\angle ACB$ ugyanakkora, mint $\\angle CAD$?"],
+  ["$\\angle ABC=100^\\circ$, $\\angle BCD=80^\\circ$, $\\angle CDA=100^\\circ$",
+   "$\\angle ACB=57^\\circ$",
+   "Mert $AD\\parallel BC$, és az $AC$ átló transzverzálisként metszi őket: a két szög váltószög."]),
+
+ (_K2 + "Az $ABCD$ egyenlő szárú trapézban $AB\\parallel DC$, a szárak pedig egyenlő hosszúak. "
+        "Határozd meg $x$ és $y$ értékét, majd add meg mind a négy belső szöget!",
+  None,
+  "Egyenlő szárú trapézban az alapon fekvő szögek egyenlők: $\\angle A=\\angle B=70^\\circ$, ezért "
+  "$y-19=70$, azaz $y=89$. A szárak melletti szögek kiegészítők, így $\\angle C=\\angle D=110^\\circ$, "
+  "tehát $3x+50=110$, azaz $x=20$."),
+
+ (_K3 + "Az ábrán $a\\parallel b$. Számítsd ki $\\alpha$-t és $\\beta$-t!", None,
+  "A jelölt $46^\\circ 30'$ és $2\\alpha$ mellékszögek, ezért $2\\alpha=133^\\circ 30'$, "
+  "innen $\\alpha=66^\\circ 45'$. A $\\beta$ a $46^\\circ 30'$-es szöggel egyállású, tehát "
+  "$\\beta=46^\\circ 30'$."),
+
+ ("Egy derékszögű háromszögben a két hegyesszög különbsége $22^\\circ$. Mekkorák ezek a hegyesszögek? "
+  "Írd le a gondolatmenetet is!", None,
+  "A két hegyesszög összege $90^\\circ$, különbsége $22^\\circ$, ezért a nagyobbik "
+  "$(90^\\circ+22^\\circ):2=56^\\circ$, a kisebbik $(90^\\circ-22^\\circ):2=34^\\circ$."),
+
+ (_K5 + "Egy kadét így okoskodott: <i>„Mivel $a\\parallel b$, és a váltószögek egyenlők, ezért "
+        "$\\alpha=62^\\circ$.”</i> A végeredménye hibás. Hol csúszott el a gondolatmenete, és mennyi "
+        "valójában $\\alpha$?", None,
+  "A megadott $62^\\circ$ a két párhuzamoson <b>kívül</b> van, $\\alpha$ viszont <b>belül</b> — "
+  "így nem alkotnak váltószögpárt. A $62^\\circ$ egyállású párja az alsó metszéspont jobb felső "
+  "szöge, ez pedig $\\alpha$ mellékszöge, tehát $\\alpha=180^\\circ-62^\\circ=118^\\circ$."),
+]
+
+SZOG_NEHEZ = [
+ (_N1 + "Az $ABCD$ négyszög mind a négy csúcsa ugyanazon a körön van (<b>húrnégyszög</b>). "
+        "Számítsd ki $x$ értékét, majd mind a négy belső szöget!", None,
+  "Húrnégyszögben a szemközti szögek összege $180^\\circ$, ezért $(3x+20)+(x+40)=180$, "
+  "ahonnan $x=30$. Így $\\angle A=110^\\circ$, $\\angle C=70^\\circ$, és a másik szemközti párból "
+  "$\\delta=\\angle D=180^\\circ-88^\\circ=92^\\circ$."),
+
+ ("Az $A$ és $B$ pont a körvonalat $1:5$ arányban két ívre bontja.",
+  ["Mekkora a két ív?",
+   "Mekkora a két ívhez tartozó kerületi szög?",
+   "A két kerületi szög összege $180^\\circ$. Melyik korábban tanult tétel következik ebből?"],
+  ["A teljes kör $360^\\circ$, hat egyenlő rész egyike $60^\\circ$, tehát az ívek $60^\\circ$ és $300^\\circ$.",
+   "A kerületi szög a hozzá tartozó középponti szög fele: $30^\\circ$, illetve $150^\\circ$.",
+   "Az $AB$ húr két oldalán fekvő kerületi szögek kiegészítik egymást $180^\\circ$-ra — "
+   "ez pontosan a húrnégyszögek szemközti szögeire vonatkozó tétel."]),
+]
+
+ALAP  = ALAP  + SZOG_ALAP
+KOZEP = KOZEP + SZOG_KOZEP
+NEHEZ = NEHEZ + SZOG_NEHEZ
+
+
 body = []
 body.append('    <h2 id="alap">🟢 Alapszint</h2>\n' + cards(ALAP, "alap", "alap"))
 body.append('    <h2 id="kozep">🟡 Középszint</h2>\n' + cards(KOZEP, "kozep", "kozep"))

@@ -33,7 +33,8 @@ BOROSTYAN = "#f59e0b"
 PIROS = "#ef4444"
 LILA = "#8b5cf6"
 
-__all__ = ["svg_szamegyenes", "svg_haromszog", "svg_venn"]
+__all__ = ["svg_szamegyenes", "svg_haromszog", "svg_venn",
+           "svg_parhuzamosok", "svg_sokszog_szogek"]
 
 
 def _fej(w: int, h: int, leiras: str) -> list[str]:
@@ -329,4 +330,257 @@ def svg_venn(cimkek=("A", "B"), arnyekolt=(), alaphalmaz="U", w=340, h=230,
                   f'text-anchor="middle">{cimke}</text>')
 
     ki.append("</svg>")
+    return "\n".join(ki)
+
+
+# =====================================================================
+# 4. Párhuzamosok transzverzálissal — szögszámító feladatokhoz
+# =====================================================================
+
+def svg_parhuzamosok(szog=58, cimkek=None, nevek=("a", "b"), w=460, h=250,
+                     leiras="Két párhuzamos egyenest transzverzális metsz"):
+    """Két vízszintes párhuzamos, amelyet egy ferde egyenes (transzverzális) metsz.
+
+    A nyolc keletkező szög számozása **a bal felsőtől, az óramutató járása szerint**:
+
+        1 2          (felső metszéspont)
+        4 3
+        5 6          (alsó metszéspont)
+        8 7
+
+    `cimkek` = {2: "48°23′", 5: "α"} — csak a megjelölendő szögek. A felirat sima
+      SVG-szöveg (nem KaTeX), tehát a °, ′ és a görög betűk közvetlenül írhatók.
+    `szog`   = a transzverzális hajlásszöge a párhuzamosokhoz, fokban.
+    """
+    cimkek = cimkek or {}
+    ya, yb = 74.0, 178.0
+    bal, jobb = 28.0, w - 34.0
+
+    th = math.radians(max(20.0, min(80.0, szog)))
+    dx = (yb - ya) / math.tan(th)
+    x_fent = w * 0.42 - dx / 2.0
+    x_lent = x_fent + dx
+
+    vx, vy = dx, (yb - ya)                       # transzverzális iránya (lefelé-jobbra)
+    vn = math.hypot(vx, vy) or 1.0
+    vx, vy = vx / vn, vy / vn
+    fok_v = math.degrees(math.atan2(vy, vx))     # képernyő-szög (y lefelé)
+
+    # a négy szektor: (kezdő szög, záró szög) képernyő-fokban
+    szektor = {1: (180.0, 180.0 + fok_v),
+               2: (180.0 + fok_v, 360.0),
+               3: (0.0, fok_v),
+               4: (fok_v, 180.0)}
+
+    ki = _fej(w, h, leiras)
+
+    tny = 52.0
+    ki.append(f'  <line x1="{x_fent - vx * tny:.1f}" y1="{ya - vy * tny:.1f}" '
+              f'x2="{x_lent + vx * tny:.1f}" y2="{yb + vy * tny:.1f}" '
+              f'stroke="{SZURKE}" stroke-width="1.9"/>')
+
+    for y, nev in ((ya, nevek[0]), (yb, nevek[1])):
+        ki.append(f'  <line x1="{bal}" y1="{y}" x2="{jobb}" y2="{y}" '
+                  f'stroke="{TINTA}" stroke-width="2.2"/>')
+        ki.append(f'  <text x="{jobb + 7:.1f}" y="{y + 5:.1f}" font-size="15" '
+                  f'font-style="italic" fill="{TINTA}">{nev}</text>')
+        for k in (0, 1):                          # párhuzamosság-jel
+            x = bal + 20 + k * 10
+            ki.append(f'  <path d="M{x:.1f},{y - 5:.1f} L{x + 6:.1f},{y:.1f} '
+                      f'L{x:.1f},{y + 5:.1f}" fill="none" stroke="{TINTA}" '
+                      'stroke-width="1.5"/>')
+
+    for eltolas, (px, py) in ((0, (x_fent, ya)), (4, (x_lent, yb))):
+        for k in (1, 2, 3, 4):
+            felirat = cimkek.get(k + eltolas)
+            if felirat is None:
+                continue
+            a1, a2 = szektor[k]
+            r = 26.0
+            x1 = px + r * math.cos(math.radians(a1))
+            y1 = py + r * math.sin(math.radians(a1))
+            x2 = px + r * math.cos(math.radians(a2))
+            y2 = py + r * math.sin(math.radians(a2))
+            nagy = 1 if (a2 - a1) > 180 else 0
+            ki.append(f'  <path d="M{x1:.1f},{y1:.1f} A{r},{r} 0 {nagy} 1 {x2:.1f},{y2:.1f}" '
+                      f'fill="none" stroke="{PIROS}" stroke-width="1.8"/>')
+            kozep = math.radians((a1 + a2) / 2.0)
+            rt = 45.0
+            tx, ty = px + rt * math.cos(kozep), py + rt * math.sin(kozep)
+            ki.append(f'  <text x="{tx:.1f}" y="{ty + 5:.1f}" font-size="15" '
+                      f'text-anchor="middle" fill="{PIROS}" font-weight="700">{felirat}</text>')
+
+    for px, py in ((x_fent, ya), (x_lent, yb)):
+        ki.append(f'  <circle cx="{px:.1f}" cy="{py:.1f}" r="3.2" fill="{TINTA}"/>')
+
+    ki.append('</svg>')
+    return "\n".join(ki)
+
+
+# =====================================================================
+# 5. Sokszög belső (és külső) szögekkel — négyszög, trapéz, paralelogramma
+# =====================================================================
+
+def svg_sokszog_szogek(csucsok, cimkek=None, szogek=None, atlok=(), oldaljelek=None,
+                       parhuzamos=(), kulso=(), oldalcimkek=None, derekszogek=(),
+                       kor=False, w=380, h=270, leiras="Sokszög", kitolt="#eff6ff"):
+    """Tetszőleges sokszög feliratozott belső szögekkel.
+
+    `csucsok`   = [(x, y), …] matematikai koordináták (y felfelé), az óramutatóval
+                  ELLENTÉTES körüljárás a természetes.
+    `cimkek`    = ["A", "B", "C", "D"] csúcsfeliratok (vagy None).
+    `szogek`    = {csúcs_index: "felirat"} — szögív + felirat a sokszögön belül.
+    `atlok`     = [(i, j), …] szaggatott átlók.
+    `oldaljelek`= {oldal_index: darabszám} — egyenlőség-vonalkák az i→i+1 oldalon.
+    `parhuzamos`= [(i, j), …] — nyílhegy-jel két párhuzamos oldalon.
+    `kulso`     = [(csúcs, szomszéd, "felirat"), …] — a szomszéd→csúcs oldal
+                  meghosszabbítása a csúcson túl, és az ott keletkező külső szög.
+    `derekszogek` = csúcsindexek, ahol derékszög-jel (kis négyzet) kell.
+    """
+    cimkek = cimkek or [None] * len(csucsok)
+    szogek = szogek or {}
+    oldaljelek = oldaljelek or {}
+    oldalcimkek = oldalcimkek or {}
+    n = len(csucsok)
+
+    xs = [p[0] for p in csucsok]
+    ys = [p[1] for p in csucsok]
+    hx, hy = (max(xs) - min(xs)) or 1, (max(ys) - min(ys)) or 1
+    keret = 46
+    sk = min((w - 2 * keret) / hx, (h - 2 * keret) / hy)
+    ox, oy = min(xs), min(ys)
+
+    def P(p):
+        return (keret + (p[0] - ox) * sk, h - keret - (p[1] - oy) * sk)
+
+    Pk = [P(p) for p in csucsok]
+
+    def egys(a, b):
+        dx, dy = b[0] - a[0], b[1] - a[1]
+        d = math.hypot(dx, dy) or 1.0
+        return dx / d, dy / d
+
+    ki = _fej(w, h, leiras)
+
+    # külső szögek: előbb a meghosszabbítás, hogy a sokszög rákerüljön
+    for cs, szo, felirat in kulso:
+        A, B = Pk[szo], Pk[cs]
+        ux, uy = egys(A, B)
+        vx_, vy_ = B[0] + ux * 46, B[1] + uy * 46
+        ki.append(f'  <line x1="{B[0]:.1f}" y1="{B[1]:.1f}" x2="{vx_:.1f}" y2="{vy_:.1f}" '
+                  f'stroke="{SZURKE}" stroke-width="1.7" stroke-dasharray="6 4"/>')
+
+    if kor:                                   # körülírt kör az első három csúcson át
+        (x1_, y1_), (x2_, y2_), (x3_, y3_) = Pk[0], Pk[1], Pk[2]
+        d_ = 2 * (x1_ * (y2_ - y3_) + x2_ * (y3_ - y1_) + x3_ * (y1_ - y2_))
+        if abs(d_) > 1e-6:
+            ux_ = ((x1_**2 + y1_**2) * (y2_ - y3_) + (x2_**2 + y2_**2) * (y3_ - y1_)
+                   + (x3_**2 + y3_**2) * (y1_ - y2_)) / d_
+            uy_ = ((x1_**2 + y1_**2) * (x3_ - x2_) + (x2_**2 + y2_**2) * (x1_ - x3_)
+                   + (x3_**2 + y3_**2) * (x2_ - x1_)) / d_
+            r_ = math.hypot(x1_ - ux_, y1_ - uy_)
+            ki.append(f'  <circle cx="{ux_:.1f}" cy="{uy_:.1f}" r="{r_:.1f}" '
+                      f'fill="none" stroke="{KEK}" stroke-width="1.6"/>')
+
+    ki.append('  <polygon points="' + " ".join(f"{x:.1f},{y:.1f}" for x, y in Pk) +
+              f'" fill="{kitolt}" stroke="{TINTA}" stroke-width="2.1" '
+              'stroke-linejoin="round"/>')
+
+    for i, j in atlok:
+        ki.append(f'  <line x1="{Pk[i][0]:.1f}" y1="{Pk[i][1]:.1f}" '
+                  f'x2="{Pk[j][0]:.1f}" y2="{Pk[j][1]:.1f}" '
+                  f'stroke="{SZURKE}" stroke-width="1.5" stroke-dasharray="5 3"/>')
+
+    # egyenlőség-vonalkák
+    for i, db in oldaljelek.items():
+        A, B = Pk[i], Pk[(i + 1) % n]
+        ux, uy = egys(A, B)
+        mx, my = (A[0] + B[0]) / 2, (A[1] + B[1]) / 2
+        for k in range(db):
+            e = (k - (db - 1) / 2) * 7
+            cx, cy = mx + ux * e, my + uy * e
+            ki.append(f'  <line x1="{cx - uy * 6:.1f}" y1="{cy + ux * 6:.1f}" '
+                      f'x2="{cx + uy * 6:.1f}" y2="{cy - ux * 6:.1f}" '
+                      f'stroke="{TINTA}" stroke-width="1.6"/>')
+
+    # párhuzamosság-nyilak
+    for i in parhuzamos:
+        A, B = Pk[i], Pk[(i + 1) % n]
+        ux, uy = egys(A, B)
+        mx, my = (A[0] + B[0]) / 2, (A[1] + B[1]) / 2
+        ki.append(f'  <path d="M{mx - ux * 5 - uy * 5:.1f},{my - uy * 5 + ux * 5:.1f} '
+                  f'L{mx + ux * 5:.1f},{my + uy * 5:.1f} '
+                  f'L{mx - ux * 5 + uy * 5:.1f},{my - uy * 5 - ux * 5:.1f}" '
+                  f'fill="none" stroke="{TINTA}" stroke-width="1.5"/>')
+
+    # oldalfeliratok
+    for i, sz in oldalcimkek.items():
+        A, B = Pk[i], Pk[(i + 1) % n]
+        ux, uy = egys(A, B)
+        mx, my = (A[0] + B[0]) / 2, (A[1] + B[1]) / 2
+        ki.append(f'  <text x="{mx - uy * 22:.1f}" y="{my + ux * 22 + 5:.1f}" font-size="13.5" '
+                  f'text-anchor="middle" fill="{SZURKE}" font-style="italic">{sz}</text>')
+
+    # belső szögek
+    for i, felirat in szogek.items():
+        C = Pk[i]
+        A, B = Pk[(i - 1) % n], Pk[(i + 1) % n]
+        a1 = math.degrees(math.atan2(*reversed(egys(C, A))))
+        a2 = math.degrees(math.atan2(*reversed(egys(C, B))))
+        d = (a2 - a1) % 360
+        nagy = 1 if d > 180 else 0
+        r = 27.0
+        x1, y1 = C[0] + r * math.cos(math.radians(a1)), C[1] + r * math.sin(math.radians(a1))
+        x2, y2 = C[0] + r * math.cos(math.radians(a2)), C[1] + r * math.sin(math.radians(a2))
+        if i in derekszogek:
+            u1 = egys(C, A); u2 = egys(C, B)
+            s = 15.0
+            ki.append(f'  <path d="M{C[0] + u1[0] * s:.1f},{C[1] + u1[1] * s:.1f} '
+                      f'L{C[0] + (u1[0] + u2[0]) * s:.1f},{C[1] + (u1[1] + u2[1]) * s:.1f} '
+                      f'L{C[0] + u2[0] * s:.1f},{C[1] + u2[1] * s:.1f}" fill="none" '
+                      f'stroke="{PIROS}" stroke-width="1.7"/>')
+        else:
+            ki.append(f'  <path d="M{x1:.1f},{y1:.1f} A{r},{r} 0 {nagy} 1 {x2:.1f},{y2:.1f}" '
+                      f'fill="none" stroke="{PIROS}" stroke-width="1.9"/>')
+        kozep = math.radians(a1 + ((a2 - a1) % 360) / 2.0)
+        rt = 46.0
+        ki.append(f'  <text x="{C[0] + rt * math.cos(kozep):.1f}" '
+                  f'y="{C[1] + rt * math.sin(kozep) + 5:.1f}" font-size="14.5" '
+                  f'text-anchor="middle" fill="{PIROS}" font-weight="700">{felirat}</text>')
+
+    # külső szögek feliratozása
+    for cs, szo, felirat in kulso:
+        C = Pk[cs]
+        A = Pk[szo]
+        masik = Pk[(cs + 1) % n] if (cs + 1) % n != szo else Pk[(cs - 1) % n]
+        ux, uy = egys(A, C)                      # a meghosszabbítás iránya
+        a1 = math.degrees(math.atan2(uy, ux))
+        a2 = math.degrees(math.atan2(*reversed(egys(C, masik))))
+        d = (a2 - a1) % 360
+        nagy = 1 if d > 180 else 0
+        r = 24.0
+        x1, y1 = C[0] + r * math.cos(math.radians(a1)), C[1] + r * math.sin(math.radians(a1))
+        x2, y2 = C[0] + r * math.cos(math.radians(a2)), C[1] + r * math.sin(math.radians(a2))
+        ki.append(f'  <path d="M{x1:.1f},{y1:.1f} A{r},{r} 0 {nagy} 1 {x2:.1f},{y2:.1f}" '
+                  f'fill="none" stroke="{BOROSTYAN}" stroke-width="1.9"/>')
+        kozep = math.radians(a1 + d / 2.0)
+        rt = 43.0
+        ki.append(f'  <text x="{C[0] + rt * math.cos(kozep):.1f}" '
+                  f'y="{C[1] + rt * math.sin(kozep) + 5:.1f}" font-size="14.5" '
+                  f'text-anchor="middle" fill="{BOROSTYAN}" font-weight="700">{felirat}</text>')
+
+    # csúcsfeliratok
+    kx = sum(p[0] for p in Pk) / n
+    kyy = sum(p[1] for p in Pk) / n
+    for i, nev in enumerate(cimkek):
+        if not nev:
+            continue
+        px, py = Pk[i]
+        dx, dy = px - kx, py - kyy
+        dd = math.hypot(dx, dy) or 1.0
+        ki.append(f'  <text x="{px + dx / dd * 17:.1f}" y="{py + dy / dd * 17 + 5:.1f}" '
+                  f'font-size="14.5" text-anchor="middle" fill="{TINTA}" '
+                  f'font-weight="700">{nev}</text>')
+
+    ki.append('</svg>')
     return "\n".join(ki)

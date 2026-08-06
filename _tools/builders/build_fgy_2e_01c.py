@@ -337,7 +337,7 @@ ut = oldal(tagozat="2e", mappa="01-hatvanyozas-gyokvonas-komplex-szamok",
                  "hatványai és egyenletek $\\mathbb{C}$-ben — a végén gyakorló dolgozat a "
                  "TELJES témakörre. A végeredmény minden feladatnál lenyitható!",
            sections_html="\n".join(body),
-           prev="tananyag-i-hatvanyai-es-egyenletek.html", prevc="Az $i$ hatványai és egyenletek",
+           prev="tananyag-i-hatvanyai-es-egyenletek.html", prevc="Az i hatványai és egyenletek",
            nxt="osszefoglalo.html", nxtc="Taktikai memóriakártya")
 print("✓", os.path.basename(ut), "| Alap", len(ALAP), "Közép", len(KOZEP), "Nehéz", len(NEHEZ),
       "+ Joker | gyakorló:", len(GYD_ORAI), "+", len(GYD_OTTHON))

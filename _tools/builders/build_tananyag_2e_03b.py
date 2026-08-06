@@ -42,15 +42,16 @@ print("sympy önteszt: OK")
 
 B1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Dr. Bestia:</b> Az előző küldetésben azt kérdeztük: <i>mennyi lesz a fertőzöttek '
-         'száma $x$ óra múlva?</i> A válasz $2^{x}$ volt. De a valódi kérdés a labor '
+   brief('<b>Dr. Bestia:</b> Az előző küldetésben azt kérdeztük: <i>mennyi lesz a fertőzött '
+         'sejtek száma $x$ óra múlva?</i> A válasz $2^{x}$ volt. De a valódi kérdés a labor '
          'szempontjából fordított: <b>hány óra kell ahhoz</b>, hogy elérje a milliót? '
          'Ez az $x$ a <b>kitevőben</b> ül, és eddig csak akkor tudtuk kihalászni, ha '
          'a két oldal szerencsésen közös alapra hozható volt. Most kapunk egy eszközt, '
          'amely <b>mindig</b> működik: a <b>logaritmust</b>.'),
    'A logaritmus nem új művelet a semmiből — a hatványozás <b>fordítottja</b>, '
    'ugyanúgy, ahogy a kivonás az összeadásé vagy a gyökvonás a négyzetre emelésé. '
-   'A hatványozásnak azonban <b>két</b> fordított művelete van, mert két adata van:',
+   'A hatványozásnak azonban <b>két</b> fordított művelete van, mert <b>két bemenő adatból</b> '
+   '— az alapból és a kitevőből — állítja elő az eredményt, tehát kétféleképpen fordítható meg:',
    doboz("tetel", "A hatványozás két fordítottja",
          '<p>A $2^{3}=8$ egyenlőségben három szám szerepel. Attól függően, melyiket '
          'keressük, más művelet kell:</p>'
@@ -74,12 +75,18 @@ B1 = [
    doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p><b>Csak pozitív szám logaritmusa létezik!</b> A $\\log_{2}(-8)$ nem értelmezhető, '
          'mert nincs olyan $c$ kitevő, amelyre $2^{c}=-8$ lenne — a $2^{c}$ mindig pozitív '
-         '(ezt épp az exponenciális függvény értékkészleténél láttuk). Ugyanígy '
+         '(ezt az <a href="tananyag-exponencialis-fuggveny.html">exponenciális függvény '
+         'értékkészleténél</a> láttuk). Ugyanígy '
          '$\\log_{2}0$ sem létezik.</p>'
          '<p>Ez lesz később az <b>értelmezési tartomány</b> vizsgálatának az alapja: '
          'a $\\log_{a}\\big(f(x)\\big)$ kifejezésnél mindig ki kell kötni, hogy '
          '$f(x)&gt;0$.</p>'),
    doboz("pelda", "Vészterem-szimuláció",
+         '<p class="halvany">Kelleni fog a <a href="../01-hatvanyozas-gyokvonas-komplex-szamok/'
+         'tananyag-hatvanyozas.html#def-egesz-kitevo">negatív</a> és a '
+         '<a href="../01-hatvanyozas-gyokvonas-komplex-szamok/'
+         'tananyag-gyoktelenites-es-racionalis-kitevo.html#def-racionalis-kitevo">tört kitevő</a> '
+         '— például $\\tfrac19=3^{-2}$ és $\\sqrt{4}=4^{1/2}$.</p>'
          '<p>Számold ki a definíció alapján: <b>a)</b> $\\log_{2}8$; '
          '<b>b)</b> $\\log_{3}\\tfrac19$; <b>c)</b> $\\log_{4}2$; '
          '<b>d)</b> $\\log_{\\frac13}27$.</p>',
@@ -110,11 +117,14 @@ B1 = [
          'A harmadik és a negyedik azt fejezi ki, hogy a <b>logaritmus és a hatványozás '
          'kioltják egymást</b> — pontosan úgy, ahogy a négyzetre emelés és a négyzetgyök.</p>',
          hid="tetel-alaposszefuggesek",
-         lenyilo=("Miért igaz a negyedik?",
-                  '<p>A $\\log_{a}b$ definíció szerint az a kitevő, amelyre $a$-t emelve '
-                  '$b$-t kapunk. Ha tehát $a$-t épp erre a kitevőre emeljük, definíció '
-                  'szerint $b$-t kell kapnunk. Ez a legfontosabb azonosság a logaritmusos '
-                  'egyenletek megoldásánál.</p>')),
+         lenyilo=("Miért igaz a harmadik és a negyedik?",
+                  '<p><b>A harmadik.</b> A $\\log_{a}a^{k}$ arra kérdez rá, hogy az $a$-t '
+                  'hányadik hatványra kell emelni ahhoz, hogy $a^{k}$-t kapjunk. A válasz '
+                  'ránézésre adódik: a $k$-adikra — tehát $\\log_{a}a^{k}=k$.</p>'
+                  '<p><b>A negyedik.</b> A $\\log_{a}b$ definíció szerint az a kitevő, amelyre '
+                  '$a$-t emelve $b$-t kapunk. Ha tehát $a$-t épp erre a kitevőre emeljük, '
+                  'definíció szerint $b$-t kell kapnunk. Ez a legfontosabb azonosság a '
+                  'logaritmusos egyenletek megoldásánál.</p>')),
    doboz("definicio", "Két kitüntetett alap",
          '<p><b>Tizes alapú (Briggs-féle) logaritmus:</b> ha az alap $10$, gyakran '
          'elhagyjuk a jelölésből:</p>'

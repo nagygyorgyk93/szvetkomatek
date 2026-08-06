@@ -427,7 +427,7 @@ ki.append(lap(**T, fajl="tananyag-muveletek-komplex-szamokkal.html",
               chip="A Képzelet Határa · 7/8", szakaszok=C2,
               elozo=("tananyag-komplex-szam-fogalma.html", "A komplex szám fogalma"),
               kovetkezo=("tananyag-i-hatvanyai-es-egyenletek.html",
-                         "Az $i$ hatványai és egyenletek")))
+                         "Az i hatványai és egyenletek")))
 ki.append(lap(**T, fajl="tananyag-i-hatvanyai-es-egyenletek.html",
               cim="Az $i$ hatványai és egyenletek $\\mathbb{C}$-ben",
               cim_tiszta="Az i hatványai és egyenletek",
