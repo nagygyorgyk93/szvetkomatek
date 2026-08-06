@@ -269,7 +269,7 @@ NEHEZ = [
  ("Számítsd ki! $\\left(\\dfrac{1-i}{1+i}\\right)^{2027}$", None, "$i$"),
 ]
 
-JOKER = ("<b>Sinister vírus-kódja.</b> A rendszer ezzel a „bizonyítással” próbálja igazolni, "
+JOKER = ("<b>Dr. Baljós vírus-kódja.</b> A rendszer ezzel a „bizonyítással” próbálja igazolni, "
          "hogy $-1=1$: $$-1=i^{2}=\\sqrt{-1}\\cdot\\sqrt{-1}\\ \\overset{?}{=}\\ "
          "\\sqrt{(-1)\\cdot(-1)}=\\sqrt{1}=1$$ "
          "Melyik lépés hibás, és miért?",

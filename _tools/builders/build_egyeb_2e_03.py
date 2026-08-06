@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""2e/03 — osszefoglalo (F4), terepkuldetes (F5p), Danger Room (F6h), temakor-index (F5)."""
+"""2e/03 — osszefoglalo (F4), terepkuldetes (F5p), Vészterem (F6h), temakor-index (F5)."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tananyag_common import lap, doboz, brief, GYOKER
@@ -38,7 +38,7 @@ P = [
  ("TIII2", S(2*x - 1 - 3), [2]),
  ("TIII3", S(x - 2 - 5), [7]),
  ("TIII4", S(4*x - 2 - (x + 7)), [3]), ("TIII4et", S(4*x - 2), [R(1, 2)]),
- # --- Danger Room
+ # --- Vészterem
  ("DA1a", R(3)**-2, R(1, 9)), ("DA1b", R(2, 5)**0, 1), ("DA1c", R(49)**R(1, 2), 7),
  ("DA3a", S(x - 5), [5]), ("DA3b", S(2*x - 4), [2]), ("DA3c", S(x + 5), [-5]),
  ("DA4", 2**4*(4 - 1), 48), ("DA4x", S(x - 4), [4]),
@@ -171,7 +171,7 @@ print("✓ osszefoglalo.html")
 
 TEREP = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Beast:</b> Kadét, ez már nem szimuláció. Sinister vírusa kijutott a '
+   brief('<b>Dr. Bestia:</b> Kadét, ez már nem szimuláció. Dr. Baljós vírusa kijutott a '
          'laborból, és <b>exponenciálisan</b> terjed. Három dolgot kell tudnom, méghozzá '
          'gyorsan: milyen ütemben nő a fertőzés, <b>mennyi időnk van</b> a kritikus '
          'küszöbig, és meddig tart ki a karanténpajzs. Az első kérdésre az exponenciális '
@@ -293,7 +293,7 @@ DR_N = [
   "tehát $x_{1}=10$ és $x_{2}=100$."),
 ]
 
-dr_brief = ('<div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Veszélyterem</b> — Az Evolúciós Ugrás '
+dr_brief = ('<div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — Az Evolúciós Ugrás '
             'modul. A szimuláció a <b>teljes témakört</b> lefedi: exponenciális függvény és '
             'egyenletek, helyettesítés, egyenlőtlenségek, a logaritmus fogalma és azonosságai, '
             'áttérés más alapra, logaritmusfüggvény és logaritmusos egyenletek. Haladj a '
@@ -305,8 +305,8 @@ dr_body = ('    ' + dr_brief + '\n'
            '\n    <h2 id="kozep">🟡 Középfokozat</h2>\n' + cards(DR_K, "kozep", "kozep") +
            '\n    <h2 id="nehez">🔴 Nehéz fokozat</h2>\n' + cards(DR_N, "nehez", "nehez"))
 
-oldal(**T, fajl="feladatok-hazi.html", cim="Danger Room",
-      h1="🕹️ Danger Room — házi feladatgyűjtemény", itt="Danger Room — házi",
+oldal(**T, fajl="feladatok-hazi.html", cim="Vészterem",
+      h1="🕹️ Vészterem — házi feladatgyűjtemény", itt="Vészterem — házi",
       alcim="Egyetlen, a teljes témakört lefedő házi feladatsor, óraszám-arányosan. "
             "Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
       chipek='<span class="chip alap">Alap</span><span class="chip kozep">Közép</span>'
@@ -348,7 +348,7 @@ K = [
         "Alap · Közép · Nehéz + Joker — definíció, azonosságok, áttérés, skálák"),
  kartya("feladatok-logaritmusfuggveny.html", "🏋️ A logaritmusfüggvény — feladatok",
         "Alap · Közép · Nehéz + Joker, a végén <b>gyakorló dolgozattal</b>"),
- kartya("feladatok-hazi.html", "🕹️ Danger Room — házi feladatok",
+ kartya("feladatok-hazi.html", "🕹️ Vészterem — házi feladatok",
         "A teljes témakört lefedő házi feladatsor, óraszám-arányosan"),
  kartya("terepkuldetes.html", "🎯 A Vírusgörbe terepküldetés",
         "Háromfázisú járványügyi bevetés — a teljes témakör egyben"),
@@ -387,9 +387,9 @@ INDEX = '''<!DOCTYPE html>
   függvényig — modellezés, visszaszámlálás, egyenletek és egyenlőtlenségek.</p>
   <div class="meta-sor"><span class="chip ora">21 óra</span><span class="statusz kesz">kész</span></div>
   <div class="brief"><p>🧬 <b>Szektor 03 — Az Evolúciós Ugrás (A Vírusgörbe).</b> Kiképző:
-  <b>Beast</b> (Hank McCoy). Sinister vírusa nem lineárisan és nem másodfokon terjed, hanem
+  <b>Dr. Bestia</b> (Dr. Bestia). Dr. Baljós vírusa nem lineárisan és nem másodfokon terjed, hanem
   <b>megkétszereződik</b> minden lépésben — ezt a növekedést a másodfokú függvény már nem
-  írja le. Beast a laborból vezeti a bevetést: előbb megtanuljuk <b>modellezni</b> a
+  írja le. Dr. Bestia a laborból vezeti a bevetést: előbb megtanuljuk <b>modellezni</b> a
   terjedést, aztán megfordítjuk a kérdést, és a <b>logaritmussal</b> számoljuk ki, mennyi
   időnk maradt.</p></div>
 </div>
@@ -397,17 +397,17 @@ INDEX = '''<!DOCTYPE html>
   <div class="tartalom">
     <h2>Tananyag</h2>
 
-    <h3>🧬 Az exponenciális függvény — Beast</h3>
+    <h3>🧬 Az exponenciális függvény — Dr. Bestia</h3>
     <div class="racs">
 ''' + "\n".join(K[0:3]) + '''
     </div>
 
-    <h3>🔬 A logaritmus — Beast</h3>
+    <h3>🔬 A logaritmus — Dr. Bestia</h3>
     <div class="racs">
 ''' + "\n".join(K[3:6]) + '''
     </div>
 
-    <h3>🪞 A logaritmusfüggvény — Beast</h3>
+    <h3>🪞 A logaritmusfüggvény — Dr. Bestia</h3>
     <div class="racs">
 ''' + "\n".join(K[6:8]) + '''
     </div>
@@ -429,7 +429,7 @@ INDEX = '''<!DOCTYPE html>
 
     <p class="le halvany"><b>Ajánlott sorrend:</b> altémánként előbb a tananyag-egységek sorban,
     utána a hozzá tartozó feladatgyűjtemény; a témakör végén a Taktikai memóriakártya, majd
-    A Vírusgörbe terepküldetés. A Danger Room házi bármikor jöhet.</p>
+    A Vírusgörbe terepküldetés. A Vészterem házi bármikor jöhet.</p>
   </div>
 </main>
 <footer class="lablec">

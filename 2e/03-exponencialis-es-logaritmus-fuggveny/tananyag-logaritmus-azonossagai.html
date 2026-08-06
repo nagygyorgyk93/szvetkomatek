@@ -33,7 +33,7 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief"><p>📡 <b>Beast:</b> A definíció szép, de lassú. Ha minden logaritmust fejben kellene visszafejtenünk, sosem érnénk a küldetés végére. Szerencsére a logaritmus <b>örökli</b> a hatványozás azonosságait — méghozzá egy fokkal <b>egyszerűbb</b> alakban: a szorzásból összeadás lesz, az osztásból kivonás, a hatványozásból szorzás. Ez a logaritmus igazi ereje.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/dr_bestia.webp" alt="Dr. Bestia — a kampusz fővezető tudósa" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Dr. Bestia:</b> A definíció szép, de lassú. Ha minden logaritmust fejben kellene visszafejtenünk, sosem érnénk a küldetés végére. Szerencsére a logaritmus <b>örökli</b> a hatványozás azonosságait — méghozzá egy fokkal <b>egyszerűbb</b> alakban: a szorzásból összeadás lesz, az osztásból kivonás, a hatványozásból szorzás. Ez a logaritmus igazi ereje.</p></div>
 
     <h2 id="s1">A három azonosság</h2>
 
@@ -44,12 +44,12 @@
     </div>
 
     <div class="doboz csapda">
-      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
       <p>A leggyakoribb — és legköltségesebb — hiba az azonosságok <b>összegre</b> való alkalmazása:</p><p>✘ <span class="math inline">\(\log_{a}(u+v)=\log_{a}u+\log_{a}v\)</span> &nbsp;&nbsp; ✔ <span class="math inline">\(\log_{a}(u\cdot v)=\log_{a}u+\log_{a}v\)</span></p><p>Próbáld ki: <span class="math inline">\(\lg(1+9)=\lg 10=1\)</span>, míg <span class="math inline">\(\lg 1+\lg 9=0+\lg 9\approx 0{,}95\)</span> — nem egyenlők. <b>A logaritmusnak a szorzásról van mondanivalója, az összeadásról nincs.</b></p><p>Ugyanígy hibás: <span class="math inline">\(\dfrac{\log_{a}u}{\log_{a}v}=\log_{a}\dfrac{u}{v}\)</span> — a hányados azonossága a <b>különbségre</b> szól, nem a hányadosra.</p>
     </div>
 
     <div class="doboz pelda" id="pelda-azonossagok">
-      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
       <p>Számold ki: <b>a)</b> <span class="math inline">\(\lg 50+\lg 2\)</span>; <b>b)</b> <span class="math inline">\(\log_{2}48-\log_{2}3\)</span>; <b>c)</b> <span class="math inline">\(\log_{3}\sqrt{27}\)</span>; <b>d)</b> <span class="math inline">\(2\log_{3}9\)</span>.</p>
       <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(\lg 50+\lg 2=\lg(50\cdot 2)=\lg 100=\boxed{2}\)</span>.</p><p><b>b)</b> <span class="math inline">\(\log_{2}48-\log_{2}3=\log_{2}\tfrac{48}{3}=\log_{2}16=\boxed{4}\)</span>.</p><p><b>c)</b> <span class="math inline">\(\sqrt{27}=27^{1/2}=3^{3/2}\)</span>, tehát <span class="math inline">\(\log_{3}3^{3/2}=\boxed{\tfrac32}\)</span>. (Vagy: <span class="math inline">\(\log_{3}\sqrt{27}=\tfrac12\log_{3}27=\tfrac12\cdot 3\)</span>.)</p><p><b>d)</b> <span class="math inline">\(\log_{3}9=2\)</span>, tehát <span class="math inline">\(2\cdot 2=\boxed{4}\)</span>.</p></div></details>
     </div>
@@ -59,7 +59,7 @@
     Az azonosságokat <b>mindkét irányban</b> használjuk. Egyenletmegoldásnál általában <b>összevonunk</b> (hogy egyetlen logaritmus maradjon), számoláskor pedig <b>szétbontunk</b> (hogy ismert értékekre jussunk).
 
     <div class="doboz pelda" id="pelda-bontas">
-      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
       <p><b>a)</b> Bontsd fel: <span class="math inline">\(\log_{a}\dfrac{x^{3}\sqrt{y}}{z}\)</span>.<br><b>b)</b> Vond össze egyetlen logaritmussá: <span class="math inline">\(2\log_{a}x+\tfrac12\log_{a}y-3\log_{a}z\)</span>.</p>
       <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> Először a hányados, majd a szorzat, végül a hatvány:</p><span class="math display">\[\log_{a}\frac{x^{3}\sqrt{y}}{z}=\log_{a}x^{3}+\log_{a}\sqrt{y}-\log_{a}z=3\log_{a}x+\frac12\log_{a}y-\log_{a}z.\]</span><p><b>b)</b> Fordított sorrendben: az együtthatók kitevővé válnak, az összeadás szorzattá, a kivonás hányadossá:</p><span class="math display">\[2\log_{a}x+\frac12\log_{a}y-3\log_{a}z=\log_{a}\frac{x^{2}\sqrt{y}}{z^{3}}.\]</span></div></details>
     </div>
@@ -71,7 +71,7 @@
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
-    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-logaritmus.html#alap-7">🐾 Beast-protokoll <span class="cimke">A 7–12</span></a><a class="sav hulk" href="feladatok-logaritmus.html#kozep-4">🔥 Phoenix-protokoll <span class="cimke">K 4–8</span></a></div></div></div>
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-logaritmus.html#alap-7">🐾 Bestia-protokoll <span class="cimke">A 7–12</span></a><a class="sav bruno" href="feladatok-logaritmus.html#kozep-4">🔥 Főnix-protokoll <span class="cimke">K 4–8</span></a></div></div></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-logaritmus-fogalma.html"><span class="irany">← Előző</span><span class="hova">A logaritmus fogalma</span></a>
       <a class="kov" href="tananyag-attetes-mas-alapra.html"><span class="irany">Következő →</span><span class="hova">Áttérés más alapra és alkalmazások</span></a>

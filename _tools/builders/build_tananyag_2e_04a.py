@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """2e/04 — A altema: szogmeres es radian (A1), a trigonometrikus kor (A2),
-I. negyedre valo visszavezetes (A3). Mentor: Nightcrawler."""
+I. negyedre valo visszavezetes (A3). Mentor: Éjjáró."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tananyag_common import (lap, doboz, brief, kviz, gyakorolj, abra,
@@ -69,7 +69,7 @@ SVG_VISSZA = svg_egysegkor(
 
 A1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Nightcrawler:</b> <i>Bamf!</i> — és már itt sem vagyok. Amikor teleportálok, '
+   brief('<b>Éjjáró:</b> <i>Bamf!</i> — és már itt sem vagyok. Amikor teleportálok, '
          'nem távolságot adok meg, hanem <b>irányt</b>: egy szöget. És ha elég sokat ugrom '
          'körbe, egyszer csak ugyanoda érkezem, ahonnan indultam. Ez a trigonometria '
          'egész titka: <b>a szög körbeér</b>. Ehhez viszont előbb ki kell tágítanunk a '
@@ -99,7 +99,7 @@ A1 = [
          '<p>Ezért minden szöget vissza tudunk vinni a $[0^\\circ;360^\\circ)$ tartományba: '
          'oszd el $360$-nal, és a <b>maradék</b> érdekel.</p>',
          hid="tetel-tarsszogek"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Melyik $[0^\\circ;360^\\circ)$ közötti szöggel egyezik meg? '
          '<b>a)</b> $420^\\circ$; <b>b)</b> $1000^\\circ$; <b>c)</b> $-50^\\circ$.</p>',
          hid="pelda-tarsszog",
@@ -140,7 +140,7 @@ A1 = [
          '</table></div>'
          '<p>Figyeld meg a logikát: minél <b>nagyobb</b> a nevező, annál <b>kisebb</b> a szög.</p>',
          hid="tetel-radian-tabla"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p><b>a)</b> Váltsd radiánba: $120^\\circ$, $315^\\circ$.<br>'
          '<b>b)</b> Váltsd fokba: $\\tfrac{5\\pi}{6}$, $\\tfrac{7\\pi}{4}$.</p>',
          hid="pelda-atvaltas",
@@ -150,7 +150,7 @@ A1 = [
                   '$315\\cdot\\dfrac{\\pi}{180}=\\dfrac{315\\pi}{180}=\\boxed{\\dfrac{7\\pi}{4}}$.</p>'
                   '<p><b>b)</b> $\\dfrac{5\\pi}{6}=\\dfrac{5\\cdot 180^\\circ}{6}=\\boxed{150^\\circ}$; '
                   '&nbsp; $\\dfrac{7\\pi}{4}=\\dfrac{7\\cdot 180^\\circ}{4}=\\boxed{315^\\circ}$.</p>')),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p><b>A számológép módja!</b> Ha a gép <b>RAD</b> módban van, a $\\sin 30$ nem '
          '$0{,}5$-öt ad, hanem $\\sin(30\\ \\text{rad})\\approx -0{,}988$. Fokos feladatnál '
          'mindig <b>DEG</b> módban dolgozz — érdemes a $\\sin 30=0{,}5$ próbával ellenőrizni.</p>'
@@ -168,7 +168,7 @@ A1 = [
 
 A2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Nightcrawler:</b> Most jön a trükk, ami mindent megold. Rajzolj egy '
+   brief('<b>Éjjáró:</b> Most jön a trükk, ami mindent megold. Rajzolj egy '
          '<b>egységsugarú</b> kört az origó köré, és forgasd rá a szöget. Ahová a szög '
          'szára metszi a kört, ott van egy pont — és ennek a pontnak a <b>koordinátái '
          'maguk a szögfüggvények</b>. Nem kell háromszög, nem kell hegyesszög: ez a '
@@ -196,7 +196,7 @@ A2 = [
          '$$-1\\le\\sin\\alpha\\le 1,\\qquad -1\\le\\cos\\alpha\\le 1.$$'
          '<p>Ezért a $\\sin x=2$ egyenletnek <b>nincs</b> megoldása.</p>',
          hid="tetel-kovetkezmenyek"),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>A leggyakoribb kezdő hiba: <b>felcserélni a koordinátákat</b>. A pont '
          '$P(\\cos\\alpha;\\sin\\alpha)$ — előbb a koszinusz. Jó emlékeztető: a '
          '<b>c</b>oszinusz „vízszintes”, mint a <b>c</b> betű nyitott oldala; a '
@@ -251,7 +251,7 @@ A2 = [
          '<p>A $\\operatorname{tg}90^\\circ$ és a $\\operatorname{ctg}0^\\circ$ <b>nem '
          'létezik</b>: nullával kellene osztani.</p>',
          hid="tetel-jellegzetes"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Add meg mind a négy függvény pontos értékét! '
          '<b>a)</b> $135^\\circ$; <b>b)</b> $\\tfrac{4\\pi}{3}$.</p>',
          hid="pelda-jellegzetes",
@@ -278,7 +278,7 @@ A2 = [
 
 A3 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Nightcrawler:</b> Ne ijedj meg a $217^\\circ$-tól. Minden szögnek van egy '
+   brief('<b>Éjjáró:</b> Ne ijedj meg a $217^\\circ$-tól. Minden szögnek van egy '
          '<b>alapszöge</b> az első negyedben — az, amennyire a legközelebbi vízszintes '
          'tengelytől eltér. A függvényérték <b>nagysága</b> ugyanaz, mint az alapszögé; '
          'már csak az <b>előjelet</b> kell hozzátenni. Két lépés, és bármelyik szöget '
@@ -311,7 +311,7 @@ A3 = [
          '$\\cos(-\\alpha)=\\cos\\alpha$ (a koszinusz <b>páros</b>) — ezt a grafikonon is '
          'látni fogod.</p>',
          hid="tetel-kepletek"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Vezesd vissza az első negyedre, és add meg a pontos értéket! '
          '<b>a)</b> $\\sin 150^\\circ$; <b>b)</b> $\\cos 210^\\circ$; '
          '<b>c)</b> $\\operatorname{tg}300^\\circ$; <b>d)</b> $\\sin 1000^\\circ$.</p>',
@@ -328,7 +328,7 @@ A3 = [
                   '<p><b>d)</b> Előbb a fordulatok: $1000-2\\cdot 360=280$. A $280^\\circ$ a IV. '
                   'negyedben van, alapszöge $360-280=80^\\circ$, és ott a szinusz negatív: '
                   '$\\sin 1000^\\circ=-\\sin 80^\\circ\\approx\\boxed{-0{,}98481}$.</p>')),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p><b>Az előjelet a SZÖG negyede dönti el, nem a végeredmény „érzése”.</b> '
          'Sokan a $\\cos 210^\\circ$-nál helyesen megtalálják a $30^\\circ$-ot, aztán '
          'elfelejtik a mínuszt. Írd fel <b>előbb</b> az előjelet, csak utána az értéket:</p>'
@@ -340,7 +340,7 @@ A3 = [
         jo="✔ 330° a IV. negyedben van (alapszög 30°), ott a koszinusz pozitív.",
         nem="✘ 330° a IV. negyedben van — ott a koszinusz POZITÍV, az alapszög pedig 30°."),
    gyakorolj(FGY + "#alap-13", "A 13–18", FGY + "#kozep-8", "K 8–12"),
-   brief('<b>Nightcrawler:</b> Ezzel a kör a kezedben van: bármelyik szöget vissza tudod '
+   brief('<b>Éjjáró:</b> Ezzel a kör a kezedben van: bármelyik szöget vissza tudod '
          'vinni ismerős terepre. A következő blokkban viszont már nem <b>egy</b> szöggel '
          'dolgozunk, hanem kettővel — mert ha a $75^\\circ$-ot fel tudod bontani '
          '$45^\\circ+30^\\circ$-ra, akkor a pontos értékét is ki tudod számolni. '

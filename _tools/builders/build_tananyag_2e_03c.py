@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """2e/03 — C altema: az inverz fuggveny es a logaritmusfuggveny (C1), logaritmusos
-egyenletek es egyenlotlensegek (C2). Mentor: Beast."""
+egyenletek es egyenlotlensegek (C2). Mentor: Dr. Bestia."""
 import sys, os, math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_fuggvenyek
@@ -51,7 +51,7 @@ SVG_LOG = svg_fuggvenyek(
 
 C1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Beast:</b> Két függvényünk van, amelyek ugyanarról a jelenségről beszélnek, '
+   brief('<b>Dr. Bestia:</b> Két függvényünk van, amelyek ugyanarról a jelenségről beszélnek, '
          'csak ellenkező irányból. Az egyik azt mondja meg, <i>mennyi lesz $x$ óra múlva</i>, '
          'a másik azt, <i>hány óra kell hozzá</i>. Az ilyen párokat a matematika '
          '<b>inverz</b> függvényeknek nevezi — és a grafikonjuk mindig ugyanabban '
@@ -74,7 +74,7 @@ C1 = [
          'inverzén a $(q;p)$ pont van rajta — a két koordináta cserél helyet. '
          'Az $y=x$ egyenesre való tükrözés pedig épp ezt csinálja.</p>',
          hid="tetel-inverz-grafikon"),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>Az $f^{-1}$ jelölés <b>nem</b> reciprokot jelent!</p>'
          '<p>✘ $f^{-1}(x)=\\dfrac{1}{f(x)}$ &nbsp;&nbsp;&nbsp; '
          '✔ $f^{-1}$ = az a függvény, amely „visszacsinálja” az $f$-et</p>'
@@ -117,7 +117,7 @@ C1 = [
         ['$(0;+\\infty)$', '$\\mathbb{R}$', '$[0;+\\infty)$'], 0,
         jo="✔ Csak pozitív szám logaritmusa létezik — a 0 sem tartozik bele.",
         nem="✘ Logaritmusa csak POZITÍV számnak van, tehát x > 0."),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Add meg az értelmezési tartományt, és ábrázold: '
          '<b>a)</b> $y=\\log_{2}(x-3)$; <b>b)</b> $y=\\log_{2}x+1$.</p>',
          hid="pelda-logf-eltolas",
@@ -137,7 +137,7 @@ C1 = [
 
 C2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Beast:</b> Utolsó szakasz. A logaritmusos egyenletnél van egy lépés, amit '
+   brief('<b>Dr. Bestia:</b> Utolsó szakasz. A logaritmusos egyenletnél van egy lépés, amit '
          '<b>soha nem hagyhatsz ki</b>: az <b>értelmezési tartomány</b>. Nem azért, mert '
          'a tanár kéri — hanem mert a megoldás közben olyan gyök is előbukkanhat, amelyre '
          'az eredeti egyenletnek semmi értelme. Az ÉT a szűrő, ami ezeket kifogja. '
@@ -156,7 +156,7 @@ C2 = [
          '<p><b>4.</b> Oldd meg a kapott egyenletet, és <b>vesd össze az ÉT-vel</b>: '
          'ami kilóg belőle, azt eldobod.</p>',
          hid="tetel-log-egyenlet-menete"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg: <b>a)</b> $\\log_{2}(x-3)=3$; <b>b)</b> $\\log_{5}(2x+1)=2$; '
          '<b>c)</b> $\\lg(3x-2)=\\lg(x+6)$.</p>',
          hid="pelda-log-egyenletek",
@@ -169,7 +169,7 @@ C2 = [
                   '<p><b>c)</b> ÉT: $3x-2&gt;0$ <b>és</b> $x+6&gt;0$, azaz $x&gt;\\tfrac23$ '
                   'és $x&gt;-6$ — a metszet $x&gt;\\tfrac23$. A logaritmust elhagyva '
                   '$3x-2=x+6$, tehát $2x=8$ és $\\boxed{x=4}$.</p>')),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p><b>A hamis gyök.</b> Oldd meg gondolatban: $\\lg(x^{2}-4x)=\\lg 5$. '
          'A logaritmust elhagyva $x^{2}-4x-5=0$, ahonnan $x_{1}=5$ és $x_{2}=-1$. '
          'A $-1$ elsőre gyanús — pedig <b>jó megoldás</b>: az argumentum értéke '
@@ -196,7 +196,7 @@ C2 = [
          '<p>A megoldás a kapott egyenlőtlenség megoldáshalmazának és az '
          '<b>értelmezési tartománynak a metszete</b>.</p>',
          hid="tetel-log-egyenlotlenseg"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg: <b>a)</b> $\\log_{2}(x-1)&lt;4$; <b>b)</b> $\\log_{3}(2x-6)&gt;2$; '
          '<b>c)</b> $\\log_{0,5}(4x+1)\\ge\\log_{0,5}(x+7)$.</p>',
          hid="pelda-log-egyenlotlensegek",
@@ -211,7 +211,7 @@ C2 = [
                   '(ez a szigorúbb). Az alap $0&lt;0{,}5&lt;1$, ezért a jel '
                   '<b>megfordul</b>: $4x+1\\le x+7$, tehát $3x\\le 6$ és $x\\le 2$. '
                   'A metszet: $\\boxed{x\\in\\left(-\\tfrac14;2\\right]}$.</p>')),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>A három leggyakoribb hiba:</p>'
          '<ol class="reszfeladatok">'
          '<li><b>Az ÉT kihagyása.</b> A c) feladatban ÉT nélkül $x\\le 2$ jönne ki — '
@@ -228,7 +228,7 @@ C2 = [
         jo="✔ A 0,2 alapú logaritmusfüggvény csökkenő, ezért a reláció megfordul.",
         nem="✘ Az alap dönt: 0 < 0,2 < 1 → a függvény csökkenő → a jel megfordul."),
    gyakorolj(FGY + "#alap-7", "A 7–14", FGY + "#kozep-4", "K 4–12"),
-   brief('<b>Beast:</b> Küldetés teljesítve, kadétok. Az <b>Evolúciós Ugrás</b> megvan: '
+   brief('<b>Dr. Bestia:</b> Küldetés teljesítve, kadétok. Az <b>Evolúciós Ugrás</b> megvan: '
          'tudjuk modellezni a robbanásszerű növekedést, és — ami fontosabb — tudunk '
          '<b>visszafelé</b> is számolni. Ez az anyag a <b>3. dolgozat</b> teljes '
          'terjedelme; a gyűjtemény végén találsz hozzá felkészítő sávot. '

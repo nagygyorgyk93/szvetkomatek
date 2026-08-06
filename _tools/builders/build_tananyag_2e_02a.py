@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-"""2e/02 — A altéma: a másodfokú egyenlet (A1–A4). Mentor: Wolverine.
-Küldetés: Az X-Faktor (A Parabola-csapás)."""
+"""2e/02 — A altéma: a másodfokú egyenlet (A1–A4). Mentor: Nagol.
+Küldetés: Az M-Faktor (A Parabola-csapás)."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tananyag_common import lap, doboz, brief, kviz, gyakorolj
@@ -38,8 +38,8 @@ print("sympy önteszt: OK")
 
 A1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Wolverine:</b> Kölyök, az első félévben minden szépen sorban állt: '
-         'ha nőtt a baj, <b>egyenletesen</b> nőtt. Ennek vége. Sinister új fegyvere '
+   brief('<b>Nagol:</b> Kölyök, az első félévben minden szépen sorban állt: '
+         'ha nőtt a baj, <b>egyenletesen</b> nőtt. Ennek vége. Dr. Baljós új fegyvere '
          '<b>másodfokon</b> terjed — a fenyegetés nem lineárisan, hanem <b>négyzetesen</b> '
          'gyorsul. Az ilyet nem lehet átrendezéssel elintézni: fel kell darabolni. '
          'Én ehhez a karmomat használom, te a <b>megoldóképletet</b>. Ugyanaz az elv: '
@@ -75,14 +75,14 @@ A1 = [
          '$x^{2}=-\\dfrac{c}{a}$, tehát $x_{1,2}=\\pm\\sqrt{-\\dfrac{c}{a}}$ — ha a jobb oldal '
          'negatív, a megoldások <b>komplexek</b>.</p>',
          hid="tetel-hianyos"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg: <b>a)</b> $3x^{2}-27=0$; <b>b)</b> $5x^{2}+20x=0$.</p>',
          hid="pelda-hianyos",
          lenyilo=("Megoldás",
                   '<p><b>a)</b> $3x^{2}=27\\Rightarrow x^{2}=9\\Rightarrow x_{1,2}=\\pm 3$.</p>'
                   '<p><b>b)</b> Kiemeléssel $5x(x+4)=0$, és egy szorzat pontosan akkor nulla, '
                   'ha valamelyik tényezője nulla: $x_{1}=0$, $x_{2}=-4$.</p>')),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>Az $x^{2}=5x$ egyenletet a mutálódott kód így „oldja meg”: elosztja mindkét '
          'oldalt $x$-szel, és kihozza, hogy $x=5$. <b>Hibás!</b> Az osztás csak akkor '
          'megengedett, ha $x\\neq 0$ — és épp az $x=0$ is <b>megoldás</b>. '
@@ -111,7 +111,7 @@ A1 = [
                   '<p>Innen gyököt vonva $x+\\dfrac{b}{2a}=\\pm\\dfrac{\\sqrt{b^{2}-4ac}}{2a}$, '
                   'és átrendezve épp a megoldóképletet kapjuk. Vagyis a képlet nem varázslat: '
                   'a teljes négyzetté alakítás <b>egyszer s mindenkorra</b> elvégzett változata.</p>')),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg: $2x^{2}-7x+3=0$.</p>',
          hid="pelda-teljes",
          lenyilo=("Megoldás",
@@ -124,14 +124,14 @@ A1 = [
  ("Amikor nem látszik, hogy másodfokú", [
    'A feladatok jó része <b>nem</b> rendezett alakban érkezik. Az első lépés mindig ugyanaz: '
    'bontsd fel a zárójeleket, vonj össze, és rendezz nullára.',
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg: $(x-3)(x+2)=6$.</p>',
          hid="pelda-rendezes",
          lenyilo=("Megoldás",
                   '<p>Kibontva $x^{2}-x-6=6$, rendezve $x^{2}-x-12=0$. '
                   'Itt $D=1+48=49$, $\\sqrt{49}=7$:</p>'
                   '$$x_{1,2}=\\frac{1\\pm 7}{2}\\ \\Rightarrow\\ x_{1}=4,\\quad x_{2}=-3.$$')),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>A mutálódott kód a $(x-3)(x+2)=6$ egyenletre azt írja: „szorzat, tehát '
          '$x-3=6$ vagy $x+2=6$". <b>Hibás!</b> A „szorzat = 0” szabály <b>kizárólag</b> '
          'akkor működik, ha a jobb oldalon <b>nulla</b> áll. Hatnak végtelen sok '
@@ -143,7 +143,7 @@ A1 = [
         jo="✔ A „szorzat = 0” szabály csak nulla jobb oldal mellett használható.",
         nem="✘ A jobb oldal nem nulla, ezért előbb ki kell bontani és rendezni: x²−3x−10=0."),
    gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–4"),
-   brief('<b>Wolverine:</b> Megvan a képlet. De nekem nem elég <b>megoldani</b> — előre '
+   brief('<b>Nagol:</b> Megvan a képlet. De nekem nem elég <b>megoldani</b> — előre '
          'tudni akarom, <b>mi vár rám</b>, mielőtt belemegyek. Van a képletben egy szám, '
          'a gyökjel alatt, ami mindent elárul: hány megoldás lesz, és egyáltalán '
          'valósak-e. Ez a következő lecke.',
@@ -155,11 +155,11 @@ A1 = [
 
 A2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Wolverine:</b> A jó felderítő nem akkor tudja meg, hogy csapdába sétált, '
+   brief('<b>Nagol:</b> A jó felderítő nem akkor tudja meg, hogy csapdába sétált, '
          'amikor már benne van. A megoldóképlet gyökjele alatt álló szám — a '
          '<b>diszkrimináns</b> — egyetlen számolással megmondja, mi vár rád: két '
          'különböző megoldás, egyetlen kettős, vagy olyan gyökök, amelyek kiléptek '
-         'a valós világból. Sinister paraméteres egyenletei pontosan ezen a ponton támadnak.'),
+         'a valós világból. Dr. Baljós paraméteres egyenletei pontosan ezen a ponton támadnak.'),
    'A „diszkriminál” szó itt a régi értelmében szerepel: <b>megkülönböztet</b>. '
    'Ez a szám különbözteti meg egymástól a három lehetséges esetet.',
  ]),
@@ -181,7 +181,7 @@ A2 = [
          '<p><b>$D&lt;0$:</b> negatív szám gyöke a valósban nincs → <b>két konjugált komplex</b> '
          'megoldás. (Az I. témakör után ez már nem akadály!)</p>',
          hid="tetel-megoldasok-termeszete"),
-   doboz("pelda", "Veszélyterem-szimuláció — mindhárom eset",
+   doboz("pelda", "Vészterem-szimuláció — mindhárom eset",
          '<p>Vizsgáld meg és oldd meg: <b>a)</b> $x^{2}-6x+5=0$; <b>b)</b> $x^{2}-6x+9=0$; '
          '<b>c)</b> $x^{2}-6x+13=0$.</p>',
          hid="pelda-harom-eset",
@@ -205,7 +205,7 @@ A2 = [
    'kérdeznek rá, mikor hányféle megoldás van. A recept mindig ugyanaz: '
    '<b>írd fel $D$-t a paraméterrel</b>, aztán oldd meg a $D&gt;0$, $D=0$, $D&lt;0$ '
    'egyenlőtlenségeket.',
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Az $m$ paraméter mely értékeire van az $x^{2}-4x+m=0$ egyenletnek két '
          'különböző valós megoldása? Mikor van egy kettős, és mikor komplex?</p>',
          hid="pelda-parameteres",
@@ -214,7 +214,7 @@ A2 = [
                   '<p>$16-4m&gt;0\\iff m&lt;4$ → két különböző valós megoldás.</p>'
                   '<p>$16-4m=0\\iff m=4$ → egy kettős megoldás ($x=2$).</p>'
                   '<p>$16-4m&lt;0\\iff m&gt;4$ → két konjugált komplex megoldás.</p>')),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>Ha a paraméter a <b>főegyütthatóban</b> áll, egy külön esetet is meg kell '
          'vizsgálni. Például az $(m-2)x^{2}+4x+1=0$ egyenlet <b>nem másodfokú</b>, ha '
          '$m=2$ — akkor a $4x+1=0$ elsőfokú egyenletet kapjuk, egyetlen megoldással '
@@ -226,7 +226,7 @@ A2 = [
  ("Amikor a gyökök komplexek", [
    'A $D&lt;0$ eset korábban azt jelentette: „nincs megoldás”. Az I. témakör után már '
    'tudjuk, hogy <b>van</b> — csak nem a valós számok között.',
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg a komplex számok halmazán: $x^{2}+2x+5=0$.</p>',
          hid="pelda-komplex-gyokok",
          lenyilo=("Megoldás",
@@ -244,7 +244,7 @@ A2 = [
         jo="✔ Valós együtthatóknál a komplex gyökök konjugált párt alkotnak.",
         nem="✘ A megoldóképlet ± jele csak a képzetes rész előjelét váltja: 1 − 3i."),
    gyakorolj(FGY + "#alap-7", "A 7–10", FGY + "#kozep-5", "K 5–8"),
-   brief('<b>Wolverine:</b> Most jön a rész, amit a legjobban szeretek. Kiderül, hogy '
+   brief('<b>Nagol:</b> Most jön a rész, amit a legjobban szeretek. Kiderül, hogy '
          'a gyököket <b>nem is kell kiszámolni</b> ahhoz, hogy tudjunk róluk. Az összegük '
          'és a szorzatuk közvetlenül az együtthatókból leolvasható — és ezzel az egész '
          'egyenletet darabokra lehet szedni.',
@@ -256,7 +256,7 @@ A2 = [
 
 A3 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Wolverine:</b> Van egy trükk, amit François Viète francia matematikus talált ki '
+   brief('<b>Nagol:</b> Van egy trükk, amit François Viète francia matematikus talált ki '
          'a 16. században, és azóta minden vizsgázó hálás érte. A gyökök <b>összege</b> és '
          '<b>szorzata</b> ránézésre kiolvasható az együtthatókból — megoldóképlet nélkül. '
          'Ez nemcsak gyorsít: ezzel lehet <b>szétvágni</b> a másodfokú kifejezést két '
@@ -279,7 +279,7 @@ A3 = [
                   '=\\frac{4ac}{4a^{2}}=\\frac{c}{a}.$$'
                   '<p>Figyeld meg: a levezetés <b>nem használta</b>, hogy $D\\ge0$ — '
                   'a képletek a komplex gyökökre is érvényesek.</p>')),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Ellenőrizd a Viète-képleteket a $2x^{2}-10x+8=0$ egyenleten!</p>',
          lenyilo=("Megoldás",
                   '<p>A képletek szerint $x_{1}+x_{2}=\\dfrac{10}{2}=5$ és '
@@ -299,7 +299,7 @@ A3 = [
          '<p>A második az $(u+v)^{2}=u^{2}+2uv+v^{2}$ azonosság átrendezése. '
          'Hasonlóan: $\\left(x_{1}-x_{2}\\right)^{2}=\\left(x_{1}+x_{2}\\right)^{2}-4x_{1}x_{2}$.</p>',
          hid="tetel-szimmetrikus"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Az $x^{2}-7x+10=0$ egyenlet megoldása <b>nélkül</b> számítsd ki: '
          '<b>a)</b> $\\dfrac{1}{x_{1}}+\\dfrac{1}{x_{2}}$; <b>b)</b> $x_{1}^{2}+x_{2}^{2}$.</p>',
          hid="pelda-szimmetrikus",
@@ -319,7 +319,7 @@ A3 = [
          '$$x^{2}-\\left(x_{1}+x_{2}\\right)x+x_{1}x_{2}=0$$'
          '<p>egy megfelelő egyenlet. (Bármely nem nulla számmal szorozva szintén jó.)</p>',
          hid="tetel-egyenlet-gyokokbol"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Írj fel másodfokú egyenletet, amelynek gyökei $-3$ és $5$!</p>',
          lenyilo=("Megoldás",
                   '<p>Az összeg $-3+5=2$, a szorzat $-3\\cdot 5=-15$, tehát</p>'
@@ -333,7 +333,7 @@ A3 = [
          '<p>Ha az $ax^{2}+bx+c$ trinom gyökei $x_{1}$ és $x_{2}$, akkor</p>'
          '$$ax^{2}+bx+c=a\\left(x-x_{1}\\right)\\left(x-x_{2}\\right).$$',
          hid="tetel-szorzatta-alakitas"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Bontsd tényezőkre: <b>a)</b> $x^{2}-x-12$; <b>b)</b> $2x^{2}-10x+12$.</p>',
          hid="pelda-szorzatta",
          lenyilo=("Megoldás",
@@ -341,7 +341,7 @@ A3 = [
                   '$$x^{2}-x-12=(x-4)(x+3).$$'
                   '<p><b>b)</b> $D=100-96=4$, a gyökök $3$ és $2$, a főegyüttható $2$:</p>'
                   '$$2x^{2}-10x+12=2(x-3)(x-2).$$')),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>A mutálódott kód a $2x^{2}+5x-3$ bontását így írja: gyökök $\\tfrac12$ és $-3$, '
          'tehát $\\left(x-\\tfrac12\\right)(x+3)$. <b>Hiányos!</b> A <b>főegyüttható</b> '
          'lemaradt — így a szorzat kibontva $x^{2}+\\tfrac52x-\\tfrac32$ lenne, nem az '
@@ -353,7 +353,7 @@ A3 = [
         jo="✔ A gyökök 4 és 5; az összegük 9, a szorzatuk 20.",
         nem="✘ Keresd azt a két számot, amelynek összege 9 és szorzata 20: ezek a 4 és az 5."),
    gyakorolj(FGY + "#alap-11", "A 11–15", FGY + "#kozep-9", "K 9–13"),
-   brief('<b>Wolverine:</b> Utolsó kör az egyenletekből. Sinister néha <b>negyedfokú</b> '
+   brief('<b>Nagol:</b> Utolsó kör az egyenletekből. Dr. Baljós néha <b>negyedfokú</b> '
          'kódot küld — de ha jól nézed, az is csak egy másodfokú, álruhában. '
          'Egyetlen jó helyettesítés, és összeomlik.',
          outro=True),
@@ -364,7 +364,7 @@ A3 = [
 
 A4 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Wolverine:</b> Ez a kód négyzetre emelt négyzeteket tartalmaz — '
+   brief('<b>Nagol:</b> Ez a kód négyzetre emelt négyzeteket tartalmaz — '
          '$x^{4}$-es tagot. Ne ijedj meg tőle. Ha csak <b>páros</b> kitevők szerepelnek, '
          'egyetlen jelöléscserével visszavezetheted arra, amit már tudsz. '
          'A neve <b>bikvadratikus</b>, és a leggyakoribb hiba nem a megoldásában, '
@@ -388,7 +388,7 @@ A4 = [
  ]),
 
  ("Kidolgozott példák", [
-   doboz("pelda", "Veszélyterem-szimuláció — négy valós gyök",
+   doboz("pelda", "Vészterem-szimuláció — négy valós gyök",
          '<p>Oldd meg: $x^{4}-13x^{2}+36=0$.</p>',
          hid="pelda-bikv-valos",
          lenyilo=("Megoldás",
@@ -397,7 +397,7 @@ A4 = [
                   '<p>Visszahelyettesítve: $x^{2}=9\\Rightarrow x=\\pm 3$, és '
                   '$x^{2}=4\\Rightarrow x=\\pm 2$.</p>'
                   '<p><b>Négy megoldás:</b> $-3,\\ -2,\\ 2,\\ 3$.</p>')),
-   doboz("pelda", "Veszélyterem-szimuláció — komplex gyökökkel",
+   doboz("pelda", "Vészterem-szimuláció — komplex gyökökkel",
          '<p>Oldd meg a komplex számok halmazán: $x^{4}-5x^{2}-36=0$.</p>',
          hid="pelda-bikv-komplex",
          lenyilo=("Megoldás",
@@ -409,7 +409,7 @@ A4 = [
  ]),
 
  ("A visszahelyettesítés buktatói", [
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>Két klasszikus hiba:</p>'
          '<ol class="reszfeladatok">'
          '<li><b>Megállni $t$-nél.</b> A kód azt írja: „a megoldások $9$ és $4$”. '
@@ -429,7 +429,7 @@ A4 = [
         jo="✔ t = 1 vagy t = −4; csak a t = 1 ad valós x-et: ±1.",
         nem="✘ t² + 3t − 4 = 0 → t = 1 vagy t = −4. A t = −4-hez nincs valós x, tehát csak ±1."),
    gyakorolj(FGY + "#alap-16", "A 16–18", FGY + "#kozep-14", "K 14–16"),
-   brief('<b>Cyclops:</b> Wolverine elvégezte a durva munkát — innen én veszem át. '
+   brief('<b>Küklopsz:</b> Nagol elvégezte a durva munkát — innen én veszem át. '
          'Eddig azt kérdeztük: <b>hol nulla</b> a kifejezés. Most azt fogjuk kérdezni: '
          '<b>hogyan viselkedik mindenütt</b>. Az optikai sugaraim röppályája ugyanaz a görbe, '
          'mint amit a másodfokú függvény rajzol — és ha ismered a görbét, egyetlen '
@@ -445,14 +445,14 @@ KI = [
      cim="A másodfokú egyenlet", cim_tiszta="A másodfokú egyenlet",
      alcim="Az egyenlet alakja, a hiányos esetek gyors megoldása, a megoldóképlet "
            "és annak levezetése, valamint a rendezést igénylő feladatok.",
-     chip="Az X-Faktor · 1/8", szakaszok=A1,
+     chip="Az M-Faktor · 1/8", szakaszok=A1,
      elozo=("index.html", "Témakör-nyitó"),
      kovetkezo=("tananyag-diszkriminans.html", "A diszkrimináns")),
  lap(**T, fajl="tananyag-diszkriminans.html",
      cim="A diszkrimináns", cim_tiszta="A diszkrimináns",
      alcim="A $D=b^{2}-4ac$ szám és a megoldások természete, paraméteres feladatok, "
            "valamint a komplex gyökpárok.",
-     chip="Az X-Faktor · 2/8", szakaszok=A2,
+     chip="Az M-Faktor · 2/8", szakaszok=A2,
      elozo=("tananyag-masodfoku-egyenlet.html", "A másodfokú egyenlet"),
      kovetkezo=("tananyag-viete-es-szorzatta-alakitas.html", "Viète-képletek és szorzattá alakítás")),
  lap(**T, fajl="tananyag-viete-es-szorzatta-alakitas.html",
@@ -460,7 +460,7 @@ KI = [
      cim_tiszta="Viète-képletek és szorzattá alakítás",
      alcim="A gyökök összege és szorzata az együtthatókból, szimmetrikus kifejezések "
            "számolása, egyenlet felírása a gyökeiből és a trinom tényezőkre bontása.",
-     chip="Az X-Faktor · 3/8", szakaszok=A3,
+     chip="Az M-Faktor · 3/8", szakaszok=A3,
      elozo=("tananyag-diszkriminans.html", "A diszkrimináns"),
      kovetkezo=("tananyag-bikvadratikus.html", "Másodfokúra visszavezethető egyenletek")),
  lap(**T, fajl="tananyag-bikvadratikus.html",
@@ -468,7 +468,7 @@ KI = [
      cim_tiszta="Másodfokúra visszavezethető egyenletek",
      alcim="A bikvadratikus egyenlet és a $t=x^{2}$ helyettesítés, a visszahelyettesítés "
            "buktatói, valós és komplex gyökök.",
-     chip="Az X-Faktor · 4/8", szakaszok=A4,
+     chip="Az M-Faktor · 4/8", szakaszok=A4,
      elozo=("tananyag-viete-es-szorzatta-alakitas.html", "Viète-képletek és szorzattá alakítás"),
      kovetkezo=(FGY, "Feladatok — másodfokú egyenletek")),
 ]

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """2e/03 — B altema: a logaritmus fogalma (B1), azonossagai (B2), attetes mas alapra
-es alkalmazasok (B3). Mentor: Beast."""
+es alkalmazasok (B3). Mentor: Dr. Bestia."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_fuggvenyek
@@ -42,7 +42,7 @@ print("sympy önteszt: OK")
 
 B1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Beast:</b> Az előző küldetésben azt kérdeztük: <i>mennyi lesz a fertőzöttek '
+   brief('<b>Dr. Bestia:</b> Az előző küldetésben azt kérdeztük: <i>mennyi lesz a fertőzöttek '
          'száma $x$ óra múlva?</i> A válasz $2^{x}$ volt. De a valódi kérdés a labor '
          'szempontjából fordított: <b>hány óra kell ahhoz</b>, hogy elérje a milliót? '
          'Ez az $x$ a <b>kitevőben</b> ül, és eddig csak akkor tudtuk kihalászni, ha '
@@ -71,7 +71,7 @@ B1 = [
          '<p>Az $a$ a logaritmus <b>alapja</b>, a $b$ a <b>hatványérték</b> '
          '(argumentum), a $c$ pedig maga a logaritmus.</p>',
          hid="def-logaritmus"),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p><b>Csak pozitív szám logaritmusa létezik!</b> A $\\log_{2}(-8)$ nem értelmezhető, '
          'mert nincs olyan $c$ kitevő, amelyre $2^{c}=-8$ lenne — a $2^{c}$ mindig pozitív '
          '(ezt épp az exponenciális függvény értékkészleténél láttuk). Ugyanígy '
@@ -79,7 +79,7 @@ B1 = [
          '<p>Ez lesz később az <b>értelmezési tartomány</b> vizsgálatának az alapja: '
          'a $\\log_{a}\\big(f(x)\\big)$ kifejezésnél mindig ki kell kötni, hogy '
          '$f(x)&gt;0$.</p>'),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Számold ki a definíció alapján: <b>a)</b> $\\log_{2}8$; '
          '<b>b)</b> $\\log_{3}\\tfrac19$; <b>c)</b> $\\log_{4}2$; '
          '<b>d)</b> $\\log_{\\frac13}27$.</p>',
@@ -142,7 +142,7 @@ B1 = [
 
 B2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Beast:</b> A definíció szép, de lassú. Ha minden logaritmust fejben kellene '
+   brief('<b>Dr. Bestia:</b> A definíció szép, de lassú. Ha minden logaritmust fejben kellene '
          'visszafejtenünk, sosem érnénk a küldetés végére. Szerencsére a logaritmus '
          '<b>örökli</b> a hatványozás azonosságait — méghozzá egy fokkal '
          '<b>egyszerűbb</b> alakban: a szorzásból összeadás lesz, az osztásból kivonás, '
@@ -165,7 +165,7 @@ B2 = [
                   '<p>ami épp azt mondja, hogy $\\log_{a}(uv)=p+q=\\log_{a}u+\\log_{a}v$. '
                   'A másik kettő ugyanígy, az $a^{p}:a^{q}=a^{p-q}$ és az '
                   '$\\left(a^{p}\\right)^{k}=a^{pk}$ azonosságból jön.</p>')),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>A leggyakoribb — és legköltségesebb — hiba az azonosságok <b>összegre</b> '
          'való alkalmazása:</p>'
          '<p>✘ $\\log_{a}(u+v)=\\log_{a}u+\\log_{a}v$ &nbsp;&nbsp; '
@@ -174,7 +174,7 @@ B2 = [
          'nem egyenlők. <b>A logaritmusnak a szorzásról van mondanivalója, az összeadásról nincs.</b></p>'
          '<p>Ugyanígy hibás: $\\dfrac{\\log_{a}u}{\\log_{a}v}=\\log_{a}\\dfrac{u}{v}$ — '
          'a hányados azonossága a <b>különbségre</b> szól, nem a hányadosra.</p>'),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Számold ki: <b>a)</b> $\\lg 50+\\lg 2$; <b>b)</b> $\\log_{2}48-\\log_{2}3$; '
          '<b>c)</b> $\\log_{3}\\sqrt{27}$; <b>d)</b> $2\\log_{3}9$.</p>',
          hid="pelda-azonossagok",
@@ -191,7 +191,7 @@ B2 = [
    'Az azonosságokat <b>mindkét irányban</b> használjuk. Egyenletmegoldásnál általában '
    '<b>összevonunk</b> (hogy egyetlen logaritmus maradjon), számoláskor pedig '
    '<b>szétbontunk</b> (hogy ismert értékekre jussunk).',
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p><b>a)</b> Bontsd fel: $\\log_{a}\\dfrac{x^{3}\\sqrt{y}}{z}$.<br>'
          '<b>b)</b> Vond össze egyetlen logaritmussá: '
          '$2\\log_{a}x+\\tfrac12\\log_{a}y-3\\log_{a}z$.</p>',
@@ -215,7 +215,7 @@ B2 = [
 
 B3 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Beast:</b> Itt az igazság pillanata. A számológépeden két logaritmus-gomb van: '
+   brief('<b>Dr. Bestia:</b> Itt az igazság pillanata. A számológépeden két logaritmus-gomb van: '
          '<b>lg</b> és <b>ln</b>. De a vírus kettesével szaporodik, tehát nekem '
          '$\\log_{2}$ kellene. Elakadtunk? Nem — létezik egy képlet, amely '
          '<b>bármely</b> alapot visszavezet egy másikra. Ezzel a logaritmus '
@@ -235,7 +235,7 @@ B3 = [
                   '$$\\log_{c}a^{p}=\\log_{c}b\\ \\Longrightarrow\\ p\\cdot\\log_{c}a=\\log_{c}b.$$'
                   '<p>Mivel $a\\neq 1$, a $\\log_{c}a\\neq 0$, tehát oszthatunk vele: '
                   '$p=\\dfrac{\\log_{c}b}{\\log_{c}a}$.</p>')),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p><b>Ne keverd össze!</b> A képletben <b>osztás</b> áll, nem kivonás, és a '
          'számláló az <b>argumentum</b>, a nevező az <b>alap</b> logaritmusa:</p>'
          '<p>✔ $\\log_{2}7=\\dfrac{\\lg 7}{\\lg 2}$ &nbsp;&nbsp;&nbsp; '
@@ -243,7 +243,7 @@ B3 = [
          '✘ $\\log_{2}7=\\lg 7-\\lg 2$</p>'
          '<p>Ellenőrzés fejben: $\\log_{2}7$ valahol $2$ és $3$ között van (mert '
          '$2^{2}=4&lt;7&lt;8=2^{3}$). Ha a géped $0{,}36$-ot ad, felcserélted a törtet.</p>'),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Számold ki négy tizedesjegy pontossággal: <b>a)</b> $\\log_{11}12$; '
          '<b>b)</b> $\\log_{7}23$.</p>',
          hid="pelda-attetes",
@@ -276,7 +276,7 @@ B3 = [
          '<tr><td>decibel</td><td>$L=10\\lg\\dfrac{I}{I_{0}}$</td>'
          '<td>a hangerőt</td></tr>'
          '</table></div>'),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p><b>a)</b> A fertőzött sejtek száma óránként megkétszereződik, egyetlen sejtből '
          'indulva. Hány óra múlva éri el az egymilliót?<br>'
          '<b>b)</b> Egy bankban a pénz évi $5\\%$-kal gyarapszik. Hány év alatt '
@@ -299,7 +299,7 @@ B3 = [
         jo="✔ A Richter-skála logaritmikus: 3 egység különbség = 10³ = 1000-szeres.",
         nem="✘ A skála logaritmikus — minden egység tízszeres kilengést jelent, tehát 10³ = 1000."),
    gyakorolj(FGY + "#alap-13", "A 13–18", FGY + "#kozep-9", "K 9–14"),
-   brief('<b>Beast:</b> Megvan az eszköz. Most már bármelyik exponenciális egyenletet meg '
+   brief('<b>Dr. Bestia:</b> Megvan az eszköz. Most már bármelyik exponenciális egyenletet meg '
          'tudjuk oldani — akkor is, ha a két oldal nem hozható közös alapra. Egy dolog '
          'maradt hátra: ha a logaritmus a hatványozás fordítottja, akkor a '
          '<b>logaritmusfüggvény</b> az exponenciális függvény <b>inverze</b>. '

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """2e/03 — A altema: az exponencialis fuggveny (A1), exponencialis egyenletek (A2)
-es egyenlotlensegek (A3). Mentor: Beast."""
+es egyenlotlensegek (A3). Mentor: Dr. Bestia."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_fuggvenyek
@@ -62,7 +62,7 @@ SVG_ELT = svg_fuggvenyek(
 
 A1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Beast:</b> Kadétok, a laborban rossz hírt kaptam. Sinister vírusa nem '
+   brief('<b>Dr. Bestia:</b> Kadétok, a laborban rossz hírt kaptam. Dr. Baljós vírusa nem '
          'lineárisan és nem is másodfokon terjed: minden órában <b>megkétszereződik</b> '
          'a fertőzött sejtek száma. Egy óra múlva 2, kettő múlva 4, tíz óra múlva már '
          'több mint ezer. Ez az <b>exponenciális növekedés</b> — a természet '
@@ -81,7 +81,7 @@ A1 = [
          '$$f(x)=a^{x},\\qquad a&gt;0,\\ a\\neq 1$$'
          '<p>alakú valós függvényt. Az $a$ szám a függvény <b>alapja</b>.</p>',
          hid="def-exponencialis"),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>Miért kell a két kikötés?</p>'
          '<ul>'
          '<li><b>$a&gt;0$:</b> ha az alap negatív lenne, a hatvány sok $x$-re nem lenne '
@@ -141,7 +141,7 @@ A1 = [
          '<tr><td>Aszimptota</td><td colspan="2">az $x$-tengely ($y=0$)</td></tr>'
          '</table></div>',
          hid="tetel-tulajdonsagok"),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p><b>Az exponenciális függvény értéke SOHA nem nulla és soha nem negatív.</b> '
          'A görbe tetszőlegesen közel kerül az $x$-tengelyhez, de nem éri el. Ezért:</p>'
          '<ul>'
@@ -174,7 +174,7 @@ A1 = [
          '<p>Figyelj a <b>vízszintes</b> eltolás előjelére: az $y=2^{x-2}$ <b>jobbra</b> tol, '
          'nem balra — a kitevőben a $-2$ „késlelteti” a függvényt.</p>',
          hid="tetel-transzformaciok"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Ábrázold és jellemezd: <b>a)</b> $y=3^{x}-1$; '
          '<b>b)</b> $y=\\left(\\tfrac12\\right)^{x+2}$.</p>',
          hid="pelda-transzformacio",
@@ -194,7 +194,7 @@ A1 = [
 
 A2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Beast:</b> A görbét ismerjük — most jön a kérdés, amiért az egészet '
+   brief('<b>Dr. Bestia:</b> A görbét ismerjük — most jön a kérdés, amiért az egészet '
          'csináljuk: <b>mikor</b> éri el a fertőzés a kritikus szintet? Ez egy egyenlet, '
          'amelyben az ismeretlen a <b>kitevőben</b> ül. Jó hír: nem kell új gépezet. '
          'Egyetlen ötlet elég — ha a két oldalt <b>ugyanarra az alapra</b> hozzuk, '
@@ -212,7 +212,7 @@ A2 = [
          '<b>hagyd el az alapot</b>, és oldd meg a maradék — általában elsőfokú vagy '
          'másodfokú — egyenletet.</p>',
          hid="tetel-alapelv"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg: <b>a)</b> $8^{x}=4096$; <b>b)</b> $9^{x+1}=27^{2x-1}$; '
          '<b>c)</b> $2^{x^{2}-5x}=\\tfrac{1}{64}$.</p>',
          hid="pelda-kozos-alap",
@@ -238,7 +238,7 @@ A2 = [
          '<p>Vagyis a „$+k$” a kitevőben egy <b>állandó szorzót</b> jelent. Ezért az '
          '$a^{x}$ minden tagból <b>kiemelhető</b>, és utána már egyszerű egyenlet marad.</p>',
          hid="tetel-kiemeles"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg: <b>a)</b> $2^{x+2}+2^{x}=40$; <b>b)</b> $3^{x+2}-3^{x}=648$.</p>',
          hid="pelda-kiemeles",
          lenyilo=("Megoldás",
@@ -247,7 +247,7 @@ A2 = [
                   '<p><b>b)</b> $3^{x}\\left(3^{2}-1\\right)=648$, azaz $8\\cdot 3^{x}=648$, '
                   'tehát $3^{x}=81$ és $\\boxed{x=4}$.</p>'
                   '<p><b>Ellenőrzés:</b> $2^{5}+2^{3}=32+8=40$ ✔ és $3^{6}-3^{4}=729-81=648$ ✔</p>')),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>A $2^{x+2}$ <b>nem</b> $2^{x}+2^{2}$! A kitevőben álló összeg '
          '<b>szorzattá</b> bomlik, nem összeggé:</p>'
          '<p>✘ $2^{x+2}=2^{x}+4$ &nbsp;&nbsp;&nbsp; ✔ $2^{x+2}=2^{x}\\cdot 4$</p>'
@@ -271,7 +271,7 @@ A2 = [
          '<b>másodfokúvá</b> válik. A $t$-re kapott gyököket <b>vissza kell '
          'helyettesíteni</b>, és a nem pozitívakat el kell dobni.</p>',
          hid="tetel-helyettesites"),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p><b>Két hiba les rád:</b></p>'
          '<ol class="reszfeladatok">'
          '<li><b>Megállni $t$-nél.</b> A $t$ nem a válasz! A feladat $x$-et kérdezi — '
@@ -280,7 +280,7 @@ A2 = [
          '<b>pozitív</b>, a $t\\le 0$ gyök nem ad megoldást — ilyenkor nem hibáztál, '
          'egyszerűen kevesebb megoldás van.</li>'
          '</ol>'),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg: <b>a)</b> $4^{x}-6\\cdot 2^{x}+8=0$; '
          '<b>b)</b> $9^{x}-4\\cdot 3^{x}+3=0$; <b>c)</b> $4^{x}+3\\cdot 2^{x}-4=0$.</p>',
          hid="pelda-masodfoku",
@@ -305,7 +305,7 @@ A2 = [
 
 A3 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Beast:</b> Az egyenlet arra felel, <b>mikor pontosan</b> — de a valóságban '
+   brief('<b>Dr. Bestia:</b> Az egyenlet arra felel, <b>mikor pontosan</b> — de a valóságban '
          'sokkal fontosabb, hogy <b>meddig</b> maradunk biztonságban. Ez már '
          'egyenlőtlenség. És itt van a témakör egyetlen igazi buktatója: ha az alap '
          '<b>kisebb $1$-nél</b>, a reláció jele <b>megfordul</b>. Ne tanuld be — értsd meg. '
@@ -334,7 +334,7 @@ A3 = [
  ]),
 
  ("Megoldott feladatok", [
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg: <b>a)</b> $2^{2x-1}&lt;8$; <b>b)</b> $\\left(\\tfrac12\\right)^{x}\\ge\\tfrac{1}{16}$; '
          '<b>c)</b> $\\left(\\tfrac13\\right)^{2x+3}&gt;3$.</p>',
          hid="pelda-egyenlotlensegek",
@@ -348,7 +348,7 @@ A3 = [
                   '<p><b>c)</b> $3=\\left(\\tfrac13\\right)^{-1}$, az alap kisebb $1$-nél, '
                   'a jel <b>fordul</b>: $2x+3&lt;-1$, tehát $2x&lt;-4$ és '
                   '$\\boxed{x&lt;-2}$, azaz $x\\in(-\\infty;-2)$.</p>')),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>Három hiba, amit a dolgozatokon a legtöbbször látni:</p>'
          '<ol class="reszfeladatok">'
          '<li><b>A jelfordulás elfelejtése.</b> Mielőtt elhagyod az alapot, mindig kérdezd '
@@ -364,7 +364,7 @@ A3 = [
         jo="✔ Az alap ¼ < 1, ezért a jel megfordul: x < 3.",
         nem="✘ 1/64 = (¼)³, és az alap kisebb 1-nél — a reláció megfordul: x < 3."),
    gyakorolj(FGY + "#alap-15", "A 15–20", FGY + "#kozep-11", "K 11–14"),
-   brief('<b>Beast:</b> Kiváló. Az exponenciális blokk kész — ez a <b>3. ellenőrző</b> '
+   brief('<b>Dr. Bestia:</b> Kiváló. Az exponenciális blokk kész — ez a <b>3. ellenőrző</b> '
          'anyaga. A gyűjtemény végén találsz egy külön felkészítő sávot hozzá. '
          'Utána viszont megfordítjuk a kérdést: eddig azt kérdeztük, <i>mennyi lesz '
          '$x$ óra múlva</i>. A következő küldetésben azt: <b>hány óra kell hozzá?</b> '

@@ -24,7 +24,7 @@ TIPUS = {
     "tananyag":      "altalanos",   # Taktikai és Elemző Központ
     "feladatok":     "digitalis",   # Tech-Labor / Páncélműhely
     "osszefoglalo":  "digitalis",
-    "hazi":          "tornaterem",  # Veszélyterem (Danger Room)
+    "hazi":          "tornaterem",  # Vészterem (Vészterem)
     "terepkuldetes": "rajzterem",   # Misztikus Művészetek Műterme
 }
 

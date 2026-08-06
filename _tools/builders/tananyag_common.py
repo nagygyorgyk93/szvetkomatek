@@ -68,11 +68,11 @@ def kviz(kerdes: str, opciok: list[str], jo_idx: int = 0, jo: str = "", nem: str
 
 def gyakorolj(konnyu_href: str, konnyu_cimke: str, normal_href: str, normal_cimke: str,
               bevezeto: str = "Válaszd a bevetésed:") -> str:
-    """Differenciált sávok — 2e köntös: 🐾 Beast-protokoll / 🔥 Phoenix-protokoll."""
+    """Differenciált sávok — 2e köntös: 🐾 Bestia-protokoll / 🔥 Főnix-protokoll."""
     return ('<div class="gyakorolj"><span class="ikon">🎯</span><div>'
             f'<p><b>Gyakorolj!</b> {bevezeto}</p><div class="savok">'
-            f'<a class="sav hangya" href="{konnyu_href}">🐾 Beast-protokoll <span class="cimke">{konnyu_cimke}</span></a>'
-            f'<a class="sav hulk" href="{normal_href}">🔥 Phoenix-protokoll <span class="cimke">{normal_cimke}</span></a>'
+            f'<a class="sav henrik" href="{konnyu_href}">🐾 Bestia-protokoll <span class="cimke">{konnyu_cimke}</span></a>'
+            f'<a class="sav bruno" href="{normal_href}">🔥 Főnix-protokoll <span class="cimke">{normal_cimke}</span></a>'
             '</div></div></div>')
 
 

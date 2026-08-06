@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """2e/04 — B altema: alapazonossagok (B1), addicios kepletek es ketszeres szog (B2),
-felszog es osszeg-szorzat atalakitas (B3). Mentor: Nightcrawler."""
+felszog es osszeg-szorzat atalakitas (B3). Mentor: Éjjáró."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_egysegkor
@@ -52,7 +52,7 @@ SVG_ALAP = svg_egysegkor(
 
 B1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Nightcrawler:</b> Van egy visszatérő helyzet a terepen: tudom az egyik '
+   brief('<b>Éjjáró:</b> Van egy visszatérő helyzet a terepen: tudom az egyik '
          'koordinátámat, és tudom, melyik <b>negyedben</b> vagyok — a másikat magamtól '
          'kell kitalálnom. Erre való az alapazonosság. Egyetlen képlet, egyetlen '
          'négyzetgyök, és a <b>negyed dönti el az előjelet</b>. Ez a témakör '
@@ -73,7 +73,7 @@ B1 = [
          '$$1+\\operatorname{tg}^{2}\\alpha=\\frac{1}{\\cos^{2}\\alpha},\\qquad'
          '1+\\operatorname{ctg}^{2}\\alpha=\\frac{1}{\\sin^{2}\\alpha}.$$',
          hid="tetel-alapazonossagok"),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p><b>A gyökvonás mindig két értéket enged meg</b> — a negyed dönti el, melyik kell:</p>'
          '$$\\cos\\alpha=\\pm\\sqrt{1-\\sin^{2}\\alpha}$$'
          '<p>Ha $\\alpha$ a II. vagy a III. negyedben van, a <b>mínusz</b> jó. Ezért a '
@@ -90,7 +90,7 @@ B1 = [
          '<p><b>3.</b> A $\\operatorname{tg}$ és a $\\operatorname{ctg}$ már csak osztás — '
          'de az előjelüket érdemes az előjeltáblázattal <b>ellenőrizni</b>.</p>',
          hid="tetel-menetrend"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Számold ki a másik három függvény pontos értékét! '
          '<b>a)</b> $\\sin\\alpha=\\tfrac35$ és $\\cos\\alpha&lt;0$; '
          '<b>b)</b> $\\cos\\alpha=-\\tfrac{12}{13}$ és $\\sin\\alpha&lt;0$.</p>',
@@ -127,7 +127,7 @@ B1 = [
 
 B2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Nightcrawler:</b> Eddig csak a $30$–$45$–$60$-as szögeket tudtuk pontosan. '
+   brief('<b>Éjjáró:</b> Eddig csak a $30$–$45$–$60$-as szögeket tudtuk pontosan. '
          'De mi van, ha $75^\\circ$-ra kell ugranom? Egyszerű: $75=45+30$ — <b>két ugrás '
          'egymás után</b>. Az addíciós képletek pontosan ezt mondják meg: hogyan lehet '
          'két szög összegének a szögfüggvényét a külön-külön ismert értékekből '
@@ -143,7 +143,7 @@ B2 = [
          '<p>Figyeld meg a <b>jelek</b> viselkedését: a szinusznál a jel „átmegy”, a '
          'koszinusznál <b>megfordul</b> ($\\mp$). Ez a legtöbbet elrontott részlet.</p>',
          hid="tetel-addicios"),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p><b>A szögfüggvény nem „szorzó”!</b></p>'
          '<p>✘ $\\sin(\\alpha+\\beta)=\\sin\\alpha+\\sin\\beta$ &nbsp;&nbsp; '
          '✔ $\\sin(\\alpha+\\beta)=\\sin\\alpha\\cos\\beta+\\cos\\alpha\\sin\\beta$</p>'
@@ -152,7 +152,7 @@ B2 = [
          'nem egyenlők.</p>'
          '<p>A koszinusznál pedig <b>ellentétes</b> a jel: $\\cos(\\alpha+\\beta)$-ban '
          '<b>mínusz</b> áll, $\\cos(\\alpha-\\beta)$-ban <b>plusz</b>.</p>'),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p><b>a)</b> Számold ki pontosan: $\\cos 75^\\circ$.<br>'
          '<b>b)</b> Számold ki $\\sin(\\alpha+\\beta)$-t, ha $\\sin\\alpha=\\tfrac35$ és '
          '$\\cos\\beta=\\tfrac{5}{13}$, mindkét szög hegyesszög.</p>',
@@ -171,7 +171,7 @@ B2 = [
  ("Felismerés — a képlet visszafelé", [
    'A vizsgákon gyakoribb az a feladat, amelyben a képlet <b>jobb</b> oldala van megadva, '
    'és a bal oldalt kell felismerni. Ez sokkal gyorsabb, mint kiszámolni.',
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Számold ki az értéküket! '
          '<b>a)</b> $\\sin 25^\\circ\\cos 35^\\circ+\\cos 25^\\circ\\sin 35^\\circ$; '
          '<b>b)</b> $\\cos 70^\\circ\\cos 25^\\circ+\\sin 70^\\circ\\sin 25^\\circ$.</p>',
@@ -206,12 +206,12 @@ B2 = [
                   '$$\\cos 2\\alpha=\\cos^{2}\\alpha-(1-\\cos^{2}\\alpha)=2\\cos^{2}\\alpha-1.$$'
                   '<p>Ugyanígy $\\cos^{2}\\alpha=1-\\sin^{2}\\alpha$ helyettesítéssel jön a '
                   'harmadik alak.</p>')),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>✘ $\\sin 2\\alpha=2\\sin\\alpha$ &nbsp;&nbsp; ✘ $\\cos 2\\alpha=2\\cos\\alpha$</p>'
          '<p>A „$2$” a <b>szögre</b> vonatkozik, nem a függvényértékre! Ellenőrzés: '
          '$\\sin(2\\cdot 30^\\circ)=\\sin 60^\\circ\\approx 0{,}87$, míg '
          '$2\\sin 30^\\circ=1$.</p>'),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Számold ki $\\sin 2\\alpha$ és $\\cos 2\\alpha$ pontos értékét, ha '
          '$\\sin\\alpha=\\tfrac45$ és $\\alpha$ hegyesszög!</p>',
          hid="pelda-ketszeres",
@@ -235,7 +235,7 @@ B2 = [
 
 B3 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Nightcrawler:</b> Ha a kétszeres szög működik, működnie kell <b>visszafelé</b> '
+   brief('<b>Éjjáró:</b> Ha a kétszeres szög működik, működnie kell <b>visszafelé</b> '
          'is: a felére. És van még egy trükk, ami a terepen a leghasznosabb — két '
          'szögfüggvény <b>összegét szorzattá</b> alakítani. Miért jó ez? Mert a szorzattal '
          'lehet egyszerűsíteni, nullára hozni, egyenletet megoldani. Az összeggel nem.'),
@@ -255,13 +255,13 @@ B3 = [
                   '$$\\cos\\alpha=1-2\\sin^{2}\\frac{\\alpha}{2}\\ \\Longrightarrow\\ '
                   '\\sin^{2}\\frac{\\alpha}{2}=\\frac{1-\\cos\\alpha}{2}.$$'
                   '<p>A koszinuszos alak a $\\cos 2u=2\\cos^{2}u-1$ képletből ugyanígy jön.</p>')),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>Ha $\\alpha\\in\\left(\\tfrac{\\pi}{2};\\pi\\right)$ (II. negyed), akkor '
          '$\\tfrac{\\alpha}{2}\\in\\left(\\tfrac{\\pi}{4};\\tfrac{\\pi}{2}\\right)$ — '
          'vagyis az <b>első</b> negyedben, ahol minden pozitív. A felezés '
          '<b>negyedet válthat</b>, ezért az előjelet mindig a <b>felezett</b> szögre '
          'kell megállapítani.</p>'),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p><b>a)</b> Számold ki $\\sin\\tfrac{\\alpha}{2}$ és $\\cos\\tfrac{\\alpha}{2}$ '
          'pontos értékét, ha $\\cos\\alpha=\\tfrac{7}{25}$ és '
          '$\\alpha\\in\\left(0;\\tfrac{\\pi}{2}\\right)$.<br>'
@@ -291,7 +291,7 @@ B3 = [
          '<b>félkülönbség</b>. Csak az kérdés, melyik függvény kerül hova — és hogy az '
          'utolsóban ott a <b>mínusz</b>.</p>',
          hid="tetel-szorzatta"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Alakítsd szorzattá, majd egyszerűsítsd! '
          '<b>a)</b> $\\sin 75^\\circ+\\sin 15^\\circ$; '
          '<b>b)</b> $\\cos 40^\\circ+\\cos 20^\\circ$; '
@@ -319,8 +319,8 @@ B3 = [
         jo="✔ 2 sin 50° cos 30° = 2 · sin 50° · (√3/2) = √3 sin 50°.",
         nem="✘ sin u + sin v = 2 sin((u+v)/2) cos((u−v)/2) = 2 sin 50° cos 30° = √3 sin 50°."),
    gyakorolj(FGY + "#alap-14", "A 14–18", FGY + "#kozep-11", "K 11–14"),
-   brief('<b>Nightcrawler:</b> Az azonosságok készen vannak — ez a <b>4. ellenőrző</b> '
-         'anyagának a gerince. Innentől viszont átadom a szót Jean-nek: ő nem egyetlen '
+   brief('<b>Éjjáró:</b> Az azonosságok készen vannak — ez a <b>4. ellenőrző</b> '
+         'anyagának a gerince. Innentől viszont átadom a szót Janka-nek: ő nem egyetlen '
          'szöggel dolgozik, hanem a <b>teljes hullámmal</b>. Meglátod, hogy néz ki a '
          'szinusz, ha nem egy pontban nézed, hanem végig.', outro=True),
  ]),

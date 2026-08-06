@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """2e/04 — C altema: a trigonometrikus fuggvenyek grafikonja (C1), az A·sin(bx+c) alak (C2),
-egyszeru trigonometrikus egyenletek (C3). Mentor: Jean Grey."""
+egyszeru trigonometrikus egyenletek (C3). Mentor: Szürke Janka."""
 import sys, os, math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra
@@ -167,7 +167,7 @@ SVG_EGY = svg_hullam(
 
 C1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Jean Grey:</b> Amikor telepatikusan keresek valakit, nem egy pontot érzékelek, '
+   brief('<b>Szürke Janka:</b> Amikor telepatikusan keresek valakit, nem egy pontot érzékelek, '
          'hanem egy <b>hullámot</b>. Minden elme saját frekvencián rezeg — és a rezgés '
          'matematikai alakja pontosan az, amit most rajzolunk fel. Eddig egy-egy szögnél '
          'kérdeztük meg a szinuszt; most nézzük meg, mit csinál <b>végig</b>, minden '
@@ -229,7 +229,7 @@ C1 = [
          '<tr><td>Szimmetria</td><td colspan="2">mindkettő <b>páratlan</b></td></tr>'
          '</table></div>',
          hid="tetel-tgctg"),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p><b>A tangens periódusa $\\pi$, nem $2\\pi$!</b> Ezért a '
          '$\\operatorname{tg}x=1$ egyenlet megoldása $x=\\tfrac{\\pi}{4}+k\\pi$ — '
          'egyetlen családdal, míg a $\\sin x=a$ típusnál <b>kettő</b> kell.</p>'
@@ -248,7 +248,7 @@ C1 = [
 
 C2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Jean Grey:</b> Egy valódi jel sosem a tiszta $\\sin x$. Van <b>erőssége</b> '
+   brief('<b>Szürke Janka:</b> Egy valódi jel sosem a tiszta $\\sin x$. Van <b>erőssége</b> '
          '(mekkorát hullámzik), <b>frekvenciája</b> (milyen sűrűn) és <b>fázisa</b> '
          '(mikor kezdődik). Ez a három adat az $A$, a $b$ és a $c$ — és mindhárom '
          'ugyanúgy viselkedik, mint a korábbi függvénytranszformációknál. Ha ezt '
@@ -275,7 +275,7 @@ C2 = [
          '<p>Vagyis $b$ azt mondja meg, <b>hányszor</b> fut le egy teljes hullám a '
          'megszokott $2\\pi$ hosszon.</p>',
          hid="tetel-periodus"),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>A $b$ <b>osztja</b> a periódust, nem szorozza. Az $y=\\sin 2x$ periódusa '
          '$\\pi$ (rövidebb!), az $y=\\sin\\tfrac{x}{2}$ periódusa $4\\pi$ (hosszabb).</p>'
          '<p>Ez fordítottan hat, mint az amplitúdó — érdemes minden feladatnál egy '
@@ -299,7 +299,7 @@ C2 = [
          '<p>⚠️ A vízszintes eltolás <b>nem</b> $c$, hanem $-\\tfrac{c}{b}$ — mert a '
          'zárójelből ki kell emelni a $b$-t: $bx+c=b\\left(x+\\tfrac{c}{b}\\right)$.</p>',
          hid="tetel-teljes-alak"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Add meg az $y=3\\sin\\left(2x-\\tfrac{\\pi}{3}\\right)+1$ függvény '
          'amplitúdóját, periódusát, fáziseltolását és értékkészletét!</p>',
          hid="pelda-teljes-alak",
@@ -328,7 +328,7 @@ C2 = [
 
 C3 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Jean Grey:</b> És most a lényeg: <i>mikor</i> éri el a jel a keresett '
+   brief('<b>Szürke Janka:</b> És most a lényeg: <i>mikor</i> éri el a jel a keresett '
          'értéket? Ez trigonometrikus egyenlet — és van benne egy csavar, amihez nem '
          'vagy hozzászokva. Mivel a hullám <b>ismétlődik</b>, nem egy megoldás van, '
          'hanem <b>végtelen sok</b>. A feladat nem egy szám, hanem egy <b>képlet</b>, '
@@ -349,7 +349,7 @@ C3 = [
          'mert a periódus $\\pi$.</p>'
          '<p>Minden megoldáshoz oda kell írni a periódust — és a $k\\in\\mathbb{Z}$-t!</p>',
          hid="tetel-alaptipusok"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg! <b>a)</b> $2\\sin x-1=0$; <b>b)</b> $2\\cos x+\\sqrt3=0$; '
          '<b>c)</b> $\\operatorname{tg}x=1$.</p>',
          hid="pelda-alapegyenletek",
@@ -377,7 +377,7 @@ C3 = [
          '<tr><td>$\\cos x=0$</td><td>$x=\\tfrac{\\pi}{2}+k\\pi$</td></tr>'
          '</table></div>',
          hid="tetel-specialis"),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>Három visszatérő hiba:</p>'
          '<ol class="reszfeladatok">'
          '<li><b>Elhagyni a $+2k\\pi$-t.</b> A $x=\\tfrac{\\pi}{6}$ önmagában <b>nem</b> '
@@ -399,7 +399,7 @@ C3 = [
          '<p>Így a megoldások periódusa $\\tfrac{2k\\pi}{b}$ lesz, tehát '
          '<b>sűrűbben</b> következnek.</p>',
          hid="tetel-bx"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg! <b>a)</b> $2\\sin 2x+\\sqrt2=0$; <b>b)</b> $2\\cos 3x=\\sqrt3$.</p>',
          hid="pelda-bx",
          lenyilo=("Megoldás",
@@ -420,7 +420,7 @@ C3 = [
         jo="✔ A szinusz a 3π/2-ben (270°-ban) veszi fel a −1-et, és ez 2π-ként ismétlődik.",
         nem="✘ A minimumhely x = 3π/2 + 2kπ (ez ugyanaz, mint −π/2 + 2kπ)."),
    gyakorolj(FGY + "#alap-12", "A 12–18", FGY + "#kozep-9", "K 9–14"),
-   brief('<b>Jean Grey:</b> A hullámot értjük, az egyenleteket megoldjuk. Egy dolog maradt, '
+   brief('<b>Szürke Janka:</b> A hullámot értjük, az egyenleteket megoldjuk. Egy dolog maradt, '
          'és az a legkézzelfoghatóbb az egészben: ha a terepen ismerek <b>néhány</b> '
          'távolságot és szöget, ki tudom-e számolni a többit? Ehhez két tétel kell — és '
          'ezekkel bemérhető egy torony, egy hegy vagy egy ellenséges bázis.', outro=True),

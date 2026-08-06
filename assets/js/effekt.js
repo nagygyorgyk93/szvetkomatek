@@ -71,7 +71,7 @@
   /* ---------- 2) apró szikra az interaktív elemekre ---------- */
   document.addEventListener('click', function (ev) {
     if (!enged()) return;
-    var el = ev.target.closest('a.kartya, .sav, .kviz .opciok button, .kesz-gomb, .btn-marvel, ' +
+    var el = ev.target.closest('a.kartya, .sav, .kviz .opciok button, .kesz-gomb, .btn-kampusz, ' +
                                'details>summary, .kereso-mini button, .kviz .ujra, .naplo-chip');
     if (!el) return;
     var sz = document.createElement('span');

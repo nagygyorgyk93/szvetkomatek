@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """2e / 01 — „C" altéma: komplex szám fogalma (C1), műveletek (C2),
-i hatványai és egyenletek (C3). Mentor: Professor X."""
+i hatványai és egyenletek (C3). Mentor: X. Károly professzor."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra
@@ -68,12 +68,12 @@ def gauss_sik():
 
 C1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Professor X:</b> Kadét, üljön le. Amit most mondok, az kezdetben '
+   brief('<b>X. Károly professzor:</b> Kadét, üljön le. Amit most mondok, az kezdetben '
          'képtelenségnek fog hangzani — pontosan úgy, ahogy a negatív számok hangzottak '
          'képtelenségnek, amíg valaki ki nem mondta, hogy „tartozás". '
          'Az $x^{2}=-1$ egyenletnek <b>nincs</b> valós megoldása. Ez nem a mi hibánk, és nem is az '
          'egyenleté: a valós számok halmaza egyszerűen <b>kicsi</b> hozzá. '
-         'Sinister már régen kilépett belőle. Most mi is kilépünk.'),
+         'Dr. Baljós már régen kilépett belőle. Most mi is kilépünk.'),
    'A matematika története bővítések sorozata: valahányszor felírtunk egy egyenletet, '
    'amit az addig ismert számokkal nem lehetett megoldani, <b>kibővítettük a számhalmazt</b>. '
    'A komplex számok ennek a sornak az utolsó — és legmeglepőbb — lépése.',
@@ -141,7 +141,7 @@ C1 = [
    abra(gauss_sik(),
         "A $z=3+2i$ szám a $(3;2)$ pontnak felel meg. A helyvektor hossza a <b>modulusz</b>, "
         "a valós tengelyre vett tükörkép pedig a <b>konjugált</b>."),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Hol helyezkednek el a Gauss-síkon a $z_{1}=2$, $z_{2}=-3i$ és $z_{3}=-1+i$ számok?</p>',
          lenyilo=("Megoldás",
                   '<p>$z_{1}=2$ valós szám → a valós tengelyen, a $(2;0)$ pontban. '
@@ -172,7 +172,7 @@ C1 = [
          lenyilo=("Levezetés",
                   '<p>$(x+yi)(x-yi)=x^{2}-xyi+xyi-y^{2}i^{2}=x^{2}-y^{2}\\cdot(-1)=x^{2}+y^{2}$. '
                   'A középső két tag kiesik — ez a négyzetek különbsége azonosság.</p>')),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Add meg $z=5-12i$ konjugáltját és moduluszát!</p>',
          hid="pelda-konjugalt",
          lenyilo=("Megoldás",
@@ -186,7 +186,7 @@ C1 = [
  ]),
 
  ("Egy jelölés, amivel vigyázni kell", [
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>A mutálódott kódban ez a „bizonyítás" szerepel:</p>'
          '$$-1=i^{2}=\\sqrt{-1}\\cdot\\sqrt{-1}\\overset{?}{=}\\sqrt{(-1)\\cdot(-1)}=\\sqrt{1}=1.$$'
          '<p>Tehát $-1=1$? Nyilván nem. A hiba a harmadik lépésben van: a '
@@ -197,7 +197,7 @@ C1 = [
          'vagy egyszerűen írjuk fel közvetlenül: $3i$. A gyökjel a komplex számok között '
          'nem egyértelmű — <b>két</b> szám négyzete is $-9$.</p>'),
    gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–4"),
-   brief('<b>Professor X:</b> Megvan az új világ térképe. Most meg kell tanulnod <b>mozogni</b> '
+   brief('<b>X. Károly professzor:</b> Megvan az új világ térképe. Most meg kell tanulnod <b>mozogni</b> '
          'benne: összeadni, szorozni, osztani. Meg fog lepni, mennyire ismerős lesz — '
          'úgy számolunk, mint a betűs kifejezésekkel, egyetlen extra szabállyal: '
          'ahol $i^{2}$-t látsz, oda $-1$-et írsz.',
@@ -209,7 +209,7 @@ C1 = [
 
 C2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Professor X:</b> A jó hír, kadét: nem kell új algebrát tanulnia. '
+   brief('<b>X. Károly professzor:</b> A jó hír, kadét: nem kell új algebrát tanulnia. '
          'A komplex számokkal <b>pontosan úgy</b> számolunk, mint az $a+bx$ alakú kéttagú '
          'kifejezésekkel — összevonunk, kibontunk, nevezetes azonosságokat használunk. '
          'Egyetlen extra szabály van: valahányszor $i^{2}$ keletkezik, azonnal '
@@ -228,7 +228,7 @@ C2 = [
          '<p>A Gauss-síkon a komplex számok <b>helyvektorok</b>, és az összeadásuk pontosan '
          'a vektorok összeadása: a paralelogramma-szabály. Ezért viselkedik a komplex '
          'összeadás olyan „jól" — geometriailag eltolás.</p>'),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Legyen $z_{1}=5+3i$ és $z_{2}=2-7i$. Számítsd ki $z_{1}+z_{2}$ és $z_{1}-z_{2}$ értékét!</p>',
          lenyilo=("Megoldás",
                   '<p>$z_{1}+z_{2}=(5+2)+(3-7)i=7-4i$.</p>'
@@ -245,13 +245,13 @@ C2 = [
          '<p>Nem érdemes bemagolni — elég kibontani és $i^{2}$ helyére $-1$-et írni. '
          'A képlet csak azt mutatja, hogy az eredmény <b>mindig</b> $x+yi$ alakú marad.</p>',
          hid="tetel-komplex-szorzas"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Számítsd ki: $(4+3i)(2-5i)$.</p>',
          hid="pelda-szorzas",
          lenyilo=("Megoldás",
                   '<p>Kibontva: $8-20i+6i-15i^{2}$. Mivel $i^{2}=-1$, a $-15i^{2}=+15$, tehát</p>'
                   '$$8+15+(-20+6)i=23-14i.$$')),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>„$(2i)^{2}=2i^{2}=-2$." — <b>Hamis.</b> A négyzetre emelés a <b>teljes</b> '
          'tényezőre vonatkozik: $(2i)^{2}=2^{2}\\cdot i^{2}=4\\cdot(-1)=-4$. '
          'Ugyanez a hiba a $-15i^{2}$ kezelésénél: az eredmény $+15$, nem $-15$.</p>'),
@@ -272,7 +272,7 @@ C2 = [
          '<p>A nevező így <b>valós</b> szám lesz, a számlálót pedig már csak ki kell bontani. '
          'Ez szó szerint ugyanaz a fogás, mint a gyöktelenítés a kéttagú nevezőnél.</p>',
          hid="tetel-komplex-osztas"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Számítsd ki: $\\dfrac{5+i}{2-3i}$.</p>',
          hid="pelda-osztas",
          lenyilo=("Megoldás",
@@ -301,14 +301,14 @@ C2 = [
          '<p>A negyedik és ötödik különösen hasznos: velük egy komplex szám valós és '
          'képzetes része <b>kiszámolható</b>, ha ismerjük $z$-t és $\\overline z$-t.</p>',
          hid="tetel-konjugalas-tulajdonsagok"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Legyen $z=6-2i$. Mennyi $z+\\overline{z}$ és $z\\cdot\\overline{z}$?</p>',
          lenyilo=("Megoldás",
                   '<p>$\\overline z=6+2i$, ezért $z+\\overline z=12=2\\cdot 6=2\\operatorname{Re}(z)$ ✔, '
                   'és $z\\cdot\\overline z=36+4=40=|z|^{2}$ (valóban '
                   '$|z|=\\sqrt{36+4}=\\sqrt{40}$). Mindkét eredmény <b>valós</b>.</p>')),
    gyakorolj(FGY + "#alap-7", "A 7–12", FGY + "#kozep-5", "K 5–9"),
-   brief('<b>Professor X:</b> Van még egy dolog, amit Sinister kihasznál: az $i$ hatványai '
+   brief('<b>X. Károly professzor:</b> Van még egy dolog, amit Dr. Baljós kihasznál: az $i$ hatványai '
          '<b>ismétlődnek</b>. Négyes ciklusban. Aki ezt észreveszi, másodpercek alatt '
          'kiszámolja $i^{2026}$ értékét — aki nem, az órákig szorozgat. '
          'Az utolsó kiképzési egység erről szól, és arról, hogyan oldunk meg egyenletet '
@@ -321,8 +321,8 @@ C2 = [
 
 C3 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Professor X:</b> Az utolsó lecke a fejezetben: a <b>minta</b> felismerése. '
-         'Sinister kódjai hatalmas kitevőket használnak, hogy elrejtsék az egyszerű '
+   brief('<b>X. Károly professzor:</b> Az utolsó lecke a fejezetben: a <b>minta</b> felismerése. '
+         'Dr. Baljós kódjai hatalmas kitevőket használnak, hogy elrejtsék az egyszerű '
          'szerkezetet. De az $i$ hatványai négyesével ismétlődnek — ez a ciklus a kulcs '
          'az egész titkosításhoz. Aztán megoldunk pár egyenletet, és a fejezet lezárul.'),
  ]),
@@ -337,7 +337,7 @@ C3 = [
          'mennyi maradékot ad:</p>'
          '$$i^{4k}=1,\\qquad i^{4k+1}=i,\\qquad i^{4k+2}=-1,\\qquad i^{4k+3}=-i.$$',
          hid="tetel-i-hatvanyai"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Mennyi $i^{27}$, $i^{100}$ és $i^{2026}$?</p>',
          hid="pelda-i-hatvany",
          lenyilo=("Megoldás",
@@ -355,7 +355,7 @@ C3 = [
  ("Összetett kifejezések kiszámítása", [
    'A recept: minden $i$-hatványt visszavezetünk a négyes ciklussal, majd összevonjuk '
    'a valós és a képzetes tagokat.',
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Számítsd ki: $2i^{5}-3i^{11}+i^{22}$.</p>',
          hid="pelda-osszetett-i",
          lenyilo=("Megoldás",
@@ -367,7 +367,7 @@ C3 = [
  ("Lineáris egyenletek a komplex számok halmazán", [
    'Az $a\\cdot z=b$ alakú egyenletet ugyanúgy oldjuk meg, mint a valós számoknál: '
    'osztunk $a$-val. Az osztást pedig már ismerjük — bővítés a konjugálttal.',
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg a komplex számok halmazán: $(2-i)z=5+5i$.</p>',
          hid="pelda-linearis-egyenlet",
          lenyilo=("Megoldás",
@@ -382,7 +382,7 @@ C3 = [
    'Itt nem lehet egyszerűen „átosztani": $z$ és $\\overline z$ két különböző dolog. '
    'A megoldás kulcsa az egyenlőség tétele — <b>egy</b> komplex egyenlet <b>két</b> '
    'valós egyenletet jelent.',
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg: $2z+3\\overline{z}=10-4i$.</p>',
          hid="pelda-z-es-konjugalt",
          lenyilo=("Megoldás",
@@ -400,11 +400,11 @@ C3 = [
         jo="✔ Két komplex szám akkor egyenlő, ha a valós ÉS a képzetes részük is egyenlő.",
         nem="✘ Kettőre: külön a valós, külön a képzetes részek egyenlősége."),
    gyakorolj(FGY + "#alap-13", "A 13–18", FGY + "#kozep-10", "K 10–14"),
-   brief('<b>Professor X:</b> Kadét, a fejezet lezárult. Kibővítette a valóságát, és '
+   brief('<b>X. Károly professzor:</b> Kadét, a fejezet lezárult. Kibővítette a valóságát, és '
          'megtanult mozogni benne. De figyeljen: az $x^{2}=-1$ csak a kezdet volt. '
          'A következő küldetésben olyan egyenletekkel találkozik, amelyeknek <b>néha</b> '
          'van valós megoldásuk, néha nincs — és ez a „néha" egyetlen számon fog múlni. '
-         'Wolverine és Cyclops már várja a Veszélyteremben. Az X-Faktor küldetés indul.',
+         'Nagol és Küklopsz már várja a Vészteremben. Az M-Faktor küldetés indul.',
          outro=True),
  ]),
 ]

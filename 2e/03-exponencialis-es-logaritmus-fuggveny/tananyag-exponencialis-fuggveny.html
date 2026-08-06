@@ -33,7 +33,7 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief"><p>📡 <b>Beast:</b> Kadétok, a laborban rossz hírt kaptam. Sinister vírusa nem lineárisan és nem is másodfokon terjed: minden órában <b>megkétszereződik</b> a fertőzött sejtek száma. Egy óra múlva 2, kettő múlva 4, tíz óra múlva már több mint ezer. Ez az <b>exponenciális növekedés</b> — a természet leggyorsabb hétköznapi mechanizmusa. Ha meg akarjuk állítani, előbb le kell írnunk. Kezdjük a görbével.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/dr_bestia.webp" alt="Dr. Bestia — a kampusz fővezető tudósa" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Dr. Bestia:</b> Kadétok, a laborban rossz hírt kaptam. Dr. Baljós vírusa nem lineárisan és nem is másodfokon terjed: minden órában <b>megkétszereződik</b> a fertőzött sejtek száma. Egy óra múlva 2, kettő múlva 4, tíz óra múlva már több mint ezer. Ez az <b>exponenciális növekedés</b> — a természet leggyorsabb hétköznapi mechanizmusa. Ha meg akarjuk állítani, előbb le kell írnunk. Kezdjük a görbével.</p></div>
 
     Eddig a hatványozásnál az <b>alap</b> volt a változó (<span class="math inline">\(x^{2}\)</span>, <span class="math inline">\(x^{3}\)</span> — <a href="../01-hatvanyozas-gyokvonas-komplex-szamok/tananyag-hatvanyfuggveny.html">hatványfüggvény</a>). Most cserét hajtunk végre: az alap lesz <b>rögzített</b>, és a <b>kitevő</b> válik változóvá. Ez az egyetlen csere gyökeresen más viselkedésű függvényt ad.
 
@@ -45,7 +45,7 @@
     </div>
 
     <div class="doboz csapda">
-      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
       <p>Miért kell a két kikötés?</p><ul><li><b><span class="math inline">\(a&gt;0\)</span>:</b> ha az alap negatív lenne, a hatvány sok <span class="math inline">\(x\)</span>-re nem lenne értelmezhető a valós számok között — például <span class="math inline">\((-4)^{1/2}=\sqrt{-4}\)</span> nem valós szám. A függvény „lyukas” lenne.</li><li><b><span class="math inline">\(a\neq 1\)</span>:</b> az <span class="math inline">\(1^{x}\)</span> minden <span class="math inline">\(x\)</span>-re <span class="math inline">\(1\)</span> — ez a konstans függvény, nem mond semmit a kitevőről.</li></ul><p>Az <span class="math inline">\(a=0\)</span> eset szintén kiesik: <span class="math inline">\(0^{x}\)</span> negatív kitevőre nullával való osztás lenne.</p>
     </div>
 
@@ -151,7 +151,7 @@
     </div>
 
     <div class="doboz csapda">
-      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
       <p><b>Az exponenciális függvény értéke SOHA nem nulla és soha nem negatív.</b> A görbe tetszőlegesen közel kerül az <span class="math inline">\(x\)</span>-tengelyhez, de nem éri el. Ezért:</p><ul><li>a <span class="math inline">\(2^{x}=0\)</span> egyenletnek <b>nincs</b> megoldása;</li><li>a <span class="math inline">\(3^{x}=-5\)</span> egyenletnek <b>nincs</b> megoldása;</li><li>a <span class="math inline">\(2^{x}&gt;0\)</span> egyenlőtlenség <b>minden</b> valós <span class="math inline">\(x\)</span>-re teljesül.</li></ul><p>Ez a későbbi helyettesítéses feladatoknál kulcsfontosságú lesz: ha <span class="math inline">\(t=a^{x}\)</span>, akkor <b><span class="math inline">\(t&gt;0\)</span></b>, és a negatív <span class="math inline">\(t\)</span>-gyököket el kell dobni.</p>
     </div>
 
@@ -210,12 +210,12 @@
     </div>
 
     <div class="doboz pelda" id="pelda-transzformacio">
-      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
       <p>Ábrázold és jellemezd: <b>a)</b> <span class="math inline">\(y=3^{x}-1\)</span>; <b>b)</b> <span class="math inline">\(y=\left(\tfrac12\right)^{x+2}\)</span>.</p>
       <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> Az <span class="math inline">\(y=3^{x}\)</span> görbét <span class="math inline">\(1\)</span>-gyel lefelé toljuk. Az aszimptota <span class="math inline">\(y=-1\)</span>, az értékkészlet <span class="math inline">\((-1;+\infty)\)</span>. Most már <b>van</b> nullahelye: <span class="math inline">\(3^{x}=1\)</span>, tehát <span class="math inline">\(x=0\)</span> — a görbe az origón megy át.</p><p><b>b)</b> Az <span class="math inline">\(y=\left(\tfrac12\right)^{x}\)</span> csökkenő görbét <span class="math inline">\(2\)</span>-vel <b>balra</b> toljuk. Az aszimptota marad az <span class="math inline">\(x\)</span>-tengely, az értékkészlet <span class="math inline">\((0;+\infty)\)</span>, és a görbe a <span class="math inline">\((0;\tfrac14)\)</span> ponton halad át, mert <span class="math inline">\(\left(\tfrac12\right)^{2}=\tfrac14\)</span>.</p></div></details>
     </div>
 
-    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-exponencialis.html#alap-1">🐾 Beast-protokoll <span class="cimke">A 1–6</span></a><a class="sav hulk" href="feladatok-exponencialis.html#kozep-1">🔥 Phoenix-protokoll <span class="cimke">K 1–3</span></a></div></div></div>
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-exponencialis.html#alap-1">🐾 Bestia-protokoll <span class="cimke">A 1–6</span></a><a class="sav bruno" href="feladatok-exponencialis.html#kozep-1">🔥 Főnix-protokoll <span class="cimke">K 1–3</span></a></div></div></div>
     <div class="lapozo">
       <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">Exponenciális és logaritmusfüggvény</span></a>
       <a class="kov" href="tananyag-exponencialis-egyenletek.html"><span class="irany">Következő →</span><span class="hova">Exponenciális egyenletek</span></a>

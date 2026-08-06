@@ -32,7 +32,7 @@
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
-      <div class="brief"><p>📡 <b>Iron Man &amp; Shuri:</b> A törtek a tech <b>arányai</b>: teljesítmény per tömeg, jel per zaj. De egy törtnek csak akkor van értelme, ha a <b>nevező nem nulla</b> — ezt hívjuk értelmezési tartománynak. Aki ezt figyelmen kívül hagyja, annak a rendszere lefagy (nullával osztás = Kang kedvenc rése). Ebben a modulban megtanulsz <b>értelmezni</b>, <b>egyszerűsíteni</b> és a <b>négy alapműveletet</b> elvégezni törtekkel — a legbonyolultabb emeletes törtet is letisztítod.</p></div>
+      <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/krats_ynot_w.webp" alt="Krats Ynot — a kampusz fővezető mérnöke" width="1200" height="670" decoding="async"><p>📡 <b>Krats Ynot &amp; Iruhs:</b> A törtek a tech <b>arányai</b>: teljesítmény per tömeg, jel per zaj. De egy törtnek csak akkor van értelme, ha a <b>nevező nem nulla</b> — ezt hívjuk értelmezési tartománynak. Aki ezt figyelmen kívül hagyja, annak a rendszere lefagy (nullával osztás = Kán kedvenc rése). Ebben a modulban megtanulsz <b>értelmezni</b>, <b>egyszerűsíteni</b> és a <b>négy alapműveletet</b> elvégezni törtekkel — a legbonyolultabb emeletes törtet is letisztítod.</p></div>
     <p>A <b>racionális algebrai tört</b> két polinom hányadosa: <span class="math inline">\(\dfrac{P(x)}{Q(x)}\)</span>, ahol <span class="math inline">\(Q(x)\)</span> nem az azonosan nulla polinom. Az egyszerűsítés, a bővítés és a műveletek mind a törtek ismerős szabályaira épülnek — csak most számok helyett polinomok állnak a helyükön.</p>
 
     <h2 id="s1">Értelmezési tartomány (mikor van értelme?)</h2>
@@ -63,8 +63,8 @@
       <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(\dfrac{x^2-9}{x-3}=\dfrac{(x-3)(x+3)}{x-3}=x+3\)</span> (ÉT: <span class="math inline">\(x\neq 3\)</span>).</p></div></details>
     </div>
     <div class="doboz csapda">
-      <p class="cim"><span class="ikon">⚠️</span> Kang csapdája</p>
-      Kang szereti „kihúzni” az azonos betűket: azt állítja, hogy <span class="math inline">\(\dfrac{x+5}{x+7}=\dfrac{5}{7}\)</span>. <b>Hamis!</b> Az <span class="math inline">\(x\)</span> itt <b>tag</b>, nem tényező — nem ejthető ki. A tört nem is egyszerűsíthető. Csak <b>közös szorzótényezővel</b> szabad egyszerűsíteni.
+      <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
+      Kán szereti „kihúzni” az azonos betűket: azt állítja, hogy <span class="math inline">\(\dfrac{x+5}{x+7}=\dfrac{5}{7}\)</span>. <b>Hamis!</b> Az <span class="math inline">\(x\)</span> itt <b>tag</b>, nem tényező — nem ejthető ki. A tört nem is egyszerűsíthető. Csak <b>közös szorzótényezővel</b> szabad egyszerűsíteni.
     </div>
     <div class="kviz" data-answer="1" data-jo="✔ Nem: x tag, nem tényező — a tört nem egyszerűsíthető." data-nem="✘ x itt tag (nem szorzótényező), így nem húzható ki.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
@@ -103,14 +103,14 @@
       <details><summary>Megoldás</summary><div class="bel"><p>Számláló: <span class="math inline">\(\dfrac{x^2-y^2}{xy}\)</span>; nevező: <span class="math inline">\(\dfrac{x+y}{xy}\)</span>. Osztás: <span class="math inline">\(\dfrac{x^2-y^2}{xy}\cdot\dfrac{xy}{x+y}=\dfrac{(x-y)(x+y)}{x+y}=x-y\)</span>.</p></div></details>
     </div>
 
-    <h2 id="s6">💡 Bővítés — Kang legmélyebb csapdája (emelt, nem kötelező)</h2>
+    <h2 id="s6">💡 Bővítés — Kán legmélyebb csapdája (emelt, nem kötelező)</h2>
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> A négyzet sosem negatív</p>
       <p>Egy fontos igazság, amit érdemes ismerni: minden valós <span class="math inline">\(t\)</span>-re <span class="math inline">\(t^2\ge 0\)</span>. Ebből egy elegáns azonosság-egyenlőtlenség fakad: mivel <span class="math inline">\((a-b)^2\ge 0\)</span>, kibontva <span class="math inline">\(a^2-2ab+b^2\ge 0\)</span>, azaz \[a^2+b^2\ge 2ab.\] Egyenlőség pontosan akkor, ha <span class="math inline">\(a=b\)</span>. Ez a <b>számtani–mértani közép</b> közötti összefüggés előszobája — a felsőbb évek egyik kulcsa. <b>Ez emelt-szintű kitekintés: az ellenőrzőn nem kérjük, de jó, ha látod, hova vezet a nyelv.</b></p>
     </div>
     <div class="doboz csapda">
-      <p class="cim"><span class="ikon">⚠️</span> Kang csapdája</p>
-      Kang azt sugallja, hogy „ha <span class="math inline">\(a^2+b^2\)</span> és <span class="math inline">\(2ab\)</span> is pozitív, akkor bármelyik lehet a nagyobb”. Nem: a fenti bizonyítás szerint <span class="math inline">\(a^2+b^2\)</span> <b>mindig</b> legalább akkora, mint <span class="math inline">\(2ab\)</span> — a különbség épp egy teljes négyzet, ami sosem negatív.
+      <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
+      Kán azt sugallja, hogy „ha <span class="math inline">\(a^2+b^2\)</span> és <span class="math inline">\(2ab\)</span> is pozitív, akkor bármelyik lehet a nagyobb”. Nem: a fenti bizonyítás szerint <span class="math inline">\(a^2+b^2\)</span> <b>mindig</b> legalább akkora, mint <span class="math inline">\(2ab\)</span> — a különbség épp egy teljes négyzet, ami sosem negatív.
     </div>
 
     <h2 id="s7">🧾 Gyorsismétlő</h2>
@@ -119,9 +119,9 @@
       <p><b>Polinomok:</b> összevonás, szorzás, nevezetes azonosságok, osztás, Bézout (<span class="math inline">\(M=P(a)\)</span>). <b>Szorzattá alakítás:</b> kiemelés, <span class="math inline">\(a^2-b^2\)</span>, teljes négyzet, köbök, csoportosítás, LKO/LKT. <b>Törtek:</b> előbb az <b>ÉT</b> (nevező <span class="math inline">\(\neq 0\)</span>), egyszerűsítés csak <b>közös tényezővel</b>, a négy alapművelet, emeletes törtek. Egyetlen szabály mindenre: <b>előbb szorzattá alakíts, azután számolj.</b></p>
     </div>
 
-    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-racionalis-algebrai-kifejezesek.html#alap-10">🐜 Ant-Man-bevetés <span class="cimke">A 10–12</span></a><a class="sav hulk" href="feladatok-racionalis-algebrai-kifejezesek.html#kozep-7">💥 Hulk-bevetés <span class="cimke">K 7–9</span></a></div></div></div>
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-racionalis-algebrai-kifejezesek.html#alap-10">🐜 Henrik-bevetés <span class="cimke">A 10–12</span></a><a class="sav bruno" href="feladatok-racionalis-algebrai-kifejezesek.html#kozep-7">💥 Brúnó-bevetés <span class="cimke">K 7–9</span></a></div></div></div>
 
-    <div class="brief" data-outro><p>📡 <b>Shuri:</b> Uralod a hatalom nyelvét — a kifejezésektől a legbonyolultabb törtekig. Most élesben: a <b>kiképzési adattárban</b> gyakorolj, majd a <b>terepküldetésen</b> építsd meg a saját tech-képleteidet.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/iruhs.webp" alt="Iruhs — a kampusz fejlesztőmérnöke" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Iruhs:</b> Uralod a hatalom nyelvét — a kifejezésektől a legbonyolultabb törtekig. Most élesben: a <b>kiképzési adattárban</b> gyakorolj, majd a <b>terepküldetésen</b> építsd meg a saját tech-képleteidet.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-szorzatta-alakitas.html"><span class="irany">← Előző</span><span class="hova">Szorzattá alakítás</span></a>
       <a class="kov" href="feladatok-racionalis-algebrai-kifejezesek.html"><span class="irany">Következő →</span><span class="hova">Feladatgyűjtemény</span></a>

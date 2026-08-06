@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""2e/04 — osszefoglalo (F4), terepkuldetes (F5p), Danger Room (F6h), temakor-index (F5)."""
+"""2e/04 — osszefoglalo (F4), terepkuldetes (F5p), Vészterem (F6h), temakor-index (F5)."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tananyag_common import lap, doboz, brief, GYOKER
@@ -46,7 +46,7 @@ chk("TIII2b", deg(asin(17*sin(rad(64))/aa)), 44.502, 6e-3)
 chk("TIII3", R(1, 2)*17*23*sin(rad(64)), 175.7142, 1e-3)
 BT = 80*sin(rad(25))/sin(rad(16))
 chk("TIII4-BT", BT, 122.6592, 1e-3); chk("TIII4-h", BT*sin(rad(41)), 80.47168, 1e-3)
-# --- Danger Room
+# --- Vészterem
 chk("DA1", nsimplify(rad(135))/pi, R(3, 4))
 chk("DA2", deg(R(11, 6)*pi), 330)
 chk("DA3", sin(rad(240)), -sqrt(3)/2)
@@ -206,7 +206,7 @@ print("✓ osszefoglalo.html")
 
 TEREP = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Jean Grey:</b> Ismeretlen jel érkezik a Sinister-bázisról, és nem tudjuk '
+   brief('<b>Szürke Janka:</b> Ismeretlen jel érkezik a Baljós-bázisról, és nem tudjuk '
          'megfejteni. A műszer csak a <b>grafikont</b> rajzolja ki — nekünk kell '
          'kiolvasnunk belőle a képletet. Utána Kurt bemér néhány szöget a körön, '
          'végül pedig háromszögeléssel megkeressük magát a bázist. Három fázis, '
@@ -358,7 +358,7 @@ DR_N = [
   "\\approx 12{,}92$."),
 ]
 
-dr_brief = ('<div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Veszélyterem</b> — A Fázisugrás '
+dr_brief = ('<div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — A Fázisugrás '
             'modul. A szimuláció a <b>teljes témakört</b> lefedi: szögátváltás, '
             'trigonometrikus kör, visszavezetés, alapazonosságok, addíciós és kétszeres '
             'szög, szorzattá alakítás, grafikonok, egyenletek, valamint a szinusz- és '
@@ -370,8 +370,8 @@ dr_body = ('    ' + dr_brief + '\n'
            '\n    <h2 id="kozep">🟡 Középfokozat</h2>\n' + cards(DR_K, "kozep", "kozep") +
            '\n    <h2 id="nehez">🔴 Nehéz fokozat</h2>\n' + cards(DR_N, "nehez", "nehez"))
 
-oldal(**T, fajl="feladatok-hazi.html", cim="Danger Room",
-      h1="🕹️ Danger Room — házi feladatgyűjtemény", itt="Danger Room — házi",
+oldal(**T, fajl="feladatok-hazi.html", cim="Vészterem",
+      h1="🕹️ Vészterem — házi feladatgyűjtemény", itt="Vészterem — házi",
       alcim="Egyetlen, a teljes témakört lefedő házi feladatsor, óraszám-arányosan. "
             "Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
       chipek='<span class="chip alap">Alap</span><span class="chip kozep">Közép</span>'
@@ -421,7 +421,7 @@ K = [
         "Grafikonok, amplitúdó–periódus–fázis és minden egyenlet-alaptípus"),
  kartya("feladatok-haromszogek.html", "🏋️ Háromszögek — feladatok",
         "Szinusz- és koszinusztétel, terület, bemérési és navigációs feladatok"),
- kartya("feladatok-hazi.html", "🕹️ Danger Room — házi feladatok",
+ kartya("feladatok-hazi.html", "🕹️ Vészterem — házi feladatok",
         "A teljes témakört lefedő házi feladatsor, óraszám-arányosan"),
  kartya("terepkuldetes.html", "🎯 A Fantom-frekvencia terepküldetés",
         "Háromfázisú felderítés — jelfejtés, fáziskód és háromszögelés"),
@@ -460,32 +460,32 @@ INDEX = '''<!DOCTYPE html>
   a szinusz- és koszinusztételig — a második év leghosszabb témaköre.</p>
   <div class="meta-sor"><span class="chip ora">34 óra</span><span class="statusz kesz">kész</span></div>
   <div class="brief"><p>🧬 <b>Szektor 04 — A Fázisugrás.</b> Kiképzők:
-  <b>Nightcrawler</b> (a kör és az azonosságok) és <b>Jean Grey</b> (hullámok, egyenletek,
+  <b>Éjjáró</b> (a kör és az azonosságok) és <b>Szürke Janka</b> (hullámok, egyenletek,
   bemérés). Kurt minden teleportálása egy <b>szög</b> a körön — és 360 fok után ugyanoda
-  ér vissza: ez a periodicitás. Jean telepatikus <b>hullámai</b> adják a szinuszgörbét
+  ér vissza: ez a periodicitás. Janka telepatikus <b>hullámai</b> adják a szinuszgörbét
   amplitúdóval és fázissal, a küldetés végén pedig háromszögeléssel mérjük be a
-  Sinister-bázist.</p></div>
+  Baljós-bázist.</p></div>
 </div>
 <main class="lap">
   <div class="tartalom">
     <h2>Tananyag</h2>
 
-    <h3>🌀 A trigonometrikus kör — Nightcrawler</h3>
+    <h3>🌀 A trigonometrikus kör — Éjjáró</h3>
     <div class="racs">
 ''' + "\n".join(K[0:3]) + '''
     </div>
 
-    <h3>🧩 Azonosságok — Nightcrawler</h3>
+    <h3>🧩 Azonosságok — Éjjáró</h3>
     <div class="racs">
 ''' + "\n".join(K[3:6]) + '''
     </div>
 
-    <h3>🌊 Függvények és egyenletek — Jean Grey</h3>
+    <h3>🌊 Függvények és egyenletek — Szürke Janka</h3>
     <div class="racs">
 ''' + "\n".join(K[6:9]) + '''
     </div>
 
-    <h3>📐 Háromszögek — Jean Grey</h3>
+    <h3>📐 Háromszögek — Szürke Janka</h3>
     <div class="racs">
 ''' + "\n".join(K[9:11]) + '''
     </div>
@@ -507,7 +507,7 @@ INDEX = '''<!DOCTYPE html>
 
     <p class="le halvany"><b>Ajánlott sorrend:</b> altémánként előbb a tananyag-egységek sorban,
     utána a hozzá tartozó feladatgyűjtemény; a témakör végén a Taktikai memóriakártya, majd
-    A Fantom-frekvencia terepküldetés. A Danger Room házi bármikor jöhet.</p>
+    A Fantom-frekvencia terepküldetés. A Vészterem házi bármikor jöhet.</p>
   </div>
 </main>
 <footer class="lablec">

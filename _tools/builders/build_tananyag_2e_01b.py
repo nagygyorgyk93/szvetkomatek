@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """2e / 01 — „B" altéma: gyökvonás (B1), műveletek gyökökkel (B2),
-gyöktelenítés és racionális kitevő (B3). Mentor: Storm."""
+gyöktelenítés és racionális kitevő (B3). Mentor: Vihar Vera."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tananyag_common import lap, doboz, brief, kviz, gyakorolj
@@ -13,10 +13,10 @@ FGY = "feladatok-gyokvonas.html"
 
 B1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Storm:</b> Eddig előre néztünk: adott alap, adott kitevő, mekkora az eredmény? '
+   brief('<b>Vihar Vera:</b> Eddig előre néztünk: adott alap, adott kitevő, mekkora az eredmény? '
          'Most fordítsd meg a kérdést. Ismerem a vihar <b>energiáját</b> — mekkora volt a kiváltó ok? '
          'Ez a gyökvonás: a hatványozás visszafejtése. És itt van az évad első igazi csapdája — '
-         'a <b>páros</b> gyökkitevő nem viselkedik úgy, mint a páratlan. Sinister pontosan ezen a résen fér be.'),
+         'a <b>páros</b> gyökkitevő nem viselkedik úgy, mint a páratlan. Dr. Baljós pontosan ezen a résen fér be.'),
    'A gyökvonás a hatványozás <b>inverz művelete</b>: azt a számot keressük, amelynek adott '
    'kitevőjű hatványa a megadott szám. A definíciót viszont <b>két külön esetre</b> kell bontanunk — '
    'és ennek a kettéválasztásnak messzemenő következményei lesznek.',
@@ -35,7 +35,7 @@ B1 = [
          '<p>Az $a$ a <b>gyök alapja</b> (a gyökjel alatti mennyiség), $n$ a <b>gyökkitevő</b>. '
          'A négyzetgyöknél ($n=2$) a gyökkitevőt nem szoktuk kiírni: $\\sqrt{a}$.</p>',
          hid="def-nedik-gyok"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Számítsd ki, ahol létezik: $\\sqrt{144}$, $\\sqrt[3]{-125}$, $\\sqrt[4]{16}$, '
          '$\\sqrt[5]{-32}$, $\\sqrt{-49}$.</p>',
          hid="pelda-gyok-ertekek",
@@ -60,7 +60,7 @@ B1 = [
          '$$\\sqrt[n]{a^{n}}=\\begin{cases} a, &\\text{ha } n \\text{ páratlan},\\\\[2pt] '
          '|a|, &\\text{ha } n \\text{ páros}.\\end{cases}$$',
          hid="tetel-gyok-hatvany"),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>A mutálódott kódban ez áll: $\\sqrt{a^{2}}=a$ <b>minden valós $a$-ra</b>. '
          '<b>Hamis.</b> Próbáld ki $a=-7$-tel:</p>'
          '$$\\sqrt{(-7)^{2}}=\\sqrt{49}=7\\neq -7.$$'
@@ -88,11 +88,11 @@ B1 = [
          '<p>Az ötödik a gyökkitevő <b>bővítése</b> és <b>egyszerűsítése</b> (mint a törteknél!), '
          'a hatodik a tényező <b>bevitele</b> a gyökjel alá.</p>',
          hid="tetel-gyok-azonossagok"),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>Nincs olyan azonosság, hogy $\\sqrt{a+b}=\\sqrt{a}+\\sqrt{b}$. Ellenpélda:</p>'
          '$$\\sqrt{9+16}=\\sqrt{25}=5,\\qquad\\text{de}\\qquad \\sqrt{9}+\\sqrt{16}=3+4=7.$$'
          '<p>A gyökvonás a <b>szorzással és osztással</b> barátkozik — az összeadással soha.</p>'),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Egyszerűsítsd ($a&gt;0$): $\\sqrt[6]{a^{4}}$, valamint számítsd ki '
          '$\\sqrt[3]{\\sqrt{64}}$ értékét.</p>',
          lenyilo=("Megoldás",
@@ -100,7 +100,7 @@ B1 = [
                   'a hatványkitevőt ugyanazzal a számmal egyszerűsíthetjük. '
                   '$\\sqrt[3]{\\sqrt{64}}=\\sqrt[6]{64}=2$, mert $2^{6}=64$.</p>')),
    gyakorolj(FGY + "#alap-1", "A 1–5", FGY + "#kozep-1", "K 1–4"),
-   brief('<b>Storm:</b> Megvan a nyelvtan — jöjjön a mondatalkotás. A gyököket össze kell tudnod '
+   brief('<b>Vihar Vera:</b> Megvan a nyelvtan — jöjjön a mondatalkotás. A gyököket össze kell tudnod '
          'vonni, szorozni, egymásba ágyazni. Ez a rész tiszta kézügyesség: sok kis lépés, '
          'mindegyik egyszerű, de egyetlen elrontott előjel az egész számítást viszi.',
          outro=True),
@@ -111,7 +111,7 @@ B1 = [
 
 B2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Storm:</b> A műszerek tucatnyi gyökös jelet dobnak ki egyszerre, és ránézésre '
+   brief('<b>Vihar Vera:</b> A műszerek tucatnyi gyökös jelet dobnak ki egyszerre, és ránézésre '
          'mind különbözőnek látszik. Pedig $\\sqrt{20}$, $\\sqrt{45}$ és $\\sqrt{80}$ ugyanannak '
          'a jelnek a többszörösei — csak <b>ki kell hozni</b> belőlük a közös részt. '
          'Aki ezt látja, két sorban rendet tesz ott, ahol más fél oldalt számol.'),
@@ -122,7 +122,7 @@ B2 = [
  ("Tényező kivitele és bevitele", [
    'A $b\\cdot\\sqrt[n]{a}=\\sqrt[n]{a\\cdot b^{n}}$ azonosság <b>mindkét irányban</b> használható. '
    'Balról jobbra <b>bevisszük</b> a tényezőt a gyökjel alá, jobbról balra <b>kihozzuk</b>.',
-   doboz("pelda", "Veszélyterem-szimuláció — kihozatal",
+   doboz("pelda", "Vészterem-szimuláció — kihozatal",
          '<p>Hozd ki a gyökjel alól a lehető legnagyobb tényezőt: '
          '$\\sqrt{72}$, $\\sqrt[3]{54}$, $\\sqrt{50a^{3}}$ ($a&gt;0$).</p>',
          hid="pelda-kihozatal",
@@ -131,7 +131,7 @@ B2 = [
                   '<p>$\\sqrt{72}=\\sqrt{36\\cdot 2}=6\\sqrt{2}$ · '
                   '$\\sqrt[3]{54}=\\sqrt[3]{27\\cdot 2}=3\\sqrt[3]{2}$ · '
                   '$\\sqrt{50a^{3}}=\\sqrt{25a^{2}\\cdot 2a}=5a\\sqrt{2a}$.</p>')),
-   doboz("pelda", "Veszélyterem-szimuláció — bevitel",
+   doboz("pelda", "Vészterem-szimuláció — bevitel",
          '<p>Vidd be a gyökjel alá: $3\\sqrt{5}$ és $2\\sqrt[3]{7}$.</p>',
          lenyilo=("Megoldás",
                   '<p>$3\\sqrt{5}=\\sqrt{5\\cdot 3^{2}}=\\sqrt{45}$ · '
@@ -143,7 +143,7 @@ B2 = [
    'Két gyökös tag akkor <b>hasonló</b>, ha kihozatal után ugyanaz marad a gyökjel alatt. '
    'A hasonló tagokat úgy vonjuk össze, mint az algebrai kifejezésekben az $x$-eket: '
    'az együtthatókat adjuk össze.',
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Végezd el a műveleteket: '
          '$3\\sqrt{20}-\\sqrt{45}+2\\sqrt{80}-\\sqrt{125}$.</p>',
          hid="pelda-osszevonas",
@@ -168,7 +168,7 @@ B2 = [
          '<p>Az elsőben a gyökök <b>teljesen eltűnnek</b> — ez lesz a gyöktelenítés motorja '
          'a következő egységben.</p>',
          hid="tetel-gyokos-nevezetes"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Számítsd ki: '
          '<b>a)</b> $\\left(\\sqrt{11}+\\sqrt{7}\\right)\\left(\\sqrt{11}-\\sqrt{7}\\right)$; '
          '<b>b)</b> $\\left(\\sqrt{5}+\\sqrt{3}\\right)^{2}$.</p>',
@@ -182,13 +182,13 @@ B2 = [
    'Az egymásba ágyazott gyököket a $\\sqrt[m]{\\sqrt[n]{a}}=\\sqrt[m\\cdot n]{a}$ azonosság '
    'bontja fel. Ha a gyökök alatt hatványok is vannak, a legbiztosabb út a <b>közös '
    'gyökkitevőre hozás</b> — pontosan úgy, ahogy a törteket közös nevezőre hozzuk.',
-   doboz("pelda", "Veszélyterem-szimuláció — beágyazott gyök",
+   doboz("pelda", "Vészterem-szimuláció — beágyazott gyök",
          '<p>Egyszerűsítsd ($x&gt;0$): $\\sqrt[3]{x\\sqrt{x}}$.</p>',
          hid="pelda-beagyazott",
          lenyilo=("Megoldás",
                   '<p>Belül: $x\\cdot\\sqrt{x}=\\sqrt{x^{2}}\\cdot\\sqrt{x}=\\sqrt{x^{3}}$. Így</p>'
                   '$$\\sqrt[3]{\\sqrt{x^{3}}}=\\sqrt[6]{x^{3}}=\\sqrt[6:3]{x^{3:3}}=\\sqrt{x}.$$')),
-   doboz("pelda", "Veszélyterem-szimuláció — összehasonlítás",
+   doboz("pelda", "Vészterem-szimuláció — összehasonlítás",
          '<p>Állítsd növekvő sorrendbe: $\\sqrt{2}$, $\\sqrt[3]{3}$, $\\sqrt[6]{10}$.</p>',
          hid="pelda-osszehasonlitas",
          lenyilo=("Megoldás",
@@ -203,7 +203,7 @@ B2 = [
         jo="✔ A gyökkitevők összeszorzódnak: 2 · 3 = 6.",
         nem="✘ Egymásba ágyazott gyököknél a gyökkitevők szorzódnak: 2 · 3 = 6."),
    gyakorolj(FGY + "#alap-6", "A 6–11", FGY + "#kozep-5", "K 5–9"),
-   brief('<b>Storm:</b> Egy dolog maradt, ami elrontja a jelentéseinket: a <b>nevezőben álló gyök</b>. '
+   brief('<b>Vihar Vera:</b> Egy dolog maradt, ami elrontja a jelentéseinket: a <b>nevezőben álló gyök</b>. '
          'Ki kell onnan takarítani — és közben rájössz, hogy a hatvány és a gyök valójában '
          'ugyanaz a művelet, két különböző jelöléssel.',
          outro=True),
@@ -214,7 +214,7 @@ B2 = [
 
 B3 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Storm:</b> Utolsó lépés a viharok fejezetében — és a legelegánsabb. '
+   brief('<b>Vihar Vera:</b> Utolsó lépés a viharok fejezetében — és a legelegánsabb. '
          'Megszabadulunk a nevezőben álló gyököktől, aztán felfedezzük, hogy a '
          '$\\sqrt[n]{a^{m}}$ jelölés valójában <b>hatvány</b>: $a^{m/n}$. Ettől kezdve nincs '
          'külön gyök- és külön hatványszabály — <b>egyetlen</b> szabályrendszer van. '
@@ -234,7 +234,7 @@ B3 = [
  ("Egytagú nevező", [
    'Ha a nevezőben egyetlen gyökös tag áll, olyan tényezővel bővítünk, amitől a nevezőben '
    '<b>teljes hatvány</b> keletkezik a gyökjel alatt.',
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Gyöktelenítsd: <b>a)</b> $\\dfrac{6}{\\sqrt{3}}$; <b>b)</b> $\\dfrac{5}{\\sqrt[3]{4}}$.</p>',
          hid="pelda-egytagu",
          lenyilo=("Megoldás",
@@ -250,7 +250,7 @@ B3 = [
    'Ha a nevező kéttagú, a $\\left(\\sqrt a+\\sqrt b\\right)\\left(\\sqrt a-\\sqrt b\\right)=a-b$ '
    'azonosságot használjuk: az összeg <b>konjugáltja</b> a különbség (és fordítva). '
    'A bővítés után a nevezőből eltűnik a gyök.',
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Gyöktelenítsd: <b>a)</b> $\\dfrac{4}{\\sqrt{7}-\\sqrt{3}}$; '
          '<b>b)</b> $\\dfrac{10}{3+\\sqrt{7}}$.</p>',
          hid="pelda-kettagu",
@@ -259,7 +259,7 @@ B3 = [
                   '$$\\frac{4\\left(\\sqrt7+\\sqrt3\\right)}{4}=\\sqrt7+\\sqrt3.$$'
                   '<p><b>b)</b> A konjugált $3-\\sqrt7$, a nevező $9-7=2$:</p>'
                   '$$\\frac{10\\left(3-\\sqrt7\\right)}{2}=5\\left(3-\\sqrt7\\right)=15-5\\sqrt7.$$')),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>„A konjugálttal bővítés annyi, hogy átírom a nevező előjelét." — <b>Hamis.</b> '
          'A törtet a konjugálttal <b>bővíteni</b> kell, tehát a <b>számlálót is</b> szorozni:</p>'
          '$$\\frac{4}{\\sqrt7-\\sqrt3}\\neq\\frac{4}{\\sqrt7+\\sqrt3}.$$'
@@ -285,7 +285,7 @@ B3 = [
          '$(-8)^{1/3}$ és $(-8)^{2/6}$ ugyanaz kellene, hogy legyen. Csakhogy '
          '$\\sqrt[3]{-8}=-2$, míg $\\sqrt[6]{(-8)^{2}}=\\sqrt[6]{64}=2$. '
          'Ezért a tört kitevőt <b>csak pozitív alapra</b> értelmezzük.</p>'),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Számítsd ki: $8^{\\frac{2}{3}}$, $16^{-\\frac{3}{4}}$, $32^{0{,}4}$.</p>',
          hid="pelda-racionalis-kitevo",
          lenyilo=("Megoldás",
@@ -302,7 +302,7 @@ B3 = [
  ("Hatvány és gyök együtt", [
    'A tört kitevő igazi haszna, hogy a <b>vegyes</b> kifejezéseket egyetlen nyelvre fordítja: '
    'átírunk mindent hatványra, összeadjuk a kitevőket, majd — ha kell — visszaírjuk gyökös alakba.',
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Egyszerűsítsd ($a&gt;0$): $\\dfrac{\\sqrt[3]{a^{2}}\\cdot\\sqrt[6]{a}}{\\sqrt{a}}$.</p>',
          hid="pelda-vegyes",
          lenyilo=("Megoldás",
@@ -311,10 +311,10 @@ B3 = [
                   '$$\\frac{4}{6}+\\frac{1}{6}-\\frac{3}{6}=\\frac{2}{6}=\\frac13,$$'
                   '<p>tehát az eredmény $a^{1/3}=\\sqrt[3]{a}$.</p>')),
    gyakorolj(FGY + "#alap-12", "A 12–17", FGY + "#kozep-10", "K 10–14"),
-   brief('<b>Professor X:</b> Storm elvégezte a dolgát, kadét — innen én veszem át. '
+   brief('<b>X. Károly professzor:</b> Vihar Vera elvégezte a dolgát, kadét — innen én veszem át. '
          'Van egy egyenlet, amit a valós számok minden ereje sem tud megoldani: $x^{2}=-1$. '
          'Nem azért, mert nehéz. Azért, mert a megoldása <b>nincs benne</b> abban a világban, '
-         'amit eddig ismertél. Sinister már régen kilépett ebből a világból. '
+         'amit eddig ismertél. Dr. Baljós már régen kilépett ebből a világból. '
          'Ideje utánamennünk.',
          outro=True),
  ]),

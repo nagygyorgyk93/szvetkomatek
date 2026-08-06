@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""2e/02 — B altema: a masodfoku fuggveny (B1) es vizsgalata (B2). Mentor: Cyclops."""
+"""2e/02 — B altema: a masodfoku fuggveny (B1) es vizsgalata (B2). Mentor: Küklopsz."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_fuggvenyek
@@ -53,9 +53,9 @@ SVG_NEG = svg_fuggvenyek(
 
 B1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Cyclops:</b> Az optikai sugaram nem egyenesen halad, ha közeg téríti el — '
+   brief('<b>Küklopsz:</b> Az optikai sugaram nem egyenesen halad, ha közeg téríti el — '
          'hanem <b>parabola</b> mentén. Ugyanígy repül a kilőtt lövedék, esik a labda, '
-         'és így terjed Sinister energiahulláma is. Aki ismeri ezt a görbét, egyetlen '
+         'és így terjed Dr. Baljós energiahulláma is. Aki ismeri ezt a görbét, egyetlen '
          'pillantással megmondja, hol a legmagasabb pont, hol éri a földet, és hogy '
          'egyáltalán eléri-e. Ezért kezdünk a <b>képpel</b>, nem a képlettel.'),
    'Az előző egységekben azt kérdeztük: <b>hol nulla</b> a kifejezés. Most azt nézzük, '
@@ -101,7 +101,7 @@ B1 = [
                   '=a\\left(x+\\frac{b}{2a}\\right)^{2}-\\frac{b^{2}}{4a}+c.$$'
                   '<p>Az utolsó két tag összevonva $-\\dfrac{b^{2}-4ac}{4a}=-\\dfrac{D}{4a}$ — '
                   'ugyanaz a teljes négyzetté alakítás, mint a megoldóképletnél.</p>')),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Írd kanonikus alakba, és add meg a csúcspontot: $y=x^{2}-6x+5$.</p>',
          hid="pelda-kanonikus",
          lenyilo=("Megoldás",
@@ -141,7 +141,7 @@ B1 = [
         jo="✔ a = −1 < 0 (lefelé nyílik) és D = 4 − 20 = −16 < 0 → nincs metszéspont.",
         nem="✘ Számold ki D-t: 4 − 20 = −16 < 0, és a < 0 → a parabola végig a tengely alatt van."),
    gyakorolj(FGY + "#alap-1", "A 1–5", FGY + "#kozep-1", "K 1–4"),
-   brief('<b>Cyclops:</b> A kép megvan. Most tegyük rendszerbe: van egy fix szempontsor, '
+   brief('<b>Küklopsz:</b> A kép megvan. Most tegyük rendszerbe: van egy fix szempontsor, '
          'amit minden másodfokú függvényen végig kell futtatni. Ha ezt a listát fejből '
          'tudod, a dolgozat legnagyobb pontszámú feladatát rutinból megcsinálod.',
          outro=True),
@@ -160,10 +160,10 @@ SVG_VIZSG = svg_fuggvenyek(
 
 B2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Cyclops:</b> A csapatnak protokoll kell, nem ötletelés. A függvényvizsgálat '
+   brief('<b>Küklopsz:</b> A csapatnak protokoll kell, nem ötletelés. A függvényvizsgálat '
          'is protokoll: ugyanaz a néhány kérdés, mindig ugyanabban a sorrendben. '
          'Ha végigmész rajta, a végén ott a teljes kép — és a grafikon már csak '
-         'a jegyzőkönyv. Sinister energiagörbéit is így mérjük be.'),
+         'a jegyzőkönyv. Dr. Baljós energiagörbéit is így mérjük be.'),
  ]),
 
  ("A vizsgálat protokollja", [
@@ -189,7 +189,7 @@ B2 = [
  ]),
 
  ("Teljes kidolgozott vizsgálat", [
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Vizsgáld meg és ábrázold: $y=x^{2}-2x-3$.</p>',
          hid="pelda-teljes-vizsgalat",
          lenyilo=("Megoldás — lépésről lépésre",
@@ -205,7 +205,7 @@ B2 = [
    abra(SVG_VIZSG, "A grafikonhoz elég három adat: a <b>két zérushely</b>, a "
                    "<b>csúcspont</b> és az <b>$y$-tengelymetszet</b>. A parabola "
                    "szimmetrikus az $x=1$ egyenesre."),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>Három visszatérő hiba:</p>'
          '<ol class="reszfeladatok">'
          '<li><b>A csúcs $y$-koordinátáját „megsaccolni".</b> Nem a két zérushely '
@@ -223,7 +223,7 @@ B2 = [
  ]),
 
  ("Ha a parabola lefelé nyílik", [
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Vizsgáld meg: $y=-x^{2}+4x-3$.</p>',
          hid="pelda-konkav",
          lenyilo=("Megoldás",
@@ -240,7 +240,7 @@ B2 = [
    'A másodfokú függvény leggyakoribb valós alkalmazása: valamit <b>maximalizálni</b> '
    'vagy <b>minimalizálni</b> kell. A recept: írd fel a keresett mennyiséget egyetlen '
    'változó másodfokú függvényeként, majd keresd meg a csúcspontot.',
-   doboz("pelda", "Veszélyterem-szimuláció — a kerítés",
+   doboz("pelda", "Vészterem-szimuláció — a kerítés",
          '<p>A kampusz fala mellé téglalap alakú edzőterületet kerítenek be. A fal felőli '
          'oldalra nem kell kerítés, a másik három oldalra összesen $20$ méter kerítés áll '
          'rendelkezésre. Mekkora a lehető legnagyobb bekeríthető terület?</p>',
@@ -260,7 +260,7 @@ B2 = [
         jo="✔ u = −12/(−2) = 6, és T(6) = −36 + 72 = 36.",
         nem="✘ A csúcs u = −b/(2a) = −12/(−2) = 6, ahol T(6) = 36."),
    gyakorolj(FGY + "#alap-6", "A 6–11", FGY + "#kozep-5", "K 5–10"),
-   brief('<b>Cyclops:</b> Eddig azt kérdeztük, <b>hol nulla</b> a függvény. A következő '
+   brief('<b>Küklopsz:</b> Eddig azt kérdeztük, <b>hol nulla</b> a függvény. A következő '
          'lépés: hol <b>pozitív</b> és hol <b>negatív</b>? Ez már nem egy pont, hanem '
          'egy egész <b>tartomány</b> — és pontosan ilyen a védőpajzs hatósugara is. '
          'Jöjjenek a másodfokú egyenlőtlenségek.',
@@ -275,14 +275,14 @@ KI = [
      cim="A másodfokú függvény és grafikonja", cim_tiszta="A másodfokú függvény és grafikonja",
      alcim="A parabola és a főegyüttható szerepe, a kanonikus alak és a csúcspont, "
            "valamint a parabola és az $x$-tengely hat lehetséges kölcsönös helyzete.",
-     chip="Az X-Faktor · 5/8", szakaszok=B1,
+     chip="Az M-Faktor · 5/8", szakaszok=B1,
      elozo=(FGY.replace("fuggveny", "egyenletek"), "Feladatok — másodfokú egyenletek"),
      kovetkezo=("tananyag-fuggvenyvizsgalat.html", "A másodfokú függvény vizsgálata")),
  lap(**T, fajl="tananyag-fuggvenyvizsgalat.html",
      cim="A másodfokú függvény vizsgálata", cim_tiszta="A másodfokú függvény vizsgálata",
      alcim="A vizsgálat rögzített szempontsora, teljes kidolgozott példák konvex és "
            "konkáv esetre, valamint szélsőérték-feladatok valós helyzetekben.",
-     chip="Az X-Faktor · 6/8", szakaszok=B2,
+     chip="Az M-Faktor · 6/8", szakaszok=B2,
      elozo=("tananyag-masodfoku-fuggveny.html", "A másodfokú függvény és grafikonja"),
      kovetkezo=(FGY, "Feladatok — másodfokú függvény")),
 ]

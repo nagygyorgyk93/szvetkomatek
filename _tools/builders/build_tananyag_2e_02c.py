@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """2e/02 — C altema: masodfoku egyenlotlensegek (C1) es a masodfoku-linearis rendszer (C2).
-Mentor: Cyclops."""
+Mentor: Küklopsz."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_fuggvenyek
@@ -46,7 +46,7 @@ SVG_RENDSZER = svg_fuggvenyek(
 
 C1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Cyclops:</b> A védőpajzs nem egyetlen pontban működik, hanem egy egész '
+   brief('<b>Küklopsz:</b> A védőpajzs nem egyetlen pontban működik, hanem egy egész '
          '<b>tartományon</b>. Az „hol nulla?” kérdésre egy vagy két szám a válasz — '
          'a „hol pozitív?” kérdésre viszont intervallumok. És itt jön a jó hír: '
          'ha megvan a parabola képe, az egyenlőtlenséget <b>le lehet olvasni</b>. '
@@ -85,7 +85,7 @@ C1 = [
          'oldalán van. Ha $a&gt;0$, a kifejezés minden $x$-re pozitív; ha $a&lt;0$, '
          'minden $x$-re negatív.</p>',
          hid="tetel-egyenlotlenseg-D"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg: <b>a)</b> $x^{2}-5x+6&gt;0$; <b>b)</b> $x^{2}-5x+6\\le 0$; '
          '<b>c)</b> $x^{2}-4x+4&gt;0$; <b>d)</b> $x^{2}+x+1&gt;0$.</p>',
          hid="pelda-egyenlotlensegek",
@@ -108,7 +108,7 @@ C1 = [
  ]),
 
  ("Negatív főegyüttható és a szigorú végpontok", [
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg: <b>a)</b> $-x^{2}+3x-2\\ge 0$; <b>b)</b> $2x^{2}-7x+3&lt;0$.</p>',
          hid="pelda-negativ-fo",
          lenyilo=("Megoldás",
@@ -119,7 +119,7 @@ C1 = [
                   '<p><b>b)</b> $D=49-24=25$, a gyökök $\\tfrac12$ és $3$. Mivel $a=2&gt;0$ '
                   'és negatív értéket keresünk, a gyökök közötti <b>nyílt</b> intervallum '
                   'a megoldás: $x\\in\\left(\\tfrac12;3\\right)$.</p>')),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>Három klasszikus hiba:</p>'
          '<ol class="reszfeladatok">'
          '<li><b>Negatív számmal szorozni a reláció megfordítása nélkül.</b> '
@@ -135,7 +135,7 @@ C1 = [
         jo="✔ a < 0, a parabola lefelé nyílik → a gyökök között van a tengely fölött.",
         nem="✘ Szorozz −1-gyel (a jel fordul): x² − 4 < 0, azaz x ∈ (−2; 2)."),
    gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–5"),
-   brief('<b>Cyclops:</b> Utolsó feladat a fejezetben. Eddig egyetlen görbét néztünk. '
+   brief('<b>Küklopsz:</b> Utolsó feladat a fejezetben. Eddig egyetlen görbét néztünk. '
          'Most kettőt teszünk egymásra — egy parabolát és egy egyenest —, és megkeressük, '
          '<b>hol találkoznak</b>. Ez a bemérés utolsó lépése.',
          outro=True),
@@ -146,7 +146,7 @@ C1 = [
 
 C2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Cyclops:</b> Két feltétel, két egyenlet. Az egyik <b>lineáris</b>, a másik '
+   brief('<b>Küklopsz:</b> Két feltétel, két egyenlet. Az egyik <b>lineáris</b>, a másik '
          '<b>másodfokú</b>. Tavaly két egyenes metszéspontját kerested — most egy '
          'egyenes és egy parabola találkozási pontjait. A módszer ugyanaz, mint akkor: '
          '<b>behelyettesítés</b>. A különbség csak annyi, hogy a végén másodfokú '
@@ -163,7 +163,7 @@ C2 = [
          '<p><b>3.</b> Oldd meg, majd <b>minden</b> gyökhöz számold ki a másik ismeretlent is.</p>'
          '<p><b>4.</b> A megoldás <b>számpárokból</b> áll: $(x_{1};y_{1})$ és $(x_{2};y_{2})$.</p>',
          hid="tetel-rendszer-menete"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg a rendszert: $y=x^{2}-2x$ &nbsp;és&nbsp; $y=x-2$.</p>',
          hid="pelda-rendszer",
          lenyilo=("Megoldás",
@@ -186,7 +186,7 @@ C2 = [
          '<p><b>$D=0$:</b> az egyenes <b>érinti</b> a parabolát → egy (kettős) megoldás.</p>'
          '<p><b>$D&lt;0$:</b> nincs közös pontjuk → a rendszernek <b>nincs valós megoldása</b>.</p>',
          hid="tetel-rendszer-esetek"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Hány közös pontja van az $y=x^{2}$ parabolának <b>a)</b> az $y=2x-1$, '
          '<b>b)</b> az $y=2x-5$ egyenessel?</p>',
          hid="pelda-metszespontok",
@@ -204,7 +204,7 @@ C2 = [
  ("Ha összeg és szorzat van megadva", [
    'Van egy különösen elegáns eset, ahol a Viète-képletek jönnek segítségül: ha a két '
    'ismeretlen <b>összegét</b> és <b>szorzatát</b> ismerjük.',
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg: $x+y=7$ &nbsp;és&nbsp; $x\\cdot y=12$.</p>',
          hid="pelda-osszeg-szorzat",
          lenyilo=("Megoldás",
@@ -214,7 +214,7 @@ C2 = [
                   '<p>Innen $D=49-48=1$, tehát $t_{1}=4$ és $t_{2}=3$.</p>'
                   '<p><b>Megoldás:</b> $(3;4)$ és $(4;3)$ — a rendszer szimmetrikus, ezért '
                   'a két szám <b>felcserélhető</b>.</p>')),
-   doboz("pelda", "Veszélyterem-szimuláció — vegyes rendszer",
+   doboz("pelda", "Vészterem-szimuláció — vegyes rendszer",
          '<p>Oldd meg: $x-y=2$ &nbsp;és&nbsp; $x^{2}+y^{2}=10$.</p>',
          hid="pelda-vegyes-rendszer",
          lenyilo=("Megoldás",
@@ -224,7 +224,7 @@ C2 = [
                   '<p>Innen $y_{1}=1$ és $y_{2}=-3$, tehát $x_{1}=3$ és $x_{2}=-1$.</p>'
                   '<p><b>Megoldás:</b> $(3;1)$ és $(-1;-3)$. '
                   '<b>Ellenőrzés:</b> $9+1=10$ ✔ és $1+9=10$ ✔</p>')),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>A leggyakoribb hiba: <b>megállni $x$-nél</b>. A rendszer megoldása nem szám, '
          'hanem <b>számpár</b> — minden $x$-hez ki kell számolni a hozzá tartozó $y$-t. '
          'És vigyázz: a visszahelyettesítést a <b>lineáris</b> egyenletbe végezd, '
@@ -234,9 +234,9 @@ C2 = [
         jo="✔ A t² − 5t + 6 = 0 egyenlet gyökei 2 és 3; a rendszer szimmetrikus.",
         nem="✘ Írd fel a t² − 5t + 6 = 0 egyenletet: gyökei 2 és 3, tehát mindkét sorrend megoldás."),
    gyakorolj(FGY + "#alap-7", "A 7–12", FGY + "#kozep-6", "K 6–10"),
-   brief('<b>Beast:</b> Kadétok, jó munka — a Parabola-csapást elhárítottuk. De miközben '
+   brief('<b>Dr. Bestia:</b> Kadétok, jó munka — a Parabola-csapást elhárítottuk. De miközben '
          'ti a röppályákkal foglalkoztatok, én a laborban mértem valamit, és nem tetszik: '
-         'Sinister vírusa nem másodfokon terjed többé. <b>Megduplázódik</b> minden '
+         'Dr. Baljós vírusa nem másodfokon terjed többé. <b>Megduplázódik</b> minden '
          'lépésben. Az ilyen növekedést a másodfokú függvény már nem írja le — sokkal '
          'gyorsabb annál. A következő küldetés az <b>Evolúciós Ugrás</b>, és a fegyverünk '
          'az exponenciális függvény lesz.',
@@ -251,7 +251,7 @@ KI = [
      cim="Másodfokú egyenlőtlenségek", cim_tiszta="Másodfokú egyenlőtlenségek",
      alcim="A megoldás leolvasása a parabola képéről, a három diszkrimináns-eset, "
            "a negatív főegyüttható kezelése és az intervallumos írásmód.",
-     chip="Az X-Faktor · 7/8", szakaszok=C1,
+     chip="Az M-Faktor · 7/8", szakaszok=C1,
      elozo=("feladatok-masodfoku-fuggveny.html", "Feladatok — másodfokú függvény"),
      kovetkezo=("tananyag-masodfoku-linearis-rendszer.html",
                 "Másodfokú és lineáris egyenletből álló rendszer")),
@@ -260,7 +260,7 @@ KI = [
      cim_tiszta="Másodfokú és lineáris egyenletből álló rendszer",
      alcim="A behelyettesítés módszere, a metszéspontok száma a diszkrimináns alapján, "
            "valamint az összeg–szorzat típusú rendszerek Viète-képletekkel.",
-     chip="Az X-Faktor · 8/8", szakaszok=C2,
+     chip="Az M-Faktor · 8/8", szakaszok=C2,
      elozo=("tananyag-masodfoku-egyenlotlensegek.html", "Másodfokú egyenlőtlenségek"),
      kovetkezo=(FGY, "Feladatok — egyenlőtlenségek és rendszerek")),
 ]

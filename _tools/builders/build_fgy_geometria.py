@@ -126,7 +126,7 @@ NEHEZ = [
   None, "$70^\\circ,\\ 110^\\circ,\\ 70^\\circ,\\ 110^\\circ$."),
 ]
 
-JOKER = ("<b>Kang tükör-csapdája.</b> Kang azt állítja: „Rajzoltam egy háromszöget, amelynek két derékszöge van — a "
+JOKER = ("<b>Kán tükör-csapdája.</b> Kán azt állítja: „Rajzoltam egy háromszöget, amelynek két derékszöge van — a "
   "Tükör-világ szabályai szerint ez lehetséges.” Cáfold meg egyetlen mondattal, a belső szögösszegre hivatkozva! "
   "Majd döntsd el: <b>gömbfelületen</b> (nem síkban) létezhet-e ilyen háromszög?",
   "Síkban nem: két derékszög már $180^\\circ$, a harmadik szögnek nem maradna hely (a szögösszeg pontosan "

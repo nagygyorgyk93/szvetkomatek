@@ -106,7 +106,7 @@ NEHEZ = [
   "Mekkorák a befogók?", None, "$12$ cm és $5$ cm."),
 ]
 
-JOKER = ("<b>Sinister vírus-kódja.</b> A rendszer ezt a levezetést adta ki: "
+JOKER = ("<b>Dr. Baljós vírus-kódja.</b> A rendszer ezt a levezetést adta ki: "
          "$$x^{2}&gt;4\\ \\Rightarrow\\ x&gt;2$$ "
          "Miért hibás? Adj ellenpéldát, és írd fel a helyes megoldást!",
          "Ellenpélda: $x=-5$, mert $25&gt;4$ igaz, de $-5&gt;2$ hamis. "

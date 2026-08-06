@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """2e/04 — D altema: szinusz- es koszinusztetel (D1), haromszog megoldasa es
-alkalmazasok (D2). Mentor: Jean Grey."""
+alkalmazasok (D2). Mentor: Szürke Janka."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra
@@ -102,7 +102,7 @@ SVG_TORONY = ('<svg viewBox="0 0 460 240" width="460" height="240" role="img" '
 
 D1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Jean Grey:</b> Bemérés. Ez a legrégibb és legpraktikusabb feladat: '
+   brief('<b>Szürke Janka:</b> Bemérés. Ez a legrégibb és legpraktikusabb feladat: '
          'ismerek <b>néhány</b> adatot egy háromszögből, és tudni akarom a többit. '
          'Nem kell derékszög, nem kell hozzáférnem a célponthoz — elég két mérési pont '
          'és egy szögmérő. Két tétel visz el idáig, és mindegyiknek pontosan megvan '
@@ -135,7 +135,7 @@ D1 = [
          '<b>kétértelmű</b> eset.</li>'
          '</ul>',
          hid="tetel-mikor-szinusz"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg a háromszöget: $\\alpha=40^\\circ$, $\\beta=75^\\circ$, $a=12$. '
          '(A szögfüggvényeket öt, az oldalakat két tizedesre kerekítsd.)</p>',
          hid="pelda-szinusztetel",
@@ -147,7 +147,7 @@ D1 = [
                   '{0{,}64279}\\approx\\boxed{16{,}92}$$'
                   '<p><b>Ellenőrzés:</b> a legnagyobb szög $\\beta=75^\\circ$, és valóban '
                   'a $b$ a leghosszabb oldal ✔</p>')),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p><b>A kétértelmű (SSA) eset.</b> Ha két oldalt és a <b>kisebbikkel</b> '
          'szemközti szöget ismerjük, két különböző háromszög is illeszkedhet az adatokra — '
          'mert $\\sin\\varphi=\\sin(180^\\circ-\\varphi)$.</p>'
@@ -172,7 +172,7 @@ D1 = [
          '</ul>'
          '<p>Utána már van teljes pár, tehát a többit a szinusztétellel is folytathatod.</p>',
          hid="tetel-mikor-koszinusz"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p><b>a)</b> $b=7$, $c=10$, $\\alpha=60^\\circ$ — mekkora $a$?<br>'
          '<b>b)</b> $a=6$, $b=7$, $c=9$ — mekkora $\\gamma$?</p>',
          hid="pelda-koszinusztetel",
@@ -183,7 +183,7 @@ D1 = [
                   '$$\\cos\\gamma=\\frac{36+49-81}{2\\cdot 6\\cdot 7}=\\frac{4}{84}'
                   '\\approx 0{,}04762\\ \\Longrightarrow\\ \\gamma\\approx\\boxed{87{,}27^\\circ}$$'
                   '<p>A $\\cos\\gamma$ <b>pozitív</b>, tehát a szög hegyesszög — épp csak.</p>')),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p><b>A képlet nem szimmetrikus!</b> A bal oldalon álló oldal mindig azzal a '
          'szöggel van párban, amely a jobb oldalon a koszinuszban szerepel. A '
          '$-2bc\\cos\\alpha$ tagban a $b$ és a $c$ épp a <b>másik két</b> oldal.</p>'
@@ -202,7 +202,7 @@ D1 = [
 
 D2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Jean Grey:</b> Utolsó bevetés. Most már mindkét tétel a kezedben van — '
+   brief('<b>Szürke Janka:</b> Utolsó bevetés. Most már mindkét tétel a kezedben van — '
          'a kérdés csak az, <b>melyiket mikor</b>. Van rá egy egyszerű recept, és ha '
          'követed, bármelyik háromszög megoldható. Utána pedig jön a legjobb rész: '
          'ezzel a tudással megmérhető egy torony magassága anélkül, hogy '
@@ -227,7 +227,7 @@ D2 = [
          '$180^\\circ$, és teljesül a <b>háromszög-egyenlőtlenség</b>: bármely két oldal '
          'összege nagyobb a harmadiknál.</p>',
          hid="tetel-recept"),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p><b>Miért a legnagyobb oldal szögével kezdünk SSS-nél?</b> Mert az lehet '
          'tompaszög — és a koszinusztétel a tompaszöget is helyesen adja vissza '
          '(negatív koszinusszal). Ha utána a szinusztételt már csak <b>kisebb</b> '
@@ -244,7 +244,7 @@ D2 = [
          '$$T=\\frac{1}{2}ab\\sin\\gamma=\\frac{1}{2}bc\\sin\\alpha=\\frac{1}{2}ac\\sin\\beta$$'
          '<p>A szögnek mindig a <b>két megadott oldal közötti</b> szögnek kell lennie.</p>',
          hid="tetel-terulet"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Mekkora annak a háromszögnek a területe, amelyben $a=8$, $b=11$ és a '
          'közbezárt szög $\\gamma=35^\\circ$?</p>',
          hid="pelda-terulet",
@@ -255,7 +255,7 @@ D2 = [
  ]),
 
  ("Alkalmazások: bemérés a terepen", [
-   doboz("pelda", "Veszélyterem-szimuláció — a torony magassága",
+   doboz("pelda", "Vészterem-szimuláció — a torony magassága",
          '<p>Egy torony tövéhez nem tudunk odajutni. Az $A$ pontból a torony '
          'csúcsát $32^\\circ$-os emelkedési szögben látjuk; $50$ métert közelebb menve, '
          'a $B$ pontból már $48^\\circ$-osban. Milyen magas a torony?</p>',
@@ -273,7 +273,7 @@ D2 = [
                   '\\approx\\boxed{71{,}44\\ \\text{m}}$$')),
    abra(SVG_TORONY, "A két mérési pont és a torony egyetlen háromszöget alkot — "
                     "a $16^\\circ$-os csúcsszög a két emelkedési szög <b>különbsége</b>."),
-   doboz("pelda", "Veszélyterem-szimuláció — navigáció",
+   doboz("pelda", "Vészterem-szimuláció — navigáció",
          '<p>Egy hajó a kikötőből $30$ km-t halad egyenesen, majd $115^\\circ$-kal '
          'elfordul, és további $40$ km-t tesz meg. Milyen messze van a kikötőtől?</p>',
          hid="pelda-navigacio",
@@ -298,7 +298,7 @@ D2 = [
         jo="✔ T = ½ · 6 · 9 · sin 30° = 27 · 0,5 = 13,5.",
         nem="✘ T = ½ab sin γ = ½ · 6 · 9 · 0,5 = 13,5."),
    gyakorolj(FGY + "#alap-7", "A 7–14", FGY + "#kozep-5", "K 5–12"),
-   brief('<b>Jean Grey:</b> A Fázisugrás teljesítve, kadétok — és ezzel a második évad '
+   brief('<b>Szürke Janka:</b> A Fázisugrás teljesítve, kadétok — és ezzel a második évad '
          'is a végéhez ért. Ez az anyag a <b>4. írásbeli dolgozat</b> teljes terjedelme. '
          'Nézd át a taktikai memóriakártyát, aztán jöhet a terepküldetés: '
          'egy valódi jelet kell megfejtened, és be kell mérned egy bázist.',

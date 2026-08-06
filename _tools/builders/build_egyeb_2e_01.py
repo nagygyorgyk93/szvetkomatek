@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""2e/01 — összefoglaló (F4), terepküldetés (F5p), Danger Room házi (F6h), témakör-index (F5)."""
+"""2e/01 — összefoglaló (F4), terepküldetés (F5p), Vészterem házi (F6h), témakör-index (F5)."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tananyag_common import lap, doboz, brief, GYOKER, mat
@@ -34,7 +34,7 @@ for nev, k, v in [
   ("TIII3", expand((6+8*I)*(2-3*I)), 36-2*I),
   ("TIII4", simplify(20/(3-I)), 6+2*I),
   ("TIII5", expand(I**2027+I**2026), -1-I),
-  # Danger Room
+  # Vészterem
   ("DA1", Integer(3)**-2, R(1,9)), ("DA1b", R(2,5)**-1, R(5,2)),
   ("DA1c", Integer(-2)**-3, R(-1,8)),
   ("DA3a", sqrt(225), 15), ("DA3c", root(625,4), 5),
@@ -177,7 +177,7 @@ OSSZ = [
         'megoldásai $\\pm 3i$.</p>'),
   '<div class="gyakorolj"><span class="ikon">🎯</span><p>Élesben: a '
   '<a href="feladatok-komplex-szamok.html#gyak-dolgozat">gyakorló dolgozattal</a> mérd fel magad, '
-  'majd indulj a <a href="terepkuldetes.html">Genoshai terepküldetésre</a>!</p></div>',
+  'majd indulj a <a href="terepkuldetes.html">Geno-szigeti terepküldetésre</a>!</p></div>',
  ]),
 ]
 
@@ -188,15 +188,15 @@ lap(**T, fajl="osszefoglalo.html", cim="Taktikai memóriakártya",
     chip="A Képzelet Határa · összefoglaló", chip_tipus="összefoglaló",
     szakaszok=[("📇 " + OSSZ[0][0], OSSZ[0][1])] + OSSZ[1:],
     elozo=("feladatok-komplex-szamok.html", "Feladatok — komplex számok"),
-    kovetkezo=("terepkuldetes.html", "Genoshai terepküldetés"))
+    kovetkezo=("terepkuldetes.html", "Geno-szigeti terepküldetés"))
 print("✓ osszefoglalo.html")
 
 # ==================================================================== F5p
 
 TEREP = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Professor X:</b> Kadét, ez már nem szimuláció. A Cerebro bemérte Sinister bázisát '
-         '<b>Genosha</b> szigetén: egy rezonancia-torony, amely az M-Hullámot erősíti. '
+   brief('<b>X. Károly professzor:</b> Kadét, ez már nem szimuláció. Az UMOTRON bemérte Dr. Baljós bázisát '
+         '<b>Geno-sziget</b> szigetén: egy rezonancia-torony, amely az M-Hullámot erősíti. '
          'Három védelmi réteget kell áttörnie — mindegyikhez más matematikai fegyver kell. '
          'A jelentését <b>egyben</b> adja le: minden fázis végén írja fel a kulcsértéket.'),
    '<p class="lead">Ez a küldetés a teljes témakört használja: hatványozást, gyökvonást és '
@@ -240,24 +240,24 @@ TEREP = [
          '<li>A stabilizáló kód $z_{1}\\cdot z_{2}$. Számítsd ki!</li>'
          '<li>A zárókulcs az a $z$, amelyre $(3-i)z=20$. Oldd meg!</li>'
          '<li>Az önmegsemmisítő szekvencia $i^{2027}+i^{2026}$. Mennyi?</li>'
-         '<li><b>Sinister utolsó csapdája:</b> a kapu csak akkor marad nyitva, ha megtalálod '
+         '<li><b>Dr. Baljós utolsó csapdája:</b> a kapu csak akkor marad nyitva, ha megtalálod '
          'azt a $z$ komplex számot, amelyre $2z+3\\overline{z}=25-5i$.</li>'
          '</ol>'),
    doboz("erdekesseg", "Jelentés a Főhadiszállásnak",
          '<p>Zárásként foglald össze <b>egyetlen táblázatban</b> a három fázis kulcsértékeit: '
          'az energiaszintet, a két gyöktelenített frekvenciát és a kapu zárókulcsát. '
          'Írj mellé <b>2–3 mondatot</b> arról, melyik fázisnál melyik azonosságot használtad — '
-         'a Professor X a gondolatmenetre is kíváncsi, nem csak a számokra.</p>'),
-   brief('<b>Professor X:</b> Ha a hat kulcsérték helyes, a torony leáll, és Genosha felett '
-         'elül az M-Hullám. De ne dőljön hátra, kadét: Sinister nem lineárisan gondolkodik. '
+         'az X. Károly professzor a gondolatmenetre is kíváncsi, nem csak a számokra.</p>'),
+   brief('<b>X. Károly professzor:</b> Ha a hat kulcsérték helyes, a torony leáll, és Geno-sziget felett '
+         'elül az M-Hullám. De ne dőljön hátra, kadét: Dr. Baljós nem lineárisan gondolkodik. '
          'A következő támadás <b>másodfokon</b> érkezik — és ott már a röppályát is ki kell '
-         'számolnia. Wolverine és Cyclops készen áll.', outro=True),
+         'számolnia. Nagol és Küklopsz készen áll.', outro=True),
  ]),
 ]
 
-lap(**T, fajl="terepkuldetes.html", cim="Genoshai terepküldetés",
-    cim_tiszta="Genoshai terepküldetés", itt="Genoshai terepküldetés",
-    alcim="Háromfázisú bevetés Sinister rezonancia-tornya ellen: hatványok, gyöktelenített "
+lap(**T, fajl="terepkuldetes.html", cim="Geno-szigeti terepküldetés",
+    cim_tiszta="Geno-szigeti terepküldetés", itt="Geno-szigeti terepküldetés",
+    alcim="Háromfázisú bevetés Dr. Baljós rezonancia-tornya ellen: hatványok, gyöktelenített "
           "frekvenciák és a dimenziókapu komplex koordinátái.",
     chip="A Képzelet Határa · terepküldetés", chip_tipus="terepküldetés",
     szakaszok=TEREP,
@@ -317,8 +317,8 @@ DR_N = [
  ("Számítsd ki! $(1+i)^{10}$", None, "$32i$"),
 ]
 
-dr_brief = ('<div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Veszélyterem</b> — A Képzelet Határa modul. '
-            'Ez a Danger Room otthoni edzésváltozata: a <b>teljes témakört</b> lefedi — hatványozás, '
+dr_brief = ('<div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — A Képzelet Határa modul. '
+            'Ez a Vészterem otthoni edzésváltozata: a <b>teljes témakört</b> lefedi — hatványozás, '
             'hatványfüggvény, gyökvonás, gyöktelenítés, racionális kitevő és komplex számok. '
             'Haladj a fokozatokon: zöld → sárga → piros. A végeredményt lenyithatod, de előbb '
             'küzdd le magad!</p></div>')
@@ -328,8 +328,8 @@ dr_body = (f'    {dr_brief}\n'
            '\n    <h2 id="kozep">🟡 Középfokozat</h2>\n' + cards(DR_K, "kozep", "kozep") +
            '\n    <h2 id="nehez">🔴 Nehéz fokozat</h2>\n' + cards(DR_N, "nehez", "nehez"))
 
-oldal(**T, fajl="feladatok-hazi.html", cim="Danger Room",
-      h1="🕹️ Danger Room — házi feladatgyűjtemény", itt="Danger Room — házi",
+oldal(**T, fajl="feladatok-hazi.html", cim="Vészterem",
+      h1="🕹️ Vészterem — házi feladatgyűjtemény", itt="Vészterem — házi",
       alcim="Egyetlen, a teljes témakört lefedő házi feladatsor, óraszám-arányosan. "
             "Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
       chipek='<span class="chip alap">Alap</span><span class="chip kozep">Közép</span>'
@@ -369,10 +369,10 @@ K[10] = kartya("feladatok-gyokvonas.html", "🏋️ Gyökvonás — feladatok",
         "Alap · Közép · Nehéz + Joker, a végén <b>gyakorló ellenőrzővel</b>")
 K[11] = kartya("feladatok-komplex-szamok.html", "🏋️ Komplex számok — feladatok",
         "Alap · Közép · Nehéz + Joker, a végén <b>gyakorló dolgozattal</b> a teljes témakörre")
-K[12] = kartya("feladatok-hazi.html", "🕹️ Danger Room — házi feladatok",
+K[12] = kartya("feladatok-hazi.html", "🕹️ Vészterem — házi feladatok",
         "A teljes témakört lefedő házi feladatsor, óraszám-arányosan")
-K[13] = kartya("terepkuldetes.html", "🌋 Genoshai terepküldetés",
-        "Háromfázisú bevetés Sinister rezonancia-tornya ellen — a teljes témakör egyben")
+K[13] = kartya("terepkuldetes.html", "🌋 Geno-szigeti terepküldetés",
+        "Háromfázisú bevetés Dr. Baljós rezonancia-tornya ellen — a teljes témakör egyben")
 K[14] = kartya("osszefoglalo.html", "📇 Taktikai memóriakártya",
         "Minden definíció, azonosság és tipikus csapda egy helyen — dolgozat előtti átfutáshoz")
 
@@ -406,31 +406,31 @@ INDEX = f'''<!DOCTYPE html>
   <p class="alcim">A hatvány kiterjesztése nulla, negatív és tört kitevőre, a gyökvonás és a
   gyöktelenítés, végül a valós számok halmazának kibővítése a komplex számokkal.</p>
   <div class="meta-sor"><span class="chip ora">22 óra</span><span class="statusz kesz">kész</span></div>
-  <div class="brief"><p>🧬 <b>Szektor 01 — A Képzelet Határa.</b> Kiképzők: <b>Storm</b>
-  (hatványok, gyökök) és <b>Professor X</b> (komplex számok). A Nullpont-anomália lezárása után
+  <div class="brief"><p>🧬 <b>Szektor 01 — A Képzelet Határa.</b> Kiképzők: <b>Vihar Vera</b>
+  (hatványok, gyökök) és <b>X. Károly professzor</b> (komplex számok). A Nullpont-anomália lezárása után
   a valóság megremegett: az M-Hullám olyan egyenleteket sodor a kampuszra, amelyeknek a régi
   számhalmazokban <b>nincs megoldásuk</b>. Célod uralni a vihar erejét, visszafejteni a gyökereit —
   majd átlépni a <b>képzelet határán</b>, és megérteni a valóság új, komplex dimenzióit,
-  mielőtt <b>Mister Sinister</b> visszafordíthatatlan jövőt kódol a rendszerbe.</p></div>
+  mielőtt <b>Dr. Baljós</b> visszafordíthatatlan jövőt kódol a rendszerbe.</p></div>
 </div>
 <main class="lap">
   <div class="tartalom">
     <h2>Tananyag</h2>
 
-    <h3>⚡ Hatványozás — Storm</h3>
+    <h3>⚡ Hatványozás — Vihar Vera</h3>
     <div class="racs">
 {K[1]}
 {K[2]}
     </div>
 
-    <h3>🌊 Gyökvonás — Storm</h3>
+    <h3>🌊 Gyökvonás — Vihar Vera</h3>
     <div class="racs">
 {K[3]}
 {K[4]}
 {K[5]}
     </div>
 
-    <h3>🧠 Komplex számok — Professor X</h3>
+    <h3>🧠 Komplex számok — X. Károly professzor</h3>
     <div class="racs">
 {K[6]}
 {K[7]}
@@ -457,7 +457,7 @@ INDEX = f'''<!DOCTYPE html>
 
     <p class="le halvany"><b>Ajánlott sorrend:</b> altémánként előbb a tananyag-egységek sorban,
     utána a hozzá tartozó feladatgyűjtemény; a témakör végén a Taktikai memóriakártya, majd a
-    Genoshai terepküldetés. A Danger Room házi bármikor jöhet — az a saját tempódban végzett edzés.</p>
+    Geno-szigeti terepküldetés. A Vészterem házi bármikor jöhet — az a saját tempódban végzett edzés.</p>
   </div>
 </main>
 <footer class="lablec">

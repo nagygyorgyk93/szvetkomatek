@@ -33,7 +33,7 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief"><p>📡 <b>Jean Grey:</b> Bemérés. Ez a legrégibb és legpraktikusabb feladat: ismerek <b>néhány</b> adatot egy háromszögből, és tudni akarom a többit. Nem kell derékszög, nem kell hozzáférnem a célponthoz — elég két mérési pont és egy szögmérő. Két tétel visz el idáig, és mindegyiknek pontosan megvan a maga helyzete.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/szurke_janka.webp" alt="Szürke Janka — a telepata bemérő-specialista" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Szürke Janka:</b> Bemérés. Ez a legrégibb és legpraktikusabb feladat: ismerek <b>néhány</b> adatot egy háromszögből, és tudni akarom a többit. Nem kell derékszög, nem kell hozzáférnem a célponthoz — elég két mérési pont és egy szögmérő. Két tétel visz el idáig, és mindegyiknek pontosan megvan a maga helyzete.</p></div>
 
     <div class="svgcard">
     <svg viewBox="0 0 400 250" width="400" height="250" role="img" aria-label="A háromszög szokásos jelölései: az oldal a vele szemközti szög betűjét kapja">
@@ -65,13 +65,13 @@
     </div>
 
     <div class="doboz pelda" id="pelda-szinusztetel">
-      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
       <p>Oldd meg a háromszöget: <span class="math inline">\(\alpha=40^\circ\)</span>, <span class="math inline">\(\beta=75^\circ\)</span>, <span class="math inline">\(a=12\)</span>. (A szögfüggvényeket öt, az oldalakat két tizedesre kerekítsd.)</p>
       <details><summary>Megoldás</summary><div class="bel"><p>A harmadik szög: <span class="math inline">\(\gamma=180^\circ-40^\circ-75^\circ=65^\circ\)</span>.</p><span class="math display">\[b=\frac{a\sin\beta}{\sin\alpha}=\frac{12\cdot 0{,}96593}{0{,}64279}\approx\boxed{18{,}03}\]</span><span class="math display">\[c=\frac{a\sin\gamma}{\sin\alpha}=\frac{12\cdot 0{,}90631}{0{,}64279}\approx\boxed{16{,}92}\]</span><p><b>Ellenőrzés:</b> a legnagyobb szög <span class="math inline">\(\beta=75^\circ\)</span>, és valóban a <span class="math inline">\(b\)</span> a leghosszabb oldal ✔</p></div></details>
     </div>
 
     <div class="doboz csapda">
-      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
       <p><b>A kétértelmű (SSA) eset.</b> Ha két oldalt és a <b>kisebbikkel</b> szemközti szöget ismerjük, két különböző háromszög is illeszkedhet az adatokra — mert <span class="math inline">\(\sin\varphi=\sin(180^\circ-\varphi)\)</span>.</p><p>Gyakorlati szabály: a szinusztétellel <b>mindig a kisebbik oldallal szemközti szöget</b> számold ki. Az biztosan hegyesszög, tehát egyértelmű.</p>
     </div>
 
@@ -88,13 +88,13 @@
     </div>
 
     <div class="doboz pelda" id="pelda-koszinusztetel">
-      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
       <p><b>a)</b> <span class="math inline">\(b=7\)</span>, <span class="math inline">\(c=10\)</span>, <span class="math inline">\(\alpha=60^\circ\)</span> — mekkora <span class="math inline">\(a\)</span>?<br><b>b)</b> <span class="math inline">\(a=6\)</span>, <span class="math inline">\(b=7\)</span>, <span class="math inline">\(c=9\)</span> — mekkora <span class="math inline">\(\gamma\)</span>?</p>
       <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(a^{2}=49+100-2\cdot 7\cdot 10\cdot 0{,}5=149-70=79\)</span>, tehát <span class="math inline">\(a=\sqrt{79}\approx\boxed{8{,}89}\)</span>.</p><p><b>b)</b> A <span class="math inline">\(\gamma\)</span> a <span class="math inline">\(c=9\)</span> oldallal szemközt van:</p><span class="math display">\[\cos\gamma=\frac{36+49-81}{2\cdot 6\cdot 7}=\frac{4}{84}\approx 0{,}04762\ \Longrightarrow\ \gamma\approx\boxed{87{,}27^\circ}\]</span><p>A <span class="math inline">\(\cos\gamma\)</span> <b>pozitív</b>, tehát a szög hegyesszög — épp csak.</p></div></details>
     </div>
 
     <div class="doboz csapda">
-      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
       <p><b>A képlet nem szimmetrikus!</b> A bal oldalon álló oldal mindig azzal a szöggel van párban, amely a jobb oldalon a koszinuszban szerepel. A <span class="math inline">\(-2bc\cos\alpha\)</span> tagban a <span class="math inline">\(b\)</span> és a <span class="math inline">\(c\)</span> épp a <b>másik két</b> oldal.</p><p>És ha a <span class="math inline">\(\cos\)</span> eredménye <b>negatív</b>, az nem hiba: azt jelenti, hogy a szög <b>tompaszög</b>. Ilyenkor a számológép helyesen ad <span class="math inline">\(90^\circ\)</span> fölötti értéket.</p>
     </div>
 
@@ -105,7 +105,7 @@
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
-    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-haromszogek.html#alap-1">🐾 Beast-protokoll <span class="cimke">A 1–6</span></a><a class="sav hulk" href="feladatok-haromszogek.html#kozep-1">🔥 Phoenix-protokoll <span class="cimke">K 1–4</span></a></div></div></div>
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-haromszogek.html#alap-1">🐾 Bestia-protokoll <span class="cimke">A 1–6</span></a><a class="sav bruno" href="feladatok-haromszogek.html#kozep-1">🔥 Főnix-protokoll <span class="cimke">K 1–4</span></a></div></div></div>
     <div class="lapozo">
       <a class="elozo" href="feladatok-trig-fuggvenyek-egyenletek.html"><span class="irany">← Előző</span><span class="hova">Feladatok — függvények és egyenletek</span></a>
       <a class="kov" href="tananyag-haromszog-megoldasa.html"><span class="irany">Következő →</span><span class="hova">Háromszög megoldása és alkalmazások</span></a>

@@ -27,13 +27,13 @@
 <div class="hero">
   <h1>A másodfokú függvény vizsgálata</h1>
   <p class="alcim">A vizsgálat rögzített szempontsora, teljes kidolgozott példák konvex és konkáv esetre, valamint szélsőérték-feladatok valós helyzetekben.</p>
-  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az X-Faktor · 6/8</span></div>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az M-Faktor · 6/8</span></div>
 </div>
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief"><p>📡 <b>Cyclops:</b> A csapatnak protokoll kell, nem ötletelés. A függvényvizsgálat is protokoll: ugyanaz a néhány kérdés, mindig ugyanabban a sorrendben. Ha végigmész rajta, a végén ott a teljes kép — és a grafikon már csak a jegyzőkönyv. Sinister energiagörbéit is így mérjük be.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/kuklopsz.webp" alt="Küklopsz — az optikai sugarak mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Küklopsz:</b> A csapatnak protokoll kell, nem ötletelés. A függvényvizsgálat is protokoll: ugyanaz a néhány kérdés, mindig ugyanabban a sorrendben. Ha végigmész rajta, a végén ott a teljes kép — és a grafikon már csak a jegyzőkönyv. Dr. Baljós energiagörbéit is így mérjük be.</p></div>
 
     <h2 id="s1">A vizsgálat protokollja</h2>
 
@@ -50,7 +50,7 @@
     <h2 id="s2">Teljes kidolgozott vizsgálat</h2>
 
     <div class="doboz pelda" id="pelda-teljes-vizsgalat">
-      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
       <p>Vizsgáld meg és ábrázold: <span class="math inline">\(y=x^{2}-2x-3\)</span>.</p>
       <details><summary>Megoldás — lépésről lépésre</summary><div class="bel"><p><b>1. Nyílásirány:</b> <span class="math inline">\(a=1&gt;0\)</span> → felfelé nyílik, <b>konvex</b>, minimuma lesz.</p><p><b>2. Zérushelyek:</b> <span class="math inline">\(D=4+12=16\)</span>, <span class="math inline">\(x_{1,2}=\dfrac{2\pm 4}{2}\)</span> → <span class="math inline">\(x_{1}=-1\)</span>, <span class="math inline">\(x_{2}=3\)</span>.</p><p><b>3. <span class="math inline">\(y\)</span>-tengelymetszet:</b> <span class="math inline">\(f(0)=-3\)</span>.</p><p><b>4. Csúcspont:</b> <span class="math inline">\(u=-\dfrac{-2}{2}=1\)</span>, <span class="math inline">\(v=f(1)=1-2-3=-4\)</span> → <span class="math inline">\(C(1;-4)\)</span>.</p><p><b>5. Szélsőérték:</b> minimum, értéke <span class="math inline">\(-4\)</span> (az <span class="math inline">\(x=1\)</span> helyen).</p><p><b>6. Értékkészlet:</b> <span class="math inline">\([-4,+\infty)\)</span>.</p></div></details>
     </div>
@@ -99,7 +99,7 @@
     <p class="cap">A grafikonhoz elég három adat: a <b>két zérushely</b>, a <b>csúcspont</b> és az <b><span class="math inline">\(y\)</span>-tengelymetszet</b>. A parabola szimmetrikus az <span class="math inline">\(x=1\)</span> egyenesre.</p>
 
     <div class="doboz csapda">
-      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
       <p>Három visszatérő hiba:</p><ol class="reszfeladatok"><li><b>A csúcs <span class="math inline">\(y\)</span>-koordinátáját „megsaccolni".</b> Nem a két zérushely átlagának képe, hanem <span class="math inline">\(f(u)\)</span> — <b>be kell helyettesíteni</b>. (Az <span class="math inline">\(u\)</span> viszont valóban a két zérushely átlaga, ha vannak.)</li><li><b>Az értékkészletet <span class="math inline">\(\mathbb{R}\)</span>-nek írni.</b> Az az <b>értelmezési tartomány</b>. Az értékkészlet a csúcstól indul.</li><li><b>A minimum és a minimumhely összekeverése.</b> A minimum <b>értéke</b> <span class="math inline">\(v=-4\)</span>; a minimum<b>hely</b> <span class="math inline">\(x=1\)</span>.</li></ol>
     </div>
 
@@ -113,7 +113,7 @@
     <h2 id="s3">Ha a parabola lefelé nyílik</h2>
 
     <div class="doboz pelda" id="pelda-konkav">
-      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
       <p>Vizsgáld meg: <span class="math inline">\(y=-x^{2}+4x-3\)</span>.</p>
       <details><summary>Megoldás</summary><div class="bel"><p><b>1.</b> <span class="math inline">\(a=-1&lt;0\)</span> → lefelé nyílik, <b>konkáv</b>, maximuma lesz.</p><p><b>2.</b> <span class="math inline">\(D=16-12=4\)</span>, <span class="math inline">\(x_{1,2}=\dfrac{-4\pm 2}{-2}\)</span> → <span class="math inline">\(x_{1}=1\)</span>, <span class="math inline">\(x_{2}=3\)</span>.</p><p><b>3.</b> <span class="math inline">\(f(0)=-3\)</span>.</p><p><b>4.</b> <span class="math inline">\(u=-\dfrac{4}{-2}=2\)</span>, <span class="math inline">\(v=f(2)=-4+8-3=1\)</span> → <span class="math inline">\(C(2;1)\)</span>.</p><p><b>5.</b> <b>Maximum</b>, értéke <span class="math inline">\(1\)</span>.</p><p><b>6.</b> Értékkészlet: <span class="math inline">\((-\infty,1]\)</span>.</p></div></details>
     </div>
@@ -123,7 +123,7 @@
     A másodfokú függvény leggyakoribb valós alkalmazása: valamit <b>maximalizálni</b> vagy <b>minimalizálni</b> kell. A recept: írd fel a keresett mennyiséget egyetlen változó másodfokú függvényeként, majd keresd meg a csúcspontot.
 
     <div class="doboz pelda" id="pelda-szelsoertek">
-      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció — a kerítés</p>
+      <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció — a kerítés</p>
       <p>A kampusz fala mellé téglalap alakú edzőterületet kerítenek be. A fal felőli oldalra nem kell kerítés, a másik három oldalra összesen <span class="math inline">\(20\)</span> méter kerítés áll rendelkezésre. Mekkora a lehető legnagyobb bekeríthető terület?</p>
       <details><summary>Megoldás</summary><div class="bel"><p>Legyen a fallal <b>párhuzamos</b> oldal <span class="math inline">\(y\)</span>, a rá merőleges kettő pedig <span class="math inline">\(x\)</span>-<span class="math inline">\(x\)</span>. Ekkor <span class="math inline">\(2x+y=20\)</span>, tehát <span class="math inline">\(y=20-2x\)</span>.</p><p>A terület:</p><span class="math display">\[T(x)=x\left(20-2x\right)=-2x^{2}+20x.\]</span><p>Ez másodfokú függvény <span class="math inline">\(a=-2&lt;0\)</span> főegyütthatóval → van <b>maximuma</b> a csúcspontban: <span class="math inline">\(u=-\dfrac{20}{-4}=5\)</span>, és <span class="math inline">\(T(5)=-50+100=50\)</span>.</p><p><b>Válasz:</b> a merőleges oldalak <span class="math inline">\(5\)</span> m-esek, a fallal párhuzamos <span class="math inline">\(10\)</span> m, a legnagyobb terület <span class="math inline">\(50\ \text{m}^{2}\)</span>.</p></div></details>
     </div>
@@ -135,9 +135,9 @@
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
-    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-masodfoku-fuggveny.html#alap-6">🐾 Beast-protokoll <span class="cimke">A 6–11</span></a><a class="sav hulk" href="feladatok-masodfoku-fuggveny.html#kozep-5">🔥 Phoenix-protokoll <span class="cimke">K 5–10</span></a></div></div></div>
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-masodfoku-fuggveny.html#alap-6">🐾 Bestia-protokoll <span class="cimke">A 6–11</span></a><a class="sav bruno" href="feladatok-masodfoku-fuggveny.html#kozep-5">🔥 Főnix-protokoll <span class="cimke">K 5–10</span></a></div></div></div>
 
-    <div class="brief" data-outro><p>📡 <b>Cyclops:</b> Eddig azt kérdeztük, <b>hol nulla</b> a függvény. A következő lépés: hol <b>pozitív</b> és hol <b>negatív</b>? Ez már nem egy pont, hanem egy egész <b>tartomány</b> — és pontosan ilyen a védőpajzs hatósugara is. Jöjjenek a másodfokú egyenlőtlenségek.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/kuklopsz.webp" alt="Küklopsz — az optikai sugarak mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Küklopsz:</b> Eddig azt kérdeztük, <b>hol nulla</b> a függvény. A következő lépés: hol <b>pozitív</b> és hol <b>negatív</b>? Ez már nem egy pont, hanem egy egész <b>tartomány</b> — és pontosan ilyen a védőpajzs hatósugara is. Jöjjenek a másodfokú egyenlőtlenségek.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-masodfoku-fuggveny.html"><span class="irany">← Előző</span><span class="hova">A másodfokú függvény és grafikonja</span></a>
       <a class="kov" href="feladatok-masodfoku-fuggveny.html"><span class="irany">Következő →</span><span class="hova">Feladatok — másodfokú függvény</span></a>

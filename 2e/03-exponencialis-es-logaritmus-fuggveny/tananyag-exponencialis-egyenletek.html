@@ -33,7 +33,7 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief"><p>📡 <b>Beast:</b> A görbét ismerjük — most jön a kérdés, amiért az egészet csináljuk: <b>mikor</b> éri el a fertőzés a kritikus szintet? Ez egy egyenlet, amelyben az ismeretlen a <b>kitevőben</b> ül. Jó hír: nem kell új gépezet. Egyetlen ötlet elég — ha a két oldalt <b>ugyanarra az alapra</b> hozzuk, a kitevők egyenlővé tehetők.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/dr_bestia.webp" alt="Dr. Bestia — a kampusz fővezető tudósa" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Dr. Bestia:</b> A görbét ismerjük — most jön a kérdés, amiért az egészet csináljuk: <b>mikor</b> éri el a fertőzés a kritikus szintet? Ez egy egyenlet, amelyben az ismeretlen a <b>kitevőben</b> ül. Jó hír: nem kell új gépezet. Egyetlen ötlet elég — ha a két oldalt <b>ugyanarra az alapra</b> hozzuk, a kitevők egyenlővé tehetők.</p></div>
 
     <h2 id="s1">Az alapelv</h2>
 
@@ -43,7 +43,7 @@
     </div>
 
     <div class="doboz pelda" id="pelda-kozos-alap">
-      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
       <p>Oldd meg: <b>a)</b> <span class="math inline">\(8^{x}=4096\)</span>; <b>b)</b> <span class="math inline">\(9^{x+1}=27^{2x-1}\)</span>; <b>c)</b> <span class="math inline">\(2^{x^{2}-5x}=\tfrac{1}{64}\)</span>.</p>
       <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(8=2^{3}\)</span> és <span class="math inline">\(4096=2^{12}\)</span>, tehát <span class="math inline">\(2^{3x}=2^{12}\)</span>, innen <span class="math inline">\(3x=12\)</span>, azaz <span class="math inline">\(\boxed{x=4}\)</span>.</p><p><b>b)</b> Közös alap a <span class="math inline">\(3\)</span>: <span class="math inline">\(\left(3^{2}\right)^{x+1}=\left(3^{3}\right)^{2x-1}\)</span>, azaz <span class="math inline">\(3^{2x+2}=3^{6x-3}\)</span>. Innen <span class="math inline">\(2x+2=6x-3\)</span>, tehát <span class="math inline">\(4x=5\)</span>, <span class="math inline">\(\boxed{x=\tfrac54}\)</span>.</p><p><b>c)</b> <span class="math inline">\(\tfrac{1}{64}=2^{-6}\)</span>, tehát <span class="math inline">\(x^{2}-5x=-6\)</span>, azaz <span class="math inline">\(x^{2}-5x+6=0\)</span>. A gyökök <span class="math inline">\(\boxed{x_{1}=2}\)</span> és <span class="math inline">\(\boxed{x_{2}=3}\)</span>.</p></div></details>
     </div>
@@ -65,13 +65,13 @@
     </div>
 
     <div class="doboz pelda" id="pelda-kiemeles">
-      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
       <p>Oldd meg: <b>a)</b> <span class="math inline">\(2^{x+2}+2^{x}=40\)</span>; <b>b)</b> <span class="math inline">\(3^{x+2}-3^{x}=648\)</span>.</p>
       <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(2^{x}\cdot 2^{2}+2^{x}=40\)</span>, azaz <span class="math inline">\(2^{x}(4+1)=40\)</span>, tehát <span class="math inline">\(5\cdot 2^{x}=40\)</span> és <span class="math inline">\(2^{x}=8\)</span>. Innen <span class="math inline">\(\boxed{x=3}\)</span>.</p><p><b>b)</b> <span class="math inline">\(3^{x}\left(3^{2}-1\right)=648\)</span>, azaz <span class="math inline">\(8\cdot 3^{x}=648\)</span>, tehát <span class="math inline">\(3^{x}=81\)</span> és <span class="math inline">\(\boxed{x=4}\)</span>.</p><p><b>Ellenőrzés:</b> <span class="math inline">\(2^{5}+2^{3}=32+8=40\)</span> ✔ és <span class="math inline">\(3^{6}-3^{4}=729-81=648\)</span> ✔</p></div></details>
     </div>
 
     <div class="doboz csapda">
-      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
       <p>A <span class="math inline">\(2^{x+2}\)</span> <b>nem</b> <span class="math inline">\(2^{x}+2^{2}\)</span>! A kitevőben álló összeg <b>szorzattá</b> bomlik, nem összeggé:</p><p>✘ <span class="math inline">\(2^{x+2}=2^{x}+4\)</span> &nbsp;&nbsp;&nbsp; ✔ <span class="math inline">\(2^{x+2}=2^{x}\cdot 4\)</span></p><p>Próbáld ki <span class="math inline">\(x=1\)</span>-gyel: <span class="math inline">\(2^{3}=8\)</span>, míg <span class="math inline">\(2^{1}+4=6\)</span> — nem ugyanaz.</p>
     </div>
 
@@ -92,12 +92,12 @@
     </div>
 
     <div class="doboz csapda">
-      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
       <p><b>Két hiba les rád:</b></p><ol class="reszfeladatok"><li><b>Megállni <span class="math inline">\(t\)</span>-nél.</b> A <span class="math inline">\(t\)</span> nem a válasz! A feladat <span class="math inline">\(x\)</span>-et kérdezi — a <span class="math inline">\(t\)</span>-ből még vissza kell számolni.</li><li><b>A negatív <span class="math inline">\(t\)</span>-gyököt megtartani.</b> Mivel <span class="math inline">\(t=a^{x}\)</span> mindig <b>pozitív</b>, a <span class="math inline">\(t\le 0\)</span> gyök nem ad megoldást — ilyenkor nem hibáztál, egyszerűen kevesebb megoldás van.</li></ol>
     </div>
 
     <div class="doboz pelda" id="pelda-masodfoku">
-      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
       <p>Oldd meg: <b>a)</b> <span class="math inline">\(4^{x}-6\cdot 2^{x}+8=0\)</span>; <b>b)</b> <span class="math inline">\(9^{x}-4\cdot 3^{x}+3=0\)</span>; <b>c)</b> <span class="math inline">\(4^{x}+3\cdot 2^{x}-4=0\)</span>.</p>
       <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(4^{x}=\left(2^{x}\right)^{2}\)</span>, legyen <span class="math inline">\(t=2^{x}&gt;0\)</span>: <span class="math inline">\(t^{2}-6t+8=0\)</span>, ahonnan <span class="math inline">\(t_{1}=2\)</span>, <span class="math inline">\(t_{2}=4\)</span>. Visszahelyettesítve <span class="math inline">\(2^{x}=2\)</span> és <span class="math inline">\(2^{x}=4\)</span>, tehát <span class="math inline">\(\boxed{x_{1}=1}\)</span>, <span class="math inline">\(\boxed{x_{2}=2}\)</span>.</p><p><b>b)</b> <span class="math inline">\(t=3^{x}&gt;0\)</span>: <span class="math inline">\(t^{2}-4t+3=0\)</span>, innen <span class="math inline">\(t_{1}=1\)</span>, <span class="math inline">\(t_{2}=3\)</span>, azaz <span class="math inline">\(3^{x}=1\)</span> és <span class="math inline">\(3^{x}=3\)</span>: <span class="math inline">\(\boxed{x_{1}=0}\)</span>, <span class="math inline">\(\boxed{x_{2}=1}\)</span>.</p><p><b>c)</b> <span class="math inline">\(t=2^{x}&gt;0\)</span>: <span class="math inline">\(t^{2}+3t-4=0\)</span>, a gyökök <span class="math inline">\(t_{1}=1\)</span> és <span class="math inline">\(t_{2}=-4\)</span>. A <span class="math inline">\(-4\)</span> <b>nem lehet</b> <span class="math inline">\(2^{x}\)</span> értéke, ezért elhagyjuk. Marad <span class="math inline">\(2^{x}=1\)</span>, tehát <span class="math inline">\(\boxed{x=0}\)</span> — egyetlen megoldás.</p></div></details>
     </div>
@@ -109,7 +109,7 @@
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
-    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-exponencialis.html#alap-7">🐾 Beast-protokoll <span class="cimke">A 7–14</span></a><a class="sav hulk" href="feladatok-exponencialis.html#kozep-4">🔥 Phoenix-protokoll <span class="cimke">K 4–10</span></a></div></div></div>
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-exponencialis.html#alap-7">🐾 Bestia-protokoll <span class="cimke">A 7–14</span></a><a class="sav bruno" href="feladatok-exponencialis.html#kozep-4">🔥 Főnix-protokoll <span class="cimke">K 4–10</span></a></div></div></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-exponencialis-fuggveny.html"><span class="irany">← Előző</span><span class="hova">Az exponenciális függvény</span></a>
       <a class="kov" href="tananyag-exponencialis-egyenlotlensegek.html"><span class="irany">Következő →</span><span class="hova">Exponenciális egyenlőtlenségek</span></a>

@@ -139,7 +139,7 @@ NEHEZ = [
   None, "$\\dfrac{360}{157}$ nap $\\approx 2{,}29$ nap."),
 ]
 
-JOKER = ("<b>Kang csapdája.</b> Kang a következő egyenletet írta a táblára, és azt állítja, hogy a megoldása "
+JOKER = ("<b>Kán csapdája.</b> Kán a következő egyenletet írta a táblára, és azt állítja, hogy a megoldása "
   "$x=2$: $2x+5=2x+1$. Igaza van-e? Ha nem, mi a helyes válasz, és miért?",
   "Nincs igaza. Az $2x$ mindkét oldalról kiesik, és $5=1$ marad, ami hamis — az egyenletnek "
   "<b>nincs megoldása</b> (nincs olyan $x$, amely kielégítené).")

@@ -33,7 +33,7 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief"><p>📡 <b>Jean Grey:</b> Utolsó bevetés. Most már mindkét tétel a kezedben van — a kérdés csak az, <b>melyiket mikor</b>. Van rá egy egyszerű recept, és ha követed, bármelyik háromszög megoldható. Utána pedig jön a legjobb rész: ezzel a tudással megmérhető egy torony magassága anélkül, hogy hozzáérnél.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/szurke_janka.webp" alt="Szürke Janka — a telepata bemérő-specialista" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Szürke Janka:</b> Utolsó bevetés. Most már mindkét tétel a kezedben van — a kérdés csak az, <b>melyiket mikor</b>. Van rá egy egyszerű recept, és ha követed, bármelyik háromszög megoldható. Utána pedig jön a legjobb rész: ezzel a tudással megmérhető egy torony magassága anélkül, hogy hozzáérnél.</p></div>
 
     <h2 id="s1">A háromszög megoldása — a döntési recept</h2>
 
@@ -43,7 +43,7 @@
     </div>
 
     <div class="doboz csapda">
-      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
       <p><b>Miért a legnagyobb oldal szögével kezdünk SSS-nél?</b> Mert az lehet tompaszög — és a koszinusztétel a tompaszöget is helyesen adja vissza (negatív koszinusszal). Ha utána a szinusztételt már csak <b>kisebb</b> oldalakra használod, azok biztosan hegyesszögek, tehát nincs kétértelműség.</p><p>És a kerekítés: a <b>szögfüggvényértékeket</b> öt tizedesre, az <b>oldalhosszakat</b> két tizedesre — ha a köztes értékeket túl korán kerekíted, a végeredmény több tizedessel is elcsúszhat.</p>
     </div>
 
@@ -74,7 +74,7 @@
     </div>
 
     <div class="doboz pelda" id="pelda-terulet">
-      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
       <p>Mekkora annak a háromszögnek a területe, amelyben <span class="math inline">\(a=8\)</span>, <span class="math inline">\(b=11\)</span> és a közbezárt szög <span class="math inline">\(\gamma=35^\circ\)</span>?</p>
       <details><summary>Megoldás</summary><div class="bel"><span class="math display">\[T=\frac12\cdot 8\cdot 11\cdot\sin 35^\circ=44\cdot 0{,}57358\approx\boxed{25{,}24}\]</span><p>(területegység)</p></div></details>
     </div>
@@ -82,7 +82,7 @@
     <h2 id="s3">Alkalmazások: bemérés a terepen</h2>
 
     <div class="doboz pelda" id="pelda-torony">
-      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció — a torony magassága</p>
+      <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció — a torony magassága</p>
       <p>Egy torony tövéhez nem tudunk odajutni. Az <span class="math inline">\(A\)</span> pontból a torony csúcsát <span class="math inline">\(32^\circ\)</span>-os emelkedési szögben látjuk; <span class="math inline">\(50\)</span> métert közelebb menve, a <span class="math inline">\(B\)</span> pontból már <span class="math inline">\(48^\circ\)</span>-osban. Milyen magas a torony?</p>
       <details><summary>Megoldás</summary><div class="bel"><p>Nézzük az <span class="math inline">\(ABT\)</span> háromszöget (<span class="math inline">\(T\)</span> a torony csúcsa). Az <span class="math inline">\(A\)</span>-nál lévő szög <span class="math inline">\(32^\circ\)</span>. A <span class="math inline">\(B\)</span>-nél lévő <b>belső</b> szög a <span class="math inline">\(48^\circ\)</span> mellékszöge: <span class="math inline">\(180^\circ-48^\circ=132^\circ\)</span>. Ezért</p><span class="math display">\[\angle ATB=180^\circ-32^\circ-132^\circ=16^\circ.\]</span><p>Szinusztétel az <span class="math inline">\(ABT\)</span> háromszögben:</p><span class="math display">\[BT=\frac{AB\cdot\sin 32^\circ}{\sin 16^\circ}=\frac{50\cdot 0{,}52992}{0{,}27564}\approx 96{,}13\ \text{m}\]</span><p>Végül a <span class="math inline">\(BT\)</span> szakaszból a derékszögű háromszögben:</p><span class="math display">\[h=BT\cdot\sin 48^\circ\approx 96{,}13\cdot 0{,}74314\approx\boxed{71{,}44\ \text{m}}\]</span></div></details>
     </div>
@@ -108,7 +108,7 @@
     <p class="cap">A két mérési pont és a torony egyetlen háromszöget alkot — a <span class="math inline">\(16^\circ\)</span>-os csúcsszög a két emelkedési szög <b>különbsége</b>.</p>
 
     <div class="doboz pelda" id="pelda-navigacio">
-      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció — navigáció</p>
+      <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció — navigáció</p>
       <p>Egy hajó a kikötőből <span class="math inline">\(30\)</span> km-t halad egyenesen, majd <span class="math inline">\(115^\circ\)</span>-kal elfordul, és további <span class="math inline">\(40\)</span> km-t tesz meg. Milyen messze van a kikötőtől?</p>
       <details><summary>Megoldás</summary><div class="bel"><p>A két útszakasz és a keresett távolság háromszöget alkot. A <b>belső</b> szög nem <span class="math inline">\(115^\circ\)</span>, hanem a mellékszöge: <span class="math inline">\(180^\circ-115^\circ=65^\circ\)</span>.</p><span class="math display">\[d^{2}=30^{2}+40^{2}-2\cdot 30\cdot 40\cdot\cos 65^\circ=2500-2400\cdot 0{,}42262\approx 1485{,}7\]</span><span class="math display">\[d\approx\boxed{38{,}54\ \text{km}}\]</span><p>⚠️ Az „elfordul <span class="math inline">\(115^\circ\)</span>-kal” az <b>iránytól</b> való eltérés — a háromszög belső szöge ennek a mellékszöge. Ez a leggyakoribb hiba a navigációs feladatokban.</p></div></details>
     </div>
@@ -125,9 +125,9 @@
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
-    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-haromszogek.html#alap-7">🐾 Beast-protokoll <span class="cimke">A 7–14</span></a><a class="sav hulk" href="feladatok-haromszogek.html#kozep-5">🔥 Phoenix-protokoll <span class="cimke">K 5–12</span></a></div></div></div>
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-haromszogek.html#alap-7">🐾 Bestia-protokoll <span class="cimke">A 7–14</span></a><a class="sav bruno" href="feladatok-haromszogek.html#kozep-5">🔥 Főnix-protokoll <span class="cimke">K 5–12</span></a></div></div></div>
 
-    <div class="brief" data-outro><p>📡 <b>Jean Grey:</b> A Fázisugrás teljesítve, kadétok — és ezzel a második évad is a végéhez ért. Ez az anyag a <b>4. írásbeli dolgozat</b> teljes terjedelme. Nézd át a taktikai memóriakártyát, aztán jöhet a terepküldetés: egy valódi jelet kell megfejtened, és be kell mérned egy bázist.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/szurke_janka.webp" alt="Szürke Janka — a telepata bemérő-specialista" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Szürke Janka:</b> A Fázisugrás teljesítve, kadétok — és ezzel a második évad is a végéhez ért. Ez az anyag a <b>4. írásbeli dolgozat</b> teljes terjedelme. Nézd át a taktikai memóriakártyát, aztán jöhet a terepküldetés: egy valódi jelet kell megfejtened, és be kell mérned egy bázist.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-szinusz-es-koszinusztetel.html"><span class="irany">← Előző</span><span class="hova">Szinusz- és koszinusztétel</span></a>
       <a class="kov" href="feladatok-haromszogek.html"><span class="irany">Következő →</span><span class="hova">Feladatok — háromszögek</span></a>

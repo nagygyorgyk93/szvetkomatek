@@ -33,7 +33,7 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief"><p>📡 <b>Beast:</b> Utolsó szakasz. A logaritmusos egyenletnél van egy lépés, amit <b>soha nem hagyhatsz ki</b>: az <b>értelmezési tartomány</b>. Nem azért, mert a tanár kéri — hanem mert a megoldás közben olyan gyök is előbukkanhat, amelyre az eredeti egyenletnek semmi értelme. Az ÉT a szűrő, ami ezeket kifogja. Kezdd vele, ne a végén told hozzá.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/dr_bestia.webp" alt="Dr. Bestia — a kampusz fővezető tudósa" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Dr. Bestia:</b> Utolsó szakasz. A logaritmusos egyenletnél van egy lépés, amit <b>soha nem hagyhatsz ki</b>: az <b>értelmezési tartomány</b>. Nem azért, mert a tanár kéri — hanem mert a megoldás közben olyan gyök is előbukkanhat, amelyre az eredeti egyenletnek semmi értelme. Az ÉT a szűrő, ami ezeket kifogja. Kezdd vele, ne a végén told hozzá.</p></div>
 
     <h2 id="s1">Az értelmezési tartomány — az első lépés</h2>
 
@@ -43,13 +43,13 @@
     </div>
 
     <div class="doboz pelda" id="pelda-log-egyenletek">
-      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
       <p>Oldd meg: <b>a)</b> <span class="math inline">\(\log_{2}(x-3)=3\)</span>; <b>b)</b> <span class="math inline">\(\log_{5}(2x+1)=2\)</span>; <b>c)</b> <span class="math inline">\(\lg(3x-2)=\lg(x+6)\)</span>.</p>
       <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> ÉT: <span class="math inline">\(x-3&gt;0\)</span>, azaz <span class="math inline">\(x&gt;3\)</span>. A definíció szerint <span class="math inline">\(x-3=2^{3}=8\)</span>, tehát <span class="math inline">\(x=11\)</span>. Ez nagyobb <span class="math inline">\(3\)</span>-nál, így <span class="math inline">\(\boxed{x=11}\)</span>.</p><p><b>b)</b> ÉT: <span class="math inline">\(2x+1&gt;0\)</span>, azaz <span class="math inline">\(x&gt;-\tfrac12\)</span>. Innen <span class="math inline">\(2x+1=5^{2}=25\)</span>, tehát <span class="math inline">\(2x=24\)</span> és <span class="math inline">\(\boxed{x=12}\)</span> — az ÉT-ben van.</p><p><b>c)</b> ÉT: <span class="math inline">\(3x-2&gt;0\)</span> <b>és</b> <span class="math inline">\(x+6&gt;0\)</span>, azaz <span class="math inline">\(x&gt;\tfrac23\)</span> és <span class="math inline">\(x&gt;-6\)</span> — a metszet <span class="math inline">\(x&gt;\tfrac23\)</span>. A logaritmust elhagyva <span class="math inline">\(3x-2=x+6\)</span>, tehát <span class="math inline">\(2x=8\)</span> és <span class="math inline">\(\boxed{x=4}\)</span>.</p></div></details>
     </div>
 
     <div class="doboz csapda">
-      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
       <p><b>A hamis gyök.</b> Oldd meg gondolatban: <span class="math inline">\(\lg(x^{2}-4x)=\lg 5\)</span>. A logaritmust elhagyva <span class="math inline">\(x^{2}-4x-5=0\)</span>, ahonnan <span class="math inline">\(x_{1}=5\)</span> és <span class="math inline">\(x_{2}=-1\)</span>. A <span class="math inline">\(-1\)</span> elsőre gyanús — pedig <b>jó megoldás</b>: az argumentum értéke <span class="math inline">\((-1)^{2}-4\cdot(-1)=5&gt;0\)</span>.</p><p>Tanulság: <b>nem az <span class="math inline">\(x\)</span> előjelét kell nézni, hanem az argumentum értékét</b>. Mindig helyettesíts vissza az ÉT-feltételbe, ne találgass.</p>
     </div>
 
@@ -70,13 +70,13 @@
     </div>
 
     <div class="doboz pelda" id="pelda-log-egyenlotlensegek">
-      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
       <p>Oldd meg: <b>a)</b> <span class="math inline">\(\log_{2}(x-1)&lt;4\)</span>; <b>b)</b> <span class="math inline">\(\log_{3}(2x-6)&gt;2\)</span>; <b>c)</b> <span class="math inline">\(\log_{0,5}(4x+1)\ge\log_{0,5}(x+7)\)</span>.</p>
       <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> ÉT: <span class="math inline">\(x-1&gt;0\)</span>, azaz <span class="math inline">\(x&gt;1\)</span>. Az alap <span class="math inline">\(2&gt;1\)</span>, a jel marad: <span class="math inline">\(x-1&lt;2^{4}=16\)</span>, tehát <span class="math inline">\(x&lt;17\)</span>. A metszet: <span class="math inline">\(\boxed{x\in(1;17)}\)</span>.</p><p><b>b)</b> ÉT: <span class="math inline">\(2x-6&gt;0\)</span>, azaz <span class="math inline">\(x&gt;3\)</span>. Az alap <span class="math inline">\(3&gt;1\)</span>: <span class="math inline">\(2x-6&gt;3^{2}=9\)</span>, tehát <span class="math inline">\(2x&gt;15\)</span> és <span class="math inline">\(x&gt;\tfrac{15}{2}\)</span>. Ez szigorúbb az ÉT-nél, tehát <span class="math inline">\(\boxed{x\in\left(\tfrac{15}{2};+\infty\right)}\)</span>.</p><p><b>c)</b> ÉT: <span class="math inline">\(4x+1&gt;0\)</span> és <span class="math inline">\(x+7&gt;0\)</span>, azaz <span class="math inline">\(x&gt;-\tfrac14\)</span> (ez a szigorúbb). Az alap <span class="math inline">\(0&lt;0{,}5&lt;1\)</span>, ezért a jel <b>megfordul</b>: <span class="math inline">\(4x+1\le x+7\)</span>, tehát <span class="math inline">\(3x\le 6\)</span> és <span class="math inline">\(x\le 2\)</span>. A metszet: <span class="math inline">\(\boxed{x\in\left(-\tfrac14;2\right]}\)</span>.</p></div></details>
     </div>
 
     <div class="doboz csapda">
-      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
       <p>A három leggyakoribb hiba:</p><ol class="reszfeladatok"><li><b>Az ÉT kihagyása.</b> A c) feladatban ÉT nélkül <span class="math inline">\(x\le 2\)</span> jönne ki — de a <span class="math inline">\(-5\)</span> például nem megoldás, mert ott <span class="math inline">\(4x+1\)</span> negatív.</li><li><b>A jelfordulás elfelejtése.</b> Nézd meg az alapot, mielőtt elhagyod a logaritmust.</li><li><b>Uniót írni metszet helyett.</b> Az ÉT és a kapott halmaz között <b>metszet</b> van: mindkét feltételnek egyszerre kell teljesülnie.</li></ol>
     </div>
 
@@ -87,9 +87,9 @@
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
-    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-logaritmusfuggveny.html#alap-7">🐾 Beast-protokoll <span class="cimke">A 7–14</span></a><a class="sav hulk" href="feladatok-logaritmusfuggveny.html#kozep-4">🔥 Phoenix-protokoll <span class="cimke">K 4–12</span></a></div></div></div>
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-logaritmusfuggveny.html#alap-7">🐾 Bestia-protokoll <span class="cimke">A 7–14</span></a><a class="sav bruno" href="feladatok-logaritmusfuggveny.html#kozep-4">🔥 Főnix-protokoll <span class="cimke">K 4–12</span></a></div></div></div>
 
-    <div class="brief" data-outro><p>📡 <b>Beast:</b> Küldetés teljesítve, kadétok. Az <b>Evolúciós Ugrás</b> megvan: tudjuk modellezni a robbanásszerű növekedést, és — ami fontosabb — tudunk <b>visszafelé</b> is számolni. Ez az anyag a <b>3. dolgozat</b> teljes terjedelme; a gyűjtemény végén találsz hozzá felkészítő sávot. Nézd át a taktikai memóriakártyát, aztán jöhet a terepküldetés.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/dr_bestia.webp" alt="Dr. Bestia — a kampusz fővezető tudósa" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Dr. Bestia:</b> Küldetés teljesítve, kadétok. Az <b>Evolúciós Ugrás</b> megvan: tudjuk modellezni a robbanásszerű növekedést, és — ami fontosabb — tudunk <b>visszafelé</b> is számolni. Ez az anyag a <b>3. dolgozat</b> teljes terjedelme; a gyűjtemény végén találsz hozzá felkészítő sávot. Nézd át a taktikai memóriakártyát, aztán jöhet a terepküldetés.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-inverz-es-logaritmusfuggveny.html"><span class="irany">← Előző</span><span class="hova">Az inverz függvény és a logaritmusfüggvény</span></a>
       <a class="kov" href="feladatok-logaritmusfuggveny.html"><span class="irany">Következő →</span><span class="hova">Feladatok — logaritmusfüggvény</span></a>

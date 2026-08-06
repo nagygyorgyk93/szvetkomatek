@@ -17,7 +17,7 @@ Két réteg:
    s0 cím, „🎯 Gyors kérdés”, a doboz-ikonok típushoz kötése, `data-tagozat`/`data-hatter`,
    szakasz-id-k sorrendje, kézi számozás tilalma, **nyers `$` a címekben** (a `mat()`
    kimaradása), feladatkártyák id/szint/végeredmény hármasa, `data-answer` érvényessége,
-   `.sav.hangya`/`.sav.hulk`, és hogy a naplo.js felismeri-e az oldaltípust.
+   `.sav.henrik`/`.sav.bruno`, és hogy a naplo.js felismeri-e az oldaltípust.
 
 2. **Render-réteg** (`verify_jsdom.mjs`, ha van node + jsdom) — lefuttatja az oldal saját
    JS-ét: KaTeX renderel-e hibátlanul, marad-e nyers `$` a **renderelt** szövegben,
@@ -202,8 +202,8 @@ def kanon_ellenorzes(ut: Path) -> tuple[list[str], list[str]]:
 
     # --- differenciált sávok ---
     if 'class="savok"' in s:
-        if "sav hangya" not in s or "sav hulk" not in s:
-            hibak.append("a .savok blokkban nincs .sav.hangya és/vagy .sav.hulk "
+        if "sav henrik" not in s or "sav bruno" not in s:
+            hibak.append("a .savok blokkban nincs .sav.henrik és/vagy .sav.bruno "
                          "(az osztálynevek fixek, csak a felirat évadfüggő)")
 
     # --- feladatkártyák ---

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""2e/02 — osszefoglalo (F4), terepkuldetes (F5p), Danger Room (F6h), temakor-index (F5)."""
+"""2e/02 — osszefoglalo (F4), terepkuldetes (F5p), Vészterem (F6h), temakor-index (F5)."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tananyag_common import lap, doboz, brief, GYOKER
@@ -32,7 +32,7 @@ P = [
  ("TIII3", sorted(solve(x**2-7*x+10, x)), [2, 5]),
  ("TIII4", sorted(solve(t**2-20*t+96, t)), [8, 12]),
  ("TIII5", solve(Eq(4+4*c, 0), c), [-1]),
- # Danger Room
+ # Vészterem
  ("DA1a", S(x**2-64), [-8, 8]), ("DA1b", S(x**2+9*x), [-9, 0]),
  ("DA1c", S(x**2-8*x+15), [3, 5]),
  ("DA2a", S(2*x**2-7*x+3), [R(1,2), 3]), ("DA2b", S((x-2)*(x+3)-6), [-4, 3]),
@@ -151,9 +151,9 @@ OSSZ = [
 
 lap(**T, fajl="osszefoglalo.html", cim="Taktikai memóriakártya",
     cim_tiszta="Taktikai memóriakártya", itt="Taktikai memóriakártya",
-    alcim="Az X-Faktor minden képlete, protokollja és tipikus csapdája egy helyen — "
+    alcim="Az M-Faktor minden képlete, protokollja és tipikus csapdája egy helyen — "
           "ismétléshez, dolgozat előtti átfutáshoz, nyomtatáshoz.",
-    chip="Az X-Faktor · összefoglaló", chip_tipus="összefoglaló",
+    chip="Az M-Faktor · összefoglaló", chip_tipus="összefoglaló",
     szakaszok=[("📇 " + OSSZ[0][0], OSSZ[0][1])] + OSSZ[1:],
     elozo=("feladatok-egyenlotlensegek-es-rendszerek.html", "Feladatok — egyenlőtlenségek és rendszerek"),
     kovetkezo=("terepkuldetes.html", "A Parabola-csapás terepküldetés"))
@@ -163,10 +163,10 @@ print("✓ osszefoglalo.html")
 
 TEREP = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Cyclops:</b> Kadét, éles helyzet. Sinister a Genosha fölötti pályáról '
+   brief('<b>Küklopsz:</b> Kadét, éles helyzet. Dr. Baljós a Geno-sziget fölötti pályáról '
          '<b>ballisztikus</b> töltetekkel lő — a röppálya parabola, és ha ki tudod számolni, '
          'meg tudod előzni. Három feladatod van: bemérni a röppályát, megtalálni a '
-         'legmagasabb pontot, és megállapítani, meddig ér a pajzsunk. Wolverine már a '
+         'legmagasabb pontot, és megállapítani, meddig ér a pajzsunk. Nagol már a '
          'terepen van; a te dolgod a <b>matematika</b>.'),
    '<p class="lead">Ez a küldetés a teljes témakört használja: másodfokú egyenletet, '
    'diszkriminánst, Viète-képleteket, függvényvizsgálatot, egyenlőtlenséget és rendszert. '
@@ -175,7 +175,7 @@ TEREP = [
  ]),
  ("Fázis I — A röppálya bemérése", [
    doboz("pelda", "I. fázis: ballisztika",
-         '<p>Sinister lövedékének magassága $t$ másodperc múlva '
+         '<p>Dr. Baljós lövedékének magassága $t$ másodperc múlva '
          '$h(t)=-5t^{2}+30t$ méter.</p>'
          '<ol class="reszfeladatok">'
          '<li>Mikor van a lövedék <b>$40$ méter</b> magasan? (Két időpont is van!)</li>'
@@ -191,7 +191,7 @@ TEREP = [
  ("Fázis II — A csúcspont", [
    doboz("pelda", "II. fázis: a legmagasabb pont",
          '<ol class="reszfeladatok">'
-         '<li>Milyen magasan és mikor jár Sinister lövedéke a pálya <b>legmagasabb</b> '
+         '<li>Milyen magasan és mikor jár Dr. Baljós lövedéke a pálya <b>legmagasabb</b> '
          'pontján? ($h(t)=-5t^{2}+30t$)</li>'
          '<li>Az energiapajzs teljesítménye $P(x)=-2x^{2}+16x-24$ (egység), ahol $x$ a '
          'betáplált energia. Mekkora a <b>maximális</b> teljesítmény, és milyen $x$ mellett?</li>'
@@ -219,10 +219,10 @@ TEREP = [
          '<p>Zárásként foglald össze <b>egyetlen táblázatban</b>: a becsapódás időpontját, '
          'a röppálya legmagasabb pontját, a pajzs maximális teljesítményét és a védett zóna '
          'határait. Írj mellé <b>2–3 mondatot</b> arról, hol használtad a diszkriminánst és '
-         'hol a Viète-képleteket — Cyclops a gondolatmenetre is kíváncsi.</p>'),
-   brief('<b>Beast:</b> Kiváló munka, kadét. A ballisztikát megoldottuk — de miközben ti '
+         'hol a Viète-képleteket — Küklopsz a gondolatmenetre is kíváncsi.</p>'),
+   brief('<b>Dr. Bestia:</b> Kiváló munka, kadét. A ballisztikát megoldottuk — de miközben ti '
          'a röppályákat számoltátok, a laborban valami sokkal rosszabbat mértem. '
-         'Sinister vírusa <b>megduplázódik</b> minden ciklusban. Az ilyen növekedést '
+         'Dr. Baljós vírusa <b>megduplázódik</b> minden ciklusban. Az ilyen növekedést '
          'a parabola meg sem közelíti. A következő küldetés az <b>Evolúciós Ugrás</b>.',
          outro=True),
  ]),
@@ -232,7 +232,7 @@ lap(**T, fajl="terepkuldetes.html", cim="A Parabola-csapás terepküldetés",
     cim_tiszta="A Parabola-csapás terepküldetés", itt="A Parabola-csapás terepküldetés",
     alcim="Háromfázisú ballisztikai bevetés: röppálya-bemérés, csúcspont és szélsőérték, "
           "valamint a védelmi zóna határai.",
-    chip="Az X-Faktor · terepküldetés", chip_tipus="terepküldetés",
+    chip="Az M-Faktor · terepküldetés", chip_tipus="terepküldetés",
     szakaszok=TEREP,
     elozo=("osszefoglalo.html", "Taktikai memóriakártya"),
     kovetkezo=("index.html", "Vissza a témakörhöz"))
@@ -286,7 +286,7 @@ DR_N = [
  ("Oldd meg a komplex számok halmazán! $x^{4}+5x^{2}-36=0$", None, "$\\pm 2$ és $\\pm 3i$"),
 ]
 
-dr_brief = ('<div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Veszélyterem</b> — Az X-Faktor modul. '
+dr_brief = ('<div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — Az M-Faktor modul. '
             'A szimuláció a <b>teljes témakört</b> lefedi: másodfokú egyenletek, diszkrimináns, '
             'Viète, szorzattá alakítás, bikvadratikus, függvényvizsgálat, egyenlőtlenségek és '
             'rendszerek. Haladj a fokozatokon: zöld → sárga → piros. A végeredményt lenyithatod, '
@@ -297,8 +297,8 @@ dr_body = ('    ' + dr_brief + '\n'
            '\n    <h2 id="kozep">🟡 Középfokozat</h2>\n' + cards(DR_K, "kozep", "kozep") +
            '\n    <h2 id="nehez">🔴 Nehéz fokozat</h2>\n' + cards(DR_N, "nehez", "nehez"))
 
-oldal(**T, fajl="feladatok-hazi.html", cim="Danger Room",
-      h1="🕹️ Danger Room — házi feladatgyűjtemény", itt="Danger Room — házi",
+oldal(**T, fajl="feladatok-hazi.html", cim="Vészterem",
+      h1="🕹️ Vészterem — házi feladatgyűjtemény", itt="Vészterem — házi",
       alcim="Egyetlen, a teljes témakört lefedő házi feladatsor, óraszám-arányosan. "
             "Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
       chipek='<span class="chip alap">Alap</span><span class="chip kozep">Közép</span>'
@@ -338,7 +338,7 @@ K = [
         "Alap · Közép · Nehéz + Joker, a végén <b>gyakorló dolgozattal</b>"),
  kartya("feladatok-egyenlotlensegek-es-rendszerek.html", "🏋️ Egyenlőtlenségek és rendszerek",
         "Alap · Közép · Nehéz + Joker — mind a három diszkrimináns-esetre"),
- kartya("feladatok-hazi.html", "🕹️ Danger Room — házi feladatok",
+ kartya("feladatok-hazi.html", "🕹️ Vészterem — házi feladatok",
         "A teljes témakört lefedő házi feladatsor, óraszám-arányosan"),
  kartya("terepkuldetes.html", "🎯 A Parabola-csapás terepküldetés",
         "Háromfázisú ballisztikai bevetés — a teljes témakör egyben"),
@@ -376,10 +376,10 @@ INDEX = '''<!DOCTYPE html>
   <p class="alcim">A megoldóképlettől a diszkriminánson és a Viète-képleteken át a parabola
   teljes vizsgálatáig — majd az egyenlőtlenségekig és a rendszerekig.</p>
   <div class="meta-sor"><span class="chip ora">22 óra</span><span class="statusz kesz">kész</span></div>
-  <div class="brief"><p>🧬 <b>Szektor 02 — Az X-Faktor (A Parabola-csapás).</b> Kiképzők:
-  <b>Wolverine</b> (egyenletek) és <b>Cyclops</b> (függvények). A fenyegetés többé nem
-  lineárisan nő: Sinister <b>másodfokon</b> támad, és a lövedékei parabola mentén repülnek.
-  Wolverine szétvágja a problémát — tényezőkre bontja, ami darabolható; Cyclops pedig az
+  <div class="brief"><p>🧬 <b>Szektor 02 — Az M-Faktor (A Parabola-csapás).</b> Kiképzők:
+  <b>Nagol</b> (egyenletek) és <b>Küklopsz</b> (függvények). A fenyegetés többé nem
+  lineárisan nő: Dr. Baljós <b>másodfokon</b> támad, és a lövedékei parabola mentén repülnek.
+  Nagol szétvágja a problémát — tényezőkre bontja, ami darabolható; Küklopsz pedig az
   optikai sugarak röppályáján tanítja meg, hol a csúcspont, meddig ér a pajzs, és hol
   csapódik be a töltet.</p></div>
 </div>
@@ -387,17 +387,17 @@ INDEX = '''<!DOCTYPE html>
   <div class="tartalom">
     <h2>Tananyag</h2>
 
-    <h3>⚔️ A másodfokú egyenlet — Wolverine</h3>
+    <h3>⚔️ A másodfokú egyenlet — Nagol</h3>
     <div class="racs">
 ''' + "\n".join(K[0:4]) + '''
     </div>
 
-    <h3>🎯 A másodfokú függvény — Cyclops</h3>
+    <h3>🎯 A másodfokú függvény — Küklopsz</h3>
     <div class="racs">
 ''' + "\n".join(K[4:6]) + '''
     </div>
 
-    <h3>🛡️ Egyenlőtlenségek és rendszerek — Cyclops</h3>
+    <h3>🛡️ Egyenlőtlenségek és rendszerek — Küklopsz</h3>
     <div class="racs">
 ''' + "\n".join(K[6:8]) + '''
     </div>
@@ -419,7 +419,7 @@ INDEX = '''<!DOCTYPE html>
 
     <p class="le halvany"><b>Ajánlott sorrend:</b> altémánként előbb a tananyag-egységek sorban,
     utána a hozzá tartozó feladatgyűjtemény; a témakör végén a Taktikai memóriakártya, majd
-    A Parabola-csapás terepküldetés. A Danger Room házi bármikor jöhet.</p>
+    A Parabola-csapás terepküldetés. A Vészterem házi bármikor jöhet.</p>
   </div>
 </main>
 <footer class="lablec">

@@ -33,7 +33,7 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief"><p>📡 <b>Beast:</b> Itt az igazság pillanata. A számológépeden két logaritmus-gomb van: <b>lg</b> és <b>ln</b>. De a vírus kettesével szaporodik, tehát nekem <span class="math inline">\(\log_{2}\)</span> kellene. Elakadtunk? Nem — létezik egy képlet, amely <b>bármely</b> alapot visszavezet egy másikra. Ezzel a logaritmus végre használható eszközzé válik a laborban is.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/dr_bestia.webp" alt="Dr. Bestia — a kampusz fővezető tudósa" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Dr. Bestia:</b> Itt az igazság pillanata. A számológépeden két logaritmus-gomb van: <b>lg</b> és <b>ln</b>. De a vírus kettesével szaporodik, tehát nekem <span class="math inline">\(\log_{2}\)</span> kellene. Elakadtunk? Nem — létezik egy képlet, amely <b>bármely</b> alapot visszavezet egy másikra. Ezzel a logaritmus végre használható eszközzé válik a laborban is.</p></div>
 
     <h2 id="s1">Áttérés más alapra</h2>
 
@@ -44,12 +44,12 @@
     </div>
 
     <div class="doboz csapda">
-      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
       <p><b>Ne keverd össze!</b> A képletben <b>osztás</b> áll, nem kivonás, és a számláló az <b>argumentum</b>, a nevező az <b>alap</b> logaritmusa:</p><p>✔ <span class="math inline">\(\log_{2}7=\dfrac{\lg 7}{\lg 2}\)</span> &nbsp;&nbsp;&nbsp; ✘ <span class="math inline">\(\log_{2}7=\dfrac{\lg 2}{\lg 7}\)</span> &nbsp;&nbsp;&nbsp; ✘ <span class="math inline">\(\log_{2}7=\lg 7-\lg 2\)</span></p><p>Ellenőrzés fejben: <span class="math inline">\(\log_{2}7\)</span> valahol <span class="math inline">\(2\)</span> és <span class="math inline">\(3\)</span> között van (mert <span class="math inline">\(2^{2}=4&lt;7&lt;8=2^{3}\)</span>). Ha a géped <span class="math inline">\(0{,}36\)</span>-ot ad, felcserélted a törtet.</p>
     </div>
 
     <div class="doboz pelda" id="pelda-attetes">
-      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
       <p>Számold ki négy tizedesjegy pontossággal: <b>a)</b> <span class="math inline">\(\log_{11}12\)</span>; <b>b)</b> <span class="math inline">\(\log_{7}23\)</span>.</p>
       <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(\log_{11}12=\dfrac{\lg 12}{\lg 11}\approx\dfrac{1{,}07918}{1{,}04139}\approx\boxed{1{,}0363}\)</span>.</p><p>Józan ész: a <span class="math inline">\(12\)</span> épp csak nagyobb <span class="math inline">\(11\)</span>-nél, tehát a kitevőnek kicsit <span class="math inline">\(1\)</span> fölött kell lennie. ✔</p><p><b>b)</b> <span class="math inline">\(\log_{7}23=\dfrac{\lg 23}{\lg 7}\approx\dfrac{1{,}36173}{0{,}84510}\approx\boxed{1{,}6113}\)</span>.</p><p>Ellenőrzés: <span class="math inline">\(7^{1}=7&lt;23&lt;49=7^{2}\)</span>, tehát a válasznak <span class="math inline">\(1\)</span> és <span class="math inline">\(2\)</span> között kell lennie. ✔</p></div></details>
     </div>
@@ -71,7 +71,7 @@
     </div>
 
     <div class="doboz pelda" id="pelda-alkalmazas">
-      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
       <p><b>a)</b> A fertőzött sejtek száma óránként megkétszereződik, egyetlen sejtből indulva. Hány óra múlva éri el az egymilliót?<br><b>b)</b> Egy bankban a pénz évi <span class="math inline">\(5\%\)</span>-kal gyarapszik. Hány év alatt duplázódik meg?</p>
       <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> A modell: <span class="math inline">\(2^{x}=1\,000\,000\)</span>. Innen</p><span class="math display">\[x=\log_{2}1\,000\,000=\frac{\lg 10^{6}}{\lg 2}=\frac{6}{0{,}30103}\approx 19{,}93.\]</span><p>Tehát a <b>20. óra</b> folyamán lépi át az egymilliót. Figyeld meg: a millió hatalmas szám, de a logaritmusa csak <span class="math inline">\(20\)</span> — ez a nagyságrend-kezelés lényege.</p><p><b>b)</b> A modell: <span class="math inline">\(1{,}05^{n}=2\)</span>, tehát</p><span class="math display">\[n=\log_{1,05}2=\frac{\lg 2}{\lg 1{,}05}\approx\frac{0{,}30103}{0{,}02119}\approx 14{,}21.\]</span><p>Vagyis nagyjából <b>15 év</b> alatt duplázódik meg a pénz (a 14. év végén még nincs meg a kétszeres).</p></div></details>
     </div>
@@ -83,9 +83,9 @@
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
-    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-logaritmus.html#alap-13">🐾 Beast-protokoll <span class="cimke">A 13–18</span></a><a class="sav hulk" href="feladatok-logaritmus.html#kozep-9">🔥 Phoenix-protokoll <span class="cimke">K 9–14</span></a></div></div></div>
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-logaritmus.html#alap-13">🐾 Bestia-protokoll <span class="cimke">A 13–18</span></a><a class="sav bruno" href="feladatok-logaritmus.html#kozep-9">🔥 Főnix-protokoll <span class="cimke">K 9–14</span></a></div></div></div>
 
-    <div class="brief" data-outro><p>📡 <b>Beast:</b> Megvan az eszköz. Most már bármelyik exponenciális egyenletet meg tudjuk oldani — akkor is, ha a két oldal nem hozható közös alapra. Egy dolog maradt hátra: ha a logaritmus a hatványozás fordítottja, akkor a <b>logaritmusfüggvény</b> az exponenciális függvény <b>inverze</b>. A következő küldetésben ezt a tükörképet nézzük meg.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/dr_bestia.webp" alt="Dr. Bestia — a kampusz fővezető tudósa" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Dr. Bestia:</b> Megvan az eszköz. Most már bármelyik exponenciális egyenletet meg tudjuk oldani — akkor is, ha a két oldal nem hozható közös alapra. Egy dolog maradt hátra: ha a logaritmus a hatványozás fordítottja, akkor a <b>logaritmusfüggvény</b> az exponenciális függvény <b>inverze</b>. A következő küldetésben ezt a tükörképet nézzük meg.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-logaritmus-azonossagai.html"><span class="irany">← Előző</span><span class="hova">A logaritmus azonosságai</span></a>
       <a class="kov" href="feladatok-logaritmus.html"><span class="irany">Következő →</span><span class="hova">Feladatok — logaritmus</span></a>

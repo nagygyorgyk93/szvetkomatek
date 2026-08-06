@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """2e / 01 — „A" altéma: Hatványozás (A1) és a hatványfüggvény grafikonja (A2).
 
-Mentor: Storm. Küldetés: „A Képzelet Határa".
+Mentor: Vihar Vera. Küldetés: „A Képzelet Határa".
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -15,11 +15,11 @@ FGY = "feladatok-hatvanyozas.html"
 
 A1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Storm:</b> Kadét, a vihar ereje nem összeadódik — <b>szorzódik</b>. '
+   brief('<b>Vihar Vera:</b> Kadét, a vihar ereje nem összeadódik — <b>szorzódik</b>. '
          'Egy villám feszültsége nem „valamivel több" a másiknál: <b>nagyságrendekkel</b> nagyobb. '
          'Ez a hatványozás nyelve, és az M-Hullám is ezen a nyelven beszél. '
          'Ha nem tudod egyetlen tömör alakba sűríteni a kaotikus kifejezéseket, '
-         'Sinister mutációi olvashatatlanná torzítják a műszereinket. Kezdjük az alapoknál.'),
+         'Dr. Baljós mutációi olvashatatlanná torzítják a műszereinket. Kezdjük az alapoknál.'),
    'Az általánosban a hatványozás csak rövidítés volt az ismételt szorzásra. Idén <b>kitágítjuk</b>: '
    'lesz nulla, negatív, majd (a témakör végére) <b>tört</b> kitevő is. A trükk mindvégig ugyanaz — '
    'úgy bővítünk, hogy a megszokott <b>azonosságok érvényben maradjanak</b>.',
@@ -60,7 +60,7 @@ A1 = [
          '<p>Ha $m&gt;n$, akkor $a&gt;1$ esetén $a^{m}&gt;a^{n}$, viszont $0&lt;a&lt;1$ esetén '
          '$a^{m}&lt;a^{n}$ — a törtszám hatványai <b>csökkennek</b>.</p>',
          hid="tetel-hatvany-elojel"),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Állítsd növekvő sorrendbe: $A=\\dfrac{1}{3}$, $B=-\\dfrac{1}{3}$, '
          '$C=\\left(-\\dfrac{1}{3}\\right)^{2}$, $D=\\left(-\\dfrac{1}{3}\\right)^{3}$.</p>',
          lenyilo=("Megoldás",
@@ -95,8 +95,8 @@ A1 = [
         nem="✘ Fordítsd meg a törtet, majd emelj négyzetre: (2/5)⁻² = (5/2)² = 25/4."),
  ]),
 
- ("Előjelek — ahol Sinister a leggyakrabban támad", [
-   doboz("csapda", "Sinister vírus-kódja",
+ ("Előjelek — ahol Dr. Baljós a leggyakrabban támad", [
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>A mutálódott kód négy klasszikus hibát rejt. Mindegyik <b>hamis</b>:</p>'
          '<ol class="reszfeladatok">'
          '<li>$-2^{4}=16$ — <b>nem</b>: a hatványozás előbb jön, mint az előjel, tehát '
@@ -117,7 +117,7 @@ A1 = [
    'A vizsgahelyzetek nagy része két típus: <b>számkifejezés pontos értéke</b> és '
    '<b>betűs kifejezés egyszerűsítése</b>. Mindkettőnél ugyanaz a stratégia — '
    'előbb minden hatványt közös alapra hozunk, aztán az azonosságokkal összevonunk.',
-   doboz("pelda", "Veszélyterem-szimuláció — számkifejezés",
+   doboz("pelda", "Vészterem-szimuláció — számkifejezés",
          '<p>Számítsd ki: $\\left(\\dfrac{3}{5}\\right)^{2}-\\dfrac{3}{5^{2}}'
          '+\\left(-\\dfrac{3}{5}\\right)^{2}-\\left(\\dfrac{5}{3}\\right)^{-2}$.</p>',
          hid="pelda-szamkifejezes",
@@ -127,7 +127,7 @@ A1 = [
                   '$\\left(-\\dfrac35\\right)^{2}=\\dfrac{9}{25}$; '
                   '$\\left(\\dfrac53\\right)^{-2}=\\left(\\dfrac35\\right)^{2}=\\dfrac{9}{25}$. Így</p>'
                   '$$\\frac{9}{25}-\\frac{3}{25}+\\frac{9}{25}-\\frac{9}{25}=\\frac{6}{25}.$$')),
-   doboz("pelda", "Veszélyterem-szimuláció — betűs kifejezés",
+   doboz("pelda", "Vészterem-szimuláció — betűs kifejezés",
          '<p>Egyszerűsítsd ($a,b,c&gt;0$): '
          '$\\left(\\dfrac{a^{-1}}{b^{2}c}\\right)^{2}\\cdot\\dfrac{a^{3}b^{-2}}{c^{4}}$.</p>',
          hid="pelda-betus",
@@ -136,7 +136,7 @@ A1 = [
                   'A második: $a^{3}b^{-2}c^{-4}$. Kitevőnként összeadva: '
                   '$a$: $-2+3=1$; $b$: $-4-2=-6$; $c$: $-2-4=-6$. Tehát</p>'
                   '$$a^{1}b^{-6}c^{-6}=\\frac{a}{b^{6}c^{6}}.$$')),
-   doboz("pelda", "Veszélyterem-szimuláció — kitevőben betű",
+   doboz("pelda", "Vészterem-szimuláció — kitevőben betű",
          '<p>Hozd egyszerűbb alakra ($n\\in\\mathbb{N}$): $\\dfrac{3^{n+2}-3^{n}}{3^{n+1}}$.</p>',
          hid="pelda-kitevoben-betu",
          lenyilo=("Megoldás",
@@ -145,7 +145,7 @@ A1 = [
                   '$$\\frac{3^{n}\\left(9-1\\right)}{3^{n}\\cdot 3}=\\frac{8}{3}.$$'
                   '<p>A $3^{n}$ kiesik — az eredmény <b>nem függ</b> $n$-től.</p>')),
    gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–5"),
-   brief('<b>Storm:</b> A hatvány mostantól nem csak szám — <b>függvény</b> is. '
+   brief('<b>Vihar Vera:</b> A hatvány mostantól nem csak szám — <b>függvény</b> is. '
          'Ha az alapot rögzítjük és a kitevőt változtatjuk, exponenciális görbét kapunk (az a tavaszi küldetés). '
          'Ha viszont a <b>kitevőt</b> rögzítjük és az alapot változtatjuk, megkapjuk a '
          '<b>hatványfüggvényt</b> — és annak a képe elárulja, hogyan viselkedik a rendszer. Nézzük meg.',
@@ -177,10 +177,10 @@ TUL_PARATLAN = (
 
 A2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Storm:</b> Egy szám még nem fenyegetés. A fenyegetés az, ahogyan a szám <b>változik</b>. '
+   brief('<b>Vihar Vera:</b> Egy szám még nem fenyegetés. A fenyegetés az, ahogyan a szám <b>változik</b>. '
          'A hatványfüggvény grafikonja egyetlen pillantással megmutatja, mi történik: hol nő, milyen '
-         'gyorsan, szimmetrikus-e, van-e hova „elszaladnia". Sinister mutációi görbék alakjában '
-         'jelennek meg a Cerebro műszerein — ezért kell felismerned őket.'),
+         'gyorsan, szimmetrikus-e, van-e hova „elszaladnia". Dr. Baljós mutációi görbék alakjában '
+         'jelennek meg az UMOTRON műszerein — ezért kell felismerned őket.'),
    'Ebben az egységben a rögzített kitevőjű $y=x^{n}$ függvényeket vizsgáljuk. Minden a kitevő '
    '<b>paritásán</b> és <b>előjelén</b> múlik — három családot kapunk.',
  ]),
@@ -217,7 +217,7 @@ A2 = [
    'ugyanilyen alakú, csak a $(-1,1)$ intervallumon <b>laposabb</b>, azon kívül pedig '
    '<b>meredekebb</b>.',
    doboz("tetel", "Az $x^{2k}$ függvény tulajdonságai", TUL_PAROS, hid="tetel-paros-kitevo"),
-   doboz("csapda", "Sinister vírus-kódja",
+   doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>„A $y=x^{2}$ függvény minden $y$ értéket felvesz." — <b>Hamis.</b> '
          'Az értékkészlet csak $[0,+\\infty)$: negatív szám <b>nem</b> lehet páros kitevőjű '
          'hatvány értéke. Ezért nincs valós megoldása az $x^{2}=-1$ egyenletnek — '
@@ -259,7 +259,7 @@ A2 = [
                   'megmarad, de az érték csökken: $x\\cdot x&lt;1\\cdot x$, azaz $x^{2}&lt;x$. '
                   'Ugyanezt ismételve kapjuk a teljes sort. Ha $x&gt;1$, ugyanez a lépés '
                   '<b>növeli</b> az értéket, így a sorrend megfordul.</p>')),
-   doboz("pelda", "Veszélyterem-szimuláció",
+   doboz("pelda", "Vészterem-szimuláció",
          '<p>Melyik a nagyobb: $0{,}7^{3}$ vagy $0{,}7^{5}$? És $1{,}2^{3}$ vagy $1{,}2^{5}$?</p>',
          lenyilo=("Megoldás",
                   '<p>$0{,}7\\in(0,1)$, tehát a nagyobb kitevő kisebb értéket ad: '
@@ -295,7 +295,7 @@ A2 = [
         jo="✔ Pozitív értékek, de a 0-t sosem éri el (az x-tengely aszimptota).",
         nem="✘ A tört értéke sosem 0 és sosem negatív → az értékkészlet (0, +∞)."),
    gyakorolj(FGY + "#alap-7", "A 7–10", FGY + "#kozep-6", "K 6–8"),
-   brief('<b>Storm:</b> Uraltad a vihar erejét — most fejtsd is vissza. Ha ismerem a hatvány '
+   brief('<b>Vihar Vera:</b> Uraltad a vihar erejét — most fejtsd is vissza. Ha ismerem a hatvány '
          '<b>eredményét</b>, meg tudom-e találni az <b>alapot</b>? Ez a gyökvonás, és vele '
          'megérkezik az első igazi buktató is: a páros gyökkitevő. Vigyázz a lábad elé.',
          outro=True),

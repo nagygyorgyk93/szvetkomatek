@@ -153,7 +153,7 @@ NEHEZ = [
   None, "Az $(1;4)$ és az $(5;12)$ pontban."),
 ]
 
-JOKER = ("<b>Sinister vírus-kódja.</b> A rendszer az $y=x^{2}-6x+5$ függvény csúcspontját "
+JOKER = ("<b>Dr. Baljós vírus-kódja.</b> A rendszer az $y=x^{2}-6x+5$ függvény csúcspontját "
          "így számolta: „$u=-\\dfrac{b}{2a}=-\\dfrac{6}{2}=-3$, tehát $C(-3;32)$”. "
          "Hol a hiba, és mi a helyes csúcspont?",
          "A $b=-6$, ezért $u=-\\dfrac{-6}{2}=3$ (nem $-3$). Helyesen $C(3;-4)$.")

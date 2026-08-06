@@ -27,13 +27,13 @@
 <div class="hero">
   <h1>Másodfokú és lineáris egyenletből álló rendszer</h1>
   <p class="alcim">A behelyettesítés módszere, a metszéspontok száma a diszkrimináns alapján, valamint az összeg–szorzat típusú rendszerek Viète-képletekkel.</p>
-  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az X-Faktor · 8/8</span></div>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az M-Faktor · 8/8</span></div>
 </div>
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief"><p>📡 <b>Cyclops:</b> Két feltétel, két egyenlet. Az egyik <b>lineáris</b>, a másik <b>másodfokú</b>. Tavaly két egyenes metszéspontját kerested — most egy egyenes és egy parabola találkozási pontjait. A módszer ugyanaz, mint akkor: <b>behelyettesítés</b>. A különbség csak annyi, hogy a végén másodfokú egyenletet kapsz — és így akár <b>két</b> megoldás is lehet.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/kuklopsz.webp" alt="Küklopsz — az optikai sugarak mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Küklopsz:</b> Két feltétel, két egyenlet. Az egyik <b>lineáris</b>, a másik <b>másodfokú</b>. Tavaly két egyenes metszéspontját kerested — most egy egyenes és egy parabola találkozási pontjait. A módszer ugyanaz, mint akkor: <b>behelyettesítés</b>. A különbség csak annyi, hogy a végén másodfokú egyenletet kapsz — és így akár <b>két</b> megoldás is lehet.</p></div>
 
     <h2 id="s1">A behelyettesítés módszere</h2>
 
@@ -43,7 +43,7 @@
     </div>
 
     <div class="doboz pelda" id="pelda-rendszer">
-      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
       <p>Oldd meg a rendszert: <span class="math inline">\(y=x^{2}-2x\)</span> &nbsp;és&nbsp; <span class="math inline">\(y=x-2\)</span>.</p>
       <details><summary>Megoldás</summary><div class="bel"><p>Mindkét egyenlet <span class="math inline">\(y\)</span>-ra van rendezve, ezért egyenlővé tehetjük őket:</p><span class="math display">\[x^{2}-2x=x-2\ \Rightarrow\ x^{2}-3x+2=0.\]</span><p>Innen <span class="math inline">\(D=9-8=1\)</span>, tehát <span class="math inline">\(x_{1}=1\)</span> és <span class="math inline">\(x_{2}=2\)</span>.</p><p>Visszahelyettesítve a <b>lineáris</b> egyenletbe: <span class="math inline">\(y_{1}=1-2=-1\)</span> és <span class="math inline">\(y_{2}=2-2=0\)</span>.</p><p><b>Megoldás:</b> <span class="math inline">\((1;-1)\)</span> és <span class="math inline">\((2;0)\)</span>.</p></div></details>
     </div>
@@ -94,7 +94,7 @@
     </div>
 
     <div class="doboz pelda" id="pelda-metszespontok">
-      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
       <p>Hány közös pontja van az <span class="math inline">\(y=x^{2}\)</span> parabolának <b>a)</b> az <span class="math inline">\(y=2x-1\)</span>, <b>b)</b> az <span class="math inline">\(y=2x-5\)</span> egyenessel?</p>
       <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(x^{2}=2x-1\Rightarrow x^{2}-2x+1=0\)</span>, <span class="math inline">\(D=4-4=0\)</span> → <b>egy</b> közös pont (<span class="math inline">\(x=1\)</span>, <span class="math inline">\(y=1\)</span>): az egyenes <b>érinti</b> a parabolát.</p><p><b>b)</b> <span class="math inline">\(x^{2}=2x-5\Rightarrow x^{2}-2x+5=0\)</span>, <span class="math inline">\(D=4-20=-16&lt;0\)</span> → <b>nincs</b> valós közös pont; az egyenes elhalad a parabola mellett.</p></div></details>
     </div>
@@ -111,19 +111,19 @@
     Van egy különösen elegáns eset, ahol a Viète-képletek jönnek segítségül: ha a két ismeretlen <b>összegét</b> és <b>szorzatát</b> ismerjük.
 
     <div class="doboz pelda" id="pelda-osszeg-szorzat">
-      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció</p>
+      <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
       <p>Oldd meg: <span class="math inline">\(x+y=7\)</span> &nbsp;és&nbsp; <span class="math inline">\(x\cdot y=12\)</span>.</p>
       <details><summary>Megoldás</summary><div class="bel"><p>A Viète-képletek szerint <span class="math inline">\(x\)</span> és <span class="math inline">\(y\)</span> épp annak a másodfokú egyenletnek a gyökei, amelynek a gyökök összege <span class="math inline">\(7\)</span>, a szorzatuk <span class="math inline">\(12\)</span>:</p><span class="math display">\[t^{2}-7t+12=0.\]</span><p>Innen <span class="math inline">\(D=49-48=1\)</span>, tehát <span class="math inline">\(t_{1}=4\)</span> és <span class="math inline">\(t_{2}=3\)</span>.</p><p><b>Megoldás:</b> <span class="math inline">\((3;4)\)</span> és <span class="math inline">\((4;3)\)</span> — a rendszer szimmetrikus, ezért a két szám <b>felcserélhető</b>.</p></div></details>
     </div>
 
     <div class="doboz pelda" id="pelda-vegyes-rendszer">
-      <p class="cim"><span class="ikon">✏️</span> Veszélyterem-szimuláció — vegyes rendszer</p>
+      <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció — vegyes rendszer</p>
       <p>Oldd meg: <span class="math inline">\(x-y=2\)</span> &nbsp;és&nbsp; <span class="math inline">\(x^{2}+y^{2}=10\)</span>.</p>
       <details><summary>Megoldás</summary><div class="bel"><p>A lineáris egyenletből <span class="math inline">\(x=y+2\)</span>. Behelyettesítve:</p><span class="math display">\[(y+2)^{2}+y^{2}=10\ \Rightarrow\ 2y^{2}+4y-6=0\ \Rightarrow\ y^{2}+2y-3=0.\]</span><p>Innen <span class="math inline">\(y_{1}=1\)</span> és <span class="math inline">\(y_{2}=-3\)</span>, tehát <span class="math inline">\(x_{1}=3\)</span> és <span class="math inline">\(x_{2}=-1\)</span>.</p><p><b>Megoldás:</b> <span class="math inline">\((3;1)\)</span> és <span class="math inline">\((-1;-3)\)</span>. <b>Ellenőrzés:</b> <span class="math inline">\(9+1=10\)</span> ✔ és <span class="math inline">\(1+9=10\)</span> ✔</p></div></details>
     </div>
 
     <div class="doboz csapda">
-      <p class="cim"><span class="ikon">⚠️</span> Sinister vírus-kódja</p>
+      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
       <p>A leggyakoribb hiba: <b>megállni <span class="math inline">\(x\)</span>-nél</b>. A rendszer megoldása nem szám, hanem <b>számpár</b> — minden <span class="math inline">\(x\)</span>-hez ki kell számolni a hozzá tartozó <span class="math inline">\(y\)</span>-t. És vigyázz: a visszahelyettesítést a <b>lineáris</b> egyenletbe végezd, mert a másodfokúból két <span class="math inline">\(y\)</span> is jöhetne, amelyek közül csak az egyik jó.</p>
     </div>
 
@@ -134,9 +134,9 @@
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
-    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav hangya" href="feladatok-egyenlotlensegek-es-rendszerek.html#alap-7">🐾 Beast-protokoll <span class="cimke">A 7–12</span></a><a class="sav hulk" href="feladatok-egyenlotlensegek-es-rendszerek.html#kozep-6">🔥 Phoenix-protokoll <span class="cimke">K 6–10</span></a></div></div></div>
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-egyenlotlensegek-es-rendszerek.html#alap-7">🐾 Bestia-protokoll <span class="cimke">A 7–12</span></a><a class="sav bruno" href="feladatok-egyenlotlensegek-es-rendszerek.html#kozep-6">🔥 Főnix-protokoll <span class="cimke">K 6–10</span></a></div></div></div>
 
-    <div class="brief" data-outro><p>📡 <b>Beast:</b> Kadétok, jó munka — a Parabola-csapást elhárítottuk. De miközben ti a röppályákkal foglalkoztatok, én a laborban mértem valamit, és nem tetszik: Sinister vírusa nem másodfokon terjed többé. <b>Megduplázódik</b> minden lépésben. Az ilyen növekedést a másodfokú függvény már nem írja le — sokkal gyorsabb annál. A következő küldetés az <b>Evolúciós Ugrás</b>, és a fegyverünk az exponenciális függvény lesz.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/dr_bestia.webp" alt="Dr. Bestia — a kampusz fővezető tudósa" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Dr. Bestia:</b> Kadétok, jó munka — a Parabola-csapást elhárítottuk. De miközben ti a röppályákkal foglalkoztatok, én a laborban mértem valamit, és nem tetszik: Dr. Baljós vírusa nem másodfokon terjed többé. <b>Megduplázódik</b> minden lépésben. Az ilyen növekedést a másodfokú függvény már nem írja le — sokkal gyorsabb annál. A következő küldetés az <b>Evolúciós Ugrás</b>, és a fegyverünk az exponenciális függvény lesz.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-masodfoku-egyenlotlensegek.html"><span class="irany">← Előző</span><span class="hova">Másodfokú egyenlőtlenségek</span></a>
       <a class="kov" href="feladatok-egyenlotlensegek-es-rendszerek.html"><span class="irany">Következő →</span><span class="hova">Feladatok — egyenlőtlenségek és rendszerek</span></a>

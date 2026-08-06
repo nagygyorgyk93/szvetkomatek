@@ -21,18 +21,18 @@ TAGOZATOK = ["1e", "2e", "3e", "4e", "4im"]
 # fejezet-térképe szerint). Új témakörnél ide is fel kell venni egy sort — ha kimarad,
 # a jelvény a semleges 🛡️ jelet és a témakör címét kapja.
 JELVENY = {
-    "1e/01-logika-halmazok-fuggvenyek":        ("🃏", "Az Igazság Csarnoka", "Loki · Doctor Strange · Spider-Man"),
-    "1e/02-trigonometria":                     ("🏹", "A Célzó", "Hawkeye"),
-    "1e/03-egesz-es-valos-szamok":             ("🔢", "A Kódtörő · A Kalibrálás", "Shuri · Bruce Banner"),
-    "1e/04-aranyossag":                        ("🐜", "A Pym-protokoll", "Ant-Man & The Wasp"),
-    "1e/05-geometria":                         ("🔮", "A Csatatér-térkép · A Tükör-világ", "Doctor Strange · Scarlet Witch & Quicksilver"),
-    "1e/06-racionalis-algebrai-kifejezesek":   ("⚙️", "A Hatalom Nyelve", "Shuri & Iron Man"),
+    "1e/01-logika-halmazok-fuggvenyek":        ("🃏", "Az Igazság Csarnoka", "Ikol · Dr. Bizarr · Petar Pauk"),
+    "1e/02-trigonometria":                     ("🏹", "A Célzó", "Barton Kálmán"),
+    "1e/03-egesz-es-valos-szamok":             ("🔢", "A Kódtörő · A Kalibrálás", "Iruhs · Banner Brúnó"),
+    "1e/04-aranyossag":                        ("🐜", "A Zsugor-protokoll", "Hangya Henrik & Darázs Dorka"),
+    "1e/05-geometria":                         ("🔮", "A Csatatér-térkép · A Tükör-világ", "Dr. Bizarr · Vanda & Fürge Pjotr"),
+    "1e/06-racionalis-algebrai-kifejezesek":   ("⚙️", "A Hatalom Nyelve", "Iruhs & Krats Ynot"),
     "1e/07-linearis-egyenletek-es-rendszerek": ("🛡️", "A Végső Egyenlet", "a teljes csapat"),
-    "1e/08-hasonlosag":                        ("📐", "A Skála Törvénye", "Ant-Man (Hank Pym)"),
-    "2e/01-hatvanyozas-gyokvonas-komplex-szamok": ("🧬", "A Képzelet Határa", "Storm · Professor X"),
-    "2e/02-masodfoku-egyenletek-es-fuggvenyek":   ("⚔️", "Az X-Faktor", "Wolverine · Cyclops"),
-    "2e/03-exponencialis-es-logaritmus-fuggveny": ("🧬", "Az Evolúciós Ugrás", "Beast"),
-    "2e/04-trigonometrikus-fuggvenyek":           ("🌀", "A Fázisugrás", "Nightcrawler · Jean Grey"),
+    "1e/08-hasonlosag":                        ("📐", "A Skála Törvénye", "Hangya Henrik"),
+    "2e/01-hatvanyozas-gyokvonas-komplex-szamok": ("🧬", "A Képzelet Határa", "Vihar Vera · X. Károly professzor"),
+    "2e/02-masodfoku-egyenletek-es-fuggvenyek":   ("⚔️", "Az M-Faktor", "Nagol · Küklopsz"),
+    "2e/03-exponencialis-es-logaritmus-fuggveny": ("🧬", "Az Evolúciós Ugrás", "Dr. Bestia"),
+    "2e/04-trigonometrikus-fuggvenyek":           ("🌀", "A Fázisugrás", "Éjjáró · Szürke Janka"),
 }
 
 H1 = re.compile(r"<h1[^>]*>(.*?)</h1>", re.S)

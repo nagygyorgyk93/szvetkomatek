@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""1e/06 — Racionális algebrai kifejezések KÖZÖS feladatgyűjtemény (Shuri & Iron Man, „A Hatalom Nyelve").
+"""1e/06 — Racionális algebrai kifejezések KÖZÖS feladatgyűjtemény (Iruhs & Krats Ynot, „A Hatalom Nyelve").
 Egy drill-deck a teljes témakörre. Végeredmény = KIZÁRÓLAG a végső válasz, levezetés nélkül."""
 import sys, os, glob
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -152,7 +152,7 @@ NEHEZ = [
   "Mindkettő azonosság: a bal oldalt kibontva a jobb oldalt kapjuk.", True),
 ]
 
-JOKER = ("<b>Kang csapdája.</b> Kang egy „egyszerűsített” képletet injektált a rendszerbe: "
+JOKER = ("<b>Kán csapdája.</b> Kán egy „egyszerűsített” képletet injektált a rendszerbe: "
   "$\\dfrac{x^2+x}{x+1}=x^2$ — kihúzta a $+x$-et és a $+1$-et. Hol a hiba, és mi a helyes eredmény? "
   "(Emlékezz: <b>csak közös tényezővel</b> egyszerűsíthetünk, taggal nem!)",
   "A hiba: tagot húzott ki, nem tényezőt. Helyesen $\\dfrac{x^2+x}{x+1}=\\dfrac{x(x+1)}{x+1}=x$ (ÉT: $x\\neq -1$).")

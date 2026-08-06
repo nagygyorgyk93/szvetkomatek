@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Danger Room (Veszélyterem) — témakörönként EGY, teljes témakört lefedő házi feladatsor.
+"""Vészterem — témakörönként EGY, teljes témakört lefedő házi feladatsor.
 FONTOS: a Végeredmény KIZÁRÓLAG a végső választ tartalmazza, levezetés/indoklás NÉLKÜL."""
 import sys, os, glob
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -30,7 +30,7 @@ def dr_page(dest, topic_link, topic_name, fname, title, alcim, brief, sections, 
   <a href="../../index.html">Főhadiszállás</a> ›
   <a href="../index.html"><span class="tagozat-jel">1e</span></a> ›
   <a href="{topic_link}">{topic_name}</a> ›
-  <span class="itt">Danger Room — házi</span>
+  <span class="itt">Vészterem — házi</span>
 </nav>
 <div class="hero">
   <h1>{title}</h1>
@@ -140,18 +140,18 @@ N01 = [
  ("$f(x)=2x+1$, $g(x)=x^2$. Add meg $(f\\circ g)(x)$-et és $(g\\circ f)(x)$-et — egyenlők-e? Számítsd ki mindkettőt $x=3$-ra!",
   None, "$(f\\circ g)(x)=2x^2+1$, $(g\\circ f)(x)=4x^2+4x+1$; nem egyenlők. $(f\\circ g)(3)=19$, $(g\\circ f)(3)=49$."),
 ]
-brief01 = ("🕹️ <b>SZVETI:</b> Üdv a <b>Veszélyteremben</b>, kadét! Ez a <b>Danger Room</b> — a kampusz "
- "szimulációs edzőterme (a technológiát a Xavier-intézet X-Menjeitől licenceltük). Itt otthon, a saját "
+brief01 = ("🕹️ <b>SZVETI:</b> Üdv a <b>Vészteremben</b>, kadét! Ez a <b>Vészterem</b> — a kampusz "
+ "szimulációs edzőterme (a technológiát az X. Károly Intézet Mutáns Osztagától licenceltük). Itt otthon, a saját "
  "tempódban gyakorolsz két küldetés között. A szimuláció a <b>teljes témakört</b> lefedi: logika, halmazok, "
  "függvények. Haladj a fokozatokon: zöld (alap) → sárga (közép) → piros (nehéz). A végeredményt minden "
  "feladatnál lenyithatod — de előbb küzdd le magad!")
 dr_page(DEST01, "index.html", "Logika, halmazok, függvények", "feladatok-hazi.html",
- "🕹️ Danger Room — házi feladatgyűjtemény",
+ "🕹️ Vészterem — házi feladatgyűjtemény",
  "Egyetlen, a teljes témakört lefedő házi feladatsor: logika, halmazok és függvények. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
  brief01, sect(A01, K01, N01),
  "index.html", "Témakör Főhadiszállása", "osszefoglalo.html", "Tömör összefoglaló",
  "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
-print("01 Danger Room kész: Alap", len(A01), "Közép", len(K01), "Nehéz", len(N01))
+print("01 Vészterem kész: Alap", len(A01), "Közép", len(K01), "Nehéz", len(N01))
 
 # =========================================================== 02
 DEST02 = glob.glob("/sessions/*/mnt/Claude/web/1e/02-trigonometria")[0]
@@ -181,17 +181,17 @@ N02 = [
  ("<b>Terep-alkalmazás.</b> Egy fa árnyéka $12\\,\\text{m}$ hosszú, amikor a napsugarak $40^\\circ$-os emelkedési szöget zárnak be a vízszintessel. Milyen magas a fa? Rajzolj, és számolj 2 tizedesre!",
   None, "$m\\approx 10{,}07\\,\\text{m}$."),
 ]
-brief02 = ("🕹️ <b>SZVETI:</b> <b>Veszélyterem</b>-szimuláció, célzó modul. Ez a <b>Danger Room</b> otthoni "
+brief02 = ("🕹️ <b>SZVETI:</b> <b>Vészterem</b>-szimuláció, célzó modul. Ez a <b>Vészterem</b> otthoni "
  "edzésváltozata — itt gyakorolsz a terepküldetés előtt és után. A szimuláció a <b>teljes trigonometria-témakört</b> "
  "lefedi: szögfüggvények, nevezetes szögek, a derékszögű háromszög megoldása és valós mérések. Tartsd a "
  "<b>kerekítési szabályt</b> (szögfüggvény-érték 5 tizedes, hossz és szög 2 tizedes). Fokozatok: zöld → sárga → piros.")
 dr_page(DEST02, "index.html", "Trigonometria", "feladatok-hazi.html",
- "🕹️ Danger Room — házi feladatgyűjtemény",
+ "🕹️ Vészterem — házi feladatgyűjtemény",
  "Egyetlen, a teljes trigonometria-témakört lefedő házi feladatsor. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
  brief02, sect(A02, K02, N02),
  "index.html", "Témakör Főhadiszállása", "osszefoglalo.html", "Tömör összefoglaló",
  "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
-print("02 Danger Room kész: Alap", len(A02), "Közép", len(K02), "Nehéz", len(N02))
+print("02 Vészterem kész: Alap", len(A02), "Közép", len(K02), "Nehéz", len(N02))
 
 # =========================================================== 03
 from math import gcd as _gcd
@@ -243,18 +243,18 @@ N03 = [
  ("Melyik a legkisebb pozitív egész szám, amivel a $600$-at szorozva köbszámot kapunk? (Kanonikus alak.)",
   None, "$45$."),
 ]
-brief03 = ("🕹️ <b>SZVETI:</b> <b>Veszélyterem</b>-szimuláció, kódtörő + kalibráló modul. Ez a <b>Danger Room</b> "
+brief03 = ("🕹️ <b>SZVETI:</b> <b>Vészterem</b>-szimuláció, kódtörő + kalibráló modul. Ez a <b>Vészterem</b> "
  "otthoni edzésváltozata — itt gyakorolsz a saját tempódban. A szimuláció a <b>teljes témakört</b> lefedi: "
- "számelmélet és számrendszerek (Shuri szektora), valamint a valós számok, a közelítés és a normál alak (Banner "
+ "számelmélet és számrendszerek (Iruhs szektora), valamint a valós számok, a közelítés és a normál alak (Banner "
  "szektora). Haladj a fokozatokon: zöld (alap) → sárga (közép) → piros (nehéz). A végeredményt minden feladatnál "
  "lenyithatod — de előbb küzdd le magad!")
 dr_page(DEST03, "index.html", "Egész és valós számok", "feladatok-hazi.html",
- "🕹️ Danger Room — házi feladatgyűjtemény",
+ "🕹️ Vészterem — házi feladatgyűjtemény",
  "Egyetlen, a teljes témakört lefedő házi feladatsor: számelmélet, számrendszerek, számhalmazok, közelítés. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
  brief03, sect(A03, K03, N03),
  "index.html", "Témakör Főhadiszállása", "osszefoglalo.html", "Tömör összefoglaló",
  "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
-print("03 Danger Room kész: Alap", len(A03), "Közép", len(K03), "Nehéz", len(N03))
+print("03 Vészterem kész: Alap", len(A03), "Közép", len(K03), "Nehéz", len(N03))
 
 # =========================================================== 04
 assert 8*12/3==32 and 3*(6+4)==5*6 and 7*20000==140000
@@ -291,20 +291,20 @@ K04 = [
   ["$7200$ din","$6\\%$"]),
 ]
 N04 = [
- ("A Pym Tech $400\\,000$ dinárt fektet be $2$ évre. Az <b>A</b> bank $10\\%$ egyszerű kamatot, a <b>B</b> bank $9\\%$ kamatos kamatot kínál. Melyiknél lesz több pénz $2$ év múlva, és mennyivel?",
+ ("A Henrik Tech $400\\,000$ dinárt fektet be $2$ évre. Az <b>A</b> bank $10\\%$ egyszerű kamatot, a <b>B</b> bank $9\\%$ kamatos kamatot kínál. Melyiknél lesz több pénz $2$ év múlva, és mennyivel?",
   None, "$A$: $480\\,000$, $B$: $475\\,240$ → az $A$ a jobb, $4760$ dinárral."),
 ]
-brief04 = ("🕹️ <b>SZVETI:</b> <b>Veszélyterem</b>-szimuláció, Pym-protokoll modul. Ez a <b>Danger Room</b> otthoni "
+brief04 = ("🕹️ <b>SZVETI:</b> <b>Vészterem</b>-szimuláció, Zsugor-protokoll modul. Ez a <b>Vészterem</b> otthoni "
  "edzésváltozata — itt gyakorolsz a saját tempódban. A szimuláció a <b>teljes témakört</b> lefedi: arány és arányos "
  "osztás, egyenes és fordított arányosság, méretarány, keverék, százalék, ezrelék és kamat. Haladj a fokozatokon: "
  "zöld (alap) → sárga (közép) → piros (nehéz). A végeredményt minden feladatnál lenyithatod — de előbb küzdd le magad!")
 dr_page(DEST04, "index.html", "Arányosság", "feladatok-hazi.html",
- "🕹️ Danger Room — házi feladatgyűjtemény",
+ "🕹️ Vészterem — házi feladatgyűjtemény",
  "Egyetlen, a teljes témakört lefedő házi feladatsor: arány, arányos osztás, egyenes és fordított arányosság, méretarány, keverék, százalék és kamat. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
  brief04, sect(A04, K04, N04),
  "index.html", "Témakör Főhadiszállása", "osszefoglalo.html", "Tömör összefoglaló",
  "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
-print("04 Danger Room kész: Alap", len(A04), "Közép", len(K04), "Nehéz", len(N04))
+print("04 Vészterem kész: Alap", len(A04), "Közép", len(K04), "Nehéz", len(N04))
 
 # =========================================================== 05 (Geometria)
 # A házi a TESZTELT magot fedi (szögek, alakzatok, egybevágóság, vektorok) —
@@ -369,22 +369,22 @@ N05 = [
  ("Bizonyítsd be, hogy a paralelogramma szemközti oldalai egyenlők!",
   None, "Egy átló a paralelogrammát két egybevágó háromszögre bontja (SOS: a váltószögek egyenlők, az átló közös), ezért a szemközti oldalak egyenlők."),
 ]
-brief05 = ("🕹️ <b>SZVETI:</b> <b>Veszélyterem</b>-szimuláció, geometriai modul. Ez a <b>Danger Room</b> otthoni "
+brief05 = ("🕹️ <b>SZVETI:</b> <b>Vészterem</b>-szimuláció, geometriai modul. Ez a <b>Vészterem</b> otthoni "
  "edzésváltozata — itt gyakorolsz a saját tempódban. A szimuláció a témakör <b>vizsgára menő magját</b> fedi le: "
  "szögek és szögpárok, háromszögek és egybevágóság, nevezetes pontok, négyszögek, sokszögek, a kör kerületi szöge és "
  "a vektorok. Haladj a fokozatokon: zöld (alap) → sárga (közép) → piros (nehéz). A végeredményt minden feladatnál "
  "lenyithatod — de előbb küzdd le magad!")
 dr_page(DEST05, "index.html", "Geometria", "feladatok-hazi.html",
- "🕹️ Danger Room — házi feladatgyűjtemény",
+ "🕹️ Vészterem — házi feladatgyűjtemény",
  "Egyetlen, a témakör vizsgára menő magját lefedő házi feladatsor: szögek, háromszögek, egybevágóság, négyszögek, sokszögek, kör és vektorok. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
  brief05, sect(A05, K05, N05),
  "index.html", "Témakör Főhadiszállása", "osszefoglalo.html", "Tömör összefoglaló",
  "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
-print("05 Danger Room kész: Alap", len(A05), "Közép", len(K05), "Nehéz", len(N05))
+print("05 Vészterem kész: Alap", len(A05), "Közép", len(K05), "Nehéz", len(N05))
 
 # =========================================================== 06 (Racionális algebrai kifejezések)
 # A teljes témakört fedi (ishod 20): polinomműveletek, azonosságok, osztás+Bézout, bontás, törtek.
-# Ishod 21 (x²≥0 / AM–GM) NEM kerül ide (felhasználói döntés) — csak a tananyagban, Kang-csapdaként.
+# Ishod 21 (x²≥0 / AM–GM) NEM kerül ide (felhasználói döntés) — csak a tananyagban, Kán-csapdaként.
 assert (1-2+1+1)==1 and (8-12+2+2)==0  # Bézout ellenőrzők (A5: P(1)=1; N3: m=1 -> P(2)=0)
 DEST06 = glob.glob("/sessions/*/mnt/Claude/web/1e/06-racionalis-algebrai-kifejezesek")[0]
 A06 = [
@@ -431,18 +431,18 @@ N06 = [
  ("Határozd meg az $m$ paramétert úgy, hogy $P(x)=x^3-3x^2+mx+2$ osztható legyen $x-2$-vel!",
   None, "$m=1$."),
 ]
-brief06 = ("🕹️ <b>SZVETI:</b> <b>Veszélyterem</b>-szimuláció, A Hatalom Nyelve modul. Ez a <b>Danger Room</b> otthoni "
+brief06 = ("🕹️ <b>SZVETI:</b> <b>Vészterem</b>-szimuláció, A Hatalom Nyelve modul. Ez a <b>Vészterem</b> otthoni "
  "edzésváltozata — itt gyakorolsz a saját tempódban. A szimuláció a <b>teljes témakört</b> lefedi: polinomműveletek "
  "és nevezetes azonosságok, polinomosztás és a Bézout-tétel, tényezőkre bontás, valamint az algebrai törtek "
  "(értelmezési tartomány, egyszerűsítés, alapműveletek). Haladj a fokozatokon: zöld (alap) → sárga (közép) → piros "
  "(nehéz). A végeredményt minden feladatnál lenyithatod — de előbb küzdd le magad!")
 dr_page(DEST06, "index.html", "Racionális algebrai kifejezések", "feladatok-hazi.html",
- "🕹️ Danger Room — házi feladatgyűjtemény",
+ "🕹️ Vészterem — házi feladatgyűjtemény",
  "Egyetlen, a teljes témakört lefedő házi feladatsor: polinomok, nevezetes azonosságok, tényezőkre bontás, Bézout-tétel és algebrai törtek. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
  brief06, sect(A06, K06, N06),
  "index.html", "Témakör Főhadiszállása", "osszefoglalo.html", "Tömör összefoglaló",
  "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
-print("06 Danger Room kész: Alap", len(A06), "Közép", len(K06), "Nehéz", len(N06))
+print("06 Vészterem kész: Alap", len(A06), "Közép", len(K06), "Nehéz", len(N06))
 
 # =========================================================== 07 (Lineáris egyenletek, egyenlőtlenségek, rendszerek)
 # A teljes témakört fedi (ishod 22-25): egyenletek, egyenlőtlenségek, függvény, 2×2 rendszerek, szöveges feladatok.
@@ -492,15 +492,15 @@ N07 = [
  ("Milyen $k$ esetén van a rendszernek végtelen sok megoldása: $3x+y=5$, $6x+2y=k$?",
   None, "$k=10$ (ekkor a két egyenlet egybeesik); ha $k\\neq 10$, nincs megoldás."),
 ]
-brief07 = ("🕹️ <b>SZVETI:</b> <b>Veszélyterem</b>-szimuláció, A Végső Egyenlet modul. Ez a <b>Danger Room</b> otthoni "
+brief07 = ("🕹️ <b>SZVETI:</b> <b>Vészterem</b>-szimuláció, A Végső Egyenlet modul. Ez a <b>Vészterem</b> otthoni "
  "edzésváltozata — itt gyakorolsz a saját tempódban. A szimuláció a <b>teljes témakört</b> lefedi: lineáris "
  "egyenletek és egyenlőtlenségek, a lineáris függvény, a kétismeretlenes rendszerek és a szöveges feladatok. Haladj "
  "a fokozatokon: zöld (alap) → sárga (közép) → piros (nehéz). A végeredményt minden feladatnál lenyithatod — de "
  "előbb küzdd le magad!")
 dr_page(DEST07, "index.html", "Lineáris egyenletek és rendszerek", "feladatok-hazi.html",
- "🕹️ Danger Room — házi feladatgyűjtemény",
+ "🕹️ Vészterem — házi feladatgyűjtemény",
  "Egyetlen, a teljes témakört lefedő házi feladatsor: egyenletek, egyenlőtlenségek, lineáris függvény, rendszerek és szöveges feladatok. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
  brief07, sect(A07, K07, N07),
  "index.html", "Témakör Főhadiszállása", "osszefoglalo.html", "Tömör összefoglaló",
  "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
-print("07 Danger Room kész: Alap", len(A07), "Közép", len(K07), "Nehéz", len(N07))
+print("07 Vészterem kész: Alap", len(A07), "Közép", len(K07), "Nehéz", len(N07))
