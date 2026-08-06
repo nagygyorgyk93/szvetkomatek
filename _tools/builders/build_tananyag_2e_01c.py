@@ -314,6 +314,11 @@ C2 = [
          'Az utolsó kiképzési egység erről szól, és arról, hogyan oldunk meg egyenletet '
          'ebben az új világban.',
          outro=True),
+   kviz('Mennyi $|3-4i|$?',
+        ['$5$', '$-1$', '$7$'], 0,
+        jo="✔ A modulusz a Gauss-síkon az origótól mért távolság: √(3² + (−4)²) = √25 = 5.",
+        nem="✘ A modulusz nem a valós és a képzetes rész összege vagy különbsége, hanem "
+            "az origótól mért távolság: √(3² + (−4)²) = 5. Mindig nemnegatív valós szám."),
  ]),
 ]
 

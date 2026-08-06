@@ -166,7 +166,7 @@ A2 = [
 
  ("Mi a diszkrimináns?", [
    doboz("definicio", "Diszkrimináns",
-         '<p>Az $ax^{2}+bx+c=0$ egyenlet <b>diszkriminánsa</b></p>'
+         '<p>Az $ax^{2}+bx+c=0$ egyenlet — ahol $a\\neq 0$ — <b>diszkriminánsa</b></p>'
          '$$D=b^{2}-4ac.$$'
          '<p>A megoldóképlet ezzel $x_{1,2}=\\dfrac{-b\\pm\\sqrt{D}}{2a}$ alakot ölt — '
          'látszik, hogy minden a $\\sqrt{D}$-n múlik.</p>',
@@ -230,8 +230,7 @@ A2 = [
          '<p>Oldd meg a komplex számok halmazán: $x^{2}+2x+5=0$.</p>',
          hid="pelda-komplex-gyokok",
          lenyilo=("Megoldás",
-                  '<p>$D=4-20=-16$. A $\\sqrt{-16}$ helyett írjuk azt, hogy $4i$ '
-                  '(hiszen $(4i)^{2}=-16$):</p>'
+                  '<p>$D=4-20=-16$. Negatív szám négyzetgyöke a valós számok között nem értelmezett — a komplex számok halmazán viszont keresünk olyan számot, amelynek a négyzete $-16$. Ilyen a $4i$, hiszen $(4i)^{2}=16i^{2}=-16$. A megoldóképletbe tehát ezt írjuk:</p>'
                   '$$x_{1,2}=\\frac{-2\\pm 4i}{2}=-1\\pm 2i.$$'
                   '<p><b>Ellenőrzés:</b> $(-1+2i)^{2}+2(-1+2i)+5=(1-4i-4)+(-2+4i)+5=0$ ✔</p>')),
    doboz("erdekesseg", "A gyökök mindig párban járnak",

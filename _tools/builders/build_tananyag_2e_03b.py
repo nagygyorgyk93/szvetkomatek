@@ -172,15 +172,19 @@ B2 = [
                   '<p>Legyen $\\log_{a}u=p$ és $\\log_{a}v=q$. Definíció szerint ez azt '
                   'jelenti, hogy $u=a^{p}$ és $v=a^{q}$. Ekkor</p>'
                   '$$u\\cdot v=a^{p}\\cdot a^{q}=a^{p+q},$$'
-                  '<p>ami épp azt mondja, hogy $\\log_{a}(uv)=p+q=\\log_{a}u+\\log_{a}v$. '
-                  'A másik kettő ugyanígy, az $a^{p}:a^{q}=a^{p-q}$ és az '
-                  '$\\left(a^{p}\\right)^{k}=a^{pk}$ azonosságból jön.</p>')),
+                  '<p>ami épp azt mondja, hogy $\\log_{a}(uv)=p+q=\\log_{a}u+\\log_{a}v$.</p>'
+                  '<p>A <b>hányadosra</b> ugyanezzel a jelöléssel: '
+                  '$\\dfrac{u}{v}=\\dfrac{a^{p}}{a^{q}}=a^{p-q}$, tehát '
+                  '$\\log_{a}\\dfrac{u}{v}=p-q=\\log_{a}u-\\log_{a}v$.</p>'
+                  '<p>A <b>hatványra</b>: $u^{k}=\\left(a^{p}\\right)^{k}=a^{pk}$, tehát '
+                  '$\\log_{a}u^{k}=pk=k\\log_{a}u$.</p>'
+                  '<p>Mindhárom ugyanarra épül: a logaritmus a <b>kitevőt</b> adja vissza, a hatványozás azonosságai pedig épp a kitevőkkel végzett műveleteket írják le.</p>')),
    doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>A leggyakoribb — és legköltségesebb — hiba az azonosságok <b>összegre</b> '
          'való alkalmazása:</p>'
          '<p>✘ $\\log_{a}(u+v)=\\log_{a}u+\\log_{a}v$ &nbsp;&nbsp; '
          '✔ $\\log_{a}(u\\cdot v)=\\log_{a}u+\\log_{a}v$</p>'
-         '<p>Próbáld ki: $\\lg(1+9)=\\lg 10=1$, míg $\\lg 1+\\lg 9=0+\\lg 9\\approx 0{,}95$ — '
+         '<p>Próbáld ki (a $\\lg$ a <a href="tananyag-logaritmus-fogalma.html#def-lg-ln">tízes alapú logaritmus</a>): $\\lg(1+9)=\\lg 10=1$, míg $\\lg 1+\\lg 9=0+\\lg 9\\approx 0{,}95$ — '
          'nem egyenlők. <b>A logaritmusnak a szorzásról van mondanivalója, az összeadásról nincs.</b></p>'
          '<p>Ugyanígy hibás: $\\dfrac{\\log_{a}u}{\\log_{a}v}=\\log_{a}\\dfrac{u}{v}$ — '
          'a hányados azonossága a <b>különbségre</b> szól, nem a hányadosra.</p>'),

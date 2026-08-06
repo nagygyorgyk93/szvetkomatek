@@ -104,6 +104,12 @@ B1 = [
          'vonni, szorozni, egymásba ágyazni. Ez a rész tiszta kézügyesség: sok kis lépés, '
          'mindegyik egyszerű, de egyetlen elrontott előjel az egész számítást viszi.',
          outro=True),
+   kviz('Igaz-e, hogy $\\sqrt{2}+\\sqrt{3}=\\sqrt{5}$?',
+        ['Nem — a gyökvonás összegre nem bontható.', 'Igen, mindig.',
+         'Csak pozitív számokra igaz.'], 0,
+        jo="✔ Így van: az azonosság a SZORZÁSRA szól. Számokkal: 1,41 + 1,73 ≈ 3,15, míg √5 ≈ 2,24.",
+        nem="✘ A √a·√b = √(ab) a szorzásra érvényes; összegre nincs ilyen szabály. "
+            "1,41 + 1,73 ≈ 3,15, míg √5 ≈ 2,24 — nem egyenlők."),
  ]),
 ]
 
@@ -265,6 +271,10 @@ B3 = [
          '$$\\frac{4}{\\sqrt7-\\sqrt3}\\neq\\frac{4}{\\sqrt7+\\sqrt3}.$$'
          '<p>Ha csak a nevezőt írnád át, egy másik számot kapnál. Bővítés = a számlálót és '
          'a nevezőt <b>ugyanazzal</b> szorozzuk.</p>'),
+   kviz('Mivel kell bővíteni a $\\dfrac{1}{\\sqrt5+2}$ törtet, hogy a nevező racionális legyen?',
+        ['$\\sqrt5-2$', '$\\sqrt5+2$', '$\\sqrt5$'], 0,
+        jo="✔ A konjugálttal: (√5+2)(√5−2) = 5 − 4 = 1 — a nevező racionális lesz.",
+        nem="✘ A konjugáltban a KÖZÉPSŐ előjel fordul meg: √5−2. Így a nevező (√5)² − 2² = 1."),
  ]),
 
  ("Racionális kitevőjű hatvány", [
