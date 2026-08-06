@@ -31,7 +31,7 @@
 </div>
 <main class="lap toc-os">
   <div class="tartalom">
-    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/svetozar.webp" alt="SZVETI — a Szvetkó-kampusz mesterséges intelligenciája" width="320" height="320" loading="lazy" decoding="async"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — A Képzelet Határa modul. Ez a Vészterem otthoni edzésváltozata: a <b>teljes témakört</b> lefedi — hatványozás, hatványfüggvény, gyökvonás, gyöktelenítés, racionális kitevő és komplex számok. Haladj a fokozatokon: zöld → sárga → piros. A végeredményt lenyithatod, de előbb küzdd le magad!</p></div>
+    <div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — A Képzelet Határa modul. Ez a Vészterem otthoni edzésváltozata: a <b>teljes témakört</b> lefedi — hatványozás, hatványfüggvény, gyökvonás, gyöktelenítés, racionális kitevő és komplex számok. Haladj a fokozatokon: zöld → sárga → piros. A végeredményt lenyithatod, de előbb küzdd le magad!</p></div>
     <h2 id="alap">🟢 Alapfokozat</h2>
     <article class="feladat alap" id="alap-1">
       <p><span class="szam">1.</span> Számítsd ki a pontos értéket!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(3^{-2}\)</span></li><li><span class="math inline">\(\left(\dfrac{2}{5}\right)^{-1}\)</span></li><li><span class="math inline">\((-2)^{-3}\)</span></li><li><span class="math inline">\(7^{0}\)</span></li></ol>
@@ -87,6 +87,12 @@
         <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(5-3i\)</span></li><li><span class="math inline">\(10-5i\)</span></li><li><span class="math inline">\(3-5i\)</span></li></ol></div>
       </details>
     </article>
+    <article class="feladat alap" id="alap-10">
+      <p><span class="szam">10.</span> Az alábbi „levezetésekben” egy-egy tipikus hiba van. Keresd meg, hol csúszik el, és javítsd ki!</p><ol class="reszfeladatok"><li><span class="math inline">\(\sqrt{a^2}=a\)</span> minden valós <span class="math inline">\(a\)</span>-ra</li><li><span class="math inline">\(\sqrt{9+16}=\sqrt9+\sqrt{16}=7\)</span></li><li><span class="math inline">\((2^3)^2=2^{3+2}=32\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>Csak <span class="math inline">\(a\ge 0\)</span> esetén igaz. Általában <span class="math inline">\(\sqrt{a^2}=|a|\)</span> — például <span class="math inline">\(a=-3\)</span>-nál <span class="math inline">\(\sqrt{9}=3\)</span>, nem <span class="math inline">\(-3\)</span>.</li><li>A gyökvonás <b>nem</b> bontható szét összegre: <span class="math inline">\(\sqrt{25}=5\)</span>, nem <span class="math inline">\(7\)</span>.</li><li>Hatvány hatványozásánál a kitevők <b>szorzódnak</b>: <span class="math inline">\((2^3)^2=2^{6}=64\)</span>.</li></ol></div>
+      </details>
+    </article>
     <h2 id="kozep">🟡 Középfokozat</h2>
     <article class="feladat kozep" id="kozep-1">
       <p><span class="szam">1.</span> Egyszerűsítsd! <span class="math inline">\((a,b,c&gt;0)\)</span>  <span class="math inline">\(\left(\dfrac{a^{-2}b^{3}}{c}\right)^{-2}\cdot\dfrac{a^{-3}}{b^{4}}\)</span></p>
@@ -122,6 +128,12 @@
       <p><span class="szam">6.</span> Számítsd ki! <span class="math inline">\(\dfrac{4+3i}{2-i}\)</span></p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\(1+2i\)</span></p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-7">
+      <p><span class="szam">7.</span> Egy <span class="math inline">\(z\)</span> komplex számról ennyit tudsz: a Gauss-síkon a második síknegyedben van, a valós tengelytől <span class="math inline">\(3\)</span> egységre, a képzetes tengelytől <span class="math inline">\(4\)</span> egységre.</p><ol class="reszfeladatok"><li>Írd fel <span class="math inline">\(z\)</span>-t algebrai alakban!</li><li>Mekkora a modulusza? Olvasd le a rajzról is, és számold ki képlettel is.</li><li>Hol helyezkedik el <span class="math inline">\(\overline{z}\)</span>, és mekkora a modulusza? Miért?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>A képzetes tengelytől mért távolság a valós rész abszolút értéke, a valós tengelytől mérté a képzetes részé. A második síknegyedben a valós rész negatív: <span class="math inline">\(z=-4+3i\)</span>.</li><li><span class="math inline">\(|z|=\sqrt{(-4)^2+3^2}=\sqrt{25}=5\)</span> — a rajzon ez az origótól mért távolság.</li><li>A konjugált a valós tengelyre vett tükörkép, tehát <span class="math inline">\(\overline{z}=-4-3i\)</span> a harmadik síknegyedben. A modulusza ugyanaz, <span class="math inline">\(5\)</span>: a tükrözés nem változtat a távolságon.</li></ol></div>
       </details>
     </article>
     <h2 id="nehez">🔴 Nehéz fokozat</h2>

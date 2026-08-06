@@ -128,6 +128,13 @@ KOZEP = [
  ("Végezd el a törtek szorzását, osztását (egyszerűsíts)!",
   ["$\\dfrac{x^2-1}{x}\\cdot\\dfrac{x}{x+1}$","$\\dfrac{a^2-b^2}{a+b}:\\dfrac{a-b}{2}$"],
   ["$x-1$","$2$"]),
+ ('Egy kadét ezt írta: <i>„A $\\dfrac{x^2-1}{x-1}$ kifejezés egyszerűsítve $x+1$, tehát a két kifejezés ugyanaz.”</i>',
+  ['Helyes-e az egyszerűsítés?',
+   'Ugyanaz-e a két kifejezés? Nézd meg $x=1$-nél!',
+   'Hogyan kell pontosan megfogalmazni az állítást?'],
+  ['Az átalakítás helyes: $x^2-1=(x-1)(x+1)$.',
+   'Nem ugyanaz. Az eredeti kifejezésnek $x=1$-nél nincs értéke (nullával osztanánk), az $x+1$-nek viszont van: $2$.',
+   'A két kifejezés <b>minden $x\\neq 1$ helyen</b> egyenlő. Az egyszerűsítés soha nem bővíti az értelmezési tartományt — a kikötést ki kell írni.']),
 ]
 
 # =============================== NEHÉZ (8) ===============================

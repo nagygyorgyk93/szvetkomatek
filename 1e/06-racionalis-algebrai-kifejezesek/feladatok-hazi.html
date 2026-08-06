@@ -33,7 +33,7 @@
 </div>
 <main class="lap toc-os">
   <div class="tartalom">
-    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/svetozar.webp" alt="SZVETI — a Szvetkó-kampusz mesterséges intelligenciája" width="320" height="320" loading="lazy" decoding="async"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b>-szimuláció, A Hatalom Nyelve modul. Ez a <b>Vészterem</b> otthoni edzésváltozata — itt gyakorolsz a saját tempódban. A szimuláció a <b>teljes témakört</b> lefedi: polinomműveletek és nevezetes azonosságok, polinomosztás és a Bézout-tétel, tényezőkre bontás, valamint az algebrai törtek (értelmezési tartomány, egyszerűsítés, alapműveletek). Haladj a fokozatokon: zöld (alap) → sárga (közép) → piros (nehéz). A végeredményt minden feladatnál lenyithatod — de előbb küzdd le magad!</p></div>
+    <div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b>-szimuláció, A Hatalom Nyelve modul. Ez a <b>Vészterem</b> otthoni edzésváltozata — itt gyakorolsz a saját tempódban. A szimuláció a <b>teljes témakört</b> lefedi: polinomműveletek és nevezetes azonosságok, polinomosztás és a Bézout-tétel, tényezőkre bontás, valamint az algebrai törtek (értelmezési tartomány, egyszerűsítés, alapműveletek). Haladj a fokozatokon: zöld (alap) → sárga (közép) → piros (nehéz). A végeredményt minden feladatnál lenyithatod — de előbb küzdd le magad!</p></div>
     <h2 id="alap">🟢 Alapszint</h2>
     <article class="feladat alap" id="alap-1">
       <p><span class="szam">1.</span> Végezd el a műveleteket!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(3a^2+5a^2-a^2\)</span></li><li><span class="math inline">\(2x(3x-4)\)</span></li><li><span class="math inline">\((x+6)^2\)</span></li><li><span class="math inline">\((a-3)(a+3)\)</span></li></ol>
@@ -83,6 +83,12 @@
         <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\dfrac{3}{x}\)</span></li><li><span class="math inline">\(2\)</span></li></ol></div>
       </details>
     </article>
+    <article class="feladat alap" id="alap-9">
+      <p><span class="szam">9.</span> Az alábbi „levezetésekben” egy-egy tipikus hiba van. Keresd meg, hol csúszik el, és javítsd ki!</p><ol class="reszfeladatok"><li><span class="math inline">\((a+b)^2=a^2+b^2\)</span></li><li><span class="math inline">\(\dfrac{a+b}{a}=b\)</span></li><li><span class="math inline">\(\dfrac{x^2-4}{x-2}=x-2\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>Hiányzik a kétszeres szorzat: <span class="math inline">\((a+b)^2=a^2+2ab+b^2\)</span>. Az <span class="math inline">\(a=b=1\)</span> eset azonnal cáfol: <span class="math inline">\(4\neq 2\)</span>.</li><li>Összegből nem lehet „kiegyszerűsíteni” egy tagot: <span class="math inline">\(\dfrac{a+b}{a}=1+\dfrac{b}{a}\)</span>.</li><li>A számláló <span class="math inline">\( (x-2)(x+2)\)</span>, ezért az eredmény <span class="math inline">\(x+2\)</span> — és ki kell kötni, hogy <span class="math inline">\(x\neq 2\)</span>.</li></ol></div>
+      </details>
+    </article>
     <h2 id="kozep">🟡 Középszint</h2>
     <article class="feladat kozep" id="kozep-1">
       <p><span class="szam">1.</span> Írd fel kanonikus alakban: <span class="math inline">\((2x+1)^2-(x-1)(x+2)\)</span>.</p>
@@ -112,6 +118,12 @@
       <p><span class="szam">5.</span> Add össze: <span class="math inline">\(\dfrac{1}{x-3}+\dfrac{1}{x+3}\)</span>.</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\(\dfrac{2x}{x^2-9}\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-6">
+      <p><span class="szam">6.</span> Adott a <span class="math inline">\(\dfrac{x^2-9}{x^2-5x+6}\)</span> kifejezés.</p><ol class="reszfeladatok"><li>Mely <span class="math inline">\(x\)</span> értékekre nincs értelmezve? Miért éppen azokra?</li><li>Egyszerűsítsd a kifejezést!</li><li>Az egyszerűsítés után a <span class="math inline">\(x=3\)</span> behelyettesíthetőnek <b>látszik</b>. Behelyettesíthető-e valójában? Indokold!</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>A nevező <span class="math inline">\(x^2-5x+6=(x-2)(x-3)\)</span>, tehát <span class="math inline">\(x\neq 2\)</span> és <span class="math inline">\(x\neq 3\)</span> — nullával nem osztunk.</li><li><span class="math inline">\(\dfrac{(x-3)(x+3)}{(x-2)(x-3)}=\dfrac{x+3}{x-2}\)</span>.</li><li>Nem. Az értelmezési tartományt az <b>eredeti</b> kifejezés szabja meg, és azt az egyszerűsítés nem bővíti ki. <span class="math inline">\(x=3\)</span>-nál az eredeti kifejezésnek nincs értéke.</li></ol></div>
       </details>
     </article>
     <h2 id="nehez">🔴 Nehéz (emelt)</h2>

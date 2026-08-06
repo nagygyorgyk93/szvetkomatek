@@ -279,6 +279,35 @@ print("✓ terepkuldetes.html")
 
 # ==================================================================== F6h
 
+
+# ==================================================================
+# STK2 / reprezentáció-váltó pótlás a Vészteremhez (2026-08 audit)
+# ==================================================================
+# --- 2e/04 Trigonometrikus függvények ---
+DR_A_UJ_04 = [
+ ("Döntsd el, igaz vagy hamis, és <b>ha hamis, adj ellenpéldát</b>!",
+  ["$\\sin x$ értéke bármely valós $x$-re $-1$ és $1$ közé esik.",
+   "$\\sin(x+y)=\\sin x+\\sin y$ minden $x$-re és $y$-ra.",
+   "A $\\operatorname{tg}$ függvény minden valós számra értelmezett.",
+   "$\\cos(-x)=\\cos x$ minden valós $x$-re."],
+  ["Igaz — ez a szinusz értékkészlete.",
+   "Hamis: $x=y=90^\\circ$ esetén a bal oldal $\\sin 180^\\circ=0$, a jobb oldal $2$.",
+   "Hamis: ahol $\\cos x=0$ (például $x=90^\\circ$), ott nincs értelmezve.",
+   "Igaz: a koszinusz páros függvény, grafikonja szimmetrikus az $y$ tengelyre."]),
+]
+DR_K_UJ_04 = [
+ ("Egy szinuszos rezgést leíró függvény grafikonjáról ennyi olvasható le: a legnagyobb "
+  "érték $3$, a legkisebb $-3$, és a görbe $4$ egységenként ismétlődik.",
+  ["Mekkora az amplitúdó és a periódus?",
+   "Írd fel a függvényt $y=A\\sin(Bx)$ alakban!",
+   "Hogyan változna a képlet, ha a legnagyobb érték $5$, a legkisebb pedig $-1$ lenne?"],
+  ["Az amplitúdó $3$, a periódus $4$.",
+   "A periódus $\\dfrac{2\\pi}{B}=4$, ezért $B=\\dfrac{\\pi}{2}$, tehát "
+   "$y=3\\sin\\!\\left(\\dfrac{\\pi}{2}x\\right)$.",
+   "A két szélsőérték közepe $2$, a fél távolságuk $3$, tehát a görbe $2$-vel feljebb "
+   "tolódik: $y=3\\sin\\!\\left(\\dfrac{\\pi}{2}x\\right)+2$."]),
+]
+
 DR_A = [
  ("Váltsd át!", ["$135^\\circ$ radiánba", "$\\tfrac{11\\pi}{6}$ fokba"],
   ["$\\dfrac{3\\pi}{4}$", "$330^\\circ$"], True),
@@ -310,6 +339,7 @@ DR_A = [
   "$a^{2}=36+64-2\\cdot 6\\cdot 8\\cdot 0{,}5=52$, tehát $a=\\sqrt{52}\\approx 7{,}21$."),
 ]
 
+DR_A = DR_A + DR_A_UJ_04
 DR_K = [
  ("Számold ki a másik három szögfüggvényt! $\\cos\\alpha=-\\tfrac{15}{17}$ és "
   "$\\operatorname{tg}\\alpha&lt;0$.", None,
@@ -342,6 +372,7 @@ DR_K = [
   "$T=\\tfrac12\\cdot 11\\cdot 14\\cdot\\sin 115^\\circ\\approx 69{,}79$."),
 ]
 
+DR_K = DR_K + DR_K_UJ_04
 DR_N = [
  ("Igazold! $\\dfrac{1-\\cos 2\\alpha}{\\sin 2\\alpha}=\\operatorname{tg}\\alpha$", None,
   "$1-\\cos 2\\alpha=2\\sin^{2}\\alpha$ és $\\sin 2\\alpha=2\\sin\\alpha\\cos\\alpha$, "

@@ -33,7 +33,7 @@
 </div>
 <main class="lap toc-os">
   <div class="tartalom">
-    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/svetozar.webp" alt="SZVETI — a Szvetkó-kampusz mesterséges intelligenciája" width="320" height="320" loading="lazy" decoding="async"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b>-szimuláció, A Végső Egyenlet modul. Ez a <b>Vészterem</b> otthoni edzésváltozata — itt gyakorolsz a saját tempódban. A szimuláció a <b>teljes témakört</b> lefedi: lineáris egyenletek és egyenlőtlenségek, a lineáris függvény, a kétismeretlenes rendszerek és a szöveges feladatok. Haladj a fokozatokon: zöld (alap) → sárga (közép) → piros (nehéz). A végeredményt minden feladatnál lenyithatod — de előbb küzdd le magad!</p></div>
+    <div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b>-szimuláció, A Végső Egyenlet modul. Ez a <b>Vészterem</b> otthoni edzésváltozata — itt gyakorolsz a saját tempódban. A szimuláció a <b>teljes témakört</b> lefedi: lineáris egyenletek és egyenlőtlenségek, a lineáris függvény, a kétismeretlenes rendszerek és a szöveges feladatok. Haladj a fokozatokon: zöld (alap) → sárga (közép) → piros (nehéz). A végeredményt minden feladatnál lenyithatod — de előbb küzdd le magad!</p></div>
     <h2 id="alap">🟢 Alapszint</h2>
     <article class="feladat alap" id="alap-1">
       <p><span class="szam">1.</span> Oldd meg az egyenleteket!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(4x-5=11\)</span></li><li><span class="math inline">\(3(x-2)=x+2\)</span></li><li><span class="math inline">\(\dfrac{x}{4}+1=3\)</span></li></ol>
@@ -42,9 +42,9 @@
       </details>
     </article>
     <article class="feladat alap" id="alap-2">
-      <p><span class="szam">2.</span> Oldd meg az egyenlőtlenségeket!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(2x+1>7\)</span></li><li><span class="math inline">\(-x\le 4\)</span></li><li><span class="math inline">\(3x-1&lt;2x+5\)</span></li></ol>
+      <p><span class="szam">2.</span> Oldd meg az egyenlőtlenségeket!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(2x+1>7\)</span></li><li><span class="math inline">\(-x\le 4\)</span></li><li><span class="math inline">\(3x-1<2x+5\)</span></li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>a) <span class="math inline">\(x>3\)</span>; b) <span class="math inline">\(x\ge -4\)</span>; c) <span class="math inline">\(x&lt;6\)</span>.</p></div>
+        <div class="bel"><p>a) <span class="math inline">\(x>3\)</span>; b) <span class="math inline">\(x\ge -4\)</span>; c) <span class="math inline">\(x<6\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat alap" id="alap-3">
@@ -54,7 +54,7 @@
       </details>
     </article>
     <article class="feladat alap" id="alap-4">
-      <p><span class="szam">4.</span> Add meg a megoldáshalmazt intervallummal!</p><ol class="reszfeladatok"><li><span class="math inline">\(x\ge 5\)</span></li><li><span class="math inline">\(x&lt;0\)</span></li></ol>
+      <p><span class="szam">4.</span> Add meg a megoldáshalmazt intervallummal!</p><ol class="reszfeladatok"><li><span class="math inline">\(x\ge 5\)</span></li><li><span class="math inline">\(x<0\)</span></li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\([5,\infty)\)</span></li><li><span class="math inline">\((-\infty,0)\)</span></li></ol></div>
       </details>
@@ -81,6 +81,12 @@
       <p><span class="szam">8.</span> Melyik szám a megoldás?</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(5x=35\)</span></li><li><span class="math inline">\(x+9=4\)</span></li><li><span class="math inline">\(2x-6=0\)</span></li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p>a) <span class="math inline">\(7\)</span>; b) <span class="math inline">\(-5\)</span>; c) <span class="math inline">\(3\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-9">
+      <p><span class="szam">9.</span> Egy kadét így oldotta meg a <span class="math inline">\(3x=6x\)</span> egyenletet: <i>„Elosztom mindkét oldalt <span class="math inline">\(x\)</span>-szel, így <span class="math inline">\(3=6\)</span>, ami lehetetlen — tehát az egyenletnek nincs megoldása.”</i></p><ol class="reszfeladatok"><li>Hol a hiba a gondolatmenetben?</li><li>Oldd meg helyesen az egyenletet!</li><li>Milyen szabályt érdemes megjegyezni ebből?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>Ismeretlennel osztott, holott az <span class="math inline">\(x\)</span> lehet <span class="math inline">\(0\)</span> is — nullával pedig nem szabad osztani. Ezzel épp az egyetlen megoldást veszítette el.</li><li><span class="math inline">\(3x=6x \Rightarrow 3x-6x=0 \Rightarrow -3x=0 \Rightarrow x=0\)</span>.</li><li>Egyenletet ismeretlent tartalmazó kifejezéssel osztani csak akkor szabad, ha külön megvizsgáljuk azt az esetet is, amikor az a kifejezés nulla. Rendezés és szorzattá alakítás helyette mindig biztonságos.</li></ol></div>
       </details>
     </article>
     <h2 id="kozep">🟡 Középszint</h2>
@@ -112,6 +118,12 @@
       <p><span class="szam">5.</span> Egy teljes árú jegy <span class="math inline">\(500\)</span> Ft, egy diákjegy <span class="math inline">\(300\)</span> Ft. Összesen <span class="math inline">\(15\)</span> jegyet vettek <span class="math inline">\(5900\)</span> Ft-ért. Hány teljes árú és hány diákjegyet?</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\(7\)</span> teljes árú és <span class="math inline">\(8\)</span> diákjegy.</p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-6">
+      <p><span class="szam">6.</span> Egy egyenletrendszer két egyenlete egy-egy egyenest ad a koordináta-rendszerben. Az egyenesekről csak ennyit tudsz:</p><ol class="reszfeladatok"><li>Az első meredeksége <span class="math inline">\(2\)</span>, a másodiké <span class="math inline">\(-1\)</span>. Hány megoldása van a rendszernek? Miért?</li><li>Mindkettő meredeksége <span class="math inline">\(2\)</span>, de a tengelymetszetük különböző. Hány megoldás van?</li><li>Mindkettő meredeksége <span class="math inline">\(2\)</span>, és a tengelymetszetük is ugyanaz. Hány megoldás van?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>Pontosan egy: különböző meredekségű egyenesek egyetlen pontban metszik egymást.</li><li>Egy sem: párhuzamosak, de nem esnek egybe — nincs közös pontjuk.</li><li>Végtelen sok: a két egyenes egybeesik, minden pontja közös megoldás.</li></ol></div>
       </details>
     </article>
     <h2 id="nehez">🔴 Nehéz (emelt)</h2>

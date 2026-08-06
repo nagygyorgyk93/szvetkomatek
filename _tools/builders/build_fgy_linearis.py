@@ -118,6 +118,13 @@ KOZEP = [
   None, "$35$ éves (Karcsi $18$)."),
  ("Két iskolai csoport két, egymástól $25$ km-re lévő turistaházban szállt meg, melyeket egy ösvény köt össze. Az egyik csoport óránként $4$, a másik $6$ km-t tesz meg. Ha egyszerre indulnak egymás felé, mennyi idő múlva és hol találkoznak?",
   None, "$2{,}5$ óra múlva; a lassabb csoport házától $10$ km-re (a gyorsabbétól $15$ km-re)."),
+ ('Két egyenes egyenlete: $y=2x-3$ és $y=-x+3$.',
+  ['Olvasd le mindkét egyenes meredekségét és $y$-tengelymetszetét!',
+   'Add meg a metszéspontjukat számolással.',
+   'Az $y=2x+1$ egyenes hány pontban metszi az elsőt? Miért? Ehhez nem kell számolnod.'],
+  ['Az első meredeksége $2$, tengelymetszete $-3$; a másodiké $-1$, illetve $3$.',
+   '$2x-3=-x+3$, innen $x=2$ és $y=1$, tehát a metszéspont $(2;1)$.',
+   'Egyetlen pontban sem: a meredekségük egyenlő ($2$), a tengelymetszetük viszont különböző, tehát párhuzamosak és nem esnek egybe.']),
 ]
 
 # ======================== NEHÉZ (mechanikus 4 + szöveges 14-17) ========================

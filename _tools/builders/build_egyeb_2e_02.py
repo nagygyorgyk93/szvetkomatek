@@ -240,6 +240,36 @@ print("✓ terepkuldetes.html")
 
 # ==================================================================== F6h
 
+
+# ==================================================================
+# STK2 / reprezentáció-váltó pótlás a Vészteremhez (2026-08 audit)
+# ==================================================================
+# --- 2e/02 Másodfokú egyenlet és függvény ---
+DR_A_UJ_02 = [
+ ("Döntsd el, igaz vagy hamis, és <b>ha hamis, adj ellenpéldát</b>!",
+  ["Ha egy másodfokú egyenlet diszkriminánsa negatív, akkor nincs valós megoldása.",
+   "Minden másodfokú függvény grafikonja metszi az $x$ tengelyt.",
+   "Ha a másodfokú egyenlet két gyökének szorzata negatív, akkor a két gyök ellentétes előjelű.",
+   "A parabola csúcspontja mindig a legkisebb függvényértéknél van."],
+  ["Igaz — a megoldóképletben negatív szám gyökét kellene vonni.",
+   "Hamis: az $y=x^2+1$ grafikonja végig a tengely fölött halad.",
+   "Igaz: két szám szorzata csak akkor negatív, ha különböző előjelűek.",
+   "Hamis: ha az együttható negatív ($a<0$), a parabola lefelé nyílik, és a csúcs a "
+   "legnagyobb értéknél van."]),
+]
+DR_K_UJ_02 = [
+ ("Egy másodfokú függvény grafikonjáról ennyi olvasható le: a parabola felfelé nyílik, "
+  "a zérushelyei $-1$ és $5$, és átmegy a $(0;-5)$ ponton.",
+  ["Hol van a csúcspont első koordinátája? Honnan tudod ránézésre?",
+   "Írd fel a függvény hozzárendelési szabályát szorzat alakban, majd rendezd!",
+   "Mekkora a függvény legkisebb értéke?"],
+  ["A zérushelyek felezőpontjában, tehát $x=\\dfrac{-1+5}{2}=2$ — a parabola szimmetrikus "
+   "a csúcson átmenő függőleges egyenesre.",
+   "$f(x)=a(x+1)(x-5)$, és a $(0;-5)$ pontból $a\\cdot 1\\cdot(-5)=-5$, tehát $a=1$: "
+   "$f(x)=x^2-4x-5$.",
+   "$f(2)=4-8-5=-9$."]),
+]
+
 DR_A = [
  ("Oldd meg a másodfokú egyenletet!",
   ["$x^{2}-64=0$", "$x^{2}+9x=0$", "$x^{2}-8x+15=0$"],
@@ -265,6 +295,7 @@ DR_A = [
  ("Oldd meg a rendszert! $y=x^{2}$ és $y=2x+3$", None, "$(3;9)$ és $(-1;1)$"),
 ]
 
+DR_A = DR_A + DR_A_UJ_02
 DR_K = [
  ("Oldd meg a bikvadratikus egyenletet! $x^{4}-13x^{2}+36=0$", None, "$\\pm 2$ és $\\pm 3$"),
  ("Milyen $m$ esetén van az $x^{2}-6x+m=0$ egyenletnek két különböző valós megoldása?",
@@ -277,6 +308,7 @@ DR_K = [
  ("Oldd meg a rendszert! $x+y=9$ és $x\\cdot y=20$", None, "$(4;5)$ és $(5;4)$"),
 ]
 
+DR_K = DR_K + DR_K_UJ_02
 DR_N = [
  ("A bázis fala mellé téglalap alakú területet kerítenek $30$ méter kerítéssel "
   "(a fal felőli oldalra nem kell kerítés). Mekkora a legnagyobb bekeríthető terület?",

@@ -31,7 +31,7 @@
 </div>
 <main class="lap toc-os">
   <div class="tartalom">
-    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/svetozar.webp" alt="SZVETI — a Szvetkó-kampusz mesterséges intelligenciája" width="320" height="320" loading="lazy" decoding="async"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — A Fázisugrás modul. A szimuláció a <b>teljes témakört</b> lefedi: szögátváltás, trigonometrikus kör, visszavezetés, alapazonosságok, addíciós és kétszeres szög, szorzattá alakítás, grafikonok, egyenletek, valamint a szinusz- és koszinusztétel. Haladj a fokozatokon: zöld → sárga → piros. A végeredményt lenyithatod, de előbb küzdd le magad!</p></div>
+    <div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — A Fázisugrás modul. A szimuláció a <b>teljes témakört</b> lefedi: szögátváltás, trigonometrikus kör, visszavezetés, alapazonosságok, addíciós és kétszeres szög, szorzattá alakítás, grafikonok, egyenletek, valamint a szinusz- és koszinusztétel. Haladj a fokozatokon: zöld → sárga → piros. A végeredményt lenyithatod, de előbb küzdd le magad!</p></div>
     <h2 id="alap">🟢 Alapfokozat</h2>
     <article class="feladat alap" id="alap-1">
       <p><span class="szam">1.</span> Váltsd át!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(135^\circ\)</span> radiánba</li><li><span class="math inline">\(\tfrac{11\pi}{6}\)</span> fokba</li></ol>
@@ -105,6 +105,12 @@
         <div class="bel"><p><span class="math inline">\(a^{2}=36+64-2\cdot 6\cdot 8\cdot 0{,}5=52\)</span>, tehát <span class="math inline">\(a=\sqrt{52}\approx 7{,}21\)</span>.</p></div>
       </details>
     </article>
+    <article class="feladat alap" id="alap-13">
+      <p><span class="szam">13.</span> Döntsd el, igaz vagy hamis, és <b>ha hamis, adj ellenpéldát</b>!</p><ol class="reszfeladatok"><li><span class="math inline">\(\sin x\)</span> értéke bármely valós <span class="math inline">\(x\)</span>-re <span class="math inline">\(-1\)</span> és <span class="math inline">\(1\)</span> közé esik.</li><li><span class="math inline">\(\sin(x+y)=\sin x+\sin y\)</span> minden <span class="math inline">\(x\)</span>-re és <span class="math inline">\(y\)</span>-ra.</li><li>A <span class="math inline">\(\operatorname{tg}\)</span> függvény minden valós számra értelmezett.</li><li><span class="math inline">\(\cos(-x)=\cos x\)</span> minden valós <span class="math inline">\(x\)</span>-re.</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>Igaz — ez a szinusz értékkészlete.</li><li>Hamis: <span class="math inline">\(x=y=90^\circ\)</span> esetén a bal oldal <span class="math inline">\(\sin 180^\circ=0\)</span>, a jobb oldal <span class="math inline">\(2\)</span>.</li><li>Hamis: ahol <span class="math inline">\(\cos x=0\)</span> (például <span class="math inline">\(x=90^\circ\)</span>), ott nincs értelmezve.</li><li>Igaz: a koszinusz páros függvény, grafikonja szimmetrikus az <span class="math inline">\(y\)</span> tengelyre.</li></ol></div>
+      </details>
+    </article>
     <h2 id="kozep">🟡 Középfokozat</h2>
     <article class="feladat kozep" id="kozep-1">
       <p><span class="szam">1.</span> Számold ki a másik három szögfüggvényt! <span class="math inline">\(\cos\alpha=-\tfrac{15}{17}\)</span> és <span class="math inline">\(\operatorname{tg}\alpha&lt;0\)</span>.</p>
@@ -152,6 +158,12 @@
       <p><span class="szam">8.</span> Mekkora annak a háromszögnek a területe, amelyben <span class="math inline">\(a=11\)</span>, <span class="math inline">\(b=14\)</span> és a közbezárt szög <span class="math inline">\(115^\circ\)</span>?</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\(T=\tfrac12\cdot 11\cdot 14\cdot\sin 115^\circ\approx 69{,}79\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-9">
+      <p><span class="szam">9.</span> Egy szinuszos rezgést leíró függvény grafikonjáról ennyi olvasható le: a legnagyobb érték <span class="math inline">\(3\)</span>, a legkisebb <span class="math inline">\(-3\)</span>, és a görbe <span class="math inline">\(4\)</span> egységenként ismétlődik.</p><ol class="reszfeladatok"><li>Mekkora az amplitúdó és a periódus?</li><li>Írd fel a függvényt <span class="math inline">\(y=A\sin(Bx)\)</span> alakban!</li><li>Hogyan változna a képlet, ha a legnagyobb érték <span class="math inline">\(5\)</span>, a legkisebb pedig <span class="math inline">\(-1\)</span> lenne?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>Az amplitúdó <span class="math inline">\(3\)</span>, a periódus <span class="math inline">\(4\)</span>.</li><li>A periódus <span class="math inline">\(\dfrac{2\pi}{B}=4\)</span>, ezért <span class="math inline">\(B=\dfrac{\pi}{2}\)</span>, tehát <span class="math inline">\(y=3\sin\!\left(\dfrac{\pi}{2}x\right)\)</span>.</li><li>A két szélsőérték közepe <span class="math inline">\(2\)</span>, a fél távolságuk <span class="math inline">\(3\)</span>, tehát a görbe <span class="math inline">\(2\)</span>-vel feljebb tolódik: <span class="math inline">\(y=3\sin\!\left(\dfrac{\pi}{2}x\right)+2\)</span>.</li></ol></div>
       </details>
     </article>
     <h2 id="nehez">🔴 Nehéz fokozat</h2>

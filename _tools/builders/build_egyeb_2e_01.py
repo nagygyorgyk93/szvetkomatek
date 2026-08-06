@@ -267,6 +267,34 @@ print("✓ terepkuldetes.html")
 
 # ==================================================================== F6h
 
+
+# ==================================================================
+# STK2 / reprezentáció-váltó pótlás a Vészteremhez (2026-08 audit)
+# ==================================================================
+# --- 2e/01 Hatványozás, gyökvonás, komplex számok ---
+DR_A_UJ_01 = [
+ ("Az alábbi „levezetésekben” egy-egy tipikus hiba van. Keresd meg, hol csúszik el, és javítsd ki!",
+  ["$\\sqrt{a^2}=a$ minden valós $a$-ra",
+   "$\\sqrt{9+16}=\\sqrt9+\\sqrt{16}=7$",
+   "$(2^3)^2=2^{3+2}=32$"],
+  ["Csak $a\\ge 0$ esetén igaz. Általában $\\sqrt{a^2}=|a|$ — például $a=-3$-nál "
+   "$\\sqrt{9}=3$, nem $-3$.",
+   "A gyökvonás <b>nem</b> bontható szét összegre: $\\sqrt{25}=5$, nem $7$.",
+   "Hatvány hatványozásánál a kitevők <b>szorzódnak</b>: $(2^3)^2=2^{6}=64$."]),
+]
+DR_K_UJ_01 = [
+ ("Egy $z$ komplex számról ennyit tudsz: a Gauss-síkon a második síknegyedben van, a "
+  "valós tengelytől $3$ egységre, a képzetes tengelytől $4$ egységre.",
+  ["Írd fel $z$-t algebrai alakban!",
+   "Mekkora a modulusza? Olvasd le a rajzról is, és számold ki képlettel is.",
+   "Hol helyezkedik el $\\overline{z}$, és mekkora a modulusza? Miért?"],
+  ["A képzetes tengelytől mért távolság a valós rész abszolút értéke, a valós tengelytől "
+   "mérté a képzetes részé. A második síknegyedben a valós rész negatív: $z=-4+3i$.",
+   "$|z|=\\sqrt{(-4)^2+3^2}=\\sqrt{25}=5$ — a rajzon ez az origótól mért távolság.",
+   "A konjugált a valós tengelyre vett tükörkép, tehát $\\overline{z}=-4-3i$ a harmadik "
+   "síknegyedben. A modulusza ugyanaz, $5$: a tükrözés nem változtat a távolságon."]),
+]
+
 DR_A = [
  ("Számítsd ki a pontos értéket!",
   ["$3^{-2}$", "$\\left(\\dfrac{2}{5}\\right)^{-1}$", "$(-2)^{-3}$", "$7^{0}$"],
@@ -294,6 +322,7 @@ DR_A = [
   ["$5-3i$", "$10-5i$", "$3-5i$"], True),
 ]
 
+DR_A = DR_A + DR_A_UJ_01
 DR_K = [
  ("Egyszerűsítsd! $(a,b,c&gt;0)$  "
   "$\\left(\\dfrac{a^{-2}b^{3}}{c}\\right)^{-2}\\cdot\\dfrac{a^{-3}}{b^{4}}$",
@@ -310,6 +339,7 @@ DR_K = [
  ("Számítsd ki! $\\dfrac{4+3i}{2-i}$", None, "$1+2i$"),
 ]
 
+DR_K = DR_K + DR_K_UJ_01
 DR_N = [
  ("Számítsd ki a pontos értéket! "
   "$\\left(\\dfrac{1}{\\sqrt{5}-2}-\\dfrac{1}{\\sqrt{5}+2}\\right)^{2}$", None, "$16$"),

@@ -239,6 +239,37 @@ print("✓ terepkuldetes.html")
 
 # ==================================================================== F6h
 
+
+# ==================================================================
+# STK2 / reprezentáció-váltó pótlás a Vészteremhez (2026-08 audit)
+# ==================================================================
+# --- 2e/03 Exponenciális és logaritmikus függvény ---
+DR_A_UJ_03 = [
+ ("Az alábbi állítások közül melyik igaz? Ahol hamis, <b>indokold</b>!",
+  ["$\\log_2 8+\\log_2 4=\\log_2 12$",
+   "$\\log_3 0=0$",
+   "$\\log_5 25^{3}=6$",
+   "Ha $2^x=2^y$, akkor $x=y$."],
+  ["Hamis. Az összeadás a <b>szorzatnak</b> felel meg: $\\log_2 8+\\log_2 4=\\log_2 32=5$, "
+   "miközben $\\log_2 12$ nem egész.",
+   "Hamis: a nulla logaritmusa nem értelmezett, mert $3$ egyetlen hatványa sem $0$.",
+   "Igaz: $25^3=(5^2)^3=5^6$, tehát a logaritmus $6$.",
+   "Igaz: az exponenciális függvény szigorúan monoton, ezért különböző kitevőhöz "
+   "különböző érték tartozik."]),
+]
+DR_K_UJ_03 = [
+ ("Egy gyógyszer mennyisége a szervezetben óránként a $0{,}8$-szorosára csökken. "
+  "A beadott adag $200\\ \\text{mg}$.",
+  ["Írd fel a mennyiséget megadó függvényt az eltelt $t$ óra függvényében!",
+   "Mennyi marad $5$ óra múlva? (Kerekíts egészre.)",
+   "Hány óra múlva csökken a felére? Írd fel az egyenletet, és add meg a megoldást "
+   "logaritmussal, majd számológéppel egy tizedesre."],
+  ["$M(t)=200\\cdot 0{,}8^{\\,t}$ mg.",
+   "$200\\cdot 0{,}8^5\\approx 66\\ \\text{mg}$.",
+   "$200\\cdot 0{,}8^{\\,t}=100$, azaz $0{,}8^{\\,t}=0{,}5$, ahonnan "
+   "$t=\\dfrac{\\lg 0{,}5}{\\lg 0{,}8}\\approx 3{,}1$ óra."]),
+]
+
 DR_A = [
  ("Számold ki!",
   ["$3^{-2}$", "$\\left(\\tfrac25\\right)^{0}$", "$49^{0,5}$"],
@@ -264,6 +295,7 @@ DR_A = [
   "ÉT: $x&gt;-5$; $x+5=9$, tehát $x=4$."),
 ]
 
+DR_A = DR_A + DR_A_UJ_03
 DR_K = [
  ("Oldd meg helyettesítéssel! $4^{x}-9\\cdot 2^{x}+8=0$", None,
   "$t=2^{x}$: $t^{2}-9t+8=0$, innen $t_{1}=1$, $t_{2}=8$, tehát $x_{1}=0$ és $x_{2}=3$."),
@@ -281,6 +313,7 @@ DR_K = [
   "a <b>7. év</b> folyamán."),
 ]
 
+DR_K = DR_K + DR_K_UJ_03
 DR_N = [
  ("Oldd meg! $9^{x}-2\\cdot 3^{x+1}-27=0$", None,
   "$3^{x+1}=3\\cdot 3^{x}$, tehát $t^{2}-6t-27=0$: $t_{1}=9$, $t_{2}=-3$. "

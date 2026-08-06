@@ -93,6 +93,13 @@ KOZEP = [
   None, "$c=-\\dfrac{1}{4}$"),
  ("Két szám különbsége $3$, szorzatuk $40$. Melyik ez a két szám?",
   None, "$8$ és $5$, illetve $-5$ és $-8$."),
+ ('Egy kadét így oldotta meg az $x^2>4$ egyenlőtlenséget: <i>„Mindkét oldalból gyököt vonok, így $x>2$.”</i>',
+  ['Ellenőrizd a megoldását: teljesül-e $x=-3$-ra az eredeti egyenlőtlenség?',
+   'Hol csúszik el a gondolatmenet?',
+   'Add meg a helyes megoldáshalmazt!'],
+  ['Igen: $(-3)^2=9>4$, tehát $-3$ megoldás — a kadét válasza viszont kizárja.',
+   'A négyzetgyökvonás nem őrzi meg az egyenlőtlenséget negatív számokra: $\\sqrt{x^2}=|x|$, nem $x$. A helyes lépés tehát $|x|>2$.',
+   '$|x|>2$, azaz $x<-2$ vagy $x>2$: $x\\in(-\\infty;-2)\\cup(2;+\\infty)$.']),
 ]
 
 NEHEZ = [

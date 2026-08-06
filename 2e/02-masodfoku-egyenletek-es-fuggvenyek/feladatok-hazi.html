@@ -31,7 +31,7 @@
 </div>
 <main class="lap toc-os">
   <div class="tartalom">
-    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/svetozar.webp" alt="SZVETI — a Szvetkó-kampusz mesterséges intelligenciája" width="320" height="320" loading="lazy" decoding="async"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — Az M-Faktor modul. A szimuláció a <b>teljes témakört</b> lefedi: másodfokú egyenletek, diszkrimináns, Viète, szorzattá alakítás, bikvadratikus, függvényvizsgálat, egyenlőtlenségek és rendszerek. Haladj a fokozatokon: zöld → sárga → piros. A végeredményt lenyithatod, de előbb küzdd le magad!</p></div>
+    <div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — Az M-Faktor modul. A szimuláció a <b>teljes témakört</b> lefedi: másodfokú egyenletek, diszkrimináns, Viète, szorzattá alakítás, bikvadratikus, függvényvizsgálat, egyenlőtlenségek és rendszerek. Haladj a fokozatokon: zöld → sárga → piros. A végeredményt lenyithatod, de előbb küzdd le magad!</p></div>
     <h2 id="alap">🟢 Alapfokozat</h2>
     <article class="feladat alap" id="alap-1">
       <p><span class="szam">1.</span> Oldd meg a másodfokú egyenletet!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(x^{2}-64=0\)</span></li><li><span class="math inline">\(x^{2}+9x=0\)</span></li><li><span class="math inline">\(x^{2}-8x+15=0\)</span></li></ol>
@@ -87,6 +87,12 @@
         <div class="bel"><p><span class="math inline">\((3;9)\)</span> és <span class="math inline">\((-1;1)\)</span></p></div>
       </details>
     </article>
+    <article class="feladat alap" id="alap-10">
+      <p><span class="szam">10.</span> Döntsd el, igaz vagy hamis, és <b>ha hamis, adj ellenpéldát</b>!</p><ol class="reszfeladatok"><li>Ha egy másodfokú egyenlet diszkriminánsa negatív, akkor nincs valós megoldása.</li><li>Minden másodfokú függvény grafikonja metszi az <span class="math inline">\(x\)</span> tengelyt.</li><li>Ha a másodfokú egyenlet két gyökének szorzata negatív, akkor a két gyök ellentétes előjelű.</li><li>A parabola csúcspontja mindig a legkisebb függvényértéknél van.</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>Igaz — a megoldóképletben negatív szám gyökét kellene vonni.</li><li>Hamis: az <span class="math inline">\(y=x^2+1\)</span> grafikonja végig a tengely fölött halad.</li><li>Igaz: két szám szorzata csak akkor negatív, ha különböző előjelűek.</li><li>Hamis: ha az együttható negatív (<span class="math inline">\(a<0\)</span>), a parabola lefelé nyílik, és a csúcs a legnagyobb értéknél van.</li></ol></div>
+      </details>
+    </article>
     <h2 id="kozep">🟡 Középfokozat</h2>
     <article class="feladat kozep" id="kozep-1">
       <p><span class="szam">1.</span> Oldd meg a bikvadratikus egyenletet! <span class="math inline">\(x^{4}-13x^{2}+36=0\)</span></p>
@@ -122,6 +128,12 @@
       <p><span class="szam">6.</span> Oldd meg a rendszert! <span class="math inline">\(x+y=9\)</span> és <span class="math inline">\(x\cdot y=20\)</span></p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\((4;5)\)</span> és <span class="math inline">\((5;4)\)</span></p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-7">
+      <p><span class="szam">7.</span> Egy másodfokú függvény grafikonjáról ennyi olvasható le: a parabola felfelé nyílik, a zérushelyei <span class="math inline">\(-1\)</span> és <span class="math inline">\(5\)</span>, és átmegy a <span class="math inline">\((0;-5)\)</span> ponton.</p><ol class="reszfeladatok"><li>Hol van a csúcspont első koordinátája? Honnan tudod ránézésre?</li><li>Írd fel a függvény hozzárendelési szabályát szorzat alakban, majd rendezd!</li><li>Mekkora a függvény legkisebb értéke?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>A zérushelyek felezőpontjában, tehát <span class="math inline">\(x=\dfrac{-1+5}{2}=2\)</span> — a parabola szimmetrikus a csúcson átmenő függőleges egyenesre.</li><li><span class="math inline">\(f(x)=a(x+1)(x-5)\)</span>, és a <span class="math inline">\((0;-5)\)</span> pontból <span class="math inline">\(a\cdot 1\cdot(-5)=-5\)</span>, tehát <span class="math inline">\(a=1\)</span>: <span class="math inline">\(f(x)=x^2-4x-5\)</span>.</li><li><span class="math inline">\(f(2)=4-8-5=-9\)</span>.</li></ol></div>
       </details>
     </article>
     <h2 id="nehez">🔴 Nehéz fokozat</h2>

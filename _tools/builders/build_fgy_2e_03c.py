@@ -166,6 +166,13 @@ KOZEP = [
   "ÉT: $x&gt;-2$. Az alap kisebb $1$-nél, a jel fordul: "
   "$x+2\\le\\left(\\tfrac13\\right)^{-1}=3$, tehát $x\\le 1$. "
   "A metszet: $x\\in(-2;1]$."),
+ ('A logaritmus definíciójában kikötjük, hogy az alap pozitív és <b>nem</b> $1$. Nézzük meg, miért.',
+  ['Próbáld megoldani az $1^{x}=8$ egyenletet! Mi történik?',
+   'És az $1^{x}=1$ egyenletet?',
+   'Fogalmazd meg egy mondatban, miért nem lehet a logaritmus alapja $1$.'],
+  ['Nincs megoldása: az $1$ minden hatványa $1$, sosem $8$.',
+   'Minden valós $x$ megoldás — végtelen sok.',
+   'Az $1$ alapnál a hatványozás nem kölcsönösen egyértelmű: vagy nincs megoldás, vagy végtelen sok van. A logaritmusnak viszont <b>egyetlen</b> kitevőt kell megadnia, ezért az $1$ alapot kizárjuk.']),
 ]
 
 # ============================== NEHÉZ SZINT ==============================

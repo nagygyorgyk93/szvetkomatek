@@ -31,7 +31,7 @@
 </div>
 <main class="lap toc-os">
   <div class="tartalom">
-    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/svetozar.webp" alt="SZVETI — a Szvetkó-kampusz mesterséges intelligenciája" width="320" height="320" loading="lazy" decoding="async"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — Az Evolúciós Ugrás modul. A szimuláció a <b>teljes témakört</b> lefedi: exponenciális függvény és egyenletek, helyettesítés, egyenlőtlenségek, a logaritmus fogalma és azonosságai, áttérés más alapra, logaritmusfüggvény és logaritmusos egyenletek. Haladj a fokozatokon: zöld → sárga → piros. A végeredményt lenyithatod, de előbb küzdd le magad!</p></div>
+    <div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — Az Evolúciós Ugrás modul. A szimuláció a <b>teljes témakört</b> lefedi: exponenciális függvény és egyenletek, helyettesítés, egyenlőtlenségek, a logaritmus fogalma és azonosságai, áttérés más alapra, logaritmusfüggvény és logaritmusos egyenletek. Haladj a fokozatokon: zöld → sárga → piros. A végeredményt lenyithatod, de előbb küzdd le magad!</p></div>
     <h2 id="alap">🟢 Alapfokozat</h2>
     <article class="feladat alap" id="alap-1">
       <p><span class="szam">1.</span> Számold ki!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(3^{-2}\)</span></li><li><span class="math inline">\(\left(\tfrac25\right)^{0}\)</span></li><li><span class="math inline">\(49^{0,5}\)</span></li></ol>
@@ -87,6 +87,12 @@
         <div class="bel"><p>ÉT: <span class="math inline">\(x&gt;-5\)</span>; <span class="math inline">\(x+5=9\)</span>, tehát <span class="math inline">\(x=4\)</span>.</p></div>
       </details>
     </article>
+    <article class="feladat alap" id="alap-10">
+      <p><span class="szam">10.</span> Az alábbi állítások közül melyik igaz? Ahol hamis, <b>indokold</b>!</p><ol class="reszfeladatok"><li><span class="math inline">\(\log_2 8+\log_2 4=\log_2 12\)</span></li><li><span class="math inline">\(\log_3 0=0\)</span></li><li><span class="math inline">\(\log_5 25^{3}=6\)</span></li><li>Ha <span class="math inline">\(2^x=2^y\)</span>, akkor <span class="math inline">\(x=y\)</span>.</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>Hamis. Az összeadás a <b>szorzatnak</b> felel meg: <span class="math inline">\(\log_2 8+\log_2 4=\log_2 32=5\)</span>, miközben <span class="math inline">\(\log_2 12\)</span> nem egész.</li><li>Hamis: a nulla logaritmusa nem értelmezett, mert <span class="math inline">\(3\)</span> egyetlen hatványa sem <span class="math inline">\(0\)</span>.</li><li>Igaz: <span class="math inline">\(25^3=(5^2)^3=5^6\)</span>, tehát a logaritmus <span class="math inline">\(6\)</span>.</li><li>Igaz: az exponenciális függvény szigorúan monoton, ezért különböző kitevőhöz különböző érték tartozik.</li></ol></div>
+      </details>
+    </article>
     <h2 id="kozep">🟡 Középfokozat</h2>
     <article class="feladat kozep" id="kozep-1">
       <p><span class="szam">1.</span> Oldd meg helyettesítéssel! <span class="math inline">\(4^{x}-9\cdot 2^{x}+8=0\)</span></p>
@@ -122,6 +128,12 @@
       <p><span class="szam">6.</span> Egy befektetés évi <span class="math inline">\(6\%\)</span>-kal gyarapszik. Hány év alatt lesz a másfélszerese?</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\(1{,}06^{n}=1{,}5\)</span>, tehát <span class="math inline">\(n=\dfrac{\lg 1{,}5}{\lg 1{,}06}\approx 6{,}96\)</span> — a <b>7. év</b> folyamán.</p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-7">
+      <p><span class="szam">7.</span> Egy gyógyszer mennyisége a szervezetben óránként a <span class="math inline">\(0{,}8\)</span>-szorosára csökken. A beadott adag <span class="math inline">\(200\ \text{mg}\)</span>.</p><ol class="reszfeladatok"><li>Írd fel a mennyiséget megadó függvényt az eltelt <span class="math inline">\(t\)</span> óra függvényében!</li><li>Mennyi marad <span class="math inline">\(5\)</span> óra múlva? (Kerekíts egészre.)</li><li>Hány óra múlva csökken a felére? Írd fel az egyenletet, és add meg a megoldást logaritmussal, majd számológéppel egy tizedesre.</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(M(t)=200\cdot 0{,}8^{\,t}\)</span> mg.</li><li><span class="math inline">\(200\cdot 0{,}8^5\approx 66\ \text{mg}\)</span>.</li><li><span class="math inline">\(200\cdot 0{,}8^{\,t}=100\)</span>, azaz <span class="math inline">\(0{,}8^{\,t}=0{,}5\)</span>, ahonnan <span class="math inline">\(t=\dfrac{\lg 0{,}5}{\lg 0{,}8}\approx 3{,}1\)</span> óra.</li></ol></div>
       </details>
     </article>
     <h2 id="nehez">🔴 Nehéz fokozat</h2>

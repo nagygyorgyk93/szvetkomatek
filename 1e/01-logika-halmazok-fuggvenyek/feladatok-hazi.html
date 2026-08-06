@@ -33,7 +33,7 @@
 </div>
 <main class="lap toc-os">
   <div class="tartalom">
-    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/svetozar.webp" alt="SZVETI — a Szvetkó-kampusz mesterséges intelligenciája" width="320" height="320" loading="lazy" decoding="async"><p>🕹️ <b>SZVETI:</b> Üdv a <b>Vészteremben</b>, kadét! Ez a kampusz szimulációs edzőterme (a technológiát az X. Károly Intézet Mutáns Osztagától licenceltük). Itt otthon, a saját tempódban gyakorolsz két küldetés között. A szimuláció a <b>teljes témakört</b> lefedi: logika, halmazok, függvények. Haladj a fokozatokon: zöld (alap) → sárga (közép) → piros (nehéz). A végeredményt minden feladatnál lenyithatod — de előbb küzdd le magad!</p></div>
+    <div class="brief"><p>🕹️ <b>SZVETI:</b> Üdv a <b>Vészteremben</b>, kadét! Ez a <b>Vészterem</b> — a kampusz szimulációs edzőterme (a technológiát az X. Károly Intézet Mutáns Osztagától licenceltük). Itt otthon, a saját tempódban gyakorolsz két küldetés között. A szimuláció a <b>teljes témakört</b> lefedi: logika, halmazok, függvények. Haladj a fokozatokon: zöld (alap) → sárga (közép) → piros (nehéz). A végeredményt minden feladatnál lenyithatod — de előbb küzdd le magad!</p></div>
     <h2 id="alap">🟢 Alapszint</h2>
     <article class="feladat alap" id="alap-1">
       <p><span class="szam">1.</span> Döntsd el, melyik <b>kijelentés</b>, és ha az, mi az igazságértéke!</p><ol class="reszfeladatok rovid"><li>„A 7 prímszám.”</li><li>„<span class="math inline">\(x+2=5\)</span>.”</li><li>„Minden négyzet téglalap.”</li><li>„Hány óra van?”</li><li>„A 12 osztható 5-tel.”</li></ol>
@@ -101,6 +101,12 @@
         <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(2x-5\)</span></li><li><span class="math inline">\(2x-2\)</span></li></ol></div>
       </details>
     </article>
+    <article class="feladat alap" id="alap-12">
+      <p><span class="szam">12.</span> Döntsd el, igaz vagy hamis, és <b>minden állításnál indokold egy mondattal</b>!</p><ol class="reszfeladatok"><li>Ha egy implikáció igaz, akkor a megfordítása is igaz.</li><li>Két halmaz metszete mindig részhalmaza az uniójuknak.</li><li>Ha <span class="math inline">\(A\subseteq B\)</span> és <span class="math inline">\(B\subseteq A\)</span>, akkor <span class="math inline">\(A=B\)</span>.</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>Hamis. Például „ha esik, akkor vizes az út” igaz lehet, de a megfordítása nem — az út mástól is lehet vizes.</li><li>Igaz. A metszet minden eleme mindkét halmazban benne van, tehát az unióban is.</li><li>Igaz — pontosan ez a halmazok egyenlőségének a definíciója.</li></ol></div>
+      </details>
+    </article>
     <h2 id="kozep">🟡 Középszint</h2>
     <article class="feladat kozep" id="kozep-1">
       <p><span class="szam">1.</span> Igazságtáblázattal döntsd el, <b>tautológia-e</b>: <span class="math inline">\((p\land q)\Rightarrow p\)</span>.</p>
@@ -111,11 +117,11 @@
     <article class="feladat kozep" id="kozep-2">
       <p><span class="szam">2.</span> Írd fel kvantoros alakban, majd <b>tagadd</b> (és döntsd el, igaz-e az eredeti)!</p><ol class="reszfeladatok"><li>„Minden valós <span class="math inline">\(x\)</span>-re <span class="math inline">\(x^2\ge 0\)</span>.”</li><li>„Van olyan természetes szám, amely osztható 3-mal.”</li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\forall x\in\mathbb{R}\,(x^2\ge 0)\)</span> — igaz; tagadása <span class="math inline">\(\exists x\in\mathbb{R}\,(x^2&lt;0)\)</span>.</li><li><span class="math inline">\(\exists x\in\mathbb{N}\,(3\mid x)\)</span> — igaz; tagadása <span class="math inline">\(\forall x\in\mathbb{N}\,(3\nmid x)\)</span>.</li></ol></div>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\forall x\in\mathbb{R}\,(x^2\ge 0)\)</span> — igaz; tagadása <span class="math inline">\(\exists x\in\mathbb{R}\,(x^2<0)\)</span>.</li><li><span class="math inline">\(\exists x\in\mathbb{N}\,(3\mid x)\)</span> — igaz; tagadása <span class="math inline">\(\forall x\in\mathbb{N}\,(3\nmid x)\)</span>.</li></ol></div>
       </details>
     </article>
     <article class="feladat kozep" id="kozep-3">
-      <p><span class="szam">3.</span> Adott <span class="math inline">\(A=\{x\in\mathbb{Z}\mid -2\le x&lt;3\}\)</span> és <span class="math inline">\(B=\{x\in\mathbb{Z}\mid 0&lt;x\le 5\}\)</span>. Sorold fel a halmazokat, majd add meg <span class="math inline">\(A\cup B\)</span>-t, <span class="math inline">\(A\cap B\)</span>-t és <span class="math inline">\(A\setminus B\)</span>-t!</p>
+      <p><span class="szam">3.</span> Adott <span class="math inline">\(A=\{x\in\mathbb{Z}\mid -2\le x<3\}\)</span> és <span class="math inline">\(B=\{x\in\mathbb{Z}\mid 0&lt;x\le 5\}\)</span>. Sorold fel a halmazokat, majd add meg <span class="math inline">\(A\cup B\)</span>-t, <span class="math inline">\(A\cap B\)</span>-t és <span class="math inline">\(A\setminus B\)</span>-t!</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\(A=\{-2,-1,0,1,2\}\)</span>, <span class="math inline">\(B=\{1,2,3,4,5\}\)</span>; <span class="math inline">\(A\cup B=\{-2,-1,0,1,2,3,4,5\}\)</span>, <span class="math inline">\(A\cap B=\{1,2\}\)</span>, <span class="math inline">\(A\setminus B=\{-2,-1,0\}\)</span>.</p></div>
       </details>
@@ -142,6 +148,12 @@
       <p><span class="szam">7.</span> <b>Jelszó.</b> Egy kód 2 betűből (az <span class="math inline">\(A,B,C,D\)</span> közül) és 2 számjegyből (<span class="math inline">\(0\)</span>–<span class="math inline">\(9\)</span>) áll, az ismétlés megengedett. Hány különböző kód lehetséges?</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\(1600\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-8">
+      <p><span class="szam">8.</span> Egy függvény néhány helyettesítési értéke:<div class="tblwrap"><table><thead><tr><th><span class="math inline">\(x\)</span></th><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(2\)</span></td><td><span class="math inline">\(3\)</span></td><td><span class="math inline">\(4\)</span></td></tr></thead><tbody><tr><th><span class="math inline">\(f(x)\)</span></th><td><span class="math inline">\(5\)</span></td><td><span class="math inline">\(8\)</span></td><td><span class="math inline">\(11\)</span></td><td><span class="math inline">\(14\)</span></td></tr></tbody></table></div></p><ol class="reszfeladatok"><li>Lehet-e <span class="math inline">\(f\)</span> lineáris? Honnan látod a <b>táblázatból</b>?</li><li>Ha igen, add meg a hozzárendelési szabályt.</li><li>Írj olyan négyelemű táblázatot, amelyik <b>biztosan nem</b> lehet lineáris függvényé, és indokold, miért nem.</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>Lehet: az <span class="math inline">\(x\)</span> egyesével nő, és az <span class="math inline">\(f(x)\)</span> mindig ugyanannyival, <span class="math inline">\(3\)</span>-mal — állandó növekedés, ez a lineáris függvény ismertetőjegye.</li><li><span class="math inline">\(f(x)=3x+2\)</span>.</li><li>Például <span class="math inline">\(1,2,3,4\mapsto 1,4,9,16\)</span>: itt a különbségek <span class="math inline">\(3,5,7\)</span> — nem állandók, tehát a hozzárendelés nem lineáris.</li></ol></div>
       </details>
     </article>
     <h2 id="nehez">🔴 Nehéz (emelt)</h2>

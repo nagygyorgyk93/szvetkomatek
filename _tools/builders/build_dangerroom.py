@@ -81,6 +81,176 @@ def sect(alap, kozep, nehez):
             f'    <h2 id="kozep">🟡 Középszint</h2>\n{cards(kozep,"kozep","kozep")}\n'
             f'    <h2 id="nehez">🔴 Nehéz (emelt)</h2>\n{cards(nehez,"nehez","nehez")}\n')
 
+
+# ==================================================================
+# STK2 / reprezentáció-váltó pótlások (2026-08 audit)
+# A didaktika 4. pontja: STK1 fölötti feladat az ALAP és a KÖZÉP sávban is
+# kell; a 7. pont témakörönként legalább egy reprezentáció-váltó kérést kér.
+# ==================================================================
+# --- 01 Logika, halmazok, függvények ---
+A01_UJ = [
+ ("Döntsd el, igaz vagy hamis, és <b>minden állításnál indokold egy mondattal</b>!",
+  ["Ha egy implikáció igaz, akkor a megfordítása is igaz.",
+   "Két halmaz metszete mindig részhalmaza az uniójuknak.",
+   "Ha $A\\subseteq B$ és $B\\subseteq A$, akkor $A=B$."],
+  ["Hamis. Például „ha esik, akkor vizes az út” igaz lehet, de a megfordítása nem — "
+   "az út mástól is lehet vizes.",
+   "Igaz. A metszet minden eleme mindkét halmazban benne van, tehát az unióban is.",
+   "Igaz — pontosan ez a halmazok egyenlőségének a definíciója."]),
+]
+K01_UJ = [
+ ("Egy függvény néhány helyettesítési értéke:"
+  "<div class=\"tblwrap\"><table><thead><tr><th>$x$</th><td>$1$</td><td>$2$</td><td>$3$</td>"
+  "<td>$4$</td></tr></thead><tbody><tr><th>$f(x)$</th><td>$5$</td><td>$8$</td><td>$11$</td>"
+  "<td>$14$</td></tr></tbody></table></div>",
+  ["Lehet-e $f$ lineáris? Honnan látod a <b>táblázatból</b>?",
+   "Ha igen, add meg a hozzárendelési szabályt.",
+   "Írj olyan négyelemű táblázatot, amelyik <b>biztosan nem</b> lehet lineáris függvényé, "
+   "és indokold, miért nem."],
+  ["Lehet: az $x$ egyesével nő, és az $f(x)$ mindig ugyanannyival, $3$-mal — állandó "
+   "növekedés, ez a lineáris függvény ismertetőjegye.",
+   "$f(x)=3x+2$.",
+   "Például $1,2,3,4\\mapsto 1,4,9,16$: itt a különbségek $3,5,7$ — nem állandók, "
+   "tehát a hozzárendelés nem lineáris."]),
+]
+
+# --- 02 Trigonometria ---
+A02_UJ = [
+ ("Egy kadét ezt írta a füzetébe: <i>„$\\sin\\alpha$ a szemközti befogó és a szomszédos "
+  "befogó hányadosa.”</i> Melyik szögfüggvény definícióját keverte ide, és hogyan hangzik "
+  "helyesen a szinuszé?",
+  None,
+  "A tangensét keverte oda: $\\operatorname{tg}\\alpha=\\dfrac{\\text{szemközti befogó}}"
+  "{\\text{szomszédos befogó}}$. A szinusz helyesen: $\\sin\\alpha="
+  "\\dfrac{\\text{szemközti befogó}}{\\text{átfogó}}$."),
+]
+K02_UJ = [
+ ("Egy derékszögű háromszögről csak annyit tudsz, hogy $\\operatorname{tg}\\alpha=\\tfrac{5}{12}$.",
+  ["Milyen oldalhosszakkal rajzolhatsz ilyen háromszöget? Add meg mindhárom oldalt!",
+   "Olvasd le a rajzodról $\\sin\\alpha$-t és $\\cos\\alpha$-t <b>pontosan</b>.",
+   "Változna-e a három szögfüggvény értéke, ha minden oldalt megkétszereznél? Indokold!"],
+  ["Például $a=5$, $b=12$, és ekkor $c=\\sqrt{25+144}=13$.",
+   "$\\sin\\alpha=\\tfrac{5}{13}$, $\\cos\\alpha=\\tfrac{12}{13}$.",
+   "Nem változna: a szögfüggvények <b>arányok</b>, a hasonló háromszögekben pedig az "
+   "oldalak aránya ugyanaz."]),
+]
+
+# --- 03 Egész és valós számok ---
+A03_UJ = [
+ ("Döntsd el, igaz vagy hamis, és <b>ha hamis, adj ellenpéldát</b>!",
+  ["Minden racionális szám felírható véges tizedes tört alakban.",
+   "Minden végtelen tizedes tört irracionális.",
+   "Két irracionális szám összege mindig irracionális.",
+   "$\\sqrt{9}$ irracionális."],
+  ["Hamis: $\\tfrac13=0{,}333\\ldots$ végtelen.",
+   "Hamis: $0{,}333\\ldots=\\tfrac13$ végtelen, mégis racionális — a szakaszos "
+   "végtelen tizedes törtek racionálisak.",
+   "Hamis: $\\sqrt2+(-\\sqrt2)=0$.",
+   "Hamis: $\\sqrt9=3$, ami egész szám."]),
+]
+K03_UJ = [
+ ("Egy mérőműszer $3{,}47$-et mutat, és a leírás szerint a mérés hibája legfeljebb $0{,}02$.",
+  ["Mely valós számok jöhetnek szóba valódi értékként? Add meg intervallummal!",
+   "Elmondható-e biztosan, hogy a valódi érték nagyobb $3{,}4$-nél? És hogy nagyobb $3{,}46$-nál?",
+   "A műszer leolvasását $3{,}5$-re kerekítjük. Mekkora lesz így a legnagyobb lehetséges eltérés "
+   "a valódi értéktől?"],
+  ["$[3{,}45;\\ 3{,}49]$.",
+   "$3{,}4$-nél biztosan nagyobb, mert a legkisebb lehetséges érték $3{,}45$. "
+   "$3{,}46$-nál viszont nem biztos: a valódi érték lehet $3{,}45$ is.",
+   "A legtávolabbi lehetséges valódi érték $3{,}45$, tehát az eltérés legfeljebb $0{,}05$."]),
+]
+
+# --- 04 Arányosság ---
+A04_UJ = [
+ ("Egy bolt februárban $20\\%$-kal <b>megemeli</b> egy termék árát, majd márciusban ugyanennek a "
+  "terméknek az árát $20\\%$-kal <b>csökkenti</b>.",
+  ["Visszakapjuk-e az eredeti árat? Számolj $2000$ dináros kiinduló árral!",
+   "Miért nem esik egybe a két $20\\%$? Fogalmazd meg egy mondatban!",
+   "Hány százalékkal kellene márciusban csökkenteni, hogy pontosan az eredeti árat kapjuk vissza? "
+   "(Kerekíts egy tizedesre.)"],
+  ["Nem: $2000\\to 2400\\to 1920$ dinár, tehát $80$ dinárral olcsóbb lett.",
+   "Mert a két százalékot <b>különböző alapra</b> számoljuk: az emelést az eredeti árra, "
+   "a csökkentést a már megemelt árra.",
+   "$2400\\cdot x=2000$, ahonnan a szorzó $0{,}8\\overline{3}$, tehát kb. $16{,}7\\%$-kal."]),
+]
+K04_UJ = [
+ ("Két táblázat, két különböző kapcsolat:"
+  "<div class=\"tblwrap\"><table><thead><tr><th>$x$</th><td>$2$</td><td>$4$</td><td>$6$</td>"
+  "<td>$12$</td></tr></thead><tbody><tr><th>$A$</th><td>$5$</td><td>$10$</td><td>$15$</td>"
+  "<td>$30$</td></tr><tr><th>$B$</th><td>$30$</td><td>$15$</td><td>$10$</td><td>$5$</td>"
+  "</tr></tbody></table></div>",
+  ["Melyik sor mutat egyenes, és melyik fordított arányosságot? Mi árulja el?",
+   "Írd fel mindkettőhöz a szabályt képlettel.",
+   "Mennyi lenne $A$ és $B$ értéke $x=3$-nál?"],
+  ["Az $A$ egyenes arányosság: az $A/x$ hányados végig $2{,}5$. A $B$ fordított: "
+   "az $x\\cdot B$ szorzat végig $60$.",
+   "$A=2{,}5x$, illetve $B=\\dfrac{60}{x}$.",
+   "$A=7{,}5$ és $B=20$."]),
+]
+
+# --- 05 Geometria ---
+A05_UJ = [
+ ("Döntsd el, igaz vagy hamis, és <b>ha hamis, adj ellenpéldát</b> (elég leírni, milyen alakzat)!",
+  ["Ha egy négyszög átlói merőlegesek egymásra, akkor rombusz.",
+   "Minden négyzet rombusz.",
+   "Ha egy háromszögnek két szöge egyenlő, akkor egyenlő szárú.",
+   "Van olyan háromszög, amelynek két tompaszöge van."],
+  ["Hamis: a deltoid átlói is merőlegesek, mégsem rombusz.",
+   "Igaz: a négyzet minden oldala egyenlő, ez pedig a rombusz definíciója.",
+   "Igaz — ez az egyenlő szárú háromszög alaptételének a megfordítása.",
+   "Hamis: két tompaszög összege már meghaladná a $180^\\circ$-ot."]),
+]
+
+# --- 06 Racionális algebrai kifejezések ---
+A06_UJ = [
+ ("Az alábbi „levezetésekben” egy-egy tipikus hiba van. Keresd meg, hol csúszik el, és "
+  "javítsd ki!",
+  ["$(a+b)^2=a^2+b^2$",
+   "$\\dfrac{a+b}{a}=b$",
+   "$\\dfrac{x^2-4}{x-2}=x-2$"],
+  ["Hiányzik a kétszeres szorzat: $(a+b)^2=a^2+2ab+b^2$. Az $a=b=1$ eset azonnal cáfol: "
+   "$4\\neq 2$.",
+   "Összegből nem lehet „kiegyszerűsíteni” egy tagot: $\\dfrac{a+b}{a}=1+\\dfrac{b}{a}$.",
+   "A számláló $ (x-2)(x+2)$, ezért az eredmény $x+2$ — és ki kell kötni, hogy $x\\neq 2$."]),
+]
+K06_UJ = [
+ ("Adott a $\\dfrac{x^2-9}{x^2-5x+6}$ kifejezés.",
+  ["Mely $x$ értékekre nincs értelmezve? Miért éppen azokra?",
+   "Egyszerűsítsd a kifejezést!",
+   "Az egyszerűsítés után a $x=3$ behelyettesíthetőnek <b>látszik</b>. Behelyettesíthető-e "
+   "valójában? Indokold!"],
+  ["A nevező $x^2-5x+6=(x-2)(x-3)$, tehát $x\\neq 2$ és $x\\neq 3$ — nullával nem osztunk.",
+   "$\\dfrac{(x-3)(x+3)}{(x-2)(x-3)}=\\dfrac{x+3}{x-2}$.",
+   "Nem. Az értelmezési tartományt az <b>eredeti</b> kifejezés szabja meg, és azt az "
+   "egyszerűsítés nem bővíti ki. $x=3$-nál az eredeti kifejezésnek nincs értéke."]),
+]
+
+# --- 07 Lineáris egyenletek, egyenlőtlenségek, rendszerek ---
+A07_UJ = [
+ ("Egy kadét így oldotta meg a $3x=6x$ egyenletet: <i>„Elosztom mindkét oldalt $x$-szel, "
+  "így $3=6$, ami lehetetlen — tehát az egyenletnek nincs megoldása.”</i>",
+  ["Hol a hiba a gondolatmenetben?",
+   "Oldd meg helyesen az egyenletet!",
+   "Milyen szabályt érdemes megjegyezni ebből?"],
+  ["Ismeretlennel osztott, holott az $x$ lehet $0$ is — nullával pedig nem szabad osztani. "
+   "Ezzel épp az egyetlen megoldást veszítette el.",
+   "$3x=6x \\Rightarrow 3x-6x=0 \\Rightarrow -3x=0 \\Rightarrow x=0$.",
+   "Egyenletet ismeretlent tartalmazó kifejezéssel osztani csak akkor szabad, ha külön "
+   "megvizsgáljuk azt az esetet is, amikor az a kifejezés nulla. Rendezés és szorzattá "
+   "alakítás helyette mindig biztonságos."]),
+]
+K07_UJ = [
+ ("Egy egyenletrendszer két egyenlete egy-egy egyenest ad a koordináta-rendszerben. "
+  "Az egyenesekről csak ennyit tudsz:",
+  ["Az első meredeksége $2$, a másodiké $-1$. Hány megoldása van a rendszernek? Miért?",
+   "Mindkettő meredeksége $2$, de a tengelymetszetük különböző. Hány megoldás van?",
+   "Mindkettő meredeksége $2$, és a tengelymetszetük is ugyanaz. Hány megoldás van?"],
+  ["Pontosan egy: különböző meredekségű egyenesek egyetlen pontban metszik egymást.",
+   "Egy sem: párhuzamosak, de nem esnek egybe — nincs közös pontjuk.",
+   "Végtelen sok: a két egyenes egybeesik, minden pontja közös megoldás."]),
+]
+
+
 # =========================================================== 01
 DEST01 = glob.glob("/sessions/*/mnt/Claude/web/1e/01-logika-halmazok-fuggvenyek")[0]
 
@@ -114,6 +284,7 @@ A01 = [
   ["$(f\\circ g)(x)$","$(g\\circ f)(x)$"],
   ["$2x-5$","$2x-2$"]),
 ]
+A01 = A01 + A01_UJ
 K01 = [
  ("Igazságtáblázattal döntsd el, <b>tautológia-e</b>: $(p\\land q)\\Rightarrow p$.",
   None, "Igen, tautológia."),
@@ -132,6 +303,7 @@ K01 = [
  ("<b>Jelszó.</b> Egy kód 2 betűből (az $A,B,C,D$ közül) és 2 számjegyből ($0$–$9$) áll, az ismétlés megengedett. Hány különböző kód lehetséges?",
   None, "$1600$."),
 ]
+K01 = K01 + K01_UJ
 N01 = [
  ("<b>Sziget-akták.</b> A lovag mindig igazat mond, a lókötő mindig hazudik. $A$ azt mondja: „$B$ lókötő.”, $B$ azt mondja: „$A$ és én azonos típusúak vagyunk.” Ki micsoda? Indokolj!",
   None, "$A$ lovag, $B$ lókötő."),
@@ -168,6 +340,7 @@ A02 = [
   ["$\\sin 30^\\circ+\\cos 60^\\circ$","$\\operatorname{tg}45^\\circ\\cdot\\cos 45^\\circ$"],
   ["$1$","$\\tfrac{\\sqrt2}{2}$"]),
 ]
+A02 = A02 + A02_UJ
 K02 = [
  ("Egy $\\alpha$ hegyesszögre $\\sin\\alpha=0{,}6$. Számítsd ki <b>pontosan</b> $\\cos\\alpha$-t, $\\operatorname{tg}\\alpha$-t és $\\operatorname{ctg}\\alpha$-t!",
   None, "$\\cos\\alpha=\\tfrac45$, $\\operatorname{tg}\\alpha=\\tfrac34$, $\\operatorname{ctg}\\alpha=\\tfrac43$."),
@@ -177,6 +350,7 @@ K02 = [
   ["$\\sin^2 25^\\circ+\\cos^2 25^\\circ$","$\\sin 40^\\circ-\\cos 50^\\circ$"],
   ["$1$","$0$"]),
 ]
+K02 = K02 + K02_UJ
 N02 = [
  ("<b>Terep-alkalmazás.</b> Egy fa árnyéka $12\\,\\text{m}$ hosszú, amikor a napsugarak $40^\\circ$-os emelkedési szöget zárnak be a vízszintessel. Milyen magas a fa? Rajzolj, és számolj 2 tizedesre!",
   None, "$m\\approx 10{,}07\\,\\text{m}$."),
@@ -228,6 +402,7 @@ A03 = [
   ["$|x|=15$","$|x-2|=6$","$73\\,000\\,000$","$0{,}0004$"],
   ["$x=\\pm 15$","$x=8$ vagy $x=-4$","$7{,}3\\cdot 10^{7}$","$4\\cdot 10^{-4}$"]),
 ]
+A03 = A03 + A03_UJ
 K03 = [
  ("Három jelzőfény $8$, $12$ és $20$ másodpercenként villan; most együtt villantak. Hány másodperc múlva villannak legközelebb megint mind együtt? (Prímtényezős alak, majd LKT.)",
   None, "$\\text{LKT}(8,12,20)=120$ másodperc."),
@@ -237,6 +412,7 @@ K03 = [
  ("Az $x=7{,}64983$ értéket kerekítsd 2 tizedesre, add meg az abszolút hibát; majd számold ki normál alakban: $(4\\cdot 10^{6})\\cdot(2{,}5\\cdot 10^{-3})$.",
   None, "$x^{*}=7{,}65$; $\\Delta=0{,}00017$; a szorzat $1\\cdot 10^{4}$."),
 ]
+K03 = K03 + K03_UJ
 N03 = [
  ("Bizonyítsd be, hogy $n^3-n$ osztható $6$-tal minden egész $n$-re!",
   None, "$n^3-n=(n-1)\\,n\\,(n+1)$ — három egymást követő egész szorzata, ezért osztható $6$-tal."),
@@ -279,6 +455,7 @@ A04 = [
   ["$30\\%$-os és $70\\%$-os oldatból $10$ l $58\\%$-osat kell keverni — hány liter kell mindkettőből?","$20\\%$ engedmény után egy termék $96\\,000$ din — mennyi volt az eredeti ára?"],
   ["$3$ l ($30\\%$) és $7$ l ($70\\%$)","$120\\,000$ din"]),
 ]
+A04 = A04 + A04_UJ
 K04 = [
  ("Összetett arány és munkaidő-elosztás.",
   ["$x:y=2:5$ és $y:z=3:4$ — add meg $x:y:z$-t","$154\\,000$ din: egyik $10$ napot napi $8$ órával, másik $12$ napot napi $5$ órával dolgozott — mennyit kap fejenként?"],
@@ -290,6 +467,7 @@ K04 = [
   ["$120\\,000$ din $9\\%$-os kamatlábbal $8$ hónap alatt mennyi kamatot hoz?","Mekkora kamatláb hoz $200\\,000$ din után $60$ nap alatt $2000$ din kamatot?"],
   ["$7200$ din","$6\\%$"]),
 ]
+K04 = K04 + K04_UJ
 N04 = [
  ("A Henrik Tech $400\\,000$ dinárt fektet be $2$ évre. Az <b>A</b> bank $10\\%$ egyszerű kamatot, a <b>B</b> bank $9\\%$ kamatos kamatot kínál. Melyiknél lesz több pénz $2$ év múlva, és mennyivel?",
   None, "$A$: $480\\,000$, $B$: $475\\,240$ → az $A$ a jobb, $4760$ dinárral."),
@@ -345,6 +523,7 @@ A05 = [
   ["$\\overrightarrow{AB}+\\overrightarrow{BC}+\\overrightarrow{CA}$","$\\overrightarrow{AB}+\\overrightarrow{BA}$"],
   ["$\\vec{0}$ (nullvektor)","$\\vec{0}$ (nullvektor)"]),
 ]
+A05 = A05 + A05_UJ
 K05 = [
  ("Két szög egymás kiegészítő szöge, és úgy aránylanak, mint $4:5$. Mekkorák?",
   None, "$80^\\circ$ és $100^\\circ$."),
@@ -410,6 +589,7 @@ A06 = [
   ["$\\dfrac{1}{x}+\\dfrac{2}{x}$","$\\dfrac{a}{2}\\cdot\\dfrac{4}{a}$"],
   ["$\\dfrac{3}{x}$","$2$"]),
 ]
+A06 = A06 + A06_UJ
 K06 = [
  ("Írd fel kanonikus alakban: $(2x+1)^2-(x-1)(x+2)$.",
   None, "$3x^2+3x+3$."),
@@ -423,6 +603,7 @@ K06 = [
  ("Add össze: $\\dfrac{1}{x-3}+\\dfrac{1}{x+3}$.",
   None, "$\\dfrac{2x}{x^2-9}$."),
 ]
+K06 = K06 + K06_UJ
 N06 = [
  ("Egyszerűsítsd az emeletes törtet: $\\dfrac{\\dfrac{1}{x}-\\dfrac{1}{y}}{\\dfrac{1}{x}+\\dfrac{1}{y}}$.",
   None, "$\\dfrac{y-x}{y+x}$."),
@@ -472,6 +653,7 @@ A07 = [
   ["$5x=35$","$x+9=4$","$2x-6=0$"],
   "a) $7$; b) $-5$; c) $3$.", True),
 ]
+A07 = A07 + A07_UJ
 K07 = [
  ("Oldd meg a törtes egyenletet: $\\dfrac{2x+1}{3}-\\dfrac{x-1}{2}=2$.",
   None, "$x=7$."),
@@ -484,6 +666,7 @@ K07 = [
  ("Egy teljes árú jegy $500$ Ft, egy diákjegy $300$ Ft. Összesen $15$ jegyet vettek $5900$ Ft-ért. Hány teljes árú és hány diákjegyet?",
   None, "$7$ teljes árú és $8$ diákjegy."),
 ]
+K07 = K07 + K07_UJ
 N07 = [
  ("Az anya most négyszer annyi idős, mint a lánya; $5$ év múlva már csak háromszor annyi. Hány évesek most?",
   None, "az anya $40$, a lánya $10$ éves."),
