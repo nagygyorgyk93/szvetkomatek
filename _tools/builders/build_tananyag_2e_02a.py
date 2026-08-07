@@ -179,7 +179,7 @@ A2 = [
          '<p><b>$D=0$:</b> $\\sqrt{D}=0$ → <b>egy (kettős)</b> valós megoldás, '
          '$x_{1}=x_{2}=-\\dfrac{b}{2a}$.</p>'
          '<p><b>$D&lt;0$:</b> negatív szám gyöke a valósban nincs → <b>két konjugált komplex</b> '
-         'megoldás. (Az I. témakör után ez már nem akadály!)</p>',
+         'megoldás. (A <a href="../01-hatvanyozas-gyokvonas-komplex-szamok/tananyag-komplex-szam-fogalma.html">komplex számok</a> után ez már nem akadály!)</p>',
          hid="tetel-megoldasok-termeszete"),
    doboz("pelda", "Vészterem-szimuláció — mindhárom eset",
          '<p>Vizsgáld meg és oldd meg: <b>a)</b> $x^{2}-6x+5=0$; <b>b)</b> $x^{2}-6x+9=0$; '
@@ -224,8 +224,9 @@ A2 = [
  ]),
 
  ("Amikor a gyökök komplexek", [
-   'A $D&lt;0$ eset korábban azt jelentette: „nincs megoldás”. Az I. témakör után már '
-   'tudjuk, hogy <b>van</b> — csak nem a valós számok között.',
+   'A $D&lt;0$ eset korábban azt jelentette: „nincs megoldás”. A '
+   '<a href="../01-hatvanyozas-gyokvonas-komplex-szamok/tananyag-komplex-szam-fogalma.html">komplex számok</a> '
+   'bevezetése után már tudjuk, hogy <b>van</b> — csak nem a valós számok között.',
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg a komplex számok halmazán: $x^{2}+2x+5=0$.</p>',
          hid="pelda-komplex-gyokok",

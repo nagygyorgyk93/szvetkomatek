@@ -50,7 +50,7 @@ C1 = [
          '<b>tartományon</b>. Az „hol nulla?” kérdésre egy vagy két szám a válasz — '
          'a „hol pozitív?” kérdésre viszont intervallumok. És itt jön a jó hír: '
          'ha megvan a parabola képe, az egyenlőtlenséget <b>le lehet olvasni</b>. '
-         'Nem kell új módszer, csak az, amit az előző egységben megtanultál.'),
+         'Nem kell új módszer, csak az, amit az előző egységben, a <a href="tananyag-masodfoku-fuggveny.html">másodfokú függvényről</a> megtanultál.'),
  ]),
 
  ("Mit jelent a megoldás?", [

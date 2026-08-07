@@ -44,14 +44,15 @@
     <div class="doboz definicio" id="def-haromszogfajtak">
       <p class="cim"><span class="ikon">📗</span> Oldalak és szögek szerint</p>
       <p><b>Oldalak szerint:</b> általános (mind különböző), <b>egyenlő szárú</b> (két oldala egyenlő), <b>szabályos</b>
-      (mindhárom oldala egyenlő). <b>Szögek szerint:</b> <b>hegyesszögű</b> (mind hegyes), <b>derékszögű</b> (van
+       (mindhárom oldala egyenlő). Az „egyenlő szárú” <b>legalább</b> két egyenlő oldalt
+       jelent, ezért a szabályos háromszög is egyenlő szárú — csak a legszimmetrikusabb esetük. <b>Szögek szerint:</b> <b>hegyesszögű</b> (mind hegyes), <b>derékszögű</b> (van
       <span class="math inline">\(90^\circ\)</span>-os szöge), <b>tompaszögű</b> (van tompaszöge).</p>
     </div>
     <div class="venn">
       <div class="vbox">
         <svg viewBox="0 0 150 120" width="150" height="120" role="img" aria-label="Egyenlő szárú háromszög">
           <polygon points="75,20 25,100 125,100" fill="#d1fae5" stroke="#047857" stroke-width="2"/>
-          <text x="40" y="60" font-size="12" fill="#0f172a">b</text><text x="104" y="60" font-size="12" fill="#0f172a">b</text>
+          <text x="40" y="60" font-size="12" fill="#0f172a">b</text><text x="104" y="60" font-size="12" fill="#0f172a">a</text>
         </svg>
         <div class="cap">egyenlő szárú</div>
       </div>
@@ -80,13 +81,13 @@
     <div class="doboz tetel" id="tetel-kulso-szog">
       <p class="cim"><span class="ikon">📘</span> A külső szög tétele</p>
       <p>A háromszög <b>külső szöge</b> egyenlő a nem mellette fekvő két <b>belső szög összegével</b>. Például a
-      <span class="math inline">\(\gamma\)</span>-nál lévő külső szög: <span class="math inline">\(\gamma'=\alpha+\beta\)</span>. A három külső szög összege <span class="math inline">\(360^\circ\)</span>.</p>
+      <span class="math inline">\(\beta\)</span>-nál lévő külső szög: <span class="math inline">\(\beta'=\alpha+\gamma\)</span>. A három külső szög összege <span class="math inline">\(360^\circ\)</span>.</p>
     </div>
     <div class="svgcard">
       <svg viewBox="0 0 320 170" width="320" height="170" role="img" aria-label="Háromszög egy meghosszabbított oldallal és a külső szöggel">
         <polygon points="60,130 210,130 130,45" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
         <line x1="210" y1="130" x2="290" y2="130" stroke="#0f172a" stroke-width="2" stroke-dasharray="4 3"/>
-        <text x="120" y="150" font-size="13" fill="#0f172a" font-style="italic">α</text>
+        <text x="62" y="148" font-size="13" fill="#0f172a" font-style="italic">α</text>
         <text x="196" y="123" font-size="13" fill="#0f172a" font-style="italic">β</text>
         <text x="128" y="70" font-size="13" fill="#0f172a" font-style="italic">γ</text>
         <path d="M 232 130 A 22 22 0 0 0 224 114" fill="none" stroke="#ef4444" stroke-width="2.5"/>
@@ -142,23 +143,23 @@
       Bizonyítsd be, hogy az <b>egyenlő szárú háromszög alapon fekvő szögei egyenlők</b>!
       <details><summary>Megoldás</summary><div class="bel"><p>Legyen az <span class="math inline">\(ABC\triangle\)</span> egyenlő szárú, <span class="math inline">\(CA=CB\)</span>. Húzzuk be a <span class="math inline">\(C\)</span> csúcsból a <span class="math inline">\(\gamma\)</span> szög
       <b>szögfelezőjét</b>, ez az <span class="math inline">\(AB\)</span> oldalt <span class="math inline">\(F\)</span>-ben metszi. Az <span class="math inline">\(ACF\triangle\)</span> és <span class="math inline">\(BCF\triangle\)</span> egybevágó a
-      <b>II. (OSO)</b> tétel szerint: <span class="math inline">\(CA=CB\)</span>, a felezővel keletkező két szög egyenlő, és a <span class="math inline">\(CF\)</span> oldal közös.
-      Egybevágó háromszögek megfelelő szögei egyenlők, ezért <span class="math inline">\(\alpha=\beta\)</span>. <b>Q.E.D.</b></p></div></details>
+      <b>II. (OSO)</b> tétel szerint: <span class="math inline">\(CA=CB\)</span>, a felezővel keletkező két szög egyenlő (<span class="math inline">\(\angle ACF=\angle BCF=\gamma/2\)</span>), és ez a szög mindkét háromszögben a szár és a közös <span class="math inline">\(CF\)</span> oldal <b>közé</b> esik.
+      Egybevágó háromszögek megfelelő szögei egyenlők, ezért <span class="math inline">\(\alpha=\beta\)</span>. Ezt kellett bizonyítani.</p></div></details>
     </div>
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
       Két oldal és egy „akármelyik” szög egyezése <b>nem</b> elég! A II. tételben a szögnek a két oldal <b>közé</b> kell
-      esnie. Ha a szög nem a közbezárt (és nem a nagyobb oldallal szemközti), két különböző háromszög is illeszkedhet
-      az adatokra.
+      esnie. Ha a szög nem a közbezárt (és nem a nagyobb oldallal szemközti), két különböző háromszög is megfelelhet
+       az adatoknak.
     </div>
-    <div class="kviz" data-answer="2" data-jo="✔ 6 + 7 = 13 < 14, tehát a leghosszabb oldal túl hosszú — nem szerkeszthető." data-nem="✘ Nézd a leghosszabbat: 6 + 7 = 13, ami kisebb 14-nél, így nem szerkeszthető háromszög.">
+    <div class="kviz" data-answer="1" data-jo="✔ 6 + 7 = 13 < 14, tehát a leghosszabb oldal túl hosszú — nem szerkeszthető." data-nem="✘ Nézd a leghosszabbat: 6 + 7 = 13, ami kisebb 14-nél, így nem szerkeszthető háromszög.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
       <p>Melyik <b>NEM</b> alkot háromszöget?</p>
       <div class="opciok"><button><span class="math inline">\(5,\ 6,\ 8\)</span></button><button><span class="math inline">\(6,\ 7,\ 14\)</span></button><button><span class="math inline">\(7,\ 7,\ 7\)</span></button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
-    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-geometria.html#alap-6">🐜 Henrik-bevetés <span class="cimke">Alap 6–8</span></a><a class="sav bruno" href="feladatok-geometria.html#kozep-4">💥 Brúnó-bevetés <span class="cimke">Közép 4–5</span></a></div></div></div>
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-geometria.html#alap-6">🐜 Henrik-bevetés <span class="cimke">Alap 6–7</span></a><a class="sav bruno" href="feladatok-geometria.html#kozep-4">💥 Brúnó-bevetés <span class="cimke">Közép 4</span></a></div></div></div>
 
     <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/furge_pjotr.webp" alt="Fürge Pjotr — a kampusz leggyorsabb kadétja" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Fürge Pjotr:</b> Megvan a háromszög és az egybevágóság. Most nézzük meg, hol rejtőznek a
     háromszög <b>nevezetes pontjai</b> — a súlypont, a magasságpont és a két kör középpontja.</p></div>

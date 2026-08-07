@@ -88,6 +88,14 @@ class TagMerleg(HTMLParser):
             self.hibak.append(f"záró </{tag}> nyitó nélkül")
 
 
+VISSZAUTALAS = re.compile(
+    r'(az előző (?:egység|lecke|rész|fejezet|témakör)\w*'
+    r'|korábban (?:láttuk|tanultuk|bevezettük|megismertük|kimondtuk)'
+    r'|ahogy (?:láttuk|tanultuk|megbeszéltük)|mint (?:láttuk|tanultuk)'
+    r'|a(?:z)? (?:I|II|III|IV)\.\s*témakör\w*'
+    r'|már (?:ismerjük|tanultuk|láttuk))', re.I)
+
+
 def kanon_ellenorzes(ut: Path) -> tuple[list[str], list[str]]:
     """Egy oldal kánon-ellenőrzése. Visszaad: (hibák, figyelmeztetések)."""
     s = ut.read_text(encoding="utf-8")
@@ -235,6 +243,21 @@ def kanon_ellenorzes(ut: Path) -> tuple[list[str], list[str]]:
             if masik:
                 hibak.append(f'data-answer="{idx}" a(z) „{opciok[idx]}” gombra mutat, de a data-jo a(z) „{opciok[masik[0]]}” választ magyarázza — elcsúszott index?')
 
+        # 2. eset: a helyes opció száma SZEREPEL ugyan a visszajelzésben, de egy
+        # másik opció SOKKAL jobban illeszkedik rá (pl. „7,7,7” vs. „6+7=13<14”).
+        # Csak figyelmeztetés — a fedés önmagában nem bizonyít.
+        elif helyes:
+            fed = lambda i: len(szam(opciok[i]) & szam(jotxt))
+            jobb = [i for i in range(len(opciok))
+                    if i != idx and not re.search(r'frac|sqrt', opciok[i].replace('\\', ''))
+                    and fed(i) >= fed(idx) + 2 and fed(i) >= 2]
+            # a +2-es küszöb szűri ki azt a gyakori esetet, amikor a data-jo
+            # a CSAPDA-opciót is megnevezi („…nem 2,5%, hanem 40%”)
+            if jobb:
+                figy.append(f'data-answer="{idx}" a(z) „{opciok[idx]}” gombra mutat, de a '
+                            f'data-jo számai jobban illenek a(z) „{opciok[jobb[0]]}” '
+                            f'opcióra — ellenőrizd az indexet')
+
     # --- differenciált sávok ---
     if 'class="savok"' in s:
         if "sav henrik" not in s or "sav bruno" not in s:
@@ -272,6 +295,15 @@ def kanon_ellenorzes(ut: Path) -> tuple[list[str], list[str]]:
         hibak.extend(m.hibak[:3])
     if m.verem:
         hibak.append(f"nyitva maradt tag(ek): {m.verem[-3:]}")
+
+    # --- link nélküli visszautalás korábbi anyagra ---
+    if tananyag:
+        _h = re.sub(r'data:[^"]+', '', s)
+        for m in VISSZAUTALAS.finditer(_h):
+            kor = _h[max(0, m.start() - 400):m.end() + 400]
+            if not re.search(r'<a href="(?!http)[^"]+\.html', kor):
+                figy.append(f'„{m.group(0)}” visszautal korábbi anyagra, de nincs a '
+                            f'közelében belső hivatkozás — tegyél rá linket')
 
     return hibak, figy
 

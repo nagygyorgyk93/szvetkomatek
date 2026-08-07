@@ -95,7 +95,7 @@ C1 = [
          '<td>$\\mathbb{C}$ — <b>komplex számok</b></td></tr>'
          '</table></div>'
          '<p>Miért nincs valós megoldása az utolsónak? Mert minden valós $x$-re $x^{2}\\ge 0$ — '
-         'ezt épp az előző egységben láttuk a hatványfüggvény grafikonján.</p>'),
+         'ezt épp az előző egységben, a <a href="tananyag-hatvanyfuggveny.html">hatványfüggvény grafikonján</a> láttuk.</p>'),
    'A bővítés módja mindig ugyanaz: <b>bevezetünk</b> egy új objektumot, kimondjuk róla, '
    'mit tud, és megköveteljük, hogy a régi számolási szabályok érvényben maradjanak.',
  ]),
@@ -377,7 +377,7 @@ C3 = [
 
  ("Lineáris egyenletek a komplex számok halmazán", [
    'Az $a\\cdot z=b$ alakú egyenletet — ha $a\\neq 0$ — ugyanúgy oldjuk meg, mint a valós '
-   'számoknál: osztunk $a$-val. Az osztást pedig már ismerjük: bővítés a konjugálttal. '
+   'számoknál: osztunk $a$-val. Az osztást pedig <a href="tananyag-muveletek-komplex-szamokkal.html#pelda-osztas">már ismerjük</a>: bővítés a konjugálttal. '
    '(Ha $a=0$, az egyenlet vagy azonosság, vagy megoldhatatlan — épp úgy, mint a valósban.)',
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg a komplex számok halmazán: $(2-i)z=5+5i$.</p>',

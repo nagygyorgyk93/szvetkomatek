@@ -423,11 +423,11 @@ def kartya(href, cim, le):
 
 K = [
  kartya("tananyag-szogmeres-es-radian.html", "Szögmérés és a szög általánosítása",
-        "Forgásszög, társszögek, a radián fogalma és a fok–radián átváltás"),
+        "Forgásszög, azonos állású szögek, a radián fogalma és a fok–radián átváltás"),
  kartya("tananyag-trigonometrikus-kor.html", "A trigonometrikus kör",
         "A négy függvény definíciója az egységkörön, előjelek, jellegzetes szögek"),
  kartya("tananyag-visszavezetes.html", "Visszavezetés az első negyedre",
-        "Alapszög, a négy társszög és az előjelek — bármely szög két lépésben"),
+        "Alapszög, a négy negyed és az előjelek — bármely szög két lépésben"),
  kartya("tananyag-alapazonossagok.html", "Alapazonosságok",
         "A trigonometriai Pitagorasz-tétel és a leggyakoribb feladattípus: érték + negyed"),
  kartya("tananyag-addicios-kepletek.html", "Addíciós képletek és a kétszeres szög",

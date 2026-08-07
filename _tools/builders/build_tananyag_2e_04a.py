@@ -47,7 +47,7 @@ print("sympy önteszt: OK")
 SVG_RAD = svg_egysegkor(
     szogek=[(57.2958, "α = 1 rad ≈ 57,3°", "#047857")], w=340, h=300,
     leiras="Egy radián: az a középponti szög, amelyhez a sugárral egyenlő ívhossz tartozik",
-    sugar_cimke="r")
+    sugar_cimke="r", iv=(57.2958, "ív = r", "#047857"))
 
 SVG_NEGYED = svg_egysegkor(
     szogek=[(35, "P", "#047857")], w=340, h=320, negyedek=True,
@@ -63,7 +63,7 @@ SVG_VISSZA = svg_egysegkor(
     szogek=[(40, "α", "#047857"), (140, "180° − α", "#ef4444"),
             (220, "180° + α", "#3b82f6"), (320, "360° − α", "#8b5cf6")],
     w=380, h=360, negyedek=False,
-    leiras="Ugyanaz az alapszög a négy negyedben: a négy társszög")
+    leiras="Ugyanaz az alapszög a négy negyedben")
 
 # ===================================================================== A1
 
@@ -82,22 +82,26 @@ A1 = [
 
  ("A szög fogalmának általánosítása", [
    doboz("definicio", "Forgásszög",
-         '<p>A szöget mostantól <b>forgatásként</b> értelmezzük: egy félegyenest az origó '
-         'körül elforgatunk. A forgatás</p>'
+         '<p>A szöget mostantól <b>forgatásként</b> értelmezzük: egy félegyenest a '
+         'kezdőpontja körül elforgatunk. (A következő leckében ezt a kezdőpontot az '
+         'origóba helyezzük.) A forgatás</p>'
          '<ul>'
          '<li><b>pozitív</b>, ha az óramutató járásával <b>ellentétes</b> (matematikai irány),</li>'
          '<li><b>negatív</b>, ha az óramutató járásával <b>megegyező</b>.</li>'
          '</ul>'
-         '<p>Így minden valós szám szöget jelöl: $-90^\\circ$, $370^\\circ$, $1000^\\circ$ '
-         'mind értelmes.</p>',
+         '<p>Így bármely valós szám megadhat egy forgásszöget: a $-90^\\circ$, a $370^\\circ$ '
+         'és az $1000^\\circ$ is értelmes.</p>',
          hid="def-forgasszog"),
-   doboz("tetel", "Társszögek — a teljes fordulat nem számít",
+   doboz("tetel", "Azonos állású szögek — a teljes fordulat nem számít",
          '<p>Ha két szög <b>teljes fordulatokban</b> tér el egymástól, ugyanoda mutat:</p>'
          '$$\\alpha \\text{ és } \\alpha+k\\cdot 360^\\circ\\quad(k\\in\\mathbb{Z})$$'
-         '<p>ugyanaz az irány, ezért <b>minden szögfüggvényük megegyezik</b>. Radiánban: '
+         '<p>ugyanaz az irány, ezért <b>minden szögfüggvényük megegyezik</b> — ott, ahol '
+         'értelmezve vannak. Radiánban: '
          '$\\alpha$ és $\\alpha+2k\\pi$.</p>'
          '<p>Ezért minden szöget vissza tudunk vinni a $[0^\\circ;360^\\circ)$ tartományba: '
-         'oszd el $360$-nal, és a <b>maradék</b> érdekel.</p>',
+         'oszd el $360$-nal, és a <b>nemnegatív maradék</b> érdekel. Negatív szögnél ez azt '
+         'jelenti, hogy addig adsz hozzá $360^\\circ$-ot, amíg $0^\\circ$ és $360^\\circ$ '
+         'közé nem kerülsz.</p>',
          hid="tetel-tarsszogek"),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Melyik $[0^\\circ;360^\\circ)$ közötti szöggel egyezik meg? '
@@ -111,7 +115,8 @@ A1 = [
  ]),
 
  ("Szögmérés radiánban", [
-   'A fok önkényes egység: valaki egyszer eldöntötte, hogy a teljes fordulat $360$ rész. '
+   'A fok megállapodás kérdése: a babiloni hagyományból örököltük, hogy a teljes fordulat '
+   '$360$ rész — kényelmes szám, mert sokféleképpen osztható maradék nélkül. Attól még önkényes. '
    'Létezik azonban egy <b>természetes</b> szögmérték is, amely magából a körből adódik.',
    doboz("definicio", "Radián",
          '<p><b>Egy radián</b> annak a középponti szögnek a mértéke, amelyhez tartozó '
@@ -138,7 +143,9 @@ A1 = [
          '<td>$\\tfrac{\\pi}{3}$</td><td>$\\tfrac{\\pi}{2}$</td><td>$\\pi$</td>'
          '<td>$\\tfrac{3\\pi}{2}$</td><td>$2\\pi$</td></tr>'
          '</table></div>'
-         '<p>Figyeld meg a logikát: minél <b>nagyobb</b> a nevező, annál <b>kisebb</b> a szög.</p>',
+         '<p>Figyeld meg: amíg a számláló $\\pi$, addig minél nagyobb a nevező, annál kisebb a '
+         'szög ($\\tfrac{\\pi}{6}<\\tfrac{\\pi}{4}<\\tfrac{\\pi}{3}<\\tfrac{\\pi}{2}$). '
+         'A $\\pi$ fölötti szögeknél már a számláló is nő.</p>',
          hid="tetel-radian-tabla"),
    doboz("pelda", "Vészterem-szimuláció",
          '<p><b>a)</b> Váltsd radiánba: $120^\\circ$, $315^\\circ$.<br>'
@@ -154,8 +161,9 @@ A1 = [
          '<p><b>A számológép módja!</b> Ha a gép <b>RAD</b> módban van, a $\\sin 30$ nem '
          '$0{,}5$-öt ad, hanem $\\sin(30\\ \\text{rad})\\approx -0{,}988$. Fokos feladatnál '
          'mindig <b>DEG</b> módban dolgozz — érdemes a $\\sin 30=0{,}5$ próbával ellenőrizni.</p>'
-         '<p>És ne feledd: a $\\pi$ a radiánban <b>egység</b>, nem szorzó — a '
-         '$\\tfrac{5\\pi}{6}$ nem „ötször pí per hat fok”, hanem egy szög: $150^\\circ$.</p>'),
+         '<p>És ne feledd: radiánban <b>nem írunk fokjelet</b>. A $\\tfrac{5\\pi}{6}$ egy valós '
+         'szám ($\\approx 2{,}62$), és ez a szám maga a szög mértéke; fokban kifejezve '
+         '$150^\\circ$. Aki $\\tfrac{5\\pi}{6}{}^\\circ$-ot ír, két mértéket kever össze.</p>'),
    kviz('Hány radián $270^\\circ$?',
         ['$\\tfrac{3\\pi}{2}$', '$\\tfrac{2\\pi}{3}$', '$270\\pi$'], 0,
         jo="✔ 270/180 = 3/2, tehát 3π/2.",
@@ -365,7 +373,7 @@ KI = [
  lap(**T, fajl="tananyag-szogmeres-es-radian.html",
      cim="Szögmérés és a szög általánosítása",
      cim_tiszta="Szögmérés és a szög általánosítása",
-     alcim="A forgásszög, a társszögek, a radián fogalma és a fok–radián átváltás.",
+     alcim="A forgásszög, az azonos állású szögek, a radián fogalma és a fok–radián átváltás.",
      chip="A Fázisugrás · 1/11", szakaszok=A1,
      elozo=("index.html", "Trigonometrikus függvények"),
      kovetkezo=("tananyag-trigonometrikus-kor.html", "A trigonometrikus kör")),
@@ -378,7 +386,7 @@ KI = [
      kovetkezo=("tananyag-visszavezetes.html", "Visszavezetés az első negyedre")),
  lap(**T, fajl="tananyag-visszavezetes.html",
      cim="Visszavezetés az első negyedre", cim_tiszta="Visszavezetés az első negyedre",
-     alcim="Az alapszög megkeresése, a négy társszög és az előjelek — bármely szög "
+     alcim="Az alapszög megkeresése, a négy negyed és az előjelek — bármely szög "
            "pontos értéke két lépésben.",
      chip="A Fázisugrás · 3/11", szakaszok=A3,
      elozo=("tananyag-trigonometrikus-kor.html", "A trigonometrikus kör"),

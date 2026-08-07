@@ -171,13 +171,14 @@ def svg_fuggvenyek(gorbek, xr=(-2.6, 2.6), yr=(-2.6, 4.2), w=360, h=250,
 
 
 def svg_egysegkor(szogek=(), w=340, h=340, leiras="A trigonometrikus kör",
-                  negyedek=False, tengelycimke=True, sugar_cimke=None, extra=""):
+                  negyedek=False, tengelycimke=True, sugar_cimke=None, extra="", iv=None):
     """Trigonometrikus (egység)kör sötét tintával, világos lapon.
 
     `szogek` = [(fok, felirat, szin), …] — sugár + pont + felirat a körvonalon.
     `negyedek` = True → I–IV római számok a negyedekben.
     `sugar_cimke` = pl. "r = 1" — felirat az első sugárra.
     `extra` = tetszőleges nyers SVG-részlet a végére (pl. tangensegyenes).
+    `iv` = (fok, felirat, szin) — vastag körív a 0°-tól a megadott szögig, felirattal.
     """
     import math
     cx, cy = w / 2, h / 2
@@ -213,6 +214,16 @@ def svg_egysegkor(szogek=(), w=340, h=340, leiras="A trigonometrikus kör",
         for fok, txt in ((45, "I."), (135, "II."), (225, "III."), (315, "IV.")):
             ki.append(f'  <text x="{X(fok, 0.62):.1f}" y="{Y(fok, 0.62) + 4:.1f}" font-size="13" '
                       f'fill="#94a3b8" font-weight="700" text-anchor="middle">{txt}</text>')
+    if iv:
+        _f, _cim, _sz = iv
+        _nagy = 1 if _f % 360 > 180 else 0
+        ki.append(f'  <path d="M {X(0):.1f},{Y(0):.1f} A {R:.1f},{R:.1f} 0 {_nagy},0 '
+                  f'{X(_f):.1f},{Y(_f):.1f}" fill="none" stroke="{_sz}" stroke-width="4" '
+                  'stroke-linecap="round"/>')
+        if _cim:
+            ki.append(f'  <text x="{X(_f / 2, 1.09):.1f}" y="{Y(_f / 2, 1.09) + 4:.1f}" '
+                      f'font-size="11" fill="{_sz}" font-weight="700" '
+                      f'text-anchor="middle">{_cim}</text>')
     for i, (fok, felirat, szin) in enumerate(szogek):
         ki.append(f'  <line x1="{cx:.1f}" y1="{cy:.1f}" x2="{X(fok):.1f}" y2="{Y(fok):.1f}" '
                   f'stroke="{szin}" stroke-width="2"/>')

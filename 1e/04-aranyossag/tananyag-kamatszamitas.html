@@ -32,8 +32,8 @@
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
-      <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/darazs_dorka.webp" alt="Darázs Dorka — a Zsugor-protokoll pilótája" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Darázs Dorka:</b> A Henrik Technologies kutatása pénzbe kerül — a laborokat hitelből és befektetésből tartjuk fenn. A <b>kamat</b> az idő ára: a pénz magától nő, ha kölcsönadod, és magától nő az adósságod, ha kölcsönveszed. Aki érti a kamatot, jó döntést hoz; aki nem, azt Kán „kedvező ajánlatai” elnyelik. Ezt a modult a <b>Zsugor-protokoll terepküldetésén</b> éles helyzetben is használni fogod.</p></div>
-    <p>A kamatszámítás nem új szabály: ugyanaz a <span class="math inline">\(G:P=100:p\)</span> aránypár, csak más néven. Itt az alapérték a <b>tőke</b>, a százalékérték a <b>kamat</b>, a százalékláb a <b>kamatláb</b>. Ez a témakör pénzügyi döntésekhez ad eszközt — a mindennapok egyik leggyakrabban használt matematikája.</p>
+      <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/darazs_dorka.webp" alt="Darázs Dorka — a Zsugor-protokoll pilótája" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Darázs Dorka:</b> A Henrik Technologies kutatása pénzbe kerül — a laborokat hitelből és befektetésből tartjuk fenn. A <b>kamat</b> az idő ára: a kölcsönadott pénz az idő múlásával gyarapszik, a kölcsönvett adósság pedig ugyanúgy nő. Aki érti a kamatot, jó döntést hoz; aki nem, azt Kán „kedvező ajánlatai” elnyelik. Ezt a modult a <b>Zsugor-protokoll terepküldetésén</b> éles helyzetben is használni fogod.</p></div>
+    <p>A kamatszámítás nem új szabály: ugyanaz a <span class="math inline">\(G:P=100:p\)</span> aránypár (<span class="math inline">\(G\)</span> az alapérték, <span class="math inline">\(P\)</span> a százalékérték), csak más néven. Itt az alapérték a <b>tőke</b>, a százalékérték a <b>kamat</b>, a százalékláb a <b>kamatláb</b>. Ez a témakör pénzügyi döntésekhez ad eszközt — a mindennapok egyik leggyakrabban használt matematikája.</p>
 
     <h2 id="s1">Az egyszerű kamat</h2>
     <div class="doboz definicio" id="def-kamat">
@@ -43,13 +43,13 @@
     <div class="doboz pelda" id="pelda-kamat-ev">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
       Valaki <span class="math inline">\(540\,000\)</span> dinárt fektet be <span class="math inline">\(7{,}5\%\)</span>-os kamatlábbal. Mennyi kamatot kap <span class="math inline">\(4\)</span> év alatt (egyszerű kamat)?
-      <details><summary>Megoldás</summary><div class="bel"><p>Egy évre <span class="math inline">\(K_1=\dfrac{540\,000\cdot 7{,}5}{100}=40\,500\)</span>, négy évre <span class="math inline">\(4\cdot 40\,500=162\,000\)</span> dinár.</p></div></details>
+      <details><summary>Megoldás</summary><div class="bel"><p>Egy évre <span class="math inline">\(K=\dfrac{540\,000\cdot 7{,}5}{100}=40\,500\)</span>, négy évre <span class="math inline">\(4\cdot 40\,500=162\,000\)</span> dinár.</p></div></details>
     </div>
 
-    <h2 id="s2">Egy évnél rövidebb futamidő</h2>
+    <h2 id="s2">Futamidő: év, hónap, nap</h2>
     <div class="doboz tetel" id="tetel-honap-nap">
       <p class="cim"><span class="ikon">📘</span> Év, hónap, nap</p>
-      <p>Ha a tőke <span class="math inline">\(e\)</span> évig, <span class="math inline">\(h\)</span> hónapig vagy <span class="math inline">\(n\)</span> napig kamatozik, a kamatot az alábbi aránypárok adják (a banki gyakorlatban az évet <span class="math inline">\(360\)</span> nappal számolva): \[T:K=100:(p\,e),\quad T:K=1200:(p\,h),\quad T:K=36000:(p\,n).\] Tehát <span class="math inline">\(K=\dfrac{T\,p\,h}{1200}\)</span> hónapra, illetve <span class="math inline">\(K=\dfrac{T\,p\,n}{36000}\)</span> napra.</p>
+      <p>Ha a tőke <span class="math inline">\(e\)</span> évig, <span class="math inline">\(h\)</span> hónapig vagy <span class="math inline">\(n\)</span> napig kamatozik, a kamatot az alábbi aránypárok adják (az évet a hagyományos kereskedelmi kamatszámítás szerint, ún. <b>kereskedelmi évvel</b>, <span class="math inline">\(360\)</span> nappal számolva): \[T:K=100:(p\,e),\quad T:K=1200:(p\,h),\quad T:K=36000:(p\,n).\] Tehát <span class="math inline">\(K=\dfrac{T\,p\,h}{1200}\)</span> hónapra, illetve <span class="math inline">\(K=\dfrac{T\,p\,n}{36000}\)</span> napra.</p>
     </div>
     <div class="doboz pelda" id="pelda-kamat-honap">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
@@ -58,7 +58,7 @@
     </div>
     <div class="doboz pelda" id="pelda-kamat-nap">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
-      Mekkora a kölcsön összege, ha <span class="math inline">\(80\)</span> napos futamidővel, <span class="math inline">\(6\%\)</span>-os kamatláb mellett <span class="math inline">\(1000\)</span> dinár kamatot számoltak el?
+      Mekkora volt a kölcsönadott tőke, ha <span class="math inline">\(80\)</span> napos futamidővel, <span class="math inline">\(6\%\)</span>-os kamatláb mellett <span class="math inline">\(1000\)</span> dinár kamatot számoltak el?
       <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(K=\dfrac{T\cdot 6\cdot 80}{36000}=1000\)</span>, innen <span class="math inline">\(T=\dfrac{1000\cdot 36000}{6\cdot 80}=75\,000\)</span> dinár.</p></div></details>
     </div>
     <div class="kviz" data-answer="0" data-jo="✔ K = T·p·h/1200 = 60000·10·6/1200 = 3000 dinár." data-nem="✘ Hat hónapra: K = T·p·h/1200 = 60000·10·6/1200 = 3000 dinár.">
@@ -67,22 +67,21 @@
       <div class="opciok"><button><span class="math inline">\(3000\)</span> din</button><button><span class="math inline">\(6000\)</span> din</button><button><span class="math inline">\(600\)</span> din</button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
+<h2 id="s3">Kamatos kamat és a pénzügyi döntés</h2>
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Kamatos kamat (a következő szint)</p>
+      <p>A gyakorlatban a bank gyakran a <b>felnövelt</b> összeget kamatoztatja tovább — ez a <b>kamatos kamat</b>. Ekkor <span class="math inline">\(e\)</span> év után a tőke <span class="math inline">\(T_e=T\Big(1+\dfrac{p}{100}\Big)^{e}\)</span>. Például <span class="math inline">\(100\,000\)</span> dinár <span class="math inline">\(5\%\)</span>-kal <span class="math inline">\(2\)</span> év alatt egyszerű kamattal <span class="math inline">\(110\,000\)</span>-re, kamatos kamattal <span class="math inline">\(100\,000\cdot 1{,}05^2=110\,250\)</span>-re nő.</p>
+    </div>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
+      Egy „alacsony” kamatláb is sokba kerülhet <b>hosszú futamidőn</b> vagy <b>kamatos kamattal</b>. Mindig azt nézd, mennyi a <b>teljes</b> visszafizetendő összeg, ne csak a százalékot. Két ajánlatot csak úgy hasonlíthatsz össze, ha <b>azonos</b> időre és azonos alapra számolod ki a kamatot.
+    </div>
 
-    
     <div class="kviz" data-answer="0" data-jo="✔ A második évben már a megnövelt összeg kamatozik: 1,1 · 1,1 = 1,21, tehát 21%." data-nem="✘ A kamatos kamatnál a szorzók szorzódnak: 1,1 · 1,1 = 1,21. A 20% az egyszerű kamat esete lenne.">
       <p class="kviz-cim"><span class="ikon">🎯</span> Gyors kérdés</p>
       <p>Egy összeg évi <span class="math inline">\(10\%\)</span>-os kamatozás mellett két év alatt <b>kamatos kamattal</b> hány százalékkal nő?</p>
       <div class="opciok"><button><span class="math inline">\(21\%\)</span></button><button><span class="math inline">\(20\%\)</span></button><button><span class="math inline">\(10\%\)</span></button></div>
       <p class="visszajelzes"></p>
-    </div>
-    <h2 id="s3">Kamatos kamat és a pénzügyi döntés</h2>
-    <div class="doboz erdekesseg">
-      <p class="cim"><span class="ikon">💡</span> Kamatos kamat (a következő szint)</p>
-      <p>A gyakorlatban a bank gyakran a <b>felnövelt</b> összeget kamatoztatja tovább — ez a <b>kamatos kamat</b>. Ekkor <span class="math inline">\(n\)</span> év után a tőke <span class="math inline">\(T_n=T\Big(1+\dfrac{p}{100}\Big)^{n}\)</span>. Például <span class="math inline">\(100\,000\)</span> dinár <span class="math inline">\(5\%\)</span>-kal <span class="math inline">\(2\)</span> év alatt egyszerű kamattal <span class="math inline">\(110\,000\)</span>-re, kamatos kamattal <span class="math inline">\(100\,000\cdot 1{,}05^2=110\,250\)</span>-re nő.</p>
-    </div>
-    <div class="doboz csapda">
-      <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
-      Egy „alacsony” kamatláb is sokba kerülhet <b>hosszú futamidőn</b> vagy <b>kamatos kamattal</b>. Mindig azt nézd, mennyi a <b>teljes</b> visszafizetendő összeg, ne csak a százalékot. Két ajánlatot csak úgy hasonlíthatsz össze, ha <b>azonos</b> időre és azonos alapra számolod ki a kamatot.
     </div>
     <div class="doboz erdekesseg" id="pelda-dontes">
       <p class="cim"><span class="ikon">💡</span> A terepküldetés kapcsolata</p>

@@ -58,7 +58,7 @@ B1 = [
          'és így terjed Dr. Baljós energiahulláma is. Aki ismeri ezt a görbét, egyetlen '
          'pillantással megmondja, hol a legmagasabb pont, hol éri a földet, és hogy '
          'egyáltalán eléri-e. Ezért kezdünk a <b>képpel</b>, nem a képlettel.'),
-   'Az előző egységekben azt kérdeztük: <b>hol nulla</b> a kifejezés. Most azt nézzük, '
+   'Az előző egységekben azt kérdeztük: <a href="tananyag-masodfoku-egyenlet.html"><b>hol nulla</b></a> a kifejezés. Most azt nézzük, '
    'hogyan viselkedik <b>mindenütt</b> — és kiderül, hogy a két kérdés ugyanannak '
    'a görbének két különböző olvasata.',
  ]),
