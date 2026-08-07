@@ -33,18 +33,18 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief"><p>📡 <b>Vihar Vera:</b> Utolsó lépés a viharok fejezetében — és a legelegánsabb. Megszabadulunk a nevezőben álló gyököktől, aztán felfedezzük, hogy a <span class="math inline">\(\sqrt[n]{a^{m}}\)</span> jelölés valójában <b>hatvány</b>: <span class="math inline">\(a^{m/n}\)</span>. Ettől kezdve nincs külön gyök- és külön hatványszabály — <b>egyetlen</b> szabályrendszer van. Ez a felismerés készít fel a következő évadra: az exponenciális függvényre.</p></div>
+    <div class="brief"><p>📡 <b>Vihar Vera:</b> Utolsó lépés a viharok fejezetében — és a legelegánsabb. Megszabadulunk a nevezőben álló gyököktől, aztán felfedezzük, hogy a <span class="math inline">\(\sqrt[n]{a^{m}}\)</span> jelölés valójában <b>hatvány</b>: <span class="math inline">\(a^{m/n}\)</span>. Ettől kezdve nincs külön gyök- és külön hatványszabály — <b>egyetlen</b> szabályrendszer van. Ez a felismerés vezet majd az exponenciális függvényhez — de előbb egy egészen más irányba indulunk.</p></div>
 
     <h2 id="s1">Miért gyöktelenítünk?</h2>
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Egy szokás, amit érdemes megérteni</p>
-      <p>A számológépek előtti korban a <span class="math inline">\(\dfrac{1}{\sqrt{2}}\)</span> kiszámítása azt jelentette, hogy <span class="math inline">\(1\)</span>-et el kellett osztani egy végtelen tizedes törttel — kézzel, papíron. Ezzel szemben a <span class="math inline">\(\dfrac{\sqrt{2}}{2}\)</span> alaknál elég <span class="math inline">\(1{,}41421\ldots\)</span>-t elosztani <b>kettővel</b>. Ma már a számológép mindkettőt elvégzi, de a gyöktelenített alak maradt a <b>megállapodás szerinti végalak</b>: így két megoldás összehasonlítható, és a további átalakítások is egyszerűbbek.</p>
+      <p>A számológépek előtti korban a <span class="math inline">\(\dfrac{1}{\sqrt{2}}\)</span> kiszámítása azt jelentette, hogy <span class="math inline">\(1\)</span>-et el kellett osztani egy végtelen, nem szakaszos tizedes törttel — kézzel, papíron. Ezzel szemben a <span class="math inline">\(\dfrac{\sqrt{2}}{2}\)</span> alaknál elég <span class="math inline">\(1{,}41421\ldots\)</span>-t elosztani <b>kettővel</b>. Ma már a számológép mindkettőt kiszámolja, de a gyöktelenített alak maradt a <b>megállapodás szerinti végalak</b>: így két megoldás összehasonlítható, és a további átalakítások is egyszerűbbek.</p>
     </div>
 
     <h2 id="s2">Egytagú nevező</h2>
 
-    Ha a nevezőben egyetlen gyökös tag áll, olyan tényezővel bővítünk, amitől a nevezőben <b>teljes hatvány</b> keletkezik a gyökjel alatt.
+    Ha a nevezőben egyetlen gyökös tag áll, olyan tényezővel bővítünk, amitől a gyökjel alá a <b>gyökkitevővel megegyező kitevőjű hatvány</b> kerül. (A nevezőben álló gyök alatt természetesen pozitív szám áll — a nevező nem lehet nulla.)
 
     <div class="doboz pelda" id="pelda-egytagu">
       <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
@@ -52,16 +52,16 @@
       <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(\sqrt{3}\)</span>-mal bővítünk: <span class="math inline">\(\dfrac{6}{\sqrt3}=\dfrac{6\sqrt3}{3}=2\sqrt3\)</span>.</p><p><b>b)</b> A nevezőben <span class="math inline">\(\sqrt[3]{4}=\sqrt[3]{2^{2}}\)</span> áll — még egy <span class="math inline">\(2\)</span> hiányzik a köbhöz, ezért <span class="math inline">\(\sqrt[3]{2}\)</span>-vel bővítünk:</p><span class="math display">\[\frac{5}{\sqrt[3]{4}}=\frac{5\sqrt[3]{2}}{\sqrt[3]{8}}=\frac{5\sqrt[3]{2}}{2}.\]</span></div></details>
     </div>
 
-    <div class="kviz" data-answer="0" data-jo="✔ A gyöktelenített alak PONTOS (nem közelítés), és két kifejezés így összevethető: az 1/√2 és a √2/2 ugyanaz, csak az utóbbiról látszik." data-nem="✘ A gyök a nevezőben nem hiba — a gyöktelenítés célja a pontos, egységes alak, amiben a kifejezések összehasonlíthatók és tovább alakíthatók.">
+    <div class="kviz" data-answer="0" data-jo="✔ Mindkét alak pontos — a gyöktelenített viszont a megállapodás szerinti végalak, így két megoldás ránézésre összevethető." data-nem="✘ A gyök a nevezőben nem hiba, és az 1/√2 sem pontatlanabb a √2/2-nél: a kettő ugyanaz a szám. A cél az egységes végalak.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
       <p>Miért gyöktelenítünk, ha a számológép úgyis kiszámolja?</p>
-      <div class="opciok"><button>Hogy a kifejezés pontos, összehasonlítható alakban legyen</button><button>Mert a gyök a nevezőben matematikai hiba</button><button>Mert így rövidebb lesz</button></div>
+      <div class="opciok"><button>Hogy egységes, összehasonlítható végalakot kapjunk</button><button>Mert a gyök a nevezőben matematikai hiba</button><button>Mert a gyöktelenített alak pontosabb</button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
     <h2 id="s3">Kéttagú nevező — a konjugált</h2>
 
-    Ha a nevező kéttagú, a <span class="math inline">\(\left(\sqrt a+\sqrt b\right)\left(\sqrt a-\sqrt b\right)=a-b\)</span> azonosságot használjuk: az összeg <b>konjugáltja</b> a különbség (és fordítva). A bővítés után a nevezőből eltűnik a gyök.
+    Ha a nevező kéttagú, a <span class="math inline">\(\left(\sqrt a+\sqrt b\right)\left(\sqrt a-\sqrt b\right)=a-b\)</span> azonosságot használjuk — ahol <span class="math inline">\(a\ge 0\)</span>, <span class="math inline">\(b\ge 0\)</span> és <span class="math inline">\(a\neq b\)</span>, különben a bővítés után nullával osztanánk: az összeg <b>konjugáltja</b> a különbség (és fordítva). A bővítés után a nevezőből eltűnik a gyök.
 
     <div class="doboz pelda" id="pelda-kettagu">
       <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
@@ -83,15 +83,15 @@
 
     <h2 id="s4">Racionális kitevőjű hatvány</h2>
 
-    Most jön a témakör egyik legszebb gondolata. Mi legyen <span class="math inline">\(a^{1/2}\)</span>? Ismét a <b>permanenciaelvet</b> hívjuk segítségül: legyen igaz a <span class="math inline">\(\left(a^{m}\right)^{n}=a^{mn}\)</span> szabály a tört kitevőre is. Akkor
+    Most jön a témakör egyik legszebb gondolata. Legyen <span class="math inline">\(a&gt;0\)</span> — hogy miért, arra a levezetés után visszatérünk. Mi legyen <span class="math inline">\(a^{1/2}\)</span>? Ismét a <b>permanenciaelvet</b> hívjuk segítségül: legyen igaz a <span class="math inline">\(\left(a^{m}\right)^{n}=a^{mn}\)</span> szabály a tört kitevőre is. Akkor
 
     <span class="math display">\[\left(a^{1/2}\right)^{2}=a^{\frac12\cdot 2}=a^{1}=a,\]</span>
 
-    vagyis <span class="math inline">\(a^{1/2}\)</span> olyan szám, amelynek a négyzete <span class="math inline">\(a\)</span> — tehát <span class="math inline">\(a^{1/2}=\sqrt{a}\)</span>. Nincs más választás.
+    vagyis <span class="math inline">\(a^{1/2}\)</span> olyan szám, amelynek a négyzete <span class="math inline">\(a\)</span>. Ilyen szám kettő van, <span class="math inline">\(\sqrt{a}\)</span> és <span class="math inline">\(-\sqrt{a}\)</span> — megállapodás szerint a <b>nemnegatívat</b> választjuk, tehát <span class="math inline">\(a^{1/2}=\sqrt{a}\)</span>.
 
     <div class="doboz definicio" id="def-racionalis-kitevo">
       <p class="cim"><span class="ikon">📗</span> Racionális kitevőjű hatvány</p>
-      <p>Ha <span class="math inline">\(a\in\mathbb{R}\)</span>, <span class="math inline">\(a&gt;0\)</span>, <span class="math inline">\(m\in\mathbb{Z}\)</span> és <span class="math inline">\(n\in\mathbb{N}\)</span>, <span class="math inline">\(n\ge2\)</span>, akkor</p><span class="math display">\[a^{\frac{m}{n}}=\sqrt[n]{a^{m}}.\]</span><p>Ezzel a hatványozás <b>öt azonossága</b> minden racionális kitevőre érvényes marad — és a gyökvonás hat azonossága ennek már csak következménye.</p>
+      <p>Ha <span class="math inline">\(a\in\mathbb{R}\)</span>, <span class="math inline">\(a&gt;0\)</span>, <span class="math inline">\(m\in\mathbb{Z}\)</span> és <span class="math inline">\(n\in\mathbb{N}\)</span>, <span class="math inline">\(n\ge2\)</span>, akkor</p><span class="math display">\[a^{\frac{m}{n}}=\sqrt[n]{a^{m}}.\]</span><p>Ezzel a hatványozás <a href="tananyag-hatvanyozas.html">öt azonossága</a> minden racionális kitevőre érvényes marad — és a gyökvonás <a href="tananyag-gyokvonas.html">azonosságai</a> <b>pozitív alap esetén</b> ennek már csak következményei.</p>
     </div>
 
     <div class="doboz erdekesseg">

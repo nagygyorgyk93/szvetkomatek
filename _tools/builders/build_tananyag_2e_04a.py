@@ -50,8 +50,8 @@ SVG_RAD = svg_egysegkor(
     sugar_cimke="r", iv=(57.2958, "ív = r", "#047857"))
 
 SVG_NEGYED = svg_egysegkor(
-    szogek=[(35, "P", "#047857")], w=340, h=320, negyedek=True,
-    leiras="A trigonometrikus kör négy negyede és egy pont az első negyedben",
+    szogek=[(35, "P", "#047857")], w=340, h=320, negyedek=True, vetulet=True,
+    leiras="A trigonometrikus kör négy negyede; a P pont vetületei az x- és az y-tengelyen adják a koszinuszt, illetve a szinuszt",
     sugar_cimke="r = 1")
 
 SVG_JELL = svg_egysegkor(
@@ -178,8 +178,8 @@ A2 = [
  ("📡 Küldetés-eligazítás", [
    brief('<b>Éjjáró:</b> Most jön a trükk, ami mindent megold. Rajzolj egy '
          '<b>egységsugarú</b> kört az origó köré, és forgasd rá a szöget. Ahová a szög '
-         'szára metszi a kört, ott van egy pont — és ennek a pontnak a <b>koordinátái '
-         'maguk a szögfüggvények</b>. Nem kell háromszög, nem kell hegyesszög: ez a '
+         'szára metszi a kört, ott van egy pont — és ennek a pontnak a <b>koordinátái adják a '
+         'szögfüggvények értékét</b>. Nem kell háromszög, nem kell hegyesszög: ez a '
          'definíció <b>minden</b> szögre működik.'),
  ]),
 
@@ -200,15 +200,13 @@ A2 = [
          '<p><b>1.</b> Mivel $P$ rajta van az egységkörön, $x_{P}^{2}+y_{P}^{2}=1$, azaz</p>'
          '$$\\sin^{2}\\alpha+\\cos^{2}\\alpha=1.$$'
          '<p>Ez a <b>trigonometriai alapazonosság</b> — a Pitagorasz-tétel az egységkörön.</p>'
-         '<p><b>2.</b> A koordináták $-1$ és $1$ közé esnek, tehát minden $\\alpha$-ra</p>'
+         '<p><b>2.</b> A koordináták $-1$ és $1$ közé esnek (a két végpontot is beleértve), tehát minden $\\alpha$-ra</p>'
          '$$-1\\le\\sin\\alpha\\le 1,\\qquad -1\\le\\cos\\alpha\\le 1.$$'
-         '<p>Ezért a $\\sin x=2$ egyenletnek <b>nincs</b> megoldása.</p>',
+         '<p>Ezért a $\\sin\\alpha=2$ egyenletnek a valós számok halmazán <b>nincs</b> megoldása.</p>',
          hid="tetel-kovetkezmenyek"),
    doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>A leggyakoribb kezdő hiba: <b>felcserélni a koordinátákat</b>. A pont '
-         '$P(\\cos\\alpha;\\sin\\alpha)$ — előbb a koszinusz. Jó emlékeztető: a '
-         '<b>c</b>oszinusz „vízszintes”, mint a <b>c</b> betű nyitott oldala; a '
-         '<b>s</b>zinusz „függőleges”.</p>'
+         '$P(\\cos\\alpha;\\sin\\alpha)$ — előbb a koszinusz. Jó emlékeztető: a $\\cos$ és a $\\sin$, illetve az $x$ és az $y$ egyaránt ábécésorrendben áll, és a koordinátákat is ebben a sorrendben írjuk.</p>'
          '<p>A másik: $\\sin^{2}\\alpha$ azt jelenti, hogy $(\\sin\\alpha)^{2}$ — '
          '<b>nem</b> $\\sin(\\alpha^{2})$.</p>'),
  ]),
@@ -220,16 +218,17 @@ A2 = [
          '<div class="tblwrap"><table>'
          '<tr><th>Negyed</th><th>$\\sin$</th><th>$\\cos$</th><th>$\\operatorname{tg}$</th>'
          '<th>$\\operatorname{ctg}$</th></tr>'
-         '<tr><td><b>I.</b> ($0^\\circ$–$90^\\circ$)</td><td>+</td><td>+</td><td>+</td><td>+</td></tr>'
-         '<tr><td><b>II.</b> ($90^\\circ$–$180^\\circ$)</td><td>+</td><td>−</td><td>−</td><td>−</td></tr>'
-         '<tr><td><b>III.</b> ($180^\\circ$–$270^\\circ$)</td><td>−</td><td>−</td><td>+</td><td>+</td></tr>'
-         '<tr><td><b>IV.</b> ($270^\\circ$–$360^\\circ$)</td><td>−</td><td>+</td><td>−</td><td>−</td></tr>'
+         '<tr><td><b>I.</b> ($0^\\circ<\\alpha<90^\\circ$)</td><td>+</td><td>+</td><td>+</td><td>+</td></tr>'
+         '<tr><td><b>II.</b> ($90^\\circ<\\alpha<180^\\circ$)</td><td>+</td><td>−</td><td>−</td><td>−</td></tr>'
+         '<tr><td><b>III.</b> ($180^\\circ<\\alpha<270^\\circ$)</td><td>−</td><td>−</td><td>+</td><td>+</td></tr>'
+         '<tr><td><b>IV.</b> ($270^\\circ<\\alpha<360^\\circ$)</td><td>−</td><td>+</td><td>−</td><td>−</td></tr>'
          '</table></div>'
-         '<p>Nem kell bemagolni: a $\\sin$ ott pozitív, ahol a pont a tengely <b>fölött</b> '
-         'van (I–II.), a $\\cos$ ott, ahol <b>jobbra</b> (I. és IV.). A $\\operatorname{tg}$ és a '
+         '<p>Nem kell bemagolni: a $\\sin$ ott pozitív, ahol a pont az $x$-tengely <b>fölött</b> '
+         'van (I–II.), a $\\cos$ ott, ahol a pont az $y$-tengelytől <b>jobbra</b> van '
+         '(I. és IV.). A tengelyekre eső $0^\\circ$, $90^\\circ$, $180^\\circ$ és $360^\\circ$ egyik negyedhez sem tartozik: ott a függvényérték vagy $0$, vagy nem létezik. A $\\operatorname{tg}$ és a '
          '$\\operatorname{ctg}$ hányados, tehát ott pozitív, ahol a kettő <b>azonos előjelű</b> '
          '(I. és III.).</p>',
-         hid="tetel-eljelek"),
+         hid="tetel-elojelek"),
    kviz('Milyen előjelű $\\cos 200^\\circ$?',
         ['Negatív', 'Pozitív', 'Nulla'], 0,
         jo="✔ 200° a III. negyedben van, ott a koszinusz (az x-koordináta) negatív.",
@@ -244,8 +243,8 @@ A2 = [
  ("Jellegzetes szögek pontos értékei", [
    abra(SVG_JELL, "A $30^\\circ$, $45^\\circ$, $60^\\circ$ és a hozzájuk tartozó "
                   "második negyedbeli szögek. Minden érték ugyanabból a három "
-                  "alapszögből származik."),
-   doboz("tetel", "A három alapszög",
+                  "nevezetes szögből származik."),
+   doboz("tetel", "A három nevezetes szög",
          '<div class="tblwrap"><table>'
          '<tr><th></th><th>$0^\\circ$</th><th>$30^\\circ$</th><th>$45^\\circ$</th>'
          '<th>$60^\\circ$</th><th>$90^\\circ$</th></tr>'
@@ -262,7 +261,7 @@ A2 = [
          '\\tfrac{\\sqrt2}{2},\\tfrac{\\sqrt3}{2},\\tfrac{\\sqrt4}{2}$ — a gyök alatt '
          '$0,1,2,3,4$. A koszinusz ugyanez <b>visszafelé</b>.</p>'
          '<p>A $\\operatorname{tg}90^\\circ$ és a $\\operatorname{ctg}0^\\circ$ <b>nem '
-         'létezik</b>: nullával kellene osztani.</p>',
+         'létezik</b>: nullával kellene osztani. Általánosan: a tangens a $90^\\circ+k\\cdot180^\\circ$, a kotangens a $k\\cdot180^\\circ$ alakú szögekre nincs értelmezve ($k$ egész szám) — épp ott, ahol a végszár a tengelyekre esik.</p>',
          hid="tetel-jellegzetes"),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Add meg mind a négy függvény pontos értékét! '
@@ -315,7 +314,7 @@ A3 = [
          '<tr><td>IV.</td><td>$360^\\circ-\\alpha$</td><td>$360^\\circ-$ szög</td></tr>'
          '</table></div>'
          '<p><b>3. lépés:</b> a függvényérték <b>abszolút értéke</b> az alapszögé, '
-         'az <b>előjelet</b> az <a href="tananyag-trigonometrikus-kor.html#tetel-eljelek">előjeltáblázat</a> adja (az előző egységben).</p>',
+         'az <b>előjelet</b> az <a href="tananyag-trigonometrikus-kor.html#tetel-elojelek">előjeltáblázat</a> adja (az előző egységben).</p>',
          hid="tetel-visszavezetes"),
    doboz("tetel", "A négy összefüggés képlettel",
          '$$\\sin(180^\\circ-\\alpha)=\\sin\\alpha,\\qquad \\cos(180^\\circ-\\alpha)=-\\cos\\alpha,$$'

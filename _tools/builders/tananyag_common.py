@@ -171,7 +171,8 @@ def svg_fuggvenyek(gorbek, xr=(-2.6, 2.6), yr=(-2.6, 4.2), w=360, h=250,
 
 
 def svg_egysegkor(szogek=(), w=340, h=340, leiras="A trigonometrikus kör",
-                  negyedek=False, tengelycimke=True, sugar_cimke=None, extra="", iv=None):
+                  negyedek=False, tengelycimke=True, sugar_cimke=None, extra="", iv=None,
+                  vetulet=False):
     """Trigonometrikus (egység)kör sötét tintával, világos lapon.
 
     `szogek` = [(fok, felirat, szin), …] — sugár + pont + felirat a körvonalon.
@@ -179,6 +180,8 @@ def svg_egysegkor(szogek=(), w=340, h=340, leiras="A trigonometrikus kör",
     `sugar_cimke` = pl. "r = 1" — felirat az első sugárra.
     `extra` = tetszőleges nyers SVG-részlet a végére (pl. tangensegyenes).
     `iv` = (fok, felirat, szin) — vastag körív a 0°-tól a megadott szögig, felirattal.
+    `vetulet` = True → az ELSŐ szög pontjából szaggatott vetítővonal mindkét tengelyre,
+    „cos α” és „sin α” felirattal, plusz az α szögív — ez maga a definíció.
     """
     import math
     cx, cy = w / 2, h / 2
@@ -236,6 +239,24 @@ def svg_egysegkor(szogek=(), w=340, h=340, leiras="A trigonometrikus kör",
         if i == 0 and sugar_cimke:
             ki.append(f'  <text x="{X(fok, 0.5):.1f}" y="{Y(fok, 0.5) - 6:.1f}" font-size="10" '
                       f'fill="{szin}" text-anchor="middle">{sugar_cimke}</text>')
+    if vetulet and szogek:
+        _f, _, _sz = szogek[0]
+        px, py = X(_f), Y(_f)
+        for x2, y2 in ((px, cy), (cx, py)):
+            ki.append(f'  <line x1="{px:.1f}" y1="{py:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" '
+                      f'stroke="{_sz}" stroke-width="1.2" stroke-dasharray="4 3" '
+                      'opacity=".8"/>')
+        ki.append(f'  <text x="{px:.1f}" y="{cy + 17:.1f}" font-size="10" fill="{_sz}" '
+                  'text-anchor="middle">cos α</text>')
+        ki.append(f'  <text x="{cx - 7:.1f}" y="{py + 4:.1f}" font-size="10" fill="{_sz}" '
+                  'text-anchor="end">sin α</text>')
+        _r = 0.30
+        ki.append(f'  <path d="M {X(0, _r):.1f},{Y(0, _r):.1f} A {R * _r:.1f},{R * _r:.1f} '
+                  f'0 0,0 {X(_f, _r):.1f},{Y(_f, _r):.1f}" fill="none" stroke="#0f172a" '
+                  'stroke-width="1.3"/>')
+        ki.append(f'  <text x="{X(_f / 2, _r + 0.13):.1f}" y="{Y(_f / 2, _r + 0.13) + 4:.1f}" '
+                  'font-size="11" fill="#0f172a" font-style="italic" '
+                  'text-anchor="middle">α</text>')
     if extra:
         ki.append(extra)
     ki.append('</svg>')

@@ -98,7 +98,7 @@ OSSZ = [
   'Ebből azonnal: $-1\\le\\sin\\alpha\\le 1$ és $-1\\le\\cos\\alpha\\le 1$.</p>',
   '<p><b>Előjelek:</b> I. mind + · II. csak $\\sin$ · III. csak $\\operatorname{tg}$ és '
   '$\\operatorname{ctg}$ · IV. csak $\\cos$ '
-  '(<a href="tananyag-trigonometrikus-kor.html#tetel-eljelek">→</a>).</p>',
+  '(<a href="tananyag-trigonometrikus-kor.html#tetel-elojelek">→</a>).</p>',
   '<p><b>Jellegzetes szögek:</b> a $\\sin$ sora '
   '$0,\\ \\tfrac12,\\ \\tfrac{\\sqrt2}{2},\\ \\tfrac{\\sqrt3}{2},\\ 1$; a $\\cos$ '
   'ugyanez visszafelé '

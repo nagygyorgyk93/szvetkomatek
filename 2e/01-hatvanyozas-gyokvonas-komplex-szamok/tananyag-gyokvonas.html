@@ -26,7 +26,7 @@
 </nav>
 <div class="hero">
   <h1>Gyökvonás</h1>
-  <p class="alcim">Az <span class="math inline">\(n\)</span>-edik gyök definíciója páros és páratlan gyökkitevőre, a <span class="math inline">\(\sqrt[n]{a^{n}}=|a|\)</span> csapda, valamint a gyökvonás hat azonossága.</p>
+  <p class="alcim">Az <span class="math inline">\(n\)</span>-edik gyök definíciója páros és páratlan gyökkitevőre, a <span class="math inline">\(\sqrt{a^{2}}=|a|\)</span> csapda, valamint a gyökvonás hat azonossága.</p>
   <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Képzelet Határa · 3/8</span></div>
 </div>
 <main class="lap toc-os">
@@ -35,13 +35,13 @@
 
     <div class="brief"><p>📡 <b>Vihar Vera:</b> Eddig előre néztünk: adott alap, adott kitevő, mekkora az eredmény? Most fordítsd meg a kérdést. Ismerem a vihar <b>energiáját</b> — mekkora volt a kiváltó ok? Ez a gyökvonás: a hatványozás visszafejtése. És itt van az évad első igazi csapdája — a <b>páros</b> gyökkitevő nem viselkedik úgy, mint a páratlan. Dr. Baljós pontosan ezen a résen fér be.</p></div>
 
-    A gyökvonás a hatványozás <b>inverz művelete</b>: azt a számot keressük, amelynek adott kitevőjű hatványa a megadott szám. A definíciót viszont <b>két külön esetre</b> kell bontanunk — és ennek a kettéválasztásnak messzemenő következményei lesznek.
+    A gyökvonás a hatványozás <b>visszafejtése</b>: azt a számot keressük, amelynek adott kitevőjű hatványa a megadott szám. Páros kitevőnél ebből a keresésből mindjárt két jelölt kerül ki — ezért kell megállapodni. A definíciót viszont <b>két külön esetre</b> kell bontanunk — és ennek a kettéválasztásnak messzemenő következményei lesznek.
 
     <h2 id="s1">Az <span class="math inline">\(n\)</span>-edik gyök fogalma</h2>
 
     <div class="doboz definicio" id="def-nedik-gyok">
       <p class="cim"><span class="ikon">📗</span> Az <span class="math inline">\(n\)</span>-edik gyök</p>
-      <p>Legyen <span class="math inline">\(a\in\mathbb{R}\)</span> és <span class="math inline">\(n\in\mathbb{N}\)</span>, <span class="math inline">\(n\ge 2\)</span>. Az <span class="math inline">\(a\)</span> szám <b><span class="math inline">\(n\)</span>-edik gyöke</b>, jelben <span class="math inline">\(\sqrt[n]{a}\)</span>:</p><ul><li>ha <span class="math inline">\(n\)</span> <b>páratlan</b>: az az <b>egyetlen</b> valós szám, amelynek <span class="math inline">\(n\)</span>-edik hatványa <span class="math inline">\(a\)</span> — ilyen <b>minden</b> valós <span class="math inline">\(a\)</span> esetén létezik;</li><li>ha <span class="math inline">\(n\)</span> <b>páros</b>: az az egyetlen <b>nemnegatív</b> valós szám, amelynek <span class="math inline">\(n\)</span>-edik hatványa <span class="math inline">\(a\)</span> — ez csak <span class="math inline">\(a\ge 0\)</span> esetén létezik.</li></ul><p>Az <span class="math inline">\(a\)</span> a <b>gyök alapja</b> (a gyökjel alatti mennyiség), <span class="math inline">\(n\)</span> a <b>gyökkitevő</b>. A négyzetgyöknél (<span class="math inline">\(n=2\)</span>) a gyökkitevőt nem szoktuk kiírni: <span class="math inline">\(\sqrt{a}\)</span>.</p>
+      <p>Legyen <span class="math inline">\(a\in\mathbb{R}\)</span> és <span class="math inline">\(n\in\mathbb{N}\)</span>, <span class="math inline">\(n\ge 2\)</span>. Az <span class="math inline">\(a\)</span> szám <b><span class="math inline">\(n\)</span>-edik gyöke</b>, jelben <span class="math inline">\(\sqrt[n]{a}\)</span>:</p><ul><li>ha <span class="math inline">\(n\)</span> <b>páratlan</b>: az az <b>egyetlen</b> valós szám, amelynek <span class="math inline">\(n\)</span>-edik hatványa <span class="math inline">\(a\)</span> — ilyen <b>minden</b> valós <span class="math inline">\(a\)</span> esetén létezik;</li><li>ha <span class="math inline">\(n\)</span> <b>páros</b>: az az egyetlen <b>nemnegatív</b> valós szám, amelynek <span class="math inline">\(n\)</span>-edik hatványa <span class="math inline">\(a\)</span> — ez csak <span class="math inline">\(a\ge 0\)</span> esetén létezik.</li></ul><p>Az <span class="math inline">\(a\)</span> a <b>gyökmennyiség</b> (a gyökjel alatti kifejezés), <span class="math inline">\(n\)</span> a <b>gyökkitevő</b> — a „gyök alapja” kifejezést kerüljük, mert az <b>alap</b> a hatványozásnál foglalt. A négyzetgyöknél (<span class="math inline">\(n=2\)</span>) a gyökkitevőt nem szoktuk kiírni: <span class="math inline">\(\sqrt{a}\)</span>.</p>
     </div>
 
     <div class="doboz pelda" id="pelda-gyok-ertekek">
@@ -76,7 +76,7 @@
 
     <h2 id="s3">A gyökvonás azonosságai</h2>
 
-    Az alábbi szabályok <span class="math inline">\(a,b\ge 0\)</span> és <span class="math inline">\(m,n,k\in\mathbb{N}\)</span> mellett mindig érvényesek. (Páratlan gyökkitevőnél negatív alapra is igazak, de a biztonság kedvéért a feladatokban többnyire nemnegatív alapokkal dolgozunk.)
+    Az alábbi szabályok <span class="math inline">\(a,b\ge 0\)</span> és <span class="math inline">\(m,n,k\in\mathbb{N}\)</span>, <span class="math inline">\(n\ge 2\)</span>, <span class="math inline">\(m,k\ge 1\)</span> mellett mindig érvényesek. Páratlan gyökkitevőnél a szorzás, az osztás, a hatványozás és a tényező be-, illetve kivitele negatív alapra is igaz. A <b>bővítés</b> azonban ilyenkor is csak páratlan <span class="math inline">\(k\)</span>-val végezhető el: <span class="math inline">\(\sqrt[3]{-8}=-2\)</span>, de <span class="math inline">\(\sqrt[6]{(-8)^{2}}=\sqrt[6]{64}=2\)</span>. A feladatokban a biztonság kedvéért többnyire nemnegatív alapokkal dolgozunk.
 
     <div class="doboz tetel" id="tetel-gyok-azonossagok">
       <p class="cim"><span class="ikon">📘</span> A gyökvonás hat azonossága</p>
@@ -88,6 +88,13 @@
       <p>Nincs olyan azonosság, hogy <span class="math inline">\(\sqrt{a+b}=\sqrt{a}+\sqrt{b}\)</span>. Ellenpélda:</p><span class="math display">\[\sqrt{9+16}=\sqrt{25}=5,\qquad\text{de}\qquad \sqrt{9}+\sqrt{16}=3+4=7.\]</span><p>A gyökvonás a <b>szorzással és osztással</b> barátkozik — az összeadással soha.</p>
     </div>
 
+    <div class="kviz" data-answer="0" data-jo="✔ Így van: az azonosság a SZORZÁSRA szól. Számokkal: 1,41 + 1,73 ≈ 3,15, míg √5 ≈ 2,24." data-nem="✘ A √a·√b = √(ab) a szorzásra érvényes; összegre nincs ilyen szabály. 1,41 + 1,73 ≈ 3,15, míg √5 ≈ 2,24 — nem egyenlők.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Igaz-e, hogy <span class="math inline">\(\sqrt{2}+\sqrt{3}=\sqrt{5}\)</span>?</p>
+      <div class="opciok"><button>Nem — a gyökvonás összegre nem bontható.</button><button>Igen, mindig.</button><button>Csak pozitív számokra igaz.</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
     <div class="doboz pelda">
       <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
       <p>Egyszerűsítsd (<span class="math inline">\(a&gt;0\)</span>): <span class="math inline">\(\sqrt[6]{a^{4}}\)</span>, valamint számítsd ki <span class="math inline">\(\sqrt[3]{\sqrt{64}}\)</span> értékét.</p>
@@ -97,13 +104,6 @@
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-gyokvonas.html#alap-1">🐾 Bestia-protokoll <span class="cimke">A 1–5</span></a><a class="sav bruno" href="feladatok-gyokvonas.html#kozep-1">🔥 Főnix-protokoll <span class="cimke">K 1–4</span></a></div></div></div>
 
     <div class="brief" data-outro><p>📡 <b>Vihar Vera:</b> Megvan a nyelvtan — jöjjön a mondatalkotás. A gyököket össze kell tudnod vonni, szorozni, egymásba ágyazni. Ez a rész tiszta kézügyesség: sok kis lépés, mindegyik egyszerű, de egyetlen elrontott előjel az egész számítást viszi.</p></div>
-
-    <div class="kviz" data-answer="0" data-jo="✔ Így van: az azonosság a SZORZÁSRA szól. Számokkal: 1,41 + 1,73 ≈ 3,15, míg √5 ≈ 2,24." data-nem="✘ A √a·√b = √(ab) a szorzásra érvényes; összegre nincs ilyen szabály. 1,41 + 1,73 ≈ 3,15, míg √5 ≈ 2,24 — nem egyenlők.">
-      <p class="kviz-cim">🎯 Gyors kérdés</p>
-      <p>Igaz-e, hogy <span class="math inline">\(\sqrt{2}+\sqrt{3}=\sqrt{5}\)</span>?</p>
-      <div class="opciok"><button>Nem — a gyökvonás összegre nem bontható.</button><button>Igen, mindig.</button><button>Csak pozitív számokra igaz.</button></div>
-      <p class="visszajelzes" aria-live="polite"></p>
-    </div>
     <div class="lapozo">
       <a class="elozo" href="feladatok-hatvanyozas.html"><span class="irany">← Előző</span><span class="hova">Feladatok — hatványozás</span></a>
       <a class="kov" href="tananyag-muveletek-gyokokkel.html"><span class="irany">Következő →</span><span class="hova">Műveletek a gyökökkel</span></a>

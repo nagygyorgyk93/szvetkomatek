@@ -17,8 +17,9 @@ B1 = [
          'Most fordítsd meg a kérdést. Ismerem a vihar <b>energiáját</b> — mekkora volt a kiváltó ok? '
          'Ez a gyökvonás: a hatványozás visszafejtése. És itt van az évad első igazi csapdája — '
          'a <b>páros</b> gyökkitevő nem viselkedik úgy, mint a páratlan. Dr. Baljós pontosan ezen a résen fér be.'),
-   'A gyökvonás a hatványozás <b>inverz művelete</b>: azt a számot keressük, amelynek adott '
-   'kitevőjű hatványa a megadott szám. A definíciót viszont <b>két külön esetre</b> kell bontanunk — '
+   'A gyökvonás a hatványozás <b>visszafejtése</b>: azt a számot keressük, amelynek adott '
+   'kitevőjű hatványa a megadott szám. Páros kitevőnél ebből a keresésből mindjárt két '
+   'jelölt kerül ki — ezért kell megállapodni. A definíciót viszont <b>két külön esetre</b> kell bontanunk — '
    'és ennek a kettéválasztásnak messzemenő következményei lesznek.',
  ]),
 
@@ -32,7 +33,7 @@ B1 = [
          '<li>ha $n$ <b>páros</b>: az az egyetlen <b>nemnegatív</b> valós szám, amelynek '
          '$n$-edik hatványa $a$ — ez csak $a\\ge 0$ esetén létezik.</li>'
          '</ul>'
-         '<p>Az $a$ a <b>gyök alapja</b> (a gyökjel alatti mennyiség), $n$ a <b>gyökkitevő</b>. '
+         '<p>Az $a$ a <b>gyökmennyiség</b> (a gyökjel alatti kifejezés), $n$ a <b>gyökkitevő</b> — a „gyök alapja” kifejezést kerüljük, mert az <b>alap</b> a hatványozásnál foglalt. '
          'A négyzetgyöknél ($n=2$) a gyökkitevőt nem szoktuk kiírni: $\\sqrt{a}$.</p>',
          hid="def-nedik-gyok"),
    doboz("pelda", "Vészterem-szimuláció",
@@ -75,9 +76,11 @@ B1 = [
  ]),
 
  ("A gyökvonás azonosságai", [
-   'Az alábbi szabályok $a,b\\ge 0$ és $m,n,k\\in\\mathbb{N}$ mellett mindig érvényesek. '
-   '(Páratlan gyökkitevőnél negatív alapra is igazak, de a biztonság kedvéért a feladatokban '
-   'többnyire nemnegatív alapokkal dolgozunk.)',
+   'Az alábbi szabályok $a,b\\ge 0$ és $m,n,k\\in\\mathbb{N}$, $n\\ge 2$, $m,k\\ge 1$ mellett mindig érvényesek. '
+   'Páratlan gyökkitevőnél a szorzás, az osztás, a hatványozás és a tényező be-, illetve '
+   'kivitele negatív alapra is igaz. A <b>bővítés</b> azonban ilyenkor is csak páratlan '
+   '$k$-val végezhető el: $\\sqrt[3]{-8}=-2$, de $\\sqrt[6]{(-8)^{2}}=\\sqrt[6]{64}=2$. '
+   'A feladatokban a biztonság kedvéért többnyire nemnegatív alapokkal dolgozunk.',
    doboz("tetel", "A gyökvonás hat azonossága",
          '$$\\sqrt[n]{a}\\cdot\\sqrt[n]{b}=\\sqrt[n]{a\\cdot b}\\qquad\\qquad '
          '\\frac{\\sqrt[n]{a}}{\\sqrt[n]{b}}=\\sqrt[n]{\\frac{a}{b}}\\ \\ (b\\neq 0)$$'
@@ -92,6 +95,12 @@ B1 = [
          '<p>Nincs olyan azonosság, hogy $\\sqrt{a+b}=\\sqrt{a}+\\sqrt{b}$. Ellenpélda:</p>'
          '$$\\sqrt{9+16}=\\sqrt{25}=5,\\qquad\\text{de}\\qquad \\sqrt{9}+\\sqrt{16}=3+4=7.$$'
          '<p>A gyökvonás a <b>szorzással és osztással</b> barátkozik — az összeadással soha.</p>'),
+   kviz('Igaz-e, hogy $\\sqrt{2}+\\sqrt{3}=\\sqrt{5}$?',
+        ['Nem — a gyökvonás összegre nem bontható.', 'Igen, mindig.',
+         'Csak pozitív számokra igaz.'], 0,
+        jo="✔ Így van: az azonosság a SZORZÁSRA szól. Számokkal: 1,41 + 1,73 ≈ 3,15, míg √5 ≈ 2,24.",
+        nem="✘ A √a·√b = √(ab) a szorzásra érvényes; összegre nincs ilyen szabály. "
+            "1,41 + 1,73 ≈ 3,15, míg √5 ≈ 2,24 — nem egyenlők."),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Egyszerűsítsd ($a&gt;0$): $\\sqrt[6]{a^{4}}$, valamint számítsd ki '
          '$\\sqrt[3]{\\sqrt{64}}$ értékét.</p>',
@@ -104,12 +113,6 @@ B1 = [
          'vonni, szorozni, egymásba ágyazni. Ez a rész tiszta kézügyesség: sok kis lépés, '
          'mindegyik egyszerű, de egyetlen elrontott előjel az egész számítást viszi.',
          outro=True),
-   kviz('Igaz-e, hogy $\\sqrt{2}+\\sqrt{3}=\\sqrt{5}$?',
-        ['Nem — a gyökvonás összegre nem bontható.', 'Igen, mindig.',
-         'Csak pozitív számokra igaz.'], 0,
-        jo="✔ Így van: az azonosság a SZORZÁSRA szól. Számokkal: 1,41 + 1,73 ≈ 3,15, míg √5 ≈ 2,24.",
-        nem="✘ A √a·√b = √(ab) a szorzásra érvényes; összegre nincs ilyen szabály. "
-            "1,41 + 1,73 ≈ 3,15, míg √5 ≈ 2,24 — nem egyenlők."),
  ]),
 ]
 
@@ -121,7 +124,7 @@ B2 = [
          'mind különbözőnek látszik. Pedig $\\sqrt{20}$, $\\sqrt{45}$ és $\\sqrt{80}$ ugyanannak '
          'a jelnek a többszörösei — csak <b>ki kell hozni</b> belőlük a közös részt. '
          'Aki ezt látja, két sorban rendet tesz ott, ahol más fél oldalt számol.'),
-   'Ebben az egységben megtanuljuk a gyökös kifejezések „házimunkáját": tényezőt viszünk '
+   'Ebben az egységben megtanuljuk a gyökös kifejezések „házimunkáját”: tényezőt viszünk '
    'ki és be, összevonjuk a hasonló tagokat, szorzunk, és egymásba ágyazott gyököket bontunk.',
  ]),
 
@@ -131,7 +134,7 @@ B2 = [
    doboz("tetel", "Mikor szabad? — a kikötés",
          '<p><b>Páros</b> gyökkitevőnél (négyzetgyök, negyedik gyök…) a gyökjel alatt csak <b>nemnegatív</b> szám állhat, és a kihozott tényező is nemnegatív. Ezért ilyenkor a $b\\ge 0$ és $a\\ge 0$ feltétel kell — különben a helyes alak $\\sqrt{a^{2}}=|a|$ szerint abszolútérték jelenik meg.</p>'
          '<p><b>Páratlan</b> gyökkitevőnél (köbgyök, ötödik gyök…) nincs ilyen megkötés: negatív szám köbgyöke is értelmezett, és az előjel gond nélkül átmegy a gyökjel alatt.</p>'
-         '<p>A lap példáiban ezért szerepel mindenütt az $a&gt;0$ típusú kikötés — nem díszítés, hanem az azonosság érvényességi feltétele.</p>',
+         '<p>Ezért szerepel a betűs feladatokban az $a&gt;0$ típusú kikötés — nem díszítés, hanem az azonosság érvényességi feltétele.</p>',
          hid="tetel-gyok-kikotes"),
    doboz("pelda", "Vészterem-szimuláció — kihozatal",
          '<p>Hozd ki a gyökjel alól a lehető legnagyobb tényezőt: '
@@ -151,7 +154,7 @@ B2 = [
  ]),
 
  ("Hasonló gyökös tagok összevonása", [
-   'Két gyökös tag akkor <b>hasonló</b>, ha kihozatal után ugyanaz marad a gyökjel alatt. '
+   'Két gyökös tag akkor <b>hasonló</b>, ha kihozatal után a <b>gyökkitevőjük megegyezik</b>, és <b>ugyanaz marad a gyökjel alatt</b>. (A $\\sqrt{2}$ és a $\\sqrt[3]{2}$ tehát nem hasonló, hiába áll mindkettő alatt $2$.) '
    'A hasonló tagokat úgy vonjuk össze, mint az algebrai kifejezésekben az $x$-eket: '
    'az együtthatókat adjuk össze.',
    doboz("pelda", "Vészterem-szimuláció",
@@ -171,9 +174,15 @@ B2 = [
 
  ("Szorzás, osztás, nevezetes azonosságok", [
    'Gyökös kifejezéseket ugyanúgy szorzunk, mint bármely kéttagú kifejezést — és a '
-   'nevezetes azonosságok itt különösen hasznosak, mert a négyzetre emelés '
-   '<b>eltünteti</b> a négyzetgyököt.',
+   'nevezetes azonosságok itt különösen hasznosak, mert a négyzetre emelés a '
+   '<b>magában álló</b> négyzetgyököt eltünteti. Vigyázz: kéttagú összeg négyzeténél a '
+   'vegyes tagban visszajön egy gyök.',
+   doboz("tetel", "Szorzás és osztás",
+         '<p>Legyen $a\\ge 0$ és $b&gt;0$.</p>'
+         '$$\\sqrt{a}\\cdot\\sqrt{b}=\\sqrt{ab},\\qquad \\frac{\\sqrt{a}}{\\sqrt{b}}=\\sqrt{\\frac{a}{b}}.$$'
+         '<p>Például $\\sqrt{50}:\\sqrt{2}=\\sqrt{25}=5$ — az osztás ugyanolyan egyszerű, mint a szorzás.</p>'),
    doboz("tetel", "A két leghasznosabb alak",
+         '<p>Legyen $a\\ge 0$ és $b\\ge 0$.</p>'
          '$$\\left(\\sqrt{a}+\\sqrt{b}\\right)\\left(\\sqrt{a}-\\sqrt{b}\\right)=a-b$$'
          '$$\\left(\\sqrt{a}\\pm\\sqrt{b}\\right)^{2}=a\\pm 2\\sqrt{ab}+b$$'
          '<p>Az elsőben a gyökök <b>teljesen eltűnnek</b> — ez lesz a gyöktelenítés motorja '
@@ -204,7 +213,7 @@ B2 = [
          hid="pelda-osszehasonlitas",
          lenyilo=("Megoldás",
                   '<p>A gyökkitevők legkisebb közös többszöröse $6$, ezért mindet '
-                  '6-odik gyökre bővítjük:</p>'
+                  'hatodik gyökre bővítjük:</p>'
                   '$$\\sqrt{2}=\\sqrt[6]{2^{3}}=\\sqrt[6]{8},\\qquad '
                   '\\sqrt[3]{3}=\\sqrt[6]{3^{2}}=\\sqrt[6]{9},\\qquad \\sqrt[6]{10}.$$'
                   '<p>Azonos gyökkitevőnél már csak a gyök alatti számokat kell összevetni:</p>'
@@ -229,22 +238,25 @@ B3 = [
          'Megszabadulunk a nevezőben álló gyököktől, aztán felfedezzük, hogy a '
          '$\\sqrt[n]{a^{m}}$ jelölés valójában <b>hatvány</b>: $a^{m/n}$. Ettől kezdve nincs '
          'külön gyök- és külön hatványszabály — <b>egyetlen</b> szabályrendszer van. '
-         'Ez a felismerés készít fel a következő évadra: az exponenciális függvényre.'),
+         'Ez a felismerés vezet majd az exponenciális függvényhez — de előbb egy egészen más '
+         'irányba indulunk.'),
  ]),
 
  ("Miért gyöktelenítünk?", [
    doboz("erdekesseg", "Egy szokás, amit érdemes megérteni",
          '<p>A számológépek előtti korban a $\\dfrac{1}{\\sqrt{2}}$ kiszámítása azt jelentette, '
-         'hogy $1$-et el kellett osztani egy végtelen tizedes törttel — kézzel, papíron. '
+         'hogy $1$-et el kellett osztani egy végtelen, nem szakaszos tizedes törttel — kézzel, '
+         'papíron. '
          'Ezzel szemben a $\\dfrac{\\sqrt{2}}{2}$ alaknál elég $1{,}41421\\ldots$-t elosztani '
-         '<b>kettővel</b>. Ma már a számológép mindkettőt elvégzi, de a gyöktelenített alak '
+         '<b>kettővel</b>. Ma már a számológép mindkettőt kiszámolja, de a gyöktelenített alak '
          'maradt a <b>megállapodás szerinti végalak</b>: így két megoldás összehasonlítható, '
          'és a további átalakítások is egyszerűbbek.</p>'),
  ]),
 
  ("Egytagú nevező", [
-   'Ha a nevezőben egyetlen gyökös tag áll, olyan tényezővel bővítünk, amitől a nevezőben '
-   '<b>teljes hatvány</b> keletkezik a gyökjel alatt.',
+   'Ha a nevezőben egyetlen gyökös tag áll, olyan tényezővel bővítünk, amitől a gyökjel alá '
+   'a <b>gyökkitevővel megegyező kitevőjű hatvány</b> kerül. (A nevezőben álló gyök alatt '
+   'természetesen pozitív szám áll — a nevező nem lehet nulla.)',
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Gyöktelenítsd: <b>a)</b> $\\dfrac{6}{\\sqrt{3}}$; <b>b)</b> $\\dfrac{5}{\\sqrt[3]{4}}$.</p>',
          hid="pelda-egytagu",
@@ -256,17 +268,18 @@ B3 = [
                   '$$\\frac{5}{\\sqrt[3]{4}}=\\frac{5\\sqrt[3]{2}}{\\sqrt[3]{8}}'
                   '=\\frac{5\\sqrt[3]{2}}{2}.$$')),
    kviz('Miért gyöktelenítünk, ha a számológép úgyis kiszámolja?',
-        ['Hogy a kifejezés pontos, összehasonlítható alakban legyen',
-         'Mert a gyök a nevezőben matematikai hiba', 'Mert így rövidebb lesz'], 0,
-        jo="✔ A gyöktelenített alak PONTOS (nem közelítés), és két kifejezés így "
-           "összevethető: az 1/√2 és a √2/2 ugyanaz, csak az utóbbiról látszik.",
-        nem="✘ A gyök a nevezőben nem hiba — a gyöktelenítés célja a pontos, "
-            "egységes alak, amiben a kifejezések összehasonlíthatók és tovább alakíthatók."),
+        ['Hogy egységes, összehasonlítható végalakot kapjunk',
+         'Mert a gyök a nevezőben matematikai hiba', 'Mert a gyöktelenített alak pontosabb'], 0,
+        jo="✔ Mindkét alak pontos — a gyöktelenített viszont a megállapodás szerinti "
+           "végalak, így két megoldás ránézésre összevethető.",
+        nem="✘ A gyök a nevezőben nem hiba, és az 1/√2 sem pontatlanabb a √2/2-nél: "
+            "a kettő ugyanaz a szám. A cél az egységes végalak."),
  ]),
 
  ("Kéttagú nevező — a konjugált", [
    'Ha a nevező kéttagú, a $\\left(\\sqrt a+\\sqrt b\\right)\\left(\\sqrt a-\\sqrt b\\right)=a-b$ '
-   'azonosságot használjuk: az összeg <b>konjugáltja</b> a különbség (és fordítva). '
+   'azonosságot használjuk — ahol $a\\ge 0$, $b\\ge 0$ és $a\\neq b$, különben a bővítés '
+   'után nullával osztanánk: az összeg <b>konjugáltja</b> a különbség (és fordítva). '
    'A bővítés után a nevezőből eltűnik a gyök.',
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Gyöktelenítsd: <b>a)</b> $\\dfrac{4}{\\sqrt{7}-\\sqrt{3}}$; '
@@ -290,17 +303,21 @@ B3 = [
  ]),
 
  ("Racionális kitevőjű hatvány", [
-   'Most jön a témakör egyik legszebb gondolata. Mi legyen $a^{1/2}$? Ismét a '
+   'Most jön a témakör egyik legszebb gondolata. Legyen $a&gt;0$ — hogy miért, arra a '
+   'levezetés után visszatérünk. Mi legyen $a^{1/2}$? Ismét a '
    '<b>permanenciaelvet</b> hívjuk segítségül: legyen igaz a $\\left(a^{m}\\right)^{n}=a^{mn}$ '
    'szabály a tört kitevőre is. Akkor',
    '$$\\left(a^{1/2}\\right)^{2}=a^{\\frac12\\cdot 2}=a^{1}=a,$$',
-   'vagyis $a^{1/2}$ olyan szám, amelynek a négyzete $a$ — tehát $a^{1/2}=\\sqrt{a}$. '
-   'Nincs más választás.',
+   'vagyis $a^{1/2}$ olyan szám, amelynek a négyzete $a$. Ilyen szám kettő van, '
+   '$\\sqrt{a}$ és $-\\sqrt{a}$ — megállapodás szerint a <b>nemnegatívat</b> '
+   'választjuk, tehát $a^{1/2}=\\sqrt{a}$.',
    doboz("definicio", "Racionális kitevőjű hatvány",
          '<p>Ha $a\\in\\mathbb{R}$, $a&gt;0$, $m\\in\\mathbb{Z}$ és $n\\in\\mathbb{N}$, $n\\ge2$, akkor</p>'
          '$$a^{\\frac{m}{n}}=\\sqrt[n]{a^{m}}.$$'
-         '<p>Ezzel a hatványozás <b>öt azonossága</b> minden racionális kitevőre érvényes marad — '
-         'és a gyökvonás hat azonossága ennek már csak következménye.</p>',
+         '<p>Ezzel a hatványozás <a href="tananyag-hatvanyozas.html">öt azonossága</a> minden '
+         'racionális kitevőre érvényes marad — és a gyökvonás '
+         '<a href="tananyag-gyokvonas.html">azonosságai</a> <b>pozitív alap esetén</b> '
+         'ennek már csak következményei.</p>',
          hid="def-racionalis-kitevo"),
    doboz("erdekesseg", "Miért kell $a&gt;0$?",
          '<p>Negatív alapnál az átírás ellentmondáshoz vezet: $\\frac13=\\frac26$, tehát '
@@ -348,7 +365,7 @@ ki = []
 ki.append(lap(**T, fajl="tananyag-gyokvonas.html",
               cim="Gyökvonás", cim_tiszta="Gyökvonás",
               alcim="Az $n$-edik gyök definíciója páros és páratlan gyökkitevőre, a "
-                    "$\\sqrt[n]{a^{n}}=|a|$ csapda, valamint a gyökvonás hat azonossága.",
+                    "$\\sqrt{a^{2}}=|a|$ csapda, valamint a gyökvonás hat azonossága.",
               chip="A Képzelet Határa · 3/8", szakaszok=B1,
               elozo=("feladatok-hatvanyozas.html", "Feladatok — hatványozás"),
               kovetkezo=("tananyag-muveletek-gyokokkel.html", "Műveletek a gyökökkel")))
