@@ -203,7 +203,7 @@ NEHEZ = [
 ]
 
 JOKER = ("Oldd meg! $x^{\\lg x}=100x$",
-         "ÉT: $x&gt;0$. Vegyük mindkét oldal tizes alapú logaritmusát: "
+         "ÉT: $x&gt;0$. Vegyük mindkét oldal tízes alapú logaritmusát: "
          "$\\lg x\\cdot\\lg x=\\lg 100+\\lg x$, azaz $t^{2}-t-2=0$, ahol $t=\\lg x$. "
          "A gyökök $t_{1}=2$ és $t_{2}=-1$, tehát $\\boxed{x_{1}=100}$ és "
          "$\\boxed{x_{2}=\\tfrac{1}{10}}$.")

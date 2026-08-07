@@ -118,8 +118,8 @@ OSSZ = [
   '(<a href="tananyag-logaritmus-azonossagai.html#tetel-azonossagok">→</a>).</p>',
  ]),
  ("Áttérés más alapra és alkalmazások", [
-  '<p>$$\\log_{a}b=\\frac{\\log_{c}b}{\\log_{c}a}=\\frac{\\lg b}{\\lg a}$$'
-  '<p>Felül az <b>argumentum</b>, alul az <b>alap</b> — és <b>osztás</b>, nem kivonás '
+  '<p>$$\\log_{a}b=\\frac{\\log_{t}b}{\\log_{t}a}=\\frac{\\lg b}{\\lg a}$$'
+  '<p>Felül az <b>argumentum</b> logaritmusa, alul az <b>alapé</b> — és <b>osztás</b>, nem kivonás '
   '(<a href="tananyag-attetes-mas-alapra.html#tetel-attetes">→</a>). '
   'Ellenőrzés fejben: $\\log_{2}7$ a $2$ és a $3$ között van, mert $4&lt;7&lt;8$.</p>',
   '<p><b>Logaritmikus skálák:</b> $\\mathrm{pH}=-\\lg[\\mathrm{H}^{+}]$ · Richter · '

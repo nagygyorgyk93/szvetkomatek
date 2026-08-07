@@ -26,7 +26,7 @@
 </nav>
 <div class="hero">
   <h1>Alapazonosságok</h1>
-  <p class="alcim">A trigonometriai Pitagorasz-tétel, a tangens és a kotangens kapcsolata, valamint a témakör leggyakoribb feladattípusa: egy érték és a negyed.</p>
+  <p class="alcim">A négyzetes alapazonosság, a tangens és a kotangens kapcsolata, valamint a témakör leggyakoribb feladattípusa: egy érték és a negyed.</p>
   <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Fázisugrás · 4/11</span></div>
 </div>
 <main class="lap toc-os">
@@ -38,7 +38,7 @@
     <h2 id="s1">Az alapazonosságok</h2>
 
     <div class="svgcard">
-    <svg viewBox="0 0 340 310" width="340" height="310" role="img" aria-label="Az egységkörön a Pitagorasz-tétel adja a szinusz és a koszinusz alapazonosságát">
+    <svg viewBox="0 0 340 310" width="340" height="310" role="img" aria-label="Az egységkörön a P pont vetületei adják a koszinuszt és a szinuszt; a sugár, a vetület és a vetítővonal derékszögű háromszöget alkot, erre írjuk fel a Pitagorasz-tételt">
       <defs><marker id="nyilk" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
       <line x1="35.0" y1="155.0" x2="305.0" y2="155.0" stroke="#0f172a" stroke-width="1.3" marker-end="url(#nyilk)"/>
       <line x1="170.0" y1="290.0" x2="170.0" y2="20.0" stroke="#0f172a" stroke-width="1.3" marker-end="url(#nyilk)"/>
@@ -53,24 +53,30 @@
       <circle cx="237.1" cy="69.1" r="4" fill="#047857"/>
       <text x="250.5" y="55.9" font-size="11" fill="#047857" font-weight="600" text-anchor="middle">P(cos α; sin α)</text>
       <text x="203.6" y="106.1" font-size="10" fill="#047857" text-anchor="middle">1</text>
+      <line x1="237.1" y1="69.1" x2="237.1" y2="155.0" stroke="#047857" stroke-width="1.2" stroke-dasharray="4 3" opacity=".8"/>
+      <line x1="237.1" y1="69.1" x2="170.0" y2="69.1" stroke="#047857" stroke-width="1.2" stroke-dasharray="4 3" opacity=".8"/>
+      <text x="237.1" y="172.0" font-size="10" fill="#047857" text-anchor="middle">cos α</text>
+      <text x="163.0" y="73.1" font-size="10" fill="#047857" text-anchor="end">sin α</text>
+      <path d="M 202.7,155.0 A 32.7,32.7 0 0,0 190.1,129.2" fill="none" stroke="#0f172a" stroke-width="1.3"/>
+      <text x="212.1" y="138.5" font-size="11" fill="#0f172a" font-style="italic" text-anchor="middle">α</text>
     </svg>
     </div>
-    <p class="cap">A <span class="math inline">\(P\)</span> pont koordinátái <span class="math inline">\(\cos\alpha\)</span> és <span class="math inline">\(\sin\alpha\)</span>, a sugár <span class="math inline">\(1\)</span> — a derékszögű háromszögre felírt Pitagorasz-tétel adja az alapazonosságot.</p>
+    <p class="cap">A <span class="math inline">\(P\)</span> pont koordinátái <span class="math inline">\(\cos\alpha\)</span> és <span class="math inline">\(\sin\alpha\)</span>, a sugár <span class="math inline">\(1\)</span> — a sugárból és a két vetületből álló derékszögű háromszögre felírt Pitagorasz-tétel adja a <b>négyzetes alapazonosságot</b>.</p>
 
     <div class="doboz tetel" id="tetel-alapazonossagok">
-      <p class="cim"><span class="ikon">📘</span> Az öt alapazonosság</p>
-      <span class="math display">\[\sin^{2}\alpha+\cos^{2}\alpha=1\]</span><span class="math display">\[\operatorname{tg}\alpha=\frac{\sin\alpha}{\cos\alpha},\qquad\operatorname{ctg}\alpha=\frac{\cos\alpha}{\sin\alpha},\qquad\operatorname{tg}\alpha\cdot\operatorname{ctg}\alpha=1\]</span><p>A négyzetes azonosságból <span class="math inline">\(\cos^{2}\alpha\)</span>-val, illetve <span class="math inline">\(\sin^{2}\alpha\)</span>-val osztva két további adódik:</p><span class="math display">\[1+\operatorname{tg}^{2}\alpha=\frac{1}{\cos^{2}\alpha},\qquad1+\operatorname{ctg}^{2}\alpha=\frac{1}{\sin^{2}\alpha}.\]</span>
+      <p class="cim"><span class="ikon">📘</span> A hat alapazonosság</p>
+      <p>Az első <b>minden</b> szögre igaz; a többi csak ott, ahol a szereplő függvények értelmezve vannak — a feltételt mindegyik mellé odaírtuk.</p><span class="math display">\[\sin^{2}\alpha+\cos^{2}\alpha=1\]</span><span class="math display">\[\operatorname{tg}\alpha=\frac{\sin\alpha}{\cos\alpha}\ (\cos\alpha\neq 0),\qquad\operatorname{ctg}\alpha=\frac{\cos\alpha}{\sin\alpha}\ (\sin\alpha\neq 0)\]</span><span class="math display">\[\operatorname{tg}\alpha\cdot\operatorname{ctg}\alpha=1\qquad\left(\alpha\neq k\cdot\tfrac{\pi}{2}\right)\]</span><p>A négyzetes azonosságot <span class="math inline">\(\cos^{2}\alpha\)</span>-val osztva (ez <span class="math inline">\(\cos\alpha\neq 0\)</span> esetén tehető meg), illetve <span class="math inline">\(\sin^{2}\alpha\)</span>-val osztva (<span class="math inline">\(\sin\alpha\neq 0\)</span> esetén) két további adódik:</p><span class="math display">\[1+\operatorname{tg}^{2}\alpha=\frac{1}{\cos^{2}\alpha}\ (\cos\alpha\neq 0),\qquad1+\operatorname{ctg}^{2}\alpha=\frac{1}{\sin^{2}\alpha}\ (\sin\alpha\neq 0).\]</span>
     </div>
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
-      <p><b>A gyökvonás mindig két értéket enged meg</b> — a negyed dönti el, melyik kell:</p><span class="math display">\[\cos\alpha=\pm\sqrt{1-\sin^{2}\alpha}\]</span><p>Ha <span class="math inline">\(\alpha\)</span> a II. vagy a III. negyedben van, a <b>mínusz</b> jó. Ezért a feladatszöveg <b>mindig</b> ad egy második információt (<span class="math inline">\(\cos\alpha&lt;0\)</span>, <span class="math inline">\(\operatorname{tg}\alpha&gt;0\)</span>, <span class="math inline">\(\alpha\in\left(\tfrac{\pi}{2};\pi\right)\)</span>…) — ez nem díszítés, hanem a feladat fele.</p>
+      <p><b>A négyzetre emelés elveszíti az előjelet</b> — nem a gyökvonás enged meg két értéket, hiszen <span class="math inline">\(\sqrt{\cos^{2}\alpha}=|\cos\alpha|\)</span>. Abból viszont, hogy <span class="math inline">\(\cos^{2}\alpha\)</span> ismert, két lehetséges <span class="math inline">\(\cos\alpha\)</span> következik:</p><span class="math display">\[\cos\alpha=\pm\sqrt{1-\sin^{2}\alpha},\qquad\sin\alpha=\pm\sqrt{1-\cos^{2}\alpha}\]</span><p>A negyed dönti el, melyik kell — <b>függvényenként külön</b>: a koszinusz a II. és a III., a szinusz a III. és a IV. negyedben negatív. Ezért ad a feladatszöveg <b>jellemzően</b> egy második információt (<span class="math inline">\(\cos\alpha&lt;0\)</span>, <span class="math inline">\(\operatorname{tg}\alpha&gt;0\)</span>, <span class="math inline">\(\alpha\in\left(\tfrac{\pi}{2};\pi\right)\)</span>…) — enélkül a feladatnak két megoldása van.</p>
     </div>
 
-    <div class="kviz" data-answer="0" data-jo="✔ Ez a Pitagorasz-azonosság. Az egységkörön a P pont koordinátái cos x és sin x, az origótól mért távolsága pedig mindig 1." data-nem="✘ Ez a trigonometria legfontosabb azonossága: minden valós x-re 1. Az egységkörön a koordináták négyzetösszege a sugár négyzete, azaz 1.">
+    <div class="kviz" data-answer="0" data-jo="✔ Ez a négyzetes alapazonosság. Az egységkörön a P pont koordinátái cos α és sin α, az origótól mért távolsága pedig mindig 1." data-nem="✘ Ez a trigonometria legfontosabb azonossága: minden valós α-ra 1. Az egységkörön a koordináták négyzetösszege a sugár négyzete, azaz 1.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
-      <p>Mennyi <span class="math inline">\(\sin^{2}x+\cos^{2}x\)</span> értéke?</p>
-      <div class="opciok"><button><span class="math inline">\(1\)</span> — minden valós <span class="math inline">\(x\)</span>-re</button><button><span class="math inline">\(x\)</span></button><button>Az <span class="math inline">\(x\)</span>-től függ</button></div>
+      <p>Mennyi <span class="math inline">\(\sin^{2}\alpha+\cos^{2}\alpha\)</span> értéke?</p>
+      <div class="opciok"><button><span class="math inline">\(1\)</span> — minden valós <span class="math inline">\(\alpha\)</span>-ra</button><button><span class="math inline">\(\alpha\)</span></button><button>Az <span class="math inline">\(\alpha\)</span>-tól függ</button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
@@ -84,7 +90,7 @@
     <div class="doboz pelda" id="pelda-alapazonossag">
       <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
       <p>Számold ki a másik három függvény pontos értékét! <b>a)</b> <span class="math inline">\(\sin\alpha=\tfrac35\)</span> és <span class="math inline">\(\cos\alpha&lt;0\)</span>; <b>b)</b> <span class="math inline">\(\cos\alpha=-\tfrac{12}{13}\)</span> és <span class="math inline">\(\sin\alpha&lt;0\)</span>.</p>
-      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(\sin\alpha&gt;0\)</span> és <span class="math inline">\(\cos\alpha&lt;0\)</span> → <b>II. negyed</b>.</p><span class="math display">\[\cos^{2}\alpha=1-\left(\tfrac35\right)^{2}=\tfrac{16}{25}\ \Longrightarrow\ \cos\alpha=-\tfrac45\]</span><p><span class="math inline">\(\operatorname{tg}\alpha=\dfrac{3/5}{-4/5}=-\dfrac34\)</span>, &nbsp; <span class="math inline">\(\operatorname{ctg}\alpha=-\dfrac43\)</span>. A II. negyedben mindkettő negatív ✔</p><p><b>b)</b> Mindkettő negatív → <b>III. negyed</b>.</p><span class="math display">\[\sin^{2}\alpha=1-\left(\tfrac{12}{13}\right)^{2}=\tfrac{25}{169}\ \Longrightarrow\ \sin\alpha=-\tfrac{5}{13}\]</span><p><span class="math inline">\(\operatorname{tg}\alpha=\dfrac{-5/13}{-12/13}=\dfrac{5}{12}\)</span>, &nbsp; <span class="math inline">\(\operatorname{ctg}\alpha=\dfrac{12}{5}\)</span> — a III. negyedben mindkettő pozitív ✔</p></div></details>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(\sin\alpha&gt;0\)</span> és <span class="math inline">\(\cos\alpha&lt;0\)</span> → <b>II. negyed</b>.</p><span class="math display">\[\cos^{2}\alpha=1-\left(\tfrac35\right)^{2}=\tfrac{16}{25}\ \Longrightarrow\ \cos\alpha=\pm\tfrac45\]</span><p>A II. negyedben a koszinusz negatív, tehát <span class="math inline">\(\cos\alpha=-\tfrac45\)</span>.</p><p><span class="math inline">\(\operatorname{tg}\alpha=\dfrac{3/5}{-4/5}=-\dfrac34\)</span>, &nbsp; <span class="math inline">\(\operatorname{ctg}\alpha=-\dfrac43\)</span>. A II. negyedben mindkettő negatív ✔</p><p><b>b)</b> Mindkettő negatív → <b>III. negyed</b>.</p><span class="math display">\[\sin^{2}\alpha=1-\left(\tfrac{12}{13}\right)^{2}=\tfrac{25}{169}\ \Longrightarrow\ \sin\alpha=\pm\tfrac{5}{13}\]</span><p>A III. negyedben a szinusz negatív, tehát <span class="math inline">\(\sin\alpha=-\tfrac{5}{13}\)</span>.</p><p><span class="math inline">\(\operatorname{tg}\alpha=\dfrac{-5/13}{-12/13}=\dfrac{5}{12}\)</span>, &nbsp; <span class="math inline">\(\operatorname{ctg}\alpha=\dfrac{12}{5}\)</span> — a III. negyedben mindkettő pozitív ✔</p></div></details>
     </div>
 
     <div class="doboz erdekesseg">

@@ -48,7 +48,7 @@ B1 = [
          'Ez az $x$ a <b>kitevőben</b> ül, és eddig csak akkor tudtuk kihalászni, ha '
          'a két oldal szerencsésen közös alapra hozható volt. Most kapunk egy eszközt, '
          'amely <b>mindig</b> működik: a <b>logaritmust</b>.'),
-   'A logaritmus nem új művelet a semmiből — a hatványozás <b>fordítottja</b>, '
+   'A logaritmus nem előzmény nélküli új művelet — a hatványozás <b>fordítottja</b>, '
    'ugyanúgy, ahogy a kivonás az összeadásé vagy a gyökvonás a négyzetre emelésé. '
    'A hatványozásnak azonban <b>két</b> fordított művelete van, mert <b>két bemenő adatból</b> '
    '— az alapból és a kitevőből — állítja elő az eredményt, tehát kétféleképpen fordítható meg:',
@@ -61,7 +61,7 @@ B1 = [
          '<tr><td>az <b>alapot</b></td><td>$?^{3}=8$</td><td><b>gyökvonás</b>: $\\sqrt[3]{8}=2$</td></tr>'
          '<tr><td>a <b>kitevőt</b></td><td>$2^{?}=8$</td><td><b>logaritmus</b>: $\\log_{2}8=3$</td></tr>'
          '</table></div>',
-         hid="tetel-ket-fordított"),
+         hid="tetel-ket-fordito"),
  ]),
 
  ("A logaritmus fogalma", [
@@ -69,15 +69,19 @@ B1 = [
          '<p>Legyen $a&gt;0$, $a\\neq 1$ és $b&gt;0$. A $b$ szám <b>$a$ alapú '
          'logaritmusán</b> azt a kitevőt értjük, amelyre az $a$-t emelve $b$-t kapunk:</p>'
          '$$\\log_{a}b=c\\iff a^{c}=b.$$'
-         '<p>Az $a$ a logaritmus <b>alapja</b>, a $b$ a <b>hatványérték</b> '
-         '(argumentum), a $c$ pedig maga a logaritmus.</p>',
+         '<p>Az $a$ a logaritmus <b>alapja</b>, a $b$ az <b>argumentum</b> (a logaritmus '
+         'alatti hatványérték), a $c$ pedig maga a logaritmus.</p>',
          hid="def-logaritmus"),
    doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p><b>Csak pozitív szám logaritmusa létezik!</b> A $\\log_{2}(-8)$ nem értelmezhető, '
          'mert nincs olyan $c$ kitevő, amelyre $2^{c}=-8$ lenne — a $2^{c}$ mindig pozitív '
-         '(ezt az <a href="tananyag-exponencialis-fuggveny.html">exponenciális függvény '
+         '(ezt az <a href="tananyag-exponencialis-fuggveny.html#tetel-tulajdonsagok">exponenciális függvény '
          'értékkészleténél</a> láttuk). Ugyanígy '
          '$\\log_{2}0$ sem létezik.</p>'
+         '<p><b>És miért nem lehet az alap $1$?</b> Mert $1^{c}=1$ minden $c$-re: a '
+         '$\\log_{1}5$ nem létezne (nincs ilyen kitevő), a $\\log_{1}1$ pedig bármi lehetne '
+         '— a logaritmus így nem lenne egyértelmű. Negatív alapnál pedig már maga az $a^{c}$ '
+         'sem értelmes a legtöbb $c$-re.</p>'
          '<p>Ez lesz később az <b>értelmezési tartomány</b> vizsgálatának az alapja: '
          'a $\\log_{a}\\big(f(x)\\big)$ kifejezésnél mindig ki kell kötni, hogy '
          '$f(x)&gt;0$.</p>'),
@@ -103,16 +107,21 @@ B1 = [
                   '$\\left(\\tfrac13\\right)^{-3}=3^{3}=27$, '
                   '$\\boxed{\\log_{\\frac13}27=-3}$.</p>')),
    kviz('Mennyi $\\log_{5}125$?',
-        ['$3$', '$25$', '$\\tfrac{125}{5}$'], 0,
+        ['$3$', '$25$', '$5$'], 0,
         jo="✔ 5³ = 125, tehát a keresett kitevő 3.",
-        nem="✘ A kérdés: 5 hányadik hatványa 125? Mivel 5³ = 125, a válasz 3."),
+        nem="✘ A kérdés nem az, hogy mennyi 125 vagy mennyi az alap, hanem hogy 5 "
+            "hányadik hatványa 125. Mivel 5³ = 125, a válasz 3."),
  ]),
 
  ("A négy alapösszefüggés", [
    doboz("tetel", "Amit fejből kell tudni",
-         '<p>Bármely $a&gt;0$, $a\\neq 1$ és $b&gt;0$ esetén:</p>'
-         '$$\\log_{a}1=0,\\qquad \\log_{a}a=1,$$'
-         '$$\\log_{a}a^{k}=k,\\qquad a^{\\log_{a}b}=b.$$'
+         '<p>Legyen $a&gt;0$ és $a\\neq 1$. Ekkor minden $b&gt;0$ esetén:</p>'
+         '$$\\log_{a}1=0,\\qquad \\log_{a}a=1,\\qquad a^{\\log_{a}b}=b,$$'
+         '<p>és tetszőleges $k\\in\\mathbb{R}$ kitevőre:</p>'
+         '$$\\log_{a}a^{k}=k.$$'
+         '<p>Figyeld meg a különbséget: az $a^{k}$ magától pozitív, ezért a negyedikhez '
+         'nem kell külön kikötés; az $a^{\\log_{a}b}=b$-hez viszont kell a $b&gt;0$, '
+         'különben a $\\log_{a}b$ le sem írható.</p>'
          '<p>Az első kettő közvetlenül a definícióból jön ($a^{0}=1$, $a^{1}=a$). '
          'A harmadik és a negyedik azt fejezi ki, hogy a <b>logaritmus és a hatványozás '
          'kioltják egymást</b> — pontosan úgy, ahogy a négyzetre emelés és a négyzetgyök.</p>',
@@ -126,20 +135,20 @@ B1 = [
                   'definíció szerint $b$-t kell kapnunk. Ez a legfontosabb azonosság a '
                   'logaritmusos egyenletek megoldásánál.</p>')),
    doboz("definicio", "Két kitüntetett alap",
-         '<p><b>Tizes alapú (Briggs-féle) logaritmus:</b> ha az alap $10$, gyakran '
+         '<p><b>Tízes alapú (Briggs-féle) logaritmus:</b> ha az alap $10$, gyakran '
          'elhagyjuk a jelölésből:</p>'
          '$$\\log_{10}b=\\lg b\\quad(\\text{vagy egyszerűen }\\log b).$$'
          '<p><b>Természetes alapú logaritmus:</b> az alap az $e\\approx 2{,}71828$ '
          'Euler-féle szám:</p>'
          '$$\\log_{e}b=\\ln b.$$'
          '<p>A számológépeden ez a két gomb szerepel — minden más alapú logaritmust '
-         'ezekre kell visszavezetni (lásd a következő egységben).</p>',
+         'ezekre kell visszavezetni (lásd az <a href="tananyag-attetes-mas-alapra.html">Áttérés más alapra</a> egységben).</p>',
          hid="def-lg-ln"),
    doboz("erdekesseg", "Miért találták ki?",
          '<p>John Napier 1614-ben azért publikálta a logaritmustáblákat, hogy a csillagászok '
          'megússzák a többjegyű <b>szorzásokat</b>: a logaritmus a szorzást összeadássá '
-         'alakítja. Négyszáz évig a logarléc volt a mérnökök „számológépe” — az Apollo-program '
-         'számításai is részben ezzel készültek.</p>'),
+         'alakítja. Három és fél évszázadon át a logarléc volt a mérnökök „számológépe” — az '
+         'Apollo-küldetések űrhajósai is vittek magukkal egyet.</p>'),
    kviz('Mennyi $\\log_{7}1+\\log_{4}4$?',
         ['$1$', '$0$', '$2$'], 0,
         jo="✔ log₇1 = 0 és log₄4 = 1, az összeg 1.",
@@ -168,7 +177,7 @@ B2 = [
          '<p>Vagyis a logaritmus <b>egy szinttel lejjebb viszi</b> a műveletet: '
          'szorzás → összeadás, osztás → kivonás, hatványozás → szorzás.</p>',
          hid="tetel-azonossagok",
-         lenyilo=("Miért igaz a szorzatra vonatkozó?",
+         lenyilo=("Miért igaz mind a három?",
                   '<p>Legyen $\\log_{a}u=p$ és $\\log_{a}v=q$. Definíció szerint ez azt '
                   'jelenti, hogy $u=a^{p}$ és $v=a^{q}$. Ekkor</p>'
                   '$$u\\cdot v=a^{p}\\cdot a^{q}=a^{p+q},$$'
@@ -186,8 +195,14 @@ B2 = [
          '✔ $\\log_{a}(u\\cdot v)=\\log_{a}u+\\log_{a}v$</p>'
          '<p>Próbáld ki (a $\\lg$ a <a href="tananyag-logaritmus-fogalma.html#def-lg-ln">tízes alapú logaritmus</a>): $\\lg(1+9)=\\lg 10=1$, míg $\\lg 1+\\lg 9=0+\\lg 9\\approx 0{,}95$ — '
          'nem egyenlők. <b>A logaritmusnak a szorzásról van mondanivalója, az összeadásról nincs.</b></p>'
-         '<p>Ugyanígy hibás: $\\dfrac{\\log_{a}u}{\\log_{a}v}=\\log_{a}\\dfrac{u}{v}$ — '
-         'a hányados azonossága a <b>különbségre</b> szól, nem a hányadosra.</p>'),
+         '<p>Ugyanígy hibás: $\\dfrac{\\log_{a}u}{\\log_{a}v}=\\log_{a}\\dfrac{u}{v}$. Az '
+         'argumentumok osztásából a logaritmusok <b>kivonása</b> lesz, nem az osztásuk. '
+         '(A logaritmusok hányadosának egyébként van jelentése — de egészen más: erre való '
+         'az <a href="tananyag-attetes-mas-alapra.html">áttérési képlet</a>.)</p>'
+         '<p>Végül vigyázz a <b>páros</b> kitevőre: a $\\log_{a}(x^{2})$ minden $x\\neq 0$-ra '
+         'létezik, a $2\\log_{a}x$ viszont csak $x&gt;0$-ra — a kettő tehát nem ugyanaz. '
+         'Helyesen $\\log_{a}(x^{2})=2\\log_{a}|x|$. Bontáskor mindig kérdezd meg: az új '
+         'alak ugyanazokra az $x$-ekre értelmes-e, mint a régi?</p>'),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Számold ki: <b>a)</b> $\\lg 50+\\lg 2$; <b>b)</b> $\\log_{2}48-\\log_{2}3$; '
          '<b>c)</b> $\\log_{3}\\sqrt{27}$; <b>d)</b> $2\\log_{3}9$.</p>',
@@ -197,12 +212,17 @@ B2 = [
                   '<p><b>b)</b> $\\log_{2}48-\\log_{2}3=\\log_{2}\\tfrac{48}{3}=\\log_{2}16=\\boxed{4}$.</p>'
                   '<p><b>c)</b> $\\sqrt{27}=27^{1/2}=3^{3/2}$, tehát '
                   '$\\log_{3}3^{3/2}=\\boxed{\\tfrac32}$. (Vagy: '
-                  '$\\log_{3}\\sqrt{27}=\\tfrac12\\log_{3}27=\\tfrac12\\cdot 3$.)</p>'
-                  '<p><b>d)</b> $\\log_{3}9=2$, tehát $2\\cdot 2=\\boxed{4}$.</p>')),
+                  '$\\log_{3}\\sqrt{27}=\\tfrac12\\log_{3}27=\\tfrac12\\cdot 3=\\tfrac32$.)</p>'
+                  '<p><b>d)</b> A hatvány-azonossággal visszafelé: '
+                  '$2\\log_{3}9=\\log_{3}9^{2}=\\log_{3}81=\\boxed{4}$. '
+                  '(Ellenőrzésül a definícióból: $\\log_{3}9=2$, tehát $2\\cdot 2=4$.)</p>')),
  ]),
 
  ("Kifejezések bontása és összevonása", [
-   'Az azonosságokat <b>mindkét irányban</b> használjuk. Egyenletmegoldásnál általában '
+   'Az azonosságokat <b>mindkét irányban</b> használjuk — de a két irány nem egyformán '
+   'ártalmatlan: összevonáskor az értelmezési tartomány bővülhet, bontáskor szűkül, ezért '
+   'egyenletmegoldásnál a végén mindig ellenőrizni kell a kapott gyököket. '
+   'Egyenletmegoldásnál általában '
    '<b>összevonunk</b> (hogy egyetlen logaritmus maradjon), számoláskor pedig '
    '<b>szétbontunk</b> (hogy ismert értékekre jussunk).',
    doboz("pelda", "Vészterem-szimuláció",
@@ -238,20 +258,22 @@ B3 = [
 
  ("Áttérés más alapra", [
    doboz("tetel", "Az áttérési képlet",
-         '<p>Legyen $a,c&gt;0$, $a\\neq 1$, $c\\neq 1$ és $b&gt;0$. Ekkor</p>'
-         '$$\\log_{a}b=\\frac{\\log_{c}b}{\\log_{c}a}.$$'
-         '<p>A gyakorlatban $c=10$ (vagy $c=e$), így a számológéppel bármi kiszámolható:</p>'
+         '<p>Legyen $a,t&gt;0$, $a\\neq 1$, $t\\neq 1$ és $b&gt;0$ — a $t$ az <b>új alap</b>. '
+         'Ekkor</p>'
+         '$$\\log_{a}b=\\frac{\\log_{t}b}{\\log_{t}a}.$$'
+         '<p>A gyakorlatban $t=10$ (vagy $t=e$), így a számológéppel bármi kiszámolható:</p>'
          '$$\\log_{a}b=\\frac{\\lg b}{\\lg a}=\\frac{\\ln b}{\\ln a}.$$',
          hid="tetel-attetes",
          lenyilo=("Miért igaz?",
-                  '<p>Legyen $\\log_{a}b=p$, azaz $a^{p}=b$. Vegyük mindkét oldal $c$ alapú '
+                  '<p>Legyen $\\log_{a}b=c$, azaz $a^{c}=b$ (a $c$ itt is a logaritmus '
+                  'értéke, mint a definícióban). Vegyük mindkét oldal $t$ alapú '
                   'logaritmusát:</p>'
-                  '$$\\log_{c}a^{p}=\\log_{c}b\\ \\Longrightarrow\\ p\\cdot\\log_{c}a=\\log_{c}b.$$'
-                  '<p>Mivel $a\\neq 1$, a $\\log_{c}a\\neq 0$, tehát oszthatunk vele: '
-                  '$p=\\dfrac{\\log_{c}b}{\\log_{c}a}$.</p>')),
+                  '$$\\log_{t}a^{c}=\\log_{t}b\\ \\Longrightarrow\\ c\\cdot\\log_{t}a=\\log_{t}b.$$'
+                  '<p>Mivel $a\\neq 1$, a $\\log_{t}a\\neq 0$, tehát oszthatunk vele: '
+                  '$c=\\dfrac{\\log_{t}b}{\\log_{t}a}$.</p>')),
    doboz("csapda", "Dr. Baljós vírus-kódja",
-         '<p><b>Ne keverd össze!</b> A képletben <b>osztás</b> áll, nem kivonás, és a '
-         'számláló az <b>argumentum</b>, a nevező az <b>alap</b> logaritmusa:</p>'
+         '<p><b>Ne keverd össze!</b> A képletben <b>osztás</b> áll, nem kivonás; a '
+         'számlálóban az <b>argumentum</b> logaritmusa áll, a nevezőben az <b>alapé</b>:</p>'
          '<p>✔ $\\log_{2}7=\\dfrac{\\lg 7}{\\lg 2}$ &nbsp;&nbsp;&nbsp; '
          '✘ $\\log_{2}7=\\dfrac{\\lg 2}{\\lg 7}$ &nbsp;&nbsp;&nbsp; '
          '✘ $\\log_{2}7=\\lg 7-\\lg 2$</p>'
@@ -272,8 +294,8 @@ B3 = [
                   '$1$ és $2$ között kell lennie. ✔</p>')),
    kviz('Melyik alakban írható át $\\log_{3}20$ a számológéphez?',
         ['$\\dfrac{\\lg 20}{\\lg 3}$', '$\\dfrac{\\lg 3}{\\lg 20}$', '$\\lg 20-\\lg 3$'], 0,
-        jo="✔ A számlálóba az argumentum, a nevezőbe az alap kerül.",
-        nem="✘ logₐb = lg b / lg a — felül az argumentum (20), alul az alap (3)."),
+        jo="✔ Felülre az argumentum logaritmusa kerül, alulra az alapé.",
+        nem="✘ logₐb = lg b / lg a — felül az argumentum (20) logaritmusa, alul az alapé (3)."),
  ]),
 
  ("Mire jó a logaritmus?", [
@@ -286,7 +308,8 @@ B3 = [
          '<tr><td>pH</td><td>$\\mathrm{pH}=-\\lg[\\mathrm{H}^{+}]$</td>'
          '<td>a savasságot; egy egység = <b>tízszeres</b> különbség</td></tr>'
          '<tr><td>Richter</td><td>$M=\\lg\\dfrac{A}{A_{0}}$</td>'
-         '<td>a földrengés erősségét; 6-os ≠ kétszer akkora, mint a 3-as, hanem <b>ezerszer</b></td></tr>'
+         '<td>a földrengés <b>kilengését</b>; egy egység = tízszeres kilengés, tehát a 6-os '
+         '<b>ezerszer</b> akkora kilengésű, mint a 3-as</td></tr>'
          '<tr><td>decibel</td><td>$L=10\\lg\\dfrac{I}{I_{0}}$</td>'
          '<td>a hangerőt</td></tr>'
          '</table></div>'),
@@ -304,11 +327,11 @@ B3 = [
                   'a millió hatalmas szám, de a logaritmusa csak $20$ — ez a '
                   'nagyságrend-kezelés lényege.</p>'
                   '<p><b>b)</b> A modell: $1{,}05^{n}=2$, tehát</p>'
-                  '$$n=\\log_{1,05}2=\\frac{\\lg 2}{\\lg 1{,}05}\\approx'
+                  '$$n=\\log_{1{,}05}2=\\frac{\\lg 2}{\\lg 1{,}05}\\approx'
                   '\\frac{0{,}30103}{0{,}02119}\\approx 14{,}21.$$'
                   '<p>Vagyis nagyjából <b>15 év</b> alatt duplázódik meg a pénz (a 14. '
                   'év végén még nincs meg a kétszeres).</p>')),
-   kviz('Egy 7-es erősségű földrengés hányszor nagyobb kilengésű, mint egy 4-es?',
+   kviz('Hányszorosa egy 7-es erősségű földrengés kilengése a 4-esének?',
         ['1000-szer', '3-szor', '$\\tfrac74$-szer'], 0,
         jo="✔ A Richter-skála logaritmikus: 3 egység különbség = 10³ = 1000-szeres.",
         nem="✘ A skála logaritmikus — minden egység tízszeres kilengést jelent, tehát 10³ = 1000."),
@@ -327,7 +350,7 @@ KI = [
  lap(**T, fajl="tananyag-logaritmus-fogalma.html",
      cim="A logaritmus fogalma", cim_tiszta="A logaritmus fogalma",
      alcim="A hatványozás második fordított művelete, a definíció szerinti számolás, "
-           "a négy alapösszefüggés, valamint a tizes és a természetes alapú logaritmus.",
+           "a négy alapösszefüggés, valamint a tízes és a természetes alapú logaritmus.",
      chip="Az Evolúciós Ugrás · 4/8", szakaszok=B1,
      elozo=("feladatok-exponencialis.html", "Feladatok — exponenciális függvény"),
      kovetkezo=("tananyag-logaritmus-azonossagai.html", "A logaritmus azonosságai")),

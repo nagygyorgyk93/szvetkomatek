@@ -44,8 +44,8 @@ assert not E, E
 print("sympy önteszt: OK")
 
 SVG_ALAP = svg_egysegkor(
-    szogek=[(52, "P(cos α; sin α)", "#047857")], w=340, h=310,
-    leiras="Az egységkörön a Pitagorasz-tétel adja a szinusz és a koszinusz alapazonosságát",
+    szogek=[(52, "P(cos α; sin α)", "#047857")], w=340, h=310, vetulet=True,
+    leiras="Az egységkörön a P pont vetületei adják a koszinuszt és a szinuszt; a sugár, a vetület és a vetítővonal derékszögű háromszöget alkot, erre írjuk fel a Pitagorasz-tételt",
     sugar_cimke="1")
 
 # ===================================================================== B1
@@ -61,30 +61,37 @@ B1 = [
 
  ("Az alapazonosságok", [
    abra(SVG_ALAP, "A $P$ pont koordinátái $\\cos\\alpha$ és $\\sin\\alpha$, a sugár $1$ — "
-                  "a derékszögű háromszögre felírt Pitagorasz-tétel adja az "
-                  "alapazonosságot."),
-   doboz("tetel", "Az öt alapazonosság",
+                  "a sugárból és a két vetületből álló derékszögű háromszögre felírt "
+                  "Pitagorasz-tétel adja a <b>négyzetes alapazonosságot</b>."),
+   doboz("tetel", "A hat alapazonosság",
+         '<p>Az első <b>minden</b> szögre igaz; a többi csak ott, ahol a szereplő '
+         'függvények értelmezve vannak — a feltételt mindegyik mellé odaírtuk.</p>'
          '$$\\sin^{2}\\alpha+\\cos^{2}\\alpha=1$$'
-         '$$\\operatorname{tg}\\alpha=\\frac{\\sin\\alpha}{\\cos\\alpha},\\qquad'
-         '\\operatorname{ctg}\\alpha=\\frac{\\cos\\alpha}{\\sin\\alpha},\\qquad'
-         '\\operatorname{tg}\\alpha\\cdot\\operatorname{ctg}\\alpha=1$$'
-         '<p>A négyzetes azonosságból $\\cos^{2}\\alpha$-val, illetve $\\sin^{2}\\alpha$-val '
-         'osztva két további adódik:</p>'
-         '$$1+\\operatorname{tg}^{2}\\alpha=\\frac{1}{\\cos^{2}\\alpha},\\qquad'
-         '1+\\operatorname{ctg}^{2}\\alpha=\\frac{1}{\\sin^{2}\\alpha}.$$',
+         '$$\\operatorname{tg}\\alpha=\\frac{\\sin\\alpha}{\\cos\\alpha}\\ (\\cos\\alpha\\neq 0),\\qquad'
+         '\\operatorname{ctg}\\alpha=\\frac{\\cos\\alpha}{\\sin\\alpha}\\ (\\sin\\alpha\\neq 0)$$'
+         '$$\\operatorname{tg}\\alpha\\cdot\\operatorname{ctg}\\alpha=1\\qquad\\left(\\alpha\\neq k\\cdot\\tfrac{\\pi}{2}\\right)$$'
+         '<p>A négyzetes azonosságot $\\cos^{2}\\alpha$-val osztva (ez $\\cos\\alpha\\neq 0$ '
+         'esetén tehető meg), illetve $\\sin^{2}\\alpha$-val osztva ($\\sin\\alpha\\neq 0$ '
+         'esetén) két további adódik:</p>'
+         '$$1+\\operatorname{tg}^{2}\\alpha=\\frac{1}{\\cos^{2}\\alpha}\\ (\\cos\\alpha\\neq 0),\\qquad'
+         '1+\\operatorname{ctg}^{2}\\alpha=\\frac{1}{\\sin^{2}\\alpha}\\ (\\sin\\alpha\\neq 0).$$',
          hid="tetel-alapazonossagok"),
    doboz("csapda", "Dr. Baljós vírus-kódja",
-         '<p><b>A gyökvonás mindig két értéket enged meg</b> — a negyed dönti el, melyik kell:</p>'
-         '$$\\cos\\alpha=\\pm\\sqrt{1-\\sin^{2}\\alpha}$$'
-         '<p>Ha $\\alpha$ a II. vagy a III. negyedben van, a <b>mínusz</b> jó. Ezért a '
-         'feladatszöveg <b>mindig</b> ad egy második információt ($\\cos\\alpha&lt;0$, '
-         '$\\operatorname{tg}\\alpha&gt;0$, $\\alpha\\in\\left(\\tfrac{\\pi}{2};\\pi\\right)$…) — '
-         'ez nem díszítés, hanem a feladat fele.</p>'),
-   kviz('Mennyi $\\sin^{2}x+\\cos^{2}x$ értéke?',
-        ['$1$ — minden valós $x$-re', '$x$', 'Az $x$-től függ'], 0,
-        jo="✔ Ez a Pitagorasz-azonosság. Az egységkörön a P pont koordinátái cos x és sin x, "
-           "az origótól mért távolsága pedig mindig 1.",
-        nem="✘ Ez a trigonometria legfontosabb azonossága: minden valós x-re 1. "
+         '<p><b>A négyzetre emelés elveszíti az előjelet</b> — nem a gyökvonás enged meg két '
+         'értéket, hiszen $\\sqrt{\\cos^{2}\\alpha}=|\\cos\\alpha|$. Abból viszont, hogy '
+         '$\\cos^{2}\\alpha$ ismert, két lehetséges $\\cos\\alpha$ következik:</p>'
+         '$$\\cos\\alpha=\\pm\\sqrt{1-\\sin^{2}\\alpha},\\qquad'
+         '\\sin\\alpha=\\pm\\sqrt{1-\\cos^{2}\\alpha}$$'
+         '<p>A negyed dönti el, melyik kell — <b>függvényenként külön</b>: a koszinusz a II. és '
+         'a III., a szinusz a III. és a IV. negyedben negatív. Ezért ad a feladatszöveg '
+         '<b>jellemzően</b> egy második információt ($\\cos\\alpha&lt;0$, '
+         '$\\operatorname{tg}\\alpha&gt;0$, $\\alpha\\in\\left(\\tfrac{\\pi}{2};\\pi\\right)$…) '
+         '— enélkül a feladatnak két megoldása van.</p>'),
+   kviz('Mennyi $\\sin^{2}\\alpha+\\cos^{2}\\alpha$ értéke?',
+        ['$1$ — minden valós $\\alpha$-ra', '$\\alpha$', 'Az $\\alpha$-tól függ'], 0,
+        jo="✔ Ez a négyzetes alapazonosság. Az egységkörön a P pont koordinátái cos α és "
+           "sin α, az origótól mért távolsága pedig mindig 1.",
+        nem="✘ Ez a trigonometria legfontosabb azonossága: minden valós α-ra 1. "
             "Az egységkörön a koordináták négyzetösszege a sugár négyzete, azaz 1."),
  ]),
 
@@ -104,13 +111,15 @@ B1 = [
          lenyilo=("Megoldás",
                   '<p><b>a)</b> $\\sin\\alpha&gt;0$ és $\\cos\\alpha&lt;0$ → <b>II. negyed</b>.</p>'
                   '$$\\cos^{2}\\alpha=1-\\left(\\tfrac35\\right)^{2}=\\tfrac{16}{25}'
-                  '\\ \\Longrightarrow\\ \\cos\\alpha=-\\tfrac45$$'
+                  '\\ \\Longrightarrow\\ \\cos\\alpha=\\pm\\tfrac45$$'
+                  '<p>A II. negyedben a koszinusz negatív, tehát $\\cos\\alpha=-\\tfrac45$.</p>'
                   '<p>$\\operatorname{tg}\\alpha=\\dfrac{3/5}{-4/5}=-\\dfrac34$, &nbsp; '
                   '$\\operatorname{ctg}\\alpha=-\\dfrac43$. A II. negyedben mindkettő '
                   'negatív ✔</p>'
                   '<p><b>b)</b> Mindkettő negatív → <b>III. negyed</b>.</p>'
                   '$$\\sin^{2}\\alpha=1-\\left(\\tfrac{12}{13}\\right)^{2}=\\tfrac{25}{169}'
-                  '\\ \\Longrightarrow\\ \\sin\\alpha=-\\tfrac{5}{13}$$'
+                  '\\ \\Longrightarrow\\ \\sin\\alpha=\\pm\\tfrac{5}{13}$$'
+                  '<p>A III. negyedben a szinusz negatív, tehát $\\sin\\alpha=-\\tfrac{5}{13}$.</p>'
                   '<p>$\\operatorname{tg}\\alpha=\\dfrac{-5/13}{-12/13}=\\dfrac{5}{12}$, &nbsp; '
                   '$\\operatorname{ctg}\\alpha=\\dfrac{12}{5}$ — a III. negyedben mindkettő '
                   'pozitív ✔</p>')),
@@ -339,7 +348,7 @@ B3 = [
 KI = [
  lap(**T, fajl="tananyag-alapazonossagok.html",
      cim="Alapazonosságok", cim_tiszta="Alapazonosságok",
-     alcim="A trigonometriai Pitagorasz-tétel, a tangens és a kotangens kapcsolata, "
+     alcim="A négyzetes alapazonosság, a tangens és a kotangens kapcsolata, "
            "valamint a témakör leggyakoribb feladattípusa: egy érték és a negyed.",
      chip="A Fázisugrás · 4/11", szakaszok=B1,
      elozo=("feladatok-trigonometrikus-kor.html", "Feladatok — a trigonometrikus kör"),

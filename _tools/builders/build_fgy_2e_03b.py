@@ -97,7 +97,7 @@ ALAP = [
   "$\\log_{a}\\dfrac{xy}{z}$"),
  ("Vond össze egyetlen logaritmussá! $3\\log_{a}x-2\\log_{a}y$", None,
   "$\\log_{a}\\dfrac{x^{3}}{y^{2}}$"),
- ("Írd fel tizes alapú logaritmusokkal (áttérés más alapra)!",
+ ("Írd fel tízes alapú logaritmusokkal (áttérés más alapra)!",
   ["$\\log_{2}7$", "$\\log_{5}12$"],
   ["$\\dfrac{\\lg 7}{\\lg 2}$", "$\\dfrac{\\lg 12}{\\lg 5}$"], True),
  ("Számold ki számológéppel, négy tizedesre kerekítve!",
@@ -153,7 +153,7 @@ KOZEP = [
 
 NEHEZ = [
  ("Számold ki! $\\log_{2}3\\cdot\\log_{3}4\\cdot\\log_{4}8$", None,
-  "Áttéréssel minden tényező tizes alapra írható, és a tört „teleszkopikusan” "
+  "Áttéréssel minden tényező tízes alapra írható, és a tört „teleszkopikusan” "
   "kiesik: $\\dfrac{\\lg 3}{\\lg 2}\\cdot\\dfrac{\\lg 4}{\\lg 3}\\cdot"
   "\\dfrac{\\lg 8}{\\lg 4}=\\dfrac{\\lg 8}{\\lg 2}=\\log_{2}8=3$."),
  ("Tudjuk, hogy $\\lg 2\\approx 0{,}3010$ és $\\lg 3\\approx 0{,}4771$. "
@@ -178,7 +178,7 @@ NEHEZ = [
 
 JOKER = ("Számold ki! $\\log_{2}3\\cdot\\log_{3}4\\cdot\\log_{4}5\\cdot\\ldots"
          "\\cdot\\log_{63}64$",
-         "Írd át minden tényezőt tizes alapra: $\\dfrac{\\lg 3}{\\lg 2}\\cdot"
+         "Írd át minden tényezőt tízes alapra: $\\dfrac{\\lg 3}{\\lg 2}\\cdot"
          "\\dfrac{\\lg 4}{\\lg 3}\\cdot\\ldots\\cdot\\dfrac{\\lg 64}{\\lg 63}$. "
          "Minden számláló kiesik a következő nevezővel, marad "
          "$\\dfrac{\\lg 64}{\\lg 2}=\\log_{2}64=\\boxed{6}$.")
