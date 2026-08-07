@@ -176,16 +176,19 @@ B2 = [
          '<li><b>Csúcspont:</b> $C(u;v)$, ahol $u=-\\dfrac{b}{2a}$ és $v=f(u)$.</li>'
          '<li><b>Szélsőérték:</b> $a&gt;0$ esetén <b>minimum</b>, $a&lt;0$ esetén '
          '<b>maximum</b>; az értéke $v$.</li>'
-         '<li><b>Értékkészlet:</b> $a&gt;0$ esetén $[v,+\\infty)$, $a&lt;0$ esetén '
-         '$(-\\infty,v]$.</li>'
+         '<li><b>Értékkészlet:</b> $a&gt;0$ esetén $[v;+\\infty)$, $a&lt;0$ esetén '
+         '$(-\\infty;v]$.</li>'
+         '<li><b>Monotonitás:</b> a csúcspont osztja két részre. $a&gt;0$ esetén a függvény '
+         '$(-\\infty;u]$-n <b>csökken</b>, $[u;+\\infty)$-n <b>nő</b>; $a&lt;0$ esetén '
+         'fordítva.</li>'
          '</ol>'
          '<p>Az értelmezési tartomány mindig a teljes $\\mathbb{R}$ — ezt nem kell keresni.</p>',
          hid="def-vizsgalat-protokoll"),
    doboz("erdekesseg", "Miért ilyen sorrendben?",
          '<p>Mert minden lépés a következőt készíti elő. A nyílásirányból már tudod, '
          'minimum vagy maximum lesz-e; a csúcspontból jön a szélsőérték; a szélsőértékből '
-         'az értékkészlet. Ha a sorrendet betartod, <b>nem kell gondolkodni</b> — csak '
-         'számolni.</p>'),
+         'az értékkészlet; és a csúcs helyéből a monotonitás fordulópontja. Ha a sorrendet '
+         'betartod, <b>nem kell gondolkodni</b> — csak számolni.</p>'),
  ]),
 
  ("Teljes kidolgozott vizsgálat", [
@@ -201,7 +204,9 @@ B2 = [
                   '<p><b>4. Csúcspont:</b> $u=-\\dfrac{-2}{2}=1$, '
                   '$v=f(1)=1-2-3=-4$ → $C(1;-4)$.</p>'
                   '<p><b>5. Szélsőérték:</b> minimum, értéke $-4$ (az $x=1$ helyen).</p>'
-                  '<p><b>6. Értékkészlet:</b> $[-4,+\\infty)$.</p>')),
+                  '<p><b>6. Értékkészlet:</b> $[-4;+\\infty)$.</p>'
+                  '<p><b>7. Monotonitás:</b> a csúcs az $x=1$ helyen van, tehát a függvény '
+                  '$(-\\infty;1]$-en csökken, $[1;+\\infty)$-en nő.</p>')),
    abra(SVG_VIZSG, "A grafikonhoz elég három adat: a <b>két zérushely</b>, a "
                    "<b>csúcspont</b> és az <b>$y$-tengelymetszet</b>. A parabola "
                    "szimmetrikus az $x=1$ egyenesre."),

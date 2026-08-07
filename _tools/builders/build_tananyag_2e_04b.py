@@ -147,7 +147,8 @@ B2 = [
          '$$\\operatorname{tg}(\\alpha\\pm\\beta)=\\frac{\\operatorname{tg}\\alpha\\pm'
          '\\operatorname{tg}\\beta}{1\\mp\\operatorname{tg}\\alpha\\operatorname{tg}\\beta}$$'
          '<p>Figyeld meg a <b>jelek</b> viselkedését: a szinusznál a jel „átmegy”, a '
-         'koszinusznál <b>megfordul</b> ($\\mp$). Ez a legtöbbet elrontott részlet.</p>',
+         'koszinusznál <b>megfordul</b> ($\\mp$). Ez a legtöbbet elrontott részlet.</p>'
+         '<p class="halvany">A szinuszos és a koszinuszos képlet <b>minden</b> valós $\\alpha$-ra és $\\beta$-ra érvényes. A tangenses csak ott, ahol mindhárom tangens értelmezett — tehát $\\cos\\alpha\\neq 0$, $\\cos\\beta\\neq 0$ és $\\cos(\\alpha\\pm\\beta)\\neq 0$ —, és ahol a nevező nem tűnik el: $1\\mp\\operatorname{tg}\\alpha\\operatorname{tg}\\beta\\neq 0$.</p>',
          hid="tetel-addicios"),
    doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p><b>A szögfüggvény nem „szorzó”!</b></p>'

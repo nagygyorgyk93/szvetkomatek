@@ -151,8 +151,8 @@ D1 = [
          '<p><b>A kétértelmű (SSA) eset.</b> Ha két oldalt és a <b>kisebbikkel</b> '
          'szemközti szöget ismerjük, két különböző háromszög is illeszkedhet az adatokra — '
          'mert $\\sin\\varphi=\\sin(180^\\circ-\\varphi)$.</p>'
-         '<p>Gyakorlati szabály: a szinusztétellel <b>mindig a kisebbik oldallal '
-         'szemközti szöget</b> számold ki. Az biztosan hegyesszög, tehát egyértelmű.</p>'),
+         '<p><b>Mikor egyértelmű, és mikor nem?</b> Ha a megadott szög a <b>hosszabbik</b> oldallal szemközt van, a másik szög biztosan hegyes — a szinusztétel egyértelmű. Ha viszont a megadott szög a <b>rövidebbik</b> oldallal szemközti, a hosszabb oldal szemközti szöge hegyes és tompa is lehet: ilyenkor <b>mindkét lehetőséget</b> végig kell nézni, és azt kell megtartani, amelyiknél a három szög összege $180^\\circ$ alatt marad.</p>'
+         '<p><b>Példa.</b> Legyen $a=6$, $b=8$ és $\\alpha=40^\\circ$ (a megadott szög a rövidebb oldallal szemközt). A szinusztételből $\\sin\\beta=\\dfrac{8\\sin 40^\\circ}{6}\\approx 0{,}857$, ahonnan $\\beta\\approx 59^\\circ$ <b>vagy</b> $\\beta\\approx 121^\\circ$. Mindkettő működik: $40+59=99&lt;180$ és $40+121=161&lt;180$ — tehát <b>két</b> különböző háromszög is illeszkedik az adatokra.</p>'),
  ]),
 
  ("A koszinusztétel", [
