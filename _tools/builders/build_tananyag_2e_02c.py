@@ -134,7 +134,7 @@ C1 = [
         ['$x\\in(-2;2)$', '$x\\in(-\\infty;-2)\\cup(2;+\\infty)$', 'Nincs megoldás.'], 0,
         jo="✔ a < 0, a parabola lefelé nyílik → a gyökök között van a tengely fölött.",
         nem="✘ Szorozz −1-gyel (a jel fordul): x² − 4 < 0, azaz x ∈ (−2; 2)."),
-   gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–5"),
+   gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–5, 11"),
    brief('<b>Küklopsz:</b> Utolsó bevetés a szektorban. Eddig egyetlen görbét néztünk. '
          'Most kettőt teszünk egymásra — egy parabolát és egy egyenest —, és megkeressük, '
          '<b>hol találkoznak</b>. Ez a bemérés utolsó lépése.',

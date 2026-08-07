@@ -424,7 +424,7 @@ C3 = [
          '$x=\\tfrac{\\pi}{2}+2k\\pi$'], 0,
         jo="✔ A szinusz a 3π/2-ben (270°-ban) veszi fel a −1-et, és ez 2π-ként ismétlődik.",
         nem="✘ A minimumhely x = 3π/2 + 2kπ (ez ugyanaz, mint −π/2 + 2kπ)."),
-   gyakorolj(FGY + "#alap-12", "A 12–18", FGY + "#kozep-9", "K 9–14"),
+   gyakorolj(FGY + "#alap-12", "A 12–19", FGY + "#kozep-9", "K 9–15"),
    brief('<b>Szürke Janka:</b> A hullámot értjük, az egyenleteket megoldjuk. Egy dolog maradt, '
          'és az a legkézzelfoghatóbb az egészben: ha a terepen ismerek <b>néhány</b> '
          'távolságot és szöget, ki tudom-e számolni a többit? Ehhez két tétel kell — és '

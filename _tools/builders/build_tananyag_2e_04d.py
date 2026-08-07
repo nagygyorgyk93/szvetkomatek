@@ -312,7 +312,7 @@ D2 = [
         ['$13{,}5$', '$27$', '$54$'], 0,
         jo="✔ T = ½ · 6 · 9 · sin 30° = 27 · 0,5 = 13,5.",
         nem="✘ T = ½ab sin γ = ½ · 6 · 9 · 0,5 = 13,5."),
-   gyakorolj(FGY + "#alap-6", "A 6–14", FGY + "#kozep-5", "K 5–12"),
+   gyakorolj(FGY + "#alap-6", "A 6–14", FGY + "#kozep-5", "K 5–13"),
    brief('<b>Szürke Janka:</b> A Fázisugrás teljesítve, kadétok — és ezzel a második évad '
          'is a végéhez ért. Ez az anyag a <b>4. írásbeli dolgozat</b> teljes terjedelme. '
          'Nézd át a taktikai memóriakártyát, aztán jöhet a terepküldetés: '

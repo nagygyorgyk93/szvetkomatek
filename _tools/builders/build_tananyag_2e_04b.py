@@ -134,7 +134,7 @@ B1 = [
         ['$-\\tfrac35$', '$\\tfrac35$', '$-\\tfrac45$'], 0,
         jo="✔ cos > 0 és tg < 0 → IV. negyed, ott a szinusz negatív.",
         nem="✘ A cos pozitív, a tg negatív → IV. negyed → a szinusz negatív: −3/5."),
-   gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–4"),
+   gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–3"),
  ]),
 ]
 
@@ -341,7 +341,7 @@ B3 = [
         ['$\\sqrt3\\sin 50^\\circ$', '$\\sin 100^\\circ$', '$2\\sin 50^\\circ$'], 0,
         jo="✔ 2 sin 50° cos 30° = 2 · sin 50° · (√3/2) = √3 sin 50°.",
         nem="✘ sin u + sin v = 2 sin((u+v)/2) cos((u−v)/2) = 2 sin 50° cos 30° = √3 sin 50°."),
-   gyakorolj(FGY + "#alap-14", "A 14–18", FGY + "#kozep-8", "K 8–12"),
+   gyakorolj(FGY + "#alap-14", "A 14–18", FGY + "#kozep-8", "K 8–14"),
    brief('<b>Éjjáró:</b> Az azonosságok készen vannak — ez a témakör gerince, és '
          'a záró felmérőn is ezt kérem majd. Innentől viszont átadom a szót Jankának: ő nem egyetlen '
          'szöggel dolgozik, hanem a <b>teljes hullámmal</b>. Meglátod, hogy néz ki a '

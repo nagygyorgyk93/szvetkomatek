@@ -352,7 +352,7 @@ A3 = [
         ['$\\tfrac{\\sqrt3}{2}$', '$-\\tfrac{\\sqrt3}{2}$', '$\\tfrac12$'], 0,
         jo="✔ 330° a IV. negyedben van (alapszög 30°), ott a koszinusz pozitív.",
         nem="✘ 330° a IV. negyedben van — ott a koszinusz POZITÍV, az alapszög pedig 30°."),
-   gyakorolj(FGY + "#alap-13", "A 13–18", FGY + "#kozep-8", "K 8–12"),
+   gyakorolj(FGY + "#alap-13", "A 13–18", FGY + "#kozep-8", "K 8–13"),
    brief('<b>Éjjáró:</b> Ezzel a kör a kezedben van: bármelyik szöget vissza tudod '
          'vinni ismerős terepre. A következő blokkban viszont már nem <b>egy</b> szöggel '
          'dolgozunk, hanem kettővel — mert ha a $75^\\circ$-ot fel tudod bontani '
