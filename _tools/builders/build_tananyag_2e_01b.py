@@ -250,6 +250,13 @@ B3 = [
                   'hiányzik a köbhöz, ezért $\\sqrt[3]{2}$-vel bővítünk:</p>'
                   '$$\\frac{5}{\\sqrt[3]{4}}=\\frac{5\\sqrt[3]{2}}{\\sqrt[3]{8}}'
                   '=\\frac{5\\sqrt[3]{2}}{2}.$$')),
+   kviz('Miért gyöktelenítünk, ha a számológép úgyis kiszámolja?',
+        ['Hogy a kifejezés pontos, összehasonlítható alakban legyen',
+         'Mert a gyök a nevezőben matematikai hiba', 'Mert így rövidebb lesz'], 0,
+        jo="✔ A gyöktelenített alak PONTOS (nem közelítés), és két kifejezés így "
+           "összevethető: az 1/√2 és a √2/2 ugyanaz, csak az utóbbiról látszik.",
+        nem="✘ A gyök a nevezőben nem hiba — a gyöktelenítés célja a pontos, "
+            "egységes alak, amiben a kifejezések összehasonlíthatók és tovább alakíthatók."),
  ]),
 
  ("Kéttagú nevező — a konjugált", [

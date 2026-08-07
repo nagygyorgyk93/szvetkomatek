@@ -68,6 +68,12 @@ A1 = [
                   '(páratlan kitevő → negatív). A két negatív közül $B=-\\dfrac{1}{3}$ a kisebb, '
                   'a két pozitív közül $C=\\dfrac19$ a kisebb. Tehát</p>'
                   '$$B&lt;D&lt;C&lt;A.$$')),
+   kviz('Mennyi $(-2)^{4}$ és mennyi $-2^{4}$?',
+        ['$16$ és $-16$', 'Mindkettő $16$', 'Mindkettő $-16$'], 0,
+        jo="✔ A zárójel dönt: (−2)⁴ = 16 (a −2-t emeljük negyedikre), "
+           "míg −2⁴ = −(2⁴) = −16 (csak a 2-t, az előjel kívül marad).",
+        nem="✘ A zárójel nem díszítés: (−2)⁴ = 16, de −2⁴ = −(2⁴) = −16. "
+            "A második esetben a hatványozás ERŐSEBBEN köt, mint az előjel."),
  ]),
 
  ("Nulla és negatív kitevő", [
@@ -222,6 +228,11 @@ A2 = [
          'Az értékkészlet csak $[0,+\\infty)$: negatív szám <b>nem</b> lehet páros kitevőjű '
          'hatvány értéke. Ezért nincs valós megoldása az $x^{2}=-1$ egyenletnek — '
          'és pontosan ez lesz a témakör harmadik felének kiindulópontja.</p>'),
+   kviz('Hány megoldása van valós számok között az $x^{2}=-1$ egyenletnek?',
+        ['Egy sem', 'Egy', 'Kettő'], 0,
+        jo="✔ Páros kitevőnél a hatvány értéke sosem negatív, tehát nincs ilyen valós x.",
+        nem="✘ Bármely valós szám NÉGYZETE nemnegatív, ezért a −1 nem állhat elő így. "
+            "Épp ez vezet majd a komplex számok bevezetéséhez."),
  ]),
 
  ("Páratlan kitevő: az $x^{2k+1}$ család", [

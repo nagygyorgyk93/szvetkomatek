@@ -252,6 +252,13 @@ D2 = [
                   '$$T=\\frac12\\cdot 8\\cdot 11\\cdot\\sin 35^\\circ=44\\cdot 0{,}57358'
                   '\\approx\\boxed{25{,}24}$$'
                   '<p>(területegység)</p>')),
+   kviz('Melyik adatokból számolható a háromszög területe a $T=\\tfrac12ab\\sin\\gamma$ képlettel?',
+        ['Két oldal és a KÖZBEZÁRT szög', 'Két oldal és bármelyik szög',
+         'Három oldal'], 0,
+        jo="✔ A szögnek a két megadott oldal KÖZÖTT kell lennie — a képletben a gamma "
+           "épp az a és b által bezárt szög.",
+        nem="✘ A képlet csak a két oldal ÁLTAL BEZÁRT szöggel működik. Ha a szög máshol "
+            "van, előbb a szinusztétellel kell a hiányzó adatot megkeresni."),
  ]),
 
  ("Alkalmazások: bemérés a terepen", [

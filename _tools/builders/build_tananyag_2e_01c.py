@@ -147,6 +147,12 @@ C1 = [
                   '<p>$z_{1}=2$ valós szám → a valós tengelyen, a $(2;0)$ pontban. '
                   '$z_{2}=-3i$ tisztán képzetes → a képzetes tengelyen, a $(0;-3)$ pontban. '
                   '$z_{3}=-1+i$ → a $(-1;1)$ pontban, a második síknegyedben.</p>')),
+   kviz('Hol helyezkedik el a Gauss-síkon a $z=-4$ komplex szám?',
+        ['A valós tengelyen', 'A képzetes tengelyen', 'A második síknegyedben'], 0,
+        jo="✔ A képzetes része 0, tehát a valós tengelyen van — minden valós szám "
+           "egyben komplex szám is.",
+        nem="✘ A −4 képzetes része 0, ezért a VALÓS tengelyen fekszik. A képzetes "
+            "tengelyen a tisztán képzetes számok (bi alakúak) vannak."),
  ]),
 
  ("Konjugált és modulusz", [

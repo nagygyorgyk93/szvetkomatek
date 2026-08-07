@@ -280,6 +280,11 @@ C2 = [
          '$\\pi$ (rövidebb!), az $y=\\sin\\tfrac{x}{2}$ periódusa $4\\pi$ (hosszabb).</p>'
          '<p>Ez fordítottan hat, mint az amplitúdó — érdemes minden feladatnál egy '
          'próbaértéket behelyettesíteni.</p>'),
+   kviz('Mekkora az $y=\\sin(3x)$ függvény periódusa?',
+        ['$\\tfrac{2\\pi}{3}$', '$2\\pi$', '$6\\pi$'], 0,
+        jo="✔ A B szorzó OSZTJA a periódust: 2π/3. Nagyobb B → sűrűbb, rövidebb hullám.",
+        nem="✘ Vigyázz, ez fordítva hat, mint az amplitúdó: az y = sin(Bx) periódusa 2π/B, "
+            "tehát B = 3 esetén 2π/3 — a görbe SŰRŰBB lesz."),
  ]),
 
  ("Fáziseltolás és a teljes alak", [

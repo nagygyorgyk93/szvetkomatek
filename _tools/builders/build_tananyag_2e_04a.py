@@ -226,6 +226,11 @@ A2 = [
         ['Negatív', 'Pozitív', 'Nulla'], 0,
         jo="✔ 200° a III. negyedben van, ott a koszinusz (az x-koordináta) negatív.",
         nem="✘ A 200° a III. negyedben van — ott mind a sin, mind a cos negatív."),
+   kviz('Melyik negyedben pozitív EGYSZERRE a szinusz és a koszinusz?',
+        ['Az I.-ben', 'A II.-ban', 'A III.-ban'], 0,
+        jo="✔ Az I. negyedben mindkét koordináta pozitív, tehát a sin és a cos is.",
+        nem="✘ A sin az y-koordináta, a cos az x-koordináta. Mindkettő csak ott pozitív, "
+            "ahol mindkét koordináta az: az I. negyedben."),
  ]),
 
  ("Jellegzetes szögek pontos értékei", [

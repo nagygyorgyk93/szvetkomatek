@@ -308,6 +308,11 @@ A3 = [
                   '<p><b>b)</b> $7^{2}-2\\cdot 10=49-20=29$.</p>'
                   '<p>(Ellenőrzésképp a gyökök $2$ és $5$: '
                   '$\\tfrac12+\\tfrac15=\\tfrac{7}{10}$ ✔ és $4+25=29$ ✔)</p>')),
+   kviz('Egy másodfokú egyenlet gyökeinek összege $9$, szorzata $20$. Melyik az egyenlet?',
+        ['$x^{2}-9x+20=0$', '$x^{2}+9x+20=0$', '$x^{2}-9x-20=0$'], 0,
+        jo="✔ A gyökökből felírt alak x² − (összeg)·x + (szorzat) = 0, tehát x² − 9x + 20 = 0.",
+        nem="✘ Figyelj az előjelre: az összeg MÍNUSSZAL, a szorzat PLUSSZAL kerül be: "
+            "x² − 9x + 20 = 0. (A gyökök 4 és 5.)"),
  ]),
 
  ("Egyenlet felírása adott gyökökből", [
@@ -388,6 +393,12 @@ A4 = [
          '<p><b>3.</b> <b>Helyettesítsünk vissza:</b> minden kapott $t$ értékre oldjuk meg '
          'az $x^{2}=t$ egyenletet — ez gyökönként <b>két</b> megoldást ad.</p>',
          hid="tetel-bikvadratikus"),
+   kviz('A bikvadratikus egyenletnél $t=x^{2}$ helyettesítéssel $t=-4$ adódik. Mit jelent ez?',
+        ['Ebből nem jön valós $x$', 'Ebből $x=-2$ jön', 'Ebből $x=\\pm 2$ jön'], 0,
+        jo="✔ Az x² = −4 egyenletnek nincs valós megoldása, mert négyzet nem lehet negatív. "
+           "A t negatív értékeit tehát a valós körben elvetjük.",
+        nem="✘ A visszahelyettesítés x² = −4 alakú: ennek NINCS valós megoldása. "
+            "Csak a nemnegatív t értékekből kapunk valós x-et."),
  ]),
 
  ("Kidolgozott példák", [
