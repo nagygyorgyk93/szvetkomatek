@@ -33,7 +33,7 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief"><p>📡 <b>Szürke Janka:</b> Egy valódi jel sosem a tiszta <span class="math inline">\(\sin x\)</span>. Van <b>erőssége</b> (mekkorát hullámzik), <b>frekvenciája</b> (milyen sűrűn) és <b>fázisa</b> (mikor kezdődik). Ez a három adat az <span class="math inline">\(A\)</span>, a <span class="math inline">\(b\)</span> és a <span class="math inline">\(c\)</span> — és mindhárom ugyanúgy viselkedik, mint a korábbi függvénytranszformációknál. Ha ezt elolvasod egy grafikonról, gyakorlatilag megfejtetted a jelet.</p></div>
+    <div class="brief"><p>📡 <b>Szürke Janka:</b> Egy valódi jel sosem a tiszta <span class="math inline">\(\sin x\)</span>. Van <b>erőssége</b> (mekkorát hullámzik), <b>körfrekvenciája</b> (milyen sűrűn ismétlődik) és <b>fázisa</b> (mikor kezdődik). Ez a három adat az <span class="math inline">\(A\)</span>, a <span class="math inline">\(b\)</span> és a <span class="math inline">\(c\)</span> — és mindhárom a függvénytranszformációk logikáját követi, de kettőnél lesz egy csavar, amire külön figyelmeztetlek. Ha ezt elolvasod egy grafikonról, gyakorlatilag megfejtetted a jelet.</p></div>
 
     <h2 id="s1">Az amplitúdó</h2>
 
@@ -69,7 +69,7 @@
       <text x="478" y="60" font-size="11" fill="#0f172a">y = ½ sin x</text>
     </svg>
     </div>
-    <p class="cap">Az <span class="math inline">\(y=A\sin x\)</span> görbe <span class="math inline">\(|A|\)</span>-szorosára nyúlik függőlegesen. Az értékkészlet <span class="math inline">\([-|A|;|A|]\)</span>, a periódus <b>nem változik</b>.</p>
+    <p class="cap">Az <span class="math inline">\(y=A\sin x\)</span> görbe <span class="math inline">\(|A|\)</span>-szorosára nyúlik — <span class="math inline">\(|A|&lt;1\)</span> esetén lapul — függőlegesen. Az értékkészlet <span class="math inline">\([-|A|;|A|]\)</span>, a periódus <b>nem változik</b>.</p>
 
     <div class="doboz tetel" id="tetel-amplitudo">
       <p class="cim"><span class="ikon">📘</span> Amplitúdó</p>
@@ -112,7 +112,7 @@
 
     <div class="doboz tetel" id="tetel-periodus">
       <p class="cim"><span class="ikon">📘</span> Periódus</p>
-      <p>Az <span class="math inline">\(y=\sin bx\)</span> (és az <span class="math inline">\(y=\cos bx\)</span>) függvény periódusa</p><span class="math display">\[p=\frac{2\pi}{|b|}\qquad(b\neq 0),\]</span><p>az <span class="math inline">\(y=\operatorname{tg}bx\)</span> függvényé pedig <span class="math inline">\(p=\dfrac{\pi}{|b|}\)</span>.</p><p>Vagyis <span class="math inline">\(b\)</span> azt mondja meg, <b>hányszor</b> fut le egy teljes hullám a megszokott <span class="math inline">\(2\pi\)</span> hosszon.</p>
+      <p>Az <span class="math inline">\(y=\sin bx\)</span> (és az <span class="math inline">\(y=\cos bx\)</span>) függvény periódusa</p><span class="math display">\[p=\frac{2\pi}{|b|}\qquad(b\neq 0),\]</span><p>az <span class="math inline">\(y=\operatorname{tg}bx\)</span> függvényé pedig <span class="math inline">\(p=\dfrac{\pi}{|b|}\)</span>.</p><p>Vagyis <span class="math inline">\(b\)</span> azt mondja meg, hogy a megszokott <span class="math inline">\(2\pi\)</span> hosszra <b>hány hullám jut</b> — <span class="math inline">\(b=\tfrac12\)</span> esetén például csak fél.</p>
     </div>
 
     <div class="doboz csapda">
@@ -120,7 +120,7 @@
       <p>A <span class="math inline">\(b\)</span> <b>osztja</b> a periódust, nem szorozza. Az <span class="math inline">\(y=\sin 2x\)</span> periódusa <span class="math inline">\(\pi\)</span> (rövidebb!), az <span class="math inline">\(y=\sin\tfrac{x}{2}\)</span> periódusa <span class="math inline">\(4\pi\)</span> (hosszabb).</p><p>Ez fordítottan hat, mint az amplitúdó — érdemes minden feladatnál egy próbaértéket behelyettesíteni.</p>
     </div>
 
-    <div class="kviz" data-answer="0" data-jo="✔ A B szorzó OSZTJA a periódust: 2π/3. Nagyobb B → sűrűbb, rövidebb hullám." data-nem="✘ Vigyázz, ez fordítva hat, mint az amplitúdó: az y = sin(Bx) periódusa 2π/B, tehát B = 3 esetén 2π/3 — a görbe SŰRŰBB lesz.">
+    <div class="kviz" data-answer="0" data-jo="✔ A b szorzó OSZTJA a periódust: 2π/3. Nagyobb b → sűrűbb, rövidebb hullám." data-nem="✘ Vigyázz, ez fordítva hat, mint az amplitúdó: az y = sin(bx) periódusa 2π/b, tehát b = 3 esetén 2π/3 — a görbe SŰRŰBB lesz.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
       <p>Mekkora az <span class="math inline">\(y=\sin(3x)\)</span> függvény periódusa?</p>
       <div class="opciok"><button><span class="math inline">\(\tfrac{2\pi}{3}\)</span></button><button><span class="math inline">\(2\pi\)</span></button><button><span class="math inline">\(6\pi\)</span></button></div>
@@ -164,7 +164,7 @@
       <text x="412" y="60" font-size="11" fill="#0f172a">y = 2sin(x − π/3) + 1</text>
     </svg>
     </div>
-    <p class="cap">A <span class="math inline">\(+c\)</span> a kitevőben <b>balra</b>, a <span class="math inline">\(-c\)</span> <b>jobbra</b> tolja a görbét; a végén álló <span class="math inline">\(+d\)</span> pedig <b>felfelé</b>.</p>
+    <p class="cap">A zárójelben álló <span class="math inline">\(+c\)</span> <b>balra</b>, a <span class="math inline">\(-c\)</span> <b>jobbra</b> tolja a görbét — méghozzá <span class="math inline">\(\tfrac{|c|}{b}\)</span>-vel, nem <span class="math inline">\(|c|\)</span>-vel; a végén álló <span class="math inline">\(+d\)</span> pedig <b>felfelé</b>.</p>
 
     <div class="doboz tetel" id="tetel-teljes-alak">
       <p class="cim"><span class="ikon">📘</span> Az <span class="math inline">\(y=A\sin(bx+c)+d\)</span> alak</p>
@@ -179,13 +179,13 @@
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Ez a hangod és a váltakozó áram is</p>
-      <p>Egy tiszta hang matematikai alakja <span class="math inline">\(y=A\sin(2\pi f t)\)</span>: az <span class="math inline">\(A\)</span> a <b>hangerő</b>, az <span class="math inline">\(f\)</span> a <b>frekvencia</b> (hertzben), ami a magasságot adja. A hálózati feszültség szintén ilyen: <span class="math inline">\(230\,\text{V}\)</span> effektív érték, <span class="math inline">\(50\,\text{Hz}\)</span> — vagyis másodpercenként ötvenszer fut le a teljes hullám.</p>
+      <p>Egy tiszta hang matematikai alakja <span class="math inline">\(y=A\sin(2\pi f t)\)</span>: az <span class="math inline">\(A\)</span> a <b>hangerő</b>, az <span class="math inline">\(f\)</span> a <b>frekvencia</b> (hertzben), ami a hang <b>magasságát</b> adja. A hálózati feszültség szintén ilyen hullám: a <b>csúcsértéke</b> <span class="math inline">\(A\approx 325\,\text{V}\)</span>, ebből adódik a jól ismert <span class="math inline">\(230\,\text{V}\)</span> <b>effektív</b> érték; a frekvencia <span class="math inline">\(50\,\text{Hz}\)</span> — vagyis másodpercenként ötvenszer fut le a teljes hullám.</p>
     </div>
 
-    <div class="kviz" data-answer="0" data-jo="✔ p = 2π / |b| = 2π/3." data-nem="✘ A b OSZTJA a periódust: 2π/3.">
+    <div class="kviz" data-answer="0" data-jo="✔ Emeld ki a b-t: sin(2x − π) = sin(2(x − π/2)), tehát π/2-vel jobbra." data-nem="✘ Az eltolás nem −c, hanem −c/b. Emeld ki a 2-t: 2x − π = 2(x − π/2).">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
-      <p>Mennyi az <span class="math inline">\(y=\sin 3x\)</span> függvény periódusa?</p>
-      <div class="opciok"><button><span class="math inline">\(\tfrac{2\pi}{3}\)</span></button><button><span class="math inline">\(6\pi\)</span></button><button><span class="math inline">\(3\pi\)</span></button></div>
+      <p>Mennyivel tolódik el az <span class="math inline">\(y=\sin(2x-\pi)\)</span> görbe?</p>
+      <div class="opciok"><button><span class="math inline">\(\tfrac{\pi}{2}\)</span>-vel jobbra</button><button><span class="math inline">\(\pi\)</span>-vel jobbra</button><button><span class="math inline">\(\pi\)</span>-vel balra</button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 

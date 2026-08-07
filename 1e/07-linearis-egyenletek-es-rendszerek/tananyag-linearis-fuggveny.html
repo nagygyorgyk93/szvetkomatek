@@ -33,42 +33,89 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
       <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/pauk_petar_w.webp" alt="Petar Pauk — a hálók és a függvények mestere" width="1200" height="670" decoding="async"><p>📡 <b>Petar Pauk:</b> A hálóm egyenes szálakból áll — és a matek egyenese, a <b>lineáris függvény</b>, pontosan ilyen: állandó „dőléssel" halad. Ha ismered a <b>meredekséget</b> és egyetlen pontját, az egész egyenest ismered. A grafikon nem dísz: egy pillantással megmutatja a nullahelyet, a növekedést, két egyenes metszését. Ez a képi gondolkodás fegyvere a Végső Egyenlethez.</p></div>
-    <p>A <b>lineáris függvény</b> alakja <span class="math inline">\(f(x)=kx+n\)</span>, ahol <span class="math inline">\(k\)</span> a <b>meredekség</b> (iránytényező) és <span class="math inline">\(n\)</span> a függvény <b>tengelymetszete</b> az <span class="math inline">\(y\)</span>-tengelyen. A grafikonja mindig egy <b>egyenes</b>.</p>
+    <p>A <b>lineáris függvény</b> alakja <span class="math inline">\(f(x)=kx+n\)</span>, ahol <span class="math inline">\(k\)</span> a <b>meredekség</b> és <span class="math inline">\(n\)</span> a függvény <b>tengelymetszete</b> az <span class="math inline">\(y\)</span>-tengelyen. A grafikonja mindig egy <b>egyenes</b>.</p>
 
     <h2 id="s1">Meredekség és tengelymetszet</h2>
     <div class="doboz definicio" id="def-meredekseg">
       <p class="cim"><span class="ikon">📗</span> <span class="math inline">\(k\)</span> és <span class="math inline">\(n\)</span> jelentése</p>
-      <p>A <b>meredekség</b> <span class="math inline">\(k\)</span> azt mondja meg, mennyit változik <span class="math inline">\(y\)</span>, ha <span class="math inline">\(x\)</span> eggyel nő. Ha <span class="math inline">\(k>0\)</span>, a függvény <b>növekvő</b>; ha <span class="math inline">\(k&lt;0\)</span>, <b>csökkenő</b>; ha <span class="math inline">\(k=0\)</span>, <b>állandó</b> (vízszintes egyenes). A <b>tengelymetszet</b> <span class="math inline">\(n\)</span> az a pont, ahol a grafikon metszi az <span class="math inline">\(y\)</span>-tengelyt: <span class="math inline">\((0,n)\)</span>.</p>
+      <p>A <b>meredekség</b> <span class="math inline">\(k\)</span> azt mondja meg, mennyit változik <span class="math inline">\(y\)</span>, ha <span class="math inline">\(x\)</span> eggyel nő. Ha <span class="math inline">\(k>0\)</span>, a függvény <b>növekvő</b>; ha <span class="math inline">\(k&lt;0\)</span>, <b>csökkenő</b>; ha <span class="math inline">\(k=0\)</span>, <b>állandó</b> (vízszintes egyenes). Az <span class="math inline">\(n\)</span> szám az <b>y-tengelymetszet</b>; a grafikon az <span class="math inline">\((0;n)\)</span> pontban metszi az <span class="math inline">\(y\)</span>-tengelyt: <span class="math inline">\((0;n)\)</span>.</p>
     </div>
 
     
-    <div class="kviz" data-answer="0" data-jo="✔ A meredekség (−3) negatív, tehát a függvény csökken; a tengelymetszet a konstans tag, azaz 2." data-nem="✘ Az y = mx + b alakban az m a meredekség (itt −3, tehát csökken), a b pedig a tengelymetszet (itt 2).">
+    <div class="kviz" data-answer="0" data-jo="✔ A meredekség (−3) negatív, tehát a függvény csökken; a tengelymetszet a konstans tag, azaz 2." data-nem="✘ Az y = kx + n alakban k a meredekség (itt −3, tehát csökken), n pedig az y-tengelymetszet (itt 2).">
       <p class="kviz-cim"><span class="ikon">🎯</span> Gyors kérdés</p>
       <p>Az <span class="math inline">\(y=-3x+2\)</span> egyenes hogyan halad?</p>
       <div class="opciok"><button>Csökken, és a 2-nél metszi az y tengelyt</button><button>Nő, és a 2-nél metszi az y tengelyt</button><button>Csökken, és a −3-nál metszi az y tengelyt</button></div>
       <p class="visszajelzes"></p>
     </div>
-    <h2 id="s2">Ábrázolás és nullahely</h2>
-    <p>Az egyenest <b>két pontja</b> egyértelműen meghatározza — érdemes a két tengelymetszetet választani. A <b>nullahely</b> az az <span class="math inline">\(x\)</span>, ahol <span class="math inline">\(f(x)=0\)</span> (a grafikon itt metszi az <span class="math inline">\(x\)</span>-tengelyt): az <span class="math inline">\(kx+n=0\)</span> egyenletből <span class="math inline">\(x=-\dfrac{n}{k}\)</span>.</p>
+        <div class="svgcard">
+      <svg viewBox="0 0 420 330" width="420" height="330" role="img" aria-label="Egy növekvő és egy csökkenő lineáris függvény grafikonja: az f(x)=2x−4 a (0;−4) és a (2;0) ponton megy át, a g(x)=−1,5x+3 pedig a (0;3) ponton">
+        <defs><marker id="nyil" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+        <g stroke="#cbd5e1" stroke-width=".6">
+          <line x1="186.2" y1="308.0" x2="186.2" y2="14.0"/>
+          <line x1="247.8" y1="308.0" x2="247.8" y2="14.0"/>
+          <line x1="309.4" y1="308.0" x2="309.4" y2="14.0"/>
+          <line x1="371.0" y1="308.0" x2="371.0" y2="14.0"/>
+          <line x1="26.0" y1="279.5" x2="408.0" y2="279.5"/>
+          <line x1="26.0" y1="255.8" x2="408.0" y2="255.8"/>
+          <line x1="26.0" y1="232.1" x2="408.0" y2="232.1"/>
+          <line x1="26.0" y1="208.4" x2="408.0" y2="208.4"/>
+          <line x1="26.0" y1="184.7" x2="408.0" y2="184.7"/>
+          <line x1="26.0" y1="137.3" x2="408.0" y2="137.3"/>
+          <line x1="26.0" y1="113.6" x2="408.0" y2="113.6"/>
+          <line x1="26.0" y1="89.9" x2="408.0" y2="89.9"/>
+          <line x1="26.0" y1="66.2" x2="408.0" y2="66.2"/>
+          <line x1="26.0" y1="42.5" x2="408.0" y2="42.5"/>
+          <line x1="26.0" y1="18.7" x2="408.0" y2="18.7"/>
+        </g>
+        <line x1="26.0" y1="161.0" x2="408.0" y2="161.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+        <line x1="124.6" y1="308.0" x2="124.6" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+        <text x="404.0" y="175.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+        <text x="116.6" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+        <text x="186.2" y="174.0" font-size="10" fill="#475569" text-anchor="middle">1</text>
+        <text x="119.6" y="141.3" font-size="10" fill="#475569" text-anchor="end">1</text>
+        <polyline points="63.0,303.3 66.4,300.6 69.9,297.9 73.3,295.3 76.8,292.6 80.2,290.0 83.7,287.3 87.1,284.7 90.6,282.0 94.0,279.4 97.5,276.7 100.9,274.0 104.4,271.4 107.8,268.7 111.3,266.1 114.7,263.4 118.2,260.8 121.6,258.1 125.1,255.5 128.5,252.8 132.0,250.1 135.4,247.5 138.9,244.8 142.3,242.2 145.8,239.5 149.2,236.9 152.7,234.2 156.1,231.6 159.6,228.9 163.0,226.2 166.5,223.6 169.9,220.9 173.4,218.3 176.8,215.6 180.3,213.0 183.7,210.3 187.2,207.7 190.6,205.0 194.1,202.3 197.5,199.7 201.0,197.0 204.4,194.4 207.9,191.7 211.3,189.1 214.8,186.4 218.2,183.8 221.7,181.1 225.1,178.5 228.6,175.8 232.0,173.1 235.5,170.5 238.9,167.8 242.4,165.2 245.8,162.5 249.3,159.9 252.7,157.2 256.2,154.6 259.6,151.9 263.1,149.2 266.5,146.6 270.0,143.9 273.4,141.3 276.9,138.6 280.3,136.0 283.8,133.3 287.2,130.7 290.7,128.0 294.1,125.3 297.6,122.7 301.0,120.0 304.5,117.4 307.9,114.7 311.4,112.1 314.8,109.4 318.3,106.8 321.7,104.1 325.2,101.4 328.6,98.8 332.1,96.1 335.5,93.5 339.0,90.8 342.4,88.2 345.9,85.5 349.3,82.9 352.8,80.2 356.2,77.5 359.7,74.9 363.1,72.2 366.6,69.6 370.0,66.9 373.5,64.3 376.9,61.6 380.4,59.0 383.8,56.3 387.3,53.6 390.7,51.0 394.2,48.3 397.6,45.7 401.1,43.0 404.5,40.4 408.0,37.7" fill="none" stroke="#047857" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+        <polyline points="63.0,54.3 66.4,56.3 69.9,58.3 73.3,60.3 76.8,62.3 80.2,64.3 83.7,66.3 87.1,68.2 90.6,70.2 94.0,72.2 97.5,74.2 100.9,76.2 104.4,78.2 107.8,80.2 111.3,82.2 114.7,84.2 118.2,86.2 121.6,88.2 125.1,90.2 128.5,92.1 132.0,94.1 135.4,96.1 138.9,98.1 142.3,100.1 145.8,102.1 149.2,104.1 152.7,106.1 156.1,108.1 159.6,110.1 163.0,112.1 166.5,114.1 169.9,116.0 173.4,118.0 176.8,120.0 180.3,122.0 183.7,124.0 187.2,126.0 190.6,128.0 194.1,130.0 197.5,132.0 201.0,134.0 204.4,136.0 207.9,138.0 211.3,139.9 214.8,141.9 218.2,143.9 221.7,145.9 225.1,147.9 228.6,149.9 232.0,151.9 235.5,153.9 238.9,155.9 242.4,157.9 245.8,159.9 249.3,161.9 252.7,163.8 256.2,165.8 259.6,167.8 263.1,169.8 266.5,171.8 270.0,173.8 273.4,175.8 276.9,177.8 280.3,179.8 283.8,181.8 287.2,183.8 290.7,185.8 294.1,187.7 297.6,189.7 301.0,191.7 304.5,193.7 307.9,195.7 311.4,197.7 314.8,199.7 318.3,201.7 321.7,203.7 325.2,205.7 328.6,207.7 332.1,209.7 335.5,211.6 339.0,213.6 342.4,215.6 345.9,217.6 349.3,219.6 352.8,221.6 356.2,223.6 359.7,225.6 363.1,227.6 366.6,229.6 370.0,231.6 373.5,233.6 376.9,235.5 380.4,237.5 383.8,239.5 387.3,241.5 390.7,243.5 394.2,245.5 397.6,247.5 401.1,249.5 404.5,251.5 408.0,253.5" fill="none" stroke="#ef4444" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="124.6" cy="255.8" r="4" fill="#047857"/>
+        <text x="132.6" y="271.8" font-size="11" fill="#047857" font-weight="600">(0; −4)</text>
+        <circle cx="247.8" cy="161.0" r="4" fill="#047857"/>
+        <text x="255.8" y="153.0" font-size="11" fill="#047857" font-weight="600">(2; 0)</text>
+        <circle cx="124.6" cy="89.9" r="4" fill="#ef4444"/>
+        <text x="72.6" y="81.9" font-size="11" fill="#ef4444" font-weight="600">(0; 3)</text>
+        <rect x="278" y="13" width="136" height="40" rx="4" fill="#ffffff" fill-opacity=".88"/>
+        <line x1="282" y1="22" x2="300" y2="22" stroke="#047857" stroke-width="2.4"/>
+        <text x="305" y="26" font-size="11" fill="#0f172a">f(x) = 2x − 4</text>
+        <line x1="282" y1="39" x2="300" y2="39" stroke="#ef4444" stroke-width="2.4"/>
+        <text x="305" y="43" font-size="11" fill="#0f172a">g(x) = −1,5x + 3</text>
+      </svg>
+      <div class="cap">A <span class="math inline">\(k&gt;0\)</span> növekvő, a <span class="math inline">\(k&lt;0\)</span> csökkenő egyenest ad. Az <span class="math inline">\(n\)</span> az a szám, ahol a grafikon az <span class="math inline">\(y\)</span>-tengelyt metszi.</div>
+    </div>
+<h2 id="s2">Ábrázolás és nullahely</h2>
+    <p>Az egyenest <b>két különböző pontja</b> egyértelműen meghatározza — érdemes a két tengelymetszetet választani. A <b>nullahely</b> az az <span class="math inline">\(x\)</span>, ahol <span class="math inline">\(f(x)=0\)</span> (a grafikon itt metszi az <span class="math inline">\(x\)</span>-tengelyt): a <span class="math inline">\(kx+n=0\)</span> egyenletből — ha <span class="math inline">\(k\neq 0\)</span> — <span class="math inline">\(x=-\dfrac{n}{k}\)</span>. Ha <span class="math inline">\(k=0\)</span>, a grafikon vízszintes: <span class="math inline">\(n\neq 0\)</span> esetén nincs nullahely, <span class="math inline">\(n=0\)</span> esetén viszont minden szám az.</p>
     <div class="doboz pelda" id="pelda-abrazolas">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
       Ábrázold: <span class="math inline">\(f(x)=2x-4\)</span>. Add meg a nullahelyét és a tengelymetszetét!
-      <details><summary>Megoldás</summary><div class="bel"><p>Tengelymetszet: <span class="math inline">\((0,-4)\)</span>. Nullahely: <span class="math inline">\(2x-4=0\Rightarrow x=2\)</span>, tehát a <span class="math inline">\((2,0)\)</span> pont. E két ponton át húzzuk az egyenest. Meredeksége <span class="math inline">\(k=2\)</span> (növekvő).</p></div></details>
+      <details><summary>Megoldás</summary><div class="bel"><p>Tengelymetszet: <span class="math inline">\((0;-4)\)</span>. Nullahely: <span class="math inline">\(2x-4=0\Rightarrow x=2\)</span>, tehát a <span class="math inline">\((2;0)\)</span> pont. E két ponton át húzzuk az egyenest. Meredeksége <span class="math inline">\(k=2\)</span> (növekvő).</p></div></details>
     </div>
 
     <h2 id="s3">Adott ponton áthaladó egyenes</h2>
     <p>Ha ismerjük egy egyenes egy pontját és valamely paraméterét, behelyettesítéssel megkapjuk a hiányzót: a pont koordinátáit beírjuk <span class="math inline">\(f(x)=kx+n\)</span>-be, és megoldjuk a keletkező (általában lineáris) egyenletet.</p>
     <div class="doboz pelda" id="pelda-pont">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
-      Milyen <span class="math inline">\(m\)</span> esetén halad át az <span class="math inline">\(y=(2m-1)x+3\)</span> egyenes a <span class="math inline">\(P(2,5)\)</span> ponton?
+      Milyen <span class="math inline">\(m\)</span> esetén halad át az <span class="math inline">\(y=(2m-1)x+3\)</span> egyenes a <span class="math inline">\(P(2;5)\)</span> ponton?
       <details><summary>Megoldás</summary><div class="bel"><p>Behelyettesítjük <span class="math inline">\(x=2,\ y=5\)</span>-öt: <span class="math inline">\(5=(2m-1)\cdot 2+3\)</span>, azaz <span class="math inline">\(2=(2m-1)\cdot 2\)</span>, innen <span class="math inline">\(2m-1=1\)</span>, tehát <span class="math inline">\(m=1\)</span>.</p></div></details>
     </div>
-    <div class="kviz" data-answer="0" data-jo="✔ Nullahely x = 3: az 5 − x/... azaz f(x)=0 megoldása." data-nem="✘ A nullahely f(x)=0-ból: 6 − 2x = 0 → x = 3.">
+    <div class="kviz" data-answer="0" data-jo="✔ A nullahely az f(x) = 0 megoldása: 6 − 2x = 0, innen x = 3." data-nem="✘ A nullahely f(x)=0-ból: 6 − 2x = 0 → x = 3.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
       <p>Hol van az <span class="math inline">\(f(x)=6-2x\)</span> függvény nullahelye?</p>
       <div class="opciok"><button><span class="math inline">\(x=3\)</span></button><button><span class="math inline">\(x=-3\)</span></button><button><span class="math inline">\(x=6\)</span></button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
+      <p>Az <span class="math inline">\(f(x)=6-2x\)</span> meredeksége <b>nem</b> <span class="math inline">\(6\)</span>, hanem <span class="math inline">\(-2\)</span>! A <span class="math inline">\(k\)</span> mindig az <span class="math inline">\(x\)</span> <b>együtthatója</b>, nem az, ami elöl áll. Rendezd előbb <span class="math inline">\(kx+n\)</span> alakra, és csak utána olvasd le.</p>
+    </div>
+
 
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-linearis-egyenletek-es-rendszerek.html#alap-4">🐜 Henrik-bevetés <span class="cimke">A 4–5, 9</span></a><a class="sav bruno" href="feladatok-linearis-egyenletek-es-rendszerek.html#kozep-5">💥 Brúnó-bevetés <span class="cimke">K 5, 20</span></a></div></div></div>
 

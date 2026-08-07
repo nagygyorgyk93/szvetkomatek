@@ -296,6 +296,20 @@ def kanon_ellenorzes(ut: Path) -> tuple[list[str], list[str]]:
     if m.verem:
         hibak.append(f"nyitva maradt tag(ek): {m.verem[-3:]}")
 
+    # --- kánonsorrend: az utolsó h2 UTÁN jön a gyakorolj, az outro, majd a lapozó ---
+    if tananyag:
+        # a záró 🧾 Gyorsismétlő kánonosan a Gyakorolj!-sáv UTÁN áll — nem hiba
+        _h2 = [m.start() for m in re.finditer(r'<h2 id="s\d+"[^>]*>(?!\s*🧾)', s)]
+        if _h2:
+            _gy = s.rfind('class="gyakorolj"')
+            _ou = s.find('data-outro')
+            if 0 < _gy < _h2[-1]:
+                figy.append('a Gyakorolj!-sáv az utolsó <h2> ELŐTT áll — a lap kétszer ér véget')
+            if 0 < _ou < _h2[-1]:
+                figy.append('az outro-brief az utolsó <h2> ELŐTT áll — utána még jön egy teljes szakasz')
+            if _ou < 0:
+                figy.append('nincs outro-brief (data-outro) — hiányzik az átvezetés a következő egységre')
+
     # --- link nélküli visszautalás korábbi anyagra ---
     if tananyag:
         _h = re.sub(r'data:[^"]+', '', s)

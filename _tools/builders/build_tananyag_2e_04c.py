@@ -249,14 +249,14 @@ C1 = [
 C2 = [
  ("📡 Küldetés-eligazítás", [
    brief('<b>Szürke Janka:</b> Egy valódi jel sosem a tiszta $\\sin x$. Van <b>erőssége</b> '
-         '(mekkorát hullámzik), <b>frekvenciája</b> (milyen sűrűn) és <b>fázisa</b> '
-         '(mikor kezdődik). Ez a három adat az $A$, a $b$ és a $c$ — és mindhárom '
-         'ugyanúgy viselkedik, mint a korábbi függvénytranszformációknál. Ha ezt '
+         '(mekkorát hullámzik), <b>körfrekvenciája</b> (milyen sűrűn ismétlődik) és <b>fázisa</b> '
+         '(mikor kezdődik). Ez a három adat az $A$, a $b$ és a $c$ — és mindhárom a függvénytranszformációk logikáját követi, de kettőnél lesz egy csavar, amire külön figyelmeztetlek. Ha ezt '
          'elolvasod egy grafikonról, gyakorlatilag megfejtetted a jelet.'),
  ]),
 
  ("Az amplitúdó", [
-   abra(SVG_AMPL, "Az $y=A\\sin x$ görbe $|A|$-szorosára nyúlik függőlegesen. "
+   abra(SVG_AMPL, "Az $y=A\\sin x$ görbe $|A|$-szorosára nyúlik — $|A|&lt;1$ esetén "
+                  "lapul — függőlegesen. "
                   "Az értékkészlet $[-|A|;|A|]$, a periódus <b>nem változik</b>."),
    doboz("tetel", "Amplitúdó",
          '<p>Az $y=A\\sin x$ függvény <b>amplitúdója</b> $|A|$: ennyivel tér ki a görbe '
@@ -272,8 +272,7 @@ C2 = [
          '<p>Az $y=\\sin bx$ (és az $y=\\cos bx$) függvény periódusa</p>'
          '$$p=\\frac{2\\pi}{|b|}\\qquad(b\\neq 0),$$'
          '<p>az $y=\\operatorname{tg}bx$ függvényé pedig $p=\\dfrac{\\pi}{|b|}$.</p>'
-         '<p>Vagyis $b$ azt mondja meg, <b>hányszor</b> fut le egy teljes hullám a '
-         'megszokott $2\\pi$ hosszon.</p>',
+         '<p>Vagyis $b$ azt mondja meg, hogy a megszokott $2\\pi$ hosszra <b>hány hullám jut</b> — $b=\\tfrac12$ esetén például csak fél.</p>',
          hid="tetel-periodus"),
    doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>A $b$ <b>osztja</b> a periódust, nem szorozza. Az $y=\\sin 2x$ periódusa '
@@ -282,14 +281,15 @@ C2 = [
          'próbaértéket behelyettesíteni.</p>'),
    kviz('Mekkora az $y=\\sin(3x)$ függvény periódusa?',
         ['$\\tfrac{2\\pi}{3}$', '$2\\pi$', '$6\\pi$'], 0,
-        jo="✔ A B szorzó OSZTJA a periódust: 2π/3. Nagyobb B → sűrűbb, rövidebb hullám.",
-        nem="✘ Vigyázz, ez fordítva hat, mint az amplitúdó: az y = sin(Bx) periódusa 2π/B, "
-            "tehát B = 3 esetén 2π/3 — a görbe SŰRŰBB lesz."),
+        jo="✔ A b szorzó OSZTJA a periódust: 2π/3. Nagyobb b → sűrűbb, rövidebb hullám.",
+        nem="✘ Vigyázz, ez fordítva hat, mint az amplitúdó: az y = sin(bx) periódusa 2π/b, "
+            "tehát b = 3 esetén 2π/3 — a görbe SŰRŰBB lesz."),
  ]),
 
  ("Fáziseltolás és a teljes alak", [
-   abra(SVG_FAZIS, "A $+c$ a kitevőben <b>balra</b>, a $-c$ <b>jobbra</b> tolja a görbét; "
-                   "a végén álló $+d$ pedig <b>felfelé</b>."),
+   abra(SVG_FAZIS, "A zárójelben álló $+c$ <b>balra</b>, a $-c$ <b>jobbra</b> tolja a "
+                   "görbét — méghozzá $\\tfrac{|c|}{b}$-vel, nem $|c|$-vel; a végén álló "
+                   "$+d$ pedig <b>felfelé</b>."),
    doboz("tetel", "Az $y=A\\sin(bx+c)+d$ alak",
          '<div class="tblwrap"><table>'
          '<tr><th>Paraméter</th><th>Neve</th><th>Hatása</th></tr>'
@@ -318,15 +318,14 @@ C2 = [
                   '$[1-3;\\,1+3]=\\boxed{[-2;4]}$.</p>')),
    doboz("erdekesseg", "Ez a hangod és a váltakozó áram is",
          '<p>Egy tiszta hang matematikai alakja $y=A\\sin(2\\pi f t)$: az $A$ a '
-         '<b>hangerő</b>, az $f$ a <b>frekvencia</b> (hertzben), ami a magasságot adja. '
-         'A hálózati feszültség szintén ilyen: $230\\,\\text{V}$ effektív érték, '
-         '$50\\,\\text{Hz}$ — vagyis másodpercenként ötvenszer fut le a teljes hullám.</p>'),
-   kviz('Mennyi az $y=\\sin 3x$ függvény periódusa?',
-        ['$\\tfrac{2\\pi}{3}$', '$6\\pi$', '$3\\pi$'], 0,
-        jo="✔ p = 2π / |b| = 2π/3.",
-        nem="✘ A b OSZTJA a periódust: 2π/3."),
+         '<b>hangerő</b>, az $f$ a <b>frekvencia</b> (hertzben), ami a hang <b>magasságát</b> adja. '
+         'A hálózati feszültség szintén ilyen hullám: a <b>csúcsértéke</b> $A\\approx 325\\,\\text{V}$, ebből adódik a jól ismert $230\\,\\text{V}$ <b>effektív</b> érték; a frekvencia $50\\,\\text{Hz}$ — vagyis másodpercenként ötvenszer fut le a teljes hullám.</p>'),
+   kviz('Mennyivel tolódik el az $y=\\sin(2x-\\pi)$ görbe?',
+        ['$\\tfrac{\\pi}{2}$-vel jobbra', '$\\pi$-vel jobbra', '$\\pi$-vel balra'], 0,
+        jo="✔ Emeld ki a b-t: sin(2x − π) = sin(2(x − π/2)), tehát π/2-vel jobbra.",
+        nem="✘ Az eltolás nem −c, hanem −c/b. Emeld ki a 2-t: 2x − π = 2(x − π/2)."),
    gyakorolj(FGY + "#alap-6", "A 6–11", FGY + "#kozep-4", "K 4–8"),
- ]),
+]),
 ]
 
 # ===================================================================== C3
@@ -344,14 +343,13 @@ C3 = [
    abra(SVG_EGY, "A $\\sin x=\\tfrac12$ egyenlet megoldásai ott vannak, ahol a "
                  "hullám metszi az $y=\\tfrac12$ egyenest — <b>periódusonként kétszer</b>."),
    doboz("tetel", "A három alaptípus",
-         '<p>Legyen $\\alpha$ az az <b>alapszög</b> az első negyedben, amelyre a keresett '
-         'függvényérték abszolút értéke teljesül.</p>'
-         '<p><b>1.</b> $\\sin x=a$ (csak ha $|a|\\le 1$): <b>két</b> megoldáscsalád, mert a '
-         'szinusz két negyedben veszi fel ugyanazt az értéket.</p>'
-         '<p><b>2.</b> $\\cos x=a$ (csak ha $|a|\\le 1$): szintén két család, amelyek '
-         'gyakran $\\pm$ alakba vonhatók össze.</p>'
-         '<p><b>3.</b> $\\operatorname{tg}x=a$ (bármely $a$-ra): <b>egyetlen</b> család, '
-         'mert a periódus $\\pi$.</p>'
+         '<p>Legyen $\\alpha$ az az első negyedbeli <b>alapszög</b> ($0\\le\\alpha\\le\\tfrac{\\pi}{2}$), amelyre a szóban forgó szögfüggvény értéke épp $|a|$. Az alábbiakban végig $k\\in\\mathbb{Z}$.</p>'
+         '<p><b>1.</b> $\\sin x=a$ (csak ha $|a|\\le 1$): <b>két</b> megoldáscsalád, mert a szinusz két negyedben veszi fel ugyanazt az értéket.</p>'
+         '$$x=\\alpha+2k\\pi\\qquad\\text{vagy}\\qquad x=\\pi-\\alpha+2k\\pi$$'
+         '<p><b>2.</b> $\\cos x=a$ (csak ha $|a|\\le 1$): szintén két család, de ezek <b>mindig</b> összevonhatók $\\pm$ alakba, mert a koszinusz páros függvény.</p>'
+         '$$x=\\pm\\alpha+2k\\pi$$'
+         '<p><b>3.</b> $\\operatorname{tg}x=a$ (bármely $a$-ra): <b>egyetlen</b> család, mert a periódus $\\pi$.</p>'
+         '$$x=\\alpha+k\\pi$$'
          '<p>Minden megoldáshoz oda kell írni a periódust — és a $k\\in\\mathbb{Z}$-t!</p>',
          hid="tetel-alaptipusok"),
    doboz("pelda", "Vészterem-szimuláció",
@@ -370,8 +368,8 @@ C3 = [
                   'x=\\frac{7\\pi}{6}+2k\\pi,\\qquad k\\in\\mathbb{Z}$$'
                   '<p><b>c)</b> A tangens periódusa $\\pi$, ezért egyetlen család elég:</p>'
                   '$$x=\\frac{\\pi}{4}+k\\pi,\\qquad k\\in\\mathbb{Z}$$')),
-   doboz("tetel", "A négy speciális eset",
-         '<p>Ha az érték épp $\\pm 1$ vagy $0$, a két család <b>egybeesik</b>:</p>'
+   doboz("tetel", "A speciális esetek",
+         '<p>Ha az érték épp $\\pm 1$, a két megoldáscsalád <b>egybeesik</b>; ha $0$, akkor a kettő egyetlen képletbe <b>vonható össze</b>. Mindegyik sorban $k\\in\\mathbb{Z}$.</p>'
          '<div class="tblwrap"><table>'
          '<tr><th>Egyenlet</th><th>Megoldás</th></tr>'
          '<tr><td>$\\sin x=1$</td><td>$x=\\tfrac{\\pi}{2}+2k\\pi$</td></tr>'
@@ -385,7 +383,7 @@ C3 = [
    doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>Három visszatérő hiba:</p>'
          '<ol class="reszfeladatok">'
-         '<li><b>Elhagyni a $+2k\\pi$-t.</b> A $x=\\tfrac{\\pi}{6}$ önmagában <b>nem</b> '
+         '<li><b>Elhagyni a $+2k\\pi$-t.</b> Az $x=\\tfrac{\\pi}{6}$ önmagában <b>nem</b> '
          'a megoldás, csak egy megoldás. A feladat az <b>összeset</b> kérdezi.</li>'
          '<li><b>Csak az egyik családot megadni.</b> A $\\sin x=\\tfrac12$-nek '
          '<b>két</b> családja van — a második nem $\\tfrac{\\pi}{6}$-ból, hanem a '
@@ -401,8 +399,9 @@ C3 = [
    doboz("tetel", "A helyettesítéses gondolat",
          '<p>Ha az egyenlet $\\sin bx=a$ alakú, kezeld a $bx$-et <b>egyetlen szögként</b>: '
          'oldd meg a $bx$-re, és <b>csak a legvégén</b> ossz $b$-vel — a $2k\\pi$-t is!</p>'
-         '<p>Így a megoldások periódusa $\\tfrac{2k\\pi}{b}$ lesz, tehát '
-         '<b>sűrűbben</b> következnek.</p>',
+         '<p>Így a megoldáscsaládok periódusa $\\tfrac{2\\pi}{b}$ lesz, tehát <b>sűrűbben</b> '
+         'következnek. Vigyázz: ez a $2k\\pi$-re vonatkozik — <b>tangensnél</b> a $k\\pi$ osztódik $b$-vel, tehát $\\operatorname{tg}bx=a$ megoldása $x=\\tfrac{\\alpha}{b}+\\tfrac{k\\pi}{b}$.</p>'
+         '<p>Ha a szög nem $bx$, hanem <b>$x+c$</b> alakú (például $\\sin\\left(x+\\tfrac{\\pi}{6}\\right)=1$), ugyanígy járj el: oldd meg az $x+c$-re, és a legvégén vond ki a $c$-t. A periódus ilyenkor nem változik.</p>',
          hid="tetel-bx"),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg! <b>a)</b> $2\\sin 2x+\\sqrt2=0$; <b>b)</b> $2\\cos 3x=\\sqrt3$.</p>',
@@ -424,11 +423,6 @@ C3 = [
          '$x=\\tfrac{\\pi}{2}+2k\\pi$'], 0,
         jo="✔ A szinusz a 3π/2-ben (270°-ban) veszi fel a −1-et, és ez 2π-ként ismétlődik.",
         nem="✘ A minimumhely x = 3π/2 + 2kπ (ez ugyanaz, mint −π/2 + 2kπ)."),
-   gyakorolj(FGY + "#alap-12", "A 12–19", FGY + "#kozep-9", "K 9–15"),
-   brief('<b>Szürke Janka:</b> A hullámot értjük, az egyenleteket megoldjuk. Egy dolog maradt, '
-         'és az a legkézzelfoghatóbb az egészben: ha a terepen ismerek <b>néhány</b> '
-         'távolságot és szöget, ki tudom-e számolni a többit? Ehhez két tétel kell — és '
-         'ezekkel bemérhető egy torony, egy hegy vagy egy ellenséges bázis.', outro=True),
  ]),
 
  ("Alap trigonometrikus egyenlőtlenségek", [
@@ -458,7 +452,12 @@ C3 = [
         ['$(30^\\circ;150^\\circ)$', '$(150^\\circ;330^\\circ)$', '$(0^\\circ;30^\\circ)$'], 0,
         jo="✔ A két határszög 30° és 150°, és közöttük halad a kör felső íve, ahol a szinusz (az y-koordináta) nagyobb 1/2-nél.",
         nem="✘ A határszögek 30° és 150°. Kérdés, hogy közöttük vagy rajtuk kívül nagyobb a szinusz 1/2-nél: a kör FELSŐ ívén, tehát 30° és 150° KÖZÖTT."),
- ]),
+    gyakorolj(FGY + "#alap-12", "A 12–19", FGY + "#kozep-9", "K 9–15"),
+   brief('<b>Szürke Janka:</b> A hullámot értjük, az egyenleteket megoldjuk. Egy dolog maradt, '
+         'és az a legkézzelfoghatóbb az egészben: ha a terepen ismerek <b>néhány</b> '
+         'távolságot és szöget, ki tudom-e számolni a többit? Ehhez két tétel kell — és '
+         'ezekkel bemérhető egy torony, egy hegy vagy egy ellenséges bázis.', outro=True),
+]),
 
 ]
 
@@ -485,10 +484,10 @@ KI = [
      kovetkezo=("tananyag-trigonometrikus-egyenletek.html",
                 "Egyszerű trigonometrikus egyenletek")),
  lap(**T, fajl="tananyag-trigonometrikus-egyenletek.html",
-     cim="Egyszerű trigonometrikus egyenletek",
-     cim_tiszta="Egyszerű trigonometrikus egyenletek",
-     alcim="A három alaptípus, a végtelen sok megoldás felírása, a speciális esetek "
-           "és a $bx$ alakú szögek kezelése.",
+     cim="Trigonometrikus egyenletek és egyenlőtlenségek",
+     cim_tiszta="Trigonometrikus egyenletek és egyenlőtlenségek",
+     alcim="A három alaptípus és általános megoldásuk, a speciális esetek, a $bx$ "
+           "alakú szögek kezelése és az alap egyenlőtlenségek.",
      chip="A Fázisugrás · 9/11", szakaszok=C3,
      elozo=("tananyag-osszetett-trig-fuggvenyek.html", "Amplitúdó, periódus és fáziseltolás"),
      kovetkezo=(FGY, "Feladatok — függvények és egyenletek")),

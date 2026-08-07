@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Egyszerű trigonometrikus egyenletek — tananyag | 2e | Szvetkó matek</title>
+<title>Trigonometrikus egyenletek és egyenlőtlenségek — tananyag | 2e | Szvetkó matek</title>
 <link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../assets/css/theme.css">
 <link rel="stylesheet" href="../../assets/css/print.css">
@@ -22,11 +22,11 @@
   <a href="../../index.html">Főhadiszállás</a> ›
   <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
   <a href="index.html">Trigonometrikus függvények</a> ›
-  <span class="itt">Egyszerű trigonometrikus egyenletek — tananyag</span>
+  <span class="itt">Trigonometrikus egyenletek és egyenlőtlenségek — tananyag</span>
 </nav>
 <div class="hero">
-  <h1>Egyszerű trigonometrikus egyenletek</h1>
-  <p class="alcim">A három alaptípus, a végtelen sok megoldás felírása, a speciális esetek és a <span class="math inline">\(bx\)</span> alakú szögek kezelése.</p>
+  <h1>Trigonometrikus egyenletek és egyenlőtlenségek</h1>
+  <p class="alcim">A három alaptípus és általános megoldásuk, a speciális esetek, a <span class="math inline">\(bx\)</span> alakú szögek kezelése és az alap egyenlőtlenségek.</p>
   <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Fázisugrás · 9/11</span></div>
 </div>
 <main class="lap toc-os">
@@ -66,7 +66,7 @@
 
     <div class="doboz tetel" id="tetel-alaptipusok">
       <p class="cim"><span class="ikon">📘</span> A három alaptípus</p>
-      <p>Legyen <span class="math inline">\(\alpha\)</span> az az <b>alapszög</b> az első negyedben, amelyre a keresett függvényérték abszolút értéke teljesül.</p><p><b>1.</b> <span class="math inline">\(\sin x=a\)</span> (csak ha <span class="math inline">\(|a|\le 1\)</span>): <b>két</b> megoldáscsalád, mert a szinusz két negyedben veszi fel ugyanazt az értéket.</p><p><b>2.</b> <span class="math inline">\(\cos x=a\)</span> (csak ha <span class="math inline">\(|a|\le 1\)</span>): szintén két család, amelyek gyakran <span class="math inline">\(\pm\)</span> alakba vonhatók össze.</p><p><b>3.</b> <span class="math inline">\(\operatorname{tg}x=a\)</span> (bármely <span class="math inline">\(a\)</span>-ra): <b>egyetlen</b> család, mert a periódus <span class="math inline">\(\pi\)</span>.</p><p>Minden megoldáshoz oda kell írni a periódust — és a <span class="math inline">\(k\in\mathbb{Z}\)</span>-t!</p>
+      <p>Legyen <span class="math inline">\(\alpha\)</span> az az első negyedbeli <b>alapszög</b> (<span class="math inline">\(0\le\alpha\le\tfrac{\pi}{2}\)</span>), amelyre a szóban forgó szögfüggvény értéke épp <span class="math inline">\(|a|\)</span>. Az alábbiakban végig <span class="math inline">\(k\in\mathbb{Z}\)</span>.</p><p><b>1.</b> <span class="math inline">\(\sin x=a\)</span> (csak ha <span class="math inline">\(|a|\le 1\)</span>): <b>két</b> megoldáscsalád, mert a szinusz két negyedben veszi fel ugyanazt az értéket.</p><span class="math display">\[x=\alpha+2k\pi\qquad\text{vagy}\qquad x=\pi-\alpha+2k\pi\]</span><p><b>2.</b> <span class="math inline">\(\cos x=a\)</span> (csak ha <span class="math inline">\(|a|\le 1\)</span>): szintén két család, de ezek <b>mindig</b> összevonhatók <span class="math inline">\(\pm\)</span> alakba, mert a koszinusz páros függvény.</p><span class="math display">\[x=\pm\alpha+2k\pi\]</span><p><b>3.</b> <span class="math inline">\(\operatorname{tg}x=a\)</span> (bármely <span class="math inline">\(a\)</span>-ra): <b>egyetlen</b> család, mert a periódus <span class="math inline">\(\pi\)</span>.</p><span class="math display">\[x=\alpha+k\pi\]</span><p>Minden megoldáshoz oda kell írni a periódust — és a <span class="math inline">\(k\in\mathbb{Z}\)</span>-t!</p>
     </div>
 
     <div class="doboz pelda" id="pelda-alapegyenletek">
@@ -76,13 +76,13 @@
     </div>
 
     <div class="doboz tetel" id="tetel-specialis">
-      <p class="cim"><span class="ikon">📘</span> A négy speciális eset</p>
-      <p>Ha az érték épp <span class="math inline">\(\pm 1\)</span> vagy <span class="math inline">\(0\)</span>, a két család <b>egybeesik</b>:</p><div class="tblwrap"><table><tr><th>Egyenlet</th><th>Megoldás</th></tr><tr><td><span class="math inline">\(\sin x=1\)</span></td><td><span class="math inline">\(x=\tfrac{\pi}{2}+2k\pi\)</span></td></tr><tr><td><span class="math inline">\(\sin x=-1\)</span></td><td><span class="math inline">\(x=\tfrac{3\pi}{2}+2k\pi\)</span></td></tr><tr><td><span class="math inline">\(\sin x=0\)</span></td><td><span class="math inline">\(x=k\pi\)</span></td></tr><tr><td><span class="math inline">\(\cos x=1\)</span></td><td><span class="math inline">\(x=2k\pi\)</span></td></tr><tr><td><span class="math inline">\(\cos x=-1\)</span></td><td><span class="math inline">\(x=\pi+2k\pi\)</span></td></tr><tr><td><span class="math inline">\(\cos x=0\)</span></td><td><span class="math inline">\(x=\tfrac{\pi}{2}+k\pi\)</span></td></tr></table></div>
+      <p class="cim"><span class="ikon">📘</span> A speciális esetek</p>
+      <p>Ha az érték épp <span class="math inline">\(\pm 1\)</span>, a két megoldáscsalád <b>egybeesik</b>; ha <span class="math inline">\(0\)</span>, akkor a kettő egyetlen képletbe <b>vonható össze</b>. Mindegyik sorban <span class="math inline">\(k\in\mathbb{Z}\)</span>.</p><div class="tblwrap"><table><tr><th>Egyenlet</th><th>Megoldás</th></tr><tr><td><span class="math inline">\(\sin x=1\)</span></td><td><span class="math inline">\(x=\tfrac{\pi}{2}+2k\pi\)</span></td></tr><tr><td><span class="math inline">\(\sin x=-1\)</span></td><td><span class="math inline">\(x=\tfrac{3\pi}{2}+2k\pi\)</span></td></tr><tr><td><span class="math inline">\(\sin x=0\)</span></td><td><span class="math inline">\(x=k\pi\)</span></td></tr><tr><td><span class="math inline">\(\cos x=1\)</span></td><td><span class="math inline">\(x=2k\pi\)</span></td></tr><tr><td><span class="math inline">\(\cos x=-1\)</span></td><td><span class="math inline">\(x=\pi+2k\pi\)</span></td></tr><tr><td><span class="math inline">\(\cos x=0\)</span></td><td><span class="math inline">\(x=\tfrac{\pi}{2}+k\pi\)</span></td></tr></table></div>
     </div>
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
-      <p>Három visszatérő hiba:</p><ol class="reszfeladatok"><li><b>Elhagyni a <span class="math inline">\(+2k\pi\)</span>-t.</b> A <span class="math inline">\(x=\tfrac{\pi}{6}\)</span> önmagában <b>nem</b> a megoldás, csak egy megoldás. A feladat az <b>összeset</b> kérdezi.</li><li><b>Csak az egyik családot megadni.</b> A <span class="math inline">\(\sin x=\tfrac12\)</span>-nek <b>két</b> családja van — a második nem <span class="math inline">\(\tfrac{\pi}{6}\)</span>-ból, hanem a másik negyedből jön.</li><li><b>Nem venni észre, ha nincs megoldás.</b> A <span class="math inline">\(\sin x=1{,}5\)</span> vagy a <span class="math inline">\(\cos x=-3\)</span> egyenletnek <b>nincs</b> megoldása, mert az értékkészlet <span class="math inline">\([-1;1]\)</span>.</li></ol>
+      <p>Három visszatérő hiba:</p><ol class="reszfeladatok"><li><b>Elhagyni a <span class="math inline">\(+2k\pi\)</span>-t.</b> Az <span class="math inline">\(x=\tfrac{\pi}{6}\)</span> önmagában <b>nem</b> a megoldás, csak egy megoldás. A feladat az <b>összeset</b> kérdezi.</li><li><b>Csak az egyik családot megadni.</b> A <span class="math inline">\(\sin x=\tfrac12\)</span>-nek <b>két</b> családja van — a második nem <span class="math inline">\(\tfrac{\pi}{6}\)</span>-ból, hanem a másik negyedből jön.</li><li><b>Nem venni észre, ha nincs megoldás.</b> A <span class="math inline">\(\sin x=1{,}5\)</span> vagy a <span class="math inline">\(\cos x=-3\)</span> egyenletnek <b>nincs</b> megoldása, mert az értékkészlet <span class="math inline">\([-1;1]\)</span>.</li></ol>
     </div>
 
     <h2 id="s2">Ha a szög nem <span class="math inline">\(x\)</span>, hanem <span class="math inline">\(bx\)</span></h2>
@@ -91,7 +91,7 @@
 
     <div class="doboz tetel" id="tetel-bx">
       <p class="cim"><span class="ikon">📘</span> A helyettesítéses gondolat</p>
-      <p>Ha az egyenlet <span class="math inline">\(\sin bx=a\)</span> alakú, kezeld a <span class="math inline">\(bx\)</span>-et <b>egyetlen szögként</b>: oldd meg a <span class="math inline">\(bx\)</span>-re, és <b>csak a legvégén</b> ossz <span class="math inline">\(b\)</span>-vel — a <span class="math inline">\(2k\pi\)</span>-t is!</p><p>Így a megoldások periódusa <span class="math inline">\(\tfrac{2k\pi}{b}\)</span> lesz, tehát <b>sűrűbben</b> következnek.</p>
+      <p>Ha az egyenlet <span class="math inline">\(\sin bx=a\)</span> alakú, kezeld a <span class="math inline">\(bx\)</span>-et <b>egyetlen szögként</b>: oldd meg a <span class="math inline">\(bx\)</span>-re, és <b>csak a legvégén</b> ossz <span class="math inline">\(b\)</span>-vel — a <span class="math inline">\(2k\pi\)</span>-t is!</p><p>Így a megoldáscsaládok periódusa <span class="math inline">\(\tfrac{2\pi}{b}\)</span> lesz, tehát <b>sűrűbben</b> következnek. Vigyázz: ez a <span class="math inline">\(2k\pi\)</span>-re vonatkozik — <b>tangensnél</b> a <span class="math inline">\(k\pi\)</span> osztódik <span class="math inline">\(b\)</span>-vel, tehát <span class="math inline">\(\operatorname{tg}bx=a\)</span> megoldása <span class="math inline">\(x=\tfrac{\alpha}{b}+\tfrac{k\pi}{b}\)</span>.</p><p>Ha a szög nem <span class="math inline">\(bx\)</span>, hanem <b><span class="math inline">\(x+c\)</span></b> alakú (például <span class="math inline">\(\sin\left(x+\tfrac{\pi}{6}\right)=1\)</span>), ugyanígy járj el: oldd meg az <span class="math inline">\(x+c\)</span>-re, és a legvégén vond ki a <span class="math inline">\(c\)</span>-t. A periódus ilyenkor nem változik.</p>
     </div>
 
     <div class="doboz pelda" id="pelda-bx">
@@ -106,10 +106,6 @@
       <div class="opciok"><button><span class="math inline">\(x=\tfrac{3\pi}{2}+2k\pi\)</span></button><button><span class="math inline">\(x=-\tfrac{\pi}{2}+k\pi\)</span></button><button><span class="math inline">\(x=\tfrac{\pi}{2}+2k\pi\)</span></button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
-
-    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-trig-fuggvenyek-egyenletek.html#alap-12">🐾 Bestia-protokoll <span class="cimke">A 12–19</span></a><a class="sav bruno" href="feladatok-trig-fuggvenyek-egyenletek.html#kozep-9">🔥 Főnix-protokoll <span class="cimke">K 9–15</span></a></div></div></div>
-
-    <div class="brief" data-outro><p>📡 <b>Szürke Janka:</b> A hullámot értjük, az egyenleteket megoldjuk. Egy dolog maradt, és az a legkézzelfoghatóbb az egészben: ha a terepen ismerek <b>néhány</b> távolságot és szöget, ki tudom-e számolni a többit? Ehhez két tétel kell — és ezekkel bemérhető egy torony, egy hegy vagy egy ellenséges bázis.</p></div>
 
     <h2 id="s3">Alap trigonometrikus egyenlőtlenségek</h2>
 
@@ -137,6 +133,10 @@
       <div class="opciok"><button><span class="math inline">\((30^\circ;150^\circ)\)</span></button><button><span class="math inline">\((150^\circ;330^\circ)\)</span></button><button><span class="math inline">\((0^\circ;30^\circ)\)</span></button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-trig-fuggvenyek-egyenletek.html#alap-12">🐾 Bestia-protokoll <span class="cimke">A 12–19</span></a><a class="sav bruno" href="feladatok-trig-fuggvenyek-egyenletek.html#kozep-9">🔥 Főnix-protokoll <span class="cimke">K 9–15</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Szürke Janka:</b> A hullámot értjük, az egyenleteket megoldjuk. Egy dolog maradt, és az a legkézzelfoghatóbb az egészben: ha a terepen ismerek <b>néhány</b> távolságot és szöget, ki tudom-e számolni a többit? Ehhez két tétel kell — és ezekkel bemérhető egy torony, egy hegy vagy egy ellenséges bázis.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-osszetett-trig-fuggvenyek.html"><span class="irany">← Előző</span><span class="hova">Amplitúdó, periódus és fáziseltolás</span></a>
       <a class="kov" href="feladatok-trig-fuggvenyek-egyenletek.html"><span class="irany">Következő →</span><span class="hova">Feladatok — függvények és egyenletek</span></a>

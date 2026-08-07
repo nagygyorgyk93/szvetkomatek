@@ -26,7 +26,7 @@
 </nav>
 <div class="hero">
   <h1>Lineáris egyenlőtlenségek</h1>
-  <p class="alcim">Az egyenlőtlenség fogalma és megoldáshalmaza, az ekvivalens átalakítások (és az előjelfordítás szabálya), a megoldás ábrázolása számegyenesen és intervallummal.</p>
+  <p class="alcim">Az egyenlőtlenség fogalma és megoldáshalmaza, az ekvivalens átalakítások (és a relációjel megfordulásának szabálya), a megoldás ábrázolása számegyenesen és intervallummal.</p>
   <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Végső Egyenlet · 2/4</span></div>
 </div>
 <main class="lap toc-os">
@@ -35,9 +35,10 @@
       <div class="brief"><p>📡 <b>Nada:</b> A terepen ritkán van pontos érték — inkább <b>korlátok</b> vannak: „legalább ennyi üzemanyag", „legfeljebb ennyi idő". Az <b>egyenlőtlenség</b> ezeket a taktikai határokat írja le, és a megoldása nem egyetlen szám, hanem egy egész <b>tartomány</b>. A megoldás majdnem ugyanúgy megy, mint az egyenletnél — egyetlen csavarral, amit Kán imád kihasználni.</p></div>
     <p>A <b>lineáris egyenlőtlenség</b> az egyenlethez hasonló, de az <span class="math inline">\(=\)</span> helyett <span class="math inline">\(&lt;,\ >,\ \le,\ \ge\)</span> reláció áll. A <b>megoldáshalmaz</b> azoknak az <span class="math inline">\(x\)</span> értékeknek a halmaza, amelyekre a reláció igaz.</p>
 
-    <h2 id="s1">Megoldás és az előjelfordítás szabálya</h2>
+    <h2 id="s1">Megoldás és a relációjel megfordulásának szabálya</h2>
     <div class="doboz tetel" id="tetel-atalakitas">
       <p class="cim"><span class="ikon">📘</span> Ekvivalens átalakítások</p>
+      <p><b>Ekvivalensnek</b> nevezzük azt az átalakítást, amely nem változtatja meg a megoldáshalmazt — ezért baj, ha a relációjel nem fordul meg ott, ahol kell.</p>
       <p>Mindkét oldalhoz hozzáadhatunk/kivonhatunk ugyanannyit, és szorozhatunk/oszthatunk ugyanazzal a <b>pozitív</b> számmal — a reláció iránya marad. <b>Negatív</b> számmal való szorzáskor / osztáskor viszont a reláció iránya <b>megfordul</b>: <span class="math inline">\(&lt;\)</span> ből <span class="math inline">\(>\)</span> lesz, és fordítva.</p>
     </div>
     <div class="doboz pelda" id="pelda-alap">
@@ -58,13 +59,13 @@
       <p class="visszajelzes"></p>
     </div>
     <h2 id="s2">Ábrázolás: számegyenes és intervallum</h2>
-    <p>A megoldáshalmazt kétféleképpen adjuk meg. A <b>számegyenesen</b> a határ <b>üres karika</b>, ha nem tartozik bele (<span class="math inline">\(&lt;,\ >\)</span>), és <b>tele karika</b>, ha beletartozik (<span class="math inline">\(\le,\ \ge\)</span>). <b>Intervallummal</b>: nyitott végpont <span class="math inline">\(( \ )\)</span>, zárt végpont <span class="math inline">\([\ ]\)</span>.</p>
+    <p>A megoldáshalmazt kétféleképpen adjuk meg. A <b>számegyenesen</b> a határ <b>üres karika</b>, ha nem tartozik bele (<span class="math inline">\(&lt;,\ >\)</span>), és <b>tele karika</b>, ha beletartozik (<span class="math inline">\(\le,\ \ge\)</span>). <b>Intervallummal</b>: nyitott végpont <span class="math inline">\(( \ )\)</span>, zárt végpont <span class="math inline">\([\ ]\)</span>. A <span class="math inline">\(+\infty\)</span> és a <span class="math inline">\(-\infty\)</span> nem szám, ezért ott a végpont <b>mindig nyílt</b>.</p>
     <div class="doboz pelda" id="pelda-intervallum">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
       Add meg intervallummal: <span class="math inline">\(x>2\)</span>; <span class="math inline">\(x\le -1\)</span>; <span class="math inline">\(-3\le x&lt;4\)</span>.
       <div class="svgwrap"><svg viewBox="0 0 460 92" width="460" height="92" role="img" aria-label="Az x nagyobb mint 2 megoldáshalmaza a számegyenesen">
-  <defs><marker id="nyil" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
-  <line x1="14" y1="52" x2="446" y2="52" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+  <defs><marker id="nyil-1" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+  <line x1="14" y1="52" x2="446" y2="52" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-1)"/>
   <line x1="26.0" y1="47" x2="26.0" y2="57" stroke="#0f172a" stroke-width="1"/>
   <text x="26.0" y="72" font-size="11" fill="#475569" text-anchor="middle">−2</text>
   <line x1="77.0" y1="47" x2="77.0" y2="57" stroke="#0f172a" stroke-width="1"/>
@@ -86,8 +87,8 @@
   <line x1="230.0" y1="38" x2="434.0" y2="38" stroke="#047857" stroke-width="3.4" stroke-linecap="round"/>
   <circle cx="230.0" cy="38" r="4.2" fill="#ffffff" stroke="#047857" stroke-width="2"/>
 </svg></div><p class="cap"><span class="math inline">\(x>2\)</span> — üres karika, mert a 2 nem tartozik bele</p><div class="svgwrap"><svg viewBox="0 0 460 92" width="460" height="92" role="img" aria-label="Az x kisebb vagy egyenlő mint mínusz 1 megoldáshalmaza">
-  <defs><marker id="nyil" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
-  <line x1="14" y1="52" x2="446" y2="52" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+  <defs><marker id="nyil-2" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+  <line x1="14" y1="52" x2="446" y2="52" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-2)"/>
   <line x1="26.0" y1="47" x2="26.0" y2="57" stroke="#0f172a" stroke-width="1"/>
   <text x="26.0" y="72" font-size="11" fill="#475569" text-anchor="middle">−5</text>
   <line x1="77.0" y1="47" x2="77.0" y2="57" stroke="#0f172a" stroke-width="1"/>
@@ -109,8 +110,8 @@
   <line x1="26.0" y1="38" x2="230.0" y2="38" stroke="#047857" stroke-width="3.4" stroke-linecap="round"/>
   <circle cx="230.0" cy="38" r="4.2" fill="#047857"/>
 </svg></div><p class="cap"><span class="math inline">\(x\le -1\)</span> — tele karika, mert a &minus;1 beletartozik</p><div class="svgwrap"><svg viewBox="0 0 460 92" width="460" height="92" role="img" aria-label="A mínusz 3 kisebb vagy egyenlő x kisebb mint 4 megoldáshalmaza">
-  <defs><marker id="nyil" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
-  <line x1="14" y1="52" x2="446" y2="52" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+  <defs><marker id="nyil-3" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+  <line x1="14" y1="52" x2="446" y2="52" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-3)"/>
   <line x1="26.0" y1="47" x2="26.0" y2="57" stroke="#0f172a" stroke-width="1"/>
   <text x="26.0" y="72" font-size="11" fill="#475569" text-anchor="middle">−5</text>
   <line x1="63.1" y1="47" x2="63.1" y2="57" stroke="#0f172a" stroke-width="1"/>
@@ -138,12 +139,12 @@
   <line x1="100.2" y1="38" x2="359.8" y2="38" stroke="#047857" stroke-width="3.4" stroke-linecap="round"/>
   <circle cx="100.2" cy="38" r="4.2" fill="#047857"/>
   <circle cx="359.8" cy="38" r="4.2" fill="#ffffff" stroke="#047857" stroke-width="2"/>
-</svg></div><p class="cap"><span class="math inline">\(-3\le x<4\)</span> — egyik végpont zárt, a másik nyílt</p>
-      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\((2;\infty)\)</span>; <span class="math inline">\((-\infty;-1]\)</span>; <span class="math inline">\([-3;4)\)</span>.</p></div></details>
+</svg></div><p class="cap"><span class="math inline">\(-3\le x&lt;4\)</span> — egyik végpont zárt, a másik nyílt</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\((2;+\infty)\)</span>; <span class="math inline">\((-\infty;-1]\)</span>; <span class="math inline">\([-3;4)\)</span>.</p></div></details>
     </div>
 
-    <h2 id="s3">Zárójeles és törtes egyenlőtlenségek</h2>
-    <p>Mint az egyenleteknél: előbb zárójelbontás és felszorzás (pozitív nevezővel!), majd rendezés. Az iránnyal csak akkor kell foglalkozni, ha közben negatív számmal szorzunk/osztunk.</p>
+    <h2 id="s3">Zárójeles egyenlőtlenségek</h2>
+    <p>Mint az egyenleteknél: előbb zárójelbontás és felszorzás a nevezők legkisebb közös többszörösével, majd rendezés. Ha ez a szám negatív, a relációjel iránya megfordul. Az iránnyal csak akkor kell foglalkozni, ha közben negatív számmal szorzunk/osztunk.</p>
     <div class="doboz pelda" id="pelda-zarojeles">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
       Oldd meg: <span class="math inline">\(4(x-1)-3(x+2)>-8\)</span>.
