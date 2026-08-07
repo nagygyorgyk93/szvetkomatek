@@ -430,6 +430,36 @@ C3 = [
          'távolságot és szöget, ki tudom-e számolni a többit? Ehhez két tétel kell — és '
          'ezekkel bemérhető egy torony, egy hegy vagy egy ellenséges bázis.', outro=True),
  ]),
+
+ ("Alap trigonometrikus egyenlőtlenségek", [
+   'Az egyenletnél azt kérdeztük: <b>hol</b> veszi fel a függvény az adott értéket. Az '
+   'egyenlőtlenségnél azt: <b>hol nagyobb</b> (vagy kisebb) nála. A megoldás ezért nem néhány pont lesz, hanem <b>szögtartomány</b> — és a periodicitás miatt abból is végtelen sok.',
+   doboz("tetel", "A menet — három lépés",
+         '<ol><li>Keresd meg a <b>határszögeket</b>: oldd meg az egyenlőséget ($\\sin x=\\tfrac12$).</li>'
+         '<li>Nézd meg a <b>trigonometrikus körön</b> (vagy a grafikonon), a két határ <b>melyik oldalán</b> teljesül az egyenlőtlenség.</li>'
+         '<li>Írd fel a tartományt, és told el <b>periódusonként</b>: $+k\\cdot 360^\\circ$, ahol $k\\in\\mathbb{Z}$.</li></ol>'
+         '<p>A zárójel a szokásos: szigorú egyenlőtlenségnél <b>nyílt</b>, $\\le$ vagy $\\ge$ esetén <b>zárt</b> végpont.</p>',
+         hid="tetel-trig-egyenlotlenseg"),
+   doboz("pelda", "Vészterem-szimuláció",
+         '<p>Oldd meg: <b>a)</b> $\\sin x&gt;\\tfrac12$; <b>b)</b> $\\cos x\\le\\tfrac12$.</p>',
+         hid="pelda-trig-egyenlotlenseg",
+         lenyilo=("Megoldás",
+                  '<p><b>a)</b> A határszögek: $\\sin x=\\tfrac12$ esetén $x=30^\\circ$ és $x=150^\\circ$. A körön a szinusz az <b>y-koordináta</b>, ez a kettő <b>között</b> nagyobb $\\tfrac12$-nél (ott halad a felső ív). Tehát</p>'
+                  '$$x\\in\\left(30^\\circ+k\\cdot 360^\\circ;\\ 150^\\circ+k\\cdot 360^\\circ\\right).$$'
+                  '<p>Ellenőrzés: $x=90^\\circ$ benne van, és $\\sin 90^\\circ=1&gt;\\tfrac12$ ✔; $x=200^\\circ$ nincs benne, és $\\sin 200^\\circ&lt;0$ ✔</p>'
+                  '<p><b>b)</b> A határszögek: $\\cos x=\\tfrac12$ esetén $x=60^\\circ$ és $x=300^\\circ$. A koszinusz az <b>x-koordináta</b>, és a két határ <b>között</b> (a kör bal oldalán haladva) kisebb $\\tfrac12$-nél. Mivel $\\le$ áll, a végpontok is beletartoznak:</p>'
+                  '$$x\\in\\left[60^\\circ+k\\cdot 360^\\circ;\\ 300^\\circ+k\\cdot 360^\\circ\\right].$$'
+                  '<p>Ellenőrzés: $x=180^\\circ$ benne van, és $\\cos 180^\\circ=-1\\le\\tfrac12$ ✔; $x=10^\\circ$ nincs benne, és $\\cos 10^\\circ\\approx 0{,}98&gt;\\tfrac12$ ✔</p>')),
+   doboz("csapda", "Dr. Baljós vírus-kódja",
+         '<p><b>„Megvan a két határszög, kész.”</b> — Nem. Két dolog hiányzik még: '
+         'melyik <b>oldalon</b> teljesül az egyenlőtlenség, és a <b>periódus</b>.</p>'
+         '<p>A $+k\\cdot 360^\\circ$ elhagyása a leggyakoribb hiba: az egyenlőtlenségnek <b>végtelen sok</b> megoldás-intervalluma van, nem csak egy. Ha a feladat mégis egyetlen körre szorítkozik (pl. $x\\in[0^\\circ;360^\\circ)$), azt a szöveg külön kimondja.</p>'),
+   kviz('Mi a $\\sin x&gt;\\tfrac12$ megoldása a $[0^\\circ;360^\\circ)$ körön?',
+        ['$(30^\\circ;150^\\circ)$', '$(150^\\circ;330^\\circ)$', '$(0^\\circ;30^\\circ)$'], 0,
+        jo="✔ A két határszög 30° és 150°, és közöttük halad a kör felső íve, ahol a szinusz (az y-koordináta) nagyobb 1/2-nél.",
+        nem="✘ A határszögek 30° és 150°. Kérdés, hogy közöttük vagy rajtuk kívül nagyobb a szinusz 1/2-nél: a kör FELSŐ ívén, tehát 30° és 150° KÖZÖTT."),
+ ]),
+
 ]
 
 # ===================================================================== futtatás

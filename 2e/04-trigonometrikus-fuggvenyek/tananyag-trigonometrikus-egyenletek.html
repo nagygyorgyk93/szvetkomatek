@@ -110,6 +110,33 @@
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-trig-fuggvenyek-egyenletek.html#alap-12">🐾 Bestia-protokoll <span class="cimke">A 12–18</span></a><a class="sav bruno" href="feladatok-trig-fuggvenyek-egyenletek.html#kozep-9">🔥 Főnix-protokoll <span class="cimke">K 9–14</span></a></div></div></div>
 
     <div class="brief" data-outro><p>📡 <b>Szürke Janka:</b> A hullámot értjük, az egyenleteket megoldjuk. Egy dolog maradt, és az a legkézzelfoghatóbb az egészben: ha a terepen ismerek <b>néhány</b> távolságot és szöget, ki tudom-e számolni a többit? Ehhez két tétel kell — és ezekkel bemérhető egy torony, egy hegy vagy egy ellenséges bázis.</p></div>
+
+    <h2 id="s3">Alap trigonometrikus egyenlőtlenségek</h2>
+
+    Az egyenletnél azt kérdeztük: <b>hol</b> veszi fel a függvény az adott értéket. Az egyenlőtlenségnél azt: <b>hol nagyobb</b> (vagy kisebb) nála. A megoldás ezért nem néhány pont lesz, hanem <b>szögtartomány</b> — és a periodicitás miatt abból is végtelen sok.
+
+    <div class="doboz tetel" id="tetel-trig-egyenlotlenseg">
+      <p class="cim"><span class="ikon">📘</span> A menet — három lépés</p>
+      <ol><li>Keresd meg a <b>határszögeket</b>: oldd meg az egyenlőséget (<span class="math inline">\(\sin x=\tfrac12\)</span>).</li><li>Nézd meg a <b>trigonometrikus körön</b> (vagy a grafikonon), a két határ <b>melyik oldalán</b> teljesül az egyenlőtlenség.</li><li>Írd fel a tartományt, és told el <b>periódusonként</b>: <span class="math inline">\(+k\cdot 360^\circ\)</span>, ahol <span class="math inline">\(k\in\mathbb{Z}\)</span>.</li></ol><p>A zárójel a szokásos: szigorú egyenlőtlenségnél <b>nyílt</b>, <span class="math inline">\(\le\)</span> vagy <span class="math inline">\(\ge\)</span> esetén <b>zárt</b> végpont.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-trig-egyenlotlenseg">
+      <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
+      <p>Oldd meg: <b>a)</b> <span class="math inline">\(\sin x&gt;\tfrac12\)</span>; <b>b)</b> <span class="math inline">\(\cos x\le\tfrac12\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> A határszögek: <span class="math inline">\(\sin x=\tfrac12\)</span> esetén <span class="math inline">\(x=30^\circ\)</span> és <span class="math inline">\(x=150^\circ\)</span>. A körön a szinusz az <b>y-koordináta</b>, ez a kettő <b>között</b> nagyobb <span class="math inline">\(\tfrac12\)</span>-nél (ott halad a felső ív). Tehát</p><span class="math display">\[x\in\left(30^\circ+k\cdot 360^\circ;\ 150^\circ+k\cdot 360^\circ\right).\]</span><p>Ellenőrzés: <span class="math inline">\(x=90^\circ\)</span> benne van, és <span class="math inline">\(\sin 90^\circ=1&gt;\tfrac12\)</span> ✔; <span class="math inline">\(x=200^\circ\)</span> nincs benne, és <span class="math inline">\(\sin 200^\circ&lt;0\)</span> ✔</p><p><b>b)</b> A határszögek: <span class="math inline">\(\cos x=\tfrac12\)</span> esetén <span class="math inline">\(x=60^\circ\)</span> és <span class="math inline">\(x=300^\circ\)</span>. A koszinusz az <b>x-koordináta</b>, és a két határ <b>között</b> (a kör bal oldalán haladva) kisebb <span class="math inline">\(\tfrac12\)</span>-nél. Mivel <span class="math inline">\(\le\)</span> áll, a végpontok is beletartoznak:</p><span class="math display">\[x\in\left[60^\circ+k\cdot 360^\circ;\ 300^\circ+k\cdot 360^\circ\right].\]</span><p>Ellenőrzés: <span class="math inline">\(x=180^\circ\)</span> benne van, és <span class="math inline">\(\cos 180^\circ=-1\le\tfrac12\)</span> ✔; <span class="math inline">\(x=10^\circ\)</span> nincs benne, és <span class="math inline">\(\cos 10^\circ\approx 0{,}98&gt;\tfrac12\)</span> ✔</p></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
+      <p><b>„Megvan a két határszög, kész.”</b> — Nem. Két dolog hiányzik még: melyik <b>oldalon</b> teljesül az egyenlőtlenség, és a <b>periódus</b>.</p><p>A <span class="math inline">\(+k\cdot 360^\circ\)</span> elhagyása a leggyakoribb hiba: az egyenlőtlenségnek <b>végtelen sok</b> megoldás-intervalluma van, nem csak egy. Ha a feladat mégis egyetlen körre szorítkozik (pl. <span class="math inline">\(x\in[0^\circ;360^\circ)\)</span>), azt a szöveg külön kimondja.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A két határszög 30° és 150°, és közöttük halad a kör felső íve, ahol a szinusz (az y-koordináta) nagyobb 1/2-nél." data-nem="✘ A határszögek 30° és 150°. Kérdés, hogy közöttük vagy rajtuk kívül nagyobb a szinusz 1/2-nél: a kör FELSŐ ívén, tehát 30° és 150° KÖZÖTT.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mi a <span class="math inline">\(\sin x&gt;\tfrac12\)</span> megoldása a <span class="math inline">\([0^\circ;360^\circ)\)</span> körön?</p>
+      <div class="opciok"><button><span class="math inline">\((30^\circ;150^\circ)\)</span></button><button><span class="math inline">\((150^\circ;330^\circ)\)</span></button><button><span class="math inline">\((0^\circ;30^\circ)\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-osszetett-trig-fuggvenyek.html"><span class="irany">← Előző</span><span class="hova">Amplitúdó, periódus és fáziseltolás</span></a>
       <a class="kov" href="feladatok-trig-fuggvenyek-egyenletek.html"><span class="irany">Következő →</span><span class="hova">Feladatok — függvények és egyenletek</span></a>

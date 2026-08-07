@@ -105,6 +105,11 @@ ALAP = [
   False),
  ("Oldd meg! $\\operatorname{tg}2x=1$", None,
   "$2x=\\tfrac{\\pi}{4}+k\\pi$, tehát $x=\\tfrac{\\pi}{8}+\\tfrac{k\\pi}{2}$."),
+ ('Oldd meg a $[0^\\circ;360^\\circ)$ körön! (Add meg intervallummal.)',
+  ['$\\sin x&gt;\\tfrac{\\sqrt2}{2}$', '$\\cos x&lt;\\tfrac12$',
+   '$\\sin x\\le 0$'],
+  ['$(45^\\circ;135^\\circ)$', '$(60^\\circ;300^\\circ)$',
+   '$[180^\\circ;360^\\circ)$']),
 ]
 
 # ============================== KÖZÉPSZINT ==============================
@@ -163,6 +168,10 @@ KOZEP = [
   "Mekkora az amplitúdója és a frekvenciája?", None,
   "Amplitúdó: $0{,}2$ m. A periódus $p=\\tfrac{2\\pi}{100\\pi}=0{,}02$ s, tehát a "
   "frekvencia $f=\\tfrac{1}{p}=50$ Hz."),
+ ('Oldd meg az egyenlőtlenséget a valós számok halmazán — a periódust is írd ki!',
+  ['$\\cos x\\ge\\tfrac12$', '$\\sin x&lt;-\\tfrac{\\sqrt3}{2}$'],
+  ['$x\\in[-60^\\circ+k\\cdot360^\\circ;\\ 60^\\circ+k\\cdot360^\\circ]$, ahol $k\\in\\mathbb{Z}$',
+   '$x\\in(240^\\circ+k\\cdot360^\\circ;\\ 300^\\circ+k\\cdot360^\\circ)$, ahol $k\\in\\mathbb{Z}$']),
 ]
 
 # ============================== NEHÉZ SZINT ==============================
@@ -189,6 +198,13 @@ NEHEZ = [
   "intervallumon?", None,
   "Periódusonként <b>két</b> megoldás van, és a $[0;4\\pi]$ két teljes periódust "
   "fog át: <b>4 megoldás</b>."),
+ ('Egy kadét így oldotta meg a $\\sin x&gt;\\tfrac12$ egyenlőtlenséget: <i>„A határszögek $30^\\circ$ és $150^\\circ$, tehát a megoldás $x=30^\\circ$ és $x=150^\\circ$.”</i>',
+  ['Hol a hiba a gondolatmenetében?',
+   'Add meg a helyes megoldást a $[0^\\circ;360^\\circ)$ körön!',
+   'Mit kell még hozzátenni, ha a teljes valós számhalmazon keresünk megoldást?'],
+  ['A két határszög az EGYENLŐSÉG megoldása, nem az egyenlőtlenségé. Az egyenlőtlenség megoldása egy <b>tartomány</b>, nem néhány pont.',
+   '$x\\in(30^\\circ;150^\\circ)$ — nyílt intervallum, mert szigorú az egyenlőtlenség.',
+   'A periódust: $x\\in(30^\\circ+k\\cdot360^\\circ;\\ 150^\\circ+k\\cdot360^\\circ)$, ahol $k\\in\\mathbb{Z}$ — végtelen sok intervallum.']),
 ]
 
 JOKER = ("Oldd meg! $\\sin x+\\sin 3x=0$",
