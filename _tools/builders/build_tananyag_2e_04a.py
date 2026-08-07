@@ -307,7 +307,7 @@ A3 = [
          '<tr><td>IV.</td><td>$360^\\circ-\\alpha$</td><td>$360^\\circ-$ szög</td></tr>'
          '</table></div>'
          '<p><b>3. lépés:</b> a függvényérték <b>abszolút értéke</b> az alapszögé, '
-         'az <b>előjelet</b> az előjeltáblázat adja.</p>',
+         'az <b>előjelet</b> az <a href="tananyag-trigonometrikus-kor.html#tetel-eljelek">előjeltáblázat</a> adja (az előző egységben).</p>',
          hid="tetel-visszavezetes"),
    doboz("tetel", "A négy összefüggés képlettel",
          '$$\\sin(180^\\circ-\\alpha)=\\sin\\alpha,\\qquad \\cos(180^\\circ-\\alpha)=-\\cos\\alpha,$$'
