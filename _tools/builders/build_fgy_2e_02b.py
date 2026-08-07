@@ -59,7 +59,7 @@ for n, g, w in P:
 assert not E, E[:4]
 print("sympy önteszt: OK")
 
-VIZSG = "Ábrázold a grafikont, és vizsgáld ki! (értékkészlet, szélsőérték, nullahely(ek), konvexitás)"
+VIZSG = "Ábrázold a grafikont, és vizsgáld ki! (értékkészlet, szélsőérték, zérushely(ek), konvexitás)"
 
 # ============================== FELADATOK ==============================
 

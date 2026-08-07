@@ -39,7 +39,7 @@
 
     <div class="doboz tetel" id="tetel-felszog">
       <p class="cim"><span class="ikon">📘</span> Félszög-képletek</p>
-      <span class="math display">\[\sin\frac{\alpha}{2}=\pm\sqrt{\frac{1-\cos\alpha}{2}},\qquad\cos\frac{\alpha}{2}=\pm\sqrt{\frac{1+\cos\alpha}{2}}\]</span><span class="math display">\[\operatorname{tg}\frac{\alpha}{2}=\pm\sqrt{\frac{1-\cos\alpha}{1+\cos\alpha}}=\frac{\sin\alpha}{1+\cos\alpha}\]</span><p>Az előjelet <b>mindig az <span class="math inline">\(\tfrac{\alpha}{2}\)</span> negyede</b> dönti el — nem az <span class="math inline">\(\alpha\)</span>-é!</p><p class="halvany">A tangenses alakhoz kikötés is jár: a nevező nem lehet nulla, tehát <span class="math inline">\(1+\cos\alpha\neq 0\)</span>, azaz <span class="math inline">\(\alpha\neq 180^\circ+k\cdot 360^\circ\)</span>. Épp ezeknél a szögeknél lenne a felezett szög <span class="math inline">\(90^\circ\)</span> páratlan többszöröse — ott pedig a tangens sincs értelmezve.</p>
+      <span class="math display">\[\sin\frac{\alpha}{2}=\pm\sqrt{\frac{1-\cos\alpha}{2}},\qquad\cos\frac{\alpha}{2}=\pm\sqrt{\frac{1+\cos\alpha}{2}}\]</span><span class="math display">\[\operatorname{tg}\frac{\alpha}{2}=\pm\sqrt{\frac{1-\cos\alpha}{1+\cos\alpha}}=\frac{\sin\alpha}{1+\cos\alpha}\]</span><p>Az előjelet mindig az dönti el, hogy <b>a felezett szög, <span class="math inline">\(\tfrac{\alpha}{2}\)</span>, melyik síknegyedbe esik</b> — nem az, hogy <span class="math inline">\(\alpha\)</span> hová! A <span class="math inline">\(\frac{\sin\alpha}{1+\cos\alpha}\)</span> alak előnye épp az, hogy ott <b>nem kell</b> előjelet választani: azt a <span class="math inline">\(\sin\alpha\)</span> elvégzi helyettünk.</p><p class="halvany">A tangenses alakhoz kikötés is jár: a nevező nem lehet nulla, tehát <span class="math inline">\(1+\cos\alpha\neq 0\)</span>, azaz <span class="math inline">\(\alpha\neq 180^\circ+k\cdot 360^\circ\)</span>. Épp ezeknél a szögeknél lenne a felezett szög <span class="math inline">\(90^\circ\)</span> páratlan többszöröse — ott pedig a tangens sincs értelmezve.</p>
       <details><summary>Honnan jönnek?</summary><div class="bel"><p>A <span class="math inline">\(\cos 2u=1-2\sin^{2}u\)</span> alakba írjunk <span class="math inline">\(u=\tfrac{\alpha}{2}\)</span>-t:</p><span class="math display">\[\cos\alpha=1-2\sin^{2}\frac{\alpha}{2}\ \Longrightarrow\ \sin^{2}\frac{\alpha}{2}=\frac{1-\cos\alpha}{2}.\]</span><p>A koszinuszos alak a <span class="math inline">\(\cos 2u=2\cos^{2}u-1\)</span> képletből ugyanígy jön.</p></div></details>
     </div>
 
@@ -50,15 +50,15 @@
 
     <div class="doboz pelda" id="pelda-felszog">
       <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
-      <p><b>a)</b> Számold ki <span class="math inline">\(\sin\tfrac{\alpha}{2}\)</span> és <span class="math inline">\(\cos\tfrac{\alpha}{2}\)</span> pontos értékét, ha <span class="math inline">\(\cos\alpha=\tfrac{7}{25}\)</span> és <span class="math inline">\(\alpha\in\left(0;\tfrac{\pi}{2}\right)\)</span>.<br><b>b)</b> Számold ki <span class="math inline">\(\sin 22^\circ 30'\)</span> pontos értékét.</p>
-      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(\alpha\)</span> az I. negyedben van, tehát <span class="math inline">\(\tfrac{\alpha}{2}\in\left(0;\tfrac{\pi}{4}\right)\)</span> — szintén az I. negyedben, minden <b>pozitív</b>.</p><span class="math display">\[\sin\frac{\alpha}{2}=\sqrt{\frac{1-\tfrac{7}{25}}{2}}=\sqrt{\frac{18}{50}}=\boxed{\frac35},\qquad\cos\frac{\alpha}{2}=\sqrt{\frac{1+\tfrac{7}{25}}{2}}=\sqrt{\frac{32}{50}}=\boxed{\frac45}\]</span><p><b>b)</b> <span class="math inline">\(22^\circ 30'\)</span> a <span class="math inline">\(45^\circ\)</span> fele, és <span class="math inline">\(\cos 45^\circ=\tfrac{\sqrt2}{2}\)</span>:</p><span class="math display">\[\sin 22^\circ30'=\sqrt{\frac{1-\tfrac{\sqrt2}{2}}{2}}=\boxed{\frac{\sqrt{2-\sqrt2}}{2}}\approx 0{,}38268\]</span></div></details>
+      <p><b>a)</b> Számold ki <span class="math inline">\(\sin\tfrac{\alpha}{2}\)</span> és <span class="math inline">\(\cos\tfrac{\alpha}{2}\)</span> pontos értékét, ha <span class="math inline">\(\cos\alpha=\tfrac{7}{25}\)</span> és <span class="math inline">\(\alpha\in\left(0;\tfrac{\pi}{2}\right)\)</span>.<br><b>b)</b> Számold ki <span class="math inline">\(\sin 22^\circ 30'\)</span> pontos értékét (<span class="math inline">\(22^\circ 30'=22{,}5^\circ\)</span> — az ívperc a fok hatvanad része).</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(\alpha\)</span> az I. negyedben van, tehát <span class="math inline">\(\tfrac{\alpha}{2}\in\left(0;\tfrac{\pi}{4}\right)\)</span> — szintén az I. negyedben, minden <b>pozitív</b>.</p><span class="math display">\[\sin\frac{\alpha}{2}=\sqrt{\frac{1-\tfrac{7}{25}}{2}}=\sqrt{\frac{18}{50}}=\boxed{\frac35},\qquad\cos\frac{\alpha}{2}=\sqrt{\frac{1+\tfrac{7}{25}}{2}}=\sqrt{\frac{32}{50}}=\boxed{\frac45}\]</span><p><b>b)</b> <span class="math inline">\(22^\circ 30'\)</span> a <span class="math inline">\(45^\circ\)</span> fele, és <span class="math inline">\(\cos 45^\circ=\tfrac{\sqrt2}{2}\)</span>:</p><span class="math display">\[\sin 22^\circ30'=\sqrt{\frac{1-\tfrac{\sqrt2}{2}}{2}}=\boxed{\frac{\sqrt{2-\sqrt2}}{2}}\approx 0{,}38268\]</span><p>A <b>pozitív</b> gyököt vettük, mert <span class="math inline">\(22^\circ 30'\)</span> az I. negyedbe esik.</p></div></details>
     </div>
 
     <h2 id="s2">Összeg és különbség szorzattá alakítása</h2>
 
     <div class="doboz tetel" id="tetel-szorzatta">
       <p class="cim"><span class="ikon">📘</span> A négy képlet</p>
-      <span class="math display">\[\sin u+\sin v=2\sin\frac{u+v}{2}\cos\frac{u-v}{2}\]</span><span class="math display">\[\sin u-\sin v=2\cos\frac{u+v}{2}\sin\frac{u-v}{2}\]</span><span class="math display">\[\cos u+\cos v=2\cos\frac{u+v}{2}\cos\frac{u-v}{2}\]</span><span class="math display">\[\cos u-\cos v=-2\sin\frac{u+v}{2}\sin\frac{u-v}{2}\]</span><p>Mind a négyben ugyanaz a két szög szerepel: a <b>félösszeg</b> és a <b>félkülönbség</b>. Csak az kérdés, melyik függvény kerül hova — és hogy az utolsóban ott a <b>mínusz</b>.</p>
+      <span class="math display">\[\sin u+\sin v=2\sin\frac{u+v}{2}\cos\frac{u-v}{2}\]</span><span class="math display">\[\sin u-\sin v=2\cos\frac{u+v}{2}\sin\frac{u-v}{2}\]</span><span class="math display">\[\cos u+\cos v=2\cos\frac{u+v}{2}\cos\frac{u-v}{2}\]</span><span class="math display">\[\cos u-\cos v=-2\sin\frac{u+v}{2}\sin\frac{u-v}{2}\]</span><p>Mind a négyben ugyanaz a két szög szerepel: a <b>félösszeg</b> és a <b>félkülönbség</b>. Csak az a kérdés, melyik függvény kerül hova — és hogy az utolsóban ott a <b>mínusz</b>.</p>
     </div>
 
     <div class="doboz pelda" id="pelda-szorzatta">
@@ -69,7 +69,7 @@
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Miért éri meg a szorzat?</p>
-      <p>Egy <b>szorzat</b> akkor nulla, ha valamelyik tényezője nulla — ezért a trigonometrikus egyenleteknél az első lépés szinte mindig a szorzattá alakítás. Az összeggel ilyet nem lehet kezdeni. Ugyanez az ok, amiért a másodfokú egyenletnél is szorzattá bontottunk.</p>
+      <p>Egy <b>szorzat</b> akkor nulla, ha valamelyik tényezője nulla — ezért a szorzattá alakítás azoknál az egyenleteknél nyit utat, ahol az egyik oldalon <b>összeg</b> áll: nullára rendezve a szorzat minden tényezője külön vizsgálható. Az összeggel magával ilyet nem lehet kezdeni. Ugyanez az ok, amiért a másodfokú egyenletnél is szorzattá bontottunk.</p>
     </div>
 
     <div class="kviz" data-answer="0" data-jo="✔ 2 sin 50° cos 30° = 2 · sin 50° · (√3/2) = √3 sin 50°." data-nem="✘ sin u + sin v = 2 sin((u+v)/2) cos((u−v)/2) = 2 sin 50° cos 30° = √3 sin 50°.">
@@ -79,9 +79,9 @@
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
-    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-azonossagok.html#alap-14">🐾 Bestia-protokoll <span class="cimke">A 14–18</span></a><a class="sav bruno" href="feladatok-azonossagok.html#kozep-11">🔥 Főnix-protokoll <span class="cimke">K 11–14</span></a></div></div></div>
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-azonossagok.html#alap-14">🐾 Bestia-protokoll <span class="cimke">A 14–18</span></a><a class="sav bruno" href="feladatok-azonossagok.html#kozep-8">🔥 Főnix-protokoll <span class="cimke">K 8–12</span></a></div></div></div>
 
-    <div class="brief" data-outro><p>📡 <b>Éjjáró:</b> Az azonosságok készen vannak — ez a <b>4. ellenőrző</b> anyagának a gerince. Innentől viszont átadom a szót Janka-nek: ő nem egyetlen szöggel dolgozik, hanem a <b>teljes hullámmal</b>. Meglátod, hogy néz ki a szinusz, ha nem egy pontban nézed, hanem végig.</p></div>
+    <div class="brief" data-outro><p>📡 <b>Éjjáró:</b> Az azonosságok készen vannak — ez a témakör gerince, és a záró felmérőn is ezt kérem majd. Innentől viszont átadom a szót Jankának: ő nem egyetlen szöggel dolgozik, hanem a <b>teljes hullámmal</b>. Meglátod, hogy néz ki a szinusz, ha nem egy pontban nézed, hanem végig.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-addicios-kepletek.html"><span class="irany">← Előző</span><span class="hova">Addíciós képletek és a kétszeres szög</span></a>
       <a class="kov" href="feladatok-azonossagok.html"><span class="irany">Következő →</span><span class="hova">Feladatok — azonosságok</span></a>

@@ -47,10 +47,10 @@ SVG_RENDSZER = svg_fuggvenyek(
 C1 = [
  ("📡 Küldetés-eligazítás", [
    brief('<b>Küklopsz:</b> A védőpajzs nem egyetlen pontban működik, hanem egy egész '
-         '<b>tartományon</b>. Az „hol nulla?” kérdésre egy vagy két szám a válasz — '
+         '<b>tartományon</b>. A „hol nulla?” kérdésre egy vagy két szám a válasz — '
          'a „hol pozitív?” kérdésre viszont intervallumok. És itt jön a jó hír: '
          'ha megvan a parabola képe, az egyenlőtlenséget <b>le lehet olvasni</b>. '
-         'Nem kell új módszer, csak az, amit az előző egységben, a <a href="tananyag-masodfoku-fuggveny.html">másodfokú függvényről</a> megtanultál.'),
+         'Nem kell új módszer, csak az, amit a <a href="tananyag-masodfoku-fuggveny.html">másodfokú függvényről</a> és a <a href="tananyag-fuggvenyvizsgalat.html">vizsgálatáról</a> megtanultál.'),
  ]),
 
  ("Mit jelent a megoldás?", [
@@ -62,7 +62,7 @@ C1 = [
                     "(pozitív)."),
    doboz("tetel", "A megoldás menete",
          '<p><b>1.</b> Rendezd az egyenlőtlenséget nullára (a jobb oldalon $0$ álljon).</p>'
-         '<p><b>2.</b> Oldd meg a hozzá tartozó <b>egyenletet</b> — keresd meg a zérushelyeket.</p>'
+         '<p><b>2.</b> Oldd meg a hozzá tartozó <b>egyenletet</b> — keresd meg a zérushelyeket (az egyenlet gyökei egyben a függvény zérushelyei).</p>'
          '<p><b>3.</b> Nézd meg az $a$ előjelét (merre nyílik a parabola), és a képről '
          '<b>olvasd le</b> a megoldást.</p>'
          '<p>Ha $a&gt;0$ és két zérushely van ($x_{1}&lt;x_{2}$):</p>'
@@ -75,7 +75,7 @@ C1 = [
          hid="tetel-egyenlotlenseg-menete"),
  ]),
 
- ("A három diszkrimináns-eset", [
+ ("A hiányzó két eset: $D=0$ és $D&lt;0$", [
    doboz("tetel", "Amikor nincs két gyök",
          '<p><b>$D=0$</b> (egy kettős gyök, $x_{0}$): $a&gt;0$ esetén a kifejezés '
          '<b>mindenütt nemnegatív</b>, és csak $x_{0}$-ban nulla. Tehát '
@@ -115,15 +115,15 @@ C1 = [
                   '<p><b>a)</b> Két út van. Vagy $-1$-gyel szorzunk — ilyenkor a reláció '
                   '<b>megfordul</b>: $x^{2}-3x+2\\le 0$, aminek a gyökei $1$ és $2$, tehát '
                   '$x\\in[1;2]$. Vagy meghagyjuk: $a=-1&lt;0$, a parabola lefelé nyílik, '
-                  'így a gyökök <b>között</b> van a tengely fölött — ugyanaz jön ki.</p>'
+                  'így a gyökök <b>között</b> (és a gyökökben) van a tengely fölött vagy rajta — ugyanaz jön ki.</p>'
                   '<p><b>b)</b> $D=49-24=25$, a gyökök $\\tfrac12$ és $3$. Mivel $a=2&gt;0$ '
                   'és negatív értéket keresünk, a gyökök közötti <b>nyílt</b> intervallum '
                   'a megoldás: $x\\in\\left(\\tfrac12;3\\right)$.</p>')),
    doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>Három klasszikus hiba:</p>'
          '<ol class="reszfeladatok">'
-         '<li><b>Negatív számmal szorozni a reláció megfordítása nélkül.</b> '
-         'A $-x^{2}+3x-2\\ge 0$-ból $x^{2}-3x+2\\le 0$ lesz — a jel <b>átfordul</b>.</li>'
+         '<li><b>Negatív számmal szorozni a relációjel megfordítása nélkül.</b> '
+         'A $-x^{2}+3x-2\\ge 0$-ból $x^{2}-3x+2\\le 0$ lesz — a <b>relációjel</b> átfordul.</li>'
          '<li><b>Zárt zárójel a végtelennél.</b> A $+\\infty$ és a $-\\infty$ nem szám, '
          'nem lehet „elérni” — mellettük <b>mindig nyitott</b> zárójel áll: '
          '$(3;+\\infty)$, sosem $(3;+\\infty]$.</li>'
@@ -135,7 +135,7 @@ C1 = [
         jo="✔ a < 0, a parabola lefelé nyílik → a gyökök között van a tengely fölött.",
         nem="✘ Szorozz −1-gyel (a jel fordul): x² − 4 < 0, azaz x ∈ (−2; 2)."),
    gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–5"),
-   brief('<b>Küklopsz:</b> Utolsó feladat a fejezetben. Eddig egyetlen görbét néztünk. '
+   brief('<b>Küklopsz:</b> Utolsó bevetés a szektorban. Eddig egyetlen görbét néztünk. '
          'Most kettőt teszünk egymásra — egy parabolát és egy egyenest —, és megkeressük, '
          '<b>hol találkoznak</b>. Ez a bemérés utolsó lépése.',
          outro=True),

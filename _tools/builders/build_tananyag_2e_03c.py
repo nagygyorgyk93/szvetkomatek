@@ -23,6 +23,7 @@ chk("C2-2", solve(2*x + 1 - 25, x), [12])       # log5(2x+1)=2
 chk("C2-3", solve(x**2 - 4*x - 5, x), [-1, 5])  # log(x^2-4x)=log5 -> x^2-4x-5=0
 chk("C2-3et", (-1)**2 - 4*(-1), 5)              # az x=-1 az ÉT-be BELEFÉR
 chk("C2-4", solve(3*x - 2 - (x + 6), x), [4])   # log(3x-2)=log(x+6)
+chk("C2-4b", solve((x - 1)*(x + 2) - 4, x), [-3, 2])  # log2(x-1)+log2(x+2)=2
 chk("C2-5", solve(x - 1 - 16, x), [17])         # log2(x-1)<4 -> x-1<16
 chk("C2-6", solve(2*x - 6 - 9, x), [R(15, 2)])  # log3(2x-6)>2 -> 2x-6>9
 chk("C2-7", solve(x**2 - 3*x - 4, x), [-1, 4])
@@ -150,7 +151,8 @@ C2 = [
          'argumentuma legyen pozitív. Több logaritmus esetén a feltételek '
          '<b>metszete</b> az ÉT.</p>'
          '<p><b>2.</b> Az azonosságokkal <b>vond össze</b> a logaritmusokat, hogy mindkét '
-         'oldalon egyetlen logaritmus (vagy egy szám) maradjon.</p>'
+         'oldalon egyetlen logaritmus (vagy egy szám) maradjon. <b>Vigyázz:</b> az '
+         'összevonás <b>kitágíthatja</b> az értelmezési tartományt — a $\\log_a x+\\log_a y$ csak $x&gt;0$ és $y&gt;0$ mellett írható le, a $\\log_a(xy)$ viszont akkor is, ha mindkettő negatív. Ezért keletkeznek hamis gyökök, és ezért kell a végén az <b>eredeti</b> egyenlet ÉT-jével ellenőrizni.</p>'
          '<p><b>3.</b> Hagyd el a logaritmust — a függvény kölcsönösen egyértelmű:</p>'
          '$$\\log_{a}u=\\log_{a}v\\iff u=v,\\qquad \\log_{a}u=c\\iff u=a^{c}.$$'
          '<p><b>4.</b> Oldd meg a kapott egyenletet, és <b>vesd össze az ÉT-vel</b>: '
@@ -169,11 +171,21 @@ C2 = [
                   '<p><b>c)</b> ÉT: $3x-2&gt;0$ <b>és</b> $x+6&gt;0$, azaz $x&gt;\\tfrac23$ '
                   'és $x&gt;-6$ — a metszet $x&gt;\\tfrac23$. A logaritmust elhagyva '
                   '$3x-2=x+6$, tehát $2x=8$ és $x=4$. Ellenőrzés: $4&gt;\\tfrac23$, tehát benne van az ÉT-ben — $\\boxed{x=4}$.</p>')),
+   doboz("pelda", "Vészterem-szimuláció — amikor tényleg kiesik egy gyök",
+         '<p>Oldd meg: $\\log_{2}(x-1)+\\log_{2}(x+2)=2$.</p>',
+         hid="pelda-hamis-gyok",
+         lenyilo=("Megoldás",
+                  '<p><b>1. ÉT.</b> Mindkét argumentum legyen pozitív: $x-1&gt;0$ <b>és</b> $x+2&gt;0$, azaz $x&gt;1$ és $x&gt;-2$. A metszet: $x&gt;1$.</p>'
+                  '<p><b>2. Összevonás.</b> $\\log_{2}\\big((x-1)(x+2)\\big)=2$, innen $(x-1)(x+2)=2^{2}=4$.</p>'
+                  '$$x^{2}+x-2=4\\ \\Longrightarrow\\ x^{2}+x-6=0\\ \\Longrightarrow\\ x_{1}=2,\\quad x_{2}=-3.$$'
+                  '<p><b>3. Ellenőrzés az ÉT-vel.</b> A $2&gt;1$, tehát jó. A $-3$ viszont nincs benne az ÉT-ben — és tényleg: a $\\log_{2}(-3-1)$ nem is írható le. Tehát $\\boxed{x=2}$.</p>'
+                  '<p>Figyeld meg, honnan jött a hamis gyök: az összevont $(x-1)(x+2)=4$ egyenletnek $x=-3$ <b>jó</b> megoldása (a szorzat $(-4)\\cdot(-1)=4$), mert ott a két tényező <b>egyszerre negatív</b>. Az eredeti egyenletben viszont külön-külön kellene pozitívnak lenniük. Épp ezt tágítja ki az összevonás.</p>')),
    doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p><b>A hamis gyök.</b> Oldd meg gondolatban: $\\lg(x^{2}-4x)=\\lg 5$. '
          'A logaritmust elhagyva $x^{2}-4x-5=0$, ahonnan $x_{1}=5$ és $x_{2}=-1$. '
          'A $-1$ elsőre gyanús — pedig <b>jó megoldás</b>: az argumentum értéke '
          '$(-1)^{2}-4\\cdot(-1)=5&gt;0$.</p>'
+         '<p>Ez a példa a fordítottját mutatja: nem minden gyanús gyök hamis. De ha a megoldás közben <b>összevontunk</b>, akkor mindig az <b>eredeti</b> egyenlet összes logaritmusának az argumentumát kell ellenőrizni — nem az összevonás után kapott egyetlen argumentumot. A $\\lg(x-3)+\\lg(x+1)=\\lg 5$ egyenletnél például a $-2$ az összevont $(x-3)(x+1)=5&gt;0$ próbán átmenne, az eredeti $\\lg(x-3)$-on viszont nem.</p>'
          '<p>Tanulság: <b>nem az $x$ előjelét kell nézni, hanem az argumentum '
          'értékét</b>. Mindig helyettesíts vissza az ÉT-feltételbe, ne találgass.</p>'),
    kviz('Mi a $\\log_{3}(x+2)=2$ egyenlet megoldása?',
@@ -184,8 +196,8 @@ C2 = [
 
  ("Logaritmusos egyenlőtlenségek", [
    'Itt a két korábbi szempont <b>találkozik</b>: kell az értelmezési tartomány (mint az '
-   'egyenleteknél), és figyelni kell a <b>jelfordulásra</b> (mint az exponenciális '
-   'egyenlőtlenségeknél). A végeredmény mindig a kettő <b>metszete</b>.',
+   'egyenleteknél), és figyelni kell a <b>jelfordulásra</b> (mint az '
+   '<a href="tananyag-exponencialis-egyenlotlensegek.html">exponenciális egyenlőtlenségeknél</a>). A végeredmény mindig a kettő <b>metszete</b>.',
    doboz("tetel", "Logaritmusos egyenlőtlenség",
          '<p>Tegyük fel, hogy az egyenlőtlenség $\\log_{a}u&lt;\\log_{a}v$ alakú '
          '(az ÉT: $u&gt;0$ és $v&gt;0$).</p>'
@@ -193,12 +205,13 @@ C2 = [
          '<li>Ha <b>$a&gt;1$</b> (növekvő): $u&lt;v$ — a <b>jel marad</b>.</li>'
          '<li>Ha <b>$0&lt;a&lt;1$</b> (csökkenő): $u&gt;v$ — a <b>jel megfordul</b>.</li>'
          '</ul>'
+         '<p>A $\\log_{a}u&lt;c$ alak ugyanez: a jobb oldalt $c=\\log_{a}a^{c}$ alakban írjuk, és máris két logaritmust hasonlítunk össze. Így $a&gt;1$ esetén $0&lt;u&lt;a^{c}$, $0&lt;a&lt;1$ esetén pedig $u&gt;a^{c}$.</p>'
          '<p>A megoldás a kapott egyenlőtlenség megoldáshalmazának és az '
          '<b>értelmezési tartománynak a metszete</b>.</p>',
          hid="tetel-log-egyenlotlenseg"),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg: <b>a)</b> $\\log_{2}(x-1)&lt;4$; <b>b)</b> $\\log_{3}(2x-6)&gt;2$; '
-         '<b>c)</b> $\\log_{0,5}(4x+1)\\ge\\log_{0,5}(x+7)$.</p>',
+         '<b>c)</b> $\\log_{0{,}5}(4x+1)\\ge\\log_{0{,}5}(x+7)$.</p>',
          hid="pelda-log-egyenlotlensegek",
          lenyilo=("Megoldás",
                   '<p><b>a)</b> ÉT: $x-1&gt;0$, azaz $x&gt;1$. Az alap $2&gt;1$, a jel '
@@ -221,16 +234,16 @@ C2 = [
          '<li><b>Uniót írni metszet helyett.</b> Az ÉT és a kapott halmaz között '
          '<b>metszet</b> van: mindkét feltételnek egyszerre kell teljesülnie.</li>'
          '</ol>'),
-   kviz('A $\\log_{0,2}(x+1)&gt;\\log_{0,2}(2x-3)$ megoldásánál mi történik a jellel?',
+   kviz('A $\\log_{0{,}2}(x+1)&gt;\\log_{0{,}2}(2x-3)$ megoldásánál mi történik a jellel?',
         ['Megfordul, mert az alap kisebb 1-nél.',
          'Marad, mert mindkét oldalon logaritmus áll.',
-         'Megfordul, mert az argumentumok pozitívak.'], 0,
+         'Marad, mert az argumentumok pozitívak.'], 0,
         jo="✔ A 0,2 alapú logaritmusfüggvény csökkenő, ezért a reláció megfordul.",
         nem="✘ Az alap dönt: 0 < 0,2 < 1 → a függvény csökkenő → a jel megfordul."),
-   gyakorolj(FGY + "#alap-7", "A 7–14", FGY + "#kozep-4", "K 4–12"),
+   gyakorolj(FGY + "#alap-7", "A 7–14", FGY + "#kozep-4", "K 4–5, 7–12"),
    brief('<b>Dr. Bestia:</b> Küldetés teljesítve, kadétok. Az <b>Evolúciós Ugrás</b> megvan: '
          'tudjuk modellezni a robbanásszerű növekedést, és — ami fontosabb — tudunk '
-         '<b>visszafelé</b> is számolni. Ez az anyag a <b>3. dolgozat</b> teljes '
+         '<b>visszafelé</b> is számolni. Ez a <b>témakör</b> a <b>3. dolgozat</b> teljes '
          'terjedelme; a gyűjtemény végén találsz hozzá felkészítő sávot. '
          'Nézd át a taktikai memóriakártyát, aztán jöhet a terepküldetés.', outro=True),
  ]),

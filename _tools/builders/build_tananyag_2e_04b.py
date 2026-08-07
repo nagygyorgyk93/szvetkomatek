@@ -142,7 +142,8 @@ B1 = [
 
 B2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Éjjáró:</b> Eddig csak a $30$–$45$–$60$-as szögeket tudtuk pontosan. '
+   brief('<b>Éjjáró:</b> Eddig csak a $30^\\circ$, $45^\\circ$, $60^\\circ$ alapszögből '
+         'származó értékeket tudtuk pontosan. '
          'De mi van, ha $75^\\circ$-ra kell ugranom? Egyszerű: $75=45+30$ — <b>két ugrás '
          'egymás után</b>. Az addíciós képletek pontosan ezt mondják meg: hogyan lehet '
          'két szög összegének a szögfüggvényét a külön-külön ismert értékekből '
@@ -157,7 +158,7 @@ B2 = [
          '\\operatorname{tg}\\beta}{1\\mp\\operatorname{tg}\\alpha\\operatorname{tg}\\beta}$$'
          '<p>Figyeld meg a <b>jelek</b> viselkedését: a szinusznál a jel „átmegy”, a '
          'koszinusznál <b>megfordul</b> ($\\mp$). Ez a legtöbbet elrontott részlet.</p>'
-         '<p class="halvany">A szinuszos és a koszinuszos képlet <b>minden</b> valós $\\alpha$-ra és $\\beta$-ra érvényes. A tangenses csak ott, ahol mindhárom tangens értelmezett — tehát $\\cos\\alpha\\neq 0$, $\\cos\\beta\\neq 0$ és $\\cos(\\alpha\\pm\\beta)\\neq 0$ —, és ahol a nevező nem tűnik el: $1\\mp\\operatorname{tg}\\alpha\\operatorname{tg}\\beta\\neq 0$.</p>',
+         '<p class="halvany">A szinuszos és a koszinuszos képlet <b>minden</b> valós $\\alpha$-ra és $\\beta$-ra érvényes. A tangenses csak ott, ahol mindhárom tangens értelmezett — tehát $\\cos\\alpha\\neq 0$, $\\cos\\beta\\neq 0$ és $\\cos(\\alpha\\pm\\beta)\\neq 0$ — ez egyben azt is jelenti, hogy a nevező nem tűnik el, hiszen $1\\mp\\operatorname{tg}\\alpha\\operatorname{tg}\\beta$ pontosan akkor nulla, amikor $\\cos(\\alpha\\pm\\beta)=0$.</p>',
          hid="tetel-addicios"),
    doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p><b>A szögfüggvény nem „szorzó”!</b></p>'
@@ -214,11 +215,11 @@ B2 = [
          '1-2\\sin^{2}\\alpha$$'
          '$$\\operatorname{tg}2\\alpha=\\frac{2\\operatorname{tg}\\alpha}'
          '{1-\\operatorname{tg}^{2}\\alpha}$$'
-         '<p>A szinuszos és a koszinuszos képlet minden szögre igaz; a tangensesnél ki '
-         'kell zárni a $45^\\circ+k\\cdot 90^\\circ$ alakú szögeket, mert ott vagy a '
-         '$\\operatorname{tg}\\alpha$ nem létezik, vagy a nevező $0$.</p>'
-         '<p>A koszinusznak <b>három</b> alakja van — mindig azt válaszd, amelyikben '
-         'szereplő függvény értékét ismered.</p>',
+         '<p>A szinuszos és a koszinuszos képlet minden szögre igaz; a tangensesnél két '
+         'kikötés kell: $\\alpha\\neq 90^\\circ+k\\cdot 180^\\circ$ (ott a '
+         '$\\operatorname{tg}\\alpha$ nem létezik), és $\\alpha\\neq 45^\\circ+k\\cdot 90^\\circ$ (ott a nevező nulla — és épp ekkor a $\\operatorname{tg}2\\alpha$ sem létezik).</p>'
+         '<p>A koszinusznak <b>három</b> alakja van — mindig azt válaszd, amelyikben az a '
+         'függvény szerepel, amelyiknek az értékét ismered.</p>',
          hid="tetel-ketszeres",
          lenyilo=("Honnan a másik két alak?",
                   '<p>Az alapazonosságból $\\sin^{2}\\alpha=1-\\cos^{2}\\alpha$, ezt beírva</p>'
@@ -246,7 +247,7 @@ B2 = [
         ['$-\\tfrac79$', '$\\tfrac23$', '$\\tfrac19$'], 0,
         jo="✔ cos 2α = 2cos²α − 1 = 2/9 − 1 = −7/9.",
         nem="✘ Használd a 2cos²α − 1 alakot: 2·(1/9) − 1 = −7/9."),
-   gyakorolj(FGY + "#alap-7", "A 7–13", FGY + "#kozep-5", "K 5–10"),
+   gyakorolj(FGY + "#alap-7", "A 7–13", FGY + "#kozep-4", "K 4–7"),
  ]),
 ]
 
@@ -266,8 +267,8 @@ B3 = [
          '\\cos\\frac{\\alpha}{2}=\\pm\\sqrt{\\frac{1+\\cos\\alpha}{2}}$$'
          '$$\\operatorname{tg}\\frac{\\alpha}{2}=\\pm\\sqrt{\\frac{1-\\cos\\alpha}'
          '{1+\\cos\\alpha}}=\\frac{\\sin\\alpha}{1+\\cos\\alpha}$$'
-         '<p>Az előjelet <b>mindig az $\\tfrac{\\alpha}{2}$ negyede</b> dönti el — nem az '
-         '$\\alpha$-é!</p>'
+         '<p>Az előjelet mindig az dönti el, hogy <b>a felezett szög, $\\tfrac{\\alpha}{2}$, '
+         'melyik síknegyedbe esik</b> — nem az, hogy $\\alpha$ hová! A $\\frac{\\sin\\alpha}{1+\\cos\\alpha}$ alak előnye épp az, hogy ott <b>nem kell</b> előjelet választani: azt a $\\sin\\alpha$ elvégzi helyettünk.</p>'
          '<p class="halvany">A tangenses alakhoz kikötés is jár: a nevező nem lehet nulla, tehát $1+\\cos\\alpha\\neq 0$, azaz $\\alpha\\neq 180^\\circ+k\\cdot 360^\\circ$. Épp ezeknél a szögeknél lenne a felezett szög $90^\\circ$ páratlan többszöröse — ott pedig a tangens sincs értelmezve.</p>',
          hid="tetel-felszog",
          lenyilo=("Honnan jönnek?",
@@ -285,7 +286,7 @@ B3 = [
          '<p><b>a)</b> Számold ki $\\sin\\tfrac{\\alpha}{2}$ és $\\cos\\tfrac{\\alpha}{2}$ '
          'pontos értékét, ha $\\cos\\alpha=\\tfrac{7}{25}$ és '
          '$\\alpha\\in\\left(0;\\tfrac{\\pi}{2}\\right)$.<br>'
-         '<b>b)</b> Számold ki $\\sin 22^\\circ 30\'$ pontos értékét.</p>',
+         '<b>b)</b> Számold ki $\\sin 22^\\circ 30\'$ pontos értékét ($22^\\circ 30\'=22{,}5^\\circ$ — az ívperc a fok hatvanad része).</p>',
          hid="pelda-felszog",
          lenyilo=("Megoldás",
                   '<p><b>a)</b> $\\alpha$ az I. negyedben van, tehát '
@@ -298,7 +299,8 @@ B3 = [
                   '<p><b>b)</b> $22^\\circ 30\'$ a $45^\\circ$ fele, és '
                   '$\\cos 45^\\circ=\\tfrac{\\sqrt2}{2}$:</p>'
                   '$$\\sin 22^\\circ30\'=\\sqrt{\\frac{1-\\tfrac{\\sqrt2}{2}}{2}}='
-                  '\\boxed{\\frac{\\sqrt{2-\\sqrt2}}{2}}\\approx 0{,}38268$$')),
+                  '\\boxed{\\frac{\\sqrt{2-\\sqrt2}}{2}}\\approx 0{,}38268$$'
+                  '<p>A <b>pozitív</b> gyököt vettük, mert $22^\\circ 30\'$ az I. negyedbe esik.</p>')),
  ]),
 
  ("Összeg és különbség szorzattá alakítása", [
@@ -308,7 +310,7 @@ B3 = [
          '$$\\cos u+\\cos v=2\\cos\\frac{u+v}{2}\\cos\\frac{u-v}{2}$$'
          '$$\\cos u-\\cos v=-2\\sin\\frac{u+v}{2}\\sin\\frac{u-v}{2}$$'
          '<p>Mind a négyben ugyanaz a két szög szerepel: a <b>félösszeg</b> és a '
-         '<b>félkülönbség</b>. Csak az kérdés, melyik függvény kerül hova — és hogy az '
+         '<b>félkülönbség</b>. Csak az a kérdés, melyik függvény kerül hova — és hogy az '
          'utolsóban ott a <b>mínusz</b>.</p>',
          hid="tetel-szorzatta"),
    doboz("pelda", "Vészterem-szimuláció",
@@ -331,16 +333,17 @@ B3 = [
                   'mínuszt — a szinusz páratlan függvény.)</p>')),
    doboz("erdekesseg", "Miért éri meg a szorzat?",
          '<p>Egy <b>szorzat</b> akkor nulla, ha valamelyik tényezője nulla — ezért a '
-         'trigonometrikus egyenleteknél az első lépés szinte mindig a szorzattá alakítás. '
-         'Az összeggel ilyet nem lehet kezdeni. Ugyanez az ok, amiért a másodfokú '
+         'szorzattá alakítás azoknál az egyenleteknél nyit utat, ahol az egyik '
+         'oldalon <b>összeg</b> áll: nullára rendezve a szorzat minden tényezője külön '
+         'vizsgálható. Az összeggel magával ilyet nem lehet kezdeni. Ugyanez az ok, amiért a másodfokú '
          'egyenletnél is szorzattá bontottunk.</p>'),
    kviz('Mivel egyenlő $\\sin 80^\\circ+\\sin 20^\\circ$?',
         ['$\\sqrt3\\sin 50^\\circ$', '$\\sin 100^\\circ$', '$2\\sin 50^\\circ$'], 0,
         jo="✔ 2 sin 50° cos 30° = 2 · sin 50° · (√3/2) = √3 sin 50°.",
         nem="✘ sin u + sin v = 2 sin((u+v)/2) cos((u−v)/2) = 2 sin 50° cos 30° = √3 sin 50°."),
-   gyakorolj(FGY + "#alap-14", "A 14–18", FGY + "#kozep-11", "K 11–14"),
-   brief('<b>Éjjáró:</b> Az azonosságok készen vannak — ez a <b>4. ellenőrző</b> '
-         'anyagának a gerince. Innentől viszont átadom a szót Janka-nek: ő nem egyetlen '
+   gyakorolj(FGY + "#alap-14", "A 14–18", FGY + "#kozep-8", "K 8–12"),
+   brief('<b>Éjjáró:</b> Az azonosságok készen vannak — ez a témakör gerince, és '
+         'a záró felmérőn is ezt kérem majd. Innentől viszont átadom a szót Jankának: ő nem egyetlen '
          'szöggel dolgozik, hanem a <b>teljes hullámmal</b>. Meglátod, hogy néz ki a '
          'szinusz, ha nem egy pontban nézed, hanem végig.', outro=True),
  ]),
