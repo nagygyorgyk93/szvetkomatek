@@ -316,7 +316,8 @@ A3 = [
    'A gondolat ugyanaz, mint az egyenleteknél: közös alapra hozunk, majd elhagyjuk az '
    'alapot. A különbség, hogy most a <b>monotonitásra</b> is figyelnünk kell.',
    doboz("tetel", "Exponenciális egyenlőtlenség",
-         '<p>Tegyük fel, hogy az egyenlőtlenség $a^{u}&lt;a^{v}$ alakú.</p>'
+         '<p>Tegyük fel, hogy az egyenlőtlenség $a^{u}&lt;a^{v}$ alakú, ahol az alapra a szokásos kikötés áll: $a&gt;0$ és $a\\neq 1$. (Ez nem formalitás: $a=1$ esetén mindkét oldal $1$ volna, $a\\le 0$ esetén pedig a hatvány tetszőleges valós kitevőre nem is értelmezett.)</p>'
+         '<p>Ilyenkor <b>az alap nagysága dönti el</b>, mi történik a reláció irányával:</p>'
          '<ul>'
          '<li>Ha <b>$a&gt;1$</b> (a függvény <b>növekvő</b>): a nagyobb kitevőhöz nagyobb '
          'érték tartozik, ezért $u&lt;v$ — a <b>reláció iránya megmarad</b>.</li>'
