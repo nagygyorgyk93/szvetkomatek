@@ -37,7 +37,7 @@
       tér <b>mozgatása</b>: eltolom, elforgatom, tükrözöm — de az alakzat mérete és formája <b>nem változik</b>. Ezek az
       <b>izometrikus</b> (távolságtartó) transzformációk, és épp ezek adják az egybevágóság igazi értelmét: két alakzat
       akkor egybevágó, ha az egyik ilyen mozgatással a másikba vihető.</p></div>
-    <p>Egy <b>izometria</b> minden ponthoz egy képpontot rendel úgy, hogy a <b>távolságok megmaradnak</b>. Ezért az
+    <p>Egy <b>izometria</b> minden ponthoz egy képpontot rendel úgy, hogy <b>bármely két pont egymástól mért távolsága megmarad</b>: ha <span class="math inline">\(P\)</span> képe <span class="math inline">\(P'\)</span> és <span class="math inline">\(Q\)</span> képe <span class="math inline">\(Q'\)</span>, akkor <span class="math inline">\(|PQ|=|P'Q'|\)</span>. Ezért az
     eredeti alakzat és a képe mindig <b>egybevágó</b>. Négy alaptranszformációt nézünk meg.</p>
 
     <h2 id="s1">Eltolás</h2>
@@ -80,17 +80,17 @@
     </div>
 
     
-    <div class="kviz" data-answer="0" data-jo="✔ A tengelyes tükrözés az egyetlen a három közül, amely tükrözi az alakzatot — a körüljárás iránya megfordul." data-nem="✘ Az eltolás és a forgatás megőrzi a körüljárási irányt (ezek egybevágóságok elmozdítás nélkül); a tengelyes tükrözés viszont megfordítja.">
+    <div class="kviz" data-answer="0" data-jo="✔ Így van: a nem nulla vektorral való eltolásnak egyetlen fix pontja sincs — minden pont elmozdul." data-nem="✘ Gondold végig: az eltolás MINDEN pontot ugyanazzal a vektorral mozdít el. Ha a vektor nem nulla, egyetlen pont sem maradhat a helyén. (A tükrözésnél a tengely pontjai, a forgatásnál a középpont helyben marad.)">
       <p class="kviz-cim"><span class="ikon">🎯</span> Gyors kérdés</p>
-      <p>Melyik izometria fordítja meg a körüljárási irányt?</p>
-      <div class="opciok"><button>A tengelyes tükrözés</button><button>Az eltolás</button><button>A forgatás</button></div>
+      <p>Hány <b>fix pontja</b> (helyben maradó pontja) van egy nem nulla vektorral való eltolásnak?</p>
+      <div class="opciok"><button>Egy sem</button><button>Pontosan egy</button><button>Végtelen sok</button></div>
       <p class="visszajelzes"></p>
     </div>
     <h2 id="s3">Forgatás</h2>
     <div class="doboz definicio" id="def-forgatas">
       <p class="cim"><span class="ikon">📗</span> Forgatás (rotáció)</p>
       <p>Az <span class="math inline">\(O\)</span> <b>középpont</b> körüli, <span class="math inline">\(\alpha\)</span> szögű forgatás minden <span class="math inline">\(P\)</span> pontot úgy visz <span class="math inline">\(P'\)</span>-be, hogy
-      <span class="math inline">\(|OP|=|OP'|\)</span> és a <span class="math inline">\(POP'\)</span> szög éppen <span class="math inline">\(\alpha\)</span>. A középpont helyben marad; az irányítás megmarad.</p>
+      <span class="math inline">\(|OP|=|OP'|\)</span> és a <span class="math inline">\(POP'\)</span> szög éppen <span class="math inline">\(\alpha\)</span> — <b>egy rögzített irányban</b> mérve (megállapodás szerint az óramutató járásával <b>ellentétesen</b>, ez a pozitív irány). Ez a kikötés nem elhagyható: nélküle két különböző képpont is szóba jönne. A középpont helyben marad; az irányítás megmarad.</p>
     </div>
     <div class="svgcard">
       <svg viewBox="0 0 230 275" width="230" height="275" role="img" aria-label="Háromszög forgatása egy O középpont körül">

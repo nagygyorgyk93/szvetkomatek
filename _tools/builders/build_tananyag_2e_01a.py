@@ -279,8 +279,8 @@ A2 = [
  ]),
 
  ("Negatív kitevő: az $x^{-n}$ család", [
-   'Ha a kitevő negatív, a függvény $f(x)=x^{-n}=\\dfrac{1}{x^{n}}$ alakú. Itt a $0$ '
-   '<b>kimarad</b> az értelmezési tartományból — nullával nem osztunk.',
+   'Eddig a kitevő természetes szám volt. Most <b>kiterjesztjük</b> a fogalmat negatív egész kitevőre is — a hozzárendelési szabály ugyanaz marad, az értelmezési tartomány viszont szűkül.',
+   'Ha a kitevő negatív, a függvény $f(x)=x^{-n}=\\dfrac{1}{x^{n}}$ alakú, és $f:\\mathbb{R}\\setminus\\{0\\}\\to\\mathbb{R}$. A $0$ tehát <b>kimarad</b> az értelmezési tartományból — nullával nem osztunk.',
    abra(svg_fuggvenyek(
         [(lambda x: 1 / x, "#047857", "y = 1/x", [(-4.2, -0.26), (0.26, 4.2)]),
          (lambda x: 1 / x**2, "#3b82f6", "y = 1/x²", [(-4.2, -0.5), (0.5, 4.2)])],

@@ -128,6 +128,11 @@ B2 = [
  ("Tényező kivitele és bevitele", [
    'A $b\\cdot\\sqrt[n]{a}=\\sqrt[n]{a\\cdot b^{n}}$ azonosság <b>mindkét irányban</b> használható. '
    'Balról jobbra <b>bevisszük</b> a tényezőt a gyökjel alá, jobbról balra <b>kihozzuk</b>.',
+   doboz("tetel", "Mikor szabad? — a kikötés",
+         '<p><b>Páros</b> gyökkitevőnél (négyzetgyök, negyedik gyök…) a gyökjel alatt csak <b>nemnegatív</b> szám állhat, és a kihozott tényező is nemnegatív. Ezért ilyenkor a $b\\ge 0$ és $a\\ge 0$ feltétel kell — különben a helyes alak $\\sqrt{a^{2}}=|a|$ szerint abszolútérték jelenik meg.</p>'
+         '<p><b>Páratlan</b> gyökkitevőnél (köbgyök, ötödik gyök…) nincs ilyen megkötés: negatív szám köbgyöke is értelmezett, és az előjel gond nélkül átmegy a gyökjel alatt.</p>'
+         '<p>A lap példáiban ezért szerepel mindenütt az $a&gt;0$ típusú kikötés — nem díszítés, hanem az azonosság érvényességi feltétele.</p>',
+         hid="tetel-gyok-kikotes"),
    doboz("pelda", "Vészterem-szimuláció — kihozatal",
          '<p>Hozd ki a gyökjel alól a lehető legnagyobb tényezőt: '
          '$\\sqrt{72}$, $\\sqrt[3]{54}$, $\\sqrt{50a^{3}}$ ($a&gt;0$).</p>',
