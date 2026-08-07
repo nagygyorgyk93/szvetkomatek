@@ -255,7 +255,8 @@ B3 = [
          '$$\\operatorname{tg}\\frac{\\alpha}{2}=\\pm\\sqrt{\\frac{1-\\cos\\alpha}'
          '{1+\\cos\\alpha}}=\\frac{\\sin\\alpha}{1+\\cos\\alpha}$$'
          '<p>Az előjelet <b>mindig az $\\tfrac{\\alpha}{2}$ negyede</b> dönti el — nem az '
-         '$\\alpha$-é!</p>',
+         '$\\alpha$-é!</p>'
+         '<p class="halvany">A tangenses alakhoz kikötés is jár: a nevező nem lehet nulla, tehát $1+\\cos\\alpha\\neq 0$, azaz $\\alpha\\neq 180^\\circ+k\\cdot 360^\\circ$. Épp ezeknél a szögeknél lenne a felezett szög $90^\\circ$ páratlan többszöröse — ott pedig a tangens sincs értelmezve.</p>',
          hid="tetel-felszog",
          lenyilo=("Honnan jönnek?",
                   '<p>A $\\cos 2u=1-2\\sin^{2}u$ alakba írjunk $u=\\tfrac{\\alpha}{2}$-t:</p>'

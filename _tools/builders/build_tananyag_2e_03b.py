@@ -300,7 +300,7 @@ B3 = [
                   '<p><b>a)</b> A modell: $2^{x}=1\\,000\\,000$. Innen</p>'
                   '$$x=\\log_{2}1\\,000\\,000=\\frac{\\lg 10^{6}}{\\lg 2}='
                   '\\frac{6}{0{,}30103}\\approx 19{,}93.$$'
-                  '<p>Tehát a <b>20. óra</b> folyamán lépi át az egymilliót. Figyeld meg: '
+                  '<p>Tehát a <b>20. órában</b> lépi át az egymilliót — a modell óránként duplázódik, és $2^{19}=524\\,288$ még kevesebb, $2^{20}=1\\,048\\,576$ már több. Figyeld meg: '
                   'a millió hatalmas szám, de a logaritmusa csak $20$ — ez a '
                   'nagyságrend-kezelés lényege.</p>'
                   '<p><b>b)</b> A modell: $1{,}05^{n}=2$, tehát</p>'
