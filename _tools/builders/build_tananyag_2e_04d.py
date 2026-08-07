@@ -117,7 +117,8 @@ D1 = [
          '$$\\frac{a}{\\sin\\alpha}=\\frac{b}{\\sin\\beta}=\\frac{c}{\\sin\\gamma}=2R,$$'
          '<p>ahol $R$ a háromszög <b>köré írt</b> körének sugara.</p>'
          '<p>Szavakban: <b>az oldalak úgy aránylanak egymáshoz, mint a velük szemközti '
-         'szögek szinuszai</b>. Ezért a leghosszabb oldallal szemben van a legnagyobb szög.</p>',
+         'szögek szinuszai</b>. Külön tény — bár nem közvetlenül ebből következik —, hogy a '
+         'leghosszabb oldallal szemben van a legnagyobb szög.</p>',
          hid="tetel-szinusztetel",
          lenyilo=("Miért igaz?",
                   '<p>Húzzuk be a $C$ csúcsból az $m$ magasságot az $AB$ oldalra. Az így '
@@ -129,7 +130,7 @@ D1 = [
          '<p>Akkor, ha van egy <b>teljes oldal–szög pár</b> (egy oldal és a vele '
          'szemközti szög):</p>'
          '<ul>'
-         '<li><b>ASA / AAS</b> — két szög és egy oldal. A harmadik szög a '
+         '<li><b>ASA / AAS</b> (a betűk angolul: S = <i>side</i> = oldal, A = <i>angle</i> = szög — vigyázz, ez épp fordítva van, mint az elsős egybevágósági tételek magyar OSO/SOS jelölésében) — két szög és egy oldal. A harmadik szög a '
          '$180^\\circ$-ból jön, a hiányzó oldalak a szinusztételből.</li>'
          '<li><b>SSA</b> — két oldal és az egyikkel szemközti szög. ⚠️ Ez a '
          '<b>kétértelmű</b> eset.</li>'
@@ -151,7 +152,13 @@ D1 = [
          '<p><b>A kétértelmű (SSA) eset.</b> Ha két oldalt és a <b>kisebbikkel</b> '
          'szemközti szöget ismerjük, két különböző háromszög is illeszkedhet az adatokra — '
          'mert $\\sin\\varphi=\\sin(180^\\circ-\\varphi)$.</p>'
-         '<p><b>Mikor egyértelmű, és mikor nem?</b> Ha a megadott szög a <b>hosszabbik</b> oldallal szemközt van, a másik szög biztosan hegyes — a szinusztétel egyértelmű. Ha viszont a megadott szög a <b>rövidebbik</b> oldallal szemközti, a hosszabb oldal szemközti szöge hegyes és tompa is lehet: ilyenkor <b>mindkét lehetőséget</b> végig kell nézni, és azt kell megtartani, amelyiknél a három szög összege $180^\\circ$ alatt marad.</p>'
+         '<p><b>Mikor egyértelmű, és mikor nem?</b> Ha a megadott szög a <b>hosszabbik</b> oldallal szemközt van, a másik szög biztosan hegyes — a megoldás egyértelmű. Ha viszont a megadott szög a <b>rövidebbik</b> oldallal szemközti (legyen $\\alpha$ az $a$-val szemközt, és $b&gt;a$), akkor a $C$ csúcsból az $AB$-re állított magasság $m=b\\sin\\alpha$, és <b>három</b> eset van:</p>'
+         '<ul>'
+         '<li>$a&lt;b\\sin\\alpha$ → <b>nincs</b> ilyen háromszög (a számolásban $\\sin\\beta&gt;1$ jönne ki),</li>'
+         '<li>$a=b\\sin\\alpha$ → <b>pontosan egy</b>, és az derékszögű ($\\beta=90^\\circ$),</li>'
+         '<li>$b\\sin\\alpha&lt;a&lt;b$ → <b>két</b> különböző háromszög.</li>'
+         '</ul>'
+         '<p>A gyakorlati ellenőrzés egyszerű: ha $\\sin\\beta&gt;1$ adódik, nincs megoldás; ha két $\\beta$ is szóba jön, azt tartsd meg, amelyre $\\alpha+\\beta&lt;180^\\circ$ — csak akkor marad pozitív érték a harmadik szögnek. Ha mindkettőre teljesül, valóban két háromszög létezik.</p>'
          '<p><b>Példa.</b> Legyen $a=6$, $b=8$ és $\\alpha=40^\\circ$ (a megadott szög a rövidebb oldallal szemközt). A szinusztételből $\\sin\\beta=\\dfrac{8\\sin 40^\\circ}{6}\\approx 0{,}857$, ahonnan $\\beta\\approx 59^\\circ$ <b>vagy</b> $\\beta\\approx 121^\\circ$. Mindkettő működik: $40+59=99&lt;180$ és $40+121=161&lt;180$ — tehát <b>két</b> különböző háromszög is illeszkedik az adatokra.</p>'),
  ]),
 
@@ -170,7 +177,7 @@ D1 = [
          '<li><b>SAS</b> — két oldal és a <b>közbezárt</b> szög → a harmadik oldal.</li>'
          '<li><b>SSS</b> — mindhárom oldal → bármelyik szög.</li>'
          '</ul>'
-         '<p>Utána már van teljes pár, tehát a többit a szinusztétellel is folytathatod.</p>',
+         '<p>Utána már van teljes pár, tehát a többit a szinusztétellel is folytathatod — de <b>mindig a kisebbik oldal szögére</b> alkalmazd, mert az biztosan hegyesszög, tehát ott nincs kétértelműség. A harmadik szög $180^\\circ$-ból jön.</p>',
          hid="tetel-mikor-koszinusz"),
    doboz("pelda", "Vészterem-szimuláció",
          '<p><b>a)</b> $b=7$, $c=10$, $\\alpha=60^\\circ$ — mekkora $a$?<br>'
@@ -184,9 +191,10 @@ D1 = [
                   '\\approx 0{,}04762\\ \\Longrightarrow\\ \\gamma\\approx\\boxed{87{,}27^\\circ}$$'
                   '<p>A $\\cos\\gamma$ <b>pozitív</b>, tehát a szög hegyesszög — épp csak.</p>')),
    doboz("csapda", "Dr. Baljós vírus-kódja",
-         '<p><b>A képlet nem szimmetrikus!</b> A bal oldalon álló oldal mindig azzal a '
+         '<p><b>Az oldal és a szög nem cserélhető fel!</b> A bal oldalon álló oldal mindig azzal a '
          'szöggel van párban, amely a jobb oldalon a koszinuszban szerepel. A '
-         '$-2bc\\cos\\alpha$ tagban a $b$ és a $c$ épp a <b>másik két</b> oldal.</p>'
+         '$-2bc\\cos\\alpha$ tagban a $b$ és a $c$ épp a <b>másik két</b> oldal — ők '
+         'egymással nyugodtan felcserélhetők, a szorzatuk ugyanaz.</p>'
          '<p>És ha a $\\cos$ eredménye <b>negatív</b>, az nem hiba: azt jelenti, hogy a '
          'szög <b>tompaszög</b>. Ilyenkor a számológép helyesen ad $90^\\circ$ fölötti '
          'értéket.</p>'),
@@ -194,7 +202,7 @@ D1 = [
         ['Koszinusztétel', 'Szinusztétel', 'Pitagorasz-tétel'], 0,
         jo="✔ Két oldal és a közbezárt szög (SAS) → koszinusztétel.",
         nem="✘ Nincs teljes oldal–szög pár, viszont a szög a két oldal KÖZÖTT van → koszinusztétel."),
-   gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–4"),
+   gyakorolj(FGY + "#alap-1", "A 1–5", FGY + "#kozep-1", "K 1–4"),
  ]),
 ]
 
@@ -304,7 +312,7 @@ D2 = [
         ['$13{,}5$', '$27$', '$54$'], 0,
         jo="✔ T = ½ · 6 · 9 · sin 30° = 27 · 0,5 = 13,5.",
         nem="✘ T = ½ab sin γ = ½ · 6 · 9 · 0,5 = 13,5."),
-   gyakorolj(FGY + "#alap-7", "A 7–14", FGY + "#kozep-5", "K 5–12"),
+   gyakorolj(FGY + "#alap-6", "A 6–14", FGY + "#kozep-5", "K 5–12"),
    brief('<b>Szürke Janka:</b> A Fázisugrás teljesítve, kadétok — és ezzel a második évad '
          'is a végéhez ért. Ez az anyag a <b>4. írásbeli dolgozat</b> teljes terjedelme. '
          'Nézd át a taktikai memóriakártyát, aztán jöhet a terepküldetés: '

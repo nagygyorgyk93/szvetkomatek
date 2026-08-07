@@ -55,13 +55,13 @@
 
     <div class="doboz tetel" id="tetel-szinusztetel">
       <p class="cim"><span class="ikon">📘</span> Szinusztétel</p>
-      <p>Bármely háromszögben</p><span class="math display">\[\frac{a}{\sin\alpha}=\frac{b}{\sin\beta}=\frac{c}{\sin\gamma}=2R,\]</span><p>ahol <span class="math inline">\(R\)</span> a háromszög <b>köré írt</b> körének sugara.</p><p>Szavakban: <b>az oldalak úgy aránylanak egymáshoz, mint a velük szemközti szögek szinuszai</b>. Ezért a leghosszabb oldallal szemben van a legnagyobb szög.</p>
+      <p>Bármely háromszögben</p><span class="math display">\[\frac{a}{\sin\alpha}=\frac{b}{\sin\beta}=\frac{c}{\sin\gamma}=2R,\]</span><p>ahol <span class="math inline">\(R\)</span> a háromszög <b>köré írt</b> körének sugara.</p><p>Szavakban: <b>az oldalak úgy aránylanak egymáshoz, mint a velük szemközti szögek szinuszai</b>. Külön tény — bár nem közvetlenül ebből következik —, hogy a leghosszabb oldallal szemben van a legnagyobb szög.</p>
       <details><summary>Miért igaz?</summary><div class="bel"><p>Húzzuk be a <span class="math inline">\(C\)</span> csúcsból az <span class="math inline">\(m\)</span> magasságot az <span class="math inline">\(AB\)</span> oldalra. Az így keletkező két derékszögű háromszögből</p><span class="math display">\[m=b\sin\alpha\quad\text{és}\quad m=a\sin\beta,\]</span><p>tehát <span class="math inline">\(b\sin\alpha=a\sin\beta\)</span>, ami átrendezve épp <span class="math inline">\(\dfrac{a}{\sin\alpha}=\dfrac{b}{\sin\beta}\)</span>.</p></div></details>
     </div>
 
     <div class="doboz tetel" id="tetel-mikor-szinusz">
       <p class="cim"><span class="ikon">📘</span> Mikor használjuk?</p>
-      <p>Akkor, ha van egy <b>teljes oldal–szög pár</b> (egy oldal és a vele szemközti szög):</p><ul><li><b>ASA / AAS</b> — két szög és egy oldal. A harmadik szög a <span class="math inline">\(180^\circ\)</span>-ból jön, a hiányzó oldalak a szinusztételből.</li><li><b>SSA</b> — két oldal és az egyikkel szemközti szög. ⚠️ Ez a <b>kétértelmű</b> eset.</li></ul>
+      <p>Akkor, ha van egy <b>teljes oldal–szög pár</b> (egy oldal és a vele szemközti szög):</p><ul><li><b>ASA / AAS</b> (a betűk angolul: S = <i>side</i> = oldal, A = <i>angle</i> = szög — vigyázz, ez épp fordítva van, mint az elsős egybevágósági tételek magyar OSO/SOS jelölésében) — két szög és egy oldal. A harmadik szög a <span class="math inline">\(180^\circ\)</span>-ból jön, a hiányzó oldalak a szinusztételből.</li><li><b>SSA</b> — két oldal és az egyikkel szemközti szög. ⚠️ Ez a <b>kétértelmű</b> eset.</li></ul>
     </div>
 
     <div class="doboz pelda" id="pelda-szinusztetel">
@@ -72,7 +72,7 @@
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
-      <p><b>A kétértelmű (SSA) eset.</b> Ha két oldalt és a <b>kisebbikkel</b> szemközti szöget ismerjük, két különböző háromszög is illeszkedhet az adatokra — mert <span class="math inline">\(\sin\varphi=\sin(180^\circ-\varphi)\)</span>.</p><p><b>Mikor egyértelmű, és mikor nem?</b> Ha a megadott szög a <b>hosszabbik</b> oldallal szemközt van, a másik szög biztosan hegyes — a szinusztétel egyértelmű. Ha viszont a megadott szög a <b>rövidebbik</b> oldallal szemközti, a hosszabb oldal szemközti szöge hegyes és tompa is lehet: ilyenkor <b>mindkét lehetőséget</b> végig kell nézni, és azt kell megtartani, amelyiknél a három szög összege <span class="math inline">\(180^\circ\)</span> alatt marad.</p><p><b>Példa.</b> Legyen <span class="math inline">\(a=6\)</span>, <span class="math inline">\(b=8\)</span> és <span class="math inline">\(\alpha=40^\circ\)</span> (a megadott szög a rövidebb oldallal szemközt). A szinusztételből <span class="math inline">\(\sin\beta=\dfrac{8\sin 40^\circ}{6}\approx 0{,}857\)</span>, ahonnan <span class="math inline">\(\beta\approx 59^\circ\)</span> <b>vagy</b> <span class="math inline">\(\beta\approx 121^\circ\)</span>. Mindkettő működik: <span class="math inline">\(40+59=99&lt;180\)</span> és <span class="math inline">\(40+121=161&lt;180\)</span> — tehát <b>két</b> különböző háromszög is illeszkedik az adatokra.</p>
+      <p><b>A kétértelmű (SSA) eset.</b> Ha két oldalt és a <b>kisebbikkel</b> szemközti szöget ismerjük, két különböző háromszög is illeszkedhet az adatokra — mert <span class="math inline">\(\sin\varphi=\sin(180^\circ-\varphi)\)</span>.</p><p><b>Mikor egyértelmű, és mikor nem?</b> Ha a megadott szög a <b>hosszabbik</b> oldallal szemközt van, a másik szög biztosan hegyes — a megoldás egyértelmű. Ha viszont a megadott szög a <b>rövidebbik</b> oldallal szemközti (legyen <span class="math inline">\(\alpha\)</span> az <span class="math inline">\(a\)</span>-val szemközt, és <span class="math inline">\(b&gt;a\)</span>), akkor a <span class="math inline">\(C\)</span> csúcsból az <span class="math inline">\(AB\)</span>-re állított magasság <span class="math inline">\(m=b\sin\alpha\)</span>, és <b>három</b> eset van:</p><ul><li><span class="math inline">\(a&lt;b\sin\alpha\)</span> → <b>nincs</b> ilyen háromszög (a számolásban <span class="math inline">\(\sin\beta&gt;1\)</span> jönne ki),</li><li><span class="math inline">\(a=b\sin\alpha\)</span> → <b>pontosan egy</b>, és az derékszögű (<span class="math inline">\(\beta=90^\circ\)</span>),</li><li><span class="math inline">\(b\sin\alpha&lt;a&lt;b\)</span> → <b>két</b> különböző háromszög.</li></ul><p>A gyakorlati ellenőrzés egyszerű: ha <span class="math inline">\(\sin\beta&gt;1\)</span> adódik, nincs megoldás; ha két <span class="math inline">\(\beta\)</span> is szóba jön, azt tartsd meg, amelyre <span class="math inline">\(\alpha+\beta&lt;180^\circ\)</span> — csak akkor marad pozitív érték a harmadik szögnek. Ha mindkettőre teljesül, valóban két háromszög létezik.</p><p><b>Példa.</b> Legyen <span class="math inline">\(a=6\)</span>, <span class="math inline">\(b=8\)</span> és <span class="math inline">\(\alpha=40^\circ\)</span> (a megadott szög a rövidebb oldallal szemközt). A szinusztételből <span class="math inline">\(\sin\beta=\dfrac{8\sin 40^\circ}{6}\approx 0{,}857\)</span>, ahonnan <span class="math inline">\(\beta\approx 59^\circ\)</span> <b>vagy</b> <span class="math inline">\(\beta\approx 121^\circ\)</span>. Mindkettő működik: <span class="math inline">\(40+59=99&lt;180\)</span> és <span class="math inline">\(40+121=161&lt;180\)</span> — tehát <b>két</b> különböző háromszög is illeszkedik az adatokra.</p>
     </div>
 
     <h2 id="s2">A koszinusztétel</h2>
@@ -84,7 +84,7 @@
 
     <div class="doboz tetel" id="tetel-mikor-koszinusz">
       <p class="cim"><span class="ikon">📘</span> Mikor használjuk?</p>
-      <p>Akkor, ha <b>nincs</b> teljes oldal–szög pár:</p><ul><li><b>SAS</b> — két oldal és a <b>közbezárt</b> szög → a harmadik oldal.</li><li><b>SSS</b> — mindhárom oldal → bármelyik szög.</li></ul><p>Utána már van teljes pár, tehát a többit a szinusztétellel is folytathatod.</p>
+      <p>Akkor, ha <b>nincs</b> teljes oldal–szög pár:</p><ul><li><b>SAS</b> — két oldal és a <b>közbezárt</b> szög → a harmadik oldal.</li><li><b>SSS</b> — mindhárom oldal → bármelyik szög.</li></ul><p>Utána már van teljes pár, tehát a többit a szinusztétellel is folytathatod — de <b>mindig a kisebbik oldal szögére</b> alkalmazd, mert az biztosan hegyesszög, tehát ott nincs kétértelműség. A harmadik szög <span class="math inline">\(180^\circ\)</span>-ból jön.</p>
     </div>
 
     <div class="doboz pelda" id="pelda-koszinusztetel">
@@ -95,7 +95,7 @@
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
-      <p><b>A képlet nem szimmetrikus!</b> A bal oldalon álló oldal mindig azzal a szöggel van párban, amely a jobb oldalon a koszinuszban szerepel. A <span class="math inline">\(-2bc\cos\alpha\)</span> tagban a <span class="math inline">\(b\)</span> és a <span class="math inline">\(c\)</span> épp a <b>másik két</b> oldal.</p><p>És ha a <span class="math inline">\(\cos\)</span> eredménye <b>negatív</b>, az nem hiba: azt jelenti, hogy a szög <b>tompaszög</b>. Ilyenkor a számológép helyesen ad <span class="math inline">\(90^\circ\)</span> fölötti értéket.</p>
+      <p><b>Az oldal és a szög nem cserélhető fel!</b> A bal oldalon álló oldal mindig azzal a szöggel van párban, amely a jobb oldalon a koszinuszban szerepel. A <span class="math inline">\(-2bc\cos\alpha\)</span> tagban a <span class="math inline">\(b\)</span> és a <span class="math inline">\(c\)</span> épp a <b>másik két</b> oldal — ők egymással nyugodtan felcserélhetők, a szorzatuk ugyanaz.</p><p>És ha a <span class="math inline">\(\cos\)</span> eredménye <b>negatív</b>, az nem hiba: azt jelenti, hogy a szög <b>tompaszög</b>. Ilyenkor a számológép helyesen ad <span class="math inline">\(90^\circ\)</span> fölötti értéket.</p>
     </div>
 
     <div class="kviz" data-answer="0" data-jo="✔ Két oldal és a közbezárt szög (SAS) → koszinusztétel." data-nem="✘ Nincs teljes oldal–szög pár, viszont a szög a két oldal KÖZÖTT van → koszinusztétel.">
@@ -105,7 +105,7 @@
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
-    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-haromszogek.html#alap-1">🐾 Bestia-protokoll <span class="cimke">A 1–6</span></a><a class="sav bruno" href="feladatok-haromszogek.html#kozep-1">🔥 Főnix-protokoll <span class="cimke">K 1–4</span></a></div></div></div>
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-haromszogek.html#alap-1">🐾 Bestia-protokoll <span class="cimke">A 1–5</span></a><a class="sav bruno" href="feladatok-haromszogek.html#kozep-1">🔥 Főnix-protokoll <span class="cimke">K 1–4</span></a></div></div></div>
     <div class="lapozo">
       <a class="elozo" href="feladatok-trig-fuggvenyek-egyenletek.html"><span class="irany">← Előző</span><span class="hova">Feladatok — függvények és egyenletek</span></a>
       <a class="kov" href="tananyag-haromszog-megoldasa.html"><span class="irany">Következő →</span><span class="hova">Háromszög megoldása és alkalmazások</span></a>

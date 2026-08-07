@@ -92,6 +92,7 @@ B1 = [
          '$$f(x)=a\\left(x-u\\right)^{2}+v$$'
          '<p>alakban, ahol a <b>csúcspont</b> $C(u;v)$, és</p>'
          '$$u=-\\frac{b}{2a},\\qquad v=f(u)=-\\frac{D}{4a}.$$'
+         '<p>Az $a$-val való osztás megengedett: másodfokú függvénynél $a\\neq 0$.</p>'
          '<p>A parabola az $x=u$ egyenesre <b>tengelyesen szimmetrikus</b> — ez a '
          '<b>szimmetriatengelye</b>.</p>',
          hid="tetel-kanonikus",

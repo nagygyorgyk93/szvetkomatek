@@ -270,7 +270,7 @@ C2 = [
                  "vagy <b>széthúzódik</b> ($0&lt;b&lt;1$)."),
    doboz("tetel", "Periódus",
          '<p>Az $y=\\sin bx$ (és az $y=\\cos bx$) függvény periódusa</p>'
-         '$$p=\\frac{2\\pi}{|b|},$$'
+         '$$p=\\frac{2\\pi}{|b|}\\qquad(b\\neq 0),$$'
          '<p>az $y=\\operatorname{tg}bx$ függvényé pedig $p=\\dfrac{\\pi}{|b|}$.</p>'
          '<p>Vagyis $b$ azt mondja meg, <b>hányszor</b> fut le egy teljes hullám a '
          'megszokott $2\\pi$ hosszon.</p>',

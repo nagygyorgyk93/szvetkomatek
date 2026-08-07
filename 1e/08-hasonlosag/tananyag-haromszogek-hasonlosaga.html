@@ -26,7 +26,7 @@
 </nav>
 <div class="hero">
   <h1>Háromszögek hasonlósága és alkalmazásai</h1>
-  <p class="alcim">A háromszögek hasonlósági alapesetei, valós mérési feladatok (magasság, távolság), valamint a hasonlóság alkalmazása a derékszögű háromszögben: az Euklidészi tételek és a Pitagorasz-tétel.</p>
+  <p class="alcim">A háromszögek hasonlósági alapesetei, valós mérési feladatok (magasság, távolság), valamint a hasonlóság alkalmazása a derékszögű háromszögben: az Euklideszi tételek és a Pitagorasz-tétel.</p>
   <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Skála Törvénye · 3/3</span></div>
 </div>
 <main class="lap toc-os">
@@ -55,9 +55,13 @@
       </svg>
       <p class="cap">A megfelelő szögek egyenlők, a megfelelő oldalak aránya állandó (a hasonlósági arány).</p>
     </div>
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Kapcsold össze!</p>
+      <p>Ismerősek a betűk? Az <a href="../05-geometria/tananyag-haromszogek.html">egybevágósági tételekben</a> ugyanezek álltak — csak ott az oldalak <b>egyenlőségét</b> követeltük meg, itt pedig az <b>arányuk</b> egyenlőségét. Ezért is igaz, hogy az egybevágóság a hasonlóság különleges esete: éppen a <span class="math inline">\(k=1\)</span> hasonlósági arányhoz tartozik.</p>
+    </div>
     <div class="kviz" data-answer="1" data-jo="✔ 10: a 2:5 arány miatt a nagyobb oldal 4·(5/2) = 10." data-nem="✘ A hasonlósági arány 2:5, ezért a megfelelő oldal 4·(5/2) = 10.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
-      <p>Két hasonló háromszög aránya <span class="math inline">\(2:5\)</span>. A kisebb egyik oldala <span class="math inline">\(4\)</span>. Mekkora a nagyobb megfelelő oldala?</p>
+      <p>Két háromszög hasonló, a kisebbikről a nagyobbikra vett hasonlósági arány <span class="math inline">\(2:5\)</span>. A kisebb egyik oldala <span class="math inline">\(4\)</span>. Mekkora a nagyobb megfelelő oldala?</p>
       <div class="opciok"><button><span class="math inline">\(7\)</span></button><button><span class="math inline">\(10\)</span></button><button><span class="math inline">\(20\)</span></button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
@@ -74,14 +78,14 @@
     <div class="doboz pelda" id="pelda-meres">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
       Egy fa árnyéka <span class="math inline">\(12\ \text{m}\)</span>, ugyanakkor egy <span class="math inline">\(1\ \text{m}\)</span> magas bot árnyéka <span class="math inline">\(1{,}5\ \text{m}\)</span>. Milyen magas a fa?
-      <details><summary>Megoldás</summary><div class="bel"><p>A fa és a bot a napsugárral hasonló háromszöget alkot: <span class="math inline">\(\dfrac{m}{12}=\dfrac{1}{1{,}5}\)</span>, innen <span class="math inline">\(m=\dfrac{12}{1{,}5}=8\ \text{m}\)</span>.</p></div></details>
+      <details><summary>Megoldás</summary><div class="bel"><p>A fa az árnyékával és a napsugárral, illetve a bot az árnyékával és a napsugárral <b>két derékszögű háromszöget</b> alkot. A napsugarak párhuzamosak, így a napsugár és a talaj szöge mindkettőben ugyanakkora — két egyenlő szög, tehát az (SzSz) alapeset szerint a kettő hasonló: <span class="math inline">\(\dfrac{m}{12}=\dfrac{1}{1{,}5}\)</span>, innen <span class="math inline">\(m=\dfrac{12}{1{,}5}=8\ \text{m}\)</span>.</p></div></details>
     </div>
 
     <h2 id="s3">A derékszögű háromszög: Euklidész és Pitagorasz</h2>
     <p>A derékszögű háromszögben az átfogóhoz tartozó magasság <b>két hasonló</b> kis háromszögre bontja az eredetit — ebből fakad a geometria két klasszikus tétele.</p>
     <div class="doboz tetel" id="tetel-euklidesz">
-      <p class="cim"><span class="ikon">📘</span> Euklidészi tételek</p>
-      <p>Legyen az átfogó <span class="math inline">\(c\)</span>, a hozzá tartozó magasság <span class="math inline">\(m\)</span>, amely az átfogót <span class="math inline">\(p\)</span> és <span class="math inline">\(q\)</span> szeletekre osztja. A befogók <span class="math inline">\(a\)</span> és <span class="math inline">\(b\)</span>, mégpedig úgy, hogy <span class="math inline">\(a\)</span> az a befogó, amelynek a talppontjához a <span class="math inline">\(p\)</span> szelet tartozik, <span class="math inline">\(b\)</span>-hez pedig a <span class="math inline">\(q\)</span>. (Röviden: <b>minden befogóhoz a hozzá közelebbi szelet tartozik.</b>) Ekkor:</p>
+      <p class="cim"><span class="ikon">📘</span> Euklideszi tételek</p>
+      <p>Legyen az átfogó <span class="math inline">\(c\)</span>, a hozzá tartozó magasság <span class="math inline">\(m\)</span>, amely az átfogót <span class="math inline">\(p\)</span> és <span class="math inline">\(q\)</span> szeletekre osztja. A befogók <span class="math inline">\(a\)</span> és <span class="math inline">\(b\)</span>, mégpedig úgy, hogy az <span class="math inline">\(a\)</span> befogó és a <span class="math inline">\(p\)</span> szelet <b>közös csúcsból indul</b>, <span class="math inline">\(b\)</span>-hez pedig a <span class="math inline">\(q\)</span>. (Röviden: <b>minden befogóhoz a hozzá közelebbi szelet tartozik.</b>) Ekkor:</p>
       \[m^2=p\cdot q\quad(\text{magasságtétel}),\qquad a^2=c\cdot p,\ \ b^2=c\cdot q\quad(\text{befogótételek}).\]
     </div>
     <div class="doboz pelda" id="pelda-euklidesz">

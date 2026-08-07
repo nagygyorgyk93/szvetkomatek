@@ -11,7 +11,32 @@
    (a KaTeX csak betöltéskor fut, dinamikus szövegre nem). */
 (function(){
   'use strict';
+
+  /* A statikus lapokon a helyes válasz háromnegyed részben az ELSŐ gomb volt —
+     a diák így a mintát tanulja meg, nem a tartalmat. Betöltéskor megkeverjük az
+     opciókat, és a data-answer értékét az új helyre igazítjuk. Kimarad a keverésből
+     az a kvíz, amelyben helyzetfüggő válasz van („egyik sem”, „mindhárom”). */
+  var HELYFUGGO = /egyik sem|mindegyik|mindhárom|mind a (három|kettő|kettő)|a fentiek|az előzőek/i;
+
+  function keverd(scope){
+    var doboz = scope.querySelector('.opciok');
+    if(!doboz) return;
+    var gombok = Array.prototype.slice.call(doboz.querySelectorAll('button'));
+    if(gombok.length < 2) return;
+    if(gombok.some(function(b){ return HELYFUGGO.test(b.textContent || ''); })) return;
+    var helyes = parseInt(scope.getAttribute('data-answer'), 10);
+    if(isNaN(helyes) || helyes < 0 || helyes >= gombok.length) return;
+    var jel = gombok[helyes];
+    for(var i = gombok.length - 1; i > 0; i--){
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = gombok[i]; gombok[i] = gombok[j]; gombok[j] = t;
+    }
+    gombok.forEach(function(b){ doboz.appendChild(b); });
+    scope.setAttribute('data-answer', String(gombok.indexOf(jel)));
+  }
+
   function wire(scope, vj){
+    keverd(scope);
     var gombok = scope.querySelectorAll('.opciok button');
     gombok.forEach(function(b, i){
       b.addEventListener('click', function(){

@@ -214,6 +214,9 @@ B2 = [
          '1-2\\sin^{2}\\alpha$$'
          '$$\\operatorname{tg}2\\alpha=\\frac{2\\operatorname{tg}\\alpha}'
          '{1-\\operatorname{tg}^{2}\\alpha}$$'
+         '<p>A szinuszos és a koszinuszos képlet minden szögre igaz; a tangensesnél ki '
+         'kell zárni a $45^\\circ+k\\cdot 90^\\circ$ alakú szögeket, mert ott vagy a '
+         '$\\operatorname{tg}\\alpha$ nem létezik, vagy a nevező $0$.</p>'
          '<p>A koszinusznak <b>három</b> alakja van — mindig azt válaszd, amelyikben '
          'szereplő függvény értékét ismered.</p>',
          hid="tetel-ketszeres",

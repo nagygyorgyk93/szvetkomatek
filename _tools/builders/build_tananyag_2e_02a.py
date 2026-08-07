@@ -294,7 +294,9 @@ A3 = [
    'A trükk: alakítsuk át a kifejezést úgy, hogy csak az <b>összeg</b> és a <b>szorzat</b> '
    'szerepeljen benne.',
    doboz("tetel", "A két leggyakoribb átalakítás",
-         '$$\\frac{1}{x_{1}}+\\frac{1}{x_{2}}=\\frac{x_{1}+x_{2}}{x_{1}x_{2}}$$'
+         '<p>Az elsőhöz kell, hogy egyik gyök se legyen $0$ — ez pontosan azt jelenti, hogy '
+         '$c\\neq 0$, hiszen $x_{1}x_{2}=\\dfrac{c}{a}$.</p>'
+         '$$\\frac{1}{x_{1}}+\\frac{1}{x_{2}}=\\frac{x_{1}+x_{2}}{x_{1}x_{2}}\\qquad(c\\neq 0)$$'
          '$$x_{1}^{2}+x_{2}^{2}=\\left(x_{1}+x_{2}\\right)^{2}-2x_{1}x_{2}$$'
          '<p>A második az $(u+v)^{2}=u^{2}+2uv+v^{2}$ azonosság átrendezése. '
          'Hasonlóan: $\\left(x_{1}-x_{2}\\right)^{2}=\\left(x_{1}+x_{2}\\right)^{2}-4x_{1}x_{2}$.</p>',
