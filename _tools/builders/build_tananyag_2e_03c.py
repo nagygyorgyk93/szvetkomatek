@@ -132,6 +132,7 @@ C1 = [
                   '$x&gt;0$. A grafikon <b>1 egységgel feljebb</b> tolva; az aszimptota '
                   'marad az $y$-tengely. Nullahely: $\\log_{2}x=-1$, azaz $x=\\tfrac12$.</p>')),
    gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–3"),
+   brief('<b>Dr. Bestia:</b> Az inverz kapcsolat a kulcs: amit az exponenciális elrejt, azt a logaritmus visszafejti. Innen már csak egy lépés az egyenlet — de vigyázz, ott vár a témakör legalattomosabb csapdája: az <b>értelmezési tartomány</b>.', outro=True),
  ]),
 ]
 

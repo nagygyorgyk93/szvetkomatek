@@ -135,6 +135,7 @@ B1 = [
         jo="✔ cos > 0 és tg < 0 → IV. negyed, ott a szinusz negatív.",
         nem="✘ A cos pozitív, a tg negatív → IV. negyed → a szinusz negatív: −3/5."),
    gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–3"),
+   brief('<b>Éjjáró:</b> Az alapazonosságokkal egy adatból kiszámolod a többit. A következő lépés nagyobbat üt: mi történik, ha a szög <b>összeg</b>? Onnantól a $75^\circ$ és a $15^\circ$ pontos értéke is elérhető — nem csak a három nevezetes szögé.', outro=True),
  ]),
 ]
 
@@ -248,6 +249,7 @@ B2 = [
         jo="✔ cos 2α = 2cos²α − 1 = 2/9 − 1 = −7/9.",
         nem="✘ Használd a 2cos²α − 1 alakot: 2·(1/9) − 1 = −7/9."),
    gyakorolj(FGY + "#alap-7", "A 7–13", FGY + "#kozep-4", "K 4–7"),
+   brief('<b>Éjjáró:</b> Ha a szög összege és kétszerese megy, a <b>fele</b> is menni fog — csak ott az előjelet külön kell eldönteni. És a végén jön a fordítottja: összegből szorzat, ami az egyenletmegoldásnál lesz aranyat érő.', outro=True),
  ]),
 ]
 

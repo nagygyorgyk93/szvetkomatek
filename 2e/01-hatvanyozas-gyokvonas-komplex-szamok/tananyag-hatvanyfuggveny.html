@@ -39,7 +39,7 @@
 
     <h2 id="s1">Valós függvény, értelmezési tartomány, értékkészlet</h2>
 
-    A <b>valós függvény</b> minden megengedett <span class="math inline">\(x\)</span> valós számhoz pontosan egy <span class="math inline">\(y\)</span> valós számot rendel: <span class="math inline">\(f:D\to\mathbb{R}\)</span>. A megengedett <span class="math inline">\(x\)</span>-ek halmaza az <b>értelmezési tartomány</b> (<span class="math inline">\(D\)</span>), a felvett <span class="math inline">\(y\)</span>-ok halmaza az <b>értékkészlet</b>. A függvény <b>grafikonja</b> az <span class="math inline">\(\left(x,f(x)\right)\)</span> pontok halmaza a koordináta-rendszerben.
+    A <b>valós függvény</b> minden megengedett <span class="math inline">\(x\)</span> valós számhoz pontosan egy <span class="math inline">\(y\)</span> valós számot rendel: <span class="math inline">\(f:D\to\mathbb{R}\)</span>. A megengedett <span class="math inline">\(x\)</span>-ek halmaza az <b>értelmezési tartomány</b> (<span class="math inline">\(D\)</span>), a felvett <span class="math inline">\(y\)</span>-ok halmaza az <b>értékkészlet</b>. A függvény <b>grafikonja</b> az <span class="math inline">\(\left(x;f(x)\right)\)</span> pontok halmaza a koordináta-rendszerben.
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Emlékeztető</p>
@@ -48,7 +48,7 @@
 
     <div class="doboz definicio" id="def-hatvanyfuggveny">
       <p class="cim"><span class="ikon">📗</span> Hatványfüggvény</p>
-      <p>Minden <span class="math inline">\(n\)</span> természetes szám esetén az <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span>, <span class="math inline">\(f(x)=x^{n}\)</span> valós függvényt <b>hatványfüggvénynek</b> nevezzük. Az <span class="math inline">\(n=1\)</span> eset a lineáris függvény, az <span class="math inline">\(n=2\)</span> a másodfokú alapfüggvény (a <b>parabola</b>), az <span class="math inline">\(n=3\)</span> a harmadfokú alapfüggvény.</p>
+      <p>Minden <span class="math inline">\(n\ge 1\)</span> egész szám esetén az <span class="math inline">\(f:\mathbb{R}\to\mathbb{R}\)</span>, <span class="math inline">\(f(x)=x^{n}\)</span> valós függvényt <b>hatványfüggvénynek</b> nevezzük. (Az <span class="math inline">\(n=0\)</span> kivétel: <span class="math inline">\(x^{0}=1\)</span> minden <span class="math inline">\(x\neq 0\)</span>-ra, a grafikon egy „lyukas” vízszintes egyenes — ezért nem soroljuk a családba.) Az <span class="math inline">\(n=1\)</span> eset a lineáris függvény, az <span class="math inline">\(n=2\)</span> a másodfokú alapfüggvény (a <b>parabola</b>), az <span class="math inline">\(n=3\)</span> a harmadfokú alapfüggvény.</p>
     </div>
 
     <h2 id="s2">Páros kitevő: az <span class="math inline">\(x^{2k}\)</span> család</h2>
@@ -83,16 +83,16 @@
     </div>
     <p class="cap">Páros kitevő: a görbe az <span class="math inline">\(y\)</span>-tengelyre tükrös, és soha nem megy az <span class="math inline">\(x\)</span>-tengely alá.</p>
 
-    A <span class="math inline">\(y=x^{2}\)</span> grafikonját <b>parabolának</b> hívjuk; a nagyobb páros kitevők grafikonja ugyanilyen alakú, csak a <span class="math inline">\((-1,1)\)</span> intervallumon <b>laposabb</b>, azon kívül pedig <b>meredekebb</b>.
+    A <span class="math inline">\(y=x^{2}\)</span> grafikonját <b>parabolának</b> hívjuk; a nagyobb páros kitevők grafikonja hasonló jellegű (de már nem parabola): a <span class="math inline">\((-1;1)\)</span> intervallumon <b>közelebb simul</b> az <span class="math inline">\(x\)</span>-tengelyhez, azon kívül pedig <b>meredekebben emelkedik</b>.
 
     <div class="doboz tetel" id="tetel-paros-kitevo">
       <p class="cim"><span class="ikon">📘</span> Az <span class="math inline">\(x^{2k}\)</span> függvény tulajdonságai</p>
-      <ul><li><b>Értelmezési tartomány:</b> <span class="math inline">\(\mathbb{R}\)</span>; <b>értékkészlet:</b> <span class="math inline">\([0,+\infty)\)</span>.</li><li><b>Zérushely:</b> egyetlen, az <span class="math inline">\(x=0\)</span>; itt van a grafikon legalsó pontja.</li><li><b>Monotonitás:</b> csökkenő a <span class="math inline">\((-\infty,0]\)</span>, növekvő a <span class="math inline">\([0,+\infty)\)</span> intervallumon.</li><li><b>Paritás:</b> <b>páros</b> függvény, mert <span class="math inline">\((-x)^{2k}=x^{2k}\)</span> — a grafikon az <span class="math inline">\(y\)</span>-tengelyre <b>tükrös</b>.</li><li><b>Konvexitás:</b> az egész <span class="math inline">\(\mathbb{R}\)</span>-en konvex (alulról „öblös").</li></ul>
+      <ul><li><b>Értelmezési tartomány:</b> <span class="math inline">\(\mathbb{R}\)</span>; <b>értékkészlet:</b> <span class="math inline">\([0;+\infty)\)</span>.</li><li><b>Zérushely:</b> egyetlen, az <span class="math inline">\(x=0\)</span>; itt van a grafikon legalsó pontja.</li><li><b>Monotonitás:</b> csökkenő a <span class="math inline">\((-\infty,0]\)</span>, növekvő a <span class="math inline">\([0;+\infty)\)</span> intervallumon.</li><li><b>Paritás:</b> <b>páros</b> függvény, mert <span class="math inline">\((-x)^{2k}=x^{2k}\)</span> — a grafikon az <span class="math inline">\(y\)</span>-tengelyre <b>tükrös</b>.</li><li><b>Konvexitás:</b> az egész <span class="math inline">\(\mathbb{R}\)</span>-en konvex (alulról „öblös").</li></ul>
     </div>
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
-      <p>„A <span class="math inline">\(y=x^{2}\)</span> függvény minden <span class="math inline">\(y\)</span> értéket felvesz." — <b>Hamis.</b> Az értékkészlet csak <span class="math inline">\([0,+\infty)\)</span>: negatív szám <b>nem</b> lehet páros kitevőjű hatvány értéke. Ezért nincs valós megoldása az <span class="math inline">\(x^{2}=-1\)</span> egyenletnek — és pontosan ez lesz a témakör harmadik felének kiindulópontja.</p>
+      <p>„A <span class="math inline">\(y=x^{2}\)</span> függvény minden <span class="math inline">\(y\)</span> értéket felvesz." — <b>Hamis.</b> Az értékkészlet csak <span class="math inline">\([0;+\infty)\)</span>: negatív szám <b>nem</b> lehet páros kitevőjű hatvány értéke. Ezért nincs valós megoldása az <span class="math inline">\(x^{2}=-1\)</span> egyenletnek — és pontosan ez lesz a témakör harmadik szakaszának, a komplex számoknak a kiindulópontja.</p>
     </div>
 
     <div class="kviz" data-answer="0" data-jo="✔ Páros kitevőnél a hatvány értéke sosem negatív, tehát nincs ilyen valós x." data-nem="✘ Bármely valós szám NÉGYZETE nemnegatív, ezért a −1 nem állhat elő így. Épp ez vezet majd a komplex számok bevezetéséhez.">
@@ -140,13 +140,13 @@
 
     <div class="doboz tetel" id="tetel-paratlan-kitevo">
       <p class="cim"><span class="ikon">📘</span> Az <span class="math inline">\(x^{2k+1}\)</span> függvény tulajdonságai</p>
-      <ul><li><b>Értelmezési tartomány:</b> <span class="math inline">\(\mathbb{R}\)</span>; <b>értékkészlet:</b> <span class="math inline">\(\mathbb{R}\)</span>.</li><li><b>Zérushely:</b> egyetlen, az <span class="math inline">\(x=0\)</span>.</li><li><b>Monotonitás:</b> az egész <span class="math inline">\(\mathbb{R}\)</span>-en <b>növekvő</b>.</li><li><b>Paritás:</b> <b>páratlan</b> függvény, mert <span class="math inline">\((-x)^{2k+1}=-x^{2k+1}\)</span> — a grafikon az <b>origóra</b> középpontosan szimmetrikus.</li><li><b>Előjel:</b> negatív a <span class="math inline">\((-\infty,0)\)</span>, pozitív a <span class="math inline">\((0,+\infty)\)</span> intervallumon.</li></ul>
+      <ul><li><b>Értelmezési tartomány:</b> <span class="math inline">\(\mathbb{R}\)</span>; <b>értékkészlet:</b> <span class="math inline">\(\mathbb{R}\)</span>.</li><li><b>Zérushely:</b> egyetlen, az <span class="math inline">\(x=0\)</span>.</li><li><b>Monotonitás:</b> az egész <span class="math inline">\(\mathbb{R}\)</span>-en <b>növekvő</b>.</li><li><b>Paritás:</b> <b>páratlan</b> függvény, mert <span class="math inline">\((-x)^{2k+1}=-x^{2k+1}\)</span> — a grafikon az <b>origóra</b> középpontosan szimmetrikus.</li><li><b>Előjel:</b> negatív a <span class="math inline">\((-\infty,0)\)</span>, pozitív a <span class="math inline">\((0;+\infty)\)</span> intervallumon.</li></ul>
     </div>
 
     <div class="kviz" data-answer="0" data-jo="✔ Páratlan kitevő → páratlan függvény → origóra szimmetrikus." data-nem="✘ A kitevő páratlan: (−x)⁵ = −x⁵, tehát origóra szimmetrikus, és minden valós értéket felvesz.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
       <p>Melyik állítás igaz a <span class="math inline">\(y=x^{5}\)</span> függvényre?</p>
-      <div class="opciok"><button>Az origóra középpontosan szimmetrikus.</button><button>Az <span class="math inline">\(y\)</span>-tengelyre tükrös.</button><button>Az értékkészlete <span class="math inline">\([0,+\infty)\)</span>.</button></div>
+      <div class="opciok"><button>Az origóra középpontosan szimmetrikus.</button><button>Az <span class="math inline">\(y\)</span>-tengelyre tükrös.</button><button>Az értékkészlete <span class="math inline">\([0;+\infty)\)</span>.</button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
@@ -155,20 +155,20 @@
     Melyik nagyobb: <span class="math inline">\(x^{2}\)</span> vagy <span class="math inline">\(x^{3}\)</span>? A válasz attól függ, <b>hol</b> vagyunk. Ez a témakör egyik legtöbbször félreértett részlete.
 
     <div class="doboz tetel" id="tetel-kolcsonos-helyzet">
-      <p class="cim"><span class="ikon">📘</span> Sorrend a <span class="math inline">\((0,1)\)</span> és az <span class="math inline">\((1,+\infty)\)</span> intervallumon</p>
-      <p>Ha <span class="math inline">\(x\in(0,1)\)</span>, akkor a nagyobb kitevő <b>kisebb</b> értéket ad:</p><span class="math display">\[x&gt;x^{2}&gt;x^{3}&gt;x^{4}&gt;\ldots\]</span><p>Ha <span class="math inline">\(x\in(1,+\infty)\)</span>, akkor a nagyobb kitevő <b>nagyobb</b> értéket ad:</p><span class="math display">\[x&lt;x^{2}&lt;x^{3}&lt;x^{4}&lt;\ldots\]</span><p>Az <span class="math inline">\(x=0\)</span> és <span class="math inline">\(x=1\)</span> helyeken minden hatványfüggvény ugyanazt az értéket veszi fel (<span class="math inline">\(0\)</span>, illetve <span class="math inline">\(1\)</span>) — a görbék itt <b>metszik</b> egymást.</p>
+      <p class="cim"><span class="ikon">📘</span> Sorrend a <span class="math inline">\((0;1)\)</span> és az <span class="math inline">\((1;+\infty)\)</span> intervallumon</p>
+      <p>Ha <span class="math inline">\(x\in(0;1)\)</span>, akkor a nagyobb kitevő <b>kisebb</b> értéket ad:</p><span class="math display">\[x&gt;x^{2}&gt;x^{3}&gt;x^{4}&gt;\ldots\]</span><p>Ha <span class="math inline">\(x\in(1;+\infty)\)</span>, akkor a nagyobb kitevő <b>nagyobb</b> értéket ad:</p><span class="math display">\[x&lt;x^{2}&lt;x^{3}&lt;x^{4}&lt;\ldots\]</span><p>Az <span class="math inline">\(x=0\)</span> és <span class="math inline">\(x=1\)</span> helyeken minden <b>pozitív egész kitevőjű</b> hatványfüggvény ugyanazt az értéket veszi fel (<span class="math inline">\(0\)</span>, illetve <span class="math inline">\(1\)</span>) — itt találkoznak a görbék. (Páros kitevőknél az <span class="math inline">\(x=-1\)</span> is közös pont.)</p><p>Ha <span class="math inline">\(x&lt;0\)</span>: a páros kitevőjű hatvány pozitív, a páratlan negatív, tehát ott <b>mindig a páros kitevőjű a nagyobb</b>; a páros kitevők között pedig ugyanúgy az <span class="math inline">\(|x|\)</span> dönt, mint a pozitív oldalon.</p>
       <details><summary>Miért?</summary><div class="bel"><p>Legyen <span class="math inline">\(0&lt;x&lt;1\)</span>. Ekkor <span class="math inline">\(x\)</span>-szel szorozva az egyenlőtlenség iránya megmarad, de az érték csökken: <span class="math inline">\(x\cdot x&lt;1\cdot x\)</span>, azaz <span class="math inline">\(x^{2}&lt;x\)</span>. Ugyanezt ismételve kapjuk a teljes sort. Ha <span class="math inline">\(x&gt;1\)</span>, ugyanez a lépés <b>növeli</b> az értéket, így a sorrend megfordul.</p></div></details>
     </div>
 
     <div class="doboz pelda">
       <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
       <p>Melyik a nagyobb: <span class="math inline">\(0{,}7^{3}\)</span> vagy <span class="math inline">\(0{,}7^{5}\)</span>? És <span class="math inline">\(1{,}2^{3}\)</span> vagy <span class="math inline">\(1{,}2^{5}\)</span>?</p>
-      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(0{,}7\in(0,1)\)</span>, tehát a nagyobb kitevő kisebb értéket ad: <span class="math inline">\(0{,}7^{3}&gt;0{,}7^{5}\)</span>. Viszont <span class="math inline">\(1{,}2&gt;1\)</span>, tehát ott fordítva: <span class="math inline">\(1{,}2^{3}&lt;1{,}2^{5}\)</span>. <b>Számolni nem kell</b> — elég a szabály.</p></div></details>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(0{,}7\in(0;1)\)</span>, tehát a nagyobb kitevő kisebb értéket ad: <span class="math inline">\(0{,}7^{3}&gt;0{,}7^{5}\)</span>. Viszont <span class="math inline">\(1{,}2&gt;1\)</span>, tehát ott fordítva: <span class="math inline">\(1{,}2^{3}&lt;1{,}2^{5}\)</span>. <b>Számolni nem kell</b> — elég a szabály.</p></div></details>
     </div>
 
     <h2 id="s5">Negatív kitevő: az <span class="math inline">\(x^{-n}\)</span> család</h2>
 
-    Eddig a kitevő természetes szám volt. Most <b>kiterjesztjük</b> a fogalmat negatív egész kitevőre is — a hozzárendelési szabály ugyanaz marad, az értelmezési tartomány viszont szűkül.
+    Eddig a <b>hatványfüggvény</b> kitevője pozitív egész volt. A negatív kitevőt a hatványozásnál már bevezettük — most nézzük meg, milyen <b>görbét</b> ad — a hozzárendelési szabály ugyanaz marad, az értelmezési tartomány viszont szűkül.
 
     Ha a kitevő negatív, a függvény <span class="math inline">\(f(x)=x^{-n}=\dfrac{1}{x^{n}}\)</span> alakú, és <span class="math inline">\(f:\mathbb{R}\setminus\{0\}\to\mathbb{R}\)</span>. A <span class="math inline">\(0\)</span> tehát <b>kimarad</b> az értelmezési tartományból — nullával nem osztunk.
 
@@ -216,17 +216,17 @@
 
     <div class="doboz tetel" id="tetel-negativ-kitevo">
       <p class="cim"><span class="ikon">📘</span> Páros vagy páratlan <span class="math inline">\(n\)</span>?</p>
-      <p>Ha <span class="math inline">\(n\)</span> <b>páros</b> (<span class="math inline">\(y=\frac{1}{x^{2}},\frac{1}{x^{4}},\ldots\)</span>): a függvényértékek mindig <b>pozitívak</b>, a grafikon két ága az <span class="math inline">\(x\)</span>-tengely <b>fölött</b> van, a görbe az <span class="math inline">\(y\)</span>-tengelyre tükrös.</p><p>Ha <span class="math inline">\(n\)</span> <b>páratlan</b> (<span class="math inline">\(y=\frac{1}{x},\frac{1}{x^{3}},\ldots\)</span>): a negatív <span class="math inline">\(x\)</span>-ekhez negatív érték tartozik, a két ág az <b>első és a harmadik</b> síknegyedben van, a görbe az <b>origóra</b> szimmetrikus.</p>
+      <p>Ha <span class="math inline">\(n\)</span> <b>páros</b> (<span class="math inline">\(y=\frac{1}{x^{2}},\frac{1}{x^{4}},\ldots\)</span>): a függvényértékek mindig <b>pozitívak</b>, a grafikon két ága az <span class="math inline">\(x\)</span>-tengely <b>fölött</b> van, a görbe az <span class="math inline">\(y\)</span>-tengelyre tükrös.</p><p>Ha <span class="math inline">\(n\)</span> <b>páratlan</b> (<span class="math inline">\(y=\frac{1}{x},\frac{1}{x^{3}},\ldots\)</span>): a negatív <span class="math inline">\(x\)</span>-ekhez negatív érték tartozik, a két ág az <b>első és a harmadik</b> síknegyedben van, a görbe az <b>origóra</b> szimmetrikus.</p><p><b>Értelmezési tartomány:</b> <span class="math inline">\(\mathbb{R}\setminus\{0\}\)</span> · <b>zérushely nincs</b> · <b>értékkészlet:</b> páros <span class="math inline">\(n\)</span>-re <span class="math inline">\((0;+\infty)\)</span>, páratlan <span class="math inline">\(n\)</span>-re <span class="math inline">\(\mathbb{R}\setminus\{0\}\)</span>.</p><p>⚠️ <b>A monotonitás ágankénti!</b> Az <span class="math inline">\(y=\dfrac1x\)</span> mindkét ágon csökken, de a két ág <b>együtt nem</b> alkot csökkenő függvényt: <span class="math inline">\(-1&lt;1\)</span>, mégis <span class="math inline">\(f(-1)=-1&lt;f(1)=1\)</span>. A monotonitást tehát mindig a <span class="math inline">\((-\infty;0)\)</span> és a <span class="math inline">\((0;+\infty)\)</span> intervallumon külön mondjuk ki.</p>
     </div>
 
-    <div class="kviz" data-answer="0" data-jo="✔ Pozitív értékek, de a 0-t sosem éri el (az x-tengely aszimptota)." data-nem="✘ A tört értéke sosem 0 és sosem negatív → az értékkészlet (0, +∞).">
+    <div class="kviz" data-answer="0" data-jo="✔ Pozitív értékek, de a 0-t sosem éri el (az x-tengely aszimptota)." data-nem="✘ A tört értéke sosem 0 és sosem negatív → az értékkészlet (0; +∞).">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
       <p>Mi az <span class="math inline">\(f(x)=\dfrac{1}{x^{2}}\)</span> függvény értékkészlete?</p>
-      <div class="opciok"><button><span class="math inline">\((0,+\infty)\)</span></button><button><span class="math inline">\([0,+\infty)\)</span></button><button><span class="math inline">\(\mathbb{R}\setminus\{0\}\)</span></button></div>
+      <div class="opciok"><button><span class="math inline">\((0;+\infty)\)</span></button><button><span class="math inline">\([0;+\infty)\)</span></button><button><span class="math inline">\(\mathbb{R}\setminus\{0\}\)</span></button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
-    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-hatvanyozas.html#alap-7">🐾 Bestia-protokoll <span class="cimke">A 7–10</span></a><a class="sav bruno" href="feladatok-hatvanyozas.html#kozep-6">🔥 Főnix-protokoll <span class="cimke">K 6–8</span></a></div></div></div>
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-hatvanyozas.html#alap-7">🐾 Bestia-protokoll <span class="cimke">A 7–10</span></a><a class="sav bruno" href="feladatok-hatvanyozas.html#kozep-6">🔥 Főnix-protokoll <span class="cimke">K 6–7</span></a></div></div></div>
 
     <div class="brief" data-outro><p>📡 <b>Vihar Vera:</b> Uraltad a vihar erejét — most fejtsd is vissza. Ha ismerem a hatvány <b>eredményét</b>, meg tudom-e találni az <b>alapot</b>? Ez a gyökvonás, és vele megérkezik az első igazi buktató is: a páros gyökkitevő. Vigyázz a lábad elé.</p></div>
     <div class="lapozo">

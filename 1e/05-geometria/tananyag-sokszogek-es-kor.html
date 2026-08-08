@@ -34,18 +34,18 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
       <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/vanda.webp" alt="Vanda — a valóságformálás mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Vanda:</b> A sokszög a formák nagy családja — háromszögtől a szabályos tizennyolcszögig.
-      A kör pedig a tökéletes szimmetria. A Tükör-világban a <b>kerületi szög</b> a legfurcsább trükk: bárhonnan nézed
-      ugyanazt az ívet, mindig ugyanakkora szögben látod. Ez a láthatatlan szabály stabilizálja a portálgyűrűket.</p></div>
-    <p>A sokszög egyenes szakaszokkal határolt síkidom. Két képlettel az összes átlóját és szögösszegét kiszámolod.</p>
+      A kör pedig a tökéletes szimmetria. A Tükör-világban a <b>kerületi szög</b> a legfurcsább trükk: a körvonal ugyanazon ívének
+      bármely pontjából ugyanakkora szögben látod. Ez a láthatatlan szabály stabilizálja a portálgyűrűket.</p></div>
+    <p>A sokszög olyan síkidom, amelyet <b>zárt, önmagát nem metsző</b> töröttvonal határol. Két képlettel az összes átlóját és szögösszegét kiszámolod.</p>
 
     <h2 id="s1">Átlók és szögösszeg</h2>
     <div class="doboz tetel" id="tetel-sokszog-atlo">
       <p class="cim"><span class="ikon">📘</span> Az <span class="math inline">\(n\)</span>-szög képletei</p>
       <ul>
-        <li>egy csúcsból húzható átlók száma: <span class="math inline">\(n-3\)</span>;</li>
+        <li>Legyen <span class="math inline">\(n\ge 3\)</span> egész szám. Ekkor egy csúcsból húzható átlók száma: <span class="math inline">\(n-3\)</span>;</li>
         <li>az összes átló száma: <span class="math inline">\(\dfrac{n(n-3)}{2}\)</span>;</li>
         <li>a belső szögek összege: <span class="math inline">\((n-2)\cdot 180^\circ\)</span>;</li>
-        <li>a külső szögek összege bármely <b>konvex</b> sokszögnél: <span class="math inline">\(360^\circ\)</span>.</li>
+        <li>a külső szögek összege bármely <b>konvex</b> (azaz 180°-nál nagyobb belső szöget nem tartalmazó) sokszögnél: <span class="math inline">\(360^\circ\)</span>.</li>
       </ul>
     </div>
     <div class="svgcard">
@@ -79,7 +79,7 @@
     </div>
 
     
-    <div class="kviz" data-answer="0" data-jo="✔ A kerületi szög a hozzá tartozó középponti szög fele: 80° : 2 = 40°." data-nem="✘ Épp fordítva: a KÖZÉPPONTI szög a kétszerese a kerületinek. Tehát a kerületi szög 40°.">
+    <div class="kviz" data-answer="0" data-jo="✔ A kerületi szög a hozzá tartozó középponti szög fele: 80° : 2 = 40°." data-nem="✘ Ugyanazon íven a kerületi szög a középponti szög FELE: 80° : 2 = 40°.">
       <p class="kviz-cim"><span class="ikon">🎯</span> Gyors kérdés</p>
       <p>Egy körben egy <span class="math inline">\(80^\circ\)</span>-os középponti szöghöz mekkora kerületi szög tartozik?</p>
       <div class="opciok"><button><span class="math inline">\(40^\circ\)</span></button><button><span class="math inline">\(80^\circ\)</span></button><button><span class="math inline">\(160^\circ\)</span></button></div>
@@ -96,8 +96,9 @@
     <h2 id="s4">Középponti és kerületi szög</h2>
     <div class="doboz tetel" id="tetel-keruleti-szog">
       <p class="cim"><span class="ikon">📘</span> A kerületi szögek tétele</p>
-      <p>Ugyanahhoz az ívhez tartozó <b>kerületi szög</b> a <b>középponti szög fele</b>: <span class="math inline">\(\varphi=\dfrac{\gamma}{2}\)</span>.
-      Ebből következik: az azonos íven nyugvó kerületi szögek egyenlők.</p>
+      <p>Ugyanahhoz az ívhez tartozó <b>kerületi szög</b> (csúcsa a körvonalon van, szárai húrok) a <b>középponti szög</b> (csúcsa a kör középpontja) <b>fele</b>: <span class="math inline">\(\varphi=\dfrac{\gamma}{2}\)</span>.
+      Ebből következik: az ugyanazt az ívet átfogó kerületi szögek egyenlők.</p>
+      <p class="halvany">Két pont a körvonalat két <b>ívre</b> bontja. A kerületi szög csúcsa az egyik íven van, és a <b>másikat</b> fogja át — ezt hívjuk „az ívhez tartozó” szögnek. A két sugár és a köztük lévő ív által határolt síkrész a <b>körcikk</b>.</p>
     </div>
     <div class="svgcard">
       <svg viewBox="0 0 300 230" width="300" height="230" role="img" aria-label="Kör középponti és kerületi szöggel ugyanazon AB ívhez">
@@ -115,8 +116,8 @@
     </div>
     <div class="doboz pelda" id="pelda-keruleti">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
-      Egy <span class="math inline">\(211^\circ\)</span>-os középponti szöghöz mekkora kerületi szög tartozik (vagyis mekkora az ugyanahhoz az ívhez tartozó kerületi szög)?
-      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(\varphi=\dfrac{211^\circ}{2}=105{,}5^\circ\)</span>.</p></div></details>
+      Egy <span class="math inline">\(124^\circ\)</span>-os középponti szöghöz mekkora kerületi szög tartozik (vagyis mekkora az ugyanazt az ívet átfogó kerületi szög)?
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(\varphi=\dfrac{124^\circ}{2}=62^\circ\)</span>.</p></div></details>
     </div>
     <div class="doboz tetel" id="tetel-thalesz">
       <p class="cim"><span class="ikon">📘</span> Thalész-tétel</p>
@@ -133,7 +134,7 @@
         <circle cx="150" cy="110" r="3" fill="#0f172a"/>
         <text x="50" y="124" font-size="12" fill="#0f172a">A</text><text x="244" y="124" font-size="12" fill="#0f172a">B</text><text x="92" y="30" font-size="12" fill="#0f172a">P</text>
       </svg>
-      <div class="cap">Ha \(AB\) átmérő, akkor az \(APB\sphericalangle=90^\circ\) bármely \(P\) körvonalpontra.</div>
+      <div class="cap">Ha \(AB\) átmérő, akkor az \(APB\sphericalangle=90^\circ\) bármely olyan \(P\) körvonalpontra, amely \(A\)-tól és \(B\)-től különbözik.</div>
     </div>
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>

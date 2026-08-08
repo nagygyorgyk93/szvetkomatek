@@ -187,6 +187,7 @@ A1 = [
                   'az értékkészlet $(0;+\\infty)$, és a görbe a $(0;\\tfrac14)$ ponton halad át, '
                   'mert $\\left(\\tfrac12\\right)^{2}=\\tfrac14$.</p>')),
    gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–3"),
+   brief('<b>Dr. Bestia:</b> A görbét ismerjük: a $2^{x}$ sosem áll meg, és sosem éri el a nullát. Most jön a kérdés, amiért az egészet csináljuk: <b>mikor</b> ér el egy adott értéket? Ez már egyenlet — és a jó hír, hogy a monotonitás miatt legfeljebb egy megoldása lesz.', outro=True),
  ]),
 ]
 
@@ -298,6 +299,7 @@ A2 = [
         jo="✔ A −1 nem lehet 3ˣ, marad 3ˣ = 9, azaz x = 2.",
         nem="✘ A t = 3ˣ mindig pozitív, tehát a −1 kiesik; a 9-ből x = 2."),
    gyakorolj(FGY + "#alap-7", "A 7–14", FGY + "#kozep-4", "K 4–10"),
+   brief('<b>Dr. Bestia:</b> Az egyenletek megvannak. Az egyenlőtlenségnél egyetlen dolog változik — de az mindent eldönt: ha az alap $1$-nél kisebb, a függvény <b>csökken</b>, és a relációjel megfordul. Aki ezt elfelejti, pont az ellenkezőjét kapja.', outro=True),
  ]),
 ]
 

@@ -203,6 +203,7 @@ D1 = [
         jo="✔ Két oldal és a közbezárt szög (SAS) → koszinusztétel.",
         nem="✘ Nincs teljes oldal–szög pár, viszont a szög a két oldal KÖZÖTT van → koszinusztétel."),
    gyakorolj(FGY + "#alap-1", "A 1–5", FGY + "#kozep-1", "K 1–4"),
+   brief('<b>Szürke Janka:</b> A két tétel a kezedben van. Már csak azt kell eldöntened, <b>melyiket mikor</b> vedd elő — és ha ez megy, a terepen bármilyen háromszöget be tudsz mérni: tornyot, hegyoldalt, folyószélességet.', outro=True),
  ]),
 ]
 

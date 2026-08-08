@@ -154,6 +154,7 @@ B1 = [
         jo="✔ log₇1 = 0 és log₄4 = 1, az összeg 1.",
         nem="✘ Bármely alap esetén log 1 = 0, és logₐa = 1 — az összeg 0 + 1 = 1."),
    gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–3"),
+   brief('<b>Dr. Bestia:</b> A fogalom megvan: a logaritmus egy <b>kitevő</b>. Ha ezt nem engeded elúszni, a következő rész magától adódik — a hatványozás minden azonossága átfordul logaritmusra: a szorzásból összeadás lesz, a hatványozásból szorzás.', outro=True),
  ]),
 ]
 
@@ -242,6 +243,7 @@ B2 = [
         jo="✔ Az összeg szorzattá válik az argumentumban: log₂(5·4) = log₂20.",
         nem="✘ A logaritmusok ÖSSZEGE az argumentumok SZORZATÁnak logaritmusa: log₂20."),
    gyakorolj(FGY + "#alap-7", "A 7–12", FGY + "#kozep-4", "K 4–8"),
+   brief('<b>Dr. Bestia:</b> Három azonosság, és bármit szét tudsz szedni. Egy dolog hiányzik még: a számológépeden csak <b>két</b> gomb van, $\lg$ és $\ln$. Hogyan számolsz ki egy $\log_{3}20$-at? Egyetlen képlet kell hozzá.', outro=True),
  ]),
 ]
 

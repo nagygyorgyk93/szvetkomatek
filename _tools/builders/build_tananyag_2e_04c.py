@@ -241,6 +241,7 @@ C1 = [
         jo="✔ A tangens 180°-onként ismétlődik.",
         nem="✘ A tg és a ctg periódusa π, csak a sin és a cos periódusa 2π."),
    gyakorolj(FGY + "#alap-1", "A 1–5", FGY + "#kozep-1", "K 1–3"),
+   brief('<b>Szürke Janka:</b> A két alapgörbét ismered. Egy valódi jel viszont sosem ilyen tiszta: van erőssége, sűrűsége és késése. Három paraméter — és mindhárom másképp nyúl bele a hullámba, mint ahogy elsőre gondolnád.', outro=True),
  ]),
 ]
 
@@ -325,6 +326,7 @@ C2 = [
         jo="✔ Emeld ki a b-t: sin(2x − π) = sin(2(x − π/2)), tehát π/2-vel jobbra.",
         nem="✘ Az eltolás nem −c, hanem −c/b. Emeld ki a 2-t: 2x − π = 2(x − π/2)."),
    gyakorolj(FGY + "#alap-6", "A 6–11", FGY + "#kozep-4", "K 4–8"),
+   brief('<b>Szürke Janka:</b> A hullámot már le tudod írni. Most jön a fordított kérdés: <b>mikor</b> éri el a jel a keresett értéket? Ez trigonometrikus egyenlet — és mivel a hullám ismétlődik, nem egy megoldás lesz, hanem végtelen sok.', outro=True),
 ]),
 ]
 

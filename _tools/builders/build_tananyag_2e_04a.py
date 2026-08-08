@@ -169,6 +169,7 @@ A1 = [
         jo="✔ 270/180 = 3/2, tehát 3π/2.",
         nem="✘ Oszd el 180-nal: 270/180 = 3/2 → 3π/2."),
    gyakorolj(FGY + "#alap-1", "A 1–5", FGY + "#kozep-1", "K 1–2"),
+   brief('<b>Éjjáró:</b> A szögmérés kereteit lefektettük. Most jön a szerkezet, amitől az egész témakör működik: az <b>egységsugarú kör</b>. Ezen a szögfüggvények egyszerű koordinátákká válnak — és onnantól minden szögre értelmesek, nem csak hegyesszögre.', outro=True),
  ]),
 ]
 
@@ -284,6 +285,7 @@ A2 = [
          'szabályos háromszögből</b> (oldalak $1$, $\\sqrt3$, $2$). Ez a két háromszög '
          'adja a teljes táblázatot — érdemes lerajzolni a füzet szélére.</p>'),
    gyakorolj(FGY + "#alap-6", "A 6–12", FGY + "#kozep-3", "K 3–7"),
+   brief('<b>Éjjáró:</b> A kör megvan, az előjelek megvannak. Már csak egy fogásra van szükség: bármilyen szöget <b>vissza kell tudni vezetni</b> az első negyedre. Két lépés — alapszög és előjel —, és nincs az a szög, amivel ne boldogulnál.', outro=True),
  ]),
 ]
 

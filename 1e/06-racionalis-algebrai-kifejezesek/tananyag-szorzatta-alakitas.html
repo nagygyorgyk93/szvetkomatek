@@ -32,13 +32,13 @@
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
-      <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/iruhs.webp" alt="Iruhs — a kampusz fejlesztőmérnöke" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Iruhs:</b> Kán a fegyvere: <b>túlbonyolítás</b>. Egy hosszú, ijesztő kifejezés mögött gyakran néhány tiszta <b>tényező</b> lapul — a te dolgod, hogy <b>felismerd és szorzattá bontsd</b>. A szorzat alak a nyerő: vele egyszerűsítesz törtet, oldasz egyenletet, számolsz LKO-t és LKT-t. Ez a modul a tisztogatásé: az összeget alakítjuk <b>szorzattá</b>.</p></div>
-    <p>A <b>szorzattá alakítás</b> (tényezőkre bontás) az a művelet, amikor egy összeget (polinomot) <b>tényezők szorzataként</b> írunk fel. Négy fő eszközünk van: közös tényező kiemelése, a nevezetes azonosságok visszafelé, csoportosítás — és ezek kombinációja.</p>
+      <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/iruhs.webp" alt="Iruhs — a kampusz fejlesztőmérnöke" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Iruhs:</b> Kán fegyvere: <b>túlbonyolítás</b>. Egy hosszú, ijesztő kifejezés mögött gyakran néhány tiszta <b>tényező</b> lapul — a te dolgod, hogy <b>felismerd és szorzattá bontsd</b>. A szorzat alakkal nyersz: ezzel egyszerűsítesz törtet, oldasz egyenletet, számolsz LKO-t és LKT-t. Ez a modul a tisztogatásé: az összeget alakítjuk <b>szorzattá</b>.</p></div>
+    <p>A <b>szorzattá alakítás</b> (tényezőkre bontás) az az átalakítás, amikor egy összeget (polinomot) <b>tényezők szorzataként</b> írunk fel. Három fő eszközünk van: közös tényező kiemelése, nevezetes azonosság felismerése, csoportosítás — és ezek kombinációja.</p>
 
     <h2 id="s1">Közös tényező kiemelése</h2>
     <div class="doboz definicio" id="def-kiemeles">
       <p class="cim"><span class="ikon">📗</span> Kiemelés</p>
-      <p>Ha minden tagban szerepel egy közös tényező, azt a zárójel elé <b>kiemeljük</b> (fordított disztributivitás): <span class="math inline">\(ab+ac=a(b+c)\)</span>. Mindig a <b>legnagyobb</b> közös tényezőt emeld ki (a legnagyobb közös számot és a változók legkisebb közös kitevőjét).</p>
+      <p>Ha minden tagban szerepel egy közös tényező, azt a zárójel elé <b>kiemeljük</b> (fordított disztributivitás): <span class="math inline">\(ab+ac=a(b+c)\)</span>. Mindig a <b>legnagyobb</b> közös tényezőt emeld ki (az együtthatók legnagyobb közös osztóját, a közös változókat pedig a legkisebb előforduló kitevőn).</p>
     </div>
     <div class="doboz pelda" id="pelda-kiemeles">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
@@ -46,7 +46,7 @@
       <details><summary>Megoldás</summary><div class="bel"><p>A közös tényező <span class="math inline">\(5x^2\)</span>: <span class="math inline">\(15x^3-10x^2=5x^2(3x-2)\)</span>.</p></div></details>
     </div>
 
-    <h2 id="s2">Nevezetes azonosságok visszafelé</h2>
+    <h2 id="s2">Bontás nevezetes azonossággal</h2>
     <div class="doboz tetel" id="tetel-bontas-azonossagok">
       <p class="cim"><span class="ikon">📘</span> A bontóképletek</p>
       \[a^2-b^2=(a-b)(a+b)\quad(\text{négyzetek különbsége}),\]
@@ -79,7 +79,7 @@
     <h2 id="s3">Csoportosításos bontás</h2>
     <div class="doboz definicio" id="def-csoportositas">
       <p class="cim"><span class="ikon">📗</span> Csoportosítás</p>
-      <p>Ha nincs közös tényező mind a tagokban, próbáld meg a tagokat <b>csoportokba</b> rendezni úgy, hogy minden csoportból ugyanaz a zárójel emelhető ki: <span class="math inline">\(ax+ay+bx+by=a(x+y)+b(x+y)=(a+b)(x+y)\)</span>.</p>
+      <p>Ha nincs <b>mindegyik tagban</b> közös tényező, próbáld meg a tagokat <b>csoportokba</b> rendezni úgy, hogy minden csoportból ugyanaz a zárójel emelhető ki: <span class="math inline">\(ax+ay+bx+by=a(x+y)+b(x+y)=(a+b)(x+y)\)</span>.</p>
     </div>
     <div class="doboz pelda" id="pelda-csoportositas">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
@@ -96,7 +96,7 @@
     </div>
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Miért hasznos?</p>
-      A szorzat alak a <b>kulcs</b> a következő modulhoz: törtet egyszerűsíteni csak <b>közös tényezővel</b> lehet — és a törtek összeadásánál a közös nevező pontosan az <b>LKT</b>.
+      A szorzat alak a <b>kulcs</b> a következő modulhoz: törtet egyszerűsíteni csak <b>közös tényezővel</b> lehet — és a törtek összeadásánál a <b>legkisebb</b> közös nevező pontosan az <b>LKT</b>.
     </div>
 
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-racionalis-algebrai-kifejezesek.html#alap-7">🐜 Henrik-bevetés <span class="cimke">A 7–9</span></a><a class="sav bruno" href="feladatok-racionalis-algebrai-kifejezesek.html#kozep-5">💥 Brúnó-bevetés <span class="cimke">K 5–6</span></a></div></div></div>

@@ -172,7 +172,7 @@ B2 = [
          '<ol class="reszfeladatok">'
          '<li><b>Nyílásirány:</b> az $a$ előjele — konvex (felfelé) vagy konkáv (lefelé)?</li>'
          '<li><b>Zérushelyek:</b> az $ax^{2}+bx+c=0$ egyenlet megoldásai — itt metszi '
-         'a görbe az $x$-tengelyt.</li>'
+         'a görbe az $x$-tengelyt. $D&gt;0$: két zérushely (metszés), $D=0$: egy (érintés), $D&lt;0$: egy sincs — ilyenkor ez a lépés üresen marad, a többi ugyanúgy megy.</li>'
          '<li><b>$y$-tengelymetszet:</b> $f(0)=c$.</li>'
          '<li><b>Csúcspont:</b> $C(u;v)$, ahol $u=-\\dfrac{b}{2a}$ és $v=f(u)$.</li>'
          '<li><b>Szélsőérték:</b> $a&gt;0$ esetén <b>minimum</b>, $a&lt;0$ esetén '
@@ -183,13 +183,13 @@ B2 = [
          '$(-\\infty;u]$-n <b>csökken</b>, $[u;+\\infty)$-n <b>nő</b>; $a&lt;0$ esetén '
          'fordítva.</li>'
          '</ol>'
-         '<p>Az értelmezési tartomány mindig a teljes $\\mathbb{R}$ — ezt nem kell keresni.</p>',
+         '<p>A <b>másodfokú függvény</b> értelmezési tartománya a teljes $\\mathbb{R}$ — ezt nem kell keresni. A valós helyzetből származó feladatokban viszont a szöveg leszűkítheti (lásd a szélsőérték-feladatot).</p>',
          hid="def-vizsgalat-protokoll"),
    doboz("erdekesseg", "Miért ilyen sorrendben?",
          '<p>Mert minden lépés a következőt készíti elő. A nyílásirányból már tudod, '
          'minimum vagy maximum lesz-e; a csúcspontból jön a szélsőérték; a szélsőértékből '
          'az értékkészlet; és a csúcs helyéből a monotonitás fordulópontja. Ha a sorrendet '
-         'betartod, <b>nem kell gondolkodni</b> — csak számolni.</p>'),
+         'betartod, minden lépéshez kész adatod van — nem kell újra kitalálni, mi következik.</p>'),
  ]),
 
  ("Teljes kidolgozott vizsgálat", [
@@ -208,24 +208,25 @@ B2 = [
                   '<p><b>6. Értékkészlet:</b> $[-4;+\\infty)$.</p>'
                   '<p><b>7. Monotonitás:</b> a csúcs az $x=1$ helyen van, tehát a függvény '
                   '$(-\\infty;1]$-en csökken, $[1;+\\infty)$-en nő.</p>')),
-   abra(SVG_VIZSG, "A grafikonhoz elég három adat: a <b>két zérushely</b>, a "
-                   "<b>csúcspont</b> és az <b>$y$-tengelymetszet</b>. A parabola "
-                   "szimmetrikus az $x=1$ egyenesre."),
+   abra(SVG_VIZSG, "A rajzhoz a nyílásirány, a <b>csúcspont</b> és még legalább két pont "
+                   "kell — legkényelmesebb a <b>két zérushely</b> és az "
+                   "<b>$y$-tengelymetszet</b>. A parabola szimmetrikus az $x=1$ "
+                   "egyenesre."),
    doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>Három visszatérő hiba:</p>'
          '<ol class="reszfeladatok">'
-         '<li><b>A csúcs $y$-koordinátáját „megsaccolni".</b> Nem a két zérushely '
-         'átlagának képe, hanem $f(u)$ — <b>be kell helyettesíteni</b>. (Az $u$ viszont '
-         'valóban a két zérushely átlaga, ha vannak.)</li>'
+         '<li><b>A csúcs $y$-koordinátáját „megsaccolni”.</b> A $v$ nem a két zérushely '
+         'átlaga (az az $u$!), és nem is a zérushelyeknél felvett érték (az $0$) — hanem '
+         '$f(u)$: <b>be kell helyettesíteni</b>.</li>'
          '<li><b>Az értékkészletet $\\mathbb{R}$-nek írni.</b> Az az <b>értelmezési '
          'tartomány</b>. Az értékkészlet a csúcstól indul.</li>'
          '<li><b>A minimum és a minimumhely összekeverése.</b> A minimum <b>értéke</b> '
          '$v=-4$; a minimum<b>hely</b> $x=1$.</li>'
          '</ol>'),
    kviz('Mi az $y=x^{2}-6x+8$ függvény értékkészlete?',
-        ['$[-1,+\\infty)$', '$\\mathbb{R}$', '$[8,+\\infty)$'], 0,
-        jo="✔ u = 3, v = 9 − 18 + 8 = −1, és a > 0 → [−1, +∞).",
-        nem="✘ Számold ki a csúcsot: u = 3, v = f(3) = −1. Mivel a > 0, az értékkészlet [−1, +∞)."),
+        ['$[-1;+\\infty)$', '$\\mathbb{R}$', '$[8;+\\infty)$'], 0,
+        jo="✔ u = 3, v = 9 − 18 + 8 = −1, és a > 0 → [−1; +∞).",
+        nem="✘ Számold ki a csúcsot: u = 3, v = f(3) = −1. Mivel a > 0, az értékkészlet [−1; +∞)."),
  ]),
 
  ("Ha a parabola lefelé nyílik", [
@@ -239,7 +240,8 @@ B2 = [
                   '<p><b>3.</b> $f(0)=-3$.</p>'
                   '<p><b>4.</b> $u=-\\dfrac{4}{-2}=2$, $v=f(2)=-4+8-3=1$ → $C(2;1)$.</p>'
                   '<p><b>5.</b> <b>Maximum</b>, értéke $1$.</p>'
-                  '<p><b>6.</b> Értékkészlet: $(-\\infty,1]$.</p>')),
+                  '<p><b>6.</b> Értékkészlet: $(-\\infty;1]$.</p>'
+                  '<p><b>7.</b> Monotonitás: $(-\\infty;2]$-n <b>nő</b>, $[2;+\\infty)$-en <b>csökken</b> — pontosan fordítva, mint a konvex esetben.</p>')),
  ]),
 
  ("Szélsőérték-feladatok", [
@@ -256,11 +258,12 @@ B2 = [
                   'pedig $x$-$x$. Ekkor $2x+y=20$, tehát $y=20-2x$.</p>'
                   '<p>A terület:</p>'
                   '$$T(x)=x\\left(20-2x\\right)=-2x^{2}+20x.$$'
+                  '<p>Itt az értelmezési tartomány <b>nem</b> a teljes $\\mathbb{R}$: mivel $x&gt;0$ és $y=20-2x&gt;0$, ezért $0&lt;x&lt;10$. (Ha a csúcs kiesne ebből, a szélsőérték a végponton lenne — ezért érdemes ellenőrizni.)</p>'
                   '<p>Ez másodfokú függvény $a=-2&lt;0$ főegyütthatóval → van <b>maximuma</b> '
-                  'a csúcspontban: $u=-\\dfrac{20}{-4}=5$, és $T(5)=-50+100=50$.</p>'
+                  'a csúcspontban: $u=-\\dfrac{20}{-4}=5$ — ez beleesik a $(0;10)$ tartományba —, és $T(5)=-50+100=50$.</p>'
                   '<p><b>Válasz:</b> a merőleges oldalak $5$ m-esek, a fallal párhuzamos '
                   '$10$ m, a legnagyobb terület $50\\ \\text{m}^{2}$.</p>')),
-   kviz('Egy $T(x)=-x^{2}+12x$ területfüggvény hol veszi fel a maximumát?',
+   kviz('Hol és mekkora a $T(x)=-x^{2}+12x$ területfüggvény maximuma?',
         ['$x=6$-nál, az értéke $36$.', '$x=12$-nél, az értéke $0$.',
          '$x=-6$-nál, az értéke $36$.'], 0,
         jo="✔ u = −12/(−2) = 6, és T(6) = −36 + 72 = 36.",

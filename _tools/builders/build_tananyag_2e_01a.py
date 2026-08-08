@@ -150,7 +150,7 @@ A1 = [
                   '$3^{n}=3^{n}\\cdot 1$, a nevezőben $3^{n+1}=3^{n}\\cdot 3$. Így</p>'
                   '$$\\frac{3^{n}\\left(9-1\\right)}{3^{n}\\cdot 3}=\\frac{8}{3}.$$'
                   '<p>A $3^{n}$ kiesik — az eredmény <b>nem függ</b> $n$-től.</p>')),
-   gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–5"),
+   gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–5, 8"),
    brief('<b>Vihar Vera:</b> A hatvány mostantól nem csak szám — <b>függvény</b> is. '
          'Ha az alapot rögzítjük és a kitevőt változtatjuk, exponenciális görbét kapunk (az a tavaszi küldetés). '
          'Ha viszont a <b>kitevőt</b> rögzítjük és az alapot változtatjuk, megkapjuk a '
@@ -163,9 +163,9 @@ A1 = [
 
 TUL_PAROS = (
  '<ul>'
- '<li><b>Értelmezési tartomány:</b> $\\mathbb{R}$; <b>értékkészlet:</b> $[0,+\\infty)$.</li>'
+ '<li><b>Értelmezési tartomány:</b> $\\mathbb{R}$; <b>értékkészlet:</b> $[0;+\\infty)$.</li>'
  '<li><b>Zérushely:</b> egyetlen, az $x=0$; itt van a grafikon legalsó pontja.</li>'
- '<li><b>Monotonitás:</b> csökkenő a $(-\\infty,0]$, növekvő a $[0,+\\infty)$ intervallumon.</li>'
+ '<li><b>Monotonitás:</b> csökkenő a $(-\\infty,0]$, növekvő a $[0;+\\infty)$ intervallumon.</li>'
  '<li><b>Paritás:</b> <b>páros</b> függvény, mert $(-x)^{2k}=x^{2k}$ — a grafikon '
  'az $y$-tengelyre <b>tükrös</b>.</li>'
  '<li><b>Konvexitás:</b> az egész $\\mathbb{R}$-en konvex (alulról „öblös").</li>'
@@ -178,7 +178,7 @@ TUL_PARATLAN = (
  '<li><b>Monotonitás:</b> az egész $\\mathbb{R}$-en <b>növekvő</b>.</li>'
  '<li><b>Paritás:</b> <b>páratlan</b> függvény, mert $(-x)^{2k+1}=-x^{2k+1}$ — a grafikon '
  'az <b>origóra</b> középpontosan szimmetrikus.</li>'
- '<li><b>Előjel:</b> negatív a $(-\\infty,0)$, pozitív a $(0,+\\infty)$ intervallumon.</li>'
+ '<li><b>Előjel:</b> negatív a $(-\\infty,0)$, pozitív a $(0;+\\infty)$ intervallumon.</li>'
  '</ul>')
 
 A2 = [
@@ -195,7 +195,7 @@ A2 = [
    'A <b>valós függvény</b> minden megengedett $x$ valós számhoz pontosan egy $y$ valós számot rendel: '
    '$f:D\\to\\mathbb{R}$. A megengedett $x$-ek halmaza az <b>értelmezési tartomány</b> ($D$), '
    'a felvett $y$-ok halmaza az <b>értékkészlet</b>. A függvény <b>grafikonja</b> az '
-   '$\\left(x,f(x)\\right)$ pontok halmaza a koordináta-rendszerben.',
+   '$\\left(x;f(x)\\right)$ pontok halmaza a koordináta-rendszerben.',
    doboz("erdekesseg", "Emlékeztető",
          '<p>A függvényfogalmat, a grafikon olvasását és a monotonitást tavaly vettük — '
          'ha bizonytalan vagy, nézd át: '
@@ -204,8 +204,8 @@ A2 = [
          '<a href="../../1e/01-logika-halmazok-fuggvenyek/tananyag-fuggvenytulajdonsagok.html">'
          'Függvénytulajdonságok</a>. Idén ugyanaz a szótár, csak új görbékre alkalmazzuk.</p>'),
    doboz("definicio", "Hatványfüggvény",
-         '<p>Minden $n$ természetes szám esetén az $f:\\mathbb{R}\\to\\mathbb{R}$, $f(x)=x^{n}$ '
-         'valós függvényt <b>hatványfüggvénynek</b> nevezzük. Az $n=1$ eset a lineáris '
+         '<p>Minden $n\\ge 1$ egész szám esetén az $f:\\mathbb{R}\\to\\mathbb{R}$, $f(x)=x^{n}$ '
+         'valós függvényt <b>hatványfüggvénynek</b> nevezzük. (Az $n=0$ kivétel: $x^{0}=1$ minden $x\\neq 0$-ra, a grafikon egy „lyukas” vízszintes egyenes — ezért nem soroljuk a családba.) Az $n=1$ eset a lineáris '
          'függvény, az $n=2$ a másodfokú alapfüggvény (a <b>parabola</b>), az $n=3$ '
          'a harmadfokú alapfüggvény.</p>',
          hid="def-hatvanyfuggveny"),
@@ -220,14 +220,14 @@ A2 = [
                "legalsó pontjuk az origó"),
         "Páros kitevő: a görbe az $y$-tengelyre tükrös, és soha nem megy az $x$-tengely alá."),
    'A $y=x^{2}$ grafikonját <b>parabolának</b> hívjuk; a nagyobb páros kitevők grafikonja '
-   'ugyanilyen alakú, csak a $(-1,1)$ intervallumon <b>laposabb</b>, azon kívül pedig '
-   '<b>meredekebb</b>.',
+   'hasonló jellegű (de már nem parabola): a $(-1;1)$ intervallumon <b>közelebb simul</b> '
+   'az $x$-tengelyhez, azon kívül pedig <b>meredekebben emelkedik</b>.',
    doboz("tetel", "Az $x^{2k}$ függvény tulajdonságai", TUL_PAROS, hid="tetel-paros-kitevo"),
    doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>„A $y=x^{2}$ függvény minden $y$ értéket felvesz." — <b>Hamis.</b> '
-         'Az értékkészlet csak $[0,+\\infty)$: negatív szám <b>nem</b> lehet páros kitevőjű '
+         'Az értékkészlet csak $[0;+\\infty)$: negatív szám <b>nem</b> lehet páros kitevőjű '
          'hatvány értéke. Ezért nincs valós megoldása az $x^{2}=-1$ egyenletnek — '
-         'és pontosan ez lesz a témakör harmadik felének kiindulópontja.</p>'),
+         'és pontosan ez lesz a témakör harmadik szakaszának, a komplex számoknak a kiindulópontja.</p>'),
    kviz('Hány megoldása van valós számok között az $x^{2}=-1$ egyenletnek?',
         ['Egy sem', 'Egy', 'Kettő'], 0,
         jo="✔ Páros kitevőnél a hatvány értéke sosem negatív, tehát nincs ilyen valós x.",
@@ -249,7 +249,7 @@ A2 = [
    kviz('Melyik állítás igaz a $y=x^{5}$ függvényre?',
         ['Az origóra középpontosan szimmetrikus.',
          'Az $y$-tengelyre tükrös.',
-         'Az értékkészlete $[0,+\\infty)$.'], 0,
+         'Az értékkészlete $[0;+\\infty)$.'], 0,
         jo="✔ Páratlan kitevő → páratlan függvény → origóra szimmetrikus.",
         nem="✘ A kitevő páratlan: (−x)⁵ = −x⁵, tehát origóra szimmetrikus, és minden valós értéket felvesz."),
  ]),
@@ -257,13 +257,14 @@ A2 = [
  ("A grafikonok kölcsönös helyzete", [
    'Melyik nagyobb: $x^{2}$ vagy $x^{3}$? A válasz attól függ, <b>hol</b> vagyunk. '
    'Ez a témakör egyik legtöbbször félreértett részlete.',
-   doboz("tetel", "Sorrend a $(0,1)$ és az $(1,+\\infty)$ intervallumon",
-         '<p>Ha $x\\in(0,1)$, akkor a nagyobb kitevő <b>kisebb</b> értéket ad:</p>'
+   doboz("tetel", "Sorrend a $(0;1)$ és az $(1;+\\infty)$ intervallumon",
+         '<p>Ha $x\\in(0;1)$, akkor a nagyobb kitevő <b>kisebb</b> értéket ad:</p>'
          '$$x&gt;x^{2}&gt;x^{3}&gt;x^{4}&gt;\\ldots$$'
-         '<p>Ha $x\\in(1,+\\infty)$, akkor a nagyobb kitevő <b>nagyobb</b> értéket ad:</p>'
+         '<p>Ha $x\\in(1;+\\infty)$, akkor a nagyobb kitevő <b>nagyobb</b> értéket ad:</p>'
          '$$x&lt;x^{2}&lt;x^{3}&lt;x^{4}&lt;\\ldots$$'
-         '<p>Az $x=0$ és $x=1$ helyeken minden hatványfüggvény ugyanazt az értéket veszi fel '
-         '($0$, illetve $1$) — a görbék itt <b>metszik</b> egymást.</p>',
+         '<p>Az $x=0$ és $x=1$ helyeken minden <b>pozitív egész kitevőjű</b> hatványfüggvény '
+         'ugyanazt az értéket veszi fel ($0$, illetve $1$) — itt találkoznak a görbék. (Páros kitevőknél az $x=-1$ is közös pont.)</p>'
+         '<p>Ha $x&lt;0$: a páros kitevőjű hatvány pozitív, a páratlan negatív, tehát ott <b>mindig a páros kitevőjű a nagyobb</b>; a páros kitevők között pedig ugyanúgy az $|x|$ dönt, mint a pozitív oldalon.</p>',
          hid="tetel-kolcsonos-helyzet",
          lenyilo=("Miért?",
                   '<p>Legyen $0&lt;x&lt;1$. Ekkor $x$-szel szorozva az egyenlőtlenség iránya '
@@ -273,13 +274,13 @@ A2 = [
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Melyik a nagyobb: $0{,}7^{3}$ vagy $0{,}7^{5}$? És $1{,}2^{3}$ vagy $1{,}2^{5}$?</p>',
          lenyilo=("Megoldás",
-                  '<p>$0{,}7\\in(0,1)$, tehát a nagyobb kitevő kisebb értéket ad: '
+                  '<p>$0{,}7\\in(0;1)$, tehát a nagyobb kitevő kisebb értéket ad: '
                   '$0{,}7^{3}&gt;0{,}7^{5}$. Viszont $1{,}2&gt;1$, tehát ott fordítva: '
                   '$1{,}2^{3}&lt;1{,}2^{5}$. <b>Számolni nem kell</b> — elég a szabály.</p>')),
  ]),
 
  ("Negatív kitevő: az $x^{-n}$ család", [
-   'Eddig a kitevő természetes szám volt. Most <b>kiterjesztjük</b> a fogalmat negatív egész kitevőre is — a hozzárendelési szabály ugyanaz marad, az értelmezési tartomány viszont szűkül.',
+   'Eddig a <b>hatványfüggvény</b> kitevője pozitív egész volt. A negatív kitevőt a hatványozásnál már bevezettük — most nézzük meg, milyen <b>görbét</b> ad — a hozzárendelési szabály ugyanaz marad, az értelmezési tartomány viszont szűkül.',
    'Ha a kitevő negatív, a függvény $f(x)=x^{-n}=\\dfrac{1}{x^{n}}$ alakú, és $f:\\mathbb{R}\\setminus\\{0\\}\\to\\mathbb{R}$. A $0$ tehát <b>kimarad</b> az értelmezési tartományból — nullával nem osztunk.',
    abra(svg_fuggvenyek(
         [(lambda x: 1 / x, "#047857", "y = 1/x", [(-4.2, -0.26), (0.26, 4.2)]),
@@ -299,13 +300,15 @@ A2 = [
          'a görbe az $y$-tengelyre tükrös.</p>'
          '<p>Ha $n$ <b>páratlan</b> ($y=\\frac{1}{x},\\frac{1}{x^{3}},\\ldots$): a negatív '
          '$x$-ekhez negatív érték tartozik, a két ág az <b>első és a harmadik</b> síknegyedben van, '
-         'a görbe az <b>origóra</b> szimmetrikus.</p>',
+         'a görbe az <b>origóra</b> szimmetrikus.</p>'
+         '<p><b>Értelmezési tartomány:</b> $\\mathbb{R}\\setminus\\{0\\}$ · <b>zérushely nincs</b> · <b>értékkészlet:</b> páros $n$-re $(0;+\\infty)$, páratlan $n$-re $\\mathbb{R}\\setminus\\{0\\}$.</p>'
+         '<p>⚠️ <b>A monotonitás ágankénti!</b> Az $y=\\dfrac1x$ mindkét ágon csökken, de a két ág <b>együtt nem</b> alkot csökkenő függvényt: $-1&lt;1$, mégis $f(-1)=-1&lt;f(1)=1$. A monotonitást tehát mindig a $(-\\infty;0)$ és a $(0;+\\infty)$ intervallumon külön mondjuk ki.</p>',
          hid="tetel-negativ-kitevo"),
    kviz('Mi az $f(x)=\\dfrac{1}{x^{2}}$ függvény értékkészlete?',
-        ['$(0,+\\infty)$', '$[0,+\\infty)$', '$\\mathbb{R}\\setminus\\{0\\}$'], 0,
+        ['$(0;+\\infty)$', '$[0;+\\infty)$', '$\\mathbb{R}\\setminus\\{0\\}$'], 0,
         jo="✔ Pozitív értékek, de a 0-t sosem éri el (az x-tengely aszimptota).",
-        nem="✘ A tört értéke sosem 0 és sosem negatív → az értékkészlet (0, +∞)."),
-   gyakorolj(FGY + "#alap-7", "A 7–10", FGY + "#kozep-6", "K 6–8"),
+        nem="✘ A tört értéke sosem 0 és sosem negatív → az értékkészlet (0; +∞)."),
+   gyakorolj(FGY + "#alap-7", "A 7–10", FGY + "#kozep-6", "K 6–7"),
    brief('<b>Vihar Vera:</b> Uraltad a vihar erejét — most fejtsd is vissza. Ha ismerem a hatvány '
          '<b>eredményét</b>, meg tudom-e találni az <b>alapot</b>? Ez a gyökvonás, és vele '
          'megérkezik az első igazi buktató is: a páros gyökkitevő. Vigyázz a lábad elé.',
