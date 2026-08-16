@@ -55,12 +55,12 @@
     <div class="doboz definicio" id="def-specialis-negyszogek">
       <p class="cim"><span class="ikon">📗</span> A speciális négyszögek</p>
       <ul>
-        <li><b>Trapéz</b>: van <b>legalább egy</b> pár párhuzamos oldala (az alapok). Eszerint a paralelogramma is trapéz — csak neki mindkét oldalpárja párhuzamos.</li>
+        <li><b>Trapéz</b>: van <b>legalább egy</b> pár párhuzamos oldala (ezek az <b>alapok</b>; a másik két oldal a <b>szár</b>). Eszerint a paralelogramma is trapéz — csak neki mindkét oldalpárja párhuzamos. Ha az egyik szár merőleges az alapokra, <b>derékszögű trapézról</b> beszélünk.</li>
         <li><b>Paralelogramma</b>: két pár párhuzamos oldala van.</li>
         <li><b>Téglalap</b>: paralelogramma, amelynek szögei derékszögek.</li>
         <li><b>Rombusz</b>: paralelogramma, amelynek minden oldala egyenlő.</li>
         <li><b>Négyzet</b>: téglalap is és rombusz is.</li>
-        <li><b>Deltoid</b>: két-két szomszédos oldala egyenlő. A rombusz ennek is speciális esete: ha mind a négy oldal egyenlő, akkor a szomszédosak is azok.</li>
+        <li><b>Deltoid</b>: van két-két szomszédos, egymással egyenlő oldalpárja (<span class="math inline">\(AB=AD\)</span> és <span class="math inline">\(CB=CD\)</span>). A rombusz ennek is speciális esete: ha mind a négy oldal egyenlő, akkor a szomszédosak is azok.</li>
       </ul>
     </div>
     <div class="doboz tetel" id="tetel-negyszog-tulajdonsagok">
@@ -84,7 +84,7 @@
       </div>
       <div class="vbox">
         <svg viewBox="0 0 220 150" width="220" height="150" role="img" aria-label="Trapéz párhuzamos alapokkal">
-          <polygon points="25,120 195,120 155,40 70,40" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+          <polygon points="25,120 195,120 130,40 55,40" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
           <text x="105" y="137" font-size="12" fill="#0f172a">a</text>
           <text x="108" y="35" font-size="12" fill="#0f172a">c</text>
         </svg>
@@ -103,19 +103,19 @@
     <div class="doboz tetel" id="tetel-trapez">
       <p class="cim"><span class="ikon">📘</span> A trapéz szárán fekvő szögek</p>
       <p>A trapéz <b>ugyanazon száron</b> fekvő két belső szöge <b>kiegészítő</b> (összegük <span class="math inline">\(180^\circ\)</span>), mert az alapok
-      párhuzamosak (társszögek). Az <b>egyenlő szárú</b> trapézban az alapon fekvő szögek egyenlők, és az átlók is egyenlők.</p>
+      párhuzamosak (társszögek). Az <b>egyenlő szárú</b> (szimmetrikus) trapézban — vagyis amelynek az alapok felezőmerőlegese szimmetriatengelye — az alapon fekvő szögek egyenlők, és az átlók is egyenlők.</p>
     </div>
 
     <h2 id="s4">Húrnégyszög és érintőnégyszög</h2>
     <div class="doboz definicio" id="def-hurnegyszog">
       <p class="cim"><span class="ikon">📗</span> Húrnégyszög</p>
       <p>A <b>húrnégyszög</b> köré <b>kör írható</b> (mind a négy csúcsa egy körön van). Ekkor a <b>szemközti szögek
-      összege</b> <span class="math inline">\(180^\circ\)</span>: <span class="math inline">\(\alpha+\gamma=\beta+\delta=180^\circ\)</span>.</p>
+      összege</b> <span class="math inline">\(180^\circ\)</span>: <span class="math inline">\(\alpha+\gamma=\beta+\delta=180^\circ\)</span>. <b>Megfordítva is igaz:</b> ha egy négyszög szemközti szögeinek összege <span class="math inline">\(180^\circ\)</span>, akkor húrnégyszög — így lehet eldönteni egy négyszögről, hogy az-e.</p>
     </div>
     <div class="doboz definicio" id="def-erintonegyszog">
       <p class="cim"><span class="ikon">📗</span> Érintőnégyszög</p>
       <p>Az <b>érintőnégyszögbe kör írható</b> (a kör mind a négy oldalt érinti). Ekkor a <b>szemközti oldalak
-      összege egyenlő</b>: <span class="math inline">\(a+c=b+d\)</span>.</p>
+      összege egyenlő</b>: <span class="math inline">\(a+c=b+d\)</span> (ahol <span class="math inline">\(a=AB\)</span>, <span class="math inline">\(b=BC\)</span>, <span class="math inline">\(c=CD\)</span>, <span class="math inline">\(d=DA\)</span>). <b>Megfordítva is igaz:</b> ha egy <b>konvex</b> négyszögben a szemközti oldalak összege egyenlő, akkor érintőnégyszög.</p>
     </div>
     <div class="venn">
       <div class="vbox">
@@ -156,7 +156,7 @@
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
-    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-geometria.html#alap-9">🐜 Henrik-bevetés <span class="cimke">Alap 9–11</span></a><a class="sav bruno" href="feladatok-geometria.html#kozep-6">💥 Brúnó-bevetés <span class="cimke">Közép 6–7</span></a></div></div></div>
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-geometria.html#alap-9">🐜 Henrik-bevetés <span class="cimke">Alap 9–10</span></a><a class="sav bruno" href="feladatok-geometria.html#kozep-6">💥 Brúnó-bevetés <span class="cimke">Közép 6</span></a></div></div></div>
 
     <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/furge_pjotr.webp" alt="Fürge Pjotr — a kampusz leggyorsabb kadétja" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Fürge Pjotr:</b> A négyszögek megvannak. Most tágítsuk ki a képet a <b>sokszögekre</b> és a
     <b>körre</b> — ott derül ki, hány átlója van egy alakzatnak, és mi a titka a kerületi szögnek.</p></div>

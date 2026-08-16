@@ -64,7 +64,7 @@
 
     <div class="doboz definicio"><p class="cim"><span class="ikon">📗</span> Definíció — kompozíció</p>
       Adott <span class="math">\(f:A\to B\)</span> és <span class="math">\(g:B\to C\)</span>. A <b>kompozíciójuk</b> az a <span class="math">\(g\circ f:A\to C\)</span> függvény, amelyre
-      <div style="text-align:center;margin:6px 0"><span class="math" style="font-size:1.15em">(g∘f)(x)=g(f(x))</span></div>
+      <div style="text-align:center;margin:6px 0"><span class="math inline" style="font-size:1.15em">\((g\circ f)(x)=g(f(x))\)</span></div>
       Itt <span class="math">\(f\)</span> a <b>belső</b>, <span class="math">\(g\)</span> a <b>külső</b> függvény. Olvasd jobbról balra: <em>előbb</em> <span class="math">\(f\)</span>, <em>aztán</em> <span class="math">\(g\)</span>.</div>
 
     <div class="doboz pelda"><p class="cim"><span class="ikon">✏️</span> Szimuláció — lineáris</p>
@@ -72,7 +72,7 @@
       <span class="math">\((f\circ g)(x)=f(g(x))=2\cdot (x+4)-1=2x+7\)</span><br>
       <span class="math">\((g\circ f)(x)=g(f(x))=(2x-1)+4=2x+3\)</span></div>
 
-    <div class="doboz csapda"><p class="cim"><span class="ikon">⚠️</span> Vigyázz — a kompozíció NEM cserélhető fel!</p>
+    <div class="doboz csapda"><p class="cim"><span class="ikon">⚠️</span> Vigyázz — a kompozíció általában nem cserélhető fel!</p>
       Általában <span class="math">\(f\circ g \neq  g\circ f\)</span>. A sorrend számít: nem mindegy, melyik gépbe teszed előbb a bemenetet.</div>
 
     <figure>
@@ -105,7 +105,7 @@
     </div>
     <details><summary>Levezetés</summary><div class="bel"><span class="math">\((g\circ f)(x)=g(f(x))=2\cdot (x+3)=2x+6\)</span>. Fordítva viszont <span class="math">\((f\circ g)(x)=2x+3\)</span> — látod, tényleg más!</div></details>
 
-    <div class="gyakorolj"><span class="ikon">📝</span><p><b>Gyakorolj:</b> <a href="feladatok-fuggvenyek.html#alap-6">Alapszint 6–8</a>., <a href="feladatok-fuggvenyek.html#kozep-1">Középszint 1</a>., 20. (kompozíció képlettel és véges halmazon).</p></div>
+    <div class="gyakorolj"><span class="ikon">📝</span><p><b>Gyakorolj:</b> <a href="feladatok-fuggvenyek.html#alap-4">Alapszint 4</a>. és <a href="feladatok-fuggvenyek.html#alap-12">12</a>., <a href="feladatok-fuggvenyek.html#kozep-1">Középszint 1</a>. (kompozíció képlettel és véges halmazon).</p></div>
 
     <h2 id="s2">Az inverz függvény</h2>
 <span id="inverz" class="regi-horgony"></span>
@@ -115,9 +115,12 @@
       Az <span class="math">\(id:A\to A\)</span>, <span class="math">\(id(x)=x\)</span> az <b>identikus</b> (azonos) leképezés: mindent önmagára képez.</div>
 
     <div class="doboz definicio"><p class="cim"><span class="ikon">📗</span> Definíció — inverz</p>
-      Ha <span class="math">\(f:A\to B\)</span> <b>bijektív</b>, akkor van olyan <span class="math">\(f^{-1}:B\to A\)</span> függvény, amelyre
-      <div style="text-align:center;margin:6px 0"><span class="math" style="font-size:1.1em">f<sup>−1</sup>(f(x))=x</span> &nbsp;és&nbsp; <span class="math" style="font-size:1.1em">f(f<sup>−1</sup>(y))=y</span></div>
+      Ha <span class="math">\(f:A\to B\)</span> <b>bijektív</b>, akkor <b>pontosan egy olyan</b> <span class="math">\(f^{-1}:B\to A\)</span> függvény van, amelyre
+      <div style="text-align:center;margin:6px 0"><span class="math inline" style="font-size:1.1em">\(f^{-1}(f(x))=x\)</span> &nbsp;és&nbsp; <span class="math inline" style="font-size:1.1em">\(f\bigl(f^{-1}(y)\bigr)=y\)</span></div>
       Ezt az <span class="math">\(f\)</span> <b>inverzének</b> nevezzük. Az inverz „visszafejti" a képet az őselemre.</div>
+    <div class="doboz csapda"><p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
+      <p>Az <span class="math inline">\(f^{-1}\)</span> jelölés <b>nem</b> reciprok: <span class="math inline">\(f^{-1}(x)\neq\dfrac{1}{f(x)}\)</span>. Az <span class="math inline">\(f(x)=2x-6\)</span> inverze <span class="math inline">\(f^{-1}(x)=\dfrac{x}{2}+3\)</span>, a reciproka viszont <span class="math inline">\(\dfrac{1}{2x-6}\)</span> — két teljesen más függvény.</p>
+    </div>
 
     <div class="doboz csapda"><p class="cim"><span class="ikon">⚠️</span> Fontos feltétel</p>
       <p>Csak <b>bijektív</b> függvénynek van inverze — és a két feltétel <b>két különböző dolgot</b> biztosít:</p><ul><li><b>Injektív</b> → a visszafejtés <b>egyértelmű</b>. Ha nem az, két őselemből ugyanaz a kép jönne, és nem tudnánk, melyikre menjünk vissza.</li><li><b>Szürjektív</b> → a visszafejtés <b>elvégezhető</b> <span class="math">\(B\)</span> <i>minden</i> elemére. Ha nem az, maradna <span class="math">\(B\)</span>-ben olyan elem, amihez nincs mit visszarendelni — ott az inverz nem lenne értelmezve.</li></ul><p>Bijektív esetben <span class="math">\(B\)</span> pontosan az <span class="math">\(f\)</span> értékkészlete, ezért <span class="math">\(f^{-1}:B\to A\)</span> értelmezési tartománya éppen <span class="math">\(R_{f}\)</span>.</div>
@@ -145,11 +148,12 @@
         <line x1="24" y1="276" x2="276" y2="24" stroke="#94a3b8" stroke-width="1.6" stroke-dasharray="6 5"/>
         <text x="250" y="44" font-size="12" fill="#94a3b8">y=x</text>
         <!-- f(x)=2x-1 : x_px=150+26x, y_px=150-26f ; range x=-1.4..2.0 -->
-        <line x1="113.6" y1="212.6" x2="202" y2="24" stroke="#5b4be0" stroke-width="3"/>
-        <text x="196" y="60" font-size="12" font-weight="700" fill="#5b4be0">f</text>
+        <line x1="113.6" y1="248.8" x2="202" y2="72" stroke="#5b4be0" stroke-width="3"/>
+        <text x="207" y="68" font-size="12" font-weight="700" fill="#5b4be0">f</text>
         <!-- f^-1(x)=(x+1)/2 : reflection ; x=-3.6..4.0 -->
-        <line x1="56.4" y1="186.4" x2="254" y2="87.6" stroke="#ff5da2" stroke-width="3"/>
-        <text x="250" y="104" font-size="12" font-weight="700" fill="#ff5da2">f⁻¹</text>
+        <line x1="51.2" y1="186.4" x2="228" y2="98" stroke="#ff5da2" stroke-width="3"/>
+        <circle cx="176" cy="124" r="3.5" fill="#0f172a"/><text x="182" y="120" font-size="11" fill="#0f172a">(1;1)</text>
+        <text x="232" y="92" font-size="12" font-weight="700" fill="#ff5da2">f⁻¹</text>
       </svg>
     </div>
 
@@ -199,8 +203,8 @@
     <h3>Kulcsötletek</h3>
     <ul class="clean">
       <li><b>Függvény:</b> minden őselemhez <b>pontosan egy</b> kép.</li>
-      <li><b>Injektív</b> = nincs ütközés; <b>szürjektív</b> = a kodomén tele; <b>bijektív</b> = mindkettő → <b>van inverz</b>.</li>
-      <li><b>Kompozíció</b> jobbról balra hat, és <b>nem</b> cserélhető fel (<span class="math">\(f\circ g\neq g\circ f\)</span>).</li>
+      <li><b>Injektív</b> = nincs ütközés; <b>szürjektív</b> = \(B\) minden eleme kép (azaz \(R_f=B\)); <b>bijektív</b> = mindkettő → <b>van inverz</b>.</li>
+      <li><b>Kompozíció</b> jobbról balra hat, és <b>általában nem</b> cserélhető fel (rendszerint <span class="math">\(f\circ g\neq g\circ f\)</span>; kivétel <span class="math">\(f\)</span> és <span class="math">\(f^{-1}\)</span>).</li>
       <li><b>Inverz</b>: <span class="math">\(y=f(x)\)</span> → változócsere → fejtsd ki. Grafikonja tükörkép az <span class="math">\(y=x\)</span>-re.</li>
     </ul>
 

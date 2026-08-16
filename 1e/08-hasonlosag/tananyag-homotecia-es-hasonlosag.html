@@ -26,7 +26,7 @@
 </nav>
 <div class="hero">
   <h1>Homotécia és hasonlóság</h1>
-  <p class="alcim">A homotécia (középpontos nagyítás) fogalma és tulajdonságai, a hasonlóság fogalma és a hasonlósági arány, valamint a hasonló alakzatok kerületének és területének aránya.</p>
+  <p class="alcim">A homotécia (középpontos hasonlóság) fogalma és tulajdonságai, a hasonlóság fogalma és a hasonlósági arány, valamint a hasonló alakzatok kerületének és területének aránya.</p>
   <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Skála Törvénye · 2/3</span></div>
 </div>
 <main class="lap toc-os">
@@ -37,8 +37,8 @@
 
     <h2 id="s1">A homotécia</h2>
     <div class="doboz definicio" id="def-homotecia">
-      <p class="cim"><span class="ikon">📗</span> Homotécia (középpontos nagyítás)</p>
-      <p>Adott egy <span class="math inline">\(O\)</span> középpont és egy <span class="math inline">\(k\neq 0\)</span> szám. A homotécia minden <span class="math inline">\(M\)</span> ponthoz azt az <span class="math inline">\(M_1\)</span> pontot rendeli, amelyre <span class="math inline">\(\overrightarrow{OM_1}=k\cdot\overrightarrow{OM}\)</span>. A <span class="math inline">\(k\)</span> a homotécia <b>aránya</b> (hasonlósági együtthatója).</p>
+      <p class="cim"><span class="ikon">📗</span> Homotécia (középpontos hasonlóság)</p>
+      <p>Adott egy <span class="math inline">\(O\)</span> középpont és egy <span class="math inline">\(k\neq 0\)</span> szám. A homotécia minden <span class="math inline">\(M\)</span> ponthoz azt az <span class="math inline">\(M_1\)</span> pontot rendeli, amelyre <span class="math inline">\(\overrightarrow{OM_1}=k\cdot\overrightarrow{OM}\)</span>. A <span class="math inline">\(k\)</span> a homotécia <b>aránya</b> — ez lehet negatív is. A keletkező <b>hasonlóság</b> aránya viszont mindig a pozitív <span class="math inline">\(|k|\)</span>.</p>
     </div>
     <div class="svgwrap svgcard">
       <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Homotécia: az O középpontból kétszeresére nagyított háromszög">
@@ -55,26 +55,25 @@
     </div>
     <div class="doboz tetel" id="tetel-homotecia">
       <p class="cim"><span class="ikon">📘</span> A homotécia tulajdonságai</p>
-      <p>Egyenest önmagával párhuzamos egyenesbe visz; a szakaszokat a <span class="math inline">\(|k|\)</span>-szorosára változtatja (<span class="math inline">\(\overrightarrow{A_1B_1}=k\cdot\overrightarrow{AB}\)</span>); a <b>szögeket megtartja</b>. Speciális esetek: <span class="math inline">\(k=1\)</span> az identikus leképezés; <span class="math inline">\(k=-1\)</span> az <span class="math inline">\(O\)</span> körüli középpontos tükrözés.</p>
+      <p>Egyenest vele párhuzamos egyenesbe visz (az <span class="math inline">\(O\)</span>-n átmenő egyeneseket önmagukba); a szakaszokat a <span class="math inline">\(|k|\)</span>-szorosára változtatja (<span class="math inline">\(|k|&lt;1\)</span> esetén tehát <b>kicsinyít</b>). Ha <span class="math inline">\(k&gt;0\)</span>, a kép a középpontból nézve ugyanabban az irányban van, mint az eredeti; ha <span class="math inline">\(k&lt;0\)</span>, a középpont <b>másik</b> oldalán, félfordulattal elforgatva (<span class="math inline">\(\overrightarrow{A_1B_1}=k\cdot\overrightarrow{AB}\)</span>); a <b>szögeket megtartja</b>. Speciális esetek: <span class="math inline">\(k=1\)</span> az identikus leképezés; <span class="math inline">\(k=-1\)</span> az <span class="math inline">\(O\)</span> körüli középpontos tükrözés.</p>
     </div>
 
     <h2 id="s2">A hasonlóság fogalma</h2>
     <div class="doboz definicio" id="def-hasonlosag">
       <p class="cim"><span class="ikon">📗</span> Hasonló alakzatok</p>
-      <p>Két alakzat <b>hasonló</b> (<span class="math inline">\(\sim\)</span>), ha az egyik a másikból nagyítással/kicsinyítéssel (és esetleg egybevágósági mozgatással) megkapható. Hasonló sokszögeknél a <b>megfelelő szögek egyenlők</b>, a <b>megfelelő oldalak aránya</b> pedig állandó — ez a <b>hasonlósági arány</b> <span class="math inline">\(k\)</span>. Pl. <span class="math inline">\(\triangle ABC\sim\triangle A_1B_1C_1\)</span> esetén \[\frac{A_1B_1}{AB}=\frac{B_1C_1}{BC}=\frac{A_1C_1}{AC}=k.\]</p>
+      <p>Két alakzat <b>hasonló</b> (<span class="math inline">\(\sim\)</span>), ha az egyik a másikból nagyítással/kicsinyítéssel (és esetleg egybevágósági transzformációval: eltolással, forgatással, tükrözéssel) megkapható. Az <b>egybevágóság</b> a hasonlóság <span class="math inline">\(k=1\)</span> esete: azonos alak <b>és</b> azonos méret — minden egybevágó alakzat hasonló, de a hasonlók általában nem egybevágók. Hasonló sokszögeknél a <b>megfelelő szögek egyenlők</b>, a <b>megfelelő oldalak aránya</b> pedig állandó — ez a <b>hasonlósági arány</b> <span class="math inline">\(k\)</span>. Pl. <span class="math inline">\(\triangle ABC\sim\triangle A_1B_1C_1\)</span> esetén \[\frac{A_1B_1}{AB}=\frac{B_1C_1}{BC}=\frac{A_1C_1}{AC}=k.\]</p>
     </div>
 
     
-    <div class="kviz" data-answer="0" data-jo="✔ A kerület a hasonlósági arány szerint, a terület viszont annak NÉGYZETE szerint változik: 3² = 9." data-nem="✘ A hosszak háromszorozódnak, de a terület kétdimenziós: 3² = 9-szeresére nő. (A térfogat 3³ = 27-szeresére.)">
+    <div class="kviz" data-answer="0" data-jo="✔ k = 10 : 4 = 2,5 — a megfelelő oldalak hányadosa." data-nem="✘ A hasonlósági arány a megfelelő oldalak hányadosa: 10 : 4 = 2,5.">
       <p class="kviz-cim"><span class="ikon">🎯</span> Gyors kérdés</p>
-      <p>Két hasonló alakzat hasonlósági aránya <span class="math inline">\(3\)</span>. Hányszorosa a nagyobbik <b>területe</b> a kisebbikének?</p>
-      <div class="opciok"><button><span class="math inline">\(9\)</span></button><button><span class="math inline">\(3\)</span></button><button><span class="math inline">\(6\)</span></button></div>
-      <p class="visszajelzes"></p>
-    </div>
+      <p>Az <span class="math inline">\(ABC\)</span> és az <span class="math inline">\(A_1B_1C_1\)</span> háromszög hasonló, <span class="math inline">\(AB=4\)</span> és <span class="math inline">\(A_1B_1=10\)</span>. Mekkora a hasonlósági arány?</p>
+      <div class="opciok"><button><span class="math inline">\(2{,}5\)</span></button><button><span class="math inline">\(0{,}4\)</span></button><button><span class="math inline">\(6\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
     <h2 id="s3">Kerület és terület aránya</h2>
     <div class="doboz tetel" id="tetel-kerulet-terulet">
       <p class="cim"><span class="ikon">📘</span> A skálázás törvénye</p>
-      <p>Ha két alakzat hasonlósági aránya <span class="math inline">\(k\)</span>, akkor a <b>kerületük</b> aránya szintén <span class="math inline">\(k\)</span>, a <b>területük</b> aránya viszont <span class="math inline">\(k^2\)</span>: \[\frac{K_1}{K}=k,\qquad \frac{T_1}{T}=k^2.\] (Térben a térfogat aránya <span class="math inline">\(k^3\)</span> lenne.)</p>
+      <p>Ha két alakzat hasonlósági aránya <span class="math inline">\(k\)</span>, akkor a <b>kerületük</b> aránya szintén <span class="math inline">\(k\)</span>, a <b>területük</b> aránya viszont <span class="math inline">\(k^2\)</span>: \[\frac{K_1}{K}=k,\qquad \frac{T_1}{T}=k^2.\] Térben a hasonló testek <b>térfogatának</b> aránya ugyanígy <span class="math inline">\(k^3\)</span>.</p>
     </div>
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>

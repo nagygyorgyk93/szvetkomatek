@@ -36,7 +36,7 @@
     <p>A számjegyek önmagukban keveset érnek — a <b>helyük</b> adja meg az értéküket. A tízes rendszert megszoktuk, de a számítógépek kettes, a programozók gyakran nyolcas és tizenhatos rendszerben dolgoznak. A logika mindegyikben ugyanaz.</p>
 
     <h2 id="s1">Helyiérték: a tízes rendszer</h2>
-    <p>A <span class="math inline">\(2536\)</span> szám valójában egy összeg, ahol minden jegy a helye szerinti <b>tízhatvánnyal</b> szorzódik: \[2536=2\cdot 10^3+5\cdot 10^2+3\cdot 10^1+6\cdot 10^0.\] A <b>10</b> az <b>alapszám</b>; a felhasználható jegyek: <span class="math inline">\(0,1,2,\dots,9\)</span> (mindig eggyel kevesebb az alapnál).</p>
+    <p>A <span class="math inline">\(2536\)</span> szám valójában egy összeg, ahol minden jegy a helye szerinti <b>tízhatvánnyal</b> szorzódik: \[2536=2\cdot 10^3+5\cdot 10^2+3\cdot 10^1+6\cdot 10^0.\] A <b>10</b> az <b>alapszám</b>; a felhasználható jegyek: <span class="math inline">\(0,1,2,\dots,9\)</span> — összesen tíz, vagyis <b>annyi, amennyi az alap</b>; a legnagyobb jegy pedig eggyel kisebb az alapnál.</p>
 
     <h2 id="s2">Más alapú számrendszerek</h2>
     <p>Bármely <span class="math inline">\(b\ge 2\)</span> egész alapszám lehet. A jegyek ekkor <span class="math inline">\(0\)</span>-tól <span class="math inline">\((b-1)\)</span>-ig terjednek, a helyiértékek pedig <span class="math inline">\(b\)</span> hatványai. Az alapszámot alsó indexben jelöljük: <span class="math inline">\(1011_{2}\)</span>, <span class="math inline">\(321_{4}\)</span>, <span class="math inline">\(57_{10}\)</span>.</p>
@@ -59,8 +59,8 @@
     
     <div class="kviz" data-answer="0" data-jo="✔ A számrendszer alapja megadja a használható számjegyek darabszámát, és mindig 0-tól indulnak." data-nem="✘ Az alap a számjegyek DARABSZÁMÁT adja meg, és a számjegyek 0-tól kezdődnek: a kettes rendszerben 0 és 1.">
       <p class="kviz-cim"><span class="ikon">🎯</span> Gyors kérdés</p>
-      <p>Hány számjegyet használ a kettes számrendszer?</p>
-      <div class="opciok"><button>Kettőt: 0 és 1</button><button>Kettőt: 1 és 2</button><button>Tízet, mint a tízes</button></div>
+      <p>Mely számjegyeket használja a kettes számrendszer?</p>
+      <div class="opciok"><button>A 0-t és az 1-et</button><button>Az 1-et és a 2-t</button><button>0-tól 9-ig mindet</button></div>
       <p class="visszajelzes"></p>
     </div>
     <h2 id="s3">Átváltás tízes számrendszerbe</h2>
@@ -78,7 +78,7 @@
     </div>
 
     <h2 id="s4">Átváltás tízesből más alapba</h2>
-    <p>A számot <b>ismételten elosztjuk</b> az alappal, és a <b>maradékokat</b> jegyezzük fel. A számot a maradékokból <b>alulról felfelé</b> (az utolsótól az első felé) olvassuk össze.</p>
+    <p>A számot <b>ismételten elosztjuk</b> az alappal — addig, amíg a hányados <b>0</b> nem lesz —, és a <b>maradékokat</b> jegyezzük fel. A számot a maradékokból <b>alulról felfelé</b> (az utolsótól az első felé) olvassuk össze.</p>
     <div class="doboz pelda" id="pelda-masikba">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
       Váltsd át <span class="math inline">\(77\)</span>-et hármas számrendszerbe.
@@ -86,12 +86,18 @@
     </div>
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
-      Minden digitális eszköz kettes rendszerben számol; egy <b>bájt</b> 8 bit (nyolc 0/1 jegy). A színkódok (<span class="math inline">\(\texttt{\#FF8800}\)</span>) tizenhatos rendszerűek, az internetes és fájlrendszerek gyakran nyolcas jogosultságokat (pl. <span class="math inline">\(755\)</span>) használnak.
+      Minden digitális eszköz kettes rendszerben számol; egy <b>bájt</b> 8 bit (nyolc 0/1 jegy). A színkódok (<span class="math inline">\(\texttt{\#FF8800}\)</span>) tizenhatos rendszerűek, a Linux-fájlrendszerekben pedig nyolcas számrendszerben adjuk meg a jogosultságokat: a jól ismert <span class="math inline">\(755\)</span> valójában három nyolcas jegy, és mindegyik három bitet — olvasás, írás, futtatás — kódol.
     </div>
 
-    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-egesz-es-valos-szamok.html#alap-5">🐜 Henrik-bevetés <span class="cimke">A 5–6</span></a><a class="sav bruno" href="feladatok-egesz-es-valos-szamok.html#kozep-4">💥 Brúnó-bevetés <span class="cimke">K 4–5</span></a></div></div></div>
+        <div class="doboz pelda" id="pelda-tizenhatos">
+      <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
+      <p>Tizenhatos rendszerben a <span class="math inline">\(10,11,\dots,15\)</span> jegyeket az <span class="math inline">\(A,B,\dots,F\)</span> betűk jelölik. <b>a)</b> Mennyi <span class="math inline">\(2F_{16}\)</span> tízes rendszerben? <b>b)</b> Írd fel a <span class="math inline">\(399\)</span>-et tizenhatos rendszerben!</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(2F_{16}=2\cdot 16+15=47\)</span>.</p><p><b>b)</b> Maradékos osztással: <span class="math inline">\(399:16=24\)</span> maradék <span class="math inline">\(15\)</span> (ez az <span class="math inline">\(F\)</span>); <span class="math inline">\(24:16=1\)</span> maradék <span class="math inline">\(8\)</span>; <span class="math inline">\(1:16=0\)</span> maradék <span class="math inline">\(1\)</span>. Alulról felfelé olvasva: <span class="math inline">\(399=18F_{16}\)</span>. Ellenőrzés: <span class="math inline">\(1\cdot 256+8\cdot 16+15=399\)</span> ✔</p></div></details>
+    </div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/iruhs.webp" alt="Iruhs — a kampusz fejlesztőmérnöke" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Iruhs:</b> A kódot feltörted — a számok nyelvét mindegyik rendszerben érted. Most Bruce veszi át: a valós méréseknél a számkör kitágul. Irány <b>A Kalibrálás</b>.</p></div>
+<div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-egesz-es-valos-szamok.html#alap-5">🐜 Henrik-bevetés <span class="cimke">A 5–6</span></a><a class="sav bruno" href="feladatok-egesz-es-valos-szamok.html#kozep-4">💥 Brúnó-bevetés <span class="cimke">K 4–5</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/iruhs.webp" alt="Iruhs — a kampusz fejlesztőmérnöke" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Iruhs:</b> A kódot feltörted — a számok nyelvét mindegyik rendszerben érted. Most Banner Brúnó veszi át: a valós méréseknél a számkör kitágul. Irány <b>A Kalibrálás</b>.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-oszthatosag.html"><span class="irany">← Előző</span><span class="hova">Oszthatóság, prímek, kanonikus alak</span></a>
       <a class="kov" href="tananyag-szamhalmazok.html"><span class="irany">Következő →</span><span class="hova">Számhalmazok: ℕ, ℤ, ℚ, ℝ</span></a>
