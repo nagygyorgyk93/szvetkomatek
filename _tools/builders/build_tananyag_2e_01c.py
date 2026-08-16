@@ -343,10 +343,11 @@ C3 = [
    '$i^{4}=i^{2}\\cdot i^{2}=(-1)(-1)=1$. És innentől minden ismétlődik, hiszen '
    '$i^{5}=i^{4}\\cdot i=1\\cdot i=i$.',
    doboz("tetel", "Négyes ciklus",
-         '$$i^{1}=i,\\qquad i^{2}=-1,\\qquad i^{3}=-i,\\qquad i^{4}=1$$'
-         '<p>Általánosan: bármely <b>pozitív egész</b> $n$ kitevőre az $i^{n}$ értéke csak attól függ, hogy $n$ <b>4-gyel osztva</b> '
-         'mennyi maradékot ad:</p>'
-         '$$i^{4k}=1,\\qquad i^{4k+1}=i,\\qquad i^{4k+2}=-1,\\qquad i^{4k+3}=-i.$$',
+         '$$i^{0}=1,\\qquad i^{1}=i,\\qquad i^{2}=-1,\\qquad i^{3}=-i,\\qquad i^{4}=1$$'
+         '<p>Általánosan: bármely <b>pozitív egész</b> $n$ kitevőre az $i^{n}$ értéke csak attól függ, hogy $n$ <b>4-gyel osztva</b> mennyi maradékot ad:</p>'
+         '$$i^{4k}=1,\\qquad i^{4k+1}=i,\\qquad i^{4k+2}=-1,\\qquad i^{4k+3}=-i.$$'
+         '<p>A ciklus <b>negatív</b> kitevőre is kiterjed: $\\dfrac{1}{i}=\\dfrac{i^{3}}{i^{4}}=i^{3}=-i$, tehát $i^{-1}=-i$, $i^{-2}=-1$ és így tovább — a maradékos gondolatmenet ugyanaz.</p>'
+         '<p class="halvany">Emlékeztető: az $i^{2}$-t sose írd $\\sqrt{-1}\\cdot\\sqrt{-1}$ alakban — a gyökazonosság csak nemnegatív számokra érvényes (lásd a ⚠️ dobozt a <a href="tananyag-komplex-szam-fogalma.html">Komplex szám fogalma</a> lapon).</p>',
          hid="tetel-i-hatvanyai"),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Mennyi $i^{27}$, $i^{100}$ és $i^{2026}$?</p>',
@@ -378,7 +379,7 @@ C3 = [
  ("Lineáris egyenletek a komplex számok halmazán", [
    'Az $a\\cdot z=b$ alakú egyenletet — ha $a\\neq 0$ — ugyanúgy oldjuk meg, mint a valós '
    'számoknál: osztunk $a$-val. Az osztást pedig <a href="tananyag-muveletek-komplex-szamokkal.html#pelda-osztas">már ismerjük</a>: bővítés a konjugálttal. '
-   '(Ha $a=0$, az egyenlet vagy azonosság, vagy megoldhatatlan — épp úgy, mint a valósban.)',
+   '(Ha $a=0$ és $b\\neq 0$, <b>nincs</b> megoldás; ha $a=0$ és $b=0$, <b>minden</b> komplex szám megoldás — épp úgy, mint a valósban.)',
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg a komplex számok halmazán: $(2-i)z=5+5i$.</p>',
          hid="pelda-linearis-egyenlet",
@@ -392,8 +393,9 @@ C3 = [
 
  ("Ha $z$ és $\\overline{z}$ is szerepel", [
    'Itt nem lehet egyszerűen „átosztani": $z$ és $\\overline z$ két különböző dolog. '
-   'A megoldás kulcsa az egyenlőség tétele — <b>egy</b> komplex egyenlet <b>két</b> '
-   'valós egyenletet jelent.',
+   'A megoldás kulcsa a <a href="tananyag-komplex-szam-fogalma.html">Két komplex szám '
+   'egyenlősége</a> tétel — <b>egy</b> komplex egyenlet <b>két</b> valós egyenletet '
+   'jelent.',
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg: $2z+3\\overline{z}=10-4i$.</p>',
          hid="pelda-z-es-konjugalt",
