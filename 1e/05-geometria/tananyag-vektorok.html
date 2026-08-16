@@ -44,8 +44,7 @@
     <div class="doboz definicio" id="def-vektor">
       <p class="cim"><span class="ikon">📗</span> Vektor</p>
       <p>A <b>vektor</b> irányított szakasz: van <b>nagysága</b> (hossza, <span class="math inline">\(|\vec{a}|\)</span>) és <b>iránya</b>. Két vektor
-      <b>egyenlő</b>, ha azonos hosszúak, párhuzamosak és azonos irányításúak (a hely nem számít). A <b>nullvektor</b>
-      (<span class="math inline">\(\vec{0}\)</span>) hossza <span class="math inline">\(0\)</span>. A <span class="math inline">\(\vec{a}\)</span> <b>ellentettje</b> <span class="math inline">\(-\vec{a}\)</span>: ugyanolyan hosszú, de ellentétes irányú.</p>
+      <b>egyenlő</b>, ha azonos hosszúak és azonos irányúak — vagyis egy egyenesre vagy párhuzamos egyenesekre esnek, és ugyanabba az irányba mutatnak (a hely nem számít). A <b>nullvektor</b> (<span class="math inline">\(\vec{0}\)</span>) hossza <span class="math inline">\(0\)</span>; iránya nincs értelmezve, ezért megállapodás szerint minden vektorral egyállásúnak tekintjük, bármely két nullvektor egyenlő, és az ellentettje önmaga. A <span class="math inline">\(\vec{a}\)</span> <b>ellentettje</b> <span class="math inline">\(-\vec{a}\)</span>: ugyanolyan hosszú, de ellentétes irányú.</p>
     </div>
     <div class="svgcard">
       <svg viewBox="0 0 240 90" width="240" height="90" role="img" aria-label="Egy vektor mint irányított szakasz">
@@ -62,8 +61,7 @@
     <div class="doboz tetel" id="tetel-osszeadas">
       <p class="cim"><span class="ikon">📘</span> Két szabály</p>
       <p><b>Háromszög-szabály:</b> a második vektort az első végpontjához illesztjük; az összeg az első kezdőpontjától
-      a második végpontjáig mutat. <b>Paralelogramma-szabály:</b> közös kezdőpontból indítva az összeg a
-      paralelogramma átlója. A <b>kivonás</b> az ellentett hozzáadása: <span class="math inline">\(\vec{a}-\vec{b}=\vec{a}+(-\vec{b})\)</span>.</p>
+      a második végpontjáig mutat. <b>Paralelogramma-szabály:</b> ha a két vektor nem esik egy egyenesbe, közös kezdőpontból indítva az összeg az általuk kifeszített paralelogramma átlója (egy egyenesbe eső vektoroknál a háromszög-szabály marad). A <b>kivonás</b> az ellentett hozzáadása: <span class="math inline">\(\vec{a}-\vec{b}=\vec{a}+(-\vec{b})\)</span>.</p>
     </div>
     <div class="venn">
       <div class="vbox">
@@ -113,8 +111,8 @@
     <div class="doboz definicio" id="def-skalar">
       <p class="cim"><span class="ikon">📗</span> A <span class="math inline">\(k\vec{a}\)</span> vektor</p>
       <p>Egy <span class="math inline">\(\vec{a}\)</span> vektor <span class="math inline">\(k\)</span> valós számszorosa, <span class="math inline">\(k\vec{a}\)</span>: hossza <span class="math inline">\(|k|\cdot|\vec{a}|\)</span>. Ha
-      <span class="math inline">\(k>0\)</span>, iránya változatlan; ha <span class="math inline">\(k&lt;0\)</span>, iránya megfordul; ha <span class="math inline">\(k=0\)</span>, az eredmény a nullvektor. Két nemnulla
-      vektor pontosan akkor <b>párhuzamos</b>, ha egyik a másik számszorosa: <span class="math inline">\(\vec{b}=k\vec{a}\)</span>.</p>
+      <span class="math inline">\(k>0\)</span>, iránya változatlan; ha <span class="math inline">\(k&lt;0\)</span>, iránya megfordul; a szorzat pontosan akkor nullvektor, ha <span class="math inline">\(k=0\)</span> <b>vagy</b> <span class="math inline">\(\vec a=\vec 0\)</span>. Két nemnulla
+      vektor pontosan akkor <b>egyállású</b> (párhuzamos vagy egy egyenesbe eső), ha egyik a másik számszorosa: <span class="math inline">\(\vec{b}=k\vec{a}\)</span>.</p>
     </div>
 
     <h2 id="s4">Vektorok a geometriában</h2>
@@ -129,7 +127,7 @@
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
       Fürge Pjotr elmozdulása két lépésben: előbb <span class="math inline">\(\vec{a}\)</span>, majd <span class="math inline">\(\vec{b}\)</span> irányba. Az eredő elmozdulás pontosan
-      <span class="math inline">\(\vec{a}+\vec{b}\)</span> — ugyanoda ér, mintha egyenesen odafutott volna. A navigációs alkalmazás is így fűzi össze az útvonal szakaszait: az egyes lépések elmozdulásvektorai összeadódnak.
+      <span class="math inline">\(\vec{a}+\vec{b}\)</span> — ugyanoda ér, mintha egyenesen odafutott volna. A navigáció a <b>megtett utat</b> adja össze; a vektorok összege ezzel szemben az <b>elmozdulás</b>. Ha körbesétálsz a háztömbön, a megtett út több száz méter, az elmozdulásvektorok összege viszont <span class="math inline">\(\vec 0\)</span>.
     </div>
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>

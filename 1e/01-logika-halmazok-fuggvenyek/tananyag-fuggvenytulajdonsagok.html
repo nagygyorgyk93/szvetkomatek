@@ -38,7 +38,7 @@
 
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
       <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/pauk_petar_w.webp" alt="Petar Pauk — a hálók és a függvények mestere" width="1200" height="670" decoding="async"><p>📡 <b>Petar Pauk:</b> Nem mindegy, milyen a háló! <b>Injektív, szürjektív, bijektív</b> — ezek mondják meg, hogy a szálak nem keverednek-e, és minden célt elérnek-e. Egy jó bevetéshez tudnod kell, melyik háló bírja el a súlyt.</p></div>
-    <p>Nem minden függvény egyforma: van, amelyik sosem ismétli önmagát, van, amelyik mindent „eltalál” a célhalmazból — és van, amelyik mindkettőt tudja. Az injektív, szürjektív és bijektív tulajdonság dönti el, mit kezdhetünk egy függvénnyel: például visszafordítható-e. Nyíldiagramokon fogjuk látni, mi a különbség.</p>
+    <p>Nem minden függvény egyforma: van, amelyik sosem vesz fel kétszer ugyanazt az értéket, van, amelyik mindent „eltalál” a <b>kodoménból</b> — és van, amelyik mindkettőt tudja. Az injektív, szürjektív és bijektív tulajdonság dönti el, mit kezdhetünk egy függvénnyel: például visszafordítható-e. Nyíldiagramokon fogjuk látni, mi a különbség.</p>
 
     <h2 id="s1">Injektív, szürjektív, bijektív</h2>
 <span id="tulajd" class="regi-horgony"></span>
@@ -53,7 +53,7 @@
       </ul></div>
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Kán csapdája — a szürjektivitás nem a képlettől függ</p>
-      <p>Az injektivitás a hozzárendelés <b>saját</b> tulajdonsága. A szürjektivitás viszont attól is függ, <b>mit választunk érkezési halmaznak</b> (<span class="math">\(B\)</span>-nek) — ugyanaz a képlet az egyik <span class="math">\(B\)</span>-vel szürjektív, a másikkal nem.</p>
+      <p>Az injektivitás nem függ attól, mit választunk <b>kodoménnak</b> — az értelmezési tartománytól viszont igen: az <span class="math inline">\(f(x)=x^2\)</span> az <span class="math inline">\(\mathbb{R}\)</span>-en nem injektív, a <span class="math inline">\([0;+\infty)\)</span>-en már igen. A szürjektivitás viszont attól is függ, <b>mit választunk kodoménnak (érkezési halmaznak)</b> (<span class="math">\(B\)</span>-nek) — ugyanaz a képlet az egyik <span class="math">\(B\)</span>-vel szürjektív, a másikkal nem.</p>
       <p>Nézd meg: az <span class="math">\(f(x)=x^{2}\)</span> hozzárendelés</p>
       <ul><li><span class="math">\(f:\mathbb{R}\to\mathbb{R}\)</span> esetén <b>nem</b> szürjektív — a negatív számok nem képek;</li><li><span class="math">\(f:\mathbb{R}\to[0;+\infty)\)</span> esetén viszont <b>igen</b>.</li></ul>
       <p>Ezért mondjuk ki mindig, hogy <span class="math">\(f:A\to B\)</span> — a két halmaz nélkül a kérdés „szürjektív-e?” nem is válaszolható meg.</p>
@@ -74,7 +74,7 @@
           </g>
           <defs><marker id="ma" markerWidth="8" markerHeight="8" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5 Z" fill="#5b4be0"/></marker></defs>
         </svg>
-        <div class="cap">Injektív, de <b>nem</b> szürjektív (marad lefedetlen kép).</div>
+        <div class="cap">Injektív, de <b>nem</b> szürjektív (a <span class="math inline">\(B\)</span>-nek marad olyan eleme, amely nem kép).</div>
       </div>
       <div class="svgcard" style="max-width:250px">
         <svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="szürjektív, nem injektív">
@@ -104,7 +104,7 @@
           </g>
           <defs><marker id="mc" markerWidth="8" markerHeight="8" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5 Z" fill="#7c3aed"/></marker></defs>
         </svg>
-        <div class="cap">🌟 <b>Bijektív</b>: minden kép pontosan egyszer.</div>
+        <div class="cap">🌟 <b>Bijektív</b>: a <span class="math inline">\(B\)</span> minden eleme pontosan egy őselem képe.</div>
       </div>
     </div>
 
@@ -127,8 +127,8 @@
       </div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
-    <details><summary>Miért bijektív?</summary><div class="bel">
-      <b>Injektív:</b> ha <span class="math">\(2x_{1}+1=2x_{2}+1\)</span>, akkor <span class="math">\(x_{1}=x_{2}\)</span> — különböző bemenet, különböző kimenet. <b>Szürjektív:</b> tetszőleges <span class="math">\(y\)</span>-hoz az <span class="math">\(x=\frac{y-1}{2}\)</span> jó, mert <span class="math">\(f(x)=y\)</span>. Tehát bijektív → <em>van inverze</em> (lásd 4. rész).</div></details>
+    <details><summary>Ellenőrizd!</summary><div class="bel">
+      <b>Injektív:</b> ha <span class="math">\(2x_{1}+1=2x_{2}+1\)</span>, akkor <span class="math">\(x_{1}=x_{2}\)</span> — különböző bemenet, különböző kimenet. <b>Szürjektív:</b> tetszőleges <span class="math">\(y\)</span>-hoz az <span class="math">\(x=\frac{y-1}{2}\)</span> jó, mert <span class="math">\(f(x)=y\)</span>. Tehát bijektív → <em>van inverze</em> (lásd a következő részt: <a href="tananyag-kompozicio-inverz.html">Kompozíció és inverz</a>).</div></details>
 
     <div class="gyakorolj"><span class="ikon">📝</span><p><b>Gyakorolj:</b> <a href="feladatok-fuggvenyek.html#alap-1">Alapszint 1</a>. (injektív / szürjektív / bijektív eldöntése nyíldiagramról).</p></div>
     <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/pauk_petar.webp" alt="Petar Pauk — a hálók és a függvények mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Petar Pauk:</b> A háló minőségét látod. Jön a kombó: kompozíció és inverz — hálót hálóra, meg a mentőkötél.</p></div>

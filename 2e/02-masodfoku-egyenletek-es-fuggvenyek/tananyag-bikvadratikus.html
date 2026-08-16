@@ -33,9 +33,9 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief"><p>📡 <b>Nagol:</b> Ez a kód négyzetre emelt négyzeteket tartalmaz — <span class="math inline">\(x^{4}\)</span>-es tagot. Ne ijedj meg tőle. Ha csak <b>páros</b> kitevők szerepelnek, egyetlen jelöléscserével visszavezetheted arra, amit már tudsz. A neve <b>bikvadratikus</b>, és a leggyakoribb hiba nem a megoldásában, hanem a <b>visszahelyettesítésben</b> van.</p></div>
+    <div class="brief"><p>📡 <b>Nagol:</b> Ez a kód négyzetre emelt négyzeteket tartalmaz — <span class="math inline">\(x^{4}\)</span>-es tagot. Ne ijedj meg tőle. Ha a kitevők <b>4, 2 és 0</b> — vagyis csak <span class="math inline">\(x^{4}\)</span>, <span class="math inline">\(x^{2}\)</span> és konstans áll az egyenletben —, egyetlen új ismeretlen bevezetésével visszavezetheted arra, amit már tudsz. A neve <b>bikvadratikus</b>, és a leggyakoribb hiba nem a megoldásában, hanem a <b>visszahelyettesítésben</b> van.</p></div>
 
-    <h2 id="s1">A helyettesítés módszere</h2>
+    <h2 id="s1">Új ismeretlen bevezetése (<span class="math inline">\(t=x^{2}\)</span>)</h2>
 
     <div class="doboz definicio" id="def-bikvadratikus">
       <p class="cim"><span class="ikon">📗</span> Bikvadratikus egyenlet</p>
@@ -44,7 +44,7 @@
 
     <div class="doboz tetel" id="tetel-bikvadratikus">
       <p class="cim"><span class="ikon">📘</span> Az eljárás</p>
-      <p><b>1.</b> Vezessük be a <span class="math inline">\(t=x^{2}\)</span> új ismeretlent. Ekkor <span class="math inline">\(x^{4}=t^{2}\)</span>, és az egyenlet <span class="math inline">\(at^{2}+bt+c=0\)</span> alakú — <b>közönséges másodfokú</b>.</p><p><b>2.</b> Oldjuk meg <span class="math inline">\(t\)</span>-re.</p><p><b>3.</b> <b>Helyettesítsünk vissza:</b> minden kapott <span class="math inline">\(t\)</span> értékre oldjuk meg az <span class="math inline">\(x^{2}=t\)</span> egyenletet — ez gyökönként <b>két</b> megoldást ad.</p>
+      <p><b>1.</b> Vezessük be a <span class="math inline">\(t=x^{2}\)</span> új ismeretlent. Valós <span class="math inline">\(x\)</span> esetén <span class="math inline">\(t=x^{2}\ge 0\)</span> — ezt a végén meg kell nézni. Ekkor <span class="math inline">\(x^{4}=t^{2}\)</span>, és az egyenlet <span class="math inline">\(at^{2}+bt+c=0\)</span> alakú — <b>közönséges másodfokú</b>.</p><p><b>2.</b> Oldjuk meg <span class="math inline">\(t\)</span>-re.</p><p><b>3.</b> <b>Helyettesítsünk vissza:</b> minden kapott <span class="math inline">\(t\)</span> értékre oldjuk meg az <span class="math inline">\(x^{2}=t\)</span> egyenletet. Ez <span class="math inline">\(t&gt;0\)</span> esetén <b>két</b> valós megoldást ad (<span class="math inline">\(x=\pm\sqrt{t}\)</span>), <span class="math inline">\(t=0\)</span> esetén <b>egyet</b> (<span class="math inline">\(x=0\)</span>), <span class="math inline">\(t&lt;0\)</span> esetén pedig a valós számok között <b>egyet sem</b>.</p><p>Valós megoldásból tehát <span class="math inline">\(0\)</span>, <span class="math inline">\(1\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(3\)</span> vagy <span class="math inline">\(4\)</span> lehet — például az <span class="math inline">\(x^{4}-4x^{2}=0\)</span> egyenletnek <b>három</b> valós gyöke van: <span class="math inline">\(0\)</span> és <span class="math inline">\(\pm 2\)</span>.</p>
     </div>
 
     <div class="kviz" data-answer="0" data-jo="✔ Az x² = −4 egyenletnek nincs valós megoldása, mert négyzet nem lehet negatív. A t negatív értékeit tehát a valós körben elvetjük." data-nem="✘ A visszahelyettesítés x² = −4 alakú: ennek NINCS valós megoldása. Csak a nemnegatív t értékekből kapunk valós x-et.">
@@ -69,6 +69,11 @@
     </div>
 
     <h2 id="s3">A visszahelyettesítés buktatói</h2>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> A módszer ennél tágabb</p>
+      <p>Nem csak az <span class="math inline">\(x^{2}\)</span>-et nevezhetjük <span class="math inline">\(t\)</span>-nek — bármit, ami az egyenletben <b>négyzeten és elsőfokon</b> is szerepel. Ha például <span class="math inline">\(\left(x^{2}-3\right)^{2}-5\left(x^{2}-3\right)+6=0\)</span>, legyen <span class="math inline">\(t=x^{2}-3\)</span>: így <span class="math inline">\(t^{2}-5t+6=0\)</span>, ahonnan <span class="math inline">\(t_{1}=2\)</span> és <span class="math inline">\(t_{2}=3\)</span> — és utána <b>mindkettőt</b> vissza kell helyettesíteni (<span class="math inline">\(x^{2}-3=2\)</span>, illetve <span class="math inline">\(x^{2}-3=3\)</span>).</p><p>Ugyanez a fogás működik <span class="math inline">\(\sqrt{x}=t\)</span> helyettesítéssel is; ott a kikötés <span class="math inline">\(t\ge 0\)</span>.</p>
+    </div>
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>

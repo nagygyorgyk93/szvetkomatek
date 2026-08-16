@@ -161,7 +161,8 @@ C2 = [
          '<p><b>2.</b> Helyettesítsd be a másodfokú egyenletbe — így egyismeretlenes '
          'másodfokú egyenletet kapsz.</p>'
          '<p><b>3.</b> Oldd meg, majd <b>minden</b> gyökhöz számold ki a másik ismeretlent is.</p>'
-         '<p><b>4.</b> A megoldás <b>számpárokból</b> áll: $(x_{1};y_{1})$ és $(x_{2};y_{2})$.</p>',
+         '<p><b>4.</b> A megoldás <b>számpárokból</b> áll — annyiból, ahány gyököt a másodfokú '
+         'egyenlet adott: $(x_{1};y_{1})$, $(x_{2};y_{2})$.</p>',
          hid="tetel-rendszer-menete"),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg a rendszert: $y=x^{2}-2x$ &nbsp;és&nbsp; $y=x-2$.</p>',
@@ -181,7 +182,9 @@ C2 = [
    'A behelyettesítés után másodfokú egyenletet kapunk — és annak a diszkriminánsa '
    'dönti el a megoldások számát. Geometriailag: hányszor metszi az egyenes a parabolát?',
    doboz("tetel", "Három eset",
-         '<p><b>$D&gt;0$:</b> az egyenes <b>két pontban</b> metszi a parabolát → '
+         '<p>(A „parabola” helyett bármilyen másodfokú görbe állhat — kör, hiperbola —, '
+         'feltéve, hogy a behelyettesítés után valóban másodfokú egyenletet kapunk.)</p>'
+         '<p><b>$D&gt;0$:</b> az egyenes <b>két pontban</b> metszi a görbét → '
          'két megoldáspár.</p>'
          '<p><b>$D=0$:</b> az egyenes <b>érinti</b> a parabolát → egy (kettős) megoldás.</p>'
          '<p><b>$D&lt;0$:</b> nincs közös pontjuk → a rendszernek <b>nincs valós megoldása</b>.</p>',
@@ -208,13 +211,16 @@ C2 = [
          '<p>Oldd meg: $x+y=7$ &nbsp;és&nbsp; $x\\cdot y=12$.</p>',
          hid="pelda-osszeg-szorzat",
          lenyilo=("Megoldás",
-                  '<p>A Viète-képletek szerint $x$ és $y$ épp annak a másodfokú egyenletnek '
-                  'a gyökei, amelynek a gyökök összege $7$, a szorzatuk $12$:</p>'
+                  '<p>Ha két szám összege $S$, szorzata $P$, akkor a két szám a '
+                  '$t^{2}-St+P=0$ egyenlet gyöke — ez a Viète-képletek megfordítása. '
+                  'Valós számpár csak akkor van, ha ennek a diszkriminánsa nemnegatív: '
+                  '$S^{2}-4P\\ge 0$. Itt $S=7$, $P=12$, és '
+                  '$49-48=1&gt;0$:</p>'
                   '$$t^{2}-7t+12=0.$$'
                   '<p>Innen $D=49-48=1$, tehát $t_{1}=4$ és $t_{2}=3$.</p>'
                   '<p><b>Megoldás:</b> $(3;4)$ és $(4;3)$ — a rendszer szimmetrikus, ezért '
                   'a két szám <b>felcserélhető</b>.</p>')),
-   doboz("pelda", "Vészterem-szimuláció — vegyes rendszer",
+   doboz("pelda", "Vészterem-szimuláció — amikor a másodfokú egyenletben mindkét ismeretlen szerepel",
          '<p>Oldd meg: $x-y=2$ &nbsp;és&nbsp; $x^{2}+y^{2}=10$.</p>',
          hid="pelda-vegyes-rendszer",
          lenyilo=("Megoldás",
@@ -223,12 +229,13 @@ C2 = [
                   'y^{2}+2y-3=0.$$'
                   '<p>Innen $y_{1}=1$ és $y_{2}=-3$, tehát $x_{1}=3$ és $x_{2}=-1$.</p>'
                   '<p><b>Megoldás:</b> $(3;1)$ és $(-1;-3)$. '
-                  '<b>Ellenőrzés:</b> $9+1=10$ ✔ és $1+9=10$ ✔</p>')),
+                  '<b>Ellenőrzés:</b> $(3;1)$: $3-1=2$ ✔ és $9+1=10$ ✔; $(-1;-3)$: $-1-(-3)=2$ ✔ és $1+9=10$ ✔</p>')),
    doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>A leggyakoribb hiba: <b>megállni $x$-nél</b>. A rendszer megoldása nem szám, '
          'hanem <b>számpár</b> — minden $x$-hez ki kell számolni a hozzá tartozó $y$-t. '
          'És vigyázz: a visszahelyettesítést a <b>lineáris</b> egyenletbe végezd, '
-         'mert a másodfokúból két $y$ is jöhetne, amelyek közül csak az egyik jó.</p>'),
+         'mert az mindig egyetlen értéket ad. Ha a másodfokúba helyettesítesz vissza — például '
+         'az $x^{2}+y^{2}=10$-be —, két érték is jöhet, és közülük csak az egyik illik a párba.</p>'),
    kviz('Az $x+y=5$, $xy=6$ rendszer megoldásai:',
         ['$(2;3)$ és $(3;2)$', 'Csak $(2;3)$', '$(1;6)$ és $(6;1)$'], 0,
         jo="✔ A t² − 5t + 6 = 0 egyenlet gyökei 2 és 3; a rendszer szimmetrikus.",

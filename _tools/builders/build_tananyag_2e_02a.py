@@ -376,13 +376,14 @@ A3 = [
 A4 = [
  ("📡 Küldetés-eligazítás", [
    brief('<b>Nagol:</b> Ez a kód négyzetre emelt négyzeteket tartalmaz — '
-         '$x^{4}$-es tagot. Ne ijedj meg tőle. Ha csak <b>páros</b> kitevők szerepelnek, '
-         'egyetlen jelöléscserével visszavezetheted arra, amit már tudsz. '
+         '$x^{4}$-es tagot. Ne ijedj meg tőle. Ha a kitevők <b>4, 2 és 0</b> — vagyis csak '
+         '$x^{4}$, $x^{2}$ és konstans áll az egyenletben —, egyetlen új ismeretlen '
+         'bevezetésével visszavezetheted arra, amit már tudsz. '
          'A neve <b>bikvadratikus</b>, és a leggyakoribb hiba nem a megoldásában, '
          'hanem a <b>visszahelyettesítésben</b> van.'),
  ]),
 
- ("A helyettesítés módszere", [
+ ("Új ismeretlen bevezetése ($t=x^{2}$)", [
    doboz("definicio", "Bikvadratikus egyenlet",
          '<p><b>Bikvadratikusnak</b> nevezzük az</p>'
          '$$ax^{4}+bx^{2}+c=0,\\qquad a\\neq 0$$'
@@ -390,11 +391,15 @@ A4 = [
          'lehet másodfokúra visszavezetni.</p>',
          hid="def-bikvadratikus"),
    doboz("tetel", "Az eljárás",
-         '<p><b>1.</b> Vezessük be a $t=x^{2}$ új ismeretlent. Ekkor $x^{4}=t^{2}$, és az '
+         '<p><b>1.</b> Vezessük be a $t=x^{2}$ új ismeretlent. Valós $x$ esetén $t=x^{2}\\ge 0$ — ezt a végén meg kell nézni. Ekkor $x^{4}=t^{2}$, és az '
          'egyenlet $at^{2}+bt+c=0$ alakú — <b>közönséges másodfokú</b>.</p>'
          '<p><b>2.</b> Oldjuk meg $t$-re.</p>'
          '<p><b>3.</b> <b>Helyettesítsünk vissza:</b> minden kapott $t$ értékre oldjuk meg '
-         'az $x^{2}=t$ egyenletet — ez gyökönként <b>két</b> megoldást ad.</p>',
+         'az $x^{2}=t$ egyenletet. Ez $t&gt;0$ esetén <b>két</b> valós megoldást ad '
+         '($x=\\pm\\sqrt{t}$), $t=0$ esetén <b>egyet</b> ($x=0$), $t&lt;0$ esetén '
+         'pedig a valós számok között <b>egyet sem</b>.</p>'
+         '<p>Valós megoldásból tehát $0$, $1$, $2$, $3$ vagy $4$ lehet — például az '
+         '$x^{4}-4x^{2}=0$ egyenletnek <b>három</b> valós gyöke van: $0$ és $\\pm 2$.</p>',
          hid="tetel-bikvadratikus"),
    kviz('A bikvadratikus egyenletnél $t=x^{2}$ helyettesítéssel $t=-4$ adódik. Mit jelent ez?',
         ['Ebből nem jön valós $x$', 'Ebből $x=-2$ jön', 'Ebből $x=\\pm 2$ jön'], 0,
@@ -426,6 +431,9 @@ A4 = [
  ]),
 
  ("A visszahelyettesítés buktatói", [
+   doboz("erdekesseg", "A módszer ennél tágabb",
+         '<p>Nem csak az $x^{2}$-et nevezhetjük $t$-nek — bármit, ami az egyenletben <b>négyzeten és elsőfokon</b> is szerepel. Ha például $\\left(x^{2}-3\\right)^{2}-5\\left(x^{2}-3\\right)+6=0$, legyen $t=x^{2}-3$: így $t^{2}-5t+6=0$, ahonnan $t_{1}=2$ és $t_{2}=3$ — és utána <b>mindkettőt</b> vissza kell helyettesíteni ($x^{2}-3=2$, illetve $x^{2}-3=3$).</p>'
+         '<p>Ugyanez a fogás működik $\\sqrt{x}=t$ helyettesítéssel is; ott a kikötés $t\\ge 0$.</p>'),
    doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>Két klasszikus hiba:</p>'
          '<ol class="reszfeladatok">'
