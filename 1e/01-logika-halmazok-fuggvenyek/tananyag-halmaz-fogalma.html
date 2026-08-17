@@ -45,7 +45,7 @@
         <ul class="clean">
           <li><b>Streaming & ajánlók:</b> a Spotify és a Netflix halmazokkal dolgozik — „akik ezt <i>és</i> azt is kedvelték" (metszet), „minden akció- <i>vagy</i> vígjáték" (unió).</li>
           <li><b>Adatbázisok (SQL):</b> a keresések valójában halmazműveletek — <span class="kbd">UNION</span>, <span class="kbd">INTERSECT</span>, <span class="kbd">EXCEPT</span> = unió, metszet, különbség.</li>
-          <li><b>Biológiai rendszertan:</b> fajok ⊂ nemzetségek ⊂ családok — csupa részhalmaz.</li>
+          <li><b>Biológiai rendszertan:</b> egy faj ⊆ a nemzetsége ⊆ a családja — csupa részhalmaz.</li>
           <li><b>Hétköznap:</b> „akik focizni <i>és</i> úszni is járnak" — ez egy metszet, amit Venn-diagrammal rajzolsz le.</li>
         </ul>
       </div>
@@ -57,7 +57,7 @@
     <h2 id="s1">Halmaz, elem, megadás</h2>
 <span id="fogalom" class="regi-horgony"></span>
 <div class="doboz definicio">
-        <p class="cim"><span class="ikon">📗</span> Definíció — halmaz és elem (alapfogalmak)</p>
+        <p class="cim"><span class="ikon">📗</span> Alapfogalom — halmaz és elem</p>
         <p>A <b>halmaz</b> bizonyos meghatározott, egymástól különböző dolgok összessége. Egy halmaz akkor adott, ha bármely dologról egyértelműen eldönthető, hogy <b>hozzátartozik-e</b>. A halmaz „tagjait" <b>elemeknek</b> hívjuk.</p>
         <p>Halmazokat nagybetűvel (<span class="math">\(A, B, C\ldots\)</span>), elemeket kisbetűvel (<span class="math">\(a, b, x\ldots\)</span>) jelölünk. Ha <span class="math">\(x\)</span> eleme <span class="math">\(A\)</span>-nak: <span class="math opn">x ∈ A</span>; ha nem: <span class="math opn">x ∉ A</span>.</p>
       </div>
@@ -65,7 +65,7 @@
       <div class="doboz tetel">
         <p class="cim"><span class="ikon">📘</span> Megadási módok</p>
         <p><b>1) Felsorolással</b> (elemek listája): <span class="math">\(A = \{1, 3, 5, 7, 9\}\)</span></p>
-        <p><b>2) Utasítással / halmazépítővel</b> (közös tulajdonság): <span class="math">\(A = \{x | x \in  \mathbb{N} \land  x \text{páratlan }\land  x &lt; 10\}\)</span></p>
+        <p><b>2) Utasítással / halmazépítővel</b> (közös tulajdonság): <span class="math">\(A = \{x | x \in  \mathbb{N} \land  x \text{ páratlan} \land  x &lt; 10\}\)</span></p>
         <p>A <span class="math">\(|\)</span> jel olvasata: <i>„olyan x, amelyre…"</i>. Ugyanaz a halmaz sokféleképp leírható!</p>
       </div>
       <div class="doboz definicio">
@@ -75,7 +75,7 @@
       </div>
       <div class="doboz pelda">
         <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
-        <p><span class="math">\(C = \{a “\text{matematika}"\text{ szó }\text{betűi}\} = \{m, a, t, e, i, k\}\)</span> — az ismétlődő betűk csak egyszer számítanak, így 6 eleme van.</p>
+        <p><span class="math">\(C = \{x \mid x \text{ a „matematika” szó egy betűje}\} = \{m, a, t, e, i, k\}\)</span> — az ismétlődő betűk csak egyszer számítanak, így 6 eleme van.</p>
         <p>Az elemszámot <span class="math">\(|C| = 6\)</span> jelöli.</p>
       </div>
       <div class="doboz csapda">
@@ -109,7 +109,7 @@
       <div class="doboz definicio">
         <p class="cim"><span class="ikon">📗</span> Üres halmaz és univerzum</p>
         <p><b>Üres halmaz</b> <span class="math">\(\varnothing  = \{ \}\)</span>: nincs eleme. Minden halmaznak részhalmaza: <span class="math">\(\varnothing  \subseteq  A\)</span>.</p>
-        <p><b>Univerzum (alaphalmaz)</b> <span class="math">\(U\)</span>: az a „keret", amelyen belül dolgozunk (minden vizsgált halmaz része).</p>
+        <p><b>Univerzum (alaphalmaz)</b> <span class="math">\(U\)</span>: az a „keret", amelyen belül dolgozunk (minden vizsgált halmaz <b>részhalmaza</b>).</p>
       </div>
       <div class="doboz definicio">
         <p class="cim"><span class="ikon">📗</span> Hatványhalmaz</p>
@@ -122,7 +122,7 @@
       </div>
       <div class="doboz csapda">
         <p class="cim"><span class="ikon">⚠️</span> Kán csapdája — ∈ vagy ⊆?</p>
-        <p><span class="math">\(2 \in  \{1,2,3\}\)</span> ✅ (2 egy <i>elem</i>), de <span class="math">\(\{2\} \subseteq  \{1,2,3\}\)</span> ✅ (a <span class="math">\(\{2\}\)</span> egy <i>részhalmaz</i>). Ezzel szemben <span class="math">\(\{2\} \in  \{1,2,3\}\)</span> ❌!</p>
+        <p><span class="math">\(2 \in  \{1,2,3\}\)</span> ✅ (2 egy <i>elem</i>), de <span class="math">\(\{2\} \subseteq  \{1,2,3\}\)</span> ✅ (a <span class="math">\(\{2\}\)</span> egy <i>részhalmaz</i>). Ezzel szemben <span class="math">\(\{2\} \in  \{1,2,3\}\)</span> ❌! Halmaz <b>lehet</b> eleme egy halmaznak — a hatványhalmazban épp csupa halmaz az elem: <span class="math">\(\{a\} \in \mathcal{P}(\{a,b,c\})\)</span>, de <span class="math">\(\{a\} \notin \{a,b,c\}\)</span>.</p>
         <p>Szintén: <span class="math">\(\varnothing  \neq  \{\varnothing \}\)</span> — az üres halmaznak nincs eleme, a <span class="math">\(\{\varnothing \}\)</span>-nak viszont egy (maga az ∅).</p>
       </div>
       <div class="kviz" data-answer="2">

@@ -271,6 +271,7 @@ SZOTAR = [
     (r'Fürge Pjotr \(Pietro\)', 'Fürge Pjotr'),
     (r'Hangya Henrik \(Scott Lang\)', 'Hangya Henrik'),
     (r'Scott Lang', 'Hangya Henrik'),
+    (r'\bScott\b', 'Henrik'),   # csupasz keresztnév is — 2026-08: egy maradt a korpuszban
     (r'\bNightcrawler\b', 'Éjjáró'),
     (r'Captain America', 'Pajzs kapitány'),
     (r'Black Widow', 'Nada'),

@@ -38,13 +38,13 @@
       <b>izometrikus</b> (távolságtartó) transzformációk, és épp ezek adják az egybevágóság igazi értelmét: két alakzat
       akkor egybevágó, ha az egyik ilyen mozgatással a másikba vihető.</p></div>
     <p>Egy <b>izometria</b> minden ponthoz egy képpontot rendel úgy, hogy <b>bármely két pont egymástól mért távolsága megmarad</b>: ha <span class="math inline">\(P\)</span> képe <span class="math inline">\(P'\)</span> és <span class="math inline">\(Q\)</span> képe <span class="math inline">\(Q'\)</span>, akkor <span class="math inline">\(|PQ|=|P'Q'|\)</span>. Ezért az
-    eredeti alakzat és a képe mindig <b>egybevágó</b>. Négy alaptranszformációt nézünk meg.</p>
+    eredeti alakzat és a képe mindig <b>egybevágó</b>. Négy transzformációt nézünk meg — közülük az egyikről ki fog derülni, hogy egy másiknak a speciális esete.</p>
 
     <h2 id="s1">Eltolás</h2>
     <div class="doboz definicio" id="def-eltolas">
       <p class="cim"><span class="ikon">📗</span> Eltolás (transzláció)</p>
-      <p>Az <b>eltolás</b> minden pontot ugyanazzal a <span class="math inline">\(\vec{v}\)</span> vektorral mozdít el. Az alakzat mérete, alakja és
-      <b>irányítása</b> is változatlan; csak a helye tolódik.</p>
+      <p>Az <b>eltolás</b> minden pontot ugyanazzal a <span class="math inline">\(\vec{v}\)</span> vektorral mozdít el. Az alakzat mérete és alakja
+      változatlan, és nem is fordul el — csak a helye tolódik.</p>
     </div>
     <div class="svgcard">
       <svg viewBox="0 0 300 200" width="300" height="200" role="img" aria-label="Háromszög eltolása egy vektorral">
@@ -76,7 +76,7 @@
     <div class="doboz definicio" id="def-kozeppontos">
       <p class="cim"><span class="ikon">📗</span> Középpontos tükrözés</p>
       <p>Egy <span class="math inline">\(O\)</span> pontra (a <b>centrumra</b>) tükrözve minden <span class="math inline">\(P\)</span> képe az a <span class="math inline">\(P'\)</span>, amelyre <span class="math inline">\(O\)</span> a <span class="math inline">\(PP'\)</span>
-      szakasz <b>felezőpontja</b>. Ez pontosan egy <span class="math inline">\(180^\circ\)</span>-os forgatás az <span class="math inline">\(O\)</span> körül; az irányítás megmarad.</p>
+      szakasz <b>felezőpontja</b>; maga az <span class="math inline">\(O\)</span> helyben marad. Ez pontosan egy <span class="math inline">\(180^\circ\)</span>-os forgatás az <span class="math inline">\(O\)</span> körül; az irányítás megmarad.</p>
     </div>
 
     
@@ -90,7 +90,7 @@
     <div class="doboz definicio" id="def-forgatas">
       <p class="cim"><span class="ikon">📗</span> Forgatás (rotáció)</p>
       <p>Az <span class="math inline">\(O\)</span> <b>középpont</b> körüli, <span class="math inline">\(\alpha\)</span> szögű forgatás minden <span class="math inline">\(P\)</span> pontot úgy visz <span class="math inline">\(P'\)</span>-be, hogy
-      <span class="math inline">\(|OP|=|OP'|\)</span> és a <span class="math inline">\(POP'\)</span> szög éppen <span class="math inline">\(\alpha\)</span> — <b>egy rögzített irányban</b> mérve (megállapodás szerint az óramutató járásával <b>ellentétesen</b>, ez a pozitív irány). Ez a kikötés nem elhagyható: nélküle két különböző képpont is szóba jönne. A középpont helyben marad; az irányítás megmarad.</p>
+      <span class="math inline">\(|OP|=|OP'|\)</span> és a <span class="math inline">\(POP'\)</span> szög éppen <span class="math inline">\(\alpha\)</span> — <b>egy rögzített irányban</b> mérve (megállapodás szerint az óramutató járásával <b>ellentétesen</b>, ez a pozitív irány). Ez a kikötés nem elhagyható: nélküle a <span class="math inline">\(0^\circ\)</span>-tól és <span class="math inline">\(180^\circ\)</span>-tól különböző <span class="math inline">\(\alpha\)</span> esetén két különböző képpont is szóba jönne. (A középpont képe mindig önmaga.) A középpont helyben marad; az irányítás megmarad.</p>
     </div>
     <div class="svgcard">
       <svg viewBox="0 0 230 275" width="230" height="275" role="img" aria-label="Háromszög forgatása egy O középpont körül">
@@ -119,8 +119,8 @@
     </div>
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
-      A nagyítás (kicsinyítés) <b>nem</b> izometria! Az megváltoztatja a távolságokat — az a <b>hasonlóság</b> világa
-      (a következő nagy témakör). Az izometria a méretet <b>mindig</b> megőrzi.
+      Az <span class="math inline">\(1\)</span>-től és <span class="math inline">\(-1\)</span>-től különböző arányú nagyítás (kicsinyítés) <b>nem</b> izometria! Az megváltoztatja a távolságokat — az a <b>hasonlóság</b> világa — az év utolsó
+      témaköre. Az izometria a méretet <b>mindig</b> megőrzi.
     </div>
     <div class="kviz" data-answer="2" data-jo="✔ A tengelyes tükrözés az egyetlen a felsoroltak közül, amely megfordítja a körüljárás irányát." data-nem="✘ Az eltolás és a forgatás megtartja az irányítást; a tengelyes tükrözés fordítja meg.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
@@ -129,7 +129,26 @@
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
-    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-geometria.html#alap-14">🐜 Henrik-bevetés <span class="cimke">Alap 14–15</span></a><a class="sav bruno" href="feladatok-geometria.html#kozep-9">💥 Brúnó-bevetés <span class="cimke">Közép 9</span></a></div></div></div>
+        <h2 id="s5">Szimmetrikus alakzatok</h2>
+    <p>Egy alakzat akkor <b>szimmetrikus</b>, ha van olyan egybevágósági transzformáció — az identitáson kívül —, amely önmagába viszi. A két leggyakoribb eset:</p>
+    <div class="doboz definicio" id="def-szimmetria">
+      <p class="cim"><span class="ikon">📗</span> Szimmetriatengely és szimmetriaközéppont</p>
+      <p>A <b>szimmetriatengely</b> olyan egyenes, amelyre az alakzat önmagára tükröződik. A <b>szimmetriaközéppont</b> olyan pont, amely körüli <span class="math inline">\(180^\circ\)</span>-os forgatás az alakzatot önmagába viszi.</p>
+      <ul>
+        <li>Az <b>egyenlő szárú háromszögnek</b> egy szimmetriatengelye van; középpontja nincs.</li>
+        <li>A <b>téglalapnak</b> kettő, a <b>rombusznak</b> szintén kettő, a <b>négyzetnek</b> négy — és mindháromnak van szimmetriaközéppontja (az átlók metszéspontja).</li>
+        <li>A <b>paralelogrammának</b> (ha nem rombusz és nem téglalap) <b>nincs</b> szimmetriatengelye, szimmetriaközéppontja viszont van.</li>
+        <li>A <b>szabályos <span class="math inline">\(n\)</span>-szögnek</b> pontosan <span class="math inline">\(n\)</span> szimmetriatengelye van, és önmagába viszi a <span class="math inline">\(\dfrac{360^\circ}{n}\)</span>-os forgatás — ez a legkisebb ilyen pozitív forgásszög.</li>
+      </ul>
+    </div>
+    <div class="kviz" data-answer="0" data-jo="✔ A szabályos ötszög 360°/5 = 72°-os forgatásra megy önmagába, és 5 szimmetriatengelye van." data-nem="✘ Szabályos n-szögnél a legkisebb ilyen forgásszög 360°/n — itt 360°/5.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mekkora a legkisebb pozitív forgásszög, amely a szabályos ötszöget önmagába viszi?</p>
+      <div class="opciok"><button><span class="math inline">\(72^\circ\)</span></button><button><span class="math inline">\(60^\circ\)</span></button><button><span class="math inline">\(108^\circ\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+<div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-geometria.html#alap-14">🐜 Henrik-bevetés <span class="cimke">Alap 14–15</span></a><a class="sav bruno" href="feladatok-geometria.html#kozep-9">💥 Brúnó-bevetés <span class="cimke">Közép 9</span></a></div></div></div>
 
     <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/vanda.webp" alt="Vanda — a valóságformálás mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Vanda:</b> A Tükör-világ meghajolt előtted — a teljes geometriai szektor a kezedben van.
     Most jöhet a <b>kiképzési adattár</b>: gyakorolj a feladatgyűjteménnyel, majd zárd le a <b>bevetési kártyával</b>.</p></div>

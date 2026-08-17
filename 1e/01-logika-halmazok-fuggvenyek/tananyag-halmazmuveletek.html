@@ -47,16 +47,16 @@
       <h3>Unió (∪) — „VAGY"</h3>
       <div class="doboz definicio"><p class="cim"><span class="ikon">📗</span> Definíció</p>
         <p><span class="math">\(A \cup  B = \{x | x \in  A \lor  x \in  B\}\)</span> — minden elem, ami legalább az egyik halmazban benne van.</p></div>
-      <figure class="venn"><div class="vbox"><svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" role="img"><defs></defs><rect x="6" y="6" width="228" height="148" rx="12" fill="#fbfbff" stroke="#c9cfe0" stroke-width="2"/><circle cx="95" cy="86" r="52" fill="#ff5da2" opacity="0.5"/><circle cx="145" cy="86" r="52" fill="#ff5da2" opacity="0.5"/><circle cx="95" cy="86" r="52" fill="none" stroke="#5b4be0" stroke-width="2.5"/><circle cx="145" cy="86" r="52" fill="none" stroke="#5b4be0" stroke-width="2.5"/><text x="20" y="28" font-size="15" fill="#8a93a8" font-style="italic" font-family="Cambria Math,serif">U</text><text x="52" y="92" font-size="19" fill="#3a2fb0" font-weight="700" font-family="Cambria Math,serif">A</text><text x="176" y="92" font-size="19" fill="#3a2fb0" font-weight="700" font-family="Cambria Math,serif">B</text></svg></div><figcaption>A ∪ B — ami A-ban VAGY B-ben van</figcaption></figure>
+      <figure class="venn"><div class="vbox"><svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" role="img"><defs></defs><rect x="6" y="6" width="228" height="148" rx="12" fill="#fbfbff" stroke="#c9cfe0" stroke-width="2"/><g opacity="0.5"><circle cx="95" cy="86" r="52" fill="#ff5da2"/><circle cx="145" cy="86" r="52" fill="#ff5da2"/></g><circle cx="95" cy="86" r="52" fill="none" stroke="#5b4be0" stroke-width="2.5"/><circle cx="145" cy="86" r="52" fill="none" stroke="#5b4be0" stroke-width="2.5"/><text x="20" y="28" font-size="15" fill="#8a93a8" font-style="italic" font-family="Cambria Math,serif">U</text><text x="52" y="92" font-size="19" fill="#3a2fb0" font-weight="700" font-family="Cambria Math,serif">A</text><text x="176" y="92" font-size="19" fill="#3a2fb0" font-weight="700" font-family="Cambria Math,serif">B</text></svg></div><figcaption>A ∪ B — ami A-ban VAGY B-ben van</figcaption></figure>
 
       <h3>Metszet (∩) — „ÉS"</h3>
       <div class="doboz definicio"><p class="cim"><span class="ikon">📗</span> Definíció</p>
         <p><span class="math">\(A \cap  B = \{x | x \in  A \land  x \in  B\}\)</span> — a közös elemek. Ha <span class="math">\(A \cap  B = \varnothing\)</span>, a két halmaz <b>diszjunkt</b> (nincs közös elemük).</p></div>
       <figure class="venn"><div class="vbox"><svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" role="img"><defs><clipPath id="cA_inter"><circle cx="95" cy="86" r="52"/></clipPath></defs><rect x="6" y="6" width="228" height="148" rx="12" fill="#fbfbff" stroke="#c9cfe0" stroke-width="2"/><circle cx="145" cy="86" r="52" fill="#ff5da2" opacity="0.6" clip-path="url(#cA_inter)"/><circle cx="95" cy="86" r="52" fill="none" stroke="#5b4be0" stroke-width="2.5"/><circle cx="145" cy="86" r="52" fill="none" stroke="#5b4be0" stroke-width="2.5"/><text x="20" y="28" font-size="15" fill="#8a93a8" font-style="italic" font-family="Cambria Math,serif">U</text><text x="52" y="92" font-size="19" fill="#3a2fb0" font-weight="700" font-family="Cambria Math,serif">A</text><text x="176" y="92" font-size="19" fill="#3a2fb0" font-weight="700" font-family="Cambria Math,serif">B</text></svg></div><figcaption>A ∩ B — ami A-ban ÉS B-ben is benne van</figcaption></figure>
 
-      <h3>Különbség (∖) — „csak az egyikben"</h3>
+      <h3>Különbség (∖) — „az elsőben igen, a másodikban nem"</h3>
       <div class="doboz definicio"><p class="cim"><span class="ikon">📗</span> Definíció</p>
-        <p><span class="math">\(A \setminus  B = \{x | x \in  A \land  x \notin  B\}\)</span> — ami A-ban van, de B-ben nincs. Vigyázz: <span class="math">\(A \setminus  B \neq  B \setminus  A\)</span>!</p></div>
+        <p><span class="math">\(A \setminus  B = \{x | x \in  A \land  x \notin  B\}\)</span> — ami A-ban van, de B-ben nincs. Vigyázz: a különbség <b>nem cserélhető fel</b> — általában <span class="math">\(A \setminus  B \neq  B \setminus  A\)</span>. Egyenlőség csak akkor áll fenn, ha <span class="math">\(A=B\)</span>: olyankor mindkettő az üres halmaz.</p></div>
       <div class="vennrow"><figure class="venn"><div class="vbox"><svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" role="img"><defs><clipPath id="cA_adiff"><circle cx="95" cy="86" r="52"/></clipPath></defs><rect x="6" y="6" width="228" height="148" rx="12" fill="#fbfbff" stroke="#c9cfe0" stroke-width="2"/><path d="M6,6 H234 V154 H6 Z M93,86 a52,52 0 1,0 104,0 a52,52 0 1,0 -104,0 Z" fill-rule="evenodd" fill="#ff5da2" opacity="0.55" clip-path="url(#cA_adiff)"/><circle cx="95" cy="86" r="52" fill="none" stroke="#5b4be0" stroke-width="2.5"/><circle cx="145" cy="86" r="52" fill="none" stroke="#5b4be0" stroke-width="2.5"/><text x="20" y="28" font-size="15" fill="#8a93a8" font-style="italic" font-family="Cambria Math,serif">U</text><text x="52" y="92" font-size="19" fill="#3a2fb0" font-weight="700" font-family="Cambria Math,serif">A</text><text x="176" y="92" font-size="19" fill="#3a2fb0" font-weight="700" font-family="Cambria Math,serif">B</text></svg></div><figcaption>A ∖ B — A-ban, de B-ben NEM</figcaption></figure><figure class="venn"><div class="vbox"><svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" role="img"><defs><clipPath id="cB_bdiff"><circle cx="145" cy="86" r="52"/></clipPath></defs><rect x="6" y="6" width="228" height="148" rx="12" fill="#fbfbff" stroke="#c9cfe0" stroke-width="2"/><path d="M6,6 H234 V154 H6 Z M43,86 a52,52 0 1,0 104,0 a52,52 0 1,0 -104,0 Z" fill-rule="evenodd" fill="#ff5da2" opacity="0.55" clip-path="url(#cB_bdiff)"/><circle cx="95" cy="86" r="52" fill="none" stroke="#5b4be0" stroke-width="2.5"/><circle cx="145" cy="86" r="52" fill="none" stroke="#5b4be0" stroke-width="2.5"/><text x="20" y="28" font-size="15" fill="#8a93a8" font-style="italic" font-family="Cambria Math,serif">U</text><text x="52" y="92" font-size="19" fill="#3a2fb0" font-weight="700" font-family="Cambria Math,serif">A</text><text x="176" y="92" font-size="19" fill="#3a2fb0" font-weight="700" font-family="Cambria Math,serif">B</text></svg></div><figcaption>B ∖ A — B-ben, de A-ban NEM</figcaption></figure></div>
 
       <h3>Szimmetrikus különbség (△)</h3>
@@ -66,13 +66,13 @@
 
       <h3>Komplementer (kiegészítő halmaz)</h3>
       <div class="doboz definicio"><p class="cim"><span class="ikon">📗</span> Definíció</p>
-        <p>Ha <span class="math">\(A \subseteq  U\)</span>, akkor A komplementere az univerzumra nézve: <span class="math">\(\overline{A} = \mathcal{C}_{U}(A) = U \setminus  A\)</span> — minden, ami <b>nincs</b> A-ban.</p></div>
-      <figure class="venn"><div class="vbox"><svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" role="img"><rect x="6" y="6" width="228" height="148" rx="12" fill="#fbfbff" stroke="#c9cfe0" stroke-width="2"/><path d="M6,6 H234 V154 H6 Z M66,86 a54,54 0 1,0 108,0 a54,54 0 1,0 -108,0 Z" fill-rule="evenodd" fill="#ff5da2" opacity="0.5"/><circle cx="120" cy="86" r="54" fill="none" stroke="#5b4be0" stroke-width="2.5"/><text x="20" y="28" font-size="15" fill="#8a93a8" font-style="italic" font-family="Cambria Math,serif">U</text><text x="112" y="92" font-size="19" fill="#3a2fb0" font-weight="700" font-family="Cambria Math,serif">A</text></svg></div><figcaption>Ā = U ∖ A — minden, ami A-n KÍVÜL van</figcaption></figure>
+        <p>Ha <span class="math">\(A \subseteq  U\)</span>, akkor A komplementere az univerzumra nézve: <span class="math">\(\overline{A} = \mathcal{C}_{U}(A) = U \setminus  A\)</span> — minden <b>U-beli</b> elem, ami nincs A-ban.</p></div>
+      <figure class="venn"><div class="vbox"><svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" role="img"><rect x="6" y="6" width="228" height="148" rx="12" fill="#fbfbff" stroke="#c9cfe0" stroke-width="2"/><path d="M6,6 H234 V154 H6 Z M66,86 a54,54 0 1,0 108,0 a54,54 0 1,0 -108,0 Z" fill-rule="evenodd" fill="#ff5da2" opacity="0.5"/><circle cx="120" cy="86" r="54" fill="none" stroke="#5b4be0" stroke-width="2.5"/><text x="20" y="28" font-size="15" fill="#8a93a8" font-style="italic" font-family="Cambria Math,serif">U</text><text x="112" y="92" font-size="19" fill="#3a2fb0" font-weight="700" font-family="Cambria Math,serif">A</text></svg></div><figcaption>Ā = U ∖ A — ami az alaphalmazban benne van, A-ban viszont nem</figcaption></figure>
 
       <div class="doboz pelda">
         <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
-        <p>Legyen <span class="math">\(A = \{1,2,3,4,5\}\)</span>, <span class="math">\(B = \{2,4,6,8\}\)</span>. Ekkor:</p>
-        <p><span class="math">\(A \cup  B = \{1,2,3,4,5,6,8\}\)</span> · <span class="math">\(A \cap  B = \{2,4\}\)</span> · <span class="math">\(A \setminus  B = \{1,3,5\}\)</span> · <span class="math">\(B \setminus  A = \{6,8\}\)</span> · <span class="math">\(A \,\triangle\, B = \{1,3,5,6,8\}\)</span></p>
+        <p>Legyen <span class="math">\(U = \{1,2,\dots,9\}\)</span>, <span class="math">\(A = \{1,2,3,4,5\}\)</span>, <span class="math">\(B = \{2,4,6,8\}\)</span>. Ekkor:</p>
+        <p><span class="math">\(A \cup  B = \{1,2,3,4,5,6,8\}\)</span> · <span class="math">\(A \cap  B = \{2,4\}\)</span> · <span class="math">\(A \setminus  B = \{1,3,5\}\)</span> · <span class="math">\(B \setminus  A = \{6,8\}\)</span> · <span class="math">\(A \,\triangle\, B = \{1,3,5,6,8\}\)</span> · <span class="math">\(\overline{A} = \{6,7,8,9\}\)</span> · <span class="math">\(\overline{B} = \{1,3,5,7,9\}\)</span></p>
       </div>
 
       <figure>
@@ -94,12 +94,12 @@
 
     <h2 id="s2">Műveleti tulajdonságok + De Morgan</h2>
 <span id="tulajdonsagok" class="regi-horgony"></span>
-<p class="lead">A halmazműveletek úgy viselkednek, mint a számoknál a + és a · — vannak azonosságaik.</p>
+<p class="lead">A halmazműveletek sok mindenben úgy viselkednek, mint a számoknál a + és a ·: van kommutativitás, asszociativitás és disztributivitás. De van saját szabályuk is — például <span class="math">\(A \cup A = A\)</span>, ami számokkal sosem igaz.</p>
       <div class="taut">
         <div class="c"><div class="lbl">Kommutativitás</div><div class="f">A ∪ B = B ∪ A,  A ∩ B = B ∩ A</div></div>
-        <div class="c"><div class="lbl">Asszociativitás</div><div class="f">A ∪ (B ∪ C) = (A ∪ B) ∪ C</div></div>
-        <div class="c"><div class="lbl">Disztributivitás</div><div class="f">A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)</div></div>
-        <div class="c"><div class="lbl">Idempotencia</div><div class="f">A ∪ A = A,  A ∩ A = A</div></div>
+        <div class="c"><div class="lbl">Asszociativitás</div><div class="f">A ∪ (B ∪ C) = (A ∪ B) ∪ C, A ∩ (B ∩ C) = (A ∩ B) ∩ C</div></div>
+        <div class="c"><div class="lbl">Disztributivitás</div><div class="f">A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C), A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)</div></div>
+        <div class="c"><div class="lbl">Idempotencia</div><div class="f">A ∪ A = A,  A ∩ A = A</div></div><div class="c"><div class="lbl">Komplementer</div><div class="f">A ∪ Ā = U, A ∩ Ā = ∅, az Ā komplementere maga az A</div></div>
       </div>
       <div class="doboz tetel">
         <p class="cim"><span class="ikon">📘</span> De Morgan-azonosságok (a sztárok!)</p>
@@ -117,7 +117,11 @@
       <div class="doboz pelda">
         <p class="cim"><span class="ikon">✏️</span> Számolós alkalmazás — a „logikai szita"</p>
         <p>Két halmaz elemszáma: <span class="math">\(|A \cup  B| = |A| + |B| - |A \cap  B|\)</span>. (A közös részt egyszer levonjuk, hogy ne számoljuk kétszer.)</p>
-        <p>Ez a képlet oldja meg a „hányan járnak fociba <i>és</i> úszásba" típusú feladatokat — Venn-diagrammal a legkönnyebb!</p>
+        <p>Ez a képlet oldja meg a „hányan járnak <b>legalább az egyikbe</b>" típusú feladatokat — átrendezve pedig azt is megmondja, hányan járnak mindkettőbe: <span class="math">\(|A \cap B| = |A| + |B| - |A \cup B|\)</span>.</p>
+      <p><b>Példa.</b> Egy 30 fős osztályból 18-an fociznak, 12-en úsznak, 5-en mindkettőt. Ekkor <span class="math">\(|A \cup B| = 18 + 12 - 5 = 25\)</span> — tehát 25-en sportolnak, és <span class="math">\(30 - 25 = 5\)</span> tanuló egyiket sem űzi.</p>
+      <p><b>Három halmazra</b> ugyanez a gondolat, csak tovább kell szitálni:</p>
+      <p><span class="math">\(|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|\)</span></p>
+      <p>A páronkénti metszeteket levonjuk (mert kétszer számoltuk őket), a hármas metszetet viszont vissza kell adni — azt ugyanis háromszor hozzáadtuk és háromszor levontuk, tehát egyszer sem szerepelne.</p>
       </div>
       <div class="kviz" data-answer="1">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
