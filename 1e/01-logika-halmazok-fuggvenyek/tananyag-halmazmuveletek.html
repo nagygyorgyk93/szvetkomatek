@@ -30,7 +30,7 @@
 <div class="hero">
   <h1>Halmazműveletek és tulajdonságaik</h1>
   <p class="alcim">Unió, metszet, különbség, komplementer — Venn-diagramokkal és De Morgan-azonosságokkal.</p>
-  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip ora">Halmazok · 2/3</span></div>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Halmazok · 2/3</span></div>
 </div>
 
 <main class="lap toc-os">
@@ -67,6 +67,10 @@
       <h3>Komplementer (kiegészítő halmaz)</h3>
       <div class="doboz definicio"><p class="cim"><span class="ikon">📗</span> Definíció</p>
         <p>Ha <span class="math">\(A \subseteq  U\)</span>, akkor A komplementere az univerzumra nézve: <span class="math">\(\overline{A} = \mathcal{C}_{U}(A) = U \setminus  A\)</span> — minden <b>U-beli</b> elem, ami nincs A-ban.</p></div>
+      <div class="doboz csapda">
+        <p class="cim"><span class="ikon">⚠️</span> Kán csapdája — a komplementer nem önmagában létezik</p>
+        <p>A <span class="math">\(\overline{A}\)</span> jelölés csak akkor jelent valamit, ha tudjuk, <b>mi az univerzum</b>. Ugyanaz az <span class="math">\(A = \{1, 2\}\)</span> halmaz egészen mást ad komplementernek, ha <span class="math">\(U = \{1, 2, 3\}\)</span> — akkor <span class="math">\(\overline{A} = \{3\}\)</span> —, és mást, ha <span class="math">\(U = \mathbb{N}\)</span> — akkor minden 2-nél nagyobb természetes szám beletartozik. Ha egy feladat komplementert kér, de nem mondja meg az univerzumot, a feladat hiányos: kérdezz rá.</p>
+      </div>
       <figure class="venn"><div class="vbox"><svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" role="img"><rect x="6" y="6" width="228" height="148" rx="12" fill="#fbfbff" stroke="#c9cfe0" stroke-width="2"/><path d="M6,6 H234 V154 H6 Z M66,86 a54,54 0 1,0 108,0 a54,54 0 1,0 -108,0 Z" fill-rule="evenodd" fill="#ff5da2" opacity="0.5"/><circle cx="120" cy="86" r="54" fill="none" stroke="#5b4be0" stroke-width="2.5"/><text x="20" y="28" font-size="15" fill="#8a93a8" font-style="italic" font-family="Cambria Math,serif">U</text><text x="112" y="92" font-size="19" fill="#3a2fb0" font-weight="700" font-family="Cambria Math,serif">A</text></svg></div><figcaption>Ā = U ∖ A — ami az alaphalmazban benne van, A-ban viszont nem</figcaption></figure>
 
       <div class="doboz pelda">
