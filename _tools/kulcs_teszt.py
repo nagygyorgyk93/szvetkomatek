@@ -34,6 +34,11 @@ TAG = re.compile(r'<[^>]+>')
 
 def _szoveg(h: str) -> str:
     h = re.sub(r'\\(?:varnothing|emptyset)\b', ' \u2205 ', h)
+    # a SZÁM/SZÁM alakú törtet egyben kell tartani, különben 31 és 99 lesz a 31/99-ből;
+    # a szimbolikus törtet (pl. \tfrac{x+5}{2}) az általános parancs-strip kezeli
+    h = re.sub(r'\\[tdc]?frac\s*(\d)\s*(\d)(?![\d}])', r' \1/\2 ', h)
+    h = re.sub(r'\\[tdc]?frac\s*\{\s*(-?\d+)\s*\}\s*\{\s*(-?\d+)\s*\}',
+               lambda m: ' %s/%s ' % (m.group(1), m.group(2)), h)
     h = re.sub(r'\\[a-zA-Z]+\s*', ' ', h)          # KaTeX-parancsok
     h = TAG.sub(' ', h)
     for a, b in (('&lt;', '<'), ('&gt;', '>'), ('&amp;', '&'), ('&nbsp;', ' '),
@@ -56,13 +61,23 @@ def vegeredmenyek(ut: str) -> dict[str, str]:
 
 
 def _reszek(szoveg: str) -> dict[str, str]:
-    """„a) … ; b) … ; c) …" → {'a': …, 'b': …}. Betűjel nélkül: {'': egész}."""
-    darabok = re.split(r'(?:^|[;\s])([a-h])\)\s*', ' ' + szoveg)
-    if len(darabok) < 3:
+    """„a) … ; b) … ; c) …" → {'a': …, 'b': …}. Betűjel nélkül: {'': egész}.
+
+    Csak az „a)"-val kezdődő, egyesével növekvő futam számít részfeladat-jelölésnek.
+    Enélkül a képletekben álló zárójeles betű is jelölésnek látszana: az
+    „\((f\circ h)(x)\)" kifejezésben a „h)" nem részfeladat.
+    """
+    s = ' ' + szoveg + ' '
+    valos = []
+    for m in re.finditer(r'(?:^|[;\s])([a-l])\)\s', s):
+        if m.group(1) == chr(ord('a') + len(valos)):
+            valos.append((m.start(1), m.end()))
+    if len(valos) < 2:
         return {'': szoveg}
     ki = {}
-    for i in range(1, len(darabok) - 1, 2):
-        ki[darabok[i]] = darabok[i + 1].strip(' ;.')
+    for i, (kezd, veg) in enumerate(valos):
+        hatar = valos[i + 1][0] if i + 1 < len(valos) else len(s)
+        ki[s[kezd]] = s[veg:hatar].strip(' ;.')
     return ki
 
 
@@ -89,8 +104,17 @@ def _halmaz(t: str) -> set | None:
 
 
 def _szamok(t: str) -> list[Fraction]:
-    t = t.replace('{,}', ',').replace('\\', '')
-    return [Fraction(x.replace(',', '.')) for x in re.findall(r'-?\d+(?:[.,]\d+)?', t)]
+    # a KaTeX-ben a `{,}` tizedesvessző, a `\,` viszont ezreselválasztó vékony szóköz
+    t = t.replace('{,}', '\u066b')          # ideiglenes tizedesjel
+    t = re.sub(r'\\,', '', t)               # ezreselválasztó ki
+    t = t.replace('\\', '')
+    ki = []
+    for m in re.finditer(r'(-?\d+)\s*/\s*(-?\d+)|(-?\d+(?:[.\u066b]\d+)?)', t):
+        if m.group(1) is not None:
+            ki.append(Fraction(int(m.group(1)), int(m.group(2))))
+        else:
+            ki.append(Fraction(m.group(3).replace('\u066b', '.')))
+    return ki
 
 
 def _norm(t: str) -> str:
@@ -109,6 +133,11 @@ def ellenoriz(modul) -> list[str]:
             hibak.append(f'✗ {azon}: nincs Végeredmény-lenyíló (vagy nincs ilyen kártya)')
             continue
         reszek = _reszek(kulcsok[azon])
+        # Ha egy részfeladathoz több várt szám tartozik (pl. „\(x=32\) \(x=12\) …”),
+        # akkor SORRENDBEN keressük őket: a k-adik érték csak a (k-1)-edik után állhat.
+        # Enélkül a „valahol előfordul” feltétel túl engedékeny, és elrontott értéket is
+        # elfogadna, ha az véletlenül szerepel a kulcs egy másik részében.
+        kurzor = {}
         for betu, vart in vartak:
             kapott = reszek.get(betu)
             if kapott is None:
@@ -127,7 +156,12 @@ def ellenoriz(modul) -> list[str]:
             elif isinstance(vart, (int, float, Fraction)):
                 szamok = _szamok(kapott)
                 tenyleges = szamok[-1] if szamok else None
-                jo = any(abs(x - Fraction(vart)) < Fraction(1, 10**6) for x in szamok)
+                tol = kurzor.get(betu, 0)
+                talalt = next((i for i in range(tol, len(szamok))
+                               if abs(szamok[i] - Fraction(vart)) < Fraction(1, 10**6)), None)
+                jo = talalt is not None
+                if jo:
+                    kurzor[betu] = talalt + 1
             else:
                 tenyleges = kapott
                 jo = _norm(str(vart)) in _norm(kapott)
