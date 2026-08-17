@@ -41,7 +41,7 @@
       <p>Ha egy számot <span class="math inline">\(n\)</span> tizedesre kerekítünk, az <span class="math inline">\((n{+}1)\)</span>-edik tizedes dönt:</p>
       <ul>
         <li>ha az kisebb, mint <span class="math inline">\(5\)</span> → az <span class="math inline">\(n\)</span> tizedest változatlanul hagyjuk (<b>lefelé</b>);</li>
-        <li>ha az <span class="math inline">\(5\)</span> vagy nagyobb → az <span class="math inline">\(n\)</span>-edik tizedest <b>1-gyel növeljük</b> (<b>felfelé</b>).</li>
+        <li>ha az <span class="math inline">\(5\)</span> vagy nagyobb → az <span class="math inline">\(n\)</span>-edik tizedesjegyet <b>1-gyel növeljük</b>. Negatív számnál ugyanígy járunk el az <b>abszolút értékkel</b>: <span class="math inline">\(-3{,}148 \approx -3{,}15\)</span>.</li>
       </ul>
     </div>
     <div class="doboz pelda" id="pelda-kerekites">
@@ -54,14 +54,7 @@
       Ha a levágandó rész pontosan <span class="math inline">\(\dots5\)</span> (utána csak nullák), egyes szabványok a <b>páros felé</b> kerekítenek (banki kerekítés): <span class="math inline">\(2{,}5\to 2\)</span>, de <span class="math inline">\(3{,}5\to 4\)</span>. Ez sok mérésnél kiegyenlíti a hibát. A mindennapokban a „felfelé” szabály is elfogadott.
     </div>
 
-    
-    <div class="kviz" data-answer="0" data-jo="✔ A relatív hiba az abszolút hibát a mért mennyiséghez viszonyítja. 0,5 cm egy 15 cm-es ceruzán kb. 3,3%, egy 100 m-es focipályán viszont 0,0005% — ezért súlyosabb a ceruzánál." data-nem="✘ Az abszolút hiba önmagában nem mond eleget: a relatív hiba a mért mennyiséghez viszonyít. 0,5 cm a rövid ceruzán arányaiban sokkal nagyobb tévedés, mint a hosszú focipályán.">
-      <p class="kviz-cim"><span class="ikon">🎯</span> Gyors kérdés</p>
-      <p>Két mérés abszolút hibája egyaránt <span class="math inline">\(0{,}5\)</span> cm: az egyik egy ceruzáé, a másik egy focipályáé. Melyik állítás igaz?</p>
-      <div class="opciok"><button>A ceruzánál nagyobb a relatív hiba</button><button>A focipályánál nagyobb a relatív hiba</button><button>Ugyanakkora, hiszen az abszolút hiba egyenlő</button></div>
-      <p class="visszajelzes"></p>
-    </div>
-    <h2 id="s2">Abszolút és relatív hiba</h2>
+<h2 id="s2">Abszolút és relatív hiba</h2>
     <p>A kerekített (közelítő) érték eltér a pontostól. Ezt az eltérést kétféleképp mérjük.</p>
     <div class="doboz definicio" id="def-hiba">
       <p class="cim"><span class="ikon">📗</span> Definíció</p>
@@ -74,10 +67,17 @@
       <details><summary>Megoldás</summary><div class="bel"><p>Közelítő érték: <span class="math inline">\(x^{*}=4{,}88\)</span>. Abszolút hiba: <span class="math inline">\(\Delta=|4{,}88465009-4{,}88|=0{,}00465009\)</span>. Relatív hiba: <span class="math inline">\(\delta=\dfrac{0{,}00465009}{4{,}88465009}\approx 0{,}00095\)</span>, azaz kb. <span class="math inline">\(0{,}095\%\)</span>.</p></div></details>
     </div>
 
+    <div class="kviz" data-answer="0" data-jo="✔ A relatív hiba az abszolút hibát a mennyiség nagyságához viszonyítja. 0,5 cm egy 15 cm-es ceruzán kb. 3,3%, egy 100 m-es focipályán viszont 0,005% — ezért súlyosabb a ceruzánál." data-nem="✘ Az abszolút hiba önmagában nem mond eleget: a relatív hiba a mért mennyiséghez viszonyít. 0,5 cm a rövid ceruzán arányaiban sokkal nagyobb tévedés, mint a hosszú focipályán.">
+      <p class="kviz-cim"><span class="ikon">🎯</span> Gyors kérdés</p>
+      <p>Két mérés abszolút hibája egyaránt <span class="math inline">\(0{,}5\)</span> cm: az egyik egy ceruzáé, a másik egy focipályáé. Melyik állítás igaz?</p>
+      <div class="opciok"><button>A ceruzánál nagyobb a relatív hiba</button><button>A focipályánál nagyobb a relatív hiba</button><button>Ugyanakkora, hiszen az abszolút hiba egyenlő</button></div>
+      <p class="visszajelzes"></p>
+    </div>
+
     <h2 id="s3">A normál (tízhatványos) alak</h2>
     <div class="doboz definicio" id="def-normal">
       <p class="cim"><span class="ikon">📗</span> Definíció</p>
-      <p>Egy szám <b>normál alakja</b> (tudományos jelölés): \[a\cdot 10^{k},\qquad 1\le a&lt;10,\ k\in\mathbb{Z}.\] Az <span class="math inline">\(a\)</span> a <b>mantissza</b> (egyetlen jegy áll a tizedesvessző előtt), a <span class="math inline">\(k\)</span> pedig a tízhatvány kitevője. Nagy számnál <span class="math inline">\(k>0\)</span>, nagyon kicsinél <span class="math inline">\(k&lt;0\)</span>.</p>
+      <p>Egy szám <b>normál alakja</b> (tudományos jelölés): \[a\cdot 10^{k},\qquad 1\le a&lt;10,\ k\in\mathbb{Z}.\] Az <span class="math inline">\(a\)</span> a <b>mantissza</b> (egyetlen jegy áll a tizedesvessző előtt), a <span class="math inline">\(k\)</span> pedig a tízhatvány kitevője. <span class="math inline">\(k>0\)</span>, ha a szám 10-nél nagyobb; <span class="math inline">\(k&lt;0\)</span>, ha 1-nél kisebb; és <span class="math inline">\(k=0\)</span> az 1 és 10 közötti számokra. Minden <b>nullától különböző</b> valós szám felírható így — negatív számnál a mínuszjelet kiemeljük: <span class="math inline">\(-0{,}0045=-4{,}5\cdot 10^{-3}\)</span>.</p>
     </div>
     <div class="doboz pelda" id="pelda-normal">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
