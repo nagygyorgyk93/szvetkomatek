@@ -34,7 +34,8 @@ PIROS = "#ef4444"
 LILA = "#8b5cf6"
 
 __all__ = ["svg_szamegyenes", "svg_haromszog", "svg_venn",
-           "svg_parhuzamosok", "svg_sokszog_szogek"]
+           "svg_parhuzamosok", "svg_sokszog_szogek",
+           "svg_hasab", "svg_gula", "svg_csonkagula", "svg_haztest"]
 
 
 def _fej(w: int, h: int, leiras: str) -> list[str]:
@@ -584,3 +585,357 @@ def svg_sokszog_szogek(csucsok, cimkek=None, szogek=None, atlok=(), oldaljelek=N
 
     ki.append('</svg>')
     return "\n".join(ki)
+
+
+# =====================================================================
+# 6. TÉRGEOMETRIA — poliéderek axonometrikus képe (3e/01 óta)
+# =====================================================================
+#
+# Egyszerű **kavalier-féle** párhuzamos vetítés: a z tengely felfelé, az x
+# jobbra, az y „hátrafelé" (a mélység) — az utóbbi K_MELY arányban rövidül és
+# A_MELY szögben dől. Konvex testnél a takart éleket a vetített csúcsok konvex
+# burkából határozzuk meg: amelyik ALAP-csúcs nem kerül a burokra, az hátul van,
+# és a hozzá csatlakozó élek szaggatottak.
+#
+# A feliratok eltolása a VETÍTETT képen kifelé mutató irányt követi (`_kifele`) —
+# 3D-ben számolva a hátsó csúcs felirata a testre esne.
+
+K_MELY = 0.52          # a mélységi rövidülés aránya
+A_MELY = math.radians(34)
+
+
+def _vet(p):
+    """(x, y, z) → (X, Y) matematikai koordinátákban (Y felfelé)."""
+    x, y, z = p
+    return (x + K_MELY * y * math.cos(A_MELY), z + K_MELY * y * math.sin(A_MELY))
+
+
+def _hull(pts):
+    """Andrew monotone chain — a burok pontjainak INDEXEI (ccw)."""
+    idx = sorted(range(len(pts)), key=lambda i: (round(pts[i][0], 6), round(pts[i][1], 6)))
+    def keresztszorzat(o, a, b):
+        return ((pts[a][0]-pts[o][0])*(pts[b][1]-pts[o][1])
+                - (pts[a][1]-pts[o][1])*(pts[b][0]-pts[o][0]))
+    also = []
+    for i in idx:
+        while len(also) >= 2 and keresztszorzat(also[-2], also[-1], i) <= 1e-9:
+            also.pop()
+        also.append(i)
+    felso = []
+    for i in reversed(idx):
+        while len(felso) >= 2 and keresztszorzat(felso[-2], felso[-1], i) <= 1e-9:
+            felso.pop()
+        felso.append(i)
+    return set(also + felso)
+
+
+def _alap(tipus, a=1.0, b=None, n=None):
+    """Alapsokszög a z=0 síkban, a középpont az origóban.
+
+    Visszaad: [(x, y), …] úgy, hogy az ELÜLSŐ él vízszintes legyen.
+    """
+    if tipus == "teglalap":
+        b = b if b is not None else a * 0.62
+        return [(-a/2, -b/2), (a/2, -b/2), (a/2, b/2), (-a/2, b/2)]
+    if tipus == "negyzet":
+        return _alap("teglalap", a, a)
+    n = {"haromszog": 3, "otszog": 5, "hatszog": 6}.get(tipus, n or 4)
+    R = a / (2 * math.sin(math.pi / n))          # a = oldalhossz → köréírt sugár
+    # az elülső él vízszintes: a csúcsok a -90° ± (180/n) körül induljanak
+    kezd = -math.pi/2 + math.pi/n
+    return [(R * math.cos(kezd + 2*math.pi*i/n), R * math.sin(kezd + 2*math.pi*i/n))
+            for i in range(n)]
+
+
+class _Rajz:
+    """Vetített pontok gyűjtője + automatikus méretezés és SVG-kiírás."""
+
+    def __init__(self, w, h, leiras, parnazas=26):
+        self.w, self.h, self.leiras, self.par = w, h, leiras, parnazas
+        self.pontok = []          # 3D pontok, amiket a kép be kell foglaljon
+        self.elemek = []          # (reteg, svg-darab) — a reteg a rajzolási sorrend
+
+    def befoglal(self, *pts):
+        self.pontok.extend(pts)
+
+    def _skala(self):
+        vp = [_vet(p) for p in self.pontok]
+        xs = [p[0] for p in vp]; ys = [p[1] for p in vp]
+        dx = max(xs) - min(xs) or 1.0
+        dy = max(ys) - min(ys) or 1.0
+        s = min((self.w - 2*self.par) / dx, (self.h - 2*self.par) / dy)
+        kx = (self.w - s*dx) / 2 - s*min(xs)
+        ky = (self.h - s*dy) / 2 + s*max(ys)
+        return s, kx, ky
+
+    def P(self, p):
+        """3D pont → SVG-koordináta."""
+        s, kx, ky = self._sk
+        X, Y = _vet(p)
+        return (kx + s*X, ky - s*Y)
+
+    # --- rajzoló primitívek (3D bemenettel) ---
+    def vonal(self, p, q, szin=TINTA, sz=1.6, szaggat=None, reteg=1, opacity=None):
+        self.elemek.append((reteg, ("vonal", p, q, szin, sz, szaggat, opacity)))
+
+    def sokszog(self, pts, kitolt="none", szin=TINTA, sz=1.6, szaggat=None,
+                atlatszo=0.16, reteg=0):
+        self.elemek.append((reteg, ("sokszog", list(pts), kitolt, szin, sz, szaggat, atlatszo)))
+
+    def felirat(self, p, szoveg, dx=0, dy=0, szin=TINTA, meret=13, dolt=True,
+                horgony="middle", reteg=3, sulyos=True):
+        self.elemek.append((reteg, ("text", p, szoveg, dx, dy, szin, meret, dolt,
+                                    horgony, sulyos)))
+
+    def derekszog(self, sarok, p1, p2, meret=11, szin=SZURKE, reteg=2):
+        self.elemek.append((reteg, ("dsz", sarok, p1, p2, meret, szin)))
+
+    def kesz(self):
+        self._sk = self._skala()
+        ki = [f'<svg viewBox="0 0 {self.w} {self.h}" width="{self.w}" height="{self.h}" '
+              f'role="img" aria-label="{self.leiras}">']
+        for _, e in sorted(self.elemek, key=lambda t: t[0]):
+            t = e[0]
+            if t == "vonal":
+                _, p, q, szin, sz, szag, op = e
+                x1, y1 = self.P(p); x2, y2 = self.P(q)
+                d = f' stroke-dasharray="{szag}"' if szag else ""
+                o = f' opacity="{op}"' if op else ""
+                ki.append(f'  <line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" '
+                          f'stroke="{szin}" stroke-width="{sz}" stroke-linecap="round"{d}{o}/>')
+            elif t == "sokszog":
+                _, pts, kitolt, szin, sz, szag, atl = e
+                d = " ".join(f"{self.P(p)[0]:.1f},{self.P(p)[1]:.1f}" for p in pts)
+                dd = f' stroke-dasharray="{szag}"' if szag else ""
+                fill = "none" if kitolt == "none" else kitolt
+                fo = "" if kitolt == "none" else f' fill-opacity="{atl}"'
+                ki.append(f'  <polygon points="{d}" fill="{fill}"{fo} stroke="{szin}" '
+                          f'stroke-width="{sz}" stroke-linejoin="round"{dd}/>')
+            elif t == "text":
+                _, p, sz_, dx, dy, szin, meret, dolt, horgony, sulyos = e
+                x, y = self.P(p)
+                st = ' font-style="italic"' if dolt else ""
+                fw = ' font-weight="600"' if sulyos else ""
+                ki.append(f'  <text x="{x+dx:.1f}" y="{y+dy:.1f}" font-size="{meret}" '
+                          f'fill="{szin}" text-anchor="{horgony}"{st}{fw} '
+                          f'font-family="Cambria, Georgia, serif">{sz_}</text>')
+            elif t == "dsz":
+                _, s, p1, p2, m, szin = e
+                sx, sy = self.P(s)
+                def egys(q):
+                    qx, qy = self.P(q)
+                    d = math.hypot(qx-sx, qy-sy) or 1
+                    return ((qx-sx)/d, (qy-sy)/d)
+                u = egys(p1); v = egys(p2)
+                a = (sx+u[0]*m, sy+u[1]*m)
+                b = (sx+v[0]*m, sy+v[1]*m)
+                c = (sx+(u[0]+v[0])*m, sy+(u[1]+v[1])*m)
+                ki.append(f'  <path d="M{a[0]:.1f},{a[1]:.1f} L{c[0]:.1f},{c[1]:.1f} '
+                          f'L{b[0]:.1f},{b[1]:.1f}" fill="none" stroke="{szin}" stroke-width="1.2"/>')
+        ki.append("</svg>")
+        return "\n".join(ki)
+
+
+def _kifele(p, kozep, tav):
+    """A felirat eltolása a VETÍTETT képen kifelé mutató irányban (dx, dy px)."""
+    X, Y = _vet(p)
+    Xc, Yc = _vet(kozep)
+    vx, vy = X - Xc, -(Y - Yc)          # SVG: y lefelé nő
+    d = math.hypot(vx, vy) or 1.0
+    return tav * vx / d, tav * vy / d
+
+
+def _betuk(n, also=True):
+    ABC = "ABCDEFGH"
+    return [ABC[i] for i in range(n)] if also else [f"{ABC[i]}<tspan font-size='9' dy='3'>1</tspan>" for i in range(n)]
+
+
+def _kirajzol_test(r, also3, felso3, cimkez, csucsbetuk=True, felso_betuk=True):
+    """Hasáb/csonkagúla váz: alaplap + fedőlap + oldalélek, takart élek szaggatva."""
+    n = len(also3)
+    minden = also3 + felso3
+    vp = [_vet(p) for p in minden]
+    burok = _hull(vp)
+    takart = [i for i in range(n) if i not in burok]     # hátsó ALAP-csúcsok
+    def szag(i, j=None):
+        return "5 4" if (i in takart or (j is not None and j in takart)) else None
+    # alaplap élei
+    for i in range(n):
+        j = (i+1) % n
+        r.vonal(also3[i], also3[j], sz=1.7, szaggat=szag(i, j))
+    # fedőlap élei (mindig láthatók)
+    for i in range(n):
+        j = (i+1) % n
+        r.vonal(felso3[i], felso3[j], sz=1.7)
+    # oldalélek
+    for i in range(n):
+        r.vonal(also3[i], felso3[i], sz=1.7, szaggat=szag(i))
+    r.befoglal(*minden)
+    if not cimkez:
+        return
+    ABC = "ABCDEFGH"
+    for i, p in enumerate(also3):
+        dx, dy = _kifele(p, (0.0, 0.0, 0.0), 15)
+        r.felirat(p, ABC[i], dx=dx, dy=dy + 5, meret=13)
+    if felso_betuk:
+        for i, p in enumerate(felso3):
+            dx, dy = _kifele(p, (0.0, 0.0, p[2]), 17)
+            r.felirat(p, f"{ABC[i]}<tspan font-size='9' dy='3'>1</tspan>",
+                      dx=dx, dy=dy - 3, meret=13)
+
+
+def _elso_el(poly):
+    """Annak az élnek az indexe, amelynek a felezőpontja legelöl (legkisebb y) van."""
+    n = len(poly)
+    return min(range(n), key=lambda i: (poly[i][1] + poly[(i+1) % n][1]) / 2)
+
+
+def svg_hasab(alap="negyzet", a=1.0, b=None, m=1.4, w=340, h=280,
+              leiras="Egyenes hasáb", cimkez=True, magassag=False,
+              testatlo=False, lapatlo=False, metszet=None, feliratok=None):
+    """Egyenes hasáb axonometrikus képe.
+
+    `alap`: "haromszog" | "negyzet" | "teglalap" | "otszog" | "hatszog"
+    `metszet`: None | "atlos" (két szemközti oldalélen átmenő) | "parhuzamos"
+    `feliratok`: {"a": "a", "m": "m", "D": "d"} — élhossz/magasság feliratok
+    """
+    feliratok = feliratok or {}
+    poly = _alap(alap, a, b)
+    also3 = [(x, y, 0.0) for x, y in poly]
+    felso3 = [(x, y, m) for x, y in poly]
+    n = len(poly)
+    r = _Rajz(w, h, leiras)
+    if metszet == "atlos" and n >= 4:
+        k = n // 2
+        pts = [also3[0], also3[k], felso3[k], felso3[0]]
+        r.sokszog(pts, kitolt=KEK, szin=KEK, sz=1.6, atlatszo=0.20, reteg=0)
+    if metszet == "parhuzamos":
+        z = m * 0.55
+        pts = [(x, y, z) for x, y in poly]
+        r.sokszog(pts, kitolt=ZOLD, szin=ZOLD, sz=1.6, atlatszo=0.20, reteg=2)
+    _kirajzol_test(r, also3, felso3, cimkez)
+    if magassag:
+        kp = (0.0, 0.0)
+        r.vonal((0, 0, 0), (0, 0, m), szin=PIROS, sz=1.5, szaggat="4 3", reteg=2)
+        r.derekszog((0, 0, 0), (0, 0, m), also3[0], szin=PIROS)
+        r.felirat((0, 0, m/2), feliratok.get("m", "m"), dx=8, dy=0, szin=PIROS,
+                  horgony="start")
+    if testatlo and n >= 4:
+        k = n // 2
+        r.vonal(also3[0], felso3[k], szin=KEK, sz=1.5)
+        if "D" in feliratok:
+            r.felirat(((also3[0][0]+felso3[k][0])/2, (also3[0][1]+felso3[k][1])/2,
+                       (also3[0][2]+felso3[k][2])/2), feliratok["D"],
+                      dx=6, dy=-4, szin=KEK, horgony="start")
+    if lapatlo:
+        r.vonal(also3[0], felso3[1], szin=BOROSTYAN, sz=1.5)
+    if "a" in feliratok:
+        i = _elso_el(poly); j = (i + 1) % n
+        p, q = also3[i], also3[j]
+        r.felirat(((p[0]+q[0])/2, (p[1]+q[1])/2, 0), feliratok["a"], dy=17, meret=12)
+    return r.kesz()
+
+
+def svg_gula(alap="negyzet", a=1.0, b=None, m=1.5, w=340, h=290,
+             leiras="Egyenes gúla", cimkez=True, magassag=True,
+             apotema=False, oldalel=False, metszet=None, arany=0.5,
+             feliratok=None):
+    """Szabályos gúla; magasság talpponttal, oldallap-magasság (apotéma), oldalél."""
+    feliratok = feliratok or {}
+    poly = _alap(alap, a, b)
+    n = len(poly)
+    also3 = [(x, y, 0.0) for x, y in poly]
+    csucs = (0.0, 0.0, m)
+    r = _Rajz(w, h, leiras)
+    vp = [_vet(p) for p in also3 + [csucs]]
+    burok = _hull(vp)
+    takart = [i for i in range(n) if i not in burok]
+    if metszet == "parhuzamos":
+        k = 1 - arany
+        pts = [(x*k, y*k, m*arany) for x, y in poly]
+        r.sokszog(pts, kitolt=ZOLD, szin=ZOLD, sz=1.6, atlatszo=0.22, reteg=2)
+    for i in range(n):
+        j = (i+1) % n
+        szag = "5 4" if (i in takart or j in takart) else None
+        r.vonal(also3[i], also3[j], sz=1.7, szaggat=szag)
+    for i in range(n):
+        r.vonal(also3[i], csucs, sz=1.7, szaggat=("5 4" if i in takart else None))
+    r.befoglal(*(also3 + [csucs]))
+    ABC = "ABCDEFGH"
+    if cimkez:
+        for i, p in enumerate(also3):
+            dx, dy = _kifele(p, (0.0, 0.0, 0.0), 15)
+            r.felirat(p, ABC[i], dx=dx, dy=dy + 5, meret=13)
+        r.felirat(csucs, ABC[n], dy=-9, meret=13)
+    if magassag:
+        r.vonal((0, 0, 0), csucs, szin=PIROS, sz=1.5, szaggat="4 3", reteg=2)
+        r.felirat((0, 0, m/2), feliratok.get("m", "m"), dx=7, szin=PIROS, horgony="start")
+        r.derekszog((0, 0, 0), csucs, also3[0], szin=PIROS)
+    if apotema:
+        i0 = _elso_el(poly)
+        e0, e1 = poly[i0], poly[(i0 + 1) % n]
+        fp = ((e0[0]+e1[0])/2, (e0[1]+e1[1])/2, 0.0)
+        r.vonal((0, 0, 0), fp, szin=BOROSTYAN, sz=1.4, szaggat="3 3", reteg=2)
+        r.vonal(fp, csucs, szin=BOROSTYAN, sz=1.6, reteg=2)
+        r.felirat(((fp[0]+csucs[0])/2, (fp[1]+csucs[1])/2, (fp[2]+csucs[2])/2),
+                  feliratok.get("mo", "m<tspan font-size='9' dy='3'>o</tspan>"),
+                  dx=-9, dy=2, szin=BOROSTYAN, horgony="end")
+        r.derekszog(fp, csucs, (0, 0, 0), szin=BOROSTYAN, meret=9)
+    if oldalel:
+        r.vonal(also3[1], csucs, szin=KEK, sz=2.0, reteg=2)
+        p = also3[1]
+        r.felirat(((p[0]+csucs[0])/2, (p[1]+csucs[1])/2, (p[2]+csucs[2])/2),
+                  feliratok.get("b", "b"), dx=9, dy=-2, szin=KEK, horgony="start")
+    if "a" in feliratok:
+        i0 = _elso_el(poly); j0 = (i0 + 1) % n
+        p, q = also3[i0], also3[j0]
+        r.felirat(((p[0]+q[0])/2, (p[1]+q[1])/2, 0), feliratok["a"], dy=17, meret=12)
+    return r.kesz()
+
+
+def svg_csonkagula(alap="negyzet", a=1.0, a1=0.5, m=1.1, w=340, h=280,
+                   leiras="Csonkagúla", cimkez=True, magassag=False,
+                   kiegeszites=False, feliratok=None):
+    """Csonkagúla; `kiegeszites=True` esetén a levágott csúcs szaggatva."""
+    feliratok = feliratok or {}
+    poly = _alap(alap, a)
+    k = a1 / a
+    also3 = [(x, y, 0.0) for x, y in poly]
+    felso3 = [(x*k, y*k, m) for x, y in poly]
+    r = _Rajz(w, h, leiras)
+    _kirajzol_test(r, also3, felso3, cimkez)
+    if kiegeszites and k < 1:
+        M = m / (1 - k)
+        csucs = (0.0, 0.0, M)
+        for i in range(len(poly)):
+            r.vonal(felso3[i], csucs, szin=SZURKE, sz=1.3, szaggat="4 4")
+        r.befoglal(csucs)
+    if magassag:
+        r.vonal((0, 0, 0), (0, 0, m), szin=PIROS, sz=1.5, szaggat="4 3", reteg=2)
+        r.felirat((0, 0, m/2), feliratok.get("m", "m"), dx=7, szin=PIROS, horgony="start")
+        r.derekszog((0, 0, 0), (0, 0, m), also3[0], szin=PIROS)
+    return r.kesz()
+
+
+def svg_haztest(a=1.0, b=0.7, m=0.8, mt=0.6, w=340, h=290,
+                leiras="Összetett test: téglatest és rá állított gúla",
+                cimkez=False, feliratok=None):
+    """Téglatest + rá állított szabályos négyoldalú gúla („ház")."""
+    feliratok = feliratok or {}
+    poly = _alap("teglalap", a, b)
+    also3 = [(x, y, 0.0) for x, y in poly]
+    felso3 = [(x, y, m) for x, y in poly]
+    csucs = (0.0, 0.0, m + mt)
+    r = _Rajz(w, h, leiras)
+    vp = [_vet(p) for p in also3 + felso3 + [csucs]]
+    burok = _hull(vp)
+    takart = [i for i in range(4) if i not in burok]
+    for i in range(4):
+        j = (i+1) % 4
+        r.vonal(also3[i], also3[j], sz=1.7, szaggat=("5 4" if (i in takart or j in takart) else None))
+        r.vonal(felso3[i], felso3[j], sz=1.7,
+                szaggat=("5 4" if (i in takart or j in takart) else None))
+        r.vonal(also3[i], felso3[i], sz=1.7, szaggat=("5 4" if i in takart else None))
+        r.vonal(felso3[i], csucs, sz=1.7, szaggat=("5 4" if i in takart else None))
+    r.befoglal(*(also3 + felso3 + [csucs]))
+    return r.kesz()
