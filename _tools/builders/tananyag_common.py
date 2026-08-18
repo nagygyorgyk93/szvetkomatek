@@ -50,14 +50,23 @@ def brief(szoveg: str, outro: bool = False) -> str:
     return f'<div class="brief"{attr}><p>📡 {szoveg.strip()}</p></div>'
 
 
+def _attr(szoveg: str) -> str:
+    """Attribútumérték: a $…$ előbb KaTeX-spanná, majd az idézőjel `&quot;`-tá.
+
+    Enélkül a visszajelzésbe írt képlet `class="math inline"` idézőjelei ELTÖRIK az
+    attribútumot (a `verify_web.py` „záró </span> nyitó nélkül" hibaként fogja meg).
+    """
+    return mat(szoveg).replace('"', "&quot;")
+
+
 def kviz(kerdes: str, opciok: list[str], jo_idx: int = 0, jo: str = "", nem: str = "") -> str:
     """Gyors kérdés. FONTOS: a `jo_idx` a `opciok` lista 0-alapú indexe."""
     gombok = "".join(f"<button>{o}</button>" for o in opciok)
     extra = ""
     if jo:
-        extra += f' data-jo="{jo}"'
+        extra += f' data-jo="{_attr(jo)}"'
     if nem:
-        extra += f' data-nem="{nem}"'
+        extra += f' data-nem="{_attr(nem)}"'
     return (f'<div class="kviz" data-answer="{jo_idx}"{extra}>\n'
             f'  <p class="kviz-cim">🎯 Gyors kérdés</p>\n'
             f'  <p>{kerdes}</p>\n'
@@ -66,13 +75,25 @@ def kviz(kerdes: str, opciok: list[str], jo_idx: int = 0, jo: str = "", nem: str
             f'</div>')
 
 
+# A sávok OSZTÁLYNEVE évadtól függetlenül `.sav.henrik` (könnyített) és `.sav.bruno`
+# (normál) — csak a FELIRAT évadfüggő (világ-biblia 5b.).
+SAV_FELIRAT = {
+    "1e": ("🐜 Henrik-bevetés", "💥 Brúnó-bevetés"),
+    "2e": ("🐾 Bestia-protokoll", "🔥 Főnix-protokoll"),
+    "3e": ("🐕 Tér-eb-ugrás", "👑 Királyi Gárda"),
+    "4e": ("🐶 Véd-eb nyomravezető", "⚔️ Maximális erőbedobás"),
+    "4im": ("🐶 Véd-eb debugger", "⚔️ Maximális erőbedobás"),
+}
+
+
 def gyakorolj(konnyu_href: str, konnyu_cimke: str, normal_href: str, normal_cimke: str,
-              bevezeto: str = "Válaszd a bevetésed:") -> str:
-    """Differenciált sávok — 2e köntös: 🐾 Bestia-protokoll / 🔥 Főnix-protokoll."""
+              bevezeto: str = "Válaszd ki a bevetésed:", tagozat: str = "2e") -> str:
+    """Differenciált sávok. A felirat az évadból jön (`SAV_FELIRAT`), az osztálynév fix."""
+    konnyu_nev, normal_nev = SAV_FELIRAT[tagozat]
     return ('<div class="gyakorolj"><span class="ikon">🎯</span><div>'
             f'<p><b>Gyakorolj!</b> {bevezeto}</p><div class="savok">'
-            f'<a class="sav henrik" href="{konnyu_href}">🐾 Bestia-protokoll <span class="cimke">{konnyu_cimke}</span></a>'
-            f'<a class="sav bruno" href="{normal_href}">🔥 Főnix-protokoll <span class="cimke">{normal_cimke}</span></a>'
+            f'<a class="sav henrik" href="{konnyu_href}">{konnyu_nev} <span class="cimke">{konnyu_cimke}</span></a>'
+            f'<a class="sav bruno" href="{normal_href}">{normal_nev} <span class="cimke">{normal_cimke}</span></a>'
             '</div></div></div>')
 
 

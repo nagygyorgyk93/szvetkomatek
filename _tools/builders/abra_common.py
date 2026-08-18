@@ -35,7 +35,8 @@ LILA = "#8b5cf6"
 
 __all__ = ["svg_szamegyenes", "svg_haromszog", "svg_venn",
            "svg_parhuzamosok", "svg_sokszog_szogek",
-           "svg_hasab", "svg_gula", "svg_csonkagula", "svg_haztest"]
+           "svg_hasab", "svg_gula", "svg_csonkagula", "svg_haztest",
+           "svg_terelem", "svg_halo", "svg_platoni", "svg_sikidom"]
 
 
 def _fej(w: int, h: int, leiras: str) -> list[str]:
@@ -939,3 +940,369 @@ def svg_haztest(a=1.0, b=0.7, m=0.8, mt=0.6, w=340, h=290,
         r.vonal(felso3[i], csucs, sz=1.7, szaggat=("5 4" if i in takart else None))
     r.befoglal(*(also3 + felso3 + [csucs]))
     return r.kesz()
+
+# ---------------------------------------------------------------------
+# 6b. Térelemek — sík és egyenes kölcsönös helyzete, merőlegesség, diéder
+# ---------------------------------------------------------------------
+
+def _sik(r, z=0.0, meret=(1.5, 1.05), szin=SZURKE, reteg=0, atlatszo=0.10, dolt=None):
+    """Sík paralelogrammaként. `dolt`: (szog_fok) esetén az x tengely körül döntve."""
+    a, b = meret
+    pts = [(-a, -b), (a, -b), (a, b), (-a, b)]
+    if dolt is None:
+        p3 = [(x, y, z) for x, y in pts]
+    else:
+        s = math.sin(math.radians(dolt)); c = math.cos(math.radians(dolt))
+        p3 = [(x, y * c, z + y * s) for x, y in pts]
+    r.sokszog(p3, kitolt=szin, szin=szin, sz=1.3, atlatszo=atlatszo, reteg=reteg)
+    r.befoglal(*p3)
+    return p3
+
+
+def svg_terelem(tipus="meroleges", w=360, h=250, leiras=None, cimkek=True):
+    """Térelemek kölcsönös helyzete — a sík paralelogrammaként.
+
+    `tipus`:
+      "dofes"        — az egyenes döfi a síkot (egy közös pont)
+      "benne"        — az egyenes a síkban van
+      "parhuzamos"   — az egyenes párhuzamos a síkkal (nincs közös pont)
+      "ket-sik"      — két metsző sík a metszésvonallal
+      "parhuzamos-sikok" — két párhuzamos sík
+      "meroleges"    — egyenes ⟂ sík: a síkban KÉT metsző egyenesre merőleges
+      "hajlasszog"   — ferde egyenes, merőleges vetülete és a hajlásszög
+      "dieder"       — két félsík közös élen, a lapszöggel
+    """
+    SZOVEG = {
+        "dofes": "Az egyenes döfi a síkot: pontosan egy közös pontjuk van",
+        "benne": "Az egyenes a síkban fekszik",
+        "parhuzamos": "Az egyenes párhuzamos a síkkal: nincs közös pontjuk",
+        "ket-sik": "Két metsző sík és a metszésvonaluk",
+        "parhuzamos-sikok": "Két párhuzamos sík",
+        "meroleges": "Az egyenes merőleges a síkra, mert a sík két metsző egyenesére merőleges",
+        "hajlasszog": "Ferde egyenes, a merőleges vetülete és a hajlásszöge a síkkal",
+        "dieder": "Diéder: két félsík közös élen, a lapszög a metszésvonalra merőlegesen mérve",
+    }
+    r = _Rajz(w, h, leiras or SZOVEG.get(tipus, "Térelemek a térben"))
+
+    if tipus in ("dofes", "benne", "parhuzamos", "meroleges", "hajlasszog"):
+        _sik(r)
+        r.felirat((-1.35, -0.85, 0), "α", dx=-4, dy=14, szin=SZURKE, meret=13)
+
+    if tipus == "dofes":
+        A, B = (-0.9, -0.5, 1.0), (0.75, 0.45, -0.85)
+        r.vonal(A, B, sz=1.7, reteg=1)
+        r.sokszog([(0, 0, 0)], reteg=2)
+        r.elemek.append((2, ("text", (0, 0, 0), "•", 0, 5, PIROS, 20, False, "middle", True)))
+        if cimkek:
+            r.felirat(A, "a", dx=-6, dy=-4, horgony="end")
+            r.felirat((0, 0, 0), "P", dx=10, dy=-6, szin=PIROS, horgony="start")
+        r.befoglal(A, B)
+    elif tipus == "benne":
+        A, B = (-1.15, -0.55, 0.0), (1.15, 0.55, 0.0)
+        r.vonal(A, B, sz=1.9, reteg=2)
+        if cimkek:
+            r.felirat(B, "a", dx=10, dy=-2, horgony="start")
+        r.befoglal(A, B)
+    elif tipus == "parhuzamos":
+        A, B = (-1.15, -0.55, 0.62), (1.15, 0.55, 0.62)
+        r.vonal(A, B, sz=1.9, reteg=2)
+        r.vonal((-1.15, -0.55, 0.0), (1.15, 0.55, 0.0), szin=HALVANY, sz=1.2,
+                szaggat="4 4", reteg=1)
+        if cimkek:
+            r.felirat(B, "a", dx=10, dy=-2, horgony="start")
+        r.befoglal(A, B)
+    elif tipus == "meroleges":
+        r.vonal((0, 0, -0.05), (0, 0, 1.15), sz=1.9, szin=PIROS, reteg=2)
+        e1 = ((-1.0, -0.45, 0), (1.0, 0.45, 0))
+        e2 = ((-0.95, 0.6, 0), (0.95, -0.6, 0))
+        r.vonal(*e1, sz=1.6, reteg=1)
+        r.vonal(*e2, sz=1.6, reteg=1)
+        r.derekszog((0, 0, 0), (0, 0, 1.15), e1[1], szin=PIROS, meret=10)
+        r.derekszog((0, 0, 0), (0, 0, 1.15), e2[0], szin=PIROS, meret=10)
+        if cimkek:
+            r.felirat((0, 0, 1.15), "a", dx=0, dy=-8, szin=PIROS)
+            r.felirat(e1[1], "b", dx=9, dy=4, horgony="start")
+            r.felirat(e2[0], "c", dx=-9, dy=4, horgony="end")
+        r.befoglal((0, 0, 1.2))
+    elif tipus == "hajlasszog":
+        A = (-0.95, -0.5, 0.0)
+        P = (0.7, 0.4, 0.95)
+        Pv = (0.7, 0.4, 0.0)
+        r.vonal(A, P, sz=1.9, szin=KEK, reteg=2)
+        r.vonal(A, Pv, sz=1.7, szin=ZOLD, reteg=2)
+        r.vonal(P, Pv, sz=1.4, szin=PIROS, szaggat="4 3", reteg=2)
+        r.derekszog(Pv, P, A, szin=PIROS, meret=10)
+        r.szogiv = None
+        if cimkek:
+            r.felirat(P, "P", dx=0, dy=-8, szin=KEK)
+            r.felirat(A, "A", dx=-8, dy=8, horgony="end")
+            r.felirat(Pv, "P'", dx=8, dy=12, szin=ZOLD, horgony="start")
+            r.felirat((-0.45, -0.24, 0.06), "φ", dx=14, dy=-2, szin=BOROSTYAN, meret=13)
+        r.befoglal(A, P, Pv)
+    elif tipus in ("ket-sik", "parhuzamos-sikok"):
+        if tipus == "ket-sik":
+            _sik(r, meret=(1.4, 0.95))
+            _sik(r, meret=(1.4, 0.95), dolt=62, szin=KEK, atlatszo=0.12, reteg=1)
+            r.vonal((-1.4, 0, 0), (1.4, 0, 0), sz=1.9, szin=PIROS, reteg=2)
+            if cimkek:
+                r.felirat((-1.35, -0.8, 0), "α", dx=-4, dy=14, szin=SZURKE, meret=13)
+                r.felirat((-1.3, 0, 0.78), "β", dx=-6, dy=0, szin=KEK, meret=13, horgony="end")
+                r.felirat((1.4, 0, 0), "p", dx=10, dy=6, szin=PIROS, horgony="start")
+        else:
+            _sik(r, z=0.0, meret=(1.4, 0.95))
+            _sik(r, z=0.95, meret=(1.4, 0.95), szin=KEK, atlatszo=0.12, reteg=1)
+            if cimkek:
+                r.felirat((-1.35, -0.8, 0), "α", dx=-4, dy=14, szin=SZURKE, meret=13)
+                r.felirat((-1.35, -0.8, 0.95), "β", dx=-4, dy=14, szin=KEK, meret=13)
+    elif tipus == "dieder":
+        # Az ÉL a mélységi (y) irányba fut, így a lapszöget szemből látjuk.
+        h_, m_ = 1.25, 1.30
+        fok = 68
+        c = math.cos(math.radians(fok)); sn = math.sin(math.radians(fok))
+        also = [(0, -h_, 0), (m_, -h_, 0), (m_, h_, 0), (0, h_, 0)]
+        felso = [(0, -h_, 0), (m_ * c, -h_, m_ * sn), (m_ * c, h_, m_ * sn), (0, h_, 0)]
+        r.sokszog(also, kitolt=SZURKE, szin=SZURKE, sz=1.3, atlatszo=0.10, reteg=0)
+        r.sokszog(felso, kitolt=KEK, szin=KEK, sz=1.3, atlatszo=0.12, reteg=1)
+        r.vonal((0, -h_, 0), (0, h_, 0), sz=2.2, szin=PIROS, reteg=2)
+        szar = 0.85
+        r.vonal((0, 0, 0), (szar, 0, 0), szin=TINTA, sz=2.0, reteg=2)
+        r.vonal((0, 0, 0), (szar * c, 0, szar * sn), szin=TINTA, sz=2.0, reteg=2)
+        r.derekszog((0, 0, 0), (szar, 0, 0), (0, h_, 0), szin=SZURKE, meret=11)
+        if cimkek:
+            kx = szar * 0.62 * (1 + c) / 2
+            kz = szar * 0.62 * sn / 2
+            r.felirat((kx, 0, kz), "φ", dx=2, dy=6, szin=BOROSTYAN, meret=14, horgony="middle")
+            r.felirat((0, -h_, 0), "p", dx=-8, dy=12, szin=PIROS, horgony="end")
+            r.felirat((m_, h_, 0), "α", dx=10, dy=6, szin=SZURKE, meret=13, horgony="start")
+            r.felirat((m_ * c, h_, m_ * sn), "β", dx=6, dy=-6, szin=KEK, meret=13,
+                      horgony="start")
+        r.befoglal(*also, *felso)
+    return r.kesz()
+
+
+# ---------------------------------------------------------------------
+# 6c. Hálók — a test síkba kiterítve (2D, vetítés nélkül)
+# ---------------------------------------------------------------------
+
+def _fej2(w, h, leiras):
+    return [f'<svg viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" '
+            f'aria-label="{leiras}">']
+
+
+def svg_halo(test="kocka", n=4, hibas=False, w=340, h=260, leiras=None):
+    """Kiterített háló: `test` = "kocka" | "hasab" | "gula".
+
+    `hibas=True` (csak kockánál): olyan hatnégyzetes alakzat, amely NEM hajtható
+    kockává — a térlátás-kvízhez.
+    """
+    ki = _fej2(w, h, leiras or f"A {test} hálója síkba kiterítve")
+    def negyzet(x, y, o, szin=ZOLD, felirat=""):
+        ki.append(f'  <rect x="{x:.1f}" y="{y:.1f}" width="{o:.1f}" height="{o:.1f}" '
+                  f'fill="{szin}" fill-opacity="0.10" stroke="{TINTA}" stroke-width="1.4"/>')
+        if felirat:
+            ki.append(f'  <text x="{x + o/2:.1f}" y="{y + o/2 + 4:.1f}" font-size="11" '
+                      f'fill="{SZURKE}" text-anchor="middle">{felirat}</text>')
+    if test == "kocka":
+        o = min(w / 5.0, h / 4.6)
+        bx, by = (w - 4 * o) / 2, (h - 3 * o) / 2
+        if not hibas:
+            # kereszt alakú kiterítés
+            for i in range(4):
+                negyzet(bx + i * o, by + o, o)
+            negyzet(bx + o, by, o)
+            negyzet(bx + o, by + 2 * o, o)
+        else:
+            # „lépcsős" alakzat: hat négyzet, de nem hajtható kockává
+            for i in range(4):
+                negyzet(bx + i * o, by + o, o)
+            negyzet(bx, by, o)
+            negyzet(bx + o, by, o)
+    elif test == "hasab":
+        # két szabályos n-szög + a palást osztott téglalapja
+        o = min(w / (n + 2.2), h / 3.4)
+        m = o * 1.5
+        bx, by = (w - n * o) / 2, (h - m) / 2
+        ki.append(f'  <rect x="{bx:.1f}" y="{by:.1f}" width="{n * o:.1f}" height="{m:.1f}" '
+                  f'fill="{ZOLD}" fill-opacity="0.08" stroke="{TINTA}" stroke-width="1.5"/>')
+        for i in range(1, n):
+            ki.append(f'  <line x1="{bx + i * o:.1f}" y1="{by:.1f}" x2="{bx + i * o:.1f}" '
+                      f'y2="{by + m:.1f}" stroke="{HALVANY}" stroke-width="1.1"/>')
+        R = o / (2 * math.sin(math.pi / n))
+        for jel in (-1, 1):
+            cx = bx + n * o / 2
+            cy = by - R - 6 if jel < 0 else by + m + R + 6
+            kezd = -math.pi / 2 + math.pi / n
+            pts = " ".join(f"{cx + R * math.cos(kezd + 2*math.pi*k/n):.1f},"
+                           f"{cy + R * math.sin(kezd + 2*math.pi*k/n):.1f}" for k in range(n))
+            ki.append(f'  <polygon points="{pts}" fill="{KEK}" fill-opacity="0.10" '
+                      f'stroke="{TINTA}" stroke-width="1.4"/>')
+        ki.append(f'  <text x="{bx + n * o / 2:.1f}" y="{by + m / 2 + 4:.1f}" font-size="12" '
+                  f'fill="{SZURKE}" text-anchor="middle">palást</text>')
+    elif test == "gula":
+        o = min(w, h) * 0.30
+        cx, cy = w / 2, h / 2
+        x0, y0 = cx - o / 2, cy - o / 2
+        negyzet(x0, y0, o, szin=KEK, felirat="alaplap")
+        mo = o * 0.78
+        haromszogek = [
+            ((x0, y0), (x0 + o, y0), (cx, y0 - mo)),
+            ((x0, y0 + o), (x0 + o, y0 + o), (cx, y0 + o + mo)),
+            ((x0, y0), (x0, y0 + o), (x0 - mo, cy)),
+            ((x0 + o, y0), (x0 + o, y0 + o), (x0 + o + mo, cy)),
+        ]
+        for t in haromszogek:
+            pts = " ".join(f"{p[0]:.1f},{p[1]:.1f}" for p in t)
+            ki.append(f'  <polygon points="{pts}" fill="{ZOLD}" fill-opacity="0.10" '
+                      f'stroke="{TINTA}" stroke-width="1.4"/>')
+    ki.append("</svg>")
+    return "\n".join(ki)
+
+
+# ---------------------------------------------------------------------
+# 6d. Az öt szabályos (platóni) test — drótváz-ikonsor
+# ---------------------------------------------------------------------
+
+_FI = (1 + 5 ** 0.5) / 2
+
+
+def _platoni_csucsok(nev):
+    f = _FI
+    if nev == "tetraeder":
+        return [(1, 1, 1), (1, -1, -1), (-1, 1, -1), (-1, -1, 1)]
+    if nev == "kocka":
+        return [(x, y, z) for x in (-1, 1) for y in (-1, 1) for z in (-1, 1)]
+    if nev == "oktaeder":
+        return [(1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (0, 0, 1), (0, 0, -1)]
+    if nev == "dodekaeder":
+        p = [(x, y, z) for x in (-1, 1) for y in (-1, 1) for z in (-1, 1)]
+        p += [(0, y / f, z * f) for y in (-1, 1) for z in (-1, 1)]
+        p += [(x / f, y * f, 0) for x in (-1, 1) for y in (-1, 1)]
+        p += [(x * f, 0, z / f) for x in (-1, 1) for z in (-1, 1)]
+        return p
+    if nev == "ikozaeder":
+        p = [(0, y, z * f) for y in (-1, 1) for z in (-1, 1)]
+        p += [(x, y * f, 0) for x in (-1, 1) for y in (-1, 1)]
+        p += [(x * f, 0, z) for x in (-1, 1) for z in (-1, 1)]
+        return p
+    raise ValueError(nev)
+
+
+def _elek(csucsok, tur=1e-6):
+    """Élek = a legrövidebb csúcstávolsággal összekötött párok (szabályos testre pontos)."""
+    def d(a, b):
+        return math.dist(a, b)
+    tavok = [d(csucsok[i], csucsok[j])
+             for i in range(len(csucsok)) for j in range(i + 1, len(csucsok))]
+    e_min = min(tavok)
+    return [(i, j) for i in range(len(csucsok)) for j in range(i + 1, len(csucsok))
+            if abs(d(csucsok[i], csucsok[j]) - e_min) < 1e-6 + tur]
+
+
+def svg_platoni(w=560, h=140, leiras="Az öt szabályos poliéder: tetraéder, kocka, "
+                                     "oktaéder, dodekaéder, ikozaéder", nevek=True):
+    """Az öt szabályos test drótváz-ikonja egy sorban. A hátrébb futó élek halványabbak."""
+    testek = [("tetraéder", "tetraeder"), ("kocka", "kocka"), ("oktaéder", "oktaeder"),
+              ("dodekaéder", "dodekaeder"), ("ikozaéder", "ikozaeder")]
+    ki = _fej2(w, h, leiras)
+    cella = w / len(testek)
+    sugar = min(cella * 0.34, (h - (22 if nevek else 8)) * 0.42)
+    for k, (cim, nev) in enumerate(testek):
+        cs = _platoni_csucsok(nev)
+        norm = max(math.dist((0, 0, 0), p) for p in cs)
+        cs = [(p[0] / norm, p[1] / norm, p[2] / norm) for p in cs]
+        vet = [_vet(p) for p in cs]
+        cx = cella * (k + 0.5)
+        cy = (h - (20 if nevek else 0)) / 2
+        # mélység a nézőirány szerint (a kavalier vetítés magja: y a „hátra")
+        mely = [p[1] for p in cs]
+        m0, m1 = min(mely), max(mely)
+        for i, j in _elek(cs):
+            x1, y1 = cx + vet[i][0] * sugar, cy - vet[i][1] * sugar
+            x2, y2 = cx + vet[j][0] * sugar, cy - vet[j][1] * sugar
+            t = ((mely[i] + mely[j]) / 2 - m0) / ((m1 - m0) or 1)
+            op = 1.0 - 0.72 * t
+            ki.append(f'  <line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" '
+                      f'stroke="{TINTA}" stroke-width="1.2" opacity="{op:.2f}" '
+                      'stroke-linecap="round"/>')
+        if nevek:
+            ki.append(f'  <text x="{cx:.1f}" y="{h - 5:.1f}" font-size="11" fill="{SZURKE}" '
+                      f'text-anchor="middle">{cim}</text>')
+    ki.append("</svg>")
+    return "\n".join(ki)
+
+
+# ---------------------------------------------------------------------
+# 6e. Síkidomok, amelyek a testek alaplapjaként kellenek
+# ---------------------------------------------------------------------
+
+def svg_sikidom(tipus="trapez", a=1.0, c=0.55, m=0.55, n=6, w=340, h=210,
+                leiras=None, cimkek=True):
+    """`tipus` = "trapez" (magassággal) | "sokszog" (szabályos n-szög apotémával)."""
+    SZOVEG = {"trapez": "Trapéz a párhuzamos oldalakkal és a magassággal",
+              "sokszog": f"Szabályos {n} oldalú sokszög az apotémával és a köréírt kör sugarával"}
+    ki = _fej2(w, h, leiras or SZOVEG.get(tipus, "Síkidom"))
+    par = 30
+
+    if tipus == "trapez":
+        el = (a - c) / 2 + 0.12
+        pts = [(0.0, 0.0), (a, 0.0), (a - el + 0.02, m), (el, m)]
+        xs = [p[0] for p in pts]; ys = [p[1] for p in pts]
+        s = min((w - 2 * par) / (max(xs) - min(xs)), (h - 2 * par) / (max(ys) - min(ys)))
+        def P(p):
+            return (par + (p[0] - min(xs)) * s, h - par - (p[1] - min(ys)) * s)
+        d = " ".join(f"{P(p)[0]:.1f},{P(p)[1]:.1f}" for p in pts)
+        ki.append(f'  <polygon points="{d}" fill="{ZOLD}" fill-opacity="0.08" '
+                  f'stroke="{TINTA}" stroke-width="1.6" stroke-linejoin="round"/>')
+        talp = (el, 0.0)
+        x1, y1 = P((el, m)); x2, y2 = P(talp)
+        ki.append(f'  <line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" '
+                  f'stroke="{PIROS}" stroke-width="1.4" stroke-dasharray="4 3"/>')
+        j = 9
+        ki.append(f'  <path d="M{x2 + j:.1f},{y2:.1f} L{x2 + j:.1f},{y2 - j:.1f} '
+                  f'L{x2:.1f},{y2 - j:.1f}" fill="none" stroke="{PIROS}" stroke-width="1.1"/>')
+        if cimkek:
+            for p, sz, dx, dy, szin in (((a / 2, 0.0), "a", 0, 18, TINTA),
+                                        (((a + 0.02) / 2, m), "c", 0, -8, TINTA),
+                                        ((el, m / 2), "m", -8, 4, PIROS)):
+                X, Y = P(p)
+                ki.append(f'  <text x="{X + dx:.1f}" y="{Y + dy:.1f}" font-size="13" '
+                          f'fill="{szin}" text-anchor="middle" font-style="italic" '
+                          'font-weight="600">' + sz + '</text>')
+    else:
+        R = 1.0
+        rho = R * math.cos(math.pi / n)
+        kezd = -math.pi / 2 + math.pi / n
+        pts = [(R * math.cos(kezd + 2 * math.pi * k / n),
+                R * math.sin(kezd + 2 * math.pi * k / n)) for k in range(n)]
+        s = min((w - 2 * par) / 2.0, (h - 2 * par) / 2.0)
+        cx, cy = w / 2, h / 2
+        def P(p):
+            return (cx + p[0] * s, cy - p[1] * s)
+        d = " ".join(f"{P(p)[0]:.1f},{P(p)[1]:.1f}" for p in pts)
+        ki.append(f'  <polygon points="{d}" fill="{ZOLD}" fill-opacity="0.08" '
+                  f'stroke="{TINTA}" stroke-width="1.6" stroke-linejoin="round"/>')
+        for k in range(n):
+            X, Y = P(pts[k])
+            ki.append(f'  <line x1="{cx:.1f}" y1="{cy:.1f}" x2="{X:.1f}" y2="{Y:.1f}" '
+                      f'stroke="{HALVANY}" stroke-width="1"/>')
+        fel = ((pts[0][0] + pts[1][0]) / 2, (pts[0][1] + pts[1][1]) / 2)
+        Xf, Yf = P(fel)
+        ki.append(f'  <line x1="{cx:.1f}" y1="{cy:.1f}" x2="{Xf:.1f}" y2="{Yf:.1f}" '
+                  f'stroke="{BOROSTYAN}" stroke-width="1.7"/>')
+        X1, Y1 = P(pts[1])
+        ki.append(f'  <line x1="{cx:.1f}" y1="{cy:.1f}" x2="{X1:.1f}" y2="{Y1:.1f}" '
+                  f'stroke="{KEK}" stroke-width="1.7"/>')
+        if cimkek:
+            ki.append(f'  <text x="{(cx + Xf) / 2 - 10:.1f}" y="{(cy + Yf) / 2 + 12:.1f}" '
+                      f'font-size="13" fill="{BOROSTYAN}" text-anchor="middle" '
+                      'font-style="italic" font-weight="600">ρ</text>')
+            ki.append(f'  <text x="{(cx + X1) / 2 + 10:.1f}" y="{(cy + Y1) / 2 - 4:.1f}" '
+                      f'font-size="13" fill="{KEK}" text-anchor="middle" '
+                      'font-style="italic" font-weight="600">R</text>')
+            fx, fy = fel
+            hossz = math.hypot(fx, fy) or 1.0
+            Xa, Ya = P((fx * (1 + 0.16 / hossz), fy * (1 + 0.16 / hossz)))
+            ki.append(f'  <text x="{Xa:.1f}" y="{Ya + 4:.1f}" font-size="13" fill="{TINTA}" '
+                      'text-anchor="middle" font-style="italic" font-weight="600">a</text>')
+    ki.append("</svg>")
+    return "\n".join(ki)

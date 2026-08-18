@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Merőlegesség és szögek a térben — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Poliéderek</a> ›
+  <span class="itt">Merőlegesség és szögek a térben — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Merőlegesség és szögek a térben</h1>
+  <p class="alcim">Az egyenes és a sík merőlegességének feltétele, a hajlásszög, a diéder lapszöge és a térbeli távolságok.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Kristálypára Kristályok · 2/11</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Prizma:</b> A kristálylap nem véletlenszerűen veri vissza az energiát: a visszaverődés irányát a lap <b>hajlásszöge</b> dönti el. Egy fokot tévedsz, és a sugár a szomszéd folyosóra érkezik. Ebben az egységben megtanuljuk, mit jelent pontosan, hogy egy egyenes <b>merőleges egy síkra</b>, és hogyan mérünk szöget a térben — mert itt nem elég ránézésre becsülni.</p></div>
+
+    Két új szöget vezetünk be: az <b>egyenes és a sík</b> hajlásszögét, valamint <b>két sík</b> szögét. Mindkettőt visszavezetjük arra, amit már tudsz: két <i>egyenes</i> szögére.
+
+    <h2 id="s1">Mikor merőleges egy egyenes a síkra</h2>
+
+    <p>A „merőleges a lapra" hétköznapi kifejezés — csakhogy mihez képest merőleges? Egy síkban végtelen sok egyenes fut, és a síkot ferdén döfő egyenes is lehet merőleges közülük <b>az egyikre</b>.</p>
+
+    <div class="doboz tetel" id="tetel-meroleges-feltetel">
+      <p class="cim"><span class="ikon">📘</span> A merőlegesség feltétele</p>
+      <p>Egy egyenes <b>pontosan akkor</b> merőleges egy síkra, ha a síknak <b>két metsző</b> egyenesére merőleges.</p><p>Ekkor a síknak a döfésponton átmenő <b>minden</b> egyenesére merőleges — de a feltétel ellenőrzéséhez elég kettő, feltéve, hogy azok <b>metszik</b> egymást.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 340 235" width="340" height="235" role="img" aria-label="Az egyenes merőleges a síkra, mert a sík két metsző egyenesére merőleges">
+      <polygon points="26.0,173.0 247.2,173.0 314.0,128.0 92.8,128.0" fill="#475569" fill-opacity="0.1" stroke="#475569" stroke-width="1.3" stroke-linejoin="round"/>
+      <line x1="81.9" y1="160.1" x2="258.1" y2="140.8" stroke="#0f172a" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="119.0" y1="137.6" x2="221.0" y2="163.4" stroke="#0f172a" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="170.0" y1="154.2" x2="170.0" y2="65.7" stroke="#ef4444" stroke-width="1.9" stroke-linecap="round"/>
+      <path d="M170.0,140.5 L179.9,139.4 L179.9,149.4" fill="none" stroke="#ef4444" stroke-width="1.2"/>
+      <path d="M170.0,140.5 L160.3,138.0 L160.3,148.0" fill="none" stroke="#ef4444" stroke-width="1.2"/>
+      <text x="39.4" y="182.7" font-size="13" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">α</text>
+      <text x="170.0" y="57.7" font-size="13" fill="#ef4444" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">a</text>
+      <text x="267.1" y="144.8" font-size="13" fill="#0f172a" text-anchor="start" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">b</text>
+      <text x="110.0" y="141.6" font-size="13" fill="#0f172a" text-anchor="end" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">c</text>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(a\)</span> egyenes merőleges a síkra, mert merőleges a síkban fekvő, egymást metsző <span class="math inline">\(b\)</span> és <span class="math inline">\(c\)</span> egyenesre.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„Ez a tartórúd merőleges a padló egyik vonalára, tehát merőleges a padlóra. A szerkezet stabil."</i></p><p>Nem az. Dönts meg egy ceruzát az asztalon úgy, hogy az asztal lapján lévő egyik vonalra merőleges maradjon — ez könnyen megy, mégsem áll függőlegesen. <b>Egy</b> egyenesre való merőlegesség kevés; <b>két metsző</b> egyenes kell. Ha a két egyenes párhuzamos, az sem elég: azok együtt nem „feszítik ki" a síkot.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ Egyetlen egyenes nem rögzíti a sík irányát; két metsző egyenes viszont igen." data-nem="✘ Egy ferde egyenes is lehet merőleges a sík egyetlen egyenesére. A feltétel: KÉT METSZŐ egyenesre merőleges.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Az <span class="math inline">\(a\)</span> egyenes merőleges a síkban fekvő <span class="math inline">\(b\)</span> egyenesre. Következik-e ebből, hogy <span class="math inline">\(a\)</span> merőleges a síkra?</p>
+      <div class="opciok"><button>Nem — ehhez a sík két metsző egyenesére kell merőlegesnek lennie</button><button>Igen, egy egyenes elég</button><button>Igen, de csak ha <span class="math inline">\(b\)</span> átmegy a döfésponton</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Egyenes és sík hajlásszöge</h2>
+
+    <div class="doboz definicio" id="def-hajlasszog">
+      <p class="cim"><span class="ikon">📗</span> Hajlásszög</p>
+      <p>Egy pont <b>merőleges vetülete</b> a síkon az a pont, ahol a pontból a síkra bocsátott merőleges döfi a síkot. Legyen az <span class="math inline">\(a\)</span> egyenes olyan, hogy döfi az <span class="math inline">\(\alpha\)</span> síkot, de nem merőleges rá. Vetítsük az <span class="math inline">\(a\)</span> egyenes minden pontját merőlegesen az <span class="math inline">\(\alpha\)</span> síkra: a vetület egy <span class="math inline">\(a'\)</span> egyenes, amely átmegy a döfésponton. Az <span class="math inline">\(a\)</span> egyenes és az <span class="math inline">\(\alpha\)</span> sík <b>hajlásszöge</b> az <span class="math inline">\(a\)</span> és az <span class="math inline">\(a'\)</span> által bezárt hegyesszög.</p><p>Két külön eset: ha <span class="math inline">\(a \perp \alpha\)</span>, a hajlásszög <span class="math inline">\(90^\circ\)</span>; ha <span class="math inline">\(a\)</span> párhuzamos a síkkal vagy benne fekszik, a hajlásszög <span class="math inline">\(0^\circ\)</span>.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 340 235" width="340" height="235" role="img" aria-label="Ferde egyenes, a merőleges vetülete és a hajlásszöge a síkkal">
+      <polygon points="26.0,168.1 247.2,168.1 314.0,123.0 92.8,123.0" fill="#475569" fill-opacity="0.1" stroke="#475569" stroke-width="1.3" stroke-linejoin="round"/>
+      <line x1="84.0" y1="156.3" x2="234.3" y2="66.9" stroke="#3b82f6" stroke-width="1.9" stroke-linecap="round"/>
+      <line x1="84.0" y1="156.3" x2="234.3" y2="137.0" stroke="#047857" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="234.3" y1="66.9" x2="234.3" y2="137.0" stroke="#ef4444" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="4 3"/>
+      <path d="M234.3,127.0 L224.4,128.3 L224.4,138.3" fill="none" stroke="#ef4444" stroke-width="1.2"/>
+      <text x="39.4" y="177.8" font-size="13" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">α</text>
+      <text x="234.3" y="58.9" font-size="13" fill="#3b82f6" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">P</text>
+      <text x="76.0" y="164.3" font-size="13" fill="#0f172a" text-anchor="end" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">A</text>
+      <text x="242.3" y="149.0" font-size="13" fill="#047857" text-anchor="start" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">P'</text>
+      <text x="143.2" y="144.3" font-size="13" fill="#f59e0b" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">φ</text>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(A\)</span> döféspont a síkban van, a <span class="math inline">\(P\)</span> pont merőleges vetülete pedig <span class="math inline">\(P'\)</span>. A hajlásszög az <span class="math inline">\(AP\)</span> egyenes és az <span class="math inline">\(AP'\)</span> vetület szöge, <span class="math inline">\(\varphi\)</span>.</p>
+
+    <p>A vetület azért fontos, mert <b>derékszögű háromszöghöz</b> juttat: az <span class="math inline">\(APP'\)</span> háromszögben a <span class="math inline">\(P'\)</span> csúcsnál derékszög van, tehát a szög szögfüggvénnyel számolható.</p>
+
+    <div class="doboz pelda" id="pelda-testatlo-szog">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció</p>
+      <p>Mekkora szöget zár be az <span class="math inline">\(a = 4\)</span> cm élű kocka testátlója az alaplappal?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>A testátló az <span class="math inline">\(A\)</span> csúcsból a <span class="math inline">\(C_1\)</span> csúcsba fut. Merőleges vetülete az alaplapra az <span class="math inline">\(AC\)</span> <b>lapátló</b>, hiszen a <span class="math inline">\(CC_1\)</span> él merőleges az alaplapra. A keresett szög tehát a <span class="math inline">\(C_1AC\)</span> háromszögben van, amelyben a <span class="math inline">\(C\)</span> csúcsnál derékszög van.</p><p>Itt <span class="math inline">\(AC = a\sqrt2 = 4\sqrt2 \approx 5{,}66\)</span> cm és <span class="math inline">\(CC_1 = a = 4\)</span> cm, ezért</p><span class="math display">\[\operatorname{tg}\varphi = \frac{CC_1}{AC} = \frac{4}{4\sqrt2} = \frac{\sqrt2}{2} \approx 0{,}7071,\]</span><p>ahonnan <span class="math inline">\(\varphi \approx 35^\circ 16' \approx 35{,}26^\circ\)</span>.</p><p>Figyeld meg: általánosan is <span class="math inline">\(\operatorname{tg}\varphi = \frac{a}{a\sqrt2} = \frac{\sqrt2}{2}\)</span> — az élhossz kiesik, tehát <b>minden</b> kocka testátlója ugyanekkora szöget zár be az alaplappal.</p></div></details>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 320 270" width="320" height="270" role="img" aria-label="A kocka testátlója az A csúcsból a C1 csúcsba">
+      <line x1="39.2" y1="244.0" x2="208.0" y2="244.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="208.0" y1="244.0" x2="280.8" y2="194.9" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="280.8" y1="194.9" x2="112.0" y2="194.9" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="112.0" y1="194.9" x2="39.2" y2="244.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="39.2" y1="75.1" x2="208.0" y2="75.1" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="208.0" y1="75.1" x2="280.8" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="280.8" y1="26.0" x2="112.0" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="112.0" y1="26.0" x2="39.2" y2="75.1" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="39.2" y1="244.0" x2="39.2" y2="75.1" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="208.0" y1="244.0" x2="208.0" y2="75.1" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="280.8" y1="194.9" x2="280.8" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="112.0" y1="194.9" x2="112.0" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="39.2" y1="244.0" x2="280.8" y2="26.0" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+      <text x="24.5" y="252.0" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">A</text>
+      <text x="221.4" y="255.8" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">B</text>
+      <text x="295.5" y="196.9" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">C</text>
+      <text x="98.6" y="193.1" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">D</text>
+      <text x="22.5" y="75.5" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">A<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="223.2" y="79.8" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">B<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="297.5" y="19.6" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">C<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="96.8" y="15.3" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">D<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="166.0" y="131.0" font-size="13" fill="#3b82f6" text-anchor="start" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">d</text>
+    </svg>
+    </div>
+    <p class="cap">A kocka testátlója és a vetülete, az <span class="math inline">\(AC\)</span> lapátló.</p>
+
+    <h2 id="s3">Két sík szöge — a diéder</h2>
+
+    <div class="doboz definicio" id="def-dieder">
+      <p class="cim"><span class="ikon">📗</span> Diéder és lapszöge</p>
+      <p>Két olyan félsík, amelynek közös a határegyenese, <b>diédert</b> alkot: a közös egyenes a diéder <b>éle</b>, a két félsík pedig a diéder két <b>lapja</b>.</p><p>A diéder <b>lapszöge</b>: vegyünk az élen egy pontot, és mindkét lapban húzzunk belőle az élre <b>merőleges</b> félegyenest — ezek szöge a lapszög. Az érték nem függ attól, melyik pontot választottuk.</p><p>Két metsző sík szögén a keletkező négy diéder közül a <b>nem tompaszögűt</b> értjük — vagyis a hegyesszögűt, merőleges síkok esetén pedig a derékszögűt. Két sík <b>merőleges</b>, ha ez a szög <span class="math inline">\(90^\circ\)</span>.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 340 245" width="340" height="245" role="img" aria-label="Diéder: két félsík közös élen, a lapszög a metszésvonalra merőlegesen mérve">
+      <polygon points="51.3,219.0 181.1,219.0 288.7,146.4 158.9,146.4" fill="#475569" fill-opacity="0.1" stroke="#475569" stroke-width="1.3" stroke-linejoin="round"/>
+      <polygon points="51.3,219.0 99.9,98.6 207.5,26.0 158.9,146.4" fill="#3b82f6" fill-opacity="0.12" stroke="#3b82f6" stroke-width="1.3" stroke-linejoin="round"/>
+      <line x1="51.3" y1="219.0" x2="158.9" y2="146.4" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="105.1" y1="182.7" x2="190.0" y2="182.7" stroke="#0f172a" stroke-width="2.0" stroke-linecap="round"/>
+      <line x1="105.1" y1="182.7" x2="136.9" y2="104.0" stroke="#0f172a" stroke-width="2.0" stroke-linecap="round"/>
+      <path d="M116.1,182.7 L125.2,176.5 L114.2,176.5" fill="none" stroke="#475569" stroke-width="1.2"/>
+      <text x="143.3" y="164.3" font-size="14" fill="#f59e0b" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">φ</text>
+      <text x="43.3" y="231.0" font-size="13" fill="#ef4444" text-anchor="end" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">p</text>
+      <text x="298.7" y="152.4" font-size="13" fill="#475569" text-anchor="start" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">α</text>
+      <text x="213.5" y="20.0" font-size="13" fill="#3b82f6" text-anchor="start" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">β</text>
+    </svg>
+    </div>
+    <p class="cap">A diéder éle a <span class="math inline">\(p\)</span> egyenes; a lapszöget az élre merőlegesen mérjük.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„Ráteszem a szögmérőt a lapra, ahogy éppen esik — a lapszög úgyis ugyanannyi."</i></p><p>Nem ugyanannyi. Ha a félegyenesek <b>nem merőlegesek az élre</b>, a mért érték a valódi lapszögnél kisebb és nagyobb is lehet — <span class="math inline">\(0^\circ\)</span> és <span class="math inline">\(180^\circ\)</span> között bármi kijöhet. A tetőn ezért nem mindegy, milyen irányban mérve olvasod le a lejtő szögét.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ Csak az élre merőleges félegyenesek adják a lapszöget — és így az érték független a pont választásától." data-nem="✘ Ha a félegyenesek ferdén állnak az élhez képest, a mért szög változik. A definícióban ezért szerepel a merőlegesség.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Hol mérjük a diéder lapszögét?</p>
+      <div class="opciok"><button>Az élen felvett pontból, mindkét lapban az élre merőlegesen</button><button>Bárhol, ahol a két lap találkozik</button><button>Az éllel párhuzamos irányban</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Távolságok a térben</h2>
+
+    <p>A <b>pont és sík távolsága</b> a pontból a síkra bocsátott <b>merőleges szakasz</b> hossza (ha a pont a síkban van, a távolság <span class="math inline">\(0\)</span>). Ez a legrövidebb út: minden más összekötő szakasz hosszabb, mert a derékszögű háromszögben az átfogó a leghosszabb oldal.</p><p>Ugyanígy értelmezzük egy pont és egy egyenes távolságát is. <b>Két párhuzamos sík távolsága</b> az egyik sík bármely pontjának a másik síktól mért távolsága — és ez az érték nem függ attól, melyik pontot választottuk. Hasonlóan értelmezzük egy síkkal párhuzamos egyenes és a sík távolságát.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Ez lesz a testek magassága</p>
+      <p>A hasáb, a gúla és a csonkagúla <b>magassága</b> mindig ilyen merőleges távolság: a gúlánál a csúcs és az alaplap síkjának távolsága, a hasábnál a két alaplap síkjának távolsága. Ezért nem mindegy, hogy egy ferde testnél az <i>oldalélt</i> vagy a <i>magasságot</i> használod — a képletekben mindig a merőleges távolság szerepel.</p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-terelemek.html#alap-6">🐕 Tér-eb-ugrás <span class="cimke">A 6–10</span></a><a class="sav bruno" href="feladatok-terelemek.html#kozep-4">👑 Királyi Gárda <span class="cimke">K 4–7</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Prizma:</b> Mérni tudsz. Most nézzük meg, milyen <b>testeket</b> zárnak be ezek a lapok — és miért van a természetben pontosan <b>öt</b> tökéletesen szabályos kristályforma. Nem több, nem kevesebb. Ez nem megfigyelés, hanem bizonyítható.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-terelemek.html"><span class="irany">← Előző</span><span class="hova">Pont, egyenes, sík</span></a>
+      <a class="kov" href="tananyag-poliederek.html"><span class="irany">Következő →</span><span class="hova">Poliéderek és szabályos poliéderek</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

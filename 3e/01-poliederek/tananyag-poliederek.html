@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Poliéderek és szabályos poliéderek — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Poliéderek</a> ›
+  <span class="itt">Poliéderek és szabályos poliéderek — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Poliéderek és szabályos poliéderek</h1>
+  <p class="alcim">A poliéder fogalma, a konvexitás, az öt szabályos test és a hálók.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Kristálypára Kristályok · 3/11</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Prizma:</b> A Kristálypára nem gömbökben csapódik ki, hanem <b>lapos, éles formákban</b> — és a legtisztább kristályok tökéletesen szabályosak. A meglepetés az, hogy ilyen tökéletes testből összesen <b>pontosan öt</b> létezik. Nem azért, mert nem találtunk többet: mert nem is létezhet több. Ezt ma be is fogjuk látni.</p></div>
+
+    Ebben az egységben a testeket <b>osztályozzuk</b>: mi számít poliédernek, mit jelent a konvexitás, és mitől lesz egy test szabályos. A számolás a következő egységekben jön — de a fogalmak nélkül ott csak képletet másolnánk.
+
+    <h2 id="s1">Mi a poliéder</h2>
+
+    <div class="doboz definicio" id="def-polieder">
+      <p class="cim"><span class="ikon">📗</span> Poliéder</p>
+      <p>A <b>poliéder</b> (soklapú test) olyan test, amelyet véges sok <b>síksokszög</b> határol. Ezek a sokszögek a test <b>lapjai</b>, a lapok oldalai az <b>élei</b>, a lapok csúcsai a test <b>csúcsai</b>.</p><p>Minden él pontosan <b>két</b> lap közös oldala, és minden csúcsban legalább <b>három</b> lap találkozik.</p>
+    </div>
+
+    <p>A henger, a kúp és a gömb <b>nem</b> poliéder: a határoló felületük nem áll csupa síksokszögből — a palástjuk görbült, az alaplapjuk pedig kör. Ezek a <a href="../02-forgastestek/index.html">forgástestek</a> — a következő témakör anyaga.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>A kősó kockákban, a kvarc hatszögű oszlopokban, a gyémánt oktaéderes formában kristályosodik. A kristály lapjai azért síkok, mert az atomok szabályos rácsban helyezkednek el — a poliéder tehát nem emberi találmány, hanem az anyag szerkezetének a következménye.</p>
+    </div>
+
+    <h2 id="s2">Konvex és nem konvex testek</h2>
+
+    <div class="doboz definicio" id="def-konvex">
+      <p class="cim"><span class="ikon">📗</span> Konvex test</p>
+      <p>Egy test <b>konvex</b>, ha bármely két pontját összekötő szakasz teljes egészében a testhez tartozik.</p><p>Poliédernél ezzel egyenértékű: a test minden lapjának síkja két féltérre vágja a teret, és a test teljes egészében az egyik <b>zárt</b> féltérben marad (a lap maga a határoló síkban van).</p>
+    </div>
+
+    <p>A kocka konvex; a hasáb és a gúla pontosan akkor konvex, ha az alaplapja konvex sokszög. Nem konvex például az L alakú épülettömb — ez is hasáb, de az alaplapja nem konvex: a két szárának végpontját összekötő szakasz kilép a testből. A továbbiakban — ha külön nem mondjuk — <b>konvex</b> poliéderekkel foglalkozunk.</p>
+
+    <h2 id="s3">Az öt szabályos test — és miért csak öt</h2>
+
+    <div class="doboz definicio" id="def-szabalyos-polieder">
+      <p class="cim"><span class="ikon">📗</span> Szabályos poliéder</p>
+      <p>Egy poliéder <b>szabályos</b>, ha</p><ul><li>minden lapja <b>egybevágó szabályos sokszög</b>, <b>és</b></li><li>minden csúcsában <b>ugyanannyi</b> lap találkozik.</li></ul><p>A két feltételnek <b>egyszerre</b> kell teljesülnie; egyik sem következik a másikból. A szabályos poliédereket ezenfelül <b>konvexnek</b> is tekintjük.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 560 140" width="560" height="140" role="img" aria-label="Az öt szabályos poliéder: tetraéder, kocka, oktaéder, dodekaéder, ikozaéder">
+      <line x1="87.5" y1="31.6" x2="68.5" y2="88.4" stroke="#0f172a" stroke-width="1.2" opacity="0.64" stroke-linecap="round"/>
+      <line x1="87.5" y1="31.6" x2="43.5" y2="75.6" stroke="#0f172a" stroke-width="1.2" opacity="0.28" stroke-linecap="round"/>
+      <line x1="87.5" y1="31.6" x2="24.5" y2="44.4" stroke="#0f172a" stroke-width="1.2" opacity="0.64" stroke-linecap="round"/>
+      <line x1="68.5" y1="88.4" x2="43.5" y2="75.6" stroke="#0f172a" stroke-width="1.2" opacity="0.64" stroke-linecap="round"/>
+      <line x1="68.5" y1="88.4" x2="24.5" y2="44.4" stroke="#0f172a" stroke-width="1.2" opacity="1.00" stroke-linecap="round"/>
+      <line x1="43.5" y1="75.6" x2="24.5" y2="44.4" stroke="#0f172a" stroke-width="1.2" opacity="0.64" stroke-linecap="round"/>
+      <text x="56.0" y="135.0" font-size="11" fill="#475569" text-anchor="middle">tetraéder</text>
+      <line x1="136.5" y1="88.4" x2="136.5" y2="44.4" stroke="#0f172a" stroke-width="1.2" opacity="1.00" stroke-linecap="round"/>
+      <line x1="136.5" y1="88.4" x2="155.5" y2="75.6" stroke="#0f172a" stroke-width="1.2" opacity="0.64" stroke-linecap="round"/>
+      <line x1="136.5" y1="88.4" x2="180.5" y2="88.4" stroke="#0f172a" stroke-width="1.2" opacity="1.00" stroke-linecap="round"/>
+      <line x1="136.5" y1="44.4" x2="155.5" y2="31.6" stroke="#0f172a" stroke-width="1.2" opacity="0.64" stroke-linecap="round"/>
+      <line x1="136.5" y1="44.4" x2="180.5" y2="44.4" stroke="#0f172a" stroke-width="1.2" opacity="1.00" stroke-linecap="round"/>
+      <line x1="155.5" y1="75.6" x2="155.5" y2="31.6" stroke="#0f172a" stroke-width="1.2" opacity="0.28" stroke-linecap="round"/>
+      <line x1="155.5" y1="75.6" x2="199.5" y2="75.6" stroke="#0f172a" stroke-width="1.2" opacity="0.28" stroke-linecap="round"/>
+      <line x1="155.5" y1="31.6" x2="199.5" y2="31.6" stroke="#0f172a" stroke-width="1.2" opacity="0.28" stroke-linecap="round"/>
+      <line x1="180.5" y1="88.4" x2="180.5" y2="44.4" stroke="#0f172a" stroke-width="1.2" opacity="1.00" stroke-linecap="round"/>
+      <line x1="180.5" y1="88.4" x2="199.5" y2="75.6" stroke="#0f172a" stroke-width="1.2" opacity="0.64" stroke-linecap="round"/>
+      <line x1="180.5" y1="44.4" x2="199.5" y2="31.6" stroke="#0f172a" stroke-width="1.2" opacity="0.64" stroke-linecap="round"/>
+      <line x1="199.5" y1="75.6" x2="199.5" y2="31.6" stroke="#0f172a" stroke-width="1.2" opacity="0.28" stroke-linecap="round"/>
+      <text x="168.0" y="135.0" font-size="11" fill="#475569" text-anchor="middle">kocka</text>
+      <line x1="318.1" y1="60.0" x2="296.4" y2="48.9" stroke="#0f172a" stroke-width="1.2" opacity="0.46" stroke-linecap="round"/>
+      <line x1="318.1" y1="60.0" x2="263.6" y2="71.1" stroke="#0f172a" stroke-width="1.2" opacity="0.82" stroke-linecap="round"/>
+      <line x1="318.1" y1="60.0" x2="280.0" y2="21.9" stroke="#0f172a" stroke-width="1.2" opacity="0.64" stroke-linecap="round"/>
+      <line x1="318.1" y1="60.0" x2="280.0" y2="98.1" stroke="#0f172a" stroke-width="1.2" opacity="0.64" stroke-linecap="round"/>
+      <line x1="241.9" y1="60.0" x2="296.4" y2="48.9" stroke="#0f172a" stroke-width="1.2" opacity="0.46" stroke-linecap="round"/>
+      <line x1="241.9" y1="60.0" x2="263.6" y2="71.1" stroke="#0f172a" stroke-width="1.2" opacity="0.82" stroke-linecap="round"/>
+      <line x1="241.9" y1="60.0" x2="280.0" y2="21.9" stroke="#0f172a" stroke-width="1.2" opacity="0.64" stroke-linecap="round"/>
+      <line x1="241.9" y1="60.0" x2="280.0" y2="98.1" stroke="#0f172a" stroke-width="1.2" opacity="0.64" stroke-linecap="round"/>
+      <line x1="296.4" y1="48.9" x2="280.0" y2="21.9" stroke="#0f172a" stroke-width="1.2" opacity="0.46" stroke-linecap="round"/>
+      <line x1="296.4" y1="48.9" x2="280.0" y2="98.1" stroke="#0f172a" stroke-width="1.2" opacity="0.46" stroke-linecap="round"/>
+      <line x1="263.6" y1="71.1" x2="280.0" y2="21.9" stroke="#0f172a" stroke-width="1.2" opacity="0.82" stroke-linecap="round"/>
+      <line x1="263.6" y1="71.1" x2="280.0" y2="98.1" stroke="#0f172a" stroke-width="1.2" opacity="0.82" stroke-linecap="round"/>
+      <text x="280.0" y="135.0" font-size="11" fill="#475569" text-anchor="middle">oktaéder</text>
+      <line x1="360.5" y1="88.4" x2="386.1" y2="99.5" stroke="#0f172a" stroke-width="1.2" opacity="0.82" stroke-linecap="round"/>
+      <line x1="360.5" y1="88.4" x2="363.1" y2="70.3" stroke="#0f172a" stroke-width="1.2" opacity="0.93" stroke-linecap="round"/>
+      <line x1="360.5" y1="88.4" x2="356.4" y2="73.6" stroke="#0f172a" stroke-width="1.2" opacity="0.75" stroke-linecap="round"/>
+      <line x1="360.5" y1="44.4" x2="386.1" y2="28.4" stroke="#0f172a" stroke-width="1.2" opacity="0.82" stroke-linecap="round"/>
+      <line x1="360.5" y1="44.4" x2="363.1" y2="70.3" stroke="#0f172a" stroke-width="1.2" opacity="0.93" stroke-linecap="round"/>
+      <line x1="360.5" y1="44.4" x2="356.4" y2="46.4" stroke="#0f172a" stroke-width="1.2" opacity="0.75" stroke-linecap="round"/>
+      <line x1="379.5" y1="75.6" x2="397.9" y2="91.6" stroke="#0f172a" stroke-width="1.2" opacity="0.46" stroke-linecap="round"/>
+      <line x1="379.5" y1="75.6" x2="393.7" y2="49.7" stroke="#0f172a" stroke-width="1.2" opacity="0.35" stroke-linecap="round"/>
+      <line x1="379.5" y1="75.6" x2="356.4" y2="73.6" stroke="#0f172a" stroke-width="1.2" opacity="0.53" stroke-linecap="round"/>
+      <line x1="379.5" y1="31.6" x2="397.9" y2="20.5" stroke="#0f172a" stroke-width="1.2" opacity="0.46" stroke-linecap="round"/>
+      <line x1="379.5" y1="31.6" x2="393.7" y2="49.7" stroke="#0f172a" stroke-width="1.2" opacity="0.35" stroke-linecap="round"/>
+      <line x1="379.5" y1="31.6" x2="356.4" y2="46.4" stroke="#0f172a" stroke-width="1.2" opacity="0.53" stroke-linecap="round"/>
+      <line x1="404.5" y1="88.4" x2="386.1" y2="99.5" stroke="#0f172a" stroke-width="1.2" opacity="0.82" stroke-linecap="round"/>
+      <line x1="404.5" y1="88.4" x2="390.3" y2="70.3" stroke="#0f172a" stroke-width="1.2" opacity="0.93" stroke-linecap="round"/>
+      <line x1="404.5" y1="88.4" x2="427.6" y2="73.6" stroke="#0f172a" stroke-width="1.2" opacity="0.75" stroke-linecap="round"/>
+      <line x1="404.5" y1="44.4" x2="386.1" y2="28.4" stroke="#0f172a" stroke-width="1.2" opacity="0.82" stroke-linecap="round"/>
+      <line x1="404.5" y1="44.4" x2="390.3" y2="70.3" stroke="#0f172a" stroke-width="1.2" opacity="0.93" stroke-linecap="round"/>
+      <line x1="404.5" y1="44.4" x2="427.6" y2="46.4" stroke="#0f172a" stroke-width="1.2" opacity="0.75" stroke-linecap="round"/>
+      <line x1="423.5" y1="75.6" x2="397.9" y2="91.6" stroke="#0f172a" stroke-width="1.2" opacity="0.46" stroke-linecap="round"/>
+      <line x1="423.5" y1="75.6" x2="420.9" y2="49.7" stroke="#0f172a" stroke-width="1.2" opacity="0.35" stroke-linecap="round"/>
+      <line x1="423.5" y1="75.6" x2="427.6" y2="73.6" stroke="#0f172a" stroke-width="1.2" opacity="0.53" stroke-linecap="round"/>
+      <line x1="423.5" y1="31.6" x2="397.9" y2="20.5" stroke="#0f172a" stroke-width="1.2" opacity="0.46" stroke-linecap="round"/>
+      <line x1="423.5" y1="31.6" x2="420.9" y2="49.7" stroke="#0f172a" stroke-width="1.2" opacity="0.35" stroke-linecap="round"/>
+      <line x1="423.5" y1="31.6" x2="427.6" y2="46.4" stroke="#0f172a" stroke-width="1.2" opacity="0.53" stroke-linecap="round"/>
+      <line x1="386.1" y1="99.5" x2="397.9" y2="91.6" stroke="#0f172a" stroke-width="1.2" opacity="0.64" stroke-linecap="round"/>
+      <line x1="386.1" y1="28.4" x2="397.9" y2="20.5" stroke="#0f172a" stroke-width="1.2" opacity="0.64" stroke-linecap="round"/>
+      <line x1="363.1" y1="70.3" x2="390.3" y2="70.3" stroke="#0f172a" stroke-width="1.2" opacity="1.00" stroke-linecap="round"/>
+      <line x1="393.7" y1="49.7" x2="420.9" y2="49.7" stroke="#0f172a" stroke-width="1.2" opacity="0.28" stroke-linecap="round"/>
+      <line x1="356.4" y1="73.6" x2="356.4" y2="46.4" stroke="#0f172a" stroke-width="1.2" opacity="0.64" stroke-linecap="round"/>
+      <line x1="427.6" y1="73.6" x2="427.6" y2="46.4" stroke="#0f172a" stroke-width="1.2" opacity="0.64" stroke-linecap="round"/>
+      <text x="392.0" y="135.0" font-size="11" fill="#475569" text-anchor="middle">dodekaéder</text>
+      <line x1="495.4" y1="98.2" x2="512.6" y2="86.6" stroke="#0f172a" stroke-width="1.2" opacity="0.64" stroke-linecap="round"/>
+      <line x1="495.4" y1="98.2" x2="470.0" y2="69.4" stroke="#0f172a" stroke-width="1.2" opacity="0.93" stroke-linecap="round"/>
+      <line x1="495.4" y1="98.2" x2="510.1" y2="69.4" stroke="#0f172a" stroke-width="1.2" opacity="0.93" stroke-linecap="round"/>
+      <line x1="495.4" y1="98.2" x2="471.6" y2="80.0" stroke="#0f172a" stroke-width="1.2" opacity="0.75" stroke-linecap="round"/>
+      <line x1="495.4" y1="98.2" x2="536.4" y2="80.0" stroke="#0f172a" stroke-width="1.2" opacity="0.75" stroke-linecap="round"/>
+      <line x1="495.4" y1="33.4" x2="512.6" y2="21.8" stroke="#0f172a" stroke-width="1.2" opacity="0.64" stroke-linecap="round"/>
+      <line x1="495.4" y1="33.4" x2="470.0" y2="69.4" stroke="#0f172a" stroke-width="1.2" opacity="0.93" stroke-linecap="round"/>
+      <line x1="495.4" y1="33.4" x2="510.1" y2="69.4" stroke="#0f172a" stroke-width="1.2" opacity="0.93" stroke-linecap="round"/>
+      <line x1="495.4" y1="33.4" x2="471.6" y2="40.0" stroke="#0f172a" stroke-width="1.2" opacity="0.75" stroke-linecap="round"/>
+      <line x1="495.4" y1="33.4" x2="536.4" y2="40.0" stroke="#0f172a" stroke-width="1.2" opacity="0.75" stroke-linecap="round"/>
+      <line x1="512.6" y1="86.6" x2="497.9" y2="50.6" stroke="#0f172a" stroke-width="1.2" opacity="0.35" stroke-linecap="round"/>
+      <line x1="512.6" y1="86.6" x2="538.0" y2="50.6" stroke="#0f172a" stroke-width="1.2" opacity="0.35" stroke-linecap="round"/>
+      <line x1="512.6" y1="86.6" x2="471.6" y2="80.0" stroke="#0f172a" stroke-width="1.2" opacity="0.53" stroke-linecap="round"/>
+      <line x1="512.6" y1="86.6" x2="536.4" y2="80.0" stroke="#0f172a" stroke-width="1.2" opacity="0.53" stroke-linecap="round"/>
+      <line x1="512.6" y1="21.8" x2="497.9" y2="50.6" stroke="#0f172a" stroke-width="1.2" opacity="0.35" stroke-linecap="round"/>
+      <line x1="512.6" y1="21.8" x2="538.0" y2="50.6" stroke="#0f172a" stroke-width="1.2" opacity="0.35" stroke-linecap="round"/>
+      <line x1="512.6" y1="21.8" x2="471.6" y2="40.0" stroke="#0f172a" stroke-width="1.2" opacity="0.53" stroke-linecap="round"/>
+      <line x1="512.6" y1="21.8" x2="536.4" y2="40.0" stroke="#0f172a" stroke-width="1.2" opacity="0.53" stroke-linecap="round"/>
+      <line x1="470.0" y1="69.4" x2="510.1" y2="69.4" stroke="#0f172a" stroke-width="1.2" opacity="1.00" stroke-linecap="round"/>
+      <line x1="470.0" y1="69.4" x2="471.6" y2="80.0" stroke="#0f172a" stroke-width="1.2" opacity="0.82" stroke-linecap="round"/>
+      <line x1="470.0" y1="69.4" x2="471.6" y2="40.0" stroke="#0f172a" stroke-width="1.2" opacity="0.82" stroke-linecap="round"/>
+      <line x1="497.9" y1="50.6" x2="538.0" y2="50.6" stroke="#0f172a" stroke-width="1.2" opacity="0.28" stroke-linecap="round"/>
+      <line x1="497.9" y1="50.6" x2="471.6" y2="80.0" stroke="#0f172a" stroke-width="1.2" opacity="0.46" stroke-linecap="round"/>
+      <line x1="497.9" y1="50.6" x2="471.6" y2="40.0" stroke="#0f172a" stroke-width="1.2" opacity="0.46" stroke-linecap="round"/>
+      <line x1="510.1" y1="69.4" x2="536.4" y2="80.0" stroke="#0f172a" stroke-width="1.2" opacity="0.82" stroke-linecap="round"/>
+      <line x1="510.1" y1="69.4" x2="536.4" y2="40.0" stroke="#0f172a" stroke-width="1.2" opacity="0.82" stroke-linecap="round"/>
+      <line x1="538.0" y1="50.6" x2="536.4" y2="80.0" stroke="#0f172a" stroke-width="1.2" opacity="0.46" stroke-linecap="round"/>
+      <line x1="538.0" y1="50.6" x2="536.4" y2="40.0" stroke="#0f172a" stroke-width="1.2" opacity="0.46" stroke-linecap="round"/>
+      <line x1="471.6" y1="80.0" x2="471.6" y2="40.0" stroke="#0f172a" stroke-width="1.2" opacity="0.64" stroke-linecap="round"/>
+      <line x1="536.4" y1="80.0" x2="536.4" y2="40.0" stroke="#0f172a" stroke-width="1.2" opacity="0.64" stroke-linecap="round"/>
+      <text x="504.0" y="135.0" font-size="11" fill="#475569" text-anchor="middle">ikozaéder</text>
+    </svg>
+    </div>
+    <p class="cap">Az öt szabályos poliéder — más néven platóni testek.</p>
+
+    <div class="doboz tetel" id="tetel-ot-szabalyos-test">
+      <p class="cim"><span class="ikon">📘</span> Pontosan öt konvex szabályos poliéder van</p>
+      <p>A bizonyítás gondolatmenete meglepően rövid. Egy csúcsban legalább <b>három</b> lap találkozik, és a csúcsnál összefutó <b>lapok szögeinek</b> összege <b>kisebb kell legyen <span class="math inline">\(360^\circ\)</span>-nál</b>: ha pontosan <span class="math inline">\(360^\circ\)</span>, a lapok síkba terülnek, ha több, akkor nem tudnak konvex csúcsot zárni. (Vigyázz: ezek a lapok saját szögei, nem a lapszögek — azok két lap hajlásszögei.) Nézzük végig, milyen szabályos sokszög lehet lap:</p><ul><li><b>szabályos háromszög</b> (<span class="math inline">\(60^\circ\)</span>): 3 lap (<span class="math inline">\(180^\circ\)</span>) → <b>tetraéder</b>, 4 lap (<span class="math inline">\(240^\circ\)</span>) → <b>oktaéder</b>, 5 lap (<span class="math inline">\(300^\circ\)</span>) → <b>ikozaéder</b>; 6 lap már <span class="math inline">\(360^\circ\)</span> — nem megy;</li><li><b>négyzet</b> (<span class="math inline">\(90^\circ\)</span>): 3 lap (<span class="math inline">\(270^\circ\)</span>) → <b>kocka</b>; 4 lap már <span class="math inline">\(360^\circ\)</span>;</li><li><b>szabályos ötszög</b> (<span class="math inline">\(108^\circ\)</span>): 3 lap (<span class="math inline">\(324^\circ\)</span>) → <b>dodekaéder</b>; 4 lap már <span class="math inline">\(432^\circ\)</span>;</li><li><b>szabályos hatszög</b> (<span class="math inline">\(120^\circ\)</span>): már 3 lap is <span class="math inline">\(360^\circ\)</span> — és minden ennél több oldalú sokszögnél még rosszabb a helyzet.</li></ul><p>Öt eset maradt, és mind az öt esetben tényleg meg is szerkeszthető a test — esetenként pontosan egy. Több tehát nem lehet.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„Minden lapja szabályos háromszög — akkor ez egy szabályos test, és a szimmetria-protokoll alkalmazható rá."</i></p><p>Ellenpélda: ragassz össze két szabályos tetraédert egy-egy lapjuknál. Az így kapott testnek <b>mind a hat lapja</b> egybevágó szabályos háromszög — mégsem szabályos test, mert a két „hegyes" csúcsában <b>3</b>, a másik három csúcsában viszont <b>4</b> lap találkozik. A definíció második feltétele bukik el.</p><p>Így működik a jó ellenpélda: egyetlen példa elég ahhoz, hogy egy „nyilvánvaló" állítást megdöntsünk.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A két összeragasztott tetraéder pont ilyen ellenpélda: hat szabályos háromszöglap, mégsem szabályos test." data-nem="✘ Gondolj a két összeragasztott tetraéderre: minden lapja szabályos háromszög, de az egyik csúcsában 3, a másikban 4 lap fut össze.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Igaz-e: ha egy poliéder minden lapja egybevágó szabályos sokszög, akkor a poliéder szabályos?</p>
+      <div class="opciok"><button>Nem — a csúcsokban is ugyanannyi lapnak kell találkoznia</button><button>Igen, a lapok szabályossága elég</button><button>Igen, de csak háromszöglapok esetén</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Csak érdekesség — az Euler-formula</p>
+      <p>Bármely konvex poliéderre a csúcsok (<span class="math inline">\(C\)</span>), élek (<span class="math inline">\(E\)</span>) és lapok (<span class="math inline">\(L\)</span>) száma között fennáll, hogy</p><span class="math display">\[C - E + L = 2.\]</span><table class="tt-table"><tr><th>Test</th><th>lap alakja</th><th>lap/csúcs</th><th><span class="math inline">\(C\)</span></th><th><span class="math inline">\(E\)</span></th><th><span class="math inline">\(L\)</span></th><th><span class="math inline">\(C-E+L\)</span></th></tr><tr><td>tetraéder</td><td>háromszög</td><td>3</td><td>4</td><td>6</td><td>4</td><td>2</td></tr><tr><td>kocka</td><td>négyzet</td><td>3</td><td>8</td><td>12</td><td>6</td><td>2</td></tr><tr><td>oktaéder</td><td>háromszög</td><td>4</td><td>6</td><td>12</td><td>8</td><td>2</td></tr><tr><td>dodekaéder</td><td>ötszög</td><td>3</td><td>20</td><td>30</td><td>12</td><td>2</td></tr><tr><td>ikozaéder</td><td>háromszög</td><td>5</td><td>12</td><td>30</td><td>20</td><td>2</td></tr></table><p><b>A tantervünk ezt nem kéri számon</b> — de gyönyörű összefüggés, és jó önellenőrzés, ha egy test adatait számolod.</p>
+    </div>
+
+    <h2 id="s4">Hálók — a test síkba kiterítve</h2>
+
+    <p>Vágjuk fel a poliédert néhány éle mentén — úgy, hogy a lapok egyben maradjanak —, és terítsük ki őket egy síkba, átfedés nélkül: a kapott összefüggő síkidom a test <b>hálója</b>. A háló <b>területe</b> pontosan a test felszíne — a következő egységek felszínképletei mind innen származnak.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 300 230" width="300" height="230" role="img" aria-label="Kereszt alakú kiterítés: ebből összehajtható a kocka">
+      <rect x="50.0" y="90.0" width="50.0" height="50.0" fill="#047857" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+      <rect x="100.0" y="90.0" width="50.0" height="50.0" fill="#047857" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+      <rect x="150.0" y="90.0" width="50.0" height="50.0" fill="#047857" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+      <rect x="200.0" y="90.0" width="50.0" height="50.0" fill="#047857" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+      <rect x="100.0" y="40.0" width="50.0" height="50.0" fill="#047857" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+      <rect x="100.0" y="140.0" width="50.0" height="50.0" fill="#047857" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+    </svg>
+    </div>
+    <p class="cap">A kocka egyik hálója: hat négyzet kereszt alakban.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 330 250" width="330" height="250" role="img" aria-label="A hasab hálója síkba kiterítve">
+      <rect x="44.3" y="94.8" width="241.5" height="60.4" fill="#047857" fill-opacity="0.08" stroke="#0f172a" stroke-width="1.5"/>
+      <line x1="84.5" y1="94.8" x2="84.5" y2="155.2" stroke="#cbd5e1" stroke-width="1.1"/>
+      <line x1="124.8" y1="94.8" x2="124.8" y2="155.2" stroke="#cbd5e1" stroke-width="1.1"/>
+      <line x1="165.0" y1="94.8" x2="165.0" y2="155.2" stroke="#cbd5e1" stroke-width="1.1"/>
+      <line x1="205.2" y1="94.8" x2="205.2" y2="155.2" stroke="#cbd5e1" stroke-width="1.1"/>
+      <line x1="245.5" y1="94.8" x2="245.5" y2="155.2" stroke="#cbd5e1" stroke-width="1.1"/>
+      <polygon points="185.1,13.7 205.2,48.6 185.1,83.4 144.9,83.4 124.8,48.6 144.9,13.7" fill="#3b82f6" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+      <polygon points="185.1,166.6 205.2,201.4 185.1,236.3 144.9,236.3 124.8,201.4 144.9,166.6" fill="#3b82f6" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+      <text x="165.0" y="129.0" font-size="12" fill="#475569" text-anchor="middle">palást</text>
+    </svg>
+    </div>
+    <p class="cap">Az egyenes hasáb hálója: két egybevágó alaplap és a palást, ami egyenes hasábnál egyetlen téglalap.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„Hat négyzet — akkor ez kocka hálója."</i></p><p>Nem feltétlenül. Hat négyzetből <b>35</b> különböző, élben csatlakozó alakzat rakható ki (az egymásba forgatható vagy tükrözhető változatokat egynek számítva), és ezek közül csak <b>11</b> hajtható kockává. A többinél a hajtogatás során két lap egymásra kerül.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 300 230" width="300" height="230" role="img" aria-label="Hat négyzetből álló alakzat, amelyből NEM hajtható össze kocka">
+      <rect x="50.0" y="90.0" width="50.0" height="50.0" fill="#047857" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+      <rect x="100.0" y="90.0" width="50.0" height="50.0" fill="#047857" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+      <rect x="150.0" y="90.0" width="50.0" height="50.0" fill="#047857" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+      <rect x="200.0" y="90.0" width="50.0" height="50.0" fill="#047857" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+      <rect x="50.0" y="40.0" width="50.0" height="50.0" fill="#047857" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+      <rect x="100.0" y="40.0" width="50.0" height="50.0" fill="#047857" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+    </svg>
+    </div>
+    <p class="cap">Ez az alakzat is hat négyzetből áll, mégsem hajtható össze kockává: a hajtogatás során két lap egymásra kerülne.</p>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A kockának hat lapja van, de az elrendezés is számít: a 35 lehetséges alakzatból 11 hajtható kockává." data-nem="✘ A lapok száma valóban hat — de próbáld gondolatban összehajtani a lépcsős elrendezést: két lap egymásra kerül.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Hány négyzetből áll a kocka hálója, és elég-e ennyi?</p>
+      <div class="opciok"><button>Hat — de nem minden hatnégyzetes alakzat hajtható kockává</button><button>Hat, és bármely hatnégyzetes alakzat jó</button><button>Nyolc, a csúcsok száma miatt</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-terelemek.html#alap-11">🐕 Tér-eb-ugrás <span class="cimke">A 11–15</span></a><a class="sav bruno" href="feladatok-terelemek.html#kozep-8">👑 Királyi Gárda <span class="cimke">K 8–10</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Prizma:</b> A formákat felismered, a hálót látod. Egyetlen dolog hiányzik a számoláshoz — és ez az, amin a kadétok fele elvérzik: az <b>alaplap területe</b>. Minden test-képletben ott áll egy <span class="math inline">\(B\)</span>, és ha azt elrontod, a legszebb térfogatképlet is rossz számot ad. Fegyverzet-ellenőrzés következik.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-meroleges-es-szog.html"><span class="irany">← Előző</span><span class="hova">Merőlegesség és szögek a térben</span></a>
+      <a class="kov" href="tananyag-alaplap.html"><span class="irany">Következő →</span><span class="hova">Az alaplap</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pont, egyenes, sík — a tér játékszabályai — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Poliéderek</a> ›
+  <span class="itt">Pont, egyenes, sík — a tér játékszabályai — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Pont, egyenes, sík — a tér játékszabályai</h1>
+  <p class="alcim">A tér axiómái, a sík meghatározása, valamint az egyenesek, egyenes és sík, illetve két sík kölcsönös helyzete.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Kristálypára Kristályok · 1/11</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Prizma:</b> A Karantén-Zónában a folyosók éjszakánként átrendeződnek. Tegnap még egy terem volt ott, ma egy hetven fokban megdőlt kristálylap. Mielőtt bármit kiszámolnánk — felszínt, térfogatot, energiasűrűséget —, tudnunk kell, <b>mi hol van</b>: mikor találkozik két folyosó, mikor nem találkoznak soha, és mi az, ami egyetlen síkot rögzít. Ez a kadét első térbeli reflexe.</p></div>
+
+    <p>Az eddigi geometriád <b>síkgeometria</b> volt: minden alakzat egyetlen lapon feküdt. A térben két egyenes viszonyában megjelenik egy <b>harmadik</b> eset is, ami a síkban nem létezik — és pontosan ez az, amit a legtöbben elrontanak.</p><p><b>Jelölés.</b> A pontokat nagybetűvel (<span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(P\)</span>), az egyeneseket kisbetűvel (<span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(p\)</span>), a síkokat görög betűvel (<span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>) jelöljük.</p>
+
+    <h2 id="s1">Miből épül a tér</h2>
+
+    <p>A geometria <b>alapfogalmakkal</b> indul: a <b>pont</b>, az <b>egyenes</b> és a <b>sík</b> fogalmát nem definiáljuk, hanem az <b>axiómák</b> — bizonyítás nélkül elfogadott állítások — írják le, hogyan viselkednek. Minden további állítást ezekből vezetünk le.</p>
+
+    <div class="doboz tetel" id="tetel-axiomak">
+      <p class="cim"><span class="ikon">📘</span> A tér három alapaxiómája</p>
+      <ol><li>Bármely két különböző pontra <b>pontosan egy</b> egyenes illeszkedik.</li><li>Ha egy egyenes <b>két</b> pontja illeszkedik egy síkra, akkor az egyenes <b>minden</b> pontja illeszkedik arra a síkra.</li><li>Ha két különböző síknak van <b>közös pontja</b>, akkor a közös pontjaik halmaza <b>pontosan egy egyenes</b> (a metszésvonaluk).</li><li>Bármely három, <b>nem egy egyenesre eső</b> pontra pontosan egy sík illeszkedik.</li></ol><p>A második axióma az, amiért a vonalzó működik: ha a vonalzó élének mindkét végpontja az asztallapon van, akkor a teljes él a lapon fekszik.</p>
+    </div>
+
+    <h2 id="s2">Mi határoz meg egy síkot</h2>
+
+    <div class="doboz tetel" id="tetel-sikmeghatarozas">
+      <p class="cim"><span class="ikon">📘</span> Négy eset — és mindegyik pontosan egy síkot ad</p>
+      <p>Egy sík <b>egyértelműen</b> meg van határozva, ha adott</p><ul><li><b>három</b> pont, amelyek <b>nem</b> esnek egy egyenesre;</li><li>egy egyenes és egy rá <b>nem</b> illeszkedő pont;</li><li><b>két metsző</b> egyenes;</li><li><b>két párhuzamos</b> (nem egybeeső) egyenes.</li></ul><p>Az első eset maga is <b>axióma</b> (lásd fent); a másik három ebből következik, mert mindegyikből kiolvasható három olyan pont, amely nincs egy egyenesen. Az egy egyenesre eső (<b>kollineáris</b>) pontok tehát nem határoznak meg síkot: a rajtuk átmenő sík az egyenes körül szabadon elfordítható.</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>Miért nem billeg a háromlábú fényképezőállvány, és miért billeg a négylábú asztal? Mert három talppont — bármilyen hosszúak is a lábak — <b>mindig egy síkba esik</b>, és ez a sík hozzáilleszthető a padlóéhoz: az állvány addig dől, amíg mindhárom láb földet ér. Négy pont viszont általában <b>nem</b> esik egy síkba, ezért ha az egyik láb egy hajszállal rövidebb, az asztal billeg.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A kikötés nem díszítés: ha a három pont egy egyenesre esik, a rajtuk átmenő sík az egyenes körül szabadon elfordítható, mint a lap a könyv gerince körül." data-nem="✘ Próbáld ki három olyan ponttal, amely egy egyenesre esik. Hány sík fektethető rájuk?">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Igaz-e, hogy <b>bármely</b> három pont pontosan egy síkot határoz meg?</p>
+      <div class="opciok"><button>Nem: ha egy egyenesre esnek, végtelen sok sík megy át rajtuk</button><button>Igen, bármely három pont esetén</button><button>Nem: három pont mindig végtelen sok síkot határoz meg</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Két egyenes a térben</h2>
+
+    <p>A síkban két egyenesnek két lehetősége volt: metszették egymást, vagy párhuzamosak voltak. A térben megjelenik egy <b>harmadik</b> eset.</p>
+
+    <div class="doboz definicio" id="def-kitero">
+      <p class="cim"><span class="ikon">📗</span> Kitérő egyenesek</p>
+      <p>Két egyenes <b>kitérő</b>, ha nincs közös pontjuk, <b>és</b> nincs olyan sík, amelyben mindkettő benne van.</p><p>Ezzel szemben két egyenes <b>párhuzamos</b>, ha <b>egy síkban</b> vannak, és nincs közös pontjuk — vagy ha egybeesnek.</p><p>A térben tehát két egyenes vagy <b>metsző</b> (egy közös pont), vagy <b>párhuzamos</b>, vagy <b>kitérő</b>.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„Ennek a két folyosónak nincs közös pontja — akkor párhuzamosak, és a zárórendszer ugyanúgy állítható be mindkettőn."</i></p><p>A síkban ez igaz lenne. A térben <b>nem</b>: a kitérő egyeneseknek sincs közös pontjuk. A párhuzamossághoz az is kell, hogy a két egyenes <b>egy síkban</b> legyen. Aki csak a közös pont hiányát nézi, minden kitérő élpárt párhuzamosnak hisz.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 320 270" width="320" height="270" role="img" aria-label="Kocka a nyolc csúcs jelölésével: A, B, C, D az alaplapon, A1, B1, C1, D1 a fedőlapon">
+      <line x1="39.2" y1="244.0" x2="208.0" y2="244.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="208.0" y1="244.0" x2="280.8" y2="194.9" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="280.8" y1="194.9" x2="112.0" y2="194.9" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="112.0" y1="194.9" x2="39.2" y2="244.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="39.2" y1="75.1" x2="208.0" y2="75.1" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="208.0" y1="75.1" x2="280.8" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="280.8" y1="26.0" x2="112.0" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="112.0" y1="26.0" x2="39.2" y2="75.1" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="39.2" y1="244.0" x2="39.2" y2="75.1" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="208.0" y1="244.0" x2="208.0" y2="75.1" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="280.8" y1="194.9" x2="280.8" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="112.0" y1="194.9" x2="112.0" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <text x="24.5" y="252.0" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">A</text>
+      <text x="221.4" y="255.8" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">B</text>
+      <text x="295.5" y="196.9" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">C</text>
+      <text x="98.6" y="193.1" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">D</text>
+      <text x="22.5" y="75.5" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">A<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="223.2" y="79.8" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">B<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="297.5" y="19.6" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">C<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="96.8" y="15.3" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">D<tspan font-size='9' dy='3'>1</tspan></text>
+    </svg>
+    </div>
+    <p class="cap">A kockán mind a három eset megtalálható. Az <span class="math inline">\(AB\)</span> és a <span class="math inline">\(BC\)</span> él metsző, az <span class="math inline">\(AB\)</span> és a <span class="math inline">\(A_1B_1\)</span> párhuzamos, az <span class="math inline">\(AB\)</span> és a <span class="math inline">\(CC_1\)</span> pedig kitérő.</p>
+
+    <div class="doboz pelda" id="pelda-kocka-elei">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció</p>
+      <p>Az <span class="math inline">\(ABCDA_1B_1C_1D_1\)</span> kockában — ahol az <span class="math inline">\(A_1\)</span> csúcs az <span class="math inline">\(A\)</span> fölött, a <span class="math inline">\(B_1\)</span> a <span class="math inline">\(B\)</span> fölött van, és így tovább — milyen helyzetű az <span class="math inline">\(AB\)</span> és a <span class="math inline">\(CC_1\)</span> él?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>Közös pontjuk nincs: az <span class="math inline">\(AB\)</span> szakasz az alaplapon fekszik, a <span class="math inline">\(CC_1\)</span> élnek pedig egyedül a <span class="math inline">\(C\)</span> pontja van az alaplapon, és <span class="math inline">\(C\)</span> nincs rajta az <span class="math inline">\(AB\)</span> egyenesen.</p><p>Van-e olyan sík, amely mindkettőt tartalmazza? Tegyük fel, hogy van ilyen <span class="math inline">\(S\)</span> sík. Akkor <span class="math inline">\(S\)</span> tartalmazza az <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> és <span class="math inline">\(C\)</span> pontot, ezek viszont nincsenek egy egyenesen, tehát <span class="math inline">\(S\)</span> <b>csak</b> az <span class="math inline">\(ABCD\)</span> sík lehet. De a <span class="math inline">\(C_1\)</span> csúcs nincs az <span class="math inline">\(ABCD\)</span> síkon, így az <span class="math inline">\(S\)</span> nem tartalmazhatja a <span class="math inline">\(CC_1\)</span> élt — ellentmondás.</p><p>Nincs tehát ilyen sík: a két él <b>kitérő</b>.</p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ Nem szomszédos lapon vannak, mégis párhuzamosak: mindkettő benne fekszik az ABC₁D₁ átlós síkban, és nincs közös pontjuk." data-nem="✘ Az, hogy két él nincs ugyanazon a lapon, még nem jelenti, hogy kitérő. Keress olyan síkot, amelyben mindkettő benne van — az átlós síkokat is nézd meg.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Az <span class="math inline">\(ABCDA_1B_1C_1D_1\)</span> kockában milyen helyzetű az <span class="math inline">\(AB\)</span> és a <span class="math inline">\(C_1D_1\)</span> él?</p>
+      <div class="opciok"><button>Párhuzamos</button><button>Kitérő</button><button>Metsző</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Egyenes és sík, sík és sík</h2>
+
+    <p>Egy egyenes és egy sík háromféleképpen helyezkedhet el egymáshoz képest: az egyenes <b>illeszkedik</b> a síkra (benne fekszik), <b>párhuzamos</b> vele (nincs közös pontjuk), vagy <b>döfi</b> — pontosan egy közös pontjuk van, ez a <b>döféspont</b>.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 330 225" width="330" height="225" role="img" aria-label="Az egyenes döfi a síkot: pontosan egy közös pontjuk van">
+      <polygon points="26.0,139.1 239.6,139.1 304.0,95.6 90.4,95.6" fill="#475569" fill-opacity="0.1" stroke="#475569" stroke-width="1.3" stroke-linejoin="round"/>
+      <line x1="85.6" y1="56.5" x2="232.2" y2="168.5" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <polygon points="165.0,117.3" fill="none" stroke="#0f172a" stroke-width="1.6" stroke-linejoin="round"/>
+      <text x="165.0" y="122.3" font-size="20" fill="#ef4444" text-anchor="middle" font-weight="600" font-family="Cambria, Georgia, serif">•</text>
+      <text x="38.8" y="148.9" font-size="13" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">α</text>
+      <text x="79.6" y="52.5" font-size="13" fill="#0f172a" text-anchor="end" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">a</text>
+      <text x="175.0" y="111.3" font-size="13" fill="#ef4444" text-anchor="start" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">P</text>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(a\)</span> egyenes döfi az <span class="math inline">\(\alpha\)</span> síkot: egyetlen közös pontjuk a <span class="math inline">\(P\)</span> döféspont.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 330 210" width="330" height="210" role="img" aria-label="Az egyenes a síkban fekszik">
+      <polygon points="26.0,126.7 239.6,126.7 304.0,83.3 90.4,83.3" fill="#475569" fill-opacity="0.1" stroke="#475569" stroke-width="1.3" stroke-linejoin="round"/>
+      <line x1="66.3" y1="116.4" x2="263.7" y2="93.6" stroke="#0f172a" stroke-width="1.9" stroke-linecap="round"/>
+      <text x="38.8" y="136.6" font-size="13" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">α</text>
+      <text x="273.7" y="91.6" font-size="13" fill="#0f172a" text-anchor="start" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">a</text>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(a\)</span> egyenes az <span class="math inline">\(\alpha\)</span> síkban fekszik: minden pontja közös.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 330 215" width="330" height="215" role="img" aria-label="Az egyenes párhuzamos a síkkal: nincs közös pontjuk">
+      <polygon points="26.0,146.1 239.6,146.1 304.0,102.7 90.4,102.7" fill="#475569" fill-opacity="0.1" stroke="#475569" stroke-width="1.3" stroke-linejoin="round"/>
+      <line x1="66.3" y1="135.8" x2="263.7" y2="113.0" stroke="#cbd5e1" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="4 4"/>
+      <line x1="66.3" y1="91.6" x2="263.7" y2="68.9" stroke="#0f172a" stroke-width="1.9" stroke-linecap="round"/>
+      <text x="38.8" y="156.0" font-size="13" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">α</text>
+      <text x="273.7" y="66.9" font-size="13" fill="#0f172a" text-anchor="start" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">a</text>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(a\)</span> egyenes párhuzamos az <span class="math inline">\(\alpha\)</span> síkkal: nincs közös pontjuk.</p>
+
+    <p>Két sík pedig vagy <b>egybeesik</b>, vagy <b>párhuzamos</b> (nincs közös pontjuk), vagy <b>metszi</b> egymást — ilyenkor a közös részük a harmadik axióma szerint egy <b>egyenes</b>, a metszésvonal.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 340 235" width="340" height="235" role="img" aria-label="Két metsző sík és a metszésvonaluk">
+      <polygon points="26.0,139.5 248.8,139.5 314.0,95.5 91.2,95.5" fill="#475569" fill-opacity="0.1" stroke="#475569" stroke-width="1.3" stroke-linejoin="round"/>
+      <polygon points="43.3,194.6 266.1,194.6 296.7,40.4 73.9,40.4" fill="#3b82f6" fill-opacity="0.12" stroke="#3b82f6" stroke-width="1.3" stroke-linejoin="round"/>
+      <line x1="58.6" y1="117.5" x2="281.4" y2="117.5" stroke="#ef4444" stroke-width="1.9" stroke-linecap="round"/>
+      <text x="31.1" y="150.0" font-size="13" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">α</text>
+      <text x="60.5" y="55.4" font-size="13" fill="#3b82f6" text-anchor="end" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">β</text>
+      <text x="291.4" y="123.5" font-size="13" fill="#ef4444" text-anchor="start" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">p</text>
+    </svg>
+    </div>
+    <p class="cap">Két metsző sík és a <span class="math inline">\(p\)</span> metszésvonaluk.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 330 225" width="330" height="225" role="img" aria-label="Két párhuzamos sík">
+      <polygon points="26.0,170.2 241.1,170.2 304.0,127.8 88.9,127.8" fill="#475569" fill-opacity="0.1" stroke="#475569" stroke-width="1.3" stroke-linejoin="round"/>
+      <polygon points="26.0,97.2 241.1,97.2 304.0,54.8 88.9,54.8" fill="#3b82f6" fill-opacity="0.12" stroke="#3b82f6" stroke-width="1.3" stroke-linejoin="round"/>
+      <text x="30.8" y="180.9" font-size="13" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">α</text>
+      <text x="30.8" y="107.9" font-size="13" fill="#3b82f6" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">β</text>
+    </svg>
+    </div>
+    <p class="cap">Két párhuzamos sík: nincs közös pontjuk.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>A szoba két szemközti fala párhuzamos sík; a fal és a padló metsző, a metszésvonaluk az a vonal, ahol a szegélyléc fut. A sátorcövek pedig <b>döfi</b> a talaj síkját: a föld fölött és alatt is folytatódik, egyetlen közös pontja a talajszinttel a döféspont.</p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-terelemek.html#alap-1">🐕 Tér-eb-ugrás <span class="cimke">A 1–5</span></a><a class="sav bruno" href="feladatok-terelemek.html#kozep-1">👑 Királyi Gárda <span class="cimke">K 1–3</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Prizma:</b> A térképed megvan: tudod, mi hol van. A következő lépés a <b>mérés</b> — mert a kristálylapok nem csak elhelyezkednek, hanem <b>szöget is zárnak be</b>, és a visszavert energia iránya ezen múlik. A térben viszont a szöget másképp kell mérni, mint a papíron.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">Poliéderek</span></a>
+      <a class="kov" href="tananyag-meroleges-es-szog.html"><span class="irany">Következő →</span><span class="hova">Merőlegesség és szögek a térben</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
