@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A gúla és elemei — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Poliéderek</a> ›
+  <span class="itt">A gúla és elemei — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A gúla és elemei — a három derékszögű háromszög</h1>
+  <p class="alcim">A gúla keletkezése, a szabályos gúla, a magasság, az oldallap-magasság és az oldalél kapcsolata.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Kristálypára Kristályok · 8/11</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Prizma:</b> A Zóna mélyén a kristályok <b>tüskévé</b> húzódnak össze: az alaplapból minden él egyetlen pontba fut. Ez a gúla. A gúlafeladatokban ritkán a képlet a nehéz — sokkal inkább az, hogy megtaláld, <b>melyik derékszögű háromszögben</b> van az az adat, amit keresel. Ez az egység erről szól, és ha ezt megérted, a következő két egység már csak behelyettesítés.</p></div>
+
+    <p>Három derékszögű háromszög lakik minden szabályos gúlában. Aki ezt a hármat látja, annak a gúla nem okoz gondot; aki nem, az a képletet is hiába tudja.</p>
+
+    <h2 id="s1">Hogyan keletkezik a gúla</h2>
+
+    <div class="doboz definicio" id="def-gula">
+      <p class="cim"><span class="ikon">📗</span> A gúla</p>
+      <p>Vegyünk egy síksokszöget és egy olyan <span class="math inline">\(E\)</span> pontot, amely nincs a sokszög síkjában. Kössük össze <span class="math inline">\(E\)</span>-t a (konvex) sokszög minden csúcsával. Az így keletkező háromszögek az alaplappal együtt egy testet zárnak közre: ez a <b>gúla</b>.</p><p>A sokszög az <b>alaplap</b>, az <span class="math inline">\(E\)</span> pont a gúla <b>csúcsa</b>, az onnan induló szakaszok az <b>oldalélek</b>, az oldalélek és az alapélek által határolt háromszögek pedig az <b>oldallapok</b>. Az oldallapok együtt a <b>palást</b>.</p><p>A gúla <b>magassága</b> a csúcsból az alaplap síkjára bocsátott merőleges szakasz — illetve ennek hossza, vagyis a csúcs távolsága az alaplap síkjától.</p>
+    </div>
+
+    <p>A gúlát is az alaplapja szerint nevezzük el: háromoldalú, négyoldalú, hatoldalú gúla. A <b>háromoldalú</b> gúlának négy háromszöglapja van — ezt <b>tetraédernek</b> is hívjuk.</p>
+
+    <h2 id="s2">Szabályos gúla — hol van a magasság talppontja</h2>
+
+    <div class="doboz definicio" id="def-szabalyos-gula">
+      <p class="cim"><span class="ikon">📗</span> Szabályos gúla</p>
+      <p>Egy gúla <b>szabályos</b>, ha az alaplapja <b>szabályos sokszög</b>, és a magasság talppontja az alaplap <b>középpontja</b>.</p><p>Ebből következik, hogy a szabályos gúla minden <b>oldaléle</b> egyenlő, és minden <b>oldallapja</b> egybevágó egyenlő szárú háromszög.</p>
+    </div>
+
+    <p>A „középpont” itt a szabályos sokszög beírt és köréírt körének közös középpontját jelenti. <b>Vigyázz a szóhasználattal:</b> nálunk az <b>apotéma</b> mindig az <i>alaplap</i> apotémája; a szerb tankönyvek <i>apotema piramide</i> néven az oldallap magasságát értik — azt itt végig <span class="math inline">\(m_o\)</span> jelöli. Innen az alapél <b>felezőpontjáig</b> mért távolság az apotéma (<span class="math inline">\(\rho\)</span>), a <b>csúcsig</b> mért távolság pedig a köréírt kör sugara (<span class="math inline">\(R\)</span>) — mindkettőre szükség lesz.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 340 310" width="340" height="310" role="img" aria-label="Szabályos négyoldalú gúla: magasság, apotéma, köréírt sugár, oldallap-magasság és oldalél">
+      <line x1="57.8" y1="284.0" x2="214.6" y2="284.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="214.6" y1="284.0" x2="282.2" y2="238.4" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="282.2" y1="238.4" x2="125.4" y2="238.4" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="125.4" y1="238.4" x2="57.8" y2="284.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="57.8" y1="284.0" x2="170.0" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="214.6" y1="284.0" x2="170.0" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="282.2" y1="238.4" x2="170.0" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="125.4" y1="238.4" x2="170.0" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="170.0" y1="261.2" x2="170.0" y2="26.0" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 3"/>
+      <path d="M170.0,250.2 L159.2,252.4 L159.2,263.4" fill="none" stroke="#ef4444" stroke-width="1.2"/>
+      <line x1="170.0" y1="261.2" x2="136.2" y2="284.0" stroke="#047857" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 3"/>
+      <line x1="136.2" y1="284.0" x2="170.0" y2="26.0" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M137.4,275.1 L144.8,270.0 L143.7,279.0" fill="none" stroke="#f59e0b" stroke-width="1.2"/>
+      <line x1="170.0" y1="261.2" x2="214.6" y2="284.0" stroke="#8b5cf6" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="3 3"/>
+      <line x1="214.6" y1="284.0" x2="170.0" y2="26.0" stroke="#3b82f6" stroke-width="2.0" stroke-linecap="round"/>
+      <text x="43.1" y="292.0" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">A</text>
+      <text x="228.0" y="295.8" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">B</text>
+      <text x="296.9" y="240.4" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">C</text>
+      <text x="112.0" y="236.6" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">D</text>
+      <text x="170.0" y="17.0" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">E</text>
+      <text x="177.0" y="143.6" font-size="13" fill="#ef4444" text-anchor="start" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">m</text>
+      <text x="153.1" y="286.6" font-size="13" fill="#047857" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">ρ</text>
+      <text x="144.1" y="157.0" font-size="13" fill="#f59e0b" text-anchor="end" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">m<tspan font-size='9' dy='3'>o</tspan></text>
+      <text x="198.3" y="268.6" font-size="13" fill="#8b5cf6" text-anchor="start" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">R</text>
+      <text x="201.3" y="153.0" font-size="13" fill="#3b82f6" text-anchor="start" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">b</text>
+      <text x="97.0" y="301.0" font-size="12" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">a</text>
+    </svg>
+    </div>
+    <p class="cap">Szabályos négyoldalú gúla: a magasság (<span class="math inline">\(m\)</span>, piros), az alaplap apotémája (<span class="math inline">\(\rho\)</span>, zöld), a köréírt kör sugara (<span class="math inline">\(R\)</span>, lila), az oldallap magassága (<span class="math inline">\(m_o\)</span>, narancs) és az oldalél (<span class="math inline">\(b\)</span>, kék).</p>
+
+    <h2 id="s3">A szabályos gúla három derékszögű háromszöge</h2>
+
+    <p>A szabályos gúla adatai három derékszögű háromszögbe rendeződnek. Mindháromban szerepel a magasság vagy az alapél fele, és mindhárom a Pitagorasz-tétellel dolgozik.</p>
+
+    <div class="doboz tetel" id="tetel-harom-haromszog">
+      <p class="cim"><span class="ikon">📘</span> A szabályos gúla három derékszögű háromszöge</p>
+      <p>Ezek a képletek <b>szabályos</b> gúlára érvényesek: kell hozzájuk, hogy a magasság talppontja az alaplap középpontja legyen. Jelölje <span class="math inline">\(a\)</span> az alapélt, <span class="math inline">\(m\)</span> a magasságot, <span class="math inline">\(\rho\)</span> az alaplap apotémáját, <span class="math inline">\(R\)</span> az alaplap köréírt sugarát, <span class="math inline">\(m_o\)</span> az oldallap magasságát és <span class="math inline">\(b\)</span> az oldalélt. Ekkor</p><ol><li>a magasság, az apotéma és az <b>oldallap magassága</b>: <span class="math inline">\(m_o^{2}=m^{2}+\rho^{2}\)</span>;</li><li>a magasság, a köréírt sugár és az <b>oldalél</b>: <span class="math inline">\(b^{2}=m^{2}+R^{2}\)</span>;</li><li>az oldallap magassága, az alapél fele és az <b>oldalél</b>: <span class="math inline">\(b^{2}=m_o^{2}+\left(\frac{a}{2}\right)^{2}\)</span>.</li></ol><p>A harmadik háromszög magában az <b>oldallapban</b> fekszik: az egyenlő szárú háromszöget a magassága két derékszögű háromszögre vágja.</p><p>Van egy negyedik, immár <b>síkbeli</b> összefüggés is, amely az alaplapon belül köti össze a két sugarat:</p><span class="math display">\[R^{2}=\rho^{2}+\left(\frac{a}{2}\right)^{2}.\]</span><p>A leggyakoribb alaplapokra:</p><table class="tt-table"><tr><th>alaplap</th><th>apotéma <span class="math inline">\(\rho\)</span></th><th>köréírt sugár <span class="math inline">\(R\)</span></th></tr><tr><td>négyzet</td><td><span class="math inline">\(\dfrac{a}{2}\)</span></td><td><span class="math inline">\(\dfrac{a\sqrt2}{2}\)</span></td></tr><tr><td>szabályos háromszög</td><td><span class="math inline">\(\dfrac{a\sqrt3}{6}\)</span></td><td><span class="math inline">\(\dfrac{a\sqrt3}{3}\)</span></td></tr><tr><td>szabályos hatszög</td><td><span class="math inline">\(\dfrac{a\sqrt3}{2}\)</span></td><td><span class="math inline">\(a\)</span></td></tr></table><p>Mivel <span class="math inline">\(\rho &lt; R\)</span>, mindig <span class="math inline">\(m_o &lt; b\)</span>: az <b>oldallap magassága rövidebb</b>, mint az oldalél.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„Az oldalél és az oldallap magassága — mindkettő a csúcsba fut, tehát ugyanaz."</i></p><p>Nem ugyanaz. Az <b>oldalél</b> (<span class="math inline">\(b\)</span>) a csúcsot az alaplap egy <b>csúcsával</b> köti össze, az <b>oldallap magassága</b> (<span class="math inline">\(m_o\)</span>) pedig egy alapél <b>felezőpontjával</b>. A kettő két különböző derékszögű háromszögben él, és mindig <span class="math inline">\(m_o &lt; b\)</span>. A palásthoz <span class="math inline">\(m_o\)</span> kell — ha <span class="math inline">\(b\)</span>-vel számolsz, túl nagy felszínt kapsz.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 310 295" width="310" height="295" role="img" aria-label="Szabályos háromoldalú gúla az oldallap magasságával; a csúcs itt a D pont">
+      <line x1="236.9" y1="269.0" x2="216.1" y2="227.8" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="216.1" y1="227.8" x2="73.1" y2="269.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="73.1" y1="269.0" x2="236.9" y2="269.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="236.9" y1="269.0" x2="175.4" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="216.1" y1="227.8" x2="175.4" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="73.1" y1="269.0" x2="175.4" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="175.4" y1="255.3" x2="175.4" y2="26.0" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 3"/>
+      <path d="M175.4,244.3 L186.1,246.7 L186.1,257.7" fill="none" stroke="#ef4444" stroke-width="1.2"/>
+      <line x1="175.4" y1="255.3" x2="155.0" y2="269.0" stroke="#047857" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 3"/>
+      <line x1="155.0" y1="269.0" x2="175.4" y2="26.0" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M155.8,260.0 L163.2,255.0 L162.5,264.0" fill="none" stroke="#f59e0b" stroke-width="1.2"/>
+      <text x="251.5" y="277.3" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">A</text>
+      <text x="228.6" y="224.4" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">B</text>
+      <text x="58.3" y="276.0" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">C</text>
+      <text x="175.4" y="17.0" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">D</text>
+      <text x="182.4" y="140.6" font-size="13" fill="#ef4444" text-anchor="start" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">m</text>
+      <text x="165.2" y="276.1" font-size="13" fill="#047857" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">ρ</text>
+      <text x="156.2" y="149.5" font-size="13" fill="#f59e0b" text-anchor="end" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">m<tspan font-size='9' dy='3'>o</tspan></text>
+      <text x="114.1" y="286.0" font-size="12" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">a</text>
+    </svg>
+    </div>
+    <p class="cap">Szabályos háromoldalú gúla — itt az alaplap <span class="math inline">\(ABC\)</span>, a gúla csúcsa pedig <span class="math inline">\(D\)</span>. Az oldallap magassága az alapél felezőpontjába érkezik, nem a csúcsába.</p>
+
+    <div class="kviz" data-answer="0" data-jo="✔ b² = m² + R²: az oldalél az alaplap CSÚCSÁIG fut, ezért a köréírt sugár tartozik hozzá." data-nem="✘ Az apotéma az alapél felezőpontjához vezet, tehát az az oldallap magasságához tartozik. Az oldalél a csúcsba fut, oda a köréírt sugár visz.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>A szabályos gúla melyik derékszögű háromszöge köti össze az <b>oldalélt</b> a <b>magassággal</b>?</p>
+      <div class="opciok"><button>A magasság és a köréírt sugár (<span class="math inline">\(R\)</span>) alkotta háromszögben</button><button>A magasság és az apotéma (<span class="math inline">\(\rho\)</span>) alkotta háromszögben</button><button>Egyikben sem — az oldalél nem derékszögű háromszög oldala</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Adatból adat</h2>
+
+    <div class="doboz pelda" id="pelda-gula-adatok">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció</p>
+      <p>Egy szabályos négyoldalú gúla alapéle <span class="math inline">\(6\)</span> cm, magassága <span class="math inline">\(4\)</span> cm. Számítsd ki az apotémát, az oldallap magasságát, a köréírt sugarat és az oldalélt!</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>Apotéma.</b> Négyzet alaplapnál az apotéma az oldal fele: <span class="math inline">\(\rho=\frac{a}{2}=3\)</span> cm.</p><p><b>Oldallap magassága</b> (1. háromszög):</p><span class="math display">\[m_o=\sqrt{m^2+\rho^2}=\sqrt{4^2+3^2}=\sqrt{25}=5\ \text{cm}.\]</span><p><b>Köréírt sugár.</b> A négyzet átlójának fele: <span class="math inline">\(R=\frac{a\sqrt2}{2}=3\sqrt2\approx 4{,}24\)</span> cm.</p><p><b>Oldalél</b> (2. háromszög):</p><span class="math display">\[b=\sqrt{m^2+R^2}=\sqrt{16+18}=\sqrt{34}\approx 5{,}83\ \text{cm}.\]</span><p><b>Ellenőrzés a 3. háromszöggel:</b> <span class="math inline">\(\sqrt{m_o^2+\left(\frac a2\right)^2}=\sqrt{25+9}=\sqrt{34}\)</span> — ugyanaz. És valóban <span class="math inline">\(m_o=5<5{,}83=b\)</span>.</p></div></details>
+    </div>
+
+    <h2 id="s5">A tetraéder</h2>
+
+    <p>A háromoldalú gúlát <b>tetraédernek</b> nevezzük. Vigyázz a szóhasználattal:</p><ul><li><b>tetraéder</b>: bármely háromoldalú gúla (négy háromszöglap);</li><li><b>szabályos tetraéder</b>: az, amelynek mind a hat éle egyenlő — ez az egyik szabályos test.</li></ul><p>Minden szabályos tetraéder szabályos háromoldalú gúla, de fordítva nem igaz: a <b>szabályos háromoldalú gúlának</b> az oldaléle lehet hosszabb az alapélnél. Azt is érdemes tudni, hogy a tetraédernek nincs kitüntetett alaplapja: bármelyik lapja lehet az alaplap — ez a magasság számításánál számít.</p>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A szabályos tetraéderhez az kell, hogy MIND A HAT él egyenlő legyen — egy magas, hegyes gúla is szabályos háromoldalú gúla." data-nem="✘ Képzelj el egy nagyon magas, hegyes gúlát szabályos háromszög alaplappal: szabályos gúla, de az oldalélei jóval hosszabbak az alapélnél.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Igaz-e: minden szabályos háromoldalú gúla egyben szabályos tetraéder?</p>
+      <div class="opciok"><button>Nem — az oldalél lehet hosszabb az alapélnél</button><button>Igen, mert az alaplapja szabályos háromszög</button><button>Igen, mert minden oldallapja egybevágó</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-gula.html#alap-1">🐕 Tér-eb-ugrás <span class="cimke">A 1–5</span></a><a class="sav bruno" href="feladatok-gula.html#kozep-1">👑 Királyi Gárda <span class="cimke">K 1–4</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Prizma:</b> A három háromszög a kezedben van — innentől minden hiányzó adatot ki tudsz számolni. Jöhet a mérés: mennyi anyag kell a tüske burkolatához, és mennyi energiát zár be. Az utóbbinál vár rád a témakör legmakacsabb száma: egy <b>harmad</b>.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-hasab.html"><span class="irany">← Előző</span><span class="hova">Feladatok — a hasáb</span></a>
+      <a class="kov" href="tananyag-gula-felszin-terfogat.html"><span class="irany">Következő →</span><span class="hova">A gúla felszíne és térfogata</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A hasáb felszíne és térfogata — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Poliéderek</a> ›
+  <span class="itt">A hasáb felszíne és térfogata — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A hasáb felszíne és térfogata</h1>
+  <p class="alcim">A palást a hálóból, a térfogat képlete, fordított feladatok és a köbös mértékegységek.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Kristálypára Kristályok · 6/11</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Prizma:</b> Két szám, két külön képlet — és a legtöbb hiba abból ered, hogy a kadét összekeveri őket. A <b>felszín</b> a testet határoló lapok területének összege — ennyi anyag kell a burkolatához (m²) —, a <b>térfogat</b> pedig azt mondja meg, mennyi fér bele (m³). Ha egy kristálytartályt festeni akarsz, felszínt számolsz; ha tölteni, térfogatot.</p></div>
+
+    <p>Mindkét képlet abból következik, amit már láttunk: a felszín a <b>hálóból</b>, a térfogat pedig a téglatestből általánosítva.</p>
+
+    <h2 id="s1">A felszín a hálóból</h2>
+
+    <div class="doboz tetel" id="tetel-hasab-felszin">
+      <p class="cim"><span class="ikon">📘</span> Az egyenes hasáb felszíne</p>
+      <p><b>Egyenes</b> hasáb esetén a palást kiterítve téglalap, amelynek egyik oldala az alaplap kerülete (<span class="math inline">\(K\)</span>), a másik a magasság (<span class="math inline">\(m\)</span>). A palást területét <span class="math inline">\(M\)</span>-mel, a felszínt <span class="math inline">\(F\)</span>-fel jelöljük:</p><span class="math display">\[M=K\cdot m,\qquad F=2B+M=2B+K\cdot m,\]</span><p>ahol <span class="math inline">\(B\)</span> az alaplap területe. A <span class="math inline">\(2B\)</span> azért szerepel, mert a testnek <b>két</b> egybevágó alaplapja van.</p><p><b>Ferde</b> hasábnál ez a képlet nem érvényes: ott az oldallapok paralelogrammák, és külön-külön kell kiszámolni a területüket, majd összeadni.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 320 240" width="320" height="240" role="img" aria-label="A négyzetes hasáb hálója: két négyzet és a palást téglalapja">
+      <rect x="56.8" y="81.3" width="206.5" height="77.4" fill="#047857" fill-opacity="0.08" stroke="#0f172a" stroke-width="1.5"/>
+      <line x1="108.4" y1="81.3" x2="108.4" y2="158.7" stroke="#cbd5e1" stroke-width="1.1"/>
+      <line x1="160.0" y1="81.3" x2="160.0" y2="158.7" stroke="#cbd5e1" stroke-width="1.1"/>
+      <line x1="211.6" y1="81.3" x2="211.6" y2="158.7" stroke="#cbd5e1" stroke-width="1.1"/>
+      <polygon points="108.4,29.7 56.8,29.7 56.8,81.3 108.4,81.3" fill="#3b82f6" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+      <polygon points="211.6,210.3 211.6,158.7 263.2,158.7 263.2,210.3" fill="#3b82f6" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+      <text x="160.0" y="124.0" font-size="12" fill="#475569" text-anchor="middle">palást</text>
+      <text x="160.0" y="173.7" font-size="12" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">K</text>
+      <text x="47.8" y="124.0" font-size="12" fill="#0f172a" text-anchor="end" font-style="italic" font-weight="600">m</text>
+    </svg>
+    </div>
+    <p class="cap">A négyzetes hasáb hálója: a palást téglalapjának egyik oldala az alaplap kerülete, a másik a magasság.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„A palást az alaplap és a magasság szorzata.”</i></p><p>A palásthoz az alaplap <b>kerülete</b> kell, nem a <b>területe</b>. Gondolj a fenti hálóra: a téglalap egyik oldalára az alaplap kerülete simul rá. Ellenőrzés mértékegységgel: <span class="math inline">\(K\cdot m\)</span> hosszúság × hosszúság = terület (cm²) — ez rendben van; <span class="math inline">\(B\cdot m\)</span> viszont terület × hosszúság = <b>térfogat</b> (cm³), tehát az biztosan nem lehet a palást.</p>
+    </div>
+
+    <h2 id="s2">A térfogat</h2>
+
+    <div class="doboz tetel" id="tetel-hasab-terfogat">
+      <p class="cim"><span class="ikon">📘</span> A hasáb térfogata</p>
+      <p>Minden hasáb térfogata</p><span class="math display">\[V=B\cdot m,\]</span><p>ahol <span class="math inline">\(B\)</span> az alaplap területe, <span class="math inline">\(m\)</span> pedig a magasság (a két alaplap síkjának távolsága). A képlet a <b>ferde</b> hasábra is igaz — de csak a magassággal, nem az oldaléllel.</p>
+    </div>
+
+    <p>Miért éppen ennyi? A téglatestnél a térfogat <span class="math inline">\(abc\)</span>: az alaplap területe <span class="math inline">\(ab\)</span>, a magasság <span class="math inline">\(c\)</span>, tehát tényleg <span class="math inline">\(V=B\cdot m\)</span>. Tetszőleges hasábnál a következő <b>alapelvre</b> támaszkodunk: ha két testet az alaplapjukkal párhuzamosan, bármilyen magasságban elmetszünk, és a két metszet területe mindig egyenlő, akkor a két test térfogata is egyenlő. Állítsunk a hasáb mellé egy vele azonos alapterületű és azonos magasságú téglatestet: minden metszet területe mindkettőnél <span class="math inline">\(B\)</span>, tehát a térfogatuk is egyenlő — vagyis <span class="math inline">\(V=B\cdot m\)</span>. (Ennek az alapelvnek a pontos kimondása és bizonyítása már nem tananyagunk.)</p>
+
+    <div class="doboz pelda" id="pelda-hatszog-hasab">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció</p>
+      <p>Egy szabályos hatoldalú hasáb alapéle <span class="math inline">\(4\)</span> cm, magassága <span class="math inline">\(9\)</span> cm. Számítsd ki a felszínét és a térfogatát!</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>Alaplap.</b> A szabályos hatszög hat egyenlő oldalú háromszögre bomlik (lásd <a href="tananyag-alaplap.html#tetel-szabalyos-sokszog">az alaplap egységet</a>):</p><span class="math display">\[B=6\cdot\frac{4^2\sqrt3}{4}=24\sqrt3\approx 41{,}57\ \text{cm}^2.\]</span><p><b>Palást.</b> A kerület <span class="math inline">\(K=6\cdot 4=24\)</span> cm, ezért <span class="math inline">\(M=K\cdot m=24\cdot 9=216\ \text{cm}^2\)</span>.</p><p><b>Felszín.</b> <span class="math inline">\(F=2B+M=48\sqrt3+216\approx 299{,}14\ \text{cm}^2\)</span>.</p><p><b>Térfogat.</b> <span class="math inline">\(V=B\cdot m=24\sqrt3\cdot 9=216\sqrt3\approx 374{,}12\ \text{cm}^3\)</span>.</p></div></details>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 340 290" width="340" height="290" role="img" aria-label="Szabályos hatoldalú hasáb a magasságával">
+      <line x1="184.3" y1="264.0" x2="283.1" y2="235.5" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="283.1" y1="235.5" x2="268.8" y2="207.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="268.8" y1="207.0" x2="155.7" y2="207.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="155.7" y1="207.0" x2="56.9" y2="235.5" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="56.9" y1="235.5" x2="71.2" y2="264.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="71.2" y1="264.0" x2="184.3" y2="264.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="184.3" y1="83.0" x2="283.1" y2="54.5" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="283.1" y1="54.5" x2="268.8" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="268.8" y1="26.0" x2="155.7" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="155.7" y1="26.0" x2="56.9" y2="54.5" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="56.9" y1="54.5" x2="71.2" y2="83.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="71.2" y1="83.0" x2="184.3" y2="83.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="184.3" y1="264.0" x2="184.3" y2="83.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="283.1" y1="235.5" x2="283.1" y2="54.5" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="268.8" y1="207.0" x2="268.8" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="155.7" y1="207.0" x2="155.7" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="56.9" y1="235.5" x2="56.9" y2="54.5" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="71.2" y1="264.0" x2="71.2" y2="83.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="170.0" y1="235.5" x2="170.0" y2="54.5" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 3"/>
+      <path d="M170.0,224.5 L174.9,234.3 L174.9,245.3" fill="none" stroke="#ef4444" stroke-width="1.2"/>
+      <text x="191.1" y="282.4" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">A</text>
+      <text x="298.1" y="240.5" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">B</text>
+      <text x="283.2" y="207.9" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">C</text>
+      <text x="148.9" y="198.6" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">D</text>
+      <text x="41.9" y="240.5" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">E</text>
+      <text x="56.8" y="273.2" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">F</text>
+      <text x="192.0" y="95.2" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">A<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="300.1" y="51.5" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">B<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="285.1" y="18.3" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">C<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="148.0" y="7.8" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">D<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="39.9" y="51.5" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">E<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="54.9" y="84.7" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">F<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="178.0" y="145.0" font-size="13" fill="#ef4444" text-anchor="start" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">m</text>
+      <text x="127.8" y="281.0" font-size="12" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">a</text>
+    </svg>
+    </div>
+    <p class="cap">Szabályos hatoldalú hasáb: az alapél <span class="math inline">\(a\)</span>, a magasság <span class="math inline">\(m\)</span>.</p>
+
+    <h2 id="s3">Fordított irányban</h2>
+
+    <p>A feladatok jó része nem a képlet behelyettesítését kéri, hanem a <b>fordított</b> utat: adott térfogatból a magasságot vagy az alapélt. Ilyenkor a képletbe behelyettesítünk, és <b>egyenletet oldunk meg</b>.</p>
+
+    <div class="doboz pelda" id="pelda-forditott-hasab">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció</p>
+      <p>Egy négyzetes hasáb alapéle <span class="math inline">\(6\)</span> cm, térfogata <span class="math inline">\(1080\ \text{cm}^3\)</span>. Mekkora a magassága és a felszíne?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>Az alaplap területe <span class="math inline">\(B=6^2=36\ \text{cm}^2\)</span>. A <span class="math inline">\(V=B\cdot m\)</span> képletből</p><span class="math display">\[m=\frac{V}{B}=\frac{1080}{36}=30\ \text{cm}.\]</span><p>Ezután <span class="math inline">\(K=4\cdot 6=24\)</span> cm, <span class="math inline">\(M=24\cdot 30=720\ \text{cm}^2\)</span>, tehát</p><span class="math display">\[F=2\cdot 36+720=792\ \text{cm}^2.\]</span></div></details>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ Egy alaplap van (a fenék), plusz a palást — a fedőlap hiányzik." data-nem="✘ Számold össze a lapokat: a tartálynak van feneke és oldalfala, de nincs teteje.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy felül nyitott, hasáb alakú tartályt kívülről festünk le, az alját is. Melyik kifejezés adja a festendő területet?</p>
+      <div class="opciok"><button><span class="math inline">\(B+M\)</span></button><button><span class="math inline">\(2B+M\)</span></button><button><span class="math inline">\(M\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Mértékegységek és nagyságrend</h2>
+
+    <p>A térfogat mértékegységei köbegységek, ezért a szomszédos egységek váltószáma nem <span class="math inline">\(10\)</span> és nem <span class="math inline">\(100\)</span>, hanem <span class="math inline">\(1000\)</span>:</p><span class="math display">\[1\ \text{m}^3=1000\ \text{dm}^3=1\,000\,000\ \text{cm}^3,\qquad 1\ \text{dm}^3=1\ \text{liter}.\]</span><p>A terület (és így a felszín) mértékegységeinél a váltószám <span class="math inline">\(100\)</span>: <span class="math inline">\(1\ \text{m}^2=100\ \text{dm}^2\)</span>.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„A tartály <span class="math inline">\(2{,}5\ \text{m}^3\)</span>-es, tehát <span class="math inline">\(250\)</span> liter fér bele.”</i></p><p>Nem <span class="math inline">\(250\)</span>, hanem <b><span class="math inline">\(2500\)</span></b> liter: aki így számol, a <b>területek</b> váltószámával (<span class="math inline">\(100\)</span>) dolgozik térfogatnál. A hosszúságnál <span class="math inline">\(1\)</span> m <span class="math inline">\(=10\)</span> dm, a térfogatnál viszont a <span class="math inline">\(10\)</span>-es szorzó <b>háromszor</b> lép be: <span class="math inline">\(10^3=1000\)</span>. Itt a tévedés tízszeres — de aki <span class="math inline">\(\text{cm}^3\)</span>-t néz <span class="math inline">\(\text{m}^3\)</span>-nek, az már milliószorosat téved, és ez a betonrendelésnél az árban is meglátszik.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ 1 m³ = 1000 dm³ = 1000 liter, tehát 0,75 · 1000 = 750." data-nem="✘ 1 m³ = 1000 liter (nem 100 és nem 10 000), ezért 0,75 m³ = 750 liter.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Hány liter fér egy <span class="math inline">\(0{,}75\ \text{m}^3\)</span>-es tartályba?</p>
+      <div class="opciok"><button><span class="math inline">\(750\)</span> liter</button><button><span class="math inline">\(75\)</span> liter</button><button><span class="math inline">\(7500\)</span> liter</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-hasab.html#alap-7">🐕 Tér-eb-ugrás <span class="cimke">A 7–16</span></a><a class="sav bruno" href="feladatok-hasab.html#kozep-5">👑 Királyi Gárda <span class="cimke">K 5–12</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Prizma:</b> Kívülről és belülről is megmérted a kristályt. Most jön a kérdés, amit a Zónában a leggyakrabban feltesznek: <b>mi van benne?</b> Ehhez el kell metszeni — és tudni kell, milyen alakzatot kapunk.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-hasab.html"><span class="irany">← Előző</span><span class="hova">A hasáb</span></a>
+      <a class="kov" href="tananyag-hasab-sikmetszetek.html"><span class="irany">Következő →</span><span class="hova">A hasáb síkmetszetei</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

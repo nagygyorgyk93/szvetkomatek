@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A gúla felszíne és térfogata — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Poliéderek</a> ›
+  <span class="itt">A gúla felszíne és térfogata — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A gúla felszíne és térfogata</h1>
+  <p class="alcim">A palást az oldallap-magassággal, a térfogat harmada, és az összetett testek.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Kristálypára Kristályok · 9/11</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Prizma:</b> Ugyanakkora alapon és ugyanakkora magassággal a tüske térfogata <b>harmadakkora</b>, mint az oszlopé. Nem közelítés, nem ökölszabály: pontosan egyharmad, és be is lehet látni. Ez az arány adja a Zóna energiamérlegének nagy részét.</p></div>
+
+    <p>A felszín az alaplapból és a palástból áll össze; a hibák szinte mind a palástnál csúsznak be, mert ott az <b>oldallap magassága</b> kell, nem az oldalél. Ezért kezdjük ezzel.</p>
+
+    <h2 id="s1">A felszín</h2>
+
+    <p>A gúla palástja csupa háromszögből áll. <b>Szabályos</b> gúlánál ezek egybevágó egyenlő szárú háromszögek: mindegyik alapja <span class="math inline">\(a\)</span>, magassága <span class="math inline">\(m_o\)</span>, tehát egy oldallap területe <span class="math inline">\(\frac{a\,m_o}{2}\)</span>.</p>
+
+    <div class="doboz tetel" id="tetel-gula-felszin">
+      <p class="cim"><span class="ikon">📘</span> A szabályos gúla felszíne</p>
+      <p>Ha az alaplap <span class="math inline">\(n\)</span> oldalú, akkor</p><span class="math display">\[M=n\cdot\frac{a\,m_o}{2}=\frac{K\,m_o}{2},\qquad F=B+M,\]</span><p>ahol <span class="math inline">\(K=na\)</span> az alaplap kerülete, <span class="math inline">\(B\)</span> az alaplap területe, <span class="math inline">\(m_o\)</span> pedig az oldallapnak az <b>alapélhez tartozó magassága</b>.</p><p>A gúlának <b>egy</b> alaplapja van (a hasábnak alaplapja és fedőlapja is), ezért itt <span class="math inline">\(B\)</span> és nem <span class="math inline">\(2B\)</span> szerepel. Ha a gúla nem szabályos, az oldallapokat egyenként kell kiszámolni.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 320 280" width="320" height="280" role="img" aria-label="A gúla hálója síkba kiterítve">
+      <rect x="118.0" y="98.0" width="84.0" height="84.0" fill="#3b82f6" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+      <text x="160.0" y="144.0" font-size="11" fill="#475569" text-anchor="middle">alaplap</text>
+      <polygon points="118.0,98.0 202.0,98.0 160.0,32.5" fill="#047857" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+      <polygon points="118.0,182.0 202.0,182.0 160.0,247.5" fill="#047857" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+      <polygon points="118.0,98.0 118.0,182.0 52.5,140.0" fill="#047857" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+      <polygon points="202.0,98.0 202.0,182.0 267.5,140.0" fill="#047857" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+    </svg>
+    </div>
+    <p class="cap">A négyzetes gúla hálója: az alaplap és a négy oldallap. A háromszögek magassága <span class="math inline">\(m_o\)</span> — ez a szám kell a palásthoz.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„Az oldallap háromszög, az oldala <span class="math inline">\(b\)</span> — a területe tehát <span class="math inline">\(\frac{a\cdot b}{2}\)</span>."</i></p><p>A háromszög területéhez az alaphoz tartozó <b>magasság</b> kell, nem a szár. Az oldallap alapja <span class="math inline">\(a\)</span>, a hozzá tartozó magasság <span class="math inline">\(m_o\)</span> — az oldalél (<span class="math inline">\(b\)</span>) csak a háromszög szára, és mindig hosszabb, mint <span class="math inline">\(m_o\)</span>. Ha <span class="math inline">\(b\)</span>-vel számolsz, a palást túl nagy lesz.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A háromszög területéhez a hozzá tartozó magasság kell — az oldallapé m_o." data-nem="✘ Az oldallapok háromszögek, nem négyzetek — és a területükhöz nem az oldalél kell, hanem az alapélhez tartozó magasság, m_o.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik képlet adja a szabályos négyoldalú gúla palástját?</p>
+      <div class="opciok"><button><span class="math inline">\(M=4\cdot\frac{a\,m_o}{2}\)</span>, ahol <span class="math inline">\(m_o\)</span> az oldallap magassága</button><button><span class="math inline">\(M=4\cdot\frac{a\,b}{2}\)</span>, ahol <span class="math inline">\(b\)</span> az oldalél</button><button><span class="math inline">\(M=4a^2\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Miért harmad a térfogat</h2>
+
+    <div class="doboz tetel" id="tetel-gula-terfogat">
+      <p class="cim"><span class="ikon">📘</span> A gúla térfogata</p>
+      <p>Minden gúla térfogata</p><span class="math display">\[V=\frac{B\cdot m}{3},\]</span><p>ahol <span class="math inline">\(B\)</span> az alaplap területe, <span class="math inline">\(m\)</span> pedig a magasság.</p>
+    </div>
+
+    <p>A <b>harmad</b> nem önkényes szám. Vegyük az <span class="math inline">\(ABCA_1B_1C_1\)</span> háromoldalú hasábot, és bontsuk fel a következő három gúlára: <span class="math inline">\(A_1ABC\)</span>, <span class="math inline">\(A_1B_1BC\)</span> és <span class="math inline">\(A_1B_1C_1C\)</span>.</p><ul><li>Az első kettőnek közös a <span class="math inline">\(C\)</span> csúcsa, az alapjuk pedig az <span class="math inline">\(A_1AB\)</span>, illetve az <span class="math inline">\(A_1B_1B\)</span> háromszög — ezek az <span class="math inline">\(ABB_1A_1\)</span> paralelogramma két fele, tehát egyenlő területűek és egy síkban vannak.</li><li>A második és a harmadik közös csúcsa <span class="math inline">\(A_1\)</span>, az alapjuk a <span class="math inline">\(B_1BC\)</span>, illetve a <span class="math inline">\(B_1C_1C\)</span> háromszög — a <span class="math inline">\(BCC_1B_1\)</span> paralelogramma két fele.</li></ul><p>Az <b>egyenlő alapterületű és egyenlő magasságú gúlák térfogata egyenlő</b> — ezt itt alapelvként fogadjuk el, a pontos bizonyítása nem tananyagunk. Eszerint mind a három darab térfogata ugyanakkora, és együtt kiadják a hasábot, tehát</p><span class="math display">\[V_{\text{gúla}}=\frac{V_{\text{hasáb}}}{3}=\frac{B\cdot m}{3}.\]</span><p>Tetszőleges alapú gúlára ebből következik a képlet: az alaplapot háromszögekre bontjuk, minden darab háromoldalú gúla lesz — <b>ugyanazzal az <span class="math inline">\(m\)</span> magassággal</b>, hiszen a csúcs közös —, ezért a térfogatok összege <span class="math inline">\(\frac{B_1m}{3}+\dots+\frac{B_km}{3}=\frac{Bm}{3}\)</span>.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>Ezért fér egy kúpos fagylalttölcsérbe pontosan harmadannyi, mint egy ugyanolyan széles és magas hengeres pohárba — a kúpra ugyanez a harmad érvényes, ahogy azt a következő témakörben látni fogjuk. És ezért van a sátortető alatt jóval kevesebb levegő van, mint amennyit a tetőtér magassága alapján gondolnánk.</p>
+    </div>
+
+    <h2 id="s3">Kidolgozott példák</h2>
+
+    <div class="doboz pelda" id="pelda-gula-felszin">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció</p>
+      <p>Egy szabályos négyoldalú gúla alapéle <span class="math inline">\(6\)</span> cm, magassága <span class="math inline">\(4\)</span> cm. Mekkora a felszíne és a térfogata?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>Az <a href="tananyag-gula.html#pelda-gula-adatok">előző egységben</a> már kiszámoltuk: az alaplap apotémája <span class="math inline">\(\rho=\frac a2=3\)</span> cm, az oldallap magassága pedig <span class="math inline">\(m_o=\sqrt{4^2+3^2}=5\)</span> cm.</p><p><b>Alaplap:</b> <span class="math inline">\(B=a^2=36\ \text{cm}^2\)</span>. <b>Kerület:</b> <span class="math inline">\(K=4\cdot 6=24\)</span> cm.</p><p><b>Palást:</b> <span class="math inline">\(M=\frac{K\,m_o}{2}=\frac{24\cdot 5}{2}=60\ \text{cm}^2\)</span>.</p><p><b>Felszín:</b> <span class="math inline">\(F=B+M=36+60=96\ \text{cm}^2\)</span>.</p><p><b>Térfogat:</b> <span class="math inline">\(V=\frac{B\,m}{3}=\frac{36\cdot 4}{3}=48\ \text{cm}^3\)</span>.</p></div></details>
+    </div>
+
+    <div class="doboz pelda" id="pelda-hatszog-gula">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció</p>
+      <p>Egy szabályos hatoldalú gúla alapéle <span class="math inline">\(4\)</span> cm, az oldallap magassága <span class="math inline">\(5\)</span> cm. Mekkora a felszíne? És a magassága?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>Alaplap:</b> <span class="math inline">\(B=6\cdot\frac{4^2\sqrt3}{4}=24\sqrt3\approx 41{,}57\ \text{cm}^2\)</span>.</p><p><b>Palást:</b> <span class="math inline">\(K=24\)</span> cm, ezért <span class="math inline">\(M=\frac{24\cdot 5}{2}=60\ \text{cm}^2\)</span>, és <span class="math inline">\(F=24\sqrt3+60\approx 101{,}57\ \text{cm}^2\)</span>.</p><p><b>Magasság.</b> A szabályos hatszög apotémája <span class="math inline">\(\rho=\frac{a\sqrt3}{2}=2\sqrt3\)</span> cm, tehát abból a derékszögű háromszögből, amely a magasságot, az apotémát és az oldallap magasságát köti össze:</p><span class="math display">\[m=\sqrt{m_o^2-\rho^2}=\sqrt{25-12}=\sqrt{13}\approx 3{,}61\ \text{cm}.\]</span></div></details>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 340 300" width="340" height="300" role="img" aria-label="Szabályos hatoldalú gúla">
+      <line x1="187.9" y1="274.0" x2="311.6" y2="238.4" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="311.6" y1="238.4" x2="293.6" y2="202.7" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="293.6" y1="202.7" x2="152.1" y2="202.7" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="152.1" y1="202.7" x2="28.4" y2="238.4" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="28.4" y1="238.4" x2="46.4" y2="274.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="46.4" y1="274.0" x2="187.9" y2="274.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="187.9" y1="274.0" x2="170.0" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="311.6" y1="238.4" x2="170.0" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="293.6" y1="202.7" x2="170.0" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="152.1" y1="202.7" x2="170.0" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="28.4" y1="238.4" x2="170.0" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="46.4" y1="274.0" x2="170.0" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="170.0" y1="238.4" x2="170.0" y2="26.0" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 3"/>
+      <path d="M170.0,227.4 L174.9,237.2 L174.9,248.2" fill="none" stroke="#ef4444" stroke-width="1.2"/>
+      <line x1="170.0" y1="238.4" x2="117.1" y2="274.0" stroke="#047857" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 3"/>
+      <line x1="117.1" y1="274.0" x2="170.0" y2="26.0" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M119.0,265.2 L126.5,260.2 L124.6,269.0" fill="none" stroke="#f59e0b" stroke-width="1.2"/>
+      <text x="194.7" y="292.4" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">A</text>
+      <text x="326.6" y="243.4" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">B</text>
+      <text x="308.0" y="203.5" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">C</text>
+      <text x="145.3" y="194.3" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">D</text>
+      <text x="13.4" y="243.4" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">E</text>
+      <text x="32.0" y="283.2" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">F</text>
+      <text x="170.0" y="17.0" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">G</text>
+      <text x="177.0" y="132.2" font-size="13" fill="#ef4444" text-anchor="start" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">m</text>
+      <text x="143.6" y="270.2" font-size="13" fill="#047857" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">ρ</text>
+      <text x="134.6" y="152.0" font-size="13" fill="#f59e0b" text-anchor="end" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">m<tspan font-size='9' dy='3'>o</tspan></text>
+    </svg>
+    </div>
+    <p class="cap">Szabályos hatoldalú gúla.</p>
+
+    <h2 id="s4">Összetett testek</h2>
+
+    <p>A valós tárgyak ritkán „tiszta” testek: egy torony alsó része hasáb, a teteje gúla. Ilyenkor a <b>térfogatokat összeadjuk</b>, a <b>felszínnél</b> viszont figyelni kell: az összeillesztésnél lévő lapok <b>belülre</b> kerülnek, tehát nem tartoznak a felszínhez.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 330 270" width="330" height="270" role="img" aria-label="Összetett test: négyzetes hasáb és a rá állított gúla">
+      <line x1="44.6" y1="244.0" x2="212.9" y2="244.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="44.6" y1="151.4" x2="212.9" y2="151.4" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="44.6" y1="244.0" x2="44.6" y2="151.4" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="44.6" y1="151.4" x2="165.0" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="212.9" y1="244.0" x2="285.4" y2="195.1" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="212.9" y1="151.4" x2="285.4" y2="102.5" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="212.9" y1="244.0" x2="212.9" y2="151.4" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="212.9" y1="151.4" x2="165.0" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="285.4" y1="195.1" x2="117.1" y2="195.1" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="285.4" y1="102.5" x2="117.1" y2="102.5" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="285.4" y1="195.1" x2="285.4" y2="102.5" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="285.4" y1="102.5" x2="165.0" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="117.1" y1="195.1" x2="44.6" y2="244.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="117.1" y1="102.5" x2="44.6" y2="151.4" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="117.1" y1="195.1" x2="117.1" y2="102.5" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="117.1" y1="102.5" x2="165.0" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+    </svg>
+    </div>
+    <p class="cap">Négyzetes hasáb és a rá állított szabályos négyoldalú gúla. A közös négyzetlap belülre kerül: a felszínbe nem számít bele.</p>
+
+    <div class="doboz pelda" id="pelda-gula-osszetett">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció</p>
+      <p>Egy torony alsó része <span class="math inline">\(6\)</span> m alapélű, <span class="math inline">\(5\)</span> m magas négyzetes hasáb; a teteje a hasáb fedőlapjára illesztett, <span class="math inline">\(4\)</span> m magas szabályos négyoldalú gúla. Mekkora a torony térfogata és a felszíne?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>A hasáb térfogata <span class="math inline">\(V_1=6^2\cdot 5=180\ \text{m}^3\)</span>.</p><p>A gúla alaplapja ugyanaz a négyzet, ezért <span class="math inline">\(V_2=\frac{36\cdot 4}{3}=48\ \text{m}^3\)</span>.</p><p>A torony térfogata <span class="math inline">\(V=180+48=228\ \text{m}^3\)</span>.</p><p><b>Felszín.</b> A hasáb fedőlapja és a gúla alaplapja egymáshoz simul, tehát belülre kerül; a talpon lévő négyzet viszont látszik. A gúla oldallap-magassága <span class="math inline">\(m_o=\sqrt{4^2+3^2}=5\)</span> m, ezért</p><span class="math display">\[F=36+4\cdot 6\cdot 5+\frac{24\cdot 5}{2}=36+120+60=216\ \text{m}^2,\]</span><p>ahol a három tag rendre a talp, a hasáb palástja és a gúla palástja.</p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A hasáb fedőlapja és a gúla alaplapja egymáshoz simul, tehát belülre kerül; a talpon lévő alaplap viszont a felszín része." data-nem="✘ Két lapot nem szabad beleszámolni: a hasáb fedőlapját és a gúla alaplapját — ezek az összeillesztésnél belülre kerülnek. A test alján lévő lap viszont látszik.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy hasábra a fedőlapjával <b>pontosan egybevágó</b> alaplapú gúlát állítunk. Hogyan kapjuk meg az összetett test <b>felszínét</b>?</p>
+      <div class="opciok"><button>A hasáb alaplapja + a hasáb palástja + a gúla palástja</button><button>A hasáb teljes felszíne + a gúla teljes felszíne</button><button>A hasáb palástja + a gúla palástja</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-gula.html#alap-6">🐕 Tér-eb-ugrás <span class="cimke">A 6–15</span></a><a class="sav bruno" href="feladatok-gula.html#kozep-5">👑 Királyi Gárda <span class="cimke">K 5–12</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Prizma:</b> A tüske mérve van. Most jön a kérdés, amiben Maxi a legtöbb kadétot elkapja: ha a tüskét az alaplappal párhuzamos síkkal, <b>félmagasságban</b> elvágjuk, mekkora a metszet <b>területe</b>? A válasz nem az, amit elsőre gondolnál.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-gula.html"><span class="irany">← Előző</span><span class="hova">A gúla és elemei</span></a>
+      <a class="kov" href="tananyag-gula-sikmetszetek.html"><span class="irany">Következő →</span><span class="hova">A gúla síkmetszetei</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

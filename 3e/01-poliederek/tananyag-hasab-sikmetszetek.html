@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A hasáb síkmetszetei — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Poliéderek</a> ›
+  <span class="itt">A hasáb síkmetszetei — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A hasáb síkmetszetei</h1>
+  <p class="alcim">Az alappal párhuzamos metszet, az átlós metszet és a metszet területének kiszámítása.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Kristálypára Kristályok · 7/11</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Prizma:</b> A kristály belsejét nem lehet megnézni anélkül, hogy elmetszenénk. A metszés viszont nem véletlenszerű: attól függ, <b>hogyan áll a metszősík</b>, hogy háromszöget, téglalapot vagy éppen szabályos hatszöget kapunk. Két kérdésre kell tudnod válaszolni: <b>milyen alakzat</b> a metszet, és <b>mekkora</b> a területe.</p></div>
+
+    <p>Ez a témakör harmadik tanulási célja. A felmérőkön rendszeresen szerepel — általában úgy, hogy a metszet fajtáját megadják, és a területet kell kiszámolni.</p>
+
+    <h2 id="s1">Mi a síkmetszet</h2>
+
+    <div class="doboz definicio" id="def-sikmetszet">
+      <p class="cim"><span class="ikon">📗</span> Síkmetszet</p>
+      <p>Egy test <b>síkmetszete</b> a test és egy sík közös része. Konvex <b>poliédernél</b> — ha a sík a test belsejébe is behatol — ez mindig <b>síksokszög</b>: a határa azokból a szakaszokból áll, amelyek mentén a metszősík a test lapjait metszi. (Ha a sík csak érinti a testet, a közös rész lehet pont, szakasz vagy egy egész lap.)</p><p>A metszet csúcsai tehát ott vannak, ahol a metszősík a test <b>éleit</b> döfi.</p>
+    </div>
+
+    <p>Ebből következik egy hasznos szabály: a metszet <b>annyi oldalú</b>, ahány lapját a sík ténylegesen elmetszi — egy lapból legfeljebb egy oldal származhat. A négyzetes hasábnak hat lapja van, ezért a metszete legfeljebb hatszög; a hatoldalú hasábnak nyolc lapja van, ott a metszet akár nyolcszög is lehet.</p>
+
+    <h2 id="s2">Alappal párhuzamos metszet</h2>
+
+    <div class="doboz tetel" id="tetel-hasab-parhuzamos-metszet">
+      <p class="cim"><span class="ikon">📘</span> Az alappal párhuzamos metszet</p>
+      <p>Ha a metszősík <b>párhuzamos az alaplappal</b>, a metszet az alaplappal <b>egybevágó</b> sokszög — függetlenül attól, milyen magasan metszünk.</p><p>Ez a hasáb sajátossága: minden alappal párhuzamos keresztmetszete ugyanakkora. (A gúlánál ez másképp lesz — ott a metszet <b>hasonló</b>, de kisebb.)</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 330 290" width="330" height="290" role="img" aria-label="Az alaplappal párhuzamos metszet egybevágó az alaplappal">
+      <line x1="179.3" y1="264.0" x2="278.1" y2="235.5" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="278.1" y1="235.5" x2="263.8" y2="207.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="263.8" y1="207.0" x2="150.7" y2="207.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="150.7" y1="207.0" x2="51.9" y2="235.5" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="51.9" y1="235.5" x2="66.2" y2="264.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="66.2" y1="264.0" x2="179.3" y2="264.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="179.3" y1="83.0" x2="278.1" y2="54.5" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="278.1" y1="54.5" x2="263.8" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="263.8" y1="26.0" x2="150.7" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="150.7" y1="26.0" x2="51.9" y2="54.5" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="51.9" y1="54.5" x2="66.2" y2="83.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="66.2" y1="83.0" x2="179.3" y2="83.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="179.3" y1="264.0" x2="179.3" y2="83.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="278.1" y1="235.5" x2="278.1" y2="54.5" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="263.8" y1="207.0" x2="263.8" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="150.7" y1="207.0" x2="150.7" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="51.9" y1="235.5" x2="51.9" y2="54.5" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="66.2" y1="264.0" x2="66.2" y2="83.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <polygon points="179.3,164.4 278.1,135.9 263.8,107.5 150.7,107.5 51.9,135.9 66.2,164.4" fill="#047857" fill-opacity="0.2" stroke="#047857" stroke-width="1.6" stroke-linejoin="round"/>
+      <text x="186.1" y="282.4" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">A</text>
+      <text x="293.1" y="240.5" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">B</text>
+      <text x="278.2" y="207.9" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">C</text>
+      <text x="143.9" y="198.6" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">D</text>
+      <text x="36.9" y="240.5" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">E</text>
+      <text x="51.8" y="273.2" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">F</text>
+      <text x="187.0" y="95.2" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">A<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="295.1" y="51.5" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">B<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="280.1" y="18.3" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">C<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="143.0" y="7.8" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">D<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="34.9" y="51.5" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">E<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="49.9" y="84.7" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">F<tspan font-size='9' dy='3'>1</tspan></text>
+    </svg>
+    </div>
+    <p class="cap">Az alaplappal párhuzamos metszet egybevágó az alaplappal.</p>
+
+    <h2 id="s3">Átlós metszetek</h2>
+
+    <p>Az <b>átlós metszet</b> az a metszet, amelyet két <b>nem szomszédos oldalélen</b> átmenő sík ad. Ez a sík az alaplapot annak egyik <b>átlója</b> mentén metszi.</p>
+
+    <div class="doboz tetel" id="tetel-hasab-atlos-metszet">
+      <p class="cim"><span class="ikon">📘</span> Az egyenes hasáb átlós metszete</p>
+      <p><b>Egyenes</b> hasáb átlós metszete <b>téglalap</b>, amelynek</p><ul><li>egyik oldala az alaplap megfelelő <b>átlója</b> (<span class="math inline">\(d\)</span>),</li><li>a másik oldala a hasáb <b>magassága</b> (<span class="math inline">\(m\)</span>),</li></ul><p>ezért a területe <span class="math inline">\(T=d\cdot m\)</span>.</p><p>Ferde hasábnál a metszet általában csak paralelogramma — a kikötés tehát nem elhagyható.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 310 280" width="310" height="280" role="img" aria-label="A négyzetes hasáb átlós metszete az AC és A1C1 átlókon át">
+      <polygon points="58.5,254.0 251.5,214.8 251.5,26.0 58.5,65.2" fill="#3b82f6" fill-opacity="0.2" stroke="#3b82f6" stroke-width="1.6" stroke-linejoin="round"/>
+      <line x1="58.5" y1="254.0" x2="193.4" y2="254.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="193.4" y1="254.0" x2="251.5" y2="214.8" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="251.5" y1="214.8" x2="116.6" y2="214.8" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="116.6" y1="214.8" x2="58.5" y2="254.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="58.5" y1="65.2" x2="193.4" y2="65.2" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="193.4" y1="65.2" x2="251.5" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="251.5" y1="26.0" x2="116.6" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="116.6" y1="26.0" x2="58.5" y2="65.2" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="58.5" y1="254.0" x2="58.5" y2="65.2" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="193.4" y1="254.0" x2="193.4" y2="65.2" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="251.5" y1="214.8" x2="251.5" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="116.6" y1="214.8" x2="116.6" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <text x="43.8" y="262.0" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">A</text>
+      <text x="206.7" y="265.8" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">B</text>
+      <text x="266.2" y="216.8" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">C</text>
+      <text x="103.3" y="213.0" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">D</text>
+      <text x="41.8" y="65.6" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">A<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="208.5" y="69.9" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">B<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="268.2" y="19.6" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">C<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="101.5" y="15.3" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">D<tspan font-size='9' dy='3'>1</tspan></text>
+    </svg>
+    </div>
+    <p class="cap">A négyzetes hasáb átlós metszete az <span class="math inline">\(AC\)</span> és az <span class="math inline">\(A_1C_1\)</span> átlón át.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„A hasáb metszete olyan, mint az alaplapja — hatszög alapú hasábnál mindig hatszög."</i></p><p>Csak az <b>alappal párhuzamos</b> metszetre igaz. Egyenes hasábnál az átlós metszet <b>téglalap</b>, egy ferdén álló sík metszete pedig sem az alaplappal nem egybevágó, sem nem téglalap. Metszet előtt mindig azt kérdezd: <b>hogyan áll a sík?</b> — nem azt, hogy milyen a test.</p>
+    </div>
+
+    <h2 id="s4">A metszet területének kiszámítása</h2>
+
+    <p>A számolás mindig két lépés: (1) melyik alaplapi <b>átló</b> mentén metszünk, (2) az átló és a magasság szorzata. Az első lépés a nehezebb, mert a szabályos sokszögeknek <b>többféle hosszúságú</b> átlójuk van. A szabályos hatszögnél a hosszabb átló a szemközti csúcsokat köti össze, és átmegy a középponton, ezért a köréírt kör átmérője: <span class="math inline">\(2R=2a\)</span>. A rövidebb átló egy csúcsot hagy ki, és a beírt kör átmérőjével egyenlő: <span class="math inline">\(2\rho=a\sqrt3\)</span>.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 300 250" width="300" height="250" role="img" aria-label="A szabályos hatszög apotémája és köréírt sugara">
+      <polygon points="197.5,207.3 245.0,125.0 197.5,42.7 102.5,42.7 55.0,125.0 102.5,207.3" fill="#047857" fill-opacity="0.08" stroke="#0f172a" stroke-width="1.6" stroke-linejoin="round"/>
+      <line x1="150.0" y1="125.0" x2="197.5" y2="207.3" stroke="#cbd5e1" stroke-width="1"/>
+      <line x1="150.0" y1="125.0" x2="245.0" y2="125.0" stroke="#cbd5e1" stroke-width="1"/>
+      <line x1="150.0" y1="125.0" x2="197.5" y2="42.7" stroke="#cbd5e1" stroke-width="1"/>
+      <line x1="150.0" y1="125.0" x2="102.5" y2="42.7" stroke="#cbd5e1" stroke-width="1"/>
+      <line x1="150.0" y1="125.0" x2="55.0" y2="125.0" stroke="#cbd5e1" stroke-width="1"/>
+      <line x1="150.0" y1="125.0" x2="102.5" y2="207.3" stroke="#cbd5e1" stroke-width="1"/>
+      <line x1="150.0" y1="125.0" x2="221.2" y2="166.1" stroke="#f59e0b" stroke-width="1.7"/>
+      <line x1="150.0" y1="125.0" x2="245.0" y2="125.0" stroke="#3b82f6" stroke-width="1.7"/>
+      <text x="175.6" y="157.6" font-size="13" fill="#f59e0b" text-anchor="middle" font-style="italic" font-weight="600">ρ</text>
+      <text x="207.5" y="121.0" font-size="13" fill="#3b82f6" text-anchor="middle" font-style="italic" font-weight="600">R</text>
+      <text x="234.4" y="177.7" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">a</text>
+    </svg>
+    </div>
+    <p class="cap">A szabályos hatszögben a köréírt kör sugara <span class="math inline">\(R=a\)</span>, az apotéma <span class="math inline">\(\rho=\frac{a\sqrt3}{2}\)</span>. Innen a hosszabb átló <span class="math inline">\(2R=2a\)</span>, a rövidebb pedig <span class="math inline">\(2\rho=a\sqrt3\)</span>.</p>
+
+    <div class="doboz pelda" id="pelda-hatszog-metszet">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció</p>
+      <p>Egy szabályos hatoldalú hasáb alapéle <span class="math inline">\(5\)</span> cm, magassága <span class="math inline">\(7\)</span> cm. Mekkora a kétféle átlós metszetének a területe?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>A szabályos hatszögnek <b>kétféle</b> átlója van:</p><ul><li>a <b>hosszabb</b> a szemközti csúcsokat köti össze, és átmegy a középponton: <span class="math inline">\(d_1=2R=2a=10\)</span> cm;</li><li>a <b>rövidebb</b> egy csúcsot hagy ki, és a beírt kör átmérője: <span class="math inline">\(d_2=2\rho=a\sqrt3=5\sqrt3\approx 8{,}66\)</span> cm.</li></ul><p>A két metszet területe ezért</p><span class="math display">\[T_1=d_1\cdot m=10\cdot 7=70\ \text{cm}^2,\qquad T_2=d_2\cdot m=5\sqrt3\cdot 7=35\sqrt3\approx 60{,}62\ \text{cm}^2.\]</span><p>Ugyanaz a test, két különböző metszet — a feladat szövegéből mindig ki kell derülnie, melyikről van szó.</p></div></details>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Csak érdekesség</p>
+      <p>A kockát el lehet metszeni úgy is, hogy a metszet <b>szabályos hatszög</b> legyen: a metszősík hat élt döf, mindegyiket a felezőpontjában. Ez az egyik legszebb példa arra, hogy a metszet alakját a <b>sík állása</b> dönti el, nem a testé.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A szabályos hatszögnek kétféle hosszúságú átlója van: a hosszabb 2a = 10 cm, a rövidebb a√3 = 5√3 cm." data-nem="✘ Rajzold be a hatszög átlóit! Kétféle hosszúságút találsz: az egyik átmegy a középponton (2a), a másik egy csúcsot hagy ki (a√3).">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy szabályos <b>hatoldalú</b> hasáb alapéle <span class="math inline">\(5\)</span> cm. Melyik lehet az átlós metszetének az <b>alaplapban fekvő</b> oldala?</p>
+      <div class="opciok"><button><span class="math inline">\(10\)</span> cm vagy <span class="math inline">\(5\sqrt3\)</span> cm — kétféle átló van</button><button>Csak <span class="math inline">\(10\)</span> cm, mert az átló mindig a szemközti csúcsokat köti össze</button><button>Csak <span class="math inline">\(5\)</span> cm, mert az átló egyenlő az oldallal</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-hasab.html#alap-17">🐕 Tér-eb-ugrás <span class="cimke">A 17–20</span></a><a class="sav bruno" href="feladatok-hasab.html#kozep-13">👑 Királyi Gárda <span class="cimke">K 13–16</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Prizma:</b> Az oszlopos kristályokkal végeztünk: ismered a felszínüket, a térfogatukat és a belsejüket is. A Zóna mélyén viszont olyan képződmények nőnek, amelyek <b>egyetlen pontba futnak össze</b>. Más test, más képlet — és egy meglepően makacs <span class="math inline">\(\frac13\)</span>. Jön a <b>gúla</b>.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-hasab-felszin-terfogat.html"><span class="irany">← Előző</span><span class="hova">A hasáb felszíne és térfogata</span></a>
+      <a class="kov" href="feladatok-hasab.html"><span class="irany">Következő →</span><span class="hova">Feladatok — a hasáb</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

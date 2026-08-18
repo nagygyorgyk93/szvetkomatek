@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A hasáb — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Poliéderek</a> ›
+  <span class="itt">A hasáb — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A hasáb — amikor a sokszög elindul a térbe</h1>
+  <p class="alcim">A hasáb keletkezése, fajtái, hálója, valamint a lapátló és a testátló.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Kristálypára Kristályok · 5/11</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Prizma:</b> A Karantén-Zóna legtöbb kristálya <b>oszlopos</b>: egy sokszög elindul a saját síkjából, és söpör végig egy térrészt. Ez a hasáb. Ha meg tudod mondani, melyik éle mekkora, akkor a benne tárolt energiát is ki tudod számolni — de előbb ismerni kell a test <b>alkatrészeit</b>: melyik él az alapél, mekkora a magasság, és mi az a testátló, amit a kadétok fele meg sem talál a testben.</p></div>
+
+    <p>Ebben a blokkban találkozol az első igazi <b>testtel</b>. Az előző egységekben a tér szabályait és <a href="tananyag-alaplap.html">az alaplapot</a> néztük meg — most ezek összeállnak.</p>
+
+    <h2 id="s1">Hogyan keletkezik a hasáb</h2>
+
+    <div class="doboz definicio" id="def-hasab">
+      <p class="cim"><span class="ikon">📗</span> A hasáb</p>
+      <p>Vegyünk egy síksokszöget, és toljuk el a saját síkjából egy irányba. A kiindulási sokszög és az eltolt képe a test két <b>alaplapja</b> (a felsőt szokás <b>fedőlapnak</b> is hívni), a megfelelő csúcsokat összekötő szakaszok az <b>oldalélek</b>, a köztük keletkező paralelogrammák pedig az <b>oldallapok</b>. Az oldallapok együtt alkotják a <b>palástot</b>.</p><p>A két alaplap <b>egybevágó és párhuzamos</b>, az oldalélek pedig egyenlő hosszúak és párhuzamosak egymással.</p>
+    </div>
+
+    <p>A hasáb <b>magassága</b> (<span class="math inline">\(m\)</span>) a két alaplap síkjának távolsága — vagyis merőleges távolság, ahogy azt a <a href="tananyag-meroleges-es-szog.html#def-hajlasszog">szögek és távolságok</a> egységben láttuk. Ez nem mindig egyezik meg az oldalél hosszával: csak akkor, ha az oldalélek merőlegesek az alaplapra.</p>
+
+    <h2 id="s2">Fajták</h2>
+
+    <p>Az elnevezések három dolgot rögzítenek: hogy állnak az oldalélek, milyen az alaplap, és hány oldalú. Az alapél az alaplap egy oldala; a <b>magasságot</b> <span class="math inline">\(m\)</span>-mel jelöljük.</p>
+
+    <div class="doboz definicio" id="def-szabalyos-hasab">
+      <p class="cim"><span class="ikon">📗</span> Egyenes, ferde és szabályos hasáb</p>
+      <ul><li><b>Egyenes</b> a hasáb, ha az oldalélei merőlegesek az alaplapra. Ekkor az oldallapok téglalapok, és a magasság megegyezik az oldalél hosszával.</li><li><b>Ferde</b> a hasáb, ha az oldalélei nem merőlegesek az alaplapra. Ekkor a magasság <b>rövidebb</b>, mint az oldalél.</li><li><b>Szabályos</b> a hasáb, ha <b>egyenes</b>, és az alaplapja <b>szabályos sokszög</b>.</li></ul><p>A hasábot az alaplapja szerint nevezzük el: háromoldalú, négyoldalú, hatoldalú hasáb. A négyzet alapú egyenes hasábot röviden <b>négyzetes hasábnak</b> is hívjuk — ez ugyanaz, mint a szabályos négyoldalú hasáb.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 300 280" width="300" height="280" role="img" aria-label="Szabályos háromoldalú hasáb">
+      <line x1="215.1" y1="254.0" x2="198.6" y2="221.2" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="198.6" y1="221.2" x2="84.9" y2="254.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="84.9" y1="254.0" x2="215.1" y2="254.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="215.1" y1="58.8" x2="198.6" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="198.6" y1="26.0" x2="84.9" y2="58.8" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="84.9" y1="58.8" x2="215.1" y2="58.8" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="215.1" y1="254.0" x2="215.1" y2="58.8" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="198.6" y1="221.2" x2="198.6" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="84.9" y1="254.0" x2="84.9" y2="58.8" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <text x="229.7" y="262.3" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">A</text>
+      <text x="211.0" y="217.8" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">B</text>
+      <text x="70.1" y="261.0" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">C</text>
+      <text x="231.7" y="59.5" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">A<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="212.7" y="13.5" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">B<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="68.1" y="58.0" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">C<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="150.0" y="271.0" font-size="12" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">a</text>
+    </svg>
+    </div>
+    <p class="cap">Szabályos háromoldalú hasáb: az alaplapja egyenlő oldalú háromszög, az oldalélei merőlegesek rá.</p>
+
+    <div class="doboz definicio" id="def-teglatest">
+      <p class="cim"><span class="ikon">📗</span> Paralelepipedon, téglatest, kocka</p>
+      <p>Ha a hasáb alaplapja <b>paralelogramma</b>, a testet <b>paralelepipedonnak</b> nevezzük. Ennek minden lapja paralelogramma.</p><p>A <b>téglatest</b> olyan egyenes hasáb, amelynek az alaplapja téglalap — így mind a hat lapja téglalap. Ha ezenfelül minden éle egyenlő, <b>kockát</b> kapunk.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„Szabályos hasáb — akkor minden éle egyenlő, tehát az alapélből következik a magasság is."</i></p><p>Nem következik. A „szabályos” itt csak az <b>alaplapra</b> és az oldalélek <b>állására</b> vonatkozik: a magasság ettől függetlenül bármekkora lehet. Egy <span class="math inline">\(2\)</span> cm alapélű, <span class="math inline">\(50\)</span> cm magas szabályos négyoldalú hasáb ugyanolyan szabályos, mint egy <span class="math inline">\(2\)</span> cm magas. Az az <b>egyenes</b> hasáb, amelynek az alaplapja négyzet és minden éle egyenlő, a <b>kocka</b> — az csak egy speciális eset.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A „szabályos” az alaplapra és az oldalélek merőlegességére vonatkozik, a magasságra nem." data-nem="✘ Gondolj egy hosszú, vékony oszlopra: az alaplapja négyzet, az oldalélei merőlegesek rá — szabályos hasáb, pedig sem az élei nem egyenlők, sem az oldallapjai nem négyzetek.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik állítás igaz <b>minden</b> szabályos négyoldalú hasábra?</p>
+      <div class="opciok"><button>Az alaplapja négyzet, a magassága viszont tetszőleges</button><button>Minden éle egyenlő hosszú</button><button>Az oldallapjai négyzetek</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">A hasáb hálója</h2>
+
+    <p>Vágjuk fel a hasábot az egyik oldaléle mentén, és a két alaplap kerülete mentén is — de mindkét alaplapnál hagyjunk egy élt, amellyel az alaplap a paláston marad. Ezután terítsük ki a lapokat egy síkba. <b>Egyenes</b> hasábnál a palást egyetlen <b>téglalappá</b> nyílik ki: ennek egyik oldala az alaplap <b>kerülete</b>, a másik a hasáb <b>magassága</b>.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 330 250" width="330" height="250" role="img" aria-label="A hasáb hálója síkba kiterítve">
+      <rect x="44.3" y="94.8" width="241.5" height="60.4" fill="#047857" fill-opacity="0.08" stroke="#0f172a" stroke-width="1.5"/>
+      <line x1="84.5" y1="94.8" x2="84.5" y2="155.2" stroke="#cbd5e1" stroke-width="1.1"/>
+      <line x1="124.8" y1="94.8" x2="124.8" y2="155.2" stroke="#cbd5e1" stroke-width="1.1"/>
+      <line x1="165.0" y1="94.8" x2="165.0" y2="155.2" stroke="#cbd5e1" stroke-width="1.1"/>
+      <line x1="205.2" y1="94.8" x2="205.2" y2="155.2" stroke="#cbd5e1" stroke-width="1.1"/>
+      <line x1="245.5" y1="94.8" x2="245.5" y2="155.2" stroke="#cbd5e1" stroke-width="1.1"/>
+      <polygon points="84.5,25.1 44.3,25.1 24.1,60.0 44.3,94.8 84.5,94.8 104.6,60.0" fill="#3b82f6" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+      <polygon points="245.5,224.9 225.4,190.0 245.5,155.2 285.7,155.2 305.9,190.0 285.7,224.9" fill="#3b82f6" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+      <text x="165.0" y="129.0" font-size="12" fill="#475569" text-anchor="middle">palást</text>
+      <text x="165.0" y="170.2" font-size="12" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">K</text>
+      <text x="35.3" y="129.0" font-size="12" fill="#0f172a" text-anchor="end" font-style="italic" font-weight="600">m</text>
+    </svg>
+    </div>
+    <p class="cap">A szabályos hatoldalú hasáb hálója: két szabályos hatszög és a palást téglalapja, hat egyenlő részre osztva.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>A dobozok gyártása pontosan ez a művelet visszafelé: a gép egyetlen kartonlapból stancolja ki a hálót, és a hajtásélek adják a test éleit. Ezért számít a csomagolóiparban a <b>háló területe</b> — vagyis a felszín —, nem a doboz térfogata.</p>
+    </div>
+
+    <h2 id="s4">Átlók: lapátló és testátló</h2>
+
+    <p>A hasábban kétféle átló lehet: a <b>lapátló</b> egy lapon belül köt össze két <b>nem szomszédos</b> csúcsot, a <b>testátló</b> pedig két olyan csúcsot, amelyek nincsenek egy lapon. (Háromoldalú hasábnak nincs testátlója: bármely két csúcsa közös lapon van.)</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 340 265" width="340" height="265" role="img" aria-label="Téglatest az alaplap átlójával és a testátlójával">
+      <line x1="26.0" y1="231.1" x2="257.8" y2="231.1" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="257.8" y1="231.1" x2="314.0" y2="193.2" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="314.0" y1="193.2" x2="82.2" y2="193.2" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="82.2" y1="193.2" x2="26.0" y2="231.1" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="26.0" y1="71.8" x2="257.8" y2="71.8" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="257.8" y1="71.8" x2="314.0" y2="33.9" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="314.0" y1="33.9" x2="82.2" y2="33.9" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="82.2" y1="33.9" x2="26.0" y2="71.8" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="26.0" y1="231.1" x2="26.0" y2="71.8" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="257.8" y1="231.1" x2="257.8" y2="71.8" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="314.0" y1="193.2" x2="314.0" y2="33.9" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="82.2" y1="193.2" x2="82.2" y2="33.9" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="26.0" y1="231.1" x2="314.0" y2="33.9" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="26.0" y1="231.1" x2="314.0" y2="193.2" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round"/>
+      <text x="11.1" y="238.1" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">A</text>
+      <text x="272.5" y="239.3" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">B</text>
+      <text x="328.9" y="196.3" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">C</text>
+      <text x="67.5" y="195.1" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">D</text>
+      <text x="9.1" y="71.0" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">A<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="274.4" y="72.4" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">B<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="330.9" y="28.6" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">C<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="65.6" y="27.3" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">D<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="176.0" y="128.5" font-size="13" fill="#3b82f6" text-anchor="start" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">D</text>
+      <text x="170.0" y="206.2" font-size="13" fill="#f59e0b" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">d</text>
+    </svg>
+    </div>
+    <p class="cap">A téglatest alaplapjának átlója (<span class="math inline">\(d\)</span>, narancs) és a testátló (<span class="math inline">\(D\)</span>, kék). A levezetésben előbb a <span class="math inline">\(d\)</span>-t számoljuk ki, aztán abból a <span class="math inline">\(D\)</span>-t.</p>
+
+    <div class="doboz tetel" id="tetel-teglatest-atlo">
+      <p class="cim"><span class="ikon">📘</span> A téglatest testátlója</p>
+      <p>Ez a képlet <b>téglatestre</b> szól. Ha az egy csúcsból induló élek <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> és <span class="math inline">\(c\)</span> — ahol <span class="math inline">\(a\)</span> és <span class="math inline">\(b\)</span> az alaplap élei, <span class="math inline">\(c\)</span> pedig a magasság —, akkor a testátló</p><span class="math display">\[D=\sqrt{a^2+b^2+c^2}.\]</span><p><b>Levezetés két lépésben.</b> Az alaplap átlója a Pitagorasz-tétel szerint <span class="math inline">\(d=\sqrt{a^2+b^2}\)</span>. Ez a lapátló az oldaléllel és a testátlóval egy derékszögű háromszöget alkot (az oldalél merőleges az alaplapra), ezért <span class="math inline">\(D=\sqrt{d^2+c^2}=\sqrt{a^2+b^2+c^2}\)</span>.</p><p>Kockára (<span class="math inline">\(a=b=c\)</span>): a <b>lapátló</b> <span class="math inline">\(a\sqrt2\)</span>, a <b>testátló</b> <span class="math inline">\(a\sqrt3\)</span>.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-teglatest-atlo">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció</p>
+      <p>Egy téglatest alaplapjának élei <span class="math inline">\(3\)</span> cm és <span class="math inline">\(4\)</span> cm, a magassága <span class="math inline">\(12\)</span> cm. Mekkora a testátlója, és mekkora szöget zár be az alaplappal?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>Az alaplap átlója <span class="math inline">\(d=\sqrt{3^2+4^2}=5\)</span> cm, a testátló pedig</p><span class="math display">\[D=\sqrt{3^2+4^2+12^2}=\sqrt{169}=13\ \text{cm}.\]</span><p>A testátló vetülete az alaplapon éppen a <span class="math inline">\(d\)</span> lapátló, ezért a keresett szögre <span class="math inline">\(\operatorname{tg}\varphi=\frac{12}{5}=2{,}4\)</span>, ahonnan <span class="math inline">\(\varphi\approx 67{,}38^\circ\)</span>.</p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A testátló a√3 = 5√3; az 5√2 a lapátló volna." data-nem="✘ Két lépés: a lapátló 5√2, majd ezzel és az éllel újra Pitagorasz: √(50+25) = √75 = 5√3.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mekkora az <span class="math inline">\(5\)</span> cm élű kocka <b>testátlója</b>?</p>
+      <div class="opciok"><button><span class="math inline">\(5\sqrt3\approx 8{,}66\)</span> cm</button><button><span class="math inline">\(5\sqrt2\approx 7{,}07\)</span> cm</button><button><span class="math inline">\(15\)</span> cm</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-hasab.html#alap-1">🐕 Tér-eb-ugrás <span class="cimke">A 1–6</span></a><a class="sav bruno" href="feladatok-hasab.html#kozep-1">👑 Királyi Gárda <span class="cimke">K 1–4</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Prizma:</b> Az alkatrészeket ismered, a hálót látod. A háló területe a <b>felszín</b>, a test által bezárt tér a <b>térfogat</b> — a kristály hűlési sebessége az egyikből, az energiája a másikból jön. Számoljuk ki mindkettőt.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-terelemek.html"><span class="irany">← Előző</span><span class="hova">Feladatok — térelemek és poliéderek</span></a>
+      <a class="kov" href="tananyag-hasab-felszin-terfogat.html"><span class="irany">Következő →</span><span class="hova">A hasáb felszíne és térfogata</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

@@ -793,7 +793,8 @@ def _elso_el(poly):
 
 def svg_hasab(alap="negyzet", a=1.0, b=None, m=1.4, w=340, h=280,
               leiras="Egyenes hasáb", cimkez=True, magassag=False,
-              testatlo=False, lapatlo=False, metszet=None, feliratok=None):
+              testatlo=False, lapatlo=False, alapatlo=False, metszet=None,
+              feliratok=None):
     """Egyenes hasáb axonometrikus képe.
 
     `alap`: "haromszog" | "negyzet" | "teglalap" | "otszog" | "hatszog"
@@ -830,6 +831,12 @@ def svg_hasab(alap="negyzet", a=1.0, b=None, m=1.4, w=340, h=280,
                       dx=6, dy=-4, szin=KEK, horgony="start")
     if lapatlo:
         r.vonal(also3[0], felso3[1], szin=BOROSTYAN, sz=1.5)
+    if alapatlo and n >= 4:
+        k = n // 2
+        r.vonal(also3[0], also3[k], szin=BOROSTYAN, sz=1.6)
+        p, q = also3[0], also3[k]
+        r.felirat(((p[0]+q[0])/2, (p[1]+q[1])/2, 0), feliratok.get("d", "d"),
+                  dx=0, dy=-6, szin=BOROSTYAN)
     if "a" in feliratok:
         i = _elso_el(poly); j = (i + 1) % n
         p, q = also3[i], also3[j]
@@ -839,7 +846,7 @@ def svg_hasab(alap="negyzet", a=1.0, b=None, m=1.4, w=340, h=280,
 
 def svg_gula(alap="negyzet", a=1.0, b=None, m=1.5, w=340, h=290,
              leiras="Egyenes gúla", cimkez=True, magassag=True,
-             apotema=False, oldalel=False, metszet=None, arany=0.5,
+             apotema=False, oldalel=False, sugar=False, metszet=None, arany=0.5,
              feliratok=None):
     """Szabályos gúla; magasság talpponttal, oldallap-magasság (apotéma), oldalél."""
     feliratok = feliratok or {}
@@ -876,12 +883,18 @@ def svg_gula(alap="negyzet", a=1.0, b=None, m=1.5, w=340, h=290,
         i0 = _elso_el(poly)
         e0, e1 = poly[i0], poly[(i0 + 1) % n]
         fp = ((e0[0]+e1[0])/2, (e0[1]+e1[1])/2, 0.0)
-        r.vonal((0, 0, 0), fp, szin=BOROSTYAN, sz=1.4, szaggat="3 3", reteg=2)
+        r.vonal((0, 0, 0), fp, szin=ZOLD, sz=1.5, szaggat="3 3", reteg=2)
+        r.felirat((fp[0]/2, fp[1]/2, 0), feliratok.get("rho", "ρ"),
+                  dx=0, dy=14, szin=ZOLD, meret=13)
         r.vonal(fp, csucs, szin=BOROSTYAN, sz=1.6, reteg=2)
         r.felirat(((fp[0]+csucs[0])/2, (fp[1]+csucs[1])/2, (fp[2]+csucs[2])/2),
                   feliratok.get("mo", "m<tspan font-size='9' dy='3'>o</tspan>"),
                   dx=-9, dy=2, szin=BOROSTYAN, horgony="end")
         r.derekszog(fp, csucs, (0, 0, 0), szin=BOROSTYAN, meret=9)
+    if sugar:
+        r.vonal((0, 0, 0), also3[1], szin=LILA, sz=1.4, szaggat="3 3", reteg=2)
+        r.felirat((also3[1][0]/2, also3[1][1]/2, 0), feliratok.get("R", "R"),
+                  dx=6, dy=-4, szin=LILA, horgony="start", meret=13)
     if oldalel:
         r.vonal(also3[1], csucs, szin=KEK, sz=2.0, reteg=2)
         p = also3[1]
@@ -890,7 +903,9 @@ def svg_gula(alap="negyzet", a=1.0, b=None, m=1.5, w=340, h=290,
     if "a" in feliratok:
         i0 = _elso_el(poly); j0 = (i0 + 1) % n
         p, q = also3[i0], also3[j0]
-        r.felirat(((p[0]+q[0])/2, (p[1]+q[1])/2, 0), feliratok["a"], dy=17, meret=12)
+        # az él NEGYEDELŐPONTJA alá: a felezőpontban az apotéma talppontja van
+        r.felirat((p[0] + (q[0]-p[0])*0.25, p[1] + (q[1]-p[1])*0.25, 0),
+                  feliratok["a"], dy=17, meret=12)
     return r.kesz()
 
 
@@ -1089,13 +1104,16 @@ def _fej2(w, h, leiras):
             f'aria-label="{leiras}">']
 
 
+_TESTNEV = {"kocka": "kocka", "hasab": "hasáb", "gula": "gúla"}
+
+
 def svg_halo(test="kocka", n=4, hibas=False, w=340, h=260, leiras=None):
     """Kiterített háló: `test` = "kocka" | "hasab" | "gula".
 
     `hibas=True` (csak kockánál): olyan hatnégyzetes alakzat, amely NEM hajtható
     kockává — a térlátás-kvízhez.
     """
-    ki = _fej2(w, h, leiras or f"A {test} hálója síkba kiterítve")
+    ki = _fej2(w, h, leiras or f"A {_TESTNEV.get(test, test)} hálója síkba kiterítve")
     def negyzet(x, y, o, szin=ZOLD, felirat=""):
         ki.append(f'  <rect x="{x:.1f}" y="{y:.1f}" width="{o:.1f}" height="{o:.1f}" '
                   f'fill="{szin}" fill-opacity="0.10" stroke="{TINTA}" stroke-width="1.4"/>')
@@ -1127,17 +1145,26 @@ def svg_halo(test="kocka", n=4, hibas=False, w=340, h=260, leiras=None):
         for i in range(1, n):
             ki.append(f'  <line x1="{bx + i * o:.1f}" y1="{by:.1f}" x2="{bx + i * o:.1f}" '
                       f'y2="{by + m:.1f}" stroke="{HALVANY}" stroke-width="1.1"/>')
+        # A két alaplap ÉLBEN csatlakozik a paláshoz: a felső a bal szélső osztás fölé,
+        # az alsó a jobb szélső osztás alá, mindkettő a saját oldalára illesztve.
         R = o / (2 * math.sin(math.pi / n))
-        for jel in (-1, 1):
-            cx = bx + n * o / 2
-            cy = by - R - 6 if jel < 0 else by + m + R + 6
-            kezd = -math.pi / 2 + math.pi / n
-            pts = " ".join(f"{cx + R * math.cos(kezd + 2*math.pi*k/n):.1f},"
-                           f"{cy + R * math.sin(kezd + 2*math.pi*k/n):.1f}" for k in range(n))
+        rho = o / (2 * math.tan(math.pi / n))
+        for jel, xk in ((-1, bx + o / 2), (1, bx + (n - 0.5) * o)):
+            cy = by - rho if jel < 0 else by + m + rho
+            kezd = math.pi / 2 - math.pi / n if jel < 0 else -math.pi / 2 - math.pi / n
+            pts = " ".join(f"{xk + R * math.cos(kezd - jel * 2*math.pi*k/n):.1f},"
+                           f"{cy - R * math.sin(kezd - jel * 2*math.pi*k/n):.1f}"
+                           for k in range(n))
             ki.append(f'  <polygon points="{pts}" fill="{KEK}" fill-opacity="0.10" '
                       f'stroke="{TINTA}" stroke-width="1.4"/>')
         ki.append(f'  <text x="{bx + n * o / 2:.1f}" y="{by + m / 2 + 4:.1f}" font-size="12" '
                   f'fill="{SZURKE}" text-anchor="middle">palást</text>')
+        ki.append(f'  <text x="{bx + n * o / 2:.1f}" y="{by + m + 15:.1f}" font-size="12" '
+                  f'fill="{TINTA}" text-anchor="middle" font-style="italic" '
+                  f'font-weight="600">K</text>')
+        ki.append(f'  <text x="{bx - 9:.1f}" y="{by + m / 2 + 4:.1f}" font-size="12" '
+                  f'fill="{TINTA}" text-anchor="end" font-style="italic" '
+                  f'font-weight="600">m</text>')
     elif test == "gula":
         o = min(w, h) * 0.30
         cx, cy = w / 2, h / 2

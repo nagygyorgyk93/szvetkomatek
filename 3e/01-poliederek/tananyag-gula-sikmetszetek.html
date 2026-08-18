@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A gúla síkmetszetei — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Poliéderek</a> ›
+  <span class="itt">A gúla síkmetszetei — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A gúla síkmetszetei — a hasonlóság szabálya</h1>
+  <p class="alcim">Az alappal párhuzamos metszet, a hasonlóság hossz–terület–térfogat arányai és a tengelymetszetek.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Kristálypára Kristályok · 10/11</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Prizma:</b> Vágd el a tüskét félmagasságban. A metszet <b>nem</b> feleakkora területű, mint az alaplap, hanem <b>negyedakkora</b>. Aki ezt elrontja, a Kristálypára felét számolja el — és ez az a hiba, amit Maxi a torz tér-egyenleteiben szándékosan meghagy.</p></div>
+
+    <p>Ebben az egységben a gúla metszeteit nézzük meg, és közben egy olyan szabály bukkan elő, ami az egész geometriában érvényes: a hasonlóság <b>hossz–terület–térfogat</b> arányai.</p>
+
+    <h2 id="s1">Alappal párhuzamos metszet</h2>
+
+    <div class="doboz tetel" id="tetel-parhuzamos-metszet">
+      <p class="cim"><span class="ikon">📘</span> A metszet hasonló az alaplaphoz</p>
+      <p>Ha a gúlát az alaplappal <b>párhuzamos</b> síkkal metsszük, a metszet az alaplaphoz <b>hasonló</b> sokszög. A hasonlóság aránya</p><span class="math display">\[k=\frac{x}{m},\]</span><p>ahol <span class="math inline">\(x\)</span> a <b>metszősík</b> csúcstól mért távolsága (a magasságon mérve), <span class="math inline">\(m\)</span> pedig a gúla magassága. Értelmes metszethez <span class="math inline">\(0&lt;k&lt;1\)</span> kell: <span class="math inline">\(k=1\)</span> maga az alaplap, <span class="math inline">\(k=0\)</span> pedig már csak a csúcs.</p><p>A metszet fölötti rész maga is gúla — az eredetihez hasonló, <span class="math inline">\(k\)</span> arányban kicsinyítve.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 330 300" width="330" height="300" role="img" aria-label="A gúla alappal párhuzamos metszete félmagasságban">
+      <line x1="63.3" y1="274.0" x2="205.4" y2="274.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="205.4" y1="274.0" x2="266.7" y2="232.7" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="266.7" y1="232.7" x2="124.6" y2="232.7" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="124.6" y1="232.7" x2="63.3" y2="274.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="63.3" y1="274.0" x2="165.0" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="205.4" y1="274.0" x2="165.0" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="266.7" y1="232.7" x2="165.0" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="124.6" y1="232.7" x2="165.0" y2="26.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <polygon points="114.2,150.0 185.2,150.0 215.8,129.3 144.8,129.3" fill="#047857" fill-opacity="0.22" stroke="#047857" stroke-width="1.6" stroke-linejoin="round"/>
+      <line x1="165.0" y1="253.3" x2="165.0" y2="26.0" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 3"/>
+      <path d="M165.0,242.3 L154.2,244.5 L154.2,255.5" fill="none" stroke="#ef4444" stroke-width="1.2"/>
+      <text x="48.6" y="282.0" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">A</text>
+      <text x="218.8" y="285.8" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">B</text>
+      <text x="281.4" y="234.7" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">C</text>
+      <text x="111.2" y="230.9" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">D</text>
+      <text x="165.0" y="17.0" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">E</text>
+      <text x="172.0" y="139.7" font-size="13" fill="#ef4444" text-anchor="start" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">m</text>
+    </svg>
+    </div>
+    <p class="cap">Félmagasságban metszve <span class="math inline">\(k=\frac12\)</span>: a metszet oldalai feleakkorák, mint az alaplapé.</p>
+
+    <h2 id="s2">A területek aránya</h2>
+
+    <div class="doboz tetel" id="tetel-hasonlosag-aranyok">
+      <p class="cim"><span class="ikon">📘</span> Hossz, terület, térfogat a hasonlóságnál</p>
+      <p>Ha két hasonló alakzat hasonlósági aránya <span class="math inline">\(k\)</span>, akkor</p><ul><li>a megfelelő <b>hosszúságok</b> aránya <span class="math inline">\(k\)</span>,</li><li>a <b>területek</b> aránya <span class="math inline">\(k^{2}\)</span>,</li><li>a <b>térfogatok</b> aránya <span class="math inline">\(k^{3}\)</span>.</li></ul><p>A gúla alappal párhuzamos metszetére tehát</p><span class="math display">\[T_{\text{metszet}}=k^{2}\cdot B.\]</span>
+    </div>
+
+    <table class="tt-table"><tr><th><span class="math inline">\(k=\frac{x}{m}\)</span></th><th>hosszak aránya</th><th>a metszet területe / <span class="math inline">\(B\)</span></th><th>a <b>kis gúla</b> térfogata / <span class="math inline">\(V\)</span></th></tr><tr><td><span class="math inline">\(\frac12\)</span></td><td><span class="math inline">\(\frac12\)</span></td><td><span class="math inline">\(\frac14\)</span></td><td><span class="math inline">\(\frac18\)</span></td></tr><tr><td><span class="math inline">\(\frac13\)</span></td><td><span class="math inline">\(\frac13\)</span></td><td><span class="math inline">\(\frac19\)</span></td><td><span class="math inline">\(\frac1{27}\)</span></td></tr><tr><td><span class="math inline">\(\frac23\)</span></td><td><span class="math inline">\(\frac23\)</span></td><td><span class="math inline">\(\frac49\)</span></td><td><span class="math inline">\(\frac8{27}\)</span></td></tr></table>
+
+    <div class="doboz pelda" id="pelda-felmagassag">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció</p>
+      <p>Egy szabályos négyoldalú gúla alapéle <span class="math inline">\(6\)</span> cm, magassága <span class="math inline">\(4\)</span> cm (tehát <span class="math inline">\(B=36\ \text{cm}^2\)</span> és <span class="math inline">\(V=48\ \text{cm}^3\)</span>). Elvágjuk félmagasságban. Mekkora a metszet területe, és mekkora a levágott kis gúla térfogata?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>Félmagasságban <span class="math inline">\(k=\frac12\)</span>, ezért a metszet oldalai feleakkorák: az oldala <span class="math inline">\(3\)</span> cm. A metszet területe</p><span class="math display">\[T=k^2\cdot B=\frac14\cdot 36=9\ \text{cm}^2,\]</span><p>tehát <b>negyedakkora</b>, nem feleakkora. Ellenőrzés közvetlenül: a metszet <span class="math inline">\(3\)</span> cm oldalú négyzet, területe <span class="math inline">\(3^2=9\ \text{cm}^2\)</span>. ✔</p><p>A levágott kis gúla térfogata</p><span class="math display">\[V_{\text{kis}}=k^3\cdot V=\frac18\cdot 48=6\ \text{cm}^3.\]</span><p>Ez azt is jelenti, hogy az <b>alsó</b> darab (a csonkagúla) térfogata <span class="math inline">\(48-6=42\ \text{cm}^3\)</span> — vagyis a test térfogatának hétnyolcada van alul, pedig félmagasságban vágtunk.</p></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„Félmagasságban vágtam, tehát a metszet feleakkora, és a levágott rész is a térfogat fele."</i></p><p>Egyik sem igaz. A <b>hosszak</b> feleződnek, a <b>területek</b> negyedelődnek, a <b>térfogatok</b> nyolcadolódnak. Ez a hasonlóság alapszabálya, és nemcsak a gúlára igaz: ezért kerül négyszer annyi festék egy kétszer akkora táblára, és ezért nyolcszor nehezebb egy kétszer akkora, ugyanabból az anyagból készült szobor.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A területek aránya k² = (1/3)² = 1/9." data-nem="✘ A hosszak aránya 1/3, a területeké ennek a <b>négyzete</b> (1/9), a térfogatoké pedig a <b>köbe</b> (1/27).">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy gúlát a magasság <b>harmadánál</b> metszünk el (a csúcstól mérve). Hányadrésze a metszet területe az alaplapénak?</p>
+      <div class="opciok"><button><span class="math inline">\(\frac19\)</span></button><button><span class="math inline">\(\frac13\)</span></button><button><span class="math inline">\(\frac1{27}\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Tengelymetszetek</h2>
+
+    <p>A <b>tengelymetszet</b> az a metszet, amely a gúla magasságát (a „tengelyt”) tartalmazza. Ilyen síkból végtelen sok van; <b>páros</b> oldalszámú szabályos gúlánál kettő közülük nevezetes:</p><ul><li>ha a két szemközti <b>oldalél</b> által meghatározott síkkal metszünk, a metszet egyenlő szárú háromszög: a szárai az <b>oldalélek</b> (<span class="math inline">\(b\)</span>), az alapja pedig az alaplapnak a <b>középpontján átmenő átlója</b>;</li><li>ha a két szemközti <b>oldallap magasságvonalán</b> át fektetjük a síkot, a metszet szárai az <b>oldallap-magasságok</b> (<span class="math inline">\(m_o\)</span>), az alapja pedig <span class="math inline">\(2\rho\)</span> — négyzet alaplapnál ez éppen <span class="math inline">\(a\)</span>, hiszen ott <span class="math inline">\(\rho=\frac a2\)</span>.</li></ul><p>Mindkét háromszög magassága a gúla magassága, <span class="math inline">\(m\)</span>. Páratlan oldalszámnál (például szabályos háromoldalú gúlánál) nincs szemközti oldalél és szemközti oldallap: ott egy oldalél és a vele szemközti oldallap magassága esik egy síkba.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Csak érdekesség</p>
+      <p>A szabályos négyoldalú gúlánál a két nevezetes tengelymetszet <b>nem egyforma</b>: az oldaléleken átmenő szélesebb (az alapja <span class="math inline">\(a\sqrt2\)</span>), az oldallap-magasságokon átmenő keskenyebb (az alapja <span class="math inline">\(a\)</span>). Ha egy feladat „a tengelymetszet szabályos háromszög" feltételt ad, mindig nézd meg, melyikről beszél.</p>
+    </div>
+
+    <h2 id="s4">Ha levágjuk a csúcsot</h2>
+
+    <p>Az alappal párhuzamos metszet a gúlát <b>két</b> testre bontja: fölül egy kisebb, az eredetihez hasonló gúlára, alul pedig egy olyan testre, amelynek két párhuzamos, <b>hasonló</b> alaplapja van, az oldallapjai pedig trapézok.</p><p>Ez az alsó darab a <b>csonkagúla</b> — a témakör utolsó teste.</p>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-gula.html#alap-16">🐕 Tér-eb-ugrás <span class="cimke">A 16–19</span></a><a class="sav bruno" href="feladatok-gula.html#kozep-13">👑 Királyi Gárda <span class="cimke">K 13–15</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Prizma:</b> A vágás megtörtént. Ami alul maradt, önálló test — és a Zónában ez a leggyakoribb forma: a csonkagúla. Egy új képlet vár, benne egy meglepő taggal, amit a kadétok fele elhagy. Ne te legyél az.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-gula-felszin-terfogat.html"><span class="irany">← Előző</span><span class="hova">A gúla felszíne és térfogata</span></a>
+      <a class="kov" href="tananyag-csonkagula.html"><span class="irany">Következő →</span><span class="hova">A csonkagúla</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

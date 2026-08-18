@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A csonkagúla — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Poliéderek</a> ›
+  <span class="itt">A csonkagúla — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A csonkagúla</h1>
+  <p class="alcim">A csonkagúla elemei, a trapéz oldallapok, a felszín és a térfogat képlete — a témakör képlettárával.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Kristálypára Kristályok · 11/11</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Prizma:</b> A levágott hegyű kristály a leggyakoribb forma a Zónában — és a hétköznapokban is: a szemetes, a rakodólap és a betonoszlop talpazata jellemzően ilyen alakú, a vödör és a virágcserép pedig ennek kerek rokona. Két új képlet vár rád, de minden elemük ismerős: két lap, trapéz oldallapok, és egy meglepő tag a térfogatban.</p></div>
+
+    <p>Ez az utolsó test, amellyel ebben a témakörben megismerkedünk. A végén egy <b>gyorsismétlő</b> is vár: a három test képlettára egyetlen táblázatban.</p>
+
+    <h2 id="s1">Hogyan keletkezik a csonkagúla</h2>
+
+    <div class="doboz definicio" id="def-csonkagula">
+      <p class="cim"><span class="ikon">📗</span> A csonkagúla</p>
+      <p>Metsszük el a gúlát az alaplappal <b>párhuzamos</b> síkkal, és hagyjuk el a csúcsot tartalmazó részt. A megmaradó test a <b>csonkagúla</b>.</p><p>A két párhuzamos lap az <b>alaplap</b> (<span class="math inline">\(B\)</span> területű) és a <b>fedőlap</b> (<span class="math inline">\(b\)</span> területű) — ezek <b>hasonló</b> sokszögek. Az oldallapok <b>trapézok</b>, együtt a palást.</p><p>A csonkagúla <b>szabályos</b>, ha szabályos gúlából származik: ekkor az alaplapja és a fedőlapja szabályos sokszög, az oldallapjai pedig egybevágó egyenlő szárú trapézok.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 330 290" width="330" height="290" role="img" aria-label="Csonkagúla; a levágott csúcsrész szaggatottan">
+      <line x1="78.3" y1="264.0" x2="199.5" y2="264.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="199.5" y1="264.0" x2="251.7" y2="228.8" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="251.7" y1="228.8" x2="130.5" y2="228.8" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="130.5" y1="228.8" x2="78.3" y2="264.0" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="126.0" y1="133.1" x2="180.5" y2="133.1" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="180.5" y1="133.1" x2="204.0" y2="117.2" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="204.0" y1="117.2" x2="149.5" y2="117.2" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="149.5" y1="117.2" x2="126.0" y2="133.1" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="78.3" y1="264.0" x2="126.0" y2="133.1" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="199.5" y1="264.0" x2="180.5" y2="133.1" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="251.7" y1="228.8" x2="204.0" y2="117.2" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="130.5" y1="228.8" x2="149.5" y2="117.2" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="126.0" y1="133.1" x2="165.0" y2="26.0" stroke="#475569" stroke-width="1.3" stroke-linecap="round" stroke-dasharray="4 4"/>
+      <line x1="180.5" y1="133.1" x2="165.0" y2="26.0" stroke="#475569" stroke-width="1.3" stroke-linecap="round" stroke-dasharray="4 4"/>
+      <line x1="204.0" y1="117.2" x2="165.0" y2="26.0" stroke="#475569" stroke-width="1.3" stroke-linecap="round" stroke-dasharray="4 4"/>
+      <line x1="149.5" y1="117.2" x2="165.0" y2="26.0" stroke="#475569" stroke-width="1.3" stroke-linecap="round" stroke-dasharray="4 4"/>
+      <line x1="165.0" y1="246.4" x2="165.0" y2="125.2" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 3"/>
+      <path d="M165.0,235.4 L154.2,237.6 L154.2,248.6" fill="none" stroke="#ef4444" stroke-width="1.2"/>
+      <text x="63.6" y="272.0" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">A</text>
+      <text x="212.8" y="275.8" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">B</text>
+      <text x="266.4" y="230.8" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">C</text>
+      <text x="117.2" y="226.9" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">D</text>
+      <text x="109.3" y="133.5" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">A<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="195.7" y="137.8" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">B<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="220.7" y="110.9" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">C<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="134.3" y="106.5" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">D<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="172.0" y="185.8" font-size="13" fill="#ef4444" text-anchor="start" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">m</text>
+    </svg>
+    </div>
+    <p class="cap">A csonkagúla a gúla alsó darabja. Szürke szaggatottal a levágott csúcsrész, feketével a takart élek, pirossal a magasság.</p>
+
+    <h2 id="s2">A csonkagúla elemei</h2>
+
+    <p>Öt hosszúságot kell megkülönböztetned — plusz a lenti dobozban még az apotémákat és a köréírt sugarakat:</p><ul><li><span class="math inline">\(a\)</span> és <span class="math inline">\(a_1\)</span> — az alaplap és a fedőlap éle;</li><li><span class="math inline">\(m\)</span> — a test <b>magassága</b>, vagyis a két lap síkjának távolsága;</li><li><span class="math inline">\(m_o\)</span> — az <b>oldallap magassága</b>: a trapéz alakú oldallapon az alsó és a felső él távolsága;</li><li><span class="math inline">\(c\)</span> — az <b>oldalél</b>, vagyis a trapéz alakú oldallap szára. (Vigyázz: a <span class="math inline">\(b\)</span> betűt itt a <b>fedőlap területe</b> foglalja el, ezért kap az oldalél másik jelet.)</li></ul>
+
+    <div class="doboz tetel" id="tetel-csonkagula-haromszogek">
+      <p class="cim"><span class="ikon">📘</span> A szabályos csonkagúla derékszögű háromszögei</p>
+      <p>Feltesszük, hogy a test <b>szabályos</b>, tehát a két lap középpontját összekötő szakasz merőleges mindkét lapra. Jelölje <span class="math inline">\(\rho\)</span> és <span class="math inline">\(\rho_1\)</span> az alaplap, illetve a fedőlap <a href="tananyag-gula.html#tetel-harom-haromszog">apotémáját</a>, <span class="math inline">\(R\)</span> és <span class="math inline">\(R_1\)</span> a köréírt sugarakat. Ha a fedőlapot merőlegesen levetítjük az alaplapra, a megfelelő szakaszok különbsége adja a befogókat:</p><span class="math display">\[m_o^{2}=m^{2}+(\rho-\rho_1)^{2},\qquad c^{2}=m^{2}+(R-R_1)^{2},\qquad c^{2}=m_o^{2}+\left(\frac{a-a_1}{2}\right)^{2}.\]</span><p>Négyzet alaplapnál <span class="math inline">\(\rho-\rho_1=\frac{a-a_1}{2}\)</span>, tehát</p><span class="math display">\[m_o=\sqrt{m^{2}+\left(\frac{a-a_1}{2}\right)^{2}}.\]</span><p>A gondolat ugyanaz, mint a gúlánál: a keresett szakasz mindig egy derékszögű háromszög átfogója, és a befogók egyike a magasság vagy az oldallap magassága.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„A magasság és az oldallap magassága — mindkettő „magasság”, tehát behelyettesíthetem bármelyiket."</i></p><p>Nem. A <b>felszínbe</b> (a palásthoz) az <b>oldallap magassága</b> (<span class="math inline">\(m_o\)</span>) megy, a <b>térfogatba</b> a <b>test magassága</b>. A kettő között éppen a fenti Pitagorasz-összefüggés teremt kapcsolatot, és mindig <span class="math inline">\(m &lt; m_o\)</span>. Ha a feladat csak az egyiket adja meg, a másikat ki kell számolni.</p>
+    </div>
+
+    <h2 id="s3">A felszín</h2>
+
+    <div class="doboz tetel" id="tetel-csonkagula-felszin">
+      <p class="cim"><span class="ikon">📘</span> A szabályos csonkagúla felszíne</p>
+      <p>Az oldallapok egybevágó trapézok: párhuzamos oldalaik <span class="math inline">\(a\)</span> és <span class="math inline">\(a_1\)</span>, magasságuk <span class="math inline">\(m_o\)</span>. Egy oldallap területe tehát <span class="math inline">\(\frac{(a+a_1)m_o}{2}\)</span>, és <span class="math inline">\(n\)</span> oldal esetén</p><span class="math display">\[M=n\cdot\frac{(a+a_1)\,m_o}{2}=\frac{(K+K_1)\,m_o}{2},\qquad F=B+b+M,\]</span><p>ahol <span class="math inline">\(B\)</span> és <span class="math inline">\(b\)</span> az alaplap, illetve a fedőlap <b>területe</b>, <span class="math inline">\(K\)</span> és <span class="math inline">\(K_1\)</span> pedig a <b>kerületük</b>. <span class="math inline">\(M\)</span> a palást (az oldallapok együttes) területe.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 330 260" width="330" height="260" role="img" aria-label="Szabályos hatoldalú csonkagúla">
+      <line x1="182.6" y1="219.7" x2="304.0" y2="184.7" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="304.0" y1="184.7" x2="286.4" y2="149.7" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="286.4" y1="149.7" x2="147.4" y2="149.7" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="147.4" y1="149.7" x2="26.0" y2="184.7" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="26.0" y1="184.7" x2="43.6" y2="219.7" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="43.6" y1="219.7" x2="182.6" y2="219.7" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="174.7" y1="78.8" x2="241.5" y2="59.6" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="241.5" y1="59.6" x2="231.8" y2="40.3" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="231.8" y1="40.3" x2="155.3" y2="40.3" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="155.3" y1="40.3" x2="88.5" y2="59.6" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="88.5" y1="59.6" x2="98.2" y2="78.8" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="98.2" y1="78.8" x2="174.7" y2="78.8" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="182.6" y1="219.7" x2="174.7" y2="78.8" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="304.0" y1="184.7" x2="241.5" y2="59.6" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="286.4" y1="149.7" x2="231.8" y2="40.3" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="147.4" y1="149.7" x2="155.3" y2="40.3" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="5 4"/>
+      <line x1="26.0" y1="184.7" x2="88.5" y2="59.6" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <line x1="43.6" y1="219.7" x2="98.2" y2="78.8" stroke="#0f172a" stroke-width="1.7" stroke-linecap="round"/>
+      <text x="189.3" y="238.1" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">A</text>
+      <text x="319.0" y="189.7" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">B</text>
+      <text x="300.8" y="150.5" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">C</text>
+      <text x="140.7" y="141.3" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">D</text>
+      <text x="11.0" y="189.7" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">E</text>
+      <text x="29.2" y="228.8" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">F</text>
+      <text x="182.3" y="91.0" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">A<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="258.5" y="56.6" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">B<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="248.1" y="32.6" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">C<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="147.7" y="22.1" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">D<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="71.5" y="56.6" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">E<tspan font-size='9' dy='3'>1</tspan></text>
+      <text x="81.9" y="80.5" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">F<tspan font-size='9' dy='3'>1</tspan></text>
+    </svg>
+    </div>
+    <p class="cap">Szabályos hatoldalú csonkagúla: az oldallapjai egyenlő szárú trapézok.</p>
+
+    <h2 id="s4">A térfogat</h2>
+
+    <div class="doboz tetel" id="tetel-csonkagula-terfogat">
+      <p class="cim"><span class="ikon">📘</span> A csonkagúla térfogata</p>
+      <span class="math display">\[V=\frac{m}{3}\left(B+b+\sqrt{B\,b}\right),\]</span><p>ahol <span class="math inline">\(B\)</span> és <span class="math inline">\(b\)</span> a két lap területe, <span class="math inline">\(m\)</span> pedig a test magassága.</p><p>A képlet a két gúla térfogatának különbségéből származik (a teljes gúláéból kivonjuk a levágott kicsiét); a <span class="math inline">\(\sqrt{Bb}\)</span> tag — a két lapterület <b>mértani közepe</b> — ennek a különbségnek az átrendezéséből jön.</p><p><b>Határesetben</b> ellenőrizhetjük a képletet (ezek maguk már nem csonkagúlák). Ha <span class="math inline">\(b=B\)</span>, akkor <span class="math inline">\(V=\frac{m}{3}\cdot 3B=Bm\)</span> — vagyis a hasáb térfogatát kapjuk vissza, ami helyes, hiszen egyenlő lapokkal a test hasáb. Ha pedig <span class="math inline">\(b=0\)</span>, akkor <span class="math inline">\(V=\frac{Bm}{3}\)</span> — a gúla képlete.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„Két alaplap van, tehát az átlaguk kell: <span class="math inline">\(V=\frac{m\,(B+b)}{2}\)</span>."</i></p><p>A trapéz területképletét nem lehet átvinni a térfogatra. A helyes képletben három tag áll, köztük a <b>mértani közép</b>, <span class="math inline">\(\sqrt{Bb}\)</span> — és ennek elhagyása nem apró eltérés. A lenti példában a helyes érték <span class="math inline">\(208\ \text{cm}^3\)</span>, a <span class="math inline">\(\frac{m(B+b)}{2}\)</span> képlet viszont <span class="math inline">\(232\ \text{cm}^3\)</span>-t adna, a <span class="math inline">\(\sqrt{Bb}\)</span> nélküli harmados alak pedig <span class="math inline">\(154{,}7\ \text{cm}^3\)</span>-t. Egyik sem jó.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-csonkagula">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció</p>
+      <p>Egy szabályos négyoldalú csonkagúla alapélei <span class="math inline">\(10\)</span> cm és <span class="math inline">\(4\)</span> cm, az oldallap magassága <span class="math inline">\(5\)</span> cm. Mekkora a felszíne és a térfogata?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>Lapok:</b> <span class="math inline">\(B=10^2=100\ \text{cm}^2\)</span>, <span class="math inline">\(b=4^2=16\ \text{cm}^2\)</span>.</p><p><b>Palást:</b> négy egybevágó trapéz, mindegyik területe <span class="math inline">\(\frac{(10+4)\cdot 5}{2}=35\ \text{cm}^2\)</span>, tehát <span class="math inline">\(M=4\cdot 35=140\ \text{cm}^2\)</span>.</p><p><b>Felszín:</b> <span class="math inline">\(F=B+b+M=100+16+140=256\ \text{cm}^2\)</span>.</p><p><b>Magasság.</b> A trapéz magasságából (ez az <span class="math inline">\(m_o\)</span>) és a <span class="math inline">\(\frac{a-a_1}{2}=3\)</span> cm-es vetületből:</p><span class="math display">\[m=\sqrt{m_o^2-\left(\frac{a-a_1}{2}\right)^2}=\sqrt{25-9}=4\ \text{cm}.\]</span><p><b>Térfogat:</b></p><span class="math display">\[V=\frac{4}{3}\left(100+16+\sqrt{100\cdot 16}\right)=\frac{4}{3}\cdot 156=208\ \text{cm}^3.\]</span></div></details>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ √(Bb) = √324 = 18, ezért V = (5/3)(36 + 9 + 18) = 105." data-nem="✘ Se a két lap átlagával nem számolunk (az 112,5 lenne), se a √(Bb) tagot nem hagyjuk el (az 75-öt adna): V = (5/3)(36 + 9 + √324) = (5/3)·63 = 105.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy csonkagúla alaplapja <span class="math inline">\(36\ \text{cm}^2\)</span>, fedőlapja <span class="math inline">\(9\ \text{cm}^2\)</span>, magassága <span class="math inline">\(5\)</span> cm. Mekkora a térfogata?</p>
+      <div class="opciok"><button><span class="math inline">\(105\ \text{cm}^3\)</span></button><button><span class="math inline">\(112{,}5\ \text{cm}^3\)</span></button><button><span class="math inline">\(75\ \text{cm}^3\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s5">🧾 Gyorsismétlő — a poliéderek képlettára</h2>
+
+    <table class="tt-table"><tr><th>Test</th><th>Felszín</th><th>Térfogat</th><th>Amire figyelj</th></tr><tr><td><a href="tananyag-hasab-felszin-terfogat.html#tetel-hasab-felszin">egyenes hasáb</a></td><td><span class="math inline">\(F=2B+K\,m\)</span></td><td><span class="math inline">\(V=B\,m\)</span></td><td>a palásthoz a <b>kerület</b> kell, nem a terület</td></tr><tr><td><a href="tananyag-gula-felszin-terfogat.html#tetel-gula-felszin">szabályos gúla</a></td><td><span class="math inline">\(F=B+\dfrac{K\,m_o}{2}\)</span></td><td><span class="math inline">\(V=\dfrac{B\,m}{3}\)</span></td><td>a palásthoz <span class="math inline">\(m_o\)</span> kell, nem az oldalél</td></tr><tr><td><a href="#tetel-csonkagula-felszin">szabályos csonkagúla</a></td><td><span class="math inline">\(F=B+b+\dfrac{(K+K_1)m_o}{2}\)</span></td><td><span class="math inline">\(V=\dfrac{m}{3}\left(B+b+\sqrt{Bb}\right)\)</span></td><td>a <span class="math inline">\(\sqrt{Bb}\)</span> tag nem hagyható el</td></tr></table><p><b>Jelölések:</b> <span class="math inline">\(B\)</span> és <span class="math inline">\(b\)</span> az alaplap, illetve a fedőlap <b>területe</b>; <span class="math inline">\(K\)</span> és <span class="math inline">\(K_1\)</span> a <b>kerületük</b>; <span class="math inline">\(m\)</span> a <b>test</b> magassága; <span class="math inline">\(m_o\)</span> az <b>oldallap</b> magassága.</p><p>A három derékszögű háromszög (<a href="tananyag-gula.html#tetel-harom-haromszog">gúlánál</a>) és a hasonlóság <span class="math inline">\(k\)</span>–<span class="math inline">\(k^2\)</span>–<span class="math inline">\(k^3\)</span> szabálya (<a href="tananyag-gula-sikmetszetek.html#tetel-hasonlosag-aranyok">metszeteknél</a>) az a két eszköz, amivel a hiányzó adatok előkerülnek.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>A betonoszlopok talpazata, a szemetesek és a rakodólapok jellemzően csonkagúla alakúak; a vödör, a virágcserép és a lámpaernyő ugyanennek a kerek változata, <b>csonkakúp</b> (a következő témakör anyaga). A forma nem véletlen: a test stabilan áll, a fala felfelé haladva kevesebb anyagot igényel, ráadásul a darabok egymásba rakhatók — ezért lehet a műanyag poharakat egyetlen oszlopba tornyozni.</p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-gula.html#alap-20">🐕 Tér-eb-ugrás <span class="cimke">A 20–26</span></a><a class="sav bruno" href="feladatok-gula.html#kozep-16">👑 Királyi Gárda <span class="cimke">K 16–21</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Prizma:</b> A Kristálypára szögletes formáit legyőzted: hasáb, gúla, csonkagúla — felszín, térfogat, metszet. De a Zóna mélyén már mozgásba lendült valami: a következő kristályok <b>nem szögletesek</b>. Ha a sokszög helyére <b>kör</b> kerül, a sík elhajlik, és a lapokból palást lesz. Medúza vár rád az Átalakulás Kamrájában.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-gula-sikmetszetek.html"><span class="irany">← Előző</span><span class="hova">A gúla síkmetszetei</span></a>
+      <a class="kov" href="feladatok-gula.html"><span class="irany">Következő →</span><span class="hova">Feladatok — a gúla és a csonkagúla</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

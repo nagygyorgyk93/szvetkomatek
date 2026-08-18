@@ -242,7 +242,7 @@ A2 = [
  ]),
 
  ("Mikor merőleges egy egyenes a síkra", [
-   '<p>A „merőleges a lapra" hétköznapi kifejezés — csakhogy mihez képest merőleges? Egy '
+   '<p>A „merőleges a lapra” hétköznapi kifejezés — csakhogy mihez képest merőleges? Egy '
    'síkban végtelen sok egyenes fut, és a síkot ferdén döfő egyenes is lehet merőleges '
    'közülük <b>az egyikre</b>.</p>',
    doboz("tetel", "A merőlegesség feltétele",
@@ -259,7 +259,7 @@ A2 = [
          '<p>Nem az. Dönts meg egy ceruzát az asztalon úgy, hogy az asztal lapján lévő '
          'egyik vonalra merőleges maradjon — ez könnyen megy, mégsem áll függőlegesen. '
          '<b>Egy</b> egyenesre való merőlegesség kevés; <b>két metsző</b> egyenes kell. '
-         'Ha a két egyenes párhuzamos, az sem elég: azok együtt nem „feszítik ki" a síkot.</p>'),
+         'Ha a két egyenes párhuzamos, az sem elég: azok együtt nem „feszítik ki” a síkot.</p>'),
    kviz('Az $a$ egyenes merőleges a síkban fekvő $b$ egyenesre. Következik-e ebből, hogy '
         '$a$ merőleges a síkra?',
         ['Nem — ehhez a sík két metsző egyenesére kell merőlegesnek lennie',
@@ -439,9 +439,9 @@ A3 = [
          'szimmetria-protokoll alkalmazható rá."</i></p>'
          '<p>Ellenpélda: ragassz össze két szabályos tetraédert egy-egy lapjuknál. Az így '
          'kapott testnek <b>mind a hat lapja</b> egybevágó szabályos háromszög — mégsem '
-         'szabályos test, mert a két „hegyes" csúcsában <b>3</b>, a másik három csúcsában '
+         'szabályos test, mert a két „hegyes” csúcsában <b>3</b>, a másik három csúcsában '
          'viszont <b>4</b> lap találkozik. A definíció második feltétele bukik el.</p>'
-         '<p>Így működik a jó ellenpélda: egyetlen példa elég ahhoz, hogy egy „nyilvánvaló" '
+         '<p>Így működik a jó ellenpélda: egyetlen példa elég ahhoz, hogy egy „nyilvánvaló” '
          'állítást megdöntsünk.</p>'),
    kviz('Igaz-e: ha egy poliéder minden lapja egybevágó szabályos sokszög, akkor a poliéder '
         'szabályos?',
@@ -478,7 +478,7 @@ A3 = [
    abra(SVG_HALO_H, 'Az egyenes hasáb hálója: két egybevágó alaplap és a palást, ami egyenes '
         'hasábnál egyetlen téglalap.'),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„Hat négyzet — akkor ez kocka hálója."</i></p>'
+         '<p><i>„Hat négyzet — akkor ez kocka hálója.”</i></p>'
          '<p>Nem feltétlenül. Hat négyzetből <b>35</b> különböző, élben csatlakozó alakzat rakható '
          'ki (az egymásba forgatható vagy tükrözhető változatokat egynek számítva), és ezek '
          'közül csak <b>11</b> hajtható kockává. A többinél a hajtogatás során két lap '
@@ -524,7 +524,7 @@ A4 = [
    'Itt $B$ az <b>alaplap területe</b>, $m$ a <b>test magassága</b>, $M$ pedig a '
    '<b>palást</b> (az oldallapok együttes) területe. Mindegyik képletben ott van a $B$.</p>'
    '<p>Ha a testfeladat alaplapja szabályos háromszög, akkor a feladat fele valójában '
-   '„számítsd ki egy szabályos háromszög területét". Ezért érdemes ezt a néhány képletet '
+   '„számítsd ki egy szabályos háromszög területét”. Ezért érdemes ezt a néhány képletet '
    'készségszinten tudni.</p>',
    doboz("tetel", "A képlettár",
          '<table class="tt-table">'
@@ -566,7 +566,7 @@ A4 = [
          'Pitagorasz-tétel</a>.</p>',
          hid="tetel-egyenlo-oldalu"),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„Az oldal $6$, a $\\sqrt3$ ott van a képletben — a terület tehát $3\\sqrt3$."</i></p>'
+         '<p><i>„Az oldal $6$, a $\\sqrt3$ ott van a képletben — a terület tehát $3\\sqrt3$.”</i></p>'
          '<p>A $3\\sqrt3$ a <b>magasság</b> ($\\frac{6\\sqrt3}{2}$), nem a terület. A terület '
          '$\\frac{6^2\\sqrt3}{4}=9\\sqrt3\\approx 15{,}59$. A két képlet hasonlít, de az '
          'egyikben $a$, a másikban $a^2$ áll — és a $\\sqrt3$ nevezője is más. '
