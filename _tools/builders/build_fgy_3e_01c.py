@@ -284,7 +284,7 @@ KOZEP = [
   "$\\left(\\frac12\\right)^3\\cdot 216=27$ cm³."),
 
  ("Egy gúla alapterülete $36$ cm², az alaplappal párhuzamos metszet területe $4$ cm². "
-  "Mekkora a hasonlóság aránya?", None,
+  "Mekkora a <b>metszet és az alaplap</b> hasonlósági aránya?", None,
   "$k^2=\\frac{4}{36}$, tehát $k=\\frac13$."),
 
  # --- C3 (közép 13–15)
