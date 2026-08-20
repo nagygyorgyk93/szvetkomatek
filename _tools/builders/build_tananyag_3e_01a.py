@@ -379,7 +379,7 @@ A3 = [
          '<b>három</b> lap találkozik.</p>',
          hid="def-polieder"),
    '<p>A henger, a kúp és a gömb <b>nem</b> poliéder: a határoló felületük nem áll csupa '
-   'síksokszögből — a palástjuk görbült, az alaplapjuk pedig kör. Ezek a <a href="../02-forgastestek/index.html">forgástestek</a> — '
+   'síksokszögből — a palástjuk görbült, az alaplapjuk pedig kör. Ezek a <b>forgástestek</b> — '
    'a következő témakör anyaga.</p>',
    doboz("erdekesseg", "Hol találkozol vele?",
          '<p>A kősó kockákban, a kvarc hatszögű oszlopokban, a gyémánt oktaéderes formában '

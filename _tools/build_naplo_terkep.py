@@ -33,6 +33,7 @@ JELVENY = {
     "2e/02-masodfoku-egyenletek-es-fuggvenyek":   ("⚔️", "Az M-Faktor", "Nagol · Küklopsz"),
     "2e/03-exponencialis-es-logaritmus-fuggveny": ("🧬", "Az Evolúciós Ugrás", "Dr. Bestia"),
     "2e/04-trigonometrikus-fuggvenyek":           ("🌀", "A Fázisugrás", "Éjjáró · Szürke Janka"),
+    "3e/01-poliederek":                           ("🔷", "A Kristálypára Kristályok", "Prizma"),
 }
 
 H1 = re.compile(r"<h1[^>]*>(.*?)</h1>", re.S)
