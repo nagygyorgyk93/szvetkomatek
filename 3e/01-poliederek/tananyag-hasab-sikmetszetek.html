@@ -96,7 +96,7 @@
 
     <div class="doboz tetel" id="tetel-hasab-atlos-metszet">
       <p class="cim"><span class="ikon">📘</span> Az egyenes hasáb átlós metszete</p>
-      <p><b>Egyenes</b> hasáb átlós metszete <b>téglalap</b>, amelynek</p><ul><li>egyik oldala az alaplap megfelelő <b>átlója</b> (<span class="math inline">\(d\)</span>),</li><li>a másik oldala a hasáb <b>magassága</b> (<span class="math inline">\(m\)</span>),</li></ul><p>ezért a területe <span class="math inline">\(T=d\cdot m\)</span>.</p><p>Ferde hasábnál a metszet általában csak paralelogramma — a kikötés tehát nem elhagyható.</p>
+      <p><b>Egyenes</b> hasáb átlós metszete <b>téglalap</b>, amelynek</p><ul><li>egyik oldala az alaplap megfelelő <b>átlója</b> (<span class="math inline">\(d\)</span>),</li><li>a másik oldala a hasáb <b>magassága</b> (<span class="math inline">\(H\)</span>),</li></ul><p>ezért a területe <span class="math inline">\(T=d\cdot H\)</span>.</p><p>Ferde hasábnál a metszet általában csak paralelogramma — a kikötés tehát nem elhagyható.</p>
     </div>
 
     <div class="svgcard">
@@ -133,7 +133,7 @@
 
     <h2 id="s4">A metszet területének kiszámítása</h2>
 
-    <p>A számolás mindig két lépés: (1) melyik alaplapi <b>átló</b> mentén metszünk, (2) az átló és a magasság szorzata. Az első lépés a nehezebb, mert a szabályos sokszögeknek <b>többféle hosszúságú</b> átlójuk van. A szabályos hatszögnél a hosszabb átló a szemközti csúcsokat köti össze, és átmegy a középponton, ezért a köréírt kör átmérője: <span class="math inline">\(2R=2a\)</span>. A rövidebb átló egy csúcsot hagy ki, és a beírt kör átmérőjével egyenlő: <span class="math inline">\(2\rho=a\sqrt3\)</span>.</p>
+    <p>A számolás mindig két lépés: (1) melyik alaplapi <b>átló</b> mentén metszünk, (2) az átló és a magasság szorzata. Az első lépés a nehezebb, mert a szabályos sokszögeknek <b>többféle hosszúságú</b> átlójuk van. A szabályos hatszögnél a hosszabb átló a szemközti csúcsokat köti össze, és átmegy a középponton, ezért a köréírt kör átmérője: <span class="math inline">\(2R=2a\)</span>. A rövidebb átló egy csúcsot hagy ki, és a beírt kör átmérőjével egyenlő: <span class="math inline">\(2r=a\sqrt3\)</span>.</p>
 
     <div class="svgcard">
     <svg viewBox="0 0 300 250" width="300" height="250" role="img" aria-label="A szabályos hatszög apotémája és köréírt sugara">
@@ -146,17 +146,17 @@
       <line x1="150.0" y1="125.0" x2="102.5" y2="207.3" stroke="#cbd5e1" stroke-width="1"/>
       <line x1="150.0" y1="125.0" x2="221.2" y2="166.1" stroke="#f59e0b" stroke-width="1.7"/>
       <line x1="150.0" y1="125.0" x2="245.0" y2="125.0" stroke="#3b82f6" stroke-width="1.7"/>
-      <text x="175.6" y="157.6" font-size="13" fill="#f59e0b" text-anchor="middle" font-style="italic" font-weight="600">ρ</text>
+      <text x="175.6" y="157.6" font-size="13" fill="#f59e0b" text-anchor="middle" font-style="italic" font-weight="600">r</text>
       <text x="207.5" y="121.0" font-size="13" fill="#3b82f6" text-anchor="middle" font-style="italic" font-weight="600">R</text>
       <text x="234.4" y="177.7" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">a</text>
     </svg>
     </div>
-    <p class="cap">A szabályos hatszögben a köréírt kör sugara <span class="math inline">\(R=a\)</span>, az apotéma <span class="math inline">\(\rho=\frac{a\sqrt3}{2}\)</span>. Innen a hosszabb átló <span class="math inline">\(2R=2a\)</span>, a rövidebb pedig <span class="math inline">\(2\rho=a\sqrt3\)</span>.</p>
+    <p class="cap">A szabályos hatszögben a köréírt kör sugara <span class="math inline">\(R=a\)</span>, az apotéma <span class="math inline">\(r=\frac{a\sqrt3}{2}\)</span>. Innen a hosszabb átló <span class="math inline">\(2R=2a\)</span>, a rövidebb pedig <span class="math inline">\(2r=a\sqrt3\)</span>.</p>
 
     <div class="doboz pelda" id="pelda-hatszog-metszet">
       <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció</p>
       <p>Egy szabályos hatoldalú hasáb alapéle <span class="math inline">\(5\)</span> cm, magassága <span class="math inline">\(7\)</span> cm. Mekkora a kétféle átlós metszetének a területe?</p>
-      <details><summary>Megoldás</summary><div class="bel"><p>A szabályos hatszögnek <b>kétféle</b> átlója van:</p><ul><li>a <b>hosszabb</b> a szemközti csúcsokat köti össze, és átmegy a középponton: <span class="math inline">\(d_1=2R=2a=10\)</span> cm;</li><li>a <b>rövidebb</b> egy csúcsot hagy ki, és a beírt kör átmérője: <span class="math inline">\(d_2=2\rho=a\sqrt3=5\sqrt3\approx 8{,}66\)</span> cm.</li></ul><p>A két metszet területe ezért</p><span class="math display">\[T_1=d_1\cdot m=10\cdot 7=70\ \text{cm}^2,\qquad T_2=d_2\cdot m=5\sqrt3\cdot 7=35\sqrt3\approx 60{,}62\ \text{cm}^2.\]</span><p>Ugyanaz a test, két különböző metszet — a feladat szövegéből mindig ki kell derülnie, melyikről van szó.</p></div></details>
+      <details><summary>Megoldás</summary><div class="bel"><p>A szabályos hatszögnek <b>kétféle</b> átlója van:</p><ul><li>a <b>hosszabb</b> a szemközti csúcsokat köti össze, és átmegy a középponton: <span class="math inline">\(d_1=2R=2a=10\)</span> cm;</li><li>a <b>rövidebb</b> egy csúcsot hagy ki, és a beírt kör átmérője: <span class="math inline">\(d_2=2r=a\sqrt3=5\sqrt3\approx 8{,}66\)</span> cm.</li></ul><p>A két metszet területe ezért</p><span class="math display">\[T_1=d_1\cdot H=10\cdot 7=70\ \text{cm}^2,\qquad T_2=d_2\cdot H=5\sqrt3\cdot 7=35\sqrt3\approx 60{,}62\ \text{cm}^2.\]</span><p>Ugyanaz a test, két különböző metszet — a feladat szövegéből mindig ki kell derülnie, melyikről van szó.</p></div></details>
     </div>
 
     <div class="doboz erdekesseg">

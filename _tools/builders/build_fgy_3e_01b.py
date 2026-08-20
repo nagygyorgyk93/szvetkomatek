@@ -131,7 +131,7 @@ ALAP = [
   "$F=294$ cm², $V=343$ cm³."),
 
  ("Egy négyzetes hasáb alapéle $6$ cm, térfogata $720$ cm³. Mekkora a magassága?", None,
-  "$m=20$ cm."),
+  "$H=20$ cm."),
 
  ("Egy kocka felszíne $150$ cm². Mekkora az éle és a térfogata?", None,
   "$a=5$ cm, $V=125$ cm³."),
@@ -182,7 +182,7 @@ KOZEP = [
 
  ("Egy négyzetes hasáb alapéle $6$ cm, testátlója $9$ cm. Mekkora a magassága és a "
   "térfogata?", None,
-  "$D^2=2a^2+m^2$, tehát $81=72+m^2$, ahonnan $m=3$ cm és $V=108$ cm³."),
+  "$D^2=2a^2+H^2$, tehát $81=72+H^2$, ahonnan $H=3$ cm és $V=108$ cm³."),
 
  ("Egy kocka testátlója $8\\sqrt3$ cm. Mekkora a felszíne és a térfogata?", None,
   "$a\\sqrt3=8\\sqrt3$, tehát $a=8$ cm; $F=384$ cm², $V=512$ cm³."),
@@ -190,11 +190,11 @@ KOZEP = [
  # --- B2 (közép 5–12)
  ("Egy szabályos háromoldalú hasáb térfogata $80\\sqrt3$ cm³, az alapéle $8$ cm. Mekkora "
   "a magassága és a felszíne?", None,
-  "$B=\\frac{8^2\\sqrt3}{4}=16\\sqrt3$ cm², ezért $m=\\frac{80\\sqrt3}{16\\sqrt3}=5$ cm, "
+  "$B=\\frac{8^2\\sqrt3}{4}=16\\sqrt3$ cm², ezért $H=\\frac{80\\sqrt3}{16\\sqrt3}=5$ cm, "
   "és $F=32\\sqrt3+120\\approx 175{,}43$ cm²."),
 
  ("Egy négyzetes hasáb alapéle $4$ cm, felszíne $192$ cm². Mekkora a magassága?", None,
-  "$2\\cdot 16+16m=192$, ahonnan $m=10$ cm."),
+  "$2\\cdot 16+16H=192$, ahonnan $H=10$ cm."),
 
  ("Egy szabályos hatoldalú hasáb palástjának területe $360$ cm², magassága $10$ cm. "
   "Mekkora az alapéle "
@@ -203,7 +203,7 @@ KOZEP = [
 
  ("Egy szabályos háromoldalú hasáb <b>minden éle egyenlő</b>, az alapterülete "
   "$49\\sqrt3$ cm². Mekkora a térfogata?", None,
-  "$\\frac{a^2\\sqrt3}{4}=49\\sqrt3$, tehát $a=14$ cm, és mivel $m=a$: "
+  "$\\frac{a^2\\sqrt3}{4}=49\\sqrt3$, tehát $a=14$ cm, és mivel $H=a$: "
   "$V=686\\sqrt3\\approx 1188{,}19$ cm³."),
 
  ("Két kocka élének aránya $2:3$. Hogyan aránylik a felszínük és a térfogatuk?", None,
@@ -249,7 +249,7 @@ KOZEP = [
 NEHEZ = [
  ("Egy négyzetes hasáb alapéle $6$ cm, és a testátlója $30^\\circ$-os szöget zár be az "
   "alaplappal. Mekkora a magassága?", None,
-  "$m=6\\sqrt2\\cdot\\operatorname{tg}30^\\circ=2\\sqrt6\\approx 4{,}90$ cm."),
+  "$H=6\\sqrt2\\cdot\\operatorname{tg}30^\\circ=2\\sqrt6\\approx 4{,}90$ cm."),
 
  ("Egy téglatest éleinek aránya $1:2:3$, a felszíne $88$ cm². Mekkorák az élei, és mekkora "
   "a térfogata?", None,

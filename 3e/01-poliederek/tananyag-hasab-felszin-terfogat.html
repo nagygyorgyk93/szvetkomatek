@@ -41,7 +41,7 @@
 
     <div class="doboz tetel" id="tetel-hasab-felszin">
       <p class="cim"><span class="ikon">📘</span> Az egyenes hasáb felszíne</p>
-      <p><b>Egyenes</b> hasáb esetén a palást kiterítve téglalap, amelynek egyik oldala az alaplap kerülete (<span class="math inline">\(K\)</span>), a másik a magasság (<span class="math inline">\(m\)</span>). A palást területét <span class="math inline">\(M\)</span>-mel, a felszínt <span class="math inline">\(F\)</span>-fel jelöljük:</p><span class="math display">\[M=K\cdot m,\qquad F=2B+M=2B+K\cdot m,\]</span><p>ahol <span class="math inline">\(B\)</span> az alaplap területe. A <span class="math inline">\(2B\)</span> azért szerepel, mert a testnek <b>két</b> egybevágó alaplapja van.</p><p><b>Ferde</b> hasábnál ez a képlet nem érvényes: ott az oldallapok paralelogrammák, és külön-külön kell kiszámolni a területüket, majd összeadni.</p>
+      <p><b>Egyenes</b> hasáb esetén a palást kiterítve téglalap, amelynek egyik oldala az alaplap kerülete (<span class="math inline">\(K\)</span>), a másik a magasság (<span class="math inline">\(H\)</span>). A palást területét <span class="math inline">\(M\)</span>-mel, a felszínt <span class="math inline">\(F\)</span>-fel jelöljük:</p><span class="math display">\[M=K\cdot H,\qquad F=2B+M=2B+K\cdot H,\]</span><p>ahol <span class="math inline">\(B\)</span> az alaplap területe. A <span class="math inline">\(2B\)</span> azért szerepel, mert a testnek <b>két</b> egybevágó alaplapja van.</p><p><b>Ferde</b> hasábnál ez a képlet nem érvényes: ott az oldallapok paralelogrammák, és külön-külön kell kiszámolni a területüket, majd összeadni.</p>
     </div>
 
     <div class="svgcard">
@@ -61,22 +61,22 @@
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
-      <p><i>„A palást az alaplap és a magasság szorzata.”</i></p><p>A palásthoz az alaplap <b>kerülete</b> kell, nem a <b>területe</b>. Gondolj a fenti hálóra: a téglalap egyik oldalára az alaplap kerülete simul rá. Ellenőrzés mértékegységgel: <span class="math inline">\(K\cdot m\)</span> hosszúság × hosszúság = terület (cm²) — ez rendben van; <span class="math inline">\(B\cdot m\)</span> viszont terület × hosszúság = <b>térfogat</b> (cm³), tehát az biztosan nem lehet a palást.</p>
+      <p><i>„A palást az alaplap és a magasság szorzata.”</i></p><p>A palásthoz az alaplap <b>kerülete</b> kell, nem a <b>területe</b>. Gondolj a fenti hálóra: a téglalap egyik oldalára az alaplap kerülete simul rá. Ellenőrzés mértékegységgel: <span class="math inline">\(K\cdot H\)</span> hosszúság × hosszúság = terület (cm²) — ez rendben van; <span class="math inline">\(B\cdot H\)</span> viszont terület × hosszúság = <b>térfogat</b> (cm³), tehát az biztosan nem lehet a palást.</p>
     </div>
 
     <h2 id="s2">A térfogat</h2>
 
     <div class="doboz tetel" id="tetel-hasab-terfogat">
       <p class="cim"><span class="ikon">📘</span> A hasáb térfogata</p>
-      <p>Minden hasáb térfogata</p><span class="math display">\[V=B\cdot m,\]</span><p>ahol <span class="math inline">\(B\)</span> az alaplap területe, <span class="math inline">\(m\)</span> pedig a magasság (a két alaplap síkjának távolsága). A képlet a <b>ferde</b> hasábra is igaz — de csak a magassággal, nem az oldaléllel.</p>
+      <p>Minden hasáb térfogata</p><span class="math display">\[V=B\cdot H,\]</span><p>ahol <span class="math inline">\(B\)</span> az alaplap területe, <span class="math inline">\(H\)</span> pedig a magasság (a két alaplap síkjának távolsága). A képlet a <b>ferde</b> hasábra is igaz — de csak a magassággal, nem az oldaléllel.</p>
     </div>
 
-    <p>Miért éppen ennyi? A téglatestnél a térfogat <span class="math inline">\(abc\)</span>: az alaplap területe <span class="math inline">\(ab\)</span>, a magasság <span class="math inline">\(c\)</span>, tehát tényleg <span class="math inline">\(V=B\cdot m\)</span>. Tetszőleges hasábnál a következő <b>alapelvre</b> támaszkodunk: ha két testet az alaplapjukkal párhuzamosan, bármilyen magasságban elmetszünk, és a két metszet területe mindig egyenlő, akkor a két test térfogata is egyenlő. Állítsunk a hasáb mellé egy vele azonos alapterületű és azonos magasságú téglatestet: minden metszet területe mindkettőnél <span class="math inline">\(B\)</span>, tehát a térfogatuk is egyenlő — vagyis <span class="math inline">\(V=B\cdot m\)</span>. (Ennek az alapelvnek a pontos kimondása és bizonyítása már nem tananyagunk.)</p>
+    <p>Miért éppen ennyi? A téglatestnél a térfogat <span class="math inline">\(abc\)</span>: az alaplap területe <span class="math inline">\(ab\)</span>, a magasság <span class="math inline">\(c\)</span>, tehát tényleg <span class="math inline">\(V=B\cdot H\)</span>. Tetszőleges hasábnál a következő <b>alapelvre</b> támaszkodunk: ha két testet az alaplapjukkal párhuzamosan, bármilyen magasságban elmetszünk, és a két metszet területe mindig egyenlő, akkor a két test térfogata is egyenlő. Állítsunk a hasáb mellé egy vele azonos alapterületű és azonos magasságú téglatestet: minden metszet területe mindkettőnél <span class="math inline">\(B\)</span>, tehát a térfogatuk is egyenlő — vagyis <span class="math inline">\(V=B\cdot H\)</span>. (Ennek az alapelvnek a pontos kimondása és bizonyítása már nem tananyagunk.)</p>
 
     <div class="doboz pelda" id="pelda-hatszog-hasab">
       <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció</p>
       <p>Egy szabályos hatoldalú hasáb alapéle <span class="math inline">\(4\)</span> cm, magassága <span class="math inline">\(9\)</span> cm. Számítsd ki a felszínét és a térfogatát!</p>
-      <details><summary>Megoldás</summary><div class="bel"><p><b>Alaplap.</b> A szabályos hatszög hat egyenlő oldalú háromszögre bomlik (lásd <a href="tananyag-alaplap.html#tetel-szabalyos-sokszog">az alaplap egységet</a>):</p><span class="math display">\[B=6\cdot\frac{4^2\sqrt3}{4}=24\sqrt3\approx 41{,}57\ \text{cm}^2.\]</span><p><b>Palást.</b> A kerület <span class="math inline">\(K=6\cdot 4=24\)</span> cm, ezért <span class="math inline">\(M=K\cdot m=24\cdot 9=216\ \text{cm}^2\)</span>.</p><p><b>Felszín.</b> <span class="math inline">\(F=2B+M=48\sqrt3+216\approx 299{,}14\ \text{cm}^2\)</span>.</p><p><b>Térfogat.</b> <span class="math inline">\(V=B\cdot m=24\sqrt3\cdot 9=216\sqrt3\approx 374{,}12\ \text{cm}^3\)</span>.</p></div></details>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>Alaplap.</b> A szabályos hatszög hat egyenlő oldalú háromszögre bomlik (lásd <a href="tananyag-alaplap.html#tetel-szabalyos-sokszog">az alaplap egységet</a>):</p><span class="math display">\[B=6\cdot\frac{4^2\sqrt3}{4}=24\sqrt3\approx 41{,}57\ \text{cm}^2.\]</span><p><b>Palást.</b> A kerület <span class="math inline">\(K=6\cdot 4=24\)</span> cm, ezért <span class="math inline">\(M=K\cdot H=24\cdot 9=216\ \text{cm}^2\)</span>.</p><p><b>Felszín.</b> <span class="math inline">\(F=2B+M=48\sqrt3+216\approx 299{,}14\ \text{cm}^2\)</span>.</p><p><b>Térfogat.</b> <span class="math inline">\(V=B\cdot H=24\sqrt3\cdot 9=216\sqrt3\approx 374{,}12\ \text{cm}^3\)</span>.</p></div></details>
     </div>
 
     <div class="svgcard">
@@ -113,11 +113,11 @@
       <text x="148.0" y="7.8" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">D<tspan font-size='9' dy='3'>1</tspan></text>
       <text x="39.9" y="51.5" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">E<tspan font-size='9' dy='3'>1</tspan></text>
       <text x="54.9" y="84.7" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">F<tspan font-size='9' dy='3'>1</tspan></text>
-      <text x="178.0" y="145.0" font-size="13" fill="#ef4444" text-anchor="start" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">m</text>
+      <text x="178.0" y="145.0" font-size="13" fill="#ef4444" text-anchor="start" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">H</text>
       <text x="127.8" y="281.0" font-size="12" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">a</text>
     </svg>
     </div>
-    <p class="cap">Szabályos hatoldalú hasáb: az alapél <span class="math inline">\(a\)</span>, a magasság <span class="math inline">\(m\)</span>.</p>
+    <p class="cap">Szabályos hatoldalú hasáb: az alapél <span class="math inline">\(a\)</span>, a magasság <span class="math inline">\(H\)</span>.</p>
 
     <h2 id="s3">Fordított irányban</h2>
 
@@ -126,7 +126,7 @@
     <div class="doboz pelda" id="pelda-forditott-hasab">
       <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció</p>
       <p>Egy négyzetes hasáb alapéle <span class="math inline">\(6\)</span> cm, térfogata <span class="math inline">\(1080\ \text{cm}^3\)</span>. Mekkora a magassága és a felszíne?</p>
-      <details><summary>Megoldás</summary><div class="bel"><p>Az alaplap területe <span class="math inline">\(B=6^2=36\ \text{cm}^2\)</span>. A <span class="math inline">\(V=B\cdot m\)</span> képletből</p><span class="math display">\[m=\frac{V}{B}=\frac{1080}{36}=30\ \text{cm}.\]</span><p>Ezután <span class="math inline">\(K=4\cdot 6=24\)</span> cm, <span class="math inline">\(M=24\cdot 30=720\ \text{cm}^2\)</span>, tehát</p><span class="math display">\[F=2\cdot 36+720=792\ \text{cm}^2.\]</span></div></details>
+      <details><summary>Megoldás</summary><div class="bel"><p>Az alaplap területe <span class="math inline">\(B=6^2=36\ \text{cm}^2\)</span>. A <span class="math inline">\(V=B\cdot H\)</span> képletből</p><span class="math display">\[H=\frac{V}{B}=\frac{1080}{36}=30\ \text{cm}.\]</span><p>Ezután <span class="math inline">\(K=4\cdot 6=24\)</span> cm, <span class="math inline">\(M=24\cdot 30=720\ \text{cm}^2\)</span>, tehát</p><span class="math display">\[F=2\cdot 36+720=792\ \text{cm}^2.\]</span></div></details>
     </div>
 
     <div class="kviz" data-answer="0" data-jo="✔ Egy alaplap van (a fenék), plusz a palást — a fedőlap hiányzik." data-nem="✘ Számold össze a lapokat: a tartálynak van feneke és oldalfala, de nincs teteje.">

@@ -272,7 +272,7 @@ KOZEP = [
 
  ("Egy egyenlő szárú trapéz párhuzamos oldalai $14$ cm és $6$ cm, a szárai $5$ cm-esek. "
   "Mekkora a magassága és a területe?", None,
-  "A szár vetülete $\\frac{14-6}{2}=4$ cm, ezért $m=\\sqrt{5^2-4^2}=3$ cm és $T=30$ cm²."),
+  "A szár vetülete $\\frac{14-6}{2}=4$ cm, ezért $H=\\sqrt{5^2-4^2}=3$ cm és $T=30$ cm²."),
 
  ("Egy egyenlő oldalú háromszög magassága $6\\sqrt3$ cm. Mekkora az oldala és a területe?",
   None, "$a=12$ cm, $T=36\\sqrt3\\approx 62{,}35$ cm²."),
@@ -299,11 +299,11 @@ NEHEZ = [
  ("Egy szabályos hatszög beírt és köréírt körének területe hogyan aránylik egymáshoz?",
   None, "$3:4$."),
 
- ("Egy szabályos négyoldalú hasáb alapéle $a$, magassága $m$. Fejezd ki $a$-val és $m$-mel "
-  "a testátló $D$ hosszát! Számítsd ki $a=5$ cm és $m=12$ cm esetén, majd fordítva: "
-  "mekkora $m$, ha $a=6$ cm és $D=11$ cm?", None,
-  "$D=\\sqrt{2a^2+m^2}$; behelyettesítve $\\sqrt{50+144}=\\sqrt{194}\\approx 13{,}93$ cm. "
-  "Visszafelé: $\\sqrt{72+m^2}=11$, ahonnan $m^2=49$, tehát $m=7$ cm."),
+ ("Egy szabályos négyoldalú hasáb alapéle $a$, magassága $H$. Fejezd ki $a$-val és $H$-mel "
+  "a testátló $D$ hosszát! Számítsd ki $a=5$ cm és $H=12$ cm esetén, majd fordítva: "
+  "mekkora $H$, ha $a=6$ cm és $D=11$ cm?", None,
+  "$D=\\sqrt{2a^2+H^2}$; behelyettesítve $\\sqrt{50+144}=\\sqrt{194}\\approx 13{,}93$ cm. "
+  "Visszafelé: $\\sqrt{72+H^2}=11$, ahonnan $H^2=49$, tehát $H=7$ cm."),
 ]
 
 JOKER = ("Egy $a$ élű kocka <b>lapközéppontjai</b> egy szabályos oktaéder csúcsai. "

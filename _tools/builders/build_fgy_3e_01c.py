@@ -117,7 +117,7 @@ ALAP = [
    "A szabályos gúla oldalélei egyenlők.",
    "Az oldallap magassága hosszabb, mint az oldalél.",
    "Minden háromoldalú gúla szabályos tetraéder."],
-  ["igaz", "igaz", "igaz", "hamis (fordítva: $m_o &lt; b$)",
+  ["igaz", "igaz", "igaz", "hamis (fordítva: $h &lt; b$)",
    "hamis (csak az, amelyiknek mind a hat éle egyenlő)"], True),
 
  ("Hány csúcsa, éle és lapja van?",
@@ -131,13 +131,13 @@ ALAP = [
 
  ("Egy szabályos négyoldalú gúla alapéle $6$ cm, az oldallap magassága $4$ cm. Mekkora az "
   "oldaléle?", None,
-  "$b=\\sqrt{m_o^2+\\left(\\frac a2\\right)^2}=\\sqrt{16+9}=5$ cm."),
+  "$b=\\sqrt{h^2+\\left(\\frac a2\\right)^2}=\\sqrt{16+9}=5$ cm."),
 
  ("Melyik hosszabb a szabályos gúlában: az oldalél vagy az oldallap magassága? Indokold!",
   None,
   "Az <b>oldalél</b>. Mindkettő ugyanabból a magasságból indul, de az oldalél az alaplap "
-  "csúcsáig fut ($R$), az oldallap magassága csak az él felezőpontjáig ($\\rho$), és "
-  "$\\rho &lt; R$."),
+  "csúcsáig fut ($R$), az oldallap magassága csak az él felezőpontjáig ($r$), és "
+  "$r &lt; R$."),
 
  # --- C2: felszín és térfogat (alap 6–15)
  ("Egy szabályos négyoldalú gúla alapéle $6$ cm, az oldallap magassága $5$ cm. Számítsd ki",
@@ -159,7 +159,7 @@ ALAP = [
   "$V=\\frac{48\\cdot 9}{3}=144$ cm³."),
 
  ("Egy gúla alapterülete $25$ cm², térfogata $100$ cm³. Mekkora a magassága?", None,
-  "$m=\\frac{3V}{B}=\\frac{300}{25}=12$ cm."),
+  "$H=\\frac{3V}{B}=\\frac{300}{25}=12$ cm."),
 
  ("Egy hasáb és egy gúla alapterülete és magassága is egyenlő. Hányszorosa a hasáb "
   "térfogata a gúláénak?", None,
@@ -217,7 +217,7 @@ ALAP = [
 
  ("Egy csonkagúla alaplapja $25$ cm², fedőlapja $9$ cm², térfogata $98$ cm³. Mekkora a "
   "magassága?", None,
-  "$\\sqrt{Bb}=15$, ezért $\\frac{m}{3}\\cdot 49=98$, ahonnan $m=6$ cm."),
+  "$\\sqrt{B_1B_2}=15$, ezért $\\frac{H}{3}\\cdot 49=98$, ahonnan $H=6$ cm."),
 
  ("Mekkora egy szabályos <b>hatoldalú</b> csonkagúla <b>egyetlen</b> oldallapjának a "
   "területe, ha az alapélek $8$ cm és $5$ cm, az oldallap magassága pedig $4$ cm? És mekkora "
@@ -231,8 +231,8 @@ ALAP = [
   "$V=\\frac{12}{3}(100+256+160)=2064\\ \\text{cm}^3\\approx 2{,}1$ liter."),
 
  ("Melyik képlet melyik testé? Párosítsd!",
-  ["$V=B\\,m$", "$V=\\frac{B\\,m}{3}$",
-   "$V=\\frac{m}{3}\\left(B+b+\\sqrt{Bb}\\right)$"],
+  ["$V=B\\,H$", "$V=\\frac{B\\,H}{3}$",
+   "$V=\\frac{H}{3}\\left(B_1+B_2+\\sqrt{B_1B_2}\\right)$"],
   ["hasáb", "gúla", "csonkagúla"], True),
 ]
 
@@ -241,22 +241,22 @@ KOZEP = [
  # --- C1 (közép 1–4)
  ("Egy szabályos négyoldalú gúla <b>testmagassága</b> $4$ cm, az <b>oldallap</b> magassága "
   "$5$ cm. Mekkora az alapéle?", None,
-  "Az apotéma $\\rho=\\sqrt{5^2-4^2}=3$ cm, tehát $a=2\\rho=6$ cm."),
+  "Az apotéma $r=\\sqrt{5^2-4^2}=3$ cm, tehát $a=2r=6$ cm."),
 
  ("Egy szabályos négyoldalú gúla alapéle $6$ cm, térfogata $60$ cm³. Mekkora a magassága?",
-  None, "$m=\\frac{3V}{B}=\\frac{180}{36}=5$ cm."),
+  None, "$H=\\frac{3V}{B}=\\frac{180}{36}=5$ cm."),
 
  ("Egy szabályos négyoldalú gúla alapéle $16$ cm, magassága $6$ cm. Számítsd ki",
   ["az oldallap magasságát", "a palástot", "a felszínt"],
   ["$10$ cm", "$320$ cm²", "$576$ cm²"], True),
 
  ("Egy szabályos négyoldalú gúla magassága $9$ cm, térfogata $300$ cm³. Mekkora az alapéle?",
-  None, "$B=\\frac{3V}{m}=100$ cm², tehát $a=10$ cm."),
+  None, "$B=\\frac{3V}{H}=100$ cm², tehát $a=10$ cm."),
 
  # --- C2 (közép 5–12)
  ("Egy szabályos hatoldalú gúla alapéle $4$ cm, magassága $2$ cm. Számítsd ki",
   ["az oldallap magasságát", "a felszínét", "a térfogatát"],
-  ["$4$ cm (mert $\\rho=2\\sqrt3$)", "$24\\sqrt3+48\\approx 89{,}57$ cm²",
+  ["$4$ cm (mert $r=2\\sqrt3$)", "$24\\sqrt3+48\\approx 89{,}57$ cm²",
    "$16\\sqrt3\\approx 27{,}71$ cm³"], True),
 
  ("Egy szabályos háromoldalú gúla alapéle $12$ cm, magassága $5$ cm. Mekkora az "
@@ -273,7 +273,7 @@ KOZEP = [
 
  ("Egy szabályos négyoldalú gúla magassága $12$ cm, az alaplap apotémája $5$ cm. Mekkora az "
   "oldallap magassága és az alapél?", None,
-  "$m_o=\\sqrt{144+25}=13$ cm, $a=2\\rho=10$ cm."),
+  "$h=\\sqrt{144+25}=13$ cm, $a=2r=10$ cm."),
 
  ("Két hasonló gúla megfelelő éleinek aránya $2:3$. Hogyan aránylik a felszínük és a "
   "térfogatuk?", None,
@@ -295,7 +295,7 @@ KOZEP = [
 
  ("Egy szabályos négyoldalú gúla oldaléle $13$ cm, az alaplap köréírt sugara $5$ cm. "
   "Mekkora a magassága?", None,
-  "$m=\\sqrt{13^2-5^2}=12$ cm."),
+  "$H=\\sqrt{13^2-5^2}=12$ cm."),
 
  ("Egy szabályos négyoldalú csonkagúla alapélei $14$ cm és $8$ cm, az oldallap magassága "
   "$8$ cm. Mekkora a palástja és a felszíne?", None,
@@ -304,15 +304,15 @@ KOZEP = [
  # --- C4 (közép 16–21)
  ("Egy szabályos négyoldalú csonkagúla alapélei $20$ cm és $8$ cm, az oldallap magassága "
   "$10$ cm. Mekkora a test magassága és a térfogata?", None,
-  "$m=\\sqrt{10^2-6^2}=8$ cm; $V=\\frac83(400+64+160)=1664$ cm³."),
+  "$H=\\sqrt{10^2-6^2}=8$ cm; $V=\\frac83(400+64+160)=1664$ cm³."),
 
  ("Egy szabályos négyoldalú csonkagúla <b>palástja</b> $216$ cm², az alaplapjának éle "
   "$10$ cm, az oldallap magassága $6$ cm. Mekkora a fedőlap éle?", None,
-  "$M=4\\cdot\\frac{(10+a_1)\\cdot 6}{2}=12(10+a_1)=216$, ahonnan $a_1=8$ cm."),
+  "$M=4\\cdot\\frac{(10+a_2)\\cdot 6}{2}=12(10+a_2)=216$, ahonnan $a_2=8$ cm."),
 
  ("Egy csonkagúla alaplapja $49$ cm², fedőlapja $25$ cm², magassága $6$ cm. Mekkora a "
   "térfogata?", None,
-  "$\\sqrt{Bb}=35$, ezért $V=\\frac63(49+25+35)=218$ cm³."),
+  "$\\sqrt{B_1B_2}=35$, ezért $V=\\frac63(49+25+35)=218$ cm³."),
 
  ("Egy gúla alapterülete $9$ cm², magassága $4$ cm. Mekkora a térfogata? És mekkora annak "
   "a hasábnak a térfogata, amelynek ugyanez az alaplapja és a magassága?", None,
@@ -320,7 +320,7 @@ KOZEP = [
 
  ("Egy szabályos hatoldalú gúla alapéle $8$ cm, magassága $8$ cm. Mekkora az alaplap "
   "apotémája és az oldallap magassága?", None,
-  "$\\rho=4\\sqrt3\\approx 6{,}93$ cm, $m_o=\\sqrt{64+48}=4\\sqrt7\\approx 10{,}58$ cm."),
+  "$r=4\\sqrt3\\approx 6{,}93$ cm, $h=\\sqrt{64+48}=4\\sqrt7\\approx 10{,}58$ cm."),
 
  ("Egy szabályos négyoldalú csonkagúla alapélei $8$ cm és $4$ cm, a magassága $12$ cm. "
   "Mekkora a térfogata?", None,
@@ -331,7 +331,7 @@ KOZEP = [
 NEHEZ = [
  ("Egy szabályos négyoldalú gúla alapéle $12$ cm, az oldallap magassága $10$ cm. Mekkora a "
   "test magassága és a felszíne?", None,
-  "$m=\\sqrt{10^2-6^2}=8$ cm; $F=144+240=384$ cm²."),
+  "$H=\\sqrt{10^2-6^2}=8$ cm; $F=144+240=384$ cm²."),
 
  ("Két hasonló gúla térfogata $512$ cm³ és $64$ cm³. Hogyan aránylanak a megfelelő éleik?",
   None,
@@ -341,7 +341,7 @@ NEHEZ = [
   "háromszög. Az alapél $8$ cm. Mekkora a gúla magassága?", None,
   "A tengelymetszet alapja az alaplap átlója, $8\\sqrt2$; mivel szabályos háromszög, az "
   "oldalél is $8\\sqrt2$. A köréírt sugár $R=4\\sqrt2$, ezért "
-  "$m=\\sqrt{128-32}=4\\sqrt6\\approx 9{,}80$ cm."),
+  "$H=\\sqrt{128-32}=4\\sqrt6\\approx 9{,}80$ cm."),
 
  ("Egy gúla alapterülete $144$ cm². Milyen magasságban (a csúcstól mérve, a magasság "
   "hányadánál) kell elmetszeni, hogy a metszet területe $36$ cm² legyen?", None,
@@ -349,8 +349,8 @@ NEHEZ = [
 
  ("Egy szabályos négyoldalú csonkagúla alapélei $10$ cm és $6$ cm, a térfogata "
   "$392$ cm³. Mekkora a magassága?", None,
-  "$\\sqrt{Bb}=\\sqrt{100\\cdot 36}=60$, ezért $\\frac{m}{3}(100+36+60)=392$, "
-  "vagyis $\\frac{m}{3}\\cdot 196=392$, ahonnan $m=6$ cm."),
+  "$\\sqrt{B_1B_2}=\\sqrt{100\\cdot 36}=60$, ezért $\\frac{H}{3}(100+36+60)=392$, "
+  "vagyis $\\frac{H}{3}\\cdot 196=392$, ahonnan $H=6$ cm."),
 
  ("Egy gúlát félmagasságban elmetszünk az alaplappal párhuzamosan. Az eredeti gúla "
   "alapterülete $B$, térfogata $V$. Fejezd ki ezekkel",
@@ -360,8 +360,8 @@ NEHEZ = [
 
 JOKER = ("Egy szabályos négyoldalú gúla oldallapjai $45^\\circ$-os szöget zárnak be az "
          "alaplappal, az alapél $12$ cm. Mekkora a felszíne?",
-         "Ha az oldallap hajlásszöge $45^\\circ$, akkor $m=\\rho=6$ cm, tehát "
-         "$m_o=6\\sqrt2$ cm. Így $M=\\frac{48\\cdot 6\\sqrt2}{2}=144\\sqrt2$ és "
+         "Ha az oldallap hajlásszöge $45^\\circ$, akkor $H=r=6$ cm, tehát "
+         "$h=6\\sqrt2$ cm. Így $M=\\frac{48\\cdot 6\\sqrt2}{2}=144\\sqrt2$ és "
          "$F=144+144\\sqrt2\\approx 347{,}65$ cm².")
 
 # ============================== OLDAL ==============================

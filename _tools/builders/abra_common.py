@@ -799,7 +799,9 @@ def svg_hasab(alap="negyzet", a=1.0, b=None, m=1.4, w=340, h=280,
 
     `alap`: "haromszog" | "negyzet" | "teglalap" | "otszog" | "hatszog"
     `metszet`: None | "atlos" (két szemközti oldalélen átmenő) | "parhuzamos"
-    `feliratok`: {"a": "a", "m": "m", "D": "d"} — élhossz/magasság feliratok
+    `feliratok`: {"a": "a", "H": "H", "D": "D", "d": "d"} — élhossz/magasság feliratok.
+    A JELÖLÉS-KÁNON (`_JELOLESEK.md`): H testmagasság · h oldallap-magasság ·
+    s oldalél/alkotó · r apotéma · R köré írt sugár · D testátló · d lapátló.
     """
     feliratok = feliratok or {}
     poly = _alap(alap, a, b)
@@ -820,7 +822,7 @@ def svg_hasab(alap="negyzet", a=1.0, b=None, m=1.4, w=340, h=280,
         kp = (0.0, 0.0)
         r.vonal((0, 0, 0), (0, 0, m), szin=PIROS, sz=1.5, szaggat="4 3", reteg=2)
         r.derekszog((0, 0, 0), (0, 0, m), also3[0], szin=PIROS)
-        r.felirat((0, 0, m/2), feliratok.get("m", "m"), dx=8, dy=0, szin=PIROS,
+        r.felirat((0, 0, m/2), feliratok.get("H", "H"), dx=8, dy=0, szin=PIROS,
                   horgony="start")
     if testatlo and n >= 4:
         k = n // 2
@@ -877,18 +879,18 @@ def svg_gula(alap="negyzet", a=1.0, b=None, m=1.5, w=340, h=290,
         r.felirat(csucs, ABC[n], dy=-9, meret=13)
     if magassag:
         r.vonal((0, 0, 0), csucs, szin=PIROS, sz=1.5, szaggat="4 3", reteg=2)
-        r.felirat((0, 0, m/2), feliratok.get("m", "m"), dx=7, szin=PIROS, horgony="start")
+        r.felirat((0, 0, m/2), feliratok.get("H", "H"), dx=7, szin=PIROS, horgony="start")
         r.derekszog((0, 0, 0), csucs, also3[0], szin=PIROS)
     if apotema:
         i0 = _elso_el(poly)
         e0, e1 = poly[i0], poly[(i0 + 1) % n]
         fp = ((e0[0]+e1[0])/2, (e0[1]+e1[1])/2, 0.0)
         r.vonal((0, 0, 0), fp, szin=ZOLD, sz=1.5, szaggat="3 3", reteg=2)
-        r.felirat((fp[0]/2, fp[1]/2, 0), feliratok.get("rho", "ρ"),
+        r.felirat((fp[0]/2, fp[1]/2, 0), feliratok.get("r", "r"),
                   dx=0, dy=14, szin=ZOLD, meret=13)
         r.vonal(fp, csucs, szin=BOROSTYAN, sz=1.6, reteg=2)
         r.felirat(((fp[0]+csucs[0])/2, (fp[1]+csucs[1])/2, (fp[2]+csucs[2])/2),
-                  feliratok.get("mo", "m<tspan font-size='9' dy='3'>o</tspan>"),
+                  feliratok.get("h", "h"),
                   dx=-9, dy=2, szin=BOROSTYAN, horgony="end")
         r.derekszog(fp, csucs, (0, 0, 0), szin=BOROSTYAN, meret=9)
     if sugar:
@@ -899,7 +901,7 @@ def svg_gula(alap="negyzet", a=1.0, b=None, m=1.5, w=340, h=290,
         r.vonal(also3[1], csucs, szin=KEK, sz=2.0, reteg=2)
         p = also3[1]
         r.felirat(((p[0]+csucs[0])/2, (p[1]+csucs[1])/2, (p[2]+csucs[2])/2),
-                  feliratok.get("b", "b"), dx=9, dy=-2, szin=KEK, horgony="start")
+                  feliratok.get("s", "s"), dx=9, dy=-2, szin=KEK, horgony="start")
     if "a" in feliratok:
         i0 = _elso_el(poly); j0 = (i0 + 1) % n
         p, q = also3[i0], also3[j0]
@@ -928,7 +930,7 @@ def svg_csonkagula(alap="negyzet", a=1.0, a1=0.5, m=1.1, w=340, h=280,
         r.befoglal(csucs)
     if magassag:
         r.vonal((0, 0, 0), (0, 0, m), szin=PIROS, sz=1.5, szaggat="4 3", reteg=2)
-        r.felirat((0, 0, m/2), feliratok.get("m", "m"), dx=7, szin=PIROS, horgony="start")
+        r.felirat((0, 0, m/2), feliratok.get("H", "H"), dx=7, szin=PIROS, horgony="start")
         r.derekszog((0, 0, 0), (0, 0, m), also3[0], szin=PIROS)
     return r.kesz()
 
@@ -1289,8 +1291,8 @@ def svg_sikidom(tipus="trapez", a=1.0, c=0.55, m=0.55, n=6, w=340, h=210,
                   f'L{x2:.1f},{y2 - j:.1f}" fill="none" stroke="{PIROS}" stroke-width="1.1"/>')
         if cimkek:
             for p, sz, dx, dy, szin in (((a / 2, 0.0), "a", 0, 18, TINTA),
-                                        (((a + 0.02) / 2, m), "c", 0, -8, TINTA),
-                                        ((el, m / 2), "m", -8, 4, PIROS)):
+                                        (((a + 0.02) / 2, m), "b", 0, -8, TINTA),
+                                        ((el, m / 2), "h", -8, 4, PIROS)):
                 X, Y = P(p)
                 ki.append(f'  <text x="{X + dx:.1f}" y="{Y + dy:.1f}" font-size="13" '
                           f'fill="{szin}" text-anchor="middle" font-style="italic" '
@@ -1322,7 +1324,7 @@ def svg_sikidom(tipus="trapez", a=1.0, c=0.55, m=0.55, n=6, w=340, h=210,
         if cimkek:
             ki.append(f'  <text x="{(cx + Xf) / 2 - 10:.1f}" y="{(cy + Yf) / 2 + 12:.1f}" '
                       f'font-size="13" fill="{BOROSTYAN}" text-anchor="middle" '
-                      'font-style="italic" font-weight="600">ρ</text>')
+                      'font-style="italic" font-weight="600">r</text>')
             ki.append(f'  <text x="{(cx + X1) / 2 + 10:.1f}" y="{(cy + Y1) / 2 - 4:.1f}" '
                       f'font-size="13" fill="{KEK}" text-anchor="middle" '
                       'font-style="italic" font-weight="600">R</text>')

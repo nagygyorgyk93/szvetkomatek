@@ -519,9 +519,9 @@ A4 = [
  ]),
 
  ("Miért az alaplapon múlik minden", [
-   '<p>A következő egységek képletei ilyen alakúak: a hasáb térfogata $V = B\\cdot m$, a '
-   'gúláé $V = \\frac{B\\cdot m}{3}$, a felszín pedig $F = 2B + M$, illetve $F = B + M$. '
-   'Itt $B$ az <b>alaplap területe</b>, $m$ a <b>test magassága</b>, $M$ pedig a '
+   '<p>A következő egységek képletei ilyen alakúak: a hasáb térfogata $V = B\\cdot H$, a '
+   'gúláé $V = \\frac{B\\cdot H}{3}$, a felszín pedig $F = 2B + M$, illetve $F = B + M$. '
+   'Itt $B$ az <b>alaplap területe</b>, $H$ a <b>test magassága</b>, $M$ pedig a '
    '<b>palást</b> (az oldallapok együttes) területe. Mindegyik képletben ott van a $B$.</p>'
    '<p>Ha a testfeladat alaplapja szabályos háromszög, akkor a feladat fele valójában '
    '„számítsd ki egy szabályos háromszög területét”. Ezért érdemes ezt a néhány képletet '
@@ -529,37 +529,38 @@ A4 = [
    doboz("tetel", "A képlettár",
          '<table class="tt-table">'
          '<tr><th>Síkidom</th><th>Terület</th><th>Amire figyelj</th></tr>'
-         '<tr><td>háromszög</td><td>$T=\\dfrac{a\\,m_a}{2}$</td>'
-         '<td>$m_a$ az $a$ oldalhoz tartozó <b>magasság</b></td></tr>'
+         '<tr><td>háromszög</td><td>$T=\\dfrac{a\\,h_a}{2}$</td>'
+         '<td>$h_a$ az $a$ oldalhoz tartozó <b>magasság</b></td></tr>'
          '<tr><td>egyenlő oldalú (szabályos) háromszög</td><td>$T=\\dfrac{a^2\\sqrt3}{4}$</td>'
-         '<td>a magassága $m=\\dfrac{a\\sqrt3}{2}$</td></tr>'
+         '<td>a magassága $h=\\dfrac{a\\sqrt3}{2}$</td></tr>'
          '<tr><td>négyzet</td><td>$T=a^2$</td><td>átlója $d=a\\sqrt2$</td></tr>'
          '<tr><td>téglalap</td><td>$T=ab$</td><td>átlója $d=\\sqrt{a^2+b^2}$</td></tr>'
-         '<tr><td>paralelogramma</td><td>$T=a\\,m_a$</td>'
-         '<td>$m_a$ az $a$ oldalhoz tartozó magasság, nem a másik oldal!</td></tr>'
-         '<tr><td>trapéz</td><td>$T=\\dfrac{(a+c)\\,m}{2}$</td>'
-         '<td>$a\\parallel c$; $m$ a köztük lévő <b>merőleges</b> távolság</td></tr>'
+         '<tr><td>paralelogramma</td><td>$T=a\\,h_a$</td>'
+         '<td>$h_a$ az $a$ oldalhoz tartozó magasság, nem a másik oldal!</td></tr>'
+         '<tr><td>trapéz</td><td>$T=\\dfrac{(a+b)\\,h}{2}$</td>'
+         '<td>$a$ és $b$ a párhuzamos <b>alapok</b>, $c$ és $d$ a szárak; $h$ az alapok '
+         '<b>merőleges</b> távolsága</td></tr>'
          '<tr><td>rombusz, deltoid</td><td>$T=\\dfrac{e\\,f}{2}$</td>'
          '<td>$e$ és $f$ az <b>átlók</b>; minden merőleges átlójú négyszögre igaz</td></tr>'
-         '<tr><td>szabályos sokszög</td><td>$T=\\dfrac{K\\rho}{2}$</td>'
-         '<td>$K$ a kerület, $\\rho$ az apotéma (lásd lentebb)</td></tr>'
+         '<tr><td>szabályos sokszög</td><td>$T=\\dfrac{K\\,r}{2}$</td>'
+         '<td>$K$ a kerület, $r$ az apotéma (a beírt kör sugara, lásd lentebb)</td></tr>'
          '</table>',
          hid="tetel-teruletkepletek"),
  ]),
 
  ("Háromszögek", [
-   '<p>Az általános képlet $T=\\frac{a\\,m_a}{2}$, ahol $m_a$ az $a$ oldalhoz tartozó '
+   '<p>Az általános képlet $T=\\frac{a\\,h_a}{2}$, ahol $h_a$ az $a$ oldalhoz tartozó '
    'magasság: a szemközti csúcsból az $a$ oldal egyenesére bocsátott merőleges szakasz. A '
    'testfeladatokban viszont a leggyakoribb az <b>egyenlő oldalú</b> — más néven '
    '<b>szabályos</b> — háromszög: ez az alaplapja a szabályos háromoldalú hasábnak és '
    'gúlának.</p>',
    abra(SVG_HAROMSZOG, 'Az egyenlő oldalú háromszög magassága felezi az alapot, ezért a '
-        'Pitagorasz-tétel adja: $m=\\sqrt{a^2-\\left(\\frac a2\\right)^2}=\\frac{a\\sqrt3}{2}$.'),
+        'Pitagorasz-tétel adja: $h=\\sqrt{a^2-\\left(\\frac a2\\right)^2}=\\frac{a\\sqrt3}{2}$.'),
    doboz("tetel", "Az egyenlő oldalú háromszög",
          '<p>Ha az oldal $a$, akkor</p>'
-         '$$m=\\frac{a\\sqrt3}{2},\\qquad T=\\frac{a^2\\sqrt3}{4}.$$'
+         '$$h=\\frac{a\\sqrt3}{2},\\qquad T=\\frac{a^2\\sqrt3}{4}.$$'
          '<p>A magasság az oldallal, a terület az oldal <b>négyzetével</b> arányos. A $4$-es '
-         'nevező onnan jön, hogy a $T=\\frac{am}{2}$ képletbe $m=\\frac{a\\sqrt3}{2}$-t '
+         'nevező onnan jön, hogy a $T=\\frac{a\\,h}{2}$ képletbe $h=\\frac{a\\sqrt3}{2}$-t '
          'helyettesítjük: a felezés még egyszer feleződik. A magasság levezetése: felezi az '
          'alapot, majd '
          '<a href="' + HAS + 'tananyag-haromszogek-hasonlosaga.html#tetel-pitagorasz">'
@@ -574,7 +575,7 @@ A4 = [
          'mennyiség (cm²). Ha a válaszod cm-ben jött ki, nem területet számoltál.</p>'),
    kviz('Mekkora a $6$ cm oldalú szabályos háromszög <b>magassága</b>?',
         ['$3\\sqrt3\\approx 5{,}20$ cm', '$9\\sqrt3\\approx 15{,}59$ cm', '$6\\sqrt3\\approx 10{,}39$ cm'], 0,
-        jo="✔ $m=\\frac{a\\sqrt3}{2}=\\frac{6\\sqrt3}{2}=3\\sqrt3$.",
+        jo="✔ $h=\\frac{a\\sqrt3}{2}=\\frac{6\\sqrt3}{2}=3\\sqrt3$.",
         nem="✘ A $9\\sqrt3$ a TERÜLET ($\\frac{a^2\\sqrt3}{4}$). A magasság $\\frac{a\\sqrt3}{2}=3\\sqrt3$."),
  ]),
 
@@ -589,7 +590,7 @@ A4 = [
          'területe tehát $\\frac{(10+4)\\cdot 5}{2}=35$."</i></p>'
          '<p>A képletben <b>magasság</b> szerepel, nem szár. A magasságot itt ki kell '
          'számolni: a szár vetülete az alapon $\\frac{10-4}{2}=3$, ezért '
-         '$m=\\sqrt{5^2-3^2}=4$, és a terület $\\frac{(10+4)\\cdot 4}{2}=28$. Ugyanez a hiba '
+         '$h=\\sqrt{5^2-3^2}=4$, és a terület $\\frac{(10+4)\\cdot 4}{2}=28$. Ugyanez a hiba '
          'a paralelogrammánál is: ott sem a másik <i>oldal</i> kell, hanem a magasság.</p>'),
    '<p>Emlékeztetőül: a trapéz tulajdonságai és a középvonala az '
    '<a href="' + GEO + 'tananyag-negyszogek.html#tetel-trapez">1e négyszögek</a> leckéjében '
@@ -597,7 +598,7 @@ A4 = [
    kviz('Egy egyenlő szárú trapéz párhuzamos oldalai $10$ cm és $4$ cm, a szára $5$ cm. '
         'Mekkora a területe?',
         ['$28\\ \\text{cm}^2$', '$35\\ \\text{cm}^2$', '$20\\ \\text{cm}^2$'], 0,
-        jo="✔ Előbb a magasság: a szár vetülete (10−4)/2 = 3, ezért m = √(25−9) = 4. "
+        jo="✔ Előbb a magasság: a szár vetülete (10−4)/2 = 3, ezért h = √(25−9) = 4. "
            "Így T = (10+4)·4/2 = 28.",
         nem="✘ A képletbe a MAGASSÁG megy, nem a szár. A magasság a szárból Pitagorasz-tétellel "
             "jön ki: a vetület (10−4)/2 = 3, tehát m = √(25−9) = 4."),
@@ -605,22 +606,22 @@ A4 = [
 
  ("Szabályos sokszögek", [
    doboz("definicio", "Apotéma és köréírt sugár",
-         '<p>A szabályos sokszög <b>apotémája</b> ($\\rho$) a középpont és egy oldal '
-         'távolsága — vagyis a <b>beírt kör</b> sugara. A <b>köréírt kör</b> sugara ($R$) a '
-         'középpont és egy csúcs távolsága. Mindig $\\rho < R$.</p>',
+         '<p>A szabályos sokszög <b>apotémája</b> ($r$) a középpont és egy oldal '
+         'távolsága — vagyis a <b>beírt kör</b> sugara. A <b>köré írt kör</b> sugara ($R$) a '
+         'középpont és egy csúcs távolsága. Mindig $r &lt; R$.</p>',
          hid="def-apotema"),
    abra(SVG_HATSZOG, 'A szabályos hatszög hat egyenlő oldalú háromszögre bomlik; itt '
-        '$R=a$, az apotéma pedig $\\rho=\\frac{a\\sqrt3}{2}$.'),
+        '$R=a$, az apotéma pedig $r=\\frac{a\\sqrt3}{2}$.'),
    doboz("tetel", "A szabályos sokszög területe",
          '<p>A középpontból a csúcsokba húzott szakaszok a sokszöget $n$ egybevágó háromszögre '
          'bontják; mindegyik alapja $a$, hozzá tartozó magassága pedig éppen az apotéma, '
-         '$\\rho$. Ezért</p>'
-         '$$T=n\\cdot\\frac{a\\rho}{2}=\\frac{K\\rho}{2},$$'
+         '$r$. Ezért</p>'
+         '$$T=n\\cdot\\frac{a\\,r}{2}=\\frac{K\\,r}{2},$$'
          '<p>ahol $K=na$ a kerület. A <b>szabályos hatszög</b> külön figyelmet érdemel: '
          'ott a középponti szög $60^\\circ$, ezért a hat háromszög <b>egyenlő oldalú</b>, '
          'és így $R=a$. Emiatt</p>'
          '$$T_{6}=6\\cdot\\frac{a^2\\sqrt3}{4}=\\frac{3a^2\\sqrt3}{2},\\qquad '
-         '\\rho=\\frac{a\\sqrt3}{2}.$$',
+         'r=\\frac{a\\sqrt3}{2}.$$',
          hid="tetel-szabalyos-sokszog"),
    doboz("pelda", "Kristály-kamra szimuláció",
          '<p>Mekkora a $4$ cm oldalú szabályos hatszög területe? Számold ki <b>két '
@@ -630,8 +631,8 @@ A4 = [
                   '<p><b>1. út — hat egyenlő oldalú háromszög.</b></p>'
                   '$$T=6\\cdot\\frac{4^2\\sqrt3}{4}=6\\cdot 4\\sqrt3=24\\sqrt3\\approx 41{,}57\\ \\text{cm}^2.$$'
                   '<p><b>2. út — kerület és apotéma.</b> Itt $K=6\\cdot4=24$ cm és '
-                  '$\\rho=\\frac{4\\sqrt3}{2}=2\\sqrt3$ cm, ezért</p>'
-                  '$$T=\\frac{K\\rho}{2}=\\frac{24\\cdot 2\\sqrt3}{2}=24\\sqrt3\\approx 41{,}57\\ \\text{cm}^2.$$'
+                  '$r=\\frac{4\\sqrt3}{2}=2\\sqrt3$ cm, ezért</p>'
+                  '$$T=\\frac{K\\,r}{2}=\\frac{24\\cdot 2\\sqrt3}{2}=24\\sqrt3\\approx 41{,}57\\ \\text{cm}^2.$$'
                   '<p>Ugyanaz az eredmény — és ez nem véletlen: a második képletet éppen '
                   'ugyanabból a háromszögekre bontásból vezettük le. A kétféle számolás '
                   'tehát a <b>számolási</b> hibát szűri ki, nem a módszertanit — de erre '

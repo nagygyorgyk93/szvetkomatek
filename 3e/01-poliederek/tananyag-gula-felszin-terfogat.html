@@ -39,11 +39,11 @@
 
     <h2 id="s1">A felszín</h2>
 
-    <p>A gúla palástja csupa háromszögből áll. <b>Szabályos</b> gúlánál ezek egybevágó egyenlő szárú háromszögek: mindegyik alapja <span class="math inline">\(a\)</span>, magassága <span class="math inline">\(m_o\)</span>, tehát egy oldallap területe <span class="math inline">\(\frac{a\,m_o}{2}\)</span>.</p>
+    <p>A gúla palástja csupa háromszögből áll. <b>Szabályos</b> gúlánál ezek egybevágó egyenlő szárú háromszögek: mindegyik alapja <span class="math inline">\(a\)</span>, magassága <span class="math inline">\(h\)</span>, tehát egy oldallap területe <span class="math inline">\(\frac{a\,h}{2}\)</span>.</p>
 
     <div class="doboz tetel" id="tetel-gula-felszin">
       <p class="cim"><span class="ikon">📘</span> A szabályos gúla felszíne</p>
-      <p>Ha az alaplap <span class="math inline">\(n\)</span> oldalú, akkor</p><span class="math display">\[M=n\cdot\frac{a\,m_o}{2}=\frac{K\,m_o}{2},\qquad F=B+M,\]</span><p>ahol <span class="math inline">\(K=na\)</span> az alaplap kerülete, <span class="math inline">\(B\)</span> az alaplap területe, <span class="math inline">\(m_o\)</span> pedig az oldallapnak az <b>alapélhez tartozó magassága</b>.</p><p>A gúlának <b>egy</b> alaplapja van (a hasábnak alaplapja és fedőlapja is), ezért itt <span class="math inline">\(B\)</span> és nem <span class="math inline">\(2B\)</span> szerepel. Ha a gúla nem szabályos, az oldallapokat egyenként kell kiszámolni.</p>
+      <p>Ha az alaplap <span class="math inline">\(n\)</span> oldalú, akkor</p><span class="math display">\[M=n\cdot\frac{a\,h}{2}=\frac{K\,h}{2},\qquad F=B+M,\]</span><p>ahol <span class="math inline">\(K=na\)</span> az alaplap kerülete, <span class="math inline">\(B\)</span> az alaplap területe, <span class="math inline">\(h\)</span> pedig az oldallapnak az <b>alapélhez tartozó magassága</b>.</p><p>A gúlának <b>egy</b> alaplapja van (a hasábnak alaplapja és fedőlapja is), ezért itt <span class="math inline">\(B\)</span> és nem <span class="math inline">\(2B\)</span> szerepel. Ha a gúla nem szabályos, az oldallapokat egyenként kell kiszámolni.</p>
     </div>
 
     <div class="svgcard">
@@ -56,17 +56,17 @@
       <polygon points="202.0,98.0 202.0,182.0 267.5,140.0" fill="#047857" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
     </svg>
     </div>
-    <p class="cap">A négyzetes gúla hálója: az alaplap és a négy oldallap. A háromszögek magassága <span class="math inline">\(m_o\)</span> — ez a szám kell a palásthoz.</p>
+    <p class="cap">A négyzetes gúla hálója: az alaplap és a négy oldallap. A háromszögek magassága <span class="math inline">\(h\)</span> — ez a szám kell a palásthoz.</p>
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
-      <p><i>„Az oldallap háromszög, az oldala <span class="math inline">\(b\)</span> — a területe tehát <span class="math inline">\(\frac{a\cdot b}{2}\)</span>."</i></p><p>A háromszög területéhez az alaphoz tartozó <b>magasság</b> kell, nem a szár. Az oldallap alapja <span class="math inline">\(a\)</span>, a hozzá tartozó magasság <span class="math inline">\(m_o\)</span> — az oldalél (<span class="math inline">\(b\)</span>) csak a háromszög szára, és mindig hosszabb, mint <span class="math inline">\(m_o\)</span>. Ha <span class="math inline">\(b\)</span>-vel számolsz, a palást túl nagy lesz.</p>
+      <p><i>„Az oldallap háromszög, az oldala <span class="math inline">\(s\)</span> — a területe tehát <span class="math inline">\(\frac{a\cdot b}{2}\)</span>."</i></p><p>A háromszög területéhez az alaphoz tartozó <b>magasság</b> kell, nem a szár. Az oldallap alapja <span class="math inline">\(a\)</span>, a hozzá tartozó magasság <span class="math inline">\(h\)</span> — az oldalél (<span class="math inline">\(s\)</span>) csak a háromszög szára, és mindig hosszabb, mint <span class="math inline">\(h\)</span>. Ha <span class="math inline">\(s\)</span>-vel számolsz, a palást túl nagy lesz.</p>
     </div>
 
-    <div class="kviz" data-answer="0" data-jo="✔ A háromszög területéhez a hozzá tartozó magasság kell — az oldallapé m_o." data-nem="✘ Az oldallapok háromszögek, nem négyzetek — és a területükhöz nem az oldalél kell, hanem az alapélhez tartozó magasság, m_o.">
+    <div class="kviz" data-answer="0" data-jo="✔ A háromszög területéhez a hozzá tartozó magasság kell — az oldallapé h." data-nem="✘ Az oldallapok háromszögek, nem négyzetek — és a területükhöz nem az oldalél kell, hanem az alapélhez tartozó magasság, h.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
       <p>Melyik képlet adja a szabályos négyoldalú gúla palástját?</p>
-      <div class="opciok"><button><span class="math inline">\(M=4\cdot\frac{a\,m_o}{2}\)</span>, ahol <span class="math inline">\(m_o\)</span> az oldallap magassága</button><button><span class="math inline">\(M=4\cdot\frac{a\,b}{2}\)</span>, ahol <span class="math inline">\(b\)</span> az oldalél</button><button><span class="math inline">\(M=4a^2\)</span></button></div>
+      <div class="opciok"><button><span class="math inline">\(M=4\cdot\frac{a\,h}{2}\)</span>, ahol <span class="math inline">\(h\)</span> az oldallap magassága</button><button><span class="math inline">\(M=4\cdot\frac{a\,s}{2}\)</span>, ahol <span class="math inline">\(s\)</span> az oldalél</button><button><span class="math inline">\(M=4a^2\)</span></button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
@@ -74,14 +74,14 @@
 
     <div class="doboz tetel" id="tetel-gula-terfogat">
       <p class="cim"><span class="ikon">📘</span> A gúla térfogata</p>
-      <p>Minden gúla térfogata</p><span class="math display">\[V=\frac{B\cdot m}{3},\]</span><p>ahol <span class="math inline">\(B\)</span> az alaplap területe, <span class="math inline">\(m\)</span> pedig a magasság.</p>
+      <p>Minden gúla térfogata</p><span class="math display">\[V=\frac{B\cdot H}{3},\]</span><p>ahol <span class="math inline">\(B\)</span> az alaplap területe, <span class="math inline">\(H\)</span> pedig a magasság.</p>
     </div>
 
-    <p>A <b>harmad</b> nem önkényes szám. Vegyük az <span class="math inline">\(ABCA_1B_1C_1\)</span> háromoldalú hasábot, és bontsuk fel a következő három gúlára: <span class="math inline">\(A_1ABC\)</span>, <span class="math inline">\(A_1B_1BC\)</span> és <span class="math inline">\(A_1B_1C_1C\)</span>.</p><ul><li>Az első kettőnek közös a <span class="math inline">\(C\)</span> csúcsa, az alapjuk pedig az <span class="math inline">\(A_1AB\)</span>, illetve az <span class="math inline">\(A_1B_1B\)</span> háromszög — ezek az <span class="math inline">\(ABB_1A_1\)</span> paralelogramma két fele, tehát egyenlő területűek és egy síkban vannak.</li><li>A második és a harmadik közös csúcsa <span class="math inline">\(A_1\)</span>, az alapjuk a <span class="math inline">\(B_1BC\)</span>, illetve a <span class="math inline">\(B_1C_1C\)</span> háromszög — a <span class="math inline">\(BCC_1B_1\)</span> paralelogramma két fele.</li></ul><p>Az <b>egyenlő alapterületű és egyenlő magasságú gúlák térfogata egyenlő</b> — ezt itt alapelvként fogadjuk el, a pontos bizonyítása nem tananyagunk. Eszerint mind a három darab térfogata ugyanakkora, és együtt kiadják a hasábot, tehát</p><span class="math display">\[V_{\text{gúla}}=\frac{V_{\text{hasáb}}}{3}=\frac{B\cdot m}{3}.\]</span><p>Tetszőleges alapú gúlára ebből következik a képlet: az alaplapot háromszögekre bontjuk, minden darab háromoldalú gúla lesz — <b>ugyanazzal az <span class="math inline">\(m\)</span> magassággal</b>, hiszen a csúcs közös —, ezért a térfogatok összege <span class="math inline">\(\frac{B_1m}{3}+\dots+\frac{B_km}{3}=\frac{Bm}{3}\)</span>.</p>
+    <p>A <b>harmad</b> nem önkényes szám. Vegyük az <span class="math inline">\(ABCA_1B_1C_1\)</span> háromoldalú hasábot, és bontsuk fel a következő három gúlára: <span class="math inline">\(A_1ABC\)</span>, <span class="math inline">\(A_1B_1BC\)</span> és <span class="math inline">\(A_1B_1C_1C\)</span>.</p><ul><li>Az első kettőnek közös a <span class="math inline">\(C\)</span> csúcsa, az alapjuk pedig az <span class="math inline">\(A_1AB\)</span>, illetve az <span class="math inline">\(A_1B_1B\)</span> háromszög — ezek az <span class="math inline">\(ABB_1A_1\)</span> paralelogramma két fele, tehát egyenlő területűek és egy síkban vannak.</li><li>A második és a harmadik közös csúcsa <span class="math inline">\(A_1\)</span>, az alapjuk a <span class="math inline">\(B_1BC\)</span>, illetve a <span class="math inline">\(B_1C_1C\)</span> háromszög — a <span class="math inline">\(BCC_1B_1\)</span> paralelogramma két fele.</li></ul><p>Az <b>egyenlő alapterületű és egyenlő magasságú gúlák térfogata egyenlő</b> — ezt itt alapelvként fogadjuk el, a pontos bizonyítása nem tananyagunk. Eszerint mind a három darab térfogata ugyanakkora, és együtt kiadják a hasábot, tehát</p><span class="math display">\[V_{\text{gúla}}=\frac{V_{\text{hasáb}}}{3}=\frac{B\cdot H}{3}.\]</span><p>Tetszőleges alapú gúlára ebből következik a képlet: az alaplapot háromszögekre bontjuk, minden darab háromoldalú gúla lesz — <b>ugyanazzal az <span class="math inline">\(H\)</span> magassággal</b>, hiszen a csúcs közös —, ezért a térfogatok összege <span class="math inline">\(\frac{T_1H}{3}+\dots+\frac{T_kH}{3}=\frac{B\,H}{3}\)</span>, ahol <span class="math inline">\(T_1,\dots,T_k\)</span> a részháromszögek területe és <span class="math inline">\(T_1+\dots+T_k=B\)</span>.</p>
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
-      <p>Ezért fér egy kúpos fagylalttölcsérbe pontosan harmadannyi, mint egy ugyanolyan széles és magas hengeres pohárba — a kúpra ugyanez a harmad érvényes, ahogy azt a következő témakörben látni fogjuk. És ezért van a sátortető alatt jóval kevesebb levegő van, mint amennyit a tetőtér magassága alapján gondolnánk.</p>
+      <p>Ezért fér egy kúpos fagylalttölcsérbe pontosan harmadannyi, mint egy ugyanolyan széles és magas hengeres pohárba — a kúpra ugyanez a harmad érvényes, ahogy azt a következő témakörben látni fogjuk. És ezért van a sátortető alatt jóval kevesebb levegő, mint amennyit a tetőtér magassága alapján gondolnánk.</p>
     </div>
 
     <h2 id="s3">Kidolgozott példák</h2>
@@ -89,13 +89,13 @@
     <div class="doboz pelda" id="pelda-gula-felszin">
       <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció</p>
       <p>Egy szabályos négyoldalú gúla alapéle <span class="math inline">\(6\)</span> cm, magassága <span class="math inline">\(4\)</span> cm. Mekkora a felszíne és a térfogata?</p>
-      <details><summary>Megoldás</summary><div class="bel"><p>Az <a href="tananyag-gula.html#pelda-gula-adatok">előző egységben</a> már kiszámoltuk: az alaplap apotémája <span class="math inline">\(\rho=\frac a2=3\)</span> cm, az oldallap magassága pedig <span class="math inline">\(m_o=\sqrt{4^2+3^2}=5\)</span> cm.</p><p><b>Alaplap:</b> <span class="math inline">\(B=a^2=36\ \text{cm}^2\)</span>. <b>Kerület:</b> <span class="math inline">\(K=4\cdot 6=24\)</span> cm.</p><p><b>Palást:</b> <span class="math inline">\(M=\frac{K\,m_o}{2}=\frac{24\cdot 5}{2}=60\ \text{cm}^2\)</span>.</p><p><b>Felszín:</b> <span class="math inline">\(F=B+M=36+60=96\ \text{cm}^2\)</span>.</p><p><b>Térfogat:</b> <span class="math inline">\(V=\frac{B\,m}{3}=\frac{36\cdot 4}{3}=48\ \text{cm}^3\)</span>.</p></div></details>
+      <details><summary>Megoldás</summary><div class="bel"><p>Az <a href="tananyag-gula.html#pelda-gula-adatok">előző egységben</a> már kiszámoltuk: az alaplap apotémája <span class="math inline">\(r=\frac a2=3\)</span> cm, az oldallap magassága pedig <span class="math inline">\(h=\sqrt{4^2+3^2}=5\)</span> cm.</p><p><b>Alaplap:</b> <span class="math inline">\(B=a^2=36\ \text{cm}^2\)</span>. <b>Kerület:</b> <span class="math inline">\(K=4\cdot 6=24\)</span> cm.</p><p><b>Palást:</b> <span class="math inline">\(M=\frac{K\,h}{2}=\frac{24\cdot 5}{2}=60\ \text{cm}^2\)</span>.</p><p><b>Felszín:</b> <span class="math inline">\(F=B+M=36+60=96\ \text{cm}^2\)</span>.</p><p><b>Térfogat:</b> <span class="math inline">\(V=\frac{B\,m}{3}=\frac{36\cdot 4}{3}=48\ \text{cm}^3\)</span>.</p></div></details>
     </div>
 
     <div class="doboz pelda" id="pelda-hatszog-gula">
       <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció</p>
       <p>Egy szabályos hatoldalú gúla alapéle <span class="math inline">\(4\)</span> cm, az oldallap magassága <span class="math inline">\(5\)</span> cm. Mekkora a felszíne? És a magassága?</p>
-      <details><summary>Megoldás</summary><div class="bel"><p><b>Alaplap:</b> <span class="math inline">\(B=6\cdot\frac{4^2\sqrt3}{4}=24\sqrt3\approx 41{,}57\ \text{cm}^2\)</span>.</p><p><b>Palást:</b> <span class="math inline">\(K=24\)</span> cm, ezért <span class="math inline">\(M=\frac{24\cdot 5}{2}=60\ \text{cm}^2\)</span>, és <span class="math inline">\(F=24\sqrt3+60\approx 101{,}57\ \text{cm}^2\)</span>.</p><p><b>Magasság.</b> A szabályos hatszög apotémája <span class="math inline">\(\rho=\frac{a\sqrt3}{2}=2\sqrt3\)</span> cm, tehát abból a derékszögű háromszögből, amely a magasságot, az apotémát és az oldallap magasságát köti össze:</p><span class="math display">\[m=\sqrt{m_o^2-\rho^2}=\sqrt{25-12}=\sqrt{13}\approx 3{,}61\ \text{cm}.\]</span></div></details>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>Alaplap:</b> <span class="math inline">\(B=6\cdot\frac{4^2\sqrt3}{4}=24\sqrt3\approx 41{,}57\ \text{cm}^2\)</span>.</p><p><b>Palást:</b> <span class="math inline">\(K=24\)</span> cm, ezért <span class="math inline">\(M=\frac{24\cdot 5}{2}=60\ \text{cm}^2\)</span>, és <span class="math inline">\(F=24\sqrt3+60\approx 101{,}57\ \text{cm}^2\)</span>.</p><p><b>Magasság.</b> A szabályos hatszög apotémája <span class="math inline">\(r=\frac{a\sqrt3}{2}=2\sqrt3\)</span> cm, tehát abból a derékszögű háromszögből, amely a magasságot, az apotémát és az oldallap magasságát köti össze:</p><span class="math display">\[H=\sqrt{h^2-r^2}=\sqrt{25-12}=\sqrt{13}\approx 3{,}61\ \text{cm}.\]</span></div></details>
     </div>
 
     <div class="svgcard">
@@ -124,9 +124,9 @@
       <text x="13.4" y="243.4" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">E</text>
       <text x="32.0" y="283.2" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">F</text>
       <text x="170.0" y="17.0" font-size="13" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">G</text>
-      <text x="177.0" y="132.2" font-size="13" fill="#ef4444" text-anchor="start" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">m</text>
-      <text x="143.6" y="270.2" font-size="13" fill="#047857" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">ρ</text>
-      <text x="134.6" y="152.0" font-size="13" fill="#f59e0b" text-anchor="end" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">m<tspan font-size='9' dy='3'>o</tspan></text>
+      <text x="177.0" y="132.2" font-size="13" fill="#ef4444" text-anchor="start" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">H</text>
+      <text x="143.6" y="270.2" font-size="13" fill="#047857" text-anchor="middle" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">r</text>
+      <text x="134.6" y="152.0" font-size="13" fill="#f59e0b" text-anchor="end" font-style="italic" font-weight="600" font-family="Cambria, Georgia, serif">h</text>
     </svg>
     </div>
     <p class="cap">Szabályos hatoldalú gúla.</p>
@@ -160,7 +160,7 @@
     <div class="doboz pelda" id="pelda-gula-osszetett">
       <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció</p>
       <p>Egy torony alsó része <span class="math inline">\(6\)</span> m alapélű, <span class="math inline">\(5\)</span> m magas négyzetes hasáb; a teteje a hasáb fedőlapjára illesztett, <span class="math inline">\(4\)</span> m magas szabályos négyoldalú gúla. Mekkora a torony térfogata és a felszíne?</p>
-      <details><summary>Megoldás</summary><div class="bel"><p>A hasáb térfogata <span class="math inline">\(V_1=6^2\cdot 5=180\ \text{m}^3\)</span>.</p><p>A gúla alaplapja ugyanaz a négyzet, ezért <span class="math inline">\(V_2=\frac{36\cdot 4}{3}=48\ \text{m}^3\)</span>.</p><p>A torony térfogata <span class="math inline">\(V=180+48=228\ \text{m}^3\)</span>.</p><p><b>Felszín.</b> A hasáb fedőlapja és a gúla alaplapja egymáshoz simul, tehát belülre kerül; a talpon lévő négyzet viszont látszik. A gúla oldallap-magassága <span class="math inline">\(m_o=\sqrt{4^2+3^2}=5\)</span> m, ezért</p><span class="math display">\[F=36+4\cdot 6\cdot 5+\frac{24\cdot 5}{2}=36+120+60=216\ \text{m}^2,\]</span><p>ahol a három tag rendre a talp, a hasáb palástja és a gúla palástja.</p></div></details>
+      <details><summary>Megoldás</summary><div class="bel"><p>A hasáb térfogata <span class="math inline">\(V_1=6^2\cdot 5=180\ \text{m}^3\)</span>.</p><p>A gúla alaplapja ugyanaz a négyzet, ezért <span class="math inline">\(V_2=\frac{36\cdot 4}{3}=48\ \text{m}^3\)</span>.</p><p>A torony térfogata <span class="math inline">\(V=180+48=228\ \text{m}^3\)</span>.</p><p><b>Felszín.</b> A hasáb fedőlapja és a gúla alaplapja egymáshoz simul, tehát belülre kerül; a talpon lévő négyzet viszont látszik. A gúla oldallap-magassága <span class="math inline">\(h=\sqrt{4^2+3^2}=5\)</span> m, ezért</p><span class="math display">\[F=36+4\cdot 6\cdot 5+\frac{24\cdot 5}{2}=36+120+60=216\ \text{m}^2,\]</span><p>ahol a három tag rendre a talp, a hasáb palástja és a gúla palástja.</p></div></details>
     </div>
 
     <div class="kviz" data-answer="0" data-jo="✔ A hasáb fedőlapja és a gúla alaplapja egymáshoz simul, tehát belülre kerül; a talpon lévő alaplap viszont a felszín része." data-nem="✘ Két lapot nem szabad beleszámolni: a hasáb fedőlapját és a gúla alaplapját — ezek az összeillesztésnél belülre kerülnek. A test alján lévő lap viszont látszik.">

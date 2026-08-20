@@ -110,19 +110,19 @@ OSSZ = [
   '</table></div>',
   '<p><b>Az alaplap területe</b> — ezen múlik minden felszín- és térfogatszámítás '
   '(' + h(AL, "tetel-teruletkepletek") + '):</p>'
-  '$$T_\\triangle=\\frac{a\\cdot m_a}{2},\\qquad '
+  '$$T_\\triangle=\\frac{a\\cdot h_a}{2},\\qquad '
   'T_{\\text{egyenlő oldalú}}=\\frac{a^{2}\\sqrt3}{4},\\qquad '
   'T_{\\square}=a^{2},\\qquad T_{\\text{téglalap}}=ab$$'
-  '$$T_{\\text{paralelogramma}}=a\\cdot m_a,\\qquad '
-  'T_{\\text{trapéz}}=\\frac{(a+c)\\cdot m}{2},\\qquad '
+  '$$T_{\\text{paralelogramma}}=a\\cdot h_a,\\qquad '
+  'T_{\\text{trapéz}}=\\frac{(a+c)\\cdot H}{2},\\qquad '
   'T_{\\text{rombusz}}=\\frac{e\\cdot f}{2},\\qquad '
   'T_{\\text{szab. hatszög}}=\\frac{3a^{2}\\sqrt3}{2}$$',
-  '<p><b>Szabályos sokszög:</b> $T=\\dfrac{K\\cdot\\rho}{2}$, ahol $K$ a kerület és '
-  '$\\rho$ az <b>apotéma</b> (a beírt kör sugara, azaz a középpont és az oldal '
+  '<p><b>Szabályos sokszög:</b> $T=\\dfrac{K\\,r}{2}$, ahol $K$ a kerület és '
+  '$r$ az <b>apotéma</b> (a beírt kör sugara, azaz a középpont és az oldal '
   'távolsága), $R$ pedig a köré írt kör sugara (a középpont és a csúcs távolsága) '
   '(' + h(AL, "tetel-szabalyos-sokszog") + '). A szabályos hatszögnél '
-  '$\\rho=\\dfrac{a\\sqrt3}{2}$ és $R=a$, a négyzetnél $\\rho=\\dfrac a2$ és '
-  '$R=\\dfrac{a\\sqrt2}{2}$, a szabályos háromszögnél $\\rho=\\dfrac{a\\sqrt3}{6}$ és '
+  '$r=\\dfrac{a\\sqrt3}{2}$ és $R=a$, a négyzetnél $r=\\dfrac a2$ és '
+  '$R=\\dfrac{a\\sqrt2}{2}$, a szabályos háromszögnél $r=\\dfrac{a\\sqrt3}{6}$ és '
   '$R=\\dfrac{a\\sqrt3}{3}$ (' + h(AL, "def-apotema") + '). A szabályos hatszög '
   '<b>hosszabb</b> átlója $2a$, a <b>rövidebb</b> $a\\sqrt3$.</p>',
   '<p><b>A két nevezetes derékszögű háromszög</b> — enélkül a térbeli feladatok fele '
@@ -145,19 +145,19 @@ OSSZ = [
   'össze, a <b>testátló</b> két olyan csúcsot, amely nincs közös lapon '
   '(' + h(HA, "tetel-teglatest-atlo") + '):</p>'
   '$$D_{\\text{téglatest}}=\\sqrt{a^{2}+b^{2}+c^{2}},\\qquad D_{\\text{kocka}}=a\\sqrt3,'
-  '\\qquad D_{\\text{négyzetes hasáb}}=\\sqrt{2a^{2}+m^{2}}$$',
+  '\\qquad D_{\\text{négyzetes hasáb}}=\\sqrt{2a^{2}+H^{2}}$$',
   '<p><b>Felszín és térfogat</b> — $M$ a <b>palást területe</b>; az egyenes hasábnál a '
   'palást kiterítve egyetlen téglalap (' + h(HF, "tetel-hasab-felszin") + ', ' +
   h(HF, "tetel-hasab-terfogat", "térfogat") + '):</p>'
-  '$$M=K\\cdot m,\\qquad F=2B+M,\\qquad V=B\\cdot m$$'
-  '<p>ahol $B$ az alapterület, $K$ az alaplap kerülete, $m$ a magasság, $M$ a palást '
+  '$$M=K\\cdot H,\\qquad F=2B+M,\\qquad V=B\\cdot H$$'
+  '<p>ahol $B$ az alapterület, $K$ az alaplap kerülete, $H$ a magasság, $M$ a palást '
   'területe és $F$ a felszín.</p>',
   '<p><b>Síkmetszetek:</b> az alaplappal <b>párhuzamos</b> metszet az alaplappal '
   '<b>egybevágó</b> (' + h(HS, "tetel-hasab-parhuzamos-metszet") + ') — a hasábnál tehát nincs '
   'kicsinyítés! Az <b>átlós metszet</b> két nem szomszédos oldalélen átmenő sík '
   'metszete; konvex alaplapú egyenes hasábnál <b>téglalap</b>, amelynek egyik oldala az '
   'alaplap átlója, a másik a magasság (' + h(HS, "tetel-hasab-atlos-metszet") + '):</p>'
-  '$$T_{\\text{átlós}}=d\\cdot m$$'
+  '$$T_{\\text{átlós}}=d\\cdot H$$'
   '<p>ahol $d$ az <b>alaplap</b> átlója (a testátlót végig $D$ jelöli).</p>',
   '<p><b>Mértékegységek:</b> $1\\ \\text{m}^3=1000\\ \\text{dm}^3=1000$ liter, '
   '$1\\ \\text{dm}^3=1000\\ \\text{cm}^3$. Hosszban $10$-szeres, területben '
@@ -173,14 +173,15 @@ OSSZ = [
   h(GU, "def-szabalyos-gula", "szabályos") + ').</p>',
   '<p><b>A szabályos gúla három derékszögű háromszöge</b> — minden gúlás feladat '
   'ezekből él (' + h(GU, "tetel-harom-haromszog") + '):</p>'
-  '$$m_o^{2}=m^{2}+\\rho^{2},\\qquad b^{2}=m^{2}+R^{2},\\qquad '
-  'b^{2}=m_o^{2}+\\left(\\frac a2\\right)^{2},\\qquad '
-  'R^{2}=\\rho^{2}+\\left(\\frac a2\\right)^{2}$$'
-  '<p>$m$ = testmagasság, $m_o$ = az oldallap magassága (a gúla apotémája), '
-  '$b$ = oldalél, $\\rho$ = az alaplap apotémája, $R$ = az alaplap köré írt kör sugara.</p>',
+  '$$h^{2}=H^{2}+r^{2},\\qquad s^{2}=H^{2}+R^{2},\\qquad '
+  's^{2}=h^{2}+\\left(\\frac a2\\right)^{2},\\qquad '
+  'R^{2}=r^{2}+\\left(\\frac a2\\right)^{2}$$'
+  '<p>$H$ = testmagasság, $h$ = az oldallap magassága (a gúla apotémája), '
+  '$s$ = oldalél, $r$ = az alaplap apotémája (a beírt kör sugara), $R$ = az alaplap köré '
+  'írt körének sugara.</p>',
   '<p><b>Felszín és térfogat</b> — a palást a szabályos gúlánál $n$ egybevágó '
   'háromszög (' + h(GF, "tetel-gula-felszin") + ', ' + h(GF, "tetel-gula-terfogat", "térfogat") + '):</p>'
-  '$$M=\\frac{K\\cdot m_o}{2},\\qquad F=B+M,\\qquad V=\\frac{B\\cdot m}{3}$$'
+  '$$M=\\frac{K\\cdot h}{2},\\qquad F=B+M,\\qquad V=\\frac{B\\cdot H}{3}$$'
   '<p>⚠️ A térfogatban a <b>test</b>magasság van, a palástban az <b>oldallap</b> '
   'magassága — a kettő összekeverése a leggyakoribb hiba.</p>',
   '<p><b>Síkmetszet és hasonlóság:</b> az alaplappal párhuzamos metszet az alaplaphoz '
@@ -192,11 +193,11 @@ OSSZ = [
   'egyenlő szárú trapézok (' + h(CS, "def-csonkagula") + ', ' +
   h(CS, "tetel-csonkagula-felszin", "felszín") + ', ' +
   h(CS, "tetel-csonkagula-terfogat", "térfogat") + '):</p>'
-  '$$M=n\\cdot\\frac{(a+a_1)\\cdot m_o}{2},\\qquad F=B+b+M,\\qquad '
-  'V=\\frac{m}{3}\\left(B+b+\\sqrt{B\\cdot b}\\right)$$'
-  '<p>ahol $a$ az alaplap, $a_1$ a fedőlap éle, $n$ az oldalak száma, $m_o$ az '
-  'oldallap-trapéz magassága, $B$ az alaplap és $b$ a <b>fedőlap területe</b> — '
-  'itt a $b$ tehát <b>nem</b> az oldalél!</p>',
+  '$$M=n\\cdot\\frac{(a_1+a_2)\\cdot h}{2},\\qquad F=B_1+B_2+M,\\qquad '
+  'V=\\frac{H}{3}\\left(B_1+B_2+\\sqrt{B_1B_2}\\right)$$'
+  '<p>ahol $a_1$ az alaplap, $a_2$ a fedőlap éle, $n$ az oldalak száma, $h$ az '
+  'oldallap-trapéz magassága, $B_1$ és $B_2$ pedig a két lap <b>területe</b>. A '
+  'derékszögű háromszögek: $h^2=H^2+(r_1-r_2)^2$ és $s^2=H^2+(R_1-R_2)^2$.</p>',
  ]),
  ("Csapdák és utolsó ellenőrzés", [
   doboz("csapda", "Amire a dolgozaton a legtöbben ráfutnak",
@@ -206,8 +207,8 @@ OSSZ = [
         'gúlánál <b>hasonló</b>. &nbsp; 4) A gúla térfogatában a <b>test</b>magasság van, '
         'a palástban az <b>oldallap</b> magassága. &nbsp; 5) A hasonlóságnál a terület '
         '$k^{2}$-tel, a térfogat $k^{3}$-nel változik — nem $k$-val. &nbsp; 6) A '
-        'csonkagúla térfogatában a $\\sqrt{Bb}$ tag nem hagyható el, és nem egyenlő '
-        '$\\frac{B+b}{2}$-vel. &nbsp; 7) A „szabályos hasáb” magassága tetszőleges. '
+        'csonkagúla térfogatában a $\\sqrt{B_1B_2}$ tag nem hagyható el, és nem egyenlő '
+        '$\\frac{B_1+B_2}{2}$-vel. &nbsp; 7) A „szabályos hasáb” magassága tetszőleges. '
         '&nbsp; 8) Térfogatban <b>ezerszeres</b> a váltószám, nem tízszeres. &nbsp; '
         '9) A négyzetes hasáb testátlójában $2a^{2}$ áll — az alaplap átlója '
         '$a\\sqrt2$. &nbsp; 10) Az apotéma az <b>oldalhoz</b>, a köré írt sugár a '
@@ -216,7 +217,7 @@ OSSZ = [
         '<p><b>①</b> Rajzolj — a rossz ábra a leggyakoribb hibaforrás. &nbsp; '
         '<b>②</b> Keresd meg az <b>alaplapot</b>, és számold ki $B$-t és $K$-t. &nbsp; '
         '<b>③</b> Rajzold ki külön a derékszögű háromszöget, amelyben az ismeretlen van '
-        '($m$, $m_o$, $b$, $\\rho$, $R$). &nbsp; <b>④</b> Pitagorasz. &nbsp; '
+        '($H$, $h$, $s$, $r$, $R$). &nbsp; <b>④</b> Pitagorasz. &nbsp; '
         '<b>⑤</b> Csak a legvégén helyettesíts be a felszín- vagy térfogatképletbe, és '
         'írd ki a mértékegységet.</p>'),
   '<div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Élesben:</b> fuss át a '
@@ -396,10 +397,10 @@ DR_A = [
 
 DR_K = [
  ("Egy négyzetes hasáb alapéle $4$ cm, a testátlója $6$ cm. Mekkora a magassága és a "
-  "térfogata?", None, "$m=2$ cm, $V=32$ cm³."),
+  "térfogata?", None, "$H=2$ cm, $V=32$ cm³."),
 
  ("Egy szabályos hatoldalú hasáb térfogata $300\\sqrt3$ cm³, az alapéle $5$ cm. Mekkora "
-  "a magassága?", None, "$m=8$ cm."),
+  "a magassága?", None, "$H=8$ cm."),
 
  ("Egy szabályos négyoldalú gúla alapéle $10$ cm, az oldallapjának magassága $13$ cm. "
   "Mekkora a testmagassága, az oldaléle, a felszíne és a térfogata?", None,
@@ -422,16 +423,16 @@ DR_K = [
 DR_N = [
  ("Egy négyzetes hasáb alapéle $6$ cm, és a testátlója $60^\\circ$-os szöget zár be az "
   "alaplappal. Mekkora a magassága, a felszíne és a térfogata?", None,
-  "$m=6\\sqrt6\\approx 14{,}70$ cm, $F=72+144\\sqrt6\\approx 424{,}73$ cm², "
+  "$H=6\\sqrt6\\approx 14{,}70$ cm, $F=72+144\\sqrt6\\approx 424{,}73$ cm², "
   "$V=216\\sqrt6\\approx 529{,}09$ cm³."),
 
  ("Egy szabályos négyoldalú gúla alapéle $12$ cm, és az oldallapja $60^\\circ$-os szöget "
   "zár be az alaplappal. Mekkora a testmagassága, a felszíne és a térfogata?", None,
-  "$m=6\\sqrt3\\approx 10{,}39$ cm, $F=432$ cm², $V=288\\sqrt3\\approx 498{,}83$ cm³."),
+  "$H=6\\sqrt3\\approx 10{,}39$ cm, $F=432$ cm², $V=288\\sqrt3\\approx 498{,}83$ cm³."),
 
  ("Egy szabályos négyoldalú csonkagúla alapélei $14$ cm és $8$ cm, az oldallap magassága "
   "$5$ cm. Mekkora a testmagassága, a felszíne és a térfogata?", None,
-  "$m=4$ cm, $F=480$ cm², $V=496$ cm³."),
+  "$H=4$ cm, $F=480$ cm², $V=496$ cm³."),
 ]
 
 dr_brief = ('<div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — A Kristálypára '

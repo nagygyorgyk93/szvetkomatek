@@ -60,7 +60,7 @@ SVG_HASAB3 = svg_hasab("haromszog", a=1.0, m=1.5, w=300, h=280,
                        feliratok={"a": "a"},
                        leiras="Szabályos háromoldalú hasáb")
 SVG_HASAB6 = svg_hasab("hatszog", a=1.0, m=1.6, magassag=True, w=340, h=290,
-                       feliratok={"a": "a", "m": "m"},
+                       feliratok={"a": "a", "H": "H"},
                        leiras="Szabályos hatoldalú hasáb a magasságával")
 SVG_TEGLATEST = svg_hasab("teglalap", a=1.6, b=0.9, m=1.1, testatlo=True, alapatlo=True,
                           w=340, h=265, feliratok={"D": "D", "d": "d"},
@@ -98,7 +98,7 @@ B1 = [
          '<p>A két alaplap <b>egybevágó és párhuzamos</b>, az oldalélek pedig egyenlő '
          'hosszúak és párhuzamosak egymással.</p>',
          hid="def-hasab"),
-   '<p>A hasáb <b>magassága</b> ($m$) a két alaplap síkjának távolsága — vagyis merőleges '
+   '<p>A hasáb <b>magassága</b> ($H$) a két alaplap síkjának távolsága — vagyis merőleges '
    'távolság, ahogy azt a <a href="tananyag-meroleges-es-szog.html#def-hajlasszog">'
    'szögek és távolságok</a> egységben láttuk. Ez nem mindig egyezik meg az oldalél '
    'hosszával: csak akkor, ha az oldalélek merőlegesek az alaplapra.</p>',
@@ -106,7 +106,7 @@ B1 = [
 
  ("Fajták", [
    '<p>Az elnevezések három dolgot rögzítenek: hogy állnak az oldalélek, milyen az '
-   'alaplap, és hány oldalú. Az alapél az alaplap egy oldala; a <b>magasságot</b> $m$-mel '
+   'alaplap, és hány oldalú. Az alapél az alaplap egy oldala; a <b>magasságot</b> $H$-val '
    'jelöljük.</p>',
    doboz("definicio", "Egyenes, ferde és szabályos hasáb",
          '<ul>'
@@ -169,7 +169,8 @@ B1 = [
         '($D$, kék). A levezetésben előbb a $d$-t számoljuk ki, aztán abból a $D$-t.'),
    doboz("tetel", "A téglatest testátlója",
          '<p>Ez a képlet <b>téglatestre</b> szól. Ha az egy csúcsból induló élek $a$, $b$ és '
-         '$c$ — ahol $a$ és $b$ az alaplap élei, $c$ pedig a magasság —, akkor a testátló</p>'
+         '$c$ — ahol $a$ és $b$ az alaplap élei, $c$ pedig a magasság ($c=H$) —, akkor a '
+         'testátló</p>'
          '$$D=\\sqrt{a^2+b^2+c^2}.$$'
          '<p><b>Levezetés két lépésben.</b> Az alaplap átlója a Pitagorasz-tétel szerint '
          '$d=\\sqrt{a^2+b^2}$. Ez a lapátló az oldaléllel és a testátlóval egy derékszögű '
@@ -217,9 +218,9 @@ B2 = [
  ("A felszín a hálóból", [
    doboz("tetel", "Az egyenes hasáb felszíne",
          '<p><b>Egyenes</b> hasáb esetén a palást kiterítve téglalap, amelynek egyik oldala az '
-         'alaplap kerülete ($K$), a másik a magasság ($m$). A palást területét $M$-mel, a '
+         'alaplap kerülete ($K$), a másik a magasság ($H$). A palást területét $M$-mel, a '
          'felszínt $F$-fel jelöljük:</p>'
-         '$$M=K\\cdot m,\\qquad F=2B+M=2B+K\\cdot m,$$'
+         '$$M=K\\cdot H,\\qquad F=2B+M=2B+K\\cdot H,$$'
          '<p>ahol $B$ az alaplap területe. A $2B$ azért szerepel, mert a testnek <b>két</b> '
          'egybevágó alaplapja van.</p>'
          '<p><b>Ferde</b> hasábnál ez a képlet nem érvényes: ott az oldallapok '
@@ -230,26 +231,26 @@ B2 = [
    doboz("csapda", "Maxi trükkje",
          '<p><i>„A palást az alaplap és a magasság szorzata.”</i></p>'
          '<p>A palásthoz az alaplap <b>kerülete</b> kell, nem a <b>területe</b>. '
-         'Gondolj a fenti hálóra: a téglalap egyik oldalára az alaplap kerülete simul rá. Ellenőrzés mértékegységgel: $K\\cdot m$ hosszúság × hosszúság = terület '
-         '(cm²) — ez rendben van; $B\\cdot m$ viszont terület × hosszúság = <b>térfogat</b> '
+         'Gondolj a fenti hálóra: a téglalap egyik oldalára az alaplap kerülete simul rá. Ellenőrzés mértékegységgel: $K\\cdot H$ hosszúság × hosszúság = terület '
+         '(cm²) — ez rendben van; $B\\cdot H$ viszont terület × hosszúság = <b>térfogat</b> '
          '(cm³), tehát az biztosan nem lehet a palást.</p>'),
  ]),
 
  ("A térfogat", [
    doboz("tetel", "A hasáb térfogata",
          '<p>Minden hasáb térfogata</p>'
-         '$$V=B\\cdot m,$$'
-         '<p>ahol $B$ az alaplap területe, $m$ pedig a magasság (a két alaplap síkjának '
+         '$$V=B\\cdot H,$$'
+         '<p>ahol $B$ az alaplap területe, $H$ pedig a magasság (a két alaplap síkjának '
          'távolsága). A képlet a <b>ferde</b> hasábra is igaz — de csak a magassággal, nem '
          'az oldaléllel.</p>',
          hid="tetel-hasab-terfogat"),
    '<p>Miért éppen ennyi? A téglatestnél a térfogat $abc$: az alaplap területe $ab$, a '
-   'magasság $c$, tehát tényleg $V=B\\cdot m$. Tetszőleges hasábnál a következő '
+   'magasság $c$, tehát tényleg $V=B\\cdot H$. Tetszőleges hasábnál a következő '
    '<b>alapelvre</b> támaszkodunk: ha két testet az alaplapjukkal párhuzamosan, bármilyen '
    'magasságban elmetszünk, és a két metszet területe mindig egyenlő, akkor a két test '
    'térfogata is egyenlő. Állítsunk a hasáb mellé egy vele azonos alapterületű és azonos '
    'magasságú téglatestet: minden metszet területe mindkettőnél $B$, tehát a térfogatuk is '
-   'egyenlő — vagyis $V=B\\cdot m$. (Ennek az alapelvnek a pontos kimondása és '
+   'egyenlő — vagyis $V=B\\cdot H$. (Ennek az alapelvnek a pontos kimondása és '
    'bizonyítása már nem tananyagunk.)</p>',
    doboz("pelda", "Kristály-kamra szimuláció",
          '<p>Egy szabályos hatoldalú hasáb alapéle $4$ cm, magassága $9$ cm. Számítsd ki a '
@@ -261,11 +262,11 @@ B2 = [
                   'az alaplap egységet</a>):</p>'
                   '$$B=6\\cdot\\frac{4^2\\sqrt3}{4}=24\\sqrt3\\approx 41{,}57\\ \\text{cm}^2.$$'
                   '<p><b>Palást.</b> A kerület $K=6\\cdot 4=24$ cm, ezért '
-                  '$M=K\\cdot m=24\\cdot 9=216\\ \\text{cm}^2$.</p>'
+                  '$M=K\\cdot H=24\\cdot 9=216\\ \\text{cm}^2$.</p>'
                   '<p><b>Felszín.</b> $F=2B+M=48\\sqrt3+216\\approx 299{,}14\\ \\text{cm}^2$.</p>'
-                  '<p><b>Térfogat.</b> $V=B\\cdot m=24\\sqrt3\\cdot 9=216\\sqrt3\\approx '
+                  '<p><b>Térfogat.</b> $V=B\\cdot H=24\\sqrt3\\cdot 9=216\\sqrt3\\approx '
                   '374{,}12\\ \\text{cm}^3$.</p>')),
-   abra(SVG_HASAB6, 'Szabályos hatoldalú hasáb: az alapél $a$, a magasság $m$.'),
+   abra(SVG_HASAB6, 'Szabályos hatoldalú hasáb: az alapél $a$, a magasság $H$.'),
  ]),
 
  ("Fordított irányban", [
@@ -278,8 +279,8 @@ B2 = [
          hid="pelda-forditott-hasab",
          lenyilo=("Megoldás",
                   '<p>Az alaplap területe $B=6^2=36\\ \\text{cm}^2$. A '
-                  '$V=B\\cdot m$ képletből</p>'
-                  '$$m=\\frac{V}{B}=\\frac{1080}{36}=30\\ \\text{cm}.$$'
+                  '$V=B\\cdot H$ képletből</p>'
+                  '$$H=\\frac{V}{B}=\\frac{1080}{36}=30\\ \\text{cm}.$$'
                   '<p>Ezután $K=4\\cdot 6=24$ cm, $M=24\\cdot 30=720\\ \\text{cm}^2$, tehát</p>'
                   '$$F=2\\cdot 36+720=792\\ \\text{cm}^2.$$')),
    kviz('Egy felül nyitott, hasáb alakú tartályt kívülről festünk le, az alját is. Melyik '
@@ -359,9 +360,9 @@ B3 = [
          '<p><b>Egyenes</b> hasáb átlós metszete <b>téglalap</b>, amelynek</p>'
          '<ul>'
          '<li>egyik oldala az alaplap megfelelő <b>átlója</b> ($d$),</li>'
-         '<li>a másik oldala a hasáb <b>magassága</b> ($m$),</li>'
+         '<li>a másik oldala a hasáb <b>magassága</b> ($H$),</li>'
          '</ul>'
-         '<p>ezért a területe $T=d\\cdot m$.</p>'
+         '<p>ezért a területe $T=d\\cdot H$.</p>'
          '<p>Ferde hasábnál a metszet általában csak paralelogramma — a kikötés tehát nem '
          'elhagyható.</p>',
          hid="tetel-hasab-atlos-metszet"),
@@ -381,10 +382,10 @@ B3 = [
    'sokszögeknek <b>többféle hosszúságú</b> átlójuk van. A szabályos hatszögnél a hosszabb '
    'átló a szemközti csúcsokat köti össze, és átmegy a középponton, ezért a köréírt kör '
    'átmérője: $2R=2a$. A rövidebb átló egy csúcsot hagy ki, és a beírt kör átmérőjével '
-   'egyenlő: $2\\rho=a\\sqrt3$.</p>',
+   'egyenlő: $2r=a\\sqrt3$.</p>',
    abra(SVG_HATSZOG_ATLOK, 'A szabályos hatszögben a köréírt kör sugara $R=a$, az apotéma '
-        '$\\rho=\\frac{a\\sqrt3}{2}$. Innen a hosszabb átló $2R=2a$, a rövidebb pedig '
-        '$2\\rho=a\\sqrt3$.'),
+        '$r=\\frac{a\\sqrt3}{2}$. Innen a hosszabb átló $2R=2a$, a rövidebb pedig '
+        '$2r=a\\sqrt3$.'),
    doboz("pelda", "Kristály-kamra szimuláció",
          '<p>Egy szabályos hatoldalú hasáb alapéle $5$ cm, magassága $7$ cm. Mekkora a '
          'kétféle átlós metszetének a területe?</p>',
@@ -395,11 +396,11 @@ B3 = [
                   '<li>a <b>hosszabb</b> a szemközti csúcsokat köti össze, és átmegy a '
                   'középponton: $d_1=2R=2a=10$ cm;</li>'
                   '<li>a <b>rövidebb</b> egy csúcsot hagy ki, és a beírt kör átmérője: '
-                  '$d_2=2\\rho=a\\sqrt3=5\\sqrt3\\approx 8{,}66$ cm.</li>'
+                  '$d_2=2r=a\\sqrt3=5\\sqrt3\\approx 8{,}66$ cm.</li>'
                   '</ul>'
                   '<p>A két metszet területe ezért</p>'
-                  '$$T_1=d_1\\cdot m=10\\cdot 7=70\\ \\text{cm}^2,\\qquad '
-                  'T_2=d_2\\cdot m=5\\sqrt3\\cdot 7=35\\sqrt3\\approx 60{,}62\\ \\text{cm}^2.$$'
+                  '$$T_1=d_1\\cdot H=10\\cdot 7=70\\ \\text{cm}^2,\\qquad '
+                  'T_2=d_2\\cdot H=5\\sqrt3\\cdot 7=35\\sqrt3\\approx 60{,}62\\ \\text{cm}^2.$$'
                   '<p>Ugyanaz a test, két különböző metszet — a feladat szövegéből mindig ki '
                   'kell derülnie, melyikről van szó.</p>')),
    doboz("erdekesseg", "Csak érdekesség",
