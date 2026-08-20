@@ -113,7 +113,7 @@ ALAP = [
    "Az $ABCD$ és az $A_1B_1C_1D_1$ lap párhuzamos."],
   ["igaz", "hamis (kitérő)", "igaz", "hamis (párhuzamos)", "igaz"], True),
 
- (f"Sorold fel a {K} kocka összes olyan élét, amely az $AB$ éllel <b>kitérő</b>! "
+ (f"Sorold fel az {K} kocka összes olyan élét, amely az $AB$ éllel <b>kitérő</b>! "
   "Hány ilyen él van?",
   None,
   "$CC_1$, $DD_1$, $A_1D_1$, $B_1C_1$ — összesen $4$ él."),
@@ -123,7 +123,7 @@ ALAP = [
    "egy egyenesen", "három, egy egyenesre eső ponton", "két kitérő egyenesen"],
   ["pontosan egy", "pontosan egy", "végtelen sok", "végtelen sok", "egy sem"], True),
 
- ("Melyik adat határoz meg <b>egyértelműen</b> egy síkot? Válaszd ki az igazakat!",
+ ("Melyik adat határoz meg <b>egyértelműen</b> egy síkot? Döntsd el mindegyikről!",
   ["három pont", "három, nem egy egyenesre eső pont",
    "egy egyenes és egy rá nem illeszkedő pont", "két kitérő egyenes"],
   ["nem (ha egy egyenesre esnek, végtelen sok sík megy át rajtuk)", "igen",
@@ -138,7 +138,7 @@ ALAP = [
    "a lámpa felfüggesztő rúdja döfi a mennyezet síkját"]),
 
  # --- A2: merőlegesség és szögek (alap 6–10)
- (f"A {K} kockában mely élek merőlegesek az $ABCD$ alaplapra? És mely lapok merőlegesek rá?",
+ (f"Az {K} kockában mely élek merőlegesek az $ABCD$ alaplapra? És mely lapok merőlegesek rá?",
   None,
   "Élek: $AA_1$, $BB_1$, $CC_1$, $DD_1$. Lapok: mind a négy oldallap "
   "($ABB_1A_1$, $BCC_1B_1$, $CDD_1C_1$, $DAA_1D_1$)."),
@@ -150,8 +150,10 @@ ALAP = [
  ("Egy téglatest élei $6$ cm, $8$ cm és $24$ cm. Mekkora a testátlója?", None,
   "$D=\\sqrt{6^2+8^2+24^2}=\\sqrt{676}=26$ cm."),
 
- ("Mekkora szöget zár be a kocka testátlója az alaplappal? (A válasz független az élhossztól.)",
-  None, "$\\varphi\\approx 35{,}26^\\circ$ (mert $\\operatorname{tg}\\varphi=\\frac{\\sqrt2}{2}$)."),
+ ("Egy $3$ m hosszú létrát a falnak támasztunk; a talajjal $60^\\circ$-os szöget zár be. "
+  "Milyen magasan éri a falat, és milyen messze van a talpa a faltól?", None,
+  "Magasság: $3\\sin 60^\\circ=\\frac{3\\sqrt3}{2}\\approx 2{,}60$ m; távolság: "
+  "$3\\cos 60^\\circ=1{,}5$ m."),
 
  ("Egy $8$ cm élű kocka középpontja mekkora távolságra van",
   ["az egyik lapjától", "az egyik csúcsától"],
@@ -169,7 +171,7 @@ ALAP = [
 
  ("Melyik test <b>poliéder</b>? Válaszd ki!",
   ["kocka", "henger", "gúla", "gömb", "csonkagúla"],
-  ["igen", "nem (a palástja görbült, az alaplapja kör)", "igen",
+  ["igen", "nem (a palástja görbült, a két alaplapja kör)", "igen",
    "nem (a felülete végig görbült)", "igen"], True),
 
  ("Nevezd meg az öt szabályos poliédert, és add meg, milyen sokszög a lapjuk!", None,
@@ -199,12 +201,12 @@ ALAP = [
   ["$96$ cm²", "$10$ cm (a fél átlókból: $\\sqrt{8^2+6^2}$)"], True),
 
  ("Egy szabályos hatszög oldala $6$ cm. Számítsd ki",
-  ["a területét", "az apotémáját"],
+  ["a területét", "az apotémáját (a beírt kör sugarát)"],
   ["$54\\sqrt3\\approx 93{,}53$ cm²", "$3\\sqrt3\\approx 5{,}20$ cm"], True),
 
- ("Egészítsd ki a hiányzó adatokat!",
+ ("Számítsd ki a hiányzó adatokat!",
   ["Egy derékszögű háromszög átfogója $12$ cm, egyik szöge $30^\\circ$. Mekkorák a befogói?",
-   "Egy derékszögű háromszög befogói egyenlők, mindkettő $7$ cm. Mekkora az átfogója?"],
+   "Egy derékszögű háromszög mindkét befogója $7$ cm. Mekkora az átfogója?"],
   ["$6$ cm és $6\\sqrt3\\approx 10{,}39$ cm",
    "$7\\sqrt2\\approx 9{,}90$ cm"]),
 
@@ -215,18 +217,19 @@ ALAP = [
 # ============================== KÖZÉP ==============================
 KOZEP = [
  # --- A1 (közép 1–3)
- (f"A {K} kockában hányféle helyzetű élpár van? Számold meg, hány élpár <b>metsző</b>, "
-  "hány <b>párhuzamos</b> és hány <b>kitérő</b>! (A kockának $12$ éle van.)",
+ (f"Az {K} kockában hányféle <b>kölcsönös helyzetben</b> lehet két él? Számold meg azt is, hány "
+  "élpár <b>metsző</b>, hány <b>párhuzamos</b> és hány <b>kitérő</b>! (A kockának $12$ éle van.)",
   None,
-  "Összesen $\\binom{12}{2}=66$ élpár. Párhuzamos: $3$ irány, mindegyikben $4$ él, "
+  "Háromféle helyzet lehetséges: metsző, párhuzamos, kitérő. Összesen $\\binom{12}{2}=66$ élpár. Párhuzamos: $3$ irány, mindegyikben $4$ él, "
   "azaz $3\\cdot\\binom{4}{2}=18$ pár. Metsző: minden csúcsban $3$ él fut össze, "
   "$8\\cdot\\binom{3}{2}=24$ pár. Kitérő: $66-18-24=24$ pár."),
 
- ("Igaz vagy hamis a <b>térben</b>? Indokold!",
+ ("Legyen $a$, $b$ és $c$ három <b>páronként különböző</b> egyenes a térben. Igaz vagy "
+  "hamis? Indokold!",
   ["Ha $a\\parallel b$ és $b\\parallel c$, akkor $a\\parallel c$.",
    "Ha $a\\perp b$ és $b\\perp c$, akkor $a\\perp c$.",
    "Ha két egyenesnek nincs közös pontja, akkor párhuzamosak."],
-  ["igaz", "hamis — a térben $a$ és $c$ lehet párhuzamos vagy kitérő is",
+  ["igaz", "hamis — a térben $a$ és $c$ lehet párhuzamos, kitérő, sőt tetszőleges szögben metsző is",
    "hamis — kitérők is lehetnek"]),
 
  ("Adott két kitérő egyenes, $e$ és $f$. Hány olyan sík van, amely tartalmazza az $e$-t "
@@ -238,8 +241,10 @@ KOZEP = [
   "zár be a testátló az alaplappal?", None,
   "$\\varphi\\approx 67{,}38^\\circ$."),
 
- ("Mekkora szöget zár be a kocka testátlója az egyik <b>oldalélével</b>?", None,
-  "$\\approx 54{,}74^\\circ$."),
+ ("Mekkora szöget zár be a kocka testátlója az egyik <b>élével</b>? (Mutasd meg, hogy "
+  "mindegy, melyik élt választjuk!)", None,
+  "$\\approx 54{,}74^\\circ$ — a testátló mindhárom élirányra ugyanúgy áll, mert "
+  "$\\cos\\varphi=\\frac{a}{a\\sqrt3}=\\frac{1}{\\sqrt3}$."),
 
  ("Egy $2$ m magas oszlop árnyéka $3$ m hosszú. Mekkora szöget zárnak be a napsugarak a "
   "vízszintes talajjal?", None,
@@ -257,8 +262,9 @@ KOZEP = [
  ("Egy hasábnak $21$ éle van. Hány oldalú az alaplapja, és hány lapja van a testnek?",
   None, "$3n=21$, tehát $n=7$: hétoldalú hasáb, $9$ lapja van."),
 
- ("Egy szabályos oktaédernek hány csúcsa, éle és lapja van? Milyen sokszögek a lapjai?",
-  None, "$6$ csúcs, $12$ él, $8$ lap; a lapjai szabályos háromszögek."),
+ ("Egy szabályos oktaédernek hány csúcsa, éle és lapja van? Hány lap találkozik egy "
+  "csúcsában?", None,
+  "$6$ csúcs, $12$ él, $8$ lap; egy csúcsban $4$ lap találkozik."),
 
  # --- A4 (közép 11–14)
  ("Egy szabályos hatszög területe $96\\sqrt3$ cm². Mekkora az oldala?", None,
@@ -277,27 +283,35 @@ KOZEP = [
 
 # ============================== NEHÉZ ==============================
 NEHEZ = [
- ("Két kitérő egyeneshez mindig van olyan sík, amely az egyiket tartalmazza, és a másikkal "
-  "párhuzamos. Indokold meg, miért!", None,
-  "Igen, és pontosan egy ilyen van. (Az $e$ egy pontján át húzzunk $f$-fel párhuzamos "
-  "egyenest; ez és az $e$ két metsző egyenes, tehát meghatároz egy síkot, amely "
-  "párhuzamos $f$-fel.)"),
+ ("Adott két kitérő egyenes, $e$ és $f$. Mutasd meg, hogy van olyan <b>síkpár</b>, "
+  "amelynek egyik síkja az $e$-t, másik síkja az $f$-et tartalmazza, és a két sík "
+  "párhuzamos!", None,
+  "Az $e$ egy pontján át húzzuk meg az $f$-fel párhuzamos $f'$ egyenest: az $e$ és az "
+  "$f'$ két metsző egyenes, tehát meghatároznak egy $S$ síkot. Az $f$ nem fekszik "
+  "$S$-ben, mert akkor $e$ és $f$ egy síkba esne, vagyis nem lennének kitérők — így "
+  "$f\\parallel S$. Ugyanígy az $f$ egy pontján át kapjuk az $e$-vel párhuzamos "
+  "egyenest és vele az $S'$ síkot. Az $S$ és az $S'$ ugyanannak a két iránynak a "
+  "síkja, ezért párhuzamosak."),
 
- (f"A {K} kockában mekkora szöget zár be az $AB_1$ és a $B_1C$ lapátló?", None,
+ (f"Az {K} kockában mekkora szöget zár be az $AB_1$ és a $B_1C$ lapátló?", None,
   "$60^\\circ$ — az $AB_1C$ háromszög mindhárom oldala lapátló, tehát egyenlő oldalú."),
 
  ("Egy szabályos hatszög beírt és köréírt körének területe hogyan aránylik egymáshoz?",
   None, "$3:4$."),
 
  ("Egy szabályos négyoldalú hasáb alapéle $a$, magassága $m$. Fejezd ki $a$-val és $m$-mel "
-  "a testátló hosszát, majd számítsd ki $a=5$ cm és $m=12$ cm esetén!", None,
-  "$D=\\sqrt{2a^2+m^2}$; behelyettesítve $\\sqrt{50+144}=\\sqrt{194}\\approx 13{,}93$ cm."),
+  "a testátló $D$ hosszát! Számítsd ki $a=5$ cm és $m=12$ cm esetén, majd fordítva: "
+  "mekkora $m$, ha $a=6$ cm és $D=11$ cm?", None,
+  "$D=\\sqrt{2a^2+m^2}$; behelyettesítve $\\sqrt{50+144}=\\sqrt{194}\\approx 13{,}93$ cm. "
+  "Visszafelé: $\\sqrt{72+m^2}=11$, ahonnan $m^2=49$, tehát $m=7$ cm."),
 ]
 
 JOKER = ("Egy $a$ élű kocka <b>lapközéppontjai</b> egy szabályos oktaéder csúcsai. "
          "Mekkora ennek az oktaédernek az éle?",
-         "Két szomszédos lapközéppont távolsága a kocka élének fele mentén kétszer "
-         "derékszögű háromszöget ad: az él $\\frac{a\\sqrt2}{2}$.")
+         "Két szomszédos lapközéppontot összekötő szakasz olyan derékszögű háromszög "
+         "átfogója, amelynek mindkét befogója $\\frac{a}{2}$, ezért az oktaéder éle "
+         "$\\sqrt{\\left(\\frac a2\\right)^2+\\left(\\frac a2\\right)^2}="
+         "\\frac{a\\sqrt2}{2}\\approx 0{,}71a$.")
 
 # ============================== OLDAL ==============================
 body = [
@@ -310,7 +324,8 @@ body = [
 ut = oldal(tagozat="3e", mappa="01-poliederek", fajl="feladatok-terelemek.html",
            cim="Térelemek és poliéderek", temakor="Poliéderek",
            alcim="Pont, egyenes és sík a térben, merőlegesség és szögek, a poliéderek "
-                 "fogalma, valamint az alaplapok területe. "
+                 "fogalma, valamint az alaplapok területe. A szögeket két tizedesjegyre "
+                 "kerekítve add meg. "
                  "A végeredmény minden feladatnál lenyitható!",
            sections_html="\n".join(body),
            prev="tananyag-alaplap.html", prevc="Az alaplap",

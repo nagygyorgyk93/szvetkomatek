@@ -6,7 +6,10 @@ Minden várt értéket ITT számolunk ki, a HTML-től és a buildertől függetl
 kulcsban elírás van, a 2. lépés bukik; ha a builder számolt rosszul, akkor a
 két független számolás tér el egymástól.
 """
-from sympy import Rational as R, sqrt, N, atan, acos, deg, binomial
+from sympy import (Rational as R, sqrt, N, atan, acos, deg, rad, sin, cos,
+                   binomial, symbols, solve, Eq)
+
+x = symbols('x', positive=True)
 
 FAJL = '3e/01-poliederek/feladatok-terelemek.html'
 
@@ -25,7 +28,7 @@ KOCKA_EL = 6
 lapatlo6 = KOCKA_EL * sqrt(2)
 testatlo6 = KOCKA_EL * sqrt(3)
 teglatest_atlo = sqrt(6**2 + 8**2 + 24**2)
-kocka_alap_szog = deg(atan(sqrt(2) / 2))
+letra = (3*sin(rad(60)), 3*cos(rad(60)))
 kocka_kozep_csucs = 8 * sqrt(3) / 2
 
 haromszog_m = 8 * sqrt(3) / 2
@@ -57,12 +60,13 @@ h_terulet = 12**2 * sqrt(3) / 4
 rombusz2_atlo = 2 * sqrt(13**2 - 12**2)
 rombusz2_T = R(24 * 10, 2)
 hasab_atlo = sqrt(2 * 5**2 + 12**2)
+hasab_m = solve(Eq(2*6**2 + x**2, 11**2), x)[0]
 
 TESZT = {
     'alap-2':  [('', 4)],
     'alap-7':  [('', k(lapatlo6)), ('', k(testatlo6))],
     'alap-8':  [('', int(teglatest_atlo))],
-    'alap-9':  [('', k(kocka_alap_szog))],
+    'alap-9':  [('', k(letra[0])), ('', k(letra[1], 1))],
     'alap-10': [('', 4), ('', k(kocka_kozep_csucs))],
     'alap-11': [('', 8), ('', 12), ('', 6),
                 ('', 12), ('', 18), ('', 8),
@@ -90,5 +94,5 @@ TESZT = {
     'kozep-14': [('', int(rombusz2_atlo)), ('', int(rombusz2_T))],
     'nehez-2': [('', 60)],
     'nehez-3': [('', 3), ('', 4)],
-    'nehez-4': [('', k(hasab_atlo))],
+    'nehez-4': [('', k(hasab_atlo)), ('', int(hasab_m))],
 }

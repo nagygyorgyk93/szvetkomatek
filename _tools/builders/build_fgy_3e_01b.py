@@ -107,12 +107,13 @@ ALAP = [
   "Milyen test ez, és hány lapja, éle, csúcsa van?", None,
   "Szabályos ötoldalú hasáb: $7$ lapja, $15$ éle és $10$ csúcsa van."),
 
- ("Hány csúcsa, éle és lapja van a szabályos hatoldalú hasábnak?", None,
-  "$12$ csúcs, $18$ él, $8$ lap."),
+ ("Egy hasábnak $24$ éle van. Hány oldalú az alaplapja, hány csúcsa és hány lapja "
+  "van a testnek?", None,
+  "$3n=24$, tehát $n=8$: nyolcoldalú hasáb, $16$ csúcsa és $10$ lapja van."),
 
  # --- B2: felszín és térfogat (alap 7–16)
  ("Egy négyzetes hasáb alapéle $5$ cm, magassága $8$ cm. Számítsd ki",
-  ["az alapterületét", "a palástját", "a felszínét", "a térfogatát"],
+  ["az alapterületét", "a palástjának területét", "a felszínét", "a térfogatát"],
   ["$25$ cm²", "$160$ cm²", "$210$ cm²", "$200$ cm³"], True),
 
  ("Egy szabályos háromoldalú hasáb alapéle $6$ cm, magassága $10$ cm. Mekkora a felszíne "
@@ -142,28 +143,29 @@ ALAP = [
   ["$3{,}2\\ \\text{m}^3$ hány liter?", "$4500\\ \\text{cm}^3$ hány $\\text{dm}^3$?"],
   ["$3200$ liter", "$4{,}5\\ \\text{dm}^3$"], True),
 
- ("Egy akvárium belső méretei $80$ cm $\\times$ $40$ cm $\\times$ $50$ cm (magas).",
+ ("Egy akvárium belső méretei: hossza $80$ cm, szélessége $40$ cm, magassága $50$ cm.",
   ["Hány liter víz fér bele, ha színültig töltjük?",
    "Hány négyzetméter üveg kell hozzá, ha felül nyitott?"],
   ["$160$ liter", "$1{,}52\\ \\text{m}^2$ (az alja és négy oldala)"]),
 
  # --- B3: síkmetszetek (alap 17–20)
+ ("Nevezd meg, milyen alakzat a metszet!",
+  ["az egyenes hasáb alaplappal párhuzamos metszete",
+   "a <b>konvex alaplapú</b> egyenes hasáb átlós metszete",
+   "a <b>konvex alaplapú</b> ferde hasáb átlós metszete"],
+  ["az alaplappal egybevágó sokszög", "téglalap", "paralelogramma"], True),
+
  ("Egy négyzetes hasáb alapéle $6$ cm, magassága $10$ cm. Mekkora az átlós metszetének a "
   "területe?", None,
   "$T=60\\sqrt2\\approx 84{,}85$ cm²."),
 
- ("Milyen alakzat a metszet? Egészítsd ki!",
-  ["az egyenes hasáb alaplappal párhuzamos metszete",
-   "az egyenes hasáb átlós metszete",
-   "a ferde hasáb átlós metszete"],
-  ["az alaplappal egybevágó sokszög", "téglalap", "paralelogramma"], True),
-
- ("Egy téglatest alaplapjának élei $6$ cm és $8$ cm, magassága $10$ cm. Mekkora az átlós "
+ ("Egy téglatest alaplapjának élei $6$ cm és $8$ cm, magassága $12$ cm. Mekkora az átlós "
   "metszetének a területe?", None,
-  "Az alaplap átlója $10$ cm, ezért $T=10\\cdot 10=100$ cm²."),
+  "Az alaplap átlója $\\sqrt{6^2+8^2}=10$ cm, ezért $T=10\\cdot 12=120$ cm²."),
 
- ("Egy szabályos hatoldalú hasáb alapéle $4$ cm, magassága $7$ cm. Mekkora a <b>kétféle</b> "
-  "átlós metszetének a területe?", None,
+ ("Egy szabályos hatoldalú hasáb alapéle $4$ cm, magassága $7$ cm. Mekkora a "
+  "<b>hosszabb</b>, illetve a <b>rövidebb</b> alaplapátlón átmenő átlós metszetének a "
+  "területe?", None,
   "A hosszabb átlóval: $T_1=8\\cdot 7=56$ cm²; a rövidebbel: "
   "$T_2=4\\sqrt3\\cdot 7=28\\sqrt3\\approx 48{,}50$ cm²."),
 ]
@@ -182,18 +184,20 @@ KOZEP = [
   "térfogata?", None,
   "$D^2=2a^2+m^2$, tehát $81=72+m^2$, ahonnan $m=3$ cm és $V=108$ cm³."),
 
- ("Egy kocka felszíne $216$ cm². Mekkora az éle és a testátlója?", None,
-  "$a=6$ cm, a testátló $6\\sqrt3\\approx 10{,}39$ cm."),
+ ("Egy kocka testátlója $8\\sqrt3$ cm. Mekkora a felszíne és a térfogata?", None,
+  "$a\\sqrt3=8\\sqrt3$, tehát $a=8$ cm; $F=384$ cm², $V=512$ cm³."),
 
  # --- B2 (közép 5–12)
- ("Egy szabályos háromoldalú hasáb alapéle $8$ cm, magassága $5$ cm. Mekkora a felszíne és "
-  "a térfogata?", None,
-  "$F=32\\sqrt3+120\\approx 175{,}43$ cm², $V=80\\sqrt3\\approx 138{,}56$ cm³."),
+ ("Egy szabályos háromoldalú hasáb térfogata $80\\sqrt3$ cm³, az alapéle $8$ cm. Mekkora "
+  "a magassága és a felszíne?", None,
+  "$B=\\frac{8^2\\sqrt3}{4}=16\\sqrt3$ cm², ezért $m=\\frac{80\\sqrt3}{16\\sqrt3}=5$ cm, "
+  "és $F=32\\sqrt3+120\\approx 175{,}43$ cm²."),
 
  ("Egy négyzetes hasáb alapéle $4$ cm, felszíne $192$ cm². Mekkora a magassága?", None,
   "$2\\cdot 16+16m=192$, ahonnan $m=10$ cm."),
 
- ("Egy szabályos hatoldalú hasáb palástja $360$ cm², magassága $10$ cm. Mekkora az alapéle "
+ ("Egy szabályos hatoldalú hasáb palástjának területe $360$ cm², magassága $10$ cm. "
+  "Mekkora az alapéle "
   "és a térfogata?", None,
   "$6a\\cdot 10=360$, tehát $a=6$ cm; $V=540\\sqrt3\\approx 935{,}31$ cm³."),
 
@@ -215,8 +219,11 @@ KOZEP = [
   "$a=0{,}3$ m, $B=6\\cdot\\frac{0{,}3^2\\sqrt3}{4}\\approx 0{,}2338\\ \\text{m}^2$, "
   "tehát $V\\approx 0{,}70\\ \\text{m}^3$."),
 
- ("Egy láda belső méretei $1{,}2$ m $\\times$ $0{,}8$ m $\\times$ $0{,}5$ m. Hány liter fér bele?",
-  None, "$V=0{,}48\\ \\text{m}^3=480$ liter."),
+ ("Egy fedél nélküli láda belső méretei: hossza $1{,}2$ m, szélessége $0{,}8$ m, "
+  "magassága $0{,}5$ m. Hány liter fér bele, és hány négyzetméter deszkából készült "
+  "(a falak vastagságától eltekintve)?", None,
+  "$V=0{,}48\\ \\text{m}^3=480$ liter; a felület az alja és négy oldala: "
+  "$0{,}96+2\\cdot 0{,}6+2\\cdot 0{,}4=2{,}96\\ \\text{m}^2$."),
 
  # --- B3 (közép 13–16)
  ("Egy négyzetes hasáb alapéle $8$ cm, magassága $6$ cm. Mekkora az átlós metszetének a "
@@ -227,12 +234,15 @@ KOZEP = [
   "alaplap átlója és az alapéle?", None,
   "Az átló $12$ cm, az alapél $\\frac{12}{\\sqrt2}=6\\sqrt2\\approx 8{,}49$ cm."),
 
- ("Egy szabályos hatoldalú hasáb alapéle $6$ cm, magassága $8$ cm. Mekkora a kétféle átlós "
-  "metszetének területe?", None,
-  "$T_1=12\\cdot 8=96$ cm², $T_2=6\\sqrt3\\cdot 8=48\\sqrt3\\approx 83{,}14$ cm²."),
+ ("Egy szabályos hatoldalú hasáb <b>hosszabb</b> átlós metszetének területe $96$ cm², a "
+  "magassága $8$ cm. Mekkora az alapéle és a <b>rövidebb</b> átlós metszet területe?", None,
+  "A hosszabb alaplapátló $\\frac{96}{8}=12$ cm, ez a szabályos hatszögben $2a$, tehát "
+  "$a=6$ cm. A rövidebb átló $a\\sqrt3=6\\sqrt3$ cm, ezért "
+  "$T_2=6\\sqrt3\\cdot 8=48\\sqrt3\\approx 83{,}14$ cm²."),
 
- ("Egy kocka éle $6$ cm. Mekkora az átlós metszetének a területe?", None,
-  "$T=6\\sqrt2\\cdot 6=36\\sqrt2\\approx 50{,}91$ cm²."),
+ ("Egy kocka éle $6$ cm. Mekkora szöget zár be a testátlója az alaplappal?", None,
+  "$\\operatorname{tg}\\varphi=\\frac{6}{6\\sqrt2}=\\frac{\\sqrt2}{2}$, tehát "
+  "$\\varphi\\approx 35{,}26^\\circ$."),
 ]
 
 # ============================== NEHÉZ ==============================
@@ -245,23 +255,29 @@ NEHEZ = [
   "a térfogata?", None,
   "$2(2x^2+3x^2+6x^2)=88$, tehát $x=2$: az élek $2$, $4$ és $6$ cm, a térfogat $48$ cm³."),
 
- ("Egy kocka átlós metszetének területe $36\\sqrt2$ cm². Mekkora az éle?", None,
-  "$a^2\\sqrt2=36\\sqrt2$, tehát $a=6$ cm."),
+ ("Egy kocka átlós metszetének területe $50\\sqrt2$ cm². Mekkora az éle, a felszíne és a "
+  "térfogata?", None,
+  "$a^2\\sqrt2=50\\sqrt2$, tehát $a^2=50$ és $a=5\\sqrt2\\approx 7{,}07$ cm; "
+  "$F=6\\cdot 50=300$ cm², $V=a^3=250\\sqrt2\\approx 353{,}55$ cm³."),
 
  ("Egy szabályos hatoldalú hasáb térfogata $216\\sqrt3$ cm³, magassága $4$ cm. Mekkora az "
   "alapéle?", None,
   "$\\frac{6a^2\\sqrt3}{4}\\cdot 4=216\\sqrt3$, ahonnan $a=6$ cm."),
 
- ("Két hasonló hasáb megfelelő éleinek aránya $2:3$. Hogyan aránylik a felszínük és a "
-  "térfogatuk? Indokold!", None,
-  "A felszínek aránya $4:9$ (a terület a hosszak négyzetével), a térfogatoké $8:27$ "
-  "(a köbével)."),
+ ("Két hasonló hasáb térfogatának aránya $8:27$. Hogyan aránylik a megfelelő éleik "
+  "hossza és a felszínük? Indokold!", None,
+  "A térfogat a hosszak köbével arányos, ezért az élek aránya "
+  "$\\sqrt[3]{8}:\\sqrt[3]{27}=2:3$. A felszín a hosszak négyzetével arányos, tehát a "
+  "felszínek aránya $4:9$."),
 ]
 
-JOKER = ("Egy $6$ cm élű kockát elmetszünk azzal a síkkal, amely hat élt a "
-         "<b>felezőpontjában</b> döf. Milyen alakzat a metszet, és mekkora a területe?",
-         "A metszet <b>szabályos hatszög</b>, oldala két szomszédos élfelezőpont távolsága, "
-         "azaz $\\frac{6\\sqrt2}{2}=3\\sqrt2$ cm. Területe "
+JOKER = ("Egy $6$ cm élű kockát elmetszünk egy olyan síkkal, amely hat élt a "
+         "<b>felezőpontjában</b> metsz. Milyen alakzat a metszet, mekkora a területe, és "
+         "miért szabályos?",
+         "A metszet <b>szabályos hatszög</b>. Minden oldala két szomszédos élfelezőpontot "
+         "köt össze, vagyis egy olyan derékszögű háromszög átfogója, amelynek mindkét "
+         "befogója az él fele: $\\sqrt{3^2+3^2}=3\\sqrt2$ cm — mind a hat oldal egyenlő, "
+         "és a hatszög a kocka szimmetriája miatt szabályos. Területe "
          "$6\\cdot\\frac{(3\\sqrt2)^2\\sqrt3}{4}=27\\sqrt3\\approx 46{,}77$ cm².")
 
 # ============================== OLDAL ==============================
@@ -275,7 +291,8 @@ body = [
 ut = oldal(tagozat="3e", mappa="01-poliederek", fajl="feladatok-hasab.html",
            cim="A hasáb", temakor="Poliéderek",
            alcim="A hasáb fajtái, átlói, felszíne és térfogata, fordított feladatok, "
-                 "mértékegységek és síkmetszetek. "
+                 "mértékegységek és síkmetszetek. A szögeket két tizedesjegyre kerekítve "
+                 "add meg. "
                  "A végeredmény minden feladatnál lenyitható!",
            sections_html="\n".join(body),
            prev="tananyag-hasab-sikmetszetek.html", prevc="A hasáb síkmetszetei",
