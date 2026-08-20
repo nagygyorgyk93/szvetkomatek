@@ -416,7 +416,7 @@ B3 = [
            "a rövidebb a√3 = 5√3 cm.",
         nem="✘ Rajzold be a hatszög átlóit! Kétféle hosszúságút találsz: az egyik átmegy a "
             "középponton (2a), a másik egy csúcsot hagy ki (a√3)."),
-   GY(FGY + "#alap-17", "A 17–20", FGY + "#kozep-13", "K 13–16"),
+   GY(FGY + "#alap-17", "A 17–20", FGY + "#kozep-13", "K 13–16 N 1–5"),
    brief('<b>Prizma:</b> Az oszlopos kristályokkal végeztünk: ismered a felszínüket, a '
          'térfogatukat és a belsejüket is. A Zóna mélyén viszont olyan képződmények nőnek, '
          'amelyek <b>egyetlen pontba futnak össze</b>. Más test, más képlet — és egy '

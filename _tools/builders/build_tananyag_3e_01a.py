@@ -658,7 +658,7 @@ A4 = [
    'négyzet átlója és a kocka lapátlója $a\\sqrt2$ — mindkettő a $45^\\circ$-os arányból. A '
    'kocka <b>testátlója</b> $a\\sqrt3$: ez már nem a nevezetes arányokból jön, hanem a '
    'Pitagorasz-tétel <b>kétszeri</b> alkalmazásából (előbb a lapátló, aztán a testátló).</p>',
-   GY(FGY + "#alap-16", "A 16–22", FGY + "#kozep-11", "K 11–14"),
+   GY(FGY + "#alap-16", "A 16–22", FGY + "#kozep-11", "K 11–14 N 1–4"),
    brief('<b>Prizma:</b> A fegyverzet rendben. Innentől minden alaplapot ki tudsz számolni — '
          'és ez pontosan az a tudás, amire a következő blokkban szükség lesz. Emeljük ki a '
          'sokszöget a síkból: jön az <b>első test</b>, a hasáb.', outro=True),

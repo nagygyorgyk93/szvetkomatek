@@ -641,7 +641,7 @@ C4 = [
          '<b>csonkakúp</b> (a következő témakör anyaga). A forma nem véletlen: a test '
          'stabilan áll, a fala felfelé haladva kevesebb anyagot igényel, ráadásul a darabok '
          'egymásba rakhatók — ezért lehet a műanyag poharakat egyetlen oszlopba tornyozni.</p>'),
-   GY(FGY + "#alap-20", "A 20–26", FGY + "#kozep-16", "K 16–21"),
+   GY(FGY + "#alap-20", "A 20–26", FGY + "#kozep-16", "K 16–21 N 1–6"),
    brief('<b>Prizma:</b> A Kristálypára szögletes formáit legyőzted: hasáb, gúla, '
          'csonkagúla — felszín, térfogat, metszet. De a Zóna mélyén már mozgásba lendült '
          'valami: a következő kristályok <b>nem szögletesek</b>. Ha a sokszög helyére '
