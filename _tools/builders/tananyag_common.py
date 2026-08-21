@@ -88,12 +88,15 @@ def kviz(kerdes: str, opciok: list[str], jo_idx: int = 0, jo: str = "", nem: str
     """
     opciok, jo_idx = _kever(kerdes, opciok, jo_idx)
     gombok = "".join(f"<button>{o}</button>" for o in opciok)
+    # a `data-kevert` jelzi, hogy a sorrend MÁR át van rendezve — a `_tools/kviz_kever.py`
+    # (a builder nélküli, kézi oldalakhoz) ennek alapján hagyja békén ezt a kvízt
+    kevert = ' data-kevert="1"'
     extra = ""
     if jo:
         extra += f' data-jo="{_attr(jo)}"'
     if nem:
         extra += f' data-nem="{_attr(nem)}"'
-    return (f'<div class="kviz" data-answer="{jo_idx}"{extra}>\n'
+    return (f'<div class="kviz" data-answer="{jo_idx}"{kevert}{extra}>\n'
             f'  <p class="kviz-cim">🎯 Gyors kérdés</p>\n'
             f'  <p>{kerdes}</p>\n'
             f'  <div class="opciok">{gombok}</div>\n'

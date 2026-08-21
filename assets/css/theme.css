@@ -460,7 +460,9 @@ table.tt-table .res{font-weight:800;background:rgba(16,185,129,0.15);}
 /* Karakter-eligazítás nagyban: a mentor teljes alakja banner-ként az s0 brief tetején */
 .brief.karakter-nagy{padding:0;overflow:hidden;}
 .brief.karakter-nagy .portre{display:block;width:100%;height:clamp(9rem,20vw,13rem);object-fit:cover;
-  object-position:center 30%;border-bottom:1px solid rgba(59,130,246,.45);}
+  /* a fej a fekvő karakterképek FELSŐ sávjában van: a 30%-os igazítás a legtöbbnél
+     levágta a homlokot — a `top` mindegyiknél megtartja a teljes fejet */
+  object-position:center top;border-bottom:1px solid rgba(59,130,246,.45);}
 .brief.karakter-nagy>p{padding:.85rem 1.15rem;}
 .brief .avatar,.mentor-sor .avatar{width:5.2rem;height:5.2rem;border-radius:50%;object-fit:cover;
   flex:none;border:1px solid rgba(59,130,246,.55);box-shadow:0 0 16px rgba(59,130,246,.45);}

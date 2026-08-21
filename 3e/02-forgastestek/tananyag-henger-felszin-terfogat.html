@@ -33,7 +33,7 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief"><p>📡 <b>Medúza:</b> Egy tartályról két dolgot kell tudni: <b>mennyi fér bele</b> és <b>mennyi anyag kell hozzá</b>. Az első a térfogat, a második a felszín. A Kamrában ez a két szám külön naplóba megy — aki összekeveri őket, az vagy kifolyatja a párát, vagy elpazarolja a lemezt.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/meduza.webp" alt="Medúza — a Királyi Család hangja" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Medúza:</b> Egy tartályról két dolgot kell tudni: <b>mennyi fér bele</b> és <b>mennyi anyag kell hozzá</b>. Az első a térfogat, a második a felszín. A Kamrában ez a két szám külön naplóba megy — aki összekeveri őket, az vagy kifolyatja a párát, vagy elpazarolja a lemezt.</p></div>
 
     <p>A felszín <b>területjellegű</b> mennyiség (cm², m²), a térfogat <b>köbös</b> (cm³, m³). Ha a végeredményed mértékegysége nem stimmel, nem is kell tovább ellenőrizned: rossz képletet használtál.</p>
 
@@ -63,7 +63,7 @@
       <p><i>„Felszín = alapkör + palást, tehát <span class="math inline">\(F=r^2\pi+2r\pi H\)</span>.”</i></p><p>A hengernek <b>két</b> alapköre van — egy alul, egy felül. A felszínben ezért <span class="math inline">\(2r^2\pi\)</span> áll.</p><p><b>Ellenpróba, amikor viszont tényleg csak egy kell:</b> egy nyitott vödörnél, egy virágcserépnél vagy egy fedél nélküli tartálynál a feladat kifejezetten mondja, hogy nincs teteje. Ilyenkor <span class="math inline">\(F=r^2\pi+2r\pi H\)</span> a helyes. A képlet tehát nem „szabály”, hanem a <b>szöveg</b> következménye — mindig olvasd el, mit kell befedni.</p>
     </div>
 
-    <div class="kviz" data-answer="1" data-jo="✔ F = 2rπ(r + H) = 16π · 18 = 288π cm²." data-nem="✘ A dobozt teljesen bezárjuk, tehát KÉT alapkör kell: F = 2·64π + 2·8·10π = 128π + 160π = 288π.">
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ F = 2rπ(r + H) = 16π · 18 = 288π cm²." data-nem="✘ A dobozt teljesen bezárjuk, tehát KÉT alapkör kell: F = 2·64π + 2·8·10π = 128π + 160π = 288π.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
       <p>Egy <span class="math inline">\(8\)</span> cm sugarú, <span class="math inline">\(10\)</span> cm magas hengeres <b>doboz</b> teljes felszíne:</p>
       <div class="opciok"><button><span class="math inline">\(160\pi\ \text{cm}^2\)</span></button><button><span class="math inline">\(288\pi\ \text{cm}^2\)</span></button><button><span class="math inline">\(224\pi\ \text{cm}^2\)</span></button></div>
@@ -85,7 +85,7 @@
       <details><summary>Megoldás</summary><div class="bel"><p><b>Térfogat.</b></p><span class="math display">\[V=r^2\pi H=9\pi\cdot8=72\pi\ \text{dm}^3.\]</span><p>Mivel <span class="math inline">\(1\ \text{dm}^3=1\)</span> liter, a tartály űrtartalma <span class="math inline">\(72\pi\approx226{,}19\)</span> liter. (Itt <b>indokolt</b> a közelítés: a liter valós, mérhető mennyiség.)</p><p><b>Felszín.</b></p><span class="math display">\[F=2r\pi(r+H)=6\pi\cdot11=66\pi\ \text{dm}^2.\]</span><p>Ez körülbelül <span class="math inline">\(207{,}35\ \text{dm}^2\)</span>, azaz nagyjából <span class="math inline">\(2{,}07\ \text{m}^2\)</span> lemez.</p></div></details>
     </div>
 
-    <div class="kviz" data-answer="1" data-jo="✔ V = r²πH, és a sugár NÉGYZETESEN szerepel: (2r)² = 4r², tehát a térfogat négyszereződik." data-nem="✘ A sugár a képletben négyzeten áll: (2r)²πH = 4r²πH. A térfogat tehát négyszereződik, nem duplázódik.">
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ V = r²πH, és a sugár NÉGYZETESEN szerepel: (2r)² = 4r², tehát a térfogat négyszereződik." data-nem="✘ A sugár a képletben négyzeten áll: (2r)²πH = 4r²πH. A térfogat tehát négyszereződik, nem duplázódik.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
       <p>Egy henger sugarát <b>megduplázzuk</b>, a magasságát változatlanul hagyjuk. Hányszorosára nő a térfogata?</p>
       <div class="opciok"><button>Nyolcszorosára</button><button>Négyszeresére</button><button>Kétszeresére</button></div>
@@ -124,7 +124,7 @@
       <p>A matematikaórán a végeredmény <b>pontos alakban</b> áll: <span class="math inline">\(V=72\pi\)</span> cm³. Ez nem lustaság, hanem pontosság — a <span class="math inline">\(\pi\)</span> irracionális, minden közelítés hibát visz be.</p><p>Közelítést akkor adunk, ha a feladat <b>valós, mérhető</b> mennyiséget kér: hány liter fér bele, hány kilogramm festék kell, mennyibe kerül az anyag. Ilyenkor általában két tizedesre kerekítünk, és a szöveg is jelzi, hogy közelítő értéket vár.</p><p>Az iparban ez nem elméleti kérdés: egy nagy tartálynál a <span class="math inline">\(3{,}14\)</span> és a valódi <span class="math inline">\(\pi\)</span> közötti eltérés egy <span class="math inline">\(1000\ \text{m}^3\)</span>-es olajtartálynál már több száz liter — ezért számolnak a gyártók sokkal több tizedessel.</p>
     </div>
 
-    <div class="kviz" data-answer="0" data-jo="✔ 1 m³ = 1000 liter, tehát 0,75 · 1000 = 750 liter." data-nem="✘ A térfogat váltószáma 1000 (nem 100 és nem 10 000): 0,75 m³ = 750 liter.">
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ 1 m³ = 1000 liter, tehát 0,75 · 1000 = 750 liter." data-nem="✘ A térfogat váltószáma 1000 (nem 100 és nem 10 000): 0,75 m³ = 750 liter.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
       <p>Egy hengeres hordó térfogata <span class="math inline">\(0{,}75\ \text{m}^3\)</span>. Hány liter fér bele?</p>
       <div class="opciok"><button><span class="math inline">\(750\)</span> liter</button><button><span class="math inline">\(75\)</span> liter</button><button><span class="math inline">\(7500\)</span> liter</button></div>
@@ -133,7 +133,7 @@
 
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-henger.html#alap-10">🐕 Tér-eb-ugrás <span class="cimke">A 10–20</span></a><a class="sav bruno" href="feladatok-henger.html#kozep-6">👑 Királyi Gárda <span class="cimke">K 6–14</span></a></div></div></div>
 
-    <div class="brief" data-outro><p>📡 <b>Medúza:</b> A henger megvan — kapacitás és anyagszükséglet egyaránt. Most jön a kérdés, amitől a Kamra tölcsérei megszülettek: mi történik, ha a henger egyik alapkörét <b>egyetlen pontba</b> húzzuk össze?</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/meduza.webp" alt="Medúza — a Királyi Család hangja" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Medúza:</b> A henger megvan — kapacitás és anyagszükséglet egyaránt. Most jön a kérdés, amitől a Kamra tölcsérei megszülettek: mi történik, ha a henger egyik alapkörét <b>egyetlen pontba</b> húzzuk össze?</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-henger.html"><span class="irany">← Előző</span><span class="hova">A henger és elemei</span></a>
       <a class="kov" href="feladatok-henger.html"><span class="irany">Következő →</span><span class="hova">Feladatok — a henger</span></a>

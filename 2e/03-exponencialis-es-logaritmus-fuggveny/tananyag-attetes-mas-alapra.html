@@ -33,7 +33,7 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief"><p>📡 <b>Dr. Bestia:</b> Itt az igazság pillanata. A számológépeden két logaritmus-gomb van: <b>lg</b> és <b>ln</b>. De a vírus kettesével szaporodik, tehát nekem <span class="math inline">\(\log_{2}\)</span> kellene. Elakadtunk? Nem — létezik egy képlet, amely <b>bármely</b> alapot visszavezet egy másikra. Ezzel a logaritmus végre használható eszközzé válik a laborban is.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/dr_bestia.webp" alt="Dr. Bestia — a kampusz fővezető tudósa" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Dr. Bestia:</b> Itt az igazság pillanata. A számológépeden két logaritmus-gomb van: <b>lg</b> és <b>ln</b>. De a vírus kettesével szaporodik, tehát nekem <span class="math inline">\(\log_{2}\)</span> kellene. Elakadtunk? Nem — létezik egy képlet, amely <b>bármely</b> alapot visszavezet egy másikra. Ezzel a logaritmus végre használható eszközzé válik a laborban is.</p></div>
 
     <h2 id="s1">Áttérés más alapra</h2>
 
@@ -54,10 +54,10 @@
       <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(\log_{11}12=\dfrac{\lg 12}{\lg 11}\approx\dfrac{1{,}07918}{1{,}04139}\approx\boxed{1{,}0363}\)</span>.</p><p>Józan ész: a <span class="math inline">\(12\)</span> épp csak nagyobb <span class="math inline">\(11\)</span>-nél, tehát a kitevőnek kicsit <span class="math inline">\(1\)</span> fölött kell lennie. ✔</p><p><b>b)</b> <span class="math inline">\(\log_{7}23=\dfrac{\lg 23}{\lg 7}\approx\dfrac{1{,}36173}{0{,}84510}\approx\boxed{1{,}6113}\)</span>.</p><p>Ellenőrzés: <span class="math inline">\(7^{1}=7&lt;23&lt;49=7^{2}\)</span>, tehát a válasznak <span class="math inline">\(1\)</span> és <span class="math inline">\(2\)</span> között kell lennie. ✔</p></div></details>
     </div>
 
-    <div class="kviz" data-answer="0" data-jo="✔ Felülre az argumentum logaritmusa kerül, alulra az alapé." data-nem="✘ logₐb = lg b / lg a — felül az argumentum (20) logaritmusa, alul az alapé (3).">
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ Felülre az argumentum logaritmusa kerül, alulra az alapé." data-nem="✘ logₐb = lg b / lg a — felül az argumentum (20) logaritmusa, alul az alapé (3).">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
       <p>Melyik alakban írható át <span class="math inline">\(\log_{3}20\)</span> a számológéphez?</p>
-      <div class="opciok"><button><span class="math inline">\(\dfrac{\lg 20}{\lg 3}\)</span></button><button><span class="math inline">\(\dfrac{\lg 3}{\lg 20}\)</span></button><button><span class="math inline">\(\lg 20-\lg 3\)</span></button></div>
+      <div class="opciok"><button><span class="math inline">\(\lg 20-\lg 3\)</span></button><button><span class="math inline">\(\dfrac{\lg 20}{\lg 3}\)</span></button><button><span class="math inline">\(\dfrac{\lg 3}{\lg 20}\)</span></button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
@@ -76,16 +76,16 @@
       <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> A modell: <span class="math inline">\(2^{x}=1\,000\,000\)</span>. Innen</p><span class="math display">\[x=\log_{2}1\,000\,000=\frac{\lg 10^{6}}{\lg 2}=\frac{6}{0{,}30103}\approx 19{,}93.\]</span><p>Tehát a <b>20. órában</b> lépi át az egymilliót — a modell óránként duplázódik, és <span class="math inline">\(2^{19}=524\,288\)</span> még kevesebb, <span class="math inline">\(2^{20}=1\,048\,576\)</span> már több. Figyeld meg: a millió hatalmas szám, de a logaritmusa csak <span class="math inline">\(20\)</span> — ez a nagyságrend-kezelés lényege.</p><p><b>b)</b> A modell: <span class="math inline">\(1{,}05^{n}=2\)</span>, tehát</p><span class="math display">\[n=\log_{1{,}05}2=\frac{\lg 2}{\lg 1{,}05}\approx\frac{0{,}30103}{0{,}02119}\approx 14{,}21.\]</span><p>Vagyis nagyjából <b>15 év</b> alatt duplázódik meg a pénz (a 14. év végén még nincs meg a kétszeres).</p></div></details>
     </div>
 
-    <div class="kviz" data-answer="0" data-jo="✔ A Richter-skála logaritmikus: 3 egység különbség = 10³ = 1000-szeres." data-nem="✘ A skála logaritmikus — minden egység tízszeres kilengést jelent, tehát 10³ = 1000.">
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ A Richter-skála logaritmikus: 3 egység különbség = 10³ = 1000-szeres." data-nem="✘ A skála logaritmikus — minden egység tízszeres kilengést jelent, tehát 10³ = 1000.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
       <p>Hányszorosa egy 7-es erősségű földrengés kilengése a 4-esének?</p>
       <div class="opciok"><button>1000-szer</button><button>3-szor</button><button><span class="math inline">\(\tfrac74\)</span>-szer</button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
-    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-logaritmus.html#alap-13">🐾 Bestia-protokoll <span class="cimke">A 13–18</span></a><a class="sav bruno" href="feladatok-logaritmus.html#kozep-9">🔥 Főnix-protokoll <span class="cimke">K 9–14</span></a></div></div></div>
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-logaritmus.html#alap-13">🐾 Bestia-protokoll <span class="cimke">A 13–18</span></a><a class="sav bruno" href="feladatok-logaritmus.html#kozep-9">🔥 Főnix-protokoll <span class="cimke">K 9–14</span></a></div></div></div>
 
-    <div class="brief" data-outro><p>📡 <b>Dr. Bestia:</b> Megvan az eszköz. Most már bármelyik exponenciális egyenletet meg tudjuk oldani — akkor is, ha a két oldal nem hozható közös alapra. Egy dolog maradt hátra: ha a logaritmus a hatványozás fordítottja, akkor a <b>logaritmusfüggvény</b> az exponenciális függvény <b>inverze</b>. A következő küldetésben ezt a tükörképet nézzük meg.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/dr_bestia.webp" alt="Dr. Bestia — a kampusz fővezető tudósa" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Dr. Bestia:</b> Megvan az eszköz. Most már bármelyik exponenciális egyenletet meg tudjuk oldani — akkor is, ha a két oldal nem hozható közös alapra. Egy dolog maradt hátra: ha a logaritmus a hatványozás fordítottja, akkor a <b>logaritmusfüggvény</b> az exponenciális függvény <b>inverze</b>. A következő küldetésben ezt a tükörképet nézzük meg.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-logaritmus-azonossagai.html"><span class="irany">← Előző</span><span class="hova">A logaritmus azonosságai</span></a>
       <a class="kov" href="feladatok-logaritmus.html"><span class="irany">Következő →</span><span class="hova">Feladatok — logaritmus</span></a>

@@ -33,7 +33,7 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief"><p>📡 <b>Nagol:</b> Ez a kód négyzetre emelt négyzeteket tartalmaz — <span class="math inline">\(x^{4}\)</span>-es tagot. Ne ijedj meg tőle. Ha a kitevők <b>4, 2 és 0</b> — vagyis csak <span class="math inline">\(x^{4}\)</span>, <span class="math inline">\(x^{2}\)</span> és konstans áll az egyenletben —, egyetlen új ismeretlen bevezetésével visszavezetheted arra, amit már tudsz. A neve <b>bikvadratikus</b>, és a leggyakoribb hiba nem a megoldásában, hanem a <b>visszahelyettesítésben</b> van.</p></div>
+    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/nagol_w.webp" alt="Nagol — a morcos kiképzőtiszt" width="1200" height="670" decoding="async"><p>📡 <b>Nagol:</b> Ez a kód négyzetre emelt négyzeteket tartalmaz — <span class="math inline">\(x^{4}\)</span>-es tagot. Ne ijedj meg tőle. Ha a kitevők <b>4, 2 és 0</b> — vagyis csak <span class="math inline">\(x^{4}\)</span>, <span class="math inline">\(x^{2}\)</span> és konstans áll az egyenletben —, egyetlen új ismeretlen bevezetésével visszavezetheted arra, amit már tudsz. A neve <b>bikvadratikus</b>, és a leggyakoribb hiba nem a megoldásában, hanem a <b>visszahelyettesítésben</b> van.</p></div>
 
     <h2 id="s1">Új ismeretlen bevezetése (<span class="math inline">\(t=x^{2}\)</span>)</h2>
 
@@ -47,10 +47,10 @@
       <p><b>1.</b> Vezessük be a <span class="math inline">\(t=x^{2}\)</span> új ismeretlent. Valós <span class="math inline">\(x\)</span> esetén <span class="math inline">\(t=x^{2}\ge 0\)</span> — ezt a végén meg kell nézni. Ekkor <span class="math inline">\(x^{4}=t^{2}\)</span>, és az egyenlet <span class="math inline">\(at^{2}+bt+c=0\)</span> alakú — <b>közönséges másodfokú</b>.</p><p><b>2.</b> Oldjuk meg <span class="math inline">\(t\)</span>-re.</p><p><b>3.</b> <b>Helyettesítsünk vissza:</b> minden kapott <span class="math inline">\(t\)</span> értékre oldjuk meg az <span class="math inline">\(x^{2}=t\)</span> egyenletet. Ez <span class="math inline">\(t&gt;0\)</span> esetén <b>két</b> valós megoldást ad (<span class="math inline">\(x=\pm\sqrt{t}\)</span>), <span class="math inline">\(t=0\)</span> esetén <b>egyet</b> (<span class="math inline">\(x=0\)</span>), <span class="math inline">\(t&lt;0\)</span> esetén pedig a valós számok között <b>egyet sem</b>.</p><p>Valós megoldásból tehát <span class="math inline">\(0\)</span>, <span class="math inline">\(1\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(3\)</span> vagy <span class="math inline">\(4\)</span> lehet — például az <span class="math inline">\(x^{4}-4x^{2}=0\)</span> egyenletnek <b>három</b> valós gyöke van: <span class="math inline">\(0\)</span> és <span class="math inline">\(\pm 2\)</span>.</p>
     </div>
 
-    <div class="kviz" data-answer="0" data-jo="✔ Az x² = −4 egyenletnek nincs valós megoldása, mert négyzet nem lehet negatív. A t negatív értékeit tehát a valós körben elvetjük." data-nem="✘ A visszahelyettesítés x² = −4 alakú: ennek NINCS valós megoldása. Csak a nemnegatív t értékekből kapunk valós x-et.">
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Az x² = −4 egyenletnek nincs valós megoldása, mert négyzet nem lehet negatív. A t negatív értékeit tehát a valós körben elvetjük." data-nem="✘ A visszahelyettesítés x² = −4 alakú: ennek NINCS valós megoldása. Csak a nemnegatív t értékekből kapunk valós x-et.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
       <p>A bikvadratikus egyenletnél <span class="math inline">\(t=x^{2}\)</span> helyettesítéssel <span class="math inline">\(t=-4\)</span> adódik. Mit jelent ez?</p>
-      <div class="opciok"><button>Ebből nem jön valós <span class="math inline">\(x\)</span></button><button>Ebből <span class="math inline">\(x=-2\)</span> jön</button><button>Ebből <span class="math inline">\(x=\pm 2\)</span> jön</button></div>
+      <div class="opciok"><button>Ebből <span class="math inline">\(x=-2\)</span> jön</button><button>Ebből <span class="math inline">\(x=\pm 2\)</span> jön</button><button>Ebből nem jön valós <span class="math inline">\(x\)</span></button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
@@ -85,16 +85,16 @@
       <p>Ha a feladat kifejezetten a <b>valós</b> megoldásokat kéri, a negatív <span class="math inline">\(t\)</span> értékeket egyszerűen elvetjük (hiszen <span class="math inline">\(x^{2}\ge 0\)</span> minden valós <span class="math inline">\(x\)</span>-re). A komplex számok halmazán viszont ezek is gyököket adnak — mostantól tehát <b>oda kell figyelni, melyik halmazon dolgozunk</b>.</p>
     </div>
 
-    <div class="kviz" data-answer="0" data-jo="✔ t = 1 vagy t = −4; csak a t = 1 ad valós x-et: ±1." data-nem="✘ t² + 3t − 4 = 0 → t = 1 vagy t = −4. A t = −4-hez nincs valós x, tehát csak ±1.">
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ t = 1 vagy t = −4; csak a t = 1 ad valós x-et: ±1." data-nem="✘ t² + 3t − 4 = 0 → t = 1 vagy t = −4. A t = −4-hez nincs valós x, tehát csak ±1.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
       <p>Hány megoldása van az <span class="math inline">\(x^{4}+3x^{2}-4=0\)</span> egyenletnek a valós számok halmazán?</p>
       <div class="opciok"><button>Kettő: <span class="math inline">\(\pm 1\)</span>.</button><button>Négy: <span class="math inline">\(\pm 1\)</span> és <span class="math inline">\(\pm 2\)</span>.</button><button>Egy sem.</button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
-    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-masodfoku-egyenletek.html#alap-16">🐾 Bestia-protokoll <span class="cimke">A 16–18</span></a><a class="sav bruno" href="feladatok-masodfoku-egyenletek.html#kozep-14">🔥 Főnix-protokoll <span class="cimke">K 14–16</span></a></div></div></div>
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-masodfoku-egyenletek.html#alap-16">🐾 Bestia-protokoll <span class="cimke">A 16–18</span></a><a class="sav bruno" href="feladatok-masodfoku-egyenletek.html#kozep-14">🔥 Főnix-protokoll <span class="cimke">K 14–16</span></a></div></div></div>
 
-    <div class="brief" data-outro><p>📡 <b>Küklopsz:</b> Nagol elvégezte a durva munkát — innen én veszem át. Eddig azt kérdeztük: <b>hol nulla</b> a kifejezés. Most azt fogjuk kérdezni: <b>hogyan viselkedik mindenütt</b>. Az optikai sugaraim röppályája ugyanaz a görbe, mint amit a másodfokú függvény rajzol — és ha ismered a görbét, egyetlen pillantással látod azt is, amit az egyenlet csak hosszú számolás után árul el.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/kuklopsz.webp" alt="Küklopsz — az optikai sugarak mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Küklopsz:</b> Nagol elvégezte a durva munkát — innen én veszem át. Eddig azt kérdeztük: <b>hol nulla</b> a kifejezés. Most azt fogjuk kérdezni: <b>hogyan viselkedik mindenütt</b>. Az optikai sugaraim röppályája ugyanaz a görbe, mint amit a másodfokú függvény rajzol — és ha ismered a görbét, egyetlen pillantással látod azt is, amit az egyenlet csak hosszú számolás után árul el.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-viete-es-szorzatta-alakitas.html"><span class="irany">← Előző</span><span class="hova">Viète-képletek és szorzattá alakítás</span></a>
       <a class="kov" href="feladatok-masodfoku-egyenletek.html"><span class="irany">Következő →</span><span class="hova">Feladatok — másodfokú egyenletek</span></a>
