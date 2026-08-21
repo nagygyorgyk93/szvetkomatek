@@ -70,7 +70,7 @@ SVG_KUP = svg_kup(haromszog=True, w=310, h=290,
            "háromszög")
 SVG_KUP_TISZTA = svg_kup(w=300, h=280, leiras="Egyenes körkúp a jelölésekkel")
 SVG_HALO_KUP = svg_halo("kup", w=360, h=260)
-SVG_KUP_TM = svg_kup(tengelymetszet=True, alkoto=False, w=300, h=280,
+SVG_KUP_TM = svg_kup(tengelymetszet=True, alkoto=True, w=300, h=280,
     leiras="A kúp tengelymetszete egyenlő szárú háromszög")
 SVG_KUP_PM = svg_kup(parhuzamos_metszet=True, alkoto=False, w=300, h=280,
     leiras="A kúp alaplappal párhuzamos metszete az alapkörhöz hasonló kör")
@@ -83,7 +83,7 @@ SVG_CSONKA_H = svg_csonkakup(trapez=True, kiegeszites=False, w=300, h=250,
            "átfogója az alkotó")
 SVG_F_TRAPEZ = svg_forgatas("trapez", w=430, h=250)
 SVG_TM_HAROM = svg_haromszog(csucsok=[(0, 0), (10, 0), (5, 12)],
-    cimkek=("A", "B", "C"), oldalcimkek=("13", "13", "10"), magassag=2, w=320, h=250,
+    cimkek=("A", "B", "C"), oldalcimkek=("10", "13", "13"), magassag=2, w=320, h=250,
     leiras="A kúp tengelymetszete: egyenlő szárú háromszög, alapja 10, szárai 13")
 
 # ===================================================================== B1
@@ -105,8 +105,10 @@ B1 = [
    '<li><b>Forgatással:</b> egy <b>derékszögű háromszöget</b> megforgatunk az egyik '
    '<b>befogója</b> körül. A tengely lesz a magasság, a másik befogó a sugár, az átfogó '
    'pedig az alkotó.</li>'
-   '<li><b>Metszéssel:</b> egy kúpfelületet elmetszünk egy síkkal, és a csúcs és a sík '
-   'közötti darabot vesszük.</li>'
+   '<li><b>Metszéssel:</b> egy '
+   '<a href="tananyag-forgastestek.html#def-hengerfelulet">kúpfelületet</a> elmetszünk '
+   'egy olyan síkkal, amely <b>minden alkotót</b> metsz és nem megy át a csúcson; a '
+   'csúcs és a sík közötti darabot vesszük.</li>'
    '</ul>'
    '<p>A kúp <b>egyenes</b>, ha a csúcsot az alapkör <b>középpontjával</b> összekötő '
    'szakasz merőleges az alaplapra — a forgatásból mindig ilyen keletkezik. Ha a csúcs '
@@ -133,22 +135,25 @@ B1 = [
  ]),
 
  ("A kúp derékszögű háromszöge", [
-   '<p>Vágjuk el a kúpot a tengelyén át. A kapott háromszög <b>fele</b> egy derékszögű '
-   'háromszög, amelynek a befogói a sugár és a magasság, az átfogója pedig az alkotó.</p>',
+   '<p>Vágjuk el a kúpot a tengelyén <b>átmenő síkkal</b>. A kapott háromszög — ezt '
+   'nevezzük <b>tengelymetszetnek</b> — <b>fele</b> egy derékszögű háromszög, amelynek '
+   'a befogói a sugár és a magasság, az átfogója pedig az alkotó.</p>',
    doboz("tetel", "A kúp három adata",
          '<p>Az egyenes körkúpban</p>'
          '$$s^{2}=r^{2}+H^{2}.$$'
          '<p>Ez a témakör legtöbbet használt összefüggése: bármelyik két adatból megadja '
          'a harmadikat. Mivel az alkotó az <b>átfogó</b>, mindig</p>'
          '$$s>r\\quad\\text{és}\\quad s>H.$$'
-         '<p>A 01-es témakörben a gúlánál <b>három</b> ilyen derékszögű háromszög volt; a '
-         'kúpnál mindegyik ugyanabba az egybe olvad össze — mert az alaplap köré írt és '
-         'beírt köre ugyanaz a kör.</p>',
+         '<p>A gúlánál (<a href="' + POLI + 'tananyag-gula.html#tetel-harom-haromszog">'
+         '01-es témakör</a>) <b>három</b> ilyen derékszögű háromszög volt. Ott az alaplap '
+         'beírt és köré írt köre <b>különböző</b> ($r\\ne R$), a kúpnál viszont '
+         '<b>egybeesik</b> — és alapél sincs, amihez a harmadik háromszög tartozna. '
+         'Ezért marad egyetlen háromszög.</p>',
          hid="tetel-kup-haromszog"),
    abra(SVG_KUP, 'A kiemelt derékszögű háromszög befogói $r$ és $H$, átfogója az '
         'alkotó ($s$).'),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„Az alkotó a sugár és a magasság összege: $s=r+H$."</i></p>'
+         '<p><i>„Az alkotó a sugár és a magasság összege: $s=r+H$.”</i></p>'
          '<p>Ez a háromszög-egyenlőtlenség szerint lehetetlen: az átfogó mindig '
          '<b>kisebb</b> a két befogó összegénél. Ha $r=6$ és $H=8$, akkor $s=10$, nem '
          '$14$.</p>'
@@ -193,11 +198,11 @@ B1 = [
                   '<p><b>A középponti szög.</b></p>'
                   '$$\\varphi=360^\\circ\\cdot\\frac rs=360^\\circ\\cdot\\frac{6}{10}=216^\\circ.$$'
                   '<p>Tehát egy $10$ cm sugarú körből kell egy $216^\\circ$-os cikket '
-                  'kivágni. A maradék $144^\\circ$ a hulladék — ezért olcsóbb a lapos, '
-                  'széles tölcsér, mint a hegyes: annál a szög nagyobb, a hulladék '
-                  'kevesebb.</p>')),
+                  'kivágni. A maradék $144^\\circ$ a hulladék. <b>Azonos alkotó '
+                  'mellett</b> a laposabb, szélesebb tölcsérnél nagyobb ez a szög, '
+                  'tehát arányosan kevesebb a hulladék.</p>')),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„A körcikk sugara az alapkör sugara, tehát $r$."</i></p>'
+         '<p><i>„A körcikk sugara az alapkör sugara, tehát $r$.”</i></p>'
          '<p>A körcikk sugara az <b>alkotó</b> ($s$), nem az alapköré. Gondolj bele: a '
          'kiterített palást minden pontja onnan indul, ahol a <b>csúcs</b> volt — és a '
          'csúcstól minden palástpont pontosan $s$ távolságra van.</p>'
@@ -265,13 +270,14 @@ B2 = [
    'szerkezet ugyanaz, de a hengernél <b>két</b> alapkör van és a magasság szerepel, a '
    'kúpnál <b>egy</b> alapkör és az alkotó.</p>',
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„A palást $M=r\\pi H$, hiszen a magasság a test mérete."</i></p>'
+         '<p><i>„A palást $M=r\\pi H$, hiszen a magasság a test mérete.”</i></p>'
          '<p>A palást a test <b>felületén</b> fekszik — kiterítve pontosan az az '
          'alkotókból álló körcikk. Ezért az <b>alkotó</b> kell hozzá.</p>'
          '<p>A térfogat viszont „felfelé” épül, a test <b>belsejét</b> tölti ki, ezért '
          'ott a <b>magasság</b> szerepel. Egy mondatban: <b>a felületen az alkotó, a '
          'belsejében a magasság.</b></p>'
-         '<p>A hiba ára nem kicsi: a $3$–$4$–$5$ kúpnál $M=15\\pi$ a helyes érték, a '
+         '<p>A hiba ára nem kicsi: az $r=3$, $H=4$ (tehát $s=5$) kúpnál $M=15\\pi$ a helyes '
+         'érték, a '
          'magassággal számolva $12\\pi$ jönne ki — 20 %-kal kevesebb.</p>'),
    kviz('Egy kúp alapkörének sugara $5$ cm, magassága $12$ cm. Mekkora a '
         '<b>palástjának</b> területe?',
@@ -302,7 +308,7 @@ B2 = [
         'térfogatuk?',
         ['A kúpé a henger térfogatának harmada', 'A kúpé a henger térfogatának fele',
          'Egyenlők'], 0,
-        jo="✔ V_kúp = r²πH/3, V_henger = r²πH — az arány pontosan 1 : 3.",
+        jo="✔ V_kúp = r²πH/3, V_henger = r²πH — a kúp : henger arány pontosan 1 : 3.",
         nem="✘ A felezés a síkban igaz (háromszög és téglalap), a térben harmadolás van: "
             "a kúp a henger térfogatának HARMADA."),
  ]),
@@ -344,7 +350,7 @@ B2 = [
    doboz("pelda", "Átalakulás-kamra szimuláció",
          '<p>Egy kúp felszíne $24\\pi$ cm², az alapkör sugara $3$ cm. Mekkora az '
          'alkotója és a térfogata?</p>',
-         hid="pelda-kup-fordítva",
+         hid="pelda-kup-forditva",
          lenyilo=("Megoldás",
                   '<p><b>Az alkotó a felszínből.</b></p>'
                   '$$F=r\\pi(r+s)=3\\pi(3+s)=24\\pi.$$'
@@ -353,8 +359,8 @@ B2 = [
                   '$$H=\\sqrt{s^2-r^2}=\\sqrt{25-9}=4\\ \\text{cm}.$$'
                   '<p><b>A térfogat.</b></p>'
                   '$$V=\\frac{9\\pi\\cdot4}{3}=12\\pi\\ \\text{cm}^3.$$'
-                  '<p>A $\\pi$ itt is kiesett az első lépésben — ezért érdemes végig '
-                  'jelként vinni.</p>')),
+                  '<p>A $\\pi$ az osztásnál kiesett — ezért érdemes végig '
+                  '<b>szimbólumként</b> vinni, és nem $3{,}14$-dal számolni.</p>')),
    GY(FGY + "#alap-7", "A 7–16", FGY + "#kozep-4", "K 4–11"),
    brief('<b>Medúza:</b> A kúp minden adata a kezünkben van. A következő kérdés az, amit '
          'a Kamra minden zárt tartályánál fel kell tenni: <b>mi látszik, ha elvágjuk?</b>',
@@ -388,7 +394,7 @@ B3 = [
    abra(SVG_HENGER_TM, 'A henger tengelymetszete téglalap.'),
    abra(SVG_KUP_TM, 'A kúp tengelymetszete egyenlő szárú háromszög.'),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„A tengelymetszet-háromszög szára a magasság."</i></p>'
+         '<p><i>„A tengelymetszet-háromszög szára a magasság.”</i></p>'
          '<p>A <b>szár</b> az <b>alkotó</b> ($s$), a <b>magasság</b> pedig a háromszög '
          'magassága, ami a test $H$ magassága. A kettő csak akkor esne egybe, ha a '
          'háromszög elfajulna — vagyis ha a kúpnak nem lenne szélessége.</p>'
@@ -412,7 +418,9 @@ B3 = [
          'ugyanaz az $r$ sugarú kör;</li>'
          '<li>a <b>kúpnál</b> az alapkörhöz <b>hasonló</b>, és a hasonlóság aránya a '
          '<b>csúcstól mért magasságok aránya</b>. Ha a metszősík a csúcstól a magasság '
-         '$k$-szorosánál van, a metszetkör sugara $k\\cdot r$.</li>'
+         '$k$-szorosánál van, a metszetkör sugara $k\\cdot r$. Ha a feladat az '
+         '<b>alaplaptól</b> mért $d$ távolságot adja meg, akkor '
+         '$k=\\frac{H-d}{H}$.</li>'
          '</ul>',
          hid="tetel-parhuzamos-metszet"),
    abra(SVG_KUP_PM, 'A kúp párhuzamos metszete az alapkörhöz <b>hasonló</b> kör — annál '
@@ -453,15 +461,20 @@ B3 = [
                   '<b>kerületbe</b> pedig az alkotó.</p>')),
    abra(SVG_TM_HAROM, 'A kapott háromszög külön kirajzolva: alapja $10$, szárai $13$, '
         'magassága $12$.'),
+   '<p><b>Párhuzamos metszet.</b> Ha ugyanezt a kúpot a csúcstól mért magasság '
+   'harmadánál metsszük el az alaplappal párhuzamosan, a metszetkör sugara '
+   '$\\frac13\\cdot5=\\frac53$, a területe pedig '
+   '$\\left(\\frac13\\right)^2\\cdot25\\pi=\\frac{25\\pi}{9}$ cm².</p>'
    '<p>A tengelymetszet területe általában:</p>'
    '<ul>'
    '<li><b>henger:</b> $T=2r\\cdot H$ (téglalap);</li>'
    '<li><b>kúp:</b> $T=\\dfrac{2r\\cdot H}{2}=r\\,H$ (háromszög).</li>'
    '</ul>'
-   '<p>Ezek a képletek az <a href="tananyag-henger.html#def-egyenlo-oldalu-henger">'
-   'egyenlő oldalú</a> testeknél különösen hasznosak: ott a tengelymetszet négyzet '
-   '($H=2r$), illetve szabályos háromszög ($s=2r$, $H=r\\sqrt3$), és egyetlen adatból '
-   'minden kijön.</p>',
+   '<p>Ezek a képletek az egyenlő oldalú testeknél különösen hasznosak: az '
+   '<a href="tananyag-henger.html#def-egyenlo-oldalu-henger">egyenlő oldalú '
+   'hengernél</a> a tengelymetszet négyzet ($H=2r$), az '
+   '<a href="tananyag-kup.html#def-egyenlo-oldalu-kup">egyenlő oldalú kúpnál</a> '
+   'szabályos háromszög ($s=2r$, $H=r\\sqrt3$) — egyetlen adatból minden kijön.</p>',
    GY(FGY + "#alap-17", "A 17–21", FGY + "#kozep-12", "K 12–15"),
    brief('<b>Medúza:</b> Ha az alaplappal párhuzamosan vágunk, és a <b>felső</b> darabot '
          'eldobjuk, egy új test marad a kezünkben. A Kamra hűtőaknái pontosan ilyenek.',
@@ -487,37 +500,42 @@ B4 = [
    '<ul>'
    '<li><b>Csonkolással:</b> egy kúpot elmetszünk az alaplapjával <b>párhuzamos</b> '
    'síkkal, és a <b>csúcsot tartalmazó</b> részt elhagyjuk.</li>'
-   '<li><b>Forgatással:</b> egy <b>derékszögű trapézt</b> megforgatunk a derékszögű '
-   'szára körül.</li>'
+   '<li><b>Forgatással:</b> egy <b>derékszögű trapézt</b> megforgatunk azon szára '
+   'körül, amely <b>merőleges</b> a párhuzamos oldalakra.</li>'
    '</ul>',
    abra(SVG_F_TRAPEZ, 'A derékszögű trapéz a derékszögű szára körül forgatva csonkakúpot '
         'ad: a két párhuzamos oldal lesz a két sugár.'),
    doboz("definicio", "A csonkakúp részei",
          '<ul>'
          '<li><b>Alapkör</b> — az alsó, nagyobb kör; sugara $R$.</li>'
-         '<li><b>Fedőkör</b> — a felső, kisebb kör; sugara $r$. A kettő '
-         '<b>párhuzamos</b> és <b>koncentrikus</b> (egy tengelyen van a középpontjuk).</li>'
-         '<li><b>Alkotó</b> ($s$) — a két kört összekötő, a paláston futó szakasz.</li>'
+         '<li><b>Fedőkör</b> — a felső, kisebb kör; sugara $r$. A két kör síkja '
+         '<b>párhuzamos</b>, a középpontjaik pedig ugyanazon a rájuk merőleges '
+         'tengelyen vannak.</li>'
+         '<li><b>Alkotó</b> ($s$) — az alapkör és a fedőkör egy-egy pontját összekötő, a '
+         'paláston fekvő szakasz.</li>'
          '<li><b>Magasság</b> ($H$) — a két kör síkjának távolsága.</li>'
-         '</ul>',
+         '</ul>'
+         '<p>Csak <b>egyenes</b> csonkakúppal foglalkozunk — ilyenkor minden alkotó '
+         'egyenlő hosszú, és a palást képlete is erre érvényes.</p>',
          hid="def-csonkakup"),
    abra(SVG_CSONKA, 'A csonkakúp a kúp alsó darabja; szaggatva a levágott csúcsrész.'),
  ]),
 
  ("A jellemző derékszögű háromszög", [
-   '<p>Ha a fedőkört merőlegesen levetítjük az alaplapra, a két kör közötti '
-   '<b>különbség</b> jelenik meg befogóként.</p>',
+   '<p>Ha a fedőkört merőlegesen levetítjük az alaplapra, a két <b>sugár különbsége</b> '
+   '($R-r$) jelenik meg befogóként.</p>',
    doboz("tetel", "A csonkakúp három adata",
          '$$s^{2}=H^{2}+(R-r)^{2}.$$'
          '<p>A derékszögű háromszög befogói a <b>magasság</b> ($H$) és a két sugár '
          '<b>különbsége</b> ($R-r$), az átfogója pedig az <b>alkotó</b> ($s$).</p>',
          hid="tetel-csonkakup-haromszog"),
-   abra(SVG_CSONKA_H, 'A kiemelt derékszögű háromszög: a vízszintes befogó a két sugár '
-        '<b>különbsége</b>.'),
+   abra(SVG_CSONKA_H, 'A fél tengelymetszet (sárga) és benne a derékszögű háromszög: '
+        'a szaggatott vízszintes befogó a két sugár <b>különbsége</b>, az átfogó az '
+        'alkotó.'),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„A befogó a két sugár összege: $R+r$."</i></p>'
-         '<p>Nézd meg az ábrát: a kisebb kör a nagyobb <b>fölött</b> van, vele '
-         'koncentrikusan. A vetítés után a szélei közötti vízszintes távolság ezért '
+         '<p><i>„A befogó a két sugár összege: $R+r$.”</i></p>'
+         '<p>Nézd meg az ábrát: a kisebb kör pontosan a nagyobb <b>fölött</b> van, közös '
+         'tengelyen. A vetítés után a szélei közötti vízszintes távolság ezért '
          '$R-r$, nem $R+r$.</p>'
          '<p>Számokkal: $R=6$, $r=3$, $H=4$ esetén a helyes alkotó '
          '$s=\\sqrt{16+9}=5$; az összeggel számolva $\\sqrt{16+81}=\\sqrt{97}\\approx9{,}85$ '
@@ -533,9 +551,11 @@ B4 = [
  ]),
 
  ("A felszín", [
-   '<p>A palást kiterítve körcikk-gyűrű (két körcikk különbsége), de nem kell '
-   'levezetnünk: a képlet ugyanazt a szerkezetet mutatja, mint a csonkagúla palástja, '
-   'ahol a trapéz <b>középvonala</b> szorozódott a magassággal.</p>',
+   '<p>A palást kiterítve <b>körgyűrűcikk</b> (két körcikk különbsége). A területe '
+   'ugyanúgy áll elő, mint a csonkagúla palástjáé: ott az oldallap-trapéz '
+   '<b>középvonala</b> szorzódott az oldallap magasságával, itt a két alapkör '
+   'kerületének <b>átlaga</b> szorzódik az alkotóval:</p>'
+   '$$M=\\frac{2R\\pi+2r\\pi}{2}\\cdot s=(R+r)\\pi s.$$',
    doboz("tetel", "A csonkakúp felszíne",
          '<p>A palást területe</p>'
          '$$M=(R+r)\\pi s,$$'
@@ -593,8 +613,9 @@ B4 = [
          'függőleges.</p>'),
    GY(FGY + "#alap-22", "A 22–28", FGY + "#kozep-16", "K 16–21"),
    brief('<b>Medúza:</b> A szögletes és a szűkülő formák megvannak. Marad a '
-         'legtökéletesebb — az a test, amelynek <b>minden</b> pontja ugyanolyan messze '
-         'van a középpontjától: a <b>gömb</b>.', outro=True),
+         'legtökéletesebb — az a test, amelynek a <b>felülete</b> minden pontjában '
+         'ugyanolyan messze van a középponttól: a <b>gömb</b>. De előbb bevetés: a kúp '
+         'feladatai.', outro=True),
  ]),
 ]
 

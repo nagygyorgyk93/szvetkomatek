@@ -87,7 +87,7 @@ A1 = [
    'jönnek, amelyek felülete <b>görbe</b>: nem lehet őket sokszögekre bontani. Közös '
    'bennük, hogy mindegyik egy <b>síkidom megforgatásával</b> keletkezik — ezért hívjuk '
    'őket <b>forgástesteknek</b>.</p>'
-   '<p>A jó hír: a görbeség nem tesz nehezebbé semmit. A képletekben ugyanaz a $B$ '
+   '<p>A jó hír: a görbült felület nem tesz nehezebbé semmit. A képletekben ugyanaz a $B$ '
    '(alapterület) és $H$ (magasság) szerepel, mint a hasábnál és a gúlánál — csak az '
    'alaplap most <b>kör</b>.</p>',
  ]),
@@ -104,7 +104,7 @@ A1 = [
    '<ul>'
    '<li>a tengelyen fekvő pontok <b>helyben maradnak</b> — ezért lesz a kúpnak csúcsa;</li>'
    '<li>a tengelytől $d$ távolságra lévő pont egy $d$ sugarú kört ír le — ezért kör '
-   'minden „vízszintes” metszet.</li>'
+   'minden, a tengelyre <b>merőleges</b> metszet.</li>'
    '</ul>',
    doboz("erdekesseg", "Hol találkozol vele?",
          '<p>A fazekaskorongon a hüvelykujj a tengelytől mért <b>távolságot</b> állítja '
@@ -127,7 +127,7 @@ A1 = [
    abra(SVG_F_TRAPEZ, 'A <b>derékszögű trapéz</b> a derékszögű szára körül forgatva '
         '<b>csonkakúpot</b> ad: a két párhuzamos oldal a két sugár ($R$ és $r$).'),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„Mindegy, melyik oldala körül forgatom — ugyanaz a test lesz."</i></p>'
+         '<p><i>„Mindegy, melyik oldala körül forgatom — ugyanaz a test lesz.”</i></p>'
          '<p><b>Nem mindegy.</b> Vegyünk egy $3\\times4$-es téglalapot:</p>'
          '<ul>'
          '<li>a $4$ egység hosszú oldala körül forgatva $r=3$ és $H=4$, tehát '
@@ -135,8 +135,8 @@ A1 = [
          '<li>a $3$ egység hosszú oldala körül forgatva $r=4$ és $H=3$, tehát '
          '$V=16\\pi\\cdot3=48\\pi$.</li>'
          '</ul>'
-         '<p>A második <b>másfélszer</b> nagyobb, pedig ugyanabból a téglalapból lett. Az '
-         'ok: a sugár <b>négyzetesen</b> számít, a magasság csak lineárisan — ezért '
+         '<p>A második <b>egyharmadával</b> nagyobb ($48\\pi:36\\pi=4:3$), pedig '
+         'ugyanabból a téglalapból lett. Az ok: a sugár <b>négyzetesen</b> számít, a magasság csak lineárisan — ezért '
          'mindig a nagyobb sugarú változat a testesebb.</p>'
          '<p>Ugyanez a háromszögnél: a két befogó körül forgatva a sugár és a magasság '
          '<b>felcserélődik</b>, és két különböző térfogatú kúpot kapsz.</p>'),
@@ -144,8 +144,11 @@ A1 = [
          '<p>A derékszögű háromszöget az <b>átfogója</b> körül is meg lehet forgatni. '
          'Ekkor nem egy kúp keletkezik, hanem <b>kettő</b>, közös alaplappal '
          'összeragasztva — a közös alapkör sugara az átfogóhoz tartozó <b>magasság</b>.</p>'
+         '<p>A közös alapkör sugara az átfogóhoz tartozó <b>magassággal</b> egyenlő '
+         '(az ábrán $r$), a két kúp magassága pedig az átfogó két szelete — ezek '
+         '<b>általában különbözők</b>, ezért a két kúp sem egybevágó.</p>'
          + abra(SVG_KUPKUP, 'Az átfogó körüli forgatás eredménye: két kúp közös '
-                'alaplappal.'),
+                'alaplappal, általában különböző magassággal.'),
          hid="erd-atfogo"),
    kviz('Egy $5\\times8$-as téglalapot megforgatunk. Melyik tengely körül lesz nagyobb a '
         'keletkező henger térfogata?',
@@ -161,8 +164,9 @@ A1 = [
    '<p>Bármelyik forgástestet nézzük, két metszetfajta mindig ugyanúgy viselkedik. Ez a '
    'két állítás végigkíséri az egész témakört.</p>',
    doboz("tetel", "A tengelyre merőleges metszet",
-         '<p>Ha egy forgástestet a <b>tengelyére merőleges</b> síkkal metszünk el, a '
-         'metszet mindig <b>kör</b>, és a középpontja a tengelyen van.</p>'
+         '<p>Ha a témakör testeit (henger, kúp, csonkakúp, gömb) a <b>tengelyükre '
+         'merőleges</b> síkkal metsszük el, a metszet mindig <b>kör</b> (pontosabban '
+         'körlap), és a középpontja a tengelyen van.</p>'
          '<p>Ez közvetlenül a keletkezésből jön: a metszősík magasságában lévő pontok '
          'mind ugyanakkora körpályát írtak le a forgatás közben.</p>',
          hid="tetel-meroleges-metszet"),
@@ -184,14 +188,14 @@ A1 = [
         '<b>átmérő</b> ($2r$), a másik a magasság ($H$).'),
    abra(SVG_KUP_TM, 'A kúp tengelymetszete egyenlő szárú háromszög.'),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„A tengelymetszet is kör, hiszen minden metszet kör."</i></p>'
+         '<p><i>„A tengelymetszet is kör, hiszen minden metszet kör.”</i></p>'
          '<p>A <b>tengelyre merőleges</b> metszet kör. A <b>tengelyt tartalmazó</b> '
          'metszet viszont soha nem az: a hengeré téglalap, a kúpé háromszög, a gömbé '
          'pedig kör ugyan, de az a <b>főkör</b> — a lehető legnagyobb, nem akármelyik.</p>'
          '<p>Segít, ha úgy gondolsz rá, hogy a merőleges metszet <b>keresztben</b> vágja '
          'a testet (mint a szalámit), a tengelymetszet pedig <b>hosszában</b> (mint a '
          'kettévágott alma).</p>'),
-   kviz('Mi lesz az egyenes henger metszete, ha a <b>tengelyét tartalmazó</b> síkkal '
+   kviz('Mi lesz a henger metszete, ha a <b>tengelyét tartalmazó</b> síkkal '
         'metsszük el?',
         ['Téglalap', 'Kör', 'Ellipszis'], 0,
         jo="✔ A tengelymetszet téglalap: az egyik oldala az átmérő (2r), a másik a "
@@ -237,9 +241,9 @@ A2 = [
          'gyűjtőciszternáig. Mielőtt a kapacitásukat számolnánk, nevezzük néven, mi '
          'micsoda rajtuk. Aki nem tudja megkülönböztetni az <b>alkotót</b> a '
          '<b>magasságtól</b>, az a felszínt fogja a térfogat helyére írni.'),
-   '<p>Ebben az egységben még nem számolunk — <b>felépítjük</b> a hengert, megnevezzük '
-   'az elemeit, és kiterítjük a felületét. A háló az a lépés, amelyből a felszín képlete '
-   'egyetlen mondatban következik majd.</p>',
+   '<p>Ebben az egységben <b>felépítjük</b> a hengert: megnevezzük az elemeit, és '
+   'kiterítjük a felületét. A háló az a lépés, amelyből a felszín képlete egyetlen '
+   'mondatban következik majd.</p>',
  ]),
 
  ("Hogyan keletkezik a henger", [
@@ -261,11 +265,12 @@ A2 = [
    doboz("definicio", "A henger részei",
          '<ul>'
          '<li><b>Alapkörök</b> — a két egybevágó, párhuzamos határoló kör; sugaruk $r$. '
-         'Ezek területe adja a $B=r^2\\pi$ alapterületet.</li>'
+         '<b>Egy</b> alapkör területe a $B=r^2\\pi$ alapterület.</li>'
          '<li><b>Palást</b> — a görbe oldalfelület; területe $M$.</li>'
          '<li><b>Alkotó</b> ($s$) — a két alapkört összekötő, a palástot alkotó szakasz. '
          '<b>Egyenes hengernél $s=H$.</b></li>'
-         '<li><b>Tengely</b> — a két alapkör középpontját összekötő egyenes.</li>'
+         '<li><b>Tengely</b> — a két alapkör középpontját összekötő szakasz; az őt '
+         'tartalmazó egyenes a forgatás tengelye.</li>'
          '<li><b>Magasság</b> ($H$) — a két alapkör síkjának távolsága.</li>'
          '</ul>',
          hid="def-henger"),
@@ -275,7 +280,7 @@ A2 = [
    'kettőt összekeveri. Érdemes már itt szokni a különbségtételt.</p>',
    doboz("erdekesseg", "Hol találkozol vele?",
          '<p>Miért hengeres a konzervdoboz, a boiler és a búvárpalack? Két oka van. '
-         'Egyrészt adott térfogathoz a henger <b>kevés anyaggal</b> beérni — a gömb '
+         'Egyrészt adott térfogathoz a henger <b>kevés anyaggal</b> beéri — a gömb '
          'ennél is jobb, de gömb alakú dobozt nem lehet egymásra rakni. Másrészt a '
          'belső nyomás a hengeres falon <b>egyenletesen</b> oszlik el; egy szögletes '
          'tartály éleinél feszültséggyűjtő helyek keletkeznének, és ott szakadna el.</p>'),
@@ -297,7 +302,7 @@ A2 = [
    abra(SVG_HALO_HENGER, 'A henger hálója: a palástból téglalap lesz, amelynek az egyik '
         'oldala az alapkör kerülete ($2r\\pi$).'),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„A háló téglalapjának oldala az átmérő, tehát $2r$."</i></p>'
+         '<p><i>„A háló téglalapjának oldala az átmérő, tehát $2r$.”</i></p>'
          '<p>A palást a <b>kerület</b> mentén simul rá az alapkörre, nem az átmérő '
          'mentén. A helyes oldalhossz $2r\\pi$ — vagyis nagyjából <b>háromszor</b> '
          'akkora, mint az átmérő.</p>'
@@ -319,8 +324,8 @@ A2 = [
                   '<p>Az alapkörök nem tartoznak hozzá — a címke nem fedi a doboz '
                   'tetejét és alját. Ez a különbség a <b>palást</b> és a <b>felszín</b> '
                   'között, és a feladat szövege mindig eldönti, melyikre van szükség.</p>')),
-   kviz('Egy henger alapkörének sugara $6$ cm. Milyen hosszú a hálójában szereplő '
-        'téglalap <b>vízszintes</b> oldala?',
+   kviz('Egy henger alapkörének sugara $6$ cm. Milyen hosszú a hálóban a palástból '
+        'kapott téglalapnak az az oldala, amely az <b>alapkörre simult</b>?',
         ['$12\\pi$ cm', '$12$ cm', '$6\\pi$ cm'], 0,
         jo="✔ A palást a kerület mentén simul rá: 2rπ = 12π ≈ 37,70 cm.",
         nem="✘ A 12 cm az ÁTMÉRŐ. A palást kiterítve az alapkör KERÜLETE hosszú: "
@@ -339,7 +344,7 @@ A2 = [
    abra(SVG_HENGER_TM, 'Egyenlő oldalú hengernél ez a téglalap éppen négyzet: '
         '$H=2r$.'),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„Egyenlő oldalú, tehát a magasság egyenlő a sugárral: $H=r$."</i></p>'
+         '<p><i>„Egyenlő oldalú, tehát a magasság egyenlő a sugárral: $H=r$.”</i></p>'
          '<p>A tengelymetszet oldala nem a sugár, hanem az <b>átmérő</b>. A helyes '
          'összefüggés $H=2r$ — a magasság az átmérővel egyenlő.</p>'
          '<p>Ez a különbség nem apró: ha $H=r$-rel számolsz, a térfogatod a helyes érték '
@@ -369,7 +374,7 @@ A3 = [
          '<b>mennyi anyag kell hozzá</b>. Az első a térfogat, a második a felszín. A '
          'Kamrában ez a két szám külön naplóba megy — aki összekeveri őket, az vagy '
          'kifolyatja a párát, vagy elpazarolja a lemezt.'),
-   '<p>A felszín <b>területjellegű</b> mennyiség (cm², m²), a térfogat <b>térfogatjellegű</b> '
+   '<p>A felszín <b>területjellegű</b> mennyiség (cm², m²), a térfogat <b>köbös</b> '
    '(cm³, m³). Ha a végeredményed mértékegysége nem stimmel, nem is kell tovább '
    'ellenőrizned: rossz képletet használtál.</p>',
  ]),
@@ -389,11 +394,11 @@ A3 = [
          hid="tetel-henger-felszin"),
    abra(SVG_HALO_HENGER, 'A felszín a háló összterülete: két kör és egy téglalap.'),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„Felszín = alapkör + palást, tehát $F=r^2\\pi+2r\\pi H$."</i></p>'
+         '<p><i>„Felszín = alapkör + palást, tehát $F=r^2\\pi+2r\\pi H$.”</i></p>'
          '<p>A hengernek <b>két</b> alapköre van — egy alul, egy felül. A felszínben '
          'ezért $2r^2\\pi$ áll.</p>'
          '<p><b>Ellenpróba, amikor viszont tényleg csak egy kell:</b> egy nyitott '
-         'vödörnél, egy fedél nélküli tartálynál vagy egy kútgyűrűnél a feladat '
+         'vödörnél, egy virágcserépnél vagy egy fedél nélküli tartálynál a feladat '
          'kifejezetten mondja, hogy nincs teteje. Ilyenkor $F=r^2\\pi+2r\\pi H$ a helyes. '
          'A képlet tehát nem „szabály”, hanem a <b>szöveg</b> következménye — mindig '
          'olvasd el, mit kell befedni.</p>'),
@@ -407,13 +412,15 @@ A3 = [
  ("A térfogat", [
    '<p>A térfogatnál nincs új gondolat — a hasábnál megismert szabály folytatódik. Ott '
    '$V=B\\cdot H$ volt, és ez minden olyan testre igaz, amelynek a „vízszintes” metszetei '
-   'egybevágóak. A henger pontosan ilyen: minden metszete ugyanaz az $r$ sugarú kör.</p>',
+   'egybevágóak. A henger pontosan ilyen: minden, a tengelyre <b>merőleges</b> metszete '
+   'ugyanaz az $r$ sugarú kör.</p>',
    doboz("tetel", "A henger térfogata",
          '$$V=B\\cdot H=r^2\\pi H.$$'
          '<p>Ugyanaz a képlet, mint a '
          '<a href="' + POLI + 'tananyag-hasab-felszin-terfogat.html#tetel-hasab-terfogat">'
          'hasábnál</a> — csak az alaplap most kör. A henger úgy is felfogható, mint egy '
-         'olyan hasáb, amelynek az alaplapja végtelen sok oldalú szabályos sokszög.</p>',
+         'hasáb, amelynek az alaplapját egyre több oldalú szabályos sokszögekkel '
+         'közelítjük.</p>',
          hid="tetel-henger-terfogat"),
    doboz("pelda", "Átalakulás-kamra szimuláció",
          '<p>Egy hengeres tartály alapkörének sugara $3$ dm, magassága $8$ dm. Hány '
@@ -445,7 +452,7 @@ A3 = [
    doboz("pelda", "Átalakulás-kamra szimuláció",
          '<p>Egy henger térfogata $500\\pi$ cm³, az alapkör sugara $5$ cm. Mekkora a '
          'magassága?</p>',
-         hid="pelda-fordított",
+         hid="pelda-forditott",
          lenyilo=("Megoldás",
                   '<p>$V=r^2\\pi H$, tehát</p>'
                   '$$25\\pi\\cdot H=500\\pi\\quad\\Longrightarrow\\quad H=\\frac{500}{25}=20\\ \\text{cm}.$$'
@@ -453,7 +460,8 @@ A3 = [
                   'legtöbb ilyen feladatban így van, és sokat egyszerűsít. Épp ezért '
                   'érdemes a $\\pi$-t végig jelként vinni, és nem $3{,}14$-ként.</p>')),
    '<p>Ha a <b>felszínből</b> keressük a sugarat, <b>másodfokú</b> egyenletet kapunk — a '
-   'sugár ugyanis kétszer szerepel a képletben. Ilyenkor a megoldóképlet két gyököt ad, '
+   'sugár ugyanis <b>négyzeten</b> is szerepel benne. Ilyenkor a megoldóképlet két '
+   'gyököt ad, '
    'de a sugár csak <b>pozitív</b> lehet, ezért a negatív gyököt eldobjuk.</p>',
    doboz("pelda", "Átalakulás-kamra szimuláció",
          '<p>Egy henger felszíne $150\\pi$ cm², magassága $10$ cm. Mekkora az alapkör '
@@ -479,7 +487,7 @@ A3 = [
    '<p>Ezért érdemes a hengeres tartályok adatait <b>deciméterben</b> felvenni: akkor a '
    'térfogat rögtön literben jön ki.</p>',
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„A tartály $0{,}4\\ \\text{m}^3$-es, tehát $40$ liter."</i></p>'
+         '<p><i>„A tartály $0{,}4\\ \\text{m}^3$-es, tehát $40$ liter.”</i></p>'
          '<p>A hosszúságnál $1$ m $=10$ dm, de a <b>térfogatnál</b> a váltószám ennek a '
          '<b>köbe</b>: $1\\ \\text{m}^3=1000\\ \\text{dm}^3$. A helyes érték tehát '
          '<b>400 liter</b> — tízszer annyi.</p>'),
@@ -492,7 +500,8 @@ A3 = [
          'Ilyenkor általában két tizedesre kerekítünk, és a szöveg is jelzi, hogy '
          'közelítő értéket vár.</p>'
          '<p>Az iparban ez nem elméleti kérdés: egy nagy tartálynál a $3{,}14$ és a '
-         'valódi $\\pi$ közötti eltérés több száz liternyi különbséget adhat — ezért '
+         'valódi $\\pi$ közötti eltérés egy $1000\\ \\text{m}^3$-es olajtartálynál már '
+         'több száz liter — ezért '
          'számolnak a gyártók sokkal több tizedessel.</p>'),
    kviz('Egy hengeres hordó térfogata $0{,}75\\ \\text{m}^3$. Hány liter fér bele?',
         ['$750$ liter', '$75$ liter', '$7500$ liter'], 0,

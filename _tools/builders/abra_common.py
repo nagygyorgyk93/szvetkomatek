@@ -1698,7 +1698,8 @@ def svg_forgatas(tipus="teglalap", w=420, h=250, leiras=None, cimkek=True):
     NEV = {"teglalap": ("téglalap", "henger"), "haromszog": ("derékszögű háromszög", "kúp"),
            "felkor": ("félkör", "gömb"), "trapez": ("derékszögű trapéz", "csonkakúp")}
     n1, n2 = NEV.get(tipus, NEV["teglalap"])
-    leiras = leiras or f"A(z) {n1} forgatása a tengely körül: {n2}"
+    nevelo = "Az" if n1[0].lower() in "aeiouáéíóöőúüű" else "A"
+    leiras = leiras or f"{nevelo} {n1} forgatása a tengely körül: {n2}"
     ki = _fej2(w, h, leiras)
     bal_w = w * 0.42
     # ── bal panel: a síkidom és a tengely ──────────────────────────────
@@ -1734,10 +1735,11 @@ def svg_forgatas(tipus="teglalap", w=420, h=250, leiras=None, cimkek=True):
             ki.append(_txt(P(mx, my), sz, dx, dy, szin=LILA if sz in "rR" else PIROS))
     # ── nyíl ──────────────────────────────────────────────────────────
     ny = h / 2
+    mid = f"nyil-{tipus}"
     ki.append(f'  <line x1="{bal_w + 4:.1f}" y1="{ny:.1f}" x2="{bal_w + 40:.1f}" '
               f'y2="{ny:.1f}" stroke="{TINTA}" stroke-width="1.8" '
-              f'marker-end="url(#nyil2)"/>')
-    ki.insert(1, '  <defs><marker id="nyil2" viewBox="0 0 8 8" refX="6" refY="4" '
+              f'marker-end="url(#{mid})"/>')
+    ki.insert(1, f'  <defs><marker id="{mid}" viewBox="0 0 8 8" refX="6" refY="4" '
                  'markerWidth="6" markerHeight="6" orient="auto">'
                  f'<path d="M0,0 L8,4 L0,8 z" fill="{TINTA}"/></marker></defs>')
     # ── jobb panel: a keletkező test ──────────────────────────────────
@@ -1772,9 +1774,10 @@ def svg_osszetett(tipus="henger-felgomb", w=300, h=290, leiras=None, cimkek=True
     leiras = leiras or NEV.get(tipus, "Összetett forgástest")
     r, H = 1.0, 1.5
     if tipus == "kup-kup":
-        F = _Forg(w, h, leiras, 2 * r + 1.0, 2 * H + 2 * r * LAPULT,
-                  also_ry=H + r * LAPULT)
-        for elo, cs in ((True, (0.0, H)), (True, (0.0, -H))):
+        H2 = H * 0.62                      # a ket kup magassaga altalaban KULONBOZO
+        F = _Forg(w, h, leiras, 2 * r + 1.0, H + H2 + 2 * r * LAPULT,
+                  also_ry=H2 + r * LAPULT)
+        for elo, cs in ((True, (0.0, H)), (True, (0.0, -H2))):
             p1, q1, C = F.P(-r, 0), F.P(r, 0), F.P(*cs)
             F.ki.append(f'  <path d="M{p1[0]:.1f},{p1[1]:.1f} L{C[0]:.1f},{C[1]:.1f} '
                         f'L{q1[0]:.1f},{q1[1]:.1f} z" fill="{ZOLD}" fill-opacity="0.08" '

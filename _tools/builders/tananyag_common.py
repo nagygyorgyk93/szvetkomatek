@@ -59,8 +59,34 @@ def _attr(szoveg: str) -> str:
     return mat(szoveg).replace('"', "&quot;")
 
 
+_ZARO = ("egyik sem", "egyikben sem", "egyik se", "mindegyik", "mindhárom",
+         "mindkettő", "egyik állítás sem")
+
+
+def _kever(kerdes: str, opciok: list[str], jo_idx: int):
+    """A helyes válasz ne mindig az ELSŐ gomb legyen.
+
+    A lista determinisztikus (a kérdés szövegéből számolt) eltolással forog, ezért
+    minden újrafuttatás ugyanazt a sorrendet adja. Kimarad a keverésből az olyan
+    kvíz, amelynek az utolsó opciója összefoglaló jellegű („egyik sem”, „mindegyik”),
+    mert annak a helye kötött.
+    """
+    n = len(opciok)
+    if n < 2:
+        return opciok, jo_idx
+    if any(o.strip().lower().lstrip("$„”\"'").startswith(_ZARO) for o in opciok):
+        return opciok, jo_idx
+    el = sum(ord(c) for c in kerdes) % n
+    return opciok[el:] + opciok[:el], (jo_idx - el) % n
+
+
 def kviz(kerdes: str, opciok: list[str], jo_idx: int = 0, jo: str = "", nem: str = "") -> str:
-    """Gyors kérdés. FONTOS: a `jo_idx` a `opciok` lista 0-alapú indexe."""
+    """Gyors kérdés. FONTOS: a `jo_idx` a `opciok` lista 0-alapú indexe.
+
+    A megjelenített sorrendet a `_kever` determinisztikusan elforgatja, hogy a helyes
+    válasz ne mindig az első gomb legyen — a `jo_idx` ehhez igazodik.
+    """
+    opciok, jo_idx = _kever(kerdes, opciok, jo_idx)
     gombok = "".join(f"<button>{o}</button>" for o in opciok)
     extra = ""
     if jo:

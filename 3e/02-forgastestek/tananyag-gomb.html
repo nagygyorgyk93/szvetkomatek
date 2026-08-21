@@ -41,7 +41,7 @@
 
     <div class="doboz definicio" id="def-gombfelulet">
       <p class="cim"><span class="ikon">📗</span> Gömbfelület és gömb</p>
-      <p>Adott egy <span class="math inline">\(O\)</span> pont és egy <span class="math inline">\(R>0\)</span> szám.</p><ul><li>A <b>gömbfelület</b> azoknak a térbeli pontoknak a halmaza, amelyek az <span class="math inline">\(O\)</span> ponttól pontosan <span class="math inline">\(R\)</span> távolságra vannak.</li><li>A <b>gömb</b> (gömbtest) a gömbfelület és az általa körbezárt belső tartomány <b>együtt</b> — vagyis azok a pontok, amelyek <span class="math inline">\(O\)</span>-tól <b>legfeljebb</b> <span class="math inline">\(R\)</span> távolságra vannak.</li></ul><p>Az <span class="math inline">\(O\)</span> a <b>középpont</b>, az <span class="math inline">\(R\)</span> a <b>sugár</b>. A középponton átmenő húr az <b>átmérő</b>, hossza <span class="math inline">\(2R\)</span>; a gömbfelület két pontját összekötő szakasz a <b>húr</b>.</p>
+      <p>Adott egy <span class="math inline">\(O\)</span> pont és egy <span class="math inline">\(R>0\)</span> szám.</p><ul><li>A <b>gömbfelület</b> azoknak a térbeli pontoknak a halmaza, amelyek az <span class="math inline">\(O\)</span> ponttól pontosan <span class="math inline">\(R\)</span> távolságra vannak.</li><li>A <b>gömb</b> (gömbtest) a gömbfelület és az általa körbezárt belső tartomány <b>együtt</b> — vagyis azok a pontok, amelyek <span class="math inline">\(O\)</span>-tól <b>legfeljebb</b> <span class="math inline">\(R\)</span> távolságra vannak.</li></ul><p>Az <span class="math inline">\(O\)</span> a <b>középpont</b>, az <span class="math inline">\(R\)</span> a <b>sugár</b>. A gömbfelület két pontját összekötő szakasz a <b>húr</b>; a középponton átmenő húr az <b>átmérő</b>, amelynek hossza <span class="math inline">\(2R\)</span>.</p>
     </div>
 
     <div class="svgcard">
@@ -57,13 +57,13 @@
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
-      <p><i>„A labda átmérője <span class="math inline">\(20\)</span> cm, tehát <span class="math inline">\(R=20\)</span>."</i></p><p>A képletekben <b>mindig a sugár</b> áll, az átmérő ennek a kétszerese. Ha a feladat átmérőt ad meg, az <b>első</b> lépés a felezés: <span class="math inline">\(R=10\)</span> cm.</p><p>A hiba ára óriási, mert a sugár a térfogatban <b>köbön</b> szerepel: <span class="math inline">\(20\)</span>-szal számolva nyolcszoros térfogatot kapnál.</p><p>A másik gyakori csúszás a <b>szóhasználat</b>: a gömbfelület csak a „héj”, a gömb pedig a kitöltött test. Felszínt a felületről, térfogatot a testről beszélünk — de a köznyelvben mindkettőt „gömbnek” hívjuk, és ez megbocsátható.</p>
+      <p><i>„A labda átmérője <span class="math inline">\(20\)</span> cm, tehát <span class="math inline">\(R=20\)</span>.”</i></p><p>A képletekben <b>mindig a sugár</b> áll, az átmérő ennek a kétszerese. Ha a feladat átmérőt ad meg, az <b>első</b> lépés a felezés: <span class="math inline">\(R=10\)</span> cm.</p><p>A hiba ára óriási, mert a sugár a térfogatban <b>köbön</b> szerepel: <span class="math inline">\(20\)</span>-szal számolva nyolcszoros térfogatot kapnál.</p><p>A másik gyakori csúszás a <b>szóhasználat</b>: a gömbfelület csak a „héj”, a gömb pedig a kitöltött test. Felszínt a felületről, térfogatot a testről beszélünk — de a köznyelvben mindkettőt „gömbnek” hívjuk, és ez megbocsátható.</p>
     </div>
 
-    <div class="kviz" data-answer="0" data-jo="✔ A sugár az átmérő fele: R = 11 cm. A képletekbe MINDIG ez megy." data-nem="✘ Az átmérő a sugár kétszerese, tehát R = 22 : 2 = 11 cm.">
+    <div class="kviz" data-answer="1" data-jo="✔ A sugár az átmérő fele: R = 11 cm. A képletekbe MINDIG ez megy." data-nem="✘ Az átmérő a sugár kétszerese, tehát R = 22 : 2 = 11 cm.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
       <p>Egy focilabda átmérője <span class="math inline">\(22\)</span> cm. Mekkora a sugara?</p>
-      <div class="opciok"><button><span class="math inline">\(11\)</span> cm</button><button><span class="math inline">\(22\)</span> cm</button><button><span class="math inline">\(44\)</span> cm</button></div>
+      <div class="opciok"><button><span class="math inline">\(44\)</span> cm</button><button><span class="math inline">\(11\)</span> cm</button><button><span class="math inline">\(22\)</span> cm</button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
@@ -72,14 +72,14 @@
     <p>A gömb is forgástest: egy <b>félkört</b> forgatunk meg az <b>átmérője</b> körül.</p>
 
     <div class="svgcard">
-    <svg viewBox="0 0 430 250" width="430" height="250" role="img" aria-label="A(z) félkör forgatása a tengely körül: gömb">
-      <defs><marker id="nyil2" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+    <svg viewBox="0 0 430 250" width="430" height="250" role="img" aria-label="A félkör forgatása a tengely körül: gömb">
+      <defs><marker id="nyil-felkor" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
       <line x1="99.3" y1="226.0" x2="99.3" y2="63.1" stroke="#475569" stroke-width="1.4" stroke-dasharray="7 4"/>
       <text x="99.3" y="240.0" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">tengely</text>
       <path d="M99.3,204.0 A54.2,54.2 0 0 1 99.3,95.6 z" fill="#047857" fill-opacity="0.14" stroke="#0f172a" stroke-width="1.7"/>
       <line x1="99.3" y1="149.8" x2="153.5" y2="149.8" stroke="#8b5cf6" stroke-width="1.5"/>
       <text x="133.1" y="153.8" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">R</text>
-      <line x1="184.6" y1="125.0" x2="220.6" y2="125.0" stroke="#0f172a" stroke-width="1.8" marker-end="url(#nyil2)"/>
+      <line x1="184.6" y1="125.0" x2="220.6" y2="125.0" stroke="#0f172a" stroke-width="1.8" marker-end="url(#nyil-felkor)"/>
       <g transform="translate(232.6,0)">
         <circle cx="98.5" cy="182.2" r="43.8" fill="#047857" fill-opacity="0.08" stroke="#0f172a" stroke-width="1.8"/>
         <ellipse cx="98.5" cy="182.2" rx="43.8" ry="13.1" fill="none" stroke="#475569" stroke-width="1.3"/>
@@ -93,17 +93,17 @@
 
     <div class="doboz definicio" id="def-fokor">
       <p class="cim"><span class="ikon">📗</span> Főkör</p>
-      <p>A gömb <b>főköre</b> az a metszet, amelyet a <b>középponton átmenő</b> síkkal kapunk. A főkör sugara maga a gömb sugara, <span class="math inline">\(R\)</span> — ez a gömb lehető legnagyobb síkmetszete.</p><p>A gömb az egyetlen test, amelynek <b>minden</b> tengelymetszete egybevágó: mindegyik ugyanaz a főkör. Ezért nincs a gömbnek kitüntetett „álló” helyzete — bárhogy forgatod, ugyanúgy néz ki.</p>
+      <p>A gömb <b>főköre</b> az a metszet, amelyet a <b>középponton átmenő</b> síkkal kapunk. A főkör sugara maga a gömb sugara, <span class="math inline">\(R\)</span> — ez a gömb lehető legnagyobb síkmetszete.</p><p>A gömbnek — a többi forgástesttel ellentétben — <b>nincs kitüntetett tengelye</b>: <b>bármely</b> középponton átmenő sík ugyanazt a főkört adja. Ezért nincs a gömbnek „álló” helyzete sem — bárhogy forgatod, ugyanúgy néz ki.</p>
     </div>
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
-      <p>A Föld <b>Egyenlítője</b> főkör, a szélességi körök viszont nem — azok kisebb, az Egyenlítővel párhuzamos metszetkörök. Ezért rövidebb két pont között a repülőút, ha a főkör mentén (az úgynevezett ortodrómán) haladunk: a gömbfelületen két pont legrövidebb összekötése mindig főkörív.</p>
+      <p>A Föld <b>Egyenlítője</b> főkör, a szélességi körök viszont nem — azok kisebb, az Egyenlítővel párhuzamos metszetkörök. Ehhez kapcsolódik, hogy a gömbfelületen két pont legrövidebb összekötése mindig <b>főkörív</b> (az úgynevezett ortodróma) — ezért repülnek a gépek a térképen ívesnek látszó útvonalon.</p>
     </div>
 
     <h2 id="s3">A gömbfelület és a sík kölcsönös helyzete</h2>
 
-    <p>Ez a témakör egyetlen olyan kérdése, ahol nem számolunk, hanem <b>eldöntünk</b>: két szám összevetése adja a választ.</p>
+    <p>Itt nem számolunk, hanem <b>eldöntünk</b>: két szám összevetése adja a választ.</p>
 
     <div class="doboz tetel" id="tetel-gomb-sik">
       <p class="cim"><span class="ikon">📘</span> A három eset</p>
@@ -164,7 +164,7 @@
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
-      <p><i>„Minél messzebb van a sík, annál kisebb kört metsz ki."</i></p><p>A mondat első fele igaz, a második viszont csak <b><span class="math inline">\(d&lt;R\)</span> esetén</b>. Ha a sík eléri a sugarat (<span class="math inline">\(d=R\)</span>), a „kör” egyetlen ponttá zsugorodik, azon túl pedig <b>nincs</b> metszet — nem lesz „nagyon kicsi kör”, hanem semmi.</p><p>Ezért a feladatokban mindig <b>először</b> a helyzetet döntsd el, és csak utána számolj.</p>
+      <p><i>„Minél messzebb van a sík, annál kisebb kört metsz ki.”</i></p><p>Az állítás csak akkor igaz, ha a sík <b>végig metsző</b> marad, vagyis <span class="math inline">\(d&lt;R\)</span>. Ha a sík eléri a sugarat (<span class="math inline">\(d=R\)</span>), a kör egyetlen ponttá zsugorodik, azon túl pedig <b>nincs</b> metszet — nem lesz „nagyon kicsi kör”, hanem semmi.</p><p>Ezért a feladatokban mindig <b>először</b> a helyzetet döntsd el, és csak utána számolj.</p>
     </div>
 
     <div class="doboz erdekesseg" id="erd-metszetkor">

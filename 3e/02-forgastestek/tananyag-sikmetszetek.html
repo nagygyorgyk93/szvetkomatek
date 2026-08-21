@@ -78,6 +78,8 @@
       <path d="M150.0,223.4 L159.0,223.4 L159.0,232.4" fill="none" stroke="#ef4444" stroke-width="1.1"/>
       <line x1="150.0" y1="232.4" x2="228.6" y2="232.4" stroke="#8b5cf6" stroke-width="1.5"/>
       <text x="189.3" y="247.4" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">r</text>
+      <line x1="228.6" y1="232.4" x2="150.0" y2="83.0" stroke="#f59e0b" stroke-width="2.0"/>
+      <text x="198.3" y="155.7" font-size="13" fill="#f59e0b" text-anchor="start" font-style="italic" font-weight="600">s</text>
       <circle cx="150.0" cy="83.0" r="2.8" fill="#0f172a"/>
     </svg>
     </div>
@@ -85,13 +87,13 @@
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
-      <p><i>„A tengelymetszet-háromszög szára a magasság."</i></p><p>A <b>szár</b> az <b>alkotó</b> (<span class="math inline">\(s\)</span>), a <b>magasság</b> pedig a háromszög magassága, ami a test <span class="math inline">\(H\)</span> magassága. A kettő csak akkor esne egybe, ha a háromszög elfajulna — vagyis ha a kúpnak nem lenne szélessége.</p><p>A háromszög adatai tehát: alap <span class="math inline">\(2r\)</span>, szárak <span class="math inline">\(s\)</span>, magasság <span class="math inline">\(H\)</span>. Ha egy feladat a tengelymetszet <b>kerületét</b> adja meg, az <span class="math inline">\(2r+2s\)</span>; ha a <b>területét</b>, az <span class="math inline">\(\frac{2r\cdot H}{2}=rH\)</span>.</p>
+      <p><i>„A tengelymetszet-háromszög szára a magasság.”</i></p><p>A <b>szár</b> az <b>alkotó</b> (<span class="math inline">\(s\)</span>), a <b>magasság</b> pedig a háromszög magassága, ami a test <span class="math inline">\(H\)</span> magassága. A kettő csak akkor esne egybe, ha a háromszög elfajulna — vagyis ha a kúpnak nem lenne szélessége.</p><p>A háromszög adatai tehát: alap <span class="math inline">\(2r\)</span>, szárak <span class="math inline">\(s\)</span>, magasság <span class="math inline">\(H\)</span>. Ha egy feladat a tengelymetszet <b>kerületét</b> adja meg, az <span class="math inline">\(2r+2s\)</span>; ha a <b>területét</b>, az <span class="math inline">\(\frac{2r\cdot H}{2}=rH\)</span>.</p>
     </div>
 
-    <div class="kviz" data-answer="0" data-jo="✔ A kerület 2r + 2s = 36, tehát 10 + 2s = 36, ahonnan s = 13 cm." data-nem="✘ A tengelymetszet egyenlő szárú háromszög: kerülete 2r + 2s. Innen 2s = 36 − 10 = 26, tehát s = 13.">
+    <div class="kviz" data-answer="2" data-jo="✔ A kerület 2r + 2s = 36, tehát 10 + 2s = 36, ahonnan s = 13 cm." data-nem="✘ A tengelymetszet egyenlő szárú háromszög: kerülete 2r + 2s. Innen 2s = 36 − 10 = 26, tehát s = 13.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
       <p>Egy kúp tengelymetszetének <b>kerülete</b> <span class="math inline">\(36\)</span> cm, az alapkör sugara <span class="math inline">\(5\)</span> cm. Mekkora az alkotó?</p>
-      <div class="opciok"><button><span class="math inline">\(13\)</span> cm</button><button><span class="math inline">\(18\)</span> cm</button><button><span class="math inline">\(26\)</span> cm</button></div>
+      <div class="opciok"><button><span class="math inline">\(18\)</span> cm</button><button><span class="math inline">\(26\)</span> cm</button><button><span class="math inline">\(13\)</span> cm</button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
@@ -99,7 +101,7 @@
 
     <div class="doboz tetel" id="tetel-parhuzamos-metszet">
       <p class="cim"><span class="ikon">📘</span> A párhuzamos metszet alakja</p>
-      <p>Az alaplappal párhuzamos síkkal vett metszet mindkét testnél <b>kör</b>, de a méretében élesen különböznek:</p><ul><li>a <b>hengernél</b> az alapkörrel <b>egybevágó</b> — bárhol metszünk, ugyanaz az <span class="math inline">\(r\)</span> sugarú kör;</li><li>a <b>kúpnál</b> az alapkörhöz <b>hasonló</b>, és a hasonlóság aránya a <b>csúcstól mért magasságok aránya</b>. Ha a metszősík a csúcstól a magasság <span class="math inline">\(k\)</span>-szorosánál van, a metszetkör sugara <span class="math inline">\(k\cdot r\)</span>.</li></ul>
+      <p>Az alaplappal párhuzamos síkkal vett metszet mindkét testnél <b>kör</b>, de a méretében élesen különböznek:</p><ul><li>a <b>hengernél</b> az alapkörrel <b>egybevágó</b> — bárhol metszünk, ugyanaz az <span class="math inline">\(r\)</span> sugarú kör;</li><li>a <b>kúpnál</b> az alapkörhöz <b>hasonló</b>, és a hasonlóság aránya a <b>csúcstól mért magasságok aránya</b>. Ha a metszősík a csúcstól a magasság <span class="math inline">\(k\)</span>-szorosánál van, a metszetkör sugara <span class="math inline">\(k\cdot r\)</span>. Ha a feladat az <b>alaplaptól</b> mért <span class="math inline">\(d\)</span> távolságot adja meg, akkor <span class="math inline">\(k=\frac{H-d}{H}\)</span>.</li></ul>
     </div>
 
     <div class="svgcard">
@@ -128,10 +130,10 @@
       <p>A szeletelt sonka, a fatörzs évgyűrűi és a CT-felvétel mind alappal párhuzamos metszetek sorozata. A CT épp azért működik, mert a szervezetről készült sok vékony metszetből a számítógép vissza tudja építeni a testet — ugyanaz az elv, mint amikor a metszetek területéből következtetünk a térfogatra.</p>
     </div>
 
-    <div class="kviz" data-answer="0" data-jo="✔ A hosszak aránya k = ½, a területeké k² = ¼ — a metszet területe az alapkör negyede." data-nem="✘ Ez nem a henger: a kúpnál a metszet HASONLÓ, nem egybevágó. A hosszak aránya ½, a területeké ennek a négyzete: ¼.">
+    <div class="kviz" data-answer="1" data-jo="✔ A hosszak aránya k = ½, a területeké k² = ¼ — a metszet területe az alapkör negyede." data-nem="✘ Ez nem a henger: a kúpnál a metszet HASONLÓ, nem egybevágó. A hosszak aránya ½, a területeké ennek a négyzete: ¼.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
       <p>Egy kúpot a csúcstól mért magasság <b>felénél</b> metszünk el az alaplappal párhuzamosan. Hogyan aránylik a metszetkör területe az alapkörhöz?</p>
-      <div class="opciok"><button>A negyede</button><button>A fele</button><button>Ugyanakkora</button></div>
+      <div class="opciok"><button>Ugyanakkora</button><button>A negyede</button><button>A fele</button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
@@ -155,14 +157,14 @@
       <text x="198.2" y="230.0" font-size="13" font-style="italic" fill="#0f172a" text-anchor="middle">B</text>
       <circle cx="109.8" cy="34.0" r="3" fill="#0f172a"/>
       <text x="109.8" y="22.0" font-size="13" font-style="italic" fill="#0f172a" text-anchor="middle">C</text>
-      <text x="109.8" y="234.0" font-size="12" font-style="italic" fill="#475569" text-anchor="middle">13</text>
+      <text x="109.8" y="234.0" font-size="12" font-style="italic" fill="#475569" text-anchor="middle">10</text>
       <text x="158.7" y="120.3" font-size="12" font-style="italic" fill="#475569" text-anchor="middle">13</text>
-      <text x="61.0" y="120.3" font-size="12" font-style="italic" fill="#475569" text-anchor="middle">10</text>
+      <text x="61.0" y="120.3" font-size="12" font-style="italic" fill="#475569" text-anchor="middle">13</text>
     </svg>
     </div>
     <p class="cap">A kapott háromszög külön kirajzolva: alapja <span class="math inline">\(10\)</span>, szárai <span class="math inline">\(13\)</span>, magassága <span class="math inline">\(12\)</span>.</p>
 
-    <p>A tengelymetszet területe általában:</p><ul><li><b>henger:</b> <span class="math inline">\(T=2r\cdot H\)</span> (téglalap);</li><li><b>kúp:</b> <span class="math inline">\(T=\dfrac{2r\cdot H}{2}=r\,H\)</span> (háromszög).</li></ul><p>Ezek a képletek az <a href="tananyag-henger.html#def-egyenlo-oldalu-henger">egyenlő oldalú</a> testeknél különösen hasznosak: ott a tengelymetszet négyzet (<span class="math inline">\(H=2r\)</span>), illetve szabályos háromszög (<span class="math inline">\(s=2r\)</span>, <span class="math inline">\(H=r\sqrt3\)</span>), és egyetlen adatból minden kijön.</p>
+    <p><b>Párhuzamos metszet.</b> Ha ugyanezt a kúpot a csúcstól mért magasság harmadánál metsszük el az alaplappal párhuzamosan, a metszetkör sugara <span class="math inline">\(\frac13\cdot5=\frac53\)</span>, a területe pedig <span class="math inline">\(\left(\frac13\right)^2\cdot25\pi=\frac{25\pi}{9}\)</span> cm².</p><p>A tengelymetszet területe általában:</p><ul><li><b>henger:</b> <span class="math inline">\(T=2r\cdot H\)</span> (téglalap);</li><li><b>kúp:</b> <span class="math inline">\(T=\dfrac{2r\cdot H}{2}=r\,H\)</span> (háromszög).</li></ul><p>Ezek a képletek az egyenlő oldalú testeknél különösen hasznosak: az <a href="tananyag-henger.html#def-egyenlo-oldalu-henger">egyenlő oldalú hengernél</a> a tengelymetszet négyzet (<span class="math inline">\(H=2r\)</span>), az <a href="tananyag-kup.html#def-egyenlo-oldalu-kup">egyenlő oldalú kúpnál</a> szabályos háromszög (<span class="math inline">\(s=2r\)</span>, <span class="math inline">\(H=r\sqrt3\)</span>) — egyetlen adatból minden kijön.</p>
 
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-kup.html#alap-17">🐕 Tér-eb-ugrás <span class="cimke">A 17–21</span></a><a class="sav bruno" href="feladatok-kup.html#kozep-12">👑 Királyi Gárda <span class="cimke">K 12–15</span></a></div></div></div>
 

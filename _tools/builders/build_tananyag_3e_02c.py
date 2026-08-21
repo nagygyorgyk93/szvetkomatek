@@ -100,14 +100,14 @@ C1 = [
          'tartomány <b>együtt</b> — vagyis azok a pontok, amelyek $O$-tól '
          '<b>legfeljebb</b> $R$ távolságra vannak.</li>'
          '</ul>'
-         '<p>Az $O$ a <b>középpont</b>, az $R$ a <b>sugár</b>. A középponton átmenő húr '
-         'az <b>átmérő</b>, hossza $2R$; a gömbfelület két pontját összekötő szakasz a '
-         '<b>húr</b>.</p>',
+         '<p>Az $O$ a <b>középpont</b>, az $R$ a <b>sugár</b>. A gömbfelület két pontját '
+         'összekötő szakasz a <b>húr</b>; a középponton átmenő húr az <b>átmérő</b>, '
+         'amelynek hossza $2R$.</p>',
          hid="def-gombfelulet"),
    abra(SVG_GOMB, 'A gömb középpontja és sugara ($R$). A szürke ellipszis a '
         '„vízszintes” főkör — csak a térbeliség érzékeltetésére.'),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„A labda átmérője $20$ cm, tehát $R=20$."</i></p>'
+         '<p><i>„A labda átmérője $20$ cm, tehát $R=20$.”</i></p>'
          '<p>A képletekben <b>mindig a sugár</b> áll, az átmérő ennek a kétszerese. Ha '
          'a feladat átmérőt ad meg, az <b>első</b> lépés a felezés: $R=10$ cm.</p>'
          '<p>A hiba ára óriási, mert a sugár a térfogatban <b>köbön</b> szerepel: '
@@ -130,20 +130,22 @@ C1 = [
          '<p>A gömb <b>főköre</b> az a metszet, amelyet a <b>középponton átmenő</b> '
          'síkkal kapunk. A főkör sugara maga a gömb sugara, $R$ — ez a gömb lehető '
          'legnagyobb síkmetszete.</p>'
-         '<p>A gömb az egyetlen test, amelynek <b>minden</b> tengelymetszete '
-         'egybevágó: mindegyik ugyanaz a főkör. Ezért nincs a gömbnek kitüntetett '
-         '„álló” helyzete — bárhogy forgatod, ugyanúgy néz ki.</p>',
+         '<p>A gömbnek — a többi forgástesttel ellentétben — <b>nincs kitüntetett '
+         'tengelye</b>: <b>bármely</b> középponton átmenő sík ugyanazt a főkört adja. '
+         'Ezért nincs a gömbnek „álló” helyzete sem — bárhogy forgatod, ugyanúgy néz '
+         'ki.</p>',
          hid="def-fokor"),
    doboz("erdekesseg", "Hol találkozol vele?",
          '<p>A Föld <b>Egyenlítője</b> főkör, a szélességi körök viszont nem — azok '
-         'kisebb, az Egyenlítővel párhuzamos metszetkörök. Ezért rövidebb két pont '
-         'között a repülőút, ha a főkör mentén (az úgynevezett ortodrómán) haladunk: '
-         'a gömbfelületen két pont legrövidebb összekötése mindig főkörív.</p>'),
+         'kisebb, az Egyenlítővel párhuzamos metszetkörök. Ehhez kapcsolódik, hogy a '
+         'gömbfelületen két pont legrövidebb összekötése mindig <b>főkörív</b> (az '
+         'úgynevezett ortodróma) — ezért repülnek a gépek a térképen ívesnek látszó '
+         'útvonalon.</p>'),
  ]),
 
  ("A gömbfelület és a sík kölcsönös helyzete", [
-   '<p>Ez a témakör egyetlen olyan kérdése, ahol nem számolunk, hanem <b>eldöntünk</b>: '
-   'két szám összevetése adja a választ.</p>',
+   '<p>Itt nem számolunk, hanem <b>eldöntünk</b>: két szám összevetése adja a '
+   'választ.</p>',
    doboz("tetel", "A három eset",
          '<p>Legyen $d$ a gömb középpontjának távolsága a síktól, $R$ pedig a gömb '
          'sugara. Ekkor</p>'
@@ -180,10 +182,11 @@ C1 = [
          'húzott sugárra”) térbeli megfelelője.</p>',
          hid="tetel-erintosik"),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„Minél messzebb van a sík, annál kisebb kört metsz ki."</i></p>'
-         '<p>A mondat első fele igaz, a második viszont csak <b>$d&lt;R$ esetén</b>. Ha '
-         'a sík eléri a sugarat ($d=R$), a „kör” egyetlen ponttá zsugorodik, azon túl '
-         'pedig <b>nincs</b> metszet — nem lesz „nagyon kicsi kör”, hanem semmi.</p>'
+         '<p><i>„Minél messzebb van a sík, annál kisebb kört metsz ki.”</i></p>'
+         '<p>Az állítás csak akkor igaz, ha a sík <b>végig metsző</b> marad, vagyis '
+         '$d&lt;R$. Ha a sík eléri a sugarat ($d=R$), a kör egyetlen ponttá '
+         'zsugorodik, azon túl pedig <b>nincs</b> metszet — nem lesz „nagyon kicsi '
+         'kör”, hanem semmi.</p>'
          '<p>Ezért a feladatokban mindig <b>először</b> a helyzetet döntsd el, és csak '
          'utána számolj.</p>'),
    doboz("erdekesseg", "A metszetkör sugara",
@@ -228,12 +231,12 @@ C2 = [
          '<p>Vagyis a gömbfelület területe pontosan <b>négyszerese</b> a főkör '
          '($R^2\\pi$) területének.</p>',
          hid="tetel-gomb-felszin"),
-   '<p><b>Miért hihető?</b> Végezd el a narancshéj-kísérletet: hámozz meg egy narancsot, '
-   'és rajzolj körbe a papíron négy kört a narancs „egyenlítője” mentén. A héj '
-   'darabjaival pontosan a <b>négy</b> kört töltöd ki — nem hármat, nem ötöt. Ez nem '
-   'bizonyítás, de meggyőző, és pontosan azt mutatja, amit a képlet állít.</p>',
+   '<p><b>Miért hihető?</b> Végezd el a narancshéj-kísérletet: rajzold körbe a '
+   'narancsot a papíron <b>négyszer</b> — négy egyforma, $R$ sugarú kört kapsz. '
+   'Ezután hámozd meg, és tördeld a héjat apró darabokra: pontosan a négy kört '
+   'töltöd ki velük, nem hármat és nem ötöt. Ez nem bizonyítás, de meggyőző.</p>',
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„A felszín $F=4R\\pi$, a térfogat $V=\\frac{4R^2\\pi}{3}$."</i></p>'
+         '<p><i>„A felszín $F=4R\\pi$, a térfogat $V=\\frac{4R^2\\pi}{3}$.”</i></p>'
          '<p>A <b>kitevők</b> csúsztak el. Ellenőrizd őket a <b>mértékegységgel</b>:</p>'
          '<ul>'
          '<li>a felszín <b>terület</b>, tehát cm² — ehhez a sugár <b>négyzete</b> kell: '
@@ -265,8 +268,8 @@ C2 = [
    doboz("erdekesseg", "Arkhimédész sírköve",
          '<p>Ezt az arányt <b>Arkhimédész</b> fedezte fel, és annyira büszke volt rá, '
          'hogy — Cicero beszámolója szerint — a sírkövére a hengerbe írt gömböt '
-         'vésették, a $2:3$ aránnyal. A sírt Cicero állítólag több mint száz évvel '
-         'később, benőtt bozótban találta meg épp erről a jelről.</p>'
+         'vésette, a $2:3$ aránnyal. A benőtt, elfeledett sírt Cicero állítólag több '
+         'mint száz évvel később épp erről a jelről ismerte fel.</p>'
          '<p>Az arány a felszínekre is igaz: a gömb felszíne ($4R^2\\pi$) a köré írt '
          'henger <b>teljes</b> felszínének ($2R^2\\pi+2R\\pi\\cdot2R=6R^2\\pi$) szintén '
          'a kétharmada.</p>'),
@@ -303,11 +306,13 @@ C2 = [
                   '<p><b>Térfogat.</b></p>'
                   '$$V=\\frac{4\\cdot5^3\\pi}{3}=\\frac{500\\pi}{3}\\approx523{,}60\\ \\text{cm}^3.$$'
                   '<p><b>Tömeg.</b> A tömeg a sűrűség és a térfogat szorzata:</p>'
-                  '$$m=\\varrho V\\approx7{,}85\\cdot523{,}60\\approx4110{,}25\\ \\text{g}'
+                  '$$m=\\varrho V\\approx7{,}85\\cdot523{,}60\\approx4110{,}3\\ \\text{g}'
                   '\\approx4{,}11\\ \\text{kg}.$$'
                   '<p>Itt <b>indokolt</b> a közelítés: a tömeg valós, mérhető mennyiség, '
-                  'és a sűrűség maga is közelítő adat. Két tizedesnél tovább nincs '
-                  'értelme számolni — a mért sűrűség pontossága úgysem engedi.</p>')),
+                  'és a sűrűség maga is közelítő adat. A <b>végeredményt</b> érdemes '
+                  'két tizedesre kerekíteni ($4{,}11$ kg) — a köztes grammértéket '
+                  'fölösleges tovább pontosítani, mert a sűrűség pontossága úgysem '
+                  'engedi.</p>')),
    doboz("erdekesseg", "Hol találkozol vele?",
          '<p>A Föld sugara nagyjából $6371$ km, ebből a felszíne körülbelül '
          '$510$ millió km², a térfogata pedig $1{,}08\\cdot10^{12}$ km³. Ugyanezzel a '
@@ -359,10 +364,10 @@ C3 = [
          'rész illeszkedik, ott a közös felület <b>egyik</b> testnél sem tartozik a '
          'felszínhez — mert nem határolja a testet a külvilág felé.</p>'
          '<p>Ezért a felszín <b>soha nem</b> a részek felszínének összege: abból a közös '
-         'felületet <b>kétszer</b> vonni kell le.</p>',
+         'felületet <b>kétszer</b> le kell vonni.</p>',
          hid="tetel-osszetett-felszin"),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„A víztorony felszíne = a henger felszíne + a félgömb felszíne."</i></p>'
+         '<p><i>„A víztorony felszíne = a henger felszíne + a félgömb felszíne.”</i></p>'
          '<p>A henger felszínében ott van a <b>felső</b> körlapja, a félgömb '
          '„felszínében” pedig az <b>alapköre</b> — pedig e kettő ugyanaz a kör, és '
          'kívülről <b>egyáltalán nem látszik</b>: a félgömb pontosan rajta ül.</p>'
@@ -371,23 +376,32 @@ C3 = [
          'áll és nem festjük az alját, akkor az alsó körlap is kimarad.</p>'),
    doboz("pelda", "Átalakulás-kamra szimuláció",
          '<p>Egy víztorony tartálya hengerből ($r=3$ m, $H=10$ m) és a rá épített '
-         'félgömb tetőből áll. Mennyi víz fér bele, és mekkora a <b>külső</b> '
-         'felülete, ha az alsó körlapot nem számítjuk?</p>',
+         'félgömb tetőből áll (a félgömb sugara a hengerével egyenlő). Mekkora a '
+         'tartály <b>teljes térfogata</b>, és mekkora a <b>külső</b> felülete, ha az '
+         'alsó körlapot nem számítjuk?</p>',
          hid="pelda-viztorony",
          lenyilo=("Megoldás",
-                  '<p><b>Térfogat.</b> A henger $V_1=9\\pi\\cdot10=90\\pi$, a félgömb '
+                  '<p><b>Térfogat.</b> A félgömb sugara a hengerével egyenlő: $R=r=3$ m. A henger '
+                  'térfogata $V_1=9\\pi\\cdot10=90\\pi$, a félgömbé '
                   '$V_2=\\frac12\\cdot\\frac{4\\cdot3^3\\pi}{3}=18\\pi$, tehát</p>'
                   '$$V=90\\pi+18\\pi=108\\pi\\approx339{,}29\\ \\text{m}^3.$$'
                   '<p><b>Felszín.</b> Kívülről a <b>hengerpalást</b> és a <b>félgömb</b> '
                   'látszik:</p>'
                   '<ul>'
                   '<li>hengerpalást: $2r\\pi H=2\\cdot3\\pi\\cdot10=60\\pi$;</li>'
-                  '<li>félgömb: $\\frac12\\cdot4\\cdot3^2\\pi=18\\pi$.</li>'
+                  '<li>a félgömb <b>görbült felülete</b> (a gömbfelület fele): '
+                  '$\\frac12\\cdot4\\cdot3^2\\pi=18\\pi$.</li>'
                   '</ul>'
                   '$$F=60\\pi+18\\pi=78\\pi\\approx245{,}04\\ \\text{m}^2.$$'
                   '<p>A henger <b>felső</b> körlapja kimaradt — azon ül a félgömb. Ha a '
                   'feladat az alsó körlapot is kérné, még $9\\pi$ jönne hozzá, '
-                  'összesen $87\\pi$.</p>')),
+                  'összesen $87\\pi$.</p>'
+                  '<p><b>Ugyanez a másik úton</b> (zárt tartályt véve): a henger teljes '
+                  'felszíne $2\\cdot9\\pi+60\\pi=78\\pi$, a félgömbé az alapkörével '
+                  'együtt $18\\pi+9\\pi=27\\pi$. Az illeszkedő körlap mindkettőben '
+                  'benne van, ezért <b>kétszer</b> vonjuk le:</p>'
+                  '$$78\\pi+27\\pi-2\\cdot9\\pi=87\\pi.$$'
+                  '<p>Ugyanaz, mint fent — a satírozós út csak gyorsabb.</p>')),
    kviz('Egy kúp és egy vele azonos sugarú henger alaplapjukkal összeillesztve alkotnak '
         'egy testet. Melyik állítás igaz?',
         ['A térfogatok összeadódnak, a felszínek nem',
@@ -409,7 +423,7 @@ C3 = [
    abra(SVG_CSO, 'Cső: két koncentrikus henger különbsége. A belső palást is a '
         'felszín része.'),
    doboz("pelda", "Átalakulás-kamra szimuláció",
-         '<p>Egy $20$ cm hosszú cső külső sugara $5$ cm, belső sugara $4$ cm. Mekkora a '
+         '<p>Egy $20$ cm hosszú cső külső sugara $R=5$ cm, belső sugara $r=4$ cm. Mekkora a '
          'térfogata (az anyag mennyisége) és a teljes felszíne?</p>',
          hid="pelda-cso",
          lenyilo=("Megoldás",
@@ -426,7 +440,7 @@ C3 = [
                   '<p>A belső palást a leggyakrabban elfelejtett rész — pedig ha a csövet '
                   'belülről is le kell festeni vagy szigetelni, épp az a lényeg.</p>')),
    abra(SVG_FURT, 'Hengerből kifúrt kúp: a térfogat különbség, a felszínben viszont '
-        'megjelenik a fúrat palástja is.'),
+        'megjelenik a fúrat palástja is, a fedőlapból pedig körgyűrű lesz.'),
    kviz('Hány felületdarabból áll egy mindkét végén nyitott cső felszíne?',
         ['Négyből: két körgyűrű, a külső és a belső palást',
          'Kettőből: a külső és a belső palást',
@@ -449,14 +463,15 @@ C3 = [
    '<tr><td><a href="tananyag-csonkakup.html#tetel-csonkakup-felszin">csonkakúp</a></td>'
    '<td>$F=R^2\\pi+r^2\\pi+(R+r)\\pi s$</td>'
    '<td>$V=\\dfrac{H\\pi}{3}\\left(R^2+Rr+r^2\\right)$</td>'
-   '<td>a palástban $R+r$, a háromszögben $R-r$</td></tr>'
+   '<td>a palástban $R+r$, a tengelymetszet derékszögű háromszögében $R-r$</td></tr>'
    '<tr><td><a href="tananyag-gomb-felszin-terfogat.html#tetel-gomb-felszin">gömb</a></td>'
    '<td>$F=4R^2\\pi$</td><td>$V=\\dfrac{4R^3\\pi}{3}$</td>'
    '<td>a <b>sugár</b> kell, nem az átmérő; a kitevőket a mértékegység ellenőrzi</td></tr>'
    '</table>'
    '<p><b>Jelölések:</b> $r$ az alapkör sugara (a csonkakúpnál a <b>felső</b>, $R$ az '
-   'alsó; a gömbnél $R$ maga a sugár), $H$ a testmagasság, $s$ az <b>alkotó</b>, '
-   '$B=r^2\\pi$ az alapterület, $M$ a palást területe.</p>'
+   'alsó; a gömbnél $R$ maga a sugár), $H$ a testmagasság, $s$ az <b>alkotó</b>. A '
+   'levezetésekben $B$ az alapterület (körnél $r^2\\pi$), $M$ pedig a palást '
+   'területe.</p>'
    '<p>A két legfontosabb összefüggés, amiből a hiányzó adat előkerül:</p>'
    '$$\\underbrace{s^2=r^2+H^2}_{\\text{kúp}},\\qquad '
    '\\underbrace{s^2=H^2+(R-r)^2}_{\\text{csonkakúp}}.$$',
@@ -484,8 +499,8 @@ KI = [
  lap(**T, fajl="tananyag-gomb-felszin-terfogat.html",
      cim="A gömb felszíne és térfogata",
      cim_tiszta="A gömb felszíne és térfogata",
-     alcim="A két képlet, a köré írt henger 2:3 aránya, a fordított feladatok és a "
-           "valós számítások.",
+     alcim="A két képlet, a gömb és a köré írt henger 2:3 aránya, a fordított feladatok "
+           "és a valós számítások.",
      chip=KUL + " · 9/10", szakaszok=C2,
      elozo=("tananyag-gomb.html", "A gömbfelület és a gömb"),
      kovetkezo=("tananyag-osszetett-testek.html", "Összetett és üreges testek")),

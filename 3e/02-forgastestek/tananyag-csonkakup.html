@@ -39,18 +39,18 @@
 
     <h2 id="s1">Hogyan keletkezik a csonkakúp</h2>
 
-    <p>Két úton is eljutunk ugyanahhoz a testhez:</p><ul><li><b>Csonkolással:</b> egy kúpot elmetszünk az alaplapjával <b>párhuzamos</b> síkkal, és a <b>csúcsot tartalmazó</b> részt elhagyjuk.</li><li><b>Forgatással:</b> egy <b>derékszögű trapézt</b> megforgatunk a derékszögű szára körül.</li></ul>
+    <p>Két úton is eljutunk ugyanahhoz a testhez:</p><ul><li><b>Csonkolással:</b> egy kúpot elmetszünk az alaplapjával <b>párhuzamos</b> síkkal, és a <b>csúcsot tartalmazó</b> részt elhagyjuk.</li><li><b>Forgatással:</b> egy <b>derékszögű trapézt</b> megforgatunk azon szára körül, amely <b>merőleges</b> a párhuzamos oldalakra.</li></ul>
 
     <div class="svgcard">
-    <svg viewBox="0 0 430 250" width="430" height="250" role="img" aria-label="A(z) derékszögű trapéz forgatása a tengely körül: csonkakúp">
-      <defs><marker id="nyil2" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+    <svg viewBox="0 0 430 250" width="430" height="250" role="img" aria-label="A derékszögű trapéz forgatása a tengely körül: csonkakúp">
+      <defs><marker id="nyil-trapez" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
       <line x1="99.3" y1="226.0" x2="99.3" y2="63.1" stroke="#475569" stroke-width="1.4" stroke-dasharray="7 4"/>
       <text x="99.3" y="240.0" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">tengely</text>
       <polygon points="99.3,204.0 164.3,204.0 131.8,128.1 99.3,128.1" fill="#047857" fill-opacity="0.14" stroke="#0f172a" stroke-width="1.7"/>
       <text x="131.8" y="219.0" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">R</text>
       <text x="115.6" y="121.1" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">r</text>
       <text x="91.3" y="170.1" font-size="13" fill="#ef4444" text-anchor="middle" font-style="italic" font-weight="600">H</text>
-      <line x1="184.6" y1="125.0" x2="220.6" y2="125.0" stroke="#0f172a" stroke-width="1.8" marker-end="url(#nyil2)"/>
+      <line x1="184.6" y1="125.0" x2="220.6" y2="125.0" stroke="#0f172a" stroke-width="1.8" marker-end="url(#nyil-trapez)"/>
       <g transform="translate(232.6,0)">
         <path d="M45.9,210.2 L72.2,148.9 A26.3,7.9 0 0 0 124.8,148.9 L151.1,210.2 A52.6,15.8 0 0 1 45.9,210.2 z" fill="#047857" fill-opacity="0.08" stroke="none"/>
         <path d="M45.9,210.2 A52.6,15.8 0 0 0 151.1,210.2" fill="none" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 4"/>
@@ -71,7 +71,7 @@
 
     <div class="doboz definicio" id="def-csonkakup">
       <p class="cim"><span class="ikon">📗</span> A csonkakúp részei</p>
-      <ul><li><b>Alapkör</b> — az alsó, nagyobb kör; sugara <span class="math inline">\(R\)</span>.</li><li><b>Fedőkör</b> — a felső, kisebb kör; sugara <span class="math inline">\(r\)</span>. A kettő <b>párhuzamos</b> és <b>koncentrikus</b> (egy tengelyen van a középpontjuk).</li><li><b>Alkotó</b> (<span class="math inline">\(s\)</span>) — a két kört összekötő, a paláston futó szakasz.</li><li><b>Magasság</b> (<span class="math inline">\(H\)</span>) — a két kör síkjának távolsága.</li></ul>
+      <ul><li><b>Alapkör</b> — az alsó, nagyobb kör; sugara <span class="math inline">\(R\)</span>.</li><li><b>Fedőkör</b> — a felső, kisebb kör; sugara <span class="math inline">\(r\)</span>. A két kör síkja <b>párhuzamos</b>, a középpontjaik pedig ugyanazon a rájuk merőleges tengelyen vannak.</li><li><b>Alkotó</b> (<span class="math inline">\(s\)</span>) — az alapkör és a fedőkör egy-egy pontját összekötő, a paláston fekvő szakasz.</li><li><b>Magasság</b> (<span class="math inline">\(H\)</span>) — a két kör síkjának távolsága.</li></ul><p>Csak <b>egyenes</b> csonkakúppal foglalkozunk — ilyenkor minden alkotó egyenlő hosszú, és a palást képlete is erre érvényes.</p>
     </div>
 
     <div class="svgcard">
@@ -99,7 +99,7 @@
 
     <h2 id="s2">A jellemző derékszögű háromszög</h2>
 
-    <p>Ha a fedőkört merőlegesen levetítjük az alaplapra, a két kör közötti <b>különbség</b> jelenik meg befogóként.</p>
+    <p>Ha a fedőkört merőlegesen levetítjük az alaplapra, a két <b>sugár különbsége</b> (<span class="math inline">\(R-r\)</span>) jelenik meg befogóként.</p>
 
     <div class="doboz tetel" id="tetel-csonkakup-haromszog">
       <p class="cim"><span class="ikon">📘</span> A csonkakúp három adata</p>
@@ -128,23 +128,23 @@
       <text x="222.0" y="152.5" font-size="13" fill="#f59e0b" text-anchor="start" font-style="italic" font-weight="600">s</text>
     </svg>
     </div>
-    <p class="cap">A kiemelt derékszögű háromszög: a vízszintes befogó a két sugár <b>különbsége</b>.</p>
+    <p class="cap">A fél tengelymetszet (sárga) és benne a derékszögű háromszög: a szaggatott vízszintes befogó a két sugár <b>különbsége</b>, az átfogó az alkotó.</p>
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
-      <p><i>„A befogó a két sugár összege: <span class="math inline">\(R+r\)</span>."</i></p><p>Nézd meg az ábrát: a kisebb kör a nagyobb <b>fölött</b> van, vele koncentrikusan. A vetítés után a szélei közötti vízszintes távolság ezért <span class="math inline">\(R-r\)</span>, nem <span class="math inline">\(R+r\)</span>.</p><p>Számokkal: <span class="math inline">\(R=6\)</span>, <span class="math inline">\(r=3\)</span>, <span class="math inline">\(H=4\)</span> esetén a helyes alkotó <span class="math inline">\(s=\sqrt{16+9}=5\)</span>; az összeggel számolva <span class="math inline">\(\sqrt{16+81}=\sqrt{97}\approx9{,}85\)</span> jönne ki — majdnem a duplája.</p><p>Ugyanez a hiba bújik meg a térfogatnál is: <span class="math inline">\(R^2+Rr+r^2\ne(R+r)^2\)</span>. A fenti számokkal <span class="math inline">\(63\)</span> az egyik és <span class="math inline">\(81\)</span> a másik.</p>
+      <p><i>„A befogó a két sugár összege: <span class="math inline">\(R+r\)</span>.”</i></p><p>Nézd meg az ábrát: a kisebb kör pontosan a nagyobb <b>fölött</b> van, közös tengelyen. A vetítés után a szélei közötti vízszintes távolság ezért <span class="math inline">\(R-r\)</span>, nem <span class="math inline">\(R+r\)</span>.</p><p>Számokkal: <span class="math inline">\(R=6\)</span>, <span class="math inline">\(r=3\)</span>, <span class="math inline">\(H=4\)</span> esetén a helyes alkotó <span class="math inline">\(s=\sqrt{16+9}=5\)</span>; az összeggel számolva <span class="math inline">\(\sqrt{16+81}=\sqrt{97}\approx9{,}85\)</span> jönne ki — majdnem a duplája.</p><p>Ugyanez a hiba bújik meg a térfogatnál is: <span class="math inline">\(R^2+Rr+r^2\ne(R+r)^2\)</span>. A fenti számokkal <span class="math inline">\(63\)</span> az egyik és <span class="math inline">\(81\)</span> a másik.</p>
     </div>
 
-    <div class="kviz" data-answer="0" data-jo="✔ s² = H² + (R − r)² = 64 + 36 = 100, tehát s = 10 cm." data-nem="✘ A befogó a sugarak KÜLÖNBSÉGE: R − r = 6. Innen s² = 64 + 36 = 100, azaz s = 10 cm.">
+    <div class="kviz" data-answer="2" data-jo="✔ s² = H² + (R − r)² = 64 + 36 = 100, tehát s = 10 cm." data-nem="✘ A befogó a sugarak KÜLÖNBSÉGE: R − r = 6. Innen s² = 64 + 36 = 100, azaz s = 10 cm.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
       <p>Egy csonkakúp sugarai <span class="math inline">\(10\)</span> cm és <span class="math inline">\(4\)</span> cm, magassága <span class="math inline">\(8\)</span> cm. Mekkora az alkotója?</p>
-      <div class="opciok"><button><span class="math inline">\(10\)</span> cm</button><button><span class="math inline">\(\sqrt{260}\approx16{,}12\)</span> cm</button><button><span class="math inline">\(14\)</span> cm</button></div>
+      <div class="opciok"><button><span class="math inline">\(\sqrt{260}\approx16{,}12\)</span> cm</button><button><span class="math inline">\(14\)</span> cm</button><button><span class="math inline">\(10\)</span> cm</button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
     <h2 id="s3">A felszín</h2>
 
-    <p>A palást kiterítve körcikk-gyűrű (két körcikk különbsége), de nem kell levezetnünk: a képlet ugyanazt a szerkezetet mutatja, mint a csonkagúla palástja, ahol a trapéz <b>középvonala</b> szorozódott a magassággal.</p>
+    <p>A palást kiterítve <b>körgyűrűcikk</b> (két körcikk különbsége). A területe ugyanúgy áll elő, mint a csonkagúla palástjáé: ott az oldallap-trapéz <b>középvonala</b> szorzódott az oldallap magasságával, itt a két alapkör kerületének <b>átlaga</b> szorzódik az alkotóval:</p><span class="math display">\[M=\frac{2R\pi+2r\pi}{2}\cdot s=(R+r)\pi s.\]</span>
 
     <div class="doboz tetel" id="tetel-csonkakup-felszin">
       <p class="cim"><span class="ikon">📘</span> A csonkakúp felszíne</p>
@@ -178,7 +178,7 @@
 
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-kup.html#alap-22">🐕 Tér-eb-ugrás <span class="cimke">A 22–28</span></a><a class="sav bruno" href="feladatok-kup.html#kozep-16">👑 Királyi Gárda <span class="cimke">K 16–21</span></a></div></div></div>
 
-    <div class="brief" data-outro><p>📡 <b>Medúza:</b> A szögletes és a szűkülő formák megvannak. Marad a legtökéletesebb — az a test, amelynek <b>minden</b> pontja ugyanolyan messze van a középpontjától: a <b>gömb</b>.</p></div>
+    <div class="brief" data-outro><p>📡 <b>Medúza:</b> A szögletes és a szűkülő formák megvannak. Marad a legtökéletesebb — az a test, amelynek a <b>felülete</b> minden pontjában ugyanolyan messze van a középponttól: a <b>gömb</b>. De előbb bevetés: a kúp feladatai.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-sikmetszetek.html"><span class="irany">← Előző</span><span class="hova">A henger és a kúp síkmetszetei</span></a>
       <a class="kov" href="feladatok-kup.html"><span class="irany">Következő →</span><span class="hova">Feladatok — a kúp</span></a>

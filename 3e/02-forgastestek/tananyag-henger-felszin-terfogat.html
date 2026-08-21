@@ -35,7 +35,7 @@
 
     <div class="brief"><p>📡 <b>Medúza:</b> Egy tartályról két dolgot kell tudni: <b>mennyi fér bele</b> és <b>mennyi anyag kell hozzá</b>. Az első a térfogat, a második a felszín. A Kamrában ez a két szám külön naplóba megy — aki összekeveri őket, az vagy kifolyatja a párát, vagy elpazarolja a lemezt.</p></div>
 
-    <p>A felszín <b>területjellegű</b> mennyiség (cm², m²), a térfogat <b>térfogatjellegű</b> (cm³, m³). Ha a végeredményed mértékegysége nem stimmel, nem is kell tovább ellenőrizned: rossz képletet használtál.</p>
+    <p>A felszín <b>területjellegű</b> mennyiség (cm², m²), a térfogat <b>köbös</b> (cm³, m³). Ha a végeredményed mértékegysége nem stimmel, nem is kell tovább ellenőrizned: rossz képletet használtál.</p>
 
     <h2 id="s1">A palást a hálóból</h2>
 
@@ -60,23 +60,23 @@
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
-      <p><i>„Felszín = alapkör + palást, tehát <span class="math inline">\(F=r^2\pi+2r\pi H\)</span>."</i></p><p>A hengernek <b>két</b> alapköre van — egy alul, egy felül. A felszínben ezért <span class="math inline">\(2r^2\pi\)</span> áll.</p><p><b>Ellenpróba, amikor viszont tényleg csak egy kell:</b> egy nyitott vödörnél, egy fedél nélküli tartálynál vagy egy kútgyűrűnél a feladat kifejezetten mondja, hogy nincs teteje. Ilyenkor <span class="math inline">\(F=r^2\pi+2r\pi H\)</span> a helyes. A képlet tehát nem „szabály”, hanem a <b>szöveg</b> következménye — mindig olvasd el, mit kell befedni.</p>
+      <p><i>„Felszín = alapkör + palást, tehát <span class="math inline">\(F=r^2\pi+2r\pi H\)</span>.”</i></p><p>A hengernek <b>két</b> alapköre van — egy alul, egy felül. A felszínben ezért <span class="math inline">\(2r^2\pi\)</span> áll.</p><p><b>Ellenpróba, amikor viszont tényleg csak egy kell:</b> egy nyitott vödörnél, egy virágcserépnél vagy egy fedél nélküli tartálynál a feladat kifejezetten mondja, hogy nincs teteje. Ilyenkor <span class="math inline">\(F=r^2\pi+2r\pi H\)</span> a helyes. A képlet tehát nem „szabály”, hanem a <b>szöveg</b> következménye — mindig olvasd el, mit kell befedni.</p>
     </div>
 
-    <div class="kviz" data-answer="0" data-jo="✔ F = 2rπ(r + H) = 16π · 18 = 288π cm²." data-nem="✘ A dobozt teljesen bezárjuk, tehát KÉT alapkör kell: F = 2·64π + 2·8·10π = 128π + 160π = 288π.">
+    <div class="kviz" data-answer="1" data-jo="✔ F = 2rπ(r + H) = 16π · 18 = 288π cm²." data-nem="✘ A dobozt teljesen bezárjuk, tehát KÉT alapkör kell: F = 2·64π + 2·8·10π = 128π + 160π = 288π.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
       <p>Egy <span class="math inline">\(8\)</span> cm sugarú, <span class="math inline">\(10\)</span> cm magas hengeres <b>doboz</b> teljes felszíne:</p>
-      <div class="opciok"><button><span class="math inline">\(288\pi\ \text{cm}^2\)</span></button><button><span class="math inline">\(224\pi\ \text{cm}^2\)</span></button><button><span class="math inline">\(160\pi\ \text{cm}^2\)</span></button></div>
+      <div class="opciok"><button><span class="math inline">\(160\pi\ \text{cm}^2\)</span></button><button><span class="math inline">\(288\pi\ \text{cm}^2\)</span></button><button><span class="math inline">\(224\pi\ \text{cm}^2\)</span></button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
     <h2 id="s2">A térfogat</h2>
 
-    <p>A térfogatnál nincs új gondolat — a hasábnál megismert szabály folytatódik. Ott <span class="math inline">\(V=B\cdot H\)</span> volt, és ez minden olyan testre igaz, amelynek a „vízszintes” metszetei egybevágóak. A henger pontosan ilyen: minden metszete ugyanaz az <span class="math inline">\(r\)</span> sugarú kör.</p>
+    <p>A térfogatnál nincs új gondolat — a hasábnál megismert szabály folytatódik. Ott <span class="math inline">\(V=B\cdot H\)</span> volt, és ez minden olyan testre igaz, amelynek a „vízszintes” metszetei egybevágóak. A henger pontosan ilyen: minden, a tengelyre <b>merőleges</b> metszete ugyanaz az <span class="math inline">\(r\)</span> sugarú kör.</p>
 
     <div class="doboz tetel" id="tetel-henger-terfogat">
       <p class="cim"><span class="ikon">📘</span> A henger térfogata</p>
-      <span class="math display">\[V=B\cdot H=r^2\pi H.\]</span><p>Ugyanaz a képlet, mint a <a href="../01-poliederek/tananyag-hasab-felszin-terfogat.html#tetel-hasab-terfogat">hasábnál</a> — csak az alaplap most kör. A henger úgy is felfogható, mint egy olyan hasáb, amelynek az alaplapja végtelen sok oldalú szabályos sokszög.</p>
+      <span class="math display">\[V=B\cdot H=r^2\pi H.\]</span><p>Ugyanaz a képlet, mint a <a href="../01-poliederek/tananyag-hasab-felszin-terfogat.html#tetel-hasab-terfogat">hasábnál</a> — csak az alaplap most kör. A henger úgy is felfogható, mint egy hasáb, amelynek az alaplapját egyre több oldalú szabályos sokszögekkel közelítjük.</p>
     </div>
 
     <div class="doboz pelda" id="pelda-tartaly">
@@ -85,10 +85,10 @@
       <details><summary>Megoldás</summary><div class="bel"><p><b>Térfogat.</b></p><span class="math display">\[V=r^2\pi H=9\pi\cdot8=72\pi\ \text{dm}^3.\]</span><p>Mivel <span class="math inline">\(1\ \text{dm}^3=1\)</span> liter, a tartály űrtartalma <span class="math inline">\(72\pi\approx226{,}19\)</span> liter. (Itt <b>indokolt</b> a közelítés: a liter valós, mérhető mennyiség.)</p><p><b>Felszín.</b></p><span class="math display">\[F=2r\pi(r+H)=6\pi\cdot11=66\pi\ \text{dm}^2.\]</span><p>Ez körülbelül <span class="math inline">\(207{,}35\ \text{dm}^2\)</span>, azaz nagyjából <span class="math inline">\(2{,}07\ \text{m}^2\)</span> lemez.</p></div></details>
     </div>
 
-    <div class="kviz" data-answer="0" data-jo="✔ V = r²πH, és a sugár NÉGYZETESEN szerepel: (2r)² = 4r², tehát a térfogat négyszereződik." data-nem="✘ A sugár a képletben négyzeten áll: (2r)²πH = 4r²πH. A térfogat tehát négyszereződik, nem duplázódik.">
+    <div class="kviz" data-answer="1" data-jo="✔ V = r²πH, és a sugár NÉGYZETESEN szerepel: (2r)² = 4r², tehát a térfogat négyszereződik." data-nem="✘ A sugár a képletben négyzeten áll: (2r)²πH = 4r²πH. A térfogat tehát négyszereződik, nem duplázódik.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
       <p>Egy henger sugarát <b>megduplázzuk</b>, a magasságát változatlanul hagyjuk. Hányszorosára nő a térfogata?</p>
-      <div class="opciok"><button>Négyszeresére</button><button>Kétszeresére</button><button>Nyolcszorosára</button></div>
+      <div class="opciok"><button>Nyolcszorosára</button><button>Négyszeresére</button><button>Kétszeresére</button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
@@ -96,13 +96,13 @@
 
     <p>A feladatok fele nem a képlet behelyettesítését kéri, hanem az <b>ellenkezőjét</b>: adott a végeredmény, és egy hiányzó adatot keresünk. A recept mindig ugyanaz — írd fel a képletet, helyettesítsd be, amit tudsz, és oldd meg az egyenletet.</p>
 
-    <div class="doboz pelda" id="pelda-fordított">
+    <div class="doboz pelda" id="pelda-forditott">
       <p class="cim"><span class="ikon">✏️</span> Átalakulás-kamra szimuláció</p>
       <p>Egy henger térfogata <span class="math inline">\(500\pi\)</span> cm³, az alapkör sugara <span class="math inline">\(5\)</span> cm. Mekkora a magassága?</p>
       <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(V=r^2\pi H\)</span>, tehát</p><span class="math display">\[25\pi\cdot H=500\pi\quad\Longrightarrow\quad H=\frac{500}{25}=20\ \text{cm}.\]</span><p>A <span class="math inline">\(\pi\)</span> mindkét oldalon szerepel, ezért <b>kiesik</b> — ez a legtöbb ilyen feladatban így van, és sokat egyszerűsít. Épp ezért érdemes a <span class="math inline">\(\pi\)</span>-t végig jelként vinni, és nem <span class="math inline">\(3{,}14\)</span>-ként.</p></div></details>
     </div>
 
-    <p>Ha a <b>felszínből</b> keressük a sugarat, <b>másodfokú</b> egyenletet kapunk — a sugár ugyanis kétszer szerepel a képletben. Ilyenkor a megoldóképlet két gyököt ad, de a sugár csak <b>pozitív</b> lehet, ezért a negatív gyököt eldobjuk.</p>
+    <p>Ha a <b>felszínből</b> keressük a sugarat, <b>másodfokú</b> egyenletet kapunk — a sugár ugyanis <b>négyzeten</b> is szerepel benne. Ilyenkor a megoldóképlet két gyököt ad, de a sugár csak <b>pozitív</b> lehet, ezért a negatív gyököt eldobjuk.</p>
 
     <div class="doboz pelda" id="pelda-masodfoku">
       <p class="cim"><span class="ikon">✏️</span> Átalakulás-kamra szimuláció</p>
@@ -116,12 +116,12 @@
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
-      <p><i>„A tartály <span class="math inline">\(0{,}4\ \text{m}^3\)</span>-es, tehát <span class="math inline">\(40\)</span> liter."</i></p><p>A hosszúságnál <span class="math inline">\(1\)</span> m <span class="math inline">\(=10\)</span> dm, de a <b>térfogatnál</b> a váltószám ennek a <b>köbe</b>: <span class="math inline">\(1\ \text{m}^3=1000\ \text{dm}^3\)</span>. A helyes érték tehát <b>400 liter</b> — tízszer annyi.</p>
+      <p><i>„A tartály <span class="math inline">\(0{,}4\ \text{m}^3\)</span>-es, tehát <span class="math inline">\(40\)</span> liter.”</i></p><p>A hosszúságnál <span class="math inline">\(1\)</span> m <span class="math inline">\(=10\)</span> dm, de a <b>térfogatnál</b> a váltószám ennek a <b>köbe</b>: <span class="math inline">\(1\ \text{m}^3=1000\ \text{dm}^3\)</span>. A helyes érték tehát <b>400 liter</b> — tízszer annyi.</p>
     </div>
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Mikor számolj <span class="math inline">\(\pi\)</span>-vel, és mikor <span class="math inline">\(3{,}14\)</span>-dal?</p>
-      <p>A matematikaórán a végeredmény <b>pontos alakban</b> áll: <span class="math inline">\(V=72\pi\)</span> cm³. Ez nem lustaság, hanem pontosság — a <span class="math inline">\(\pi\)</span> irracionális, minden közelítés hibát visz be.</p><p>Közelítést akkor adunk, ha a feladat <b>valós, mérhető</b> mennyiséget kér: hány liter fér bele, hány kilogramm festék kell, mennyibe kerül az anyag. Ilyenkor általában két tizedesre kerekítünk, és a szöveg is jelzi, hogy közelítő értéket vár.</p><p>Az iparban ez nem elméleti kérdés: egy nagy tartálynál a <span class="math inline">\(3{,}14\)</span> és a valódi <span class="math inline">\(\pi\)</span> közötti eltérés több száz liternyi különbséget adhat — ezért számolnak a gyártók sokkal több tizedessel.</p>
+      <p>A matematikaórán a végeredmény <b>pontos alakban</b> áll: <span class="math inline">\(V=72\pi\)</span> cm³. Ez nem lustaság, hanem pontosság — a <span class="math inline">\(\pi\)</span> irracionális, minden közelítés hibát visz be.</p><p>Közelítést akkor adunk, ha a feladat <b>valós, mérhető</b> mennyiséget kér: hány liter fér bele, hány kilogramm festék kell, mennyibe kerül az anyag. Ilyenkor általában két tizedesre kerekítünk, és a szöveg is jelzi, hogy közelítő értéket vár.</p><p>Az iparban ez nem elméleti kérdés: egy nagy tartálynál a <span class="math inline">\(3{,}14\)</span> és a valódi <span class="math inline">\(\pi\)</span> közötti eltérés egy <span class="math inline">\(1000\ \text{m}^3\)</span>-es olajtartálynál már több száz liter — ezért számolnak a gyártók sokkal több tizedessel.</p>
     </div>
 
     <div class="kviz" data-answer="0" data-jo="✔ 1 m³ = 1000 liter, tehát 0,75 · 1000 = 750 liter." data-nem="✘ A térfogat váltószáma 1000 (nem 100 és nem 10 000): 0,75 m³ = 750 liter.">
