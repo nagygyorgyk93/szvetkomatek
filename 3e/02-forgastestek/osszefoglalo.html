@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Átalakulás-térkép | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="digitalis">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Forgástestek</a> ›
+  <span class="itt">Átalakulás-térkép</span>
+</nav>
+<div class="hero">
+  <h1>Átalakulás-térkép — a témakör egy lapon</h1>
+  <p class="alcim">A forgástestek minden definíciója, képlete és tipikus csapdája egy helyen — ismétléshez, dolgozat előtti átfutáshoz, nyomtatáshoz.</p>
+  <div class="meta-sor"><span class="chip ora">összefoglaló</span><span class="chip">Az Átalakulás Kamrája · összefoglaló</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📇 Forgástestek — a keletkezés</h2>
+
+    <p>Minden forgástest egy <b>síkidom</b> és egy <b>tengely</b> párosából születik (<a href="tananyag-forgastestek.html#def-forgastest">→</a>):</p><table class="tt-table"><tr><th>Síkidom</th><th>Tengely</th><th>A keletkező test</th></tr><tr><td>téglalap</td><td>az egyik oldala</td><td><b>henger</b></td></tr><tr><td>derékszögű háromszög</td><td>az egyik <b>befogó</b></td><td><b>kúp</b></td></tr><tr><td>derékszögű háromszög</td><td>az <b>átfogó</b></td><td>két kúp közös alaplappal</td></tr><tr><td>félkör</td><td>az átmérője</td><td><b>gömb</b></td></tr><tr><td>derékszögű trapéz</td><td>a merőleges szára</td><td><b>csonkakúp</b></td></tr></table><p>⚠️ A tengely megválasztása <b>nem</b> mindegy: a téglalap két oldala körül forgatva két <b>különböző</b> térfogatú henger keletkezik, mert a sugár négyzetesen, a magasság csak lineárisan számít.</p>
+
+    <h2 id="s1">Metszetek</h2>
+
+    <p><b>Tengelyre merőleges</b> metszet: mindig <b>kör</b> (<a href="tananyag-forgastestek.html#tetel-meroleges-metszet">→</a>). Hengernél az alapkörrel <b>egybevágó</b>, kúpnál <b>hasonló</b> — a hasonlóság aránya a <b>csúcstól</b> mért magasságok aránya (<a href="tananyag-sikmetszetek.html#tetel-parhuzamos-metszet">→</a>).</p><p><b>Tengelymetszet</b> (a tengelyt <b>tartalmazó</b> síkkal, <a href="tananyag-sikmetszetek.html#tetel-tengelymetszet">→</a>):</p><table class="tt-table"><tr><th>Test</th><th>A tengelymetszete</th><th>Területe</th></tr><tr><td>henger</td><td>téglalap (<span class="math inline">\(2r\times H\)</span>)</td><td><span class="math inline">\(T=2r\,H\)</span></td></tr><tr><td>kúp</td><td>egyenlő szárú háromszög (alap <span class="math inline">\(2r\)</span>, szárak <span class="math inline">\(s\)</span>)</td><td><span class="math inline">\(T=r\,H\)</span></td></tr><tr><td>csonkakúp</td><td>egyenlő szárú trapéz</td><td><span class="math inline">\(T=(R+r)H\)</span></td></tr><tr><td>gömb</td><td><b>főkör</b> (<span class="math inline">\(R\)</span> sugarú)</td><td><span class="math inline">\(T=R^2\pi\)</span></td></tr></table><p>Ha a tengelymetszet <b>négyzet</b>, a henger <b>egyenlő oldalú</b> (<span class="math inline">\(H=2r\)</span>, <a href="tananyag-henger.html#def-egyenlo-oldalu-henger">→</a>); ha <b>szabályos háromszög</b>, a kúp egyenlő oldalú (<span class="math inline">\(s=2r\)</span>, <span class="math inline">\(H=r\sqrt3\)</span>, <a href="tananyag-kup.html#def-egyenlo-oldalu-kup">→</a>).</p>
+
+    <h2 id="s2">A négy test képlete</h2>
+
+    <table class="tt-table"><tr><th>Test</th><th>Felszín</th><th>Térfogat</th><th>Kulcs-összefüggés</th></tr><tr><td><a href="tananyag-henger-felszin-terfogat.html#tetel-henger-felszin">henger</a></td><td><span class="math inline">\(F=2r\pi(r+H)\)</span></td><td><span class="math inline">\(V=r^2\pi H\)</span></td><td><span class="math inline">\(s=H\)</span></td></tr><tr><td><a href="tananyag-kup-felszin-terfogat.html#tetel-kup-felszin">kúp</a></td><td><span class="math inline">\(F=r\pi(r+s)\)</span></td><td><span class="math inline">\(V=\dfrac{r^2\pi H}{3}\)</span></td><td><span class="math inline">\(s^2=r^2+H^2\)</span></td></tr><tr><td><a href="tananyag-csonkakup.html#tetel-csonkakup-felszin">csonkakúp</a></td><td><span class="math inline">\(F=R^2\pi+r^2\pi+(R+r)\pi s\)</span></td><td><span class="math inline">\(V=\dfrac{H\pi}{3}\left(R^2+Rr+r^2\right)\)</span></td><td><span class="math inline">\(s^2=H^2+(R-r)^2\)</span></td></tr><tr><td><a href="tananyag-gomb-felszin-terfogat.html#tetel-gomb-felszin">gömb</a></td><td><span class="math inline">\(F=4R^2\pi\)</span></td><td><span class="math inline">\(V=\dfrac{4R^3\pi}{3}\)</span></td><td>egyetlen adat: <span class="math inline">\(R\)</span></td></tr></table><p><b>Jelölések:</b> <span class="math inline">\(r\)</span> az alapkör sugara (csonkakúpnál a <b>felső</b>, <span class="math inline">\(R\)</span> az alsó; gömbnél <span class="math inline">\(R\)</span> maga a sugár) · <span class="math inline">\(H\)</span> a testmagasság · <span class="math inline">\(s\)</span> az <b>alkotó</b> · <span class="math inline">\(B=r^2\pi\)</span> az alapterület · <span class="math inline">\(M\)</span> a palást területe.</p><p><b>A palást külön:</b> henger <span class="math inline">\(M=2r\pi H\)</span> · kúp <span class="math inline">\(M=r\pi s\)</span> · csonkakúp <span class="math inline">\(M=(R+r)\pi s\)</span> · a kúp hálójában a körcikk szöge <span class="math inline">\(\varphi=360^\circ\cdot\dfrac rs\)</span> (<a href="tananyag-kup.html#tetel-kup-halo">→</a>).</p>
+
+    <h2 id="s3">Összetett és üreges testek</h2>
+
+    <p><b>Térfogat:</b> a részek térfogata <b>összeadódik</b> (<a href="tananyag-osszetett-testek.html#tetel-osszetett-terfogat">→</a>); üreges testnél <b>kivonunk</b>.</p><p><b>Felszín:</b> csak a <b>kívülről látható</b> felületek számítanak — az illeszkedő lapok <b>kiesnek</b> (<a href="tananyag-osszetett-testek.html#tetel-osszetett-felszin">→</a>). A biztos módszer: rajzold le, és satírozd be, ami látszik.</p><p>A cső felszíne <b>négy</b> darabból áll: két körgyűrű, a külső és a <b>belső</b> palást.</p><p><b>Fél-testek:</b> félgömb térfogata <span class="math inline">\(\frac23R^3\pi\)</span>, görbült felülete <span class="math inline">\(2R^2\pi\)</span> — az alapköre csak akkor számít, ha kívülről látszik.</p>
+
+    <h2 id="s4">A gömb és a sík</h2>
+
+    <p>A helyzetet a középpont–sík távolság (<span class="math inline">\(d\)</span>) és a sugár (<span class="math inline">\(R\)</span>) viszonya dönti el (<a href="tananyag-gomb.html#tetel-gomb-sik">→</a>):</p><table class="tt-table"><tr><th>Feltétel</th><th>Helyzet</th><th>Közös pontok</th></tr><tr><td><span class="math inline">\(d &gt; R\)</span></td><td>elkerüli</td><td>nincs</td></tr><tr><td><span class="math inline">\(d = R\)</span></td><td><b>érinti</b></td><td>pontosan egy</td></tr><tr><td><span class="math inline">\(d &lt; R\)</span></td><td>metszi</td><td>egy kör</td></tr></table><p>Az <b>érintősík</b> merőleges az érintési pontba húzott sugárra (<a href="tananyag-gomb.html#tetel-erintosik">→</a>).</p>
+
+    <h2 id="s5">A hét leggyakoribb hiba</h2>
+
+    <div class="brief"><p>🚨 <b>1)</b> A palástba a <b>magasságot</b> írják az <b>alkotó</b> helyett (<span class="math inline">\(M=r\pi H\)</span>) — a felületen az alkotó, a belsejében a magasság. &nbsp; <b>2)</b> A henger felszínébe csak <b>egy</b> alapkört tesznek — kettő van (kivéve, ha a feladat nyitott edényről szól). &nbsp; <b>3)</b> A háló téglalapjának oldalára <span class="math inline">\(2r\)</span>-t írnak <span class="math inline">\(2r\pi\)</span> helyett. &nbsp; <b>4)</b> Az egyenlő oldalú hengernél <span class="math inline">\(H=r\)</span>-rel számolnak <span class="math inline">\(H=2r\)</span> helyett. &nbsp; <b>5)</b> A csonkakúp derékszögű háromszögében <span class="math inline">\(R+r\)</span> szerepel <span class="math inline">\(R-r\)</span> helyett — és <span class="math inline">\(R^2+Rr+r^2\ne(R+r)^2\)</span>. &nbsp; <b>6)</b> A gömbnél az <b>átmérőt</b> helyettesítik a sugár helyére; a kitevőket a <b>mértékegység</b> ellenőrzi (felszín → négyzet, térfogat → köb). &nbsp; <b>7)</b> Összetett testnél a felszíneket <b>összeadják</b> — az illeszkedő lapok nem látszanak.</p></div>
+
+    <h2 id="s6">Mit hol találsz?</h2>
+
+    <div class="brief"><p>📚 <b>Tananyag:</b> <a href="tananyag-forgastestek.html">forgástestek</a> · <a href="tananyag-henger.html">henger</a> · <a href="tananyag-henger-felszin-terfogat.html">henger F és V</a> · <a href="tananyag-kup.html">kúp</a> · <a href="tananyag-kup-felszin-terfogat.html">kúp F és V</a> · <a href="tananyag-sikmetszetek.html">síkmetszetek</a> · <a href="tananyag-csonkakup.html">csonkakúp</a> · <a href="tananyag-gomb.html">gömb</a> · <a href="tananyag-gomb-felszin-terfogat.html">gömb F és V</a> · <a href="tananyag-osszetett-testek.html">összetett testek</a>.</p><p>🎯 <b>Gyakorlás:</b> <a href="feladatok-henger.html">henger</a> · <a href="feladatok-kup.html">kúp és csonkakúp</a> · <a href="feladatok-gomb.html">gömb és összetett testek</a> — majd indulj <a href="terepkuldetes.html">Az Átalakulás Kamrájába</a>!</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-gomb.html"><span class="irany">← Előző</span><span class="hova">Feladatok — a gömb és az összetett testek</span></a>
+      <a class="kov" href="terepkuldetes.html"><span class="irany">Következő →</span><span class="hova">Az Átalakulás Kamrája</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
