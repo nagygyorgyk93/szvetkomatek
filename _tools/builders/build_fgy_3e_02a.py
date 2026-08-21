@@ -86,7 +86,7 @@ ALAP = [
   ["henger", "kúp", "gömb", "csonkakúp"], True),
 
  ("Egy $5\\times9$-es téglalapot megforgatunk a $9$ egység hosszú oldala körül. "
-  "Mekkora a keletkező henger alapkörének sugara és a magassága?", None,
+  "Mekkora a keletkező henger alapkörének sugara és a henger magassága?", None,
   "A tengellyel párhuzamos oldal lesz a magasság, a rá merőleges a sugár: $r=5$ és "
   "$H=9$."),
 
@@ -113,8 +113,8 @@ ALAP = [
  ("Egy egyenlő oldalú henger magassága $14$ cm. Mekkora az alapkörének sugara?", None,
   "$H=2r$, ezért $r=7$ cm."),
 
- ("Egy henger tengelymetszete $8\\ \\text{cm}\\times5\\ \\text{cm}$-es téglalap. "
-  "Mekkora a sugara és a magassága?", None,
+ ("Egy henger tengelymetszete olyan téglalap, amelynek az <b>alapkörre illeszkedő</b> "
+  "oldala $8$ cm, a másik $5$ cm. Mekkora a sugara és a magassága?", None,
   "A tengelymetszet egyik oldala az <b>átmérő</b>: $2r=8$, tehát $r=4$ cm; a másik a "
   "magasság: $H=5$ cm."),
 
@@ -158,12 +158,14 @@ ALAP = [
  ("Egy hengeres tartály alapkörének sugara $2$ m, magassága $5$ m. Hány köbméter, és "
   "hány <b>liter</b> víz fér bele? (Két tizedesre kerekítve.)", None,
   "$V=4\\pi\\cdot5=20\\pi\\approx62{,}83\\ \\text{m}^3$. Mivel "
-  "$1\\ \\text{m}^3=1000$ liter, ez körülbelül $62\\,832$ liter."),
+  "$1\\ \\text{m}^3=1000$ liter, ez a pontos értékből számolva körülbelül "
+  "$62\\,832$ liter."),
 
  ("Egy <b>fedél nélküli</b> hengeres tartály alapkörének sugara $3$ dm, magassága "
   "$8$ dm. Hány négyzetdeciméter lemezre van szükség a gyártásához?", None,
-  "Csak <b>egy</b> alapkör kell: $F=r^2\\pi+2r\\pi H=9\\pi+48\\pi="
-  "57\\pi\\ \\text{dm}^2$."),
+  "Csak <b>egy</b> alapkör kell, ezért a szükséges lemez területe "
+  "$r^2\\pi+2r\\pi H=9\\pi+48\\pi=57\\pi\\ \\text{dm}^2$. (A test teljes felszíne "
+  "ennél nagyobb: $F=66\\pi\\ \\text{dm}^2$ — de a fedél most hiányzik.)"),
 
  ("Egy hengeres oszlop alapkörének sugara $1$ m, magassága $4$ m. Hány négyzetméter a "
   "<b>palástja</b>? (Két tizedesre kerekítve.)", None,
@@ -179,14 +181,15 @@ KOZEP = [
   "oldal körül $r=4$ és $H=6$, tehát $V_2=16\\pi\\cdot6=96\\pi$. Az első a nagyobb, "
   "és $\\frac{144\\pi}{96\\pi}=\\frac32$-szerese a másodiknak."),
 
- ("Egy derékszögű háromszög befogói $3$ cm és $4$ cm. Mekkora a keletkező kúp "
-  "térfogata, ha megforgatjuk", ["a $3$ cm-es befogó körül", "a $4$ cm-es befogó körül"],
-  ["$r=4$, $H=3$, tehát $V=\\frac{16\\pi\\cdot3}{3}=16\\pi\\ \\text{cm}^3$",
-   "$r=3$, $H=4$, tehát $V=\\frac{9\\pi\\cdot4}{3}=12\\pi\\ \\text{cm}^3$"], True),
+ ("Egy derékszögű háromszög befogói $3$ cm és $4$ cm. Mekkora a keletkező kúp sugara, "
+  "magassága és alkotója, ha megforgatjuk",
+  ["a $3$ cm-es befogó körül", "a $4$ cm-es befogó körül"],
+  ["$H=3$, $r=4$, az alkotó pedig az átfogó: $s=5$ cm",
+   "$H=4$, $r=3$, az alkotó ugyanaz az átfogó: $s=5$ cm"], True),
 
  # --- A2 (közép 3–5)
- ("Egy henger palástja kiterítve olyan téglalap, amelynek az egyik oldala "
-  "$12\\pi$ cm, a másik $7$ cm. Mekkora a henger sugara és magassága?", None,
+ ("Egy henger palástja kiterítve olyan téglalap, amelynek az <b>alapkörre simuló</b> "
+  "oldala $12\\pi$ cm, a másik $7$ cm. Mekkora a henger sugara és magassága?", None,
   "A $12\\pi$ az alapkör kerülete: $2r\\pi=12\\pi$, tehát $r=6$ cm. A magasság a másik "
   "oldal: $H=7$ cm."),
 
@@ -215,7 +218,7 @@ KOZEP = [
   "$2r^2\\pi+2r\\pi\\cdot3r=8r^2\\pi=32\\pi$, tehát $r^2=4$, azaz $r=2$ cm és "
   "$H=6$ cm."),
 
- ("Két henger alapköre egyenlő, a magasságuk aránya $2:3$. Hogyan aránylik a "
+ ("Két henger alapköre egybevágó, a magasságuk aránya $2:3$. Hogyan aránylik a "
   "térfogatuk?", None,
   "A térfogat a magassággal <b>egyenesen arányos</b> (a $r^2\\pi$ tényező közös), ezért "
   "a térfogatok aránya is $2:3$."),
@@ -265,11 +268,12 @@ NEHEZ = [
   "alacsonyabb</b> henger a nagyobb, mégpedig $\\frac{1500}{\\pi}\\approx477{,}46\\ "
   "\\text{cm}^3$-rel."),
 
- ("Egy $5$ cm sugarú hengeres pohárban a víz $8$ cm magasan áll. Beleteszünk egy testet, "
-  "amitől a vízszint $3$ cm-t emelkedik. Mekkora a test térfogata?", None,
+ ("Egy $5$ cm sugarú hengeres pohárban víz van. Beleteszünk egy <b>teljesen elmerülő</b> "
+  "testet, amitől a vízszint $3$ cm-t emelkedik (a víz nem folyik ki). Mekkora a test "
+  "térfogata?", None,
   "A kiszorított víz térfogata egy $5$ cm sugarú, $3$ cm magas henger térfogata: "
-  "$V=25\\pi\\cdot3=75\\pi\\ \\text{cm}^3$. (A kezdeti $8$ cm fölösleges adat — csak "
-  "azt biztosítja, hogy a test elmerüljön.)"),
+  "$V=25\\pi\\cdot3=75\\pi\\ \\text{cm}^3$. A pohár eredeti vízszintje nem számít — "
+  "csak az emelkedés mértéke."),
 
  ("Egy henger magassága megegyezik az alapkör <b>sugarával</b>, és a felszínének "
   "és a térfogatának a <b>számértéke</b> egyenlő. Mekkora a sugár?", None,
@@ -301,7 +305,7 @@ body = [
 ]
 
 ut = oldal(tagozat="3e", mappa="02-forgastestek", fajl="feladatok-henger.html",
-           cim="Feladatok — a henger", temakor="Forgástestek",
+           cim="A henger", temakor="Forgástestek",
            alcim="Forgástestek felismerése, a henger elemei, hálója, felszíne és "
                  "térfogata. A végeredmény pontos alakban áll ($\\pi$-vel); "
                  "közelítést csak ott adunk, ahol a feladat kéri. "

@@ -184,8 +184,8 @@ ALAP = [
   ["$T=\\frac{2r\\cdot H}{2}=\\frac{10\\cdot12}{2}=60\\ \\text{cm}^2$",
    "$s=13$ cm, ezért $K=2r+2s=10+26=36$ cm"], True),
 
- ("Egy kúp alapkörének sugara $8$ cm. A csúcstól mért magasság <b>felénél</b> "
-  "elmetsszük az alaplappal párhuzamos síkkal. Mekkora a metszetkör sugara és "
+ ("Egy kúp alapkörének sugara $8$ cm. A <b>csúcstól</b> mérve a magasság felénél elmetsszük "
+  "az alaplappal párhuzamos síkkal. Mekkora a metszetkör sugara és "
   "területe?", None,
   "A hasonlóság aránya $k=\\frac12$, ezért a metszetkör sugara $4$ cm, a területe "
   "pedig $16\\pi\\ \\text{cm}^2$."),
@@ -195,37 +195,44 @@ ALAP = [
   "A henger párhuzamos metszete az alapkörrel <b>egybevágó</b>, ezért a területe "
   "$49\\pi\\ \\text{cm}^2$ — bárhol is metszünk."),
 
- ("Egy kúp alapkörének sugara $9$ cm, magassága $12$ cm. A csúcstól mért magasság "
-  "<b>harmadánál</b> metsszük el az alaplappal párhuzamosan. Mekkora a metszetkör "
+ ("Egy kúp alapkörének sugara $9$ cm, magassága $12$ cm. A <b>csúcstól</b> mérve a magasság "
+  "harmadánál metsszük el az alaplappal párhuzamosan. Mekkora a metszetkör "
   "sugara és területe?", None,
   "$k=\\frac13$, ezért a sugár $9\\cdot\\frac13=3$ cm, a terület pedig "
   "$9\\pi\\ \\text{cm}^2$. (A $12$ cm-es magasság ehhez nem is kell.)"),
 
  # --- B4: csonkakúp (alap 22–28)
- ("Egy csonkakúp alapkörének sugara $8$ cm, fedőköréé $5$ cm, magassága $4$ cm. "
+ ("Egy csonkakúp alapkörének sugara $R=8$ cm, fedőköréé $r=5$ cm, magassága $H=4$ cm. "
   "Mekkora az alkotója?", None,
   "$s=\\sqrt{H^2+(R-r)^2}=\\sqrt{16+9}=5$ cm."),
 
- ("Egy csonkakúp sugarai $10$ cm és $4$ cm, alkotója $10$ cm. Mekkora a magassága?", None,
+ ("Egy csonkakúp alapkörének sugara $R=10$ cm, fedőköréé $r=4$ cm, az alkotója $10$ cm. "
+  "Mekkora a magassága?", None,
   "$s^2=H^2+(R-r)^2$, tehát $100=H^2+36$, ahonnan $H=8$ cm."),
 
- ("Egy csonkakúp sugarai $6$ cm és $3$ cm, alkotója $5$ cm. Mekkora a palástja?", None,
+ ("Egy csonkakúp alapkörének sugara $R=6$ cm, fedőköréé $r=3$ cm, az alkotója $5$ cm. "
+  "Mekkora a palástja?", None,
   "$M=(R+r)\\pi s=9\\pi\\cdot5=45\\pi\\ \\text{cm}^2$."),
 
- ("Egy csonkakúp sugarai $6$ cm és $3$ cm, alkotója $5$ cm. Mekkora a <b>felszíne</b>?", None,
+ ("Egy csonkakúp alapkörének sugara $R=6$ cm, fedőköréé $r=3$ cm, az alkotója $5$ cm. "
+  "Mekkora a <b>felszíne</b>?", None,
   "$F=R^2\\pi+r^2\\pi+M=36\\pi+9\\pi+45\\pi=90\\pi\\ \\text{cm}^2$."),
 
- ("Egy csonkakúp sugarai $6$ cm és $3$ cm, magassága $4$ cm. Mekkora a térfogata?", None,
+ ("Egy csonkakúp alapkörének sugara $R=6$ cm, fedőköréé $r=3$ cm, a magassága $H=4$ cm. "
+  "Mekkora a térfogata?", None,
   "$V=\\frac{H\\pi}{3}\\left(R^2+Rr+r^2\\right)=\\frac{4\\pi}{3}(36+18+9)="
   "\\frac{4\\pi}{3}\\cdot63=84\\pi\\ \\text{cm}^3$."),
 
- ("Egy csonkakúp sugarai $5$ cm és $2$ cm, magassága $6$ cm. Mekkora a térfogata?", None,
+ ("Egy csonkakúp alapkörének sugara $R=5$ cm, fedőköréé $r=2$ cm, a magassága $H=6$ cm. "
+  "Mekkora a térfogata?", None,
   "$V=\\frac{6\\pi}{3}(25+10+4)=2\\pi\\cdot39=78\\pi\\ \\text{cm}^3$."),
 
  ("Egy virágcserép csonkakúp alakú: a felső körének sugara $10$ cm, az aljáé $7$ cm, a "
   "magassága $12$ cm. Hány <b>liter</b> föld fér bele? (Két tizedesre kerekítve.)", None,
   "$V=\\frac{12\\pi}{3}(100+70+49)=4\\pi\\cdot219=876\\pi\\approx2752{,}04\\ "
-  "\\text{cm}^3$, ami körülbelül $2{,}75$ liter."),
+  "\\text{cm}^3$, ami körülbelül $2{,}75$ liter. (A térfogatképlet a két sugárban "
+  "<b>szimmetrikus</b>, ezért mindegy, melyiket nevezzük $R$-nek — a cserép felfelé "
+  "szélesedik.)"),
 ]
 
 # ============================== KÖZÉPSZINT ==============================
@@ -261,10 +268,10 @@ KOZEP = [
   "$9\\sqrt3\\ \\text{cm}^2$. Mekkora a kúp térfogata?", None,
   "A szabályos háromszög területe $\\frac{a^2\\sqrt3}{4}=9\\sqrt3$, tehát $a^2=36$ és "
   "$a=6$ cm. Ez az átmérő, ezért $r=3$ cm, az alkotó $s=6$ cm, a magasság "
-  "$H=3\\sqrt3$ cm. Így $V=\\frac{9\\pi\\cdot3\\sqrt3}{3}=9\\sqrt3\\,\\pi\\approx"
-  "15{,}59\\pi\\ \\text{cm}^3$."),
+  "$H=3\\sqrt3$ cm. Így $V=\\frac{9\\pi\\cdot3\\sqrt3}{3}=9\\sqrt3\\,\\pi\\ "
+  "\\text{cm}^3$."),
 
- ("Két kúp alapköre egyenlő, a magasságuk aránya $3:5$. Hogyan aránylik a térfogatuk?", None,
+ ("Két kúp alapköre egybevágó, a magasságuk aránya $3:5$. Hogyan aránylik a térfogatuk?", None,
   "A térfogat a magassággal egyenesen arányos, ezért a térfogatok aránya is $3:5$."),
 
  ("Egy kúp magassága az alapkör sugarának <b>háromszorosa</b>, a térfogata "
@@ -274,8 +281,8 @@ KOZEP = [
  ("Egy kúp és egy henger alapköre és magassága is megegyezik: $r=4$ cm, $H=9$ cm. "
   "Mennyivel nagyobb a henger térfogata?", None,
   "$V_{\\text{henger}}=16\\pi\\cdot9=144\\pi$, $V_{\\text{kúp}}=\\frac{144\\pi}{3}"
-  "=48\\pi$. A különbség $96\\pi\\ \\text{cm}^3$ — vagyis a henger a kúp "
-  "<b>háromszorosa</b>."),
+  "=48\\pi$. A különbség $96\\pi\\ \\text{cm}^3$ — vagyis a henger térfogata a "
+  "kúpénak a <b>háromszorosa</b>."),
 
  ("Egy kúp alkotója $25$ cm, magassága $24$ cm. Mekkora a felszíne és a térfogata?", None,
   "$r=\\sqrt{625-576}=7$ cm. Innen $F=49\\pi+7\\cdot25\\pi=224\\pi\\ \\text{cm}^2$ és "
@@ -309,13 +316,14 @@ KOZEP = [
   "és $V=\\frac{36\\pi\\cdot8}{3}=96\\pi\\ \\text{cm}^3$."),
 
  # --- B4 (közép 16–21)
- ("Egy csonkakúp sugarai $9$ cm és $4$ cm, magassága $12$ cm. Számítsd ki",
+ ("Egy csonkakúp alapkörének sugara $R=9$ cm, fedőköréé $r=4$ cm, a magassága $H=12$ cm. "
+  "Számítsd ki",
   ["az alkotóját", "a palástját", "a felszínét"],
   ["$s=\\sqrt{144+25}=13$ cm", "$M=(9+4)\\pi\\cdot13=169\\pi\\ \\text{cm}^2$",
    "$F=81\\pi+16\\pi+169\\pi=266\\pi\\ \\text{cm}^2$"], True),
 
- ("Egy csonkakúp sugarai $5$ cm és $3$ cm, térfogata $196\\pi\\ \\text{cm}^3$. Mekkora a "
-  "magassága?", None,
+ ("Egy csonkakúp alapkörének sugara $R=5$ cm, fedőköréé $r=3$ cm, a térfogata "
+  "$196\\pi\\ \\text{cm}^3$. Mekkora a magassága?", None,
   "$\\frac{H\\pi}{3}(25+15+9)=\\frac{49H\\pi}{3}=196\\pi$, tehát "
   "$H=\\frac{196\\cdot3}{49}=12$ cm."),
 
@@ -381,8 +389,8 @@ NEHEZ = [
   "$H=6$ cm és $V=\\frac{36\\pi\\cdot6}{3}=72\\pi\\ \\text{cm}^3$."),
 ]
 
-JOKER = ("Egy $20$ cm sugarú körlapból kivágjuk a <b>negyedét</b>, és a körcikkből "
-         "tölcsért hajtunk. Mekkora a tölcsér térfogata? (Adj pontos alakot és "
+JOKER = ("Egy $20$ cm sugarú körlapból kivágunk egy <b>negyedkörcikket</b>, és <b>abból</b> "
+         "hajlítunk tölcsért. Mekkora a tölcsér térfogata? (Adj pontos alakot és "
          "közelítést is!)",
          "A körcikk sugara lesz az <b>alkotó</b>: $s=20$ cm, a középponti szöge "
          "$\\varphi=90^\\circ$.<br>"
@@ -404,7 +412,7 @@ body = [
 ]
 
 ut = oldal(tagozat="3e", mappa="02-forgastestek", fajl="feladatok-kup.html",
-           cim="Feladatok — a kúp és a csonkakúp", temakor="Forgástestek",
+           cim="A kúp és a csonkakúp", temakor="Forgástestek",
            alcim="A kúp elemei, felszíne és térfogata, a henger és a kúp síkmetszetei, "
                  "valamint a csonkakúp. A végeredmény pontos alakban áll ($\\pi$-vel); "
                  "közelítést csak ott adunk, ahol a feladat kéri. "

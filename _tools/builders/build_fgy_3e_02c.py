@@ -90,12 +90,14 @@ ALAP = [
    "$d=12&gt;10=R$ — a sík <b>elkerüli</b>, nincs közös pont"], True),
 
  ("Mit nevezünk a gömb <b>főkörének</b>, és mekkora a sugara?", None,
-  "A főkör a gömb <b>középpontján átmenő</b> síkkal vett metszet. A sugara maga a gömb "
+  "A főkör a <b>gömbfelület</b> és a középponton átmenő sík metszete. A sugara maga a gömb "
   "sugara, $R$ — ez a gömb lehető legnagyobb síkmetszete."),
 
- ("Egy gömb sugara $7$ cm. Milyen síkidom a tengelymetszete, és mekkora a területe?", None,
-  "A gömb minden tengelymetszete <b>főkör</b>, tehát $7$ cm sugarú kör; a területe "
-  "$49\\pi\\ \\text{cm}^2$."),
+ ("Egy gömb sugara $7$ cm. Milyen síkidomot kapunk, ha a <b>középponton átmenő</b> síkkal "
+  "metsszük el, és mekkora ennek a területe?", None,
+  "A metszet <b>főkörlap</b>: $7$ cm sugarú körlap, a területe "
+  "$49\\pi\\ \\text{cm}^2$. A gömbnek nincs kitüntetett tengelye — bármely, a "
+  "középponton átmenő sík ugyanezt adja."),
 
  ("Hány közös pontja van egy gömbfelületnek és az <b>érintősíkjának</b>, és milyen "
   "szöget zár be a sík az érintési pontba húzott sugárral?", None,
@@ -105,9 +107,10 @@ ALAP = [
  ("Igaz vagy hamis?", 
   ["A gömbfelület minden pontja ugyanolyan messze van a középponttól.",
    "A gömb (test) minden pontja ugyanolyan messze van a középponttól.",
-   "A gömbnek van olyan síkmetszete, amely nem kör."],
+   "A gömbfelületnek van olyan síkmetszete, amely nem kör."],
   ["igaz", "hamis — legfeljebb $R$ távolságra vannak, a belső pontok közelebb",
-   "hamis — a gömb minden síkmetszete kör (vagy egyetlen pont, vagy üres)"], True),
+   "igaz — ha a sík <b>érinti</b> a gömbfelületet, a metszet egyetlen <b>pont</b>; ha "
+   "elkerüli, akkor nincs is közös pontjuk"], True),
 
  # --- C2: felszín és térfogat (alap 7–16)
  ("Egy gömb sugara $6$ cm. Számítsd ki a felszínét és a térfogatát!", None,
@@ -161,8 +164,9 @@ ALAP = [
   "A henger $9\\pi\\cdot6=54\\pi$, a kúp $\\frac{9\\pi\\cdot4}{3}=12\\pi$, tehát "
   "összesen $66\\pi\\ \\text{cm}^3$."),
 
- ("Egy hengeres oszlop ($r=5$ cm, $H=12$ cm) tetején félgömb van. Mekkora a "
-  "<b>külső</b> felülete, ha az alsó körlapot nem számítjuk?", None,
+ ("Egy hengeres oszlop ($r=5$ cm, $H=12$ cm) tetején félgömb van, amelynek a sugara a "
+  "hengerével egyenlő. Mekkora a <b>külső</b> felülete, ha az alsó körlapot nem "
+  "számítjuk?", None,
   "A hengerpalást $2\\cdot5\\pi\\cdot12=120\\pi$, a félgömb görbült felülete "
   "$\\frac12\\cdot4\\cdot25\\pi=50\\pi$, tehát $F=170\\pi\\ \\text{cm}^2$. (A henger "
   "felső körlapja nem látszik — azon ül a félgömb.)"),
@@ -181,7 +185,8 @@ KOZEP = [
  # --- C1 (közép 1–3)
  ("Egy gömb sugara $15$ cm. Milyen távolságra lehet a középponttól egy sík, ha",
   ["érinti a gömbfelületet", "metszi", "elkerüli"],
-  ["$d=15$ cm (pontosan a sugárral egyenlő)", "$d&lt;15$ cm", "$d&gt;15$ cm"], True),
+  ["$d=15$ cm (pontosan a sugárral egyenlő)", "$0\\le d&lt;15$ cm (a $d=0$ eset a főkör)",
+   "$d&gt;15$ cm"], True),
 
  ("Egy gömb <b>átmérője</b> $26$ cm, egy sík a középponttól $13$ cm-re halad. Milyen "
   "helyzetben van a sík és a gömbfelület?", None,
@@ -197,7 +202,7 @@ KOZEP = [
  ("Egy gömb sugarát <b>megduplázzuk</b>. Hányszorosára nő a felszíne és a térfogata?", None,
   "A felszínben a sugár négyzeten áll: $(2R)^2=4R^2$, tehát a felszín "
   "<b>négyszereződik</b>. A térfogatban köbön: $(2R)^3=8R^3$, tehát a térfogat "
-  "<b>nyolcszorozódik</b>."),
+  "a <b>nyolcszorosára nő</b>."),
 
  ("Két gömb sugarának aránya $2:3$. Hogyan aránylik a felszínük és a térfogatuk?", None,
   "A felszínek aránya $2^2:3^2=4:9$, a térfogatoké $2^3:3^3=8:27$."),
@@ -228,7 +233,7 @@ KOZEP = [
 
  ("Egy gömb felszínének és térfogatának a <b>számértéke</b> megegyezik. Mekkora a "
   "sugara?", None,
-  "$4R^2\\pi=\\frac{4R^3\\pi}{3}$, ahonnan $3=R$, tehát $R=3$. (A „számérték” "
+  "$4R^2\\pi=\\frac{4R^3\\pi}{3}$. Osztunk $4R^2\\pi$-vel: $1=\\frac R3$, tehát $R=3$. (A „számérték” "
   "megszorítás azért kell, mert a két mennyiség mértékegysége különböző.)"),
 
  # --- C3 (közép 12–17)
@@ -238,8 +243,8 @@ KOZEP = [
   "$\\frac12\\cdot\\frac{4\\cdot216\\pi}{3}=144\\pi$, tehát "
   "$V=504\\pi\\ \\text{m}^3$."),
 
- ("Az előző feladat víztornyánál mekkora a <b>külső</b> felület, ha az alsó körlapot "
-  "nem festik?", None,
+ ("Egy víztorony tartálya hengerből ($r=6$ m, $H=10$ m) és azonos sugarú félgömb tetőből "
+  "áll. Mekkora a <b>külső</b> felülete, ha az alsó körlapot nem festik?", None,
   "A hengerpalást $2\\cdot6\\pi\\cdot10=120\\pi$, a félgömb görbült felülete "
   "$\\frac12\\cdot4\\cdot36\\pi=72\\pi$, tehát $F=192\\pi\\ \\text{m}^2$. A henger "
   "felső körlapja nem külső felület."),
@@ -250,8 +255,9 @@ KOZEP = [
    "két körgyűrű $2(36\\pi-25\\pi)=22\\pi$, külső palást $120\\pi$, belső palást "
    "$100\\pi$ — összesen $F=242\\pi\\ \\text{cm}^2$"], True),
 
- ("Egy tölcsér kúp alakú részből (alapkör sugara $6$ cm, alkotója $10$ cm) és egy "
-  "hengeres nyélből ($r=1$ cm, $H=8$ cm) áll. Mekkora a <b>térfogata</b>?", None,
+ ("Egy tömör dísztárgy kúp alakú részből (alapkör sugara $6$ cm, alkotója $10$ cm) és "
+  "egy hozzáillesztett hengeres nyélből ($r=1$ cm, $H=8$ cm) áll. Mekkora a két rész "
+  "térfogatának <b>összege</b>?", None,
   "A kúp magassága $H=\\sqrt{100-36}=8$ cm, tehát a térfogata "
   "$\\frac{36\\pi\\cdot8}{3}=96\\pi$. A nyél $1\\pi\\cdot8=8\\pi$. Összesen "
   "$104\\pi\\ \\text{cm}^3$."),
@@ -273,7 +279,8 @@ KOZEP = [
 # ============================== NEHÉZ SZINT ==============================
 NEHEZ = [
  ("Egy gömb <b>köré</b> írunk egy kockát (a kocka lapjai érintik a gömböt). Hogyan "
-  "aránylik a kocka és a gömb térfogata?", None,
+  "aránylik a kocka és a gömb térfogata? (A számértéket két tizedesre kerekítve "
+  "add meg!)", None,
   "A kocka éle a gömb átmérője: $a=2R$, tehát $V_{\\text{kocka}}=8R^3$. A gömbé "
   "$\\frac{4R^3\\pi}{3}$. Az arány "
   "$\\frac{8R^3}{\\frac{4R^3\\pi}{3}}=\\frac{6}{\\pi}\\approx1{,}91$ — a kocka "
@@ -282,11 +289,11 @@ NEHEZ = [
  ("Egy $5$ cm sugarú hengeres pohárban víz van. Beleteszünk egy $3$ cm sugarú gömböt, "
   "amely teljesen elmerül. Hány centimétert emelkedik a vízszint?", None,
   "A kiszorított víz térfogata a gömb térfogata: $36\\pi\\ \\text{cm}^3$. Ez a "
-  "pohárban egy $25\\pi$ alapterületű hasábot (hengert) tölt ki: "
+  "pohárban egy $25\\pi$ alapterületű hengert tölt ki: "
   "$25\\pi\\cdot h=36\\pi$, ahonnan $h=1{,}44$ cm."),
 
  ("Egy gömb alakú léggömb sugara $20$ cm-ről $25$ cm-re nő. Hány <b>százalékkal</b> nő "
-  "a felszíne és a térfogata?", None,
+  "a felszíne és a térfogata? (Két tizedesre kerekítve.)", None,
   "A sugarak aránya $\\frac{25}{20}=1{,}25$. A felszínek aránya "
   "$1{,}25^2=1{,}5625$, tehát a felszín $56{,}25\\ \\%$-kal nő. A térfogatoké "
   "$1{,}25^3=1{,}953125$, tehát a térfogat $95{,}31\\ \\%$-kal nő — majdnem "
@@ -309,9 +316,9 @@ JOKER = ("Arkhimédész szerint a gömb és a köré írt henger térfogatának 
          "térfogatoknál.</p>"
          "<p>Ez a kettős egybeesés tette a tételt Arkhimédész kedvencévé: a "
          "hagyomány szerint ezért vésette a hengerbe írt gömböt a sírkövére. Sőt, "
-         "még többről van szó: a gömb <b>palástja</b> pontosan egyenlő a köré írt "
-         "henger palástjával ($4R^2\\pi$) — mintha a gömbfelületet rá lehetne "
-         "teríteni a hengerre.")
+         "még többről van szó: a gömb <b>felszíne</b> pontosan egyenlő a köré írt henger "
+         "<b>palástjával</b> ($4R^2\\pi$) — mintha a gömbfelületet rá lehetne teríteni "
+         "a hengerre.")
 
 # ============================== OLDAL ==============================
 body = [
@@ -322,7 +329,7 @@ body = [
 ]
 
 ut = oldal(tagozat="3e", mappa="02-forgastestek", fajl="feladatok-gomb.html",
-           cim="Feladatok — a gömb és az összetett testek", temakor="Forgástestek",
+           cim="A gömb és az összetett testek", temakor="Forgástestek",
            alcim="A gömbfelület és a sík kölcsönös helyzete, a gömb felszíne és "
                  "térfogata, valamint az összetett és üreges testek. A végeredmény "
                  "pontos alakban áll ($\\pi$-vel); közelítést csak ott adunk, ahol a "
