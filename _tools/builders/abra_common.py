@@ -36,7 +36,9 @@ LILA = "#8b5cf6"
 __all__ = ["svg_szamegyenes", "svg_haromszog", "svg_venn",
            "svg_parhuzamosok", "svg_sokszog_szogek",
            "svg_hasab", "svg_gula", "svg_csonkagula", "svg_haztest",
-           "svg_terelem", "svg_halo", "svg_platoni", "svg_sikidom"]
+           "svg_terelem", "svg_halo", "svg_platoni", "svg_sikidom",
+           "svg_henger", "svg_kup", "svg_csonkakup", "svg_gomb",
+           "svg_forgatas", "svg_osszetett"]
 
 
 def _fej(w: int, h: int, leiras: str) -> list[str]:
@@ -1106,7 +1108,8 @@ def _fej2(w, h, leiras):
             f'aria-label="{leiras}">']
 
 
-_TESTNEV = {"kocka": "kocka", "hasab": "hasáb", "gula": "gúla"}
+_TESTNEV = {"kocka": "kocka", "hasab": "hasáb", "gula": "gúla",
+            "henger": "henger", "kup": "kúp"}
 
 
 def svg_halo(test="kocka", n=4, hibas=False, w=340, h=260, leiras=None):
@@ -1166,7 +1169,7 @@ def svg_halo(test="kocka", n=4, hibas=False, w=340, h=260, leiras=None):
                   f'font-weight="600">K</text>')
         ki.append(f'  <text x="{bx - 9:.1f}" y="{by + m / 2 + 4:.1f}" font-size="12" '
                   f'fill="{TINTA}" text-anchor="end" font-style="italic" '
-                  f'font-weight="600">m</text>')
+                  f'font-weight="600">H</text>')
     elif test == "gula":
         o = min(w, h) * 0.30
         cx, cy = w / 2, h / 2
@@ -1183,6 +1186,52 @@ def svg_halo(test="kocka", n=4, hibas=False, w=340, h=260, leiras=None):
             pts = " ".join(f"{p[0]:.1f},{p[1]:.1f}" for p in t)
             ki.append(f'  <polygon points="{pts}" fill="{ZOLD}" fill-opacity="0.10" '
                       f'stroke="{TINTA}" stroke-width="1.4"/>')
+    elif test == "henger":
+        # palást = téglalap (2rπ × H) + két alapkör
+        rr = min(w * 0.115, h * 0.16)
+        tw, th = 2 * math.pi * rr, rr * 2.4
+        bx, by = (w - tw) / 2, (h - th) / 2
+        ki.append(f'  <rect x="{bx:.1f}" y="{by:.1f}" width="{tw:.1f}" height="{th:.1f}" '
+                  f'fill="{ZOLD}" fill-opacity="0.08" stroke="{TINTA}" stroke-width="1.5"/>')
+        for cy2 in (by - rr - 3, by + th + rr + 3):
+            ki.append(f'  <circle cx="{bx + tw / 2:.1f}" cy="{cy2:.1f}" r="{rr:.1f}" '
+                      f'fill="{KEK}" fill-opacity="0.10" stroke="{TINTA}" '
+                      f'stroke-width="1.4"/>')
+        ki.append(f'  <text x="{bx + tw / 2:.1f}" y="{by + th / 2 + 4:.1f}" font-size="12" '
+                  f'fill="{SZURKE}" text-anchor="middle">palást</text>')
+        ki.append(f'  <text x="{bx + tw / 2:.1f}" y="{by + th + 15:.1f}" font-size="12" '
+                  f'fill="{TINTA}" text-anchor="middle" font-style="italic" '
+                  f'font-weight="600">2rπ</text>')
+        ki.append(f'  <text x="{bx - 9:.1f}" y="{by + th / 2 + 4:.1f}" font-size="12" '
+                  f'fill="{TINTA}" text-anchor="end" font-style="italic" '
+                  f'font-weight="600">H</text>')
+    elif test == "kup":
+        # palást = körcikk (sugara s, ívhossza 2rπ) + az alapkör
+        R2 = min(w * 0.30, h * 0.42)
+        r2 = R2 * 0.42                       # r / s arány → a középponti szög
+        fi = 2 * math.pi * r2 / R2           # φ radiánban
+        cx2, cy2 = w * 0.36, h * 0.52
+        a1 = -fi / 2 - math.pi / 2
+        a2 = fi / 2 - math.pi / 2
+        p1 = (cx2 + R2 * math.cos(a1), cy2 + R2 * math.sin(a1))
+        p2 = (cx2 + R2 * math.cos(a2), cy2 + R2 * math.sin(a2))
+        nagy = 1 if fi > math.pi else 0
+        ki.append(f'  <path d="M{cx2:.1f},{cy2:.1f} L{p1[0]:.1f},{p1[1]:.1f} '
+                  f'A{R2:.1f},{R2:.1f} 0 {nagy} 1 {p2[0]:.1f},{p2[1]:.1f} z" '
+                  f'fill="{ZOLD}" fill-opacity="0.10" stroke="{TINTA}" stroke-width="1.5"/>')
+        ki.append(f'  <text x="{cx2:.1f}" y="{cy2 - R2 * 0.55:.1f}" font-size="12" '
+                  f'fill="{SZURKE}" text-anchor="middle">palást</text>')
+        ki.append(f'  <text x="{cx2 + (p1[0] - cx2) * 0.62 - 12:.1f}" '
+                  f'y="{cy2 + (p1[1] - cy2) * 0.62 + 4:.1f}" '
+                  f'font-size="12" fill="{TINTA}" text-anchor="middle" '
+                  f'font-style="italic" font-weight="600">s</text>')
+        ki.append(f'  <text x="{cx2:.1f}" y="{cy2 + 16:.1f}" font-size="12" '
+                  f'fill="{BOROSTYAN}" text-anchor="middle" font-style="italic" '
+                  f'font-weight="600">φ</text>')
+        ki.append(f'  <circle cx="{w * 0.80:.1f}" cy="{cy2:.1f}" r="{r2:.1f}" '
+                  f'fill="{KEK}" fill-opacity="0.10" stroke="{TINTA}" stroke-width="1.4"/>')
+        ki.append(f'  <text x="{w * 0.80:.1f}" y="{cy2 + r2 + 16:.1f}" font-size="12" '
+                  f'fill="{SZURKE}" text-anchor="middle">alapkör</text>')
     ki.append("</svg>")
     return "\n".join(ki)
 
@@ -1335,3 +1384,469 @@ def svg_sikidom(tipus="trapez", a=1.0, c=0.55, m=0.55, n=6, w=340, h=210,
                       'text-anchor="middle" font-style="italic" font-weight="600">a</text>')
     ki.append("</svg>")
     return "\n".join(ki)
+
+
+# =====================================================================
+# 9. Forgástestek — henger, kúp, csonkakúp, gömb, forgatás, összetett
+#    JELÖLÉS-KÁNON (_JELOLESEK.md): r/R sugár · H testmagasság · s alkotó
+# =====================================================================
+
+LAPULT = 0.30          # az alapkör ellipszisének ry/rx aránya (rálátás)
+
+
+def _ell(cx, cy, rx, ry, szin=TINTA, sz=1.6, kitolt="none", op=None, szaggat=None):
+    d = f' stroke-dasharray="{szaggat}"' if szaggat else ""
+    o = f' fill-opacity="{op}"' if (op is not None and kitolt != "none") else ""
+    return (f'  <ellipse cx="{cx:.1f}" cy="{cy:.1f}" rx="{rx:.1f}" ry="{ry:.1f}" '
+            f'fill="{kitolt}"{o} stroke="{szin}" stroke-width="{sz}"{d}/>')
+
+
+def _iv(cx, cy, rx, ry, elso=True, szin=TINTA, sz=1.6, szaggat=None):
+    """Fél-ellipszis: `elso=True` az elülső (lefelé hajló), False a hátsó ív."""
+    d = f' stroke-dasharray="{szaggat}"' if szaggat else ""
+    sw = 1 if elso else 0
+    return (f'  <path d="M{cx - rx:.1f},{cy:.1f} A{rx:.1f},{ry:.1f} 0 0 {sw} '
+            f'{cx + rx:.1f},{cy:.1f}" fill="none" stroke="{szin}" '
+            f'stroke-width="{sz}"{d}/>')
+
+
+def _von(p, q, szin=TINTA, sz=1.6, szaggat=None):
+    d = f' stroke-dasharray="{szaggat}"' if szaggat else ""
+    return (f'  <line x1="{p[0]:.1f}" y1="{p[1]:.1f}" x2="{q[0]:.1f}" y2="{q[1]:.1f}" '
+            f'stroke="{szin}" stroke-width="{sz}"{d}/>')
+
+
+def _txt(p, szoveg, dx=0, dy=0, szin=TINTA, meret=13, horgony="middle", dolt=True):
+    st = ' font-style="italic"' if dolt else ""
+    return (f'  <text x="{p[0] + dx:.1f}" y="{p[1] + dy:.1f}" font-size="{meret}" '
+            f'fill="{szin}" text-anchor="{horgony}"{st} font-weight="600">{szoveg}</text>')
+
+
+def _dszog(sarok, ir1, ir2, szin=PIROS, meret=9):
+    """Derékszög-jel a `sarok` pontban, az `ir1`/`ir2` pontok felé mutató irányban."""
+    def egys(p):
+        vx, vy = p[0] - sarok[0], p[1] - sarok[1]
+        n = math.hypot(vx, vy) or 1
+        return vx / n * meret, vy / n * meret
+    ax, ay = egys(ir1)
+    bx, by = egys(ir2)
+    return (f'  <path d="M{sarok[0] + ax:.1f},{sarok[1] + ay:.1f} '
+            f'L{sarok[0] + ax + bx:.1f},{sarok[1] + ay + by:.1f} '
+            f'L{sarok[0] + bx:.1f},{sarok[1] + by:.1f}" fill="none" '
+            f'stroke="{szin}" stroke-width="1.1"/>')
+
+
+class _Forg:
+    """2D-rajzoló forgástestekhez. Modellkoordináta: x jobbra, **y felfelé**,
+    az origó az alaplap középpontja. A `P(x, y)` vált pixelre."""
+
+    def __init__(self, w, h, leiras, szeles, magas, par=24, also_ry=0.0):
+        self.w, self.h, self.leiras = w, h, leiras
+        self.s = min((w - 2 * par) / max(szeles, 1e-9),
+                     (h - 2 * par) / max(magas, 1e-9))
+        self.cx = w / 2
+        self.alap_y = h - par - also_ry * self.s
+        self.ki = []
+
+    def P(self, x, y):
+        return (self.cx + x * self.s, self.alap_y - y * self.s)
+
+    def ell(self, y, r, **kw):
+        c = self.P(0, y)
+        self.ki.append(_ell(c[0], c[1], r * self.s, r * self.s * LAPULT, **kw))
+
+    def iv(self, y, r, elso=True, **kw):
+        c = self.P(0, y)
+        self.ki.append(_iv(c[0], c[1], r * self.s, r * self.s * LAPULT, elso, **kw))
+
+    def von(self, p, q, **kw):
+        self.ki.append(_von(self.P(*p), self.P(*q), **kw))
+
+    def txt(self, p, szoveg, **kw):
+        self.ki.append(_txt(self.P(*p), szoveg, **kw))
+
+    def kesz(self):
+        return "\n".join(_fej2(self.w, self.h, self.leiras) + self.ki + ["</svg>"])
+
+
+def _plt(r, H):
+    """A palást halvány kitöltése (henger) — a testszerűség kedvéért."""
+    return None
+
+
+def svg_henger(r=1.0, H=1.7, w=300, h=270, leiras="Egyenes henger",
+               tengely=False, alkoto=False, sugar=True, magassag=True,
+               tengelymetszet=False, parhuzamos_metszet=False, ferde=False,
+               feliratok=None):
+    """Egyenes (vagy `ferde=True` esetén ferde) körhenger.
+
+    `sugar`/`magassag`/`alkoto` — az $r$, $H$, $s$ jelölések kiírása.
+    `tengelymetszet` — a tengelyen átmenő téglalap kiemelve.
+    `parhuzamos_metszet` — az alaplappal párhuzamos metszetkör kiemelve.
+    """
+    f = feliratok or {}
+    d = 0.55 if ferde else 0.0             # a felső lap eltolása
+    R = _Forg(w, h, leiras, 2 * r + abs(d) + 0.9, H + 2 * r * LAPULT + 0.5,
+              also_ry=r * LAPULT)
+    # palást
+    p1, p2 = R.P(-r, 0), R.P(-r + d, H)
+    q1, q2 = R.P(r, 0), R.P(r + d, H)
+    ftop = R.P(d, H)
+    R.ki.append(f'  <path d="M{p1[0]:.1f},{p1[1]:.1f} L{p2[0]:.1f},{p2[1]:.1f} '
+                f'A{r * R.s:.1f},{r * R.s * LAPULT:.1f} 0 0 0 {q2[0]:.1f},{q2[1]:.1f} '
+                f'L{q1[0]:.1f},{q1[1]:.1f} '
+                f'A{r * R.s:.1f},{r * R.s * LAPULT:.1f} 0 0 1 {p1[0]:.1f},{p1[1]:.1f} z" '
+                f'fill="{ZOLD}" fill-opacity="0.08" stroke="none"/>')
+    if tengelymetszet:
+        a1, a2 = R.P(-r, 0), R.P(r, 0)
+        b1, b2 = R.P(-r + d, H), R.P(r + d, H)
+        R.ki.append(f'  <polygon points="{a1[0]:.1f},{a1[1]:.1f} {a2[0]:.1f},{a2[1]:.1f} '
+                    f'{b2[0]:.1f},{b2[1]:.1f} {b1[0]:.1f},{b1[1]:.1f}" fill="{KEK}" '
+                    f'fill-opacity="0.18" stroke="{KEK}" stroke-width="1.6"/>')
+    R.iv(0, r, elso=False, szaggat="5 4", szin=SZURKE)       # takart hátsó ív
+    R.iv(0, r, elso=True)                                     # látható elülső ív
+    R.von((-r, 0), (-r + d, H))
+    R.von((r, 0), (r + d, H))
+    if parhuzamos_metszet:
+        R.ell(H * 0.55, r, szin=ZOLD, sz=1.6, kitolt=ZOLD, op=0.22)
+    c = R.P(d, H)
+    R.ki.append(_ell(c[0], c[1], r * R.s, r * R.s * LAPULT, kitolt="#ffffff", op=0.55))
+    if tengely:
+        R.von((0, 0), (d, H), szin=SZURKE, sz=1.2, szaggat="4 3")
+    if sugar:
+        R.von((0, 0), (r, 0), szin=LILA, sz=1.5)
+        R.txt((r / 2, 0), f.get("r", "r"), dy=15, szin=LILA)
+        R.ki.append('  <circle cx="%.1f" cy="%.1f" r="2.6" fill="%s"/>'
+                    % (*R.P(0, 0), LILA))
+    if magassag:
+        x0 = -r - 0.28
+        R.von((x0, 0), (x0, H), szin=PIROS, sz=1.4, szaggat="4 3")
+        R.von((x0 - 0.07, 0), (x0 + 0.07, 0), szin=PIROS, sz=1.2)
+        R.von((x0 - 0.07, H), (x0 + 0.07, H), szin=PIROS, sz=1.2)
+        R.txt((x0, H / 2), f.get("H", "H"), dx=-7, szin=PIROS, horgony="end")
+    if alkoto:
+        R.von((r, 0), (r + d, H), szin=BOROSTYAN, sz=2.0)
+        R.txt((r + d / 2, H / 2), f.get("s", "s"), dx=8, szin=BOROSTYAN, horgony="start")
+    return R.kesz()
+
+
+def svg_kup(r=1.0, H=1.9, w=300, h=280, leiras="Egyenes körkúp",
+            alkoto=True, tengely=False, sugar=True, magassag=True,
+            tengelymetszet=False, parhuzamos_metszet=False, ferde=False,
+            haromszog=False, feliratok=None):
+    """Egyenes (vagy ferde) körkúp. `haromszog=True`: a jellemző derékszögű
+    háromszög ($r$, $H$, $s$) kiemelve."""
+    f = feliratok or {}
+    d = 0.7 if ferde else 0.0
+    R = _Forg(w, h, leiras, 2 * r + abs(d) + 0.9, H + 2 * r * LAPULT + 0.45,
+              also_ry=r * LAPULT)
+    cs = (d, H)
+    p1, q1 = R.P(-r, 0), R.P(r, 0)
+    C = R.P(*cs)
+    R.ki.append(f'  <path d="M{p1[0]:.1f},{p1[1]:.1f} L{C[0]:.1f},{C[1]:.1f} '
+                f'L{q1[0]:.1f},{q1[1]:.1f} '
+                f'A{r * R.s:.1f},{r * R.s * LAPULT:.1f} 0 0 1 {p1[0]:.1f},{p1[1]:.1f} z" '
+                f'fill="{ZOLD}" fill-opacity="0.08" stroke="none"/>')
+    if tengelymetszet:
+        R.ki.append(f'  <polygon points="{p1[0]:.1f},{p1[1]:.1f} {q1[0]:.1f},{q1[1]:.1f} '
+                    f'{C[0]:.1f},{C[1]:.1f}" fill="{KEK}" fill-opacity="0.18" '
+                    f'stroke="{KEK}" stroke-width="1.6"/>')
+    if haromszog:
+        o = R.P(0, 0)
+        R.ki.append(f'  <polygon points="{o[0]:.1f},{o[1]:.1f} {q1[0]:.1f},{q1[1]:.1f} '
+                    f'{C[0]:.1f},{C[1]:.1f}" fill="{BOROSTYAN}" fill-opacity="0.16" '
+                    f'stroke="none"/>')
+    R.iv(0, r, elso=False, szaggat="5 4", szin=SZURKE)
+    R.iv(0, r, elso=True)
+    R.von((-r, 0), cs)
+    R.von((r, 0), cs)
+    if parhuzamos_metszet:
+        k = 0.45
+        R.ell(H * (1 - k), r * k, szin=ZOLD, sz=1.6, kitolt=ZOLD, op=0.22)
+    if tengely or magassag or haromszog:
+        R.von((0, 0), cs if ferde else (0, H), szin=SZURKE, sz=1.2, szaggat="4 3")
+    if magassag:
+        R.von((0, 0), (0, H), szin=PIROS, sz=1.5, szaggat="4 3")
+        R.txt((0, H * 0.28), f.get("H", "H"), dx=-7, szin=PIROS, horgony="end")
+        R.ki.append(_dszog(R.P(0, 0), R.P(0, H), R.P(r, 0)))
+    if sugar:
+        R.von((0, 0), (r, 0), szin=LILA, sz=1.5)
+        R.txt((r / 2, 0), f.get("r", "r"), dy=15, szin=LILA)
+    if alkoto:
+        R.von((r, 0), cs, szin=BOROSTYAN, sz=2.0)
+        R.txt(((r + d) / 2, H / 2), f.get("s", "s"), dx=9, dy=-2,
+              szin=BOROSTYAN, horgony="start")
+    R.ki.append('  <circle cx="%.1f" cy="%.1f" r="2.8" fill="%s"/>' % (*C, TINTA))
+    return R.kesz()
+
+
+def svg_csonkakup(R_=1.0, r=0.5, H=1.15, w=300, h=250, leiras="Csonkakúp",
+                  alkoto=True, sugarak=True, magassag=True, kiegeszites=False,
+                  trapez=False, tengelymetszet=False, feliratok=None):
+    """Csonkakúp. `kiegeszites=True`: a levágott kúp szaggatva.
+    `trapez=True`: a jellemző derékszögű háromszög ($H$, $R-r$, $s$) kiemelve."""
+    f = feliratok or {}
+    teljes = H * R_ / (R_ - r) if R_ > r else H
+    magas = (teljes if kiegeszites else H) + 2 * R_ * LAPULT + 0.45
+    F = _Forg(w, h, leiras, 2 * R_ + 1.0, magas, also_ry=R_ * LAPULT)
+    p1, q1 = F.P(-R_, 0), F.P(R_, 0)
+    p2, q2 = F.P(-r, H), F.P(r, H)
+    F.ki.append(f'  <path d="M{p1[0]:.1f},{p1[1]:.1f} L{p2[0]:.1f},{p2[1]:.1f} '
+                f'A{r * F.s:.1f},{r * F.s * LAPULT:.1f} 0 0 0 {q2[0]:.1f},{q2[1]:.1f} '
+                f'L{q1[0]:.1f},{q1[1]:.1f} '
+                f'A{R_ * F.s:.1f},{R_ * F.s * LAPULT:.1f} 0 0 1 {p1[0]:.1f},{p1[1]:.1f} z" '
+                f'fill="{ZOLD}" fill-opacity="0.08" stroke="none"/>')
+    if tengelymetszet:
+        F.ki.append(f'  <polygon points="{p1[0]:.1f},{p1[1]:.1f} {q1[0]:.1f},{q1[1]:.1f} '
+                    f'{q2[0]:.1f},{q2[1]:.1f} {p2[0]:.1f},{p2[1]:.1f}" fill="{KEK}" '
+                    f'fill-opacity="0.18" stroke="{KEK}" stroke-width="1.6"/>')
+    if trapez:
+        o, t = F.P(0, 0), F.P(0, H)
+        F.ki.append(f'  <polygon points="{o[0]:.1f},{o[1]:.1f} {q1[0]:.1f},{q1[1]:.1f} '
+                    f'{q2[0]:.1f},{q2[1]:.1f} {t[0]:.1f},{t[1]:.1f}" fill="{BOROSTYAN}" '
+                    f'fill-opacity="0.16" stroke="none"/>')
+        F.von((r, H), (R_, H), szin=SZURKE, sz=1.2, szaggat="3 3")
+        F.txt(((r + R_) / 2, H), f.get("kul", "R − r"), dy=-6, szin=SZURKE, meret=12)
+        F.ki.append(_dszog(F.P(R_, H), F.P(r, H), F.P(R_, 0), szin=SZURKE))
+    if kiegeszites and R_ > r:
+        cs = (0.0, teljes)
+        F.von((-r, H), cs, szin=SZURKE, sz=1.3, szaggat="4 4")
+        F.von((r, H), cs, szin=SZURKE, sz=1.3, szaggat="4 4")
+        F.ki.append('  <circle cx="%.1f" cy="%.1f" r="2.4" fill="%s"/>'
+                    % (*F.P(*cs), SZURKE))
+    F.iv(0, R_, elso=False, szaggat="5 4", szin=SZURKE)
+    F.iv(0, R_, elso=True)
+    F.von((-R_, 0), (-r, H))
+    F.von((R_, 0), (r, H))
+    c = F.P(0, H)
+    F.ki.append(_ell(c[0], c[1], r * F.s, r * F.s * LAPULT, kitolt="#ffffff", op=0.55))
+    if magassag:
+        F.von((0, 0), (0, H), szin=PIROS, sz=1.5, szaggat="4 3")
+        F.txt((0, H / 2), f.get("H", "H"), dx=-7, szin=PIROS, horgony="end")
+    if sugarak:
+        F.von((0, 0), (R_, 0), szin=LILA, sz=1.5)
+        F.txt((R_ / 2, 0), f.get("R", "R"), dy=15, szin=LILA)
+        F.von((0, H), (-r, H), szin=LILA, sz=1.5)
+        F.txt((-r / 2, H), f.get("r", "r"), dy=-7, szin=LILA)
+    if alkoto:
+        F.von((R_, 0), (r, H), szin=BOROSTYAN, sz=2.0)
+        F.txt(((R_ + r) / 2, H / 2), f.get("s", "s"), dx=9, szin=BOROSTYAN,
+              horgony="start")
+    return F.kesz()
+
+
+def svg_gomb(R_=1.0, w=280, h=260, leiras="Gömb", sik=None, sugar=True,
+             metszetkor=False, focor=True, korulirt_henger=False,
+             tavolsag=False, feliratok=None):
+    """Gömb. `sik`: None | "metszo" | "erinto" | "elkerulo" — a sík helyzete.
+    `metszetkor=True`: a metszetkör és a sugara ($r$) kiemelve."""
+    f = feliratok or {}
+    F = _Forg(w, h, leiras, 2 * R_ + 1.4 + (1.0 if sik else 0.0),
+              2 * R_ + 0.6 + (0.5 if korulirt_henger else 0.0), also_ry=0.0)
+    kp = (0.0, R_)                                   # a gömb középpontja
+    C = F.P(*kp)
+    if korulirt_henger:
+        F.ki.append(f'  <rect x="{C[0] - R_ * F.s:.1f}" y="{C[1] - R_ * F.s:.1f}" '
+                    f'width="{2 * R_ * F.s:.1f}" height="{2 * R_ * F.s:.1f}" '
+                    f'fill="none" stroke="{SZURKE}" stroke-width="1.3" '
+                    f'stroke-dasharray="5 4"/>')
+        for yy in (0.0, 2 * R_):
+            c2 = F.P(0, yy)
+            F.ki.append(_ell(c2[0], c2[1], R_ * F.s, R_ * F.s * LAPULT,
+                             szin=SZURKE, sz=1.3, szaggat="5 4"))
+    F.ki.append(f'  <circle cx="{C[0]:.1f}" cy="{C[1]:.1f}" r="{R_ * F.s:.1f}" '
+                f'fill="{ZOLD}" fill-opacity="0.08" stroke="{TINTA}" stroke-width="1.8"/>')
+    if focor:
+        F.ki.append(_ell(C[0], C[1], R_ * F.s, R_ * F.s * LAPULT, szin=SZURKE, sz=1.3))
+    tav = {"metszo": 0.55, "erinto": 1.0, "elkerulo": 1.35}.get(sik or "", None)
+    if tav is not None:
+        y = R_ + tav * R_
+        w2 = R_ * 1.5
+        a, b = F.P(-w2, y), F.P(w2, y)
+        F.ki.append(f'  <path d="M{a[0]:.1f},{a[1] + 9:.1f} L{a[0] + 22:.1f},{a[1] - 9:.1f} '
+                    f'L{b[0]:.1f},{b[1] - 9:.1f} L{b[0] - 22:.1f},{b[1] + 9:.1f} z" '
+                    f'fill="{KEK}" fill-opacity="0.12" stroke="{KEK}" stroke-width="1.5"/>')
+        if sik == "metszo":
+            rm = math.sqrt(max(R_ ** 2 - (tav * R_) ** 2, 0.0))
+            c3 = F.P(0, y)
+            F.ki.append(_ell(c3[0], c3[1], rm * F.s, rm * F.s * LAPULT,
+                             szin=ZOLD, sz=1.8, kitolt=ZOLD, op=0.20))
+            if metszetkor:
+                vy = rm * LAPULT * 0.9
+                F.von((0, y), (rm * 0.72, y - vy), szin=ZOLD, sz=1.7)
+                F.txt((rm * 0.42, y - vy * 0.55), f.get("r", "r"), dx=2, dy=14,
+                      szin=ZOLD)
+        if tavolsag:
+            F.von(kp, (0, y), szin=PIROS, sz=1.5, szaggat="4 3")
+            F.txt((0, (kp[1] + y) / 2), f.get("d", "d"), dx=-8, dy=4, szin=PIROS,
+                  horgony="end")
+    if sugar:
+        vx, vy = (R_ * 0.75, -R_ * 0.62) if sik else (R_ * 0.72, R_ * 0.70)
+        F.von(kp, (vx, kp[1] + vy), szin=LILA, sz=1.7)
+        F.txt((vx / 2, kp[1] + vy / 2), f.get("R", "R"), dx=8, dy=-2, szin=LILA,
+              horgony="start")
+        F.ki.append('  <circle cx="%.1f" cy="%.1f" r="2.8" fill="%s"/>' % (*C, TINTA))
+    return F.kesz()
+
+
+def svg_forgatas(tipus="teglalap", w=420, h=250, leiras=None, cimkek=True):
+    """Síkidom + forgástengely → a keletkező forgástest (két panel, nyíllal).
+
+    `tipus`: "teglalap" (→ henger) | "haromszog" (→ kúp) | "felkor" (→ gömb)
+             | "trapez" (→ csonkakúp)
+    """
+    NEV = {"teglalap": ("téglalap", "henger"), "haromszog": ("derékszögű háromszög", "kúp"),
+           "felkor": ("félkör", "gömb"), "trapez": ("derékszögű trapéz", "csonkakúp")}
+    n1, n2 = NEV.get(tipus, NEV["teglalap"])
+    leiras = leiras or f"A(z) {n1} forgatása a tengely körül: {n2}"
+    ki = _fej2(w, h, leiras)
+    bal_w = w * 0.42
+    # ── bal panel: a síkidom és a tengely ──────────────────────────────
+    cx, alap = bal_w * 0.55, h - 46
+    S = min(bal_w * 0.30, (h - 96) / 2.0)
+    def P(x, y):
+        return (cx + x * S, alap - y * S)
+    ki.append(_von((cx, alap + 22), (cx, alap - 2.6 * S), szin=SZURKE, sz=1.4,
+                   szaggat="7 4"))
+    ki.append(_txt((cx, alap + 36), "tengely", szin=SZURKE, meret=11, dolt=False))
+    if tipus == "teglalap":
+        pts = [P(0, 0), P(1.0, 0), P(1.0, 1.7), P(0, 1.7)]
+        cim = [((0.5, 0), "r", 0, 15), ((1.0, 0.85), "H", 8, 4)]
+    elif tipus == "haromszog":
+        pts = [P(0, 0), P(1.0, 0), P(0, 1.9)]
+        cim = [((0.5, 0), "r", 0, 15), ((0, 0.95), "H", -8, 4)]
+    elif tipus == "felkor":
+        A, B = P(0, 0), P(0, 2.0)
+        ki.append(f'  <path d="M{A[0]:.1f},{A[1]:.1f} A{S:.1f},{S:.1f} 0 0 1 '
+                  f'{B[0]:.1f},{B[1]:.1f} z" fill="{ZOLD}" fill-opacity="0.14" '
+                  f'stroke="{TINTA}" stroke-width="1.7"/>')
+        pts, cim = None, [((0.55, 1.0), "R", 4, 4)]
+        ki.append(_von(P(0, 1.0), P(1.0, 1.0), szin=LILA, sz=1.5))
+    else:
+        pts = [P(0, 0), P(1.2, 0), P(0.6, 1.4), P(0, 1.4)]
+        cim = [((0.6, 0), "R", 0, 15), ((0.3, 1.4), "r", 0, -7), ((0, 0.7), "H", -8, 4)]
+    if pts:
+        d = " ".join(f"{p[0]:.1f},{p[1]:.1f}" for p in pts)
+        ki.append(f'  <polygon points="{d}" fill="{ZOLD}" fill-opacity="0.14" '
+                  f'stroke="{TINTA}" stroke-width="1.7"/>')
+    if cimkek:
+        for (mx, my), sz, dx, dy in cim:
+            ki.append(_txt(P(mx, my), sz, dx, dy, szin=LILA if sz in "rR" else PIROS))
+    # ── nyíl ──────────────────────────────────────────────────────────
+    ny = h / 2
+    ki.append(f'  <line x1="{bal_w + 4:.1f}" y1="{ny:.1f}" x2="{bal_w + 40:.1f}" '
+              f'y2="{ny:.1f}" stroke="{TINTA}" stroke-width="1.8" '
+              f'marker-end="url(#nyil2)"/>')
+    ki.insert(1, '  <defs><marker id="nyil2" viewBox="0 0 8 8" refX="6" refY="4" '
+                 'markerWidth="6" markerHeight="6" orient="auto">'
+                 f'<path d="M0,0 L8,4 L0,8 z" fill="{TINTA}"/></marker></defs>')
+    # ── jobb panel: a keletkező test ──────────────────────────────────
+    jw, jx = w - bal_w - 52, bal_w + 52
+    gen = {"teglalap": lambda: svg_henger(1.0, 1.7, w=int(jw), h=h, sugar=cimkek,
+                                          magassag=cimkek, leiras=n2),
+           "haromszog": lambda: svg_kup(1.0, 1.9, w=int(jw), h=h, alkoto=False,
+                                        sugar=cimkek, magassag=cimkek, leiras=n2),
+           "felkor": lambda: svg_gomb(1.0, w=int(jw), h=h, sugar=cimkek, leiras=n2),
+           "trapez": lambda: svg_csonkakup(1.2, 0.6, 1.4, w=int(jw), h=h, alkoto=False,
+                                           sugarak=cimkek, magassag=cimkek, leiras=n2)}
+    belso = gen[tipus]().split("\n")[1:-1]
+    ki.append(f'  <g transform="translate({jx:.1f},0)">')
+    ki.extend("  " + s for s in belso if not s.strip().startswith("<defs"))
+    ki.append("  </g>")
+    ki.append("</svg>")
+    return "\n".join(ki)
+
+
+def svg_osszetett(tipus="henger-felgomb", w=300, h=290, leiras=None, cimkek=True,
+                  feliratok=None):
+    """Összetett forgástestek.
+
+    `tipus`: "henger-felgomb" (víztorony) | "henger-kup" (torony/tölcsér)
+             | "cso" (üreges henger) | "kup-kup" (átfogó körüli forgatás)
+             | "furt-henger" (hengerből kifúrt kúp)
+    """
+    f = feliratok or {}
+    NEV = {"henger-felgomb": "Henger félgömb tetővel", "henger-kup": "Henger kúp tetővel",
+           "cso": "Cső: üreges henger", "kup-kup": "Két kúp közös alaplappal",
+           "furt-henger": "Hengerből kifúrt kúp"}
+    leiras = leiras or NEV.get(tipus, "Összetett forgástest")
+    r, H = 1.0, 1.5
+    if tipus == "kup-kup":
+        F = _Forg(w, h, leiras, 2 * r + 1.0, 2 * H + 2 * r * LAPULT,
+                  also_ry=H + r * LAPULT)
+        for elo, cs in ((True, (0.0, H)), (True, (0.0, -H))):
+            p1, q1, C = F.P(-r, 0), F.P(r, 0), F.P(*cs)
+            F.ki.append(f'  <path d="M{p1[0]:.1f},{p1[1]:.1f} L{C[0]:.1f},{C[1]:.1f} '
+                        f'L{q1[0]:.1f},{q1[1]:.1f} z" fill="{ZOLD}" fill-opacity="0.08" '
+                        f'stroke="{TINTA}" stroke-width="1.6"/>')
+        F.ell(0, r, szin=SZURKE, sz=1.4, szaggat="5 4")
+        F.iv(0, r, elso=True)
+        if cimkek:
+            F.von((0, 0), (r, 0), szin=LILA, sz=1.5)
+            F.txt((r / 2, 0), f.get("r", "r"), dy=-6, szin=LILA)
+            F.von((0, 0), (0, H), szin=PIROS, sz=1.4, szaggat="4 3")
+            F.txt((0, H / 2), f.get("H", "H"), dx=-7, szin=PIROS, horgony="end")
+        return F.kesz()
+
+    magas = {"henger-felgomb": H + r, "henger-kup": H + 1.0, "cso": H,
+             "furt-henger": H}[tipus] + 2 * r * LAPULT + 0.4
+    F = _Forg(w, h, leiras, 2 * r + 1.0, magas, also_ry=r * LAPULT)
+    p1, q1 = F.P(-r, 0), F.P(r, 0)
+    p2, q2 = F.P(-r, H), F.P(r, H)
+    F.ki.append(f'  <path d="M{p1[0]:.1f},{p1[1]:.1f} L{p2[0]:.1f},{p2[1]:.1f} '
+                f'A{r * F.s:.1f},{r * F.s * LAPULT:.1f} 0 0 0 {q2[0]:.1f},{q2[1]:.1f} '
+                f'L{q1[0]:.1f},{q1[1]:.1f} '
+                f'A{r * F.s:.1f},{r * F.s * LAPULT:.1f} 0 0 1 {p1[0]:.1f},{p1[1]:.1f} z" '
+                f'fill="{ZOLD}" fill-opacity="0.08" stroke="none"/>')
+    F.iv(0, r, elso=False, szaggat="5 4", szin=SZURKE)
+    F.iv(0, r, elso=True)
+    F.von((-r, 0), (-r, H))
+    F.von((r, 0), (r, H))
+    if tipus == "henger-felgomb":
+        c = F.P(0, H)
+        F.ki.append(f'  <path d="M{c[0] - r * F.s:.1f},{c[1]:.1f} '
+                    f'A{r * F.s:.1f},{r * F.s:.1f} 0 0 1 {c[0] + r * F.s:.1f},{c[1]:.1f}" '
+                    f'fill="{ZOLD}" fill-opacity="0.10" stroke="{TINTA}" '
+                    f'stroke-width="1.7"/>')
+        F.ki.append(_ell(c[0], c[1], r * F.s, r * F.s * LAPULT, szin=SZURKE, sz=1.3,
+                         szaggat="5 4"))
+        if cimkek:
+            F.txt((0, H + r * 0.62), f.get("felgomb", "félgömb"), szin=SZURKE, meret=11,
+                  dolt=False)
+    elif tipus == "henger-kup":
+        cs = (0.0, H + 1.0)
+        C = F.P(*cs)
+        F.ki.append(f'  <path d="M{p2[0]:.1f},{p2[1]:.1f} L{C[0]:.1f},{C[1]:.1f} '
+                    f'L{q2[0]:.1f},{q2[1]:.1f} z" fill="{ZOLD}" fill-opacity="0.10" '
+                    f'stroke="{TINTA}" stroke-width="1.7"/>')
+        F.ki.append(_ell(*F.P(0, H), r * F.s, r * F.s * LAPULT, szin=SZURKE, sz=1.3,
+                         szaggat="5 4"))
+    elif tipus in ("cso", "furt-henger"):
+        c = F.P(0, H)
+        F.ki.append(_ell(c[0], c[1], r * F.s, r * F.s * LAPULT, kitolt="#ffffff", op=0.6))
+        rb = 0.55 * r
+        if tipus == "cso":
+            F.ki.append(_ell(c[0], c[1], rb * F.s, rb * F.s * LAPULT, kitolt=SZURKE,
+                             op=0.14, szin=TINTA, sz=1.5))
+            F.von((-rb, H), (-rb, 0.12), szin=SZURKE, sz=1.3, szaggat="4 3")
+            F.von((rb, H), (rb, 0.12), szin=SZURKE, sz=1.3, szaggat="4 3")
+            if cimkek:
+                F.von((0, H), (rb, H), szin=LILA, sz=1.5)
+                F.txt((rb / 2, H), f.get("r", "r"), dy=-8, szin=LILA)
+                F.von((0, 0), (-r, 0), szin=LILA, sz=1.5)
+                F.txt((-r / 2, 0), f.get("R", "R"), dy=15, szin=LILA)
+                x0 = r + 0.26
+                F.von((x0, 0), (x0, H), szin=PIROS, sz=1.4, szaggat="4 3")
+                F.txt((x0, H / 2), f.get("H", "H"), dx=7, szin=PIROS, horgony="start")
+        else:
+            F.von((-rb, H), (0, 0), szin=SZURKE, sz=1.4, szaggat="4 3")
+            F.von((rb, H), (0, 0), szin=SZURKE, sz=1.4, szaggat="4 3")
+            F.ki.append(_ell(c[0], c[1], rb * F.s, rb * F.s * LAPULT, szin=SZURKE,
+                             sz=1.4, szaggat="4 3"))
+    if cimkek and tipus not in ("cso",):
+        F.von((0, 0), (r, 0), szin=LILA, sz=1.5)
+        F.txt((r / 2, 0), f.get("r", "r"), dy=15, szin=LILA)
+        x0 = -r - 0.26
+        F.von((x0, 0), (x0, H), szin=PIROS, sz=1.4, szaggat="4 3")
+        F.txt((x0, H / 2), f.get("H", "H"), dx=-7, szin=PIROS, horgony="end")
+    return F.kesz()
