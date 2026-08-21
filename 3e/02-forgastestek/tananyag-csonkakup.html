@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A csonkakúp — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Forgástestek</a> ›
+  <span class="itt">A csonkakúp — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A csonkakúp</h1>
+  <p class="alcim">Keletkezés, a jellemző derékszögű háromszög, a felszín és a háromtagú térfogatképlet.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az Átalakulás Kamrája · 7/10</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Medúza:</b> A Kamra hűtőaknái felfelé szűkülnek — ez <b>csonkakúp</b>. A képletei hosszabbak minden eddiginél, ezért nem magolni kell őket, hanem érteni, <b>honnan jönnek</b>. Aki érti, annak három sor; aki magol, annak három hiba.</p></div>
+
+    <p>Jó hír: mindegyik képlet a csonkagúláénak a „kerek” megfelelője. Ha ott megvolt a <a href="../01-poliederek/tananyag-csonkagula.html#tetel-csonkagula-terfogat">három tag</a> a térfogatban, itt is három lesz.</p>
+
+    <h2 id="s1">Hogyan keletkezik a csonkakúp</h2>
+
+    <p>Két úton is eljutunk ugyanahhoz a testhez:</p><ul><li><b>Csonkolással:</b> egy kúpot elmetszünk az alaplapjával <b>párhuzamos</b> síkkal, és a <b>csúcsot tartalmazó</b> részt elhagyjuk.</li><li><b>Forgatással:</b> egy <b>derékszögű trapézt</b> megforgatunk a derékszögű szára körül.</li></ul>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 430 250" width="430" height="250" role="img" aria-label="A(z) derékszögű trapéz forgatása a tengely körül: csonkakúp">
+      <defs><marker id="nyil2" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <line x1="99.3" y1="226.0" x2="99.3" y2="63.1" stroke="#475569" stroke-width="1.4" stroke-dasharray="7 4"/>
+      <text x="99.3" y="240.0" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">tengely</text>
+      <polygon points="99.3,204.0 164.3,204.0 131.8,128.1 99.3,128.1" fill="#047857" fill-opacity="0.14" stroke="#0f172a" stroke-width="1.7"/>
+      <text x="131.8" y="219.0" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">R</text>
+      <text x="115.6" y="121.1" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">r</text>
+      <text x="91.3" y="170.1" font-size="13" fill="#ef4444" text-anchor="middle" font-style="italic" font-weight="600">H</text>
+      <line x1="184.6" y1="125.0" x2="220.6" y2="125.0" stroke="#0f172a" stroke-width="1.8" marker-end="url(#nyil2)"/>
+      <g transform="translate(232.6,0)">
+        <path d="M45.9,210.2 L72.2,148.9 A26.3,7.9 0 0 0 124.8,148.9 L151.1,210.2 A52.6,15.8 0 0 1 45.9,210.2 z" fill="#047857" fill-opacity="0.08" stroke="none"/>
+        <path d="M45.9,210.2 A52.6,15.8 0 0 0 151.1,210.2" fill="none" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 4"/>
+        <path d="M45.9,210.2 A52.6,15.8 0 0 1 151.1,210.2" fill="none" stroke="#0f172a" stroke-width="1.6"/>
+        <line x1="45.9" y1="210.2" x2="72.2" y2="148.9" stroke="#0f172a" stroke-width="1.6"/>
+        <line x1="151.1" y1="210.2" x2="124.8" y2="148.9" stroke="#0f172a" stroke-width="1.6"/>
+        <ellipse cx="98.5" cy="148.9" rx="26.3" ry="7.9" fill="#ffffff" fill-opacity="0.55" stroke="#0f172a" stroke-width="1.6"/>
+        <line x1="98.5" y1="210.2" x2="98.5" y2="148.9" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <text x="91.5" y="179.5" font-size="13" fill="#ef4444" text-anchor="end" font-style="italic" font-weight="600">H</text>
+        <line x1="98.5" y1="210.2" x2="151.1" y2="210.2" stroke="#8b5cf6" stroke-width="1.5"/>
+        <text x="124.8" y="225.2" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">R</text>
+        <line x1="98.5" y1="148.9" x2="72.2" y2="148.9" stroke="#8b5cf6" stroke-width="1.5"/>
+        <text x="85.4" y="141.9" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">r</text>
+      </g>
+    </svg>
+    </div>
+    <p class="cap">A derékszögű trapéz a derékszögű szára körül forgatva csonkakúpot ad: a két párhuzamos oldal lesz a két sugár.</p>
+
+    <div class="doboz definicio" id="def-csonkakup">
+      <p class="cim"><span class="ikon">📗</span> A csonkakúp részei</p>
+      <ul><li><b>Alapkör</b> — az alsó, nagyobb kör; sugara <span class="math inline">\(R\)</span>.</li><li><b>Fedőkör</b> — a felső, kisebb kör; sugara <span class="math inline">\(r\)</span>. A kettő <b>párhuzamos</b> és <b>koncentrikus</b> (egy tengelyen van a középpontjuk).</li><li><b>Alkotó</b> (<span class="math inline">\(s\)</span>) — a két kört összekötő, a paláston futó szakasz.</li><li><b>Magasság</b> (<span class="math inline">\(H\)</span>) — a két kör síkjának távolsága.</li></ul>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 300 280" width="300" height="280" role="img" aria-label="Csonkakúp; szaggatva a levágott kúp, amelyből keletkezett">
+      <path d="M80.7,235.2 L115.4,155.6 A34.6,10.4 0 0 0 184.6,155.6 L219.3,235.2 A69.3,20.8 0 0 1 80.7,235.2 z" fill="#047857" fill-opacity="0.08" stroke="none"/>
+      <line x1="115.4" y1="155.6" x2="150.0" y2="75.9" stroke="#475569" stroke-width="1.3" stroke-dasharray="4 4"/>
+      <line x1="184.6" y1="155.6" x2="150.0" y2="75.9" stroke="#475569" stroke-width="1.3" stroke-dasharray="4 4"/>
+      <circle cx="150.0" cy="75.9" r="2.4" fill="#475569"/>
+      <path d="M80.7,235.2 A69.3,20.8 0 0 0 219.3,235.2" fill="none" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 4"/>
+      <path d="M80.7,235.2 A69.3,20.8 0 0 1 219.3,235.2" fill="none" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="80.7" y1="235.2" x2="115.4" y2="155.6" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="219.3" y1="235.2" x2="184.6" y2="155.6" stroke="#0f172a" stroke-width="1.6"/>
+      <ellipse cx="150.0" cy="155.6" rx="34.6" ry="10.4" fill="#ffffff" fill-opacity="0.55" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="150.0" y1="235.2" x2="150.0" y2="155.6" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <text x="143.0" y="195.4" font-size="13" fill="#ef4444" text-anchor="end" font-style="italic" font-weight="600">H</text>
+      <line x1="150.0" y1="235.2" x2="219.3" y2="235.2" stroke="#8b5cf6" stroke-width="1.5"/>
+      <text x="184.6" y="250.2" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">R</text>
+      <line x1="150.0" y1="155.6" x2="115.4" y2="155.6" stroke="#8b5cf6" stroke-width="1.5"/>
+      <text x="132.7" y="148.6" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">r</text>
+      <line x1="219.3" y1="235.2" x2="184.6" y2="155.6" stroke="#f59e0b" stroke-width="2.0"/>
+      <text x="210.9" y="195.4" font-size="13" fill="#f59e0b" text-anchor="start" font-style="italic" font-weight="600">s</text>
+    </svg>
+    </div>
+    <p class="cap">A csonkakúp a kúp alsó darabja; szaggatva a levágott csúcsrész.</p>
+
+    <h2 id="s2">A jellemző derékszögű háromszög</h2>
+
+    <p>Ha a fedőkört merőlegesen levetítjük az alaplapra, a két kör közötti <b>különbség</b> jelenik meg befogóként.</p>
+
+    <div class="doboz tetel" id="tetel-csonkakup-haromszog">
+      <p class="cim"><span class="ikon">📘</span> A csonkakúp három adata</p>
+      <span class="math display">\[s^{2}=H^{2}+(R-r)^{2}.\]</span><p>A derékszögű háromszög befogói a <b>magasság</b> (<span class="math inline">\(H\)</span>) és a két sugár <b>különbsége</b> (<span class="math inline">\(R-r\)</span>), az átfogója pedig az <b>alkotó</b> (<span class="math inline">\(s\)</span>).</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 300 250" width="300" height="250" role="img" aria-label="A csonkakúp jellemző derékszögű háromszöge: befogói H és R mínusz r, átfogója az alkotó">
+      <path d="M66.0,200.8 L108.0,104.2 A42.0,12.6 0 0 0 192.0,104.2 L234.0,200.8 A84.0,25.2 0 0 1 66.0,200.8 z" fill="#047857" fill-opacity="0.08" stroke="none"/>
+      <polygon points="150.0,200.8 234.0,200.8 192.0,104.2 150.0,104.2" fill="#f59e0b" fill-opacity="0.16" stroke="none"/>
+      <line x1="192.0" y1="104.2" x2="234.0" y2="104.2" stroke="#475569" stroke-width="1.2" stroke-dasharray="3 3"/>
+      <text x="213.0" y="98.2" font-size="12" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">R − r</text>
+      <path d="M225.0,104.2 L225.0,113.2 L234.0,113.2" fill="none" stroke="#475569" stroke-width="1.1"/>
+      <path d="M66.0,200.8 A84.0,25.2 0 0 0 234.0,200.8" fill="none" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 4"/>
+      <path d="M66.0,200.8 A84.0,25.2 0 0 1 234.0,200.8" fill="none" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="66.0" y1="200.8" x2="108.0" y2="104.2" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="234.0" y1="200.8" x2="192.0" y2="104.2" stroke="#0f172a" stroke-width="1.6"/>
+      <ellipse cx="150.0" cy="104.2" rx="42.0" ry="12.6" fill="#ffffff" fill-opacity="0.55" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="150.0" y1="200.8" x2="150.0" y2="104.2" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <text x="143.0" y="152.5" font-size="13" fill="#ef4444" text-anchor="end" font-style="italic" font-weight="600">H</text>
+      <line x1="150.0" y1="200.8" x2="234.0" y2="200.8" stroke="#8b5cf6" stroke-width="1.5"/>
+      <text x="192.0" y="215.8" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">R</text>
+      <line x1="150.0" y1="104.2" x2="108.0" y2="104.2" stroke="#8b5cf6" stroke-width="1.5"/>
+      <text x="129.0" y="97.2" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">r</text>
+      <line x1="234.0" y1="200.8" x2="192.0" y2="104.2" stroke="#f59e0b" stroke-width="2.0"/>
+      <text x="222.0" y="152.5" font-size="13" fill="#f59e0b" text-anchor="start" font-style="italic" font-weight="600">s</text>
+    </svg>
+    </div>
+    <p class="cap">A kiemelt derékszögű háromszög: a vízszintes befogó a két sugár <b>különbsége</b>.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„A befogó a két sugár összege: <span class="math inline">\(R+r\)</span>."</i></p><p>Nézd meg az ábrát: a kisebb kör a nagyobb <b>fölött</b> van, vele koncentrikusan. A vetítés után a szélei közötti vízszintes távolság ezért <span class="math inline">\(R-r\)</span>, nem <span class="math inline">\(R+r\)</span>.</p><p>Számokkal: <span class="math inline">\(R=6\)</span>, <span class="math inline">\(r=3\)</span>, <span class="math inline">\(H=4\)</span> esetén a helyes alkotó <span class="math inline">\(s=\sqrt{16+9}=5\)</span>; az összeggel számolva <span class="math inline">\(\sqrt{16+81}=\sqrt{97}\approx9{,}85\)</span> jönne ki — majdnem a duplája.</p><p>Ugyanez a hiba bújik meg a térfogatnál is: <span class="math inline">\(R^2+Rr+r^2\ne(R+r)^2\)</span>. A fenti számokkal <span class="math inline">\(63\)</span> az egyik és <span class="math inline">\(81\)</span> a másik.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ s² = H² + (R − r)² = 64 + 36 = 100, tehát s = 10 cm." data-nem="✘ A befogó a sugarak KÜLÖNBSÉGE: R − r = 6. Innen s² = 64 + 36 = 100, azaz s = 10 cm.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy csonkakúp sugarai <span class="math inline">\(10\)</span> cm és <span class="math inline">\(4\)</span> cm, magassága <span class="math inline">\(8\)</span> cm. Mekkora az alkotója?</p>
+      <div class="opciok"><button><span class="math inline">\(10\)</span> cm</button><button><span class="math inline">\(\sqrt{260}\approx16{,}12\)</span> cm</button><button><span class="math inline">\(14\)</span> cm</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">A felszín</h2>
+
+    <p>A palást kiterítve körcikk-gyűrű (két körcikk különbsége), de nem kell levezetnünk: a képlet ugyanazt a szerkezetet mutatja, mint a csonkagúla palástja, ahol a trapéz <b>középvonala</b> szorozódott a magassággal.</p>
+
+    <div class="doboz tetel" id="tetel-csonkakup-felszin">
+      <p class="cim"><span class="ikon">📘</span> A csonkakúp felszíne</p>
+      <p>A palást területe</p><span class="math display">\[M=(R+r)\pi s,\]</span><p>a felszín pedig a <b>két</b> kört is hozzáadja:</p><span class="math display">\[F=R^{2}\pi+r^{2}\pi+(R+r)\pi s.\]</span><p>A palástban tehát a sugarak <b>összege</b> szerepel (mint a trapéz középvonalában), a derékszögű háromszögben viszont a <b>különbségük</b> — érdemes a kettőt tudatosan szétválasztani.</p>
+    </div>
+
+    <h2 id="s4">A térfogat és egy példa két úton</h2>
+
+    <div class="doboz tetel" id="tetel-csonkakup-terfogat">
+      <p class="cim"><span class="ikon">📘</span> A csonkakúp térfogata</p>
+      <span class="math display">\[V=\frac{H\pi}{3}\left(R^{2}+Rr+r^{2}\right).\]</span><p>A zárójelben <b>három</b> tag áll, középen a két sugár <b>szorzatával</b> — pontosan úgy, ahogy a <a href="../01-poliederek/tananyag-csonkagula.html#tetel-csonkagula-terfogat">csonkagúlánál</a> a <span class="math inline">\(\sqrt{B_1B_2}\)</span> mértani közép. A képlet a teljes kúp és a levágott kis kúp térfogatának különbségéből származik.</p><p><b>Határeset-ellenőrzés:</b> ha <span class="math inline">\(r=R\)</span>, akkor <span class="math inline">\(V=\frac{H\pi}{3}\cdot3R^2=R^2\pi H\)</span> — a henger térfogata. Ha <span class="math inline">\(r=0\)</span>, akkor <span class="math inline">\(V=\frac{R^2\pi H}{3}\)</span> — a kúpé. Mindkét határeset stimmel.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-csonkakup">
+      <p class="cim"><span class="ikon">✏️</span> Átalakulás-kamra szimuláció</p>
+      <p>Egy csonkakúp alapkörének sugara <span class="math inline">\(6\)</span> cm, fedőköréé <span class="math inline">\(3\)</span> cm, magassága <span class="math inline">\(4\)</span> cm. Számítsd ki az alkotóját, a felszínét és a térfogatát — a térfogatot <b>két különböző úton</b> is!</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>Alkotó:</b> <span class="math inline">\(s=\sqrt{4^2+(6-3)^2}=\sqrt{25}=5\)</span> cm.</p><p><b>Palást:</b> <span class="math inline">\(M=(6+3)\pi\cdot5=45\pi\ \text{cm}^2\)</span>.</p><p><b>Felszín:</b> <span class="math inline">\(F=36\pi+9\pi+45\pi=90\pi\ \text{cm}^2\)</span>.</p><p><b>Térfogat, 1. út — a képlettel.</b></p><span class="math display">\[V=\frac{4\pi}{3}\left(36+18+9\right)=\frac{4\pi}{3}\cdot63=84\pi\ \text{cm}^3.\]</span><p><b>Térfogat, 2. út — kivonással.</b> A levágott kis kúp és a teljes kúp hasonlóak; a sugarak aránya <span class="math inline">\(\frac36=\frac12\)</span>, ezért a kis kúp magassága a teljesnek a fele. Ha a teljes kúp magassága <span class="math inline">\(x\)</span>, akkor <span class="math inline">\(x-\frac x2=4\)</span>, tehát <span class="math inline">\(x=8\)</span> és a kis kúp magassága <span class="math inline">\(4\)</span>.</p><span class="math display">\[V=\frac{36\pi\cdot8}{3}-\frac{9\pi\cdot4}{3}=96\pi-12\pi=84\pi\ \text{cm}^3.\]</span><p>A két út ugyanazt adja — ez a legjobb önellenőrzés, ha nem vagy biztos a képletben.</p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ 36 + 18 + 9 = 63. (A 81 az (R + r)² lenne — az NEM ugyanaz.)" data-nem="✘ Tagonként: R² = 36, Rr = 18, r² = 9, összesen 63. A 81 az (R + r)² = 9², ami más kifejezés.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy csonkakúp sugarai <span class="math inline">\(R=6\)</span> és <span class="math inline">\(r=3\)</span>. Mennyi a térfogatképlet zárójeles része, <span class="math inline">\(R^2+Rr+r^2\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(63\)</span></button><button><span class="math inline">\(81\)</span></button><button><span class="math inline">\(45\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>A virágcserép, a vödör, a lámpaernyő, a papírpohár és a hűtőtorony mind csonkakúp. Nem véletlen: a szűkülő forma <b>egymásba rakható</b> (ezért lehet a poharakat toronyba állítani), és a ferde fal <b>merevebb</b> is, mint a függőleges.</p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-kup.html#alap-22">🐕 Tér-eb-ugrás <span class="cimke">A 22–28</span></a><a class="sav bruno" href="feladatok-kup.html#kozep-16">👑 Királyi Gárda <span class="cimke">K 16–21</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Medúza:</b> A szögletes és a szűkülő formák megvannak. Marad a legtökéletesebb — az a test, amelynek <b>minden</b> pontja ugyanolyan messze van a középpontjától: a <b>gömb</b>.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-sikmetszetek.html"><span class="irany">← Előző</span><span class="hova">A henger és a kúp síkmetszetei</span></a>
+      <a class="kov" href="feladatok-kup.html"><span class="irany">Következő →</span><span class="hova">Feladatok — a kúp</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

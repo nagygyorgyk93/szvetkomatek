@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Forgástestek — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Forgástestek</a> ›
+  <span class="itt">Forgástestek — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Forgástestek — amikor a sík alakzat körbefordul</h1>
+  <p class="alcim">A forgatás mint művelet, a négy alapeset, a tengelymetszet és a tengelyre merőleges metszet.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az Átalakulás Kamrája · 1/10</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Medúza:</b> Az Átalakulás Kamrájában a Kristálypára már nem szögletesen csapódik ki — <b>pörög</b>. És ami pörög, az gömbölyű nyomot hagy: hengert, kúpot, gömböt. A Kamra tartályai, tölcsérei és gömbszelencéi mind így készültek. Mielőtt bármit kiszámolnánk, értsük meg a <b>keletkezésüket</b>: melyik lapos formából mi lesz, ha megpörgetjük.</p></div>
+
+    <p>Az előző témakörben (<a href="../01-poliederek/index.html">poliéderek</a>) minden testet <b>lapok</b> határoltak. Most olyan testek jönnek, amelyek felülete <b>görbe</b>: nem lehet őket sokszögekre bontani. Közös bennük, hogy mindegyik egy <b>síkidom megforgatásával</b> keletkezik — ezért hívjuk őket <b>forgástesteknek</b>.</p><p>A jó hír: a görbeség nem tesz nehezebbé semmit. A képletekben ugyanaz a <span class="math inline">\(B\)</span> (alapterület) és <span class="math inline">\(H\)</span> (magasság) szerepel, mint a hasábnál és a gúlánál — csak az alaplap most <b>kör</b>.</p>
+
+    <h2 id="s1">Mi a forgástest</h2>
+
+    <div class="doboz definicio" id="def-forgastest">
+      <p class="cim"><span class="ikon">📗</span> Forgástest</p>
+      <p>Vegyünk egy <b>síkidomot</b> és a síkjában egy <b>egyenest</b> (ez lesz a <b>forgástengely</b>). Ha a síkidomot a tengely körül teljesen körbeforgatjuk, a bejárt pontok halmaza egy <b>forgástest</b>.</p><p>A forgatás közben a síkidom minden pontja <b>körpályán</b> mozog; a kör síkja merőleges a tengelyre, a középpontja pedig a tengelyen van.</p>
+    </div>
+
+    <p>Ebből a definícióból két dolog rögtön következik, és mindkettőre szükségünk lesz:</p><ul><li>a tengelyen fekvő pontok <b>helyben maradnak</b> — ezért lesz a kúpnak csúcsa;</li><li>a tengelytől <span class="math inline">\(d\)</span> távolságra lévő pont egy <span class="math inline">\(d\)</span> sugarú kört ír le — ezért kör minden „vízszintes” metszet.</li></ul>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>A fazekaskorongon a hüvelykujj a tengelytől mért <b>távolságot</b> állítja be — a korong pörgése a többit elvégzi. Ugyanez az elve az <b>esztergapadnak</b>: a munkadarab forog, a kés csak a profilt vágja ki. Ezért olyan olcsó ipari szempontból minden forgásszimmetrikus alkatrész — csavar, tengely, palack —, és ezért drága, ami nem az.</p>
+    </div>
+
+    <h2 id="s2">Melyik síkidomból mi lesz</h2>
+
+    <p>Négy alapesetet érdemes fejből tudni. Mindegyiknél figyelj arra, hogy a tengely <b>hol</b> van — ez dönti el, mi keletkezik.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 430 250" width="430" height="250" role="img" aria-label="A(z) téglalap forgatása a tengely körül: henger">
+      <defs><marker id="nyil2" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <line x1="99.3" y1="226.0" x2="99.3" y2="63.1" stroke="#475569" stroke-width="1.4" stroke-dasharray="7 4"/>
+      <text x="99.3" y="240.0" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">tengely</text>
+      <polygon points="99.3,204.0 153.5,204.0 153.5,111.9 99.3,111.9" fill="#047857" fill-opacity="0.14" stroke="#0f172a" stroke-width="1.7"/>
+      <text x="126.4" y="219.0" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">r</text>
+      <text x="161.5" y="161.9" font-size="13" fill="#ef4444" text-anchor="middle" font-style="italic" font-weight="600">H</text>
+      <line x1="184.6" y1="125.0" x2="220.6" y2="125.0" stroke="#0f172a" stroke-width="1.8" marker-end="url(#nyil2)"/>
+      <g transform="translate(232.6,0)">
+        <path d="M47.1,210.6 L47.1,123.2 A51.4,15.4 0 0 0 149.9,123.2 L149.9,210.6 A51.4,15.4 0 0 1 47.1,210.6 z" fill="#047857" fill-opacity="0.08" stroke="none"/>
+        <path d="M47.1,210.6 A51.4,15.4 0 0 0 149.9,210.6" fill="none" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 4"/>
+        <path d="M47.1,210.6 A51.4,15.4 0 0 1 149.9,210.6" fill="none" stroke="#0f172a" stroke-width="1.6"/>
+        <line x1="47.1" y1="210.6" x2="47.1" y2="123.2" stroke="#0f172a" stroke-width="1.6"/>
+        <line x1="149.9" y1="210.6" x2="149.9" y2="123.2" stroke="#0f172a" stroke-width="1.6"/>
+        <ellipse cx="98.5" cy="123.2" rx="51.4" ry="15.4" fill="#ffffff" fill-opacity="0.55" stroke="#0f172a" stroke-width="1.6"/>
+        <line x1="98.5" y1="210.6" x2="149.9" y2="210.6" stroke="#8b5cf6" stroke-width="1.5"/>
+        <text x="124.2" y="225.6" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">r</text>
+        <circle cx="98.5" cy="210.6" r="2.6" fill="#8b5cf6"/>
+        <line x1="32.7" y1="210.6" x2="32.7" y2="123.2" stroke="#ef4444" stroke-width="1.4" stroke-dasharray="4 3"/>
+        <line x1="29.1" y1="210.6" x2="36.3" y2="210.6" stroke="#ef4444" stroke-width="1.2"/>
+        <line x1="29.1" y1="123.2" x2="36.3" y2="123.2" stroke="#ef4444" stroke-width="1.2"/>
+        <text x="25.7" y="166.9" font-size="13" fill="#ef4444" text-anchor="end" font-style="italic" font-weight="600">H</text>
+      </g>
+    </svg>
+    </div>
+    <p class="cap">A <b>téglalap</b> az egyik oldala körül forgatva <b>hengert</b> ad: a tengellyel párhuzamos oldal lesz a magasság (<span class="math inline">\(H\)</span>), a rá merőleges pedig a sugár (<span class="math inline">\(r\)</span>).</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 430 250" width="430" height="250" role="img" aria-label="A(z) derékszögű háromszög forgatása a tengely körül: kúp">
+      <defs><marker id="nyil2" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <line x1="99.3" y1="226.0" x2="99.3" y2="63.1" stroke="#475569" stroke-width="1.4" stroke-dasharray="7 4"/>
+      <text x="99.3" y="240.0" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">tengely</text>
+      <polygon points="99.3,204.0 153.5,204.0 99.3,101.1" fill="#047857" fill-opacity="0.14" stroke="#0f172a" stroke-width="1.7"/>
+      <text x="126.4" y="219.0" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">r</text>
+      <text x="91.3" y="156.5" font-size="13" fill="#ef4444" text-anchor="middle" font-style="italic" font-weight="600">H</text>
+      <line x1="184.6" y1="125.0" x2="220.6" y2="125.0" stroke="#0f172a" stroke-width="1.8" marker-end="url(#nyil2)"/>
+      <g transform="translate(232.6,0)">
+        <path d="M47.1,210.6 L98.5,113.0 L149.9,210.6 A51.4,15.4 0 0 1 47.1,210.6 z" fill="#047857" fill-opacity="0.08" stroke="none"/>
+        <path d="M47.1,210.6 A51.4,15.4 0 0 0 149.9,210.6" fill="none" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 4"/>
+        <path d="M47.1,210.6 A51.4,15.4 0 0 1 149.9,210.6" fill="none" stroke="#0f172a" stroke-width="1.6"/>
+        <line x1="47.1" y1="210.6" x2="98.5" y2="113.0" stroke="#0f172a" stroke-width="1.6"/>
+        <line x1="149.9" y1="210.6" x2="98.5" y2="113.0" stroke="#0f172a" stroke-width="1.6"/>
+        <line x1="98.5" y1="210.6" x2="98.5" y2="113.0" stroke="#475569" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <line x1="98.5" y1="210.6" x2="98.5" y2="113.0" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <text x="91.5" y="183.3" font-size="13" fill="#ef4444" text-anchor="end" font-style="italic" font-weight="600">H</text>
+        <path d="M98.5,201.6 L107.5,201.6 L107.5,210.6" fill="none" stroke="#ef4444" stroke-width="1.1"/>
+        <line x1="98.5" y1="210.6" x2="149.9" y2="210.6" stroke="#8b5cf6" stroke-width="1.5"/>
+        <text x="124.2" y="225.6" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">r</text>
+        <circle cx="98.5" cy="113.0" r="2.8" fill="#0f172a"/>
+      </g>
+    </svg>
+    </div>
+    <p class="cap">A <b>derékszögű háromszög</b> az egyik <b>befogója</b> körül forgatva <b>kúpot</b> ad: a tengely a magasság (<span class="math inline">\(H\)</span>), a másik befogó a sugár (<span class="math inline">\(r\)</span>), az átfogó pedig az alkotó (<span class="math inline">\(s\)</span>).</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 430 250" width="430" height="250" role="img" aria-label="A(z) félkör forgatása a tengely körül: gömb">
+      <defs><marker id="nyil2" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <line x1="99.3" y1="226.0" x2="99.3" y2="63.1" stroke="#475569" stroke-width="1.4" stroke-dasharray="7 4"/>
+      <text x="99.3" y="240.0" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">tengely</text>
+      <path d="M99.3,204.0 A54.2,54.2 0 0 1 99.3,95.6 z" fill="#047857" fill-opacity="0.14" stroke="#0f172a" stroke-width="1.7"/>
+      <line x1="99.3" y1="149.8" x2="153.5" y2="149.8" stroke="#8b5cf6" stroke-width="1.5"/>
+      <text x="133.1" y="153.8" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">R</text>
+      <line x1="184.6" y1="125.0" x2="220.6" y2="125.0" stroke="#0f172a" stroke-width="1.8" marker-end="url(#nyil2)"/>
+      <g transform="translate(232.6,0)">
+        <circle cx="98.5" cy="182.2" r="43.8" fill="#047857" fill-opacity="0.08" stroke="#0f172a" stroke-width="1.8"/>
+        <ellipse cx="98.5" cy="182.2" rx="43.8" ry="13.1" fill="none" stroke="#475569" stroke-width="1.3"/>
+        <line x1="98.5" y1="182.2" x2="130.1" y2="151.5" stroke="#8b5cf6" stroke-width="1.7"/>
+        <text x="122.3" y="164.8" font-size="13" fill="#8b5cf6" text-anchor="start" font-style="italic" font-weight="600">R</text>
+        <circle cx="98.5" cy="182.2" r="2.8" fill="#0f172a"/>
+      </g>
+    </svg>
+    </div>
+    <p class="cap">A <b>félkör</b> az átmérője körül forgatva <b>gömböt</b> ad.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 430 250" width="430" height="250" role="img" aria-label="A(z) derékszögű trapéz forgatása a tengely körül: csonkakúp">
+      <defs><marker id="nyil2" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <line x1="99.3" y1="226.0" x2="99.3" y2="63.1" stroke="#475569" stroke-width="1.4" stroke-dasharray="7 4"/>
+      <text x="99.3" y="240.0" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">tengely</text>
+      <polygon points="99.3,204.0 164.3,204.0 131.8,128.1 99.3,128.1" fill="#047857" fill-opacity="0.14" stroke="#0f172a" stroke-width="1.7"/>
+      <text x="131.8" y="219.0" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">R</text>
+      <text x="115.6" y="121.1" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">r</text>
+      <text x="91.3" y="170.1" font-size="13" fill="#ef4444" text-anchor="middle" font-style="italic" font-weight="600">H</text>
+      <line x1="184.6" y1="125.0" x2="220.6" y2="125.0" stroke="#0f172a" stroke-width="1.8" marker-end="url(#nyil2)"/>
+      <g transform="translate(232.6,0)">
+        <path d="M45.9,210.2 L72.2,148.9 A26.3,7.9 0 0 0 124.8,148.9 L151.1,210.2 A52.6,15.8 0 0 1 45.9,210.2 z" fill="#047857" fill-opacity="0.08" stroke="none"/>
+        <path d="M45.9,210.2 A52.6,15.8 0 0 0 151.1,210.2" fill="none" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 4"/>
+        <path d="M45.9,210.2 A52.6,15.8 0 0 1 151.1,210.2" fill="none" stroke="#0f172a" stroke-width="1.6"/>
+        <line x1="45.9" y1="210.2" x2="72.2" y2="148.9" stroke="#0f172a" stroke-width="1.6"/>
+        <line x1="151.1" y1="210.2" x2="124.8" y2="148.9" stroke="#0f172a" stroke-width="1.6"/>
+        <ellipse cx="98.5" cy="148.9" rx="26.3" ry="7.9" fill="#ffffff" fill-opacity="0.55" stroke="#0f172a" stroke-width="1.6"/>
+        <line x1="98.5" y1="210.2" x2="98.5" y2="148.9" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <text x="91.5" y="179.5" font-size="13" fill="#ef4444" text-anchor="end" font-style="italic" font-weight="600">H</text>
+        <line x1="98.5" y1="210.2" x2="151.1" y2="210.2" stroke="#8b5cf6" stroke-width="1.5"/>
+        <text x="124.8" y="225.2" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">R</text>
+        <line x1="98.5" y1="148.9" x2="72.2" y2="148.9" stroke="#8b5cf6" stroke-width="1.5"/>
+        <text x="85.4" y="141.9" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">r</text>
+      </g>
+    </svg>
+    </div>
+    <p class="cap">A <b>derékszögű trapéz</b> a derékszögű szára körül forgatva <b>csonkakúpot</b> ad: a két párhuzamos oldal a két sugár (<span class="math inline">\(R\)</span> és <span class="math inline">\(r\)</span>).</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„Mindegy, melyik oldala körül forgatom — ugyanaz a test lesz."</i></p><p><b>Nem mindegy.</b> Vegyünk egy <span class="math inline">\(3\times4\)</span>-es téglalapot:</p><ul><li>a <span class="math inline">\(4\)</span> egység hosszú oldala körül forgatva <span class="math inline">\(r=3\)</span> és <span class="math inline">\(H=4\)</span>, tehát <span class="math inline">\(V=9\pi\cdot4=36\pi\)</span>;</li><li>a <span class="math inline">\(3\)</span> egység hosszú oldala körül forgatva <span class="math inline">\(r=4\)</span> és <span class="math inline">\(H=3\)</span>, tehát <span class="math inline">\(V=16\pi\cdot3=48\pi\)</span>.</li></ul><p>A második <b>másfélszer</b> nagyobb, pedig ugyanabból a téglalapból lett. Az ok: a sugár <b>négyzetesen</b> számít, a magasság csak lineárisan — ezért mindig a nagyobb sugarú változat a testesebb.</p><p>Ugyanez a háromszögnél: a két befogó körül forgatva a sugár és a magasság <b>felcserélődik</b>, és két különböző térfogatú kúpot kapsz.</p>
+    </div>
+
+    <div class="doboz erdekesseg" id="erd-atfogo">
+      <p class="cim"><span class="ikon">💡</span> És ha az átfogó körül forgatjuk?</p>
+      <p>A derékszögű háromszöget az <b>átfogója</b> körül is meg lehet forgatni. Ekkor nem egy kúp keletkezik, hanem <b>kettő</b>, közös alaplappal összeragasztva — a közös alapkör sugara az átfogóhoz tartozó <b>magasság</b>.</p><div class="svgcard">
+    <svg viewBox="0 0 300 290" width="300" height="290" role="img" aria-label="Derékszögű háromszög az átfogója körül forgatva: két kúp közös alaplappal">
+      <path d="M82.8,145.0 L150.0,44.2 L217.2,145.0 z" fill="#047857" fill-opacity="0.08" stroke="#0f172a" stroke-width="1.6"/>
+      <path d="M82.8,145.0 L150.0,245.8 L217.2,145.0 z" fill="#047857" fill-opacity="0.08" stroke="#0f172a" stroke-width="1.6"/>
+      <ellipse cx="150.0" cy="145.0" rx="67.2" ry="20.2" fill="none" stroke="#475569" stroke-width="1.4" stroke-dasharray="5 4"/>
+      <path d="M82.8,145.0 A67.2,20.2 0 0 1 217.2,145.0" fill="none" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="150.0" y1="145.0" x2="217.2" y2="145.0" stroke="#8b5cf6" stroke-width="1.5"/>
+      <text x="183.6" y="139.0" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">r</text>
+      <line x1="150.0" y1="145.0" x2="150.0" y2="44.2" stroke="#ef4444" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <text x="143.0" y="94.6" font-size="13" fill="#ef4444" text-anchor="end" font-style="italic" font-weight="600">H</text>
+    </svg>
+    </div>
+    <p class="cap">Az átfogó körüli forgatás eredménye: két kúp közös alaplappal.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ Az 5-ös oldal körül forgatva a sugár 8 lesz: V = 64π · 5 = 320π. A másik esetben V = 25π · 8 = 200π. A nagyobb sugár nyer." data-nem="✘ A sugár négyzetesen számít, ezért a NAGYOBB sugarú változat a nagyobb. Az 5-ös oldal körül forgatva lesz 8 a sugár — az ad 320π-t a 200π ellenében.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy <span class="math inline">\(5\times8\)</span>-as téglalapot megforgatunk. Melyik tengely körül lesz nagyobb a keletkező henger térfogata?</p>
+      <div class="opciok"><button>Az <span class="math inline">\(5\)</span> egység hosszú oldala körül</button><button>A <span class="math inline">\(8\)</span> egység hosszú oldala körül</button><button>Mindkét esetben ugyanakkora</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Amit minden forgástest tud</h2>
+
+    <p>Bármelyik forgástestet nézzük, két metszetfajta mindig ugyanúgy viselkedik. Ez a két állítás végigkíséri az egész témakört.</p>
+
+    <div class="doboz tetel" id="tetel-meroleges-metszet">
+      <p class="cim"><span class="ikon">📘</span> A tengelyre merőleges metszet</p>
+      <p>Ha egy forgástestet a <b>tengelyére merőleges</b> síkkal metszünk el, a metszet mindig <b>kör</b>, és a középpontja a tengelyen van.</p><p>Ez közvetlenül a keletkezésből jön: a metszősík magasságában lévő pontok mind ugyanakkora körpályát írtak le a forgatás közben.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 300 270" width="300" height="270" role="img" aria-label="A tengelyre merőleges metszet kör">
+      <path d="M70.7,222.2 L70.7,87.4 A79.3,23.8 0 0 0 229.3,87.4 L229.3,222.2 A79.3,23.8 0 0 1 70.7,222.2 z" fill="#047857" fill-opacity="0.08" stroke="none"/>
+      <path d="M70.7,222.2 A79.3,23.8 0 0 0 229.3,222.2" fill="none" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 4"/>
+      <path d="M70.7,222.2 A79.3,23.8 0 0 1 229.3,222.2" fill="none" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="70.7" y1="222.2" x2="70.7" y2="87.4" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="229.3" y1="222.2" x2="229.3" y2="87.4" stroke="#0f172a" stroke-width="1.6"/>
+      <ellipse cx="150.0" cy="148.1" rx="79.3" ry="23.8" fill="#047857" fill-opacity="0.22" stroke="#047857" stroke-width="1.6"/>
+      <ellipse cx="150.0" cy="87.4" rx="79.3" ry="23.8" fill="#ffffff" fill-opacity="0.55" stroke="#0f172a" stroke-width="1.6"/>
+    </svg>
+    </div>
+    <p class="cap">A hengert a tengelyére merőlegesen elmetszve az alapkörrel <b>egybevágó</b> kört kapunk.</p>
+
+    <div class="doboz definicio" id="def-tengelymetszet">
+      <p class="cim"><span class="ikon">📗</span> Tengelymetszet</p>
+      <p>A forgástest <b>tengelymetszete</b> az a metszet, amelyet a forgástengelyt <b>tartalmazó</b> síkkal kapunk. Minden forgástest tengelymetszete <b>tengelyesen szimmetrikus</b> — a szimmetriatengelye maga a forgástengely.</p><table class="tt-table"><tr><th>Test</th><th>A tengelymetszete</th></tr><tr><td>henger</td><td>téglalap (<span class="math inline">\(2r\)</span> széles, <span class="math inline">\(H\)</span> magas)</td></tr><tr><td>kúp</td><td>egyenlő szárú háromszög (alapja <span class="math inline">\(2r\)</span>, szárai az alkotók)</td></tr><tr><td>csonkakúp</td><td>egyenlő szárú trapéz</td></tr><tr><td>gömb</td><td><b>főkör</b> — a gömb legnagyobb köre, sugara <span class="math inline">\(R\)</span></td></tr></table>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 310 270" width="310" height="270" role="img" aria-label="A henger tengelymetszete téglalap">
+      <path d="M75.7,222.2 L75.7,87.4 A79.3,23.8 0 0 0 234.3,87.4 L234.3,222.2 A79.3,23.8 0 0 1 75.7,222.2 z" fill="#047857" fill-opacity="0.08" stroke="none"/>
+      <polygon points="75.7,222.2 234.3,222.2 234.3,87.4 75.7,87.4" fill="#3b82f6" fill-opacity="0.18" stroke="#3b82f6" stroke-width="1.6"/>
+      <path d="M75.7,222.2 A79.3,23.8 0 0 0 234.3,222.2" fill="none" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 4"/>
+      <path d="M75.7,222.2 A79.3,23.8 0 0 1 234.3,222.2" fill="none" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="75.7" y1="222.2" x2="75.7" y2="87.4" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="234.3" y1="222.2" x2="234.3" y2="87.4" stroke="#0f172a" stroke-width="1.6"/>
+      <ellipse cx="155.0" cy="87.4" rx="79.3" ry="23.8" fill="#ffffff" fill-opacity="0.55" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="155.0" y1="222.2" x2="234.3" y2="222.2" stroke="#8b5cf6" stroke-width="1.5"/>
+      <text x="194.6" y="237.2" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">r</text>
+      <circle cx="155.0" cy="222.2" r="2.6" fill="#8b5cf6"/>
+      <line x1="53.5" y1="222.2" x2="53.5" y2="87.4" stroke="#ef4444" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <line x1="48.0" y1="222.2" x2="59.1" y2="222.2" stroke="#ef4444" stroke-width="1.2"/>
+      <line x1="48.0" y1="87.4" x2="59.1" y2="87.4" stroke="#ef4444" stroke-width="1.2"/>
+      <text x="46.5" y="154.8" font-size="13" fill="#ef4444" text-anchor="end" font-style="italic" font-weight="600">H</text>
+    </svg>
+    </div>
+    <p class="cap">A henger tengelymetszete téglalap: az egyik oldala az <b>átmérő</b> (<span class="math inline">\(2r\)</span>), a másik a magasság (<span class="math inline">\(H\)</span>).</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 300 280" width="300" height="280" role="img" aria-label="A kúp tengelymetszete egyenlő szárú háromszög">
+      <path d="M71.4,232.4 L150.0,83.0 L228.6,232.4 A78.6,23.6 0 0 1 71.4,232.4 z" fill="#047857" fill-opacity="0.08" stroke="none"/>
+      <polygon points="71.4,232.4 228.6,232.4 150.0,83.0" fill="#3b82f6" fill-opacity="0.18" stroke="#3b82f6" stroke-width="1.6"/>
+      <path d="M71.4,232.4 A78.6,23.6 0 0 0 228.6,232.4" fill="none" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 4"/>
+      <path d="M71.4,232.4 A78.6,23.6 0 0 1 228.6,232.4" fill="none" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="71.4" y1="232.4" x2="150.0" y2="83.0" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="228.6" y1="232.4" x2="150.0" y2="83.0" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="150.0" y1="232.4" x2="150.0" y2="83.0" stroke="#475569" stroke-width="1.2" stroke-dasharray="4 3"/>
+      <line x1="150.0" y1="232.4" x2="150.0" y2="83.0" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <text x="143.0" y="190.6" font-size="13" fill="#ef4444" text-anchor="end" font-style="italic" font-weight="600">H</text>
+      <path d="M150.0,223.4 L159.0,223.4 L159.0,232.4" fill="none" stroke="#ef4444" stroke-width="1.1"/>
+      <line x1="150.0" y1="232.4" x2="228.6" y2="232.4" stroke="#8b5cf6" stroke-width="1.5"/>
+      <text x="189.3" y="247.4" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">r</text>
+      <circle cx="150.0" cy="83.0" r="2.8" fill="#0f172a"/>
+    </svg>
+    </div>
+    <p class="cap">A kúp tengelymetszete egyenlő szárú háromszög.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„A tengelymetszet is kör, hiszen minden metszet kör."</i></p><p>A <b>tengelyre merőleges</b> metszet kör. A <b>tengelyt tartalmazó</b> metszet viszont soha nem az: a hengeré téglalap, a kúpé háromszög, a gömbé pedig kör ugyan, de az a <b>főkör</b> — a lehető legnagyobb, nem akármelyik.</p><p>Segít, ha úgy gondolsz rá, hogy a merőleges metszet <b>keresztben</b> vágja a testet (mint a szalámit), a tengelymetszet pedig <b>hosszában</b> (mint a kettévágott alma).</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A tengelymetszet téglalap: az egyik oldala az átmérő (2r), a másik a magasság (H)." data-nem="✘ Kört a tengelyre MERŐLEGES metszet ad. A tengelyt tartalmazó sík hosszában vágja a hengert — az eredmény téglalap.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mi lesz az egyenes henger metszete, ha a <b>tengelyét tartalmazó</b> síkkal metsszük el?</p>
+      <div class="opciok"><button>Téglalap</button><button>Kör</button><button>Ellipszis</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">A henger- és a kúpfelület</h2>
+
+    <p>Eddig a keletkezés felől néztük a testeket. Van egy másik, precízebb út is, és a tankönyv ezt használja — érdemes felismerni, ha találkozol vele.</p>
+
+    <div class="doboz definicio" id="def-hengerfelulet">
+      <p class="cim"><span class="ikon">📗</span> Hengerfelület és kúpfelület</p>
+      <p>Adott egy <b>zárt görbe</b> (a <b>vezérgörbe</b>) és egy egyenes, amely nem esik a görbe síkjába.</p><ul><li><b>Hengerfelület:</b> a vezérgörbe minden pontján át az adott egyenessel <b>párhuzamos</b> egyenest húzunk. Ezek az egyenesek az <b>alkotók</b>.</li><li><b>Kúpfelület:</b> a vezérgörbe minden pontját összekötjük egy rögzített, a görbe síkján kívüli <b>ponttal</b> (a csúccsal).</li></ul><p>Ha a vezérgörbe <b>kör</b>, <b>körhenger-</b>, illetve <b>körkúpfelületről</b> beszélünk. A továbbiakban mindig ez az eset szerepel, ezért a „kör” jelzőt el is hagyjuk.</p>
+    </div>
+
+    <p>A <b>test</b> ebből úgy lesz, hogy a felületet két párhuzamos síkkal (henger), illetve egy síkkal és a csúccsal (kúp) elmetsszük, és a közbezárt részt tekintjük.</p><p>A forgatásos és a vezérgörbés megközelítés ugyanoda vezet, ha az alkotók <b>merőlegesek</b> az alaplapra — ezek az <b>egyenes</b> testek. Ha nem merőlegesek, <b>ferde</b> hengert, illetve kúpot kapunk; ezek felszínével és térfogatával nem foglalkozunk, csak a fogalmat kell felismerned.</p>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-henger.html#alap-1">🐕 Tér-eb-ugrás <span class="cimke">A 1–4</span></a><a class="sav bruno" href="feladatok-henger.html#kozep-1">👑 Királyi Gárda <span class="cimke">K 1–2</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Medúza:</b> A fogalmak megvannak. A Kamra legegyszerűbb tartálya a <b>henger</b> — nézzük meg közelről, mi micsoda rajta, és hogyan lehet kiteríteni.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">Forgástestek — témakör</span></a>
+      <a class="kov" href="tananyag-henger.html"><span class="irany">Következő →</span><span class="hova">A henger és elemei</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Összetett és üreges testek — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Forgástestek</a> ›
+  <span class="itt">Összetett és üreges testek — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Összetett és üreges testek</h1>
+  <p class="alcim">Az összeadás és a kivonás elve, a felszín buktatói, és a témakör képlettára.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az Átalakulás Kamrája · 10/10</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Medúza:</b> A valóságban nincs „tiszta henger”. Van víztorony (henger + félgömb), van tölcsér (kúp + henger), és van cső (henger a hengerben). A módszer viszont mindig ugyanaz: <b>bontsd részekre</b>, számold ki a részeket, aztán rakd össze — de a felszínnél nagyon figyelj, mit raksz össze.</p></div>
+
+    <p>Ez az egység nem hoz új képletet. Amit hoz, az egy <b>eljárás</b> és egy figyelmeztetés: a térfogatok összeadódnak, a felszínek <b>nem</b>.</p>
+
+    <h2 id="s1">Az összeadás elve — a térfogat</h2>
+
+    <div class="doboz tetel" id="tetel-osszetett-terfogat">
+      <p class="cim"><span class="ikon">📘</span> Összetett test térfogata</p>
+      <p>Ha egy testet <b>átfedés nélkül</b> felbontunk részekre, a térfogata a részek térfogatának <b>összege</b>:</p><span class="math display">\[V=V_1+V_2+\dots+V_n.\]</span><p>Ez akkor is igaz, ha a részek különböző fajtájúak (henger, kúp, félgömb) — a térfogat „nem tudja”, hogy hol a határ.</p>
+    </div>
+
+    <p>A gyakorlati lépések:</p><ol><li>Rajzold le a testet, és <b>húzd be</b> a határvonalakat, ahol a részek találkoznak.</li><li>Nevezd meg a részeket, és írd fel mindegyik adatait — figyelj arra, hogy a közös határnál a sugarak általában <b>megegyeznek</b>.</li><li>Számold ki a részek térfogatát, és add össze őket.</li></ol>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 290 300" width="290" height="300" role="img" aria-label="Henger félgömb tetővel">
+      <path d="M73.0,254.4 L73.0,146.4 A72.0,21.6 0 0 0 217.0,146.4 L217.0,254.4 A72.0,21.6 0 0 1 73.0,254.4 z" fill="#047857" fill-opacity="0.08" stroke="none"/>
+      <path d="M73.0,254.4 A72.0,21.6 0 0 0 217.0,254.4" fill="none" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 4"/>
+      <path d="M73.0,254.4 A72.0,21.6 0 0 1 217.0,254.4" fill="none" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="73.0" y1="254.4" x2="73.0" y2="146.4" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="217.0" y1="254.4" x2="217.0" y2="146.4" stroke="#0f172a" stroke-width="1.6"/>
+      <path d="M73.0,146.4 A72.0,72.0 0 0 1 217.0,146.4" fill="#047857" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.7"/>
+      <ellipse cx="145.0" cy="146.4" rx="72.0" ry="21.6" fill="none" stroke="#475569" stroke-width="1.3" stroke-dasharray="5 4"/>
+      <text x="145.0" y="101.8" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">félgömb</text>
+      <line x1="145.0" y1="254.4" x2="217.0" y2="254.4" stroke="#8b5cf6" stroke-width="1.5"/>
+      <text x="181.0" y="269.4" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">r</text>
+      <line x1="54.3" y1="254.4" x2="54.3" y2="146.4" stroke="#ef4444" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <text x="47.3" y="200.4" font-size="13" fill="#ef4444" text-anchor="end" font-style="italic" font-weight="600">H</text>
+    </svg>
+    </div>
+    <p class="cap">Víztorony: hengeres tartály félgömb tetővel. A határvonal szaggatva.</p>
+
+    <h2 id="s2">A felszín nem adódik össze</h2>
+
+    <div class="doboz tetel" id="tetel-osszetett-felszin">
+      <p class="cim"><span class="ikon">📘</span> Összetett test felszíne</p>
+      <p>A felszínbe <b>csak a kívülről látható</b> felületek számítanak. Ahol két rész illeszkedik, ott a közös felület <b>egyik</b> testnél sem tartozik a felszínhez — mert nem határolja a testet a külvilág felé.</p><p>Ezért a felszín <b>soha nem</b> a részek felszínének összege: abból a közös felületet <b>kétszer</b> vonni kell le.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„A víztorony felszíne = a henger felszíne + a félgömb felszíne."</i></p><p>A henger felszínében ott van a <b>felső</b> körlapja, a félgömb „felszínében” pedig az <b>alapköre</b> — pedig e kettő ugyanaz a kör, és kívülről <b>egyáltalán nem látszik</b>: a félgömb pontosan rajta ül.</p><p><b>A biztos módszer:</b> rajzold le a testet, és satírozd be, ami kívülről látszik. Csak azt add össze. Ha a feladat azt mondja, hogy a tárgy a földön áll és nem festjük az alját, akkor az alsó körlap is kimarad.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-viztorony">
+      <p class="cim"><span class="ikon">✏️</span> Átalakulás-kamra szimuláció</p>
+      <p>Egy víztorony tartálya hengerből (<span class="math inline">\(r=3\)</span> m, <span class="math inline">\(H=10\)</span> m) és a rá épített félgömb tetőből áll. Mennyi víz fér bele, és mekkora a <b>külső</b> felülete, ha az alsó körlapot nem számítjuk?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>Térfogat.</b> A henger <span class="math inline">\(V_1=9\pi\cdot10=90\pi\)</span>, a félgömb <span class="math inline">\(V_2=\frac12\cdot\frac{4\cdot3^3\pi}{3}=18\pi\)</span>, tehát</p><span class="math display">\[V=90\pi+18\pi=108\pi\approx339{,}29\ \text{m}^3.\]</span><p><b>Felszín.</b> Kívülről a <b>hengerpalást</b> és a <b>félgömb</b> látszik:</p><ul><li>hengerpalást: <span class="math inline">\(2r\pi H=2\cdot3\pi\cdot10=60\pi\)</span>;</li><li>félgömb: <span class="math inline">\(\frac12\cdot4\cdot3^2\pi=18\pi\)</span>.</li></ul><span class="math display">\[F=60\pi+18\pi=78\pi\approx245{,}04\ \text{m}^2.\]</span><p>A henger <b>felső</b> körlapja kimaradt — azon ül a félgömb. Ha a feladat az alsó körlapot is kérné, még <span class="math inline">\(9\pi\)</span> jönne hozzá, összesen <span class="math inline">\(87\pi\)</span>.</p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A térfogat összeadódik. A felszínnél viszont az illeszkedő két körlap eltűnik — azokat nem számoljuk." data-nem="✘ A térfogatok mindig összeadódnak. A felszínből viszont az illeszkedő (eltakart) felületek kiesnek.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy kúp és egy vele azonos sugarú henger alaplapjukkal összeillesztve alkotnak egy testet. Melyik állítás igaz?</p>
+      <div class="opciok"><button>A térfogatok összeadódnak, a felszínek nem</button><button>Mindkettő összeadódik</button><button>A felszínek összeadódnak, a térfogatok nem</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 290 300" width="290" height="300" role="img" aria-label="Henger kúp tetővel">
+      <path d="M73.0,254.4 L73.0,146.4 A72.0,21.6 0 0 0 217.0,146.4 L217.0,254.4 A72.0,21.6 0 0 1 73.0,254.4 z" fill="#047857" fill-opacity="0.08" stroke="none"/>
+      <path d="M73.0,254.4 A72.0,21.6 0 0 0 217.0,254.4" fill="none" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 4"/>
+      <path d="M73.0,254.4 A72.0,21.6 0 0 1 217.0,254.4" fill="none" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="73.0" y1="254.4" x2="73.0" y2="146.4" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="217.0" y1="254.4" x2="217.0" y2="146.4" stroke="#0f172a" stroke-width="1.6"/>
+      <path d="M73.0,146.4 L145.0,74.4 L217.0,146.4 z" fill="#047857" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.7"/>
+      <ellipse cx="145.0" cy="146.4" rx="72.0" ry="21.6" fill="none" stroke="#475569" stroke-width="1.3" stroke-dasharray="5 4"/>
+      <line x1="145.0" y1="254.4" x2="217.0" y2="254.4" stroke="#8b5cf6" stroke-width="1.5"/>
+      <text x="181.0" y="269.4" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">r</text>
+      <line x1="54.3" y1="254.4" x2="54.3" y2="146.4" stroke="#ef4444" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <text x="47.3" y="200.4" font-size="13" fill="#ef4444" text-anchor="end" font-style="italic" font-weight="600">H</text>
+    </svg>
+    </div>
+    <p class="cap">Kúppal fedett hengeres torony: az illeszkedő körlap kívülről nem látszik.</p>
+
+    <h2 id="s3">Üreges testek — a kivonás elve</h2>
+
+    <p>A cső, a betongyűrű és a fúrt alkatrész úgy keletkezik, hogy egy testből <b>kiveszünk</b> egy másikat. A térfogat ilyenkor <b>különbség</b>:</p><span class="math display">\[V=V_{\text{külső}}-V_{\text{belső}}.\]</span><p>A felszínnél viszont épp fordítva: az üreg <b>új felületet</b> hoz létre, ami nagyon is látszik — bele lehet nézni a csőbe.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 300 280" width="300" height="280" role="img" aria-label="Cső: üreges henger">
+      <path d="M66.0,230.8 L66.0,104.8 A84.0,25.2 0 0 0 234.0,104.8 L234.0,230.8 A84.0,25.2 0 0 1 66.0,230.8 z" fill="#047857" fill-opacity="0.08" stroke="none"/>
+      <path d="M66.0,230.8 A84.0,25.2 0 0 0 234.0,230.8" fill="none" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 4"/>
+      <path d="M66.0,230.8 A84.0,25.2 0 0 1 234.0,230.8" fill="none" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="66.0" y1="230.8" x2="66.0" y2="104.8" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="234.0" y1="230.8" x2="234.0" y2="104.8" stroke="#0f172a" stroke-width="1.6"/>
+      <ellipse cx="150.0" cy="104.8" rx="84.0" ry="25.2" fill="#ffffff" fill-opacity="0.6" stroke="#0f172a" stroke-width="1.6"/>
+      <ellipse cx="150.0" cy="104.8" rx="46.2" ry="13.9" fill="#475569" fill-opacity="0.14" stroke="#0f172a" stroke-width="1.5"/>
+      <line x1="103.8" y1="104.8" x2="103.8" y2="220.7" stroke="#475569" stroke-width="1.3" stroke-dasharray="4 3"/>
+      <line x1="196.2" y1="104.8" x2="196.2" y2="220.7" stroke="#475569" stroke-width="1.3" stroke-dasharray="4 3"/>
+      <line x1="150.0" y1="104.8" x2="196.2" y2="104.8" stroke="#8b5cf6" stroke-width="1.5"/>
+      <text x="173.1" y="96.8" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">r</text>
+      <line x1="150.0" y1="230.8" x2="66.0" y2="230.8" stroke="#8b5cf6" stroke-width="1.5"/>
+      <text x="108.0" y="245.8" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">R</text>
+      <line x1="255.8" y1="230.8" x2="255.8" y2="104.8" stroke="#ef4444" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <text x="262.8" y="167.8" font-size="13" fill="#ef4444" text-anchor="start" font-style="italic" font-weight="600">H</text>
+    </svg>
+    </div>
+    <p class="cap">Cső: két koncentrikus henger különbsége. A belső palást is a felszín része.</p>
+
+    <div class="doboz pelda" id="pelda-cso">
+      <p class="cim"><span class="ikon">✏️</span> Átalakulás-kamra szimuláció</p>
+      <p>Egy <span class="math inline">\(20\)</span> cm hosszú cső külső sugara <span class="math inline">\(5\)</span> cm, belső sugara <span class="math inline">\(4\)</span> cm. Mekkora a térfogata (az anyag mennyisége) és a teljes felszíne?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>Térfogat.</b></p><span class="math display">\[V=25\pi\cdot20-16\pi\cdot20=500\pi-320\pi=180\pi\ \text{cm}^3.\]</span><p><b>Felszín.</b> A cső felülete <b>négy</b> részből áll:</p><ul><li>a két végén egy-egy <b>körgyűrű</b>: <span class="math inline">\(2\cdot(25\pi-16\pi)=18\pi\)</span>;</li><li>a <b>külső</b> palást: <span class="math inline">\(2\cdot5\pi\cdot20=200\pi\)</span>;</li><li>a <b>belső</b> palást: <span class="math inline">\(2\cdot4\pi\cdot20=160\pi\)</span>.</li></ul><span class="math display">\[F=18\pi+200\pi+160\pi=378\pi\ \text{cm}^2.\]</span><p>A belső palást a leggyakrabban elfelejtett rész — pedig ha a csövet belülről is le kell festeni vagy szigetelni, épp az a lényeg.</p></div></details>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 290 280" width="290" height="280" role="img" aria-label="Hengerből kifúrt kúp">
+      <path d="M64.3,231.8 L64.3,110.8 A80.7,24.2 0 0 0 225.7,110.8 L225.7,231.8 A80.7,24.2 0 0 1 64.3,231.8 z" fill="#047857" fill-opacity="0.08" stroke="none"/>
+      <path d="M64.3,231.8 A80.7,24.2 0 0 0 225.7,231.8" fill="none" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 4"/>
+      <path d="M64.3,231.8 A80.7,24.2 0 0 1 225.7,231.8" fill="none" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="64.3" y1="231.8" x2="64.3" y2="110.8" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="225.7" y1="231.8" x2="225.7" y2="110.8" stroke="#0f172a" stroke-width="1.6"/>
+      <ellipse cx="145.0" cy="110.8" rx="80.7" ry="24.2" fill="#ffffff" fill-opacity="0.6" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="100.6" y1="110.8" x2="145.0" y2="231.8" stroke="#475569" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <line x1="189.4" y1="110.8" x2="145.0" y2="231.8" stroke="#475569" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <ellipse cx="145.0" cy="110.8" rx="44.4" ry="13.3" fill="none" stroke="#475569" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <line x1="145.0" y1="231.8" x2="225.7" y2="231.8" stroke="#8b5cf6" stroke-width="1.5"/>
+      <text x="185.3" y="246.8" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">r</text>
+      <line x1="43.4" y1="231.8" x2="43.4" y2="110.8" stroke="#ef4444" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <text x="36.4" y="171.3" font-size="13" fill="#ef4444" text-anchor="end" font-style="italic" font-weight="600">H</text>
+    </svg>
+    </div>
+    <p class="cap">Hengerből kifúrt kúp: a térfogat különbség, a felszínben viszont megjelenik a fúrat palástja is.</p>
+
+    <div class="kviz" data-answer="0" data-jo="✔ Két körgyűrű a végeken, plusz a külső ÉS a belső palást — összesen négy." data-nem="✘ A végeken körgyűrűk vannak (nem teli körök), és a belső palást is látszik: összesen négy darab.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Hány felületdarabból áll egy mindkét végén nyitott cső felszíne?</p>
+      <div class="opciok"><button>Négyből: két körgyűrű, a külső és a belső palást</button><button>Kettőből: a külső és a belső palást</button><button>Háromból: két körgyűrű és a külső palást</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-gomb.html#alap-17">🐕 Tér-eb-ugrás <span class="cimke">A 17–22</span></a><a class="sav bruno" href="feladatok-gomb.html#kozep-12">👑 Királyi Gárda <span class="cimke">K 12–17</span></a></div></div></div>
+
+    <h2 id="s4">🧾 Gyorsismétlő — a forgástestek képlettára</h2>
+
+    <table class="tt-table"><tr><th>Test</th><th>Felszín</th><th>Térfogat</th><th>Amire figyelj</th></tr><tr><td><a href="tananyag-henger-felszin-terfogat.html#tetel-henger-felszin">henger</a></td><td><span class="math inline">\(F=2r\pi(r+H)\)</span></td><td><span class="math inline">\(V=r^2\pi H\)</span></td><td><b>két</b> alapkör; a palásthoz a <b>kerület</b> kell</td></tr><tr><td><a href="tananyag-kup-felszin-terfogat.html#tetel-kup-felszin">kúp</a></td><td><span class="math inline">\(F=r\pi(r+s)\)</span></td><td><span class="math inline">\(V=\dfrac{r^2\pi H}{3}\)</span></td><td>a palástban az <b>alkotó</b>, a térfogatban a <b>magasság</b></td></tr><tr><td><a href="tananyag-csonkakup.html#tetel-csonkakup-felszin">csonkakúp</a></td><td><span class="math inline">\(F=R^2\pi+r^2\pi+(R+r)\pi s\)</span></td><td><span class="math inline">\(V=\dfrac{H\pi}{3}\left(R^2+Rr+r^2\right)\)</span></td><td>a palástban <span class="math inline">\(R+r\)</span>, a háromszögben <span class="math inline">\(R-r\)</span></td></tr><tr><td><a href="tananyag-gomb-felszin-terfogat.html#tetel-gomb-felszin">gömb</a></td><td><span class="math inline">\(F=4R^2\pi\)</span></td><td><span class="math inline">\(V=\dfrac{4R^3\pi}{3}\)</span></td><td>a <b>sugár</b> kell, nem az átmérő; a kitevőket a mértékegység ellenőrzi</td></tr></table><p><b>Jelölések:</b> <span class="math inline">\(r\)</span> az alapkör sugara (a csonkakúpnál a <b>felső</b>, <span class="math inline">\(R\)</span> az alsó; a gömbnél <span class="math inline">\(R\)</span> maga a sugár), <span class="math inline">\(H\)</span> a testmagasság, <span class="math inline">\(s\)</span> az <b>alkotó</b>, <span class="math inline">\(B=r^2\pi\)</span> az alapterület, <span class="math inline">\(M\)</span> a palást területe.</p><p>A két legfontosabb összefüggés, amiből a hiányzó adat előkerül:</p><span class="math display">\[\underbrace{s^2=r^2+H^2}_{\text{kúp}},\qquad \underbrace{s^2=H^2+(R-r)^2}_{\text{csonkakúp}}.\]</span>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>Nézz körül a konyhában: a bögre henger, a tölcsér kúp, a virágcserép csonkakúp, a narancs gömb, a fánk pedig — na, az már egy ötödik test, a <b>tórusz</b>, amivel itt nem foglalkozunk. Az első négy viszont lefedi majdnem minden hétköznapi tárgy formáját, vagy azok kombinációját.</p>
+    </div>
+
+    <div class="brief" data-outro><p>📡 <b>Medúza:</b> A formákat legyőztük — henger, kúp, csonkakúp, gömb, és minden, amit ezekből össze lehet rakni. Ami marad, az már nem forma, hanem <b>rendszer</b>. Átadom a szót Kanraknak.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-gomb-felszin-terfogat.html"><span class="irany">← Előző</span><span class="hova">A gömb felszíne és térfogata</span></a>
+      <a class="kov" href="feladatok-gomb.html"><span class="irany">Következő →</span><span class="hova">Feladatok — a gömb és az összetett testek</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

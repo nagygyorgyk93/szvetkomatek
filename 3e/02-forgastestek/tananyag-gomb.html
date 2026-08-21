@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A gömbfelület és a gömb — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Forgástestek</a> ›
+  <span class="itt">A gömbfelület és a gömb — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A gömbfelület és a gömb</h1>
+  <p class="alcim">Gömbfelület, gömb, főkör; a sík és a gömbfelület kölcsönös helyzete és az érintősík.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az Átalakulás Kamrája · 8/10</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Medúza:</b> A Kristálypára legstabilabb formája a <b>gömb</b> — minden pontja ugyanolyan messze van a középponttól, ezért nincs rajta gyenge pont, amin a nyomás beszakíthatná. Ezért gömbölyű a buborék, a bolygó és a vízcsepp.</p></div>
+
+    <p>A gömb az egyetlen test a témakörben, amelyet <b>egyetlen adat</b> — a sugár — teljesen meghatároz. Nincs alapkör, nincs alkotó, nincs magasság: csak <span class="math inline">\(R\)</span>.</p><p>Ebben az egységben a fogalmakat rakjuk le, és megnézzük, mi történik, ha egy gömböt <b>síkkal</b> találunk el.</p>
+
+    <h2 id="s1">A gömbfelület és a gömb</h2>
+
+    <div class="doboz definicio" id="def-gombfelulet">
+      <p class="cim"><span class="ikon">📗</span> Gömbfelület és gömb</p>
+      <p>Adott egy <span class="math inline">\(O\)</span> pont és egy <span class="math inline">\(R>0\)</span> szám.</p><ul><li>A <b>gömbfelület</b> azoknak a térbeli pontoknak a halmaza, amelyek az <span class="math inline">\(O\)</span> ponttól pontosan <span class="math inline">\(R\)</span> távolságra vannak.</li><li>A <b>gömb</b> (gömbtest) a gömbfelület és az általa körbezárt belső tartomány <b>együtt</b> — vagyis azok a pontok, amelyek <span class="math inline">\(O\)</span>-tól <b>legfeljebb</b> <span class="math inline">\(R\)</span> távolságra vannak.</li></ul><p>Az <span class="math inline">\(O\)</span> a <b>középpont</b>, az <span class="math inline">\(R\)</span> a <b>sugár</b>. A középponton átmenő húr az <b>átmérő</b>, hossza <span class="math inline">\(2R\)</span>; a gömbfelület két pontját összekötő szakasz a <b>húr</b>.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 280 250" width="280" height="250" role="img" aria-label="Gömb a középpontjával és egy sugarával">
+      <circle cx="140.0" cy="157.8" r="68.2" fill="#047857" fill-opacity="0.08" stroke="#0f172a" stroke-width="1.8"/>
+      <ellipse cx="140.0" cy="157.8" rx="68.2" ry="20.5" fill="none" stroke="#475569" stroke-width="1.3"/>
+      <line x1="140.0" y1="157.8" x2="189.1" y2="110.0" stroke="#8b5cf6" stroke-width="1.7"/>
+      <text x="172.6" y="131.9" font-size="13" fill="#8b5cf6" text-anchor="start" font-style="italic" font-weight="600">R</text>
+      <circle cx="140.0" cy="157.8" r="2.8" fill="#0f172a"/>
+    </svg>
+    </div>
+    <p class="cap">A gömb középpontja és sugara (<span class="math inline">\(R\)</span>). A szürke ellipszis a „vízszintes” főkör — csak a térbeliség érzékeltetésére.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„A labda átmérője <span class="math inline">\(20\)</span> cm, tehát <span class="math inline">\(R=20\)</span>."</i></p><p>A képletekben <b>mindig a sugár</b> áll, az átmérő ennek a kétszerese. Ha a feladat átmérőt ad meg, az <b>első</b> lépés a felezés: <span class="math inline">\(R=10\)</span> cm.</p><p>A hiba ára óriási, mert a sugár a térfogatban <b>köbön</b> szerepel: <span class="math inline">\(20\)</span>-szal számolva nyolcszoros térfogatot kapnál.</p><p>A másik gyakori csúszás a <b>szóhasználat</b>: a gömbfelület csak a „héj”, a gömb pedig a kitöltött test. Felszínt a felületről, térfogatot a testről beszélünk — de a köznyelvben mindkettőt „gömbnek” hívjuk, és ez megbocsátható.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A sugár az átmérő fele: R = 11 cm. A képletekbe MINDIG ez megy." data-nem="✘ Az átmérő a sugár kétszerese, tehát R = 22 : 2 = 11 cm.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy focilabda átmérője <span class="math inline">\(22\)</span> cm. Mekkora a sugara?</p>
+      <div class="opciok"><button><span class="math inline">\(11\)</span> cm</button><button><span class="math inline">\(22\)</span> cm</button><button><span class="math inline">\(44\)</span> cm</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">A gömb mint forgástest</h2>
+
+    <p>A gömb is forgástest: egy <b>félkört</b> forgatunk meg az <b>átmérője</b> körül.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 430 250" width="430" height="250" role="img" aria-label="A(z) félkör forgatása a tengely körül: gömb">
+      <defs><marker id="nyil2" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <line x1="99.3" y1="226.0" x2="99.3" y2="63.1" stroke="#475569" stroke-width="1.4" stroke-dasharray="7 4"/>
+      <text x="99.3" y="240.0" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">tengely</text>
+      <path d="M99.3,204.0 A54.2,54.2 0 0 1 99.3,95.6 z" fill="#047857" fill-opacity="0.14" stroke="#0f172a" stroke-width="1.7"/>
+      <line x1="99.3" y1="149.8" x2="153.5" y2="149.8" stroke="#8b5cf6" stroke-width="1.5"/>
+      <text x="133.1" y="153.8" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">R</text>
+      <line x1="184.6" y1="125.0" x2="220.6" y2="125.0" stroke="#0f172a" stroke-width="1.8" marker-end="url(#nyil2)"/>
+      <g transform="translate(232.6,0)">
+        <circle cx="98.5" cy="182.2" r="43.8" fill="#047857" fill-opacity="0.08" stroke="#0f172a" stroke-width="1.8"/>
+        <ellipse cx="98.5" cy="182.2" rx="43.8" ry="13.1" fill="none" stroke="#475569" stroke-width="1.3"/>
+        <line x1="98.5" y1="182.2" x2="130.1" y2="151.5" stroke="#8b5cf6" stroke-width="1.7"/>
+        <text x="122.3" y="164.8" font-size="13" fill="#8b5cf6" text-anchor="start" font-style="italic" font-weight="600">R</text>
+        <circle cx="98.5" cy="182.2" r="2.8" fill="#0f172a"/>
+      </g>
+    </svg>
+    </div>
+    <p class="cap">A félkör az átmérője körül forgatva gömböt ad.</p>
+
+    <div class="doboz definicio" id="def-fokor">
+      <p class="cim"><span class="ikon">📗</span> Főkör</p>
+      <p>A gömb <b>főköre</b> az a metszet, amelyet a <b>középponton átmenő</b> síkkal kapunk. A főkör sugara maga a gömb sugara, <span class="math inline">\(R\)</span> — ez a gömb lehető legnagyobb síkmetszete.</p><p>A gömb az egyetlen test, amelynek <b>minden</b> tengelymetszete egybevágó: mindegyik ugyanaz a főkör. Ezért nincs a gömbnek kitüntetett „álló” helyzete — bárhogy forgatod, ugyanúgy néz ki.</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>A Föld <b>Egyenlítője</b> főkör, a szélességi körök viszont nem — azok kisebb, az Egyenlítővel párhuzamos metszetkörök. Ezért rövidebb két pont között a repülőút, ha a főkör mentén (az úgynevezett ortodrómán) haladunk: a gömbfelületen két pont legrövidebb összekötése mindig főkörív.</p>
+    </div>
+
+    <h2 id="s3">A gömbfelület és a sík kölcsönös helyzete</h2>
+
+    <p>Ez a témakör egyetlen olyan kérdése, ahol nem számolunk, hanem <b>eldöntünk</b>: két szám összevetése adja a választ.</p>
+
+    <div class="doboz tetel" id="tetel-gomb-sik">
+      <p class="cim"><span class="ikon">📘</span> A három eset</p>
+      <p>Legyen <span class="math inline">\(d\)</span> a gömb középpontjának távolsága a síktól, <span class="math inline">\(R\)</span> pedig a gömb sugara. Ekkor</p><table class="tt-table"><tr><th>Feltétel</th><th>Helyzet</th><th>Közös pontok</th></tr><tr><td><span class="math inline">\(d &gt; R\)</span></td><td>a sík <b>elkerüli</b></td><td>nincs közös pont</td></tr><tr><td><span class="math inline">\(d = R\)</span></td><td>a sík <b>érinti</b></td><td>pontosan <b>egy</b> pont</td></tr><tr><td><span class="math inline">\(d &lt; R\)</span></td><td>a sík <b>metszi</b></td><td>egy <b>kör</b></td></tr></table><p>Ez pontosan a síkbeli „kör és egyenes” eset térbeli megfelelője — ott is a középpont-egyenes távolságot vetettük össze a sugárral.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 310 260" width="310" height="260" role="img" aria-label="A sík metszi a gömbfelületet: a metszet kör">
+      <circle cx="155.0" cy="176.5" r="59.5" fill="#047857" fill-opacity="0.08" stroke="#0f172a" stroke-width="1.8"/>
+      <ellipse cx="155.0" cy="176.5" rx="59.5" ry="17.9" fill="none" stroke="#475569" stroke-width="1.3"/>
+      <path d="M65.7,152.7 L87.7,134.7 L244.3,134.7 L222.3,152.7 z" fill="#3b82f6" fill-opacity="0.12" stroke="#3b82f6" stroke-width="1.5"/>
+      <ellipse cx="155.0" cy="143.7" rx="49.7" ry="14.9" fill="#047857" fill-opacity="0.2" stroke="#047857" stroke-width="1.8"/>
+      <line x1="155.0" y1="143.7" x2="190.8" y2="157.1" stroke="#047857" stroke-width="1.7"/>
+      <text x="177.9" y="165.1" font-size="13" fill="#047857" text-anchor="middle" font-style="italic" font-weight="600">r</text>
+      <line x1="155.0" y1="176.5" x2="155.0" y2="143.7" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <text x="147.0" y="164.1" font-size="13" fill="#ef4444" text-anchor="end" font-style="italic" font-weight="600">d</text>
+      <line x1="155.0" y1="176.5" x2="199.7" y2="213.4" stroke="#8b5cf6" stroke-width="1.7"/>
+      <text x="185.3" y="192.9" font-size="13" fill="#8b5cf6" text-anchor="start" font-style="italic" font-weight="600">R</text>
+      <circle cx="155.0" cy="176.5" r="2.8" fill="#0f172a"/>
+    </svg>
+    </div>
+    <p class="cap"><span class="math inline">\(d &lt; R\)</span>: a sík <b>metszi</b> a gömbfelületet, a metszet kör.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 300 250" width="300" height="250" role="img" aria-label="A sík érinti a gömbfelületet: egyetlen közös pont">
+      <circle cx="150.0" cy="168.7" r="57.3" fill="#047857" fill-opacity="0.08" stroke="#0f172a" stroke-width="1.8"/>
+      <ellipse cx="150.0" cy="168.7" rx="57.3" ry="17.2" fill="none" stroke="#475569" stroke-width="1.3"/>
+      <path d="M64.1,120.5 L86.1,102.5 L235.9,102.5 L213.9,120.5 z" fill="#3b82f6" fill-opacity="0.12" stroke="#3b82f6" stroke-width="1.5"/>
+      <line x1="150.0" y1="168.7" x2="193.0" y2="204.2" stroke="#8b5cf6" stroke-width="1.7"/>
+      <text x="179.5" y="184.5" font-size="13" fill="#8b5cf6" text-anchor="start" font-style="italic" font-weight="600">R</text>
+      <circle cx="150.0" cy="168.7" r="2.8" fill="#0f172a"/>
+    </svg>
+    </div>
+    <p class="cap"><span class="math inline">\(d = R\)</span>: a sík <b>érinti</b> — egyetlen közös pont.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 300 250" width="300" height="250" role="img" aria-label="A sík elkerüli a gömbfelületet: nincs közös pont">
+      <circle cx="150.0" cy="168.7" r="57.3" fill="#047857" fill-opacity="0.08" stroke="#0f172a" stroke-width="1.8"/>
+      <ellipse cx="150.0" cy="168.7" rx="57.3" ry="17.2" fill="none" stroke="#475569" stroke-width="1.3"/>
+      <path d="M64.1,100.4 L86.1,82.4 L235.9,82.4 L213.9,100.4 z" fill="#3b82f6" fill-opacity="0.12" stroke="#3b82f6" stroke-width="1.5"/>
+      <line x1="150.0" y1="168.7" x2="193.0" y2="204.2" stroke="#8b5cf6" stroke-width="1.7"/>
+      <text x="179.5" y="184.5" font-size="13" fill="#8b5cf6" text-anchor="start" font-style="italic" font-weight="600">R</text>
+      <circle cx="150.0" cy="168.7" r="2.8" fill="#0f172a"/>
+    </svg>
+    </div>
+    <p class="cap"><span class="math inline">\(d &gt; R\)</span>: a sík <b>elkerüli</b> a gömbfelületet.</p>
+
+    <div class="doboz pelda" id="pelda-gomb-sik">
+      <p class="cim"><span class="ikon">✏️</span> Átalakulás-kamra szimuláció</p>
+      <p>Egy gömb sugara <span class="math inline">\(13\)</span> cm. Milyen helyzetben van a gömbfelülethez képest az a sík, amely a középponttól <span class="math inline">\(5\)</span> cm, illetve <span class="math inline">\(13\)</span> cm, illetve <span class="math inline">\(20\)</span> cm távolságra van?</p>
+      <details><summary>Megoldás</summary><div class="bel"><ul><li><span class="math inline">\(d=5 &lt; 13=R\)</span> — a sík <b>metszi</b> a gömbfelületet, a metszet egy kör.</li><li><span class="math inline">\(d=13=R\)</span> — a sík <b>érinti</b>: pontosan egy közös pontjuk van.</li><li><span class="math inline">\(d=20 &gt; 13=R\)</span> — a sík <b>elkerüli</b>, nincs közös pontjuk.</li></ul><p>Nem kell semmit kiszámolni: elég a <span class="math inline">\(d\)</span> és az <span class="math inline">\(R\)</span> összevetése.</p></div></details>
+    </div>
+
+    <div class="doboz tetel" id="tetel-erintosik">
+      <p class="cim"><span class="ikon">📘</span> Az érintősík</p>
+      <p>Ha egy sík <b>érinti</b> a gömbfelületet, akkor <b>merőleges</b> az érintési pontba húzott sugárra — és fordítva: a sugár végpontjában a sugárra állított merőleges sík érintősík.</p><p>Ez a síkbeli érintőkör-tétel („az érintő merőleges az érintési pontba húzott sugárra”) térbeli megfelelője.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„Minél messzebb van a sík, annál kisebb kört metsz ki."</i></p><p>A mondat első fele igaz, a második viszont csak <b><span class="math inline">\(d&lt;R\)</span> esetén</b>. Ha a sík eléri a sugarat (<span class="math inline">\(d=R\)</span>), a „kör” egyetlen ponttá zsugorodik, azon túl pedig <b>nincs</b> metszet — nem lesz „nagyon kicsi kör”, hanem semmi.</p><p>Ezért a feladatokban mindig <b>először</b> a helyzetet döntsd el, és csak utána számolj.</p>
+    </div>
+
+    <div class="doboz erdekesseg" id="erd-metszetkor">
+      <p class="cim"><span class="ikon">💡</span> A metszetkör sugara</p>
+      <p>Ha a sík metszi a gömbfelületet, a keletkező kör sugara Pitagorasz-tétellel adódik: a középpont, a metszetkör középpontja és a metszetkör egy pontja derékszögű háromszöget alkot, ezért</p><span class="math display">\[r=\sqrt{R^{2}-d^{2}}.\]</span><p>Az előző példa első esetében ez <span class="math inline">\(r=\sqrt{169-25}=12\)</span> cm.</p><p><b>Ez nálunk nem számonkérés</b> — a tanterv a mi szakunkon csak a <b>kölcsönös helyzet</b> eldöntését várja el. Azért érdemes látni, mert a nehezebb gyakorlófeladatokban felbukkan, és mert szép: a földrajzi szélességi körök sugara pontosan így számolható.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ d = R, tehát a sík ÉRINTI a gömbfelületet: pontosan egy közös pont." data-nem="✘ Itt d = R = 8, ez az érintés esete — pontosan EGY közös pont. Kört akkor metszene ki, ha d < R lenne.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy gömb sugara <span class="math inline">\(8\)</span> cm, egy sík a középponttól <span class="math inline">\(8\)</span> cm távolságra van. Hány közös pontja van a síknak és a gömbfelületnek?</p>
+      <div class="opciok"><button>Pontosan egy</button><button>Végtelen sok (egy kör)</button><button>Egy sem</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-gomb.html#alap-1">🐕 Tér-eb-ugrás <span class="cimke">A 1–6</span></a><a class="sav bruno" href="feladatok-gomb.html#kozep-1">👑 Királyi Gárda <span class="cimke">K 1–3</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Medúza:</b> A forma megvan. Most jön az a két képlet, amely az egészet leírja — és mindkettőben ugyanaz az egyetlen adat szerepel.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-csonkakup.html"><span class="irany">← Előző</span><span class="hova">A csonkakúp</span></a>
+      <a class="kov" href="tananyag-gomb-felszin-terfogat.html"><span class="irany">Következő →</span><span class="hova">A gömb felszíne és térfogata</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

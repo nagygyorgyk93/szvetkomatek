@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A henger és a kúp síkmetszetei — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Forgástestek</a> ›
+  <span class="itt">A henger és a kúp síkmetszetei — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A henger és a kúp síkmetszetei</h1>
+  <p class="alcim">Tengelymetszet és alaplappal párhuzamos metszet: az alakjuk, a hasonlóság aránya és a területük.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az Átalakulás Kamrája · 6/10</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Medúza:</b> A lezárt tartályokat <b>metszéssel</b> nyitjuk fel — de csak akkor, ha előre tudjuk, milyen alakzatot kapunk, és mekkora a területe. Vakon vágni drága: a Kamrában egy rossz metszet a teljes párakészletet elveszíti.</p></div>
+
+    <p>A <a href="../01-poliederek/tananyag-hasab-sikmetszetek.html#def-sikmetszet">síkmetszet</a> fogalma a poliédereknél már megvolt: a test és a metszősík közös pontjainak halmaza. A forgástesteknél két metszet fordul elő újra és újra, és mindkettőt fejből kell tudni.</p>
+
+    <h2 id="s1">Tengelymetszet</h2>
+
+    <div class="doboz tetel" id="tetel-tengelymetszet">
+      <p class="cim"><span class="ikon">📘</span> A tengelymetszet alakja</p>
+      <p>A forgástengelyt <b>tartalmazó</b> síkkal vett metszet</p><ul><li>a <b>hengernél</b> téglalap: az egyik oldala az átmérő (<span class="math inline">\(2r\)</span>), a másik a magasság (<span class="math inline">\(H\)</span>);</li><li>a <b>kúpnál</b> egyenlő szárú háromszög: az alapja az átmérő (<span class="math inline">\(2r\)</span>), a szárai az <b>alkotók</b> (<span class="math inline">\(s\)</span>), a magassága a test magassága (<span class="math inline">\(H\)</span>).</li></ul>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 310 270" width="310" height="270" role="img" aria-label="A henger tengelymetszete téglalap">
+      <path d="M75.7,222.2 L75.7,87.4 A79.3,23.8 0 0 0 234.3,87.4 L234.3,222.2 A79.3,23.8 0 0 1 75.7,222.2 z" fill="#047857" fill-opacity="0.08" stroke="none"/>
+      <polygon points="75.7,222.2 234.3,222.2 234.3,87.4 75.7,87.4" fill="#3b82f6" fill-opacity="0.18" stroke="#3b82f6" stroke-width="1.6"/>
+      <path d="M75.7,222.2 A79.3,23.8 0 0 0 234.3,222.2" fill="none" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 4"/>
+      <path d="M75.7,222.2 A79.3,23.8 0 0 1 234.3,222.2" fill="none" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="75.7" y1="222.2" x2="75.7" y2="87.4" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="234.3" y1="222.2" x2="234.3" y2="87.4" stroke="#0f172a" stroke-width="1.6"/>
+      <ellipse cx="155.0" cy="87.4" rx="79.3" ry="23.8" fill="#ffffff" fill-opacity="0.55" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="155.0" y1="222.2" x2="234.3" y2="222.2" stroke="#8b5cf6" stroke-width="1.5"/>
+      <text x="194.6" y="237.2" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">r</text>
+      <circle cx="155.0" cy="222.2" r="2.6" fill="#8b5cf6"/>
+      <line x1="53.5" y1="222.2" x2="53.5" y2="87.4" stroke="#ef4444" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <line x1="48.0" y1="222.2" x2="59.1" y2="222.2" stroke="#ef4444" stroke-width="1.2"/>
+      <line x1="48.0" y1="87.4" x2="59.1" y2="87.4" stroke="#ef4444" stroke-width="1.2"/>
+      <text x="46.5" y="154.8" font-size="13" fill="#ef4444" text-anchor="end" font-style="italic" font-weight="600">H</text>
+    </svg>
+    </div>
+    <p class="cap">A henger tengelymetszete téglalap.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 300 280" width="300" height="280" role="img" aria-label="A kúp tengelymetszete egyenlő szárú háromszög">
+      <path d="M71.4,232.4 L150.0,83.0 L228.6,232.4 A78.6,23.6 0 0 1 71.4,232.4 z" fill="#047857" fill-opacity="0.08" stroke="none"/>
+      <polygon points="71.4,232.4 228.6,232.4 150.0,83.0" fill="#3b82f6" fill-opacity="0.18" stroke="#3b82f6" stroke-width="1.6"/>
+      <path d="M71.4,232.4 A78.6,23.6 0 0 0 228.6,232.4" fill="none" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 4"/>
+      <path d="M71.4,232.4 A78.6,23.6 0 0 1 228.6,232.4" fill="none" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="71.4" y1="232.4" x2="150.0" y2="83.0" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="228.6" y1="232.4" x2="150.0" y2="83.0" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="150.0" y1="232.4" x2="150.0" y2="83.0" stroke="#475569" stroke-width="1.2" stroke-dasharray="4 3"/>
+      <line x1="150.0" y1="232.4" x2="150.0" y2="83.0" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <text x="143.0" y="190.6" font-size="13" fill="#ef4444" text-anchor="end" font-style="italic" font-weight="600">H</text>
+      <path d="M150.0,223.4 L159.0,223.4 L159.0,232.4" fill="none" stroke="#ef4444" stroke-width="1.1"/>
+      <line x1="150.0" y1="232.4" x2="228.6" y2="232.4" stroke="#8b5cf6" stroke-width="1.5"/>
+      <text x="189.3" y="247.4" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">r</text>
+      <circle cx="150.0" cy="83.0" r="2.8" fill="#0f172a"/>
+    </svg>
+    </div>
+    <p class="cap">A kúp tengelymetszete egyenlő szárú háromszög.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„A tengelymetszet-háromszög szára a magasság."</i></p><p>A <b>szár</b> az <b>alkotó</b> (<span class="math inline">\(s\)</span>), a <b>magasság</b> pedig a háromszög magassága, ami a test <span class="math inline">\(H\)</span> magassága. A kettő csak akkor esne egybe, ha a háromszög elfajulna — vagyis ha a kúpnak nem lenne szélessége.</p><p>A háromszög adatai tehát: alap <span class="math inline">\(2r\)</span>, szárak <span class="math inline">\(s\)</span>, magasság <span class="math inline">\(H\)</span>. Ha egy feladat a tengelymetszet <b>kerületét</b> adja meg, az <span class="math inline">\(2r+2s\)</span>; ha a <b>területét</b>, az <span class="math inline">\(\frac{2r\cdot H}{2}=rH\)</span>.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A kerület 2r + 2s = 36, tehát 10 + 2s = 36, ahonnan s = 13 cm." data-nem="✘ A tengelymetszet egyenlő szárú háromszög: kerülete 2r + 2s. Innen 2s = 36 − 10 = 26, tehát s = 13.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy kúp tengelymetszetének <b>kerülete</b> <span class="math inline">\(36\)</span> cm, az alapkör sugara <span class="math inline">\(5\)</span> cm. Mekkora az alkotó?</p>
+      <div class="opciok"><button><span class="math inline">\(13\)</span> cm</button><button><span class="math inline">\(18\)</span> cm</button><button><span class="math inline">\(26\)</span> cm</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Az alaplappal párhuzamos metszet</h2>
+
+    <div class="doboz tetel" id="tetel-parhuzamos-metszet">
+      <p class="cim"><span class="ikon">📘</span> A párhuzamos metszet alakja</p>
+      <p>Az alaplappal párhuzamos síkkal vett metszet mindkét testnél <b>kör</b>, de a méretében élesen különböznek:</p><ul><li>a <b>hengernél</b> az alapkörrel <b>egybevágó</b> — bárhol metszünk, ugyanaz az <span class="math inline">\(r\)</span> sugarú kör;</li><li>a <b>kúpnál</b> az alapkörhöz <b>hasonló</b>, és a hasonlóság aránya a <b>csúcstól mért magasságok aránya</b>. Ha a metszősík a csúcstól a magasság <span class="math inline">\(k\)</span>-szorosánál van, a metszetkör sugara <span class="math inline">\(k\cdot r\)</span>.</li></ul>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 300 280" width="300" height="280" role="img" aria-label="A kúp alaplappal párhuzamos metszete az alapkörhöz hasonló kör">
+      <path d="M71.4,232.4 L150.0,83.0 L228.6,232.4 A78.6,23.6 0 0 1 71.4,232.4 z" fill="#047857" fill-opacity="0.08" stroke="none"/>
+      <path d="M71.4,232.4 A78.6,23.6 0 0 0 228.6,232.4" fill="none" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 4"/>
+      <path d="M71.4,232.4 A78.6,23.6 0 0 1 228.6,232.4" fill="none" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="71.4" y1="232.4" x2="150.0" y2="83.0" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="228.6" y1="232.4" x2="150.0" y2="83.0" stroke="#0f172a" stroke-width="1.6"/>
+      <ellipse cx="150.0" cy="150.2" rx="35.4" ry="10.6" fill="#047857" fill-opacity="0.22" stroke="#047857" stroke-width="1.6"/>
+      <line x1="150.0" y1="232.4" x2="150.0" y2="83.0" stroke="#475569" stroke-width="1.2" stroke-dasharray="4 3"/>
+      <line x1="150.0" y1="232.4" x2="150.0" y2="83.0" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <text x="143.0" y="190.6" font-size="13" fill="#ef4444" text-anchor="end" font-style="italic" font-weight="600">H</text>
+      <path d="M150.0,223.4 L159.0,223.4 L159.0,232.4" fill="none" stroke="#ef4444" stroke-width="1.1"/>
+      <line x1="150.0" y1="232.4" x2="228.6" y2="232.4" stroke="#8b5cf6" stroke-width="1.5"/>
+      <text x="189.3" y="247.4" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">r</text>
+      <circle cx="150.0" cy="83.0" r="2.8" fill="#0f172a"/>
+    </svg>
+    </div>
+    <p class="cap">A kúp párhuzamos metszete az alapkörhöz <b>hasonló</b> kör — annál kisebb, minél közelebb van a csúcshoz.</p>
+
+    <p>A hasonlóság aránya ugyanúgy működik, mint a <a href="../01-poliederek/tananyag-gula-sikmetszetek.html#tetel-hasonlosag-aranyok">gúlánál</a>: ha a hosszak aránya <span class="math inline">\(k\)</span>, akkor a <b>területeké</b> <span class="math inline">\(k^2\)</span>, a <b>térfogatoké</b> pedig <span class="math inline">\(k^3\)</span>.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>A szeletelt sonka, a fatörzs évgyűrűi és a CT-felvétel mind alappal párhuzamos metszetek sorozata. A CT épp azért működik, mert a szervezetről készült sok vékony metszetből a számítógép vissza tudja építeni a testet — ugyanaz az elv, mint amikor a metszetek területéből következtetünk a térfogatra.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A hosszak aránya k = ½, a területeké k² = ¼ — a metszet területe az alapkör negyede." data-nem="✘ Ez nem a henger: a kúpnál a metszet HASONLÓ, nem egybevágó. A hosszak aránya ½, a területeké ennek a négyzete: ¼.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy kúpot a csúcstól mért magasság <b>felénél</b> metszünk el az alaplappal párhuzamosan. Hogyan aránylik a metszetkör területe az alapkörhöz?</p>
+      <div class="opciok"><button>A negyede</button><button>A fele</button><button>Ugyanakkora</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">A metszet területe — számolás</h2>
+
+    <div class="doboz pelda" id="pelda-metszet-terulet">
+      <p class="cim"><span class="ikon">✏️</span> Átalakulás-kamra szimuláció</p>
+      <p>Egy kúp alapkörének sugara <span class="math inline">\(5\)</span> cm, magassága <span class="math inline">\(12\)</span> cm. Mekkora a tengelymetszetének a területe és a kerülete?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>Az alkotó.</b> <span class="math inline">\(s=\sqrt{25+144}=13\)</span> cm.</p><p>A tengelymetszet egyenlő szárú háromszög: az alapja <span class="math inline">\(2r=10\)</span> cm, a szárai <span class="math inline">\(13\)</span> cm, a magassága <span class="math inline">\(H=12\)</span> cm.</p><p><b>Terület:</b></p><span class="math display">\[T=\frac{2r\cdot H}{2}=\frac{10\cdot12}{2}=60\ \text{cm}^2.\]</span><p><b>Kerület:</b> <span class="math inline">\(K=2r+2s=10+26=36\)</span> cm.</p><p>Figyeld meg, hogy a <b>területbe</b> a magasság megy (mert a háromszög területéhez az alaphoz tartozó magasság kell), a <b>kerületbe</b> pedig az alkotó.</p></div></details>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 320 250" width="320" height="250" role="img" aria-label="A kúp tengelymetszete: egyenlő szárú háromszög, alapja 10, szárai 13">
+      <defs><marker id="nyil" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <polygon points="34.0,216.0 185.7,216.0 109.8,34.0" fill="#eff6ff" stroke="#0f172a" stroke-width="1.8" stroke-linejoin="round"/>
+      <line x1="109.8" y1="34.0" x2="109.8" y2="216.0" stroke="#f59e0b" stroke-width="1.6" stroke-dasharray="5 3"/>
+      <path d="M117.8,216.0 L117.8,208.0 L109.8,208.0" fill="none" stroke="#f59e0b" stroke-width="1.2"/>
+      <circle cx="34.0" cy="216.0" r="3" fill="#0f172a"/>
+      <text x="21.5" y="230.0" font-size="13" font-style="italic" fill="#0f172a" text-anchor="middle">A</text>
+      <circle cx="185.7" cy="216.0" r="3" fill="#0f172a"/>
+      <text x="198.2" y="230.0" font-size="13" font-style="italic" fill="#0f172a" text-anchor="middle">B</text>
+      <circle cx="109.8" cy="34.0" r="3" fill="#0f172a"/>
+      <text x="109.8" y="22.0" font-size="13" font-style="italic" fill="#0f172a" text-anchor="middle">C</text>
+      <text x="109.8" y="234.0" font-size="12" font-style="italic" fill="#475569" text-anchor="middle">13</text>
+      <text x="158.7" y="120.3" font-size="12" font-style="italic" fill="#475569" text-anchor="middle">13</text>
+      <text x="61.0" y="120.3" font-size="12" font-style="italic" fill="#475569" text-anchor="middle">10</text>
+    </svg>
+    </div>
+    <p class="cap">A kapott háromszög külön kirajzolva: alapja <span class="math inline">\(10\)</span>, szárai <span class="math inline">\(13\)</span>, magassága <span class="math inline">\(12\)</span>.</p>
+
+    <p>A tengelymetszet területe általában:</p><ul><li><b>henger:</b> <span class="math inline">\(T=2r\cdot H\)</span> (téglalap);</li><li><b>kúp:</b> <span class="math inline">\(T=\dfrac{2r\cdot H}{2}=r\,H\)</span> (háromszög).</li></ul><p>Ezek a képletek az <a href="tananyag-henger.html#def-egyenlo-oldalu-henger">egyenlő oldalú</a> testeknél különösen hasznosak: ott a tengelymetszet négyzet (<span class="math inline">\(H=2r\)</span>), illetve szabályos háromszög (<span class="math inline">\(s=2r\)</span>, <span class="math inline">\(H=r\sqrt3\)</span>), és egyetlen adatból minden kijön.</p>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-kup.html#alap-17">🐕 Tér-eb-ugrás <span class="cimke">A 17–21</span></a><a class="sav bruno" href="feladatok-kup.html#kozep-12">👑 Királyi Gárda <span class="cimke">K 12–15</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Medúza:</b> Ha az alaplappal párhuzamosan vágunk, és a <b>felső</b> darabot eldobjuk, egy új test marad a kezünkben. A Kamra hűtőaknái pontosan ilyenek.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-kup-felszin-terfogat.html"><span class="irany">← Előző</span><span class="hova">A kúp felszíne és térfogata</span></a>
+      <a class="kov" href="tananyag-csonkakup.html"><span class="irany">Következő →</span><span class="hova">A csonkakúp</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

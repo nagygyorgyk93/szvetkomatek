@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A gömb felszíne és térfogata — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Forgástestek</a> ›
+  <span class="itt">A gömb felszíne és térfogata — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A gömb felszíne és térfogata</h1>
+  <p class="alcim">A két képlet, a köré írt henger 2:3 aránya, a fordított feladatok és a valós számítások.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az Átalakulás Kamrája · 9/10</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Medúza:</b> A gömbnél <b>egyetlen adat</b>, a sugár mindent eldönt. Ez a jó hír. A rossz: ugyanez teszi a legveszélyesebbé is — aki a sugarat rontja el (mert átmérőt kapott, vagy rosszul olvasta), az <b>minden</b> további számítást elront.</p></div>
+
+    <p>Két képlet van, és mindkettőt megadjuk — a levezetésük túlmutat a mi eszközeinken. Cserébe megnézzük, <b>miért hihetők</b>: mindkettőhöz tartozik egy szemléletes kép, ami segít megjegyezni.</p>
+
+    <h2 id="s1">A felszín</h2>
+
+    <div class="doboz tetel" id="tetel-gomb-felszin">
+      <p class="cim"><span class="ikon">📘</span> A gömb felszíne</p>
+      <span class="math display">\[F=4R^{2}\pi.\]</span><p>Vagyis a gömbfelület területe pontosan <b>négyszerese</b> a főkör (<span class="math inline">\(R^2\pi\)</span>) területének.</p>
+    </div>
+
+    <p><b>Miért hihető?</b> Végezd el a narancshéj-kísérletet: hámozz meg egy narancsot, és rajzolj körbe a papíron négy kört a narancs „egyenlítője” mentén. A héj darabjaival pontosan a <b>négy</b> kört töltöd ki — nem hármat, nem ötöt. Ez nem bizonyítás, de meggyőző, és pontosan azt mutatja, amit a képlet állít.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„A felszín <span class="math inline">\(F=4R\pi\)</span>, a térfogat <span class="math inline">\(V=\frac{4R^2\pi}{3}\)</span>."</i></p><p>A <b>kitevők</b> csúsztak el. Ellenőrizd őket a <b>mértékegységgel</b>:</p><ul><li>a felszín <b>terület</b>, tehát cm² — ehhez a sugár <b>négyzete</b> kell: <span class="math inline">\(4R^2\pi\)</span>;</li><li>a térfogat <b>köbös</b> mennyiség, tehát cm³ — ehhez a sugár <b>köbe</b>: <span class="math inline">\(\frac{4R^3\pi}{3}\)</span>.</li></ul><p>Ez az ellenőrzés minden képletnél működik, és két másodpercbe kerül. Ha a mértékegység nem stimmel, a képlet sem.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A felszín terület (cm²), ezért a sugár NÉGYZETEN áll: F = 4R²π." data-nem="✘ Nézd a mértékegységet: a felszín cm², tehát a sugár négyzetén kell állnia. A köbös alak a térfogaté.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik képlet adja meg a gömb <b>felszínét</b>?</p>
+      <div class="opciok"><button><span class="math inline">\(F=4R^2\pi\)</span></button><button><span class="math inline">\(F=\dfrac{4R^3\pi}{3}\)</span></button><button><span class="math inline">\(F=4R\pi\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">A térfogat</h2>
+
+    <div class="doboz tetel" id="tetel-gomb-terfogat">
+      <p class="cim"><span class="ikon">📘</span> A gömb térfogata</p>
+      <span class="math display">\[V=\frac{4R^{3}\pi}{3}.\]</span>
+    </div>
+
+    <p><b>Miért hihető?</b> Írjunk a gömb köré a lehető legszorosabb <b>hengert</b>: ennek az alapköre a főkör (<span class="math inline">\(r=R\)</span>), a magassága pedig az átmérő (<span class="math inline">\(H=2R\)</span>). A henger térfogata</p><span class="math display">\[V_{\text{henger}}=R^2\pi\cdot2R=2R^3\pi,\]</span><p>a gömbé pedig ennek pontosan a <b>kétharmada</b>:</p><span class="math display">\[\frac{V_{\text{gömb}}}{V_{\text{henger}}}=\frac{\frac{4R^3\pi}{3}}{2R^3\pi}=\frac23.\]</span>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 290 280" width="290" height="280" role="img" aria-label="Gömb a köré írt hengerben: a térfogatok aránya 2:3">
+      <rect x="73.8" y="113.6" width="142.4" height="142.4" fill="none" stroke="#475569" stroke-width="1.3" stroke-dasharray="5 4"/>
+      <ellipse cx="145.0" cy="256.0" rx="71.2" ry="21.4" fill="none" stroke="#475569" stroke-width="1.3" stroke-dasharray="5 4"/>
+      <ellipse cx="145.0" cy="113.6" rx="71.2" ry="21.4" fill="none" stroke="#475569" stroke-width="1.3" stroke-dasharray="5 4"/>
+      <circle cx="145.0" cy="184.8" r="71.2" fill="#047857" fill-opacity="0.08" stroke="#0f172a" stroke-width="1.8"/>
+      <ellipse cx="145.0" cy="184.8" rx="71.2" ry="21.4" fill="none" stroke="#475569" stroke-width="1.3"/>
+      <line x1="145.0" y1="184.8" x2="196.2" y2="135.0" stroke="#8b5cf6" stroke-width="1.7"/>
+      <text x="178.6" y="157.9" font-size="13" fill="#8b5cf6" text-anchor="start" font-style="italic" font-weight="600">R</text>
+      <circle cx="145.0" cy="184.8" r="2.8" fill="#0f172a"/>
+    </svg>
+    </div>
+    <p class="cap">A gömb és a köré írt henger: a térfogatok aránya <span class="math inline">\(2:3\)</span>.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Arkhimédész sírköve</p>
+      <p>Ezt az arányt <b>Arkhimédész</b> fedezte fel, és annyira büszke volt rá, hogy — Cicero beszámolója szerint — a sírkövére a hengerbe írt gömböt vésették, a <span class="math inline">\(2:3\)</span> aránnyal. A sírt Cicero állítólag több mint száz évvel később, benőtt bozótban találta meg épp erről a jelről.</p><p>Az arány a felszínekre is igaz: a gömb felszíne (<span class="math inline">\(4R^2\pi\)</span>) a köré írt henger <b>teljes</b> felszínének (<span class="math inline">\(2R^2\pi+2R\pi\cdot2R=6R^2\pi\)</span>) szintén a kétharmada.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-gomb-3">
+      <p class="cim"><span class="ikon">✏️</span> Átalakulás-kamra szimuláció</p>
+      <p>Egy gömb sugara <span class="math inline">\(3\)</span> cm. Számítsd ki a felszínét és a térfogatát!</p>
+      <details><summary>Megoldás</summary><div class="bel"><span class="math display">\[F=4\cdot3^2\pi=36\pi\ \text{cm}^2,\qquad V=\frac{4\cdot3^3\pi}{3}=36\pi\ \text{cm}^3.\]</span><p>A két <b>szám</b> megegyezik — de ez puszta véletlen, és csak ennél az egy sugárnál fordul elő. A két mennyiség nem <b>összehasonlítható</b>: az egyik cm²-ben, a másik cm³-ben mérendő, mint ahogy egy szoba alapterületét sem hasonlítod a levegőjéhez.</p><p>Ellenőrizd <span class="math inline">\(R=4\)</span>-gyel: <span class="math inline">\(F=64\pi\)</span>, de <span class="math inline">\(V=\frac{256\pi}{3}\approx85{,}33\pi\)</span> — már nem egyeznek.</p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ A sugár KÖBÖN szerepel: (2R)³ = 8R³, tehát a térfogat nyolcszorozódik. (A felszín közben négyszereződik.)" data-nem="✘ V = 4R³π/3 — a sugár köbön áll, ezért (2R)³ = 8R³: nyolcszoros térfogat.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy gömb sugarát <b>megduplázzuk</b>. Hányszorosára nő a térfogata?</p>
+      <div class="opciok"><button>Nyolcszorosára</button><button>Kétszeresére</button><button>Négyszeresére</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Fordított irányban és valós számítások</h2>
+
+    <p>Ha a felszín vagy a térfogat adott, a sugarat egyetlen lépésben megkapod:</p><span class="math display">\[R=\sqrt{\frac{F}{4\pi}},\qquad R=\sqrt[3]{\frac{3V}{4\pi}}.\]</span><p>A gyakorlatban nem szoktuk ezeket a képleteket megjegyezni — egyszerűbb az alapképletbe behelyettesíteni, és megoldani az egyenletet. Ha <span class="math inline">\(F=100\pi\)</span>, akkor <span class="math inline">\(4R^2\pi=100\pi\)</span>, tehát <span class="math inline">\(R^2=25\)</span> és <span class="math inline">\(R=5\)</span>.</p>
+
+    <div class="doboz pelda" id="pelda-tomeg">
+      <p class="cim"><span class="ikon">✏️</span> Átalakulás-kamra szimuláció</p>
+      <p>Mekkora egy <span class="math inline">\(5\)</span> cm sugarú <b>acélgolyó</b> tömege, ha az acél sűrűsége <span class="math inline">\(7{,}85\ \text{g/cm}^3\)</span>?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>Térfogat.</b></p><span class="math display">\[V=\frac{4\cdot5^3\pi}{3}=\frac{500\pi}{3}\approx523{,}60\ \text{cm}^3.\]</span><p><b>Tömeg.</b> A tömeg a sűrűség és a térfogat szorzata:</p><span class="math display">\[m=\varrho V\approx7{,}85\cdot523{,}60\approx4110{,}25\ \text{g}\approx4{,}11\ \text{kg}.\]</span><p>Itt <b>indokolt</b> a közelítés: a tömeg valós, mérhető mennyiség, és a sűrűség maga is közelítő adat. Két tizedesnél tovább nincs értelme számolni — a mért sűrűség pontossága úgysem engedi.</p></div></details>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>A Föld sugara nagyjából <span class="math inline">\(6371\)</span> km, ebből a felszíne körülbelül <span class="math inline">\(510\)</span> millió km², a térfogata pedig <span class="math inline">\(1{,}08\cdot10^{12}\)</span> km³. Ugyanezzel a két képlettel számol a meteorológus a jégeső szemcséinél, az orvos a sejteknél, és a cukrász, amikor megbecsüli, mennyi csokoládé kell a bonbonok bevonásához.</p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-gomb.html#alap-7">🐕 Tér-eb-ugrás <span class="cimke">A 7–16</span></a><a class="sav bruno" href="feladatok-gomb.html#kozep-4">👑 Királyi Gárda <span class="cimke">K 4–11</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Medúza:</b> A négy alaptest megvan. A valóságban viszont ritkán áll egy test magában — a Kamra minden szerkezete <b>összetett</b>. Ez lesz az utolsó lépés.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-gomb.html"><span class="irany">← Előző</span><span class="hova">A gömbfelület és a gömb</span></a>
+      <a class="kov" href="tananyag-osszetett-testek.html"><span class="irany">Következő →</span><span class="hova">Összetett és üreges testek</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

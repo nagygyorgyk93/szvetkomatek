@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A henger felszíne és térfogata — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Forgástestek</a> ›
+  <span class="itt">A henger felszíne és térfogata — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A henger felszíne és térfogata</h1>
+  <p class="alcim">A palást a hálóból, a felszín kiemelt alakja, a térfogat, a fordított feladatok és a literes mértékegységváltás.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az Átalakulás Kamrája · 3/10</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Medúza:</b> Egy tartályról két dolgot kell tudni: <b>mennyi fér bele</b> és <b>mennyi anyag kell hozzá</b>. Az első a térfogat, a második a felszín. A Kamrában ez a két szám külön naplóba megy — aki összekeveri őket, az vagy kifolyatja a párát, vagy elpazarolja a lemezt.</p></div>
+
+    <p>A felszín <b>területjellegű</b> mennyiség (cm², m²), a térfogat <b>térfogatjellegű</b> (cm³, m³). Ha a végeredményed mértékegysége nem stimmel, nem is kell tovább ellenőrizned: rossz képletet használtál.</p>
+
+    <h2 id="s1">A palást a hálóból</h2>
+
+    <p>A palást területét nem kell külön kitalálni — az előző egységben már <a href="tananyag-henger.html#tetel-henger-halo">kiterítettük</a>. A palást kiterítve <b>téglalap</b>, az oldalai <span class="math inline">\(2r\pi\)</span> és <span class="math inline">\(H\)</span>, tehát a területe a kettő szorzata.</p>
+
+    <div class="doboz tetel" id="tetel-henger-felszin">
+      <p class="cim"><span class="ikon">📘</span> A henger palástja és felszíne</p>
+      <p>Az egyenes henger palástjának területe</p><span class="math display">\[M=2r\pi\cdot H.\]</span><p>A felszín ehhez a <b>két</b> alapkört adja hozzá:</p><span class="math display">\[F=2B+M=2r^2\pi+2r\pi H=2r\pi(r+H).\]</span><p>A jobb szélső, <b>kiemelt</b> alak a legkényelmesebb: egyetlen szorzás két szám összegével. Ezt érdemes megjegyezni.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 340 280" width="340" height="280" role="img" aria-label="A henger hálója síkba kiterítve">
+      <rect x="47.2" y="93.1" width="245.7" height="93.8" fill="#047857" fill-opacity="0.08" stroke="#0f172a" stroke-width="1.5"/>
+      <circle cx="170.0" cy="51.0" r="39.1" fill="#3b82f6" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+      <circle cx="170.0" cy="229.0" r="39.1" fill="#3b82f6" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+      <text x="170.0" y="144.0" font-size="12" fill="#475569" text-anchor="middle">palást</text>
+      <text x="170.0" y="201.9" font-size="12" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">2rπ</text>
+      <text x="38.2" y="144.0" font-size="12" fill="#0f172a" text-anchor="end" font-style="italic" font-weight="600">H</text>
+    </svg>
+    </div>
+    <p class="cap">A felszín a háló összterülete: két kör és egy téglalap.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„Felszín = alapkör + palást, tehát <span class="math inline">\(F=r^2\pi+2r\pi H\)</span>."</i></p><p>A hengernek <b>két</b> alapköre van — egy alul, egy felül. A felszínben ezért <span class="math inline">\(2r^2\pi\)</span> áll.</p><p><b>Ellenpróba, amikor viszont tényleg csak egy kell:</b> egy nyitott vödörnél, egy fedél nélküli tartálynál vagy egy kútgyűrűnél a feladat kifejezetten mondja, hogy nincs teteje. Ilyenkor <span class="math inline">\(F=r^2\pi+2r\pi H\)</span> a helyes. A képlet tehát nem „szabály”, hanem a <b>szöveg</b> következménye — mindig olvasd el, mit kell befedni.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ F = 2rπ(r + H) = 16π · 18 = 288π cm²." data-nem="✘ A dobozt teljesen bezárjuk, tehát KÉT alapkör kell: F = 2·64π + 2·8·10π = 128π + 160π = 288π.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy <span class="math inline">\(8\)</span> cm sugarú, <span class="math inline">\(10\)</span> cm magas hengeres <b>doboz</b> teljes felszíne:</p>
+      <div class="opciok"><button><span class="math inline">\(288\pi\ \text{cm}^2\)</span></button><button><span class="math inline">\(224\pi\ \text{cm}^2\)</span></button><button><span class="math inline">\(160\pi\ \text{cm}^2\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">A térfogat</h2>
+
+    <p>A térfogatnál nincs új gondolat — a hasábnál megismert szabály folytatódik. Ott <span class="math inline">\(V=B\cdot H\)</span> volt, és ez minden olyan testre igaz, amelynek a „vízszintes” metszetei egybevágóak. A henger pontosan ilyen: minden metszete ugyanaz az <span class="math inline">\(r\)</span> sugarú kör.</p>
+
+    <div class="doboz tetel" id="tetel-henger-terfogat">
+      <p class="cim"><span class="ikon">📘</span> A henger térfogata</p>
+      <span class="math display">\[V=B\cdot H=r^2\pi H.\]</span><p>Ugyanaz a képlet, mint a <a href="../01-poliederek/tananyag-hasab-felszin-terfogat.html#tetel-hasab-terfogat">hasábnál</a> — csak az alaplap most kör. A henger úgy is felfogható, mint egy olyan hasáb, amelynek az alaplapja végtelen sok oldalú szabályos sokszög.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-tartaly">
+      <p class="cim"><span class="ikon">✏️</span> Átalakulás-kamra szimuláció</p>
+      <p>Egy hengeres tartály alapkörének sugara <span class="math inline">\(3\)</span> dm, magassága <span class="math inline">\(8\)</span> dm. Hány <b>liter</b> fér bele, és hány négyzetdeciméter lemez kell a gyártásához?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>Térfogat.</b></p><span class="math display">\[V=r^2\pi H=9\pi\cdot8=72\pi\ \text{dm}^3.\]</span><p>Mivel <span class="math inline">\(1\ \text{dm}^3=1\)</span> liter, a tartály űrtartalma <span class="math inline">\(72\pi\approx226{,}19\)</span> liter. (Itt <b>indokolt</b> a közelítés: a liter valós, mérhető mennyiség.)</p><p><b>Felszín.</b></p><span class="math display">\[F=2r\pi(r+H)=6\pi\cdot11=66\pi\ \text{dm}^2.\]</span><p>Ez körülbelül <span class="math inline">\(207{,}35\ \text{dm}^2\)</span>, azaz nagyjából <span class="math inline">\(2{,}07\ \text{m}^2\)</span> lemez.</p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ V = r²πH, és a sugár NÉGYZETESEN szerepel: (2r)² = 4r², tehát a térfogat négyszereződik." data-nem="✘ A sugár a képletben négyzeten áll: (2r)²πH = 4r²πH. A térfogat tehát négyszereződik, nem duplázódik.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy henger sugarát <b>megduplázzuk</b>, a magasságát változatlanul hagyjuk. Hányszorosára nő a térfogata?</p>
+      <div class="opciok"><button>Négyszeresére</button><button>Kétszeresére</button><button>Nyolcszorosára</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Fordított irányban</h2>
+
+    <p>A feladatok fele nem a képlet behelyettesítését kéri, hanem az <b>ellenkezőjét</b>: adott a végeredmény, és egy hiányzó adatot keresünk. A recept mindig ugyanaz — írd fel a képletet, helyettesítsd be, amit tudsz, és oldd meg az egyenletet.</p>
+
+    <div class="doboz pelda" id="pelda-fordított">
+      <p class="cim"><span class="ikon">✏️</span> Átalakulás-kamra szimuláció</p>
+      <p>Egy henger térfogata <span class="math inline">\(500\pi\)</span> cm³, az alapkör sugara <span class="math inline">\(5\)</span> cm. Mekkora a magassága?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(V=r^2\pi H\)</span>, tehát</p><span class="math display">\[25\pi\cdot H=500\pi\quad\Longrightarrow\quad H=\frac{500}{25}=20\ \text{cm}.\]</span><p>A <span class="math inline">\(\pi\)</span> mindkét oldalon szerepel, ezért <b>kiesik</b> — ez a legtöbb ilyen feladatban így van, és sokat egyszerűsít. Épp ezért érdemes a <span class="math inline">\(\pi\)</span>-t végig jelként vinni, és nem <span class="math inline">\(3{,}14\)</span>-ként.</p></div></details>
+    </div>
+
+    <p>Ha a <b>felszínből</b> keressük a sugarat, <b>másodfokú</b> egyenletet kapunk — a sugár ugyanis kétszer szerepel a képletben. Ilyenkor a megoldóképlet két gyököt ad, de a sugár csak <b>pozitív</b> lehet, ezért a negatív gyököt eldobjuk.</p>
+
+    <div class="doboz pelda" id="pelda-masodfoku">
+      <p class="cim"><span class="ikon">✏️</span> Átalakulás-kamra szimuláció</p>
+      <p>Egy henger felszíne <span class="math inline">\(150\pi\)</span> cm², magassága <span class="math inline">\(10\)</span> cm. Mekkora az alapkör sugara?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(F=2r^2\pi+2r\pi H\)</span>, tehát</p><span class="math display">\[2r^2\pi+20r\pi=150\pi.\]</span><p>Osztunk <span class="math inline">\(2\pi\)</span>-vel:</p><span class="math display">\[r^2+10r-75=0.\]</span><p>A megoldóképlet szerint</p><span class="math display">\[r=\frac{-10\pm\sqrt{100+300}}{2}=\frac{-10\pm20}{2},\]</span><p>ami <span class="math inline">\(r=5\)</span> vagy <span class="math inline">\(r=-15\)</span>. A sugár nem lehet negatív, ezért <b><span class="math inline">\(r=5\)</span> cm</b>.</p><p>Ellenőrzés: <span class="math inline">\(F=2\cdot25\pi+2\cdot5\cdot10\pi=50\pi+100\pi=150\pi\)</span> — stimmel.</p></div></details>
+    </div>
+
+    <h2 id="s4">Nagyságrend és mértékegység</h2>
+
+    <p>A hengeres tartályok a valóságban <b>literben</b> vannak megadva, a képlet viszont köbegységet ad. A váltás egyetlen összefüggésen múlik:</p><span class="math display">\[1\ \text{dm}^3=1\ \text{liter},\qquad 1\ \text{m}^3=1000\ \text{dm}^3=1000\ \text{liter}.\]</span><p>Ezért érdemes a hengeres tartályok adatait <b>deciméterben</b> felvenni: akkor a térfogat rögtön literben jön ki.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„A tartály <span class="math inline">\(0{,}4\ \text{m}^3\)</span>-es, tehát <span class="math inline">\(40\)</span> liter."</i></p><p>A hosszúságnál <span class="math inline">\(1\)</span> m <span class="math inline">\(=10\)</span> dm, de a <b>térfogatnál</b> a váltószám ennek a <b>köbe</b>: <span class="math inline">\(1\ \text{m}^3=1000\ \text{dm}^3\)</span>. A helyes érték tehát <b>400 liter</b> — tízszer annyi.</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Mikor számolj <span class="math inline">\(\pi\)</span>-vel, és mikor <span class="math inline">\(3{,}14\)</span>-dal?</p>
+      <p>A matematikaórán a végeredmény <b>pontos alakban</b> áll: <span class="math inline">\(V=72\pi\)</span> cm³. Ez nem lustaság, hanem pontosság — a <span class="math inline">\(\pi\)</span> irracionális, minden közelítés hibát visz be.</p><p>Közelítést akkor adunk, ha a feladat <b>valós, mérhető</b> mennyiséget kér: hány liter fér bele, hány kilogramm festék kell, mennyibe kerül az anyag. Ilyenkor általában két tizedesre kerekítünk, és a szöveg is jelzi, hogy közelítő értéket vár.</p><p>Az iparban ez nem elméleti kérdés: egy nagy tartálynál a <span class="math inline">\(3{,}14\)</span> és a valódi <span class="math inline">\(\pi\)</span> közötti eltérés több száz liternyi különbséget adhat — ezért számolnak a gyártók sokkal több tizedessel.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ 1 m³ = 1000 liter, tehát 0,75 · 1000 = 750 liter." data-nem="✘ A térfogat váltószáma 1000 (nem 100 és nem 10 000): 0,75 m³ = 750 liter.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy hengeres hordó térfogata <span class="math inline">\(0{,}75\ \text{m}^3\)</span>. Hány liter fér bele?</p>
+      <div class="opciok"><button><span class="math inline">\(750\)</span> liter</button><button><span class="math inline">\(75\)</span> liter</button><button><span class="math inline">\(7500\)</span> liter</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-henger.html#alap-10">🐕 Tér-eb-ugrás <span class="cimke">A 10–20</span></a><a class="sav bruno" href="feladatok-henger.html#kozep-6">👑 Királyi Gárda <span class="cimke">K 6–14</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Medúza:</b> A henger megvan — kapacitás és anyagszükséglet egyaránt. Most jön a kérdés, amitől a Kamra tölcsérei megszülettek: mi történik, ha a henger egyik alapkörét <b>egyetlen pontba</b> húzzuk össze?</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-henger.html"><span class="irany">← Előző</span><span class="hova">A henger és elemei</span></a>
+      <a class="kov" href="feladatok-henger.html"><span class="irany">Következő →</span><span class="hova">Feladatok — a henger</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

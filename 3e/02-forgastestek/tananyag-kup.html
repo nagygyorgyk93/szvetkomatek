@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A kúp és elemei — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Forgástestek</a> ›
+  <span class="itt">A kúp és elemei — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A kúp és elemei</h1>
+  <p class="alcim">Alapkör, csúcs, alkotó, magasság; a kúp derékszögű háromszöge, a körcikkes háló és az egyenlő oldalú kúp.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az Átalakulás Kamrája · 4/10</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Medúza:</b> A Kamra szűkülő aknái kúpot formáznak — a pára fölfelé halad bennük, és egyetlen pontban távozik. A kúpnál <b>három</b> adat van: sugár, magasság, alkotó. És a feladatok pontosan azt hallgatják el, amelyikre szükséged lenne.</p></div>
+
+    <p>Jó hír, hogy a három adat nem független: egy <b>derékszögű háromszög</b> köti össze őket. Ha kettőt tudsz, a harmadik egy Pitagorasz-tétel. Ebben az egységben ezt a háromszöget építjük fel, és kiterítjük a kúp palástját.</p>
+
+    <h2 id="s1">Hogyan keletkezik a kúp</h2>
+
+    <p>A kúp is kétféleképpen írható le, és mindkettőt érdemes látni:</p><ul><li><b>Forgatással:</b> egy <b>derékszögű háromszöget</b> megforgatunk az egyik <b>befogója</b> körül. A tengely lesz a magasság, a másik befogó a sugár, az átfogó pedig az alkotó.</li><li><b>Metszéssel:</b> egy kúpfelületet elmetszünk egy síkkal, és a csúcs és a sík közötti darabot vesszük.</li></ul><p>A kúp <b>egyenes</b>, ha a csúcsot az alapkör <b>középpontjával</b> összekötő szakasz merőleges az alaplapra — a forgatásból mindig ilyen keletkezik. Ha a csúcs oldalra csúszik, <b>ferde</b> kúpról beszélünk; ennek a felszínével és térfogatával nem foglalkozunk.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 300 280" width="300" height="280" role="img" aria-label="Egyenes körkúp a jelölésekkel">
+      <path d="M71.4,232.4 L150.0,83.0 L228.6,232.4 A78.6,23.6 0 0 1 71.4,232.4 z" fill="#047857" fill-opacity="0.08" stroke="none"/>
+      <path d="M71.4,232.4 A78.6,23.6 0 0 0 228.6,232.4" fill="none" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 4"/>
+      <path d="M71.4,232.4 A78.6,23.6 0 0 1 228.6,232.4" fill="none" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="71.4" y1="232.4" x2="150.0" y2="83.0" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="228.6" y1="232.4" x2="150.0" y2="83.0" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="150.0" y1="232.4" x2="150.0" y2="83.0" stroke="#475569" stroke-width="1.2" stroke-dasharray="4 3"/>
+      <line x1="150.0" y1="232.4" x2="150.0" y2="83.0" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <text x="143.0" y="190.6" font-size="13" fill="#ef4444" text-anchor="end" font-style="italic" font-weight="600">H</text>
+      <path d="M150.0,223.4 L159.0,223.4 L159.0,232.4" fill="none" stroke="#ef4444" stroke-width="1.1"/>
+      <line x1="150.0" y1="232.4" x2="228.6" y2="232.4" stroke="#8b5cf6" stroke-width="1.5"/>
+      <text x="189.3" y="247.4" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">r</text>
+      <line x1="228.6" y1="232.4" x2="150.0" y2="83.0" stroke="#f59e0b" stroke-width="2.0"/>
+      <text x="198.3" y="155.7" font-size="13" fill="#f59e0b" text-anchor="start" font-style="italic" font-weight="600">s</text>
+      <circle cx="150.0" cy="83.0" r="2.8" fill="#0f172a"/>
+    </svg>
+    </div>
+    <p class="cap">Az egyenes körkúp: egy <b>alapkör</b>, egy <b>csúcs</b>, és a kettőt összekötő görbe palást.</p>
+
+    <h2 id="s2">A kúp elemei</h2>
+
+    <div class="doboz definicio" id="def-kup">
+      <p class="cim"><span class="ikon">📗</span> A kúp részei</p>
+      <ul><li><b>Alapkör</b> — a határoló kör, sugara <span class="math inline">\(r\)</span>; területe <span class="math inline">\(B=r^2\pi\)</span>.</li><li><b>Csúcs</b> — az a pont, ahol az alkotók összefutnak.</li><li><b>Alkotó</b> (<span class="math inline">\(s\)</span>) — a csúcsot az alapkör egy pontjával összekötő szakasz. Egyenes kúpnál minden alkotó <b>egyenlő hosszú</b>.</li><li><b>Magasság</b> (<span class="math inline">\(H\)</span>) — a csúcs távolsága az alaplap síkjától.</li><li><b>Tengely</b> — a csúcsot az alapkör középpontjával összekötő egyenes.</li></ul>
+    </div>
+
+    <p>A hengernél az alkotó és a magasság ugyanaz volt. <b>A kúpnál nem</b> — és ez a témakör legfontosabb különbsége. Az alkotó a palást <b>felületén</b> fut, a magasság a test <b>belsejében</b>; a kettő közül mindig az alkotó a hosszabb.</p>
+
+    <h2 id="s3">A kúp derékszögű háromszöge</h2>
+
+    <p>Vágjuk el a kúpot a tengelyén át. A kapott háromszög <b>fele</b> egy derékszögű háromszög, amelynek a befogói a sugár és a magasság, az átfogója pedig az alkotó.</p>
+
+    <div class="doboz tetel" id="tetel-kup-haromszog">
+      <p class="cim"><span class="ikon">📘</span> A kúp három adata</p>
+      <p>Az egyenes körkúpban</p><span class="math display">\[s^{2}=r^{2}+H^{2}.\]</span><p>Ez a témakör legtöbbet használt összefüggése: bármelyik két adatból megadja a harmadikat. Mivel az alkotó az <b>átfogó</b>, mindig</p><span class="math display">\[s>r\quad\text{és}\quad s>H.\]</span><p>A 01-es témakörben a gúlánál <b>három</b> ilyen derékszögű háromszög volt; a kúpnál mindegyik ugyanabba az egybe olvad össze — mert az alaplap köré írt és beírt köre ugyanaz a kör.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 310 290" width="310" height="290" role="img" aria-label="Egyenes körkúp: alapkör, csúcs, alkotó, magasság és a jellemző derékszögű háromszög">
+      <path d="M73.0,241.4 L155.0,85.5 L237.0,241.4 A82.0,24.6 0 0 1 73.0,241.4 z" fill="#047857" fill-opacity="0.08" stroke="none"/>
+      <polygon points="155.0,241.4 237.0,241.4 155.0,85.5" fill="#f59e0b" fill-opacity="0.16" stroke="none"/>
+      <path d="M73.0,241.4 A82.0,24.6 0 0 0 237.0,241.4" fill="none" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 4"/>
+      <path d="M73.0,241.4 A82.0,24.6 0 0 1 237.0,241.4" fill="none" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="73.0" y1="241.4" x2="155.0" y2="85.5" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="237.0" y1="241.4" x2="155.0" y2="85.5" stroke="#0f172a" stroke-width="1.6"/>
+      <line x1="155.0" y1="241.4" x2="155.0" y2="85.5" stroke="#475569" stroke-width="1.2" stroke-dasharray="4 3"/>
+      <line x1="155.0" y1="241.4" x2="155.0" y2="85.5" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <text x="148.0" y="197.7" font-size="13" fill="#ef4444" text-anchor="end" font-style="italic" font-weight="600">H</text>
+      <path d="M155.0,232.4 L164.0,232.4 L164.0,241.4" fill="none" stroke="#ef4444" stroke-width="1.1"/>
+      <line x1="155.0" y1="241.4" x2="237.0" y2="241.4" stroke="#8b5cf6" stroke-width="1.5"/>
+      <text x="196.0" y="256.4" font-size="13" fill="#8b5cf6" text-anchor="middle" font-style="italic" font-weight="600">r</text>
+      <line x1="237.0" y1="241.4" x2="155.0" y2="85.5" stroke="#f59e0b" stroke-width="2.0"/>
+      <text x="205.0" y="161.5" font-size="13" fill="#f59e0b" text-anchor="start" font-style="italic" font-weight="600">s</text>
+      <circle cx="155.0" cy="85.5" r="2.8" fill="#0f172a"/>
+    </svg>
+    </div>
+    <p class="cap">A kiemelt derékszögű háromszög befogói <span class="math inline">\(r\)</span> és <span class="math inline">\(H\)</span>, átfogója az alkotó (<span class="math inline">\(s\)</span>).</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„Az alkotó a sugár és a magasság összege: <span class="math inline">\(s=r+H\)</span>."</i></p><p>Ez a háromszög-egyenlőtlenség szerint lehetetlen: az átfogó mindig <b>kisebb</b> a két befogó összegénél. Ha <span class="math inline">\(r=6\)</span> és <span class="math inline">\(H=8\)</span>, akkor <span class="math inline">\(s=10\)</span>, nem <span class="math inline">\(14\)</span>.</p><p><b>Gyors önellenőrzés:</b> ha egy feladatban az „alkotó” a három adat közül a <b>legkisebb</b>, valamit félreolvastál — az alkotó soha nem lehet rövidebb sem a sugárnál, sem a magasságnál.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ s² = 81 + 144 = 225, tehát s = 15 cm — hosszabb mindkét befogónál." data-nem="✘ Az alkotó az ÁTFOGÓ: s = √(r² + H²) = √225 = 15. A 21 az összeg lenne, a √63 pedig kivonásból jönne — de itt összeadás kell.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy kúp alapkörének sugara <span class="math inline">\(9\)</span> cm, magassága <span class="math inline">\(12\)</span> cm. Mekkora az alkotója?</p>
+      <div class="opciok"><button><span class="math inline">\(15\)</span> cm</button><button><span class="math inline">\(21\)</span> cm</button><button><span class="math inline">\(\sqrt{63}\approx 7{,}94\)</span> cm</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">A kúp hálója</h2>
+
+    <p>Vágjuk fel a palástot egyetlen alkotó mentén, és terítsük ki. Nem téglalapot kapunk, mint a hengernél, hanem <b>körcikket</b> — hiszen a palást minden pontja ugyanolyan messze van a csúcstól.</p>
+
+    <div class="doboz tetel" id="tetel-kup-halo">
+      <p class="cim"><span class="ikon">📘</span> Az egyenes kúp hálója</p>
+      <p>A kiterített palást <b>körcikk</b>, amelynek</p><ul><li>a <b>sugara</b> az alkotó, <span class="math inline">\(s\)</span> (mert minden alkotó egyenlő hosszú);</li><li>az <b>ívhossza</b> az alapkör kerülete, <span class="math inline">\(2r\pi\)</span> (mert a palást pontosan körbeéri az alapkört).</li></ul><p>A középponti szöge ebből következik: az ív a teljes <span class="math inline">\(s\)</span> sugarú kör kerületének (<span class="math inline">\(2s\pi\)</span>) annyiad része, amennyi a szög a teljes szöghöz képest, ezért</p><span class="math display">\[\frac{\varphi}{360^\circ}=\frac{2r\pi}{2s\pi}=\frac rs,\qquad\text{azaz}\qquad \varphi=360^\circ\cdot\frac rs.\]</span><p>A háló tehát ez a körcikk és egy <span class="math inline">\(r\)</span> sugarú kör.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 360 260" width="360" height="260" role="img" aria-label="A kúp hálója síkba kiterítve">
+      <path d="M129.6,135.2 L25.0,108.3 A108.0,108.0 0 0 1 234.2,108.3 z" fill="#047857" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.5"/>
+      <text x="129.6" y="75.8" font-size="12" fill="#475569" text-anchor="middle">palást</text>
+      <text x="52.7" y="122.5" font-size="12" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">s</text>
+      <text x="129.6" y="151.2" font-size="12" fill="#f59e0b" text-anchor="middle" font-style="italic" font-weight="600">φ</text>
+      <circle cx="288.0" cy="135.2" r="45.4" fill="#3b82f6" fill-opacity="0.10" stroke="#0f172a" stroke-width="1.4"/>
+      <text x="288.0" y="196.6" font-size="12" fill="#475569" text-anchor="middle">alapkör</text>
+    </svg>
+    </div>
+    <p class="cap">A kúp hálója: körcikk (sugara az alkotó, íve az alapkör kerülete) és az alapkör.</p>
+
+    <div class="doboz pelda" id="pelda-tolcser">
+      <p class="cim"><span class="ikon">✏️</span> Átalakulás-kamra szimuláció</p>
+      <p>Egy papírtölcsér alapkörének sugara <span class="math inline">\(6\)</span> cm, magassága <span class="math inline">\(8\)</span> cm. Mekkora körcikkből lehet kivágni?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>Az alkotó.</b> <span class="math inline">\(s^2=6^2+8^2=100\)</span>, tehát <span class="math inline">\(s=10\)</span> cm — ez lesz a körcikk sugara.</p><p><b>Az ívhossz.</b> <span class="math inline">\(2r\pi=12\pi\)</span> cm.</p><p><b>A középponti szög.</b></p><span class="math display">\[\varphi=360^\circ\cdot\frac rs=360^\circ\cdot\frac{6}{10}=216^\circ.\]</span><p>Tehát egy <span class="math inline">\(10\)</span> cm sugarú körből kell egy <span class="math inline">\(216^\circ\)</span>-os cikket kivágni. A maradék <span class="math inline">\(144^\circ\)</span> a hulladék — ezért olcsóbb a lapos, széles tölcsér, mint a hegyes: annál a szög nagyobb, a hulladék kevesebb.</p></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„A körcikk sugara az alapkör sugara, tehát <span class="math inline">\(r\)</span>."</i></p><p>A körcikk sugara az <b>alkotó</b> (<span class="math inline">\(s\)</span>), nem az alapköré. Gondolj bele: a kiterített palást minden pontja onnan indul, ahol a <b>csúcs</b> volt — és a csúcstól minden palástpont pontosan <span class="math inline">\(s\)</span> távolságra van.</p><p>Az alapkör sugara (<span class="math inline">\(r\)</span>) a körcikk <b>ívének</b> hosszában bújik meg: az ív <span class="math inline">\(2r\pi\)</span> hosszú.</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>Nézd meg egy papír fagylalttölcsér vagy egy partikalap kiterített mintáját: mindig körcikk. Ugyanezért körcikk alakú a szabásminta a kúpos lámpaernyőnél és a kémény bádogsapkájánál is — aki lemezből kúpot akar, körcikket vág ki és összehajtja.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-jo="✔ φ = 360° · r/s = 360° · 4/12 = 120°." data-nem="✘ A képlet φ = 360° · r/s — a SUGARAT osztjuk az ALKOTÓVAL: 360° · 4/12 = 120°.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy kúp alkotója <span class="math inline">\(12\)</span> cm, alapkörének sugara <span class="math inline">\(4\)</span> cm. Mekkora a kiterített palást (körcikk) középponti szöge?</p>
+      <div class="opciok"><button><span class="math inline">\(120^\circ\)</span></button><button><span class="math inline">\(30^\circ\)</span></button><button><span class="math inline">\(360^\circ\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s5">Az egyenlő oldalú kúp</h2>
+
+    <div class="doboz definicio" id="def-egyenlo-oldalu-kup">
+      <p class="cim"><span class="ikon">📗</span> Egyenlő oldalú kúp</p>
+      <p>A kúp <b>egyenlő oldalú</b>, ha a <b>tengelymetszete szabályos (egyenlő oldalú) háromszög</b>.</p><p>A tengelymetszet alapja az átmérő (<span class="math inline">\(2r\)</span>), a szárai az alkotók, ezért a feltétel azt jelenti, hogy</p><span class="math display">\[s=2r,\qquad\text{és ebből}\qquad H=\sqrt{(2r)^2-r^2}=r\sqrt3.\]</span>
+    </div>
+
+    <p>Az egyenlő oldalú kúpnál is <b>egyetlen</b> adat határoz meg mindent: ha ismered <span class="math inline">\(r\)</span>-t, adódik az alkotó és a magasság is. Sok feladat pontosan ezért indul innen — egyetlen számot ad meg, és a többit neked kell felépítened.</p>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-kup.html#alap-1">🐕 Tér-eb-ugrás <span class="cimke">A 1–6</span></a><a class="sav bruno" href="feladatok-kup.html#kozep-1">👑 Királyi Gárda <span class="cimke">K 1–3</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Medúza:</b> A háromszög és a körcikk a helyén van. Innen a palást területe már nem definíció kérdése, hanem <b>levezetés</b> — a témakör egyetlen igazi levezetése.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-henger-felszin-terfogat.html"><span class="irany">← Előző</span><span class="hova">A henger felszíne és térfogata</span></a>
+      <a class="kov" href="tananyag-kup-felszin-terfogat.html"><span class="irany">Következő →</span><span class="hova">A kúp felszíne és térfogata</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
