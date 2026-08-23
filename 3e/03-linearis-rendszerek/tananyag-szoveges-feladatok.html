@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Szövegből rendszer — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Lineáris egyenletrendszerek</a> ›
+  <span class="itt">Szövegből rendszer — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Szövegből rendszer</h1>
+  <p class="alcim">A szöveges feladat négy lépése, a visszatérő feladattípusok, és két végig kidolgozott példa — kettő, illetve három ismeretlennel.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Rendszer Hibája · 6/6</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> A Kamra nem egyenletrendszerekben beszél, hanem <b>mérési jegyzőkönyvekben</b>: „a hármas tartály és a hatos tartály együtt kétszer annyit nyelt el, mint a négyes”. A nehéz rész nem a megoldás — azt már tudod. A nehéz rész a <b>fordítás</b>: szövegből jelekbe.</p></div>
+
+    <p>Ez a témakör egyetlen <b>alapszintű</b> kimenete, és egyben a legfontosabb: az egyenletrendszer önmagában nem hasznos, csak akkor, ha fel tudod írni. A fordítás képessége az, ami a matematikát az iskolán kívül is használhatóvá teszi.</p>
+
+    <h2 id="s1">A négy lépés</h2>
+
+    <div class="doboz tetel" id="tetel-negy-lepes">
+      <p class="cim"><span class="ikon">📘</span> A szöveges feladat menete</p>
+      <ol><li><b>Mi az ismeretlen?</b> Írd le <b>szavakkal is</b>, és ne csak betűvel: „legyen <span class="math inline">\(x\)</span> egy toll ára dinárban”. A mértékegység a megnevezés része.</li><li><b>Az adatokat közlő mondatokból lesznek az egyenletek.</b> Haladj sorban a szövegen — a legtöbb ilyen mondat egy-egy egyenletet ad. Legalább annyi <b>egymástól független</b> egyenlet kell, ahány ismeretlent bevezettél.</li><li><b>Oldd meg</b> a rendszert — behelyettesítéssel, kiküszöböléssel, Gauss-eljárással vagy Cramer-szabállyal, amelyik kényelmesebb.</li><li><b>Ellenőrizz a szöveggel</b>, ne csak az egyenlettel — és <b>olvasd vissza a kérdést</b>: pontosan arra válaszolj, amit kérdeztek.</li></ol>
+    </div>
+
+    <p>A negyedik lépés két külön dolgot takar. Az <b>egyenletbe</b> való visszahelyettesítés a számolási hibát szűri ki; a <b>szöveggel</b> való ellenőrzés viszont a felírás hibájára világít rá. Ha <span class="math inline">\(-3\)</span> toll jött ki, vagy egy ember életkorára <span class="math inline">\(180\)</span> év, akkor valami biztosan hibás — és először a felírást nézd meg, mert azt az egyenletbe való visszahelyettesítés <b>nem</b> szűri ki.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„Megvan: <span class="math inline">\(x=220\)</span>. Kész.”</i></p><p>Csakhogy ha a kérdés az volt, hogy <b>mennyibe kerül együtt</b> négy toll és három füzet, akkor a válasz nem <span class="math inline">\(x\)</span> értéke, hanem <span class="math inline">\(4x+3y\)</span> — azt még ki kell számolni.</p><p>Ez a leggyakoribb pontveszteség a szöveges feladatoknál — nem tudáshiány, hanem figyelmetlenség. Az utolsó lépés mindig ugyanaz: <b>olvasd vissza a kérdést</b>, és fogalmazd meg a választ egész mondatban, mértékegységgel együtt. A mértékegység elhagyása ugyanígy pontlevonás: a „<span class="math inline">\(220\)</span>” nem válasz, a „<span class="math inline">\(220\)</span> dinár” az.</p><p>Ugyanez a hiba fordítva is előfordul: van, aki a részeredményeket <b>nem</b> írja le, csak a végszámot. A dolgozatban mindkettő kell — az ismeretlenek értéke <b>és</b> a kérdésre adott válasz.</p>
+    </div>
+
+    <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ A rendszerből x = 24 és y = 16, a kérdés viszont a szorzatra vonatkozott: 24 · 16 = 384." data-nem="✘ A rendszer megoldása x = 24, y = 16 — de a kérdés a SZORZATUKAT kérte: 24 · 16 = 384. Mindig olvasd vissza, mit kérdeztek.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Két szám összege <span class="math inline">\(40\)</span>, különbsége <span class="math inline">\(8\)</span>. Mennyi a két szám <b>szorzata</b>?</p>
+      <div class="opciok"><button><span class="math inline">\(24\)</span></button><button><span class="math inline">\(16\)</span></button><button><span class="math inline">\(320\)</span></button><button><span class="math inline">\(384\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">A visszatérő feladattípusok</h2>
+
+    <p>A szöveges feladatok néhány visszatérő mintát követnek. Ha felismered a mintát, a felírás fele már megvan.</p>
+
+    <table class="tt-table"><tr><th>Típus</th><th>Az ismeretlenek</th><th>Az egyenletek forrása</th></tr><tr><td><b>mennyiség — egységár — összérték</b></td><td>a darabárak</td><td>minden vásárlás egy egyenlet: <span class="math inline">\(\text{darab}\cdot\text{ár}\)</span> tagok összege</td></tr><tr><td><b>sebesség — idő — út</b></td><td>a sebességek</td><td>minden szakaszra <span class="math inline">\(s=v\cdot t\)</span>; folyón az áramlás hozzáadódik vagy levonódik</td></tr><tr><td><b>keverés</b></td><td>a keverendő mennyiségek</td><td>egy egyenlet az össztömegre, egy a hatóanyagra</td></tr><tr><td><b>életkorok</b></td><td>a mai életkorok</td><td>„<span class="math inline">\(n\)</span> év múlva” minden életkorhoz <span class="math inline">\(+n\)</span>, „<span class="math inline">\(n\)</span> éve” <span class="math inline">\(-n\)</span></td></tr><tr><td><b>kétjegyű szám számjegyei</b></td><td>a számjegyek</td><td>maga a szám <span class="math inline">\(10a+b\)</span>, a felcserélt <span class="math inline">\(10b+a\)</span></td></tr></table>
+
+    <p>Egy tipikus sebességes példa: egy hajó <span class="math inline">\(120\)</span> km-t tesz meg a folyón lefelé <span class="math inline">\(4\)</span> óra alatt, fölfelé ugyanezt <span class="math inline">\(6\)</span> óra alatt. Ha <span class="math inline">\(x\)</span> a hajó saját sebessége és <span class="math inline">\(y\)</span> a folyó sodrásáé, akkor <span class="math inline">\(4(x+y)=120\)</span> és <span class="math inline">\(6(x-y)=120\)</span>, ahonnan <span class="math inline">\(x=25\)</span> km/h és <span class="math inline">\(y=5\)</span> km/h.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>A <b>keverési feladat</b> pontosan az, amit a gyógyszertárban, a festékkeverő gépnél és a laborban csinálnak: adott töménységű oldatokból kell adott töménységűt kikeverni. A <b>sebesség–idő–út</b> típus pedig minden menetrend mögött ott van — és minden repülőút-tervezésben, ahol a szél ugyanúgy hozzáadódik vagy levonódik, mint a folyó sodrása.</p><p>Közös bennük, hogy a valóságban is <b>több</b> ismeretlen van, és soha nem mérjük őket közvetlenül: csak összefüggéseket látunk. Ezért a rendszer nem iskolai mesterkéltség, hanem a helyzet természetes leírása.</p>
+    </div>
+
+    <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ Minden jegytípusnál a darabszám szorozza az árat, és a szorzatokat adjuk össze: 3x + 2y = 1300." data-nem="✘ A darabszám az árat SZOROZZA, és a különböző jegytípusok összegződnek: 3x + 2y = 1300. Az árakat összeszorozni értelmetlen, és a darabszámokat sem vonhatjuk össze, mert eltérő az ár.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>„Egy jegy felnőtteknek <span class="math inline">\(x\)</span> dinár, diákoknak <span class="math inline">\(y\)</span> dinár. Három felnőtt és két diák együtt <span class="math inline">\(1300\)</span> dinárt fizetett.” Melyik egyenlet írja le ezt a mondatot?</p>
+      <div class="opciok"><button><span class="math inline">\(x+y=1300\)</span></button><button><span class="math inline">\(3x\cdot2y=1300\)</span></button><button><span class="math inline">\(5(x+y)=1300\)</span></button><button><span class="math inline">\(3x+2y=1300\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Kidolgozott példa — két ismeretlen</h2>
+
+    <div class="doboz pelda" id="pelda-arak">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — a raktár árlistája</p>
+      <p><b>Feladat.</b> A Kamra írószerraktárában három toll és két füzet együtt <span class="math inline">\(1560\)</span> dinárba kerül, öt toll és négy füzet pedig <span class="math inline">\(2900\)</span> dinárba. <b>Mennyibe kerül együtt négy toll és három füzet?</b></p><p><b>1. Az ismeretlenek.</b> Legyen <span class="math inline">\(x\)</span> egy toll ára dinárban, <span class="math inline">\(y\)</span> pedig egy füzeté dinárban.</p><p><b>2. Az egyenletek.</b> A két mondat egy-egy egyenletet ad:</p><span class="math display">\[\begin{aligned}3x+2y&=1560\\ 5x+4y&=2900\end{aligned}\]</span><p><b>3. A megoldás.</b> Az <span class="math inline">\(y\)</span> együtthatói <span class="math inline">\(2\)</span> és <span class="math inline">\(4\)</span>: az elsőt <span class="math inline">\(2\)</span>-vel szorozva egyenlővé tehetők, majd kivonjuk a másodikat:</p><span class="math display">\[\begin{aligned}6x+4y&=3120\\ 5x+4y&=2900\end{aligned}\]</span><p>A különbség <span class="math inline">\(x=220\)</span>. Ezt az első eredeti egyenletbe írva <span class="math inline">\(660+2y=1560\)</span>, tehát <span class="math inline">\(2y=900\)</span> és <span class="math inline">\(y=450\)</span>.</p><p><b>4. Ellenőrzés és válasz.</b> <span class="math inline">\(3\cdot220+2\cdot450=660+900=1560\)</span> ✔, <span class="math inline">\(5\cdot220+4\cdot450=1100+1800=2900\)</span> ✔. Az árak reálisak (pozitívak, egész dinárok).</p><p>De a kérdés <b>nem</b> az árakra vonatkozott! Négy toll és három füzet ára:</p><span class="math display">\[4\cdot220+3\cdot450=880+1350=2230.\]</span>
+      <details><summary>Végeredmény</summary><div class="bel"><p>Egy toll <span class="math inline">\(220\)</span> dinár, egy füzet <span class="math inline">\(450\)</span> dinár.</p><p class="vegeredmeny">Négy toll és három füzet együtt <b>2230 dinár</b>.</p></div></details>
+    </div>
+
+    <p>Figyeld meg, hogy a megoldás <b>három</b> számot tartalmaz: a két ismeretlen értékét és a kérdésre adott választ. A dolgozatban mindhármat le kell írni — az első kettőt azért, mert azok a rendszer megoldásai, a harmadikat azért, mert az a válasz.</p>
+
+    <h2 id="s4">Kidolgozott példa — három ismeretlen</h2>
+
+    <div class="doboz pelda" id="pelda-harom-termek">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — a tartályleltár</p>
+      <p><b>Feladat.</b> A Kamrában háromféle kristálytartály van: kicsi, közepes és nagy. Összesen <span class="math inline">\(30\)</span> darab áll a raktárban. A kicsibe <span class="math inline">\(2\)</span>, a közepesbe <span class="math inline">\(5\)</span>, a nagyba <span class="math inline">\(9\)</span> liter fér, és a raktár teljes űrtartalma <span class="math inline">\(112\)</span> liter. Közepesből kétszer annyi van, mint nagyból. <b>Hány liter fér összesen a közepes tartályokba?</b></p><p><b>1. Az ismeretlenek.</b> Legyen <span class="math inline">\(x\)</span> a kicsi, <span class="math inline">\(y\)</span> a közepes és <span class="math inline">\(z\)</span> a nagy tartályok <b>darabszáma</b>.</p><p><b>2. Az egyenletek.</b> Három adatközlő mondat, három egyenlet:</p><span class="math display">\[\begin{aligned}x+y+z&=30 &&\text{(a darabszám)}\\ 2x+5y+9z&=112 &&\text{(az űrtartalom)}\\ y&=2z &&\text{(az arány)}\end{aligned}\]</span><p><b>3. A megoldás.</b> A harmadik egyenlet már kifejezett alakban áll, ezért nem kell hozzá se teljes Gauss-eljárás, se Cramer-szabály: elég egyetlen kiejtés és egy behelyettesítés. Először az első két egyenletből ejtsük ki az <span class="math inline">\(x\)</span>-et — az <span class="math inline">\(S_2-2S_1\)</span> lépéssel:</p><span class="math display">\[(2x+5y+9z)-2(x+y+z)=3y+7z,\qquad 112-2\cdot30=52,\]</span><p>tehát <span class="math inline">\(3y+7z=52\)</span>. Ide beírva <span class="math inline">\(y=2z\)</span>-t:</p><span class="math display">\[6z+7z=52 \quad\Longrightarrow\quad 13z=52 \quad\Longrightarrow\quad z=4.\]</span><p>Innen <span class="math inline">\(y=2\cdot4=8\)</span>, és az első egyenletből <span class="math inline">\(x=30-8-4=18\)</span>.</p><p><b>4. Ellenőrzés és válasz.</b> <span class="math inline">\(18+8+4=30\)</span> ✔, <span class="math inline">\(2\cdot18+5\cdot8+9\cdot4=36+40+36=112\)</span> ✔, és <span class="math inline">\(8=2\cdot4\)</span> ✔. Mindhárom darabszám pozitív egész — a szöveg szerint is értelmes.</p><p>A kérdés viszont a közepes tartályok <b>összes űrtartalmára</b> vonatkozott: <span class="math inline">\(8\cdot5=40\)</span> liter.</p>
+      <details><summary>Végeredmény</summary><div class="bel"><p><span class="math inline">\(18\)</span> kicsi, <span class="math inline">\(8\)</span> közepes és <span class="math inline">\(4\)</span> nagy tartály van.</p><p class="vegeredmeny">A közepes tartályokba összesen <b>40 liter</b> fér.</p></div></details>
+    </div>
+
+    <p>Ez a feladat jól mutatja, hogy a <b>megoldás módszerét</b> is a szöveg választja ki. A harmadik egyenlet (<span class="math inline">\(y=2z\)</span>) már kifejezett alakban áll — kár lenne determinánsokat számolni hozzá.</p><p>Menne persze Cramer-szabállyal is: a rendszer fő determinánsa</p><span class="math display">\[D=\begin{vmatrix}1&1&1\\ 2&5&9\\ 0&1&-2\end{vmatrix}=-13\ne0,\]</span><p>tehát a rendszer határozott, és a megoldás felírható a négy determináns hányadosaként. Csak épp <b>négy</b> harmadrendű determinánst kellene kiszámolni ahhoz, amihez itt egyetlen behelyettesítés is elég. A gyorsabb út majdnem mindig az, amelyik az adott szöveghez illik.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Az arány iránya</p>
+      <p>„Közepesből <b>kétszer annyi</b> van, mint nagyból” — ez <span class="math inline">\(y=2z\)</span>, nem <span class="math inline">\(2y=z\)</span>. Az ellenőrzés egyszerű: ha nagyból <span class="math inline">\(4\)</span> van, akkor közepesből <span class="math inline">\(8\)</span>-nak kell lennie — és valóban, <span class="math inline">\(y=2z\)</span> mellett <span class="math inline">\(8=2\cdot4\)</span>. A <span class="math inline">\(2y=z\)</span> épp a fordítottját mondaná: nagyból volna kétszer annyi.</p><p>Ha bizonytalan vagy, <b>próbáld ki számokkal</b>, mielőtt továbbmennél. Egy rossz irányú arány az egész megoldást használhatatlanná teszi — és a saját (hibás) egyenleteidbe visszahelyettesítve minden „stimmelni” fog. Ezért kell a <b>szöveggel</b> ellenőrizni, nem az egyenlettel. (Ebben a feladatban szerencsénk van: a <span class="math inline">\(2y=z\)</span> változattal <span class="math inline">\(17y=52\)</span> jönne ki, ami nem egész — a hiba azonnal kibukna. De erre nem szabad számítani.)</p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-rendszerek.html#alap-19">🐕 Tér-eb-ugrás <span class="cimke">A 19–24</span></a><a class="sav bruno" href="feladatok-rendszerek.html#kozep-14">👑 Királyi Gárda <span class="cimke">K 14–19</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> A Rendszer Hibáját megtaláltuk: nem a mérésekben volt, hanem abban, ahogyan összeolvastuk őket. Innen már a te dolgod — a Kamra hálózata olvasható. <b>Crni Grom</b> következik: a rendszert megtörtük, most az <b>irányt</b> kell eltalálni. Ehhez pedig olyan mennyiség kell, amelynek nemcsak nagysága van, hanem iránya is.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-cramer.html"><span class="irany">← Előző</span><span class="hova">A Cramer-szabály</span></a>
+      <a class="kov" href="feladatok-rendszerek.html"><span class="irany">Következő →</span><span class="hova">Feladatok — egyenletrendszerek</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

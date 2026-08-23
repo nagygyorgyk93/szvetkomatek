@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A Cramer-szabály — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Lineáris egyenletrendszerek</a> ›
+  <span class="itt">A Cramer-szabály — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A Cramer-szabály — és a korlátja</h1>
+  <p class="alcim">A négy determináns, a megoldóképlet, a <span class="math inline">\(D\ne0\)</span> feltétel jelentése, és a Cramer–Gauss összehasonlítás.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Rendszer Hibája · 5/6</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> Ha a determináns nem nulla, a megoldás <b>képlettel</b> felírható: négy determináns, három osztás, és kész. De van egy feltétel — és aki azt átugorja, az a legrosszabb fajta hibát követi el: <b>magabiztosan</b> ad rossz választ.</p></div>
+
+    <p>A Cramer-szabály nem helyettesíti a Gauss-eljárást, hanem <b>kiegészíti</b>. Az óra végére azt is el kell tudnod dönteni, melyiket mikor érdemes elővenni.</p>
+
+    <h2 id="s1">A négy determináns</h2>
+
+    <p>Induljunk ki egy háromismeretlenes rendszerből:</p><span class="math display">\[\begin{aligned}a_{11}x+a_{12}y+a_{13}z&=b_1\\ a_{21}x+a_{22}y+a_{23}z&=b_2\\ a_{31}x+a_{32}y+a_{33}z&=b_3\end{aligned}\]</span><p>A rendszer <b>fő determinánsa</b> (<span class="math inline">\(D\)</span>) az együtthatók determinánsa. A három <b>helyettesítési determinánst</b> úgy kapjuk, hogy <span class="math inline">\(D\)</span>-ben a keresett ismeretlen <b>oszlopát</b> kicseréljük a jobb oldalak oszlopára:</p><span class="math display">\[D=\begin{vmatrix}a_{11}&a_{12}&a_{13}\\ a_{21}&a_{22}&a_{23}\\ a_{31}&a_{32}&a_{33}\end{vmatrix},\qquad D_x=\begin{vmatrix}b_1&a_{12}&a_{13}\\ b_2&a_{22}&a_{23}\\ b_3&a_{32}&a_{33}\end{vmatrix},\]</span><span class="math display">\[D_y=\begin{vmatrix}a_{11}&b_1&a_{13}\\ a_{21}&b_2&a_{23}\\ a_{31}&b_3&a_{33}\end{vmatrix},\qquad D_z=\begin{vmatrix}a_{11}&a_{12}&b_1\\ a_{21}&a_{22}&b_2\\ a_{31}&a_{32}&b_3\end{vmatrix}.\]</span>
+
+    <table class="tt-table"><tr><th>Determináns</th><th>Az 1. oszlop</th><th>A 2. oszlop</th><th>A 3. oszlop</th></tr><tr><td><span class="math inline">\(D\)</span></td><td><span class="math inline">\(x\)</span> együtthatói</td><td><span class="math inline">\(y\)</span> együtthatói</td><td><span class="math inline">\(z\)</span> együtthatói</td></tr><tr><td><span class="math inline">\(D_x\)</span></td><td><b>a jobb oldal</b></td><td><span class="math inline">\(y\)</span> együtthatói</td><td><span class="math inline">\(z\)</span> együtthatói</td></tr><tr><td><span class="math inline">\(D_y\)</span></td><td><span class="math inline">\(x\)</span> együtthatói</td><td><b>a jobb oldal</b></td><td><span class="math inline">\(z\)</span> együtthatói</td></tr><tr><td><span class="math inline">\(D_z\)</span></td><td><span class="math inline">\(x\)</span> együtthatói</td><td><span class="math inline">\(y\)</span> együtthatói</td><td><b>a jobb oldal</b></td></tr></table>
+
+    <p>Érdemes észrevenni a rendszert: <b>mindig ugyanaz a négy oszlop</b> szerepel, csak más-más helyen. A jobb oldal oszlopa oda kerül, amelyik ismeretlenre kíváncsiak vagyunk — az <span class="math inline">\(x\)</span>-hez az elsőre, az <span class="math inline">\(y\)</span>-hoz a másodikra, a <span class="math inline">\(z\)</span>-hez a harmadikra.</p>
+
+    <p>Fontos, hogy a rendszert előbb <b>rendezett alakra</b> hozzuk: minden egyenletben ugyanabban a sorrendben álljanak az ismeretlenek, a jobb oldalon pedig csak a konstans. Ha egy egyenletből hiányzik egy ismeretlen, oda <b>nulla</b> kerül a determinánsba.</p>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ Az y a második ismeretlen, ezért a második OSZLOP helyére kerül a jobb oldalak oszlopa." data-nem="✘ Mindig annak az ismeretlennek az OSZLOPÁT cseréljük, amelyiket keressük — az y-nál tehát a másodikat. Sort soha nem cserélünk.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Hogyan áll elő a <span class="math inline">\(D_y\)</span> determináns?</p>
+      <div class="opciok"><button>A <span class="math inline">\(D\)</span> értékét elosztjuk <span class="math inline">\(y\)</span>-nal</button><button>A <span class="math inline">\(D\)</span> <b>második</b> oszlopát cseréljük a jobb oldalak oszlopára</button><button>A <span class="math inline">\(D\)</span> <b>első</b> oszlopát cseréljük a jobb oldalak oszlopára</button><button>A <span class="math inline">\(D\)</span> <b>második sorát</b> cseréljük a jobb oldalak oszlopára</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">A Cramer-szabály</h2>
+
+    <div class="doboz tetel" id="tetel-cramer">
+      <p class="cim"><span class="ikon">📘</span> Cramer-szabály</p>
+      <p>Egy <span class="math inline">\(n\)</span> egyenletből álló, <span class="math inline">\(n\)</span> ismeretlenes rendszer <b>akkor és csak akkor</b> határozott, ha a fő determinánsa nem nulla. Ha <span class="math inline">\(D\ne0\)</span>, akkor tehát pontosan egy megoldás van, és ez a megoldás:</p><span class="math display">\[x=\frac{D_x}{D},\qquad y=\frac{D_y}{D},\qquad z=\frac{D_z}{D}.\]</span><p>A <span class="math inline">\(D\ne0\)</span> feltétel <b>nem díszítés</b>: nélküle a képletnek nincs értelme, hiszen nullával nem oszthatunk.</p><p>Kétismeretlenes rendszerre ugyanez érvényes, csak két determinánssal: <span class="math inline">\(x=\frac{D_x}{D}\)</span> és <span class="math inline">\(y=\frac{D_y}{D}\)</span>.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-cramer">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — Cramer-szabály végig</p>
+      <p>Oldjuk meg a</p><span class="math display">\[\begin{aligned}2x-y+3z&=6\\ x+4y-2z&=4\\ 3x\phantom{{}+0y}+5z&=11\end{aligned}\]</span><p>rendszert. A harmadik egyenletben nincs <span class="math inline">\(y\)</span>, tehát ott az együttható <span class="math inline">\(0\)</span>.</p><p><b>A fő determináns</b> (ezt már kiszámoltuk az előző órán):</p><span class="math display">\[D=\begin{vmatrix}2&-1&3\\ 1&4&-2\\ 3&0&5\end{vmatrix}=15\ne0,\]</span><p>tehát a Cramer-szabály <b>alkalmazható</b>, és a rendszer határozott.</p><p><b>A helyettesítési determinánsok.</b> A jobb oldalak oszlopa: <span class="math inline">\(6\)</span>, <span class="math inline">\(4\)</span>, <span class="math inline">\(11\)</span>. Számoljuk ki a <span class="math inline">\(D_x\)</span>-et kifejtéssel — a harmadik sorában van egy nulla:</p><span class="math display">\[D_x=\begin{vmatrix}6&-1&3\\ 4&4&-2\\ 11&0&5\end{vmatrix}=11\cdot\begin{vmatrix}-1&3\\ 4&-2\end{vmatrix}-0+5\cdot\begin{vmatrix}6&-1\\ 4&4\end{vmatrix}=11\cdot(-10)+5\cdot28=30.\]</span><p>A másik kettő ugyanígy megy:</p><span class="math display">\[D_y=\begin{vmatrix}2&6&3\\ 1&4&-2\\ 3&11&5\end{vmatrix}=15,\qquad D_z=\begin{vmatrix}2&-1&6\\ 1&4&4\\ 3&0&11\end{vmatrix}=15.\]</span><p>(A <span class="math inline">\(D_y=D_z=D=15\)</span> egybeesés véletlen — nem elírás.)</p><p><b>A megoldás:</b></p><span class="math display">\[x=\frac{30}{15}=2,\qquad y=\frac{15}{15}=1,\qquad z=\frac{15}{15}=1.\]</span>
+      <details><summary>Ellenőrzés és végeredmény</summary><div class="bel"><p><span class="math inline">\(2\cdot2-1+3\cdot1=6\)</span> ✔ &nbsp;&nbsp; <span class="math inline">\(2+4\cdot1-2\cdot1=4\)</span> ✔ &nbsp;&nbsp; <span class="math inline">\(3\cdot2+5\cdot1=11\)</span> ✔</p><p class="vegeredmeny">A rendszer megoldása: <span class="math inline">\((x;y;z)=(2;1;1)\)</span>.</p></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„<span class="math inline">\(D=0\)</span>? Semmi baj: <span class="math inline">\(x=\frac{D_x}{D}=\frac{0}{0}=1\)</span>.”</i></p><p><b>A nullával osztás nem művelet</b>, és a <span class="math inline">\(\frac00\)</span> nem <span class="math inline">\(1\)</span> — semmi. Ha <span class="math inline">\(D=0\)</span>, a Cramer-szabály nem „nehezebben használható”, hanem <b>érvénytelen</b>: a képlet feltétele nem teljesül, tehát a képlet nem mond semmit.</p><p>És ha <span class="math inline">\(D=0\)</span>, de <span class="math inline">\(D_x\)</span> történetesen <b>nem</b> nulla? Akkor a hányados alakja <span class="math inline">\(\frac{\text{nem nulla}}{0}\)</span> — ez ugyanúgy értelmetlen. A <span class="math inline">\(D=0\)</span> tehát minden esetben kizárja a szabály használatát, nem csak akkor, ha a helyettesítési determinánsok is nullák.</p><p>A másik gyakori hiba: <b>rossz oszlopot</b> cserélnek. A <span class="math inline">\(D_y\)</span>-nál a <b>második</b> oszlop helyére kerül a jobb oldal — nem a második sor, és nem az első oszlop. Aki a sémát egyszer rendesen felírja (lásd a fenti táblázatot), az többé nem téveszti el.</p>
+    </div>
+
+    <h2 id="s3">Mit jelent, ha a determináns nulla</h2>
+
+    <div class="doboz tetel" id="tetel-cramer-korlat">
+      <p class="cim"><span class="ikon">📘</span> A Cramer-szabály korlátja</p>
+      <p>Ha <span class="math inline">\(D=0\)</span>, a Cramer-szabály <b>nem alkalmazható</b>. Ilyenkor a rendszer <b>nem határozott</b>: vagy <b>határozatlan</b> (végtelen sok megoldás), vagy <b>ellentmondásos</b> (nincs megoldás) — de hogy melyik, azt a determinánsokból <b>nem</b> lehet eldönteni. Ehhez a Gauss-eljárást kell elvégezni.</p><p>Vigyázat a megfogalmazásra: a <span class="math inline">\(D=0\)</span> nem azt jelenti, hogy „nincs megoldás”. Azt jelenti, hogy <b>nincs pontosan egy</b> megoldás.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-D-nulla">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — amikor <span class="math inline">\(D=0\)</span></p>
+      <p>Vegyük a <b>megoldások számáról</b> szóló órán megismert rendszert:</p><span class="math display">\[\begin{aligned}x+y+z&=6\\ 2x+y-z&=1\\ 3x+2y\phantom{{}+z}&=7\end{aligned}\]</span><p>A fő determináns:</p><span class="math display">\[D=\begin{vmatrix}1&1&1\\ 2&1&-1\\ 3&2&0\end{vmatrix}=0,\]</span><p>hiszen a harmadik sor az első kettő összege (a megfelelő elemeket adva össze: <span class="math inline">\(1+2=3\)</span>, <span class="math inline">\(1+1=2\)</span>, <span class="math inline">\(1+(-1)=0\)</span>). A Cramer-szabály tehát <b>nem használható</b>. A helyettesítési determinánsok kiszámítása sem vezet megoldáshoz: <span class="math inline">\(D_x\)</span> is nulla, vagyis a képlet az értelmetlen <span class="math inline">\(\frac00\)</span> alakot adná.</p><p>A Gauss-eljárás viszont válaszol: ahogyan a megoldások számáról szóló órán láttuk, ez a rendszer <b>határozatlan</b>, megoldásai <span class="math inline">\((2t-5;\;11-3t;\;t)\)</span>.</p><p>Ha a harmadik egyenlet jobb oldalán <span class="math inline">\(7\)</span> helyett <span class="math inline">\(10\)</span> állna, a fő determináns ugyanúgy <span class="math inline">\(0\)</span> maradna (a bal oldal nem változott), a <span class="math inline">\(D_x\)</span> viszont <span class="math inline">\(-6\)</span> lenne — és a rendszer, ahogyan azt ott a Gauss-eljárással láttuk, <b>ellentmondásos</b>. Ugyanaz a <span class="math inline">\(D=0\)</span>, két különböző eset: ezért nem elég a determináns.</p>
+      <details><summary>Végeredmény</summary><div class="bel"><p class="vegeredmeny"><span class="math inline">\(D=0\)</span> — a Cramer-szabály nem alkalmazható; a Gauss-eljárás szerint a rendszer határozatlan.</p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ A D = 0 csak annyit zár ki, hogy pontosan egy megoldás legyen. A két megmaradó eset között a Gauss-eljárás választ." data-nem="✘ A D = 0 nem azonos azzal, hogy „nincs megoldás”: lehet végtelen sok is. A determináns csak a HATÁROZOTT esetet zárja ki; a döntéshez Gauss kell.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy rendszer fő determinánsa <span class="math inline">\(D=0\)</span>. Mi következik ebből?</p>
+      <div class="opciok"><button>Nincs pontosan egy megoldás — hogy nulla vagy végtelen sok, azt a Gauss dönti el</button><button>Biztosan nincs megoldás, mert nullával nem lehet osztani</button><button>Biztosan végtelen sok megoldás van, mert eltűnt egy feltétel</button><button>A megoldás <span class="math inline">\(x=y=z=0\)</span>, mert minden számláló nullával osztódik</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Melyik módszert válasszam</h2>
+
+    <p>Két teljes értékű eljárásod van. Nem versenytársak — más a hatókörük.</p>
+
+    <table class="tt-table"><tr><th></th><th>Cramer-szabály</th><th>Gauss-eljárás</th></tr><tr><td><b>Mikor működik</b></td><td>csak ha <span class="math inline">\(D\ne0\)</span></td><td>mindig</td></tr><tr><td><b>Mit ad</b></td><td>a megoldást, képlettel</td><td>a megoldást <b>és</b> a megoldások számát</td></tr><tr><td><b>Mikor gyors</b></td><td>ha csak <b>egy</b> ismeretlen kell (elég <span class="math inline">\(D\)</span> és egy helyettesítési determináns)</td><td>ha az együtthatók között sok az <span class="math inline">\(1\)</span> és a <span class="math inline">\(0\)</span></td></tr><tr><td><b>Mikor kényelmetlen</b></td><td>ha mind a három ismeretlen kell: négy determinánst kell kiszámolni</td><td>ha törtek keletkeznek menet közben</td></tr></table>
+
+    <p>Gyakorlati tanács a dolgozatra: ha a feladat azt kérdezi, hogy <b>hány megoldása van</b> a rendszernek, kezdd a determinánssal — ha nem nulla, egy mondatban kész a válasz. Ha viszont a feladat a <b>megoldást</b> kéri, és nem tudod előre, hogy határozott-e, a Gauss-eljárás a biztosabb út: az soha nem akad el.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>Gabriel Cramer svájci matematikus <span class="math inline">\(1750\)</span>-ben publikálta a szabályt (bár lényegében ugyanezt már Leibniz és Maclaurin is ismerte). A képlet elegáns, és kézzel, három ismeretlenre kényelmes.</p><p>Nagy rendszerekre viszont <b>használhatatlanul lassú</b>: a determinánsok kiszámításának munkája az ismeretlenek számával robbanásszerűen nő. Egy húszismeretlenes rendszernél a Cramer-szabály egy átlagos számítógépen már <b>évekig</b> futna, míg a Gauss-eljárás ezredmásodpercek alatt végez. Ezért épül minden komoly numerikus eljárás a Gauss-elimináció <b>elvére</b> — a Cramer-szabály <b>elméleti</b> eszköz maradt, nem számolási.</p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-determinans.html#alap-9">🐕 Tér-eb-ugrás <span class="cimke">A 9–16</span></a><a class="sav bruno" href="feladatok-determinans.html#kozep-5">👑 Királyi Gárda <span class="cimke">K 5–11</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> A gép megvan: eljárás, képlet, döntési szabály. De a Kamra műszerei nem egyenletrendszerekben beszélnek, hanem <b>mérési jegyzőkönyvekben</b>. A következő lépés a legnehezebb az egész témakörben — és nem a számolás lesz az.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-determinans.html"><span class="irany">← Előző</span><span class="hova">A determináns</span></a>
+      <a class="kov" href="tananyag-szoveges-feladatok.html"><span class="irany">Következő →</span><span class="hova">Szövegből rendszer</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Két egyenlet, két ismeretlen — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Lineáris egyenletrendszerek</a> ›
+  <span class="itt">Két egyenlet, két ismeretlen — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Két egyenlet, két ismeretlen — és ami mögötte van</h1>
+  <p class="alcim">A lineáris egyenletrendszer fogalma, a behelyettesítéses és a kiküszöböléses módszer, és a megoldás geometriai jelentése.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Rendszer Hibája · 1/6</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> A Kristálypára-hálózat nem egyetlen ismeretlent rejt, hanem <b>többet egyszerre</b> — és minden egyes mérés csak egy <b>összefüggést</b> ad közöttük, nem magukat az értékeket. Egy összefüggés végtelen sok lehetőséget hagy nyitva. Ami kimetszi belőlük az egyetlen igazat, az a <b>rendszer</b>: több feltétel, egyszerre.</p></div>
+
+    <p>Ez a témakör az 1e <b>lineáris egyenletek és rendszerek</b> témakörére épül — ott már megoldottál <a href="../../1e/07-linearis-egyenletek-es-rendszerek/tananyag-egyenletrendszerek.html">kétismeretlenes rendszereket</a>. Most három dolgot teszünk hozzá: <b>rendszerezzük</b> a módszereket, kiterjesztjük őket <b>három ismeretlenre</b>, és megtanulunk <b>beszélni</b> arról, hogy hány megoldás van.</p><p>Az első óra célja ezért nem az új anyag, hanem a <b>diagnózis</b>: ha a 2×2-es rendszer nem megy magabiztosan, a Gauss-eljárás sem fog.</p>
+
+    <h2 id="s1">Mi a lineáris egyenletrendszer</h2>
+
+    <div class="doboz definicio" id="def-rendszer">
+      <p class="cim"><span class="ikon">📗</span> Lineáris egyenletrendszer</p>
+      <p>Egy egyenlet <b>lineáris</b> az <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> (esetleg <span class="math inline">\(z\)</span>) ismeretlenekben, ha mindegyik ismeretlen <b>legfeljebb az első hatványon</b> szerepel, az ismeretlenek nem állnak szorzatban <b>egymással</b>, és egyik sem szerepel nevezőben vagy gyökjel alatt. („Legfeljebb”, mert egy ismeretlen együtthatója nulla is lehet — ilyenkor az az ismeretlen egyszerűen nem jelenik meg az egyenletben.) Általános alakja két ismeretlennel:</p><span class="math display">\[ax+by=c,\]</span><p>ahol <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span> adott számok, és <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> nem <b>egyszerre</b> nulla.</p><p>Több ilyen egyenlet együtt — ha ugyanazokra az ismeretlenekre vonatkoznak — egy <b>lineáris egyenletrendszer</b>. A rendszer <b>megoldása</b> az az értékrendszer, amely <b>mindegyik</b> egyenletet igazzá teszi: két ismeretlennél egy <span class="math inline">\((x;y)\)</span> <b>számpár</b>, háromnál egy <span class="math inline">\((x;y;z)\)</span> számhármas.</p>
+    </div>
+
+    <p>Két rendszert <b>ekvivalensnek</b> nevezünk, ha ugyanaz a megoldáshalmazuk. Minden megoldási módszer azon alapul, hogy a rendszert lépésről lépésre <b>ekvivalens</b> átalakításokkal cseréljük egyszerűbbre — olyanokkal, amelyek egyetlen megoldást sem szüntetnek meg, és újat sem hoznak be.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„Megoldottam: <span class="math inline">\(x=4\)</span>.”</i></p><p>Ez <b>nem megoldás</b>, csak a megoldás fele. A kétismeretlenes rendszer megoldása <b>számpár</b> — az alább megoldott rendszernél <span class="math inline">\((4;2)\)</span>. Aki csak az egyik ismeretlent írja le, az csak félig válaszolt — és ez pontveszteség akkor is, ha a számolás hibátlan volt.</p><p>Ugyanide tartozik az <b>ellenőrzés elhagyása</b>. A kapott számpárt <b>mindkét</b> egyenletbe vissza kell helyettesíteni, nem csak abba, amelyikből kifejezted az egyiket — abban ugyanis a hibás érték is „stimmelni” fog, hiszen épp onnan származik.</p>
+    </div>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ A megoldás számpár: egyszerre adja meg x és y értékét." data-nem="✘ A kétismeretlenes rendszer megoldása SZÁMPÁR — egyetlen szám nem az, és egy egyenlet (akár kifejezett alakú) sem az.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik lehet egy kétismeretlenes lineáris egyenletrendszer megoldása?</p>
+      <div class="opciok"><button><span class="math inline">\(xy=3\)</span></button><button><span class="math inline">\((3;-1)\)</span></button><button><span class="math inline">\(x=3\)</span></button><button><span class="math inline">\(y=2x-1\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">A két módszer — felidézés</h2>
+
+    <p>Két eljárást ismersz már az 1e-ből. Mindkettő ugyanarra megy ki: az egyik ismeretlent <b>eltüntetjük</b>, hogy egyismeretlenes egyenlet maradjon.</p>
+
+    <table class="tt-table"><tr><th>Módszer</th><th>A lépés</th><th>Mikor a legjobb</th></tr><tr><td><b>behelyettesítés</b></td><td>az egyik egyenletből kifejezzük az egyik ismeretlent, és beírjuk a másikba</td><td>ha valamelyik együttható <span class="math inline">\(1\)</span> vagy <span class="math inline">\(-1\)</span> — akkor a kifejezés törtmentes</td></tr><tr><td><b>kiküszöbölés</b> (ellentett együtthatók módszere)</td><td>az egyenleteket megszorozzuk úgy, hogy az egyik ismeretlen együtthatói ellentettek legyenek, majd összeadjuk őket</td><td>ha egyik együttható sem <span class="math inline">\(\pm1\)</span>, de „szép” számok</td></tr></table>
+
+    <div class="doboz pelda" id="pelda-ket-modszer">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — ugyanaz a rendszer kétféleképpen</p>
+      <p>Oldjuk meg a</p><span class="math display">\[\begin{aligned}3x+2y&=16\\ x-y&=2\end{aligned}\]</span><p>rendszert mindkét módszerrel.</p><p><b>1. Behelyettesítéssel.</b> A második egyenletben az <span class="math inline">\(x\)</span> együtthatója <span class="math inline">\(1\)</span>, ezért innen fejezzük ki: <span class="math inline">\(x=y+2\)</span>. Beírjuk az elsőbe:</p><span class="math display">\[3(y+2)+2y=16 \quad\Longrightarrow\quad 3y+6+2y=16 \quad\Longrightarrow\quad 5y=10,\]</span><p>tehát <span class="math inline">\(y=2\)</span>, és így <span class="math inline">\(x=2+2=4\)</span>.</p><p><b>2. Kiküszöböléssel.</b> A második egyenletet <span class="math inline">\(2\)</span>-vel szorozzuk, hogy az <span class="math inline">\(y\)</span> együtthatói ellentettek legyenek:</p><span class="math display">\[\begin{aligned}3x+2y&=16\\ 2x-2y&=4\end{aligned}\]</span><p>Összeadva: <span class="math inline">\(5x=20\)</span>, tehát <span class="math inline">\(x=4\)</span>, és a második egyenletből <span class="math inline">\(y=x-2=2\)</span>.</p><p><b>A két út ugyanoda visz</b> — ez nem véletlen, hanem éppen az ekvivalencia következménye.</p>
+      <details><summary>Ellenőrzés és végeredmény</summary><div class="bel"><p><span class="math inline">\(3\cdot4+2\cdot2=12+4=16\)</span> ✔ &nbsp;&nbsp; <span class="math inline">\(4-2=2\)</span> ✔</p><p class="vegeredmeny">A rendszer megoldása: <span class="math inline">\((x;y)=(4;2)\)</span>.</p></div></details>
+    </div>
+
+    <h2 id="s3">Mit jelent mindez geometriailag</h2>
+
+    <p>Az <span class="math inline">\(ax+by=c\)</span> egyenlet a koordinátasíkban egy <b>egyenest</b> ír le. Ha <span class="math inline">\(b\ne0\)</span>, ez az egyenes egy lineáris függvény grafikonja — ezt az 1e-ben láttad; ha <span class="math inline">\(b=0\)</span> (például <span class="math inline">\(x=3\)</span>), akkor <b>függőleges</b> egyenest kapunk, ami már nem függvénygrafikon. Két egyenlet tehát <b>két egyenes</b>, a rendszer megoldása pedig a két egyenes <b>közös pontja</b>. Ebből azonnal adódik, hogy pontosan három eset lehetséges.</p>
+
+    <div class="doboz tetel" id="tetel-geometriai-jelentes">
+      <p class="cim"><span class="ikon">📘</span> A 2×2-es rendszer megoldásszáma</p>
+      <p>Két lineáris egyenlet két ismeretlennel három módon viselkedhet:</p><table class="tt-table"><tr><th>A két egyenes</th><th>Megoldások száma</th><th>A rendszer neve</th></tr><tr><td><b>metszi</b> egymást</td><td>pontosan egy</td><td>határozott</td></tr><tr><td><b>párhuzamos</b> (nem esik egybe)</td><td>nincs</td><td>ellentmondásos</td></tr><tr><td><b>egybeesik</b></td><td>végtelen sok</td><td>határozatlan</td></tr></table><p>Más eset <b>nincs</b>: két különböző egyenesnek legfeljebb egy közös pontja lehet, mert két ponton át pontosan egy egyenes megy.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 380 270" width="380" height="270" role="img" aria-label="A két egyenes egyetlen pontban metszi egymást">
+      <defs><marker id="nyil" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="26.0" y1="248.0" x2="26.0" y2="14.0"/>
+        <line x1="117.2" y1="248.0" x2="117.2" y2="14.0"/>
+        <line x1="162.8" y1="248.0" x2="162.8" y2="14.0"/>
+        <line x1="208.4" y1="248.0" x2="208.4" y2="14.0"/>
+        <line x1="254.0" y1="248.0" x2="254.0" y2="14.0"/>
+        <line x1="299.6" y1="248.0" x2="299.6" y2="14.0"/>
+        <line x1="345.2" y1="248.0" x2="345.2" y2="14.0"/>
+        <line x1="26.0" y1="218.8" x2="368.0" y2="218.8"/>
+        <line x1="26.0" y1="179.8" x2="368.0" y2="179.8"/>
+        <line x1="26.0" y1="160.2" x2="368.0" y2="160.2"/>
+        <line x1="26.0" y1="140.8" x2="368.0" y2="140.8"/>
+        <line x1="26.0" y1="121.2" x2="368.0" y2="121.2"/>
+        <line x1="26.0" y1="101.8" x2="368.0" y2="101.8"/>
+        <line x1="26.0" y1="82.2" x2="368.0" y2="82.2"/>
+        <line x1="26.0" y1="62.8" x2="368.0" y2="62.8"/>
+        <line x1="26.0" y1="43.2" x2="368.0" y2="43.2"/>
+        <line x1="26.0" y1="23.8" x2="368.0" y2="23.8"/>
+      </g>
+      <line x1="26.0" y1="199.2" x2="368.0" y2="199.2" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <line x1="71.6" y1="248.0" x2="71.6" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <text x="364.0" y="213.2" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="63.6" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="117.2" y="212.2" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="66.6" y="183.8" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <polyline points="26.0,14.0 29.4,16.2 32.8,18.4 36.3,20.6 39.7,22.8 43.1,25.0 46.5,27.2 49.9,29.4 53.4,31.6 56.8,33.7 60.2,35.9 63.6,38.1 67.0,40.3 70.5,42.5 73.9,44.7 77.3,46.9 80.7,49.1 84.1,51.3 87.6,53.5 91.0,55.7 94.4,57.9 97.8,60.1 101.2,62.3 104.7,64.5 108.1,66.7 111.5,68.8 114.9,71.0 118.3,73.2 121.8,75.4 125.2,77.6 128.6,79.8 132.0,82.0 135.4,84.2 138.9,86.4 142.3,88.6 145.7,90.8 149.1,93.0 152.5,95.2 156.0,97.4 159.4,99.6 162.8,101.8 166.2,103.9 169.6,106.1 173.1,108.3 176.5,110.5 179.9,112.7 183.3,114.9 186.7,117.1 190.2,119.3 193.6,121.5 197.0,123.7 200.4,125.9 203.8,128.1 207.3,130.3 210.7,132.5 214.1,134.7 217.5,136.9 220.9,139.0 224.4,141.2 227.8,143.4 231.2,145.6 234.6,147.8 238.0,150.0 241.5,152.2 244.9,154.4 248.3,156.6 251.7,158.8 255.1,161.0 258.6,163.2 262.0,165.4 265.4,167.6 268.8,169.8 272.2,172.0 275.7,174.1 279.1,176.3 282.5,178.5 285.9,180.7 289.3,182.9 292.8,185.1 296.2,187.3 299.6,189.5 303.0,191.7 306.4,193.9 309.9,196.1 313.3,198.3 316.7,200.5 320.1,202.7 323.5,204.9 327.0,207.0 330.4,209.2 333.8,211.4 337.2,213.6 340.6,215.8 344.1,218.0 347.5,220.2 350.9,222.4 354.3,224.6 357.7,226.8 361.2,229.0 364.6,231.2 368.0,233.4" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="32.8,254.8 36.3,253.4 39.7,251.9 43.1,250.4 46.5,249.0 49.9,247.5 53.4,246.1 56.8,244.6 60.2,243.1 63.6,241.7 67.0,240.2 70.5,238.7 73.9,237.3 77.3,235.8 80.7,234.4 84.1,232.9 87.6,231.4 91.0,230.0 94.4,228.5 97.8,227.0 101.2,225.6 104.7,224.1 108.1,222.6 111.5,221.2 114.9,219.7 118.3,218.3 121.8,216.8 125.2,215.3 128.6,213.9 132.0,212.4 135.4,210.9 138.9,209.5 142.3,208.0 145.7,206.6 149.1,205.1 152.5,203.6 156.0,202.2 159.4,200.7 162.8,199.2 166.2,197.8 169.6,196.3 173.1,194.9 176.5,193.4 179.9,191.9 183.3,190.5 186.7,189.0 190.2,187.6 193.6,186.1 197.0,184.6 200.4,183.2 203.8,181.7 207.3,180.2 210.7,178.8 214.1,177.3 217.5,175.9 220.9,174.4 224.4,172.9 227.8,171.5 231.2,170.0 234.6,168.5 238.0,167.1 241.5,165.6 244.9,164.2 248.3,162.7 251.7,161.2 255.1,159.8 258.6,158.3 262.0,156.8 265.4,155.4 268.8,153.9 272.2,152.4 275.7,151.0 279.1,149.5 282.5,148.1 285.9,146.6 289.3,145.1 292.8,143.7 296.2,142.2 299.6,140.8 303.0,139.3 306.4,137.8 309.9,136.4 313.3,134.9 316.7,133.4 320.1,132.0 323.5,130.5 327.0,129.1 330.4,127.6 333.8,126.1 337.2,124.7 340.6,123.2 344.1,121.7 347.5,120.3 350.9,118.8 354.3,117.3 357.7,115.9 361.2,114.4 364.6,113.0 368.0,111.5" fill="none" stroke="#f59e0b" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="254.0" cy="160.2" r="4" fill="#047857"/>
+      <text x="262.0" y="176.2" font-size="11" fill="#047857" font-weight="600">(4; 2)</text>
+      <rect x="265" y="13" width="109" height="40" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="269" y1="22" x2="287" y2="22" stroke="#3b82f6" stroke-width="2.4"/>
+      <text x="292" y="26" font-size="11" fill="#0f172a">3x + 2y = 16</text>
+      <line x1="269" y1="39" x2="287" y2="39" stroke="#f59e0b" stroke-width="2.4"/>
+      <text x="292" y="43" font-size="11" fill="#0f172a">x − y = 2</text>
+    </svg>
+    </div>
+    <p class="cap">A <span class="math inline">\(3x+2y=16\)</span> és az <span class="math inline">\(x-y=2\)</span> egyenes egyetlen pontban metszi egymást: ez a metszéspont a rendszer megoldása, <span class="math inline">\((4;2)\)</span>.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 380 250" width="380" height="250" role="img" aria-label="Két párhuzamos egyenes: a rendszernek nincs megoldása">
+      <defs><marker id="nyil" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="26.0" y1="228.0" x2="26.0" y2="14.0"/>
+        <line x1="117.2" y1="228.0" x2="117.2" y2="14.0"/>
+        <line x1="162.8" y1="228.0" x2="162.8" y2="14.0"/>
+        <line x1="208.4" y1="228.0" x2="208.4" y2="14.0"/>
+        <line x1="254.0" y1="228.0" x2="254.0" y2="14.0"/>
+        <line x1="299.6" y1="228.0" x2="299.6" y2="14.0"/>
+        <line x1="345.2" y1="228.0" x2="345.2" y2="14.0"/>
+        <line x1="26.0" y1="192.3" x2="368.0" y2="192.3"/>
+        <line x1="26.0" y1="144.8" x2="368.0" y2="144.8"/>
+        <line x1="26.0" y1="121.0" x2="368.0" y2="121.0"/>
+        <line x1="26.0" y1="97.2" x2="368.0" y2="97.2"/>
+        <line x1="26.0" y1="73.4" x2="368.0" y2="73.4"/>
+        <line x1="26.0" y1="49.7" x2="368.0" y2="49.7"/>
+        <line x1="26.0" y1="25.9" x2="368.0" y2="25.9"/>
+      </g>
+      <line x1="26.0" y1="168.6" x2="368.0" y2="168.6" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <line x1="71.6" y1="228.0" x2="71.6" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <text x="364.0" y="182.6" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="63.6" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="117.2" y="181.6" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="66.6" y="148.8" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <polyline points="26.0,73.4 29.4,75.2 32.8,77.0 36.3,78.8 39.7,80.6 43.1,82.4 46.5,84.1 49.9,85.9 53.4,87.7 56.8,89.5 60.2,91.3 63.6,93.1 67.0,94.8 70.5,96.6 73.9,98.4 77.3,100.2 80.7,102.0 84.1,103.8 87.6,105.5 91.0,107.3 94.4,109.1 97.8,110.9 101.2,112.7 104.7,114.5 108.1,116.2 111.5,118.0 114.9,119.8 118.3,121.6 121.8,123.4 125.2,125.2 128.6,126.9 132.0,128.7 135.4,130.5 138.9,132.3 142.3,134.1 145.7,135.9 149.1,137.6 152.5,139.4 156.0,141.2 159.4,143.0 162.8,144.8 166.2,146.6 169.6,148.3 173.1,150.1 176.5,151.9 179.9,153.7 183.3,155.5 186.7,157.3 190.2,159.0 193.6,160.8 197.0,162.6 200.4,164.4 203.8,166.2 207.3,168.0 210.7,169.7 214.1,171.5 217.5,173.3 220.9,175.1 224.4,176.9 227.8,178.7 231.2,180.4 234.6,182.2 238.0,184.0 241.5,185.8 244.9,187.6 248.3,189.4 251.7,191.1 255.1,192.9 258.6,194.7 262.0,196.5 265.4,198.3 268.8,200.1 272.2,201.8 275.7,203.6 279.1,205.4 282.5,207.2 285.9,209.0 289.3,210.8 292.8,212.5 296.2,214.3 299.6,216.1 303.0,217.9 306.4,219.7 309.9,221.5 313.3,223.2 316.7,225.0 320.1,226.8 323.5,228.6 327.0,230.4 330.4,232.2 333.8,233.9 337.2,235.7" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="26.0,25.9 29.4,27.7 32.8,29.5 36.3,31.2 39.7,33.0 43.1,34.8 46.5,36.6 49.9,38.4 53.4,40.2 56.8,41.9 60.2,43.7 63.6,45.5 67.0,47.3 70.5,49.1 73.9,50.9 77.3,52.6 80.7,54.4 84.1,56.2 87.6,58.0 91.0,59.8 94.4,61.6 97.8,63.3 101.2,65.1 104.7,66.9 108.1,68.7 111.5,70.5 114.9,72.3 118.3,74.0 121.8,75.8 125.2,77.6 128.6,79.4 132.0,81.2 135.4,83.0 138.9,84.7 142.3,86.5 145.7,88.3 149.1,90.1 152.5,91.9 156.0,93.7 159.4,95.4 162.8,97.2 166.2,99.0 169.6,100.8 173.1,102.6 176.5,104.4 179.9,106.1 183.3,107.9 186.7,109.7 190.2,111.5 193.6,113.3 197.0,115.1 200.4,116.8 203.8,118.6 207.3,120.4 210.7,122.2 214.1,124.0 217.5,125.8 220.9,127.5 224.4,129.3 227.8,131.1 231.2,132.9 234.6,134.7 238.0,136.5 241.5,138.2 244.9,140.0 248.3,141.8 251.7,143.6 255.1,145.4 258.6,147.2 262.0,148.9 265.4,150.7 268.8,152.5 272.2,154.3 275.7,156.1 279.1,157.9 282.5,159.6 285.9,161.4 289.3,163.2 292.8,165.0 296.2,166.8 299.6,168.6 303.0,170.3 306.4,172.1 309.9,173.9 313.3,175.7 316.7,177.5 320.1,179.3 323.5,181.0 327.0,182.8 330.4,184.6 333.8,186.4 337.2,188.2 340.6,190.0 344.1,191.7 347.5,193.5 350.9,195.3 354.3,197.1 357.7,198.9 361.2,200.7 364.6,202.4 368.0,204.2" fill="none" stroke="#f59e0b" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="265" y="13" width="109" height="40" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="269" y1="22" x2="287" y2="22" stroke="#3b82f6" stroke-width="2.4"/>
+      <text x="292" y="26" font-size="11" fill="#0f172a">x + y = 3</text>
+      <line x1="269" y1="39" x2="287" y2="39" stroke="#f59e0b" stroke-width="2.4"/>
+      <text x="292" y="43" font-size="11" fill="#0f172a">2x + 2y = 10</text>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(x+y=3\)</span> és a <span class="math inline">\(2x+2y=10\)</span> egyenlet két <b>párhuzamos</b> egyenest ad (az egyik <span class="math inline">\(y=3-x\)</span>, a másik <span class="math inline">\(y=5-x\)</span>): nincs közös pont, tehát a rendszernek <b>nincs megoldása</b>.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 380 250" width="380" height="250" role="img" aria-label="A két egyenlet ugyanazt az egyenest írja le">
+      <defs><marker id="nyil" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="26.0" y1="228.0" x2="26.0" y2="14.0"/>
+        <line x1="117.2" y1="228.0" x2="117.2" y2="14.0"/>
+        <line x1="162.8" y1="228.0" x2="162.8" y2="14.0"/>
+        <line x1="208.4" y1="228.0" x2="208.4" y2="14.0"/>
+        <line x1="254.0" y1="228.0" x2="254.0" y2="14.0"/>
+        <line x1="299.6" y1="228.0" x2="299.6" y2="14.0"/>
+        <line x1="345.2" y1="228.0" x2="345.2" y2="14.0"/>
+        <line x1="26.0" y1="192.3" x2="368.0" y2="192.3"/>
+        <line x1="26.0" y1="144.8" x2="368.0" y2="144.8"/>
+        <line x1="26.0" y1="121.0" x2="368.0" y2="121.0"/>
+        <line x1="26.0" y1="97.2" x2="368.0" y2="97.2"/>
+        <line x1="26.0" y1="73.4" x2="368.0" y2="73.4"/>
+        <line x1="26.0" y1="49.7" x2="368.0" y2="49.7"/>
+        <line x1="26.0" y1="25.9" x2="368.0" y2="25.9"/>
+      </g>
+      <line x1="26.0" y1="168.6" x2="368.0" y2="168.6" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <line x1="71.6" y1="228.0" x2="71.6" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <text x="364.0" y="182.6" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="63.6" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="117.2" y="181.6" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="66.6" y="148.8" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <polyline points="26.0,73.4 29.4,75.2 32.8,77.0 36.3,78.8 39.7,80.6 43.1,82.4 46.5,84.1 49.9,85.9 53.4,87.7 56.8,89.5 60.2,91.3 63.6,93.1 67.0,94.8 70.5,96.6 73.9,98.4 77.3,100.2 80.7,102.0 84.1,103.8 87.6,105.5 91.0,107.3 94.4,109.1 97.8,110.9 101.2,112.7 104.7,114.5 108.1,116.2 111.5,118.0 114.9,119.8 118.3,121.6 121.8,123.4 125.2,125.2 128.6,126.9 132.0,128.7 135.4,130.5 138.9,132.3 142.3,134.1 145.7,135.9 149.1,137.6 152.5,139.4 156.0,141.2 159.4,143.0 162.8,144.8 166.2,146.6 169.6,148.3 173.1,150.1 176.5,151.9 179.9,153.7 183.3,155.5 186.7,157.3 190.2,159.0 193.6,160.8 197.0,162.6 200.4,164.4 203.8,166.2 207.3,168.0 210.7,169.7 214.1,171.5 217.5,173.3 220.9,175.1 224.4,176.9 227.8,178.7 231.2,180.4 234.6,182.2 238.0,184.0 241.5,185.8 244.9,187.6 248.3,189.4 251.7,191.1 255.1,192.9 258.6,194.7 262.0,196.5 265.4,198.3 268.8,200.1 272.2,201.8 275.7,203.6 279.1,205.4 282.5,207.2 285.9,209.0 289.3,210.8 292.8,212.5 296.2,214.3 299.6,216.1 303.0,217.9 306.4,219.7 309.9,221.5 313.3,223.2 316.7,225.0 320.1,226.8 323.5,228.6 327.0,230.4 330.4,232.2 333.8,233.9 337.2,235.7" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="26.0,69.6 29.4,71.4 32.8,73.2 36.3,75.0 39.7,76.8 43.1,78.6 46.5,80.3 49.9,82.1 53.4,83.9 56.8,85.7 60.2,87.5 63.6,89.3 67.0,91.0 70.5,92.8 73.9,94.6 77.3,96.4 80.7,98.2 84.1,100.0 87.6,101.7 91.0,103.5 94.4,105.3 97.8,107.1 101.2,108.9 104.7,110.7 108.1,112.4 111.5,114.2 114.9,116.0 118.3,117.8 121.8,119.6 125.2,121.4 128.6,123.1 132.0,124.9 135.4,126.7 138.9,128.5 142.3,130.3 145.7,132.1 149.1,133.8 152.5,135.6 156.0,137.4 159.4,139.2 162.8,141.0 166.2,142.8 169.6,144.5 173.1,146.3 176.5,148.1 179.9,149.9 183.3,151.7 186.7,153.5 190.2,155.2 193.6,157.0 197.0,158.8 200.4,160.6 203.8,162.4 207.3,164.2 210.7,165.9 214.1,167.7 217.5,169.5 220.9,171.3 224.4,173.1 227.8,174.9 231.2,176.6 234.6,178.4 238.0,180.2 241.5,182.0 244.9,183.8 248.3,185.6 251.7,187.3 255.1,189.1 258.6,190.9 262.0,192.7 265.4,194.5 268.8,196.3 272.2,198.0 275.7,199.8 279.1,201.6 282.5,203.4 285.9,205.2 289.3,207.0 292.8,208.7 296.2,210.5 299.6,212.3 303.0,214.1 306.4,215.9 309.9,217.7 313.3,219.4 316.7,221.2 320.1,223.0 323.5,224.8 327.0,226.6 330.4,228.4 333.8,230.1 337.2,231.9 340.6,233.7 344.1,235.5 347.5,237.3" fill="none" stroke="#f59e0b" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="271" y="13" width="103" height="40" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="275" y1="22" x2="293" y2="22" stroke="#3b82f6" stroke-width="2.4"/>
+      <text x="298" y="26" font-size="11" fill="#0f172a">x + y = 3</text>
+      <line x1="275" y1="39" x2="293" y2="39" stroke="#f59e0b" stroke-width="2.4"/>
+      <text x="298" y="43" font-size="11" fill="#0f172a">2x + 2y = 6</text>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(x+y=3\)</span> és a <span class="math inline">\(2x+2y=6\)</span> ugyanazt az egyenest írja le (a második az első kétszerese). A két vonal az ábrán csak azért van elcsúsztatva, hogy mindkettő látszódjék — valójában <b>fedik</b> egymást, és az egyenes minden pontja megoldás: <b>végtelen sok</b> megoldás van.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>Két mobilcsomag közül választasz. Az <b>A</b> csomag havidíja <span class="math inline">\(1200\)</span> dinár, és minden lebeszélt perc <span class="math inline">\(20\)</span> dinárba kerül; a <b>B</b> csomag havidíja <span class="math inline">\(2000\)</span> dinár, de a perc csak <span class="math inline">\(12\)</span> dinár. Melyik éri meg jobban?</p><p>A két költség akkor egyenlő, ha <span class="math inline">\(1200+20t=2000+12t\)</span>, azaz <span class="math inline">\(8t=800\)</span>, tehát <span class="math inline">\(t=100\)</span> perc — ekkor mindkettő <span class="math inline">\(3200\)</span> dinár. <b>Száz percnél kevesebbet</b> beszélve az A csomag az olcsóbb (<span class="math inline">\(80\)</span> percnél <span class="math inline">\(2800\)</span> a <span class="math inline">\(2960\)</span> ellenében), <b>száz percnél többet</b> beszélve a B.</p><p>A metszéspont tehát nem „a megoldás”, hanem a <b>fordulópont</b>: az a hely, ahol a jó válasz megváltozik. Minden ilyen döntésnél ezt keressük.</p><div class="svgcard">
+    <svg viewBox="0 0 400 250" width="400" height="250" role="img" aria-label="Két mobilcsomag havi díja a lebeszélt percek függvényében">
+      <defs><marker id="nyil" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="49.4" y1="228.0" x2="49.4" y2="14.0"/>
+        <line x1="72.7" y1="228.0" x2="72.7" y2="14.0"/>
+        <line x1="96.1" y1="228.0" x2="96.1" y2="14.0"/>
+        <line x1="119.4" y1="228.0" x2="119.4" y2="14.0"/>
+        <line x1="142.8" y1="228.0" x2="142.8" y2="14.0"/>
+        <line x1="166.1" y1="228.0" x2="166.1" y2="14.0"/>
+        <line x1="189.5" y1="228.0" x2="189.5" y2="14.0"/>
+        <line x1="212.8" y1="228.0" x2="212.8" y2="14.0"/>
+        <line x1="236.2" y1="228.0" x2="236.2" y2="14.0"/>
+        <line x1="259.5" y1="228.0" x2="259.5" y2="14.0"/>
+        <line x1="282.9" y1="228.0" x2="282.9" y2="14.0"/>
+        <line x1="306.3" y1="228.0" x2="306.3" y2="14.0"/>
+        <line x1="329.6" y1="228.0" x2="329.6" y2="14.0"/>
+        <line x1="353.0" y1="228.0" x2="353.0" y2="14.0"/>
+        <line x1="376.3" y1="228.0" x2="376.3" y2="14.0"/>
+        <line x1="26.0" y1="189.8" x2="388.0" y2="189.8"/>
+        <line x1="26.0" y1="151.6" x2="388.0" y2="151.6"/>
+        <line x1="26.0" y1="113.4" x2="388.0" y2="113.4"/>
+        <line x1="26.0" y1="75.1" x2="388.0" y2="75.1"/>
+        <line x1="26.0" y1="36.9" x2="388.0" y2="36.9"/>
+      </g>
+      <line x1="26.0" y1="228.0" x2="388.0" y2="228.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <line x1="26.0" y1="228.0" x2="26.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <text x="384.0" y="242.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">perc</text>
+      <text x="32.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="start">dinár</text>
+      <text x="49.4" y="241.0" font-size="10" fill="#475569" text-anchor="middle">10 perc</text>
+      <text x="32.0" y="185.8" font-size="10" fill="#475569" text-anchor="start">1000 dinár</text>
+      <polyline points="26.0,182.1 29.6,181.0 33.2,179.8 36.9,178.6 40.5,177.4 44.1,176.2 47.7,175.0 51.3,173.9 55.0,172.7 58.6,171.5 62.2,170.3 65.8,169.1 69.4,167.9 73.1,166.7 76.7,165.6 80.3,164.4 83.9,163.2 87.5,162.0 91.2,160.8 94.8,159.6 98.4,158.4 102.0,157.3 105.6,156.1 109.3,154.9 112.9,153.7 116.5,152.5 120.1,151.3 123.7,150.2 127.4,149.0 131.0,147.8 134.6,146.6 138.2,145.4 141.8,144.2 145.5,143.0 149.1,141.9 152.7,140.7 156.3,139.5 159.9,138.3 163.6,137.1 167.2,135.9 170.8,134.8 174.4,133.6 178.0,132.4 181.7,131.2 185.3,130.0 188.9,128.8 192.5,127.6 196.1,126.5 199.8,125.3 203.4,124.1 207.0,122.9 210.6,121.7 214.2,120.5 217.9,119.4 221.5,118.2 225.1,117.0 228.7,115.8 232.3,114.6 236.0,113.4 239.6,112.2 243.2,111.1 246.8,109.9 250.4,108.7 254.1,107.5 257.7,106.3 261.3,105.1 264.9,104.0 268.5,102.8 272.2,101.6 275.8,100.4 279.4,99.2 283.0,98.0 286.6,96.8 290.3,95.7 293.9,94.5 297.5,93.3 301.1,92.1 304.7,90.9 308.4,89.7 312.0,88.6 315.6,87.4 319.2,86.2 322.8,85.0 326.5,83.8 330.1,82.6 333.7,81.4 337.3,80.3 340.9,79.1 344.6,77.9 348.2,76.7 351.8,75.5 355.4,74.3 359.0,73.2 362.7,72.0 366.3,70.8 369.9,69.6 373.5,68.4 377.1,67.2 380.8,66.0 384.4,64.9 388.0,63.7" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="26.0,151.6 29.6,150.9 33.2,150.1 36.9,149.4 40.5,148.7 44.1,148.0 47.7,147.3 51.3,146.6 55.0,145.9 58.6,145.2 62.2,144.5 65.8,143.8 69.4,143.0 73.1,142.3 76.7,141.6 80.3,140.9 83.9,140.2 87.5,139.5 91.2,138.8 94.8,138.1 98.4,137.4 102.0,136.6 105.6,135.9 109.3,135.2 112.9,134.5 116.5,133.8 120.1,133.1 123.7,132.4 127.4,131.7 131.0,131.0 134.6,130.2 138.2,129.5 141.8,128.8 145.5,128.1 149.1,127.4 152.7,126.7 156.3,126.0 159.9,125.3 163.6,124.6 167.2,123.9 170.8,123.1 174.4,122.4 178.0,121.7 181.7,121.0 185.3,120.3 188.9,119.6 192.5,118.9 196.1,118.2 199.8,117.5 203.4,116.7 207.0,116.0 210.6,115.3 214.2,114.6 217.9,113.9 221.5,113.2 225.1,112.5 228.7,111.8 232.3,111.1 236.0,110.3 239.6,109.6 243.2,108.9 246.8,108.2 250.4,107.5 254.1,106.8 257.7,106.1 261.3,105.4 264.9,104.7 268.5,103.9 272.2,103.2 275.8,102.5 279.4,101.8 283.0,101.1 286.6,100.4 290.3,99.7 293.9,99.0 297.5,98.3 301.1,97.6 304.7,96.8 308.4,96.1 312.0,95.4 315.6,94.7 319.2,94.0 322.8,93.3 326.5,92.6 330.1,91.9 333.7,91.2 337.3,90.4 340.9,89.7 344.6,89.0 348.2,88.3 351.8,87.6 355.4,86.9 359.0,86.2 362.7,85.5 366.3,84.8 369.9,84.0 373.5,83.3 377.1,82.6 380.8,81.9 384.4,81.2 388.0,80.5" fill="none" stroke="#f59e0b" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="259.5" cy="105.7" r="4" fill="#047857"/>
+      <text x="127.5" y="95.7" font-size="11" fill="#047857" font-weight="600">100 perc · 3200 dinár</text>
+      <rect x="311" y="13" width="83" height="40" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="315" y1="22" x2="333" y2="22" stroke="#3b82f6" stroke-width="2.4"/>
+      <text x="338" y="26" font-size="11" fill="#0f172a">A csomag</text>
+      <line x1="315" y1="39" x2="333" y2="39" stroke="#f59e0b" stroke-width="2.4"/>
+      <text x="338" y="43" font-size="11" fill="#0f172a">B csomag</text>
+    </svg>
+    </div>
+    <p class="cap">A két csomag havi díja. A vízszintes tengelyen egy egység <b>10 perc</b>, a függőlegesen <b>ezer dinár</b>. A metszéspont a fordulópont: 100 percnél mindkettő 3200 dinár — előtte az A, utána a B az olcsóbb.</p>
+    </div>
+
+    <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ A 0 = 4 hamis állítás: nincs olyan (x; y), amely mindkét egyenletet kielégítené. Ez a párhuzamos egyenesek esete — valódi eredmény, nem hiba." data-nem="✘ A 0 = 4 nem számolási hiba jele, hanem eredmény: HAMIS állítás, tehát a rendszernek nincs megoldása. Geometriailag a két egyenes párhuzamos.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy kétismeretlenes rendszert megoldva a <span class="math inline">\(0=4\)</span> egyenlőséghez jutsz. Mi következik ebből?</p>
+      <div class="opciok"><button>Elrontottad a számolást, kezdd újra</button><button>A rendszernek végtelen sok megoldása van</button><button>A megoldás <span class="math inline">\(x=0\)</span>, <span class="math inline">\(y=4\)</span></button><button>A rendszernek nincs megoldása — a két egyenes párhuzamos</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Melyik módszert mikor</h2>
+
+    <p>Nincs „hivatalos” módszer — az a jó, amelyikkel a legkevesebb tört keletkezik. Két ökölszabály elég:</p><ul><li>ha valamelyik ismeretlen együtthatója <span class="math inline">\(1\)</span> vagy <span class="math inline">\(-1\)</span>, <b>fejezd ki azt</b> és helyettesíts be;</li><li>ha nincs ilyen, nézd meg, melyik ismeretlen együtthatóinak van <b>kis közös többszöröse</b> — azt küszöböld ki.</li></ul><p>A következő órán, három ismeretlennél ez a döntés már nem luxus, hanem időmegtakarítás: ott ugyanezt a választást <b>többször</b> kell meghozni.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> És ha ránézésre nem megy?</p>
+      <p>Épp ez a témakör oka. Két ismeretlennél még elboldogulsz ötletekkel; három ismeretlennél az ötlet elfogy. Ezért fogunk a következő órán olyan eljárást tanulni, amely <b>ötlet nélkül is működik</b>: mindig ugyanazokat a lépéseket kell végrehajtani, és a végén ott a megoldás. Ez az <b>algoritmus</b> lényege.</p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-rendszerek.html#alap-1">🐕 Tér-eb-ugrás <span class="cimke">A 1–6</span></a><a class="sav bruno" href="feladatok-rendszerek.html#kozep-1">👑 Királyi Gárda <span class="cimke">K 1–3</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> Két ismeretlen még kezes jószág. De a Kamra mérőállomásai <b>hármasával</b> küldik az adatot — és ott elfogy az ötlet. Kell egy eljárás, amit akkor is végig tudsz vinni, ha közben fogalmad sincs, hova tartasz. Ez következik.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">Lineáris egyenletrendszerek — témakör</span></a>
+      <a class="kov" href="tananyag-gauss.html"><span class="irany">Következő →</span><span class="hova">A Gauss-eljárás</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

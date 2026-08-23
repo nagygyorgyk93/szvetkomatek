@@ -133,7 +133,7 @@ def abra(svg: str, felirat: str = "") -> str:
 
 def svg_fuggvenyek(gorbek, xr=(-2.6, 2.6), yr=(-2.6, 4.2), w=360, h=250,
                    leiras="Függvénygrafikonok koordináta-rendszerben", jelmagyarazat=True,
-                   pontok=None):
+                   pontok=None, tengely=("x", "y"), egyseg=("1", "1")):
     """`pontok` = [(x, y, felirat, szin, dx, dy), …] — kiemelt pontok felirattal."""
     """Koordináta-rendszer + görbék inline SVG-ként, SÖTÉT tintával, világos lapon.
 
@@ -172,14 +172,30 @@ def svg_fuggvenyek(gorbek, xr=(-2.6, 2.6), yr=(-2.6, 4.2), w=360, h=250,
     ki.insert(1, '  <defs><marker id="nyil" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" '
                  'markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>')
     # tengelyfeliratok
+    # A tengelynevek és az egységfeliratok felülírhatók: ha a rajz egysége nem 1
+    # (pl. 10 perc vagy 1000 dinár), a puszta „1” félrevezető.
+    xnev, ynev = tengely
+    xegys, yegys = egyseg
     ki.append(f'  <text x="{X(x1) - 4:.1f}" y="{Y(0) + 14:.1f}" font-size="11" font-style="italic" '
-              'fill="#0f172a" text-anchor="end">x</text>')
-    ki.append(f'  <text x="{X(0) - 8:.1f}" y="{Y(y1) + 12:.1f}" font-size="11" font-style="italic" '
-              'fill="#0f172a" text-anchor="end">y</text>')
-    ki.append(f'  <text x="{X(1):.1f}" y="{Y(0) + 13:.1f}" font-size="10" fill="#475569" '
-              'text-anchor="middle">1</text>')
-    ki.append(f'  <text x="{X(0) - 5:.1f}" y="{Y(1) + 4:.1f}" font-size="10" fill="#475569" '
-              'text-anchor="end">1</text>')
+              f'fill="#0f172a" text-anchor="end">{xnev}</text>')
+    if len(ynev) > 1:
+        # a hosszabb tengelynév a tengelytől JOBBRA fér el (balra kilógna a rajzterületről)
+        ki.append(f'  <text x="{X(0) + 6:.1f}" y="{Y(y1) + 12:.1f}" font-size="11" '
+                  f'font-style="italic" fill="#0f172a" text-anchor="start">{ynev}</text>')
+    else:
+        ki.append(f'  <text x="{X(0) - 8:.1f}" y="{Y(y1) + 12:.1f}" font-size="11" '
+                  f'font-style="italic" fill="#0f172a" text-anchor="end">{ynev}</text>')
+    if xegys:
+        ki.append(f'  <text x="{X(1):.1f}" y="{Y(0) + 13:.1f}" font-size="10" fill="#475569" '
+                  f'text-anchor="middle">{xegys}</text>')
+    if yegys:
+        # a hosszabb felirat a tengelytől JOBBRA kerül, különben kilóg a rajzterületről
+        if len(yegys) > 2:
+            ki.append(f'  <text x="{X(0) + 6:.1f}" y="{Y(1) - 4:.1f}" font-size="10" '
+                      f'fill="#475569" text-anchor="start">{yegys}</text>')
+        else:
+            ki.append(f'  <text x="{X(0) - 5:.1f}" y="{Y(1) + 4:.1f}" font-size="10" '
+                      f'fill="#475569" text-anchor="end">{yegys}</text>')
     # görbék
     for f, szin, cimke, szakaszok in gorbek:
         for lo, hi in szakaszok:

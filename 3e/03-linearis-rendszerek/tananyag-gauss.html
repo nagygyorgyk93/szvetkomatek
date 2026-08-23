@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A Gauss-eljárás — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Lineáris egyenletrendszerek</a> ›
+  <span class="itt">A Gauss-eljárás — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A Gauss-eljárás</h1>
+  <p class="alcim">A három ekvivalens sorművelet, a lépcsős alak, a visszahelyettesítés és a rendezett íráskép.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Rendszer Hibája · 2/6</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> Három ismeretlennél a ránézés csődöt mond — nem azért, mert nehezebb, hanem mert <b>több</b>. Amire szükséged van, az egy <b>eljárás</b>: olyan lépéssorozat, amit mindig ugyanúgy hajtasz végre, és ami akkor is elvezet a megoldáshoz, ha közben nem látod előre a végét. Ez az algoritmus ereje.</p></div>
+
+    <p>A <b>Gauss-eljárás</b> (más néven Gauss-elimináció) semmi újat nem használ: ugyanaz a kiküszöbölés, amit az előző órán is csináltál. Az újdonság a <b>fegyelem</b>: rögzített sorrendben, rögzített céllal végezzük.</p>
+
+    <h2 id="s1">A három megengedett lépés</h2>
+
+    <div class="doboz definicio" id="def-ekvivalens-lepesek">
+      <p class="cim"><span class="ikon">📗</span> Ekvivalens sorműveletek</p>
+      <p>Egy egyenletrendszeren a következő három lépés végezhető el úgy, hogy a megoldáshalmaz <b>nem változik</b> — az így kapott rendszer az eredetivel <b>ekvivalens</b> (jele: <span class="math inline">\(\sim\)</span>):</p><ol><li>két egyenlet <b>felcserélése</b>;</li><li>egy egyenlet szorzása <b>nem nulla</b> számmal;</li><li>egy egyenlethez egy másik egyenlet <b>számszorosának</b> hozzáadása.</li></ol><p>A harmadik lépés jelölése: <span class="math inline">\(S_2-2S_1\)</span> azt jelenti, hogy a második sorból kivonjuk az első sor kétszeresét, és az eredmény lesz az <b>új második sor</b> (az első sor változatlan marad).</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„Ha szorozhatok, akkor nullával is szorozhatok. És ha összeadhatok két egyenletet, akkor össze is szorozhatom őket.”</i></p><p><b>Egyik sem igaz.</b></p><ul><li><b>Nullával szorozva</b> az egyenletből <span class="math inline">\(0=0\)</span> lesz — ez igaz állítás, de semmit nem mond. Elveszítettük az egyenletben tárolt <b>információt</b>, és így a kapott rendszernek <b>több megoldása lehet</b>, mint az eredetinek — az átalakítás tehát nem ekvivalens. Ezért kell a szorzóban a „nem nulla” kikötés.</li><li><b>Összeszorozva</b> két egyenletet a bal oldalon <span class="math inline">\(xy\)</span>-os tagok jelennek meg: az eredmény már nem is lineáris. Ráadásul a szorzat akkor is nulla, ha csak az <b>egyik</b> tényező az — vagyis ha csak az egyik egyenlet teljesül. Így olyan számpárok is átcsúsznak, amelyek az eredeti rendszernek nem megoldásai.</li></ul><p>Összeadni szabad, szorozni <b>számmal</b> szabad — egyenlettel nem.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ A nullával való szorzás az egyenletet 0 = 0-vá alakítja: az információ elvész, és a rendszernek több megoldása lehet, mint volt." data-nem="✘ A sorcsere, a NEM NULLA számmal való szorzás és a másik sor számszorosának hozzáadása mind ekvivalens lépés. Egyedül a nullával szorzás nem az.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik lépés után <b>nem</b> lesz az új rendszer ekvivalens az eredetivel?</p>
+      <div class="opciok"><button>Ha az egyik egyenletet <span class="math inline">\(0\)</span>-val szorozzuk</button><button>Ha felcseréljük az első és a harmadik egyenletet</button><button>Ha az egyik egyenletet <span class="math inline">\(-3\)</span>-mal szorozzuk</button><button>Ha a második egyenlethez hozzáadjuk az első ötszörösét</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">A cél: a lépcsős alak</h2>
+
+    <p>Az eljárás célja, hogy a rendszert <b>lépcsős (háromszög) alakra</b> hozzuk: az első egyenletben mindhárom ismeretlen szerepel, a másodikban már csak kettő, a harmadikban csak egy.</p><span class="math display">\[\begin{aligned}a_{11}x+a_{12}y+a_{13}z&=b_1\\ a_{22}y+a_{23}z&=b_2\\ a_{33}z&=b_3\end{aligned}\]</span><p>Ez az alak akkor vezet egyértelmű megoldáshoz, ha a „lépcsőfokokon” álló <span class="math inline">\(a_{11}\)</span>, <span class="math inline">\(a_{22}\)</span>, <span class="math inline">\(a_{33}\)</span> együtthatók egyike sem nulla. Hogy mi történik, ha valamelyik mégis nullává válik, arról a következő órán lesz szó.</p>
+
+    <div class="doboz tetel" id="tetel-gauss">
+      <p class="cim"><span class="ikon">📘</span> A Gauss-eljárás menete</p>
+      <p><b>1. Előre haladó szakasz (elimináció).</b></p><ol><li>Az első egyenlet segítségével ejtsük ki az <span class="math inline">\(x\)</span>-et a második és a harmadik egyenletből.</li><li>A (már <span class="math inline">\(x\)</span> nélküli) második egyenlet segítségével ejtsük ki az <span class="math inline">\(y\)</span>-t a harmadikból.</li></ol><p><b>2. Visszafelé haladó szakasz (visszahelyettesítés).</b> A harmadik egyenletből <span class="math inline">\(z\)</span> közvetlenül adódik; ezt a másodikba írva megkapjuk <span class="math inline">\(y\)</span>-t, majd mindkettőt az elsőbe írva <span class="math inline">\(x\)</span>-et.</p><p>Az eljárás <b>mindig</b> véget ér, és a lépcsős alakból az is leolvasható, ha a rendszernek nincs vagy végtelen sok megoldása van — erről a következő órán lesz szó.</p>
+    </div>
+
+    <p>A rendezett írásmód itt nem stílus kérdése: a sorműveletet <b>a sor mellé</b> írjuk ki, hogy visszakereshető legyen, mit csináltunk. Aki ezt elhagyja, a saját hibáját nem tudja megtalálni — és a javításnál sem tudja megmutatni, hol tartott.</p>
+
+    <h2 id="s3">Egy teljes levezetés</h2>
+
+    <div class="doboz pelda" id="pelda-gauss">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — Gauss-eljárás végig</p>
+      <p>Oldjuk meg a</p><span class="math display">\[\begin{aligned}x+y+z&=6\\ 2x-y+z&=3\\ x+2y-z&=2\end{aligned}\]</span><p>rendszert. Az együtthatókat táblázatba írjuk — az ismeretlenek nevét elég egyszer, a fejlécben kiírni:</p><table class="tt-table"><tr><th><span class="math inline">\(x\)</span></th><th><span class="math inline">\(y\)</span></th><th><span class="math inline">\(z\)</span></th><th>jobb oldal</th><th>művelet</th></tr><tr><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(6\)</span></td><td></td></tr><tr><td><span class="math inline">\(2\)</span></td><td><span class="math inline">\(-1\)</span></td><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(3\)</span></td><td><span class="math inline">\(S_2-2S_1\)</span></td></tr><tr><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(2\)</span></td><td><span class="math inline">\(-1\)</span></td><td><span class="math inline">\(2\)</span></td><td><span class="math inline">\(S_3-S_1\)</span></td></tr><tr><th colspan="5"><span class="math inline">\(\sim\)</span> &nbsp; az <span class="math inline">\(x\)</span> kiesett az alsó két sorból</th></tr><tr><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(6\)</span></td><td></td></tr><tr><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(-3\)</span></td><td><span class="math inline">\(-1\)</span></td><td><span class="math inline">\(-9\)</span></td><td><span class="math inline">\(\cdot(-1)\)</span></td></tr><tr><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(-2\)</span></td><td><span class="math inline">\(-4\)</span></td><td></td></tr><tr><th colspan="5"><span class="math inline">\(\sim\)</span> &nbsp; <span class="math inline">\(\cdot(-1)\)</span> <b>és</b> <span class="math inline">\(S_2\leftrightarrow S_3\)</span> — hogy az <span class="math inline">\(y\)</span> együtthatója <span class="math inline">\(1\)</span> legyen</th></tr><tr><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(6\)</span></td><td></td></tr><tr><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(-2\)</span></td><td><span class="math inline">\(-4\)</span></td><td></td></tr><tr><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(3\)</span></td><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(9\)</span></td><td><span class="math inline">\(S_3-3S_2\)</span></td></tr><tr><th colspan="5"><span class="math inline">\(\sim\)</span> &nbsp; <b>lépcsős alak</b></th></tr><tr><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(6\)</span></td><td></td></tr><tr><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(-2\)</span></td><td><span class="math inline">\(-4\)</span></td><td></td></tr><tr><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(7\)</span></td><td><span class="math inline">\(21\)</span></td><td></td></tr></table><p><b>Az első lépés.</b> Az <span class="math inline">\(x\)</span> együtthatója az első sorban <span class="math inline">\(1\)</span>, ezért ez a sor a legalkalmasabb az elimináláshoz: <span class="math inline">\(S_2-2S_1\)</span> és <span class="math inline">\(S_3-S_1\)</span> mindkét alsó sorból kiejti az <span class="math inline">\(x\)</span>-et.</p><p><b>A második lépés.</b> A kapott <span class="math inline">\(-3y-z=-9\)</span> sort <span class="math inline">\((-1)\)</span>-gyel szorozzuk (<span class="math inline">\(3y+z=9\)</span>), a másik sor pedig <span class="math inline">\(y-2z=-4\)</span> maradt. Ezt a kettőt felcseréljük, hogy az <span class="math inline">\(y\)</span> együtthatója <span class="math inline">\(1\)</span> legyen a második sorban — így a következő lépésben nem keletkezik tört.</p><p><b>A harmadik lépés.</b> <span class="math inline">\(S_3-3S_2\)</span>: a <span class="math inline">\(3y\)</span> kiesik, és marad <span class="math inline">\(7z=21\)</span>.</p><p><b>Visszahelyettesítés.</b> A harmadik sorból <span class="math inline">\(z=3\)</span>. Ezt a másodikba írva <span class="math inline">\(y-2\cdot3=-4\)</span>, tehát <span class="math inline">\(y=2\)</span>. Végül az elsőbe: <span class="math inline">\(x+2+3=6\)</span>, tehát <span class="math inline">\(x=1\)</span>.</p>
+      <details><summary>Ellenőrzés és végeredmény</summary><div class="bel"><p><span class="math inline">\(1+2+3=6\)</span> ✔ &nbsp;&nbsp; <span class="math inline">\(2\cdot1-2+3=3\)</span> ✔ &nbsp;&nbsp; <span class="math inline">\(1+2\cdot2-3=2\)</span> ✔</p><p class="vegeredmeny">A rendszer megoldása: <span class="math inline">\((x;y;z)=(1;2;3)\)</span>.</p></div></details>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>A Gauss-elimináció az egyik <b>legtöbbet futtatott algoritmus</b> a világon. A szerkezetek statikai számítása, az áramkör-szimulációk és a 3D-s renderelés mélyén lineáris egyenletrendszerek állnak — csak nem három, hanem több millió ismeretlennel —, és ezeket a Gauss-elimináció továbbfejlesztett változatai oldják meg. (A legnagyobb rendszereknél, például az időjárás-előrejelzésben, már más, közelítő eljárások futnak.) Az elv ott is pontosan ugyanez: nullákat gyártani a főátló alá.</p><p>A név Carl Friedrich Gaussé, de a módszer jóval régebbi: egy ókori kínai matematikai gyűjtemény, a <i>Kilenc fejezet a matematika művészetéről</i> már kétezer évvel ezelőtt lényegében ugyanígy oldott meg rendszereket.</p>
+    </div>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A visszahelyettesítés alulról fölfelé halad: az utolsó sorban egyetlen ismeretlen van, azt kapjuk meg elsőnek." data-nem="✘ Alulról fölfelé kell haladni: az utolsó sor csak z-t tartalmazza, ezért az adódik elsőként; az így kapott értéket írjuk vissza a fölötte lévő sorokba.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>A lépcsős alak utolsó sora <span class="math inline">\(7z=21\)</span>. Milyen sorrendben kapod meg az ismeretleneket?</p>
+      <div class="opciok"><button><span class="math inline">\(z\)</span>, majd <span class="math inline">\(x\)</span>, majd <span class="math inline">\(y\)</span></button><button>Mindegy, bármelyik sorrendben</button><button><span class="math inline">\(z\)</span>, majd <span class="math inline">\(y\)</span>, majd <span class="math inline">\(x\)</span></button><button><span class="math inline">\(x\)</span>, majd <span class="math inline">\(y\)</span>, majd <span class="math inline">\(z\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Amikor érdemes eltérni az algoritmustól</h2>
+
+    <p>A Gauss-eljárás <b>mindig</b> működik — de nem mindig a leggyorsabb út. Két egyszerű trükk sok törtet spórol:</p><ul><li><b>Válaszd az <span class="math inline">\(1\)</span>-es együtthatót.</b> Ha valamelyik egyenletben egy ismeretlen együtthatója <span class="math inline">\(1\)</span> vagy <span class="math inline">\(-1\)</span>, azt az egyenletet tedd az élre, és azzal ejtsd ki az ismeretlent — így a szorzók egészek maradnak. A fenti példában épp ezért cseréltük fel a két alsó sort.</li><li><b>Egyszerűsíts.</b> Ha egy egyenlet minden együtthatója (a jobb oldali számot is beleértve) osztható ugyanazzal a számmal, oszd el vele: <span class="math inline">\(4x-6y+2z=10\)</span> helyett írj <span class="math inline">\(2x-3y+z=5\)</span>-öt. Ez ekvivalens lépés (2. sorművelet), és lényegesen könnyíti a további számolást.</li></ul><p>Az eltérés tehát <b>nem</b> az algoritmus megsértése: ugyanazokat a megengedett lépéseket használjuk, csak ügyesebb sorrendben.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Két gyakori elszámolás</p>
+      <p><b>1. Az elhagyott jobb oldal.</b> A sorművelet a sor <b>minden</b> elemére vonatkozik, a jobb oldali számra is. Aki csak az együtthatókat vonja ki, annak a rendszere már nem ekvivalens az eredetivel.</p><p><b>2. A hiányzó ismeretlen.</b> Ha egy egyenletből hiányzik valamelyik ismeretlen (például <span class="math inline">\(3x+2y=7\)</span>), a táblázatba oda <b>nulla</b> kerül, nem üres hely. A <span class="math inline">\(z\)</span> együtthatója itt <span class="math inline">\(0\)</span> — és ez a nulla ugyanúgy részt vesz a sorműveletekben.</p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-rendszerek.html#alap-7">🐕 Tér-eb-ugrás <span class="cimke">A 7–14</span></a><a class="sav bruno" href="feladatok-rendszerek.html#kozep-4">👑 Királyi Gárda <span class="cimke">K 4–9</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> Az eljárás fut, a lépcsők kirajzolódnak. De mi történik, ha az utolsó sorban nem <span class="math inline">\(7z=21\)</span> áll, hanem <span class="math inline">\(0=0\)</span> — vagy ami rosszabb, <span class="math inline">\(0=5\)</span>? A Kamra hálózata néha <b>ellentmond önmagának</b>. Ez nem hiba: ez információ.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-ket-ismeretlen.html"><span class="irany">← Előző</span><span class="hova">Két egyenlet, két ismeretlen</span></a>
+      <a class="kov" href="tananyag-megoldasok-szama.html"><span class="irany">Következő →</span><span class="hova">Hány megoldás van?</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

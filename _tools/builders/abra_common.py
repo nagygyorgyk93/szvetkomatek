@@ -23,6 +23,7 @@ Használat a builderben:
 from __future__ import annotations
 
 import math
+import zlib
 
 TINTA = "#0f172a"
 HALVANY = "#cbd5e1"
@@ -38,7 +39,7 @@ __all__ = ["svg_szamegyenes", "svg_haromszog", "svg_venn",
            "svg_hasab", "svg_gula", "svg_csonkagula", "svg_haztest",
            "svg_terelem", "svg_halo", "svg_platoni", "svg_sikidom",
            "svg_henger", "svg_kup", "svg_csonkakup", "svg_gomb",
-           "svg_forgatas", "svg_osszetett"]
+           "svg_forgatas", "svg_osszetett", "svg_sarrus", "svg_harom_sik"]
 
 
 def _fej(w: int, h: int, leiras: str) -> list[str]:
@@ -1853,3 +1854,211 @@ def svg_osszetett(tipus="henger-felgomb", w=300, h=290, leiras=None, cimkek=True
         F.von((x0, 0), (x0, H), szin=PIROS, sz=1.4, szaggat="4 3")
         F.txt((x0, H / 2), f.get("H", "H"), dx=-7, szin=PIROS, horgony="end")
     return F.kesz()
+
+
+# =====================================================================
+# 12. Sarrus-szabály — a harmadrendű determináns átlósémája
+# =====================================================================
+
+def svg_sarrus(m=((1, 2, 3), (4, 5, 6), (7, 8, 9)), w=470, h=250,
+               leiras=None, jelmagyarazat=True, azon=None):
+    """A Sarrus-séma: a determináns mellé írjuk az első két oszlopot, majd a hat
+    átlót nyíllal jelöljük — a lefelé haladók pozitív, a fölfelé haladók negatív
+    előjellel adódnak hozzá.
+
+    `m` = a 3x3-as determináns elemei sorfolytonosan; az elemek lehetnek számok
+    vagy rövid szövegek (pl. "a<tspan…>11</tspan>" helyett egyszerűen "a11").
+    """
+    if leiras is None:
+        leiras = ("A Sarrus-szabály átlósémája: a harmadrendű determináns mellé írt "
+                  "két oszlop és a hat átló")
+    # A marker-id-nek EGYEDINEK kell lennie: egy oldalon tobb Sarrus-sema is allhat,
+    # es az azonos id-ju <marker> ervenytelen HTML (a bongeszo az elsot hasznalja).
+    if azon is None:
+        # a beepitett hash() futasonkent mas (PYTHONHASHSEED) — determinisztikus kell
+        azon = format(zlib.crc32("|".join(str(e) for sor in m for e in sor).encode()) & 0xFFFFF, "05x")
+    mp, mm = f"nyil-sarrus-p-{azon}", f"nyil-sarrus-m-{azon}"
+    cw, ch = 52.0, 44.0
+    bal, fent = 30.0, 34.0
+    also = 30.0 if jelmagyarazat else 8.0
+    sz = 5 * cw
+    ma = 3 * ch
+    # a rajz vizszintesen kozepre kerul
+    bal = max(bal, (w - sz) / 2)
+    fent = max(fent, (h - ma - also) / 2)
+
+    def cx(j):
+        return bal + j * cw + cw / 2
+
+    def cy(i):
+        return fent + i * ch + ch / 2
+
+    ki = [f'<svg viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" '
+          f'aria-label="{leiras}">',
+          '  <defs>'
+          f'<marker id="{mp}" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5.5" '
+          f'markerHeight="5.5" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="{ZOLD}"/></marker>'
+          f'<marker id="{mm}" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5.5" '
+          f'markerHeight="5.5" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="{PIROS}"/></marker>'
+          '</defs>']
+
+    # a megismetelt ket oszlop halvany hattere
+    ki.append(f'  <rect x="{bal + 3 * cw:.1f}" y="{fent:.1f}" width="{2 * cw:.1f}" '
+              f'height="{ma:.1f}" fill="#f1f5f9"/>')
+    # determinans-jel: ket fuggoleges vonal az elso harom oszlop korul
+    for x in (bal, bal + 3 * cw):
+        ki.append(f'  <line x1="{x:.1f}" y1="{fent:.1f}" x2="{x:.1f}" y2="{fent + ma:.1f}" '
+                  f'stroke="{TINTA}" stroke-width="1.8"/>')
+    # a masolt oszlopokat szaggatott vonal valasztja el
+    ki.append(f'  <line x1="{bal + 5 * cw:.1f}" y1="{fent:.1f}" x2="{bal + 5 * cw:.1f}" '
+              f'y2="{fent + ma:.1f}" stroke="{SZURKE}" stroke-width="1" '
+              'stroke-dasharray="4 3"/>')
+
+    # atlok: eloszor a vonalak, hogy a szamok rajuk keruljenek
+    def atlo(i0, j0, di, szin, mark):
+        """A (i0, j0) cellabol indul, es soronkent egy oszloppal jobbra lep."""
+        x1, y1 = cx(j0), cy(i0)
+        x2, y2 = cx(j0 + 2), cy(i0 + 2 * di)
+        dx, dy = x2 - x1, y2 - y1
+        hossz = math.hypot(dx, dy)
+        r = 17.0 / hossz
+        ki.append(f'  <line x1="{x1 + dx * r:.1f}" y1="{y1 + dy * r:.1f}" '
+                  f'x2="{x2 - dx * r:.1f}" y2="{y2 - dy * r:.1f}" stroke="{szin}" '
+                  f'stroke-width="1.6" opacity=".85" marker-end="url(#{mark})"/>')
+
+    # lefele haladok (+): a felso sor elso harom cellajabol
+    for j0 in (0, 1, 2):
+        atlo(0, j0, 1, ZOLD, mp)
+    # folfele haladok (-): az also sor elso harom cellajabol
+    for j0 in (0, 1, 2):
+        atlo(2, j0, -1, PIROS, mm)
+
+    # elemek
+    for i in range(3):
+        for j in range(5):
+            e = m[i][j % 3]
+            if isinstance(e, (int, float)) and e < 0:
+                e = "\u2212" + str(abs(e))   # tipografiai minusz
+            else:
+                e = str(e)
+            masolat = j >= 3
+            ki.append(f'  <circle cx="{cx(j):.1f}" cy="{cy(i):.1f}" r="14" '
+                      f'fill="{"#f1f5f9" if masolat else "#fff"}" opacity=".95"/>')
+            ki.append(f'  <text x="{cx(j):.1f}" y="{cy(i) + 5:.1f}" font-size="15" '
+                      f'text-anchor="middle" fill="{SZURKE if masolat else TINTA}">{e}</text>')
+
+    if jelmagyarazat:
+        y = fent + ma + 22
+        ki.append(f'  <line x1="{bal + 6:.1f}" y1="{y - 11:.1f}" x2="{bal + 30:.1f}" '
+                  f'y2="{y + 1:.1f}" stroke="{ZOLD}" stroke-width="1.6" '
+                  f'marker-end="url(#{mp})"/>')
+        ki.append(f'  <text x="{bal + 40:.1f}" y="{y:.1f}" font-size="12" fill="{TINTA}">'
+                  'lefelé: <tspan font-weight="600">+</tspan></text>')
+        ki.append(f'  <line x1="{bal + sz * 0.5:.1f}" y1="{y + 1:.1f}" '
+                  f'x2="{bal + sz * 0.5 + 24:.1f}" y2="{y - 11:.1f}" stroke="{PIROS}" '
+                  f'stroke-width="1.6" marker-end="url(#{mm})"/>')
+        ki.append(f'  <text x="{bal + sz * 0.5 + 34:.1f}" y="{y:.1f}" font-size="12" '
+                  f'fill="{TINTA}">fölfelé: <tspan font-weight="600">−</tspan></text>')
+
+    ki.append('</svg>')
+    return "\n".join(ki)
+
+
+# =====================================================================
+# 13. Harom sik kolcsonos helyzete — a 3x3-as rendszer geometriai kepe
+# =====================================================================
+
+def svg_harom_sik(w=620, h=205, leiras=None, cimkek=True):
+    """Három sík közös részének három esete egy ábrán, három panelben.
+
+    bal:   a három sík egyetlen **pontban** metszi egymást      → határozott
+    közép: mindhárom átmegy egy közös **egyenesen**             → határozatlan
+    jobb:  nincs mindháromnak közös pontja (hasáb-elrendezés)   → ellentmondásos
+
+    A rajz izometrikus: egy függőleges sík annál szélesebbnek látszik, minél
+    nagyobb a nyomvonalának $|dx-dz|$ értéke — a hasáb háromszögét ezért úgy
+    választjuk meg, hogy egyik lapja se álljon élével a néző felé. Minden panel
+    a saját befoglaló doboza szerint kerül függőlegesen a helyére.
+    """
+    if leiras is None:
+        leiras = ("Három sík kölcsönös helyzete: egyetlen közös pont, közös egyenes, "
+                  "illetve nincs közös pont")
+    SZIN = (KEK, BOROSTYAN, ZOLD)
+    pw = w / 3.0
+    also = 34                      # a ket soros felirat helye
+    ki = [f'<svg viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" '
+          f'aria-label="{leiras}">']
+
+    def panel(k, sikok, cim, s=34.0, kiemeles=None, elek=()):
+        ox = pw * k + pw / 2
+
+        def nyers(t):
+            x, y, z = t
+            return (s * (x - z) * 0.866, -s * (y - (x + z) * 0.5))
+
+        pont = [nyers(t) for lap in sikok for t in lap]
+        ymin = min(b for _, b in pont)
+        ymax = max(b for _, b in pont)
+        # fuggoleges kozepre igazitas a [8, h-also] savban
+        oy = 8 + ((h - also - 8) - (ymax - ymin)) / 2 - ymin
+
+        def P(t):
+            a, b = nyers(t)
+            return (ox + a, oy + b)
+
+        for i, lap in enumerate(sikok):
+            pts = " ".join(f"{a:.1f},{b:.1f}" for a, b in (P(t) for t in lap))
+            ki.append(f'  <polygon points="{pts}" fill="{SZIN[i]}" fill-opacity=".20" '
+                      f'stroke="{SZIN[i]}" stroke-width="1.4" stroke-linejoin="round"/>')
+        if kiemeles is not None:
+            if len(kiemeles) == 1:
+                x, y2 = P(kiemeles[0])
+                ki.append(f'  <circle cx="{x:.1f}" cy="{y2:.1f}" r="4.5" fill="{PIROS}"/>')
+            else:
+                (x1, y1), (x2, y2) = P(kiemeles[0]), P(kiemeles[1])
+                ki.append(f'  <line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" '
+                          f'stroke="{PIROS}" stroke-width="3" stroke-linecap="round"/>')
+        for p1, p2 in elek:
+            (x1, y1), (x2, y2) = P(p1), P(p2)
+            ki.append(f'  <line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" '
+                      f'stroke="{PIROS}" stroke-width="2.2" stroke-linecap="round" '
+                      'opacity=".9"/>')
+        if cimkek:
+            for j, sor in enumerate(cim):
+                ki.append(f'  <text x="{ox:.1f}" y="{h - 20 + j * 15:.1f}" font-size="12" '
+                          f'text-anchor="middle" fill="{TINTA}">{sor}</text>')
+
+    # 1) sarok: az x=0, y=0 es z=0 sik egyetlen pontban metszi egymast
+    a = 1.5
+    panel(0, [[(0, 0, 0), (a, 0, 0), (a, 0, a), (0, 0, a)],
+              [(0, 0, 0), (0, 0, a), (0, a, a), (0, a, 0)],
+              [(0, 0, 0), (a, 0, 0), (a, a, 0), (0, a, 0)]],
+          ["egyetlen közös pont", "→ határozott"], s=36, kiemeles=[(0, 0, 0)])
+
+    # 2) konyv-gerinc: harom sik ugyanazon az egyenesen (az y tengelyen) megy at.
+    #    A harmadik sik iranya (1,0,-1): az (1,0,1) elevel allna a nezo fele.
+    b, c = 0.78, 2.3
+    panel(1, [[(-b, -c / 2, 0), (b, -c / 2, 0), (b, c / 2, 0), (-b, c / 2, 0)],
+              [(0, -c / 2, -b), (0, -c / 2, b), (0, c / 2, b), (0, c / 2, -b)],
+              [(-.6, -c / 2, .6), (.6, -c / 2, -.6), (.6, c / 2, -.6), (-.6, c / 2, .6)]],
+          ["közös egyenes", "→ határozatlan"], s=36,
+          kiemeles=[(0, -c / 2 - .3, 0), (0, c / 2 + .3, 0)])
+
+    # 3) hasab: harom sik paronkent metszi egymast, de nincs kozos pontjuk
+    r = 0.62
+    A, Bp, C = (-0.96 * r, 0.64 * r), (0.64 * r, -0.96 * r), (0.32 * r, 0.32 * r)
+    m = 2.3
+
+    def lap(p, q, ny=0.42):
+        (x1, z1), (x2, z2) = p, q
+        dx, dz = (x2 - x1) * ny, (z2 - z1) * ny
+        x1, z1, x2, z2 = x1 - dx, z1 - dz, x2 + dx, z2 + dz
+        return [(x1, -m / 2, z1), (x2, -m / 2, z2), (x2, m / 2, z2), (x1, m / 2, z1)]
+
+    # a harom paronkenti metszesvonal HAROM KULONBOZO, egymassal parhuzamos egyenes
+    elek = [((x, -m / 2, z), (x, m / 2, z)) for x, z in (A, Bp, C)]
+    panel(2, [lap(A, Bp), lap(Bp, C), lap(C, A)],
+          ["három külön metszésvonal", "→ ellentmondásos"], s=36, elek=elek)
+
+    ki.append('</svg>')
+    return "\n".join(ki)

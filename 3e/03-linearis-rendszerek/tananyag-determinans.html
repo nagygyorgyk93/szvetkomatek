@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A determináns — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Lineáris egyenletrendszerek</a> ›
+  <span class="itt">A determináns — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A determináns</h1>
+  <p class="alcim">Másod- és harmadrendű determináns, a Sarrus-szabály, a kifejtés sor vagy oszlop szerint, és a számolást rövidítő tulajdonságok.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Rendszer Hibája · 4/6</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> A determináns egyetlen <b>szám</b>, amelyet egy négyzetes táblázatból számolunk ki — és ez az egy szám előre megmondja, hogy a rendszernek van-e egyértelmű megoldása. Nem varázslat és nem új matematika: a kiküszöbölés menete van belesűrítve.</p></div>
+
+    <p>A determináns — és a rá épülő Cramer-szabály — olyan <b>eszköz</b>, amelyhez az új szabványban <b>nem tartozik önálló kimenet</b>: nem önmagáért tanuljuk, hanem azért, mert a rendszerek megoldását szolgálja. Ezért végig azzal a kérdéssel a fejünkben használjuk, hogy <i>mit mond a rendszerről</i>.</p>
+
+    <h2 id="s1">A másodrendű determináns</h2>
+
+    <div class="doboz definicio" id="def-determinans">
+      <p class="cim"><span class="ikon">📗</span> Másodrendű determináns</p>
+      <p>Egy <span class="math inline">\(2\times2\)</span>-es számtáblázat determinánsa:</p><span class="math display">\[\begin{vmatrix}a&b\\ c&d\end{vmatrix}=ad-bc.\]</span><p>A jelölés <b>két függőleges vonal</b> (nem zárójel!). A számítás menete: a <b>főátló</b> (<span class="math inline">\(a\)</span> és <span class="math inline">\(d\)</span>) szorzatából kivonjuk a <b>mellékátló</b> (<span class="math inline">\(b\)</span> és <span class="math inline">\(c\)</span>) szorzatát.</p>
+    </div>
+
+    <p>Például <span class="math inline">\(\begin{vmatrix}3&2\\ 1&-4\end{vmatrix}=3\cdot(-4)-2\cdot1=-12-2=-14\)</span>. A determináns értéke lehet negatív is — nem terület, hanem <b>előjeles</b> mennyiség.</p>
+
+    <div class="doboz tetel" id="tetel-honnan">
+      <p class="cim"><span class="ikon">📘</span> Honnan jön ez a képlet?</p>
+      <p>Oldjuk meg általánosan a</p><span class="math display">\[\begin{aligned}ax+by&=e\\ cx+dy&=f\end{aligned}\]</span><p>rendszert kiküszöböléssel. Szorozzuk az első egyenletet <span class="math inline">\(d\)</span>-vel, a másodikat <span class="math inline">\(b\)</span>-vel, majd vonjuk ki őket egymásból:</p><span class="math display">\[(ad-bc)\,x=ed-bf.\]</span><p>Az <span class="math inline">\(x\)</span> együtthatója pontosan a determináns. Ha <span class="math inline">\(ad-bc\ne0\)</span>, oszthatunk vele, és <span class="math inline">\(x\)</span>-re <b>egyetlen</b> érték adódik. Ha viszont <span class="math inline">\(ad-bc=0\)</span>, nem oszthatunk — és épp ez a nem határozott eset.</p><p>A determináns tehát nem a semmiből jött: ez az a szám, amellyel a kiküszöbölés végén osztani szeretnénk.</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>A <span class="math inline">\(2\times2\)</span>-es determináns abszolút értéke annak a <b>paralelogrammának a területe</b>, amelyet a táblázat két oszlopa mint vektor kifeszít; a <span class="math inline">\(3\times3\)</span>-asé pedig a három oszlopvektor által kifeszített <b>paralelepipedon térfogata</b>.</p><p>Innen érthető, hogy miért jelent gondot a <span class="math inline">\(0\)</span>: ha a determináns nulla, az irányok „összelapultak” — a paralelogramma egyenessé, a test lappá zsugorodott. Ilyenkor az irányok nem függetlenek, és a rendszernek nincs egyértelmű megoldása. Ez a szemlélet a <b>04. témakörben</b>, a vektoriális szorzatnál tér majd vissza.</p>
+    </div>
+
+    <h2 id="s2">A harmadrendű determináns — a Sarrus-szabály</h2>
+
+    <div class="doboz tetel" id="tetel-sarrus">
+      <p class="cim"><span class="ikon">📘</span> Sarrus-szabály</p>
+      <p>Írjuk a <span class="math inline">\(3\times3\)</span>-as determináns mellé <b>újra az első két oszlopát</b>. Ekkor hat átló keletkezik: három <b>lefelé</b> haladó (balról jobbra lefelé) és három <b>fölfelé</b> haladó. A determináns a lefelé haladó átlók szorzatainak összege <b>mínusz</b> a fölfelé haladó átlók szorzatainak összege:</p><span class="math display">\[\begin{vmatrix}a_{11}&a_{12}&a_{13}\\ a_{21}&a_{22}&a_{23}\\ a_{31}&a_{32}&a_{33}\end{vmatrix}=a_{11}a_{22}a_{33}+a_{12}a_{23}a_{31}+a_{13}a_{21}a_{32}-a_{31}a_{22}a_{13}-a_{32}a_{23}a_{11}-a_{33}a_{21}a_{12}.\]</span><p>A képletet <b>nem kell</b> megjegyezni — az ábrát kell.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 470 250" width="470" height="250" role="img" aria-label="A Sarrus-séma általánosan, az elemek jelölésével">
+      <defs><marker id="nyil-sarrus-p-f24f4" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#047857"/></marker><marker id="nyil-sarrus-m-f24f4" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#ef4444"/></marker></defs>
+      <rect x="261.0" y="44.0" width="104.0" height="132.0" fill="#f1f5f9"/>
+      <line x1="105.0" y1="44.0" x2="105.0" y2="176.0" stroke="#0f172a" stroke-width="1.8"/>
+      <line x1="261.0" y1="44.0" x2="261.0" y2="176.0" stroke="#0f172a" stroke-width="1.8"/>
+      <line x1="365.0" y1="44.0" x2="365.0" y2="176.0" stroke="#475569" stroke-width="1" stroke-dasharray="4 3"/>
+      <line x1="144.0" y1="77.0" x2="222.0" y2="143.0" stroke="#047857" stroke-width="1.6" opacity=".85" marker-end="url(#nyil-sarrus-p-f24f4)"/>
+      <line x1="196.0" y1="77.0" x2="274.0" y2="143.0" stroke="#047857" stroke-width="1.6" opacity=".85" marker-end="url(#nyil-sarrus-p-f24f4)"/>
+      <line x1="248.0" y1="77.0" x2="326.0" y2="143.0" stroke="#047857" stroke-width="1.6" opacity=".85" marker-end="url(#nyil-sarrus-p-f24f4)"/>
+      <line x1="144.0" y1="143.0" x2="222.0" y2="77.0" stroke="#ef4444" stroke-width="1.6" opacity=".85" marker-end="url(#nyil-sarrus-m-f24f4)"/>
+      <line x1="196.0" y1="143.0" x2="274.0" y2="77.0" stroke="#ef4444" stroke-width="1.6" opacity=".85" marker-end="url(#nyil-sarrus-m-f24f4)"/>
+      <line x1="248.0" y1="143.0" x2="326.0" y2="77.0" stroke="#ef4444" stroke-width="1.6" opacity=".85" marker-end="url(#nyil-sarrus-m-f24f4)"/>
+      <circle cx="131.0" cy="66.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="131.0" y="71.0" font-size="15" text-anchor="middle" fill="#0f172a">a<tspan baseline-shift='sub' font-size='10'>11</tspan></text>
+      <circle cx="183.0" cy="66.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="183.0" y="71.0" font-size="15" text-anchor="middle" fill="#0f172a">a<tspan baseline-shift='sub' font-size='10'>12</tspan></text>
+      <circle cx="235.0" cy="66.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="235.0" y="71.0" font-size="15" text-anchor="middle" fill="#0f172a">a<tspan baseline-shift='sub' font-size='10'>13</tspan></text>
+      <circle cx="287.0" cy="66.0" r="14" fill="#f1f5f9" opacity=".95"/>
+      <text x="287.0" y="71.0" font-size="15" text-anchor="middle" fill="#475569">a<tspan baseline-shift='sub' font-size='10'>11</tspan></text>
+      <circle cx="339.0" cy="66.0" r="14" fill="#f1f5f9" opacity=".95"/>
+      <text x="339.0" y="71.0" font-size="15" text-anchor="middle" fill="#475569">a<tspan baseline-shift='sub' font-size='10'>12</tspan></text>
+      <circle cx="131.0" cy="110.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="131.0" y="115.0" font-size="15" text-anchor="middle" fill="#0f172a">a<tspan baseline-shift='sub' font-size='10'>21</tspan></text>
+      <circle cx="183.0" cy="110.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="183.0" y="115.0" font-size="15" text-anchor="middle" fill="#0f172a">a<tspan baseline-shift='sub' font-size='10'>22</tspan></text>
+      <circle cx="235.0" cy="110.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="235.0" y="115.0" font-size="15" text-anchor="middle" fill="#0f172a">a<tspan baseline-shift='sub' font-size='10'>23</tspan></text>
+      <circle cx="287.0" cy="110.0" r="14" fill="#f1f5f9" opacity=".95"/>
+      <text x="287.0" y="115.0" font-size="15" text-anchor="middle" fill="#475569">a<tspan baseline-shift='sub' font-size='10'>21</tspan></text>
+      <circle cx="339.0" cy="110.0" r="14" fill="#f1f5f9" opacity=".95"/>
+      <text x="339.0" y="115.0" font-size="15" text-anchor="middle" fill="#475569">a<tspan baseline-shift='sub' font-size='10'>22</tspan></text>
+      <circle cx="131.0" cy="154.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="131.0" y="159.0" font-size="15" text-anchor="middle" fill="#0f172a">a<tspan baseline-shift='sub' font-size='10'>31</tspan></text>
+      <circle cx="183.0" cy="154.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="183.0" y="159.0" font-size="15" text-anchor="middle" fill="#0f172a">a<tspan baseline-shift='sub' font-size='10'>32</tspan></text>
+      <circle cx="235.0" cy="154.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="235.0" y="159.0" font-size="15" text-anchor="middle" fill="#0f172a">a<tspan baseline-shift='sub' font-size='10'>33</tspan></text>
+      <circle cx="287.0" cy="154.0" r="14" fill="#f1f5f9" opacity=".95"/>
+      <text x="287.0" y="159.0" font-size="15" text-anchor="middle" fill="#475569">a<tspan baseline-shift='sub' font-size='10'>31</tspan></text>
+      <circle cx="339.0" cy="154.0" r="14" fill="#f1f5f9" opacity=".95"/>
+      <text x="339.0" y="159.0" font-size="15" text-anchor="middle" fill="#475569">a<tspan baseline-shift='sub' font-size='10'>32</tspan></text>
+      <line x1="111.0" y1="187.0" x2="135.0" y2="199.0" stroke="#047857" stroke-width="1.6" marker-end="url(#nyil-sarrus-p-f24f4)"/>
+      <text x="145.0" y="198.0" font-size="12" fill="#0f172a">lefelé: <tspan font-weight="600">+</tspan></text>
+      <line x1="235.0" y1="199.0" x2="259.0" y2="187.0" stroke="#ef4444" stroke-width="1.6" marker-end="url(#nyil-sarrus-m-f24f4)"/>
+      <text x="269.0" y="198.0" font-size="12" fill="#0f172a">fölfelé: <tspan font-weight="600">−</tspan></text>
+    </svg>
+    </div>
+    <p class="cap">A Sarrus-séma általánosan: a szürke sávban a megismételt első két oszlop áll. A <b>zöld</b> (lefelé haladó) átlók szorzatait összeadjuk, a <b>piros</b> (fölfelé haladó) átlókét kivonjuk.</p>
+
+    <div class="doboz pelda" id="pelda-sarrus">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — Sarrus a gyakorlatban</p>
+      <p>Számítsuk ki a</p><span class="math display">\[D=\begin{vmatrix}2&-1&3\\ 1&4&-2\\ 3&0&5\end{vmatrix}\]</span><p>determinánst. Írjuk mellé az első két oszlopot:</p><div class="svgcard">
+    <svg viewBox="0 0 470 250" width="470" height="250" role="img" aria-label="A 2, −1, 3 / 1, 4, −2 / 3, 0, 5 determináns Sarrus-sémája: az első két oszlop megismételve, a hat átló nyíllal">
+      <defs><marker id="nyil-sarrus-p-891a1" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#047857"/></marker><marker id="nyil-sarrus-m-891a1" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#ef4444"/></marker></defs>
+      <rect x="261.0" y="44.0" width="104.0" height="132.0" fill="#f1f5f9"/>
+      <line x1="105.0" y1="44.0" x2="105.0" y2="176.0" stroke="#0f172a" stroke-width="1.8"/>
+      <line x1="261.0" y1="44.0" x2="261.0" y2="176.0" stroke="#0f172a" stroke-width="1.8"/>
+      <line x1="365.0" y1="44.0" x2="365.0" y2="176.0" stroke="#475569" stroke-width="1" stroke-dasharray="4 3"/>
+      <line x1="144.0" y1="77.0" x2="222.0" y2="143.0" stroke="#047857" stroke-width="1.6" opacity=".85" marker-end="url(#nyil-sarrus-p-891a1)"/>
+      <line x1="196.0" y1="77.0" x2="274.0" y2="143.0" stroke="#047857" stroke-width="1.6" opacity=".85" marker-end="url(#nyil-sarrus-p-891a1)"/>
+      <line x1="248.0" y1="77.0" x2="326.0" y2="143.0" stroke="#047857" stroke-width="1.6" opacity=".85" marker-end="url(#nyil-sarrus-p-891a1)"/>
+      <line x1="144.0" y1="143.0" x2="222.0" y2="77.0" stroke="#ef4444" stroke-width="1.6" opacity=".85" marker-end="url(#nyil-sarrus-m-891a1)"/>
+      <line x1="196.0" y1="143.0" x2="274.0" y2="77.0" stroke="#ef4444" stroke-width="1.6" opacity=".85" marker-end="url(#nyil-sarrus-m-891a1)"/>
+      <line x1="248.0" y1="143.0" x2="326.0" y2="77.0" stroke="#ef4444" stroke-width="1.6" opacity=".85" marker-end="url(#nyil-sarrus-m-891a1)"/>
+      <circle cx="131.0" cy="66.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="131.0" y="71.0" font-size="15" text-anchor="middle" fill="#0f172a">2</text>
+      <circle cx="183.0" cy="66.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="183.0" y="71.0" font-size="15" text-anchor="middle" fill="#0f172a">−1</text>
+      <circle cx="235.0" cy="66.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="235.0" y="71.0" font-size="15" text-anchor="middle" fill="#0f172a">3</text>
+      <circle cx="287.0" cy="66.0" r="14" fill="#f1f5f9" opacity=".95"/>
+      <text x="287.0" y="71.0" font-size="15" text-anchor="middle" fill="#475569">2</text>
+      <circle cx="339.0" cy="66.0" r="14" fill="#f1f5f9" opacity=".95"/>
+      <text x="339.0" y="71.0" font-size="15" text-anchor="middle" fill="#475569">−1</text>
+      <circle cx="131.0" cy="110.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="131.0" y="115.0" font-size="15" text-anchor="middle" fill="#0f172a">1</text>
+      <circle cx="183.0" cy="110.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="183.0" y="115.0" font-size="15" text-anchor="middle" fill="#0f172a">4</text>
+      <circle cx="235.0" cy="110.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="235.0" y="115.0" font-size="15" text-anchor="middle" fill="#0f172a">−2</text>
+      <circle cx="287.0" cy="110.0" r="14" fill="#f1f5f9" opacity=".95"/>
+      <text x="287.0" y="115.0" font-size="15" text-anchor="middle" fill="#475569">1</text>
+      <circle cx="339.0" cy="110.0" r="14" fill="#f1f5f9" opacity=".95"/>
+      <text x="339.0" y="115.0" font-size="15" text-anchor="middle" fill="#475569">4</text>
+      <circle cx="131.0" cy="154.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="131.0" y="159.0" font-size="15" text-anchor="middle" fill="#0f172a">3</text>
+      <circle cx="183.0" cy="154.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="183.0" y="159.0" font-size="15" text-anchor="middle" fill="#0f172a">0</text>
+      <circle cx="235.0" cy="154.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="235.0" y="159.0" font-size="15" text-anchor="middle" fill="#0f172a">5</text>
+      <circle cx="287.0" cy="154.0" r="14" fill="#f1f5f9" opacity=".95"/>
+      <text x="287.0" y="159.0" font-size="15" text-anchor="middle" fill="#475569">3</text>
+      <circle cx="339.0" cy="154.0" r="14" fill="#f1f5f9" opacity=".95"/>
+      <text x="339.0" y="159.0" font-size="15" text-anchor="middle" fill="#475569">0</text>
+      <line x1="111.0" y1="187.0" x2="135.0" y2="199.0" stroke="#047857" stroke-width="1.6" marker-end="url(#nyil-sarrus-p-891a1)"/>
+      <text x="145.0" y="198.0" font-size="12" fill="#0f172a">lefelé: <tspan font-weight="600">+</tspan></text>
+      <line x1="235.0" y1="199.0" x2="259.0" y2="187.0" stroke="#ef4444" stroke-width="1.6" marker-end="url(#nyil-sarrus-m-891a1)"/>
+      <text x="269.0" y="198.0" font-size="12" fill="#0f172a">fölfelé: <tspan font-weight="600">−</tspan></text>
+    </svg>
+    </div>
+    <p class="cap">A konkrét determináns Sarrus-sémája.</p><p><b>A lefelé haladó átlók (+):</b></p><span class="math display">\[2\cdot4\cdot5+(-1)\cdot(-2)\cdot3+3\cdot1\cdot0=40+6+0=46.\]</span><p><b>A fölfelé haladó átlók (−):</b></p><span class="math display">\[3\cdot4\cdot3+0\cdot(-2)\cdot2+5\cdot1\cdot(-1)=36+0-5=31.\]</span><p>Most vond ki a második összeget az elsőből — ez a determináns értéke.</p>
+      <details><summary>Végeredmény</summary><div class="bel"><p><span class="math inline">\(46-31=15\)</span>.</p><p class="vegeredmeny"><span class="math inline">\(D=15\)</span>.</p></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„A Sarrus-szabály jó — akkor négy sorra is felírom.”</i></p><p><b>Nem működik.</b> A Sarrus-szabály <b>kizárólag <span class="math inline">\(3\times3\)</span>-as</b> determinánsra érvényes. Négyedrendű determinánsnál az „átlós” eljárás nem a helyes értéket adja (ott <span class="math inline">\(24\)</span> tagra volna szükség, nem <span class="math inline">\(8\)</span>-ra) — a <span class="math inline">\(4\times4\)</span>-es determinánst kifejtéssel kell számolni, és az már nem a mi tananyagunk.</p><p>A másik gyakori hiba az <b>előjelek elkeverése</b>. Segít, ha mindig ugyanúgy rajzolod meg a sémát: előbb az <b>összes</b> zöld átlót, összeadod őket, aztán az <b>összes</b> pirosat, és csak a végén vonod ki a második összeget az elsőből. Aki tagonként váltogatja az előjelet, az előbb-utóbb eltéveszti.</p>
+    </div>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ 1 · 4 − 2 · 3 = 4 − 6 = −2." data-nem="✘ A főátló szorzatából vonjuk ki a mellékátlóét: 1 · 4 − 2 · 3 = −2. (Aki 10-et kapott, összeadta a két szorzatot.)">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi <span class="math inline">\(\begin{vmatrix}1&2\\ 3&4\end{vmatrix}\)</span> értéke?</p>
+      <div class="opciok"><button><span class="math inline">\(-10\)</span></button><button><span class="math inline">\(-2\)</span></button><button><span class="math inline">\(2\)</span></button><button><span class="math inline">\(10\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Kifejtés sor vagy oszlop szerint</h2>
+
+    <p>A Sarrus-szabály gyors, de csak <span class="math inline">\(3\times3\)</span>-ra jó, és sokat kell szorozni. A <b>kifejtés</b> más úton jut ugyanoda: a harmadrendű determinánst három <b>másodrendűre</b> vezeti vissza.</p>
+
+    <div class="doboz tetel" id="tetel-kifejtes">
+      <p class="cim"><span class="ikon">📘</span> Kifejtés sor, illetve oszlop szerint</p>
+      <p>Válasszunk ki egy tetszőleges sort vagy oszlopot. Minden eleméhez tartozik egy <b>aldetermináns</b>: az a másodrendű determináns, amely az elem sorának és oszlopának <b>elhagyása</b> után marad. A determináns értéke az elemek és a hozzájuk tartozó aldeterminánsok szorzatainak <b>előjeles</b> összege.</p><p>Az előjelek sakktáblaszerűen váltakoznak:</p><span class="math display">\[\begin{matrix}+&-&+\\ -&+&-\\ +&-&+\end{matrix}\]</span><p>A bal felső sarokban <span class="math inline">\(+\)</span> áll, és onnan minden <b>vízszintes vagy függőleges</b> lépéssel vált az előjel; átlósan lépve nem változik.</p><p><b>Melyik sort vagy oszlopot válasszuk?</b> Amelyikben a legtöbb <b>nulla</b> van: a nulla elemhez tartozó tagot ki sem kell számolni.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-ketfele">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — ugyanaz a determináns kifejtéssel</p>
+      <p>Fejtsük ki a fenti <span class="math inline">\(D\)</span> determinánst a <b>harmadik sora</b> szerint — itt van ugyanis nulla:</p><span class="math display">\[D=\begin{vmatrix}2&-1&3\\ 1&4&-2\\ 3&0&5\end{vmatrix}\]</span><p>A harmadik sor előjelei <span class="math inline">\(+\,-\,+\)</span>, az elemei pedig <span class="math inline">\(3\)</span>, <span class="math inline">\(0\)</span>, <span class="math inline">\(5\)</span>:</p><span class="math display">\[D=+3\cdot\begin{vmatrix}-1&3\\ 4&-2\end{vmatrix}-0\cdot\begin{vmatrix}2&3\\ 1&-2\end{vmatrix}+5\cdot\begin{vmatrix}2&-1\\ 1&4\end{vmatrix}.\]</span><p>Az aldeterminánsok: <span class="math inline">\((-1)\cdot(-2)-3\cdot4=2-12=-10\)</span>, illetve <span class="math inline">\(2\cdot4-(-1)\cdot1=8+1=9\)</span>. A középső tag nulla, mert <span class="math inline">\(0\)</span>-val szorozzuk. Tehát</p><p>Add össze a két tagot — és vesd össze a Sarrus-szabállyal kapott értékkel.</p>
+      <details><summary>Végeredmény</summary><div class="bel"><p><span class="math inline">\(D=3\cdot(-10)+5\cdot9=-30+45=15\)</span> — ugyanaz az érték, mint a Sarrus-szabállyal.</p><p class="vegeredmeny"><span class="math inline">\(D=15\)</span> mindkét módszerrel.</p></div></details>
+    </div>
+
+    <p>A két módszer viszonya egyszerű: ha a determinánsban <b>nincs</b> nulla, a Sarrus-szabály általában gyorsabb; ha van benne nulla — különösen kettő egy sorban —, a kifejtés lényegesen kevesebb munka. A dolgozatban <b>mindkettő</b> elfogadható, ha a lépések követhetők.</p>
+
+    <h2 id="s4">Tulajdonságok, amelyek időt takarítanak meg</h2>
+
+    <p>Mielőtt bármit kiszámolnál, érdemes ránézni a determinánsra. Néha ugyanis a végeredmény azonnal látszik.</p>
+
+    <div class="doboz tetel" id="tetel-tulajdonsagok">
+      <p class="cim"><span class="ikon">📘</span> Négy tulajdonság, amit érdemes fejből tudni</p>
+      <p>A determináns értéke <b>nulla</b>, ha</p><ul><li>valamelyik <b>sora vagy oszlopa csupa nulla</b>;</li><li>van két <b>egyenlő</b> sora (vagy oszlopa);</li><li>van két <b>arányos</b> sora (vagy oszlopa) — azaz az egyik a másik számszorosa;</li><li>valamelyik sora (vagy oszlopa) a másik kettőből <b>összeadással és számmal szorzással</b> előáll — például az egyik sor a másik kettő összege.</li></ul><p>Egy negyedik, számolást könnyítő tulajdonság: két sor (vagy oszlop) <b>felcserélése</b> a determináns <b>előjelét megfordítja</b>, az abszolút értékét nem változtatja.</p>
+    </div>
+
+    <p>Például <span class="math inline">\(\begin{vmatrix}1&2&3\\ 2&4&6\\ 5&0&1\end{vmatrix}=0\)</span>, mert a második sor az első kétszerese — nem kell számolni. Ha viszont a fenti <span class="math inline">\(D\)</span> determinánsban felcseréljük az első két sort, az érték <span class="math inline">\(15\)</span> helyett <span class="math inline">\(-15\)</span> lesz.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„A sorcsere nem számít, hiszen ugyanazok a számok maradnak.”</i></p><p><b>Számít.</b> A sorcsere <b>előjelet vált</b>. Ez az egyik legmakacsabb hiba, mert a Gauss-eljárásban a sorcsere teljesen ártalmatlan (ott a megoldás nem változik tőle) — a determinánsnál viszont nem az.</p><p>Érdemes összeszedni, melyik lépés mit csinál a determinánssal:</p><table class="tt-table"><tr><th>Lépés</th><th>A determináns</th></tr><tr><td>két sor cseréje</td><td><b>előjelet vált</b></td></tr><tr><td>egy sor szorzása <span class="math inline">\(k\)</span>-val</td><td><span class="math inline">\(k\)</span>-szorosára <b>változik</b> (felére, ha <span class="math inline">\(k=\tfrac12\)</span>; előjelet is vált, ha <span class="math inline">\(k<0\)</span>)</td></tr><tr><td>egy sorhoz egy másik sor számszorosának hozzáadása</td><td><b>nem változik</b></td></tr></table><p>A harmadik sor a legmeglepőbb — és épp ez teszi lehetővé, hogy a determinánst a Gauss-eljárás lépéseivel nullákkal teli alakra hozzuk, mielőtt kifejtenénk.</p>
+    </div>
+
+    <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ Egyetlen sorcsere megfordítja a determináns előjelét: 12 helyett −12." data-nem="✘ A sorcsere nem hagyja változatlanul a determinánst: ELŐJELET VÁLT. Az érték tehát −12.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy harmadrendű determináns értéke <span class="math inline">\(12\)</span>. Mennyi lesz, ha felcseréljük az első és a második sorát?</p>
+      <div class="opciok"><button><span class="math inline">\(12\)</span></button><button><span class="math inline">\(24\)</span></button><button><span class="math inline">\(0\)</span></button><button><span class="math inline">\(-12\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-determinans.html#alap-1">🐕 Tér-eb-ugrás <span class="cimke">A 1–8</span></a><a class="sav bruno" href="feladatok-determinans.html#kozep-1">👑 Királyi Gárda <span class="cimke">K 1–4</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> Megvan a szám, amely eldönti a kérdést. De egy jó eszköz többet tud annál, hogy igent vagy nemet mond: ha a determináns nem nulla, a megoldás <b>képlettel</b> is felírható. Három osztás, és kész — feltéve, hogy nem ugrod át a feltételt.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-megoldasok-szama.html"><span class="irany">← Előző</span><span class="hova">Hány megoldás van?</span></a>
+      <a class="kov" href="tananyag-cramer.html"><span class="irany">Következő →</span><span class="hova">A Cramer-szabály</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

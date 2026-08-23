@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hány megoldás van? — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Lineáris egyenletrendszerek</a> ›
+  <span class="itt">Hány megoldás van? — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Hány megoldás van?</h1>
+  <p class="alcim">Határozott, határozatlan és ellentmondásos rendszer; a nullás sorok jelentése; a megoldások felírása szabad paraméterrel.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Rendszer Hibája · 3/6</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> Az anomália-hálózat időnként olyan mérési sort küld, amelyből <b>semmi</b> nem következik — és olyat is, amely <b>önmagának mond ellent</b>. Az első esetben kevés a mérés, a másodikban valamelyik műszer hazudik. A Gauss-eljárás mindkettőt megmutatja, ha tudod, mit kell nézni.</p></div>
+
+    <p>Ezen az órán nem csak kiszámoljuk a megoldást — meg is <b>indokoljuk, hány van belőle</b>. Ez a témakör egyik legfontosabb készsége: a „nincs megoldás” és a „végtelen sok megoldás” ugyanolyan teljes értékű válasz, mint egy számhármas — de csak akkor, ha meg is tudod mutatni, miből jött.</p>
+
+    <h2 id="s1">A három eset</h2>
+
+    <div class="doboz definicio" id="def-harom-eset">
+      <p class="cim"><span class="ikon">📗</span> Határozott, határozatlan, ellentmondásos</p>
+      <table class="tt-table"><tr><th>A rendszer</th><th>Megoldásainak száma</th><th>Példa (2×2)</th></tr><tr><td><b>határozott</b></td><td>pontosan egy</td><td><span class="math inline">\(x+y=5\)</span>, <span class="math inline">\(x-y=1\)</span> &nbsp;→&nbsp; <span class="math inline">\((3;2)\)</span></td></tr><tr><td><b>határozatlan</b></td><td>végtelen sok</td><td><span class="math inline">\(x+y=5\)</span>, <span class="math inline">\(2x+2y=10\)</span></td></tr><tr><td><b>ellentmondásos</b></td><td>egy sincs</td><td><span class="math inline">\(x+y=5\)</span>, <span class="math inline">\(2x+2y=7\)</span></td></tr></table><p>Az utolsó két esetet együtt <b>nem határozott</b> rendszernek is szokás nevezni. Figyeld meg a két alsó példát: a bal oldalak ugyanazok, a különbség csak a jobb oldalon van. Ugyanazt az egyenletet írtuk le kétszer — egyszer következetesen, egyszer önmagának ellentmondva.</p>
+    </div>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ A határozatlan rendszernek végtelen sok megoldása van: a feltételek kevesebbet kötnek meg, mint amennyi ismeretlen van." data-nem="✘ A „határozatlan” nem azt jelenti, hogy nem tudjuk eldönteni, és nem is azt, hogy nincs megoldás: azt jelenti, hogy VÉGTELEN SOK megoldás van. Amelyiknek nincs megoldása, az az ellentmondásos rendszer.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy rendszerről kiderül, hogy <b>határozatlan</b>. Mit jelent ez?</p>
+      <div class="opciok"><button>Pontosan egy megoldása van</button><button>Végtelen sok megoldása van</button><button>Nincs megoldása</button><button>Nem lehet eldönteni, van-e megoldása</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Hogyan ismerem fel a Gauss-eljárás közben</h2>
+
+    <div class="doboz tetel" id="tetel-felismeres">
+      <p class="cim"><span class="ikon">📘</span> A <span class="math inline">\(0=0\)</span> és a <span class="math inline">\(0=k\)</span> sor</p>
+      <p>Ha az elimináció közben egy egyenlet bal oldalán minden együttható nullává válik, két eset lehetséges:</p><ul><li><b><span class="math inline">\(0=0\)</span></b> — ez <b>igaz</b> állítás, minden <span class="math inline">\((x;y;z)\)</span> kielégíti. A sor tehát <b>fölösleges</b> (nem szűkít semmit), elhagyható. Ha ezután kevesebb egyenlet marad, mint ahány ismeretlen van, <b>és közben nem keletkezett <span class="math inline">\(0=k\)</span> alakú sor sem</b>, akkor a rendszer <b>határozatlan</b>.</li><li><b><span class="math inline">\(0=k\)</span></b>, ahol <span class="math inline">\(k\ne0\)</span> — ez <b>hamis</b> állítás, semmilyen <span class="math inline">\((x;y;z)\)</span> nem elégíti ki. A rendszer <b>ellentmondásos</b>, és itt azonnal megállhatunk: tovább számolni értelmetlen.</li></ul>
+    </div>
+
+    <div class="doboz pelda" id="pelda-harom-eset">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — ugyanaz a bal oldal, két jobb oldal</p>
+      <p>Nézzük a</p><span class="math display">\[\begin{aligned}x+y+z&=6\\ 2x+y-z&=1\\ 3x+2y\phantom{{}+z}&=c\end{aligned}\]</span><p>rendszert, ahol a <span class="math inline">\(c\)</span> helyére kétféle számot írunk. Figyeld meg, hogy a harmadik egyenlet bal oldala <b>pontosan</b> az első kettő összege: <span class="math inline">\((x+y+z)+(2x+y-z)=3x+2y\)</span>. Ezért az első két egyenletből <b>következik</b>, hogy <span class="math inline">\(3x+2y=6+1=7\)</span>.</p><p>Végezzük el az eliminációt egyszerre mindkét esetre — a <span class="math inline">\(c\)</span> végig együtt utazik a jobb oldallal:</p><table class="tt-table"><tr><th><span class="math inline">\(x\)</span></th><th><span class="math inline">\(y\)</span></th><th><span class="math inline">\(z\)</span></th><th>jobb oldal</th><th>művelet</th></tr><tr><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(6\)</span></td><td></td></tr><tr><td><span class="math inline">\(2\)</span></td><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(-1\)</span></td><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(S_2-2S_1\)</span></td></tr><tr><td><span class="math inline">\(3\)</span></td><td><span class="math inline">\(2\)</span></td><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(c\)</span></td><td><span class="math inline">\(S_3-3S_1\)</span></td></tr><tr><th colspan="5"><span class="math inline">\(\sim\)</span> &nbsp; az alsó két sor MEGEGYEZIK a bal oldalon</th></tr><tr><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(6\)</span></td><td></td></tr><tr><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(-1\)</span></td><td><span class="math inline">\(-3\)</span></td><td><span class="math inline">\(-11\)</span></td><td></td></tr><tr><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(-1\)</span></td><td><span class="math inline">\(-3\)</span></td><td><span class="math inline">\(c-18\)</span></td><td><span class="math inline">\(S_3-S_2\)</span></td></tr><tr><th colspan="5"><span class="math inline">\(\sim\)</span> &nbsp; az utolsó sor</th></tr><tr><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(c-7\)</span></td><td></td></tr></table><p><b>Ha <span class="math inline">\(c=7\)</span>:</b> az utolsó sor <span class="math inline">\(0=0\)</span> — a harmadik egyenlet nem mond semmi újat. Az elimináció után tehát csak két független egyenlet jut három ismeretlenre, és a rendszer <b>határozatlan</b>.</p><p><b>Ha <span class="math inline">\(c=10\)</span>:</b> az utolsó sor <span class="math inline">\(0=3\)</span> — hamis állítás. A harmadik egyenlet ellentmond az első kettőnek, a rendszer <b>ellentmondásos</b>: nincs megoldása.</p><p><b>És ha egyetlen megoldást szeretnénk?</b> Akkor a <b>bal oldalhoz</b> kell nyúlni. Ha a harmadik egyenlet <span class="math inline">\(3x+2y+z=8\)</span>, a bal oldalak már nem függenek össze, és a rendszer <b>határozott</b> lesz.</p><p>Ez a példa egy fontos dolgot mutat meg: a megoldások száma <b>nem</b> egyedül a jobb oldalon dől el. Ha egy <b>három egyenletből álló, háromismeretlenes</b> rendszerben a bal oldalak összefüggenek, akkor a jobb oldaltól függően „nincs” vagy „végtelen sok” megoldás lesz — de <b>pontosan egy soha</b>.</p>
+      <details><summary>Végeredmények</summary><div class="bel"><p class="vegeredmeny"><span class="math inline">\(c=7\)</span>: határozatlan · <span class="math inline">\(c=10\)</span>: ellentmondásos · <span class="math inline">\(3x+2y+z=8\)</span> esetén határozott, <span class="math inline">\((x;y;z)=(-3;8;1)\)</span>.</p></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„A <span class="math inline">\(0=0\)</span> sor azt jelenti, hogy nincs megoldás — hiszen elfogyott az egyenlet.”</i></p><p><b>Pont fordítva van.</b> Mondd ki hangosan: <i>„a nulla egyenlő nullával”</i> — ez <b>mindig igaz</b>. Egy mindig igaz állítás senkit nem zár ki, tehát nem is szűkít semmit: a rendszernek <b>marad</b> megoldása, sőt végtelen sok.</p><p>És most a másik: <i>„a nulla egyenlő öttel”</i> — ez <b>soha nem igaz</b>. Egy soha nem igaz állítás mindenkit kizár: <b>nincs</b> megoldás.</p><p>Az egyetlen dolog, amit meg kell jegyezned: nem a bal oldali nulla számít, hanem az, hogy a <b>jobb oldal</b> is nulla-e.</p>
+    </div>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ A 0 = 0 igaz állítás: nem szűkít semmit, ezért a sor elhagyható. Ha így kevesebb egyenlet marad, mint ahány ismeretlen — és nincs 0 = k alakú sor —, a rendszer határozatlan." data-nem="✘ A 0 = 0 IGAZ állítás, tehát nem zár ki megoldást — a sor egyszerűen fölösleges. Ami kizárja a megoldást, az a 0 = k alakú (k ≠ 0) sor.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>A Gauss-eljárás során az egyik sorból <span class="math inline">\(0=0\)</span> lesz. Mi következik?</p>
+      <div class="opciok"><button>Elszámoltuk a sorműveletet</button><button>A sor fölösleges — elhagyható, és a rendszer határozatlan lehet</button><button>A rendszernek nincs megoldása</button><button>A rendszernek pontosan egy megoldása van</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Hogyan írjuk fel a végtelen sok megoldást</h2>
+
+    <p>Ha a rendszer határozatlan, nem elég annyit írni, hogy „végtelen sok megoldás van”. A megoldásokat <b>fel is kell sorolni</b> — ezt egy <b>szabad paraméterrel</b> tesszük.</p>
+
+    <p>A fenti <span class="math inline">\(c=7\)</span> esetben az <span class="math inline">\(S_2-2S_1\)</span> lépés a <span class="math inline">\(-y-3z=-11\)</span>, azaz az <span class="math inline">\(y+3z=11\)</span> sort adja. Az <span class="math inline">\(S_3-3S_1\)</span> ugyanezt hozza ki a harmadik sorból (<span class="math inline">\(-y-3z=-11\)</span>), ezért a kettő különbsége már <span class="math inline">\(0=0\)</span>. A lépcsős alak tehát mindössze <b>két</b> egyenletet ad három ismeretlenre:</p><span class="math display">\[\begin{aligned}x+y+z&=6\\ y+3z&=11\end{aligned}\]</span><p>Legyen <span class="math inline">\(z=t\)</span> tetszőleges valós szám; ekkor a második egyenletből <span class="math inline">\(y=11-3t\)</span>, az elsőből pedig <span class="math inline">\(x=6-y-z=6-(11-3t)-t=2t-5\)</span>. A megoldások tehát:</p><span class="math display">\[(x;y;z)=(2t-5;\;11-3t;\;t),\qquad t\in\mathbb{R}.\]</span><p>Ez <b>egyetlen</b> képlet, amely az összes megoldást leírja. Behelyettesítéssel bármelyik ellenőrizhető: <span class="math inline">\(t=3\)</span> esetén <span class="math inline">\((1;2;3)\)</span>, <span class="math inline">\(t=5\)</span> esetén <span class="math inline">\((5;-4;5)\)</span>, <span class="math inline">\(t=0\)</span> esetén <span class="math inline">\((-5;11;0)\)</span> — és mindhárom kielégíti mind a három egyenletet.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> 🔒 Meddig megyünk el?</p>
+      <p>A megoldások számának megvitatását <b>konkrét</b> rendszereken végezzük: adott számok, kiszámolt lépcsős alak, leolvasott eset. Az olyan feladat, amelyben az együtthatók között <b>paraméter</b> áll (például <span class="math inline">\(ax+y=2\)</span>, és azt kell megvizsgálni, hogy <span class="math inline">\(a\)</span> mely értékeire hány megoldás van), a mi tantervünkben <b>nem szerepel</b> — az az általános és a természettudományi-matematikai program anyaga. Ugyanígy nem foglalkozunk olyan rendszerrel sem, amelyben az egyenletek és az ismeretlenek száma <b>különbözik</b> (2×3-as, 3×2-es): nálunk minden rendszer 2×2-es vagy 3×3-as.</p><p>A szabad paraméter, amit az imént bevezettünk (<span class="math inline">\(z=t\)</span>), <b>nem ilyen</b>: az a <b>megoldás</b> leírásának eszköze, nem az egyenletrendszer adata.</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>A mérnöki gyakorlatban a két eset két különböző üzenetet hordoz. Az <b>ellentmondásos</b> rendszer általában <b>mérési hibát</b> jelez: a műszerek olyat állítanak együtt, ami egyszerre nem lehet igaz — valamelyik rosszul mér. A <b>határozatlan</b> rendszer viszont azt mondja, hogy <b>kevés a mérés</b>: az adatok igazak, csak nem elegendők az ismeretlenek egyértelmű meghatározásához. Az első esetben javítani kell, a másodikban mérni kell még egyet.</p>
+    </div>
+
+    <h2 id="s4">A geometriai kép</h2>
+
+    <p>Két ismeretlennél két egyenest néztünk. Három ismeretlennél az <span class="math inline">\(ax+by+cz=d\)</span> egyenlet a térben egy <b>síkot</b> ír le, a rendszer megoldása pedig a három sík <b>közös pontjainak</b> halmaza. Az eseteket ugyanaz a három szó írja le:</p><table class="tt-table"><tr><th>A három sík</th><th>Közös rész</th><th>A rendszer</th></tr><tr><td>egyetlen pontban metszi egymást</td><td>egy pont</td><td>határozott</td></tr><tr><td>egy közös egyenesen megy át</td><td>egy egyenes</td><td>határozatlan</td></tr><tr><td>mindhárom egybeesik</td><td>egy sík</td><td>határozatlan</td></tr><tr><td>nincs mindháromnak közös pontja</td><td>üres halmaz</td><td>ellentmondásos</td></tr></table>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 620 205" width="620" height="205" role="img" aria-label="Három sík kölcsönös helyzete: egyetlen közös pont, közös egyenes, illetve nincs közös pont">
+      <polygon points="103.3,89.5 150.1,116.5 103.3,143.5 56.6,116.5" fill="#3b82f6" fill-opacity=".20" stroke="#3b82f6" stroke-width="1.4" stroke-linejoin="round"/>
+      <polygon points="103.3,89.5 56.6,116.5 56.6,62.5 103.3,35.5" fill="#f59e0b" fill-opacity=".20" stroke="#f59e0b" stroke-width="1.4" stroke-linejoin="round"/>
+      <polygon points="103.3,89.5 150.1,116.5 150.1,62.5 103.3,35.5" fill="#047857" fill-opacity=".20" stroke="#047857" stroke-width="1.4" stroke-linejoin="round"/>
+      <circle cx="103.3" cy="89.5" r="4.5" fill="#ef4444"/>
+      <text x="103.3" y="185.0" font-size="12" text-anchor="middle" fill="#0f172a">egyetlen közös pont</text>
+      <text x="103.3" y="200.0" font-size="12" text-anchor="middle" fill="#0f172a">→ határozott</text>
+      <polygon points="285.7,116.9 334.3,144.9 334.3,62.1 285.7,34.1" fill="#3b82f6" fill-opacity=".20" stroke="#3b82f6" stroke-width="1.4" stroke-linejoin="round"/>
+      <polygon points="334.3,116.9 285.7,144.9 285.7,62.1 334.3,34.1" fill="#f59e0b" fill-opacity=".20" stroke="#f59e0b" stroke-width="1.4" stroke-linejoin="round"/>
+      <polygon points="272.6,130.9 347.4,130.9 347.4,48.1 272.6,48.1" fill="#047857" fill-opacity=".20" stroke="#047857" stroke-width="1.4" stroke-linejoin="round"/>
+      <line x1="310.0" y1="141.7" x2="310.0" y2="37.3" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/>
+      <text x="310.0" y="185.0" font-size="12" text-anchor="middle" fill="#0f172a">közös egyenes</text>
+      <text x="310.0" y="200.0" font-size="12" text-anchor="middle" fill="#0f172a">→ határozatlan</text>
+      <polygon points="459.8,125.5 573.6,125.5 573.6,42.7 459.8,42.7" fill="#3b82f6" fill-opacity=".20" stroke="#3b82f6" stroke-width="1.4" stroke-linejoin="round"/>
+      <polygon points="560.6,121.0 503.7,140.8 503.7,58.0 560.6,38.2" fill="#f59e0b" fill-opacity=".20" stroke="#f59e0b" stroke-width="1.4" stroke-linejoin="round"/>
+      <polygon points="529.7,140.8 472.8,121.0 472.8,38.2 529.7,58.0" fill="#047857" fill-opacity=".20" stroke="#047857" stroke-width="1.4" stroke-linejoin="round"/>
+      <line x1="485.7" y1="125.5" x2="485.7" y2="42.7" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" opacity=".9"/>
+      <line x1="547.6" y1="125.5" x2="547.6" y2="42.7" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" opacity=".9"/>
+      <line x1="516.7" y1="136.3" x2="516.7" y2="53.5" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" opacity=".9"/>
+      <text x="516.7" y="185.0" font-size="12" text-anchor="middle" fill="#0f172a">három külön metszésvonal</text>
+      <text x="516.7" y="200.0" font-size="12" text-anchor="middle" fill="#0f172a">→ ellentmondásos</text>
+    </svg>
+    </div>
+    <p class="cap">A három eset térben. Balra a három sík <b>egyetlen pontban</b> találkozik (mint a szoba két fala és a mennyezet). Középen mindhárom ugyanazon az <b>egyenesen</b> megy át (mint egy nyitott könyv lapjai a gerincnél). Jobbra a három sík páronként metszi egymást, de a <b>három metszésvonal különböző</b> és párhuzamos — nincs olyan pont, amely mindhárom síkon rajta volna.</p>
+
+    <p>Fogj két füzetlapot és nézz körül a szobában — a három esetet kézzel is meg tudod mutatni. A szoba két fala és a mennyezet egyetlen <b>sarokban</b> találkozik: ez a határozott eset. Egy nyitott könyv lapjai a <b>gerincnél</b> futnak össze: ez a határozatlan. Egy háromoldalú hasáb három oldallapja pedig <b>háromszöget zár be</b> anélkül, hogy volna közös pontjuk: ez az ellentmondásos eset.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Nem elég a válasz — indokolni is kell</p>
+      <p>Ha egy feladat azt kérdezi, hogy „hány megoldása van a rendszernek”, a válaszhoz <b>hozzátartozik a bizonyíték</b>: melyik sorból, milyen sorművelet után lett <span class="math inline">\(0=0\)</span> vagy <span class="math inline">\(0=k\)</span>. Az önmagában álló „nincs megoldás” mondat nem megoldás, csak sejtés — akkor is, ha történetesen igaz.</p>
+    </div>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ A 0 = −4 hamis állítás, tehát nincs olyan számhármas, amely mindhárom egyenletet kielégítené: a rendszer ellentmondásos." data-nem="✘ A jobb oldalon nem nulla áll, tehát a 0 = −4 HAMIS: a rendszer ellentmondásos, egyetlen megoldása sincs. (Ha 0 = 0 lenne, akkor volna végtelen sok.)">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy háromismeretlenes rendszer eliminációja után az utolsó sor <span class="math inline">\(0=-4\)</span>. Hány megoldás van?</p>
+      <div class="opciok"><button>Nem lehet eldönteni a lépcsős alakból</button><button>Egy sincs</button><button>Végtelen sok</button><button>Pontosan egy — mégpedig <span class="math inline">\(z=-4\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-rendszerek.html#alap-15">🐕 Tér-eb-ugrás <span class="cimke">A 15–18</span></a><a class="sav bruno" href="feladatok-rendszerek.html#kozep-10">👑 Királyi Gárda <span class="cimke">K 10–13</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> Most már meg tudod mondani, <b>hány</b> megoldás van — de csak úgy, ha végigcsinálod az eliminációt. Van gyorsabb út is: egyetlen szám, amit az együtthatókból számolsz, és amely előre elárulja, hogy a rendszer határozott-e. Ehhez viszont új eszköz kell.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-gauss.html"><span class="irany">← Előző</span><span class="hova">A Gauss-eljárás</span></a>
+      <a class="kov" href="tananyag-determinans.html"><span class="irany">Következő →</span><span class="hova">A determináns</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
