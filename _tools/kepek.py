@@ -43,6 +43,9 @@ KAR = {
     'Véd Vilmos': ('ved_vilmos', True),
     'Véd-eb': ('ved_eb', False),
     'Mini-Vili': ('baby_vili', False),
+    'Éjjáró': ('ejjaro', False),
+    'Pajzs kapitány': ('pajzs_kapitany', False),
+    'Nada': ('nada', False),
 }
 
 ALT = {
@@ -80,6 +83,9 @@ ALT = {
     'Véd Vilmos': 'a negyedik falat áttörő zsoldos',
     'Véd-eb': 'a nyomravezető kutya',
     'Mini-Vili': 'a legkisebb variáns',
+    'Éjjáró': 'a trigonometrikus kör felderítője',
+    'Pajzs kapitány': 'a teljes csapat vezetője',
+    'Nada': 'a becslés és a korlátok mestere',
 }
 
 # <div class="brief"...><p>IKON <b>NÉV:</b>
