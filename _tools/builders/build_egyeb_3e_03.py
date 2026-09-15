@@ -479,3 +479,137 @@ oldal(**T, fajl="feladatok-hazi.html", cim="Vészterem",
       prev="index.html", prevc="Témakör Főhadiszállása",
       nxt="osszefoglalo.html", nxtc="Töréspont-térkép")
 print("✓ feladatok-hazi.html | Alap", len(DR_A), "Közép", len(DR_K), "Nehéz", len(DR_N))
+
+# ==================================================================== F5
+import os
+from fgy_common import w
+from tananyag_common import GYOKER
+
+
+def kartya(href, cim, le):
+    return ('      <a class="kartya" href="' + href + '">\n        <h3>' + w(cim) + '</h3>\n'
+            '        <p class="le">' + w(le) + '</p>\n      </a>')
+
+
+K = [
+ kartya("tananyag-ket-ismeretlen.html", "Két egyenlet, két ismeretlen",
+        "A lineáris rendszer és megoldása, behelyettesítés és kiküszöbölés, a két egyenes képe"),
+ kartya("tananyag-gauss.html", "A Gauss-eljárás",
+        "A három megengedett sorművelet, a lépcsős alak és a visszahelyettesítés"),
+ kartya("tananyag-megoldasok-szama.html", "Hány megoldás van?",
+        "Határozott, határozatlan és ellentmondásos rendszer; a $0=0$ és a $0=k$ sor"),
+ kartya("tananyag-determinans.html", "A determináns",
+        "Másod- és harmadrendű determináns, Sarrus-szabály, kifejtés és tulajdonságok"),
+ kartya("tananyag-cramer.html", "A Cramer-szabály — és a korlátja",
+        "A négy determináns, a $D\\ne0$ feltétel, és mit tesz a Gauss-eljárás, ha $D=0$"),
+ kartya("tananyag-szoveges-feladatok.html", "Szövegből rendszer",
+        "A négy lépés és a visszatérő feladattípusok: ár, út, keverés, életkor, számjegyek"),
+ kartya("feladatok-rendszerek.html", "🏋️ Egyenletrendszerek — feladatok",
+        "Kiképzési Adattár: Alap · Közép · Nehéz + Joker — Gauss, megoldásszám, szöveges feladatok"),
+ kartya("feladatok-determinans.html", "🏋️ A determináns és a Cramer-szabály — feladatok",
+        "Sarrus, kifejtés, determináns-egyenletek, Cramer-szabály és a $D=0$ eset"),
+ kartya("feladatok-hazi.html", "🕹️ Vészterem — házi feladatok",
+        "A teljes témakört lefedő rövid házi feladatsor, az ellenőrző előtti bemelegítésnek"),
+ kartya("terepkuldetes.html", "🎯 A Rendszer Hibája",
+        "Háromfázisú küldetés — jelzőkristályok, három kristálytípus és két ellentmondó jegyzőkönyv"),
+ kartya("osszefoglalo.html", "📇 Töréspont-térkép",
+        "Minden definíció, eljárás és tipikus csapda egy helyen — ellenőrző előtti átfutáshoz"),
+]
+
+INDEX = '''<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lineáris egyenletrendszerek | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">&#8730;</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <span class="itt">Lineáris egyenletrendszerek</span>
+</nav>
+<div class="hero">
+  <h1>Lineáris egyenletrendszerek</h1>
+  <p class="alcim">Két és három ismeretlen, a Gauss-eljárás, a determináns és a Cramer-szabály —
+  és a legnehezebb lépés: hogyan lesz egy szövegből egyenletrendszer.</p>
+  <div class="meta-sor"><span class="chip ora">11 óra</span><span class="statusz kesz">kész</span></div>
+  <div class="brief"><p>🔷 <b>Szektor 03 — A Rendszer Hibája.</b> Kiképző:
+  <b>Kanrak</b>. A Kristály-kamra mérőhálózata több ismeretlent rejt, és minden műszer csak
+  egy-egy <b>összefüggést</b> ad. Kanrak megtanítja, hogyan metsz ki a rendszer egyetlen
+  tiszta megoldást — és hogyan árulja el magát az a mérés, amely <b>ellentmond</b> a többinek.
+  Mindenben van egy töréspont; csak ki kell számolni.</p></div>
+</div>
+<main class="lap">
+  <div class="tartalom">
+    <h2>Tananyag</h2>
+
+    <h3>🧮 A rendszer — Kanrak</h3>
+    <div class="racs">
+''' + "\n".join(K[0:3]) + '''
+    </div>
+
+    <h3>🔲 A determináns — Kanrak</h3>
+    <div class="racs">
+''' + "\n".join(K[3:5]) + '''
+    </div>
+
+    <h3>📜 Alkalmazás — Kanrak</h3>
+    <div class="racs">
+''' + K[5] + '''
+    </div>
+
+    <h2>Feladatgyűjtemény</h2>
+    <div class="racs">
+''' + "\n".join(K[6:9]) + '''
+    </div>
+
+    <h2>Terepküldetés</h2>
+    <div class="racs">
+''' + K[9] + '''
+    </div>
+
+    <h2>Összefoglaló</h2>
+    <div class="racs">
+''' + K[10] + '''
+    </div>
+
+    <p class="le halvany"><b>Ajánlott sorrend:</b> a hat tananyag-egység sorban, közben a
+    „Gyakorolj!” sávok a két feladatgyűjteménybe visznek; a témakör végén a Töréspont-térkép,
+    majd A Rendszer Hibája küldetés. A Vészterem házi bármikor jöhet.</p>
+  </div>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\\\(', right:'\\\\)', display:false},
+    {left:'\\\\[', right:'\\\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+</body>
+</html>
+'''
+
+ut = os.path.join(GYOKER, T["tagozat"], T["mappa"], "index.html")
+open(ut, "w", encoding="utf-8").write(INDEX)
+print("✓ index.html")

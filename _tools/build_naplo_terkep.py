@@ -35,6 +35,7 @@ JELVENY = {
     "2e/04-trigonometrikus-fuggvenyek":           ("🌀", "A Fázisugrás", "Éjjáró · Szürke Janka"),
     "3e/01-poliederek":                           ("🔷", "A Kristálypára Kristályok", "Prizma"),
     "3e/02-forgastestek":                         ("🔷", "Az Átalakulás Kamrája", "Medúza"),
+    "3e/03-linearis-rendszerek":                  ("🔷", "A Rendszer Hibája", "Kanrak"),
 }
 
 H1 = re.compile(r"<h1[^>]*>(.*?)</h1>", re.S)
