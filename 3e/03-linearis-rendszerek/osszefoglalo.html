@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Töréspont-térkép | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="digitalis">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Lineáris egyenletrendszerek</a> ›
+  <span class="itt">Töréspont-térkép</span>
+</nav>
+<div class="hero">
+  <h1>Töréspont-térkép — a témakör egy lapon</h1>
+  <p class="alcim">A lineáris egyenletrendszerek minden definíciója, eljárása és tipikus csapdája egy helyen — ismétléshez, ellenőrző előtti átfutáshoz, nyomtatáshoz.</p>
+  <div class="meta-sor"><span class="chip ora">összefoglaló</span><span class="chip">A Rendszer Hibája · összefoglaló</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📇 A rendszer és a megoldása</h2>
+
+    <p>Egy egyenlet <b>lineáris</b>, ha minden ismeretlen legfeljebb az <b>első hatványon</b> szerepel, az ismeretlenek nem állnak <b>szorzatban</b> egymással, és egyik sincs nevezőben vagy gyökjel alatt (<a href="tananyag-ket-ismeretlen.html#def-rendszer">→</a>). A rendszer <b>megoldása</b> minden olyan számpár <span class="math inline">\((x;y)\)</span> — három ismeretlennél számhármas <span class="math inline">\((x;y;z)\)</span> —, amely <b>mindegyik</b> egyenletet igazzá teszi.</p><table class="tt-table"><tr><th>Módszer</th><th>A lényege</th><th>Mikor érdemes</th></tr><tr><td><b>behelyettesítés</b></td><td>az egyik egyenletből kifejezünk egy ismeretlent, és beírjuk a másikba</td><td>ha valamelyik együttható <span class="math inline">\(1\)</span> vagy <span class="math inline">\(-1\)</span></td></tr><tr><td><b>kiküszöbölés</b></td><td>az egyenleteket úgy szorozzuk, hogy egy ismeretlen együtthatói egyenlők legyenek, majd kivonjuk (vagy összeadjuk) őket</td><td>ha az együtthatók könnyen egyenlővé tehetők</td></tr><tr><td><b>Gauss-eljárás</b></td><td>lépcsős alak, majd visszahelyettesítés</td><td>mindig működik; három ismeretlennél általában ez a legrövidebb</td></tr><tr><td><b>Cramer-szabály</b></td><td>determinánsok hányadosa</td><td>ha <span class="math inline">\(D\ne0\)</span>, főleg ha csak egy ismeretlen kell</td></tr></table><p><b>Két ismeretlen, két egyenes</b> (<a href="tananyag-ket-ismeretlen.html#tetel-geometriai-jelentes">→</a>):</p><table class="tt-table"><tr><th>A két egyenes</th><th>Megoldások száma</th><th>Példa</th></tr><tr><td>metszi egymást (<span class="math inline">\(D\ne0\)</span>)</td><td>pontosan egy</td><td><span class="math inline">\(x+y=5\)</span>, <span class="math inline">\(x-y=1\)</span> → <span class="math inline">\((3;2)\)</span></td></tr><tr><td>párhuzamos, nem esik egybe</td><td>nincs</td><td><span class="math inline">\(x+y=5\)</span>, <span class="math inline">\(2x+2y=7\)</span></td></tr><tr><td>egybeesik</td><td>végtelen sok</td><td><span class="math inline">\(x+y=5\)</span>, <span class="math inline">\(2x+2y=10\)</span></td></tr></table><p>✅ <b>Ellenőrzés:</b> a kapott értékeket <b>minden</b> egyenletbe vissza kell helyettesíteni, nem csak abba, amelyikből kifejeztük.</p>
+
+    <h2 id="s1">A Gauss-eljárás</h2>
+
+    <p>Jelölés: <span class="math inline">\(S_1\)</span>, <span class="math inline">\(S_2\)</span>, <span class="math inline">\(S_3\)</span> az első, a második és a harmadik egyenlet (sor). <b>A három megengedett lépés</b> — az így kapott rendszer az eredetivel ekvivalens, a kettő közé <span class="math inline">\(\sim\)</span> jelet írunk (<a href="tananyag-gauss.html#def-ekvivalens-lepesek">→</a>):</p><ol><li>két egyenlet <b>felcserélése</b>;</li><li>egy egyenlet szorzása <b>nem nulla</b> számmal;</li><li>egy egyenlethez egy másik egyenlet <b>számszorosának hozzáadása</b> — például <span class="math inline">\(S_2-2S_1\)</span>: a második egyenletből kivonjuk az első kétszeresét.</li></ol><p><b>A menet</b> (<a href="tananyag-gauss.html#tetel-gauss">→</a>):</p><ol><li><b>Elimináció:</b> az első egyenlet segítségével kiejtjük az első ismeretlent (általában <span class="math inline">\(x\)</span>-et) a második és a harmadik egyenletből, majd a második egyenlettel a következőt a harmadikból — ez a <b>lépcsős alak</b>. Ha a kiejtéshez használt egyenletből éppen hiányzik az adott ismeretlen, előbb cseréljünk sort.</li><li><b>Visszahelyettesítés:</b> alulról fölfelé, <span class="math inline">\(z\ \to\ y\ \to\ x\)</span>.</li></ol><p><b>Rendezett írásmód:</b> a lépéseket egymás alá, a sorműveletet a sor mellé írjuk. A sorművelet a <b>jobb oldalra</b> is vonatkozik, és a hiányzó ismeretlen <b>együtthatója <span class="math inline">\(0\)</span></b> (a táblázatba nullát írunk, nem üres helyet). Ha egy egyenlet minden együtthatója és a jobb oldala is osztható ugyanazzal a számmal, előbb egyszerűsítsünk.</p>
+
+    <h2 id="s2">Hány megoldás van?</h2>
+
+    <table class="tt-table"><tr><th>A rendszer</th><th>Megoldásainak száma</th><th>A lépcsős alakban</th></tr><tr><td><b>határozott</b></td><td>pontosan egy</td><td>nem keletkezik sem <span class="math inline">\(0=0\)</span>, sem <span class="math inline">\(0=k\)</span> sor</td></tr><tr><td><b>határozatlan</b></td><td>végtelen sok</td><td><span class="math inline">\(0=0\)</span> sor keletkezik, és nincs <span class="math inline">\(0=k\)</span> sor</td></tr><tr><td><b>ellentmondásos</b></td><td>nincs</td><td><span class="math inline">\(0=k\)</span> sor keletkezik, ahol <span class="math inline">\(k\ne0\)</span></td></tr></table><p class="cap">A táblázat az olyan rendszerekre vonatkozik, amelyekben ugyanannyi egyenlet van, ahány ismeretlen — nálunk mindig ez a helyzet.</p><p>A <span class="math inline">\(0=0\)</span> <b>mindig igaz</b>, ezért nem szűkít semmit: a sor elhagyható. A <span class="math inline">\(0=k\)</span> (<span class="math inline">\(k\ne0\)</span>) <b>soha nem igaz</b>: a rendszer ellentmondásos, és itt meg is állhatunk (<a href="tananyag-megoldasok-szama.html#tetel-felismeres">→</a>). A válaszhoz az indoklás is hozzátartozik: melyik sorművelet után lett <span class="math inline">\(0=0\)</span> vagy <span class="math inline">\(0=k\)</span>.</p><p><b>A határozatlan rendszer megoldásai:</b> az az ismeretlen lesz <b>szabad</b> (jelöljük <span class="math inline">\(t\)</span>-vel), amelyiknek az értéke a lépcsős alakból nem jön ki egyértelműen — többnyire a <span class="math inline">\(z\)</span>. A többi ismeretlent <span class="math inline">\(t\)</span>-vel fejezzük ki, például <span class="math inline">\((x;y;z)=(2t-3;\ 5-3t;\ t)\)</span>, ahol <span class="math inline">\(t\)</span> tetszőleges valós szám. Ha a lépcsős alakban csak <b>egyetlen</b> nem nulla sor marad, két ismeretlen is szabad.</p><p><b>Három ismeretlen, három sík:</b> a rendszer megoldása a három sík közös pontjainak halmaza — egy pont (határozott), egy egyenes vagy egy sík (határozatlan), vagy üres (ellentmondásos).</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 620 205" width="620" height="205" role="img" aria-label="Három sík kölcsönös helyzete: egyetlen közös pont, közös egyenes, illetve nincs közös pont">
+      <polygon points="103.3,89.5 150.1,116.5 103.3,143.5 56.6,116.5" fill="#3b82f6" fill-opacity=".20" stroke="#3b82f6" stroke-width="1.4" stroke-linejoin="round"/>
+      <polygon points="103.3,89.5 56.6,116.5 56.6,62.5 103.3,35.5" fill="#f59e0b" fill-opacity=".20" stroke="#f59e0b" stroke-width="1.4" stroke-linejoin="round"/>
+      <polygon points="103.3,89.5 150.1,116.5 150.1,62.5 103.3,35.5" fill="#047857" fill-opacity=".20" stroke="#047857" stroke-width="1.4" stroke-linejoin="round"/>
+      <circle cx="103.3" cy="89.5" r="4.5" fill="#ef4444"/>
+      <text x="103.3" y="185.0" font-size="12" text-anchor="middle" fill="#0f172a">egyetlen közös pont</text>
+      <text x="103.3" y="200.0" font-size="12" text-anchor="middle" fill="#0f172a">→ határozott</text>
+      <polygon points="285.7,116.9 334.3,144.9 334.3,62.1 285.7,34.1" fill="#3b82f6" fill-opacity=".20" stroke="#3b82f6" stroke-width="1.4" stroke-linejoin="round"/>
+      <polygon points="334.3,116.9 285.7,144.9 285.7,62.1 334.3,34.1" fill="#f59e0b" fill-opacity=".20" stroke="#f59e0b" stroke-width="1.4" stroke-linejoin="round"/>
+      <polygon points="272.6,130.9 347.4,130.9 347.4,48.1 272.6,48.1" fill="#047857" fill-opacity=".20" stroke="#047857" stroke-width="1.4" stroke-linejoin="round"/>
+      <line x1="310.0" y1="141.7" x2="310.0" y2="37.3" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/>
+      <text x="310.0" y="185.0" font-size="12" text-anchor="middle" fill="#0f172a">közös egyenes</text>
+      <text x="310.0" y="200.0" font-size="12" text-anchor="middle" fill="#0f172a">→ határozatlan</text>
+      <polygon points="459.8,125.5 573.6,125.5 573.6,42.7 459.8,42.7" fill="#3b82f6" fill-opacity=".20" stroke="#3b82f6" stroke-width="1.4" stroke-linejoin="round"/>
+      <polygon points="560.6,121.0 503.7,140.8 503.7,58.0 560.6,38.2" fill="#f59e0b" fill-opacity=".20" stroke="#f59e0b" stroke-width="1.4" stroke-linejoin="round"/>
+      <polygon points="529.7,140.8 472.8,121.0 472.8,38.2 529.7,58.0" fill="#047857" fill-opacity=".20" stroke="#047857" stroke-width="1.4" stroke-linejoin="round"/>
+      <line x1="485.7" y1="125.5" x2="485.7" y2="42.7" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" opacity=".9"/>
+      <line x1="547.6" y1="125.5" x2="547.6" y2="42.7" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" opacity=".9"/>
+      <line x1="516.7" y1="136.3" x2="516.7" y2="53.5" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round" opacity=".9"/>
+      <text x="516.7" y="185.0" font-size="12" text-anchor="middle" fill="#0f172a">három külön metszésvonal</text>
+      <text x="516.7" y="200.0" font-size="12" text-anchor="middle" fill="#0f172a">→ ellentmondásos</text>
+    </svg>
+    </div>
+    <p class="cap">Egy-egy példa a három esetre: balra a három sík egyetlen pontban találkozik, középen egy közös egyenesen megy át, jobbra a három metszésvonal különböző és párhuzamos. (Ellentmondásos a rendszer akkor is, ha két sík párhuzamos.)</p>
+
+    <h2 id="s3">A determináns</h2>
+
+    <p><b>Másodrendű</b> (<a href="tananyag-determinans.html#def-determinans">→</a>): a főátló szorzatából kivonjuk a mellékátlóét:</p><span class="math display">\[\begin{vmatrix}a&b\\ c&d\end{vmatrix}=ad-bc,\qquad\text{például}\quad \begin{vmatrix}2&1\\ 3&4\end{vmatrix}=8-3=5.\]</span><p><b>Harmadrendű, Sarrus-szabály</b> (<a href="tananyag-determinans.html#tetel-sarrus">→</a>): a determináns mellé újra leírjuk az első két oszlopot; a három <b>lefelé</b> haladó átló szorzatainak összegéből kivonjuk a három <b>fölfelé</b> haladóét. Kizárólag <span class="math inline">\(3\times3\)</span>-as determinánsra érvényes.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 470 250" width="470" height="250" role="img" aria-label="A Sarrus-séma általánosan: az első két oszlop megismételve, a három lefelé haladó átló pozitív, a három fölfelé haladó negatív">
+      <defs><marker id="nyil-sarrus-p-ossz" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#047857"/></marker><marker id="nyil-sarrus-m-ossz" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#ef4444"/></marker></defs>
+      <rect x="261.0" y="44.0" width="104.0" height="132.0" fill="#f1f5f9"/>
+      <line x1="105.0" y1="44.0" x2="105.0" y2="176.0" stroke="#0f172a" stroke-width="1.8"/>
+      <line x1="261.0" y1="44.0" x2="261.0" y2="176.0" stroke="#0f172a" stroke-width="1.8"/>
+      <line x1="365.0" y1="44.0" x2="365.0" y2="176.0" stroke="#475569" stroke-width="1" stroke-dasharray="4 3"/>
+      <line x1="144.0" y1="77.0" x2="222.0" y2="143.0" stroke="#047857" stroke-width="1.6" opacity=".85" marker-end="url(#nyil-sarrus-p-ossz)"/>
+      <line x1="196.0" y1="77.0" x2="274.0" y2="143.0" stroke="#047857" stroke-width="1.6" opacity=".85" marker-end="url(#nyil-sarrus-p-ossz)"/>
+      <line x1="248.0" y1="77.0" x2="326.0" y2="143.0" stroke="#047857" stroke-width="1.6" opacity=".85" marker-end="url(#nyil-sarrus-p-ossz)"/>
+      <line x1="144.0" y1="143.0" x2="222.0" y2="77.0" stroke="#ef4444" stroke-width="1.6" opacity=".85" marker-end="url(#nyil-sarrus-m-ossz)"/>
+      <line x1="196.0" y1="143.0" x2="274.0" y2="77.0" stroke="#ef4444" stroke-width="1.6" opacity=".85" marker-end="url(#nyil-sarrus-m-ossz)"/>
+      <line x1="248.0" y1="143.0" x2="326.0" y2="77.0" stroke="#ef4444" stroke-width="1.6" opacity=".85" marker-end="url(#nyil-sarrus-m-ossz)"/>
+      <circle cx="131.0" cy="66.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="131.0" y="71.0" font-size="15" text-anchor="middle" fill="#0f172a">a<tspan baseline-shift='sub' font-size='10'>11</tspan></text>
+      <circle cx="183.0" cy="66.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="183.0" y="71.0" font-size="15" text-anchor="middle" fill="#0f172a">a<tspan baseline-shift='sub' font-size='10'>12</tspan></text>
+      <circle cx="235.0" cy="66.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="235.0" y="71.0" font-size="15" text-anchor="middle" fill="#0f172a">a<tspan baseline-shift='sub' font-size='10'>13</tspan></text>
+      <circle cx="287.0" cy="66.0" r="14" fill="#f1f5f9" opacity=".95"/>
+      <text x="287.0" y="71.0" font-size="15" text-anchor="middle" fill="#475569">a<tspan baseline-shift='sub' font-size='10'>11</tspan></text>
+      <circle cx="339.0" cy="66.0" r="14" fill="#f1f5f9" opacity=".95"/>
+      <text x="339.0" y="71.0" font-size="15" text-anchor="middle" fill="#475569">a<tspan baseline-shift='sub' font-size='10'>12</tspan></text>
+      <circle cx="131.0" cy="110.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="131.0" y="115.0" font-size="15" text-anchor="middle" fill="#0f172a">a<tspan baseline-shift='sub' font-size='10'>21</tspan></text>
+      <circle cx="183.0" cy="110.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="183.0" y="115.0" font-size="15" text-anchor="middle" fill="#0f172a">a<tspan baseline-shift='sub' font-size='10'>22</tspan></text>
+      <circle cx="235.0" cy="110.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="235.0" y="115.0" font-size="15" text-anchor="middle" fill="#0f172a">a<tspan baseline-shift='sub' font-size='10'>23</tspan></text>
+      <circle cx="287.0" cy="110.0" r="14" fill="#f1f5f9" opacity=".95"/>
+      <text x="287.0" y="115.0" font-size="15" text-anchor="middle" fill="#475569">a<tspan baseline-shift='sub' font-size='10'>21</tspan></text>
+      <circle cx="339.0" cy="110.0" r="14" fill="#f1f5f9" opacity=".95"/>
+      <text x="339.0" y="115.0" font-size="15" text-anchor="middle" fill="#475569">a<tspan baseline-shift='sub' font-size='10'>22</tspan></text>
+      <circle cx="131.0" cy="154.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="131.0" y="159.0" font-size="15" text-anchor="middle" fill="#0f172a">a<tspan baseline-shift='sub' font-size='10'>31</tspan></text>
+      <circle cx="183.0" cy="154.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="183.0" y="159.0" font-size="15" text-anchor="middle" fill="#0f172a">a<tspan baseline-shift='sub' font-size='10'>32</tspan></text>
+      <circle cx="235.0" cy="154.0" r="14" fill="#fff" opacity=".95"/>
+      <text x="235.0" y="159.0" font-size="15" text-anchor="middle" fill="#0f172a">a<tspan baseline-shift='sub' font-size='10'>33</tspan></text>
+      <circle cx="287.0" cy="154.0" r="14" fill="#f1f5f9" opacity=".95"/>
+      <text x="287.0" y="159.0" font-size="15" text-anchor="middle" fill="#475569">a<tspan baseline-shift='sub' font-size='10'>31</tspan></text>
+      <circle cx="339.0" cy="154.0" r="14" fill="#f1f5f9" opacity=".95"/>
+      <text x="339.0" y="159.0" font-size="15" text-anchor="middle" fill="#475569">a<tspan baseline-shift='sub' font-size='10'>32</tspan></text>
+      <line x1="111.0" y1="187.0" x2="135.0" y2="199.0" stroke="#047857" stroke-width="1.6" marker-end="url(#nyil-sarrus-p-ossz)"/>
+      <text x="145.0" y="198.0" font-size="12" fill="#0f172a">lefelé: <tspan font-weight="600">+</tspan></text>
+      <line x1="235.0" y1="199.0" x2="259.0" y2="187.0" stroke="#ef4444" stroke-width="1.6" marker-end="url(#nyil-sarrus-m-ossz)"/>
+      <text x="269.0" y="198.0" font-size="12" fill="#0f172a">fölfelé: <tspan font-weight="600">−</tspan></text>
+    </svg>
+    </div>
+    <p class="cap">A Sarrus-séma: a zöld átlók szorzatai pozitív, a pirosaké negatív előjellel adódnak hozzá.</p>
+
+    <p><b>Kifejtés sor vagy oszlop szerint</b> (<a href="tananyag-determinans.html#tetel-kifejtes">→</a>): a kiválasztott sor (oszlop) <b>mindhárom elemét</b> megszorozzuk azzal a másodrendű <b>aldeterminánssal</b>, amely az elem sorának és oszlopának elhagyása után marad, és a szorzatokat a sakktábla-előjelek szerint összeadjuk:</p><span class="math display">\[\begin{matrix}+&-&+\\ -&+&-\\ +&-&+\end{matrix}\]</span><p>Azt a sort vagy oszlopot válasszuk, amelyikben a <b>legtöbb nulla</b> van.</p><p><b>Mikor nulla a determináns</b> (<a href="tananyag-determinans.html#tetel-tulajdonsagok">→</a>)? Ha valamelyik sora (oszlopa) csupa nulla; ha van két egyenlő vagy arányos sora (oszlopa); vagy ha egy sora (oszlopa) a többi sor (oszlop) számszorosainak összege.</p><table class="tt-table"><tr><th>Lépés</th><th>A determináns</th></tr><tr><td>két sor (oszlop) cseréje</td><td><b>előjelet vált</b></td></tr><tr><td>egy sor szorzása <span class="math inline">\(k\)</span>-val</td><td><span class="math inline">\(k\)</span>-szorosára <b>változik</b></td></tr><tr><td>egy sorhoz egy másik sor számszorosának hozzáadása</td><td><b>nem változik</b></td></tr></table><p>⚠️ A Gauss-eljárásban a sorcsere és a sor szorzása ártalmatlan — a determinánsnál nem.</p>
+
+    <h2 id="s4">A Cramer-szabály</h2>
+
+    <p><b>Előbb rendezzünk:</b> minden egyenlet <span class="math inline">\(ax+by+cz=d\)</span> alakú legyen, az ismeretlenek mindenhol ugyanabban a sorrendben.</p><p><b>A determinánsok:</b> <span class="math inline">\(D\)</span> az együtthatókból áll; a <span class="math inline">\(D_x\)</span>, <span class="math inline">\(D_y\)</span>, <span class="math inline">\(D_z\)</span> determinánsban az adott ismeretlen <b>oszlopa helyére</b> a jobb oldalak oszlopa kerül — <span class="math inline">\(D_y\)</span>-nál tehát a <b>második</b> oszlop helyére. (Három ismeretlennél négy, kettőnél három determináns kell.)</p><p><b>A szabály</b> (<a href="tananyag-cramer.html#tetel-cramer">→</a>): egy <span class="math inline">\(n\)</span> egyenletből álló, <span class="math inline">\(n\)</span> ismeretlenes rendszer <b>akkor és csak akkor</b> határozott, ha <span class="math inline">\(D\ne0\)</span>, és ekkor</p><span class="math display">\[x=\frac{D_x}{D},\qquad y=\frac{D_y}{D},\qquad z=\frac{D_z}{D}.\]</span><p>Példa: a <span class="math inline">\(2x+y=5\)</span>, <span class="math inline">\(x-y=1\)</span> rendszernél <span class="math inline">\(D=-3\)</span>, <span class="math inline">\(D_x=-6\)</span> és <span class="math inline">\(D_y=-3\)</span>, így a megoldás <span class="math inline">\((x;y)=(2;1)\)</span>.</p><p>⛔ <b>A korlát</b> (<a href="tananyag-cramer.html#tetel-cramer-korlat">→</a>): ha <span class="math inline">\(D=0\)</span>, a szabály <b>nem alkalmazható</b>. A rendszer ilyenkor határozatlan <b>vagy</b> ellentmondásos — hogy melyik, azt a Gauss-eljárás dönti el. A <span class="math inline">\(D=0\)</span> nem azt jelenti, hogy „nincs megoldás”, hanem hogy nincs <b>pontosan egy</b>.</p><table class="tt-table"><tr><th></th><th>Cramer-szabály</th><th>Gauss-eljárás</th></tr><tr><td><b>Mikor működik</b></td><td>csak ha <span class="math inline">\(D\ne0\)</span></td><td>mindig</td></tr><tr><td><b>Mit ad</b></td><td>a megoldást, képlettel</td><td>a megoldást <b>és</b> a megoldások számát</td></tr><tr><td><b>Mikor gyors</b></td><td>ha csak <b>egy</b> ismeretlen kell</td><td>ha az együtthatók között sok az <span class="math inline">\(1\)</span> és a <span class="math inline">\(0\)</span></td></tr></table>
+
+    <h2 id="s5">Szövegből rendszer</h2>
+
+    <p><b>A négy lépés</b> (<a href="tananyag-szoveges-feladatok.html#tetel-negy-lepes">→</a>):</p><ol><li><b>Mi az ismeretlen?</b> Írd le szavakkal is, mértékegységgel: „legyen <span class="math inline">\(x\)</span> egy toll ára dinárban”.</li><li>Az adatokat közlő <b>mondatokból</b> lesznek az egyenletek — annyi egyenlet kell, ahány ismeretlen, és egyik se következzen a többiből.</li><li><b>Oldd meg</b> a rendszert a legkényelmesebb módszerrel.</li><li><b>Ellenőrizz a szöveggel</b> (ésszerű-e: pozitív-e a darabszám, számjegy-e a számjegy), és olvasd vissza a kérdést: arra válaszolj, amit kérdeztek.</li></ol><table class="tt-table"><tr><th>Típus</th><th>Az ismeretlenek</th><th>Az egyenletek forrása</th></tr><tr><td><b>mennyiség — egységár — összérték</b></td><td>az egységárak</td><td>minden vásárlás egy egyenlet: <span class="math inline">\(\text{darab}\cdot\text{ár}\)</span> tagok összege</td></tr><tr><td><b>sebesség — idő — út</b></td><td>a sebességek</td><td>minden szakaszra <span class="math inline">\(s=v\cdot t\)</span>; folyón lefelé <span class="math inline">\(v+v_f\)</span>, fölfelé <span class="math inline">\(v-v_f\)</span></td></tr><tr><td><b>keverés</b></td><td>a keverendő mennyiségek</td><td>egy egyenlet az össztömegre, egy a hatóanyagra</td></tr><tr><td><b>életkorok</b></td><td>a mai életkorok</td><td>„<span class="math inline">\(n\)</span> év múlva” minden életkorhoz <span class="math inline">\(+n\)</span>, „<span class="math inline">\(n\)</span> évvel ezelőtt” <span class="math inline">\(-n\)</span></td></tr><tr><td><b>számjegyek</b></td><td>a számjegyek</td><td>kétjegyű szám: <span class="math inline">\(10a+b\)</span> (felcserélve <span class="math inline">\(10b+a\)</span>); háromjegyű: <span class="math inline">\(100a+10b+c\)</span></td></tr></table><p>⚠️ <b>Az arány iránya:</b> ha <span class="math inline">\(y\)</span> a közepes, <span class="math inline">\(z\)</span> a nagy darabok száma, akkor a „közepesből kétszer annyi van, mint nagyból” mondat <span class="math inline">\(y=2z\)</span>, nem <span class="math inline">\(2y=z\)</span>. Ha bizonytalan vagy, próbáld ki számokkal.</p>
+
+    <h2 id="s6">A nyolc leggyakoribb hiba</h2>
+
+    <div class="brief"><p>🚨 <b>1)</b> A megoldás egyetlen szám — pedig számpár vagy számhármas kell, és minden egyenletbe vissza kell helyettesíteni. &nbsp; <b>2)</b> Egy egyenletet <b>nullával</b> szoroznak, vagy két egyenletet <b>összeszoroznak</b> — egyik sem ekvivalens lépés. &nbsp; <b>3)</b> A sorműveletnél elmarad a <b>jobb oldal</b>, vagy a hiányzó ismeretlen együtthatója helyére nem <span class="math inline">\(0\)</span> kerül. &nbsp; <b>4)</b> A <span class="math inline">\(0=0\)</span> sort „nincs megoldás”-nak olvassák — fordítva van: a <span class="math inline">\(0=0\)</span> sor elhagyható, és ha nincs <span class="math inline">\(0=k\)</span> sor, <b>végtelen sok</b> megoldást jelez; a <span class="math inline">\(0=k\)</span> jelzi az ellentmondást. &nbsp; <b>5)</b> A Sarrus-szabályt <span class="math inline">\(4\times4\)</span>-es determinánsra is alkalmazzák, a kifejtésnél elhagyják az <b>előjelet</b>, vagy elfelejtik, hogy a <b>sorcsere</b> előjelet vált. &nbsp; <b>6)</b> <span class="math inline">\(D=0\)</span> mellett „<span class="math inline">\(\frac{0}{0}=1\)</span>” — nullával nem osztunk, a <span class="math inline">\(\frac{0}{0}\)</span> nem szám, a Cramer-szabály ilyenkor nem alkalmazható. &nbsp; <b>7)</b> A helyettesítési determinánsban <b>rossz oszlopot</b> cserélnek: <span class="math inline">\(D_y\)</span>-nál a második oszlop helyére kerül a jobb oldalak oszlopa. &nbsp; <b>8)</b> A szöveges feladatnál nem a <b>kérdésre</b> válaszolnak: ha <span class="math inline">\(x\)</span> egy toll, <span class="math inline">\(y\)</span> egy füzet ára, és két toll meg három füzet együttes ára a kérdés, akkor a válasz <span class="math inline">\(2x+3y\)</span>, nem <span class="math inline">\(x\)</span>.</p></div>
+
+    <h2 id="s7">Mit hol találsz?</h2>
+
+    <div class="brief"><p>📚 <b>Tananyag:</b> <a href="tananyag-ket-ismeretlen.html">két egyenlet, két ismeretlen</a> · <a href="tananyag-gauss.html">a Gauss-eljárás</a> · <a href="tananyag-megoldasok-szama.html">hány megoldás van?</a> · <a href="tananyag-determinans.html">a determináns</a> · <a href="tananyag-cramer.html">a Cramer-szabály</a> · <a href="tananyag-szoveges-feladatok.html">szövegből rendszer</a>.</p><p>🎯 <b>Gyakorlás:</b> <a href="feladatok-rendszerek.html">egyenletrendszerek</a> · <a href="feladatok-determinans.html">a determináns és a Cramer-szabály</a> — majd indulj a <a href="terepkuldetes.html">Rendszer Hibájának</a> felderítésére!</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-determinans.html"><span class="irany">← Előző</span><span class="hova">Feladatok — a determináns és a Cramer-szabály</span></a>
+      <a class="kov" href="terepkuldetes.html"><span class="irany">Következő →</span><span class="hova">A Rendszer Hibája</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

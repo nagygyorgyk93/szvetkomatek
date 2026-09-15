@@ -178,7 +178,7 @@ ALAP = [
   f"$D={dm('2&-1&4', '1&0&3', '-3&2&-1')}$, "
   f"$D_y={dm('2&5&4', '1&-2&3', '-3&7&-1')}$, "
   f"$D_z={dm('2&-1&5', '1&0&-2', '-3&2&7')}$. "
-  "A második egyenletből hiányzó $y$ helyére $0$ kerül."),
+  "A második egyenletből hiányzó $y$ együtthatója $0$."),
 
  ("Oldd meg a Cramer-szabállyal!" + rs(r"x+y+z&=6", r"2x+y+3z&=13", r"-x+5y-2z&=3"), None,
   "$D=-5$, $D_x=-5$, $D_y=-10$, $D_z=-15$, tehát $(x;y;z)=(1;2;3)$."),
