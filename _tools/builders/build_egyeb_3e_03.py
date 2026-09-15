@@ -349,3 +349,133 @@ lap(**T, fajl="terepkuldetes.html", cim="A Rendszer Hibája",
     elozo=("osszefoglalo.html", "Töréspont-térkép"),
     kovetkezo=("index.html", "Témakör Főhadiszállása"))
 print("✓ terepkuldetes.html")
+
+# ==================================================================== F6h
+from fgy_common import cards, oldal
+from sympy import Rational as Q
+
+a_, b_ = symbols('a b')
+L2 = lambda *e: linsolve(list(e), [x, y])
+L3 = lambda *e: linsolve(list(e), [x, y, z])
+chk("DR-a1", L2(3*x + y - 11, x - 2*y + 1), FiniteSet((3, 2)))
+chk("DR-a2", L2(x + y - 1300, x - y - 700), FiniteSet((1000, 300)))
+chk("DR-a3", L2(x + y - 20, 4*x + 2*y - 64), FiniteSet((12, 8)))
+chk("DR-a4", L3(x + y + z - 6, x + 2*y + 3*z - 13, 2*x + y - z - 2), FiniteSet((2, 1, 3)))
+chk("DR-a5", (Matrix([[5, 2], [3, 4]]).det(), Matrix([[1, 2, 0], [3, 1, 2], [0, 1, 4]]).det()), (14, -22))
+chk("DR-a6", (Matrix([[4, -1], [2, 3]]).det(), Matrix([[5, -1], [13, 3]]).det(),
+              Matrix([[4, 5], [2, 13]]).det()), (14, 28, 42))
+chk("DR-a7b", L2(x - 2*y - 3, -2*x + 4*y + 6), FiniteSet((2*y + 3, y)))
+chk("DR-a8", L2(x + y - 40, 3*x - 5*y), FiniteSet((25, 15)))
+chk("DR-k1", L3(2*x + 3*y - z + 3, 3*x - 2*y + 2*z - 9, 4*x + y + 3*z - 9), FiniteSet((1, -1, 2)))
+chk("DR-k2", L3(x + y + z - 6, x - y + z - 2, 2*x + 2*z - 8), FiniteSet((4 - z, 2, z)))
+_B = Matrix([[2, -1, 1], [1, 1, -1], [3, 2, 1]])
+_By = _B.copy()
+_By[:, 1] = Matrix([3, 0, 10])
+chk("DR-k3", (_B.det(), _By.det()), (9, 18))
+chk("DR-k4", L3(2*x + y + z - 640, x + 2*y + z - 560, x + y + 2*z - 520), FiniteSet((210, 130, 90)))
+chk("DR-k5", L2(x + y - 600, Q(2, 5)*x + Q(1, 10)*y - 120), FiniteSet((200, 400)))
+chk("DR-k6", L2(x + y - 2, 2*x + 2*y - 5), EmptySet)
+chk("DR-n1", L3(x + y + z - 45, x - y - 5, 2*x + z - 50), FiniteSet((25 - z/2, 20 - z/2, z)))
+chk("DR-n1-pl", (25 - Q(10, 2), 20 - Q(10, 2), 25 - Q(20, 2), 20 - Q(20, 2)), (20, 15, 15, 10))
+chk("DR-n2", L3(x + y + z - 36, x + 2*y - z - 15, 2*x + y - z - 13), FiniteSet((9, 11, 16)))
+chk("DR-n3", L3(x + y + z - 16, x - 2*y, 99*(x - z) - 396), FiniteSet((8, 4, 4)))
+chk("DR-n3-ell", 844 - 448, 396)
+assert not E, E
+print("sympy önteszt (Vészterem): OK")
+
+
+def rs(*sorok):
+    return "$$\\begin{aligned}" + "\\\\".join(sorok) + "\\end{aligned}$$"
+
+
+def dm(*sorok):
+    return "\\begin{vmatrix}" + "\\\\".join(sorok) + "\\end{vmatrix}"
+
+
+DR_A = [
+ ("Oldd meg a rendszert!" + rs(r"3x+y&=11", r"x-2y&=-1"), None, "$(x;y)=(3;2)$"),
+ ("Egy könyv és egy füzet együtt $1300$ dinárba kerül, és a könyv $700$ dinárral drágább a "
+  "füzetnél. Mennyibe kerül a könyv, és mennyibe a füzet?", None,
+  "A könyv $1000$, a füzet $300$ dinárba."),
+ ("Egy parkolóban autók és motorok állnak, összesen $20$ jármű, és együtt $64$ kerekük van. "
+  "Hány autó és hány motor áll a parkolóban?", None,
+  "$12$ autó és $8$ motor."),
+ ("Oldd meg a Gauss-eljárással!" + rs(r"x+y+z&=6", r"x+2y+3z&=13", r"2x+y-z&=2"), None,
+  "$(x;y;z)=(2;1;3)$"),
+ ("Számítsd ki a determinánsokat!", [f"${dm('5&2', '3&4')}$", f"${dm('1&2&0', '3&1&2', '0&1&4')}$"],
+  ["$14$", "$-22$"], True),
+ ("Oldd meg a Cramer-szabállyal!" + rs(r"4x-y&=5", r"2x+3y&=13"), None,
+  "$D=14$, $D_x=28$, $D_y=42$, tehát $(x;y)=(2;3)$."),
+ ("Hány megoldása van a rendszernek?",
+  ["A Gauss-eljárás végén egy háromismeretlenes rendszer lépcsős alakjának utolsó sora $0=-3$ lett.",
+   rs(r"x-2y&=3", r"-2x+4y&=-6")],
+  ["nincs megoldás (ellentmondásos)",
+   "végtelen sok (a második egyenlet az első $(-2)$-szerese)"]),
+ ("Két szám összege $40$, és az egyik szám háromszorosa egyenlő a másik szám ötszörösével. "
+  "Melyik ez a két szám?", None,
+  "$25$ és $15$"),
+]
+
+DR_K = [
+ ("Oldd meg a Gauss-eljárással!" + rs(r"2x+3y-z&=-3", r"3x-2y+2z&=9", r"4x+y+3z&=9"), None,
+  "$(x;y;z)=(1;-1;2)$"),
+ ("Oldd meg a rendszert, és döntsd el, hány megoldása van!" +
+  rs(r"x+y+z&=6", r"x-y+z&=2", r"2x+2z&=8"), None,
+  "Végtelen sok (a harmadik egyenlet az első kettő összege): $z=t$ mellett "
+  "$(x;y;z)=(4-t;\\ 2;\\ t)$, ahol $t$ tetszőleges valós szám."),
+ ("Számítsd ki a fő determinánst, és döntsd el, alkalmazható-e a Cramer-szabály! Ha igen, "
+  "számítsd ki vele az $y$ értékét." + rs(r"2x-y+z&=3", r"x+y-z&=0", r"3x+2y+z&=10"), None,
+  "$D=9\\ne0$, tehát alkalmazható; $D_y=18$, így $y=2$."),
+ ("Egy büfében három diák vásárolt. Az első $2$ szendvicsért, $1$ üdítőért és $1$ kávéért "
+  "$640$ dinárt, a második $1$ szendvicsért, $2$ üdítőért és $1$ kávéért $560$ dinárt, a harmadik "
+  "$1$ szendvicsért, $1$ üdítőért és $2$ kávéért $520$ dinárt fizetett. Mennyibe kerül egy-egy "
+  "termék?", None,
+  "Szendvics $210$, üdítő $130$, kávé $90$ dinár."),
+ ("Hány gramm $40\\%$-os és hány gramm $10\\%$-os cukoroldatot kell összekevernünk, hogy $600$ "
+  "gramm $20\\%$-os oldatot kapjunk?", None,
+  "$200$ gramm $40\\%$-os és $400$ gramm $10\\%$-os oldatot."),
+ ("Maxi az $x+y=2$, $2x+2y=5$ rendszerre ezt írta: „$D=0$, tehát a rendszernek végtelen sok "
+  "megoldása van.” Igaza van? Mit mondhatunk a rendszer megoldásairól?", None,
+  "Nincs igaza: a $D=0$ csak azt jelenti, hogy nincs pontosan egy megoldás. Itt a második "
+  "egyenlet bal oldala az első kétszerese, a jobb oldala viszont nem ($5\\ne4$), ezért a "
+  "rendszernek nincs megoldása."),
+]
+
+DR_N = [
+ ("Annának, Bencének és Csabának együtt $45$ matricája van. Annának $5$-tel több van, mint "
+  "Bencének, és Anna matricáinak kétszerese Csabáéval együtt $50$.",
+  ["Mutasd meg, hogy ezekből az adatokból nem határozható meg egyértelműen, kinek hány "
+   "matricája van!",
+   "Adj meg két különböző lehetséges elosztást!",
+   "Milyen további adatot kérnél, hogy az elosztás egyértelmű legyen?"],
+  ["a harmadik mondat az első kettő összege, ezért a rendszer határozatlan: Csaba $t$ "
+   "matricája mellett Anna $25-\\frac{t}{2}$, Bence $20-\\frac{t}{2}$ matricát kap",
+   "például $20$, $15$, $10$ vagy $15$, $10$, $20$ (Csaba matricáinak száma páros)",
+   "például Csaba matricáinak számát; bármely olyan adat jó, amely nem következik az első "
+   "kettőből"]),
+ ("Egy háromszög kerülete $36$ cm. Ha a legrövidebb oldalhoz hozzáadjuk a középső oldal "
+  "kétszeresét, $15$ cm-rel többet kapunk a leghosszabb oldalnál; ha a legrövidebb oldal "
+  "kétszereséhez adjuk hozzá a középső oldalt, $13$ cm-rel többet. Mekkorák a háromszög oldalai?",
+  None,
+  "$9$ cm, $11$ cm és $16$ cm."),
+ ("Egy háromjegyű szám számjegyeinek összege $16$. Az első számjegy a középsőnek a kétszerese. "
+  "Ha a számjegyeket fordított sorrendben írjuk, $396$-tal kisebb számot kapunk. Melyik ez a "
+  "szám?", None,
+  "$844$"),
+]
+
+body_dr = [
+ '    <h2 id="alap">🟢 Alapszint</h2>\n' + cards(DR_A, "alap", "alap"),
+ '    <h2 id="kozep">🟡 Középszint</h2>\n' + cards(DR_K, "kozep", "kozep"),
+ '    <h2 id="nehez">🔴 Nehéz szint</h2>\n' + cards(DR_N, "nehez", "nehez"),
+]
+
+oldal(**T, fajl="feladatok-hazi.html", cim="Vészterem",
+      chipek='<span class="chip alap">Alap</span><span class="chip kozep">Közép</span>'
+             '<span class="chip nehez">Nehéz</span>',
+      alcim="Rövid, vegyes gyakorlósor a lineáris egyenletrendszerekhez — házi feladatnak és "
+            "az ellenőrző előtti bemelegítésnek. A végeredmény minden feladatnál lenyitható!",
+      sections_html="\n".join(body_dr),
+      prev="index.html", prevc="Témakör Főhadiszállása",
+      nxt="osszefoglalo.html", nxtc="Töréspont-térkép")
+print("✓ feladatok-hazi.html | Alap", len(DR_A), "Közép", len(DR_K), "Nehéz", len(DR_N))
