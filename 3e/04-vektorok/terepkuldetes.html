@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Terepküldetés | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="rajzterem">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Vektorok</a> ›
+  <span class="itt">Terepküldetés</span>
+</nav>
+<div class="hero">
+  <h1>A Királyi Irányítótű</h1>
+  <p class="alcim">Három fázis: a jeladók koordinátái, a hullám iránya és a kristálylap területe. Beadható projektfeladat — a megoldásokat a tanárod ellenőrzi.</p>
+  <div class="meta-sor"><span class="chip ora">terepküldetés</span><span class="chip">A Királyi Irányítótű · terepküldetés</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/meduza.webp" alt="Medúza — a Királyi Család hangja" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Medúza:</b> Crni Grom elkészítette a Királyi Irányítótűt, de a Kamrában csak akkor működik, ha pontosan bemérjük. Három jeladó áll a teremben — <span class="math inline">\(P\)</span>, <span class="math inline">\(Q\)</span> és <span class="math inline">\(R\)</span> —, és a tűnek tudnia kell, <b>hol</b> a középpont, <b>mekkora szöget</b> zár be a hullám a jeladók vonalával, és <b>mekkora felületet</b> kell hatástalanítania. A Néma Király nem mondja meg a választ. Irányt mutat — a számolás a tiéd.</p></div>
+
+    <p>Három fázis. Minden lépésnél írd le, melyik vektort számolod és miért. Kerekíts a szögeket egy, minden más közelítő értéket két tizedesjegyre, és jelöld a kerekítést. A választ fogalmazd meg mondatban is.</p><p><b>A jeladók helyzete:</b> <span class="math inline">\(P(1;2;0)\)</span>, <span class="math inline">\(Q(3;3;2)\)</span>, <span class="math inline">\(R(1;5;4)\)</span> (egység: méter).</p><p><b>Amire szükséged lesz:</b> koordináták és műveletek, intenzitás, skaláris és vektoriális szorzat, számológép fok üzemmódban.</p>
+
+    <h2 id="s1">I. fázis — A jeladók</h2>
+
+    <ol class="reszfeladatok"><li>Határozd meg a <span class="math inline">\(\overrightarrow{PQ}\)</span> és a <span class="math inline">\(\overrightarrow{PR}\)</span> vektor koordinátáit és intenzitását!</li><li>Egy negyedik jeladót, <span class="math inline">\(S\)</span>-et úgy kell elhelyezni, hogy a <span class="math inline">\(PQSR\)</span> négyszög (ebben a sorrendben) paralelogramma legyen. Hol legyen <span class="math inline">\(S\)</span>?</li><li>Az irányítótű a paralelogramma középpontjába kerül. Határozd meg a koordinátáit, és ellenőrizd a <b>másik</b> átló felezőpontjával is!</li><li>Maxi szerint <span class="math inline">\(S=P+Q-R=(3;0;-2)\)</span>. Milyen sorrendben alkot paralelogrammát a <span class="math inline">\(P\)</span>, a <span class="math inline">\(Q\)</span>, az <span class="math inline">\(R\)</span> és Maxi pontja? Melyik szakasz lett nála átló oldal helyett?</li></ol>
+
+    <h2 id="s2">II. fázis — A hullám iránya</h2>
+
+    <ol class="reszfeladatok"><li>Mekkora szöget zár be a <span class="math inline">\(\overrightarrow{PQ}\)</span> és a <span class="math inline">\(\overrightarrow{PR}\)</span> vektor?</li><li>Téglalap-e a <span class="math inline">\(PQSR\)</span> paralelogramma? Rombusz-e? Indokold!</li><li>Crni Grom jelzése a <span class="math inline">\(z\)</span> tengelyen álló torony csúcsából, a <span class="math inline">\(H(0;0;h)\)</span> pontból érkezik. Mekkora <span class="math inline">\(h\)</span> esetén merőleges a <span class="math inline">\(\overrightarrow{PH}\)</span> vektor a <span class="math inline">\(\overrightarrow{PQ}\)</span> vektorra?</li><li>A hanghullám a <span class="math inline">\(\vec v=(1;1;1)\)</span> irányban indul. Mekkora szöget zár be a <span class="math inline">\(\overrightarrow{PQ}\)</span> vektorral, és mekkora a <span class="math inline">\(\vec v\)</span> skaláris vetülete a <span class="math inline">\(\overrightarrow{PQ}\)</span>-ra?</li></ol>
+
+    <h2 id="s3">III. fázis — A kristálylap</h2>
+
+    <ol class="reszfeladatok"><li>Számítsd ki a <span class="math inline">\(PQR\)</span> háromszög és a <span class="math inline">\(PQSR\)</span> paralelogramma területét!</li><li>Az irányítótű mutatója merőleges a <span class="math inline">\(PQR\)</span> síkra. Adj meg egy ilyen irányú <b>egységvektort</b>, és skaláris szorzattal ellenőrizd, hogy a <span class="math inline">\(\overrightarrow{PQ}\)</span>-ra és a <span class="math inline">\(\overrightarrow{PR}\)</span>-re is merőleges!</li><li>Milyen messze van az <span class="math inline">\(R\)</span> jeladó a <span class="math inline">\(PQ\)</span> egyenestől? (Ez a háromszög <span class="math inline">\(R\)</span>-ből induló magassága.)</li><li>Tervezz egy új jeladót, <span class="math inline">\(U\)</span>-t úgy, hogy a <span class="math inline">\(PQU\)</span> háromszög a <span class="math inline">\(P\)</span>-nél derékszögű legyen, és <span class="math inline">\(PU=3\)</span> méter! Add meg <span class="math inline">\(U\)</span> koordinátáit, mutasd meg, hogy megfelel a két feltételnek, és számítsd ki a <span class="math inline">\(PQU\)</span> háromszög területét!</li></ol>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/meduza.webp" alt="Medúza — a Királyi Család hangja" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Medúza:</b> Ha a tű megtalálta a középpontot, az irányt és a lap síkját, a hullám már nem pusztít — gyógyít. Crni Grom a számításaidra vár: a megoldásokat a tanárod ellenőrzi — a kulcs nem kerül a hálózatra.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="osszefoglalo.html"><span class="irany">← Előző</span><span class="hova">Iránytű-térkép</span></a>
+      <a class="kov" href="index.html"><span class="irany">Következő →</span><span class="hova">Témakör Főhadiszállása</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

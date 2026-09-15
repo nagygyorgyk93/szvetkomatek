@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Iránytű-térkép | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="digitalis">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Vektorok</a> ›
+  <span class="itt">Iránytű-térkép</span>
+</nav>
+<div class="hero">
+  <h1>Iránytű-térkép — a témakör egy lapon</h1>
+  <p class="alcim">A vektorok definíciói, legfontosabb képletei és tipikus csapdái egy helyen — ismétléshez, ellenőrző előtti átfutáshoz, nyomtatáshoz.</p>
+  <div class="meta-sor"><span class="chip ora">összefoglaló</span><span class="chip">A Királyi Irányítótű · összefoglaló</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📇 A vektor és a műveletek</h2>
+
+    <p>A <b>vektor</b> az egymásba eltolható irányított szakaszok közös jellemzője; három adata az <b>iránya</b> (az egyenes állása), az <b>irányítása</b> (merre mutat) és az <b>intenzitása</b> — más néven hossza — <span class="math inline">\(|\vec a|\)</span> (<a href="tananyag-vektorok-sikban.html#def-vektor">→</a>). Két vektor <b>egyenlő</b>, ha eltolással fedésbe hozhatók. A nullvektor <span class="math inline">\(\vec 0\)</span> (intenzitása <span class="math inline">\(0\)</span>, iránya és irányítása nincs), az ellentett <span class="math inline">\(-\vec a\)</span>.</p><table class="tt-table"><tr><th>Művelet</th><th>Szabály</th><th>Megjegyzés</th></tr><tr><td>összeadás</td><td>háromszög-szabály: <span class="math inline">\(\overrightarrow{AB}+\overrightarrow{BC}=\overrightarrow{AC}\)</span>; paralelogramma-szabály: közös kezdőpontból az átló</td><td><span class="math inline">\(|\vec a+\vec b|\le|\vec a|+|\vec b|\)</span>, egyenlőség csak azonos irányításnál (vagy nullvektorral)</td></tr><tr><td>kivonás</td><td><span class="math inline">\(\vec a-\vec b=\vec a+(-\vec b)\)</span>; <span class="math inline">\(\overrightarrow{OB}-\overrightarrow{OA}=\overrightarrow{AB}\)</span></td><td>a paralelogramma másik átlója, a <span class="math inline">\(\vec b\)</span> végpontjából az <span class="math inline">\(\vec a\)</span> végpontjába mutat</td></tr><tr><td>skalárral szorzás</td><td><span class="math inline">\(|\lambda\vec a|=|\lambda|\,|\vec a|\)</span>; <span class="math inline">\(\lambda>0\)</span>: azonos, <span class="math inline">\(\lambda<0\)</span>: ellentétes irányítás; <span class="math inline">\(\lambda=0\)</span> vagy <span class="math inline">\(\vec a=\vec 0\)</span>: nullvektor</td><td>ha <span class="math inline">\(\vec a\ne\vec 0\)</span>: <span class="math inline">\(\vec b\parallel\vec a\iff\vec b=\lambda\vec a\)</span> (<a href="tananyag-vektorok-sikban.html#def-skalarral-szorzas">→</a>)</td></tr></table><p>A műveletekkel úgy számolunk, mint a betűs kifejezésekkel (<a href="tananyag-vektorok-sikban.html#tetel-muveletek">→</a>).</p><p><b>Két nem nullvektor szöge</b>: közös kezdőpontba tolva, <span class="math inline">\(0^\circ\le\varphi\le180^\circ\)</span>. A <span class="math inline">\(\vec b\)</span> <b>skaláris vetülete</b> az <span class="math inline">\(\vec a\)</span>-ra <span class="math inline">\(|\vec b|\cos\varphi\)</span> — hegyesszögnél pozitív, derékszögnél <span class="math inline">\(0\)</span>, tompaszögnél negatív (<a href="tananyag-vektorok-sikban.html#def-szog-vetulet">→</a>).</p>
+
+    <h2 id="s1">Koordináták a térben</h2>
+
+    <table class="tt-table"><tr><th>Mit</th><th>Képlet</th></tr><tr><td>a vektor két alakja (<a href="tananyag-koordinatak-terben.html#def-vektor-koordinatai">→</a>)</td><td><span class="math inline">\(\vec a=x\vec i+y\vec j+z\vec k=(x;y;z)\)</span> — hiányzó tag: <span class="math inline">\(0\)</span> koordináta</td></tr><tr><td>két pont közötti vektor, <span class="math inline">\(A(x_1;y_1;z_1)\)</span>, <span class="math inline">\(B(x_2;y_2;z_2)\)</span></td><td><span class="math inline">\(\overrightarrow{AB}=(x_2-x_1;\;y_2-y_1;\;z_2-z_1)\)</span> — végpont mínusz kezdőpont</td></tr><tr><td>műveletek (<a href="tananyag-koordinatak-terben.html#tetel-koordinatas-muveletek">→</a>)</td><td>koordinátánként: <span class="math inline">\(\vec a\pm\vec b\)</span>, <span class="math inline">\(\lambda\vec a\)</span>; párhuzamos: arányos koordináták</td></tr><tr><td>intenzitás, távolság (<a href="tananyag-koordinatak-terben.html#tetel-hossz">→</a>)</td><td><span class="math inline">\(|\vec a|=\sqrt{x^2+y^2+z^2}\)</span>, &nbsp; <span class="math inline">\(d(A,B)=|\overrightarrow{AB}|\)</span></td></tr><tr><td>egységvektor</td><td>ha <span class="math inline">\(\vec a\ne\vec 0\)</span>: <span class="math inline">\(\vec a_0=\dfrac{\vec a}{|\vec a|}\)</span></td></tr><tr><td>felezőpont, paralelogramma</td><td><span class="math inline">\(F=\tfrac12(A+B)\)</span>; ha <span class="math inline">\(ABCD\)</span> sorrendben paralelogramma, <span class="math inline">\(D=A+C-B\)</span> (koordinátánként; <span class="math inline">\(B\)</span> a <span class="math inline">\(D\)</span>-vel szemközti csúcs)</td></tr></table>
+
+    <h2 id="s2">A két szorzat egymás mellett</h2>
+
+    <table class="tt-table"><tr><th></th><th>skaláris szorzat <span class="math inline">\(\vec a\cdot\vec b\)</span></th><th>vektoriális szorzat <span class="math inline">\(\vec a\times\vec b\)</span></th></tr><tr><td>eredménye</td><td><b>szám</b></td><td><b>vektor</b>, merőleges mindkét tényezőre</td></tr><tr><td>definíció</td><td><span class="math inline">\(|\vec a|\,|\vec b|\cos\varphi\)</span> (<a href="tananyag-skalaris-szorzat.html#def-skalaris">→</a>)</td><td>intenzitása <span class="math inline">\(|\vec a|\,|\vec b|\sin\varphi\)</span>, irányítása jobbkéz-szabály (<a href="tananyag-vektorialis-szorzat.html#def-vektorialis">→</a>)</td></tr><tr><td>koordinátákkal</td><td><span class="math inline">\(x_1x_2+y_1y_2+z_1z_2\)</span> (<a href="tananyag-skalaris-szorzat.html#tetel-skalaris-koordinatak">→</a>)</td><td><span class="math inline">\(\begin{vmatrix}\vec i&\vec j&\vec k\\ x_1&y_1&z_1\\ x_2&y_2&z_2\end{vmatrix}\)</span>, előjelek <span class="math inline">\(+\,-\,+\)</span> (<a href="tananyag-vektorialis-szorzat.html#tetel-vektorialis-koordinatak">→</a>)</td></tr><tr><td>pontosan akkor <span class="math inline">\(0\)</span>, illetve <span class="math inline">\(\vec 0\)</span>, ha…</td><td>merőlegesek, vagy valamelyik nullvektor (<a href="tananyag-skalaris-szorzat.html#tetel-merolegesseg">→</a>)</td><td>párhuzamosak, vagy valamelyik nullvektor (<a href="tananyag-vektorialis-szorzat.html#tetel-vektorialis-tulajdonsagok">→</a>)</td></tr><tr><td>sorrend</td><td><span class="math inline">\(\vec a\cdot\vec b=\vec b\cdot\vec a\)</span></td><td><span class="math inline">\(\vec b\times\vec a=-\vec a\times\vec b\)</span></td></tr><tr><td>önmagával</td><td><span class="math inline">\(\vec a\cdot\vec a=|\vec a|^2\)</span></td><td><span class="math inline">\(\vec a\times\vec a=\vec 0\)</span></td></tr><tr><td>legfontosabb használat</td><td><b>szög</b> (nem nullvektorokra): <span class="math inline">\(\cos\varphi=\dfrac{\vec a\cdot\vec b}{|\vec a|\,|\vec b|}\)</span></td><td><b>terület</b>: <span class="math inline">\(T_{\text{par}}=|\vec a\times\vec b|\)</span>, <span class="math inline">\(T_{\triangle}=\tfrac12|\vec a\times\vec b|\)</span> (<a href="tananyag-vektorialis-szorzat.html#tetel-terulet">→</a>)</td></tr><tr><td>további alkalmazás</td><td><b>munka</b>: <span class="math inline">\(W=\vec F\cdot\vec s=|\vec F|\,|\vec s|\cos\varphi\)</span></td><td><b>magasság, pont–egyenes távolság</b>: <span class="math inline">\(m=\dfrac{2T}{\text{alap}}=\dfrac{|\vec a\times\vec b|}{|\vec a|}\)</span></td></tr></table><p>Mindkettő disztributív, és a számszorzó kiemelhető; a vektoriális szorzat tagonkénti kifejtésénél a tényezők sorrendje nem cserélhető fel. Részletes döntési táblázat: melyik szorzat mire (<a href="tananyag-vektorok-alkalmazasa.html#tetel-melyik-szorzat">→</a>).</p><p><b>A szög számológéppel</b> (<a href="tananyag-skalaris-szorzat.html#pelda-szog">→</a>): fok üzemmód (<b>D</b>/<b>DEG</b>); előbb a tört értéke, majd <code>SHIFT cos Ans =</code> (más gépeken <code>2nd cos</code> vagy <code>INV cos</code>). A skaláris szorzat előjele előre megmondja, hogy <span class="math inline">\(90^\circ\)</span> alatti vagy fölötti szöget kell kapnod (<span class="math inline">\(0\)</span> esetén pontosan <span class="math inline">\(90^\circ\)</span>).</p>
+
+    <h2 id="s3">Maxi csapdái — a tipikus hibák</h2>
+
+    <ul><li><b>Fej–láb szög:</b> ha a <span class="math inline">\(\vec b\)</span>-t az <span class="math inline">\(\vec a\)</span> végpontjához illeszted, a csatlakozásnál látszó szög a mellékszög — a szöget közös kezdőpontból mérjük.</li><li><b><span class="math inline">\(\overrightarrow{AB}=A-B\)</span>:</b> fordítva! Végpont mínusz kezdőpont.</li><li><b>Hiányzó tag:</b> <span class="math inline">\(2\vec i-\vec k=(2;0;-1)\)</span>, nem <span class="math inline">\((2;-1)\)</span>.</li><li><b><span class="math inline">\(|\vec a+\vec b|=|\vec a|+|\vec b|\)</span>:</b> csak azonos irányításnál igaz.</li><li><b>A skaláris szorzat nem vektor:</b> nem <span class="math inline">\((x_1x_2;\,y_1y_2;\,z_1z_2)\)</span>, hanem a három szorzat <b>összege</b>, egy szám.</li><li><b>A középső előjel:</b> a vektoriális szorzatban <span class="math inline">\(-\vec j(\dots)\)</span> áll. Ellenőrzés: az eredmény skaláris szorzata mindkét tényezővel <span class="math inline">\(0\)</span>.</li><li><b>A háromszög szöge:</b> mindkét vektor abból a csúcsból induljon (<span class="math inline">\(\overrightarrow{AB}\)</span>, <span class="math inline">\(\overrightarrow{AC}\)</span>) — ha csak az egyiket fordítod meg (pl. <span class="math inline">\(\overrightarrow{AB}\)</span> és <span class="math inline">\(\overrightarrow{CA}\)</span>), a mellékszöget kapod (<a href="tananyag-vektorok-alkalmazasa.html#pelda-haromszog">→</a>).</li><li><b>Radián mód:</b> nézd meg a kijelzőn a <b>D</b> / <b>R</b> / <b>G</b> jelet. Gyanús, ha <span class="math inline">\(0\)</span> és <span class="math inline">\(3{,}14\)</span> közötti szám jön ki, pedig a skaláris szorzat alapján nagyobb szögre számítasz.</li></ul>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 340 250" width="340" height="250" role="img" aria-label="Az a és b vektor paralelogrammája és a rá merőleges a × b">
+      <defs><marker id="nyv-266a9-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3b82f6"/></marker><marker id="nyv-266a9-1" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f59e0b"/></marker><marker id="nyv-266a9-2" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#047857"/></marker></defs>
+      <polygon points="30.0,182.7 193.4,182.7 310.0,140.4 146.6,140.4" fill="#3b82f6" fill-opacity="0.13" stroke="none"/>
+      <line x1="193.4" y1="182.7" x2="310.0" y2="140.4" stroke="#475569" stroke-width="1.2" stroke-dasharray="5 4"/>
+      <line x1="146.6" y1="140.4" x2="310.0" y2="140.4" stroke="#475569" stroke-width="1.2" stroke-dasharray="5 4"/>
+      <path d="M45.4,182.7 L45.4,167.3 L30.0,167.3" fill="none" stroke="#475569" stroke-width="1.2"/>
+      <path d="M42.8,178.0 L42.8,162.6 L30.0,167.3" fill="none" stroke="#475569" stroke-width="1.2"/>
+      <path d="M70.8,182.7 L72.0,181.7 L72.9,180.8 L73.6,179.8 L74.1,178.9 L74.4,178.0 L74.5,177.1 L74.4,176.2 L74.1,175.4 L73.5,174.6 L72.7,173.8 L71.8,173.1 L70.6,172.5 L69.3,171.8 L67.7,171.3 L66.0,170.8 L64.1,170.3" fill="none" stroke="#8b5cf6" stroke-width="1.6"/>
+      <text x="94.8" y="177.0" font-size="14" fill="#8b5cf6" text-anchor="middle" font-weight="600">φ</text>
+      <line x1="30.0" y1="182.7" x2="193.4" y2="182.7" stroke="#3b82f6" stroke-width="2.6" stroke-linecap="round" marker-end="url(#nyv-266a9-0)"/>
+      <line x1="30.0" y1="182.7" x2="146.6" y2="140.4" stroke="#f59e0b" stroke-width="2.6" stroke-linecap="round" marker-end="url(#nyv-266a9-1)"/>
+      <line x1="30.0" y1="182.7" x2="30.0" y2="52.9" stroke="#047857" stroke-width="2.8" stroke-linecap="round" marker-end="url(#nyv-266a9-2)"/>
+      <text x="183.2" y="204.7" font-size="15" fill="#3b82f6" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M185.0,191.8 L191.9,191.8" stroke="#3b82f6" stroke-width="1.2" fill="none"/>
+      <path d="M189.2,189.2 L194.0,191.8 L189.2,194.4 z" fill="#3b82f6"/>
+      <text x="128.4" y="136.4" font-size="15" fill="#b45309" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">b</text>
+      <path d="M130.2,123.5 L137.1,123.5" stroke="#b45309" stroke-width="1.2" fill="none"/>
+      <path d="M134.4,120.9 L139.2,123.5 L134.4,126.1 z" fill="#b45309"/>
+      <text x="46.8" y="60.9" font-size="15" fill="#047857" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M48.5,48.0 L55.4,48.0" stroke="#047857" stroke-width="1.2" fill="none"/>
+      <path d="M52.7,45.4 L57.5,48.0 L52.7,50.6 z" fill="#047857"/>
+      <text x="55.1" y="60.9" font-size="15" fill="#047857" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600"> × </text>
+      <text x="72.8" y="60.9" font-size="15" fill="#047857" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">b</text>
+      <path d="M74.6,48.0 L81.5,48.0" stroke="#047857" stroke-width="1.2" fill="none"/>
+      <path d="M78.8,45.4 L83.6,48.0 L78.8,50.6 z" fill="#047857"/>
+      <text x="170.0" y="167.5" font-size="15" fill="#1d4ed8" text-anchor="middle" font-style="italic" font-weight="600">T</text>
+    </svg>
+    </div>
+    <p class="cap">Egy ábra mindenre: <span class="math inline">\(|\vec a\times\vec b|\)</span> a paralelogramma területe, és <span class="math inline">\(\vec a\times\vec b\)</span> merőleges a síkjára.</p>
+
+    <h2 id="s4">Mit hol találsz?</h2>
+
+    <div class="brief"><p>📚 <b>Tananyag:</b> <a href="tananyag-vektorok-sikban.html">vektorok a síkban</a> · <a href="tananyag-koordinatak-terben.html">vektorok a térben</a> · <a href="tananyag-skalaris-szorzat.html">a skaláris szorzat</a> · <a href="tananyag-vektorialis-szorzat.html">a vektoriális szorzat</a> · <a href="tananyag-vektorok-alkalmazasa.html">vektorok munkában</a>.</p><p>🎯 <b>Gyakorlás:</b> <a href="feladatok-vektorok.html">vektorok</a> · <a href="feladatok-szorzatok.html">a két szorzat</a> · <a href="feladatok-hazi.html">Vészterem</a> — majd indulj a <a href="terepkuldetes.html">Királyi Irányítótű</a> küldetésre!</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-szorzatok.html"><span class="irany">← Előző</span><span class="hova">A két szorzat — feladatok</span></a>
+      <a class="kov" href="terepkuldetes.html"><span class="irany">Következő →</span><span class="hova">A Királyi Irányítótű</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
