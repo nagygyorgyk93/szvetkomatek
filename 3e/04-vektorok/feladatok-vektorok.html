@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vektorok — feladatok | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="digitalis">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Vektorok</a> ›
+  <span class="itt">Vektorok — feladatok</span>
+</nav>
+<div class="hero">
+  <h1>Vektorok — Kiképzési Adattár</h1>
+  <p class="alcim">Vektorok a síkban és a térben: műveletek, szög és vetület, koordináták, intenzitás és távolság. A végeredmény minden feladatnál lenyitható — előbb számolj, csak utána nézd meg!</p>
+  <div class="meta-sor"><span class="chip alap">Alap</span><span class="chip kozep">Közép</span><span class="chip nehez">Nehéz</span><span class="chip joker">Joker</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="alap">🟢 Alapszint — Különleges fokozat</h2>
+    <article class="feladat alap" id="alap-1">
+      <p><span class="szam">1.</span> Az <span class="math inline">\(ABCDEF\)</span> szabályos hatszög középpontja <span class="math inline">\(O\)</span>. Tekintsük azokat a vektorokat, amelyeknek kezdő- és végpontja is az <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>, <span class="math inline">\(D\)</span>, <span class="math inline">\(E\)</span>, <span class="math inline">\(F\)</span>, <span class="math inline">\(O\)</span> pontok valamelyike. Ezek közül keresd meg</p><div class="svgwrap"><svg viewBox="0 0 276 242" width="276" height="242" role="img" aria-label="Szabályos ABCDEF hatszög, középpontja O">
+  <defs></defs>
+  <line x1="234.0" y1="120.8" x2="186.0" y2="37.7" stroke="#0f172a" stroke-width="1.4"/>
+  <line x1="186.0" y1="37.7" x2="90.0" y2="37.7" stroke="#0f172a" stroke-width="1.4"/>
+  <line x1="90.0" y1="37.7" x2="42.0" y2="120.8" stroke="#0f172a" stroke-width="1.4"/>
+  <line x1="42.0" y1="120.8" x2="90.0" y2="203.9" stroke="#0f172a" stroke-width="1.4"/>
+  <line x1="90.0" y1="203.9" x2="186.0" y2="203.9" stroke="#0f172a" stroke-width="1.4"/>
+  <line x1="186.0" y1="203.9" x2="234.0" y2="120.8" stroke="#0f172a" stroke-width="1.4"/>
+  <line x1="138.0" y1="120.8" x2="234.0" y2="120.8" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <line x1="138.0" y1="120.8" x2="186.0" y2="37.7" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <line x1="138.0" y1="120.8" x2="90.0" y2="37.7" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <line x1="138.0" y1="120.8" x2="42.0" y2="120.8" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <line x1="138.0" y1="120.8" x2="90.0" y2="203.9" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <line x1="138.0" y1="120.8" x2="186.0" y2="203.9" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <circle cx="234.0" cy="120.8" r="3" fill="#0f172a"/>
+  <text x="248.0" y="125.8" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="600">A</text>
+  <circle cx="186.0" cy="37.7" r="3" fill="#0f172a"/>
+  <text x="196.0" y="30.7" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="600">B</text>
+  <circle cx="90.0" cy="37.7" r="3" fill="#0f172a"/>
+  <text x="80.0" y="30.7" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="600">C</text>
+  <circle cx="42.0" cy="120.8" r="3" fill="#0f172a"/>
+  <text x="28.0" y="125.8" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="600">D</text>
+  <circle cx="90.0" cy="203.9" r="3" fill="#0f172a"/>
+  <text x="80.0" y="222.9" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="600">E</text>
+  <circle cx="186.0" cy="203.9" r="3" fill="#0f172a"/>
+  <text x="196.0" y="222.9" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="600">F</text>
+  <circle cx="138.0" cy="120.8" r="3" fill="#0f172a"/>
+  <text x="138.0" y="111.8" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="600">O</text>
+</svg></div><ol class="reszfeladatok"><li>az összes olyat, amelyik <b>egyenlő</b> a <span class="math inline">\(\overrightarrow{BC}\)</span> vektorral;</li><li>a <span class="math inline">\(\overrightarrow{BC}\)</span> összes <b>ellentett</b> vektorát;</li><li>azokat, amelyek <b>párhuzamosak</b> a <span class="math inline">\(\overrightarrow{BC}\)</span>-vel, de <b>nem egyenlő hosszúak</b> vele!</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\overrightarrow{AO}\)</span>, <span class="math inline">\(\overrightarrow{OD}\)</span>, <span class="math inline">\(\overrightarrow{FE}\)</span> (mindhárom párhuzamos, egyenlő hosszú és azonos irányítású)</li><li><span class="math inline">\(\overrightarrow{CB}\)</span>, <span class="math inline">\(\overrightarrow{OA}\)</span>, <span class="math inline">\(\overrightarrow{DO}\)</span>, <span class="math inline">\(\overrightarrow{EF}\)</span></li><li><span class="math inline">\(\overrightarrow{AD}\)</span> és <span class="math inline">\(\overrightarrow{DA}\)</span> (kétszer olyan hosszúak; <span class="math inline">\(\overrightarrow{AD}=2\overrightarrow{BC}\)</span>)</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-2">
+      <p><span class="szam">2.</span> Az <span class="math inline">\(ABCD\)</span> paralelogrammában <span class="math inline">\(\overrightarrow{AB}=\vec a\)</span> és <span class="math inline">\(\overrightarrow{AD}=\vec b\)</span>. Fejezd ki <span class="math inline">\(\vec a\)</span> és <span class="math inline">\(\vec b\)</span> segítségével a következő vektorokat!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(\overrightarrow{AC}\)</span></li><li><span class="math inline">\(\overrightarrow{BD}\)</span></li><li><span class="math inline">\(\overrightarrow{CA}\)</span></li><li><span class="math inline">\(\overrightarrow{DB}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\vec a+\vec b\)</span></li><li><span class="math inline">\(\vec b-\vec a\)</span></li><li><span class="math inline">\(-\vec a-\vec b\)</span></li><li><span class="math inline">\(\vec a-\vec b\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-3">
+      <p><span class="szam">3.</span> Az <span class="math inline">\(ABCD\)</span> paralelogrammában <span class="math inline">\(\overrightarrow{AB}=\vec a\)</span>, <span class="math inline">\(\overrightarrow{AD}=\vec b\)</span>, és <span class="math inline">\(M\)</span> a <span class="math inline">\(BC\)</span> oldal felezőpontja. Fejezd ki <span class="math inline">\(\vec a\)</span> és <span class="math inline">\(\vec b\)</span> segítségével!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(\overrightarrow{AM}\)</span></li><li><span class="math inline">\(\overrightarrow{DM}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\overrightarrow{AM}=\overrightarrow{AB}+\overrightarrow{BM}=\vec a+\tfrac12\vec b\)</span></li><li><span class="math inline">\(\overrightarrow{DM}=\overrightarrow{DC}+\overrightarrow{CM}=\vec a-\tfrac12\vec b\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-4">
+      <p><span class="szam">4.</span> Egyszerűsítsd a kifejezéseket!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(2(\vec a-3\vec b)+3(\vec b+\vec a)\)</span></li><li><span class="math inline">\(4(\vec a+\vec b)-2(2\vec a-\vec b)\)</span></li><li><span class="math inline">\(\tfrac12(4\vec a-2\vec b)-(\vec a-\vec b)\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(5\vec a-3\vec b\)</span></li><li><span class="math inline">\(6\vec b\)</span></li><li><span class="math inline">\(\vec a\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-5">
+      <p><span class="szam">5.</span> Az <span class="math inline">\(\vec a\)</span> intenzitása <span class="math inline">\(3\)</span>, a <span class="math inline">\(\vec b\)</span> intenzitása <span class="math inline">\(4\)</span>. Mekkora <span class="math inline">\(|\vec a+\vec b|\)</span>, ha a két vektor szöge</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(0^\circ\)</span>;</li><li><span class="math inline">\(180^\circ\)</span>;</li><li><span class="math inline">\(90^\circ\)</span>?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(7\)</span> (azonos irányításúak: a hosszak összeadódnak)</li><li><span class="math inline">\(1\)</span> (ellentétes irányításúak: a hosszak kivonódnak)</li><li><span class="math inline">\(5\)</span> (az összeg egy <span class="math inline">\(3\times4\)</span>-es téglalap átlója: <span class="math inline">\(\sqrt{9+16}=5\)</span>)</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-6">
+      <p><span class="szam">6.</span> Az <span class="math inline">\(ABC\)</span> szabályos háromszögben mekkora a következő vektorpárok szöge? Vigyázz: két vektor szögét közös kezdőpontba tolva mérjük!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(\overrightarrow{AB}\)</span> és <span class="math inline">\(\overrightarrow{AC}\)</span></li><li><span class="math inline">\(\overrightarrow{AB}\)</span> és <span class="math inline">\(\overrightarrow{BC}\)</span></li><li><span class="math inline">\(\overrightarrow{AB}\)</span> és <span class="math inline">\(\overrightarrow{CA}\)</span></li><li><span class="math inline">\(\overrightarrow{AB}\)</span> és <span class="math inline">\(\overrightarrow{BA}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(60^\circ\)</span></li><li><span class="math inline">\(120^\circ\)</span> (a szög a <span class="math inline">\(B\)</span> csúcsnál lévő külső szöggel egyenlő: <span class="math inline">\(180^\circ-60^\circ\)</span>)</li><li><span class="math inline">\(120^\circ\)</span> (<span class="math inline">\(\overrightarrow{CA}=-\overrightarrow{AC}\)</span>, ezért <span class="math inline">\(180^\circ-60^\circ\)</span>)</li><li><span class="math inline">\(180^\circ\)</span> (ellentett vektorok)</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-7">
+      <p><span class="szam">7.</span> A <span class="math inline">\(\vec b\)</span> vektor intenzitása <span class="math inline">\(8\)</span>. Számítsd ki a <span class="math inline">\(\vec b\)</span> skaláris vetületét egy <span class="math inline">\(\vec a\)</span> vektorra, ha a két vektor szöge</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(60^\circ\)</span>;</li><li><span class="math inline">\(150^\circ\)</span>;</li><li><span class="math inline">\(90^\circ\)</span>;</li><li><span class="math inline">\(72^\circ\)</span> (számológéppel, két tizedesre)!</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(8\cos60^\circ=4\)</span></li><li><span class="math inline">\(8\cos150^\circ=-4\sqrt3\approx-6{,}93\)</span></li><li><span class="math inline">\(0\)</span></li><li><span class="math inline">\(8\cos72^\circ\approx2{,}47\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-8">
+      <p><span class="szam">8.</span> Döntsd el, igaz-e az állítás, és indokold!</p><ol class="reszfeladatok"><li>Ha két nem nullvektor párhuzamos, akkor az egyik a másik számszorosa.</li><li><span class="math inline">\(|-2\vec a|=-2|\vec a|\)</span> bármely <span class="math inline">\(\vec a\)</span> vektorra.</li><li>Bármely két vektorra <span class="math inline">\(|\vec a+\vec b|\le|\vec a|+|\vec b|\)</span>.</li><li>Két ellentett vektor összege a nullvektor.</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>igaz: ha <span class="math inline">\(\vec b\parallel\vec a\)</span>, akkor <span class="math inline">\(\vec b=\lambda\vec a\)</span>, ahol <span class="math inline">\(|\lambda|=\frac{|\vec b|}{|\vec a|}\)</span>, és <span class="math inline">\(\lambda\)</span> azonos irányításnál pozitív, ellentétesnél negatív</li><li>hamis: ha <span class="math inline">\(\vec a\ne\vec 0\)</span>, a jobb oldal negatív, az intenzitás pedig nem lehet az; helyesen <span class="math inline">\(|-2\vec a|=2|\vec a|\)</span></li><li>igaz: ez a háromszög-egyenlőtlenség (egyenlőség csak azonos irányításnál, vagy ha valamelyik vektor nullvektor)</li><li>igaz: <span class="math inline">\(\vec a+(-\vec a)=\vec 0\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-9">
+      <p><span class="szam">9.</span> Hol helyezkedik el a pont? Add meg a legszűkebb helyet: a koordinátatengelyt, ha tengelyen van, különben a koordinátasíkot!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(A(0;3;0)\)</span></li><li><span class="math inline">\(B(2;0;-1)\)</span></li><li><span class="math inline">\(C(0;0;5)\)</span></li><li><span class="math inline">\(D(4;-2;0)\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>az <span class="math inline">\(y\)</span> tengelyen</li><li>az <span class="math inline">\(xz\)</span> síkban</li><li>a <span class="math inline">\(z\)</span> tengelyen</li><li>az <span class="math inline">\(xy\)</span> síkban</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-10">
+      <p><span class="szam">10.</span> Írd fel a vektort a másik alakban!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(2\vec i-3\vec j+\vec k\)</span></li><li><span class="math inline">\(4\vec j-\vec k\)</span></li><li><span class="math inline">\((-1;0;5)\)</span></li><li><span class="math inline">\((0;0;-3)\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\((2;-3;1)\)</span></li><li><span class="math inline">\((0;4;-1)\)</span></li><li><span class="math inline">\(-\vec i+5\vec k\)</span></li><li><span class="math inline">\(-3\vec k\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-11">
+      <p><span class="szam">11.</span> Adott az <span class="math inline">\(A(1;0;-2)\)</span> és a <span class="math inline">\(B(3;-1;5)\)</span> pont. Add meg a vektorok koordinátáit!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(\overrightarrow{AB}\)</span></li><li><span class="math inline">\(\overrightarrow{BA}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\((2;-1;7)\)</span></li><li><span class="math inline">\((-2;1;-7)\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-12">
+      <p><span class="szam">12.</span> Legyen <span class="math inline">\(\vec a=(-3;2;4)\)</span>, <span class="math inline">\(\vec b=(-2;1;-2)\)</span>, <span class="math inline">\(\vec c=(3;-4;5)\)</span> és <span class="math inline">\(\vec d=(8;-5;7)\)</span>. Számítsd ki!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(2\vec a-4\vec c+6\vec d\)</span></li><li><span class="math inline">\(\vec c+3\vec b-7\vec a\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\((30;-10;30)\)</span></li><li><span class="math inline">\((18;-15;-29)\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-13">
+      <p><span class="szam">13.</span> Adottak az <span class="math inline">\(\vec a=(4;-3;1)\)</span> és a <span class="math inline">\(\vec b=(5;-2;-3)\)</span> vektorok. Számítsd ki!</p><ol class="reszfeladatok"><li><span class="math inline">\(|\vec a|\)</span></li><li><span class="math inline">\(|\vec a+\vec b|\)</span></li><li><span class="math inline">\(|\vec a-\vec b|\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\sqrt{16+9+1}=\sqrt{26}\approx5{,}10\)</span></li><li><span class="math inline">\(\vec a+\vec b=(9;-5;-2)\)</span>, intenzitása <span class="math inline">\(\sqrt{110}\approx10{,}49\)</span></li><li><span class="math inline">\(\vec a-\vec b=(-1;-1;4)\)</span>, intenzitása <span class="math inline">\(\sqrt{18}=3\sqrt2\approx4{,}24\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-14">
+      <p><span class="szam">14.</span> Mekkora a két pont távolsága?</p><ol class="reszfeladatok"><li><span class="math inline">\(A(1;0;-2)\)</span> és <span class="math inline">\(B(3;-1;5)\)</span></li><li><span class="math inline">\(P(2;3;1)\)</span> és <span class="math inline">\(Q(-4;1;4)\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\overrightarrow{AB}=(2;-1;7)\)</span>, <span class="math inline">\(|\overrightarrow{AB}|=\sqrt{54}=3\sqrt6\approx7{,}35\)</span></li><li><span class="math inline">\(\overrightarrow{PQ}=(-6;-2;3)\)</span>, <span class="math inline">\(|\overrightarrow{PQ}|=\sqrt{49}=7\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-15">
+      <p><span class="szam">15.</span> Az <span class="math inline">\(ABCD\)</span> paralelogramma három egymást követő csúcsa <span class="math inline">\(A(1;-2;3)\)</span>, <span class="math inline">\(B(3;2;1)\)</span> és <span class="math inline">\(C(6;4;4)\)</span>. Határozd meg a <span class="math inline">\(D\)</span> csúcs koordinátáit!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(\overrightarrow{AD}=\overrightarrow{BC}\)</span>, ezért (koordinátánként, a helyvektorokkal számolva) <span class="math inline">\(D=A+C-B\)</span>: <span class="math inline">\(D(4;0;6)\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-16">
+      <p><span class="szam">16.</span> Határozd meg az <span class="math inline">\(A(-7;2;8)\)</span> és a <span class="math inline">\(B(6;4;5)\)</span> pont által meghatározott szakasz felezőpontjának koordinátáit!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(F=\tfrac12(A+B)\)</span>: <span class="math inline">\(F(-0{,}5;\ 3;\ 6{,}5)\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-17">
+      <p><span class="szam">17.</span> Melyik vektor párhuzamos az <span class="math inline">\(\vec a=(1;-2;4)\)</span> vektorral? Ha párhuzamos, add meg azt a <span class="math inline">\(\lambda\)</span> számot is, amelyre az adott vektor <span class="math inline">\(\lambda\vec a\)</span>!</p><ol class="reszfeladatok"><li><span class="math inline">\(\vec b=(-3;6;-12)\)</span></li><li><span class="math inline">\(\vec c=(2;-4;6)\)</span></li><li><span class="math inline">\(\vec d=\left(\tfrac12;-1;2\right)\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>párhuzamos, <span class="math inline">\(\lambda=-3\)</span></li><li>nem párhuzamos (az arányok <span class="math inline">\(2\)</span>, <span class="math inline">\(2\)</span>, de <span class="math inline">\(\tfrac64\ne2\)</span>)</li><li>párhuzamos, <span class="math inline">\(\lambda=\tfrac12\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-18">
+      <p><span class="szam">18.</span> Adott az <span class="math inline">\(\vec a=(6;-2;3)\)</span> vektor. Határozd meg</p><ol class="reszfeladatok"><li>az <span class="math inline">\(\vec a\)</span> intenzitását;</li><li>az <span class="math inline">\(\vec a\)</span>-val azonos irányítású egységvektort;</li><li>az <span class="math inline">\(\vec a\)</span>-val ellentétes irányítású egységvektort!</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(|\vec a|=\sqrt{36+4+9}=7\)</span></li><li><span class="math inline">\(\vec a_0=\left(\frac{6}{7};-\frac{2}{7};\frac{3}{7}\right)\)</span></li><li><span class="math inline">\(-\vec a_0=\left(-\frac{6}{7};\frac{2}{7};-\frac{3}{7}\right)\)</span></li></ol></div>
+      </details>
+    </article>
+    <h2 id="kozep">🟡 Középszint — Királyi Gárda</h2>
+    <article class="feladat kozep" id="kozep-1">
+      <p><span class="szam">1.</span> Az <span class="math inline">\(ABCDEF\)</span> szabályos hatszög középpontja <span class="math inline">\(O\)</span>, és <span class="math inline">\(\overrightarrow{OA}=\vec a\)</span>, <span class="math inline">\(\overrightarrow{OB}=\vec b\)</span>. Fejezd ki <span class="math inline">\(\vec a\)</span> és <span class="math inline">\(\vec b\)</span> segítségével!</p><div class="svgwrap"><svg viewBox="0 0 276 242" width="276" height="242" role="img" aria-label="Szabályos ABCDEF hatszög, középpontja O">
+  <defs></defs>
+  <line x1="234.0" y1="120.8" x2="186.0" y2="37.7" stroke="#0f172a" stroke-width="1.4"/>
+  <line x1="186.0" y1="37.7" x2="90.0" y2="37.7" stroke="#0f172a" stroke-width="1.4"/>
+  <line x1="90.0" y1="37.7" x2="42.0" y2="120.8" stroke="#0f172a" stroke-width="1.4"/>
+  <line x1="42.0" y1="120.8" x2="90.0" y2="203.9" stroke="#0f172a" stroke-width="1.4"/>
+  <line x1="90.0" y1="203.9" x2="186.0" y2="203.9" stroke="#0f172a" stroke-width="1.4"/>
+  <line x1="186.0" y1="203.9" x2="234.0" y2="120.8" stroke="#0f172a" stroke-width="1.4"/>
+  <line x1="138.0" y1="120.8" x2="234.0" y2="120.8" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <line x1="138.0" y1="120.8" x2="186.0" y2="37.7" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <line x1="138.0" y1="120.8" x2="90.0" y2="37.7" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <line x1="138.0" y1="120.8" x2="42.0" y2="120.8" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <line x1="138.0" y1="120.8" x2="90.0" y2="203.9" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <line x1="138.0" y1="120.8" x2="186.0" y2="203.9" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <circle cx="234.0" cy="120.8" r="3" fill="#0f172a"/>
+  <text x="248.0" y="125.8" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="600">A</text>
+  <circle cx="186.0" cy="37.7" r="3" fill="#0f172a"/>
+  <text x="196.0" y="30.7" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="600">B</text>
+  <circle cx="90.0" cy="37.7" r="3" fill="#0f172a"/>
+  <text x="80.0" y="30.7" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="600">C</text>
+  <circle cx="42.0" cy="120.8" r="3" fill="#0f172a"/>
+  <text x="28.0" y="125.8" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="600">D</text>
+  <circle cx="90.0" cy="203.9" r="3" fill="#0f172a"/>
+  <text x="80.0" y="222.9" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="600">E</text>
+  <circle cx="186.0" cy="203.9" r="3" fill="#0f172a"/>
+  <text x="196.0" y="222.9" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="600">F</text>
+  <circle cx="138.0" cy="120.8" r="3" fill="#0f172a"/>
+  <text x="138.0" y="111.8" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="600">O</text>
+</svg></div><ol class="reszfeladatok"><li><span class="math inline">\(\overrightarrow{OD}\)</span></li><li><span class="math inline">\(\overrightarrow{OE}\)</span></li><li><span class="math inline">\(\overrightarrow{OF}\)</span></li><li><span class="math inline">\(\overrightarrow{CE}\)</span></li><li><span class="math inline">\(\overrightarrow{DF}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(-\vec a\)</span></li><li><span class="math inline">\(-\vec b\)</span></li><li><span class="math inline">\(\vec a-\vec b\)</span> (mert <span class="math inline">\(\overrightarrow{OF}=\overrightarrow{BA}\)</span>)</li><li><span class="math inline">\(\overrightarrow{OE}-\overrightarrow{OC}=-\vec b-(\vec b-\vec a)=\vec a-2\vec b\)</span></li><li><span class="math inline">\(\overrightarrow{OF}-\overrightarrow{OD}=(\vec a-\vec b)+\vec a=2\vec a-\vec b\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-2">
+      <p><span class="szam">2.</span> Az <span class="math inline">\(ABC\)</span> háromszögben <span class="math inline">\(\overrightarrow{CA}=\vec a\)</span> és <span class="math inline">\(\overrightarrow{CB}=\vec b\)</span>. Az <span class="math inline">\(F\)</span> pont az <span class="math inline">\(AB\)</span> oldal felezőpontja, <span class="math inline">\(S\)</span> a háromszög súlypontja. Fejezd ki <span class="math inline">\(\vec a\)</span> és <span class="math inline">\(\vec b\)</span> segítségével! <i>(A súlypont a súlyvonalat a csúcstól számítva <span class="math inline">\(2:1\)</span> arányban osztja.)</i></p><ol class="reszfeladatok rovid"><li><span class="math inline">\(\overrightarrow{AB}\)</span></li><li><span class="math inline">\(\overrightarrow{CF}\)</span></li><li><span class="math inline">\(\overrightarrow{CS}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\vec b-\vec a\)</span></li><li><span class="math inline">\(\overrightarrow{CA}+\tfrac12\overrightarrow{AB}=\tfrac12(\vec a+\vec b)\)</span></li><li><span class="math inline">\(\tfrac23\overrightarrow{CF}=\tfrac13(\vec a+\vec b)\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-3">
+      <p><span class="szam">3.</span> Az <span class="math inline">\(\vec a\)</span> és a <span class="math inline">\(\vec b\)</span> merőleges egymásra, <span class="math inline">\(|\vec a|=5\)</span> és <span class="math inline">\(|\vec b|=3\)</span>. Számítsd ki!</p><ol class="reszfeladatok"><li><span class="math inline">\(|\vec a-\vec b|\)</span></li><li><span class="math inline">\(|2\vec a+\vec b|\)</span></li><li><span class="math inline">\(|\vec a-2\vec b|\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\sqrt{25+9}=\sqrt{34}\approx5{,}83\)</span> (téglalap átlója)</li><li><span class="math inline">\(2\vec a\)</span> intenzitása <span class="math inline">\(10\)</span>, és ez is merőleges <span class="math inline">\(\vec b\)</span>-re: <span class="math inline">\(\sqrt{100+9}=\sqrt{109}\approx10{,}44\)</span></li><li><span class="math inline">\(-2\vec b\)</span> intenzitása <span class="math inline">\(6\)</span>, és merőleges <span class="math inline">\(\vec a\)</span>-ra: <span class="math inline">\(\sqrt{25+36}=\sqrt{61}\approx7{,}81\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-4">
+      <p><span class="szam">4.</span> Egy motorcsónak a vízhez képest <span class="math inline">\(12\)</span> km/h sebességgel halad kelet felé, a folyó pedig <span class="math inline">\(5\)</span> km/h sebességgel sodorja dél felé. Mekkora a csónak parthoz viszonyított sebessége, és hány fokkal tér el a keleti iránytól?</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>A két sebességvektor merőleges, az eredő intenzitása <span class="math inline">\(\sqrt{12^2+5^2}=13\)</span> km/h. Az eltérés szögére <span class="math inline">\(\operatorname{tg}\alpha=\frac{5}{12}\)</span>, így <span class="math inline">\(\alpha\approx22{,}6^\circ\)</span> (kelettől dél felé).</p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-5">
+      <p><span class="szam">5.</span> Maxi szerint az <span class="math inline">\(ABC\)</span> szabályos háromszögben, ahol az oldal hossza <span class="math inline">\(a\)</span>, az <span class="math inline">\(\overrightarrow{AB}+\overrightarrow{BC}+\overrightarrow{CA}\)</span> vektor intenzitása <span class="math inline">\(3a\)</span>, „hiszen három <span class="math inline">\(a\)</span> hosszú vektort adtunk össze”. Mit rontott el? Mennyi a helyes válasz?</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>A vektorok összegének intenzitása nem a hosszak összege. A háromszög-szabállyal <span class="math inline">\(\overrightarrow{AB}+\overrightarrow{BC}=\overrightarrow{AC}\)</span>, és <span class="math inline">\(\overrightarrow{AC}+\overrightarrow{CA}=\vec 0\)</span>: az összeg a nullvektor, intenzitása <span class="math inline">\(0\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-6">
+      <p><span class="szam">6.</span> Határozd meg a <span class="math inline">\(t\)</span> valós számot úgy, hogy az <span class="math inline">\(\vec a=(1;2;t)\)</span> és a <span class="math inline">\(\vec b=\left(t\sqrt5;0;2\right)\)</span> vektor intenzitása egyenlő legyen!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(1+4+t^2=5t^2+4\)</span>, azaz <span class="math inline">\(4t^2=1\)</span>, tehát <span class="math inline">\(t=\frac12\)</span> vagy <span class="math inline">\(t=-\frac12\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-7">
+      <p><span class="szam">7.</span> Adott az <span class="math inline">\(A(1;0;-2)\)</span> és a <span class="math inline">\(B(3;-1;5)\)</span> pont, valamint az <span class="math inline">\(S\left(\tfrac12;1;-1\right)\)</span> pont. Határozd meg a <span class="math inline">\(C\)</span> és a <span class="math inline">\(D\)</span> pont koordinátáit úgy, hogy az <span class="math inline">\(ABCD\)</span> négyszög olyan paralelogramma legyen, amelynek középpontja <span class="math inline">\(S\)</span>!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>A paralelogramma átlói felezik egymást: <span class="math inline">\(S\)</span> az <span class="math inline">\(AC\)</span> és a <span class="math inline">\(BD\)</span> felezőpontja. Koordinátánként (helyvektorokkal) számolva <span class="math inline">\(C=2S-A\)</span>: <span class="math inline">\(C(0;2;0)\)</span>, <span class="math inline">\(D=2S-B\)</span>: <span class="math inline">\(D(-2;3;-7)\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-8">
+      <p><span class="szam">8.</span> Az <span class="math inline">\(ABC\)</span> háromszög egyik csúcsa <span class="math inline">\(A(5;-2;3)\)</span>. Az <span class="math inline">\(AB\)</span> oldal felezőpontja <span class="math inline">\(F(1;4;1)\)</span>, az <span class="math inline">\(AC\)</span> oldal felezőpontja <span class="math inline">\(G(7;1;4)\)</span>. Határozd meg a másik két csúcs koordinátáit!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(B=2F-A\)</span>: <span class="math inline">\(B(-3;10;-1)\)</span>, és <span class="math inline">\(C=2G-A\)</span>: <span class="math inline">\(C(9;4;5)\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-9">
+      <p><span class="szam">9.</span> Határozd meg az <span class="math inline">\(A(-7;2;8)\)</span> pont <span class="math inline">\(B(6;4;5)\)</span> pontra vonatkozó tükörképének koordinátáit!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>A tükörkép <span class="math inline">\(A'\)</span>, és <span class="math inline">\(B\)</span> az <span class="math inline">\(AA'\)</span> szakasz felezőpontja: <span class="math inline">\(A'=2B-A\)</span>, azaz <span class="math inline">\(A'(19;6;2)\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-10">
+      <p><span class="szam">10.</span> Határozd meg az <span class="math inline">\(A(2;-1;4)\)</span> és a <span class="math inline">\(B(2;2;10)\)</span> pont által meghatározott szakasz <span class="math inline">\(A\)</span>-hoz közelebbi harmadolópontját!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(H=A+\tfrac13\overrightarrow{AB}=(2;-1;4)+\tfrac13(0;3;6)\)</span>, tehát <span class="math inline">\(H(2;0;6)\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-11">
+      <p><span class="szam">11.</span> Adott az <span class="math inline">\(A(1;0;-1)\)</span>, <span class="math inline">\(B(1;-1;3)\)</span>, <span class="math inline">\(C(-7;2;1)\)</span> csúcsú háromszög.</p><ol class="reszfeladatok"><li>Számítsd ki a kerületét!</li><li>Hegyesszögű, derékszögű vagy tompaszögű a háromszög? Indokold!</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(AB=\sqrt{17}\)</span>, <span class="math inline">\(BC=\sqrt{77}\)</span>, <span class="math inline">\(AC=\sqrt{72}=6\sqrt2\)</span>; a kerület <span class="math inline">\(\sqrt{17}+\sqrt{77}+6\sqrt2\approx21{,}38\)</span></li><li>hegyesszögű: a leghosszabb oldal négyzete <span class="math inline">\(77\)</span>, és <span class="math inline">\(77\lt 17+72=89\)</span>, így a vele szemközti szög is hegyesszög</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-12">
+      <p><span class="szam">12.</span> Az <span class="math inline">\(A(3;1;2)\)</span>, <span class="math inline">\(B(5;3;3)\)</span>, <span class="math inline">\(C(4;-1;4)\)</span> pontok egy háromszög csúcsai. Döntsd el és indokold!</p><ol class="reszfeladatok"><li>Egyenlő szárú-e a háromszög?</li><li>Derékszögű-e a háromszög?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>igen: <span class="math inline">\(AB=\sqrt{4+4+1}=3\)</span> és <span class="math inline">\(AC=\sqrt{1+4+4}=3\)</span></li><li>igen: <span class="math inline">\(BC^2=1+16+1=18=AB^2+AC^2\)</span>, így Pitagorasz tételének megfordítása szerint az <span class="math inline">\(A\)</span>-nál derékszög van</li></ol></div>
+      </details>
+    </article>
+    <h2 id="nehez">🔴 Nehéz szint — Kristály-protokoll</h2>
+    <article class="feladat nehez" id="nehez-1">
+      <p><span class="szam">1.</span> Az <span class="math inline">\(ABCDEF\)</span> szabályos hatszög középpontja <span class="math inline">\(K(2;-3;5)\)</span>, két szomszédos csúcsa <span class="math inline">\(A(1;-3;6)\)</span> és <span class="math inline">\(B(1;-2;5)\)</span>. Határozd meg a hatszög másik négy csúcsának koordinátáit!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(\overrightarrow{KA}=(-1;0;1)\)</span>, <span class="math inline">\(\overrightarrow{KB}=(-1;1;0)\)</span>. A szabályos hatszögben <span class="math inline">\(\overrightarrow{KC}=\overrightarrow{KB}-\overrightarrow{KA}\)</span>, <span class="math inline">\(\overrightarrow{KD}=-\overrightarrow{KA}\)</span>, <span class="math inline">\(\overrightarrow{KE}=-\overrightarrow{KB}\)</span>, <span class="math inline">\(\overrightarrow{KF}=\overrightarrow{KA}-\overrightarrow{KB}\)</span>. Így <span class="math inline">\(C(2;-2;4)\)</span>, <span class="math inline">\(D(3;-3;4)\)</span>, <span class="math inline">\(E(3;-4;5)\)</span>, <span class="math inline">\(F(2;-4;6)\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-2">
+      <p><span class="szam">2.</span> Bizonyítsd be vektorokkal, hogy a háromszög két oldalának felezőpontját összekötő szakasz (középvonal) párhuzamos a harmadik oldallal, és hossza annak fele!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>Legyen <span class="math inline">\(F\)</span> a <span class="math inline">\(CA\)</span>, <span class="math inline">\(G\)</span> a <span class="math inline">\(CB\)</span> oldal felezőpontja. Ekkor <span class="math inline">\(\overrightarrow{CF}=\tfrac12\overrightarrow{CA}\)</span> és <span class="math inline">\(\overrightarrow{CG}=\tfrac12\overrightarrow{CB}\)</span>, így <span class="math inline">\(\overrightarrow{FG}=\overrightarrow{CG}-\overrightarrow{CF}=\tfrac12\left(\overrightarrow{CB}-\overrightarrow{CA}\right)=\tfrac12\overrightarrow{AB}\)</span>. Egy vektor fele párhuzamos vele, és intenzitása fele akkora — ez az állítás.</p></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-3">
+      <p><span class="szam">3.</span> Az <span class="math inline">\(A(1;2;0)\)</span>, <span class="math inline">\(B(4;3;1)\)</span> és <span class="math inline">\(C(2;-1;3)\)</span> pont egy paralelogramma három csúcsa, de nem tudjuk, milyen sorrendben. Határozd meg a negyedik csúcs összes lehetséges helyzetét!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(\overrightarrow{AB}=(3;1;1)\)</span> és <span class="math inline">\(\overrightarrow{AC}=(1;-3;3)\)</span> nem párhuzamosak, tehát a pontok nem esnek egy egyenesre. Mindhárom pont lehet a negyedik csúccsal szemközti csúcs. <span class="math inline">\(D_1=B+C-A=(5;0;4)\)</span> (az <span class="math inline">\(A\)</span>-val szemközti), <span class="math inline">\(D_2=A+C-B=(-1;-2;2)\)</span> (a <span class="math inline">\(B\)</span>-vel szemközti), <span class="math inline">\(D_3=A+B-C=(3;6;-2)\)</span> (a <span class="math inline">\(C\)</span>-vel szemközti) — három paralelogramma van.</p></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-4">
+      <p><span class="szam">4.</span> Adott az <span class="math inline">\(A(1;2;3)\)</span>, a <span class="math inline">\(B(3;t;-1)\)</span> és a <span class="math inline">\(C(5;0;1)\)</span> pont. Határozd meg a <span class="math inline">\(t\)</span> értékét úgy, hogy <span class="math inline">\(AB=AC\)</span> legyen! Melyik esetben lesz az <span class="math inline">\(ABC\)</span> háromszög szabályos?</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(AC^2=16+4+4=24\)</span> és <span class="math inline">\(AB^2=4+(t-2)^2+16\)</span>, így <span class="math inline">\((t-2)^2=4\)</span>: <span class="math inline">\(t=4\)</span> vagy <span class="math inline">\(t=0\)</span>. <span class="math inline">\(t=4\)</span> esetén <span class="math inline">\(B(3;4;-1)\)</span> és <span class="math inline">\(BC^2=4+16+4=24\)</span>: a háromszög <b>szabályos</b> (oldala <span class="math inline">\(2\sqrt6\)</span>). <span class="math inline">\(t=0\)</span> esetén <span class="math inline">\(BC^2=4+0+4=8\)</span>: csak egyenlő szárú.</p></div>
+      </details>
+    </article>
+    <h2 id="joker-szint">🃏 Joker</h2>
+    <article class="feladat joker" id="joker">
+      <p><span class="szam">★</span> Tér-eb egy háromdimenziós sakktáblán ugrál, a sakkbeli lóhoz hasonlóan: egy ugrással az egyik koordinátája <span class="math inline">\(2\)</span>-vel, egy másik <span class="math inline">\(1\)</span>-gyel változik (növekszik vagy csökken), a harmadik változatlan. Egy ugrás tehát egy vektor, például <span class="math inline">\((2;-1;0)\)</span> vagy <span class="math inline">\((0;1;-2)\)</span>.</p><ol class="reszfeladatok"><li>Hány különböző ugrásvektor van?</li><li>Mekkora az intenzitásuk?</li><li>Legalább hány ugrással jut el az origóból az <span class="math inline">\((1;1;1)\)</span> pontba? Indokold!</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(24\)</span> ugrásvektor van: <span class="math inline">\(3\)</span>-féleképpen választható a <span class="math inline">\(2\)</span>-vel változó koordináta, <span class="math inline">\(2\)</span>-féleképpen az <span class="math inline">\(1\)</span>-gyel változó, és mindkettő előjele <span class="math inline">\(2\)</span>-féle (<span class="math inline">\(3\cdot2\cdot2\cdot2=24\)</span>)</li><li>mindegyik intenzitása <span class="math inline">\(\sqrt{4+1+0}=\sqrt5\)</span></li><li><span class="math inline">\(3\)</span> ugrás. Egy ugrás a koordináták összegét páratlan számmal (<span class="math inline">\(\pm1\)</span> vagy <span class="math inline">\(\pm3\)</span>) változtatja, az <span class="math inline">\((1;1;1)\)</span>-ben pedig az összeg <span class="math inline">\(3\)</span>, páratlan: páros számú ugrással nem érhető el, egyetlen ugrással sem, mert <span class="math inline">\((1;1;1)\)</span> nem ugrásvektor. Három elég: <span class="math inline">\((0;-2;-1)+(0;1;2)+(1;2;0)=(1;1;1)\)</span></li></ol></div>
+      </details>
+    </article>
+    <div class="gyakorolj">
+      <span class="ikon">📖</span>
+      <p>Elakadtál? Nézd át a <a href="index.html">témakör tananyagait</a> vagy a <a href="osszefoglalo.html">Taktikai memóriakártyát</a>.</p>
+    </div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-koordinatak-terben.html"><span class="irany">← Előző</span><span class="hova">Vektorok a térben</span></a>
+      <a class="kov" href="feladatok-szorzatok.html"><span class="irany">Következő →</span><span class="hova">A két szorzat — feladatok</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
