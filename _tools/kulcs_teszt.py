@@ -36,9 +36,11 @@ def _szoveg(h: str) -> str:
     h = re.sub(r'\\(?:varnothing|emptyset)\b', ' \u2205 ', h)
     # a SZÁM/SZÁM alakú törtet egyben kell tartani, különben 31 és 99 lesz a 31/99-ből;
     # a szimbolikus törtet (pl. \tfrac{x+5}{2}) az általános parancs-strip kezeli
-    h = re.sub(r'\\[tdc]?frac\s*(\d)\s*(\d)(?![\d}])', r' \1/\2 ', h)
-    h = re.sub(r'\\[tdc]?frac\s*\{\s*(-?\d+)\s*\}\s*\{\s*(-?\d+)\s*\}',
-               lambda m: ' %s/%s ' % (m.group(1), m.group(2)), h)
+    # a tört előtti mínuszjel a törthöz tapad („-\\frac{17}{2}” → -17/2), különben
+    # a szóköz miatt a harness pozitív 17/2-t olvasna
+    h = re.sub(r'(-?)\s*\\[tdc]?frac\s*(\d)\s*(\d)(?![\d}])', r' \1\2/\3 ', h)
+    h = re.sub(r'(-?)\s*\\[tdc]?frac\s*\{\s*(-?\d+)\s*\}\s*\{\s*(-?\d+)\s*\}',
+               lambda m: ' %s%s/%s ' % (m.group(1), m.group(2), m.group(3)), h)
     h = re.sub(r'\\[a-zA-Z]+\s*', ' ', h)          # KaTeX-parancsok
     h = TAG.sub(' ', h)
     for a, b in (('&lt;', '<'), ('&gt;', '>'), ('&amp;', '&'), ('&nbsp;', ' '),

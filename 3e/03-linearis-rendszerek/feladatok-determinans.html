@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A determináns és a Cramer-szabály — feladatok | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="digitalis">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Lineáris egyenletrendszerek</a> ›
+  <span class="itt">A determináns és a Cramer-szabály — feladatok</span>
+</nav>
+<div class="hero">
+  <h1>A determináns és a Cramer-szabály — Kiképzési Adattár</h1>
+  <p class="alcim">Másod- és harmadrendű determináns, Sarrus-szabály, kifejtés, a determináns tulajdonságai, a Cramer-szabály és a korlátja. A végeredmény minden feladatnál lenyitható — előbb számolj, csak utána nézd meg!</p>
+  <div class="meta-sor"><span class="chip alap">Alap</span><span class="chip kozep">Közép</span><span class="chip nehez">Nehéz</span><span class="chip joker">Joker</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="alap">🟢 Alapszint — Különleges fokozat</h2>
+    <article class="feladat alap" id="alap-1">
+      <p><span class="szam">1.</span> Számítsd ki a determinánst!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(\begin{vmatrix}2&3\\-1&5\end{vmatrix}\)</span></li><li><span class="math inline">\(\begin{vmatrix}7&-3\\10&-9\end{vmatrix}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(13\)</span></li><li><span class="math inline">\(-33\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-2">
+      <p><span class="szam">2.</span> Számítsd ki a determinánst!</p><ol class="reszfeladatok"><li><span class="math inline">\(\begin{vmatrix}4&-2\\6&-3\end{vmatrix}\)</span></li><li><span class="math inline">\(\begin{vmatrix}-1&5\\2&-3\end{vmatrix}\)</span></li><li>Miért jött ki az a) részben <span class="math inline">\(0\)</span>?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(0\)</span></li><li><span class="math inline">\(-7\)</span></li><li>mert a második sor az első <span class="math inline">\(\frac{3}{2}\)</span>-szerese: a két sor arányos</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-3">
+      <p><span class="szam">3.</span> Számítsd ki a determinánst a Sarrus-szabállyal! <span class="math display">\[\begin{vmatrix}2&3&-1\\0&1&4\\5&1&3\end{vmatrix}\]</span></p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(63\)</span></p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-4">
+      <p><span class="szam">4.</span> Számítsd ki a determinánst a Sarrus-szabállyal! <span class="math display">\[\begin{vmatrix}4&1&5\\-3&2&4\\1&3&-5\end{vmatrix}\]</span></p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(-154\)</span></p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-5">
+      <p><span class="szam">5.</span> Melyik sora szerint érdemes kifejteni ezt a determinánst? Számítsd ki! <span class="math display">\[\begin{vmatrix}2&0&0\\5&3&0\\1&4&-1\end{vmatrix}\]</span></p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>Az első sora szerint, mert abban két nulla áll. Az értéke <span class="math inline">\(-6\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-6">
+      <p><span class="szam">6.</span> Melyik oszlopa szerint érdemes kifejteni ezt a determinánst? Számítsd ki! <span class="math display">\[\begin{vmatrix}1&0&2\\3&0&-1\\4&5&6\end{vmatrix}\]</span></p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>A második oszlopa szerint, mert abban csak egy elem nem nulla. Az értéke <span class="math inline">\(35\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-7">
+      <p><span class="szam">7.</span> Döntsd el számolás nélkül, mely determinánsok értéke <span class="math inline">\(0\)</span>! Válaszodat indokold!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(\begin{vmatrix}1&2&3\\0&0&0\\4&5&6\end{vmatrix}\)</span></li><li><span class="math inline">\(\begin{vmatrix}2&-1&4\\2&-1&4\\3&7&1\end{vmatrix}\)</span></li><li><span class="math inline">\(\begin{vmatrix}1&3&-2\\5&0&1\\2&6&-4\end{vmatrix}\)</span></li><li><span class="math inline">\(\begin{vmatrix}1&0&0\\0&2&0\\0&0&3\end{vmatrix}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(0\)</span>, mert van csupa nulla sora</li><li><span class="math inline">\(0\)</span>, mert két sora egyenlő</li><li><span class="math inline">\(0\)</span>, mert a harmadik sora az első kétszerese</li><li>nem <span class="math inline">\(0\)</span>: a Sarrus-szabállyal csak a főátló szorzata marad, <span class="math inline">\(1\cdot2\cdot3=6\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-8">
+      <p><span class="szam">8.</span> Tudjuk, hogy <span class="math display">\[\begin{vmatrix}a&b&c\\d&e&f\\g&h&i\end{vmatrix}=7.\]</span> Mennyi a determináns értéke, ha</p><ol class="reszfeladatok"><li>felcseréljük az első két sorát?</li><li>előbb az első és a második, majd a második és a harmadik sorát cseréljük fel?</li><li>a harmadik sora helyére az első két sor összegét írjuk?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(-7\)</span>, mert egy sorcsere előjelet vált</li><li><span class="math inline">\(7\)</span>, mert két sorcsere kétszer vált előjelet</li><li><span class="math inline">\(0\)</span>, mert a harmadik sor az első kettő összege lesz</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-9">
+      <p><span class="szam">9.</span> Oldd meg a Cramer-szabállyal!<span class="math display">\[\begin{aligned}3x+2y&=7\\5x-y&=3\end{aligned}\]</span></p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(D=-13\)</span>, <span class="math inline">\(D_x=-13\)</span>, <span class="math inline">\(D_y=-26\)</span>, tehát <span class="math inline">\((x;y)=(1;2)\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-10">
+      <p><span class="szam">10.</span> Oldd meg a Cramer-szabállyal!<span class="math display">\[\begin{aligned}4x-3y&=1\\2x+5y&=-19\end{aligned}\]</span></p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(D=26\)</span>, <span class="math inline">\(D_x=-52\)</span>, <span class="math inline">\(D_y=-78\)</span>, tehát <span class="math inline">\((x;y)=(-2;-3)\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-11">
+      <p><span class="szam">11.</span> Írd fel, de ne számítsd ki a <span class="math inline">\(D\)</span>, a <span class="math inline">\(D_y\)</span> és a <span class="math inline">\(D_z\)</span> determinánst az alábbi rendszerhez!<span class="math display">\[\begin{aligned}2x-y+4z&=5\\x+3z&=-2\\-3x+2y-z&=7\end{aligned}\]</span></p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(D=\begin{vmatrix}2&-1&4\\1&0&3\\-3&2&-1\end{vmatrix}\)</span>, <span class="math inline">\(D_y=\begin{vmatrix}2&5&4\\1&-2&3\\-3&7&-1\end{vmatrix}\)</span>, <span class="math inline">\(D_z=\begin{vmatrix}2&-1&5\\1&0&-2\\-3&2&7\end{vmatrix}\)</span>. A második egyenletből hiányzó <span class="math inline">\(y\)</span> helyére <span class="math inline">\(0\)</span> kerül.</p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-12">
+      <p><span class="szam">12.</span> Oldd meg a Cramer-szabállyal!<span class="math display">\[\begin{aligned}x+y+z&=6\\2x+y+3z&=13\\-x+5y-2z&=3\end{aligned}\]</span></p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(D=-5\)</span>, <span class="math inline">\(D_x=-5\)</span>, <span class="math inline">\(D_y=-10\)</span>, <span class="math inline">\(D_z=-15\)</span>, tehát <span class="math inline">\((x;y;z)=(1;2;3)\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-13">
+      <p><span class="szam">13.</span> Oldd meg a Cramer-szabállyal!<span class="math display">\[\begin{aligned}x+2y+3z&=3\\2x-y+z&=6\\3x+y-2z&=3\end{aligned}\]</span></p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(D=30\)</span>, <span class="math inline">\(D_x=60\)</span>, <span class="math inline">\(D_y=-30\)</span>, <span class="math inline">\(D_z=30\)</span>, tehát <span class="math inline">\((x;y;z)=(2;-1;1)\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-14">
+      <p><span class="szam">14.</span> Számítsd ki a fő determinánst, és döntsd el, alkalmazható-e a Cramer-szabály!</p><ol class="reszfeladatok rovid"><li><span class="math display">\[\begin{aligned}x+2y-z&=3\\2x+4y-2z&=5\\x-y+z&=1\end{aligned}\]</span></li><li><span class="math display">\[\begin{aligned}x+2y-z&=3\\2x+y-2z&=5\\x-y+z&=1\end{aligned}\]</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(D=0\)</span> (az első két sor arányos), tehát nem alkalmazható</li><li><span class="math inline">\(D=-6\ne0\)</span>, tehát alkalmazható</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-15">
+      <p><span class="szam">15.</span> Ebből a rendszerből csak a <span class="math inline">\(z\)</span> értékére vagyunk kíváncsiak. Melyik két determinánst kell kiszámítanod? Számítsd ki a <span class="math inline">\(z\)</span>-t!<span class="math display">\[\begin{aligned}2x+y-z&=0\\x-y+2z&=9\\3x+2y+z&=7\end{aligned}\]</span></p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>Elég a <span class="math inline">\(D\)</span> és a <span class="math inline">\(D_z\)</span>: <span class="math inline">\(D=-10\)</span>, <span class="math inline">\(D_z=-30\)</span>, tehát <span class="math inline">\(z=3\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-16">
+      <p><span class="szam">16.</span> Maxi egy rendszer megoldásakor ezt írta: „<span class="math inline">\(D=0\)</span> és <span class="math inline">\(D_x=0\)</span>, tehát <span class="math inline">\(x=\frac{D_x}{D}=\frac{0}{0}=1\)</span>.” Mi a hiba? Mit tudunk ilyenkor a rendszer megoldásairól?</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>Nullával nem osztunk, a <span class="math inline">\(\frac{0}{0}\)</span> nem szám. Ha <span class="math inline">\(D=0\)</span>, a Cramer-szabály nem alkalmazható. A rendszer ilyenkor határozatlan vagy ellentmondásos, és hogy melyik, azt a Gauss-eljárás dönti el.</p></div>
+      </details>
+    </article>
+    <h2 id="kozep">🟡 Középszint — Királyi Gárda</h2>
+    <article class="feladat kozep" id="kozep-1">
+      <p><span class="szam">1.</span> Számítsd ki a determinánsokat kétféleképpen: a Sarrus-szabállyal és kifejtéssel is!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(\begin{vmatrix}2&1&1\\-5&1&4\\12&3&-4\end{vmatrix}\)</span></li><li><span class="math inline">\(\begin{vmatrix}2&1&3\\5&3&2\\1&4&3\end{vmatrix}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(-31\)</span></li><li><span class="math inline">\(40\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-2">
+      <p><span class="szam">2.</span> Tekintsd a következő determinánst: <span class="math display">\[\begin{vmatrix}3&4&-5\\8&7&-2\\2&-1&8\end{vmatrix}\]</span></p><ol class="reszfeladatok"><li>Számítsd ki!</li><li>Milyen összefüggés van a sorai között, amely megmagyarázza az eredményt? (Ötlet: vesd össze a második sort az első kétszeresével.)</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(0\)</span></li><li>a második sor az első sor kétszeresének és a harmadik sornak az összege</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-3">
+      <p><span class="szam">3.</span> Oldd meg az egyenletet! <span class="math display">\[\begin{vmatrix}x-2&3&1\\1&5&x-2\\2&1&-3\end{vmatrix}=0\]</span></p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(x=-7\)</span> vagy <span class="math inline">\(x=2\)</span></p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-4">
+      <p><span class="szam">4.</span> Számítsd ki, és vond össze a kapott kifejezést! Mikor lehet az értéke <span class="math inline">\(0\)</span>, ha <span class="math inline">\(x\)</span> és <span class="math inline">\(y\)</span> valós számok? <span class="math display">\[\begin{vmatrix}x-y&-2\\xy&x-y\end{vmatrix}\]</span></p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(x^2+y^2\)</span>. Ez csak akkor <span class="math inline">\(0\)</span>, ha <span class="math inline">\(x=0\)</span> és <span class="math inline">\(y=0\)</span>, mert két négyzet összege, és egyik tag sem negatív.</p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-5">
+      <p><span class="szam">5.</span> Rendezd a rendszert, majd oldd meg a Cramer-szabállyal!<span class="math display">\[\begin{aligned}2x+3y&=z+1\\3x+2z&=2y-1\\4x+y&=3z-11\end{aligned}\]</span></p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>Rendezve <span class="math inline">\(2x+3y-z=1\)</span>, <span class="math inline">\(3x-2y+2z=-1\)</span>, <span class="math inline">\(4x+y-3z=-11\)</span>; <span class="math inline">\(D=48\)</span>, <span class="math inline">\(D_x=-48\)</span>, <span class="math inline">\(D_y=96\)</span>, <span class="math inline">\(D_z=144\)</span>, tehát <span class="math inline">\((x;y;z)=(-1;2;3)\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-6">
+      <p><span class="szam">6.</span> Oldd meg a Cramer-szabállyal!<span class="math display">\[\begin{aligned}2x+y+z&=2\\4x-3y+z&=7\\6x+2y-z&=-1\end{aligned}\]</span></p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(D=38\)</span>, <span class="math inline">\(D_x=19\)</span>, <span class="math inline">\(D_y=-38\)</span>, <span class="math inline">\(D_z=76\)</span>, tehát <span class="math inline">\((x;y;z)=\left(\frac{1}{2};\ -1;\ 2\right)\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-7">
+      <p><span class="szam">7.</span> Oldd meg a rendszert a Gauss-eljárással és a Cramer-szabállyal is! Melyik volt számodra kevesebb munka, és miért?<span class="math display">\[\begin{aligned}x+y+z&=2\\2x-y+z&=5\\x+2y-z&=-3\end{aligned}\]</span></p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\((x;y;z)=(1;-1;2)\)</span>; a Cramer-szabályhoz <span class="math inline">\(D=7\)</span>, <span class="math inline">\(D_x=7\)</span>, <span class="math inline">\(D_y=-7\)</span>, <span class="math inline">\(D_z=14\)</span>. Itt jellemzően a Gauss-eljárás a rövidebb: az első egyenletben minden együttható <span class="math inline">\(1\)</span>, így két lépésben lépcsős alakot kapunk, a Cramer-szabályhoz viszont négy harmadrendű determináns kell.</p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-8">
+      <p><span class="szam">8.</span> Mindkét rendszer fő determinánsa <span class="math inline">\(0\)</span>. Döntsd el a Gauss-eljárással, melyik határozatlan és melyik ellentmondásos! A határozatlannál add meg a megoldásokat a <span class="math inline">\(z=t\)</span> jelöléssel.</p><ol class="reszfeladatok rovid"><li><span class="math display">\[\begin{aligned}x+y+2z&=3\\2x-y+z&=3\\4x+y+5z&=9\end{aligned}\]</span></li><li><span class="math display">\[\begin{aligned}x+y+2z&=3\\2x-y+z&=3\\4x+y+5z&=8\end{aligned}\]</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>határozatlan (a harmadik egyenlet <span class="math inline">\(2S_1+S_2\)</span>): <span class="math inline">\((x;y;z)=(2-t;\ 1-t;\ t)\)</span></li><li>ellentmondásos: <span class="math inline">\(S_3-2S_1-S_2\)</span> után <span class="math inline">\(0=-1\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-9">
+      <p><span class="szam">9.</span> Oldd meg a Cramer-szabállyal!<span class="math display">\[\begin{aligned}6x+5y&=6\\x-2y&=-\frac{7}{10}\end{aligned}\]</span></p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(D=-17\)</span>, <span class="math inline">\(D_x=-\frac{17}{2}\)</span>, <span class="math inline">\(D_y=-\frac{51}{5}\)</span>, tehát <span class="math inline">\((x;y)=\left(\frac{1}{2};\ \frac{3}{5}\right)\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-10">
+      <p><span class="szam">10.</span> Rendezd a rendszert, majd oldd meg a Cramer-szabállyal!<span class="math display">\[\begin{aligned}3x&=2y+4\\4y-2&=x\end{aligned}\]</span></p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>Rendezve <span class="math inline">\(3x-2y=4\)</span> és <span class="math inline">\(-x+4y=2\)</span>; <span class="math inline">\(D=10\)</span>, <span class="math inline">\(D_x=20\)</span>, <span class="math inline">\(D_y=10\)</span>, tehát <span class="math inline">\((x;y)=(2;1)\)</span>.</p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-11">
+      <p><span class="szam">11.</span> Egy háromismeretlenes rendszerről ezt tudjuk: <span class="math inline">\(D=-12\)</span>, <span class="math inline">\(D_x=24\)</span>, <span class="math inline">\(D_y=0\)</span>, <span class="math inline">\(D_z=-36\)</span>.</p><ol class="reszfeladatok"><li>Add meg a rendszer megoldását!</li><li>Mit mondhatsz, ha egy másik rendszernél <span class="math inline">\(D=0\)</span>?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\((x;y;z)=(-2;0;3)\)</span></li><li>a Cramer-szabály nem alkalmazható; a rendszer határozatlan vagy ellentmondásos, és ezt a Gauss-eljárással kell eldönteni</li></ol></div>
+      </details>
+    </article>
+    <h2 id="nehez">🔴 Nehéz szint — Kristály-protokoll</h2>
+    <article class="feladat nehez" id="nehez-1">
+      <p><span class="szam">1.</span> Egy pékségben három vásárló fizetett. Az első <span class="math inline">\(3\)</span> kifliért, <span class="math inline">\(2\)</span> pogácsáért és <span class="math inline">\(1\)</span> perecért <span class="math inline">\(330\)</span> dinárt, a második <span class="math inline">\(2\)</span> kifliért, <span class="math inline">\(1\)</span> pogácsáért és <span class="math inline">\(2\)</span> perecért <span class="math inline">\(320\)</span> dinárt, a harmadik <span class="math inline">\(1\)</span> kifliért, <span class="math inline">\(3\)</span> pogácsáért és <span class="math inline">\(2\)</span> perecért <span class="math inline">\(400\)</span> dinárt fizetett. Mennyibe kerül egy perec? Használd a Cramer-szabályt, és csak azokat a determinánsokat számítsd ki, amelyekre valóban szükség van!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>Ha <span class="math inline">\(x\)</span> a kifli, <span class="math inline">\(y\)</span> a pogácsa, <span class="math inline">\(z\)</span> a perec ára, elég a <span class="math inline">\(D\)</span> és a <span class="math inline">\(D_z\)</span>: <span class="math inline">\(D=-11\)</span>, <span class="math inline">\(D_z=-990\)</span>, tehát egy perec <span class="math inline">\(90\)</span> dinár.</p></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-2">
+      <p><span class="szam">2.</span> Oldd meg az egyenletet! <span class="math display">\[\begin{vmatrix}-1&4&x+1\\2&-1&x-3\\1&x&-1\end{vmatrix}=0\]</span></p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(x=-2\)</span> vagy <span class="math inline">\(x=\frac{2}{3}\)</span></p></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-3">
+      <p><span class="szam">3.</span> Tekintsd a következő rendszert:<span class="math display">\[\begin{aligned}x+2y-z&=1\\2x+y+z&=5\\4x+5y-z&=7\end{aligned}\]</span></p><ol class="reszfeladatok"><li>Próbáld megoldani a Cramer-szabállyal! Mit tapasztalsz?</li><li>Hány megoldása van a rendszernek? Ha végtelen sok, add meg őket a <span class="math inline">\(z=t\)</span> jelöléssel!</li><li>A megoldások közül melyikben lesz <span class="math inline">\(x=y\)</span>?</li><li>Mire kellene kicserélni a harmadik egyenlet jobb oldalán álló <span class="math inline">\(7\)</span>-et, hogy a rendszernek ne legyen megoldása?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(D=0\)</span> (a harmadik sor az első kétszeresének és a második sornak az összege), tehát a Cramer-szabály nem alkalmazható</li><li>végtelen sok: <span class="math inline">\((x;y;z)=(3-t;\ t-1;\ t)\)</span></li><li><span class="math inline">\(3-t=t-1\)</span>, tehát <span class="math inline">\(t=2\)</span>: <span class="math inline">\((x;y;z)=(1;1;2)\)</span></li><li>bármely <span class="math inline">\(7\)</span>-től különböző számra, például <span class="math inline">\(8\)</span>-ra: ekkor <span class="math inline">\(S_3-2S_1-S_2\)</span> után <span class="math inline">\(0=1\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-4">
+      <p><span class="szam">4.</span> Egy másodrendű determináns négy eleme az <span class="math inline">\(1\)</span>, a <span class="math inline">\(2\)</span>, a <span class="math inline">\(3\)</span> és a <span class="math inline">\(4\)</span>, mindegyik pontosan egyszer. Mekkora a determináns lehető legnagyobb és lehető legkisebb értéke? Indokold!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>A legnagyobb érték <span class="math inline">\(10\)</span>, például <span class="math inline">\(\begin{vmatrix}4&1\\2&3\end{vmatrix}=4\cdot3-1\cdot2=10\)</span>: a főátlóba a két legnagyobb, a mellékátlóba a két legkisebb szám kerül. A legkisebb érték <span class="math inline">\(-10\)</span>, a két sor felcserélésével.</p></div>
+      </details>
+    </article>
+    <h2 id="joker">🃏 Joker</h2>
+    <article class="feladat joker" id="joker">
+      <p><span class="szam">★</span> Maxi szerint a Sarrus-szabály <span class="math inline">\(4\times4\)</span>-es determinánsra is működik: mellé írja az első három oszlopot, és négy lefelé haladó átló szorzatát összeadja, négy fölfelé haladóét kivonja. Mutasd meg egy olyan <span class="math inline">\(4\times4\)</span>-es determinánson, amelyet kifejtéssel könnyen ki tudsz számolni, hogy Maxi szabálya rossz eredményt ad! (Ötlet: a kifejtés <span class="math inline">\(4\times4\)</span>-es determinánsra is ugyanúgy működik, mint <span class="math inline">\(3\times3\)</span>-asra, csak az aldeterminánsok harmadrendűek. Próbálkozz sok nullát tartalmazó determinánssal!)</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>Egy jó ellenpélda: <span class="math display">\[\begin{vmatrix}1&0&0&0\\0&0&1&0\\0&1&0&0\\0&0&0&1\end{vmatrix}\]</span> Az első sor szerint kifejtve az értéke <span class="math inline">\(1\cdot\begin{vmatrix}0&1&0\\1&0&0\\0&0&1\end{vmatrix}=-1\)</span>. Maxi nyolc átlója közül mindegyikben van nulla, ezért nála <span class="math inline">\(0\)</span> jön ki. A hiba oka: a <span class="math inline">\(4\times4\)</span>-es determináns <span class="math inline">\(24\)</span> tagból áll, az átlók viszont csak <span class="math inline">\(8\)</span>-at adnak.</p></div>
+      </details>
+    </article>
+    <div class="gyakorolj">
+      <span class="ikon">📖</span>
+      <p>Elakadtál? Nézd át a <a href="index.html">témakör tananyagait</a> vagy a <a href="osszefoglalo.html">Taktikai memóriakártyát</a>.</p>
+    </div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-rendszerek.html"><span class="irany">← Előző</span><span class="hova">Egyenletrendszerek — feladatok</span></a>
+      <a class="kov" href="osszefoglalo.html"><span class="irany">Következő →</span><span class="hova">Taktikai memóriakártya</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
