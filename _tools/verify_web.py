@@ -121,6 +121,13 @@ def kanon_ellenorzes(ut: Path) -> tuple[list[str], list[str]]:
     if "data-hatter=" not in battr:
         hibak.append("a <body>-n nincs data-hatter — futtasd: python _tools/set_hatter.py")
 
+    # --- egyedi id-k (a duplikált id-re a horgony és az SVG-marker is rossz elemet talál) ---
+    idk_oldal = re.findall(r'\sid="([^"]+)"', re.sub(r"<script.*?</script>", "", s, flags=re.S))
+    dupl = sorted({i for i in idk_oldal if idk_oldal.count(i) > 1})
+    if dupl:
+        hibak.append(f"ismétlődő id az oldalon: {', '.join(dupl[:6])} "
+                     f"→ futtasd: python _tools/egyedi_id.py")
+
     # --- naplo.js felismerés ---
     if temakorben and not any(re.match(m, nev) for m in NAPLO_MINTAK):
         figy.append(f"a naplo.js fájlnév-mintái nem ismerik fel a(z) „{nev}”-t "

@@ -124,10 +124,8 @@ def rs(*sorok):
     return "$$\\begin{aligned}" + "\\\\".join(sorok) + "\\end{aligned}$$"
 
 
-def abra(svg, tag):
-    """A svg_fuggvenyek minden ábrában ugyanazt a marker-id-t adja: egy oldalon két ábra
-    duplikált id-t jelentene, ezért itt egyedivé tesszük."""
-    svg = svg.replace('id="nyil"', f'id="nyil-{tag}"').replace('url(#nyil)', f'url(#nyil-{tag})')
+def abra(svg):
+    # a duplikált marker-id-t az fgy_common.oldal() szünteti meg (egyedi_id.py)
     return f'<div class="svgwrap">{svg}</div>'
 
 
@@ -163,7 +161,7 @@ ALAP = [
   "Az $x$-et, mert az együtthatója a két egyenletben egyenlő. A megoldás $(x;y)=(2;3)$."),
 
  ("Az ábrán az $x-y=-2$ és az $x+y=4$ egyenes látható. Olvasd le az ábráról a rendszer "
-  "megoldását, majd ellenőrizd behelyettesítéssel!" + abra(SVG_A5, "a5"), None,
+  "megoldását, majd ellenőrizd behelyettesítéssel!" + abra(SVG_A5), None,
   "$(x;y)=(1;3)$; ellenőrzés: $1-3=-2$ és $1+3=4$."),
 
  ("Hány megoldása van a rendszernek? Számolás nélkül, a két egyenes helyzete alapján döntsd el!",
@@ -276,7 +274,7 @@ KOZEP = [
   rs(r"(x+4)(y-3)&=xy-22", r"(x-2)(y+2)&=xy"), None,
   "Rendezés után $-3x+4y=-10$ és $x-y=2$; a megoldás $(x;y)=(-2;-4)$."),
 
- ("Az ábrán az $x-y=-1$ és a $2x+y=3$ egyenes látható." + abra(SVG_K3, "k3"),
+ ("Az ábrán az $x-y=-1$ és a $2x+y=3$ egyenes látható." + abra(SVG_K3),
   ["Becsüld meg az ábráról a metszéspontot!", "Számítsd ki a metszéspont pontos koordinátáit!",
    "Miért nem elég ebben az esetben az ábra?"],
   ["körülbelül $(0{,}7;\\ 1{,}7)$",

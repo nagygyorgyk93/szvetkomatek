@@ -11,6 +11,10 @@ Rövidítő jelölés a tartalomban:
 from __future__ import annotations
 import os
 import re
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from egyedi_id import egyedi_idk  # noqa: E402  (a _tools mappából)
 
 GYOKER = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
@@ -418,5 +422,5 @@ def lap(*, tagozat: str, mappa: str, fajl: str, temakor: str, cim: str, cim_tisz
     ut = os.path.join(GYOKER, tagozat, mappa, fajl)
     os.makedirs(os.path.dirname(ut), exist_ok=True)
     with open(ut, "w", encoding="utf-8") as f:
-        f.write(html)
+        f.write(egyedi_idk(html))
     return ut

@@ -6,7 +6,9 @@ Feladat = (intro, subs, ans[, rovid]) :
   ans   : str (egy bekezdés) VAGY list[str] (részfeladatonként, egymás alá)
   rovid : bool (rövid részfeladatok egymás mellé)
 """
-import re, os, glob
+import re, os, glob, sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from egyedi_id import egyedi_idk  # noqa: E402  (a _tools mappából)
 DEST=glob.glob("/sessions/*/mnt/Claude/web/1e/01-logika-halmazok-fuggvenyek")[0]
 def w(t):
     """$…$ → inline, $$…$$ → kiemelt (display) KaTeX-span. A $$ MINDIG elöl!"""
@@ -132,7 +134,7 @@ def oldal(*, tagozat, mappa, fajl, cim, temakor, alcim, sections_html, prev, pre
     gyoker = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
     ut = os.path.join(gyoker, tagozat, mappa, fajl)
     os.makedirs(os.path.dirname(ut), exist_ok=True)
-    open(ut, "w", encoding="utf-8").write(html)
+    open(ut, "w", encoding="utf-8").write(egyedi_idk(html))
     return ut
 
 
