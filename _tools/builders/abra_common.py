@@ -39,7 +39,8 @@ __all__ = ["svg_szamegyenes", "svg_haromszog", "svg_venn",
            "svg_hasab", "svg_gula", "svg_csonkagula", "svg_haztest",
            "svg_terelem", "svg_halo", "svg_platoni", "svg_sikidom",
            "svg_henger", "svg_kup", "svg_csonkakup", "svg_gomb",
-           "svg_forgatas", "svg_osszetett", "svg_sarrus", "svg_harom_sik"]
+           "svg_forgatas", "svg_osszetett", "svg_sarrus", "svg_harom_sik",
+           "svg_vektorok_sik", "svg_vetulet", "svg_ter_koord", "svg_vektorialis"]
 
 
 def _fej(w: int, h: int, leiras: str) -> list[str]:
@@ -2062,3 +2063,401 @@ def svg_harom_sik(w=620, h=205, leiras=None, cimkek=True):
 
     ki.append('</svg>')
     return "\n".join(ki)
+
+
+# =====================================================================
+# 14. Vektorok — sikbeli nyilak, terbeli koordinata-rendszer, skalaris
+#     vetulet, vektorialis szorzat (3e/04)
+# =====================================================================
+
+def _esc(s):
+    return str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def _azon(*reszek):
+    """Determinisztikus rovid azonosito a marker-id-khez (a hash() futasonkent mas)."""
+    return format(zlib.crc32(repr(reszek).encode()) & 0xFFFFF, "05x")
+
+
+def _nyilmarker(mid, szin, meret=5.0):
+    return (f'<marker id="{mid}" viewBox="0 0 10 10" refX="8.6" refY="5" '
+            f'markerWidth="{meret}" markerHeight="{meret}" orient="auto">'
+            f'<path d="M0,0 L10,5 L0,10 z" fill="{szin}"/></marker>')
+
+
+def _vcimke(x, y, szoveg, szin=TINTA, meret=15, dolt=True, suly="600"):
+    """Kozepre igazitott felirat, amelyben az ONALLO latin kisbetuk (a, b, …) es a legalabb
+    ketbetus latin nagybetu-sorok (AB) nyilat kapnak — igy „a + b", „2a", „|b| cos φ" es
+    „AB" is helyes jelolest kap; a tobbbetus szavak („cos", „háromszög") nem.
+    A szelesseg becsult: a nyilas betuk kulon <text>-et kapnak, a koztes szakaszok egyet-egyet."""
+    s = str(szoveg)
+
+    def cw(c):
+        if c == " ":
+            return 0.28 * meret
+        if c in "|":
+            return 0.42 * meret
+        if c in "·()il":
+            return 0.34 * meret
+        if c in "+−=<>×":
+            return 0.62 * meret
+        return 0.56 * meret
+
+    # tokenek: (szoveg, nyilas?)
+    tok, i = [], 0
+    while i < len(s):
+        c = s[i]
+        if c.isalpha():
+            j = i
+            while j < len(s) and s[j].isalpha():
+                j += 1
+            szo = s[i:j]
+            nyilas = szo.isascii() and ((len(szo) == 1 and szo.islower()) or
+                                        (len(szo) >= 2 and szo.isupper()))
+            tok.append((szo, nyilas))
+            i = j
+        else:
+            j = i
+            while j < len(s) and not s[j].isalpha():
+                j += 1
+            tok.append((s[i:j], False))
+            i = j
+    st = ' font-style="italic"' if dolt else ""
+    if not any(n for _, n in tok):
+        return (f'  <text x="{x:.1f}" y="{y:.1f}" font-size="{meret}" fill="{szin}" '
+                f'text-anchor="middle"{st} font-weight="{suly}">{_esc(s)}</text>')
+    # osszevonjuk a nem nyilas szomszedokat
+    seg = []
+    for t, n in tok:
+        if seg and not n and not seg[-1][1]:
+            seg[-1] = (seg[-1][0] + t, False)
+        else:
+            seg.append((t, n))
+    osszes = sum(cw(c) for t, _ in seg for c in t)
+    pos = x - osszes / 2
+    ki = []
+    ny = y - meret * 0.86
+    for t, n in seg:
+        sz = sum(cw(c) for c in t)
+        if t.strip():
+            ki.append(f'  <text x="{pos:.1f}" y="{y:.1f}" font-size="{meret}" fill="{szin}" '
+                      f'text-anchor="start" xml:space="preserve"{st} font-weight="{suly}">'
+                      f'{_esc(t)}</text>')
+        if n:
+            a0, b0 = pos + meret * 0.12, pos + sz + meret * 0.12
+            ki.append(f'  <path d="M{a0:.1f},{ny:.1f} L{b0 - 1.5:.1f},{ny:.1f}" stroke="{szin}" '
+                      'stroke-width="1.2" fill="none"/>')
+            ki.append(f'  <path d="M{b0 - 4.2:.1f},{ny - 2.6:.1f} L{b0 + 0.6:.1f},{ny:.1f} '
+                      f'L{b0 - 4.2:.1f},{ny + 2.6:.1f} z" fill="{szin}"/>')
+        pos += sz
+    return "\n".join(ki)
+
+
+class _Sik:
+    """Sikbeli rajzlap: matematikai koordinata (y felfele) → pixel, szinenkent egy marker."""
+
+    def __init__(self, xr, yr, egyseg, par, azon):
+        self.xr, self.yr, self.e, self.par, self.azon = xr, yr, egyseg, par, azon
+        self.w = round((xr[1] - xr[0]) * egyseg + 2 * par)
+        self.h = round((yr[1] - yr[0]) * egyseg + 2 * par)
+        self.markerek = {}
+        self.ki = []
+
+    def P(self, p):
+        return (self.par + (p[0] - self.xr[0]) * self.e,
+                self.h - self.par - (p[1] - self.yr[0]) * self.e)
+
+    def marker(self, szin):
+        if szin not in self.markerek:
+            self.markerek[szin] = f"nyv-{self.azon}-{len(self.markerek)}"
+        return self.markerek[szin]
+
+    def nyil(self, p, q, szin=TINTA, sz=2.4, szaggat=None, px=False):
+        a, b = (p, q) if px else (self.P(p), self.P(q))
+        d = f' stroke-dasharray="{szaggat}"' if szaggat else ""
+        self.ki.append(f'  <line x1="{a[0]:.1f}" y1="{a[1]:.1f}" x2="{b[0]:.1f}" y2="{b[1]:.1f}" '
+                       f'stroke="{szin}" stroke-width="{sz}" stroke-linecap="round"{d} '
+                       f'marker-end="url(#{self.marker(szin)})"/>')
+
+    def kesz(self, leiras):
+        defs = "".join(_nyilmarker(m, s) for s, m in self.markerek.items())
+        fej = (f'<svg viewBox="0 0 {self.w} {self.h}" width="{self.w}" height="{self.h}" '
+               f'role="img" aria-label="{_esc(leiras)}">')
+        return "\n".join([fej, f'  <defs>{defs}</defs>'] + self.ki + ["</svg>"])
+
+
+def _szogiv_px(ki, c, u, v, r, szin, felirat="", meret=13, derek_tur=0.6):
+    """Szogiv (vagy derekszog-jel) a `c` pixelpontban az `u`, `v` pixel-iranyvektorok kozott."""
+    a1 = math.atan2(u[1], u[0])
+    a2 = math.atan2(v[1], v[0])
+    d = (a2 - a1 + math.pi) % (2 * math.pi) - math.pi
+    fok = abs(math.degrees(d))
+    if abs(fok - 90) < derek_tur:
+        n1, n2 = math.hypot(*u) or 1, math.hypot(*v) or 1
+        m = r * 0.55
+        p1 = (c[0] + u[0] / n1 * m, c[1] + u[1] / n1 * m)
+        p2 = (c[0] + v[0] / n2 * m, c[1] + v[1] / n2 * m)
+        ki.append(f'  <path d="M{p1[0]:.1f},{p1[1]:.1f} L{p1[0] + p2[0] - c[0]:.1f},'
+                  f'{p1[1] + p2[1] - c[1]:.1f} L{p2[0]:.1f},{p2[1]:.1f}" fill="none" '
+                  f'stroke="{szin}" stroke-width="1.4"/>')
+    else:
+        s = (c[0] + r * math.cos(a1), c[1] + r * math.sin(a1))
+        e = (c[0] + r * math.cos(a1 + d), c[1] + r * math.sin(a1 + d))
+        sweep = 1 if d > 0 else 0
+        ki.append(f'  <path d="M{s[0]:.1f},{s[1]:.1f} A{r:.1f},{r:.1f} 0 0 {sweep} '
+                  f'{e[0]:.1f},{e[1]:.1f}" fill="none" stroke="{szin}" stroke-width="1.6"/>')
+    if felirat:
+        fe = a1 + d / 2
+        rr = r + 24
+        ki.append(_vcimke(c[0] + rr * math.cos(fe), c[1] + rr * math.sin(fe) + meret * 0.35,
+                          felirat, szin=szin, meret=meret, dolt=False))
+
+
+def svg_vektorok_sik(vektorok, xr=(0, 10), yr=(0, 5), egyseg=40, racs=True,
+                     szakaszok=(), pontok=(), szogivek=(), feliratok=(),
+                     leiras="Vektorok a síkban", azon=None):
+    """Sikbeli vektorok nyillal, opcionalis negyzetracson.
+
+    `vektorok`  = [(kezdo, veg, szin, cimke, {dx, dy, szaggat, sz}), …] — a cimke az
+                  onallo kisbetukre nyilat tesz (lasd `_vcimke`); az opcio-szotar elhagyhato.
+                  Alapertelmezesben a cimke a nyil kozepetol balra (menetirany szerint) all.
+    `szakaszok` = [(p, q, szin, szaggat), …] nyil nelkuli vonalak (pl. sokszog oldalai).
+    `pontok`    = [(p, nev, dx, dy), …] kiemelt pont allo betuvel.
+    `szogivek`  = [(csucs, p1, p2, szin, felirat), …] — a csucsbol a p1 es p2 pont fele
+                  mutato iranyok kozott; 90°-nal derekszog-jel.
+    `feliratok` = [(p, szoveg, szin, meret), …] allo felirat (kisbetuk nyillal).
+    """
+    if azon is None:
+        azon = _azon("sik", vektorok, szakaszok, pontok, xr, yr)
+    L = _Sik(xr, yr, egyseg, 18, azon)
+    if racs:
+        for gx in range(math.ceil(xr[0]), math.floor(xr[1]) + 1):
+            a, b = L.P((gx, yr[0])), L.P((gx, yr[1]))
+            L.ki.append(_von(a, b, szin="#e2e8f0", sz=1))
+        for gy in range(math.ceil(yr[0]), math.floor(yr[1]) + 1):
+            a, b = L.P((xr[0], gy)), L.P((xr[1], gy))
+            L.ki.append(_von(a, b, szin="#e2e8f0", sz=1))
+    for p, q, szin, szaggat in szakaszok:
+        L.ki.append(_von(L.P(p), L.P(q), szin=szin, sz=1.4, szaggat=szaggat))
+    for cs, p1, p2, szin, fel in szogivek:
+        c, a, b = L.P(cs), L.P(p1), L.P(p2)
+        _szogiv_px(L.ki, c, (a[0] - c[0], a[1] - c[1]), (b[0] - c[0], b[1] - c[1]), 22, szin, fel)
+    cimkek = []
+    for v in vektorok:
+        p, q, szin, cimke = v[:4]
+        o = v[4] if len(v) > 4 else {}
+        L.nyil(p, q, szin, sz=o.get("sz", 2.4), szaggat=o.get("szaggat"))
+        if cimke:
+            a, b = L.P(p), L.P(q)
+            vx, vy = b[0] - a[0], b[1] - a[1]
+            n = math.hypot(vx, vy) or 1
+            nx, ny = vy / n, -vx / n          # menetirany szerint balra (pixelben)
+            tav = o.get("tav", 14)
+            mx, my = (a[0] + b[0]) / 2 + nx * tav, (a[1] + b[1]) / 2 + ny * tav
+            cimkek.append(_vcimke(mx + o.get("dx", 0), my + 5 + o.get("dy", 0), cimke, szin=szin))
+    for p, nev, dx, dy in pontok:
+        c = L.P(p)
+        L.ki.append(f'  <circle cx="{c[0]:.1f}" cy="{c[1]:.1f}" r="3" fill="{TINTA}"/>')
+        L.ki.append(_txt(c, _esc(nev), dx=dx, dy=dy, meret=14, dolt=False))
+    L.ki.extend(cimkek)
+    for f in feliratok:
+        p, szoveg = f[0], f[1]
+        szin = f[2] if len(f) > 2 else SZURKE
+        meret = f[3] if len(f) > 3 else 13
+        c = L.P(p)
+        L.ki.append(_vcimke(c[0], c[1], szoveg, szin=szin, meret=meret, dolt=False, suly="600"))
+    return L.kesz(leiras)
+
+
+def svg_vetulet(szog=55, a_hossz=5.0, b_hossz=3.4, cimkek=("a", "b"), egyseg=46,
+                leiras=None, azon=None):
+    """Ket kozos kezdopontu vektor szoge es a `b` skalaris vetulete az `a` egyenesere.
+
+    Hegyesszognel a vetulet (zold) az `a` iranyaba esik, tompaszognel (piros) az
+    ellenkezo iranyba — ekkor az `a` egyenese szaggatottan hatrafele is meghosszabbodik.
+    """
+    fi = math.radians(szog)
+    bx, by = b_hossz * math.cos(fi), b_hossz * math.sin(fi)
+    xmin = min(0.0, bx) - (1.0 if bx < 0 else 0.5)
+    xmax = max(a_hossz, bx) + 0.6
+    yr = (-1.05, by + 0.55)
+    if leiras is None:
+        leiras = (f"Két közös kezdőpontú vektor, szögük {szog}°; a második merőleges "
+                  "vetülete az első vektor egyenesére")
+    if azon is None:
+        azon = _azon("vet", szog, a_hossz, b_hossz, cimkek)
+    L = _Sik((xmin, xmax), yr, egyseg, 16, azon)
+    na, nb = cimkek
+    O, A, B, F = (0, 0), (a_hossz, 0), (bx, by), (bx, 0)
+    # az a egyenese
+    L.ki.append(_von(L.P((xmin + 0.1, 0)), L.P((xmax - 0.1, 0)), szin=HALVANY, sz=1.2,
+                     szaggat="5 4"))
+    szin_v = ZOLD if bx >= 0 else PIROS
+    if abs(bx) > 1e-9:
+        L.ki.append(_von(L.P(O), L.P(F), szin=szin_v, sz=5.5))
+        L.ki.append(_von(L.P(B), L.P(F), szin=SZURKE, sz=1.3, szaggat="4 3"))
+        fp, bp = L.P(F), L.P(B)
+        L.ki.append(_dszog(fp, bp, L.P((F[0] + (1 if bx < 0 else -1), 0)), szin=SZURKE, meret=8))
+    op, ap, bp = L.P(O), L.P(A), L.P(B)
+    _szogiv_px(L.ki, op, (ap[0] - op[0], ap[1] - op[1]), (bp[0] - op[0], bp[1] - op[1]),
+               24, LILA, "φ", derek_tur=0.01)
+    L.nyil(O, A, KEK, sz=2.6)
+    L.nyil(O, B, BOROSTYAN, sz=2.6)
+    L.ki.append(f'  <circle cx="{op[0]:.1f}" cy="{op[1]:.1f}" r="3" fill="{TINTA}"/>')
+    L.ki.append(_txt(op, "O", dx=-4 if bx >= 0 else 10, dy=18, meret=13, dolt=False))
+    L.ki.append(_vcimke(ap[0] - 8, ap[1] - 10, na, szin=KEK))
+    # a b cimkeje a nyil kozepetol kifele
+    L.ki.append(_vcimke((op[0] + bp[0]) / 2 - 12 * math.sin(fi) * (1 if bx >= 0 else -1) - (6 if bx < 0 else 0),
+                        (op[1] + bp[1]) / 2 - 8, nb, szin="#b45309"))
+    if abs(bx) > 1e-9:
+        fel = ("−" if bx < 0 else "") + f"|{nb}| cos φ"
+        mx = (L.P(O)[0] + L.P(F)[0]) / 2
+        L.ki.append(_vcimke(mx, L.P(O)[1] + 30, fel, szin=szin_v, meret=14, dolt=False))
+    return L.kesz(leiras)
+
+
+# ferde (kavalier) vetites a terbeli vektorabrakhoz: x a nezo fele (balra le),
+# y jobbra, z felfele — jobbsodrasu rendszer
+_KV, _AV = 0.55, math.radians(38)
+
+
+def _vet_v(p):
+    x, y, z = p
+    return (y - _KV * x * math.cos(_AV), z - _KV * x * math.sin(_AV))
+
+
+class _Ter:
+    def __init__(self, pontok3, w, h, par, azon):
+        pr = [_vet_v(p) for p in pontok3]
+        xs, ys = [p[0] for p in pr], [p[1] for p in pr]
+        self.s = min((w - 2 * par) / (max(xs) - min(xs)), (h - 2 * par) / (max(ys) - min(ys)))
+        self.x0 = (w - (max(xs) - min(xs)) * self.s) / 2 - min(xs) * self.s
+        self.y0 = (h + (max(ys) - min(ys)) * self.s) / 2 + min(ys) * self.s
+        self.w, self.h, self.azon = w, h, azon
+        self.L = _Sik((0, 1), (0, 1), 1, 0, azon)     # csak a marker-nyilvantartas miatt
+        self.L.w, self.L.h = w, h
+        self.ki = self.L.ki
+
+    def P(self, p):
+        X, Y = _vet_v(p)
+        return (self.x0 + X * self.s, self.y0 - Y * self.s)
+
+    def nyil(self, p, q, szin, sz=2.4, szaggat=None):
+        self.L.nyil(self.P(p), self.P(q), szin, sz=sz, szaggat=szaggat, px=True)
+
+    def von(self, p, q, szin=TINTA, sz=1.4, szaggat=None):
+        self.ki.append(_von(self.P(p), self.P(q), szin=szin, sz=sz, szaggat=szaggat))
+
+    def kesz(self, leiras):
+        return self.L.kesz(leiras)
+
+
+def svg_ter_koord(pont=(3, 4, 2), nev="P", w=400, h=300, egysegvektorok=True,
+                  helyvektor=True, leiras=None, azon=None):
+    """Terbeli derekszogu koordinata-rendszer (ferde vetites, jobbsodrasu), egy pont a
+    „dobozaban": a harom koordinata a doboz harom ele, a pont helyvektora es i, j, k."""
+    x, y, z = pont
+    if leiras is None:
+        leiras = (f"Térbeli derékszögű koordináta-rendszer; a {nev}({x}; {y}; {z}) pont "
+                  "egy téglatest csúcsa, amelynek élei a pont koordinátái")
+    if azon is None:
+        azon = _azon("ter", pont, egysegvektorok, helyvektor)
+    tx, ty, tz = x + 1.6, y + 1.4, z + 1.3
+    T = _Ter([(tx, 0, 0), (0, ty, 0), (0, 0, tz), (0, -0.4, -0.6), (x, y, z), (x, 0, -0.5)],
+             w, h, 26, azon)
+    O = (0, 0, 0)
+    # tengelyek
+    for veg, cim in (((tx, 0, 0), "x"), ((0, ty, 0), "y"), ((0, 0, tz), "z")):
+        T.nyil(O, veg, TINTA, sz=1.5)
+        p = T.P(veg)
+        dx, dy = {"x": (-8, 14), "y": (10, 5), "z": (12, 4)}[cim]
+        T.ki.append(_txt(p, cim, dx=dx, dy=dy, meret=15))
+    # a doboz: hatso (lathatatlan) elek is szaggatottan, halvanyan
+    P1, P2, P3 = (x, 0, 0), (0, y, 0), (0, 0, z)
+    Q12, Q13, Q23 = (x, y, 0), (x, 0, z), (0, y, z)
+    for a, b in ((P1, Q12), (P2, Q12), (P1, Q13), (P3, Q13), (P2, Q23), (P3, Q23),
+                 (Q12, pont), (Q13, pont), (Q23, pont)):
+        T.von(a, b, SZURKE, sz=1.1, szaggat="4 3")
+    # a koordinatak a tengelyeken
+    for p3, szoveg, dx, dy in ((P1, str(x), -15, 3), (P2, str(y), 0, 17), (P3, str(z), -12, 5)):
+        c = T.P(p3)
+        T.ki.append(f'  <circle cx="{c[0]:.1f}" cy="{c[1]:.1f}" r="2.6" fill="{TINTA}"/>')
+        T.ki.append(_txt(c, szoveg, dx=dx, dy=dy, meret=13, dolt=False))
+    if helyvektor:
+        T.nyil(O, pont, KEK, sz=2.4)
+        a, b = T.P(O), T.P(pont)
+        T.ki.append(_vcimke((a[0] + b[0]) / 2 - 12, (a[1] + b[1]) / 2 - 4, "p", szin=KEK))
+    if egysegvektorok:
+        for veg, cim, szin, dx, dy in (((1, 0, 0), "i", PIROS, -4, 20),
+                                       ((0, 1, 0), "j", ZOLD, 0, 20),
+                                       ((0, 0, 1), "k", LILA, -12, 4)):
+            T.nyil(O, veg, szin, sz=3.4)
+            c = T.P(veg)
+            T.ki.append(_vcimke(c[0] + dx, c[1] + dy, cim, szin=szin, meret=14))
+    c = T.P(pont)
+    T.ki.append(f'  <circle cx="{c[0]:.1f}" cy="{c[1]:.1f}" r="3.6" fill="{TINTA}"/>')
+    T.ki.append(_txt(c, f"{nev}({x}; {y}; {z})", dx=8, dy=-8, meret=14, horgony="start",
+                     dolt=False))
+    oc = T.P(O)
+    T.ki.append(_txt(oc, "O", dx=8, dy=16, meret=13, dolt=False))
+    return T.kesz(leiras)
+
+
+def svg_vektorialis(w=400, h=300, ellentett=False, leiras=None, azon=None):
+    """Az a es b vektor altal kifeszitett paralelogramma es a sikjara merőleges a × b
+    (jobbkez-szabaly). `ellentett=True`: a b × a = −(a × b) is, szaggatottan lefele."""
+    if leiras is None:
+        leiras = ("Két vektor által kifeszített paralelogramma és a síkjára merőleges "
+                  "vektoriális szorzatuk" + (", valamint az ellentett b × a" if ellentett else ""))
+    if azon is None:
+        azon = _azon("vx", ellentett, w, h)
+    a = (0.0, 3.4, 0.0)
+    b = (-2.6, 1.3, 0.0)
+    c = (0.0, 0.0, 2.7)
+    pts = [(0, 0, 0), a, b, (a[0] + b[0], a[1] + b[1], 0), c, (0, 0, -2.9 if ellentett else -0.3)]
+    T = _Ter(pts, w, h, 30, azon)
+    O = (0, 0, 0)
+    ab = (a[0] + b[0], a[1] + b[1], 0.0)
+    poly = " ".join(f"{T.P(p)[0]:.1f},{T.P(p)[1]:.1f}" for p in (O, a, ab, b))
+    T.ki.append(f'  <polygon points="{poly}" fill="{KEK}" fill-opacity="0.13" stroke="none"/>')
+    T.von(a, ab, SZURKE, sz=1.2, szaggat="5 4")
+    T.von(b, ab, SZURKE, sz=1.2, szaggat="5 4")
+    if ellentett:
+        T.nyil(O, (0, 0, -2.7), PIROS, sz=2.4, szaggat="6 4")
+        q = T.P((0, 0, -2.7))
+        T.ki.append(_vcimke(q[0] + 34, q[1] + 2, "b × a", szin=PIROS, meret=14))
+    # derekszog-jelek terben (a × b ⟂ a, a × b ⟂ b)
+    m = 0.32
+    for v in (a, b):
+        n = math.sqrt(sum(t * t for t in v))
+        e = tuple(t / n * m for t in v)
+        p1, p2, p3 = e, (e[0], e[1], m), (0, 0, m)
+        d = " L".join(f"{T.P(p)[0]:.1f},{T.P(p)[1]:.1f}" for p in (p1, p2, p3))
+        T.ki.append(f'  <path d="M{d}" fill="none" stroke="{SZURKE}" stroke-width="1.2"/>')
+    # a szog iv a sikban
+    na = math.sqrt(sum(t * t for t in a))
+    ea = tuple(t / na for t in a)
+    nb = math.sqrt(sum(t * t for t in b))
+    eb = tuple(t / nb for t in b)
+    fi = math.acos(sum(p * q for p, q in zip(ea, eb)))
+    kozb = tuple(q - math.cos(fi) * p for p, q in zip(ea, eb))
+    nk = math.sqrt(sum(t * t for t in kozb))
+    ek = tuple(t / nk for t in kozb)
+    r = 0.85
+    ivp = [tuple(r * (math.cos(t) * p + math.sin(t) * q) for p, q in zip(ea, ek))
+           for t in [fi * k / 16 for k in range(17)]]
+    d = " L".join(f"{T.P(p)[0]:.1f},{T.P(p)[1]:.1f}" for p in ivp)
+    T.ki.append(f'  <path d="M{d}" fill="none" stroke="{LILA}" stroke-width="1.6"/>')
+    fp = tuple(1.25 * (math.cos(fi / 2) * p + math.sin(fi / 2) * q) for p, q in zip(ea, ek))
+    fpp = T.P(fp)
+    T.ki.append(_txt(fpp, "φ", dx=0, dy=5, szin=LILA, meret=14, dolt=False))
+    T.nyil(O, a, KEK, sz=2.6)
+    T.nyil(O, b, BOROSTYAN, sz=2.6)
+    T.nyil(O, c, ZOLD, sz=2.8)
+    pa, pb, pc = T.P(a), T.P(b), T.P(c)
+    T.ki.append(_vcimke(pa[0] - 6, pa[1] + 22, "a", szin=KEK))
+    T.ki.append(_vcimke(pb[0] - 14, pb[1] - 4, "b", szin="#b45309"))
+    T.ki.append(_vcimke(pc[0] + 34, pc[1] + 8, "a × b", szin=ZOLD))
+    kp = T.P((ab[0] * 0.5, ab[1] * 0.5, 0))
+    T.ki.append(_txt(kp, "T", dx=0, dy=6, szin="#1d4ed8", meret=15, dolt=True))
+    return T.kesz(leiras)

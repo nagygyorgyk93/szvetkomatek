@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A skaláris szorzat — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Vektorok</a> ›
+  <span class="itt">A skaláris szorzat — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A skaláris szorzat</h1>
+  <p class="alcim">A definíció és a skaláris vetület, az előjel jelentése és a merőlegesség feltétele, a koordinátás képlet és két vektor szögének kiszámítása számológéppel.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Királyi Irányítótű · 3/5</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/meduza.webp" alt="Medúza — a Királyi Család hangja" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Medúza:</b> Egy hanghullám csak annyit ér, amennyi belőle <b>a cél irányába</b> esik. A többi elszáll a Kamra falai felé. Crni Grom most két nyilat tart egymás mellé: az egyik a hullám, a másik a cél iránya. Amit tőlük kapunk, az <b>egyetlen szám</b> — és ez a szám megmondja, dolgozik-e a hullám a cél felé.</p></div>
+
+    <p>Ebben az egységben a két vektorból számot adó <b>skaláris szorzattal</b> ismerkedünk meg. Két kérdésre ad választ: <b>merőleges-e</b> két vektor, és <b>mekkora a szögük</b>. A szöget számológéppel fogjuk kiszámítani.</p>
+
+    <h2 id="s1">A definíció</h2>
+
+    <div class="doboz definicio" id="def-skalaris">
+      <p class="cim"><span class="ikon">📗</span> Skaláris szorzat</p>
+      <p>Két vektor <b>skaláris szorzata</b> az intenzitásaik és a közös kezdőpontba tolt vektorok <span class="math inline">\(\varphi\)</span> szöge (<span class="math inline">\(0^\circ\le\varphi\le180^\circ\)</span>) koszinuszának szorzata:</p><span class="math display">\[\vec a\cdot\vec b=|\vec a|\,|\vec b|\cos\varphi .\]</span><p>Az eredmény <b>szám</b> (skalár) — innen a neve. Ha valamelyik vektor a nullvektor, a skaláris szorzat <span class="math inline">\(0\)</span>.</p>
+    </div>
+
+    <p><b>Kapcsolat a vetülettel.</b> A <span class="math inline">\(|\vec b|\cos\varphi\)</span> a <span class="math inline">\(\vec b\)</span> <a href="tananyag-vektorok-sikban.html#def-szog-vetulet">skaláris vetülete</a> az <span class="math inline">\(\vec a\)</span> irányára. A skaláris szorzat tehát: <b>az egyik vektor intenzitása szorozva a másik rá eső előjeles (skaláris) vetületével</b>.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 294 232" width="294" height="232" role="img" aria-label="A skaláris szorzat: az a intenzitása szorozva a b skaláris vetületével az a irányára">
+      <defs><marker id="nyv-6ee94-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3b82f6"/></marker><marker id="nyv-6ee94-1" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f59e0b"/></marker></defs>
+      <line x1="20.6" y1="167.7" x2="273.6" y2="167.7" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="5 4"/>
+      <line x1="39.0" y1="167.7" x2="145.4" y2="167.7" stroke="#047857" stroke-width="5.5"/>
+      <line x1="145.4" y1="40.8" x2="145.4" y2="167.7" stroke="#475569" stroke-width="1.3" stroke-dasharray="4 3"/>
+      <path d="M145.4,159.7 L137.4,159.7 L137.4,167.7" fill="none" stroke="#475569" stroke-width="1.1"/>
+      <path d="M63.0,167.7 A24.0,24.0 0 0 0 54.4,149.3" fill="none" stroke="#8b5cf6" stroke-width="1.6"/>
+      <text x="82.5" y="152.0" font-size="13" fill="#8b5cf6" text-anchor="middle" font-weight="600">φ</text>
+      <line x1="39.0" y1="167.7" x2="250.6" y2="167.7" stroke="#3b82f6" stroke-width="2.6" stroke-linecap="round" marker-end="url(#nyv-6ee94-0)"/>
+      <line x1="39.0" y1="167.7" x2="145.4" y2="40.8" stroke="#f59e0b" stroke-width="2.6" stroke-linecap="round" marker-end="url(#nyv-6ee94-1)"/>
+      <circle cx="39.0" cy="167.7" r="3" fill="#0f172a"/>
+      <text x="35.0" y="185.7" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="600">O</text>
+      <text x="238.4" y="157.7" font-size="15" fill="#3b82f6" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M240.2,144.8 L247.1,144.8" stroke="#3b82f6" stroke-width="1.2" fill="none"/>
+      <path d="M244.4,142.2 L249.2,144.8 L244.4,147.4 z" fill="#3b82f6"/>
+      <text x="78.8" y="96.3" font-size="15" fill="#b45309" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">b</text>
+      <path d="M80.6,83.4 L87.5,83.4" stroke="#b45309" stroke-width="1.2" fill="none"/>
+      <path d="M84.8,80.8 L89.6,83.4 L84.8,86.0 z" fill="#b45309"/>
+      <text x="62.8" y="197.7" font-size="14" fill="#047857" text-anchor="start" xml:space="preserve" font-weight="600">|</text>
+      <text x="68.7" y="197.7" font-size="14" fill="#047857" text-anchor="start" xml:space="preserve" font-weight="600">b</text>
+      <path d="M70.4,185.7 L76.7,185.7" stroke="#047857" stroke-width="1.2" fill="none"/>
+      <path d="M74.0,183.1 L78.8,185.7 L74.0,188.3 z" fill="#047857"/>
+      <text x="76.5" y="197.7" font-size="14" fill="#047857" text-anchor="start" xml:space="preserve" font-weight="600">| cos φ</text>
+    </svg>
+    </div>
+    <p class="cap"><span class="math inline">\(\vec a\cdot\vec b=|\vec a|\cdot\left(|\vec b|\cos\varphi\right)\)</span>: az <span class="math inline">\(\vec a\)</span> hossza szorozva a zöld szakasz előjeles hosszával.</p>
+
+    <p><b>Számolás a definícióval.</b> Ha <span class="math inline">\(|\vec a|=4\)</span>, <span class="math inline">\(|\vec b|=5\)</span> és <span class="math inline">\(\varphi=60^\circ\)</span>, akkor <span class="math inline">\(\vec a\cdot\vec b=4\cdot5\cdot\tfrac12=10\)</span>. Ha <span class="math inline">\(|\vec a|=2\)</span>, <span class="math inline">\(|\vec b|=3\)</span> és <span class="math inline">\(\varphi=150^\circ\)</span>, akkor <span class="math inline">\(\vec a\cdot\vec b=2\cdot3\cdot\left(-\tfrac{\sqrt3}{2}\right)=-3\sqrt3\approx-5{,}20\)</span>.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>A fizikában a <b>munka</b> skaláris szorzat: <span class="math inline">\(W=\vec F\cdot\vec s\)</span>. Ha egy szánkót <span class="math inline">\(50\)</span> N erővel húzol, a kötél <span class="math inline">\(30^\circ\)</span>-os szöget zár be a talajjal, és a szánkó <span class="math inline">\(10\)</span> m-t halad, akkor a munka <span class="math inline">\(W=50\cdot10\cdot\cos30^\circ\approx433\)</span> J — nem <span class="math inline">\(500\)</span> J, mert az erőnek csak a mozgás irányába eső része dolgozik. A felfelé húzó része nem végez munkát, mert merőleges az elmozdulásra.</p>
+    </div>
+
+    <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ A skaláris szorzat két vektorból egyetlen számot ad." data-nem="✘ A skaláris szorzat MINDIG szám: két intenzitás és egy koszinusz szorzata. (A mindkettőre merőleges vektort a vektoriális szorzat adja — az a következő egység.)">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Milyen típusú az <span class="math inline">\(\vec a\cdot\vec b\)</span> skaláris szorzat eredménye?</p>
+      <div class="opciok"><button>az <span class="math inline">\(\vec a\)</span>-val párhuzamos vektor</button><button>az <span class="math inline">\(\vec a\)</span>-ra és <span class="math inline">\(\vec b\)</span>-re merőleges vektor</button><button>egy szám, de csak ha a két vektor párhuzamos</button><button>egy valós szám</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Az előjel jelentése</h2>
+
+    <p>Nem nullvektoroknál <span class="math inline">\(|\vec a|\)</span> és <span class="math inline">\(|\vec b|\)</span> pozitív, ezért a skaláris szorzat előjelét a <span class="math inline">\(\cos\varphi\)</span> dönti el:</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 596 204" width="596" height="204" role="img" aria-label="Hegyesszög esetén a skaláris szorzat pozitív, derékszögnél nulla, tompaszögnél negatív">
+      <defs><marker id="nyv-1fc1c-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3b82f6"/></marker><marker id="nyv-1fc1c-1" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f59e0b"/></marker></defs>
+      <path d="M64.0,134.0 A22.0,22.0 0 0 0 56.1,117.1" fill="none" stroke="#8b5cf6" stroke-width="1.6"/>
+      <path d="M238.1,134.0 L238.1,121.9 L226.0,121.9" fill="none" stroke="#8b5cf6" stroke-width="1.4"/>
+      <path d="M464.0,134.0 A22.0,22.0 0 0 0 427.9,117.1" fill="none" stroke="#8b5cf6" stroke-width="1.6"/>
+      <line x1="42.0" y1="134.0" x2="162.0" y2="134.0" stroke="#3b82f6" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-1fc1c-0)"/>
+      <line x1="42.0" y1="134.0" x2="101.1" y2="63.5" stroke="#f59e0b" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-1fc1c-1)"/>
+      <line x1="226.0" y1="134.0" x2="346.0" y2="134.0" stroke="#3b82f6" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-1fc1c-0)"/>
+      <line x1="226.0" y1="134.0" x2="226.0" y2="42.0" stroke="#f59e0b" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-1fc1c-1)"/>
+      <line x1="442.0" y1="134.0" x2="562.0" y2="134.0" stroke="#3b82f6" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-1fc1c-0)"/>
+      <line x1="442.0" y1="134.0" x2="382.9" y2="63.5" stroke="#f59e0b" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-1fc1c-1)"/>
+      <text x="137.8" y="126.0" font-size="15" fill="#3b82f6" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M139.6,113.1 L146.5,113.1" stroke="#3b82f6" stroke-width="1.2" fill="none"/>
+      <path d="M143.8,110.5 L148.6,113.1 L143.8,115.7 z" fill="#3b82f6"/>
+      <text x="57.4" y="95.4" font-size="15" fill="#f59e0b" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">b</text>
+      <path d="M59.2,82.5 L66.1,82.5" stroke="#f59e0b" stroke-width="1.2" fill="none"/>
+      <path d="M63.4,79.9 L68.2,82.5 L63.4,85.1 z" fill="#f59e0b"/>
+      <text x="321.8" y="126.0" font-size="15" fill="#3b82f6" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M323.6,113.1 L330.5,113.1" stroke="#3b82f6" stroke-width="1.2" fill="none"/>
+      <path d="M327.8,110.5 L332.6,113.1 L327.8,115.7 z" fill="#3b82f6"/>
+      <text x="208.8" y="93.0" font-size="15" fill="#f59e0b" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">b</text>
+      <path d="M210.6,80.1 L217.5,80.1" stroke="#f59e0b" stroke-width="1.2" fill="none"/>
+      <path d="M214.8,77.5 L219.6,80.1 L214.8,82.7 z" fill="#f59e0b"/>
+      <text x="537.8" y="126.0" font-size="15" fill="#3b82f6" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M539.6,113.1 L546.5,113.1" stroke="#3b82f6" stroke-width="1.2" fill="none"/>
+      <path d="M543.8,110.5 L548.6,113.1 L543.8,115.7 z" fill="#3b82f6"/>
+      <text x="398.3" y="112.1" font-size="15" fill="#f59e0b" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">b</text>
+      <path d="M400.1,99.2 L407.0,99.2" stroke="#f59e0b" stroke-width="1.2" fill="none"/>
+      <path d="M404.3,96.6 L409.1,99.2 L404.3,101.8 z" fill="#f59e0b"/>
+      <text x="73.8" y="170.0" font-size="15" fill="#047857" text-anchor="start" xml:space="preserve" font-weight="600">a</text>
+      <path d="M75.6,157.1 L82.5,157.1" stroke="#047857" stroke-width="1.2" fill="none"/>
+      <path d="M79.8,154.5 L84.6,157.1 L79.8,159.7 z" fill="#047857"/>
+      <text x="82.2" y="170.0" font-size="15" fill="#047857" text-anchor="start" xml:space="preserve" font-weight="600"> · </text>
+      <text x="95.7" y="170.0" font-size="15" fill="#047857" text-anchor="start" xml:space="preserve" font-weight="600">b</text>
+      <path d="M97.5,157.1 L104.4,157.1" stroke="#047857" stroke-width="1.2" fill="none"/>
+      <path d="M101.7,154.5 L106.5,157.1 L101.7,159.7 z" fill="#047857"/>
+      <text x="104.1" y="170.0" font-size="15" fill="#047857" text-anchor="start" xml:space="preserve" font-weight="600"> &gt; 0</text>
+      <text x="257.8" y="170.0" font-size="15" fill="#475569" text-anchor="start" xml:space="preserve" font-weight="600">a</text>
+      <path d="M259.6,157.1 L266.5,157.1" stroke="#475569" stroke-width="1.2" fill="none"/>
+      <path d="M263.8,154.5 L268.6,157.1 L263.8,159.7 z" fill="#475569"/>
+      <text x="266.2" y="170.0" font-size="15" fill="#475569" text-anchor="start" xml:space="preserve" font-weight="600"> · </text>
+      <text x="279.7" y="170.0" font-size="15" fill="#475569" text-anchor="start" xml:space="preserve" font-weight="600">b</text>
+      <path d="M281.5,157.1 L288.4,157.1" stroke="#475569" stroke-width="1.2" fill="none"/>
+      <path d="M285.7,154.5 L290.5,157.1 L285.7,159.7 z" fill="#475569"/>
+      <text x="288.1" y="170.0" font-size="15" fill="#475569" text-anchor="start" xml:space="preserve" font-weight="600"> = 0</text>
+      <text x="473.8" y="170.0" font-size="15" fill="#ef4444" text-anchor="start" xml:space="preserve" font-weight="600">a</text>
+      <path d="M475.6,157.1 L482.5,157.1" stroke="#ef4444" stroke-width="1.2" fill="none"/>
+      <path d="M479.8,154.5 L484.6,157.1 L479.8,159.7 z" fill="#ef4444"/>
+      <text x="482.2" y="170.0" font-size="15" fill="#ef4444" text-anchor="start" xml:space="preserve" font-weight="600"> · </text>
+      <text x="495.7" y="170.0" font-size="15" fill="#ef4444" text-anchor="start" xml:space="preserve" font-weight="600">b</text>
+      <path d="M497.5,157.1 L504.4,157.1" stroke="#ef4444" stroke-width="1.2" fill="none"/>
+      <path d="M501.7,154.5 L506.5,157.1 L501.7,159.7 z" fill="#ef4444"/>
+      <text x="504.1" y="170.0" font-size="15" fill="#ef4444" text-anchor="start" xml:space="preserve" font-weight="600"> &lt; 0</text>
+      <text x="106.0" y="30.0" font-size="13" fill="#475569" text-anchor="middle" font-weight="600">hegyesszög</text>
+      <text x="286.0" y="30.0" font-size="13" fill="#475569" text-anchor="middle" font-weight="600">derékszög</text>
+      <text x="482.0" y="30.0" font-size="13" fill="#475569" text-anchor="middle" font-weight="600">tompaszög</text>
+    </svg>
+    </div>
+    <p class="cap">A skaláris szorzat előjele a két vektor szögéről árulkodik.</p>
+
+    <table class="tt-table"><tr><th>A szög</th><th><span class="math inline">\(\cos\varphi\)</span></th><th><span class="math inline">\(\vec a\cdot\vec b\)</span></th></tr><tr><td>hegyesszög vagy <span class="math inline">\(0^\circ\)</span>: <span class="math inline">\(0^\circ\le\varphi<90^\circ\)</span></td><td>pozitív</td><td><span class="math inline">\(>0\)</span></td></tr><tr><td>derékszög, <span class="math inline">\(\varphi=90^\circ\)</span></td><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(=0\)</span></td></tr><tr><td>tompaszög vagy <span class="math inline">\(180^\circ\)</span>: <span class="math inline">\(90^\circ<\varphi\le180^\circ\)</span></td><td>negatív</td><td><span class="math inline">\(<0\)</span></td></tr></table>
+
+    <div class="doboz tetel" id="tetel-merolegesseg">
+      <p class="cim"><span class="ikon">📘</span> A merőlegesség feltétele</p>
+      <p>Két nem nullvektor pontosan akkor <b>merőleges</b>, ha a skaláris szorzatuk nulla:</p><span class="math display">\[\vec a\perp\vec b\iff\vec a\cdot\vec b=0 .\]</span><p><i>Indoklás:</i> <span class="math inline">\(|\vec a|\ne0\)</span> és <span class="math inline">\(|\vec b|\ne0\)</span>, ezért a szorzat csak úgy lehet <span class="math inline">\(0\)</span>, ha <span class="math inline">\(\cos\varphi=0\)</span>, vagyis <span class="math inline">\(\varphi=90^\circ\)</span>.</p>
+    </div>
+
+    <p>Ez a témakör egyik legtöbbet használt eszköze: merőlegességet <b>rajz nélkül</b>, egyetlen számolással dönthetünk el — mihelyt a koordinátákból ki tudjuk számolni a skaláris szorzatot. Ez következik.</p>
+
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ Nem nullvektoroknál a nulla skaláris szorzat pontosan a merőlegességet jelenti." data-nem="✘ A 0 itt a SZÁM nulla, nem nullvektor — a skaláris szorzat mindig szám. Mivel egyik vektor sem nullvektor, cos φ = 0, tehát φ = 90°: a két vektor merőleges.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Az <span class="math inline">\(\vec a\)</span> és a <span class="math inline">\(\vec b\)</span> nem nullvektorok, és <span class="math inline">\(\vec a\cdot\vec b=0\)</span>. Mi következik ebből?</p>
+      <div class="opciok"><button><span class="math inline">\(\vec a\)</span> és <span class="math inline">\(\vec b\)</span> merőleges</button><button><span class="math inline">\(\vec a\cdot\vec b\)</span> a nullvektor</button><button><span class="math inline">\(\vec a\)</span> és <span class="math inline">\(\vec b\)</span> párhuzamos</button><button><span class="math inline">\(\vec a=-\vec b\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Koordinátákkal</h2>
+
+    <p>Az egységvektorok egymással vett szorzatai a definícióból: <span class="math inline">\(\vec i\cdot\vec i=1\cdot1\cdot\cos0^\circ=1\)</span>, és ugyanígy <span class="math inline">\(\vec j\cdot\vec j=\vec k\cdot\vec k=1\)</span>; a különbözők merőlegesek, ezért <span class="math inline">\(\vec i\cdot\vec j=\vec j\cdot\vec k=\vec k\cdot\vec i=0\)</span>. Ha az <span class="math inline">\((x_1\vec i+y_1\vec j+z_1\vec k)\cdot(x_2\vec i+y_2\vec j+z_2\vec k)\)</span> szorzatban minden tagot minden taggal összeszorzunk, a kilenc tagból hat nulla lesz, és csak ez marad:</p>
+
+    <div class="doboz tetel" id="tetel-skalaris-koordinatak">
+      <p class="cim"><span class="ikon">📘</span> A skaláris szorzat koordinátákkal · tulajdonságok</p>
+      <p>Ha <span class="math inline">\(\vec a=(x_1;y_1;z_1)\)</span> és <span class="math inline">\(\vec b=(x_2;y_2;z_2)\)</span>, akkor</p><span class="math display">\[\vec a\cdot\vec b=x_1x_2+y_1y_2+z_1z_2 .\]</span><p>Bármely vektorokra és <span class="math inline">\(\lambda\)</span> valós számra:</p><ul><li><span class="math inline">\(\vec a\cdot\vec b=\vec b\cdot\vec a\)</span> <i>(kommutativitás)</i></li><li><span class="math inline">\(\vec a\cdot(\vec b+\vec c)=\vec a\cdot\vec b+\vec a\cdot\vec c\)</span> <i>(disztributivitás)</i></li><li><span class="math inline">\((\lambda\vec a)\cdot\vec b=\lambda(\vec a\cdot\vec b)\)</span></li><li><span class="math inline">\(\vec a\cdot\vec a=|\vec a|^2\)</span></li></ul>
+    </div>
+
+    <p><b>Példa.</b> <span class="math inline">\(\vec a=(2;-1;3)\)</span> és <span class="math inline">\(\vec b=(1;4;-2)\)</span>: <span class="math inline">\(\vec a\cdot\vec b=2\cdot1+(-1)\cdot4+3\cdot(-2)=2-4-6=-8\)</span>. A szorzat negatív, tehát a két vektor <b>tompaszöget</b> zár be.</p><p><b>Az ábra és a szám.</b> Az <span class="math inline">\(xy\)</span> síkban fekvő <span class="math inline">\(\vec p=(4;1;0)\)</span> és <span class="math inline">\(\vec q=(-1;3;0)\)</span> vektort felrajzolva „majdnem merőlegesnek” látszanak. A szám dönt: <span class="math inline">\(\vec p\cdot\vec q=-4+3+0=-1<0\)</span>, tehát a szögük <b>kicsit nagyobb</b> <span class="math inline">\(90^\circ\)</span>-nál (számológéppel kb. <span class="math inline">\(94{,}4^\circ\)</span>). A rajz becslésre jó, a döntést a skaláris szorzat hozza.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„<span class="math inline">\((3;-1;2)\cdot(1;2;4)=(3\cdot1;\,-1\cdot2;\,2\cdot4)=(3;-2;8)\)</span>.”</i></p><p>Maxi a koordinátánkénti szorzatokat <b>vektorba</b> írta — pedig a skaláris szorzat <b>egyetlen szám</b>. A három szorzatot össze kell adni: <span class="math inline">\(3-2+8=9\)</span>.</p><p>Maxi másik reakciója: <i>„negatív lett a koszinusz, biztos elszámoltam”</i>. Nem feltétlenül! <span class="math inline">\(\cos\varphi<0\)</span> egyszerűen azt jelenti, hogy a szög <b>tompaszög</b> — és a számológép ilyenkor <span class="math inline">\(90^\circ\)</span>-nál nagyobb szöget ad.</p>
+    </div>
+
+    <h2 id="s4">A két vektor szögének kiszámítása</h2>
+
+    <p>A definíciót és a koordinátás képletet összekapcsolva kifejezhető a két vektor szögének koszinusza — <b>csupa koordinátákból számolható</b> mennyiséggel:</p><span class="math display">\[\cos\varphi=\frac{\vec a\cdot\vec b}{|\vec a|\,|\vec b|}=\frac{x_1x_2+y_1y_2+z_1z_2}{\sqrt{x_1^2+y_1^2+z_1^2}\cdot\sqrt{x_2^2+y_2^2+z_2^2}} .\]</span>
+
+    <div class="doboz pelda" id="pelda-szog">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — a szög számológéppel</p>
+      <p>Számítsd ki az <span class="math inline">\(\vec a=(3;-1;2)\)</span> és a <span class="math inline">\(\vec b=(1;2;4)\)</span> vektor szögét fokban, egy tizedesjegyre kerekítve! Merőleges-e az <span class="math inline">\(\vec a\)</span> a <span class="math inline">\(\vec d=(2;4;-1)\)</span> vektorra?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>1. A skaláris szorzat:</b> <span class="math inline">\(\vec a\cdot\vec b=3\cdot1+(-1)\cdot2+2\cdot4=9\)</span>.</p><p><b>2. Az intenzitások:</b> <span class="math inline">\(|\vec a|=\sqrt{9+1+4}=\sqrt{14}\)</span>, <span class="math inline">\(|\vec b|=\sqrt{1+4+16}=\sqrt{21}\)</span>.</p><p><b>3. A koszinusz:</b> <span class="math inline">\(\cos\varphi=\dfrac{9}{\sqrt{14}\cdot\sqrt{21}}=\dfrac{9}{\sqrt{294}}\approx0{,}5249\)</span>.</p><p><b>4. A szög számológéppel</b> (fok üzemmódban, <b>D</b>/<b>DEG</b>), két lépésben: előbb <code>9 ÷ √294 =</code> (ez <span class="math inline">\(0{,}5249\ldots\)</span>), majd <code>SHIFT</code> <code>cos</code> <code>Ans</code> <code>=</code> — a <code>SHIFT cos</code> a <span class="math inline">\(\cos^{-1}\)</span>. Az eredmény <span class="math inline">\(58{,}34\ldots\)</span>, kerekítve <span class="math inline">\(\varphi\approx58{,}3^\circ\)</span>. <i>Az <code>Ans</code> a teljes részeredményt viszi tovább, így nem kerekítesz menet közben.</i></p><p><b>5. Merőlegesség:</b> <span class="math inline">\(\vec a\cdot\vec d=3\cdot2+(-1)\cdot4+2\cdot(-1)=6-4-2=0\)</span>, tehát <span class="math inline">\(\vec a\perp\vec d\)</span>.</p><p class="vegeredmeny"><span class="math inline">\(\varphi\approx58{,}3^\circ\)</span> · <span class="math inline">\(\vec a\cdot\vec d=0\)</span>, tehát <span class="math inline">\(\vec a\)</span> és <span class="math inline">\(\vec d\)</span> merőleges</p></div></details>
+    </div>
+
+    <p><b>Ellenőrzés fejben.</b> Mielőtt a gépet elővennéd, nézd meg a skaláris szorzat <b>előjelét</b>: pozitívnál <span class="math inline">\(90^\circ\)</span> alatti, negatívnál fölötti szöget kell kapnod — ha nem így van, elírtad a törtet. Ha pedig <span class="math inline">\(0\)</span> és <span class="math inline">\(3{,}14\)</span> közötti tizedes tört jön ki, a gép valószínűleg <b>radiánban</b> számol: nézd meg, hogy <b>D</b> (DEG) áll-e a kijelzőn.</p>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-szorzatok.html#alap-1">🐕 Tér-eb-ugrás <span class="cimke">A 1–8</span></a><a class="sav bruno" href="feladatok-szorzatok.html#kozep-1">👑 Királyi Gárda <span class="cimke">K 1–6</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/meduza.webp" alt="Medúza — a Királyi Család hangja" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Medúza:</b> A skaláris szorzat számot adott: megmondta, mennyire dolgozik egyik nyíl a másik irányában. Crni Grom most két hullámot indít egyszerre, és a kristály egy <b>harmadik</b> irányba rezdül meg. Van egy másik szorzat is — és az <b>vektort</b> ad.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-koordinatak-terben.html"><span class="irany">← Előző</span><span class="hova">Vektorok a térben</span></a>
+      <a class="kov" href="tananyag-vektorialis-szorzat.html"><span class="irany">Következő →</span><span class="hova">A vektoriális szorzat</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

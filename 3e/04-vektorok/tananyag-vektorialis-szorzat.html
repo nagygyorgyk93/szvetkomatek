@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A vektoriális szorzat — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Vektorok</a> ›
+  <span class="itt">A vektoriális szorzat — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A vektoriális szorzat</h1>
+  <p class="alcim">A definíció a jobbkéz-szabállyal, a szorzat intenzitása mint terület, a determinánsos képlet és a tulajdonságok.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Királyi Irányítótű · 4/5</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/meduza.webp" alt="Medúza — a Királyi Család hangja" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Medúza:</b> Amikor a hullám két irányból érkezik, a kristály egy <b>harmadik</b> irányban rezdül meg — mindkettőre merőlegesen. Crni Grom a jobb kezét emeli: hüvelykujj, mutatóujj, középső ujj. A vektoriális szorzat ezt a harmadik irányt adja meg, a hossza pedig elárulja, <b>mekkora felületet</b> feszít ki a két hullám.</p></div>
+
+    <p>Ebben az egységben a két vektorból <b>vektort</b> adó szorzattal ismerkedünk meg. A legfontosabb alkalmazása a <b>terület</b>: paralelogrammáé és háromszögé, akár térbeli pontokból is. A koordinátás kiszámításához a <a href="../03-linearis-rendszerek/tananyag-determinans.html#tetel-kifejtes">determináns kifejtését</a> használjuk.</p>
+
+    <h2 id="s1">A definíció</h2>
+
+    <div class="doboz definicio" id="def-vektorialis">
+      <p class="cim"><span class="ikon">📗</span> Vektoriális szorzat</p>
+      <p>Két vektor <b>vektoriális szorzata</b> az az <span class="math inline">\(\vec a\times\vec b\)</span> <b>vektor</b>, amelynek</p><ul><li><b>intenzitása</b> <span class="math inline">\(|\vec a\times\vec b|=|\vec a|\,|\vec b|\sin\varphi\)</span>;</li><li><b>iránya</b> merőleges az <span class="math inline">\(\vec a\)</span>-ra és a <span class="math inline">\(\vec b\)</span>-re is (tehát a két vektor síkjára);</li><li><b>irányítása</b> a <b>jobbkéz-szabály</b> szerinti: ha jobb kezünk hüvelykujja az <span class="math inline">\(\vec a\)</span>, mutatóujja a <span class="math inline">\(\vec b\)</span> irányába mutat, akkor a behajlított középső ujjunk az <span class="math inline">\(\vec a\times\vec b\)</span> irányítását mutatja.</li></ul><p>Ha <span class="math inline">\(\vec a\)</span> és <span class="math inline">\(\vec b\)</span> párhuzamos (vagy valamelyik nullvektor), akkor <span class="math inline">\(\vec a\times\vec b=\vec 0\)</span>.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Két vektor által kifeszített paralelogramma és a síkjára merőleges vektoriális szorzatuk">
+      <defs><marker id="nyv-ea014-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3b82f6"/></marker><marker id="nyv-ea014-1" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f59e0b"/></marker><marker id="nyv-ea014-2" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#047857"/></marker></defs>
+      <polygon points="30.0,220.0 228.4,220.0 370.0,168.6 171.6,168.6" fill="#3b82f6" fill-opacity="0.13" stroke="none"/>
+      <line x1="228.4" y1="220.0" x2="370.0" y2="168.6" stroke="#475569" stroke-width="1.2" stroke-dasharray="5 4"/>
+      <line x1="171.6" y1="168.6" x2="370.0" y2="168.6" stroke="#475569" stroke-width="1.2" stroke-dasharray="5 4"/>
+      <path d="M48.7,220.0 L48.7,201.3 L30.0,201.3" fill="none" stroke="#475569" stroke-width="1.2"/>
+      <path d="M45.6,214.4 L45.6,195.7 L30.0,201.3" fill="none" stroke="#475569" stroke-width="1.2"/>
+      <path d="M79.6,220.0 L81.0,218.9 L82.1,217.7 L83.0,216.6 L83.6,215.4 L83.9,214.3 L84.1,213.2 L83.9,212.2 L83.5,211.2 L82.8,210.2 L81.9,209.3 L80.7,208.4 L79.3,207.6 L77.7,206.9 L75.8,206.2 L73.7,205.6 L71.4,205.0" fill="none" stroke="#8b5cf6" stroke-width="1.6"/>
+      <text x="108.7" y="212.0" font-size="14" fill="#8b5cf6" text-anchor="middle" font-weight="600">φ</text>
+      <line x1="30.0" y1="220.0" x2="228.4" y2="220.0" stroke="#3b82f6" stroke-width="2.6" stroke-linecap="round" marker-end="url(#nyv-ea014-0)"/>
+      <line x1="30.0" y1="220.0" x2="171.6" y2="168.6" stroke="#f59e0b" stroke-width="2.6" stroke-linecap="round" marker-end="url(#nyv-ea014-1)"/>
+      <line x1="30.0" y1="220.0" x2="30.0" y2="62.5" stroke="#047857" stroke-width="2.8" stroke-linecap="round" marker-end="url(#nyv-ea014-2)"/>
+      <text x="218.2" y="242.0" font-size="15" fill="#3b82f6" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M220.0,229.1 L226.9,229.1" stroke="#3b82f6" stroke-width="1.2" fill="none"/>
+      <path d="M224.2,226.5 L229.0,229.1 L224.2,231.7 z" fill="#3b82f6"/>
+      <text x="153.4" y="164.6" font-size="15" fill="#b45309" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">b</text>
+      <path d="M155.2,151.7 L162.1,151.7" stroke="#b45309" stroke-width="1.2" fill="none"/>
+      <path d="M159.4,149.1 L164.2,151.7 L159.4,154.3 z" fill="#b45309"/>
+      <text x="46.8" y="70.5" font-size="15" fill="#047857" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M48.5,57.6 L55.4,57.6" stroke="#047857" stroke-width="1.2" fill="none"/>
+      <path d="M52.7,55.0 L57.5,57.6 L52.7,60.2 z" fill="#047857"/>
+      <text x="55.1" y="70.5" font-size="15" fill="#047857" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600"> × </text>
+      <text x="72.8" y="70.5" font-size="15" fill="#047857" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">b</text>
+      <path d="M74.6,57.6 L81.5,57.6" stroke="#047857" stroke-width="1.2" fill="none"/>
+      <path d="M78.8,55.0 L83.6,57.6 L78.8,60.2 z" fill="#047857"/>
+      <text x="200.0" y="200.3" font-size="15" fill="#1d4ed8" text-anchor="middle" font-style="italic" font-weight="600">T</text>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(\vec a\)</span> és a <span class="math inline">\(\vec b\)</span> a kék paralelogrammát feszíti ki; az <span class="math inline">\(\vec a\times\vec b\)</span> merőleges a síkjára, és a jobbkéz-szabály szerint felfelé mutat. (A paralelogrammát térben, vízszintes síkban fekvőnek képzeld el.)</p>
+
+    <p>Figyeld meg: a definícióban <b>szinusz</b> áll, nem koszinusz. A szorzat intenzitása merőleges vektoroknál (<span class="math inline">\(\sin90^\circ=1\)</span>) a legnagyobb, párhuzamosaknál (<span class="math inline">\(\sin0^\circ=\sin180^\circ=0\)</span>) nulla — éppen fordítva, mint a skaláris szorzat abszolút értéke.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>A <b>forgatónyomaték</b> vektoriális szorzat: <span class="math inline">\(\vec M=\vec r\times\vec F\)</span>, ahol <span class="math inline">\(\vec r\)</span> a forgástengelytől az erő támadáspontjáig mutat. Ezért könnyű az ajtót a kilincsnél — a zsanértól <b>távol</b> és <b>merőlegesen</b> — tolni, és ezért nem mozdul, ha a zsanér felé nyomod: ott <span class="math inline">\(\sin\varphi=0\)</span>. A nyomaték vektora a forgástengely irányába mutat.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ A skaláris szorzat szám, a vektoriális szorzat vektor — a hossza az, ami szám." data-nem="✘ A skaláris szorzat szám (|a|·|b|·cos φ). A vektoriális szorzat vektor, amely merőleges mindkét tényezőre; csak az INTENZITÁSA szám, |a|·|b|·sin φ.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik állítás igaz a két szorzat eredményére?</p>
+      <div class="opciok"><button><span class="math inline">\(\vec a\cdot\vec b\)</span> szám, <span class="math inline">\(\vec a\times\vec b\)</span> vektor</button><button>mindkettő szám</button><button>mindkettő vektor</button><button><span class="math inline">\(\vec a\cdot\vec b\)</span> vektor, <span class="math inline">\(\vec a\times\vec b\)</span> szám</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">A szorzat intenzitása: terület</h2>
+
+    <p>Az <span class="math inline">\(\vec a\)</span> és a <span class="math inline">\(\vec b\)</span> által kifeszített paralelogramma alapja <span class="math inline">\(|\vec a|\)</span>, a hozzá tartozó magassága <span class="math inline">\(|\vec b|\sin\varphi\)</span>. A területe tehát <span class="math inline">\(|\vec a|\,|\vec b|\sin\varphi\)</span> — és ez éppen <span class="math inline">\(|\vec a\times\vec b|\)</span>.</p>
+
+    <div class="doboz tetel" id="tetel-terulet">
+      <p class="cim"><span class="ikon">📘</span> Terület a vektoriális szorzattal</p>
+      <span class="math display">\[T_{\text{paralelogramma}}=|\vec a\times\vec b|,\qquad T_{\text{háromszög}}=\frac12\,|\vec a\times\vec b| ,\]</span><p>ahol <span class="math inline">\(\vec a\)</span> és <span class="math inline">\(\vec b\)</span> a paralelogramma, illetve a háromszög <b>egy csúcsból kiinduló</b> két oldalvektora.</p>
+    </div>
+
+    <p><b>Példa.</b> <span class="math inline">\(|\vec a|=4\)</span>, <span class="math inline">\(|\vec b|=6\)</span>, <span class="math inline">\(\varphi=30^\circ\)</span>: a paralelogramma területe <span class="math inline">\(4\cdot6\cdot\sin30^\circ=12\)</span>, a két vektor által kifeszített háromszögé <span class="math inline">\(6\)</span>. Számológéppel: <span class="math inline">\(|\vec a|=5\)</span>, <span class="math inline">\(|\vec b|=3\)</span>, <span class="math inline">\(\varphi=40^\circ\)</span> esetén a paralelogramma területe <span class="math inline">\(T=15\sin40^\circ\approx9{,}64\)</span>.</p><p>A <span class="math inline">\(\tfrac12|\vec a\times\vec b|\)</span> képlet a háromszög területének ismert <span class="math inline">\(T=\tfrac12ab\sin\gamma\)</span> képlete — csak most vektorokkal írva. Az igazi ereje akkor látszik, amikor a háromszög <b>három térbeli pontjával</b> adott, és a szögét nem ismerjük: ekkor a koordinátás képlet segít.</p>
+
+    <h2 id="s3">Koordinátákkal — determinánssal</h2>
+
+    <div class="doboz tetel" id="tetel-vektorialis-koordinatak">
+      <p class="cim"><span class="ikon">📘</span> A vektoriális szorzat koordinátákkal</p>
+      <p>Ha <span class="math inline">\(\vec a=(x_1;y_1;z_1)\)</span> és <span class="math inline">\(\vec b=(x_2;y_2;z_2)\)</span>, akkor</p><span class="math display">\[\begin{aligned}\vec a\times\vec b&=\begin{vmatrix}\vec i&\vec j&\vec k\\ x_1&y_1&z_1\\ x_2&y_2&z_2\end{vmatrix}\\&=\vec i\begin{vmatrix}y_1&z_1\\ y_2&z_2\end{vmatrix}-\vec j\begin{vmatrix}x_1&z_1\\ x_2&z_2\end{vmatrix}+\vec k\begin{vmatrix}x_1&y_1\\ x_2&y_2\end{vmatrix} ,\end{aligned}\]</span><p>vagyis <span class="math inline">\(\vec a\times\vec b=\left(y_1z_2-z_1y_2;\;\;-(x_1z_2-z_1x_2);\;\;x_1y_2-y_1x_2\right)\)</span>.</p>
+    </div>
+
+    <p>A „determináns” első sorában vektorok állnak, ezért ez nem igazi szám-determináns — <b>emlékeztető séma</b>: az első sor szerinti kifejtés előjelszabálya (<span class="math inline">\(+\,-\,+\)</span>) adja a helyes képletet. A <span class="math inline">\(2\times2\)</span>-es aldeterminánsokat úgy kapod, hogy letakarod az adott egységvektor sorát és oszlopát; értékük <span class="math inline">\(\begin{vmatrix}p&q\\ r&s\end{vmatrix}=ps-qr\)</span>.</p><p><b>Példa.</b> <span class="math inline">\(\vec a=(2;-1;3)\)</span>, <span class="math inline">\(\vec b=(1;4;-2)\)</span>:</p><span class="math display">\[\begin{aligned}\vec a\times\vec b&=\vec i\begin{vmatrix}-1&3\\ 4&-2\end{vmatrix}-\vec j\begin{vmatrix}2&3\\ 1&-2\end{vmatrix}+\vec k\begin{vmatrix}2&-1\\ 1&4\end{vmatrix}\\&=\vec i\,(2-12)-\vec j\,(-4-3)+\vec k\,(8+1)=(-10;\,7;\,9).\end{aligned}\]</span><p><b>Ellenőrzés:</b> az eredménynek mindkét tényezőre merőlegesnek kell lennie. <span class="math inline">\((2;-1;3)\cdot(-10;7;9)=-20-7+27=0\)</span> ✔ és <span class="math inline">\((1;4;-2)\cdot(-10;7;9)=-10+28-18=0\)</span> ✔.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„<span class="math inline">\(\vec a\times\vec b=\vec i\,(2-12)+\vec j\,(-4-3)+\vec k\,(8+1)=(-10;\,-7;\,9)\)</span>.”</i></p><p>Maxi a <b>középső tag előtti mínuszt</b> hagyta el. A kifejtés előjelei <span class="math inline">\(+\vec i\)</span>, <span class="math inline">\(-\vec j\)</span>, <span class="math inline">\(+\vec k\)</span> — a középső aldeterminánst ellentett előjellel kell venni. A merőlegességi próba azonnal leleplezi: <span class="math inline">\((2;-1;3)\cdot(-10;-7;9)=-20+7+27=14\ne0\)</span>.</p><p>Maxi másik tévedése: <i>„a sorrend mindegy, mint a szorzásnál”</i>. A vektoriális szorzatban a sorrend felcserélése <b>előjelet vált</b> — erről szól a következő szakasz.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-haromszog-terulet">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — háromszög területe három pontból</p>
+      <p>Egy kristálylap csúcsai <span class="math inline">\(A(1;0;2)\)</span>, <span class="math inline">\(B(3;1;1)\)</span> és <span class="math inline">\(C(2;3;4)\)</span>. Mekkora a területe?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>1. Két oldalvektor ugyanabból a csúcsból:</b> <span class="math inline">\(\overrightarrow{AB}=(2;1;-1)\)</span>, <span class="math inline">\(\overrightarrow{AC}=(1;3;2)\)</span>.</p><p><b>2. A vektoriális szorzat:</b></p><span class="math display">\[\overrightarrow{AB}\times\overrightarrow{AC}=\vec i\begin{vmatrix}1&-1\\ 3&2\end{vmatrix}-\vec j\begin{vmatrix}2&-1\\ 1&2\end{vmatrix}+\vec k\begin{vmatrix}2&1\\ 1&3\end{vmatrix}=5\vec i-5\vec j+5\vec k=(5;-5;5).\]</span><p><b>3. Az intenzitása:</b> <span class="math inline">\(\sqrt{25+25+25}=\sqrt{75}=5\sqrt3\)</span>.</p><p><b>4. A terület a fele:</b> <span class="math inline">\(T=\dfrac{5\sqrt3}{2}\approx4{,}33\)</span>.</p><p class="vegeredmeny"><span class="math inline">\(T=\dfrac{5\sqrt3}{2}\approx4{,}33\)</span> területegység</p></div></details>
+    </div>
+
+    <h2 id="s4">Tulajdonságok</h2>
+
+    <div class="doboz tetel" id="tetel-vektorialis-tulajdonsagok">
+      <p class="cim"><span class="ikon">📘</span> A vektoriális szorzat tulajdonságai</p>
+      <p>Bármely <span class="math inline">\(\vec a\)</span>, <span class="math inline">\(\vec b\)</span>, <span class="math inline">\(\vec c\)</span> vektorra és <span class="math inline">\(\lambda\)</span> valós számra:</p><ul><li><span class="math inline">\(\vec b\times\vec a=-\left(\vec a\times\vec b\right)\)</span> <i>(antikommutativitás — a sorrend felcserélése előjelet vált)</i></li><li><span class="math inline">\(\vec a\times(\vec b+\vec c)=\vec a\times\vec b+\vec a\times\vec c\)</span> <i>(disztributivitás)</i></li><li><span class="math inline">\((\lambda\vec a)\times\vec b=\vec a\times(\lambda\vec b)=\lambda\left(\vec a\times\vec b\right)\)</span></li><li><span class="math inline">\(\vec a\times\vec a=\vec 0\)</span>; két nem nullvektor pontosan akkor párhuzamos, ha <span class="math inline">\(\vec a\times\vec b=\vec 0\)</span></li><li><span class="math inline">\(\vec i\times\vec j=\vec k\)</span>, &nbsp; <span class="math inline">\(\vec j\times\vec k=\vec i\)</span>, &nbsp; <span class="math inline">\(\vec k\times\vec i=\vec j\)</span> &nbsp; (és például <span class="math inline">\(\vec j\times\vec i=-\vec k\)</span>)</li></ul>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Az a × b és a b × a ellentett vektorok: ugyanarra a síkra merőlegesek, de ellentétes irányításúak">
+      <defs><marker id="nyv-0e271-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#ef4444"/></marker><marker id="nyv-0e271-1" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3b82f6"/></marker><marker id="nyv-0e271-2" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f59e0b"/></marker><marker id="nyv-0e271-3" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#047857"/></marker></defs>
+      <polygon points="75.1,145.7 220.9,145.7 324.9,108.0 179.1,108.0" fill="#3b82f6" fill-opacity="0.13" stroke="none"/>
+      <line x1="220.9" y1="145.7" x2="324.9" y2="108.0" stroke="#475569" stroke-width="1.2" stroke-dasharray="5 4"/>
+      <line x1="179.1" y1="108.0" x2="324.9" y2="108.0" stroke="#475569" stroke-width="1.2" stroke-dasharray="5 4"/>
+      <line x1="75.1" y1="145.7" x2="75.1" y2="261.4" stroke="#ef4444" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#nyv-0e271-0)"/>
+      <text x="93.0" y="263.4" font-size="14" fill="#ef4444" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">b</text>
+      <path d="M94.7,251.4 L101.1,251.4" stroke="#ef4444" stroke-width="1.2" fill="none"/>
+      <path d="M98.4,248.8 L103.2,251.4 L98.4,254.0 z" fill="#ef4444"/>
+      <text x="100.9" y="263.4" font-size="14" fill="#ef4444" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600"> × </text>
+      <text x="117.4" y="263.4" font-size="14" fill="#ef4444" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M119.1,251.4 L125.4,251.4" stroke="#ef4444" stroke-width="1.2" fill="none"/>
+      <path d="M122.7,248.8 L127.5,251.4 L122.7,254.0 z" fill="#ef4444"/>
+      <path d="M88.9,145.7 L88.9,132.0 L75.1,132.0" fill="none" stroke="#475569" stroke-width="1.2"/>
+      <path d="M86.6,141.6 L86.6,127.8 L75.1,132.0" fill="none" stroke="#475569" stroke-width="1.2"/>
+      <path d="M111.6,145.7 L112.6,144.9 L113.4,144.0 L114.0,143.2 L114.5,142.3 L114.8,141.5 L114.8,140.7 L114.7,140.0 L114.4,139.2 L113.9,138.5 L113.3,137.8 L112.4,137.2 L111.4,136.6 L110.2,136.1 L108.8,135.5 L107.2,135.1 L105.6,134.7" fill="none" stroke="#8b5cf6" stroke-width="1.6"/>
+      <text x="132.9" y="141.2" font-size="14" fill="#8b5cf6" text-anchor="middle" font-weight="600">φ</text>
+      <line x1="75.1" y1="145.7" x2="220.9" y2="145.7" stroke="#3b82f6" stroke-width="2.6" stroke-linecap="round" marker-end="url(#nyv-0e271-1)"/>
+      <line x1="75.1" y1="145.7" x2="179.1" y2="108.0" stroke="#f59e0b" stroke-width="2.6" stroke-linecap="round" marker-end="url(#nyv-0e271-2)"/>
+      <line x1="75.1" y1="145.7" x2="75.1" y2="30.0" stroke="#047857" stroke-width="2.8" stroke-linecap="round" marker-end="url(#nyv-0e271-3)"/>
+      <text x="210.7" y="167.7" font-size="15" fill="#3b82f6" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M212.5,154.8 L219.4,154.8" stroke="#3b82f6" stroke-width="1.2" fill="none"/>
+      <path d="M216.7,152.2 L221.5,154.8 L216.7,157.4 z" fill="#3b82f6"/>
+      <text x="160.9" y="104.0" font-size="15" fill="#b45309" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">b</text>
+      <path d="M162.7,91.1 L169.6,91.1" stroke="#b45309" stroke-width="1.2" fill="none"/>
+      <path d="M166.9,88.5 L171.7,91.1 L166.9,93.7 z" fill="#b45309"/>
+      <text x="91.9" y="38.0" font-size="15" fill="#047857" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M93.7,25.1 L100.6,25.1" stroke="#047857" stroke-width="1.2" fill="none"/>
+      <path d="M97.9,22.5 L102.7,25.1 L97.9,27.7 z" fill="#047857"/>
+      <text x="100.3" y="38.0" font-size="15" fill="#047857" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600"> × </text>
+      <text x="118.0" y="38.0" font-size="15" fill="#047857" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">b</text>
+      <path d="M119.8,25.1 L126.7,25.1" stroke="#047857" stroke-width="1.2" fill="none"/>
+      <path d="M124.0,22.5 L128.8,25.1 L124.0,27.7 z" fill="#047857"/>
+      <text x="200.0" y="132.8" font-size="15" fill="#1d4ed8" text-anchor="middle" font-style="italic" font-weight="600">T</text>
+    </svg>
+    </div>
+    <p class="cap">A <span class="math inline">\(\vec b\times\vec a\)</span> ugyanolyan hosszú, mint az <span class="math inline">\(\vec a\times\vec b\)</span>, de ellentétes irányítású: a jobb kéz hüvelykujja most a <span class="math inline">\(\vec b\)</span>, mutatóujja az <span class="math inline">\(\vec a\)</span> irányába mutat, így a középső ujj lefelé mutat.</p>
+
+    <p>A párhuzamossági feltétel koordinátákkal is kényelmes: <span class="math inline">\((2;-1;3)\times(-4;2;-6)=(0;0;0)\)</span>, tehát a két vektor párhuzamos — ezt az <a href="tananyag-koordinatak-terben.html#tetel-koordinatas-muveletek">arányos koordinátákból</a> is láttuk.</p>
+
+    <div class="doboz pelda" id="pelda-tulajdonsagok">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — egyszerűsítés a tulajdonságokkal</p>
+      <p>Egyszerűsítsd a <span class="math inline">\((2\vec a-\vec b)\times(\vec a+3\vec b)\)</span> kifejezést! Mennyi az értéke és az intenzitása, ha <span class="math inline">\(\vec a\times\vec b=(1;-2;2)\)</span>?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>Tagonként szorzunk — a <b>sorrendet megtartva</b>:</p><span class="math display">\[(2\vec a-\vec b)\times(\vec a+3\vec b)=2\,\vec a\times\vec a+6\,\vec a\times\vec b-\vec b\times\vec a-3\,\vec b\times\vec b .\]</span><p><span class="math inline">\(\vec a\times\vec a=\vec b\times\vec b=\vec 0\)</span>, és <span class="math inline">\(-\vec b\times\vec a=+\vec a\times\vec b\)</span>, így az eredmény <span class="math inline">\(6\,\vec a\times\vec b+\vec a\times\vec b=7\,(\vec a\times\vec b)\)</span>.</p><p>Behelyettesítve: <span class="math inline">\(7\cdot(1;-2;2)=(7;-14;14)\)</span>, intenzitása <span class="math inline">\(\sqrt{49+196+196}=\sqrt{441}=21\)</span>.</p><p class="vegeredmeny"><span class="math inline">\((2\vec a-\vec b)\times(\vec a+3\vec b)=7\,(\vec a\times\vec b)=(7;-14;14)\)</span>, intenzitása <span class="math inline">\(21\)</span></p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A sorrend felcserélése előjelet vált: b × a = −(a × b)." data-nem="✘ A vektoriális szorzat NEM kommutatív: b × a = −(a × b) = (−2; 3; −1). A két vektor ugyanarra a síkra merőleges, de ellentétes irányba mutat.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Tudjuk, hogy <span class="math inline">\(\vec a\times\vec b=(2;-3;1)\)</span>. Mivel egyenlő <span class="math inline">\(\vec b\times\vec a\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\((1;-3;2)\)</span></button><button><span class="math inline">\((0;0;0)\)</span></button><button><span class="math inline">\((-2;3;-1)\)</span></button><button><span class="math inline">\((2;-3;1)\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-szorzatok.html#alap-9">🐕 Tér-eb-ugrás <span class="cimke">A 9–16</span></a><a class="sav bruno" href="feladatok-szorzatok.html#kozep-7">👑 Királyi Gárda <span class="cimke">K 7–12</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/meduza.webp" alt="Medúza — a Királyi Család hangja" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Medúza:</b> Két szorzat, két kérdés. Mekkora a <b>szög</b>? Arra a skaláris szorzat felel. Mekkora a <b>terület</b>? Arra a vektoriális. Crni Grom most a Kamra valódi kristálylapjait mutatja — ideje, hogy az eszközöket élesben használjuk.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-skalaris-szorzat.html"><span class="irany">← Előző</span><span class="hova">A skaláris szorzat</span></a>
+      <a class="kov" href="tananyag-vektorok-alkalmazasa.html"><span class="irany">Következő →</span><span class="hova">Vektorok munkában</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

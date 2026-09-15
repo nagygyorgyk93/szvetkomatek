@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vektorok a térben — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Vektorok</a> ›
+  <span class="itt">Vektorok a térben — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Vektorok a térben — koordinátákkal</h1>
+  <p class="alcim">A térbeli derékszögű koordináta-rendszer, a vektor koordinátái, a műveletek koordinátákkal, a vektor intenzitása és két pont távolsága.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Királyi Irányítótű · 2/5</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/meduza.webp" alt="Medúza — a Királyi Család hangja" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Medúza:</b> A Kamra három irányban nyúlik, és a műszerek minden pontra <b>három számot</b> adnak. Crni Grom szerint ez nem teher, hanem ajándék: ha a nyilat három számmá fordítjuk, a vektorműveletek egyszerű <b>számolássá</b> válnak. Nem kell rajzolni — elég összeadni.</p></div>
+
+    <p>Ebben az egységben felépítjük a <b>térbeli derékszögű koordináta-rendszert</b>, megadjuk a vektorokat koordinátáikkal, és megtanuljuk, hogyan számolható ki velük egy vektor <b>intenzitása</b> és két pont <b>távolsága</b>.</p>
+
+    <h2 id="s1">A térbeli derékszögű koordináta-rendszer</h2>
+
+    <div class="doboz definicio" id="def-koordinatak">
+      <p class="cim"><span class="ikon">📗</span> Térbeli koordináta-rendszer · a pont koordinátái</p>
+      <p>A <b>térbeli derékszögű koordináta-rendszer</b> három, közös <span class="math inline">\(O\)</span> kezdőpontú, páronként merőleges számegyenes: az <span class="math inline">\(x\)</span>, az <span class="math inline">\(y\)</span> és a <span class="math inline">\(z\)</span> tengely. A rendszer <b>jobbsodrású</b>: ha jobb kezünk hüvelykujja az <span class="math inline">\(x\)</span>, mutatóujja az <span class="math inline">\(y\)</span> tengely pozitív fele felé mutat, akkor a behajlított középső ujjunk a <span class="math inline">\(z\)</span> tengely pozitív fele felé mutat.</p><p>A tér egy <span class="math inline">\(P\)</span> pontjának <b>koordinátái</b>: vetítsük merőlegesen a pontot a három tengelyre — a vetületek helyén leolvasott három szám <span class="math inline">\(P(x;y;z)\)</span>. Szemléletesen: az <span class="math inline">\(O\)</span> és a <span class="math inline">\(P\)</span> egy olyan tengelyekkel párhuzamos élű <b>téglatest</b> testátlójának két végpontja, amelynek élei <span class="math inline">\(|x|\)</span>, <span class="math inline">\(|y|\)</span> és <span class="math inline">\(|z|\)</span>. (Ha egy koordináta <span class="math inline">\(0\)</span>, a „doboz” téglalappá vagy szakasszá lapul.)</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Térbeli derékszögű koordináta-rendszer; a P(3; 4; 2) pont egy téglatest csúcsa, amelynek élei a pont koordinátái">
+      <defs><marker id="nyv-aebba-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+      <line x1="119.8" y1="191.0" x2="26.0" y2="264.3" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round" marker-end="url(#nyv-aebba-0)"/>
+      <text x="18.0" y="278.3" font-size="15" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">x</text>
+      <line x1="119.8" y1="191.0" x2="374.0" y2="191.0" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round" marker-end="url(#nyv-aebba-0)"/>
+      <text x="384.0" y="196.0" font-size="15" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">y</text>
+      <line x1="119.8" y1="191.0" x2="119.8" y2="35.7" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round" marker-end="url(#nyv-aebba-0)"/>
+      <text x="131.8" y="39.7" font-size="15" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">z</text>
+      <line x1="58.6" y1="238.8" x2="246.9" y2="238.8" stroke="#475569" stroke-width="1.1" stroke-dasharray="4 3"/>
+      <line x1="308.1" y1="191.0" x2="246.9" y2="238.8" stroke="#475569" stroke-width="1.1" stroke-dasharray="4 3"/>
+      <line x1="58.6" y1="238.8" x2="58.6" y2="144.7" stroke="#475569" stroke-width="1.1" stroke-dasharray="4 3"/>
+      <line x1="119.8" y1="96.9" x2="58.6" y2="144.7" stroke="#475569" stroke-width="1.1" stroke-dasharray="4 3"/>
+      <line x1="308.1" y1="191.0" x2="308.1" y2="96.9" stroke="#475569" stroke-width="1.1" stroke-dasharray="4 3"/>
+      <line x1="119.8" y1="96.9" x2="308.1" y2="96.9" stroke="#475569" stroke-width="1.1" stroke-dasharray="4 3"/>
+      <line x1="246.9" y1="238.8" x2="246.9" y2="144.7" stroke="#475569" stroke-width="1.1" stroke-dasharray="4 3"/>
+      <line x1="58.6" y1="144.7" x2="246.9" y2="144.7" stroke="#475569" stroke-width="1.1" stroke-dasharray="4 3"/>
+      <line x1="308.1" y1="96.9" x2="246.9" y2="144.7" stroke="#475569" stroke-width="1.1" stroke-dasharray="4 3"/>
+      <circle cx="58.6" cy="238.8" r="2.6" fill="#0f172a"/>
+      <text x="43.6" y="241.8" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="600">3</text>
+      <circle cx="308.1" cy="191.0" r="2.6" fill="#0f172a"/>
+      <text x="308.1" y="208.0" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="600">4</text>
+      <circle cx="119.8" cy="96.9" r="2.6" fill="#0f172a"/>
+      <text x="107.8" y="101.9" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="600">2</text>
+      <circle cx="246.9" cy="144.7" r="3.6" fill="#0f172a"/>
+      <text x="254.9" y="136.7" font-size="14" fill="#0f172a" text-anchor="start" font-weight="600">P(3; 4; 2)</text>
+      <text x="127.8" y="207.0" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="600">O</text>
+    </svg>
+    </div>
+    <p class="cap">A <span class="math inline">\(P(3;4;2)\)</span> pont a „dobozában”: az <span class="math inline">\(x\)</span> tengely mentén <span class="math inline">\(3\)</span>, az <span class="math inline">\(y\)</span> mentén <span class="math inline">\(4\)</span>, a <span class="math inline">\(z\)</span> mentén <span class="math inline">\(2\)</span> egységet haladunk.</p>
+
+    <p><b>Rajzolás.</b> Az <span class="math inline">\(y\)</span> tengelyt vízszintesen jobbra, a <span class="math inline">\(z\)</span> tengelyt függőlegesen felfelé rajzoljuk; az <span class="math inline">\(x\)</span> tengely — amely valójában felénk mutat — balra lefelé, <b>ferdén</b> halad, és rajta az egységet kb. a felére rövidítjük. Így lesz a síkbeli rajz térhatású. (Az <span class="math inline">\(x\)</span> felénk, az <span class="math inline">\(y\)</span> jobbra, a <span class="math inline">\(z\)</span> felfelé: ez éppen jobbsodrású rendszer.)</p><table class="tt-table"><tr><th>Ahol a pont van</th><th>A koordinátái</th></tr><tr><td>az <span class="math inline">\(x\)</span>, az <span class="math inline">\(y\)</span>, illetve a <span class="math inline">\(z\)</span> tengelyen</td><td><span class="math inline">\((x;0;0)\)</span>, <span class="math inline">\((0;y;0)\)</span>, <span class="math inline">\((0;0;z)\)</span></td></tr><tr><td>az <span class="math inline">\(xy\)</span> síkban (a „padlón”)</td><td><span class="math inline">\((x;y;0)\)</span></td></tr><tr><td>az <span class="math inline">\(xz\)</span> síkban</td><td><span class="math inline">\((x;0;z)\)</span></td></tr><tr><td>az <span class="math inline">\(yz\)</span> síkban</td><td><span class="math inline">\((0;y;z)\)</span></td></tr><tr><td>a kezdőpontban</td><td><span class="math inline">\((0;0;0)\)</span></td></tr></table>
+
+    <div class="doboz pelda" id="pelda-leolvasas">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — hol van a pont?</p>
+      <p>A fenti ábra dobozának melyik csúcsa a <span class="math inline">\(Q(0;4;2)\)</span> pont? És melyik a <span class="math inline">\(R(3;4;0)\)</span>?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(Q\)</span>-nak az <span class="math inline">\(x\)</span> koordinátája <span class="math inline">\(0\)</span>, tehát az <span class="math inline">\(yz\)</span> síkban van: ez a doboz <b>hátsó, felső, jobb</b> csúcsa (a <span class="math inline">\(4\)</span>-es jel fölött, a <span class="math inline">\(2\)</span>-es jellel egy magasságban). <span class="math inline">\(R\)</span>-nek a <span class="math inline">\(z\)</span> koordinátája <span class="math inline">\(0\)</span>, tehát a „padlón” van: a doboz <b>elülső, alsó, jobb</b> csúcsa, közvetlenül <span class="math inline">\(P\)</span> alatt.</p><p class="vegeredmeny"><span class="math inline">\(Q\)</span>: hátsó felső jobb csúcs (az <span class="math inline">\(yz\)</span> síkban) · <span class="math inline">\(R\)</span>: elülső alsó jobb csúcs, <span class="math inline">\(P\)</span> alatt (az <span class="math inline">\(xy\)</span> síkban)</p></div></details>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>Egy 3D-nyomtató fúvókája és minden videojáték-motor pontosan így, derékszögű <b>számhármasokkal</b> írja le a teret (a telefonod GPS-e is számhármast ad: szélességet, hosszúságot és magasságot). Amikor egy játékban a szereplő előrelép, a program valójában egy vektort ad hozzá a helyzetét leíró számhármashoz — ennyi az egész.</p>
+    </div>
+
+    <h2 id="s2">A vektor koordinátái</h2>
+
+    <p>Jelölje <span class="math inline">\(\vec i\)</span>, <span class="math inline">\(\vec j\)</span> és <span class="math inline">\(\vec k\)</span> az <span class="math inline">\(x\)</span>, az <span class="math inline">\(y\)</span> és a <span class="math inline">\(z\)</span> tengely pozitív irányába mutató <b>egységvektort</b>. Toljunk egy tetszőleges vektort az <span class="math inline">\(O\)</span> kezdőpontba; a végpontja legyen <span class="math inline">\(P(x;y;z)\)</span>. Ekkor a „doboz” éleit követve</p><span class="math display">\[\overrightarrow{OP}=x\vec i+y\vec j+z\vec k .\]</span>
+
+    <div class="doboz definicio" id="def-vektor-koordinatai">
+      <p class="cim"><span class="ikon">📗</span> A vektor koordinátái · helyvektor</p>
+      <p>Ha <span class="math inline">\(\vec a=x\vec i+y\vec j+z\vec k\)</span>, akkor az <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span> számok az <span class="math inline">\(\vec a\)</span> <b>koordinátái</b>, és röviden <span class="math inline">\(\vec a=(x;y;z)\)</span>. A két írásmód egyenrangú.</p><p>A koordináták a vektor <b>skaláris vetületei</b> az <span class="math inline">\(\vec i\)</span>, <span class="math inline">\(\vec j\)</span>, <span class="math inline">\(\vec k\)</span> irányára (<a href="tananyag-vektorok-sikban.html#def-szog-vetulet">lásd az előző egységet</a>).</p><p>A <span class="math inline">\(P\)</span> pont <b>helyvektora</b> az <span class="math inline">\(\overrightarrow{OP}\)</span> vektor; koordinátái megegyeznek a <span class="math inline">\(P\)</span> pont koordinátáival.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="A P(3; 4; 2) pont helyvektora és az i, j, k egységvektorok a koordinátatengelyeken">
+      <defs><marker id="nyv-fbbcc-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker><marker id="nyv-fbbcc-1" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3b82f6"/></marker><marker id="nyv-fbbcc-2" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#ef4444"/></marker><marker id="nyv-fbbcc-3" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#047857"/></marker><marker id="nyv-fbbcc-4" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8b5cf6"/></marker></defs>
+      <line x1="119.8" y1="191.0" x2="26.0" y2="264.3" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round" marker-end="url(#nyv-fbbcc-0)"/>
+      <text x="18.0" y="278.3" font-size="15" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">x</text>
+      <line x1="119.8" y1="191.0" x2="374.0" y2="191.0" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round" marker-end="url(#nyv-fbbcc-0)"/>
+      <text x="384.0" y="196.0" font-size="15" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">y</text>
+      <line x1="119.8" y1="191.0" x2="119.8" y2="35.7" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round" marker-end="url(#nyv-fbbcc-0)"/>
+      <text x="131.8" y="39.7" font-size="15" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">z</text>
+      <line x1="58.6" y1="238.8" x2="246.9" y2="238.8" stroke="#475569" stroke-width="1.1" stroke-dasharray="4 3"/>
+      <line x1="308.1" y1="191.0" x2="246.9" y2="238.8" stroke="#475569" stroke-width="1.1" stroke-dasharray="4 3"/>
+      <line x1="58.6" y1="238.8" x2="58.6" y2="144.7" stroke="#475569" stroke-width="1.1" stroke-dasharray="4 3"/>
+      <line x1="119.8" y1="96.9" x2="58.6" y2="144.7" stroke="#475569" stroke-width="1.1" stroke-dasharray="4 3"/>
+      <line x1="308.1" y1="191.0" x2="308.1" y2="96.9" stroke="#475569" stroke-width="1.1" stroke-dasharray="4 3"/>
+      <line x1="119.8" y1="96.9" x2="308.1" y2="96.9" stroke="#475569" stroke-width="1.1" stroke-dasharray="4 3"/>
+      <line x1="246.9" y1="238.8" x2="246.9" y2="144.7" stroke="#475569" stroke-width="1.1" stroke-dasharray="4 3"/>
+      <line x1="58.6" y1="144.7" x2="246.9" y2="144.7" stroke="#475569" stroke-width="1.1" stroke-dasharray="4 3"/>
+      <line x1="308.1" y1="96.9" x2="246.9" y2="144.7" stroke="#475569" stroke-width="1.1" stroke-dasharray="4 3"/>
+      <circle cx="58.6" cy="238.8" r="2.6" fill="#0f172a"/>
+      <text x="43.6" y="241.8" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="600">3</text>
+      <circle cx="308.1" cy="191.0" r="2.6" fill="#0f172a"/>
+      <text x="308.1" y="208.0" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="600">4</text>
+      <circle cx="119.8" cy="96.9" r="2.6" fill="#0f172a"/>
+      <text x="107.8" y="101.9" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="600">2</text>
+      <line x1="119.8" y1="191.0" x2="246.9" y2="144.7" stroke="#3b82f6" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-fbbcc-1)"/>
+      <text x="167.2" y="163.8" font-size="15" fill="#3b82f6" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">p</text>
+      <path d="M169.0,150.9 L175.9,150.9" stroke="#3b82f6" stroke-width="1.2" fill="none"/>
+      <path d="M173.2,148.3 L178.0,150.9 L173.2,153.5 z" fill="#3b82f6"/>
+      <line x1="119.8" y1="191.0" x2="99.4" y2="206.9" stroke="#ef4444" stroke-width="3.4" stroke-linecap="round" marker-end="url(#nyv-fbbcc-2)"/>
+      <text x="93.1" y="226.9" font-size="14" fill="#ef4444" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">i</text>
+      <path d="M94.7,214.9 L98.0,214.9" stroke="#ef4444" stroke-width="1.2" fill="none"/>
+      <path d="M95.3,212.3 L100.1,214.9 L95.3,217.5 z" fill="#ef4444"/>
+      <line x1="119.8" y1="191.0" x2="166.9" y2="191.0" stroke="#047857" stroke-width="3.4" stroke-linecap="round" marker-end="url(#nyv-fbbcc-3)"/>
+      <text x="163.0" y="211.0" font-size="14" fill="#047857" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">j</text>
+      <path d="M164.7,199.0 L171.0,199.0" stroke="#047857" stroke-width="1.2" fill="none"/>
+      <path d="M168.3,196.4 L173.1,199.0 L168.3,201.6 z" fill="#047857"/>
+      <line x1="119.8" y1="191.0" x2="119.8" y2="143.9" stroke="#8b5cf6" stroke-width="3.4" stroke-linecap="round" marker-end="url(#nyv-fbbcc-4)"/>
+      <text x="103.9" y="147.9" font-size="14" fill="#8b5cf6" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">k</text>
+      <path d="M105.6,135.9 L111.9,135.9" stroke="#8b5cf6" stroke-width="1.2" fill="none"/>
+      <path d="M109.2,133.3 L114.0,135.9 L109.2,138.5 z" fill="#8b5cf6"/>
+      <circle cx="246.9" cy="144.7" r="3.6" fill="#0f172a"/>
+      <text x="254.9" y="136.7" font-size="14" fill="#0f172a" text-anchor="start" font-weight="600">P(3; 4; 2)</text>
+      <text x="127.8" y="207.0" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="600">O</text>
+    </svg>
+    </div>
+    <p class="cap">A <span class="math inline">\(P(3;4;2)\)</span> helyvektora: <span class="math inline">\(\vec p=3\vec i+4\vec j+2\vec k=(3;4;2)\)</span>.</p>
+
+    <p><b>Két pont közötti vektor.</b> Ha <span class="math inline">\(A(x_1;y_1;z_1)\)</span> és <span class="math inline">\(B(x_2;y_2;z_2)\)</span>, akkor a háromszög-szabály szerint <span class="math inline">\(\overrightarrow{AB}=\overrightarrow{OB}-\overrightarrow{OA}\)</span>, vagyis</p><span class="math display">\[\overrightarrow{AB}=(x_2-x_1;\;y_2-y_1;\;z_2-z_1).\]</span><p>Röviden: <b>végpont mínusz kezdőpont</b>.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„<span class="math inline">\(A(2;-1;3)\)</span>, <span class="math inline">\(B(5;1;-1)\)</span>, tehát <span class="math inline">\(\overrightarrow{AB}=(2-5;\,-1-1;\,3+1)=(-3;-2;4)\)</span>.”</i></p><p>Maxi a kezdőpontból vonta ki a végpontot — ez a <span class="math inline">\(\overrightarrow{BA}\)</span>, az <b>ellentett</b> vektor. A helyes sorrend: <b>végpont mínusz kezdőpont</b>, <span class="math inline">\(\overrightarrow{AB}=(3;2;-4)\)</span>.</p><p>A másik csapda az írásmódok váltása. A <span class="math inline">\(2\vec i-\vec k\)</span> vektorban <b>nincs</b> <span class="math inline">\(\vec j\)</span>-s tag — ez azt jelenti, hogy a <span class="math inline">\(\vec j\)</span> együtthatója <span class="math inline">\(0\)</span>: <span class="math inline">\(2\vec i-\vec k=(2;0;-1)\)</span>, és <b>nem</b> <span class="math inline">\((2;-1)\)</span>. Térben minden vektornak három koordinátája van.</p>
+    </div>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Végpont mínusz kezdőpont: (−2 − 1; 5 − 4; 3 − (−2)) = (−3; 1; 5)." data-nem="✘ Végpont mínusz kezdőpont: (−2 − 1; 5 − 4; 3 − (−2)) = (−3; 1; 5). A (3; −1; −5) a BA vektor, a (−1; 9; 1) a két pont koordinátáinak összege, a (−3; 1; 1)-nél pedig a 3 − (−2) előjele csúszott el.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p><span class="math inline">\(A(1;4;-2)\)</span> és <span class="math inline">\(B(-2;5;3)\)</span>. Mik az <span class="math inline">\(\overrightarrow{AB}\)</span> koordinátái?</p>
+      <div class="opciok"><button><span class="math inline">\((-1;9;1)\)</span></button><button><span class="math inline">\((-3;1;1)\)</span></button><button><span class="math inline">\((-3;1;5)\)</span></button><button><span class="math inline">\((3;-1;-5)\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Műveletek koordinátákkal</h2>
+
+    <div class="doboz tetel" id="tetel-koordinatas-muveletek">
+      <p class="cim"><span class="ikon">📘</span> Vektorműveletek koordinátákkal</p>
+      <p>Ha <span class="math inline">\(\vec a=(x_1;y_1;z_1)\)</span>, <span class="math inline">\(\vec b=(x_2;y_2;z_2)\)</span> és <span class="math inline">\(\lambda\)</span> valós szám, akkor</p><span class="math display">\[\vec a\pm\vec b=(x_1\pm x_2;\;y_1\pm y_2;\;z_1\pm z_2),\qquad \lambda\vec a=(\lambda x_1;\;\lambda y_1;\;\lambda z_1).\]</span><p>Két pont közötti vektor: <span class="math inline">\(\overrightarrow{AB}=(x_2-x_1;\;y_2-y_1;\;z_2-z_1)\)</span>.</p><p>Két nem nullvektor pontosan akkor <b>párhuzamos</b>, ha a koordinátáik <b>arányosak</b>: van olyan <span class="math inline">\(\lambda\)</span>, hogy <span class="math inline">\(x_2=\lambda x_1\)</span>, <span class="math inline">\(y_2=\lambda y_1\)</span> és <span class="math inline">\(z_2=\lambda z_1\)</span>, vagyis <span class="math inline">\(\vec b=\lambda\vec a\)</span>. (Nulla koordinátával ne ossz: ott a másik vektor megfelelő koordinátájának is <span class="math inline">\(0\)</span>-nak kell lennie.)</p>
+    </div>
+
+    <p>Az indoklás a <a href="tananyag-vektorok-sikban.html#tetel-muveletek">műveleti tulajdonságokból</a> jön: például <span class="math inline">\((x_1\vec i+y_1\vec j+z_1\vec k)+(x_2\vec i+y_2\vec j+z_2\vec k)\)</span>-ban az <span class="math inline">\(\vec i\)</span>-s, <span class="math inline">\(\vec j\)</span>-s és <span class="math inline">\(\vec k\)</span>-s tagokat külön vonjuk össze.</p>
+
+    <div class="doboz pelda" id="pelda-koordinatas-muveletek">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — számolás koordinátákkal</p>
+      <p><span class="math inline">\(\vec a=(2;-1;3)\)</span> és <span class="math inline">\(\vec b=(1;4;-2)\)</span>. Számítsd ki: <span class="math inline">\(\vec a+\vec b\)</span>, <span class="math inline">\(\vec a-\vec b\)</span>, <span class="math inline">\(2\vec a-3\vec b\)</span>. Párhuzamos-e <span class="math inline">\(\vec a\)</span>-val a <span class="math inline">\(\vec c=(-4;2;-6)\)</span> és a <span class="math inline">\(\vec d=(4;-2;5)\)</span> vektor?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(\vec a+\vec b=(3;3;1)\)</span>, &nbsp; <span class="math inline">\(\vec a-\vec b=(1;-5;5)\)</span>.</p><p><span class="math inline">\(2\vec a-3\vec b=(4;-2;6)-(3;12;-6)=(1;-14;12)\)</span>.</p><p><span class="math inline">\(\vec c=-2\cdot(2;-1;3)\)</span>, tehát <span class="math inline">\(\vec c=-2\vec a\)</span>: <b>párhuzamos</b> (ellentétes irányítású). A <span class="math inline">\(\vec d\)</span>-nél az arányok <span class="math inline">\(\tfrac42=2\)</span>, <span class="math inline">\(\tfrac{-2}{-1}=2\)</span>, de <span class="math inline">\(\tfrac53\ne2\)</span>: <b>nem párhuzamos</b>.</p><p class="vegeredmeny"><span class="math inline">\(\vec a+\vec b=(3;3;1)\)</span> · <span class="math inline">\(\vec a-\vec b=(1;-5;5)\)</span> · <span class="math inline">\(2\vec a-3\vec b=(1;-14;12)\)</span> · <span class="math inline">\(\vec c\parallel\vec a\)</span>, <span class="math inline">\(\vec d\nparallel\vec a\)</span></p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ A j-s tag hiányzik, tehát a második koordináta 0." data-nem="✘ Térben mindig három koordináta van, a sorrend i, j, k. A hiányzó j-s tag 0-t jelent a MÁSODIK helyen: (3; 0; −2).">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik a <span class="math inline">\(3\vec i-2\vec k\)</span> vektor koordinátás alakja?</p>
+      <div class="opciok"><button><span class="math inline">\((-2;0;3)\)</span></button><button><span class="math inline">\((3;0;-2)\)</span></button><button><span class="math inline">\((3;-2)\)</span></button><button><span class="math inline">\((3;-2;0)\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Intenzitás és távolság</h2>
+
+    <p>Az <span class="math inline">\(\vec a=(x;y;z)\)</span> vektort az <span class="math inline">\(O\)</span>-ba tolva a végpontja <span class="math inline">\(P(x;y;z)\)</span>, és <span class="math inline">\(|\vec a|\)</span> éppen az <span class="math inline">\(OP\)</span> szakasz hossza — a pont „dobozának” <b>testátlója</b>. A <a href="../01-poliederek/tananyag-hasab.html#tetel-teglatest-atlo">téglatest testátlójánál</a> tanultak szerint kétszer alkalmazzuk Pitagorasz tételét: a padlón az alaplap átlójának négyzete <span class="math inline">\(x^2+y^2\)</span>, és ehhez jön hozzá a függőleges él négyzete, <span class="math inline">\(z^2\)</span>.</p>
+
+    <div class="doboz tetel" id="tetel-hossz">
+      <p class="cim"><span class="ikon">📘</span> A vektor intenzitása · két pont távolsága</p>
+      <span class="math display">\[|\vec a|=\sqrt{x^2+y^2+z^2}\]</span><p>Az <span class="math inline">\(A(x_1;y_1;z_1)\)</span> és <span class="math inline">\(B(x_2;y_2;z_2)\)</span> pont <b>távolsága</b> az <span class="math inline">\(\overrightarrow{AB}\)</span> intenzitása:</p><span class="math display">\[d(A,B)=|\overrightarrow{AB}|=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}.\]</span><p>Az <span class="math inline">\(\vec a\ne\vec 0\)</span> vektorral azonos irányítású <b>egységvektor</b>: <span class="math inline">\(\vec a_0=\dfrac{\vec a}{|\vec a|}\)</span>.</p>
+    </div>
+
+    <p><b>Három gyors példa.</b> A <span class="math inline">\(P(3;4;2)\)</span> helyvektorának intenzitása <span class="math inline">\(\sqrt{9+16+4}=\sqrt{29}\approx5{,}39\)</span>. Az <span class="math inline">\(\vec a=(2;-1;2)\)</span> intenzitása <span class="math inline">\(\sqrt{4+1+4}=3\)</span>, a vele azonos irányítású egységvektor <span class="math inline">\(\vec a_0=\left(\tfrac23;-\tfrac13;\tfrac23\right)\)</span>. Az <span class="math inline">\(A(1;-2;3)\)</span> és a <span class="math inline">\(B(3;1;-3)\)</span> pont távolsága: <span class="math inline">\(\overrightarrow{AB}=(2;3;-6)\)</span>, <span class="math inline">\(|\overrightarrow{AB}|=\sqrt{4+9+36}=7\)</span>.</p>
+
+    <div class="doboz pelda" id="pelda-paralelogramma">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — a paralelogramma negyedik csúcsa</p>
+      <p>Az <span class="math inline">\(ABCD\)</span> paralelogramma három csúcsa <span class="math inline">\(A(1;2;0)\)</span>, <span class="math inline">\(B(4;3;1)\)</span> és <span class="math inline">\(D(2;-1;3)\)</span>. Határozd meg a <span class="math inline">\(C\)</span> csúcs koordinátáit, és számítsd ki a paralelogramma oldalainak hosszát és a kerületét!</p><p><b>Ötlet.</b> A paralelogrammában a szemközti oldalak vektorai egyenlők: <span class="math inline">\(\overrightarrow{DC}=\overrightarrow{AB}\)</span>. A csúcsok sorrendje számít — <span class="math inline">\(ABCD\)</span> körbejárva, tehát <span class="math inline">\(C\)</span> a <span class="math inline">\(B\)</span>-vel és a <span class="math inline">\(D\)</span>-vel szomszédos.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(\overrightarrow{AB}=(3;1;1)\)</span>. Mivel <span class="math inline">\(\overrightarrow{DC}=\overrightarrow{AB}\)</span>, <span class="math inline">\(C=D+\overrightarrow{AB}=(2+3;\,-1+1;\,3+1)=(5;0;4)\)</span>. <i>(Ugyanez képlettel: <span class="math inline">\(C=B+D-A\)</span>.)</i></p><p><span class="math inline">\(|\overrightarrow{AB}|=\sqrt{9+1+1}=\sqrt{11}\approx3{,}32\)</span>, <span class="math inline">\(\overrightarrow{AD}=(1;-3;3)\)</span>, <span class="math inline">\(|\overrightarrow{AD}|=\sqrt{1+9+9}=\sqrt{19}\approx4{,}36\)</span>.</p><p>A kerület <span class="math inline">\(K=2\left(\sqrt{11}+\sqrt{19}\right)\approx15{,}35\)</span>.</p><p><i>Ellenőrzés: <span class="math inline">\(\overrightarrow{DC}=(5-2;\,0+1;\,4-3)=(3;1;1)=\overrightarrow{AB}\)</span> ✔. Aki <span class="math inline">\(A+B-D=(3;6;-2)\)</span>-t számol, az a <span class="math inline">\(D\)</span>-vel szemközti csúcsot kapja meg egy <b>másik</b> paralelogrammában, amelynek <span class="math inline">\(AB\)</span> az átlója.</i></p><p class="vegeredmeny"><span class="math inline">\(C(5;0;4)\)</span> · <span class="math inline">\(AB=\sqrt{11}\approx3{,}32\)</span>, <span class="math inline">\(AD=\sqrt{19}\approx4{,}36\)</span> · <span class="math inline">\(K\approx15{,}35\)</span></p></div></details>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-vektorok.html#alap-9">🐕 Tér-eb-ugrás <span class="cimke">A 9–18</span></a><a class="sav bruno" href="feladatok-vektorok.html#kozep-6">👑 Királyi Gárda <span class="cimke">K 6–12</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/meduza.webp" alt="Medúza — a Királyi Család hangja" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Medúza:</b> Összeadni, kivonni és nyújtani már tudjuk a nyilakat — számokkal is. Crni Grom azonban két nyilat mutat egyszerre, és kérdőn néz: <b>hogyan lehet két vektort összeszorozni</b>, és mit kapunk eredményül? Kiderül, hogy erre két válasz is van.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-vektorok-sikban.html"><span class="irany">← Előző</span><span class="hova">Vektorok a síkban</span></a>
+      <a class="kov" href="tananyag-skalaris-szorzat.html"><span class="irany">Következő →</span><span class="hova">A skaláris szorzat</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

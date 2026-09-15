@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vektorok a síkban — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Vektorok</a> ›
+  <span class="itt">Vektorok a síkban — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Vektorok a síkban — felidézés és szög</h1>
+  <p class="alcim">A vektor fogalma és intenzitása, az összeadás, a kivonás és a skalárral szorzás, két vektor szöge és a skaláris vetület.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Királyi Irányítótű · 1/5</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/meduza.webp" alt="Medúza — a Királyi Család hangja" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Medúza:</b> A Néma Király nem beszél — <b>irányt mutat</b>. Crni Grom egyetlen hanghulláma romba dönthetné a Kristály-kamrát, de ha pontosan tudjuk, <b>merre</b> és <b>mekkora erővel</b> indul, épp ez a hullám hatástalaníthatja a kristályokat. Ehhez egy szám kevés. Egy <b>nyíl</b> kell.</p></div>
+
+    <p>A vektorokkal az 1e geometria-témakörében már <a href="../../1e/05-geometria/tananyag-vektorok.html#def-vektor">megismerkedtél</a>. Ez az egység felidézi az alapokat — mit nevezünk vektornak, hogyan adunk össze, vonunk ki és nyújtunk vektorokat —, és hozzátesz egy új fogalmat: <b>két vektor szögét</b> és a <b>skaláris vetületet</b>. Ez utóbbiból lesz majd a témakör egyik főszereplője, a skaláris szorzat.</p>
+
+    <h2 id="s1">Irányított szakasz és vektor</h2>
+
+    <p>Vannak mennyiségek, amelyeket egyetlen szám leír: a hőmérséklet, a tömeg, az idő. Másoknál a szám kevés — az elmozdulásnál, a sebességnél, az erőnél azt is tudnunk kell, <b>merre</b> hatnak. Ezeket írjuk le vektorral.</p>
+
+    <div class="doboz definicio" id="def-vektor">
+      <p class="cim"><span class="ikon">📗</span> Vektor</p>
+      <p>Az <b>irányított szakasz</b> olyan szakasz, amelynek megkülönböztetjük a kezdőpontját és a végpontját. Két irányított szakasz <b>egyenlő</b>, ha <b>eltolással fedésbe hozhatók</b> — vagyis egyenlő hosszúak, párhuzamosak és azonos irányításúak.</p><p>Az egymással egyenlő irányított szakaszok közös jellemzője a <b>vektor</b>. Jele <span class="math inline">\(\vec a\)</span>, vagy kezdő- és végpontjával <span class="math inline">\(\overrightarrow{AB}\)</span>. Egy vektort három adat határoz meg:</p><ul><li>az <b>iránya</b> (az egyenesének állása),</li><li>az <b>irányítása</b> (az egyenesen melyik felé mutat),</li><li>az <b>intenzitása</b> — más néven <b>hossza</b> vagy abszolút értéke —, jele <span class="math inline">\(|\vec a|\)</span>: az őt ábrázoló szakasz hossza.</li></ul><p>A <b>nullvektor</b> (<span class="math inline">\(\vec 0\)</span>) kezdő- és végpontja egybeesik: intenzitása <span class="math inline">\(0\)</span>, iránya és irányítása nincs. Az <span class="math inline">\(\vec a\)</span> <b>ellentett vektora</b> (<span class="math inline">\(-\vec a\)</span>) ugyanolyan intenzitású és irányú, de <b>ellentétes irányítású</b>; például <span class="math inline">\(\overrightarrow{BA}=-\overrightarrow{AB}\)</span>. Az 1 intenzitású vektor az <b>egységvektor</b>.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 498 204" width="498" height="204" role="img" aria-label="Két egyenlő vektor (eltolással fedésbe hozhatók), az ellentettjük és egy más irányú vektor négyzetrácson">
+      <defs><marker id="nyv-69912-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3b82f6"/></marker><marker id="nyv-69912-1" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#ef4444"/></marker><marker id="nyv-69912-2" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+      <line x1="18.0" y1="186.0" x2="18.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="60.0" y1="186.0" x2="60.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="102.0" y1="186.0" x2="102.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="144.0" y1="186.0" x2="144.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="186.0" y1="186.0" x2="186.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="228.0" y1="186.0" x2="228.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="270.0" y1="186.0" x2="270.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="312.0" y1="186.0" x2="312.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="354.0" y1="186.0" x2="354.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="396.0" y1="186.0" x2="396.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="438.0" y1="186.0" x2="438.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="480.0" y1="186.0" x2="480.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="18.0" y1="186.0" x2="480.0" y2="186.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="18.0" y1="144.0" x2="480.0" y2="144.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="18.0" y1="102.0" x2="480.0" y2="102.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="18.0" y1="60.0" x2="480.0" y2="60.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="18.0" y1="18.0" x2="480.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="39.0" y1="160.8" x2="165.0" y2="118.8" stroke="#3b82f6" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-69912-0)"/>
+      <line x1="194.4" y1="85.2" x2="320.4" y2="43.2" stroke="#3b82f6" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-69912-0)"/>
+      <line x1="463.2" y1="118.8" x2="337.2" y2="160.8" stroke="#ef4444" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-69912-1)"/>
+      <line x1="60.0" y1="34.8" x2="60.0" y2="93.6" stroke="#475569" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-69912-2)"/>
+      <text x="93.4" y="131.5" font-size="15" fill="#3b82f6" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M95.2,118.6 L102.1,118.6" stroke="#3b82f6" stroke-width="1.2" fill="none"/>
+      <path d="M99.4,116.0 L104.2,118.6 L99.4,121.2 z" fill="#3b82f6"/>
+      <text x="248.8" y="55.9" font-size="15" fill="#3b82f6" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M250.6,43.0 L257.5,43.0" stroke="#3b82f6" stroke-width="1.2" fill="none"/>
+      <path d="M254.8,40.4 L259.6,43.0 L254.8,45.6 z" fill="#3b82f6"/>
+      <text x="395.8" y="158.1" font-size="15" fill="#ef4444" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">−</text>
+      <text x="405.1" y="158.1" font-size="15" fill="#ef4444" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M406.9,145.2 L413.8,145.2" stroke="#ef4444" stroke-width="1.2" fill="none"/>
+      <path d="M411.1,142.6 L415.9,145.2 L411.1,147.8 z" fill="#ef4444"/>
+      <text x="69.8" y="69.2" font-size="15" fill="#475569" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">c</text>
+      <path d="M71.6,56.3 L78.5,56.3" stroke="#475569" stroke-width="1.2" fill="none"/>
+      <path d="M75.8,53.7 L80.6,56.3 L75.8,58.9 z" fill="#475569"/>
+    </svg>
+    </div>
+    <p class="cap">A két kék nyíl <b>ugyanazt</b> az <span class="math inline">\(\vec a\)</span> vektort ábrázolja — az egyik a másik eltoltja. A piros nyíl <span class="math inline">\(-\vec a\)</span>: ugyanolyan hosszú és párhuzamos, de ellentétes irányítású. A szürke <span class="math inline">\(\vec c\)</span> más irányú, ezért nem egyenlő velük, bármilyen hosszú is.</p>
+
+    <p>Órán a vektor hosszát leggyakrabban <b>intenzitásnak</b> mondjuk — a tankönyvek és a feladatok egy része viszont <b>hosszt</b> vagy <b>abszolút értéket</b> ír. Mind a három ugyanazt jelenti: <span class="math inline">\(|\vec a|\)</span>.</p>
+
+    <h2 id="s2">Összeadás és kivonás</h2>
+
+    <p>Két vektort kétféle, egymással egyenértékű szabály szerint adhatunk össze.</p><ul><li><b>Háromszög-szabály:</b> a <span class="math inline">\(\vec b\)</span>-t úgy toljuk el, hogy a kezdőpontja az <span class="math inline">\(\vec a\)</span> végpontjába kerüljön; az összeg az <span class="math inline">\(\vec a\)</span> kezdőpontjából a <span class="math inline">\(\vec b\)</span> végpontjába mutat (a két vektor ekkor <b>fej–láb helyzetben</b> van). Pontokkal: <span class="math inline">\(\overrightarrow{AB}+\overrightarrow{BC}=\overrightarrow{AC}\)</span>.</li><li><b>Paralelogramma-szabály:</b> a két vektort <b>közös kezdőpontba</b> toljuk, és kiegészítjük paralelogrammává; az összeg a közös kezdőpontból induló <b>átló</b>.</li></ul><p>A <b>kivonás</b> az ellentett hozzáadása: <span class="math inline">\(\vec a-\vec b=\vec a+(-\vec b)\)</span>. A paralelogrammában ez a <b>másik átló</b>, amely a <span class="math inline">\(\vec b\)</span> végpontjából az <span class="math inline">\(\vec a\)</span> végpontjába mutat. Ugyanez pontokkal — és ezt a térbeli koordinátáknál sokszor használjuk majd: <span class="math inline">\(\overrightarrow{OB}-\overrightarrow{OA}=\overrightarrow{AB}\)</span>.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 590 252" width="590" height="252" role="img" aria-label="Vektorok összeadása háromszög-szabállyal és paralelogramma-szabállyal; a paralelogramma másik átlója a különbség">
+      <defs><marker id="nyv-fc988-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3b82f6"/></marker><marker id="nyv-fc988-1" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f59e0b"/></marker><marker id="nyv-fc988-2" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#047857"/></marker><marker id="nyv-fc988-3" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#ef4444"/></marker></defs>
+      <line x1="18.0" y1="234.0" x2="18.0" y2="18.4" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="62.0" y1="234.0" x2="62.0" y2="18.4" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="106.0" y1="234.0" x2="106.0" y2="18.4" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="150.0" y1="234.0" x2="150.0" y2="18.4" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="194.0" y1="234.0" x2="194.0" y2="18.4" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="238.0" y1="234.0" x2="238.0" y2="18.4" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="282.0" y1="234.0" x2="282.0" y2="18.4" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="326.0" y1="234.0" x2="326.0" y2="18.4" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="370.0" y1="234.0" x2="370.0" y2="18.4" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="414.0" y1="234.0" x2="414.0" y2="18.4" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="458.0" y1="234.0" x2="458.0" y2="18.4" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="502.0" y1="234.0" x2="502.0" y2="18.4" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="546.0" y1="234.0" x2="546.0" y2="18.4" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="18.0" y1="234.0" x2="572.4" y2="234.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="18.0" y1="190.0" x2="572.4" y2="190.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="18.0" y1="146.0" x2="572.4" y2="146.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="18.0" y1="102.0" x2="572.4" y2="102.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="18.0" y1="58.0" x2="572.4" y2="58.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="493.2" y1="172.4" x2="546.0" y2="58.0" stroke="#475569" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <line x1="361.2" y1="102.0" x2="546.0" y2="58.0" stroke="#475569" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <line x1="40.0" y1="212.0" x2="172.0" y2="168.0" stroke="#3b82f6" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-fc988-0)"/>
+      <line x1="172.0" y1="168.0" x2="216.0" y2="80.0" stroke="#f59e0b" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-fc988-1)"/>
+      <line x1="40.0" y1="212.0" x2="216.0" y2="80.0" stroke="#047857" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-fc988-2)"/>
+      <line x1="308.4" y1="216.4" x2="493.2" y2="172.4" stroke="#3b82f6" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-fc988-0)"/>
+      <line x1="308.4" y1="216.4" x2="361.2" y2="102.0" stroke="#f59e0b" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-fc988-1)"/>
+      <line x1="308.4" y1="216.4" x2="546.0" y2="58.0" stroke="#047857" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-fc988-2)"/>
+      <line x1="361.2" y1="102.0" x2="493.2" y2="172.4" stroke="#ef4444" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-fc988-3)"/>
+      <text x="97.4" y="181.7" font-size="15" fill="#3b82f6" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M99.2,168.8 L106.1,168.8" stroke="#3b82f6" stroke-width="1.2" fill="none"/>
+      <path d="M103.4,166.2 L108.2,168.8 L103.4,171.4 z" fill="#3b82f6"/>
+      <text x="202.3" y="135.3" font-size="15" fill="#f59e0b" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">b</text>
+      <path d="M204.1,122.4 L211.0,122.4" stroke="#f59e0b" stroke-width="1.2" fill="none"/>
+      <path d="M208.3,119.8 L213.1,122.4 L208.3,125.0 z" fill="#f59e0b"/>
+      <text x="92.8" y="135.0" font-size="15" fill="#047857" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M94.5,122.1 L101.5,122.1" stroke="#047857" stroke-width="1.2" fill="none"/>
+      <path d="M98.8,119.5 L103.5,122.1 L98.8,124.7 z" fill="#047857"/>
+      <text x="101.2" y="135.0" font-size="15" fill="#047857" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600"> + </text>
+      <text x="118.9" y="135.0" font-size="15" fill="#047857" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">b</text>
+      <path d="M120.7,122.1 L127.6,122.1" stroke="#047857" stroke-width="1.2" fill="none"/>
+      <path d="M124.9,119.5 L129.7,122.1 L124.9,124.7 z" fill="#047857"/>
+      <text x="399.8" y="213.0" font-size="15" fill="#3b82f6" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M401.6,200.1 L408.5,200.1" stroke="#3b82f6" stroke-width="1.2" fill="none"/>
+      <path d="M405.8,197.5 L410.6,200.1 L405.8,202.7 z" fill="#3b82f6"/>
+      <text x="317.9" y="158.3" font-size="15" fill="#f59e0b" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">b</text>
+      <path d="M319.7,145.4 L326.6,145.4" stroke="#f59e0b" stroke-width="1.2" fill="none"/>
+      <path d="M323.9,142.8 L328.7,145.4 L323.9,148.0 z" fill="#f59e0b"/>
+      <text x="458.8" y="129.5" font-size="15" fill="#047857" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M460.6,116.6 L467.5,116.6" stroke="#047857" stroke-width="1.2" fill="none"/>
+      <path d="M464.8,114.0 L469.6,116.6 L464.8,119.2 z" fill="#047857"/>
+      <text x="467.2" y="129.5" font-size="15" fill="#047857" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600"> + </text>
+      <text x="484.9" y="129.5" font-size="15" fill="#047857" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">b</text>
+      <path d="M486.7,116.6 L493.6,116.6" stroke="#047857" stroke-width="1.2" fill="none"/>
+      <path d="M490.9,114.0 L495.7,116.6 L490.9,119.2 z" fill="#047857"/>
+      <text x="386.5" y="112.8" font-size="15" fill="#ef4444" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M388.3,99.9 L395.2,99.9" stroke="#ef4444" stroke-width="1.2" fill="none"/>
+      <path d="M392.5,97.3 L397.3,99.9 L392.5,102.5 z" fill="#ef4444"/>
+      <text x="394.9" y="112.8" font-size="15" fill="#ef4444" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600"> − </text>
+      <text x="412.6" y="112.8" font-size="15" fill="#ef4444" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">b</text>
+      <path d="M414.4,99.9 L421.3,99.9" stroke="#ef4444" stroke-width="1.2" fill="none"/>
+      <path d="M418.6,97.3 L423.4,99.9 L418.6,102.5 z" fill="#ef4444"/>
+      <text x="128.0" y="33.8" font-size="13" fill="#475569" text-anchor="middle" font-weight="600">háromszög-szabály</text>
+      <text x="427.2" y="33.8" font-size="13" fill="#475569" text-anchor="middle" font-weight="600">paralelogramma-szabály</text>
+    </svg>
+    </div>
+    <p class="cap">Balra: háromszög-szabály. Jobbra: paralelogramma-szabály — a zöld átló az összeg, a piros átló a különbség, <span class="math inline">\(\vec a-\vec b\)</span> (a <span class="math inline">\(\vec b\)</span> végpontjából az <span class="math inline">\(\vec a\)</span> végpontjába mutat).</p>
+
+    <div class="doboz pelda" id="pelda-hatszog">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — a szabályos hatszög vektorai</p>
+      <p>A Kamra alapja egy <span class="math inline">\(ABCDEF\)</span> szabályos hatszög, középpontja <span class="math inline">\(O\)</span>.</p><div class="svgcard">
+    <svg viewBox="0 0 346 303" width="346" height="303" role="img" aria-label="Szabályos hatszög O középponttal, kiemelve az AB vektor">
+      <defs><marker id="nyv-e1159-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3b82f6"/></marker></defs>
+      <line x1="297.0" y1="151.7" x2="235.0" y2="44.3" stroke="#0f172a" stroke-width="1.4"/>
+      <line x1="235.0" y1="44.3" x2="111.0" y2="44.3" stroke="#0f172a" stroke-width="1.4"/>
+      <line x1="111.0" y1="44.3" x2="49.0" y2="151.7" stroke="#0f172a" stroke-width="1.4"/>
+      <line x1="49.0" y1="151.7" x2="111.0" y2="259.1" stroke="#0f172a" stroke-width="1.4"/>
+      <line x1="111.0" y1="259.1" x2="235.0" y2="259.1" stroke="#0f172a" stroke-width="1.4"/>
+      <line x1="235.0" y1="259.1" x2="297.0" y2="151.7" stroke="#0f172a" stroke-width="1.4"/>
+      <line x1="173.0" y1="151.7" x2="297.0" y2="151.7" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <line x1="173.0" y1="151.7" x2="235.0" y2="44.3" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <line x1="173.0" y1="151.7" x2="111.0" y2="44.3" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <line x1="173.0" y1="151.7" x2="49.0" y2="151.7" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <line x1="173.0" y1="151.7" x2="111.0" y2="259.1" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <line x1="173.0" y1="151.7" x2="235.0" y2="259.1" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <line x1="297.0" y1="151.7" x2="235.0" y2="44.3" stroke="#3b82f6" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-e1159-0)"/>
+      <circle cx="297.0" cy="151.7" r="3" fill="#0f172a"/>
+      <text x="311.0" y="156.7" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="600">A</text>
+      <circle cx="235.0" cy="44.3" r="3" fill="#0f172a"/>
+      <text x="245.0" y="37.3" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="600">B</text>
+      <circle cx="111.0" cy="44.3" r="3" fill="#0f172a"/>
+      <text x="101.0" y="37.3" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="600">C</text>
+      <circle cx="49.0" cy="151.7" r="3" fill="#0f172a"/>
+      <text x="35.0" y="156.7" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="600">D</text>
+      <circle cx="111.0" cy="259.1" r="3" fill="#0f172a"/>
+      <text x="101.0" y="278.1" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="600">E</text>
+      <circle cx="235.0" cy="259.1" r="3" fill="#0f172a"/>
+      <text x="245.0" y="278.1" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="600">F</text>
+      <circle cx="173.0" cy="151.7" r="3" fill="#0f172a"/>
+      <text x="173.0" y="142.7" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="600">O</text>
+    </svg>
+    </div>
+    <p class="cap">A szabályos hatszög, kékkel az <span class="math inline">\(\overrightarrow{AB}\)</span> vektor.</p><ol type="a"><li>A csúcsok és az <span class="math inline">\(O\)</span> pont közötti vektorok közül melyek <b>egyenlők</b> az <span class="math inline">\(\overrightarrow{AB}\)</span>-vel?</li><li>Melyek az <span class="math inline">\(\overrightarrow{AB}\)</span> <b>ellentettjei</b>?</li><li>Mivel egyenlő <span class="math inline">\(\overrightarrow{AB}+\overrightarrow{BC}\)</span>?</li><li>Mivel egyenlő <span class="math inline">\(2(\overrightarrow{BO}-\overrightarrow{CO})\)</span>?</li><li>Legyen <span class="math inline">\(\overrightarrow{OA}=\vec a\)</span> és <span class="math inline">\(\overrightarrow{OB}=\vec b\)</span>. Írd fel <span class="math inline">\(\overrightarrow{AB}\)</span>-t és <span class="math inline">\(\overrightarrow{AC}\)</span>-t <span class="math inline">\(\vec a\)</span> és <span class="math inline">\(\vec b\)</span> segítségével.</li></ol><p>A hatszöget az <span class="math inline">\(O\)</span>-ból húzott szakaszok <b>hat szabályos háromszögre</b> bontják, ezért minden oldal és minden „küllő” egyenlő hosszú, és a szemközti oldalak párhuzamosak.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(\overrightarrow{OC}\)</span>, <span class="math inline">\(\overrightarrow{FO}\)</span> és <span class="math inline">\(\overrightarrow{ED}\)</span> — mind párhuzamos <span class="math inline">\(AB\)</span>-vel, ugyanolyan hosszú és azonos irányítású.</p><p><b>b)</b> <span class="math inline">\(\overrightarrow{BA}\)</span>, <span class="math inline">\(\overrightarrow{CO}\)</span>, <span class="math inline">\(\overrightarrow{OF}\)</span> és <span class="math inline">\(\overrightarrow{DE}\)</span>.</p><p><b>c)</b> A háromszög-szabály szerint <span class="math inline">\(\overrightarrow{AB}+\overrightarrow{BC}=\overrightarrow{AC}\)</span>.</p><p><b>d)</b> <span class="math inline">\(\overrightarrow{BO}-\overrightarrow{CO}=\overrightarrow{BO}+\overrightarrow{OC}=\overrightarrow{BC}\)</span>. Mivel <span class="math inline">\(\overrightarrow{BC}=\overrightarrow{AO}=\overrightarrow{OD}\)</span>, a kétszerese <span class="math inline">\(2\overrightarrow{BC}=\overrightarrow{AO}+\overrightarrow{OD}=\overrightarrow{AD}\)</span>.</p><p><b>e)</b> <span class="math inline">\(\overrightarrow{AB}=\overrightarrow{OB}-\overrightarrow{OA}=\vec b-\vec a\)</span>. Az a) szerint <span class="math inline">\(\overrightarrow{OC}=\overrightarrow{AB}=\vec b-\vec a\)</span>, ezért <span class="math inline">\(\overrightarrow{AC}=\overrightarrow{OC}-\overrightarrow{OA}=\vec b-2\vec a\)</span>.</p><p class="vegeredmeny">a) <span class="math inline">\(\overrightarrow{OC},\ \overrightarrow{FO},\ \overrightarrow{ED}\)</span> · b) <span class="math inline">\(\overrightarrow{BA},\ \overrightarrow{CO},\ \overrightarrow{OF},\ \overrightarrow{DE}\)</span> · c) <span class="math inline">\(\overrightarrow{AC}\)</span> · d) <span class="math inline">\(\overrightarrow{AD}\)</span> · e) <span class="math inline">\(\overrightarrow{AB}=\vec b-\vec a\)</span>, <span class="math inline">\(\overrightarrow{AC}=\vec b-2\vec a\)</span></p></div></details>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>Egy repülőgép orra észak felé mutat, és a levegőhöz képest <span class="math inline">\(200\)</span> km/h-val halad — közben a szél nyugat felől, <b>kelet felé</b> fúj <span class="math inline">\(50\)</span> km/h-val. A gép nem észak felé halad, hanem a két sebességvektor <b>összegének</b> irányába: kicsit keletre tér el (kb. <span class="math inline">\(14^\circ\)</span>-kal), és a föld fölötti sebessége <span class="math inline">\(\sqrt{200^2+50^2}\approx206{,}2\)</span> km/h. A pilóta ezért nem arra kormányoz, amerre menni akar, hanem annyival a szél ellen, hogy az összeg mutasson a cél felé.</p>
+    </div>
+
+    <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ A paralelogramma most téglalap, az összeg az átlója: √(3² + 4²) = 5." data-nem="✘ A hosszak csak akkor adódnak össze, ha a vektorok azonos irányításúak. Itt a két vektor derékszöget zár be: az összeg egy téglalap átlója, √(3² + 4²) = 5.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Az <span class="math inline">\(\vec a\)</span> intenzitása <span class="math inline">\(3\)</span>, a <span class="math inline">\(\vec b\)</span> intenzitása <span class="math inline">\(4\)</span>, és a két vektor merőleges egymásra. Mekkora <span class="math inline">\(|\vec a+\vec b|\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(7\)</span></button><button><span class="math inline">\(1\)</span></button><button><span class="math inline">\(12\)</span></button><button><span class="math inline">\(5\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Skalárral szorzás és párhuzamosság</h2>
+
+    <div class="doboz definicio" id="def-skalarral-szorzas">
+      <p class="cim"><span class="ikon">📗</span> Vektor szorzása valós számmal</p>
+      <p>Ha <span class="math inline">\(\lambda\ne0\)</span> valós szám és <span class="math inline">\(\vec a\ne\vec 0\)</span>, akkor a <span class="math inline">\(\lambda\vec a\)</span> vektor</p><ul><li>párhuzamos az <span class="math inline">\(\vec a\)</span>-val, intenzitása <span class="math inline">\(|\lambda|\cdot|\vec a|\)</span>;</li><li><span class="math inline">\(\lambda>0\)</span> esetén <b>azonos</b>, <span class="math inline">\(\lambda<0\)</span> esetén <b>ellentétes</b> irányítású.</li></ul><p>Ha <span class="math inline">\(\lambda=0\)</span> vagy <span class="math inline">\(\vec a=\vec 0\)</span>, akkor <span class="math inline">\(\lambda\vec a=\vec 0\)</span>.</p><p>Két nem nullvektor pontosan akkor <b>párhuzamos</b> (kollineáris), ha az egyik a másik számszorosa: <span class="math inline">\(\vec b=\lambda\vec a\)</span>.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 516 164" width="516" height="164" role="img" aria-label="Egy vektor, a kétszerese és a mínusz egy és félszerese">
+      <defs><marker id="nyv-7fe31-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3b82f6"/></marker><marker id="nyv-7fe31-1" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#047857"/></marker><marker id="nyv-7fe31-2" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#ef4444"/></marker></defs>
+      <line x1="18.0" y1="146.0" x2="18.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="58.0" y1="146.0" x2="58.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="98.0" y1="146.0" x2="98.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="138.0" y1="146.0" x2="138.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="178.0" y1="146.0" x2="178.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="218.0" y1="146.0" x2="218.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="258.0" y1="146.0" x2="258.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="298.0" y1="146.0" x2="298.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="338.0" y1="146.0" x2="338.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="378.0" y1="146.0" x2="378.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="418.0" y1="146.0" x2="418.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="458.0" y1="146.0" x2="458.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="498.0" y1="146.0" x2="498.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="18.0" y1="146.0" x2="498.0" y2="146.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="18.0" y1="106.0" x2="498.0" y2="106.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="18.0" y1="66.0" x2="498.0" y2="66.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="18.0" y1="26.0" x2="498.0" y2="26.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="38.0" y1="106.0" x2="118.0" y2="66.0" stroke="#3b82f6" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-7fe31-0)"/>
+      <line x1="158.0" y1="126.0" x2="318.0" y2="46.0" stroke="#047857" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-7fe31-1)"/>
+      <line x1="478.0" y1="46.0" x2="358.0" y2="106.0" stroke="#ef4444" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-7fe31-2)"/>
+      <text x="67.5" y="78.5" font-size="15" fill="#3b82f6" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M69.3,65.6 L76.2,65.6" stroke="#3b82f6" stroke-width="1.2" fill="none"/>
+      <path d="M73.5,63.0 L78.3,65.6 L73.5,68.2 z" fill="#3b82f6"/>
+      <text x="223.3" y="78.5" font-size="15" fill="#047857" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">2</text>
+      <text x="231.7" y="78.5" font-size="15" fill="#047857" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M233.5,65.6 L240.4,65.6" stroke="#047857" stroke-width="1.2" fill="none"/>
+      <path d="M237.7,63.0 L242.5,65.6 L237.7,68.2 z" fill="#047857"/>
+      <text x="402.8" y="93.5" font-size="15" fill="#ef4444" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">−1,5</text>
+      <text x="437.3" y="93.5" font-size="15" fill="#ef4444" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M439.1,80.6 L446.0,80.6" stroke="#ef4444" stroke-width="1.2" fill="none"/>
+      <path d="M443.3,78.0 L448.1,80.6 L443.3,83.2 z" fill="#ef4444"/>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(\vec a\)</span>, a <span class="math inline">\(2\vec a\)</span> (kétszer olyan hosszú, azonos irányítású) és a <span class="math inline">\(-1{,}5\vec a\)</span> (másfélszer olyan hosszú, ellentétes irányítású). Mindhárom párhuzamos.</p>
+
+    <div class="doboz tetel" id="tetel-muveletek">
+      <p class="cim"><span class="ikon">📘</span> A vektorműveletek tulajdonságai</p>
+      <p>Bármely <span class="math inline">\(\vec a\)</span>, <span class="math inline">\(\vec b\)</span>, <span class="math inline">\(\vec c\)</span> vektorra és <span class="math inline">\(\lambda\)</span>, <span class="math inline">\(\mu\)</span> valós számra:</p><ul><li><span class="math inline">\(\vec a+\vec b=\vec b+\vec a\)</span> <i>(kommutativitás)</i></li><li><span class="math inline">\((\vec a+\vec b)+\vec c=\vec a+(\vec b+\vec c)\)</span> <i>(asszociativitás)</i></li><li><span class="math inline">\(\vec a+\vec 0=\vec a\)</span>, &nbsp; <span class="math inline">\(\vec a+(-\vec a)=\vec 0\)</span></li><li><span class="math inline">\(\lambda(\vec a+\vec b)=\lambda\vec a+\lambda\vec b\)</span>, &nbsp; <span class="math inline">\((\lambda+\mu)\vec a=\lambda\vec a+\mu\vec a\)</span> <i>(disztributivitás)</i></li><li><span class="math inline">\(\lambda(\mu\vec a)=(\lambda\mu)\vec a\)</span>, &nbsp; <span class="math inline">\(1\cdot\vec a=\vec a\)</span>, &nbsp; <span class="math inline">\((-1)\cdot\vec a=-\vec a\)</span></li></ul><p>Vagyis a vektorokkal úgy számolhatsz, mint a betűs kifejezésekkel: zárójelet bonthatsz, összevonhatsz, kiemelhetsz.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-osszevonas">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — összevonás vektorokkal</p>
+      <p>Egyszerűsítsd: <span class="math inline">\(3(\vec a-2\vec b)-2(\vec a-\vec b)\)</span>.</p><p>Zárójelbontás után: <span class="math inline">\(3\vec a-6\vec b-2\vec a+2\vec b\)</span>. Az <span class="math inline">\(\vec a\)</span>-s és a <span class="math inline">\(\vec b\)</span>-s tagokat külön vonjuk össze — pontosan úgy, ahogy az <span class="math inline">\(x\)</span>-es és az <span class="math inline">\(y\)</span>-os tagokat szoktuk.</p>
+      <details><summary>Végeredmény</summary><div class="bel"><p class="vegeredmeny"><span class="math inline">\(3(\vec a-2\vec b)-2(\vec a-\vec b)=\vec a-4\vec b\)</span></p></div></details>
+    </div>
+
+    <p>Egy hasznos következmény: ha <span class="math inline">\(F\)</span> az <span class="math inline">\(AB\)</span> szakasz <b>felezőpontja</b>, akkor <span class="math inline">\(\overrightarrow{AF}=\tfrac12\overrightarrow{AB}\)</span>, és bármely <span class="math inline">\(O\)</span> pontból <span class="math inline">\(\overrightarrow{OF}=\tfrac12\left(\overrightarrow{OA}+\overrightarrow{OB}\right)\)</span>. <i>(Indoklás: <span class="math inline">\(\overrightarrow{OF}=\overrightarrow{OA}+\tfrac12\overrightarrow{AB}=\overrightarrow{OA}+\tfrac12(\overrightarrow{OB}-\overrightarrow{OA})\)</span>.)</i></p>
+
+    <h2 id="s4">Két vektor szöge és a skaláris vetület</h2>
+
+    <div class="doboz definicio" id="def-szog-vetulet">
+      <p class="cim"><span class="ikon">📗</span> Két vektor szöge · skaláris vetület</p>
+      <p>Két nem nullvektor <b>szögét</b> úgy kapjuk, hogy <b>közös kezdőpontba toljuk</b> őket: a <span class="math inline">\(\varphi\)</span> szög a közös pontból induló két félegyenes által meghatározott, legfeljebb <span class="math inline">\(180^\circ\)</span>-os szög. Tehát mindig <span class="math inline">\(0^\circ\le\varphi\le180^\circ\)</span>: <span class="math inline">\(\varphi=0^\circ\)</span>, ha párhuzamosak és azonos irányításúak, <span class="math inline">\(\varphi=180^\circ\)</span>, ha párhuzamosak és ellentétes irányításúak, és <span class="math inline">\(\varphi=90^\circ\)</span>, ha merőlegesek.</p><p>A <span class="math inline">\(\vec b\)</span> vektor <b>skaláris vetülete</b> az <span class="math inline">\(\vec a\)</span> irányára az előjeles szám</p><span class="math display">\[b_{\vec a}=|\vec b|\cos\varphi .\]</span><p>Abszolút értéke a <span class="math inline">\(\vec b\)</span> vektor <span class="math inline">\(\vec a\)</span> egyenesére eső merőleges vetületének (az ábrán a színes szakasznak) a hossza. <b>Előjele</b> pozitív, ha a vetület az <span class="math inline">\(\vec a\)</span>-val azonos irányítású (<span class="math inline">\(0^\circ\le\varphi<90^\circ\)</span>), negatív, ha ellentétes irányítású (<span class="math inline">\(90^\circ<\varphi\le180^\circ\)</span>), és <span class="math inline">\(0\)</span>, ha <span class="math inline">\(\varphi=90^\circ\)</span>.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 313 234" width="313" height="234" role="img" aria-label="A b vektor skaláris vetülete az a irányára hegyesszög esetén pozitív">
+      <defs><marker id="nyv-d59cc-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3b82f6"/></marker><marker id="nyv-d59cc-1" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f59e0b"/></marker></defs>
+      <line x1="20.6" y1="169.7" x2="292.0" y2="169.7" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="5 4"/>
+      <line x1="39.0" y1="169.7" x2="128.7" y2="169.7" stroke="#047857" stroke-width="5.5"/>
+      <line x1="128.7" y1="41.6" x2="128.7" y2="169.7" stroke="#475569" stroke-width="1.3" stroke-dasharray="4 3"/>
+      <path d="M128.7,161.7 L120.7,161.7 L120.7,169.7" fill="none" stroke="#475569" stroke-width="1.1"/>
+      <path d="M63.0,169.7 A24.0,24.0 0 0 0 52.8,150.0" fill="none" stroke="#8b5cf6" stroke-width="1.6"/>
+      <text x="81.6" y="152.1" font-size="13" fill="#8b5cf6" text-anchor="middle" font-weight="600">φ</text>
+      <line x1="39.0" y1="169.7" x2="269.0" y2="169.7" stroke="#3b82f6" stroke-width="2.6" stroke-linecap="round" marker-end="url(#nyv-d59cc-0)"/>
+      <line x1="39.0" y1="169.7" x2="128.7" y2="41.6" stroke="#f59e0b" stroke-width="2.6" stroke-linecap="round" marker-end="url(#nyv-d59cc-1)"/>
+      <circle cx="39.0" cy="169.7" r="3" fill="#0f172a"/>
+      <text x="35.0" y="187.7" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="600">O</text>
+      <text x="256.8" y="159.7" font-size="15" fill="#3b82f6" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M258.6,146.8 L265.5,146.8" stroke="#3b82f6" stroke-width="1.2" fill="none"/>
+      <path d="M262.8,144.2 L267.6,146.8 L262.8,149.4 z" fill="#3b82f6"/>
+      <text x="69.8" y="97.6" font-size="15" fill="#b45309" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">b</text>
+      <path d="M71.6,84.7 L78.5,84.7" stroke="#b45309" stroke-width="1.2" fill="none"/>
+      <path d="M75.8,82.1 L80.6,84.7 L75.8,87.3 z" fill="#b45309"/>
+      <text x="54.5" y="199.7" font-size="14" fill="#047857" text-anchor="start" xml:space="preserve" font-weight="600">|</text>
+      <text x="60.3" y="199.7" font-size="14" fill="#047857" text-anchor="start" xml:space="preserve" font-weight="600">b</text>
+      <path d="M62.0,187.7 L68.4,187.7" stroke="#047857" stroke-width="1.2" fill="none"/>
+      <path d="M65.7,185.1 L70.5,187.7 L65.7,190.3 z" fill="#047857"/>
+      <text x="68.2" y="199.7" font-size="14" fill="#047857" text-anchor="start" xml:space="preserve" font-weight="600">| cos φ</text>
+    </svg>
+    </div>
+    <p class="cap">Hegyesszög: a <span class="math inline">\(\vec b\)</span> végpontjából merőlegest bocsátunk az <span class="math inline">\(\vec a\)</span> egyenesére; a zöld szakasz a vetület, <span class="math inline">\(|\vec b|\cos\varphi>0\)</span>.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 425 234" width="425" height="234" role="img" aria-label="A b vektor skaláris vetülete az a irányára tompaszög esetén negatív">
+      <defs><marker id="nyv-7f0ab-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3b82f6"/></marker><marker id="nyv-7f0ab-1" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f59e0b"/></marker></defs>
+      <line x1="20.6" y1="169.7" x2="404.7" y2="169.7" stroke="#cbd5e1" stroke-width="1.2" stroke-dasharray="5 4"/>
+      <line x1="151.7" y1="169.7" x2="62.0" y2="169.7" stroke="#ef4444" stroke-width="5.5"/>
+      <line x1="62.0" y1="41.6" x2="62.0" y2="169.7" stroke="#475569" stroke-width="1.3" stroke-dasharray="4 3"/>
+      <path d="M62.0,161.7 L70.0,161.7 L70.0,169.7" fill="none" stroke="#475569" stroke-width="1.1"/>
+      <path d="M175.7,169.7 A24.0,24.0 0 0 0 137.9,150.0" fill="none" stroke="#8b5cf6" stroke-width="1.6"/>
+      <text x="173.9" y="131.7" font-size="13" fill="#8b5cf6" text-anchor="middle" font-weight="600">φ</text>
+      <line x1="151.7" y1="169.7" x2="381.7" y2="169.7" stroke="#3b82f6" stroke-width="2.6" stroke-linecap="round" marker-end="url(#nyv-7f0ab-0)"/>
+      <line x1="151.7" y1="169.7" x2="62.0" y2="41.6" stroke="#f59e0b" stroke-width="2.6" stroke-linecap="round" marker-end="url(#nyv-7f0ab-1)"/>
+      <circle cx="151.7" cy="169.7" r="3" fill="#0f172a"/>
+      <text x="161.7" y="187.7" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="600">O</text>
+      <text x="369.5" y="159.7" font-size="15" fill="#3b82f6" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M371.3,146.8 L378.2,146.8" stroke="#3b82f6" stroke-width="1.2" fill="none"/>
+      <path d="M375.5,144.2 L380.3,146.8 L375.5,149.4 z" fill="#3b82f6"/>
+      <text x="106.5" y="97.6" font-size="15" fill="#b45309" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">b</text>
+      <path d="M108.3,84.7 L115.2,84.7" stroke="#b45309" stroke-width="1.2" fill="none"/>
+      <path d="M112.5,82.1 L117.3,84.7 L112.5,87.3 z" fill="#b45309"/>
+      <text x="73.1" y="199.7" font-size="14" fill="#ef4444" text-anchor="start" xml:space="preserve" font-weight="600">−|</text>
+      <text x="87.7" y="199.7" font-size="14" fill="#ef4444" text-anchor="start" xml:space="preserve" font-weight="600">b</text>
+      <path d="M89.4,187.7 L95.7,187.7" stroke="#ef4444" stroke-width="1.2" fill="none"/>
+      <path d="M93.0,185.1 L97.8,187.7 L93.0,190.3 z" fill="#ef4444"/>
+      <text x="95.5" y="199.7" font-size="14" fill="#ef4444" text-anchor="start" xml:space="preserve" font-weight="600">| cos φ</text>
+    </svg>
+    </div>
+    <p class="cap">Tompaszög: a merőleges talppontja az <span class="math inline">\(O\)</span> <b>másik oldalára</b> esik. A piros szakasz hossza <span class="math inline">\(-|\vec b|\cos\varphi\)</span>, a skaláris vetület tehát negatív: <span class="math inline">\(b_{\vec a}=|\vec b|\cos\varphi<0\)</span>.</p>
+
+    <p><b>Számolás.</b> Legyen <span class="math inline">\(|\vec b|=6\)</span>. Ha <span class="math inline">\(\varphi=60^\circ\)</span>, a vetület <span class="math inline">\(6\cos60^\circ=6\cdot\tfrac12=3\)</span>; ha <span class="math inline">\(\varphi=120^\circ\)</span>, akkor <span class="math inline">\(6\cos120^\circ=-3\)</span>; ha <span class="math inline">\(\varphi=90^\circ\)</span>, akkor <span class="math inline">\(0\)</span>.</p><p>Nem nevezetes szögnél <b>számológépet</b> használunk. <span class="math inline">\(|\vec b|=5\)</span>, <span class="math inline">\(\varphi=35^\circ\)</span>: <span class="math inline">\(5\cos35^\circ\approx5\cdot0{,}8192\approx4{,}10\)</span>. Figyelj arra, hogy a számológép <b>fok</b> üzemmódban legyen (a kijelzőn <b>D</b> vagy <b>DEG</b>): radián módban ugyanez a gombsor <span class="math inline">\(-4{,}52\)</span>-t adna — egy <b>negatív</b> vetületet egy hegyesszögre, ami azonnal elárulja a hibát.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 324 156" width="324" height="156" role="img" aria-label="Két vektor fej–láb helyzetben: a második az első végpontjából indul, 45 fokos emelkedéssel">
+      <defs><marker id="nyv-0948f-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3b82f6"/></marker><marker id="nyv-0948f-1" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f59e0b"/></marker></defs>
+      <line x1="18.0" y1="138.0" x2="18.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="58.0" y1="138.0" x2="58.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="98.0" y1="138.0" x2="98.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="138.0" y1="138.0" x2="138.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="178.0" y1="138.0" x2="178.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="218.0" y1="138.0" x2="218.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="258.0" y1="138.0" x2="258.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="298.0" y1="138.0" x2="298.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="18.0" y1="138.0" x2="306.0" y2="138.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="18.0" y1="98.0" x2="306.0" y2="98.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="18.0" y1="58.0" x2="306.0" y2="58.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="18.0" y1="18.0" x2="306.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="38.0" y1="118.0" x2="198.0" y2="118.0" stroke="#3b82f6" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-0948f-0)"/>
+      <line x1="198.0" y1="118.0" x2="271.5" y2="44.5" stroke="#f59e0b" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-0948f-1)"/>
+      <text x="113.8" y="139.0" font-size="15" fill="#3b82f6" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M115.6,126.1 L122.5,126.1" stroke="#3b82f6" stroke-width="1.2" fill="none"/>
+      <path d="M119.8,123.5 L124.6,126.1 L119.8,128.7 z" fill="#3b82f6"/>
+      <text x="219.3" y="74.9" font-size="15" fill="#f59e0b" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">b</text>
+      <path d="M221.1,62.0 L228.0,62.0" stroke="#f59e0b" stroke-width="1.2" fill="none"/>
+      <path d="M225.3,59.4 L230.1,62.0 L225.3,64.6 z" fill="#f59e0b"/>
+    </svg>
+    </div>
+
+    <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ Közös kezdőpontba tolva a b ugyanúgy 45°-kal emelkedik az a irányához képest." data-nem="✘ Told a b-t az a kezdőpontjába: onnan 45°-os szöget zár be az a irányával — ez a két vektor szöge. A 135° a csatlakozásnál látszó mellékszög, a 90° semmivel sem indokolható, a 225° pedig nem is lehet, mert két vektor szöge legfeljebb 180°.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>A fenti ábrán a vektorok fej–láb helyzetben vannak: a <span class="math inline">\(\vec b\)</span> az <span class="math inline">\(\vec a\)</span> végpontjából indul, és az <span class="math inline">\(\vec a\)</span> egyenesének jobbra eső meghosszabbításával <span class="math inline">\(45^\circ\)</span>-os szöget zár be. Mekkora a két vektor szöge?</p>
+      <div class="opciok"><button><span class="math inline">\(135^\circ\)</span></button><button><span class="math inline">\(90^\circ\)</span></button><button><span class="math inline">\(225^\circ\)</span></button><button><span class="math inline">\(45^\circ\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„A két vektor épp egymás után jön, a szögük ott van a csatlakozásnál: <span class="math inline">\(120^\circ\)</span>.”</i></p><div class="svgcard">
+    <svg viewBox="0 0 484 184" width="484" height="184" role="img" aria-label="Maxi hibája: fej–láb helyzetben a mellékszöget, 120 fokot olvasta le; közös kezdőpontba tolva a két vektor szöge 60 fok">
+      <defs><marker id="nyv-c0f05-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3b82f6"/></marker><marker id="nyv-c0f05-1" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f59e0b"/></marker></defs>
+      <line x1="18.0" y1="166.0" x2="18.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="58.0" y1="166.0" x2="58.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="98.0" y1="166.0" x2="98.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="138.0" y1="166.0" x2="138.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="178.0" y1="166.0" x2="178.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="218.0" y1="166.0" x2="218.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="258.0" y1="166.0" x2="258.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="298.0" y1="166.0" x2="298.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="338.0" y1="166.0" x2="338.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="378.0" y1="166.0" x2="378.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="418.0" y1="166.0" x2="418.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="458.0" y1="166.0" x2="458.0" y2="18.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="18.0" y1="166.0" x2="466.0" y2="166.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="18.0" y1="126.0" x2="466.0" y2="126.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="18.0" y1="86.0" x2="466.0" y2="86.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="18.0" y1="46.0" x2="466.0" y2="46.0" stroke="#e2e8f0" stroke-width="1"/>
+      <path d="M156.0,146.0 A22.0,22.0 0 0 1 189.0,126.9" fill="none" stroke="#ef4444" stroke-width="1.6"/>
+      <text x="155.0" y="110.7" font-size="13" fill="#ef4444" text-anchor="middle" font-weight="600">120° ✘</text>
+      <path d="M328.0,146.0 A22.0,22.0 0 0 0 317.0,126.9" fill="none" stroke="#047857" stroke-width="1.6"/>
+      <text x="345.8" y="127.5" font-size="13" fill="#047857" text-anchor="middle" font-weight="600">60° ✔</text>
+      <line x1="38.0" y1="146.0" x2="178.0" y2="146.0" stroke="#3b82f6" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-c0f05-0)"/>
+      <line x1="178.0" y1="146.0" x2="226.0" y2="62.9" stroke="#f59e0b" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-c0f05-1)"/>
+      <line x1="306.0" y1="146.0" x2="446.0" y2="146.0" stroke="#3b82f6" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-c0f05-0)"/>
+      <line x1="306.0" y1="146.0" x2="354.0" y2="62.9" stroke="#f59e0b" stroke-width="2.4" stroke-linecap="round" marker-end="url(#nyv-c0f05-1)"/>
+      <text x="103.8" y="167.0" font-size="15" fill="#3b82f6" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M105.6,154.1 L112.5,154.1" stroke="#3b82f6" stroke-width="1.2" fill="none"/>
+      <path d="M109.8,151.5 L114.6,154.1 L109.8,156.7 z" fill="#3b82f6"/>
+      <text x="183.9" y="101.4" font-size="15" fill="#f59e0b" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">b</text>
+      <path d="M185.7,88.5 L192.6,88.5" stroke="#f59e0b" stroke-width="1.2" fill="none"/>
+      <path d="M189.9,85.9 L194.7,88.5 L189.9,91.1 z" fill="#f59e0b"/>
+      <text x="371.8" y="167.0" font-size="15" fill="#3b82f6" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">a</text>
+      <path d="M373.6,154.1 L380.5,154.1" stroke="#3b82f6" stroke-width="1.2" fill="none"/>
+      <path d="M377.8,151.5 L382.6,154.1 L377.8,156.7 z" fill="#3b82f6"/>
+      <text x="311.9" y="101.4" font-size="15" fill="#f59e0b" text-anchor="start" xml:space="preserve" font-style="italic" font-weight="600">b</text>
+      <path d="M313.7,88.5 L320.6,88.5" stroke="#f59e0b" stroke-width="1.2" fill="none"/>
+      <path d="M317.9,85.9 L322.7,88.5 L317.9,91.1 z" fill="#f59e0b"/>
+      <text x="138.0" y="32.0" font-size="13" fill="#ef4444" text-anchor="middle" font-weight="600">fej–láb helyzet</text>
+      <text x="378.0" y="32.0" font-size="13" fill="#047857" text-anchor="middle" font-weight="600">közös kezdőpont</text>
+    </svg>
+    </div><p>A csatlakozásnál látszó szög a <b>mellékszög</b>: Maxi <span class="math inline">\(180^\circ-\varphi\)</span>-t olvasott le. Két vektor szögét csak <b>közös kezdőpontba tolt</b> vektorok között mérjük — itt <span class="math inline">\(\varphi=60^\circ\)</span>.</p><p>Maxi másik kedvence: <span class="math inline">\(|\vec a+\vec b|=|\vec a|+|\vec b|\)</span>. Ez csak <b>azonos irányítású</b> vektorokra igaz; általában <span class="math inline">\(|\vec a+\vec b|\le|\vec a|+|\vec b|\)</span> (a háromszög-egyenlőtlenség), ahogy az összeadásnál látott gyors kérdésben is.</p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-vektorok.html#alap-1">🐕 Tér-eb-ugrás <span class="cimke">A 1–8</span></a><a class="sav bruno" href="feladatok-vektorok.html#kozep-1">👑 Királyi Gárda <span class="cimke">K 1–5</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/meduza.webp" alt="Medúza — a Királyi Család hangja" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Medúza:</b> A síkban két irány elég mindenhez — balra-jobbra, előre-hátra. A Kristály-kamra viszont <b>térben</b> van: a kristályok a padlótól a mennyezetig lebegnek. Crni Grom azt mutatja, hogy a nyilakat ezentúl nem rajzolni fogjuk, hanem <b>számokká</b> fordítani.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">Vektorok — témakör</span></a>
+      <a class="kov" href="tananyag-koordinatak-terben.html"><span class="irany">Következő →</span><span class="hova">Vektorok a térben</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

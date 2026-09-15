@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vektorok munkában — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Vektorok</a> ›
+  <span class="itt">Vektorok munkában — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Vektorok munkában — szög, terület, erő</h1>
+  <p class="alcim">Melyik szorzat mire való; egy térbeli háromszög oldalai, szöge és területe; eredő erő és munka.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Királyi Irányítótű · 5/5</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/meduza.webp" alt="Medúza — a Királyi Család hangja" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Medúza:</b> Az irányítótű elkészült. Most már nem az a kérdés, hogyan számolunk, hanem hogy <b>melyik eszközt</b> vesszük elő. Szög? Merőlegesség? Terület? Erő? Crni Grom szerint minden kérdésnek megvan a maga szorzata — és aki rosszat választ, az hibátlan számolással is rossz eredményt kap.</p></div>
+
+    <p>Ez a témakör záró egysége: rendszerezzük, <b>mire melyik szorzat</b> való, egy háromszögről három pontból mindent kiszámolunk, és egy rövid kitekintésben megnézzük, hogyan számol a fizika erőkkel és munkával.</p>
+
+    <h2 id="s1">Melyik szorzat mire jó</h2>
+
+    <div class="doboz tetel" id="tetel-melyik-szorzat">
+      <p class="cim"><span class="ikon">📘</span> Melyik eszköz melyik kérdésre</p>
+      <table class="tt-table"><tr><th>A kérdés</th><th>Az eszköz</th><th>A képlet</th></tr><tr><td>két pont távolsága, egy oldal hossza</td><td>intenzitás</td><td>ha <span class="math inline">\(\overrightarrow{AB}=(x;y;z)\)</span>: <span class="math inline">\(|\overrightarrow{AB}|=\sqrt{x^2+y^2+z^2}\)</span></td></tr><tr><td>két vektor <b>szöge</b></td><td>skaláris szorzat</td><td><span class="math inline">\(\cos\varphi=\dfrac{\vec a\cdot\vec b}{|\vec a|\,|\vec b|}\)</span></td></tr><tr><td><b>merőleges</b>-e</td><td>skaláris szorzat</td><td><span class="math inline">\(\vec a\cdot\vec b=0\)</span></td></tr><tr><td>a <span class="math inline">\(\vec b\)</span> skaláris vetülete az <span class="math inline">\(\vec a\)</span> irányára, munka</td><td>skaláris szorzat</td><td><span class="math inline">\(\dfrac{\vec a\cdot\vec b}{|\vec a|}\)</span>, &nbsp; <span class="math inline">\(W=\vec F\cdot\vec s\)</span></td></tr><tr><td>paralelogramma, háromszög <b>területe</b></td><td>vektoriális szorzat</td><td><span class="math inline">\(|\vec a\times\vec b|\)</span>, &nbsp; <span class="math inline">\(\tfrac12|\vec a\times\vec b|\)</span></td></tr><tr><td><b>párhuzamos</b>-e</td><td>vektoriális szorzat (vagy arányos koordináták)</td><td><span class="math inline">\(\vec a\times\vec b=\vec 0\)</span></td></tr><tr><td>mindkét vektorra <b>merőleges irány</b></td><td>vektoriális szorzat</td><td><span class="math inline">\(\vec a\times\vec b\)</span></td></tr></table>
+    </div>
+
+    <p>A táblázat egy mondatban: <b>a skaláris szorzat a szöghöz, a vektoriális a területhez</b> tartozik. A skaláris vetület képlete a definícióból jön: <span class="math inline">\(|\vec b|\cos\varphi=\dfrac{\vec a\cdot\vec b}{|\vec a|}\)</span>.</p>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A területhez a vektoriális szorzat intenzitása kell: T = ½·|AB × AC|." data-nem="✘ A hibás párosítás a terület: azt a vektoriális szorzat intenzitása adja (T = ½·|AB × AC|), nem a skaláris szorzat. A többi három párosítás helyes.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik párosítás <b>hibás</b>?</p>
+      <div class="opciok"><button>merőlegesség → a skaláris szorzat <span class="math inline">\(0\)</span></button><button>párhuzamosság → a vektoriális szorzat <span class="math inline">\(\vec 0\)</span></button><button>háromszög területe → skaláris szorzat</button><button>két vektor szöge → skaláris szorzat</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Geometriai alkalmazások</h2>
+
+    <div class="doboz pelda" id="pelda-haromszog">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — egy háromszögről mindent</p>
+      <p>A Kamra egyik kristálylapja az <span class="math inline">\(A(2;1;0)\)</span>, <span class="math inline">\(B(4;3;1)\)</span>, <span class="math inline">\(C(1;3;2)\)</span> csúcsú háromszög. Számítsd ki</p><ol type="a"><li>az oldalai hosszát,</li><li>az <span class="math inline">\(A\)</span> csúcsnál lévő <span class="math inline">\(\alpha\)</span> szögét (fokban, egy tizedesre),</li><li>a területét!</li></ol>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(\overrightarrow{AB}=(2;2;1)\)</span>, <span class="math inline">\(\overrightarrow{AC}=(-1;2;2)\)</span>, <span class="math inline">\(\overrightarrow{BC}=(-3;0;1)\)</span>. Hosszuk: <span class="math inline">\(AB=\sqrt{4+4+1}=3\)</span>, <span class="math inline">\(AC=\sqrt{1+4+4}=3\)</span>, <span class="math inline">\(BC=\sqrt{9+0+1}=\sqrt{10}\approx3{,}16\)</span>. <i>(A háromszög egyenlő szárú.)</i></p><p><b>b)</b> Az <span class="math inline">\(A\)</span>-nál lévő szöghöz az <b><span class="math inline">\(A\)</span>-ból induló</b> két vektor kell: <span class="math inline">\(\overrightarrow{AB}\cdot\overrightarrow{AC}=-2+4+2=4\)</span>, így <span class="math inline">\(\cos\alpha=\dfrac{4}{3\cdot3}=\dfrac49\approx0{,}4444\)</span>, és számológéppel <span class="math inline">\(\alpha\approx63{,}6^\circ\)</span>.</p><p><b>c)</b></p><span class="math display">\[\overrightarrow{AB}\times\overrightarrow{AC}=\vec i\begin{vmatrix}2&1\\ 2&2\end{vmatrix}-\vec j\begin{vmatrix}2&1\\ -1&2\end{vmatrix}+\vec k\begin{vmatrix}2&2\\ -1&2\end{vmatrix}=(2;-5;6),\]</span><p>intenzitása <span class="math inline">\(\sqrt{4+25+36}=\sqrt{65}\)</span>, tehát <span class="math inline">\(T=\dfrac{\sqrt{65}}{2}\approx4{,}03\)</span>.</p><p><i>Ellenőrzés: <span class="math inline">\(T=\tfrac12\cdot AB\cdot AC\cdot\sin\alpha=\tfrac12\cdot3\cdot3\cdot\sin63{,}6^\circ\approx4{,}03\)</span> ✔.</i></p><p class="vegeredmeny">a) <span class="math inline">\(AB=AC=3\)</span>, <span class="math inline">\(BC=\sqrt{10}\approx3{,}16\)</span> · b) <span class="math inline">\(\alpha\approx63{,}6^\circ\)</span> · c) <span class="math inline">\(T=\dfrac{\sqrt{65}}{2}\approx4{,}03\)</span></p></div></details>
+    </div>
+
+    <p><b>Négyszögek.</b> Ha az <span class="math inline">\(ABC\)</span> háromszöget a <span class="math inline">\(D=B+C-A=(3;5;3)\)</span> csúcs egészíti ki <span class="math inline">\(ABDC\)</span> paralelogrammává, akkor a fenti számokból rögtön látszik a fajtája is: a két szomszédos oldal egyenlő (<span class="math inline">\(AB=AC=3\)</span>), tehát <b>rombusz</b>; a skaláris szorzatuk viszont <span class="math inline">\(4\ne0\)</span>, tehát <b>nem négyzet</b>. Általában egy paralelogramma <b>pontosan akkor téglalap</b>, ha két szomszédos oldalvektorának skaláris szorzata <span class="math inline">\(0\)</span>; <b>pontosan akkor rombusz</b>, ha két szomszédos oldala egyenlő hosszú; és <b>négyzet</b>, ha mindkettő teljesül.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p><i>„Az <span class="math inline">\(A\)</span> csúcsnál lévő szöghöz az <span class="math inline">\(\overrightarrow{AB}\)</span> és a <span class="math inline">\(\overrightarrow{CA}\)</span> vektort vettem: <span class="math inline">\(\overrightarrow{AB}\cdot\overrightarrow{CA}=-4\)</span>, <span class="math inline">\(\cos\alpha=-\tfrac49\)</span>, <span class="math inline">\(\alpha\approx116{,}4^\circ\)</span>.”</i></p><p>A <span class="math inline">\(\overrightarrow{CA}\)</span> <b>befelé</b> mutat az <span class="math inline">\(A\)</span> csúcsba, nem onnan kifelé — így Maxi a <b>mellékszöget</b> kapta: <span class="math inline">\(180^\circ-63{,}6^\circ=116{,}4^\circ\)</span>. Egy háromszög csúcsánál lévő szöghöz mindkét vektor <b>abból a csúcsból induljon</b>: az <span class="math inline">\(A\)</span>-nál <span class="math inline">\(\overrightarrow{AB}\)</span> és <span class="math inline">\(\overrightarrow{AC}\)</span>, a <span class="math inline">\(B\)</span>-nél <span class="math inline">\(\overrightarrow{BA}\)</span> és <span class="math inline">\(\overrightarrow{BC}\)</span>.</p><p><i>Árulkodó jel: ha az <span class="math inline">\(A\)</span>-nál tompaszög volna, a vele szemközti <span class="math inline">\(BC\)</span> oldalra <span class="math inline">\(BC^2>AB^2+AC^2=18\)</span> teljesülne (a koszinusztétel szerint <span class="math inline">\(116{,}4^\circ\)</span> mellett <span class="math inline">\(BC^2=26\)</span> lenne). A valóságban <span class="math inline">\(BC^2=10<18\)</span>, tehát az <span class="math inline">\(A\)</span>-nál hegyesszög van.</i></p>
+    </div>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ Mindkét vektor a B csúcsból indul — így a háromszög belső szögét kapod." data-nem="✘ A B-nél lévő szöghöz mindkét vektornak a B-ből kell indulnia: BA és BC. Ha az egyiket megfordítod (AB vagy CB), a mellékszöget kapod; az AB és AC pedig az A-nál lévő szöget adja.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Az <span class="math inline">\(ABC\)</span> háromszög <span class="math inline">\(B\)</span> csúcsánál lévő szögét számolod. Melyik vektorpár skaláris szorzatából indulj ki?</p>
+      <div class="opciok"><button><span class="math inline">\(\overrightarrow{AB}\)</span> és <span class="math inline">\(\overrightarrow{AC}\)</span></button><button><span class="math inline">\(\overrightarrow{BA}\)</span> és <span class="math inline">\(\overrightarrow{BC}\)</span></button><button><span class="math inline">\(\overrightarrow{AB}\)</span> és <span class="math inline">\(\overrightarrow{BC}\)</span></button><button><span class="math inline">\(\overrightarrow{BA}\)</span> és <span class="math inline">\(\overrightarrow{CB}\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Fizikai alkalmazások</h2>
+
+    <p>A fizikában az erő, az elmozdulás és a sebesség vektor — a velük végzett számolás pontosan az, amit ebben a témakörben tanultál. Két alapeset:</p><ul><li>Több erő együttes hatása az <b>eredő erő</b>: a vektorok <b>összege</b>; nagysága (erőnél így mondjuk az intenzitást) az összeg intenzitása.</li><li>Az állandó <span class="math inline">\(\vec F\)</span> erő <b>munkája</b> az <span class="math inline">\(\vec s\)</span> elmozdulás során a <b>skaláris szorzat</b>: <span class="math inline">\(W=\vec F\cdot\vec s=|\vec F|\,|\vec s|\cos\varphi\)</span>. Például egy <span class="math inline">\(40\)</span> N-os, az elmozdulással <span class="math inline">\(60^\circ\)</span>-os szöget bezáró erő munkája <span class="math inline">\(5\)</span> m-es elmozdulás során <span class="math inline">\(40\cdot5\cdot\tfrac12=100\)</span> J.</li></ul>
+
+    <div class="doboz pelda" id="pelda-ero">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — eredő erő és munka</p>
+      <p>Egy kristályra két erő hat: <span class="math inline">\(\vec F_1=(2;3;1)\)</span> N és <span class="math inline">\(\vec F_2=(1;-1;1)\)</span> N. a) Mekkora az eredő erő, és mekkora a nagysága? b) Miközben a két erő hat rá, a kristály elmozdulása <span class="math inline">\(\vec s=(4;1;0)\)</span> m. Mennyi munkát végez az eredő erő?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(\vec F=\vec F_1+\vec F_2=(3;2;2)\)</span> N, nagysága <span class="math inline">\(|\vec F|=\sqrt{9+4+4}=\sqrt{17}\approx4{,}12\)</span> N.</p><p><b>b)</b> <span class="math inline">\(W=\vec F\cdot\vec s=3\cdot4+2\cdot1+2\cdot0=14\)</span> J. <i>Ellenőrzés: a két erő munkája külön <span class="math inline">\(\vec F_1\cdot\vec s=11\)</span> J és <span class="math inline">\(\vec F_2\cdot\vec s=3\)</span> J, összesen szintén <span class="math inline">\(14\)</span> J.</i></p><p class="vegeredmeny">a) <span class="math inline">\(\vec F=(3;2;2)\)</span> N, <span class="math inline">\(|\vec F|=\sqrt{17}\approx4{,}12\)</span> N · b) <span class="math inline">\(W=14\)</span> J</p></div></details>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>Egy darut, hidat vagy tetőszerkezetet tervező mérnök minden rúdban és kötélben ébredő erőt vektorként kezel: a nyugalom egyik feltétele, hogy minden csomópontban az erők <b>összege nullvektor</b>. Ez a <b>statika</b> — és a számolás lépései pontosan azok, amelyeket most koordinátákkal végeztél.</p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-szorzatok.html#alap-17">🐕 Tér-eb-ugrás <span class="cimke">A 17–22</span></a><a class="sav bruno" href="feladatok-szorzatok.html#kozep-13">👑 Királyi Gárda <span class="cimke">K 13–18</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/meduza.webp" alt="Medúza — a Királyi Család hangja" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Medúza:</b> Crni Grom leereszti a kezét — a Királyi Irányítótű a tiéd. Az irányt már ismered. A Kamra térképén azonban nem elég tudni, <b>merre</b> kell menni: pontosan be kell mérni, <b>hol</b> fekszenek az egyenesek és a körök. Az irányítótűt ezért Kanrak és Tér-eb viszi tovább — a következő küldetés az <b>analitikus geometria</b>.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-vektorialis-szorzat.html"><span class="irany">← Előző</span><span class="hova">A vektoriális szorzat</span></a>
+      <a class="kov" href="feladatok-szorzatok.html"><span class="irany">Következő →</span><span class="hova">Feladatok — szorzatok</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
