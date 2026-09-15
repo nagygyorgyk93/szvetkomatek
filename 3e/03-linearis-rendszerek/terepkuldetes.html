@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Terepküldetés | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="rajzterem">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Lineáris egyenletrendszerek</a> ›
+  <span class="itt">Terepküldetés</span>
+</nav>
+<div class="hero">
+  <h1>A Rendszer Hibája</h1>
+  <p class="alcim">Három fázis: jelzőkristályok, egy háromismeretlenes mérési jegyzőkönyv és a két egymásnak ellentmondó pótmérés. Beadható projektfeladat — a megoldásokat a tanárod ellenőrzi.</p>
+  <div class="meta-sor"><span class="chip ora">terepküldetés</span><span class="chip">A Rendszer Hibája · terepküldetés</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> A Kristály-kamra mérőrendszere megbolondult. Minden műszer csak <b>összegeket és összehasonlításokat</b> mér — hány kristály világít együtt, mennyivel nehezebb néhány kristály a többinél —, az egyes értékeket nekünk kell kiszámolnunk. És valahol a jegyzőkönyvekben ott a <b>hiba</b>: egy mérés, amely ellentmond a többinek. Mindenben van egy töréspont, kadét. Keresd meg.</p></div>
+
+    <p>Három fázis. Minden fázisnál írd le, <b>mit jelölnek</b> az ismeretlenek (szavakkal, mértékegységgel), írd fel a rendszert, és a sorműveleteket írd a sor mellé. A választ fogalmazd meg mondatban is — a Kamra naplója a számolás menetét is ellenőrzi.</p><p><b>Amire szükséged lesz:</b> a szöveges feladat négy lépése, a Gauss-eljárás, a determináns és a Cramer-szabály, valamint a <span class="math inline">\(0=0\)</span> és a <span class="math inline">\(0=k\)</span> sor jelentése.</p>
+
+    <h2 id="s1">I. fázis — A jelzőkristályok</h2>
+
+    <p>A Kamra falán kék és piros jelzőkristályok világítanak, összesen <span class="math inline">\(48\)</span> darab. Egy kék kristály <span class="math inline">\(3\)</span>, egy piros <span class="math inline">\(5\)</span> egységnyi energiát fogyaszt, és a fal teljes fogyasztása <span class="math inline">\(184\)</span> egység.</p><ol class="reszfeladatok"><li>Hány kék és hány piros kristály van a falon?</li><li>Maxi szerint <span class="math inline">\(30\)</span> kék és <span class="math inline">\(18\)</span> piros kristály van. Melyik feltételt teljesíti a válasza, és melyiket nem?</li><li>A kristályok száma nem változik, de néhány kék kristályt pirosra cserélnek, és a fogyasztás <span class="math inline">\(200\)</span> egységre nő. Írj fel rendszert a csere utáni kék és piros kristályok számára, és ebből határozd meg, hány kristályt cseréltek ki! Ellenőrizd egy rövid gondolatmenettel is: mennyivel nő a fogyasztás egyetlen cserénél?</li></ol>
+
+    <h2 id="s2">II. fázis — A három kristálytípus</h2>
+
+    <p>A Kamra háromféle kristályt tárol: <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> és <span class="math inline">\(C\)</span> típusút. Egy mérleg csak összetett méréseket végez, és a következőket jegyzi fel:</p><ul><li>egy <span class="math inline">\(A\)</span>-, egy <span class="math inline">\(B\)</span>- és egy <span class="math inline">\(C\)</span>-kristály együtt <span class="math inline">\(10\)</span> gramm;</li><li>két <span class="math inline">\(A\)</span>- és három <span class="math inline">\(C\)</span>-kristály együtt <span class="math inline">\(8\)</span> grammal nehezebb, mint egy <span class="math inline">\(B\)</span>-kristály;</li><li>egy <span class="math inline">\(A\)</span>- és három <span class="math inline">\(B\)</span>-kristály együtt <span class="math inline">\(11\)</span> grammal nehezebb, mint két <span class="math inline">\(C\)</span>-kristály.</li></ul><ol class="reszfeladatok"><li>Jelölje <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> és <span class="math inline">\(z\)</span> rendre egy <span class="math inline">\(A\)</span>-, egy <span class="math inline">\(B\)</span>- és egy <span class="math inline">\(C\)</span>-kristály tömegét grammban. Írd fel a rendszert, és rendezd úgy, hogy a bal oldalon csak az ismeretlenes tagok, a jobb oldalon csak a számok álljanak!</li><li>Oldd meg a Gauss-eljárással, a sorműveleteket a sor mellé írva!</li><li>Ellenőrizd a <span class="math inline">\(C\)</span>-kristály tömegét a Cramer-szabállyal! Melyik két determinánsra van szükség?</li><li>Ellenőrizd a megoldást a <b>szöveggel</b> is: teljesül-e mindhárom mérés?</li></ol>
+
+    <h2 id="s3">III. fázis — A Rendszer Hibája</h2>
+
+    <p>A harmadik mérés jegyzőkönyve megsérül, ezért Kanrak pótmérést kér: az első két mérést megtartja, a harmadik helyére a pótmérés kerül. A technikusok azonban <b>két különböző</b> jegyzőkönyvet küldenek ugyanarról a pótmérésről:</p><ul><li><b>1. jegyzőkönyv:</b> három <span class="math inline">\(A\)</span>- és négy <span class="math inline">\(C\)</span>-kristály együtt <span class="math inline">\(18\)</span> gramm;</li><li><b>2. jegyzőkönyv:</b> három <span class="math inline">\(A\)</span>- és négy <span class="math inline">\(C\)</span>-kristály együtt <span class="math inline">\(20\)</span> gramm.</li></ul><ol class="reszfeladatok"><li>Írd fel mindkét rendszert (az első két mérés és a pótmérés)! Számítsd ki a fő determinánsukat! Miért ugyanaz a két rendszernél? Alkalmazható-e a Cramer-szabály?</li><li>Döntsd el a Gauss-eljárással, melyik rendszer határozatlan és melyik ellentmondásos! A határozatlan rendszer megoldásait add meg a <span class="math inline">\(z=t\)</span> jelöléssel.</li><li>A II. fázisból tudjuk, hogy egy <span class="math inline">\(C\)</span>-kristály <span class="math inline">\(3\)</span> gramm. Melyik megoldást kapod a határozatlan rendszerből a <span class="math inline">\(t=3\)</span> értékre? Egyezik-e a II. fázis eredményével?</li><li>Kanrak kérdése: melyik jegyzőkönyv <b>hibás</b>, és miért nem elég a másik sem ahhoz, hogy a kristályok tömegét egyértelműen meghatározzuk? Válaszolj két-három mondatban!</li><li>Fogalmazz meg egy mondatban egy <b>új</b> pótmérést, legalább kétféle kristállyal, amely nem egyezik a II. fázis harmadik mérésével! Az első két méréssel együtt <b>határozott</b> rendszert kell adnia. Behelyettesítéssel mutasd meg, hogy a II. fázis megoldása kielégíti, és számítsd ki, hogy a rendszer fő determinánsa nem nulla!</li></ol>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> Ha megtaláltad, melyik jegyzőkönyv hazudik, és melyik csak hallgat valamiről, a Kamra újra tiszta jelet ad. A megoldásokat a tanárod ellenőrzi — a kulcs nem kerül a hálózatra.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="osszefoglalo.html"><span class="irany">← Előző</span><span class="hova">Töréspont-térkép</span></a>
+      <a class="kov" href="index.html"><span class="irany">Következő →</span><span class="hova">Témakör Főhadiszállása</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

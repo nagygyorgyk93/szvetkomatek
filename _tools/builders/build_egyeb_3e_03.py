@@ -3,7 +3,7 @@
 temakor-index (F5) ide kerul majd. Mentor: Kanrak. Kuldetes: A Rendszer Hibaja."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from tananyag_common import lap, abra
+from tananyag_common import lap, abra, brief
 from abra_common import svg_sarrus, svg_harom_sik
 
 T = dict(tagozat="3e", mappa="03-linearis-rendszerek", temakor="Lineáris egyenletrendszerek")
@@ -30,6 +30,16 @@ Dx[:, 0] = b
 Dy[:, 1] = b
 chk("cramer-D", (A.det(), Dx.det(), Dy.det()), (-3, -6, -3))
 chk("cramer-m", tuple(A.LUsolve(b)), (2, 1))
+# --- F5p: A Rendszer Hibája
+chk("I-a", linsolve([x + y - 48, 3*x + 5*y - 184], [x, y]), FiniteSet((28, 20)))
+chk("I-b", 3*30 + 5*18, 180)
+chk("I-c", linsolve([x + y - 48, 3*x + 5*y - 200], [x, y]), FiniteSet((20, 28)))
+chk("II", linsolve([x + y + z - 10, 2*x + 3*z - (y + 8), x + 3*y - (2*z + 11)], [x, y, z]),
+    FiniteSet((2, 5, 3)))
+chk("III-A", linsolve([x + y + z - 10, 2*x - y + 3*z - 8, 3*x + 4*z - 18], [x, y, z]),
+    FiniteSet((6 - 4*z/3, 4 + z/3, z)))
+chk("III-B", linsolve([x + y + z - 10, 2*x - y + 3*z - 8, 3*x + 4*z - 20], [x, y, z]), EmptySet)
+chk("III-D", Matrix([[1, 1, 1], [2, -1, 3], [3, 0, 4]]).det(), 0)
 assert not E, E
 print("sympy önteszt: OK")
 
@@ -253,3 +263,89 @@ lap(**T, fajl="osszefoglalo.html", cim="Töréspont-térkép — a témakör egy
     elozo=("feladatok-determinans.html", "Feladatok — a determináns és a Cramer-szabály"),
     kovetkezo=("terepkuldetes.html", "A Rendszer Hibája"))
 print("✓ osszefoglalo.html")
+
+
+# ==================================================================== F5p
+TEREP = [
+ ("📡 Küldetés-eligazítás", [
+   brief('<b>Kanrak:</b> A Kristály-kamra mérőrendszere megbolondult. Minden műszer csak '
+         '<b>összegeket és összehasonlításokat</b> mér — hány kristály világít együtt, mennyivel '
+         'nehezebb néhány kristály a többinél —, az egyes értékeket nekünk kell kiszámolnunk. És valahol a jegyzőkönyvekben '
+         'ott a <b>hiba</b>: egy mérés, amely ellentmond a többinek. Mindenben van egy '
+         'töréspont, kadét. Keresd meg.'),
+   '<p>Három fázis. Minden fázisnál írd le, <b>mit jelölnek</b> az ismeretlenek (szavakkal, '
+   'mértékegységgel), írd fel a rendszert, és a sorműveleteket írd a sor mellé. A választ '
+   'fogalmazd meg mondatban is — a Kamra naplója a számolás menetét is ellenőrzi.</p>'
+   '<p><b>Amire szükséged lesz:</b> a szöveges feladat négy lépése, a Gauss-eljárás, a '
+   'determináns és a Cramer-szabály, valamint a $0=0$ és a $0=k$ sor jelentése.</p>',
+ ]),
+
+ ("I. fázis — A jelzőkristályok", [
+   '<p>A Kamra falán kék és piros jelzőkristályok világítanak, összesen $48$ darab. Egy kék '
+   'kristály $3$, egy piros $5$ egységnyi energiát fogyaszt, és a fal teljes fogyasztása '
+   '$184$ egység.</p>'
+   '<ol class="reszfeladatok">'
+   '<li>Hány kék és hány piros kristály van a falon?</li>'
+   '<li>Maxi szerint $30$ kék és $18$ piros kristály van. Melyik feltételt teljesíti a '
+   'válasza, és melyiket nem?</li>'
+   '<li>A kristályok száma nem változik, de néhány kék kristályt pirosra cserélnek, és a '
+   'fogyasztás $200$ egységre nő. Írj fel rendszert a csere utáni kék és piros kristályok '
+   'számára, és ebből határozd meg, hány kristályt cseréltek ki! Ellenőrizd egy rövid '
+   'gondolatmenettel is: mennyivel nő a fogyasztás egyetlen cserénél?</li>'
+   '</ol>',
+ ]),
+
+ ("II. fázis — A három kristálytípus", [
+   '<p>A Kamra háromféle kristályt tárol: $A$, $B$ és $C$ típusút. Egy mérleg csak '
+   'összetett méréseket végez, és a következőket jegyzi fel:</p>'
+   '<ul><li>egy $A$-, egy $B$- és egy $C$-kristály együtt $10$ gramm;</li>'
+   '<li>két $A$- és három $C$-kristály együtt $8$ grammal nehezebb, mint egy $B$-kristály;</li>'
+   '<li>egy $A$- és három $B$-kristály együtt $11$ grammal nehezebb, mint két $C$-kristály.</li></ul>'
+   '<ol class="reszfeladatok">'
+   '<li>Jelölje $x$, $y$ és $z$ rendre egy $A$-, egy $B$- és egy $C$-kristály tömegét grammban. '
+   'Írd fel a rendszert, és rendezd úgy, hogy a bal oldalon csak az ismeretlenes tagok, a jobb '
+   'oldalon csak a számok álljanak!</li>'
+   '<li>Oldd meg a Gauss-eljárással, a sorműveleteket a sor mellé írva!</li>'
+   '<li>Ellenőrizd a $C$-kristály tömegét a Cramer-szabállyal! Melyik két determinánsra van '
+   'szükség?</li>'
+   '<li>Ellenőrizd a megoldást a <b>szöveggel</b> is: teljesül-e mindhárom mérés?</li>'
+   '</ol>',
+ ]),
+
+ ("III. fázis — A Rendszer Hibája", [
+   '<p>A harmadik mérés jegyzőkönyve megsérül, ezért Kanrak pótmérést kér: az első két mérést '
+   'megtartja, a harmadik helyére a pótmérés kerül. A technikusok azonban <b>két különböző</b> '
+   'jegyzőkönyvet küldenek ugyanarról a pótmérésről:</p>'
+   '<ul><li><b>1. jegyzőkönyv:</b> három $A$- és négy $C$-kristály együtt $18$ gramm;</li>'
+   '<li><b>2. jegyzőkönyv:</b> három $A$- és négy $C$-kristály együtt $20$ gramm.</li></ul>'
+   '<ol class="reszfeladatok">'
+   '<li>Írd fel mindkét rendszert (az első két mérés és a pótmérés)! Számítsd ki a fő '
+   'determinánsukat! Miért ugyanaz a két rendszernél? Alkalmazható-e a Cramer-szabály?</li>'
+   '<li>Döntsd el a Gauss-eljárással, melyik rendszer határozatlan és melyik ellentmondásos! '
+   'A határozatlan rendszer megoldásait add meg a $z=t$ jelöléssel.</li>'
+   '<li>A II. fázisból tudjuk, hogy egy $C$-kristály $3$ gramm. Melyik megoldást kapod a '
+   'határozatlan rendszerből a $t=3$ értékre? Egyezik-e a II. fázis eredményével?</li>'
+   '<li>Kanrak kérdése: melyik jegyzőkönyv <b>hibás</b>, és miért nem elég a másik sem '
+   'ahhoz, hogy a kristályok tömegét egyértelműen meghatározzuk? Válaszolj két-három '
+   'mondatban!</li>'
+   '<li>Fogalmazz meg egy mondatban egy <b>új</b> pótmérést, legalább kétféle kristállyal, '
+   'amely nem egyezik a II. fázis harmadik mérésével! Az első két méréssel együtt '
+   '<b>határozott</b> rendszert kell adnia. Behelyettesítéssel mutasd meg, hogy a II. fázis '
+   'megoldása kielégíti, és számítsd ki, hogy a rendszer fő determinánsa nem nulla!</li>'
+   '</ol>',
+   brief('<b>Kanrak:</b> Ha megtaláltad, melyik jegyzőkönyv hazudik, és melyik csak '
+         'hallgat valamiről, a Kamra újra tiszta jelet ad. A megoldásokat a tanárod '
+         'ellenőrzi — a kulcs nem kerül a hálózatra.', outro=True),
+ ]),
+]
+
+lap(**T, fajl="terepkuldetes.html", cim="A Rendszer Hibája",
+    cim_tiszta="A Rendszer Hibája", itt="Terepküldetés",
+    alcim="Három fázis: jelzőkristályok, egy háromismeretlenes mérési jegyzőkönyv és a két "
+          "egymásnak ellentmondó pótmérés. Beadható projektfeladat — a megoldásokat a tanárod "
+          "ellenőrzi.",
+    chip=KUL + " · terepküldetés", chip_tipus="terepküldetés",
+    szakaszok=TEREP,
+    elozo=("osszefoglalo.html", "Töréspont-térkép"),
+    kovetkezo=("index.html", "Témakör Főhadiszállása"))
+print("✓ terepkuldetes.html")
