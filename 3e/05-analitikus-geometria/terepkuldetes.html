@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Terepküldetés | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="rajzterem">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Síkbeli analitikus geometria</a> ›
+  <span class="itt">Terepküldetés</span>
+</nav>
+<div class="hero">
+  <h1>A Térkép Hálózata</h1>
+  <p class="alcim">Három fázis: a drónháromszög, a teleport-kör és az ellipszis-pálya. Beadható projektfeladat — a megoldásokat a tanárod ellenőrzi.</p>
+  <div class="meta-sor"><span class="chip ora">terepküldetés</span><span class="chip">A Térkép Hálózata · terepküldetés</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> Tér-eb a Kristály-kamra hálózatában csak pontos egyenesek és metszéspontok mentén ugorhat. Három drón jelöli ki a hálózat csomópontjait, egy teleport-kör köti össze őket, a kamra szélén pedig az anomália-mag körül ellipszis-pályán kering a figyelődrón. Ha mindent pontosan bemérsz, Tér-eb hazahozza az utolsó adatcsomagot.</p></div>
+
+    <p>Három fázis. Minden lépésnél írd le, melyik képletet használod és miért. Számológép használható: a szögeket egy, minden más közelítő értéket két tizedesre kerekíts, és jelöld a kerekítést. A választ fogalmazd meg mondatban is.</p><p>A 🔴 jelű részfeladat a <b>Kristály-protokoll</b>: érintési feltétellel dolgozik, ezért nehezebb.</p><p><b>Amire szükséged lesz:</b> távolság, súlypont és terület koordinátákból, az egyenes egyenletei, pont és egyenes távolsága, a kör és az ellipszis egyenlete, az érintő képletei.</p>
+
+    <h2 id="s1">I. fázis — A drónháromszög</h2>
+
+    <p>A három drón helye: <span class="math inline">\(A(-3;-1)\)</span>, <span class="math inline">\(B(5;3)\)</span> és <span class="math inline">\(C(1;7)\)</span>.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 324 324" width="324" height="324" role="img" aria-label="A három drón helye a koordináta-rendszerben: A(−3;−1), B(5;3), C(1;7)">
+      <defs><marker id="nyv-f6a8a-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+      <clipPath id="kv-f6a8a"><rect x="22.0" y="22.0" width="280.0" height="280.0"/></clipPath>
+      <line x1="22.0" y1="302.0" x2="22.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="50.0" y1="302.0" x2="50.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="78.0" y1="302.0" x2="78.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="106.0" y1="302.0" x2="106.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="134.0" y1="302.0" x2="134.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="162.0" y1="302.0" x2="162.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="190.0" y1="302.0" x2="190.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="218.0" y1="302.0" x2="218.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="246.0" y1="302.0" x2="246.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="274.0" y1="302.0" x2="274.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="302.0" y1="302.0" x2="302.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="302.0" x2="302.0" y2="302.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="274.0" x2="302.0" y2="274.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="246.0" x2="302.0" y2="246.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="218.0" x2="302.0" y2="218.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="190.0" x2="302.0" y2="190.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="162.0" x2="302.0" y2="162.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="134.0" x2="302.0" y2="134.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="106.0" x2="302.0" y2="106.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="78.0" x2="302.0" y2="78.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="50.0" x2="302.0" y2="50.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="22.0" x2="302.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="246.0" x2="311.8" y2="246.0" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-f6a8a-0)"/>
+      <line x1="134.0" y1="302.0" x2="134.0" y2="12.2" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-f6a8a-0)"/>
+      <text x="307.8" y="237.0" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">x</text>
+      <text x="144.0" y="18.2" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">y</text>
+      <line x1="22.0" y1="243.0" x2="22.0" y2="249.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="22.0" y="261.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−4</text>
+      <line x1="50.0" y1="243.0" x2="50.0" y2="249.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="50.0" y="261.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−3</text>
+      <line x1="78.0" y1="243.0" x2="78.0" y2="249.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="78.0" y="261.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−2</text>
+      <line x1="106.0" y1="243.0" x2="106.0" y2="249.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="106.0" y="261.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−1</text>
+      <line x1="162.0" y1="243.0" x2="162.0" y2="249.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="162.0" y="261.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">1</text>
+      <line x1="190.0" y1="243.0" x2="190.0" y2="249.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="190.0" y="261.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">2</text>
+      <line x1="218.0" y1="243.0" x2="218.0" y2="249.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="218.0" y="261.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">3</text>
+      <line x1="246.0" y1="243.0" x2="246.0" y2="249.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="246.0" y="261.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">4</text>
+      <line x1="274.0" y1="243.0" x2="274.0" y2="249.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="274.0" y="261.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">5</text>
+      <line x1="302.0" y1="243.0" x2="302.0" y2="249.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="302.0" y="261.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">6</text>
+      <line x1="131.0" y1="302.0" x2="137.0" y2="302.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="128.0" y="306.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−2</text>
+      <line x1="131.0" y1="274.0" x2="137.0" y2="274.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="128.0" y="278.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−1</text>
+      <line x1="131.0" y1="218.0" x2="137.0" y2="218.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="128.0" y="222.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">1</text>
+      <line x1="131.0" y1="190.0" x2="137.0" y2="190.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="128.0" y="194.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">2</text>
+      <line x1="131.0" y1="162.0" x2="137.0" y2="162.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="128.0" y="166.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">3</text>
+      <line x1="131.0" y1="134.0" x2="137.0" y2="134.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="128.0" y="138.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">4</text>
+      <line x1="131.0" y1="106.0" x2="137.0" y2="106.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="128.0" y="110.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">5</text>
+      <line x1="131.0" y1="78.0" x2="137.0" y2="78.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="128.0" y="82.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">6</text>
+      <line x1="131.0" y1="50.0" x2="137.0" y2="50.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="128.0" y="54.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">7</text>
+      <line x1="131.0" y1="22.0" x2="137.0" y2="22.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="128.0" y="26.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">8</text>
+      <text x="126.0" y="261.0" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">O</text>
+      <g clip-path="url(#kv-f6a8a)">
+      <polygon points="50.0,274.0 274.0,162.0 162.0,50.0" fill="#3b82f6" fill-opacity="0.12" stroke="#3b82f6" stroke-width="1.8" stroke-linejoin="round"/>
+      </g>
+      <circle cx="50.0" cy="274.0" r="3.4" fill="#0f172a"/>
+      <circle cx="274.0" cy="162.0" r="3.4" fill="#0f172a"/>
+      <circle cx="162.0" cy="50.0" r="3.4" fill="#0f172a"/>
+      <text x="36.0" y="278.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">A</text>
+      <text x="288.0" y="166.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">B</text>
+      <text x="176.0" y="54.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">C</text>
+    </svg>
+    </div>
+    <p class="cap">A drónok helye a hálózatban.</p>
+
+    <ol class="reszfeladatok"><li>Számítsd ki a háromszög oldalait! Milyen a háromszög az oldalai szerint?</li><li>Határozd meg a háromszög súlypontját és területét!</li><li>Írd fel a <span class="math inline">\(BC\)</span> oldal egyenesének és az <span class="math inline">\(A\)</span> csúcsból induló magasságvonalnak az egyenletét, és határozd meg a magasság talppontját! Mit veszel észre a talpponttal kapcsolatban? Miért van ez így?</li><li>Számítsd ki az <span class="math inline">\(m_a\)</span> magasságot a pont és egyenes távolságának képletével, és ezzel is számold ki a háromszög területét!</li><li>Mekkora szöget zár be az <span class="math inline">\(AB\)</span> és az <span class="math inline">\(AC\)</span> egyenes?</li><li>Maxi szerint az <span class="math inline">\(A\)</span>-n átmenő, <span class="math inline">\(BC\)</span>-vel párhuzamos egyenes egyenlete <span class="math inline">\(x-y+2=0\)</span>. Mit rontott el? Mi a helyes egyenlet?</li></ol>
+
+    <h2 id="s2">II. fázis — A teleport-kör</h2>
+
+    <p>A drónokat a <span class="math inline">\(K\colon x^2+y^2-2x-6y=0\)</span> teleport-kör köti össze.</p><ol class="reszfeladatok"><li>Határozd meg a kör középpontját és sugarát! A drónháromszög melyik nevezetes pontja a középpont?</li><li>A körön belül, a körön vagy a körön kívül van a három drón?</li><li>Metszi-e a <span class="math inline">\(BC\)</span> útvonal a kört? Határozd meg a metszéspontokat és a húr hosszát, és a középpont meg az egyenes távolságával is indokold a választ!</li><li>Tér-eb a kör <span class="math inline">\(T(4;2)\)</span> pontjából az érintő mentén ugrik tovább. Ellenőrizd, hogy <span class="math inline">\(T\)</span> a körön van, írd fel az érintőt, és határozd meg, hol metszi az <span class="math inline">\(x\)</span>-tengelyt!</li><li>🔴 Írd fel a körnek a <span class="math inline">\(BC\)</span> egyenessel párhuzamos érintőit! Bontsd lépésekre: milyen alakú az egyenes, mi a feltétele annak, hogy pontosan egy közös pontja legyen a körrel, és mik az érintők?</li></ol>
+
+    <h2 id="s3">III. fázis — Az ellipszis-pálya</h2>
+
+    <p>A figyelődrón pályája ellipszis. A fókuszai az anomália-mag két pólusa, <span class="math inline">\(F_1(5;0)\)</span> és <span class="math inline">\(F_2(-5;0)\)</span>, és a pálya átmegy a <span class="math inline">\(P(3;4)\)</span> ponton.</p><ol class="reszfeladatok"><li>Milyen messze van <span class="math inline">\(P\)</span> a két fókusztól? Mekkora a pálya nagytengelye?</li><li>Írd fel a pálya egyenletét, és add meg a csúcspontjait!</li><li>A figyelődrón az <span class="math inline">\(y=2x-2\)</span> egyenes mentén repül be a pályára. Hol metszi az egyenes a pályát? Milyen hosszú az útvonal pálya belsejébe eső szakasza?</li><li>Írd fel a pálya érintőjét a <span class="math inline">\(P\)</span> pontban!</li><li>🔴 Írd fel a pályának a <span class="math inline">\(4x+3y=0\)</span> egyenessel párhuzamos érintőit, és határozd meg az érintési pontokat!</li><li>Maxi az 1. részben a két távolság <b>különbségével</b> számolt. Milyen görbét kapott volna így ugyanazokkal a fókuszokkal és ugyanazzal a <span class="math inline">\(P\)</span> ponttal? Írd fel az egyenletét!</li></ol>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> Ha megvan a háromszög, a kör és a pálya, Tér-eb minden ugrása célba ér. A számításaidat a tanárod ellenőrzi — a kulcs nem kerül a hálózatra.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="osszefoglalo.html"><span class="irany">← Előző</span><span class="hova">Koordináta-térkép</span></a>
+      <a class="kov" href="index.html"><span class="irany">Következő →</span><span class="hova">Témakör Főhadiszállása</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

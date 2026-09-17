@@ -3,7 +3,8 @@
 F5 temakor-index) ugyanide kerulnek. Mentor: Kanrak (es Ter-eb)."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from tananyag_common import lap
+from tananyag_common import lap, abra, brief
+from abra_common import svg_koordsik, KEK
 
 T = dict(tagozat="3e", mappa="05-analitikus-geometria", temakor="Síkbeli analitikus geometria")
 KUL = "A Térkép Hálózata"
@@ -224,3 +225,146 @@ lap(**T, fajl="osszefoglalo.html", cim="Koordináta-térkép — a témakör egy
     elozo=("feladatok-parabola.html", "A parabola — feladatok"),
     kovetkezo=("terepkuldetes.html", KUL))
 print("✓ osszefoglalo.html")
+
+# ==================================================================== F5p
+from sympy import Rational as Q, atan, pi, N as NN
+EE = []
+
+
+def ck(nev, g, w, tur=None):
+    ok = abs(float(NN(g)) - float(w)) <= tur if tur is not None else simplify(g - w) == 0
+    if not ok:
+        EE.append((nev, g, w))
+
+
+X, Y, C0 = symbols("X Y C0", real=True)
+
+
+def met(g, l):
+    sol = solve([g, l], [X, Y], dict=True)
+    return sorted([(u[X], u[Y]) for u in sol if u[X].is_real], key=lambda u: (float(u[0]), float(u[1])))
+
+
+tv = lambda u, v: sqrt((u[0] - v[0])**2 + (u[1] - v[1])**2)
+A_, B_, C_ = (-3, -1), (5, 3), (1, 7)
+ck("I1", tv(A_, B_), 4*sqrt(5)); ck("I1b", tv(A_, C_), 4*sqrt(5)); ck("I1c", tv(B_, C_), 4*sqrt(2))
+ck("I1k", 4*sqrt(5), 8.94, .005); ck("I1k2", 4*sqrt(2), 5.66, .005)
+ck("I2S", (A_[0] + B_[0] + C_[0]) / Q(3), 1); ck("I2S2", (A_[1] + B_[1] + C_[1]) / Q(3), 3)
+Dd = (B_[0] - A_[0])*(C_[1] - A_[1]) - (B_[1] - A_[1])*(C_[0] - A_[0]); ck("I2T", abs(Dd) / Q(2), 24)
+lBC = X + Y - 8; assert lBC.subs({X: 5, Y: 3}) == 0 and lBC.subs({X: 1, Y: 7}) == 0
+lma = X - Y + 2; assert lma.subs({X: -3, Y: -1}) == 0
+ck("I3F", met(lBC, lma)[0][0], 3); ck("I3F2", met(lBC, lma)[0][1], 5)
+ck("I3F-fel", ((5 + 1) / Q(2), (3 + 7) / Q(2))[0], 3)
+ma = abs(-3 - 1 - 8) / sqrt(2)
+ck("I4", ma, 6*sqrt(2)); ck("I4T", tv(B_, C_) * ma / 2, 24); ck("I4k", 6*sqrt(2), 8.49, .005)
+ck("I5", atan(abs((2 - Q(1, 2)) / (1 + 2*Q(1, 2)))) * 180 / pi, 36.9, .05)
+assert (X + Y + 4).subs({X: -3, Y: -1}) == 0
+Kk = X**2 + Y**2 - 2*X - 6*Y
+ck("II1", expand((X - 1)**2 + (Y - 3)**2 - 10 - Kk), 0)
+ck("II2", [(x0 - 1)**2 + (y0 - 3)**2 for x0, y0 in (A_, B_, C_)][0], 32)
+assert [(x0 - 1)**2 + (y0 - 3)**2 for x0, y0 in (A_, B_, C_)] == [32, 16, 16]
+M2 = met(Kk, lBC)
+assert M2 == [(2, 6), (4, 4)], M2
+ck("II3", tv(*M2), 2*sqrt(2)); ck("II3d", abs(1 + 3 - 8) / sqrt(2), 2*sqrt(2)); ck("II3k", sqrt(10), 3.16, .005)
+assert Kk.subs({X: 4, Y: 2}) == 0 and met(Kk, 3*X - Y - 10) == [(4, 2)]
+ck("II4", solve((3*X - 10), X)[0], Q(10, 3))
+nn = solve(abs(1 + 3 - C0) / sqrt(2) - sqrt(10), C0)
+assert sorted(nn, key=float) == [4 - 2*sqrt(5), 4 + 2*sqrt(5)], nn
+assert all(len(met(Kk, Y + X - v)) == 1 for v in nn)
+ck("II5k", 4 + 2*sqrt(5), 8.47, .005); ck("II5k2", 4 - 2*sqrt(5), -0.47, .005)
+F1, F2, Pp = (5, 0), (-5, 0), (3, 4)
+ck("III1", [tv(Pp, F1), tv(Pp, F2)][0], 2*sqrt(5)); ck("III1b", tv(Pp, F2), 4*sqrt(5))
+ck("III1c", tv(Pp, F1) + tv(Pp, F2), 6*sqrt(5)); ck("III1k", 6*sqrt(5), 13.42, .005)
+Ell = X**2/45 + Y**2/20 - 1
+ck("III2", 45 - 25, 20); assert Ell.subs({X: 3, Y: 4}) == 0
+ck("III2k", 3*sqrt(5), 6.71, .005); ck("III2k2", 2*sqrt(5), 4.47, .005)
+M3 = met(Ell, Y - 2*X + 2)
+assert M3 == [(Q(-6, 5), Q(-22, 5)), (3, 4)], M3
+ck("III3", tv(*M3), 21*sqrt(5)/5); ck("III3k", 21*sqrt(5)/5, 9.39, .005)
+assert met(Ell, X + 3*Y - 15) == [(3, 4)]
+assert met(Ell, 4*X + 3*Y - 30) == [(6, 2)] and met(Ell, 4*X + 3*Y + 30) == [(-6, -2)]
+ck("III5", 45*Q(16, 9) + 20, 100)
+Hip = X**2/5 - Y**2/20 - 1
+assert Hip.subs({X: 3, Y: 4}) == 0 and tv(Pp, F2) - tv(Pp, F1) == 2*sqrt(5)
+ck("III6", 25 - 5, 20)
+assert not EE, EE
+print("sympy önteszt (terep): OK")
+
+SVG_DRON = svg_koordsik(
+    xr=(-4, 6), yr=(-2, 8), egyseg=28,
+    sokszogek=[([(-3, -1), (5, 3), (1, 7)], KEK, {"kitolt": 0.12})],
+    pontok=[((-3, -1), "A", {"dx": -14, "dy": 4}), ((5, 3), "B", {"dx": 14, "dy": 4}),
+            ((1, 7), "C", {"dx": 14, "dy": 4})],
+    leiras="A három drón helye a koordináta-rendszerben: A(−3;−1), B(5;3), C(1;7)")
+
+TEREP = [
+ ("📡 Küldetés-eligazítás", [
+   brief('<b>Kanrak:</b> Tér-eb a Kristály-kamra hálózatában csak pontos egyenesek és metszéspontok mentén '
+         'ugorhat. Három drón jelöli ki a hálózat csomópontjait, egy teleport-kör köti össze őket, a kamra '
+         'szélén pedig az anomália-mag körül ellipszis-pályán kering a figyelődrón. Ha mindent pontosan '
+         'bemérsz, Tér-eb hazahozza az utolsó adatcsomagot.'),
+   r'<p>Három fázis. Minden lépésnél írd le, melyik képletet használod és miért. Számológép használható: a '
+   r'szögeket egy, minden más közelítő értéket két tizedesre kerekíts, és jelöld a kerekítést. A választ '
+   r'fogalmazd meg mondatban is.</p>'
+   r'<p>A 🔴 jelű részfeladat a <b>Kristály-protokoll</b>: érintési feltétellel dolgozik, ezért nehezebb.</p>'
+   r'<p><b>Amire szükséged lesz:</b> távolság, súlypont és terület koordinátákból, az egyenes egyenletei, '
+   r'pont és egyenes távolsága, a kör és az ellipszis egyenlete, az érintő képletei.</p>',
+ ]),
+
+ ("I. fázis — A drónháromszög", [
+   r'<p>A három drón helye: $A(-3;-1)$, $B(5;3)$ és $C(1;7)$.</p>',
+   abra(SVG_DRON, 'A drónok helye a hálózatban.'),
+   r'<ol class="reszfeladatok">'
+   r'<li>Számítsd ki a háromszög oldalait! Milyen a háromszög az oldalai szerint?</li>'
+   r'<li>Határozd meg a háromszög súlypontját és területét!</li>'
+   r'<li>Írd fel a $BC$ oldal egyenesének és az $A$ csúcsból induló magasságvonalnak az egyenletét, és '
+   r'határozd meg a magasság talppontját! Mit veszel észre a talpponttal kapcsolatban? Miért van ez így?</li>'
+   r'<li>Számítsd ki az $m_a$ magasságot a pont és egyenes távolságának képletével, és ezzel is számold ki a '
+   r'háromszög területét!</li>'
+   r'<li>Mekkora szöget zár be az $AB$ és az $AC$ egyenes?</li>'
+   r'<li>Maxi szerint az $A$-n átmenő, $BC$-vel párhuzamos egyenes egyenlete $x-y+2=0$. Mit rontott el? '
+   r'Mi a helyes egyenlet?</li>'
+   r'</ol>',
+ ]),
+
+ ("II. fázis — A teleport-kör", [
+   r'<p>A drónokat a $K\colon x^2+y^2-2x-6y=0$ teleport-kör köti össze.</p>'
+   r'<ol class="reszfeladatok">'
+   r'<li>Határozd meg a kör középpontját és sugarát! A drónháromszög melyik nevezetes pontja a középpont?</li>'
+   r'<li>A körön belül, a körön vagy a körön kívül van a három drón?</li>'
+   r'<li>Metszi-e a $BC$ útvonal a kört? Határozd meg a metszéspontokat és a húr hosszát, és a középpont '
+   r'meg az egyenes távolságával is indokold a választ!</li>'
+   r'<li>Tér-eb a kör $T(4;2)$ pontjából az érintő mentén ugrik tovább. Ellenőrizd, hogy $T$ a körön van, írd '
+   r'fel az érintőt, és határozd meg, hol metszi az $x$-tengelyt!</li>'
+   r'<li>🔴 Írd fel a körnek a $BC$ egyenessel párhuzamos érintőit! Bontsd lépésekre: milyen alakú az '
+   r'egyenes, mi a feltétele annak, hogy pontosan egy közös pontja legyen a körrel, és mik az érintők?</li>'
+   r'</ol>',
+ ]),
+
+ ("III. fázis — Az ellipszis-pálya", [
+   r'<p>A figyelődrón pályája ellipszis. A fókuszai az anomália-mag két pólusa, $F_1(5;0)$ és $F_2(-5;0)$, '
+   r'és a pálya átmegy a $P(3;4)$ ponton.</p>'
+   r'<ol class="reszfeladatok">'
+   r'<li>Milyen messze van $P$ a két fókusztól? Mekkora a pálya nagytengelye?</li>'
+   r'<li>Írd fel a pálya egyenletét, és add meg a csúcspontjait!</li>'
+   r'<li>A figyelődrón az $y=2x-2$ egyenes mentén repül be a pályára. Hol metszi az egyenes a pályát? '
+   r'Milyen hosszú az útvonal pálya belsejébe eső szakasza?</li>'
+   r'<li>Írd fel a pálya érintőjét a $P$ pontban!</li>'
+   r'<li>🔴 Írd fel a pályának a $4x+3y=0$ egyenessel párhuzamos érintőit, és határozd meg az érintési '
+   r'pontokat!</li>'
+   r'<li>Maxi az 1. részben a két távolság <b>különbségével</b> számolt. Milyen görbét kapott volna így '
+   r'ugyanazokkal a fókuszokkal és ugyanazzal a $P$ ponttal? Írd fel az egyenletét!</li>'
+   r'</ol>',
+   brief('<b>Kanrak:</b> Ha megvan a háromszög, a kör és a pálya, Tér-eb minden ugrása célba ér. A '
+         'számításaidat a tanárod ellenőrzi — a kulcs nem kerül a hálózatra.', outro=True),
+ ]),
+]
+
+lap(**T, fajl="terepkuldetes.html", cim=KUL, cim_tiszta=KUL, itt="Terepküldetés",
+    alcim="Három fázis: a drónháromszög, a teleport-kör és az ellipszis-pálya. Beadható projektfeladat — "
+          "a megoldásokat a tanárod ellenőrzi.",
+    chip=KUL + " · terepküldetés", chip_tipus="terepküldetés",
+    szakaszok=TEREP,
+    elozo=("osszefoglalo.html", "Koordináta-térkép"),
+    kovetkezo=("index.html", "Témakör Főhadiszállása"))
+print("✓ terepkuldetes.html")
