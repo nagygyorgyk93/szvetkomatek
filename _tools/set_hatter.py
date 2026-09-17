@@ -43,7 +43,7 @@ def tipus(rel: Path) -> str:
         return "tagozat-index" if len(reszek) == 2 else "temakor-index"
     if nev.startswith("tananyag-"):
         return "tananyag"
-    if nev == "feladatok-hazi.html":
+    if nev.startswith("feladatok-hazi"):
         return "hazi"
     if nev.startswith("feladatok-"):
         return "feladatok"

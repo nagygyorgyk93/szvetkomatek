@@ -368,3 +368,141 @@ lap(**T, fajl="terepkuldetes.html", cim=KUL, cim_tiszta=KUL, itt="Terepküldeté
     elozo=("osszefoglalo.html", "Koordináta-térkép"),
     kovetkezo=("index.html", "Témakör Főhadiszállása"))
 print("✓ terepkuldetes.html")
+
+# ==================================================================== F6h — két Vészterem
+from fgy_common import cards, oldal
+
+H = []
+
+
+def hk(nev, g, w, tur=None):
+    ok = abs(float(NN(g)) - float(w)) <= tur if tur is not None else simplify(g - w) == 0
+    if not ok:
+        H.append((nev, g, w))
+
+
+# --- I. rész
+hk("h1", tv((-4, 3), (2, -5)), 10); assert ((-4 + 2) / Q(2), (3 - 5) / Q(2)) == (-1, -1)
+hk("h2S", ((0 + 6 + 2) / Q(3)), Q(8, 3)); hk("h2S2", (-2 + 1 + 4) / Q(3), 1)
+hk("h2T", abs(6*6 - 3*2) / Q(2), 15)
+l3 = 2*X + Y - 2; assert l3.subs({X: -1, Y: 4}) == 0 and l3.subs({X: 3, Y: -4}) == 0
+assert expand((X / 1 + Y / 2 - 1) * 2 - l3) == 0
+assert (5*X - 2*Y + 19).subs({X: -3, Y: 2}) == 0 and (2*X + 5*Y - 4).subs({X: -3, Y: 2}) == 0 and 5*2 + (-2)*5 == 0
+hk("h5", abs(4*1 - 3*(-2) + 5) / Q(5), 3)
+hk("h6", atan(abs((Q(-1, 2) - 3) / (1 + 3*Q(-1, 2)))) * 180 / pi, 81.9, .05)
+lAB = X - 3*Y + 2; assert lAB.subs({X: 1, Y: 1}) == 0 and lAB.subs({X: 7, Y: 3}) == 0
+mc = abs(3 - 21 + 2) / sqrt(10)
+hk("h7", mc, 16 / sqrt(10)); hk("h7k", mc, 5.06, .005); hk("h7T", abs(6*6 - 2*2) / Q(2), 16)
+hk("h7T2", sqrt(40) * mc / 2, 16)
+assert met(2*X + Y - 7, X - Y - 2) == [(3, 1)] and (X + Y - 4).subs({X: 3, Y: 1}) == 0 and (X + Y - 4).subs({X: -1, Y: 5}) == 0
+hk("h9", solve(-C0 / 4 * 2 + 1, C0)[0], 2); hk("h9b", solve(-C0 / 4 - 2, C0)[0], -8)
+tP = solve((X - 1)**2 + (X + 1)**2 - (X - 5)**2 - (X - 1)**2, X)
+hk("h10", tP[0], 2); hk("h10T", abs(4*3 - 2*1) / Q(2), 5)
+assert sorted(solve(abs(C0 + 2) / 5 - 2, C0)) == [-12, 8]
+# --- II. rész
+hk("g1", expand((X + 4)**2 + (Y - 1)**2 - 25 - (X**2 + Y**2 + 8*X - 2*Y - 8)), 0)
+hk("g2", tv((-1, -2), (5, 6)) / 2, 5)
+hk("g3", sqrt(25 - 4), sqrt(21)); hk("g4", sqrt(4 + 25), sqrt(29))
+assert met((X - 2)**2 + (Y - 2)**2 - 25, 3*X + 4*Y - 39) == [(5, 6)]
+assert (4*X**2 + 25*Y**2 - 100).subs({X: 3, Y: Q(8, 5)}) == 0 and met(4*X**2 + 25*Y**2 - 100, 3*X + 10*Y - 25) == [(3, Q(8, 5))]
+assert all((X**2/40 + Y**2/10 - 1).subs({X: a0, Y: b0}) == 0 for a0, b0 in [(6, 1), (2, 3)])
+M9 = met(X**2 + Y**2 - 25, X + Y - 1); assert M9 == [(-3, 4), (4, -3)]
+hk("g9", tv(*M9), 7*sqrt(2)); hk("g9k", 7*sqrt(2), 9.90, .005)
+assert met(X**2 - Y**2 - 9, Y - X + 1) == [(5, 4)]
+assert met(Y**2 - 8*X, 2*X - 3*Y + 8) == [(2, 4), (8, 8)]
+assert met(Y**2 - 8*X, Y - X - 2) == [(2, 4)] and met(Y**2 - 8*X, X - 2*Y + 8) == [(8, 8)]
+nk = sorted(solve((-2 - 2 + C0)**2 - 20 * 5, C0), key=float); assert nk == [-6, 14]
+assert all(len(met((X + 1)**2 + (Y - 2)**2 - 20, Y - 2*X - v)) == 1 for v in nk)
+assert met(3*X**2 - Y**2 - 27, Y - 2*X - 3) == [(-6, -9)] and met(3*X**2 - Y**2 - 27, Y - 2*X + 3) == [(6, 9)]
+assert not H, H
+print("sympy önteszt (Vészterem): OK")
+
+H1A = [
+ (r"Adott az $A(-4;3)$ és a $B(2;-5)$ pont. Számítsd ki az $AB$ szakasz hosszát, és határozd meg a "
+  r"felezőpontját!", None, r"$AB=10$, $F(-1;-1)$"),
+ (r"Határozd meg az $A(0;-2)$, $B(6;1)$, $C(2;4)$ csúcsú háromszög súlypontját és területét!", None,
+  r"$S\left(\tfrac83;1\right)$, $T=15$"),
+ (r"Írd fel a $P(-1;4)$ és a $Q(3;-4)$ ponton átmenő egyenes egyenletét általános és tengelymetszetes "
+  r"alakban, és ábrázold a tengelymetszetei segítségével!", None,
+  r"$2x+y-2=0$; $\dfrac x1+\dfrac y2=1$; a tengelymetszetek $(1;0)$ és $(0;2)$"),
+ (r"Írd fel annak az egyenesnek az egyenletét, amely átmegy az $M(-3;2)$ ponton, és",
+  [r"párhuzamos az $e\colon 5x-2y+3=0$ egyenessel;", r"merőleges az $e$ egyenesre!"],
+  [r"$5x-2y+19=0$", r"$2x+5y-4=0$"], True),
+ (r"Számítsd ki az $M(1;-2)$ pont távolságát a $4x-3y+5=0$ egyenestől!", None, r"$d=3$"),
+]
+H1K = [
+ (r"Mekkora szöget zár be az $y=3x-1$ és az $x+2y-4=0$ egyenes? (Számológéppel, egy tizedesre.)", None,
+  r"$\operatorname{tg}\varphi=7$, $\varphi\approx81{,}9^\circ$"),
+ (r"Az $ABC$ háromszög csúcsai $A(1;1)$, $B(7;3)$ és $C(3;7)$.",
+  [r"Írd fel az $AB$ oldal egyenesének egyenletét!", r"Számítsd ki az $m_c$ magasságot!",
+   r"Számítsd ki a területet kétféleképpen: determinánssal, illetve az $AB$ oldalból és $m_c$-ből!"],
+  [r"$x-3y+2=0$", r"$m_c=\dfrac{16}{\sqrt{10}}\approx5{,}06$", r"$T=16$ mindkét módon"]),
+ (r"Írd fel annak az egyenesnek az egyenletét, amely átmegy a $2x+y-7=0$ és az $x-y-2=0$ egyenes "
+  r"metszéspontján, valamint a $(-1;5)$ ponton!", None, r"a metszéspont $(3;1)$, az egyenes $x+y-4=0$"),
+ (r"Adott az $ax+4y-1=0$ és a $2x-y+3=0$ egyenes. Határozd meg $a$ értékét úgy, hogy a két egyenes",
+  [r"merőleges legyen;", r"párhuzamos legyen!"], [r"$a=2$", r"$a=-8$"], True),
+]
+H1N = [
+ (r"Határozd meg az $y=x+1$ egyenesnek azt a $P$ pontját, amely egyenlő távolságra van az $A(1;0)$ és a "
+  r"$B(5;2)$ ponttól! Mekkora az $ABP$ háromszög területe?", None, r"$P(2;3)$, $T=5$"),
+ (r"Írd fel azoknak az egyeneseknek az egyenletét, amelyek párhuzamosak a $3x+4y-2=0$ egyenessel, és "
+  r"$2$ egységnyire vannak tőle!", None, r"$3x+4y+8=0$ és $3x+4y-12=0$"),
+]
+
+H2A = [
+ (r"Határozd meg az $x^2+y^2+8x-2y-8=0$ kör középpontját és sugarát!", None, r"$C(-4;1)$, $r=5$"),
+ (r"Írd fel annak a körnek az egyenletét, amelynek egyik átmérője az $A(-1;-2)$, $B(5;6)$ szakasz!", None,
+  r"$(x-2)^2+(y-2)^2=25$"),
+ (r"Határozd meg a $4x^2+25y^2=100$ ellipszis féltengelyeit, lineáris excentricitását és fókuszait!", None,
+  r"$a=5$, $b=2$, $e=\sqrt{21}\approx4{,}58$, $F\left(\pm\sqrt{21};0\right)$"),
+ (r"Határozd meg a $25x^2-4y^2=100$ hiperbola féltengelyeit, fókuszait és aszimptotáit!", None,
+  r"$a=2$, $b=5$, $e=\sqrt{29}$, $F\left(\pm\sqrt{29};0\right)$, $y=\pm\tfrac52x$"),
+ (r"Határozd meg az $y^2=-6x$ parabola paraméterét, fókuszát és vezéregyenesét! Merre nyílik?", None,
+  r"$p=3$, $F\left(-\tfrac32;0\right)$, $x=\tfrac32$; balra"),
+ (r"Érinti-e a $3x+4y-39=0$ egyenes a $(x-2)^2+(y-2)^2=25$ kört? Ha igen, hol?", None,
+  r"igen, az érintési pont $(5;6)$"),
+ (r"Írd fel a $4x^2+25y^2=100$ ellipszis érintőjét a $\left(3;\tfrac85\right)$ pontjában!", None,
+  r"$3x+10y-25=0$"),
+]
+H2K = [
+ (r"Írd fel annak az ellipszisnek az egyenletét, amely átmegy a $P(6;1)$ és a $Q(2;3)$ ponton!", None,
+  r"$\dfrac{x^2}{40}+\dfrac{y^2}{10}=1$"),
+ (r"Milyen hosszú húrt metsz ki az $x^2+y^2=25$ kör az $x+y-1=0$ egyenesből?", None,
+  r"a metszéspontok $(4;-3)$ és $(-3;4)$, a húr $7\sqrt2\approx9{,}90$"),
+ (r"Hány közös pontja van az $x^2-y^2=9$ hiperbolának és az $y=x-1$ egyenesnek? Érintő-e az egyenes?", None,
+  r"egy: $(5;4)$; nem érintő, mert párhuzamos az $y=x$ aszimptotával"),
+ (r"Határozd meg az $y^2=8x$ parabola és a $2x-3y+8=0$ egyenes metszéspontjait, majd írd fel a parabola "
+  r"érintőit ezekben a pontokban!", None, r"$(2;4)$ és $(8;8)$; az érintők $y=x+2$ és $x-2y+8=0$"),
+]
+H2N = [
+ (r"Írd fel a $(x+1)^2+(y-2)^2=20$ kör azon érintőit, amelyek párhuzamosak az $y=2x$ egyenessel!",
+  [r"Milyen alakú az érintő egyenlete?", r"Milyen $n$ esetén érinti az egyenes a kört?", r"Írd fel az érintőket!"],
+  [r"$y=2x+n$", r"$n=14$ vagy $n=-6$", r"$y=2x+14$ és $y=2x-6$"]),
+ (r"Írd fel a $3x^2-y^2=27$ hiperbola azon érintőit, amelyek párhuzamosak az $y=2x$ egyenessel, és add meg az "
+  r"érintési pontokat!", None, r"$y=2x+3$, érintési pont $(-6;-9)$; $y=2x-3$, érintési pont $(6;9)$"),
+]
+
+
+def vesz(fajl, a_, k_, n_, cim, alcim, prev, prevc, nxt, nxtc):
+    body = [
+     '    <h2 id="alap">🟢 Alapszint</h2>\n' + cards(a_, "alap", "alap"),
+     '    <h2 id="kozep">🟡 Középszint</h2>\n' + cards(k_, "kozep", "kozep"),
+     '    <h2 id="nehez">🔴 Nehéz szint</h2>\n' + cards(n_, "nehez", "nehez"),
+    ]
+    oldal(**T, fajl=fajl, cim=cim, h1=cim + " — házi feladatok",
+          chipek='<span class="chip alap">Alap</span><span class="chip kozep">Közép</span>'
+                 '<span class="chip nehez">Nehéz</span>',
+          alcim=alcim, sections_html="\n".join(body), prev=prev, prevc=prevc, nxt=nxt, nxtc=nxtc)
+    print("✓", fajl, "| Alap", len(a_), "Közép", len(k_), "Nehéz", len(n_))
+
+
+vesz("feladatok-hazi.html", H1A, H1K, H1N, "Vészterem I.",
+     "Rövid, vegyes gyakorlósor az I. részhez (pontok és egyenesek) — házi feladatnak és a 3. dolgozat előtti "
+     "bemelegítésnek. Számológép használható: a szögeket egy, minden más közelítő értéket két tizedesre kerekíts. "
+     "A végeredmény minden feladatnál lenyitható!",
+     "index.html", "Témakör Főhadiszállása", "feladatok-hazi-2.html", "Vészterem II.")
+vesz("feladatok-hazi-2.html", H2A, H2K, H2N, "Vészterem II.",
+     "Rövid, vegyes gyakorlósor a II. részhez (kör, ellipszis, hiperbola, parabola) — házi feladatnak és a "
+     "4. dolgozat előtti bemelegítésnek. Számológép használható: a szögeket egy, minden más közelítő értéket két "
+     "tizedesre kerekíts. A végeredmény minden feladatnál lenyitható!",
+     "feladatok-hazi.html", "Vészterem I.", "osszefoglalo.html", "Koordináta-térkép")

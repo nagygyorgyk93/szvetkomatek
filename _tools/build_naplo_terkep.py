@@ -91,7 +91,7 @@ def main() -> None:
                     feladat_db += db
                     feladat_xp_ossz += xp_db
                     fgy.append({"u": url, "c": cim(f), "db": db, "xp": xp_db,
-                                "hazi": f.name == "feladatok-hazi.html"})
+                                "hazi": f.name.startswith("feladatok-hazi")})
             if not oldalak and not fgy:
                 continue
             jel, kuldetes, mentor = JELVENY.get(f"{tag}/{tema.name}", ("🛡️", "", ""))
