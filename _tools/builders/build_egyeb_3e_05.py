@@ -506,3 +506,131 @@ vesz("feladatok-hazi-2.html", H2A, H2K, H2N, "Vészterem II.",
      "4. dolgozat előtti bemelegítésnek. Számológép használható: a szögeket egy, minden más közelítő értéket két "
      "tizedesre kerekíts. A végeredmény minden feladatnál lenyitható!",
      "feladatok-hazi.html", "Vészterem I.", "osszefoglalo.html", "Koordináta-térkép")
+
+# ==================================================================== F5 — témakör-index
+from tananyag_common import GYOKER
+from fgy_common import w
+
+
+def kartya(href, cim, le):
+    return ('      <a class="kartya" href="' + href + '">\n        <h3>' + w(cim) + '</h3>\n'
+            '        <p class="le">' + w(le) + '</p>\n      </a>')
+
+
+K = {
+ "A1": kartya(A1, "Pontok a síkban", "A koordináta-rendszer, két pont távolsága, osztópont, felezőpont és súlypont"),
+ "A2": kartya(A2, "A háromszög területe", "Darabolás, területképlet determinánssal, három pont egy egyenesen"),
+ "B1": kartya(B1, "Az egyenes egyenlete", "Iránytényező; explicit, általános és tengelymetszetes alak; ábrázolás"),
+ "B2": kartya(B2, "Két egyenes", "Kölcsönös helyzet, párhuzamosság és merőlegesség, két egyenes szöge"),
+ "B3": kartya(B3, "Pont és egyenes távolsága", "A távolságképlet, párhuzamos egyenesek távolsága, a háromszög magassága"),
+ "C1": kartya(C1, "A kör egyenlete", "Mértani hely, a kör középponti és általános egyenlete"),
+ "C2": kartya(C2, "A kör és az egyenes", "Szelő, érintő, elkerülő egyenes; húr; érintő a kör egy pontjában"),
+ "D1": kartya(D1, "Az ellipszis", "Mértani hely, egyenlet, féltengelyek és fókuszok, felírás adatokból"),
+ "D2": kartya(D2, "Az ellipszis és az egyenes", "Közös pontok, húr, érintő az ellipszis egy pontjában"),
+ "D3": kartya(D3, "A hiperbola", "Mértani hely, egyenlet, aszimptoták, felírás adatokból"),
+ "D4": kartya(D4, "A hiperbola és az egyenes", "Az aszimptotával párhuzamos egyenes csapdája, érintő a hiperbola egy pontjában"),
+ "E1": kartya(E1, "A parabola", "Mértani hely, egyenlet, fókusz és vezéregyenes, kapcsolat a másodfokú függvénnyel"),
+ "E2": kartya(E2, "A parabola és az egyenes", "Közös pontok, érintő a parabola egy pontjában — és a négy görbe egy táblázatban"),
+ "fp": kartya("feladatok-pontok.html", "🏋️ Pontok — feladatok", "Távolság, felezőpont, súlypont, osztópont, terület"),
+ "fe": kartya("feladatok-egyenesek.html", "🏋️ Egyenesek — feladatok", "Az egyenes egyenletei, két egyenes, szög, távolság"),
+ "fk": kartya("feladatok-kor.html", "🏋️ A kör — feladatok", "Kör egyenlete, kör és egyenes, húr, érintő"),
+ "fh": kartya("feladatok-ellipszis-hiperbola.html", "🏋️ Ellipszis és hiperbola — feladatok",
+              "Egyenlet adatokból és pontokból, közös pontok egyenessel, húr, érintő"),
+ "fa": kartya("feladatok-parabola.html", "🏋️ A parabola — feladatok", "Paraméter, fókusz, vezéregyenes, közös pontok, érintő"),
+ "h1": kartya("feladatok-hazi.html", "🕹️ Vészterem I. — házi feladatok", "Pontok és egyenesek — a 3. dolgozat előtti bemelegítéshez"),
+ "h2": kartya("feladatok-hazi-2.html", "🕹️ Vészterem II. — házi feladatok", "Kör, ellipszis, hiperbola, parabola — a 4. dolgozat előttre"),
+ "tk": kartya("terepkuldetes.html", "🎯 A Térkép Hálózata",
+              "Háromfázisú küldetés — a drónháromszög, a teleport-kör és az ellipszis-pálya"),
+ "ossz": kartya("osszefoglalo.html", "📇 Koordináta-térkép",
+                "A két rész képletei, feltételei és tipikus csapdái egy helyen — dolgozat előtti átfutáshoz"),
+}
+
+
+def racs(*kulcsok):
+    return '    <div class="racs">\n' + "\n".join(K[k] for k in kulcsok) + '\n    </div>\n'
+
+
+INDEX = '''<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Síkbeli analitikus geometria | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">&#8730;</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <span class="itt">Síkbeli analitikus geometria</span>
+</nav>
+<div class="hero">
+  <h1>Síkbeli analitikus geometria</h1>
+  <p class="alcim">Pontból számpár, egyenesből és görbéből egyenlet: távolság és terület koordinátákból, az egyenes,
+  a kör, az ellipszis, a hiperbola és a parabola — és mindezek közös pontjai.</p>
+  <div class="meta-sor"><span class="chip ora">29 óra</span><span class="statusz kesz">kész</span></div>
+  <div class="brief"><p>🗺️ <b>Szektor 05 — A Térkép Hálózata.</b> Kiképző: <b>Kanrak</b> — mellette
+  <b>Tér-eb</b>, a teleportáló kutya, aki csak pontos egyenesek és metszéspontok mentén ugorhat. Feltörtük
+  Maxi navigációs hálózatát, de térkép helyett számpárokat és egyenleteket találtunk. Aki olvasni tudja
+  őket, az bemérheti Maxi drónjait, kapuit és pályáit.</p></div>
+</div>
+<main class="lap">
+  <div class="tartalom">
+    <h2>Tananyag — I. rész (3. dolgozat)</h2>
+
+    <h3>📍 Pontok — Kanrak</h3>
+''' + racs("A1", "A2") + '''
+    <h3>📏 Egyenesek — Kanrak</h3>
+''' + racs("B1", "B2", "B3") + '''
+    <h2>Tananyag — II. rész (4. dolgozat)</h2>
+
+    <h3>⭕ A kör — Kanrak</h3>
+''' + racs("C1", "C2") + '''
+    <h3>🪐 Ellipszis és hiperbola — Kanrak</h3>
+''' + racs("D1", "D2", "D3", "D4") + '''
+    <h3>🛰️ A parabola — Kanrak</h3>
+''' + racs("E1", "E2") + '''
+    <h2>Feladatgyűjtemény</h2>
+''' + racs("fp", "fe", "fk", "fh", "fa", "h1", "h2") + '''
+    <h2>Terepküldetés</h2>
+''' + racs("tk") + '''
+    <h2>Összefoglaló</h2>
+''' + racs("ossz") + '''
+    <p class="le halvany"><b>Ajánlott sorrend:</b> a tizenhárom tananyag-egység sorban; minden altéma
+    végén a hozzá tartozó feladatgyűjtemény. A Vészterem I. a 3., a Vészterem II. a 4. dolgozat előtt jön.
+    A témakör végén a Koordináta-térkép, majd A Térkép Hálózata küldetés.</p>
+  </div>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\\\(', right:'\\\\)', display:false},
+    {left:'\\\\[', right:'\\\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+</body>
+</html>
+'''
+
+ut = os.path.join(GYOKER, T["tagozat"], T["mappa"], "index.html")
+open(ut, "w", encoding="utf-8").write(INDEX)
+print("✓ index.html")
