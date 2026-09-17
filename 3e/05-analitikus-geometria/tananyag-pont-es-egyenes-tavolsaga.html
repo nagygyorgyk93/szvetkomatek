@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pont és egyenes távolsága — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Síkbeli analitikus geometria</a> ›
+  <span class="itt">Pont és egyenes távolsága — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Pont és egyenes távolsága — háromszögek koordinátákkal</h1>
+  <p class="alcim">A pont és az egyenes távolsága, két párhuzamos egyenes távolsága, a háromszög nevezetes vonalai koordinátákkal, és az I. rész gyorsismétlője.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Térkép Hálózata · 5/13</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> A bázis riasztója akkor szól, ha Maxi drónja <b>3 egységnél közelebb</b> repül el mellette. Hogy közel jár-e, azt nem a pálya bármelyik pontja dönti el, hanem a legközelebbi: a bázisból a pályára bocsátott merőleges talppontja.</p></div>
+
+    <h2 id="s1">Pont és egyenes távolsága</h2>
+
+    <div class="doboz definicio" id="def-pont-egyenes-tavolsag">
+      <p class="cim"><span class="ikon">📗</span> Pont és egyenes távolsága</p>
+      <p>A <span class="math inline">\(P\)</span> pont és az <span class="math inline">\(e\)</span> egyenes <b>távolsága</b> a <span class="math inline">\(P\)</span>-ből az <span class="math inline">\(e\)</span>-re bocsátott merőleges szakasz hossza — ez a <span class="math inline">\(P\)</span> és az egyenes pontjai közötti legrövidebb távolság. Ha a <span class="math inline">\(P\)</span> az egyenesen van, a távolság <span class="math inline">\(0\)</span>.</p>
+    </div>
+
+    <div class="doboz tetel" id="tetel-tavolsagkeplet">
+      <p class="cim"><span class="ikon">📘</span> A távolság képlete</p>
+      <p>A <span class="math inline">\(P(x_0;y_0)\)</span> pont távolsága az <span class="math inline">\(ax+by+c=0\)</span> egyenestől</p><span class="math display">\[d=\frac{|a\,x_0+b\,y_0+c|}{\sqrt{a^2+b^2}} .\]</span><p>A képlet az egyenes <b>általános alakjára</b> vonatkozik: ha az egyenlet <span class="math inline">\(y=kx+n\)</span> alakban adott, előbb <span class="math inline">\(0\)</span>-ra rendezzük.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-riasztas">
+      <p class="cim"><span class="ikon">✏️</span> Szól-e a riasztó?</p>
+      <p>A bázis a <span class="math inline">\(K(2;3)\)</span> pontban van, Maxi drónja a <span class="math inline">\(4x+3y-27=0\)</span> egyenes mentén repül. Megszólal-e a riasztó, amely <span class="math inline">\(3\)</span> egységnél közelebbi elhaladásra van beállítva?</p><div class="svgcard">
+    <svg viewBox="0 0 314 314" width="314" height="314" role="img" aria-label="A K(2;3) bázis és a 4x + 3y − 27 = 0 pálya távolsága a merőleges talppontig mért d szakasz">
+      <defs><marker id="nyv-b23cc-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+      <clipPath id="kv-b23cc"><rect x="22.0" y="22.0" width="270.0" height="270.0"/></clipPath>
+      <line x1="22.0" y1="292.0" x2="22.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="52.0" y1="292.0" x2="52.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="82.0" y1="292.0" x2="82.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="112.0" y1="292.0" x2="112.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="142.0" y1="292.0" x2="142.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="172.0" y1="292.0" x2="172.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="202.0" y1="292.0" x2="202.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="232.0" y1="292.0" x2="232.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="262.0" y1="292.0" x2="262.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="292.0" y1="292.0" x2="292.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="292.0" x2="292.0" y2="292.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="262.0" x2="292.0" y2="262.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="232.0" x2="292.0" y2="232.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="202.0" x2="292.0" y2="202.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="172.0" x2="292.0" y2="172.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="142.0" x2="292.0" y2="142.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="112.0" x2="292.0" y2="112.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="82.0" x2="292.0" y2="82.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="52.0" x2="292.0" y2="52.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="22.0" x2="292.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="262.0" x2="302.5" y2="262.0" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-b23cc-0)"/>
+      <line x1="52.0" y1="292.0" x2="52.0" y2="11.5" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-b23cc-0)"/>
+      <text x="298.5" y="253.0" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">x</text>
+      <text x="62.0" y="17.5" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">y</text>
+      <line x1="22.0" y1="259.0" x2="22.0" y2="265.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="22.0" y="277.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−1</text>
+      <line x1="82.0" y1="259.0" x2="82.0" y2="265.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="82.0" y="277.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">1</text>
+      <line x1="112.0" y1="259.0" x2="112.0" y2="265.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="112.0" y="277.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">2</text>
+      <line x1="142.0" y1="259.0" x2="142.0" y2="265.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="142.0" y="277.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">3</text>
+      <line x1="172.0" y1="259.0" x2="172.0" y2="265.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="172.0" y="277.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">4</text>
+      <line x1="202.0" y1="259.0" x2="202.0" y2="265.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="202.0" y="277.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">5</text>
+      <line x1="232.0" y1="259.0" x2="232.0" y2="265.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="232.0" y="277.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">6</text>
+      <line x1="262.0" y1="259.0" x2="262.0" y2="265.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="262.0" y="277.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">7</text>
+      <line x1="292.0" y1="259.0" x2="292.0" y2="265.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="292.0" y="277.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">8</text>
+      <line x1="49.0" y1="292.0" x2="55.0" y2="292.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="46.0" y="296.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−1</text>
+      <line x1="49.0" y1="232.0" x2="55.0" y2="232.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="46.0" y="236.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">1</text>
+      <line x1="49.0" y1="202.0" x2="55.0" y2="202.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="46.0" y="206.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">2</text>
+      <line x1="49.0" y1="172.0" x2="55.0" y2="172.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="46.0" y="176.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">3</text>
+      <line x1="49.0" y1="142.0" x2="55.0" y2="142.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="46.0" y="146.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">4</text>
+      <line x1="49.0" y1="112.0" x2="55.0" y2="112.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="46.0" y="116.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">5</text>
+      <line x1="49.0" y1="82.0" x2="55.0" y2="82.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="46.0" y="86.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">6</text>
+      <line x1="49.0" y1="52.0" x2="55.0" y2="52.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="46.0" y="56.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">7</text>
+      <line x1="49.0" y1="22.0" x2="55.0" y2="22.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="46.0" y="26.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">8</text>
+      <text x="44.0" y="277.0" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">O</text>
+      <g clip-path="url(#kv-b23cc)">
+      <line x1="277.0" y1="292.0" x2="74.5" y2="22.0" stroke="#3b82f6" stroke-width="2"/>
+      </g>
+      <line x1="112.0" y1="172.0" x2="160.0" y2="136.0" stroke="#ef4444" stroke-width="1.8" stroke-dasharray="5 3"/>
+      <path d="M154.7,129.0 L147.7,134.2 L153.0,141.3" fill="none" stroke="#ef4444" stroke-width="1.4"/>
+      <circle cx="112.0" cy="172.0" r="3.4" fill="#0f172a"/>
+      <text x="146.6" y="72.8" font-size="13" fill="#3b82f6" text-anchor="middle" font-weight="600">pálya</text>
+      <text x="143.2" y="167.6" font-size="14" fill="#ef4444" text-anchor="middle" font-style="italic" font-weight="600">d</text>
+      <text x="100.0" y="168.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">K</text>
+    </svg>
+    </div>
+    <p class="cap">A bázis és a pálya távolsága a merőleges szakasz, <span class="math inline">\(d\)</span>.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(d=\frac{|4\cdot2+3\cdot3-27|}{\sqrt{4^2+3^2}}=\frac{|8+9-27|}{5}=\frac{10}{5}=2\)</span>.</p><p>Mivel <span class="math inline">\(2\lt3\)</span>, a drón a riasztási körzeten belül halad el.</p><p class="vegeredmeny"><span class="math inline">\(d=2\)</span>, a riasztó megszólal</p></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p>Maxi a <span class="math inline">\(P(1;4)\)</span> pont és az <span class="math inline">\(y=\frac34x+2\)</span> egyenes távolságát kereste. Az egyenletből kiolvasta, hogy „<span class="math inline">\(a=\frac34\)</span>, <span class="math inline">\(b=1\)</span>, <span class="math inline">\(c=2\)</span>”, és ezt kapta:</p><span class="math display">\[d=\frac{\left|\frac34\cdot1+1\cdot4+2\right|}{\sqrt{\frac9{16}+1}}=\frac{6{,}75}{1{,}25}=5{,}4 .\]</span><p>A képlet az <span class="math inline">\(ax+by+c=0\)</span> alakot várja. <span class="math inline">\(0\)</span>-ra rendezve <span class="math inline">\(\frac34x-y+2=0\)</span>, tehát <span class="math inline">\(b=-1\)</span>, nem <span class="math inline">\(1\)</span>. (Érdemes <span class="math inline">\(4\)</span>-gyel szorozni: <span class="math inline">\(3x-4y+8=0\)</span>.) Így <span class="math inline">\(d=\frac{|3\cdot1-4\cdot4+8|}{\sqrt{9+16}}=\frac{|-5|}{5}=1\)</span>.</p>
+    </div>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ Rendezve 2x − y + 1 = 0, így d = |2 − 1 + 1| / √5 = 2/√5 ≈ 0,89." data-nem="✘ Előbb rendezd 0-ra: 2x − y + 1 = 0, tehát b = −1. Ekkor d = |2·1 − 1·1 + 1| / √(4 + 1) = 2/√5. (A 4/√5 a b = +1-ből, a 2/5 a gyökvonás elhagyásából jön.)">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mekkora a <span class="math inline">\(P(1;1)\)</span> pont távolsága az <span class="math inline">\(y=2x+1\)</span> egyenestől?</p>
+      <div class="opciok"><button><span class="math inline">\(2\)</span></button><button><span class="math inline">\(\frac{2}{\sqrt5}\)</span></button><button><span class="math inline">\(\frac{4}{\sqrt5}\)</span></button><button><span class="math inline">\(\frac25\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Két párhuzamos egyenes távolsága</h2>
+
+    <p>Két párhuzamos egyenes minden pontja ugyanakkora távolságra van a másik egyenestől. Ezért elég az egyik egyenesen <b>egy tetszőleges pontot</b> választani, és annak a távolságát kiszámolni a másiktól — külön képletre nincs szükség.</p>
+
+    <div class="doboz pelda" id="pelda-parhuzamos">
+      <p class="cim"><span class="ikon">✏️</span> Két párhuzamos egyenes távolsága</p>
+      <p>Milyen messze van egymástól a <span class="math inline">\(3x+4y-7=0\)</span> és a <span class="math inline">\(3x+4y+8=0\)</span> egyenes?</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>A két egyenes párhuzamos (az <span class="math inline">\(x\)</span> és az <span class="math inline">\(y\)</span> együtthatói egyenlők, a konstans tagok nem). Az első egyenesen van például a <span class="math inline">\(P(1;1)\)</span>, hiszen <span class="math inline">\(3+4-7=0\)</span>.</p><p><span class="math inline">\(d=\frac{|3\cdot1+4\cdot1+8|}{\sqrt{9+16}}=\frac{15}{5}=3\)</span>.</p><p class="vegeredmeny"><span class="math inline">\(d=3\)</span></p></div></details>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>Egy autópálya-sáv két szélét leíró egyenesek párhuzamosak; a sáv szélessége a két egyenes távolsága. Nálunk egy forgalmi sáv jellemzően <span class="math inline">\(3{,}5\)</span>–<span class="math inline">\(3{,}75\)</span> méter széles.</p>
+    </div>
+
+    <h2 id="s3">Háromszög koordinátákkal</h2>
+
+    <p>Az eddigi eszközökkel egy háromszög szinte minden adatát ki tudjuk számolni a csúcsaiból. Két nevezetes vonalat érdemes élesen megkülönböztetni:</p><ul><li>a <span class="math inline">\(C\)</span>-hez tartozó <b>magasságvonal</b> átmegy a <span class="math inline">\(C\)</span>-n, és <b>merőleges</b> az <span class="math inline">\(AB\)</span> oldal egyenesére;</li><li>a <span class="math inline">\(C\)</span>-hez tartozó <b>súlyvonal</b> átmegy a <span class="math inline">\(C\)</span>-n és az <span class="math inline">\(AB\)</span> oldal <b>felezőpontján</b>.</li></ul><p>A magasság hossza a <span class="math inline">\(C\)</span> csúcs távolsága az <span class="math inline">\(AB\)</span> egyenestől. Ha csak az oldalegyenesek adottak, a csúcsokat két-két oldalegyenes <b>metszéspontja</b> adja.</p>
+
+    <div class="doboz pelda" id="pelda-haromszog">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — a háromszög minden adata</p>
+      <p>Maxi három jeladója egy háromszöget alkot: <span class="math inline">\(A(-2;-1)\)</span>, <span class="math inline">\(B(6;3)\)</span>, <span class="math inline">\(C(1;5)\)</span>.</p><ol type="a"><li>Írd fel az <span class="math inline">\(AB\)</span> oldal egyenesének egyenletét!</li><li>Írd fel a <span class="math inline">\(C\)</span>-hez tartozó magasságvonal egyenletét!</li><li>Milyen hosszú a <span class="math inline">\(C\)</span>-hez tartozó magasság? (Pontos alakban és két tizedesre kerekítve.)</li><li>Számítsd ki a háromszög területét kétféleképpen!</li><li>Írd fel a <span class="math inline">\(C\)</span>-hez tartozó súlyvonal egyenletét!</li></ol>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(k_{AB}=\frac{3-(-1)}{6-(-2)}=\frac12\)</span>; <span class="math inline">\(y+1=\frac12(x+2)\)</span>, szorozva <span class="math inline">\(2\)</span>-vel: <span class="math inline">\(2y+2=x+2\)</span>, azaz <span class="math inline">\(x-2y=0\)</span>.</p><p><b>b)</b> A merőleges iránytényező <span class="math inline">\(-2\)</span>; <span class="math inline">\(y-5=-2(x-1)\)</span>, azaz <span class="math inline">\(2x+y-7=0\)</span>.</p><p><b>c)</b> <span class="math inline">\(m_c=\frac{|1-2\cdot5|}{\sqrt{1+4}}=\frac9{\sqrt5}\approx4{,}02\)</span>.</p><p><b>d)</b> <span class="math inline">\(|AB|=\sqrt{8^2+4^2}=\sqrt{80}=4\sqrt5\)</span>, így <span class="math inline">\(T=\frac{|AB|\cdot m_c}{2}=\frac{4\sqrt5\cdot\frac9{\sqrt5}}{2}=18\)</span>. Determinánssal: <span class="math inline">\(D=-2\cdot(3-5)+6\cdot(5-(-1))+1\cdot(-1-3)=4+36-4=36\)</span>, <span class="math inline">\(T=\frac12\cdot36=18\)</span> ✔.</p><p><b>e)</b> Az <span class="math inline">\(AB\)</span> felezőpontja <span class="math inline">\(F(2;1)\)</span>; a <span class="math inline">\(C(1;5)\)</span> és az <span class="math inline">\(F\)</span> ponton átmenő egyenes: <span class="math inline">\(k=\frac{1-5}{2-1}=-4\)</span>, <span class="math inline">\(y-5=-4(x-1)\)</span>, azaz <span class="math inline">\(4x+y-9=0\)</span>.</p><div class="svgcard">
+    <svg viewBox="0 0 384 316" width="384" height="316" role="img" aria-label="Az ABC háromszög a C csúcsból húzott magassággal (piros, a talppont M) és súlyvonallal (zöld szaggatott, az AB felezőpontjába)">
+      <defs><marker id="nyv-ac90c-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+      <clipPath id="kv-ac90c"><rect x="22.0" y="22.0" width="340.0" height="272.0"/></clipPath>
+      <line x1="22.0" y1="294.0" x2="22.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="56.0" y1="294.0" x2="56.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="90.0" y1="294.0" x2="90.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="124.0" y1="294.0" x2="124.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="158.0" y1="294.0" x2="158.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="192.0" y1="294.0" x2="192.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="226.0" y1="294.0" x2="226.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="260.0" y1="294.0" x2="260.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="294.0" y1="294.0" x2="294.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="328.0" y1="294.0" x2="328.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="362.0" y1="294.0" x2="362.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="294.0" x2="362.0" y2="294.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="260.0" x2="362.0" y2="260.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="226.0" x2="362.0" y2="226.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="192.0" x2="362.0" y2="192.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="158.0" x2="362.0" y2="158.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="124.0" x2="362.0" y2="124.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="90.0" x2="362.0" y2="90.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="56.0" x2="362.0" y2="56.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="22.0" x2="362.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="226.0" x2="373.9" y2="226.0" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-ac90c-0)"/>
+      <line x1="124.0" y1="294.0" x2="124.0" y2="10.1" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-ac90c-0)"/>
+      <text x="369.9" y="217.0" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">x</text>
+      <text x="134.0" y="16.1" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">y</text>
+      <line x1="22.0" y1="223.0" x2="22.0" y2="229.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="22.0" y="241.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−3</text>
+      <line x1="56.0" y1="223.0" x2="56.0" y2="229.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="56.0" y="241.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−2</text>
+      <line x1="90.0" y1="223.0" x2="90.0" y2="229.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="90.0" y="241.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−1</text>
+      <line x1="158.0" y1="223.0" x2="158.0" y2="229.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="158.0" y="241.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">1</text>
+      <line x1="192.0" y1="223.0" x2="192.0" y2="229.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="192.0" y="241.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">2</text>
+      <line x1="226.0" y1="223.0" x2="226.0" y2="229.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="226.0" y="241.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">3</text>
+      <line x1="260.0" y1="223.0" x2="260.0" y2="229.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="260.0" y="241.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">4</text>
+      <line x1="294.0" y1="223.0" x2="294.0" y2="229.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="294.0" y="241.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">5</text>
+      <line x1="328.0" y1="223.0" x2="328.0" y2="229.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="328.0" y="241.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">6</text>
+      <line x1="362.0" y1="223.0" x2="362.0" y2="229.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="362.0" y="241.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">7</text>
+      <line x1="121.0" y1="294.0" x2="127.0" y2="294.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="118.0" y="298.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−2</text>
+      <line x1="121.0" y1="260.0" x2="127.0" y2="260.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="118.0" y="264.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−1</text>
+      <line x1="121.0" y1="192.0" x2="127.0" y2="192.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="118.0" y="196.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">1</text>
+      <line x1="121.0" y1="158.0" x2="127.0" y2="158.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="118.0" y="162.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">2</text>
+      <line x1="121.0" y1="124.0" x2="127.0" y2="124.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="118.0" y="128.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">3</text>
+      <line x1="121.0" y1="90.0" x2="127.0" y2="90.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="118.0" y="94.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">4</text>
+      <line x1="121.0" y1="56.0" x2="127.0" y2="56.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="118.0" y="60.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">5</text>
+      <line x1="121.0" y1="22.0" x2="127.0" y2="22.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="118.0" y="26.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">6</text>
+      <text x="116.0" y="241.0" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">O</text>
+      <g clip-path="url(#kv-ac90c)">
+      <polygon points="56.0,260.0 328.0,124.0 158.0,56.0" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-width="1.8" stroke-linejoin="round"/>
+      </g>
+      <line x1="158.0" y1="56.0" x2="219.2" y2="178.4" stroke="#ef4444" stroke-width="2"/>
+      <line x1="158.0" y1="56.0" x2="192.0" y2="192.0" stroke="#047857" stroke-width="2" stroke-dasharray="6 4"/>
+      <path d="M231.0,172.5 L225.1,160.7 L213.3,166.6" fill="none" stroke="#ef4444" stroke-width="1.4"/>
+      <circle cx="56.0" cy="260.0" r="3.4" fill="#0f172a"/>
+      <circle cx="328.0" cy="124.0" r="3.4" fill="#0f172a"/>
+      <circle cx="158.0" cy="56.0" r="3.4" fill="#0f172a"/>
+      <circle cx="219.2" cy="178.4" r="2.6" fill="#ef4444"/>
+      <circle cx="192.0" cy="192.0" r="2.6" fill="#047857"/>
+      <text x="198.6" y="115.2" font-size="13" fill="#ef4444" text-anchor="middle" font-style="italic" font-weight="600">m</text>
+      <text x="165.0" y="132.0" font-size="13" fill="#047857" text-anchor="middle" font-style="italic" font-weight="600">s</text>
+      <text x="46.0" y="274.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">A</text>
+      <text x="339.0" y="128.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">B</text>
+      <text x="158.0" y="46.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">C</text>
+      <text x="227.2" y="193.4" font-size="14" fill="#ef4444" text-anchor="middle" font-style="italic" font-weight="600">M</text>
+      <text x="190.0" y="209.0" font-size="14" fill="#047857" text-anchor="middle" font-style="italic" font-weight="600">F</text>
+    </svg>
+    </div>
+    <p class="cap">A magasság (piros) az <span class="math inline">\(M\left(\frac{14}5;\frac75\right)\)</span> talppontba fut, a súlyvonal (zöld) az <span class="math inline">\(F(2;1)\)</span> felezőpontba.</p><p class="vegeredmeny">a) <span class="math inline">\(x-2y=0\)</span> · b) <span class="math inline">\(2x+y-7=0\)</span> · c) <span class="math inline">\(\frac9{\sqrt5}\approx4{,}02\)</span> · d) <span class="math inline">\(T=18\)</span> · e) <span class="math inline">\(4x+y-9=0\)</span></p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ A magasságvonal a csúcson át merőleges a szemközti oldalra." data-nem="✘ A súlyvonal a felezőponton megy át, és általában nem merőleges. A felezőmerőleges merőleges, de a felezőponton megy át, és a csúcson általában nem (csak ha CA = CB). A C-n átmenő merőleges a magasságvonal.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Az <span class="math inline">\(ABC\)</span> háromszögben melyik az a nevezetes vonal, amely átmegy a <span class="math inline">\(C\)</span> csúcson, és merőleges az <span class="math inline">\(AB\)</span> oldal egyenesére?</p>
+      <div class="opciok"><button>a szögfelező</button><button>a magasságvonal</button><button>a súlyvonal</button><button>az <span class="math inline">\(AB\)</span> felezőmerőlegese</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">🧾 Gyorsismétlő</h2>
+
+    <p>Az I. rész minden képlete egy helyen — a 3. dolgozat előtt.</p><div class="tblwrap"><table class="tt-table"><tr><th>Mit keresünk?</th><th>Képlet</th><th>Hol tanultuk?</th></tr><tr><td>két pont távolsága</td><td><span class="math inline">\(|AB|=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\)</span></td><td><a href="tananyag-pontok-a-sikban.html#tetel-tavolsag">Pontok a síkban</a></td></tr><tr><td>osztópont, felezőpont</td><td><span class="math inline">\(C\left(\frac{nx_1+mx_2}{m+n};\frac{ny_1+my_2}{m+n}\right)\)</span>, <span class="math inline">\(F\left(\frac{x_1+x_2}2;\frac{y_1+y_2}2\right)\)</span></td><td><a href="tananyag-pontok-a-sikban.html#tetel-osztopont">Pontok a síkban</a></td></tr><tr><td>súlypont</td><td><span class="math inline">\(S\left(\frac{x_1+x_2+x_3}3;\frac{y_1+y_2+y_3}3\right)\)</span></td><td><a href="tananyag-pontok-a-sikban.html#tetel-sulypont">Pontok a síkban</a></td></tr><tr><td>háromszög területe</td><td><span class="math inline">\(T=\frac12|D|\)</span>, <span class="math inline">\(D=x_1(y_2-y_3)+x_2(y_3-y_1)+x_3(y_1-y_2)\)</span></td><td><a href="tananyag-haromszog-terulete.html#tetel-terulet">A háromszög területe</a></td></tr><tr><td>kollinearitás</td><td><span class="math inline">\(D=0\)</span></td><td><a href="tananyag-haromszog-terulete.html#tetel-kollinearitas">A háromszög területe</a></td></tr><tr><td>iránytényező</td><td><span class="math inline">\(k=\operatorname{tg}\alpha=\frac{y_2-y_1}{x_2-x_1}\)</span> (<span class="math inline">\(x_1\ne x_2\)</span>)</td><td><a href="tananyag-egyenes-egyenlete.html#def-iranytenyezo">Az egyenes egyenlete</a></td></tr><tr><td>az egyenes alakjai</td><td><span class="math inline">\(y=kx+n\)</span> · <span class="math inline">\(ax+by+c=0\)</span> · <span class="math inline">\(\frac xm+\frac yn=1\)</span></td><td><a href="tananyag-egyenes-egyenlete.html#tetel-altalanos">Az egyenes egyenlete</a></td></tr><tr><td>egyenes adott pontból</td><td><span class="math inline">\(y-y_1=k(x-x_1)\)</span></td><td><a href="tananyag-egyenes-egyenlete.html#tetel-ket-pont">Az egyenes egyenlete</a></td></tr><tr><td>párhuzamos · merőleges</td><td><span class="math inline">\(k_1=k_2\)</span> · <span class="math inline">\(k_1k_2=-1\)</span></td><td><a href="tananyag-ket-egyenes.html#tetel-parhuzamos-meroleges">Két egyenes</a></td></tr><tr><td>két egyenes szöge</td><td><span class="math inline">\(\operatorname{tg}\varphi=\left|\frac{k_2-k_1}{1+k_1k_2}\right|\)</span></td><td><a href="tananyag-ket-egyenes.html#tetel-szog">Két egyenes</a></td></tr><tr><td>pont és egyenes távolsága</td><td><span class="math inline">\(d=\frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}\)</span></td><td><a href="#tetel-tavolsagkeplet">fent</a></td></tr></table></div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-egyenesek.html#alap-19">🐕 Tér-eb-ugrás <span class="cimke">A 19–24</span></a><a class="sav bruno" href="feladatok-egyenesek.html#kozep-13">👑 Királyi Gárda <span class="cimke">K 13–18</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> Az egyenes pályákat lezártuk: Maxi drónjai nem jutnak át a hálózaton. Csakhogy Maxi nem adta fel — <b>teleport-kapukat</b> nyitott a Kamrában, és ezeknek a peremét nem egyenesek, hanem <b>körívek</b> alkotják. Új egyenletekre lesz szükség.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-ket-egyenes.html"><span class="irany">← Előző</span><span class="hova">Két egyenes</span></a>
+      <a class="kov" href="feladatok-egyenesek.html"><span class="irany">Következő →</span><span class="hova">Egyenesek — feladatok</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

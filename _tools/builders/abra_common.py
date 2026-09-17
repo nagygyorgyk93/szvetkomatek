@@ -2461,3 +2461,315 @@ def svg_vektorialis(w=400, h=300, ellentett=False, leiras=None, azon=None):
     kp = T.P((ab[0] * 0.5, ab[1] * 0.5, 0))
     T.ki.append(_txt(kp, "T", dx=0, dy=6, szin="#1d4ed8", meret=15, dolt=True))
     return T.kesz(leiras)
+
+
+# ================================================================ 3e/05 — analitikus geometria
+
+def _klip_egyenes(a, b, c, xr, yr):
+    """Az ax+by+c=0 egyenes es a rajzablak (xr × yr) ket metszespontja, vagy None."""
+    x0, x1 = xr
+    y0, y1 = yr
+    pts = []
+    if abs(b) > 1e-12:
+        for x in (x0, x1):
+            y = -(a * x + c) / b
+            if y0 - 1e-9 <= y <= y1 + 1e-9:
+                pts.append((x, y))
+    if abs(a) > 1e-12:
+        for y in (y0, y1):
+            x = -(b * y + c) / a
+            if x0 - 1e-9 <= x <= x1 + 1e-9:
+                pts.append((x, y))
+    best, bd = None, -1.0
+    for i in range(len(pts)):
+        for j in range(i + 1, len(pts)):
+            d = math.hypot(pts[i][0] - pts[j][0], pts[i][1] - pts[j][1])
+            if d > bd:
+                best, bd = (pts[i], pts[j]), d
+    return best if bd > 1e-6 else None
+
+
+def _gorbe_pontok(tipus, par, xr, yr, n=260):
+    """Kupszelet-agak mintavetelezve, matematikai koordinatakban: [[(x, y), …], …]."""
+    X = max(abs(xr[0]), abs(xr[1])) + 1
+    Y = max(abs(yr[0]), abs(yr[1])) + 1
+    if tipus == "kor":
+        p, q, r = par["p"], par["q"], par["r"]
+        return [[(p + r * math.cos(2 * math.pi * k / n), q + r * math.sin(2 * math.pi * k / n))
+                 for k in range(n + 1)]]
+    if tipus == "ellipszis":
+        a, b = par["a"], par["b"]
+        return [[(a * math.cos(2 * math.pi * k / n), b * math.sin(2 * math.pi * k / n))
+                 for k in range(n + 1)]]
+    if tipus == "hiperbola":
+        a, b = par["a"], par["b"]
+        S = max(math.acosh(max(X / a, 1.0)), math.asinh(Y / b)) + 0.1
+        ag = [(a * math.cosh(-S + 2 * S * k / n), b * math.sinh(-S + 2 * S * k / n))
+              for k in range(n + 1)]
+        return [ag, [(-x, y) for x, y in ag]]
+    if tipus == "parabola":                       # y^2 = 2px (tengely="x") vagy x^2 = 2py
+        p = par["p"]
+        if par.get("tengely", "x") == "x":
+            return [[((yy * yy) / (2 * p), yy) for yy in
+                     (-Y + 2 * Y * k / n for k in range(n + 1))]]
+        return [[(xx, (xx * xx) / (2 * p)) for xx in (-X + 2 * X * k / n for k in range(n + 1))]]
+    raise ValueError(tipus)
+
+
+def svg_koordsik(xr=(-5, 5), yr=(-4, 4), egyseg=32, racs=True, szamok=True, lepes=None,
+                 tengelynev=("x", "y"), origo=True, sokszogek=(), gorbek=(), egyenesek=(),
+                 szakaszok=(), merolegesek=(), szogivek=(), pontok=(), feliratok=(),
+                 leiras="Koordináta-rendszer", azon=None):
+    """Koordinata-sik tengelyekkel, osztasszamokkal es racsal — az analitikus geometriahoz.
+
+    Minden koordinata MATEMATIKAI (y felfele); a rajz a keretre vagva (clipPath).
+    `sokszogek`   = [(pontlista, szin, {kitolt: 0.14}), …]
+    `gorbek`      = [(tipus, parameterek, szin, felirat, {sz, szaggat, hely: (x, y), dx, dy}), …]
+                    tipus: "kor" {p, q, r} · "ellipszis" {a, b} · "hiperbola" {a, b} ·
+                    "parabola" {p, tengely: "x" (y²=2px) | "y" (x²=2py)}
+    `egyenesek`   = [((a, b, c), szin, felirat, {sz, szaggat, hely: 0..1, tav, dx, dy}), …]
+                    az ax+by+c=0 egyenes; a felirat a vagott szakasz `hely` aranyu pontja mellett
+    `szakaszok`   = [(p, q, szin, {sz, szaggat, felirat, dx, dy}), …]
+    `merolegesek` = [(pont, (a, b, c), szin, felirat), …] — szaggatott merőleges a talppontig,
+                    derekszog-jellel
+    `szogivek`    = [(csucs, p1, p2, szin, felirat), …]
+    `pontok`      = [(p, nev, {dx, dy, szin, r, ures}), …]
+    `feliratok`   = [(p, szoveg, {szin, meret, dolt, horgony}), …]
+    """
+    if azon is None:
+        azon = _azon("koordsik", xr, yr, sokszogek, gorbek, egyenesek, szakaszok, pontok)
+    L = _Sik(xr, yr, egyseg, 22, azon)
+    x0, x1 = xr
+    y0, y1 = yr
+    if lepes is None:
+        tart = max(x1 - x0, y1 - y0)
+        lepes = 1 if tart <= 16 else (2 if tart <= 32 else 5)
+    klip = f"kv-{azon}"
+    bal, fent = L.P((x0, y1))
+    jobb, lent = L.P((x1, y0))
+    L.ki.append(f'  <clipPath id="{klip}"><rect x="{bal:.1f}" y="{fent:.1f}" '
+                f'width="{jobb - bal:.1f}" height="{lent - fent:.1f}"/></clipPath>')
+    if racs:
+        for gx in range(math.ceil(x0), math.floor(x1) + 1):
+            L.ki.append(_von(L.P((gx, y0)), L.P((gx, y1)), szin="#e2e8f0", sz=1))
+        for gy in range(math.ceil(y0), math.floor(y1) + 1):
+            L.ki.append(_von(L.P((x0, gy)), L.P((x1, gy)), szin="#e2e8f0", sz=1))
+    # tengelyek (ha a 0 kivul esik, a keret szelen)
+    ty = min(max(0, y0), y1)
+    tx = min(max(0, x0), x1)
+    L.nyil((x0, ty), (x1 + 0.35, ty), SZURKE, sz=1.4)
+    L.nyil((tx, y0), (tx, y1 + 0.35), SZURKE, sz=1.4)
+    ex, ey = L.P((x1 + 0.35, ty)), L.P((tx, y1 + 0.35))
+    L.ki.append(_txt(ex, tengelynev[0], dx=-4, dy=-9, szin=SZURKE, meret=14))
+    L.ki.append(_txt(ey, tengelynev[1], dx=10, dy=6, szin=SZURKE, meret=14))
+    if szamok:
+        # a tengelyen allo, NEVVEL ellatott pontok kornyeken nincs osztasfelirat (utkozes)
+        tx_pont = [pt[0][0] for pt in pontok if len(pt) > 1 and pt[1] and abs(pt[0][1] - ty) < 1e-9]
+        ty_pont = [pt[0][1] for pt in pontok if len(pt) > 1 and pt[1] and abs(pt[0][0] - tx) < 1e-9]
+        k = math.ceil(x0 / lepes) * lepes
+        while k <= x1 + 1e-9:
+            if abs(k) > 1e-9 and all(abs(k - u) > 0.55 for u in tx_pont):
+                c = L.P((k, ty))
+                L.ki.append(f'  <line x1="{c[0]:.1f}" y1="{c[1] - 3:.1f}" x2="{c[0]:.1f}" '
+                            f'y2="{c[1] + 3:.1f}" stroke="{SZURKE}" stroke-width="1.2"/>')
+                L.ki.append(_txt(c, _esc(_szam(k)), dy=15, szin=SZURKE, meret=10.5, dolt=False))
+            k += lepes
+        k = math.ceil(y0 / lepes) * lepes
+        while k <= y1 + 1e-9:
+            if abs(k) > 1e-9 and all(abs(k - u) > 0.55 for u in ty_pont):
+                c = L.P((tx, k))
+                L.ki.append(f'  <line x1="{c[0] - 3:.1f}" y1="{c[1]:.1f}" x2="{c[0] + 3:.1f}" '
+                            f'y2="{c[1]:.1f}" stroke="{SZURKE}" stroke-width="1.2"/>')
+                L.ki.append(_txt(c, _esc(_szam(k)), dx=-6, dy=4, szin=SZURKE, meret=10.5,
+                                 horgony="end", dolt=False))
+            k += lepes
+    if origo and x0 <= 0 <= x1 and y0 <= 0 <= y1:
+        L.ki.append(_txt(L.P((0, 0)), "O", dx=-8, dy=15, szin=SZURKE, meret=11, dolt=False))
+    rajz = []                                         # a keretre vagott reteg
+    for s in sokszogek:
+        pts, szin = s[0], s[1]
+        o = s[2] if len(s) > 2 else {}
+        pp = " ".join(f"{L.P(p)[0]:.1f},{L.P(p)[1]:.1f}" for p in pts)
+        rajz.append(f'  <polygon points="{pp}" fill="{szin}" fill-opacity="{o.get("kitolt", 0.14)}" '
+                    f'stroke="{szin}" stroke-width="{o.get("sz", 1.8)}" stroke-linejoin="round"/>')
+    felirat_reteg = []
+    for g in gorbek:
+        tipus, par, szin, fel = g[:4]
+        o = g[4] if len(g) > 4 else {}
+        d = f' stroke-dasharray="{o["szaggat"]}"' if o.get("szaggat") else ""
+        for ag in _gorbe_pontok(tipus, par, xr, yr):
+            ut = "M" + " L".join(f"{L.P(p)[0]:.1f},{L.P(p)[1]:.1f}" for p in ag)
+            rajz.append(f'  <path d="{ut}" fill="none" stroke="{szin}" '
+                        f'stroke-width="{o.get("sz", 2.2)}"{d}/>')
+        if fel and "hely" in o:
+            c = L.P(o["hely"])
+            felirat_reteg.append(_txt(c, _esc(fel), dx=o.get("dx", 0), dy=o.get("dy", 0),
+                                      szin=szin, meret=o.get("meret", 13), dolt=o.get("dolt", True)))
+    for e in egyenesek:
+        (a, b, c), szin, fel = e[:3]
+        o = e[3] if len(e) > 3 else {}
+        vag = _klip_egyenes(a, b, c, xr, yr)
+        if not vag:
+            continue
+        p, q = vag
+        rajz.append(_von(L.P(p), L.P(q), szin=szin, sz=o.get("sz", 2), szaggat=o.get("szaggat")))
+        if fel:
+            t = o.get("hely", 0.85)
+            m = (p[0] + t * (q[0] - p[0]), p[1] + t * (q[1] - p[1]))
+            pm, pq = L.P(p), L.P(q)
+            vx, vy = pq[0] - pm[0], pq[1] - pm[1]
+            nn = math.hypot(vx, vy) or 1
+            nx, ny = vy / nn, -vx / nn
+            if ny > 0:                                   # a felirat inkabb folotte legyen
+                nx, ny = -nx, -ny
+            tav = o.get("tav", 12)
+            cm = L.P(m)
+            felirat_reteg.append(_txt((cm[0] + nx * tav + o.get("dx", 0),
+                                       cm[1] + ny * tav + 4 + o.get("dy", 0)), _esc(fel),
+                                      szin=szin, meret=o.get("meret", 13), dolt=o.get("dolt", True)))
+    L.ki.append(f'  <g clip-path="url(#{klip})">')
+    L.ki.extend(rajz)
+    L.ki.append('  </g>')
+    for s in szakaszok:
+        p, q, szin = s[:3]
+        o = s[3] if len(s) > 3 else {}
+        L.ki.append(_von(L.P(p), L.P(q), szin=szin, sz=o.get("sz", 2), szaggat=o.get("szaggat")))
+        if o.get("felirat"):
+            m = L.P(((p[0] + q[0]) / 2, (p[1] + q[1]) / 2))
+            felirat_reteg.append(_txt(m, _esc(o["felirat"]), dx=o.get("dx", 0), dy=o.get("dy", -6),
+                                      szin=szin, meret=o.get("meret", 13), dolt=o.get("dolt", True)))
+    for pont, (a, b, c), szin, fel in merolegesek:
+        k = (a * pont[0] + b * pont[1] + c) / (a * a + b * b)
+        talp = (pont[0] - k * a, pont[1] - k * b)
+        pm, pt = L.P(pont), L.P(talp)
+        L.ki.append(_von(pm, pt, szin=szin, sz=1.8, szaggat="5 3"))
+        irl = L.P((talp[0] - b, talp[1] + a))
+        _szogiv_px(L.ki, pt, (irl[0] - pt[0], irl[1] - pt[1]), (pm[0] - pt[0], pm[1] - pt[1]),
+                   16, szin)
+        if fel:
+            vx, vy = pm[0] - pt[0], pm[1] - pt[1]
+            nn = math.hypot(vx, vy) or 1
+            felirat_reteg.append(_txt(((pm[0] + pt[0]) / 2 + vy / nn * 12,
+                                       (pm[1] + pt[1]) / 2 - vx / nn * 12 + 4), _esc(fel),
+                                      szin=szin, meret=14))
+    for cs, p1, p2, szin, fel in szogivek:
+        c, a1, b1 = L.P(cs), L.P(p1), L.P(p2)
+        _szogiv_px(L.ki, c, (a1[0] - c[0], a1[1] - c[1]), (b1[0] - c[0], b1[1] - c[1]), 24, szin, fel)
+    for pt in pontok:
+        p, nev = pt[:2]
+        o = pt[2] if len(pt) > 2 else {}
+        c = L.P(p)
+        szin = o.get("szin", TINTA)
+        if o.get("ures"):
+            L.ki.append(f'  <circle cx="{c[0]:.1f}" cy="{c[1]:.1f}" r="{o.get("r", 3.4)}" '
+                        f'fill="#ffffff" stroke="{szin}" stroke-width="1.6"/>')
+        else:
+            L.ki.append(f'  <circle cx="{c[0]:.1f}" cy="{c[1]:.1f}" r="{o.get("r", 3.4)}" fill="{szin}"/>')
+        if nev:
+            felirat_reteg.append(_txt(c, _esc(nev), dx=o.get("dx", 9), dy=o.get("dy", -8), szin=szin,
+                                      meret=o.get("meret", 14), horgony=o.get("horgony", "middle"),
+                                      dolt=o.get("dolt", True)))
+    for f in feliratok:
+        p, szoveg = f[:2]
+        o = f[2] if len(f) > 2 else {}
+        felirat_reteg.append(_txt(L.P(p), _esc(szoveg), szin=o.get("szin", TINTA),
+                                  meret=o.get("meret", 13), horgony=o.get("horgony", "middle"),
+                                  dolt=o.get("dolt", False)))
+    L.ki.extend(felirat_reteg)
+    return L.kesz(leiras)
+
+
+def _szam(k):
+    """Osztasfelirat: egesz szam egeszkent, kulonben tizedesvesszovel; minusz jel U+2212."""
+    s = f"{k:.0f}" if abs(k - round(k)) < 1e-9 else f"{k:.1f}".replace(".", ",")
+    return s.replace("-", "−")
+
+
+def svg_kupszelet(tipus, par, xr=None, yr=None, egyseg=30, szin=KEK, felirat="",
+                  fokuszok=True, aszimptotak=True, vezeregyenes=True, pont=None,
+                  vezersugarak=True, egyenesek=(), pontok=(), feliratok=(), szakaszok=(),
+                  merolegesek=(), felirat_hely=None, leiras=None, azon=None, **kw):
+    """Egy kupszelet a nevezetes elemeivel, a `svg_koordsik` fole epitve.
+
+    tipus: "kor" {p, q, r} · "ellipszis" {a, b} (a > b) · "hiperbola" {a, b} ·
+           "parabola" {p, tengely}
+    `pont` = (x, y) — a gorben levo P pont; ellipszisnel/hiperbolanal a ket vezersugarral,
+             parabolanal a fokuszhoz es a vezeregyeneshez huzott szakasszal.
+    A tobbi parametert (egyenesek, pontok, …) valtozatlanul tovabbadja.
+    """
+    eg, pt, sz, fe = list(egyenesek), list(pontok), list(szakaszok), list(feliratok)
+    if tipus == "kor":
+        p, q, r = par["p"], par["q"], par["r"]
+        xr = xr or (math.floor(p - r - 1.5), math.ceil(p + r + 1.5))
+        yr = yr or (math.floor(q - r - 1.5), math.ceil(q + r + 1.5))
+        pt.append(((p, q), "C", {"dx": -10, "dy": 16}))
+        if pont:
+            sz.append(((p, q), pont, SZURKE, {"felirat": "r", "dy": -6, "sz": 1.6}))
+            pt.append((pont, "P", {"dx": 10, "dy": -8}))
+        alap = leiras or "Kör a középpontjával és a sugarával"
+    elif tipus == "ellipszis":
+        a, b = par["a"], par["b"]
+        e = math.sqrt(a * a - b * b)
+        xr = xr or (-math.ceil(a + 1), math.ceil(a + 1))
+        yr = yr or (-math.ceil(b + 1), math.ceil(b + 1))
+        if fokuszok:
+            pt += [((-e, 0), "F₁", {"dy": 17, "dx": 0, "szin": PIROS}),
+                   ((e, 0), "F₂", {"dy": 17, "dx": 0, "szin": PIROS})]
+        if pont and vezersugarak:
+            sz += [((-e, 0), pont, BOROSTYAN, {"sz": 1.6}), ((e, 0), pont, BOROSTYAN, {"sz": 1.6})]
+            pt.append((pont, "P", {"dx": 8, "dy": -9}))
+        alap = leiras or "Ellipszis a fókuszaival"
+    elif tipus == "hiperbola":
+        a, b = par["a"], par["b"]
+        e = math.sqrt(a * a + b * b)
+        xr = xr or (-math.ceil(e + 1.5), math.ceil(e + 1.5))
+        yr = yr or (-math.ceil(b + 2), math.ceil(b + 2))
+        if aszimptotak:
+            eg += [((b, -a, 0), SZURKE, "", {"szaggat": "6 4", "sz": 1.4}),
+                   ((b, a, 0), SZURKE, "", {"szaggat": "6 4", "sz": 1.4})]
+        if fokuszok:
+            pt += [((-e, 0), "F₁", {"dy": 17, "dx": 0, "szin": PIROS}),
+                   ((e, 0), "F₂", {"dy": 17, "dx": 0, "szin": PIROS})]
+        if pont and vezersugarak:
+            sz += [((-e, 0), pont, BOROSTYAN, {"sz": 1.6}), ((e, 0), pont, BOROSTYAN, {"sz": 1.6})]
+            pt.append((pont, "P", {"dx": 8, "dy": -9}))
+        alap = leiras or "Hiperbola a fókuszaival és az aszimptotáival"
+    elif tipus == "parabola":
+        p = par["p"]
+        ten = par.get("tengely", "x")
+        h = abs(p) * 2 + 2
+        if ten == "x":
+            xr = xr or ((-math.ceil(abs(p)) - 1, math.ceil(h + 1)) if p > 0
+                        else (-math.ceil(h + 1), math.ceil(abs(p)) + 1))
+            yr = yr or (-math.ceil(h), math.ceil(h))
+            F, vez = (p / 2, 0), (1, 0, p / 2)
+        else:
+            xr = xr or (-math.ceil(h), math.ceil(h))
+            yr = yr or ((-math.ceil(abs(p)) - 1, math.ceil(h + 1)) if p > 0
+                        else (-math.ceil(h + 1), math.ceil(abs(p)) + 1))
+            F, vez = (0, p / 2), (0, 1, p / 2)
+        if fokuszok:
+            pt.append((F, "F", {"dy": 17, "dx": 6, "szin": PIROS}))
+        if vezeregyenes:
+            eg.append((vez, PIROS, "v", {"szaggat": "6 4", "sz": 1.6, "hely": 0.92}))
+        if pont:
+            sz.append((F, pont, BOROSTYAN, {"sz": 1.6}))
+            if ten == "x":
+                talp = (-p / 2, pont[1])
+            else:
+                talp = (pont[0], -p / 2)
+            sz.append((talp, pont, BOROSTYAN, {"sz": 1.6}))
+            pt.append((pont, "P", {"dx": 9, "dy": -9}))
+        alap = leiras or "Parabola a fókuszával és a vezéregyenesével"
+    else:
+        raise ValueError(tipus)
+    go = {}
+    if felirat and felirat_hely:
+        go = {"hely": felirat_hely, "meret": 13}
+    return svg_koordsik(xr=xr, yr=yr, egyseg=egyseg,
+                        gorbek=[(tipus, par, szin, felirat, go)] + list(kw.pop("gorbek", [])),
+                        egyenesek=eg, pontok=pt, szakaszok=sz, feliratok=fe,
+                        merolegesek=merolegesek, leiras=alap, azon=azon, **kw)
+
+
+__all__ += ["svg_koordsik", "svg_kupszelet"]

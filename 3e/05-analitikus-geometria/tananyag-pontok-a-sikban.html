@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pontok a síkban — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Síkbeli analitikus geometria</a> ›
+  <span class="itt">Pontok a síkban — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Pontok a síkban — távolság, felezőpont, súlypont</h1>
+  <p class="alcim">A derékszögű koordináta-rendszer, két pont távolsága, a szakasz osztópontja és felezőpontja, a háromszög súlypontja.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Térkép Hálózata · 1/13</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> Feltörtük Maxi navigációs hálózatát — de ne várjatok térképet. A rendszer <b>számpárokat</b> mutat: minden drón helye két szám. Tér-eb bármelyik drón mellé oda tud ugrani, ha pontos koordinátát kap tőlünk. Egyetlen elszámolt előjel, és a sík rossz negyedében landol. Kezdjük a legelején: hogyan lesz helyből szám?</p></div>
+
+    <p>Az <b>analitikus geometria</b> a geometriai alakzatokat számokkal és egyenletekkel írja le: a pontból számpár, az egyenesből és a körből egyenlet lesz. A vektoroknál már <a href="../04-vektorok/tananyag-koordinatak-terben.html#def-koordinatak">koordinátákkal dolgoztál</a> — most visszatérünk a síkba, és pontokkal számolunk.</p>
+
+    <h2 id="s1">Pont és számpár</h2>
+
+    <div class="doboz definicio" id="def-koordinatasik">
+      <p class="cim"><span class="ikon">📗</span> A derékszögű koordináta-rendszer</p>
+      <p>Vegyünk fel a síkban két, egymásra <b>merőleges számegyenest</b> közös kezdőponttal és azonos egységgel. A közös pont az <span class="math inline">\(O\)</span> <b>origó</b>, a vízszintes számegyenes az <span class="math inline">\(x\)</span>-tengely (abszcisszatengely), a függőleges az <span class="math inline">\(y\)</span>-tengely (ordinátatengely).</p><p>A sík egy <span class="math inline">\(P\)</span> pontjából merőlegest bocsátunk mindkét tengelyre. A talppontokhoz tartozó két szám a pont <b>koordinátái</b>: <span class="math inline">\(P(x;y)\)</span>, ahol <span class="math inline">\(x\)</span> az <b>első</b> koordináta (abszcissza), <span class="math inline">\(y\)</span> a <b>második</b> (ordináta).</p><p>A sík minden pontjához <b>pontosan egy</b> rendezett számpár tartozik, és minden rendezett számpárhoz <b>pontosan egy</b> pont. Ezért mondhatjuk röviden, hogy „a <span class="math inline">\((3;2)\)</span> pont”.</p><p>A tengelyek négy <b>síknegyedre</b> osztják a síkot: I. (<span class="math inline">\(x>0\)</span>, <span class="math inline">\(y>0\)</span>), II. (<span class="math inline">\(x<0\)</span>, <span class="math inline">\(y>0\)</span>), III. (<span class="math inline">\(x<0\)</span>, <span class="math inline">\(y<0\)</span>), IV. (<span class="math inline">\(x>0\)</span>, <span class="math inline">\(y<0\)</span>). Az <span class="math inline">\(x\)</span>-tengely pontjai <span class="math inline">\((x;0)\)</span>, az <span class="math inline">\(y\)</span>-tengely pontjai <span class="math inline">\((0;y)\)</span> alakúak; ezek egyik síknegyedhez sem tartoznak.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 364 332" width="364" height="332" role="img" aria-label="Koordináta-rendszer a négy síknegyeddel és öt ponttal: A(3;2), B(−2;4), C(−3;−1), D(4;−2) és az y-tengelyen E(0;−3); az A pontból a tengelyekre húzott merőlegesek">
+      <defs><marker id="nyv-d16b0-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+      <clipPath id="kv-d16b0"><rect x="22.0" y="22.0" width="320.0" height="288.0"/></clipPath>
+      <line x1="22.0" y1="310.0" x2="22.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="54.0" y1="310.0" x2="54.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="86.0" y1="310.0" x2="86.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="118.0" y1="310.0" x2="118.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="150.0" y1="310.0" x2="150.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="182.0" y1="310.0" x2="182.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="214.0" y1="310.0" x2="214.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="246.0" y1="310.0" x2="246.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="278.0" y1="310.0" x2="278.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="310.0" y1="310.0" x2="310.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="342.0" y1="310.0" x2="342.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="310.0" x2="342.0" y2="310.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="278.0" x2="342.0" y2="278.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="246.0" x2="342.0" y2="246.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="214.0" x2="342.0" y2="214.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="182.0" x2="342.0" y2="182.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="150.0" x2="342.0" y2="150.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="118.0" x2="342.0" y2="118.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="86.0" x2="342.0" y2="86.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="54.0" x2="342.0" y2="54.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="22.0" x2="342.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="182.0" x2="353.2" y2="182.0" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-d16b0-0)"/>
+      <line x1="182.0" y1="310.0" x2="182.0" y2="10.8" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-d16b0-0)"/>
+      <text x="349.2" y="173.0" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">x</text>
+      <text x="192.0" y="16.8" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">y</text>
+      <line x1="22.0" y1="179.0" x2="22.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="22.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−5</text>
+      <line x1="54.0" y1="179.0" x2="54.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="54.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−4</text>
+      <line x1="86.0" y1="179.0" x2="86.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="86.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−3</text>
+      <line x1="118.0" y1="179.0" x2="118.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="118.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−2</text>
+      <line x1="150.0" y1="179.0" x2="150.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="150.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−1</text>
+      <line x1="214.0" y1="179.0" x2="214.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="214.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">1</text>
+      <line x1="246.0" y1="179.0" x2="246.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="246.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">2</text>
+      <line x1="278.0" y1="179.0" x2="278.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="278.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">3</text>
+      <line x1="310.0" y1="179.0" x2="310.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="310.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">4</text>
+      <line x1="342.0" y1="179.0" x2="342.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="342.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">5</text>
+      <line x1="179.0" y1="310.0" x2="185.0" y2="310.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="176.0" y="314.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−4</text>
+      <line x1="179.0" y1="246.0" x2="185.0" y2="246.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="176.0" y="250.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−2</text>
+      <line x1="179.0" y1="214.0" x2="185.0" y2="214.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="176.0" y="218.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−1</text>
+      <line x1="179.0" y1="150.0" x2="185.0" y2="150.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="176.0" y="154.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">1</text>
+      <line x1="179.0" y1="118.0" x2="185.0" y2="118.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="176.0" y="122.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">2</text>
+      <line x1="179.0" y1="86.0" x2="185.0" y2="86.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="176.0" y="90.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">3</text>
+      <line x1="179.0" y1="54.0" x2="185.0" y2="54.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="176.0" y="58.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">4</text>
+      <line x1="179.0" y1="22.0" x2="185.0" y2="22.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="176.0" y="26.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">5</text>
+      <text x="174.0" y="197.0" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">O</text>
+      <g clip-path="url(#kv-d16b0)">
+      </g>
+      <line x1="278.0" y1="118.0" x2="278.0" y2="182.0" stroke="#475569" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <line x1="278.0" y1="118.0" x2="182.0" y2="118.0" stroke="#475569" stroke-width="1.4" stroke-dasharray="4 3"/>
+      <circle cx="278.0" cy="118.0" r="3.4" fill="#0f172a"/>
+      <circle cx="118.0" cy="54.0" r="3.4" fill="#0f172a"/>
+      <circle cx="86.0" cy="214.0" r="3.4" fill="#0f172a"/>
+      <circle cx="310.0" cy="246.0" r="3.4" fill="#0f172a"/>
+      <circle cx="182.0" cy="278.0" r="3.4" fill="#0f172a"/>
+      <text x="287.0" y="110.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">A</text>
+      <text x="127.0" y="46.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">B</text>
+      <text x="76.0" y="206.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">C</text>
+      <text x="319.0" y="238.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">D</text>
+      <text x="193.0" y="283.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">E</text>
+      <text x="319.6" y="44.4" font-size="15" fill="#475569" text-anchor="middle" font-weight="600">I.</text>
+      <text x="44.4" y="44.4" font-size="15" fill="#475569" text-anchor="middle" font-weight="600">II.</text>
+      <text x="44.4" y="290.8" font-size="15" fill="#475569" text-anchor="middle" font-weight="600">III.</text>
+      <text x="319.6" y="290.8" font-size="15" fill="#475569" text-anchor="middle" font-weight="600">IV.</text>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(A(3;2)\)</span> az I., a <span class="math inline">\(B(-2;4)\)</span> a II., a <span class="math inline">\(C(-3;-1)\)</span> a III., a <span class="math inline">\(D(4;-2)\)</span> a IV. síknegyedben van; az <span class="math inline">\(E(0;-3)\)</span> az <span class="math inline">\(y\)</span>-tengelyen. A szaggatott vonalak az <span class="math inline">\(A\)</span> koordinátáit mutatják.</p>
+
+    <p><b>Tükörképek.</b> A <span class="math inline">\(P(x;y)\)</span> pont tükörképe az <span class="math inline">\(x\)</span>-tengelyre <span class="math inline">\((x;-y)\)</span>, az <span class="math inline">\(y\)</span>-tengelyre <span class="math inline">\((-x;y)\)</span>, az origóra <span class="math inline">\((-x;-y)\)</span>. Például a <span class="math inline">\(P(3;-2)\)</span> tükörképe az <span class="math inline">\(x\)</span>-tengelyre <span class="math inline">\((3;2)\)</span>, az <span class="math inline">\(y\)</span>-tengelyre <span class="math inline">\((-3;-2)\)</span>, az origóra <span class="math inline">\((-3;2)\)</span>.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>A sakktábla „e4” mezője, a mozijegy „7. sor 12. szék” adata és a telefonod helymeghatározása (földrajzi szélesség és hosszúság) mind ugyanazt teszi: <b>két adattal</b> egyértelműen megad egy helyet. A koordináta-rendszer ennek a matematikai változata.</p>
+    </div>
+
+    <h2 id="s2">Két pont távolsága</h2>
+
+    <p>Legyen <span class="math inline">\(A(x_1;y_1)\)</span> és <span class="math inline">\(B(x_2;y_2)\)</span> két pont. Vegyük fel a <span class="math inline">\(C(x_2;y_1)\)</span> segédpontot: az <span class="math inline">\(AC\)</span> szakasz vízszintes, hossza <span class="math inline">\(|x_2-x_1|\)</span>, a <span class="math inline">\(CB\)</span> szakasz függőleges, hossza <span class="math inline">\(|y_2-y_1|\)</span>. Az <span class="math inline">\(ACB\)</span> háromszög derékszögű, az <span class="math inline">\(AB\)</span> az átfogója — a Pitagorasz-tételből megkapjuk a távolságot.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 364 300" width="364" height="300" role="img" aria-label="Az A(−2;5) és B(6;−1) pont távolsága egy derékszögű háromszög átfogója; a befogók 8 és 6 egység">
+      <defs><marker id="nyv-ce3b3-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+      <clipPath id="kv-ce3b3"><rect x="22.0" y="22.0" width="320.0" height="256.0"/></clipPath>
+      <line x1="22.0" y1="278.0" x2="22.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="54.0" y1="278.0" x2="54.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="86.0" y1="278.0" x2="86.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="118.0" y1="278.0" x2="118.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="150.0" y1="278.0" x2="150.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="182.0" y1="278.0" x2="182.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="214.0" y1="278.0" x2="214.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="246.0" y1="278.0" x2="246.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="278.0" y1="278.0" x2="278.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="310.0" y1="278.0" x2="310.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="342.0" y1="278.0" x2="342.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="278.0" x2="342.0" y2="278.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="246.0" x2="342.0" y2="246.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="214.0" x2="342.0" y2="214.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="182.0" x2="342.0" y2="182.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="150.0" x2="342.0" y2="150.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="118.0" x2="342.0" y2="118.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="86.0" x2="342.0" y2="86.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="54.0" x2="342.0" y2="54.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="22.0" x2="342.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="214.0" x2="353.2" y2="214.0" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-ce3b3-0)"/>
+      <line x1="118.0" y1="278.0" x2="118.0" y2="10.8" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-ce3b3-0)"/>
+      <text x="349.2" y="205.0" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">x</text>
+      <text x="128.0" y="16.8" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">y</text>
+      <line x1="22.0" y1="211.0" x2="22.0" y2="217.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="22.0" y="229.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−3</text>
+      <line x1="54.0" y1="211.0" x2="54.0" y2="217.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="54.0" y="229.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−2</text>
+      <line x1="86.0" y1="211.0" x2="86.0" y2="217.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="86.0" y="229.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−1</text>
+      <line x1="150.0" y1="211.0" x2="150.0" y2="217.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="150.0" y="229.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">1</text>
+      <line x1="182.0" y1="211.0" x2="182.0" y2="217.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="182.0" y="229.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">2</text>
+      <line x1="214.0" y1="211.0" x2="214.0" y2="217.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="214.0" y="229.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">3</text>
+      <line x1="246.0" y1="211.0" x2="246.0" y2="217.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="246.0" y="229.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">4</text>
+      <line x1="278.0" y1="211.0" x2="278.0" y2="217.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="278.0" y="229.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">5</text>
+      <line x1="310.0" y1="211.0" x2="310.0" y2="217.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="310.0" y="229.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">6</text>
+      <line x1="342.0" y1="211.0" x2="342.0" y2="217.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="342.0" y="229.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">7</text>
+      <line x1="115.0" y1="278.0" x2="121.0" y2="278.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="112.0" y="282.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−2</text>
+      <line x1="115.0" y1="246.0" x2="121.0" y2="246.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="112.0" y="250.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−1</text>
+      <line x1="115.0" y1="182.0" x2="121.0" y2="182.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="112.0" y="186.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">1</text>
+      <line x1="115.0" y1="150.0" x2="121.0" y2="150.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="112.0" y="154.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">2</text>
+      <line x1="115.0" y1="118.0" x2="121.0" y2="118.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="112.0" y="122.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">3</text>
+      <line x1="115.0" y1="86.0" x2="121.0" y2="86.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="112.0" y="90.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">4</text>
+      <line x1="115.0" y1="54.0" x2="121.0" y2="54.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="112.0" y="58.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">5</text>
+      <line x1="115.0" y1="22.0" x2="121.0" y2="22.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="112.0" y="26.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">6</text>
+      <text x="110.0" y="229.0" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">O</text>
+      <g clip-path="url(#kv-ce3b3)">
+      </g>
+      <line x1="54.0" y1="54.0" x2="310.0" y2="246.0" stroke="#3b82f6" stroke-width="2.6"/>
+      <line x1="54.0" y1="54.0" x2="310.0" y2="54.0" stroke="#475569" stroke-width="2" stroke-dasharray="5 3"/>
+      <line x1="310.0" y1="54.0" x2="310.0" y2="246.0" stroke="#475569" stroke-width="2" stroke-dasharray="5 3"/>
+      <circle cx="54.0" cy="54.0" r="3.4" fill="#0f172a"/>
+      <circle cx="310.0" cy="246.0" r="3.4" fill="#0f172a"/>
+      <circle cx="310.0" cy="54.0" r="3.4" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+      <text x="172.0" y="146.0" font-size="13" fill="#3b82f6" text-anchor="middle" font-style="italic" font-weight="600">d</text>
+      <text x="182.0" y="46.0" font-size="12" fill="#475569" text-anchor="middle" font-weight="600">|x₂ − x₁| = 8</text>
+      <text x="264.0" y="180.0" font-size="12" fill="#475569" text-anchor="middle" font-weight="600">|y₂ − y₁| = 6</text>
+      <text x="50.0" y="45.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">A</text>
+      <text x="322.0" y="250.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">B</text>
+      <text x="321.0" y="48.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">C</text>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(A(-2;5)\)</span> és a <span class="math inline">\(B(6;-1)\)</span> távolsága egy <span class="math inline">\(8\)</span> és <span class="math inline">\(6\)</span> befogójú derékszögű háromszög átfogója: <span class="math inline">\(d=\sqrt{8^2+6^2}=10\)</span>.</p>
+
+    <div class="doboz tetel" id="tetel-tavolsag">
+      <p class="cim"><span class="ikon">📘</span> Két pont távolsága</p>
+      <p>Az <span class="math inline">\(A(x_1;y_1)\)</span> és a <span class="math inline">\(B(x_2;y_2)\)</span> pont távolsága:</p><span class="math display">\[|AB|=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}.\]</span><p>A kivonás sorrendje mindegy, mert a különbségeket négyzetre emeljük. A <span class="math inline">\(P(x;y)\)</span> pont távolsága az origótól <span class="math inline">\(\sqrt{x^2+y^2}\)</span>.</p><p>Vektorokkal nézve ez az <span class="math inline">\(\overrightarrow{AB}=(x_2-x_1;\,y_2-y_1)\)</span> vektor <a href="../04-vektorok/tananyag-koordinatak-terben.html#tetel-hossz">intenzitása</a> (hossza).</p>
+    </div>
+
+    <p><b>Számolás.</b> Az ábra két pontjára: <span class="math inline">\(|AB|=\sqrt{(6-(-2))^2+(-1-5)^2}=\sqrt{8^2+(-6)^2}=\sqrt{64+36}=10\)</span>. A <span class="math inline">\(P(-5;12)\)</span> pont távolsága az origótól <span class="math inline">\(\sqrt{25+144}=13\)</span>.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p>Maxi is kiszámolta az <span class="math inline">\(A(-2;5)\)</span> és a <span class="math inline">\(B(6;-1)\)</span> távolságát, csak kicsit „rövidebbre” jött ki:</p><span class="math display">\[|AB|=\sqrt{(6-2)^2+(-1-5)^2}=\sqrt{16+36}=\sqrt{52}\approx7{,}21.\]</span><p>A hiba az első zárójelben van: <span class="math inline">\(6-(-2)\)</span> nem <span class="math inline">\(4\)</span>, hanem <span class="math inline">\(6+2=8\)</span>. <b>Negatív koordináta kivonásakor</b> a zárójel és az előjel a legfontosabb — írd ki mindig, mielőtt fejben számolsz.</p><p>A másik gyakori hiba, hogy a végén elmarad a gyökvonás. A <span class="math inline">\(100\)</span> nem a távolság, hanem a <b>négyzete</b>; a távolság <span class="math inline">\(\sqrt{100}=10\)</span>.</p>
+    </div>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ √((4 − 1)² + (5 − 1)²) = √(9 + 16) = 5 — légvonalban." data-nem="✘ A 7 a „lépcsős” út: 3 jobbra, aztán 4 fel. Tér-eb légvonalban ugrik, ez egy derékszögű háromszög átfogója: √(3² + 4²) = 5.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Tér-eb az <span class="math inline">\(A(1;1)\)</span> pontból a <span class="math inline">\(B(4;5)\)</span> pontba ugrik. Milyen hosszú az ugrás?</p>
+      <div class="opciok"><button><span class="math inline">\(25\)</span></button><button><span class="math inline">\(\sqrt7\)</span></button><button><span class="math inline">\(5\)</span></button><button><span class="math inline">\(7\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Felezőpont és osztópont</h2>
+
+    <div class="doboz tetel" id="tetel-osztopont">
+      <p class="cim"><span class="ikon">📘</span> Szakasz osztópontja és felezőpontja</p>
+      <p>Ha a <span class="math inline">\(C\)</span> pont az <span class="math inline">\(AB\)</span> szakaszt <span class="math inline">\(AC:CB=m:n\)</span> arányban osztja (<span class="math inline">\(m,n\gt0\)</span>), akkor</p><span class="math display">\[C\left(\frac{n\,x_1+m\,x_2}{m+n};\ \frac{n\,y_1+m\,y_2}{m+n}\right).\]</span><p>A súlyozás <b>keresztben</b> történik: az <span class="math inline">\(A\)</span> koordinátái az <span class="math inline">\(n\)</span>-nel, a <span class="math inline">\(B\)</span> koordinátái az <span class="math inline">\(m\)</span>-mel szorzódnak. Ha <span class="math inline">\(m\lt n\)</span>, a <span class="math inline">\(C\)</span> az <span class="math inline">\(A\)</span>-hoz van közelebb; ha <span class="math inline">\(m\gt n\)</span>, a <span class="math inline">\(B\)</span>-hez.</p><p>A <b>felezőpont</b> az <span class="math inline">\(m=n\)</span> eset — a koordináták átlaga:</p><span class="math display">\[F\left(\frac{x_1+x_2}{2};\ \frac{y_1+y_2}{2}\right).\]</span>
+    </div>
+
+    <p><i>Honnan jön?</i> Vektorokkal: <span class="math inline">\(\overrightarrow{AC}=\frac{m}{m+n}\,\overrightarrow{AB}\)</span>, vagyis a <span class="math inline">\(C\)</span> az <span class="math inline">\(A\)</span>-ból az <span class="math inline">\(AB\)</span> vektor <span class="math inline">\(\frac{m}{m+n}\)</span>-ed részével tolt pont — ha a koordinátákat kiírod, pontosan a fenti képlet jön ki.</p><p><b>Példa.</b> <span class="math inline">\(A(-2;1)\)</span>, <span class="math inline">\(B(7;4)\)</span>, és <span class="math inline">\(AC:CB=1:2\)</span>. Ekkor <span class="math inline">\(C\left(\frac{2\cdot(-2)+1\cdot7}{3};\ \frac{2\cdot1+1\cdot4}{3}\right)=C(1;2)\)</span>. Az <span class="math inline">\(AB\)</span> felezőpontja <span class="math inline">\(F\left(\frac{-2+7}{2};\ \frac{1+4}{2}\right)=F(2{,}5;2{,}5)\)</span>.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 396 236" width="396" height="236" role="img" aria-label="Az AB szakasz A(−2;1) és B(7;4) végpontokkal; a C(1;2) pont harmadolja (AC:CB = 1:2), az F(2,5;2,5) a felezőpontja">
+      <defs><marker id="nyv-940a0-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+      <clipPath id="kv-940a0"><rect x="22.0" y="22.0" width="352.0" height="192.0"/></clipPath>
+      <line x1="22.0" y1="214.0" x2="22.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="54.0" y1="214.0" x2="54.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="86.0" y1="214.0" x2="86.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="118.0" y1="214.0" x2="118.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="150.0" y1="214.0" x2="150.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="182.0" y1="214.0" x2="182.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="214.0" y1="214.0" x2="214.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="246.0" y1="214.0" x2="246.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="278.0" y1="214.0" x2="278.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="310.0" y1="214.0" x2="310.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="342.0" y1="214.0" x2="342.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="374.0" y1="214.0" x2="374.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="214.0" x2="374.0" y2="214.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="182.0" x2="374.0" y2="182.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="150.0" x2="374.0" y2="150.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="118.0" x2="374.0" y2="118.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="86.0" x2="374.0" y2="86.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="54.0" x2="374.0" y2="54.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="22.0" x2="374.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="182.0" x2="385.2" y2="182.0" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-940a0-0)"/>
+      <line x1="118.0" y1="214.0" x2="118.0" y2="10.8" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-940a0-0)"/>
+      <text x="381.2" y="173.0" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">x</text>
+      <text x="128.0" y="16.8" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">y</text>
+      <line x1="22.0" y1="179.0" x2="22.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="22.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−3</text>
+      <line x1="54.0" y1="179.0" x2="54.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="54.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−2</text>
+      <line x1="86.0" y1="179.0" x2="86.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="86.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−1</text>
+      <line x1="150.0" y1="179.0" x2="150.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="150.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">1</text>
+      <line x1="182.0" y1="179.0" x2="182.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="182.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">2</text>
+      <line x1="214.0" y1="179.0" x2="214.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="214.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">3</text>
+      <line x1="246.0" y1="179.0" x2="246.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="246.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">4</text>
+      <line x1="278.0" y1="179.0" x2="278.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="278.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">5</text>
+      <line x1="310.0" y1="179.0" x2="310.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="310.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">6</text>
+      <line x1="342.0" y1="179.0" x2="342.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="342.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">7</text>
+      <line x1="374.0" y1="179.0" x2="374.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="374.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">8</text>
+      <line x1="115.0" y1="214.0" x2="121.0" y2="214.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="112.0" y="218.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−1</text>
+      <line x1="115.0" y1="150.0" x2="121.0" y2="150.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="112.0" y="154.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">1</text>
+      <line x1="115.0" y1="118.0" x2="121.0" y2="118.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="112.0" y="122.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">2</text>
+      <line x1="115.0" y1="86.0" x2="121.0" y2="86.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="112.0" y="90.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">3</text>
+      <line x1="115.0" y1="54.0" x2="121.0" y2="54.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="112.0" y="58.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">4</text>
+      <line x1="115.0" y1="22.0" x2="121.0" y2="22.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="112.0" y="26.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">5</text>
+      <text x="110.0" y="197.0" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">O</text>
+      <g clip-path="url(#kv-940a0)">
+      </g>
+      <line x1="54.0" y1="150.0" x2="342.0" y2="54.0" stroke="#3b82f6" stroke-width="2.4"/>
+      <circle cx="54.0" cy="150.0" r="3.4" fill="#0f172a"/>
+      <circle cx="342.0" cy="54.0" r="3.4" fill="#0f172a"/>
+      <circle cx="150.0" cy="118.0" r="3.4" fill="#ef4444"/>
+      <circle cx="198.0" cy="102.0" r="3.4" fill="#047857"/>
+      <text x="50.0" y="140.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">A</text>
+      <text x="346.0" y="44.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">B</text>
+      <text x="148.0" y="107.0" font-size="14" fill="#ef4444" text-anchor="middle" font-style="italic" font-weight="600">C</text>
+      <text x="202.0" y="91.0" font-size="14" fill="#047857" text-anchor="middle" font-style="italic" font-weight="600">F</text>
+    </svg>
+    </div>
+    <p class="cap">A <span class="math inline">\(C(1;2)\)</span> az <span class="math inline">\(A\)</span>-hoz van közelebb: az <span class="math inline">\(AC\)</span> a szakasz harmada. Az <span class="math inline">\(F(2{,}5;2{,}5)\)</span> a felezőpont.</p>
+
+    <div class="doboz pelda" id="pelda-paralelogramma">
+      <p class="cim"><span class="ikon">✏️</span> A paralelogramma negyedik csúcsa</p>
+      <p>Az <span class="math inline">\(ABCD\)</span> paralelogramma három egymást követő csúcsa <span class="math inline">\(A(-1;-2)\)</span>, <span class="math inline">\(B(4;0)\)</span> és <span class="math inline">\(C(6;4)\)</span>. Határozd meg a <span class="math inline">\(D\)</span> csúcs koordinátáit!</p><p><b>Ötlet.</b> A paralelogramma átlói <b>felezik egymást</b>, tehát az <span class="math inline">\(AC\)</span> és a <span class="math inline">\(BD\)</span> felezőpontja ugyanaz az <span class="math inline">\(M\)</span> pont.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>Az <span class="math inline">\(AC\)</span> felezőpontja <span class="math inline">\(M\left(\frac{-1+6}{2};\ \frac{-2+4}{2}\right)=M(2{,}5;1)\)</span>. Ez a <span class="math inline">\(BD\)</span> felezőpontja is: <span class="math inline">\(\frac{4+x_D}{2}=2{,}5\)</span> és <span class="math inline">\(\frac{0+y_D}{2}=1\)</span>, ahonnan <span class="math inline">\(x_D=1\)</span> és <span class="math inline">\(y_D=2\)</span>.</p><p><i>Ellenőrzés: a <span class="math inline">\(BD\)</span> felezőpontja <span class="math inline">\(\left(\frac{4+1}{2};\frac{0+2}{2}\right)=(2{,}5;1)\)</span> ✔.</i></p><div class="svgcard">
+    <svg viewBox="0 0 332 300" width="332" height="300" role="img" aria-label="Az ABCD paralelogramma; az AC és a BD átló közös felezőpontja M(2,5;1)">
+      <defs><marker id="nyv-c3ad1-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+      <clipPath id="kv-c3ad1"><rect x="22.0" y="22.0" width="288.0" height="256.0"/></clipPath>
+      <line x1="22.0" y1="278.0" x2="22.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="54.0" y1="278.0" x2="54.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="86.0" y1="278.0" x2="86.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="118.0" y1="278.0" x2="118.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="150.0" y1="278.0" x2="150.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="182.0" y1="278.0" x2="182.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="214.0" y1="278.0" x2="214.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="246.0" y1="278.0" x2="246.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="278.0" y1="278.0" x2="278.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="310.0" y1="278.0" x2="310.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="278.0" x2="310.0" y2="278.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="246.0" x2="310.0" y2="246.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="214.0" x2="310.0" y2="214.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="182.0" x2="310.0" y2="182.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="150.0" x2="310.0" y2="150.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="118.0" x2="310.0" y2="118.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="86.0" x2="310.0" y2="86.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="54.0" x2="310.0" y2="54.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="22.0" x2="310.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="182.0" x2="321.2" y2="182.0" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-c3ad1-0)"/>
+      <line x1="86.0" y1="278.0" x2="86.0" y2="10.8" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-c3ad1-0)"/>
+      <text x="317.2" y="173.0" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">x</text>
+      <text x="96.0" y="16.8" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">y</text>
+      <line x1="22.0" y1="179.0" x2="22.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="22.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−2</text>
+      <line x1="54.0" y1="179.0" x2="54.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="54.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−1</text>
+      <line x1="118.0" y1="179.0" x2="118.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="118.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">1</text>
+      <line x1="150.0" y1="179.0" x2="150.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="150.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">2</text>
+      <line x1="182.0" y1="179.0" x2="182.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="182.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">3</text>
+      <line x1="246.0" y1="179.0" x2="246.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="246.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">5</text>
+      <line x1="278.0" y1="179.0" x2="278.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="278.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">6</text>
+      <line x1="310.0" y1="179.0" x2="310.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="310.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">7</text>
+      <line x1="83.0" y1="278.0" x2="89.0" y2="278.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="80.0" y="282.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−3</text>
+      <line x1="83.0" y1="246.0" x2="89.0" y2="246.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="80.0" y="250.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−2</text>
+      <line x1="83.0" y1="214.0" x2="89.0" y2="214.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="80.0" y="218.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−1</text>
+      <line x1="83.0" y1="150.0" x2="89.0" y2="150.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="80.0" y="154.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">1</text>
+      <line x1="83.0" y1="118.0" x2="89.0" y2="118.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="80.0" y="122.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">2</text>
+      <line x1="83.0" y1="86.0" x2="89.0" y2="86.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="80.0" y="90.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">3</text>
+      <line x1="83.0" y1="54.0" x2="89.0" y2="54.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="80.0" y="58.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">4</text>
+      <line x1="83.0" y1="22.0" x2="89.0" y2="22.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="80.0" y="26.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">5</text>
+      <text x="78.0" y="197.0" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">O</text>
+      <g clip-path="url(#kv-c3ad1)">
+      <polygon points="54.0,246.0 214.0,182.0 278.0,54.0 118.0,118.0" fill="#3b82f6" fill-opacity="0.14" stroke="#3b82f6" stroke-width="1.8" stroke-linejoin="round"/>
+      </g>
+      <line x1="54.0" y1="246.0" x2="278.0" y2="54.0" stroke="#475569" stroke-width="1.4" stroke-dasharray="5 3"/>
+      <line x1="214.0" y1="182.0" x2="118.0" y2="118.0" stroke="#475569" stroke-width="1.4" stroke-dasharray="5 3"/>
+      <circle cx="54.0" cy="246.0" r="3.4" fill="#0f172a"/>
+      <circle cx="214.0" cy="182.0" r="3.4" fill="#0f172a"/>
+      <circle cx="278.0" cy="54.0" r="3.4" fill="#0f172a"/>
+      <circle cx="118.0" cy="118.0" r="3.4" fill="#0f172a"/>
+      <circle cx="166.0" cy="150.0" r="3.4" fill="#047857"/>
+      <text x="44.0" y="250.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">A</text>
+      <text x="224.0" y="196.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">B</text>
+      <text x="288.0" y="46.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">C</text>
+      <text x="108.0" y="112.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">D</text>
+      <text x="168.0" y="140.0" font-size="14" fill="#047857" text-anchor="middle" font-style="italic" font-weight="600">M</text>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(ABCD\)</span> paralelogramma és az átlók közös felezőpontja, <span class="math inline">\(M\)</span>.</p><p class="vegeredmeny"><span class="math inline">\(D(1;2)\)</span></p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Az AC a szakasz negyede: 8 : 4 = 2, tehát C(2; 0) — az A-hoz van közelebb." data-nem="✘ Az 1 : 3 arányban az AC a rövidebb rész: a szakasz negyede, 2 egység. A C(6; 0) a felcserélt súlyokból jön — az 3 : 1 arány lenne.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Az <span class="math inline">\(A(0;0)\)</span> és <span class="math inline">\(B(8;0)\)</span> végpontú szakaszon a <span class="math inline">\(C\)</span> pontra <span class="math inline">\(AC:CB=1:3\)</span>. Hol van a <span class="math inline">\(C\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(C(4;0)\)</span></button><button><span class="math inline">\(C\left(\tfrac83;0\right)\)</span></button><button><span class="math inline">\(C(2;0)\)</span></button><button><span class="math inline">\(C(6;0)\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">A háromszög súlypontja</h2>
+
+    <p>A háromszög <b>súlyvonala</b> egy csúcsot a szemközti oldal felezőpontjával köti össze. A három súlyvonal egy pontban, az <span class="math inline">\(S\)</span> <b>súlypontban</b> metszi egymást, és ez a pont mindegyik súlyvonalat <span class="math inline">\(2:1\)</span> arányban osztja — a csúcs felől a hosszabb rész.</p>
+
+    <div class="doboz tetel" id="tetel-sulypont">
+      <p class="cim"><span class="ikon">📘</span> A súlypont koordinátái</p>
+      <p>Az <span class="math inline">\(A(x_1;y_1)\)</span>, <span class="math inline">\(B(x_2;y_2)\)</span>, <span class="math inline">\(C(x_3;y_3)\)</span> csúcsú háromszög súlypontja</p><span class="math display">\[S\left(\frac{x_1+x_2+x_3}{3};\ \frac{y_1+y_2+y_3}{3}\right).\]</span><p>A súlypont tehát a három csúcs koordinátáinak <b>átlaga</b>.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-dronraj">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — a drónraj középpontja</p>
+      <p>Maxi három drónja egy háromszöget tart: <span class="math inline">\(A(-1;-2)\)</span>, <span class="math inline">\(B(7;-2)\)</span> és <span class="math inline">\(C(3;4)\)</span>. Tér-eb a raj <b>súlypontjába</b> akar ugrani, mert onnan mindhárom drón jelét egyszerre zavarhatja.</p><ol type="a"><li>Számítsd ki az <span class="math inline">\(AB\)</span> és az <span class="math inline">\(AC\)</span> oldal hosszát (pontos alakban és két tizedesre kerekítve)!</li><li>Határozd meg az <span class="math inline">\(AB\)</span> oldal <span class="math inline">\(F\)</span> felezőpontját!</li><li>Határozd meg az <span class="math inline">\(S\)</span> súlypontot!</li><li>Milyen hosszú a <span class="math inline">\(C\)</span> csúcsból induló súlyvonal?</li><li>Ellenőrizd, hogy az <span class="math inline">\(S\)</span> a <span class="math inline">\(CF\)</span> súlyvonalat <span class="math inline">\(2:1\)</span> arányban osztja!</li></ol>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>a)</b> <span class="math inline">\(|AB|=\sqrt{(7-(-1))^2+(-2-(-2))^2}=\sqrt{64}=8\)</span>; <span class="math inline">\(|AC|=\sqrt{(3-(-1))^2+(4-(-2))^2}=\sqrt{16+36}=\sqrt{52}=2\sqrt{13}\approx7{,}21\)</span>.</p><p><b>b)</b> <span class="math inline">\(F\left(\frac{-1+7}{2};\ \frac{-2+(-2)}{2}\right)=F(3;-2)\)</span>.</p><p><b>c)</b> <span class="math inline">\(S\left(\frac{-1+7+3}{3};\ \frac{-2+(-2)+4}{3}\right)=S(3;0)\)</span>.</p><p><b>d)</b> <span class="math inline">\(|CF|=\sqrt{(3-3)^2+(-2-4)^2}=6\)</span>.</p><p><b>e)</b> <span class="math inline">\(|CS|=\sqrt{0^2+(0-4)^2}=4\)</span> és <span class="math inline">\(|SF|=\sqrt{0^2+(-2-0)^2}=2\)</span>, tehát <span class="math inline">\(|CS|:|SF|=4:2=2:1\)</span> ✔.</p><div class="svgcard">
+    <svg viewBox="0 0 364 300" width="364" height="300" role="img" aria-label="A drónraj háromszöge A(−1;−2), B(7;−2), C(3;4) csúcsokkal; a C-ből induló súlyvonal az AB felezőpontjába, F(3;−2)-be fut, és az S(3;0) súlypont harmadolja">
+      <defs><marker id="nyv-ea709-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+      <clipPath id="kv-ea709"><rect x="22.0" y="22.0" width="320.0" height="256.0"/></clipPath>
+      <line x1="22.0" y1="278.0" x2="22.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="54.0" y1="278.0" x2="54.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="86.0" y1="278.0" x2="86.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="118.0" y1="278.0" x2="118.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="150.0" y1="278.0" x2="150.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="182.0" y1="278.0" x2="182.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="214.0" y1="278.0" x2="214.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="246.0" y1="278.0" x2="246.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="278.0" y1="278.0" x2="278.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="310.0" y1="278.0" x2="310.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="342.0" y1="278.0" x2="342.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="278.0" x2="342.0" y2="278.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="246.0" x2="342.0" y2="246.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="214.0" x2="342.0" y2="214.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="182.0" x2="342.0" y2="182.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="150.0" x2="342.0" y2="150.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="118.0" x2="342.0" y2="118.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="86.0" x2="342.0" y2="86.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="54.0" x2="342.0" y2="54.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="22.0" x2="342.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="182.0" x2="353.2" y2="182.0" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-ea709-0)"/>
+      <line x1="86.0" y1="278.0" x2="86.0" y2="10.8" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-ea709-0)"/>
+      <text x="349.2" y="173.0" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">x</text>
+      <text x="96.0" y="16.8" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">y</text>
+      <line x1="22.0" y1="179.0" x2="22.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="22.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−2</text>
+      <line x1="54.0" y1="179.0" x2="54.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="54.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−1</text>
+      <line x1="118.0" y1="179.0" x2="118.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="118.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">1</text>
+      <line x1="150.0" y1="179.0" x2="150.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="150.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">2</text>
+      <line x1="214.0" y1="179.0" x2="214.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="214.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">4</text>
+      <line x1="246.0" y1="179.0" x2="246.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="246.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">5</text>
+      <line x1="278.0" y1="179.0" x2="278.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="278.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">6</text>
+      <line x1="310.0" y1="179.0" x2="310.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="310.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">7</text>
+      <line x1="342.0" y1="179.0" x2="342.0" y2="185.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="342.0" y="197.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">8</text>
+      <line x1="83.0" y1="278.0" x2="89.0" y2="278.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="80.0" y="282.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−3</text>
+      <line x1="83.0" y1="246.0" x2="89.0" y2="246.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="80.0" y="250.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−2</text>
+      <line x1="83.0" y1="214.0" x2="89.0" y2="214.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="80.0" y="218.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−1</text>
+      <line x1="83.0" y1="150.0" x2="89.0" y2="150.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="80.0" y="154.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">1</text>
+      <line x1="83.0" y1="118.0" x2="89.0" y2="118.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="80.0" y="122.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">2</text>
+      <line x1="83.0" y1="86.0" x2="89.0" y2="86.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="80.0" y="90.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">3</text>
+      <line x1="83.0" y1="54.0" x2="89.0" y2="54.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="80.0" y="58.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">4</text>
+      <line x1="83.0" y1="22.0" x2="89.0" y2="22.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="80.0" y="26.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">5</text>
+      <text x="78.0" y="197.0" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">O</text>
+      <g clip-path="url(#kv-ea709)">
+      <polygon points="54.0,246.0 310.0,246.0 182.0,54.0" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-width="1.8" stroke-linejoin="round"/>
+      </g>
+      <line x1="182.0" y1="54.0" x2="182.0" y2="246.0" stroke="#047857" stroke-width="2.2"/>
+      <circle cx="54.0" cy="246.0" r="3.4" fill="#0f172a"/>
+      <circle cx="310.0" cy="246.0" r="3.4" fill="#0f172a"/>
+      <circle cx="182.0" cy="54.0" r="3.4" fill="#0f172a"/>
+      <circle cx="182.0" cy="246.0" r="3.4" fill="#047857"/>
+      <circle cx="182.0" cy="182.0" r="3.4" fill="#ef4444"/>
+      <text x="173.0" y="132.0" font-size="13" fill="#047857" text-anchor="middle" font-style="italic" font-weight="600">s</text>
+      <text x="44.0" y="250.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">A</text>
+      <text x="320.0" y="250.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">B</text>
+      <text x="192.0" y="50.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">C</text>
+      <text x="192.0" y="260.0" font-size="14" fill="#047857" text-anchor="middle" font-style="italic" font-weight="600">F</text>
+      <text x="193.0" y="176.0" font-size="14" fill="#ef4444" text-anchor="middle" font-style="italic" font-weight="600">S</text>
+    </svg>
+    </div>
+    <p class="cap">A drónraj háromszöge, a <span class="math inline">\(C\)</span>-ből induló súlyvonal és a súlypont.</p><p class="vegeredmeny">a) <span class="math inline">\(|AB|=8\)</span>, <span class="math inline">\(|AC|=2\sqrt{13}\approx7{,}21\)</span> · b) <span class="math inline">\(F(3;-2)\)</span> · c) <span class="math inline">\(S(3;0)\)</span> · d) <span class="math inline">\(6\)</span> · e) <span class="math inline">\(4:2=2:1\)</span></p></div></details>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-pontok.html#alap-1">🐕 Tér-eb-ugrás <span class="cimke">A 1–9</span></a><a class="sav bruno" href="feladatok-pontok.html#kozep-1">👑 Királyi Gárda <span class="cimke">K 1–5</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> A drónok helyét már pontosan tudjuk, sőt a raj középpontját is. De a három drón nem csak áll: <b>zónát zár körül</b>, és ezen a területen belül minden jelünk elhal. Mekkora ez a zóna — és mi történik, ha a drónok egy vonalba állnak?</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">Síkbeli analitikus geometria — témakör</span></a>
+      <a class="kov" href="tananyag-haromszog-terulete.html"><span class="irany">Következő →</span><span class="hova">A háromszög területe</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

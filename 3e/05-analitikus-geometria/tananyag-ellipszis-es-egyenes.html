@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Az ellipszis és az egyenes — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Síkbeli analitikus geometria</a> ›
+  <span class="itt">Az ellipszis és az egyenes — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Az ellipszis és az egyenes</h1>
+  <p class="alcim">Az egyenes és az ellipszis kölcsönös helyzete, a húr, az érintő az ellipszis egy pontjában és az érintési feltétel.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Térkép Hálózata · 9/13</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> Maxi a torzító mezőn át akar kitörni. Ahol a pályája éppen csak súrolja a mező peremét, ott egyetlen közös pont marad — ez Tér-eb következő <b>csapásmérési pontja</b>. A módszert már ismered a körnél; most ellipszisre alkalmazzuk.</p></div>
+
+    <h2 id="s1">Kölcsönös helyzet és húr</h2>
+
+    <p>A <a href="tananyag-kor-es-egyenes.html#tetel-kolcsonos-helyzet-kor">körnél megismert recept</a> változtatás nélkül működik: az egyenesből kifejezünk egy ismeretlent, beírjuk az ellipszis egyenletébe, és a kapott másodfokú egyenlet diszkriminánsa dönt — <span class="math inline">\(D\gt0\)</span> szelő, <span class="math inline">\(D=0\)</span> érintő, <span class="math inline">\(D\lt0\)</span> nincs közös pont. <i>(A távolságos módszer itt nem használható: az ellipszisnek nincs egyetlen sugara.)</i></p>
+
+    <div class="doboz pelda" id="pelda-metszespontok-ellipszis">
+      <p class="cim"><span class="ikon">✏️</span> Egyenes és ellipszis metszéspontjai</p>
+      <p>Határozd meg az <span class="math inline">\(x^2+4y^2=25\)</span> ellipszis és az <span class="math inline">\(x+2y-7=0\)</span> egyenes kölcsönös helyzetét, a közös pontokat és a húr hosszát (két tizedesre kerekítve)!</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(x=7-2y\)</span>. Behelyettesítve: <span class="math inline">\((7-2y)^2+4y^2=25\)</span>, azaz <span class="math inline">\(49-28y+8y^2=25\)</span>, rendezve <span class="math inline">\(8y^2-28y+24=0\)</span>, osztva <span class="math inline">\(4\)</span>-gyel: <span class="math inline">\(2y^2-7y+6=0\)</span>.</p><p><span class="math inline">\(D=49-48=1\gt0\)</span> — szelő. <span class="math inline">\(y_{1,2}=\frac{7\pm1}{4}\)</span>, tehát <span class="math inline">\(y_1=2\)</span>, <span class="math inline">\(y_2=\frac32\)</span>; hozzá <span class="math inline">\(x_1=3\)</span>, <span class="math inline">\(x_2=4\)</span>.</p><p>A húr: <span class="math inline">\(\sqrt{(4-3)^2+\left(\frac32-2\right)^2}=\sqrt{1+\frac14}=\frac{\sqrt5}{2}\approx1{,}12\)</span>.</p><p><i>Az ábrán a <span class="math inline">\((3;2)\)</span> pontbeli érintő is látszik: <span class="math inline">\(3x+8y=25\)</span>.</i></p><div class="svgcard">
+    <svg viewBox="0 0 436 296" width="436" height="296" role="img" aria-label="Az x² + 4y² = 25 ellipszis a (3;2) és (4;1,5) pontban metsző egyenessel, és a (3;2) pontbeli érintővel">
+      <defs><marker id="nyv-f9afb-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+      <clipPath id="kv-f9afb"><rect x="22.0" y="22.0" width="392.0" height="252.0"/></clipPath>
+      <line x1="22.0" y1="274.0" x2="22.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="50.0" y1="274.0" x2="50.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="78.0" y1="274.0" x2="78.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="106.0" y1="274.0" x2="106.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="134.0" y1="274.0" x2="134.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="162.0" y1="274.0" x2="162.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="190.0" y1="274.0" x2="190.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="218.0" y1="274.0" x2="218.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="246.0" y1="274.0" x2="246.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="274.0" y1="274.0" x2="274.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="302.0" y1="274.0" x2="302.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="330.0" y1="274.0" x2="330.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="358.0" y1="274.0" x2="358.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="386.0" y1="274.0" x2="386.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="414.0" y1="274.0" x2="414.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="274.0" x2="414.0" y2="274.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="246.0" x2="414.0" y2="246.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="218.0" x2="414.0" y2="218.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="190.0" x2="414.0" y2="190.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="162.0" x2="414.0" y2="162.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="134.0" x2="414.0" y2="134.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="106.0" x2="414.0" y2="106.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="78.0" x2="414.0" y2="78.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="50.0" x2="414.0" y2="50.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="22.0" x2="414.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="162.0" x2="423.8" y2="162.0" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-f9afb-0)"/>
+      <line x1="190.0" y1="274.0" x2="190.0" y2="12.2" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-f9afb-0)"/>
+      <text x="419.8" y="153.0" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">x</text>
+      <text x="200.0" y="18.2" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">y</text>
+      <line x1="22.0" y1="159.0" x2="22.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="22.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−6</text>
+      <line x1="50.0" y1="159.0" x2="50.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="50.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−5</text>
+      <line x1="78.0" y1="159.0" x2="78.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="78.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−4</text>
+      <line x1="106.0" y1="159.0" x2="106.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="106.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−3</text>
+      <line x1="134.0" y1="159.0" x2="134.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="134.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−2</text>
+      <line x1="162.0" y1="159.0" x2="162.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="162.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−1</text>
+      <line x1="218.0" y1="159.0" x2="218.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="218.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">1</text>
+      <line x1="246.0" y1="159.0" x2="246.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="246.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">2</text>
+      <line x1="274.0" y1="159.0" x2="274.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="274.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">3</text>
+      <line x1="302.0" y1="159.0" x2="302.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="302.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">4</text>
+      <line x1="330.0" y1="159.0" x2="330.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="330.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">5</text>
+      <line x1="358.0" y1="159.0" x2="358.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="358.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">6</text>
+      <line x1="386.0" y1="159.0" x2="386.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="386.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">7</text>
+      <line x1="414.0" y1="159.0" x2="414.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="414.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">8</text>
+      <line x1="187.0" y1="274.0" x2="193.0" y2="274.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="184.0" y="278.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−4</text>
+      <line x1="187.0" y1="246.0" x2="193.0" y2="246.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="184.0" y="250.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−3</text>
+      <line x1="187.0" y1="218.0" x2="193.0" y2="218.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="184.0" y="222.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−2</text>
+      <line x1="187.0" y1="190.0" x2="193.0" y2="190.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="184.0" y="194.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−1</text>
+      <line x1="187.0" y1="134.0" x2="193.0" y2="134.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="184.0" y="138.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">1</text>
+      <line x1="187.0" y1="106.0" x2="193.0" y2="106.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="184.0" y="110.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">2</text>
+      <line x1="187.0" y1="78.0" x2="193.0" y2="78.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="184.0" y="82.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">3</text>
+      <line x1="187.0" y1="50.0" x2="193.0" y2="50.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="184.0" y="54.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">4</text>
+      <line x1="187.0" y1="22.0" x2="193.0" y2="22.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="184.0" y="26.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">5</text>
+      <text x="182.0" y="177.0" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">O</text>
+      <g clip-path="url(#kv-f9afb)">
+      <path d="M330.0,162.0 L330.0,160.3 L329.8,158.6 L329.6,156.9 L329.3,155.2 L329.0,153.6 L328.5,151.9 L328.0,150.2 L327.4,148.6 L326.7,146.9 L325.9,145.2 L325.1,143.6 L324.2,142.0 L323.1,140.4 L322.1,138.8 L320.9,137.2 L319.7,135.6 L318.4,134.0 L317.0,132.5 L315.5,131.0 L314.0,129.5 L312.4,128.0 L310.7,126.5 L308.9,125.1 L307.1,123.6 L305.2,122.2 L303.3,120.9 L301.2,119.5 L299.2,118.2 L297.0,116.9 L294.8,115.6 L292.5,114.3 L290.2,113.1 L287.8,111.9 L285.3,110.7 L282.8,109.6 L280.3,108.5 L277.7,107.4 L275.0,106.4 L272.3,105.4 L269.5,104.4 L266.7,103.4 L263.9,102.5 L261.0,101.7 L258.0,100.8 L255.1,100.0 L252.0,99.3 L249.0,98.5 L245.9,97.8 L242.8,97.2 L239.6,96.5 L236.5,96.0 L233.3,95.4 L230.0,94.9 L226.8,94.5 L223.5,94.0 L220.2,93.6 L216.9,93.3 L213.6,93.0 L210.2,92.7 L206.9,92.5 L203.5,92.3 L200.1,92.2 L196.8,92.1 L193.4,92.0 L190.0,92.0 L186.6,92.0 L183.2,92.1 L179.9,92.2 L176.5,92.3 L173.1,92.5 L169.8,92.7 L166.4,93.0 L163.1,93.3 L159.8,93.6 L156.5,94.0 L153.2,94.5 L150.0,94.9 L146.7,95.4 L143.5,96.0 L140.4,96.5 L137.2,97.2 L134.1,97.8 L131.0,98.5 L128.0,99.3 L124.9,100.0 L122.0,100.8 L119.0,101.7 L116.1,102.5 L113.3,103.4 L110.5,104.4 L107.7,105.4 L105.0,106.4 L102.3,107.4 L99.7,108.5 L97.2,109.6 L94.7,110.7 L92.2,111.9 L89.8,113.1 L87.5,114.3 L85.2,115.6 L83.0,116.9 L80.8,118.2 L78.8,119.5 L76.7,120.9 L74.8,122.2 L72.9,123.6 L71.1,125.1 L69.3,126.5 L67.6,128.0 L66.0,129.5 L64.5,131.0 L63.0,132.5 L61.6,134.0 L60.3,135.6 L59.1,137.2 L57.9,138.8 L56.9,140.4 L55.8,142.0 L54.9,143.6 L54.1,145.2 L53.3,146.9 L52.6,148.6 L52.0,150.2 L51.5,151.9 L51.0,153.6 L50.7,155.2 L50.4,156.9 L50.2,158.6 L50.0,160.3 L50.0,162.0 L50.0,163.7 L50.2,165.4 L50.4,167.1 L50.7,168.8 L51.0,170.4 L51.5,172.1 L52.0,173.8 L52.6,175.4 L53.3,177.1 L54.1,178.8 L54.9,180.4 L55.8,182.0 L56.9,183.6 L57.9,185.2 L59.1,186.8 L60.3,188.4 L61.6,190.0 L63.0,191.5 L64.5,193.0 L66.0,194.5 L67.6,196.0 L69.3,197.5 L71.1,198.9 L72.9,200.4 L74.8,201.8 L76.7,203.1 L78.8,204.5 L80.8,205.8 L83.0,207.1 L85.2,208.4 L87.5,209.7 L89.8,210.9 L92.2,212.1 L94.7,213.3 L97.2,214.4 L99.7,215.5 L102.3,216.6 L105.0,217.6 L107.7,218.6 L110.5,219.6 L113.3,220.6 L116.1,221.5 L119.0,222.3 L122.0,223.2 L124.9,224.0 L128.0,224.7 L131.0,225.5 L134.1,226.2 L137.2,226.8 L140.4,227.5 L143.5,228.0 L146.7,228.6 L150.0,229.1 L153.2,229.5 L156.5,230.0 L159.8,230.4 L163.1,230.7 L166.4,231.0 L169.8,231.3 L173.1,231.5 L176.5,231.7 L179.9,231.8 L183.2,231.9 L186.6,232.0 L190.0,232.0 L193.4,232.0 L196.8,231.9 L200.1,231.8 L203.5,231.7 L206.9,231.5 L210.2,231.3 L213.6,231.0 L216.9,230.7 L220.2,230.4 L223.5,230.0 L226.8,229.5 L230.0,229.1 L233.3,228.6 L236.5,228.0 L239.6,227.5 L242.8,226.8 L245.9,226.2 L249.0,225.5 L252.0,224.7 L255.1,224.0 L258.0,223.2 L261.0,222.3 L263.9,221.5 L266.7,220.6 L269.5,219.6 L272.3,218.6 L275.0,217.6 L277.7,216.6 L280.3,215.5 L282.8,214.4 L285.3,213.3 L287.8,212.1 L290.2,210.9 L292.5,209.7 L294.8,208.4 L297.0,207.1 L299.2,205.8 L301.2,204.5 L303.3,203.1 L305.2,201.8 L307.1,200.4 L308.9,198.9 L310.7,197.5 L312.4,196.0 L314.0,194.5 L315.5,193.0 L317.0,191.5 L318.4,190.0 L319.7,188.4 L320.9,186.8 L322.1,185.2 L323.1,183.6 L324.2,182.0 L325.1,180.4 L325.9,178.8 L326.7,177.1 L327.4,175.4 L328.0,173.8 L328.5,172.1 L329.0,170.4 L329.3,168.8 L329.6,167.1 L329.8,165.4 L330.0,163.7 L330.0,162.0" fill="none" stroke="#3b82f6" stroke-width="2.2"/>
+      <line x1="414.0" y1="176.0" x2="106.0" y2="22.0" stroke="#047857" stroke-width="2"/>
+      <line x1="414.0" y1="158.5" x2="50.0" y2="22.0" stroke="#f59e0b" stroke-width="2"/>
+      </g>
+      <circle cx="274.0" cy="106.0" r="3.4" fill="#047857"/>
+      <circle cx="302.0" cy="120.0" r="3.4" fill="#047857"/>
+      <text x="318.8" y="243.2" font-size="13" fill="#047857" text-anchor="middle" font-weight="600">x + 2y − 7 = 0</text>
+      <text x="318.8" y="262.8" font-size="13" fill="#f59e0b" text-anchor="middle" font-weight="600">3x + 8y − 25 = 0</text>
+    </svg>
+    </div>
+    <p class="cap">Az ellipszis, a szelő (zöld) és a <span class="math inline">\((3;2)\)</span> pontbeli érintő (borostyán).</p><p class="vegeredmeny">szelő · <span class="math inline">\((3;2)\)</span> és <span class="math inline">\(\left(4;\frac32\right)\)</span> · húr <span class="math inline">\(\approx1{,}12\)</span></p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ Az ellipszis pontjaira |y| ≤ b = 3, így az y = 5 magasságig nem ér fel." data-nem="✘ Az ellipszis a (0; ±3) csúcspontoknál magasabbra nem nyúlik, bármekkora is az a. Az y = 5 egyenes fölötte halad: nincs közös pont.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy origó középpontú ellipszis kis féltengelye <span class="math inline">\(b=3\)</span> (az <span class="math inline">\(y\)</span>-tengelyen). Hány közös pontja van az <span class="math inline">\(y=5\)</span> egyenessel?</p>
+      <div class="opciok"><button>egy</button><button>kettő</button><button>a nagy féltengelytől függ</button><button>egy sem</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Az érintő az ellipszis egy pontjában</h2>
+
+    <div class="doboz tetel" id="tetel-erinto-ellipszis">
+      <p class="cim"><span class="ikon">📘</span> Az ellipszis érintője egy pontjában</p>
+      <p>Az <span class="math inline">\(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\)</span> ellipszis <span class="math inline">\(T(x_1;y_1)\)</span> pontjában húzott érintő egyenlete</p><span class="math display">\[\frac{x_1x}{a^2}+\frac{y_1y}{b^2}=1 .\]</span><p>Előbb ellenőrizzük, hogy a <span class="math inline">\(T\)</span> az ellipszisen van.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-erinto-ellipszis">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — érintő a mező peremén</p>
+      <p>Tér-eb a <span class="math inline">\(\frac{x^2}{25}+\frac{y^2}{16}=1\)</span> mező <span class="math inline">\(T(3;3{,}2)\)</span> pontjába ugrik. Melyik egyenes mentén csúszhat tovább úgy, hogy ne lépjen be a mezőbe? Írd fel az érintő egyenletét!</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><b>Ellenőrzés:</b> <span class="math inline">\(\frac9{25}+\frac{10{,}24}{16}=0{,}36+0{,}64=1\)</span> ✔.</p><p><b>Képlet:</b> <span class="math inline">\(\frac{3x}{25}+\frac{3{,}2\,y}{16}=1\)</span>, azaz <span class="math inline">\(\frac{3x}{25}+\frac y5=1\)</span>. Szorozva <span class="math inline">\(25\)</span>-tel: <span class="math inline">\(3x+5y=25\)</span>.</p><p class="vegeredmeny"><span class="math inline">\(3x+5y-25=0\)</span></p></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p>Maxi a <span class="math inline">\(T(x_1;y_1)\)</span> pont koordinátáit mindkét helyre beírta, és ezt kapta: <span class="math inline">\(\frac{x_1^2}{a^2}+\frac{y_1^2}{b^2}=1\)</span>. Ebben nincs se <span class="math inline">\(x\)</span>, se <span class="math inline">\(y\)</span> — ez nem egyenes, hanem csak annak az ellenőrzése, hogy a <span class="math inline">\(T\)</span> rajta van az ellipszisen.</p><p>Az érintőképletben az <span class="math inline">\(x^2\)</span> helyére <span class="math inline">\(x_1\cdot x\)</span> kerül: az egyik tényező a pont koordinátája, a másik a változó marad.</p><p>Behelyettesítésnél a másik hiba itt is él: <span class="math inline">\((kx+n)^2\ne k^2x^2+n^2\)</span>.</p>
+    </div>
+
+    <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ 2x/8 + 1·y/2 = 1, szorozva 4-gyel: x + 2y = 4." data-nem="✘ A képlet: x₁x/a² + y₁y/b² = 1 → 2x/8 + y/2 = 1 → x + 2y = 4. A 4/8 + 1/2 = 1 csak az illeszkedés ellenőrzése, nem egyenes.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik egyenes érinti az <span class="math inline">\(\frac{x^2}{8}+\frac{y^2}{2}=1\)</span> ellipszist a <span class="math inline">\(P(2;1)\)</span> pontban?</p>
+      <div class="opciok"><button><span class="math inline">\(2x+y=5\)</span></button><button><span class="math inline">\(x+y=3\)</span></button><button><span class="math inline">\(\frac{4}{8}+\frac{1}{2}=1\)</span></button><button><span class="math inline">\(x+2y=4\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Az érintési feltétel</h2>
+
+    <div class="doboz tetel" id="tetel-erintesi-feltetel-ellipszis">
+      <p class="cim"><span class="ikon">📘</span> Az ellipszis érintési feltétele</p>
+      <p>Az <span class="math inline">\(y=kx+n\)</span> egyenes pontosan akkor érinti az <span class="math inline">\(\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\)</span> ellipszist, ha</p><span class="math display">\[a^2k^2+b^2=n^2 .\]</span><p>A feltétel a behelyettesítéses módszer <span class="math inline">\(D=0\)</span> esetéből jön. Minden nem függőleges irányból pontosan két érintő van: <span class="math inline">\(n=\pm\sqrt{a^2k^2+b^2}\)</span>.</p><p>🔴 <b>Kristály-protokoll:</b> az érintési feltétellel dolgozó feladatok a gyűjtemény <b>nehéz</b> sávjában vannak.</p>
+    </div>
+
+    <p><b>Példa.</b> Melyik <span class="math inline">\(\frac12\)</span> iránytényezőjű egyenes érinti az <span class="math inline">\(\frac{x^2}{8}+\frac{y^2}{2}=1\)</span> ellipszist? <span class="math inline">\(a^2=8\)</span>, <span class="math inline">\(b^2=2\)</span>, <span class="math inline">\(k=\frac12\)</span>: <span class="math inline">\(8\cdot\frac14+2=n^2\)</span>, <span class="math inline">\(n^2=4\)</span>, <span class="math inline">\(n=\pm2\)</span>. Az érintők: <span class="math inline">\(y=\frac12x+2\)</span> és <span class="math inline">\(y=\frac12x-2\)</span>.</p><p><i>Ellenőrzés az elsőre: behelyettesítve és <span class="math inline">\(8\)</span>-cal szorozva <span class="math inline">\(2x^2+8x+8=0\)</span>, azaz <span class="math inline">\(2(x+2)^2=0\)</span>, <span class="math inline">\(D=0\)</span> ✔.</i></p>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-ellipszis-hiperbola.html#alap-7">🐕 Tér-eb-ugrás <span class="cimke">A 7–10</span></a><a class="sav bruno" href="feladatok-ellipszis-hiperbola.html#kozep-5">👑 Királyi Gárda <span class="cimke">K 5–8</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> Az ellipszis-mező meggyengült. De a Kamra legveszélyesebb mezője még hátravan: a <b>hiperbola</b>. Ott a tér <b>két ágra szakad</b>, és a szakadás vonalai a végtelenbe nyúlnak.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-ellipszis.html"><span class="irany">← Előző</span><span class="hova">Az ellipszis</span></a>
+      <a class="kov" href="tananyag-hiperbola.html"><span class="irany">Következő →</span><span class="hova">A hiperbola</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

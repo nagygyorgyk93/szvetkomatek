@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Két egyenes — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Síkbeli analitikus geometria</a> ›
+  <span class="itt">Két egyenes — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Két egyenes — metszéspont, szög, párhuzamosság, merőlegesség</h1>
+  <p class="alcim">Két egyenes kölcsönös helyzete, a párhuzamosság és a merőlegesség feltétele, egyenes adott ponton át és két egyenes szöge.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Térkép Hálózata · 4/13</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> Két pálya, két egyenlet. Találkoznak? Ha igen, hol — és milyen szögben? A párhuzamos pályán repülő drónt Tér-eb sosem éri utol, a merőleges vonal viszont a leggyorsabb elzárás. Ma megtanuljuk két egyenletből kiolvasni, melyik eset áll fenn.</p></div>
+
+    <h2 id="s1">Két egyenes kölcsönös helyzete</h2>
+
+    <div class="doboz tetel" id="tetel-kolcsonos-helyzet">
+      <p class="cim"><span class="ikon">📘</span> Két egyenes három lehetséges helyzete</p>
+      <p>Legyen <span class="math inline">\(e_1\colon y=k_1x+n_1\)</span> és <span class="math inline">\(e_2\colon y=k_2x+n_2\)</span> (egyik sem függőleges). A két egyenes</p><ul><li><b>metszi</b> egymást (pontosan egy közös pont), ha <span class="math inline">\(k_1\ne k_2\)</span>;</li><li><b>párhuzamos</b> (nincs közös pont), ha <span class="math inline">\(k_1=k_2\)</span> és <span class="math inline">\(n_1\ne n_2\)</span>;</li><li><b>egybeesik</b> (minden pontjuk közös), ha <span class="math inline">\(k_1=k_2\)</span> és <span class="math inline">\(n_1=n_2\)</span>.</li></ul><p>A közös pontot a két egyenletből álló rendszer megoldása adja — ugyanaz a három eset, amelyet a <a href="../03-linearis-rendszerek/tananyag-ket-ismeretlen.html#tetel-geometriai-jelentes">lineáris egyenletrendszereknél</a> láttál.</p><p>Két függőleges egyenes párhuzamos vagy egybeesik; egy függőleges és egy nem függőleges egyenes mindig metszi egymást.</p>
+    </div>
+
+    <p><b>Példa.</b> Az <span class="math inline">\(y=2x-3\)</span> és az <span class="math inline">\(x+y-6=0\)</span> egyenes iránytényezője <span class="math inline">\(2\)</span>, illetve <span class="math inline">\(-1\)</span>, tehát metszik egymást. A metszéspont: <span class="math inline">\(x+(2x-3)=6\)</span>, ahonnan <span class="math inline">\(x=3\)</span> és <span class="math inline">\(y=3\)</span>, azaz <span class="math inline">\(M(3;3)\)</span>.</p>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ A második y-ra rendezve y = 2x + 3 — ugyanaz az egyenes." data-nem="✘ A második egyenletet rendezd y-ra: 2y = 4x + 6, y = 2x + 3. Az iránytényező ÉS a tengelymetszet is egyezik, tehát a két egyenes egybeesik, nem csak párhuzamos.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Milyen helyzetű az <span class="math inline">\(y=2x+3\)</span> és a <span class="math inline">\(4x-2y+6=0\)</span> egyenes?</p>
+      <div class="opciok"><button>merőlegesek</button><button>egybeesnek</button><button>párhuzamosak</button><button>metszik egymást</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Párhuzamosság és merőlegesség</h2>
+
+    <div class="doboz tetel" id="tetel-parhuzamos-meroleges">
+      <p class="cim"><span class="ikon">📘</span> A párhuzamosság és a merőlegesség feltétele</p>
+      <p>Az <span class="math inline">\(y=k_1x+n_1\)</span> és az <span class="math inline">\(y=k_2x+n_2\)</span> egyenes</p><ul><li><b>párhuzamos</b> (vagy egybeesik), ha <span class="math inline">\(k_1=k_2\)</span>;</li><li><b>merőleges</b>, ha <span class="math inline">\(k_1\cdot k_2=-1\)</span>, azaz <span class="math inline">\(k_2=-\dfrac1{k_1}\)</span>.</li></ul><p>A vízszintes (<span class="math inline">\(k=0\)</span>) és a függőleges egyenes (nincs <span class="math inline">\(k\)</span>) szintén merőleges egymásra — ezt az esetet a képlet nem fedi le, külön kell észrevenni.</p>
+    </div>
+
+    <p><i>Miért <span class="math inline">\(-1\)</span>?</i> Az egyenesek irányvektora <span class="math inline">\((1;k_1)\)</span>, illetve <span class="math inline">\((1;k_2)\)</span>. Két vektor pontosan akkor <a href="../04-vektorok/tananyag-skalaris-szorzat.html#tetel-merolegesseg">merőleges</a>, ha skaláris szorzatuk <span class="math inline">\(0\)</span>: <span class="math inline">\(1\cdot1+k_1k_2=0\)</span>.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 300 300" width="300" height="300" role="img" aria-label="Két merőleges egyenes, iránytényezőik 2 és −½, derékszög-jellel az M(2;4) metszéspontban">
+      <defs><marker id="nyv-ac49a-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+      <clipPath id="kv-ac49a"><rect x="22.0" y="22.0" width="256.0" height="256.0"/></clipPath>
+      <line x1="22.0" y1="278.0" x2="22.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="54.0" y1="278.0" x2="54.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="86.0" y1="278.0" x2="86.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="118.0" y1="278.0" x2="118.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="150.0" y1="278.0" x2="150.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="182.0" y1="278.0" x2="182.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="214.0" y1="278.0" x2="214.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="246.0" y1="278.0" x2="246.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="278.0" y1="278.0" x2="278.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="278.0" x2="278.0" y2="278.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="246.0" x2="278.0" y2="246.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="214.0" x2="278.0" y2="214.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="182.0" x2="278.0" y2="182.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="150.0" x2="278.0" y2="150.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="118.0" x2="278.0" y2="118.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="86.0" x2="278.0" y2="86.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="54.0" x2="278.0" y2="54.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="22.0" x2="278.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="246.0" x2="289.2" y2="246.0" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-ac49a-0)"/>
+      <line x1="86.0" y1="278.0" x2="86.0" y2="10.8" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-ac49a-0)"/>
+      <text x="285.2" y="237.0" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">x</text>
+      <text x="96.0" y="16.8" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">y</text>
+      <line x1="22.0" y1="243.0" x2="22.0" y2="249.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="22.0" y="261.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−2</text>
+      <line x1="54.0" y1="243.0" x2="54.0" y2="249.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="54.0" y="261.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−1</text>
+      <line x1="118.0" y1="243.0" x2="118.0" y2="249.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="118.0" y="261.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">1</text>
+      <line x1="150.0" y1="243.0" x2="150.0" y2="249.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="150.0" y="261.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">2</text>
+      <line x1="182.0" y1="243.0" x2="182.0" y2="249.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="182.0" y="261.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">3</text>
+      <line x1="214.0" y1="243.0" x2="214.0" y2="249.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="214.0" y="261.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">4</text>
+      <line x1="246.0" y1="243.0" x2="246.0" y2="249.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="246.0" y="261.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">5</text>
+      <line x1="278.0" y1="243.0" x2="278.0" y2="249.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="278.0" y="261.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">6</text>
+      <line x1="83.0" y1="278.0" x2="89.0" y2="278.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="80.0" y="282.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−1</text>
+      <line x1="83.0" y1="214.0" x2="89.0" y2="214.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="80.0" y="218.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">1</text>
+      <line x1="83.0" y1="182.0" x2="89.0" y2="182.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="80.0" y="186.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">2</text>
+      <line x1="83.0" y1="150.0" x2="89.0" y2="150.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="80.0" y="154.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">3</text>
+      <line x1="83.0" y1="118.0" x2="89.0" y2="118.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="80.0" y="122.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">4</text>
+      <line x1="83.0" y1="86.0" x2="89.0" y2="86.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="80.0" y="90.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">5</text>
+      <line x1="83.0" y1="54.0" x2="89.0" y2="54.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="80.0" y="58.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">6</text>
+      <line x1="83.0" y1="22.0" x2="89.0" y2="22.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="80.0" y="26.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">7</text>
+      <text x="78.0" y="261.0" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">O</text>
+      <g clip-path="url(#kv-ac49a)">
+      <line x1="70.0" y1="278.0" x2="198.0" y2="22.0" stroke="#3b82f6" stroke-width="2"/>
+      <line x1="22.0" y1="54.0" x2="278.0" y2="182.0" stroke="#ef4444" stroke-width="2"/>
+      </g>
+      <path d="M155.9,106.2 L167.7,112.1 L161.8,123.9" fill="none" stroke="#475569" stroke-width="1.4"/>
+      <circle cx="150.0" cy="118.0" r="3.4" fill="#0f172a"/>
+      <text x="204.5" y="46.2" font-size="13" fill="#3b82f6" text-anchor="middle" font-weight="600">y = 2x</text>
+      <text x="237.5" y="183.3" font-size="13" fill="#ef4444" text-anchor="middle" font-weight="600">y = −½x + 5</text>
+      <text x="138.0" y="112.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">M</text>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(y=2x\)</span> és az <span class="math inline">\(y=-\frac12x+5\)</span> egyenes merőleges: <span class="math inline">\(2\cdot\left(-\frac12\right)=-1\)</span>.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p>Maxi merőleges pályát akart húzni az <span class="math inline">\(y=4x-1\)</span> pályára. Először <span class="math inline">\(k=-4\)</span>-et írt („az ellentettje”), aztán <span class="math inline">\(k=\frac14\)</span>-et („a reciproka”). Mindkét pálya ferdén metszette a célt.</p><p>A merőleges iránytényező <b>egyszerre</b> ellentett és reciprok — a <b>negatív reciprok</b>: <span class="math inline">\(-\frac14\)</span>. Ellenőrzés: <span class="math inline">\(4\cdot\left(-\frac14\right)=-1\)</span> ✔.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ k₁·k₂ = −1, tehát k₂ = −1/4." data-nem="✘ A merőleges iránytényező a negatív reciprok: −1/4. A −4 csak ellentett, az 1/4 csak reciprok — a szorzatuk nem −1.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi az <span class="math inline">\(y=4x-1\)</span> egyenesre merőleges egyenes iránytényezője?</p>
+      <div class="opciok"><button><span class="math inline">\(-\frac14\)</span></button><button><span class="math inline">\(-4\)</span></button><button><span class="math inline">\(\frac14\)</span></button><button><span class="math inline">\(4\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Párhuzamos és merőleges egyenes adott ponton át</h2>
+
+    <p>A recept két lépés: <b>1)</b> az adott egyenes iránytényezőjéből kiszámoljuk a keresett iránytényezőt (párhuzamosnál ugyanaz, merőlegesnél a negatív reciprok); <b>2)</b> felírjuk az <span class="math inline">\(y-y_1=k(x-x_1)\)</span> egyenletet. Ha az adott egyenes vízszintes, a rá merőleges egyenes függőleges: <span class="math inline">\(x=x_1\)</span>.</p><p><b>Példa.</b> <span class="math inline">\(P(-2;3)\)</span> és <span class="math inline">\(e\colon 3x-4y+1=0\)</span>, ahol <span class="math inline">\(k_e=\frac34\)</span>.</p><ul><li>Párhuzamos: <span class="math inline">\(y-3=\frac34(x+2)\)</span>, szorozva <span class="math inline">\(4\)</span>-gyel: <span class="math inline">\(4y-12=3x+6\)</span>, azaz <span class="math inline">\(3x-4y+18=0\)</span>.</li><li>Merőleges: <span class="math inline">\(k=-\frac43\)</span>, <span class="math inline">\(y-3=-\frac43(x+2)\)</span>, szorozva <span class="math inline">\(3\)</span>-mal: <span class="math inline">\(3y-9=-4x-8\)</span>, azaz <span class="math inline">\(4x+3y-1=0\)</span>.</li></ul>
+
+    <div class="doboz pelda" id="pelda-felezomeroleges">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — a felezőmerőleges</p>
+      <p>Két bázisunk van: <span class="math inline">\(A(-2;1)\)</span> és <span class="math inline">\(B(4;5)\)</span>. Tér-eb olyan vonalon akar járőrözni, amelynek minden pontja <b>egyenlő távolságra</b> van a két bázistól. Ez az <span class="math inline">\(AB\)</span> szakasz <b>felezőmerőlegese</b>. Írd fel az egyenletét!</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>A felezőmerőleges átmegy az <span class="math inline">\(AB\)</span> felezőpontján, és merőleges az <span class="math inline">\(AB\)</span>-re.</p><p><span class="math inline">\(F\left(\frac{-2+4}{2};\ \frac{1+5}{2}\right)=F(1;3)\)</span>, <span class="math inline">\(k_{AB}=\frac{5-1}{4-(-2)}=\frac23\)</span>, tehát a merőleges iránytényező <span class="math inline">\(k=-\frac32\)</span>.</p><p><span class="math inline">\(y-3=-\frac32(x-1)\)</span>, szorozva <span class="math inline">\(2\)</span>-vel: <span class="math inline">\(2y-6=-3x+3\)</span>, azaz <span class="math inline">\(3x+2y-9=0\)</span>.</p><p class="vegeredmeny"><span class="math inline">\(3x+2y-9=0\)</span></p></div></details>
+    </div>
+
+    <h2 id="s4">Két egyenes szöge</h2>
+
+    <div class="doboz tetel" id="tetel-szog">
+      <p class="cim"><span class="ikon">📘</span> Két egyenes szöge</p>
+      <p>Két metsző egyenes szöge a keletkező szögek közül a <b>nem tompa</b> szög: <span class="math inline">\(0^\circ\lt\varphi\le90^\circ\)</span>. Ha az egyenesek iránytényezője <span class="math inline">\(k_1\)</span> és <span class="math inline">\(k_2\)</span>, és <span class="math inline">\(1+k_1k_2\ne0\)</span>, akkor</p><span class="math display">\[\operatorname{tg}\varphi=\left|\frac{k_2-k_1}{1+k_1k_2}\right| .\]</span><p>Ha <span class="math inline">\(1+k_1k_2=0\)</span>, az egyenesek merőlegesek: <span class="math inline">\(\varphi=90^\circ\)</span>. Ha az egyik egyenes függőleges, a másik hajlásszögéből számolunk: <span class="math inline">\(\varphi=|90^\circ-\alpha|\)</span>.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 296 332" width="296" height="332" role="img" aria-label="Az y = 2x + 1 és az y = −3x + 4 egyenes 45 fokos szöget zár be">
+      <defs><marker id="nyv-36388-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+      <clipPath id="kv-36388"><rect x="22.0" y="22.0" width="252.0" height="288.0"/></clipPath>
+      <line x1="22.0" y1="310.0" x2="22.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="58.0" y1="310.0" x2="58.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="94.0" y1="310.0" x2="94.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="130.0" y1="310.0" x2="130.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="166.0" y1="310.0" x2="166.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="202.0" y1="310.0" x2="202.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="238.0" y1="310.0" x2="238.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="274.0" y1="310.0" x2="274.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="310.0" x2="274.0" y2="310.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="274.0" x2="274.0" y2="274.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="238.0" x2="274.0" y2="238.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="202.0" x2="274.0" y2="202.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="166.0" x2="274.0" y2="166.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="130.0" x2="274.0" y2="130.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="94.0" x2="274.0" y2="94.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="58.0" x2="274.0" y2="58.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="22.0" x2="274.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="238.0" x2="286.6" y2="238.0" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-36388-0)"/>
+      <line x1="130.0" y1="310.0" x2="130.0" y2="9.4" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-36388-0)"/>
+      <text x="282.6" y="229.0" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">x</text>
+      <text x="140.0" y="15.4" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">y</text>
+      <line x1="22.0" y1="235.0" x2="22.0" y2="241.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="22.0" y="253.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−3</text>
+      <line x1="58.0" y1="235.0" x2="58.0" y2="241.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="58.0" y="253.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−2</text>
+      <line x1="94.0" y1="235.0" x2="94.0" y2="241.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="94.0" y="253.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−1</text>
+      <line x1="166.0" y1="235.0" x2="166.0" y2="241.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="166.0" y="253.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">1</text>
+      <line x1="202.0" y1="235.0" x2="202.0" y2="241.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="202.0" y="253.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">2</text>
+      <line x1="238.0" y1="235.0" x2="238.0" y2="241.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="238.0" y="253.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">3</text>
+      <line x1="274.0" y1="235.0" x2="274.0" y2="241.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="274.0" y="253.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">4</text>
+      <line x1="127.0" y1="310.0" x2="133.0" y2="310.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="124.0" y="314.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−2</text>
+      <line x1="127.0" y1="274.0" x2="133.0" y2="274.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="124.0" y="278.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−1</text>
+      <line x1="127.0" y1="202.0" x2="133.0" y2="202.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="124.0" y="206.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">1</text>
+      <line x1="127.0" y1="166.0" x2="133.0" y2="166.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="124.0" y="170.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">2</text>
+      <line x1="127.0" y1="130.0" x2="133.0" y2="130.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="124.0" y="134.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">3</text>
+      <line x1="127.0" y1="94.0" x2="133.0" y2="94.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="124.0" y="98.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">4</text>
+      <line x1="127.0" y1="58.0" x2="133.0" y2="58.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="124.0" y="62.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">5</text>
+      <line x1="127.0" y1="22.0" x2="133.0" y2="22.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="124.0" y="26.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">6</text>
+      <text x="122.0" y="253.0" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">O</text>
+      <g clip-path="url(#kv-36388)">
+      <line x1="76.0" y1="310.0" x2="220.0" y2="22.0" stroke="#3b82f6" stroke-width="2"/>
+      <line x1="202.0" y1="310.0" x2="106.0" y2="22.0" stroke="#ef4444" stroke-width="2"/>
+      </g>
+      <path d="M162.3,137.3 A24.0,24.0 0 0 1 168.6,175.8" fill="none" stroke="#8b5cf6" stroke-width="1.6"/>
+      <circle cx="151.6" cy="158.8" r="3.4" fill="#8b5cf6"/>
+      <text x="200.2" y="158.8" font-size="14" fill="#8b5cf6" text-anchor="middle" font-weight="600">φ = 45°</text>
+      <text x="238.0" y="50.8" font-size="13" fill="#3b82f6" text-anchor="middle" font-weight="600">y = 2x + 1</text>
+      <text x="61.6" y="50.8" font-size="13" fill="#ef4444" text-anchor="middle" font-weight="600">y = −3x + 4</text>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(y=2x+1\)</span> és az <span class="math inline">\(y=-3x+4\)</span> egyenes szöge.</p>
+
+    <div class="doboz pelda" id="pelda-szog">
+      <p class="cim"><span class="ikon">✏️</span> Két egyenes szöge</p>
+      <p>Számítsd ki a következő egyenespárok szögét! Ha nem kerek érték jön ki, egy tizedesre kerekíts!</p><p><b>a)</b> <span class="math inline">\(y=2x+1\)</span> és <span class="math inline">\(y=-3x+4\)</span>: <span class="math inline">\(\operatorname{tg}\varphi=\left|\frac{-3-2}{1+2\cdot(-3)}\right|=\left|\frac{-5}{-5}\right|=1\)</span>, tehát <span class="math inline">\(\varphi=45^\circ\)</span>.</p><p><b>b)</b> <span class="math inline">\(y=3x\)</span> és <span class="math inline">\(y=-\frac12x+1\)</span>: <span class="math inline">\(\operatorname{tg}\varphi=\left|\frac{-\frac12-3}{1+3\cdot\left(-\frac12\right)}\right|=\left|\frac{-3{,}5}{-0{,}5}\right|=7\)</span>, számológéppel <span class="math inline">\(\varphi=\operatorname{arctg}7\approx81{,}9^\circ\)</span> (egy tizedesre kerekítve).</p><p><b>c)</b> <span class="math inline">\(x=1\)</span> és <span class="math inline">\(y=2x+1\)</span>: a második hajlásszöge <span class="math inline">\(\alpha=\operatorname{arctg}2\approx63{,}4^\circ\)</span>, tehát <span class="math inline">\(\varphi\approx90^\circ-63{,}4^\circ=26{,}6^\circ\)</span>.</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Vektorokkal is megy</p>
+      <p>A két egyenes szöge megegyezik a normálvektoraik szögével (ha az tompa, a kiegészítőjével). A <span class="math inline">\(2x-y+1=0\)</span> és a <span class="math inline">\(3x+y-4=0\)</span> egyenesnél (ez az a) feladat egyenespárja) <span class="math inline">\(\vec N_1=(2;-1)\)</span>, <span class="math inline">\(\vec N_2=(3;1)\)</span>:</p><span class="math display">\[\cos\varphi=\frac{|\vec N_1\cdot\vec N_2|}{|\vec N_1|\,|\vec N_2|}=\frac{|6-1|}{\sqrt5\cdot\sqrt{10}}=\frac{1}{\sqrt2},\qquad\varphi=45^\circ .\]</span><p>Ez a módszer a függőleges egyenesnél is működik — a <a href="../04-vektorok/tananyag-skalaris-szorzat.html#pelda-szog">vektorok szögénél</a> már így számoltál.</p>
+    </div>
+
+    <p><b>Két gyakori hiba.</b> Ha elhagyod az abszolút értéket, negatív tangenst kaphatsz, és a számológép negatív szöget ad. Ha pedig a gép <b>radián</b> üzemmódban van, az <span class="math inline">\(\operatorname{arctg}1\)</span> eredménye <span class="math inline">\(0{,}785\)</span> lesz <span class="math inline">\(45\)</span> helyett — mindig nézd meg a kijelzőn a <b>D</b> vagy <b>DEG</b> jelet.</p>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-egyenesek.html#alap-11">🐕 Tér-eb-ugrás <span class="cimke">A 11–18</span></a><a class="sav bruno" href="feladatok-egyenesek.html#kozep-7">👑 Királyi Gárda <span class="cimke">K 7–12</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> Metszéspont és szög: megvan. Most egy másik kérdés jön: a mi bázisunk egy <b>pont</b>, Maxi pályája egy <b>egyenes</b>. Milyen közel repül el mellettünk? Mert a riasztó csak egy bizonyos távolságon belül szól.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-egyenes-egyenlete.html"><span class="irany">← Előző</span><span class="hova">Az egyenes egyenlete</span></a>
+      <a class="kov" href="tananyag-pont-es-egyenes-tavolsaga.html"><span class="irany">Következő →</span><span class="hova">Pont és egyenes távolsága</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

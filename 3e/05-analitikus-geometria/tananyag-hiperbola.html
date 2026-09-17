@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A hiperbola — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Síkbeli analitikus geometria</a> ›
+  <span class="itt">A hiperbola — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A hiperbola</h1>
+  <p class="alcim">A hiperbola mint mértani hely, az egyenlete, az aszimptotái, a felírása adatokból, és a négy görbe felismerése az egyenletből.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Térkép Hálózata · 10/13</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> Itt a tér két ágra szakad. A mezőnek most is két magja van, de a perem pontjaira nem az összeg, hanem a <b>különbség</b> állandó. És van két vonal, amelyhez a szakadás egyre közelebb húzódik, de soha nem éri el — ezek az <b>aszimptoták</b>.</p></div>
+
+    <h2 id="s1">A hiperbola mint mértani hely</h2>
+
+    <div class="doboz definicio" id="def-hiperbola">
+      <p class="cim"><span class="ikon">📗</span> A hiperbola</p>
+      <p>Adott két pont, <span class="math inline">\(F_1\)</span> és <span class="math inline">\(F_2\)</span> (a <b>fókuszok</b>), és egy <span class="math inline">\(2a\)</span> hosszúság, amely <b>kisebb</b> a fókuszok <span class="math inline">\(2e\)</span> távolságánál (<span class="math inline">\(0\lt2a\lt2e\)</span>). A <b>hiperbola</b> a sík mindazon <span class="math inline">\(P\)</span> pontjainak halmaza, amelyekre</p><span class="math display">\[\bigl|\,|PF_1|-|PF_2|\,\bigr|=2a .\]</span><p>Az abszolút érték miatt két ág van: az egyiken a <span class="math inline">\(P\)</span> az <span class="math inline">\(F_2\)</span>-höz, a másikon az <span class="math inline">\(F_1\)</span>-hez van közelebb.</p>
+    </div>
+
+    <p>Vesd össze az <a href="tananyag-ellipszis.html#def-ellipszis">ellipszissel</a>: ott a két távolság <b>összege</b> állandó, és <span class="math inline">\(2a\gt2e\)</span>; itt a <b>különbségük</b>, és <span class="math inline">\(2a\lt2e\)</span>.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>Ha két rádióállomás egyszerre ad jelet, és a hajó műszere azt méri, hogy az egyik jel mennyivel később érkezett, akkor ismert, hogy a hajó mennyivel van közelebb az egyik állomáshoz, mint a másikhoz — vagyis a hajó egy hiperbola egyik ágán van. Egy harmadik állomással egy második hiperbolát kapunk, a helyet a kettő metszéspontja adja. Így működött például a LORAN-rendszer.</p>
+    </div>
+
+    <h2 id="s2">A hiperbola egyenlete</h2>
+
+    <div class="doboz tetel" id="tetel-hiperbola-egyenlete">
+      <p class="cim"><span class="ikon">📘</span> A hiperbola egyenlete</p>
+      <p>Ha a fókuszok <span class="math inline">\(F_1(-e;0)\)</span> és <span class="math inline">\(F_2(e;0)\)</span>, akkor a hiperbola egyenlete</p><span class="math display">\[\frac{x^2}{a^2}-\frac{y^2}{b^2}=1,\qquad\text{ahol}\qquad e^2=a^2+b^2 .\]</span><ul><li><span class="math inline">\(a\)</span> a <b>valós féltengely</b>, <span class="math inline">\(b\)</span> a <b>képzetes féltengely</b>, <span class="math inline">\(e\)</span> a <b>lineáris excentricitás</b>;</li><li>a csúcspontok <span class="math inline">\((\pm a;0)\)</span>; az <span class="math inline">\(y\)</span>-tengelyt a hiperbola <b>nem metszi</b>.</li></ul>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p>Maxi az ellipszisnél megszokott képlettel számolt: <span class="math inline">\(e^2=a^2-b^2\)</span>. Az <span class="math inline">\(a=2\)</span>, <span class="math inline">\(b=1{,}5\)</span> hiperbolánál így <span class="math inline">\(e\approx1{,}32\)</span> jött ki — a fókusz a <span class="math inline">\((\pm2;0)\)</span> csúcsokon <b>belülre</b> került, oda, ahol a hiperbolának nincs is pontja.</p><p>Hiperbolánál a fókusz <b>kívül</b> van a csúcsokon: <span class="math inline">\(e^2=a^2+b^2\)</span>, itt <span class="math inline">\(e=\sqrt{4+2{,}25}=2{,}5\)</span>.</p>
+    </div>
+
+    <h2 id="s3">Az aszimptoták</h2>
+
+    <div class="doboz tetel" id="tetel-aszimptotak">
+      <p class="cim"><span class="ikon">📘</span> A hiperbola aszimptotái</p>
+      <p>Az <span class="math inline">\(\frac{x^2}{a^2}-\frac{y^2}{b^2}=1\)</span> hiperbola aszimptotái az</p><span class="math display">\[y=\frac bax\qquad\text{és}\qquad y=-\frac bax\]</span><p>egyenesek. A hiperbola ágai egyre közelebb kerülnek hozzájuk, de soha nem érik el őket. Az aszimptota fogalmával a <a href="../../2e/01-hatvanyozas-gyokvonas-komplex-szamok/tananyag-hatvanyfuggveny.html#def-aszimptota">hatványfüggvényeknél</a> már találkoztunk.</p><p><b>Vázlat:</b> rajzold meg a <span class="math inline">\((\pm a;\pm b)\)</span> csúcsú téglalapot; az aszimptoták az átlói, a hiperbola a <span class="math inline">\((\pm a;0)\)</span> csúcsokból indul.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-hiperbola-adatai">
+      <p class="cim"><span class="ikon">✏️</span> A hiperbola adatai és vázlata</p>
+      <p>Határozd meg a <span class="math inline">\(9x^2-16y^2=36\)</span> hiperbola féltengelyeit, lineáris excentricitását, fókuszait és aszimptotáit, és vázold a hiperbolát!</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>Osztunk <span class="math inline">\(36\)</span>-tal: <span class="math inline">\(\frac{x^2}{4}-\frac{y^2}{\frac94}=1\)</span>, tehát <span class="math inline">\(a=2\)</span>, <span class="math inline">\(b=\frac32\)</span>.</p><p><span class="math inline">\(e^2=4+\frac94=\frac{25}4\)</span>, <span class="math inline">\(e=\frac52\)</span>; a fókuszok <span class="math inline">\(F_1(-2{,}5;0)\)</span>, <span class="math inline">\(F_2(2{,}5;0)\)</span>.</p><p>Az aszimptoták: <span class="math inline">\(y=\pm\frac{3/2}{2}x=\pm\frac34x\)</span>.</p><div class="svgcard">
+    <svg viewBox="0 0 404 284" width="404" height="284" role="img" aria-label="Az x²/4 − y²/(9/4) = 1 hiperbola két ága, szaggatott aszimptoták a 4-szer 3-as téglalap átlóin, az F₁(−2,5;0) és F₂(2,5;0) fókusz és egy P pont a két vezérsugárral">
+      <defs><marker id="nyv-18e5d-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+      <clipPath id="kv-18e5d"><rect x="22.0" y="22.0" width="360.0" height="240.0"/></clipPath>
+      <line x1="22.0" y1="262.0" x2="22.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="52.0" y1="262.0" x2="52.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="82.0" y1="262.0" x2="82.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="112.0" y1="262.0" x2="112.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="142.0" y1="262.0" x2="142.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="172.0" y1="262.0" x2="172.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="202.0" y1="262.0" x2="202.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="232.0" y1="262.0" x2="232.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="262.0" y1="262.0" x2="262.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="292.0" y1="262.0" x2="292.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="322.0" y1="262.0" x2="322.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="352.0" y1="262.0" x2="352.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="382.0" y1="262.0" x2="382.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="262.0" x2="382.0" y2="262.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="232.0" x2="382.0" y2="232.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="202.0" x2="382.0" y2="202.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="172.0" x2="382.0" y2="172.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="142.0" x2="382.0" y2="142.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="112.0" x2="382.0" y2="112.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="82.0" x2="382.0" y2="82.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="52.0" x2="382.0" y2="52.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="22.0" x2="382.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="142.0" x2="392.5" y2="142.0" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-18e5d-0)"/>
+      <line x1="202.0" y1="262.0" x2="202.0" y2="11.5" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-18e5d-0)"/>
+      <text x="388.5" y="133.0" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">x</text>
+      <text x="212.0" y="17.5" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">y</text>
+      <line x1="22.0" y1="139.0" x2="22.0" y2="145.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="22.0" y="157.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−6</text>
+      <line x1="52.0" y1="139.0" x2="52.0" y2="145.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="52.0" y="157.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−5</text>
+      <line x1="82.0" y1="139.0" x2="82.0" y2="145.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="82.0" y="157.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−4</text>
+      <line x1="172.0" y1="139.0" x2="172.0" y2="145.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="172.0" y="157.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−1</text>
+      <line x1="232.0" y1="139.0" x2="232.0" y2="145.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="232.0" y="157.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">1</text>
+      <line x1="322.0" y1="139.0" x2="322.0" y2="145.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="322.0" y="157.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">4</text>
+      <line x1="352.0" y1="139.0" x2="352.0" y2="145.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="352.0" y="157.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">5</text>
+      <line x1="382.0" y1="139.0" x2="382.0" y2="145.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="382.0" y="157.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">6</text>
+      <line x1="199.0" y1="262.0" x2="205.0" y2="262.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="196.0" y="266.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−4</text>
+      <line x1="199.0" y1="232.0" x2="205.0" y2="232.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="196.0" y="236.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−3</text>
+      <line x1="199.0" y1="202.0" x2="205.0" y2="202.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="196.0" y="206.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−2</text>
+      <line x1="199.0" y1="172.0" x2="205.0" y2="172.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="196.0" y="176.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−1</text>
+      <line x1="199.0" y1="112.0" x2="205.0" y2="112.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="196.0" y="116.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">1</text>
+      <line x1="199.0" y1="82.0" x2="205.0" y2="82.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="196.0" y="86.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">2</text>
+      <line x1="199.0" y1="52.0" x2="205.0" y2="52.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="196.0" y="56.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">3</text>
+      <line x1="199.0" y1="22.0" x2="205.0" y2="22.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="196.0" y="26.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">4</text>
+      <text x="194.0" y="157.0" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">O</text>
+      <g clip-path="url(#kv-18e5d)">
+      <path d="M433.2,309.5 L429.8,306.8 L426.4,304.1 L423.0,301.5 L419.7,299.0 L416.5,296.5 L413.3,294.0 L410.2,291.5 L407.1,289.1 L404.1,286.7 L401.1,284.4 L398.2,282.1 L395.3,279.8 L392.4,277.6 L389.7,275.3 L386.9,273.2 L384.2,271.0 L381.5,268.9 L378.9,266.8 L376.4,264.8 L373.8,262.8 L371.3,260.8 L368.9,258.8 L366.5,256.9 L364.1,255.0 L361.8,253.1 L359.5,251.2 L357.3,249.4 L355.1,247.6 L352.9,245.8 L350.7,244.1 L348.6,242.3 L346.6,240.6 L344.5,239.0 L342.5,237.3 L340.6,235.7 L338.7,234.1 L336.8,232.5 L334.9,230.9 L333.1,229.4 L331.3,227.9 L329.5,226.4 L327.8,224.9 L326.1,223.4 L324.4,222.0 L322.7,220.6 L321.1,219.2 L319.5,217.8 L318.0,216.4 L316.4,215.1 L314.9,213.8 L313.5,212.4 L312.0,211.1 L310.6,209.9 L309.2,208.6 L307.8,207.4 L306.5,206.1 L305.1,204.9 L303.9,203.7 L302.6,202.5 L301.3,201.4 L300.1,200.2 L298.9,199.1 L297.7,198.0 L296.6,196.8 L295.5,195.8 L294.4,194.7 L293.3,193.6 L292.2,192.5 L291.2,191.5 L290.2,190.4 L289.2,189.4 L288.2,188.4 L287.2,187.4 L286.3,186.4 L285.4,185.4 L284.5,184.5 L283.6,183.5 L282.8,182.6 L281.9,181.6 L281.1,180.7 L280.3,179.8 L279.6,178.9 L278.8,178.0 L278.1,177.1 L277.4,176.2 L276.7,175.3 L276.0,174.4 L275.3,173.6 L274.7,172.7 L274.0,171.9 L273.4,171.0 L272.8,170.2 L272.2,169.4 L271.7,168.6 L271.1,167.8 L270.6,167.0 L270.1,166.2 L269.6,165.4 L269.1,164.6 L268.7,163.8 L268.2,163.0 L267.8,162.3 L267.4,161.5 L267.0,160.7 L266.6,160.0 L266.2,159.2 L265.9,158.5 L265.6,157.7 L265.2,157.0 L264.9,156.2 L264.6,155.5 L264.4,154.8 L264.1,154.1 L263.9,153.3 L263.6,152.6 L263.4,151.9 L263.2,151.2 L263.1,150.5 L262.9,149.7 L262.7,149.0 L262.6,148.3 L262.5,147.6 L262.4,146.9 L262.3,146.2 L262.2,145.5 L262.1,144.8 L262.1,144.1 L262.0,143.4 L262.0,142.7 L262.0,142.0 L262.0,141.3 L262.0,140.6 L262.1,139.9 L262.1,139.2 L262.2,138.5 L262.3,137.8 L262.4,137.1 L262.5,136.4 L262.6,135.7 L262.7,135.0 L262.9,134.3 L263.1,133.5 L263.2,132.8 L263.4,132.1 L263.6,131.4 L263.9,130.7 L264.1,129.9 L264.4,129.2 L264.6,128.5 L264.9,127.8 L265.2,127.0 L265.6,126.3 L265.9,125.5 L266.2,124.8 L266.6,124.0 L267.0,123.3 L267.4,122.5 L267.8,121.7 L268.2,121.0 L268.7,120.2 L269.1,119.4 L269.6,118.6 L270.1,117.8 L270.6,117.0 L271.1,116.2 L271.7,115.4 L272.2,114.6 L272.8,113.8 L273.4,113.0 L274.0,112.1 L274.7,111.3 L275.3,110.4 L276.0,109.6 L276.7,108.7 L277.4,107.8 L278.1,106.9 L278.8,106.0 L279.6,105.1 L280.3,104.2 L281.1,103.3 L281.9,102.4 L282.8,101.4 L283.6,100.5 L284.5,99.5 L285.4,98.6 L286.3,97.6 L287.2,96.6 L288.2,95.6 L289.2,94.6 L290.2,93.6 L291.2,92.5 L292.2,91.5 L293.3,90.4 L294.4,89.3 L295.5,88.2 L296.6,87.2 L297.7,86.0 L298.9,84.9 L300.1,83.8 L301.3,82.6 L302.6,81.5 L303.9,80.3 L305.1,79.1 L306.5,77.9 L307.8,76.6 L309.2,75.4 L310.6,74.1 L312.0,72.9 L313.5,71.6 L314.9,70.2 L316.4,68.9 L318.0,67.6 L319.5,66.2 L321.1,64.8 L322.7,63.4 L324.4,62.0 L326.1,60.6 L327.8,59.1 L329.5,57.6 L331.3,56.1 L333.1,54.6 L334.9,53.1 L336.8,51.5 L338.7,49.9 L340.6,48.3 L342.5,46.7 L344.5,45.0 L346.6,43.4 L348.6,41.7 L350.7,39.9 L352.9,38.2 L355.1,36.4 L357.3,34.6 L359.5,32.8 L361.8,30.9 L364.1,29.0 L366.5,27.1 L368.9,25.2 L371.3,23.2 L373.8,21.2 L376.4,19.2 L378.9,17.2 L381.5,15.1 L384.2,13.0 L386.9,10.8 L389.7,8.7 L392.4,6.4 L395.3,4.2 L398.2,1.9 L401.1,-0.4 L404.1,-2.7 L407.1,-5.1 L410.2,-7.5 L413.3,-10.0 L416.5,-12.5 L419.7,-15.0 L423.0,-17.5 L426.4,-20.1 L429.8,-22.8 L433.2,-25.5" fill="none" stroke="#3b82f6" stroke-width="2.2"/>
+      <path d="M-29.2,309.5 L-25.8,306.8 L-22.4,304.1 L-19.0,301.5 L-15.7,299.0 L-12.5,296.5 L-9.3,294.0 L-6.2,291.5 L-3.1,289.1 L-0.1,286.7 L2.9,284.4 L5.8,282.1 L8.7,279.8 L11.6,277.6 L14.3,275.3 L17.1,273.2 L19.8,271.0 L22.5,268.9 L25.1,266.8 L27.6,264.8 L30.2,262.8 L32.7,260.8 L35.1,258.8 L37.5,256.9 L39.9,255.0 L42.2,253.1 L44.5,251.2 L46.7,249.4 L48.9,247.6 L51.1,245.8 L53.3,244.1 L55.4,242.3 L57.4,240.6 L59.5,239.0 L61.5,237.3 L63.4,235.7 L65.3,234.1 L67.2,232.5 L69.1,230.9 L70.9,229.4 L72.7,227.9 L74.5,226.4 L76.2,224.9 L77.9,223.4 L79.6,222.0 L81.3,220.6 L82.9,219.2 L84.5,217.8 L86.0,216.4 L87.6,215.1 L89.1,213.8 L90.5,212.4 L92.0,211.1 L93.4,209.9 L94.8,208.6 L96.2,207.4 L97.5,206.1 L98.9,204.9 L100.1,203.7 L101.4,202.5 L102.7,201.4 L103.9,200.2 L105.1,199.1 L106.3,198.0 L107.4,196.8 L108.5,195.8 L109.6,194.7 L110.7,193.6 L111.8,192.5 L112.8,191.5 L113.8,190.4 L114.8,189.4 L115.8,188.4 L116.8,187.4 L117.7,186.4 L118.6,185.4 L119.5,184.5 L120.4,183.5 L121.2,182.6 L122.1,181.6 L122.9,180.7 L123.7,179.8 L124.4,178.9 L125.2,178.0 L125.9,177.1 L126.6,176.2 L127.3,175.3 L128.0,174.4 L128.7,173.6 L129.3,172.7 L130.0,171.9 L130.6,171.0 L131.2,170.2 L131.8,169.4 L132.3,168.6 L132.9,167.8 L133.4,167.0 L133.9,166.2 L134.4,165.4 L134.9,164.6 L135.3,163.8 L135.8,163.0 L136.2,162.3 L136.6,161.5 L137.0,160.7 L137.4,160.0 L137.8,159.2 L138.1,158.5 L138.4,157.7 L138.8,157.0 L139.1,156.2 L139.4,155.5 L139.6,154.8 L139.9,154.1 L140.1,153.3 L140.4,152.6 L140.6,151.9 L140.8,151.2 L140.9,150.5 L141.1,149.7 L141.3,149.0 L141.4,148.3 L141.5,147.6 L141.6,146.9 L141.7,146.2 L141.8,145.5 L141.9,144.8 L141.9,144.1 L142.0,143.4 L142.0,142.7 L142.0,142.0 L142.0,141.3 L142.0,140.6 L141.9,139.9 L141.9,139.2 L141.8,138.5 L141.7,137.8 L141.6,137.1 L141.5,136.4 L141.4,135.7 L141.3,135.0 L141.1,134.3 L140.9,133.5 L140.8,132.8 L140.6,132.1 L140.4,131.4 L140.1,130.7 L139.9,129.9 L139.6,129.2 L139.4,128.5 L139.1,127.8 L138.8,127.0 L138.4,126.3 L138.1,125.5 L137.8,124.8 L137.4,124.0 L137.0,123.3 L136.6,122.5 L136.2,121.7 L135.8,121.0 L135.3,120.2 L134.9,119.4 L134.4,118.6 L133.9,117.8 L133.4,117.0 L132.9,116.2 L132.3,115.4 L131.8,114.6 L131.2,113.8 L130.6,113.0 L130.0,112.1 L129.3,111.3 L128.7,110.4 L128.0,109.6 L127.3,108.7 L126.6,107.8 L125.9,106.9 L125.2,106.0 L124.4,105.1 L123.7,104.2 L122.9,103.3 L122.1,102.4 L121.2,101.4 L120.4,100.5 L119.5,99.5 L118.6,98.6 L117.7,97.6 L116.8,96.6 L115.8,95.6 L114.8,94.6 L113.8,93.6 L112.8,92.5 L111.8,91.5 L110.7,90.4 L109.6,89.3 L108.5,88.2 L107.4,87.2 L106.3,86.0 L105.1,84.9 L103.9,83.8 L102.7,82.6 L101.4,81.5 L100.1,80.3 L98.9,79.1 L97.5,77.9 L96.2,76.6 L94.8,75.4 L93.4,74.1 L92.0,72.9 L90.5,71.6 L89.1,70.2 L87.6,68.9 L86.0,67.6 L84.5,66.2 L82.9,64.8 L81.3,63.4 L79.6,62.0 L77.9,60.6 L76.2,59.1 L74.5,57.6 L72.7,56.1 L70.9,54.6 L69.1,53.1 L67.2,51.5 L65.3,49.9 L63.4,48.3 L61.5,46.7 L59.5,45.0 L57.4,43.4 L55.4,41.7 L53.3,39.9 L51.1,38.2 L48.9,36.4 L46.7,34.6 L44.5,32.8 L42.2,30.9 L39.9,29.0 L37.5,27.1 L35.1,25.2 L32.7,23.2 L30.2,21.2 L27.6,19.2 L25.1,17.2 L22.5,15.1 L19.8,13.0 L17.1,10.8 L14.3,8.7 L11.6,6.4 L8.7,4.2 L5.8,1.9 L2.9,-0.4 L-0.1,-2.7 L-3.1,-5.1 L-6.2,-7.5 L-9.3,-10.0 L-12.5,-12.5 L-15.7,-15.0 L-19.0,-17.5 L-22.4,-20.1 L-25.8,-22.8 L-29.2,-25.5" fill="none" stroke="#3b82f6" stroke-width="2.2"/>
+      <line x1="42.0" y1="262.0" x2="362.0" y2="22.0" stroke="#475569" stroke-width="1.4" stroke-dasharray="6 4"/>
+      <line x1="362.0" y1="262.0" x2="42.0" y2="22.0" stroke="#475569" stroke-width="1.4" stroke-dasharray="6 4"/>
+      </g>
+      <line x1="142.0" y1="187.0" x2="262.0" y2="187.0" stroke="#475569" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="262.0" y1="187.0" x2="262.0" y2="97.0" stroke="#475569" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="262.0" y1="97.0" x2="142.0" y2="97.0" stroke="#475569" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="142.0" y1="97.0" x2="142.0" y2="187.0" stroke="#475569" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="127.0" y1="142.0" x2="322.0" y2="64.1" stroke="#f59e0b" stroke-width="1.6"/>
+      <line x1="277.0" y1="142.0" x2="322.0" y2="64.1" stroke="#f59e0b" stroke-width="1.6"/>
+      <circle cx="127.0" cy="142.0" r="3.4" fill="#ef4444"/>
+      <circle cx="277.0" cy="142.0" r="3.4" fill="#ef4444"/>
+      <circle cx="322.0" cy="64.1" r="3.4" fill="#0f172a"/>
+      <text x="127.0" y="159.0" font-size="14" fill="#ef4444" text-anchor="middle" font-style="italic" font-weight="600">F₁</text>
+      <text x="277.0" y="159.0" font-size="14" fill="#ef4444" text-anchor="middle" font-style="italic" font-weight="600">F₂</text>
+      <text x="330.0" y="55.1" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">P</text>
+    </svg>
+    </div>
+    <p class="cap">A hiperbola, a <span class="math inline">\(4\times3\)</span>-as téglalap, az aszimptoták és a <span class="math inline">\(P(4;\approx2{,}6)\)</span> pont vezérsugarai: <span class="math inline">\(7-3=4=2a\)</span>.</p><p class="vegeredmeny"><span class="math inline">\(a=2\)</span>, <span class="math inline">\(b=1{,}5\)</span>, <span class="math inline">\(e=2{,}5\)</span>, <span class="math inline">\(F_{1,2}(\pm2{,}5;0)\)</span>, <span class="math inline">\(y=\pm\frac34x\)</span></p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ a = 2, b = 3, az aszimptoták y = ±(b/a)x = ±(3/2)x." data-nem="✘ Az aszimptota iránytényezője b/a (a képzetes féltengely osztva a valós féltengellyel): a = 2, b = 3, tehát ±3/2. A négyzetek (9/4) és a fordított arány (2/3) nem jó.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik egyenes aszimptotája az <span class="math inline">\(\frac{x^2}{4}-\frac{y^2}{9}=1\)</span> hiperbolának?</p>
+      <div class="opciok"><button><span class="math inline">\(y=\frac23x\)</span></button><button><span class="math inline">\(y=\frac94x\)</span></button><button><span class="math inline">\(y=\frac49x\)</span></button><button><span class="math inline">\(y=\frac32x\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Adatokból egyenlet — melyik görbe?</h2>
+
+    <ul><li><b><span class="math inline">\(a\)</span> és <span class="math inline">\(e\)</span> adott:</b> <span class="math inline">\(b^2=e^2-a^2\)</span>.</li><li><b>Két pont adott:</b> ahogy az ellipszisnél, lineáris rendszer az <span class="math inline">\(\frac1{a^2}\)</span> és <span class="math inline">\(\frac1{b^2}\)</span> ismeretlenre. Ha az egyik pont csúcspont, <span class="math inline">\((\pm a;0)\)</span>, az rögtön megadja az <span class="math inline">\(a\)</span>-t. Például a <span class="math inline">\((2;0)\)</span> és a <span class="math inline">\((4;3)\)</span> ponton átmenő hiperbolánál <span class="math inline">\(a^2=4\)</span>, és <span class="math inline">\(\frac{16}4-\frac9{b^2}=1\)</span>-ből <span class="math inline">\(b^2=3\)</span>: <span class="math inline">\(\frac{x^2}4-\frac{y^2}3=1\)</span>.</li></ul><p><b>Melyik görbe?</b> Ha az egyenlet a tanult alapalakok egyikére hozható, és valóban görbét ír le (a körnél és az ellipszisnél a rendezés után a jobb oldal pozitív, a parabolánál a másik változó elsőfokon szerepel), akkor az alakjáról ránézésre eldönthető, melyik:</p><div class="tblwrap"><table class="tt-table"><tr><th>az egyenletben</th><th>görbe</th></tr><tr><td><span class="math inline">\(x^2\)</span> és <span class="math inline">\(y^2\)</span> azonos előjellel, egyenlő együtthatóval</td><td>kör</td></tr><tr><td><span class="math inline">\(x^2\)</span> és <span class="math inline">\(y^2\)</span> azonos előjellel, különböző együtthatóval</td><td>ellipszis</td></tr><tr><td><span class="math inline">\(x^2\)</span> és <span class="math inline">\(y^2\)</span> ellentétes előjellel</td><td>hiperbola</td></tr><tr><td>csak az egyik változó szerepel négyzeten</td><td>parabola</td></tr></table></div>
+
+    <div class="doboz pelda" id="pelda-felismeres">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — melyik mező melyik?</p>
+      <p>A műszer négy mező egyenletét rögzítette: (A) <span class="math inline">\(x^2+y^2=9\)</span>, (B) <span class="math inline">\(\frac{x^2}9+\frac{y^2}4=1\)</span>, (C) <span class="math inline">\(\frac{x^2}4-y^2=1\)</span>, (D) <span class="math inline">\(y^2=4x\)</span>. Párosítsd az egyenleteket az ábrákkal! <i>(A parabolát a 12. lapon részletezzük; itt elég annyi, hogy csak az egyik változó van négyzeten.)</i></p><div class="svgcard">
+    <svg viewBox="0 0 376 342" width="376" height="342" role="img" aria-label="Négy mező: 1. hiperbola, 2. ellipszis, 3. jobbra nyíló parabola, 4. kör">
+    <g transform="translate(0,0)">
+      <defs><marker id="nyv-a7f43-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+      <clipPath id="kv-a7f43"><rect x="22.0" y="22.0" width="136.0" height="119.0"/></clipPath>
+      <line x1="22.0" y1="141.0" x2="22.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="39.0" y1="141.0" x2="39.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="56.0" y1="141.0" x2="56.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="73.0" y1="141.0" x2="73.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="90.0" y1="141.0" x2="90.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="107.0" y1="141.0" x2="107.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="124.0" y1="141.0" x2="124.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="141.0" y1="141.0" x2="141.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="158.0" y1="141.0" x2="158.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="132.5" x2="158.0" y2="132.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="115.5" x2="158.0" y2="115.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="98.5" x2="158.0" y2="98.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="81.5" x2="158.0" y2="81.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="64.5" x2="158.0" y2="64.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="47.5" x2="158.0" y2="47.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="30.5" x2="158.0" y2="30.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="81.5" x2="163.9" y2="81.5" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-a7f43-0)"/>
+      <line x1="90.0" y1="141.0" x2="90.0" y2="16.1" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-a7f43-0)"/>
+      <text x="159.9" y="72.5" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">x</text>
+      <text x="100.0" y="22.1" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">y</text>
+      <g clip-path="url(#kv-a7f43)">
+      <path d="M262.8,166.2 L259.9,164.7 L256.9,163.2 L254.1,161.7 L251.2,160.3 L248.5,158.9 L245.7,157.5 L243.1,156.1 L240.4,154.8 L237.8,153.4 L235.3,152.1 L232.8,150.9 L230.4,149.6 L228.0,148.4 L225.6,147.2 L223.3,146.0 L221.1,144.8 L218.8,143.6 L216.6,142.5 L214.5,141.4 L212.4,140.3 L210.3,139.2 L208.3,138.1 L206.3,137.1 L204.3,136.1 L202.4,135.1 L200.5,134.1 L198.7,133.1 L196.9,132.2 L195.1,131.2 L193.3,130.3 L191.6,129.4 L189.9,128.5 L188.3,127.6 L186.6,126.7 L185.1,125.9 L183.5,125.0 L182.0,124.2 L180.5,123.4 L179.0,122.6 L177.5,121.8 L176.1,121.1 L174.7,120.3 L173.4,119.6 L172.0,118.8 L170.7,118.1 L169.4,117.4 L168.2,116.7 L166.9,116.0 L165.7,115.3 L164.5,114.7 L163.3,114.0 L162.2,113.4 L161.1,112.7 L160.0,112.1 L158.9,111.5 L157.9,110.9 L156.8,110.3 L155.8,109.7 L154.8,109.1 L153.9,108.5 L152.9,108.0 L152.0,107.4 L151.1,106.9 L150.2,106.3 L149.3,105.8 L148.4,105.3 L147.6,104.8 L146.8,104.2 L146.0,103.7 L145.2,103.3 L144.4,102.8 L143.7,102.3 L143.0,101.8 L142.3,101.3 L141.6,100.9 L140.9,100.4 L140.2,100.0 L139.6,99.5 L138.9,99.1 L138.3,98.7 L137.7,98.2 L137.1,97.8 L136.6,97.4 L136.0,97.0 L135.5,96.6 L134.9,96.2 L134.4,95.8 L133.9,95.4 L133.4,95.0 L133.0,94.6 L132.5,94.2 L132.0,93.9 L131.6,93.5 L131.2,93.1 L130.8,92.8 L130.4,92.4 L130.0,92.0 L129.6,91.7 L129.3,91.3 L128.9,91.0 L128.6,90.7 L128.3,90.3 L128.0,90.0 L127.7,89.6 L127.4,89.3 L127.1,89.0 L126.9,88.6 L126.6,88.3 L126.4,88.0 L126.2,87.7 L126.0,87.3 L125.8,87.0 L125.6,86.7 L125.4,86.4 L125.2,86.1 L125.1,85.8 L124.9,85.5 L124.8,85.2 L124.7,84.8 L124.5,84.5 L124.4,84.2 L124.3,83.9 L124.3,83.6 L124.2,83.3 L124.1,83.0 L124.1,82.7 L124.0,82.4 L124.0,82.1 L124.0,81.8 L124.0,81.5 L124.0,81.2 L124.0,80.9 L124.0,80.6 L124.1,80.3 L124.1,80.0 L124.2,79.7 L124.3,79.4 L124.3,79.1 L124.4,78.8 L124.5,78.5 L124.7,78.2 L124.8,77.8 L124.9,77.5 L125.1,77.2 L125.2,76.9 L125.4,76.6 L125.6,76.3 L125.8,76.0 L126.0,75.7 L126.2,75.3 L126.4,75.0 L126.6,74.7 L126.9,74.4 L127.1,74.0 L127.4,73.7 L127.7,73.4 L128.0,73.0 L128.3,72.7 L128.6,72.3 L128.9,72.0 L129.3,71.7 L129.6,71.3 L130.0,71.0 L130.4,70.6 L130.8,70.2 L131.2,69.9 L131.6,69.5 L132.0,69.1 L132.5,68.8 L133.0,68.4 L133.4,68.0 L133.9,67.6 L134.4,67.2 L134.9,66.8 L135.5,66.4 L136.0,66.0 L136.6,65.6 L137.1,65.2 L137.7,64.8 L138.3,64.3 L138.9,63.9 L139.6,63.5 L140.2,63.0 L140.9,62.6 L141.6,62.1 L142.3,61.7 L143.0,61.2 L143.7,60.7 L144.4,60.2 L145.2,59.7 L146.0,59.3 L146.8,58.8 L147.6,58.2 L148.4,57.7 L149.3,57.2 L150.2,56.7 L151.1,56.1 L152.0,55.6 L152.9,55.0 L153.9,54.5 L154.8,53.9 L155.8,53.3 L156.8,52.7 L157.9,52.1 L158.9,51.5 L160.0,50.9 L161.1,50.3 L162.2,49.6 L163.3,49.0 L164.5,48.3 L165.7,47.7 L166.9,47.0 L168.2,46.3 L169.4,45.6 L170.7,44.9 L172.0,44.2 L173.4,43.4 L174.7,42.7 L176.1,41.9 L177.5,41.2 L179.0,40.4 L180.5,39.6 L182.0,38.8 L183.5,38.0 L185.1,37.1 L186.6,36.3 L188.3,35.4 L189.9,34.5 L191.6,33.6 L193.3,32.7 L195.1,31.8 L196.9,30.8 L198.7,29.9 L200.5,28.9 L202.4,27.9 L204.3,26.9 L206.3,25.9 L208.3,24.9 L210.3,23.8 L212.4,22.7 L214.5,21.6 L216.6,20.5 L218.8,19.4 L221.1,18.2 L223.3,17.0 L225.6,15.8 L228.0,14.6 L230.4,13.4 L232.8,12.1 L235.3,10.9 L237.8,9.6 L240.4,8.2 L243.1,6.9 L245.7,5.5 L248.5,4.1 L251.2,2.7 L254.1,1.3 L256.9,-0.2 L259.9,-1.7 L262.8,-3.2" fill="none" stroke="#3b82f6" stroke-width="2.2"/>
+      <path d="M-82.8,166.2 L-79.9,164.7 L-76.9,163.2 L-74.1,161.7 L-71.2,160.3 L-68.5,158.9 L-65.7,157.5 L-63.1,156.1 L-60.4,154.8 L-57.8,153.4 L-55.3,152.1 L-52.8,150.9 L-50.4,149.6 L-48.0,148.4 L-45.6,147.2 L-43.3,146.0 L-41.1,144.8 L-38.8,143.6 L-36.6,142.5 L-34.5,141.4 L-32.4,140.3 L-30.3,139.2 L-28.3,138.1 L-26.3,137.1 L-24.3,136.1 L-22.4,135.1 L-20.5,134.1 L-18.7,133.1 L-16.9,132.2 L-15.1,131.2 L-13.3,130.3 L-11.6,129.4 L-9.9,128.5 L-8.3,127.6 L-6.6,126.7 L-5.1,125.9 L-3.5,125.0 L-2.0,124.2 L-0.5,123.4 L1.0,122.6 L2.5,121.8 L3.9,121.1 L5.3,120.3 L6.6,119.6 L8.0,118.8 L9.3,118.1 L10.6,117.4 L11.8,116.7 L13.1,116.0 L14.3,115.3 L15.5,114.7 L16.7,114.0 L17.8,113.4 L18.9,112.7 L20.0,112.1 L21.1,111.5 L22.1,110.9 L23.2,110.3 L24.2,109.7 L25.2,109.1 L26.1,108.5 L27.1,108.0 L28.0,107.4 L28.9,106.9 L29.8,106.3 L30.7,105.8 L31.6,105.3 L32.4,104.8 L33.2,104.2 L34.0,103.7 L34.8,103.3 L35.6,102.8 L36.3,102.3 L37.0,101.8 L37.7,101.3 L38.4,100.9 L39.1,100.4 L39.8,100.0 L40.4,99.5 L41.1,99.1 L41.7,98.7 L42.3,98.2 L42.9,97.8 L43.4,97.4 L44.0,97.0 L44.5,96.6 L45.1,96.2 L45.6,95.8 L46.1,95.4 L46.6,95.0 L47.0,94.6 L47.5,94.2 L48.0,93.9 L48.4,93.5 L48.8,93.1 L49.2,92.8 L49.6,92.4 L50.0,92.0 L50.4,91.7 L50.7,91.3 L51.1,91.0 L51.4,90.7 L51.7,90.3 L52.0,90.0 L52.3,89.6 L52.6,89.3 L52.9,89.0 L53.1,88.6 L53.4,88.3 L53.6,88.0 L53.8,87.7 L54.0,87.3 L54.2,87.0 L54.4,86.7 L54.6,86.4 L54.8,86.1 L54.9,85.8 L55.1,85.5 L55.2,85.2 L55.3,84.8 L55.5,84.5 L55.6,84.2 L55.7,83.9 L55.7,83.6 L55.8,83.3 L55.9,83.0 L55.9,82.7 L56.0,82.4 L56.0,82.1 L56.0,81.8 L56.0,81.5 L56.0,81.2 L56.0,80.9 L56.0,80.6 L55.9,80.3 L55.9,80.0 L55.8,79.7 L55.7,79.4 L55.7,79.1 L55.6,78.8 L55.5,78.5 L55.3,78.2 L55.2,77.8 L55.1,77.5 L54.9,77.2 L54.8,76.9 L54.6,76.6 L54.4,76.3 L54.2,76.0 L54.0,75.7 L53.8,75.3 L53.6,75.0 L53.4,74.7 L53.1,74.4 L52.9,74.0 L52.6,73.7 L52.3,73.4 L52.0,73.0 L51.7,72.7 L51.4,72.3 L51.1,72.0 L50.7,71.7 L50.4,71.3 L50.0,71.0 L49.6,70.6 L49.2,70.2 L48.8,69.9 L48.4,69.5 L48.0,69.1 L47.5,68.8 L47.0,68.4 L46.6,68.0 L46.1,67.6 L45.6,67.2 L45.1,66.8 L44.5,66.4 L44.0,66.0 L43.4,65.6 L42.9,65.2 L42.3,64.8 L41.7,64.3 L41.1,63.9 L40.4,63.5 L39.8,63.0 L39.1,62.6 L38.4,62.1 L37.7,61.7 L37.0,61.2 L36.3,60.7 L35.6,60.2 L34.8,59.7 L34.0,59.3 L33.2,58.8 L32.4,58.2 L31.6,57.7 L30.7,57.2 L29.8,56.7 L28.9,56.1 L28.0,55.6 L27.1,55.0 L26.1,54.5 L25.2,53.9 L24.2,53.3 L23.2,52.7 L22.1,52.1 L21.1,51.5 L20.0,50.9 L18.9,50.3 L17.8,49.6 L16.7,49.0 L15.5,48.3 L14.3,47.7 L13.1,47.0 L11.8,46.3 L10.6,45.6 L9.3,44.9 L8.0,44.2 L6.6,43.4 L5.3,42.7 L3.9,41.9 L2.5,41.2 L1.0,40.4 L-0.5,39.6 L-2.0,38.8 L-3.5,38.0 L-5.1,37.1 L-6.6,36.3 L-8.3,35.4 L-9.9,34.5 L-11.6,33.6 L-13.3,32.7 L-15.1,31.8 L-16.9,30.8 L-18.7,29.9 L-20.5,28.9 L-22.4,27.9 L-24.3,26.9 L-26.3,25.9 L-28.3,24.9 L-30.3,23.8 L-32.4,22.7 L-34.5,21.6 L-36.6,20.5 L-38.8,19.4 L-41.1,18.2 L-43.3,17.0 L-45.6,15.8 L-48.0,14.6 L-50.4,13.4 L-52.8,12.1 L-55.3,10.9 L-57.8,9.6 L-60.4,8.2 L-63.1,6.9 L-65.7,5.5 L-68.5,4.1 L-71.2,2.7 L-74.1,1.3 L-76.9,-0.2 L-79.9,-1.7 L-82.8,-3.2" fill="none" stroke="#3b82f6" stroke-width="2.2"/>
+      </g>
+      <text x="45.8" y="32.2" font-size="15" fill="#8b5cf6" text-anchor="middle" font-weight="600">1.</text>
+    </g>
+    <g transform="translate(196,0)">
+      <defs><marker id="nyv-4bafb-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+      <clipPath id="kv-4bafb"><rect x="22.0" y="22.0" width="136.0" height="119.0"/></clipPath>
+      <line x1="22.0" y1="141.0" x2="22.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="39.0" y1="141.0" x2="39.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="56.0" y1="141.0" x2="56.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="73.0" y1="141.0" x2="73.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="90.0" y1="141.0" x2="90.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="107.0" y1="141.0" x2="107.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="124.0" y1="141.0" x2="124.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="141.0" y1="141.0" x2="141.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="158.0" y1="141.0" x2="158.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="132.5" x2="158.0" y2="132.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="115.5" x2="158.0" y2="115.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="98.5" x2="158.0" y2="98.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="81.5" x2="158.0" y2="81.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="64.5" x2="158.0" y2="64.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="47.5" x2="158.0" y2="47.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="30.5" x2="158.0" y2="30.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="81.5" x2="163.9" y2="81.5" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-4bafb-0)"/>
+      <line x1="90.0" y1="141.0" x2="90.0" y2="16.1" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-4bafb-0)"/>
+      <text x="159.9" y="72.5" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">x</text>
+      <text x="100.0" y="22.1" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">y</text>
+      <g clip-path="url(#kv-4bafb)">
+      <path d="M141.0,81.5 L141.0,80.7 L140.9,79.9 L140.9,79.0 L140.8,78.2 L140.6,77.4 L140.5,76.6 L140.3,75.8 L140.0,75.0 L139.8,74.2 L139.5,73.4 L139.2,72.6 L138.9,71.8 L138.5,71.0 L138.1,70.2 L137.7,69.4 L137.2,68.7 L136.8,67.9 L136.3,67.2 L135.7,66.4 L135.2,65.7 L134.6,65.0 L134.0,64.3 L133.3,63.6 L132.7,62.9 L132.0,62.2 L131.3,61.5 L130.5,60.9 L129.8,60.2 L129.0,59.6 L128.2,59.0 L127.3,58.3 L126.5,57.8 L125.6,57.2 L124.7,56.6 L123.8,56.1 L122.9,55.5 L121.9,55.0 L121.0,54.5 L120.0,54.0 L119.0,53.5 L117.9,53.1 L116.9,52.6 L115.9,52.2 L114.8,51.8 L113.7,51.4 L112.6,51.0 L111.5,50.7 L110.4,50.3 L109.2,50.0 L108.1,49.7 L106.9,49.4 L105.8,49.2 L104.6,48.9 L103.4,48.7 L102.2,48.5 L101.0,48.3 L99.8,48.1 L98.6,48.0 L97.4,47.9 L96.1,47.7 L94.9,47.7 L93.7,47.6 L92.5,47.5 L91.2,47.5 L90.0,47.5 L88.8,47.5 L87.5,47.5 L86.3,47.6 L85.1,47.7 L83.9,47.7 L82.6,47.9 L81.4,48.0 L80.2,48.1 L79.0,48.3 L77.8,48.5 L76.6,48.7 L75.4,48.9 L74.2,49.2 L73.1,49.4 L71.9,49.7 L70.8,50.0 L69.6,50.3 L68.5,50.7 L67.4,51.0 L66.3,51.4 L65.2,51.8 L64.1,52.2 L63.1,52.6 L62.1,53.1 L61.0,53.5 L60.0,54.0 L59.0,54.5 L58.1,55.0 L57.1,55.5 L56.2,56.1 L55.3,56.6 L54.4,57.2 L53.5,57.8 L52.7,58.3 L51.8,59.0 L51.0,59.6 L50.2,60.2 L49.5,60.9 L48.7,61.5 L48.0,62.2 L47.3,62.9 L46.7,63.6 L46.0,64.3 L45.4,65.0 L44.8,65.7 L44.3,66.4 L43.7,67.2 L43.2,67.9 L42.8,68.7 L42.3,69.4 L41.9,70.2 L41.5,71.0 L41.1,71.8 L40.8,72.6 L40.5,73.4 L40.2,74.2 L40.0,75.0 L39.7,75.8 L39.5,76.6 L39.4,77.4 L39.2,78.2 L39.1,79.0 L39.1,79.9 L39.0,80.7 L39.0,81.5 L39.0,82.3 L39.1,83.1 L39.1,84.0 L39.2,84.8 L39.4,85.6 L39.5,86.4 L39.7,87.2 L40.0,88.0 L40.2,88.8 L40.5,89.6 L40.8,90.4 L41.1,91.2 L41.5,92.0 L41.9,92.8 L42.3,93.6 L42.8,94.3 L43.2,95.1 L43.7,95.8 L44.3,96.6 L44.8,97.3 L45.4,98.0 L46.0,98.7 L46.7,99.4 L47.3,100.1 L48.0,100.8 L48.7,101.5 L49.5,102.1 L50.2,102.8 L51.0,103.4 L51.8,104.0 L52.7,104.7 L53.5,105.2 L54.4,105.8 L55.3,106.4 L56.2,106.9 L57.1,107.5 L58.1,108.0 L59.0,108.5 L60.0,109.0 L61.0,109.5 L62.1,109.9 L63.1,110.4 L64.1,110.8 L65.2,111.2 L66.3,111.6 L67.4,112.0 L68.5,112.3 L69.6,112.7 L70.8,113.0 L71.9,113.3 L73.1,113.6 L74.2,113.8 L75.4,114.1 L76.6,114.3 L77.8,114.5 L79.0,114.7 L80.2,114.9 L81.4,115.0 L82.6,115.1 L83.9,115.3 L85.1,115.3 L86.3,115.4 L87.5,115.5 L88.8,115.5 L90.0,115.5 L91.2,115.5 L92.5,115.5 L93.7,115.4 L94.9,115.3 L96.1,115.3 L97.4,115.1 L98.6,115.0 L99.8,114.9 L101.0,114.7 L102.2,114.5 L103.4,114.3 L104.6,114.1 L105.8,113.8 L106.9,113.6 L108.1,113.3 L109.2,113.0 L110.4,112.7 L111.5,112.3 L112.6,112.0 L113.7,111.6 L114.8,111.2 L115.9,110.8 L116.9,110.4 L117.9,109.9 L119.0,109.5 L120.0,109.0 L121.0,108.5 L121.9,108.0 L122.9,107.5 L123.8,106.9 L124.7,106.4 L125.6,105.8 L126.5,105.2 L127.3,104.7 L128.2,104.0 L129.0,103.4 L129.8,102.8 L130.5,102.1 L131.3,101.5 L132.0,100.8 L132.7,100.1 L133.3,99.4 L134.0,98.7 L134.6,98.0 L135.2,97.3 L135.7,96.6 L136.3,95.8 L136.8,95.1 L137.2,94.3 L137.7,93.6 L138.1,92.8 L138.5,92.0 L138.9,91.2 L139.2,90.4 L139.5,89.6 L139.8,88.8 L140.0,88.0 L140.3,87.2 L140.5,86.4 L140.6,85.6 L140.8,84.8 L140.9,84.0 L140.9,83.1 L141.0,82.3 L141.0,81.5" fill="none" stroke="#3b82f6" stroke-width="2.2"/>
+      </g>
+      <text x="45.8" y="32.2" font-size="15" fill="#8b5cf6" text-anchor="middle" font-weight="600">2.</text>
+    </g>
+    <g transform="translate(0,179)">
+      <defs><marker id="nyv-ce8d4-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+      <clipPath id="kv-ce8d4"><rect x="22.0" y="22.0" width="136.0" height="119.0"/></clipPath>
+      <line x1="22.0" y1="141.0" x2="22.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="39.0" y1="141.0" x2="39.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="56.0" y1="141.0" x2="56.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="73.0" y1="141.0" x2="73.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="90.0" y1="141.0" x2="90.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="107.0" y1="141.0" x2="107.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="124.0" y1="141.0" x2="124.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="141.0" y1="141.0" x2="141.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="158.0" y1="141.0" x2="158.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="132.5" x2="158.0" y2="132.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="115.5" x2="158.0" y2="115.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="98.5" x2="158.0" y2="98.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="81.5" x2="158.0" y2="81.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="64.5" x2="158.0" y2="64.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="47.5" x2="158.0" y2="47.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="30.5" x2="158.0" y2="30.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="81.5" x2="163.9" y2="81.5" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-ce8d4-0)"/>
+      <line x1="90.0" y1="141.0" x2="90.0" y2="16.1" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-ce8d4-0)"/>
+      <text x="159.9" y="72.5" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">x</text>
+      <text x="100.0" y="22.1" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">y</text>
+      <g clip-path="url(#kv-ce8d4)">
+      <path d="M176.1,158.0 L174.7,157.4 L173.4,156.8 L172.1,156.2 L170.8,155.6 L169.6,155.1 L168.3,154.5 L167.0,153.9 L165.8,153.3 L164.6,152.7 L163.3,152.1 L162.1,151.5 L160.9,150.9 L159.7,150.3 L158.5,149.8 L157.3,149.2 L156.2,148.6 L155.0,148.0 L153.9,147.4 L152.7,146.8 L151.6,146.2 L150.5,145.6 L149.4,145.1 L148.3,144.5 L147.2,143.9 L146.1,143.3 L145.1,142.7 L144.0,142.1 L143.0,141.5 L141.9,140.9 L140.9,140.3 L139.9,139.8 L138.9,139.2 L137.9,138.6 L136.9,138.0 L136.0,137.4 L135.0,136.8 L134.0,136.2 L133.1,135.6 L132.2,135.1 L131.2,134.5 L130.3,133.9 L129.4,133.3 L128.5,132.7 L127.7,132.1 L126.8,131.5 L125.9,130.9 L125.1,130.3 L124.2,129.8 L123.4,129.2 L122.6,128.6 L121.8,128.0 L121.0,127.4 L120.2,126.8 L119.4,126.2 L118.6,125.6 L117.9,125.0 L117.1,124.5 L116.4,123.9 L115.7,123.3 L115.0,122.7 L114.2,122.1 L113.5,121.5 L112.9,120.9 L112.2,120.3 L111.5,119.8 L110.9,119.2 L110.2,118.6 L109.6,118.0 L108.9,117.4 L108.3,116.8 L107.7,116.2 L107.1,115.6 L106.5,115.0 L106.0,114.5 L105.4,113.9 L104.8,113.3 L104.3,112.7 L103.8,112.1 L103.2,111.5 L102.7,110.9 L102.2,110.3 L101.7,109.7 L101.2,109.2 L100.8,108.6 L100.3,108.0 L99.9,107.4 L99.4,106.8 L99.0,106.2 L98.6,105.6 L98.1,105.0 L97.7,104.5 L97.4,103.9 L97.0,103.3 L96.6,102.7 L96.2,102.1 L95.9,101.5 L95.5,100.9 L95.2,100.3 L94.9,99.7 L94.6,99.2 L94.3,98.6 L94.0,98.0 L93.7,97.4 L93.4,96.8 L93.2,96.2 L92.9,95.6 L92.7,95.0 L92.5,94.4 L92.2,93.9 L92.0,93.3 L91.8,92.7 L91.6,92.1 L91.5,91.5 L91.3,90.9 L91.1,90.3 L91.0,89.7 L90.9,89.2 L90.7,88.6 L90.6,88.0 L90.5,87.4 L90.4,86.8 L90.3,86.2 L90.2,85.6 L90.2,85.0 L90.1,84.4 L90.1,83.9 L90.0,83.3 L90.0,82.7 L90.0,82.1 L90.0,81.5 L90.0,80.9 L90.0,80.3 L90.0,79.7 L90.1,79.1 L90.1,78.6 L90.2,78.0 L90.2,77.4 L90.3,76.8 L90.4,76.2 L90.5,75.6 L90.6,75.0 L90.7,74.4 L90.9,73.8 L91.0,73.3 L91.1,72.7 L91.3,72.1 L91.5,71.5 L91.6,70.9 L91.8,70.3 L92.0,69.7 L92.2,69.1 L92.5,68.6 L92.7,68.0 L92.9,67.4 L93.2,66.8 L93.4,66.2 L93.7,65.6 L94.0,65.0 L94.3,64.4 L94.6,63.8 L94.9,63.3 L95.2,62.7 L95.5,62.1 L95.9,61.5 L96.2,60.9 L96.6,60.3 L97.0,59.7 L97.4,59.1 L97.7,58.6 L98.1,58.0 L98.6,57.4 L99.0,56.8 L99.4,56.2 L99.9,55.6 L100.3,55.0 L100.8,54.4 L101.2,53.8 L101.7,53.3 L102.2,52.7 L102.7,52.1 L103.2,51.5 L103.8,50.9 L104.3,50.3 L104.8,49.7 L105.4,49.1 L106.0,48.5 L106.5,48.0 L107.1,47.4 L107.7,46.8 L108.3,46.2 L108.9,45.6 L109.6,45.0 L110.2,44.4 L110.9,43.8 L111.5,43.2 L112.2,42.7 L112.9,42.1 L113.5,41.5 L114.2,40.9 L115.0,40.3 L115.7,39.7 L116.4,39.1 L117.1,38.5 L117.9,38.0 L118.6,37.4 L119.4,36.8 L120.2,36.2 L121.0,35.6 L121.8,35.0 L122.6,34.4 L123.4,33.8 L124.2,33.2 L125.1,32.7 L125.9,32.1 L126.8,31.5 L127.7,30.9 L128.5,30.3 L129.4,29.7 L130.3,29.1 L131.2,28.5 L132.2,27.9 L133.1,27.4 L134.0,26.8 L135.0,26.2 L136.0,25.6 L136.9,25.0 L137.9,24.4 L138.9,23.8 L139.9,23.2 L140.9,22.7 L141.9,22.1 L143.0,21.5 L144.0,20.9 L145.1,20.3 L146.1,19.7 L147.2,19.1 L148.3,18.5 L149.4,17.9 L150.5,17.4 L151.6,16.8 L152.7,16.2 L153.9,15.6 L155.0,15.0 L156.2,14.4 L157.3,13.8 L158.5,13.2 L159.7,12.6 L160.9,12.1 L162.1,11.5 L163.3,10.9 L164.6,10.3 L165.8,9.7 L167.0,9.1 L168.3,8.5 L169.6,7.9 L170.8,7.4 L172.1,6.8 L173.4,6.2 L174.7,5.6 L176.1,5.0" fill="none" stroke="#3b82f6" stroke-width="2.2"/>
+      </g>
+      <text x="45.8" y="32.2" font-size="15" fill="#8b5cf6" text-anchor="middle" font-weight="600">3.</text>
+    </g>
+    <g transform="translate(196,179)">
+      <defs><marker id="nyv-56377-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+      <clipPath id="kv-56377"><rect x="22.0" y="22.0" width="136.0" height="119.0"/></clipPath>
+      <line x1="22.0" y1="141.0" x2="22.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="39.0" y1="141.0" x2="39.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="56.0" y1="141.0" x2="56.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="73.0" y1="141.0" x2="73.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="90.0" y1="141.0" x2="90.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="107.0" y1="141.0" x2="107.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="124.0" y1="141.0" x2="124.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="141.0" y1="141.0" x2="141.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="158.0" y1="141.0" x2="158.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="132.5" x2="158.0" y2="132.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="115.5" x2="158.0" y2="115.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="98.5" x2="158.0" y2="98.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="81.5" x2="158.0" y2="81.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="64.5" x2="158.0" y2="64.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="47.5" x2="158.0" y2="47.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="30.5" x2="158.0" y2="30.5" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="81.5" x2="163.9" y2="81.5" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-56377-0)"/>
+      <line x1="90.0" y1="141.0" x2="90.0" y2="16.1" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-56377-0)"/>
+      <text x="159.9" y="72.5" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">x</text>
+      <text x="100.0" y="22.1" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">y</text>
+      <g clip-path="url(#kv-56377)">
+      <path d="M141.0,81.5 L141.0,80.3 L140.9,79.0 L140.9,77.8 L140.8,76.6 L140.6,75.4 L140.5,74.1 L140.3,72.9 L140.0,71.7 L139.8,70.5 L139.5,69.3 L139.2,68.1 L138.9,66.9 L138.5,65.7 L138.1,64.6 L137.7,63.4 L137.2,62.3 L136.8,61.1 L136.3,60.0 L135.7,58.9 L135.2,57.8 L134.6,56.7 L134.0,55.6 L133.3,54.6 L132.7,53.6 L132.0,52.5 L131.3,51.5 L130.5,50.5 L129.8,49.6 L129.0,48.6 L128.2,47.7 L127.3,46.8 L126.5,45.9 L125.6,45.0 L124.7,44.2 L123.8,43.3 L122.9,42.5 L121.9,41.7 L121.0,41.0 L120.0,40.2 L119.0,39.5 L117.9,38.8 L116.9,38.2 L115.9,37.5 L114.8,36.9 L113.7,36.3 L112.6,35.8 L111.5,35.2 L110.4,34.7 L109.2,34.3 L108.1,33.8 L106.9,33.4 L105.8,33.0 L104.6,32.6 L103.4,32.3 L102.2,32.0 L101.0,31.7 L99.8,31.5 L98.6,31.2 L97.4,31.0 L96.1,30.9 L94.9,30.7 L93.7,30.6 L92.5,30.6 L91.2,30.5 L90.0,30.5 L88.8,30.5 L87.5,30.6 L86.3,30.6 L85.1,30.7 L83.9,30.9 L82.6,31.0 L81.4,31.2 L80.2,31.5 L79.0,31.7 L77.8,32.0 L76.6,32.3 L75.4,32.6 L74.2,33.0 L73.1,33.4 L71.9,33.8 L70.8,34.3 L69.6,34.7 L68.5,35.2 L67.4,35.8 L66.3,36.3 L65.2,36.9 L64.1,37.5 L63.1,38.2 L62.1,38.8 L61.0,39.5 L60.0,40.2 L59.0,41.0 L58.1,41.7 L57.1,42.5 L56.2,43.3 L55.3,44.2 L54.4,45.0 L53.5,45.9 L52.7,46.8 L51.8,47.7 L51.0,48.6 L50.2,49.6 L49.5,50.5 L48.7,51.5 L48.0,52.5 L47.3,53.6 L46.7,54.6 L46.0,55.6 L45.4,56.7 L44.8,57.8 L44.3,58.9 L43.7,60.0 L43.2,61.1 L42.8,62.3 L42.3,63.4 L41.9,64.6 L41.5,65.7 L41.1,66.9 L40.8,68.1 L40.5,69.3 L40.2,70.5 L40.0,71.7 L39.7,72.9 L39.5,74.1 L39.4,75.4 L39.2,76.6 L39.1,77.8 L39.1,79.0 L39.0,80.3 L39.0,81.5 L39.0,82.7 L39.1,84.0 L39.1,85.2 L39.2,86.4 L39.4,87.6 L39.5,88.9 L39.7,90.1 L40.0,91.3 L40.2,92.5 L40.5,93.7 L40.8,94.9 L41.1,96.1 L41.5,97.3 L41.9,98.4 L42.3,99.6 L42.8,100.7 L43.2,101.9 L43.7,103.0 L44.3,104.1 L44.8,105.2 L45.4,106.3 L46.0,107.4 L46.7,108.4 L47.3,109.4 L48.0,110.5 L48.7,111.5 L49.5,112.5 L50.2,113.4 L51.0,114.4 L51.8,115.3 L52.7,116.2 L53.5,117.1 L54.4,118.0 L55.3,118.8 L56.2,119.7 L57.1,120.5 L58.1,121.3 L59.0,122.0 L60.0,122.8 L61.0,123.5 L62.1,124.2 L63.1,124.8 L64.1,125.5 L65.2,126.1 L66.3,126.7 L67.4,127.2 L68.5,127.8 L69.6,128.3 L70.8,128.7 L71.9,129.2 L73.1,129.6 L74.2,130.0 L75.4,130.4 L76.6,130.7 L77.8,131.0 L79.0,131.3 L80.2,131.5 L81.4,131.8 L82.6,132.0 L83.9,132.1 L85.1,132.3 L86.3,132.4 L87.5,132.4 L88.8,132.5 L90.0,132.5 L91.2,132.5 L92.5,132.4 L93.7,132.4 L94.9,132.3 L96.1,132.1 L97.4,132.0 L98.6,131.8 L99.8,131.5 L101.0,131.3 L102.2,131.0 L103.4,130.7 L104.6,130.4 L105.8,130.0 L106.9,129.6 L108.1,129.2 L109.2,128.7 L110.4,128.3 L111.5,127.8 L112.6,127.2 L113.7,126.7 L114.8,126.1 L115.9,125.5 L116.9,124.8 L117.9,124.2 L119.0,123.5 L120.0,122.8 L121.0,122.0 L121.9,121.3 L122.9,120.5 L123.8,119.7 L124.7,118.8 L125.6,118.0 L126.5,117.1 L127.3,116.2 L128.2,115.3 L129.0,114.4 L129.8,113.4 L130.5,112.5 L131.3,111.5 L132.0,110.5 L132.7,109.4 L133.3,108.4 L134.0,107.4 L134.6,106.3 L135.2,105.2 L135.7,104.1 L136.3,103.0 L136.8,101.9 L137.2,100.7 L137.7,99.6 L138.1,98.4 L138.5,97.3 L138.9,96.1 L139.2,94.9 L139.5,93.7 L139.8,92.5 L140.0,91.3 L140.3,90.1 L140.5,88.9 L140.6,87.6 L140.8,86.4 L140.9,85.2 L140.9,84.0 L141.0,82.7 L141.0,81.5" fill="none" stroke="#3b82f6" stroke-width="2.2"/>
+      </g>
+      <circle cx="90.0" cy="81.5" r="3.4" fill="#0f172a"/>
+      <text x="80.0" y="97.5" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">C</text>
+      <text x="45.8" y="32.2" font-size="15" fill="#8b5cf6" text-anchor="middle" font-weight="600">4.</text>
+    </g>
+    </svg>
+    </div>
+    <p class="cap">Négy mező a Kamrában, <span class="math inline">\(1.\)</span>–<span class="math inline">\(4.\)</span> sorszámmal.</p>
+      <details><summary>Megoldás</summary><div class="bel"><p>(A) egyenlő együtthatók → kör; (B) két pozitív, különböző nevező → ellipszis; (C) ellentétes előjel → hiperbola; (D) csak az <span class="math inline">\(y\)</span> van négyzeten → parabola.</p><p class="vegeredmeny">(A) – 4. · (B) – 2. · (C) – 1. · (D) – 3.</p></div></details>
+    </div>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ Az x² és y² ellentétes előjelű: 16-tal osztva x²/4 − y²/16 = 1, hiperbola." data-nem="✘ Nem az számít, hogy két négyzetes tag van, hanem az előjelük: x²/4 − y²/16 = 1, a mínusz miatt hiperbola.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik görbét írja le a <span class="math inline">\(4x^2-y^2=16\)</span> egyenlet?</p>
+      <div class="opciok"><button>parabola</button><button>hiperbola</button><button>ellipszis</button><button>kör</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-ellipszis-hiperbola.html#alap-11">🐕 Tér-eb-ugrás <span class="cimke">A 11–16</span></a><a class="sav bruno" href="feladatok-ellipszis-hiperbola.html#kozep-9">👑 Királyi Gárda <span class="cimke">K 9–12</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> A szakadás vonalai megvannak. Maxi azonban éppen ezek mentén próbál átcsúszni — és itt vár ránk a mező legcsalókább tulajdonsága: egyetlen közös pont még <b>nem</b> jelent érintést.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-ellipszis-es-egyenes.html"><span class="irany">← Előző</span><span class="hova">Az ellipszis és az egyenes</span></a>
+      <a class="kov" href="tananyag-hiperbola-es-egyenes.html"><span class="irany">Következő →</span><span class="hova">A hiperbola és az egyenes</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

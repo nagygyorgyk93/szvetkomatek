@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A parabola — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Síkbeli analitikus geometria</a> ›
+  <span class="itt">A parabola — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A parabola</h1>
+  <p class="alcim">A parabola mint mértani hely, az egyenlete, a fókusz és a vezéregyenes, a kapcsolat a másodfokú függvénnyel, és a parabola felírása adatokból.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Térkép Hálózata · 12/13</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> Maxi utolsó eszköze egy <b>parabolatükör</b>: a Kristálypára energiáját egyetlen pontba, a <b>fókuszba</b> gyűjti. Ha tudjuk, hol a fókusz, tudjuk, hová nem szabad Tér-ebnek ugrania — és hová kell a tükröt eltalálni.</p></div>
+
+    <h2 id="s1">A parabola mint mértani hely</h2>
+
+    <div class="doboz definicio" id="def-parabola">
+      <p class="cim"><span class="ikon">📗</span> A parabola</p>
+      <p>Adott a síkban egy <span class="math inline">\(F\)</span> pont (a <b>fókusz</b>) és egy rá nem illeszkedő <span class="math inline">\(v\)</span> egyenes (a <b>vezéregyenes</b>, más néven direktrix). A <b>parabola</b> a sík mindazon <span class="math inline">\(P\)</span> pontjainak halmaza, amelyek a fókusztól és a vezéregyenestől <b>egyenlő távolságra</b> vannak.</p><p>A fókusz és a vezéregyenes távolsága a parabola <b>paramétere</b>, <span class="math inline">\(p\)</span>. A parabola <b>csúcsa</b> félúton van a fókusz és a vezéregyenes között.</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>A parabolaantenna és a fényszóró tükre olyan felület, amelyet egy parabola tengelye körüli megforgatásával kapunk. A tengellyel párhuzamosan érkező sugarak a tükörről mind a <b>fókuszba</b> verődnek — ott van az antenna vevőfeje. A fényszórónál fordítva: a fókuszba tett izzó fénye párhuzamos nyalábként lép ki.</p>
+    </div>
+
+    <h2 id="s2">A parabola egyenlete</h2>
+
+    <div class="doboz tetel" id="tetel-parabola-egyenlete">
+      <p class="cim"><span class="ikon">📘</span> A parabola egyenlete</p>
+      <p>Ha a csúcs az origó, a fókusz <span class="math inline">\(F\left(\frac p2;0\right)\)</span> és a vezéregyenes <span class="math inline">\(x=-\frac p2\)</span> (<span class="math inline">\(p\gt0\)</span>), a parabola egyenlete</p><span class="math display">\[y^2=2px .\]</span><p>A képlettár négy alakja, a nyílás irányával:</p><div class="tblwrap"><table class="tt-table"><tr><th>egyenlet</th><th>nyílik</th><th>fókusz</th><th>vezéregyenes</th></tr><tr><td><span class="math inline">\(y^2=2px\)</span></td><td>jobbra</td><td><span class="math inline">\(\left(\frac p2;0\right)\)</span></td><td><span class="math inline">\(x=-\frac p2\)</span></td></tr><tr><td><span class="math inline">\(y^2=-2px\)</span></td><td>balra</td><td><span class="math inline">\(\left(-\frac p2;0\right)\)</span></td><td><span class="math inline">\(x=\frac p2\)</span></td></tr><tr><td><span class="math inline">\(x^2=2py\)</span></td><td>felfelé</td><td><span class="math inline">\(\left(0;\frac p2\right)\)</span></td><td><span class="math inline">\(y=-\frac p2\)</span></td></tr><tr><td><span class="math inline">\(x^2=-2py\)</span></td><td>lefelé</td><td><span class="math inline">\(\left(0;-\frac p2\right)\)</span></td><td><span class="math inline">\(y=\frac p2\)</span></td></tr></table></div><p><i>Figyelj a betűre: ez a <span class="math inline">\(p\)</span> a parabola paramétere, nem a kör középpontjának első koordinátája.</i></p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 356 356" width="356" height="356" role="img" aria-label="Az y² = 8x parabola, az F(2;0) fókusz, az x = −2 vezéregyenes és a P(2;4) pont, amely a fókusztól és a vezéregyenestől is 4 egységre van">
+      <defs><marker id="nyv-da461-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+      <clipPath id="kv-da461"><rect x="22.0" y="22.0" width="312.0" height="312.0"/></clipPath>
+      <line x1="22.0" y1="334.0" x2="22.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="48.0" y1="334.0" x2="48.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="74.0" y1="334.0" x2="74.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="100.0" y1="334.0" x2="100.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="126.0" y1="334.0" x2="126.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="152.0" y1="334.0" x2="152.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="178.0" y1="334.0" x2="178.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="204.0" y1="334.0" x2="204.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="230.0" y1="334.0" x2="230.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="256.0" y1="334.0" x2="256.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="282.0" y1="334.0" x2="282.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="308.0" y1="334.0" x2="308.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="334.0" y1="334.0" x2="334.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="334.0" x2="334.0" y2="334.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="308.0" x2="334.0" y2="308.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="282.0" x2="334.0" y2="282.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="256.0" x2="334.0" y2="256.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="230.0" x2="334.0" y2="230.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="204.0" x2="334.0" y2="204.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="178.0" x2="334.0" y2="178.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="152.0" x2="334.0" y2="152.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="126.0" x2="334.0" y2="126.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="100.0" x2="334.0" y2="100.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="74.0" x2="334.0" y2="74.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="48.0" x2="334.0" y2="48.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="22.0" x2="334.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="178.0" x2="343.1" y2="178.0" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-da461-0)"/>
+      <line x1="126.0" y1="334.0" x2="126.0" y2="12.9" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-da461-0)"/>
+      <text x="339.1" y="169.0" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">x</text>
+      <text x="136.0" y="18.9" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">y</text>
+      <line x1="22.0" y1="175.0" x2="22.0" y2="181.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="22.0" y="193.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−4</text>
+      <line x1="48.0" y1="175.0" x2="48.0" y2="181.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="48.0" y="193.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−3</text>
+      <line x1="74.0" y1="175.0" x2="74.0" y2="181.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="74.0" y="193.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−2</text>
+      <line x1="100.0" y1="175.0" x2="100.0" y2="181.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="100.0" y="193.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−1</text>
+      <line x1="152.0" y1="175.0" x2="152.0" y2="181.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="152.0" y="193.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">1</text>
+      <line x1="204.0" y1="175.0" x2="204.0" y2="181.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="204.0" y="193.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">3</text>
+      <line x1="230.0" y1="175.0" x2="230.0" y2="181.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="230.0" y="193.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">4</text>
+      <line x1="256.0" y1="175.0" x2="256.0" y2="181.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="256.0" y="193.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">5</text>
+      <line x1="282.0" y1="175.0" x2="282.0" y2="181.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="282.0" y="193.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">6</text>
+      <line x1="308.0" y1="175.0" x2="308.0" y2="181.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="308.0" y="193.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">7</text>
+      <line x1="334.0" y1="175.0" x2="334.0" y2="181.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="334.0" y="193.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">8</text>
+      <line x1="123.0" y1="334.0" x2="129.0" y2="334.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="120.0" y="338.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−6</text>
+      <line x1="123.0" y1="308.0" x2="129.0" y2="308.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="120.0" y="312.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−5</text>
+      <line x1="123.0" y1="282.0" x2="129.0" y2="282.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="120.0" y="286.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−4</text>
+      <line x1="123.0" y1="256.0" x2="129.0" y2="256.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="120.0" y="260.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−3</text>
+      <line x1="123.0" y1="230.0" x2="129.0" y2="230.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="120.0" y="234.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−2</text>
+      <line x1="123.0" y1="204.0" x2="129.0" y2="204.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="120.0" y="208.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−1</text>
+      <line x1="123.0" y1="152.0" x2="129.0" y2="152.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="120.0" y="156.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">1</text>
+      <line x1="123.0" y1="126.0" x2="129.0" y2="126.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="120.0" y="130.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">2</text>
+      <line x1="123.0" y1="100.0" x2="129.0" y2="100.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="120.0" y="104.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">3</text>
+      <line x1="123.0" y1="74.0" x2="129.0" y2="74.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="120.0" y="78.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">4</text>
+      <line x1="123.0" y1="48.0" x2="129.0" y2="48.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="120.0" y="52.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">5</text>
+      <line x1="123.0" y1="22.0" x2="129.0" y2="22.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="120.0" y="26.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">6</text>
+      <text x="118.0" y="193.0" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">O</text>
+      <g clip-path="url(#kv-da461)">
+      <path d="M285.2,360.0 L282.8,358.6 L280.4,357.2 L278.0,355.8 L275.6,354.4 L273.2,353.0 L270.9,351.6 L268.6,350.2 L266.3,348.8 L264.0,347.4 L261.7,346.0 L259.4,344.6 L257.2,343.2 L255.0,341.8 L252.8,340.4 L250.6,339.0 L248.5,337.6 L246.3,336.2 L244.2,334.8 L242.1,333.4 L240.0,332.0 L238.0,330.6 L235.9,329.2 L233.9,327.8 L231.9,326.4 L229.9,325.0 L227.9,323.6 L226.0,322.2 L224.0,320.8 L222.1,319.4 L220.2,318.0 L218.4,316.6 L216.5,315.2 L214.7,313.8 L212.8,312.4 L211.0,311.0 L209.3,309.6 L207.5,308.2 L205.8,306.8 L204.0,305.4 L202.3,304.0 L200.6,302.6 L199.0,301.2 L197.3,299.8 L195.7,298.4 L194.1,297.0 L192.5,295.6 L190.9,294.2 L189.4,292.8 L187.8,291.4 L186.3,290.0 L184.8,288.6 L183.3,287.2 L181.9,285.8 L180.4,284.4 L179.0,283.0 L177.6,281.6 L176.2,280.2 L174.8,278.8 L173.5,277.4 L172.2,276.0 L170.9,274.6 L169.6,273.2 L168.3,271.8 L167.0,270.4 L165.8,269.0 L164.6,267.6 L163.4,266.2 L162.2,264.8 L161.1,263.4 L159.9,262.0 L158.8,260.6 L157.7,259.2 L156.6,257.8 L155.6,256.4 L154.5,255.0 L153.5,253.6 L152.5,252.2 L151.5,250.8 L150.5,249.4 L149.6,248.0 L148.6,246.6 L147.7,245.2 L146.8,243.8 L145.9,242.4 L145.1,241.0 L144.2,239.6 L143.4,238.2 L142.6,236.8 L141.8,235.4 L141.1,234.0 L140.3,232.6 L139.6,231.2 L138.9,229.8 L138.2,228.4 L137.5,227.0 L136.9,225.6 L136.3,224.2 L135.6,222.8 L135.1,221.4 L134.5,220.0 L133.9,218.6 L133.4,217.2 L132.9,215.8 L132.4,214.4 L131.9,213.0 L131.4,211.6 L131.0,210.2 L130.6,208.8 L130.2,207.4 L129.8,206.0 L129.4,204.6 L129.1,203.2 L128.7,201.8 L128.4,200.4 L128.1,199.0 L127.8,197.6 L127.6,196.2 L127.4,194.8 L127.1,193.4 L126.9,192.0 L126.8,190.6 L126.6,189.2 L126.5,187.8 L126.3,186.4 L126.2,185.0 L126.2,183.6 L126.1,182.2 L126.0,180.8 L126.0,179.4 L126.0,178.0 L126.0,176.6 L126.0,175.2 L126.1,173.8 L126.2,172.4 L126.2,171.0 L126.3,169.6 L126.5,168.2 L126.6,166.8 L126.8,165.4 L126.9,164.0 L127.1,162.6 L127.4,161.2 L127.6,159.8 L127.8,158.4 L128.1,157.0 L128.4,155.6 L128.7,154.2 L129.1,152.8 L129.4,151.4 L129.8,150.0 L130.2,148.6 L130.6,147.2 L131.0,145.8 L131.4,144.4 L131.9,143.0 L132.4,141.6 L132.9,140.2 L133.4,138.8 L133.9,137.4 L134.5,136.0 L135.1,134.6 L135.6,133.2 L136.3,131.8 L136.9,130.4 L137.5,129.0 L138.2,127.6 L138.9,126.2 L139.6,124.8 L140.3,123.4 L141.1,122.0 L141.8,120.6 L142.6,119.2 L143.4,117.8 L144.2,116.4 L145.1,115.0 L145.9,113.6 L146.8,112.2 L147.7,110.8 L148.6,109.4 L149.6,108.0 L150.5,106.6 L151.5,105.2 L152.5,103.8 L153.5,102.4 L154.5,101.0 L155.6,99.6 L156.6,98.2 L157.7,96.8 L158.8,95.4 L159.9,94.0 L161.1,92.6 L162.2,91.2 L163.4,89.8 L164.6,88.4 L165.8,87.0 L167.0,85.6 L168.3,84.2 L169.6,82.8 L170.9,81.4 L172.2,80.0 L173.5,78.6 L174.8,77.2 L176.2,75.8 L177.6,74.4 L179.0,73.0 L180.4,71.6 L181.9,70.2 L183.3,68.8 L184.8,67.4 L186.3,66.0 L187.8,64.6 L189.4,63.2 L190.9,61.8 L192.5,60.4 L194.1,59.0 L195.7,57.6 L197.3,56.2 L199.0,54.8 L200.6,53.4 L202.3,52.0 L204.0,50.6 L205.8,49.2 L207.5,47.8 L209.3,46.4 L211.0,45.0 L212.8,43.6 L214.7,42.2 L216.5,40.8 L218.4,39.4 L220.2,38.0 L222.1,36.6 L224.0,35.2 L226.0,33.8 L227.9,32.4 L229.9,31.0 L231.9,29.6 L233.9,28.2 L235.9,26.8 L238.0,25.4 L240.0,24.0 L242.1,22.6 L244.2,21.2 L246.3,19.8 L248.5,18.4 L250.6,17.0 L252.8,15.6 L255.0,14.2 L257.2,12.8 L259.4,11.4 L261.7,10.0 L264.0,8.6 L266.3,7.2 L268.6,5.8 L270.9,4.4 L273.2,3.0 L275.6,1.6 L278.0,0.2 L280.4,-1.2 L282.8,-2.6 L285.2,-4.0" fill="none" stroke="#3b82f6" stroke-width="2.2"/>
+      <line x1="74.0" y1="334.0" x2="74.0" y2="22.0" stroke="#ef4444" stroke-width="1.6" stroke-dasharray="6 4"/>
+      </g>
+      <line x1="178.0" y1="178.0" x2="178.0" y2="74.0" stroke="#f59e0b" stroke-width="1.6"/>
+      <line x1="74.0" y1="74.0" x2="178.0" y2="74.0" stroke="#f59e0b" stroke-width="1.6"/>
+      <circle cx="178.0" cy="178.0" r="3.4" fill="#ef4444"/>
+      <circle cx="178.0" cy="74.0" r="3.4" fill="#0f172a"/>
+      <text x="62.0" y="51.0" font-size="13" fill="#ef4444" text-anchor="middle" font-style="italic" font-weight="600">v</text>
+      <text x="184.0" y="195.0" font-size="14" fill="#ef4444" text-anchor="middle" font-style="italic" font-weight="600">F</text>
+      <text x="187.0" y="65.0" font-size="14" fill="#0f172a" text-anchor="middle" font-style="italic" font-weight="600">P</text>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(y^2=8x\)</span> parabola: <span class="math inline">\(2p=8\)</span>, <span class="math inline">\(p=4\)</span>, a fókusz <span class="math inline">\(F(2;0)\)</span>, a vezéregyenes <span class="math inline">\(x=-2\)</span>. A <span class="math inline">\(P(2;4)\)</span> a fókusztól és a vezéregyenestől is <span class="math inline">\(4\)</span> egységre van.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Ismerős görbe</p>
+      <p>A 2e-ben a <a href="../../2e/02-masodfoku-egyenletek-es-fuggvenyek/tananyag-masodfoku-fuggveny.html#def-masodfoku-fuggveny">másodfokú függvény</a> grafikonját is parabolának neveztük — joggal. Az <span class="math inline">\(y=\frac14x^2\)</span> függvény egyenlete átrendezve <span class="math inline">\(x^2=4y\)</span>, vagyis <span class="math inline">\(2p=4\)</span>, <span class="math inline">\(p=2\)</span>: egy felfelé nyíló parabola, fókusza <span class="math inline">\(F(0;1)\)</span>, vezéregyenese <span class="math inline">\(y=-1\)</span>. Általában az <span class="math inline">\(y=cx^2\)</span> (<span class="math inline">\(c\gt0\)</span>) grafikonja az <span class="math inline">\(x^2=2py\)</span> parabola, ahol <span class="math inline">\(p=\frac1{2c}\)</span>.</p><div class="svgcard">
+    <svg viewBox="0 0 352 240" width="352" height="240" role="img" aria-label="Az x² = 4y parabola, ami a 2e-ből ismert y = ¼x² függvény grafikonja, fókusza F(0;1), vezéregyenese y = −1">
+      <defs><marker id="nyv-343e7-0" viewBox="0 0 10 10" refX="8.6" refY="5" markerWidth="5.0" markerHeight="5.0" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+      <clipPath id="kv-343e7"><rect x="22.0" y="22.0" width="308.0" height="196.0"/></clipPath>
+      <line x1="22.0" y1="218.0" x2="22.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="50.0" y1="218.0" x2="50.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="78.0" y1="218.0" x2="78.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="106.0" y1="218.0" x2="106.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="134.0" y1="218.0" x2="134.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="162.0" y1="218.0" x2="162.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="190.0" y1="218.0" x2="190.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="218.0" y1="218.0" x2="218.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="246.0" y1="218.0" x2="246.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="274.0" y1="218.0" x2="274.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="302.0" y1="218.0" x2="302.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="330.0" y1="218.0" x2="330.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="218.0" x2="330.0" y2="218.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="190.0" x2="330.0" y2="190.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="162.0" x2="330.0" y2="162.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="134.0" x2="330.0" y2="134.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="106.0" x2="330.0" y2="106.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="78.0" x2="330.0" y2="78.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="50.0" x2="330.0" y2="50.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="22.0" x2="330.0" y2="22.0" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="22.0" y1="162.0" x2="339.8" y2="162.0" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-343e7-0)"/>
+      <line x1="162.0" y1="218.0" x2="162.0" y2="12.2" stroke="#475569" stroke-width="1.4" stroke-linecap="round" marker-end="url(#nyv-343e7-0)"/>
+      <text x="335.8" y="153.0" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">x</text>
+      <text x="172.0" y="18.2" font-size="14" fill="#475569" text-anchor="middle" font-style="italic" font-weight="600">y</text>
+      <line x1="22.0" y1="159.0" x2="22.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="22.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−5</text>
+      <line x1="50.0" y1="159.0" x2="50.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="50.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−4</text>
+      <line x1="78.0" y1="159.0" x2="78.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="78.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−3</text>
+      <line x1="106.0" y1="159.0" x2="106.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="106.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−2</text>
+      <line x1="134.0" y1="159.0" x2="134.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="134.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">−1</text>
+      <line x1="190.0" y1="159.0" x2="190.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="190.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">1</text>
+      <line x1="218.0" y1="159.0" x2="218.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="218.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">2</text>
+      <line x1="246.0" y1="159.0" x2="246.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="246.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">3</text>
+      <line x1="274.0" y1="159.0" x2="274.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="274.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">4</text>
+      <line x1="302.0" y1="159.0" x2="302.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="302.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">5</text>
+      <line x1="330.0" y1="159.0" x2="330.0" y2="165.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="330.0" y="177.0" font-size="10.5" fill="#475569" text-anchor="middle" font-weight="600">6</text>
+      <line x1="159.0" y1="218.0" x2="165.0" y2="218.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="156.0" y="222.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−2</text>
+      <line x1="159.0" y1="190.0" x2="165.0" y2="190.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="156.0" y="194.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">−1</text>
+      <line x1="159.0" y1="106.0" x2="165.0" y2="106.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="156.0" y="110.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">2</text>
+      <line x1="159.0" y1="78.0" x2="165.0" y2="78.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="156.0" y="82.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">3</text>
+      <line x1="159.0" y1="50.0" x2="165.0" y2="50.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="156.0" y="54.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">4</text>
+      <line x1="159.0" y1="22.0" x2="165.0" y2="22.0" stroke="#475569" stroke-width="1.2"/>
+      <text x="156.0" y="26.0" font-size="10.5" fill="#475569" text-anchor="end" font-weight="600">5</text>
+      <text x="154.0" y="177.0" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">O</text>
+      <g clip-path="url(#kv-343e7)">
+      <path d="M-34.0,-181.0 L-32.5,-175.7 L-31.0,-170.5 L-29.5,-165.4 L-28.0,-160.2 L-26.5,-155.1 L-25.0,-150.1 L-23.4,-145.1 L-21.9,-140.1 L-20.4,-135.2 L-18.9,-130.3 L-17.4,-125.4 L-15.9,-120.6 L-14.4,-115.8 L-12.9,-111.1 L-11.4,-106.4 L-9.9,-101.8 L-8.4,-97.2 L-6.9,-92.6 L-5.4,-88.1 L-3.8,-83.6 L-2.3,-79.1 L-0.8,-74.7 L0.7,-70.4 L2.2,-66.0 L3.7,-61.8 L5.2,-57.5 L6.7,-53.3 L8.2,-49.2 L9.7,-45.0 L11.2,-41.0 L12.7,-36.9 L14.2,-32.9 L15.8,-29.0 L17.3,-25.0 L18.8,-21.2 L20.3,-17.3 L21.8,-13.5 L23.3,-9.8 L24.8,-6.1 L26.3,-2.4 L27.8,1.2 L29.3,4.8 L30.8,8.4 L32.3,11.9 L33.8,15.4 L35.4,18.8 L36.9,22.2 L38.4,25.5 L39.9,28.8 L41.4,32.1 L42.9,35.3 L44.4,38.5 L45.9,41.7 L47.4,44.8 L48.9,47.8 L50.4,50.9 L51.9,53.8 L53.4,56.8 L55.0,59.7 L56.5,62.6 L58.0,65.4 L59.5,68.2 L61.0,70.9 L62.5,73.6 L64.0,76.2 L65.5,78.9 L67.0,81.4 L68.5,84.0 L70.0,86.5 L71.5,88.9 L73.0,91.4 L74.6,93.7 L76.1,96.1 L77.6,98.4 L79.1,100.6 L80.6,102.8 L82.1,105.0 L83.6,107.1 L85.1,109.2 L86.6,111.3 L88.1,113.3 L89.6,115.2 L91.1,117.2 L92.6,119.1 L94.2,120.9 L95.7,122.7 L97.2,124.5 L98.7,126.2 L100.2,127.9 L101.7,129.5 L103.2,131.1 L104.7,132.7 L106.2,134.2 L107.7,135.7 L109.2,137.1 L110.7,138.5 L112.2,139.9 L113.8,141.2 L115.3,142.5 L116.8,143.7 L118.3,144.9 L119.8,146.1 L121.3,147.2 L122.8,148.3 L124.3,149.3 L125.8,150.3 L127.3,151.3 L128.8,152.2 L130.3,153.0 L131.8,153.9 L133.4,154.7 L134.9,155.4 L136.4,156.1 L137.9,156.8 L139.4,157.4 L140.9,158.0 L142.4,158.6 L143.9,159.1 L145.4,159.5 L146.9,160.0 L148.4,160.4 L149.9,160.7 L151.4,161.0 L153.0,161.3 L154.5,161.5 L156.0,161.7 L157.5,161.8 L159.0,161.9 L160.5,162.0 L162.0,162.0 L163.5,162.0 L165.0,161.9 L166.5,161.8 L168.0,161.7 L169.5,161.5 L171.0,161.3 L172.6,161.0 L174.1,160.7 L175.6,160.4 L177.1,160.0 L178.6,159.5 L180.1,159.1 L181.6,158.6 L183.1,158.0 L184.6,157.4 L186.1,156.8 L187.6,156.1 L189.1,155.4 L190.6,154.7 L192.2,153.9 L193.7,153.0 L195.2,152.2 L196.7,151.3 L198.2,150.3 L199.7,149.3 L201.2,148.3 L202.7,147.2 L204.2,146.1 L205.7,144.9 L207.2,143.7 L208.7,142.5 L210.2,141.2 L211.8,139.9 L213.3,138.5 L214.8,137.1 L216.3,135.7 L217.8,134.2 L219.3,132.7 L220.8,131.1 L222.3,129.5 L223.8,127.9 L225.3,126.2 L226.8,124.5 L228.3,122.7 L229.8,120.9 L231.4,119.1 L232.9,117.2 L234.4,115.2 L235.9,113.3 L237.4,111.3 L238.9,109.2 L240.4,107.1 L241.9,105.0 L243.4,102.8 L244.9,100.6 L246.4,98.4 L247.9,96.1 L249.4,93.7 L251.0,91.4 L252.5,88.9 L254.0,86.5 L255.5,84.0 L257.0,81.4 L258.5,78.9 L260.0,76.2 L261.5,73.6 L263.0,70.9 L264.5,68.2 L266.0,65.4 L267.5,62.6 L269.0,59.7 L270.6,56.8 L272.1,53.8 L273.6,50.9 L275.1,47.8 L276.6,44.8 L278.1,41.7 L279.6,38.5 L281.1,35.3 L282.6,32.1 L284.1,28.8 L285.6,25.5 L287.1,22.2 L288.6,18.8 L290.2,15.4 L291.7,11.9 L293.2,8.4 L294.7,4.8 L296.2,1.2 L297.7,-2.4 L299.2,-6.1 L300.7,-9.8 L302.2,-13.5 L303.7,-17.3 L305.2,-21.2 L306.7,-25.0 L308.2,-29.0 L309.8,-32.9 L311.3,-36.9 L312.8,-41.0 L314.3,-45.0 L315.8,-49.2 L317.3,-53.3 L318.8,-57.5 L320.3,-61.8 L321.8,-66.0 L323.3,-70.4 L324.8,-74.7 L326.3,-79.1 L327.8,-83.6 L329.4,-88.1 L330.9,-92.6 L332.4,-97.2 L333.9,-101.8 L335.4,-106.4 L336.9,-111.1 L338.4,-115.8 L339.9,-120.6 L341.4,-125.4 L342.9,-130.3 L344.4,-135.2 L345.9,-140.1 L347.4,-145.1 L349.0,-150.1 L350.5,-155.1 L352.0,-160.2 L353.5,-165.4 L355.0,-170.5 L356.5,-175.7 L358.0,-181.0" fill="none" stroke="#3b82f6" stroke-width="2.2"/>
+      <line x1="22.0" y1="190.0" x2="330.0" y2="190.0" stroke="#ef4444" stroke-width="1.6" stroke-dasharray="6 4"/>
+      </g>
+      <circle cx="162.0" cy="134.0" r="3.4" fill="#ef4444"/>
+      <text x="305.4" y="182.0" font-size="13" fill="#ef4444" text-anchor="middle" font-style="italic" font-weight="600">v</text>
+      <text x="168.0" y="151.0" font-size="14" fill="#ef4444" text-anchor="middle" font-style="italic" font-weight="600">F</text>
+      <text x="251.6" y="52.8" font-size="13" fill="#3b82f6" text-anchor="middle" font-weight="600">x² = 4y  ⇔  y = ¼x²</text>
+    </svg>
+    </div>
+    <p class="cap">A 2e-ből ismert <span class="math inline">\(y=\frac14x^2\)</span> grafikon mint <span class="math inline">\(x^2=4y\)</span> parabola.</p>
+    </div>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Az x van négyzeten, tehát fel vagy le nyílik; a mínusz miatt lefelé (y ≤ 0)." data-nem="✘ A mínuszjel nem mindig balra fordít: itt az x van négyzeten, ezért a parabola függőleges tengelyű, és mivel y = −x²/4 ≤ 0, lefelé nyílik.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Merre nyílik az <span class="math inline">\(x^2=-4y\)</span> parabola?</p>
+      <div class="opciok"><button>felfelé</button><button>jobbra</button><button>lefelé</button><button>balra</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Adatok és felírás</h2>
+
+    <p><b>Egyenletből az adatok.</b> Az <span class="math inline">\(y^2=2px\)</span> alakban az <span class="math inline">\(x\)</span> együtthatója <span class="math inline">\(2p\)</span>: ebből előbb <span class="math inline">\(p\)</span>-t, aztán a fókusz első koordinátáját, <span class="math inline">\(\frac p2\)</span>-t kapjuk. Például <span class="math inline">\(y^2=12x\)</span>: <span class="math inline">\(2p=12\)</span>, <span class="math inline">\(p=6\)</span>, a fókusz <span class="math inline">\(F(3;0)\)</span>, a vezéregyenes <span class="math inline">\(x=-3\)</span>.</p><p><b>Egy pontból az egyenlet.</b> Ha tudjuk, melyik alak (például jobbra nyílik), a pont koordinátáit behelyettesítve megkapjuk a <span class="math inline">\(p\)</span>-t.</p>
+
+    <div class="doboz pelda" id="pelda-fokusz">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — hol a tükör fókusza?</p>
+      <p>Maxi tükre jobbra nyíló, csúcsa az origó, és a pereme átmegy a <span class="math inline">\(P(9;6)\)</span> ponton. Írd fel a tükör egyenletét, és add meg a fókuszát meg a vezéregyenesét! Ellenőrizd, hogy a <span class="math inline">\(P\)</span> tényleg egyenlő távolságra van a fókusztól és a vezéregyenestől!</p>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(y^2=2px\)</span>, és a <span class="math inline">\(P(9;6)\)</span> rajta van: <span class="math inline">\(36=2p\cdot9\)</span>, tehát <span class="math inline">\(p=2\)</span>. Az egyenlet <span class="math inline">\(y^2=4x\)</span>.</p><p>Fókusz: <span class="math inline">\(F\left(\frac22;0\right)=F(1;0)\)</span>, vezéregyenes: <span class="math inline">\(x=-1\)</span>.</p><p><i>Ellenőrzés: <span class="math inline">\(|PF|=\sqrt{(9-1)^2+6^2}=\sqrt{100}=10\)</span>, a <span class="math inline">\(P\)</span> távolsága az <span class="math inline">\(x=-1\)</span> egyenestől <span class="math inline">\(9-(-1)=10\)</span> ✔.</i></p><p class="vegeredmeny"><span class="math inline">\(y^2=4x\)</span> · <span class="math inline">\(F(1;0)\)</span> · <span class="math inline">\(x=-1\)</span></p></div></details>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p>Maxi az <span class="math inline">\(y^2=12x\)</span> tükör fókuszát először <span class="math inline">\(F(12;0)\)</span>-ba, aztán <span class="math inline">\(F(6;0)\)</span>-ba tette. Tér-eb mindkétszer elvétette.</p><p>Az egyenletben <span class="math inline">\(2p\)</span> áll, nem <span class="math inline">\(p\)</span>: <span class="math inline">\(2p=12\)</span>, <span class="math inline">\(p=6\)</span>. A fókusz pedig nem <span class="math inline">\(p\)</span>, hanem <span class="math inline">\(\frac p2\)</span> távolságra van a csúcstól: <span class="math inline">\(F(3;0)\)</span>. Két lépés, két felezés — egyik sem maradhat el.</p>
+    </div>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ 2p = 20, p = 10, a fókusz p/2 = 5 távolságra: F(5; 0)." data-nem="✘ Az x együtthatója 2p, nem p: 2p = 20 → p = 10, és a fókusz p/2-re van: F(5; 0). Az y² miatt a fókusz az x-tengelyen van.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Hol van az <span class="math inline">\(y^2=20x\)</span> parabola fókusza?</p>
+      <div class="opciok"><button><span class="math inline">\(F(0;5)\)</span></button><button><span class="math inline">\(F(5;0)\)</span></button><button><span class="math inline">\(F(10;0)\)</span></button><button><span class="math inline">\(F(20;0)\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-parabola.html#alap-1">🐕 Tér-eb-ugrás <span class="cimke">A 1–5</span></a><a class="sav bruno" href="feladatok-parabola.html#kozep-1">👑 Királyi Gárda <span class="cimke">K 1–4</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> A fókusz megvan: Tér-eb oda nem ugorhat, mert elégetné a Kristálypára. A tükör peremét csak <b>egyetlen egyenes</b> mentén lehet biztonságosan elérni — egy <b>érintő</b> mentén. Az utolsó csapás következik.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-ellipszis-hiperbola.html"><span class="irany">← Előző</span><span class="hova">Ellipszis és hiperbola — feladatok</span></a>
+      <a class="kov" href="tananyag-parabola-es-egyenes.html"><span class="irany">Következő →</span><span class="hova">A parabola és az egyenes</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
