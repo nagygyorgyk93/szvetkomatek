@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hiányos és teljes indukció — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Matematikai indukció. Sorozatok</a> ›
+  <span class="itt">Hiányos és teljes indukció — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Hiányos és teljes indukció</h1>
+  <p class="alcim">Mikor sejtés és mikor bizonyítás: a hiányos indukció csapdái, a teljes indukció dominó-elve, és egy végigvezetett bizonyítás. Számonkérés nincs belőle.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Végtelen Mutáció · 5/5</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Prizma és Kanrak:</b> A képletek működnek — de honnan tudjuk, hogy a <b>századik</b> lépésnél is működnek? Maxi éppen erre játszik: mutat néhány jó lépést, és arra épít, hogy elhisszük, örökre így marad. Egy állítást <b>minden</b> lépésre kell igazolni — és van rá egy módszer, amivel ez két lépésben megy.</p></div>
+
+    <div class="doboz erdekesseg" id="erd-mire-jo">
+      <p class="cim"><span class="ikon">💡</span> Mit kell ebből tudni?</p>
+      <p>Ezt az egységet <b>nem kérjük vissza</b>: nem lesz belőle sem feladat, sem házi, sem ellenőrző. Azért van itt, mert ez a matematika egyik legszebb gondolata, és mert enélkül a „bizonyítás” szó üresen csengene.</p><p>Olvasd el nyugodtan egyszer, végig. A természettudományi-matematikai szakon ebből önálló, huszonöt órás témakör lesz.</p>
+    </div>
+
+    <h2 id="s1">Sejtés néhány esetből: a hiányos indukció</h2>
+
+    <p class="lead">Amikor néhány megfigyelt esetből általános szabályt mondunk ki, <b>hiányos</b> (más néven nem teljes vagy empirikus) <b>indukciót</b> végzünk.</p>
+
+    <div class="doboz definicio" id="def-hianyos-indukcio">
+      <p class="cim"><span class="ikon">📗</span> Hiányos indukció</p>
+      <p><b>Hiányos indukció:</b> néhány konkrét esetből következtetünk egy általános állításra. Ez a <b>felfedezés</b> módszere — nem a bizonyításé.</p>
+    </div>
+
+    <p>Ez nem csalás, hanem a kutatás természetes első lépése. Így vettük észre a <a href="tananyag-szamtani-sorozat.html#tetel-szamtani-sn">korábbi egységekben</a> is a képleteket — például azt, hogy a páratlan számok összege gyanúsan ismerős:</p><span class="math display">\[1=1,\qquad 1+3=4,\qquad 1+3+5=9,\qquad 1+3+5+7=16 .\]</span><p>A jobb oldalon rendre <span class="math inline">\(1^2,\ 2^2,\ 3^2,\ 4^2\)</span> áll. Kézenfekvő a <b>sejtés</b>: az első <span class="math inline">\(n\)</span> páratlan szám összege <span class="math inline">\(n^2\)</span>. A sejtés jó — de attól, hogy négy esetben igaz, még nem tudjuk, hogy mindig igaz.</p>
+
+    <h2 id="s2">Amikor a sejtés elromlik</h2>
+
+    <p>Két klasszikus példa arra, hogy a „sok eset” meddig nem bizonyíték.</p>
+
+    <p><b>1. Prímeket gyártó képlet?</b> Helyettesítsd be az <span class="math inline">\(n=0,1,2,\dots\)</span> értékeket az <span class="math inline">\(n^2+n+41\)</span> kifejezésbe: <span class="math inline">\(41,\ 43,\ 47,\ 53,\ 61,\ 71,\ 83,\dots\)</span> — csupa prímszám. És így megy tovább <b>negyven</b> eseten át, egészen <span class="math inline">\(n=39\)</span>-ig. Aztán <span class="math inline">\(n=40\)</span>-nél:</p><span class="math display">\[40^2+40+41=1681=41^2 ,\]</span><p>ami nem prím. Negyven jó eset — és a negyvenegyedik megdönti az egészet.</p>
+
+    <p><b>2. A kör tartományai.</b> Vegyél fel a körvonalon néhány pontot <b>általános helyzetben</b> — vagyis úgy, hogy semelyik három húr ne menjen át ugyanazon a ponton (hat pontnál tehát ne szabályos hatszöget rajzolj) —, és kösd össze mindegyiket mindegyikkel. Hány részre osztják a húrok a körlapot?</p><div class="tblwrap"><table class="tt-table"><tr><th>pontok száma</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td><b>6</b></td></tr><tr><th>tartományok</th><td>1</td><td>2</td><td>4</td><td>8</td><td>16</td><td><b>31</b></td></tr></table></div><p>Az első öt adat alapján mindenki <span class="math inline">\(32\)</span>-t mond — a valódi érték <span class="math inline">\(31\)</span>. A kettőzés szabálya öt eseten át tökéletesen működik, aztán vége.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p>Maxi kiszámolja a láncreakció első három lépését, mindhárom a jóslata szerint alakul, és bejelenti: „a képletem igaz 1-re, 2-re és 3-ra, tehát minden <span class="math inline">\(n\)</span>-re igaz”.</p><p>Ez a <b>hiányos indukció</b> csapdája. Akárhány esetet ellenőrzünk, mindig marad végtelen sok ellenőrizetlen — és a fenti két példa mutatja, hogy a törés bármikor bekövetkezhet. Egyetlen ellenpélda viszont elég ahhoz, hogy az állítást <b>megdöntsük</b>: cáfolni egy eset is tud, bizonyítani egy sem.</p>
+    </div>
+
+    <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ A sok jó eset erős sejtés, de nem bizonyítás: az n² + n + 41 képlet negyven eseten át prímet ad, a negyvenediken mégsem." data-nem="✘ Akárhány esetet nézünk végig, végtelen sok marad ellenőrizetlen. A sok jó eset sejtést ad, nem bizonyítást — és attól még az állítás lehet igaz is.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy állítást ellenőriztünk <span class="math inline">\(n=1,2,\dots,1000\)</span>-re, és mindig igaz volt. Mit tudunk?</p>
+      <div class="opciok"><button>bizonyítottuk, hiszen ezer eset épp elég</button><button>bizonyítottuk, ha az ezer eset között szerepel az <span class="math inline">\(n=1\)</span></button><button>az állítás biztosan hamis valahol, csak nem találtuk meg</button><button>csak annyit, hogy ezer esetben igaz — általánosan még nem bizonyított</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">A teljes indukció: a dominó-elv</h2>
+
+    <p>Képzelj el egy végtelen hosszú dominósort. Mikor dől el <b>mindegyik</b>? Ha két dolgot tudunk: az első eldől, és bármelyik dől el, magával rántja a következőt. Ebből a kettőből már következik, hogy az egész sor eldől — anélkül, hogy egyenként megnéznénk.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 440 175" width="440" height="175" role="img" aria-label="Dominósor: az első dominó eldőlve, a többi állva; nyilak jelzik, hogy minden dominó magával rántja a következőt">
+      <defs><marker id="dnyil" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#3b82f6"/></marker></defs>
+      <line x1="24" y1="118" x2="416" y2="118" stroke="#0f172a" stroke-width="1.4"/>
+      <g transform="rotate(-62 58 118)"><rect x="50" y="62" width="15" height="56" rx="2" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.8"/></g>
+      <rect x="112" y="62" width="15" height="56" rx="2" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.6"/>
+      <path d="M129,54 Q151,36 171,54" fill="none" stroke="#3b82f6" stroke-width="1.4" marker-end="url(#dnyil)"/>
+      <rect x="174" y="62" width="15" height="56" rx="2" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.6"/>
+      <path d="M191,54 Q213,36 233,54" fill="none" stroke="#3b82f6" stroke-width="1.4" marker-end="url(#dnyil)"/>
+      <rect x="236" y="62" width="15" height="56" rx="2" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.6"/>
+      <path d="M253,54 Q275,36 295,54" fill="none" stroke="#3b82f6" stroke-width="1.4" marker-end="url(#dnyil)"/>
+      <rect x="298" y="62" width="15" height="56" rx="2" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.6"/>
+      <path d="M315,54 Q337,36 357,54" fill="none" stroke="#3b82f6" stroke-width="1.4" marker-end="url(#dnyil)"/>
+      <rect x="360" y="62" width="15" height="56" rx="2" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.6"/>
+      <text x="58" y="138" font-size="12" fill="#3b82f6" text-anchor="middle" font-weight="600">bázis</text>
+      <text x="58" y="152" font-size="11" fill="#475569" text-anchor="middle">az első eldől</text>
+      <text x="256" y="24" font-size="12" fill="#3b82f6" text-anchor="middle" font-weight="600">lépés</text>
+      <text x="256" y="38" font-size="11" fill="#475569" text-anchor="middle">amelyik eldől, magával rántja a következőt</text>
+      <text x="416" y="138" font-size="12" fill="#475569" text-anchor="end">… és így tovább, minden n-re</text>
+    </svg>
+    </div>
+    <p class="cap">A teljes indukció két feltétele: a <b>bázis</b> (az első dominó eldől) és a <b>lépés</b> (amelyik eldől, magával rántja a következőt).</p>
+
+    <div class="doboz definicio" id="def-teljes-indukcio">
+      <p class="cim"><span class="ikon">📗</span> A teljes (matematikai) indukció elve</p>
+      <p>Ha egy <span class="math inline">\(n\)</span> természetes számról szóló állításra igaz, hogy</p><ol class="reszfeladatok"><li><b>bázis:</b> igaz <span class="math inline">\(n=1\)</span>-re, és</li><li><b>indukciós lépés:</b> valahányszor igaz egy <span class="math inline">\(k\)</span>-ra, akkor igaz <span class="math inline">\(k+1\)</span>-re is,</li></ol><p>akkor az állítás <b>minden</b> <span class="math inline">\(n\ge1\)</span> egész számra igaz.</p><p>A két feltétel elválaszthatatlan: a bázis indítja el a sort, a lépés pedig továbbviszi.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje — a hiányzó bázis</p>
+      <p>Maxi „bebizonyítja”, hogy az első <span class="math inline">\(n\)</span> természetes szám összege <span class="math inline">\(\frac{n(n+1)}{2}+5\)</span>. A lépést valóban hibátlanul végzi el: ha a <span class="math inline">\(k\)</span>-ra igaz lenne, akkor</p><span class="math display">\[\frac{k(k+1)}{2}+5+(k+1)=\frac{(k+1)(k+2)}{2}+5 ,\]</span><p>vagyis a képlet öröklődne <span class="math inline">\(k+1\)</span>-re. Csakhogy a <b>bázis hamis</b>: <span class="math inline">\(n=1\)</span>-re a bal oldal <span class="math inline">\(1\)</span>, a képlet szerint viszont <span class="math inline">\(6\)</span> lenne.</p><p>A dominósor tehát tökéletesen fel van állítva — csak épp senki nem lökte meg. <b>Bázis nélkül a lépés hamis állítást is továbbvisz.</b> Fordítva ugyanígy: pusztán a bázisból (néhány jó esetből) sem következik semmi — az az előző szakasz csapdája volt.</p>
+    </div>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A két feltétel együtt ad bizonyítást: a bázis indítja el a dominósort, a lépés viszi tovább. Meglökés nélkül egyik dominó sem dől el." data-nem="✘ A lépés csak azt mondja: HA igaz k-ra, AKKOR igaz k + 1-re. Ha soha nem igaz egyetlen konkrét számra sem, ebből nem következik semmi — épp ez a +5-ös álképlet esete.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy állításnál az indukciós lépés hibátlan, de <span class="math inline">\(n=1\)</span>-re az állítás hamis. Mit mondhatunk?</p>
+      <div class="opciok"><button>az állítás minden <span class="math inline">\(n\ge2\)</span>-re igaz</button><button>a lépés biztosan hibás, csak nem vettük észre</button><button>az állítás nincs bizonyítva — a bázis nélkül a lépés önmagában semmit nem igazol</button><button>az állítás bizonyított, hiszen a lépés a lényeg</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Egy teljes bizonyítás, lépésről lépésre</h2>
+
+    <div class="doboz pelda" id="pelda-paratlan-osszeg">
+      <p class="cim"><span class="ikon">✏️</span> Az első n páratlan szám összege</p>
+      <p><b>Állítás:</b> minden <span class="math inline">\(n\ge1\)</span> egész számra</p><span class="math display">\[1+3+5+\dots+(2n-1)=n^2 .\]</span><p><b>Bázis (<span class="math inline">\(n=1\)</span>).</b> A bal oldal az első páratlan szám, azaz <span class="math inline">\(1\)</span>; a jobb oldal <span class="math inline">\(1^2=1\)</span>. Igaz. ✔</p><p><b>Indukciós lépés.</b> Tegyük fel, hogy valamely <span class="math inline">\(k\)</span>-ra igaz:</p><span class="math display">\[1+3+\dots+(2k-1)=k^2 .\]</span><p>Adjuk hozzá mindkét oldalhoz a következő páratlan számot, <span class="math inline">\(2(k+1)-1=2k+1\)</span>-et:</p><span class="math display">\[1+3+\dots+(2k-1)+(2k+1)=k^2+2k+1=(k+1)^2 .\]</span><p>Ez pontosan az állítás <span class="math inline">\(k+1\)</span>-re. ✔</p><p>A két lépésből következik, hogy az állítás <b>minden</b> <span class="math inline">\(n\ge1\)</span> egész számra igaz. ∎</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Nem csak képletekre jó</p>
+      <p>Ugyanez a két lépés működik <b>oszthatóságnál</b> is. Állítás: <span class="math inline">\(n^3-n\)</span> minden <span class="math inline">\(n\)</span>-re osztható <span class="math inline">\(6\)</span>-tal. A bázis: <span class="math inline">\(1^3-1=0\)</span>, ami osztható. A lépés: ha <span class="math inline">\(k^3-k\)</span> osztható <span class="math inline">\(6\)</span>-tal, akkor</p><span class="math display">\[(k+1)^3-(k+1)=(k^3-k)+3k(k+1) ,\]</span><p>és itt az első tag a feltevés szerint osztható <span class="math inline">\(6\)</span>-tal, a <span class="math inline">\(3k(k+1)\)</span> pedig azért, mert <span class="math inline">\(k\)</span> és <span class="math inline">\(k+1\)</span> közül az egyik páros. Így az összeg is osztható <span class="math inline">\(6\)</span>-tal. ∎</p>
+    </div>
+
+    <p>Figyeld meg a lépés szerkezetét: a feltevést (a <span class="math inline">\(k\)</span>-ra vonatkozó egyenlőséget) <b>felhasználjuk</b>, nem bizonyítjuk — a bizonyítandó a <span class="math inline">\(k+1\)</span>-re szóló állítás. Ezért nevezzük a feltevést <i>indukciós feltevésnek</i>.</p>
+
+    <p>És innen nézve derül ki, mire volt jó az egész: a <a href="tananyag-szamtani-sorozat.html#tetel-szamtani-sn">számtani sorozat összegképletét</a> és a <a href="tananyag-mertani-sorozat.html#tetel-mertani-sn">mértani sorozat összegképletét</a> ugyanígy lehet igazolni. Eddig úgy használtuk őket, hogy egy ügyes trükkel megkaptuk; az indukció az, ami <b>garantálja</b>, hogy nemcsak az első néhány, hanem minden <span class="math inline">\(n\)</span>-re érvényesek.</p>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> A láncreakció képletét felírtuk, a bizonyítás áll — és ez az, amit Maxi nem tudott kivédeni. Nem lépésről lépésre fogtuk meg, hanem egyszerre az összesre: az <span class="math inline">\(n\)</span>-edik lépésnél pontosan tudjuk, hol tart, tehát tudjuk, hol kell megállítani. <b>A Kristálypára-anomália lezárva.</b><br>Prizma: a zóna stabil, a Királyi Család visszavonul. A következő évadban már nem a tér görbül — hanem a változás sebessége lesz a tét. Addig is: a <a href="osszefoglalo.html">Taktikai memóriakártya</a> mindent egy lapon tart.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-hazi.html"><span class="irany">← Előző</span><span class="hova">Kristály-kamra — Vészterem</span></a>
+      <a class="kov" href="osszefoglalo.html"><span class="irany">Következő →</span><span class="hova">Taktikai memóriakártya</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

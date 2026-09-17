@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Monotonitás és korlátosság — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Matematikai indukció. Sorozatok</a> ›
+  <span class="itt">Monotonitás és korlátosság — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Monotonitás és korlátosság</h1>
+  <p class="alcim">Mikor növekvő vagy csökkenő egy sorozat, hogyan döntjük el a szomszédos tagok különbségéből, és mit jelent az alsó és a felső korlát.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Végtelen Mutáció · 2/5</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/prisma.webp" alt="Prizma — a térgeometria oktatótisztje" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Prizma:</b> Két adat kell a parancsnokságnak. Az egyik: <b>emelkedik-e</b> a görbe minden egyes lépésben — ez a monotonitás. A másik: van-e <b>olyan szint, amit a mutáció soha nem lép át</b> — ez a korlátosság. A kettő együtt mondja meg, hogy a Kristály Karantén-Zóna kitart-e.</p></div>
+
+    <h2 id="s1">Növekvő, csökkenő, se nem</h2>
+
+    <p class="lead">A kérdés mindig két <b>szomszédos</b> tag viszonya: mi történik, ha egy lépéssel továbbmegyünk?</p>
+
+    <div class="doboz definicio" id="def-monoton">
+      <p class="cim"><span class="ikon">📗</span> Monoton sorozatok</p>
+      <p>Az <span class="math inline">\((a_n)\)</span> sorozat</p><ul><li><b>szigorúan monoton növekvő</b>, ha minden <span class="math inline">\(n\)</span>-re <span class="math inline">\(a_{n+1}\gt a_n\)</span>;</li><li><b>szigorúan monoton csökkenő</b>, ha minden <span class="math inline">\(n\)</span>-re <span class="math inline">\(a_{n+1}\lt a_n\)</span>;</li><li><b>monoton növekvő</b> (illetve <b>csökkenő</b>), ha a fenti egyenlőtlenségek megengedik az egyenlőséget is (<span class="math inline">\(a_{n+1}\ge a_n\)</span>, illetve <span class="math inline">\(a_{n+1}\le a_n\)</span>).</li></ul><p>Ha sem az <span class="math inline">\(a_{n+1}\ge a_n\)</span>, sem az <span class="math inline">\(a_{n+1}\le a_n\)</span> nem igaz az <b>összes</b> <span class="math inline">\(n\)</span>-re, a sorozat <b>nem monoton</b>. A minden <span class="math inline">\(n\)</span>-re szó a lényeg: egyetlen kivétel elrontja.</p>
+    </div>
+
+    <p>Az <span class="math inline">\(1,\ 1,\ 2,\ 2,\ 3,\ 3,\dots\)</span> sorozat például monoton növekvő, de nem szigorúan (vannak egyenlő szomszédok). A <span class="math inline">\(7,\ 7,\ 7,\dots\)</span> állandó sorozat egyszerre monoton növekvő és csökkenő. A <span class="math inline">\(-1,\ 1,\ -1,\ 1,\dots\)</span> váltakozó sorozat pedig nem monoton.</p>
+
+    <h2 id="s2">Hogyan döntjük el?</h2>
+
+    <p>Nem az első néhány tagot nézzük meg, hanem <b>általánosan</b> kiszámoljuk a szomszédos tagok különbségét, és megvizsgáljuk az előjelét. Ha <b>minden</b> <span class="math inline">\(n\)</span>-re</p><span class="math display">\[a_{n+1}-a_n\gt 0,\ \text{ a sorozat szigorúan növekvő;}\qquad a_{n+1}-a_n\lt 0,\ \text{ a sorozat szigorúan csökkenő.}\]</span><p>Ha a különbség előjele <span class="math inline">\(n\)</span>-től függően változik, a sorozat nem monoton.</p>
+
+    <div class="doboz pelda">
+      <p class="cim"><span class="ikon">✏️</span> A legegyszerűbb eset</p>
+      <p>Az <span class="math inline">\(a_n=3n-2\)</span> sorozatnál <span class="math inline">\(a_{n+1}-a_n=3(n+1)-2-(3n-2)=3\)</span>, ami minden <span class="math inline">\(n\)</span>-re pozitív: a sorozat szigorúan monoton növekvő. Ilyenkor a különbség állandó — a következő egységben látni fogjuk, hogy ez a számtani sorozat ismertetőjele.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-monotonitas">
+      <p class="cim"><span class="ikon">✏️</span> A különbség előjele</p>
+      <p>Monoton-e az <span class="math inline">\(a_n=\dfrac{n}{n+2}\)</span> sorozat?</p><p>Írjuk fel a következő tagot, és vonjuk ki belőle az előzőt:</p><span class="math display">\[a_{n+1}-a_n=\frac{n+1}{n+3}-\frac{n}{n+2}=\frac{(n+1)(n+2)-n(n+3)}{(n+2)(n+3)}=\frac{2}{(n+2)(n+3)} .\]</span><p>A nevező minden <span class="math inline">\(n\)</span>-re pozitív, a számláló <span class="math inline">\(2\)</span>, tehát a különbség <b>pozitív</b>: a sorozat szigorúan monoton növekvő. (Az első tagok: <span class="math inline">\(\frac13,\ \frac12,\ \frac35,\ \frac23,\dots\)</span>)</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-nem-monoton">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — a megtévesztő szakasz</p>
+      <p>A generátor egyik mérősorozata <span class="math inline">\(a_n=n^2-10n+3\)</span>. Az első tagok:</p><span class="math display">\[-6,\ -13,\ -18,\ -21,\ -22,\ -21,\ -18,\dots\]</span><p>Az <b>ötödik tagig csökken</b>, a <b>hatodik tagtól nő</b>: a sorozat <b>nem monoton</b>. Általánosan is látszik: <span class="math inline">\(a_{n+1}-a_n=2n-9\)</span>, ami <span class="math inline">\(n\le4\)</span> esetén negatív, <span class="math inline">\(n\ge5\)</span> esetén pozitív.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 380 230" width="380" height="230" role="img" aria-label="Az aₙ = n² − 10n + 3 sorozat pontjai: előbb csökkennek, az ötödik tag után emelkednek">
+      <defs><marker id="nyil-0d34e" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="57.1" y1="208.0" x2="57.1" y2="14.0"/>
+        <line x1="88.2" y1="208.0" x2="88.2" y2="14.0"/>
+        <line x1="119.3" y1="208.0" x2="119.3" y2="14.0"/>
+        <line x1="150.4" y1="208.0" x2="150.4" y2="14.0"/>
+        <line x1="181.5" y1="208.0" x2="181.5" y2="14.0"/>
+        <line x1="212.5" y1="208.0" x2="212.5" y2="14.0"/>
+        <line x1="243.6" y1="208.0" x2="243.6" y2="14.0"/>
+        <line x1="274.7" y1="208.0" x2="274.7" y2="14.0"/>
+        <line x1="305.8" y1="208.0" x2="305.8" y2="14.0"/>
+        <line x1="336.9" y1="208.0" x2="336.9" y2="14.0"/>
+        <line x1="368.0" y1="208.0" x2="368.0" y2="14.0"/>
+        <line x1="26.0" y1="208.0" x2="368.0" y2="208.0"/>
+        <line x1="26.0" y1="173.4" x2="368.0" y2="173.4"/>
+        <line x1="26.0" y1="138.7" x2="368.0" y2="138.7"/>
+        <line x1="26.0" y1="69.4" x2="368.0" y2="69.4"/>
+        <line x1="26.0" y1="34.8" x2="368.0" y2="34.8"/>
+      </g>
+      <line x1="26.0" y1="104.1" x2="368.0" y2="104.1" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-0d34e)"/>
+      <line x1="26.0" y1="208.0" x2="26.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-0d34e)"/>
+      <text x="364.0" y="118.1" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">n</text>
+      <text x="32.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="start">aₙ</text>
+      <text x="57.1" y="117.1" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="21.0" y="73.4" font-size="10" fill="#475569" text-anchor="end">10</text>
+      <circle cx="57.1" cy="124.9" r="4" fill="#ef4444"/>
+      <circle cx="88.2" cy="149.1" r="4" fill="#ef4444"/>
+      <circle cx="119.3" cy="166.4" r="4" fill="#ef4444"/>
+      <circle cx="150.4" cy="176.8" r="4" fill="#ef4444"/>
+      <circle cx="181.5" cy="180.3" r="4" fill="#ef4444"/>
+      <circle cx="212.5" cy="176.8" r="4" fill="#ef4444"/>
+      <circle cx="243.6" cy="166.4" r="4" fill="#ef4444"/>
+      <circle cx="274.7" cy="149.1" r="4" fill="#ef4444"/>
+      <circle cx="305.8" cy="124.9" r="4" fill="#ef4444"/>
+      <circle cx="336.9" cy="93.7" r="4" fill="#ef4444"/>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(a_n=n^2-10n+3\)</span> sorozat: a pontok előbb süllyednek, az ötödik tag után emelkednek. A függőleges tengely egy osztása <span class="math inline">\(10\)</span> egység.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p>Maxi kiszámolja az első három tagot, látja, hogy csökkennek, és kijelenti: „a mutáció visszahúzódik, a sorozat csökkenő”.</p><p>Ez a fenti sorozatnál éppen a csapda: az ötödik tagig tényleg csökkenés, a hatodik tagtól viszont emelkedés. <b>Néhány tagból nem lehet monotonitást kimondani</b> — a döntéshez az <span class="math inline">\(a_{n+1}-a_n\)</span> különbség előjelét kell megvizsgálni <i>minden</i> <span class="math inline">\(n\)</span>-re.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ Az általánosan felírt különbség előjele minden lépésre egyszerre ad választ." data-nem="✘ Néhány tag csak sejtést ad: az aₙ = n² − 10n + 3 sorozat öt lépésen át csökken, aztán nő. A döntés az a_{n+1} − aₙ különbség előjelén múlik.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mi alapján dönthető el biztosan, hogy egy sorozat monoton növekvő-e?</p>
+      <div class="opciok"><button>az <span class="math inline">\(a_{n+1}-a_n\)</span> különbség előjele minden <span class="math inline">\(n\)</span>-re</button><button>az első három tag: ha nőnek, a sorozat növekvő</button><button>az első tag előjele</button><button>az, hogy a képletben szerepel-e mínuszjel</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Korlátosság</h2>
+
+    <div class="doboz definicio" id="def-korlatos">
+      <p class="cim"><span class="ikon">📗</span> Alsó és felső korlát</p>
+      <p>A <span class="math inline">\(K\)</span> szám az <span class="math inline">\((a_n)\)</span> sorozat <b>felső korlátja</b>, ha minden tag legfeljebb akkora: <span class="math inline">\(a_n\le K\)</span> minden <span class="math inline">\(n\)</span>-re. A <span class="math inline">\(k\)</span> szám <b>alsó korlát</b>, ha <span class="math inline">\(a_n\ge k\)</span> minden <span class="math inline">\(n\)</span>-re.</p><p>A sorozat <b>korlátos</b>, ha van alsó és felső korlátja is, azaz minden tagja egy <span class="math inline">\(k\le a_n\le K\)</span> „sávban” marad.</p>
+    </div>
+
+    <p>A korlát <b>nem egyetlen szám</b>: ha <span class="math inline">\(K\)</span> felső korlát, akkor minden nála nagyobb szám is az. Az <span class="math inline">\(a_n=\frac{n}{n+2}\)</span> sorozatnál például <span class="math inline">\(1\)</span> felső korlát, de <span class="math inline">\(5\)</span> és <span class="math inline">\(100\)</span> is — csak az <span class="math inline">\(1\)</span> a leghasznosabb, mert az mond a legtöbbet.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 330 210" width="330" height="210" role="img" aria-label="Csökkenő, de alulról 1-gyel korlátos sorozat pontjai">
+      <defs><marker id="nyil-aa733" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="58.4" y1="188.0" x2="58.4" y2="14.0"/>
+        <line x1="90.9" y1="188.0" x2="90.9" y2="14.0"/>
+        <line x1="123.3" y1="188.0" x2="123.3" y2="14.0"/>
+        <line x1="155.8" y1="188.0" x2="155.8" y2="14.0"/>
+        <line x1="188.2" y1="188.0" x2="188.2" y2="14.0"/>
+        <line x1="220.7" y1="188.0" x2="220.7" y2="14.0"/>
+        <line x1="253.1" y1="188.0" x2="253.1" y2="14.0"/>
+        <line x1="285.6" y1="188.0" x2="285.6" y2="14.0"/>
+        <line x1="318.0" y1="188.0" x2="318.0" y2="14.0"/>
+        <line x1="26.0" y1="121.1" x2="318.0" y2="121.1"/>
+        <line x1="26.0" y1="54.2" x2="318.0" y2="54.2"/>
+      </g>
+      <line x1="26.0" y1="188.0" x2="318.0" y2="188.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-aa733)"/>
+      <line x1="26.0" y1="188.0" x2="26.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-aa733)"/>
+      <text x="314.0" y="202.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">n</text>
+      <text x="32.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="start">aₙ</text>
+      <text x="58.4" y="201.0" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="21.0" y="125.1" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <circle cx="58.4" cy="54.2" r="4" fill="#3b82f6"/>
+      <circle cx="90.9" cy="87.6" r="4" fill="#3b82f6"/>
+      <circle cx="123.3" cy="98.8" r="4" fill="#3b82f6"/>
+      <circle cx="155.8" cy="104.3" r="4" fill="#3b82f6"/>
+      <circle cx="188.2" cy="107.7" r="4" fill="#3b82f6"/>
+      <circle cx="220.7" cy="109.9" r="4" fill="#3b82f6"/>
+      <circle cx="253.1" cy="111.5" r="4" fill="#3b82f6"/>
+      <circle cx="285.6" cy="112.7" r="4" fill="#3b82f6"/>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(a_n=1+\frac1n\)</span> sorozat: <span class="math inline">\(2,\ \frac32,\ \frac43,\ \frac54,\dots\)</span> — csökken, mégis minden tagja nagyobb <span class="math inline">\(1\)</span>-nél.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p>Maxi szerint „ami csökken, az előbb-utóbb minden határon túl süllyed, tehát alulról nem korlátos”.</p><p>Az <span class="math inline">\(a_n=1+\frac1n\)</span> sorozat csökken — de minden tagja nagyobb <span class="math inline">\(1\)</span>-nél, az <span class="math inline">\(1\)</span>-et soha nem éri el. Ez a sorozat <b>korlátos</b>: alulról az <span class="math inline">\(1\)</span>, felülről az első tagja, a <span class="math inline">\(2\)</span> korlátozza.</p><p>Fordítva ugyanez: a monoton csökkenő sorozat <b>felülről</b> mindig korlátos (az első tagjával), a monoton növekvő pedig <b>alulról</b> — a másik irányról külön kell dönteni.</p>
+    </div>
+
+    <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ A csökkenés önmagában nem jelent határtalan süllyedést: a tagok „megtorpanhatnak” egy szint fölött." data-nem="✘ Az aₙ = 1 + 1/n sorozat csökken (2; 1,5; 1,33; …), mégis minden tagja 1 fölött marad — alulról korlátos. A csökkenés és a korlátosság két külön kérdés.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Igaz-e, hogy egy csökkenő sorozat soha nem korlátos alulról?</p>
+      <div class="opciok"><button>igaz, mert a csökkenés előbb-utóbb minden határon túl visz</button><button>igaz, ha a sorozat minden tagja pozitív</button><button>csak akkor korlátos, ha véges sok tagja van</button><button>nem igaz — például az <span class="math inline">\(1+\frac1n\)</span> sorozat csökken, de minden tagja nagyobb <span class="math inline">\(1\)</span>-nél</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Négy sorozat, négy jellemzés</h2>
+
+    <p>A monotonitás és a korlátosság <b>független</b> egymástól: a négy kombináció mindegyike előfordul. Nézd meg a négy ábrát, és mondd ki magadban a jellemzést, mielőtt elolvasod a képaláírást!</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 330 210" width="330" height="210" role="img" aria-label="Növekvő, felülről 1-gyel korlátos sorozat pontjai">
+      <defs><marker id="nyil-266c5" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="58.4" y1="188.0" x2="58.4" y2="14.0"/>
+        <line x1="90.9" y1="188.0" x2="90.9" y2="14.0"/>
+        <line x1="123.3" y1="188.0" x2="123.3" y2="14.0"/>
+        <line x1="155.8" y1="188.0" x2="155.8" y2="14.0"/>
+        <line x1="188.2" y1="188.0" x2="188.2" y2="14.0"/>
+        <line x1="220.7" y1="188.0" x2="220.7" y2="14.0"/>
+        <line x1="253.1" y1="188.0" x2="253.1" y2="14.0"/>
+        <line x1="285.6" y1="188.0" x2="285.6" y2="14.0"/>
+        <line x1="318.0" y1="188.0" x2="318.0" y2="14.0"/>
+        <line x1="26.0" y1="79.3" x2="318.0" y2="79.3"/>
+      </g>
+      <line x1="26.0" y1="188.0" x2="318.0" y2="188.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-266c5)"/>
+      <line x1="26.0" y1="188.0" x2="26.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-266c5)"/>
+      <text x="314.0" y="202.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">n</text>
+      <text x="32.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="start">aₙ</text>
+      <text x="58.4" y="201.0" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="21.0" y="83.3" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <circle cx="58.4" cy="151.8" r="4" fill="#047857"/>
+      <circle cx="90.9" cy="133.6" r="4" fill="#047857"/>
+      <circle cx="123.3" cy="122.8" r="4" fill="#047857"/>
+      <circle cx="155.8" cy="115.5" r="4" fill="#047857"/>
+      <circle cx="188.2" cy="110.3" r="4" fill="#047857"/>
+      <circle cx="220.7" cy="106.4" r="4" fill="#047857"/>
+      <circle cx="253.1" cy="103.4" r="4" fill="#047857"/>
+      <circle cx="285.6" cy="101.0" r="4" fill="#047857"/>
+    </svg>
+    </div>
+    <p class="cap"><b>Növekvő és korlátos:</b> <span class="math inline">\(a_n=\frac{n}{n+2}\)</span> — nő, de <span class="math inline">\(1\)</span> fölé nem ér.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 330 210" width="330" height="210" role="img" aria-label="Csökkenő, de alulról 1-gyel korlátos sorozat pontjai">
+      <defs><marker id="nyil-aa734" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="58.4" y1="188.0" x2="58.4" y2="14.0"/>
+        <line x1="90.9" y1="188.0" x2="90.9" y2="14.0"/>
+        <line x1="123.3" y1="188.0" x2="123.3" y2="14.0"/>
+        <line x1="155.8" y1="188.0" x2="155.8" y2="14.0"/>
+        <line x1="188.2" y1="188.0" x2="188.2" y2="14.0"/>
+        <line x1="220.7" y1="188.0" x2="220.7" y2="14.0"/>
+        <line x1="253.1" y1="188.0" x2="253.1" y2="14.0"/>
+        <line x1="285.6" y1="188.0" x2="285.6" y2="14.0"/>
+        <line x1="318.0" y1="188.0" x2="318.0" y2="14.0"/>
+        <line x1="26.0" y1="121.1" x2="318.0" y2="121.1"/>
+        <line x1="26.0" y1="54.2" x2="318.0" y2="54.2"/>
+      </g>
+      <line x1="26.0" y1="188.0" x2="318.0" y2="188.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-aa734)"/>
+      <line x1="26.0" y1="188.0" x2="26.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-aa734)"/>
+      <text x="314.0" y="202.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">n</text>
+      <text x="32.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="start">aₙ</text>
+      <text x="58.4" y="201.0" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="21.0" y="125.1" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <circle cx="58.4" cy="54.2" r="4" fill="#3b82f6"/>
+      <circle cx="90.9" cy="87.6" r="4" fill="#3b82f6"/>
+      <circle cx="123.3" cy="98.8" r="4" fill="#3b82f6"/>
+      <circle cx="155.8" cy="104.3" r="4" fill="#3b82f6"/>
+      <circle cx="188.2" cy="107.7" r="4" fill="#3b82f6"/>
+      <circle cx="220.7" cy="109.9" r="4" fill="#3b82f6"/>
+      <circle cx="253.1" cy="111.5" r="4" fill="#3b82f6"/>
+      <circle cx="285.6" cy="112.7" r="4" fill="#3b82f6"/>
+    </svg>
+    </div>
+    <p class="cap"><b>Csökkenő és korlátos:</b> <span class="math inline">\(a_n=1+\frac1n\)</span> — csökken, de <span class="math inline">\(1\)</span> alá nem megy.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 330 210" width="330" height="210" role="img" aria-label="Váltakozó előjelű, de korlátos sorozat pontjai">
+      <defs><marker id="nyil-6377a" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="58.4" y1="188.0" x2="58.4" y2="14.0"/>
+        <line x1="90.9" y1="188.0" x2="90.9" y2="14.0"/>
+        <line x1="123.3" y1="188.0" x2="123.3" y2="14.0"/>
+        <line x1="155.8" y1="188.0" x2="155.8" y2="14.0"/>
+        <line x1="188.2" y1="188.0" x2="188.2" y2="14.0"/>
+        <line x1="220.7" y1="188.0" x2="220.7" y2="14.0"/>
+        <line x1="253.1" y1="188.0" x2="253.1" y2="14.0"/>
+        <line x1="285.6" y1="188.0" x2="285.6" y2="14.0"/>
+        <line x1="318.0" y1="188.0" x2="318.0" y2="14.0"/>
+        <line x1="26.0" y1="38.9" x2="318.0" y2="38.9"/>
+      </g>
+      <line x1="26.0" y1="101.0" x2="318.0" y2="101.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-6377a)"/>
+      <line x1="26.0" y1="188.0" x2="26.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-6377a)"/>
+      <text x="314.0" y="115.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">n</text>
+      <text x="32.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="start">aₙ</text>
+      <text x="58.4" y="114.0" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="21.0" y="42.9" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <circle cx="58.4" cy="132.1" r="4" fill="#f59e0b"/>
+      <circle cx="90.9" cy="59.6" r="4" fill="#f59e0b"/>
+      <circle cx="123.3" cy="147.6" r="4" fill="#f59e0b"/>
+      <circle cx="155.8" cy="51.3" r="4" fill="#f59e0b"/>
+      <circle cx="188.2" cy="152.8" r="4" fill="#f59e0b"/>
+      <circle cx="220.7" cy="47.7" r="4" fill="#f59e0b"/>
+      <circle cx="253.1" cy="155.4" r="4" fill="#f59e0b"/>
+      <circle cx="285.6" cy="45.8" r="4" fill="#f59e0b"/>
+    </svg>
+    </div>
+    <p class="cap"><b>Nem monoton, de korlátos:</b> <span class="math inline">\(a_n=(-1)^n\frac{n}{n+1}\)</span> — a tagok felváltva negatívak és pozitívak, de mindig a <span class="math inline">\(-1\)</span> és <span class="math inline">\(1\)</span> közötti sávban maradnak.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 330 210" width="330" height="210" role="img" aria-label="Növekvő és felülről nem korlátos sorozat pontjai">
+      <defs><marker id="nyil-8f829" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="58.4" y1="188.0" x2="58.4" y2="14.0"/>
+        <line x1="90.9" y1="188.0" x2="90.9" y2="14.0"/>
+        <line x1="123.3" y1="188.0" x2="123.3" y2="14.0"/>
+        <line x1="155.8" y1="188.0" x2="155.8" y2="14.0"/>
+        <line x1="188.2" y1="188.0" x2="188.2" y2="14.0"/>
+        <line x1="220.7" y1="188.0" x2="220.7" y2="14.0"/>
+        <line x1="253.1" y1="188.0" x2="253.1" y2="14.0"/>
+        <line x1="285.6" y1="188.0" x2="285.6" y2="14.0"/>
+        <line x1="318.0" y1="188.0" x2="318.0" y2="14.0"/>
+        <line x1="26.0" y1="172.2" x2="318.0" y2="172.2"/>
+        <line x1="26.0" y1="156.4" x2="318.0" y2="156.4"/>
+        <line x1="26.0" y1="140.5" x2="318.0" y2="140.5"/>
+        <line x1="26.0" y1="124.7" x2="318.0" y2="124.7"/>
+        <line x1="26.0" y1="108.9" x2="318.0" y2="108.9"/>
+        <line x1="26.0" y1="93.1" x2="318.0" y2="93.1"/>
+        <line x1="26.0" y1="77.3" x2="318.0" y2="77.3"/>
+        <line x1="26.0" y1="61.5" x2="318.0" y2="61.5"/>
+        <line x1="26.0" y1="45.6" x2="318.0" y2="45.6"/>
+        <line x1="26.0" y1="29.8" x2="318.0" y2="29.8"/>
+        <line x1="26.0" y1="14.0" x2="318.0" y2="14.0"/>
+      </g>
+      <line x1="26.0" y1="188.0" x2="318.0" y2="188.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-8f829)"/>
+      <line x1="26.0" y1="188.0" x2="26.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-8f829)"/>
+      <text x="314.0" y="202.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">n</text>
+      <text x="32.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="start">aₙ</text>
+      <text x="58.4" y="201.0" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="21.0" y="176.2" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <circle cx="58.4" cy="185.4" r="4" fill="#ef4444"/>
+      <circle cx="90.9" cy="177.5" r="4" fill="#ef4444"/>
+      <circle cx="123.3" cy="164.3" r="4" fill="#ef4444"/>
+      <circle cx="155.8" cy="145.8" r="4" fill="#ef4444"/>
+      <circle cx="188.2" cy="122.1" r="4" fill="#ef4444"/>
+      <circle cx="220.7" cy="93.1" r="4" fill="#ef4444"/>
+      <circle cx="253.1" cy="58.8" r="4" fill="#ef4444"/>
+      <circle cx="285.6" cy="19.3" r="4" fill="#ef4444"/>
+    </svg>
+    </div>
+    <p class="cap"><b>Növekvő és felülről nem korlátos:</b> <span class="math inline">\(a_n=\frac{n^2}{6}\)</span> — minden határon túl nő.</p>
+
+    <p>Ez a négy kép a mutáció négy forgatókönyve: az első három, korlátos sorozat kezelhető, a negyedik nem. Épp ezért kell megtudnunk, <b>milyen szabály szerint</b> nő a láncreakció — ez a következő két egység témája.</p>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-sorozatok.html#alap-7">🐕 Tér-eb-ugrás <span class="cimke">A 7–12</span></a><a class="sav bruno" href="feladatok-sorozatok.html#kozep-5">👑 Királyi Gárda <span class="cimke">K 5–8</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/prisma.webp" alt="Prizma — a térgeometria oktatótisztje" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Prizma:</b> A mérések beérkeztek: a mutáció első fázisában minden lépés <b>ugyanannyit</b> tesz hozzá a kristályhoz. Ez a legegyszerűbb szabály, amit a generátor követhet — és Kanrak szerint van rá képlet, amivel a századik lépés is egyetlen sorban kiszámolható.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-sorozat-fogalma.html"><span class="irany">← Előző</span><span class="hova">A sorozat fogalma</span></a>
+      <a class="kov" href="tananyag-szamtani-sorozat.html"><span class="irany">Következő →</span><span class="hova">A számtani sorozat</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

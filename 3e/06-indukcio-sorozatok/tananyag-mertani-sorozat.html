@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A mértani sorozat — tananyag | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Matematikai indukció. Sorozatok</a> ›
+  <span class="itt">A mértani sorozat — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A mértani sorozat és a kamatos kamat</h1>
+  <p class="alcim">Az állandó hányados, az n-edik tag, az összegképlet, a sorozat felírása adatokból, valamint az egyszerű és a kamatos kamat.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Végtelen Mutáció · 4/5</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> Nézd a különbséget: az előbb minden lépés ugyanannyit tett hozzá, most minden lépés <b>ugyanazzal a számmal szorozza</b> az energiát. Ez dönti el, hogy egy hét múlva vagy egy órán belül éri el a kritikus szintet. Ugyanez a matematika működik a bankban is, amikor a kamat a kamatra rakódik.</p></div>
+
+    <h2 id="s1">Az állandó hányados és az n-edik tag</h2>
+
+    <p class="lead">A napló új szakasza: <span class="math inline">\(3,\ 6,\ 12,\ 24,\ 48,\dots\)</span> — minden tag az előző <b>kétszerese</b>. A különbségek (<span class="math inline">\(3, 6, 12, \dots\)</span>) nem állandók, a hányadosok (<span class="math inline">\(2, 2, 2,\dots\)</span>) viszont igen.</p>
+
+    <div class="doboz definicio" id="def-mertani">
+      <p class="cim"><span class="ikon">📗</span> A mértani sorozat</p>
+      <p>A <span class="math inline">\((b_n)\)</span> sorozat <b>mértani</b> (geometriai), ha bármely tagját ugyanazzal a <span class="math inline">\(q\ne0\)</span> számmal szorozva kapjuk a következőt:</p><span class="math display">\[b_{n+1}=b_n\cdot q,\qquad\text{azaz}\qquad q=\frac{b_{n+1}}{b_n}\quad (b_n\ne0).\]</span><p>A <span class="math inline">\(q\)</span> szám a sorozat <b>hányadosa</b> (kvóciense). Megköveteljük, hogy <span class="math inline">\(b_1\ne0\)</span> és <span class="math inline">\(q\ne0\)</span> legyen — különben csupa nulla tagot kapnánk, és a hányados sem volna értelmezhető.</p>
+    </div>
+
+    <div class="doboz tetel" id="tetel-mertani-bn">
+      <p class="cim"><span class="ikon">📘</span> A mértani sorozat n-edik tagja</p>
+      <p>Az első tagtól az <span class="math inline">\(n\)</span>-edikig <span class="math inline">\(n-1\)</span> szorzás vezet, ezért</p><span class="math display">\[b_n=b_1\cdot q^{\,n-1} .\]</span><p>Két tetszőleges tag között ugyanígy: <span class="math inline">\(b_m=b_k\cdot q^{\,m-k}\)</span>.</p>
+    </div>
+
+    <p>Az alábbi táblázat <b>pozitív első tag</b> (<span class="math inline">\(b_1\gt0\)</span>) esetére érvényes; negatív első tagnál minden tag előjelet vált, és a növekvő–csökkenő szerep megfordul.</p><div class="tblwrap"><table class="tt-table"><tr><th>a hányados</th><th>a sorozat</th><th>példa</th></tr><tr><td><span class="math inline">\(q\gt1\)</span></td><td>növekvő</td><td><span class="math inline">\(3,\ 6,\ 12,\ 24,\dots\)</span></td></tr><tr><td><span class="math inline">\(0\lt q\lt1\)</span></td><td>csökkenő, de pozitív marad</td><td><span class="math inline">\(80,\ 40,\ 20,\ 10,\dots\)</span></td></tr><tr><td><span class="math inline">\(q\lt0\)</span></td><td>váltakozó előjelű</td><td><span class="math inline">\(4,\ -2,\ 1,\ -\frac12,\dots\)</span></td></tr><tr><td><span class="math inline">\(q=1\)</span></td><td>állandó</td><td><span class="math inline">\(5,\ 5,\ 5,\dots\)</span></td></tr></table></div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 390 250" width="390" height="250" role="img" aria-label="A 3, 6, 12, 24, 48 mértani sorozat pontjai egy exponenciális görbére esnek">
+      <defs><marker id="nyil-fe833" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="86.7" y1="228.0" x2="86.7" y2="14.0"/>
+        <line x1="147.4" y1="228.0" x2="147.4" y2="14.0"/>
+        <line x1="208.1" y1="228.0" x2="208.1" y2="14.0"/>
+        <line x1="268.8" y1="228.0" x2="268.8" y2="14.0"/>
+        <line x1="329.4" y1="228.0" x2="329.4" y2="14.0"/>
+        <line x1="26.0" y1="208.5" x2="378.0" y2="208.5"/>
+        <line x1="26.0" y1="189.1" x2="378.0" y2="189.1"/>
+        <line x1="26.0" y1="169.6" x2="378.0" y2="169.6"/>
+        <line x1="26.0" y1="150.2" x2="378.0" y2="150.2"/>
+        <line x1="26.0" y1="130.7" x2="378.0" y2="130.7"/>
+        <line x1="26.0" y1="111.3" x2="378.0" y2="111.3"/>
+        <line x1="26.0" y1="91.8" x2="378.0" y2="91.8"/>
+        <line x1="26.0" y1="72.4" x2="378.0" y2="72.4"/>
+        <line x1="26.0" y1="52.9" x2="378.0" y2="52.9"/>
+        <line x1="26.0" y1="33.5" x2="378.0" y2="33.5"/>
+        <line x1="26.0" y1="14.0" x2="378.0" y2="14.0"/>
+      </g>
+      <line x1="26.0" y1="228.0" x2="378.0" y2="228.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-fe833)"/>
+      <line x1="26.0" y1="228.0" x2="26.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-fe833)"/>
+      <text x="374.0" y="242.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">n</text>
+      <text x="32.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="start">bₙ</text>
+      <text x="86.7" y="241.0" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="21.0" y="212.5" font-size="10" fill="#475569" text-anchor="end">5</text>
+      <polyline points="38.1,221.3 41.2,221.1 44.3,220.8 47.4,220.5 50.5,220.3 53.6,220.0 56.7,219.7 59.8,219.4 62.9,219.1 66.0,218.8 69.1,218.5 72.2,218.1 75.3,217.8 78.4,217.4 81.5,217.0 84.6,216.6 87.7,216.2 90.8,215.8 93.9,215.3 96.9,214.9 100.0,214.4 103.1,213.9 106.2,213.4 109.3,212.9 112.4,212.3 115.5,211.8 118.6,211.2 121.7,210.6 124.8,210.0 127.9,209.3 131.0,208.6 134.1,207.9 137.2,207.2 140.3,206.5 143.4,205.7 146.5,204.9 149.6,204.1 152.7,203.2 155.8,202.3 158.8,201.4 161.9,200.4 165.0,199.4 168.1,198.4 171.2,197.3 174.3,196.2 177.4,195.1 180.5,193.9 183.6,192.7 186.7,191.4 189.8,190.1 192.9,188.7 196.0,187.3 199.1,185.9 202.2,184.3 205.3,182.8 208.4,181.1 211.5,179.5 214.6,177.7 217.7,175.9 220.8,174.0 223.8,172.1 226.9,170.1 230.0,168.0 233.1,165.8 236.2,163.6 239.3,161.3 242.4,158.9 245.5,156.4 248.6,153.8 251.7,151.1 254.8,148.4 257.9,145.5 261.0,142.5 264.1,139.5 267.2,136.3 270.3,133.0 273.4,129.6 276.5,126.0 279.6,122.4 282.7,118.6 285.8,114.6 288.8,110.5 291.9,106.3 295.0,101.9 298.1,97.4 301.2,92.7 304.3,87.8 307.4,82.8 310.5,77.6 313.6,72.1 316.7,66.5 319.8,60.7 322.9,54.7 326.0,48.5 329.1,42.0 332.2,35.3 335.3,28.4 338.4,21.2 341.5,13.8" fill="none" stroke="#f59e0b" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="86.7" cy="216.3" r="4" fill="#047857"/>
+      <text x="80.7" y="206.3" font-size="11" fill="#047857" font-weight="600">3</text>
+      <circle cx="147.4" cy="204.7" r="4" fill="#047857"/>
+      <text x="141.4" y="194.7" font-size="11" fill="#047857" font-weight="600">6</text>
+      <circle cx="208.1" cy="181.3" r="4" fill="#047857"/>
+      <text x="202.1" y="171.3" font-size="11" fill="#047857" font-weight="600">12</text>
+      <circle cx="268.8" cy="134.6" r="4" fill="#047857"/>
+      <text x="262.8" y="124.6" font-size="11" fill="#047857" font-weight="600">24</text>
+      <circle cx="329.4" cy="41.2" r="4" fill="#047857"/>
+      <text x="305.4" y="31.2" font-size="11" fill="#047857" font-weight="600">48</text>
+    </svg>
+    </div>
+    <p class="cap">A <span class="math inline">\(3,\ 6,\ 12,\ 24,\ 48\)</span> sorozat pontjai egy exponenciális görbére ülnek — ahogy a számtani sorozat pontjai egyenesre. A függőleges tengely egy osztása <span class="math inline">\(5\)</span> egység.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Ismerős görbe</p>
+      <p>A pontok az <a href="../../2e/03-exponencialis-es-logaritmus-fuggveny/index.html">exponenciális függvény</a> grafikonjára esnek: a <span class="math inline">\(b_n=3\cdot2^{\,n-1}\)</span> sorozat ugyanaz, mint az <span class="math inline">\(y=1{,}5\cdot2^{x}\)</span> függvény értékei a pozitív egész <span class="math inline">\(x=n\)</span> helyeken. Ezért nő a mértani sorozat olyan gyorsan: a kitevőben van az <span class="math inline">\(n\)</span>.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p>Maxi két hibát is elkövet, és mindkettő ugyanoda vezet: túl nagy vagy rossz előjelű energiát jelent.</p><p><b>1.</b> <span class="math inline">\(b_{10}=b_1\cdot q^{10}\)</span> — egy szorzással több a kelleténél. Helyesen a kitevő <span class="math inline">\(n-1=9\)</span>.</p><p><b>2.</b> A <span class="math inline">\((-2)^n\)</span> és a <span class="math inline">\(-2^n\)</span> összekeverése. A <span class="math inline">\((-2)^4=16\)</span>, de <span class="math inline">\(-2^4=-16\)</span>: a zárójel nélküli alakban a hatványozás megelőzi az előjelet. Váltakozó előjelű sorozatnál ezért mindig zárójelbe tesszük a negatív hányadost.</p>
+    </div>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ b₄ = 5 · (−2)³ = 5 · (−8) = −40: három szorzás, és a páratlan kitevő miatt negatív." data-nem="✘ b₄ = b₁ · q³ = 5 · (−2)³. A kitevő 3 (nem 4), és a (−2)³ = −8, tehát b₄ = −40.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy mértani sorozat első tagja <span class="math inline">\(b_1=5\)</span>, hányadosa <span class="math inline">\(q=-2\)</span>. Mennyi <span class="math inline">\(b_4\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(-80\)</span></button><button><span class="math inline">\(80\)</span></button><button><span class="math inline">\(-40\)</span></button><button><span class="math inline">\(40\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Az első n tag összege</h2>
+
+    <p>Az összeghez most is trükk kell, csak más: írjuk fel <span class="math inline">\(S_n\)</span>-t, szorozzuk meg <span class="math inline">\(q\)</span>-val, és vonjuk ki a kettőt egymásból — a középső tagok kiesnek:</p><span class="math display">\[S_n=b_1+b_1q+\dots+b_1q^{\,n-1},\qquad q\,S_n=b_1q+\dots+b_1q^{\,n-1}+b_1q^{\,n} .\]</span><p>A különbség <span class="math inline">\(q\,S_n-S_n=b_1q^{\,n}-b_1\)</span>, azaz <span class="math inline">\(S_n(q-1)=b_1(q^{\,n}-1)\)</span>.</p>
+
+    <div class="doboz tetel" id="tetel-mertani-sn">
+      <p class="cim"><span class="ikon">📘</span> Az első n tag összege</p>
+      <span class="math display">\[S_n=b_1\cdot\frac{q^{\,n}-1}{q-1}\qquad (q\ne1)\]</span><p>A <span class="math inline">\(q=1\)</span> eset külön megy: akkor minden tag ugyanaz, tehát <span class="math inline">\(S_n=n\cdot b_1\)</span>. (A képletben ilyenkor nullával osztanánk — ezért a kikötés.)</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-lancreakcio">
+      <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — a láncreakció</p>
+      <p>A láncreakció energiája mértani sorozat: <span class="math inline">\(b_1=3\)</span>, <span class="math inline">\(q=2\)</span>. Mekkora a 10. lépés energiája, mennyi az első 10 lépés összenergiája, és hányadik lépésnél lépi át az összenergia az <span class="math inline">\(5000\)</span> egységet?</p><p>A 10. lépés: <span class="math inline">\(b_{10}=3\cdot2^{9}=3\cdot512=1536\)</span>.</p><p>Az összeg: <span class="math inline">\(S_{10}=3\cdot\dfrac{2^{10}-1}{2-1}=3\cdot1023=3069\)</span>.</p><p>A küszöb: <span class="math inline">\(S_{11}=3\cdot(2^{11}-1)=3\cdot2047=6141\gt5000\)</span>, míg <span class="math inline">\(S_{10}=3069\lt5000\)</span> — tehát a <b>11. lépésnél</b> lépi át. Ez a mértani növekedés lényege: a 9. lépésnél még csak <span class="math inline">\(S_9=1533\)</span>-nál tartott — az 5000 harmadánál sem.</p>
+    </div>
+
+    <div class="doboz erdekesseg" id="erd-sakktabla">
+      <p class="cim"><span class="ikon">💡</span> A rizsszemek a sakktáblán</p>
+      <p>A legenda szerint a sakk feltalálója annyi rizsszemet kért jutalmul, hogy az első mezőre egy szem kerüljön, a másodikra kettő, a harmadikra négy, és így tovább. A hatvannégy mezőn <span class="math inline">\(S_{64}=2^{64}-1\)</span> szem lenne — több, mint a világ mai rizstermésének több száz évnyi mennyisége. A király a számtani sorozatra gondolt, a feltaláló a mértanira.</p>
+    </div>
+
+    <h2 id="s3">Adatokból a sorozat</h2>
+
+    <div class="doboz tetel" id="tetel-mertani-kozep">
+      <p class="cim"><span class="ikon">📘</span> A középső tag</p>
+      <p>A mértani sorozat minden tagjának négyzete a két szomszédja szorzata:</p><span class="math display">\[b_n^{\,2}=b_{n-1}\cdot b_{n+1}\qquad (n\ge2).\]</span><p>Ezért ha három szám mértani sorozatot alkot, a középső négyzete a két szélső szorzata. (A <i>mértani közép</i> maga <span class="math inline">\(\sqrt{b_{n-1}b_{n+1}}=\lvert b_n\rvert\)</span> — a középső tag ugyanis negatív is lehet.)</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-ket-tagbol-mertani">
+      <p class="cim"><span class="ikon">✏️</span> Két megadott tagból</p>
+      <p>Egy mértani sorozat második tagja <span class="math inline">\(b_2=12\)</span>, ötödik tagja <span class="math inline">\(b_5=96\)</span>. Határozzuk meg a sorozatot!</p><p>A két tag között három szorzás van, ezért</p><span class="math display">\[\frac{b_5}{b_2}=q^{3}=\frac{96}{12}=8\ \Longrightarrow\ q=2 .\]</span><p>Innen <span class="math inline">\(b_1=\dfrac{b_2}{q}=6\)</span>, a sorozat pedig <span class="math inline">\(6,\ 12,\ 24,\ 48,\ 96,\dots\)</span></p><p><i>Vigyázzunk a gyökvonásnál:</i> ha <b>páros</b> kitevőjű hatvány adódik (például <span class="math inline">\(q^2=9\)</span>), akkor <b>két</b> megoldás van, <span class="math inline">\(q=3\)</span> és <span class="math inline">\(q=-3\)</span> — ilyenkor mindkettőt végig kell gondolni, és a feladat szövege dönt (például „növekvő sorozat”).</p>
+    </div>
+
+    <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ b₆ / b₂ = q⁴ = 16, tehát q = 2 (a negatív gyök, −2, akkor jönne szóba, ha a feladat megengedné)." data-nem="✘ A két tag között NÉGY szorzás van, tehát q⁴ = 80/5 = 16, ebből q = 2. A hányadost nem osztással kapjuk a sorszámok különbségéből.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy mértani sorozatban <span class="math inline">\(b_2=5\)</span> és <span class="math inline">\(b_6=80\)</span>. Mennyi a hányados (ha pozitív)?</p>
+      <div class="opciok"><button><span class="math inline">\(4\)</span></button><button><span class="math inline">\(16\)</span></button><button><span class="math inline">\(\frac{75}{4}\)</span></button><button><span class="math inline">\(2\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Kamat: egyszerű és kamatos</h2>
+
+    <p>A két sorozat különbsége a pénzügyekben a legszemléletesebb. Az <a href="../../1e/04-aranyossag/tananyag-kamatszamitas.html#s1">egyszerű kamat</a> mindig a kezdő tőkére jár: minden évben ugyanakkora összeggel nő a számla — ez <b>számtani</b> sorozat. A <b>kamatos kamat</b> esetén a kamat is kamatozik tovább: minden évben ugyanazzal a szorzóval nő a számla — ez <b>mértani</b> sorozat.</p>
+
+    <div class="doboz tetel" id="tetel-kamatos-kamat">
+      <p class="cim"><span class="ikon">📘</span> A kamatos kamat képlete</p>
+      <p>Ha a kezdő tőke <span class="math inline">\(K_0\)</span>, az éves kamatláb <span class="math inline">\(p\%\)</span>, és a kamatot évente egyszer írják jóvá, akkor <span class="math inline">\(n\)</span> év múlva</p><span class="math display">\[K_n=K_0\left(1+\frac{p}{100}\right)^{n} .\]</span><p>Ha évente <span class="math inline">\(t\)</span>-szer írnak jóvá kamatot (negyedévente <span class="math inline">\(t=4\)</span>, havonta <span class="math inline">\(t=12\)</span>), akkor egy jóváírásnál a kamatláb <span class="math inline">\(\frac{p}{t}\)</span> százalék, a jóváírások száma pedig <span class="math inline">\(t\cdot n\)</span>:</p><span class="math display">\[K_n=K_0\left(1+\frac{p}{100\,t}\right)^{t\,n} .\]</span><p>Az egyszerű kamat ugyanezekkel a jelölésekkel <span class="math inline">\(K_n=K_0\left(1+\frac{p}{100}n\right)\)</span>.</p><p><b>Miért <span class="math inline">\(n\)</span> a kitevő, és nem <span class="math inline">\(n-1\)</span>?</b> Mert a kiinduló összeg a <b>nulladik</b> év adata, <span class="math inline">\(K_0\)</span> — a mértani sorozat nyelvén ez az első tag, <span class="math inline">\(b_1=K_0\)</span>, tehát <span class="math inline">\(K_n=b_{n+1}\)</span>. Ha a számlálást <span class="math inline">\(K_0\)</span>-tól kezdjük, a kitevő éppen az eltelt évek száma.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-kamat">
+      <p class="cim"><span class="ikon">✏️</span> Kristálypára-bank — három szám egymás mellett</p>
+      <p><span class="math inline">\(200\,000\)</span> dinárt helyezünk el <span class="math inline">\(5\)</span> évre, évi <span class="math inline">\(6\%\)</span>-os kamatláb mellett. Mennyi lesz a számlán, ha a kamatot <b>a)</b> egyszerű kamatként, <b>b)</b> évente egyszer, <b>c)</b> negyedévente írják jóvá? (Kerekítsünk két tizedesjegyre!)</p><p><b>a)</b> <span class="math inline">\(200\,000\left(1+0{,}06\cdot5\right)=200\,000\cdot1{,}3=260\,000\)</span> dinár.</p><p><b>b)</b> <span class="math inline">\(200\,000\cdot1{,}06^{5}=267\,645{,}12\)</span> dinár.</p><p><b>c)</b> Negyedévente <span class="math inline">\(\frac{6}{4}=1{,}5\%\)</span>, összesen <span class="math inline">\(20\)</span> jóváírás: <span class="math inline">\(200\,000\cdot1{,}015^{20}=269\,371{,}00\)</span> dinár.</p><p>Ugyanaz a kamatláb, három különböző végösszeg — a különbség abból jön, hogy a kamat mikortól kezd maga is kamatozni.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 400 260" width="400" height="260" role="img" aria-label="200 000 dinár 10 éven át, évi 6%-kal: az egyszerű kamat egyenes vonal mentén, a kamatos kamat egyre meredekebben nő">
+      <defs><marker id="nyil-f3896" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="59.5" y1="238.0" x2="59.5" y2="14.0"/>
+        <line x1="93.0" y1="238.0" x2="93.0" y2="14.0"/>
+        <line x1="126.6" y1="238.0" x2="126.6" y2="14.0"/>
+        <line x1="160.1" y1="238.0" x2="160.1" y2="14.0"/>
+        <line x1="193.6" y1="238.0" x2="193.6" y2="14.0"/>
+        <line x1="227.1" y1="238.0" x2="227.1" y2="14.0"/>
+        <line x1="260.6" y1="238.0" x2="260.6" y2="14.0"/>
+        <line x1="294.1" y1="238.0" x2="294.1" y2="14.0"/>
+        <line x1="327.7" y1="238.0" x2="327.7" y2="14.0"/>
+        <line x1="361.2" y1="238.0" x2="361.2" y2="14.0"/>
+        <line x1="26.0" y1="193.2" x2="388.0" y2="193.2"/>
+        <line x1="26.0" y1="148.4" x2="388.0" y2="148.4"/>
+        <line x1="26.0" y1="103.6" x2="388.0" y2="103.6"/>
+        <line x1="26.0" y1="58.8" x2="388.0" y2="58.8"/>
+        <line x1="26.0" y1="14.0" x2="388.0" y2="14.0"/>
+      </g>
+      <line x1="26.0" y1="238.0" x2="388.0" y2="238.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-f3896)"/>
+      <line x1="26.0" y1="238.0" x2="26.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-f3896)"/>
+      <text x="384.0" y="252.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">év</text>
+      <text x="32.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="start">dinár</text>
+      <text x="59.5" y="251.0" font-size="10" fill="#475569" text-anchor="middle">1 év</text>
+      <text x="32.0" y="189.2" font-size="10" fill="#475569" text-anchor="start">100 000</text>
+      <polyline points="26.0,148.4 29.4,147.9 32.8,147.3 36.3,146.8 39.7,146.2 43.1,145.7 46.5,145.1 49.9,144.6 53.4,144.0 56.8,143.5 60.2,142.9 63.6,142.4 67.0,141.8 70.4,141.3 73.9,140.7 77.3,140.2 80.7,139.6 84.1,139.1 87.5,138.5 91.0,138.0 94.4,137.4 97.8,136.9 101.2,136.3 104.6,135.8 108.1,135.2 111.5,134.7 114.9,134.1 118.3,133.6 121.7,133.0 125.1,132.5 128.6,131.9 132.0,131.4 135.4,130.9 138.8,130.3 142.2,129.8 145.7,129.2 149.1,128.7 152.5,128.1 155.9,127.6 159.3,127.0 162.8,126.5 166.2,125.9 169.6,125.4 173.0,124.8 176.4,124.3 179.8,123.7 183.3,123.2 186.7,122.6 190.1,122.1 193.5,121.5 196.9,121.0 200.4,120.4 203.8,119.9 207.2,119.3 210.6,118.8 214.0,118.2 217.5,117.7 220.9,117.1 224.3,116.6 227.7,116.0 231.1,115.5 234.6,115.0 238.0,114.4 241.4,113.9 244.8,113.3 248.2,112.8 251.6,112.2 255.1,111.7 258.5,111.1 261.9,110.6 265.3,110.0 268.7,109.5 272.2,108.9 275.6,108.4 279.0,107.8 282.4,107.3 285.8,106.7 289.3,106.2 292.7,105.6 296.1,105.1 299.5,104.5 302.9,104.0 306.3,103.4 309.8,102.9 313.2,102.3 316.6,101.8 320.0,101.2 323.4,100.7 326.9,100.1 330.3,99.6 333.7,99.0 337.1,98.5 340.5,98.0 344.0,97.4 347.4,96.9 350.8,96.3 354.2,95.8 357.6,95.2 361.1,94.7 364.5,94.1 367.9,93.6" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="26.0,148.4 29.4,147.9 32.8,147.3 36.3,146.8 39.7,146.2 43.1,145.7 46.5,145.1 49.9,144.6 53.4,144.0 56.8,143.5 60.2,142.9 63.6,142.3 67.0,141.8 70.4,141.2 73.9,140.6 77.3,140.0 80.7,139.5 84.1,138.9 87.5,138.3 91.0,137.7 94.4,137.1 97.8,136.5 101.2,135.9 104.6,135.3 108.1,134.7 111.5,134.0 114.9,133.4 118.3,132.8 121.7,132.2 125.1,131.5 128.6,130.9 132.0,130.3 135.4,129.6 138.8,129.0 142.2,128.3 145.7,127.7 149.1,127.0 152.5,126.4 155.9,125.7 159.3,125.0 162.8,124.4 166.2,123.7 169.6,123.0 173.0,122.3 176.4,121.6 179.8,120.9 183.3,120.2 186.7,119.5 190.1,118.8 193.5,118.1 196.9,117.4 200.4,116.7 203.8,116.0 207.2,115.2 210.6,114.5 214.0,113.8 217.5,113.0 220.9,112.3 224.3,111.5 227.7,110.8 231.1,110.0 234.6,109.2 238.0,108.5 241.4,107.7 244.8,106.9 248.2,106.1 251.6,105.4 255.1,104.6 258.5,103.8 261.9,103.0 265.3,102.2 268.7,101.4 272.2,100.5 275.6,99.7 279.0,98.9 282.4,98.1 285.8,97.2 289.3,96.4 292.7,95.6 296.1,94.7 299.5,93.9 302.9,93.0 306.3,92.1 309.8,91.3 313.2,90.4 316.6,89.5 320.0,88.6 323.4,87.7 326.9,86.8 330.3,85.9 333.7,85.0 337.1,84.1 340.5,83.2 344.0,82.3 347.4,81.3 350.8,80.4 354.2,79.5 357.6,78.5 361.1,77.6 364.5,76.6 367.9,75.7" fill="none" stroke="#f59e0b" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="361.2" cy="94.6" r="4" fill="#3b82f6"/>
+      <text x="291.2" y="112.6" font-size="11" fill="#3b82f6" font-weight="600">320 000</text>
+      <circle cx="361.2" cy="77.5" r="4" fill="#f59e0b"/>
+      <text x="291.2" y="67.5" font-size="11" fill="#f59e0b" font-weight="600">358 170</text>
+      <rect x="272" y="13" width="122" height="40" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="276" y1="22" x2="294" y2="22" stroke="#3b82f6" stroke-width="2.4"/>
+      <text x="299" y="26" font-size="11" fill="#0f172a">egyszerű kamat</text>
+      <line x1="276" y1="39" x2="294" y2="39" stroke="#f59e0b" stroke-width="2.4"/>
+      <text x="299" y="43" font-size="11" fill="#0f172a">kamatos kamat</text>
+    </svg>
+    </div>
+    <p class="cap"><span class="math inline">\(200\,000\)</span> dinár <span class="math inline">\(10\)</span> éven át, évi <span class="math inline">\(6\%\)</span>-kal. Az egyszerű kamat egyenes mentén nő, a kamatos kamat egyre meredekebben. A függőleges tengely egy osztása <span class="math inline">\(100\,000\)</span> dinár.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
+      <p>Maxi fejben számol: „<span class="math inline">\(20\)</span> év, évi <span class="math inline">\(10\%\)</span> — az összesen <span class="math inline">\(200\%\)</span>, vagyis a pénzem háromszorosa”.</p><p>Ez az <b>egyszerű</b> kamat esete. Kamatos kamatnál a szorzók szorzódnak: <span class="math inline">\(1{,}1^{20}\approx6{,}7275\)</span>, tehát a tőke nem háromszorosára, hanem közel <b>hétszeresére</b> nő — a kamat <span class="math inline">\(572{,}7\%\)</span>. Minél hosszabb a futamidő, annál nagyobb a különbség; hitelnél ugyanez a mechanizmus dolgozik az adós ellen.</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>Kamatos kamat szerint nő a megtakarítás és a hiteltartozás, és ugyanígy — csak lefelé — működik az infláció (a pénz értéke évente ugyanazzal a szorzóval csökken) meg a gyógyszer kiürülése a szervezetből (felezési idő: <span class="math inline">\(q=\frac12\)</span>).</p>
+    </div>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ Egy hónapra 6/12 = 0,5% jár, és 5 év alatt 60 jóváírás történik." data-nem="✘ A gyakoribb jóváírás nem az éves kamatlábat hatványozza többször: egy időszakra a kamatláb p/t (itt 0,06/12), a kitevő pedig a jóváírások száma (itt 12 · 5 = 60).">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Évi <span class="math inline">\(6\%\)</span> kamat, <b>havi</b> jóváírás, <span class="math inline">\(5\)</span> év. Melyik számolás helyes?</p>
+      <div class="opciok"><button><span class="math inline">\(K_0\left(1+\frac{0{,}06}{12}\right)^{5}\)</span></button><button><span class="math inline">\(K_0\left(1+\frac{0{,}06}{12}\right)^{60}\)</span></button><button><span class="math inline">\(K_0\left(1+0{,}06\right)^{60}\)</span></button><button><span class="math inline">\(K_0\left(1+0{,}06\right)^{12}\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s5">🧾 Gyorsismétlő</h2>
+
+    <p>A két sorozat egymás mellett — ennyi kell az ellenőrzőhöz.</p><div class="tblwrap"><table class="tt-table"><tr><th></th><th>számtani</th><th>mértani</th></tr><tr><td>a szabály</td><td><span class="math inline">\(a_{n+1}=a_n+d\)</span></td><td><span class="math inline">\(b_{n+1}=b_n\cdot q\)</span></td></tr><tr><td>a jellemző adat</td><td><span class="math inline">\(d=a_{n+1}-a_n\)</span></td><td><span class="math inline">\(q=\frac{b_{n+1}}{b_n}\)</span></td></tr><tr><td>az <span class="math inline">\(n\)</span>-edik tag</td><td><span class="math inline">\(a_n=a_1+(n-1)d\)</span></td><td><span class="math inline">\(b_n=b_1q^{\,n-1}\)</span></td></tr><tr><td>az első <span class="math inline">\(n\)</span> tag összege</td><td><span class="math inline">\(S_n=\frac{n(a_1+a_n)}{2}=\frac n2\bigl(2a_1+(n-1)d\bigr)\)</span></td><td><span class="math inline">\(S_n=b_1\frac{q^{\,n}-1}{q-1}\)</span> (<span class="math inline">\(q\ne1\)</span>)</td></tr><tr><td>a középső tag (<span class="math inline">\(n\ge2\)</span>)</td><td><span class="math inline">\(a_n=\frac{a_{n-1}+a_{n+1}}{2}\)</span></td><td><span class="math inline">\(b_n^{\,2}=b_{n-1}b_{n+1}\)</span></td></tr><tr><td>a grafikon</td><td>pontok egy <b>egyenesen</b></td><td>pontok egy <b>exponenciális</b> görbén</td></tr></table></div><p><b>Melyik melyik?</b> Vond ki egymásból a szomszédos tagokat: ha mindig ugyanazt kapod, számtani. Oszd el egymással a szomszédos tagokat: ha mindig ugyanazt kapod, mértani. A <span class="math inline">\(2,\ 4,\ 8\)</span> például mértani (<span class="math inline">\(q=2\)</span>), a <span class="math inline">\(2,\ 4,\ 6\)</span> pedig számtani (<span class="math inline">\(d=2\)</span>).</p><p><b>És a leggyakoribb hiba mindkettőnél ugyanaz:</b> a kitevőben, illetve a szorzóban <span class="math inline">\(n\)</span> helyett <span class="math inline">\(n-1\)</span> áll, mert az első tagtól az <span class="math inline">\(n\)</span>-edikig csak <span class="math inline">\(n-1\)</span> lépés vezet.</p>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-sorozatok.html#alap-21">🐕 Tér-eb-ugrás <span class="cimke">A 21–28</span></a><a class="sav bruno" href="feladatok-sorozatok.html#kozep-15">👑 Királyi Gárda <span class="cimke">K 15–20</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> A képletek megvannak, a küszöb kiszámolva. Előbb éles helyzetben is használd őket — a Kiképzési Adattár és a Kristály-kamra vár —, aztán jön a nehezebb kérdés: honnan tudjuk, hogy ezek a képletek <b>minden</b> <span class="math inline">\(n\)</span>-re igazak, nem csak az első néhány lépésre?</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-szamtani-sorozat.html"><span class="irany">← Előző</span><span class="hova">A számtani sorozat</span></a>
+      <a class="kov" href="feladatok-sorozatok.html"><span class="irany">Következő →</span><span class="hova">Sorozatok — feladatok</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
