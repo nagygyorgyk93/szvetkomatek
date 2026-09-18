@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sorozatok — feladatok | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="digitalis">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Matematikai indukció. Sorozatok</a> ›
+  <span class="itt">Sorozatok — feladatok</span>
+</nav>
+<div class="hero">
+  <h1>Sorozatok — Kiképzési Adattár</h1>
+  <p class="alcim">A sorozat fogalma és megadása, monotonitás és korlátosság, számtani és mértani sorozat, összegképletek, kamatszámítás. Számológép használható: a nem egész eredményeket két tizedesjegyre kerekítsd. A végeredmény minden feladatnál lenyitható — előbb számolj, csak utána nézd meg!</p>
+  <div class="meta-sor"><span class="chip alap">Alap</span><span class="chip kozep">Közép</span><span class="chip nehez">Nehéz</span><span class="chip joker">Joker</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="alap">🟢 Alapszint — Különleges fokozat</h2>
+    <article class="feladat alap" id="alap-1">
+      <p><span class="szam">1.</span> Írd fel az alábbi sorozatok első öt tagját!</p><ol class="reszfeladatok"><li><span class="math inline">\(a_n=\frac{3n+1}{n+2}\)</span></li><li><span class="math inline">\(a_n=\frac{6n}{2n-1}\)</span></li><li><span class="math inline">\(a_n=\frac{(-1)^n}{n^2+1}\)</span></li><li><span class="math inline">\(a_n=\frac{n^2}{2^n}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{4}{3};\ \frac{7}{4};\ 2;\ \frac{13}{6};\ \frac{16}{7}\)</span></li><li><span class="math inline">\(6;\ 4;\ \frac{18}{5};\ \frac{24}{7};\ \frac{10}{3}\)</span></li><li><span class="math inline">\(-\frac{1}{2};\ \frac{1}{5};\ -\frac{1}{10};\ \frac{1}{17};\ -\frac{1}{26}\)</span></li><li><span class="math inline">\(\frac{1}{2};\ 1;\ \frac{9}{8};\ 1;\ \frac{25}{32}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-2">
+      <p><span class="szam">2.</span> Írd fel a rekurzívan megadott sorozat első öt tagját!</p><ol class="reszfeladatok"><li><span class="math inline">\(a_1=3\)</span> és <span class="math inline">\(a_{n+1}=a_n+2n\)</span></li><li><span class="math inline">\(a_1=1\)</span> és <span class="math inline">\(a_{n+1}=2a_n+1\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(3;\ 5;\ 9;\ 15;\ 23\)</span></li><li><span class="math inline">\(1;\ 3;\ 7;\ 15;\ 31\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-3">
+      <p><span class="szam">3.</span> Hányadik tagja a <span class="math inline">\(16\)</span> az alábbi sorozatoknak?</p><ol class="reszfeladatok"><li><span class="math inline">\(a_n=(-2)^{n-3}\)</span></li><li><span class="math inline">\(a_n=\left(\frac{1}{2}\right)^{1-n}\)</span></li><li><span class="math inline">\(a_n=n^2-17n+16\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>a <span class="math inline">\(7.\)</span></li><li>az <span class="math inline">\(5.\)</span></li><li>a <span class="math inline">\(17.\)</span> (a másodfokú egyenlet másik gyöke <span class="math inline">\(0\)</span>, az viszont nem sorszám)</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-4">
+      <p><span class="szam">4.</span> Ábrázold az <span class="math inline">\(a_n=2n-5\)</span> sorozat első hat tagját a koordináta-rendszerben! Hányadik tagtól pozitív a sorozat?</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>a tagok: <span class="math inline">\(-3;\ -1;\ 1;\ 3;\ 5;\ 7\)</span> — a <span class="math inline">\(3.\)</span> tagtól pozitív</p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-5">
+      <p><span class="szam">5.</span> Folytasd a sorozatot két taggal, és írd fel az általános tagját!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(2,\ 9,\ 16,\ 23,\ \dots\)</span></li><li><span class="math inline">\(2,\ 6,\ 18,\ 54,\ \dots\)</span></li><li><span class="math inline">\(1,\ 4,\ 9,\ 16,\ \dots\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(30\)</span> és <span class="math inline">\(37\)</span>; <span class="math inline">\(a_n=7n-5\)</span></li><li><span class="math inline">\(162\)</span> és <span class="math inline">\(486\)</span>; <span class="math inline">\(b_n=2\cdot 3^{n-1}\)</span></li><li><span class="math inline">\(25\)</span> és <span class="math inline">\(36\)</span>; <span class="math inline">\(a_n=n^2\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-6">
+      <p><span class="szam">6.</span> A háromszögszámok sorozata <span class="math inline">\(a_n=\frac{n(n+1)}{2}\)</span>. Tagja-e ennek a sorozatnak az <span class="math inline">\(55\)</span>, illetve a <span class="math inline">\(60\)</span>? Ha igen, hányadik?</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>az <span class="math inline">\(55\)</span> a <span class="math inline">\(10.\)</span> tag; a <span class="math inline">\(60\)</span> nem tagja a sorozatnak</p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-7">
+      <p><span class="szam">7.</span> Monoton-e a sorozat? Ha igen, növekvő vagy csökkenő?</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(a_n=5n-3\)</span></li><li><span class="math inline">\(a_n=7-2n\)</span></li><li><span class="math inline">\(a_n=(-1)^n\cdot n\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>szigorúan növekvő (<span class="math inline">\(a_{n+1}-a_n=5\)</span>)</li><li>szigorúan csökkenő (<span class="math inline">\(a_{n+1}-a_n=-2\)</span>)</li><li>nem monoton: <span class="math inline">\(-1;\ 2;\ -3;\ 4;\ \dots\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-8">
+      <p><span class="szam">8.</span> Döntsd el a szomszédos tagok különbségéből, monoton-e a sorozat!</p><ol class="reszfeladatok"><li><span class="math inline">\(a_n=n^2-n\)</span></li><li><span class="math inline">\(a_n=\frac{2n+3}{n}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>a tagok <span class="math inline">\(0;\ 2;\ 6;\ 12;\ \dots\)</span>, és <span class="math inline">\(a_{n+1}-a_n=2n\gt 0\)</span>, tehát szigorúan növekvő</li><li><span class="math inline">\(5;\ \frac{7}{2};\ 3;\ \frac{11}{4};\ \dots\)</span> — szigorúan csökkenő</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-9">
+      <p><span class="szam">9.</span> Adj meg egy alsó és egy felső korlátot, ha van!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(a_n=3+\frac{1}{n}\)</span></li><li><span class="math inline">\(a_n=(-1)^n\)</span></li><li><span class="math inline">\(a_n=n^2\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>alsó korlát <span class="math inline">\(3\)</span>, felső korlát <span class="math inline">\(4\)</span> (az első tag)</li><li>alsó korlát <span class="math inline">\(-1\)</span>, felső korlát <span class="math inline">\(1\)</span></li><li>alsó korlát <span class="math inline">\(1\)</span>; felülről nem korlátos</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-10">
+      <p><span class="szam">10.</span> Az ábrán négy sorozat első nyolc tagja látható. Mondd meg mindegyikről, hogy monoton-e, és hogy korlátos-e!</p><div class="svgwrap"><svg viewBox="0 0 290 185" width="290" height="185" role="img" aria-label="Az első sorozat pontjai emelkednek, és 2 alatt maradnak">
+  <defs><marker id="nyil-b5ba5" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+  <g stroke="#cbd5e1" stroke-width=".6">
+    <line x1="54.0" y1="163.0" x2="54.0" y2="14.0"/>
+    <line x1="82.0" y1="163.0" x2="82.0" y2="14.0"/>
+    <line x1="110.0" y1="163.0" x2="110.0" y2="14.0"/>
+    <line x1="138.0" y1="163.0" x2="138.0" y2="14.0"/>
+    <line x1="166.0" y1="163.0" x2="166.0" y2="14.0"/>
+    <line x1="194.0" y1="163.0" x2="194.0" y2="14.0"/>
+    <line x1="222.0" y1="163.0" x2="222.0" y2="14.0"/>
+    <line x1="250.0" y1="163.0" x2="250.0" y2="14.0"/>
+    <line x1="278.0" y1="163.0" x2="278.0" y2="14.0"/>
+    <line x1="26.0" y1="95.3" x2="278.0" y2="95.3"/>
+    <line x1="26.0" y1="27.5" x2="278.0" y2="27.5"/>
+  </g>
+  <line x1="26.0" y1="163.0" x2="278.0" y2="163.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-b5ba5)"/>
+  <line x1="26.0" y1="163.0" x2="26.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-b5ba5)"/>
+  <text x="274.0" y="177.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">n</text>
+  <text x="32.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="start">aₙ</text>
+  <text x="54.0" y="176.0" font-size="10" fill="#475569" text-anchor="middle">1</text>
+  <text x="21.0" y="99.3" font-size="10" fill="#475569" text-anchor="end">1</text>
+  <circle cx="54.0" cy="129.1" r="4" fill="#047857"/>
+  <circle cx="82.0" cy="108.8" r="4" fill="#047857"/>
+  <circle cx="110.0" cy="95.3" r="4" fill="#047857"/>
+  <circle cx="138.0" cy="85.6" r="4" fill="#047857"/>
+  <circle cx="166.0" cy="78.3" r="4" fill="#047857"/>
+  <circle cx="194.0" cy="72.7" r="4" fill="#047857"/>
+  <circle cx="222.0" cy="68.2" r="4" fill="#047857"/>
+  <circle cx="250.0" cy="64.5" r="4" fill="#047857"/>
+</svg><p class="cap">a)</p><svg viewBox="0 0 290 185" width="290" height="185" role="img" aria-label="A második sorozat pontjai süllyednek, és 1 fölött maradnak">
+  <defs><marker id="nyil-ca3f8" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+  <g stroke="#cbd5e1" stroke-width=".6">
+    <line x1="54.0" y1="163.0" x2="54.0" y2="14.0"/>
+    <line x1="82.0" y1="163.0" x2="82.0" y2="14.0"/>
+    <line x1="110.0" y1="163.0" x2="110.0" y2="14.0"/>
+    <line x1="138.0" y1="163.0" x2="138.0" y2="14.0"/>
+    <line x1="166.0" y1="163.0" x2="166.0" y2="14.0"/>
+    <line x1="194.0" y1="163.0" x2="194.0" y2="14.0"/>
+    <line x1="222.0" y1="163.0" x2="222.0" y2="14.0"/>
+    <line x1="250.0" y1="163.0" x2="250.0" y2="14.0"/>
+    <line x1="278.0" y1="163.0" x2="278.0" y2="14.0"/>
+    <line x1="26.0" y1="141.7" x2="278.0" y2="141.7"/>
+    <line x1="26.0" y1="120.4" x2="278.0" y2="120.4"/>
+    <line x1="26.0" y1="99.1" x2="278.0" y2="99.1"/>
+    <line x1="26.0" y1="77.9" x2="278.0" y2="77.9"/>
+    <line x1="26.0" y1="56.6" x2="278.0" y2="56.6"/>
+    <line x1="26.0" y1="35.3" x2="278.0" y2="35.3"/>
+    <line x1="26.0" y1="14.0" x2="278.0" y2="14.0"/>
+  </g>
+  <line x1="26.0" y1="163.0" x2="278.0" y2="163.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-ca3f8)"/>
+  <line x1="26.0" y1="163.0" x2="26.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-ca3f8)"/>
+  <text x="274.0" y="177.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">n</text>
+  <text x="32.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="start">aₙ</text>
+  <text x="54.0" y="176.0" font-size="10" fill="#475569" text-anchor="middle">1</text>
+  <text x="21.0" y="145.7" font-size="10" fill="#475569" text-anchor="end">1</text>
+  <circle cx="54.0" cy="35.3" r="4" fill="#3b82f6"/>
+  <circle cx="82.0" cy="88.5" r="4" fill="#3b82f6"/>
+  <circle cx="110.0" cy="106.2" r="4" fill="#3b82f6"/>
+  <circle cx="138.0" cy="115.1" r="4" fill="#3b82f6"/>
+  <circle cx="166.0" cy="120.4" r="4" fill="#3b82f6"/>
+  <circle cx="194.0" cy="124.0" r="4" fill="#3b82f6"/>
+  <circle cx="222.0" cy="126.5" r="4" fill="#3b82f6"/>
+  <circle cx="250.0" cy="128.4" r="4" fill="#3b82f6"/>
+</svg><p class="cap">b)</p><svg viewBox="0 0 290 185" width="290" height="185" role="img" aria-label="A harmadik sorozat pontjai felváltva a tengely fölött és alatt vannak, egyre közelebb a tengelyhez">
+  <defs><marker id="nyil-733a2" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+  <g stroke="#cbd5e1" stroke-width=".6">
+    <line x1="54.0" y1="163.0" x2="54.0" y2="14.0"/>
+    <line x1="82.0" y1="163.0" x2="82.0" y2="14.0"/>
+    <line x1="110.0" y1="163.0" x2="110.0" y2="14.0"/>
+    <line x1="138.0" y1="163.0" x2="138.0" y2="14.0"/>
+    <line x1="166.0" y1="163.0" x2="166.0" y2="14.0"/>
+    <line x1="194.0" y1="163.0" x2="194.0" y2="14.0"/>
+    <line x1="222.0" y1="163.0" x2="222.0" y2="14.0"/>
+    <line x1="250.0" y1="163.0" x2="250.0" y2="14.0"/>
+    <line x1="278.0" y1="163.0" x2="278.0" y2="14.0"/>
+    <line x1="26.0" y1="131.1" x2="278.0" y2="131.1"/>
+    <line x1="26.0" y1="77.9" x2="278.0" y2="77.9"/>
+    <line x1="26.0" y1="51.2" x2="278.0" y2="51.2"/>
+    <line x1="26.0" y1="24.6" x2="278.0" y2="24.6"/>
+  </g>
+  <line x1="26.0" y1="104.5" x2="278.0" y2="104.5" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-733a2)"/>
+  <line x1="26.0" y1="163.0" x2="26.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-733a2)"/>
+  <text x="274.0" y="118.5" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">n</text>
+  <text x="32.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="start">aₙ</text>
+  <text x="54.0" y="117.5" font-size="10" fill="#475569" text-anchor="middle">1</text>
+  <text x="21.0" y="81.9" font-size="10" fill="#475569" text-anchor="end">1</text>
+  <circle cx="54.0" cy="24.6" r="4" fill="#f59e0b"/>
+  <circle cx="82.0" cy="144.4" r="4" fill="#f59e0b"/>
+  <circle cx="110.0" cy="77.9" r="4" fill="#f59e0b"/>
+  <circle cx="138.0" cy="124.4" r="4" fill="#f59e0b"/>
+  <circle cx="166.0" cy="88.5" r="4" fill="#f59e0b"/>
+  <circle cx="194.0" cy="117.8" r="4" fill="#f59e0b"/>
+  <circle cx="222.0" cy="93.1" r="4" fill="#f59e0b"/>
+  <circle cx="250.0" cy="114.4" r="4" fill="#f59e0b"/>
+</svg><p class="cap">c)</p><svg viewBox="0 0 290 185" width="290" height="185" role="img" aria-label="A negyedik sorozat pontjai egyre meredekebben emelkednek">
+  <defs><marker id="nyil-d3569" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+  <g stroke="#cbd5e1" stroke-width=".6">
+    <line x1="54.0" y1="163.0" x2="54.0" y2="14.0"/>
+    <line x1="82.0" y1="163.0" x2="82.0" y2="14.0"/>
+    <line x1="110.0" y1="163.0" x2="110.0" y2="14.0"/>
+    <line x1="138.0" y1="163.0" x2="138.0" y2="14.0"/>
+    <line x1="166.0" y1="163.0" x2="166.0" y2="14.0"/>
+    <line x1="194.0" y1="163.0" x2="194.0" y2="14.0"/>
+    <line x1="222.0" y1="163.0" x2="222.0" y2="14.0"/>
+    <line x1="250.0" y1="163.0" x2="250.0" y2="14.0"/>
+    <line x1="278.0" y1="163.0" x2="278.0" y2="14.0"/>
+    <line x1="26.0" y1="121.6" x2="278.0" y2="121.6"/>
+    <line x1="26.0" y1="80.2" x2="278.0" y2="80.2"/>
+    <line x1="26.0" y1="38.8" x2="278.0" y2="38.8"/>
+  </g>
+  <line x1="26.0" y1="163.0" x2="278.0" y2="163.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-d3569)"/>
+  <line x1="26.0" y1="163.0" x2="26.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-d3569)"/>
+  <text x="274.0" y="177.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">n</text>
+  <text x="32.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="start">aₙ</text>
+  <text x="54.0" y="176.0" font-size="10" fill="#475569" text-anchor="middle">1</text>
+  <text x="21.0" y="125.6" font-size="10" fill="#475569" text-anchor="end">5</text>
+  <circle cx="54.0" cy="158.9" r="4" fill="#ef4444"/>
+  <circle cx="82.0" cy="152.7" r="4" fill="#ef4444"/>
+  <circle cx="110.0" cy="142.3" r="4" fill="#ef4444"/>
+  <circle cx="138.0" cy="127.8" r="4" fill="#ef4444"/>
+  <circle cx="166.0" cy="109.2" r="4" fill="#ef4444"/>
+  <circle cx="194.0" cy="86.4" r="4" fill="#ef4444"/>
+  <circle cx="222.0" cy="59.5" r="4" fill="#ef4444"/>
+  <circle cx="250.0" cy="28.5" r="4" fill="#ef4444"/>
+</svg><p class="cap">d) — egy osztás = 5 egység</p></div>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>szigorúan növekvő és korlátos (minden tagja <span class="math inline">\(0\)</span> és <span class="math inline">\(2\)</span> között van)</li><li>szigorúan csökkenő és korlátos (minden tagja <span class="math inline">\(1\)</span> fölött van, és egyik sem nagyobb <span class="math inline">\(6\)</span>-nál)</li><li>nem monoton (váltakozó előjelű), de korlátos</li><li>szigorúan növekvő és felülről nem korlátos</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-11">
+      <p><span class="szam">11.</span> Vizsgáld meg a sorozatot monotonitás és korlátosság szempontjából!</p><ol class="reszfeladatok"><li><span class="math inline">\(a_n=2-n\)</span></li><li><span class="math inline">\(a_n=\frac{3n-1}{n}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(1;\ 0;\ -1;\ -2;\ \dots\)</span> — szigorúan csökkenő, felülről korlátos (<span class="math inline">\(1\)</span>), alulról nem korlátos</li><li><span class="math inline">\(2;\ \frac{5}{2};\ \frac{8}{3};\ \dots\)</span> — szigorúan növekvő és korlátos: <span class="math inline">\(2\le a_n\lt 3\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-12">
+      <p><span class="szam">12.</span> <b>Maxi trükkje.</b> Maxi szerint az <span class="math inline">\(a_n=\frac{(-1)^n}{n}\)</span> sorozat csökkenő, „mert a nevező egyre nagyobb”. Írd fel az első négy tagot, és cáfold meg!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(-1;\ \frac{1}{2};\ -\frac{1}{3};\ \frac{1}{4}\)</span> — a tagok felváltva nőnek és csökkennek, tehát a sorozat nem monoton</p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-13">
+      <p><span class="szam">13.</span> Írd fel a számtani sorozat első négy tagját!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(a_1=3\)</span>, <span class="math inline">\(d=2\)</span></li><li><span class="math inline">\(a_1=-2\)</span>, <span class="math inline">\(d=5\)</span></li><li><span class="math inline">\(a_1=7\)</span>, <span class="math inline">\(d=-3\)</span></li><li><span class="math inline">\(a_1=-5\)</span>, <span class="math inline">\(d=-2\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(3;\ 5;\ 7;\ 9\)</span></li><li><span class="math inline">\(-2;\ 3;\ 8;\ 13\)</span></li><li><span class="math inline">\(7;\ 4;\ 1;\ -2\)</span></li><li><span class="math inline">\(-5;\ -7;\ -9;\ -11\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-14">
+      <p><span class="szam">14.</span> Számítsd ki <span class="math inline">\(a_n\)</span> értékét!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(a_1=3\)</span>, <span class="math inline">\(d=4\)</span>, <span class="math inline">\(n=8\)</span></li><li><span class="math inline">\(a_1=-5\)</span>, <span class="math inline">\(d=2\)</span>, <span class="math inline">\(n=12\)</span></li><li><span class="math inline">\(a_1=4\)</span>, <span class="math inline">\(d=-\frac{1}{4}\)</span>, <span class="math inline">\(n=13\)</span></li><li><span class="math inline">\(a_1=-5\)</span>, <span class="math inline">\(d=-2\)</span>, <span class="math inline">\(n=16\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(a_8=31\)</span></li><li><span class="math inline">\(a_{12}=17\)</span></li><li><span class="math inline">\(a_{13}=1\)</span></li><li><span class="math inline">\(a_{16}=-35\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-15">
+      <p><span class="szam">15.</span> Számítsd ki az összeget!</p><ol class="reszfeladatok rovid"><li>az <span class="math inline">\(1,\ 4,\ 7,\ \dots\)</span> sorozat első <span class="math inline">\(12\)</span> tagjának összegét</li><li>a <span class="math inline">\(-8,\ -3,\ 2,\ \dots\)</span> sorozat első <span class="math inline">\(36\)</span> tagjának összegét</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(S_{12}=210\)</span></li><li><span class="math inline">\(S_{36}=2862\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-16">
+      <p><span class="szam">16.</span> A <span class="math inline">\(2,\ 8,\ 14,\ \dots\)</span> számtani sorozatban határozd meg <span class="math inline">\(a_{15}\)</span> és <span class="math inline">\(S_{27}\)</span> értékét!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(a_{15}=86\)</span> és <span class="math inline">\(S_{27}=2160\)</span></p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-17">
+      <p><span class="szam">17.</span> A <span class="math inline">\(12,\ 9,\ 6,\ \dots\)</span> számtani sorozatban határozd meg <span class="math inline">\(a_{12}\)</span> és <span class="math inline">\(S_{36}\)</span> értékét!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(a_{12}=-21\)</span> és <span class="math inline">\(S_{36}=-1458\)</span></p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-18">
+      <p><span class="szam">18.</span> Határozd meg <span class="math inline">\(n\)</span> és <span class="math inline">\(S_n\)</span> értékét, ha adott az első tag, a különbség és az <span class="math inline">\(n\)</span>-edik tag!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(a_1=-5\)</span>, <span class="math inline">\(d=3\)</span>, <span class="math inline">\(a_n=13\)</span></li><li><span class="math inline">\(a_1=-1\)</span>, <span class="math inline">\(d=-3\)</span>, <span class="math inline">\(a_n=-13\)</span></li><li><span class="math inline">\(a_1=4\)</span>, <span class="math inline">\(d=7\)</span>, <span class="math inline">\(a_n=81\)</span></li><li><span class="math inline">\(a_1=3\)</span>, <span class="math inline">\(d=-5\)</span>, <span class="math inline">\(a_n=-72\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(n=7\)</span>, <span class="math inline">\(S_7=28\)</span></li><li><span class="math inline">\(n=5\)</span>, <span class="math inline">\(S_5=-35\)</span></li><li><span class="math inline">\(n=12\)</span>, <span class="math inline">\(S_{12}=510\)</span></li><li><span class="math inline">\(n=16\)</span>, <span class="math inline">\(S_{16}=-552\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-19">
+      <p><span class="szam">19.</span> Számítsd ki <span class="math inline">\(a_n\)</span> és <span class="math inline">\(S_n\)</span> értékét!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(a_1=7\)</span>, <span class="math inline">\(d=3\)</span>, <span class="math inline">\(n=20\)</span></li><li><span class="math inline">\(a_1=3\)</span>, <span class="math inline">\(d=6\)</span>, <span class="math inline">\(n=28\)</span></li><li><span class="math inline">\(a_1=-6\)</span>, <span class="math inline">\(d=-3\)</span>, <span class="math inline">\(n=27\)</span></li><li><span class="math inline">\(a_1=-1\)</span>, <span class="math inline">\(d=2\)</span>, <span class="math inline">\(n=16\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(a_{20}=64\)</span>, <span class="math inline">\(S_{20}=710\)</span></li><li><span class="math inline">\(a_{28}=165\)</span>, <span class="math inline">\(S_{28}=2352\)</span></li><li><span class="math inline">\(a_{27}=-84\)</span>, <span class="math inline">\(S_{27}=-1215\)</span></li><li><span class="math inline">\(a_{16}=29\)</span>, <span class="math inline">\(S_{16}=224\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-20">
+      <p><span class="szam">20.</span> Milyen <span class="math inline">\(x\)</span> esetén alkot a három szám számtani sorozatot?</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(3,\ x,\ 11\)</span></li><li><span class="math inline">\(5,\ 12,\ x\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(x=7\)</span></li><li><span class="math inline">\(x=19\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-21">
+      <p><span class="szam">21.</span> Írd fel a mértani sorozat első négy tagját!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(b_1=2\)</span>, <span class="math inline">\(q=3\)</span></li><li><span class="math inline">\(b_1=3\)</span>, <span class="math inline">\(q=-\frac{1}{3}\)</span></li><li><span class="math inline">\(b_1=1\)</span>, <span class="math inline">\(q=-2\)</span></li><li><span class="math inline">\(b_1=-4\)</span>, <span class="math inline">\(q=2\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(2;\ 6;\ 18;\ 54\)</span></li><li><span class="math inline">\(3;\ -1;\ \frac{1}{3};\ -\frac{1}{9}\)</span></li><li><span class="math inline">\(1;\ -2;\ 4;\ -8\)</span></li><li><span class="math inline">\(-4;\ -8;\ -16;\ -32\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-22">
+      <p><span class="szam">22.</span> Határozd meg a hányadost, és írd fel az első öt tagot!</p><ol class="reszfeladatok"><li><span class="math inline">\(b_1=5\)</span>, <span class="math inline">\(b_2=15\)</span></li><li><span class="math inline">\(b_1=3\)</span>, <span class="math inline">\(b_2=-9\)</span></li><li><span class="math inline">\(b_1=\frac{2}{3}\)</span>, <span class="math inline">\(b_2=\frac{1}{2}\)</span></li><li><span class="math inline">\(b_1=-6\)</span>, <span class="math inline">\(b_2=12\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(q=3\)</span>: <span class="math inline">\(5;\ 15;\ 45;\ 135;\ 405\)</span></li><li><span class="math inline">\(q=-3\)</span>: <span class="math inline">\(3;\ -9;\ 27;\ -81;\ 243\)</span></li><li><span class="math inline">\(q=\frac{3}{4}\)</span>: <span class="math inline">\(\frac{2}{3};\ \frac{1}{2};\ \frac{3}{8};\ \frac{9}{32};\ \frac{27}{128}\)</span></li><li><span class="math inline">\(q=-2\)</span>: <span class="math inline">\(-6;\ 12;\ -24;\ 48;\ -96\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-23">
+      <p><span class="szam">23.</span> Számítsd ki <span class="math inline">\(b_n\)</span> értékét!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(b_1=-1\)</span>, <span class="math inline">\(q=3\)</span>, <span class="math inline">\(n=8\)</span></li><li><span class="math inline">\(b_1=-5\)</span>, <span class="math inline">\(q=-2\)</span>, <span class="math inline">\(n=6\)</span></li><li><span class="math inline">\(b_1=-\frac{3}{2}\)</span>, <span class="math inline">\(q=-4\)</span>, <span class="math inline">\(n=4\)</span></li><li><span class="math inline">\(b_1=2\)</span>, <span class="math inline">\(q=4\)</span>, <span class="math inline">\(n=5\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(b_8=-2187\)</span></li><li><span class="math inline">\(b_6=160\)</span></li><li><span class="math inline">\(b_4=96\)</span></li><li><span class="math inline">\(b_5=512\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-24">
+      <p><span class="szam">24.</span> Mennyi a <span class="math inline">\(2,\ -4,\ 8,\ -16,\ \dots\)</span> mértani sorozat első kilenc tagjának összege?</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(S_9=342\)</span></p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-25">
+      <p><span class="szam">25.</span> Határozd meg <span class="math inline">\(n\)</span> és <span class="math inline">\(S_n\)</span> értékét!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(b_1=3\)</span>, <span class="math inline">\(q=4\)</span>, <span class="math inline">\(b_n=3072\)</span></li><li><span class="math inline">\(b_1=27\)</span>, <span class="math inline">\(q=\frac{2}{3}\)</span>, <span class="math inline">\(b_n=8\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(n=6\)</span>, <span class="math inline">\(S_6=4095\)</span></li><li><span class="math inline">\(n=4\)</span>, <span class="math inline">\(S_4=65\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-26">
+      <p><span class="szam">26.</span> Számítsd ki <span class="math inline">\(b_n\)</span> és <span class="math inline">\(S_n\)</span> értékét!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(b_1=2\)</span>, <span class="math inline">\(q=-4\)</span>, <span class="math inline">\(n=4\)</span></li><li><span class="math inline">\(b_1=1\)</span>, <span class="math inline">\(q=3\)</span>, <span class="math inline">\(n=6\)</span></li><li><span class="math inline">\(b_1=-1\)</span>, <span class="math inline">\(q=5\)</span>, <span class="math inline">\(n=5\)</span></li><li><span class="math inline">\(b_1=3\)</span>, <span class="math inline">\(q=\frac{1}{3}\)</span>, <span class="math inline">\(n=4\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(b_4=-128\)</span>, <span class="math inline">\(S_4=-102\)</span></li><li><span class="math inline">\(b_6=243\)</span>, <span class="math inline">\(S_6=364\)</span></li><li><span class="math inline">\(b_5=-625\)</span>, <span class="math inline">\(S_5=-781\)</span></li><li><span class="math inline">\(b_4=\frac{1}{9}\)</span>, <span class="math inline">\(S_4=\frac{40}{9}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-27">
+      <p><span class="szam">27.</span> Milyen pozitív <span class="math inline">\(x\)</span> esetén alkot a három szám mértani sorozatot?</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(4,\ x,\ 25\)</span></li><li><span class="math inline">\(2,\ x,\ 18\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(x=10\)</span> (a <span class="math inline">\(-10\)</span> is megoldás, ha nem kötjük ki a pozitív előjelet)</li><li><span class="math inline">\(x=6\)</span> (a <span class="math inline">\(-6\)</span> is megoldás, ha nem kötjük ki a pozitív előjelet)</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-28">
+      <p><span class="szam">28.</span> 💰 <span class="math inline">\(80\,000\)</span> dinárt helyezel el <span class="math inline">\(3\)</span> évre, évi <span class="math inline">\(5\%\)</span>-os kamatláb mellett. Mennyi lesz a számlán a futamidő végén, ha a kamat</p><ol class="reszfeladatok"><li>egyszerű kamatként jár (mindig a kezdő tőkére)?</li><li>kamatos kamatként, évente egyszer jóváírva jár? (Kerekíts két tizedesjegyre!)</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(80\,000\cdot 1{,}15=92\,000\)</span> dinár</li><li><span class="math inline">\(80\,000\cdot 1{,}05^{3}=92\,610{,}00\)</span> dinár</li></ol></div>
+      </details>
+    </article>
+    <h2 id="kozep">🟡 Középszint — Királyi Gárda</h2>
+    <article class="feladat kozep" id="kozep-1">
+      <p><span class="szam">1.</span> Az <span class="math inline">\(a_1=2\)</span>, <span class="math inline">\(a_{n+1}=a_n+3\)</span> rekurzív sorozatnál írd fel az első öt tagot, majd az általános tagot is!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(2;\ 5;\ 8;\ 11;\ 14\)</span>, az általános tag <span class="math inline">\(a_n=3n-1\)</span></p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-2">
+      <p><span class="szam">2.</span> Hányadik tagja a <span class="math inline">\(16\)</span> az <span class="math inline">\(a_n=\log_2(n+1)\)</span> sorozatnak?</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>a <span class="math inline">\(65\,535.\)</span> tag, mert <span class="math inline">\(n+1=2^{16}=65\,536\)</span></p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-3">
+      <p><span class="szam">3.</span> Van-e olyan tagja az <span class="math inline">\(a_n=n^2-7n+12\)</span> sorozatnak, amelyik <span class="math inline">\(0\)</span>? Ha igen, melyik — és vigyázz, hány ilyen tag van!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>két ilyen tag is van: a <span class="math inline">\(3.\)</span> és a <span class="math inline">\(4.\)</span></p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-4">
+      <p><span class="szam">4.</span> Egy sorozat általános tagja <span class="math inline">\(a_n=(n-1)(n-2)(n-3)+2n-1\)</span>. Az első három tagja <span class="math inline">\(1\)</span>, <span class="math inline">\(3\)</span>, <span class="math inline">\(5\)</span>, ezért egy kadét azt mondja, a negyedik tag <span class="math inline">\(7\)</span>. Számítsd ki a negyedik tagot!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(a_4=3\cdot 2\cdot 1+7=13\)</span> — a felsorolás nem határozza meg a sorozatot</p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-5">
+      <p><span class="szam">5.</span> Vizsgáld meg az <span class="math inline">\(a_n=\frac{2n-1}{n+1}\)</span> sorozatot monotonitás és korlátosság szempontjából!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(a_{n+1}-a_n=\frac{3}{(n+1)(n+2)}\gt 0\)</span>, tehát szigorúan növekvő; korlátos: <span class="math inline">\(\frac{1}{2}\le a_n\lt 2\)</span></p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-6">
+      <p><span class="szam">6.</span> Vizsgáld meg az <span class="math inline">\(a_n=\frac{n+2}{2n+1}\)</span> sorozatot monotonitás és korlátosság szempontjából!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(a_{n+1}-a_n=-\frac{3}{(2n+1)(2n+3)}\lt 0\)</span>, tehát szigorúan csökkenő; korlátos: <span class="math inline">\(\frac{1}{2}\lt a_n\le 1\)</span></p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-7">
+      <p><span class="szam">7.</span> Mi a legkisebb egész felső korlátja az <span class="math inline">\(a_n=\frac{3n}{n+1}\)</span> sorozatnak?</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(3\)</span> — a tagok (<span class="math inline">\(\frac{3}{2};\ 2;\ \frac{9}{4};\ \dots\)</span>) egyre nagyobbak, de <span class="math inline">\(3\)</span> alatt maradnak</p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-8">
+      <p><span class="szam">8.</span> <b>Maxi trükkje.</b> Maxi szerint az <span class="math inline">\(a_n=n^2-12n+40\)</span> sorozat növekvő, „mert a négyzetes tag együtthatója pozitív”. Írd fel az első nyolc tagot, és döntsd el, igaza van-e!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(29;\ 20;\ 13;\ 8;\ 5;\ 4;\ 5;\ 8\)</span> — a <span class="math inline">\(6.\)</span> tagig csökken, utána nő, tehát nem monoton</p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-9">
+      <p><span class="szam">9.</span> Írd fel a számtani sorozat első négy tagját!</p><ol class="reszfeladatok"><li><span class="math inline">\(a_8=38\)</span> és <span class="math inline">\(a_{21}=103\)</span></li><li><span class="math inline">\(a_6=2\)</span> és <span class="math inline">\(a_{15}=-16\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(d=5\)</span>, <span class="math inline">\(a_1=3\)</span>: <span class="math inline">\(3;\ 8;\ 13;\ 18\)</span></li><li><span class="math inline">\(d=-2\)</span>, <span class="math inline">\(a_1=12\)</span>: <span class="math inline">\(12;\ 10;\ 8;\ 6\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-10">
+      <p><span class="szam">10.</span> Egy számtani sorozat ötödik tagja <span class="math inline">\(a_5=6\)</span>, tizenkettedik tagja <span class="math inline">\(a_{12}=-15\)</span>. Számítsd ki az első <span class="math inline">\(18\)</span> tag összegét!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(d=-3\)</span>, <span class="math inline">\(a_1=18\)</span>, <span class="math inline">\(S_{18}=-135\)</span></p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-11">
+      <p><span class="szam">11.</span> Egy számtani sorozat második és negyedik tagjának összege <span class="math inline">\(16\)</span>, ötödik és első tagjának különbsége <span class="math inline">\(28\)</span>. Határozd meg a sorozat első öt tagját!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>a különbség <span class="math inline">\(7\)</span>, az első tag <span class="math inline">\(-6\)</span>: <span class="math inline">\(-6;\ 1;\ 8;\ 15;\ 22\)</span></p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-12">
+      <p><span class="szam">12.</span> Határozd meg a számtani sorozat első tagját és különbségét!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(a_3+a_6=20\)</span> és <span class="math inline">\(a_9-a_2=14\)</span></li><li><span class="math inline">\(a_1+2a_5=0\)</span> és <span class="math inline">\(S_4=14\)</span></li><li><span class="math inline">\(2a_4+a_6=48\)</span> és <span class="math inline">\(5a_5-7a_2=29\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(a_1=3\)</span>, <span class="math inline">\(d=2\)</span></li><li><span class="math inline">\(a_1=8\)</span>, <span class="math inline">\(d=-3\)</span></li><li><span class="math inline">\(a_1=5\)</span>, <span class="math inline">\(d=3\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-13">
+      <p><span class="szam">13.</span> Oldd meg az egyenleteket!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(5+8+11+\dots+x=124\)</span></li><li><span class="math inline">\(4+9+14+\dots+x=172\)</span></li><li><span class="math inline">\(-3+1+5+\dots+x=150\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(x=26\)</span></li><li><span class="math inline">\(x=39\)</span></li><li><span class="math inline">\(x=33\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-14">
+      <p><span class="szam">14.</span> Határozd meg <span class="math inline">\(n\)</span> és <span class="math inline">\(a_n\)</span> értékét!</p><ol class="reszfeladatok"><li><span class="math inline">\(a_1=3\)</span>, <span class="math inline">\(d=1\)</span>, <span class="math inline">\(S_n=250\)</span></li><li><span class="math inline">\(a_1=18\)</span>, <span class="math inline">\(d=-3\)</span>, <span class="math inline">\(S_n=54\)</span></li><li><span class="math inline">\(a_1=2\)</span>, <span class="math inline">\(d=5\)</span>, <span class="math inline">\(S_n=245\)</span></li><li><span class="math inline">\(a_1=-2\)</span>, <span class="math inline">\(d=-5\)</span>, <span class="math inline">\(S_n=-555\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(n=20\)</span>, <span class="math inline">\(a_{20}=22\)</span></li><li><b>két megoldás:</b> <span class="math inline">\(n=4\)</span>, <span class="math inline">\(a_4=9\)</span> vagy <span class="math inline">\(n=9\)</span>, <span class="math inline">\(a_9=-6\)</span></li><li><span class="math inline">\(n=10\)</span>, <span class="math inline">\(a_{10}=47\)</span></li><li><span class="math inline">\(n=15\)</span>, <span class="math inline">\(a_{15}=-72\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-15">
+      <p><span class="szam">15.</span> Határozd meg <span class="math inline">\(n\)</span> és <span class="math inline">\(b_n\)</span> értékét!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(b_1=2\)</span>, <span class="math inline">\(q=\frac{1}{2}\)</span>, <span class="math inline">\(S_n=\frac{31}{8}\)</span></li><li><span class="math inline">\(b_1=2\)</span>, <span class="math inline">\(q=-3\)</span>, <span class="math inline">\(S_n=-40\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(n=5\)</span>, <span class="math inline">\(b_5=\frac{1}{8}\)</span></li><li><span class="math inline">\(n=4\)</span>, <span class="math inline">\(b_4=-54\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-16">
+      <p><span class="szam">16.</span> Írd fel a mértani sorozat első négy tagját!</p><ol class="reszfeladatok"><li><span class="math inline">\(b_4=32\)</span> és <span class="math inline">\(b_9=1024\)</span></li><li><span class="math inline">\(b_2=10\)</span> és <span class="math inline">\(b_7=-320\)</span></li><li><span class="math inline">\(b_3=-27\)</span> és <span class="math inline">\(b_6=729\)</span></li><li><span class="math inline">\(b_4=18\)</span> és <span class="math inline">\(b_6=162\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(4;\ 8;\ 16;\ 32\)</span></li><li><span class="math inline">\(-5;\ 10;\ -20;\ 40\)</span></li><li><span class="math inline">\(-3;\ 9;\ -27;\ 81\)</span></li><li><b>két megoldás</b> (<span class="math inline">\(q^2=9\)</span>): <span class="math inline">\(\frac{2}{3};\ 2;\ 6;\ 18\)</span> vagy <span class="math inline">\(-\frac{2}{3};\ 2;\ -6;\ 18\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-17">
+      <p><span class="szam">17.</span> Határozd meg a mértani sorozat első négy tagját!</p><ol class="reszfeladatok"><li><span class="math inline">\(b_1+b_3=-20\)</span> és <span class="math inline">\(b_2+b_4=-40\)</span></li><li><span class="math inline">\(b_5-b_1=80\)</span> és <span class="math inline">\(b_3+b_1=10\)</span></li><li><span class="math inline">\(b_6-b_4=216\)</span> és <span class="math inline">\(b_3-b_1=8\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(-4;\ -8;\ -16;\ -32\)</span></li><li><b>két megoldás:</b> <span class="math inline">\(1;\ 3;\ 9;\ 27\)</span> vagy <span class="math inline">\(1;\ -3;\ 9;\ -27\)</span></li><li><span class="math inline">\(1;\ 3;\ 9;\ 27\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-18">
+      <p><span class="szam">18.</span> Oldd meg az egyenleteket!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(3+6+12+\dots+x=189\)</span></li><li><span class="math inline">\(2+6+18+\dots+x=728\)</span></li><li><span class="math inline">\(4+8+16+\dots+x=2044\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(x=96\)</span></li><li><span class="math inline">\(x=486\)</span></li><li><span class="math inline">\(x=1024\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-19">
+      <p><span class="szam">19.</span> Egy mértani sorozatban a második és a negyedik tag összege <span class="math inline">\(90\)</span>, az első és a harmadik tagé <span class="math inline">\(30\)</span>. Írd fel a sorozat első négy tagját!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(q=3\)</span>, <span class="math inline">\(b_1=3\)</span>: <span class="math inline">\(3;\ 9;\ 27;\ 81\)</span></p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-20">
+      <p><span class="szam">20.</span> 💰 A bank évi <span class="math inline">\(4\%\)</span>-os kamatot fizet. Kerekíts mindkét részfeladatban két tizedesjegyre!</p><ol class="reszfeladatok"><li>Mekkora összeget kell ma elhelyezned ahhoz, hogy <span class="math inline">\(6\)</span> év múlva <span class="math inline">\(100\,000\)</span> dinárod legyen, ha a kamatot évente egyszer írják jóvá?</li><li>Mennyi lenne <span class="math inline">\(100\,000\)</span> dinárból <span class="math inline">\(6\)</span> év múlva, ha a kamatot <b>negyedévente</b> írnák jóvá?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(K_0=\frac{100\,000}{1{,}04^{6}}=79\,031{,}45\)</span> dinár</li><li>negyedévente <span class="math inline">\(1\%\)</span>, összesen <span class="math inline">\(24\)</span> jóváírás: <span class="math inline">\(100\,000\cdot 1{,}01^{24}=126\,973{,}46\)</span> dinár</li></ol></div>
+      </details>
+    </article>
+    <h2 id="nehez">🔴 Nehéz szint — Kristály-protokoll</h2>
+    <article class="feladat nehez" id="nehez-1">
+      <p><span class="szam">1.</span> Igazold, hogy az <span class="math inline">\(a_n=\frac{3n+2}{n+4}\)</span> sorozat szigorúan monoton növekvő, és hogy minden tagja <span class="math inline">\(1\)</span> és <span class="math inline">\(3\)</span> közé esik!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(a_{n+1}-a_n=\frac{10}{(n+4)(n+5)}\gt 0\)</span>, tehát növekvő; így a legkisebb tag <span class="math inline">\(a_1=1\)</span>, felülről pedig <span class="math inline">\(3\)</span> korlátozza, mert <span class="math inline">\(\frac{3n+2}{n+4}\lt 3\)</span> minden <span class="math inline">\(n\)</span>-re (<span class="math inline">\(3n+2\lt 3n+12\)</span>)</p></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-2">
+      <p><span class="szam">2.</span> Egy számtani sorozat első tíz tagjának összege <span class="math inline">\(145\)</span>, az első húsz tagé <span class="math inline">\(590\)</span>. Írd fel a sorozat első négy tagját!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(a_1=1\)</span>, <span class="math inline">\(d=3\)</span>: <span class="math inline">\(1;\ 4;\ 7;\ 10\)</span></p></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-3">
+      <p><span class="szam">3.</span> Hány olyan háromjegyű szám van, amely osztható <span class="math inline">\(7\)</span>-tel, és mennyi ezek összege?</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>az első <span class="math inline">\(105\)</span>, az utolsó <span class="math inline">\(994\)</span>, tehát <span class="math inline">\(128\)</span> ilyen szám van, az összegük <span class="math inline">\(70\,336\)</span></p></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-4">
+      <p><span class="szam">4.</span> Egy mértani sorozat harmadik tagja <span class="math inline">\(18\)</span>, hatodik tagja <span class="math inline">\(486\)</span>. Hányadik tagtól haladja meg a sorozat az <span class="math inline">\(1000\)</span>-et?</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(q=3\)</span>, <span class="math inline">\(b_1=2\)</span>; <span class="math inline">\(b_6=486\)</span>, <span class="math inline">\(b_7=1458\)</span>, tehát a <span class="math inline">\(7.\)</span> tagtól</p></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-5">
+      <p><span class="szam">5.</span> Egy mértani sorozatban a harmadik és az első tag különbsége <span class="math inline">\(12\)</span>, az első és a harmadik tag szorzata <span class="math inline">\(64\)</span>. Határozd meg a sorozatot! <i>(Több megoldás is van — keresd meg mindet!)</i></p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><b>négy megoldás:</b> <span class="math inline">\(b_1=4\)</span>, <span class="math inline">\(q=2\)</span> · <span class="math inline">\(b_1=4\)</span>, <span class="math inline">\(q=-2\)</span> · <span class="math inline">\(b_1=-16\)</span>, <span class="math inline">\(q=\frac{1}{2}\)</span> · <span class="math inline">\(b_1=-16\)</span>, <span class="math inline">\(q=-\frac{1}{2}\)</span></p></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-6">
+      <p><span class="szam">6.</span> Egy baktériumtelep óránként a háromszorosára nő. Kezdetben <span class="math inline">\(50\)</span> baktérium van a telepben.</p><ol class="reszfeladatok"><li>Hányadik óra végén haladja meg a telep a <span class="math inline">\(100\,000\)</span> baktériumot?</li><li>És hányadik óra végén az egymilliót?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(50\cdot 3^{7}=109\,350\)</span>, tehát a <span class="math inline">\(7.\)</span> óra végén (a <span class="math inline">\(6.\)</span> óra végén még csak <span class="math inline">\(36\,450\)</span>)</li><li><span class="math inline">\(50\cdot 3^{10}=2\,952\,450\)</span>, tehát a <span class="math inline">\(10.\)</span> óra végén (a <span class="math inline">\(9.\)</span> óra végén még csak <span class="math inline">\(984\,150\)</span>)</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-7">
+      <p><span class="szam">7.</span> Három szám összege <span class="math inline">\(26\)</span>, és mértani sorozatot alkot. Ha rendre <span class="math inline">\(1\)</span>-gyel, <span class="math inline">\(6\)</span>-tal és <span class="math inline">\(3\)</span>-mal növeljük őket, számtani sorozatot kapunk. Melyik ez a három szám?</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(2;\ 6;\ 18\)</span> (a megnövelt számok: <span class="math inline">\(3;\ 12;\ 21\)</span> — valóban számtani sorozat, <span class="math inline">\(d=9\)</span>). A másodfokú egyenlet másik gyöke, <span class="math inline">\(q=\frac{1}{3}\)</span>, ugyanezt a három számot adja fordított sorrendben</p></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-8">
+      <p><span class="szam">8.</span> Egy számtani sorozat <span class="math inline">\(n\)</span>-edik tagja <span class="math inline">\(a_n=2n+1\)</span>.</p><ol class="reszfeladatok"><li>Fejezd ki az első <span class="math inline">\(n\)</span> tag összegét <span class="math inline">\(n\)</span> segítségével!</li><li>Hány tagot kell összeadni ahhoz, hogy az összeg <span class="math inline">\(195\)</span> legyen?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(S_n=n^2+2n\)</span></li><li><span class="math inline">\(n=13\)</span></li></ol></div>
+      </details>
+    </article>
+    <h2 id="joker-szint">🃏 Joker</h2>
+    <article class="feladat joker" id="joker">
+      <p><span class="szam">★</span> Egy papírlap vastagsága <span class="math inline">\(0{,}1\)</span> mm. Képzeld el, hogy félbe tudod hajtani akárhányszor — minden hajtásnál kétszereződik a vastagság.</p><ol class="reszfeladatok"><li>Milyen vastag a köteg <span class="math inline">\(10\)</span> hajtás után?</li><li>Hányadik hajtás után haladja meg a vastagság a Hold távolságát, <span class="math inline">\(384\,000\)</span> km-t?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(0{,}1\ \text{mm}\cdot 2^{10}=102{,}4\)</span> mm, azaz nagyjából <span class="math inline">\(10\)</span> cm</li><li><span class="math inline">\(42\)</span> hajtás kell: <span class="math inline">\(0{,}1\ \text{mm}\cdot 2^{42}\approx 439\,800\)</span> km, ami már több, mint <span class="math inline">\(384\,000\)</span> km (a <span class="math inline">\(41.\)</span> hajtásnál még csak <span class="math inline">\(219\,900\)</span> km)</li></ol></div>
+      </details>
+    </article>
+    <div class="gyakorolj">
+      <span class="ikon">📖</span>
+      <p>Elakadtál? Nézd át a <a href="index.html">témakör tananyagait</a> vagy a <a href="osszefoglalo.html">Taktikai memóriakártyát</a>.</p>
+    </div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-mertani-sorozat.html"><span class="irany">← Előző</span><span class="hova">A mértani sorozat és a kamatos kamat</span></a>
+      <a class="kov" href="feladatok-hazi.html"><span class="irany">Következő →</span><span class="hova">Kristály-kamra — Vészterem</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
