@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Taktikai memóriakártya | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="digitalis">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Matematikai indukció. Sorozatok</a> ›
+  <span class="itt">Taktikai memóriakártya</span>
+</nav>
+<div class="hero">
+  <h1>Taktikai memóriakártya — a témakör egy lapon</h1>
+  <p class="alcim">A sorozatok képletei, jellemzői és tipikus csapdái egy helyen — ismétléshez, az ellenőrző előtti átfutáshoz, nyomtatáshoz.</p>
+  <div class="meta-sor"><span class="chip ora">összefoglaló</span><span class="chip">A Végtelen Mutáció · összefoglaló</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📇 A sorozat</h2>
+
+    <p class="lead">A sorozat minden <span class="math inline">\(n\)</span> természetes számhoz egyetlen valós számot rendel: ez a sorozat <span class="math inline">\(n\)</span>-edik tagja, <span class="math inline">\(a_n\)</span>. Az indexelést <span class="math inline">\(1\)</span>-től kezdjük.</p><div class="tblwrap"><table class="tt-table"><tr><th>Mit</th><th>Hogyan</th><th>Megjegyzés</th></tr><tr><td>megadás képlettel (<a href="tananyag-sorozat-fogalma.html#def-sorozat">→</a>)</td><td><span class="math inline">\(a_n\)</span> az <span class="math inline">\(n\)</span> függvényeként</td><td>bármelyik tag egy lépésben megkapható</td></tr><tr><td>megadás rekurzívan (<a href="tananyag-sorozat-fogalma.html#def-rekurzio">→</a>)</td><td>kezdőtag + továbblépési szabály</td><td>kezdőtag nélkül semmit nem határoz meg</td></tr><tr><td>„hányadik tag?”</td><td>oldd meg az <span class="math inline">\(a_n=c\)</span> egyenletet</td><td>csak <b>természetes</b> <span class="math inline">\(n\)</span> jó; különben a szám nem tagja a sorozatnak</td></tr><tr><td>grafikon</td><td>az <span class="math inline">\((n;a_n)\)</span> pontok</td><td><b>különálló pontok</b>, nem összekötött vonal</td></tr><tr><td>monotonitás (<a href="tananyag-monotonitas-es-korlatossag.html#def-monoton">→</a>)</td><td><span class="math inline">\(a_{n+1}-a_n\gt0\)</span> szigorúan növekvő · <span class="math inline">\(\lt0\)</span> szigorúan csökkenő</td><td><b>minden</b> <span class="math inline">\(n\)</span>-re kell teljesülnie — nem elég néhány tag</td></tr><tr><td>korlátosság (<a href="tananyag-monotonitas-es-korlatossag.html#def-korlatos">→</a>)</td><td><span class="math inline">\(k\le a_n\le K\)</span> minden <span class="math inline">\(n\)</span>-re</td><td>a korlát nem egyetlen szám: ha <span class="math inline">\(K\)</span> felső korlát, minden nála nagyobb is az. A monoton csökkenő sorozat felülről, a növekvő alulról mindig korlátos az első tagjával — a másik irányról külön kell dönteni</td></tr></table></div>
+
+    <h2 id="s1">📐 Számtani és mértani sorozat</h2>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th></th><th>számtani (<a href="tananyag-szamtani-sorozat.html#def-szamtani">→</a>)</th><th>mértani (<a href="tananyag-mertani-sorozat.html#def-mertani">→</a>)</th></tr><tr><td>a szabály</td><td><span class="math inline">\(a_{n+1}=a_n+d\)</span></td><td><span class="math inline">\(b_{n+1}=b_n\cdot q\)</span> (<span class="math inline">\(b_1\ne0\)</span>, <span class="math inline">\(q\ne0\)</span>)</td></tr><tr><td>a jellemző adat</td><td><span class="math inline">\(d=a_{n+1}-a_n\)</span></td><td><span class="math inline">\(q=\dfrac{b_{n+1}}{b_n}\)</span></td></tr><tr><td>az <span class="math inline">\(n\)</span>-edik tag</td><td><span class="math inline">\(a_n=a_1+(n-1)d\)</span></td><td><span class="math inline">\(b_n=b_1q^{\,n-1}\)</span></td></tr><tr><td>két tag között</td><td><span class="math inline">\(a_m=a_k+(m-k)d\)</span></td><td><span class="math inline">\(b_m=b_k\cdot q^{\,m-k}\)</span></td></tr><tr><td>az első <span class="math inline">\(n\)</span> tag összege</td><td><span class="math inline">\(S_n=\dfrac{n(a_1+a_n)}{2}=\dfrac n2\bigl(2a_1+(n-1)d\bigr)\)</span></td><td><span class="math inline">\(S_n=b_1\dfrac{q^{\,n}-1}{q-1}\)</span>, ha <span class="math inline">\(q\ne1\)</span>; <span class="math inline">\(q=1\)</span> esetén <span class="math inline">\(S_n=n\,b_1\)</span></td></tr><tr><td>a középső tag (<span class="math inline">\(n\ge2\)</span>)</td><td><span class="math inline">\(a_n=\dfrac{a_{n-1}+a_{n+1}}{2}\)</span></td><td><span class="math inline">\(b_n^{\,2}=b_{n-1}\cdot b_{n+1}\)</span></td></tr><tr><td>a grafikon</td><td>pontok egy <b>egyenesen</b> (<span class="math inline">\(d\)</span> a meredekség)</td><td><span class="math inline">\(q\gt0\)</span> esetén pontok egy <b>exponenciális</b> görbén; <span class="math inline">\(q\lt0\)</span> esetén a pontok váltakozva a tengely fölött és alatt vannak</td></tr><tr><td>mikor melyik</td><td>a szomszédos tagok <b>különbsége</b> állandó</td><td>a szomszédos tagok <b>hányadosa</b> állandó</td></tr></table></div><p><b>Két adat elég.</b> Mindkét sorozatot meghatározza az első tag és a jellemző adat (<span class="math inline">\(d\)</span>, illetve <span class="math inline">\(q\)</span>); ha más két adat ismert, egyenletrendszert írunk fel rájuk. ⚠️ Mértani sorozatnál <b>páros</b> lépéstávolságból (<span class="math inline">\(q^2=9\)</span>, <span class="math inline">\(q^4=16\)</span> …) a hányados <b>előjele kétféle</b> lehet — ilyenkor mindkét esetet végig kell gondolni. Ha a keresett <span class="math inline">\(n\)</span> az összegképletben van, másodfokú egyenletre jutunk; ha a kitevőben, a hatványok kiszámításával keressük meg a legkisebb megfelelő <span class="math inline">\(n\)</span>-t — és a tagszám mindig <b>természetes szám</b>.</p>
+
+    <h2 id="s2">Kamat: egyszerű és kamatos</h2>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th></th><th>képlet</th><th>milyen sorozat</th></tr><tr><td>egyszerű kamat</td><td><span class="math inline">\(K_n=K_0\left(1+\dfrac{p}{100}\,n\right)\)</span></td><td><b>számtani</b>: minden évben ugyanannyival nő</td></tr><tr><td>kamatos kamat (<a href="tananyag-mertani-sorozat.html#tetel-kamatos-kamat">→</a>)</td><td><span class="math inline">\(K_n=K_0\left(1+\dfrac{p}{100}\right)^{n}\)</span></td><td><b>mértani</b>: minden évben ugyanazzal a szorzóval nő</td></tr><tr><td>évi <span class="math inline">\(t\)</span>-szeri jóváírás</td><td><span class="math inline">\(K_n=K_0\left(1+\dfrac{p}{100\,t}\right)^{t\,n}\)</span></td><td>egy időszakra <span class="math inline">\(\frac pt\)</span> százalék, a jóváírások száma <span class="math inline">\(t\cdot n\)</span></td></tr></table></div><p>A kitevőben azért áll <span class="math inline">\(n\)</span> (és nem <span class="math inline">\(n-1\)</span>), mert a kiinduló összeg a <b>nulladik</b> év adata, <span class="math inline">\(K_0\)</span> — ez a tudatos kivétel az „1-től indexelünk” megállapodás alól (a mértani sorozat nyelvén <span class="math inline">\(b_1=K_0\)</span>). Pénznél mindig <b>két tizedesjegyre</b> kerekítünk.</p>
+
+    <h2 id="s3">⚠️ Maxi csapdái — amin a legtöbben elcsúsznak</h2>
+
+    <div class="doboz csapda"><p class="cim"><span class="ikon">⚠️</span> A hét leggyakoribb hiba</p><ol class="reszfeladatok"><li><b>Index-eltolás:</b> ✗ <span class="math inline">\(a_n=a_1+nd\)</span>, ✗ <span class="math inline">\(b_n=b_1q^{\,n}\)</span> — helyesen <span class="math inline">\(a_n=a_1+(n-1)d\)</span> és <span class="math inline">\(b_n=b_1q^{\,n-1}\)</span>, mert az első tagtól az <span class="math inline">\(n\)</span>-edikig csak <span class="math inline">\(n-1\)</span> lépés vezet.</li><li><b>Két tagból a különbség:</b> <span class="math inline">\(a_3=8\)</span>, <span class="math inline">\(a_9=32\)</span> esetén nem <span class="math inline">\(9\)</span>-cel, hanem a lépések számával, <span class="math inline">\(9-3=6\)</span>-tal osztunk.</li><li><b>Az összegképlet felezése:</b> ✗ <span class="math inline">\(S_n=n(a_1+a_n)\)</span> — helyesen <span class="math inline">\(S_n=\frac{n(a_1+a_n)}{2}\)</span>; a kettővel osztás nem maradhat el.</li><li><b>Negatív hányados:</b> <span class="math inline">\((-2)^4=16\)</span>, de <span class="math inline">\(-2^4=-16\)</span>; a negatív <span class="math inline">\(q\)</span>-t mindig zárójelbe tesszük.</li><li><b>Nem egész sorszám:</b> ha az <span class="math inline">\(a_n=c\)</span> egyenletből tört jön ki, a szám <b>nem tagja</b> a sorozatnak.</li><li><b>Monotonitás néhány tagból:</b> az <span class="math inline">\(a_n=n^2-10n+3\)</span> sorozat az ötödik tagig csökken, a hatodiktól nő.</li><li><b>Kamat összeadással:</b> „20 év, évi 10% = 200%” — ez az <b>egyszerű</b> kamat esete; kamatos kamatnál a szorzók szorzódnak (<span class="math inline">\(1{,}1^{20}\approx6{,}73\)</span>, vagyis <span class="math inline">\(572{,}7\%\)</span>).</li></ol></div>
+
+    <h2 id="s4">Mit hol találsz?</h2>
+
+    <div class="gyakorolj"><span class="ikon">🧭</span><div><p><b>Tananyag:</b> <a href="tananyag-sorozat-fogalma.html">a sorozat fogalma</a> · <a href="tananyag-monotonitas-es-korlatossag.html">monotonitás és korlátosság</a> · <a href="tananyag-szamtani-sorozat.html">a számtani sorozat</a> · <a href="tananyag-mertani-sorozat.html">a mértani sorozat és a kamatos kamat</a>.</p><p><b>Gyakorlás:</b> <a href="feladatok-sorozatok.html">Kiképzési Adattár</a> (alap · közép · nehéz · joker) és a <a href="feladatok-hazi.html">Kristály-kamra</a> házi feladatsor.</p><p><b>Külön lapon:</b> a <a href="tananyag-indukcio.html">hiányos és a teljes indukció</a> — ebből nincs számonkérés, de érdemes elolvasni; a témakör zárása pedig <a href="terepkuldetes.html">A Végtelen Mutáció</a> küldetés.</p></div></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-indukcio.html"><span class="irany">← Előző</span><span class="hova">Hiányos és teljes indukció</span></a>
+      <a class="kov" href="terepkuldetes.html"><span class="irany">Következő →</span><span class="hova">A Végtelen Mutáció</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

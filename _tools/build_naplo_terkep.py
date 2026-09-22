@@ -38,6 +38,7 @@ JELVENY = {
     "3e/03-linearis-rendszerek":                  ("🔷", "A Rendszer Hibája", "Kanrak"),
     "3e/04-vektorok":                             ("🔷", "A Királyi Irányítótű", "Crni Grom"),
     "3e/05-analitikus-geometria":                 ("🔷", "A Térkép Hálózata", "Kanrak"),
+    "3e/06-indukcio-sorozatok":                   ("♾️", "A Végtelen Mutáció", "Prizma és Kanrak"),
 }
 
 H1 = re.compile(r"<h1[^>]*>(.*?)</h1>", re.S)

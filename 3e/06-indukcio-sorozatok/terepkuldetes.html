@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Terepküldetés | 3e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="3e" data-hatter="rajzterem">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
+  <a href="index.html">Matematikai indukció. Sorozatok</a> ›
+  <span class="itt">Terepküldetés</span>
+</nav>
+<div class="hero">
+  <h1>A Végtelen Mutáció</h1>
+  <p class="alcim">Négy fázis: a kristályrétegek, az energiakaszkád, a Kristálypára-bank és Maxi hamis képlete. Beadható projektfeladat — a megoldásokat a tanárod ellenőrzi.</p>
+  <div class="meta-sor"><span class="chip ora">terepküldetés</span><span class="chip">A Végtelen Mutáció · terepküldetés</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Prizma és Kanrak:</b> Maxi elindította a láncreakciót, és a Kristály Karantén-Zóna három ütemben mutálódik: előbb egyenletesen vastagodó kristályrétegek, aztán ugrásszerűen erősödő energiakaszkád, közben pedig a Kristálypára-bank kamatra dolgozó tartaléka. A feladatod: mindhárom ütemet bemérni, és megmondani, <b>hányadik lépésnél</b> lépi át a rendszer a kritikus szintet — a bankban pedig azt, mennyit hoz a tartalék. A végén Maxi saját képletét is ellenőrizd: mert az hazudik.</p></div>
+
+    <p>Négy fázis. Minden lépésnél írd le, melyik sorozatot ismerted fel, és melyik képletet használtad. Számológép használható: a nem egész eredményeket két tizedesjegyre kerekítsd, és jelöld a kerekítést. A választ fogalmazd meg mondatban is.</p><p>A 🔴 jelű IV. fázisban a számolás csak eszköz: ott a <b>megfogalmazott érvelés</b> ér annyit, mint máshol a számítás. Mind a négy fázis egyformán számít.</p><p><b>Amire szükséged lesz:</b> a számtani és a mértani sorozat <span class="math inline">\(n\)</span>-edik tagja és összegképlete, az egyszerű és a kamatos kamat, valamint a sorozatok ábrázolása.</p><p><i>Tervezz rá nagyjából két órát; ez beadandó munka, nem órai feladat.</i></p>
+
+    <h2 id="s1">I. fázis — A kristályrétegek</h2>
+
+    <p>A generátor minden lépésben egy új kristályréteget csap ki. Az első réteg vastagsága <span class="math inline">\(9\)</span> egység, és minden további réteg <span class="math inline">\(7\)</span> egységgel vastagabb az előzőnél.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 380 250" width="380" height="250" role="img" aria-label="A kristályrétegek vastagsága: a pontok egy egyenesre esnek">
+      <defs><marker id="nyil" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="77.8" y1="228.0" x2="77.8" y2="14.0"/>
+        <line x1="129.6" y1="228.0" x2="129.6" y2="14.0"/>
+        <line x1="181.5" y1="228.0" x2="181.5" y2="14.0"/>
+        <line x1="233.3" y1="228.0" x2="233.3" y2="14.0"/>
+        <line x1="285.1" y1="228.0" x2="285.1" y2="14.0"/>
+        <line x1="336.9" y1="228.0" x2="336.9" y2="14.0"/>
+        <line x1="26.0" y1="205.5" x2="368.0" y2="205.5"/>
+        <line x1="26.0" y1="182.9" x2="368.0" y2="182.9"/>
+        <line x1="26.0" y1="160.4" x2="368.0" y2="160.4"/>
+        <line x1="26.0" y1="137.9" x2="368.0" y2="137.9"/>
+        <line x1="26.0" y1="115.4" x2="368.0" y2="115.4"/>
+        <line x1="26.0" y1="92.8" x2="368.0" y2="92.8"/>
+        <line x1="26.0" y1="70.3" x2="368.0" y2="70.3"/>
+        <line x1="26.0" y1="47.8" x2="368.0" y2="47.8"/>
+        <line x1="26.0" y1="25.3" x2="368.0" y2="25.3"/>
+      </g>
+      <line x1="26.0" y1="228.0" x2="368.0" y2="228.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <line x1="26.0" y1="228.0" x2="26.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <text x="364.0" y="242.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">n</text>
+      <text x="32.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="start">aₙ</text>
+      <text x="77.8" y="241.0" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="21.0" y="209.5" font-size="10" fill="#475569" text-anchor="end">5</text>
+      <polyline points="26.0,219.0 29.3,217.0 32.5,215.0 35.8,213.0 39.1,211.0 42.3,209.1 45.6,207.1 48.9,205.1 52.1,203.1 55.4,201.1 58.6,199.1 61.9,197.1 65.2,195.1 68.4,193.2 71.7,191.2 75.0,189.2 78.2,187.2 81.5,185.2 84.8,183.2 88.0,181.2 91.3,179.3 94.6,177.3 97.8,175.3 101.1,173.3 104.3,171.3 107.6,169.3 110.9,167.3 114.1,165.3 117.4,163.4 120.7,161.4 123.9,159.4 127.2,157.4 130.5,155.4 133.7,153.4 137.0,151.4 140.3,149.5 143.5,147.5 146.8,145.5 150.1,143.5 153.3,141.5 156.6,139.5 159.8,137.5 163.1,135.5 166.4,133.6 169.6,131.6 172.9,129.6 176.2,127.6 179.4,125.6 182.7,123.6 186.0,121.6 189.2,119.6 192.5,117.7 195.8,115.7 199.0,113.7 202.3,111.7 205.6,109.7 208.8,107.7 212.1,105.7 215.3,103.8 218.6,101.8 221.9,99.8 225.1,97.8 228.4,95.8 231.7,93.8 234.9,91.8 238.2,89.8 241.5,87.9 244.7,85.9 248.0,83.9 251.3,81.9 254.5,79.9 257.8,77.9 261.0,75.9 264.3,74.0 267.6,72.0 270.8,70.0 274.1,68.0 277.4,66.0 280.6,64.0 283.9,62.0 287.2,60.0 290.4,58.1 293.7,56.1 297.0,54.1 300.2,52.1 303.5,50.1 306.8,48.1 310.0,46.1 313.3,44.1 316.5,42.2 319.8,40.2 323.1,38.2 326.3,36.2 329.6,34.2 332.9,32.2 336.1,30.2 339.4,28.3 342.7,26.3 345.9,24.3 349.2,22.3 352.5,20.3" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="77.8" cy="187.5" r="4" fill="#047857"/>
+      <circle cx="129.6" cy="155.9" r="4" fill="#047857"/>
+      <circle cx="181.5" cy="124.4" r="4" fill="#047857"/>
+      <circle cx="233.3" cy="92.8" r="4" fill="#047857"/>
+      <circle cx="285.1" cy="61.3" r="4" fill="#047857"/>
+      <circle cx="336.9" cy="29.8" r="4" fill="#047857"/>
+      <rect x="278" y="13" width="96" height="23" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="282" y1="22" x2="300" y2="22" stroke="#3b82f6" stroke-width="2.4"/>
+      <text x="305" y="26" font-size="11" fill="#0f172a">y = 7x + 2</text>
+    </svg>
+    </div>
+    <p class="cap">Az első hat réteg vastagsága: <span class="math inline">\(9,\ 16,\ 23,\ 30,\ 37,\ 44\)</span>. A függőleges tengely egy osztása <span class="math inline">\(5\)</span> egység.</p>
+
+    <ol class="reszfeladatok"><li>Milyen sorozatot alkotnak a rétegvastagságok? Add meg az <span class="math inline">\(n\)</span>-edik tag képletét!</li><li>Mekkora a <span class="math inline">\(12.\)</span> réteg, és mennyi az első <span class="math inline">\(12\)</span> réteg együttes vastagsága?</li><li>A zóna fala akkor repedezik meg, amikor <b>egyetlen réteg</b> eléri a <span class="math inline">\(200\)</span> egység vastagságot. Hányadik réteg lesz maga is legalább <span class="math inline">\(200\)</span> egység vastag? <i>(Nem az összvastagságot kérdezzük!)</i></li><li>Az ábra pontjai egy egyenesre esnek. Írd fel ennek az egyenesnek az egyenletét, és mondd meg, mi a kapcsolat a meredeksége és a sorozat között!</li></ol>
+
+    <h2 id="s2">II. fázis — Az energiakaszkád</h2>
+
+    <p>A láncreakció energiája más ütemben nő: az első lépés <span class="math inline">\(4\)</span> egységnyi energiát szabadít fel, és minden további lépés az előző <b>háromszorosát</b>.</p><ol class="reszfeladatok"><li>Milyen sorozatot alkotnak a lépések energiái? Add meg az <span class="math inline">\(n\)</span>-edik tag képletét!</li><li>Mekkora energia szabadul fel a <span class="math inline">\(8.\)</span> lépésben?</li><li>Mennyi az első <span class="math inline">\(8\)</span> lépés <b>összenergiája</b>?</li><li>A Karantén-Zóna pajzsa <span class="math inline">\(10\,000\)</span> egységnyi összenergiát bír ki. Hányadik lépésnél szakad át? <i>(Számold ki az összeget az előző lépésig is!)</i></li><li>Vesd össze a két fázist: melyik nő gyorsabban, és miért? Hány lépés kell a rétegeknél ahhoz, hogy az <b>összvastagság</b> meghaladja a <span class="math inline">\(13\,120\)</span>-at? <i>(Elég megbecsülni.)</i></li></ol>
+
+    <h2 id="s3">III. fázis — A Kristálypára-bank</h2>
+
+    <p>A Királyi Család tartaléka <span class="math inline">\(150\,000\)</span> dinár, amit <span class="math inline">\(4\)</span> évre helyeztek el évi <span class="math inline">\(8\%\)</span>-os kamatlábbal. Kerekíts két tizedesjegyre!</p><ol class="reszfeladatok"><li>Mennyi lenne a tartalék a futamidő végén <b>egyszerű</b> kamat mellett?</li><li>És <b>kamatos</b> kamat mellett, évente egyszeri jóváírással? Mekkora a különbség a kettő között?</li><li>Mennyi lenne, ha a kamatot <b>negyedévente</b> írnák jóvá?</li><li>Melyik sorozat írja le az egyszerű, és melyik a kamatos kamatot? Indokold meg!</li></ol>
+
+    <h2 id="s4">🔴 IV. fázis — Maxi képlete</h2>
+
+    <p>Maxi a kamra falára írta a saját képletét az energiakaszkád összenergiájára:</p><span class="math display">\[S_n=12n^2-24n+16 .\]</span><p>Azt állítja, hogy ez minden lépésre igaz, és a pajzs ezért sokkal tovább bírja, mint hinnénk.</p><ol class="reszfeladatok"><li>Ellenőrizd Maxi képletét <span class="math inline">\(n=1\)</span>, <span class="math inline">\(n=2\)</span> és <span class="math inline">\(n=3\)</span> esetén! Mit tapasztalsz?</li><li>Számold ki most <span class="math inline">\(n=4\)</span>-re a képlet szerinti és a <b>valódi</b> összenergiát is! Mekkora az eltérés?</li><li>Mit tanultál ebből arról, hogy elég-e néhány esetben ellenőrizni egy állítást? Fogalmazd meg két-három mondatban — ez a <b>hiányos indukció</b> csapdája (<a href="tananyag-indukcio.html#def-hianyos-indukcio">olvasnivaló</a>).</li><li>Hányadik lépésnél szakadna át a pajzs Maxi képlete szerint, és hányadiknál a valóságban? <b>Hány lépésnyi</b> hamis biztonságot ígér a hazugsága? <i>(A küszöböt elég próbálgatással megkeresni.)</i></li></ol>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/prisma.webp" alt="Prizma — a térgeometria oktatótisztje" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Prizma:</b> A láncreakció be van mérve: tudjuk, melyik lépésnél mekkora, és tudjuk, hol szakad át a pajzs. Maxi arra épített, hogy a falra írt képletét senki nem ellenőrzi elég sokáig. A számításaidat a tanárod ellenőrzi; a kulcs nem kerül a hálózatra. <b>A Kristálypára-anomália lezárva.</b></p></div>
+    <div class="lapozo">
+      <a class="elozo" href="osszefoglalo.html"><span class="irany">← Előző</span><span class="hova">Taktikai memóriakártya</span></a>
+      <a class="kov" href="index.html"><span class="irany">Következő →</span><span class="hova">Témakör Főhadiszállása</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
