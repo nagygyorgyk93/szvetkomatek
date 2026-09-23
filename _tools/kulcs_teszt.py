@@ -41,6 +41,9 @@ def _szoveg(h: str) -> str:
     h = re.sub(r'(-?)\s*\\[tdc]?frac\s*(\d)\s*(\d)(?![\d}])', r' \1\2/\3 ', h)
     h = re.sub(r'(-?)\s*\\[tdc]?frac\s*\{\s*(-?\d+)\s*\}\s*\{\s*(-?\d+)\s*\}',
                lambda m: ' %s%s/%s ' % (m.group(1), m.group(2), m.group(3)), h)
+    # a végtelent szóként őrizzük meg (a határérték-kulcsokhoz), különben a parancs-strip eltüntetné
+    h = re.sub(r'-\s*\\infty\b', ' minuszvegtelen ', h)
+    h = re.sub(r'\+?\s*\\infty\b', ' pluszvegtelen ', h)
     h = re.sub(r'\\[a-zA-Z]+\s*', ' ', h)          # KaTeX-parancsok
     h = TAG.sub(' ', h)
     for a, b in (('&lt;', '<'), ('&gt;', '>'), ('&amp;', '&'), ('&nbsp;', ' '),

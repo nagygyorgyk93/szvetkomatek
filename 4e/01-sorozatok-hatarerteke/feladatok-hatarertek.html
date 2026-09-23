@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sorozatok határértéke — feladatok | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="digitalis">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Sorozatok határértéke</a> ›
+  <span class="itt">Sorozatok határértéke — feladatok</span>
+</nav>
+<div class="hero">
+  <h1>Sorozatok határértéke — Zsoldos-lista</h1>
+  <p class="alcim">A sorozat határértéke, kiemelés, gyökös kifejezések, az <span class="math inline">\(e\)</span> szám és a végtelen mértani sor. A végeredmény minden feladatnál lenyitható — előbb számolj, csak utána nézd meg!</p>
+  <div class="meta-sor"><span class="chip alap">Alap</span><span class="chip kozep">Közép</span><span class="chip nehez">Nehéz</span><span class="chip joker">Joker</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="alap">🟢 Alapszint — Zöldfülű</h2>
+    <article class="feladat alap" id="alap-1">
+      <p><span class="szam">1.</span> Írd fel a sorozat első öt tagját, és a tagok alapján sejtsd meg a határértékét! Ha kell, számold ki az <span class="math inline">\(a_{100}\)</span> tagot is!</p><ol class="reszfeladatok"><li><span class="math inline">\(a_n=\frac{3 n + 1}{n + 2}\)</span></li><li><span class="math inline">\(a_n=\frac{2 n - 1}{3 n - 1}\)</span></li><li><span class="math inline">\(a_n=\frac{6 n}{2 n - 1}\)</span></li><li><span class="math inline">\(a_n=\frac{n^{2}}{n + 1}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{4}{3};\ \frac{7}{4};\ 2;\ \frac{13}{6};\ \frac{16}{7}\)</span> — a határérték: <span class="math inline">\(3\)</span></li><li><span class="math inline">\(\frac{1}{2};\ \frac{3}{5};\ \frac{5}{8};\ \frac{7}{11};\ \frac{9}{14}\)</span> — a határérték: <span class="math inline">\(\frac{2}{3}\)</span></li><li><span class="math inline">\(6;\ 4;\ \frac{18}{5};\ \frac{24}{7};\ \frac{10}{3}\)</span> — a határérték: <span class="math inline">\(3\)</span></li><li><span class="math inline">\(\frac{1}{2};\ \frac{4}{3};\ \frac{9}{4};\ \frac{16}{5};\ \frac{25}{6}\)</span> — a határérték: <span class="math inline">\(+\infty\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-2">
+      <p><span class="szam">2.</span> Írd fel a sorozat első öt tagját, és a tagok alapján sejtsd meg a határértékét! Ha kell, számold ki az <span class="math inline">\(a_{100}\)</span> tagot is!</p><ol class="reszfeladatok"><li><span class="math inline">\(a_n=\frac{n}{3 - n^{2}}\)</span></li><li><span class="math inline">\(a_n=\frac{3 n^{2}}{n^{2} + 3}\)</span></li><li><span class="math inline">\(a_n=\frac{n - 1}{n^{2} - 2}\)</span></li><li><span class="math inline">\(a_n=2 n^{2} - 2 n\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{1}{2};\ -2;\ - \frac{1}{2};\ - \frac{4}{13};\ - \frac{5}{22}\)</span> — a határérték: <span class="math inline">\(0\)</span></li><li><span class="math inline">\(\frac{3}{4};\ \frac{12}{7};\ \frac{9}{4};\ \frac{48}{19};\ \frac{75}{28}\)</span> — a határérték: <span class="math inline">\(3\)</span></li><li><span class="math inline">\(0;\ \frac{1}{2};\ \frac{2}{7};\ \frac{3}{14};\ \frac{4}{23}\)</span> — a határérték: <span class="math inline">\(0\)</span></li><li><span class="math inline">\(0;\ 4;\ 12;\ 24;\ 40\)</span> — a határérték: <span class="math inline">\(+\infty\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-3">
+      <p><span class="szam">3.</span> Döntsd el, konvergens-e a sorozat, és ha igen, mi a határértéke! Használd a nevezetes határértékeket.</p><ol class="reszfeladatok"><li><span class="math inline">\(a_n=\dfrac5n\)</span></li><li><span class="math inline">\(a_n=3-\dfrac1{n^2}\)</span></li><li><span class="math inline">\(a_n=\left(\dfrac23\right)^n\)</span></li><li><span class="math inline">\(a_n=\left(\dfrac32\right)^n\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>konvergens, <span class="math inline">\(0\)</span></li><li>konvergens, <span class="math inline">\(3\)</span></li><li>konvergens, <span class="math inline">\(0\)</span></li><li>divergens, <span class="math inline">\(+\infty\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-4">
+      <p><span class="szam">4.</span> Mihez tart a <span class="math inline">\(q^n\)</span> sorozat?</p><ol class="reszfeladatok"><li><span class="math inline">\(q=-\dfrac{9}{10}\)</span></li><li><span class="math inline">\(q=\dfrac{11}{10}\)</span></li><li><span class="math inline">\(q=-\dfrac14\)</span></li><li><span class="math inline">\(q=1\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(0\)</span></li><li><span class="math inline">\(+\infty\)</span></li><li><span class="math inline">\(0\)</span></li><li><span class="math inline">\(1\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-5">
+      <p><span class="szam">5.</span> Számítsd ki a határértékeket a műveleti szabályok segítségével!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(2 + \frac{3}{n}\right) \left(4 - \frac{1}{n}\right)\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\dfrac{5-\frac2n}{1+\frac1{n^2}}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(7 + \left(\frac{1}{2}\right)^{n}\right)\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(8\)</span></li><li><span class="math inline">\(5\)</span></li><li><span class="math inline">\(7\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-6">
+      <p><span class="szam">6.</span> Számítsd ki az <span class="math inline">\(a_n=\dfrac{5n-2}{n+3}\)</span> sorozat <span class="math inline">\(10.\)</span>, <span class="math inline">\(100.\)</span> és <span class="math inline">\(1000.\)</span> tagját három tizedesjegyre kerekítve, és a kapott értékek alapján sejtsd meg a sorozat határértékét!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(a_{10}\approx3{,}692\)</span>; <span class="math inline">\(a_{100}\approx4{,}835\)</span>; <span class="math inline">\(a_{1000}\approx4{,}983\)</span> — a határérték: <span class="math inline">\(5\)</span></p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-7">
+      <p><span class="szam">7.</span> Számítsd ki a határértékeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{2 n + 1}{7 n - 1}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{4 n^{2} - 3}{1 - 2 n^{2}}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{n^{2} + n + 1}{3 n - 1}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{2}{7}\)</span></li><li><span class="math inline">\(-2\)</span></li><li><span class="math inline">\(+\infty\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-8">
+      <p><span class="szam">8.</span> Számítsd ki a határértékeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{3 n + 2}{5 n^{2} - 2 n - 1}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{- 2 n^{3} + n - 1}{2 n^{3} + 5}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{2 n - 1}{2 - n + n^{2}}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(0\)</span></li><li><span class="math inline">\(-1\)</span></li><li><span class="math inline">\(0\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-9">
+      <p><span class="szam">9.</span> Számítsd ki a határértékeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{n^{2} - 3 n + 2}{2 - 3 n}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{6 n - 11}{5 - 2 n}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{8 n + 7}{4 n^{2} + 3 n}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(-\infty\)</span></li><li><span class="math inline">\(-3\)</span></li><li><span class="math inline">\(0\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-10">
+      <p><span class="szam">10.</span> Számítsd ki a határértékeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{2 n^{2} + 5 n - 7}{6 n + 3}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{2 n^{2} - 7 n + 9}{12 n^{2} + 5 n - 6}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{16 n - 7}{12 n + 6}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(+\infty\)</span></li><li><span class="math inline">\(\frac{1}{6}\)</span></li><li><span class="math inline">\(\frac{4}{3}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-11">
+      <p><span class="szam">11.</span> Számítsd ki a határértékeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{n^{2} - 3 n + 2}{5 - 7 n}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{10 n^{2} + 5 n + 1}{3 - 9 n - 2 n^{2}}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{- 6 n + 12}{7 n^{2} - 13}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(-\infty\)</span></li><li><span class="math inline">\(-5\)</span></li><li><span class="math inline">\(0\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-12">
+      <p><span class="szam">12.</span> Számítsd ki a határértékeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{- 15 n^{2} - 50 n + 40}{- 60 n^{2} + 15 n - 15}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{8 - 3 n^{2}}{6 n^{2} + n}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{n^{3} + 2}{5 n^{2} - 4}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{1}{4}\)</span></li><li><span class="math inline">\(- \frac{1}{2}\)</span></li><li><span class="math inline">\(+\infty\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-13">
+      <p><span class="szam">13.</span> Számítsd ki a határértékeket! Elég a főtagokat összeszorozni.</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{\left(2 n - 1\right)^{2}}{1 - 2 n^{2}}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{\left(2 n - 1\right)^{2}}{\left(2 n + 1\right) \left(n + 1\right)}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{\left(3 n + 2\right)^{2}}{\left(3 n - 2\right) \left(n + 1\right)}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(-2\)</span></li><li><span class="math inline">\(2\)</span></li><li><span class="math inline">\(3\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-14">
+      <p><span class="szam">14.</span> Számítsd ki a határértékeket! Elég a főtagokat összeszorozni.</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{\left(3 n + 1\right)^{2}}{\left(2 + n\right)^{2}}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{\left(1 - 3 n\right)^{3}}{2 n^{3} + 5}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(9\)</span></li><li><span class="math inline">\(- \frac{27}{2}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-15">
+      <p><span class="szam">15.</span> Számítsd ki a határértékeket! A gyökjel alól is kiemelhetsz: <span class="math inline">\(\sqrt{n^2}=n\)</span>.</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{\sqrt{n^{2} + 5}}{n + 1}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{\sqrt{4 n^{2} + 3}}{n}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{\sqrt{n^{2} + 2 n}}{2 n}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{3 n}{\sqrt{n^{2} + 1}}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(1\)</span></li><li><span class="math inline">\(2\)</span></li><li><span class="math inline">\(\frac{1}{2}\)</span></li><li><span class="math inline">\(3\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-16">
+      <p><span class="szam">16.</span> Számítsd ki a határértékeket! A gyökjel alól is kiemelhetsz: <span class="math inline">\(\sqrt{n^2}=n\)</span>.</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{n}{\sqrt{n^{2} + 7}}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{\sqrt{9 n^{2} + 1}}{3 n}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{\sqrt{16 n^{2} - 3}}{2 n + 5}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{5 n - 1}{\sqrt{25 n^{2} + 4}}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(1\)</span></li><li><span class="math inline">\(1\)</span></li><li><span class="math inline">\(2\)</span></li><li><span class="math inline">\(1\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-17">
+      <p><span class="szam">17.</span> Számítsd ki a határértékeket! Használd az <span class="math inline">\(\left(1+\frac kn\right)^{mn}\to e^{km}\)</span> összefüggést.</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(1 + \frac{1}{n}\right)^{3 n}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(1 + \frac{5}{n}\right)^{n}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(1 + \frac{2}{n}\right)^{2 n}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(e^{3}\)</span></li><li><span class="math inline">\(e^{5}\)</span></li><li><span class="math inline">\(e^{4}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-18">
+      <p><span class="szam">18.</span> Számítsd ki a határértékeket! Használd az <span class="math inline">\(\left(1+\frac kn\right)^{mn}\to e^{km}\)</span> összefüggést.</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(1 + \frac{2}{n}\right)^{n}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(1 + \frac{4}{n}\right)^{3 n}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(1 + \frac{1}{n}\right)^{7 n}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(e^{2}\)</span></li><li><span class="math inline">\(e^{12}\)</span></li><li><span class="math inline">\(e^{7}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-19">
+      <p><span class="szam">19.</span> Határozd meg a végtelen mértani sor összegét!</p><ol class="reszfeladatok"><li><span class="math inline">\(b_1=5\)</span>, <span class="math inline">\(q=0{,}6\)</span></li><li><span class="math inline">\(b_1=10\)</span>, <span class="math inline">\(q=0{,}4\)</span></li><li><span class="math inline">\(b_1=8\)</span>, <span class="math inline">\(q=0{,}75\)</span></li><li><span class="math inline">\(b_1=12\)</span>, <span class="math inline">\(q=0{,}2\)</span></li><li><span class="math inline">\(b_1=3\)</span>, <span class="math inline">\(q=0{,}9\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{25}{2}=12{,}5\)</span></li><li><span class="math inline">\(\frac{50}{3}\approx16{,}67\)</span></li><li><span class="math inline">\(32\)</span></li><li><span class="math inline">\(15\)</span></li><li><span class="math inline">\(30\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-20">
+      <p><span class="szam">20.</span> Egy mértani sorozat első tagja <span class="math inline">\(81\)</span>, hányadosa <span class="math inline">\(\frac13\)</span>. Írd fel az első nyolc tagját! Mennyi a sorozat tagjaiból képzett végtelen mértani sor összege?</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(81;\ 27;\ 9;\ 3;\ 1;\ \frac13;\ \frac19;\ \frac{1}{27}\)</span> — az összeg <span class="math inline">\(S=\frac{243}{2}=121{,}5\)</span></p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-21">
+      <p><span class="szam">21.</span> Egy pillangó minden repülési körében az előző kör útjának <span class="math inline">\(\frac15\)</span>-ét teszi meg. Az első körben <span class="math inline">\(10\)</span> métert repül. Hány métert tesz meg összesen, ha végtelen sok kört repül?</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(\frac{25}{2}=12{,}5\)</span> m</p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-22">
+      <p><span class="szam">22.</span> Minden lépésed hossza az előző lépés hosszának <span class="math inline">\(\frac34\)</span>-e. Az első lépés <span class="math inline">\(1\)</span> méter. Milyen messzire jutsz összesen, ha végtelen sok lépést teszel?</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(4\)</span> m</p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-23">
+      <p><span class="szam">23.</span> Egy hőlégballon minden újabb emelkedéskor az előző emelkedés <span class="math inline">\(\frac23\)</span>-ával jut feljebb. Az első emelkedéskor <span class="math inline">\(30\)</span> métert emelkedik. Milyen magasra jut összesen, ha végtelen sokszor emelkedik?</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(90\)</span> m</p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-24">
+      <p><span class="szam">24.</span> Egy cseppkő minden évben az előző évi növekedésének <span class="math inline">\(\frac45\)</span>-ével nő. Az első évben <span class="math inline">\(5\)</span> cm-t nő. Mekkora lesz a teljes növekedése, ha végtelen sok évig nő?</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(25\)</span> cm</p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-25">
+      <p><span class="szam">25.</span> Egy cseppkő minden évben az előző évi növekedésének <span class="math inline">\(\frac25\)</span>-ével nő. Az első évben <span class="math inline">\(10\)</span> cm-t nő.</p><ol class="reszfeladatok"><li>Sorold fel az első hat év növekedését!</li><li>Mekkora lesz a teljes növekedése, ha végtelen sok évig nő?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(10;\ 4;\ \frac85;\ \frac{16}{25};\ \frac{32}{125};\ \frac{64}{625}\)</span> cm</li><li><span class="math inline">\(\frac{50}{3}\approx16{,}67\)</span> cm</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-26">
+      <p><span class="szam">26.</span> Van-e összege a végtelen mértani sornak, és ha igen, mennyi? Minden esetben <span class="math inline">\(b_1=6\)</span>.</p><ol class="reszfeladatok"><li><span class="math inline">\(q=\dfrac13\)</span></li><li><span class="math inline">\(q=-\dfrac23\)</span></li><li><span class="math inline">\(q=\dfrac32\)</span></li><li><span class="math inline">\(q=-1\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(9\)</span></li><li><span class="math inline">\(\frac{18}{5}\)</span></li><li>nincs, mert <span class="math inline">\(\lvert q\rvert\ge1\)</span></li><li>nincs, mert <span class="math inline">\(\lvert q\rvert\ge1\)</span></li></ol></div>
+      </details>
+    </article>
+    <h2 id="kozep">🟡 Középszint — X-Force</h2>
+    <article class="feladat kozep" id="kozep-1">
+      <p><span class="szam">1.</span> Írd fel a sorozat első öt tagját, és sejtsd meg, konvergens-e, és ha igen, mi a határértéke! Ha kell, számolj ki néhány nagyobb sorszámú tagot is.</p><ol class="reszfeladatok"><li><span class="math inline">\(a_n=\frac{\left(-1\right)^{n}}{n^{2} + 1}\)</span></li><li><span class="math inline">\(a_n=\frac{n^{2}}{2^{n}}\)</span></li><li><span class="math inline">\(a_n=\frac{\left(-2\right)^{n}}{2 n}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(- \frac{1}{2};\ \frac{1}{5};\ - \frac{1}{10};\ \frac{1}{17};\ - \frac{1}{26}\)</span> — a határérték: <span class="math inline">\(0\)</span></li><li><span class="math inline">\(\frac{1}{2};\ 1;\ \frac{9}{8};\ 1;\ \frac{25}{32}\)</span> — a határérték: <span class="math inline">\(0\)</span></li><li><span class="math inline">\(-1;\ 1;\ - \frac{4}{3};\ 2;\ - \frac{16}{5}\)</span> — a határérték: nincs, a sorozat divergens (a tagok előjele váltakozik, az abszolút értékük nő)</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-2">
+      <p><span class="szam">2.</span> Az <span class="math inline">\(a_n=\dfrac{4n+1}{n}\)</span> sorozat határértéke <span class="math inline">\(4\)</span>. Hányadik tagtól kezdve tér el a sorozat minden tagja <span class="math inline">\(0{,}01\)</span>-nál kevesebbel a <span class="math inline">\(4\)</span>-től?</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>a <span class="math inline">\(101.\)</span> tagtól (<span class="math inline">\(\frac1n\lt\frac{1}{100}\)</span>, ha <span class="math inline">\(n\gt100\)</span>)</p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-3">
+      <p><span class="szam">3.</span> Számítsd ki a határértékeket! Mit mutatnak az eredmények a „<span class="math inline">\(\infty-\infty\)</span>” alakról?</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\big((n+7)-n\big)\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\big((n^2+n)-n^2\big)\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\big(n-(n+3)\big)\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(7\)</span></li><li><span class="math inline">\(+\infty\)</span></li><li><span class="math inline">\(-3\)</span> — tanulság: a <span class="math inline">\(\infty-\infty\)</span> alak határozatlan, ugyanez az alak <span class="math inline">\(7\)</span>-et, <span class="math inline">\(+\infty\)</span>-t és <span class="math inline">\(-3\)</span>-at is adott, ezért először mindig össze kell vonni.</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-4">
+      <p><span class="szam">4.</span> Határozd meg az <span class="math inline">\(a\)</span> valós paraméter értékét!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\dfrac{an^2+3}{2n^2-n}=3\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\dfrac{an+1}{4n-3}=-\dfrac12\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(a=6\)</span></li><li><span class="math inline">\(a=-2\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-5">
+      <p><span class="szam">5.</span> Véd Vilmos szerint <span class="math inline">\(\lim\limits_{n\to\infty}\dfrac{n^3-2n}{4n^2+1}=\dfrac14\)</span>, „mert a főegyütthatók hányadosa”. Mit rontott el? Mennyi a helyes határérték?</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>a számláló harmadfokú, a nevező másodfokú, így nem a főegyütthatók hányadosa a határérték: <span class="math inline">\(+\infty\)</span></p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-6">
+      <p><span class="szam">6.</span> Számítsd ki a határértékeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{\left(n^{2} + 1\right) \left(2 n - 3\right)}{4 n^{3} - n}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{\left(2 n + 1\right)^{3}}{\left(n + 1\right) \left(n^{2} + 4\right)}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{1}{2}\)</span></li><li><span class="math inline">\(8\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-7">
+      <p><span class="szam">7.</span> Számítsd ki a határértékeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{n + 1}{\sqrt{4 n^{2} + 1}}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{3 n + 1}{\sqrt{4 n^{2} - 3}}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{\sqrt{36 n^{2} - 2}}{1 - 2 n}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{1}{2}\)</span></li><li><span class="math inline">\(\frac{3}{2}\)</span></li><li><span class="math inline">\(-3\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-8">
+      <p><span class="szam">8.</span> Számítsd ki a határértékeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{\sqrt{n^{2} - n + 1}}{2 n - 1}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{\sqrt{4 n^{2} - n + 1}}{n + 1}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{\sqrt{9 n^{2} + 3 n + 1}}{2 n + 1}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{n + 2}{\sqrt{9 n^{2} - 2}}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{1}{2}\)</span></li><li><span class="math inline">\(2\)</span></li><li><span class="math inline">\(\frac{3}{2}\)</span></li><li><span class="math inline">\(\frac{1}{3}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-9">
+      <p><span class="szam">9.</span> Számítsd ki a határértékeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{18 n - 5}{\sqrt{9 n^{2} - 7}}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{\sqrt{25 n^{2} - 9 n + 13}}{35 n + 6}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{\sqrt{121 n^{2} - 5 n}}{12 n + 3}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(6\)</span></li><li><span class="math inline">\(\frac{1}{7}\)</span></li><li><span class="math inline">\(\frac{11}{12}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-10">
+      <p><span class="szam">10.</span> Számítsd ki a határértékeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{7 n - 13}{\sqrt{289 n^{2} - 10 n + 3}}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\dfrac{\sqrt{169n^2+81n+1}}{\sqrt{169n^2-16n+4}}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{7}{17}\)</span></li><li><span class="math inline">\(1\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-11">
+      <p><span class="szam">11.</span> Számítsd ki a határértékeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{2 n + \sqrt{4 n^{2} + 1}}{3 n - 1}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\frac{\sqrt{n^{2} + 1} + \sqrt{9 n^{2} + 2}}{2 n}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{4}{3}\)</span></li><li><span class="math inline">\(2\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-12">
+      <p><span class="szam">12.</span> Számítsd ki a határértékeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(1 + \frac{2}{n}\right)^{\frac{n}{3}}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(1 + \frac{8}{n}\right)^{\frac{n}{4}}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(1 + \frac{2}{n}\right)^{\frac{n}{5}}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(e^{\frac{2}{3}}\)</span></li><li><span class="math inline">\(e^{2}\)</span></li><li><span class="math inline">\(e^{\frac{2}{5}}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-13">
+      <p><span class="szam">13.</span> Számítsd ki a határértékeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(1 - \frac{1}{n}\right)^{n}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(1 - \frac{1}{3 n}\right)^{n}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(1 - \frac{2}{n}\right)^{3 n}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(e^{-1}\)</span></li><li><span class="math inline">\(e^{- \frac{1}{3}}\)</span></li><li><span class="math inline">\(e^{-6}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-14">
+      <p><span class="szam">14.</span> Számítsd ki a határértékeket! Először nézd meg, mihez tart az alap.</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(\frac{3 n + 1}{n}\right)^{n}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(\frac{n + 1}{4 n}\right)^{n}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(1 + \frac{3 n}{2 n + 1}\right)^{5 n}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(1 + \frac{n}{n + 1}\right)^{\frac{2}{n}}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(+\infty\)</span></li><li><span class="math inline">\(0\)</span></li><li><span class="math inline">\(+\infty\)</span></li><li><span class="math inline">\(1\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-15">
+      <p><span class="szam">15.</span> Döntsd el, melyik <span class="math inline">\(1^\infty\)</span> alakú, és számítsd ki a határértékeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(1 + \frac{5}{n}\right)^{2 n}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(\frac{2 n + 1}{n + 1}\right)^{n}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(\frac{n + 2}{n}\right)^{n}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(1^\infty\)</span> alakú: <span class="math inline">\(e^{10}\)</span></li><li>nem <span class="math inline">\(1^\infty\)</span> alakú, mert az alap <span class="math inline">\(2\)</span>-höz tart: <span class="math inline">\(+\infty\)</span></li><li><span class="math inline">\(1^\infty\)</span> alakú, mert <span class="math inline">\(\frac{n+2}{n}=1+\frac2n\)</span>: <span class="math inline">\(e^{2}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-16">
+      <p><span class="szam">16.</span> Írd fel közönséges törtként a szakaszos tizedes törtet!</p><ol class="reszfeladatok"><li><span class="math inline">\(0{,}\dot7\)</span></li><li><span class="math inline">\(0{,}\dot1\dot5\)</span></li><li><span class="math inline">\(0{,}\dot3\dot6\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{7}{9}\)</span></li><li><span class="math inline">\(\frac{5}{33}\)</span></li><li><span class="math inline">\(\frac{4}{11}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-17">
+      <p><span class="szam">17.</span> Írd fel közönséges törtként a vegyes szakaszos tizedes törtet!</p><ol class="reszfeladatok"><li><span class="math inline">\(0{,}1\dot6\)</span></li><li><span class="math inline">\(0{,}2\dot3\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{1}{6}\)</span></li><li><span class="math inline">\(\frac{7}{30}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-18">
+      <p><span class="szam">18.</span> Számolj visszafelé!</p><ol class="reszfeladatok"><li>Egy végtelen mértani sor összege <span class="math inline">\(12\)</span>, hányadosa <span class="math inline">\(\frac14\)</span>. Mennyi az első tagja?</li><li>Egy végtelen mértani sor első tagja <span class="math inline">\(5\)</span>, összege <span class="math inline">\(20\)</span>. Mennyi a hányadosa?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(b_1=9\)</span></li><li><span class="math inline">\(q=\frac{3}{4}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-19">
+      <p><span class="szam">19.</span> Számítsd ki a végtelen mértani sor összegét!</p><ol class="reszfeladatok"><li><span class="math inline">\(8-4+2-1+\dots\)</span></li><li><span class="math inline">\(27-9+3-1+\dots\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{16}{3}\)</span></li><li><span class="math inline">\(\frac{81}{4}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-20">
+      <p><span class="szam">20.</span> Egy <span class="math inline">\(8\)</span> cm oldalú négyzet oldalfelező pontjai egy újabb négyzetet határoznak meg, ennek oldalfelező pontjai egy harmadikat, és így tovább, végtelen sokáig. Mennyi a négyzetek területének összege?</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(64+32+16+\dots=128\)</span> cm<span class="math inline">\(^2\)</span></p></div>
+      </details>
+    </article>
+    <h2 id="nehez">🔴 Nehéz szint — Maximális erőbedobás</h2>
+    <article class="feladat nehez" id="nehez-1">
+      <p><span class="szam">1.</span> Számítsd ki a határértékeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(\frac{n^{2} + 2}{2 n - 1} - \frac{2 n^{2}}{4 n - 1}\right)\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(\frac{3 n^{2} - 2}{6 n + 1} - \frac{n^{2}}{2 n - 1}\right)\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(\frac{8 n^{2} - 1}{4 n + 1} - \frac{2 n^{2}}{n + 1}\right)\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{1}{8}\)</span></li><li><span class="math inline">\(- \frac{1}{3}\)</span></li><li><span class="math inline">\(\frac{3}{2}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-2">
+      <p><span class="szam">2.</span> Számítsd ki a határértékeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(\frac{6 n^{2}}{3 n - 1} - \frac{2 n^{2} - 1}{n + 1}\right)\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(\frac{6 n^{2}}{2 n - 1} - \frac{3 n^{2} - 1}{n + 1}\right)\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(\frac{n^{2} + 1}{2 n + 1} - \frac{3 n^{2}}{6 n - 1}\right)\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{8}{3}\)</span></li><li><span class="math inline">\(\frac{9}{2}\)</span></li><li><span class="math inline">\(- \frac{1}{3}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-3">
+      <p><span class="szam">3.</span> Számítsd ki a határértékeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(\frac{12 n^{2}}{3 n - 4} - \frac{4 n^{2} + 2 n}{n + 1}\right)\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(\frac{n^{2}}{2 n - 1} - \frac{n^{2} + 1}{2 n + 1}\right)\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(\frac{6 n^{2} - 1}{n + 3} - \frac{24 n^{2}}{4 n - 1}\right)\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{22}{3}\)</span></li><li><span class="math inline">\(\frac{1}{2}\)</span></li><li><span class="math inline">\(- \frac{39}{2}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-4">
+      <p><span class="szam">4.</span> Számítsd ki a határértékeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(1 + \frac{3}{2 n - 3}\right)^{n + 7}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(1 + \frac{5}{4 n + 1}\right)^{6 n + 3}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(1 - \frac{1}{2 n}\right)^{3 n + 1}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(e^{\frac{3}{2}}\)</span></li><li><span class="math inline">\(e^{\frac{15}{2}}\)</span></li><li><span class="math inline">\(e^{- \frac{3}{2}}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-5">
+      <p><span class="szam">5.</span> Számítsd ki a határértékeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(\frac{n + 2}{n + 7}\right)^{\frac{n}{3}}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(\frac{3 n + 3}{3 n + 1}\right)^{n + 1}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(\frac{n + 5}{n + 3}\right)^{n}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(\frac{n - 1}{n + 3}\right)^{\frac{2 n}{3}}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(e^{- \frac{5}{3}}\)</span></li><li><span class="math inline">\(e^{\frac{2}{3}}\)</span></li><li><span class="math inline">\(e^{2}\)</span></li><li><span class="math inline">\(e^{- \frac{8}{3}}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-6">
+      <p><span class="szam">6.</span> Számítsd ki a határértékeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(\frac{2 n + 5}{2 n - 3}\right)^{5 n - 1}\)</span></li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(1 + \frac{3}{2 n - 5}\right)^{6 n}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(e^{20}\)</span></li><li><span class="math inline">\(e^{9}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-7">
+      <p><span class="szam">7.</span> Egy labdát <span class="math inline">\(1\)</span> m magasról leejtünk. Minden pattanás után az előző magasság <span class="math inline">\(\frac34\)</span>-éig emelkedik vissza. Mekkora utat tesz meg a labda összesen, ha (elméletben) végtelen sokszor pattan?</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(1+2\left(\frac34+\frac{9}{16}+\dots\right)=1+2\cdot3=7\)</span> m</p></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-8">
+      <p><span class="szam">8.</span> Oldd meg a valós számok halmazán: <span class="math inline">\(1+x+x^2+x^3+\dots=\frac52-x\)</span>.</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(\frac{1}{1-x}=\frac52-x\)</span>, rendezve <span class="math inline">\(2x^2-7x+3=0\)</span>, ebből <span class="math inline">\(x_1=\frac{1}{2}\)</span>, <span class="math inline">\(x_2=3\)</span>; a sornak csak <span class="math inline">\(\lvert x\rvert\lt1\)</span> esetén van összege, ezért a megoldás csak <span class="math inline">\(x=\frac{1}{2}\)</span></p></div>
+      </details>
+    </article>
+    <h2 id="joker-szint">🃏 Joker</h2>
+    <article class="feladat joker" id="joker">
+      <p><span class="szam">★</span> Akhilleusz tízszer olyan gyorsan fut, mint a teknős, a teknős pedig <span class="math inline">\(100\)</span> m előnnyel indul. Mire Akhilleusz odaér, ahol a teknős volt, a teknős már <span class="math inline">\(10\)</span> m-rel előrébb jár; mire ezt a <span class="math inline">\(10\)</span> m-t is megteszi, a teknős újabb <span class="math inline">\(1\)</span> m-rel jár előrébb, és így tovább.</p><ol class="reszfeladatok"><li>Írd fel Akhilleusz szakaszait végtelen mértani sorként!</li><li>Hány méter megtétele után éri utol Akhilleusz a teknőst?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(100+10+1+0{,}1+\dots\)</span> — végtelen mértani sor, <span class="math inline">\(b_1=100\)</span>, <span class="math inline">\(q=\frac{1}{10}\)</span></li><li><span class="math inline">\(\frac{1000}{9}\approx111{,}1\)</span> m után</li></ol></div>
+      </details>
+    </article>
+    <div class="gyakorolj">
+      <span class="ikon">📖</span>
+      <p>Elakadtál? Nézd át a <a href="index.html">témakör tananyagait</a> vagy a <a href="osszefoglalo.html">Taktikai memóriakártyát</a>.</p>
+    </div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-vegtelen-mertani-sor.html"><span class="irany">← Előző</span><span class="hova">A végtelen mértani sor</span></a>
+      <a class="kov" href="feladatok-hazi.html"><span class="irany">Következő →</span><span class="hova">I.V.H. Kihallgató Terem — Vészterem</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
