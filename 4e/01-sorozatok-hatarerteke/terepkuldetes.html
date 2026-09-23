@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Terepküldetés | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="rajzterem">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Sorozatok határértéke</a> ›
+  <span class="itt">Terepküldetés</span>
+</nav>
+<div class="hero">
+  <h1>A Végtelenbe és… Ne Tovább!</h1>
+  <p class="alcim">Négy fázis: a szenzor, az időszerver kijelzői, a fékút és Véd Vilmos hibás jegyzőkönyve. Beadható projektfeladat — a megoldásokat a tanárod ellenőrzi.</p>
+  <div class="meta-sor"><span class="chip ora">terepküldetés</span><span class="chip">A Végtelenbe és… Ne Tovább! · terepküldetés</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/ved_vilmos_w.webp" alt="Véd Vilmos — a negyedik falat áttörő zsoldos" width="1200" height="670" decoding="async"><p>📡 <b>Véd Vilmos:</b> Jó hírem van: az I.V.H. nem nulláz le mindenkit. Csak azt, aki nem tudja kiszámolni a végtelent. Én kismotorral próbáltam, a szenzor megőrült, az időszerver kijelzői végtelen sokáig pörögnek, és a fékutam is gyanús. 🌮 <i>Burek-matek:</i> „ami végtelen sokáig tart, az végtelen nagy is.” <b>Nagol:</b> Hibás, és ezt most te fogod bebizonyítani. Négy fázis: a szenzor, a kijelzők, a fékút — és végül Vilmos jegyzőkönyve, tele hibás „levezetéssel”.</p></div>
+
+    <p>Minden lépésnél írd le, melyik módszert használtad (kiemelés, gyök alól kiemelés, az <span class="math inline">\(e\)</span>-s összefüggés, végtelen mértani sor). Számológép használható: a nem egész eredményeket a kért pontossággal kerekítsd, és jelöld a kerekítést. A választ fogalmazd meg mondatban is.</p><p>A 🔴 jelű IV. fázisban a számolás csak eszköz: ott a <b>megfogalmazott érvelés</b> ér annyit, mint máshol a számítás. Mind a négy fázis egyformán számít.</p><p><b>Amire szükséged lesz:</b> a határérték fogalma, a kiemelés és a fokszám-szabály, a gyökös törtek, az <span class="math inline">\(\left(1+\frac kn\right)^{mn}\to e^{km}\)</span> összefüggés és a végtelen mértani sor.</p><p><i>Tervezz rá nagyjából két órát; ez beadandó munka, nem órai feladat.</i></p>
+
+    <h2 id="s1">I. fázis — A szenzor</h2>
+
+    <p>A kismotor szenzora az <span class="math inline">\(n\)</span>-edik mérésnél <span class="math inline">\(a_n=\dfrac{6n-1}{2n+3}\)</span> ezer fordulat/perc fordulatszámot mutat. Nagol szerint a szenzor egy jól meghatározott szinthez közelít — Vilmos szerint „csak úgy nő”.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 380 230" width="380" height="230" role="img" aria-label="A szenzor első tizenkét mérése és a 3-as szint">
+      <defs><marker id="nyil" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="53.1" y1="208.0" x2="53.1" y2="14.0"/>
+        <line x1="80.3" y1="208.0" x2="80.3" y2="14.0"/>
+        <line x1="107.4" y1="208.0" x2="107.4" y2="14.0"/>
+        <line x1="134.6" y1="208.0" x2="134.6" y2="14.0"/>
+        <line x1="161.7" y1="208.0" x2="161.7" y2="14.0"/>
+        <line x1="188.9" y1="208.0" x2="188.9" y2="14.0"/>
+        <line x1="216.0" y1="208.0" x2="216.0" y2="14.0"/>
+        <line x1="243.1" y1="208.0" x2="243.1" y2="14.0"/>
+        <line x1="270.3" y1="208.0" x2="270.3" y2="14.0"/>
+        <line x1="297.4" y1="208.0" x2="297.4" y2="14.0"/>
+        <line x1="324.6" y1="208.0" x2="324.6" y2="14.0"/>
+        <line x1="351.7" y1="208.0" x2="351.7" y2="14.0"/>
+        <line x1="26.0" y1="154.1" x2="368.0" y2="154.1"/>
+        <line x1="26.0" y1="100.2" x2="368.0" y2="100.2"/>
+        <line x1="26.0" y1="46.3" x2="368.0" y2="46.3"/>
+      </g>
+      <line x1="26.0" y1="208.0" x2="368.0" y2="208.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <line x1="26.0" y1="208.0" x2="26.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <text x="364.0" y="222.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">n</text>
+      <text x="32.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="start">aₙ</text>
+      <text x="53.1" y="221.0" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="21.0" y="158.1" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <polyline points="26.0,46.3 29.4,46.3 32.8,46.3 36.2,46.3 39.6,46.3 43.0,46.3 46.4,46.3 49.8,46.3 53.1,46.3 56.5,46.3 59.9,46.3 63.3,46.3 66.7,46.3 70.1,46.3 73.5,46.3 76.9,46.3 80.3,46.3 83.7,46.3 87.1,46.3 90.5,46.3 93.9,46.3 97.2,46.3 100.6,46.3 104.0,46.3 107.4,46.3 110.8,46.3 114.2,46.3 117.6,46.3 121.0,46.3 124.4,46.3 127.8,46.3 131.2,46.3 134.6,46.3 138.0,46.3 141.4,46.3 144.8,46.3 148.1,46.3 151.5,46.3 154.9,46.3 158.3,46.3 161.7,46.3 165.1,46.3 168.5,46.3 171.9,46.3 175.3,46.3 178.7,46.3 182.1,46.3 185.5,46.3 188.9,46.3 192.2,46.3 195.6,46.3 199.0,46.3 202.4,46.3 205.8,46.3 209.2,46.3 212.6,46.3 216.0,46.3 219.4,46.3 222.8,46.3 226.2,46.3 229.6,46.3 233.0,46.3 236.4,46.3 239.8,46.3 243.1,46.3 246.5,46.3 249.9,46.3 253.3,46.3 256.7,46.3 260.1,46.3 263.5,46.3 266.9,46.3 270.3,46.3 273.7,46.3 277.1,46.3 280.5,46.3 283.9,46.3 287.2,46.3 290.6,46.3 294.0,46.3 297.4,46.3 300.8,46.3 304.2,46.3 307.6,46.3 311.0,46.3 314.4,46.3 317.8,46.3 321.2,46.3 324.6,46.3 328.0,46.3 331.4,46.3 334.8,46.3 338.1,46.3 341.5,46.3 344.9,46.3 348.3,46.3 351.7,46.3 355.1,46.3 358.5,46.3 361.9,46.3 365.3,46.3" fill="none" stroke="#ef4444" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="53.1" cy="154.1" r="4" fill="#047857"/>
+      <circle cx="80.3" cy="123.3" r="4" fill="#047857"/>
+      <circle cx="107.4" cy="106.2" r="4" fill="#047857"/>
+      <circle cx="134.6" cy="95.3" r="4" fill="#047857"/>
+      <circle cx="161.7" cy="87.8" r="4" fill="#047857"/>
+      <circle cx="188.9" cy="82.3" r="4" fill="#047857"/>
+      <circle cx="216.0" cy="78.0" r="4" fill="#047857"/>
+      <circle cx="243.1" cy="74.7" r="4" fill="#047857"/>
+      <circle cx="270.3" cy="72.0" r="4" fill="#047857"/>
+      <circle cx="297.4" cy="69.8" r="4" fill="#047857"/>
+      <circle cx="324.6" cy="67.9" r="4" fill="#047857"/>
+      <circle cx="351.7" cy="66.3" r="4" fill="#047857"/>
+      <rect x="311" y="13" width="63" height="23" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="315" y1="22" x2="333" y2="22" stroke="#ef4444" stroke-width="2.4"/>
+      <text x="338" y="26" font-size="11" fill="#0f172a">y = 3</text>
+    </svg>
+    </div>
+    <p class="cap">Az első tizenkét mérés és az <span class="math inline">\(y=3\)</span> szint.</p>
+
+    <ol class="reszfeladatok"><li>Számítsd ki az első öt mérést, tört alakban és két tizedesjegyre kerekítve is!</li><li>Számítsd ki <span class="math inline">\(a_{100}\)</span> és <span class="math inline">\(a_{1000}\)</span> értékét három tizedesjegyre! Mit sejtesz a határértékről?</li><li>Igazold a sejtésedet kiemeléssel!</li><li>Mutasd meg, hogy <span class="math inline">\(3-a_n=\dfrac{10}{2n+3}\)</span>! Mit árul el ez arról, hogy a pontok alulról vagy felülről közelítenek a <span class="math inline">\(3\)</span>-hoz?</li><li>Hányadik méréstől kezdve tér el minden mérés <span class="math inline">\(0{,}01\)</span>-nál kevesebbel a határértéktől?</li></ol>
+
+    <h2 id="s2">II. fázis — Az időszerver kijelzői</h2>
+
+    <p>Az időszerver három kijelzője végtelen sokáig pörög. Az újraindításhoz a határértékeikre van szükség:</p><span class="math display">\[T_1=\frac{5n^2-3n+4}{10n^2+7},\qquad T_2=\frac{\sqrt{64n^2+5n}}{4n-9},\qquad T_3=\left(1+\frac5n\right)^{3n}.\]</span><ol class="reszfeladatok"><li>Számítsd ki mindhárom kijelző határértékét! Nevezd meg, melyik módszert használtad!</li><li>Számítsd ki a <span class="math inline">\(T_1\)</span> kijelző <span class="math inline">\(n=1000\)</span>-hez tartozó értékét négy tizedesjegyre! Mennyivel tér el a határértéktől?</li><li>Vilmos szerint <span class="math inline">\(T_3\)</span> határértéke <span class="math inline">\(1\)</span>, „mert <span class="math inline">\(1+\frac5n\to1\)</span>, és <span class="math inline">\(1\)</span> bármely hatványa <span class="math inline">\(1\)</span>”. Mi a hiba a gondolatmenetében?</li></ol>
+
+    <h2 id="s3">III. fázis — A fékút</h2>
+
+    <p>Vilmos fékez. Az első másodpercben még <span class="math inline">\(12\)</span> métert tesz meg, és minden további másodpercben az előző másodperc útjának <span class="math inline">\(\frac56\)</span>-át. A fékezés kezdetekor <span class="math inline">\(70\)</span> méterre előtte egy szakadék széle van.</p><ol class="reszfeladatok"><li>Mennyit tesz meg az első öt másodperc mindegyikében (tört alakban és két tizedesjegyre kerekítve)? Milyen sorozatot alkotnak ezek az utak?</li><li>Mekkora a teljes fékút, ha a fékezés (elméletben) végtelen sokáig tart?</li><li>Megáll-e Vilmos a szakadék előtt? Ha nem, hányadik másodpercben lépi át a <span class="math inline">\(70\)</span> métert? <i>(Elég próbálgatással megkeresni, számológéppel.)</i></li><li>Nagol szerint erősebben kellene fékezni. Legfeljebb mekkora lehet a hányados (az első másodperc <span class="math inline">\(12\)</span> métere mellett), hogy a teljes fékút legfeljebb <span class="math inline">\(70\)</span> méter legyen? Add meg tört alakban és három tizedesjegyre lefelé kerekítve is!</li><li>Vilmos „fékezés” helyett gyorsít: minden másodpercben az előző út <span class="math inline">\(\frac65\)</span>-át teszi meg. Van-e ilyenkor véges teljes útja? Indokold meg!</li></ol>
+
+    <h2 id="s4">🔴 IV. fázis — Véd Vilmos jegyzőkönyve</h2>
+
+    <p>Vilmos leadta az I.V.H.-nak a saját „megoldásait”. Mindegyik hibás. Keresd meg a hibát, és add meg a helyes eredményt; ha nincs véges határérték vagy összeg, indokold meg!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(\dfrac{2n^2+3}{n+1}-\dfrac{2n^2-5}{n+4}\right)=\infty-\infty=0\)</span>.</li><li><span class="math inline">\(\lim\limits_{n\to\infty}\left(1+\dfrac{2n}{n+3}\right)^{n}=e^{2}\)</span>, „mert ez <span class="math inline">\(1^\infty\)</span> alakú, és a törtben <span class="math inline">\(2\)</span> áll”.</li><li><span class="math inline">\(3-6+12-24+\dots=\dfrac{3}{1-(-2)}=1\)</span>.</li><li><span class="math inline">\(\lim\limits_{n\to\infty}\dfrac{4n^3+n}{7-2n^3}=2\)</span>, „mert a főegyütthatók hányadosa <span class="math inline">\(4:2\)</span>”.</li><li>Mi a közös a négy hibában? Fogalmazd meg két-három mondatban, mit kell <b>ellenőrizni</b>, mielőtt egy szabályt vagy képletet alkalmazunk!</li></ol>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/nagol.webp" alt="Nagol — a morcos kiképzőtiszt" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Nagol:</b> A szenzor be van mérve, a kijelzők újraindultak, és tudjuk, hol állna meg a motor — ha jobban fékezne. Vilmos jegyzőkönyve pedig megmutatta, hogy a végtelennel nem lehet úgy bánni, mint egy számmal. A számításaidat a tanárod ellenőrzi; a kulcs nem kerül a hálózatra. <b>Véd Vilmos:</b> Szóval megúsztuk? <b>Nagol:</b> Ezt a fejezetet igen.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="osszefoglalo.html"><span class="irany">← Előző</span><span class="hova">Csalópapír</span></a>
+      <a class="kov" href="index.html"><span class="irany">Következő →</span><span class="hova">A Negyedik Fal</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

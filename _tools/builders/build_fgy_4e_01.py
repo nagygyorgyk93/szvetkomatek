@@ -17,7 +17,9 @@ LD = {"n": n, "Rational": Q, "sqrt": __import__("sympy").sqrt}
 
 def TX(s):
     t = latex(parse_expr(s, local_dict=LD, evaluate=False), order="none")
-    return re.sub(r"(?<![\d.}])1 \\frac", r"\\frac", t)      # Mul(1, 1/n) → „1 \frac1n” ne legyen
+    t = re.sub(r"(?<![\d.}])1 \\frac", r"\\frac", t)
+    t = t.replace(r"\frac", r"\dfrac")                       # kiemelt tört a feladatsorban …
+    return re.sub(r"\^\{\\dfrac", r"^{\\frac", t)               # … de a kitevőben kicsi marad
 
 
 def _zar(e, t):

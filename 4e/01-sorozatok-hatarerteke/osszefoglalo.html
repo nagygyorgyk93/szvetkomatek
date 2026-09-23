@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Csalópapír | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="digitalis">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Sorozatok határértéke</a> ›
+  <span class="itt">Csalópapír</span>
+</nav>
+<div class="hero">
+  <h1>Csalópapír — a témakör egy lapon</h1>
+  <p class="alcim">A határérték, a kiemelés, az <span class="math inline">\(e\)</span> szám és a végtelen mértani sor egy lapon — ismétléshez, az ellenőrző előtti átfutáshoz, nyomtatáshoz. (Véd Vilmos szerint ez csalás. Nagol szerint tanulás.)</p>
+  <div class="meta-sor"><span class="chip ora">összefoglaló</span><span class="chip">A Végtelenbe és… Ne Tovább! · összefoglaló</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📇 A határérték</h2>
+
+    <p class="lead">Az <span class="math inline">\((a_n)\)</span> sorozat határértéke az <span class="math inline">\(A\)</span> szám, ha a tagok tetszőlegesen megközelítik <span class="math inline">\(A\)</span>-t: akármilyen keskeny <span class="math inline">\(A\pm\varepsilon\)</span> sávot adunk meg, valahányadik tagtól kezdve <b>minden</b> tag a sávba esik. Jele: <span class="math inline">\(\lim\limits_{n\to\infty}a_n=A\)</span>.</p><div class="tblwrap"><table class="tt-table"><tr><th>Fogalom</th><th>Jelentés / szabály</th><th>Megjegyzés</th></tr><tr><td>konvergens (<a href="tananyag-hatarertek-fogalma.html#def-konvergens">→</a>)</td><td>van véges határértéke</td><td>a határérték egyértelmű; néhány tagból csak <b>sejteni</b> lehet</td></tr><tr><td>divergens</td><td>nincs véges határértéke</td><td>tarthat <span class="math inline">\(+\infty\)</span>-hez vagy <span class="math inline">\(-\infty\)</span>-hez, vagy oszcillálhat, mint <span class="math inline">\((-1)^n\)</span></td></tr><tr><td>nevezetes határértékek (<a href="tananyag-hatarertek-fogalma.html#tetel-nevezetes">→</a>)</td><td><span class="math inline">\(\dfrac{c}{n^k}\to0\)</span> és <span class="math inline">\(n^k\to+\infty\)</span>, ha <span class="math inline">\(k\gt0\)</span></td><td><span class="math inline">\(q^n\to0\)</span>, ha <span class="math inline">\(\lvert q\rvert\lt1\)</span> · <span class="math inline">\(q^n=1\)</span>, ha <span class="math inline">\(q=1\)</span> · <span class="math inline">\(q^n\to+\infty\)</span>, ha <span class="math inline">\(q\gt1\)</span> · divergens, ha <span class="math inline">\(q\le-1\)</span></td></tr><tr><td>műveletek (<a href="tananyag-hatarertek-fogalma.html#tetel-muveletek">→</a>)</td><td>konvergens sorozatok összegének, különbségének, szorzatának és hányadosának határértéke a határértékek összege, különbsége, szorzata, hányadosa</td><td>hányadosnál a nevező határértéke nem lehet <span class="math inline">\(0\)</span></td></tr><tr><td>határozatlan alakok</td><td><span class="math inline">\(\dfrac{\infty}{\infty}\)</span>, <span class="math inline">\(\infty-\infty\)</span>, <span class="math inline">\(1^\infty\)</span></td><td>ezekből <b>semmi nem következik</b> — előbb át kell alakítani</td></tr></table></div>
+
+    <h2 id="s1">📐 Törtek: kiemelés és a fokszám-szabály</h2>
+
+    <p class="lead"><span class="math inline">\(\dfrac{\infty}{\infty}\)</span> alaknál a számlálóból és a nevezőből is a <b>nevező legmagasabb fokú</b> <span class="math inline">\(n\)</span>-hatványát emeljük ki, és egyszerűsítünk <a href="tananyag-racionalis-tortek.html#pelda-kiemeles">→</a>. Az eredmény mindig a fokszám-szabály <a href="tananyag-racionalis-tortek.html#tetel-fokszam">→</a>:</p><div class="tblwrap"><table class="tt-table"><tr><th>számláló: <span class="math inline">\(p\)</span>-edfokú, főegyüttható <span class="math inline">\(a\)</span> · nevező: <span class="math inline">\(r\)</span>-edfokú, főegyüttható <span class="math inline">\(b\)</span></th><th>a határérték</th></tr><tr><td><span class="math inline">\(p\lt r\)</span> — a nevező „győz”</td><td><span class="math inline">\(0\)</span></td></tr><tr><td><span class="math inline">\(p=r\)</span> — döntetlen</td><td><span class="math inline">\(\dfrac ab\)</span></td></tr><tr><td><span class="math inline">\(p\gt r\)</span> — a számláló „győz”</td><td><span class="math inline">\(+\infty\)</span> vagy <span class="math inline">\(-\infty\)</span>, az <span class="math inline">\(\dfrac ab\)</span> előjele szerint</td></tr></table></div><p><b>Gyökös kifejezés</b> <a href="tananyag-gyokos-kifejezesek.html#tetel-gyok-kiemeles">→</a>. A gyökjel alól <span class="math inline">\(n^2\)</span>-et emelünk ki, és <span class="math inline">\(\sqrt{n^2}=n\)</span>, mert <span class="math inline">\(n\gt0\)</span>. Így <span class="math inline">\(\sqrt{an^2+bn+c}\)</span> (<span class="math inline">\(a\gt0\)</span>) nagy <span class="math inline">\(n\)</span>-re úgy viselkedik, mint <span class="math inline">\(\sqrt a\cdot n\)</span> — a főegyütthatóból is gyököt vonunk.</p><p><b>Két tört különbsége</b> (<span class="math inline">\(\infty-\infty\)</span>) <a href="tananyag-racionalis-tortek.html#pelda-kulonbseg">→</a>. Előbb közös nevezőre hozunk és összevonunk, csak utána jöhet a fokszám-szabály.</p>
+
+    <h2 id="s2">🔢 Az <span class="math inline">\(e\)</span> szám</h2>
+
+    <p class="lead"><span class="math inline">\(e=\lim\limits_{n\to\infty}\left(1+\dfrac1n\right)^n\approx2{,}718\)</span> <a href="tananyag-az-e-szam.html#def-e">→</a>, és általában <a href="tananyag-az-e-szam.html#tetel-e-altalanos">→</a></p><span class="math display">\[\lim_{n\to\infty}\left(1+\frac kn\right)^{mn}=e^{km}.\]</span><div class="tblwrap"><table class="tt-table"><tr><th>Első lépés: mihez tart az alap?</th><th>Mit csinálunk?</th></tr><tr><td><span class="math inline">\(1\)</span>-hez, és a kitevő <span class="math inline">\(+\infty\)</span>-hez (<span class="math inline">\(1^\infty\)</span>)</td><td><span class="math inline">\(\left(1+\frac{k}{\dots}\right)\)</span> alakra hozzuk: a törtes alapot <span class="math inline">\(1+\dfrac{\text{szám}}{\text{nevező}}\)</span> alakba írjuk <a href="tananyag-az-e-szam.html#pelda-e-hanyados">→</a>, az eltolt nevezőt a kitevőben kiegyenlítjük <a href="tananyag-az-e-szam.html#pelda-e-eltolt">→</a></td></tr><tr><td>egy <span class="math inline">\(1\)</span>-nél nagyobb számhoz, a kitevő <span class="math inline">\(+\infty\)</span>-hez</td><td>a határérték <span class="math inline">\(+\infty\)</span></td></tr><tr><td>egy <span class="math inline">\(0\)</span> és <span class="math inline">\(1\)</span> közötti számhoz, a kitevő <span class="math inline">\(+\infty\)</span>-hez</td><td>a határérték <span class="math inline">\(0\)</span></td></tr><tr><td>a kitevőnek is véges a határértéke (és az alapé pozitív)</td><td>nem határozatlan alak: behelyettesítjük a két határértéket <a href="tananyag-az-e-szam.html#pelda-nem-e">→</a></td></tr></table></div>
+
+    <h2 id="s3">♾️ A végtelen mértani sor</h2>
+
+    <p class="lead">A <span class="math inline">\(b_1+b_1q+b_1q^2+\dots\)</span> végtelen mértani sor összege a részletösszegek határértéke, <span class="math inline">\(S=\lim\limits_{n\to\infty}S_n\)</span> <a href="tananyag-vegtelen-mertani-sor.html#tetel-vegtelen-mertani-sor">→</a>.</p><span class="math display">\[S=\frac{b_1}{1-q},\qquad\text{ha }\lvert q\rvert\lt1 .\]</span><p>Ha <span class="math inline">\(\lvert q\rvert\ge1\)</span> (és <span class="math inline">\(b_1\ne0\)</span>), a sornak <b>nincs</b> összege — a képletet ilyenkor nem szabad használni. A feltételt <b>mindig</b> ellenőrizzük, mielőtt behelyettesítünk.</p><p><b>Szakaszos tizedes tört</b> <a href="tananyag-vegtelen-mertani-sor.html#pelda-szakaszos">→</a>. A szakaszok egy végtelen mértani sor tagjai: egyjegyű szakasznál <span class="math inline">\(q=\frac1{10}\)</span>, kétjegyűnél <span class="math inline">\(q=\frac1{100}\)</span>. Vegyes szakaszos törtnél a nem ismétlődő részt külön adjuk hozzá.</p><p><b>Szöveges feladatnál</b> az első tagot és a hányadost keressük meg: „minden lépés az előző <span class="math inline">\(\frac23\)</span>-a” → <span class="math inline">\(q=\frac23\)</span>. Ha a mozgás oda-vissza történik (pattogó labda), az első utat külön számoljuk, a többit kétszer.</p>
+
+    <h2 id="s4">⚠️ Véd Vilmos csapdái — amin a legtöbben elcsúsznak</h2>
+
+    <div class="doboz csapda"><p class="cim"><span class="ikon">⚠️</span> A nyolc leggyakoribb hiba</p><ol class="reszfeladatok"><li><b>Határozatlan alak eredményként:</b> ✗ „<span class="math inline">\(\frac\infty\infty=1\)</span>”, ✗ „<span class="math inline">\(\infty-\infty=0\)</span>”, ✗ „<span class="math inline">\(1^\infty=1\)</span>” — ezek nem számok, hanem jelzések, hogy át kell alakítani.</li><li><b>Rossz főtag:</b> a főtag a <b>legmagasabb fokú</b> tag, nem az elsőnek leírt: <span class="math inline">\(\dfrac{3-2n^2}{n^2+5}\to-2\)</span>.</li><li><b>Elveszett előjel:</b> ha <span class="math inline">\(p\gt r\)</span>, az előjelet a főegyütthatók döntik el: <span class="math inline">\(\dfrac{n^2+1}{3-n}\to-\infty\)</span>.</li><li><b>Gyökvonás a főegyütthatóból:</b> <span class="math inline">\(\sqrt{9n^2+1}\)</span> úgy viselkedik, mint <span class="math inline">\(3n\)</span>, nem mint <span class="math inline">\(9n\)</span>.</li><li><b>Mindenre <span class="math inline">\(e\)</span>:</b> először nézd meg, mihez tart az alap! <span class="math inline">\(\left(\frac{2n+1}{n}\right)^n\to+\infty\)</span>, mert az alap <span class="math inline">\(2\)</span>-höz tart.</li><li><b>A kitevő előjele:</b> <span class="math inline">\(\left(1-\frac2n\right)^{n}\to e^{-2}\)</span> — a <span class="math inline">\(k\)</span> itt <span class="math inline">\(-2\)</span>.</li><li><b>Mértani sor feltétel nélkül:</b> <span class="math inline">\(\lvert q\rvert\ge1\)</span> esetén nincs összeg, bármit ad is a képlet.</li><li><b>A <span class="math inline">\(q^n\)</span> negatív <span class="math inline">\(q\)</span>-val:</b> ha <span class="math inline">\(q\le-1\)</span>, a sorozat nem <span class="math inline">\(+\infty\)</span>-hez tart, hanem oszcillál: divergens.</li></ol></div>
+
+    <h2 id="s5">Mit hol találsz?</h2>
+
+    <div class="gyakorolj"><span class="ikon">🧭</span><div><p><b>Tananyag:</b> <a href="tananyag-hatarertek-fogalma.html">a sorozat határértéke</a> · <a href="tananyag-racionalis-tortek.html">kiemelés — törtek határértéke</a> · <a href="tananyag-gyokos-kifejezesek.html">gyökös kifejezések</a> · <a href="tananyag-az-e-szam.html">az <span class="math inline">\(e\)</span> szám</a> · <a href="tananyag-vegtelen-mertani-sor.html">a végtelen mértani sor</a>.</p><p><b>Gyakorlás:</b> <a href="feladatok-hatarertek.html">Zsoldos-lista</a> (Zöldfülű · X-Force · Maximális erőbedobás · joker) és az <a href="feladatok-hazi.html">I.V.H. Kihallgató Terem</a> házi feladatsora.</p><p><b>Ismétlés:</b> a sorozat fogalma, a monotonitás és a mértani sorozat első <span class="math inline">\(n\)</span> tagjának összegképlete a tavalyi <a href="../../3e/06-indukcio-sorozatok/osszefoglalo.html">Taktikai memóriakártyán</a> van. A témakört <a href="terepkuldetes.html">A Végtelenbe és… Ne Tovább!</a> küldetés zárja.</p></div></div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-hazi.html"><span class="irany">← Előző</span><span class="hova">I.V.H. Kihallgató Terem</span></a>
+      <a class="kov" href="terepkuldetes.html"><span class="irany">Következő →</span><span class="hova">A Végtelenbe és… Ne Tovább!</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
