@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Az e szám — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Sorozatok határértéke</a> ›
+  <span class="itt">Az e szám — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Az <span class="math inline">\(e\)</span> szám</h1>
+  <p class="alcim">Az <span class="math inline">\(\left(1+\frac1n\right)^n\)</span> sorozat határértéke, az <span class="math inline">\(e\)</span>-típusú határértékek számolása, és mikor nem jön szóba az <span class="math inline">\(e\)</span>.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Végtelenbe és… Ne Tovább! · 4/5</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/ved_vilmos_w.webp" alt="Véd Vilmos — a negyedik falat áttörő zsoldos" width="1200" height="670" decoding="async"><p>📡 <b>Véd Vilmos:</b> Megnyitottam a Burek-bankot. Aki betesz 1 dinárt, egy év múlva 100% kamatot kap, vagyis 2 dinárja lesz. 🌮 <i>Burek-matek:</i> „ha a kamatot kétszer írom jóvá, félévente 50%-ot, még többet ér — ha pedig végtelen sokszor, végtelen gazdag leszek!” <b>Nagol:</b> Többet ér, az igaz. Végtelen gazdag viszont senki sem lesz: az összeg egy nevezetes számhoz tart, amelyet ma megismerünk.</p></div>
+
+    <h2 id="s1"><span class="math inline">\(\left(1+\frac1n\right)^n\)</span> — táblázatból</h2>
+
+    <p class="lead">A Burek-bank számlája <span class="math inline">\(n\)</span> jóváírás után <span class="math inline">\(\left(1+\frac1n\right)^n\)</span> dinár: minden alkalommal <span class="math inline">\(\frac1n\)</span>-ed résznyi kamat jár (lásd a <a href="../../3e/06-indukcio-sorozatok/tananyag-mertani-sorozat.html#tetel-kamatos-kamat">kamatos kamat képletét</a>).</p><div class="tblwrap"><table class="tt-table"><tr><th>jóváírás</th><td>évente</td><td>félévente</td><td>negyedévente</td><td>havonta</td><td>naponta</td><td><span class="math inline">\(10\,000\)</span>-szer</td></tr><tr><th><span class="math inline">\(n\)</span></th><td>1</td><td>2</td><td>4</td><td>12</td><td>365</td><td><span class="math inline">\(10\,000\)</span></td></tr><tr><th><span class="math inline">\(\left(1+\frac1n\right)^n\)</span></th><td><span class="math inline">\(2\)</span></td><td><span class="math inline">\(2{,}25\)</span></td><td><span class="math inline">\(\approx2{,}4414\)</span></td><td><span class="math inline">\(\approx2{,}6130\)</span></td><td><span class="math inline">\(\approx2{,}7146\)</span></td><td><span class="math inline">\(\approx2{,}7181\)</span></td></tr></table></div><p>Az összeg nő, de egyre lassabban, és egy <span class="math inline">\(2{,}718\)</span> körüli értéknél „megtorpan”.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 380 240" width="380" height="240" role="img" aria-label="Az (1 + 1/n)ⁿ sorozat első nyolc tagja pontokként, alulról egyre közelebb az y = e ≈ 2,718 vízszintes egyeneshez, de egyik sem éri el">
+      <defs><marker id="nyil" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="64.0" y1="218.0" x2="64.0" y2="14.0"/>
+        <line x1="102.0" y1="218.0" x2="102.0" y2="14.0"/>
+        <line x1="140.0" y1="218.0" x2="140.0" y2="14.0"/>
+        <line x1="178.0" y1="218.0" x2="178.0" y2="14.0"/>
+        <line x1="216.0" y1="218.0" x2="216.0" y2="14.0"/>
+        <line x1="254.0" y1="218.0" x2="254.0" y2="14.0"/>
+        <line x1="292.0" y1="218.0" x2="292.0" y2="14.0"/>
+        <line x1="330.0" y1="218.0" x2="330.0" y2="14.0"/>
+        <line x1="368.0" y1="218.0" x2="368.0" y2="14.0"/>
+        <line x1="26.0" y1="156.2" x2="368.0" y2="156.2"/>
+        <line x1="26.0" y1="94.4" x2="368.0" y2="94.4"/>
+        <line x1="26.0" y1="32.5" x2="368.0" y2="32.5"/>
+      </g>
+      <line x1="26.0" y1="218.0" x2="368.0" y2="218.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <line x1="26.0" y1="218.0" x2="26.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <text x="364.0" y="232.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">n</text>
+      <text x="32.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="start">aₙ</text>
+      <text x="64.0" y="231.0" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="21.0" y="160.2" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <polyline points="26.0,50.0 29.4,50.0 32.8,50.0 36.3,50.0 39.7,50.0 43.1,50.0 46.5,50.0 49.9,50.0 53.4,50.0 56.8,50.0 60.2,50.0 63.6,50.0 67.0,50.0 70.5,50.0 73.9,50.0 77.3,50.0 80.7,50.0 84.1,50.0 87.6,50.0 91.0,50.0 94.4,50.0 97.8,50.0 101.2,50.0 104.7,50.0 108.1,50.0 111.5,50.0 114.9,50.0 118.3,50.0 121.8,50.0 125.2,50.0 128.6,50.0 132.0,50.0 135.4,50.0 138.9,50.0 142.3,50.0 145.7,50.0 149.1,50.0 152.5,50.0 156.0,50.0 159.4,50.0 162.8,50.0 166.2,50.0 169.6,50.0 173.1,50.0 176.5,50.0 179.9,50.0 183.3,50.0 186.7,50.0 190.2,50.0 193.6,50.0 197.0,50.0 200.4,50.0 203.8,50.0 207.3,50.0 210.7,50.0 214.1,50.0 217.5,50.0 220.9,50.0 224.4,50.0 227.8,50.0 231.2,50.0 234.6,50.0 238.0,50.0 241.5,50.0 244.9,50.0 248.3,50.0 251.7,50.0 255.1,50.0 258.6,50.0 262.0,50.0 265.4,50.0 268.8,50.0 272.2,50.0 275.7,50.0 279.1,50.0 282.5,50.0 285.9,50.0 289.3,50.0 292.8,50.0 296.2,50.0 299.6,50.0 303.0,50.0 306.4,50.0 309.9,50.0 313.3,50.0 316.7,50.0 320.1,50.0 323.5,50.0 327.0,50.0 330.4,50.0 333.8,50.0 337.2,50.0 340.6,50.0 344.1,50.0 347.5,50.0 350.9,50.0 354.3,50.0 357.7,50.0 361.2,50.0 364.6,50.0 368.0,50.0" fill="none" stroke="#047857" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="64.0" cy="94.4" r="4" fill="#f59e0b"/>
+      <circle cx="102.0" cy="78.9" r="4" fill="#f59e0b"/>
+      <circle cx="140.0" cy="71.5" r="4" fill="#f59e0b"/>
+      <circle cx="178.0" cy="67.1" r="4" fill="#f59e0b"/>
+      <circle cx="216.0" cy="64.2" r="4" fill="#f59e0b"/>
+      <circle cx="254.0" cy="62.1" r="4" fill="#f59e0b"/>
+      <circle cx="292.0" cy="60.6" r="4" fill="#f59e0b"/>
+      <circle cx="330.0" cy="59.4" r="4" fill="#f59e0b"/>
+      <text x="364" y="45" font-size="11" fill="#047857" text-anchor="end">e ≈ 2,718</text>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(\left(1+\frac1n\right)^n\)</span> sorozat első nyolc tagja alulról közelít az <span class="math inline">\(e\)</span> szintjéhez (zöld vonal), de egyik tag sem éri el.</p>
+
+    <div class="doboz definicio" id="def-e">
+      <p class="cim"><span class="ikon">📗</span> Az <span class="math inline">\(e\)</span> szám</p>
+      <span class="math display">\[e=\lim_{n\to\infty}\left(1+\frac1n\right)^n\approx2{,}71828 .\]</span><p>Az <span class="math inline">\(e\)</span> irracionális szám, ugyanolyan fontos, mint a <span class="math inline">\(\pi\)</span>. A tanterv szerint a határérték létezését nem bizonyítjuk — a táblázat és a grafikon szemlélteti.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda</p>
+      <p>„Az alap <span class="math inline">\(1\)</span>-hez tart, és <span class="math inline">\(1\)</span> akárhányadik hatványa <span class="math inline">\(1\)</span>. Tehát a határérték <span class="math inline">\(1\)</span>” — érvel Véd Vilmos.</p><p>Csakhogy az alap <b>soha nem pontosan 1</b>, közben pedig a kitevő a végtelenbe nő. Két folyamat húz ellentétes irányba, és ebből nem <span class="math inline">\(1\)</span>, hanem <span class="math inline">\(e\)</span> jön ki. Az <span class="math inline">\(1^\infty\)</span> <b>határozatlan alak</b>.</p>
+    </div>
+
+    <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ Ez az e szám definíciója: a tagok (2; 2,25; 2,37; 2,44; …) egyre közelebb kerülnek a 2,718…-hoz, de el nem érik." data-nem="✘ A táblázat mutatja: 2; 2,25; 2,37; 2,44; … ≈ 2,718. Az 1^∞ nem „1”, hanem határozatlan alak — itt az eredménye e.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mihez tart az <span class="math inline">\(\left(1+\frac1n\right)^n\)</span> sorozat?</p>
+      <div class="opciok"><button>az <span class="math inline">\(1\)</span>-hez, mert <span class="math inline">\(1^\infty=1\)</span></button><button>a <span class="math inline">\(+\infty\)</span>-hez, mert a kitevő a végtelenbe tart</button><button>a <span class="math inline">\(2\)</span>-höz, mert az első tagja <span class="math inline">\(2\)</span></button><button>az <span class="math inline">\(e\approx2{,}718\)</span> számhoz</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Az általánosítás</h2>
+
+    <p class="lead">A gyakorlatban ritkán áll ott pontosan <span class="math inline">\(\left(1+\frac1n\right)^n\)</span>. Ha a törtben <span class="math inline">\(\frac kn\)</span> szerepel, a kitevőben pedig <span class="math inline">\(mn\)</span>, a határérték szintén <span class="math inline">\(e\)</span> valamelyik hatványa.</p>
+
+    <div class="doboz tetel" id="tetel-e-altalanos">
+      <p class="cim"><span class="ikon">📘</span> Az <span class="math inline">\(e\)</span>-típusú határérték</p>
+      <p>Bármely <span class="math inline">\(k\ne0\)</span> és <span class="math inline">\(m\)</span> valós számra</p><span class="math display">\[\lim_{n\to\infty}\left(1+\frac kn\right)^{mn}=e^{km} .\]</span><p>(Negatív <span class="math inline">\(k\)</span> esetén elég nagy <span class="math inline">\(n\)</span>-re, <span class="math inline">\(n\gt\lvert k\rvert\)</span>-ra az alap pozitív.) Szemléletesen: <span class="math inline">\(\left(1+\frac kn\right)^{mn}=\left[\left(1+\frac{1}{n/k}\right)^{n/k}\right]^{km}\)</span>, és a szögletes zárójelben álló kifejezés <span class="math inline">\(e\)</span>-hez tart.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-e-kozep">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — egyenesen a képletből</p>
+      <p><b>a)</b> <span class="math inline">\(\lim\left(1+\dfrac2n\right)^{4n}=e^{2\cdot4}=e^8\)</span>. Ennyi az egész: a két számot összeszorozzuk — akkor is, ha <span class="math inline">\(k\)</span> negatív vagy <span class="math inline">\(m\)</span> tört, ahogy a b) és a c) mutatja.</p><p><b>b)</b> <span class="math inline">\(\lim\left(1-\dfrac3n\right)^{2n}\)</span>: itt <span class="math inline">\(k=-3\)</span> és <span class="math inline">\(m=2\)</span>, így a határérték <span class="math inline">\(e^{-3\cdot2}=e^{-6}\)</span>.</p><p><b>c)</b> <span class="math inline">\(\lim\left(1+\dfrac4n\right)^{n/2}\)</span>: itt <span class="math inline">\(k=4\)</span> és <span class="math inline">\(m=\frac12\)</span>, így a határérték <span class="math inline">\(e^{4\cdot\frac12}=e^{2}\)</span>.</p>
+    </div>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A kitevő a két szám szorzata, azaz 6: a határérték e a hatodikon." data-nem="✘ A képlet (1 + k/n)^(mn) → e^(km): itt k = 3 és m = 2, a kitevő szorzat, e⁶.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi a <span class="math inline">\(\lim\limits_{n\to\infty}\left(1+\frac3n\right)^{2n}\)</span> határérték?</p>
+      <div class="opciok"><button><span class="math inline">\(e^{3/2}\)</span></button><button><span class="math inline">\(1\)</span></button><button><span class="math inline">\(e^6\)</span></button><button><span class="math inline">\(e^3\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Eltolt nevező és hányados-alap</h2>
+
+    <p class="lead"><b>Ez a rész az ötösért van.</b> Ha a nevezőben nem <span class="math inline">\(n\)</span>, hanem például <span class="math inline">\(n+3\)</span> áll, vagy az alap egyetlen tört, a képlet nem használható közvetlenül. Ilyenkor az alapot <span class="math inline">\(1+\frac{1}{\square}\)</span> alakra hozzuk, és a kitevőt úgy „javítjuk”, hogy megjelenjen benne ugyanez a <span class="math inline">\(\square\)</span>.</p>
+
+    <div class="doboz pelda" id="pelda-e-eltolt">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — eltolt nevező</p>
+      <p>Számítsuk ki: <span class="math inline">\(\lim\limits_{n\to\infty}\left(1+\dfrac{4}{n+3}\right)^{3n}\)</span>.</p><p>Az alap <span class="math inline">\(1+\dfrac{1}{\frac{n+3}{4}}\)</span>. A kitevőt beszorozzuk és el is osztjuk <span class="math inline">\(\frac{n+3}{4}\)</span>-del:</p><span class="math display">\[\left[\left(1+\frac{1}{\frac{n+3}{4}}\right)^{\frac{n+3}{4}}\right]^{\frac{4}{n+3}\cdot3n}\ \longrightarrow\ e^{\lim\frac{12n}{n+3}}=e^{12} .\]</span><p>A szögletes zárójel <span class="math inline">\(e\)</span>-hez tart, a kitevő határértéke a fokszám-szabállyal <span class="math inline">\(12\)</span>.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-e-hanyados">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — hányados az alapban</p>
+      <p>Számítsuk ki: <span class="math inline">\(\lim\limits_{n\to\infty}\left(\dfrac{2n+5}{2n-1}\right)^{n}\)</span>.</p><p>Az alapból leválasztjuk az <span class="math inline">\(1\)</span>-et: <span class="math inline">\(\dfrac{2n+5}{2n-1}=\dfrac{(2n-1)+6}{2n-1}=1+\dfrac{6}{2n-1}\)</span>. Innen ugyanúgy haladunk, mint az előbb:</p><span class="math display">\[\left(1+\frac{1}{\frac{2n-1}{6}}\right)^{n}=\left[\left(1+\frac{1}{\frac{2n-1}{6}}\right)^{\frac{2n-1}{6}}\right]^{\frac{6}{2n-1}\cdot n}\ \longrightarrow\ e^{\lim\frac{6n}{2n-1}}=e^{3} .\]</span>
+    </div>
+
+    <p class="lead">⚔️ <b>Az ötösért:</b> eltolt nevezős és hányados-alapú <span class="math inline">\(e\)</span>-típusok — <a href="feladatok-hatarertek.html#nehez-4">Zsoldos-lista, nehéz 4–6</a>.</p>
+
+    <h2 id="s4">Nem minden hatvány <span class="math inline">\(1^\infty\)</span></h2>
+
+    <p class="lead">Az <span class="math inline">\(e\)</span>-es módszer csak akkor jön szóba, ha az alap <span class="math inline">\(1\)</span>-hez tart. Ha a kitevő a végtelenbe tart, az alap pedig nem <span class="math inline">\(1\)</span>-hez, a hatvány egyszerűen viselkedik: <span class="math inline">\(1\)</span>-nél nagyobb számhoz tartó alap a végtelenbe visz, <span class="math inline">\(0\)</span> és <span class="math inline">\(1\)</span> közötti számhoz tartó a <span class="math inline">\(0\)</span>-hoz. (Ha a kitevő nem tart a végtelenbe, mint a c)-ben, egyszerűen behelyettesítünk.)</p>
+
+    <div class="doboz pelda" id="pelda-nem-e">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — először az alapot nézzük</p>
+      <p><b>a)</b> <span class="math inline">\(\lim\left(\dfrac{5n+1}{2n}\right)^{n}\)</span>: az alap <span class="math inline">\(\frac52\)</span>-hez tart, és <span class="math inline">\(\left(\frac52\right)^n\to+\infty\)</span>. A határérték <span class="math inline">\(+\infty\)</span>.</p><p><b>b)</b> <span class="math inline">\(\lim\left(\dfrac{n}{3n+1}\right)^{n}\)</span>: az alap <span class="math inline">\(\frac13\)</span>-hoz tart, a határérték <span class="math inline">\(0\)</span>.</p><p><b>c)</b> <span class="math inline">\(\lim\left(1+\dfrac{n}{n+1}\right)^{1/n}\)</span>: az alap <span class="math inline">\(2\)</span>-höz, a kitevő <span class="math inline">\(0\)</span>-hoz tart — ez nem határozatlan alak, a határérték <span class="math inline">\(2^0=1\)</span>.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda</p>
+      <p>Véd Vilmos minden hatványra <span class="math inline">\(e\)</span>-t ír: az a) feladatra „<span class="math inline">\(e^{5/2}\)</span>”-t (mert az alap <span class="math inline">\(\frac52\)</span>-höz tart), a c)-re „<span class="math inline">\(e^0\)</span>”-t. A c)-nél a végeredmény véletlenül stimmel, a gondolatmenet azonban mindkettőnél hibás.</p><p><b>Az első lépés mindig: mihez tart az alap?</b> Csak ha <span class="math inline">\(1\)</span>-hez, akkor van szükség az <span class="math inline">\(e\)</span>-re.</p>
+    </div>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Az n/(n + 1) tört 1-hez tart, így az alap 2-höz. Egy 1-nél nagyobb számhoz tartó alap n-edik hatványa +∞-hez tart. Ez nem 1^∞ alak." data-nem="✘ Először az alapot nézzük meg: 1 + n/(n + 1) → 2, nem 1. Egy 2-höz tartó alap n-edik hatványa a végtelenbe tart.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mihez tart az <span class="math inline">\(\left(1+\frac{n}{n+1}\right)^{n}\)</span> sorozat?</p>
+      <div class="opciok"><button>az <span class="math inline">\(e^{n}\)</span>-hez</button><button>az <span class="math inline">\(1\)</span>-hez</button><button>a <span class="math inline">\(+\infty\)</span>-hez, mert az alap <span class="math inline">\(2\)</span>-höz tart</button><button>az <span class="math inline">\(e\)</span>-hez, mert <span class="math inline">\(\left(1+\frac1n\right)^n\)</span>-re hasonlít</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-hatarertek.html#alap-17">🐶 Véd-eb nyomravezető <span class="cimke">A 17–18</span></a><a class="sav bruno" href="feladatok-hatarertek.html#kozep-12">⚔️ Maximális erőbedobás <span class="cimke">K 12–15</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/ved_vilmos.webp" alt="Véd Vilmos — a negyedik falat áttörő zsoldos" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Véd Vilmos:</b> A kismotoros utam még mindig bánt. Végtelen sok lépés, és mégsem jutok végtelen messzire? <b>Nagol:</b> Most már ki is számoljuk, pontosan meddig jutsz: a végtelen mértani sor összege következik.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-gyokos-kifejezesek.html"><span class="irany">← Előző</span><span class="hova">Gyökös kifejezések határértéke</span></a>
+      <a class="kov" href="tananyag-vegtelen-mertani-sor.html"><span class="irany">Következő →</span><span class="hova">A végtelen mértani sor</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

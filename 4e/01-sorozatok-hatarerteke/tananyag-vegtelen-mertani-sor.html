@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A végtelen mértani sor — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Sorozatok határértéke</a> ›
+  <span class="itt">A végtelen mértani sor — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A végtelen mértani sor</h1>
+  <p class="alcim">Végtelen sok tag véges összege: az <span class="math inline">\(S=\frac{b_1}{1-q}\)</span> képlet és a feltétele, valós helyzetek és a szakaszos tizedes törtek.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Végtelenbe és… Ne Tovább! · 5/5</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/ved_vilmos_w.webp" alt="Véd Vilmos — a negyedik falat áttörő zsoldos" width="1200" height="670" decoding="async"><p>📡 <b>Véd Vilmos:</b> Visszaültem a kismotorra: <span class="math inline">\(1\)</span> km, aztán fél, aztán negyed… 🌮 <i>Burek-matek:</i> „végtelen sok pozitív szám összege mindig végtelen”, tehát végtelen messzire jutok. <b>Nagol:</b> Tévedés, és ma ki is számoljuk: a megtett út pontosan <span class="math inline">\(2\)</span> km-hez tart. Kell hozzá a tavalyi összegképlet és a <span class="math inline">\(q^n\)</span> határértéke.</p></div>
+
+    <h2 id="s1">Az első <span class="math inline">\(n\)</span> tag összegétől a végtelen összegig</h2>
+
+    <p class="lead">A mértani sorozat első <span class="math inline">\(n\)</span> tagjának összege (<a href="../../3e/06-indukcio-sorozatok/tananyag-mertani-sorozat.html#tetel-mertani-sn">tavaly tanultuk</a>)</p><span class="math display">\[S_n=b_1\cdot\frac{1-q^n}{1-q}\qquad(q\ne1).\]</span><p>Ha <span class="math inline">\(\lvert q\rvert\lt1\)</span>, akkor <span class="math inline">\(q^n\to0\)</span> (lásd a <a href="tananyag-hatarertek-fogalma.html#tetel-nevezetes">nevezetes határértékeket</a>), így az összegek sorozata a <span class="math inline">\(\dfrac{b_1}{1-q}\)</span> számhoz tart. A kismotor útjára (<span class="math inline">\(b_1=1\)</span>, <span class="math inline">\(q=\frac12\)</span>):</p><div class="tblwrap"><table class="tt-table"><tr><th><span class="math inline">\(n\)</span></th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr><tr><th><span class="math inline">\(S_n\)</span></th><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(1{,}5\)</span></td><td><span class="math inline">\(1{,}75\)</span></td><td><span class="math inline">\(1{,}875\)</span></td><td><span class="math inline">\(1{,}9375\)</span></td></tr></table></div><p>Az összeg a <span class="math inline">\(2\)</span>-höz közelít, hiszen <span class="math inline">\(\dfrac{1}{1-\frac12}=2\)</span>.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 244 244" width="244" height="244" role="img" aria-label="Egy egységnyi négyzetet ismételten megfelezünk: a darabok területe 1/2, 1/4, 1/8, 1/16 és így tovább, együtt kitöltik az egész négyzetet">
+      <rect x="12.0" y="12.0" width="110.0" height="220.0" fill="#d1fae5" stroke="#0f172a" stroke-width="1.2"/>
+      <text x="67.0" y="128.7" font-size="20" fill="#0f172a" text-anchor="middle">1/2</text>
+      <rect x="122.0" y="12.0" width="110.0" height="110.0" fill="#a7f3d0" stroke="#0f172a" stroke-width="1.2"/>
+      <text x="177.0" y="72.7" font-size="17" fill="#0f172a" text-anchor="middle">1/4</text>
+      <rect x="122.0" y="122.0" width="55.0" height="110.0" fill="#6ee7b7" stroke="#0f172a" stroke-width="1.2"/>
+      <text x="149.5" y="181.7" font-size="14" fill="#0f172a" text-anchor="middle">1/8</text>
+      <rect x="177.0" y="122.0" width="55.0" height="55.0" fill="#34d399" stroke="#0f172a" stroke-width="1.2"/>
+      <text x="204.5" y="153.2" font-size="11" fill="#0f172a" text-anchor="middle">1/16</text>
+      <rect x="177.0" y="177.0" width="27.5" height="55.0" fill="#10b981" stroke="#0f172a" stroke-width="1.2"/>
+      <rect x="204.5" y="177.0" width="27.5" height="27.5" fill="#059669" stroke="#0f172a" stroke-width="1.2"/>
+      <rect x="12" y="12" width="220" height="220" fill="none" stroke="#0f172a" stroke-width="1.8"/>
+    </svg>
+    </div>
+    <p class="cap">Az egységnégyzet felezése: <span class="math inline">\(\frac12+\frac14+\frac18+\frac1{16}+\dots\)</span> — a darabok együtt kitöltik az egész négyzetet, tehát az összeg <span class="math inline">\(1\)</span>. A kismotor útja ennél <span class="math inline">\(1\)</span> km-rel több: <span class="math inline">\(1+\left(\frac12+\frac14+\dots\right)=1+1=2\)</span> km.</p>
+
+    <h2 id="s2"><span class="math inline">\(S=\dfrac{b_1}{1-q}\)</span> — és a feltétele</h2>
+
+    <div class="doboz tetel" id="tetel-vegtelen-mertani-sor">
+      <p class="cim"><span class="ikon">📘</span> A végtelen mértani sor összege</p>
+      <p>A végtelen mértani sor <b>összegén</b> az első <span class="math inline">\(n\)</span> tag <span class="math inline">\(S_n\)</span> összegeinek határértékét értjük: <span class="math inline">\(S=\lim\limits_{n\to\infty}S_n\)</span>.</p><p>Ha a mértani sorozat hányadosára <span class="math inline">\(\lvert q\rvert\lt1\)</span>, akkor a tagjainak végtelen összege (a <b>végtelen mértani sor</b> összege)</p><span class="math display">\[S=b_1+b_1q+b_1q^2+\dots=\frac{b_1}{1-q} .\]</span><p>Ha <span class="math inline">\(\lvert q\rvert\ge1\)</span> (és <span class="math inline">\(b_1\ne0\)</span>), a sornak <b>nincs</b> véges összege.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda</p>
+      <p>Véd Vilmos a képletet mindenre ráhúzza: „<span class="math inline">\(1+2+4+8+\dots=\dfrac{1}{1-2}=-1\)</span>”.</p><p>Pozitív számok összege nem lehet negatív. Itt <span class="math inline">\(q=2\)</span>, a feltétel (<span class="math inline">\(\lvert q\rvert\lt1\)</span>) nem teljesül, az összegek sorozata a végtelenbe nő — a képlet ilyenkor <b>nem alkalmazható</b>. A feltételt mindig előbb ellenőrizzük.</p>
+    </div>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ Az összeg nő, de korlátos marad: a négyzet-ábra mutatja, hogy a darabok együtt pontosan 1-et adnak." data-nem="✘ Az összeg valóban nő, de nem feltétlenül minden határon túl: 1/2 + 1/4 + 1/8 + … a négyzet-ábrán sem lép ki az egységnégyzetből. Az összeg 1.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Igaz-e, hogy végtelen sok pozitív szám összege mindig végtelen?</p>
+      <div class="opciok"><button>nem lehet eldönteni, mert a végtelenig nem tudunk összeadni</button><button>nem — például <span class="math inline">\(\frac12+\frac14+\frac18+\dots=1\)</span></button><button>igaz, mert minden újabb tag növeli az összeget</button><button>igaz, mert a tagok soha nem érik el a <span class="math inline">\(0\)</span>-t</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ Csak itt teljesül |q| < 1; az összeg 8/(1 + 3/4) = 32/7." data-nem="✘ A feltétel |q| < 1. Az 5/4, a −1 és az 1 hányadosnál a tagok nem tartanak 0-hoz, így véges összeg sincs.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik végtelen mértani sornak van véges összege?</p>
+      <div class="opciok"><button><span class="math inline">\(b_1=8\)</span>, <span class="math inline">\(q=-\frac34\)</span></button><button><span class="math inline">\(b_1=8\)</span>, <span class="math inline">\(q=\frac54\)</span></button><button><span class="math inline">\(b_1=8\)</span>, <span class="math inline">\(q=-1\)</span></button><button><span class="math inline">\(b_1=8\)</span>, <span class="math inline">\(q=1\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Valós helyzetek</h2>
+
+    <p class="lead">Minden olyan folyamat, amelyben minden lépés az előzőnek <b>ugyanannyiszorosa</b> (ugyanakkora hányada), mértani sorozatot ad. Ha a lépések végtelen sokáig folytatódnak, a teljes mennyiség a sor összege.</p>
+
+    <div class="doboz pelda" id="pelda-valos-sor">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — a lengő inga</p>
+      <p>Egy inga az első lengése során <span class="math inline">\(64\)</span> cm-es ívet fut be, és minden további lengése az előző <span class="math inline">\(\frac34\)</span>-e. Mekkora az első négy lengés íve, és mekkora utat tesz meg az inga összesen, ha (elméletben) végtelen sokáig leng?</p><p>A lengések: <span class="math inline">\(64,\ 48,\ 36,\ 27\)</span> cm. Itt <span class="math inline">\(b_1=64\)</span> és <span class="math inline">\(q=\frac34\)</span>, <span class="math inline">\(\lvert q\rvert\lt1\)</span>, így</p><span class="math display">\[S=\frac{64}{1-\frac34}=\frac{64}{\frac14}=256\ \text{cm}.\]</span><p>A valóságban az inga véges sok lengés után megáll — a <span class="math inline">\(256\)</span> cm az a felső határ, amelyet a megtett út soha nem lép át.</p>
+    </div>
+
+    <h2 id="s4">Szakaszos tizedes törtek</h2>
+
+    <p class="lead">A tisztán szakaszos tizedes tört (például <span class="math inline">\(0{,}\dot4\)</span>) egy végtelen mértani sor összege, a vegyes szakaszos (például <span class="math inline">\(0{,}1\dot6=0{,}1+0{,}06+0{,}006+\dots\)</span>) egy véges tizedes tört és egy mértani sor összege. Így bármelyiket közönséges törtté írhatjuk.</p>
+
+    <div class="doboz pelda" id="pelda-szakaszos">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — tizedes törtből tört</p>
+      <p><b>a)</b> <span class="math inline">\(0{,}\dot4=0{,}4+0{,}04+0{,}004+\dots\)</span>, ahol <span class="math inline">\(b_1=\frac4{10}\)</span> és <span class="math inline">\(q=\frac1{10}\)</span>:</p><span class="math display">\[0{,}\dot4=\frac{\frac4{10}}{1-\frac1{10}}=\frac{4}{9} .\]</span><p><b>b)</b> <span class="math inline">\(0{,}\dot2\dot7=0{,}27+0{,}0027+\dots\)</span>, ahol <span class="math inline">\(b_1=\frac{27}{100}\)</span> és <span class="math inline">\(q=\frac1{100}\)</span>:</p><span class="math display">\[0{,}\dot2\dot7=\frac{\frac{27}{100}}{1-\frac1{100}}=\frac{27}{99}=\frac3{11} .\]</span>
+    </div>
+
+    <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ b₁ = 9/10, q = 1/10, tehát az összeg (9/10)/(9/10) = 1. A 0,999… és az 1 ugyanaz a szám." data-nem="✘ A 0,999… nem „majdnem 1”: végtelen mértani sorként (9/10)/(1 − 1/10) = 1. Nincs olyan szám, amely a kettő közé esne.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi a <span class="math inline">\(0{,}999\ldots=0{,}\dot9\)</span> végtelen szakaszos tizedes tört értéke?</p>
+      <div class="opciok"><button>egy kicsit kevesebb <span class="math inline">\(1\)</span>-nél</button><button><span class="math inline">\(0{,}9\)</span></button><button>nem lehet kiszámolni</button><button>pontosan <span class="math inline">\(1\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s5">🧾 Gyorsismétlő</h2>
+
+    <p>A témakör öt számolási típusa egy táblázatban.</p><div class="tblwrap"><table class="tt-table"><tr><th>típus</th><th>a módszer</th><th>példa</th></tr><tr><td>racionális tört</td><td>kiemelés, fokszám-szabály</td><td><span class="math inline">\(\frac{6n^2-5n+1}{3n^2+4}\to2\)</span></td></tr><tr><td><span class="math inline">\(\infty-\infty\)</span></td><td>közös nevező, utána kiemelés</td><td><span class="math inline">\(\frac{n^2}{n+1}-n\to-1\)</span></td></tr><tr><td>gyökös</td><td>kiemelés a gyökjel alól: <span class="math inline">\(\sqrt{an^2}=\sqrt a\,n\)</span></td><td><span class="math inline">\(\frac{\sqrt{16n^2+5n-2}}{3n+1}\to\frac43\)</span></td></tr><tr><td><span class="math inline">\(1^\infty\)</span></td><td><span class="math inline">\(\left(1+\frac kn\right)^{mn}\to e^{km}\)</span>; előbb: az alap <span class="math inline">\(1\)</span>-hez tart?</td><td><span class="math inline">\(\left(1+\frac2n\right)^{4n}\to e^8\)</span></td></tr><tr><td>végtelen mértani sor</td><td><span class="math inline">\(S=\frac{b_1}{1-q}\)</span>, csak ha <span class="math inline">\(\lvert q\rvert\lt1\)</span></td><td><span class="math inline">\(0{,}\dot4=\frac49\)</span></td></tr></table></div>
+
+    <p class="lead">⚔️ <b>Az ötösért:</b> összetettebb mértani sorok — <a href="feladatok-hatarertek.html#nehez-7">Zsoldos-lista, nehéz 7–8</a>.</p>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-hatarertek.html#alap-19">🐶 Véd-eb nyomravezető <span class="cimke">A 19–26</span></a><a class="sav bruno" href="feladatok-hatarertek.html#kozep-16">⚔️ Maximális erőbedobás <span class="cimke">K 16–20</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/nagol.webp" alt="Nagol — a morcos kiképzőtiszt" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Nagol:</b> A sorozatoknál <span class="math inline">\(n\)</span> egyik egész számról a másikra ugrált. A következő küldetésben <span class="math inline">\(x\)</span> folyamatosan fut, és a határérték <b>falakat</b> rajzol a függvények köré — az aszimptotákat. <b>Véd Vilmos:</b> Falak? Azokon én mindig átmegyek. <b>Nagol:</b> Ezeken nem fogsz.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-az-e-szam.html"><span class="irany">← Előző</span><span class="hova">Az e szám</span></a>
+      <a class="kov" href="feladatok-hatarertek.html"><span class="irany">Következő →</span><span class="hova">Zsoldos-lista — feladatgyűjtemény</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

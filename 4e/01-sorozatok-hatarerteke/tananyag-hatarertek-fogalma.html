@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A sorozat határértéke — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Sorozatok határértéke</a> ›
+  <span class="itt">A sorozat határértéke — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A sorozat határértéke</h1>
+  <p class="alcim">Mihez közelít egy sorozat: közelítés, sáv-kép, konvergens és divergens sorozat, nevezetes határértékek, műveletek és a határozatlan alakok.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Végtelenbe és… Ne Tovább! · 1/5</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/ved_vilmos_w.webp" alt="Véd Vilmos — a negyedik falat áttörő zsoldos" width="1200" height="670" decoding="async"><p>📡 <b>Véd Vilmos:</b> Kismotorral indulok. Az első percben 1 km-t teszek meg, a másodikban ennek a felét, a harmadikban a negyedét, és így tovább — végtelen sok lépés, tehát végtelen messzire jutok. 🌮 <i>Burek-matek:</i> „végtelen sok lépés = végtelen távolság.” <b>Nagol:</b> Hibás. A lépések egyre rövidebbek, és a megtett út egy <b>jól meghatározott számhoz</b> közelít, amelyet soha nem ér el. Ebben a témakörben azt tanuljuk meg, hogyan számoljuk ki, <b>mihez közelít</b> valami, ami soha nem ér oda.</p></div>
+
+    <h2 id="s1">Emlékeztető: mit tudunk a sorozatokról?</h2>
+
+    <p class="lead">A tavalyi évből négy dolog kell. A <b>sorozat</b> minden <span class="math inline">\(n\)</span> természetes számhoz egy valós számot rendel, ez az <span class="math inline">\(a_n\)</span> általános tag. <b>Monoton</b> a sorozat, ha a tagjai végig nőnek (vagy legalábbis nem csökkennek), vagy végig csökkennek; <b>korlátos</b>, ha minden tagja két rögzített szám közé esik. A <b>mértani sorozat</b> első <span class="math inline">\(n\)</span> tagjának összegére képletünk van.</p><p>Ha bármelyik bizonytalan, itt a tavalyi anyag: <a href="../../3e/06-indukcio-sorozatok/tananyag-sorozat-fogalma.html#def-sorozat">a sorozat fogalma</a> · <a href="../../3e/06-indukcio-sorozatok/tananyag-monotonitas-es-korlatossag.html#def-monoton">monotonitás</a> · <a href="../../3e/06-indukcio-sorozatok/tananyag-monotonitas-es-korlatossag.html#def-korlatos">korlátosság</a> · <a href="../../3e/06-indukcio-sorozatok/tananyag-mertani-sorozat.html#tetel-mertani-sn">a mértani sorozat összege</a>.</p>
+
+    <h2 id="s2">Amikor a tagok egy számhoz közelítenek</h2>
+
+    <p class="lead">Vizsgáljuk meg az <span class="math inline">\(a_n=\dfrac{2n+1}{n}\)</span> sorozatot. Kiszámolunk néhány tagot, egyre nagyobb sorszámokra:</p><div class="tblwrap"><table class="tt-table"><tr><th><span class="math inline">\(n\)</span></th><td>1</td><td>2</td><td>5</td><td>10</td><td>100</td><td>1000</td></tr><tr><th><span class="math inline">\(a_n\)</span></th><td><span class="math inline">\(3\)</span></td><td><span class="math inline">\(2{,}5\)</span></td><td><span class="math inline">\(2{,}2\)</span></td><td><span class="math inline">\(2{,}1\)</span></td><td><span class="math inline">\(2{,}01\)</span></td><td><span class="math inline">\(2{,}001\)</span></td></tr></table></div><p>A tagok egyre közelebb kerülnek a <span class="math inline">\(2\)</span>-höz. Ez nem véletlen: <span class="math inline">\(a_n=\dfrac{2n+1}{n}=2+\dfrac1n\)</span>, és az <span class="math inline">\(\dfrac1n\)</span> tag egyre kisebb. A <span class="math inline">\(2\)</span>-t viszont <b>egyik tag sem éri el</b> — mindegyik nagyobb nála.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 400 250" width="400" height="250" role="img" aria-label="Az aₙ = (2n + 1)/n sorozat első tizenkét tagja pontokként; a pontok a 2-es szinthez közelítenek, és a negyedik tagtól kezdve mind a 2 körüli sávban vannak">
+      <defs><marker id="nyil-49a6d" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="53.8" y1="228.0" x2="53.8" y2="14.0"/>
+        <line x1="81.7" y1="228.0" x2="81.7" y2="14.0"/>
+        <line x1="109.5" y1="228.0" x2="109.5" y2="14.0"/>
+        <line x1="137.4" y1="228.0" x2="137.4" y2="14.0"/>
+        <line x1="165.2" y1="228.0" x2="165.2" y2="14.0"/>
+        <line x1="193.1" y1="228.0" x2="193.1" y2="14.0"/>
+        <line x1="220.9" y1="228.0" x2="220.9" y2="14.0"/>
+        <line x1="248.8" y1="228.0" x2="248.8" y2="14.0"/>
+        <line x1="276.6" y1="228.0" x2="276.6" y2="14.0"/>
+        <line x1="304.5" y1="228.0" x2="304.5" y2="14.0"/>
+        <line x1="332.3" y1="228.0" x2="332.3" y2="14.0"/>
+        <line x1="360.2" y1="228.0" x2="360.2" y2="14.0"/>
+        <line x1="388.0" y1="228.0" x2="388.0" y2="14.0"/>
+        <line x1="26.0" y1="165.1" x2="388.0" y2="165.1"/>
+        <line x1="26.0" y1="102.1" x2="388.0" y2="102.1"/>
+        <line x1="26.0" y1="39.2" x2="388.0" y2="39.2"/>
+      </g>
+      <rect x="26.0" y="83.2" width="362.0" height="37.8" fill="#10b981" fill-opacity=".16"/>
+      <line x1="26.0" y1="102.1" x2="388.0" y2="102.1" stroke="#047857" stroke-width="1.2" stroke-dasharray="5 4"/>
+      <text x="384.0" y="79.2" font-size="11" fill="#047857" text-anchor="end">2 ± 0,3</text>
+      <line x1="26.0" y1="228.0" x2="388.0" y2="228.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-49a6d)"/>
+      <line x1="26.0" y1="228.0" x2="26.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-49a6d)"/>
+      <text x="384.0" y="242.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">n</text>
+      <text x="32.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="start">aₙ</text>
+      <text x="53.8" y="241.0" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="21.0" y="169.1" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <circle cx="53.8" cy="39.2" r="4" fill="#ef4444"/>
+      <circle cx="81.7" cy="70.6" r="4" fill="#ef4444"/>
+      <circle cx="109.5" cy="81.1" r="4" fill="#ef4444"/>
+      <circle cx="137.4" cy="86.4" r="4" fill="#047857"/>
+      <circle cx="165.2" cy="89.5" r="4" fill="#047857"/>
+      <circle cx="193.1" cy="91.6" r="4" fill="#047857"/>
+      <circle cx="220.9" cy="93.1" r="4" fill="#047857"/>
+      <circle cx="248.8" cy="94.2" r="4" fill="#047857"/>
+      <circle cx="276.6" cy="95.1" r="4" fill="#047857"/>
+      <circle cx="304.5" cy="95.8" r="4" fill="#047857"/>
+      <circle cx="332.3" cy="96.4" r="4" fill="#047857"/>
+      <circle cx="360.2" cy="96.9" r="4" fill="#047857"/>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(a_n=\frac{2n+1}{n}\)</span> sorozat első tizenkét tagja. A zöld sáv a <span class="math inline">\(2\pm0{,}3\)</span> sáv: a <b>negyedik tagtól kezdve</b> minden pont benne van.</p>
+
+    <div class="doboz pelda" id="pelda-tablazat">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — határérték táblázatból</p>
+      <p>Sejtsük meg az <span class="math inline">\(a_n=\dfrac{3n-1}{n+1}\)</span> sorozat határértékét!</p><div class="tblwrap"><table class="tt-table"><tr><th><span class="math inline">\(n\)</span></th><td>1</td><td>10</td><td>100</td><td>1000</td></tr><tr><th><span class="math inline">\(a_n\)</span></th><td><span class="math inline">\(1\)</span></td><td><span class="math inline">\(\approx2{,}636\)</span></td><td><span class="math inline">\(\approx2{,}960\)</span></td><td><span class="math inline">\(\approx2{,}996\)</span></td></tr></table></div><p>A sejtés: a tagok a <span class="math inline">\(3\)</span>-hoz tartanak. Az ellenőrzés sem nehéz: <span class="math inline">\(3-a_n=\dfrac{3(n+1)-(3n-1)}{n+1}=\dfrac{4}{n+1}\)</span>, és ez a különbség tetszőlegesen kicsi lesz, ha <span class="math inline">\(n\)</span> elég nagy.</p><p><i>Véd Vilmos széljegyzete:</i> „a táblázat csak <b>sejtést</b> ad — a pontos értéket a következő lecke módszere, a kiemelés adja.”</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>Az ókori görög Zénón azt állította, hogy Akhilleusz sosem éri utol a teknőst: mire odaér, ahol a teknős volt, az már odébb jár, és így tovább, végtelen sokszor. A paradoxon feloldása épp a határérték: végtelen sok, egyre rövidebb idő összege lehet <b>véges</b>. Az ilyen összegeket a témakör utolsó leckéjében (A végtelen mértani sor) ki is számoljuk.</p>
+    </div>
+
+    <h2 id="s3">A határérték — kimondva</h2>
+
+    <p class="lead">A „közelít” szót most pontossá tesszük. A kép a sáv: rajzoljunk az <span class="math inline">\(A\)</span> szám köré akármilyen keskeny sávot — ha a sorozat tagjai <b>egy bizonyos tagtól kezdve mind</b> a sávba esnek, akkor <span class="math inline">\(A\)</span> a határérték.</p>
+
+    <div class="doboz definicio" id="def-hatarertek">
+      <p class="cim"><span class="ikon">📗</span> A sorozat határértéke</p>
+      <p>Az <span class="math inline">\((a_n)\)</span> sorozat <b>határértéke</b> az <span class="math inline">\(A\)</span> szám, ha az <span class="math inline">\(A\)</span> bármilyen kicsi környezetébe (sávjába) a sorozatnak <b>egy tagjától kezdve minden tagja</b> beleesik. Jelölése:</p><span class="math display">\[\lim_{n\to\infty}a_n=A .\]</span><p>Ilyenkor azt mondjuk, hogy a sorozat <b>konvergens</b>, és <span class="math inline">\(A\)</span>-hoz <b>tart</b>.</p>
+    </div>
+
+    <p>Az előző sorozatnál a <span class="math inline">\(2\pm0{,}3\)</span> sávba a negyedik tagtól esik minden tag, a <span class="math inline">\(2\pm0{,}1\)</span> sávba a tizenegyediktől (<span class="math inline">\(\frac1n\lt0{,}1\)</span> akkor, ha <span class="math inline">\(n\gt10\)</span>; a tizedik tag, <span class="math inline">\(2{,}1\)</span>, éppen a sáv szélén van, a szélét nem számítjuk bele). Minél keskenyebb a sáv, annál később „lép be” a sorozat — de mindig belép. A tanterv ennél a pontnál megáll: a definíció szerinti bizonyítást nem gyakoroljuk, a sáv-kép a lényeg.</p>
+
+    <div class="doboz definicio" id="def-konvergens">
+      <p class="cim"><span class="ikon">📗</span> Konvergens és divergens sorozat</p>
+      <p>Ha a sorozatnak van (véges) határértéke, <b>konvergens</b>; ha nincs, <b>divergens</b>. A divergens sorozatok két csoportja:</p><ul><li>a tagok minden határon túl nőnek (csökkennek): ilyenkor azt írjuk, hogy <span class="math inline">\(\lim a_n=+\infty\)</span> (illetve <span class="math inline">\(-\infty\)</span>), és azt mondjuk, hogy a sorozat a végtelenbe tart — például <span class="math inline">\(a_n=n^2\)</span>, illetve <span class="math inline">\(a_n=-3n\)</span>. Ez is divergencia, mert a <span class="math inline">\(+\infty\)</span> nem szám;</li><li>a tagok sem egy számhoz, sem a végtelenbe nem tartanak — például az <span class="math inline">\(a_n=(-1)^n\)</span> sorozat tagjai felváltva <span class="math inline">\(-1\)</span> és <span class="math inline">\(1\)</span> (az ilyen sorozatot <b>oszcillálónak</b> nevezzük).</li></ul>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 330 200" width="330" height="200" role="img" aria-label="Az aₙ = (−1)ⁿ sorozat pontjai felváltva −1-en és 1-en: nincs olyan szám, amelyhez egy tagtól kezdve mind közel lennének">
+      <defs><marker id="nyil-45e03" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="58.4" y1="178.0" x2="58.4" y2="14.0"/>
+        <line x1="90.9" y1="178.0" x2="90.9" y2="14.0"/>
+        <line x1="123.3" y1="178.0" x2="123.3" y2="14.0"/>
+        <line x1="155.8" y1="178.0" x2="155.8" y2="14.0"/>
+        <line x1="188.2" y1="178.0" x2="188.2" y2="14.0"/>
+        <line x1="220.7" y1="178.0" x2="220.7" y2="14.0"/>
+        <line x1="253.1" y1="178.0" x2="253.1" y2="14.0"/>
+        <line x1="285.6" y1="178.0" x2="285.6" y2="14.0"/>
+        <line x1="318.0" y1="178.0" x2="318.0" y2="14.0"/>
+        <line x1="26.0" y1="44.8" x2="318.0" y2="44.8"/>
+      </g>
+      <line x1="26.0" y1="96.0" x2="318.0" y2="96.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-45e03)"/>
+      <line x1="26.0" y1="178.0" x2="26.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-45e03)"/>
+      <text x="314.0" y="110.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">n</text>
+      <text x="32.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="start">aₙ</text>
+      <text x="58.4" y="109.0" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="21.0" y="48.8" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <circle cx="58.4" cy="147.2" r="4" fill="#f59e0b"/>
+      <circle cx="90.9" cy="44.8" r="4" fill="#f59e0b"/>
+      <circle cx="123.3" cy="147.2" r="4" fill="#f59e0b"/>
+      <circle cx="155.8" cy="44.8" r="4" fill="#f59e0b"/>
+      <circle cx="188.2" cy="147.2" r="4" fill="#f59e0b"/>
+      <circle cx="220.7" cy="44.8" r="4" fill="#f59e0b"/>
+      <circle cx="253.1" cy="147.2" r="4" fill="#f59e0b"/>
+      <circle cx="285.6" cy="44.8" r="4" fill="#f59e0b"/>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(a_n=(-1)^n\)</span> sorozat tagjai két érték között ugrálnak: nincs olyan szám, amelynek a keskeny sávjába egy tagtól kezdve mind beleesnének.</p>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A határértéknek nem kell tagnak lennie: elég, ha a tagok egy idő után bármilyen kicsi sávba beleesnek körülötte." data-nem="✘ A határértéknek nem kell a sorozat tagjának lennie, és a tagoknak nem kell elérniük. Az 1/n tagjai (1; 0,5; 0,33; 0,25; …; a 100. tag 0,01) egyre közelebb kerülnek a 0-hoz — ennyi a feltétel.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mi igaz az <span class="math inline">\(a_n=\frac1n\)</span> sorozatra?</p>
+      <div class="opciok"><button>a határértéke <span class="math inline">\(1\)</span>, mert az első tagja <span class="math inline">\(1\)</span></button><button>nincs határértéke, mert a tagok soha nem érik el a <span class="math inline">\(0\)</span>-t</button><button>a határértéke <span class="math inline">\(0\)</span>, pedig egyik tagja sem <span class="math inline">\(0\)</span></button><button>a határértéke <span class="math inline">\(0\)</span>, mert elég nagy <span class="math inline">\(n\)</span>-re a tag pontosan <span class="math inline">\(0\)</span> lesz</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Nevezetes határértékek</h2>
+
+    <p class="lead">Néhány határértéket minden számolásnál felhasználunk. Ezeket nem kell minden alkalommal újra megsejteni — a táblázatból vagy a sáv-képből azonnal látszanak.</p>
+
+    <div class="doboz tetel" id="tetel-nevezetes">
+      <p class="cim"><span class="ikon">📘</span> Nevezetes határértékek</p>
+      <ul><li>állandó sorozat: <span class="math inline">\(\lim\limits_{n\to\infty}c=c\)</span>;</li><li><span class="math inline">\(\lim\limits_{n\to\infty}\dfrac1n=0\)</span>, és általában <span class="math inline">\(\lim\limits_{n\to\infty}\dfrac{c}{n^k}=0\)</span> bármely <span class="math inline">\(c\)</span> számra és <span class="math inline">\(k\gt0\)</span> kitevőre;</li><li><span class="math inline">\(\lim\limits_{n\to\infty}n^k=+\infty\)</span>, ha <span class="math inline">\(k\gt0\)</span>;</li><li>a <span class="math inline">\(q^n\)</span> sorozat: ha <span class="math inline">\(\lvert q\rvert\lt1\)</span>, akkor <span class="math inline">\(\lim q^n=0\)</span>; ha <span class="math inline">\(q=1\)</span>, akkor <span class="math inline">\(\lim q^n=1\)</span>; ha <span class="math inline">\(q\gt1\)</span>, akkor <span class="math inline">\(\lim q^n=+\infty\)</span>; ha <span class="math inline">\(q\le-1\)</span>, a sorozat divergens (oszcillál).</li></ul>
+    </div>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th><span class="math inline">\(q\)</span></th><th><span class="math inline">\(q^1\)</span></th><th><span class="math inline">\(q^2\)</span></th><th><span class="math inline">\(q^3\)</span></th><th><span class="math inline">\(q^4\)</span></th><th>határérték</th></tr><tr><td><span class="math inline">\(\frac12\)</span></td><td><span class="math inline">\(\frac12\)</span></td><td><span class="math inline">\(\frac14\)</span></td><td><span class="math inline">\(\frac18\)</span></td><td><span class="math inline">\(\frac1{16}\)</span></td><td><span class="math inline">\(0\)</span></td></tr><tr><td><span class="math inline">\(-\frac12\)</span></td><td><span class="math inline">\(-\frac12\)</span></td><td><span class="math inline">\(\frac14\)</span></td><td><span class="math inline">\(-\frac18\)</span></td><td><span class="math inline">\(\frac1{16}\)</span></td><td><span class="math inline">\(0\)</span></td></tr><tr><td><span class="math inline">\(2\)</span></td><td><span class="math inline">\(2\)</span></td><td><span class="math inline">\(4\)</span></td><td><span class="math inline">\(8\)</span></td><td><span class="math inline">\(16\)</span></td><td><span class="math inline">\(+\infty\)</span></td></tr><tr><td><span class="math inline">\(-2\)</span></td><td><span class="math inline">\(-2\)</span></td><td><span class="math inline">\(4\)</span></td><td><span class="math inline">\(-8\)</span></td><td><span class="math inline">\(16\)</span></td><td>nincs</td></tr></table></div><p>A <span class="math inline">\(-\frac12\)</span> sora a tanulságos: a tagok előjele váltakozik, a <b>távolságuk a <span class="math inline">\(0\)</span>-tól</b> viszont feleződik — ezért a sorozat mégis a <span class="math inline">\(0\)</span>-hoz tart.</p>
+
+    <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ |q| = 1/2 < 1, ezért qⁿ → 0. Az előjel váltakozik, de a tagok távolsága a 0-tól feleződik." data-nem="✘ A váltakozó előjel még nem divergencia: a tagok (−0,5; 0,25; −0,125; …) mind közelebb kerülnek a 0-hoz. |q| < 1 esetén qⁿ → 0.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mihez tart az <span class="math inline">\(a_n=\left(-\frac12\right)^n\)</span> sorozat?</p>
+      <div class="opciok"><button>sehova, mert az előjele váltakozik</button><button>a <span class="math inline">\(-\frac12\)</span>-hez</button><button><span class="math inline">\(-\infty\)</span>-hez, mert negatív alapot hatványozunk</button><button>a <span class="math inline">\(0\)</span>-hoz</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s5">Műveletek és határozatlan alakok</h2>
+
+    <p class="lead">Konvergens sorozatokkal úgy számolhatunk, ahogy a számokkal szokás. A tételt bizonyítás nélkül mondjuk ki.</p>
+
+    <div class="doboz tetel" id="tetel-muveletek">
+      <p class="cim"><span class="ikon">📘</span> Műveletek konvergens sorozatokkal</p>
+      <p>Ha <span class="math inline">\(\lim a_n=A\)</span> és <span class="math inline">\(\lim b_n=B\)</span>, akkor</p><span class="math display">\[\lim(a_n\pm b_n)=A\pm B,\qquad \lim(a_n\cdot b_n)=A\cdot B,\qquad \lim(c\cdot a_n)=c\cdot A,\]</span><span class="math display">\[\lim\frac{a_n}{b_n}=\frac AB\quad(\text{ha }B\ne0\text{ és }b_n\ne0).\]</span><p>A továbbiakban röviden <span class="math inline">\(\lim a_n\)</span>-t írunk; ez mindig <span class="math inline">\(n\to\infty\)</span> esetén értendő.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-muveletek">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — a szabályok munkában</p>
+      <p><span class="math inline">\(\lim\left(3+\dfrac2n\right)=3+0=3\)</span>; <span class="math inline">\(\ \lim\left(5-\dfrac1{n^2}\right)\left(2+\dfrac1n\right)=5\cdot2=10\)</span>; <span class="math inline">\(\ \lim\dfrac{4-\frac1n}{2+\frac3n}=\dfrac42=2\)</span>.</p>
+    </div>
+
+    <p>Ha valamelyik sorozat a végtelenbe tart, néhány eset még egyértelmű: <span class="math inline">\(\dfrac{c}{\pm\infty}\)</span> alakú hányados a <span class="math inline">\(0\)</span>-hoz tart, <span class="math inline">\((+\infty)+(+\infty)\)</span> is <span class="math inline">\(+\infty\)</span>, és <span class="math inline">\(c\cdot(+\infty)\)</span> is végtelen, ha <span class="math inline">\(c\ne0\)</span> (az előjel a <span class="math inline">\(c\)</span>-é). Más esetekben viszont a „végeredmény” a konkrét sorozaton múlik. Ezeket <b>határozatlan alakoknak</b> nevezzük:</p><span class="math display">\[\frac{\infty}{\infty},\qquad \infty-\infty,\qquad 0\cdot\infty,\qquad \frac00,\qquad 1^{\infty}.\]</span><p>Például <span class="math inline">\(\dfrac nn\to1\)</span>, <span class="math inline">\(\dfrac{n^2}{n}\to+\infty\)</span> és <span class="math inline">\(\dfrac{n}{n^2}\to0\)</span> — mindhárom „<span class="math inline">\(\frac\infty\infty\)</span>” alakú, mégis más a határértékük. A határozatlan alakokat a következő leckék módszerei oldják fel.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda</p>
+      <p>Véd Vilmos szerint „<span class="math inline">\(\frac\infty\infty=1\)</span>, mert ami egyforma, az kiejti egymást”, és „<span class="math inline">\(\infty-\infty=0\)</span>”.</p><p>A <span class="math inline">\(\infty\)</span> nem szám, hanem annak a rövidítése, hogy valami <b>minden határon túl nő</b> — és nem mindegy, milyen gyorsan. Az <span class="math inline">\((n+5)-n\)</span> sorozat „<span class="math inline">\(\infty-\infty\)</span>” alakú, mégis <span class="math inline">\(5\)</span> a határértéke; az <span class="math inline">\(n^2-n\)</span> szintén, és ez <span class="math inline">\(+\infty\)</span>-hez tart.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ (n + 3) − n = 3 minden n-re, tehát a határérték 3. A „∞ − ∞” alak határozatlan." data-nem="✘ Mielőtt határértéket veszünk, egyszerűsítsünk: (n + 3) − n = 3. A ∞ − ∞ nem „nulla”, hanem határozatlan alak.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi a <span class="math inline">\(\lim\limits_{n\to\infty}\bigl((n+3)-n\bigr)\)</span> határérték?</p>
+      <div class="opciok"><button><span class="math inline">\(3\)</span></button><button><span class="math inline">\(0\)</span>, mert <span class="math inline">\(\infty-\infty=0\)</span></button><button><span class="math inline">\(+\infty\)</span></button><button>nincs határértéke</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-hatarertek.html#alap-1">🐶 Véd-eb nyomravezető <span class="cimke">A 1–6</span></a><a class="sav bruno" href="feladatok-hatarertek.html#kozep-1">⚔️ Maximális erőbedobás <span class="cimke">K 1–3</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/ved_vilmos.webp" alt="Véd Vilmos — a negyedik falat áttörő zsoldos" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Véd Vilmos:</b> Táblázatozni lassú, és a számológépem is lemerült. <b>Nagol:</b> Akkor jöjjön a módszer. Ha a tag egy tört, a számláló és a nevező „versenyét” egyetlen lépéssel eldönthetjük — ez a kiemelés.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">Sorozatok határértéke — témakör</span></a>
+      <a class="kov" href="tananyag-racionalis-tortek.html"><span class="irany">Következő →</span><span class="hova">Kiemelés — törtek határértéke</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

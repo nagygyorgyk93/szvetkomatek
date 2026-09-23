@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kiemelés — törtek határértéke — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Sorozatok határértéke</a> ›
+  <span class="itt">Kiemelés — törtek határértéke — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Kiemelés — törtek határértéke</h1>
+  <p class="alcim">Racionális törtek határértéke kiemeléssel, a fokszám-szabály három esete, szorzatok a törtben, és a <span class="math inline">\(\infty-\infty\)</span> alakú különbség közös nevezővel.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Végtelenbe és… Ne Tovább! · 2/5</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/ved_vilmos_w.webp" alt="Véd Vilmos — a negyedik falat áttörő zsoldos" width="1200" height="670" decoding="async"><p>📡 <b>Véd Vilmos:</b> A számláló is nő, a nevező is nő. Ki nyer? Én a számlálóra fogadok, mert szimpatikusabb. <b>Nagol:</b> Ne fogadj, hanem emeld ki a legnagyobb hatványt. Az eredményt a <b>fokszámok</b> döntik el — és ezt egyetlen sorban meg lehet mutatni.</p></div>
+
+    <h2 id="s1">Kiemelés lépésről lépésre</h2>
+
+    <p class="lead">A <span class="math inline">\(\frac{\infty}{\infty}\)</span> alakú törtnél a számlálóból a számláló, a nevezőből a nevező legmagasabb <span class="math inline">\(n\)</span>-hatványát emeljük ki. A zárójelekben a főegyütthatón kívül csak <span class="math inline">\(\frac{c}{n^k}\)</span> alakú tagok maradnak, ezek <span class="math inline">\(0\)</span>-hoz tartanak; az <span class="math inline">\(n\)</span>-hatványok egyszerűsítése után látszik, marad-e <span class="math inline">\(n\)</span> a számlálóban vagy a nevezőben.</p>
+
+    <div class="doboz pelda" id="pelda-kiemeles">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — kiemelés</p>
+      <p>Számítsuk ki a <span class="math inline">\(\lim\limits_{n\to\infty}\dfrac{6n^2-5n+1}{3n^2+4}\)</span> határértéket!</p><p>A legmagasabb hatvány <span class="math inline">\(n^2\)</span>; ezt emeljük ki számlálóból és nevezőből:</p><span class="math display">\[\frac{6n^2-5n+1}{3n^2+4}=\frac{n^2\left(6-\frac5n+\frac1{n^2}\right)}{n^2\left(3+\frac4{n^2}\right)}=\frac{6-\frac5n+\frac1{n^2}}{3+\frac4{n^2}}\ \longrightarrow\ \frac{6-0+0}{3+0}=2 .\]</span><p>Ellenőrzés táblázattal: <span class="math inline">\(n=10\)</span>-re <span class="math inline">\(\approx1{,}813\)</span>, <span class="math inline">\(n=100\)</span>-ra <span class="math inline">\(\approx1{,}983\)</span>, <span class="math inline">\(n=1000\)</span>-re <span class="math inline">\(\approx1{,}998\)</span> — a tagok valóban a <span class="math inline">\(2\)</span>-höz közelítenek.</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Miért éppen a legnagyobb hatvány?</p>
+      <p><span class="math inline">\(n=1000\)</span>-nél a számláló <span class="math inline">\(6n^2=6\,000\,000\)</span> tagja mellett az <span class="math inline">\(5n=5000\)</span> csak <span class="math inline">\(0{,}08\%\)</span>-ot jelent. Nagy <span class="math inline">\(n\)</span>-re a legmagasabb fokú tag „mindent visz”, a többi elhanyagolható — a kiemelés ezt teszi pontossá.</p>
+    </div>
+
+    <h2 id="s2">Három eset — egy szabály</h2>
+
+    <p class="lead">A kiemelés után mindig ugyanaz derül ki: csak a két <b>főtag</b> (a legmagasabb fokú tag az együtthatójával) számít.</p>
+
+    <div class="doboz tetel" id="tetel-fokszam">
+      <p class="cim"><span class="ikon">📘</span> A fokszám-szabály</p>
+      <p>Legyen a számláló <span class="math inline">\(p\)</span>-edfokú, <span class="math inline">\(a\)</span> főegyütthatóval, a nevező <span class="math inline">\(r\)</span>-edfokú, <span class="math inline">\(b\)</span> főegyütthatóval. Ekkor <span class="math inline">\(n\to\infty\)</span> esetén a tört határértéke</p><ul><li><span class="math inline">\(\dfrac ab\)</span>, ha <span class="math inline">\(p=r\)</span> (azonos fokszám);</li><li><span class="math inline">\(0\)</span>, ha <span class="math inline">\(p\lt r\)</span> (a nevező „győz”);</li><li><span class="math inline">\(+\infty\)</span> vagy <span class="math inline">\(-\infty\)</span>, ha <span class="math inline">\(p\gt r\)</span> — az előjelet az <span class="math inline">\(\dfrac ab\)</span> előjele adja.</li></ul>
+    </div>
+
+    <div class="doboz pelda" id="pelda-harom-eset">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — a másik két eset</p>
+      <p><b>a)</b> <span class="math inline">\(\lim\dfrac{4n+7}{2n^2-3}\)</span>: a számláló elsőfokú, a nevező másodfokú. Kiemelve <span class="math inline">\(\dfrac{n\left(4+\frac7n\right)}{n^2\left(2-\frac3{n^2}\right)}=\dfrac1n\cdot\dfrac{4+\frac7n}{2-\frac3{n^2}}\to0\cdot2=0\)</span>.</p><p><b>b)</b> <span class="math inline">\(\lim\dfrac{n^2-4n}{5-2n}\)</span>: a számláló magasabb fokú, tehát a határérték végtelen — de melyik? Kiemelve <span class="math inline">\(\dfrac{n^2\left(1-\frac4n\right)}{n\left(\frac5n-2\right)}=n\cdot\dfrac{1-\frac4n}{\frac5n-2}\)</span>, ahol a második tényező <span class="math inline">\(-\frac12\)</span>-hez tart, az <span class="math inline">\(n\)</span> pedig <span class="math inline">\(+\infty\)</span>-hez. A határérték <span class="math inline">\(-\infty\)</span>.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda</p>
+      <p>Véd Vilmos minden törtnél a főegyütthatók hányadosát írja: a b) példára „<span class="math inline">\(\frac{1}{-2}\)</span>”-t.</p><p>Ez <b>csak azonos fokszámnál</b> igaz. Előbb mindig a fokszámokat hasonlítjuk össze, és ha a számláló a magasabb fokú, a végtelen <b>előjelére</b> is figyelünk: itt a számláló főtagja pozitív (<span class="math inline">\(n^2\)</span>), a nevezőé negatív (<span class="math inline">\(-2n\)</span>), ezért <span class="math inline">\(-\infty\)</span> az eredmény.</p>
+    </div>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A nevező harmadfokú, a számláló csak másodfokú: a nevező „győz”, a határérték 0." data-nem="✘ A 3/6 = 1/2 csak azonos fokszámnál lenne jó. Itt a nevező magasabb fokú, ezért a tört a 0-hoz tart.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi a <span class="math inline">\(\lim\limits_{n\to\infty}\dfrac{3n^2+1}{6n^3-n}\)</span> határérték?</p>
+      <div class="opciok"><button><span class="math inline">\(2\)</span></button><button><span class="math inline">\(+\infty\)</span></button><button><span class="math inline">\(0\)</span></button><button><span class="math inline">\(\frac12\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Szorzat és hatvány a törtben</h2>
+
+    <p class="lead">Ha a számlálóban vagy a nevezőben szorzat vagy hatvány áll, nem kell mindent kibontani: elég a <b>főtagokat</b> összeszorozni.</p>
+
+    <div class="doboz pelda" id="pelda-szorzat">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — főtagok szorzata</p>
+      <p><b>a)</b> <span class="math inline">\(\lim\dfrac{(3n-1)^2}{(n+2)(2n+5)}\)</span>: a számláló főtagja <span class="math inline">\((3n)^2=9n^2\)</span>, a nevezőé <span class="math inline">\(n\cdot2n=2n^2\)</span>. Azonos fokszám, tehát a határérték <span class="math inline">\(\dfrac92\)</span>.</p><p><b>b)</b> <span class="math inline">\(\lim\dfrac{(1-2n)^3}{4n^3+1}\)</span>: a számláló főtagja <span class="math inline">\((-2n)^3=-8n^3\)</span>, így a határérték <span class="math inline">\(\dfrac{-8}{4}=-2\)</span>.</p>
+    </div>
+
+    <h2 id="s4">Két tört különbsége: <span class="math inline">\(\infty-\infty\)</span></h2>
+
+    <p class="lead">Ha két, külön-külön a végtelenbe tartó tört különbsége a kérdés, a „<span class="math inline">\(\infty-\infty\)</span>” alak határozatlan. A megoldás: <b>közös nevezőre hozunk</b>, és az így kapott egyetlen törtre alkalmazzuk a fokszám-szabályt. Ez a témakör legnehezebb számolása.</p>
+
+    <div class="doboz pelda" id="pelda-kulonbseg">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — közös nevezővel</p>
+      <p>Számítsuk ki: <span class="math inline">\(\lim\limits_{n\to\infty}\left(\dfrac{3n^2+1}{n+2}-\dfrac{3n^2-n}{n+1}\right)\)</span>.</p><p>Mindkét tört <span class="math inline">\(+\infty\)</span>-hez tart, tehát közös nevezőre hozunk:</p><span class="math display">\[\frac{(3n^2+1)(n+1)-(3n^2-n)(n+2)}{(n+2)(n+1)} .\]</span><p>A számlálóban a harmadfokú tagok kiesnek: <span class="math inline">\((3n^3+3n^2+n+1)-(3n^3+5n^2-2n)=-2n^2+3n+1\)</span>. A nevező <span class="math inline">\(n^2+3n+2\)</span>. Így</p><span class="math display">\[\lim\frac{-2n^2+3n+1}{n^2+3n+2}=\frac{-2}{1}=-2 .\]</span>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda</p>
+      <p>„Mindkét tört a végtelenbe tart, a különbségük tehát <span class="math inline">\(\infty-\infty=0\)</span>” — írja Véd Vilmos.</p><p>A két tört nagyjából ugyanolyan gyorsan nő (mindkettő körülbelül <span class="math inline">\(3n\)</span>), de nem pontosan egyformán: a különbségük itt <span class="math inline">\(-2\)</span>-höz tart. Határozatlan alaknál <b>soha nem</b> vesszük külön a két tag határértékét — előbb átalakítunk.</p>
+    </div>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Közös nevezővel: (n² − n² − n)/(n + 1) = −n/(n + 1) → −1." data-nem="✘ A ∞ − ∞ határozatlan alak. Közös nevezőre hozva a különbség −n/(n + 1), és ez a −1-hez tart.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi a <span class="math inline">\(\lim\limits_{n\to\infty}\left(\dfrac{n^2}{n+1}-n\right)\)</span> határérték?</p>
+      <div class="opciok"><button><span class="math inline">\(1\)</span></button><button><span class="math inline">\(+\infty\)</span></button><button><span class="math inline">\(-1\)</span></button><button><span class="math inline">\(0\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <p class="lead">⚔️ <b>Az ötösért:</b> a <span class="math inline">\(\infty-\infty\)</span> alakú különbségek — <a href="feladatok-hatarertek.html#nehez-1">Zsoldos-lista, nehéz 1–3</a>.</p>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-hatarertek.html#alap-7">🐶 Véd-eb nyomravezető <span class="cimke">A 7–14</span></a><a class="sav bruno" href="feladatok-hatarertek.html#kozep-4">⚔️ Maximális erőbedobás <span class="cimke">K 4–6</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/ved_vilmos.webp" alt="Véd Vilmos — a negyedik falat áttörő zsoldos" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Véd Vilmos:</b> Kiemelni már tudok. De mi van, ha a nevezőben egy gyökjel ül, és onnan néz rám? <b>Nagol:</b> Akkor a gyökjel alól is kiemelünk — ugyanaz a verseny, csak álcában.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-hatarertek-fogalma.html"><span class="irany">← Előző</span><span class="hova">A sorozat határértéke</span></a>
+      <a class="kov" href="tananyag-gyokos-kifejezesek.html"><span class="irany">Következő →</span><span class="hova">Gyökös kifejezések határértéke</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
