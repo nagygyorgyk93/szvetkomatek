@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Az érintő és a változás üteme — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">A függvény deriváltja</a> ›
+  <span class="itt">Az érintő és a változás üteme — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Az érintő és a változás üteme</h1>
+  <p class="alcim">Az érintő és a normális egyenlete, adott meredekségű érintő, a derivált mint változási sebesség.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Pillanatnyi Káosz · 3/8</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Nagol</b> egy görbe pályán pörgeti a dobócsillagot: Merre repül tovább, ha elengedem? <b>Az érintő mentén.</b> <b>Véd Vilmos:</b> Én mindig merőlegesen dobok. <b>Nagol:</b> Az a <b>normális</b> — azt is felírjuk. A kulcs mindkettőhöz ugyanaz: a derivált az érintő meredeksége.</p></div>
+
+    <h2 id="s1">Az érintő egyenlete</h2>
+
+    <p class="lead">Egy egyenest egy pontja és a meredeksége meghatároz: <span class="math inline">\(y-y_1=m(x-x_1)\)</span> (3e: <a href="../../3e/05-analitikus-geometria/tananyag-egyenes-egyenlete.html#def-iranytenyezo">az egyenes egyenlete</a>). Az érintőnél a pont az érintési pont, a meredekség a derivált.</p>
+
+    <div class="doboz tetel" id="tetel-erinto">
+      <p class="cim"><span class="ikon">📘</span> Az érintő egyenlete</p>
+      <p>Az <span class="math inline">\(f\)</span> függvény grafikonjának <span class="math inline">\(T\big(x_0;\,y_0\big)\)</span> pontjába húzott érintője, ahol <span class="math inline">\(y_0=f(x_0)\)</span>:</p><span class="math display">\[y-y_0=f'(x_0)\,(x-x_0).\]</span><p>A lépések: <b>1.</b> <span class="math inline">\(y_0=f(x_0)\)</span> · <b>2.</b> <span class="math inline">\(f'(x)\)</span> · <b>3.</b> <span class="math inline">\(m=f'(x_0)\)</span> · <b>4.</b> az egyenlet, rendezve <span class="math inline">\(y=mx+b\)</span> alakra.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-erinto">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — érintő a <span class="math inline">\(T(3;\,y)\)</span> pontban</p>
+      <p>Legyen <span class="math inline">\(f(x)=x^2-4x+5\)</span> és <span class="math inline">\(x_0=3\)</span>.</p><ol><li><span class="math inline">\(y_0=f(3)=9-12+5=2\)</span>, tehát <span class="math inline">\(T(3;\,2)\)</span>.</li><li><span class="math inline">\(f'(x)=2x-4\)</span>.</li><li><span class="math inline">\(m=f'(3)=2\)</span>.</li><li><span class="math inline">\(y-2=2(x-3)\)</span>, vagyis <span class="math inline">\(y=2x-4\)</span>.</li></ol><p><i>Véd Vilmos széljegyzete:</i> „ha a pont második koordinátája <span class="math inline">\(y\)</span> — azt nekem kell kiszámolni. Az első lépés, nem az utolsó.”</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 360 250" width="360" height="250" role="img" aria-label="Az f(x) = x² − 4x + 5 parabola, a T(3; 2) pontbeli érintője (y = 2x − 4) és normálisa (y = −x/2 + 7/2)">
+      <defs><marker id="nyil" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="109.1" y1="228.0" x2="109.1" y2="14.0"/>
+        <line x1="161.0" y1="228.0" x2="161.0" y2="14.0"/>
+        <line x1="213.0" y1="228.0" x2="213.0" y2="14.0"/>
+        <line x1="264.9" y1="228.0" x2="264.9" y2="14.0"/>
+        <line x1="316.8" y1="228.0" x2="316.8" y2="14.0"/>
+        <line x1="26.0" y1="173.0" x2="348.0" y2="173.0"/>
+        <line x1="26.0" y1="142.4" x2="348.0" y2="142.4"/>
+        <line x1="26.0" y1="111.8" x2="348.0" y2="111.8"/>
+        <line x1="26.0" y1="81.3" x2="348.0" y2="81.3"/>
+        <line x1="26.0" y1="50.7" x2="348.0" y2="50.7"/>
+        <line x1="26.0" y1="20.1" x2="348.0" y2="20.1"/>
+      </g>
+      <line x1="26.0" y1="203.5" x2="348.0" y2="203.5" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <line x1="57.2" y1="228.0" x2="57.2" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <text x="344.0" y="217.5" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="49.2" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="109.1" y="216.5" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="52.2" y="177.0" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <polyline points="46.8,25.0 49.3,31.4 51.8,37.6 54.3,43.7 56.7,49.7 59.2,55.5 61.7,61.2 64.2,66.8 66.7,72.2 69.2,77.4 71.7,82.5 74.2,87.5 76.7,92.3 79.2,97.0 81.7,101.6 84.2,106.0 86.7,110.3 89.2,114.4 91.6,118.4 94.1,122.3 96.6,126.0 99.1,129.5 101.6,133.0 104.1,136.2 106.6,139.4 109.1,142.4 111.6,145.3 114.1,148.0 116.6,150.6 119.1,153.0 121.6,155.3 124.1,157.5 126.5,159.5 129.0,161.4 131.5,163.1 134.0,164.7 136.5,166.2 139.0,167.5 141.5,168.6 144.0,169.7 146.5,170.6 149.0,171.3 151.5,171.9 154.0,172.4 156.5,172.7 159.0,172.9 161.4,173.0 163.9,172.9 166.4,172.6 168.9,172.3 171.4,171.7 173.9,171.1 176.4,170.3 178.9,169.4 181.4,168.3 183.9,167.1 186.4,165.7 188.9,164.2 191.4,162.5 193.9,160.8 196.3,158.8 198.8,156.8 201.3,154.6 203.8,152.2 206.3,149.7 208.8,147.1 211.3,144.3 213.8,141.4 216.3,138.4 218.8,135.2 221.3,131.8 223.8,128.4 226.3,124.7 228.8,121.0 231.2,117.1 233.7,113.1 236.2,108.9 238.7,104.6 241.2,100.1 243.7,95.5 246.2,90.7 248.7,85.9 251.2,80.8 253.7,75.7 256.2,70.4 258.7,64.9 261.2,59.3 263.7,53.6 266.1,47.7 268.6,41.7 271.1,35.6 273.6,29.3 276.1,22.8 278.6,16.3 281.1,9.6 283.6,2.7" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="131.3,238.5 133.3,236.2 135.3,233.9 137.2,231.5 139.2,229.2 141.2,226.9 143.2,224.6 145.1,222.3 147.1,219.9 149.1,217.6 151.1,215.3 153.0,213.0 155.0,210.6 157.0,208.3 159.0,206.0 160.9,203.7 162.9,201.3 164.9,199.0 166.8,196.7 168.8,194.4 170.8,192.0 172.8,189.7 174.7,187.4 176.7,185.1 178.7,182.8 180.7,180.4 182.6,178.1 184.6,175.8 186.6,173.5 188.6,171.1 190.5,168.8 192.5,166.5 194.5,164.2 196.5,161.8 198.4,159.5 200.4,157.2 202.4,154.9 204.3,152.5 206.3,150.2 208.3,147.9 210.3,145.6 212.2,143.3 214.2,140.9 216.2,138.6 218.2,136.3 220.1,134.0 222.1,131.6 224.1,129.3 226.1,127.0 228.0,124.7 230.0,122.3 232.0,120.0 233.9,117.7 235.9,115.4 237.9,113.1 239.9,110.7 241.8,108.4 243.8,106.1 245.8,103.8 247.8,101.4 249.7,99.1 251.7,96.8 253.7,94.5 255.7,92.1 257.6,89.8 259.6,87.5 261.6,85.2 263.6,82.8 265.5,80.5 267.5,78.2 269.5,75.9 271.4,73.6 273.4,71.2 275.4,68.9 277.4,66.6 279.3,64.3 281.3,61.9 283.3,59.6 285.3,57.3 287.2,55.0 289.2,52.6 291.2,50.3 293.2,48.0 295.1,45.7 297.1,43.3 299.1,41.0 301.1,38.7 303.0,36.4 305.0,34.1 307.0,31.7 308.9,29.4 310.9,27.1 312.9,24.8 314.9,22.4 316.8,20.1" fill="none" stroke="#047857" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="67.5,99.6 70.2,100.4 72.9,101.2 75.7,102.0 78.4,102.8 81.1,103.6 83.8,104.4 86.5,105.2 89.2,106.0 91.9,106.8 94.6,107.5 97.3,108.3 100.0,109.1 102.7,109.9 105.4,110.7 108.1,111.5 110.8,112.3 113.5,113.1 116.2,113.9 118.9,114.7 121.6,115.5 124.3,116.3 127.0,117.1 129.7,117.9 132.4,118.7 135.1,119.5 137.8,120.3 140.5,121.1 143.2,121.9 145.9,122.7 148.6,123.4 151.3,124.2 154.0,125.0 156.7,125.8 159.4,126.6 162.1,127.4 164.8,128.2 167.5,129.0 170.2,129.8 172.9,130.6 175.6,131.4 178.3,132.2 181.0,133.0 183.7,133.8 186.4,134.6 189.1,135.4 191.8,136.2 194.5,137.0 197.2,137.8 199.9,138.5 202.6,139.3 205.3,140.1 208.0,140.9 210.7,141.7 213.4,142.5 216.1,143.3 218.8,144.1 221.5,144.9 224.2,145.7 226.9,146.5 229.6,147.3 232.3,148.1 235.0,148.9 237.7,149.7 240.4,150.5 243.1,151.3 245.8,152.1 248.5,152.9 251.2,153.7 253.9,154.4 256.6,155.2 259.3,156.0 262.0,156.8 264.7,157.6 267.4,158.4 270.1,159.2 272.8,160.0 275.5,160.8 278.2,161.6 280.9,162.4 283.6,163.2 286.3,164.0 289.0,164.8 291.7,165.6 294.4,166.4 297.1,167.2 299.8,168.0 302.5,168.8 305.2,169.5 307.9,170.3 310.6,171.1 313.3,171.9 316.0,172.7 318.7,173.5 321.4,174.3 324.1,175.1 326.8,175.9 329.5,176.7 332.2,177.5 334.9,178.3 337.6,179.1" fill="none" stroke="#7c3aed" stroke-width="1.6" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="213.0" cy="142.4" r="4" fill="#0f172a"/>
+      <text x="221.0" y="156.4" font-size="11" fill="#0f172a" font-weight="600">T(3; 2)</text>
+      <rect x="166" y="13" width="188" height="57" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="170" y1="22" x2="188" y2="22" stroke="#3b82f6" stroke-width="2.4"/>
+      <text x="193" y="26" font-size="11" fill="#0f172a">f(x) = x² − 4x + 5</text>
+      <line x1="170" y1="39" x2="188" y2="39" stroke="#047857" stroke-width="2.4"/>
+      <text x="193" y="43" font-size="11" fill="#0f172a">érintő: y = 2x − 4</text>
+      <line x1="170" y1="56" x2="188" y2="56" stroke="#7c3aed" stroke-width="2.4" stroke-dasharray="5 3"/>
+      <text x="193" y="60" font-size="11" fill="#0f172a">normális: y = −x/2 + 7/2</text>
+    </svg>
+    </div>
+    <p class="cap">A parabola, az érintője és a normálisa a <span class="math inline">\(T(3;\,2)\)</span> pontban.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda</p>
+      <p>Véd Vilmos az <span class="math inline">\(f'(x_0)\)</span> szám helyére a derivált <b>képletét</b> írja: <span class="math inline">\(y-2=(2x-4)(x-3)\)</span>. Ez másodfokú — nem egyenes, tehát nem is érintő.</p><p><b>A meredekség egyetlen szám</b>: a deriváltat előbb az <span class="math inline">\(x_0\)</span> helyen ki kell számolni. Gyakori rokon hiba: <span class="math inline">\(y_0\)</span> helyére <span class="math inline">\(f'(x_0)\)</span> kerül.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ f′(x) = 3x², f′(1) = 3, így y − 1 = 3(x − 1), azaz y = 3x − 2." data-nem="✘ Az érintő egyenes: a meredeksége a szám f′(1) = 3 (nem a 3x² képlet), és át kell mennie a (1; 1) ponton. y − 1 = 3(x − 1) → y = 3x − 2.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mi az <span class="math inline">\(f(x)=x^3\)</span> grafikonjának <span class="math inline">\(T(1;\,1)\)</span> pontjába húzott érintő egyenlete?</p>
+      <div class="opciok"><button><span class="math inline">\(y=3x-2\)</span></button><button><span class="math inline">\(y=3x^2\)</span></button><button><span class="math inline">\(y=3x\)</span></button><button><span class="math inline">\(y=3x^2-2\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">A normális</h2>
+
+    <div class="doboz definicio" id="def-normalis">
+      <p class="cim"><span class="ikon">📗</span> A normális</p>
+      <p>A grafikon <span class="math inline">\(T(x_0;\,y_0)\)</span> pontbeli <b>normálisa</b> az a <span class="math inline">\(T\)</span>-n átmenő egyenes, amely az ottani érintőre merőleges. Merőleges egyenesek meredekségének szorzata <span class="math inline">\(-1\)</span> (<a href="../../3e/05-analitikus-geometria/tananyag-ket-egyenes.html#tetel-parhuzamos-meroleges">két egyenes helyzete</a>), ezért ha <span class="math inline">\(f'(x_0)\ne0\)</span>:</p><span class="math display">\[y-y_0=-\frac{1}{f'(x_0)}\,(x-x_0).\]</span><p>Ha <span class="math inline">\(f'(x_0)=0\)</span>, az érintő vízszintes (<span class="math inline">\(y=y_0\)</span>), a normális függőleges (<span class="math inline">\(x=x_0\)</span>).</p>
+    </div>
+
+    <p>Az előző példában <span class="math inline">\(m=2\)</span>, így a normális meredeksége <span class="math inline">\(-\frac12\)</span>: <span class="math inline">\(y-2=-\frac12(x-3)\)</span>, vagyis <span class="math inline">\(y=-\frac12x+\frac72\)</span> (az ábrán szaggatott vonal).</p>
+
+    <h2 id="s3">Adott meredekségű érintő</h2>
+
+    <p class="lead">Néha fordítva kérdezünk: <b>hol</b> lesz az érintő meredeksége egy adott szám? Ehhez az <span class="math inline">\(f'(x)=m\)</span> <b>egyenletet</b> kell megoldani.</p><p><b>Párhuzamos egy egyenessel.</b> Hol párhuzamos az <span class="math inline">\(f(x)=x^3-3x^2\)</span> grafikonjának érintője az <span class="math inline">\(y=9x\)</span> egyenessel? A párhuzamos egyenesek meredeksége egyenlő, tehát <span class="math inline">\(f'(x)=3x^2-6x=9\)</span>, azaz <span class="math inline">\(x^2-2x-3=0\)</span>, ahonnan <span class="math inline">\(x=3\)</span> vagy <span class="math inline">\(x=-1\)</span>. Az érintési pontok <span class="math inline">\((3;\,0)\)</span> és <span class="math inline">\((-1;\,-4)\)</span>, az érintők <span class="math inline">\(y=9x-27\)</span> és <span class="math inline">\(y=9x+5\)</span>.</p><p><b>Vízszintes érintő.</b> Ekkor <span class="math inline">\(m=0\)</span>: <span class="math inline">\(3x^2-6x=0\)</span>, tehát <span class="math inline">\(x=0\)</span> vagy <span class="math inline">\(x=2\)</span> — a <span class="math inline">\((0;\,0)\)</span> és a <span class="math inline">\((2;\,-4)\)</span> pontban. Ezek a helyek a függvényvizsgálatban kulcsszerepet kapnak (szélsőérték-gyanús helyek).</p>
+
+    <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ Vízszintes érintő: f′(x) = 2x − 6 = 0, tehát x = 3 — a parabola csúcsában." data-nem="✘ Az 1 és az 5 a zérushelyek (ahol f(x) = 0) — ott a görbe metszi az x tengelyt, de ferdén. A vízszintes érintőhöz a DERIVÁLT kell nullának lennie: 2x − 6 = 0, x = 3.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Hol vízszintes az <span class="math inline">\(f(x)=x^2-6x+5\)</span> grafikonjának érintője?</p>
+      <div class="opciok"><button>az <span class="math inline">\(x=1\)</span> és az <span class="math inline">\(x=5\)</span> helyen</button><button>az <span class="math inline">\(x=0\)</span> helyen</button><button>sehol</button><button>az <span class="math inline">\(x=3\)</span> helyen</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">A derivált mint változási sebesség</h2>
+
+    <p class="lead">Ha egy mennyiség az időtől függ, a deriváltja megmondja, <b>milyen gyorsan változik</b> abban a pillanatban. A mértékegysége: a mennyiség egysége osztva az idő egységével.</p>
+
+    <div class="doboz pelda" id="pelda-sebesseg">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — pillanatnyi sebesség és hűlési ütem</p>
+      <p><b>Út–idő.</b> Egy ügynök <span class="math inline">\(t\)</span> másodperc alatt <span class="math inline">\(s(t)=2t^2+3t\)</span> métert fut. A sebessége <span class="math inline">\(v(t)=s'(t)=4t+3\)</span>, így a 2. másodpercben <span class="math inline">\(v(2)=11\ \tfrac{\text{m}}{\text{s}}\)</span>. (Az első két másodperc <b>átlagsebessége</b> csak <span class="math inline">\(\frac{s(2)}{2}=\frac{14}{2}=7\ \tfrac{\text{m}}{\text{s}}\)</span>.)</p><p><b>Hőmérséklet.</b> Egy bögre tea hőmérséklete <span class="math inline">\(t\)</span> perc után <span class="math inline">\(T(t)=80-4t+0{,}05t^2\)</span> °C (<span class="math inline">\(0\le t\le40\)</span>). <span class="math inline">\(T'(t)=-4+0{,}1t\)</span>, így <span class="math inline">\(T'(10)=-3\)</span>: a 10. percben a tea percenként kb. 3 fokot hűl. A negatív előjel a csökkenést jelzi.</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>Az autó sebességmérője és a „pillanatnyi fogyasztás” kijelzője egyaránt deriváltat mutat. Grafikonról is le lehet olvasni: az idő–mennyiség görbe érintőjének meredeksége a változás üteme az adott pillanatban.</p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-derivalas.html#alap-10">🐶 Véd-eb nyomravezető <span class="cimke">A 10–13</span></a><a class="sav bruno" href="feladatok-derivalas.html#kozep-6">⚔️ Maximális erőbedobás <span class="cimke">K 6–8</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/ved_vilmos.webp" alt="Véd Vilmos — a negyedik falat áttörő zsoldos" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Véd Vilmos:</b> Eddig csak „tisztességes” függvényeket deriváltunk. Mi van, ha egy függvény belsejében egy másik függvény lakik, mint a <span class="math inline">\(\sqrt{x^2+4}\)</span>-ben? <b>Nagol:</b> Az egy matrjoska. Szétszedjük — rétegenként.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-derivalasi-szabalyok.html"><span class="irany">← Előző</span><span class="hova">A deriválás szabályai</span></a>
+      <a class="kov" href="tananyag-osszetett-fuggveny.html"><span class="irany">Következő →</span><span class="hova">Az összetett függvény deriváltja</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

@@ -345,6 +345,110 @@ def svg_egysegkor(szogek=(), w=340, h=340, leiras="A trigonometrikus kör",
     return "\n".join(ki)
 
 
+# ------------------------------------------------------------------ interaktív ábra
+_IV_SZAMLALO = [0]
+
+
+def _poly(a, x):
+    v = 0.0
+    for c in reversed(a):
+        v = v * x + c
+    return v
+
+
+def _poly_d(a):
+    return [i * a[i] for i in range(1, len(a))] or [0.0]
+
+
+def _fmt(v):
+    r = round(v * 100) / 100
+    if abs(r) < 0.005:
+        r = 0.0
+    s = str(int(round(r))) if abs(r - round(r)) < 1e-9 else f"{r:.2f}"
+    return s.replace(".", ",").replace("-", "−")
+
+
+def svg_interaktiv(mod, poly, *, xr, yr, x0=0.0, csuszka=(-2.0, 2.0, 0.01, 1.0), w=360, h=250,
+                   gorbe_cimke="f", f2=False, felirat="", leiras="Interaktív függvényábra",
+                   pont_cimke="P", szin="#2563eb"):
+    """Interaktív ábra (új kánon, 2026-09-24): statikus SVG = az első képkocka + csúszka + élő kijelző.
+
+    `mod`: "szelo" (rögzített P, a csúszka Δx-et állít) vagy "erinto" (a csúszka x0-t mozgatja).
+    `poly` = [a0, a1, a2, …] — a polinom együtthatói (a0 + a1·x + …); a JS nem használ eval-t.
+    `csuszka` = (min, max, lépés, kezdőérték). A logikát az `assets/js/interaktiv.js` adja (közös modul).
+    A kezdőállapotot itt, Pythonban számoljuk ugyanúgy, mint a JS — JS nélkül is értelmes kép.
+    """
+    _IV_SZAMLALO[0] += 1
+    n = _IV_SZAMLALO[0]
+    a = [float(c) for c in poly]
+    d1 = _poly_d(a)
+    d2 = _poly_d(d1)
+    lo, hi, lepes, kezdo = csuszka
+    bal, jobb, fent, lent = 26, 12, 14, 22
+    px, py = w - bal - jobb, h - fent - lent
+
+    def X(x):
+        return bal + (x - xr[0]) / (xr[1] - xr[0]) * px
+
+    def Y(y):
+        return fent + (yr[1] - y) / (yr[1] - yr[0]) * py
+
+    alap = svg_fuggvenyek([(lambda t: _poly(a, t), "#0f172a", gorbe_cimke, [(xr[0], xr[1])])],
+                          xr=xr, yr=yr, w=w, h=h, jelmagyarazat=False, leiras=leiras)
+    clip = f"ivc{n}"
+    ki = [f'  <defs><clipPath id="{clip}"><rect x="{bal}" y="{fent}" width="{px}" height="{py}"/></clipPath></defs>']
+
+    def egyenes_attr(xa, ya, m):
+        return (f'x1="{X(xr[0]):.1f}" y1="{Y(ya + m * (xr[0] - xa)):.1f}" '
+                f'x2="{X(xr[1]):.1f}" y2="{Y(ya + m * (xr[1] - xa)):.1f}"')
+
+    if mod == "szelo":
+        yP = _poly(a, x0)
+        m0 = _poly(d1, x0)
+        xQ = x0 + kezdo
+        yQ = _poly(a, xQ)
+        m = (yQ - yP) / kezdo
+        ki.append(f'  <line class="iv-erinto-halvany" {egyenes_attr(x0, yP, m0)} stroke="#047857" '
+                  f'stroke-width="1.3" stroke-dasharray="5 4" opacity=".7" clip-path="url(#{clip})"/>')
+        ki.append(f'  <line class="iv-egyenes" {egyenes_attr(x0, yP, m)} stroke="{szin}" stroke-width="2" '
+                  f'clip-path="url(#{clip})"/>')
+        ki.append(f'  <circle class="iv-Q" cx="{X(xQ):.1f}" cy="{Y(yQ):.1f}" r="4.5" fill="{szin}"/>')
+        ki.append(f'  <text class="iv-Q-cimke" x="{X(xQ) + 7:.1f}" y="{Y(yQ) - 7:.1f}" font-size="12" '
+                  f'font-weight="600" fill="{szin}">Q</text>')
+        ki.append(f'  <circle class="iv-P" cx="{X(x0):.1f}" cy="{Y(yP):.1f}" r="4.5" fill="#0f172a"/>')
+        ki.append(f'  <text x="{X(x0) - 16:.1f}" y="{Y(yP) - 8:.1f}" font-size="12" font-weight="600" '
+                  f'fill="#0f172a">{pont_cimke}</text>')
+        cimke = "Δx"
+        kijelzo = (f"Δx = {_fmt(kezdo)},  Δy = {_fmt(yQ - yP)},  a szelő meredeksége Δy/Δx = {_fmt(m)}.")
+    else:
+        y0 = _poly(a, kezdo)
+        m1 = _poly(d1, kezdo)
+        m2 = _poly(d2, kezdo)
+        sz = "#047857" if m1 > 0.01 else ("#dc2626" if m1 < -0.01 else "#64748b")
+        ki.append(f'  <line class="iv-egyenes" {egyenes_attr(kezdo, y0, m1)} stroke="{sz}" stroke-width="2" '
+                  f'clip-path="url(#{clip})"/>')
+        ki.append(f'  <circle class="iv-P" cx="{X(kezdo):.1f}" cy="{Y(y0):.1f}" r="4.5" fill="#0f172a"/>')
+        cimke = "x₀"
+        mon = ("pozitív → itt a függvény nő" if m1 > 0.01 else
+               "negatív → itt a függvény csökken" if m1 < -0.01 else "0 → vízszintes érintő (stacionárius hely)")
+        kijelzo = f"x₀ = {_fmt(kezdo)}:  f′(x₀) = {_fmt(m1)}, {mon}."
+        if f2:
+            gorb = ("pozitív → konvex (∪), a görbe az érintő fölött van" if m2 > 0.01 else
+                    "negatív → konkáv (∩), a görbe az érintő alatt van" if m2 < -0.01 else
+                    "0 → itt válthat a görbülés (inflexió?)")
+            kijelzo += f"  f″(x₀) = {_fmt(m2)}, {gorb}."
+    svg = alap.replace("</svg>", "\n".join(ki) + "\n</svg>")
+    attr = (f'data-mod="{mod}" data-poly="{",".join(repr(c) for c in a)}" data-xr="{xr[0]},{xr[1]}" '
+            f'data-yr="{yr[0]},{yr[1]}" data-w="{w}" data-h="{h}" data-x0="{x0}"' + (' data-f2="1"' if f2 else ""))
+    cap = f'\n<p class="cap">{felirat}</p>' if felirat else ""
+    return (f'<div class="svgcard interaktiv" {attr}>\n{svg}\n'
+            f'<div class="iv-vezerlo"><label for="iv{n}">{cimke} = <span class="iv-ertek">{_fmt(kezdo)}</span></label>'
+            f'<input type="range" id="iv{n}" min="{lo}" max="{hi}" step="{lepes}" value="{kezdo}" '
+            f'aria-describedby="ivk{n}"></div>\n'
+            f'<p class="iv-kijelzo" id="ivk{n}" aria-live="polite">{kijelzo}</p>\n</div>{cap}\n'
+            f'<script src="../../assets/js/interaktiv.js"></script>')
+
+
 # ------------------------------------------------------------------ oldalváz
 
 VAZ = """<!DOCTYPE html>

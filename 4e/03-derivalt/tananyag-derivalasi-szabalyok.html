@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A deriválás szabályai — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">A függvény deriváltja</a> ›
+  <span class="itt">A deriválás szabályai — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A deriválás szabályai</h1>
+  <p class="alcim">A deriválttáblázat, a konstansszoros és az összeg, a szorzat és a hányados deriváltja, helyettesítési érték.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Pillanatnyi Káosz · 2/8</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/ved_vilmos_w.webp" alt="Véd Vilmos — a negyedik falat áttörő zsoldos" width="1200" height="670" decoding="async"><p>📡 <b>Véd Vilmos:</b> Minden deriváltat definícióból számolok. A harmadiknál elfogyott a papír, a negyediknél a türelmem. <b>Nagol</b> elővesz egy gyűrött lapot: Ez a <b>Csalópapír</b>. Newton óta mindenki ezt használja — a vizsgán is. Egy táblázat az alapfüggvényekről, és négy szabály arra, hogyan kell összerakni őket.</p></div>
+
+    <h2 id="s1">Az elemi függvények deriváltjai</h2>
+
+    <div class="doboz tetel" id="tetel-derivalt-tablazat">
+      <p class="cim"><span class="ikon">📘</span> A deriválttáblázat</p>
+      <div class="tblwrap"><table class="tt-table"><tr><th><span class="math inline">\(f(x)\)</span></th><th><span class="math inline">\(f'(x)\)</span></th><th>megjegyzés</th></tr><tr><td><span class="math inline">\(c\)</span> (állandó)</td><td><span class="math inline">\(0\)</span></td><td>a vízszintes egyenes meredeksége <span class="math inline">\(0\)</span></td></tr><tr><td><span class="math inline">\(x^n\)</span></td><td><span class="math inline">\(n\,x^{n-1}\)</span></td><td>bármely valós <span class="math inline">\(n\)</span>-re (ahol értelmezett)</td></tr><tr><td><span class="math inline">\(\sqrt x\)</span></td><td><span class="math inline">\(\dfrac{1}{2\sqrt x}\)</span></td><td><span class="math inline">\(x\gt0\)</span>; ez az <span class="math inline">\(n=\frac12\)</span> eset</td></tr><tr><td><span class="math inline">\(\dfrac1x\)</span></td><td><span class="math inline">\(-\dfrac{1}{x^2}\)</span></td><td><span class="math inline">\(x\ne0\)</span>; ez az <span class="math inline">\(n=-1\)</span> eset</td></tr><tr><td><span class="math inline">\(\sin x\)</span></td><td><span class="math inline">\(\cos x\)</span></td><td></td></tr><tr><td><span class="math inline">\(\cos x\)</span></td><td><span class="math inline">\(-\sin x\)</span></td><td>vigyázz az előjelre!</td></tr><tr><td><span class="math inline">\(\operatorname{tg} x\)</span></td><td><span class="math inline">\(\dfrac{1}{\cos^2 x}\)</span></td><td><span class="math inline">\(\cos x\ne0\)</span></td></tr><tr><td><span class="math inline">\(\operatorname{ctg} x\)</span></td><td><span class="math inline">\(-\dfrac{1}{\sin^2 x}\)</span></td><td><span class="math inline">\(\sin x\ne0\)</span></td></tr><tr><td><span class="math inline">\(e^x\)</span></td><td><span class="math inline">\(e^x\)</span></td><td>önmaga deriváltja</td></tr><tr><td><span class="math inline">\(a^x\)</span></td><td><span class="math inline">\(a^x\ln a\)</span></td><td><span class="math inline">\(a\gt0\)</span>, <span class="math inline">\(a\ne1\)</span></td></tr><tr><td><span class="math inline">\(\ln x\)</span></td><td><span class="math inline">\(\dfrac1x\)</span></td><td><span class="math inline">\(x\gt0\)</span></td></tr><tr><td><span class="math inline">\(\log_a x\)</span></td><td><span class="math inline">\(\dfrac{1}{x\ln a}\)</span></td><td><span class="math inline">\(x\gt0\)</span></td></tr></table></div>
+    </div>
+
+    <p>A táblázat sorait a definícióból lehet igazolni, mint az <span class="math inline">\(x^2\)</span>-nél; a tanterv szerint ezt nem gyakoroljuk, a táblázatot kész szabályként használjuk.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 360 210" width="360" height="210" role="img" aria-label="A szinusz- és a koszinuszgörbe: ahol a szinusz a csúcson van (x = π/2), ott a koszinusz értéke 0; ahol a szinusz a legmeredekebben csökken (x = π), ott a koszinusz −1">
+      <defs><marker id="nyil" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="95.6" y1="188.0" x2="95.6" y2="14.0"/>
+        <line x1="139.1" y1="188.0" x2="139.1" y2="14.0"/>
+        <line x1="182.6" y1="188.0" x2="182.6" y2="14.0"/>
+        <line x1="226.2" y1="188.0" x2="226.2" y2="14.0"/>
+        <line x1="269.7" y1="188.0" x2="269.7" y2="14.0"/>
+        <line x1="313.2" y1="188.0" x2="313.2" y2="14.0"/>
+        <line x1="26.0" y1="58.7" x2="348.0" y2="58.7"/>
+      </g>
+      <line x1="26.0" y1="108.5" x2="348.0" y2="108.5" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <line x1="52.1" y1="188.0" x2="52.1" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil)"/>
+      <text x="344.0" y="122.5" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="44.1" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="95.6" y="121.5" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="47.1" y="62.7" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <polyline points="34.7,127.8 37.7,124.6 40.8,121.2 43.8,117.8 46.9,114.4 49.9,110.9 53.0,107.5 56.0,104.0 59.1,100.5 62.1,97.1 65.2,93.8 68.2,90.5 71.3,87.3 74.3,84.2 77.3,81.2 80.4,78.4 83.4,75.7 86.5,73.1 89.5,70.8 92.6,68.6 95.6,66.6 98.7,64.8 101.7,63.3 104.8,61.9 107.8,60.8 110.9,59.9 113.9,59.3 116.9,58.9 120.0,58.7 123.0,58.8 126.1,59.2 129.1,59.7 132.2,60.5 135.2,61.6 138.3,62.8 141.3,64.3 144.4,66.1 147.4,68.0 150.4,70.1 153.5,72.4 156.5,74.9 159.6,77.5 162.6,80.3 165.7,83.3 168.7,86.3 171.8,89.5 174.8,92.7 177.9,96.1 180.9,99.5 184.0,102.9 187.0,106.4 190.0,109.9 193.1,113.3 196.1,116.8 199.2,120.2 202.2,123.5 205.3,126.8 208.3,130.0 211.4,133.1 214.4,136.1 217.5,138.9 220.5,141.6 223.6,144.1 226.6,146.4 229.6,148.6 232.7,150.5 235.7,152.3 238.8,153.8 241.8,155.1 244.9,156.2 247.9,157.1 251.0,157.7 254.0,158.0 257.1,158.2 260.1,158.1 263.1,157.7 266.2,157.1 269.2,156.3 272.3,155.2 275.3,153.9 278.4,152.4 281.4,150.6 284.5,148.7 287.5,146.6 290.6,144.2 293.6,141.7 296.7,139.1 299.7,136.2 302.7,133.3 305.8,130.2 308.8,127.0 311.9,123.8 314.9,120.4 318.0,117.0 321.0,113.6 324.1,110.1 327.1,106.6 330.2,103.2 333.2,99.7 336.3,96.3 339.3,93.0" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="34.7,62.7 37.7,61.4 40.8,60.4 43.8,59.6 46.9,59.1 49.9,58.8 53.0,58.8 56.0,58.9 59.1,59.4 62.1,60.1 65.2,61.0 68.2,62.1 71.3,63.5 74.3,65.1 77.3,66.9 80.4,68.9 83.4,71.1 86.5,73.5 89.5,76.0 92.6,78.7 95.6,81.6 98.7,84.6 101.7,87.7 104.8,90.9 107.8,94.2 110.9,97.6 113.9,101.0 116.9,104.4 120.0,107.9 123.0,111.4 126.1,114.9 129.1,118.3 132.2,121.7 135.2,125.0 138.3,128.2 141.3,131.4 144.4,134.4 147.4,137.3 150.4,140.1 153.5,142.7 156.5,145.1 159.6,147.4 162.6,149.4 165.7,151.3 168.7,153.0 171.8,154.4 174.8,155.6 177.9,156.6 180.9,157.4 184.0,157.9 187.0,158.1 190.0,158.2 193.1,157.9 196.1,157.5 199.2,156.8 202.2,155.8 205.3,154.7 208.3,153.3 211.4,151.6 214.4,149.8 217.5,147.8 220.5,145.6 223.6,143.2 226.6,140.6 229.6,137.8 232.7,135.0 235.7,132.0 238.8,128.8 241.8,125.6 244.9,122.3 247.9,118.9 251.0,115.5 254.0,112.1 257.1,108.6 260.1,105.1 263.1,101.6 266.2,98.2 269.2,94.8 272.3,91.5 275.3,88.3 278.4,85.2 281.4,82.2 284.5,79.3 287.5,76.5 290.6,73.9 293.6,71.5 296.7,69.3 299.7,67.2 302.7,65.4 305.8,63.8 308.8,62.3 311.9,61.2 314.9,60.2 318.0,59.5 321.0,59.0 324.1,58.8 327.1,58.8 330.2,59.0 333.2,59.5 336.3,60.2 339.3,61.2" fill="none" stroke="#f59e0b" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="120.5" cy="58.7" r="4" fill="#3b82f6"/>
+      <text x="106.5" y="50.7" font-size="11" fill="#3b82f6" font-weight="600">csúcs</text>
+      <circle cx="120.5" cy="108.5" r="4" fill="#f59e0b"/>
+      <circle cx="188.8" cy="108.5" r="4" fill="#3b82f6"/>
+      <circle cx="188.8" cy="158.2" r="4" fill="#f59e0b"/>
+      <rect x="265" y="13" width="89" height="40" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="269" y1="22" x2="287" y2="22" stroke="#3b82f6" stroke-width="2.4"/>
+      <text x="292" y="26" font-size="11" fill="#0f172a">y = sin x</text>
+      <line x1="269" y1="39" x2="287" y2="39" stroke="#f59e0b" stroke-width="2.4"/>
+      <text x="292" y="43" font-size="11" fill="#0f172a">y = cos x</text>
+    </svg>
+    </div>
+    <p class="cap">Ahol a szinusz a csúcson van, ott a koszinusz <span class="math inline">\(0\)</span> — mert a csúcsban az érintő vízszintes.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Miért éppen <span class="math inline">\(e^x\)</span>?</p>
+      <p>Az <span class="math inline">\(e^x\)</span> az egyetlen (nem nulla) függvény, amely <b>önmaga deriváltja</b>: minden pontban pontosan olyan gyorsan nő, amekkora az értéke. Ezért jelenik meg mindenütt, ahol a növekedés üteme a pillanatnyi mennyiséggel arányos — baktériumoknál, kamatos kamatnál, radioaktív bomlásnál.</p>
+    </div>
+
+    <h2 id="s2">Konstansszoros, összeg, különbség</h2>
+
+    <div class="doboz tetel" id="tetel-osszeg">
+      <p class="cim"><span class="ikon">📘</span> Konstansszoros és összeg deriváltja</p>
+      <p>Ha <span class="math inline">\(f\)</span> és <span class="math inline">\(g\)</span> deriválható, <span class="math inline">\(c\)</span> állandó, akkor</p><span class="math display">\[\big(c\cdot f(x)\big)'=c\cdot f'(x),\qquad \big(f(x)\pm g(x)\big)'=f'(x)\pm g'(x).\]</span><p>A polinomokat tehát tagonként deriváljuk.</p>
+    </div>
+
+    <p><b>Polinom:</b> <span class="math inline">\(\big(4x^3-5x^2+7x-2\big)'=12x^2-10x+7\)</span> — a konstans <span class="math inline">\(-2\)</span> eltűnik.</p><p><b>Gyök és tört hatványként:</b> ha a gyököt vagy a törtet hatványként írjuk, az <span class="math inline">\(x^n\)</span> sora elvégzi a munkát:</p><ul><li><span class="math inline">\(\sqrt[3]{x^2}=x^{\frac23}\)</span>, így <span class="math inline">\(\big(\sqrt[3]{x^2}\big)'=\frac23x^{-\frac13}=\dfrac{2}{3\sqrt[3]x}\)</span>;</li><li><span class="math inline">\(\dfrac{3}{x^2}=3x^{-2}\)</span>, így <span class="math inline">\(\left(\dfrac3{x^2}\right)'=-6x^{-3}=-\dfrac{6}{x^3}\)</span>;</li><li><span class="math inline">\(x\sqrt x=x^{\frac32}\)</span>, így <span class="math inline">\(\big(x\sqrt x\big)'=\frac32x^{\frac12}=\frac32\sqrt x\)</span>.</li></ul>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Az állandó deriváltja 0: a +5 csak feljebb tolja a parabolát, a meredekségén nem változtat." data-nem="✘ Az állandó tag deriváltja 0 (a vízszintes egyenes nem emelkedik). Tehát (x² + 5)′ = 2x.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi az <span class="math inline">\(f(x)=x^2+5\)</span> függvény deriváltja?</p>
+      <div class="opciok"><button><span class="math inline">\(2x+1\)</span></button><button><span class="math inline">\(x^2\)</span></button><button><span class="math inline">\(2x\)</span></button><button><span class="math inline">\(2x+5\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">A szorzat deriváltja</h2>
+
+    <div class="doboz tetel" id="tetel-szorzat">
+      <p class="cim"><span class="ikon">📘</span> A szorzat deriválási szabálya</p>
+      <span class="math display">\[\big(f(x)\cdot g(x)\big)'=f'(x)\cdot g(x)+f(x)\cdot g'(x)\]</span><p>Szóban: az első deriváltja szorozva a másodikkal, <b>plusz</b> az első szorozva a második deriváltjával.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-szorzat">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — szorzatok</p>
+      <ul><li><span class="math inline">\(\big((x^2+1)(3x-2)\big)'=2x(3x-2)+(x^2+1)\cdot3=9x^2-4x+3\)</span>. (Ellenőrzés: beszorozva <span class="math inline">\(3x^3-2x^2+3x-2\)</span>, ennek deriváltja ugyanez.)</li><li><span class="math inline">\(\big(x^2\sin x\big)'=2x\sin x+x^2\cos x\)</span></li><li><span class="math inline">\(\big((x-1)e^x\big)'=1\cdot e^x+(x-1)e^x=x\,e^x\)</span></li><li><span class="math inline">\(\big(x^2\ln x\big)'=2x\ln x+x^2\cdot\dfrac1x=2x\ln x+x\)</span></li></ul>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda</p>
+      <p>Véd Vilmos szerint „a szorzat deriváltja a deriváltak szorzata”: <span class="math inline">\((f\cdot g)'=f'\cdot g'\)</span>.</p><p><b>Nem az.</b> Már az <span class="math inline">\(x\cdot x\)</span> is lebuktatja: <span class="math inline">\(f'\cdot g'=1\cdot1=1\)</span>, pedig <span class="math inline">\((x\cdot x)'=(x^2)'=2x\)</span>. A szorzatszabály két tagja közül egyik sem maradhat el.</p>
+    </div>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ (x³)′·cos x + x³·(cos x)′ = 3x²cos x + x³·(−sin x)." data-nem="✘ Szorzatszabály: az első deriváltja × a második + az első × a második deriváltja, és (cos x)′ = −sin x. Így 3x²cos x − x³sin x.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi az <span class="math inline">\(x^3\cos x\)</span> deriváltja?</p>
+      <div class="opciok"><button><span class="math inline">\(3x^2\cos x+x^3\sin x\)</span></button><button><span class="math inline">\(-3x^2\sin x\)</span></button><button><span class="math inline">\(3x^2\cos x-x^3\sin x\)</span></button><button><span class="math inline">\(3x^2\cdot(-\sin x)\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">A hányados deriváltja</h2>
+
+    <div class="doboz tetel" id="tetel-hanyados">
+      <p class="cim"><span class="ikon">📘</span> A hányados deriválási szabálya</p>
+      <span class="math display">\[\left(\frac{f(x)}{g(x)}\right)'=\frac{f'(x)\cdot g(x)-f(x)\cdot g'(x)}{g^2(x)},\qquad g(x)\ne0.\]</span><p>A számlálóban <b>a sorrend számít</b> (a kivonás miatt): előbb a számláló deriváltja szorozva a nevezővel.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-hanyados">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — hányadosok</p>
+      <ul><li><span class="math inline">\(\left(\dfrac{2x-1}{x+3}\right)'=\dfrac{2(x+3)-(2x-1)\cdot1}{(x+3)^2}=\dfrac{7}{(x+3)^2}\)</span></li><li><span class="math inline">\(\left(\dfrac{x^2+1}{x-2}\right)'=\dfrac{2x(x-2)-(x^2+1)\cdot1}{(x-2)^2}=\dfrac{x^2-4x-1}{(x-2)^2}\)</span></li><li>A táblázat <span class="math inline">\(\operatorname{tg}\)</span>-sora is így jön ki: <span class="math inline">\(\left(\dfrac{\sin x}{\cos x}\right)'=\dfrac{\cos x\cos x-\sin x(-\sin x)}{\cos^2x}=\dfrac{\cos^2x+\sin^2x}{\cos^2x}=\dfrac1{\cos^2x}\)</span>.</li></ul><p><i>Véd Vilmos széljegyzete:</i> „a nevezőt NEM bontom ki — <span class="math inline">\((x-2)^2\)</span> így marad, a számlálót viszont összevonom.”</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda</p>
+      <p>Véd Vilmos a számlálóban megcseréli a sorrendet: <span class="math inline">\(f\cdot g'-f'\cdot g\)</span>. Az eredmény pont az ellenkező előjelű lesz — a monotonitásnál később ez fordított „nő–csökken” választ ad. Mondd magadnak: <b>„számláló deriváltja × nevező — mínusz — számláló × nevező deriváltja”</b>.</p>
+    </div>
+
+    <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ A számláló deriváltja 0, így marad a −1·2x a számlálóban és a (x² + 1)² a nevezőben." data-nem="✘ Hányadosszabály: (0·(x² + 1) − 1·2x)/(x² + 1)² = −2x/(x² + 1)². A nevező négyzete nem maradhat el, és a számlálóban a mínusz sem.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi az <span class="math inline">\(\dfrac{1}{x^2+1}\)</span> deriváltja?</p>
+      <div class="opciok"><button><span class="math inline">\(\dfrac{1}{2x}\)</span></button><button><span class="math inline">\(-\dfrac{1}{(x^2+1)^2}\)</span></button><button><span class="math inline">\(\dfrac{2x}{(x^2+1)^2}\)</span></button><button><span class="math inline">\(-\dfrac{2x}{(x^2+1)^2}\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s5">Helyettesítési érték: <span class="math inline">\(f'(x_0)\)</span></h2>
+
+    <p class="lead">Az <span class="math inline">\(f'(x_0)\)</span> kiszámítása két lépés: <b>előbb deriválunk, aztán helyettesítünk</b>.</p><p>Ha <span class="math inline">\(f(x)=x^3-4x+1\)</span>, akkor <span class="math inline">\(f'(x)=3x^2-4\)</span>, így <span class="math inline">\(f'(2)=3\cdot4-4=8\)</span>, <span class="math inline">\(f'(0)=-4\)</span> és <span class="math inline">\(f'(-1)=3-4=-1\)</span>.</p><p>Fordított sorrendben nem megy: <span class="math inline">\(f(2)=1\)</span> egy <b>szám</b>, és egy szám deriváltja <span class="math inline">\(0\)</span> — ami semmit sem mond a görbe meredekségéről.</p>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-derivalas.html#alap-3">🐶 Véd-eb nyomravezető <span class="cimke">A 3–9</span></a><a class="sav bruno" href="feladatok-derivalas.html#kozep-2">⚔️ Maximális erőbedobás <span class="cimke">K 2–5</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/nagol.webp" alt="Nagol — a morcos kiképzőtiszt" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Nagol:</b> Most már bármely polinom meredekségét tudod bármely pontban. <b>Véd Vilmos:</b> És mire jó a meredekség, ha nem vagyok síugró? <b>Nagol:</b> Megmondja, merre repül tovább a dobócsillag, amit elengedsz. A következő leckében: az érintő egyenlete.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-derivalt-fogalma.html"><span class="irany">← Előző</span><span class="hova">A derivált fogalma</span></a>
+      <a class="kov" href="tananyag-erinto-es-valtozasi-sebesseg.html"><span class="irany">Következő →</span><span class="hova">Az érintő és a változási sebesség</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

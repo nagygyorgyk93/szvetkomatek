@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hegyek és völgyek — monotonitás és szélsőérték — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">A függvény deriváltja</a> ›
+  <span class="itt">Hegyek és völgyek — monotonitás és szélsőérték — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Hegyek és völgyek — monotonitás és szélsőérték</h1>
+  <p class="alcim">A derivált előjele és a monotonitás, a lokális szélsőérték feltételei, előjeltáblázat polinomra és törtfüggvényre.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Pillanatnyi Káosz · 6/8</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/ved_vilmos_w.webp" alt="Véd Vilmos — a negyedik falat áttörő zsoldos" width="1200" height="670" decoding="async"><p>📡 <b>Véd Vilmos:</b> Hegyek és völgyek! A legmagasabb pont, a legmélyebb pont — ott történik minden. <b>Nagol:</b> És ott vízszintes az érintő. Ennyi a titok — <i>majdnem</i>. A 02. témakörben a monotonitást még csak ránéztük a grafikonra (<a href="../02-fuggvenyek/tananyag-fuggvenytulajdonsagok.html#def-monoton-fv">a monoton függvény</a>); most a derivált előjeléből <b>kiszámoljuk</b>. Ez a harmadik dolgozat gerince.</p></div>
+
+    <h2 id="s1">A derivált előjele és a monotonitás</h2>
+
+    <p class="lead">Ha az érintő minden pontban emelkedik, a görbe is emelkedik. A derivált előjele tehát megmondja, merre halad a függvény.</p>
+
+    <div class="doboz tetel" id="tetel-monotonitas">
+      <p class="cim"><span class="ikon">📘</span> A monotonitás és a derivált</p>
+      <p>Legyen <span class="math inline">\(f\)</span> deriválható az <span class="math inline">\(I\)</span> intervallumon.</p><ul><li>Ha <span class="math inline">\(f'(x)\gt0\)</span> minden <span class="math inline">\(x\in I\)</span>-re, akkor <span class="math inline">\(f\)</span> az <span class="math inline">\(I\)</span>-n <b>szigorúan monoton növekvő</b>.</li><li>Ha <span class="math inline">\(f'(x)\lt0\)</span> minden <span class="math inline">\(x\in I\)</span>-re, akkor <span class="math inline">\(f\)</span> az <span class="math inline">\(I\)</span>-n <b>szigorúan monoton csökkenő</b>.</li></ul>
+    </div>
+
+    <div class="svgcard interaktiv" data-mod="erinto" data-poly="1.0,0.0,-3.0,1.0" data-xr="-1.3,3.3" data-yr="-5.4,3.8" data-w="360" data-h="250" data-x0="0.0">
+    <svg viewBox="0 0 360 250" width="360" height="250" role="img" aria-label="Interaktív ábra: az f(x) = x³ − 3x² + 1 grafikonja, rajta egy csúszkával mozgatható pont és az ottani érintő, amelynek színe a derivált előjelét mutatja">
+      <defs><marker id="nyil-a7a36" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="187.0" y1="228.0" x2="187.0" y2="14.0"/>
+        <line x1="257.0" y1="228.0" x2="257.0" y2="14.0"/>
+        <line x1="327.0" y1="228.0" x2="327.0" y2="14.0"/>
+        <line x1="26.0" y1="195.4" x2="348.0" y2="195.4"/>
+        <line x1="26.0" y1="172.2" x2="348.0" y2="172.2"/>
+        <line x1="26.0" y1="148.9" x2="348.0" y2="148.9"/>
+        <line x1="26.0" y1="125.7" x2="348.0" y2="125.7"/>
+        <line x1="26.0" y1="79.1" x2="348.0" y2="79.1"/>
+        <line x1="26.0" y1="55.9" x2="348.0" y2="55.9"/>
+        <line x1="26.0" y1="32.6" x2="348.0" y2="32.6"/>
+      </g>
+      <line x1="26.0" y1="102.4" x2="348.0" y2="102.4" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-a7a36)"/>
+      <line x1="117.0" y1="228.0" x2="117.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-a7a36)"/>
+      <text x="344.0" y="116.4" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="109.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="187.0" y="115.4" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="112.0" y="83.1" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <polyline points="29.2,234.7 32.4,222.0 35.7,209.8 38.9,198.4 42.1,187.5 45.3,177.3 48.5,167.6 51.8,158.6 55.0,150.1 58.2,142.2 61.4,134.8 64.6,127.9 67.9,121.6 71.1,115.7 74.3,110.4 77.5,105.5 80.7,101.1 84.0,97.1 87.2,93.6 90.4,90.5 93.6,87.8 96.8,85.5 100.1,83.5 103.3,82.0 106.5,80.8 109.7,79.9 112.9,79.4 116.2,79.1 119.4,79.2 122.6,79.6 125.8,80.2 129.0,81.1 132.3,82.2 135.5,83.6 138.7,85.1 141.9,86.9 145.1,88.9 148.4,91.0 151.6,93.4 154.8,95.8 158.0,98.4 161.2,101.1 164.5,104.0 167.7,106.9 170.9,109.9 174.1,113.0 177.3,116.1 180.6,119.3 183.8,122.4 187.0,125.7 190.2,128.9 193.4,132.1 196.7,135.2 199.9,138.3 203.1,141.4 206.3,144.4 209.5,147.3 212.8,150.2 216.0,152.9 219.2,155.5 222.4,157.9 225.6,160.3 228.9,162.4 232.1,164.4 235.3,166.2 238.5,167.7 241.7,169.1 245.0,170.2 248.2,171.1 251.4,171.7 254.6,172.1 257.8,172.2 261.1,171.9 264.3,171.4 267.5,170.5 270.7,169.3 273.9,167.8 277.2,165.8 280.4,163.5 283.6,160.8 286.8,157.7 290.0,154.2 293.3,150.2 296.5,145.8 299.7,140.9 302.9,135.6 306.1,129.7 309.4,123.4 312.6,116.5 315.8,109.1 319.0,101.2 322.2,92.7 325.5,83.7 328.7,74.0 331.9,63.8 335.1,52.9 338.3,41.5 341.6,29.3 344.8,16.6" fill="none" stroke="#0f172a" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <defs><clipPath id="ivc1"><rect x="26" y="14" width="322" height="214"/></clipPath></defs>
+      <line class="iv-egyenes" x1="26.0" y1="185.5" x2="348.0" y2="-315.3" stroke="#047857" stroke-width="2" clip-path="url(#ivc1)"/>
+      <circle class="iv-P" cx="75.0" cy="109.3" r="4.5" fill="#0f172a"/>
+    </svg>
+    <div class="iv-vezerlo"><label for="iv1">x₀ = <span class="iv-ertek">−0,60</span></label><input type="range" id="iv1" min="-1.1" max="3.1" step="0.01" value="-0.6" aria-describedby="ivk1"></div>
+    <p class="iv-kijelzo" id="ivk1" aria-live="polite">x₀ = −0,60:  f′(x₀) = 4,68, pozitív → itt a függvény nő.</p>
+    </div>
+    <p class="cap">Mozgasd a csúszkát! Ahol az érintő <b>zöld</b>, ott <span class="math inline">\(f'(x_0)\gt0\)</span> és a függvény nő; ahol <b>piros</b>, ott <span class="math inline">\(f'(x_0)\lt0\)</span> és csökken. A szürke, vízszintes érintő a fordulópontokban jelenik meg.</p>
+    <script src="../../assets/js/interaktiv.js"></script>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A derivált előjele a monotonitást adja. Hogy f pozitív-e, arról f′ nem szól: egy növekvő függvény lehet végig negatív is." data-nem="✘ Az f′ > 0 a MERedekségről szól: f ott nő. Az f előjeléről (pozitív-e) vagy a görbüléséről (konvex-e) ebből semmi nem következik.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy függvényre <span class="math inline">\(f'(x)\gt0\)</span> teljesül a <span class="math inline">\((2;\,5)\)</span> intervallumon. Mit tudunk biztosan?</p>
+      <div class="opciok"><button><span class="math inline">\(f\)</span>-nek van szélsőértéke a <span class="math inline">\((2;\,5)\)</span> intervallumban</button><button><span class="math inline">\(f\)</span> konvex a <span class="math inline">\((2;\,5)\)</span> intervallumon</button><button><span class="math inline">\(f\)</span> szigorúan nő a <span class="math inline">\((2;\,5)\)</span> intervallumon</button><button><span class="math inline">\(f(x)\gt0\)</span> a <span class="math inline">\((2;\,5)\)</span> intervallumon</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Stacionárius pont és lokális szélsőérték</h2>
+
+    <div class="doboz definicio" id="def-lokalis-szelsoertek">
+      <p class="cim"><span class="ikon">📗</span> Lokális szélsőérték</p>
+      <p>Az <span class="math inline">\(f\)</span> függvénynek az <span class="math inline">\(x_0\)</span> helyen <b>lokális maximuma</b> van, ha <span class="math inline">\(x_0\)</span> egy környezetében minden <span class="math inline">\(x\)</span>-re <span class="math inline">\(f(x)\le f(x_0)\)</span>; <b>lokális minimuma</b>, ha <span class="math inline">\(f(x)\ge f(x_0)\)</span>. A szélsőérték <b>helye</b> az <span class="math inline">\(x_0\)</span>, <b>értéke</b> az <span class="math inline">\(f(x_0)\)</span>. Ahol <span class="math inline">\(f'(x_0)=0\)</span>, azt a helyet <b>stacionárius</b> helynek hívjuk.</p>
+    </div>
+
+    <div class="doboz tetel" id="tetel-szelsoertek-feltetel">
+      <p class="cim"><span class="ikon">📘</span> A szélsőérték feltételei</p>
+      <ul><li><b>Szükséges feltétel:</b> ha <span class="math inline">\(f\)</span> deriválható <span class="math inline">\(x_0\)</span>-ban, és ott lokális szélsőértéke van, akkor <span class="math inline">\(f'(x_0)=0\)</span>.</li><li><b>Elégséges feltétel:</b> ha <span class="math inline">\(f'(x_0)=0\)</span>, és <span class="math inline">\(f'\)</span> az <span class="math inline">\(x_0\)</span>-ban <b>előjelet vált</b>, akkor ott szélsőérték van: ha <span class="math inline">\(+\)</span>-ból <span class="math inline">\(-\)</span>-ba vált, <b>maximum</b>; ha <span class="math inline">\(-\)</span>-ból <span class="math inline">\(+\)</span>-ba, <b>minimum</b>.</li></ul>
+    </div>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ f′(x) = 3x² ≥ 0 mindkét oldalon: a függvény végig nő, a 0-ban csak „megpihen”. A nulla derivált szükséges, de nem elégséges." data-nem="✘ Az f′(x₀) = 0 csak szükséges feltétel. Az x³-nál f′(x) = 3x² a 0 két oldalán is pozitív, tehát nincs előjelváltás — a függvény végig nő, szélsőérték nincs.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Döntsd el: az <span class="math inline">\(f(x)=x^3\)</span> függvénynél <span class="math inline">\(f'(0)=0\)</span>. Van-e szélsőértéke a <span class="math inline">\(0\)</span>-ban?</p>
+      <div class="opciok"><button>a kérdés értelmetlen, mert <span class="math inline">\(x^3\)</span> a <span class="math inline">\(0\)</span>-ban nem deriválható</button><button>nincs: <span class="math inline">\(f'(0)=0\)</span>, de <span class="math inline">\(f'\)</span> a <span class="math inline">\(0\)</span>-ban nem vált előjelet</button><button>van, lokális minimum, mert <span class="math inline">\(f'(0)=0\)</span></button><button>van, lokális maximum, mert <span class="math inline">\(f'(0)=0\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Az előjeltáblázat</h2>
+
+    <p class="lead">A módszer mindig ugyanaz: <b>1.</b> <span class="math inline">\(f'(x)\)</span> kiszámítása, szorzattá alakítva · <b>2.</b> <span class="math inline">\(f'(x)=0\)</span> megoldása (és a pólusok, ahol <span class="math inline">\(f\)</span> nincs értelmezve) · <b>3.</b> ezek az <b>osztópontok</b>: közöttük <span class="math inline">\(f'\)</span> előjele állandó, egy-egy próbaszámmal eldönthető · <b>4.</b> nő/csökken, és ahol előjelet vált: maximum vagy minimum · <b>5.</b> a szélsőérték <b>értéke</b>: behelyettesítés <span class="math inline">\(f\)</span>-be.</p>
+
+    <div class="doboz pelda" id="pelda-harmadfoku">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — harmadfokú polinom</p>
+      <p><span class="math inline">\(f(x)=x^3-6x^2+9x-2\)</span>. Ekkor <span class="math inline">\(f'(x)=3x^2-12x+9=3(x-1)(x-3)\)</span>, a stacionárius helyek <span class="math inline">\(x=1\)</span> és <span class="math inline">\(x=3\)</span>.</p><div class="tblwrap"><table class="tt-table elojel"><tr><th><span class="math inline">\(x\)</span></th><th><span class="math inline">\((-\infty;\,1)\)</span></th><th><span class="math inline">\(1\)</span></th><th><span class="math inline">\((1;\,3)\)</span></th><th><span class="math inline">\(3\)</span></th><th><span class="math inline">\((3;\,\infty)\)</span></th></tr><tr><th><span class="math inline">\(f'(x)\)</span></th><td><span class="math inline">\(+\)</span></td><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(-\)</span></td><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(+\)</span></td></tr><tr><th><span class="math inline">\(f(x)\)</span></th><td>↗ nő</td><td>max <span class="math inline">\(2\)</span></td><td>↘ csökken</td><td>min <span class="math inline">\(-2\)</span></td><td>↗ nő</td></tr></table></div><p><span class="math inline">\(f(1)=1-6+9-2=2\)</span> és <span class="math inline">\(f(3)=27-54+27-2=-2\)</span>. Tehát <span class="math inline">\(f\)</span> nő a <span class="math inline">\((-\infty;\,1)\)</span> és a <span class="math inline">\((3;\,\infty)\)</span> intervallumon, csökken az <span class="math inline">\((1;\,3)\)</span>-on; <b>lokális maximum</b> az <span class="math inline">\((1;\,2)\)</span>, <b>lokális minimum</b> a <span class="math inline">\((3;\,-2)\)</span> pontban.</p><p><i>Véd Vilmos széljegyzete:</i> „a próbaszám: <span class="math inline">\(f'(0)=9\gt0\)</span>, <span class="math inline">\(f'(2)=-3\lt0\)</span>, <span class="math inline">\(f'(4)=9\gt0\)</span>. Három behelyettesítés, és kész a tábla.”</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 360 250" width="360" height="250" role="img" aria-label="Az f(x) = x³ − 6x² + 9x − 2 grafikonja: lokális maximum az (1; 2), lokális minimum a (3; −2) pontban">
+      <defs><marker id="nyil-f9033" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="129.5" y1="228.0" x2="129.5" y2="14.0"/>
+        <line x1="187.0" y1="228.0" x2="187.0" y2="14.0"/>
+        <line x1="244.5" y1="228.0" x2="244.5" y2="14.0"/>
+        <line x1="302.0" y1="228.0" x2="302.0" y2="14.0"/>
+        <line x1="26.0" y1="189.1" x2="348.0" y2="189.1"/>
+        <line x1="26.0" y1="156.7" x2="348.0" y2="156.7"/>
+        <line x1="26.0" y1="91.8" x2="348.0" y2="91.8"/>
+        <line x1="26.0" y1="59.4" x2="348.0" y2="59.4"/>
+        <line x1="26.0" y1="27.0" x2="348.0" y2="27.0"/>
+      </g>
+      <line x1="26.0" y1="124.2" x2="348.0" y2="124.2" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-f9033)"/>
+      <line x1="72.0" y1="228.0" x2="72.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-f9033)"/>
+      <text x="344.0" y="138.2" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="64.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="129.5" y="137.2" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="67.0" y="95.8" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <polyline points="65.3,225.6 68.0,210.5 70.6,196.2 73.3,182.8 75.9,170.1 78.6,158.3 81.2,147.2 83.8,136.9 86.5,127.4 89.1,118.5 91.8,110.4 94.4,102.9 97.1,96.2 99.7,90.0 102.4,84.5 105.0,79.6 107.7,75.2 110.3,71.5 112.9,68.2 115.6,65.6 118.2,63.4 120.9,61.7 123.5,60.5 126.2,59.7 128.8,59.4 131.5,59.5 134.1,60.0 136.7,60.9 139.4,62.1 142.0,63.7 144.7,65.6 147.3,67.8 150.0,70.3 152.6,73.0 155.3,76.0 157.9,79.2 160.6,82.7 163.2,86.3 165.8,90.1 168.5,94.0 171.1,98.1 173.8,102.3 176.4,106.5 179.1,110.9 181.7,115.3 184.4,119.8 187.0,124.2 189.6,128.7 192.3,133.2 194.9,137.6 197.6,141.9 200.2,146.2 202.9,150.4 205.5,154.5 208.2,158.4 210.8,162.2 213.5,165.8 216.1,169.3 218.7,172.5 221.4,175.5 224.0,178.2 226.7,180.7 229.3,182.9 232.0,184.8 234.6,186.4 237.3,187.6 239.9,188.5 242.5,189.0 245.2,189.1 247.8,188.8 250.5,188.0 253.1,186.8 255.8,185.1 258.4,182.9 261.1,180.2 263.7,177.0 266.4,173.3 269.0,168.9 271.6,164.0 274.3,158.5 276.9,152.3 279.6,145.5 282.2,138.1 284.9,129.9 287.5,121.1 290.2,111.5 292.8,101.2 295.4,90.2 298.1,78.3 300.7,65.7 303.4,52.3 306.0,38.0 308.7,22.9 311.3,6.9" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="129.5" cy="59.4" r="4" fill="#047857"/>
+      <text x="111.5" y="50.4" font-size="11" fill="#047857" font-weight="600">max (1; 2)</text>
+      <circle cx="244.5" cy="189.1" r="4" fill="#ef4444"/>
+      <text x="224.5" y="207.1" font-size="11" fill="#ef4444" font-weight="600">min (3; −2)</text>
+      <rect x="166" y="13" width="188" height="23" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="170" y1="22" x2="188" y2="22" stroke="#3b82f6" stroke-width="2.4"/>
+      <text x="193" y="26" font-size="11" fill="#0f172a">f(x) = x³ − 6x² + 9x − 2</text>
+    </svg>
+    </div>
+    <p class="cap">A táblázat a grafikonon: nő — maximum — csökken — minimum — nő.</p>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ − → + előjelváltás: minimum. A helye x = 3, az értéke f(3) = −2." data-nem="✘ A szélsőérték értéke nem a hely (3) és nem a derivált (0), hanem a függvényérték: f(3) = −2. A − → + váltás minimumot jelez.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Az előjeltáblázat szerint <span class="math inline">\(f'\)</span> az <span class="math inline">\(x=3\)</span>-ban <span class="math inline">\(-\)</span>-ból <span class="math inline">\(+\)</span>-ba vált, és <span class="math inline">\(f(3)=-2\)</span>. Mi a helyes válasz?</p>
+      <div class="opciok"><button>lokális maximum, értéke <span class="math inline">\(-2\)</span></button><button>a minimum értéke <span class="math inline">\(0\)</span>, mert <span class="math inline">\(f'(3)=0\)</span></button><button>lokális minimum van a <span class="math inline">\((3;\,-2)\)</span> pontban, értéke <span class="math inline">\(-2\)</span></button><button>lokális minimum, értéke <span class="math inline">\(3\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Racionális törtfüggvény</h2>
+
+    <p class="lead">Törtfüggvénynél a módszer ugyanaz, két kiegészítéssel: a <b>pólus</b> (ahol a nevező <span class="math inline">\(0\)</span>) is osztópont, de ott a függvény nincs értelmezve; és a derivált nevezője egy <b>négyzet</b>, ami mindig pozitív — az előjelet a számláló dönti el.</p>
+
+    <div class="doboz pelda" id="pelda-tort-monoton">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — törtfüggvény monotonitása</p>
+      <p><span class="math inline">\(f(x)=\dfrac{x^2+5}{x-2}\)</span>, <span class="math inline">\(D_f=\mathbb R\setminus\{2\}\)</span>. A hányadosszabállyal</p><span class="math display">\[f'(x)=\frac{2x(x-2)-(x^2+5)}{(x-2)^2}=\frac{x^2-4x-5}{(x-2)^2}=\frac{(x+1)(x-5)}{(x-2)^2}.\]</span><div class="tblwrap"><table class="tt-table elojel"><tr><th><span class="math inline">\(x\)</span></th><th><span class="math inline">\((-\infty;\,-1)\)</span></th><th><span class="math inline">\(-1\)</span></th><th><span class="math inline">\((-1;\,2)\)</span></th><th><span class="math inline">\(2\)</span></th><th><span class="math inline">\((2;\,5)\)</span></th><th><span class="math inline">\(5\)</span></th><th><span class="math inline">\((5;\,\infty)\)</span></th></tr><tr><th><span class="math inline">\(f'(x)\)</span></th><td><span class="math inline">\(+\)</span></td><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(-\)</span></td><td>—</td><td><span class="math inline">\(-\)</span></td><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(+\)</span></td></tr><tr><th><span class="math inline">\(f(x)\)</span></th><td>↗ nő</td><td>max <span class="math inline">\(-2\)</span></td><td>↘ csökken</td><td>nincs értelmezve</td><td>↘ csökken</td><td>min <span class="math inline">\(10\)</span></td><td>↗ nő</td></tr></table></div><p><span class="math inline">\(f(-1)=\frac{6}{-3}=-2\)</span> és <span class="math inline">\(f(5)=\frac{30}{3}=10\)</span>: lokális maximum a <span class="math inline">\((-1;\,-2)\)</span>, lokális minimum az <span class="math inline">\((5;\,10)\)</span> pontban.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 360 250" width="360" height="250" role="img" aria-label="Az f(x) = (x² + 5)/(x − 2) grafikonja: két ág az x = 2 függőleges aszimptota két oldalán, lokális maximum a (−1; −2), lokális minimum az (5; 10) pontban, ferde aszimptota y = x + 2">
+      <defs><marker id="nyil-fc186" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="26.0" y1="228.0" x2="26.0" y2="14.0"/>
+        <line x1="46.1" y1="228.0" x2="46.1" y2="14.0"/>
+        <line x1="66.2" y1="228.0" x2="66.2" y2="14.0"/>
+        <line x1="86.4" y1="228.0" x2="86.4" y2="14.0"/>
+        <line x1="106.5" y1="228.0" x2="106.5" y2="14.0"/>
+        <line x1="126.6" y1="228.0" x2="126.6" y2="14.0"/>
+        <line x1="166.9" y1="228.0" x2="166.9" y2="14.0"/>
+        <line x1="187.0" y1="228.0" x2="187.0" y2="14.0"/>
+        <line x1="207.1" y1="228.0" x2="207.1" y2="14.0"/>
+        <line x1="227.2" y1="228.0" x2="227.2" y2="14.0"/>
+        <line x1="247.4" y1="228.0" x2="247.4" y2="14.0"/>
+        <line x1="267.5" y1="228.0" x2="267.5" y2="14.0"/>
+        <line x1="287.6" y1="228.0" x2="287.6" y2="14.0"/>
+        <line x1="307.8" y1="228.0" x2="307.8" y2="14.0"/>
+        <line x1="327.9" y1="228.0" x2="327.9" y2="14.0"/>
+        <line x1="348.0" y1="228.0" x2="348.0" y2="14.0"/>
+        <line x1="26.0" y1="228.0" x2="348.0" y2="228.0"/>
+        <line x1="26.0" y1="219.4" x2="348.0" y2="219.4"/>
+        <line x1="26.0" y1="210.9" x2="348.0" y2="210.9"/>
+        <line x1="26.0" y1="202.3" x2="348.0" y2="202.3"/>
+        <line x1="26.0" y1="193.8" x2="348.0" y2="193.8"/>
+        <line x1="26.0" y1="185.2" x2="348.0" y2="185.2"/>
+        <line x1="26.0" y1="176.6" x2="348.0" y2="176.6"/>
+        <line x1="26.0" y1="168.1" x2="348.0" y2="168.1"/>
+        <line x1="26.0" y1="159.5" x2="348.0" y2="159.5"/>
+        <line x1="26.0" y1="142.4" x2="348.0" y2="142.4"/>
+        <line x1="26.0" y1="133.8" x2="348.0" y2="133.8"/>
+        <line x1="26.0" y1="125.3" x2="348.0" y2="125.3"/>
+        <line x1="26.0" y1="116.7" x2="348.0" y2="116.7"/>
+        <line x1="26.0" y1="108.2" x2="348.0" y2="108.2"/>
+        <line x1="26.0" y1="99.6" x2="348.0" y2="99.6"/>
+        <line x1="26.0" y1="91.0" x2="348.0" y2="91.0"/>
+        <line x1="26.0" y1="82.5" x2="348.0" y2="82.5"/>
+        <line x1="26.0" y1="73.9" x2="348.0" y2="73.9"/>
+        <line x1="26.0" y1="65.4" x2="348.0" y2="65.4"/>
+        <line x1="26.0" y1="56.8" x2="348.0" y2="56.8"/>
+        <line x1="26.0" y1="48.2" x2="348.0" y2="48.2"/>
+        <line x1="26.0" y1="39.7" x2="348.0" y2="39.7"/>
+        <line x1="26.0" y1="31.1" x2="348.0" y2="31.1"/>
+        <line x1="26.0" y1="22.6" x2="348.0" y2="22.6"/>
+        <line x1="26.0" y1="14.0" x2="348.0" y2="14.0"/>
+      </g>
+      <line x1="187.0" y1="14" x2="187.0" y2="228" stroke="#64748b" stroke-width="1.6" stroke-dasharray="6 4"/>
+      <line x1="26.0" y1="151.0" x2="348.0" y2="151.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-fc186)"/>
+      <line x1="146.8" y1="228.0" x2="146.8" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-fc186)"/>
+      <text x="344.0" y="165.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="138.8" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="166.9" y="164.0" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="141.8" y="146.4" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <polyline points="30.0,193.4 31.6,192.8 33.1,192.2 34.7,191.7 36.2,191.1 37.8,190.6 39.4,190.0 40.9,189.5 42.5,188.9 44.0,188.4 45.6,187.8 47.1,187.3 48.7,186.8 50.2,186.2 51.8,185.7 53.4,185.2 54.9,184.6 56.5,184.1 58.0,183.6 59.6,183.1 61.1,182.6 62.7,182.1 64.2,181.6 65.8,181.1 67.4,180.6 68.9,180.1 70.5,179.6 72.0,179.1 73.6,178.6 75.1,178.2 76.7,177.7 78.3,177.2 79.8,176.8 81.4,176.3 82.9,175.9 84.5,175.5 86.0,175.0 87.6,174.6 89.1,174.2 90.7,173.8 92.3,173.4 93.8,173.0 95.4,172.6 96.9,172.2 98.5,171.9 100.0,171.5 101.6,171.2 103.1,170.9 104.7,170.6 106.3,170.3 107.8,170.0 109.4,169.7 110.9,169.5 112.5,169.2 114.0,169.0 115.6,168.8 117.1,168.6 118.7,168.5 120.3,168.3 121.8,168.2 123.4,168.2 124.9,168.1 126.5,168.1 128.0,168.1 129.6,168.1 131.1,168.2 132.7,168.4 134.3,168.5 135.8,168.8 137.4,169.1 138.9,169.4 140.5,169.8 142.0,170.3 143.6,170.9 145.1,171.6 146.7,172.3 148.3,173.2 149.8,174.2 151.4,175.4 152.9,176.7 154.5,178.2 156.0,180.0 157.6,181.9 159.1,184.2 160.7,186.9 162.3,189.9 163.8,193.4 165.4,197.6 166.9,202.5 168.5,208.3 170.0,215.3 171.6,223.9" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="204.0,18.1 205.5,25.1 207.1,31.0 208.6,35.8 210.2,40.0 211.7,43.5 213.3,46.6 214.9,49.2 216.4,51.5 218.0,53.5 219.5,55.2 221.1,56.7 222.6,58.1 224.2,59.2 225.7,60.2 227.3,61.1 228.9,61.9 230.4,62.5 232.0,63.1 233.5,63.6 235.1,64.0 236.6,64.4 238.2,64.7 239.7,64.9 241.3,65.1 242.9,65.2 244.4,65.3 246.0,65.3 247.5,65.4 249.1,65.3 250.6,65.3 252.2,65.2 253.7,65.1 255.3,65.0 256.9,64.8 258.4,64.6 260.0,64.4 261.5,64.2 263.1,64.0 264.6,63.7 266.2,63.5 267.7,63.2 269.3,62.9 270.9,62.6 272.4,62.2 274.0,61.9 275.5,61.6 277.1,61.2 278.6,60.8 280.2,60.4 281.7,60.1 283.3,59.7 284.9,59.3 286.4,58.8 288.0,58.4 289.5,58.0 291.1,57.6 292.6,57.1 294.2,56.7 295.7,56.2 297.3,55.7 298.9,55.3 300.4,54.8 302.0,54.3 303.5,53.9 305.1,53.4 306.6,52.9 308.2,52.4 309.8,51.9 311.3,51.4 312.9,50.9 314.4,50.4 316.0,49.8 317.5,49.3 319.1,48.8 320.6,48.3 322.2,47.7 323.8,47.2 325.3,46.7 326.9,46.1 328.4,45.6 330.0,45.1 331.5,44.5 333.1,44.0 334.6,43.4 336.2,42.9 337.8,42.3 339.3,41.8 340.9,41.2 342.4,40.6 344.0,40.1" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="30.0,183.5 33.2,182.2 36.3,180.8 39.4,179.5 42.6,178.1 45.7,176.8 48.9,175.5 52.0,174.1 55.1,172.8 58.3,171.5 61.4,170.1 64.6,168.8 67.7,167.5 70.8,166.1 74.0,164.8 77.1,163.5 80.3,162.1 83.4,160.8 86.5,159.5 89.7,158.1 92.8,156.8 96.0,155.4 99.1,154.1 102.2,152.8 105.4,151.4 108.5,150.1 111.7,148.8 114.8,147.4 117.9,146.1 121.1,144.8 124.2,143.4 127.3,142.1 130.5,140.8 133.6,139.4 136.8,138.1 139.9,136.8 143.0,135.4 146.2,134.1 149.3,132.7 152.5,131.4 155.6,130.1 158.7,128.7 161.9,127.4 165.0,126.1 168.2,124.7 171.3,123.4 174.4,122.1 177.6,120.7 180.7,119.4 183.9,118.1 187.0,116.7 190.1,115.4 193.3,114.0 196.4,112.7 199.6,111.4 202.7,110.0 205.8,108.7 209.0,107.4 212.1,106.0 215.3,104.7 218.4,103.4 221.5,102.0 224.7,100.7 227.8,99.4 231.0,98.0 234.1,96.7 237.2,95.4 240.4,94.0 243.5,92.7 246.7,91.3 249.8,90.0 252.9,88.7 256.1,87.3 259.2,86.0 262.3,84.7 265.5,83.3 268.6,82.0 271.8,80.7 274.9,79.3 278.0,78.0 281.2,76.7 284.3,75.3 287.5,74.0 290.6,72.7 293.7,71.3 296.9,70.0 300.0,68.6 303.2,67.3 306.3,66.0 309.4,64.6 312.6,63.3 315.7,62.0 318.9,60.6 322.0,59.3 325.1,58.0 328.3,56.6 331.4,55.3 334.6,54.0 337.7,52.6 340.8,51.3 344.0,50.0" fill="none" stroke="#64748b" stroke-width="1.6" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="126.6" cy="168.1" r="4" fill="#047857"/>
+      <text x="96.6" y="159.1" font-size="11" fill="#047857" font-weight="600">max (−1; −2)</text>
+      <circle cx="247.4" cy="65.4" r="4" fill="#ef4444"/>
+      <text x="235.4" y="83.4" font-size="11" fill="#ef4444" font-weight="600">min (5; 10)</text>
+      <rect x="146" y="13" width="208" height="40" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="150" y1="22" x2="168" y2="22" stroke="#3b82f6" stroke-width="2.4"/>
+      <text x="173" y="26" font-size="11" fill="#0f172a">f(x) = (x² + 5)/(x − 2)</text>
+      <line x1="150" y1="39" x2="168" y2="39" stroke="#64748b" stroke-width="2.4" stroke-dasharray="5 3"/>
+      <text x="173" y="43" font-size="11" fill="#0f172a">ferde aszimptota: y = x + 2</text>
+    </svg>
+    </div>
+    <p class="cap">Két ág a pólus két oldalán: a maximum a bal, a minimum a jobb ágon.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda</p>
+      <p>Véd Vilmos kihagyja a pólust a táblázatból, és azt írja: „a függvény a <span class="math inline">\((-1;\,5)\)</span> intervallumon csökken”. <b>Nem intervallum</b>, hiszen a <span class="math inline">\(2\)</span>-ben nincs értelmezve: két külön intervallumon, a <span class="math inline">\((-1;\,2)\)</span>-n és a <span class="math inline">\((2;\,5)\)</span>-ön csökken. A pólus nem is szélsőérték — ott nincs függvényérték.</p><p>És ne zavarjon, hogy a maximum (<span class="math inline">\(-2\)</span>) kisebb a minimumnál (<span class="math inline">\(10\)</span>): <b>lokális</b> szélsőértékek, csak a saját környezetükben a legnagyobbak, illetve a legkisebbek.</p>
+    </div>
+
+    <h2 id="s5">Nem minden nulla hely szélsőérték</h2>
+
+    <p class="lead">Két tanulság a szélsőérték-keresés széléről:</p><ul><li><b><span class="math inline">\(f'(x_0)=0\)</span>, mégsincs szélsőérték:</b> az <span class="math inline">\(x^3\)</span>-nál a <span class="math inline">\(0\)</span>-ban vízszintes az érintő, de a függvény mindkét oldalon nő. Ezért kell az előjeltábla, nem elég az egyenlet.</li><li><b>Szélsőérték, pedig nincs vízszintes érintő:</b> lásd a 💡-dobozt.</li></ul>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Töréspont</p>
+      <p>Az <span class="math inline">\(f(x)=|x|\)</span> függvénynek a <span class="math inline">\(0\)</span>-ban minimuma van, pedig ott <b>nem deriválható</b>: balról <span class="math inline">\(-1\)</span>, jobbról <span class="math inline">\(1\)</span> a meredekség, a grafikonnak „csúcsa” van. Az ilyen helyet <b>töréspontnak</b> hívjuk. A mi függvényeink (polinomok, racionális törtek) mindenhol deriválhatók, ahol értelmezve vannak — nálunk töréspont nem fordul elő.</p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-fuggvenyvizsgalat.html#alap-1">🐶 Véd-eb nyomravezető <span class="cimke">A 1–6</span></a><a class="sav bruno" href="feladatok-fuggvenyvizsgalat.html#kozep-1">⚔️ Maximális erőbedobás <span class="cimke">K 1–4</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/nagol.webp" alt="Nagol — a morcos kiképzőtiszt" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Nagol:</b> Tudjuk, merre megy a görbe. Most azt nézzük meg, <b>hogyan hajlik</b> — ehhez kell a második derivált. <b>Véd Vilmos:</b> Az ütéseid íve? <b>Nagol:</b> Pontosan.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-masodik-derivalt.html"><span class="irany">← Előző</span><span class="hova">A második derivált</span></a>
+      <a class="kov" href="tananyag-konvexitas-inflexio.html"><span class="irany">Következő →</span><span class="hova">Konvexitás és inflexiós pont</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

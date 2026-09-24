@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Függvény a függvényben — az összetett függvény deriváltja — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">A függvény deriváltja</a> ›
+  <span class="itt">Függvény a függvényben — az összetett függvény deriváltja — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Függvény a függvényben — az összetett függvény deriváltja</h1>
+  <p class="alcim">Belső és külső függvény, a láncszabály, tipikus minták és kombinált esetek.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Pillanatnyi Káosz · 4/8</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Nagol</b> egy I.V.H.-matrjoskát tesz az asztalra: függvény a függvényben. <b>Véd Vilmos</b> szétszedi, deriválja a külső babát — a belsőt elfelejti. <b>Nagol:</b> Kívülről befelé. <b>Minden réteg egy szorzót ad.</b> Ez a láncszabály.</p></div>
+
+    <h2 id="s1">Az összetett függvény</h2>
+
+    <div class="doboz definicio" id="def-osszetett">
+      <p class="cim"><span class="ikon">📗</span> Az összetett függvény</p>
+      <p>Ha <span class="math inline">\(u=g(x)\)</span> és <span class="math inline">\(y=f(u)\)</span>, akkor az <span class="math inline">\(y=f\big(g(x)\big)\)</span> függvény az <span class="math inline">\(f\)</span> és a <span class="math inline">\(g\)</span> <b>összetett</b> függvénye. A <span class="math inline">\(g\)</span> a <b>belső</b>, az <span class="math inline">\(f\)</span> a <b>külső</b> függvény: először <span class="math inline">\(g\)</span> „dolgozik” az <span class="math inline">\(x\)</span>-en, az eredményt (<span class="math inline">\(u\)</span>) kapja meg <span class="math inline">\(f\)</span>.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 400 96" width="400" height="96" role="img" aria-label="Az összetett függvény mint két egymás után kapcsolt gép: x a belső g gépbe megy, abból u lesz, u a külső f gépbe megy, abból y lesz"><defs><marker id="nyilb" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs><g font-family="inherit" font-size="15" fill="#0f172a" text-anchor="middle"><text x="22" y="53" font-style="italic">x</text><line x1="36" y1="48" x2="92" y2="48" stroke="#0f172a" stroke-width="1.6" marker-end="url(#nyilb)"/><rect x="96" y="22" width="92" height="52" rx="9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/><text x="142" y="45">belső</text><text x="142" y="64" font-style="italic">g</text><line x1="190" y1="48" x2="236" y2="48" stroke="#0f172a" stroke-width="1.6" marker-end="url(#nyilb)"/><text x="213" y="40" font-style="italic">u</text><rect x="240" y="22" width="92" height="52" rx="9" fill="#fef3c7" stroke="#d97706" stroke-width="1.6"/><text x="286" y="45">külső</text><text x="286" y="64" font-style="italic">f</text><line x1="334" y1="48" x2="372" y2="48" stroke="#0f172a" stroke-width="1.6" marker-end="url(#nyilb)"/><text x="386" y="53" font-style="italic">y</text></g></svg>
+    </div>
+    <p class="cap">Két gép egymás után: a belső <span class="math inline">\(g\)</span> kimenete a külső <span class="math inline">\(f\)</span> bemenete.</p>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th>függvény</th><th>belső: <span class="math inline">\(u=g(x)\)</span></th><th>külső: <span class="math inline">\(y=f(u)\)</span></th></tr><tr><td><span class="math inline">\((2x+5)^3\)</span></td><td><span class="math inline">\(2x+5\)</span></td><td><span class="math inline">\(u^3\)</span></td></tr><tr><td><span class="math inline">\(\sqrt{x^2+4}\)</span></td><td><span class="math inline">\(x^2+4\)</span></td><td><span class="math inline">\(\sqrt u\)</span></td></tr><tr><td><span class="math inline">\(\cos 3x\)</span></td><td><span class="math inline">\(3x\)</span></td><td><span class="math inline">\(\cos u\)</span></td></tr><tr><td><span class="math inline">\(e^{2x}\)</span></td><td><span class="math inline">\(2x\)</span></td><td><span class="math inline">\(e^u\)</span></td></tr><tr><td><span class="math inline">\(\ln(x^2+1)\)</span></td><td><span class="math inline">\(x^2+1\)</span></td><td><span class="math inline">\(\ln u\)</span></td></tr><tr><td><span class="math inline">\(\sin^2x=(\sin x)^2\)</span></td><td><span class="math inline">\(\sin x\)</span></td><td><span class="math inline">\(u^2\)</span></td></tr></table></div>
+
+    <p><b>Hogyan ismered fel a külsőt?</b> Az a külső függvény, amelyik műveletet <b>utoljára</b> végeznéd el, ha számológéppel kiszámolnád az értékét. A <span class="math inline">\(\sqrt{x^2+4}\)</span>-nél előbb <span class="math inline">\(x^2+4\)</span>-et számolsz, a gyököt utoljára vonod — a gyök a külső.</p>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Utoljára a gyököt vonod, tehát az a külső; a belső az u = x² + 1." data-nem="✘ Nézd meg, melyik műveletet végeznéd utoljára: először x² + 1, a végén a gyökvonás. A külső a √u, a belső az x² + 1.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik a külső függvény az <span class="math inline">\(y=\sqrt{x^2+1}\)</span> összetett függvényben?</p>
+      <div class="opciok"><button>a négyzetre emelés</button><button>nincs külső függvény</button><button>a gyökvonás: <span class="math inline">\(y=\sqrt u\)</span></button><button>az <span class="math inline">\(x^2+1\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">A láncszabály</h2>
+
+    <div class="doboz tetel" id="tetel-lancszabaly">
+      <p class="cim"><span class="ikon">📘</span> Az összetett függvény deriváltja (láncszabály)</p>
+      <span class="math display">\[\Big(f\big(g(x)\big)\Big)'=f'\big(g(x)\big)\cdot g'(x)\]</span><p>Szóban: <b>a külső függvény deriváltja</b> (a belsőt változatlanul hagyva) <b>szorozva a belső függvény deriváltjával</b>.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-lanc">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — rétegenként</p>
+      <p><span class="math inline">\(y=(2x+5)^3\)</span>. Külső: <span class="math inline">\(u^3\)</span>, deriváltja <span class="math inline">\(3u^2\)</span>; belső: <span class="math inline">\(2x+5\)</span>, deriváltja <span class="math inline">\(2\)</span>. Tehát</p><span class="math display">\[y'=3(2x+5)^2\cdot2=6(2x+5)^2.\]</span><p><i>Véd Vilmos széljegyzete:</i> „ellenőriztem: beszorozva <span class="math inline">\(8x^3+60x^2+150x+125\)</span>, ennek deriváltja <span class="math inline">\(24x^2+120x+150=6(2x+5)^2\)</span>. Stimmel — de a láncszabály rövidebb.”</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda</p>
+      <p>Véd Vilmos a belső deriváltat elhagyja: <span class="math inline">\(\big((2x+5)^3\big)'=3(2x+5)^2\)</span>. Ez <b>hiányzik egy szorzóval</b> — a belső <span class="math inline">\(2x+5\)</span> is változik, kétszer olyan gyorsan, mint <span class="math inline">\(x\)</span>.</p><p>Rokon hiba: a <span class="math inline">\(\sin^2x\)</span> és a <span class="math inline">\(\sin x^2\)</span> összekeverése. <span class="math inline">\((\sin^2x)'=2\sin x\cos x\)</span> (a külső a négyzetre emelés), de <span class="math inline">\((\sin x^2)'=\cos x^2\cdot2x\)</span> (a külső a szinusz).</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ Külső: 5u⁴, belső deriváltja 4 → 5(4x − 1)⁴ · 4 = 20(4x − 1)⁴." data-nem="✘ A külső deriváltja 5(4x − 1)⁴, de ezt még szorozni kell a belső (4x − 1) deriváltjával, 4-gyel: 20(4x − 1)⁴.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi a <span class="math inline">\((4x-1)^5\)</span> deriváltja?</p>
+      <div class="opciok"><button><span class="math inline">\(20(4x-1)^4\)</span></button><button><span class="math inline">\(5(4x-1)^4\)</span></button><button><span class="math inline">\(5(4x)^4\)</span></button><button><span class="math inline">\(20x(4x-1)^4\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Tipikus minták</h2>
+
+    <p class="lead">A leggyakoribb összetett függvények deriváltja — mindegyik a láncszabályból jön:</p>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th>függvény</th><th>deriváltja</th><th>példa</th></tr><tr><td><span class="math inline">\((ax+b)^n\)</span></td><td><span class="math inline">\(n\,a\,(ax+b)^{n-1}\)</span></td><td><span class="math inline">\(\big((2x+5)^3\big)'=6(2x+5)^2\)</span></td></tr><tr><td><span class="math inline">\(\sqrt{g(x)}\)</span></td><td><span class="math inline">\(\dfrac{g'(x)}{2\sqrt{g(x)}}\)</span></td><td><span class="math inline">\(\big(\sqrt{x^2+4}\big)'=\dfrac{x}{\sqrt{x^2+4}}\)</span></td></tr><tr><td><span class="math inline">\(\sin(ax)\)</span>, <span class="math inline">\(\cos(ax)\)</span></td><td><span class="math inline">\(a\cos(ax)\)</span>, <span class="math inline">\(-a\sin(ax)\)</span></td><td><span class="math inline">\((\cos3x)'=-3\sin3x\)</span></td></tr><tr><td><span class="math inline">\(e^{kx}\)</span></td><td><span class="math inline">\(k\,e^{kx}\)</span></td><td><span class="math inline">\((e^{2x})'=2e^{2x}\)</span></td></tr><tr><td><span class="math inline">\(\ln g(x)\)</span></td><td><span class="math inline">\(\dfrac{g'(x)}{g(x)}\)</span></td><td><span class="math inline">\(\big(\ln(x^2+1)\big)'=\dfrac{2x}{x^2+1}\)</span></td></tr><tr><td><span class="math inline">\(g(x)^n\)</span></td><td><span class="math inline">\(n\,g(x)^{n-1}g'(x)\)</span></td><td><span class="math inline">\((\operatorname{tg}^3x)'=3\operatorname{tg}^2x\cdot\dfrac1{\cos^2x}\)</span></td></tr></table></div>
+
+    <h2 id="s4">Összetett függvény szorzatban</h2>
+
+    <p class="lead">A szabályok kombinálhatók: a szorzat- vagy hányadosszabályon belül egy tényező maga is lehet összetett.</p><p><span class="math inline">\(y=x\cdot e^{-2x}\)</span>: a szorzatszabály szerint <span class="math inline">\(y'=1\cdot e^{-2x}+x\cdot\big(e^{-2x}\big)'\)</span>, és a láncszabállyal <span class="math inline">\(\big(e^{-2x}\big)'=-2e^{-2x}\)</span>. Összesen <span class="math inline">\(y'=e^{-2x}-2x\,e^{-2x}=(1-2x)\,e^{-2x}\)</span>.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> A láncszabály Leibniz-jelöléssel</p>
+      <p>Ha <span class="math inline">\(y=f(u)\)</span> és <span class="math inline">\(u=g(x)\)</span>, Leibniz jelölésével <span class="math inline">\(\dfrac{dy}{dx}=\dfrac{dy}{du}\cdot\dfrac{du}{dx}\)</span> — mintha a <span class="math inline">\(du\)</span>-val „egyszerűsítenénk”. Nem valódi tört, de jól mutatja: a változások üteme rétegenként összeszorzódik.</p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-derivalas.html#alap-14">🐶 Véd-eb nyomravezető <span class="cimke">A 14–16</span></a><a class="sav bruno" href="feladatok-derivalas.html#kozep-9">⚔️ Maximális erőbedobás <span class="cimke">K 9–11</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/ved_vilmos.webp" alt="Véd Vilmos — a negyedik falat áttörő zsoldos" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Véd Vilmos:</b> És ha a deriváltat még egyszer deriválom? <b>Nagol:</b> Akkor azt kapod, milyen gyorsan változik a változás. Padlógáz — a következő leckében.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-erinto-es-valtozasi-sebesseg.html"><span class="irany">← Előző</span><span class="hova">Az érintő és a változási sebesség</span></a>
+      <a class="kov" href="tananyag-masodik-derivalt.html"><span class="irany">Következő →</span><span class="hova">A második derivált</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

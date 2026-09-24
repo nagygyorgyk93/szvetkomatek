@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A teljes függvényvizsgálat — hét lépés a grafikonig — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">A függvény deriváltja</a> ›
+  <span class="itt">A teljes függvényvizsgálat — hét lépés a grafikonig — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A teljes függvényvizsgálat — hét lépés a grafikonig</h1>
+  <p class="alcim">A vizsgálat lépései, egy polinom és egy racionális törtfüggvény teljes vizsgálata, az összesítő táblázat és a grafikon.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Pillanatnyi Káosz · 8/8</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Véd Vilmos</b> és <b>Nagol</b> egy ismeretlen függvény profilját rajzolják fel az I.V.H. aktájába. Minden lépés egy nyom: hol él, hol metszi a tengelyt, merre szökik a végtelenbe, hol fordul, hogyan hajlik. <b>Véd Vilmos:</b> Hé, aki most a pad alatt a telefonját nyomkodja: <b>a harmadik dolgozat pontosan ez lesz.</b></p></div>
+
+    <h2 id="s1">A hét lépés</h2>
+
+    <div class="doboz tetel" id="tetel-het-lepes">
+      <p class="cim"><span class="ikon">📘</span> A teljes függvényvizsgálat lépései</p>
+      <ol><li><b>Értelmezési tartomány</b> — hol van értelme a képletnek; a kizárt helyek a későbbi táblázatok osztópontjai (<a href="../02-fuggvenyek/tananyag-ertelmezesi-tartomany.html">02: értelmezési tartomány</a>).</li><li><b>Zérushelyek és előjel</b> — <span class="math inline">\(f(x)=0\)</span> megoldása, az <span class="math inline">\(y\)</span> tengely metszéspontja <span class="math inline">\(f(0)\)</span>, és hol pozitív, hol negatív a függvény.</li><li><b>Paritás</b> — páros, páratlan vagy egyik sem (<a href="../02-fuggvenyek/tananyag-fuggvenytulajdonsagok.html#def-paros-paratlan">02: paritás</a>).</li><li><b>Aszimptoták</b> — függőleges, vízszintes vagy ferde (<a href="../02-fuggvenyek/tananyag-aszimptotak.html#def-aszimptota">02: aszimptoták</a>); polinomnak nincs.</li><li><b>Monotonitás és szélsőérték</b> — <span class="math inline">\(f'\)</span>, előjeltáblázat (C1).</li><li><b>Konvexitás és inflexió</b> — <span class="math inline">\(f''\)</span>, előjeltáblázat (C2).</li><li><b>Grafikon</b> — a pontok, az aszimptoták és a táblázatok alapján.</li></ol><p>A tanterv (M2) szerint <b>polinomot és racionális törtfüggvényt</b> vizsgálunk.</p>
+    </div>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ Minden további lépés rá épül: a pólus osztópont az előjel-, a monotonitás- és a konvexitás-táblázatban is, és ott lehet függőleges aszimptota." data-nem="✘ A sorrend nem mindegy: a kizárt helyek nélkül rossz lenne minden táblázat (a pólusnál is válthat előjelet a függvény), és a függőleges aszimptotát sem találnánk meg.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Miért az értelmezési tartomány a vizsgálat <b>első</b> lépése?</p>
+      <div class="opciok"><button>mert az értelmezési tartomány mindig <span class="math inline">\(\mathbb R\)</span></button><button>mert a kizárt helyek (pólusok) osztópontok minden táblázatban, és ott keressük a függőleges aszimptotát</button><button>mert így szokás, a sorrend valójában mindegy</button><button>mert az értelmezési tartományból kiszámolható a derivált</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Polinomfüggvény</h2>
+
+    <div class="doboz pelda" id="pelda-polinom-vizsgalat">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — <span class="math inline">\(f(x)=x^3-3x^2\)</span></p>
+      <ol><li><span class="math inline">\(D_f=\mathbb R\)</span>.</li><li><span class="math inline">\(f(x)=x^2(x-3)\)</span>: zérushelyek <span class="math inline">\(x=0\)</span> (kétszeres) és <span class="math inline">\(x=3\)</span>; <span class="math inline">\(f(0)=0\)</span>. Mivel <span class="math inline">\(x^2\ge0\)</span>, az előjelet az <span class="math inline">\(x-3\)</span> adja: <span class="math inline">\(f(x)\lt0\)</span>, ha <span class="math inline">\(x\lt3\)</span> (<span class="math inline">\(x\ne0\)</span>), és <span class="math inline">\(f(x)\gt0\)</span>, ha <span class="math inline">\(x\gt3\)</span>.</li><li><span class="math inline">\(f(-1)=-4\)</span>, <span class="math inline">\(f(1)=-2\)</span>: nem páros és nem páratlan.</li><li>Aszimptota nincs; <span class="math inline">\(\lim\limits_{x\to\infty}f(x)=\infty\)</span>, <span class="math inline">\(\lim\limits_{x\to-\infty}f(x)=-\infty\)</span>.</li><li><span class="math inline">\(f'(x)=3x^2-6x=3x(x-2)\)</span>: nő, ha <span class="math inline">\(x\lt0\)</span> vagy <span class="math inline">\(x\gt2\)</span>; csökken a <span class="math inline">\((0;\,2)\)</span>-n; <b>maximum</b> <span class="math inline">\((0;\,0)\)</span>, <b>minimum</b> <span class="math inline">\((2;\,-4)\)</span>.</li><li><span class="math inline">\(f''(x)=6x-6\)</span>: konkáv, ha <span class="math inline">\(x\lt1\)</span>; konvex, ha <span class="math inline">\(x\gt1\)</span>; <b>inflexiós pont</b> <span class="math inline">\((1;\,-2)\)</span>.</li></ol><div class="tblwrap"><table class="tt-table elojel"><tr><th><span class="math inline">\(x\)</span></th><th><span class="math inline">\((-\infty;\,0)\)</span></th><th><span class="math inline">\(0\)</span></th><th><span class="math inline">\((0;\,1)\)</span></th><th><span class="math inline">\(1\)</span></th><th><span class="math inline">\((1;\,2)\)</span></th><th><span class="math inline">\(2\)</span></th><th><span class="math inline">\((2;\,\infty)\)</span></th></tr><tr><th><span class="math inline">\(f'(x)\)</span></th><td><span class="math inline">\(+\)</span></td><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(-\)</span></td><td><span class="math inline">\(-\)</span></td><td><span class="math inline">\(-\)</span></td><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(+\)</span></td></tr><tr><th><span class="math inline">\(f''(x)\)</span></th><td><span class="math inline">\(-\)</span></td><td><span class="math inline">\(-\)</span></td><td><span class="math inline">\(-\)</span></td><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(+\)</span></td><td><span class="math inline">\(+\)</span></td><td><span class="math inline">\(+\)</span></td></tr><tr><th><span class="math inline">\(f(x)\)</span></th><td>↗ ∩</td><td>max <span class="math inline">\(0\)</span></td><td>↘ ∩</td><td>infl. <span class="math inline">\(-2\)</span></td><td>↘ ∪</td><td>min <span class="math inline">\(-4\)</span></td><td>↗ ∪</td></tr></table></div><p>7. A grafikon az ábrán.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 360 250" width="360" height="250" role="img" aria-label="Az f(x) = x³ − 3x² grafikonja: zérushelyek 0 és 3, lokális maximum (0; 0), lokális minimum (2; −4), inflexiós pont (1; −2)">
+      <defs><marker id="nyil-87efe" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="181.0" y1="228.0" x2="181.0" y2="14.0"/>
+        <line x1="240.7" y1="228.0" x2="240.7" y2="14.0"/>
+        <line x1="300.3" y1="228.0" x2="300.3" y2="14.0"/>
+        <line x1="26.0" y1="228.0" x2="348.0" y2="228.0"/>
+        <line x1="26.0" y1="199.8" x2="348.0" y2="199.8"/>
+        <line x1="26.0" y1="171.7" x2="348.0" y2="171.7"/>
+        <line x1="26.0" y1="143.5" x2="348.0" y2="143.5"/>
+        <line x1="26.0" y1="115.4" x2="348.0" y2="115.4"/>
+        <line x1="26.0" y1="59.1" x2="348.0" y2="59.1"/>
+        <line x1="26.0" y1="30.9" x2="348.0" y2="30.9"/>
+      </g>
+      <line x1="26.0" y1="87.2" x2="348.0" y2="87.2" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-87efe)"/>
+      <line x1="121.4" y1="228.0" x2="121.4" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-87efe)"/>
+      <text x="344.0" y="101.2" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="113.4" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="181.0" y="100.2" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="116.4" y="63.1" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <polyline points="55.1,230.4 57.8,217.3 60.6,205.0 63.3,193.4 66.1,182.5 68.8,172.2 71.6,162.7 74.3,153.8 77.0,145.6 79.8,137.9 82.5,130.9 85.3,124.5 88.0,118.6 90.8,113.4 93.5,108.6 96.2,104.4 99.0,100.6 101.7,97.4 104.5,94.7 107.2,92.4 110.0,90.5 112.7,89.1 115.4,88.1 118.2,87.5 120.9,87.2 123.7,87.3 126.4,87.8 129.2,88.6 131.9,89.7 134.6,91.1 137.4,92.7 140.1,94.7 142.9,96.8 145.6,99.3 148.4,101.9 151.1,104.7 153.8,107.7 156.6,110.8 159.3,114.1 162.1,117.6 164.8,121.1 167.6,124.8 170.3,128.5 173.0,132.3 175.8,136.1 178.5,140.0 181.3,143.9 184.0,147.7 186.8,151.6 189.5,155.4 192.2,159.2 195.0,162.9 197.7,166.6 200.5,170.1 203.2,173.5 206.0,176.8 208.7,179.9 211.4,182.9 214.2,185.7 216.9,188.2 219.7,190.6 222.4,192.7 225.2,194.6 227.9,196.2 230.6,197.6 233.4,198.6 236.1,199.4 238.9,199.8 241.6,199.8 244.4,199.5 247.1,198.8 249.8,197.7 252.6,196.2 255.3,194.3 258.1,191.9 260.8,189.1 263.6,185.8 266.3,182.0 269.1,177.7 271.8,172.8 274.5,167.4 277.3,161.5 280.0,155.0 282.8,147.8 285.5,140.1 288.3,131.7 291.0,122.7 293.7,113.1 296.5,102.7 299.2,91.7 302.0,80.0 304.7,67.5 307.5,54.3 310.2,40.4 312.9,25.6 315.7,10.1" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="121.4" cy="87.2" r="4" fill="#047857"/>
+      <text x="127.4" y="79.2" font-size="11" fill="#047857" font-weight="600">max (0; 0)</text>
+      <circle cx="240.7" cy="199.8" r="4" fill="#ef4444"/>
+      <text x="218.7" y="217.8" font-size="11" fill="#ef4444" font-weight="600">min (2; −4)</text>
+      <circle cx="181.0" cy="143.5" r="4" fill="#7c3aed"/>
+      <text x="189.0" y="147.5" font-size="11" fill="#7c3aed" font-weight="600">inflexió (1; −2)</text>
+      <circle cx="300.3" cy="87.2" r="4" fill="#0f172a"/>
+      <text x="292.3" y="78.2" font-size="11" fill="#0f172a" font-weight="600">(3; 0)</text>
+      <rect x="225" y="13" width="129" height="23" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="229" y1="22" x2="247" y2="22" stroke="#3b82f6" stroke-width="2.4"/>
+      <text x="252" y="26" font-size="11" fill="#0f172a">f(x) = x³ − 3x²</text>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(x^3-3x^2\)</span> grafikonja: a <span class="math inline">\(0\)</span>-ban érinti az <span class="math inline">\(x\)</span> tengelyt (kétszeres gyök), a <span class="math inline">\(3\)</span>-ban metszi.</p>
+
+    <h2 id="s3">Racionális törtfüggvény</h2>
+
+    <div class="doboz pelda" id="pelda-tort-vizsgalat">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — <span class="math inline">\(f(x)=\dfrac{x^2+3x}{x-1}\)</span></p>
+      <ol><li><span class="math inline">\(D_f=\mathbb R\setminus\{1\}\)</span>.</li><li><span class="math inline">\(f(x)=\dfrac{x(x+3)}{x-1}\)</span>: zérushelyek <span class="math inline">\(x=-3\)</span> és <span class="math inline">\(x=0\)</span>, <span class="math inline">\(f(0)=0\)</span>. Előjel (a három tényező előjeléből): <span class="math inline">\(f\lt0\)</span> a <span class="math inline">\((-\infty;\,-3)\)</span> és a <span class="math inline">\((0;\,1)\)</span> intervallumon, <span class="math inline">\(f\gt0\)</span> a <span class="math inline">\((-3;\,0)\)</span> és az <span class="math inline">\((1;\,\infty)\)</span> intervallumon.</li><li>Az értelmezési tartomány nem szimmetrikus a <span class="math inline">\(0\)</span>-ra: nem páros és nem páratlan.</li><li>Függőleges aszimptota: <span class="math inline">\(x=1\)</span> (a számláló ott <span class="math inline">\(4\ne0\)</span>); <span class="math inline">\(\lim\limits_{x\to1-0}f(x)=-\infty\)</span>, <span class="math inline">\(\lim\limits_{x\to1+0}f(x)=+\infty\)</span>. Ferde aszimptota: <span class="math inline">\(k=\lim\limits_{x\to\infty}\frac{f(x)}{x}=1\)</span>, <span class="math inline">\(n=\lim\limits_{x\to\infty}\big(f(x)-x\big)=\lim\limits_{x\to\infty}\frac{4x}{x-1}=4\)</span>, tehát <span class="math inline">\(y=x+4\)</span>.</li><li><span class="math inline">\(f'(x)=\dfrac{(2x+3)(x-1)-(x^2+3x)}{(x-1)^2}=\dfrac{x^2-2x-3}{(x-1)^2}=\dfrac{(x+1)(x-3)}{(x-1)^2}\)</span>: <b>maximum</b> <span class="math inline">\((-1;\,1)\)</span>, <b>minimum</b> <span class="math inline">\((3;\,9)\)</span>.</li><li><span class="math inline">\(f''(x)=\dfrac{8}{(x-1)^3}\)</span>: konkáv, ha <span class="math inline">\(x\lt1\)</span>; konvex, ha <span class="math inline">\(x\gt1\)</span>; inflexió nincs.</li></ol><div class="tblwrap"><table class="tt-table elojel"><tr><th><span class="math inline">\(x\)</span></th><th><span class="math inline">\((-\infty;\,-1)\)</span></th><th><span class="math inline">\(-1\)</span></th><th><span class="math inline">\((-1;\,1)\)</span></th><th><span class="math inline">\(1\)</span></th><th><span class="math inline">\((1;\,3)\)</span></th><th><span class="math inline">\(3\)</span></th><th><span class="math inline">\((3;\,\infty)\)</span></th></tr><tr><th><span class="math inline">\(f'(x)\)</span></th><td><span class="math inline">\(+\)</span></td><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(-\)</span></td><td>—</td><td><span class="math inline">\(-\)</span></td><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(+\)</span></td></tr><tr><th><span class="math inline">\(f''(x)\)</span></th><td><span class="math inline">\(-\)</span></td><td><span class="math inline">\(-\)</span></td><td><span class="math inline">\(-\)</span></td><td>—</td><td><span class="math inline">\(+\)</span></td><td><span class="math inline">\(+\)</span></td><td><span class="math inline">\(+\)</span></td></tr><tr><th><span class="math inline">\(f(x)\)</span></th><td>↗ ∩</td><td>max <span class="math inline">\(1\)</span></td><td>↘ ∩</td><td>nincs ért.</td><td>↘ ∪</td><td>min <span class="math inline">\(9\)</span></td><td>↗ ∪</td></tr></table></div><p>7. A grafikon az ábrán.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 360 250" width="360" height="250" role="img" aria-label="Az f(x) = (x² + 3x)/(x − 1) grafikonja: zérushelyek −3 és 0, függőleges aszimptota x = 1, ferde aszimptota y = x + 4, lokális maximum (−1; 1), lokális minimum (3; 9)">
+      <defs><marker id="nyil-9fd20" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="26.0" y1="228.0" x2="26.0" y2="14.0"/>
+        <line x1="43.9" y1="228.0" x2="43.9" y2="14.0"/>
+        <line x1="61.8" y1="228.0" x2="61.8" y2="14.0"/>
+        <line x1="79.7" y1="228.0" x2="79.7" y2="14.0"/>
+        <line x1="97.6" y1="228.0" x2="97.6" y2="14.0"/>
+        <line x1="115.4" y1="228.0" x2="115.4" y2="14.0"/>
+        <line x1="133.3" y1="228.0" x2="133.3" y2="14.0"/>
+        <line x1="151.2" y1="228.0" x2="151.2" y2="14.0"/>
+        <line x1="169.1" y1="228.0" x2="169.1" y2="14.0"/>
+        <line x1="204.9" y1="228.0" x2="204.9" y2="14.0"/>
+        <line x1="222.8" y1="228.0" x2="222.8" y2="14.0"/>
+        <line x1="240.7" y1="228.0" x2="240.7" y2="14.0"/>
+        <line x1="258.6" y1="228.0" x2="258.6" y2="14.0"/>
+        <line x1="276.4" y1="228.0" x2="276.4" y2="14.0"/>
+        <line x1="294.3" y1="228.0" x2="294.3" y2="14.0"/>
+        <line x1="312.2" y1="228.0" x2="312.2" y2="14.0"/>
+        <line x1="330.1" y1="228.0" x2="330.1" y2="14.0"/>
+        <line x1="348.0" y1="228.0" x2="348.0" y2="14.0"/>
+        <line x1="26.0" y1="228.0" x2="348.0" y2="228.0"/>
+        <line x1="26.0" y1="220.9" x2="348.0" y2="220.9"/>
+        <line x1="26.0" y1="213.7" x2="348.0" y2="213.7"/>
+        <line x1="26.0" y1="206.6" x2="348.0" y2="206.6"/>
+        <line x1="26.0" y1="199.5" x2="348.0" y2="199.5"/>
+        <line x1="26.0" y1="192.3" x2="348.0" y2="192.3"/>
+        <line x1="26.0" y1="185.2" x2="348.0" y2="185.2"/>
+        <line x1="26.0" y1="178.1" x2="348.0" y2="178.1"/>
+        <line x1="26.0" y1="170.9" x2="348.0" y2="170.9"/>
+        <line x1="26.0" y1="163.8" x2="348.0" y2="163.8"/>
+        <line x1="26.0" y1="156.7" x2="348.0" y2="156.7"/>
+        <line x1="26.0" y1="149.5" x2="348.0" y2="149.5"/>
+        <line x1="26.0" y1="135.3" x2="348.0" y2="135.3"/>
+        <line x1="26.0" y1="128.1" x2="348.0" y2="128.1"/>
+        <line x1="26.0" y1="121.0" x2="348.0" y2="121.0"/>
+        <line x1="26.0" y1="113.9" x2="348.0" y2="113.9"/>
+        <line x1="26.0" y1="106.7" x2="348.0" y2="106.7"/>
+        <line x1="26.0" y1="99.6" x2="348.0" y2="99.6"/>
+        <line x1="26.0" y1="92.5" x2="348.0" y2="92.5"/>
+        <line x1="26.0" y1="85.3" x2="348.0" y2="85.3"/>
+        <line x1="26.0" y1="78.2" x2="348.0" y2="78.2"/>
+        <line x1="26.0" y1="71.1" x2="348.0" y2="71.1"/>
+        <line x1="26.0" y1="63.9" x2="348.0" y2="63.9"/>
+        <line x1="26.0" y1="56.8" x2="348.0" y2="56.8"/>
+        <line x1="26.0" y1="49.7" x2="348.0" y2="49.7"/>
+        <line x1="26.0" y1="42.5" x2="348.0" y2="42.5"/>
+        <line x1="26.0" y1="35.4" x2="348.0" y2="35.4"/>
+        <line x1="26.0" y1="28.3" x2="348.0" y2="28.3"/>
+        <line x1="26.0" y1="21.1" x2="348.0" y2="21.1"/>
+        <line x1="26.0" y1="14.0" x2="348.0" y2="14.0"/>
+      </g>
+      <line x1="204.9" y1="14" x2="204.9" y2="228" stroke="#64748b" stroke-width="1.6" stroke-dasharray="6 4"/>
+      <line x1="26.0" y1="142.4" x2="348.0" y2="142.4" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-9fd20)"/>
+      <line x1="187.0" y1="228.0" x2="187.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-9fd20)"/>
+      <text x="344.0" y="156.4" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="179.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="204.9" y="155.4" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="182.0" y="139.3" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <polyline points="29.6,179.6 31.3,178.9 33.1,178.2 34.8,177.6 36.6,176.9 38.3,176.2 40.0,175.6 41.8,174.9 43.5,174.2 45.3,173.6 47.0,172.9 48.8,172.3 50.5,171.6 52.3,170.9 54.0,170.3 55.7,169.6 57.5,169.0 59.2,168.3 61.0,167.7 62.7,167.0 64.5,166.4 66.2,165.7 67.9,165.1 69.7,164.4 71.4,163.8 73.2,163.1 74.9,162.5 76.7,161.8 78.4,161.2 80.2,160.6 81.9,159.9 83.6,159.3 85.4,158.7 87.1,158.0 88.9,157.4 90.6,156.8 92.4,156.1 94.1,155.5 95.9,154.9 97.6,154.3 99.3,153.7 101.1,153.0 102.8,152.4 104.6,151.8 106.3,151.2 108.1,150.6 109.8,150.0 111.6,149.4 113.3,148.8 115.0,148.2 116.8,147.7 118.5,147.1 120.3,146.5 122.0,145.9 123.8,145.4 125.5,144.8 127.3,144.3 129.0,143.7 130.7,143.2 132.5,142.7 134.2,142.1 136.0,141.6 137.7,141.1 139.5,140.6 141.2,140.1 142.9,139.7 144.7,139.2 146.4,138.8 148.2,138.3 149.9,137.9 151.7,137.5 153.4,137.2 155.2,136.8 156.9,136.5 158.6,136.2 160.4,135.9 162.1,135.7 163.9,135.5 165.6,135.4 167.4,135.3 169.1,135.3 170.9,135.3 172.6,135.4 174.3,135.6 176.1,135.9 177.8,136.4 179.6,137.0 181.3,137.8 183.1,138.8 184.8,140.2 186.6,141.9 188.3,144.1 190.0,147.0 191.8,150.9 193.5,156.2 195.3,163.7 197.0,174.7 198.8,192.5 200.5,224.9" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="211.3,24.9 212.7,38.4 214.1,47.7 215.5,54.3 216.9,59.4 218.3,63.2 219.6,66.3 221.0,68.7 222.4,70.6 223.8,72.2 225.2,73.5 226.6,74.6 228.0,75.4 229.4,76.1 230.7,76.7 232.1,77.1 233.5,77.5 234.9,77.8 236.3,78.0 237.7,78.1 239.1,78.2 240.4,78.2 241.8,78.2 243.2,78.1 244.6,78.0 246.0,77.9 247.4,77.8 248.8,77.6 250.1,77.4 251.5,77.2 252.9,77.0 254.3,76.7 255.7,76.4 257.1,76.1 258.5,75.8 259.9,75.5 261.2,75.2 262.6,74.9 264.0,74.5 265.4,74.2 266.8,73.8 268.2,73.4 269.6,73.1 270.9,72.7 272.3,72.3 273.7,71.9 275.1,71.5 276.5,71.1 277.9,70.6 279.3,70.2 280.6,69.8 282.0,69.4 283.4,68.9 284.8,68.5 286.2,68.0 287.6,67.6 289.0,67.1 290.4,66.7 291.7,66.2 293.1,65.8 294.5,65.3 295.9,64.8 297.3,64.4 298.7,63.9 300.1,63.4 301.4,62.9 302.8,62.5 304.2,62.0 305.6,61.5 307.0,61.0 308.4,60.5 309.8,60.0 311.1,59.6 312.5,59.1 313.9,58.6 315.3,58.1 316.7,57.6 318.1,57.1 319.5,56.6 320.9,56.1 322.2,55.6 323.6,55.1 325.0,54.6 326.4,54.1 327.8,53.6 329.2,53.1 330.6,52.6 331.9,52.1 333.3,51.5 334.7,51.0 336.1,50.5 337.5,50.0 338.9,49.5 340.3,49.0 341.6,48.5 343.0,48.0 344.4,47.4" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="29.6,176.6 32.7,175.4 35.9,174.1 39.0,172.9 42.2,171.6 45.3,170.4 48.5,169.1 51.6,167.9 54.8,166.6 57.9,165.3 61.1,164.1 64.2,162.8 67.4,161.6 70.5,160.3 73.7,159.1 76.8,157.8 80.0,156.6 83.1,155.3 86.2,154.0 89.4,152.8 92.5,151.5 95.7,150.3 98.8,149.0 102.0,147.8 105.1,146.5 108.3,145.3 111.4,144.0 114.6,142.7 117.7,141.5 120.9,140.2 124.0,139.0 127.2,137.7 130.3,136.5 133.5,135.2 136.6,134.0 139.8,132.7 142.9,131.4 146.1,130.2 149.2,128.9 152.4,127.7 155.5,126.4 158.7,125.2 161.8,123.9 165.0,122.7 168.1,121.4 171.3,120.1 174.4,118.9 177.6,117.6 180.7,116.4 183.9,115.1 187.0,113.9 190.1,112.6 193.3,111.4 196.4,110.1 199.6,108.8 202.7,107.6 205.9,106.3 209.0,105.1 212.2,103.8 215.3,102.6 218.5,101.3 221.6,100.1 224.8,98.8 227.9,97.5 231.1,96.3 234.2,95.0 237.4,93.8 240.5,92.5 243.7,91.3 246.8,90.0 250.0,88.8 253.1,87.5 256.3,86.2 259.4,85.0 262.6,83.7 265.7,82.5 268.9,81.2 272.0,80.0 275.2,78.7 278.3,77.5 281.5,76.2 284.6,74.9 287.8,73.7 290.9,72.4 294.0,71.2 297.2,69.9 300.3,68.7 303.5,67.4 306.6,66.2 309.8,64.9 312.9,63.6 316.1,62.4 319.2,61.1 322.4,59.9 325.5,58.6 328.7,57.4 331.8,56.1 335.0,54.9 338.1,53.6 341.3,52.3 344.4,51.1" fill="none" stroke="#64748b" stroke-width="1.6" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="169.1" cy="135.3" r="4" fill="#047857"/>
+      <text x="137.1" y="127.3" font-size="11" fill="#047857" font-weight="600">max (−1; 1)</text>
+      <circle cx="240.7" cy="78.2" r="4" fill="#ef4444"/>
+      <text x="246.7" y="94.2" font-size="11" fill="#ef4444" font-weight="600">min (3; 9)</text>
+      <circle cx="133.3" cy="142.4" r="4" fill="#0f172a"/>
+      <circle cx="187.0" cy="142.4" r="4" fill="#0f172a"/>
+      <rect x="146" y="13" width="208" height="40" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="150" y1="22" x2="168" y2="22" stroke="#3b82f6" stroke-width="2.4"/>
+      <text x="173" y="26" font-size="11" fill="#0f172a">f(x) = (x² + 3x)/(x − 1)</text>
+      <line x1="150" y1="39" x2="168" y2="39" stroke="#64748b" stroke-width="2.4" stroke-dasharray="5 3"/>
+      <text x="173" y="43" font-size="11" fill="#0f172a">ferde aszimptota: y = x + 4</text>
+    </svg>
+    </div>
+    <p class="cap">A két ág az <span class="math inline">\(x=1\)</span> aszimptota két oldalán; mindkettő a ferde aszimptotához simul.</p>
+
+    <p class="lead">⚔️ <b>Az ötösért:</b> racionális törtfüggvény teljes vizsgálata — <a href="feladatok-fuggvenyvizsgalat.html#nehez-3">Zsoldos-lista II., nehéz 3–4</a>.</p>
+
+    <h2 id="s4">Összesítő táblázat és grafikon</h2>
+
+    <p class="lead">A grafikont a táblázatokból rajzoljuk: <b>1.</b> berajzoljuk az aszimptotákat (szaggatottan) · <b>2.</b> a kitüntetett pontokat (zérushelyek, <span class="math inline">\(y\)</span>-metszet, szélsőértékek, inflexió) · <b>3.</b> összekötjük őket a táblázat szerinti ívekkel · <b>4.</b> a széleken az aszimptotákhoz, illetve a végtelenbe simítjuk. A végén <b>ellenőrizzük</b>: minden pont és ív egyezik-e a táblázattal?</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda</p>
+      <p>Véd Vilmos grafikonja „szép folytonos”: a pólusnál összeköti a két ágat, a maximumot a minimum fölé rajzolja, mert „a maximum csak nagyobb lehet”, és a görbe a ferde aszimptotát újra meg újra metszi.</p><p><b>A grafikon nem lehet ellentmondásban a táblázattal.</b> A pólusnál a görbe szétszakad; a lokális maximum lehet a minimum alatt (a fenti törtnél <span class="math inline">\(1\lt9\)</span>); az aszimptotához a görbe a táblázat szerinti oldalról simul.</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Nem elég a GeoGebra?</p>
+      <p>A számítógép is csak pontokat köt össze — ha rossz ablakot választasz, elbújik a szélsőérték, és a pólusnál függőleges vonalat húz. A vizsgálat mondja meg, <b>hova kell nézni</b>. A kettő együtt a legjobb: számolj, aztán ellenőrizd a géppel.</p>
+    </div>
+
+    <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ f′ < 0 → csökken; f″ > 0 → konvex (∪). Pont így megy le a törtfüggvény jobb ága a minimumba." data-nem="✘ A két előjelet külön kell olvasni: f′ < 0 → csökken, f″ > 0 → konvex, azaz felfelé nyíló ív.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Az összesítő táblázat szerint az <span class="math inline">\((1;\,3)\)</span> intervallumon <span class="math inline">\(f'\lt0\)</span> és <span class="math inline">\(f''\gt0\)</span>. Milyen ott a görbe?</p>
+      <div class="opciok"><button>csökken, és lefelé nyíló (∩) ívben hajlik</button><button>nő, és felfelé nyíló (∪) ívben hajlik</button><button>nő, és lefelé nyíló (∩) ívben hajlik</button><button>csökken, és felfelé nyíló (∪) ívben hajlik</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-fuggvenyvizsgalat.html#alap-9">🐶 Véd-eb nyomravezető <span class="cimke">A 9–10</span></a><a class="sav bruno" href="feladatok-fuggvenyvizsgalat.html#kozep-9">⚔️ Maximális erőbedobás <span class="cimke">K 9–12</span></a></div></div></div>
+
+    <h2 id="s5">🧾 Gyorsismétlő</h2>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th></th><th></th></tr><tr><td><b>derivált</b></td><td><span class="math inline">\(f'(x_0)=\lim\limits_{\Delta x\to0}\dfrac{f(x_0+\Delta x)-f(x_0)}{\Delta x}\)</span> — az érintő meredeksége, a pillanatnyi változási sebesség</td></tr><tr><td><b>táblázat</b></td><td><span class="math inline">\((x^n)'=nx^{n-1}\)</span>, <span class="math inline">\((\sin x)'=\cos x\)</span>, <span class="math inline">\((\cos x)'=-\sin x\)</span>, <span class="math inline">\((e^x)'=e^x\)</span>, <span class="math inline">\((\ln x)'=\frac1x\)</span> — a teljes táblázat: <a href="tananyag-derivalasi-szabalyok.html#tetel-derivalt-tablazat">A2</a></td></tr><tr><td><b>szabályok</b></td><td><span class="math inline">\((f\pm g)'=f'\pm g'\)</span>, <span class="math inline">\((fg)'=f'g+fg'\)</span>, <span class="math inline">\(\left(\frac fg\right)'=\frac{f'g-fg'}{g^2}\)</span>, <span class="math inline">\(\big(f(g(x))\big)'=f'(g(x))\,g'(x)\)</span></td></tr><tr><td><b>érintő</b></td><td><span class="math inline">\(y-f(x_0)=f'(x_0)(x-x_0)\)</span>; normális: meredeksége <span class="math inline">\(-\frac1{f'(x_0)}\)</span></td></tr><tr><td><b>monotonitás</b></td><td><span class="math inline">\(f'\gt0\)</span> → nő, <span class="math inline">\(f'\lt0\)</span> → csökken; szélsőérték: <span class="math inline">\(f'=0\)</span> <b>és</b> előjelváltás</td></tr><tr><td><b>görbülés</b></td><td><span class="math inline">\(f''\gt0\)</span> → konvex ∪, <span class="math inline">\(f''\lt0\)</span> → konkáv ∩; inflexió: <span class="math inline">\(f''=0\)</span> <b>és</b> előjelváltás</td></tr><tr><td><b>vizsgálat</b></td><td>ÉT → zérushely, előjel → paritás → aszimptoták → <span class="math inline">\(f'\)</span> → <span class="math inline">\(f''\)</span> → grafikon</td></tr></table></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/nagol.webp" alt="Nagol — a morcos kiképzőtiszt" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Nagol:</b> A deriválttal szétszedtük a függvényt: meredekség, fordulópont, hajlás. A következő fejezetben visszafelé megyünk — a darabokból rakjuk össze az egészet. <b>SZVETI</b> már vár a <i>Valóság Összefoltozásával</i>. <b>Véd Vilmos:</b> Integrál? Az meg mi? <b>Nagol:</b> A derivált fordítottja. És ne felejtsd el a <span class="math inline">\(+C\)</span>-t.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-konvexitas-inflexio.html"><span class="irany">← Előző</span><span class="hova">Konvexitás és inflexiós pont</span></a>
+      <a class="kov" href="feladatok-derivalas.html"><span class="irany">Következő →</span><span class="hova">Zsoldos-lista I. — deriválás</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
