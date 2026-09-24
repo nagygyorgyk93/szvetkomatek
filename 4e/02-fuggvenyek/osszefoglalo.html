@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Csalópapír | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="digitalis">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Függvények</a> ›
+  <span class="itt">Csalópapír</span>
+</nav>
+<div class="hero">
+  <h1>Csalópapír — a témakör egy lapon</h1>
+  <p class="alcim">Elemi függvények, értelmezési tartomány, paritás, határérték, határérték-számítás és aszimptoták egy lapon — ismétléshez, az ellenőrző előtti átfutáshoz, nyomtatáshoz.</p>
+  <div class="meta-sor"><span class="chip ora">összefoglaló</span><span class="chip">Az Aszimptota-fal Áttörése · összefoglaló</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📇 Az elemi függvények névjegye</h2>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th>függvény</th><th><span class="math inline">\(D_f\)</span></th><th><span class="math inline">\(R_f\)</span></th><th>jellegzetesség</th></tr><tr><td><span class="math inline">\(y=x^n\)</span>, <span class="math inline">\(n\ge2\)</span> páros</td><td><span class="math inline">\(\mathbb R\)</span></td><td><span class="math inline">\([0;\,+\infty)\)</span></td><td>az <span class="math inline">\(y\)</span> tengelyre szimmetrikus</td></tr><tr><td><span class="math inline">\(y=x^n\)</span>, <span class="math inline">\(n\ge1\)</span> páratlan</td><td><span class="math inline">\(\mathbb R\)</span></td><td><span class="math inline">\(\mathbb R\)</span></td><td>az origóra szimmetrikus</td></tr><tr><td><span class="math inline">\(y=\sqrt x\)</span></td><td><span class="math inline">\([0;\,+\infty)\)</span></td><td><span class="math inline">\([0;\,+\infty)\)</span></td><td>csak nemnegatív <span class="math inline">\(x\)</span>-re</td></tr><tr><td><span class="math inline">\(y=\dfrac1x\)</span></td><td><span class="math inline">\(\mathbb R\setminus\{0\}\)</span></td><td><span class="math inline">\(\mathbb R\setminus\{0\}\)</span></td><td>két ág, aszimptoták: <span class="math inline">\(x=0\)</span>, <span class="math inline">\(y=0\)</span></td></tr><tr><td><span class="math inline">\(y=a^x\)</span> (<span class="math inline">\(a\gt0\)</span>, <span class="math inline">\(a\ne1\)</span>)</td><td><span class="math inline">\(\mathbb R\)</span></td><td><span class="math inline">\((0;\,+\infty)\)</span></td><td>átmegy a <span class="math inline">\((0;\,1)\)</span> ponton</td></tr><tr><td><span class="math inline">\(y=\log_ax\)</span> (<span class="math inline">\(\ln x=\log_ex\)</span>)</td><td><span class="math inline">\((0;\,+\infty)\)</span></td><td><span class="math inline">\(\mathbb R\)</span></td><td>átmegy az <span class="math inline">\((1;\,0)\)</span> ponton</td></tr><tr><td><span class="math inline">\(y=\sin x\)</span>, <span class="math inline">\(y=\cos x\)</span></td><td><span class="math inline">\(\mathbb R\)</span></td><td><span class="math inline">\([-1;\,1]\)</span></td><td>periódus: <span class="math inline">\(2\pi\)</span></td></tr><tr><td><span class="math inline">\(y=\operatorname{tg}x\)</span></td><td><span class="math inline">\(x\ne\frac\pi2+k\pi\)</span>, <span class="math inline">\(k\in\mathbb Z\)</span></td><td><span class="math inline">\(\mathbb R\)</span></td><td>periódus: <span class="math inline">\(\pi\)</span></td></tr></table></div><p>Részletesen: <a href="tananyag-elemi-fuggvenyek.html">az elemi függvények</a>.</p>
+
+    <h2 id="s1">📐 Értelmezési tartomány, zérushely, előjel</h2>
+
+    <p class="lead"><b>A három tiltás</b> <a href="tananyag-ertelmezesi-tartomany.html#tetel-ert-tartomany">→</a>: a nevező <span class="math inline">\(\ne0\)</span>; páros gyök alatt <span class="math inline">\(\ge0\)</span>; a logaritmus argumentuma <span class="math inline">\(\gt0\)</span>. Több feltétel esetén a feltételek megoldáshalmazainak <b>közös része</b> az értelmezési tartomány.</p><p><b>Zérushely:</b> <span class="math inline">\(f(x)=0\)</span> megoldásai, de csak az értelmezési tartományban; törtnél a számláló zérushelyei, ahol a nevező nem <span class="math inline">\(0\)</span>.</p><p><b>Előjel</b> <a href="tananyag-ertelmezesi-tartomany.html#pelda-elojeltabla">→</a>: a számláló és a nevező tényezőinek zérushelyei intervallumokra bontják a számegyenest; minden intervallumon összeszorozzuk a tényezők előjelét. Páros kitevőjű tényező zérushelyén nincs előjelváltás.</p>
+
+    <h2 id="s2">🪞 Paritás és periodicitás</h2>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th></th><th>feltétel (minden <span class="math inline">\(x\in D_f\)</span>-re)</th><th>a grafikon</th></tr><tr><td>páros <a href="tananyag-fuggvenytulajdonsagok.html#def-paros-paratlan">→</a></td><td><span class="math inline">\(D_f\)</span> szimmetrikus, és <span class="math inline">\(f(-x)=f(x)\)</span></td><td>az <span class="math inline">\(y\)</span> tengelyre szimmetrikus</td></tr><tr><td>páratlan</td><td><span class="math inline">\(D_f\)</span> szimmetrikus, és <span class="math inline">\(f(-x)=-f(x)\)</span></td><td>az origóra szimmetrikus</td></tr><tr><td>periodikus <a href="tananyag-fuggvenytulajdonsagok.html#def-periodikus">→</a></td><td>van <span class="math inline">\(T\gt0\)</span>, amelyre <span class="math inline">\(x+T\in D_f\)</span> és <span class="math inline">\(f(x+T)=f(x)\)</span></td><td>egy szakasz ismétlődik</td></tr></table></div><p>Egy konkrét ellenpélda elég a cáfolathoz; igazolni csak az általános <span class="math inline">\(f(-x)\)</span> kiszámolásával lehet. A függvény lehet <b>egyik sem</b>. A monotonitást itt grafikonról olvassuk le; kiszámolni a deriválttal fogjuk.</p>
+
+    <h2 id="s3">🎯 A határérték</h2>
+
+    <p class="lead"><span class="math inline">\(\lim\limits_{x\to a}f(x)=A\)</span>: <span class="math inline">\(f(x)\)</span> akármilyen közel vihető <span class="math inline">\(A\)</span>-hoz, ha <span class="math inline">\(x\)</span> elég közel van <span class="math inline">\(a\)</span>-hoz (<span class="math inline">\(x\ne a\)</span>) <a href="tananyag-fuggveny-hatarerteke.html#def-fv-hatarertek">→</a>. A pontbeli érték nem számít: ha a görbe mindkét oldalról ugyanahhoz az <b>üres</b> ponthoz tart, annak magassága a határérték; a <b>teli</b> ponté a függvényérték.</p><p><b>Egyoldali határérték</b> <a href="tananyag-fuggveny-hatarerteke.html#def-egyoldali">→</a>: <span class="math inline">\(x\to a-0\)</span> (balról), <span class="math inline">\(x\to a+0\)</span> (jobbról). A határérték akkor és csak akkor létezik, ha a kettő létezik és egyenlő.</p><p><b>Folytonosság</b> <a href="tananyag-fuggveny-hatarerteke.html#def-folytonos">→</a>: <span class="math inline">\(\lim\limits_{x\to a}f(x)=f(a)\)</span>. Az elemi függvények az értelmezési tartományukban folytonosak — ott a határérték <b>behelyettesítéssel</b> kiszámolható.</p>
+
+    <h2 id="s4">🧮 Határérték-számítás — mit csinálj?</h2>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th>helyzet</th><th>teendő</th></tr><tr><td>egy szám</td><td>kész: ez a határérték</td></tr><tr><td><span class="math inline">\(\dfrac00\)</span></td><td>szorzattá alakítás, egyszerűsítés, újra behelyettesítés <a href="tananyag-hatarertek-szamolasa.html#pelda-szorzatta">→</a></td></tr><tr><td><span class="math inline">\(\dfrac00\)</span> gyökkel</td><td>bővítés a konjugálttal: <span class="math inline">\((\sqrt u-c)(\sqrt u+c)=u-c^2\)</span> <a href="tananyag-hatarertek-szamolasa.html#pelda-konjugalt">→</a></td></tr><tr><td><span class="math inline">\(\dfrac c0\)</span>, <span class="math inline">\(c\ne0\)</span></td><td>egyoldali határértékek: <span class="math inline">\(\pm\infty\)</span>, az előjelek szerint <a href="tananyag-hatarertek-szamolasa.html#pelda-c-per-0">→</a></td></tr><tr><td><span class="math inline">\(\dfrac\infty\infty\)</span> (<span class="math inline">\(x\to\pm\infty\)</span>, racionális tört)</td><td>fokszám-szabály; <span class="math inline">\(x\to-\infty\)</span>-nél figyelj az előjelre <a href="tananyag-hatarertek-vegtelenben.html#tetel-fokszam-fv">→</a></td></tr></table></div>
+
+    <h2 id="s5">🧱 Aszimptoták</h2>
+
+    <p class="lead">Racionális törtnél <span class="math inline">\(p\)</span> a számláló, <span class="math inline">\(r\)</span> a nevező foka.</p><div class="tblwrap"><table class="tt-table"><tr><th>fajta</th><th>hol keresd</th><th>mikor van</th></tr><tr><td>függőleges <span class="math inline">\(x=a\)</span></td><td>racionális törtnél a nevező zérushelyei (egyszerűsítés után); <span class="math inline">\(\log_ax\)</span>-nél <span class="math inline">\(x=0\)</span></td><td>ha legalább az egyik egyoldali határérték <span class="math inline">\(\pm\infty\)</span></td></tr><tr><td>vízszintes <span class="math inline">\(y=c\)</span></td><td><span class="math inline">\(\lim\limits_{x\to\pm\infty}f(x)\)</span></td><td>ha véges (<span class="math inline">\(p\le r\)</span>)</td></tr><tr><td>ferde <span class="math inline">\(y=kx+n\)</span></td><td><span class="math inline">\(k=\lim\limits_{x\to\pm\infty}\dfrac{f(x)}{x}\)</span>, <span class="math inline">\(n=\lim\limits_{x\to\pm\infty}\big(f(x)-kx\big)\)</span></td><td>ha egyszerűsítés után <span class="math inline">\(p=r+1\)</span></td></tr></table></div><p>Ha egy helyen a számláló és a nevező is <span class="math inline">\(0\)</span>, ott nem biztos, hogy függőleges aszimptota van: egyszerűsíts, és nézd meg újra — lehet, hogy csak <b>lyuk</b> van ott <a href="tananyag-aszimptotak.html#pelda-teljes">(lépésről lépésre)</a>.</p>
+
+    <h2 id="s6">⚠️ Véd Vilmos csapdái — amin a legtöbben elcsúsznak</h2>
+
+    <div class="doboz csapda"><p class="cim"><span class="ikon">⚠️</span> A nyolc leggyakoribb hiba</p><ol class="reszfeladatok"><li><b>Csak egy feltétel:</b> <span class="math inline">\(\dfrac{\sqrt{x+3}}{x-2}\)</span>-nél a gyök feltétele is kell, nem csak a nevezőé.</li><li><b>Zérushely a nevezőben:</b> ahol a nevező <span class="math inline">\(0\)</span>, ott nincs zérushely — a függvény nincs értelmezve.</li><li><b>„Nem páros, tehát páratlan”:</b> lehet egyik sem; mindig számold ki <span class="math inline">\(f(-x)\)</span>-et.</li><li><b>Határérték = behelyettesítés:</b> csak folytonos helyen igaz; a lyuknál a függvény nincs értelmezve (behelyettesítve <span class="math inline">\(\dfrac00\)</span>), a határérték mégis létezik; ha a pontban külön érték van megadva, az eltérhet tőle.</li><li><b><span class="math inline">\(\dfrac00=1\)</span> vagy <span class="math inline">\(0\)</span>:</b> határozatlan alak — alakíts át.</li><li><b><span class="math inline">\(\dfrac c0=0\)</span>:</b> itt egyoldali végtelen határérték jön, az előjel két oldalon eltérhet.</li><li><b><span class="math inline">\(x\to-\infty\)</span> is <span class="math inline">\(+\infty\)</span>:</b> ha <span class="math inline">\(p\gt r\)</span> és <span class="math inline">\(p-r\)</span> páratlan, a <span class="math inline">\(-\infty\)</span>-ben ellenkező előjelű a határérték.</li><li><b>Minden nevező-zérushely aszimptota:</b> ha a számláló is <span class="math inline">\(0\)</span>, lehet lyuk. És a görbe <b>metszheti</b> a vízszintes aszimptotát.</li></ol></div>
+
+    <h2 id="s7">Mit hol találsz?</h2>
+
+    <div class="gyakorolj"><span class="ikon">🧭</span><div><p><b>Tananyag:</b> <a href="tananyag-elemi-fuggvenyek.html">elemi függvények</a> · <a href="tananyag-ertelmezesi-tartomany.html">értelmezési tartomány, zérushely, előjel</a> · <a href="tananyag-fuggvenytulajdonsagok.html">paritás, periodicitás</a> · <a href="tananyag-fuggveny-hatarerteke.html">a határérték</a> · <a href="tananyag-hatarertek-szamolasa.html">határérték-számítás</a> · <a href="tananyag-hatarertek-vegtelenben.html">a végtelenben</a> · <a href="tananyag-aszimptotak.html">aszimptoták</a>.</p><p><b>Gyakorlás:</b> <a href="feladatok-tulajdonsagok.html">Zsoldos-lista I.</a> (tulajdonságok) · <a href="feladatok-hatarertek-aszimptota.html">Zsoldos-lista II.</a> (határérték, aszimptoták) · <a href="feladatok-hazi.html">I.V.H. Kihallgató Terem</a> (házi).</p><p><b>Ismétlés:</b> a sorozat határértéke és a fokszám-szabály a <a href="../01-sorozatok-hatarerteke/osszefoglalo.html">01-es Csalópapíron</a>. A témakört <a href="terepkuldetes.html">Az Aszimptota-fal Áttörése</a> küldetés zárja.</p></div></div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-hazi.html"><span class="irany">← Előző</span><span class="hova">I.V.H. Kihallgató Terem</span></a>
+      <a class="kov" href="terepkuldetes.html"><span class="irany">Következő →</span><span class="hova">Az Aszimptota-fal Áttörése</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

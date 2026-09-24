@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Terepküldetés | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="rajzterem">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Függvények</a> ›
+  <span class="itt">Terepküldetés</span>
+</nav>
+<div class="hero">
+  <h1>Az Aszimptota-fal Áttörése</h1>
+  <p class="alcim">Négy fázis: az I.V.H. szenzorjele, a fal határértékei, Vilmos pályája a fal mentén és Véd Vilmos hibás jegyzőkönyve. Beadható projektfeladat — a megoldásokat a tanárod ellenőrzi.</p>
+  <div class="meta-sor"><span class="chip ora">terepküldetés</span><span class="chip">Az Aszimptota-fal Áttörése · terepküldetés</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/nagol_w.webp" alt="Nagol — a morcos kiképzőtiszt" width="1200" height="670" decoding="async"><p>📡 <b>Nagol:</b> Az I.V.H. falat húzott az idővonal köré, és Véd Vilmos már harmadszor fut neki. <b>Véd Vilmos:</b> Negyedszerre áttöröm! 🌮 <i>Burek-matek:</i> „ha elég gyorsan futok, a végtelenben odaérek.” <b>Nagol:</b> Nem érsz oda — és ezt ki is fogjuk számolni. Négy fázis: az I.V.H. szenzorjele, a fal határértékei, Vilmos pályája a fal mentén, végül Vilmos jegyzőkönyve, tele hibás megoldással.</p></div>
+
+    <p>Minden lépésnél írd le, melyik módszert használtad (értelmezési tartomány, előjeltáblázat, szorzattá alakítás, konjugált, egyoldali határérték, aszimptota-képletek). Számológép használható. A választ fogalmazd meg mondatban is.</p><p>A 🔴 jelű IV. fázisban a számolás csak eszköz: ott a <b>megfogalmazott érvelés</b> ér annyit, mint máshol a számítás. Mind a négy fázis egyformán számít.</p><p><i>Tervezz rá nagyjából két órát; ez beadandó munka, nem órai feladat.</i></p>
+
+    <h2 id="s1">I. fázis — Az I.V.H. szenzorjele</h2>
+
+    <p>Az I.V.H. szenzora az <span class="math inline">\(x\)</span> helyen <span class="math inline">\(s(x)=\dfrac{x^2-4x-5}{x^2-9}\)</span> erősségű jelet ad. Ahol a jel negatív, ott Vilmos láthatatlan.</p><ol class="reszfeladatok"><li>Hol van értelmezve a jel? Hol nulla?</li><li>Készíts előjeltáblázatot! Mely <span class="math inline">\(x\)</span> értékekre (intervallumokon) láthatatlan Vilmos?</li><li>Számítsd ki <span class="math inline">\(s(0)\)</span>-t, és vázold a jel előjelsávjait az előjeltáblázat alapján! (Hogy az <span class="math inline">\(x=\pm3\)</span> közelében mi történik, a II–III. fázis után pontosítod.)</li><li>Páros, páratlan vagy egyik sem az <span class="math inline">\(s\)</span> függvény? Indokold egy <span class="math inline">\(x\)</span>, <span class="math inline">\(-x\)</span> értékpárra kiszámolt két függvényértékkel!</li></ol>
+
+    <h2 id="s2">II. fázis — A fal határértékei</h2>
+
+    <p>A fal erőterét a <span class="math inline">\(K(x)=\dfrac{x^2-9}{x^2-x-6}\)</span> függvény írja le.</p><ol class="reszfeladatok"><li>Számítsd ki a <span class="math inline">\(\lim\limits_{x\to3}K(x)\)</span> határértéket! Milyen alakot kapsz behelyettesítéskor, és mit csinálsz vele?</li><li>Számítsd ki az <span class="math inline">\(x\to-2-0\)</span> és az <span class="math inline">\(x\to-2+0\)</span> egyoldali határértéket! Mit jelent ez <span class="math inline">\(K\)</span> grafikonjára az <span class="math inline">\(x=-2\)</span> egyenes két oldalán?</li><li>Mennyi a <span class="math inline">\(K\)</span> határértéke a <span class="math inline">\(+\infty\)</span>-ben és a <span class="math inline">\(-\infty\)</span>-ben?</li><li>Egy másik szenzor jele <span class="math inline">\(\dfrac{\sqrt{x+4}-3}{x-5}\)</span>. Számítsd ki az <span class="math inline">\(x=5\)</span> helyen vett határértékét!</li></ol>
+
+    <h2 id="s3">III. fázis — Vilmos pályája a fal mentén</h2>
+
+    <p>Vilmos pályája a <span class="math inline">\(w(x)=\dfrac{x^2+x-1}{x-2}\)</span> függvény grafikonja; a fal most a <span class="math inline">\(w\)</span> ferde aszimptotája.</p><ol class="reszfeladatok"><li>Határozd meg a <span class="math inline">\(w\)</span> függőleges aszimptotáját!</li><li>Határozd meg a ferde aszimptotáját (<span class="math inline">\(k\)</span> és <span class="math inline">\(n\)</span> kiszámításával)!</li><li>Mutasd meg, hogy <span class="math inline">\(w(x)=x+3+\dfrac{5}{x-2}\)</span>! Mekkora a függőleges távolság a pálya és a ferde aszimptota között az <span class="math inline">\(x=102\)</span> helyen?</li><li>Metszi-e valaha Vilmos pályája a ferde aszimptotát? Indokold!</li></ol>
+
+    <h2 id="s4">🔴 IV. fázis — Véd Vilmos jegyzőkönyve</h2>
+
+    <p>Vilmos leadta a saját „megoldásait” az I.V.H.-nak. Az első négy mind hibás. Keresd meg a hibát, és add meg a helyes eredményt; ha nincs véges határérték vagy aszimptota, indokold meg!</p><ol class="reszfeladatok"><li><span class="math inline">\(\lim\limits_{x\to6}\dfrac{x^2-36}{x-6}=\dfrac00=0\)</span>.</li><li>„Az <span class="math inline">\(\dfrac{x^2-1}{x-1}\)</span> függvénynek az <span class="math inline">\(x=1\)</span> egyenes függőleges aszimptotája, mert ott a nevező <span class="math inline">\(0\)</span>.”</li><li><span class="math inline">\(\lim\limits_{x\to-\infty}\dfrac{x^3+2}{x^2+1}=+\infty\)</span>, „mert a számláló foka nagyobb”.</li><li>„Az <span class="math inline">\(f(x)=x^2+x\)</span> páratlan, mert <span class="math inline">\(f(-1)=0\)</span> és <span class="math inline">\(f(1)=2\)</span> különbözik.”</li><li>Mi a közös a négy hibában? Fogalmazd meg két-három mondatban, mit kell <b>ellenőrizni</b>, mielőtt egy szabályt alkalmazunk!</li></ol>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/nagol.webp" alt="Nagol — a morcos kiképzőtiszt" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Nagol:</b> A szenzor bemérve, a fal határértékei kiszámolva, és Vilmos pályájáról is tudjuk, hogy a fal mellett fut, de soha nem éri el. A számításaidat a tanárod ellenőrzi; a kulcs nem kerül a hálózatra. <b>Véd Vilmos:</b> Akkor a falat nem is kellett áttörni? <b>Nagol:</b> Megérteni kellett. A következő fejezetben azt nézzük meg, milyen gyorsan változik minden — egy pillanat alatt.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="osszefoglalo.html"><span class="irany">← Előző</span><span class="hova">Csalópapír</span></a>
+      <a class="kov" href="index.html"><span class="irany">Következő →</span><span class="hova">A Negyedik Fal</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

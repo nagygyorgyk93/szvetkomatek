@@ -40,6 +40,7 @@ JELVENY = {
     "3e/05-analitikus-geometria":                 ("🔷", "A Térkép Hálózata", "Kanrak"),
     "3e/06-indukcio-sorozatok":                   ("♾️", "A Végtelen Mutáció", "Prizma és Kanrak"),
     "4e/01-sorozatok-hatarerteke":                ("🏍️", "A Végtelenbe és… Ne Tovább!", "Véd Vilmos"),
+    "4e/02-fuggvenyek":                           ("🧱", "Az Aszimptota-fal Áttörése", "Nagol"),
 }
 
 H1 = re.compile(r"<h1[^>]*>(.*?)</h1>", re.S)
