@@ -116,6 +116,8 @@ def _szamok(t: str) -> list[Fraction]:
     ki = []
     for m in re.finditer(r'(-?\d+)\s*/\s*(-?\d+)|(-?\d+(?:[.\u066b]\d+)?)', t):
         if m.group(1) is not None:
+            if int(m.group(2)) == 0:       # „0/0” határozatlan alak: nem szám
+                continue
             ki.append(Fraction(int(m.group(1)), int(m.group(2))))
         else:
             ki.append(Fraction(m.group(3).replace('\u066b', '.')))

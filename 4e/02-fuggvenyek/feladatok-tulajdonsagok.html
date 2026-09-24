@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zsoldos-lista I. — Tulajdonságok | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="digitalis">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Függvények</a> ›
+  <span class="itt">Zsoldos-lista I. — Tulajdonságok</span>
+</nav>
+<div class="hero">
+  <h1>Függvények — Zsoldos-lista I.: tulajdonságok</h1>
+  <p class="alcim">Helyettesítési érték, elemi függvények, értelmezési tartomány, zérushely és előjel, paritás, grafikonelemzés. A végeredmény minden feladatnál lenyitható — előbb számolj!</p>
+  <div class="meta-sor"><span class="chip alap">Alap</span><span class="chip kozep">Közép</span><span class="chip nehez">Nehéz</span><span class="chip joker">Joker</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="alap">🟢 Alapszint — Zöldfülű</h2>
+    <article class="feladat alap" id="alap-1">
+      <p><span class="szam">1.</span> Adottak az <span class="math inline">\(f(x)=\dfrac{3x-8}{2}\)</span>, a <span class="math inline">\(g(x)=\dfrac{5x-1}{x^2+1}\)</span> és a <span class="math inline">\(h(x)=\begin{cases}x-1, & \text{ha } x\ge1\\ -x^2+1, & \text{ha } x\lt1\end{cases}\)</span> függvények. Számítsd ki az <span class="math inline">\(f(a)\)</span>, <span class="math inline">\(g(a)\)</span> és <span class="math inline">\(h(a)\)</span> értékeket, ha <span class="math inline">\(a\in\left\{2;\,1;\,0;\,-2;\,-\frac43\right\}\)</span>!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(f\)</span>: <span class="math inline">\(-1;\ -\frac52;\ -4;\ -7;\ -6\)</span> · <span class="math inline">\(g\)</span>: <span class="math inline">\(\frac95;\ 2;\ -1;\ -\frac{11}{5};\ -\frac{69}{25}\)</span> · <span class="math inline">\(h\)</span>: <span class="math inline">\(1;\ 0;\ 1;\ -3;\ -\frac79\)</span></p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-2">
+      <p><span class="szam">2.</span> Az előző feladat <span class="math inline">\(f\)</span> és <span class="math inline">\(g\)</span> függvényével számítsd ki a kifejezések értékét!</p><ol class="reszfeladatok"><li><span class="math inline">\(f\left(-\frac23\right)\cdot g(-1)\)</span></li><li><span class="math inline">\(\frac{14}{3}\cdot f\left(\frac27\right)-\frac56\cdot g\left(\frac12\right)\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\((-5)\cdot(-3)=15\)</span></li><li><span class="math inline">\(-\frac{50}{3}-1=-\frac{53}{3}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-3">
+      <p><span class="szam">3.</span> Add meg az elemi függvény értelmezési tartományát (<span class="math inline">\(D_f\)</span>) és értékkészletét (<span class="math inline">\(R_f\)</span>)!</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=x^4\)</span></li><li><span class="math inline">\(f(x)=\sqrt x\)</span></li><li><span class="math inline">\(f(x)=\dfrac{1}{x^2}\)</span></li><li><span class="math inline">\(f(x)=3^x\)</span></li><li><span class="math inline">\(f(x)=\log_5x\)</span></li><li><span class="math inline">\(f(x)=\cos x\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(D_f=\mathbb R\)</span>, <span class="math inline">\(R_f=[0;\,+\infty)\)</span></li><li><span class="math inline">\(D_f=[0;\,+\infty)\)</span>, <span class="math inline">\(R_f=[0;\,+\infty)\)</span></li><li><span class="math inline">\(D_f=\mathbb R\setminus\{0\}\)</span>, <span class="math inline">\(R_f=(0;\,+\infty)\)</span></li><li><span class="math inline">\(D_f=\mathbb R\)</span>, <span class="math inline">\(R_f=(0;\,+\infty)\)</span></li><li><span class="math inline">\(D_f=(0;\,+\infty)\)</span>, <span class="math inline">\(R_f=\mathbb R\)</span></li><li><span class="math inline">\(D_f=\mathbb R\)</span>, <span class="math inline">\(R_f=[-1;\,1]\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-4">
+      <p><span class="szam">4.</span> Párosítsd a grafikonokat a képletekkel: <span class="math inline">\(y=x^4\)</span>, <span class="math inline">\(y=\left(\frac13\right)^x\)</span>, <span class="math inline">\(y=\log_{\frac12}x\)</span>, <span class="math inline">\(y=\dfrac1{x^2}\)</span>! Minden döntést egy jellegzetességgel indokolj!</p><div class="svgwrap"><svg viewBox="0 0 380 260" width="380" height="260" role="img" aria-label="Négy grafikon A, B, C, D betűvel: az A a (0; 1) ponton megy át és jobbra a 0-hoz simul; a B az origón megy át, y tengelyre szimmetrikus és sosem negatív; a C az (1; 0) ponton megy át és csökken; a D a 0-ban nincs értelmezve és mindenhol pozitív">
+  <defs><marker id="nyil-3bae6" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+  <g stroke="#cbd5e1" stroke-width=".6">
+    <line x1="87.4" y1="238.0" x2="87.4" y2="14.0"/>
+    <line x1="131.2" y1="238.0" x2="131.2" y2="14.0"/>
+    <line x1="218.9" y1="238.0" x2="218.9" y2="14.0"/>
+    <line x1="262.8" y1="238.0" x2="262.8" y2="14.0"/>
+    <line x1="306.6" y1="238.0" x2="306.6" y2="14.0"/>
+    <line x1="350.5" y1="238.0" x2="350.5" y2="14.0"/>
+    <line x1="26.0" y1="186.8" x2="368.0" y2="186.8"/>
+    <line x1="26.0" y1="122.8" x2="368.0" y2="122.8"/>
+    <line x1="26.0" y1="90.8" x2="368.0" y2="90.8"/>
+    <line x1="26.0" y1="58.8" x2="368.0" y2="58.8"/>
+    <line x1="26.0" y1="26.8" x2="368.0" y2="26.8"/>
+  </g>
+  <line x1="26.0" y1="154.8" x2="368.0" y2="154.8" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-3bae6)"/>
+  <line x1="175.1" y1="238.0" x2="175.1" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-3bae6)"/>
+  <text x="364.0" y="168.8" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+  <text x="167.1" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+  <text x="218.9" y="167.8" font-size="10" fill="#475569" text-anchor="middle">1</text>
+  <text x="170.1" y="126.8" font-size="10" fill="#475569" text-anchor="end">1</text>
+  <polyline points="114.6,9.1 116.8,17.2 119.1,24.8 121.4,32.0 123.7,38.8 126.0,45.3 128.2,51.4 130.5,57.1 132.8,62.5 135.1,67.6 137.4,72.5 139.6,77.1 141.9,81.4 144.2,85.5 146.5,89.3 148.8,92.9 151.0,96.4 153.3,99.6 155.6,102.7 157.9,105.6 160.2,108.3 162.4,110.9 164.7,113.3 167.0,115.6 169.3,117.8 171.6,119.9 173.8,121.8 176.1,123.6 178.4,125.4 180.7,127.0 183.0,128.5 185.2,130.0 187.5,131.4 189.8,132.7 192.1,133.9 194.4,135.1 196.6,136.2 198.9,137.2 201.2,138.2 203.5,139.1 205.8,140.0 208.0,140.8 210.3,141.6 212.6,142.3 214.9,143.0 217.2,143.7 219.4,144.3 221.7,144.9 224.0,145.4 226.3,145.9 228.6,146.4 230.8,146.9 233.1,147.3 235.4,147.7 237.7,148.1 240.0,148.5 242.2,148.9 244.5,149.2 246.8,149.5 249.1,149.8 251.4,150.1 253.6,150.3 255.9,150.6 258.2,150.8 260.5,151.0 262.8,151.2 265.0,151.4 267.3,151.6 269.6,151.8 271.9,152.0 274.2,152.1 276.4,152.3 278.7,152.4 281.0,152.5 283.3,152.7 285.6,152.8 287.8,152.9 290.1,153.0 292.4,153.1 294.7,153.2 297.0,153.3 299.2,153.4 301.5,153.5 303.8,153.5 306.1,153.6 308.4,153.7 310.6,153.7 312.9,153.8 315.2,153.8 317.5,153.9 319.8,153.9" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="113.7,31.9 114.9,41.4 116.1,50.4 117.4,58.8 118.6,66.7 119.8,74.1 121.1,81.1 122.3,87.6 123.5,93.6 124.7,99.2 126.0,104.4 127.2,109.3 128.4,113.8 129.7,117.9 130.9,121.8 132.1,125.3 133.3,128.5 134.6,131.5 135.8,134.2 137.0,136.6 138.2,138.9 139.5,140.9 140.7,142.7 141.9,144.3 143.2,145.8 144.4,147.1 145.6,148.3 146.8,149.3 148.1,150.2 149.3,151.0 150.5,151.7 151.8,152.2 153.0,152.7 154.2,153.2 155.4,153.5 156.7,153.8 157.9,154.0 159.1,154.2 160.3,154.4 161.6,154.5 162.8,154.6 164.0,154.7 165.3,154.7 166.5,154.8 167.7,154.8 168.9,154.8 170.2,154.8 171.4,154.8 172.6,154.8 173.8,154.8 175.1,154.8 176.3,154.8 177.5,154.8 178.8,154.8 180.0,154.8 181.2,154.8 182.4,154.8 183.7,154.8 184.9,154.7 186.1,154.7 187.4,154.6 188.6,154.5 189.8,154.4 191.0,154.2 192.3,154.0 193.5,153.8 194.7,153.5 195.9,153.2 197.2,152.7 198.4,152.2 199.6,151.7 200.9,151.0 202.1,150.2 203.3,149.3 204.5,148.3 205.8,147.1 207.0,145.8 208.2,144.3 209.5,142.7 210.7,140.9 211.9,138.9 213.1,136.6 214.4,134.2 215.6,131.5 216.8,128.5 218.0,125.3 219.3,121.8 220.5,117.9 221.7,113.8 223.0,109.3 224.2,104.4 225.4,99.2 226.6,93.6 227.9,87.6 229.1,81.1 230.3,74.1 231.6,66.7 232.8,58.8 234.0,50.4 235.2,41.4 236.5,31.9" fill="none" stroke="#ef4444" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="177.7,24.9 179.5,49.1 181.3,64.9 183.2,76.7 185.0,86.1 186.8,93.8 188.6,100.5 190.4,106.3 192.2,111.5 194.0,116.1 195.9,120.3 197.7,124.2 199.5,127.8 201.3,131.1 203.1,134.2 204.9,137.1 206.8,139.8 208.6,142.4 210.4,144.8 212.2,147.1 214.0,149.3 215.8,151.4 217.6,153.4 219.5,155.4 221.3,157.2 223.1,159.0 224.9,160.7 226.7,162.4 228.5,163.9 230.3,165.5 232.2,167.0 234.0,168.4 235.8,169.8 237.6,171.2 239.4,172.5 241.2,173.8 243.1,175.0 244.9,176.3 246.7,177.4 248.5,178.6 250.3,179.7 252.1,180.8 253.9,181.9 255.8,183.0 257.6,184.0 259.4,185.0 261.2,186.0 263.0,186.9 264.8,187.9 266.7,188.8 268.5,189.7 270.3,190.6 272.1,191.5 273.9,192.3 275.7,193.2 277.5,194.0 279.4,194.8 281.2,195.6 283.0,196.4 284.8,197.1 286.6,197.9 288.4,198.7 290.3,199.4 292.1,200.1 293.9,200.8 295.7,201.5 297.5,202.2 299.3,202.9 301.1,203.6 303.0,204.2 304.8,204.9 306.6,205.5 308.4,206.1 310.2,206.8 312.0,207.4 313.9,208.0 315.7,208.6 317.5,209.2 319.3,209.8 321.1,210.3 322.9,210.9 324.7,211.5 326.6,212.0 328.4,212.6 330.2,213.1 332.0,213.7 333.8,214.2 335.6,214.7 337.4,215.2 339.3,215.8 341.1,216.3 342.9,216.8 344.7,217.3 346.5,217.8 348.3,218.2 350.2,218.7 352.0,219.2 353.8,219.7 355.6,220.1 357.4,220.6 359.2,221.1" fill="none" stroke="#047857" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="30.4,151.9 31.6,151.8 32.9,151.8 34.1,151.7 35.4,151.6 36.6,151.6 37.9,151.5 39.1,151.5 40.4,151.4 41.6,151.3 42.9,151.3 44.1,151.2 45.4,151.1 46.6,151.1 47.9,151.0 49.1,150.9 50.4,150.8 51.6,150.8 52.9,150.7 54.1,150.6 55.4,150.5 56.6,150.4 57.9,150.3 59.1,150.2 60.4,150.1 61.6,150.0 62.9,149.9 64.1,149.8 65.4,149.7 66.6,149.6 67.9,149.4 69.1,149.3 70.4,149.2 71.6,149.1 72.9,148.9 74.1,148.8 75.4,148.6 76.6,148.5 77.9,148.3 79.1,148.1 80.4,147.9 81.6,147.8 82.9,147.6 84.1,147.4 85.4,147.2 86.6,146.9 87.9,146.7 89.1,146.5 90.4,146.2 91.6,146.0 92.9,145.7 94.1,145.4 95.4,145.1 96.6,144.8 97.9,144.5 99.1,144.1 100.4,143.8 101.6,143.4 102.9,143.0 104.1,142.6 105.4,142.1 106.6,141.7 107.9,141.2 109.1,140.7 110.4,140.1 111.6,139.5 112.9,138.9 114.1,138.2 115.4,137.5 116.6,136.8 117.9,136.0 119.1,135.2 120.4,134.3 121.6,133.3 122.9,132.2 124.1,131.1 125.4,129.9 126.6,128.6 127.9,127.2 129.1,125.7 130.4,124.0 131.6,122.2 132.9,120.3 134.1,118.2 135.4,115.8 136.6,113.2 137.9,110.4 139.1,107.3 140.4,103.8 141.6,99.9 142.8,95.6 144.1,90.7 145.3,85.2 146.6,78.9 147.8,71.8 149.1,63.6 150.3,54.2 151.6,43.2 152.8,30.3 154.1,15.0" fill="none" stroke="#f59e0b" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="196.1,15.0 197.3,30.3 198.6,43.2 199.8,54.2 201.1,63.6 202.3,71.8 203.6,78.9 204.8,85.2 206.1,90.7 207.3,95.6 208.6,99.9 209.8,103.8 211.1,107.3 212.3,110.4 213.6,113.2 214.8,115.8 216.1,118.2 217.3,120.3 218.6,122.2 219.8,124.0 221.0,125.7 222.3,127.2 223.5,128.6 224.8,129.9 226.0,131.1 227.3,132.2 228.5,133.3 229.8,134.3 231.0,135.2 232.3,136.0 233.5,136.8 234.8,137.5 236.0,138.2 237.3,138.9 238.5,139.5 239.8,140.1 241.0,140.7 242.3,141.2 243.5,141.7 244.8,142.1 246.0,142.6 247.3,143.0 248.5,143.4 249.8,143.8 251.0,144.1 252.3,144.5 253.5,144.8 254.8,145.1 256.0,145.4 257.3,145.7 258.5,146.0 259.8,146.2 261.0,146.5 262.3,146.7 263.5,146.9 264.8,147.2 266.0,147.4 267.3,147.6 268.5,147.8 269.8,147.9 271.0,148.1 272.3,148.3 273.5,148.5 274.8,148.6 276.0,148.8 277.3,148.9 278.5,149.1 279.8,149.2 281.0,149.3 282.3,149.4 283.5,149.6 284.8,149.7 286.0,149.8 287.3,149.9 288.5,150.0 289.8,150.1 291.0,150.2 292.3,150.3 293.5,150.4 294.8,150.5 296.0,150.6 297.3,150.7 298.5,150.8 299.8,150.8 301.0,150.9 302.3,151.0 303.5,151.1 304.8,151.1 306.0,151.2 307.3,151.3 308.5,151.3 309.8,151.4 311.0,151.5 312.3,151.5 313.5,151.6 314.8,151.6 316.0,151.7 317.3,151.8 318.5,151.8 319.8,151.9" fill="none" stroke="#f59e0b" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="337" y="13" width="37" height="74" rx="4" fill="#ffffff" fill-opacity=".88"/>
+  <line x1="341" y1="22" x2="359" y2="22" stroke="#3b82f6" stroke-width="2.4"/>
+  <text x="364" y="26" font-size="11" fill="#0f172a">A</text>
+  <line x1="341" y1="39" x2="359" y2="39" stroke="#ef4444" stroke-width="2.4"/>
+  <text x="364" y="43" font-size="11" fill="#0f172a">B</text>
+  <line x1="341" y1="56" x2="359" y2="56" stroke="#047857" stroke-width="2.4"/>
+  <text x="364" y="60" font-size="11" fill="#0f172a">C</text>
+  <line x1="341" y1="73" x2="359" y2="73" stroke="#f59e0b" stroke-width="2.4"/>
+  <text x="364" y="77" font-size="11" fill="#0f172a">D</text>
+</svg></div>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>A: <span class="math inline">\(y=\left(\frac13\right)^x\)</span> (a <span class="math inline">\((0;1)\)</span> ponton megy át, csökken, pozitív) · B: <span class="math inline">\(y=x^4\)</span> (páros, az origón megy át) · C: <span class="math inline">\(y=\log_{\frac12}x\)</span> (az <span class="math inline">\((1;0)\)</span> ponton megy át, csak pozitív <span class="math inline">\(x\)</span>-re létezik) · D: <span class="math inline">\(y=\frac1{x^2}\)</span> (a <span class="math inline">\(0\)</span>-ban nincs értelmezve, mindenhol pozitív)</p></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-5">
+      <p><span class="szam">5.</span> Határozd meg a függvények értelmezési tartományát!</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=\dfrac{x - 1}{x^{2} - 2}\)</span></li><li><span class="math inline">\(f(x)=\dfrac{1}{7 x - 3 x^{2}}\)</span></li><li><span class="math inline">\(f(x)=\dfrac{7 x}{3 x^{2} + 8 x - 3}\)</span></li><li><span class="math inline">\(f(x)=\dfrac{x - 3}{x^{2} + 2 x + 1}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(D_f=\mathbb R\setminus\{- \sqrt{2};\,\sqrt{2}\}\)</span></li><li><span class="math inline">\(D_f=\mathbb R\setminus\{0;\,\frac{7}{3}\}\)</span></li><li><span class="math inline">\(D_f=\mathbb R\setminus\{-3;\,\frac{1}{3}\}\)</span></li><li><span class="math inline">\(D_f=\mathbb R\setminus\{-1\}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-6">
+      <p><span class="szam">6.</span> Határozd meg a függvények értelmezési tartományát!</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=\sqrt{6 - 2 x}\)</span></li><li><span class="math inline">\(f(x)=\sqrt{3 x + 12}\)</span></li><li><span class="math inline">\(f(x)=\log_2(5-x)\)</span></li><li><span class="math inline">\(f(x)=\ln{\left(2 x + 7 \right)}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(D_f=(-\infty;\,3]\)</span></li><li><span class="math inline">\(D_f=[-4;\,+\infty)\)</span></li><li><span class="math inline">\(D_f=(-\infty;\,5)\)</span></li><li><span class="math inline">\(D_f=(- \frac{7}{2};\,+\infty)\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-7">
+      <p><span class="szam">7.</span> Határozd meg a függvények zérushelyeit! Előbb nézd meg, hol vannak értelmezve.</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=x^3-4x\)</span></li><li><span class="math inline">\(g(x)=\dfrac{x^2-1}{x+1}\)</span></li><li><span class="math inline">\(h(x)=\dfrac{x^2-5x}{x-5}\)</span></li><li><span class="math inline">\(k(x)=2^x-8\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(-2;\ 0;\ 2\)</span></li><li>csak <span class="math inline">\(1\)</span> (a <span class="math inline">\(-1\)</span> nincs benne <span class="math inline">\(D_g\)</span>-ben)</li><li>csak <span class="math inline">\(0\)</span> (az <span class="math inline">\(5\)</span> nincs benne <span class="math inline">\(D_h\)</span>-ban)</li><li><span class="math inline">\(3\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-8">
+      <p><span class="szam">8.</span> Határozd meg a függvények zérushelyeit és előjelét!</p><ol class="reszfeladatok"><li><span class="math inline">\(y=\left(x + 1\right) \left(x + 2\right)^{2}\)</span></li><li><span class="math inline">\(y=\left(1 - x\right) \left(x - 4\right)^{2}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>zérushely: <span class="math inline">\(-2;\ -1\)</span>; <span class="math inline">\(y\gt0\)</span>, ha <span class="math inline">\(x\in (-1;\,+\infty)\)</span>; <span class="math inline">\(y\lt0\)</span>, ha <span class="math inline">\(x\in (-\infty;\,-2)\cup(-2;\,-1)\)</span></li><li>zérushely: <span class="math inline">\(1;\ 4\)</span>; <span class="math inline">\(y\gt0\)</span>, ha <span class="math inline">\(x\in (-\infty;\,1)\)</span>; <span class="math inline">\(y\lt0\)</span>, ha <span class="math inline">\(x\in (1;\,4)\cup(4;\,+\infty)\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-9">
+      <p><span class="szam">9.</span> Határozd meg a függvények zérushelyeit és előjelét!</p><ol class="reszfeladatok"><li><span class="math inline">\(y=\dfrac{x^{2} - 2 x}{3 x + 2}\)</span></li><li><span class="math inline">\(y=\dfrac{x^{2} - 7 x + 10}{x - 1}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>zérushely: <span class="math inline">\(0;\ 2\)</span>; <span class="math inline">\(y\gt0\)</span>, ha <span class="math inline">\(x\in (- \frac{2}{3};\,0)\cup(2;\,+\infty)\)</span>; <span class="math inline">\(y\lt0\)</span>, ha <span class="math inline">\(x\in (-\infty;\,- \frac{2}{3})\cup(0;\,2)\)</span></li><li>zérushely: <span class="math inline">\(2;\ 5\)</span>; <span class="math inline">\(y\gt0\)</span>, ha <span class="math inline">\(x\in (1;\,2)\cup(5;\,+\infty)\)</span>; <span class="math inline">\(y\lt0\)</span>, ha <span class="math inline">\(x\in (-\infty;\,1)\cup(2;\,5)\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-10">
+      <p><span class="szam">10.</span> Döntsd el, hogy a függvény páros, páratlan vagy egyik sem!</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=4 x + \dfrac{4}{x}\)</span></li><li><span class="math inline">\(f(x)=x \left(x - 1\right)^{2}\)</span></li><li><span class="math inline">\(f(x)=x^{3} - \dfrac{2 x}{3}\)</span></li><li><span class="math inline">\(f(x)=7 x^{5} - \dfrac{3}{x}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>páratlan</li><li>egyik sem</li><li>páratlan</li><li>páratlan</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-11">
+      <p><span class="szam">11.</span> Döntsd el, hogy a függvény páros, páratlan vagy egyik sem!</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=4 \left|{x}\right| - x^{4}\)</span></li><li><span class="math inline">\(f(x)=3 x^{3} - x \left|{x}\right|\)</span></li><li><span class="math inline">\(f(x)=7^{- x} + 7^{x}\)</span></li><li><span class="math inline">\(f(x)=5^{x} - 5^{- x}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>páros</li><li>páratlan</li><li>páros</li><li>páratlan</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-12">
+      <p><span class="szam">12.</span> Az ábrán az <span class="math inline">\(f\)</span> függvény grafikonja látható (a töröttvonal végpontjai a grafikon részei). Olvasd le!</p><div class="svgwrap"><svg viewBox="0 0 380 260" width="380" height="260" role="img" aria-label="Az f függvény grafikonja a [−4; 4] intervallumon: a (−4; 2), (−2; −2), (1; 4), (4; −2) pontokat összekötő töröttvonal">
+  <defs><marker id="nyil-41cbb" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+  <g stroke="#cbd5e1" stroke-width=".6">
+    <line x1="85.5" y1="238.0" x2="85.5" y2="14.0"/>
+    <line x1="122.7" y1="238.0" x2="122.7" y2="14.0"/>
+    <line x1="159.8" y1="238.0" x2="159.8" y2="14.0"/>
+    <line x1="234.2" y1="238.0" x2="234.2" y2="14.0"/>
+    <line x1="271.3" y1="238.0" x2="271.3" y2="14.0"/>
+    <line x1="308.5" y1="238.0" x2="308.5" y2="14.0"/>
+    <line x1="345.7" y1="238.0" x2="345.7" y2="14.0"/>
+    <line x1="26.0" y1="184.9" x2="368.0" y2="184.9"/>
+    <line x1="26.0" y1="126.0" x2="368.0" y2="126.0"/>
+    <line x1="26.0" y1="96.5" x2="368.0" y2="96.5"/>
+    <line x1="26.0" y1="67.1" x2="368.0" y2="67.1"/>
+    <line x1="26.0" y1="37.6" x2="368.0" y2="37.6"/>
+  </g>
+  <line x1="26.0" y1="155.5" x2="368.0" y2="155.5" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-41cbb)"/>
+  <line x1="197.0" y1="238.0" x2="197.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-41cbb)"/>
+  <text x="364.0" y="169.5" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+  <text x="189.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+  <text x="234.2" y="168.5" font-size="10" fill="#475569" text-anchor="middle">1</text>
+  <text x="192.0" y="130.0" font-size="10" fill="#475569" text-anchor="end">1</text>
+  <polyline points="48.3,96.5 51.3,101.2 54.3,106.0 57.2,110.7 60.2,115.4 63.2,120.1 66.1,124.8 69.1,129.5 72.1,134.3 75.1,139.0 78.0,143.7 81.0,148.4 84.0,153.1 87.0,157.8 89.9,162.5 92.9,167.3 95.9,172.0 98.9,176.7 101.8,181.4 104.8,186.1 107.8,190.8 110.8,195.6 113.7,200.3 116.7,205.0 119.7,209.7 122.7,214.4 125.6,209.7 128.6,205.0 131.6,200.3 134.5,195.6 137.5,190.8 140.5,186.1 143.5,181.4 146.4,176.7 149.4,172.0 152.4,167.3 155.4,162.5 158.3,157.8 161.3,153.1 164.3,148.4 167.3,143.7 170.2,139.0 173.2,134.3 176.2,129.5 179.2,124.8 182.1,120.1 185.1,115.4 188.1,110.7 191.1,106.0 194.0,101.2 197.0,96.5 200.0,91.8 202.9,87.1 205.9,82.4 208.9,77.7 211.9,72.9 214.8,68.2 217.8,63.5 220.8,58.8 223.8,54.1 226.7,49.4 229.7,44.7 232.7,39.9 235.7,39.9 238.6,44.7 241.6,49.4 244.6,54.1 247.6,58.8 250.5,63.5 253.5,68.2 256.5,72.9 259.5,77.7 262.4,82.4 265.4,87.1 268.4,91.8 271.3,96.5 274.3,101.2 277.3,106.0 280.3,110.7 283.2,115.4 286.2,120.1 289.2,124.8 292.2,129.5 295.1,134.3 298.1,139.0 301.1,143.7 304.1,148.4 307.0,153.1 310.0,157.8 313.0,162.5 316.0,167.3 318.9,172.0 321.9,176.7 324.9,181.4 327.9,186.1 330.8,190.8 333.8,195.6 336.8,200.3 339.7,205.0 342.7,209.7 345.7,214.4" fill="none" stroke="#0f172a" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="48.3" cy="96.5" r="4" fill="#0f172a"/>
+  <circle cx="345.7" cy="214.4" r="4" fill="#0f172a"/>
+</svg></div><ol class="reszfeladatok"><li>az értelmezési tartományt és az értékkészletet</li><li>a zérushelyeket</li><li>hol pozitív és hol negatív a függvény</li><li>hol nő és hol csökken</li><li>a legnagyobb és a legkisebb értéket (és hol veszi fel)</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(D_f=[-4;\,4]\)</span>, <span class="math inline">\(R_f=[-2;\,4]\)</span></li><li><span class="math inline">\(-3;\ -1;\ 3\)</span></li><li><span class="math inline">\(f(x)\gt0\)</span>, ha <span class="math inline">\(x\in[-4;\,-3)\cup(-1;\,3)\)</span>; <span class="math inline">\(f(x)\lt0\)</span>, ha <span class="math inline">\(x\in(-3;\,-1)\cup(3;\,4]\)</span></li><li>nő a <span class="math inline">\([-2;\,1]\)</span>, csökken a <span class="math inline">\([-4;\,-2]\)</span> és az <span class="math inline">\([1;\,4]\)</span> intervallumon</li><li>legnagyobb: <span class="math inline">\(4\)</span> (az <span class="math inline">\(x=1\)</span> helyen); legkisebb: <span class="math inline">\(-2\)</span> (az <span class="math inline">\(x=-2\)</span> és az <span class="math inline">\(x=4\)</span> helyen)</li></ol></div>
+      </details>
+    </article>
+    <h2 id="kozep">🟡 Középszint — X-Force</h2>
+    <article class="feladat kozep" id="kozep-1">
+      <p><span class="szam">1.</span> Az ábrán a <span class="math inline">\(P\)</span> és a <span class="math inline">\(Q\)</span> görbe látható; az egyik az <span class="math inline">\(y=\left(\frac32\right)^x\)</span>, a másik az <span class="math inline">\(y=\log_3x\)</span> grafikonja.</p><div class="svgwrap"><svg viewBox="0 0 380 250" width="380" height="250" role="img" aria-label="Két görbe: a P minden x-re értelmezett, a (0; 1) ponton megy át és nő; a Q csak pozitív x-re létezik, az (1; 0) és a (3; 1) ponton megy át">
+  <defs><marker id="nyil-7c50f" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+  <g stroke="#cbd5e1" stroke-width=".6">
+    <line x1="80.4" y1="228.0" x2="80.4" y2="14.0"/>
+    <line x1="119.3" y1="228.0" x2="119.3" y2="14.0"/>
+    <line x1="197.0" y1="228.0" x2="197.0" y2="14.0"/>
+    <line x1="235.9" y1="228.0" x2="235.9" y2="14.0"/>
+    <line x1="274.7" y1="228.0" x2="274.7" y2="14.0"/>
+    <line x1="313.6" y1="228.0" x2="313.6" y2="14.0"/>
+    <line x1="352.5" y1="228.0" x2="352.5" y2="14.0"/>
+    <line x1="26.0" y1="179.1" x2="368.0" y2="179.1"/>
+    <line x1="26.0" y1="117.9" x2="368.0" y2="117.9"/>
+    <line x1="26.0" y1="87.4" x2="368.0" y2="87.4"/>
+    <line x1="26.0" y1="56.8" x2="368.0" y2="56.8"/>
+    <line x1="26.0" y1="26.2" x2="368.0" y2="26.2"/>
+  </g>
+  <line x1="26.0" y1="148.5" x2="368.0" y2="148.5" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-7c50f)"/>
+  <line x1="158.1" y1="228.0" x2="158.1" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-7c50f)"/>
+  <text x="364.0" y="162.5" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+  <text x="150.1" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+  <text x="197.0" y="161.5" font-size="10" fill="#475569" text-anchor="middle">1</text>
+  <text x="153.1" y="121.9" font-size="10" fill="#475569" text-anchor="end">1</text>
+  <polyline points="33.8,140.2 36.4,139.9 39.1,139.7 41.7,139.4 44.3,139.2 47.0,138.9 49.6,138.7 52.3,138.4 54.9,138.1 57.6,137.8 60.2,137.5 62.8,137.2 65.5,136.9 68.1,136.6 70.8,136.2 73.4,135.9 76.1,135.5 78.7,135.2 81.3,134.8 84.0,134.4 86.6,134.0 89.3,133.6 91.9,133.2 94.6,132.8 97.2,132.3 99.8,131.9 102.5,131.4 105.1,130.9 107.8,130.4 110.4,129.9 113.1,129.4 115.7,128.9 118.3,128.3 121.0,127.8 123.6,127.2 126.3,126.6 128.9,126.0 131.6,125.3 134.2,124.7 136.8,124.0 139.5,123.3 142.1,122.6 144.8,121.9 147.4,121.2 150.1,120.4 152.7,119.6 155.3,118.8 158.0,118.0 160.6,117.1 163.3,116.3 165.9,115.4 168.6,114.4 171.2,113.5 173.8,112.5 176.5,111.5 179.1,110.5 181.8,109.4 184.4,108.3 187.1,107.2 189.7,106.0 192.3,104.8 195.0,103.6 197.6,102.4 200.3,101.1 202.9,99.7 205.6,98.4 208.2,97.0 210.8,95.5 213.5,94.1 216.1,92.5 218.8,91.0 221.4,89.4 224.0,87.7 226.7,86.0 229.3,84.3 232.0,82.5 234.6,80.6 237.3,78.7 239.9,76.8 242.5,74.8 245.2,72.7 247.8,70.6 250.5,68.4 253.1,66.2 255.8,63.9 258.4,61.5 261.0,59.1 263.7,56.6 266.3,54.0 269.0,51.3 271.6,48.6 274.3,45.8 276.9,43.0 279.5,40.0 282.2,37.0 284.8,33.9 287.5,30.7 290.1,27.4 292.8,24.0 295.4,20.5 298.0,16.9" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="160.1,231.9 162.1,212.2 164.1,200.8 166.1,192.7 168.1,186.4 170.1,181.3 172.1,177.0 174.1,173.3 176.1,170.0 178.1,167.1 180.1,164.4 182.1,162.0 184.1,159.7 186.1,157.7 188.1,155.8 190.1,154.0 192.1,152.3 194.1,150.7 196.1,149.2 198.1,147.7 200.1,146.4 202.1,145.1 204.1,143.8 206.1,142.7 208.1,141.5 210.1,140.4 212.1,139.4 214.1,138.4 216.1,137.4 218.1,136.4 220.1,135.5 222.1,134.6 224.1,133.8 226.1,132.9 228.1,132.1 230.1,131.4 232.1,130.6 234.1,129.9 236.1,129.1 238.1,128.4 240.1,127.7 242.1,127.1 244.1,126.4 246.1,125.8 248.1,125.1 250.1,124.5 252.1,123.9 254.1,123.3 256.2,122.8 258.2,122.2 260.2,121.7 262.2,121.1 264.2,120.6 266.2,120.1 268.2,119.6 270.2,119.1 272.2,118.6 274.2,118.1 276.2,117.6 278.2,117.1 280.2,116.7 282.2,116.2 284.2,115.8 286.2,115.3 288.2,114.9 290.2,114.5 292.2,114.1 294.2,113.6 296.2,113.2 298.2,112.8 300.2,112.4 302.2,112.1 304.2,111.7 306.2,111.3 308.2,110.9 310.2,110.6 312.2,110.2 314.2,109.8 316.2,109.5 318.2,109.1 320.2,108.8 322.2,108.4 324.2,108.1 326.2,107.8 328.2,107.4 330.2,107.1 332.2,106.8 334.2,106.5 336.2,106.2 338.2,105.8 340.2,105.5 342.2,105.2 344.2,104.9 346.2,104.6 348.2,104.3 350.2,104.0 352.2,103.8 354.2,103.5 356.2,103.2 358.2,102.9 360.2,102.6" fill="none" stroke="#ef4444" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="274.7" cy="117.9" r="4" fill="#0f172a"/>
+  <rect x="337" y="13" width="37" height="40" rx="4" fill="#ffffff" fill-opacity=".88"/>
+  <line x1="341" y1="22" x2="359" y2="22" stroke="#3b82f6" stroke-width="2.4"/>
+  <text x="364" y="26" font-size="11" fill="#0f172a">P</text>
+  <line x1="341" y1="39" x2="359" y2="39" stroke="#ef4444" stroke-width="2.4"/>
+  <text x="364" y="43" font-size="11" fill="#0f172a">Q</text>
+</svg></div><ol class="reszfeladatok"><li>Melyik görbe melyik függvényé? Indokold két jellegzetességgel!</li><li>Hol veszi fel a <span class="math inline">\(Q\)</span> görbéhez tartozó függvény a <span class="math inline">\(2\)</span> értéket?</li><li>Van-e a <span class="math inline">\(P\)</span> görbének zérushelye?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(P\)</span>: <span class="math inline">\(y=\left(\frac32\right)^x\)</span> (minden <span class="math inline">\(x\)</span>-re értelmezett, a <span class="math inline">\((0;1)\)</span> ponton megy át); <span class="math inline">\(Q\)</span>: <span class="math inline">\(y=\log_3x\)</span> (csak pozitív <span class="math inline">\(x\)</span>-re, az <span class="math inline">\((1;0)\)</span> ponton megy át)</li><li>az <span class="math inline">\(x=9\)</span> helyen, mert <span class="math inline">\(\log_39=2\)</span></li><li>nincs: <span class="math inline">\(\left(\frac32\right)^x\gt0\)</span> minden <span class="math inline">\(x\)</span>-re</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-2">
+      <p><span class="szam">2.</span> Véd Vilmos négy állítást írt fel. Mit rontott el? Add meg a helyes választ!</p><ol class="reszfeladatok"><li>„Az <span class="math inline">\(y=\log_3x\)</span> függvény értelmezési tartománya <span class="math inline">\([0;\,+\infty)\)</span>.”</li><li>„Az <span class="math inline">\(y=\sqrt x\)</span> függvény értékkészlete <span class="math inline">\(\mathbb R\)</span>.”</li><li>„Az <span class="math inline">\(y=\dfrac{1}{x+4}\)</span> függvény értelmezési tartománya <span class="math inline">\(\mathbb R\setminus\{0\}\)</span>.”</li><li>„Az <span class="math inline">\(y=2^x\)</span> függvény értékkészlete <span class="math inline">\([0;\,+\infty)\)</span>.”</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>a <span class="math inline">\(0\)</span> nincs benne: <span class="math inline">\((0;\,+\infty)\)</span></li><li>a négyzetgyök nem negatív: <span class="math inline">\([0;\,+\infty)\)</span></li><li>a nevező <span class="math inline">\(x+4\)</span>: <span class="math inline">\(\mathbb R\setminus\{-4\}\)</span></li><li>a <span class="math inline">\(0\)</span>-t sosem veszi fel: <span class="math inline">\((0;\,+\infty)\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-3">
+      <p><span class="szam">3.</span> Határozd meg a függvények értelmezési tartományát!</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=\sqrt{5 x^{2} + 4 x - 1}\)</span></li><li><span class="math inline">\(f(x)=\sqrt{10 + 3 x - x^{2}}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(D_f=(-\infty;\,-1]\cup[\frac{1}{5};\,+\infty)\)</span></li><li><span class="math inline">\(D_f=[-2;\,5]\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-4">
+      <p><span class="szam">4.</span> Határozd meg a függvények értelmezési tartományát!</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=\log_2\left(3x^2-x-4\right)\)</span></li><li><span class="math inline">\(f(x)=\log_{0{,}5}\left(7-6x-x^2\right)\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(D_f=(-\infty;\,-1)\cup(\frac{4}{3};\,+\infty)\)</span></li><li><span class="math inline">\(D_f=(-7;\,1)\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-5">
+      <p><span class="szam">5.</span> Határozd meg a függvények értelmezési tartományát!</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=\sqrt{2 x + 7} + \dfrac{4}{x - 2}\)</span></li><li><span class="math inline">\(f(x)=\sqrt{\dfrac{2 - x}{2 x + 1}}\)</span></li><li><span class="math inline">\(f(x)=\log_3\dfrac{4-x}{3x+2}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(D_f=[- \frac{7}{2};\,2)\cup(2;\,+\infty)\)</span></li><li><span class="math inline">\(D_f=(- \frac{1}{2};\,2]\)</span></li><li><span class="math inline">\(D_f=(- \frac{2}{3};\,4)\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-6">
+      <p><span class="szam">6.</span> Határozd meg a függvények zérushelyeit és előjelét!</p><ol class="reszfeladatok"><li><span class="math inline">\(y=\dfrac{\left(x^{2} - 5\right) \left(1 - x\right)}{2}\)</span></li><li><span class="math inline">\(y=\dfrac{x^{2} + 6 x + 9}{x + 1}\)</span></li><li><span class="math inline">\(y=\dfrac{x^{2} - 4}{1 - x^{2}}\)</span></li><li><span class="math inline">\(y=\dfrac{x^{2} - 5 x + 4}{x - 5}\)</span></li><li><span class="math inline">\(y=\left(2 x^{2} - 3 x\right) e^{x}\)</span></li><li><span class="math inline">\(y=\left(x^{2} - 2\right) e^{2 x}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>zérushely: <span class="math inline">\(- \sqrt{5};\ 1;\ \sqrt{5}\)</span>; <span class="math inline">\(y\gt0\)</span>, ha <span class="math inline">\(x\in (-\infty;\,- \sqrt{5})\cup(1;\,\sqrt{5})\)</span>; <span class="math inline">\(y\lt0\)</span>, ha <span class="math inline">\(x\in (- \sqrt{5};\,1)\cup(\sqrt{5};\,+\infty)\)</span></li><li>zérushely: <span class="math inline">\(-3\)</span>; <span class="math inline">\(y\gt0\)</span>, ha <span class="math inline">\(x\in (-1;\,+\infty)\)</span>; <span class="math inline">\(y\lt0\)</span>, ha <span class="math inline">\(x\in (-\infty;\,-3)\cup(-3;\,-1)\)</span></li><li>zérushely: <span class="math inline">\(-2;\ 2\)</span>; <span class="math inline">\(y\gt0\)</span>, ha <span class="math inline">\(x\in (-2;\,-1)\cup(1;\,2)\)</span>; <span class="math inline">\(y\lt0\)</span>, ha <span class="math inline">\(x\in (-\infty;\,-2)\cup(-1;\,1)\cup(2;\,+\infty)\)</span></li><li>zérushely: <span class="math inline">\(1;\ 4\)</span>; <span class="math inline">\(y\gt0\)</span>, ha <span class="math inline">\(x\in (1;\,4)\cup(5;\,+\infty)\)</span>; <span class="math inline">\(y\lt0\)</span>, ha <span class="math inline">\(x\in (-\infty;\,1)\cup(4;\,5)\)</span></li><li>zérushely: <span class="math inline">\(0;\ \frac{3}{2}\)</span>; <span class="math inline">\(y\gt0\)</span>, ha <span class="math inline">\(x\in (-\infty;\,0)\cup(\frac{3}{2};\,+\infty)\)</span>; <span class="math inline">\(y\lt0\)</span>, ha <span class="math inline">\(x\in (0;\,\frac{3}{2})\)</span></li><li>zérushely: <span class="math inline">\(- \sqrt{2};\ \sqrt{2}\)</span>; <span class="math inline">\(y\gt0\)</span>, ha <span class="math inline">\(x\in (-\infty;\,- \sqrt{2})\cup(\sqrt{2};\,+\infty)\)</span>; <span class="math inline">\(y\lt0\)</span>, ha <span class="math inline">\(x\in (- \sqrt{2};\,\sqrt{2})\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-7">
+      <p><span class="szam">7.</span> Döntsd el, hogy a függvény páros, páratlan vagy egyik sem! (Előbb nézd meg az értelmezési tartományt: szimmetrikus-e?)</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=\sqrt{x^{2} + 1} + \sqrt{x^{2} - 1}\)</span></li><li><span class="math inline">\(f(x)=\sin x + \cos x\)</span></li><li><span class="math inline">\(f(x)=x \sin x + \cos x\)</span></li><li><span class="math inline">\(f(x)=x^3\operatorname{tg}x\)</span></li><li><span class="math inline">\(f(x)=\dfrac{x^{2} + 1}{x^{2} + x + 1}\)</span></li><li><span class="math inline">\(f(x)=x \sin^2x - x^{3}\)</span></li><li><span class="math inline">\(f(x)=2^{1 - x^{2}}\)</span></li><li><span class="math inline">\(f(x)=\dfrac{\sin x}{x} - 1\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>páros</li><li>egyik sem</li><li>páros</li><li>páros</li><li>egyik sem</li><li>páratlan</li><li>páros</li><li>páros</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-8">
+      <p><span class="szam">8.</span> Az ábrán az <span class="math inline">\(f\)</span>, a <span class="math inline">\(g\)</span> és a <span class="math inline">\(h\)</span> függvény grafikonja látható.</p><div class="svgwrap"><svg viewBox="0 0 380 260" width="380" height="260" role="img" aria-label="Három grafikon: az f az y tengelyre szimmetrikus, a g az origóra szimmetrikus, a h egyikre sem">
+  <defs><marker id="nyil-f8103" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+  <g stroke="#cbd5e1" stroke-width=".6">
+    <line x1="96.4" y1="238.0" x2="96.4" y2="14.0"/>
+    <line x1="146.7" y1="238.0" x2="146.7" y2="14.0"/>
+    <line x1="247.3" y1="238.0" x2="247.3" y2="14.0"/>
+    <line x1="297.6" y1="238.0" x2="297.6" y2="14.0"/>
+    <line x1="347.9" y1="238.0" x2="347.9" y2="14.0"/>
+    <line x1="26.0" y1="173.0" x2="368.0" y2="173.0"/>
+    <line x1="26.0" y1="100.7" x2="368.0" y2="100.7"/>
+    <line x1="26.0" y1="64.6" x2="368.0" y2="64.6"/>
+    <line x1="26.0" y1="28.5" x2="368.0" y2="28.5"/>
+  </g>
+  <line x1="26.0" y1="136.8" x2="368.0" y2="136.8" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-f8103)"/>
+  <line x1="197.0" y1="238.0" x2="197.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-f8103)"/>
+  <text x="364.0" y="150.8" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+  <text x="189.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+  <text x="247.3" y="149.8" font-size="10" fill="#475569" text-anchor="middle">1</text>
+  <text x="192.0" y="104.7" font-size="10" fill="#475569" text-anchor="end">1</text>
+  <polyline points="109.0,19.3 110.7,36.8 112.5,53.0 114.3,67.8 116.0,81.4 117.8,93.8 119.5,105.0 121.3,115.2 123.1,124.3 124.8,132.4 126.6,139.7 128.3,146.0 130.1,151.6 131.9,156.4 133.6,160.5 135.4,163.9 137.2,166.7 138.9,168.9 140.7,170.6 142.4,171.8 144.2,172.6 146.0,172.9 147.7,172.9 149.5,172.6 151.2,171.9 153.0,171.0 154.8,169.8 156.5,168.5 158.3,167.0 160.0,165.3 161.8,163.6 163.6,161.7 165.3,159.8 167.1,157.9 168.8,155.9 170.6,154.0 172.4,152.1 174.1,150.2 175.9,148.5 177.6,146.8 179.4,145.1 181.2,143.7 182.9,142.3 184.7,141.0 186.4,140.0 188.2,139.0 190.0,138.2 191.7,137.6 193.5,137.2 195.2,136.9 197.0,136.8 198.8,136.9 200.5,137.2 202.3,137.6 204.0,138.2 205.8,139.0 207.6,140.0 209.3,141.0 211.1,142.3 212.8,143.7 214.6,145.1 216.4,146.8 218.1,148.5 219.9,150.2 221.6,152.1 223.4,154.0 225.2,155.9 226.9,157.9 228.7,159.8 230.4,161.7 232.2,163.6 234.0,165.3 235.7,167.0 237.5,168.5 239.2,169.8 241.0,171.0 242.8,171.9 244.5,172.6 246.3,172.9 248.0,172.9 249.8,172.6 251.6,171.8 253.3,170.6 255.1,168.9 256.9,166.7 258.6,163.9 260.4,160.5 262.1,156.4 263.9,151.6 265.7,146.0 267.4,139.7 269.2,132.4 270.9,124.3 272.7,115.2 274.5,105.0 276.2,93.8 278.0,81.4 279.7,67.8 281.5,53.0 283.3,36.8 285.0,19.3" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="90.8,248.3 93.0,232.2 95.2,217.0 97.4,202.7 99.6,189.2 101.8,176.5 104.1,164.6 106.3,153.4 108.5,143.0 110.7,133.4 112.9,124.5 115.1,116.3 117.3,108.7 119.5,101.9 121.8,95.7 124.0,90.1 126.2,85.1 128.4,80.7 130.6,76.9 132.8,73.6 135.0,70.9 137.3,68.7 139.5,66.9 141.7,65.7 143.9,64.9 146.1,64.6 148.3,64.7 150.5,65.2 152.7,66.1 155.0,67.3 157.2,68.9 159.4,70.9 161.6,73.1 163.8,75.7 166.0,78.5 168.2,81.6 170.4,84.9 172.7,88.5 174.9,92.2 177.1,96.2 179.3,100.3 181.5,104.5 183.7,108.9 185.9,113.4 188.1,118.0 190.4,122.6 192.6,127.3 194.8,132.1 197.0,136.8 199.2,141.6 201.4,146.4 203.6,151.1 205.9,155.7 208.1,160.3 210.3,164.8 212.5,169.2 214.7,173.4 216.9,177.5 219.1,181.5 221.3,185.2 223.6,188.7 225.8,192.1 228.0,195.2 230.2,198.0 232.4,200.5 234.6,202.8 236.8,204.7 239.0,206.3 241.3,207.6 243.5,208.5 245.7,209.0 247.9,209.1 250.1,208.8 252.3,208.0 254.5,206.7 256.7,205.0 259.0,202.8 261.2,200.1 263.4,196.8 265.6,193.0 267.8,188.6 270.0,183.6 272.2,178.0 274.5,171.8 276.7,164.9 278.9,157.4 281.1,149.2 283.3,140.3 285.5,130.6 287.7,120.3 289.9,109.1 292.2,97.2 294.4,84.5 296.6,71.0 298.8,56.7 301.0,41.5 303.2,25.4 305.4,8.4" fill="none" stroke="#ef4444" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="36.1,67.5 38.5,71.2 40.9,74.9 43.3,78.5 45.7,82.1 48.1,85.5 50.5,88.9 53.0,92.1 55.4,95.3 57.8,98.4 60.2,101.5 62.6,104.4 65.0,107.3 67.4,110.0 69.9,112.7 72.3,115.3 74.7,117.9 77.1,120.3 79.5,122.7 81.9,124.9 84.3,127.1 86.8,129.2 89.2,131.3 91.6,133.2 94.0,135.1 96.4,136.8 98.8,138.5 101.2,140.1 103.7,141.7 106.1,143.1 108.5,144.5 110.9,145.7 113.3,146.9 115.7,148.0 118.1,149.1 120.6,150.0 123.0,150.9 125.4,151.7 127.8,152.3 130.2,153.0 132.6,153.5 135.0,153.9 137.5,154.3 139.9,154.6 142.3,154.8 144.7,154.9 147.1,154.9 149.5,154.8 151.9,154.7 154.4,154.5 156.8,154.2 159.2,153.8 161.6,153.3 164.0,152.8 166.4,152.1 168.8,151.4 171.2,150.6 173.7,149.7 176.1,148.7 178.5,147.7 180.9,146.6 183.3,145.3 185.7,144.0 188.1,142.6 190.6,141.2 193.0,139.6 195.4,138.0 197.8,136.3 200.2,134.5 202.6,132.6 205.0,130.6 207.5,128.5 209.9,126.4 212.3,124.2 214.7,121.9 217.1,119.5 219.5,117.0 221.9,114.5 224.4,111.8 226.8,109.1 229.2,106.3 231.6,103.4 234.0,100.5 236.4,97.4 238.8,94.3 241.3,91.1 243.7,87.8 246.1,84.4 248.5,80.9 250.9,77.3 253.3,73.7 255.7,70.0 258.2,66.2 260.6,62.3 263.0,58.3 265.4,54.3 267.8,50.2 270.2,45.9 272.6,41.6 275.1,37.3 277.5,32.8" fill="none" stroke="#047857" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="337" y="13" width="37" height="57" rx="4" fill="#ffffff" fill-opacity=".88"/>
+  <line x1="341" y1="22" x2="359" y2="22" stroke="#3b82f6" stroke-width="2.4"/>
+  <text x="364" y="26" font-size="11" fill="#0f172a">f</text>
+  <line x1="341" y1="39" x2="359" y2="39" stroke="#ef4444" stroke-width="2.4"/>
+  <text x="364" y="43" font-size="11" fill="#0f172a">g</text>
+  <line x1="341" y1="56" x2="359" y2="56" stroke="#047857" stroke-width="2.4"/>
+  <text x="364" y="60" font-size="11" fill="#0f172a">h</text>
+</svg></div><ol class="reszfeladatok"><li>Melyik páros, melyik páratlan, melyik egyik sem? Mit látsz a grafikonon?</li><li>A képletek: <span class="math inline">\(f(x)=x^4-2x^2\)</span>, <span class="math inline">\(g(x)=x^3-3x\)</span>, <span class="math inline">\(h(x)=\frac12x^2+x\)</span>. Igazold számolással a döntéseidet!</li><li>Egyetlen konkrét <span class="math inline">\(x\)</span> helyettesítésével mutasd meg, hogy <span class="math inline">\(h\)</span> se nem páros, se nem páratlan!</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(f\)</span> páros (az <span class="math inline">\(y\)</span> tengelyre szimmetrikus), <span class="math inline">\(g\)</span> páratlan (az origóra szimmetrikus), <span class="math inline">\(h\)</span> egyik sem</li><li><span class="math inline">\(f(-x)=x^4-2x^2=f(x)\)</span>; <span class="math inline">\(g(-x)=-x^3+3x=-g(x)\)</span>; <span class="math inline">\(h(-x)=\frac12x^2-x\)</span>, ez sem <span class="math inline">\(h(x)\)</span>, sem <span class="math inline">\(-h(x)\)</span></li><li>pl. <span class="math inline">\(h(2)=4\)</span>, de <span class="math inline">\(h(-2)=0\)</span>: ez sem <span class="math inline">\(h(2)=4\)</span>, sem <span class="math inline">\(-h(2)=-4\)</span></li></ol></div>
+      </details>
+    </article>
+    <h2 id="nehez">🔴 Nehéz szint — Maximális erőbedobás</h2>
+    <article class="feladat nehez" id="nehez-1">
+      <p><span class="szam">1.</span> Határozd meg a függvények értelmezési tartományát!</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=\sqrt{\dfrac{x^{2} - 9}{x + 1}}\)</span></li><li><span class="math inline">\(f(x)=\sqrt{x^{2} - 2 x} - \ln{\left(9 - x^{2} \right)}\)</span></li><li><span class="math inline">\(f(x)=\dfrac{x}{x^2-1}+\log_7\left(16-x^2\right)\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(D_f=[-3;\,-1)\cup[3;\,+\infty)\)</span></li><li><span class="math inline">\(D_f=(-3;\,0]\cup[2;\,3)\)</span></li><li><span class="math inline">\(D_f=(-4;\,-1)\cup(-1;\,1)\cup(1;\,4)\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-2">
+      <p><span class="szam">2.</span> Vizsgáld meg az <span class="math inline">\(f(x)=\dfrac{x^2-x-6}{x^2-1}\)</span> függvényt!</p><ol class="reszfeladatok"><li>Határozd meg az értelmezési tartományát!</li><li>Határozd meg a zérushelyeit!</li><li>Készíts előjeltáblázatot!</li><li>Számítsd ki <span class="math inline">\(f(0)\)</span>-t, és az előjeltáblázat alapján vázold a grafikont!</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(D_f=\mathbb R\setminus\{-1;\,1\}\)</span></li><li><span class="math inline">\(-2\)</span> és <span class="math inline">\(3\)</span></li><li><span class="math inline">\(f(x)\gt0\)</span>, ha <span class="math inline">\(x\in(-\infty;\,-2)\cup(-1;\,1)\cup(3;\,+\infty)\)</span>; <span class="math inline">\(f(x)\lt0\)</span>, ha <span class="math inline">\(x\in(-2;\,-1)\cup(1;\,3)\)</span></li><li><span class="math inline">\(f(0)=6\)</span>; a grafikon az <span class="math inline">\(x\)</span> tengely fölött van, ha <span class="math inline">\(x\lt-2\)</span>, <span class="math inline">\(-1\lt x\lt1\)</span> vagy <span class="math inline">\(x\gt3\)</span>, alatta, ha <span class="math inline">\(-2\lt x\lt-1\)</span> vagy <span class="math inline">\(1\lt x\lt3\)</span></li></ol></div>
+      </details>
+    </article>
+    <h2 id="joker-szint">🃏 Joker</h2>
+    <article class="feladat joker" id="joker">
+      <p><span class="szam">★</span> Véd Vilmos olyan „tükörfüggvényt” keres, amely egyszerre páros <b>és</b> páratlan. Létezik ilyen? Ha igen, melyik (értelmezési tartománya legyen <span class="math inline">\(\mathbb R\)</span>)?</p><ol class="reszfeladatok"><li>Írd fel a két feltételt egyszerre!</li><li>Melyik függvény teljesíti?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>Ha <span class="math inline">\(f\)</span> páros és páratlan is, akkor <span class="math inline">\(f(-x)=f(x)\)</span> és <span class="math inline">\(f(-x)=-f(x)\)</span>, tehát <span class="math inline">\(f(x)=-f(x)\)</span>, vagyis <span class="math inline">\(f(x)=0\)</span> minden <span class="math inline">\(x\)</span>-re.</li><li>Egyetlen ilyen van: az <span class="math inline">\(f(x)=0\)</span> konstans függvény.</li></ol></div>
+      </details>
+    </article>
+    <div class="gyakorolj">
+      <span class="ikon">📖</span>
+      <p>Elakadtál? Nézd át a <a href="index.html">témakör tananyagait</a> vagy a <a href="osszefoglalo.html">Csalópapírt</a>.</p>
+    </div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-aszimptotak.html"><span class="irany">← Előző</span><span class="hova">Aszimptoták</span></a>
+      <a class="kov" href="feladatok-hatarertek-aszimptota.html"><span class="irany">Következő →</span><span class="hova">Zsoldos-lista II. — Határérték és aszimptoták</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

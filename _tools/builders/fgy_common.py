@@ -60,7 +60,7 @@ DISZKLEMER = ('<p class="diszklemer">⚠️ Ez <b>gyakorló</b> anyag: nincs gar
 
 
 def oldal(*, tagozat, mappa, fajl, cim, temakor, alcim, sections_html, prev, prevc, nxt, nxtc,
-          h1=None, itt=None, chipek=None):
+          h1=None, itt=None, chipek=None, ossz_nev="Taktikai memóriakártyát"):
     """Általános (tagozatfüggetlen) feladatgyűjtemény-oldal. A `page()` az 1e/01 örökség."""
     h1 = h1 or f"{cim} — Kiképzési Adattár"
     itt = itt or f"{cim} — feladatok"
@@ -103,7 +103,7 @@ def oldal(*, tagozat, mappa, fajl, cim, temakor, alcim, sections_html, prev, pre
 {sections_html}
     <div class="gyakorolj">
       <span class="ikon">📖</span>
-      <p>Elakadtál? Nézd át a <a href="index.html">témakör tananyagait</a> vagy a <a href="osszefoglalo.html">Taktikai memóriakártyát</a>.</p>
+      <p>Elakadtál? Nézd át a <a href="index.html">témakör tananyagait</a> vagy a <a href="osszefoglalo.html">{ossz_nev}</a>.</p>
     </div>
     <div class="lapozo">
       <a class="elozo" href="{prev}"><span class="irany">← Előző</span><span class="hova">{prevc}</span></a>

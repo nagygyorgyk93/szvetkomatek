@@ -279,5 +279,5 @@ ut = oldal(tagozat="4e", mappa="01-sorozatok-hatarerteke", fajl="feladatok-hatar
                  "A végeredmény minden feladatnál lenyitható — előbb számolj, csak utána nézd meg!",
            sections_html="\n".join(body),
            prev="tananyag-vegtelen-mertani-sor.html", prevc="A végtelen mértani sor",
-           nxt="feladatok-hazi.html", nxtc="I.V.H. Kihallgató Terem — Vészterem")
+           nxt="feladatok-hazi.html", nxtc="I.V.H. Kihallgató Terem — Vészterem", ossz_nev="Csalópapírt")
 print("✓", os.path.basename(ut), "| Alap", len(ALAP), "Közép", len(KOZEP), "Nehéz", len(NEHEZ), "+ Joker")

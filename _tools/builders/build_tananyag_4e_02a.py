@@ -347,7 +347,7 @@ A2 = [
            "A 2-ben a függvény 0, de ott nem vált előjelet.",
         nem="✘ Az (x − 2)² tényező négyzet: a 2 két oldalán is pozitív, ott nincs előjelváltás. Az előjel "
             "csak az x + 1-en múlik: h(x) < 0 pontosan akkor, ha x < −1."),
-   GY(FT + "#alap-5", "A 5–12", FT + "#kozep-3", "K 3–6"),
+   GY(FT + "#alap-5", "A 5–9", FT + "#kozep-3", "K 3–6"),
    brief('<b>Nagol:</b> Tudjuk, hol él a függvény, hol nulla és hol pozitív. Most azt nézzük meg, hogyan '
          '<b>viselkedik</b>: tükrös-e, ismétlődik-e, emelkedik vagy süllyed. <b>Véd Vilmos:</b> Én '
          'mindenképp emelkedő vagyok.', outro=True),
@@ -439,7 +439,7 @@ A3 = [
            "függőleges irányban kell nézni.",
         nem="✘ Az x tengely mentén az értelmezési tartományt látod. Az értékkészlet a felvett "
             "értékek (magasságok) halmaza, ezt az y tengelyre vetítve olvasod le."),
-   GY(FT + "#alap-13", "A 13–16", FT + "#kozep-7", "K 7–8"),
+   GY(FT + "#alap-10", "A 10–12", FT + "#kozep-7", "K 7–8"),
    brief('<b>Nagol:</b> Eddig azt néztük, mennyi a függvény egy pontban. Most jön a fejezet igazi kérdése: '
          '<b>mihez közelít</b> a függvény, ha $x$ egy pont felé fut — akkor is, ha abban a pontban nincs '
          'értelmezve. <b>Véd Vilmos:</b> Ha nincs értelmezve, akkor ott nincs semmi. <b>Nagol:</b> Majd meglátjuk.',

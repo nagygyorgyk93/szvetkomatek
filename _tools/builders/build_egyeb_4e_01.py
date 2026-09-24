@@ -381,7 +381,7 @@ oldal(**T, fajl="feladatok-hazi.html", cim="I.V.H. Kihallgató Terem",
             "előtti bemelegítésnek. Az I.V.H. minden választ ellenőriz: a végeredmény minden feladatnál "
             "lenyitható, de csak a számolás után nézd meg!",
       sections_html="\n".join(body),
-      prev=FGY, prevc="Zsoldos-lista", nxt="osszefoglalo.html", nxtc="Csalópapír")
+      prev=FGY, prevc="Zsoldos-lista", nxt="osszefoglalo.html", nxtc="Csalópapír", ossz_nev="Csalópapírt")
 print("✓ feladatok-hazi.html | Alap", len(HA), "Közép", len(HK), "Nehéz", len(HN))
 
 
