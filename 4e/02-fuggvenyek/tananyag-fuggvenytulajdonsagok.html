@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Paritás, periodicitás, monotonitás — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Függvények</a> ›
+  <span class="itt">Paritás, periodicitás, monotonitás — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Paritás, periodicitás, monotonitás</h1>
+  <p class="alcim">Páros és páratlan függvény, periodikus függvények, és egy grafikon teljes elemzése: értékkészlet, zérushely, előjel, monotonitás.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az Aszimptota-fal Áttörése · 3/7</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/ved_vilmos_w.webp" alt="Véd Vilmos — a negyedik falat áttörő zsoldos" width="1200" height="670" decoding="async"><p>📡 <b>Véd Vilmos:</b> Belenéztem a tükörbe, és a tükörképem mást csinált, mint én. <b>Nagol:</b> A páros függvény tükörképe önmaga. A tiéd nem páros — és az sem biztos, hogy páratlan. Ma a függvények <b>viselkedését</b> nézzük: szimmetriát, ismétlődést és azt, hol nő és hol csökken.</p></div>
+
+    <h2 id="s1">Páros és páratlan függvény</h2>
+
+    <p class="lead">A paritás a grafikon <b>szimmetriáját</b> írja le. Feltétele, hogy az értelmezési tartomány szimmetrikus legyen a <span class="math inline">\(0\)</span>-ra: ha <span class="math inline">\(x\)</span> benne van, <span class="math inline">\(-x\)</span> is.</p>
+
+    <div class="doboz definicio" id="def-paros-paratlan">
+      <p class="cim"><span class="ikon">📗</span> Páros és páratlan függvény</p>
+      <ul><li><span class="math inline">\(f\)</span> <b>páros</b>, ha minden <span class="math inline">\(x\in D_f\)</span> esetén <span class="math inline">\(-x\in D_f\)</span> és <span class="math inline">\(f(-x)=f(x)\)</span> — a grafikon az <span class="math inline">\(y\)</span> tengelyre szimmetrikus;</li><li><span class="math inline">\(f\)</span> <b>páratlan</b>, ha minden <span class="math inline">\(x\in D_f\)</span> esetén <span class="math inline">\(-x\in D_f\)</span> és <span class="math inline">\(f(-x)=-f(x)\)</span> — a grafikon az origóra szimmetrikus.</li></ul><p>Egy függvény lehet <b>egyik sem</b>.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-paritas">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — paritásvizsgálat</p>
+      <p>Helyettesítsünk <span class="math inline">\(x\)</span> helyére <span class="math inline">\(-x\)</span>-et, és hasonlítsuk össze az eredményt <span class="math inline">\(f(x)\)</span>-szel!</p><ul><li><span class="math inline">\(f(x)=x^4-3x^2\)</span>: <span class="math inline">\(f(-x)=(-x)^4-3(-x)^2=x^4-3x^2=f(x)\)</span> → <b>páros</b>.</li><li><span class="math inline">\(g(x)=x^3+2x\)</span>: <span class="math inline">\(g(-x)=-x^3-2x=-(x^3+2x)=-g(x)\)</span> → <b>páratlan</b>.</li><li><span class="math inline">\(h(x)=x^2+x\)</span>: <span class="math inline">\(h(-x)=x^2-x\)</span>, ez sem <span class="math inline">\(h(x)\)</span>, sem <span class="math inline">\(-h(x)\)</span> (pl. <span class="math inline">\(h(1)=2\)</span>, <span class="math inline">\(h(-1)=0\)</span>) → <b>egyik sem</b>.</li><li><span class="math inline">\(k(x)=x\sin x\)</span>: a szinusz páratlan, <span class="math inline">\(\sin(-x)=-\sin x\)</span>, így <span class="math inline">\(k(-x)=(-x)(-\sin x)=x\sin x\)</span> → <b>páros</b> (páratlan · páratlan = páros).</li></ul>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 360 260" width="360" height="260" role="img" aria-label="Egy páros függvény (az y tengelyre szimmetrikus) és egy páratlan függvény (az origóra szimmetrikus) grafikonja">
+      <defs><marker id="nyil-af2f4" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="119.9" y1="238.0" x2="119.9" y2="14.0"/>
+        <line x1="254.1" y1="238.0" x2="254.1" y2="14.0"/>
+        <line x1="321.2" y1="238.0" x2="321.2" y2="14.0"/>
+        <line x1="26.0" y1="198.5" x2="348.0" y2="198.5"/>
+        <line x1="26.0" y1="165.5" x2="348.0" y2="165.5"/>
+        <line x1="26.0" y1="99.6" x2="348.0" y2="99.6"/>
+        <line x1="26.0" y1="66.7" x2="348.0" y2="66.7"/>
+        <line x1="26.0" y1="33.8" x2="348.0" y2="33.8"/>
+      </g>
+      <line x1="26.0" y1="132.6" x2="348.0" y2="132.6" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-af2f4)"/>
+      <line x1="187.0" y1="238.0" x2="187.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-af2f4)"/>
+      <text x="344.0" y="146.6" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="179.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="254.1" y="145.6" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="182.0" y="103.6" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <polyline points="56.2,32.1 58.8,54.2 61.4,74.4 64.0,92.8 66.7,109.4 69.3,124.5 71.9,138.0 74.5,150.0 77.1,160.6 79.7,169.9 82.3,178.0 85.0,184.9 87.6,190.7 90.2,195.5 92.8,199.4 95.4,202.4 98.0,204.5 100.7,205.9 103.3,206.6 105.9,206.7 108.5,206.1 111.1,205.1 113.7,203.6 116.4,201.7 119.0,199.4 121.6,196.8 124.2,193.9 126.8,190.8 129.4,187.5 132.1,184.1 134.7,180.5 137.3,176.9 139.9,173.3 142.5,169.7 145.1,166.1 147.8,162.6 150.4,159.1 153.0,155.8 155.6,152.7 158.2,149.7 160.8,146.9 163.5,144.3 166.1,141.9 168.7,139.8 171.3,137.9 173.9,136.3 176.5,135.0 179.2,133.9 181.8,133.2 184.4,132.7 187.0,132.6 189.6,132.7 192.2,133.2 194.8,133.9 197.5,135.0 200.1,136.3 202.7,137.9 205.3,139.8 207.9,141.9 210.5,144.3 213.2,146.9 215.8,149.7 218.4,152.7 221.0,155.8 223.6,159.1 226.2,162.6 228.9,166.1 231.5,169.7 234.1,173.3 236.7,176.9 239.3,180.5 241.9,184.1 244.6,187.5 247.2,190.8 249.8,193.9 252.4,196.8 255.0,199.4 257.6,201.7 260.3,203.6 262.9,205.1 265.5,206.1 268.1,206.7 270.7,206.6 273.3,205.9 276.0,204.5 278.6,202.4 281.2,199.4 283.8,195.5 286.4,190.7 289.0,184.9 291.7,178.0 294.3,169.9 296.9,160.6 299.5,150.0 302.1,138.0 304.7,124.5 307.3,109.4 310.0,92.8 312.6,74.4 315.2,54.2 317.8,32.1" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="113.7,247.4 115.5,242.7 117.2,238.2 119.0,233.7 120.7,229.4 122.5,225.3 124.2,221.3 126.0,217.4 127.7,213.6 129.4,209.9 131.2,206.4 132.9,202.9 134.7,199.6 136.4,196.4 138.2,193.3 139.9,190.2 141.7,187.3 143.4,184.5 145.1,181.7 146.9,179.0 148.6,176.4 150.4,173.9 152.1,171.5 153.9,169.1 155.6,166.8 157.3,164.6 159.1,162.4 160.8,160.2 162.6,158.2 164.3,156.1 166.1,154.1 167.8,152.2 169.6,150.3 171.3,148.4 173.0,146.6 174.8,144.8 176.5,143.0 178.3,141.2 180.0,139.5 181.8,137.7 183.5,136.0 185.3,134.3 187.0,132.6 188.7,130.9 190.5,129.2 192.2,127.4 194.0,125.7 195.7,124.0 197.5,122.2 199.2,120.4 201.0,118.6 202.7,116.7 204.4,114.9 206.2,113.0 207.9,111.0 209.7,109.0 211.4,107.0 213.2,104.9 214.9,102.8 216.7,100.6 218.4,98.4 220.1,96.1 221.9,93.7 223.6,91.3 225.4,88.7 227.1,86.1 228.9,83.5 230.6,80.7 232.3,77.9 234.1,74.9 235.8,71.9 237.6,68.8 239.3,65.6 241.1,62.2 242.8,58.8 244.6,55.3 246.3,51.6 248.0,47.8 249.8,43.9 251.5,39.9 253.3,35.7 255.0,31.4 256.8,27.0 258.5,22.5 260.3,17.7 262.0,12.9 263.7,7.9 265.5,2.7" fill="none" stroke="#ef4444" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="245" y="13" width="109" height="40" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="249" y1="22" x2="267" y2="22" stroke="#3b82f6" stroke-width="2.4"/>
+      <text x="272" y="26" font-size="11" fill="#0f172a">y = x⁴ − 3x²</text>
+      <line x1="249" y1="39" x2="267" y2="39" stroke="#ef4444" stroke-width="2.4"/>
+      <text x="272" y="43" font-size="11" fill="#0f172a">y = x³ + 2x</text>
+    </svg>
+    </div>
+    <p class="cap">A kék görbe az <span class="math inline">\(y\)</span> tengelyre, a piros az origóra szimmetrikus.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda</p>
+      <p>Véd Vilmos szerint „az <span class="math inline">\(x^3+1\)</span> páratlan, mert páratlan a kitevő”, és „ami nem páros, az páratlan”.</p><p><b>Mindig számolj: <span class="math inline">\(f(-x)=?\)</span></b> Itt <span class="math inline">\((-x)^3+1=-x^3+1\)</span>, ami sem <span class="math inline">\(x^3+1\)</span>, sem <span class="math inline">\(-(x^3+1)\)</span> — tehát <b>egyik sem</b>. A konstans tag elrontja a páratlanságot.</p>
+    </div>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ Egyetlen ellenpélda elég a cáfolathoz: g(−1) ≠ g(1). Páratlan sem, mert g(−1) ≠ −g(1) (3 ≠ 1). Igazolni viszont csak az általános f(−x) számolással lehet." data-nem="✘ Ellenpéldával cáfolni lehet: g(−1) = 3 ≠ g(1) = −1, tehát nem páros. Páratlan csak akkor lehetne, ha g(−1) = −g(1) = 1 volna, de 3-at kaptunk — így egyik sem.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>A <span class="math inline">\(g(x)=x^2-2x\)</span> függvényre <span class="math inline">\(g(-1)=3\)</span> és <span class="math inline">\(g(1)=-1\)</span>. Mit mond ez a paritásáról?</p>
+      <div class="opciok"><button>semmit, a paritást csak grafikonról lehet eldönteni</button><button>nem páros, mert egy konkrét <span class="math inline">\(x\)</span>-re <span class="math inline">\(g(-x)\ne g(x)\)</span></button><button>páratlan, mert az egyik érték pozitív, a másik negatív</button><button>páros, mert két pontban vizsgáltuk</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Periodikus függvények</h2>
+
+    <p class="lead">Egy függvény <b>periodikus</b>, ha a grafikonja egy szakasz ismétlődéséből áll.</p>
+
+    <div class="doboz definicio" id="def-periodikus">
+      <p class="cim"><span class="ikon">📗</span> Periodikus függvény</p>
+      <p>Az <span class="math inline">\(f\)</span> függvény periodikus, ha van olyan <span class="math inline">\(p\gt0\)</span> szám, hogy minden <span class="math inline">\(x\in D_f\)</span> esetén <span class="math inline">\(x+p\in D_f\)</span> és <span class="math inline">\(f(x+p)=f(x)\)</span>. A legkisebb ilyen <span class="math inline">\(p\)</span> (ha van) az <b>alapperiódus</b>.</p>
+    </div>
+
+    <p>Példák: a <span class="math inline">\(\sin x\)</span> és a <span class="math inline">\(\cos x\)</span> alapperiódusa <span class="math inline">\(2\pi\)</span>, a <span class="math inline">\(\operatorname{tg}x\)</span>-é <span class="math inline">\(\pi\)</span>. A nem konstans polinomok, az exponenciális és a logaritmusfüggvény <b>nem</b> periodikusak.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>Periodikus a hangrezgés (a hangmagasság a periódus hosszán múlik), a nappalok hossza az év során, a szívritmus EKG-görbéje és a váltakozó áram feszültsége.</p>
+    </div>
+
+    <h2 id="s3">Monotonitás és korlátosság — a grafikonról</h2>
+
+    <p class="lead">A grafikonról leolvasható, hol <b>nő</b> és hol <b>csökken</b> a függvény, és van-e legnagyobb vagy legkisebb értéke. Pontos kiszámolásukhoz a deriválás kell — ez a következő témakör (A függvény deriváltja) eszköze.</p>
+
+    <div class="doboz definicio" id="def-monoton-fv">
+      <p class="cim"><span class="ikon">📗</span> Monoton függvény</p>
+      <p>Az <span class="math inline">\(f\)</span> egy intervallumon <b>szigorúan növekvő</b>, ha ott bármely <span class="math inline">\(x_1\lt x_2\)</span> esetén <span class="math inline">\(f(x_1)\lt f(x_2)\)</span>, és <b>szigorúan csökkenő</b>, ha <span class="math inline">\(f(x_1)\gt f(x_2)\)</span>. Az <span class="math inline">\(f\)</span> <b>korlátos</b>, ha értékei két rögzített szám közé esnek.</p>
+    </div>
+
+    <p>Az <span class="math inline">\(y=x^2\)</span> a <span class="math inline">\((-\infty;\,0]\)</span> intervallumon csökken, a <span class="math inline">\([0;\,\infty)\)</span> intervallumon nő, legkisebb értéke <span class="math inline">\(0\)</span>; a <span class="math inline">\(\sin x\)</span> korlátos (<span class="math inline">\(-1\le\sin x\le1\)</span>), az <span class="math inline">\(y=x^3\)</span> nem korlátos.</p>
+
+    <h2 id="s4">Egy grafikon — minden tulajdonság</h2>
+
+    <p class="lead">Egy grafikonról a függvény teljes „névjegye” leolvasható. Ez a típus a felmérőkön is visszatér.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 380 260" width="380" height="260" role="img" aria-label="Az f függvény grafikonja a [−3; 4] intervallumon: a (−3; −2), (−1; 2), (2; −1), (4; 3) pontokat összekötő töröttvonal">
+      <defs><marker id="nyil-95976" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="92.7" y1="238.0" x2="92.7" y2="14.0"/>
+        <line x1="134.4" y1="238.0" x2="134.4" y2="14.0"/>
+        <line x1="217.9" y1="238.0" x2="217.9" y2="14.0"/>
+        <line x1="259.6" y1="238.0" x2="259.6" y2="14.0"/>
+        <line x1="301.3" y1="238.0" x2="301.3" y2="14.0"/>
+        <line x1="343.0" y1="238.0" x2="343.0" y2="14.0"/>
+        <line x1="26.0" y1="176.9" x2="368.0" y2="176.9"/>
+        <line x1="26.0" y1="109.0" x2="368.0" y2="109.0"/>
+        <line x1="26.0" y1="75.1" x2="368.0" y2="75.1"/>
+        <line x1="26.0" y1="41.2" x2="368.0" y2="41.2"/>
+      </g>
+      <line x1="26.0" y1="143.0" x2="368.0" y2="143.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-95976)"/>
+      <line x1="176.1" y1="238.0" x2="176.1" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-95976)"/>
+      <text x="364.0" y="157.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="168.1" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="217.9" y="156.0" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="171.1" y="113.0" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <polyline points="51.0,210.8 53.9,206.1 56.9,201.3 59.8,196.6 62.7,191.8 65.6,187.1 68.5,182.3 71.5,177.6 74.4,172.8 77.3,168.1 80.2,163.3 83.1,158.6 86.1,153.8 89.0,149.1 91.9,144.3 94.8,139.6 97.7,134.8 100.7,130.1 103.6,125.3 106.5,120.6 109.4,115.8 112.3,111.1 115.3,106.3 118.2,101.6 121.1,96.8 124.0,92.1 126.9,87.3 129.9,82.6 132.8,77.8 135.7,76.1 138.6,78.5 141.5,80.9 144.4,83.2 147.4,85.6 150.3,88.0 153.2,90.4 156.1,92.7 159.0,95.1 162.0,97.5 164.9,99.9 167.8,102.2 170.7,104.6 173.6,107.0 176.6,109.4 179.5,111.7 182.4,114.1 185.3,116.5 188.2,118.9 191.2,121.2 194.1,123.6 197.0,126.0 199.9,128.4 202.8,130.8 205.8,133.1 208.7,135.5 211.6,137.9 214.5,140.3 217.4,142.6 220.4,145.0 223.3,147.4 226.2,149.8 229.1,152.1 232.0,154.5 235.0,156.9 237.9,159.3 240.8,161.6 243.7,164.0 246.6,166.4 249.6,168.8 252.5,171.1 255.4,173.5 258.3,175.9 261.2,174.2 264.1,169.4 267.1,164.7 270.0,159.9 272.9,155.2 275.8,150.4 278.7,145.7 281.7,140.9 284.6,136.2 287.5,131.4 290.4,126.7 293.3,121.9 296.3,117.2 299.2,112.4 302.1,107.7 305.0,102.9 307.9,98.2 310.9,93.4 313.8,88.7 316.7,83.9 319.6,79.2 322.5,74.4 325.5,69.7 328.4,64.9 331.3,60.2 334.2,55.4 337.1,50.7 340.1,45.9 343.0,41.2" fill="none" stroke="#0f172a" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="51.0" cy="210.8" r="4" fill="#0f172a"/>
+      <circle cx="343.0" cy="41.2" r="4" fill="#0f172a"/>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(f\)</span> függvény grafikonja a <span class="math inline">\([-3;\,4]\)</span> intervallumon (a töröttvonal végpontjai a görbe részei).</p>
+
+    <div class="doboz pelda" id="pelda-grafikonelemzes">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — grafikonelemzés</p>
+      <ul><li><b>Értelmezési tartomány:</b> <span class="math inline">\(D_f=[-3;\,4]\)</span>; <b>értékkészlet:</b> <span class="math inline">\(R_f=[-2;\,3]\)</span>.</li><li><b>Zérushelyek:</b> <span class="math inline">\(-2\)</span>, <span class="math inline">\(1\)</span> és <span class="math inline">\(2{,}5\)</span>.</li><li><b>Előjel:</b> <span class="math inline">\(f(x)\gt0\)</span> a <span class="math inline">\((-2;\,1)\)</span> és a <span class="math inline">\((2{,}5;\,4]\)</span> intervallumon, <span class="math inline">\(f(x)\lt0\)</span> a <span class="math inline">\([-3;\,-2)\)</span> és az <span class="math inline">\((1;\,2{,}5)\)</span> intervallumon.</li><li><b>Monotonitás:</b> nő a <span class="math inline">\([-3;\,-1]\)</span> és a <span class="math inline">\([2;\,4]\)</span>, csökken a <span class="math inline">\([-1;\,2]\)</span> intervallumon.</li><li><b>Legnagyobb érték:</b> <span class="math inline">\(3\)</span> (az <span class="math inline">\(x=4\)</span> helyen); <b>legkisebb:</b> <span class="math inline">\(-2\)</span> (az <span class="math inline">\(x=-3\)</span> helyen).</li><li><b>Paritás:</b> egyik sem — már az értelmezési tartomány sem szimmetrikus.</li></ul>
+    </div>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Az értékkészlet a felvett függvényértékek halmaza — ezek a pontok magasságai, vagyis függőleges irányban kell nézni." data-nem="✘ Az x tengely mentén az értelmezési tartományt látod. Az értékkészlet a felvett értékek (magasságok) halmaza, ezt az y tengelyre vetítve olvasod le.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Honnan olvasod le a grafikonról a függvény értékkészletét?</p>
+      <div class="opciok"><button>a zérushelyekből</button><button>a görbe két végpontjának <span class="math inline">\(x\)</span> koordinátájából</button><button>az <span class="math inline">\(y\)</span> tengelyről: mely magasságokat éri el a görbe</button><button>az <span class="math inline">\(x\)</span> tengelyről: meddig tart a görbe balra és jobbra</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-tulajdonsagok.html#alap-13">🐶 Véd-eb nyomravezető <span class="cimke">A 13–16</span></a><a class="sav bruno" href="feladatok-tulajdonsagok.html#kozep-7">⚔️ Maximális erőbedobás <span class="cimke">K 7–8</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/nagol.webp" alt="Nagol — a morcos kiképzőtiszt" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Nagol:</b> Eddig azt néztük, mennyi a függvény egy pontban. Most jön a fejezet igazi kérdése: <b>mihez közelít</b> a függvény, ha <span class="math inline">\(x\)</span> egy pont felé fut — akkor is, ha abban a pontban nincs értelmezve. <b>Véd Vilmos:</b> Ha nincs értelmezve, akkor ott nincs semmi. <b>Nagol:</b> Majd meglátjuk.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-ertelmezesi-tartomany.html"><span class="irany">← Előző</span><span class="hova">Értelmezési tartomány, zérushely, előjel</span></a>
+      <a class="kov" href="tananyag-fuggveny-hatarerteke.html"><span class="irany">Következő →</span><span class="hova">A függvény határértéke</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

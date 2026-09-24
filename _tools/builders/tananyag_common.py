@@ -141,8 +141,10 @@ def svg_fuggvenyek(gorbek, xr=(-2.6, 2.6), yr=(-2.6, 4.2), w=360, h=250,
     """`pontok` = [(x, y, felirat, szin, dx, dy), …] — kiemelt pontok felirattal."""
     """Koordináta-rendszer + görbék inline SVG-ként, SÖTÉT tintával, világos lapon.
 
-    `gorbek` = [(f, szin, cimke, [(lo, hi), …] szakaszok), …]
+    `gorbek` = [(f, szin, cimke, [(lo, hi), …] szakaszok[, "szaggatott"]), …] — az opcionális
+    5. elem szaggatott vonalat kér (aszimptotákhoz).
     A y-értékeket a rajzterületre vágjuk (a pólusok nem lógnak ki).
+    `pontok` színe „o:#rrggbb” alakban ÜRES (fehér kitöltésű) pontot rajzol — a „lyukhoz”.
     """
     bal, jobb, fent, lent = 26, 12, 14, 22
     px, py = w - bal - jobb, h - fent - lent
@@ -201,7 +203,10 @@ def svg_fuggvenyek(gorbek, xr=(-2.6, 2.6), yr=(-2.6, 4.2), w=360, h=250,
             ki.append(f'  <text x="{X(0) - 5:.1f}" y="{Y(1) + 4:.1f}" font-size="10" '
                       f'fill="#475569" text-anchor="end">{yegys}</text>')
     # görbék
-    for f, szin, cimke, szakaszok in gorbek:
+    for g in gorbek:
+        f, szin, cimke, szakaszok = g[:4]
+        szagg = len(g) > 4 and g[4]
+        vonal = ('stroke-width="1.6" stroke-dasharray="6 4"' if szagg else 'stroke-width="2.1"')
         for lo, hi in szakaszok:
             pts = []
             n = 100
@@ -209,30 +214,37 @@ def svg_fuggvenyek(gorbek, xr=(-2.6, 2.6), yr=(-2.6, 4.2), w=360, h=250,
                 x = lo + (hi - lo) * i / n
                 try:
                     y = f(x)
-                except ZeroDivisionError:
+                except (ZeroDivisionError, ValueError):
                     continue
                 if y < y0 - 0.4 or y > y1 + 0.4:
                     continue
                 pts.append(f"{X(x):.1f},{Y(y):.1f}")
             if len(pts) > 1:
                 ki.append(f'  <polyline points="{" ".join(pts)}" fill="none" stroke="{szin}" '
-                          'stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>')
+                          f'{vonal} stroke-linecap="round" stroke-linejoin="round"/>')
     for pt in (pontok or []):
         px_, py_, felirat, szin = pt[0], pt[1], pt[2], pt[3]
         dx, dy = (pt[4] if len(pt) > 4 else 8), (pt[5] if len(pt) > 5 else -8)
-        ki.append(f'  <circle cx="{X(px_):.1f}" cy="{Y(py_):.1f}" r="4" fill="{szin}"/>')
+        if szin.startswith("o:"):
+            szin = szin[2:]
+            ki.append(f'  <circle cx="{X(px_):.1f}" cy="{Y(py_):.1f}" r="4" fill="#ffffff" '
+                      f'stroke="{szin}" stroke-width="1.8"/>')
+        else:
+            ki.append(f'  <circle cx="{X(px_):.1f}" cy="{Y(py_):.1f}" r="4" fill="{szin}"/>')
         if felirat:
             ki.append(f'  <text x="{X(px_) + dx:.1f}" y="{Y(py_) + dy:.1f}" font-size="11" '
                       f'fill="{szin}" font-weight="600">{felirat}</text>')
     if jelmagyarazat:
         ly = fent + 4
-        szeles = 4 + max(len(c) for _, _, c, _ in gorbek) * 6.6 + 26
+        szeles = 4 + max(len(g[2]) for g in gorbek) * 6.6 + 26
         bx = max(6, w - szeles - 6)          # a doboz mindig beleférjen a rajzterületbe
         ki.append(f'  <rect x="{bx:.0f}" y="{fent - 1}" width="{szeles:.0f}" '
                   f'height="{len(gorbek) * 17 + 6}" rx="4" fill="#ffffff" fill-opacity=".88"/>')
-        for f, szin, cimke, _ in gorbek:
+        for g in gorbek:
+            f, szin, cimke = g[:3]
+            da = ' stroke-dasharray="5 3"' if len(g) > 4 and g[4] else ''
             ki.append(f'  <line x1="{bx + 4:.0f}" y1="{ly + 4}" x2="{bx + 22:.0f}" y2="{ly + 4}" '
-                      f'stroke="{szin}" stroke-width="2.4"/>')
+                      f'stroke="{szin}" stroke-width="2.4"{da}/>')
             ki.append(f'  <text x="{bx + 27:.0f}" y="{ly + 8}" font-size="11" '
                       f'fill="#0f172a">{cimke}</text>')
             ly += 17

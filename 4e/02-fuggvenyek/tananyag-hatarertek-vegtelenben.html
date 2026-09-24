@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Határérték a végtelenben — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Függvények</a> ›
+  <span class="itt">Határérték a végtelenben — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Határérték a végtelenben</h1>
+  <p class="alcim">Racionális törtfüggvények a plusz és a mínusz végtelenben, az előjel szerepe, elemi függvények a végtelenben.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az Aszimptota-fal Áttörése · 6/7</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/nagol_w.webp" alt="Nagol — a morcos kiképzőtiszt" width="1200" height="670" decoding="async"><p>📡 <b>Nagol:</b> A sorozatoknál <span class="math inline">\(n\to\infty\)</span> volt. A függvényeknél <span class="math inline">\(x\)</span> a <span class="math inline">\(+\infty\)</span> és a <span class="math inline">\(-\infty\)</span> felé is futhat. <b>Véd Vilmos:</b> Mindkét irányban ugyanaz jön ki. <b>Nagol:</b> Nem mindig. Ma kiderül, mikor igen és mikor nem — és hogy mit árul el ez a grafikon két széléről.</p></div>
+
+    <h2 id="s1">Racionális törtfüggvény — a fokszám-szabály</h2>
+
+    <p class="lead"><span class="math inline">\(x\to\pm\infty\)</span> esetén a racionális törtfüggvényeket ugyanúgy kezeljük, mint a sorozatokat: a számlálót és a nevezőt is elosztjuk a nevezőben szereplő legmagasabb <span class="math inline">\(x\)</span>-hatvánnyal. Az eredményt a <a href="../01-sorozatok-hatarerteke/tananyag-racionalis-tortek.html#tetel-fokszam">fokszám-szabály</a> adja.</p>
+
+    <div class="doboz tetel" id="tetel-fokszam-fv">
+      <p class="cim"><span class="ikon">📘</span> Fokszám-szabály függvényekre</p>
+      <p>Ha a számláló <span class="math inline">\(p\)</span>-edfokú (<span class="math inline">\(a\)</span> főegyütthatóval), a nevező <span class="math inline">\(r\)</span>-edfokú (<span class="math inline">\(b\)</span> főegyütthatóval), akkor <span class="math inline">\(x\to\pm\infty\)</span> esetén a tört határértéke</p><ul><li><span class="math inline">\(0\)</span>, ha <span class="math inline">\(p\lt r\)</span>;</li><li><span class="math inline">\(\dfrac ab\)</span>, ha <span class="math inline">\(p=r\)</span>;</li><li><span class="math inline">\(+\infty\)</span> vagy <span class="math inline">\(-\infty\)</span>, ha <span class="math inline">\(p\gt r\)</span> — az előjel a főtagok hányadosának, <span class="math inline">\(\dfrac ab\,x^{p-r}\)</span>-nek az előjele.</li></ul>
+    </div>
+
+    <div class="doboz pelda" id="pelda-vegtelen-tort">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — határérték a végtelenben</p>
+      <p><span class="math inline">\(\lim\limits_{x\to+\infty}\dfrac{2x^2-x}{x^2+3}=\lim\limits_{x\to+\infty}\dfrac{2-\frac1x}{1+\frac3{x^2}}=2\)</span> &nbsp; (<span class="math inline">\(p=r\)</span>)</p><p><span class="math inline">\(\lim\limits_{x\to+\infty}\dfrac{5x+1}{x^2+4}=0\)</span> &nbsp; (<span class="math inline">\(p\lt r\)</span>), &nbsp; <span class="math inline">\(\lim\limits_{x\to+\infty}\dfrac{x^3+x}{2x^2-1}=+\infty\)</span> &nbsp; (<span class="math inline">\(p\gt r\)</span>)</p>
+    </div>
+
+    <h2 id="s2">x → −∞ és az előjel</h2>
+
+    <p class="lead">Ha <span class="math inline">\(p\le r\)</span>, a két irány ugyanazt adja. Ha <span class="math inline">\(p\gt r\)</span>, a főtagok hányadosa <span class="math inline">\(\dfrac ab\,x^{p-r}\)</span>, és ennek előjele a <span class="math inline">\(-\infty\)</span> felé függ a <span class="math inline">\(p-r\)</span> paritásától: páratlan kitevőnél előjelet vált, párosnál nem.</p>
+
+    <div class="doboz pelda" id="pelda-minusz-vegtelen">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — a két irány</p>
+      <ul><li><span class="math inline">\(\dfrac{x^3+x}{2x^2-1}\)</span>: a főtagok hányadosa <span class="math inline">\(\dfrac x2\)</span> → <span class="math inline">\(x\to+\infty\)</span>: <span class="math inline">\(+\infty\)</span>, de <span class="math inline">\(x\to-\infty\)</span>: <span class="math inline">\(-\infty\)</span>.</li><li><span class="math inline">\(\dfrac{x^4+1}{x^2+x}\)</span>: a főtagok hányadosa <span class="math inline">\(x^2\)</span> → mindkét irányban <span class="math inline">\(+\infty\)</span>.</li><li><span class="math inline">\(\dfrac{2x^2-x}{x^2+3}\)</span>: <span class="math inline">\(p=r\)</span> → mindkét irányban <span class="math inline">\(2\)</span>.</li></ul>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda</p>
+      <p>Véd Vilmos az <span class="math inline">\(x\to-\infty\)</span> esetre is <span class="math inline">\(+\infty\)</span>-t ír, „mert a végtelen az végtelen”.</p><p><b>A <span class="math inline">\(-\infty\)</span> felé a páratlan hatványok negatívak.</b> Írd fel a főtagok hányadosát, és helyettesíts be gondolatban egy nagy negatív számot (pl. <span class="math inline">\(-1000\)</span>-et).</p>
+    </div>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ A főtagok hányadosa −x³/x² = −x; ha x → −∞, akkor −x → +∞." data-nem="✘ A főtagok hányadosa −x. Nagy negatív x-re (pl. −1000) ez +1000 — tehát a −∞ felé a határérték +∞.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi a <span class="math inline">\(\lim\limits_{x\to-\infty}\dfrac{1-x^3}{x^2+2}\)</span> határérték? (Tudjuk: <span class="math inline">\(x\to+\infty\)</span> esetén <span class="math inline">\(-\infty\)</span>.)</p>
+      <div class="opciok"><button><span class="math inline">\(0\)</span></button><button><span class="math inline">\(+\infty\)</span></button><button><span class="math inline">\(-\infty\)</span>, mint a másik irányban</button><button><span class="math inline">\(-1\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Elemi függvények a végtelenben</h2>
+
+    <p class="lead">Néhány határértéket az elemi függvények grafikonjáról azonnal leolvasunk.</p>
+
+    <div class="doboz tetel" id="tetel-elemi-vegtelen">
+      <p class="cim"><span class="ikon">📘</span> Elemi függvények a végtelenben</p>
+      <ul><li><span class="math inline">\(\lim\limits_{x\to\pm\infty}\dfrac{c}{x^k}=0\)</span> (<span class="math inline">\(k\)</span> pozitív egész);</li><li><span class="math inline">\(a\gt1\)</span> esetén <span class="math inline">\(\lim\limits_{x\to+\infty}a^x=+\infty\)</span> és <span class="math inline">\(\lim\limits_{x\to-\infty}a^x=0\)</span> (ha <span class="math inline">\(0\lt a\lt1\)</span>, fordítva);</li><li><span class="math inline">\(a\gt1\)</span> esetén <span class="math inline">\(\lim\limits_{x\to+\infty}\log_a x=+\infty\)</span>;</li><li>a <span class="math inline">\(\sin x\)</span>-nek és a <span class="math inline">\(\cos x\)</span>-nek nincs határértéke a végtelenben — <span class="math inline">\(-1\)</span> és <span class="math inline">\(1\)</span> között hullámzanak.</li></ul>
+    </div>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ 2¹⁰ = 1024, 2⁻¹⁰ = 1/1024: jobbra meredeken nő, balra a 0-hoz simul (de sosem negatív)." data-nem="✘ Próbáld ki: 2¹⁰ = 1024, 2⁻¹⁰ ≈ 0,001. Jobbra a végtelenbe nő, balra a 0-hoz közelít — negatív értéket sosem vesz fel.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik igaz a <span class="math inline">\(2^x\)</span> függvényre?</p>
+      <div class="opciok"><button><span class="math inline">\(x\to-\infty\)</span> esetén <span class="math inline">\(-\infty\)</span>-hez tart</button><button><span class="math inline">\(x\to-\infty\)</span> esetén <span class="math inline">\(0\)</span>-hoz, <span class="math inline">\(x\to+\infty\)</span> esetén <span class="math inline">\(+\infty\)</span>-hez tart</button><button><span class="math inline">\(x\to+\infty\)</span> esetén <span class="math inline">\(0\)</span>-hoz tart</button><button>mindkét irányban <span class="math inline">\(+\infty\)</span>-hez tart</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-hatarertek-aszimptota.html#alap-11">🐶 Véd-eb nyomravezető <span class="cimke">A 11–14</span></a><a class="sav bruno" href="feladatok-hatarertek-aszimptota.html#kozep-8">⚔️ Maximális erőbedobás <span class="cimke">K 8–9</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/nagol.webp" alt="Nagol — a morcos kiképzőtiszt" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Nagol:</b> Ha a határérték a végtelenben egy szám, a görbe a széleken egy vízszintes egyeneshez simul. Ha egy pontban végtelen, egy függőlegeshez. Ezek az egyenesek a fejezet címszereplői — az aszimptoták. <b>Véd Vilmos:</b> A fal. <b>Nagol:</b> A fal.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-hatarertek-szamolasa.html"><span class="irany">← Előző</span><span class="hova">Határérték-számítás</span></a>
+      <a class="kov" href="tananyag-aszimptotak.html"><span class="irany">Következő →</span><span class="hova">Aszimptoták</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

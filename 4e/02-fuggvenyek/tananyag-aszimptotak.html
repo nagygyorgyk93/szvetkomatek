@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aszimptoták — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Függvények</a> ›
+  <span class="itt">Aszimptoták — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Aszimptoták</h1>
+  <p class="alcim">Az aszimptota-fal: függőleges, vízszintes és ferde aszimptota racionális törtfüggvényeknél, lépésről lépésre.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Az Aszimptota-fal Áttörése · 7/7</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/ved_vilmos_w.webp" alt="Véd Vilmos — a negyedik falat áttörő zsoldos" width="1200" height="670" decoding="async"><p>📡 <b>Véd Vilmos:</b> Futok a fal felé. Minden lépéssel közelebb vagyok, de valahogy soha nem érek oda. Áttöröm! <b>Nagol:</b> Nem fogod. Ez egy <b>aszimptota</b>: a görbe végtelenbe nyúló ága egyre közelebb simul hozzá. A feladat nem áttörni, hanem kiszámolni, <b>hol van</b>.</p></div>
+
+    <h2 id="s1">Mi az aszimptota?</h2>
+
+    <p class="lead">Az aszimptota olyan egyenes, amelyhez a grafikon egy végtelenbe nyúló ága egyre közelebb simul.</p>
+
+    <div class="doboz definicio" id="def-aszimptota">
+      <p class="cim"><span class="ikon">📗</span> Aszimptota</p>
+      <p>Az <span class="math inline">\(\ell\)</span> egyenes a görbe <b>aszimptotája</b>, ha a görbének van olyan végtelenbe nyúló ága, amelyen haladva a pont <span class="math inline">\(\ell\)</span>-től mért távolsága <span class="math inline">\(0\)</span>-hoz tart. Három fajtáját vizsgáljuk: a <b>függőleges</b> (<span class="math inline">\(x=a\)</span>), a <b>vízszintes</b> (<span class="math inline">\(y=c\)</span>) és a <b>ferde</b> (<span class="math inline">\(y=kx+n\)</span>) aszimptotát.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 320 240" width="320" height="240" role="img" aria-label="Az y = 1/x hiperbola: ágai az x és az y tengelyhez simulnak, de nem érik el őket">
+      <defs><marker id="nyil-5760a" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="84.1" y1="218.0" x2="84.1" y2="14.0"/>
+        <line x1="125.5" y1="218.0" x2="125.5" y2="14.0"/>
+        <line x1="208.5" y1="218.0" x2="208.5" y2="14.0"/>
+        <line x1="249.9" y1="218.0" x2="249.9" y2="14.0"/>
+        <line x1="291.4" y1="218.0" x2="291.4" y2="14.0"/>
+        <line x1="26.0" y1="172.7" x2="308.0" y2="172.7"/>
+        <line x1="26.0" y1="144.3" x2="308.0" y2="144.3"/>
+        <line x1="26.0" y1="87.7" x2="308.0" y2="87.7"/>
+        <line x1="26.0" y1="59.3" x2="308.0" y2="59.3"/>
+        <line x1="26.0" y1="31.0" x2="308.0" y2="31.0"/>
+      </g>
+      <line x1="26.0" y1="116.0" x2="308.0" y2="116.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-5760a)"/>
+      <line x1="167.0" y1="218.0" x2="167.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-5760a)"/>
+      <text x="304.0" y="130.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="159.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="208.5" y="129.0" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="162.0" y="91.7" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <polyline points="34.3,124.9 35.5,124.9 36.8,125.0 38.0,125.1 39.2,125.2 40.5,125.3 41.7,125.4 42.9,125.5 44.2,125.6 45.4,125.7 46.7,125.8 47.9,125.9 49.1,126.0 50.4,126.1 51.6,126.2 52.8,126.3 54.1,126.4 55.3,126.5 56.5,126.6 57.8,126.8 59.0,126.9 60.2,127.0 61.5,127.1 62.7,127.3 64.0,127.4 65.2,127.5 66.4,127.7 67.7,127.8 68.9,128.0 70.1,128.1 71.4,128.3 72.6,128.4 73.8,128.6 75.1,128.8 76.3,129.0 77.5,129.1 78.8,129.3 80.0,129.5 81.3,129.7 82.5,129.9 83.7,130.1 85.0,130.3 86.2,130.5 87.4,130.8 88.7,131.0 89.9,131.2 91.1,131.5 92.4,131.7 93.6,132.0 94.8,132.3 96.1,132.6 97.3,132.9 98.6,133.2 99.8,133.5 101.0,133.8 102.3,134.2 103.5,134.5 104.7,134.9 106.0,135.3 107.2,135.7 108.4,136.1 109.7,136.5 110.9,137.0 112.2,137.4 113.4,137.9 114.6,138.4 115.9,139.0 117.1,139.5 118.3,140.1 119.6,140.8 120.8,141.4 122.0,142.1 123.3,142.9 124.5,143.7 125.7,144.5 127.0,145.4 128.2,146.3 129.5,147.3 130.7,148.4 131.9,149.5 133.2,150.7 134.4,152.0 135.6,153.5 136.9,155.0 138.1,156.7 139.3,158.5 140.6,160.5 141.8,162.6 143.0,165.1 144.3,167.7 145.5,170.7 146.8,174.0 148.0,177.8 149.2,182.1 150.5,187.0 151.7,192.8 152.9,199.5 154.2,207.6 155.4,217.3" fill="none" stroke="#7c3aed" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="178.6,14.7 179.8,24.4 181.1,32.5 182.3,39.2 183.5,45.0 184.8,49.9 186.0,54.2 187.2,58.0 188.5,61.3 189.7,64.3 191.0,66.9 192.2,69.4 193.4,71.5 194.7,73.5 195.9,75.3 197.1,77.0 198.4,78.5 199.6,80.0 200.8,81.3 202.1,82.5 203.3,83.6 204.5,84.7 205.8,85.7 207.0,86.6 208.3,87.5 209.5,88.3 210.7,89.1 212.0,89.9 213.2,90.6 214.4,91.2 215.7,91.9 216.9,92.5 218.1,93.0 219.4,93.6 220.6,94.1 221.8,94.6 223.1,95.0 224.3,95.5 225.6,95.9 226.8,96.3 228.0,96.7 229.3,97.1 230.5,97.5 231.7,97.8 233.0,98.2 234.2,98.5 235.4,98.8 236.7,99.1 237.9,99.4 239.2,99.7 240.4,100.0 241.6,100.3 242.9,100.5 244.1,100.8 245.3,101.0 246.6,101.2 247.8,101.5 249.0,101.7 250.3,101.9 251.5,102.1 252.7,102.3 254.0,102.5 255.2,102.7 256.5,102.9 257.7,103.0 258.9,103.2 260.2,103.4 261.4,103.6 262.6,103.7 263.9,103.9 265.1,104.0 266.3,104.2 267.6,104.3 268.8,104.5 270.0,104.6 271.3,104.7 272.5,104.9 273.8,105.0 275.0,105.1 276.2,105.2 277.5,105.4 278.7,105.5 279.9,105.6 281.2,105.7 282.4,105.8 283.6,105.9 284.9,106.0 286.1,106.1 287.3,106.2 288.6,106.3 289.8,106.4 291.1,106.5 292.3,106.6 293.5,106.7 294.8,106.8 296.0,106.9 297.2,107.0 298.5,107.1 299.7,107.1" fill="none" stroke="#7c3aed" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="238" y="13" width="76" height="23" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="242" y1="22" x2="260" y2="22" stroke="#7c3aed" stroke-width="2.4"/>
+      <text x="265" y="26" font-size="11" fill="#0f172a">y = 1/x</text>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(y=\frac1x\)</span> két aszimptotája a két koordinátatengely: <span class="math inline">\(x=0\)</span> és <span class="math inline">\(y=0\)</span>.</p>
+
+    <p>Az A1 leckében megígért első aszimptota: a <span class="math inline">\(\log_2 x\)</span> függőleges aszimptotája az <span class="math inline">\(x=0\)</span>, mert <span class="math inline">\(\lim\limits_{x\to0+0}\log_2x=-\infty\)</span>.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
+      <p>A kihűlő tea hőmérséklete a szoba hőmérsékletéhez közelít, de (elméletben) sosem éri el: a hőmérséklet–idő grafikon vízszintes aszimptotája a szobahőmérséklet.</p>
+    </div>
+
+    <h2 id="s2">Függőleges aszimptota</h2>
+
+    <p class="lead">Racionális törtfüggvénynél függőleges aszimptota ott lehet, ahol a nevező <span class="math inline">\(0\)</span>. Ha ott a számláló <b>nem</b> <span class="math inline">\(0\)</span>, akkor <span class="math inline">\(c/0\)</span> alakot kapunk: a függvény egyoldali határértéke <span class="math inline">\(\pm\infty\)</span>, és az <span class="math inline">\(x=a\)</span> egyenes függőleges aszimptota. Ha a számláló is <span class="math inline">\(0\)</span>, előbb egyszerűsíteni kell, és újra megnézni.</p>
+
+    <div class="doboz pelda" id="pelda-fuggoleges">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — függőleges aszimptota</p>
+      <p><span class="math inline">\(f(x)=\dfrac{2x+1}{x-3}\)</span>: a nevező <span class="math inline">\(x=3\)</span>-ban <span class="math inline">\(0\)</span>, a számláló ott <span class="math inline">\(7\ne0\)</span>.</p><p><span class="math inline">\(\lim\limits_{x\to3-0}f(x)=-\infty\)</span>, &nbsp; <span class="math inline">\(\lim\limits_{x\to3+0}f(x)=+\infty\)</span> → a függőleges aszimptota: <span class="math inline">\(x=3\)</span>.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda</p>
+      <p>Véd Vilmos szerint a <span class="math inline">\(g(x)=\dfrac{x^2-4}{x-2}\)</span> függvénynek az <span class="math inline">\(x=2\)</span> függőleges aszimptotája, „mert ott a nevező nulla”.</p><p><b>Ha a számláló is <span class="math inline">\(0\)</span>, még nem dőlt el semmi: egyszerűsíts, és nézd meg újra.</b> Itt <span class="math inline">\(g(x)=x+2\)</span> (ha <span class="math inline">\(x\ne2\)</span>), és <span class="math inline">\(\lim\limits_{x\to2}g(x)=4\)</span> véges — ez <b>lyuk</b>, nem aszimptota. A grafikon egy egyenes, amelyből a <span class="math inline">\((2;\,4)\)</span> pont hiányzik.</p>
+    </div>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ Az x = −5-ben a számláló is 0: (x − 5)(x + 5)/(x + 5) = x − 5 → −10. Véges határérték, tehát ott lyuk van, nem aszimptota." data-nem="✘ Nézd meg a számlálót is: x = −5-nél az is 0. Egyszerűsítve g(x) = x − 5, a határérték −10 — ez lyuk, nem függőleges aszimptota.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Hol van a <span class="math inline">\(g(x)=\dfrac{x^2-25}{x+5}\)</span> függvény függőleges aszimptotája?</p>
+      <div class="opciok"><button>az <span class="math inline">\(y=-10\)</span> egyenes</button><button>sehol: az <span class="math inline">\(x=-5\)</span>-ben csak egy lyuk van</button><button>az <span class="math inline">\(x=-5\)</span> egyenes</button><button>az <span class="math inline">\(x=5\)</span> és az <span class="math inline">\(x=-5\)</span> egyenes</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Vízszintes aszimptota</h2>
+
+    <p class="lead">Ha <span class="math inline">\(\lim\limits_{x\to+\infty}f(x)=c\)</span> (vagy <span class="math inline">\(x\to-\infty\)</span> esetén), akkor az <span class="math inline">\(y=c\)</span> egyenes vízszintes aszimptota. Racionális törtfüggvénynél ez a fokszám-szabályból jön: <span class="math inline">\(p\lt r\)</span> esetén <span class="math inline">\(y=0\)</span>, <span class="math inline">\(p=r\)</span> esetén <span class="math inline">\(y=\dfrac ab\)</span>; ha <span class="math inline">\(p\gt r\)</span>, nincs vízszintes aszimptota.</p>
+
+    <div class="doboz pelda" id="pelda-vizszintes">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — vízszintes aszimptota</p>
+      <p><span class="math inline">\(f(x)=\dfrac{2x+1}{x-3}\)</span>: <span class="math inline">\(\lim\limits_{x\to\pm\infty}\dfrac{2x+1}{x-3}=\dfrac21=2\)</span> → a vízszintes aszimptota: <span class="math inline">\(y=2\)</span>.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 380 260" width="380" height="260" role="img" aria-label="Az y = (2x + 1)/(x − 3) grafikonja a szaggatott x = 3 és y = 2 aszimptotával">
+      <defs><marker id="nyil-4bd31" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="67.5" y1="238.0" x2="67.5" y2="14.0"/>
+        <line x1="93.4" y1="238.0" x2="93.4" y2="14.0"/>
+        <line x1="145.2" y1="238.0" x2="145.2" y2="14.0"/>
+        <line x1="171.1" y1="238.0" x2="171.1" y2="14.0"/>
+        <line x1="197.0" y1="238.0" x2="197.0" y2="14.0"/>
+        <line x1="222.9" y1="238.0" x2="222.9" y2="14.0"/>
+        <line x1="248.8" y1="238.0" x2="248.8" y2="14.0"/>
+        <line x1="274.7" y1="238.0" x2="274.7" y2="14.0"/>
+        <line x1="300.6" y1="238.0" x2="300.6" y2="14.0"/>
+        <line x1="326.5" y1="238.0" x2="326.5" y2="14.0"/>
+        <line x1="352.5" y1="238.0" x2="352.5" y2="14.0"/>
+        <line x1="26.0" y1="238.0" x2="368.0" y2="238.0"/>
+        <line x1="26.0" y1="222.0" x2="368.0" y2="222.0"/>
+        <line x1="26.0" y1="206.0" x2="368.0" y2="206.0"/>
+        <line x1="26.0" y1="190.0" x2="368.0" y2="190.0"/>
+        <line x1="26.0" y1="174.0" x2="368.0" y2="174.0"/>
+        <line x1="26.0" y1="142.0" x2="368.0" y2="142.0"/>
+        <line x1="26.0" y1="126.0" x2="368.0" y2="126.0"/>
+        <line x1="26.0" y1="110.0" x2="368.0" y2="110.0"/>
+        <line x1="26.0" y1="94.0" x2="368.0" y2="94.0"/>
+        <line x1="26.0" y1="78.0" x2="368.0" y2="78.0"/>
+        <line x1="26.0" y1="62.0" x2="368.0" y2="62.0"/>
+        <line x1="26.0" y1="46.0" x2="368.0" y2="46.0"/>
+        <line x1="26.0" y1="30.0" x2="368.0" y2="30.0"/>
+        <line x1="26.0" y1="14.0" x2="368.0" y2="14.0"/>
+      </g>
+      <line x1="197.0" y1="14" x2="197.0" y2="238" stroke="#64748b" stroke-width="1.6" stroke-dasharray="6 4"/>
+      <line x1="26.0" y1="158.0" x2="368.0" y2="158.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-4bd31)"/>
+      <line x1="119.3" y1="238.0" x2="119.3" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-4bd31)"/>
+      <text x="364.0" y="172.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="111.3" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="145.2" y="171.0" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="114.3" y="146.0" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <polyline points="31.2,143.5 32.7,143.7 34.2,143.8 35.7,144.0 37.2,144.2 38.8,144.3 40.3,144.5 41.8,144.7 43.3,144.9 44.8,145.1 46.3,145.3 47.9,145.5 49.4,145.7 50.9,145.9 52.4,146.1 53.9,146.3 55.4,146.5 56.9,146.7 58.5,146.9 60.0,147.2 61.5,147.4 63.0,147.7 64.5,147.9 66.0,148.2 67.6,148.4 69.1,148.7 70.6,149.0 72.1,149.2 73.6,149.5 75.1,149.8 76.7,150.1 78.2,150.4 79.7,150.7 81.2,151.1 82.7,151.4 84.2,151.7 85.7,152.1 87.3,152.4 88.8,152.8 90.3,153.2 91.8,153.6 93.3,154.0 94.8,154.4 96.4,154.8 97.9,155.3 99.4,155.7 100.9,156.2 102.4,156.7 103.9,157.2 105.5,157.7 107.0,158.2 108.5,158.8 110.0,159.4 111.5,159.9 113.0,160.6 114.5,161.2 116.1,161.9 117.6,162.5 119.1,163.2 120.6,164.0 122.1,164.8 123.6,165.6 125.2,166.4 126.7,167.3 128.2,168.2 129.7,169.1 131.2,170.1 132.7,171.2 134.2,172.2 135.8,173.4 137.3,174.6 138.8,175.9 140.3,177.2 141.8,178.6 143.3,180.1 144.9,181.7 146.4,183.3 147.9,185.1 149.4,187.0 150.9,189.0 152.4,191.1 154.0,193.4 155.5,195.9 157.0,198.5 158.5,201.4 160.0,204.5 161.5,207.8 163.0,211.5 164.6,215.5 166.1,219.8 167.6,224.7 169.1,230.0 170.6,236.0 172.1,242.7" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="221.9,9.3 223.4,16.0 224.9,22.0 226.4,27.3 227.9,32.2 229.4,36.5 231.0,40.5 232.5,44.2 234.0,47.5 235.5,50.6 237.0,53.5 238.5,56.1 240.0,58.6 241.6,60.9 243.1,63.0 244.6,65.0 246.1,66.9 247.6,68.7 249.1,70.3 250.7,71.9 252.2,73.4 253.7,74.8 255.2,76.1 256.7,77.4 258.2,78.6 259.8,79.8 261.3,80.8 262.8,81.9 264.3,82.9 265.8,83.8 267.3,84.7 268.8,85.6 270.4,86.4 271.9,87.2 273.4,88.0 274.9,88.8 276.4,89.5 277.9,90.1 279.5,90.8 281.0,91.4 282.5,92.1 284.0,92.6 285.5,93.2 287.0,93.8 288.5,94.3 290.1,94.8 291.6,95.3 293.1,95.8 294.6,96.3 296.1,96.7 297.6,97.2 299.2,97.6 300.7,98.0 302.2,98.4 303.7,98.8 305.2,99.2 306.7,99.6 308.3,99.9 309.8,100.3 311.3,100.6 312.8,100.9 314.3,101.3 315.8,101.6 317.3,101.9 318.9,102.2 320.4,102.5 321.9,102.8 323.4,103.0 324.9,103.3 326.4,103.6 328.0,103.8 329.5,104.1 331.0,104.3 332.5,104.6 334.0,104.8 335.5,105.1 337.1,105.3 338.6,105.5 340.1,105.7 341.6,105.9 343.1,106.1 344.6,106.3 346.1,106.5 347.7,106.7 349.2,106.9 350.7,107.1 352.2,107.3 353.7,107.5 355.2,107.7 356.8,107.8 358.3,108.0 359.8,108.2 361.3,108.3 362.8,108.5" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="31.2,126.0 34.5,126.0 37.8,126.0 41.1,126.0 44.4,126.0 47.8,126.0 51.1,126.0 54.4,126.0 57.7,126.0 61.0,126.0 64.3,126.0 67.7,126.0 71.0,126.0 74.3,126.0 77.6,126.0 80.9,126.0 84.2,126.0 87.6,126.0 90.9,126.0 94.2,126.0 97.5,126.0 100.8,126.0 104.1,126.0 107.5,126.0 110.8,126.0 114.1,126.0 117.4,126.0 120.7,126.0 124.0,126.0 127.4,126.0 130.7,126.0 134.0,126.0 137.3,126.0 140.6,126.0 143.9,126.0 147.3,126.0 150.6,126.0 153.9,126.0 157.2,126.0 160.5,126.0 163.8,126.0 167.2,126.0 170.5,126.0 173.8,126.0 177.1,126.0 180.4,126.0 183.7,126.0 187.1,126.0 190.4,126.0 193.7,126.0 197.0,126.0 200.3,126.0 203.6,126.0 206.9,126.0 210.3,126.0 213.6,126.0 216.9,126.0 220.2,126.0 223.5,126.0 226.8,126.0 230.2,126.0 233.5,126.0 236.8,126.0 240.1,126.0 243.4,126.0 246.7,126.0 250.1,126.0 253.4,126.0 256.7,126.0 260.0,126.0 263.3,126.0 266.6,126.0 270.0,126.0 273.3,126.0 276.6,126.0 279.9,126.0 283.2,126.0 286.5,126.0 289.9,126.0 293.2,126.0 296.5,126.0 299.8,126.0 303.1,126.0 306.4,126.0 309.8,126.0 313.1,126.0 316.4,126.0 319.7,126.0 323.0,126.0 326.3,126.0 329.7,126.0 333.0,126.0 336.3,126.0 339.6,126.0 342.9,126.0 346.2,126.0 349.6,126.0 352.9,126.0 356.2,126.0 359.5,126.0 362.8,126.0" fill="none" stroke="#64748b" stroke-width="1.6" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="212" y="13" width="162" height="40" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="216" y1="22" x2="234" y2="22" stroke="#3b82f6" stroke-width="2.4"/>
+      <text x="239" y="26" font-size="11" fill="#0f172a">y = (2x + 1)/(x − 3)</text>
+      <line x1="216" y1="39" x2="234" y2="39" stroke="#64748b" stroke-width="2.4" stroke-dasharray="5 3"/>
+      <text x="239" y="43" font-size="11" fill="#0f172a">y = 2</text>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(y=\frac{2x+1}{x-3}\)</span> grafikonja és két aszimptotája: <span class="math inline">\(x=3\)</span> és <span class="math inline">\(y=2\)</span> (szaggatott).</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda</p>
+      <p>Véd Vilmos szerint „a görbe <b>soha</b> nem metszheti az aszimptotáját”.</p><p><b>A vízszintes aszimptotát a görbe metszheti</b> — az aszimptota csak a végtelenbe tartó ágakról szól. Az <span class="math inline">\(y=\dfrac{x}{x^2+1}\)</span> vízszintes aszimptotája az <span class="math inline">\(y=0\)</span>, és a görbe az origóban át is megy rajta.</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 380 180" width="380" height="180" role="img" aria-label="Az y = x/(x² + 1) grafikonja: a vízszintes aszimptota az x tengely, a görbe az origóban metszi">
+      <defs><marker id="nyil-0c831" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="63.4" y1="158.0" x2="63.4" y2="14.0"/>
+        <line x1="90.1" y1="158.0" x2="90.1" y2="14.0"/>
+        <line x1="116.8" y1="158.0" x2="116.8" y2="14.0"/>
+        <line x1="143.6" y1="158.0" x2="143.6" y2="14.0"/>
+        <line x1="170.3" y1="158.0" x2="170.3" y2="14.0"/>
+        <line x1="223.7" y1="158.0" x2="223.7" y2="14.0"/>
+        <line x1="250.4" y1="158.0" x2="250.4" y2="14.0"/>
+        <line x1="277.2" y1="158.0" x2="277.2" y2="14.0"/>
+        <line x1="303.9" y1="158.0" x2="303.9" y2="14.0"/>
+        <line x1="330.6" y1="158.0" x2="330.6" y2="14.0"/>
+        <line x1="357.3" y1="158.0" x2="357.3" y2="14.0"/>
+        <line x1="26.0" y1="158.0" x2="368.0" y2="158.0"/>
+        <line x1="26.0" y1="27.1" x2="368.0" y2="27.1"/>
+      </g>
+      <line x1="26.0" y1="92.5" x2="368.0" y2="92.5" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-0c831)"/>
+      <line x1="197.0" y1="158.0" x2="197.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-0c831)"/>
+      <text x="364.0" y="106.5" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="189.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="223.7" y="105.5" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <polyline points="36.7,103.2 39.9,103.4 43.1,103.6 46.3,103.8 49.5,104.0 52.7,104.3 55.9,104.5 59.1,104.8 62.3,105.0 65.5,105.3 68.8,105.6 72.0,105.9 75.2,106.2 78.4,106.6 81.6,106.9 84.8,107.3 88.0,107.7 91.2,108.1 94.4,108.5 97.6,109.0 100.8,109.4 104.0,109.9 107.2,110.4 110.4,111.0 113.6,111.6 116.8,112.2 120.1,112.8 123.3,113.5 126.5,114.2 129.7,115.0 132.9,115.8 136.1,116.6 139.3,117.5 142.5,118.4 145.7,119.4 148.9,120.3 152.1,121.3 155.3,122.3 158.5,123.2 161.7,124.1 164.9,124.7 168.1,125.2 171.3,125.2 174.6,124.8 177.8,123.6 181.0,121.4 184.2,118.1 187.4,113.4 190.6,107.4 193.8,100.3 197.0,92.5 200.2,84.8 203.4,77.7 206.6,71.7 209.8,67.0 213.0,63.7 216.2,61.5 219.4,60.3 222.6,59.8 225.9,59.9 229.1,60.4 232.3,61.0 235.5,61.9 238.7,62.8 241.9,63.8 245.1,64.8 248.3,65.7 251.5,66.7 254.7,67.6 257.9,68.5 261.1,69.3 264.3,70.1 267.5,70.9 270.7,71.6 274.0,72.3 277.2,72.9 280.4,73.5 283.6,74.1 286.8,74.7 290.0,75.2 293.2,75.7 296.4,76.1 299.6,76.6 302.8,77.0 306.0,77.4 309.2,77.8 312.4,78.2 315.6,78.5 318.8,78.9 322.0,79.2 325.2,79.5 328.5,79.8 331.7,80.1 334.9,80.3 338.1,80.6 341.3,80.8 344.5,81.1 347.7,81.3 350.9,81.5 354.1,81.7 357.3,81.9" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="197.0" cy="92.5" r="4" fill="#0f172a"/>
+      <text x="203.0" y="84.5" font-size="11" fill="#0f172a" font-weight="600">(0; 0)</text>
+      <rect x="252" y="13" width="122" height="23" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="256" y1="22" x2="274" y2="22" stroke="#3b82f6" stroke-width="2.4"/>
+      <text x="279" y="26" font-size="11" fill="#0f172a">y = x/(x² + 1)</text>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(y=\frac{x}{x^2+1}\)</span> az origóban metszi a vízszintes aszimptotáját, a két szélén mégis hozzá simul.</p>
+
+    <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ Példa: az x/(x² + 1) grafikonja átmegy az origón, pedig vízszintes aszimptotája az y = 0." data-nem="✘ A „sosem éri el” csak a görbe két szélére vonatkozik. Az x/(x² + 1) grafikonja például az origóban metszi a vízszintes aszimptotáját (y = 0).">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Metszheti-e egy függvény grafikonja a saját vízszintes aszimptotáját?</p>
+      <div class="opciok"><button>nem, soha</button><button>csak akkor, ha a függvény páros</button><button>csak a függőleges aszimptotáját metszheti</button><button>igen; az aszimptota csak a végtelenbe tartó ágak viselkedését írja le</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Ferde aszimptota</h2>
+
+    <p class="lead">Ha a számláló foka <b>eggyel nagyobb</b> a nevezőénél (<span class="math inline">\(p=r+1\)</span>), nincs vízszintes aszimptota, a görbe viszont egy <b>ferde</b> egyeneshez simul. Ez a fejezet legnehezebb része.</p>
+
+    <div class="doboz tetel" id="tetel-ferde">
+      <p class="cim"><span class="ikon">📘</span> A ferde aszimptota</p>
+      <p>Az <span class="math inline">\(y=kx+n\)</span> egyenes ferde aszimptota <span class="math inline">\(x\to+\infty\)</span> esetén, ha</p><p><span class="math inline">\(k=\lim\limits_{x\to+\infty}\dfrac{f(x)}{x}\)</span> &nbsp; (véges és nem <span class="math inline">\(0\)</span>), &nbsp; és &nbsp; <span class="math inline">\(n=\lim\limits_{x\to+\infty}\big(f(x)-kx\big)\)</span> &nbsp; (véges).</p><p><span class="math inline">\(x\to-\infty\)</span> esetén ugyanígy; racionális törtfüggvénynél a két irány ugyanazt adja.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-ferde">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — ferde aszimptota</p>
+      <p><span class="math inline">\(f(x)=\dfrac{x^2+1}{x-1}\)</span> (a számláló másodfokú, a nevező elsőfokú):</p><p><span class="math inline">\(k=\lim\limits_{x\to+\infty}\dfrac{x^2+1}{x(x-1)}=\lim\limits_{x\to+\infty}\dfrac{x^2+1}{x^2-x}=1\)</span></p><p><span class="math inline">\(n=\lim\limits_{x\to+\infty}\left(\dfrac{x^2+1}{x-1}-x\right)=\lim\limits_{x\to+\infty}\dfrac{x^2+1-x^2+x}{x-1}=\lim\limits_{x\to+\infty}\dfrac{x+1}{x-1}=1\)</span></p><p>A ferde aszimptota: <span class="math inline">\(y=x+1\)</span>. (Függőleges aszimptota is van: <span class="math inline">\(x=1\)</span>, mert ott a számláló <span class="math inline">\(2\ne0\)</span>.)</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 380 270" width="380" height="270" role="img" aria-label="Az y = (x² + 1)/(x − 1) grafikonja a szaggatott x = 1 és y = x + 1 aszimptotával; a jobb ág az egyenes fölött, a bal ág alatta halad">
+      <defs><marker id="nyil-9a863" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="70.3" y1="248.0" x2="70.3" y2="14.0"/>
+        <line x1="102.0" y1="248.0" x2="102.0" y2="14.0"/>
+        <line x1="133.7" y1="248.0" x2="133.7" y2="14.0"/>
+        <line x1="197.0" y1="248.0" x2="197.0" y2="14.0"/>
+        <line x1="228.7" y1="248.0" x2="228.7" y2="14.0"/>
+        <line x1="260.3" y1="248.0" x2="260.3" y2="14.0"/>
+        <line x1="292.0" y1="248.0" x2="292.0" y2="14.0"/>
+        <line x1="323.7" y1="248.0" x2="323.7" y2="14.0"/>
+        <line x1="355.3" y1="248.0" x2="355.3" y2="14.0"/>
+        <line x1="26.0" y1="248.0" x2="368.0" y2="248.0"/>
+        <line x1="26.0" y1="231.8" x2="368.0" y2="231.8"/>
+        <line x1="26.0" y1="215.5" x2="368.0" y2="215.5"/>
+        <line x1="26.0" y1="199.2" x2="368.0" y2="199.2"/>
+        <line x1="26.0" y1="183.0" x2="368.0" y2="183.0"/>
+        <line x1="26.0" y1="150.5" x2="368.0" y2="150.5"/>
+        <line x1="26.0" y1="134.2" x2="368.0" y2="134.2"/>
+        <line x1="26.0" y1="118.0" x2="368.0" y2="118.0"/>
+        <line x1="26.0" y1="101.8" x2="368.0" y2="101.8"/>
+        <line x1="26.0" y1="85.5" x2="368.0" y2="85.5"/>
+        <line x1="26.0" y1="69.2" x2="368.0" y2="69.2"/>
+        <line x1="26.0" y1="53.0" x2="368.0" y2="53.0"/>
+        <line x1="26.0" y1="36.8" x2="368.0" y2="36.8"/>
+        <line x1="26.0" y1="20.5" x2="368.0" y2="20.5"/>
+      </g>
+      <line x1="197.0" y1="14" x2="197.0" y2="248" stroke="#64748b" stroke-width="1.6" stroke-dasharray="6 4"/>
+      <line x1="26.0" y1="166.8" x2="368.0" y2="166.8" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-9a863)"/>
+      <line x1="165.3" y1="248.0" x2="165.3" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-9a863)"/>
+      <text x="364.0" y="180.8" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="157.3" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="197.0" y="179.8" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="160.3" y="154.5" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <polyline points="32.3,225.0 33.9,224.2 35.5,223.5 37.1,222.7 38.7,222.0 40.2,221.3 41.8,220.5 43.4,219.8 45.0,219.0 46.6,218.3 48.2,217.5 49.8,216.8 51.3,216.1 52.9,215.3 54.5,214.6 56.1,213.9 57.7,213.1 59.3,212.4 60.8,211.7 62.4,211.0 64.0,210.2 65.6,209.5 67.2,208.8 68.8,208.1 70.3,207.4 71.9,206.7 73.5,206.0 75.1,205.3 76.7,204.6 78.2,203.9 79.8,203.2 81.4,202.5 83.0,201.8 84.6,201.1 86.2,200.4 87.8,199.7 89.3,199.1 90.9,198.4 92.5,197.7 94.1,197.1 95.7,196.4 97.2,195.8 98.8,195.1 100.4,194.5 102.0,193.8 103.6,193.2 105.2,192.6 106.8,192.0 108.3,191.4 109.9,190.8 111.5,190.2 113.1,189.6 114.7,189.0 116.2,188.4 117.8,187.9 119.4,187.3 121.0,186.8 122.6,186.3 124.2,185.8 125.8,185.3 127.3,184.8 128.9,184.3 130.5,183.9 132.1,183.4 133.7,183.0 135.2,182.6 136.8,182.2 138.4,181.9 140.0,181.6 141.6,181.3 143.2,181.0 144.8,180.8 146.3,180.6 147.9,180.4 149.5,180.3 151.1,180.2 152.7,180.2 154.3,180.3 155.8,180.4 157.4,180.6 159.0,180.8 160.6,181.2 162.2,181.7 163.8,182.3 165.3,183.0 166.9,183.9 168.5,185.0 170.1,186.3 171.7,187.9 173.2,189.8 174.8,192.1 176.4,194.8 178.0,198.2 179.6,202.3 181.2,207.4 182.8,213.8 184.3,222.0 185.9,232.8 187.5,247.5" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="206.5,21.0 208.1,35.7 209.7,46.5 211.2,54.7 212.8,61.1 214.4,66.2 216.0,70.3 217.6,73.7 219.2,76.4 220.8,78.7 222.3,80.6 223.9,82.2 225.5,83.5 227.1,84.6 228.7,85.5 230.2,86.2 231.8,86.8 233.4,87.3 235.0,87.7 236.6,87.9 238.2,88.1 239.8,88.2 241.3,88.3 242.9,88.3 244.5,88.2 246.1,88.1 247.7,87.9 249.2,87.7 250.8,87.5 252.4,87.2 254.0,86.9 255.6,86.6 257.2,86.3 258.8,85.9 260.3,85.5 261.9,85.1 263.5,84.6 265.1,84.2 266.7,83.7 268.2,83.2 269.8,82.7 271.4,82.2 273.0,81.7 274.6,81.2 276.2,80.6 277.8,80.1 279.3,79.5 280.9,78.9 282.5,78.3 284.1,77.7 285.7,77.1 287.2,76.5 288.8,75.9 290.4,75.3 292.0,74.7 293.6,74.0 295.2,73.4 296.8,72.7 298.3,72.1 299.9,71.4 301.5,70.8 303.1,70.1 304.7,69.4 306.3,68.8 307.8,68.1 309.4,67.4 311.0,66.7 312.6,66.0 314.2,65.3 315.8,64.6 317.3,63.9 318.9,63.2 320.5,62.5 322.1,61.8 323.7,61.1 325.2,60.4 326.8,59.7 328.4,59.0 330.0,58.3 331.6,57.5 333.2,56.8 334.7,56.1 336.3,55.4 337.9,54.6 339.5,53.9 341.1,53.2 342.7,52.4 344.2,51.7 345.8,51.0 347.4,50.2 349.0,49.5 350.6,48.7 352.2,48.0 353.8,47.2 355.3,46.5 356.9,45.8 358.5,45.0 360.1,44.3 361.7,43.5" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="32.3,218.8 35.6,217.1 38.9,215.4 42.2,213.7 45.5,212.0 48.8,210.3 52.1,208.6 55.4,206.9 58.7,205.2 62.0,203.5 65.3,201.8 68.6,200.2 71.9,198.5 75.1,196.8 78.4,195.1 81.7,193.4 85.0,191.7 88.3,190.0 91.6,188.3 94.9,186.6 98.2,184.9 101.5,183.3 104.8,181.6 108.1,179.9 111.4,178.2 114.7,176.5 118.0,174.8 121.3,173.1 124.5,171.4 127.8,169.7 131.1,168.1 134.4,166.4 137.7,164.7 141.0,163.0 144.3,161.3 147.6,159.6 150.9,157.9 154.2,156.2 157.5,154.5 160.8,152.8 164.1,151.2 167.4,149.5 170.7,147.8 173.9,146.1 177.2,144.4 180.5,142.7 183.8,141.0 187.1,139.3 190.4,137.6 193.7,135.9 197.0,134.2 200.3,132.6 203.6,130.9 206.9,129.2 210.2,127.5 213.5,125.8 216.8,124.1 220.1,122.4 223.3,120.7 226.6,119.0 229.9,117.3 233.2,115.7 236.5,114.0 239.8,112.3 243.1,110.6 246.4,108.9 249.7,107.2 253.0,105.5 256.3,103.8 259.6,102.1 262.9,100.5 266.2,98.8 269.5,97.1 272.7,95.4 276.0,93.7 279.3,92.0 282.6,90.3 285.9,88.6 289.2,86.9 292.5,85.2 295.8,83.5 299.1,81.9 302.4,80.2 305.7,78.5 309.0,76.8 312.3,75.1 315.6,73.4 318.9,71.7 322.1,70.0 325.4,68.3 328.7,66.7 332.0,65.0 335.3,63.3 338.6,61.6 341.9,59.9 345.2,58.2 348.5,56.5 351.8,54.8 355.1,53.1 358.4,51.4 361.7,49.8" fill="none" stroke="#64748b" stroke-width="1.6" stroke-dasharray="6 4" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="212" y="13" width="162" height="40" rx="4" fill="#ffffff" fill-opacity=".88"/>
+      <line x1="216" y1="22" x2="234" y2="22" stroke="#3b82f6" stroke-width="2.4"/>
+      <text x="239" y="26" font-size="11" fill="#0f172a">y = (x² + 1)/(x − 1)</text>
+      <line x1="216" y1="39" x2="234" y2="39" stroke="#64748b" stroke-width="2.4" stroke-dasharray="5 3"/>
+      <text x="239" y="43" font-size="11" fill="#0f172a">y = x + 1</text>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(y=\frac{x^2+1}{x-1}\)</span> grafikonja a két aszimptotájával: <span class="math inline">\(x=1\)</span> és <span class="math inline">\(y=x+1\)</span>.</p>
+
+    <p class="lead">⚔️ <b>Az ötösért:</b> ferde aszimptota racionális függvénynél — <a href="feladatok-hatarertek-aszimptota.html#nehez-1">Zsoldos-lista II., nehéz 1–4</a>.</p>
+
+    <h2 id="s5">Aszimptota-vizsgálat lépésről lépésre</h2>
+
+    <p class="lead">Egy racionális törtfüggvény aszimptotáit mindig ugyanabban a sorrendben keressük.</p><ol class="reszfeladatok"><li><b>Függőleges:</b> egyszerűsítsd a törtet, amennyire lehet; utána a nevező zérushelyei.</li><li><b>Vízszintes:</b> <span class="math inline">\(\lim\limits_{x\to\pm\infty}f(x)\)</span> — ha véges szám, megvan.</li><li><b>Ferde:</b> csak ha <span class="math inline">\(p=r+1\)</span>; <span class="math inline">\(k\)</span> és <span class="math inline">\(n\)</span> a fenti képletekkel.</li></ol>
+
+    <div class="doboz pelda" id="pelda-teljes">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — teljes vizsgálat</p>
+      <p><span class="math inline">\(f(x)=\dfrac{2x^2+x}{x-1}\)</span></p><ul><li>függőleges: <span class="math inline">\(x=1\)</span> (a számláló ott <span class="math inline">\(3\ne0\)</span>);</li><li>vízszintes: nincs, mert <span class="math inline">\(p=2\gt r=1\)</span>;</li><li>ferde: <span class="math inline">\(k=\lim\limits_{x\to+\infty}\dfrac{2x^2+x}{x^2-x}=2\)</span>, &nbsp; <span class="math inline">\(n=\lim\limits_{x\to+\infty}\left(\dfrac{2x^2+x}{x-1}-2x\right)=\lim\limits_{x\to+\infty}\dfrac{3x}{x-1}=3\)</span> → <span class="math inline">\(y=2x+3\)</span>.</li></ul>
+    </div>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A fokszámok döntenek: vagy a határérték véges (vízszintes), vagy p = r + 1 és ferde. Egyszerre nem." data-nem="✘ Racionális törtfüggvénynél a kettő kizárja egymást: p ≤ r esetén a határérték véges (vízszintes aszimptota), p = r + 1 esetén a függvény ±∞-be tart, és ferde aszimptotája van.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Lehet-e egy racionális törtfüggvénynek vízszintes <b>és</b> ferde aszimptotája is?</p>
+      <div class="opciok"><button>igen, ha a nevezőnek két zérushelye van</button><button>csak akkor, ha a számláló és a nevező foka egyenlő</button><button>nem: <span class="math inline">\(p\le r\)</span> esetén vízszintes van, <span class="math inline">\(p=r+1\)</span> esetén ferde</button><button>igen, ha a számláló foka nagyobb a nevezőénél</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-hatarertek-aszimptota.html#alap-15">🐶 Véd-eb nyomravezető <span class="cimke">A 15–18</span></a><a class="sav bruno" href="feladatok-hatarertek-aszimptota.html#kozep-10">⚔️ Maximális erőbedobás <span class="cimke">K 10–12</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/nagol.webp" alt="Nagol — a morcos kiképzőtiszt" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Nagol:</b> A falat nem kellett áttörni: tudjuk, hol van, és azt is, hogyan közelít hozzá a görbe. A határértékkel viszont ennél többet is meg lehet fogni: azt, hogy egy mennyiség <b>egy pillanat alatt</b> mennyit változik. Ez lesz a derivált. <b>Véd Vilmos:</b> Pillanatnyi? Én mindig pillanatnyi vagyok.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-hatarertek-vegtelenben.html"><span class="irany">← Előző</span><span class="hova">Határérték a végtelenben</span></a>
+      <a class="kov" href="feladatok-tulajdonsagok.html"><span class="irany">Következő →</span><span class="hova">Zsoldos-lista I. — Tulajdonságok</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
