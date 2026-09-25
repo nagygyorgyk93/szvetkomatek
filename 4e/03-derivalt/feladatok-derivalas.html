@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zsoldos-lista I. — Deriválás | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="digitalis">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">A függvény deriváltja</a> ›
+  <span class="itt">Zsoldos-lista I. — Deriválás</span>
+</nav>
+<div class="hero">
+  <h1>A függvény deriváltja — Zsoldos-lista I.: deriválás</h1>
+  <p class="alcim">Növekmény és differenciahányados, deriválási szabályok, összetett függvény, második derivált, érintő és változási sebesség. A végeredmény minden feladatnál lenyitható — előbb számolj!</p>
+  <div class="meta-sor"><span class="chip alap">Alap</span><span class="chip kozep">Közép</span><span class="chip nehez">Nehéz</span><span class="chip joker">Joker</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="alap">🟢 Alapszint — Zöldfülű</h2>
+    <article class="feladat alap" id="alap-1">
+      <p><span class="szam">1.</span> Számítsd ki az <span class="math inline">\(f\)</span> függvény <span class="math inline">\(\Delta y\)</span> növekményét és a <span class="math inline">\(\dfrac{\Delta y}{\Delta x}\)</span> differenciahányadost! (Ahol kell, két tizedesjegyre kerekíts.)</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=x^2\)</span>, <span class="math inline">\(x_0=1\)</span>, <span class="math inline">\(\Delta x=0{,}5\)</span></li><li><span class="math inline">\(f(x)=x^2\)</span>, <span class="math inline">\(x_0=5\)</span>, <span class="math inline">\(\Delta x=0{,}5\)</span></li><li><span class="math inline">\(f(x)=\sqrt x\)</span>, <span class="math inline">\(x_0=0\)</span>, <span class="math inline">\(\Delta x=0{,}6\)</span></li><li><span class="math inline">\(f(x)=\sqrt x\)</span>, <span class="math inline">\(x_0=5\)</span>, <span class="math inline">\(\Delta x=0{,}6\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\Delta y=1{,}25\)</span>, <span class="math inline">\(\dfrac{\Delta y}{\Delta x}=2{,}5\)</span></li><li><span class="math inline">\(\Delta y=5{,}25\)</span>, <span class="math inline">\(\dfrac{\Delta y}{\Delta x}=10{,}5\)</span></li><li><span class="math inline">\(\Delta y\approx0{,}77\)</span>, <span class="math inline">\(\dfrac{\Delta y}{\Delta x}\approx1{,}29\)</span></li><li><span class="math inline">\(\Delta y\approx0{,}13\)</span>, <span class="math inline">\(\dfrac{\Delta y}{\Delta x}\approx0{,}22\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-2">
+      <p><span class="szam">2.</span> Az ábrán az <span class="math inline">\(f\)</span> függvény grafikonja és három érintője látható (a rács egysége <span class="math inline">\(1\)</span>). Olvasd le a derivált értékét az érintők meredekségéből!</p><div class="svgwrap"><svg viewBox="0 0 360 250" width="360" height="250" role="img" aria-label="Az f(x) = (x² − 4x)/2 parabola és három érintője: a 0-ban −2, a 2-ben 0, a 4-ben 2 meredekségű">
+  <defs><marker id="nyil-cd8df" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+  <g stroke="#cbd5e1" stroke-width=".6">
+    <line x1="130.2" y1="228.0" x2="130.2" y2="14.0"/>
+    <line x1="177.5" y1="228.0" x2="177.5" y2="14.0"/>
+    <line x1="224.9" y1="228.0" x2="224.9" y2="14.0"/>
+    <line x1="272.2" y1="228.0" x2="272.2" y2="14.0"/>
+    <line x1="319.6" y1="228.0" x2="319.6" y2="14.0"/>
+    <line x1="26.0" y1="186.6" x2="348.0" y2="186.6"/>
+    <line x1="26.0" y1="152.1" x2="348.0" y2="152.1"/>
+    <line x1="26.0" y1="83.0" x2="348.0" y2="83.0"/>
+    <line x1="26.0" y1="48.5" x2="348.0" y2="48.5"/>
+    <line x1="26.0" y1="14.0" x2="348.0" y2="14.0"/>
+  </g>
+  <line x1="26.0" y1="117.5" x2="348.0" y2="117.5" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-cd8df)"/>
+  <line x1="82.8" y1="228.0" x2="82.8" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-cd8df)"/>
+  <text x="344.0" y="131.5" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+  <text x="74.8" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+  <text x="130.2" y="130.5" font-size="10" fill="#475569" text-anchor="middle">1</text>
+  <text x="77.8" y="87.0" font-size="10" fill="#475569" text-anchor="end">1</text>
+  <polyline points="40.2,41.4 43.1,47.5 46.0,53.4 48.9,59.2 51.8,64.8 54.6,70.4 57.5,75.8 60.4,81.0 63.3,86.2 66.2,91.2 69.1,96.1 72.0,100.8 74.9,105.5 77.8,110.0 80.6,114.3 83.5,118.6 86.4,122.7 89.3,126.7 92.2,130.5 95.1,134.3 98.0,137.9 100.9,141.3 103.8,144.7 106.6,147.9 109.5,151.0 112.4,154.0 115.3,156.8 118.2,159.5 121.1,162.1 124.0,164.5 126.9,166.8 129.8,169.0 132.6,171.1 135.5,173.0 138.4,174.8 141.3,176.5 144.2,178.0 147.1,179.4 150.0,180.7 152.9,181.9 155.7,182.9 158.6,183.8 161.5,184.6 164.4,185.3 167.3,185.8 170.2,186.2 173.1,186.4 176.0,186.6 178.9,186.6 181.7,186.4 184.6,186.2 187.5,185.8 190.4,185.3 193.3,184.7 196.2,183.9 199.1,183.0 202.0,182.0 204.9,180.8 207.7,179.6 210.6,178.1 213.5,176.6 216.4,174.9 219.3,173.2 222.2,171.2 225.1,169.2 228.0,167.0 230.8,164.7 233.7,162.3 236.6,159.7 239.5,157.0 242.4,154.2 245.3,151.2 248.2,148.2 251.1,145.0 254.0,141.6 256.8,138.2 259.7,134.6 262.6,130.9 265.5,127.0 268.4,123.0 271.3,118.9 274.2,114.7 277.1,110.3 280.0,105.8 282.8,101.2 285.7,96.5 288.6,91.6 291.5,86.6 294.4,81.5 297.3,76.2 300.2,70.8 303.1,65.3 306.0,59.6 308.8,53.9 311.7,48.0 314.6,41.9 317.5,35.8 320.4,29.5 323.3,23.1 326.2,16.5 329.1,9.9" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="49.7,69.2 50.4,70.3 51.2,71.4 51.9,72.5 52.7,73.6 53.5,74.7 54.2,75.9 55.0,77.0 55.7,78.1 56.5,79.2 57.3,80.3 58.0,81.4 58.8,82.5 59.5,83.6 60.3,84.7 61.0,85.8 61.8,86.9 62.6,88.0 63.3,89.1 64.1,90.2 64.8,91.3 65.6,92.4 66.3,93.5 67.1,94.6 67.9,95.7 68.6,96.8 69.4,97.9 70.1,99.0 70.9,100.2 71.6,101.3 72.4,102.4 73.2,103.5 73.9,104.6 74.7,105.7 75.4,106.8 76.2,107.9 77.0,109.0 77.7,110.1 78.5,111.2 79.2,112.3 80.0,113.4 80.7,114.5 81.5,115.6 82.3,116.7 83.0,117.8 83.8,118.9 84.5,120.0 85.3,121.1 86.0,122.2 86.8,123.3 87.6,124.5 88.3,125.6 89.1,126.7 89.8,127.8 90.6,128.9 91.3,130.0 92.1,131.1 92.9,132.2 93.6,133.3 94.4,134.4 95.1,135.5 95.9,136.6 96.7,137.7 97.4,138.8 98.2,139.9 98.9,141.0 99.7,142.1 100.4,143.2 101.2,144.3 102.0,145.4 102.7,146.5 103.5,147.6 104.2,148.8 105.0,149.9 105.7,151.0 106.5,152.1 107.3,153.2 108.0,154.3 108.8,155.4 109.5,156.5 110.3,157.6 111.0,158.7 111.8,159.8 112.6,160.9 113.3,162.0 114.1,163.1 114.8,164.2 115.6,165.3 116.3,166.4 117.1,167.5 117.9,168.6 118.6,169.7 119.4,170.8 120.1,171.9 120.9,173.1 121.7,174.2 122.4,175.3 123.2,176.4 123.9,177.5 124.7,178.6 125.4,179.7" fill="none" stroke="#047857" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="130.2,186.6 131.1,186.6 132.1,186.6 133.0,186.6 134.0,186.6 134.9,186.6 135.9,186.6 136.8,186.6 137.8,186.6 138.7,186.6 139.6,186.6 140.6,186.6 141.5,186.6 142.5,186.6 143.4,186.6 144.4,186.6 145.3,186.6 146.3,186.6 147.2,186.6 148.2,186.6 149.1,186.6 150.1,186.6 151.0,186.6 152.0,186.6 152.9,186.6 153.9,186.6 154.8,186.6 155.7,186.6 156.7,186.6 157.6,186.6 158.6,186.6 159.5,186.6 160.5,186.6 161.4,186.6 162.4,186.6 163.3,186.6 164.3,186.6 165.2,186.6 166.2,186.6 167.1,186.6 168.1,186.6 169.0,186.6 170.0,186.6 170.9,186.6 171.8,186.6 172.8,186.6 173.7,186.6 174.7,186.6 175.6,186.6 176.6,186.6 177.5,186.6 178.5,186.6 179.4,186.6 180.4,186.6 181.3,186.6 182.3,186.6 183.2,186.6 184.2,186.6 185.1,186.6 186.1,186.6 187.0,186.6 187.9,186.6 188.9,186.6 189.8,186.6 190.8,186.6 191.7,186.6 192.7,186.6 193.6,186.6 194.6,186.6 195.5,186.6 196.5,186.6 197.4,186.6 198.4,186.6 199.3,186.6 200.3,186.6 201.2,186.6 202.2,186.6 203.1,186.6 204.0,186.6 205.0,186.6 205.9,186.6 206.9,186.6 207.8,186.6 208.8,186.6 209.7,186.6 210.7,186.6 211.6,186.6 212.6,186.6 213.5,186.6 214.5,186.6 215.4,186.6 216.4,186.6 217.3,186.6 218.3,186.6 219.2,186.6 220.1,186.6 221.1,186.6 222.0,186.6 223.0,186.6 223.9,186.6 224.9,186.6" fill="none" stroke="#f59e0b" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="229.6,179.7 230.5,178.4 231.3,177.2 232.2,175.9 233.0,174.7 233.9,173.5 234.7,172.2 235.6,171.0 236.4,169.7 237.3,168.5 238.1,167.3 239.0,166.0 239.8,164.8 240.7,163.5 241.6,162.3 242.4,161.0 243.3,159.8 244.1,158.6 245.0,157.3 245.8,156.1 246.7,154.8 247.5,153.6 248.4,152.3 249.2,151.1 250.1,149.9 250.9,148.6 251.8,147.4 252.6,146.1 253.5,144.9 254.3,143.6 255.2,142.4 256.0,141.2 256.9,139.9 257.7,138.7 258.6,137.4 259.5,136.2 260.3,134.9 261.2,133.7 262.0,132.5 262.9,131.2 263.7,130.0 264.6,128.7 265.4,127.5 266.3,126.2 267.1,125.0 268.0,123.8 268.8,122.5 269.7,121.3 270.5,120.0 271.4,118.8 272.2,117.5 273.1,116.3 273.9,115.1 274.8,113.8 275.6,112.6 276.5,111.3 277.3,110.1 278.2,108.9 279.1,107.6 279.9,106.4 280.8,105.1 281.6,103.9 282.5,102.6 283.3,101.4 284.2,100.2 285.0,98.9 285.9,97.7 286.7,96.4 287.6,95.2 288.4,93.9 289.3,92.7 290.1,91.5 291.0,90.2 291.8,89.0 292.7,87.7 293.5,86.5 294.4,85.2 295.2,84.0 296.1,82.8 297.0,81.5 297.8,80.3 298.7,79.0 299.5,77.8 300.4,76.5 301.2,75.3 302.1,74.1 302.9,72.8 303.8,71.6 304.6,70.3 305.5,69.1 306.3,67.8 307.2,66.6 308.0,65.4 308.9,64.1 309.7,62.9 310.6,61.6 311.4,60.4 312.3,59.1 313.1,57.9 314.0,56.7 314.9,55.4" fill="none" stroke="#ef4444" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="82.8" cy="117.5" r="4" fill="#0f172a"/>
+  <circle cx="177.5" cy="186.6" r="4" fill="#0f172a"/>
+  <circle cx="272.2" cy="117.5" r="4" fill="#0f172a"/>
+  <rect x="311" y="13" width="43" height="74" rx="4" fill="#ffffff" fill-opacity=".88"/>
+  <line x1="315" y1="22" x2="333" y2="22" stroke="#3b82f6" stroke-width="2.4"/>
+  <text x="338" y="26" font-size="11" fill="#0f172a">f</text>
+  <line x1="315" y1="39" x2="333" y2="39" stroke="#047857" stroke-width="2.4"/>
+  <text x="338" y="43" font-size="11" fill="#0f172a">e₁</text>
+  <line x1="315" y1="56" x2="333" y2="56" stroke="#f59e0b" stroke-width="2.4"/>
+  <text x="338" y="60" font-size="11" fill="#0f172a">e₂</text>
+  <line x1="315" y1="73" x2="333" y2="73" stroke="#ef4444" stroke-width="2.4"/>
+  <text x="338" y="77" font-size="11" fill="#0f172a">e₃</text>
+</svg></div><ol class="reszfeladatok rovid"><li><span class="math inline">\(f'(0)\)</span></li><li><span class="math inline">\(f'(2)\)</span></li><li><span class="math inline">\(f'(4)\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(-2\)</span></li><li><span class="math inline">\(0\)</span> (vízszintes érintő)</li><li><span class="math inline">\(2\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-3">
+      <p><span class="szam">3.</span> Deriváld a függvényeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(y=3 x^{2} - 2 x + 6\)</span></li><li><span class="math inline">\(y=x^{3} + 3 x^{2} - 5 x + 2\)</span></li><li><span class="math inline">\(y=\dfrac{2 x^{9}}{3} - x^{6} + 2 x^{3} - 3 x^{2} + 6 x - 1\)</span></li><li><span class="math inline">\(y=x^{8} - \dfrac{4 x^{6}}{3} - 2 x^{4} - 4 x^{2} - 8 x - 1\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(y'=6 x - 2\)</span></li><li><span class="math inline">\(y'=3 x^{2} + 6 x - 5\)</span></li><li><span class="math inline">\(y'=6 x^{8} - 6 x^{5} + 6 x^{2} - 6 x + 6\)</span></li><li><span class="math inline">\(y'=8 x^{7} - 8 x^{5} - 8 x^{3} - 8 x - 8\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-4">
+      <p><span class="szam">4.</span> Deriváld a függvényeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(y=\dfrac{\sqrt{3} x^{4}}{4} + x^{3} + \dfrac{\sqrt{2} x^{2}}{2} + x + 1\)</span></li><li><span class="math inline">\(y=\dfrac{4 x + 5}{3}\)</span></li><li><span class="math inline">\(y=5 x^{3} - \dfrac{x}{2} + 4\)</span></li><li><span class="math inline">\(y=\dfrac{x^{4}}{2} - \dfrac{3 x^{2}}{4}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(y'=\sqrt{3} x^{3} + 3 x^{2} + \sqrt{2} x + 1\)</span></li><li><span class="math inline">\(y'=\dfrac{4}{3}\)</span></li><li><span class="math inline">\(y'=15 x^{2} - \dfrac{1}{2}\)</span></li><li><span class="math inline">\(y'=2 x^{3} - \dfrac{3 x}{2}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-5">
+      <p><span class="szam">5.</span> Deriváld a függvényeket! (Írd át a törteket negatív kitevős hatvánnyá.)</p><ol class="reszfeladatok"><li><span class="math inline">\(y=\dfrac{1}{3 x^{4}}\)</span></li><li><span class="math inline">\(y=\dfrac{1}{x} + \dfrac{1}{x^{2}} + \dfrac{1}{x^{3}}\)</span></li><li><span class="math inline">\(y=x + \dfrac{1}{x^{2}} - \dfrac{1}{5 x^{5}}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(y'=- \dfrac{4}{3 x^{5}}\)</span></li><li><span class="math inline">\(y'=- \dfrac{1}{x^{2}} - \dfrac{2}{x^{3}} - \dfrac{3}{x^{4}}\)</span></li><li><span class="math inline">\(y'=1 - \dfrac{2}{x^{3}} + \dfrac{1}{x^{6}}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-6">
+      <p><span class="szam">6.</span> Deriváld a függvényeket! (Írd át a gyököket törtkitevős hatvánnyá.)</p><ol class="reszfeladatok"><li><span class="math inline">\(y=x^{3} \sqrt{x}\)</span></li><li><span class="math inline">\(y=x \sqrt[3]{x}\)</span></li><li><span class="math inline">\(y=x^{2} \sqrt[3]{x}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(y'=\dfrac{7 \sqrt{x^{5}}}{2}\)</span></li><li><span class="math inline">\(y'=\dfrac{4 \sqrt[3]{x}}{3}\)</span></li><li><span class="math inline">\(y'=\dfrac{7 \sqrt[3]{x^{4}}}{3}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-7">
+      <p><span class="szam">7.</span> Deriváld a szorzatokat!</p><ol class="reszfeladatok"><li><span class="math inline">\(y=\left(2 x + 1\right) \left(x^{2} + 3 x - 1\right)\)</span></li><li><span class="math inline">\(y=\left(2 x^{2} - x\right) \left(x^{3} + 5 x - 1\right)\)</span></li><li><span class="math inline">\(y=x^{3} \sin x\)</span></li><li><span class="math inline">\(y=x e^{x}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(y'=6 x^{2} + 14 x + 1\)</span></li><li><span class="math inline">\(y'=10 x^{4} - 4 x^{3} + 30 x^{2} - 14 x + 1\)</span></li><li><span class="math inline">\(y'=3 x^{2} \sin x + x^{3} \cos x\)</span></li><li><span class="math inline">\(y'=\left(x + 1\right) e^{x}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-8">
+      <p><span class="szam">8.</span> Deriváld a függvényeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(y=\sin x + \operatorname{tg} x\)</span></li><li><span class="math inline">\(y=x^{2} - 3 \ln x\)</span></li><li><span class="math inline">\(y=x \ln x\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(y'=\cos x + \dfrac{1}{\cos^{2} x }\)</span></li><li><span class="math inline">\(y'=\dfrac{2 x^{2} - 3}{x}\)</span></li><li><span class="math inline">\(y'=1 + \ln x\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-9">
+      <p><span class="szam">9.</span> Deriváld a függvényt, majd számítsd ki a derivált értékét az adott helyen!</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=\dfrac14x^4-4x^2+16\)</span>, <span class="math inline">\(f'(2)\)</span></li><li><span class="math inline">\(f(x)=\dfrac32x^4+4x^3-\dfrac12x^2+5x-7\)</span>, <span class="math inline">\(f'(-1)\)</span></li><li><span class="math inline">\(f(x)=-x^3+9x^2+x-1\)</span>, <span class="math inline">\(f'(-1)\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(f'(x)=x^3-8x\)</span>, <span class="math inline">\(f'(2)=-8\)</span></li><li><span class="math inline">\(f'(x)=6x^3+12x^2-x+5\)</span>, <span class="math inline">\(f'(-1)=12\)</span></li><li><span class="math inline">\(f'(x)=-3x^2+18x+1\)</span>, <span class="math inline">\(f'(-1)=-20\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-10">
+      <p><span class="szam">10.</span> Írd fel az <span class="math inline">\(f\)</span> függvény grafikonjának érintőjét az adott <span class="math inline">\(P\)</span> pontban!</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=\dfrac12x^2+2x+1\)</span>, <span class="math inline">\(P(2;\,y)\)</span></li><li><span class="math inline">\(f(x)=-\dfrac12x^2+2x-3\)</span>, <span class="math inline">\(P(4;\,y)\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(P(2;\,7)\)</span>, <span class="math inline">\(y=4x-1\)</span></li><li><span class="math inline">\(P(4;\,-3)\)</span>, <span class="math inline">\(y=-2x+5\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-11">
+      <p><span class="szam">11.</span> Írd fel az <span class="math inline">\(f\)</span> függvény grafikonjának érintőjét az adott <span class="math inline">\(P\)</span> pontban!</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=\dfrac12x^2+\dfrac12x-3\)</span>, <span class="math inline">\(P(1;\,-2)\)</span></li><li><span class="math inline">\(f(x)=-\dfrac12x^2+\dfrac32x+2\)</span>, <span class="math inline">\(P(0;\,2)\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(y=\dfrac32x-\dfrac72\)</span></li><li><span class="math inline">\(y=\dfrac32x+2\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-12">
+      <p><span class="szam">12.</span> Írd fel az <span class="math inline">\(f\)</span> függvény grafikonjának érintőjét az adott <span class="math inline">\(P\)</span> pontban!</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=-3x^3+3x^2+3x+3\)</span>, <span class="math inline">\(P(-1;\,y)\)</span></li><li><span class="math inline">\(f(x)=-2x^3-2x^2+2x-2\)</span>, <span class="math inline">\(P(1;\,y)\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(P(-1;\,6)\)</span>, <span class="math inline">\(y=-12x-6\)</span></li><li><span class="math inline">\(P(1;\,-4)\)</span>, <span class="math inline">\(y=-8x+4\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-13">
+      <p><span class="szam">13.</span> Változási sebesség. Egy futó <span class="math inline">\(t\)</span> másodperc alatt <span class="math inline">\(s(t)=t^2+4t\)</span> métert tesz meg (a–c).</p><ol class="reszfeladatok"><li>Mekkora a futó átlagsebessége az első <span class="math inline">\(3\)</span> másodpercben?</li><li>Mekkora a pillanatnyi sebessége <span class="math inline">\(t=3\)</span> s-kor?</li><li>Mikor éri el a <span class="math inline">\(14\ \tfrac{\text{m}}{\text{s}}\)</span> sebességet?</li><li>Egy medencében a víz magassága <span class="math inline">\(t\)</span> perc múlva <span class="math inline">\(h(t)=120-3t+0{,}02t^2\)</span> cm. Milyen ütemben változik a vízszint <span class="math inline">\(t=10\)</span> perckor?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\dfrac{s(3)}{3}=\dfrac{21}{3}=7\ \tfrac{\text{m}}{\text{s}}\)</span></li><li><span class="math inline">\(v(t)=s'(t)=2t+4\)</span>, <span class="math inline">\(v(3)=10\ \tfrac{\text{m}}{\text{s}}\)</span></li><li><span class="math inline">\(2t+4=14\)</span>, <span class="math inline">\(t=5\)</span> s-kor</li><li><span class="math inline">\(h'(t)=-3+0{,}04t\)</span>, <span class="math inline">\(h'(10)=-2{,}6\)</span>: percenként <span class="math inline">\(2{,}6\)</span> cm-t csökken</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-14">
+      <p><span class="szam">14.</span> Deriváld az összetett függvényeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(y=\left(3 x - 4\right)^{4}\)</span></li><li><span class="math inline">\(y=\left(x^{2} - x + 1\right)^{5}\)</span></li><li><span class="math inline">\(y=\sqrt{2 x - 5}\)</span></li><li><span class="math inline">\(y=\sqrt{1 - x^{2}}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(y'=12 \left(3 x - 4\right)^{3}\)</span></li><li><span class="math inline">\(y'=\left(10 x - 5\right) \left(x^{2} - x + 1\right)^{4}\)</span></li><li><span class="math inline">\(y'=\dfrac{1}{\sqrt{2 x - 5}}\)</span></li><li><span class="math inline">\(y'=\dfrac{-x}{\sqrt{1 - x^{2}}}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-15">
+      <p><span class="szam">15.</span> Deriváld az összetett függvényeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(y=2 \sqrt{3 x - 2}\)</span></li><li><span class="math inline">\(y=\dfrac{3 \cos 4x }{4}\)</span></li><li><span class="math inline">\(y=e^{- x^{2}}\)</span></li><li><span class="math inline">\(y=\ln\left(3 x - 1\right)\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(y'=\dfrac{3}{\sqrt{3 x - 2}}\)</span></li><li><span class="math inline">\(y'=- 3 \sin 4x\)</span></li><li><span class="math inline">\(y'=- 2 x e^{- x^{2}}\)</span></li><li><span class="math inline">\(y'=\dfrac{3}{3 x - 1}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-16">
+      <p><span class="szam">16.</span> Deriváld az összetett függvényeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(y=\sqrt{x^{2} - 4 x + 3}\)</span></li><li><span class="math inline">\(y=\dfrac{1}{\sqrt{4 x - 1}}\)</span></li><li><span class="math inline">\(y=\sqrt{x^{2} + 8 x + 15}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(y'=\dfrac{x - 2}{\sqrt{x^{2} - 4 x + 3}}\)</span></li><li><span class="math inline">\(y'=- \dfrac{2}{\sqrt{\left(4 x - 1\right)^{3}}}\)</span></li><li><span class="math inline">\(y'=\dfrac{x + 4}{\sqrt{x^{2} + 8 x + 15}}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-17">
+      <p><span class="szam">17.</span> Határozd meg a függvények második deriváltját!</p><ol class="reszfeladatok"><li><span class="math inline">\(y=\dfrac{x^{4}}{2} - 9 x^{2} + x + \dfrac{1}{2}\)</span></li><li><span class="math inline">\(y=\dfrac{x^{4}}{3} - 4 x^{2} + 7 x - \dfrac{1}{3}\)</span></li><li><span class="math inline">\(y=x^{4} - \dfrac{2 x^{3}}{3} - \dfrac{x^{2}}{2} + 7 x + 3\)</span></li><li><span class="math inline">\(y=2 \sin x - 3 \cos x\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(y''=6 x^{2} - 18\)</span></li><li><span class="math inline">\(y''=4 x^{2} - 8\)</span></li><li><span class="math inline">\(y''=12 x^{2} - 4 x - 1\)</span></li><li><span class="math inline">\(y''=- 2 \sin x + 3 \cos x\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-18">
+      <p><span class="szam">18.</span> Sebesség és gyorsulás. Egy test helyzete <span class="math inline">\(t\)</span> másodperc múlva <span class="math inline">\(s(t)=t^3-6t^2+9t\)</span> méter.</p><ol class="reszfeladatok"><li>Írd fel a <span class="math inline">\(v(t)\)</span> sebességet és az <span class="math inline">\(a(t)\)</span> gyorsulást!</li><li>Mikor áll meg a test (mikor <span class="math inline">\(v(t)=0\)</span>)?</li><li>Mekkora a gyorsulás <span class="math inline">\(t=2\)</span> s-kor, és mit jelent ez?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(v(t)=3t^2-12t+9\)</span> <span class="math inline">\(\tfrac{\text{m}}{\text{s}}\)</span>, <span class="math inline">\(a(t)=6t-12\)</span> <span class="math inline">\(\tfrac{\text{m}}{\text{s}^2}\)</span></li><li><span class="math inline">\(3(t-1)(t-3)=0\)</span>: <span class="math inline">\(t=1\)</span> s-kor és <span class="math inline">\(t=3\)</span> s-kor — ott pillanatnyilag megáll és irányt vált</li><li><span class="math inline">\(a(2)=0\)</span>: ebben a pillanatban a sebesség változási üteme <span class="math inline">\(0\)</span>; a sebesség itt a legkisebb, <span class="math inline">\(v(2)=-3\ \tfrac{\text{m}}{\text{s}}\)</span> — a test ekkor halad a leggyorsabban visszafelé</li></ol></div>
+      </details>
+    </article>
+    <h2 id="kozep">🟡 Középszint — X-Force</h2>
+    <article class="feladat kozep" id="kozep-1">
+      <p><span class="szam">1.</span> Az ábrán egy <span class="math inline">\(f\)</span> függvény grafikonja látható. Hol pozitív, hol negatív és hol nulla az <span class="math inline">\(f'\)</span> derivált? Indokold a grafikon alapján!</p><div class="svgwrap"><svg viewBox="0 0 360 250" width="360" height="250" role="img" aria-label="Egy harmadfokú függvény grafikonja: az x = −1 helyen csúcs, az x = 3 helyen völgy">
+  <defs><marker id="nyil-29abf" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+  <g stroke="#cbd5e1" stroke-width=".6">
+    <line x1="26.0" y1="228.0" x2="26.0" y2="14.0"/>
+    <line x1="63.4" y1="228.0" x2="63.4" y2="14.0"/>
+    <line x1="100.9" y1="228.0" x2="100.9" y2="14.0"/>
+    <line x1="175.8" y1="228.0" x2="175.8" y2="14.0"/>
+    <line x1="213.2" y1="228.0" x2="213.2" y2="14.0"/>
+    <line x1="250.7" y1="228.0" x2="250.7" y2="14.0"/>
+    <line x1="288.1" y1="228.0" x2="288.1" y2="14.0"/>
+    <line x1="325.5" y1="228.0" x2="325.5" y2="14.0"/>
+    <line x1="26.0" y1="228.0" x2="348.0" y2="228.0"/>
+    <line x1="26.0" y1="213.2" x2="348.0" y2="213.2"/>
+    <line x1="26.0" y1="198.5" x2="348.0" y2="198.5"/>
+    <line x1="26.0" y1="183.7" x2="348.0" y2="183.7"/>
+    <line x1="26.0" y1="169.0" x2="348.0" y2="169.0"/>
+    <line x1="26.0" y1="154.2" x2="348.0" y2="154.2"/>
+    <line x1="26.0" y1="139.4" x2="348.0" y2="139.4"/>
+    <line x1="26.0" y1="124.7" x2="348.0" y2="124.7"/>
+    <line x1="26.0" y1="95.2" x2="348.0" y2="95.2"/>
+    <line x1="26.0" y1="80.4" x2="348.0" y2="80.4"/>
+    <line x1="26.0" y1="65.7" x2="348.0" y2="65.7"/>
+    <line x1="26.0" y1="50.9" x2="348.0" y2="50.9"/>
+    <line x1="26.0" y1="36.1" x2="348.0" y2="36.1"/>
+    <line x1="26.0" y1="21.4" x2="348.0" y2="21.4"/>
+  </g>
+  <line x1="26.0" y1="109.9" x2="348.0" y2="109.9" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-29abf)"/>
+  <line x1="138.3" y1="228.0" x2="138.3" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-29abf)"/>
+  <text x="344.0" y="123.9" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+  <text x="130.3" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+  <text x="175.8" y="122.9" font-size="10" fill="#475569" text-anchor="middle">1</text>
+  <text x="133.3" y="99.2" font-size="10" fill="#475569" text-anchor="end">1</text>
+  <polyline points="37.2,165.3 40.2,154.3 43.1,144.0 46.1,134.4 49.1,125.4 52.0,117.0 55.0,109.2 57.9,102.1 60.9,95.5 63.9,89.4 66.8,84.0 69.8,79.0 72.7,74.6 75.7,70.7 78.6,67.3 81.6,64.3 84.6,61.8 87.5,59.8 90.5,58.2 93.4,57.0 96.4,56.2 99.3,55.9 102.3,55.9 105.3,56.2 108.2,56.9 111.2,57.9 114.1,59.3 117.1,61.0 120.1,62.9 123.0,65.1 126.0,67.6 128.9,70.3 131.9,73.3 134.8,76.4 137.8,79.8 140.8,83.4 143.7,87.1 146.7,91.0 149.6,95.0 152.6,99.2 155.5,103.4 158.5,107.8 161.5,112.3 164.4,116.8 167.4,121.4 170.3,126.0 173.3,130.6 176.3,135.3 179.2,140.0 182.2,144.6 185.1,149.2 188.1,153.8 191.0,158.3 194.0,162.7 197.0,167.1 199.9,171.3 202.9,175.4 205.8,179.4 208.8,183.2 211.7,186.9 214.7,190.4 217.7,193.7 220.6,196.8 223.6,199.7 226.5,202.3 229.5,204.7 232.5,206.8 235.4,208.7 238.4,210.2 241.3,211.5 244.3,212.4 247.2,213.0 250.2,213.2 253.2,213.1 256.1,212.6 259.1,211.7 262.0,210.4 265.0,208.6 267.9,206.5 270.9,203.8 273.9,200.7 276.8,197.1 279.8,193.1 282.7,188.5 285.7,183.3 288.7,177.7 291.6,171.5 294.6,164.7 297.5,157.3 300.5,149.3 303.4,140.8 306.4,131.6 309.4,121.7 312.3,111.2 315.3,100.0 318.2,88.1 321.2,75.6 324.1,62.3 327.1,48.3 330.1,33.5 333.0,18.0" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="100.9" cy="55.8" r="4" fill="#0f172a"/>
+  <circle cx="250.7" cy="213.2" r="4" fill="#0f172a"/>
+</svg></div>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(f'(x)=0\)</span> az <span class="math inline">\(x=-1\)</span> és az <span class="math inline">\(x=3\)</span> helyen (vízszintes érintő); <span class="math inline">\(f'(x)\gt0\)</span>, ha <span class="math inline">\(x\lt-1\)</span> vagy <span class="math inline">\(x\gt3\)</span> (ott a görbe emelkedik); <span class="math inline">\(f'(x)\lt0\)</span> a <span class="math inline">\((-1;\,3)\)</span> intervallumon (ott süllyed)</p></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-2">
+      <p><span class="szam">2.</span> Deriváld a függvényeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(y=x + \sin x \cos x\)</span></li><li><span class="math inline">\(y=x - \sin x \cos x\)</span></li><li><span class="math inline">\(y=\operatorname{tg} x - \operatorname{ctg} x\)</span></li><li><span class="math inline">\(y=\left(2 x^{2} - 3 x\right) e^{x}\)</span></li><li><span class="math inline">\(y=\dfrac{\ln x }{x^{2}}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(y'=2 \cos^{2} x\)</span></li><li><span class="math inline">\(y'=2 \sin^{2} x\)</span></li><li><span class="math inline">\(y'=\dfrac{1}{\sin^{2} x \cos^{2} x }\)</span></li><li><span class="math inline">\(y'=\left(2 x^{2} + x - 3\right) e^{x}\)</span></li><li><span class="math inline">\(y'=\dfrac{1 - 2 \ln x }{x^{3}}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-3">
+      <p><span class="szam">3.</span> Deriváld a hányadosokat!</p><ol class="reszfeladatok"><li><span class="math inline">\(y=\dfrac{x^{2} + x - 2}{x - 2}\)</span></li><li><span class="math inline">\(y=\dfrac{x^{2} - x - 2}{x + 2}\)</span></li><li><span class="math inline">\(y=\dfrac{x^{2} - 2 x + 1}{x^{2} + 1}\)</span></li><li><span class="math inline">\(y=\dfrac{x^{2} - x + 1}{x^{2} + 1}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(y'=\dfrac{x^{2} - 4 x}{\left(x - 2\right)^{2}}\)</span></li><li><span class="math inline">\(y'=\dfrac{x^{2} + 4 x}{\left(x + 2\right)^{2}}\)</span></li><li><span class="math inline">\(y'=\dfrac{2 \left(x^{2} - 1\right)}{\left(x^{2} + 1\right)^{2}}\)</span></li><li><span class="math inline">\(y'=\dfrac{x^{2} - 1}{\left(x^{2} + 1\right)^{2}}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-4">
+      <p><span class="szam">4.</span> Deriváld a hányadosokat!</p><ol class="reszfeladatok"><li><span class="math inline">\(y=- \dfrac{6 x}{x^{2} + 3}\)</span></li><li><span class="math inline">\(y=- \dfrac{8 x}{x^{2} + 4}\)</span></li><li><span class="math inline">\(y=\dfrac{\sin x }{1 - \cos x }\)</span></li><li><span class="math inline">\(y=\dfrac{\cos x }{1 + \sin x }\)</span></li><li><span class="math inline">\(y=\dfrac{1 + \sin x }{1 + \cos x }\)</span></li><li><span class="math inline">\(y=\dfrac{2 + \ln x }{1 - \ln x }\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(y'=\dfrac{6 \left(x^{2} - 3\right)}{\left(x^{2} + 3\right)^{2}}\)</span></li><li><span class="math inline">\(y'=\dfrac{8 \left(x^{2} - 4\right)}{\left(x^{2} + 4\right)^{2}}\)</span></li><li><span class="math inline">\(y'=- \dfrac{1}{1 - \cos x }\)</span></li><li><span class="math inline">\(y'=- \dfrac{1}{1 + \sin x }\)</span></li><li><span class="math inline">\(y'=\dfrac{1 + \sin x + \cos x }{\left(1 + \cos x \right)^{2}}\)</span></li><li><span class="math inline">\(y'=\dfrac{3}{x \left(1 - \ln x \right)^{2}}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-5">
+      <p><span class="szam">5.</span> Deriválj, majd számolj!</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=\dfrac14x^3+\dfrac{\sqrt2}{2}x^2-7x+2\pi\)</span>, <span class="math inline">\(f'\big(\sqrt2\big)=?\)</span></li><li><span class="math inline">\(f(x)=x^3+\dfrac5x\)</span>, <span class="math inline">\(f'(2)+f'(-2)=?\)</span></li><li><span class="math inline">\(f(x)=x^2-\dfrac{1}{2x^2}\)</span>, <span class="math inline">\(f'(2)-f'(-2)=?\)</span></li><li>Mutasd meg, hogy az <span class="math inline">\(f(x)=\dfrac12x^2+x+1\)</span> függvényre <span class="math inline">\(2f(x)-\big(f'(x)\big)^2=1\)</span>!</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(f'(x)=\dfrac34x^2+\sqrt2x-7\)</span>, <span class="math inline">\(f'\big(\sqrt2\big)=-\dfrac72\)</span></li><li><span class="math inline">\(f'(x)=3x^2-\dfrac5{x^2}\)</span>, az összeg <span class="math inline">\(\dfrac{43}{2}\)</span></li><li><span class="math inline">\(f'(x)=2x+\dfrac1{x^3}\)</span>, a különbség <span class="math inline">\(\dfrac{33}{4}\)</span></li><li><span class="math inline">\(f'(x)=x+1\)</span>, így <span class="math inline">\(x^2+2x+2-(x+1)^2=1\)</span> ✓</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-6">
+      <p><span class="szam">6.</span> Írd fel az érintő egyenletét az adott pontban!</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=2x^3+\dfrac12x^2-2x+\dfrac12\)</span>, <span class="math inline">\(P(-1;\,1)\)</span></li><li><span class="math inline">\(f(x)=\dfrac23x^3+3x^2+3x+\dfrac13\)</span>, <span class="math inline">\(P(1;\,7)\)</span></li><li>Írd fel az a) rész <span class="math inline">\(P\)</span> pontjában a <b>normális</b> (a <span class="math inline">\(P\)</span>-ben az érintőre merőleges egyenes) egyenletét is!</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(y=3x+4\)</span></li><li><span class="math inline">\(y=11x-4\)</span></li><li><span class="math inline">\(m_n=-\dfrac13\)</span>: <span class="math inline">\(y=-\dfrac13x+\dfrac23\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-7">
+      <p><span class="szam">7.</span> Legyen <span class="math inline">\(f(x)=x^3-12x+1\)</span>.</p><ol class="reszfeladatok"><li>Mely pontokban párhuzamos a grafikon érintője az <span class="math inline">\(y=15x\)</span> egyenessel? Írd fel ezeket az érintőket!</li><li>Hol vízszintes az érintő? Írd fel ezeket az érintőket is!</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(f'(x)=3x^2-12=15\)</span>, <span class="math inline">\(x=\pm3\)</span>: a <span class="math inline">\((3;\,-8)\)</span> pontban <span class="math inline">\(y=15x-53\)</span>, a <span class="math inline">\((-3;\,10)\)</span> pontban <span class="math inline">\(y=15x+55\)</span></li><li><span class="math inline">\(3x^2-12=0\)</span>, <span class="math inline">\(x=\pm2\)</span>: <span class="math inline">\(y=-15\)</span> (a <span class="math inline">\((2;\,-15)\)</span> pontban) és <span class="math inline">\(y=17\)</span> (a <span class="math inline">\((-2;\,17)\)</span> pontban)</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-8">
+      <p><span class="szam">8.</span> Írd fel a törtfüggvény grafikonjának érintőjét az adott helyen!</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=\dfrac{x+3}{x-1}\)</span>, <span class="math inline">\(x_0=3\)</span></li><li><span class="math inline">\(f(x)=\dfrac{x}{x^2+1}\)</span>, <span class="math inline">\(x_0=0\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(f(3)=3\)</span>, <span class="math inline">\(f'(x)=-\dfrac{4}{(x-1)^2}\)</span>, <span class="math inline">\(f'(3)=-1\)</span>: <span class="math inline">\(y=-x+6\)</span></li><li><span class="math inline">\(f(0)=0\)</span>, <span class="math inline">\(f'(x)=\dfrac{1-x^2}{(x^2+1)^2}\)</span>, <span class="math inline">\(f'(0)=1\)</span>: <span class="math inline">\(y=x\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-9">
+      <p><span class="szam">9.</span> Deriváld az összetett függvényeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(y=\sqrt[3]{1 - 3 x}\)</span></li><li><span class="math inline">\(y=\sqrt[3]{2 x^{3} - 3 x^{2}}\)</span></li><li><span class="math inline">\(y=\cos\left(\dfrac{1}{x}\right)\)</span></li><li><span class="math inline">\(y=\operatorname{ctg}\left(\dfrac{1}{x}\right)\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(y'=- \dfrac{1}{\sqrt[3]{\left(1 - 3 x\right)^{2}}}\)</span></li><li><span class="math inline">\(y'=\dfrac{2 x^{2} - 2 x}{\sqrt[3]{\left(2 x^{3} - 3 x^{2}\right)^{2}}}\)</span></li><li><span class="math inline">\(y'=\dfrac{\sin\left(\dfrac{1}{x}\right)}{x^{2}}\)</span></li><li><span class="math inline">\(y'=\dfrac{1}{x^{2} \sin^{2}\left(\dfrac{1}{x}\right)}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-10">
+      <p><span class="szam">10.</span> Deriváld az összetett függvényeket!</p><ol class="reszfeladatok"><li><span class="math inline">\(y=\operatorname{tg}^{3} x\)</span></li><li><span class="math inline">\(y=\sin^{2} x - \cos^{2} x\)</span></li><li><span class="math inline">\(y=\dfrac{\operatorname{tg} 4x }{2}\)</span></li><li><span class="math inline">\(y=- \dfrac{\operatorname{ctg}^{6} x }{3}\)</span></li><li><span class="math inline">\(y=\dfrac{\sin^{4} x }{4}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(y'=\dfrac{3 \sin^{2} x }{\cos^{4} x }\)</span></li><li><span class="math inline">\(y'=4 \sin x \cos x\)</span></li><li><span class="math inline">\(y'=\dfrac{2}{\cos^{2} 4x }\)</span></li><li><span class="math inline">\(y'=\dfrac{2 \cos^{5} x }{\sin^{7} x }\)</span></li><li><span class="math inline">\(y'=\sin^{3} x \cos x\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-11">
+      <p><span class="szam">11.</span> Deriváld az összetett függvényt, és ahol kérik, számítsd ki a derivált értékét!</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=\left(3x^2-4\right)^4\)</span>, <span class="math inline">\(f'(-1)\)</span></li><li><span class="math inline">\(f(x)=\left(x^2-3x+2\right)^5\)</span>, <span class="math inline">\(f'(3)\)</span></li><li><span class="math inline">\(f(x)=(x-2)e^{2x}\)</span>, <span class="math inline">\(f'(0)\)</span></li><li><span class="math inline">\(f(x)=3\ln\dfrac{x-1}{x+1}\)</span>, <span class="math inline">\(f'(2)\)</span></li><li><span class="math inline">\(y=e^{\frac1x}\)</span></li><li><span class="math inline">\(y=\ln\dfrac{1-x}{1+x}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(f'(x)=24x\left(3x^2-4\right)^3\)</span>, <span class="math inline">\(f'(-1)=24\)</span></li><li><span class="math inline">\(f'(x)=(10x-15)\left(x^2-3x+2\right)^4\)</span>, <span class="math inline">\(f'(3)=240\)</span></li><li><span class="math inline">\(f'(x)=(2x-3)e^{2x}\)</span>, <span class="math inline">\(f'(0)=-3\)</span></li><li><span class="math inline">\(f'(x)=\dfrac{6}{x^2-1}\)</span>, <span class="math inline">\(f'(2)=2\)</span></li><li><span class="math inline">\(y'=-\dfrac{1}{x^2}e^{\frac1x}\)</span></li><li><span class="math inline">\(y'=\dfrac{2}{x^2-1}\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-12">
+      <p><span class="szam">12.</span> Határozd meg a függvények második deriváltját!</p><ol class="reszfeladatok"><li><span class="math inline">\(y=\dfrac{1 - x}{1 + x}\)</span></li><li><span class="math inline">\(y=\dfrac{x}{x^{2} + 4}\)</span></li><li><span class="math inline">\(y=\dfrac{x^{2}}{2} + \dfrac{2}{x^{2}}\)</span></li><li><span class="math inline">\(y=\dfrac{x^{2}}{3} + \dfrac{3}{x^{2}}\)</span></li><li><span class="math inline">\(y=\dfrac{x^{2} - x - 2}{x - 3}\)</span></li><li><span class="math inline">\(y=\dfrac{x^{2} + x - 2}{x + 3}\)</span></li><li><span class="math inline">\(y=x^{2} \ln x\)</span></li><li><span class="math inline">\(y=x \ln x + 2 x\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(y''=\dfrac{4}{\left(x + 1\right)^{3}}\)</span></li><li><span class="math inline">\(y''=\dfrac{2 x^{3} - 24 x}{\left(x^{2} + 4\right)^{3}}\)</span></li><li><span class="math inline">\(y''=\dfrac{x^{4} + 12}{x^{4}}\)</span></li><li><span class="math inline">\(y''=\dfrac{2 x^{4} + 54}{3 x^{4}}\)</span></li><li><span class="math inline">\(y''=\dfrac{8}{\left(x - 3\right)^{3}}\)</span></li><li><span class="math inline">\(y''=\dfrac{8}{\left(x + 3\right)^{3}}\)</span></li><li><span class="math inline">\(y''=2 \ln x + 3\)</span></li><li><span class="math inline">\(y''=\dfrac{1}{x}\)</span></li></ol></div>
+      </details>
+    </article>
+    <h2 id="nehez">🔴 Nehéz szint — Maximális erőbedobás</h2>
+    <article class="feladat nehez" id="nehez-1">
+      <p><span class="szam">1.</span> Igazold az egyenlőségeket!</p><ol class="reszfeladatok"><li>Legyen <span class="math inline">\(f(x)=\dfrac23x^3+\dfrac12x^2-\dfrac37x\)</span> és <span class="math inline">\(g(x)=2x^3-\dfrac92x^2-2x\)</span>. Igazold, hogy <span class="math inline">\(7f'\!\left(-\dfrac12\right)+g'\!\left(-\dfrac12\right)=1\)</span>!</li><li>Igazold, hogy az <span class="math inline">\(f(x)=2x^2-1\)</span> függvényre <span class="math inline">\(\left(x^2-1\right)f''(x)+xf'(x)-4f(x)=0\)</span>!</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(f'(x)=2x^2+x-\dfrac37\)</span>, <span class="math inline">\(f'\!\left(-\dfrac12\right)=-\dfrac37\)</span>; <span class="math inline">\(g'(x)=6x^2-9x-2\)</span>, <span class="math inline">\(g'\!\left(-\dfrac12\right)=4\)</span>; <span class="math inline">\(7\cdot\left(-\dfrac37\right)+4=1\)</span> ✓</li><li><span class="math inline">\(f'=4x\)</span>, <span class="math inline">\(f''=4\)</span>: <span class="math inline">\(4x^2-4+4x^2-8x^2+4=0\)</span> ✓</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-2">
+      <p><span class="szam">2.</span> Igazold, hogy a függvények deriváltja a megadott kifejezés (ahol a függvény értelmezve van)!</p><ol class="reszfeladatok"><li><span class="math inline">\(f(x)=\dfrac13\operatorname{tg}^3x+\operatorname{tg}x\)</span> esetén <span class="math inline">\(f'(x)=\dfrac{1}{\cos^4x}\)</span></li><li><span class="math inline">\(f(x)=\dfrac13\operatorname{ctg}^3x+\operatorname{ctg}x\)</span> esetén <span class="math inline">\(f'(x)=-\dfrac{1}{\sin^4x}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(f'=\left(\operatorname{tg}^2x+1\right)\dfrac{1}{\cos^2x}=\dfrac{1}{\cos^2x}\cdot\dfrac{1}{\cos^2x}\)</span> ✓</li><li><span class="math inline">\(f'=-\left(\operatorname{ctg}^2x+1\right)\dfrac{1}{\sin^2x}=-\dfrac{1}{\sin^4x}\)</span> ✓</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-3">
+      <p><span class="szam">3.</span> Érintő külső pontból és érintési feltétel.</p><ol class="reszfeladatok"><li>Írd fel az <span class="math inline">\(f(x)=x^2-2x+4\)</span> parabola azon érintőit, amelyek átmennek az origón!</li><li>Melyik <span class="math inline">\(c\)</span> értékre érinti az <span class="math inline">\(y=3x+c\)</span> egyenes az <span class="math inline">\(f(x)=x^2+x\)</span> grafikonját?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>az <span class="math inline">\(a\)</span> helyen húzott érintő: <span class="math inline">\(y=(2a-2)(x-a)+a^2-2a+4\)</span>; az origón átmegy, ha <span class="math inline">\(4-a^2=0\)</span>, <span class="math inline">\(a=\pm2\)</span>: <span class="math inline">\(y=2x\)</span> (a <span class="math inline">\((2;\,4)\)</span> pontban) és <span class="math inline">\(y=-6x\)</span> (a <span class="math inline">\((-2;\,12)\)</span> pontban)</li><li><span class="math inline">\(f'(x)=2x+1=3\)</span>, <span class="math inline">\(x=1\)</span>, <span class="math inline">\(f(1)=2\)</span>, tehát <span class="math inline">\(2=3+c\)</span>, <span class="math inline">\(c=-1\)</span></li></ol></div>
+      </details>
+    </article>
+    <h2 id="joker-szint">🃏 Joker</h2>
+    <article class="feladat joker" id="joker">
+      <p><span class="szam">★</span> 🃏 <b>Véd Vilmos rejtvénye.</b> Adj meg egy olyan <span class="math inline">\(f\)</span> függvényt, amelynek a deriváltja <span class="math inline">\(f'(x)=2x\)</span>, és a grafikonja átmegy az <span class="math inline">\((1;\,5)\)</span> ponton! Hány ilyen függvény van?</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(f(x)=x^2+4\)</span> — pontosan egy. (Az összes <span class="math inline">\(f'(x)=2x\)</span> deriváltú függvény <span class="math inline">\(x^2+C\)</span> alakú; az <span class="math inline">\((1;\,5)\)</span> pont <span class="math inline">\(C=4\)</span>-et adja. Ez már a 04. témakör, az integrál előszele.)</p></div>
+      </details>
+    </article>
+    <div class="gyakorolj">
+      <span class="ikon">📖</span>
+      <p>Elakadtál? Nézd át a <a href="index.html">témakör tananyagait</a> vagy a <a href="osszefoglalo.html">Csalópapírt</a>.</p>
+    </div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-fuggvenyvizsgalat.html"><span class="irany">← Előző</span><span class="hova">A teljes függvényvizsgálat</span></a>
+      <a class="kov" href="feladatok-fuggvenyvizsgalat.html"><span class="irany">Következő →</span><span class="hova">Zsoldos-lista II. — Függvényvizsgálat</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

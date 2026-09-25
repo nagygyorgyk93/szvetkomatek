@@ -467,10 +467,10 @@ A3 = [
    r'abban a pillanatban. A mértékegysége: a mennyiség egysége osztva az idő egységével.</p>',
    doboz("pelda", "I.V.H. Akták — pillanatnyi sebesség és hűlési ütem",
          r'<p><b>Út–idő.</b> Egy ügynök $t$ másodperc alatt $s(t)=2t^2+3t$ métert fut. A sebessége '
-         r'$v(t)=s\'(t)=4t+3$, így a 2. másodpercben $v(2)=11\ \tfrac{\text{m}}{\text{s}}$. (Az első két másodperc '
+         r'$v(t)=s\'(t)=4t+3$, így a $t=2$ s-kor $v(2)=11\ \tfrac{\text{m}}{\text{s}}$. (Az első két másodperc '
          r'<b>átlagsebessége</b> csak $\frac{s(2)}{2}=\frac{14}{2}=7\ \tfrac{\text{m}}{\text{s}}$.)</p>'
          r'<p><b>Hőmérséklet.</b> Egy bögre tea hőmérséklete $t$ perc után $T(t)=80-4t+0{,}05t^2$ °C '
-         r'($0\le t\le40$). $T\'(t)=-4+0{,}1t$, így $T\'(10)=-3$: a 10. percben a tea percenként kb. 3 fokot '
+         r'($0\le t\le40$). $T\'(t)=-4+0{,}1t$, így $T\'(10)=-3$: a $t=10$ perckor a tea percenként kb. 3 fokot '
          r'hűl. A negatív előjel a csökkenést jelzi.</p>', hid="pelda-sebesseg"),
    doboz("erdekesseg", "Hol találkozol vele?",
          r'<p>Az autó sebességmérője és a „pillanatnyi fogyasztás” kijelzője egyaránt deriváltat mutat. '
