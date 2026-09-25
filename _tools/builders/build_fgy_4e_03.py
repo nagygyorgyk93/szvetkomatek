@@ -706,19 +706,20 @@ def _prim(L):
     return [p(it) for it in L]
 
 
-u1 = oldal(**T, fajl="feladatok-derivalas.html", cim="Zsoldos-lista I. — Deriválás",
-           h1="A függvény deriváltja — Zsoldos-lista I.: deriválás", itt="Zsoldos-lista I. — Deriválás",
-           alcim="Növekmény és differenciahányados, deriválási szabályok, összetett függvény, második derivált, érintő és "
-                 "változási sebesség. A végeredmény minden feladatnál lenyitható — előbb számolj!",
-           sections_html=lista(_prim(A_I), _prim(K_I), _prim(N_I), JOKER_I), ossz_nev="Csalópapírt",
-           prev="tananyag-fuggvenyvizsgalat.html", prevc="A teljes függvényvizsgálat",
-           nxt="feladatok-fuggvenyvizsgalat.html", nxtc="Zsoldos-lista II. — Függvényvizsgálat")
-u2 = oldal(**T, fajl="feladatok-fuggvenyvizsgalat.html", cim="Zsoldos-lista II. — Függvényvizsgálat",
-           h1="A függvény deriváltja — Zsoldos-lista II.: függvényvizsgálat", itt="Zsoldos-lista II. — Függvényvizsgálat",
-           alcim="Monotonitás és szélsőérték, konvexitás és inflexiós pont, teljes függvényvizsgálat grafikonnal. A "
-                 "végeredmény minden feladatnál lenyitható — a 32-es típusú vizsgálatoknál ábrával!",
-           sections_html=lista(_prim(A_II), _prim(K_II), _prim(N_II), JOKER_II), ossz_nev="Csalópapírt",
-           prev="feladatok-derivalas.html", prevc="Zsoldos-lista I. — Deriválás",
-           nxt="feladatok-hazi.html", nxtc="I.V.H. Kihallgató Terem — Vészterem")
-print("✓", os.path.basename(u1), "| I.", len(A_I), len(K_I), len(N_I), "+ Joker")
-print("✓", os.path.basename(u2), "| II.", len(A_II), len(K_II), len(N_II), "+ Joker")
+if __name__ == "__main__":      # a build_egyeb_4e_03 a segédeket importálja, oldalt nem ír
+    u1 = oldal(**T, fajl="feladatok-derivalas.html", cim="Zsoldos-lista I. — Deriválás",
+               h1="A függvény deriváltja — Zsoldos-lista I.: deriválás", itt="Zsoldos-lista I. — Deriválás",
+               alcim="Növekmény és differenciahányados, deriválási szabályok, összetett függvény, második derivált, érintő és "
+                     "változási sebesség. A végeredmény minden feladatnál lenyitható — előbb számolj!",
+               sections_html=lista(_prim(A_I), _prim(K_I), _prim(N_I), JOKER_I), ossz_nev="Csalópapírt",
+               prev="tananyag-fuggvenyvizsgalat.html", prevc="A teljes függvényvizsgálat",
+               nxt="feladatok-fuggvenyvizsgalat.html", nxtc="Zsoldos-lista II. — Függvényvizsgálat")
+    u2 = oldal(**T, fajl="feladatok-fuggvenyvizsgalat.html", cim="Zsoldos-lista II. — Függvényvizsgálat",
+               h1="A függvény deriváltja — Zsoldos-lista II.: függvényvizsgálat", itt="Zsoldos-lista II. — Függvényvizsgálat",
+               alcim="Monotonitás és szélsőérték, konvexitás és inflexiós pont, teljes függvényvizsgálat grafikonnal. A "
+                     "végeredmény minden feladatnál lenyitható — a 32-es típusú vizsgálatoknál ábrával!",
+               sections_html=lista(_prim(A_II), _prim(K_II), _prim(N_II), JOKER_II), ossz_nev="Csalópapírt",
+               prev="feladatok-derivalas.html", prevc="Zsoldos-lista I. — Deriválás",
+               nxt="feladatok-hazi.html", nxtc="I.V.H. Kihallgató Terem — Vészterem")
+    print("✓", os.path.basename(u1), "| I.", len(A_I), len(K_I), len(N_I), "+ Joker")
+    print("✓", os.path.basename(u2), "| II.", len(A_II), len(K_II), len(N_II), "+ Joker")

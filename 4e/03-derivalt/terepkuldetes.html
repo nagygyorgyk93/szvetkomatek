@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Terepküldetés | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="rajzterem">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">A függvény deriváltja</a> ›
+  <span class="itt">Terepküldetés</span>
+</nav>
+<div class="hero">
+  <h1>A Pillanatnyi Káosz</h1>
+  <p class="alcim">Négy fázis: egy I.V.H.-ügynök pillanatnyi sebessége, Vilmos ugrása a rámpáról, Nagol ütésének íve és Véd Vilmos hibás jegyzőkönyve. Beadható projektfeladat — a megoldásokat a tanárod ellenőrzi.</p>
+  <div class="meta-sor"><span class="chip ora">terepküldetés</span><span class="chip">A Pillanatnyi Káosz · terepküldetés</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/ved_vilmos_w.webp" alt="Véd Vilmos — a negyedik falat áttörő zsoldos" width="1200" height="670" decoding="async"><p>📡 <b>Véd Vilmos:</b> Az I.V.H. ügynökei olyan gyorsak, hogy mire lefényképezem őket, már máshol vannak. 🌮 <i>Burek-matek:</i> „ha elég rövid ideig nézem, a sebességük nulla — hiszen közben nem mozdulnak.” <b>Nagol:</b> Pont ezért találták ki a deriváltat: a nagyon rövid idő alatti elmozdulást elosztjuk a nagyon rövid idővel. Négy fázis: egy ügynök pillanatnyi sebessége, Vilmos ugrása egy rámpáról, az ütésem íve, végül Vilmos jegyzőkönyve, tele hibás deriválttal.</p></div>
+
+    <p>Minden lépésnél írd le, melyik szabályt vagy módszert használtad (definíció, deriválási szabály, láncszabály, érintő egyenlete, előjeltáblázat). Számológép használható. A választ fogalmazd meg mondatban is.</p><p>A 🔴 jelű IV. fázisban a számolás csak eszköz: ott a <b>megfogalmazott érvelés</b> ér annyit, mint máshol a számítás. Mind a négy fázis egyformán számít.</p><p><i>Tervezz rá nagyjából két órát; ez beadandó munka, nem órai feladat.</i></p>
+
+    <h2 id="s1">I. fázis — Egy I.V.H.-ügynök pillanatnyi sebessége</h2>
+
+    <p>Egy ügynök egy egyenes folyosón mozog. Az indulás után <span class="math inline">\(t\)</span> másodperccel a kiindulási ponttól mért (előjeles) helye <span class="math inline">\(s(t)=t^3-9t^2+24t\)</span> méter (<span class="math inline">\(0\le t\le6\)</span>).</p><ol class="reszfeladatok"><li>Számítsd ki az átlagsebességét a <span class="math inline">\(t=1\)</span> és a <span class="math inline">\(t=1+h\)</span> időpont között (<span class="math inline">\(h\ne0\)</span>), és ebből — <span class="math inline">\(h\to0\)</span> határátmenettel — a pillanatnyi sebességét a <span class="math inline">\(t=1\)</span> s időpontban! (Most a definícióval dolgozz, ne a deriválási szabályokkal.)</li><li>Írd fel a <span class="math inline">\(v(t)=s'(t)\)</span> sebességfüggvényt szorzat alakban! Mikor áll meg az ügynök, és mikor halad visszafelé?</li><li>Hol van az ügynök a <span class="math inline">\(t=6\)</span> s időpontban, és mekkora utat tett meg addig összesen? Miért különbözik a kettő?</li><li>Írd fel a gyorsulásfüggvényt! Mikor a legkisebb a <span class="math inline">\(v(t)\)</span> értéke (vagyis mikor halad a leggyorsabban visszafelé), és mennyi akkor? Mennyi ekkor a gyorsulás?</li></ol>
+
+    <h2 id="s2">II. fázis — Vilmos ugrása a rámpáról</h2>
+
+    <p>Vilmos egy rámpán csúszik lefelé, amelynek a profilja az <span class="math inline">\(f(x)=8-\dfrac{x^2}{2}\)</span> függvény grafikonja (<span class="math inline">\(0\le x\le4\)</span>, méterben; a talaj az <span class="math inline">\(x\)</span> tengely). Ahol elhagyja a rámpát, onnan (egyszerűsített modellben) az érintő mentén egyenesen repül tovább.</p><ol class="reszfeladatok"><li>Ha az <span class="math inline">\(x_0=1\)</span> helyen hagyja el a rámpát, hol ér földet?</li><li>A rámpa melyik pontjában kell elugrania, hogy pontosan az <span class="math inline">\((5;\,0)\)</span> pontban érjen földet? (Tipp: írd fel az érintőt egy ismeretlen <span class="math inline">\(x_0=a\)</span> helyen, és tedd bele az <span class="math inline">\((5;\,0)\)</span> pontot.)</li><li>A rámpa melyik pontjában párhuzamos az érintő az <span class="math inline">\(y=-3x\)</span> egyenessel? Írd fel ezt az érintőt!</li><li>Írd fel a rámpa <span class="math inline">\((2;\,6)\)</span> pontjához tartozó normális (az érintőre merőleges egyenes) egyenletét! Hol metszi ez az egyenes az <span class="math inline">\(y\)</span> tengelyt?</li></ol>
+
+    <h2 id="s3">III. fázis — Nagol ütésének íve</h2>
+
+    <p>Nagol egy ütésének pályáját az <span class="math inline">\(f(x)=x^4-6x^2+8x\)</span> függvény írja le.</p><ol class="reszfeladatok"><li>Mutasd meg, hogy <span class="math inline">\(f'(x)=4(x-1)^2(x+2)\)</span>! Hol nő, hol csökken <span class="math inline">\(f\)</span>, és hol van szélsőértéke?</li><li>Az <span class="math inline">\(x=1\)</span> helyen <span class="math inline">\(f'(1)=0\)</span>. Miért nincs mégis szélsőérték ezen a helyen?</li><li>Vizsgáld meg a konvexitást, és határozd meg az inflexiós pontokat! Mi különleges az <span class="math inline">\(x=1\)</span> helyhez tartozó inflexiós pontban?</li><li>Hány zérushelye van <span class="math inline">\(f\)</span>-nek? Indokold a monotonitással (a negatív zérushelyet nem kell pontosan kiszámolnod), és adj meg egy <span class="math inline">\(1\)</span> hosszúságú intervallumot, amelyben a negatív zérushely van! (Tipp: keress két szomszédos egész számot, ahol <span class="math inline">\(f\)</span> előjele különböző.)</li><li>Vázold a grafikont a kitüntetett pontokkal!</li></ol>
+
+    <h2 id="s4">🔴 IV. fázis — Véd Vilmos jegyzőkönyve</h2>
+
+    <p>Vilmos leadta a saját „megoldásait” az I.V.H.-nak. Az első négy mind hibás. Keresd meg a hibát, és add meg a helyes eredményt vagy a helyes állítást!</p><ol class="reszfeladatok"><li><span class="math inline">\(\big(x^3e^x\big)'=3x^2e^x\)</span>.</li><li><span class="math inline">\(\left(\sqrt{5x-1}\right)'=\dfrac{1}{2\sqrt{5x-1}}\)</span>.</li><li>„Az <span class="math inline">\(f(x)=x^3-3x^2+3x\)</span> függvénynek az <span class="math inline">\(x=1\)</span> helyen szélsőértéke van, mert <span class="math inline">\(f'(1)=0\)</span>.”</li><li>„Az <span class="math inline">\(f(x)=\dfrac1x\)</span> függvény az értelmezési tartományán szigorúan monoton csökkenő, mert <span class="math inline">\(f'(x)=-\dfrac1{x^2}\lt0\)</span>.”</li><li>Mi a közös a négy hibában? Fogalmazd meg két-három mondatban, mit kell <b>ellenőrizni</b>, mielőtt egy szabályt vagy egy tételt alkalmazunk!</li></ol>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/nagol.webp" alt="Nagol — a morcos kiképzőtiszt" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Nagol:</b> Az ügynök sebessége megmérve, Vilmos ugrása kiszámolva, az ütésem íve felrajzolva. A számításaidat a tanárod ellenőrzi; a kulcs nem kerül a hálózatra. <b>Véd Vilmos:</b> Szóval a káoszban is van rend — csak deriválni kell. <b>Nagol:</b> És most visszafelé: a következő fejezetben <b>SZVETI</b> a darabokból rakja össze az egészet. <i>A Valóság Összefoltozása</i> vár.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="osszefoglalo.html"><span class="irany">← Előző</span><span class="hova">Csalópapír</span></a>
+      <a class="kov" href="index.html"><span class="irany">Következő →</span><span class="hova">A Negyedik Fal</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

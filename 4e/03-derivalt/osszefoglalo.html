@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Csalópapír | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="digitalis">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">A függvény deriváltja</a> ›
+  <span class="itt">Csalópapír</span>
+</nav>
+<div class="hero">
+  <h1>Csalópapír — a témakör egy lapon</h1>
+  <p class="alcim">A derivált fogalma, a deriválttáblázat és a szabályok, érintő és változási sebesség, monotonitás, konvexitás és a teljes függvényvizsgálat egy lapon — ismétléshez, a dolgozat előtti átfutáshoz, nyomtatáshoz.</p>
+  <div class="meta-sor"><span class="chip ora">összefoglaló</span><span class="chip">A Pillanatnyi Káosz · összefoglaló</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">🎯 A derivált</h2>
+
+    <p class="lead"><b>Differenciahányados</b> <a href="tananyag-derivalt-fogalma.html#def-differenciahanyados">→</a>: <span class="math inline">\(\dfrac{\Delta y}{\Delta x}=\dfrac{f(x_0+\Delta x)-f(x_0)}{\Delta x}\)</span> — a szelő meredeksége, az átlagos változási sebesség az <span class="math inline">\(x_0\)</span> és <span class="math inline">\(x_0+\Delta x\)</span> között (<span class="math inline">\(\Delta x\ne0\)</span>).</p><p><b>Derivált</b> <a href="tananyag-derivalt-fogalma.html#def-derivalt">→</a>: <span class="math inline">\(f'(x_0)=\lim\limits_{\Delta x\to0}\dfrac{f(x_0+\Delta x)-f(x_0)}{\Delta x}\)</span> — az érintő meredeksége, a <b>pillanatnyi</b> változási sebesség. Ahol ez a határérték létezik, ott az <span class="math inline">\(x\mapsto f'(x)\)</span> hozzárendelés az <span class="math inline">\(f'\)</span> <b>deriváltfüggvény</b> <a href="tananyag-derivalt-fogalma.html#def-derivaltfuggveny">→</a>.</p><p><b>Grafikonról:</b> ahol <span class="math inline">\(f'\gt0\)</span>, ott a görbe emelkedik; ahol <span class="math inline">\(f'\lt0\)</span>, ott süllyed; a csúcsban és a völgyben (vízszintes érintő) <span class="math inline">\(f'=0\)</span>. A meredekebb szakaszon nagyobb <span class="math inline">\(\lvert f'\rvert\)</span>. Fordítva nem mindig igaz: az <span class="math inline">\(x^3\)</span> a <span class="math inline">\(0\)</span>-ban is emelkedik, pedig ott <span class="math inline">\(f'(0)=0\)</span>.</p>
+
+    <h2 id="s1">📋 A deriválttáblázat</h2>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th><span class="math inline">\(f(x)\)</span></th><th><span class="math inline">\(f'(x)\)</span></th><th><span class="math inline">\(f(x)\)</span></th><th><span class="math inline">\(f'(x)\)</span></th></tr><tr><td><span class="math inline">\(c\)</span> (állandó)</td><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(\sin x\)</span></td><td><span class="math inline">\(\cos x\)</span></td></tr><tr><td><span class="math inline">\(x^n\)</span></td><td><span class="math inline">\(n\,x^{n-1}\)</span></td><td><span class="math inline">\(\cos x\)</span></td><td><span class="math inline">\(-\sin x\)</span></td></tr><tr><td><span class="math inline">\(\sqrt x\)</span></td><td><span class="math inline">\(\dfrac{1}{2\sqrt x}\)</span></td><td><span class="math inline">\(\operatorname{tg}x\)</span></td><td><span class="math inline">\(\dfrac{1}{\cos^2x}\)</span></td></tr><tr><td><span class="math inline">\(\dfrac1x\)</span></td><td><span class="math inline">\(-\dfrac{1}{x^2}\)</span></td><td><span class="math inline">\(\operatorname{ctg}x\)</span></td><td><span class="math inline">\(-\dfrac{1}{\sin^2x}\)</span></td></tr><tr><td><span class="math inline">\(e^x\)</span></td><td><span class="math inline">\(e^x\)</span></td><td><span class="math inline">\(\ln x\)</span></td><td><span class="math inline">\(\dfrac1x\)</span></td></tr><tr><td><span class="math inline">\(a^x\)</span></td><td><span class="math inline">\(a^x\ln a\)</span></td><td><span class="math inline">\(\log_ax\)</span></td><td><span class="math inline">\(\dfrac{1}{x\ln a}\)</span></td></tr></table></div>
+
+    <p>A gyököt és a törtet írd <b>hatványként</b>: <span class="math inline">\(\sqrt[3]{x^2}=x^{\frac23}\)</span>, <span class="math inline">\(\dfrac{3}{x^4}=3x^{-4}\)</span> — utána az <span class="math inline">\(x^n\)</span> sora dolgozik. A teljes táblázat megjegyzésekkel: <a href="tananyag-derivalasi-szabalyok.html#tetel-derivalt-tablazat">A2</a>.</p>
+
+    <h2 id="s2">🔧 A deriválás szabályai</h2>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th>szabály</th><th>képlet</th></tr><tr><td>konstansszoros, összeg <a href="tananyag-derivalasi-szabalyok.html#tetel-osszeg">→</a></td><td><span class="math inline">\((c\cdot f)'=c\cdot f'\)</span>, <span class="math inline">\(\quad(f\pm g)'=f'\pm g'\)</span></td></tr><tr><td>szorzat <a href="tananyag-derivalasi-szabalyok.html#tetel-szorzat">→</a></td><td><span class="math inline">\((f\cdot g)'=f'\cdot g+f\cdot g'\)</span></td></tr><tr><td>hányados <a href="tananyag-derivalasi-szabalyok.html#tetel-hanyados">→</a></td><td><span class="math inline">\(\left(\dfrac fg\right)'=\dfrac{f'\cdot g-f\cdot g'}{g^2}\)</span></td></tr><tr><td>összetett függvény (láncszabály) <a href="tananyag-osszetett-fuggveny.html#tetel-lancszabaly">→</a></td><td><span class="math inline">\(\big(f(g(x))\big)'=f'\big(g(x)\big)\cdot g'(x)\)</span> — külső derivált × belső derivált</td></tr><tr><td>második derivált <a href="tananyag-masodik-derivalt.html#def-masodik-derivalt">→</a></td><td><span class="math inline">\(f''=(f')'\)</span></td></tr></table></div>
+
+    <p><b>Gyakori minták</b> (<span class="math inline">\(u\)</span> a belső függvény): <span class="math inline">\(\big(u^n\big)'=n\,u^{n-1}\cdot u'\)</span>, <span class="math inline">\(\big(\sqrt u\big)'=\dfrac{u'}{2\sqrt u}\)</span>, <span class="math inline">\(\big(e^u\big)'=e^u\cdot u'\)</span>, <span class="math inline">\(\big(\ln u\big)'=\dfrac{u'}{u}\)</span>, <span class="math inline">\(\big(\sin u\big)'=\cos u\cdot u'\)</span>, <span class="math inline">\(\big(\cos u\big)'=-\sin u\cdot u'\)</span>.</p>
+
+    <h2 id="s3">📐 Érintő, normális, változási sebesség</h2>
+
+    <div class="tblwrap"><table class="tt-table"><tr><td>érintő az <span class="math inline">\(x_0\)</span>-ban <a href="tananyag-erinto-es-valtozasi-sebesseg.html#tetel-erinto">→</a></td><td><span class="math inline">\(y-f(x_0)=f'(x_0)\,(x-x_0)\)</span> — a meredekség <b>szám</b>: <span class="math inline">\(f'(x_0)\)</span></td></tr><tr><td>normális <a href="tananyag-erinto-es-valtozasi-sebesseg.html#def-normalis">→</a></td><td>az érintőre merőleges; meredeksége <span class="math inline">\(-\dfrac{1}{f'(x_0)}\)</span> (ha <span class="math inline">\(f'(x_0)\ne0\)</span>); ha <span class="math inline">\(f'(x_0)=0\)</span>, a normális az <span class="math inline">\(x=x_0\)</span> függőleges egyenes</td></tr><tr><td>adott <span class="math inline">\(m\)</span> meredekségű érintő</td><td>oldd meg az <span class="math inline">\(f'(x)=m\)</span> egyenletet; párhuzamos egyenesnek ugyanaz a meredeksége</td></tr><tr><td>változási sebesség <a href="tananyag-erinto-es-valtozasi-sebesseg.html#pelda-sebesseg">→</a></td><td><span class="math inline">\(v(t)=s'(t)\)</span>, <span class="math inline">\(\;a(t)=v'(t)=s''(t)\)</span>; mértékegység: a mennyiség egysége / az idő egysége</td></tr></table></div>
+
+    <p>Ha <span class="math inline">\(v(t)=0\)</span>, a test megáll; ha <span class="math inline">\(v(t)\lt0\)</span>, visszafelé halad <a href="tananyag-masodik-derivalt.html#pelda-mozgas">→</a>.</p>
+
+    <h2 id="s4">⛰️ Monotonitás és szélsőérték</h2>
+
+    <p class="lead"><span class="math inline">\(f'\gt0\)</span> egy intervallumon → ott <b>nő</b>; <span class="math inline">\(f'\lt0\)</span> → ott <b>csökken</b> <a href="tananyag-monotonitas-szelsoertek.html#tetel-monotonitas">→</a>. Ha <span class="math inline">\(f'\)</span> egy intervallumon csak elszigetelt pontokban <span class="math inline">\(0\)</span>, máshol pozitív, <span class="math inline">\(f\)</span> ott is szigorúan nő (például <span class="math inline">\(x^3\)</span>).</p><ul><li><b>Szükséges feltétel</b> <a href="tananyag-monotonitas-szelsoertek.html#tetel-szelsoertek-feltetel">→</a>: ha <span class="math inline">\(f\)</span>-nek egy intervallum <b>belső</b> <span class="math inline">\(x_0\)</span> pontjában lokális szélsőértéke van, és ott deriválható, akkor <span class="math inline">\(f'(x_0)=0\)</span>.</li><li><b>Elégséges feltétel:</b> <span class="math inline">\(f'(x_0)=0\)</span> <b>és</b> <span class="math inline">\(f'\)</span> előjelet vált — <span class="math inline">\(+\to-\)</span>: lokális <b>maximum</b>, <span class="math inline">\(-\to+\)</span>: lokális <b>minimum</b>.</li><li><b>Előjeltáblázat</b> <a href="tananyag-monotonitas-szelsoertek.html#pelda-harmadfoku">→</a>: osztópontok az <span class="math inline">\(f'\)</span> zérushelyei <b>és</b> a pólusok; minden szakaszon egy próbaérték dönt.</li><li>A szélsőérték <b>helye</b> <span class="math inline">\(x_0\)</span>, <b>értéke</b> <span class="math inline">\(f(x_0)\)</span> — a pont <span class="math inline">\(\big(x_0;\,f(x_0)\big)\)</span>.</li></ul>
+
+    <h2 id="s5">〰️ Konvexitás és inflexió</h2>
+
+    <p class="lead"><span class="math inline">\(f''\gt0\)</span> → <b>konvex</b> (∪), <span class="math inline">\(f''\lt0\)</span> → <b>konkáv</b> (∩) <a href="tananyag-konvexitas-inflexio.html#tetel-konvexitas">→</a>.</p><p><b>Inflexiós pont</b> <a href="tananyag-konvexitas-inflexio.html#def-inflexio">→</a>: ahol a görbülés irányt vált — <span class="math inline">\(f''(x_0)=0\)</span> <b>és</b> <span class="math inline">\(f''\)</span> előjelet vált. Pólusnál is válthat a görbülés, de ott nincs inflexiós pont (nincs függvényérték).</p>
+
+    <h2 id="s6">🧭 A teljes vizsgálat — hét lépés</h2>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th>lépés</th><th>mit számolsz</th></tr><tr><td>1. értelmezési tartomány</td><td>a kizárt helyek minden táblázat osztópontjai</td></tr><tr><td>2. zérushely, előjel</td><td><span class="math inline">\(f(x)=0\)</span>, <span class="math inline">\(f(0)\)</span>, előjeltáblázat</td></tr><tr><td>3. paritás</td><td><span class="math inline">\(f(-x)\)</span> kiszámolva: páros, páratlan vagy egyik sem (ha <span class="math inline">\(D_f\)</span> nem szimmetrikus a <span class="math inline">\(0\)</span>-ra, egyik sem)</td></tr><tr><td>4. határértékek, aszimptoták</td><td>határérték a <span class="math inline">\(\pm\infty\)</span>-ben és a pólusok két oldalán; függőleges, vízszintes vagy ferde aszimptota (legalább másodfokú polinomnak nincs)</td></tr><tr><td>5. monotonitás, szélsőérték</td><td><span class="math inline">\(f'\)</span> zérushelyei, előjeltáblázat</td></tr><tr><td>6. konvexitás, inflexió</td><td><span class="math inline">\(f''\)</span> zérushelyei, előjeltáblázat</td></tr><tr><td>7. grafikon</td><td>a kitüntetett pontok, az aszimptoták és a táblázatok alapján</td></tr></table></div>
+
+    <p>Kidolgozva: <a href="tananyag-fuggvenyvizsgalat.html#pelda-polinom-vizsgalat">polinom</a> és <a href="tananyag-fuggvenyvizsgalat.html#pelda-tort-vizsgalat">racionális törtfüggvény</a> (C3). Az aszimptotákhoz: <a href="../02-fuggvenyek/osszefoglalo.html">a 02-es Csalópapír</a>.</p>
+
+    <h2 id="s7">⚠️ Véd Vilmos csapdái — amin a legtöbben elcsúsznak</h2>
+
+    <div class="doboz csapda"><p class="cim"><span class="ikon">⚠️</span> A nyolc leggyakoribb hiba</p><ol class="reszfeladatok"><li><b><span class="math inline">\((f\cdot g)'=f'\cdot g'\)</span>:</b> nem! A szorzat deriváltja két tag összege: <span class="math inline">\(f'g+fg'\)</span>.</li><li><b>A hányados sorrendje:</b> a számlálóban <span class="math inline">\(f'g-fg'\)</span> — fordított sorrendben az előjel is fordul; a nevező <span class="math inline">\(g^2\)</span>.</li><li><b>Elfelejtett belső derivált:</b> <span class="math inline">\(\big(\sin 3x\big)'=3\cos 3x\)</span>, nem <span class="math inline">\(\cos 3x\)</span>; <span class="math inline">\(\big(e^{2x}\big)'=2e^{2x}\)</span>.</li><li><b>Az állandó deriváltja:</b> <span class="math inline">\((\pi^2)'=0\)</span>, <span class="math inline">\((\ln 5)'=0\)</span> — ezek számok, nem függvények.</li><li><b>Érintő <span class="math inline">\(f'(x)\)</span>-szel:</b> az érintő meredeksége az <span class="math inline">\(f'(x_0)\)</span> <b>szám</b>; ha <span class="math inline">\(x\)</span> marad benne, nem egyenest kapsz.</li><li><b>„<span class="math inline">\(f'(x_0)=0\)</span>, tehát szélsőérték”:</b> csak ha <span class="math inline">\(f'\)</span> előjelet is vált — az <span class="math inline">\(x^3\)</span>-nek a <span class="math inline">\(0\)</span>-ban nincs.</li><li><b>„<span class="math inline">\(f''(x_0)=0\)</span>, tehát inflexió”:</b> az <span class="math inline">\(x^4\)</span>-nél <span class="math inline">\(f''(0)=0\)</span>, mégis végig konvex.</li><li><b>Pólus a táblázatból kihagyva:</b> a pólusnál is válthat előjelet <span class="math inline">\(f\)</span>, <span class="math inline">\(f'\)</span> és <span class="math inline">\(f''\)</span> — és az <span class="math inline">\(\frac1x\)</span> a teljes értelmezési tartományán nem szigorúan monoton csökkenő, csak a <span class="math inline">\((-\infty;\,0)\)</span> és a <span class="math inline">\((0;\,+\infty)\)</span> intervallumon külön-külön.</li></ol></div>
+
+    <h2 id="s8">Mit hol találsz?</h2>
+
+    <div class="gyakorolj"><span class="ikon">🧭</span><div><p><b>Tananyag:</b> <a href="tananyag-derivalt-fogalma.html">a derivált fogalma</a> · <a href="tananyag-derivalasi-szabalyok.html">deriválási szabályok</a> · <a href="tananyag-erinto-es-valtozasi-sebesseg.html">érintő, változási sebesség</a> · <a href="tananyag-osszetett-fuggveny.html">összetett függvény</a> · <a href="tananyag-masodik-derivalt.html">második derivált</a> · <a href="tananyag-monotonitas-szelsoertek.html">monotonitás, szélsőérték</a> · <a href="tananyag-konvexitas-inflexio.html">konvexitás, inflexió</a> · <a href="tananyag-fuggvenyvizsgalat.html">teljes vizsgálat</a>.</p><p><b>Gyakorlás:</b> <a href="feladatok-derivalas.html">Zsoldos-lista I.</a> (deriválás) · <a href="feladatok-fuggvenyvizsgalat.html">Zsoldos-lista II.</a> (függvényvizsgálat) · <a href="feladatok-hazi.html">I.V.H. Kihallgató Terem</a> (házi).</p><p><b>Ismétlés:</b> határérték és aszimptoták a <a href="../02-fuggvenyek/osszefoglalo.html">02-es Csalópapíron</a>. A témakört <a href="terepkuldetes.html">A Pillanatnyi Káosz</a> küldetés zárja.</p></div></div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-hazi.html"><span class="irany">← Előző</span><span class="hova">I.V.H. Kihallgató Terem</span></a>
+      <a class="kov" href="terepkuldetes.html"><span class="irany">Következő →</span><span class="hova">A Pillanatnyi Káosz</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
