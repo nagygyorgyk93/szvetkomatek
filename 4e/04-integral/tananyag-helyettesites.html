@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nagol trükkje — helyettesítéses integrálás — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Integrál</a> ›
+  <span class="itt">Nagol trükkje — helyettesítéses integrálás — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Nagol trükkje — helyettesítéses integrálás</h1>
+  <p class="alcim">Lineáris belső függvény, az f′/f és az fⁿ·f′ minta, az általános helyettesítés lépései — és egy integrál, amely nem számolható ki.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Valóság Összefoltozása · 3/6</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/nagol_w.webp" alt="Nagol — a morcos kiképzőtiszt" width="1200" height="670" decoding="async"><p>📡 <b>Nagol:</b> Egy ügyes cserével drasztikusan egyszerűsödik a rendszer — különben csak a karmait koptatja az ember. <b>Véd Vilmos:</b> Kinek vannak karmai? <b>Nagol:</b> A helyettesítés a láncszabály visszafelé. Ha a belső függvény deriváltja ott van az integrandusban, a feladat egyetlen sorrá zsugorodik.</p></div>
+
+    <h2 id="s1">Lineáris belső függvény</h2>
+
+    <p class="lead">A láncszabály szerint <span class="math inline">\(\big(F(ax+b)\big)'=a\cdot f(ax+b)\)</span>. Ha tehát a belső függvény <b>lineáris</b>, a külső primitív függvényét csak el kell osztani <span class="math inline">\(a\)</span>-val.</p>
+
+    <div class="doboz tetel" id="tetel-linearis-belso">
+      <p class="cim"><span class="ikon">📘</span> Lineáris belső függvény</p>
+      <p>Ha <span class="math inline">\(F'=f\)</span> és <span class="math inline">\(a\ne0\)</span>, akkor <span class="math display">\[\int f(ax+b)\,dx=\frac1a\,F(ax+b)+C.\]</span></p>
+    </div>
+
+    <div class="doboz pelda">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — egy sorban</p>
+      <ol><li><span class="math inline">\(\int(5x+2)^4dx=\frac15\cdot\frac{(5x+2)^5}{5}+C=\frac{(5x+2)^5}{25}+C\)</span>;</li><li><span class="math inline">\(\int e^{3x}dx=\frac13e^{3x}+C\)</span>;</li><li><span class="math inline">\(\int\cos(2x-1)\,dx=\frac12\sin(2x-1)+C\)</span>;</li><li><span class="math inline">\(\int\frac{1}{3x-4}dx=\frac13\ln\lvert3x-4\rvert+C\)</span>.</li></ol><p>Ellenőrzés az elsőre: <span class="math inline">\(\left(\frac{(5x+2)^5}{25}\right)'=\frac{5(5x+2)^4\cdot5}{25}=(5x+2)^4\)</span>. ✓ (Az A2-es <span class="math inline">\((2x-1)^2\)</span> így: <span class="math inline">\(\frac{(2x-1)^3}{6}+C\)</span> — a két eredmény csak állandóban tér el.)</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda</p>
+      <p>„<span class="math inline">\(\int\cos3x\,dx=\sin3x+C\)</span>.” — Deriváld: <span class="math inline">\((\sin3x)'=3\cos3x\)</span>, ez háromszor annyi. Az <span class="math inline">\(\frac1a\)</span> szorzó nem maradhat le: <span class="math inline">\(\int\cos3x\,dx=\frac13\sin3x+C\)</span>.</p>
+    </div>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ A sin primitív függvénye −cos, és a belső 4x miatt osztunk 4-gyel. Deriválva: (−¼cos 4x)′ = sin 4x." data-nem="✘ Deriváld a választásod! Kell a −cos (a sin primitív függvénye), és a belső függvény 4-es szorzója miatt ¼ is.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi az <span class="math inline">\(\int\sin4x\,dx\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(-4\cos4x+C\)</span></button><button><span class="math inline">\(-\dfrac14\cos4x+C\)</span></button><button><span class="math inline">\(-\cos4x+C\)</span></button><button><span class="math inline">\(\dfrac14\cos4x+C\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Az <span class="math inline">\(\frac{f'}{f}\)</span> minta</h2>
+
+    <div class="doboz tetel" id="tetel-f-per-f">
+      <p class="cim"><span class="ikon">📘</span> Ha a számláló a nevező deriváltja</p>
+      <p><span class="math display">\[\int\frac{f'(x)}{f(x)}\,dx=\ln\lvert f(x)\rvert+C,\]</span> mert <span class="math inline">\(\big(\ln\lvert f(x)\rvert\big)'=\frac{f'(x)}{f(x)}\)</span> (a láncszabály).</p>
+    </div>
+
+    <div class="doboz pelda">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — felismerés és igazítás</p>
+      <ol><li><span class="math inline">\(\int\frac{2x}{x^2+4}dx=\ln(x^2+4)+C\)</span> — a számláló pontosan a nevező deriváltja (és <span class="math inline">\(x^2+4\gt0\)</span>);</li><li><span class="math inline">\(\int\frac{x}{x^2-9}dx=\frac12\int\frac{2x}{x^2-9}dx=\frac12\ln\lvert x^2-9\rvert+C\)</span> — a hiányzó 2-es szorzót mi tesszük be, és kívül kiegyenlítjük;</li><li><span class="math inline">\(\int\operatorname{tg}x\,dx=\int\frac{\sin x}{\cos x}dx=-\int\frac{-\sin x}{\cos x}dx=-\ln\lvert\cos x\rvert+C\)</span>.</li></ol>
+    </div>
+
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ A számláló (2x) pontosan a nevező (x² + 1) deriváltja: az eredmény ln(x² + 1) + C." data-nem="✘ Nem minden tört vezet ln-re: a mintához a számlálónak a nevező deriváltjának (vagy annak számszorosának) kell lennie. Ez csak a 2x/(x² + 1)-nél teljesül.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik integrál számolható ki az <span class="math inline">\(\frac{f'}{f}\)</span> mintával?</p>
+      <div class="opciok"><button><span class="math inline">\(\int\dfrac{2x}{x^2+1}\,dx\)</span></button><button><span class="math inline">\(\int\dfrac{1}{x^2+1}\,dx\)</span></button><button><span class="math inline">\(\int\dfrac{x^2}{x+1}\,dx\)</span></button><button><span class="math inline">\(\int\dfrac{x^2+1}{2x}\,dx\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Az <span class="math inline">\(f^n\cdot f'\)</span> minta</h2>
+
+    <div class="doboz tetel" id="tetel-f-hatvany">
+      <p class="cim"><span class="ikon">📘</span> Hatvány szorozva a belső deriválttal</p>
+      <p>Ha <span class="math inline">\(n\ne-1\)</span>, akkor <span class="math display">\[\int f(x)^n\cdot f'(x)\,dx=\frac{f(x)^{n+1}}{n+1}+C.\]</span></p>
+    </div>
+
+    <div class="doboz pelda">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — a belső függvény deriváltja ott van</p>
+      <ol><li><span class="math inline">\(\int2x(x^2+1)^3dx=\frac{(x^2+1)^4}{4}+C\)</span> — itt <span class="math inline">\(f=x^2+1\)</span>, <span class="math inline">\(f'=2x\)</span>;</li><li><span class="math inline">\(\int\sin x\cos^3x\,dx=-\int\cos^3x\cdot(-\sin x)\,dx=-\frac{\cos^4x}{4}+C\)</span>;</li><li><span class="math inline">\(\int\frac{\ln x}{x}dx=\int\ln x\cdot\frac1x\,dx=\frac{(\ln x)^2}{2}+C\)</span>.</li></ol>
+    </div>
+
+    <h2 id="s4">Az általános helyettesítés</h2>
+
+    <div class="doboz tetel" id="tetel-helyettesites">
+      <p class="cim"><span class="ikon">📘</span> A helyettesítés lépései</p>
+      <ol><li>Válaszd a belső függvényt új változónak: <span class="math inline">\(t=g(x)\)</span>.</li><li>Írd át a <span class="math inline">\(dx\)</span>-et is: <span class="math inline">\(dt=g'(x)\,dx\)</span>.</li><li>Írd át az egész integrált <span class="math inline">\(t\)</span>-re — <span class="math inline">\(x\)</span> nem maradhat benne.</li><li>Integrálj <span class="math inline">\(t\)</span> szerint.</li><li>Helyettesíts vissza: <span class="math inline">\(t=g(x)\)</span>.</li></ol><p>Jó választás az, amelynek a deriváltja (számszorosa) szorzótényezőként szerepel az integrandusban.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-helyettesites">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — Nagol két cseréje</p>
+      <p><b>a)</b> <span class="math inline">\(\int x^2\sqrt{x^3+1}\,dx\)</span>. Legyen <span class="math inline">\(t=x^3+1\)</span>, ekkor <span class="math inline">\(dt=3x^2dx\)</span>, azaz <span class="math inline">\(x^2dx=\frac13dt\)</span>:<span class="math display">\[\int x^2\sqrt{x^3+1}\,dx=\frac13\int\sqrt t\,dt=\frac13\cdot\frac23t^{\frac32}+C=\frac29(x^3+1)\sqrt{x^3+1}+C.\]</span></p><p><b>b)</b> <span class="math inline">\(\int\frac{e^{\sqrt x}}{\sqrt x}dx\)</span>. Legyen <span class="math inline">\(t=\sqrt x\)</span>, ekkor <span class="math inline">\(dt=\frac{dx}{2\sqrt x}\)</span>, azaz <span class="math inline">\(\frac{dx}{\sqrt x}=2\,dt\)</span>: <span class="math display">\[\int\frac{e^{\sqrt x}}{\sqrt x}dx=2\int e^t\,dt=2e^{\sqrt x}+C.\]</span></p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda</p>
+      <p><b>1.</b> A <span class="math inline">\(dx\)</span> átírása elmarad: „<span class="math inline">\(\int x^2\sqrt t\,dx\)</span>” — keverék, ilyen integrál nincs. A <span class="math inline">\(t\)</span>-re áttérve a <span class="math inline">\(dx\)</span>-et is <span class="math inline">\(dt\)</span>-vel kell kifejezni.</p><p><b>2.</b> A visszahelyettesítés elmarad: az eredmény <span class="math inline">\(x\)</span> függvénye, nem <span class="math inline">\(t\)</span>-é.</p>
+    </div>
+
+    <p class="lead">⚔️ <b>Az ötösért:</b> helyettesítés, amikor a belső függvényt magadnak kell megtalálnod — <a href="feladatok-hatarozatlan-integral.html#nehez-1">Zsoldos-lista I., nehéz 1–2</a>.</p>
+
+    <div class="doboz erdekesseg" id="erdekesseg-gauss">
+      <p class="cim"><span class="ikon">💡</span> Ahol a matematika megáll</p>
+      <p>A deriválás mindig sikerül: minden elemi függvény deriváltja elemi. Az integrálásnál nem így van. Az <span class="math inline">\(\int e^{-x^2}dx\)</span> primitív függvénye <b>létezik</b>, de semmilyen véges képlettel nem írható fel az elemi függvényekből (J. Liouville bizonyította a 19. században). Pedig a <span class="math inline">\(y=e^{-x^2}\)</span> a statisztika híres <b>Gauss-féle harang görbéje</b> — az alatta lévő területeket ezért táblázatból vagy számítógéppel kapjuk.</p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-hatarozatlan-integral.html#alap-9">🐶 Véd-eb nyomravezető <span class="cimke">A 9–12</span></a><a class="sav bruno" href="feladatok-hatarozatlan-integral.html#kozep-6">⚔️ Maximális erőbedobás <span class="cimke">K 6–10</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/svetozar.webp" alt="SZVETI — a Szvetkó-kampusz mesterséges intelligenciája" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>SZVETI:</b> A határozatlan integrál egy egész sereget ad vissza, nem engem. <b>Nagol:</b> Mert nincs megadva, hol kezdődsz és hol végződsz. Ha egy <span class="math inline">\([a;\,b]\)</span> intervallumba zárnak — és az I.V.H. éppen ezt teszi —, a sereg helyett egyetlen szám marad: a határozott integrál.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-integraltablazat.html"><span class="irany">← Előző</span><span class="hova">Az integráltáblázat</span></a>
+      <a class="kov" href="tananyag-hatarozott-integral.html"><span class="irany">Következő →</span><span class="hova">A határozott integrál</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

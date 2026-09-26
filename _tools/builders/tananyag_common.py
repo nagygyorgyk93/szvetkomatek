@@ -137,8 +137,10 @@ def abra(svg: str, felirat: str = "") -> str:
 
 def svg_fuggvenyek(gorbek, xr=(-2.6, 2.6), yr=(-2.6, 4.2), w=360, h=250,
                    leiras="Függvénygrafikonok koordináta-rendszerben", jelmagyarazat=True,
-                   pontok=None, tengely=("x", "y"), egyseg=("1", "1")):
-    """`pontok` = [(x, y, felirat, szin, dx, dy), …] — kiemelt pontok felirattal."""
+                   pontok=None, tengely=("x", "y"), egyseg=("1", "1"), terulet=None):
+    """`pontok` = [(x, y, felirat, szin, dx, dy), …] — kiemelt pontok felirattal.
+    `terulet` = [(f, g, lo, hi, szin[, átlátszóság]), …] — árnyékolt tartomány f és g között a [lo; hi]-n
+    (g=None: az x tengelyig); a görbék alá kerül."""
     """Koordináta-rendszer + görbék inline SVG-ként, SÖTÉT tintával, világos lapon.
 
     `gorbek` = [(f, szin, cimke, [(lo, hi), …] szakaszok[, "szaggatott"]), …] — az opcionális
@@ -202,6 +204,19 @@ def svg_fuggvenyek(gorbek, xr=(-2.6, 2.6), yr=(-2.6, 4.2), w=360, h=250,
         else:
             ki.append(f'  <text x="{X(0) - 5:.1f}" y="{Y(1) + 4:.1f}" font-size="10" '
                       f'fill="#475569" text-anchor="end">{yegys}</text>')
+    # árnyékolt területek (a görbék alatt)
+    for tr in (terulet or []):
+        ff, gg, lo, hi, szin = tr[:5]
+        op = tr[5] if len(tr) > 5 else 0.35
+        n = 120
+        fel, le = [], []
+        for i in range(n + 1):
+            xx = lo + (hi - lo) * i / n
+            ya = min(max(ff(xx), y0), y1)
+            yb = min(max(gg(xx) if gg else 0.0, y0), y1)
+            fel.append(f"{X(xx):.1f},{Y(ya):.1f}")
+            le.append(f"{X(xx):.1f},{Y(yb):.1f}")
+        ki.append(f'  <polygon points="{" ".join(fel + le[::-1])}" fill="{szin}" fill-opacity="{op}" stroke="none"/>')
     # görbék
     for g in gorbek:
         f, szin, cimke, szakaszok = g[:4]
@@ -364,16 +379,46 @@ def _fmt(v):
     r = round(v * 100) / 100
     if abs(r) < 0.005:
         r = 0.0
-    s = str(int(round(r))) if abs(r - round(r)) < 1e-9 else f"{r:.2f}"
+    s = str(int(round(r))) if abs(r - round(r)) < 1e-9 else f"{r:.2f}".rstrip("0")
     return s.replace(".", ",").replace("-", "−")
+
+
+def _iv_ut(a, C, xr, yr, X, Y, n=160):
+    """a polinom + C görbéje SVG-útvonalként; a rajzterületből kilógó szakaszoknál megszakad (JS: ut())"""
+    d, lent = [], True
+    for i in range(n + 1):
+        x = xr[0] + (xr[1] - xr[0]) * i / n
+        y = _poly(a, x) + C
+        if yr[0] - 0.5 <= y <= yr[1] + 0.5:
+            d.append(("M" if lent else "L") + f"{X(x):.1f},{Y(y):.1f}")
+            lent = False
+        else:
+            lent = True
+    return " ".join(d)
+
+
+def _iv_teglalapok(a, ab, n, X, Y):
+    """alsó és felső közelítő téglalapok (szakaszonként monoton f-re) — útvonalak és összegek (JS: teglak())"""
+    lo_d, hi_d, lo_s, hi_s = [], [], 0.0, 0.0
+    dx = (ab[1] - ab[0]) / n
+    for i in range(n):
+        xl, xr_ = ab[0] + i * dx, ab[0] + (i + 1) * dx
+        fl, fr = _poly(a, xl), _poly(a, xr_)
+        m, M = min(fl, fr), max(fl, fr)
+        lo_s += m * dx; hi_s += M * dx
+        lo_d.append(f"M{X(xl):.1f},{Y(0):.1f} V{Y(m):.1f} H{X(xr_):.1f} V{Y(0):.1f} Z")
+        hi_d.append(f"M{X(xl):.1f},{Y(0):.1f} V{Y(M):.1f} H{X(xr_):.1f} V{Y(0):.1f} Z")
+    return " ".join(lo_d), " ".join(hi_d), lo_s, hi_s
 
 
 def svg_interaktiv(mod, poly, *, xr, yr, x0=0.0, csuszka=(-2.0, 2.0, 0.01, 1.0), w=360, h=250,
                    gorbe_cimke="f", f2=False, felirat="", leiras="Interaktív függvényábra",
-                   pont_cimke="P", szin="#2563eb"):
+                   pont_cimke="P", szin="#2563eb", ab=(0.0, 1.0), pontos="", sereg_c=(-2, -1, 1, 2)):
     """Interaktív ábra (új kánon, 2026-09-24): statikus SVG = az első képkocka + csúszka + élő kijelző.
 
-    `mod`: "szelo" (rögzített P, a csúszka Δx-et állít) vagy "erinto" (a csúszka x0-t mozgatja).
+    `mod`: "szelo" (rögzített P, a csúszka Δx-et állít), "erinto" (a csúszka x0-t mozgatja), "sereg" (a `poly` egy
+    primitív függvény, a csúszka a C-t állítja; érintő az x0-ban — a meredekség nem függ C-től) vagy "osszeg"
+    (a `poly` az f, az `ab` intervallumon n téglalapos alsó és felső közelítő összeg; `pontos` a pontos érték szövege).
     `poly` = [a0, a1, a2, …] — a polinom együtthatói (a0 + a1·x + …); a JS nem használ eval-t.
     `csuszka` = (min, max, lépés, kezdőérték). A logikát az `assets/js/interaktiv.js` adja (közös modul).
     A kezdőállapotot itt, Pythonban számoljuk ugyanúgy, mint a JS — JS nélkül is értelmes kép.
@@ -393,8 +438,12 @@ def svg_interaktiv(mod, poly, *, xr, yr, x0=0.0, csuszka=(-2.0, 2.0, 0.01, 1.0),
     def Y(y):
         return fent + (yr[1] - y) / (yr[1] - yr[0]) * py
 
-    alap = svg_fuggvenyek([(lambda t: _poly(a, t), "#0f172a", gorbe_cimke, [(xr[0], xr[1])])],
-                          xr=xr, yr=yr, w=w, h=h, jelmagyarazat=False, leiras=leiras)
+    if mod == "sereg":
+        tagok = [(lambda t, c=c: _poly(a, t) + c, "#94a3b8", "", [(xr[0], xr[1])]) for c in sereg_c]
+        alap = svg_fuggvenyek(tagok, xr=xr, yr=yr, w=w, h=h, jelmagyarazat=False, leiras=leiras)
+    else:
+        alap = svg_fuggvenyek([(lambda t: _poly(a, t), "#0f172a", gorbe_cimke, [(xr[0], xr[1])])],
+                              xr=xr, yr=yr, w=w, h=h, jelmagyarazat=False, leiras=leiras)
     clip = f"ivc{n}"
     ki = [f'  <defs><clipPath id="{clip}"><rect x="{bal}" y="{fent}" width="{px}" height="{py}"/></clipPath></defs>']
 
@@ -420,6 +469,28 @@ def svg_interaktiv(mod, poly, *, xr, yr, x0=0.0, csuszka=(-2.0, 2.0, 0.01, 1.0),
                   f'fill="#0f172a">{pont_cimke}</text>')
         cimke = "Δx"
         kijelzo = (f"Δx = {_fmt(kezdo)},  Δy = {_fmt(yQ - yP)},  a szelő meredeksége Δy/Δx = {_fmt(m)}.")
+    elif mod == "sereg":
+        C = kezdo
+        m1 = _poly(d1, x0)
+        ki.append(f'  <path class="iv-gorbe" d="{_iv_ut(a, C, xr, yr, X, Y)}" fill="none" stroke="#0f172a" '
+                  f'stroke-width="2.3" stroke-linejoin="round" clip-path="url(#{clip})"/>')
+        ki.append(f'  <line class="iv-egyenes" {egyenes_attr(x0, _poly(a, x0) + C, m1)} stroke="#047857" '
+                  f'stroke-width="2" clip-path="url(#{clip})"/>')
+        ki.append(f'  <circle class="iv-P" cx="{X(x0):.1f}" cy="{Y(_poly(a, x0) + C):.1f}" r="4.5" fill="#0f172a"/>')
+        cimke = "C"
+        kijelzo = (f"C = {_fmt(C)}:  az x₀ = {_fmt(x0)} helyen az érintő meredeksége {_fmt(m1)} — "
+                   f"minden C-re ugyanannyi, mert (F + C)′ = F′ = f.")
+    elif mod == "osszeg":
+        nn = int(kezdo)
+        lo_d, hi_d, lo_s, hi_s = _iv_teglalapok(a, ab, nn, X, Y)
+        felso = (f'  <path class="iv-felso" d="{hi_d}" fill="#bfdbfe" fill-opacity=".75" stroke="#3b82f6" '
+                 f'stroke-width=".8" clip-path="url(#{clip})"/>')
+        also = (f'  <path class="iv-also" d="{lo_d}" fill="#2563eb" fill-opacity=".55" stroke="#1d4ed8" '
+                f'stroke-width=".8" clip-path="url(#{clip})"/>')
+        alap = alap.replace('  <polyline', felso + "\n" + also + "\n  <polyline", 1)
+        cimke = "n"
+        kijelzo = (f"n = {nn}:  alsó összeg ≈ {_fmt(lo_s)},  felső összeg ≈ {_fmt(hi_s)};  "
+                   f"a pontos terület: {pontos}.")
     else:
         y0 = _poly(a, kezdo)
         m1 = _poly(d1, kezdo)
@@ -439,7 +510,8 @@ def svg_interaktiv(mod, poly, *, xr, yr, x0=0.0, csuszka=(-2.0, 2.0, 0.01, 1.0),
             kijelzo += f"  f″(x₀) = {_fmt(m2)}, {gorb}."
     svg = alap.replace("</svg>", "\n".join(ki) + "\n</svg>")
     attr = (f'data-mod="{mod}" data-poly="{",".join(repr(c) for c in a)}" data-xr="{xr[0]},{xr[1]}" '
-            f'data-yr="{yr[0]},{yr[1]}" data-w="{w}" data-h="{h}" data-x0="{x0}"' + (' data-f2="1"' if f2 else ""))
+            f'data-yr="{yr[0]},{yr[1]}" data-w="{w}" data-h="{h}" data-x0="{x0}"' + (' data-f2="1"' if f2 else "")
+            + (f' data-ab="{ab[0]},{ab[1]}" data-pontos="{pontos}"' if mod == "osszeg" else ""))
     cap = f'\n<p class="cap">{felirat}</p>' if felirat else ""
     return (f'<div class="svgcard interaktiv" {attr}>\n{svg}\n'
             f'<div class="iv-vezerlo"><label for="iv{n}">{cimke} = <span class="iv-ertek">{_fmt(kezdo)}</span></label>'

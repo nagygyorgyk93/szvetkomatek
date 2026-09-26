@@ -7,6 +7,10 @@
  * Módok (data-mod):
  *   szelo  — rögzített P(x0; f(x0)), a csúszka Δx-et állítja: Q pont, szelő, Δy/Δx
  *   erinto — a csúszka x0-t mozgatja: érintő, f'(x0) előjele (és ha data-f2="1", f''(x0) előjele)
+ *   sereg  — a polinom egy F primitív függvény, a csúszka a C-t állítja: F+C görbéje, érintő az x0-ban
+ *            (a meredekség nem függ C-től)
+ *   osszeg — a polinom az f, a data-ab="a,b" intervallumon n téglalapos alsó és felső közelítő összeg;
+ *            data-pontos = a pontos terület szövege
  * A függvény polinom: data-poly="a0,a1,a2,…" (a0 + a1·x + a2·x² + …) — nincs eval.
  * Koordináták: data-xr="x0,x1", data-yr="y0,y1", data-w, data-h (a svg_fuggvenyek() margóival).
  */
@@ -35,7 +39,7 @@
     if (!isFinite(v)) return "—";
     var r = Math.round(v * 100) / 100;
     if (Math.abs(r) < 0.005) r = 0;
-    var s = Math.abs(r - Math.round(r)) < 1e-9 ? String(Math.round(r)) : r.toFixed(2);
+    var s = Math.abs(r - Math.round(r)) < 1e-9 ? String(Math.round(r)) : r.toFixed(2).replace(/0+$/, "");
     return s.replace(".", ",").replace("-", "−");
   }
 
@@ -57,7 +61,36 @@
     var egyenes = doboz.querySelector(".iv-egyenes");
     var pP = doboz.querySelector(".iv-P"), pQ = doboz.querySelector(".iv-Q");
     var lQ = doboz.querySelector(".iv-Q-cimke");
-    if (!csuszka || !egyenes || !pP) return;
+    var gorbe = doboz.querySelector(".iv-gorbe");
+    var also = doboz.querySelector(".iv-also"), felso = doboz.querySelector(".iv-felso");
+    var ab = szamok(doboz.getAttribute("data-ab"));
+    var pontos = doboz.getAttribute("data-pontos") || "";
+    if (!csuszka) return;
+    if (mod === "osszeg" ? !(also && felso) : !(egyenes && pP)) return;
+
+    function ut(C) {                          // F + C görbéje; a rajzterületből kilógó részeknél megszakad
+      var d = [], le = true, n = 160;
+      for (var i = 0; i <= n; i++) {
+        var xx = xr[0] + (xr[1] - xr[0]) * i / n, yy = ertek(a, xx) + C;
+        if (yy >= yr[0] - 0.5 && yy <= yr[1] + 0.5) {
+          d.push((le ? "M" : "L") + X(xx).toFixed(1) + "," + Y(yy).toFixed(1)); le = false;
+        } else le = true;
+      }
+      return d.join(" ");
+    }
+    function teglak(n) {                      // alsó és felső téglalapok (szakaszonként monoton f)
+      var lo = [], hi = [], sl = 0, sh = 0, dx = (ab[1] - ab[0]) / n;
+      for (var i = 0; i < n; i++) {
+        var xl = ab[0] + i * dx, xq = xl + dx, fl = ertek(a, xl), fr = ertek(a, xq);
+        var m = Math.min(fl, fr), M = Math.max(fl, fr);
+        sl += m * dx; sh += M * dx;
+        lo.push("M" + X(xl).toFixed(1) + "," + Y(0).toFixed(1) + " V" + Y(m).toFixed(1) + " H" + X(xq).toFixed(1)
+          + " V" + Y(0).toFixed(1) + " Z");
+        hi.push("M" + X(xl).toFixed(1) + "," + Y(0).toFixed(1) + " V" + Y(M).toFixed(1) + " H" + X(xq).toFixed(1)
+          + " V" + Y(0).toFixed(1) + " Z");
+      }
+      return [lo.join(" "), hi.join(" "), sl, sh];
+    }
 
     function vonal(xa, ya, m, szin) {        // egyenes (xa;ya)-n át, m meredekséggel, a teljes szélességben
       egyenes.setAttribute("x1", X(xr[0]).toFixed(1));
@@ -73,6 +106,24 @@
 
     function frissit() {
       var v = parseFloat(csuszka.value);
+      if (mod === "sereg") {
+        var m = ertek(d1, x0fix), y = ertek(a, x0fix) + v;
+        if (gorbe) gorbe.setAttribute("d", ut(v));
+        vonal(x0fix, y, m, ZOLD);
+        pont(pP, x0fix, y);
+        kiir.textContent = fmt(v);
+        kijelzo.textContent = "C = " + fmt(v) + ":  az x₀ = " + fmt(x0fix) + " helyen az érintő meredeksége "
+          + fmt(m) + " — minden C-re ugyanannyi, mert (F + C)′ = F′ = f.";
+        return;
+      }
+      if (mod === "osszeg") {
+        var n = Math.max(1, Math.round(v)), r = teglak(n);
+        also.setAttribute("d", r[0]); felso.setAttribute("d", r[1]);
+        kiir.textContent = String(n);
+        kijelzo.textContent = "n = " + n + ":  alsó összeg ≈ " + fmt(r[2]) + ",  felső összeg ≈ " + fmt(r[3])
+          + ";  a pontos terület: " + pontos + ".";
+        return;
+      }
       if (mod === "szelo") {
         var yP = ertek(a, x0fix);
         pont(pP, x0fix, yP);

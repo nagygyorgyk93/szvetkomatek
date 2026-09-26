@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Csalópapír visszafelé — az integráltáblázat — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Integrál</a> ›
+  <span class="itt">Csalópapír visszafelé — az integráltáblázat — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Csalópapír visszafelé — az integráltáblázat</h1>
+  <p class="alcim">Az alapintegrálok táblázata, a konstansszoros és az összeg integrálja, gyök és tört hatványként, átalakítás integrálás előtt.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Valóság Összefoltozása · 2/6</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>SZVETI</b> fejjel lefelé fordítja Nagol Csalópapírját. <b>SZVETI:</b> Minden sor visszafelé olvasva integrál. Egy kivétellel: az <span class="math inline">\(x^{-1}\)</span>. Vilmos, a kabátod is kivétel volt? <b>Véd Vilmos:</b> Az limitált kiadás. <b>Nagol:</b> A táblázatot tanuljátok, ne a kabátot.</p></div>
+
+    <h2 id="s1">Az alapintegrálok táblázata</h2>
+
+    <div class="doboz tetel" id="tetel-integraltablazat">
+      <p class="cim"><span class="ikon">📘</span> Az alapintegrálok táblázata</p>
+      <div class="tblwrap"><table class="tt-table"><tr><th><span class="math inline">\(f(x)\)</span></th><th><span class="math inline">\(\int f(x)\,dx\)</span></th><th>megjegyzés</th></tr><tr><td><span class="math inline">\(k\)</span> (állandó)</td><td><span class="math inline">\(kx+C\)</span></td><td></td></tr><tr><td><span class="math inline">\(x^n\)</span></td><td><span class="math inline">\(\dfrac{x^{n+1}}{n+1}+C\)</span></td><td><span class="math inline">\(n\ne-1\)</span> (a gyök és a tört is: <span class="math inline">\(n\in\mathbb R\)</span>)</td></tr><tr><td><span class="math inline">\(\dfrac1x\)</span></td><td><span class="math inline">\(\ln\lvert x\rvert+C\)</span></td><td><span class="math inline">\(x\ne0\)</span> — ez az <span class="math inline">\(n=-1\)</span> eset</td></tr><tr><td><span class="math inline">\(e^x\)</span></td><td><span class="math inline">\(e^x+C\)</span></td><td></td></tr><tr><td><span class="math inline">\(a^x\)</span></td><td><span class="math inline">\(\dfrac{a^x}{\ln a}+C\)</span></td><td><span class="math inline">\(a\gt0\)</span>, <span class="math inline">\(a\ne1\)</span></td></tr><tr><td><span class="math inline">\(\sin x\)</span></td><td><span class="math inline">\(-\cos x+C\)</span></td><td>vigyázz az előjelre!</td></tr><tr><td><span class="math inline">\(\cos x\)</span></td><td><span class="math inline">\(\sin x+C\)</span></td><td></td></tr><tr><td><span class="math inline">\(\dfrac{1}{\cos^2x}\)</span></td><td><span class="math inline">\(\operatorname{tg}x+C\)</span></td><td><span class="math inline">\(\cos x\ne0\)</span></td></tr><tr><td><span class="math inline">\(\dfrac{1}{\sin^2x}\)</span></td><td><span class="math inline">\(-\operatorname{ctg}x+C\)</span></td><td><span class="math inline">\(\sin x\ne0\)</span></td></tr></table></div>
+    </div>
+
+    <p>Minden sor <b>deriválással igazolható</b>: például <span class="math inline">\(\left(\frac{x^{n+1}}{n+1}\right)'=x^n\)</span>, és <span class="math inline">\(\left(\frac{a^x}{\ln a}\right)'=\frac{a^x\ln a}{\ln a}=a^x\)</span>. Így: <span class="math inline">\(\int x^5\,dx=\frac{x^6}{6}+C\)</span>, <span class="math inline">\(\int 2^x\,dx=\frac{2^x}{\ln2}+C\)</span>.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Miért <span class="math inline">\(\ln\lvert x\rvert\)</span>, és nem <span class="math inline">\(\ln x\)</span>?</p>
+      <p>Az <span class="math inline">\(\frac1x\)</span> a negatív számokra is értelmezett, a <span class="math inline">\(\ln x\)</span> viszont nem. Negatív <span class="math inline">\(x\)</span>-re <span class="math inline">\(\big(\ln(-x)\big)'=\frac{-1}{-x}=\frac1x\)</span>, így a két ágat egy képlet fogja össze: <span class="math inline">\(\ln\lvert x\rvert\)</span>.</p>
+    </div>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Az n = −1 kivétel: a hatványszabály itt 0-val osztana. A ln|x| deriváltja pontosan 1/x." data-nem="✘ A hatványszabály n = −1-re nem működik (0-val osztanál), a −1/x² pedig az 1/x deriváltja. Az 1/x primitív függvénye ln|x|.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi az <span class="math inline">\(\int\dfrac1x\,dx\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(-\dfrac{1}{x^2}+C\)</span></button><button><span class="math inline">\(\dfrac{1}{x^2}+C\)</span></button><button><span class="math inline">\(\ln\lvert x\rvert+C\)</span></button><button><span class="math inline">\(\dfrac{x^0}{0}+C\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Konstansszoros és összeg</h2>
+
+    <div class="doboz tetel" id="tetel-linearitas">
+      <p class="cim"><span class="ikon">📘</span> Az integrál tulajdonságai</p>
+      <p><span class="math display">\[\int c\cdot f(x)\,dx=c\int f(x)\,dx,\qquad \int\big(f(x)\pm g(x)\big)\,dx=\int f(x)\,dx\pm\int g(x)\,dx.\]</span></p><p>Az állandó szorzó kiemelhető, az összeget tagonként integráljuk. A tagok <span class="math inline">\(C\)</span>-it egyetlen <span class="math inline">\(C\)</span>-be vonjuk össze.</p>
+    </div>
+
+    <p><b>Polinom:</b> <span class="math inline">\(\int(6x^2-4x+5)\,dx=2x^3-2x^2+5x+C\)</span>.</p><p><b>Vegyes:</b> <span class="math inline">\(\int(3\sin x+2e^x)\,dx=-3\cos x+2e^x+C\)</span>.</p>
+
+    <h2 id="s3">Gyök és tört hatványként</h2>
+
+    <p class="lead">A gyököt és a törtet <b>hatványként</b> írjuk, és utána a táblázat első sora dolgozik: <span class="math inline">\(\sqrt[3]{x^2}=x^{\frac23}\)</span>, <span class="math inline">\(\;\frac1{x^3}=x^{-3}\)</span>, <span class="math inline">\(\;\frac1{\sqrt x}=x^{-\frac12}\)</span>.</p>
+
+    <div class="doboz pelda" id="pelda-gyok-hatvany">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — gyök és tört</p>
+      <ol><li><span class="math inline">\(\int\sqrt x\,dx=\int x^{\frac12}dx=\frac{x^{\frac32}}{\frac32}+C=\frac23x\sqrt x+C\)</span>;</li><li><span class="math inline">\(\int\frac{2}{x^3}dx=\int2x^{-3}dx=2\cdot\frac{x^{-2}}{-2}+C=-\frac1{x^2}+C\)</span>;</li><li><span class="math inline">\(\int\frac{1}{\sqrt[3]x}dx=\int x^{-\frac13}dx=\frac{x^{\frac23}}{\frac23}+C=\frac32\sqrt[3]{x^2}+C\)</span>.</li></ol><p>A törtkitevővel <b>osztani</b> kell: osztani <span class="math inline">\(\frac32\)</span>-del = szorozni <span class="math inline">\(\frac23\)</span>-dal.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda</p>
+      <p>„<span class="math inline">\(\int\frac1{x^2}dx=\ln x^2\)</span>.” — Nem! A <span class="math inline">\(\ln\)</span> csak az <span class="math inline">\(x^{-1}\)</span>-nek jár. Az <span class="math inline">\(\frac1{x^2}=x^{-2}\)</span>, erre a hatványszabály érvényes: <span class="math inline">\(\int x^{-2}dx=\frac{x^{-1}}{-1}+C=-\frac1x+C\)</span>.</p>
+    </div>
+
+    <h2 id="s4">Átalakítás integrálás előtt</h2>
+
+    <p class="lead">Szorzatra és hányadosra <b>nincs</b> „integrálási szabály”. Előbb alakítsd át az integrandust összeggé: a törtet tagonként osztva, a szorzatot beszorozva.</p>
+
+    <div class="doboz pelda" id="pelda-atalakitas">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — előbb átalakítunk</p>
+      <ol><li>Tört szétbontása: <span class="math inline">\(\int\frac{x^2+3x-2}{x}dx=\int\left(x+3-\frac2x\right)dx=\frac{x^2}2+3x-2\ln\lvert x\rvert+C\)</span>;</li><li>beszorzás: <span class="math inline">\(\int(2x-1)^2dx=\int(4x^2-4x+1)\,dx=\frac43x^3-2x^2+x+C\)</span> (az A3-ban rövidebben is megy);</li><li>szorzat: <span class="math inline">\(\int(1+\sqrt x)\sqrt x\,dx=\int\left(x^{\frac12}+x\right)dx=\frac23x\sqrt x+\frac{x^2}2+C\)</span>.</li></ol>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda</p>
+      <p>„A szorzat integrálja az integrálok szorzata.” — Nem! <span class="math inline">\(\int x\cdot x\,dx=\frac{x^3}3+C\)</span>, de <span class="math inline">\(\int x\,dx\cdot\int x\,dx=\frac{x^2}2\cdot\frac{x^2}2=\frac{x^4}4\)</span>. A hányadosra ugyanígy: előbb átalakítás.</p>
+    </div>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Tagonként osztva x² + 1/x, ennek integrálja x³/3 + ln|x| + C." data-nem="✘ A hányados nem integrálható a számláló és a nevező külön integrálásával. Előbb bontsd szét: (x³ + 1)/x = x² + 1/x, és ezt integráld tagonként.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Mennyi az <span class="math inline">\(\int\dfrac{x^3+1}{x}\,dx\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(\dfrac{x^4}{4}+x+C\)</span></button><button><span class="math inline">\(3x^2+C\)</span></button><button><span class="math inline">\(\dfrac{x^3}{3}+\ln\lvert x\rvert+C\)</span></button><button><span class="math inline">\(\dfrac{x^4/4+x}{x^2/2}+C\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-hatarozatlan-integral.html#alap-4">🐶 Véd-eb nyomravezető <span class="cimke">A 4–8</span></a><a class="sav bruno" href="feladatok-hatarozatlan-integral.html#kozep-3">⚔️ Maximális erőbedobás <span class="cimke">K 3–5</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/svetozar.webp" alt="SZVETI — a Szvetkó-kampusz mesterséges intelligenciája" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>SZVETI:</b> A táblázattal a darabjaim felét visszaraktam. A másik fele belső függvényekbe bújt: <span class="math inline">\(\cos3x\)</span>, <span class="math inline">\((5x+2)^4\)</span>, <span class="math inline">\(e^{3x}\)</span>. <b>Nagol:</b> Oda kell a trükk.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-primitiv-fuggveny.html"><span class="irany">← Előző</span><span class="hova">A primitív függvény</span></a>
+      <a class="kov" href="tananyag-helyettesites.html"><span class="irany">Következő →</span><span class="hova">Helyettesítéses integrálás</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

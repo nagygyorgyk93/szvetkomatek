@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bezárva [a; b]-be — a határozott integrál — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Integrál</a> ›
+  <span class="itt">Bezárva [a; b]-be — a határozott integrál — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Bezárva [a; b]-be — a határozott integrál</h1>
+  <p class="alcim">A területprobléma, alsó és felső közelítő összeg, a határozott integrál fogalma és az előjeles terület.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Valóság Összefoltozása · 4/6</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/nagol_w.webp" alt="Nagol — a morcos kiképzőtiszt" width="1200" height="670" decoding="async"><p>📡 <b>Nagol:</b> Az I.V.H. egy <span class="math inline">\([a;\,b]\)</span> intervallumba zárt minket. Kijutni csak az tud, aki megmondja, mekkora terület van a görbe alatt. <b>Véd Vilmos:</b> Lemérem vonalzóval. <b>SZVETI:</b> A görbét? <b>Nagol:</b> Arkhimédész 2200 éve kis darabokkal közelítette — mi is azzal kezdjük.</p></div>
+
+    <h2 id="s1">A területprobléma</h2>
+
+    <p class="lead">Mekkora az <span class="math inline">\(f(x)=\frac{x^2}{3}+1\)</span> grafikonja alatti terület a <span class="math inline">\([0;\,3]\)</span> intervallumon? Téglalapot, háromszöget ki tudunk számolni — görbe vonalú alakzatot még nem. Ezért <b>téglalapokkal közelítünk</b>.</p>
+
+    <p>Osszuk az intervallumot <span class="math inline">\(n\)</span> egyenlő részre. Minden részre állítsunk egy téglalapot: a <b>kisebbik</b> végpontbeli függvényérték magasságával a görbe alatt maradunk (<b>alsó összeg</b>), a <b>nagyobbikkal</b> fölé nyúlunk (<b>felső összeg</b>). A keresett terület a kettő közé esik.</p>
+
+    <div class="svgcard interaktiv" data-mod="osszeg" data-poly="1.0,0.0,0.3333333333333333" data-xr="-0.4,3.4" data-yr="-0.5,4.6" data-w="360" data-h="250" data-x0="0.0" data-ab="0,3" data-pontos="6">
+    <svg viewBox="0 0 360 250" width="360" height="250" role="img" aria-label="Interaktív ábra: az f(x) = x²/3 + 1 görbe alatti terület a [0; 3] intervallumon, n darab téglalappal közelítve; a csúszka az n-et állítja">
+      <defs><marker id="nyil-a5890" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="144.6" y1="228.0" x2="144.6" y2="14.0"/>
+        <line x1="229.4" y1="228.0" x2="229.4" y2="14.0"/>
+        <line x1="314.1" y1="228.0" x2="314.1" y2="14.0"/>
+        <line x1="26.0" y1="165.1" x2="348.0" y2="165.1"/>
+        <line x1="26.0" y1="123.1" x2="348.0" y2="123.1"/>
+        <line x1="26.0" y1="81.1" x2="348.0" y2="81.1"/>
+        <line x1="26.0" y1="39.2" x2="348.0" y2="39.2"/>
+      </g>
+      <line x1="26.0" y1="207.0" x2="348.0" y2="207.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-a5890)"/>
+      <line x1="59.9" y1="228.0" x2="59.9" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-a5890)"/>
+      <text x="344.0" y="221.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="51.9" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="144.6" y="220.0" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="54.9" y="169.1" font-size="10" fill="#475569" text-anchor="end">1</text>
+      <path class="iv-felso" d="M59.9,207.0 V161.6 H102.3 V207.0 Z M102.3,207.0 V151.1 H144.6 V207.0 Z M144.6,207.0 V133.6 H187.0 V207.0 Z M187.0,207.0 V109.1 H229.4 V207.0 Z M229.4,207.0 V77.6 H271.7 V207.0 Z M271.7,207.0 V39.2 H314.1 V207.0 Z" fill="#bfdbfe" fill-opacity=".75" stroke="#3b82f6" stroke-width=".8" clip-path="url(#ivc1)"/>
+      <path class="iv-also" d="M59.9,207.0 V165.1 H102.3 V207.0 Z M102.3,207.0 V161.6 H144.6 V207.0 Z M144.6,207.0 V151.1 H187.0 V207.0 Z M187.0,207.0 V133.6 H229.4 V207.0 Z M229.4,207.0 V109.1 H271.7 V207.0 Z M271.7,207.0 V77.6 H314.1 V207.0 Z" fill="#2563eb" fill-opacity=".55" stroke="#1d4ed8" stroke-width=".8" clip-path="url(#ivc1)"/>
+      <polyline points="26.0,162.8 29.2,163.2 32.4,163.6 35.7,163.9 38.9,164.2 42.1,164.4 45.3,164.6 48.5,164.8 51.8,164.9 55.0,165.0 58.2,165.1 61.4,165.1 64.6,165.0 67.9,164.9 71.1,164.8 74.3,164.7 77.5,164.5 80.7,164.2 84.0,163.9 87.2,163.6 90.4,163.2 93.6,162.8 96.8,162.4 100.1,161.9 103.3,161.4 106.5,160.8 109.7,160.2 112.9,159.6 116.2,158.9 119.4,158.2 122.6,157.4 125.8,156.6 129.0,155.7 132.3,154.9 135.5,153.9 138.7,153.0 141.9,152.0 145.1,150.9 148.4,149.8 151.6,148.7 154.8,147.5 158.0,146.3 161.2,145.1 164.5,143.8 167.7,142.4 170.9,141.1 174.1,139.6 177.3,138.2 180.6,136.7 183.8,135.2 187.0,133.6 190.2,132.0 193.4,130.3 196.7,128.6 199.9,126.9 203.1,125.1 206.3,123.3 209.5,121.4 212.8,119.5 216.0,117.6 219.2,115.6 222.4,113.6 225.6,111.5 228.9,109.4 232.1,107.3 235.3,105.1 238.5,102.9 241.7,100.6 245.0,98.3 248.2,96.0 251.4,93.6 254.6,91.2 257.8,88.7 261.1,86.2 264.3,83.7 267.5,81.1 270.7,78.5 273.9,75.8 277.2,73.1 280.4,70.4 283.6,67.6 286.8,64.7 290.0,61.9 293.3,59.0 296.5,56.0 299.7,53.0 302.9,50.0 306.1,46.9 309.4,43.8 312.6,40.7 315.8,37.5 319.0,34.3 322.2,31.0 325.5,27.7 328.7,24.3 331.9,20.9 335.1,17.5 338.3,14.0 341.6,10.5 344.8,7.0 348.0,3.4" fill="none" stroke="#0f172a" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <defs><clipPath id="ivc1"><rect x="26" y="14" width="322" height="214"/></clipPath></defs>
+    </svg>
+    <div class="iv-vezerlo"><label for="iv1">n = <span class="iv-ertek">6</span></label><input type="range" id="iv1" min="1" max="40" step="1" value="6" aria-describedby="ivk1"></div>
+    <p class="iv-kijelzo" id="ivk1" aria-live="polite">n = 6:  alsó összeg ≈ 5,29,  felső összeg ≈ 6,79;  a pontos terület: 6.</p>
+    </div>
+    <p class="cap">Mozgasd a csúszkát! A sötétkék téglalapok a görbe <b>alatt</b> maradnak (alsó összeg), a világoskékek <b>fölé</b> nyúlnak (felső összeg). Ahogy <span class="math inline">\(n\)</span> nő, mindkét összeg a görbe alatti területhez, <span class="math inline">\(6\)</span>-hoz tart.</p>
+    <script src="../../assets/js/interaktiv.js"></script>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th><span class="math inline">\(n\)</span></th><th>alsó összeg</th><th>felső összeg</th></tr><tr><td>3</td><td>4,67</td><td>7,67</td></tr><tr><td>6</td><td>5,29</td><td>6,79</td></tr><tr><td>12</td><td>5,64</td><td>6,39</td></tr><tr><td>30</td><td>5,85</td><td>6,15</td></tr><tr><td><span class="math inline">\(n\to\infty\)</span></td><td><span class="math inline">\(6\)</span></td><td><span class="math inline">\(6\)</span></td></tr></table></div>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A felső összeg „túllógó” része egyre kisebb, ezért csökken; az alsó nő; mindkettő a területhez tart." data-nem="✘ Több, de keskenyebb téglalap: a görbe fölé lógó részek csökkennek. A felső összeg ezért csökken, és a pontos területhez (itt 6) tart — nem 0-hoz.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Növekvő függvénynél mi történik a felső összeggel, ha a téglalapok számát, <span class="math inline">\(n\)</span>-et növeljük?</p>
+      <div class="opciok"><button>nem változik, hiszen ugyanaz a terület</button><button><span class="math inline">\(0\)</span>-hoz tart, mert a téglalapok egyre keskenyebbek</button><button>csökken, és a pontos területhez tart</button><button>nő, mert több téglalapot adunk össze</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">A határozott integrál</h2>
+
+    <div class="doboz definicio" id="def-hatarozott-integral">
+      <p class="cim"><span class="ikon">📗</span> A határozott integrál</p>
+      <p>Ha az <span class="math inline">\([a;\,b]\)</span> intervallum egyre finomabb felosztásánál az alsó és a felső összeg ugyanahhoz a számhoz tart, ezt a számot az <span class="math inline">\(f\)</span> függvény <b>határozott integráljának</b> nevezzük az <span class="math inline">\([a;\,b]\)</span> intervallumon:<span class="math display">\[\int_a^b f(x)\,dx.\]</span> Az <span class="math inline">\(a\)</span> az <b>alsó</b>, a <span class="math inline">\(b\)</span> a <b>felső határ</b>. Folytonos függvényre ez a szám mindig létezik.</p>
+    </div>
+
+    <p>Ha <span class="math inline">\(f\ge0\)</span> az <span class="math inline">\([a;\,b]\)</span>-n, a határozott integrál a grafikon, az <span class="math inline">\(x\)</span> tengely és az <span class="math inline">\(x=a\)</span>, <span class="math inline">\(x=b\)</span> egyenesek által határolt <b>görbe vonalú trapéz</b> területe. A példánkban <span class="math inline">\(\int_0^3\left(\frac{x^2}{3}+1\right)dx=6\)</span>.</p><p>A határozatlan integrál <b>függvénysereg</b>, a határozott integrál <b>egyetlen szám</b>. A kettőt a következő egység köti össze.</p>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Arkhimédész parabolaszelete</p>
+      <p>Arkhimédész (Kr. e. 3. század) a parabolaszelet területét egyre több, egyre kisebb háromszöggel töltötte ki, és megmutatta, hogy a terület a beírt háromszög <span class="math inline">\(\frac43\)</span>-a. Ez a „kimerítés módszere” — a határozott integrál ősének tekintjük. A <span class="math inline">\(\int\)</span> jel egy megnyújtott S: a latin <i>summa</i>, összeg.</p>
+    </div>
+
+    <h2 id="s3">Előjeles terület</h2>
+
+    <p class="lead">Ha a görbe a tengely <b>alatt</b> fut, a téglalapok „magassága”, <span class="math inline">\(f(x)\)</span> negatív — a határozott integrál ott <b>negatívan</b> számol. Általában: <span class="math display">\[\int_a^b f(x)\,dx=(\text{a tengely fölötti terület})-(\text{a tengely alatti terület}).\]</span></p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 360 280" width="360" height="280" role="img" aria-label="Az f(x) = x² − 4x grafikonja: a [0; 4]-en a tengely alatt (piros), a [4; 6]-on fölötte (zöld); a két terület egyenlő">
+      <defs><marker id="nyil-cf824" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <g stroke="#cbd5e1" stroke-width=".6">
+        <line x1="102.3" y1="258.0" x2="102.3" y2="14.0"/>
+        <line x1="144.6" y1="258.0" x2="144.6" y2="14.0"/>
+        <line x1="187.0" y1="258.0" x2="187.0" y2="14.0"/>
+        <line x1="229.4" y1="258.0" x2="229.4" y2="14.0"/>
+        <line x1="271.7" y1="258.0" x2="271.7" y2="14.0"/>
+        <line x1="314.1" y1="258.0" x2="314.1" y2="14.0"/>
+        <line x1="26.0" y1="241.7" x2="348.0" y2="241.7"/>
+        <line x1="26.0" y1="228.2" x2="348.0" y2="228.2"/>
+        <line x1="26.0" y1="214.6" x2="348.0" y2="214.6"/>
+        <line x1="26.0" y1="201.1" x2="348.0" y2="201.1"/>
+        <line x1="26.0" y1="174.0" x2="348.0" y2="174.0"/>
+        <line x1="26.0" y1="160.4" x2="348.0" y2="160.4"/>
+        <line x1="26.0" y1="146.8" x2="348.0" y2="146.8"/>
+        <line x1="26.0" y1="133.3" x2="348.0" y2="133.3"/>
+        <line x1="26.0" y1="119.7" x2="348.0" y2="119.7"/>
+        <line x1="26.0" y1="106.2" x2="348.0" y2="106.2"/>
+        <line x1="26.0" y1="92.6" x2="348.0" y2="92.6"/>
+        <line x1="26.0" y1="79.1" x2="348.0" y2="79.1"/>
+        <line x1="26.0" y1="65.5" x2="348.0" y2="65.5"/>
+        <line x1="26.0" y1="52.0" x2="348.0" y2="52.0"/>
+        <line x1="26.0" y1="38.4" x2="348.0" y2="38.4"/>
+        <line x1="26.0" y1="24.8" x2="348.0" y2="24.8"/>
+      </g>
+      <line x1="26.0" y1="187.5" x2="348.0" y2="187.5" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-cf824)"/>
+      <line x1="59.9" y1="258.0" x2="59.9" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-cf824)"/>
+      <text x="344.0" y="201.5" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="51.9" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="102.3" y="200.5" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <polygon points="59.9,187.5 61.3,189.3 62.7,191.1 64.1,192.8 65.5,194.5 67.0,196.2 68.4,197.8 69.8,199.4 71.2,201.0 72.6,202.6 74.0,204.1 75.4,205.6 76.8,207.0 78.3,208.5 79.7,209.9 81.1,211.2 82.5,212.6 83.9,213.9 85.3,215.2 86.7,216.4 88.1,217.6 89.6,218.8 91.0,220.0 92.4,221.1 93.8,222.2 95.2,223.3 96.6,224.3 98.0,225.3 99.4,226.3 100.9,227.3 102.3,228.2 103.7,229.1 105.1,229.9 106.5,230.8 107.9,231.6 109.3,232.3 110.7,233.1 112.1,233.8 113.6,234.4 115.0,235.1 116.4,235.7 117.8,236.3 119.2,236.9 120.6,237.4 122.0,237.9 123.4,238.3 124.9,238.8 126.3,239.2 127.7,239.6 129.1,239.9 130.5,240.2 131.9,240.5 133.3,240.8 134.7,241.0 136.2,241.2 137.6,241.4 139.0,241.5 140.4,241.6 141.8,241.7 143.2,241.7 144.6,241.7 146.0,241.7 147.5,241.7 148.9,241.6 150.3,241.5 151.7,241.4 153.1,241.2 154.5,241.0 155.9,240.8 157.3,240.5 158.8,240.2 160.2,239.9 161.6,239.6 163.0,239.2 164.4,238.8 165.8,238.3 167.2,237.9 168.6,237.4 170.1,236.9 171.5,236.3 172.9,235.7 174.3,235.1 175.7,234.4 177.1,233.8 178.5,233.1 179.9,232.3 181.4,231.6 182.8,230.8 184.2,229.9 185.6,229.1 187.0,228.2 188.4,227.3 189.8,226.3 191.2,225.3 192.6,224.3 194.1,223.3 195.5,222.2 196.9,221.1 198.3,220.0 199.7,218.8 201.1,217.6 202.5,216.4 203.9,215.2 205.4,213.9 206.8,212.6 208.2,211.2 209.6,209.9 211.0,208.5 212.4,207.0 213.8,205.6 215.2,204.1 216.7,202.6 218.1,201.0 219.5,199.4 220.9,197.8 222.3,196.2 223.7,194.5 225.1,192.8 226.5,191.1 228.0,189.3 229.4,187.5 229.4,187.5 228.0,187.5 226.5,187.5 225.1,187.5 223.7,187.5 222.3,187.5 220.9,187.5 219.5,187.5 218.1,187.5 216.7,187.5 215.2,187.5 213.8,187.5 212.4,187.5 211.0,187.5 209.6,187.5 208.2,187.5 206.8,187.5 205.4,187.5 203.9,187.5 202.5,187.5 201.1,187.5 199.7,187.5 198.3,187.5 196.9,187.5 195.5,187.5 194.1,187.5 192.6,187.5 191.2,187.5 189.8,187.5 188.4,187.5 187.0,187.5 185.6,187.5 184.2,187.5 182.8,187.5 181.4,187.5 179.9,187.5 178.5,187.5 177.1,187.5 175.7,187.5 174.3,187.5 172.9,187.5 171.5,187.5 170.1,187.5 168.6,187.5 167.2,187.5 165.8,187.5 164.4,187.5 163.0,187.5 161.6,187.5 160.2,187.5 158.8,187.5 157.3,187.5 155.9,187.5 154.5,187.5 153.1,187.5 151.7,187.5 150.3,187.5 148.9,187.5 147.5,187.5 146.0,187.5 144.6,187.5 143.2,187.5 141.8,187.5 140.4,187.5 139.0,187.5 137.6,187.5 136.2,187.5 134.7,187.5 133.3,187.5 131.9,187.5 130.5,187.5 129.1,187.5 127.7,187.5 126.3,187.5 124.9,187.5 123.4,187.5 122.0,187.5 120.6,187.5 119.2,187.5 117.8,187.5 116.4,187.5 115.0,187.5 113.6,187.5 112.1,187.5 110.7,187.5 109.3,187.5 107.9,187.5 106.5,187.5 105.1,187.5 103.7,187.5 102.3,187.5 100.9,187.5 99.4,187.5 98.0,187.5 96.6,187.5 95.2,187.5 93.8,187.5 92.4,187.5 91.0,187.5 89.6,187.5 88.1,187.5 86.7,187.5 85.3,187.5 83.9,187.5 82.5,187.5 81.1,187.5 79.7,187.5 78.3,187.5 76.8,187.5 75.4,187.5 74.0,187.5 72.6,187.5 71.2,187.5 69.8,187.5 68.4,187.5 67.0,187.5 65.5,187.5 64.1,187.5 62.7,187.5 61.3,187.5 59.9,187.5" fill="#ef4444" fill-opacity="0.35" stroke="none"/>
+      <polygon points="229.4,187.5 230.1,186.6 230.8,185.7 231.5,184.8 232.2,183.8 232.9,182.9 233.6,182.0 234.3,181.0 235.0,180.0 235.7,179.1 236.4,178.1 237.1,177.1 237.8,176.1 238.5,175.1 239.3,174.1 240.0,173.1 240.7,172.1 241.4,171.1 242.1,170.0 242.8,169.0 243.5,167.9 244.2,166.9 244.9,165.8 245.6,164.7 246.3,163.7 247.0,162.6 247.7,161.5 248.4,160.4 249.1,159.3 249.8,158.1 250.6,157.0 251.3,155.9 252.0,154.7 252.7,153.6 253.4,152.4 254.1,151.3 254.8,150.1 255.5,148.9 256.2,147.7 256.9,146.5 257.6,145.3 258.3,144.1 259.0,142.9 259.7,141.7 260.4,140.5 261.1,139.2 261.9,138.0 262.6,136.7 263.3,135.5 264.0,134.2 264.7,132.9 265.4,131.6 266.1,130.3 266.8,129.0 267.5,127.7 268.2,126.4 268.9,125.1 269.6,123.8 270.3,122.4 271.0,121.1 271.7,119.7 272.4,118.4 273.1,117.0 273.9,115.6 274.6,114.3 275.3,112.9 276.0,111.5 276.7,110.1 277.4,108.6 278.1,107.2 278.8,105.8 279.5,104.4 280.2,102.9 280.9,101.5 281.6,100.0 282.3,98.6 283.0,97.1 283.7,95.6 284.4,94.1 285.2,92.6 285.9,91.1 286.6,89.6 287.3,88.1 288.0,86.6 288.7,85.0 289.4,83.5 290.1,81.9 290.8,80.4 291.5,78.8 292.2,77.3 292.9,75.7 293.6,74.1 294.3,72.5 295.0,70.9 295.7,69.3 296.5,67.7 297.2,66.1 297.9,64.4 298.6,62.8 299.3,61.1 300.0,59.5 300.7,57.8 301.4,56.2 302.1,54.5 302.8,52.8 303.5,51.1 304.2,49.4 304.9,47.7 305.6,46.0 306.3,44.3 307.0,42.5 307.8,40.8 308.5,39.1 309.2,37.3 309.9,35.6 310.6,33.8 311.3,32.0 312.0,30.2 312.7,28.4 313.4,26.6 314.1,24.8 314.1,187.5 313.4,187.5 312.7,187.5 312.0,187.5 311.3,187.5 310.6,187.5 309.9,187.5 309.2,187.5 308.5,187.5 307.8,187.5 307.0,187.5 306.3,187.5 305.6,187.5 304.9,187.5 304.2,187.5 303.5,187.5 302.8,187.5 302.1,187.5 301.4,187.5 300.7,187.5 300.0,187.5 299.3,187.5 298.6,187.5 297.9,187.5 297.2,187.5 296.5,187.5 295.7,187.5 295.0,187.5 294.3,187.5 293.6,187.5 292.9,187.5 292.2,187.5 291.5,187.5 290.8,187.5 290.1,187.5 289.4,187.5 288.7,187.5 288.0,187.5 287.3,187.5 286.6,187.5 285.9,187.5 285.2,187.5 284.4,187.5 283.7,187.5 283.0,187.5 282.3,187.5 281.6,187.5 280.9,187.5 280.2,187.5 279.5,187.5 278.8,187.5 278.1,187.5 277.4,187.5 276.7,187.5 276.0,187.5 275.3,187.5 274.6,187.5 273.9,187.5 273.1,187.5 272.4,187.5 271.7,187.5 271.0,187.5 270.3,187.5 269.6,187.5 268.9,187.5 268.2,187.5 267.5,187.5 266.8,187.5 266.1,187.5 265.4,187.5 264.7,187.5 264.0,187.5 263.3,187.5 262.6,187.5 261.9,187.5 261.1,187.5 260.4,187.5 259.7,187.5 259.0,187.5 258.3,187.5 257.6,187.5 256.9,187.5 256.2,187.5 255.5,187.5 254.8,187.5 254.1,187.5 253.4,187.5 252.7,187.5 252.0,187.5 251.3,187.5 250.6,187.5 249.8,187.5 249.1,187.5 248.4,187.5 247.7,187.5 247.0,187.5 246.3,187.5 245.6,187.5 244.9,187.5 244.2,187.5 243.5,187.5 242.8,187.5 242.1,187.5 241.4,187.5 240.7,187.5 240.0,187.5 239.3,187.5 238.5,187.5 237.8,187.5 237.1,187.5 236.4,187.5 235.7,187.5 235.0,187.5 234.3,187.5 233.6,187.5 232.9,187.5 232.2,187.5 231.5,187.5 230.8,187.5 230.1,187.5 229.4,187.5" fill="#047857" fill-opacity="0.35" stroke="none"/>
+      <polyline points="38.7,157.0 41.6,161.6 44.6,166.1 47.5,170.5 50.4,174.7 53.3,178.8 56.3,182.7 59.2,186.6 62.1,190.3 65.0,193.9 67.9,197.3 70.9,200.6 73.8,203.8 76.7,206.9 79.6,209.8 82.6,212.6 85.5,215.3 88.4,217.9 91.3,220.3 94.3,222.6 97.2,224.7 100.1,226.8 103.0,228.7 105.9,230.4 108.9,232.1 111.8,233.6 114.7,235.0 117.6,236.2 120.6,237.4 123.5,238.4 126.4,239.2 129.3,240.0 132.3,240.6 135.2,241.1 138.1,241.4 141.0,241.6 144.0,241.7 146.9,241.7 149.8,241.5 152.7,241.2 155.6,240.8 158.6,240.3 161.5,239.6 164.4,238.8 167.3,237.8 170.3,236.8 173.2,235.6 176.1,234.3 179.0,232.8 182.0,231.2 184.9,229.5 187.8,227.7 190.7,225.7 193.7,223.6 196.6,221.4 199.5,219.0 202.4,216.5 205.3,213.9 208.3,211.2 211.2,208.3 214.1,205.3 217.0,202.1 220.0,198.9 222.9,195.5 225.8,192.0 228.7,188.3 231.7,184.5 234.6,180.6 237.5,176.6 240.4,172.4 243.4,168.1 246.3,163.7 249.2,159.2 252.1,154.5 255.0,149.7 258.0,144.7 260.9,139.7 263.8,134.5 266.7,129.1 269.7,123.7 272.6,118.1 275.5,112.4 278.4,106.5 281.4,100.6 284.3,94.5 287.2,88.2 290.1,81.9 293.0,75.4 296.0,68.8 298.9,62.0 301.8,55.2 304.7,48.1 307.7,41.0 310.6,33.8 313.5,26.4 316.4,18.8 319.4,11.2" fill="none" stroke="#0f172a" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    </div>
+    <p class="cap">Az <span class="math inline">\(f(x)=x^2-4x\)</span> a <span class="math inline">\([0;\,6]\)</span>-on: a piros és a zöld rész területe egyenlő, ezért <span class="math inline">\(\int_0^6(x^2-4x)\,dx=0\)</span> — pedig a két rész együttes területe nem <span class="math inline">\(0\)</span>.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda</p>
+      <p>„A határozott integrál terület, tehát nem lehet negatív, sem <span class="math inline">\(0\)</span>.” — Nem így van: a határozott integrál <b>előjeles</b>. Ha a görbe a tengely alá bukik, a terület kiszámításához bontani kell — ezt a B3-ban gyakoroljuk.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ A határozott integrál előjeles: 5 − 2 = 3. (A két rész együttes területe viszont 7.)" data-nem="✘ A tengely alatti rész negatívan számít: 5 − 2 = 3. A 7 a két rész területének összege — az nem a határozott integrál.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy <span class="math inline">\(f\)</span> grafikonja a <span class="math inline">\([0;\,4]\)</span>-en részben a tengely fölött, részben alatta fut. A tengely fölötti rész területe <span class="math inline">\(5\)</span>, az alatti részé <span class="math inline">\(2\)</span>. Mennyi a <span class="math inline">\(\int_0^4 f(x)\,dx\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(3\)</span></button><button><span class="math inline">\(7\)</span></button><button><span class="math inline">\(-3\)</span></button><button><span class="math inline">\(5\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Út a sebesség–idő grafikon alatt</p>
+      <p>Ha egy test sebességét az idő függvényében ábrázoljuk, a grafikon alatti terület a <b>megtett út</b>: <span class="math inline">\(s=\int_{t_1}^{t_2}v(t)\,dt\)</span>. Ha a sebesség negatív (visszafelé halad), az a rész negatívan számít — így az integrál az elmozdulást adja.</p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-hatarozott-integral.html#alap-1">🐶 Véd-eb nyomravezető <span class="cimke">A 1–2</span></a><a class="sav bruno" href="feladatok-hatarozott-integral.html#kozep-1">⚔️ Maximális erőbedobás <span class="cimke">K 1</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/svetozar.webp" alt="SZVETI — a Szvetkó-kampusz mesterséges intelligenciája" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>SZVETI:</b> Téglalapokkal csak közelítünk, és negyven téglalapnál már az én processzorom is melegszik. <b>Nagol:</b> Van egy híd, amely pontosan kiszámolja — és a primitív függvényen át vezet.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-helyettesites.html"><span class="irany">← Előző</span><span class="hova">Helyettesítéses integrálás</span></a>
+      <a class="kov" href="tananyag-newton-leibniz.html"><span class="irany">Következő →</span><span class="hova">A Newton–Leibniz-formula</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
