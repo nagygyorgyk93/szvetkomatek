@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Csalópapír | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="digitalis">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Integrál</a> ›
+  <span class="itt">Csalópapír</span>
+</nav>
+<div class="hero">
+  <h1>Csalópapír — a témakör egy lapon</h1>
+  <p class="alcim">Primitív függvény, integráltáblázat, a helyettesítés négy mintája, a határozott integrál és a területszámítás egy lapon — ismétléshez, a dolgozat előtti átfutáshoz, nyomtatáshoz.</p>
+  <div class="meta-sor"><span class="chip ora">összefoglaló</span><span class="chip">A Valóság Összefoltozása · összefoglaló</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">🎯 Primitív függvény és határozatlan integrál</h2>
+
+    <p><b>Primitív függvény</b> <a href="tananyag-primitiv-fuggveny.html#def-primitiv">→</a>: <span class="math inline">\(F\)</span> az <span class="math inline">\(f\)</span> primitív függvénye egy intervallumon, ha ott <span class="math inline">\(F'(x)=f(x)\)</span>. Ha <span class="math inline">\(F\)</span> az, akkor <span class="math inline">\(F+C\)</span> is az — és más nincs <a href="tananyag-primitiv-fuggveny.html#tetel-plusz-c">→</a>.</p><p><b>Határozatlan integrál</b> <a href="tananyag-primitiv-fuggveny.html#def-hatarozatlan-integral">→</a>: <span class="math inline">\(\displaystyle\int f(x)\,dx=F(x)+C\)</span> — a primitív függvények serege; <span class="math inline">\(f\)</span> az <b>integrandus</b>, <span class="math inline">\(C\)</span> az <b>integrációs konstans</b>.</p><ul><li><b>Ellenőrzés:</b> az eredményt deriváld vissza — az integrandust kell kapnod.</li><li><b>Adott ponton átmenő</b> primitív függvény <a href="tananyag-primitiv-fuggveny.html#pelda-adott-pont">→</a>: írd fel a sereget (<span class="math inline">\(F(x)=G(x)+C\)</span>, ahol <span class="math inline">\(G\)</span> egy primitív függvény), majd a pont koordinátáit behelyettesítve <span class="math inline">\(C\)</span>-re egyenletet kapsz.</li><li>Ha <span class="math inline">\(f''\)</span> ismert: kétszer integrálsz, két állandó lesz — két feltétel kell hozzájuk.</li></ul>
+
+    <h2 id="s1">📋 Az integráltáblázat</h2>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th><span class="math inline">\(f(x)\)</span></th><th><span class="math inline">\(\displaystyle\int f(x)\,dx\)</span></th><th><span class="math inline">\(f(x)\)</span></th><th><span class="math inline">\(\displaystyle\int f(x)\,dx\)</span></th></tr><tr><td><span class="math inline">\(x^n\)</span> <span class="math inline">\((n\ne-1)\)</span></td><td><span class="math inline">\(\dfrac{x^{n+1}}{n+1}+C\)</span></td><td><span class="math inline">\(\sin x\)</span></td><td><span class="math inline">\(-\cos x+C\)</span></td></tr><tr><td><span class="math inline">\(\dfrac1x\)</span></td><td><span class="math inline">\(\ln\lvert x\rvert+C\)</span></td><td><span class="math inline">\(\cos x\)</span></td><td><span class="math inline">\(\sin x+C\)</span></td></tr><tr><td><span class="math inline">\(e^x\)</span></td><td><span class="math inline">\(e^x+C\)</span></td><td><span class="math inline">\(\dfrac{1}{\cos^2x}\)</span></td><td><span class="math inline">\(\operatorname{tg}x+C\)</span></td></tr><tr><td><span class="math inline">\(a^x\)</span></td><td><span class="math inline">\(\dfrac{a^x}{\ln a}+C\)</span></td><td><span class="math inline">\(\dfrac{1}{\sin^2x}\)</span></td><td><span class="math inline">\(-\operatorname{ctg}x+C\)</span></td></tr><tr><td><span class="math inline">\(k\)</span> (állandó)</td><td><span class="math inline">\(kx+C\)</span></td><td><span class="math inline">\(\sqrt x\)</span></td><td><span class="math inline">\(\dfrac23x\sqrt x+C\)</span></td></tr></table></div>
+
+    <p class="le halvany">Feltételek: <span class="math inline">\(\dfrac1x\)</span>-nél <span class="math inline">\(x\ne0\)</span>; <span class="math inline">\(a^x\)</span>-nél <span class="math inline">\(a\gt0\)</span>, <span class="math inline">\(a\ne1\)</span>; <span class="math inline">\(\dfrac{1}{\cos^2x}\)</span>-nél <span class="math inline">\(\cos x\ne0\)</span>; <span class="math inline">\(\dfrac{1}{\sin^2x}\)</span>-nél <span class="math inline">\(\sin x\ne0\)</span>; <span class="math inline">\(\sqrt x\)</span>-nél <span class="math inline">\(x\ge0\)</span>.</p>
+
+    <p><b>Szabályok</b> <a href="tananyag-integraltablazat.html#tetel-linearitas">→</a>: <span class="math inline">\(\int c\cdot f=c\int f\)</span>, <span class="math inline">\(\;\int(f\pm g)=\int f\pm\int g\)</span>. Szorzatra és hányadosra <b>nincs</b> ilyen szabály — előbb alakíts át (beszorzás, tagokra bontás) <a href="tananyag-integraltablazat.html#pelda-atalakitas">→</a>. A gyököt és a törtet írd <b>hatványként</b>: <span class="math inline">\(\sqrt[3]{x^2}=x^{\frac23}\)</span>, <span class="math inline">\(\dfrac{2}{x^5}=2x^{-5}\)</span> <a href="tananyag-integraltablazat.html#pelda-gyok-hatvany">→</a>. A feltételek magyarázatával: <a href="tananyag-integraltablazat.html#tetel-integraltablazat">A2</a>.</p>
+
+    <h2 id="s2">🔧 Helyettesítés — a négy minta</h2>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th>minta</th><th>szabály</th><th>példa</th></tr><tr><td>lineáris belső függvény <a href="tananyag-helyettesites.html#tetel-linearis-belso">→</a></td><td><span class="math inline">\(\displaystyle\int f(ax+b)\,dx=\dfrac1a\,F(ax+b)+C\)</span> <span class="math inline">\((a\ne0)\)</span></td><td><span class="math inline">\(\displaystyle\int(2x-5)^7dx=\dfrac{(2x-5)^8}{16}+C\)</span></td></tr><tr><td><span class="math inline">\(\dfrac{f'}{f}\)</span> <a href="tananyag-helyettesites.html#tetel-f-per-f">→</a></td><td><span class="math inline">\(\displaystyle\int\dfrac{f'(x)}{f(x)}\,dx=\ln\lvert f(x)\rvert+C\)</span></td><td><span class="math inline">\(\displaystyle\int\dfrac{2x}{x^2+7}\,dx=\ln\left(x^2+7\right)+C\)</span> (<span class="math inline">\(x^2+7\gt0\)</span>, abszolút érték nem kell)</td></tr><tr><td><span class="math inline">\(f^n\cdot f'\)</span> <a href="tananyag-helyettesites.html#tetel-f-hatvany">→</a></td><td><span class="math inline">\(\displaystyle\int\bigl[f(x)\bigr]^nf'(x)\,dx=\dfrac{\bigl[f(x)\bigr]^{n+1}}{n+1}+C\)</span> <span class="math inline">\((n\ne-1)\)</span></td><td><span class="math inline">\(\displaystyle\int\cos x\sin^3x\,dx=\dfrac{\sin^4x}{4}+C\)</span></td></tr><tr><td>általános <a href="tananyag-helyettesites.html#tetel-helyettesites">→</a></td><td><span class="math inline">\(t=g(x)\)</span>, <span class="math inline">\(dt=g'(x)\,dx\)</span>: <span class="math inline">\(\displaystyle\int f\bigl(g(x)\bigr)g'(x)\,dx=\int f(t)\,dt\)</span> — <span class="math inline">\(x\)</span> nem maradhat benne; a végén helyettesíts vissza</td><td>kidolgozva: <a href="tananyag-helyettesites.html#pelda-helyettesites">A3</a></td></tr></table></div>
+
+    <p><b>A szorzó igazítása:</b> <span class="math inline">\(\displaystyle\int\dfrac{x}{x^2+7}\,dx=\dfrac12\int\dfrac{2x}{x^2+7}\,dx=\dfrac12\ln\left(x^2+7\right)+C\)</span> — állandó szorzót szabad kiemelni, <span class="math inline">\(x\)</span>-et nem.</p>
+
+    <h2 id="s3">📏 A határozott integrál</h2>
+
+    <p><b>Jelentés</b> <a href="tananyag-hatarozott-integral.html#def-hatarozott-integral">→</a>: az alsó és a felső közelítő összeg közös határértéke (<span class="math inline">\(s_n\le\int_a^bf\le S_n\)</span>) — az <b>előjeles terület</b>: a tengely fölötti rész pozitív, az alatta lévő negatív előjellel számít.</p><p><b>Newton–Leibniz-formula</b> <a href="tananyag-newton-leibniz.html#tetel-newton-leibniz">→</a>: ha <span class="math inline">\(f\)</span> folytonos az <span class="math inline">\([a;\,b]\)</span>-n, és <span class="math inline">\(F\)</span> egy primitív függvénye, akkor <span class="math inline">\(\displaystyle\int_a^bf(x)\,dx=\bigl[F(x)\bigr]_a^b=F(b)-F(a)\)</span> — bármelyik primitív függvény jó, a <span class="math inline">\(C\)</span> kiesik.</p>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th>tulajdonság <a href="tananyag-newton-leibniz.html#tetel-hatarozott-tulajdonsagok">→</a></th><th>képlet</th></tr><tr><td>azonos határok</td><td><span class="math inline">\(\displaystyle\int_a^af(x)\,dx=0\)</span></td></tr><tr><td>a határok cseréje</td><td><span class="math inline">\(\displaystyle\int_b^af(x)\,dx=-\int_a^bf(x)\,dx\)</span></td></tr><tr><td>additivitás</td><td><span class="math inline">\(\displaystyle\int_a^bf\,dx+\int_b^cf\,dx=\int_a^cf\,dx\)</span></td></tr><tr><td>linearitás</td><td><span class="math inline">\(\displaystyle\int_a^b\bigl(c\,f\pm g\bigr)\,dx=c\int_a^bf\,dx\pm\int_a^bg\,dx\)</span></td></tr></table></div>
+
+    <p><b>Helyettesítés</b> <a href="tananyag-newton-leibniz.html#tetel-hatar-atiras">→</a>: a <span class="math inline">\(t=g(x)\)</span> cserénél a határokat is írd át — az új határok <span class="math inline">\(g(a)\)</span> és <span class="math inline">\(g(b)\)</span> —, és akkor nem kell visszahelyettesíteni.</p>
+
+    <h2 id="s4">🗺️ Terület — öt helyzet</h2>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th>helyzet</th><th>a terület</th></tr><tr><td><span class="math inline">\(f\ge0\)</span> az <span class="math inline">\([a;\,b]\)</span>-n <a href="tananyag-terulet.html#pelda-gorbe-alatti">→</a></td><td><span class="math inline">\(T=\displaystyle\int_a^bf(x)\,dx\)</span></td></tr><tr><td><span class="math inline">\(f\le0\)</span> az <span class="math inline">\([a;\,b]\)</span>-n <a href="tananyag-terulet.html#tetel-elojelvaltas">→</a></td><td><span class="math inline">\(T=-\displaystyle\int_a^bf(x)\,dx=\left|\int_a^bf(x)\,dx\right|\)</span></td></tr><tr><td><span class="math inline">\(f\)</span> előjelet vált <a href="tananyag-terulet.html#tetel-elojelvaltas">→</a></td><td>bonts a zérushelyeknél, és a részek abszolút értékét add össze</td></tr><tr><td>görbe és a két tengely <a href="tananyag-terulet.html#pelda-ket-tengely">→</a></td><td>a határok: <span class="math inline">\(0\)</span> és a zérushely (az első síknegyedben)</td></tr><tr><td>két görbe <a href="tananyag-terulet.html#tetel-ket-gorbe">→</a></td><td><span class="math inline">\(T=\displaystyle\int_a^b\bigl(\text{felső}-\text{alsó}\bigr)\,dx\)</span>, <span class="math inline">\(a\)</span> és <span class="math inline">\(b\)</span> a metszéspontok — akkor is, ha a síkidom a tengely alá lóg</td></tr></table></div>
+
+    <p><b>Menetrend:</b> 1. vázlat · 2. zérushelyek, metszéspontok · 3. melyik görbe van felül (egy próbapont dönt) · 4. integrálás · 5. a részek összege. A terület <b>sosem negatív</b>.</p>
+
+    <h2 id="s5">⚠️ Véd Vilmos csapdái — amelyeken a legtöbben elcsúsznak</h2>
+
+    <div class="doboz csapda"><p class="cim"><span class="ikon">⚠️</span> A nyolc leggyakoribb hiba</p><ol class="reszfeladatok"><li><b>Elfelejtett <span class="math inline">\(+C\)</span>:</b> a határozatlan integrálnál kötelező; a határozottnál kiesik.</li><li><b>Az <span class="math inline">\(n=-1\)</span> kivétel:</b> <span class="math inline">\(\int\dfrac1x\,dx=\ln\lvert x\rvert+C\)</span> (nem <span class="math inline">\(\dfrac{x^0}{0}\)</span>); és <span class="math inline">\(\int\dfrac{1}{x^5}\,dx=-\dfrac{1}{4x^4}+C\)</span>, nem <span class="math inline">\(\ln\lvert x^5\rvert\)</span>.</li><li><b>Szorzat, hányados:</b> <span class="math inline">\(\int f\cdot g\ne\int f\cdot\int g\)</span> és <span class="math inline">\(\int\dfrac fg\ne\dfrac{\int f}{\int g}\)</span> — előbb alakíts át.</li><li><b>Lineáris belső függvénynél a belső derivált osztó, nem szorzó:</b> <span class="math inline">\(\int(4x+3)^3dx=\dfrac{(4x+3)^4}{16}+C\)</span>; <span class="math inline">\(\int e^{\frac x2}dx=2e^{\frac x2}+C\)</span>. Nemlineáris belső függvénynél osztani tilos: ott a belső deriváltnak szorzóként ott kell lennie (<span class="math inline">\(f^n\cdot f'\)</span>), különben előbb alakíts át.</li><li><b>Az <span class="math inline">\(\frac{f'}{f}\)</span> minta</b> csak akkor működik, ha a számláló — szorzótól eltekintve — a nevező deriváltja: az <span class="math inline">\(\int\dfrac{1}{x^2+7}\,dx\)</span>-nél ez a minta nem használható.</li><li><b>Határozott integrál ≠ terület:</b> <span class="math inline">\(\int_{-2}^2x\,dx=0\)</span>, a terület viszont <span class="math inline">\(4\)</span> — előjelváltásnál bontani kell.</li><li><b>Helyettesítésnél a határok:</b> vagy átírod őket <span class="math inline">\(t\)</span>-re, vagy visszahelyettesítesz — a kettőt keverni hiba.</li><li><b><span class="math inline">\(F(b)-F(a)\)</span> zárójellel:</b> <span class="math inline">\(\bigl[x^2-x\bigr]_{-1}^2=(4-2)-(1+1)=0\)</span> — az <span class="math inline">\(F(a)\)</span> egészét kell kivonni.</li></ol></div>
+
+    <h2 id="s6">Mit hol találsz?</h2>
+
+    <div class="gyakorolj"><span class="ikon">🧭</span><div><p><b>Tananyag:</b> <a href="tananyag-primitiv-fuggveny.html">primitív függvény</a> · <a href="tananyag-integraltablazat.html">integráltáblázat</a> · <a href="tananyag-helyettesites.html">helyettesítés</a> · <a href="tananyag-hatarozott-integral.html">határozott integrál</a> · <a href="tananyag-newton-leibniz.html">Newton–Leibniz-formula</a> · <a href="tananyag-terulet.html">síkidomok területe</a>.</p><p><b>Gyakorlás:</b> <a href="feladatok-hatarozatlan-integral.html">Zsoldos-lista I.</a> (határozatlan integrál) · <a href="feladatok-hatarozott-integral.html">Zsoldos-lista II.</a> (határozott integrál, terület) · <a href="feladatok-hazi.html">I.V.H. Kihallgató Terem</a> (házi).</p><p><b>Ismétlés:</b> a deriválttáblázat és a deriválási szabályok a <a href="../03-derivalt/osszefoglalo.html">03-as Csalópapíron</a> — az integrálás ennek a megfordítása. A témakört <a href="terepkuldetes.html">A Valóság Összefoltozása</a> küldetés zárja.</p></div></div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-hazi.html"><span class="irany">← Előző</span><span class="hova">I.V.H. Kihallgató Terem</span></a>
+      <a class="kov" href="terepkuldetes.html"><span class="irany">Következő →</span><span class="hova">A Valóság Összefoltozása</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
