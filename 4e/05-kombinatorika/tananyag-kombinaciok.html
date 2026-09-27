@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Csapat, nem sorrend — kombinációk — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Kombinatorika</a> ›
+  <span class="itt">Csapat, nem sorrend — kombinációk — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Csapat, nem sorrend — kombinációk</h1>
+  <p class="alcim">Amikor a sorrend nem számít: <span class="math inline">\(\binom nk\)</span>, a döntési fa, pontosan és legalább, visszafelé számolás és a lottó.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Multiverzum Lottó · 4/5</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Nyalka Vili:</b> Az I.V.H. csak egy háromfős csapatot enged át a törölt idővonalról. Egy csapatban nincs első és utolsó: Véd-eb, Mini-Vili és én ugyanaz a csapat, akárhogy állunk. <b>Véd Vilmos:</b> És a lottószelvény? Ott is mindegy, milyen sorrendben húzzák ki a számokat? <b>Nagol:</b> Mindegy. Ezért kevesebb a lehetőség, mint a dobogón — pontosan annyiszor kevesebb, ahányféleképpen a kiválasztottak sorba állhatnak.</p></div>
+
+    <h2 id="s1">Amikor a sorrend nem számít</h2>
+
+    <p class="lead">Négy variánsból — A, B, C, D — hármat választunk ki. Ha számítana a sorrend, <span class="math inline">\(V_4^3=24\)</span> lehetőség volna. Csoportosítsuk a 24 rendezett hármast aszerint, <b>kik</b> vannak benne: minden csoport egy háromfős csapat, és egy csapat <span class="math inline">\(3!=6\)</span> sorrendben fordul elő.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 440 232" width="440" height="232" role="img" aria-label="A négy elemből képezhető 24 rendezett hármas négy oszlopba csoportosítva; minden oszlop egy háromelemű csapat hat sorrendje" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+      <rect x="16" y="10" width="88" height="26" rx="6" fill="#dbeafe" stroke="#1d4ed8"/>
+      <text x="60.0" y="28.0" font-size="13" fill="#1d4ed8" text-anchor="middle" font-weight="600">{A, B, C}</text>
+      <text x="60.0" y="60.0" font-size="13.5" fill="#0f172a" text-anchor="middle">ABC</text>
+      <text x="60.0" y="85.0" font-size="13.5" fill="#0f172a" text-anchor="middle">ACB</text>
+      <text x="60.0" y="110.0" font-size="13.5" fill="#0f172a" text-anchor="middle">BAC</text>
+      <text x="60.0" y="135.0" font-size="13.5" fill="#0f172a" text-anchor="middle">BCA</text>
+      <text x="60.0" y="160.0" font-size="13.5" fill="#0f172a" text-anchor="middle">CAB</text>
+      <text x="60.0" y="185.0" font-size="13.5" fill="#0f172a" text-anchor="middle">CBA</text>
+      <rect x="123" y="10" width="88" height="26" rx="6" fill="#dbeafe" stroke="#1d4ed8"/>
+      <text x="167.0" y="28.0" font-size="13" fill="#1d4ed8" text-anchor="middle" font-weight="600">{A, B, D}</text>
+      <text x="167.0" y="60.0" font-size="13.5" fill="#0f172a" text-anchor="middle">ABD</text>
+      <text x="167.0" y="85.0" font-size="13.5" fill="#0f172a" text-anchor="middle">ADB</text>
+      <text x="167.0" y="110.0" font-size="13.5" fill="#0f172a" text-anchor="middle">BAD</text>
+      <text x="167.0" y="135.0" font-size="13.5" fill="#0f172a" text-anchor="middle">BDA</text>
+      <text x="167.0" y="160.0" font-size="13.5" fill="#0f172a" text-anchor="middle">DAB</text>
+      <text x="167.0" y="185.0" font-size="13.5" fill="#0f172a" text-anchor="middle">DBA</text>
+      <line x1="113.5" y1="44" x2="113.5" y2="200" stroke="#94a3b8" stroke-dasharray="3 3"/>
+      <rect x="230" y="10" width="88" height="26" rx="6" fill="#dbeafe" stroke="#1d4ed8"/>
+      <text x="274.0" y="28.0" font-size="13" fill="#1d4ed8" text-anchor="middle" font-weight="600">{A, C, D}</text>
+      <text x="274.0" y="60.0" font-size="13.5" fill="#0f172a" text-anchor="middle">ACD</text>
+      <text x="274.0" y="85.0" font-size="13.5" fill="#0f172a" text-anchor="middle">ADC</text>
+      <text x="274.0" y="110.0" font-size="13.5" fill="#0f172a" text-anchor="middle">CAD</text>
+      <text x="274.0" y="135.0" font-size="13.5" fill="#0f172a" text-anchor="middle">CDA</text>
+      <text x="274.0" y="160.0" font-size="13.5" fill="#0f172a" text-anchor="middle">DAC</text>
+      <text x="274.0" y="185.0" font-size="13.5" fill="#0f172a" text-anchor="middle">DCA</text>
+      <line x1="220.5" y1="44" x2="220.5" y2="200" stroke="#94a3b8" stroke-dasharray="3 3"/>
+      <rect x="337" y="10" width="88" height="26" rx="6" fill="#dbeafe" stroke="#1d4ed8"/>
+      <text x="381.0" y="28.0" font-size="13" fill="#1d4ed8" text-anchor="middle" font-weight="600">{B, C, D}</text>
+      <text x="381.0" y="60.0" font-size="13.5" fill="#0f172a" text-anchor="middle">BCD</text>
+      <text x="381.0" y="85.0" font-size="13.5" fill="#0f172a" text-anchor="middle">BDC</text>
+      <text x="381.0" y="110.0" font-size="13.5" fill="#0f172a" text-anchor="middle">CBD</text>
+      <text x="381.0" y="135.0" font-size="13.5" fill="#0f172a" text-anchor="middle">CDB</text>
+      <text x="381.0" y="160.0" font-size="13.5" fill="#0f172a" text-anchor="middle">DBC</text>
+      <text x="381.0" y="185.0" font-size="13.5" fill="#0f172a" text-anchor="middle">DCB</text>
+      <line x1="327.5" y1="44" x2="327.5" y2="200" stroke="#94a3b8" stroke-dasharray="3 3"/>
+      <text x="220.0" y="222.0" font-size="12" fill="#475569" text-anchor="middle">24 rendezett hármas = 4 csapat × 3! sorrend</text>
+    </svg>
+    </div>
+    <p class="cap">A 24 rendezett hármas 4 oszlopban: egy oszlop egy csapat, 6 sorrenddel. Csapatból <span class="math inline">\(\frac{24}{3!}=4\)</span> van.</p>
+
+    <div class="doboz definicio" id="def-kombinacio">
+      <p class="cim"><span class="ikon">📗</span> Kombináció</p>
+      <p>Ha <span class="math inline">\(n\)</span> különböző elemből kiválasztunk <span class="math inline">\(k\)</span> darabot, és a kiválasztott elemek <b>sorrendje nem számít</b>, akkor az <span class="math inline">\(n\)</span> elem egy <span class="math inline">\(k\)</span>-adosztályú (ismétlés nélküli) <b>kombinációját</b> kapjuk. Egy kombináció tehát egy <span class="math inline">\(k\)</span> elemű részhalmaz.</p>
+    </div>
+
+    <div class="doboz tetel" id="tetel-kombinacio">
+      <p class="cim"><span class="ikon">📘</span> A kombinációk száma</p>
+      <p><span class="math display">\[C_n^k=\binom nk=\frac{V_n^k}{k!}=\frac{n!}{k!\,(n-k)!}.\]</span> A <span class="math inline">\(\binom nk\)</span> olvasása: „<span class="math inline">\(n\)</span> alatt a <span class="math inline">\(k\)</span>”. Számoláshoz a középső alak a legkényelmesebb: <span class="math inline">\(\binom{10}{3}=\frac{10\cdot9\cdot8}{3\cdot2\cdot1}=120\)</span>.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-kezfogas">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — kézfogás</p>
+      <p>A lottó előtt tíz variáns mindegyike kezet fog mindegyikkel. Hány kézfogás történik?</p><p>Egy kézfogás egy <b>pár</b>: A–B ugyanaz, mint B–A. Tehát <span class="math inline">\(\binom{10}{2}=\frac{10\cdot9}{2}=45\)</span>. Aki <span class="math inline">\(10\cdot9=90\)</span>-et mond, minden kézfogást kétszer számolt.</p>
+    </div>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ Egy koccintás egy pár, a sorrend nem számít: <span class=&quot;math inline&quot;>\(\binom62=\frac{6\cdot5}{2}=15\)</span>." data-nem="✘ Az A–B és a B–A koccintás ugyanaz: <span class=&quot;math inline&quot;>\(\binom62=\frac{6\cdot5}{2}=15\)</span> (a <span class=&quot;math inline&quot;>\(6\cdot5=30\)</span> mindegyiket kétszer számolja).">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy hatfős társaságban mindenki mindenkivel egyszer koccint. Hány koccintás hallatszik?</p>
+      <div class="opciok"><button><span class="math inline">\(6\)</span></button><button><span class="math inline">\(15\)</span></button><button><span class="math inline">\(30\)</span></button><button><span class="math inline">\(36\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Számít-e a sorrend?</h2>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 480 262" width="480" height="262" role="img" aria-label="Döntési fa: ha a sorrend nem számít, kombináció; ha számít és minden elemet sorba rakunk, permutáció; ha csak k elemet, variáció" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+      <defs><marker id="nyh" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0f172a"/></marker></defs>
+      <rect x="135" y="9" width="210" height="34" rx="17" fill="#fff7ed" stroke="#c2410c" stroke-width="1.4"/>
+      <text x="240.0" y="30.5" font-size="12.5" fill="#9a3412" text-anchor="middle" font-weight="600">Számít a sorrend?</text>
+      <line x1="170" y1="43" x2="92" y2="104" stroke="#0f172a" stroke-width="1.5" marker-end="url(#nyh)"/>
+      <text x="118.0" y="70.0" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">nem</text>
+      <line x1="310" y1="43" x2="340" y2="92" stroke="#0f172a" stroke-width="1.5" marker-end="url(#nyh)"/>
+      <text x="346.0" y="64.0" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">igen</text>
+      <rect x="12" y="110" width="144" height="62" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.4"/>
+      <text x="84.0" y="128.0" font-size="12.5" fill="#1d4ed8" text-anchor="middle" font-weight="600">KOMBINÁCIÓ</text>
+      <text x="84.0" y="146.0" font-size="12.5" fill="#0f172a" text-anchor="middle">n! / (k! (n − k)!)</text>
+      <text x="84.0" y="163.0" font-size="10.5" fill="#475569" text-anchor="middle">csapat, pár, lottó</text>
+      <rect x="235" y="93" width="210" height="34" rx="17" fill="#fff7ed" stroke="#c2410c" stroke-width="1.4"/>
+      <text x="340.0" y="114.5" font-size="12.5" fill="#9a3412" text-anchor="middle" font-weight="600">Minden elemet sorba rakunk?</text>
+      <line x1="292" y1="127" x2="262" y2="184" stroke="#0f172a" stroke-width="1.5" marker-end="url(#nyh)"/>
+      <text x="262.0" y="152.0" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">igen</text>
+      <line x1="390" y1="127" x2="410" y2="184" stroke="#0f172a" stroke-width="1.5" marker-end="url(#nyh)"/>
+      <text x="426.0" y="152.0" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">nem, csak k-t</text>
+      <rect x="178" y="190" width="144" height="62" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.4"/>
+      <text x="250.0" y="208.0" font-size="12.5" fill="#1d4ed8" text-anchor="middle" font-weight="600">PERMUTÁCIÓ</text>
+      <text x="250.0" y="226.0" font-size="12.5" fill="#0f172a" text-anchor="middle">n!</text>
+      <text x="250.0" y="243.0" font-size="10.5" fill="#475569" text-anchor="middle">egyformák: n! / (k₁! k₂! …)</text>
+      <rect x="332" y="190" width="144" height="62" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.4"/>
+      <text x="404.0" y="208.0" font-size="12.5" fill="#1d4ed8" text-anchor="middle" font-weight="600">VARIÁCIÓ</text>
+      <text x="404.0" y="226.0" font-size="12.5" fill="#0f172a" text-anchor="middle">n! / (n − k)!</text>
+      <text x="404.0" y="243.0" font-size="10.5" fill="#475569" text-anchor="middle">ismétlődhet: nᵏ</text>
+    </svg>
+    </div>
+    <p class="cap">Döntési fa: két kérdés dönti el, melyik eszköz kell.</p>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th>helyzet</th><th>számít a sorrend?</th><th>ismétlődhet?</th><th>eszköz</th><th>példa</th></tr><tr><td>mindenkit sorba állítunk</td><td>igen</td><td>nem</td><td>permutáció, <span class="math inline">\(n!\)</span></td><td>tabló: <span class="math inline">\(4!=24\)</span></td></tr><tr><td>néhányat kiválasztunk, helyezéssel</td><td>igen</td><td>nem</td><td>variáció, <span class="math inline">\(V_n^k\)</span></td><td>dobogó: <span class="math inline">\(V_{10}^3=720\)</span></td></tr><tr><td>minden helyre bármelyik jöhet</td><td>igen</td><td>igen</td><td>ismétléses variáció, <span class="math inline">\(n^k\)</span></td><td>PIN: <span class="math inline">\(10^4\)</span></td></tr><tr><td>néhányat kiválasztunk, csoportba</td><td>nem</td><td>nem</td><td>kombináció, <span class="math inline">\(\binom nk\)</span></td><td>kézfogás: <span class="math inline">\(\binom{10}2=45\)</span></td></tr></table></div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda — a „kiválaszt” szó csal</p>
+      <p>Vilmos minden feladatra, amelyben szerepel a <i>kiválaszt</i> szó, kombinációt számol. De ha a kiválasztottak <b>különböző szerepet</b> kapnak (elnök és titkár, arany és ezüst), a sorrend számít: variáció. És fordítva: ha „sorsolunk”, de csak egy csoportot kapunk (lottó), a sorrend nem számít. A kérdés mindig ez: <i>ha a kiválasztottak helyet cserélnek, más lesz-e az eredmény?</i></p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ Csapat, szerepek nélkül: a sorrend nem számít, <span class=&quot;math inline&quot;>\(\binom{20}{3}=\frac{20\cdot19\cdot18}{6}=1140\)</span>." data-nem="✘ A csapattagok egyenrangúak, a helycsere nem ad új csapatot: kombináció, <span class=&quot;math inline&quot;>\(\binom{20}3=1140\)</span>.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy 20 fős osztályból 3 tanulót küldenek el egy versenyre, egyenrangú csapattagként. Hányféleképpen tehetik meg?</p>
+      <div class="opciok"><button><span class="math inline">\(\binom{20}{3}=1140\)</span></button><button><span class="math inline">\(V_{20}^3=6840\)</span></button><button><span class="math inline">\(20^3=8000\)</span></button><button><span class="math inline">\(3^{20}\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Két csoportból — pontosan és legalább</h2>
+
+    <p class="lead">A Szvetkó-kampusz 10 lány és 8 fiú kadétja közül négyfős csapatot küld a Multiverzum Lottó döntőjébe. Hogy a sorrend nem számít, az biztos. A kérdés: hogyan kezeljük a feltételeket?</p>
+
+    <div class="doboz pelda" id="pelda-ket-csoport">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — pontosan kettő</p>
+      <p>Hányféleképpen állítható össze a csapat, ha <b>pontosan 2 lány</b> legyen benne?</p><p>Két egymás utáni döntés (szorzási szabály): a 2 lányt a 10 közül, a 2 fiút a 8 közül választjuk: <span class="math display">\[\binom{10}{2}\cdot\binom82=45\cdot28=1260.\]</span></p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-legalabb-egy">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — legalább egy</p>
+      <p>Hányféleképpen, ha <b>legalább egy lány</b> legyen a csapatban?</p><p>Összes mínusz rossz (lásd <a href="tananyag-szorzasi-szabaly.html#pelda-legalabb">A1</a>): az összes csapat <span class="math inline">\(\binom{18}{4}=3060\)</span>, a lány nélküli (csak fiú) csapat <span class="math inline">\(\binom84=70\)</span>. Tehát <span class="math inline">\(3060-70=2990\)</span>.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda — a fiúkról megfeledkezett</p>
+      <p>Vilmos a „pontosan 2 lány” feladatra <span class="math inline">\(\binom{10}2=45\)</span>-öt mondott. Csakhogy a csapat négyfős: a maradék két helyet fiúkkal kell kitölteni, és ezt <span class="math inline">\(\binom82\)</span>-féleképpen tehetjük meg. A két döntés egymás után jön, tehát szorzunk.</p>
+    </div>
+
+    <div class="doboz tetel" id="tetel-szimmetria">
+      <p class="cim"><span class="ikon">📘</span> Kiválasztani ugyanaz, mint kihagyni</p>
+      <p><span class="math display">\[\binom nk=\binom n{n-k}.\]</span> Ha <span class="math inline">\(n\)</span> elemből kiválasztunk <span class="math inline">\(k\)</span>-t, azzal egyúttal kiválasztottuk a kimaradó <span class="math inline">\(n-k\)</span>-t is. Számolásnál ez rövidít: <span class="math inline">\(\binom{18}{16}=\binom{18}{2}=153\)</span>.</p>
+    </div>
+
+    <h2 id="s4">Visszafelé — és a lottó</h2>
+
+    <div class="doboz pelda" id="pelda-visszafele">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — hány csapat indult?</p>
+      <p>Egy bajnokságon mindenki mindenkivel egyszer játszott, összesen 28 mérkőzés volt. Hány csapat indult?</p><p>Egy mérkőzés egy pár: <span class="math inline">\(\binom n2=\frac{n(n-1)}{2}=28\)</span>, azaz <span class="math inline">\(n(n-1)=56\)</span>. Két szomszédos egész szám szorzata 56: <span class="math inline">\(8\cdot7\)</span>, tehát <span class="math inline">\(n=8\)</span> csapat indult.</p>
+    </div>
+
+    <div class="doboz erdekesseg" id="erdekesseg-lotto">
+      <p class="cim"><span class="ikon">💡</span> A lottó</p>
+      <p>A hazai Loto 7/39-ben 39 számból 7-et húznak ki, és a sorrend nem számít. A lehetséges húzások száma <span class="math display">\[\binom{39}{7}=15\,380\,937.\]</span> A magyar ötöslottóban (90-ből 5): <span class="math inline">\(\binom{90}{5}=43\,949\,268\)</span>. Ha egy szelvényt töltesz ki, mekkora esélyed van a telitalálatra? Erre a következő fejezet, a valószínűségszámítás felel.</p>
+    </div>
+
+    <p class="lead">⚔️ <b>Az ötösért:</b> rácsút — hányféleképpen olvasható ki egy szó egy betűtáblázatból — <a href="feladatok-kombinatorika.html#nehez-3">Zsoldos-lista, nehéz 3</a>.</p>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-kombinatorika.html#alap-10">🐶 Véd-eb nyomravezető <span class="cimke">alap 10–12</span></a><a class="sav bruno" href="feladatok-kombinatorika.html#kozep-8">⚔️ Maximális erőbedobás <span class="cimke">közép 8–10</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Nyalka Vili:</b> Összeállt a csapat. Az I.V.H.-archívumban viszont találtam egy különös háromszöget, tele ezekkel a számokkal. <b>Nagol:</b> A Pascal-háromszög. A kombinációk száma benne van — és a hatványozást is elvégzi helyettünk.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-variaciok.html"><span class="irany">← Előző</span><span class="hova">Variációk</span></a>
+      <a class="kov" href="tananyag-binomialis-tetel.html"><span class="irany">Következő →</span><span class="hova">A binomiális tétel</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

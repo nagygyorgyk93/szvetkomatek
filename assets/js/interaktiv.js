@@ -11,6 +11,8 @@
  *            (a meredekség nem függ C-től)
  *   osszeg — a polinom az f, a data-ab="a,b" intervallumon n téglalapos alsó és felső közelítő összeg;
  *            data-pontos = a pontos terület szövege
+ *   pascal — Pascal-háromszög (tananyag_common.svg_pascal): a csúszka az n-edik sort (.iv-psor[data-n])
+ *            emeli ki; kijelző: (a + b)^n kifejtése és a sorösszeg 2^n (2026-09-26)
  * A függvény polinom: data-poly="a0,a1,a2,…" (a0 + a1·x + a2·x² + …) — nincs eval.
  * Koordináták: data-xr="x0,x1", data-yr="y0,y1", data-w, data-h (a svg_fuggvenyek() margóival).
  */
@@ -43,8 +45,53 @@
     return s.replace(".", ",").replace("-", "−");
   }
 
+  var FELSO = "⁰¹²³⁴⁵⁶⁷⁸⁹";
+  function felso(n) {
+    return String(n).split("").map(function (c) { return FELSO.charAt(+c); }).join("");
+  }
+  function binom(n, k) {
+    var r = 1;
+    for (var i = 1; i <= k; i++) r = r * (n - k + i) / i;
+    return Math.round(r);
+  }
+  function kifejtes(n) {                     // (a + b)^n — ugyanaz, mint a tananyag_common.pascal_kifejtes()
+    var tagok = [];
+    for (var k = 0; k <= n; k++) {
+      var c = binom(n, k), ea = n - k, eb = k, t = (c === 1 && (ea || eb)) ? "" : String(c);
+      if (ea) t += "a" + (ea > 1 ? felso(ea) : "");
+      if (eb) t += "b" + (eb > 1 ? felso(eb) : "");
+      tagok.push(t);
+    }
+    return tagok.join(" + ");
+  }
+  function pascal(doboz) {
+    var csuszka = doboz.querySelector("input[type=range]");
+    var kiir = doboz.querySelector(".iv-ertek");
+    var kijelzo = doboz.querySelector(".iv-kijelzo");
+    var sorok = doboz.querySelectorAll(".iv-psor");
+    if (!csuszka || !sorok.length) return;
+    function frissit() {
+      var n = Math.round(parseFloat(csuszka.value));
+      for (var i = 0; i < sorok.length; i++) {
+        var ki = parseInt(sorok[i].getAttribute("data-n"), 10) === n;
+        var kor = sorok[i].querySelectorAll("circle"), szam = sorok[i].querySelectorAll("text");
+        for (var j = 0; j < kor.length; j++) {
+          kor[j].setAttribute("fill", ki ? "#2563eb" : "#ffffff");
+          kor[j].setAttribute("stroke", ki ? "#1d4ed8" : "#94a3b8");
+        }
+        for (var t = 1; t < szam.length; t++) szam[t].setAttribute("fill", ki ? "#ffffff" : "#0f172a");
+      }
+      kiir.textContent = String(n);
+      kijelzo.textContent = "n = " + n + ":  (a + b)" + felso(n) + " = " + kifejtes(n) + ";  a sor összege "
+        + Math.pow(2, n) + " = 2" + felso(n) + ".";
+    }
+    csuszka.addEventListener("input", frissit);
+    frissit();
+  }
+
   function indit(doboz) {
     var mod = doboz.getAttribute("data-mod");
+    if (mod === "pascal") { pascal(doboz); return; }
     var a = szamok(doboz.getAttribute("data-poly"));
     var d1 = derival(a), d2 = derival(d1);
     var xr = szamok(doboz.getAttribute("data-xr")), yr = szamok(doboz.getAttribute("data-yr"));

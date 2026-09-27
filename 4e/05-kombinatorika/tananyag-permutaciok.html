@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sorba állítva — permutációk — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Kombinatorika</a> ›
+  <span class="itt">Sorba állítva — permutációk — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Sorba állítva — permutációk</h1>
+  <p class="alcim">A faktoriális, a permutációk száma, feltételes sorrendek (blokk, nulla elöl) és az ismétléses permutáció.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Multiverzum Lottó · 2/5</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Nyalka Vili:</b> A lottó előtt minden variáns fotót kap a Multiverzum-tablóra — egy sorban, egymás mellett. Nálam a sorrend szent. <b>Véd Vilmos:</b> Minek számolni, úgyis mind egyformák vagyunk. <b>Nagol:</b> Épp ezért kell számolni. Ha két Vilmos egyforma, a helycseréjük nem ad új képet — ezt is figyelembe vesszük.</p></div>
+
+    <h2 id="s1">Hányféle sorrend?</h2>
+
+    <p class="lead">Három variáns — <b>A</b>, <b>B</b> és <b>C</b> — áll fel a tablóhoz. Soroljuk fel a lehetséges sorrendeket <b>rendszerezetten</b>: előbb azokat, amelyekben A áll elöl, aztán amelyekben B, végül C.</p>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th>ki áll elöl?</th><th>sorrendek</th></tr><tr><td>A</td><td>ABC, ACB</td></tr><tr><td>B</td><td>BAC, BCA</td></tr><tr><td>C</td><td>CAB, CBA</td></tr></table></div>
+
+    <p>A szorzási szabállyal: az első helyre 3, a másodikra 2, a harmadikra 1 variáns jut: <span class="math inline">\(3\cdot2\cdot1=6\)</span>. Négy variánsnál <span class="math inline">\(4\cdot3\cdot2\cdot1=24\)</span>.</p>
+
+    <div class="doboz definicio" id="def-faktorialis">
+      <p class="cim"><span class="ikon">📗</span> Faktoriális</p>
+      <p><span class="math inline">\(n!\)</span> (olvasd: <i>n faktoriális</i>) az első <span class="math inline">\(n\)</span> pozitív egész szám szorzata: <span class="math display">\[n!=n\cdot(n-1)\cdot\ldots\cdot2\cdot1.\]</span> Megállapodás szerint <span class="math inline">\(0!=1\)</span>, és <span class="math inline">\(1!=1\)</span>.</p>
+    </div>
+
+    <div class="doboz definicio" id="def-permutacio">
+      <p class="cim"><span class="ikon">📗</span> Permutáció</p>
+      <p><span class="math inline">\(n\)</span> különböző elem egy sorba rendezését az elemek egy <b>permutációjának</b> nevezzük.</p>
+    </div>
+
+    <div class="doboz tetel" id="tetel-permutacio">
+      <p class="cim"><span class="ikon">📘</span> A permutációk száma</p>
+      <p><span class="math inline">\(n\)</span> különböző elem permutációinak száma <span class="math display">\[P_n=n!\]</span> Indoklás: az első helyre <span class="math inline">\(n\)</span>, a másodikra <span class="math inline">\(n-1\)</span>, …, az utolsóra 1 elem jut (szorzási szabály).</p>
+    </div>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th><span class="math inline">\(n\)</span></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th></tr><tr><td><span class="math inline">\(n!\)</span></td><td>1</td><td>2</td><td>6</td><td>24</td><td>120</td><td>720</td><td>5040</td><td>40&#8239;320</td><td>362&#8239;880</td><td>3&#8239;628&#8239;800</td></tr></table></div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Milyen gyorsan nő?</p>
+      <p><span class="math inline">\(10!=3\,628\,800\)</span>: tíz embert több mint hárommillió sorrendben lehet egy padra leültetni. Ha másodpercenként egy új sorrendet próbálnánk ki, 42 napig tartana.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ <span class=&quot;math inline&quot;>\(4!=4\cdot3\cdot2\cdot1=24\)</span>." data-nem="✘ Az első helyre 4, a másodikra 3, a harmadikra 2, az utolsóra 1 variáns jut: <span class=&quot;math inline&quot;>\(4!=24\)</span>. A <span class=&quot;math inline&quot;>\(4^2=16\)</span> és a <span class=&quot;math inline&quot;>\(4\cdot3=12\)</span> nem veszi figyelembe az összes helyet.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Hányféle sorrendben állhat fel 4 variáns egy sorban?</p>
+      <div class="opciok"><button><span class="math inline">\(24\)</span></button><button><span class="math inline">\(16\)</span></button><button><span class="math inline">\(12\)</span></button><button><span class="math inline">\(10\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Feltételes sorrendek</h2>
+
+    <p class="lead">A feladatok ritkán kérik az összes sorrendet; gyakoribb, hogy egy <b>feltétel</b> szűkíti őket. A módszer mindig ugyanaz: előbb a feltételt teljesítjük, a többi hely utána jön.</p>
+
+    <div class="doboz pelda" id="pelda-blokk">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — három feltétel</p>
+      <ol class="reszfeladatok"><li>Öt variáns áll a tablóhoz, Nyalka Vili mindenképp az első helyen. A maradék négy a többi négy helyen: <span class="math inline">\(4!=24\)</span> sorrend.</li><li>Öt variáns áll sorba, és Véd-eb meg Mini-Vili ragaszkodik hozzá, hogy <b>egymás mellett</b> álljanak. Kössük össze őket egy <b>blokká</b>: így 4 egységet rendezünk sorba (<span class="math inline">\(4!\)</span> módon), a blokkon belül pedig a két tag kétféle sorrendben állhat (<span class="math inline">\(2!\)</span>). Összesen <span class="math inline">\(2!\cdot4!=48\)</span>.</li><li>Hány négyjegyű szám írható fel a 0, 1, 2, 3 számjegyekből, ha mindegyiket pontosan egyszer használjuk? A <span class="math inline">\(4!=24\)</span> sorrendből azok rosszak, amelyek 0-val kezdődnek — ilyenből <span class="math inline">\(3!=6\)</span> van. Tehát <span class="math inline">\(24-6=18\)</span>. (Másként: az első jegy 3-féle, a többi <span class="math inline">\(3!\)</span> módon: <span class="math inline">\(3\cdot3!=18\)</span>.)</li></ol>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda — a blokk belseje</p>
+      <p>Vilmos a blokkos feladatra <span class="math inline">\(4!=24\)</span>-et mondott. Elfelejtette, hogy a blokk belsejében is van sorrend: Véd-eb állhat Mini-Vili bal <i>és</i> jobb oldalán is. A helyes eredmény <span class="math inline">\(2\cdot24=48\)</span>.</p>
+    </div>
+
+    <p class="lead">⚔️ <b>Az ötösért:</b> hányadik lesz egy szó, ha a betűinek összes sorrendjét ábécérendbe szedjük — <a href="feladatok-kombinatorika.html#nehez-1">Zsoldos-lista, nehéz 1</a>.</p>
+
+    <h2 id="s3">Ha vannak egyforma elemek</h2>
+
+    <p class="lead">Hányféle betűsort rakhatunk ki az <b>ANNA</b> szó betűiből? Ha a négy betű különböző volna, <span class="math inline">\(4!=24\)</span> sorrend lenne. A két A és a két N azonban egyforma: ha felcseréljük őket, ugyanazt a betűsort kapjuk.</p>
+
+    <p>Az összes különböző betűsor: <span class="kbd">AANN</span> <span class="kbd">ANAN</span> <span class="kbd">ANNA</span> <span class="kbd">NAAN</span> <span class="kbd">NANA</span> <span class="kbd">NNAA</span> — hat darab. Mindegyiket <span class="math inline">\(2!\cdot2!=4\)</span>-szer számoltuk volna (a két A két sorrendje, a két N két sorrendje), ezért <span class="math display">\[\frac{4!}{2!\cdot2!}=\frac{24}{4}=6.\]</span></p>
+
+    <div class="doboz tetel" id="tetel-ismetleses-permutacio">
+      <p class="cim"><span class="ikon">📘</span> Ismétléses permutáció</p>
+      <p>Ha <span class="math inline">\(n\)</span> elem között az egyes fajtákból <span class="math inline">\(k_1\)</span>, <span class="math inline">\(k_2\)</span>, …, <span class="math inline">\(k_r\)</span> darab egyforma van (<span class="math inline">\(k_1+k_2+\ldots+k_r=n\)</span>), akkor az elemek különböző sorrendjeinek — <b>ismétléses permutációinak</b> — száma <span class="math display">\[P_n^{k_1,k_2,\ldots,k_r}=\frac{n!}{k_1!\cdot k_2!\cdot\ldots\cdot k_r!}.\]</span> Az egyszer előforduló elemek <span class="math inline">\(1!=1\)</span>-gyel szerepelnek, ezeket nem kell kiírni.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-ismetleses">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — MISSISSIPPI és a golyók</p>
+      <p>A MISSISSIPPI szó 11 betűjében az I négyszer, az S négyszer, a P kétszer, az M egyszer fordul elő: <span class="math display">\[\frac{11!}{4!\cdot4!\cdot2!}=34\,650\ \text{betűsor}.\]</span></p><p>Négy piros, két kék és egy fehér golyó egy sorban (az egyforma színűeket nem különböztetjük meg): <span class="math display">\[\frac{7!}{4!\cdot2!}=\frac{5040}{48}=105\ \text{sorrend}.\]</span></p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda — csak az egyik ismétlődést vette észre</p>
+      <p>Vilmos az ANNA-nál csak a két A miatt osztott: <span class="math inline">\(\frac{24}{2}=12\)</span>. <b>Minden</b> ismétlődő betűfajta faktoriálisával osztani kell, itt <span class="math inline">\(2!\cdot2!\)</span>-sal.</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Az ékezet is betű</p>
+      <p>A magyar ábécében az A és az Á két külön betű, ugyanígy az O és az Ó, az E és az É. Az ÁRAD szó betűi tehát mind különbözők: <span class="math inline">\(4!=24\)</span> betűsor, nem <span class="math inline">\(\frac{4!}{2!}=12\)</span>. Ha egy feladat ékezetes szót ad, és nem mondja, hogy az ékezetet figyelmen kívül hagyjuk, az ékezetes betű külön betű.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ <span class=&quot;math inline&quot;>\(\frac{4!}{2!\cdot2!}=6\)</span> — felsorolva: AANN, ANAN, ANNA, NAAN, NANA, NNAA." data-nem="✘ Mindkét ismétlődő betűfajtával osztani kell: <span class=&quot;math inline&quot;>\(\frac{4!}{2!\cdot2!}=6\)</span>.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Hány különböző betűsor rakható ki az ANNA szó betűiből?</p>
+      <div class="opciok"><button><span class="math inline">\(6\)</span></button><button><span class="math inline">\(12\)</span></button><button><span class="math inline">\(24\)</span></button><button><span class="math inline">\(4\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Számjegyek és a nulla</h2>
+
+    <div class="doboz pelda" id="pelda-szamjegy-ismetles">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — ismétlődő számjegyek</p>
+      <p>Hány hatjegyű szám írható fel az 1, 1, 1, 2, 2, 3 számjegyek mindegyikének felhasználásával?</p><p>Ismétléses permutáció: <span class="math inline">\(\dfrac{6!}{3!\cdot2!}=\dfrac{720}{12}=60\)</span>. (Nincs 0 a jegyek között, az első helyre nem kell figyelni.)</p><p>Ha a jegyek között 0 is van — például 0, 0, 1, 2 —, előbb az összes sorrendet számoljuk ki (<span class="math inline">\(\frac{4!}{2!}=12\)</span>), majd levonjuk a 0-val kezdődőket (a maradék 0, 1, 2 sorrendjei: <span class="math inline">\(3!=6\)</span>). Tehát <span class="math inline">\(12-6=6\)</span> négyjegyű szám van: 1002, 1020, 1200, 2001, 2010, 2100.</p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-kombinatorika.html#alap-4">🐶 Véd-eb nyomravezető <span class="cimke">alap 4–6</span></a><a class="sav bruno" href="feladatok-kombinatorika.html#kozep-3">⚔️ Maximális erőbedobás <span class="cimke">közép 3–5</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Nyalka Vili:</b> A tabló kész. A díjátadón viszont csak három hely van a dobogón — nem áll fel mindenki. <b>Nagol:</b> Akkor nem mindenkit rakunk sorba, csak kiválasztunk néhányat, sorrendben. Ez a variáció.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-szorzasi-szabaly.html"><span class="irany">← Előző</span><span class="hova">A szorzási és az összeadási szabály</span></a>
+      <a class="kov" href="tananyag-variaciok.html"><span class="irany">Következő →</span><span class="hova">Variációk</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

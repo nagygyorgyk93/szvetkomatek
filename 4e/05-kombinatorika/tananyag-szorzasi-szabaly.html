@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ÉS vagy VAGY — a szorzási és az összeadási szabály — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Kombinatorika</a> ›
+  <span class="itt">ÉS vagy VAGY — a szorzási és az összeadási szabály — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>ÉS vagy VAGY — a szorzási és az összeadási szabály</h1>
+  <p class="alcim">Fadiagram, egymás utáni és egymást kizáró döntések, a korlátozott hely és a komplementer: összes mínusz rossz.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Multiverzum Lottó · 1/5</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Nyalka Vili:</b> Üdv a <i>Multiverzum Lottón</i>! Az I.V.H. ma sorsolja ki, melyik Vilmos-variáns marad meg a törölt idővonalon — és én nem akarok rosszul öltözve kiesni. Három zakót hoztam és két nadrágot. Hányféle szettben léphetek színpadra? <b>Véd Vilmos:</b> 🌮 <i>Burek-matek:</i> három meg kettő, az öt. <b>Nagol:</b> Minden zakóhoz mindkét nadrág felvehető. Az hat. <b>SZVETI:</b> Végre egy Vilmos, akinek van ízlése. A másikat, kérem, ne számoltassátok.</p></div>
+
+    <h2 id="s1">Egymás utáni döntések</h2>
+
+    <p class="lead">Nyalka Vili két lépésben dönt: <b>először</b> zakót választ (3 lehetőség), <b>utána</b> nadrágot (2 lehetőség). Rajzoljuk le a döntéseket egy <b>fadiagramon</b>: minden zakóból két ág indul.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 470 262" width="470" height="262" role="img" aria-label="Fadiagram: Vili 3 zakója közül mindegyikhez 2 nadrág választható, összesen 6 szett" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+      <circle cx="34" cy="131" r="6" fill="#0f172a"/>
+      <text x="34.0" y="112.0" font-size="12" fill="#0f172a" text-anchor="middle" font-weight="600">Vili</text>
+      <line x1="40" y1="131" x2="140" y2="51" stroke="#0f172a" stroke-width="1.6"/>
+      <circle cx="146" cy="51" r="5" fill="#1d4ed8"/>
+      <text x="146.0" y="40.0" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="600">fekete zakó</text>
+      <line x1="151" y1="51" x2="262" y2="34" stroke="#0f172a" stroke-width="1.3"/>
+      <circle cx="267" cy="34" r="4.5" fill="#047857"/>
+      <text x="277.0" y="38.0" font-size="12" fill="#0f172a" text-anchor="start">1. fekete + csíkos</text>
+      <line x1="151" y1="51" x2="262" y2="68" stroke="#0f172a" stroke-width="1.3"/>
+      <circle cx="267" cy="68" r="4.5" fill="#047857"/>
+      <text x="277.0" y="72.0" font-size="12" fill="#0f172a" text-anchor="start">2. fekete + sima</text>
+      <line x1="40" y1="131" x2="140" y2="131" stroke="#0f172a" stroke-width="1.6"/>
+      <circle cx="146" cy="131" r="5" fill="#1d4ed8"/>
+      <text x="146.0" y="120.0" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="600">kék zakó</text>
+      <line x1="151" y1="131" x2="262" y2="114" stroke="#0f172a" stroke-width="1.3"/>
+      <circle cx="267" cy="114" r="4.5" fill="#047857"/>
+      <text x="277.0" y="118.0" font-size="12" fill="#0f172a" text-anchor="start">3. kék + csíkos</text>
+      <line x1="151" y1="131" x2="262" y2="148" stroke="#0f172a" stroke-width="1.3"/>
+      <circle cx="267" cy="148" r="4.5" fill="#047857"/>
+      <text x="277.0" y="152.0" font-size="12" fill="#0f172a" text-anchor="start">4. kék + sima</text>
+      <line x1="40" y1="131" x2="140" y2="211" stroke="#0f172a" stroke-width="1.6"/>
+      <circle cx="146" cy="211" r="5" fill="#1d4ed8"/>
+      <text x="146.0" y="200.0" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="600">bordó zakó</text>
+      <line x1="151" y1="211" x2="262" y2="194" stroke="#0f172a" stroke-width="1.3"/>
+      <circle cx="267" cy="194" r="4.5" fill="#047857"/>
+      <text x="277.0" y="198.0" font-size="12" fill="#0f172a" text-anchor="start">5. bordó + csíkos</text>
+      <line x1="151" y1="211" x2="262" y2="228" stroke="#0f172a" stroke-width="1.3"/>
+      <circle cx="267" cy="228" r="4.5" fill="#047857"/>
+      <text x="277.0" y="232.0" font-size="12" fill="#0f172a" text-anchor="start">6. bordó + sima</text>
+      <text x="146.0" y="256.0" font-size="11" fill="#475569" text-anchor="middle">1. döntés: 3 lehetőség</text>
+      <text x="330.0" y="256.0" font-size="11" fill="#475569" text-anchor="middle">2. döntés: 2 lehetőség → 3 · 2 = 6</text>
+    </svg>
+    </div>
+    <p class="cap">Fadiagram: 3 zakó, mindegyikhez 2 nadrág — a végén <span class="math inline">\(3\cdot2=6\)</span> szett.</p>
+
+    <div class="doboz tetel" id="tetel-szorzasi-szabaly">
+      <p class="cim"><span class="ikon">📘</span> A szorzási szabály</p>
+      <p>Ha egy választás egymás után következő lépésekből áll, és az első lépésben <span class="math inline">\(n_1\)</span>, a másodikban <span class="math inline">\(n_2\)</span>, …, a <span class="math inline">\(k\)</span>-adikban <span class="math inline">\(n_k\)</span> lehetőség van (és ezek <i>száma</i> nem függ attól, mit választottunk korábban), akkor az összes lehetőség száma <span class="math display">\[n_1\cdot n_2\cdot\ldots\cdot n_k.\]</span> Röviden: <b>ÉS → szorzás</b>.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-azonosito">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — az azonosító</p>
+      <p>Az I.V.H. minden variánsnak azonosítót ad: két betű (a 26 betűs angol ábécéből), utána három számjegy, például <span class="kbd">VV-042</span>. Hány azonosító osztható ki?</p><p>Öt egymás utáni választás, és a betűk meg a számjegyek ismétlődhetnek: <span class="math display">\[26\cdot26\cdot10\cdot10\cdot10=676\,000.\]</span></p>
+    </div>
+
+    <h2 id="s2">Egymást kizáró esetek</h2>
+
+    <p class="lead">Nyalka Vili megéhezett. A büfében <b>vagy</b> burekot kér (4 féle van), <b>vagy</b> pizzaszeletet (5 féle) — a kettő közül csak az egyiket. Itt nincs második lépés: a lehetőségek <b>kizárják egymást</b>, ezért összeadjuk őket: <span class="math inline">\(4+5=9\)</span>.</p>
+
+    <div class="doboz tetel" id="tetel-osszeadasi-szabaly">
+      <p class="cim"><span class="ikon">📘</span> Az összeadási szabály</p>
+      <p>Ha a választás egymást kizáró esetekre bomlik, és az egyes esetekben <span class="math inline">\(n_1\)</span>, <span class="math inline">\(n_2\)</span>, …, <span class="math inline">\(n_k\)</span> lehetőség van, akkor az összes lehetőség száma <span class="math display">\[n_1+n_2+\ldots+n_k.\]</span> Röviden: <b>VAGY → összeadás</b>.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-rovid-kod">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — rövid kódok</p>
+      <p>Egy tárolórekesz kódja kétjegyű <b>vagy</b> háromjegyű, és csak az 1, 2, 3, 4, 5 számjegyeket használja (ezek ismétlődhetnek). Hány kód lehetséges?</p><p>Két eset, és mindkettőn belül a szorzási szabály: kétjegyű kódból <span class="math inline">\(5\cdot5=25\)</span>, háromjegyűből <span class="math inline">\(5\cdot5\cdot5=125\)</span> van. Összesen <span class="math inline">\(25+125=150\)</span>.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda — ÉS vagy VAGY?</p>
+      <p>Vilmos szerint 3 zakó és 2 nadrág 5 szett. Nem: a zakó <b>és</b> a nadrág két egymás utáni döntés, tehát szorzunk. Fordítva is lehet hibázni: ha <b>vagy</b> burek, <b>vagy</b> pizza, akkor nincs „burek és pizza” pár, tehát nem szorzunk. Kérdezd meg magadtól: <i>egymás után</i> döntök, vagy <i>egymás helyett</i>?</p>
+    </div>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ Két egymás utáni döntés: <span class=&quot;math inline&quot;>\(4\cdot3=12\)</span>." data-nem="✘ Az ing ÉS a nyakkendő két egymás utáni döntés: szorzás, <span class=&quot;math inline&quot;>\(4\cdot3=12\)</span>. Összeadni csak egymást kizáró eseteket szabad.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Nyalka Vilinek 4 inge és 3 nyakkendője van. Hányféleképpen választhat egy inget és egy nyakkendőt?</p>
+      <div class="opciok"><button><span class="math inline">\(3^4=81\)</span></button><button><span class="math inline">\(12\)</span></button><button><span class="math inline">\(7\)</span></button><button><span class="math inline">\(4^3=64\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Ha az első hely korlátoz</h2>
+
+    <p class="lead">Hány háromjegyű szám van? A számjegy tízféle lehet, de az <b>első helyen nem állhat 0</b> (a 042 nem háromjegyű). Az első helyre 9, a másodikra és a harmadikra 10–10 lehetőség jut: <span class="math inline">\(9\cdot10\cdot10=900\)</span>.</p>
+
+    <div class="doboz pelda" id="pelda-harmjegyu">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — különböző számjegyekkel</p>
+      <p>Hány olyan háromjegyű szám van, amelynek a számjegyei különbözők?</p><p>A <b>korlátozott hellyel kezdünk</b>: az első jegy 9-féle (nem 0). A második bármi lehet, ami még nem szerepelt — a 0 is —, ez 9-féle; a harmadik 8-féle. Összesen <span class="math inline">\(9\cdot9\cdot8=648\)</span>.</p><p>Hogy konkrétan melyik jegy került az első helyre, az a második helyen a lehetőségek <i>számán</i> nem változtat — ezért működik a szorzási szabály.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda — a nulla előre tolakszik</p>
+      <p>Vilmos így számolt: „a jegyek különbözők, tehát <span class="math inline">\(10\cdot9\cdot8=720\)</span>.” Ebbe beleszámolta a 012-t, a 098-at és a társaikat is, amelyek nem háromjegyűek. A helyes sorrend: <b>előbb a korlátozott hely</b> (itt az első), utána a többi.</p>
+    </div>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Az első jegy 9-féle (nem 0), a második 9-féle (a 0 már állhat itt, csak az első jegy nem ismétlődhet): <span class=&quot;math inline&quot;>\(9\cdot9=81\)</span>." data-nem="✘ Az első helyen nem lehet 0 (9 lehetőség), a másodikon bármi, ami különbözik az elsőtől (9 lehetőség): <span class=&quot;math inline&quot;>\(9\cdot9=81\)</span>.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Hány olyan kétjegyű szám van, amelynek a két számjegye különböző?</p>
+      <div class="opciok"><button><span class="math inline">\(100\)</span></button><button><span class="math inline">\(72\)</span></button><button><span class="math inline">\(81\)</span></button><button><span class="math inline">\(90\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Összes mínusz rossz</h2>
+
+    <p class="lead">Hány olyan háromjegyű szám van, amelyben <b>legalább egy</b> 0 számjegy szerepel? Közvetlenül sok eset van (egy 0-s, két 0-s, és az is számít, hol állnak). Egyszerűbb a <b>fordított</b> kérdés: hány háromjegyű számban <b>nincs</b> 0?</p>
+
+    <div class="doboz pelda" id="pelda-legalabb">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — legalább egy nulla</p>
+      <p>Háromjegyű szám, amelyben nincs 0: mindhárom jegy 9-féle (1-től 9-ig), tehát <span class="math inline">\(9^3=729\)</span> ilyen szám van. Az összes háromjegyű szám 900, így legalább egy 0 <span class="math display">\[900-729=171\]</span> számban szerepel.</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Miért jó a komplementer?</p>
+      <p>A „legalább egy” kérdésnél a rossz eset (<i>egy sem</i>) egyetlen, egyszerű eset, a jók viszont sokfélék. A valószínűségszámításban (06) ugyanez a trükk jön vissza: <span class="math inline">\(P(\text{legalább egy})=1-P(\text{egy sem})\)</span>.</p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-kombinatorika.html#alap-1">🐶 Véd-eb nyomravezető <span class="cimke">alap 1–3</span></a><a class="sav bruno" href="feladatok-kombinatorika.html#kozep-1">⚔️ Maximális erőbedobás <span class="cimke">közép 1–2</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Nyalka Vili:</b> A ruhatár rendben. Most sorba kell állnunk a Multiverzum-tablóhoz — és ott az a kérdés, <i>ki hányadik</i>. <b>Nagol:</b> Ugyanaz a szorzási szabály, csak kap egy új jelet: a felkiáltójelet.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">Kombinatorika — áttekintés</span></a>
+      <a class="kov" href="tananyag-permutaciok.html"><span class="irany">Következő →</span><span class="hova">Permutációk</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

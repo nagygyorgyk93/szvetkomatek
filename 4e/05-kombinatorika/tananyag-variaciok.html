@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dobogó és PIN-kód — variációk — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Kombinatorika</a> ›
+  <span class="itt">Dobogó és PIN-kód — variációk — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Dobogó és PIN-kód — variációk</h1>
+  <p class="alcim">Ismétlés nélküli és ismétléses variáció, számjegyes feladatok és az esetszétválasztás.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">Multiverzum Lottó · 3/5</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Nyalka Vili:</b> A Multiverzum Lottó díjátadóján dobogó áll: arany, ezüst, bronz. Tíz variáns versenyez, és a szmokingomhoz csak az arany illik. <b>Véd Vilmos:</b> A nyeremény egy I.V.H.-széfben van, négyjegyű PIN-kóddal. Kitaláljuk? <b>Nagol:</b> Előbb számoljuk ki, hány próbálkozás kellene. A két kérdés rokon: kiválasztunk néhány elemet, és <i>számít a sorrend</i>.</p></div>
+
+    <h2 id="s1">Kiválasztás, ahol számít a sorrend</h2>
+
+    <p class="lead">A tíz variánsból hányféleképpen alakulhat a dobogó? Az aranyérmes 10-féle lehet, az ezüstérmes a maradék 9 közül, a bronzérmes a maradék 8 közül kerül ki: <span class="math inline">\(10\cdot9\cdot8=720\)</span>. Nem rakjuk sorba mind a tízet — csak hármat választunk ki, <b>sorrendben</b>.</p>
+
+    <div class="doboz definicio" id="def-variacio">
+      <p class="cim"><span class="ikon">📗</span> Variáció</p>
+      <p>Ha <span class="math inline">\(n\)</span> különböző elemből kiválasztunk <span class="math inline">\(k\)</span> darabot (<span class="math inline">\(k\le n\)</span>), és a kiválasztott elemek <b>sorrendje is számít</b>, akkor az <span class="math inline">\(n\)</span> elem egy <span class="math inline">\(k\)</span>-adosztályú (ismétlés nélküli) <b>variációját</b> kapjuk.</p>
+    </div>
+
+    <div class="doboz tetel" id="tetel-variacio">
+      <p class="cim"><span class="ikon">📘</span> Az ismétlés nélküli variációk száma</p>
+      <p><span class="math display">\[V_n^k=n\cdot(n-1)\cdot\ldots\cdot(n-k+1)=\frac{n!}{(n-k)!}.\]</span> A szorzatnak <span class="math inline">\(k\)</span> tényezője van. Ha <span class="math inline">\(k=n\)</span>, minden elemet sorba rakunk: <span class="math inline">\(V_n^n=n!=P_n\)</span> — a permutáció a variáció speciális esete.</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Jelölés a szerb tankönyvben</p>
+      <p>A szerb tankönyvek és feladatgyűjtemények fordítva írják az indexeket: <span class="math inline">\(V_k^n\)</span> (felül az elemek száma, alul a kiválasztottaké). A jelentés ugyanaz — csak olvasd el figyelmesen, melyik szám melyik.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ Hármat választunk ki, és számít, ki hányadik: <span class=&quot;math inline&quot;>\(V_8^3=336\)</span>." data-nem="✘ A dobogón számít a sorrend, és egy versenyző csak egy érmet kaphat: <span class=&quot;math inline&quot;>\(V_8^3=8\cdot7\cdot6=336\)</span>.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy 8 fős döntőből hányféle lehet az érmesek (arany, ezüst, bronz) sorrendje?</p>
+      <div class="opciok"><button><span class="math inline">\(8\cdot7\cdot6=336\)</span></button><button><span class="math inline">\(\binom83=56\)</span></button><button><span class="math inline">\(8^3=512\)</span></button><button><span class="math inline">\(3!=6\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Ha egy elem többször is választható</h2>
+
+    <p class="lead">A széf PIN-kódja négy számjegyből áll, és a számjegyek <b>ismétlődhetnek</b> (az 1111 is jó kód). Most minden helyre mind a tíz számjegy kerülhet: <span class="math inline">\(10\cdot10\cdot10\cdot10=10^4=10\,000\)</span> kód.</p>
+
+    <div class="doboz tetel" id="tetel-ismetleses-variacio">
+      <p class="cim"><span class="ikon">📘</span> Az ismétléses variációk száma</p>
+      <p>Ha <span class="math inline">\(n\)</span> különböző elemből <span class="math inline">\(k\)</span>-szor választunk úgy, hogy egy elem <b>többször is</b> választható, és a sorrend számít, akkor ezek — az <b>ismétléses variációk</b> — száma <span class="math display">\[V_n^{k,i}=n^k.\]</span> Itt <span class="math inline">\(k\)</span> nagyobb is lehet <span class="math inline">\(n\)</span>-nél.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-morse">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — Morse-jelek</p>
+      <p>A Morse-ábécé két alapjelből, pontból és vonásból áll. Hány különböző jel rakható össze <b>legfeljebb négy</b> alapjelből?</p><p>Esetek szerint (összeadási szabály), mindegyikben ismétléses variáció: <span class="math display">\[2^1+2^2+2^3+2^4=2+4+8+16=30.\]</span></p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda — ismétlődhet vagy nem?</p>
+      <p>Vilmos a PIN-kódra <span class="math inline">\(10\cdot9\cdot8\cdot7=5040\)</span>-et mondott, mintha egy számjegy csak egyszer szerepelhetne. Olvasd el a feltételt: <i>ismétlődhet</i> → <span class="math inline">\(n^k\)</span>; <i>nem ismétlődhet</i> (különböző jegyek, különböző emberek) → <span class="math inline">\(V_n^k\)</span>.</p>
+    </div>
+
+    <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ Minden tárcsa 10-féle, és ugyanaz a jegy többször is szerepelhet: <span class=&quot;math inline&quot;>\(10^3=1000\)</span>." data-nem="✘ A tárcsákon ugyanaz a jegy többször is állhat (a 777 is beállítás): ismétléses variáció, <span class=&quot;math inline&quot;>\(10^3=1000\)</span>.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy kódzár három tárcsáján egyenként a 0, 1, …, 9 számjegyek állnak. Hány beállítás lehetséges?</p>
+      <div class="opciok"><button><span class="math inline">\(720\)</span></button><button><span class="math inline">\(999\)</span></button><button><span class="math inline">\(30\)</span></button><button><span class="math inline">\(1000\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Számjegyes feladatok</h2>
+
+    <div class="doboz pelda" id="pelda-negy-jegy">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — a 2, 4, 5, 8 számjegyekből</p>
+      <p>Hány háromjegyű szám írható fel a 2, 4, 5, 8 számjegyekből, ha a jegyek a) nem ismétlődhetnek; b) ismétlődhetnek?</p><p>a) <span class="math inline">\(V_4^3=4\cdot3\cdot2=24\)</span>; b) <span class="math inline">\(V_4^{3,i}=4^3=64\)</span>. Nincs 0 a jegyek között, így az első helyre nem kell külön figyelni.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-paros">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — páros számok a nullával</p>
+      <p>Hány páros háromjegyű szám írható fel a 0, 1, 2, 3, 4 számjegyekből, ha a jegyek nem ismétlődhetnek?</p><p>A páros szám <b>utolsó</b> jegye 0, 2 vagy 4 — és a 0 az első helyre sem kerülhet. Két korlátozott hely, ezért <b>esetekre bontunk</b> (összeadási szabály):</p><ul class="clean"><li>utolsó jegy 0: az első 4-féle, a középső 3-féle → <span class="math inline">\(4\cdot3=12\)</span>;</li><li>utolsó jegy 2 vagy 4 (2 eset): az első 3-féle (nem 0 és nem az utolsó), a középső 3-féle → <span class="math inline">\(2\cdot3\cdot3=18\)</span>.</li></ul><p>Összesen <span class="math inline">\(12+18=30\)</span>.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda — egyben számolni</p>
+      <p>Vilmos így számolt: „az utolsó jegy 3-féle, az első 4-féle, a középső 3-féle: <span class="math inline">\(3\cdot4\cdot3=36\)</span>.” Csakhogy ha az utolsó jegy 0, az első jegy 4-féle lehet, ha viszont 2 vagy 4, csak 3-féle — a lehetőségek száma függ a korábbi döntéstől. Ilyenkor esetekre bontunk.</p>
+    </div>
+
+    <p class="lead">⚔️ <b>Az ötösért:</b> esetszétválasztás, amikor a 0 és a párosság egyszerre korlátoz — <a href="feladatok-kombinatorika.html#nehez-2">Zsoldos-lista, nehéz 2</a>.</p>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-kombinatorika.html#alap-7">🐶 Véd-eb nyomravezető <span class="cimke">alap 7–9</span></a><a class="sav bruno" href="feladatok-kombinatorika.html#kozep-6">⚔️ Maximális erőbedobás <span class="cimke">közép 6–7</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Nyalka Vili:</b> Az érmesek megvannak. Az I.V.H. szerint viszont a túlélő csapatban nincs arany és bronz — csak <i>csapat</i> van. <b>Nagol:</b> Ha a sorrend nem számít, a variációkat össze kell vonni. Ez a kombináció.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-permutaciok.html"><span class="irany">← Előző</span><span class="hova">Permutációk</span></a>
+      <a class="kov" href="tananyag-kombinaciok.html"><span class="irany">Következő →</span><span class="hova">Kombinációk</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

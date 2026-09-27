@@ -521,6 +521,61 @@ def svg_interaktiv(mod, poly, *, xr, yr, x0=0.0, csuszka=(-2.0, 2.0, 0.01, 1.0),
             f'<script src="../../assets/js/interaktiv.js"></script>')
 
 
+# ------------------------------------------------------------------ interaktív Pascal-háromszög (2026-09-26)
+_FELSO = str.maketrans("0123456789", "⁰¹²³⁴⁵⁶⁷⁸⁹")
+
+
+def pascal_kifejtes(n):
+    """(a + b)^n kifejtése Unicode-felső indexekkel — ugyanezt írja az interaktiv.js `pascal` módja."""
+    from math import comb as _c
+    tagok = []
+    for k in range(n + 1):
+        c, ea, eb = _c(n, k), n - k, k
+        t = "" if (c == 1 and (ea or eb)) else str(c)
+        if ea:
+            t += "a" + (str(ea).translate(_FELSO) if ea > 1 else "")
+        if eb:
+            t += "b" + (str(eb).translate(_FELSO) if eb > 1 else "")
+        tagok.append(t)
+    return " + ".join(tagok)
+
+
+def pascal_szoveg(n):
+    return (f"n = {n}:  (a + b){str(n).translate(_FELSO)} = {pascal_kifejtes(n)};  "
+            f"a sor összege {2 ** n} = 2{str(n).translate(_FELSO)}.")
+
+
+def svg_pascal(n_max=7, kezdo=4, w=380, h=252, felirat="", leiras="Interaktív Pascal-háromszög"):
+    """Interaktív Pascal-háromszög (`data-mod="pascal"`): a 0…n_max. sor, a csúszka az n-edik sort emeli ki, a
+    kijelző az (a + b)^n kifejtését és a sorösszeget írja. A statikus SVG = a `kezdo` sor kiemelve (JS nélkül is jó)."""
+    from math import comb as _c
+    _IV_SZAMLALO[0] += 1
+    nn = _IV_SZAMLALO[0]
+    dx, dy, r0, y0 = 44, 28.5, 13, 22
+    ki = [f'<svg viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="{leiras}" '
+          f'xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">']
+    for r in range(n_max + 1):
+        ki.append(f'  <g class="iv-psor" data-n="{r}">')
+        cy = y0 + r * dy
+        ki.append(f'    <text x="10" y="{cy + 4:.1f}" font-size="10.5" fill="#64748b">{r}.</text>')
+        for k in range(r + 1):
+            cx = w / 2 + (k - r / 2) * dx
+            ki_ = r == kezdo
+            ki.append(f'    <circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r0}" fill="{"#2563eb" if ki_ else "#ffffff"}" '
+                      f'stroke="{"#1d4ed8" if ki_ else "#94a3b8"}" stroke-width="1.2"/>')
+            ki.append(f'    <text x="{cx:.1f}" y="{cy + 4.2:.1f}" text-anchor="middle" font-size="12.5" '
+                      f'font-weight="600" fill="{"#ffffff" if ki_ else "#0f172a"}">{_c(r, k)}</text>')
+        ki.append('  </g>')
+    ki.append('</svg>')
+    cap = f'\n<p class="cap">{felirat}</p>' if felirat else ""
+    return (f'<div class="svgcard interaktiv" data-mod="pascal" data-nmax="{n_max}">\n' + "\n".join(ki) + '\n'
+            f'<div class="iv-vezerlo"><label for="iv{nn}">n = <span class="iv-ertek">{kezdo}</span></label>'
+            f'<input type="range" id="iv{nn}" min="0" max="{n_max}" step="1" value="{kezdo}" '
+            f'aria-describedby="ivk{nn}"></div>\n'
+            f'<p class="iv-kijelzo" id="ivk{nn}" aria-live="polite">{pascal_szoveg(kezdo)}</p>\n</div>{cap}\n'
+            f'<script src="../../assets/js/interaktiv.js"></script>')
+
+
 # ------------------------------------------------------------------ oldalváz
 
 VAZ = """<!DOCTYPE html>
