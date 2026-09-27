@@ -12,7 +12,7 @@ része, a kepek.py után:   kepek.py . --apply → media.py . --apply → set_ha
 Használat (a web-gyökérből):
   python _tools/media.py [gyoker]              száraz futás: ellenőrzés + mi változna
   python _tools/media.py [gyoker] --apply      írás
-  python _tools/media.py [gyoker] --online     elérhetőség: YouTube oEmbed, GeoGebra API
+  python _tools/media.py [gyoker] --online     elérhetőség: YouTube oEmbed (+ csatorna), GeoGebra API
   python _tools/media.py [gyoker] --jelentes   Markdown-táblázat (PR-leíráshoz)
 """
 import argparse, datetime, glob, html, json, os, re, sys
@@ -230,7 +230,8 @@ def online(elemek):
             with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "szvetko-media/1.0"}), timeout=20) as r:
                 adat = json.loads(r.read().decode("utf-8", "replace") or "{}")
             cim = adat.get("title") or adat.get("name") or ""
-            print(f"  OK   {e['azon']:<32} {cim[:60]}")
+            csatorna = adat.get("author_name") or ""  # YouTube oEmbed: a feltöltő csatorna
+            print(f"  OK   {e['azon']:<32} {cim[:60]}" + (f"  [{csatorna}]" if csatorna else ""))
         except urllib.error.HTTPError as ex:
             rossz += 1
             ok = {401: "beágyazás letiltva", 403: "tiltott / privát", 404: "nem létezik (törölt?)"}

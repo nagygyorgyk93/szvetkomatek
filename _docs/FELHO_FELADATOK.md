@@ -32,7 +32,15 @@ egy sor: „nincs jó találat”); `media.py --online` 0 hiba; `verify_web` + `
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ☐ | ☐ | ☐ | ◐ pilot: 4e/05 binomiális tétel (1 videó) |
+| ☐ | ◐ PR: 78 videó 32 lapon (mind a 35 egység megvizsgálva; 3 lap tanári döntéssel videó nélkül), `--online` 0 hiba — merge után ☑ | ☐ | ◐ pilot: 4e/05 binomiális tétel (1 videó) |
+
+**Felhőben (2026-09-27):** a felhős környezet *Network access* beállításában engedélyezni kell a
+`tavoktatas.mnt.org.rs`, a `youtube.com` és az `api.geogebra.org` tartományt (nélkülük a WebFetch és a
+`media.py --online` sem működik). Bevált menet: az MNT óra-oldalán (engedélyezett, lekérdezés nélküli
+URL) van a beágyazott videó, a tanár, és a „Kapcsolódó tananyag” blokkban a szomszédos órák óratípussal
+(új anyag / gyakorlás / megerősítés / ismétlés) — tananyag-laphoz az új anyagot feldolgozó órát válaszd.
+A YouTube videóoldalai (`/watch`) innen 429-et adnak: a videó leírása és hossza nem olvasható ki, az
+oEmbed (cím + csatorna) viszont működik.
 
 ### M2 · GeoGebra-szimulációk
 **Cél:** ahol a manipulálható modell többet ér az állóképnél (függvény-transzformációk, egységkör,

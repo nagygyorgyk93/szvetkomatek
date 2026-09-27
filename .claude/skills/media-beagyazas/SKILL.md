@@ -48,7 +48,12 @@ A blokkot **soha nem írod kézzel a HTML-be** — csak a katalógusba; a `media
      feladatgyűjtemény megoldását.
    - Licenc: GeoGebra-anyag **CC BY-NC-SA 4.0** (GeoGebra ÁSZF) — a szerző neve kötelező, a
      `media.py` kiírja. YouTube: **csak beágyazás** (letöltés, újrafeltöltés, kivágás tilos).
-   - Mennyiség: tananyag-egységenként legfeljebb 1 videó + 1–2 szimuláció.
+   - Mennyiség (tanári döntés, 2026-09-27): az MNT-sorozat **minden** órája bekerül, amelynek a
+     témája a lapon szerepel — az új anyagot feldolgozó óra, a folytatása („második rész”) és a
+     hozzá tartozó gyakorló / megerősítő / ismétlő óra is (az óratípus az óra-oldal „Kapcsolódó
+     tananyag” blokkjában látszik). A folytatás közvetlenül az előző rész után jön, a lap egészére
+     vonatkozó gyakorlóóra a lap utolsó tartalmi szakaszának végére. Ha a távoktatás tanterve
+     eltér a miénktől, és egy laphoz nincs óra, a lap videó nélkül marad. Szimulációból 1–2.
 4. **Katalógus** (`_tools/media/<osztaly>.json`, mezők: `python3 _tools/media.py --help`).
    - `azon`: `<osztaly><NN>-<rovid>`, pl. `2e04-egysegkor`.
    - `hely`: `sN` = az sN szakasz végére; `#elem-id` = az elem után (pl. `#tetel-binomialis`).
