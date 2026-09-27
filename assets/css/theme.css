@@ -220,9 +220,11 @@ code{background:var(--zold-50);padding:.1em .35em;border-radius:6px;font-size:.9
 .doboz{border-radius:var(--r);padding:1rem 1.2rem;margin:1.3rem 0;border:1px solid var(--kampusz-uveg-keret);
   box-shadow:0 4px 6px rgba(0,0,0,0.3);background:var(--kampusz-uveg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:all 0.3s ease;}
 .doboz:hover{box-shadow:var(--kampusz-fenylés);border-color:var(--kampusz-neon);}
-.doboz>.cim{display:flex;align-items:center;gap:.5rem;font-family:var(--fej);font-weight:700;
+/* Nem flex: abban a cím minden szöveg- és képletdarabja külön elem lenne (tördelés nélkül, réssel
+   köztük), és a képletes cím mobilon kilógna. Az ikon a bal oldali sávban, a szöveg szabadon tördel. */
+.doboz>.cim{position:relative;padding-left:1.8rem;font-family:var(--fej);font-weight:700;
   margin:0 0 .45rem;font-size:1rem;}
-.doboz>.cim .ikon{font-size:1.05rem;}
+.doboz>.cim .ikon{position:absolute;left:0;top:0;font-size:1.05rem;}
 .doboz p:last-child{margin-bottom:0;}
 
 /* Tematikus háttér színezések és EGYEDI HOVER EFFEKTEK saját színekkel */

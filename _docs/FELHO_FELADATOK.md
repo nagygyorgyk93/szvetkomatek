@@ -99,12 +99,23 @@ vektorösszeadás; kör és egyenes kölcsönös helyzete; sorozat ε-sávja.
 
 | Kód | Feladat | Állapot |
 |---|---|---|
-| Q1 | `layout_teszt.py` az összes lapra; minden mobil-túlcsordulás javítása | ◐ fejléc-túlcsordulás (minden lap, ≤520 px) javítva 2026-09-27 |
+| Q1 | `layout_teszt.py` az összes lapra; minden mobil-túlcsordulás javítása | ◐ fejléc-túlcsordulás (minden lap, ≤520 px) javítva 2026-09-27; képletes doboz-cím (`.doboz>.cim` flex → blokk, pl. 2e hatványfüggvény) javítva 2026-09-27; **maradt 22 lap** (lent) |
 | Q2 | Akadálymentesség: axe-core Playwrighttal (`npm i axe-core`), kontraszt, `aria`, fókusz-sorrend | ☐ |
 | Q3 | „Folytasd, ahol abbahagytad” — a `naplo.js` jegyezze az utolsó lapot, a főoldalon és az osztály-indexen gomb | ☐ |
 | Q4 | Mobil tartalomjegyzék: lebegő „Tartalom” gomb, ha a TOC keskeny kijelzőn nem látszik | ☐ (előbb ellenőrizni) |
 | Q5 | Offline mód (PWA): service worker a meglátogatott lapokra + KaTeX; frissítés-kezelés deploykor | ☐ (tanári döntés kell) |
 | Q6 | Teljesítmény: képméretek, font-preload, a szkriptek `defer`-je; mérés Playwrighttal | ☐ |
+
+**Q1 maradék** (`layout_teszt.py`, összes lap, 2026-09-27; mind 360 px-en, a legtöbb 390-en is; a lapnevek
+`tananyag-` előtag nélkül):
+- `table.tt-table` görgethető burok nélkül — 15 lap: 1e/01 `fuggveny-fogalma`; 3e/01 `alaplap`,
+  `csonkagula`, `gula-sikmetszetek`, `poliederek`; 3e/02 `osszefoglalo`, `osszetett-testek`; 3e/03
+  `osszefoglalo`, `cramer`, `ket-ismeretlen`, `megoldasok-szama`, `szoveges-feladatok`; 3e/04 `osszefoglalo`,
+  `vektorok-alkalmazasa`; 4e/03 `feladatok-fuggvenyvizsgalat`.
+- hosszú inline képlet a folyó szövegben — 4 lap: 1e/01 `descartes-relaciok`, `halmaz-fogalma`; 1e/03
+  `terepkuldetes`; 3e/04 `vektorialis-szorzat`.
+- egyéb: 1e/01 `osszefoglalo` (képletes táblázatfej), 1e/01 `fuggvenytulajdonsagok` (a `.hero h1`),
+  `search.html` (a keresőmező).
 
 ---
 
