@@ -47,6 +47,10 @@
   figure,.svgwrap,.svgcard,.venn .vbox{break-inside:avoid;}
   img,svg{max-width:100% !important;}
 
+  /* külső média: papíron a lejátszó helyett a forrás címe + URL-je */
+  .media .media-keret{display:none !important;}
+  .media-url{display:inline !important;font-family:monospace;font-size:9pt;}
+
   h2,h3{break-after:avoid;}
   .lablec{margin-top:1.5rem;border-top:1px solid #999 !important;}
 }

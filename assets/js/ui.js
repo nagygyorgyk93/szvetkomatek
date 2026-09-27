@@ -149,7 +149,10 @@
 
   /* Küldetésnapló + mikro-animációk betöltése (így nem kell minden oldal
      <head>-jébe felvenni őket) */
-  ['naplo.js', 'effekt.js'].forEach(function(f){
+  /* beagyazas.js: csak ha a lapon van külső média (videó / GeoGebra) */
+  var szkriptek = ['naplo.js', 'effekt.js'];
+  if (document.querySelector('figure.media')) szkriptek.push('beagyazas.js');
+  szkriptek.forEach(function(f){
     var s = document.createElement('script');
     s.src = ROOT + '/assets/js/' + f; s.defer = true;
     document.body.appendChild(s);
