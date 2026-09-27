@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """4e/04 — A blokk: a primitiv fuggveny (A1), az integraltablazat (A2), a helyettesiteses integralas (A3).
 Mentor: SZVETI (Nagol, Ved Vilmos kommental). Kuldetes: A Valosag Osszefoltozasa.
-Specifikacio: projektek/4e/munkafajlok/narrativa_04-integral.md
+Specifikacio: projektek/szvetkomatek/4e/narrativa_04-integral.md
 Tiltott adatok: a 25/26-os es 26/27-es integral-felmerok (tiltott_4e_04.py) — lent ellenorizve."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

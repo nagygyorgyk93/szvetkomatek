@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """4e/02 — B es C blokk: a fuggveny hatarerteke (B1), hatarertek-szamitas (B2), hatarertek a vegtelenben (B3),
 aszimptotak (C1). Mentor: Nagol (Ved Vilmos a 0/0-nal es a falnal). Kuldetes: Az Aszimptota-fal Attorese.
-Specifikacio: projektek/4e/munkafajlok/narrativa_02-fuggvenyek.md
+Specifikacio: projektek/szvetkomatek/4e/narrativa_02-fuggvenyek.md
 Tiltott adatok: a 24/25–26/27 felmerok kifejezesei (Felmero_elemzes_es_ajanlasok_Fuggvenyek.md) — lent ellenorizve."""
 import sys, os, math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

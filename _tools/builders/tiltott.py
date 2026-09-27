@@ -55,7 +55,11 @@ def modul(nev):
         return _Ures()
     spec = importlib.util.spec_from_file_location(nev, ut)
     mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)
+    regi, sys.dont_write_bytecode = sys.dont_write_bytecode, True      # ne keletkezzen __pycache__ a privát mappában
+    try:
+        spec.loader.exec_module(mod)
+    finally:
+        sys.dont_write_bytecode = regi
     return mod
 
 

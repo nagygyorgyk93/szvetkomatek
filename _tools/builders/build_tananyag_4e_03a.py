@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """4e/03 — A es B blokk: a derivalt fogalma (A1), a derivalasi szabalyok (A2), az erinto es a valtozasi sebesseg (A3),
 az osszetett fuggveny (B1), a masodik derivalt (B2). Mentor: Ved Vilmos & Nagol. Kuldetes: A Pillanatnyi Kaosz.
-Specifikacio: projektek/4e/munkafajlok/narrativa_03-derivalt.md
+Specifikacio: projektek/szvetkomatek/4e/narrativa_03-derivalt.md
 Tiltott adatok: a 26/27-es 2. es 3. dolgozat kifejezesei (build_felmero_4e_03.py) — lent ellenorizve."""
 import sys, os, math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

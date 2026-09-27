@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """4e/05 — A blokk: a szorzasi es az osszeadasi szabaly (A1), permutaciok (A2), variaciok (A3), kombinaciok (A4).
 Mentor: Nyalka Vili (Ved Vilmos kommental, Nagol tisztaz). Kuldetes: Multiverzum Lotto.
-Specifikacio: projektek/4e/munkafajlok/narrativa_05-kombinatorika.md
+Specifikacio: projektek/szvetkomatek/4e/narrativa_05-kombinatorika.md
 Tiltott adatok: a 25/26-os es 26/27-es 4. ellenorzo (tiltott_4e_05.py) — lent ellenorizve."""
 import sys, os
 from itertools import permutations, product, combinations

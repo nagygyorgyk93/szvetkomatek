@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """4e/05 — B blokk: a Pascal-haromszog es a binomialis tetel (B1) + 🧾 Gyorsismetlo.
 Mentor: Nyalka Vili & Nagol (Ved Vilmos kommental). Kuldetes: Multiverzum Lotto.
-Specifikacio: projektek/4e/munkafajlok/narrativa_05-kombinatorika.md
+Specifikacio: projektek/szvetkomatek/4e/narrativa_05-kombinatorika.md
 Tiltott adatok: a 26/27-es 4. ellenorzo binomialis kifejtesei (tiltott_4e_05.py) — lent ellenorizve."""
 import sys, os
 from math import comb

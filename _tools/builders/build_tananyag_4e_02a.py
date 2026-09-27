@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """4e/02 — A blokk: az elemi fuggvenyek (A1), ertelmezesi tartomany, zerushely, elojel (A2),
 paritas, periodicitas, monotonitas (A3). Mentor: Nagol (Ved Vilmos kommental).
-Kuldetes: Az Aszimptota-fal Attorese. Specifikacio: projektek/4e/munkafajlok/narrativa_02-fuggvenyek.md
+Kuldetes: Az Aszimptota-fal Attorese. Specifikacio: projektek/szvetkomatek/4e/narrativa_02-fuggvenyek.md
 Osszetett es inverz fuggveny NINCS (felhasznaloi dontes); periodicitasbol feladat nincs; monotonitas csak grafikonrol."""
 import sys, os, math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

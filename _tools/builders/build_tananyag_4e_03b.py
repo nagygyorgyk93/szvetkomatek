@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """4e/03 — C blokk: monotonitas es szelsoertek (C1), konvexitas es inflexio (C2), a teljes fuggvenyvizsgalat (C3).
 Mentor: Ved Vilmos & Nagol. Kuldetes: A Pillanatnyi Kaosz.
-Specifikacio: projektek/4e/munkafajlok/narrativa_03-derivalt.md (C-blokk)
+Specifikacio: projektek/szvetkomatek/4e/narrativa_03-derivalt.md (C-blokk)
 A C3 lepessora a tanar kidolgozott peldaibol (munkafajlok/3_Derivalas/Fuggvenykivizsgalas/): ET -> zerushely, elojel ->
 paritas -> aszimptotak -> monotonitas, szelsoertek -> konvexitas, inflexio -> grafikon.
 Tiltott adatok: a 26/27-es 2. es 3. dolgozat kifejezesei (build_felmero_4e_03.py) — lent ellenorizve."""

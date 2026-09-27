@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """4e/03 — ket feladatgyujtemeny: Zsoldos-lista I. (derivalas) es II. (fuggvenyvizsgalat).
-Feladat-terkep: projektek/4e/munkafajlok/terkep_fgy_03-derivalt.md (jovahagyva 2026-09-25).
+Feladat-terkep: projektek/szvetkomatek/4e/terkep_fgy_03-derivalt.md (jovahagyva 2026-09-25).
 Forras: 0_Feladatok - A fuggveny derivaltja.pdf (0_F 16-32.; a 16 b-d, 23 b, 23 e kulcsa javitva; a 26 d-ben
 f'(1/2) helyett f'(2), mert a fuggveny az 1/2-ben nincs ertelmezve) + sajat feladatok.
 Minden vegeredmeny sympybol; a derivalt-kulcsok a 0_F (javitott) kulcsabol, sympyvel numerikusan ellenorizve.

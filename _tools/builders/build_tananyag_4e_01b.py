@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """4e/01 — B es C blokk (2. resz): az e szam (B3), a vegtelen mertani sor (C).
 Mentor: Ved Vilmos (Nagol javit). Kuldetes: A Vegtelenbe es... Ne Tovabb!
-Specifikacio: projektek/4e/munkafajlok/narrativa_01-sorozatok-hatarerteke.md"""
+Specifikacio: projektek/szvetkomatek/4e/narrativa_01-sorozatok-hatarerteke.md"""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_fuggvenyek

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """4e/04 — B blokk: a hatarozott integral (B1), a Newton–Leibniz-formula (B2), a siksidomok terulete (B3) + 🧾.
 Mentor: Nagol & SZVETI. Kuldetes: A Valosag Osszefoltozasa.
-Specifikacio: projektek/4e/munkafajlok/narrativa_04-integral.md
+Specifikacio: projektek/szvetkomatek/4e/narrativa_04-integral.md
 Tiltott adatok: a 25/26-os es 26/27-es integral-felmerok (tiltott_4e_04.py) — lent ellenorizve."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

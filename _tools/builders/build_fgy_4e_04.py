@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """4e/04 — ket feladatgyujtemeny: Zsoldos-lista I. (hatarozatlan integral) es II. (hatarozott integral, terulet).
-Feladat-terkep: projektek/4e/munkafajlok/terkep_fgy_04-integral.md (jovahagyva 2026-09-26).
+Feladat-terkep: projektek/szvetkomatek/4e/terkep_fgy_04-integral.md (jovahagyva 2026-09-26).
 Forrasok (a terkep szerint): Feladatok - Hatarozatlan integralok (HI), vegyes gyakorlas (VG), Hatarozott_integralok-
 Feladatok (HF), Sikidomok teruletenek kiszamitasa (SF), Vene 4.1-4.2, 4.5-4.6 + sajat feladatok; a felmerok adatai
 (tiltott_4e_04) es a tananyag kidolgozott peldai kiserve.

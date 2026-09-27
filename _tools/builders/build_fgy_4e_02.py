@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """4e/02 — ket feladatgyujtemeny: Zsoldos-lista I. (tulajdonsagok) es II. (hatarertek, aszimptotak).
-Feladat-terkep: projektek/4e/munkafajlok/terkep_fgy_02-fuggvenyek.md (jovahagyva 2026-09-24).
+Feladat-terkep: projektek/szvetkomatek/4e/terkep_fgy_02-fuggvenyek.md (jovahagyva 2026-09-24).
 Forras: 0_Feladatok - Fuggvenyek.pdf (0_F; a 10 i, 13 f [x->5], 13 g, 15 i kulcsa javitva) + sajat.
 Minden vegeredmeny sympybol (x -> -oo eseten x -> -x helyettesitessel: a sympy 1.14 limit(2**x, x, -oo)-ra oo-t ad)."""
 import sys, os, re, math
