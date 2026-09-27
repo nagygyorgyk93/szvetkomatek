@@ -6,7 +6,8 @@ Tiltott adatok: a 25/26-os es 26/27-es integral-felmerok (tiltott_4e_04.py) — 
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_fuggvenyek, svg_interaktiv
-import tiltott_4e_04 as TILT
+import tiltott
+TILT = tiltott.modul("tiltott_4e_04")      # a lista a repón kívül él (projektek/szvetkomatek/tiltott)
 
 T = dict(tagozat="4e", mappa="04-integral", temakor="Integrál")
 KUL = "A Valóság Összefoltozása"

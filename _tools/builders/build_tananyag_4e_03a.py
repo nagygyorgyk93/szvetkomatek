@@ -5,6 +5,7 @@ Specifikacio: projektek/4e/munkafajlok/narrativa_03-derivalt.md
 Tiltott adatok: a 26/27-es 2. es 3. dolgozat kifejezesei (build_felmero_4e_03.py) — lent ellenorizve."""
 import sys, os, math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import tiltott
 from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_fuggvenyek, svg_interaktiv
 
 T = dict(tagozat="4e", mappa="03-derivalt", temakor="A függvény deriváltja")
@@ -96,12 +97,7 @@ chk("B2-mozg", [D("-5*t**2+20*t", v=t), D("-5*t**2+20*t", 2, t), solve(D("-5*t**
                 S("-5*t**2+20*t").subs(t, 2)], ["-10*t+20", -10, [2], 20])
 
 # tiltott adatok: a 26/27-es dolgozatok (2d, 3d) kifejezései nem lehetnek tananyag-példák
-TILTOTT = ["5*x**4-2*x**3+7*x-3", "-4*cos(x)", "5*log(x)", "(x**2-3*x)*cos(x)", "(2*x+3)/(x**2+1)",
-           "3*x**5+4*x**3-6*x+1", "5*sin(x)", "2*exp(x)", "(x**2+4*x)*sin(x)", "(3*x-1)/(x**2+2)",
-           "2*x**4-5*x**2+3*x", "7*cos(x)", "3*tan(x)", "(x**2+1)*exp(x)", "(2*x+1)/(x**2+3)",
-           "x**3-2*x**2+3", "x**3+3*x**2-2", "x**3-3*x+1", "2*x**5-4*x**3+6*x-7", "x**6-3*x**4+5*x-1",
-           "4*x**5-2*x**3+x-3", "x**3-3*x**2-9*x+5", "-x**3+3*x**2+9*x-2", "x**3+3*x**2-9*x-4",
-           "(x**2-3*x)/(x+1)", "(x**2-7*x+10)/(x-1)", "(x**2-3*x)/(x-4)"]
+TILTOTT = tiltott.lista("tiltott_4e_03", "TILTOTT_TANANYAG_A")      # a lista a repón kívül él (projektek/szvetkomatek/tiltott)
 PELDAK = ["x**3/3-x", "4*x**3-5*x**2+7*x-2", "(x**2+1)*(3*x-2)", "x**2*sin(x)", "(x-1)*exp(x)", "x**2*log(x)",
           "x**3*cos(x)", "(2*x-1)/(x+3)", "(x**2+1)/(x-2)", "1/(x**2+1)", "x**3-4*x+1", "x**2-4*x+5", "x**3",
           "x**3-3*x**2", "x**2-6*x+5", "(2*x+5)**3", "(4*x-1)**5", "sqrt(x**2+4)", "x*exp(-2*x)",

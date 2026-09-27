@@ -5,6 +5,7 @@ Specifikacio: projektek/4e/munkafajlok/narrativa_02-fuggvenyek.md
 Tiltott adatok: a 24/25–26/27 felmerok kifejezesei (Felmero_elemzes_es_ajanlasok_Fuggvenyek.md) — lent ellenorizve."""
 import sys, os, math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import tiltott
 from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_fuggvenyek
 
 T = dict(tagozat="4e", mappa="02-fuggvenyek", temakor="Függvények")
@@ -83,21 +84,7 @@ chk("C1-teljes", asz("(2*x**2+x)/(x-1)"), ([1], None, (2, 3)))
 chk("C1-kviz-1", asz("(x**2-25)/(x+5)")[0], [])
 
 # tiltott adatok: a régi és az idei felmérők kifejezései szó szerint nem szerepelhetnek
-REGI = ["(3*x+14)/(2*x**2-5*x-28)", "(x+5)/(x**2+4*x-5)", "(x**2-144)/(x-12)", "(sqrt(x+9)-1)/(x+8)",
-        "(5*x-15)/(x-6)", "(x-13)/(sqrt(x-4)-3)", "(x**2-3*x-10)/(x-5)", "(x-3)/(x+2)", "(x-3)/(x**2+4*x-21)",
-        "(x**2-49)/(x+7)", "(sqrt(x+5)-4)/(x-11)", "(2*x+25)/(x+8)", "(x-4)/(x**2-x-12)", "(5*x-8)/(3*x+3)",
-        "(x**2-121)/(x-11)", "(sqrt(x-3)-1)/(x-4)", "(5*x-18)/(x-5)", "(x+2)/(x**2-x-6)", "(3*x+1)/(2*x-2)",
-        "(x-4)/(x**2-16)", "(x-5)/(x**2-25)", "(3*x+2)/(x-5)", "(2*x-3)/(12*x+24)", "(x**2-3)/(x+5)",
-        "(2*x**2-3)/(x+5)", "(3*x+5)/(4*x-8)", "(x**2+x)/(x-2)", "(x+6)/(4*x-12)", "(2*x**2-5)/(x-2)",
-        "(x-1)/(x+2)", "(2*x**2+1)/(2*x-5)", "(x+1)/(x-2)", "(2*x**2-1)/(2*x+8)", "(x**2-3)/(x+1)",
-        "(2*x+1)/(2*x-12)", "(6*x+1)/(2*x-1)", "(2*x**2+1)/(2*x+4)", "(6*x**2+1)/(3*x-6)", "(x**2+1)/(3*x+9)",
-        # 2026/27 (A, B, pótló)
-        "(3*x**2-x+4)/(x+3)", "(x+4)/(x**2+7*x+12)", "(x**2-x-6)/(x**2-9)", "(sqrt(3*x+7)-4)/(x-3)",
-        "(2*x+1)/(x-4)", "(6*x**3-4*x+1)/(3*x**3+2*x**2-5)", "(4*x-3)/(2*x+6)", "(x**2+3*x-2)/(x-1)",
-        "(2*x**2+5*x-1)/(x-3)", "(x-5)/(x**2-2*x-15)", "(x**2+5*x+6)/(x**2-4)", "(sqrt(2*x+5)-3)/(x-2)",
-        "(3*x-2)/(x+5)", "(4*x**2-7*x+2)/(5-2*x**2)", "(9*x+2)/(3*x-6)", "(x**2-2*x+5)/(x+2)",
-        "(x**2+3*x+2)/(x+2)", "(x**2+4*x-5)/(2*x**2-2)", "(x-4)/(sqrt(2*x+1)-3)", "(x+3)/(4-2*x)",
-        "(3*x**2+x)/(x**2-5*x+1)", "(8-2*x)/(x+3)", "(2*x**2+x-1)/(x+3)"]
+REGI = tiltott.lista("tiltott_4e_02", "TILTOTT_TANANYAG_B")      # a lista a repón kívül él (projektek/szvetkomatek/tiltott)
 PELDAK = ["(x**2-1)/(x-1)", "(x**2+1)/(x+3)", "(x**2+x-6)/(x+3)", "(x**2-4)/(x**2-3*x+2)", "(sqrt(x)-2)/(x-4)",
           "x/(sqrt(x+1)-1)", "(x+2)/(x-1)", "(x**2-9)/(x-3)", "1/(x-2)", "(2*x**2-x)/(x**2+3)", "(5*x+1)/(x**2+4)",
           "(x**3+x)/(2*x**2-1)", "(x**4+1)/(x**2+x)", "(1-x**3)/(x**2+2)", "(2*x+1)/(x-3)", "(x**2-4)/(x-2)",

@@ -7,6 +7,7 @@ paritas -> aszimptotak -> monotonitas, szelsoertek -> konvexitas, inflexio -> gr
 Tiltott adatok: a 26/27-es 2. es 3. dolgozat kifejezesei (build_felmero_4e_03.py) — lent ellenorizve."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import tiltott
 from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_fuggvenyek, svg_interaktiv
 
 T = dict(tagozat="4e", mappa="03-derivalt", temakor="A függvény deriváltja")
@@ -101,12 +102,7 @@ chk("C3-tort", [factor(S(T3)), krit(T3), factor(diff(f3, x)), factor(diff(f3, x,
 chk("C3-tort-elojel", [("+" if f3.subs(x, v) > 0 else "-") for v in (-4, -1, R(1, 2), 2)], ["-", "+", "-", "+"])
 chk("C3-kviz", [jel(T3, 1, 2), jel(T3, 2, 2)], ["-", "+"])
 
-TILTOTT = ["x**3-3*x**2-9*x+5", "-x**3+3*x**2+9*x-2", "x**3+3*x**2-9*x-4", "(x**2-3*x)/(x+1)",
-           "(x**2-7*x+10)/(x-1)", "(x**2-3*x)/(x-4)", "x**3-2*x**2+3", "x**3+3*x**2-2", "x**3-3*x+1",
-           # a 0_Feladatok 29–32. (a gyűjtemény forrása) — a tananyag ne vegye el előre
-           "x**3-2*x**2+x-2", "(x**2-5*x+7)/(x-2)", "x**3+3*x**2-4", "-x**3+3*x+2", "-x**3+9*x**2-15*x+3",
-           "2*x**3+3*x**2-12*x+1", "(x**2-2*x+1)/(x-2)", "(x**2-6*x+9)/(x-1)", "(x**2-8)/(x+3)", "(x**2-3)/(x+2)",
-           "(x**2+x-2)/(x+3)", "(x**2-x-2)/(x-3)", "(x**2-4)/(x**2+1)", "(3-x**2)/(x**2+1)"]
+TILTOTT = tiltott.lista("tiltott_4e_03", "TILTOTT_TANANYAG_B")      # a lista a repón kívül él (projektek/szvetkomatek/tiltott)
 _PONT = (0.37, 1.91, 2.63, 3.3)
 
 

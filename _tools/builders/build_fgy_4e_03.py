@@ -7,6 +7,7 @@ Minden vegeredmeny sympybol; a derivalt-kulcsok a 0_F (javitott) kulcsabol, symp
 A 32. feladathoz (nincs forraskulcs) osszesito eredmeny + SVG-grafikon keszul (felhasznaloi dontes, 2026-09-25)."""
 import sys, os, re, math, random
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import tiltott
 from fgy_common import cards, joker_card, oldal, w
 from tananyag_common import svg_fuggvenyek
 import sympy
@@ -655,12 +656,7 @@ if sorted(solve(diff(Ex("x**3-12*x+1"), x), x)) != [-2, 2] or [Ex("x**3-12*x+1")
     E.append("vízszintes érintő")
 
 # tiltott adatok: a 26/27-es 2. és 3. dolgozat
-TILTOTT = ["5*x**4-2*x**3+7*x-3", "-4*cos(x)", "5*log(x)", "(x**2-3*x)*cos(x)", "(2*x+3)/(x**2+1)",
-           "3*x**5+4*x**3-6*x+1", "5*sin(x)", "2*exp(x)", "(x**2+4*x)*sin(x)", "(3*x-1)/(x**2+2)",
-           "2*x**4-5*x**2+3*x", "7*cos(x)", "3*tan(x)", "(x**2+1)*exp(x)", "(2*x+1)/(x**2+3)",
-           "x**3-2*x**2+3", "x**3+3*x**2-2", "x**3-3*x+1", "2*x**5-4*x**3+6*x-7", "x**6-3*x**4+5*x-1",
-           "4*x**5-2*x**3+x-3", "x**3-3*x**2-9*x+5", "-x**3+3*x**2+9*x-2", "x**3+3*x**2-9*x-4",
-           "(x**2-3*x)/(x+1)", "(x**2-7*x+10)/(x-1)", "(x**2-3*x)/(x-4)"]
+TILTOTT = tiltott.lista("tiltott_4e_03", "TILTOTT_FGY")      # a lista a repón kívül él (projektek/szvetkomatek/tiltott)
 HASZNALT = set(re.findall(r'(?:DER\(|MONO\(|GORB\(|TELJES\(|_chk\(|ERINTO\()?"([^"]*x[^"]*)"',
                           open(__file__, encoding="utf-8").read().split("# ================================================================ ZSOLDOS-LISTA I.")[1]
                           .split("# ================================================================ ÖNELLENŐRZÉS")[0]))

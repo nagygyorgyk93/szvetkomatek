@@ -10,7 +10,8 @@ import sys, os, re, math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fgy_common import cards, joker_card, oldal, w
 from tananyag_common import svg_fuggvenyek
-import tiltott_4e_04 as TILT
+import tiltott
+TILT = tiltott.modul("tiltott_4e_04")      # a lista a repón kívül él (projektek/szvetkomatek/tiltott)
 import sympy
 import mpmath as mp
 from sympy import Rational as Q, symbols, latex, sympify, diff, solve, nsimplify

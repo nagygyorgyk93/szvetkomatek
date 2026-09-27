@@ -5,6 +5,7 @@ Forras: 0_Feladatok - Fuggvenyek.pdf (0_F; a 10 i, 13 f [x->5], 13 g, 15 i kulcs
 Minden vegeredmeny sympybol (x -> -oo eseten x -> -x helyettesitessel: a sympy 1.14 limit(2**x, x, -oo)-ra oo-t ad)."""
 import sys, os, re, math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import tiltott
 from fgy_common import cards, joker_card, oldal
 from tananyag_common import svg_fuggvenyek
 import sympy
@@ -476,24 +477,7 @@ chk("II-N4", ASZ("(2*x**2+3*x)/(x+1)"), ([-1], None, (2, 1)))
 assert not E, E
 
 # tiltott adatok: a régi és az idei felmérők, valamint a tananyag kidolgozott példái szó szerint nem szerepelhetnek
-TILTOTT = ["(3*x+14)/(2*x**2-5*x-28)", "(x+5)/(x**2+4*x-5)", "(x**2-144)/(x-12)", "(sqrt(x+9)-1)/(x+8)", "(5*x-15)/(x-6)",
-           "(x-13)/(sqrt(x-4)-3)", "(x**2-3*x-10)/(x-5)", "(x-3)/(x+2)", "(x-3)/(x**2+4*x-21)", "(x**2-49)/(x+7)",
-           "(sqrt(x+5)-4)/(x-11)", "(2*x+25)/(x+8)", "(x-4)/(x**2-x-12)", "(5*x-8)/(3*x+3)", "(x**2-121)/(x-11)",
-           "(sqrt(x-3)-1)/(x-4)", "(5*x-18)/(x-5)", "(x+2)/(x**2-x-6)", "(3*x+1)/(2*x-2)", "(x-4)/(x**2-16)", "(x-5)/(x**2-25)",
-           "(3*x+2)/(x-5)", "(2*x-3)/(12*x+24)", "(x**2-3)/(x+5)", "(2*x**2-3)/(x+5)", "(3*x+5)/(4*x-8)", "(x**2+x)/(x-2)",
-           "(x+6)/(4*x-12)", "(2*x**2-5)/(x-2)", "(x-1)/(x+2)", "(2*x**2+1)/(2*x-5)", "(x+1)/(x-2)", "(2*x**2-1)/(2*x+8)",
-           "(x**2-3)/(x+1)", "(2*x+1)/(2*x-12)", "(6*x+1)/(2*x-1)", "(2*x**2+1)/(2*x+4)", "(6*x**2+1)/(3*x-6)", "(x**2+1)/(3*x+9)",
-           "(3*x**2-x+4)/(x+3)", "(x+4)/(x**2+7*x+12)", "(x**2-x-6)/(x**2-9)", "(sqrt(3*x+7)-4)/(x-3)", "(2*x+1)/(x-4)",
-           "(6*x**3-4*x+1)/(3*x**3+2*x**2-5)", "(4*x-3)/(2*x+6)", "(x**2+3*x-2)/(x-1)", "(2*x**2+5*x-1)/(x-3)",
-           "(x-5)/(x**2-2*x-15)", "(x**2+5*x+6)/(x**2-4)", "(sqrt(2*x+5)-3)/(x-2)", "(3*x-2)/(x+5)", "(4*x**2-7*x+2)/(5-2*x**2)",
-           "(9*x+2)/(3*x-6)", "(x**2-2*x+5)/(x+2)", "(x**2+3*x+2)/(x+2)", "(x**2+4*x-5)/(2*x**2-2)", "(x-4)/(sqrt(2*x+1)-3)",
-           "(x+3)/(4-2*x)", "(3*x**2+x)/(x**2-5*x+1)", "(8-2*x)/(x+3)", "(2*x**2+x-1)/(x+3)",
-           # tananyag-példák (4e/02)
-           "(x**2-1)/(x-1)", "(x**2+1)/(x+3)", "(x**2+x-6)/(x+3)", "(x**2-4)/(x**2-3*x+2)", "(sqrt(x)-2)/(x-4)",
-           "x/(sqrt(x+1)-1)", "(x+2)/(x-1)", "(x**2-9)/(x-3)", "1/(x-2)", "(2*x**2-x)/(x**2+3)", "(5*x+1)/(x**2+4)",
-           "(x**3+x)/(2*x**2-1)", "(x**4+1)/(x**2+x)", "(1-x**3)/(x**2+2)", "(2*x+1)/(x-3)", "(x**2-4)/(x-2)", "x/(x**2+1)",
-           "(x**2+1)/(x-1)", "(2*x**2+x)/(x-1)", "(x**2-25)/(x+5)", "(x**2-3*x)/(x-3)", "sqrt(x+3)/(x-2)", "(x+1)*(x-3)/(x-1)",
-           "x**4-3*x**2", "x**3+2*x", "x**2+x", "x*sin(x)", "x**3+1"]
+TILTOTT = tiltott.lista("tiltott_4e_02", "TILTOTT_FGY")      # a lista a repón kívül él (projektek/szvetkomatek/tiltott)
 HASZNALT = re.findall(r'"([^"]*x[^"]*)"', open(__file__, encoding="utf-8").read().split("# ================================================================ ZSOLDOS-LISTA I.")[1]
                       .split("# ================================================================ ÖNELLENŐRZÉS")[0])
 

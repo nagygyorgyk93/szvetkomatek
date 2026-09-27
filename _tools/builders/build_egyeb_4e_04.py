@@ -9,7 +9,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tananyag_common import lap, brief, GYOKER
 from fgy_common import cards, oldal, w
 import build_fgy_4e_04 as FG
-import tiltott_4e_04 as TILT
+import tiltott
+TILT = tiltott.modul("tiltott_4e_04")      # a lista a repón kívül él (projektek/szvetkomatek/tiltott)
 import sympy
 from sympy import Rational as Q, symbols, diff, integrate, simplify, solve, sqrt, pi, E as EE
 
