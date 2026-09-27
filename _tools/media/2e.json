@@ -5,15 +5,31 @@
     "hely": "s3",
     "tipus": "youtube",
     "forras_azon": "jCmAcKflL4o",
-    "cim": "Egész kitevőjű hatványok – második rész (II. osztály)",
+    "cim": "Egész kitevőjű hatványok – második rész (II. osztály, 3. óra)",
     "leiras": "Az egész kitevőjű hatványok második része egy másik tanár magyarázatában: a nulla és a negatív kitevő. Jó ismétlés a fenti definícióhoz, mielőtt az előjelekkel birkózol.",
     "szerzo": "Angyal Andor",
     "forras": "MNT Távoktatás magyar nyelven",
-    "forras_url": "https://www.youtube.com/watch?v=jCmAcKflL4o",
+    "forras_url": "https://tavoktatas.mnt.org.rs/ii-osztaly/matematika/matematika-ii-osztaly-3-ora-egesz-kitevoju-hatvanyok-masodik-resz",
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: csak a YouTube-videó került elő (cím + tanár két találatból), az MNT-óraoldal nem → forras_url a YouTube-oldal, cseréld, ha megvan az óra-oldal; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: gyakorlás) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; az MNT-nél „Gyakorlás”, de a sorozat leírása szerint ez a rész hozza a nulla és a negatív kitevőt; az első rész (2. óra, új anyag): BnJ6tNb6nTM"
+  },
+  {
+    "azon": "2e01-gyokvonas-video",
+    "oldal": "2e/01-hatvanyozas-gyokvonas-komplex-szamok/tananyag-gyokvonas.html",
+    "hely": "s3",
+    "tipus": "youtube",
+    "forras_azon": "qbxwcjhWVG0",
+    "cim": "A gyök fogalma. A gyökvonás tulajdonságai (II. osztály, 4. óra)",
+    "leiras": "A gyök fogalma és a gyökvonás tulajdonságai egy másik tanár magyarázatában — jó ismétlés a fenti definícióhoz és azonosságokhoz.",
+    "szerzo": "Angyal Andor",
+    "forras": "MNT Távoktatás magyar nyelven",
+    "forras_url": "https://tavoktatas.mnt.org.rs/ii-osztaly/matematika/matematika-ii-osztaly-4-ora-gyok-fogalma-gyokvonas-tulajdonsagai",
+    "nyelv": "hu",
+    "licenc": "YouTube-beágyazás",
+    "ellenorizve": "2026-09-27",
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig"
   },
   {
     "azon": "2e01-gyokok-video",
@@ -21,15 +37,15 @@
     "hely": "s2",
     "tipus": "youtube",
     "forras_azon": "hKaLeM0cu7Q",
-    "cim": "Műveletek gyökökkel – első rész (II. osztály)",
+    "cim": "Műveletek a gyökökkel – első rész (II. osztály, 5. óra)",
     "leiras": "A gyökökkel végzett műveletek első része egy másik tanár magyarázatában. Ha valamelyik lépés nem ült, nézd meg, aztán próbáld újra egyedül a fenti példákat.",
     "szerzo": "Szűcs Emese",
     "forras": "MNT Távoktatás magyar nyelven",
-    "forras_url": "https://www.youtube.com/watch?v=hKaLeM0cu7Q",
+    "forras_url": "https://tavoktatas.mnt.org.rs/ii-osztaly/matematika/matematika-ii-osztaly-5-ora-muveletek-gyokokkel-elso-resz",
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: csak a YouTube-videó került elő (cím + tanár két találatból), az MNT-óraoldal nem → forras_url a YouTube-oldal, cseréld, ha megvan az óra-oldal; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: gyakorlás) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; a sorozat további részei: 6. óra Z7XOpXt1gTA, 7. óra eFo3sVKGUkQ (mind gyakorlás)"
   },
   {
     "azon": "2e01-gyoktelenites-video",
@@ -45,7 +61,7 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: MNT-óraoldal + azonos című YouTube-videó WebSearch-ből, a tanár két független találatból; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online; a racionális kitevőhöz (s4) a 9. óra lenne a jelölt: knuvPxev2jg, Sarić Granyák Gyöngyi — egységenként 1 videó, ezért nem került be"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; a racionális kitevőhöz (s4) a 9. óra lenne: knuvPxev2jg — egységenként 1 videó"
   },
   {
     "azon": "2e01-komplex-fogalom-video",
@@ -61,23 +77,23 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: MNT-óraoldal + azonos című YouTube-videó WebSearch-ből, a tanár két független találatból; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig"
   },
   {
     "azon": "2e01-komplex-muveletek-video",
     "oldal": "2e/01-hatvanyozas-gyokvonas-komplex-szamok/tananyag-muveletek-komplex-szamokkal.html",
-    "hely": "s4",
+    "hely": "s3",
     "tipus": "youtube",
-    "forras_azon": "UxsInksIjiM",
-    "cim": "Komplex számokkal végzett műveletek tulajdonságai (II. osztály, 14. óra)",
-    "leiras": "A komplex számokkal végzett műveletek tulajdonságai egy másik tanár összefoglalásában — jó ismétlés, mielőtt a feladatokhoz fogsz.",
-    "szerzo": "Szűcs Emese",
+    "forras_azon": "p_p6l7_sj3k",
+    "cim": "Alapműveletek a komplex számokkal (II. osztály, 12. óra)",
+    "leiras": "Az alapműveletek a komplex számokkal egy másik tanár magyarázatában. Nézd meg, aztán végezd el egyedül a fenti osztást — a konjugálttal való bővítés a kulcs.",
+    "szerzo": "Angyal Andor",
     "forras": "MNT Távoktatás magyar nyelven",
-    "forras_url": "https://tavoktatas.mnt.org.rs/ii-osztaly/matematika/matematika-ii-osztaly-14-ora-komplex-szamokkal-vegzett-muveletek",
+    "forras_url": "https://tavoktatas.mnt.org.rs/ii-osztaly/matematika/matematika-ii-osztaly-12-ora-alapmuveletek-komplex-szamokkal",
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: MNT-óraoldal + azonos című YouTube-videó WebSearch-ből, a tanár két független találatból; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online; a 12. óra (valószínűleg maguk a műveletek) nem került elő a keresőből"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; korábban a 14. óra (UxsInksIjiM, „…műveletek tulajdonságai”, gyakorlás) állt itt, az s4-ben; a 12. óra az új anyag"
   },
   {
     "azon": "2e01-i-hatvanyai-video",
@@ -93,7 +109,7 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: MNT-óraoldal + azonos című YouTube-videó WebSearch-ből, a tanár két független találatból; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig"
   },
   {
     "azon": "2e02-masodfoku-egyenlet-video",
@@ -109,7 +125,7 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: MNT-óraoldal + azonos című YouTube-videó WebSearch-ből, a tanár két független találatból; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig"
   },
   {
     "azon": "2e02-diszkriminans-video",
@@ -125,7 +141,7 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: MNT-óraoldal + azonos című YouTube-videó WebSearch-ből, a tanár két független találatból; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online; a második rész: EFWn2rsJCJY"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; a második rész (22. óra, gyakorlás): EFWn2rsJCJY"
   },
   {
     "azon": "2e02-viete-video",
@@ -141,7 +157,7 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: MNT-óraoldal + azonos című YouTube-videó WebSearch-ből, a tanár két független találatból; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online; a forrásnál a cím: „Viéte képletek – első rész”; a második rész: 66xAlbo7Pus; a trinom bontásához (s4) a 18. óra lenne a jelölt"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; a forrásnál: „Viéte képletek – első rész”; a trinom bontásához (s4) a 18. óra lenne: V_8maTeP3oI"
   },
   {
     "azon": "2e02-bikvadratikus-video",
@@ -157,7 +173,7 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: MNT-óraoldal + azonos című YouTube-videó WebSearch-ből, a tanár két független találatból; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig"
   },
   {
     "azon": "2e02-kanonikus-video",
@@ -173,7 +189,55 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: MNT-óraoldal + azonos című YouTube-videó WebSearch-ből, a tanár két független találatból; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; a bevezető órák (26–27., „Másodfokú függvény”): M2BSxcTOmzI, DDhCM_VWx_E"
+  },
+  {
+    "azon": "2e02-vizsgalat-video",
+    "oldal": "2e/02-masodfoku-egyenletek-es-fuggvenyek/tananyag-fuggvenyvizsgalat.html",
+    "hely": "s2",
+    "tipus": "youtube",
+    "forras_azon": "TWc4lskSRZw",
+    "cim": "A másodfokú függvény vizsgálata és ábrázolása – első rész (II. osztály, 29. óra)",
+    "leiras": "A másodfokú függvény vizsgálata és ábrázolása egy másik tanár magyarázatában (a videóban „kivizsgálás”). Közben vesd össze a lépéseit a fenti protokollal.",
+    "szerzo": "Takács Helga",
+    "forras": "MNT Távoktatás magyar nyelven",
+    "forras_url": "https://tavoktatas.mnt.org.rs/ii-osztaly/matematika/matematika-ii-osztaly-29-ora-masodfoku-fuggveny-kivizsgalas-abrazolas-elso",
+    "nyelv": "hu",
+    "licenc": "YouTube-beágyazás",
+    "ellenorizve": "2026-09-27",
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; a forrásnál: „Másodfokú függvény (kivizsgálás, ábrázolás) – első rész”; a második rész (30. óra, gyakorlás): 4ljjYwrhfGQ"
+  },
+  {
+    "azon": "2e02-egyenlotlenseg-video",
+    "oldal": "2e/02-masodfoku-egyenletek-es-fuggvenyek/tananyag-masodfoku-egyenlotlensegek.html",
+    "hely": "s1",
+    "tipus": "youtube",
+    "forras_azon": "-bXYyTfLEHY",
+    "cim": "Alapvető másodfokú egyenlőtlenségek (II. osztály, 31. óra)",
+    "leiras": "Az alapvető másodfokú egyenlőtlenségek egy másik tanár magyarázatában. Közben figyeld, hogyan jut el a gyököktől a megoldáshalmazig.",
+    "szerzo": "Sarić Granyák Gyöngyi",
+    "forras": "MNT Távoktatás magyar nyelven",
+    "forras_url": "https://tavoktatas.mnt.org.rs/ii-osztaly/matematika/matematika-ii-osztaly-31-ora-alapveto-masodfoku-egyenlotlensegek",
+    "nyelv": "hu",
+    "licenc": "YouTube-beágyazás",
+    "ellenorizve": "2026-09-27",
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; a folytatás (32. óra, „Másodfokú egyenlőtlenségek”, új anyag): 7OH-f3fW4pY"
+  },
+  {
+    "azon": "2e02-rendszer-video",
+    "oldal": "2e/02-masodfoku-egyenletek-es-fuggvenyek/tananyag-masodfoku-linearis-rendszer.html",
+    "hely": "s1",
+    "tipus": "youtube",
+    "forras_azon": "P54cVhKXELE",
+    "cim": "Egy elsőfokú és egy másodfokú egyenletből álló egyenletrendszer (II. osztály, 34. óra)",
+    "leiras": "Az elsőfokú és a másodfokú egyenletből álló rendszer egy másik tanár magyarázatában. Nézd meg, aztán oldd meg egyedül a fenti példát behelyettesítéssel.",
+    "szerzo": "Szűcs Emese",
+    "forras": "MNT Távoktatás magyar nyelven",
+    "forras_url": "https://tavoktatas.mnt.org.rs/ii-osztaly/matematika/matematika-ii-osztaly-34-ora-egy-elsofoku-es-egy-masodfoku-egyenletbol-allo",
+    "nyelv": "hu",
+    "licenc": "YouTube-beágyazás",
+    "ellenorizve": "2026-09-27",
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig"
   },
   {
     "azon": "2e03-exp-fuggveny-video",
@@ -189,7 +253,7 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: MNT-óraoldal + azonos című YouTube-videó WebSearch-ből, a tanár két független találatból; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig"
   },
   {
     "azon": "2e03-exp-egyenlet-video",
@@ -197,15 +261,15 @@
     "hely": "s1",
     "tipus": "youtube",
     "forras_azon": "NopqdpV4GlY",
-    "cim": "Alapvető exponenciális egyenletek (II. osztály)",
+    "cim": "Alapvető exponenciális egyenletek (II. osztály, 40. óra)",
     "leiras": "Az alapvető exponenciális egyenletek egy másik tanár magyarázatában. Nézd meg, aztán a fenti példát hozd közös alapra egyedül.",
     "szerzo": "Sarić Granyák Gyöngyi",
     "forras": "MNT Távoktatás magyar nyelven",
-    "forras_url": "https://www.youtube.com/watch?v=NopqdpV4GlY",
+    "forras_url": "https://tavoktatas.mnt.org.rs/ii-osztaly/matematika/matematika-ii-osztaly-40-ora-alapveto-exponencialis-egyenletek",
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: csak a YouTube-videó került elő (cím + tanár két találatból), az MNT-óraoldal nem → forras_url a YouTube-oldal, cseréld, ha megvan az óra-oldal; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; a folytatás (41. óra, „Exponenciális egyenletek”, gyakorlás): d1tk4EuEYiI"
   },
   {
     "azon": "2e03-exp-egyenlotlenseg-video",
@@ -221,7 +285,7 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: MNT-óraoldal + azonos című YouTube-videó WebSearch-ből, a tanár két független találatból; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig"
   },
   {
     "azon": "2e03-log-fogalma-video",
@@ -237,7 +301,7 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: MNT-óraoldal + azonos című YouTube-videó WebSearch-ből, a tanár két független találatból; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig"
   },
   {
     "azon": "2e03-log-azonossagok-video",
@@ -253,7 +317,7 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: MNT-óraoldal + azonos című YouTube-videó WebSearch-ből, a tanár két független találatból; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online; a cím alapján: a 45. és a 46. óra határa (a négy alapösszefüggés / a három azonosság / az áttérés) nem ismert — nézd meg"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; a 45. és a 46. óra határa (négy alapösszefüggés / három azonosság / áttérés) csak a címekből ismert"
   },
   {
     "azon": "2e03-log-attetes-video",
@@ -269,40 +333,55 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: MNT-óraoldal + azonos című YouTube-videó WebSearch-ből, a tanár két független találatból; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online; BIZONYTALAN: a címből nem dönthető el, hogy az áttérési képletet tárgyalja-e — ha nem, kapcsold ki"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; BIZONYTALAN: a címből nem dönthető el, hogy az áttérési képletet tárgyalja-e — ha nem, kapcsold ki; az s2-höz („Mire jó a logaritmus?”) az 51. óra („A logaritmus alkalmazása”, gyakorlás): u3-0yJ4YBPs"
+  },
+  {
+    "azon": "2e03-logfuggveny-video",
+    "oldal": "2e/03-exponencialis-es-logaritmus-fuggveny/tananyag-inverz-es-logaritmusfuggveny.html",
+    "hely": "s2",
+    "tipus": "youtube",
+    "forras_azon": "mhgi1wKpxJs",
+    "cim": "A logaritmusfüggvény és grafikonja (II. osztály, 49. óra)",
+    "leiras": "A logaritmusfüggvény és a grafikonja egy másik tanár magyarázatában. Közben vesd össze a fenti tulajdonságokkal.",
+    "szerzo": "Szűcs Emese",
+    "forras": "MNT Távoktatás magyar nyelven",
+    "forras_url": "https://tavoktatas.mnt.org.rs/ii-osztaly/matematika/matematika-ii-osztaly-49-ora-logaritmusfuggveny-es-grafikonja",
+    "nyelv": "hu",
+    "licenc": "YouTube-beágyazás",
+    "ellenorizve": "2026-09-27",
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: típus nem ismert) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; az inverz függvényhez (s1) a 48. óra lenne: aKl8xheHqGs — egységenként 1 videó"
   },
   {
     "azon": "2e03-log-egyenlet-video",
     "oldal": "2e/03-exponencialis-es-logaritmus-fuggveny/tananyag-logaritmusos-egyenletek.html",
     "hely": "s1",
     "tipus": "youtube",
-    "forras_azon": "wDrWJDSLDzY",
-    "cim": "Logaritmusos egyenletek (II. osztály)",
+    "forras_azon": "KCre1sKp6q4",
+    "cim": "A logaritmusos egyenlet (II. osztály, 52. óra)",
     "leiras": "Logaritmusos egyenletek egy másik tanár magyarázatában. Közben te is figyeld az értelmezési tartományt: melyik gyök marad meg a végén?",
     "szerzo": "Angyal Andor",
     "forras": "MNT Távoktatás magyar nyelven",
-    "forras_url": "https://www.youtube.com/watch?v=wDrWJDSLDzY",
+    "forras_url": "https://tavoktatas.mnt.org.rs/ii-osztaly/matematika/matematika-ii-osztaly-52-ora-logaritmusos-egyenlet",
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: csak a YouTube-videó került elő (cím + tanár két találatból), az MNT-óraoldal nem → forras_url a YouTube-oldal, cseréld, ha megvan az óra-oldal; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online; az egyenlőtlenségekhez (s2) az 57. óra lenne a jelölt, de a videóazonosítója nem került elő"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; korábban az 55. óra (wDrWJDSLDzY, ismétlés) állt itt; a 52. óra az új anyag; az egyenlőtlenségekhez (s2) az 56. óra: dYb5U_yykoM"
   },
   {
     "azon": "2e04-szogmeres-video",
     "oldal": "2e/04-trigonometrikus-fuggvenyek/tananyag-szogmeres-es-radian.html",
     "hely": "s2",
     "tipus": "youtube",
-    "forras_azon": "0FOsk5KCJUw",
-    "cim": "A trigonometrikus (egység sugarú) kör (II. osztály, 60. óra)",
-    "leiras": "Az egységkör bevezetése egy másik tanár magyarázatában.",
+    "forras_azon": "1qAQKO_u2hM",
+    "cim": "A szög mérése radiánban (II. osztály, 59. óra)",
+    "leiras": "A radián egy másik tanár magyarázatában. Nézd meg, aztán a fenti példa szögeit váltsd át egyedül.",
     "szerzo": "dr. Ripcó Sípos Elvira",
     "forras": "MNT Távoktatás magyar nyelven",
-    "forras_url": "https://tavoktatas.mnt.org.rs/ii-osztaly/matematika/matematika-ii-osztaly-60-ora-trigonometrikus-egyseg-sugaru-kor",
+    "forras_url": "https://tavoktatas.mnt.org.rs/ii-osztaly/matematika/matematika-ii-osztaly-59-ora-szog-merese-radianban",
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "allapot": "kikapcsolva",
-    "megjegyzes": "felhő 2026-09-27: MNT-óraoldal + azonos című YouTube-videó WebSearch-ből, a tanár két független találatból; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online; KIKAPCSOLVA — csak jelölt: a címből nem dönthető el, hogy a forgásszöget és a radiánt tárgyalja-e, vagy már a szögfüggvényeket (az előre szaladna); nézd meg, és ha illik, allapot → aktiv"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; korábban kikapcsolt jelölt volt itt (60. óra, 0FOsk5KCJUw); az 59. óra pontosan a radián"
   },
   {
     "azon": "2e04-trig-kor-video",
@@ -318,7 +397,7 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: MNT-óraoldal + azonos című YouTube-videó WebSearch-ből, a tanár két független találatból; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; az előjelekhez (s2) a 63. óra („Trigonometrikus függvények előjele”): GhsSWceN-Jc"
   },
   {
     "azon": "2e04-visszavezetes-video",
@@ -334,7 +413,7 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: MNT-óraoldal + azonos című YouTube-videó WebSearch-ből, a tanár két független találatból; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig"
   },
   {
     "azon": "2e04-addicios-video",
@@ -350,7 +429,7 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: MNT-óraoldal + azonos című YouTube-videó WebSearch-ből, a tanár két független találatból; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online; a kétszeres szöghöz (s3) a 74. óra lenne a jelölt: cIdntgsWAkM — egységenként 1 videó"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; a kétszeres szöghöz (s3) a 73. óra (új anyag): 9i7nkfqqbpY"
   },
   {
     "azon": "2e04-szorzatta-video",
@@ -358,15 +437,15 @@
     "hely": "s2",
     "tipus": "youtube",
     "forras_azon": "ax0PB-pZWqs",
-    "cim": "Transzformációk: összeg és szorzat (II. osztály)",
+    "cim": "Transzformációk: összeg és szorzat (II. osztály, 77. óra)",
     "leiras": "Összegből szorzat: a szorzattá alakítás egy másik tanár magyarázatában (a videó címében „transzformációk”).",
     "szerzo": "dr. Ripcó Sípos Elvira",
     "forras": "MNT Távoktatás magyar nyelven",
-    "forras_url": "https://www.youtube.com/watch?v=ax0PB-pZWqs",
+    "forras_url": "https://tavoktatas.mnt.org.rs/ii-osztaly/matematika/matematika-ii-osztaly-77-ora-transzformaciok-osszeg-es-szorzat",
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: csak a YouTube-videó került elő (cím + tanár két találatból), az MNT-óraoldal nem → forras_url a YouTube-oldal, cseréld, ha megvan az óra-oldal; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online; a forrásnál a cím elírással: „Transzormációk, összeg és szorzat”; azonos című másik feltöltés: a5yJqziD1uw; a félszöghöz (s1) nem került elő videó"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; a forrásnál a videó címe elírással: „Transzormációk, összeg és szorzat”; a félszöghöz (s1) a 75. óra (új anyag): kdMESCmFCTA"
   },
   {
     "azon": "2e04-sin-grafikon-video",
@@ -382,7 +461,23 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: MNT-óraoldal + azonos című YouTube-videó WebSearch-ből, a tanár két független találatból; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online; a forrásnál: „…kivizsgálása y=sin x”; a sorozat többi része: y=cos x 7zPXI4are70, y=tg x 5heTXOUpTx0, y=ctg x 45S4-N8cbtA"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; a forrásnál: „…kivizsgálása y=sin x”; a sorozat többi része: 65. y=cos x 7zPXI4are70, 66. y=tg x 5heTXOUpTx0, 67. y=ctg x 45S4-N8cbtA"
+  },
+  {
+    "azon": "2e04-osszetett-video",
+    "oldal": "2e/04-trigonometrikus-fuggvenyek/tananyag-osszetett-trig-fuggvenyek.html",
+    "hely": "s3",
+    "tipus": "youtube",
+    "forras_azon": "Up3IrivFhHM",
+    "cim": "Trigonometrikus függvények vizsgálata: y = sin(ax + b) (II. osztály, 68. óra)",
+    "leiras": "Az \\(y=\\sin(ax+b)\\) alakú függvények vizsgálata egy másik tanár magyarázatában. Figyelj a betűkre: a videó \\(a\\)-ja a mi \\(b\\)-nk (periódus), a \\(b\\)-je a mi \\(c\\)-nk (fáziseltolás).",
+    "szerzo": "dr. Ripcó Sípos Elvira",
+    "forras": "MNT Távoktatás magyar nyelven",
+    "forras_url": "https://tavoktatas.mnt.org.rs/ii-osztaly/matematika/matematika-ii-osztaly-68-ora-trigonometrikus-fuggvenyek-kivizsgalasa-ysinaxb",
+    "nyelv": "hu",
+    "licenc": "YouTube-beágyazás",
+    "ellenorizve": "2026-09-27",
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; a forrásnál: „…kivizsgálása y=sin(ax+b)”; a koszinuszos párja (69. óra): 8ZPsenKhEZM"
   },
   {
     "azon": "2e04-trig-egyenlet-video",
@@ -390,15 +485,15 @@
     "hely": "s1",
     "tipus": "youtube",
     "forras_azon": "pquIzkDr6fY",
-    "cim": "Trigonometrikus egyenletek megoldása (II. osztály, 82. óra)",
+    "cim": "Trigonometrikus egyenletek megoldása (II. osztály, 81. óra)",
     "leiras": "Trigonometrikus egyenletek egy másik tanár magyarázatában. Közben figyeld, hogyan jelenik meg a megoldásban a periódus.",
     "szerzo": "dr. Ripcó Sípos Elvira",
     "forras": "MNT Távoktatás magyar nyelven",
-    "forras_url": "https://tavoktatas.mnt.org.rs/ii-osztaly/matematika/matematika-ii-osztaly-82-ora-trigonometrikus-egyenletek-megoldasa",
+    "forras_url": "https://tavoktatas.mnt.org.rs/ii-osztaly/matematika/matematika-ii-osztaly-81-ora-trigonometrikus-egyenletek-megoldasa",
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: MNT-óraoldal + azonos című YouTube-videó WebSearch-ből, a tanár két független találatból; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online; azonos című másik videó: i-JV1LhEEBw (valószínűleg a következő óra) — a párosítást az óra-oldalon nézd meg; az egyenlőtlenségekhez (s3): 1z6gSP-eoSs"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: új anyag feldolgozása) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; azonos című órák: 81. (új anyag, ez), 82. (gyakorlás) i-JV1LhEEBw, 83. (ismétlés) 8-Phaunnx6s; az egyenlőtlenségekhez (s3) a 84. óra: 1z6gSP-eoSs"
   },
   {
     "azon": "2e04-szinusztetel-video",
@@ -414,7 +509,7 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: MNT-óraoldal + azonos című YouTube-videó WebSearch-ből, a tanár két független találatból; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online; a koszinusztételhez (s2) a 87. óra lenne a jelölt, a videóazonosítója nem biztos — egységenként 1 videó"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: típus nem ismert) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; a koszinusztételhez (s2) a 87. óra: xPBPHfNA-sU — egységenként 1 videó"
   },
   {
     "azon": "2e04-haromszog-video",
@@ -430,6 +525,6 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "felhő 2026-09-27: MNT-óraoldal + azonos című YouTube-videó WebSearch-ből, a tanár két független találatból; a videót nem néztem végig; oEmbed itt nem futott (hálózati szabály) → helyben: media.py --online"
+    "megjegyzes": "felhő 2026-09-27: az MNT óra-oldaláról (beágyazott videó, tanár; óratípus: megerősítés) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig"
   }
 ]
