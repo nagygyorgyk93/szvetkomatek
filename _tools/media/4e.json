@@ -12,9 +12,9 @@
     "forras_url": "https://www.geogebra.org/m/cEuwdr95",
     "nyelv": "en",
     "licenc": "CC BY-NC-SA 4.0",
-    "arany": "4/3",
+    "meret": "512x608",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "pilot; az applet szövege minimális (angol), a színek beszélnek; HELYBEN ELVÉGZENDŐ (felhős javaslat, 2026-09-28, lásd _docs/FELHO_FELADATOK.md „Helyben elvégzendő”): ide kell a \"meret\": \"512x608\" mező, majd python3 _tools/media.py . --apply — nélküle telefonon csak az applet egy darabja látszik"
+    "megjegyzes": "pilot; az applet szövege minimális (angol), a színek beszélnek; meret (az applet eredeti mérete, API) 2026-09-28, tanári engedéllyel a 4e/05 zárolása ellenére"
   },
   {
     "azon": "4e05-binom-video",

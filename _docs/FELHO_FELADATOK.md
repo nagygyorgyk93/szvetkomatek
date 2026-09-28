@@ -25,9 +25,7 @@ Egy munkamenet = **egy feladat × egy osztály** (vagy egy témakör, ha az oszt
 Amit a felhős munkamenet zárolt terület miatt nem végezhetett el, de javasolt. Helyben (Cowork / a
 tanár gépén) elvégezve töröld a sort.
 
-| Mi | Hol | Miért | Honnan |
-|---|---|---|---|
-| `"meret": "512x608"` a `4e05-binom-kocka` elemhez, majd `python3 _tools/media.py . --apply` | `_tools/media/4e.json` → `4e/05-kombinatorika/tananyag-binomialis-tetel.html` | A GeoGebra-blokk a `meret` alapján skálázza az egész appletet a keretbe; nélküle telefonon csak az applet egy darabja látszik. A felhő nem írhatja a zárolt `4e/05`-öt. | M2 · 1e PR (#8), 2026-09-28 |
+Jelenleg nincs ilyen tétel. (A 4e-s pilot `meret` mezőjét a tanár engedélyével felhőben pótoltuk, 2026-09-28.)
 
 ---
 

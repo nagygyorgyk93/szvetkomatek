@@ -785,8 +785,9 @@ html{scrollbar-color:var(--kampusz-uveg-keret) var(--papir);scrollbar-width:thin
 .media[data-arany="3/2"] .media-keret{aspect-ratio:3/2;}
 .media[data-arany="1/1"] .media-keret{aspect-ratio:1/1;max-width:36rem;margin:0 auto;}
 /* GeoGebra: a keret az applet eredeti arányát kapja (media.py: meret → --ggb-arany), a GeoGebra
-   pedig az egész appletet belekicsinyíti — telefonon is látszik minden, nem csak egy darabja. */
-.media[data-meret] .media-keret{aspect-ratio:var(--ggb-arany,16/9);}
+   pedig az egész appletet belekicsinyíti — telefonon is látszik minden, nem csak egy darabja.
+   Álló appletnél a szélességet úgy korlátozzuk, hogy a keret ne legyen magasabb a képernyő 80%-ánál. */
+.media[data-meret] .media-keret{aspect-ratio:var(--ggb-arany,16/9);max-width:calc(80vh * var(--ggb-arany,16/9));margin:0 auto;}
 .media-indito{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:1rem;
   padding:1rem 1.25rem;color:var(--tinta);text-decoration:none;text-align:left;}
 .media-indito:focus-visible{outline:3px solid var(--kampusz-neon);outline-offset:-3px;border-radius:var(--r);}
