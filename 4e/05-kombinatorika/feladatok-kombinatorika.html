@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zsoldos-lista — Kombinatorika | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="digitalis">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Kombinatorika</a> ›
+  <span class="itt">Zsoldos-lista — Kombinatorika</span>
+</nav>
+<div class="hero">
+  <h1>Kombinatorika — Zsoldos-lista</h1>
+  <p class="alcim">Szorzási és összeadási szabály, permutációk, variációk, kombinációk, a Pascal-háromszög és a binomiális tétel. Minden feladat előtt két kérdés: számít-e a sorrend, és ismétlődhet-e egy elem? A végeredmény lenyitható — előbb számolj!</p>
+  <div class="meta-sor"><span class="chip alap">Alap</span><span class="chip kozep">Közép</span><span class="chip nehez">Nehéz</span><span class="chip joker">Joker</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="alap">🟢 Alapszint — Zöldfülű</h2>
+    <article class="feladat alap" id="alap-1">
+      <p><span class="szam">1.</span> Számold ki a szorzási szabállyal!</p><ol class="reszfeladatok"><li><span class="math inline">\(A\)</span>-ból <span class="math inline">\(B\)</span>-be 3 út vezet, <span class="math inline">\(B\)</span>-ből <span class="math inline">\(C\)</span>-be 4. Hányféleképpen juthatunk el <span class="math inline">\(A\)</span>-ból <span class="math inline">\(C\)</span>-be, <span class="math inline">\(B\)</span>-n keresztül?</li><li>Egy étteremben 4-féle előétel, 5-féle főétel és 3-féle desszert közül lehet választani. Hányféle háromfogásos menü állítható össze?</li><li>Egy piros és egy kék dobókockával dobunk. Hány különböző (piros, kék) eredménypár lehetséges?</li><li>Egy érmét háromszor egymás után feldobunk. Hány különböző fej–írás sorozat lehetséges?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(12\)</span></li><li><span class="math inline">\(60\)</span></li><li><span class="math inline">\(36\)</span></li><li><span class="math inline">\(8\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-2">
+      <p><span class="szam">2.</span> Nyalka Vili utazókönyvtárában 12 regény és 7 verseskötet áll, a kampusz-polcon pedig 3 matematika- és 5 fizikakönyv (mind különböző). Döntsd el, hogy a szorzási („ÉS”) vagy az összeadási („VAGY”) szabály kell-e, és számolj!</p><ol class="reszfeladatok"><li>Vili egyetlen könyvet visz magával: egy regényt vagy egy verseskötetet.</li><li>Vili egy regényt és egy verseskötetet visz magával.</li><li>A kampusz-polcról egy könyvet vesz le: matematika- vagy fizikakönyvet.</li><li>A kampusz-polcról egy matematika- és egy fizikakönyvet vesz le.</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>VAGY: <span class="math inline">\(19\)</span></li><li>ÉS: <span class="math inline">\(84\)</span></li><li>VAGY: <span class="math inline">\(8\)</span></li><li>ÉS: <span class="math inline">\(15\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-3">
+      <p><span class="szam">3.</span> Hány olyan pozitív egész szám van, amely</p><ol class="reszfeladatok rovid"><li>háromjegyű, és minden jegye páratlan?</li><li>négyjegyű, és minden jegye páros?</li><li>kétjegyű?</li><li>négyjegyű?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(125\)</span></li><li><span class="math inline">\(500\)</span></li><li><span class="math inline">\(90\)</span></li><li><span class="math inline">\(9000\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-4">
+      <p><span class="szam">4.</span> Sorba állítva:</p><ol class="reszfeladatok"><li>Írd fel az <span class="math inline">\(\{1,2,3\}\)</span> halmaz elemeinek összes sorrendjét! Hány ilyen sorrend van?</li><li>Hányféleképpen rakhatunk sorba 4 különböző könyvet a polcon?</li><li>Hányféleképpen állhat sorba 9 különböző Vilmos-variáns a Multiverzum-tablóhoz?</li><li>Hányféle sorrendben olvasható fel 10 különböző név?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(123,\ 132,\ 213,\ 231,\ 312,\ 321\)</span> — <span class="math inline">\(6\)</span> sorrend</li><li><span class="math inline">\(24\)</span></li><li><span class="math inline">\(9!=362\,880\)</span></li><li><span class="math inline">\(10!=3\,628\,800\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-5">
+      <p><span class="szam">5.</span> Számold ki, illetve egyszerűsítsd!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(6!\)</span></li><li><span class="math inline">\(\dfrac{8!}{6!}\)</span></li><li><span class="math inline">\(\dfrac{10!}{8!\cdot 2!}\)</span></li><li><span class="math inline">\(\dfrac{(n+1)!}{n!}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(720\)</span></li><li><span class="math inline">\(56\)</span></li><li><span class="math inline">\(45\)</span></li><li><span class="math inline">\(n + 1\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-6">
+      <p><span class="szam">6.</span> Ismétléses permutáció: hány különböző sorrendje van a szó betűinek (értelmetlen betűsor is számít, és minden betűt pontosan annyiszor használunk, ahányszor a szóban szerepel)?</p><ol class="reszfeladatok"><li>MAMA</li><li>ALABAMA</li><li>KEREKES</li><li>3 piros és 2 kék golyót teszünk egy sorba (az egyforma színűek nem különböztethetők meg). Hány különböző színsorrend lehetséges?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(6\)</span></li><li><span class="math inline">\(210\)</span></li><li><span class="math inline">\(420\)</span></li><li><span class="math inline">\(10\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-7">
+      <p><span class="szam">7.</span> Dobogó és tisztségek:</p><ol class="reszfeladatok"><li>Egy bajnokságon 12 csapat indul. Hányféleképpen oszthatják ki az arany-, az ezüst- és a bronzérmet (holtverseny nincs)?</li><li>Egy 30 fős osztály elnököt, titkárt és pénztárost választ (egy tanuló legfeljebb egy tisztséget kaphat). Hányféleképpen?</li><li>Hány olyan kétjegyű szám van, amelynek számjegyei különbözők, és az 1, 2, 3, 4, 5, 6, 7 számjegyek közül valók?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(1320\)</span></li><li><span class="math inline">\(24\,360\)</span></li><li><span class="math inline">\(42\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-8">
+      <p><span class="szam">8.</span> Ismétlés megengedett:</p><ol class="reszfeladatok"><li>Egy év végi bizonyítványban 10 tantárgy szerepel, mindegyikből 1-es, 2-es, 3-as, 4-es vagy 5-ös osztályzat lehet. Hányféle bizonyítvány lehetséges?</li><li>Hány olyan nyolcjegyű szám van, amelynek minden számjegye 1 vagy 2?</li><li>A totószelvényen 13 mérkőzés eredményét kell tippelni: 1, X vagy 2. Hányféleképpen tölthető ki egy oszlop?</li><li>Hány négyjegyű szám írható fel az 1, 2, 3, 4 számjegyekből, ha egy számjegy többször is szerepelhet?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(5^{10}=9\,765\,625\)</span></li><li><span class="math inline">\(256\)</span></li><li><span class="math inline">\(3^{13}=1\,594\,323\)</span></li><li><span class="math inline">\(256\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-9">
+      <p><span class="szam">9.</span> Az 1, 3, 6, 8, 9 számjegyekből négyjegyű, a 2, 5, 7 számjegyekből kétjegyű számokat képezünk. Hány szám képezhető, ha</p><ol class="reszfeladatok"><li>négyjegyűt képezünk, és minden számjegy legfeljebb egyszer szerepelhet;</li><li>négyjegyűt képezünk, és egy számjegy többször is szerepelhet;</li><li>kétjegyűt képezünk, ismétlés nélkül;</li><li>kétjegyűt képezünk, ismétléssel?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(120\)</span></li><li><span class="math inline">\(625\)</span></li><li><span class="math inline">\(6\)</span></li><li><span class="math inline">\(9\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-10">
+      <p><span class="szam">10.</span> Csapat, nem sorrend:</p><ol class="reszfeladatok"><li>Egy 25 fős osztályból 3 egyenrangú tagot választanak a diákparlamentbe. Hányféleképpen?</li><li>Egy kosárban 7 különböző színű labda van. Hányféleképpen vehetünk ki közülük 4-et?</li><li>Egy találkozón 25 résztvevő mindegyike mindenkivel egyszer fog kezet. Hány kézfogás történik?</li><li>Hány átlója van a konvex tízszögnek?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(2300\)</span></li><li><span class="math inline">\(35\)</span></li><li><span class="math inline">\(300\)</span></li><li><span class="math inline">\(35\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-11">
+      <p><span class="szam">11.</span> <b>Számít-e a sorrend?</b> Döntsd el, és számolj!</p><ol class="reszfeladatok"><li>Egy 15 fős kórusból 4 egyenrangú szólistát választanak.</li><li>Ugyanebből a kórusból egy szopránt, egy altot, egy tenort és egy basszust választanak (mindenki bármelyik szólamot el tudja énekelni, de csak egyet kaphat).</li><li>Egy pontból 5 félegyenes indul. Hány szöget határoznak meg, ha bármely két félegyenes egy, legfeljebb <span class="math inline">\(180^\circ\)</span>-os szöget határoz meg?</li><li>9 futó közül hányféleképpen alakulhat a dobogó (1., 2. és 3. hely)?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>nem számít: <span class="math inline">\(1365\)</span></li><li>számít: <span class="math inline">\(32\,760\)</span></li><li>nem számít: <span class="math inline">\(10\)</span></li><li>számít: <span class="math inline">\(504\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-12">
+      <p><span class="szam">12.</span> Pontok, egyenesek, részhalmazok:</p><ol class="reszfeladatok"><li>Egy egyenesen 5 pontot jelölünk meg. Hány olyan szakasz van, amelynek mindkét végpontja a megjelölt pontok közül való?</li><li>A síkon 9 pont van, közülük semelyik 3 nem esik egy egyenesre. Hány egyenest határoznak meg?</li><li>Hány háromszöget határoz meg ugyanez a 9 pont?</li><li>Hány háromelemű részhalmaza van az <span class="math inline">\(\{1,2,\ldots,8\}\)</span> halmaznak?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(10\)</span></li><li><span class="math inline">\(36\)</span></li><li><span class="math inline">\(84\)</span></li><li><span class="math inline">\(56\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-13">
+      <p><span class="szam">13.</span> A Pascal-háromszög és a kifejtés:</p><ol class="reszfeladatok"><li>Írd fel a Pascal-háromszög 0–6. sorát!</li><li>Fejtsd ki: <span class="math inline">\((x+1)^4\)</span></li><li>Fejtsd ki: <span class="math inline">\((a-b)^3\)</span></li><li>Fejtsd ki: <span class="math inline">\((x+3)^3\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(1\)</span>; <span class="math inline">\(1\ 1\)</span>; <span class="math inline">\(1\ 2\ 1\)</span>; <span class="math inline">\(1\ 3\ 3\ 1\)</span>; <span class="math inline">\(1\ 4\ 6\ 4\ 1\)</span>; <span class="math inline">\(1\ 5\ 10\ 10\ 5\ 1\)</span>; <span class="math inline">\(1\ 6\ 15\ 20\ 15\ 6\ 1\)</span></li><li><span class="math inline">\(x^{4}+4x^{3}+6x^{2}+4x+1\)</span></li><li><span class="math inline">\(a^{3}-3a^{2}b+3ab^{2}-b^{3}\)</span></li><li><span class="math inline">\(x^{3}+9x^{2}+27x+27\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-14">
+      <p><span class="szam">14.</span> Binomiális együtthatók:</p><ol class="reszfeladatok"><li><span class="math inline">\(\binom72\)</span></li><li><span class="math inline">\(\binom75\)</span></li><li><span class="math inline">\(\binom80\)</span></li><li><span class="math inline">\(\binom88\)</span></li><li>Hány részhalmaza van egy 6 elemű halmaznak?</li><li>Számold ki az <span class="math inline">\(1+5+10+10+5+1\)</span> összeget, és írd fel 2 hatványaként!</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(21\)</span></li><li><span class="math inline">\(21\)</span></li><li><span class="math inline">\(1\)</span></li><li><span class="math inline">\(1\)</span></li><li><span class="math inline">\(64\)</span></li><li><span class="math inline">\(32=2^5\)</span></li></ol></div>
+      </details>
+    </article>
+    <h2 id="kozep">🟡 Középszint — X-Force</h2>
+    <article class="feladat kozep" id="kozep-1">
+      <p><span class="szam">1.</span> Korlátozott helyek és komplementer — hány olyan pozitív egész szám van, amely</p><ol class="reszfeladatok"><li>négyjegyű, és legalább egy számjegye 5-ös?</li><li>háromjegyű, és az utolsó két számjegye megegyezik?</li><li>négyjegyű, és osztható 5-tel?</li><li>négyjegyű, és osztható 10-zel?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(3168\)</span></li><li><span class="math inline">\(90\)</span></li><li><span class="math inline">\(1800\)</span></li><li><span class="math inline">\(900\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-2">
+      <p><span class="szam">2.</span> Modellezés:</p><ol class="reszfeladatok"><li>Egy ország rendszámtábláin 2 betű (26-féle) után 4 számjegy áll; a betűk és a számjegyek is ismétlődhetnek. Hány különböző rendszám adható ki?</li><li>Nyalka Vili előételnek vagy levest (3-féle), vagy salátát (2-féle) kér, aztán főételt (4-féle), végül vagy desszertet (3-féle), vagy kávét (2-féle). Hányféle menüt állíthat össze?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(6\,760\,000\)</span></li><li><span class="math inline">\(100\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-3">
+      <p><span class="szam">3.</span> Feltételes sorrend:</p><ol class="reszfeladatok"><li>Az 1, 2, …, 9 számokat sorba rendezzük. Hány olyan sorrend van, amelyben az 1 és a 2 egymás mellett áll?</li><li>4 fiú és 2 lány áll sorba úgy, hogy a két lány a sor két szélén álljon. Hányféleképpen?</li><li>6 különböző könyvet teszünk a polcra úgy, hogy két adott könyv egymás mellé kerüljön. Hányféleképpen?</li><li>5 ember áll sorba úgy, hogy két adott ember <b>ne</b> álljon egymás mellett. Hányféleképpen?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(80\,640\)</span></li><li><span class="math inline">\(48\)</span></li><li><span class="math inline">\(240\)</span></li><li><span class="math inline">\(72\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-4">
+      <p><span class="szam">4.</span> Minden számjegy pontosan egyszer:</p><ol class="reszfeladatok"><li>Hány ötjegyű szám írható fel a 0, 1, 2, 3, 4 számjegyekből, ha mindegyiket pontosan egyszer használjuk?</li><li>Hány páratlan ötjegyű szám írható fel az 1, 2, 3, 4, 5 számjegyekből, ha mindegyiket pontosan egyszer használjuk?</li><li>A 0, 1, …, 9 számjegyeket egy sorba írjuk úgy, hogy az első öt helyen a páratlan jegyek álljanak. Hány ilyen sorrend van?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(96\)</span></li><li><span class="math inline">\(72\)</span></li><li><span class="math inline">\(14\,400\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-5">
+      <p><span class="szam">5.</span> Ismétléses permutáció számjegyekkel és bábukkal:</p><ol class="reszfeladatok"><li>Hány hétjegyű szám írható fel, amelyben az 1-es háromszor, a 2-es és a 3-as kétszer-kétszer szerepel (más jegy nem)?</li><li>Hány hatjegyű szám írható fel, amelyben a 0 háromszor, az 1-es kétszer, a 2-es egyszer szerepel (más számjegy nem)?</li><li>A sakktábla első sorába 2 bástyát, 2 futót, 2 huszárt, egy királyt és egy vezért állítunk. Hányféle sorrendben? (Az egyforma bábuk nem különböztethetők meg.)</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(210\)</span></li><li><span class="math inline">\(30\)</span></li><li><span class="math inline">\(5040\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-6">
+      <p><span class="szam">6.</span> Variáció feltétellel — hány olyan pozitív egész szám van, amely</p><ol class="reszfeladatok"><li>ötjegyű, számjegyei különbözők, és a 0 nem szerepel benne?</li><li>3000 és 5000 közé esik, és a számjegyei különbözők?</li><li>négyjegyű, 5-tel kezdődik, és a 0, 1, …, 7 számjegyekből áll (egy számjegy többször is szerepelhet)?</li><li>négyjegyű, 5-tel kezdődik, és a 0, 1, …, 7 számjegyekből áll, mindegyik legfeljebb egyszer?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(15\,120\)</span></li><li><span class="math inline">\(1008\)</span></li><li><span class="math inline">\(512\)</span></li><li><span class="math inline">\(210\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-7">
+      <p><span class="szam">7.</span> Ismétléses variáció és komplementer:</p><ol class="reszfeladatok"><li>A Braille-írás egy jele 6 pontból áll, mindegyik pont kiemelt vagy sima. Hány különböző jel képezhető, ha legalább egy pontnak kiemeltnek kell lennie?</li><li>5 különböző golyót 3 különböző (számozott) dobozba teszünk; egy dobozba több golyó is kerülhet, egy doboz üresen is maradhat. Hányféleképpen?</li><li>Egy I.V.H.-széf zárján 3 tárcsa van, mindegyiken az A, B, C, D, E, F betűk. Hány olyan beállítás van, amelyben legalább két tárcsán ugyanaz a betű áll?</li><li>Hány 5-re végződő ötjegyű szám írható fel az 1, 2, …, 9 számjegyekből, ha egy számjegy többször is szerepelhet?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(63\)</span></li><li><span class="math inline">\(243\)</span></li><li><span class="math inline">\(96\)</span></li><li><span class="math inline">\(6561\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-8">
+      <p><span class="szam">8.</span> Két csoportból, pontosan:</p><ol class="reszfeladatok"><li>Egy osztályba 12 lány és 11 fiú jár. Hányféleképpen választható ki közülük egy 3 lányból és 4 fiúból álló csapat?</li><li>Egy 10 fős csapatból egy vezetőt és rajta kívül 4 (egyenrangú) képviselőt választanak. Hányféleképpen?</li><li>Egy dobozban 6 piros és 4 kék golyó van (mind megkülönböztethető). Hányféleképpen húzhatunk ki 3 golyót úgy, hogy pontosan 1 kék legyen köztük?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(72\,600\)</span></li><li><span class="math inline">\(1260\)</span></li><li><span class="math inline">\(60\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-9">
+      <p><span class="szam">9.</span> Legalább, többség, kizárás:</p><ol class="reszfeladatok"><li>4 férfi és 4 nő közül 5 fős bizottságot választanak úgy, hogy a nők legyenek többségben. Hányféleképpen?</li><li>Egy 16 lányból és 20 fiúból álló csoportból 4 tanulót választanak. Hányféleképpen, ha legalább egy lánynak lennie kell köztük?</li><li>12 versenyzőből 9-et kell kiválasztani, de két adott versenyző, <span class="math inline">\(A\)</span> és <span class="math inline">\(B\)</span> nem kerülhet be egyszerre. Hányféleképpen?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(28\)</span></li><li><span class="math inline">\(54\,060\)</span></li><li><span class="math inline">\(100\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-10">
+      <p><span class="szam">10.</span> Visszafelé — és „Mit rontott el Véd Vilmos?”</p><ol class="reszfeladatok"><li>Egy sakkversenyen mindenki mindenkivel pontosan egyszer játszott, összesen 120 játszma volt. Hányan indultak?</li><li>Egy csoportból 90-féleképpen választható elnök és elnökhelyettes (két különböző ember). Hány tagú a csoport?</li><li>Véd Vilmos: „9 ember mindegyike mindenkivel egyszer fog kezet, ez <span class="math inline">\(9\cdot 8=72\)</span> kézfogás.” Mit rontott el, és mennyi a helyes szám?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(16\)</span> versenyző</li><li><span class="math inline">\(10\)</span> tagú</li><li>minden kézfogást kétszer számolt (az <span class="math inline">\(A\)</span>–<span class="math inline">\(B\)</span> és a <span class="math inline">\(B\)</span>–<span class="math inline">\(A\)</span> ugyanaz); helyesen <span class="math inline">\(36\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-11">
+      <p><span class="szam">11.</span> Fejtsd ki a binomiális tétellel!</p><ol class="reszfeladatok"><li><span class="math inline">\((2x-1)^3\)</span></li><li><span class="math inline">\((x+2)^5\)</span></li><li><span class="math inline">\(\left(1+\sqrt2\right)^4\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(8x^{3}-12x^{2}+6x-1\)</span></li><li><span class="math inline">\(x^{5}+10x^{4}+40x^{3}+80x^{2}+80x+32\)</span></li><li><span class="math inline">\(17+12\sqrt2\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-12">
+      <p><span class="szam">12.</span> Egy tag, egy együttható:</p><ol class="reszfeladatok"><li>Mennyi az <span class="math inline">\(x^2\)</span> együtthatója az <span class="math inline">\((x+3)^6\)</span> kifejtésében?</li><li>Írd fel a <span class="math inline">\((2x+1)^5\)</span> kifejtésének harmadik tagját (az <span class="math inline">\(x\)</span> csökkenő hatványai szerint rendezve)!</li><li>Véd Vilmos: „<span class="math inline">\((x+2)^3=x^3+3x^2+3x+8\)</span>.” Mit rontott el?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(1215\)</span></li><li><span class="math inline">\(80x^3\)</span></li><li>a két középső tagból kimaradt a <span class="math inline">\(2\)</span> hatványa (a <span class="math inline">\(3x^2\)</span> helyett <span class="math inline">\(3\cdot 2\,x^2\)</span>, a <span class="math inline">\(3x\)</span> helyett <span class="math inline">\(3\cdot 2^2x\)</span> kell); helyesen <span class="math inline">\(x^{3}+6x^{2}+12x+8\)</span></li></ol></div>
+      </details>
+    </article>
+    <h2 id="nehez">🔴 Nehéz szint — Maximális erőbedobás</h2>
+    <article class="feladat nehez" id="nehez-1">
+      <p><span class="szam">1.</span> Szótári sorrend:</p><ol class="reszfeladatok"><li>Az A, I, K, L, M betűk összes sorrendjét (mind az öt betűt felhasználva) ábécérendbe írjuk. Hányadik a MILKA?</li><li>Az A, D, I, L, N, Z betűk összes sorrendjét ábécérendbe írjuk. Hányadik az IZLAND?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>a <span class="math inline">\(108.\)</span></li><li>a <span class="math inline">\(350.\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-2">
+      <p><span class="szam">2.</span> Esetszétválasztás — a 0 és a párosság:</p><ol class="reszfeladatok"><li>Hány ötjegyű páros szám írható fel a 0, 1, 2, 3, 5 számjegyekből, ha mindegyiket pontosan egyszer használjuk?</li><li>Hány páratlan ötjegyű szám van, amelynek jegyei különbözők?</li><li>Hány négyjegyű páros szám írható fel a 0, 1, 2, 3, 4, 5, 8 számjegyekből, ha mindegyik legfeljebb egyszer szerepelhet?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(42\)</span></li><li><span class="math inline">\(13\,440\)</span></li><li><span class="math inline">\(420\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-3">
+      <p><span class="szam">3.</span> Rácsutak:</p><div class="svgwrap"><svg viewBox="0 0 204 204" width="204" role="img" aria-label="4×4-es betűtábla: V A R I / A R I Á / R I Á N / I Á N S"><rect x="10" y="10" width="46" height="46" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="33.0" y="40.0" text-anchor="middle" font-size="20" font-family="Georgia,serif" fill="#0f172a">V</text><rect x="56" y="10" width="46" height="46" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="79.0" y="40.0" text-anchor="middle" font-size="20" font-family="Georgia,serif" fill="#0f172a">A</text><rect x="102" y="10" width="46" height="46" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="125.0" y="40.0" text-anchor="middle" font-size="20" font-family="Georgia,serif" fill="#0f172a">R</text><rect x="148" y="10" width="46" height="46" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="171.0" y="40.0" text-anchor="middle" font-size="20" font-family="Georgia,serif" fill="#0f172a">I</text><rect x="10" y="56" width="46" height="46" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="33.0" y="86.0" text-anchor="middle" font-size="20" font-family="Georgia,serif" fill="#0f172a">A</text><rect x="56" y="56" width="46" height="46" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="79.0" y="86.0" text-anchor="middle" font-size="20" font-family="Georgia,serif" fill="#0f172a">R</text><rect x="102" y="56" width="46" height="46" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="125.0" y="86.0" text-anchor="middle" font-size="20" font-family="Georgia,serif" fill="#0f172a">I</text><rect x="148" y="56" width="46" height="46" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="171.0" y="86.0" text-anchor="middle" font-size="20" font-family="Georgia,serif" fill="#0f172a">Á</text><rect x="10" y="102" width="46" height="46" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="33.0" y="132.0" text-anchor="middle" font-size="20" font-family="Georgia,serif" fill="#0f172a">R</text><rect x="56" y="102" width="46" height="46" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="79.0" y="132.0" text-anchor="middle" font-size="20" font-family="Georgia,serif" fill="#0f172a">I</text><rect x="102" y="102" width="46" height="46" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="125.0" y="132.0" text-anchor="middle" font-size="20" font-family="Georgia,serif" fill="#0f172a">Á</text><rect x="148" y="102" width="46" height="46" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="171.0" y="132.0" text-anchor="middle" font-size="20" font-family="Georgia,serif" fill="#0f172a">N</text><rect x="10" y="148" width="46" height="46" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="33.0" y="178.0" text-anchor="middle" font-size="20" font-family="Georgia,serif" fill="#0f172a">I</text><rect x="56" y="148" width="46" height="46" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="79.0" y="178.0" text-anchor="middle" font-size="20" font-family="Georgia,serif" fill="#0f172a">Á</text><rect x="102" y="148" width="46" height="46" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="125.0" y="178.0" text-anchor="middle" font-size="20" font-family="Georgia,serif" fill="#0f172a">N</text><rect x="148" y="148" width="46" height="46" fill="#fff" stroke="#0f172a" stroke-width="1.5"/><text x="171.0" y="178.0" text-anchor="middle" font-size="20" font-family="Georgia,serif" fill="#0f172a">S</text></svg></div><ol class="reszfeladatok"><li>A fenti táblázat bal felső sarkából indulva, minden lépésben jobbra vagy lefelé haladva olvassuk ki a VARIÁNS szót. Hányféleképpen tehetjük ezt meg?</li><li>Egy bábu a sakktábla <span class="math inline">\(a1\)</span> mezőjéről a <span class="math inline">\(h8\)</span> mezőre megy; minden lépésben egy mezőt léphet jobbra vagy felfelé. Hányféle úton juthat el?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(20\)</span></li><li><span class="math inline">\(3432\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-4">
+      <p><span class="szam">4.</span> Határozd meg a kifejtésben az <span class="math inline">\(x\)</span>-et nem tartalmazó tagot!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(\left(x+\dfrac1x\right)^4\)</span></li><li><span class="math inline">\(\left(x^2+\dfrac1x\right)^6\)</span></li><li><span class="math inline">\(\left(2x-\dfrac1x\right)^6\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(6\)</span></li><li><span class="math inline">\(15\)</span></li><li><span class="math inline">\(-160\)</span></li></ol></div>
+      </details>
+    </article>
+    <h2 id="joker-szint">🃏 Joker</h2>
+    <article class="feladat joker" id="joker">
+      <p><span class="szam">★</span> Egy <span class="math inline">\(4\times4\)</span>-es négyzetrács 16 kis négyzetből áll (ábra). Hány olyan téglalap van, amelynek oldalai a rácsvonalakon fekszenek? (A négyzetek is téglalapok.)</p><div class="svgwrap"><svg viewBox="0 0 164 164" width="164" role="img" aria-label="4×4-es négyzetháló"><line x1="10" y1="10" x2="10" y2="154" stroke="#0f172a" stroke-width="1.5"/><line x1="10" y1="10" x2="154" y2="10" stroke="#0f172a" stroke-width="1.5"/><line x1="46" y1="10" x2="46" y2="154" stroke="#0f172a" stroke-width="1.5"/><line x1="10" y1="46" x2="154" y2="46" stroke="#0f172a" stroke-width="1.5"/><line x1="82" y1="10" x2="82" y2="154" stroke="#0f172a" stroke-width="1.5"/><line x1="10" y1="82" x2="154" y2="82" stroke="#0f172a" stroke-width="1.5"/><line x1="118" y1="10" x2="118" y2="154" stroke="#0f172a" stroke-width="1.5"/><line x1="10" y1="118" x2="154" y2="118" stroke="#0f172a" stroke-width="1.5"/><line x1="154" y1="10" x2="154" y2="154" stroke="#0f172a" stroke-width="1.5"/><line x1="10" y1="154" x2="154" y2="154" stroke="#0f172a" stroke-width="1.5"/></svg></div>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p><span class="math inline">\(100\)</span></p></div>
+      </details>
+    </article>
+    <div class="gyakorolj">
+      <span class="ikon">📖</span>
+      <p>Elakadtál? Nézd át a <a href="index.html">témakör tananyagait</a> vagy a <a href="osszefoglalo.html">Csalópapírt</a>.</p>
+    </div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-binomialis-tetel.html"><span class="irany">← Előző</span><span class="hova">A Pascal-háromszög és a binomiális tétel</span></a>
+      <a class="kov" href="feladatok-hazi.html"><span class="irany">Következő →</span><span class="hova">I.V.H. Kihallgató Terem — Vészterem</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
