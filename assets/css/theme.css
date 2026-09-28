@@ -394,9 +394,10 @@ table.tt-table{width:auto;min-width:min(100%,420px);margin:14px auto;border-radi
 table.tt-table th,table.tt-table td{padding:.4rem .9rem;}
 table.tt-table .res{font-weight:800;background:rgba(16,185,129,0.15);}
 .tblwrap{overflow-x:auto;}
-/* A cellában a képlet egyben marad (a KaTeX különben a + és = jelnél sort törne: „F=2B+ / KH”);
-   ha így a táblázat szélesebb a lapnál, a .tblwrap-ben gördül. */
-table.tt-table .katex-html{white-space:nowrap;}
+/* Telefonon a cellában a képlet egyben marad (a KaTeX különben a + és = jelnél sort törne:
+   „F=2B+ / KH”); a táblázat a .tblwrap-ben gördül. Szélesebb képernyőn a tördelés marad, hogy
+   egy majdnem kiférő táblázat ne kapjon gördítősávot. */
+@media(max-width:640px){table.tt-table .katex-html{white-space:nowrap;}}
 .kbd{font-family:'Cambria Math',Cambria,Georgia,serif;background:rgba(16,185,129,0.15);
   border:1px solid var(--szurke-300);border-radius:6px;padding:1px 7px;font-size:1.02em;color:var(--kampusz-neon);}
 .pill{display:inline-block;background:var(--kampusz-uveg-keret);color:#34d399;
