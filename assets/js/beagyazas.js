@@ -24,6 +24,10 @@
              '?rel=0&autoplay=1&playsinline=1' + (k > 0 ? '&start=' + k : '');
     }
     if (tipus === 'geogebra'){
+      // data-meret = az applet eredeti mérete: ezt kérjük, a GeoGebra pedig az egészet a keretbe
+      // skálázza. Nélküle a keret méretében rajzol, és telefonon csak az applet egy darabja látszik.
+      var m = /^(\d+)x(\d+)$/.exec(fig.getAttribute('data-meret') || '');
+      if (m){ szel = m[1]; mag = m[2]; }
       return 'https://www.geogebra.org/material/iframe/id/' + azon +
              '/width/' + szel + '/height/' + mag + '/' + GGB_KAPCSOLOK;
     }

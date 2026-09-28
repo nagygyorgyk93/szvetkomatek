@@ -14,7 +14,7 @@
     "licenc": "CC BY-NC-SA 4.0",
     "arany": "4/3",
     "ellenorizve": "2026-09-27",
-    "megjegyzes": "pilot; az applet szövege minimális (angol), a színek beszélnek"
+    "megjegyzes": "pilot; az applet szövege minimális (angol), a színek beszélnek; HELYBEN ELVÉGZENDŐ (felhős javaslat, 2026-09-28, lásd _docs/FELHO_FELADATOK.md „Helyben elvégzendő”): ide kell a \"meret\": \"512x608\" mező, majd python3 _tools/media.py . --apply — nélküle telefonon csak az applet egy darabja látszik"
   },
   {
     "azon": "4e05-binom-video",

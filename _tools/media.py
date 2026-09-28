@@ -35,6 +35,8 @@ MEZOK = {
     "hossz": "(youtube, opcionális) pp:mm",
     "kezdes": "(youtube, opcionális) indulás másodpercben",
     "arany": "(opcionális) 16/9 (alap) | 4/3 | 3/2 | 1/1",
+    "meret": "(geogebra, ajánlott) az applet eredeti mérete SZxMA, pl. 896x515 (API: elements[].settings) — "
+             "a keret ezt az arányt kapja, és a GeoGebra az egész appletet belekicsinyíti (telefonon is)",
     "allapot": "(opcionális) aktiv (alap) | kikapcsolva — a kikapcsolt elem nem kerül a lapra",
     "megjegyzes": "(opcionális) belső megjegyzés, a lapra nem kerül ki",
 }
@@ -43,6 +45,7 @@ KOTELEZO = ("azon", "oldal", "hely", "tipus", "forras_azon", "cim", "szerzo", "f
 AZON_MINTA = {"youtube": re.compile(r"^[A-Za-z0-9_-]{11}$"),
               "geogebra": re.compile(r"^[A-Za-z0-9]{6,12}$")}
 ARANYOK = {"16/9", "4/3", "3/2", "1/1"}
+MERET = re.compile(r"^[1-9][0-9]{1,3}x[1-9][0-9]{1,3}$")
 NYELV = {"en": "angol", "sr": "szerb", "de": "német", "fr": "francia", "es": "spanyol",
          "it": "olasz", "hr": "horvát", "sk": "szlovák", "ro": "román"}
 BLOKK = re.compile(r"[ \t]*<!-- media:begin (\S+) -->.*?<!-- media:end \1 -->[ \t]*\n?", re.S)
@@ -102,6 +105,8 @@ def ellenoriz(gyoker, elemek):
             if elso is not e:
                 hibak.append(f"{hol}: ez a videó már szerepel ({elso['azon']}, {elso['oldal']}) — "
                              "egy videó csak egy helyre kerülhet; a többit kapcsold ki")
+        if e.get("meret") and not (e["tipus"] == "geogebra" and MERET.match(str(e["meret"]))):
+            hibak.append(f"{hol}: meret csak geogebránál, SZxMA alakban (pl. 896x515)")
         if e.get("arany", "16/9") not in ARANYOK:
             hibak.append(f"{hol}: arany csak {sorted(ARANYOK)} lehet")
         if e.get("allapot", "aktiv") not in ("aktiv", "kikapcsolva"):
@@ -150,7 +155,12 @@ def blokk(e, behuz):
         info.insert(0, f"{nyelv} nyelvű")
     attr = [f'class="media"', f'id="media-{esc(e["azon"])}"', f'data-tipus="{t}"',
             f'data-azon="{esc(azon)}"', f'data-cim="{esc(e["cim"])}"']
-    if e.get("arany") and e["arany"] != "16/9":
+    if t == "geogebra" and e.get("meret"):
+        # A keret az applet saját arányát kapja; a beagyazas.js az eredeti méretet kéri le,
+        # a GeoGebra pedig az egészet a keretbe skálázza (különben telefonon csak egy darabja látszana).
+        w, h = e["meret"].split("x")
+        attr += [f'data-meret="{esc(e["meret"])}"', f'style="--ggb-arany:{int(w)}/{int(h)}"']
+    elif e.get("arany") and e["arany"] != "16/9":
         attr.append(f'data-arany="{esc(e["arany"])}"')
     if t == "youtube" and int(e.get("kezdes") or 0):
         attr.append(f'data-kezdes="{int(e["kezdes"])}"')
@@ -232,13 +242,20 @@ def online(elemek):
             url = ("https://www.youtube.com/oembed?format=json&url="
                    f"https://www.youtube.com/watch?v={e['forras_azon']}")
         else:
-            url = f"https://api.geogebra.org/v1.0/materials/{e['forras_azon']}?scope=basic"
+            url = f"https://api.geogebra.org/v1.0/materials/{e['forras_azon']}?scope=extended"
         try:
             with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "szvetko-media/1.0"}), timeout=20) as r:
                 adat = json.loads(r.read().decode("utf-8", "replace") or "{}")
             cim = adat.get("title") or adat.get("name") or ""
             csatorna = adat.get("author_name") or ""  # YouTube oEmbed: a feltöltő csatorna
             print(f"  OK   {e['azon']:<32} {cim[:60]}" + (f"  [{csatorna}]" if csatorna else ""))
+            if e["tipus"] == "geogebra":
+                if adat.get("type") == "book":
+                    print(f"       figyelem: ez egy könyv — egészben nem ágyazható be, a benne lévő oldal azonosítóját add meg")
+                st = [x.get("settings") or {} for x in adat.get("elements", []) if (x.get("settings") or {}).get("width")]
+                api_meret = f"{st[0]['width']}x{st[0]['height']}" if st else ""
+                if api_meret and e.get("meret") != api_meret:
+                    print(f"       figyelem: az applet mérete {api_meret} — a katalógusban: {e.get('meret') or '(nincs megadva)'}")
         except urllib.error.HTTPError as ex:
             rossz += 1
             ok = {401: "beágyazás letiltva", 403: "tiltott / privát", 404: "nem létezik (törölt?)"}

@@ -39,9 +39,10 @@ A blokkot **soha nem írod kézzel a HTML-be** — csak a katalógusba; a `media
    - Ha teljes óralista kellene, azt a tanár a böngészőjében ki tudja másolni — kérd a PR-ben.
    - **GeoGebra:** WebSearch `geogebra.org/m <téma angolul és magyarul>`; ajánlott szerzők:
      Daniel Mentrard (`https://www.geogebra.org/u/daniel+mentrard`), a GeoGebra Team és
-     tankönyvi szerzők anyagai. Adatlap: `https://api.geogebra.org/v1.0/materials/<id>?scope=basic`
-     (cím, szerző, láthatóság). Egy **könyv** (book) nem ágyazható be egészben — a benne lévő
-     tevékenység azonosítóját használd (`/m/<konyv>#material/<id>` → `<id>`).
+     tankönyvi szerzők anyagai. Adatlap: `https://api.geogebra.org/v1.0/materials/<id>?scope=extended`
+     (cím, láthatóság, nyelv; `creator_id` → `/v1.0/users/<creator_id>`: a szerző neve;
+     `elements[].settings.width/height`: az applet mérete). Egy **könyv** (book) nem ágyazható be
+     egészben — a benne lévő tevékenység azonosítóját használd (`chapters[].pages[].id`).
 3. **Szűrés — mindnek teljesülnie kell.**
    - Témában és szintben a szakaszhoz illik (ne szaladjon előre, ne legyen elemibb). A mi tantervünk
      (társadalmi szak) szűkebb az MNT-énél: pl. a be- és körülírt gömb nem tananyag, határérték csak
@@ -50,7 +51,13 @@ A blokkot **soha nem írod kézzel a HTML-be** — csak a katalógusba; a `media
    - A jelölés nem ütközik a `_docs/jelolesek.md`-vel; ha igen, a `leiras` mondja ki.
    - Videó: magyar nyelvű; beágyazható; ha hosszú, a `kezdes` a releváns résznél indítja.
    - GeoGebra: mobilon is kezelhető; kevés szöveg vagy magyar/nyelvfüggetlen; nem lövi le a
-     feladatgyűjtemény megoldását.
+     feladatgyűjtemény megoldását. Kb. 1000 px-nél szélesebb applet 390 px-en már nehezen olvasható:
+     ilyenkor legyen nagy a rajza és kevés a szövege. **Szélső helyzetben is helyes:** próbáld ki,
+     mielőtt kiválasztod — húzd a háromszög egyik csúcsát át a szemközti oldalon, a kerületi szög
+     csúcsát a másik ívre. Sok applet ilyenkor a szög külső oldalát méri (pl. „α + β + γ = 900°”):
+     az ilyet vesd el — akkor is, ha nincs jobb (tanári döntés, 2026-09-28: hibás applet ne kerüljön
+     a lapra, a leírásbeli figyelmeztetés nem elég). Ilyenkor keress angol nyelvűt is; ha az sincs,
+     a lap szimuláció nélkül marad.
    - Licenc: GeoGebra-anyag **CC BY-NC-SA 4.0** (GeoGebra ÁSZF) — a szerző neve kötelező, a
      `media.py` kiírja. YouTube: **csak beágyazás** (letöltés, újrafeltöltés, kivágás tilos).
    - Mennyiség (tanári döntés, 2026-09-27): az MNT-sorozat **minden** órája bekerül, amelynek a
@@ -75,8 +82,15 @@ A blokkot **soha nem írod kézzel a HTML-be** — csak a katalógusba; a `media
      leírás alapján választottad, legyen óvatos, és a PR-ben jelöld („nem néztem végig”).
    - `ellenorizve`: a mai dátum. Elvetett / elhalt elem: `"allapot": "kikapcsolva"` + `megjegyzes`
      (ne töröld — így látszik, hogy már megvizsgáltuk).
+   - `meret` (GeoGebra): az applet eredeti mérete, pl. `896x515` (az adatlapról; a `--online`
+     szól, ha hiányzik vagy eltér). A keret ezt az arányt kapja, és a GeoGebra az **egész** appletet
+     belekicsinyíti — nélküle telefonon csak az applet egy darabja látszik.
 5. **Lánc.** `python3 _tools/media.py . --online` → `python3 _tools/media.py . --apply` →
    `python3 _tools/verify_web.py <osztaly>/<NN-slug>/` → `python3 _tools/layout_teszt.py <osztaly>/<NN-slug>/ --szelessegek 390`.
+   GeoGebra-elemnél még: `python3 _tools/media_proba.py <osztaly>/<NN-slug>/` — 390 px-en betölti az
+   appleteket, képet ment a `_layout/media/` mappába (nézd is meg!), és jelez, ha egy nem töltődött
+   be. Felhőben a konténer proxyja mögött is megy: a böngésző a proxy tanúsítványát fogadja el
+   pluszban, a TLS-ellenőrzés marad.
 6. **PR.** A `python3 _tools/media.py . --jelentes` táblázata + elemenként egy mondat indoklás +
    „Tanárnak ellenőrizni” lista.
 
