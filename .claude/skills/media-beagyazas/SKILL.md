@@ -55,7 +55,9 @@ A blokkot **soha nem írod kézzel a HTML-be** — csak a katalógusba; a `media
      ilyenkor legyen nagy a rajza és kevés a szövege. **Szélső helyzetben is helyes:** próbáld ki,
      mielőtt kiválasztod — húzd a háromszög egyik csúcsát át a szemközti oldalon, a kerületi szög
      csúcsát a másik ívre. Sok applet ilyenkor a szög külső oldalát méri (pl. „α + β + γ = 900°”):
-     az ilyet vesd el, vagy ha nincs jobb, a `leiras` mondja meg, mire figyeljen a kadét.
+     az ilyet vesd el — akkor is, ha nincs jobb (tanári döntés, 2026-09-28: hibás applet ne kerüljön
+     a lapra, a leírásbeli figyelmeztetés nem elég). Ilyenkor keress angol nyelvűt is; ha az sincs,
+     a lap szimuláció nélkül marad.
    - Licenc: GeoGebra-anyag **CC BY-NC-SA 4.0** (GeoGebra ÁSZF) — a szerző neve kötelező, a
      `media.py` kiírja. YouTube: **csak beágyazás** (letöltés, újrafeltöltés, kivágás tilos).
    - Mennyiség (tanári döntés, 2026-09-27): az MNT-sorozat **minden** órája bekerül, amelynek a

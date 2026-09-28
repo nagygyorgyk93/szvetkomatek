@@ -1519,7 +1519,7 @@
     "tipus": "geogebra",
     "forras_azon": "A5wpUBrw",
     "cim": "Kerületi szög és középponti szög",
-    "leiras": "Mozgasd a \\(B\\) és a \\(C\\) pontot a körön: az \\(ABC\\sphericalangle\\) kerületi szög és az ugyanahhoz az ívhez tartozó \\(AOC\\sphericalangle\\) középponti szög együtt változik — a középponti szög mindig a kerületi szög kétszerese. Vigyázz: ha a \\(B\\)-t a középponti szög ívére húzod, az applet \\(180^\\circ\\)-nál nagyobb szöget ír ki. A valódi kerületi szög ekkor \\(360^\\circ\\) mínusz a kiírt érték, és a másik ívhez tartozik.",
+    "leiras": "Mozgasd a \\(B\\) és a \\(C\\) pontot a körön: az \\(ABC\\sphericalangle\\) kerületi szög és az ugyanahhoz az ívhez tartozó \\(AOC\\sphericalangle\\) középponti szög együtt változik — a középponti szög mindig a kerületi szög kétszerese.",
     "szerzo": "Bűcs István Zoltán",
     "forras": "GeoGebra",
     "forras_url": "https://www.geogebra.org/m/A5wpUBrw",
@@ -1527,7 +1527,25 @@
     "licenc": "CC BY-NC-SA 4.0",
     "meret": "565x503",
     "ellenorizve": "2026-09-28",
-    "megjegyzes": "felhő 2026-09-28: API (scope=extended) + 390 px-es próba (media_proba.py); magyar feliratok"
+    "megjegyzes": "felhő 2026-09-28: kikapcsolva (tanári döntés): ha B a középponti szög ívére kerül, 261°-ot ír ki (a valódi kerületi szög 99°) — hibás applet ne maradjon a lapon. Helyette: 1e05-keruleti-kozepponti-ggb (UdXwSHVj). Szintén elvetve: nRvbK2Rz (ugyanez a hiba), VzUQduj4 (egy feladat levezetése, radiánnal), Ym9sDBQs (csak középponti szög)",
+    "allapot": "kikapcsolva"
+  },
+  {
+    "azon": "1e05-keruleti-kozepponti-ggb",
+    "oldal": "1e/05-geometria/tananyag-sokszogek-es-kor.html",
+    "hely": "s4",
+    "tipus": "geogebra",
+    "forras_azon": "UdXwSHVj",
+    "cim": "Inscribed Angle Theorem — a kerületi és a középponti szög",
+    "leiras": "Húzd a rózsaszín pontot (a kerületi szög csúcsát) és a két fehér pontot (a vastag kék ív végpontjait), majd a <i>Slide Me!</i> csúszkát: a kerületi szög két példánya pontosan kitölti az ugyanahhoz az ívhez tartozó középponti szöget. A középponti szög tehát a kerületi szög kétszerese — akkor is, ha \\(180^\\circ\\)-nál nagyobb.",
+    "szerzo": "Tim Brzezinski",
+    "forras": "GeoGebra",
+    "forras_url": "https://www.geogebra.org/m/UdXwSHVj",
+    "nyelv": "-",
+    "licenc": "CC BY-NC-SA 4.0",
+    "meret": "525x491",
+    "ellenorizve": "2026-09-28",
+    "megjegyzes": "felhő 2026-09-28: API (scope=extended) + 390 px-es próba (media_proba.py); szám nincs benne, csak a „Slide Me!” felirat; a csúcs (E) a szerkesztés szerint csak az ív másik oldalán mozoghat (Point(d), d = CircularArc(A, D, C)), ezért szélső helyzetben sem hibázik; a csúszkát 0–3 között és az ív végpontját mozgatva kipróbáltam"
   },
   {
     "azon": "1e05-vektor-osszeg-ggb",

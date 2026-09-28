@@ -20,6 +20,15 @@ Egy munkamenet = **egy feladat × egy osztály** (vagy egy témakör, ha az oszt
 | Új feladat / új számadat bármely gyűjteményben | felmérő-ütközés felhőben nem ellenőrizhető | mindig — javaslatként a PR-be |
 | `_docs/workflow.md`, `jelolesek.md`, `tortenet/`, tükrözött skillek | a tanár gépéről frissülnek | mindig |
 
+## Helyben elvégzendő (felhőből átadva) 🖥️
+
+Amit a felhős munkamenet zárolt terület miatt nem végezhetett el, de javasolt. Helyben (Cowork / a
+tanár gépén) elvégezve töröld a sort.
+
+| Mi | Hol | Miért | Honnan |
+|---|---|---|---|
+| `"meret": "512x608"` a `4e05-binom-kocka` elemhez, majd `python3 _tools/media.py . --apply` | `_tools/media/4e.json` → `4e/05-kombinatorika/tananyag-binomialis-tetel.html` | A GeoGebra-blokk a `meret` alapján skálázza az egész appletet a keretbe; nélküle telefonon csak az applet egy darabja látszik. A felhő nem írhatja a zárolt `4e/05`-öt. | M2 · 1e PR (#8), 2026-09-28 |
+
 ---
 
 ## M — Média
@@ -60,8 +69,10 @@ kombinatorika/valószínűség), témakörönként 1–4 szimuláció.
 
 **Felhőben (2026-09-28):** a jelöltek adatlapja és mérete az `api.geogebra.org`-ról jön, a próba
 (`_tools/media_proba.py`) a `www.geogebra.org`-ot is kéri. Minden jelöltet 390 px-en és szélső
-helyzetben is ki kell próbálni (media-beagyazas skill, 3. és 5. pont): az 1e-ben hat jelölt azért
-esett ki, mert a háromszög megfordításakor 180°-nál nagyobb szögeket írt ki.
+helyzetben is ki kell próbálni (media-beagyazas skill, 3. és 5. pont): az 1e-ben nyolc jelölt azért
+esett ki, mert szélső helyzetben 180°-nál nagyobb szöget írt ki (a háromszög megfordításakor, ill. a
+kerületi szög csúcsát a másik ívre húzva). Hibás applet akkor sem marad a lapon, ha a leírás
+figyelmeztetne rá (tanári döntés, 2026-09-28) — ha nincs jobb, a lap szimuláció nélkül marad.
 
 ### M3 · Link-őr (ötlet)
 Havi GitHub Action, amely `media.py --online`-t futtat, és hiba esetén issue-t nyit. ☐
