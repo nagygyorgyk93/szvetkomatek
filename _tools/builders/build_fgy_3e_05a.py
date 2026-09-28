@@ -232,7 +232,7 @@ NEHEZ = [
   [r"Határozd meg $t$ értékét úgy, hogy a háromszög területe $15$ legyen!",
    r"Határozd meg $t$ értékét úgy, hogy a háromszög egyenlő szárú legyen, $AC=BC$ szárakkal!",
    r"Mekkora ekkor a háromszög területe?"],
-  [r"$t=5$ vagy $t=-5$: $C(5;5)$ vagy $C(-5;-5)$", r"$2t^2=(t-6)^2+t^2$, tehát $t=3$: $C(3;3)$", r"$T=9$"]),
+  [r"$t=5$ vagy $t=-5$: $C(5;5)$ vagy $C(-5;-5)$", r"$t=3$: $C(3;3)$", r"$T=9$"]),
 ]
 
 JOKER = (r"Rácspontnak nevezzük azokat a pontokat, amelyeknek mindkét koordinátája egész szám. "

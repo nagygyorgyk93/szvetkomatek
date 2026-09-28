@@ -88,8 +88,22 @@ subagenttel; (3) matematikai szúrópróba: definíciók, tételek pontossága, 
 **Javítás:** egyértelmű hiba (elírás, rossz kulcs, törött link, kánonsértés) → javítás a builderben /
 1e-ben a HTML-ben, lánc újra. Minden más (pedagógiai döntés, feladat cseréje) → „Tanári döntés kell” lista.
 **Elfogadás:** a lánc tiszta; a PR-ben hibalista táblázatban (hol · mi · javítva/döntés kell).
-**Ismert (2026-09-28):** a `kulcs_regresszio.py` érzékenysége 4444/4445 — a `3e_05_pontok` modul a `nehez-4`
-kártya egyik mutációját (egy záró zárójel) nem kapja el; régóta így van, nem a felhős munka okozta. A 3e auditjakor javítandó.
+**Javítva (2026-09-28, helyben):** a `3e_05_pontok` `nehez-4` kártyájának Végeredményében levezetés állt
+(„\(2t^2=(t-6)^2+t^2\), tehát …”) — a `2`-esei miatt a `kulcs_regresszio` egy mutációt nem kapott el. A levezetés
+kikerült (kánon), az érzékenység most 4445/4445.
+
+### A2 · Végeredmény-kánon: csak a végső válasz
+**Kánon** (`_docs/workflow.md` 8. pont): a `.vegeredmeny` **kizárólag a végső választ** tartalmazza — levezetés,
+indoklás, közbülső lépés nélkül („\(25\)”, nem „\(18+12-5=25\)”). **Lelet (2026-09-28):** 423 kártya
+Végeredményében áll levezetésre utaló szó (*tehát, mert, ezért, hiszen, ugyanis, így*): 3e 217 · 2e 141 · 1e 36 · 4e 29
+(kulcsszavas szűrés — lesz köztük hamis pozitív is). Javítás a builderekben (1e régi gyűjteményeinél a HTML-ben),
+osztályonként egy PR; utána `kulcs_teszt` + `kulcs_regresszio` (a levezetés eltűnésével a kulcs-modul várt
+értékei közül a közbülsőket is ki kell venni). Ha egy kártyánál a válasz a levezetés nélkül értelmetlen
+(pl. „melyik a hibás lépés?”), az maradhat — ezeket a PR-ben listázd.
+
+| 1e | 2e | 3e | 4e |
+|---|---|---|---|
+| ☐ | ☐ | ☐ | ☐ |
 
 | 1e | 2e | 3e | 4e (01–04) |
 |---|---|---|---|
@@ -126,7 +140,7 @@ vektorösszeadás; kör és egyenes kölcsönös helyzete; sorozat ε-sávja.
 | Q4 | Mobil tartalomjegyzék: lebegő „Tartalom” gomb, ha a TOC keskeny kijelzőn nem látszik | ☐ (előbb ellenőrizni) |
 | Q5 | Offline mód (PWA): service worker a meglátogatott lapokra + KaTeX; frissítés-kezelés deploykor | ☐ (tanári döntés kell) |
 | Q6 | Teljesítmény: képméretek, font-preload, a szkriptek `defer`-je; mérés Playwrighttal | ☐ |
-| Q7 | **Kompakt médiakártya.** Kattintás előtt a videókártya teljes 16:9-es doboz — asztalon ~810×455 px; az 1e/07 egyenletrendszer-lapon a 11 blokk a lap magasságának ~46%-a (telefonon ~26%). Javaslat: kattintásig alacsony (~90 px) sáv (ikon, cím, hossz), és csak a lejátszáskor nyílik 16:9-re / az applet arányára; ugyanazon a helyen álló több videó egy „Videótár” csoportba. `beagyazas.js` + `theme.css`, a katalógus és a `media.py` változatlan marad | ☐ (tanári döntés kell) |
+| Q7 | Kompakt médiakártya: kattintásig alacsony sáv (ikon, címke, cím), lejátszáskor nyílik 16:9-re / az applet arányára (`.media-fut`) | ☑ 2026-09-28 (helyben): az 1e/07 egyenletrendszer-lapon a médiablokkok aránya asztalon 46% → 19% |
 
 ---
 

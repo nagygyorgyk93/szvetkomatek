@@ -3,7 +3,8 @@
    _tools/media/*.json katalógusból — kézzel nem kell (és nem is szabad) szerkeszteni.
 
    Adatvédelem + sebesség: a lap betöltésekor SEMMI nem megy harmadik félhez; az
-   iframe csak akkor jön létre, ha a kadét rákattint. JS nélkül a blokk sima link
+   iframe csak akkor jön létre, ha a kadét rákattint. Addig a blokk egy alacsony sáv (Q7);
+   a kattintás a .media-fut osztállyal nyitja ki a lejátszó méretére. JS nélkül a blokk sima link
    a forrásra (új lapon nyílik). A YouTube a youtube-nocookie.com tartományról jön.
    Az ui.js tölti be, ha a lapon van .media — az oldalakhoz nem kell <script>. */
 (function(){
@@ -37,10 +38,12 @@
   function indit(fig){
     var keret = fig.querySelector('.media-keret');
     if (!keret || keret.querySelector('iframe')) return false;
+    // Előbb kinyitjuk a sávot (a .media-fut adja a 16:9-et / az applet arányát), csak utána mérünk.
+    fig.classList.add('media-fut');
     var szel = Math.max(280, Math.round(keret.clientWidth || 640));
     var mag = Math.max(200, Math.round(keret.clientHeight || szel * 9 / 16));
     var src = forras(fig, szel, mag);
-    if (!src) return false;
+    if (!src){ fig.classList.remove('media-fut'); return false; }
     var ifr = document.createElement('iframe');
     ifr.src = src;
     ifr.title = fig.getAttribute('data-cim') || 'beágyazott tartalom';
@@ -49,7 +52,6 @@
     ifr.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
     keret.innerHTML = '';
     keret.appendChild(ifr);
-    fig.classList.add('media-fut');
     try { ifr.focus(); } catch (e) {}
     return true;
   }

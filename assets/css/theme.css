@@ -774,34 +774,38 @@ html{scrollbar-color:var(--kampusz-uveg-keret) var(--papir);scrollbar-width:thin
 .interaktiv .iv-vezerlo input[type=range]{flex:1;min-width:8rem;accent-color:#2563eb;cursor:pointer;}
 .interaktiv .iv-kijelzo{color:#334155;font-size:.92rem;text-align:center;max-width:36rem;margin:.35rem auto 0;min-height:2.6em;}
 /* ---- külső média: YouTube / GeoGebra (assets/js/beagyazas.js + _tools/media.py; 2026-09-27)
-   Kattintásig csak egy neon „lejátszó-kártya” látszik; JS nélkül sima link a forrásra. */
-.media{margin:1.4rem 0;break-inside:avoid;}
-.media-keret{position:relative;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;
-  background:radial-gradient(circle at 25% 20%,rgba(0,255,102,.16),transparent 55%),
-             radial-gradient(circle at 80% 90%,rgba(59,130,246,.14),transparent 50%),var(--kampusz-uveg);
+   Kattintásig csak egy alacsony neon „lejátszó-sáv” látszik (2026-09-28, Q7: a teljes 16:9-es kártyák
+   a sok videós lapokon a lap magasságának akár felét elvitték); lejátszáskor (.media-fut) nyílik ki
+   16:9-re, ill. az applet saját arányára. JS nélkül a sáv sima link a forrásra. */
+.media{margin:1.1rem 0;break-inside:avoid;}
+.media+.media{margin-top:.7rem;}
+.media-keret{position:relative;border-radius:var(--r);overflow:hidden;
+  background:radial-gradient(circle at 12% 50%,rgba(0,255,102,.16),transparent 45%),
+             radial-gradient(circle at 90% 90%,rgba(59,130,246,.12),transparent 50%),var(--kampusz-uveg);
   border:1px solid var(--kampusz-uveg-keret);box-shadow:var(--kampusz-fenylés);
   -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);}
-.media[data-arany="4/3"] .media-keret{aspect-ratio:4/3;}
-.media[data-arany="3/2"] .media-keret{aspect-ratio:3/2;}
-.media[data-arany="1/1"] .media-keret{aspect-ratio:1/1;max-width:36rem;margin:0 auto;}
+.media-fut .media-keret{aspect-ratio:16/9;}
+.media-fut[data-arany="4/3"] .media-keret{aspect-ratio:4/3;}
+.media-fut[data-arany="3/2"] .media-keret{aspect-ratio:3/2;}
+.media-fut[data-arany="1/1"] .media-keret{aspect-ratio:1/1;max-width:36rem;margin:0 auto;}
 /* GeoGebra: a keret az applet eredeti arányát kapja (media.py: meret → --ggb-arany), a GeoGebra
    pedig az egész appletet belekicsinyíti — telefonon is látszik minden, nem csak egy darabja.
    Álló appletnél a szélességet úgy korlátozzuk, hogy a keret ne legyen magasabb a képernyő 80%-ánál. */
-.media[data-meret] .media-keret{aspect-ratio:var(--ggb-arany,16/9);max-width:calc(80vh * var(--ggb-arany,16/9));margin:0 auto;}
-.media-indito{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:1rem;
-  padding:1rem 1.25rem;color:var(--tinta);text-decoration:none;text-align:left;}
+.media-fut[data-meret] .media-keret{aspect-ratio:var(--ggb-arany,16/9);max-width:calc(80vh * var(--ggb-arany,16/9));margin:0 auto;}
+.media-indito{display:flex;align-items:center;gap:.9rem;
+  padding:.7rem 1rem;color:var(--tinta);text-decoration:none;text-align:left;}
 .media-indito:focus-visible{outline:3px solid var(--kampusz-neon);outline-offset:-3px;border-radius:var(--r);}
-.media-ikon{flex:none;width:3.6rem;height:3.6rem;border-radius:50%;display:grid;place-items:center;
-  font-size:1.5rem;padding-left:.2rem;color:var(--kampusz-neon);background:rgba(0,255,102,.12);
+.media-ikon{flex:none;width:2.8rem;height:2.8rem;border-radius:50%;display:grid;place-items:center;
+  font-size:1.15rem;padding-left:.15rem;color:var(--kampusz-neon);background:rgba(0,255,102,.12);
   border:2px solid var(--kampusz-neon);box-shadow:0 0 18px rgba(0,255,102,.35);transition:transform .2s ease;}
 .media-indito:hover .media-ikon,.media-indito:focus-visible .media-ikon{transform:scale(1.1);}
 .media-szoveg{min-width:0;}
-.media-cimke{display:inline-block;font:700 .72rem/1 var(--fej);letter-spacing:.08em;text-transform:uppercase;
-  color:var(--kampusz-neon);border:1px solid var(--kampusz-uveg-keret);border-radius:999px;padding:.3rem .6rem;margin-bottom:.45rem;}
-.media-cim{display:block;font-family:var(--fej);font-weight:700;font-size:1.15rem;line-height:1.25;}
-.media-info{display:block;margin-top:.25rem;font-size:.88rem;color:var(--szurke-600);}
+.media-cimke{display:inline-block;font:700 .66rem/1 var(--fej);letter-spacing:.08em;text-transform:uppercase;
+  color:var(--kampusz-neon);border:1px solid var(--kampusz-uveg-keret);border-radius:999px;padding:.25rem .55rem;margin-bottom:.3rem;}
+.media-cim{display:block;font-family:var(--fej);font-weight:700;font-size:1.02rem;line-height:1.25;}
+.media-info{display:block;margin-top:.15rem;font-size:.84rem;color:var(--szurke-600);}
 .media iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff;}
-.media figcaption{text-align:left;margin-top:.5rem;font-size:.92rem;line-height:1.45;color:var(--szurke-600);}
+.media figcaption{text-align:left;margin-top:.4rem;font-size:.88rem;line-height:1.45;color:var(--szurke-600);}
 .media figcaption a{color:inherit;text-decoration:underline;text-underline-offset:2px;}
 .media-url{display:none;}
-@media (max-width:520px){.media-ikon{width:2.9rem;height:2.9rem;font-size:1.2rem;}.media-cim{font-size:1rem;}}
+@media (max-width:520px){.media-ikon{width:2.4rem;height:2.4rem;font-size:1rem;}.media-cim{font-size:.95rem;}.media-indito{padding:.6rem .8rem;gap:.7rem;}}
