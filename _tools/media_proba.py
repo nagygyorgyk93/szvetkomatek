@@ -26,13 +26,16 @@ CA = "/root/.ccr/agent-proxy-ca.crt"
 def bongeszo(p):
     opc = {}
     if os.environ.get("HTTPS_PROXY"):
-        opc["proxy"] = {"server": os.environ["HTTPS_PROXY"], "bypass": "127.0.0.1,localhost"}
+        # Nem a Playwright proxy-opciója: az a helyi címeket (127.0.0.1) is a proxyra küldi
+        # (<-loopback>), és ha a proxy csak HTTPS-alagutat fogad, a saját lapunk 405-öt kap.
+        opc["args"] = ["--proxy-server=" + os.environ["HTTPS_PROXY"],
+                       "--proxy-bypass-list=127.0.0.1;localhost"]
         if os.path.isfile(CA):
             spki = subprocess.run(f"openssl x509 -in {CA} -pubkey -noout | openssl pkey -pubin -outform der"
                                   " | openssl dgst -sha256 -binary | base64", shell=True,
                                   capture_output=True, text=True).stdout.strip()
             if spki:
-                opc["args"] = ["--ignore-certificate-errors-spki-list=" + spki]
+                opc["args"].append("--ignore-certificate-errors-spki-list=" + spki)
     try:
         return p.chromium.launch(**opc)
     except Exception as ex:  # noqa: BLE001 — a gépen lévő Chromium

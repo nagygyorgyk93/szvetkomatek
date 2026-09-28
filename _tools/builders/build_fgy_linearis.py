@@ -4,10 +4,12 @@ Küldetés „A Végső Egyenlet" (teljes csapat). Egy drill-deck. Végeredmény
 A 3_Szöveges feladatok.docx MIND a 17 feladata bekerül (Közép 1-13, Nehéz 14-17). Gauss: max 1 feladat.
 Grafikus rendszermegoldás NINCS a gyűjteményben (csak a tananyagban)."""
 import sys, os, glob
+# A repó gyökere a builder helyéből (korábban /sessions/… glob: csak a helyi munkakörnyezetben működött)
+_WEB = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fgy_common import cards, gyt_cards, joker_card, w
 
-DEST = glob.glob("/sessions/*/mnt/Claude/web/1e/07-linearis-egyenletek-es-rendszerek")[0]
+DEST = os.path.join(_WEB, "1e", "07-linearis-egyenletek-es-rendszerek")
 
 # ===================== önellenőrzés =====================
 import sympy as sp

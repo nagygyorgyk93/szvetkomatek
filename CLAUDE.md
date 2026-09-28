@@ -47,6 +47,8 @@ GitHub Pages, **publikus**. A `main` minden pusha automatikusan élesít (`.gith
 
 ```bash
 python3 _tools/builders/build_<...>.py          # ha builderes lapot módosítottál
+python3 _tools/egyedi_id.py                      # csak a régi 1e-builderek után (build_fgy_geometria,
+                                                 #   _linearis, _racionalis, build_dangerroom): ismétlődő SVG-id-k
 python3 _tools/kepek.py . --apply                # karakterképek a .brief dobozokba
 python3 _tools/media.py . --apply                # videó / GeoGebra blokkok a katalógusból
 python3 _tools/set_hatter.py                     # helyszín-hátterek

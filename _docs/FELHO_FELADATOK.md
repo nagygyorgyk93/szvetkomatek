@@ -88,6 +88,8 @@ subagenttel; (3) matematikai szúrópróba: definíciók, tételek pontossága, 
 **Javítás:** egyértelmű hiba (elírás, rossz kulcs, törött link, kánonsértés) → javítás a builderben /
 1e-ben a HTML-ben, lánc újra. Minden más (pedagógiai döntés, feladat cseréje) → „Tanári döntés kell” lista.
 **Elfogadás:** a lánc tiszta; a PR-ben hibalista táblázatban (hol · mi · javítva/döntés kell).
+**Ismert (2026-09-28):** a `kulcs_regresszio.py` érzékenysége 4444/4445 — a `3e_05_pontok` modul a `nehez-4`
+kártya egyik mutációját (egy záró zárójel) nem kapja el; régóta így van, nem a felhős munka okozta. A 3e auditjakor javítandó.
 
 | 1e | 2e | 3e | 4e (01–04) |
 |---|---|---|---|
@@ -124,6 +126,7 @@ vektorösszeadás; kör és egyenes kölcsönös helyzete; sorozat ε-sávja.
 | Q4 | Mobil tartalomjegyzék: lebegő „Tartalom” gomb, ha a TOC keskeny kijelzőn nem látszik | ☐ (előbb ellenőrizni) |
 | Q5 | Offline mód (PWA): service worker a meglátogatott lapokra + KaTeX; frissítés-kezelés deploykor | ☐ (tanári döntés kell) |
 | Q6 | Teljesítmény: képméretek, font-preload, a szkriptek `defer`-je; mérés Playwrighttal | ☐ |
+| Q7 | **Kompakt médiakártya.** Kattintás előtt a videókártya teljes 16:9-es doboz — asztalon ~810×455 px; az 1e/07 egyenletrendszer-lapon a 11 blokk a lap magasságának ~46%-a (telefonon ~26%). Javaslat: kattintásig alacsony (~90 px) sáv (ikon, cím, hossz), és csak a lejátszáskor nyílik 16:9-re / az applet arányára; ugyanazon a helyen álló több videó egy „Videótár” csoportba. `beagyazas.js` + `theme.css`, a katalógus és a `media.py` változatlan marad | ☐ (tanári döntés kell) |
 
 ---
 

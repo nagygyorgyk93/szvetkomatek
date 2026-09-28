@@ -2,6 +2,8 @@
 """Vészterem — témakörönként EGY, teljes témakört lefedő házi feladatsor.
 FONTOS: a Végeredmény KIZÁRÓLAG a végső választ tartalmazza, levezetés/indoklás NÉLKÜL."""
 import sys, os, glob
+# A repó gyökere a builder helyéből (korábban /sessions/… glob: csak a helyi munkakörnyezetben működött)
+_WEB = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fgy_common import cards, w
 
@@ -252,7 +254,7 @@ K07_UJ = [
 
 
 # =========================================================== 01
-DEST01 = glob.glob("/sessions/*/mnt/Claude/web/1e/01-logika-halmazok-fuggvenyek")[0]
+DEST01 = os.path.join(_WEB, "1e", "01-logika-halmazok-fuggvenyek")
 
 A01 = [
  ("Döntsd el, melyik <b>kijelentés</b>, és ha az, mi az igazságértéke!",
@@ -326,7 +328,7 @@ dr_page(DEST01, "index.html", "Logika, halmazok, függvények", "feladatok-hazi.
 print("01 Vészterem kész: Alap", len(A01), "Közép", len(K01), "Nehéz", len(N01))
 
 # =========================================================== 02
-DEST02 = glob.glob("/sessions/*/mnt/Claude/web/1e/02-trigonometria")[0]
+DEST02 = os.path.join(_WEB, "1e", "02-trigonometria")
 A02 = [
  ("Egy derékszögű háromszögben a befogók $a=6$, $b=8$, az átfogó $c=10$. Írd fel az $a$-val szemközti $\\alpha$ hegyesszög mind a négy szögfüggvényét!",
   None, "$\\sin\\alpha=\\tfrac35$, $\\cos\\alpha=\\tfrac45$, $\\operatorname{tg}\\alpha=\\tfrac34$, $\\operatorname{ctg}\\alpha=\\tfrac43$."),
@@ -383,7 +385,7 @@ assert _lcm(_lcm(8,12),20)==120
 assert [x for x in range(10) if (470+x)%3==0]==[1,4,7]
 assert [x for x in range(10) if (5800+x*10)%8==0]==[0,4,8]
 assert 600==2**3*3*5**2 and 600*45==30**3 and round(7.64983,2)==7.65
-DEST03 = glob.glob("/sessions/*/mnt/Claude/web/1e/03-egesz-es-valos-szamok")[0]
+DEST03 = os.path.join(_WEB, "1e", "03-egesz-es-valos-szamok")
 A03 = [
  ("Írd fel a $84$ és $250$ kanonikus (prímtényezős) alakját, majd add meg $\\text{LKO}(84,250)$-et!",
   None, "$84=2^2\\cdot 3\\cdot 7$, $250=2\\cdot 5^3$; $\\text{LKO}=2$."),
@@ -440,7 +442,7 @@ assert 30*3+70*7==58*10 and 96000/0.8==120000
 assert 154000//7==22000 and 50000*1.2*0.9==54000 and 13*7==91
 assert 120000*9*8/1200==7200 and 2000*36000/(200000*60)==6
 assert 400000*(100+10*2)//100==480000 and 400000*109*109//10000==475240
-DEST04 = glob.glob("/sessions/*/mnt/Claude/web/1e/04-aranyossag")[0]
+DEST04 = os.path.join(_WEB, "1e", "04-aranyossag")
 A04 = [
  ("Aránypár és méretarány.",
   ["$8:x=3:12$","$(x+4):5=x:3$","Egy $1:20\\,000$ méretarányú térképen a táv $7$ cm — mennyi a valóságban?"],
@@ -494,7 +496,7 @@ assert 4*20==80 and 5*20==100 and 3*20+15==75 and 5*20-25==75
 assert 2*15==30 and 3*15==45 and 7*15==105 and 180-105==75
 assert (8-2)*180==1080 and 8*5//2==20
 assert 180-95==85 and 180-70==110 and 90+76//2==128
-DEST05 = glob.glob("/sessions/*/mnt/Claude/web/1e/05-geometria")[0]
+DEST05 = os.path.join(_WEB, "1e", "05-geometria")
 A05 = [
  ("Add meg a $34^\\circ$-os szög pótszögét és kiegészítő szögét!",
   None, "pótszög $56^\\circ$; kiegészítő $146^\\circ$."),
@@ -565,7 +567,7 @@ print("05 Vészterem kész: Alap", len(A05), "Közép", len(K05), "Nehéz", len(
 # A teljes témakört fedi (ishod 20): polinomműveletek, azonosságok, osztás+Bézout, bontás, törtek.
 # Ishod 21 (x²≥0 / AM–GM) NEM kerül ide (felhasználói döntés) — csak a tananyagban, Kán-csapdaként.
 assert (1-2+1+1)==1 and (8-12+2+2)==0  # Bézout ellenőrzők (A5: P(1)=1; N3: m=1 -> P(2)=0)
-DEST06 = glob.glob("/sessions/*/mnt/Claude/web/1e/06-racionalis-algebrai-kifejezesek")[0]
+DEST06 = os.path.join(_WEB, "1e", "06-racionalis-algebrai-kifejezesek")
 A06 = [
  ("Végezd el a műveleteket!",
   ["$3a^2+5a^2-a^2$","$2x(3x-4)$","$(x+6)^2$","$(a-3)(a+3)$"],
@@ -629,7 +631,7 @@ print("06 Vészterem kész: Alap", len(A06), "Közép", len(K06), "Nehéz", len(
 # A teljes témakört fedi (ishod 22-25): egyenletek, egyenlőtlenségek, függvény, 2×2 rendszerek, szöveges feladatok.
 # Gauss (3×3) NEM kerül ide (felhasználói döntés) — csak a tananyagban és max 1 feladat a feladatgyűjteményben.
 assert 40==4*10 and 5*8+20==60  # sanity
-DEST07 = glob.glob("/sessions/*/mnt/Claude/web/1e/07-linearis-egyenletek-es-rendszerek")[0]
+DEST07 = os.path.join(_WEB, "1e", "07-linearis-egyenletek-es-rendszerek")
 A07 = [
  ("Oldd meg az egyenleteket!",
   ["$4x-5=11$","$3(x-2)=x+2$","$\\dfrac{x}{4}+1=3$"],

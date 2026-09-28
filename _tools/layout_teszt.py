@@ -61,9 +61,16 @@ class _Csendes(http.server.SimpleHTTPRequestHandler):
         pass
 
 
+class _CsendesSzerver(socketserver.ThreadingTCPServer):
+    daemon_threads = True
+
+    def handle_error(self, request, client_address):
+        pass  # a böngésző megszakított kérései (BrokenPipe) nem hibák — ne szemeteljék a kimenetet
+
+
 def szerver():
     kezelo = functools.partial(_Csendes, directory=GYOKER)
-    srv = socketserver.ThreadingTCPServer(("127.0.0.1", 0), kezelo)
+    srv = _CsendesSzerver(("127.0.0.1", 0), kezelo)
     threading.Thread(target=srv.serve_forever, daemon=True).start()
     return srv, f"http://127.0.0.1:{srv.server_address[1]}/"
 

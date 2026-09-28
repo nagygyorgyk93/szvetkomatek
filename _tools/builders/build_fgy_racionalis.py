@@ -2,10 +2,12 @@
 """1e/06 — Racionális algebrai kifejezések KÖZÖS feladatgyűjtemény (Iruhs & Krats Ynot, „A Hatalom Nyelve").
 Egy drill-deck a teljes témakörre. Végeredmény = KIZÁRÓLAG a végső válasz, levezetés nélkül."""
 import sys, os, glob
+# A repó gyökere a builder helyéből (korábban /sessions/… glob: csak a helyi munkakörnyezetben működött)
+_WEB = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fgy_common import cards, gyt_cards, joker_card, w
 
-DEST = glob.glob("/sessions/*/mnt/Claude/web/1e/06-racionalis-algebrai-kifejezesek")[0]
+DEST = os.path.join(_WEB, "1e", "06-racionalis-algebrai-kifejezesek")
 
 # ===================== numerikus / szimbolikus önellenőrzés =====================
 import sympy as sp

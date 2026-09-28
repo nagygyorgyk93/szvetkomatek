@@ -2,10 +2,12 @@
 """1e/05 — Geometria KÖZÖS feladatgyűjtemény (egy drill-deck a teljes témakörre).
 Végeredmény = KIZÁRÓLAG a végső válasz, levezetés nélkül."""
 import sys, os, glob
+# A repó gyökere a builder helyéből (korábban /sessions/… glob: csak a helyi munkakörnyezetben működött)
+_WEB = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fgy_common import cards, gyt_cards, joker_card, w
 
-DEST = glob.glob("/sessions/*/mnt/Claude/web/1e/05-geometria")[0]
+DEST = os.path.join(_WEB, "1e", "05-geometria")
 
 # ---- numerikus önellenőrzés ----
 assert 90-28==62 and 180-28==152 and 90-41==49 and 180-41==139 and 90-76==14 and 180-76==104
