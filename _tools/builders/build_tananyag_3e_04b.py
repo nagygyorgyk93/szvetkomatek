@@ -340,8 +340,10 @@ B2 = [
          r'&=\vec i\begin{vmatrix}y_1&z_1\\ y_2&z_2\end{vmatrix}'
          r'-\vec j\begin{vmatrix}x_1&z_1\\ x_2&z_2\end{vmatrix}'
          r'+\vec k\begin{vmatrix}x_1&y_1\\ x_2&y_2\end{vmatrix} ,\end{aligned}$$'
-         r'<p>vagyis $\vec a\times\vec b=\left(y_1z_2-z_1y_2;\;\;-(x_1z_2-z_1x_2);\;\;'
-         r'x_1y_2-y_1x_2\right)$.</p>',
+         # A koordináták {…}-csoportok, köztük \allowbreak: telefonon a képlet a koordináták
+         # között tördel (és nem a kivonásjelnél), különben kilógna a lapról.
+         r'<p>vagyis $\vec a\times\vec b=({y_1z_2-z_1y_2};\;\;\allowbreak{-(x_1z_2-z_1x_2)};\;\;'
+         r'\allowbreak{x_1y_2-y_1x_2})$.</p>',
          hid="tetel-vektorialis-koordinatak"),
    r'<p>A „determináns” első sorában vektorok állnak, ezért ez nem igazi szám-determináns — '
    r'<b>emlékeztető séma</b>: az első sor szerinti kifejtés előjelszabálya ($+\,-\,+$) adja '
