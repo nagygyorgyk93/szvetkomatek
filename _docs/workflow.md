@@ -1,4 +1,4 @@
-<!-- TÜKÖR — ne szerkeszd itt! Forrás (a tanár gépén): projektek/szvetkomatek/_WEBOLDAL_workflow.md · tükrözve: 2026-09-27 · _tools/docs_tukor.py -->
+<!-- TÜKÖR — ne szerkeszd itt! Forrás (a tanár gépén): projektek/szvetkomatek/_WEBOLDAL_workflow.md · tükrözve: 2026-09-28 · _tools/docs_tukor.py -->
 
 # GitHub Pages tananyag-oldal — komplett workflow (mind az 5 tagozat)
 
@@ -11,7 +11,7 @@ témakörönként rendszerezve, sűrű kereszthivatkozásokkal.
 
 ## Rögzített döntések (2026-07-22)
 
-> **Helyek (2026-09-27 óta):** a repó-klón `Claude\web\` (publikus); minden privát webes anyag a `Claude\projektek\szvetkomatek\` alatt (térkép: `OLVASSEL.md`) — a `_WEBOLDAL_*` fájlok, `tortenet\`, `web_forras\`, `tiltott\`, osztályonként `1e\`…`4e\` (F0, narratíva, F3-térkép, lektor, terepküldetés-kulcs). **Felmérő-adat a repóba nem kerülhet, a builderek forráskódjába sem:** a tiltott-listák a `projektek\szvetkomatek\tiltott\tiltott_<osztály>_<NN>.py` privát modulokban élnek, a builder a `_tools/builders/tiltott.py` betöltővel éri el őket (`tiltott.modul(…)`, `tiltott.lista(…)`); ha a mappa nem érhető el (felhős munkamenet), figyelmeztetéssel, ellenőrzés nélkül fut.
+> **Helyek (2026-09-27 óta):** a repó-klón `Claude\web\` (publikus); minden privát webes anyag a `Claude\projektek\szvetkomatek\` alatt (térkép: `OLVASSEL.md`) — a `_WEBOLDAL_*` fájlok, `tortenet\`, `web_forras\`, `tiltott\`, osztályonként `1e\`…`4e\` (F0, narratíva, F3-térkép, lektor, terepküldetés-kulcs). **Felmérő-adat a repóba nem kerülhet, a builderek forráskódjába sem:** a tiltott-listák a `projektek\szvetkomatek\tiltott\tiltott_<osztály>_<NN>.py` privát modulokban élnek, a builder a `_tools/builders/tiltott.py` betöltővel éri el őket (`tiltott.modul(…)`, `tiltott.lista(…)`); ha a mappa nem érhető el (felhős munkamenet), figyelmeztetéssel, ellenőrzés nélkül fut. **Minden weboldali szövegpélda** — a feladatokon túl az összefoglaló, az index, a brief is — a builderben típus + paraméter szerint átmegy a tiltott-ellenőrzésen (2026-09-28: a 4e/05 Csalópapír egy példája a felmérő egyik kifejezését használta; push előtt javítva).
 
 - **Egy közös repo** mind az 5 tagozatnak (1e, 2e, 3e, 4e, 4im), osztályonkénti almappákkal.
 - **KaTeX a repóban** (nem CDN): nyomdai minőségű matek, offline klónban is működik.
