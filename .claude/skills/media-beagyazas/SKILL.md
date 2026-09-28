@@ -30,7 +30,9 @@ A blokkot **soha nem írod kézzel a HTML-be** — csak a katalógusba; a `media
      **tiltottak — ne kérd le és ne kerüld meg** (curl, archívum, tükör: mind tilos). Az egyedi
      óra-oldalak engedélyezettek. Felderítés: WebSearch, pl.
      `site:tavoktatas.mnt.org.rs "IV. osztály" binomiális`; az óra-oldal alján a kapcsolódó órák
-     linkjein tovább lehet lépni (előző/következő óra).
+     linkjein tovább lehet lépni (előző/következő óra) — de csak a témakörön belül. Új témakörhöz
+     kiindulópont: a tanár profiloldala (`/tanar/<név>`, a `?page=` nélkül engedélyezett, a legutóbbi
+     15 órát listázza), végső esetben a valószínű című óra-URL kipróbálása (1 kérés/s).
    - Az óra-oldalból (WebFetch) kérd ki: a YouTube `embed/<ID>` azonosítót, a tanár nevét, az óra
      számát/címét. Ellenőrzés: `https://www.youtube.com/oembed?format=json&url=https://www.youtube.com/watch?v=<ID>`
      (200 = beágyazható; a csatorna: „Távoktatas magyar nyelven”).
