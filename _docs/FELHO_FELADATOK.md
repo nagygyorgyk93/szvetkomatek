@@ -32,7 +32,7 @@ egy sor: „nincs jó találat”); `media.py --online` 0 hiba; `verify_web` + `
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ☑ 91 videó 31 lapon (mind a 38 egység megvizsgálva; 7 lapnak nincs órája) — 2026-09-28 | ☑ 78 videó 32 lapon (mind a 35 egység megvizsgálva; 3 lap tanári döntéssel videó nélkül) — #1, 2026-09-27 | ☐ | ◐ pilot: 4e/05 binomiális tétel (1 videó) |
+| ☑ 85 videó 30 lapon (mind a 38 egység megvizsgálva; 8 lap videó nélkül; egy videó csak egy helyen) — 2026-09-28 | ☑ 78 videó 32 lapon (mind a 35 egység megvizsgálva; 3 lap tanári döntéssel videó nélkül) — #1, 2026-09-27 | ☐ | ◐ pilot: 4e/05 binomiális tétel (1 videó) |
 
 **Felhőben (2026-09-27):** a felhős környezet *Network access* beállításában engedélyezni kell a
 `tavoktatas.mnt.org.rs`, a `youtube.com` és az `api.geogebra.org` tartományt (nélkülük a WebFetch és a
@@ -44,7 +44,8 @@ oEmbed (cím + csatorna) viszont működik.
 Az óra-oldal „Kapcsolódó tananyag” blokkja csak a témakörön belüli szomszédokra mutat, ezért a
 bejárás témakörönként megakad. Új kiindulópontot ad a tanár profiloldala (`/tanar/<név>`, lekérdezés
 nélkül engedélyezett: a legutóbbi 15 óra), végső esetben a valószínű című óra-URL (1 kérés/s). Az I.
-osztályból így sem került elő a 40–42., az 50–51. és a 61. óra.
+osztályból így sem került elő a 40–42., az 50–51. és a 61. óra — valószínűleg nem készült hozzájuk
+videó (tanár, 2026-09-28): ami az óra-oldalon és a YouTube-on sincs meg, azt nem kell tovább keresni.
 
 ### M2 · GeoGebra-szimulációk
 **Cél:** ahol a manipulálható modell többet ér az állóképnél (függvény-transzformációk, egységkör,

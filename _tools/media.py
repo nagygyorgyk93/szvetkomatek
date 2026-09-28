@@ -74,7 +74,7 @@ def katalogus(gyoker):
 
 
 def ellenoriz(gyoker, elemek):
-    hibak, figy, lathato = [], [], {}
+    hibak, figy, lathato, videok = [], [], {}, {}
     ma = datetime.date.today()
     for e in elemek:
         hol = f"{e.get('_fajl')} / {e.get('azon', '?')}"
@@ -95,6 +95,13 @@ def ellenoriz(gyoker, elemek):
             continue
         if not AZON_MINTA[e["tipus"]].match(e["forras_azon"]):
             hibak.append(f"{hol}: gyanús forras_azon {e['forras_azon']!r} ({e['tipus']})")
+        # Egy videó csak egy helyre kerül (tanári döntés, 2026-09-28) — akkor is, ha az óra több lap
+        # témáját lefedi, vagy ha két MNT-óra oldala ugyanazt a videót ágyazza be.
+        if e["tipus"] == "youtube" and e.get("allapot", "aktiv") == "aktiv":
+            elso = videok.setdefault(e["forras_azon"], e)
+            if elso is not e:
+                hibak.append(f"{hol}: ez a videó már szerepel ({elso['azon']}, {elso['oldal']}) — "
+                             "egy videó csak egy helyre kerülhet; a többit kapcsold ki")
         if e.get("arany", "16/9") not in ARANYOK:
             hibak.append(f"{hol}: arany csak {sorted(ARANYOK)} lehet")
         if e.get("allapot", "aktiv") not in ("aktiv", "kikapcsolva"):

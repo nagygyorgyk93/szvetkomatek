@@ -125,7 +125,8 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-28",
-    "megjegyzes": "MNT I. osztály 14. óra (óratípus: új anyag feldolgozása); felhő 2026-09-28: az óra-oldalról (beágyazott videó, tanár) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig"
+    "megjegyzes": "MNT I. osztály 14. óra (óratípus: új anyag feldolgozása); felhő 2026-09-28: az óra-oldalról (beágyazott videó, tanár) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; kikapcsolva 2026-09-28 (tanári döntés: egy videó csak egy helyre kerül; az óra több lap témáját is lefedi): a 1e01-halmazmuveletek-video marad (tananyag-halmazmuveletek.html, s1)",
+    "allapot": "kikapcsolva"
   },
   {
     "azon": "1e01-halmazmuveletek-video",
@@ -134,7 +135,7 @@
     "tipus": "youtube",
     "forras_azon": "JDjR-Z2ITTI",
     "cim": "Halmaz és halmazműveletek (I. osztály, 14. óra)",
-    "leiras": "Ugyanaz az óra, mint a Halmaz fogalma lapon: a halmaz fogalma után a halmazműveleteket is végigveszi.",
+    "leiras": "Óra a halmazokról és a halmazműveletekről, egy másik tanár magyarázatában — az előző lap fogalmait is átismétli.",
     "szerzo": "Bálint Nóra",
     "forras": "MNT Távoktatás magyar nyelven",
     "forras_url": "https://tavoktatas.mnt.org.rs/i-osztaly/matematika/matematika-i-osztaly-14-ora-halmaz-es-halmazmuveletek",
@@ -182,7 +183,7 @@
     "tipus": "youtube",
     "forras_azon": "CLHwzzkqkEA",
     "cim": "Leképezések és inverzeik (I. osztály, 17. óra)",
-    "leiras": "Óra a leképezésekről (így hívják a függvényt a videóban) és az inverzükről — az inverzről szóló részt a Kompozíció és inverz lapon is megtalálod.",
+    "leiras": "Óra a leképezésekről (így hívják a függvényt a videóban) és az inverzükről, egy másik tanár magyarázatában — az inverzről a Kompozíció és inverz lapon lesz szó.",
     "szerzo": "Bálint Nóra",
     "forras": "MNT Távoktatás magyar nyelven",
     "forras_url": "https://tavoktatas.mnt.org.rs/i-osztaly/matematika/matematika-i-osztaly-17-ora-lekepezesek-es-inverzeik",
@@ -214,14 +215,15 @@
     "tipus": "youtube",
     "forras_azon": "CLHwzzkqkEA",
     "cim": "Leképezések és inverzeik (I. osztály, 17. óra)",
-    "leiras": "Óra a leképezésekről és inverzükről — ugyanaz, mint a Függvény fogalma lapon; itt az inverzről szóló része fontos.",
+    "leiras": "Óra a leképezésekről (így hívják a függvényt a videóban) és az inverzükről, egy másik tanár magyarázatában.",
     "szerzo": "Bálint Nóra",
     "forras": "MNT Távoktatás magyar nyelven",
     "forras_url": "https://tavoktatas.mnt.org.rs/i-osztaly/matematika/matematika-i-osztaly-17-ora-lekepezesek-es-inverzeik",
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-28",
-    "megjegyzes": "MNT I. osztály 17. óra (óratípus: új anyag feldolgozása); felhő 2026-09-28: az óra-oldalról (beágyazott videó, tanár) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig"
+    "megjegyzes": "MNT I. osztály 17. óra (óratípus: új anyag feldolgozása); felhő 2026-09-28: az óra-oldalról (beágyazott videó, tanár) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; kikapcsolva 2026-09-28 (tanári döntés: egy videó csak egy helyre kerül; az óra több lap témáját is lefedi): a 1e01-lekepezes-video marad (tananyag-fuggveny-fogalma.html, s1)",
+    "allapot": "kikapcsolva"
   },
   {
     "azon": "1e02-szogfuggvenyek-video",
@@ -637,7 +639,8 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-28",
-    "megjegyzes": "MNT I. osztály 37. óra (óratípus: új anyag feldolgozása); felhő 2026-09-28: az óra-oldalról (beágyazott videó, tanár) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig"
+    "megjegyzes": "MNT I. osztály 37. óra (óratípus: új anyag feldolgozása); felhő 2026-09-28: az óra-oldalról (beágyazott videó, tanár) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; kikapcsolva 2026-09-28 (tanári döntés: egy videó csak egy helyre kerül; az óra több lap témáját is lefedi): a 1e05-szogosszeg-video marad (tananyag-haromszogek.html, s2)",
+    "allapot": "kikapcsolva"
   },
   {
     "azon": "1e05-szogosszeg-video",
@@ -646,7 +649,7 @@
     "tipus": "youtube",
     "forras_azon": "bI_uY8zxS34",
     "cim": "Háromszög belső szögeinek összege, merőleges szárú szögek (I. osztály, 37. óra)",
-    "leiras": "Óra a háromszög belső szögeinek összegéről és a merőleges szárú szögekről.",
+    "leiras": "Óra a háromszög belső szögeinek összegéről és a merőleges szárú szögekről, egy másik tanár magyarázatában.",
     "szerzo": "dr. Ripcó Sípos Elvira",
     "forras": "MNT Távoktatás magyar nyelven",
     "forras_url": "https://tavoktatas.mnt.org.rs/i-osztaly/matematika/matematika-i-osztaly-37-ora-haromszog-belso-szogeinek-osszege-meroleges-szaru",
@@ -733,7 +736,8 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-28",
-    "megjegyzes": "MNT I. osztály 33. óra (óratípus: új anyag feldolgozása); felhő 2026-09-28: az óra-oldalról (beágyazott videó, tanár) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig"
+    "megjegyzes": "MNT I. osztály 33. óra (óratípus: új anyag feldolgozása); felhő 2026-09-28: az óra-oldalról (beágyazott videó, tanár) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; kikapcsolva 2026-09-28 (tanári döntés: egy videó csak egy helyre kerül; az óra több lap témáját is lefedi): a 1e05-oldalak-szogek-video marad (tananyag-haromszogek.html, s3)",
+    "allapot": "kikapcsolva"
   },
   {
     "azon": "1e05-nevezetes-video",
@@ -765,7 +769,8 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-28",
-    "megjegyzes": "MNT I. osztály 30. óra (óratípus: új anyag feldolgozása); felhő 2026-09-28: az óra-oldalról (beágyazott videó, tanár) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig"
+    "megjegyzes": "MNT I. osztály 30. óra (óratípus: új anyag feldolgozása); felhő 2026-09-28: az óra-oldalról (beágyazott videó, tanár) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; kikapcsolva 2026-09-28 (tanári döntés: egy videó csak egy helyre kerül; az óra több lap témáját is lefedi): a 1e05-szog-video marad (tananyag-szogek.html, s1)",
+    "allapot": "kikapcsolva"
   },
   {
     "azon": "1e05-sokszog-szogei-video",
@@ -1046,14 +1051,14 @@
     "tipus": "youtube",
     "forras_azon": "He4vQTUYqBc",
     "cim": "Ismétlés - Racionális algebrai kifejezések (I. osztály, 62. óra)",
-    "leiras": "Ismétlő óra a témakör végére: vegyes feladatok racionális algebrai kifejezésekkel, két részben — ez az első.",
+    "leiras": "Ismétlő óra a témakör végére: vegyes feladatok racionális algebrai kifejezésekkel.",
     "szerzo": "Bálint Nóra",
     "forras": "MNT Távoktatás magyar nyelven",
     "forras_url": "https://tavoktatas.mnt.org.rs/i-osztaly/matematika/matematika-i-osztaly-62-ora-ismetles-racionalis-algebrai-kifejezesek",
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-28",
-    "megjegyzes": "MNT I. osztály 62. óra (óratípus: ismétlés és rendszerezés); felhő 2026-09-28: az óra-oldalról (beágyazott videó, tanár) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig"
+    "megjegyzes": "MNT I. osztály 62. óra (óratípus: ismétlés és rendszerezés); felhő 2026-09-28: az óra-oldalról (beágyazott videó, tanár) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; a 63. óra oldala ugyanezt a videót ágyazza be"
   },
   {
     "azon": "1e06-ismetles2-video",
@@ -1069,7 +1074,8 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-28",
-    "megjegyzes": "MNT I. osztály 63. óra (óratípus: ismétlés és rendszerezés); felhő 2026-09-28: az óra-oldalról (beágyazott videó, tanár) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig"
+    "megjegyzes": "MNT I. osztály 63. óra (óratípus: ismétlés és rendszerezés); felhő 2026-09-28: az óra-oldalról (beágyazott videó, tanár) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; kikapcsolva 2026-09-28 (tanári döntés: egy videó csak egy helyre kerül; a 62. és a 63. óra oldala ugyanezt a videót ágyazza be): a 1e06-ismetles-video marad (tananyag-algebrai-tortek.html, s5)",
+    "allapot": "kikapcsolva"
   },
   {
     "azon": "1e07-egyenlet-video",
