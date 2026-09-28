@@ -364,7 +364,8 @@ a.kartya:hover::after{transform:translateX(130%);}
 
 /* ---------- Kereső-oldal ---------- */
 .kereso-nagy{display:flex;gap:.6rem;margin:1.2rem 0 1.8rem;}
-.kereso-nagy input{flex:1;border:1.5px solid var(--kampusz-uveg-keret);background:var(--papir);border-radius:12px;padding:.7rem 1.1rem;font:inherit;color:var(--tinta);}
+/* min-width:0 — a flex-elem alapból nem keskenyebb a mező saját szélességénél: telefonon kitolta a gombot. */
+.kereso-nagy input{flex:1;min-width:0;border:1.5px solid var(--kampusz-uveg-keret);background:var(--papir);border-radius:12px;padding:.7rem 1.1rem;font:inherit;color:var(--tinta);}
 .kereso-nagy input:focus{outline:none;border-color:var(--kampusz-neon);box-shadow:var(--kampusz-fenylés);}
 .kereso-nagy button{border:1px solid var(--kampusz-neon);border-radius:12px;padding:.7rem 1.3rem;background:var(--kampusz-sotet);
   color:var(--kampusz-neon);font:inherit;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer;transition:all 0.3s ease;}
@@ -393,6 +394,10 @@ table.tt-table{width:auto;min-width:min(100%,420px);margin:14px auto;border-radi
 table.tt-table th,table.tt-table td{padding:.4rem .9rem;}
 table.tt-table .res{font-weight:800;background:rgba(16,185,129,0.15);}
 .tblwrap{overflow-x:auto;}
+/* Telefonon a cellában a képlet egyben marad (a KaTeX különben a + és = jelnél sort törne:
+   „F=2B+ / KH”); a táblázat a .tblwrap-ben gördül. Szélesebb képernyőn a tördelés marad, hogy
+   egy majdnem kiférő táblázat ne kapjon gördítősávot. */
+@media(max-width:640px){table.tt-table .katex-html{white-space:nowrap;}}
 .kbd{font-family:'Cambria Math',Cambria,Georgia,serif;background:rgba(16,185,129,0.15);
   border:1px solid var(--szurke-300);border-radius:6px;padding:1px 7px;font-size:1.02em;color:var(--kampusz-neon);}
 .pill{display:inline-block;background:var(--kampusz-uveg-keret);color:#34d399;
@@ -516,7 +521,13 @@ table.tt-table .res{font-weight:800;background:rgba(16,185,129,0.15);}
 @media(max-width:520px){
   .fejlec-bel{gap:.6rem;padding:.55rem .9rem;}
   .kereso-mini input{display:none;}
+  /* Egy hosszú összetett szó (pl. „Függvénytulajdonságok”) 2rem-mel nem fért ki 360–390 px-en. */
+  h1{font-size:1.65rem;}
 }
+/* Végső mentsvár a még hosszabb szavakra: a szó a sor végén törik. A .hero a body flex-eleme —
+   min-width:0 nélkül a leghosszabb szóhoz szélesedne, és a törés sosem lépne életbe. */
+h1,h2,h3{overflow-wrap:break-word;}
+.hero{min-width:0;}
 @media(max-width:360px){.fejlec-bel{gap:.45rem;padding:.5rem .7rem;}.logo{font-size:1rem;}}
 
 /* ============================================================
