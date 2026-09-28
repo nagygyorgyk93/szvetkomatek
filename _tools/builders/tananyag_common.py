@@ -31,6 +31,19 @@ def mat(szoveg: str) -> str:
     return szoveg
 
 
+_TABLA = re.compile(r'(<div class="tblwrap">\s*)?(<table class="tt-table\b[^>]*>.*?</table>)', re.S)
+
+
+def tablak_gorgethetok(html: str) -> str:
+    """Minden `table.tt-table` saját gördíthető burkot kap (`<div class="tblwrap">`).
+
+    A képletes cella nem törik, így a táblázat telefonon szélesebb lehet a lapnál; burok
+    nélkül az egész lap oldalra csúszik, a burokban csak a táblázat gördül (kánon). Az írás
+    előtt fut (`lap`, `fgy_common.oldal`), a már burkolt táblázatot nem bántja (idempotens).
+    """
+    return _TABLA.sub(lambda m: m.group(0) if m.group(1) else f'<div class="tblwrap">{m.group(2)}</div>', html)
+
+
 # ------------------------------------------------------------------ dobozok
 
 IKON = {"definicio": "📗", "tetel": "📘", "pelda": "✏️", "csapda": "⚠️", "erdekesseg": "💡"}
@@ -665,5 +678,5 @@ def lap(*, tagozat: str, mappa: str, fajl: str, temakor: str, cim: str, cim_tisz
     ut = os.path.join(GYOKER, tagozat, mappa, fajl)
     os.makedirs(os.path.dirname(ut), exist_ok=True)
     with open(ut, "w", encoding="utf-8") as f:
-        f.write(egyedi_idk(html))
+        f.write(egyedi_idk(tablak_gorgethetok(html)))
     return ut
