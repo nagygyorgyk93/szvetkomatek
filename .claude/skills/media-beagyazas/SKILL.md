@@ -43,7 +43,10 @@ A blokkot **soha nem írod kézzel a HTML-be** — csak a katalógusba; a `media
      (cím, szerző, láthatóság). Egy **könyv** (book) nem ágyazható be egészben — a benne lévő
      tevékenység azonosítóját használd (`/m/<konyv>#material/<id>` → `<id>`).
 3. **Szűrés — mindnek teljesülnie kell.**
-   - Témában és szintben a szakaszhoz illik (ne szaladjon előre, ne legyen elemibb).
+   - Témában és szintben a szakaszhoz illik (ne szaladjon előre, ne legyen elemibb). A mi tantervünk
+     (társadalmi szak) szűkebb az MNT-énél: pl. a be- és körülírt gömb nem tananyag, határérték csak
+     4. osztályban (tanári döntés, 2026-09-28). Ha egy óra fő témája ilyen, akkor sem kerül fel, ha a
+     lapon érdekességként előkerül.
    - A jelölés nem ütközik a `_docs/jelolesek.md`-vel; ha igen, a `leiras` mondja ki.
    - Videó: magyar nyelvű; beágyazható; ha hosszú, a `kezdes` a releváns résznél indítja.
    - GeoGebra: mobilon is kezelhető; kevés szöveg vagy magyar/nyelvfüggetlen; nem lövi le a

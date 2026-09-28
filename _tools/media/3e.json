@@ -429,7 +429,8 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-28",
-    "megjegyzes": "MNT III. osztály 30. óra (óratípus: új anyag feldolgozása); felhő 2026-09-28: az óra-oldalról (beágyazott videó, tanár) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig"
+    "megjegyzes": "MNT III. osztály 30. óra (óratípus: új anyag feldolgozása); felhő 2026-09-28: az óra-oldalról (beágyazott videó, tanár) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; kikapcsolva 2026-09-28 (tanári döntés): a be- és körülírt gömb a társadalmi szakon nem tananyag, akkor sem, ha érdekességként egy-két példa előkerül",
+    "allapot": "kikapcsolva"
   },
   {
     "azon": "3e02-irt-gomb-gyak-video",
@@ -445,7 +446,8 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-28",
-    "megjegyzes": "MNT III. osztály 31. óra (óratípus: gyakorlás); felhő 2026-09-28: az óra-oldalról (beágyazott videó, tanár) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig"
+    "megjegyzes": "MNT III. osztály 31. óra (óratípus: gyakorlás); felhő 2026-09-28: az óra-oldalról (beágyazott videó, tanár) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; kikapcsolva 2026-09-28 (tanári döntés): a be- és körülírt gömb a társadalmi szakon nem tananyag, akkor sem, ha érdekességként egy-két példa előkerül",
+    "allapot": "kikapcsolva"
   },
   {
     "azon": "3e02-osszetett-video",
@@ -464,20 +466,20 @@
     "megjegyzes": "MNT III. osztály 25. óra (óratípus: új anyag feldolgozása); felhő 2026-09-28: az óra-oldalról (beágyazott videó, tanár) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig"
   },
   {
-    "azon": "3e03-rendszer-gyak-video",
-    "oldal": "3e/03-linearis-rendszerek/tananyag-ket-ismeretlen.html",
+    "azon": "3e03-cramer-gyak-video",
+    "oldal": "3e/03-linearis-rendszerek/tananyag-cramer.html",
     "hely": "s4",
     "tipus": "youtube",
     "forras_azon": "wSnwjcioNhU",
     "cim": "Lineáris egyenletrendszerek (III. osztály, 37. óra)",
-    "leiras": "Gyakorlóóra lineáris egyenletrendszerekre. Az előző MNT-óra a Gauss-módszerről szólt, így háromismeretlenes rendszer is előkerülhet.",
+    "leiras": "Gyakorlóóra a Cramer-szabályhoz (determinánsos módszer).",
     "szerzo": "Gyorgyevics Anikó",
     "forras": "MNT Távoktatás magyar nyelven",
     "forras_url": "https://tavoktatas.mnt.org.rs/iii-osztaly/matematika/matematika-iii-osztaly-37-ora-linearis-egyenletrendszerek",
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-28",
-    "megjegyzes": "MNT III. osztály 37. óra (óratípus: gyakorlás); felhő 2026-09-28: az óra-oldalról (beágyazott videó, tanár) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; a cím általános; a gauss lapon már ott a 36. óra, ezért ide került (egy videó csak egy helyre)"
+    "megjegyzes": "MNT III. osztály 37. óra (óratípus: gyakorlás); felhő 2026-09-28: az óra-oldalról (beágyazott videó, tanár) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; tanári megerősítés 2026-09-28: a determinánsos módszert (Cramer-szabály) gyakoroltatja"
   },
   {
     "azon": "3e03-gauss-video",
@@ -1117,7 +1119,8 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-09-28",
-    "megjegyzes": "MNT III. osztály 91. óra (óratípus: új anyag feldolgozása); felhő 2026-09-28: az óra-oldalról (beágyazott videó, tanár) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig"
+    "megjegyzes": "MNT III. osztály 91. óra (óratípus: új anyag feldolgozása); felhő 2026-09-28: az óra-oldalról (beágyazott videó, tanár) és oEmbeddel ellenőrizve, csatorna: Távoktatás magyar nyelven; a videót nem néztem végig; kikapcsolva 2026-09-28 (tanári döntés): a határérték csak 4. osztályban tananyag",
+    "allapot": "kikapcsolva"
   },
   {
     "azon": "3e06-szamtani-video",
