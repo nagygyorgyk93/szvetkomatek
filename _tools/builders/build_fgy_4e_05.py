@@ -437,7 +437,7 @@ NEHEZ.append((
     "Rácsutak:" + svg_racs(),
     ["A fenti táblázat bal felső sarkából indulva, minden lépésben jobbra vagy lefelé haladva olvassuk ki a VARIÁNS "
      "szót. Hányféleképpen tehetjük ezt meg?",
-     "Egy bábu a sakktábla $a1$ mezőjéről a $h8$ mezőre megy; minden lépésben egy mezőt léphet jobbra vagy felfelé. "
+     "Egy bábu a sakktábla a1 mezőjéről a h8 mezőre megy; minden lépésben egy mezőt léphet jobbra vagy felfelé. "
      "Hányféle úton juthat el?"],
     [M(chk("nehez-3a", comb(6, 3), kiolvas(), utak(3, 3))), M(chk("nehez-3b", comb(14, 7), utak(7, 7)))]))
 

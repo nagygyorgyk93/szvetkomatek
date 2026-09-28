@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Terepküldetés | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="rajzterem">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Kombinatorika</a> ›
+  <span class="itt">Terepküldetés</span>
+</nav>
+<div class="hero">
+  <h1>Multiverzum Lottó</h1>
+  <p class="alcim">Négy fázis: Nyalka Vili ruhatára, a Multiverzum-tabló, maga a lottó és Véd Vilmos hibás jegyzőkönyve. Beadható projektfeladat — a megoldásokat a tanárod ellenőrzi.</p>
+  <div class="meta-sor"><span class="chip ora">terepküldetés</span><span class="chip">Multiverzum Lottó · terepküldetés</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Nyalka Vili:</b> Hölgyeim és uraim, kadétok és variánsok — a Multiverzum Lottó sorsolására mindenki kiöltözik, sorba áll, szelvényt tölt ki, és <i>pontosan tudja</i>, hány lehetősége van. <b>Véd Vilmos:</b> 🌮 <i>Burek-matek:</i> „Sok. Nagyon sok. Minek számolni?” <b>Nagol:</b> Mert a „sok” nem szám. Négy fázis: Vili ruhatára és belépőkódja (szorzási és összeadási szabály), a Multiverzum-tabló (permutációk), maga a lottó (kombinációk és a binomiális tétel), végül Vilmos jegyzőkönyve, tele hibás leszámlálással.</p></div>
+
+    <p>Minden lépésnél írd le, melyik szabályt vagy képletet használtad, és <b>miért</b> (számít-e a sorrend, ismétlődhet-e egy elem, milyen esetekre bontottál). Számológép használható. A szöveges kérdésekre két-három mondatban válaszolj.</p><p>A 🔴 jelű IV. fázisban a számolás csak eszköz: ott a <b>megfogalmazott érvelés</b> ér annyit, mint máshol a számítás. Mind a négy fázis egyformán számít.</p><p><i>Tervezz rá nagyjából két órát; ez beadandó munka, nem órai feladat.</i></p>
+
+    <h2 id="s1">I. fázis — Vili ruhatára és belépőkódja</h2>
+
+    <p>Nyalka Vili gardróbjában 5 zakó, 4 nadrág, 6 nyakkendő és 3 kalap lóg (mind különböző).</p><ol class="reszfeladatok"><li>Hányféle öltözéket állíthat össze, ha zakó, nadrág és nyakkendő kötelező, kalapot pedig vagy felvesz (egyet), vagy nem?</li><li>Ezek közül hány öltözékben van kalap?</li><li>A sorsolásra négykarakteres belépőkódot kap, amelynek minden karaktere az A, B, C, D, E, F betűk egyike (egy betű többször is szerepelhet). Hány olyan kód van, amelyben legalább egy A szerepel? Oldd meg komplementerrel, és írd le, miért egyszerűbb így!</li><li>Fogalmazd meg a saját szavaiddal: leszámláláskor mikor szorzunk, és mikor adunk össze? Mondj mindkettőre egy saját, hétköznapi példát!</li></ol>
+
+    <h2 id="s2">II. fázis — A Multiverzum-tabló</h2>
+
+    <p>A sorsolás előtt 8 különböző variáns áll egy sorba a Multiverzum-tablónál; köztük van Nyalka Vili, Véd Vilmos és Mini-Vili.</p><ol class="reszfeladatok"><li>Hányféle sorrend lehetséges, ha Nyalka Vili a sor valamelyik szélén áll?</li><li>Hányféle sorrend lehetséges, ha a három Vilmos-variáns — Nyalka Vili, Véd Vilmos és Mini-Vili — egymás mellett áll, bármilyen sorrendben?</li><li>A tabló fölé zászlósort tűznek ki: 4 piros, 3 zöld és 2 fehér zászlót (az egyforma színűek nem különböztethetők meg). Hányféle színsorrend lehetséges?</li><li>A b) és a c) feladatban is „csoportok” vannak. Miért szorzunk a b)-ben, és miért osztunk a c)-ben? Fogalmazd meg két-három mondatban!</li></ol>
+
+    <h2 id="s3">III. fázis — A lottó</h2>
+
+    <p>A Multiverzum Lottón 30 számból 5-öt húznak ki; a szelvényen 5 számot kell megjelölni, a sorrend nem számít. A b) és a c) részben a húzás már megtörtént: egy adott, kihúzott ötöshöz számolj!</p><ol class="reszfeladatok"><li>Hányféleképpen tölthető ki egy szelvény?</li><li>Hány kitöltésen lesz pontosan 3 találat?</li><li>Hány kitöltésen lesz legalább 1 találat?</li><li>A sorsoláson a kihúzott számokat húzási sorrendben is kihirdetik. A húzás előtt nézve összesen hányféle kihirdetési sor lehetséges? Hányszorosa ez az a) eredményének, és miért?</li><li>Nagol szerint <span class="math inline">\(\binom50+\binom51+\binom52+\binom53+\binom54+\binom55=2^5\)</span>. Igazold a binomiális tétellel, és magyarázd meg, mit számol meg ez az összeg az 5 kihúzott szám halmazán!</li><li>Vili szerencseszáma a <span class="math inline">\((3x-1)^4\)</span> kifejtésében az <span class="math inline">\(x^2\)</span> együtthatója. Mennyi ez?</li></ol>
+
+    <h2 id="s4">🔴 IV. fázis — Véd Vilmos jegyzőkönyve</h2>
+
+    <p>Vilmos leadta a saját „megoldásait” az I.V.H.-nak. Mind az öt hibás. Mindegyiknél nevezd meg egy mondatban a hibát, és add meg a helyes eredményt!</p><ol class="reszfeladatok"><li>„7 csapat közül az arany-, az ezüst- és a bronzérem kiosztása (holtverseny nincs, egy csapat egy érmet kap): <span class="math inline">\(\binom73=35\)</span>-féle.”</li><li>„A 0, 3, 6, 9 számjegyekből, mindegyiket egyszer felhasználva <span class="math inline">\(4!=24\)</span> négyjegyű szám képezhető.”</li><li>„A LALALA betűinek sorrendjei: <span class="math inline">\(6!=720\)</span>.”</li><li>„6 lány és 5 fiú közül olyan 4 fős csapat, amelyben legalább egy lány van: előbb kiválasztom a lányt (6-féleképpen), a maradék 3 helyre bárki jöhet a többi 10 közül: <span class="math inline">\(6\cdot\binom{10}3=720\)</span>.”</li><li>„<span class="math inline">\((x+5)^3=x^3+3x^2+3x+125\)</span>.”</li><li>Mi a közös a hibákban? Fogalmazd meg két-három mondatban, hogyan lehetett volna <b>ellenőrizni</b> az egyes eredményeket (például kis esetre felsorolással, vagy <span class="math inline">\(x=1\)</span> behelyettesítésével)!</li></ol>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/nagol.webp" alt="Nagol — a morcos kiképzőtiszt" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Nagol:</b> A sorsolás lezajlott, a lehetőségek megszámolva. A megoldásaidat a tanárod ellenőrzi; a kulcs nem kerül a hálózatra. <b>Nyalka Vili:</b> Több mint százezer kitöltés, és én mindegyikben elegáns vagyok. <b>Mr. Szürreál</b> (I.V.H.): Megszámolni könnyű. A kérdés az, <i>mekkora az esély</i>. <b>Véd Vilmos:</b> Azt majd meglátjuk. A következő fejezet: <i>A Túlélés Esélyei</i>.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="osszefoglalo.html"><span class="irany">← Előző</span><span class="hova">Csalópapír</span></a>
+      <a class="kov" href="index.html"><span class="irany">Következő →</span><span class="hova">Kombinatorika — a témakör</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

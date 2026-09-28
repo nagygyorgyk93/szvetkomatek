@@ -15,7 +15,6 @@ Egy munkamenet = **egy feladat × egy osztály** (vagy egy témakör, ha az oszt
 
 | Mi | Miért | Meddig |
 |---|---|---|
-| `4e/05-kombinatorika/` | helyben készül (F3–F6), a builderei aktívan változnak | amíg ez a sor itt áll |
 | `4im/` | még nem indult; új témakör csak helyben (privát források kellenek) | — |
 | Új feladat / új számadat bármely gyűjteményben | felmérő-ütközés felhőben nem ellenőrizhető | mindig — javaslatként a PR-be |
 | `_docs/workflow.md`, `jelolesek.md`, `tortenet/`, tükrözött skillek | a tanár gépéről frissülnek | mindig |

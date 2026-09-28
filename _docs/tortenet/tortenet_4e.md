@@ -1,10 +1,10 @@
-<!-- TÜKÖR — ne szerkeszd itt! Forrás (a tanár gépén): projektek/szvetkomatek/tortenet/_WEBOLDAL_tortenet_4e.md · tükrözve: 2026-09-27 · _tools/docs_tukor.py -->
+<!-- TÜKÖR — ne szerkeszd itt! Forrás (a tanár gépén): projektek/szvetkomatek/tortenet/_WEBOLDAL_tortenet_4e.md · tükrözve: 2026-09-28 · _tools/docs_tukor.py -->
 
 # Évad-biblia — 4e: *A Törölt Idővonal* (Véd Vilmos & Nagol)
 
 > Közös alap: `_WEBOLDAL_tortenet.md` (világ, állandó szereplők, köntös-rétegek, hátterek).
 > Kötelező szerkezeti kánon: `_WEBOLDAL_workflow.md` 4b. + 8. szakasz.
-> **Állapot: 01–04 kész (2026-09-23 – 09-26), 05 folyamatban.** Érettségi évfolyam — a köntös oldja a vizsgadrukkot, de a
+> **Állapot: 01–05 kész (2026-09-23 – 09-28), a 06 következik.** Érettségi évfolyam — a köntös oldja a vizsgadrukkot, de a
 > tartalom itt a legkomolyabb.
 
 ---
