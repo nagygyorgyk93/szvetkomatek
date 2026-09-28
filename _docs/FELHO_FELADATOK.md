@@ -56,7 +56,12 @@ kombinatorika/valószínűség), témakörönként 1–4 szimuláció.
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ☐ | ☐ | ☐ | ◐ pilot: 4e/05 (a+b)³-kocka (1 szimuláció) |
+| ☑ 10 szimuláció 10 lapon (a 8 témakörből 5-ben: 02, 05, 06, 07, 08; a 01, 03, 04 témakörhöz nincs telefonon használható, tantervhez illő applet) — 2026-09-28 | ☐ | ☐ | ◐ pilot: 4e/05 (a+b)³-kocka (1 szimuláció) |
+
+**Felhőben (2026-09-28):** a jelöltek adatlapja és mérete az `api.geogebra.org`-ról jön, a próba
+(`_tools/media_proba.py`) a `www.geogebra.org`-ot is kéri. Minden jelöltet 390 px-en és szélső
+helyzetben is ki kell próbálni (media-beagyazas skill, 3. és 5. pont): az 1e-ben hat jelölt azért
+esett ki, mert a háromszög megfordításakor 180°-nál nagyobb szögeket írt ki.
 
 ### M3 · Link-őr (ötlet)
 Havi GitHub Action, amely `media.py --online`-t futtat, és hiba esetén issue-t nyit. ☐
