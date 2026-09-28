@@ -57,11 +57,13 @@ A blokkot **soha nem írod kézzel a HTML-be** — csak a katalógusba; a `media
      vonatkozó gyakorlóóra a lap utolsó tartalmi szakaszának végére. Ha a távoktatás tanterve
      eltér a miénktől, és egy laphoz nincs óra, a lap videó nélkül marad. Szimulációból 1–2.
    - **Egy videó csak egy helyre kerül** (tanári döntés, 2026-09-28; a `media.py` hibát jelez):
-     ha egy óra címe több lap témáját is lefedi, arra a lapra tedd, ahol a teljes tartalma már
-     elhangzott, kivéve, ha ott már van videó, egy korábbi lapon pedig nincs — akkor oda. Ha két
-     MNT-óra oldala ugyanazt a videót ágyazza be, csak egyszer. A legközelebbi órát egy videó
-     nélküli lapra csak akkor tedd, ha témában odaillik, és máshol nem szerepel. Nem minden órához
-     készült videó: ami az óra-oldalon és a YouTube-on sincs meg, azt ne keresd tovább.
+     ha egy óra címe több lap témáját is lefedi, a cím fő témájának lapjára tedd (pl. „Hasáb –
+     definíció, felosztás, síkmetszetek” → a hasáb lapja). Ha ez nem egyértelmű, arra a lapra, ahol
+     a teljes tartalma már elhangzott, kivéve, ha ott már van videó, egy korábbi lapon pedig nincs —
+     akkor oda. Ha két MNT-óra oldala ugyanazt a videót ágyazza be, csak egyszer. A legközelebbi
+     órát egy videó nélküli lapra csak akkor tedd, ha témában odaillik, és máshol nem szerepel.
+     Nem minden órához készült videó: ami az óra-oldalon és a YouTube-on sincs meg, azt ne keresd
+     tovább.
 4. **Katalógus** (`_tools/media/<osztaly>.json`, mezők: `python3 _tools/media.py --help`).
    - `azon`: `<osztaly><NN>-<rovid>`, pl. `2e04-egysegkor`.
    - `hely`: `sN` = az sN szakasz végére; `#elem-id` = az elem után (pl. `#tetel-binomialis`).

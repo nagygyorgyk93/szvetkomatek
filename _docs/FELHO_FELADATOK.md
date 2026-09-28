@@ -32,7 +32,7 @@ egy sor: „nincs jó találat”); `media.py --online` 0 hiba; `verify_web` + `
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ☑ 85 videó 30 lapon (mind a 38 egység megvizsgálva; 8 lap videó nélkül; egy videó csak egy helyen) — 2026-09-28 | ☑ 78 videó 32 lapon (mind a 35 egység megvizsgálva; 3 lap tanári döntéssel videó nélkül) — #1, 2026-09-27 | ☐ | ◐ pilot: 4e/05 binomiális tétel (1 videó) |
+| ☑ 85 videó 30 lapon (mind a 38 egység megvizsgálva; 8 lap videó nélkül; egy videó csak egy helyen) — 2026-09-28 | ☑ 78 videó 32 lapon (mind a 35 egység megvizsgálva; 3 lap tanári döntéssel videó nélkül) — #1, 2026-09-27 | ☑ 83 videó 43 lapon (mind az 50 egység megvizsgálva; 7 lap videó nélkül) — 2026-09-28 | ◐ pilot: 4e/05 binomiális tétel (1 videó) |
 
 **Felhőben (2026-09-27):** a felhős környezet *Network access* beállításában engedélyezni kell a
 `tavoktatas.mnt.org.rs`, a `youtube.com` és az `api.geogebra.org` tartományt (nélkülük a WebFetch és a
