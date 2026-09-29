@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Terepküldetés | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="rajzterem">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Valószínűség és statisztika</a> ›
+  <span class="itt">Terepküldetés</span>
+</nav>
+<div class="hero">
+  <h1>A végső meghallgatás</h1>
+  <p class="alcim">Saját statisztikai kutatás, Mr. Szürreál öt félrevezető állításának cáfolata és a védelem záróbeszéde — az évad záró küldetése. Beadható projektfeladat: a megoldásokat a tanárod ellenőrzi.</p>
+  <div class="meta-sor"><span class="chip ora">terepküldetés</span><span class="chip">A Túlélés Esélyei · terepküldetés</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>SZVETI</b> (jegyzőkönyv): A meghallgatás utolsó napja. <b>Mr. Szürreál</b> (I.V.H.): Hét napon át hoztam a számokat. Ma öt újabb állítással bizonyítom, hogy ez az évfolyam nem tud bánni a véletlennel. <b>Véd Vilmos:</b> 🌮 <i>Burek-matek:</i> „Mi is hozunk számokat — sajátot!” <b>Nagol:</b> Ez a helyes út. A védelem két részből áll: egy saját, tisztességesen elvégzett kutatásból és Mr. Szürreál öt állításának cáfolatából. A végén a védelem záróbeszéde következik.</p></div>
+
+    <p>Minden lépésnél írd le, mit és <b>miért</b> csinálsz: melyik mutatót, képletet vagy diagramot választod, és miért az illik ide. Számológép és táblázatkezelő (Excel, LibreOffice Calc, Google Táblázatok) használható; a mutatókat az <a href="tananyag-statisztikai-mutatok.html#s4">adatlaborban</a> is ellenőrizheted.</p><p><b>Beadandó:</b> a táblázatkezelő-fájl (adatok, gyakorisági táblázat, mutatók, diagram, dobozdiagram) és egy legfeljebb két A4-es oldalas jegyzőkönyv (az I. fázis kérdése, módszere, a diagramválasztás indoklása, a kvartilisek kézi ellenőrzése, az eredmények és az értelmezés; a II. fázis megoldásai és a záróbeszéd), valamint egyetlen dia „a bíráknak”. A határidőt és a beadás módját a tanárod adja meg.</p><p><i>Tervezz rá nagyjából három-négy órát az adatgyűjtéssel együtt, egy hétre elosztva; ez beadandó munka, nem órai feladat. Az I. fázis a pontszám fele, a II. fázis kétötöde, a záróbeszéd egytizede.</i></p>
+
+    <h2 id="s1">I. fázis — A védelem bizonyítéka: saját kutatás</h2>
+
+    <p>Válassz egy kérdést, amelyre <b>20–30 adattal</b> felelni lehet. Gyűjtheted magad (például: hány percet utaznak iskolába az évfolyamtársaid; hány órát alszanak egy tanítási napon; hány lépést tesznek meg naponta), vagy dolgozhatsz nyílt adatokkal: a szerb népszámlálás (<a href="https://popis2022.stat.gov.rs/sr-latn/popisni-podaci-eksel-tabele/">RZS, Popis 2022</a>), az <a href="https://ec.europa.eu/eurostat/data/database">Eurostat</a> vagy az <a href="https://open-meteo.com/en/docs/historical-weather-api">Open-Meteo</a> időjárás-archívuma (bármely város, bármely év). Olyan kérdést válassz, amelyet ezen a honlapon még nem dolgoztunk fel.</p><ol class="reszfeladatok"><li><b>A kérdés.</b> Fogalmazd meg a kérdést egy mondatban! Mi a sokaság, mi a minta, mi az ismérv? Minőségi vagy mennyiségi (diszkrét vagy folytonos) ismérvről van szó, és milyen skálán mérsz? Ha a teljes sokaságot vizsgálod (például egy hónap minden napját), ezt írd le.</li><li><b>Az adatgyűjtés.</b> Hogyan gyűjtötted az adatokat? Lehet-e torz a mintád — és ha igen, merre torzít? Nyílt adatnál add meg a pontos forrást (a tábla nevét és a linket).</li><li><b>A táblázat és a diagram.</b> Készíts gyakorisági táblázatot (abszolút és relatív gyakorisággal; folytonos adatnál vagy sok különböző értéknél egyenlő szélességű osztályközökkel) és hozzá illő diagramot! Indokold a diagram típusát!</li><li><b>A mutatók.</b> Add meg a módusz(oka)t, a mediánt, az átlagot, a terjedelmet, a két kvartilist és a szórást! A szórást <span class="math inline">\(1/n\)</span>-nel számold: táblázatkezelőben magyarul SZÓR.S, angolul STDEV.P (vigyázz: a magyar „S” a sokaságot, az angol „S” a mintát jelenti; a SZÓR.M, illetve a STDEV.S <span class="math inline">\(n-1\)</span>-gyel oszt). Készíts dobozdiagramot (kézzel vagy az adatlaborban)! A mediánt és a kvartiliseket a rendezett adatsorból kézzel is határozd meg, és vesd össze a táblázatkezelő eredményével (ha eltér, nézd meg, milyen kvartilisfüggvényt használt).</li><li><b>Az értelmezés.</b> Négy–hat mondatban: mit mondanak a számok a kérdésedre? Melyik középérték jellemzi jobban az adataidat, és miért? Mit mond a szórás, illetve a dobozdiagram? Van-e kiugró adat?</li><li><b>A dia a bíráknak.</b> Egyetlen diagram és egy egymondatos következtetés — tisztességesen: a tengely 0-tól indul (vagy jelölve van a törés), van címe, szerepel a mértékegység és az adatok forrása.</li></ol>
+
+    <h2 id="s2">II. fázis — Mr. Szürreál öt állítása</h2>
+
+    <p>Mindegyik állítás hibás. Nevezd meg egy-két mondatban a hibát, és számold ki, mi a helyes!</p><ol class="reszfeladatok"><li><b>A fizetések.</b> „Az I.V.H. kiképzőtábor 10 dolgozója közül kilencen havi 85&nbsp;000 dinárt keresnek, a táborparancsnok 1&nbsp;150&nbsp;000-et. Az átlagfizetés 191&nbsp;500 dinár, tehát a táborban mindenki jól keres.” Számold ki az átlagot és a mediánt! Melyik jellemzi jobban egy tipikus dolgozó keresetét, és miért?</li><li><b>A rekordszezon.</b> „Jokić a 2024–25-ös szezonban meccsenként kilencszer annyi pontot dobott, mint egy évvel korábban — nézzék az ábrát!”<div class="svgwrap"><svg viewBox="0 0 300 220" width="300" height="220" role="img" aria-label="Mr. Szürreál oszlopdiagramja 26-nál kezdődő függőleges tengellyel: Jokić meccsenkénti pontátlaga a 2023–24-es és a 2024–25-ös szezonban" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+      <line x1="52" y1="194.0" x2="290" y2="194.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="197.8" font-size="10.5" fill="#475569" text-anchor="end">26</text>
+      <line x1="52" y1="151.0" x2="290" y2="151.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="154.8" font-size="10.5" fill="#475569" text-anchor="end">27</text>
+      <line x1="52" y1="108.0" x2="290" y2="108.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="111.8" font-size="10.5" fill="#475569" text-anchor="end">28</text>
+      <line x1="52" y1="65.0" x2="290" y2="65.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="68.8" font-size="10.5" fill="#475569" text-anchor="end">29</text>
+      <line x1="52" y1="22.0" x2="290" y2="22.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="25.8" font-size="10.5" fill="#475569" text-anchor="end">30</text>
+      <line x1="52" y1="22" x2="52" y2="194" stroke="#0f172a" stroke-width="1.2"/>
+      <line x1="52" y1="194" x2="290" y2="194" stroke="#0f172a" stroke-width="1.2"/>
+      <text x="50.0" y="17.0" font-size="10.5" fill="#475569" text-anchor="start" font-style="italic">pont/meccs</text>
+      <rect x="74.6" y="176.8" width="73.8" height="17.2" fill="#b91c1c" fill-opacity=".85"/>
+      <text x="111.5" y="172.8" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">26,4</text>
+      <text x="111.5" y="208.0" font-size="11" fill="#0f172a" text-anchor="middle">2023–24</text>
+      <rect x="193.6" y="39.2" width="73.8" height="154.8" fill="#b91c1c" fill-opacity=".85"/>
+      <text x="230.5" y="35.2" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">29,6</text>
+      <text x="230.5" y="208.0" font-size="11" fill="#0f172a" text-anchor="middle">2024–25</text>
+    </svg></div><p class="cap">Forrás: <a href="https://en.wikipedia.org/wiki/Nikola_Joki%C4%87">Nikola Jokić NBA-alapszakasz statisztikái (Wikipédia, az NBA hivatalos adatai alapján)</a></p>Hány százalékkal nőtt valójában a pontátlag? Honnan származik a „kilencszeres”? Hogyan kellene helyesen ábrázolni?</li><li><b>A gyakorló órák.</b> „Az elbukott kadétok 80%-a nem járt a gyakorló órákra. Tehát aki nem jár gyakorló órára, az 80% eséllyel elbukik.” Az évfolyam 200 kadétjának adatai:<div class="tblwrap"><table class="tt-table"><tr><th>gyakorló órákra</th><th>elbukott</th><th>sikeres</th><th>összesen</th></tr><tr><td>járt</td><td>5</td><td>145</td><td>150</td></tr><tr><td>nem járt</td><td>20</td><td>30</td><td>50</td></tr><tr><td>összesen</td><td>25</td><td>175</td><td>200</td></tr></table></div>Melyik feltételes valószínűséget számolta ki Mr. Szürreál? Mekkora valójában annak a valószínűsége, hogy egy, a gyakorló órákra nem járó kadét elbukik — és mekkora ugyanez a gyakorló órákra járóknál? Mit mond a két szám együtt?</li><li><b>A bevetések.</b> „Egy kadét minden bevetésen <span class="math inline">\(0{,}15\)</span> valószínűséggel kerül bajba, a bevetések egymástól függetlenek. Öt bevetésből tehát <span class="math inline">\(5\cdot0{,}15=0{,}75\)</span> valószínűséggel kerül bajba, hét bevetésből pedig 105%-os biztonsággal.” Miért nem lehet igaz? Mekkora a helyes valószínűség öt, illetve hét bevetésre (három tizedesre)? Legalább hány bevetés után lesz legalább <span class="math inline">\(0{,}9\)</span> annak a valószínűsége, hogy a kadét legalább egyszer bajba került?</li><li><b>A kiegyenlítés.</b> „A szabályos kísérleti érmével hétszer egymás után fej jött. A relatív gyakoriságnak <span class="math inline">\(0{,}5\)</span> felé kell tartania, ezért most nagy valószínűséggel írás jön.” Mekkora a valószínűsége, hogy a nyolcadik dobás írás? Mekkora volt a dobások előtt annak a valószínűsége, hogy az első hét dobás mind fej lesz? Hogyan „egyenlít ki” mégis a relatív gyakoriság? (Segítség: mi lesz a fejek relatív gyakorisága, ha a hét fej után további 1000 dobásból 500 fej?)</li></ol>
+
+    <h2 id="s3">III. fázis — A védelem záróbeszéde</h2>
+
+    <p>Írj 6–10 mondatos záróbeszédet a bizottságnak! Használd fel legalább két saját mutatódat az I. fázisból és legalább egy helyesen kiszámolt valószínűséget a II. fázisból. Mutasd meg, miért nem elég egyetlen szám (egy átlag, egy százalék) egy állítás bizonyításához — és mit kell még megkérdezni mellette (legalább két ilyen szempontot fejts ki).</p>
+
+    <div class="brief" data-outro><p>📡 <b>SZVETI</b> (jegyzőkönyv): A meghallgatás lezárva. Bizonyíték: hét tárgyalási nap, két Zsoldos-lista és kadétonként egy saját kutatás. <b>Mr. Szürreál:</b> Számokkal jöttem, és számokkal kaptam választ. Az I.V.H. visszavonja a metszési javaslatot — egyelőre. <b>Véd Vilmos:</b> 🌮 Ezt meg kell ünnepelni! Burek mindenkinek, egyforma adagokban — a szórás nulla. <b>Nagol:</b> Az utolsó ítéletet azonban nem az I.V.H. mondja ki, hanem a vizsgabizottság. <i>A Törölt Idővonal</i> évada itt véget ér; a ti idővonalatok most kezdődik. Sok sikert az érettségin!</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="osszefoglalo.html"><span class="irany">← Előző</span><span class="hova">Csalópapír</span></a>
+      <a class="kov" href="index.html"><span class="irany">Következő →</span><span class="hova">Valószínűség és statisztika — a témakör</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Csalópapír | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="digitalis">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Valószínűség és statisztika</a> ›
+  <span class="itt">Csalópapír</span>
+</nav>
+<div class="hero">
+  <h1>Csalópapír — a témakör egy lapon</h1>
+  <p class="alcim">Események és valószínűség, feltételes és binomiális valószínűség, várható érték, diagramok, középértékek és szóródás egy lapon — ismétléshez, az érettségi előtti átfutáshoz, nyomtatáshoz.</p>
+  <div class="meta-sor"><span class="chip ora">összefoglaló</span><span class="chip">A Túlélés Esélyei · összefoglaló</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">🎲 Események és valószínűség</h2>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th>fogalom</th><th>jelölés, képlet</th><th>példa</th></tr><tr><td>eseménytér <a href="tananyag-esemenyek.html#def-esemenyter">→</a></td><td><span class="math inline">\(\Omega\)</span> — az összes kimenetel halmaza</td><td>kocka: <span class="math inline">\(\Omega=\{1;2;3;4;5;6\}\)</span></td></tr><tr><td>ellentett esemény <a href="tananyag-esemenyek.html#def-ellentett">→</a></td><td><span class="math inline">\(\overline{A}\)</span>; <span class="math inline">\(\;P(\overline{A})=1-P(A)\)</span></td><td>két kockával nem dupla: <span class="math inline">\(1-\frac{6}{36}=\frac56\)</span></td></tr><tr><td>„vagy”, „és” <a href="tananyag-esemenyek.html#def-esemeny">→</a></td><td><span class="math inline">\(A\cup B\)</span>, <span class="math inline">\(\;A\cap B\)</span></td><td><span class="math inline">\(\overline{A\cup B}=\overline{A}\cap\overline{B}\)</span> <a href="tananyag-esemenyek.html#tetel-de-morgan">→</a></td></tr><tr><td>egymást kizáró események <a href="tananyag-esemenyek.html#def-kizaro">→</a></td><td><span class="math inline">\(A\cap B=\emptyset\)</span></td><td>egy dobással: 1-est dobunk, 6-ost dobunk</td></tr><tr><td>klasszikus valószínűség <a href="tananyag-valoszinuseg-fogalma.html#tetel-klasszikus">→</a></td><td><span class="math inline">\(P(A)=\dfrac{k}{n}\)</span> (egyformán valószínű kimenetelek)</td><td>két kocka, összeg 7: <span class="math inline">\(\frac{6}{36}=\frac16\)</span></td></tr><tr><td>statisztikai valószínűség <a href="tananyag-valoszinuseg-fogalma.html#def-statisztikai-valoszinuseg">→</a></td><td>a relatív gyakoriság sok ismétlésnél ennek a számnak a közelében ingadozik</td><td>szerbiai újszülött fiú: <span class="math inline">\(\approx0{,}515\)</span></td></tr><tr><td>unió <a href="tananyag-valoszinuseg-fogalma.html#tetel-unio">→</a></td><td><span class="math inline">\(P(A\cup B)=P(A)+P(B)-P(A\cap B)\)</span></td><td>király vagy kőr: <span class="math inline">\(\frac{4+13-1}{52}=\frac{4}{13}\)</span></td></tr></table></div>
+
+    <p>Mindig <span class="math inline">\(0\le P(A)\le1\)</span>, <span class="math inline">\(P(\Omega)=1\)</span>, <span class="math inline">\(P(\emptyset)=0\)</span>. Ha a kimenetelek száma nagy, a kombinatorika számol: 5 piros és 3 fehér golyóból kettőt húzva <span class="math inline">\(P(\text{két piros})=\dfrac{\binom52}{\binom82}=\dfrac{10}{28}=\dfrac{5}{14}\)</span> <a href="tananyag-valoszinuseg-fogalma.html#pelda-golyok">→</a>.</p>
+
+    <h2 id="s1">🔀 Feltételes valószínűség, függetlenség, „legalább egy”</h2>
+
+    <ul><li><b>Feltételes valószínűség</b> <a href="tananyag-felteteles-valoszinuseg.html#def-felteteles">→</a>: <span class="math inline">\(P(A\mid B)=\dfrac{P(A\cap B)}{P(B)}\)</span> — a <span class="math inline">\(B\)</span>-re leszűkített eseménytérben számolunk. Titanic: <span class="math inline">\(P(\text{túlélt}\mid\text{nő})=\frac{339}{466}\approx0{,}727\)</span>, de <span class="math inline">\(P(\text{nő}\mid\text{túlélt})=\frac{339}{500}=0{,}678\)</span> <a href="tananyag-felteteles-valoszinuseg.html#pelda-titanic">→</a> — a feltétel nem cserélhető fel.</li><li><b>Független események</b> <a href="tananyag-felteteles-valoszinuseg.html#def-fuggetlen">→</a>: <span class="math inline">\(P(A\cap B)=P(A)\cdot P(B)\)</span>, azaz (ha <span class="math inline">\(P(B)>0\)</span>) <span class="math inline">\(P(A\mid B)=P(A)\)</span> — a <span class="math inline">\(B\)</span> ismerete nem változtat <span class="math inline">\(A\)</span> esélyén.</li><li><b>Legalább egy</b> <a href="tananyag-felteteles-valoszinuseg.html#tetel-legalabb-egy">→</a>: <span class="math inline">\(P(\text{legalább egy})=1-P(\text{egyik sem})\)</span>. Három független riasztó (<span class="math inline">\(0{,}9\)</span>; <span class="math inline">\(0{,}8\)</span>; <span class="math inline">\(0{,}7\)</span>), legalább egy jelez: <span class="math inline">\(1-0{,}1\cdot0{,}2\cdot0{,}3=0{,}994\)</span> <a href="tananyag-felteteles-valoszinuseg.html#pelda-riaszto">→</a>.</li></ul>
+
+    <h2 id="s2">🎯 Binomiális valószínűség és valószínűségi változó</h2>
+
+    <p><b>Bernoulli-kísérletsorozat</b> <a href="tananyag-binomialis-valoszinuseg.html#def-bernoulli">→</a>: <span class="math inline">\(n\)</span> független kísérlet, mindegyiknek két kimenetele van (siker, kudarc), a siker valószínűsége mindig <span class="math inline">\(p\)</span>. Pontosan <span class="math inline">\(k\)</span> siker valószínűsége <a href="tananyag-binomialis-valoszinuseg.html#tetel-binomialis-valoszinuseg">→</a>: <span class="math display">\[P_n(k)=\binom nk p^k(1-p)^{n-k}.\]</span> Jokić öt büntetője, <span class="math inline">\(p=0{,}8\)</span>: <span class="math inline">\(P_5(4)=5\cdot0{,}8^4\cdot0{,}2=0{,}4096\)</span> <a href="tananyag-binomialis-valoszinuseg.html#pelda-jokic">→</a>. „Legalább” és „legfeljebb” esetén több <span class="math inline">\(k\)</span> valószínűségét adjuk össze — vagy az ellentett eseményt számoljuk.</p>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th></th><th>képlet</th><th>jelentés</th></tr><tr><td>eloszlás <a href="tananyag-valoszinusegi-valtozo.html#tetel-eloszlas">→</a></td><td><span class="math inline">\(P(X=x_i)=p_i\)</span>, <span class="math inline">\(\;p_1+\ldots+p_n=1\)</span></td><td>melyik értéket mekkora valószínűséggel veszi fel <span class="math inline">\(X\)</span></td></tr><tr><td>várható érték <a href="tananyag-valoszinusegi-valtozo.html#def-varhato-ertek">→</a></td><td><span class="math inline">\(E(X)=x_1p_1+\ldots+x_np_n\)</span></td><td>sok kísérlet átlaga ennek közelében ingadozik; kocka: <span class="math inline">\(E(X)=3{,}5\)</span> — egyetlen dobással sem jön ki</td></tr><tr><td>szórásnégyzet, szórás <a href="tananyag-valoszinusegi-valtozo.html#def-szorasnegyzet">→</a></td><td><span class="math inline">\(D^2(X)=\sum\bigl(x_i-E(X)\bigr)^2p_i\)</span>, <span class="math inline">\(\;D(X)=\sqrt{D^2(X)}\)</span></td><td>mennyire szóródnak az értékek — a kockázat mértéke</td></tr></table></div>
+
+    <p class="le halvany">Döntés várható értékkel <a href="tananyag-valoszinusegi-valtozo.html#pelda-ajanlat">→</a>: a játék akkor éri meg sokszor játszva, ha a nettó nyereség (nyeremény − tét) várható értéke pozitív; ha <span class="math inline">\(E(X)=0\)</span>, a játék „igazságos”.</p>
+
+    <h2 id="s3">📊 Adatok és diagramok</h2>
+
+    <ul><li><b>Sokaság, minta</b> <a href="tananyag-adatok.html#def-sokasag">→</a>: a minta akkor jó, ha véletlenszerűen választjuk; az önkéntes jelentkezés („aki akar, kitölti”) és a kényelmi minta („az első 30 érkező”) torzíthat.</li><li><b>Ismérv</b> <a href="tananyag-adatok.html#def-ismerv">→</a>: minőségi (kategóriák) vagy mennyiségi — diszkrét (megszámolt) vagy folytonos (mért). <b>Skálák</b> <a href="tananyag-adatok.html#def-skalak">→</a>: nominális (csak megkülönböztet), ordinális (sorba rendez), intervallum (a különbségnek is van értelme); ha valódi nullpont is van, és a hányadosnak is van értelme (idő, hossz, darabszám), arányskáláról beszélünk.</li><li><b>Gyakoriság</b> <a href="tananyag-adatok.html#def-gyakorisag">→</a>: abszolút <span class="math inline">\(f_i\)</span>, relatív <span class="math inline">\(\frac{f_i}{n}\)</span> (a relatív gyakoriságok összege 1, azaz 100%).</li></ul>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th>diagram</th><th>mire jó?</th></tr><tr><td>oszlopdiagram</td><td>kategóriák vagy diszkrét értékek összehasonlítása</td></tr><tr><td>kördiagram</td><td>egy egész részeinek aránya (középponti szög: <span class="math inline">\(360^\circ\cdot\frac{f_i}{n}\)</span>)</td></tr><tr><td>hisztogram</td><td>folytonos adatok osztályközökben (az oszlopok összeérnek)</td></tr><tr><td>vonaldiagram</td><td>időbeli változás</td></tr></table></div>
+
+    <p class="le halvany">Félrevezető ábra <a href="tananyag-adatok.html#pelda-felrevezeto">→</a>: nézd meg, honnan indul a függőleges tengely — ha nem 0-tól, a 12%-os csökkenés 80%-osnak is látszhat.</p>
+
+    <h2 id="s4">📏 Középértékek és szóródás</h2>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th>mutató</th><th>hogyan?</th><th>a <span class="math inline">\(2;\ 4;\ 4;\ 5;\ 10\)</span> adatsoron</th></tr><tr><td>módusz <a href="tananyag-statisztikai-mutatok.html#def-kozepertekek">→</a></td><td>a leggyakoribb adat (lehet több is, vagy egy sem)</td><td><span class="math inline">\(4\)</span></td></tr><tr><td>medián</td><td>a rendezett adatsor közepe (páros <span class="math inline">\(n\)</span>-nél a két középső átlaga)</td><td><span class="math inline">\(4\)</span></td></tr><tr><td>átlag</td><td><span class="math inline">\(\bar x=\dfrac{x_1+\ldots+x_n}{n}\)</span>; gyakorisági táblából súlyozva <a href="tananyag-statisztikai-mutatok.html#pelda-sulyozott">→</a></td><td><span class="math inline">\(5\)</span></td></tr><tr><td>terjedelem</td><td>legnagyobb − legkisebb</td><td><span class="math inline">\(10-2=8\)</span></td></tr><tr><td>kvartilisek <a href="tananyag-statisztikai-mutatok.html#def-kvartilis">→</a></td><td><span class="math inline">\(Q_1\)</span>, <span class="math inline">\(Q_3\)</span>: az alsó, illetve a felső fél mediánja (páratlan <span class="math inline">\(n\)</span>-nél a medián egyik félbe sem kerül)</td><td><span class="math inline">\(Q_1=3\)</span>, <span class="math inline">\(Q_3=7{,}5\)</span></td></tr><tr><td>átlagos abszolút eltérés <a href="tananyag-statisztikai-mutatok.html#def-szoras">→</a></td><td><span class="math inline">\(\dfrac{|x_1-\bar x|+\ldots+|x_n-\bar x|}{n}\)</span></td><td><span class="math inline">\(2\)</span></td></tr><tr><td>szórásnégyzet, szórás</td><td><span class="math inline">\(\sigma^2=\dfrac{(x_1-\bar x)^2+\ldots+(x_n-\bar x)^2}{n}\)</span>, <span class="math inline">\(\;\sigma=\sqrt{\sigma^2}\)</span></td><td><span class="math inline">\(7{,}2\)</span>; <span class="math inline">\(\;\approx2{,}68\)</span></td></tr><tr><td>standardizált érték <a href="tananyag-statisztikai-mutatok.html#tetel-standardizalt">→</a></td><td><span class="math inline">\(z=\dfrac{x-\bar x}{\sigma}\)</span> — hány szórásnyira van az átlagtól</td><td>a <span class="math inline">\(10\)</span>-é: <span class="math inline">\(\approx1{,}86\)</span></td></tr></table></div>
+
+    <p>A <b>dobozdiagram</b> öt számot mutat: a legkisebb adatot, <span class="math inline">\(Q_1\)</span>-et, a mediánt, <span class="math inline">\(Q_3\)</span>-at és a legnagyobb adatot. Kiugró adat esetén a medián jobban jellemzi a „tipikus” értéket, mint az átlag. Az adatokat az <a href="tananyag-statisztikai-mutatok.html#s4">adatlaborban</a> is kipróbálhatod.</p>
+
+    <h2 id="s5">⚠️ Véd Vilmos csapdái, amelyekbe a legtöbben beleesnek</h2>
+
+    <div class="doboz csapda"><p class="cim"><span class="ikon">⚠️</span> A tíz leggyakoribb hiba</p><ol class="reszfeladatok"><li><b>Összeadás metszet nélkül:</b> <span class="math inline">\(P(A\cup B)=P(A)+P(B)\)</span> csak kizáró eseményekre igaz; különben vond le <span class="math inline">\(P(A\cap B)\)</span>-t.</li><li><b>Felcserélt feltétel:</b> <span class="math inline">\(P(A\mid B)\)</span> nem ugyanaz, mint <span class="math inline">\(P(B\mid A)\)</span> — mindig kérdezd meg: mire szűkül az eseménytér?</li><li><b>„Legalább egy” összeadással:</b> öt, egyenként <span class="math inline">\(0{,}2\)</span> valószínűségű független próbálkozásból legalább egy sikerének valószínűsége nem <span class="math inline">\(5\cdot0{,}2=1\)</span>, hanem <span class="math inline">\(1-0{,}8^5\approx0{,}672\)</span>.</li><li><b>Elfelejtett <span class="math inline">\(\binom nk\)</span>:</b> <span class="math inline">\(p^k(1-p)^{n-k}\)</span> csak EGY sorrend valószínűsége; a <span class="math inline">\(k\)</span> siker helyét <span class="math inline">\(\binom nk\)</span>-féleképpen választhatjuk ki az <span class="math inline">\(n\)</span> kísérlet közül.</li><li><b>A szerencsejátékos tévedése:</b> szabályos érmével hat fej után sem „jár” az írás; a következő dobás is <span class="math inline">\(\frac12\)</span> valószínűséggel fej.</li><li><b>A várható érték nem „a várt érték”:</b> kockával <span class="math inline">\(E(X)=3{,}5\)</span>, pedig 3,5-öt nem lehet dobni.</li><li><b>Súlyozás nélküli átlag:</b> három 3-as dolgozat és egy 5-ös átlaga <span class="math inline">\(\frac{3\cdot3+5}{4}=3{,}5\)</span>, nem <span class="math inline">\(\frac{3+5}{2}=4\)</span> — súlyozni kell.</li><li><b>Medián rendezés nélkül:</b> előbb sorba kell rendezni az adatokat.</li><li><b>Szórás vagy szórásnégyzet?</b> Ha az adatok °C-ban vannak, a <span class="math inline">\(\sigma^2\)</span> mértékegysége °C², a <span class="math inline">\(\sigma\)</span>-é °C — a gyökvonás nem maradhat el.</li><li><b>Levágott tengely:</b> a diagramot a tengely kezdőpontjával együtt olvasd.</li></ol></div>
+
+    <h2 id="s6">Mit hol találsz?</h2>
+
+    <div class="gyakorolj"><span class="ikon">🧭</span><div><p><b>Valószínűség:</b> <a href="tananyag-esemenyek.html">események</a> · <a href="tananyag-valoszinuseg-fogalma.html">a valószínűség fogalma</a> · <a href="tananyag-felteteles-valoszinuseg.html">feltételes valószínűség</a> · <a href="tananyag-binomialis-valoszinuseg.html">binomiális valószínűség</a> · <a href="tananyag-valoszinusegi-valtozo.html">valószínűségi változó</a>. <b>Statisztika:</b> <a href="tananyag-adatok.html">adatok és diagramok</a> · <a href="tananyag-statisztikai-mutatok.html">középértékek és szóródás</a>.</p><p><b>Gyakorlás:</b> <a href="feladatok-valoszinuseg.html">Zsoldos-lista — Valószínűség</a> · <a href="feladatok-statisztika.html">Zsoldos-lista — Statisztika</a> · <a href="feladatok-hazi.html">I.V.H. Kihallgató Terem</a> (házi). A témakört és az évadot <a href="terepkuldetes.html">A végső meghallgatás</a> zárja.</p></div></div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-hazi.html"><span class="irany">← Előző</span><span class="hova">I.V.H. Kihallgató Terem</span></a>
+      <a class="kov" href="terepkuldetes.html"><span class="irany">Következő →</span><span class="hova">A végső meghallgatás</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

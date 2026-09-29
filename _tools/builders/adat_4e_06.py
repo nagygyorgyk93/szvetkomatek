@@ -13,7 +13,7 @@ FORRAS = {
                   "https://open-meteo.com/en/docs/historical-weather-api"),
     "titanic": ("Vanderbilt University, Department of Biostatistics: titanic3 (F. E. Harrell)",
                 "https://hbiostat.org/data/"),
-    "jokic": ("Nikola Jokić NBA-alapszakasz statisztikái (Wikipedia, az NBA hivatalos adatai alapján)",
+    "jokic": ("Nikola Jokić NBA-alapszakasz statisztikái (Wikipédia, az NBA hivatalos adatai alapján)",
               "https://en.wikipedia.org/wiki/Nikola_Joki%C4%87"),
     "penz": ("Történeti pénzfeldobás-kísérletek: G.-L. L. de Buffon (18. sz.), K. Pearson (1900 körül), J. E. Kerrich "
              "(1946; közli D. Freedman, R. Pisani, R. Purves: Statistics)", ""),

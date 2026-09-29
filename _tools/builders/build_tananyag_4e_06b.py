@@ -300,8 +300,8 @@ FUGG_TABLA = TABLA(["mutató", "magyar nyelvű program", "angol nyelvű program"
     ["módusz", '<span class="kbd">MÓDUSZ.EGY</span>', '<span class="kbd">MODE.SNGL</span>'],
     ["kvartilis", '<span class="kbd">KVARTILIS.KIZÁR</span>', '<span class="kbd">QUARTILE.EXC</span>'],
     ["átlagos abszolút eltérés", '<span class="kbd">ÁTL.ELTÉRÉS</span>', '<span class="kbd">AVEDEV</span>'],
-    ["szórásnégyzet ($1/n$)", '<span class="kbd">VAR.P</span>', '<span class="kbd">VAR.P</span>'],
-    ["szórás ($1/n$)", '<span class="kbd">SZÓR.P</span>', '<span class="kbd">STDEV.P</span>']])
+    ["szórásnégyzet ($1/n$)", '<span class="kbd">VAR.S</span>', '<span class="kbd">VAR.P</span>'],
+    ["szórás ($1/n$)", '<span class="kbd">SZÓR.S</span>', '<span class="kbd">STDEV.P</span>']])
 
 B2 = [
  ("📡 Küldetés-eligazítás", [
@@ -407,8 +407,10 @@ B2 = [
    doboz("erdekesseg", "Táblázatkezelő-sarok",
          '<p>Ugyanezek a mutatók egy táblázatkezelőben (Excel, LibreOffice Calc, Google Táblázatok) egy-egy függvénnyel '
          'számolhatók, például <span class="kbd">=ÁTLAG(A1:A12)</span>:</p>' + FUGG_TABLA
-         + '<p>A <span class="kbd">VAR.S</span> és a <span class="kbd">STDEV.S</span> típusú függvények $n$ helyett '
-           '$n-1$-gyel osztanak — ez a mintából becslő, „korrigált” változat, amelyet most nem használunk.</p>'),
+         + '<p>Vigyázat, a betűk csalnak: a magyar nyelvű programban az „S” a <i>sokaságot</i> jelenti '
+           '(<span class="kbd">SZÓR.S</span> = STDEV.P), az angolban a <i>mintát</i> (sample). A magyar '
+           '<span class="kbd">VAR.M</span> és <span class="kbd">SZÓR.M</span> (angolul VAR.S és STDEV.S) $n$ helyett '
+           '$n-1$-gyel oszt — ez a mintából becslő, „korrigált” változat, amelyet most nem használunk.</p>'),
    NEHEZ(2, "hiányzó adat visszafelé az átlagból"),
    NEHEZ(3, "két adatsor összevetése középértékkel és szórással"),
    GY("#alap-6", "A 6–10", "#kozep-4", "K 4–7"),

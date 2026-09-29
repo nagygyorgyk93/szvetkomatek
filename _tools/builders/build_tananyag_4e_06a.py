@@ -429,7 +429,7 @@ A2 = [
          r'leghasznosabb: ha egy esemény valószínűségét nehéz kiszámolni, az ellentettjéé gyakran könnyű. Két kockánál '
          r'annak a valószínűsége, hogy <i>nem</i> dobunk duplát: $1-\frac6{36}=\frac56$.</p>', hid="tetel-ellentett"),
    doboz("tetel", "Két esemény uniója",
-         r'<p>Ha $A$ és $B$ kizárja egymást, akkor $P(A\cup B)=P(A)+P(B)$. Általában — ha lehetnek közös '
+         r'<p>Ha $A$ és $B$ kizárják egymást, akkor $P(A\cup B)=P(A)+P(B)$. Általában — ha lehetnek közös '
          r'kimeneteleik — a metszetet egyszer le kell vonni, különben kétszer számolnánk: '
          r'$$P(A\cup B)=P(A)+P(B)-P(A\cap B).$$</p>', hid="tetel-unio"),
    doboz("pelda", "I.V.H. Akták — király vagy kőr",
@@ -549,7 +549,7 @@ A3 = [
          r'ellenkezőleg: kizárják egymást, tehát ha tudjuk, hogy 1-es jött, a 6-os <b>lehetetlen</b>. '
          r'$P(A\cap B)=0$, de $P(A)\cdot P(B)=\frac1{36}$. Két pozitív valószínűségű, kizáró esemény mindig '
          r'függő.</p>'),
-   kviz('Az $A$ és a $B$ esemény kizárja egymást, $P(A)=0{,}3$ és $P(B)=0{,}4$. Függetlenek?',
+   kviz('Az $A$ és a $B$ esemény kizárják egymást, $P(A)=0{,}3$ és $P(B)=0{,}4$. Függetlenek?',
         ['Nem, mert $P(A\\cap B)=0\\ne0{,}12$.', 'Igen, mert kizárják egymást.', 'Igen, mert $0{,}3+0{,}4<1$.',
          'A megadott adatokból nem dönthető el.'], 0,
         jo="✔ Kizáró eseményeknél $P(A\\cap B)=0$, a függetlenséghez viszont $0{,}3\\cdot0{,}4=0{,}12$ kellene.",

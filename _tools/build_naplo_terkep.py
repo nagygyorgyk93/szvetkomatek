@@ -44,6 +44,7 @@ JELVENY = {
     "4e/03-derivalt":                             ("⚡", "A Pillanatnyi Káosz", "Véd Vilmos · Nagol"),
     "4e/04-integral":                             ("🧵", "A Valóság Összefoltozása", "SZVETI · Nagol"),
     "4e/05-kombinatorika":                        ("🎰", "Multiverzum Lottó", "Nyalka Vili"),
+    "4e/06-valoszinuseg-statisztika":             ("⚖️", "A Túlélés Esélyei", "Mr. Szürreál · Véd Vilmos · Nagol"),
 }
 
 H1 = re.compile(r"<h1[^>]*>(.*?)</h1>", re.S)

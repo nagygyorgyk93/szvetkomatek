@@ -230,7 +230,7 @@ V_ALAP.append((
     [M(FR(v)) for v in va9] + [AP(binom(3, 0.516, 2))]))
 
 V_ALAP.append((
-    "Bernoulli-kísérletsorozat-e? (Rögzített számú, egymástól független kísérlet; mindegyiknek két kimenete van, "
+    "Bernoulli-kísérletsorozat-e? (Rögzített számú, egymástól független kísérlet; mindegyiknek két kimenetele van, "
     "és a siker valószínűsége minden kísérletben ugyanaz.)",
     ["Egy kockával tízszer dobunk, és a hatosok számát figyeljük.",
      "A 32 lapos magyar kártyából visszatevés nélkül húzunk öt lapot, és a pirosak számát figyeljük.",
