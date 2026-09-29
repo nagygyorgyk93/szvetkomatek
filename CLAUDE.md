@@ -38,8 +38,8 @@ GitHub Pages, **publikus**. A `main` minden pusha automatikusan élesít (`.gith
 | Köntös / világ-biblia, évadonkénti szereplők és szótár | `_docs/tortenet/tortenet.md` + `tortenet_<osztaly>.md` |
 | Felhős feladatlista (backlog), zárolt területek | **`_docs/FELHO_FELADATOK.md`** |
 | Közös CSS / JS | `assets/css/theme.css`, `print.css`; `assets/js/` (`ui.js` tölti be a `naplo.js`, `effekt.js`, `beagyazas.js` modult) |
-| Interaktív ábrák | `assets/js/interaktiv.js` (módok: szelo, erinto, sereg, osszeg, pascal) + `tananyag_common.svg_interaktiv/svg_pascal` |
-| Builderek és közös részeik | `_tools/builders/` (`tananyag_common.py`, `fgy_common.py`, `abra_common.py`) |
+| Interaktív ábrák | `assets/js/interaktiv.js` (módok: szelo, erinto, sereg, osszeg, pascal, **szimulacio**, **adatlabor**) + `tananyag_common.svg_interaktiv/svg_pascal`, `abra_stat.svg_szimulacio/svg_adatlabor` |
+| Builderek és közös részeik | `_tools/builders/` (`tananyag_common.py`, `fgy_common.py`, `abra_common.py`, `abra_stat.py` — statisztikai ábrák és mutatók; valós adatok: `adat_<osztaly>_<NN>.py`) |
 | Külső média katalógusa | `_tools/media/<osztaly>.json` → `_tools/media.py` (skill: `media-beagyazas`) |
 | Kulcs-öntesztek | `_tools/kulcsok/*.py` → `kulcs_teszt.py`, `kulcs_regresszio.py` |
 
