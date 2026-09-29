@@ -84,9 +84,10 @@ Havi GitHub Action, amely `media.py --online`-t futtat, és hiba esetén issue-t
 | Keresőindex: üres szöveg és fejezetek, 3000 karakteres csonkolás | ◐ Helyi ágon javítva: 308/308 lap kereshető, 360/390/1280 px próba rendben; push nélkül | Tanári jóváhagyás után publikálás |
 | Képletes fejezetcímek a tartalomjegyzékben | ☐ | Közös `ui.js` javítása és célzott ellenőrzés |
 | Főoldali videó szüneteltetése; mozgáscsökkentés kezdőértéke | ☐ | Közös HTML/JS/CSS akadálymentességi javítás |
-| 30 régi 1e kvízvisszajelzés élő régiója | ☐ | 1e HTML-ek javítása, felolvasási próba |
-| 1e/02 trigonometria: Közép 4 és Nehéz 2 szögtartománya | ☐ Tanári döntés kell | A feltétel és a kulcs egyeztetése |
-| 1e/02 Alap 11 dupla részfeladatjel; 1e/06 Bővítés címe | ☐ | 1e HTML-ek célzott javítása |
+| 30 régi 1e kvízvisszajelzés élő régiója | ◐ Helyi ágon javítva 26 HTML-ben; 81 böngészőpróba hibátlan | Képernyőolvasós felolvasási próba |
+| 1e/02 trigonometria: Közép 4 és Nehéz 2 szögtartománya | ◐ A tanár hegyesszögű értelmezést rögzített; a két feladat helyi ágon pontosítva, a kulcs egyezik | Publikálás tanári jóváhagyás után |
+| 1e/02 Alap 11 dupla részfeladatjel; 1e/06 Bővítés címe | ◐ Helyi ágon javítva; kánonellenőrzés 310/0 | Publikálás tanári jóváhagyás után |
+| 1e/02 Alap 10: `\sin 90^\circ` nem hegyesszög | ☐ Új lelet | Átírás csak privát felmérő-ütközés ellenőrzése és tanári döntés után |
 | Végeredménydobozok tartalmi tisztítása | ☐ | A2 külön, tanári sorrenddöntés után |
 
 ### A1 · Teljes ellenőrzés osztályonként
