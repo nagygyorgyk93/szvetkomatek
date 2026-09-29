@@ -77,6 +77,7 @@ SZULETES = {'HU_F': {2019: 45116, 2020: 45534, 2021: 45520, 2022: 43592, 2023: 4
 # 2024 napi adataiból: havi középhőmérséklet (°C), esős nap (≥ 1 mm csapadék) havonta. Forrás: FORRAS['openmeteo']
 IDOJARAS_2024 = {'szabadka': {'havi_kozep': [2.5, 8.9, 10.3, 14.6, 18.7, 23.1, 26.4, 26.7, 19.1, 12.9, 4.6, 2.5],
               'esos_nap_havonta': [11, 5, 7, 6, 8, 10, 3, 3, 9, 6, 4, 7],
+              'havi_csapadek_mm': [42.2, 21.6, 20.8, 33.7, 50.1, 80.7, 13.7, 8.7, 79.3, 44.2, 40.4, 52.7],
               'napok': 366,
               'eves_kozep': 14.2},
  'split': {'havi_kozep': [8.0, 11.0, 12.3, 15.7, 18.9, 23.8, 28.4, 28.6, 21.4, 18.4, 11.7, 8.1],

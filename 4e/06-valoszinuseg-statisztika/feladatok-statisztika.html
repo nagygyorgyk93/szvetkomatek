@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zsoldos-lista — Statisztika | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="digitalis">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Valószínűség és statisztika</a> ›
+  <span class="itt">Zsoldos-lista — Statisztika</span>
+</nav>
+<div class="hero">
+  <h1>Statisztika — Zsoldos-lista</h1>
+  <p class="alcim">Ismérvek és skálák, gyakorisági táblázat, diagramok, középértékek, kvartilisek, szórás és standardizált érték — valós szerbiai, magyarországi és nemzetközi adatokkal. A végeredmény lenyitható: előbb számolj!</p>
+  <div class="meta-sor"><span class="chip alap">Alap</span><span class="chip kozep">Közép</span><span class="chip nehez">Nehéz</span><span class="chip joker">Joker</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="alap">🟢 Alapszint — Zöldfülű</h2>
+    <article class="feladat alap" id="alap-1">
+      <p><span class="szam">1.</span> A 2022-es szerbiai népszámlálás néhány ismérve. Döntsd el mindegyikről, hogy minőségi vagy mennyiségi ismérv-e; ha mennyiségi, akkor diszkrét vagy folytonos!</p><ol class="reszfeladatok rovid"><li>a lakás alapterülete (m²)</li><li>a háztartás taglétszáma</li><li>lakóhely (település)</li><li>számítógépes ismeret</li><li>a lakás szobáinak száma</li><li>a gyermekek száma</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>mennyiségi, folytonos</li><li>mennyiségi, diszkrét</li><li>minőségi</li><li>minőségi</li><li>mennyiségi, diszkrét</li><li>mennyiségi, diszkrét</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-2">
+      <p><span class="szam">2.</span> Melyik skálán mérünk? (nominális, ordinális vagy intervallumskála)</p><ol class="reszfeladatok rovid"><li>a kosárlabdázók mezszáma</li><li>iskolai végzettség</li><li>hőmérséklet °C-ban</li><li>a személy neme (férfi/nő)</li><li>a verseny helyezése</li><li>születési év</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>nominális</li><li>ordinális</li><li>intervallum</li><li>nominális</li><li>ordinális</li><li>intervallum</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-3">
+      <p><span class="szam">3.</span> Egy 30 fős osztály matematikajegyei: 4, 3, 5, 2, 3, 3, 3, 4, 4, 5, 2, 2, 1, 3, 2, 4, 1, 5, 4, 3, 3, 4, 2, 1, 3, 2, 3, 4, 3, 5.</p><ol class="reszfeladatok"><li>Add meg a jegyek abszolút gyakoriságát (1-estől 5-ösig)!</li><li>Add meg a relatív gyakoriságokat százalékban (egy tizedesre)!</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(3;\ 6;\ 10;\ 7;\ 4\)</span></li><li><span class="math inline">\(10{,}0;\ 20{,}0;\ 33{,}3;\ 23{,}3;\ 13{,}3\)</span> (%)</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-4">
+      <p><span class="szam">4.</span> Szabadka lakói 2022-ben, 10 éves korcsoportok szerint: <small>(Forrás: <a href="https://popis2022.stat.gov.rs/sr-latn/popisni-podaci-eksel-tabele/">RZS, Popis 2022</a>)</small></p><div class="svgwrap"><div class="tblwrap"><table class="tt-table"><tr><th>életkor</th><th>lakos</th><th>életkor</th><th>lakos</th></tr><tr><td>0–9</td><td>12 122</td><td>50–59</td><td>16 916</td></tr><tr><td>10–19</td><td>12 243</td><td>60–69</td><td>18 415</td></tr><tr><td>20–29</td><td>12 587</td><td>70–79</td><td>12 662</td></tr><tr><td>30–39</td><td>15 581</td><td>80+</td><td>5 299</td></tr><tr><td>40–49</td><td>18 127</td><td></td><td></td></tr></table></div></div><ol class="reszfeladatok"><li>Melyik a legnépesebb korcsoport?</li><li>Hány 20 évesnél fiatalabb lakos van?</li><li>A lakosok hány százaléka 60 éves vagy idősebb (egy tizedesre)?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>60–69 évesek</li><li><span class="math inline">\(24\,365\)</span></li><li><span class="math inline">\(\approx29{,}3\%\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-5">
+      <p><span class="szam">5.</span> Melyik diagramot választanád? (oszlop-, kör-, vonaldiagram vagy hisztogram)</p><ol class="reszfeladatok"><li>a szerbiai háztartások száma taglétszám szerint (1, 2, …, 6 vagy több tag)</li><li>Szabadka napi középhőmérséklete 2024 minden napján</li><li>a lakosság százalékos megoszlása a számítógépes ismeret szerint (ismeri, részben ismeri, nem ismeri)</li><li>egy 30 fős osztály tanulóinak testmagassága (cm)</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>oszlopdiagram</li><li>vonaldiagram</li><li>kördiagram</li><li>hisztogram</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-6">
+      <p><span class="szam">6.</span> Középértékek:</p><ol class="reszfeladatok"><li>Mi a mediánja a 10; 7; 7; 6; 13; 12; 8; 14 adatsornak?</li><li>Mi a mediánja a 17; 31; 15; 28; 35; 30; 29; 19; 19 adatsornak?</li><li>Mi a módusza a 3; 5; 5; 7; 8; 8; 8; 10; 10; 12 adatsornak?</li><li>Mi a módusza a 6; 7; 10; 12; 14 adatsornak?</li><li>Nikola Jokić NBA-alapszakaszonként lejátszott meccseinek száma: 80; 73; 75; 80; 73; 72; 74; 69; 79; 70; 65. Mi a medián és a módusz? <small>(Forrás: <a href="https://en.wikipedia.org/wiki/Nikola_Joki%C4%87">NBA-statisztika</a>)</small></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(9\)</span></li><li><span class="math inline">\(28\)</span></li><li><span class="math inline">\(8\)</span></li><li>nincs</li><li>medián <span class="math inline">\(73\)</span>; módusz <span class="math inline">\(73\)</span> és <span class="math inline">\(80\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-7">
+      <p><span class="szam">7.</span> Átlag gyakorisági táblázatból:</p><ol class="reszfeladatok"><li>Egy községben 100 család gyerekszáma: 0 gyerek — 3 család, 1 — 25, 2 — 50, 3 — 15, 4 — 5, 5 — 2. Mennyi az átlagos gyerekszám?</li><li>Szerbia 2022-es háztartásai taglétszám szerint (összesen 2 589 344 háztartás): <small>(Forrás: <a href="https://popis2022.stat.gov.rs/sr-latn/popisni-podaci-eksel-tabele/">RZS, Popis 2022</a>)</small><div class="tblwrap"><table class="tt-table"><tr><th>tagok száma</th><th>háztartás</th></tr><tr><td>1</td><td>773 945</td></tr><tr><td>2</td><td>711 946</td></tr><tr><td>3</td><td>459 926</td></tr><tr><td>4</td><td>375 565</td></tr><tr><td>5</td><td>156 050</td></tr><tr><td>6 vagy több</td><td>111 912</td></tr></table></div> A „6 vagy több” csoportot 6-nak véve mennyi az átlagos taglétszám (két tizedesre)? Kisebb vagy nagyobb ez a hivatalos 2,55-nál?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(2\)</span></li><li><span class="math inline">\(\approx2{,}52\)</span>; kisebb</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-8">
+      <p><span class="szam">8.</span> Súlyozott átlag:</p><ol class="reszfeladatok"><li>Egy vállalatnál 50 szakmunkás átlagos havi nettó keresete 98 000 dinár, 40 adminisztratív dolgozóé 76 000 dinár. Mennyi az átlagkereset az egész vállalatnál (egészre kerekítve)?</li><li>Mennyi a 30 matekjegy (a 3. feladat adatai) átlaga, mediánja és módusza?</li><li>Szerbia 2022-es népszámlálása szerint a 3 231 978 férfi átlagéletkora 42,43 év, a 3 415 025 nőé 45,19 év. Mennyi a teljes népesség átlagéletkora (két tizedesre)? <small>(Forrás: <a href="https://popis2022.stat.gov.rs/sr-latn/popisni-podaci-eksel-tabele/">RZS, Popis 2022</a>)</small></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\approx88\,222\)</span> dinár</li><li>átlag <span class="math inline">\(3{,}1\)</span>; medián <span class="math inline">\(3\)</span>; módusz <span class="math inline">\(3\)</span></li><li><span class="math inline">\(\approx43{,}85\)</span> év</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-9">
+      <p><span class="szam">9.</span> Szabadka 2024-es havi középhőmérsékletei (°C): <small>(Forrás: <a href="https://open-meteo.com/en/docs/historical-weather-api">Open-Meteo (ERA5)</a>)</small></p><div class="svgwrap"><div class="tblwrap"><table class="tt-table"><tr><th>hónap</th><th>°C</th><th>hónap</th><th>°C</th></tr><tr><td>jan.</td><td>2,5</td><td>júl.</td><td>26,4</td></tr><tr><td>febr.</td><td>8,9</td><td>aug.</td><td>26,7</td></tr><tr><td>márc.</td><td>10,3</td><td>szept.</td><td>19,1</td></tr><tr><td>ápr.</td><td>14,6</td><td>okt.</td><td>12,9</td></tr><tr><td>máj.</td><td>18,7</td><td>nov.</td><td>4,6</td></tr><tr><td>jún.</td><td>23,1</td><td>dec.</td><td>2,5</td></tr></table></div></div><ol class="reszfeladatok"><li>Mennyi a legkisebb és a legnagyobb érték, valamint a terjedelem?</li><li>Mennyi a medián?</li><li>Mennyi az alsó és a felső kvartilis?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(2{,}5\)</span>; <span class="math inline">\(26{,}7\)</span>; terjedelem <span class="math inline">\(24{,}2\)</span></li><li><span class="math inline">\(13{,}75\)</span></li><li><span class="math inline">\(Q_1=6{,}75\)</span>; <span class="math inline">\(Q_3=21{,}1\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-10">
+      <p><span class="szam">10.</span> Szóródás:</p><ol class="reszfeladatok"><li>A <span class="math inline">\(2;\ 5;\ 8;\ 11;\ 14\)</span> adatsor: mennyi az átlag, az átlagos abszolút eltérés és a szórásnégyzet?</li><li>Ugyanezek a <span class="math inline">\(2;\ 8;\ 14\)</span> adatsorra?</li><li>Szabadkán 2024-ben havonta ennyi napon esett legalább 1 mm csapadék: 11, 5, 7, 6, 8, 10, 3, 3, 9, 6, 4, 7. Mennyi az átlag (két tizedesre), a medián és a terjedelem? <small>(Forrás: <a href="https://open-meteo.com/en/docs/historical-weather-api">Open-Meteo (ERA5)</a>)</small></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(8\)</span>; <span class="math inline">\(3{,}6\)</span>; <span class="math inline">\(18\)</span></li><li><span class="math inline">\(8\)</span>; <span class="math inline">\(4\)</span>; <span class="math inline">\(24\)</span></li><li><span class="math inline">\(\approx6{,}58\)</span>; <span class="math inline">\(6{,}5\)</span>; <span class="math inline">\(8\)</span></li></ol></div>
+      </details>
+    </article>
+    <h2 id="kozep">🟡 Középszint — X-Force</h2>
+    <article class="feladat kozep" id="kozep-1">
+      <p><span class="szam">1.</span> Szerbia 15 éves és idősebb lakosai (5 691 551 fő) számítógépes ismeret szerint 2022-ben: ismeri 2 602 550, részben ismeri 1 685 824, nem ismeri 1 376 725, ismeretlen 26 452 fő. <small>(Forrás: <a href="https://popis2022.stat.gov.rs/sr-latn/popisni-podaci-eksel-tabele/">RZS, Popis 2022</a>)</small></p><ol class="reszfeladatok"><li>Add meg a relatív gyakoriságokat százalékban (egy tizedesre)!</li><li>Kördiagramon mekkora középponti szög tartozik az egyes csoportokhoz? (A darabszámokból számolj, és csak a végén kerekíts egy tizedesre!)</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(45{,}7;\ 29{,}6;\ 24{,}2;\ 0{,}5\)</span> (%)</li><li><span class="math inline">\(164{,}6;\ 106{,}6;\ 87{,}1;\ 1{,}7\)</span> (fok)</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-2">
+      <p><span class="szam">2.</span> Szabadka 2024. júliusi napi legmagasabb hőmérsékletei (°C): 30,7; 23,6; 24,6; 25,5; 28,7; 30,5; 32,7; 34,7; 35,7; 36,0; 37,3; 37,6; 36,6; 37,0; 36,5; 37,8; 35,7; 33,7; 34,1; 29,5; 30,4; 33,0; 31,3; 30,4; 27,6; 29,3; 31,5; 35,9; 29,0; 28,4; 31,6. <small>(Forrás: <a href="https://open-meteo.com/en/docs/historical-weather-api">Open-Meteo (ERA5)</a>)</small></p><ol class="reszfeladatok"><li>Készíts gyakorisági táblázatot 2 °C-os osztályközökkel, 22 °C-tól (<span class="math inline">\([22;24)\)</span>, <span class="math inline">\([24;26)\)</span>, …, <span class="math inline">\([36;38)\)</span>)!</li><li>Melyik osztályközökben van a legtöbb nap?</li><li>Hány napon érte el a maximum a 34 °C-ot?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(1;\ 2;\ 1;\ 5;\ 7;\ 3;\ 5;\ 7\)</span></li><li><span class="math inline">\([30;32)\)</span> és <span class="math inline">\([36;38)\)</span></li><li><span class="math inline">\(12\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-3">
+      <p><span class="szam">3.</span> Az iskolai diákönkormányzat azt szeretné megtudni, hány órát alszanak az iskola tanulói egy tanítási napon. Melyik mintavétel torz, és melyik megfelelő?</p><ol class="reszfeladatok rovid"><li>kérdőív az iskola közösségi oldalán, aki akar, kitölti</li><li>a teljes névsorból sorsolással kiválasztott 60 tanuló</li><li>reggel 7-kor a kapuban megkérdezett első 30 érkező</li><li>minden osztályból a létszámával arányos számú, sorsolással kiválasztott tanuló</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>torz</li><li>megfelelő</li><li>torz</li><li>megfelelő</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-4">
+      <p><span class="szam">4.</span> Szabadka és Split 2024-es havi középhőmérsékletei (°C): <small>(Forrás: <a href="https://open-meteo.com/en/docs/historical-weather-api">Open-Meteo (ERA5)</a>)</small></p><div class="svgwrap"><div class="tblwrap"><table class="tt-table"><tr><th>hónap</th><th>Szabadka</th><th>Split</th></tr><tr><td>jan.</td><td>2,5</td><td>8,0</td></tr><tr><td>febr.</td><td>8,9</td><td>11,0</td></tr><tr><td>márc.</td><td>10,3</td><td>12,3</td></tr><tr><td>ápr.</td><td>14,6</td><td>15,7</td></tr><tr><td>máj.</td><td>18,7</td><td>18,9</td></tr><tr><td>jún.</td><td>23,1</td><td>23,8</td></tr><tr><td>júl.</td><td>26,4</td><td>28,4</td></tr><tr><td>aug.</td><td>26,7</td><td>28,6</td></tr><tr><td>szept.</td><td>19,1</td><td>21,4</td></tr><tr><td>okt.</td><td>12,9</td><td>18,4</td></tr><tr><td>nov.</td><td>4,6</td><td>11,7</td></tr><tr><td>dec.</td><td>2,5</td><td>8,1</td></tr></table></div></div><ol class="reszfeladatok"><li>Mennyi a két adatsor átlaga (két tizedesre)?</li><li>Mennyi a mediánjuk?</li><li>Mennyi a szórásuk (két tizedesre; a pontos átlaggal számolj, csak a végén kerekíts)?</li><li>Melyik városban ingadozik jobban a havi középhőmérséklet?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\approx14{,}19\)</span>; <span class="math inline">\(\approx17{,}19\)</span></li><li><span class="math inline">\(13{,}75\)</span>; <span class="math inline">\(17{,}05\)</span></li><li><span class="math inline">\(\approx8{,}36\)</span>; <span class="math inline">\(\approx6{,}97\)</span></li><li>Szabadkán</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-5">
+      <p><span class="szam">5.</span> Szabadka 2024-es havi középhőmérsékleteinek átlaga 14,19 °C, szórása 8,36 °C; Lisszabon esetében ugyanezek: 17,31 °C és 3,42 °C. A legmelegebb hónap mindkét városban az augusztus volt: Szabadkán 26,7 °C, Lisszabonban 22,8 °C. <small>(Forrás: <a href="https://open-meteo.com/en/docs/historical-weather-api">Open-Meteo (ERA5)</a>)</small></p><ol class="reszfeladatok"><li>Mennyi a szabadkai augusztus standardizált értéke (két tizedesre)?</li><li>Mennyi a lisszaboni augusztusé (két tizedesre)?</li><li>Melyik augusztus volt szokatlanabb a saját városa havi középhőmérsékleteihez képest?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\approx1{,}50\)</span></li><li><span class="math inline">\(\approx1{,}61\)</span></li><li>a lisszaboni</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-6">
+      <p><span class="szam">6.</span> Jokić meccsenkénti pontátlaga 11 alapszakaszban: 10,0; 16,7; 18,5; 20,1; 19,9; 26,4; 27,1; 24,5; 26,4; 29,6; 27,7. Az átlag <span class="math inline">\(\approx22{,}45\)</span>, a medián <span class="math inline">\(24{,}5\)</span>. Az első, 10,0 pontos szezon a pályafutás kezdete — hagyjuk el! <small>(Forrás: <a href="https://en.wikipedia.org/wiki/Nikola_Joki%C4%87">NBA-statisztika</a>)</small></p><ol class="reszfeladatok"><li>Mennyi a maradék 10 szezon átlaga és mediánja (két tizedesre)?</li><li>Melyik változott többet: az átlag vagy a medián?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\approx23{,}69\)</span>; <span class="math inline">\(25{,}45\)</span></li><li>az átlag</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-7">
+      <p><span class="szam">7.</span> Öt érmét hússzor feldobtunk, és minden alkalommal megszámoltuk a fejeket: 0 fej — 1-szer, 1 — 4-szer, 2 — 5-ször, 3 — 6-szor, 4 — 3-szor, 5 — 1-szer.</p><ol class="reszfeladatok"><li>Mennyi a fejek számának átlaga?</li><li>Mennyi a fejek számának várható értéke (szabályos érméknél)?</li><li>Mennyi a „3 fej” relatív gyakorisága és valószínűsége?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{49}{20}=2{,}45\)</span></li><li><span class="math inline">\(2{,}5\)</span></li><li><span class="math inline">\(0{,}3\)</span>; <span class="math inline">\(\frac{10}{32}=0{,}3125\)</span></li></ol></div>
+      </details>
+    </article>
+    <h2 id="nehez">🔴 Nehéz szint — Maximális erőbedobás</h2>
+    <article class="feladat nehez" id="nehez-1">
+      <p><span class="szam">1.</span> Egy hírportál ezzel az ábrával mutatta be a magyarországi születések számát: <small>(Forrás: <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_fasec/default/table">Eurostat</a>)</small></p><div class="svgwrap"><svg viewBox="0 0 300 220" width="300" height="220" role="img" aria-label="Oszlopdiagram 75 000-nél kezdődő függőleges tengellyel: a magyarországi születések száma 2023-ban és 2024-ben" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+  <line x1="52" y1="194.0" x2="290" y2="194.0" stroke="#cbd5e1" stroke-width=".7"/>
+  <text x="47.0" y="197.8" font-size="10.5" fill="#475569" text-anchor="end">75 000</text>
+  <line x1="52" y1="136.7" x2="290" y2="136.7" stroke="#cbd5e1" stroke-width=".7"/>
+  <text x="47.0" y="140.5" font-size="10.5" fill="#475569" text-anchor="end">80 000</text>
+  <line x1="52" y1="79.3" x2="290" y2="79.3" stroke="#cbd5e1" stroke-width=".7"/>
+  <text x="47.0" y="83.1" font-size="10.5" fill="#475569" text-anchor="end">85 000</text>
+  <line x1="52" y1="22.0" x2="290" y2="22.0" stroke="#cbd5e1" stroke-width=".7"/>
+  <text x="47.0" y="25.8" font-size="10.5" fill="#475569" text-anchor="end">90 000</text>
+  <line x1="52" y1="22" x2="52" y2="194" stroke="#0f172a" stroke-width="1.2"/>
+  <line x1="52" y1="194" x2="290" y2="194" stroke="#0f172a" stroke-width="1.2"/>
+  <rect x="74.6" y="48.7" width="73.8" height="145.3" fill="#b91c1c" fill-opacity=".85"/>
+  <text x="111.5" y="44.7" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">87 671</text>
+  <text x="111.5" y="208.0" font-size="11" fill="#0f172a" text-anchor="middle">2023</text>
+  <rect x="193.6" y="149.6" width="73.8" height="44.4" fill="#b91c1c" fill-opacity=".85"/>
+  <text x="230.5" y="145.6" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">78 868</text>
+  <text x="230.5" y="208.0" font-size="11" fill="#0f172a" text-anchor="middle">2024</text>
+</svg></div><ol class="reszfeladatok"><li>Hány százalékkal csökkent valójában a születések száma (egy tizedesre)?</li><li>Az ábrán a 2024-es oszlop magassága a 2023-asnak hányad része (három tizedesre)?</li><li>Honnan kellene indulnia a függőleges tengelynek, hogy az oszlopok aránya a valódi arányt mutassa?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\approx10{,}0\%\)</span></li><li><span class="math inline">\(\approx0{,}305\)</span></li><li><span class="math inline">\(0\)</span>-tól</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-2">
+      <p><span class="szam">2.</span> Visszafelé az átlagból:</p><ol class="reszfeladatok"><li>Egy tanuló első négy jegyének átlaga 3,25. Hányast kell kapnia az ötödikre, hogy az átlaga 3,6 legyen?</li><li>Elérheti-e az ötödik jeggyel a 4,0-s átlagot?</li><li>Szabadkán 2024-ben a havi csapadékösszegek átlaga 40,675 mm volt. Tizenegy hónap adata (mm, január–április és június–december): 42,2; 21,6; 20,8; 33,7; 80,7; 13,7; 8,7; 79,3; 44,2; 40,4; 52,7. Mennyi csapadék esett májusban? <small>(Forrás: <a href="https://open-meteo.com/en/docs/historical-weather-api">Open-Meteo (ERA5)</a>)</small></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(5\)</span></li><li>nem (<span class="math inline">\(7\)</span> kellene)</li><li><span class="math inline">\(50{,}1\)</span> mm</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-3">
+      <p><span class="szam">3.</span> Az I.V.H. új kiképzőbázist keres ott, ahol a havi középhőmérséklet a kiegyenlítettebb. Jelöltek: Szabadka és Lisszabon (2024-es adatok, °C). <small>(Forrás: <a href="https://open-meteo.com/en/docs/historical-weather-api">Open-Meteo (ERA5)</a>)</small></p><div class="svgwrap"><div class="tblwrap"><table class="tt-table"><tr><th>hónap</th><th>Szabadka</th><th>Lisszabon</th></tr><tr><td>jan.</td><td>2,5</td><td>13,1</td></tr><tr><td>febr.</td><td>8,9</td><td>14,2</td></tr><tr><td>márc.</td><td>10,3</td><td>13,8</td></tr><tr><td>ápr.</td><td>14,6</td><td>16,6</td></tr><tr><td>máj.</td><td>18,7</td><td>17,6</td></tr><tr><td>jún.</td><td>23,1</td><td>19,6</td></tr><tr><td>júl.</td><td>26,4</td><td>22,4</td></tr><tr><td>aug.</td><td>26,7</td><td>22,8</td></tr><tr><td>szept.</td><td>19,1</td><td>20,5</td></tr><tr><td>okt.</td><td>12,9</td><td>18,6</td></tr><tr><td>nov.</td><td>4,6</td><td>16,3</td></tr><tr><td>dec.</td><td>2,5</td><td>12,2</td></tr></table></div></div><ol class="reszfeladatok"><li>Mennyi a két adatsor átlaga és szórása (két tizedesre; a pontos átlaggal számolj)? Összevetheted a középszint 5. feladatában megadott értékekkel.</li><li>Hány olyan hónap van az egyes városokban, amelynek középhőmérséklete több mint egy szórással tér el a saját átlagtól?</li><li>Melyik várost javasolnád?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>Szabadka <span class="math inline">\(\approx14{,}19\)</span> és <span class="math inline">\(\approx8{,}36\)</span>; Lisszabon <span class="math inline">\(\approx17{,}31\)</span> és <span class="math inline">\(\approx3{,}42\)</span></li><li>Szabadka <span class="math inline">\(6\)</span>; Lisszabon <span class="math inline">\(5\)</span></li><li>Lisszabont</li></ol></div>
+      </details>
+    </article>
+    <h2 id="joker-szint">🃏 Joker</h2>
+    <article class="feladat joker" id="joker">
+      <p><span class="szam">★</span> Adj meg öt pozitív egész számot, amelyeknek a módusza 3, a mediánja 4, az átlaga 5!</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>például <span class="math inline">\(3;\ 3;\ 4;\ 7;\ 8\)</span></p></div>
+      </details>
+    </article>
+    <div class="gyakorolj">
+      <span class="ikon">📖</span>
+      <p>Elakadtál? Nézd át a <a href="index.html">témakör tananyagait</a> vagy a <a href="osszefoglalo.html">Csalópapírt</a>.</p>
+    </div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-statisztikai-mutatok.html"><span class="irany">← Előző</span><span class="hova">Középértékek és szóródás</span></a>
+      <a class="kov" href="feladatok-hazi.html"><span class="irany">Következő →</span><span class="hova">I.V.H. Kihallgató Terem — Vészterem</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

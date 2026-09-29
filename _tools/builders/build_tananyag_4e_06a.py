@@ -337,7 +337,7 @@ A1 = [
          r'<p>És $\overline{A\cup B\cup C}$? „Nem igaz, hogy legalább egyikük átmegy” — vagyis egyikük sem. Ez ugyanaz, '
          r'mint $\overline{A}\cap\overline{B}\cap\overline{C}$: a De Morgan-azonosság három eseményre.</p>',
          hid="pelda-harom-kadet"),
-   GY("#alap-1", "alap 1–3", "#kozep-1", "közép 1–2"),
+   GY("#alap-1", "A 1–3", "#kozep-1", "K 1–2"),
    brief('<b>Mr. Szürreál:</b> Szép definíciók. A bizottság azonban számot kér: <i>mekkora</i> az esély? <b>Véd '
          'Vilmos:</b> Számot? Azt tudok. Hozom a pénzérméimet.', outro=True),
  ]),
@@ -462,7 +462,7 @@ A2 = [
          r'$$P(\text{telitalálat})=\frac1{' + E3(comb(39, 7)) + r'}\approx0{,}000\,000\,065.$$ (A lottószámok '
          r'kombinációiról a <a href="' + KOMB + r'tananyag-kombinaciok.html#erdekesseg-lotto">05-ös leckében</a> '
          r'volt szó.)</p>', hid="pelda-lotto"),
-   GY("#alap-4", "alap 4–6", "#kozep-3", "közép 3–4"),
+   GY("#alap-4", "A 4–6", "#kozep-3", "K 3–4"),
    brief('<b>Mr. Szürreál:</b> Új bizonyíték. A Titanic 1309 utasából mindössze 500 élte túl a katasztrófát. Ilyen '
          'esélyekkel indulnak a kadétok is. <b>Véd Vilmos:</b> Tiltakozom! És ha tudjuk, <i>ki</i> volt az utas? '
          '<b>Nagol:</b> Akkor feltételes valószínűséget számolunk.', outro=True),
@@ -573,7 +573,7 @@ A3 = [
          r'legalább egyszer dupla hatos jön: $1-\left(\frac{35}{36}\right)^{24}\approx0{,}491$. A furcsaság Pascalt és '
          r'Fermat-t is foglalkoztatta — és a „legalább egy” képlete adja a választ.</p>'),
    NEHEZ(1, "feltételes valószínűség kétdimenziós táblázatból — és döntés"),
-   GY("#alap-7", "alap 7–8", "#kozep-5", "közép 5–6"),
+   GY("#alap-7", "A 7–8", "#kozep-5", "K 5–6"),
    brief('<b>Véd Vilmos:</b> Megvan a kiút! Ha egy kísérlet független, újra és újra megismételhetem — mint egy '
          'büntetődobást. <b>Nagol:</b> Akkor jöhet a binomiális valószínűség. <b>Mr. Szürreál:</b> Ismétlés. Az '
          'I.V.H. kedvenc szava.', outro=True),
@@ -655,7 +655,7 @@ A4 = [
         nem="✘ A $6\\cdot\\frac16=1$ biztos eseményt jelentene — pedig hat dobásból is lehet, hogy egy hatos sem jön. "
             "Az ellentettel: $1-\\left(\\frac56\\right)^6\\approx0{,}665$."),
    NEHEZ(2, "„legalább $k$” siker egy Bernoulli-kísérletsorozatban"),
-   GY("#alap-9", "alap 9–10", "#kozep-7", "közép 7–8"),
+   GY("#alap-9", "A 9–10", "#kozep-7", "K 7–8"),
    brief('<b>Nagol:</b> Eddig azt kérdeztük, mekkora egy esemény valószínűsége. A következő lépés: minden '
          'kimenetelhez egy számot rendelünk — hány büntető ment be, mennyit nyerünk —, és azt kérdezzük, mit várhatunk '
          'átlagosan. <b>Mr. Szürreál:</b> Az I.V.H.-nak éppen van egy ajánlata.', outro=True),
@@ -768,7 +768,7 @@ A5 = [
          r'vagy a szórásnégyzetet mondjuk szórásnak. A szórás mértékegysége ugyanaz, mint az értékeké (kredit), a '
          r'szórásnégyzeté ennek négyzete (kredit²).</p>'),
    NEHEZ(3, "döntés várható értékkel és szórásnégyzettel"),
-   GY("#alap-11", "alap 11–12", "#kozep-9", "közép 9–10"),
+   GY("#alap-11", "A 11–12", "#kozep-9", "K 9–10"),
  ]),
  ("🧾 Gyorsismétlő", [
    TABLA(["kérdés", "eszköz", "képlet"], [

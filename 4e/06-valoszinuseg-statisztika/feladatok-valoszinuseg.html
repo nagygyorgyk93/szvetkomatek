@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zsoldos-lista — Valószínűség | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="digitalis">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Valószínűség és statisztika</a> ›
+  <span class="itt">Zsoldos-lista — Valószínűség</span>
+</nav>
+<div class="hero">
+  <h1>Valószínűség — Zsoldos-lista</h1>
+  <p class="alcim">Események, klasszikus és statisztikai valószínűség, feltételes valószínűség és függetlenség, binomiális valószínűség, valószínűségi változó, várható érték és szórás — sok valós adattal. A végeredmény lenyitható: előbb számolj!</p>
+  <div class="meta-sor"><span class="chip alap">Alap</span><span class="chip kozep">Közép</span><span class="chip nehez">Nehéz</span><span class="chip joker">Joker</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="alap">🟢 Alapszint — Zöldfülű</h2>
+    <article class="feladat alap" id="alap-1">
+      <p><span class="szam">1.</span> Írd fel a kísérlet eseményterét, és add meg, hány eleme van!</p><ol class="reszfeladatok"><li>Egy érmét és egy dobókockát dobunk fel egyszerre.</li><li>Egy érmét háromszor egymás után feldobunk.</li><li>A MATEK szó betűi közül véletlenszerűen kiválasztunk egyet.</li><li>Egy dobozban egy piros (P), egy kék (K) és egy zöld (Z) golyó van; kettőt kihúzunk egyszerre.</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\{F1;\ F2;\ \ldots;\ F6;\ I1;\ \ldots;\ I6\}\)</span>, 12 elem</li><li><span class="math inline">\(\{FFF;\ FFI;\ FIF;\ FII;\ IFF;\ IFI;\ IIF;\ III\}\)</span>, 8 elem</li><li><span class="math inline">\(\{M;\ A;\ T;\ E;\ K\}\)</span>, 5 elem</li><li><span class="math inline">\(\{PK;\ PZ;\ KZ\}\)</span>, 3 elem</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-2">
+      <p><span class="szam">2.</span> Egy kockával dobunk. Legyen <span class="math inline">\(A\)</span> = „prímszámot dobunk”, <span class="math inline">\(B\)</span> = „páratlan számot dobunk”. Add meg halmazként!</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(A\cup B\)</span></li><li><span class="math inline">\(A\cap B\)</span></li><li><span class="math inline">\(\overline{A}\)</span></li><li><span class="math inline">\(B\setminus A\)</span></li><li>Kizárják-e egymást <span class="math inline">\(A\)</span> és <span class="math inline">\(B\)</span>?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\{1;\ 2;\ 3;\ 5\}\)</span></li><li><span class="math inline">\(\{3;\ 5\}\)</span></li><li><span class="math inline">\(\{1;\ 4;\ 6\}\)</span></li><li><span class="math inline">\(\{1\}\)</span></li><li>nem</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-3">
+      <p><span class="szam">3.</span> Jelölje <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, illetve <span class="math inline">\(C\)</span> azt az eseményt, hogy Szabadkán hétfőn, kedden, illetve szerdán esik az eső. Írd fel a műveletek jeleivel!</p><ol class="reszfeladatok"><li>Mindhárom nap esik.</li><li>Egyik nap sem esik.</li><li>Legalább egy nap esik.</li><li>Csak hétfőn esik.</li><li>Pontosan két nap esik.</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(A\cap B\cap C\)</span></li><li><span class="math inline">\(\overline{A}\cap\overline{B}\cap\overline{C}\)</span></li><li><span class="math inline">\(A\cup B\cup C\)</span></li><li><span class="math inline">\(A\cap\overline{B}\cap\overline{C}\)</span></li><li><span class="math inline">\((A\cap B\cap\overline{C})\cup(A\cap\overline{B}\cap C)\cup(\overline{A}\cap B\cap C)\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-4">
+      <p><span class="szam">4.</span> Mekkora a valószínűsége?</p><ol class="reszfeladatok"><li>Egy kockadobásnál 5-nél kisebb számot dobunk.</li><li>Az <span class="math inline">\(1,\ 2,\ \ldots,\ 30\)</span> számok közül egyet véletlenszerűen kiválasztva 4-gyel osztható számot kapunk.</li><li>Egy dobozban 4 piros, 6 kék és 5 zöld golyó van; egyet kihúzva nem kéket kapunk.</li><li>A MATEMATIKA szó tíz betűje közül egyet véletlenszerűen kiválasztva magánhangzót kapunk.</li><li>Szabadka 2022-es 52 491 háztartása közül egyet véletlenszerűen kiválasztva egyszemélyes háztartást kapunk (egyszemélyes háztartásból 17 702 volt; három tizedesre). <small>(Forrás: <a href="https://popis2022.stat.gov.rs/sr-latn/popisni-podaci-eksel-tabele/">RZS, Popis 2022</a>)</small></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{2}{3}\)</span></li><li><span class="math inline">\(\frac{7}{30}\)</span></li><li><span class="math inline">\(\frac{3}{5}\)</span></li><li><span class="math inline">\(\frac{1}{2}\)</span></li><li><span class="math inline">\(\approx0{,}337\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-5">
+      <p><span class="szam">5.</span> Használd a valószínűség tulajdonságait!</p><ol class="reszfeladatok"><li><span class="math inline">\(P(A)=0{,}35\)</span>. Mennyi <span class="math inline">\(P(\overline{A})\)</span>?</li><li>A 32 lapos magyar kártya négy színe piros, zöld, tök és makk, mindegyikből VII, VIII, IX, X, alsó, felső, király és ász van. Egy lapot húzunk: mekkora a valószínűsége, hogy király vagy zöld?</li><li><span class="math inline">\(A\)</span> és <span class="math inline">\(B\)</span> kizárják egymást, <span class="math inline">\(P(A)=0{,}2\)</span> és <span class="math inline">\(P(B)=0{,}45\)</span>. Mennyi <span class="math inline">\(P(A\cup B)\)</span>?</li><li><span class="math inline">\(P(A)=0{,}5\)</span>, <span class="math inline">\(P(B)=0{,}4\)</span> és <span class="math inline">\(P(A\cap B)=0{,}1\)</span>. Mennyi <span class="math inline">\(P(A\cup B)\)</span>?</li><li>Szerbiában 2024-ben az újszülöttek 51,6%-a volt fiú. Mekkora a valószínűsége, hogy egy véletlenszerűen kiválasztott, 2024-ben Szerbiában született újszülött lány? <small>(Forrás: <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_fasec/default/table">Eurostat</a>)</small></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(0{,}65\)</span></li><li><span class="math inline">\(\frac{11}{32}\)</span></li><li><span class="math inline">\(0{,}65\)</span></li><li><span class="math inline">\(0{,}8\)</span></li><li><span class="math inline">\(0{,}484\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-6">
+      <p><span class="szam">6.</span> Becsüld meg a valószínűséget a relatív gyakorisággal (három tizedesre)!</p><ol class="reszfeladatok"><li>Magyarországon 2024-ben 78 868 gyermek született, közülük 40 840 fiú. Mekkora a valószínűsége, hogy egy újszülött fiú? <small>(Forrás: <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_fasec/default/table">Eurostat</a>)</small></li><li>Szabadkán 2024 júliusában 3 napon esett legalább 1 mm csapadék. Mekkora a valószínűsége, hogy egy júliusi napon esik? <small>(Forrás: <a href="https://open-meteo.com/en/docs/historical-weather-api">Open-Meteo (ERA5)</a>)</small></li><li>Szabadkán 2024-ben a 366 napból 58 napon volt 25 °C fölött a napi középhőmérséklet. Mekkora a valószínűsége, hogy egy véletlenül választott napon így volt? <small>(Forrás: <a href="https://open-meteo.com/en/docs/historical-weather-api">Open-Meteo (ERA5)</a>)</small></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\approx0{,}518\)</span></li><li><span class="math inline">\(\frac{3}{31}\approx0{,}097\)</span></li><li><span class="math inline">\(\frac{58}{366}\approx0{,}158\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-7">
+      <p><span class="szam">7.</span> A táblázat a szabadkai 15 éves és idősebb lakosokat mutatja nem és számítógépes ismeret szerint. <small>(Forrás: <a href="https://popis2022.stat.gov.rs/sr-latn/popisni-podaci-eksel-tabele/">RZS, Popis 2022</a>)</small> (Az „ismeri” oszlopban a „részben ismeri” választ adók nincsenek benne.) Egy lakost véletlenszerűen kiválasztunk. Mekkora a valószínűsége (három tizedesre), hogy</p><div class="svgwrap"><div class="tblwrap"><table class="tt-table"><tr><th></th><th>összesen</th><th>ismeri a számító&shy;gépet</th></tr><tr><td>nő</td><td>55 593</td><td>24 786</td></tr><tr><td>férfi</td><td>50 280</td><td>21 006</td></tr><tr><td>összesen</td><td>105 873</td><td>45 792</td></tr></table></div></div><ol class="reszfeladatok rovid"><li>nő?</li><li>ismeri a számítógépet?</li><li>nő, és ismeri a számítógépet?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\approx0{,}525\)</span></li><li><span class="math inline">\(\approx0{,}433\)</span></li><li><span class="math inline">\(\approx0{,}234\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-8">
+      <p><span class="szam">8.</span> Független események: mekkora a valószínűsége?</p><ol class="reszfeladatok"><li>Egy érmét és egy kockát dobunk fel: fej és hatos.</li><li>Két kockával dobunk: mindkét szám páros.</li><li>Két lövész egymástól függetlenül lő; az egyik <span class="math inline">\(0{,}7\)</span>, a másik <span class="math inline">\(0{,}6\)</span> valószínűséggel talál. Mindketten találnak.</li><li>Szerbiában egy újszülött <span class="math inline">\(0{,}516\)</span> valószínűséggel fiú (2024). Két, egymástól független szülésnél mindkét újszülött fiú.</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{1}{12}\)</span></li><li><span class="math inline">\(\frac{1}{4}\)</span></li><li><span class="math inline">\(0{,}42\)</span></li><li><span class="math inline">\(\approx0{,}266\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-9">
+      <p><span class="szam">9.</span> Binomiális valószínűség: mekkora a valószínűsége?</p><ol class="reszfeladatok"><li>Négy érmét feldobva pontosan két fej lesz.</li><li>Egy kockával háromszor dobva pontosan egy hatos lesz.</li><li>Öt érmét feldobva mind az öt fej lesz.</li><li>Három, egymástól független szerbiai szülésnél (<span class="math inline">\(p=0{,}516\)</span> a fiú valószínűsége) pontosan két fiú születik.</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{3}{8}\)</span></li><li><span class="math inline">\(\frac{25}{72}\)</span></li><li><span class="math inline">\(\frac{1}{32}\)</span></li><li><span class="math inline">\(\approx0{,}387\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-10">
+      <p><span class="szam">10.</span> Bernoulli-kísérletsorozat-e? (Rögzített számú, egymástól független kísérlet; mindegyiknek két kimenete van, és a siker valószínűsége minden kísérletben ugyanaz.)</p><ol class="reszfeladatok rovid"><li>Egy kockával tízszer dobunk, és a hatosok számát figyeljük.</li><li>A 32 lapos magyar kártyából visszatevés nélkül húzunk öt lapot, és a pirosak számát figyeljük.</li><li>Ugyanez, de minden húzás után visszatesszük a lapot és megkeverjük a paklit.</li><li>Addig dobunk egy kockával, amíg hatost nem kapunk.</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li>igen</li><li>nem</li><li>igen</li><li>nem</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-11">
+      <p><span class="szam">11.</span> Eloszlás:</p><ol class="reszfeladatok"><li>Három érmét dobunk fel; <span class="math inline">\(X\)</span> a fejek száma. Add meg <span class="math inline">\(X\)</span> eloszlását!</li><li>Egy <span class="math inline">\(X\)</span> valószínűségi változó értékei 0, 1, 2 és 3; <span class="math inline">\(P(X=0)=0{,}1\)</span>, <span class="math inline">\(P(X=1)=0{,}35\)</span>, <span class="math inline">\(P(X=3)=0{,}15\)</span>. Mennyi <span class="math inline">\(P(X=2)\)</span>?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(P(X=0)=\frac18\)</span>, <span class="math inline">\(P(X=1)=\frac38\)</span>, <span class="math inline">\(P(X=2)=\frac38\)</span>, <span class="math inline">\(P(X=3)=\frac18\)</span></li><li><span class="math inline">\(0{,}4\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat alap" id="alap-12">
+      <p><span class="szam">12.</span> Számold ki a várható értéket!</p><ol class="reszfeladatok rovid"><li>az előző feladat a) részében szereplő <span class="math inline">\(X\)</span>-ét;</li><li>az előző feladat b) részében szereplő <span class="math inline">\(X\)</span>-ét;</li><li>ha <span class="math inline">\(X\)</span> értékei 1, 2 és 5, a valószínűségük rendre <span class="math inline">\(0{,}2\)</span>, <span class="math inline">\(0{,}5\)</span> és <span class="math inline">\(0{,}3\)</span>.</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(1{,}5\)</span></li><li><span class="math inline">\(1{,}6\)</span></li><li><span class="math inline">\(2{,}7\)</span></li></ol></div>
+      </details>
+    </article>
+    <h2 id="kozep">🟡 Középszint — X-Force</h2>
+    <article class="feladat kozep" id="kozep-1">
+      <p><span class="szam">1.</span> Egyszerűsítsd! (<span class="math inline">\(A\)</span> és <span class="math inline">\(B\)</span> ugyanannak a kísérletnek két eseménye, <span class="math inline">\(\Omega\)</span> az eseménytér.)</p><ol class="reszfeladatok rovid"><li><span class="math inline">\(\overline{\overline{A}\cap\overline{B}}\)</span></li><li><span class="math inline">\((A\cap B)\cup(A\cap\overline{B})\)</span></li><li><span class="math inline">\(A\cup\overline{A}\)</span></li><li><span class="math inline">\(A\cap\overline{A}\)</span></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(A\cup B\)</span></li><li><span class="math inline">\(A\)</span></li><li><span class="math inline">\(\Omega\)</span></li><li><span class="math inline">\(\emptyset\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-2">
+      <p><span class="szam">2.</span> Hány eleme van az eseménytérnek?</p><ol class="reszfeladatok rovid"><li>Egy érmét négyszer feldobunk.</li><li>Három kockával dobunk (a kockák megkülönböztethetők).</li><li>Egy sorsjátékon 35 számból húznak ki ötöt (a húzás sorrendje nem számít).</li><li>Egy háromjegyű kódot (0–9 jegyekből, ismétlődhetnek) véletlenszerűen beállítunk.</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(16\)</span></li><li><span class="math inline">\(216\)</span></li><li><span class="math inline">\(324\,632\)</span></li><li><span class="math inline">\(1\,000\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-3">
+      <p><span class="szam">3.</span> Valószínűség kombinatorikával:</p><ol class="reszfeladatok"><li>Egy dobozban 6 piros és 4 fehér golyó van; hármat kihúzunk egyszerre. Mekkora a valószínűsége, hogy mind a három piros?</li><li>Ugyanebben a húzásban mekkora a valószínűsége, hogy pontosan két piros?</li><li>Egy 6 lányból és 4 fiúból álló csoportból sorsolással egy 5 fős csapatot választanak. Mekkora a valószínűsége, hogy pontosan 3 lány lesz benne?</li><li>A Titanic 1309 utasa közül 500 élte túl a katasztrófát. Két utast véletlenszerűen kiválasztva mekkora a valószínűsége, hogy mindketten túlélték? <small>(Forrás: <a href="https://hbiostat.org/data/">titanic3 (Vanderbilt)</a>)</small></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{1}{6}\)</span></li><li><span class="math inline">\(\frac{1}{2}\)</span></li><li><span class="math inline">\(\frac{10}{21}\)</span></li><li><span class="math inline">\(\approx0{,}146\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-4">
+      <p><span class="szam">4.</span> Két esemény uniója:</p><ol class="reszfeladatok"><li>Az <span class="math inline">\(1,\ 2,\ \ldots,\ 100\)</span> számok közül egyet választunk. Mekkora a valószínűsége, hogy 2-vel vagy 5-tel osztható?</li><li>Egy évfolyam egy véletlenül választott tanulójára <span class="math inline">\(A\)</span> = „volt kirándulni az elmúlt két hónapban”, <span class="math inline">\(B\)</span> = „volt beteg az elmúlt hónapban”; <span class="math inline">\(P(A)=0{,}2\)</span>, <span class="math inline">\(P(B)=0{,}09\)</span>, <span class="math inline">\(P(A\cap B)=0{,}01\)</span>. Mekkora a valószínűsége, hogy legalább az egyik teljesül?</li><li>Ugyanitt: <span class="math inline">\(A\)</span> teljesül, de <span class="math inline">\(B\)</span> nem?</li><li>Ugyanitt: pontosan az egyik teljesül?</li><li>Az Alapszint <a href="#alap-7">7. feladatának</a> szabadkai táblázata alapján: egy véletlenül választott lakos nő, vagy ismeri a számítógépet? (A táblázat darabszámaiból számolj, és csak a végén kerekíts három tizedesre!)</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{3}{5}\)</span></li><li><span class="math inline">\(0{,}28\)</span></li><li><span class="math inline">\(0{,}19\)</span></li><li><span class="math inline">\(0{,}27\)</span></li><li><span class="math inline">\(\approx0{,}723\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-5">
+      <p><span class="szam">5.</span> Feltételes valószínűség:</p><ol class="reszfeladatok"><li>Két kockával dobunk. Feltéve, hogy a dobott számok összege legalább 9, mekkora a valószínűsége, hogy van 4-es a dobott számok között?</li><li>Független-e a „van 4-es” esemény az „összeg legalább 9” eseménytől? (<span class="math inline">\(P(\text{van 4-es})=\frac{11}{36}\)</span>)</li><li>A 32 lapos magyar kártyából kétszer húzunk, visszatevéssel. Feltéve, hogy az első lap piros, mekkora a valószínűsége, hogy a második is piros?</li><li>Az Alapszint <a href="#alap-7">7. feladatának</a> táblázata alapján mennyi <span class="math inline">\(P(\text{ismeri}\mid\text{nő})\)</span> és <span class="math inline">\(P(\text{nő}\mid\text{ismeri})\)</span>? (A darabszámokból számolj, a végén kerekíts három tizedesre!)</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{2}{5}\)</span></li><li>nem</li><li><span class="math inline">\(\frac{1}{4}\)</span></li><li><span class="math inline">\(\approx0{,}446\)</span>; <span class="math inline">\(\approx0{,}541\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-6">
+      <p><span class="szam">6.</span> Legalább egy — független kísérletekből:</p><ol class="reszfeladatok"><li>Három kockával dobunk. Mekkora a valószínűsége, hogy legalább egy hatos lesz?</li><li>Egy lövész háromszor lő, minden lövésnél egymástól függetlenül <span class="math inline">\(0{,}4\)</span> valószínűséggel talál. Mekkora a valószínűsége, hogy legalább egyszer talál?</li><li>Egy lámpatestben négy izzó van, mindegyik a többitől függetlenül <span class="math inline">\(0{,}95\)</span> valószínűséggel bírja ki az évet. Mekkora a valószínűsége, hogy legalább egy kiég (három tizedesre)?</li><li>Szabadkán 2024 júliusában 31 napból 3 napon esett. Ha minden nap a többitől függetlenül <span class="math inline">\(\frac{3}{31}\)</span> valószínűséggel esne, mekkora lenne a valószínűsége, hogy egy júliusi héten (7 nap) legalább egy nap esik? <small>(Forrás: <a href="https://open-meteo.com/en/docs/historical-weather-api">Open-Meteo (ERA5)</a>)</small></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\frac{91}{216}\approx0{,}421\)</span></li><li><span class="math inline">\(0{,}784\)</span></li><li><span class="math inline">\(\approx0{,}185\)</span></li><li><span class="math inline">\(\approx0{,}510\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-7">
+      <p><span class="szam">7.</span> Binomiális valószínűség, részben valós adatokkal (három tizedesre; a dobások, illetve a jelentkezők egymástól függetlenek):</p><ol class="reszfeladatok"><li>Nikola Jokić a 2024–25-ös szezonban a büntetőinek 80,0%-át dobta be. Tíz büntetőből mekkora a valószínűsége, hogy pontosan nyolc megy be? <small>(Forrás: <a href="https://en.wikipedia.org/wiki/Nikola_Joki%C4%87">NBA-statisztika</a>)</small></li><li>Egy előadásra kilencen jelentkeztek, mindenki a többiektől függetlenül <span class="math inline">\(0{,}9\)</span> valószínűséggel jön el. Mekkora a valószínűsége, hogy pontosan heten jönnek el?</li><li>A 2025–26-os szezonban Jokić büntetőinek 83,1%-át dobta be. Öt büntetőből mekkora a valószínűsége, hogy mind bemegy? <small>(Forrás: <a href="https://en.wikipedia.org/wiki/Nikola_Joki%C4%87">NBA-statisztika</a>)</small></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\approx0{,}302\)</span></li><li><span class="math inline">\(\approx0{,}172\)</span></li><li><span class="math inline">\(\approx0{,}396\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-8">
+      <p><span class="szam">8.</span> Legalább, legfeljebb, pontosan:</p><ol class="reszfeladatok"><li>Egy nap 19 honlapot látogatunk meg; mindegyik a többitől függetlenül <span class="math inline">\(0{,}02\)</span> valószínűséggel vírusos. Mekkora a valószínűsége, hogy legalább egy vírusos honlapra tévedünk (három tizedesre)?</li><li>Mekkora a valószínűsége, hogy pontosan egy vírusos honlapot látogatunk meg (három tizedesre)?</li><li>Egy ötkérdéses tesztben minden kérdésnél 4 válasz közül egy jó. Ha valaki minden kérdésnél véletlenszerűen, a többitől függetlenül tippel, mekkora a valószínűsége, hogy legalább 3 jó válasza lesz?</li><li>Szerbiában egy újszülött <span class="math inline">\(0{,}516\)</span> valószínűséggel fiú. Öt, egymástól független szülésből mekkora a valószínűsége, hogy legfeljebb egy fiú születik (három tizedesre)? <small>(Forrás: <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_fasec/default/table">Eurostat</a>)</small></li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\approx0{,}319\)</span></li><li><span class="math inline">\(\approx0{,}264\)</span></li><li><span class="math inline">\(\frac{53}{512}\approx0{,}104\)</span></li><li><span class="math inline">\(\approx0{,}168\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-9">
+      <p><span class="szam">9.</span> Mr. Szürreál új játéka: a tét 50 kredit (nem jár vissza). Két kockával dobunk; dupla hatosért 800, bármely más duplaért (két egyforma számért) 150 kreditet fizet Mr. Szürreál, más esetben semmit. Legyen <span class="math inline">\(X\)</span> a játékos nyeresége (a kifizetés mínusz a tét).</p><ol class="reszfeladatok rovid"><li>Mennyi <span class="math inline">\(E(X)\)</span>?</li><li>Megéri-e sokszor játszani?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(-\frac{125}{18}\approx-6{,}94\)</span> kredit</li><li>nem</li></ol></div>
+      </details>
+    </article>
+    <article class="feladat kozep" id="kozep-10">
+      <p><span class="szam">10.</span> Eloszlás és várható érték:</p><ol class="reszfeladatok"><li>Két kockával dobunk; <span class="math inline">\(X\)</span> a nagyobbik dobott szám (egyenlőség esetén a közös érték). Add meg <span class="math inline">\(X\)</span> eloszlását!</li><li>Mennyi ennek az <span class="math inline">\(X\)</span>-nek a várható értéke?</li><li>Jokić két büntetőt dob, mindegyik <span class="math inline">\(0{,}8\)</span> valószínűséggel megy be, egymástól függetlenül. <span class="math inline">\(Y\)</span> a bedobott büntetők száma. Add meg <span class="math inline">\(Y\)</span> eloszlását és várható értékét!</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(P(X=1)=\frac{1}{36}\)</span>, <span class="math inline">\(P(X=2)=\frac{3}{36}\)</span>, <span class="math inline">\(P(X=3)=\frac{5}{36}\)</span>, <span class="math inline">\(P(X=4)=\frac{7}{36}\)</span>, <span class="math inline">\(P(X=5)=\frac{9}{36}\)</span>, <span class="math inline">\(P(X=6)=\frac{11}{36}\)</span></li><li><span class="math inline">\(\frac{161}{36}\approx4{,}47\)</span></li><li><span class="math inline">\(P(Y=0)=0{,}04\)</span>; <span class="math inline">\(P(Y=1)=0{,}32\)</span>; <span class="math inline">\(P(Y=2)=0{,}64\)</span>; <span class="math inline">\(E(Y)=1{,}6\)</span></li></ol></div>
+      </details>
+    </article>
+    <h2 id="nehez">🔴 Nehéz szint — Maximális erőbedobás</h2>
+    <article class="feladat nehez" id="nehez-1">
+      <p><span class="szam">1.</span> A Titanic 1309 utasa jegyosztály és túlélés szerint: <small>(Forrás: <a href="https://hbiostat.org/data/">titanic3 (Vanderbilt)</a>)</small></p><div class="svgwrap"><div class="tblwrap"><table class="tt-table"><tr><th>osztály</th><th>túlélt</th><th>nem élte túl</th><th>összesen</th></tr><tr><td>1.</td><td>200</td><td>123</td><td>323</td></tr><tr><td>2.</td><td>119</td><td>158</td><td>277</td></tr><tr><td>3.</td><td>181</td><td>528</td><td>709</td></tr><tr><td>összesen</td><td>500</td><td>809</td><td>1 309</td></tr></table></div></div><ol class="reszfeladatok"><li>Mennyi <span class="math inline">\(P(\text{túlélt}\mid 1.\ \text{osztály})\)</span> és <span class="math inline">\(P(\text{túlélt}\mid 3.\ \text{osztály})\)</span> (három tizedesre)?</li><li>Mennyi <span class="math inline">\(P(1.\ \text{osztály}\mid\text{túlélt})\)</span>?</li><li>Független-e a túlélés a jegyosztálytól?</li><li>Mr. Szürreál: „A túlélők 36,2%-a harmadik osztályon utazott, tehát a harmadik osztályon is jó esélye volt mindenkinek.” Melyik feltételes valószínűséget számolta ki Mr. Szürreál, és mekkora valójában egy harmadik osztályon utazó túlélési esélye?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\approx0{,}619\)</span>; <span class="math inline">\(\approx0{,}255\)</span></li><li><span class="math inline">\(\frac{200}{500}=0{,}4\)</span></li><li>nem</li><li><span class="math inline">\(P(3.\ \text{osztály}\mid\text{túlélt})=0{,}362\)</span>; <span class="math inline">\(P(\text{túlélt}\mid 3.\ \text{osztály})\approx0{,}255\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-2">
+      <p><span class="szam">2.</span> Legalább <span class="math inline">\(k\)</span> — és visszafelé:</p><ol class="reszfeladatok"><li>Kilenc jelentkezőből mindenki a többiektől függetlenül <span class="math inline">\(0{,}9\)</span> valószínűséggel jön el. Mekkora a valószínűsége, hogy legalább heten eljönnek (három tizedesre)?</li><li>Jokić minden büntetője a többitől függetlenül <span class="math inline">\(0{,}8\)</span> valószínűséggel megy be. Legalább hány büntetőt kell dobnia, hogy legalább <span class="math inline">\(0{,}9\)</span> valószínűséggel legyen köztük kihagyott?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\approx0{,}947\)</span></li><li><span class="math inline">\(11\)</span></li></ol></div>
+      </details>
+    </article>
+    <article class="feladat nehez" id="nehez-3">
+      <p><span class="szam">3.</span> A kadétok két befektetés közül választhatnak. <span class="math inline">\(X\)</span> az 1., <span class="math inline">\(Y\)</span> a 2. befektetés nyeresége (kreditben); a lehetséges értékek és valószínűségeik:</p><div class="svgwrap"><div class="tblwrap"><table class="tt-table"><tr><th>\(x\)</th><th>\(20\)</th><th>\(-10\)</th></tr><tr><td>\(P(X=x)\)</td><td>\(0{,}6\)</td><td>\(0{,}4\)</td></tr></table></div></div><div class="svgwrap"><div class="tblwrap"><table class="tt-table"><tr><th>\(y\)</th><th>\(50\)</th><th>\(0\)</th><th>\(-20\)</th></tr><tr><td>\(P(Y=y)\)</td><td>\(0{,}3\)</td><td>\(0{,}5\)</td><td>\(0{,}2\)</td></tr></table></div></div><ol class="reszfeladatok"><li>Mennyi a két befektetés várható nyeresége?</li><li>Mennyi a szórásnégyzetük?</li><li>Mennyi a szórásuk (egy tizedesre)?</li><li>Melyik ígér nagyobb várható nyereséget, és melyik a kevésbé kockázatos?</li></ol>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(E(X)=8\)</span>; <span class="math inline">\(E(Y)=11\)</span></li><li><span class="math inline">\(D^2(X)=216\)</span>; <span class="math inline">\(D^2(Y)=709\)</span></li><li><span class="math inline">\(D(X)\approx14{,}7\)</span>; <span class="math inline">\(D(Y)\approx26{,}6\)</span></li><li>nagyobb várható nyereség: a 2.; kevésbé kockázatos: az 1.</li></ol></div>
+      </details>
+    </article>
+    <h2 id="joker-szint">🃏 Joker</h2>
+    <article class="feladat joker" id="joker">
+      <p><span class="szam">★</span> Egy vetélkedőn három zárt ajtó közül választhatsz; egy mögött autó van, a másik kettő mögött semmi. Választasz egy ajtót. A műsorvezető — aki tudja, hol az autó — ezután mindig kinyit egy másik ajtót, amely mögött nincs semmi (ha két ilyen van, véletlenszerűen választ közülük), és mindig megkérdezi: maradsz, vagy átváltasz a harmadik ajtóra? Mekkora a nyerés valószínűsége, ha maradsz, és mekkora, ha váltasz?</p>
+      <details class="vegeredmeny"><summary>Végeredmény</summary>
+        <div class="bel"><p>maradva <span class="math inline">\(\frac13\)</span>, váltva <span class="math inline">\(\frac23\)</span> — érdemes váltani</p></div>
+      </details>
+    </article>
+    <div class="gyakorolj">
+      <span class="ikon">📖</span>
+      <p>Elakadtál? Nézd át a <a href="index.html">témakör tananyagait</a> vagy a <a href="osszefoglalo.html">Csalópapírt</a>.</p>
+    </div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-valoszinusegi-valtozo.html"><span class="irany">← Előző</span><span class="hova">Valószínűségi változó és várható érték</span></a>
+      <a class="kov" href="tananyag-adatok.html"><span class="irany">Következő →</span><span class="hova">Adatokból kép — sokaság, minta, diagram</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

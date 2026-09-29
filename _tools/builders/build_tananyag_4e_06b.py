@@ -277,7 +277,7 @@ B1 = [
          'kell (a tengelyen egy törésjellel), és a szövegnek a valódi arányt kell mondania. A tudatos manipuláció '
          'akkor is félrevezetés, ha minden szám pontos.</p>'),
    NEHEZ(1, "egy félrevezető ábra elemzése — mi a valódi arány?"),
-   GY("#alap-1", "alap 1–5", "#kozep-1", "közép 1–3"),
+   GY("#alap-1", "A 1–5", "#kozep-1", "K 1–3"),
    brief('<b>Mr. Szürreál:</b> Rendben, a tengelyem… kreatív volt. De van egy másik számom: az átlag. <b>Véd '
          'Vilmos:</b> Az átlag hazudik, ha egyedül hagyják! <b>Nagol:</b> Ezért tesszük mellé a mediánt és a '
          'szórást.', outro=True),
@@ -411,7 +411,7 @@ B2 = [
            '$n-1$-gyel osztanak — ez a mintából becslő, „korrigált” változat, amelyet most nem használunk.</p>'),
    NEHEZ(2, "hiányzó adat visszafelé az átlagból"),
    NEHEZ(3, "két adatsor összevetése középértékkel és szórással"),
-   GY("#alap-6", "alap 6–10", "#kozep-4", "közép 4–7"),
+   GY("#alap-6", "A 6–10", "#kozep-4", "K 4–7"),
  ]),
  ("🧾 Gyorsismétlő", [
    TABLA(["mutató", "kiszámítás", "mit mond?"], [
