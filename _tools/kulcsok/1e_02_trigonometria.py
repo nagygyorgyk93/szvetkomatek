@@ -40,7 +40,15 @@ N2 = (s + c) / (5 * c - 3 * s)
 N3 = [k2(12 * math.sin(fok(8))), k2(12 * math.cos(fok(8)))]
 
 # ── nehez-4: egyenlő szárú háromszög, a = 10, b = 13 ──────────────────
-N4_cos = F(5, 13)
+N4_fel_alap = 10 // 2
+N4_magassag = math.isqrt(13**2 - N4_fel_alap**2)
+assert N4_magassag**2 + N4_fel_alap**2 == 13**2
+N4_cos = F(N4_fel_alap, 13)
+N4_ctg = F(N4_fel_alap, N4_magassag)
+
+# A kocka vetületének két befogója és a függőleges él is egységnyi.
+N5_ctg_negyzet = F(1**2 + 1**2, 1**2)
+assert N5_ctg_negyzet == 2
 
 TESZT = {
     'alap-3': [('a', A3[0]), ('b', A3[1]), ('c', A3[2])],
@@ -54,5 +62,6 @@ TESZT = {
     'kozep-11': [('', K11[0]), ('', K11[1])],
     'nehez-2': [('a', N2)],
     'nehez-3': [('', N3[0]), ('', N3[1])],
-    'nehez-4': [('', N4_cos)],
+    'nehez-4': [('', N4_cos), ('', N4_ctg)],
+    'nehez-5': [('', f'ctg{N5_ctg_negyzet}')],
 }

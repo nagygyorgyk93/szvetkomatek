@@ -185,15 +185,15 @@ K04_UJ = [
 
 # --- 05 Geometria ---
 A05_UJ = [
- ("Döntsd el, igaz vagy hamis, és <b>ha hamis, adj ellenpéldát</b> (elég leírni, milyen alakzat)!",
+ ("Döntsd el, igazak vagy hamisak-e az állítások! A hamisakat indokold; ahol lehet, adj ellenpéldát (elég megnevezni az alakzatot)!",
   ["Ha egy négyszög átlói merőlegesek egymásra, akkor rombusz.",
    "Minden négyzet rombusz.",
    "Ha egy háromszögnek két szöge egyenlő, akkor egyenlő szárú.",
    "Van olyan háromszög, amelynek két tompaszöge van."],
-  ['Hamis: például a deltoid.',
+  ['Hamis: például egy nem rombusz deltoid.',
    'Igaz.',
    'Igaz.',
-   'Hamis.']),
+   'Hamis: két tompaszög összege meghaladja a $180^\\circ$-ot, ami háromszögben lehetetlen.']),
 ]
 
 # --- 06 Racionális algebrai kifejezések ---
