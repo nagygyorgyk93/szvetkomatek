@@ -87,7 +87,7 @@ Havi GitHub Action, amely `media.py --online`-t futtat, és hiba esetén issue-t
 | 30 régi 1e kvízvisszajelzés élő régiója | ◐ Helyi ágon javítva 26 HTML-ben; 81 böngészőpróba hibátlan | Képernyőolvasós felolvasási próba |
 | 1e/02 trigonometria: Közép 4 és Nehéz 2 szögtartománya | ◐ A tanár hegyesszögű értelmezést rögzített; a két feladat helyi ágon pontosítva, a kulcs egyezik | Publikálás tanári jóváhagyás után |
 | 1e/02 Alap 11 dupla részfeladatjel; 1e/06 Bővítés címe | ◐ Helyi ágon javítva; kánonellenőrzés 310/0 | Publikálás tanári jóváhagyás után |
-| 1e/02 Alap 10: `\sin 90^\circ` nem hegyesszög | ☐ Új lelet | Átírás csak privát felmérő-ütközés ellenőrzése és tanári döntés után |
+| 1e/02 Alap 10: `\sin 90^\circ` nem hegyesszög | ◐ Helyi ágon hegyesszögű példával javítva; privát felmérő-ütközés ellenőrizve | Publikálás tanári jóváhagyás után |
 | Végeredménydobozok tartalmi tisztítása | ☐ | A2 külön, tanári sorrenddöntés után |
 
 ### A1 · Teljes ellenőrzés osztályonként
