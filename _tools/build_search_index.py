@@ -20,27 +20,46 @@ class Kinyero(HTMLParser):
         self.szoveg = []
         self._gyujt = None      # 'title' | 'fej' | None
         self._testben = False
+        self._kihagy_tag = None
         self._kihagy_melyseg = 0
 
     def handle_starttag(self, tag, attrs):
-        if tag == "title": self._gyujt = "title"
-        elif tag in ("h1","h2","h3"):
-            self._gyujt = "fej"; self.fejezetek.append("")
-        elif tag == "body": self._testben = True
-        elif tag in ("script","style","nav","header","footer") or \
-             (tag == "div" and dict(attrs).get("id") == "progress"):
-            self._kihagy_melyseg += 1
+        if self._kihagy_tag:
+            if tag == self._kihagy_tag:
+                self._kihagy_melyseg += 1
+            return
+        if tag in ("script", "style", "nav", "header", "footer") or (
+            tag == "div" and dict(attrs).get("id") == "progress"
+        ):
+            self._kihagy_tag = tag
+            self._kihagy_melyseg = 1
+            return
+        if tag == "title":
+            self._gyujt = "title"
+        elif tag in ("h1", "h2", "h3"):
+            self._gyujt = "fej"
+            self.fejezetek.append("")
+        elif tag == "body":
+            self._testben = True
 
     def handle_endtag(self, tag):
-        if tag == "title" or tag in ("h1","h2","h3"): self._gyujt = None
-        elif tag in ("script","style","nav","header","footer"):
-            self._kihagy_melyseg = max(0, self._kihagy_melyseg - 1)
+        if self._kihagy_tag:
+            if tag == self._kihagy_tag:
+                self._kihagy_melyseg -= 1
+                if self._kihagy_melyseg == 0:
+                    self._kihagy_tag = None
+            return
+        if tag == "title" or tag in ("h1", "h2", "h3"):
+            self._gyujt = None
 
     def handle_data(self, data):
-        if self._gyujt == "title": self.cim += data
+        if self._kihagy_tag:
+            return
+        if self._gyujt == "title":
+            self.cim += data
         elif self._gyujt == "fej":
-            if self._kihagy_melyseg == 0: self.fejezetek[-1] += data
-        elif self._testben and self._kihagy_melyseg == 0:
+            self.fejezetek[-1] += data
+        elif self._testben:
             self.szoveg.append(data)
 
 def feldolgoz(ut: Path):
@@ -55,7 +74,7 @@ def feldolgoz(ut: Path):
     return {
         "url": rel, "tagozat": tagozat, "tema": tema, "cim": cim,
         "fejezetek": [f.strip() for f in p.fejezetek if f.strip()],
-        "szoveg": szoveg[:3000],
+        "szoveg": szoveg,
     }
 
 def main():
@@ -64,6 +83,9 @@ def main():
         rel = ut.relative_to(GYOKER).parts
         if rel[0] in KIHAGY or ut.name in KIHAGY_FAJL: continue
         index.append(feldolgoz(ut))
+    hianyos = [o["url"] for o in index if not o["szoveg"] or not o["fejezetek"]]
+    if hianyos:
+        raise ValueError(f"{len(hianyos)} oldalról hiányzik a kereshető szöveg vagy fejezetcím: {hianyos[:5]}")
     ki = GYOKER / "assets" / "search-index.json"
     ki.write_text(json.dumps(index, ensure_ascii=False), encoding="utf-8")
     print(f"OK: {len(index)} oldal indexelve -> {ki.relative_to(GYOKER)}")
