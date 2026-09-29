@@ -312,11 +312,13 @@ TEREP = [
    r'legalább egy helyesen kiszámolt valószínűséget a II. fázisból. Mutasd meg, miért nem elég egyetlen szám (egy '
    r'átlag, egy százalék) egy állítás bizonyításához — és mit kell még megkérdezni mellette (legalább két ilyen szempontot fejts ki).</p>',
    brief('<b>SZVETI</b> (jegyzőkönyv): A meghallgatás lezárva. Bizonyíték: hét tárgyalási nap, két Zsoldos-lista és '
-         'kadétonként egy saját kutatás. <b>Mr. Szürreál:</b> Számokkal jöttem, és számokkal kaptam választ. Az I.V.H. '
-         'visszavonja a metszési javaslatot — egyelőre. <b>Véd Vilmos:</b> 🌮 Ezt meg kell ünnepelni! Burek mindenkinek, '
-         'egyforma adagokban — a szórás nulla. <b>Nagol:</b> Az utolsó ítéletet azonban nem az I.V.H. mondja ki, hanem '
-         'a vizsgabizottság. <i>A Törölt Idővonal</i> évada itt véget ér; a ti idővonalatok most kezdődik. Sok sikert '
-         'az érettségin!', outro=True),
+         'kadétonként egy saját kutatás. Az időszerver újraindult, a Void bezárult. <b>Mr. Szürreál:</b> Számokkal '
+         'jöttem, és számokkal kaptam választ. Az I.V.H. visszavonja a metszési javaslatot — egyelőre. <b>Véd '
+         'Vilmos:</b> 🌮 Ezt meg kell ünnepelni! Burek mindenkinek, egyforma adagokban — a szórás nulla. '
+         '<b>Nagol:</b> A kérdés az volt, nagyobb-e nullánál annak a valószínűsége, hogy ez az évfolyam leérettségizik. '
+         'A bizonyítékok szerint igen — hogy mennyivel, az már rajtatok múlik. Az utolsó ítéletet nem az I.V.H. mondja '
+         'ki, hanem a vizsgabizottság. <i>A Törölt Idővonal</i> évada itt véget ér; a ti idővonalatok most kezdődik. '
+         'Sok sikert az érettségin!', outro=True),
  ]),
 ]
 

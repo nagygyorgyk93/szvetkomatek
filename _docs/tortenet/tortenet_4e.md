@@ -1,10 +1,10 @@
-<!-- TÜKÖR — ne szerkeszd itt! Forrás (a tanár gépén): projektek/szvetkomatek/tortenet/_WEBOLDAL_tortenet_4e.md · tükrözve: 2026-09-28 · _tools/docs_tukor.py -->
+<!-- TÜKÖR — ne szerkeszd itt! Forrás (a tanár gépén): projektek/szvetkomatek/tortenet/_WEBOLDAL_tortenet_4e.md · tükrözve: 2026-09-29 · _tools/docs_tukor.py -->
 
 # Évad-biblia — 4e: *A Törölt Idővonal* (Véd Vilmos & Nagol)
 
 > Közös alap: `_WEBOLDAL_tortenet.md` (világ, állandó szereplők, köntös-rétegek, hátterek).
 > Kötelező szerkezeti kánon: `_WEBOLDAL_workflow.md` 4b. + 8. szakasz.
-> **Állapot: 01–05 kész (2026-09-23 – 09-28), a 06 következik.** Érettségi évfolyam — a köntös oldja a vizsgadrukkot, de a
+> **Állapot: 01–06 kész (2026-09-23 – 09-29) — az évad lezárva.** Érettségi évfolyam — a köntös oldja a vizsgadrukkot, de a
 > tartalom itt a legkomolyabb.
 
 ---
@@ -104,3 +104,16 @@ Irónia, szarkazmus, az iskolarendszer és a „matek mint olyan" szerethető ki
    a pontos érték a kitörés kulcsa.
 4. **Területszámítás** — a Void egy zónájának területe a görbék alatt: ennyit kell „kivágni",
    hogy kijussanak.
+
+## 9. Finálé — az évad lezárása (06, 2026-09-29)
+
+- **A végső meghallgatás** (06 terepküldetés): a kadétok saját statisztikai kutatással és Mr. Szürreál öt félrevezető
+  állításának cáfolatával védik meg magukat; Véd Vilmos záróbeszédet vár tőlük.
+- **Kimenet:** SZVETI jegyzőkönyve lezárja a meghallgatást; **az időszerver újraindul, a Void bezárul** (a 01 és a 04
+  szála). Mr. Szürreál: „Számokkal jöttem, és számokkal kaptam választ" — az I.V.H. **visszavonja a metszési
+  javaslatot — egyelőre**. Véd Vilmos burekot oszt („egyforma adagokban — a szórás nulla").
+- **Nagol zárómondata** (az évad kérdésére): nagyobb-e nullánál annak a valószínűsége, hogy ez az évfolyam
+  leérettségizik? A bizonyítékok szerint igen — hogy mennyivel, az a kadétokon múlik. *Az utolsó ítéletet nem az
+  I.V.H. mondja ki, hanem a vizsgabizottság.* „A Törölt Idővonal évada itt véget ér; a ti idővonalatok most kezdődik."
+- **Hol él:** a 06 terepküldetés outrója és a `4e/index.html` évadzáró bekezdése (a hat fejezet felsorolásával).
+
