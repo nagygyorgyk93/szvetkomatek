@@ -128,7 +128,7 @@ B1 = [
          r'elemű halmaznak <b>összesen $2^n$ részhalmaza</b> van. Egy ötfős társaságból tehát $2^5=32$-féle csoport '
          r'választható, az üreset és a teljeset is beleértve.</p>', hid="erdekesseg-reszhalmazok"),
    NEHEZ(4, "a kifejtésnek az a tagja, amelyben nem szerepel $x$"),
-   GY("#alap-13", "alap 13–14", "#kozep-11", "közép 11–12"),
+   GY("#alap-13", "A 13–14", "#kozep-11", "K 11–12"),
  ]),
  ("🧾 Gyorsismétlő", [
    TABLA(["kérdés", "eszköz", "képlet"], [

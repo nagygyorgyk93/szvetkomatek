@@ -274,7 +274,7 @@ A1 = [
    doboz("erdekesseg", "Miért jó a komplementer?",
          r'<p>A „legalább egy” kérdésnél a rossz eset (<i>egy sem</i>) egyetlen, egyszerű eset, a jók viszont sokfélék. '
          r'A valószínűségszámításban (06) ugyanez a trükk jön vissza: $P(\text{legalább egy})=1-P(\text{egy sem})$.</p>'),
-   GY("#alap-1", "alap 1–3", "#kozep-1", "közép 1–2"),
+   GY("#alap-1", "A 1–3", "#kozep-1", "K 1–2"),
    brief('<b>Nyalka Vili:</b> A ruhatár rendben. Most sorba kell állnunk a Multiverzum-tablóhoz — és ott az a kérdés, '
          '<i>ki hányadik</i>. <b>Nagol:</b> Ugyanaz a szorzási szabály, csak kap egy új jelet: a felkiáltójelet.',
          outro=True),
@@ -366,7 +366,7 @@ A2 = [
          r'<p>Ha a jegyek között 0 is van — például 0, 0, 1, 2 —, előbb az összes sorrendet számoljuk ki '
          r'($\frac{4!}{2!}=12$), majd levonjuk a 0-val kezdődőket (a maradék 0, 1, 2 sorrendjei: $3!=6$). Tehát '
          r'$12-6=6$ négyjegyű szám van: 1002, 1020, 1200, 2001, 2010, 2100.</p>', hid="pelda-szamjegy-ismetles"),
-   GY("#alap-4", "alap 4–6", "#kozep-3", "közép 3–5"),
+   GY("#alap-4", "A 4–6", "#kozep-3", "K 3–5"),
    brief('<b>Nyalka Vili:</b> A tabló kész. A díjátadón viszont csak három hely van a dobogón — nem áll fel mindenki. '
          '<b>Nagol:</b> Akkor nem mindenkit rakunk sorba, csak kiválasztunk néhányat, sorrendben. Ez a variáció.',
          outro=True),
@@ -439,7 +439,7 @@ A3 = [
          r'ha az utolsó jegy 0, az első jegy 4-féle lehet, ha viszont 2 vagy 4, csak 3-féle — a lehetőségek száma függ a '
          r'korábbi döntéstől. Ilyenkor esetekre bontunk.</p>'),
    NEHEZ(2, "esetszétválasztás, amikor a 0 és a párosság egyszerre korlátoz"),
-   GY("#alap-7", "alap 7–9", "#kozep-6", "közép 6–7"),
+   GY("#alap-7", "A 7–9", "#kozep-6", "K 6–7"),
    brief('<b>Nyalka Vili:</b> Az érmesek megvannak. Az I.V.H. szerint viszont a túlélő csapatban nincs arany és bronz — '
          'csak <i>csapat</i> van. <b>Nagol:</b> Ha a sorrend nem számít, a variációkat össze kell vonni. Ez a '
          'kombináció.', outro=True),
@@ -527,7 +527,7 @@ A4 = [
          r'szelvényt töltesz ki, mekkora esélyed van a telitalálatra? Erre a következő fejezet, a valószínűségszámítás '
          r'felel.</p>', hid="erdekesseg-lotto"),
    NEHEZ(3, "rácsút — hányféleképpen olvasható ki egy szó egy betűtáblázatból"),
-   GY("#alap-10", "alap 10–12", "#kozep-8", "közép 8–10"),
+   GY("#alap-10", "A 10–12", "#kozep-8", "K 8–10"),
    brief('<b>Nyalka Vili:</b> Összeállt a csapat. Az I.V.H.-archívumban viszont találtam egy különös háromszöget, tele '
          'ezekkel a számokkal. <b>Nagol:</b> A Pascal-háromszög. A kombinációk száma benne van — és a hatványozást is '
          'elvégzi helyettünk.', outro=True),
