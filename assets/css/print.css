@@ -21,6 +21,8 @@
   .morzsa,.matek-dekor,.savok,.video-panel,.hang-gomb,
   .naplo-chip,.egyseg-kesz,.fel-pipa,.effekt-reteg,.gyuru,.naplo-eszkoz,.tetejere{display:none !important;}
   .brief::after{display:none !important;}
+  /* interaktív vezérlők (szimulátor, adatlabor): papíron csak a kép és a mutatótábla marad */
+  .iv-gombsor,.adatlabor .iv-vezerlo,.adatlabor textarea,.iv-al-cimke{display:none !important;}
   /* a beúszás-animáció nem rejtheti el a nyomtatott tartalmat */
   html.anim-be .kartya,html.anim-be .doboz,html.anim-be .feladat,html.anim-be .brief,
   html.anim-be .talalat,html.anim-be .naplo-sor{opacity:1 !important;transform:none !important;}

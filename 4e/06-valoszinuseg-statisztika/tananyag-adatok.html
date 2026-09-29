@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Adatokból kép — sokaság, minta, gyakoriság, diagram — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Valószínűség és statisztika</a> ›
+  <span class="itt">Adatokból kép — sokaság, minta, gyakoriság, diagram — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Adatokból kép — sokaság, minta, gyakoriság, diagram</h1>
+  <p class="alcim">Sokaság, ismérv, minta és mintavétel, gyakorisági táblázat, négy diagramtípus és a félrevezető grafikon.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Túlélés Esélyei · 6/7</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Mr. Szürreál</b> kivetít egy oszlopdiagramot: Szabadka lakossága 2011 és 2022 között „összeomlott” — a 2022-es oszlop alig ötöde a 2011-esnek. <b>Véd Vilmos:</b> Nézze meg valaki a függőleges tengelyt! <b>Nagol:</b> A csökkenés valós, de nem ekkora. Mielőtt bármit ábrázolunk, tisztázzuk: honnan jön az adat, mit mérünk, és melyik diagram mit mutat. <b>SZVETI:</b> A tengelyt 120 000-nél vágták el. Rögzítve.</p></div>
+
+    <h2 id="s1">Sokaság, ismérv, minta</h2>
+
+    <p class="lead">A statisztika adatokat gyűjt, rendez, ábrázol és értelmez. A 2022-es szerbiai népszámlálás (Popis 2022) jó példa: minden lakosról ugyanazokat az adatokat rögzítették.</p>
+
+    <div class="doboz definicio" id="def-sokasag">
+      <p class="cim"><span class="ikon">📗</span> Sokaság, egyed, minta</p>
+      <p>A vizsgált dolgok összessége a <b>sokaság</b> (populáció), egy-egy tagja az <b>egyed</b>. Ha nem az egész sokaságot vizsgáljuk, hanem csak egy részét, az a <b>minta</b>. A népszámlálás a teljes sokaságot vizsgálja (Szerbia 6 647 003 lakosát), egy közvélemény-kutatás csak egy mintát (például 1000 megkérdezettet).</p>
+    </div>
+
+    <div class="doboz definicio" id="def-ismerv">
+      <p class="cim"><span class="ikon">📗</span> Ismérv</p>
+      <p>Az <b>ismérv</b> (változó) az a tulajdonság, amelyet az egyedeken megfigyelünk. <b>Minőségi</b> ismérv kategóriákat ad (nem, számítógépes ismeret, kedvenc sport). <b>Mennyiségi</b> ismérv számértéket ad, amellyel számolni is van értelme; lehet <b>diszkrét</b> (megszámolható: a háztartás taglétszáma) vagy <b>folytonos</b> (mért: életkor, testmagasság, hőmérséklet).</p>
+    </div>
+
+    <div class="doboz definicio" id="def-skalak">
+      <p class="cim"><span class="ikon">📗</span> Mérési skálák</p>
+      <p>A <b>nominális</b> skála csak megkülönböztet (nem, mezszám, irányítószám). Az <b>ordinális</b> skála sorba is rendez (számítógépes ismeret: nem ismeri &lt; részben ismeri &lt; ismeri; iskolai végzettség). Az <b>intervallumskálán</b> a különbségeknek is van értelme (hőmérséklet °C-ban, évszám, pontszám).</p>
+    </div>
+
+    <p>A minta akkor mond valamit a sokaságról, ha <b>véletlenszerűen</b> választjuk: minden egyednek ugyanakkora esélye van bekerülni. Ha csak a könnyen elérhetőket kérdezzük meg (a barátainkat, egy közösségi oldal követőit), a minta <b>torz</b> lesz, és a következtetés sem érvényes a sokaságra.</p>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda — „a barátaim szerint…”</p>
+      <p>Vilmos megkérdezte hét barátját, szeretik-e a matekot. Mind igent mondtak, ezért kijelentette: „a gimnazisták 100%-a szereti a matekot”. A minta kicsi és torz: a barátok hasonlítanak egymásra, és a kérdezőnek is szívesen mondanak igent. Egy másik gyakori hiba: ami szám, azt mennyiségi ismérvnek hinni. A mezszám nominális — a 23-as játékos nem „23-szor annyi”, mint az 1-es, és a mezszámok átlagának nincs értelme.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ A taglétszám megszámolható mennyiség (diszkrét), átlagolni is van értelme." data-nem="✘ A mezszám és az irányítószám csak azonosít (nominális), a kedvenc sport kategória. Mennyiségi a taglétszám.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik mennyiségi ismérv?</p>
+      <div class="opciok"><button>a háztartás taglétszáma</button><button>a kosárlabdázók mezszáma</button><button>a lakcím irányítószáma</button><button>a kedvenc sport</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Gyakorisági táblázat</h2>
+
+    <p class="lead">Az összegyűjtött adatokat először táblázatba rendezzük: melyik érték hányszor fordul elő.</p>
+
+    <div class="doboz definicio" id="def-gyakorisag">
+      <p class="cim"><span class="ikon">📗</span> Abszolút és relatív gyakoriság</p>
+      <p>Egy érték <b>abszolút gyakorisága</b> (<span class="math inline">\(f_i\)</span>) az, hogy hányszor fordul elő; a <b>relatív gyakorisága</b> <span class="math inline">\(\frac{f_i}{n}\)</span>, ahol <span class="math inline">\(n\)</span> az összes adat száma. A relatív gyakoriságok összege 1 — gyakran százalékban adjuk meg, akkor 100%.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-haztartasok">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — a szabadkai háztartások</p>
+      <div class="tblwrap"><table class="tt-table"><tr><th>taglétszám</th><th>háztartás (abszolút gyakoriság)</th><th>relatív gyakoriság (%)</th></tr><tr><td>1</td><td>17 702</td><td>33,7</td></tr><tr><td>2</td><td>15 440</td><td>29,4</td></tr><tr><td>3</td><td>9 110</td><td>17,4</td></tr><tr><td>4</td><td>6 817</td><td>13,0</td></tr><tr><td>5</td><td>2 257</td><td>4,3</td></tr><tr><td>6 vagy több</td><td>1 165</td><td>2,2</td></tr><tr><td><b>összesen</b></td><td>52 491</td><td>100,0</td></tr></table></div><p class="cap">Forrás: <a href="https://popis2022.stat.gov.rs/sr-latn/popisni-podaci-eksel-tabele/">Republički zavod za statistiku (RZS): Popis stanovništva, domaćinstava i stanova 2022, Excel-táblák</a></p>
+    </div>
+
+    <p>Ha az ismérv sokféle értéket vehet fel (életkor, jövedelem), az adatokat <b>osztályközökbe</b> soroljuk, például 0–19, 20–39 éves. Szabadka 123 952 lakosa 20 éves korcsoportokban:</p>
+
+    <div class="doboz pelda" id="pelda-korosszetetel">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — Szabadka korösszetétele</p>
+      <div class="tblwrap"><table class="tt-table"><tr><th>életkor (év)</th><th>lakos</th><th>relatív gyakoriság (%)</th></tr><tr><td>0–19</td><td>24 365</td><td>19,7</td></tr><tr><td>20–39</td><td>28 168</td><td>22,7</td></tr><tr><td>40–59</td><td>35 043</td><td>28,3</td></tr><tr><td>60–79</td><td>31 077</td><td>25,1</td></tr><tr><td>80 és több</td><td>5 299</td><td>4,3</td></tr><tr><td><b>összesen</b></td><td>123 952</td><td>100</td></tr></table></div><p class="cap">Forrás: <a href="https://popis2022.stat.gov.rs/sr-latn/popisni-podaci-eksel-tabele/">Republički zavod za statistiku (RZS): Popis stanovništva, domaćinstava i stanova 2022, Excel-táblák</a></p><p>(A százalékok egy tizedesre kerekítve; a kerekítés miatt az összegük 100,1.) Az 5 éves korcsoportokat a következő szakasz hisztogramja mutatja.</p>
+    </div>
+
+    <h2 id="s3">Melyik diagram mire jó?</h2>
+
+    <p class="lead">Ugyanaz az adat többféleképpen ábrázolható, de nem mindegy, hogyan: a diagram típusa az ismérv típusától és a kérdéstől függ.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 460 250" width="460" height="250" role="img" aria-label="Oszlopdiagram: a szabadkai háztartások megoszlása taglétszám szerint 2022-ben: 1 tag 33,7%, 2 tag 29,4%, 3 tag 17,4%, 4 tag 13,0%, 5 tag 4,3%, 6 vagy több 2,2%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+      <line x1="52" y1="210.0" x2="450" y2="210.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="213.8" font-size="10.5" fill="#475569" text-anchor="end">0%</text>
+      <line x1="52" y1="163.0" x2="450" y2="163.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="166.8" font-size="10.5" fill="#475569" text-anchor="end">10%</text>
+      <line x1="52" y1="116.0" x2="450" y2="116.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="119.8" font-size="10.5" fill="#475569" text-anchor="end">20%</text>
+      <line x1="52" y1="69.0" x2="450" y2="69.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="72.8" font-size="10.5" fill="#475569" text-anchor="end">30%</text>
+      <line x1="52" y1="22.0" x2="450" y2="22.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="25.8" font-size="10.5" fill="#475569" text-anchor="end">40%</text>
+      <line x1="52" y1="22" x2="52" y2="210" stroke="#0f172a" stroke-width="1.2"/>
+      <line x1="52" y1="210" x2="450" y2="210" stroke="#0f172a" stroke-width="1.2"/>
+      <text x="50.0" y="17.0" font-size="10.5" fill="#475569" text-anchor="start" font-style="italic">a háztartások %-a</text>
+      <rect x="64.6" y="51.6" width="41.1" height="158.4" fill="#1d4ed8" fill-opacity=".85"/>
+      <text x="85.2" y="47.6" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">33,7%</text>
+      <text x="85.2" y="224.0" font-size="11" fill="#0f172a" text-anchor="middle">1</text>
+      <rect x="130.9" y="71.8" width="41.1" height="138.2" fill="#1d4ed8" fill-opacity=".85"/>
+      <text x="151.5" y="67.8" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">29,4%</text>
+      <text x="151.5" y="224.0" font-size="11" fill="#0f172a" text-anchor="middle">2</text>
+      <rect x="197.3" y="128.2" width="41.1" height="81.8" fill="#1d4ed8" fill-opacity=".85"/>
+      <text x="217.8" y="124.2" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">17,4%</text>
+      <text x="217.8" y="224.0" font-size="11" fill="#0f172a" text-anchor="middle">3</text>
+      <rect x="263.6" y="148.9" width="41.1" height="61.1" fill="#1d4ed8" fill-opacity=".85"/>
+      <text x="284.2" y="144.9" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">13,0%</text>
+      <text x="284.2" y="224.0" font-size="11" fill="#0f172a" text-anchor="middle">4</text>
+      <rect x="329.9" y="189.8" width="41.1" height="20.2" fill="#1d4ed8" fill-opacity=".85"/>
+      <text x="350.5" y="185.8" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">4,3%</text>
+      <text x="350.5" y="224.0" font-size="11" fill="#0f172a" text-anchor="middle">5</text>
+      <rect x="396.3" y="199.7" width="41.1" height="10.3" fill="#1d4ed8" fill-opacity=".85"/>
+      <text x="416.8" y="195.7" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">2,2%</text>
+      <text x="416.8" y="224.0" font-size="11" fill="#0f172a" text-anchor="middle">6+</text>
+      <text x="251.0" y="243.0" font-size="10.5" fill="#475569" text-anchor="middle" font-style="italic">a háztartás taglétszáma</text>
+    </svg>
+    </div>
+    <p class="cap"><b>Oszlopdiagram</b> — kategóriák vagy diszkrét értékek összehasonlítására. A szabadkai háztartások taglétszám szerint (%), 2022.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 440 220" width="440" height="220" role="img" aria-label="Kördiagram: a szabadkai 15 éves és idősebb lakosok számítógépes ismerete 2022-ben: ismeri 43,3%, részben ismeri 32,9%, nem ismeri 23,3%, ismeretlen 0,6%" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+      <path d="M112.0,110.0 L112.0,14.0 A96.0,96.0 0 0,1 151.5,197.5 Z" fill="#1d4ed8" stroke="#ffffff" stroke-width="1.5"/>
+      <path d="M112.0,110.0 L151.5,197.5 A96.0,96.0 0 0,1 16.2,103.1 Z" fill="#0ea5e9" stroke="#ffffff" stroke-width="1.5"/>
+      <path d="M112.0,110.0 L16.2,103.1 A96.0,96.0 0 0,1 108.6,14.1 Z" fill="#f59e0b" stroke="#ffffff" stroke-width="1.5"/>
+      <path d="M112.0,110.0 L108.6,14.1 A96.0,96.0 0 0,1 112.0,14.0 Z" fill="#94a3b8" stroke="#ffffff" stroke-width="1.5"/>
+      <rect x="230.0" y="62.0" width="13" height="13" rx="2" fill="#1d4ed8"/>
+      <text x="250.0" y="73.0" font-size="11.5" fill="#0f172a" text-anchor="start">ismeri: 45 792 (43,3%)</text>
+      <rect x="230.0" y="88.0" width="13" height="13" rx="2" fill="#0ea5e9"/>
+      <text x="250.0" y="99.0" font-size="11.5" fill="#0f172a" text-anchor="start">részben ismeri: 34 820 (32,9%)</text>
+      <rect x="230.0" y="114.0" width="13" height="13" rx="2" fill="#f59e0b"/>
+      <text x="250.0" y="125.0" font-size="11.5" fill="#0f172a" text-anchor="start">nem ismeri: 24 667 (23,3%)</text>
+      <rect x="230.0" y="140.0" width="13" height="13" rx="2" fill="#94a3b8"/>
+      <text x="250.0" y="151.0" font-size="11.5" fill="#0f172a" text-anchor="start">ismeretlen: 594 (0,6%)</text>
+    </svg>
+    </div>
+    <p class="cap"><b>Kördiagram</b> — egy egész részeinek arányára. A szabadkai 15 éves és idősebb lakosok (105 873 fő) számítógépes ismerete, 2022. (A kerekítés miatt a százalékok összege 100,1.)</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 480 250" width="480" height="250" role="img" aria-label="Hisztogram: Szabadka lakói 5 éves korcsoportok szerint 2022-ben; a legnépesebb csoportok a 40–44 és a 65–69 évesek" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+      <line x1="56" y1="210.0" x2="468" y2="210.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="51.0" y="213.8" font-size="10.5" fill="#475569" text-anchor="end">0</text>
+      <line x1="56" y1="172.4" x2="468" y2="172.4" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="51.0" y="176.2" font-size="10.5" fill="#475569" text-anchor="end">2 000</text>
+      <line x1="56" y1="134.8" x2="468" y2="134.8" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="51.0" y="138.6" font-size="10.5" fill="#475569" text-anchor="end">4 000</text>
+      <line x1="56" y1="97.2" x2="468" y2="97.2" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="51.0" y="101.0" font-size="10.5" fill="#475569" text-anchor="end">6 000</text>
+      <line x1="56" y1="59.6" x2="468" y2="59.6" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="51.0" y="63.4" font-size="10.5" fill="#475569" text-anchor="end">8 000</text>
+      <line x1="56" y1="22.0" x2="468" y2="22.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="51.0" y="25.8" font-size="10.5" fill="#475569" text-anchor="end">10 000</text>
+      <line x1="56" y1="22" x2="56" y2="210" stroke="#0f172a" stroke-width="1.2"/>
+      <line x1="56" y1="210" x2="468" y2="210" stroke="#0f172a" stroke-width="1.2"/>
+      <text x="54.0" y="17.0" font-size="10.5" fill="#475569" text-anchor="start" font-style="italic">fő</text>
+      <rect x="56.0" y="95.5" width="22.9" height="114.5" fill="#1d4ed8" fill-opacity=".8" stroke="#ffffff" stroke-width=".8"/>
+      <rect x="78.9" y="96.6" width="22.9" height="113.4" fill="#1d4ed8" fill-opacity=".8" stroke="#ffffff" stroke-width=".8"/>
+      <rect x="101.8" y="98.0" width="22.9" height="112.0" fill="#1d4ed8" fill-opacity=".8" stroke="#ffffff" stroke-width=".8"/>
+      <rect x="124.7" y="91.8" width="22.9" height="118.2" fill="#1d4ed8" fill-opacity=".8" stroke="#ffffff" stroke-width=".8"/>
+      <rect x="147.6" y="96.5" width="22.9" height="113.5" fill="#1d4ed8" fill-opacity=".8" stroke="#ffffff" stroke-width=".8"/>
+      <rect x="170.4" y="86.9" width="22.9" height="123.1" fill="#1d4ed8" fill-opacity=".8" stroke="#ffffff" stroke-width=".8"/>
+      <rect x="193.3" y="76.4" width="22.9" height="133.6" fill="#1d4ed8" fill-opacity=".8" stroke="#ffffff" stroke-width=".8"/>
+      <rect x="216.2" y="50.7" width="22.9" height="159.3" fill="#1d4ed8" fill-opacity=".8" stroke="#ffffff" stroke-width=".8"/>
+      <rect x="239.1" y="37.9" width="22.9" height="172.1" fill="#1d4ed8" fill-opacity=".8" stroke="#ffffff" stroke-width=".8"/>
+      <rect x="262.0" y="41.3" width="22.9" height="168.7" fill="#1d4ed8" fill-opacity=".8" stroke="#ffffff" stroke-width=".8"/>
+      <rect x="284.9" y="57.3" width="22.9" height="152.7" fill="#1d4ed8" fill-opacity=".8" stroke="#ffffff" stroke-width=".8"/>
+      <rect x="307.8" y="44.7" width="22.9" height="165.3" fill="#1d4ed8" fill-opacity=".8" stroke="#ffffff" stroke-width=".8"/>
+      <rect x="330.7" y="39.7" width="22.9" height="170.3" fill="#1d4ed8" fill-opacity=".8" stroke="#ffffff" stroke-width=".8"/>
+      <rect x="353.6" y="34.1" width="22.9" height="175.9" fill="#1d4ed8" fill-opacity=".8" stroke="#ffffff" stroke-width=".8"/>
+      <rect x="376.4" y="63.7" width="22.9" height="146.3" fill="#1d4ed8" fill-opacity=".8" stroke="#ffffff" stroke-width=".8"/>
+      <rect x="399.3" y="118.2" width="22.9" height="91.8" fill="#1d4ed8" fill-opacity=".8" stroke="#ffffff" stroke-width=".8"/>
+      <rect x="422.2" y="148.8" width="22.9" height="61.2" fill="#1d4ed8" fill-opacity=".8" stroke="#ffffff" stroke-width=".8"/>
+      <rect x="445.1" y="171.6" width="22.9" height="38.4" fill="#1d4ed8" fill-opacity=".8" stroke="#ffffff" stroke-width=".8"/>
+      <line x1="56.0" y1="210" x2="56.0" y2="214" stroke="#0f172a"/>
+      <text x="56.0" y="225.0" font-size="10.5" fill="#0f172a" text-anchor="middle">0</text>
+      <line x1="101.8" y1="210" x2="101.8" y2="214" stroke="#0f172a"/>
+      <text x="101.8" y="225.0" font-size="10.5" fill="#0f172a" text-anchor="middle">10</text>
+      <line x1="147.6" y1="210" x2="147.6" y2="214" stroke="#0f172a"/>
+      <text x="147.6" y="225.0" font-size="10.5" fill="#0f172a" text-anchor="middle">20</text>
+      <line x1="193.3" y1="210" x2="193.3" y2="214" stroke="#0f172a"/>
+      <text x="193.3" y="225.0" font-size="10.5" fill="#0f172a" text-anchor="middle">30</text>
+      <line x1="239.1" y1="210" x2="239.1" y2="214" stroke="#0f172a"/>
+      <text x="239.1" y="225.0" font-size="10.5" fill="#0f172a" text-anchor="middle">40</text>
+      <line x1="284.9" y1="210" x2="284.9" y2="214" stroke="#0f172a"/>
+      <text x="284.9" y="225.0" font-size="10.5" fill="#0f172a" text-anchor="middle">50</text>
+      <line x1="330.7" y1="210" x2="330.7" y2="214" stroke="#0f172a"/>
+      <text x="330.7" y="225.0" font-size="10.5" fill="#0f172a" text-anchor="middle">60</text>
+      <line x1="376.4" y1="210" x2="376.4" y2="214" stroke="#0f172a"/>
+      <text x="376.4" y="225.0" font-size="10.5" fill="#0f172a" text-anchor="middle">70</text>
+      <line x1="422.2" y1="210" x2="422.2" y2="214" stroke="#0f172a"/>
+      <text x="422.2" y="225.0" font-size="10.5" fill="#0f172a" text-anchor="middle">80</text>
+      <line x1="445.1" y1="210" x2="445.1" y2="214" stroke="#0f172a"/>
+      <text x="445.1" y="225.0" font-size="10.5" fill="#0f172a" text-anchor="middle">85+</text>
+      <text x="262.0" y="243.0" font-size="10.5" fill="#475569" text-anchor="middle" font-style="italic">életkor (év), 5 éves korcsoportok</text>
+    </svg>
+    </div>
+    <p class="cap"><b>Hisztogram</b> — osztályközökbe sorolt mennyiségi adatra; az oszlopok összeérnek. Szabadka lakói 5 éves korcsoportok szerint (fő), 2022; az utolsó oszlop a 85 évesek és idősebbek nyitott csoportja.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 480 250" width="480" height="250" role="img" aria-label="Vonaldiagram: Szabadka város lakossága a népszámlálások szerint 1948 és 2022 között; 1981-ig nő (154 611 főig), azután csökken (2022: 123 952)" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+      <line x1="60" y1="210.0" x2="464" y2="210.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="55.0" y="213.8" font-size="10.5" fill="#475569" text-anchor="end">0</text>
+      <line x1="60" y1="163.0" x2="464" y2="163.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="55.0" y="166.8" font-size="10.5" fill="#475569" text-anchor="end">40 000</text>
+      <line x1="60" y1="116.0" x2="464" y2="116.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="55.0" y="119.8" font-size="10.5" fill="#475569" text-anchor="end">80 000</text>
+      <line x1="60" y1="69.0" x2="464" y2="69.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="55.0" y="72.8" font-size="10.5" fill="#475569" text-anchor="end">120 000</text>
+      <line x1="60" y1="22.0" x2="464" y2="22.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="55.0" y="25.8" font-size="10.5" fill="#475569" text-anchor="end">160 000</text>
+      <line x1="60" y1="22" x2="60" y2="210" stroke="#0f172a" stroke-width="1.2"/>
+      <line x1="60" y1="210" x2="464" y2="210" stroke="#0f172a" stroke-width="1.2"/>
+      <text x="58.0" y="17.0" font-size="10.5" fill="#475569" text-anchor="start" font-style="italic">lakos</text>
+      <path d="M66.0,64.7 L92.5,61.3 L134.9,49.3 L187.8,37.5 L240.8,28.3 L293.8,33.1 L352.1,35.6 L399.7,43.7 L458.0,64.4" fill="none" stroke="#1d4ed8" stroke-width="2.2" stroke-linejoin="round"/>
+      <circle cx="66.0" cy="64.7" r="3.6" fill="#1d4ed8"/>
+      <text x="66.0" y="224.0" font-size="10" fill="#0f172a" text-anchor="middle">1948</text>
+      <text x="70.0" y="56.7" font-size="10" fill="#0f172a" text-anchor="start" font-weight="600">123 688</text>
+      <circle cx="92.5" cy="61.3" r="3.6" fill="#1d4ed8"/>
+      <text x="92.5" y="224.0" font-size="10" fill="#0f172a" text-anchor="middle">1953</text>
+      <circle cx="134.9" cy="49.3" r="3.6" fill="#1d4ed8"/>
+      <text x="134.9" y="224.0" font-size="10" fill="#0f172a" text-anchor="middle">1961</text>
+      <circle cx="187.8" cy="37.5" r="3.6" fill="#1d4ed8"/>
+      <text x="187.8" y="224.0" font-size="10" fill="#0f172a" text-anchor="middle">1971</text>
+      <circle cx="240.8" cy="28.3" r="3.6" fill="#1d4ed8"/>
+      <text x="240.8" y="224.0" font-size="10" fill="#0f172a" text-anchor="middle">1981</text>
+      <text x="240.8" y="20.3" font-size="10" fill="#0f172a" text-anchor="middle" font-weight="600">154 611</text>
+      <circle cx="293.8" cy="33.1" r="3.6" fill="#1d4ed8"/>
+      <text x="293.8" y="224.0" font-size="10" fill="#0f172a" text-anchor="middle">1991</text>
+      <circle cx="352.1" cy="35.6" r="3.6" fill="#1d4ed8"/>
+      <text x="352.1" y="224.0" font-size="10" fill="#0f172a" text-anchor="middle">2002</text>
+      <circle cx="399.7" cy="43.7" r="3.6" fill="#1d4ed8"/>
+      <text x="399.7" y="224.0" font-size="10" fill="#0f172a" text-anchor="middle">2011</text>
+      <circle cx="458.0" cy="64.4" r="3.6" fill="#1d4ed8"/>
+      <text x="458.0" y="224.0" font-size="10" fill="#0f172a" text-anchor="middle">2022</text>
+      <text x="454.0" y="56.4" font-size="10" fill="#0f172a" text-anchor="end" font-weight="600">123 952</text>
+      <text x="262.0" y="243.0" font-size="10.5" fill="#475569" text-anchor="middle" font-style="italic">a népszámlálás éve</text>
+    </svg>
+    </div>
+    <p class="cap"><b>Vonaldiagram</b> — időbeli változásra. Szabadka város lakossága a népszámlálások szerint (fő). A népszámlálások módszertana az évtizedek során többször változott.</p>
+
+    <p class="cap">Forrás: <a href="https://popis2022.stat.gov.rs/sr-latn/popisni-podaci-eksel-tabele/">Republički zavod za statistiku (RZS): Popis stanovništva, domaćinstava i stanova 2022, Excel-táblák</a></p>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th>kérdés, adattípus</th><th>diagram</th></tr><tr><td>kategóriák vagy diszkrét értékek összehasonlítása</td><td>oszlopdiagram</td></tr><tr><td>egy egész részeinek aránya</td><td>kördiagram</td></tr><tr><td>mennyiségi adat eloszlása osztályközökben</td><td>hisztogram</td></tr><tr><td>változás az időben</td><td>vonaldiagram</td></tr></table></div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda — rossz diagram, rossz üzenet</p>
+      <p>Kördiagram csak akkor jó, ha a részek egy egészet adnak ki: ha valaki több sportot is űz, a „kedvenc sportok” százalékainak összege 100 fölé mehet — ide oszlopdiagram kell. A hisztogram oszlopai összeérnek, mert az osztályközök egymáshoz csatlakoznak; ha az osztályközök nem egyforma szélesek, azt jelezni kell.</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> A kopás mint hisztogram</p>
+      <p>Egy edzőtermi súlyzógépen a lyukak körüli kopás megmutatja, melyik súlyt használják a legtöbben: a középső értékeknél a legnagyobb, a két szél felé fogy — mint egy harang alakú hisztogram. (A harang alakú, „normális” eloszlásról a felsőbb matematika szól.)</p><figure><img src="img/sulyzo-kopas.webp" alt="Egy edzőtermi súlyzógép súlylapjai 10-től 110 kilogrammig; a középső súlyoknál a legnagyobb a kopás, a két szél felé egyre kisebb" width="480" height="600" loading="lazy" decoding="async"><figcaption>„Normális eloszlás” — egy súlyzógép kopásnyoma. (Internetes mém.)</figcaption></figure>
+    </div>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ Időbeli változásra a vonaldiagram való: a vízszintes tengelyen az évek, a pontok összekötve." data-nem="✘ A kördiagram egy egész részeit mutatja, a hisztogram egy eloszlást — az időbeli változást a vonaldiagram mutatja.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Melyik diagram mutatja a legjobban, hogyan változott Szabadka lakossága 1948 és 2022 között?</p>
+      <div class="opciok"><button>dobozdiagram</button><button>vonaldiagram</button><button>kördiagram</button><button>hisztogram</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Félrevezető grafikonok</h2>
+
+    <p class="lead">Egy grafikon adatai lehetnek pontosak, a kép mégis félrevezethet.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 300 230" width="300" height="230" role="img" aria-label="Félrevezető oszlopdiagram: a függőleges tengely 120 000-nél kezdődik, ezért a 2022-es oszlop a 2011-esnek kevesebb mint ötöde" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+      <line x1="52" y1="204.0" x2="290" y2="204.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="207.8" font-size="10.5" fill="#475569" text-anchor="end">120 000</text>
+      <line x1="52" y1="167.6" x2="290" y2="167.6" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="171.4" font-size="10.5" fill="#475569" text-anchor="end">125 000</text>
+      <line x1="52" y1="131.2" x2="290" y2="131.2" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="135.0" font-size="10.5" fill="#475569" text-anchor="end">130 000</text>
+      <line x1="52" y1="94.8" x2="290" y2="94.8" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="98.6" font-size="10.5" fill="#475569" text-anchor="end">135 000</text>
+      <line x1="52" y1="58.4" x2="290" y2="58.4" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="62.2" font-size="10.5" fill="#475569" text-anchor="end">140 000</text>
+      <line x1="52" y1="22.0" x2="290" y2="22.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="25.8" font-size="10.5" fill="#475569" text-anchor="end">145 000</text>
+      <line x1="52" y1="22" x2="52" y2="204" stroke="#0f172a" stroke-width="1.2"/>
+      <line x1="52" y1="204" x2="290" y2="204" stroke="#0f172a" stroke-width="1.2"/>
+      <rect x="74.6" y="47.1" width="73.8" height="156.9" fill="#b91c1c" fill-opacity=".85"/>
+      <text x="111.5" y="43.1" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">141 554</text>
+      <text x="111.5" y="218.0" font-size="11" fill="#0f172a" text-anchor="middle">2011</text>
+      <rect x="193.6" y="175.2" width="73.8" height="28.8" fill="#b91c1c" fill-opacity=".85"/>
+      <text x="230.5" y="171.2" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">123 952</text>
+      <text x="230.5" y="218.0" font-size="11" fill="#0f172a" text-anchor="middle">2022</text>
+    </svg>
+    </div>
+    <p class="cap">Mr. Szürreál ábrája: a függőleges tengely 120 000-nél kezdődik.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 300 230" width="300" height="230" role="img" aria-label="Helyes oszlopdiagram: a függőleges tengely 0-tól indul, a két oszlop magassága alig tér el" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+      <line x1="52" y1="204.0" x2="290" y2="204.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="207.8" font-size="10.5" fill="#475569" text-anchor="end">0</text>
+      <line x1="52" y1="167.6" x2="290" y2="167.6" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="171.4" font-size="10.5" fill="#475569" text-anchor="end">30 000</text>
+      <line x1="52" y1="131.2" x2="290" y2="131.2" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="135.0" font-size="10.5" fill="#475569" text-anchor="end">60 000</text>
+      <line x1="52" y1="94.8" x2="290" y2="94.8" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="98.6" font-size="10.5" fill="#475569" text-anchor="end">90 000</text>
+      <line x1="52" y1="58.4" x2="290" y2="58.4" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="62.2" font-size="10.5" fill="#475569" text-anchor="end">120 000</text>
+      <line x1="52" y1="22.0" x2="290" y2="22.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="25.8" font-size="10.5" fill="#475569" text-anchor="end">150 000</text>
+      <line x1="52" y1="22" x2="52" y2="204" stroke="#0f172a" stroke-width="1.2"/>
+      <line x1="52" y1="204" x2="290" y2="204" stroke="#0f172a" stroke-width="1.2"/>
+      <rect x="74.6" y="32.2" width="73.8" height="171.8" fill="#047857" fill-opacity=".85"/>
+      <text x="111.5" y="28.2" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">141 554</text>
+      <text x="111.5" y="218.0" font-size="11" fill="#0f172a" text-anchor="middle">2011</text>
+      <rect x="193.6" y="53.6" width="73.8" height="150.4" fill="#047857" fill-opacity=".85"/>
+      <text x="230.5" y="49.6" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">123 952</text>
+      <text x="230.5" y="218.0" font-size="11" fill="#0f172a" text-anchor="middle">2022</text>
+    </svg>
+    </div>
+    <p class="cap">Ugyanezek az adatok helyesen: a tengely 0-tól indul.</p>
+
+    <p class="cap">Forrás: <a href="https://popis2022.stat.gov.rs/sr-latn/popisni-podaci-eksel-tabele/">Republički zavod za statistiku (RZS): Popis stanovništva, domaćinstava i stanova 2022, Excel-táblák</a></p>
+
+    <div class="doboz pelda" id="pelda-felrevezeto">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — mennyit csökkent?</p>
+      <p>A népszámlálások szerint Szabadka lakossága 2011-ben <span class="math inline">\(141\,554\)</span>, 2022-ben <span class="math inline">\(123\,952\)</span> fő volt. A csökkenés <span class="math inline">\(17\,602\)</span> fő, vagyis <span class="math display">\[\frac{17\,602}{141\,554}\approx0{,}124=12{,}4\%.\]</span> Mr. Szürreál ábráján a tengely 120 000-nél kezdődik, ezért az oszlopok látható magassága <span class="math inline">\(21\,554\)</span> és <span class="math inline">\(3\,952\)</span> egységnyi: a 2022-es oszlop a 2011-esnek kevesebb mint ötöde, mintha a lakosság 80%-kal fogyott volna.</p><p>Más gyakori torzítások: a térhatású (3D) kördiagram, amelyen a közelebbi cikk nagyobbnak látszik; a képes diagram, amelyen a kétszer magasabb ikon négyszer akkora területű; és a különböző skálájú tengelyek két egymás melletti ábrán.</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Tisztességes adathasználat</p>
+      <p>A levágott tengely önmagában nem tilos — kis változásokat néha csak így lehet látni —, de akkor jelezni kell (a tengelyen egy törésjellel), és a szövegnek a valódi arányt kell mondania. A tudatos manipuláció akkor is félrevezetés, ha minden szám pontos.</p>
+    </div>
+
+    <p class="lead">⚔️ <b>Az ötösért:</b> egy félrevezető ábra elemzése — mi a valódi arány? — <a href="feladatok-statisztika.html#nehez-1">Zsoldos-lista, nehéz 1</a>.</p>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-statisztika.html#alap-1">🐶 Véd-eb nyomravezető <span class="cimke">alap 1–5</span></a><a class="sav bruno" href="feladatok-statisztika.html#kozep-1">⚔️ Maximális erőbedobás <span class="cimke">közép 1–3</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Mr. Szürreál:</b> Rendben, a tengelyem… kreatív volt. De van egy másik számom: az átlag. <b>Véd Vilmos:</b> Az átlag hazudik, ha egyedül hagyják! <b>Nagol:</b> Ezért tesszük mellé a mediánt és a szórást.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="feladatok-valoszinuseg.html"><span class="irany">← Előző</span><span class="hova">Zsoldos-lista — Valószínűség</span></a>
+      <a class="kov" href="tananyag-statisztikai-mutatok.html"><span class="irany">Következő →</span><span class="hova">Statisztikai mutatók</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

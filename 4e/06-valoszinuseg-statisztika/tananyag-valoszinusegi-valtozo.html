@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Számot a véletlennek — valószínűségi változó és várható érték — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Valószínűség és statisztika</a> ›
+  <span class="itt">Számot a véletlennek — valószínűségi változó és várható érték — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Számot a véletlennek — valószínűségi változó és várható érték</h1>
+  <p class="alcim">Diszkrét valószínűségi változó és eloszlása, várható érték, döntés várható értékkel, szórásnégyzet — és a valószínűség gyorsismétlője.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Túlélés Esélyei · 5/7</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Mr. Szürreál:</b> Az I.V.H. nagyvonalú. Egy kockadobás, a tét 100 kredit. Ha hatost dobnak, 500 kreditet kapnak. <b>Véd Vilmos:</b> Ötszörös nyeremény? Elfogadjuk! <b>Nagol:</b> Várjunk. Előbb számoljuk ki, mennyit nyerünk vagy veszítünk <i>átlagosan</i>, ha sokszor játszunk. <b>SZVETI:</b> A védő egyszer már elvesztette a burekpénzét egy hasonló ajánlaton.</p></div>
+
+    <h2 id="s1">Valószínűségi változó és eloszlása</h2>
+
+    <p class="lead">Sok kísérlet kimenetele eleve szám (a dobott pontszám), máskor mi rendelünk számot a kimenetelhez: hány fej lett, mennyi a nyereség.</p>
+
+    <div class="doboz definicio" id="def-valoszinusegi-valtozo">
+      <p class="cim"><span class="ikon">📗</span> Valószínűségi változó</p>
+      <p>A <b>valószínűségi változó</b> a kísérlet minden kimeneteléhez egy valós számot rendel; jele többnyire <span class="math inline">\(X\)</span>. Ha véges sok értéke van (<span class="math inline">\(x_1,x_2,\ldots,x_n\)</span>), akkor <b>diszkrét</b>. Az <b>eloszlása</b> megmondja, melyik értéket mekkora valószínűséggel veszi fel: <span class="math inline">\(p_i=P(X=x_i)\)</span>.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-ket-erme">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — fejek száma</p>
+      <p>Két érmét dobunk fel, <span class="math inline">\(X\)</span> a fejek száma. A négy egyformán valószínű kimenetel (FF, FI, IF, II) közül <span class="math inline">\(X=2\)</span> egynél, <span class="math inline">\(X=1\)</span> kettőnél, <span class="math inline">\(X=0\)</span> egynél teljesül:</p><div class="tblwrap"><table class="tt-table"><tr><th><span class="math inline">\(x_i\)</span></th><th><span class="math inline">\(0\)</span></th><th><span class="math inline">\(1\)</span></th><th><span class="math inline">\(2\)</span></th></tr><tr><td><span class="math inline">\(p_i\)</span></td><td><span class="math inline">\(\frac14\)</span></td><td><span class="math inline">\(\frac12\)</span></td><td><span class="math inline">\(\frac14\)</span></td></tr></table></div><div class="svgcard">
+    <svg viewBox="0 0 320 220" width="320" height="220" role="img" aria-label="Oszlopdiagram: két érmedobásnál a fejek számának eloszlása: 0 fej 1/4, 1 fej 1/2, 2 fej 1/4" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+      <line x1="52" y1="180.0" x2="310" y2="180.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="183.8" font-size="10.5" fill="#475569" text-anchor="end">0</text>
+      <line x1="52" y1="127.3" x2="310" y2="127.3" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="131.1" font-size="10.5" fill="#475569" text-anchor="end">0,2</text>
+      <line x1="52" y1="74.7" x2="310" y2="74.7" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="78.5" font-size="10.5" fill="#475569" text-anchor="end">0,4</text>
+      <line x1="52" y1="22.0" x2="310" y2="22.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="25.8" font-size="10.5" fill="#475569" text-anchor="end">0,6</text>
+      <line x1="52" y1="22" x2="52" y2="180" stroke="#0f172a" stroke-width="1.2"/>
+      <line x1="52" y1="180" x2="310" y2="180" stroke="#0f172a" stroke-width="1.2"/>
+      <text x="50.0" y="17.0" font-size="10.5" fill="#475569" text-anchor="start" font-style="italic">P(X = x)</text>
+      <rect x="68.3" y="114.2" width="53.3" height="65.8" fill="#1d4ed8" fill-opacity=".85"/>
+      <text x="95.0" y="110.2" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">1/4</text>
+      <text x="95.0" y="194.0" font-size="11" fill="#0f172a" text-anchor="middle">0</text>
+      <rect x="154.3" y="48.3" width="53.3" height="131.7" fill="#1d4ed8" fill-opacity=".85"/>
+      <text x="181.0" y="44.3" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">1/2</text>
+      <text x="181.0" y="194.0" font-size="11" fill="#0f172a" text-anchor="middle">1</text>
+      <rect x="240.3" y="114.2" width="53.3" height="65.8" fill="#1d4ed8" fill-opacity=".85"/>
+      <text x="267.0" y="110.2" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">1/4</text>
+      <text x="267.0" y="194.0" font-size="11" fill="#0f172a" text-anchor="middle">2</text>
+      <text x="181.0" y="213.0" font-size="10.5" fill="#475569" text-anchor="middle" font-style="italic">a fejek száma (x)</text>
+    </svg>
+    </div>
+    <p class="cap">A fejek számának eloszlása oszlopdiagramon.</p>
+    </div>
+
+    <div class="doboz tetel" id="tetel-eloszlas">
+      <p class="cim"><span class="ikon">📘</span> Az eloszlás összege 1</p>
+      <p>Minden kimenetelhez pontosan egy érték tartozik, ezért a valószínűségek összege mindig <span class="math display">\[p_1+p_2+\ldots+p_n=1.\]</span></p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-haztartas">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — egy szabadkai háztartás</p>
+      <p>A 2022-es népszámlálás szerint Szabadkán 52\,491 háztartás volt. Válasszunk ki egyet véletlenszerűen, és legyen <span class="math inline">\(X\)</span> a taglétszáma:</p><div class="tblwrap"><table class="tt-table"><tr><th><span class="math inline">\(x_i\)</span> (tagok száma)</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6 vagy több</th></tr><tr><td>háztartás</td><td>17 702</td><td>15 440</td><td>9 110</td><td>6 817</td><td>2 257</td><td>1 165</td></tr><tr><td><span class="math inline">\(p_i\)</span></td><td><span class="math inline">\(0{,}337\)</span></td><td><span class="math inline">\(0{,}294\)</span></td><td><span class="math inline">\(0{,}174\)</span></td><td><span class="math inline">\(0{,}130\)</span></td><td><span class="math inline">\(0{,}043\)</span></td><td><span class="math inline">\(0{,}022\)</span></td></tr></table></div><p class="cap">Forrás: <a href="https://popis2022.stat.gov.rs/sr-latn/popisni-podaci-eksel-tabele/">Republički zavod za statistiku (RZS): Popis stanovništva, domaćinstava i stanova 2022, Excel-táblák</a></p><p>Itt a valószínűségek a relatív gyakoriságok — az A2 statisztikai valószínűsége. Az utolsó érték „6 vagy több”; erről a következő szakaszban még lesz szó.</p>
+    </div>
+
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ <span class=&quot;math inline&quot;>\(0{,}2+0{,}5+p=1\)</span>, tehát <span class=&quot;math inline&quot;>\(p=0{,}3\)</span>." data-nem="✘ Az eloszlás valószínűségeinek összege mindig 1: <span class=&quot;math inline&quot;>\(0{,}2+0{,}5+p=1\)</span>, így <span class=&quot;math inline&quot;>\(p=0{,}3\)</span>.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy valószínűségi változó eloszlása: <span class="math inline">\(P(X=1)=0{,}2\)</span>, <span class="math inline">\(P(X=2)=0{,}5\)</span>, <span class="math inline">\(P(X=3)=p\)</span>, és más értéket nem vesz fel. Mennyi a <span class="math inline">\(p\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(0{,}5\)</span></button><button><span class="math inline">\(0{,}3\)</span></button><button><span class="math inline">\(0{,}7\)</span></button><button>bármennyi lehet</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">Várható érték</h2>
+
+    <p class="lead">Ha a kísérletet sokszor megismételjük, <span class="math inline">\(X\)</span> értékeinek átlaga egy szám körül stabilizálódik — ahogy a relatív gyakoriság is. Ez a szám a várható érték.</p>
+
+    <div class="doboz definicio" id="def-varhato-ertek">
+      <p class="cim"><span class="ikon">📗</span> Várható érték</p>
+      <p>A diszkrét <span class="math inline">\(X\)</span> valószínűségi változó <b>várható értéke</b> az értékek valószínűségekkel súlyozott összege: <span class="math display">\[E(X)=x_1p_1+x_2p_2+\ldots+x_np_n.\]</span></p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-varhato">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — három várható érték</p>
+      <p>Két érme: <span class="math inline">\(E(X)=0\cdot\frac14+1\cdot\frac12+2\cdot\frac14=1\)</span> — átlagosan egy fej.</p><p>Kocka: <span class="math inline">\(E(X)=\frac{1+2+3+4+5+6}6=3{,}5\)</span>. A 3,5-öt egyetlen dobással sem lehet megkapni: a várható érték nem „a várt dobás”, hanem sok dobás átlaga.</p><p>Szabadkai háztartás, a „6 vagy több” helyett 6-tal számolva: <span class="math display">\[E(X)\approx\frac{1\cdot17\,702+2\cdot15\,440+3\cdot9\,110+4\cdot6\,817+5\cdot2\,257+6\cdot1\,165}{52\,491}=\frac{121\,455}{52\,491}\approx2{,}31.\]</span> A népszámlálás szerinti átlagos taglétszám <span class="math inline">\(2{,}33\)</span>. A becslésünk azért kisebb, mert a „6 vagy több” csoportban 7 és 8 tagú háztartások is vannak, mi pedig mindet 6-nak vettük.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ A várható érték hosszú távú átlag — egyetlen dobás sosem 3,5." data-nem="✘ Mind a hat érték egyformán valószínű, és 3,5-öt nem is lehet dobni. A várható érték a sok dobás átlaga, amely 3,5 körül stabilizálódik.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>A kockadobás várható értéke <span class="math inline">\(3{,}5\)</span>. Mit jelent ez?</p>
+      <div class="opciok"><button>Sok dobás átlaga <span class="math inline">\(3{,}5\)</span> körül lesz.</button><button>Egy dobásnál <span class="math inline">\(3{,}5\)</span>-öt várunk.</button><button>A <span class="math inline">\(3\)</span> és a <span class="math inline">\(4\)</span> a legvalószínűbb dobás.</button><button>A <span class="math inline">\(3{,}5\)</span> a leggyakoribb dobás.</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Megéri? — döntés várható értékkel</h2>
+
+    <div class="doboz pelda" id="pelda-ajanlat">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — Mr. Szürreál ajánlata</p>
+      <p>Legyen <span class="math inline">\(X\)</span> a nyereség egy játékban. Hatosnál <span class="math inline">\(+400\)</span> kredit (az 500-ból 100 a saját tétünk volt), máskor <span class="math inline">\(-100\)</span>: <span class="math display">\[E(X)=400\cdot\frac16+(-100)\cdot\frac56=\frac{400-500}6\approx-16{,}7.\]</span> Játékonként átlagosan 16,7 kreditet veszítünk — az ajánlat Mr. Szürreálnak éri meg. Az „ötszörös nyeremény” azért csalóka, mert a hatos csak minden hatodik dobásnál jön.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-strategia">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — két stratégia</p>
+      <p>A kadétok két túlélési stratégia közül választhatnak; a nyereség (pontban) és a valószínűségek:</p><div class="tblwrap"><table class="tt-table"><tr><th>A stratégia: nyereség</th><th>valószínűség</th><th></th><th>B stratégia: nyereség</th><th>valószínűség</th></tr><tr><td><span class="math inline">\(30\)</span></td><td><span class="math inline">\(0{,}5\)</span></td><td></td><td><span class="math inline">\(60\)</span></td><td><span class="math inline">\(0{,}3\)</span></td></tr><tr><td><span class="math inline">\(10\)</span></td><td><span class="math inline">\(0{,}3\)</span></td><td></td><td><span class="math inline">\(0\)</span></td><td><span class="math inline">\(0{,}5\)</span></td></tr><tr><td><span class="math inline">\(-20\)</span></td><td><span class="math inline">\(0{,}2\)</span></td><td></td><td><span class="math inline">\(-30\)</span></td><td><span class="math inline">\(0{,}2\)</span></td></tr></table></div><p><span class="math display">\[E(A)=30\cdot0{,}5+10\cdot0{,}3+(-20)\cdot0{,}2=15+3-4=14,\]</span> <span class="math display">\[E(B)=60\cdot0{,}3+0\cdot0{,}5+(-30)\cdot0{,}2=18+0-6=12.\]</span> Várható értékben az A a jobb.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda — az értékek sima átlaga</p>
+      <p>Vilmos súlyozás nélkül átlagolta az értékeket: az A-nál <span class="math inline">\(\frac{30+10-20}3\approx6{,}7\)</span>, a B-nél <span class="math inline">\(\frac{60+0-30}3=10\)</span>, és a B-t választotta. Csakhogy az A-nál a <span class="math inline">\(-20\)</span> ritka (<span class="math inline">\(0{,}2\)</span>), a <span class="math inline">\(30\)</span> gyakori (<span class="math inline">\(0{,}5\)</span>): a valószínűségekkel súlyozni kell.</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Miért nyer mindig a kaszinó?</p>
+      <p>A szerencsejátékokat úgy tervezik, hogy a játékos nyereségének várható értéke negatív legyen, a szervezőé pedig pozitív. Egy-egy játékos nyerhet, de sok játékban az átlag a várható érték felé tart — a szervező javára.</p>
+    </div>
+
+    <h2 id="s4">Mennyire kockázatos? — szórásnégyzet</h2>
+
+    <p class="lead">Két játéknak lehet ugyanakkora a várható értéke, mégis nagyon különbözhetnek: az egyik biztos, a másik szélsőséges.</p>
+
+    <div class="doboz definicio" id="def-szorasnegyzet">
+      <p class="cim"><span class="ikon">📗</span> Szórásnégyzet és szórás</p>
+      <p>A diszkrét <span class="math inline">\(X\)</span> <b>szórásnégyzete</b> az értékek várható értéktől való eltérésének négyzeteiből képzett súlyozott összeg: <span class="math display">\[D^2(X)=\bigl(x_1-E(X)\bigr)^2p_1+\ldots+\bigl(x_n-E(X)\bigr)^2p_n,\]</span> a <b>szórás</b> pedig ennek négyzetgyöke: <span class="math inline">\(D(X)=\sqrt{D^2(X)}\)</span>. Minél nagyobb, annál jobban szóródnak az értékek a várható érték körül — annál nagyobb a kockázat.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-kockazat">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — biztos és kockázatos</p>
+      <p>Az 1. játék biztosan <span class="math inline">\(+10\)</span> kreditet ad: <span class="math inline">\(E=10\)</span>, <span class="math inline">\(D^2=0\)</span>. A 2. játék <span class="math inline">\(\frac12\)</span> valószínűséggel <span class="math inline">\(+40\)</span>, <span class="math inline">\(\frac12\)</span> valószínűséggel <span class="math inline">\(-20\)</span> kreditet: <span class="math display">\[E=40\cdot\frac12+(-20)\cdot\frac12=10,\qquad D^2=(40-10)^2\cdot\frac12+(-20-10)^2\cdot\frac12=900,\qquad D=30.\]</span> A várható érték azonos, a kockázat nagyon különböző.</p><p>A két stratégiánál: <span class="math inline">\(D^2(A)=364\)</span>, <span class="math inline">\(D(A)\approx19{,}1\)</span>; <span class="math inline">\(D^2(B)=1116\)</span>, <span class="math inline">\(D(B)\approx33{,}4\)</span>. Az A tehát nemcsak többet ígér, hanem kiszámíthatóbb is.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda — négyzet és gyök</p>
+      <p>Két gyakori hiba: a négyzetre emelés elmarad (az eltérések súlyozott összege mindig 0 — próbáld ki!), vagy a szórásnégyzetet mondjuk szórásnak. A szórás mértékegysége ugyanaz, mint az értékeké (kredit), a szórásnégyzeté ennek négyzete (kredit²).</p>
+    </div>
+
+    <p class="lead">⚔️ <b>Az ötösért:</b> döntés várható értékkel és szórásnégyzettel — <a href="feladatok-valoszinuseg.html#nehez-3">Zsoldos-lista, nehéz 3</a>.</p>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-valoszinuseg.html#alap-11">🐶 Véd-eb nyomravezető <span class="cimke">alap 11–12</span></a><a class="sav bruno" href="feladatok-valoszinuseg.html#kozep-9">⚔️ Maximális erőbedobás <span class="cimke">közép 9–10</span></a></div></div></div>
+
+    <h2 id="s5">🧾 Gyorsismétlő</h2>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th>kérdés</th><th>eszköz</th><th>képlet</th></tr><tr><td>egyformán valószínű kimenetelek</td><td>klasszikus valószínűség</td><td><span class="math inline">\(P(A)=\dfrac kn\)</span></td></tr><tr><td>nem következik be</td><td>ellentett esemény</td><td><span class="math inline">\(P(\overline{A})=1-P(A)\)</span></td></tr><tr><td><span class="math inline">\(A\)</span> vagy <span class="math inline">\(B\)</span></td><td>unió</td><td><span class="math inline">\(P(A\cup B)=P(A)+P(B)-P(A\cap B)\)</span></td></tr><tr><td>„tudjuk, hogy <span class="math inline">\(B\)</span>”</td><td>feltételes valószínűség</td><td><span class="math inline">\(P(A\mid B)=\dfrac{P(A\cap B)}{P(B)}\)</span></td></tr><tr><td><span class="math inline">\(A\)</span> és <span class="math inline">\(B\)</span>, függetlenek</td><td>szorzás</td><td><span class="math inline">\(P(A\cap B)=P(A)\cdot P(B)\)</span></td></tr><tr><td>legalább egy</td><td>ellentett esemény</td><td><span class="math inline">\(1-P(\text{egyik sem})\)</span></td></tr><tr><td>pontosan <span class="math inline">\(k\)</span> siker <span class="math inline">\(n\)</span>-ből</td><td>binomiális valószínűség</td><td><span class="math inline">\(\binom nk p^k(1-p)^{n-k}\)</span></td></tr><tr><td>átlagosan mennyi?</td><td>várható érték</td><td><span class="math inline">\(E(X)=\sum x_ip_i\)</span></td></tr><tr><td>mennyire szóródik?</td><td>szórásnégyzet, szórás</td><td><span class="math inline">\(D^2(X)=\sum\bigl(x_i-E(X)\bigr)^2p_i\)</span></td></tr></table></div>
+
+    <div class="brief" data-outro><p>📡 <b>Mr. Szürreál:</b> Érdekes elmélet. Az I.V.H. azonban nem jóslatokkal dolgozik, hanem adatokkal. Grafikonjaim vannak. <b>Nagol:</b> Akkor nézzük meg a grafikonjait. Onnan kezdődik a statisztika.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-binomialis-valoszinuseg.html"><span class="irany">← Előző</span><span class="hova">Binomiális valószínűség</span></a>
+      <a class="kov" href="feladatok-valoszinuseg.html"><span class="irany">Következő →</span><span class="hova">Zsoldos-lista — Valószínűség</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

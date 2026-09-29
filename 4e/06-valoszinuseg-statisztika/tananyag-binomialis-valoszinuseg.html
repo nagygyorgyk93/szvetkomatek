@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Újra és újra — a binomiális valószínűség — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Valószínűség és statisztika</a> ›
+  <span class="itt">Újra és újra — a binomiális valószínűség — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Újra és újra — a binomiális valószínűség</h1>
+  <p class="alcim">Bernoulli-kísérletsorozat, a binomiális képlet, legalább és legfeljebb — és mennyire meglepő egy eredmény.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Túlélés Esélyei · 4/7</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/ved_vilmos_w.webp" alt="Véd Vilmos — a negyedik falat áttörő zsoldos" width="1200" height="670" decoding="async"><p>📡 <b>Véd Vilmos:</b> Tisztelt bizottság, a védelem tanúja Nikola Jokić! A 2024–25-ös NBA-alapszakaszban büntetőinek 80,0%-át dobta be. Öt büntetőből tehát pontosan négy megy be. Biztosan. <b>Mr. Szürreál:</b> A bizonyosság hivatali fogalom, kadét. <b>Nagol:</b> A 80% azt jelenti, hogy egy dobás <span class="math inline">\(0{,}8\)</span> valószínűséggel sikeres. Hogy ötből pontosan négy menjen be, annak kiszámolható az esélye — és korántsem biztos.</p></div>
+
+    <h2 id="s1">Bernoulli-kísérletsorozat</h2>
+
+    <p class="lead">Sok helyzetben ugyanazt a kísérletet ismételjük meg, és minden alkalommal csak az érdekel, hogy <b>sikerült-e</b>: bement-e a büntető, fej lett-e, hatost dobtunk-e.</p>
+
+    <div class="doboz definicio" id="def-bernoulli">
+      <p class="cim"><span class="ikon">📗</span> Bernoulli-kísérletsorozat</p>
+      <p>Egy kísérletet <span class="math inline">\(n\)</span>-szer, egymástól <b>függetlenül</b> ismétlünk; minden alkalommal két kimenet van, <b>siker</b> és <b>kudarc</b>, és a siker valószínűsége minden alkalommal ugyanaz, <span class="math inline">\(p\)</span> (a kudarcé <span class="math inline">\(1-p\)</span>). A kérdés: mekkora a valószínűsége, hogy pontosan <span class="math inline">\(k\)</span> siker lesz? (Jakob Bernoulli, 1713)</p>
+    </div>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 480 270" width="480" height="270" role="img" aria-label="Fadiagram három büntetőhöz: minden elágazásnál siker (0,8) vagy kudarc (0,2); a pontosan két sikert tartalmazó három ág kiemelve" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+      <circle cx="30" cy="127.0" r="5" fill="#0f172a"/>
+      <line x1="35" y1="127.0" x2="134" y2="63.0" stroke="#0f172a" stroke-width="1.2"/>
+      <text x="85.0" y="91.0" font-size="9.5" fill="#475569" text-anchor="middle">0,8</text>
+      <text x="140.0" y="67.0" font-size="11.5" fill="#047857" text-anchor="middle" font-weight="600">S</text>
+      <line x1="145" y1="63.0" x2="244" y2="31.0" stroke="#0f172a" stroke-width="1.2"/>
+      <text x="195.0" y="43.0" font-size="9.5" fill="#475569" text-anchor="middle">0,8</text>
+      <text x="250.0" y="35.0" font-size="11.5" fill="#047857" text-anchor="middle" font-weight="600">S</text>
+      <line x1="255" y1="31.0" x2="354" y2="15.0" stroke="#0f172a" stroke-width="1.2"/>
+      <text x="305.0" y="19.0" font-size="9.5" fill="#475569" text-anchor="middle">0,8</text>
+      <text x="360.0" y="19.0" font-size="11.5" fill="#047857" text-anchor="middle" font-weight="600">S</text>
+      <line x1="255" y1="31.0" x2="354" y2="47.0" stroke="#047857" stroke-width="2.2"/>
+      <text x="305.0" y="50.0" font-size="9.5" fill="#475569" text-anchor="middle">0,2</text>
+      <text x="360.0" y="51.0" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="600">K</text>
+      <line x1="145" y1="63.0" x2="244" y2="95.0" stroke="#0f172a" stroke-width="1.2"/>
+      <text x="195.0" y="90.0" font-size="9.5" fill="#475569" text-anchor="middle">0,2</text>
+      <text x="250.0" y="99.0" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="600">K</text>
+      <line x1="255" y1="95.0" x2="354" y2="79.0" stroke="#047857" stroke-width="2.2"/>
+      <text x="305.0" y="83.0" font-size="9.5" fill="#475569" text-anchor="middle">0,8</text>
+      <text x="360.0" y="83.0" font-size="11.5" fill="#047857" text-anchor="middle" font-weight="600">S</text>
+      <line x1="255" y1="95.0" x2="354" y2="111.0" stroke="#0f172a" stroke-width="1.2"/>
+      <text x="305.0" y="114.0" font-size="9.5" fill="#475569" text-anchor="middle">0,2</text>
+      <text x="360.0" y="115.0" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="600">K</text>
+      <line x1="35" y1="127.0" x2="134" y2="191.0" stroke="#0f172a" stroke-width="1.2"/>
+      <text x="85.0" y="170.0" font-size="9.5" fill="#475569" text-anchor="middle">0,2</text>
+      <text x="140.0" y="195.0" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="600">K</text>
+      <line x1="145" y1="191.0" x2="244" y2="159.0" stroke="#0f172a" stroke-width="1.2"/>
+      <text x="195.0" y="171.0" font-size="9.5" fill="#475569" text-anchor="middle">0,8</text>
+      <text x="250.0" y="163.0" font-size="11.5" fill="#047857" text-anchor="middle" font-weight="600">S</text>
+      <line x1="255" y1="159.0" x2="354" y2="143.0" stroke="#047857" stroke-width="2.2"/>
+      <text x="305.0" y="147.0" font-size="9.5" fill="#475569" text-anchor="middle">0,8</text>
+      <text x="360.0" y="147.0" font-size="11.5" fill="#047857" text-anchor="middle" font-weight="600">S</text>
+      <line x1="255" y1="159.0" x2="354" y2="175.0" stroke="#0f172a" stroke-width="1.2"/>
+      <text x="305.0" y="178.0" font-size="9.5" fill="#475569" text-anchor="middle">0,2</text>
+      <text x="360.0" y="179.0" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="600">K</text>
+      <line x1="145" y1="191.0" x2="244" y2="223.0" stroke="#0f172a" stroke-width="1.2"/>
+      <text x="195.0" y="218.0" font-size="9.5" fill="#475569" text-anchor="middle">0,2</text>
+      <text x="250.0" y="227.0" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="600">K</text>
+      <line x1="255" y1="223.0" x2="354" y2="207.0" stroke="#0f172a" stroke-width="1.2"/>
+      <text x="305.0" y="211.0" font-size="9.5" fill="#475569" text-anchor="middle">0,8</text>
+      <text x="360.0" y="211.0" font-size="11.5" fill="#047857" text-anchor="middle" font-weight="600">S</text>
+      <line x1="255" y1="223.0" x2="354" y2="239.0" stroke="#0f172a" stroke-width="1.2"/>
+      <text x="305.0" y="242.0" font-size="9.5" fill="#475569" text-anchor="middle">0,2</text>
+      <text x="360.0" y="243.0" font-size="11.5" fill="#b91c1c" text-anchor="middle" font-weight="600">K</text>
+      <text x="376.0" y="19.0" font-size="10.5" fill="#0f172a" text-anchor="start">SSS: 0,8·0,8·0,8</text>
+      <text x="376.0" y="51.0" font-size="10.5" fill="#047857" text-anchor="start" font-weight="600">SSK: 0,8·0,8·0,2</text>
+      <text x="376.0" y="83.0" font-size="10.5" fill="#047857" text-anchor="start" font-weight="600">SKS: 0,8·0,2·0,8</text>
+      <text x="376.0" y="115.0" font-size="10.5" fill="#0f172a" text-anchor="start">SKK: 0,8·0,2·0,2</text>
+      <text x="376.0" y="147.0" font-size="10.5" fill="#047857" text-anchor="start" font-weight="600">KSS: 0,2·0,8·0,8</text>
+      <text x="376.0" y="179.0" font-size="10.5" fill="#0f172a" text-anchor="start">KSK: 0,2·0,8·0,2</text>
+      <text x="376.0" y="211.0" font-size="10.5" fill="#0f172a" text-anchor="start">KKS: 0,2·0,2·0,8</text>
+      <text x="376.0" y="243.0" font-size="10.5" fill="#0f172a" text-anchor="start">KKK: 0,2·0,2·0,2</text>
+      <text x="140.0" y="264.0" font-size="10" fill="#475569" text-anchor="middle">1. dobás</text>
+      <text x="250.0" y="264.0" font-size="10" fill="#475569" text-anchor="middle">2. dobás</text>
+      <text x="360.0" y="264.0" font-size="10" fill="#475569" text-anchor="middle">3. dobás</text>
+    </svg>
+    </div>
+    <p class="cap">Három büntető: minden elágazásnál S (siker, <span class="math inline">\(0{,}8\)</span>) vagy K (kudarc, <span class="math inline">\(0{,}2\)</span>). A pontosan két sikert adó három ág zöld.</p>
+
+    <p>Az ágak mentén szorzunk, mert a dobások függetlenek. Pontosan két siker háromféle sorrendben jöhet: SSK, SKS, KSS — ahány helyre a kudarc kerülhet, <span class="math inline">\(\binom32=3\)</span>. Mindhárom ág valószínűsége <span class="math inline">\(0{,}8\cdot0{,}8\cdot0{,}2=0{,}128\)</span>, tehát <span class="math display">\[P(\text{pontosan 2 siker a 3-ból})=3\cdot0{,}8^2\cdot0{,}2=0{,}384.\]</span> A büntetőket függetlennek és azonos <span class="math inline">\(p\)</span>-jűnek tekintjük — ez <b>modell</b>. A valóságban a fáradtság vagy a meccs állása is számíthat, a modell mégis jól közelít.</p>
+
+    <h2 id="s2">A binomiális képlet</h2>
+
+    <div class="doboz tetel" id="tetel-binomialis-valoszinuseg">
+      <p class="cim"><span class="ikon">📘</span> Binomiális valószínűség</p>
+      <p>Egy <span class="math inline">\(n\)</span> tagú Bernoulli-kísérletsorozatban, ahol a siker valószínűsége <span class="math inline">\(p\)</span>, pontosan <span class="math inline">\(k\)</span> siker valószínűsége <span class="math display">\[P_n(k)=\binom nk p^k(1-p)^{n-k}\qquad(k=0,\,1,\,\ldots,\,n).\]</span> A <span class="math inline">\(\binom nk\)</span> megszámolja, hányféleképpen lehet a <span class="math inline">\(k\)</span> siker az <span class="math inline">\(n\)</span> helyen, a <span class="math inline">\(p^k(1-p)^{n-k}\)</span> pedig egy ilyen sorrend valószínűsége.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-jokic">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — Jokić öt büntetője</p>
+      <p><span class="math inline">\(n=5\)</span>, <span class="math inline">\(p=0{,}8\)</span>, <span class="math inline">\(k=4\)</span>: <span class="math display">\[P_5(4)=\binom54\cdot0{,}8^4\cdot0{,}2=5\cdot0{,}4096\cdot0{,}2=0{,}4096.\]</span> Vagyis az esetek kb. 41%-ában megy be pontosan négy — a többi 59%-ban nem. A teljes eloszlás:</p><div class="svgcard">
+    <svg viewBox="0 0 460 250" width="460" height="250" role="img" aria-label="Oszlopdiagram: öt büntetőből pontosan k bedobás valószínűsége, ha p = 0,8. A legmagasabb oszlop a k = 4, 0,4096" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+      <line x1="52" y1="210.0" x2="450" y2="210.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="213.8" font-size="10.5" fill="#475569" text-anchor="end">0</text>
+      <line x1="52" y1="172.4" x2="450" y2="172.4" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="176.2" font-size="10.5" fill="#475569" text-anchor="end">0,1</text>
+      <line x1="52" y1="134.8" x2="450" y2="134.8" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="138.6" font-size="10.5" fill="#475569" text-anchor="end">0,2</text>
+      <line x1="52" y1="97.2" x2="450" y2="97.2" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="101.0" font-size="10.5" fill="#475569" text-anchor="end">0,3</text>
+      <line x1="52" y1="59.6" x2="450" y2="59.6" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="63.4" font-size="10.5" fill="#475569" text-anchor="end">0,4</text>
+      <line x1="52" y1="22.0" x2="450" y2="22.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="47.0" y="25.8" font-size="10.5" fill="#475569" text-anchor="end">0,5</text>
+      <line x1="52" y1="22" x2="52" y2="210" stroke="#0f172a" stroke-width="1.2"/>
+      <line x1="52" y1="210" x2="450" y2="210" stroke="#0f172a" stroke-width="1.2"/>
+      <text x="50.0" y="17.0" font-size="10.5" fill="#475569" text-anchor="start" font-style="italic">valószínűség</text>
+      <rect x="64.6" y="209.9" width="41.1" height="0.1" fill="#1d4ed8" fill-opacity=".85"/>
+      <text x="85.2" y="205.9" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">0,0003</text>
+      <text x="85.2" y="224.0" font-size="11" fill="#0f172a" text-anchor="middle">0</text>
+      <rect x="130.9" y="207.6" width="41.1" height="2.4" fill="#1d4ed8" fill-opacity=".85"/>
+      <text x="151.5" y="203.6" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">0,0064</text>
+      <text x="151.5" y="224.0" font-size="11" fill="#0f172a" text-anchor="middle">1</text>
+      <rect x="197.3" y="190.7" width="41.1" height="19.3" fill="#1d4ed8" fill-opacity=".85"/>
+      <text x="217.8" y="186.7" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">0,0512</text>
+      <text x="217.8" y="224.0" font-size="11" fill="#0f172a" text-anchor="middle">2</text>
+      <rect x="263.6" y="133.0" width="41.1" height="77.0" fill="#1d4ed8" fill-opacity=".85"/>
+      <text x="284.2" y="129.0" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">0,2048</text>
+      <text x="284.2" y="224.0" font-size="11" fill="#0f172a" text-anchor="middle">3</text>
+      <rect x="329.9" y="56.0" width="41.1" height="154.0" fill="#047857" fill-opacity=".85"/>
+      <text x="350.5" y="52.0" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">0,4096</text>
+      <text x="350.5" y="224.0" font-size="11" fill="#0f172a" text-anchor="middle">4</text>
+      <rect x="396.3" y="86.8" width="41.1" height="123.2" fill="#1d4ed8" fill-opacity=".85"/>
+      <text x="416.8" y="82.8" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">0,3277</text>
+      <text x="416.8" y="224.0" font-size="11" fill="#0f172a" text-anchor="middle">5</text>
+      <text x="251.0" y="243.0" font-size="10.5" fill="#475569" text-anchor="middle" font-style="italic">a bedobott büntetők száma (k) öt dobásból</text>
+    </svg>
+    </div>
+    <p class="cap">Öt büntetőből pontosan <span class="math inline">\(k\)</span> bedobás valószínűsége, ha <span class="math inline">\(p=0{,}8\)</span>.</p><p class="cap">Forrás: <a href="https://en.wikipedia.org/wiki/Nikola_Joki%C4%87">Nikola Jokić NBA-alapszakasz statisztikái (Wikipedia, az NBA hivatalos adatai alapján)</a></p><p>Egy másik példa: egy kockával hatszor dobunk. Pontosan két hatos valószínűsége <span class="math display">\[P_6(2)=\binom62\left(\frac16\right)^2\left(\frac56\right)^4=15\cdot\frac1{36}\cdot\frac{625}{1296}=\frac{9375}{46\,656}\approx0{,}201.\]</span></p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> A binomiális tétel visszaköszön</p>
+      <p>Az összes valószínűség összege <span class="math display">\[\sum_{k=0}^{n}\binom nk p^k(1-p)^{n-k}=\bigl(p+(1-p)\bigr)^n=1^n=1\]</span> — ez éppen a <a href="../05-kombinatorika/tananyag-binomialis-tetel.html#tetel-binomialis">binomiális tétel</a> <span class="math inline">\(a=p\)</span>, <span class="math inline">\(b=1-p\)</span> választással. Innen a név.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda — egy sorrend nem elég</p>
+      <p>Vilmos így számolt: <span class="math inline">\(0{,}8^4\cdot0{,}2=0{,}08192\)</span>. Ez csak <b>egy</b> sorrend (például SSSSK) valószínűsége; a kimaradó dobás az öt közül bármelyik lehet, ezért még <span class="math inline">\(\binom54=5\)</span>-tel szorozni kell. És a „80% → biztosan 4 az 5-ből” sem igaz: a 4 a legvalószínűbb eredmény, de csak <span class="math inline">\(0{,}41\)</span> valószínűséggel.</p>
+    </div>
+
+    <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ <span class=&quot;math inline&quot;>\(\binom32\left(\frac12\right)^2\cdot\frac12=\frac38\)</span> — FFI, FIF, IFF." data-nem="✘ Egy sorrend (például FFI) valószínűsége <span class=&quot;math inline&quot;>\(\frac18\)</span>, de három sorrend van: <span class=&quot;math inline&quot;>\(\binom32\cdot\frac18=\frac38\)</span>.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Három szabályos érmét dobunk fel. Mekkora a valószínűsége, hogy pontosan két fej lesz?</p>
+      <div class="opciok"><button><span class="math inline">\(\frac18\)</span></button><button><span class="math inline">\(\frac23\)</span></button><button><span class="math inline">\(\frac12\)</span></button><button><span class="math inline">\(\frac38\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Legalább, legfeljebb — és mennyire meglepő?</h2>
+
+    <p class="lead">A „legalább” és a „legfeljebb” kérdésekben több <span class="math inline">\(k\)</span> valószínűségét adjuk össze — vagy az ellentett eseményt számoljuk ki.</p>
+
+    <div class="doboz pelda" id="pelda-legalabb">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — legalább</p>
+      <p>Jokić öt büntetőjéből legalább négy megy be: <span class="math display">\[P_5(4)+P_5(5)=0{,}4096+0{,}32768=0{,}73728.\]</span></p><p>Egy szerbiai újszülött kb. <span class="math inline">\(0{,}516\)</span> valószínűséggel fiú (a 2024-es adat, A2). Három újszülöttből legalább egy fiú: <span class="math display">\[1-P(\text{egy sem})=1-0{,}484^3\approx1-0{,}113=0{,}887.\]</span></p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-gyanus-kocka">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — gyanús kocka</p>
+      <p>Mr. Szürreál kockája tíz dobásból hatszor mutatott hatost. Ha a kocka szabályos, ennek a valószínűsége <span class="math display">\[P_{10}(6)=\binom{10}6\left(\frac16\right)^6\left(\frac56\right)^4=\frac{210\cdot625}{60\,466\,176}\approx0{,}0022.\]</span> Szabályos kockánál ez ezer próbálkozásból kb. kétszer fordulna elő. Ez még nem bizonyíték, de erős gyanú: a valószínűség segít eldönteni, mennyire meglepő egy megfigyelt eredmény.</p>
+    </div>
+
+    <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ Az ellentett esemény: egyik dobás sem hatos, <span class=&quot;math inline&quot;>\(\left(\frac56\right)^6\approx0{,}335\)</span>. Tehát <span class=&quot;math inline&quot;>\(1-0{,}335=0{,}665\)</span>." data-nem="✘ A <span class=&quot;math inline&quot;>\(6\cdot\frac16=1\)</span> biztos eseményt jelentene — pedig hat dobásból is lehet, hogy egy hatos sem jön. Az ellentettel: <span class=&quot;math inline&quot;>\(1-\left(\frac56\right)^6\approx0{,}665\)</span>.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy kockával hatszor dobunk. Mekkora a valószínűsége, hogy legalább egy hatos lesz?</p>
+      <div class="opciok"><button><span class="math inline">\(6\cdot\frac16=1\)</span></button><button><span class="math inline">\(\left(\frac16\right)^6\)</span></button><button><span class="math inline">\(\frac56\)</span></button><button><span class="math inline">\(1-\left(\frac56\right)^6\approx0{,}665\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <p class="lead">⚔️ <b>Az ötösért:</b> „legalább <span class="math inline">\(k\)</span>” siker egy Bernoulli-kísérletsorozatban — <a href="feladatok-valoszinuseg.html#nehez-2">Zsoldos-lista, nehéz 2</a>.</p>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-valoszinuseg.html#alap-9">🐶 Véd-eb nyomravezető <span class="cimke">alap 9–10</span></a><a class="sav bruno" href="feladatok-valoszinuseg.html#kozep-7">⚔️ Maximális erőbedobás <span class="cimke">közép 7–8</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/nagol.webp" alt="Nagol — a morcos kiképzőtiszt" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Nagol:</b> Eddig azt kérdeztük, mekkora egy esemény valószínűsége. A következő lépés: minden kimenetelhez egy számot rendelünk — hány büntető ment be, mennyit nyerünk —, és azt kérdezzük, mit várhatunk átlagosan. <b>Mr. Szürreál:</b> Az I.V.H.-nak éppen van egy ajánlata.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-felteteles-valoszinuseg.html"><span class="irany">← Előző</span><span class="hova">Feltételes valószínűség</span></a>
+      <a class="kov" href="tananyag-valoszinusegi-valtozo.html"><span class="irany">Következő →</span><span class="hova">Valószínűségi változó</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

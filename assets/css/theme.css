@@ -773,6 +773,24 @@ html{scrollbar-color:var(--kampusz-uveg-keret) var(--papir);scrollbar-width:thin
 .interaktiv .iv-vezerlo label{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:600;}
 .interaktiv .iv-vezerlo input[type=range]{flex:1;min-width:8rem;accent-color:#2563eb;cursor:pointer;}
 .interaktiv .iv-kijelzo{color:#334155;font-size:.92rem;text-align:center;max-width:36rem;margin:.35rem auto 0;min-height:2.6em;}
+/* ---- interaktív: szimulátor és adatlabor (4e/06, 2026-09-29) — gombok, választó, szövegmező, mutatótábla a világos lapon */
+.interaktiv .iv-gombsor{flex-wrap:wrap;gap:.45rem;max-width:36rem;}
+.interaktiv .iv-gombsor button{font:inherit;font-size:.9rem;font-weight:600;padding:.28rem .7rem;border-radius:8px;
+  border:1px solid #94a3b8;background:#ffffff;color:#0f172a;cursor:pointer;}
+.interaktiv .iv-gombsor button:hover{border-color:#2563eb;background:#dbeafe;}
+.interaktiv button:focus-visible,.interaktiv select:focus-visible,.interaktiv textarea:focus-visible{outline:2px solid #2563eb;outline-offset:2px;}
+.interaktiv select,.interaktiv textarea{font:inherit;font-size:.9rem;color:#0f172a;background:#ffffff;border:1px solid #94a3b8;
+  border-radius:8px;padding:.28rem .5rem;}
+.interaktiv .iv-al-cimke{display:block;text-align:center;color:#334155;font-size:.86rem;margin:.5rem auto .15rem;}
+.interaktiv textarea{display:block;width:min(100%,36rem);margin:0 auto .4rem;resize:vertical;box-sizing:border-box;}
+.interaktiv table.iv-tabla{width:auto;margin:.5rem auto .2rem;border-collapse:collapse;background:transparent;color:#0f172a;
+  font-size:.9rem;font-variant-numeric:tabular-nums;}
+.interaktiv table.iv-tabla caption{font-weight:700;color:#334155;padding-bottom:.25rem;}
+.interaktiv table.iv-tabla th,.interaktiv table.iv-tabla td{background:transparent;color:#0f172a;border:0;
+  border-bottom:1px solid #cbd5e1;padding:.18rem .7rem;font-family:inherit;}
+.interaktiv table.iv-tabla th{text-align:left;font-weight:500;}
+.interaktiv table.iv-tabla td{text-align:right;font-weight:700;}
+@media(max-width:520px){.interaktiv .iv-vezerlo{flex-wrap:wrap;}}
 /* ---- külső média: YouTube / GeoGebra (assets/js/beagyazas.js + _tools/media.py; 2026-09-27)
    Kattintásig csak egy alacsony neon „lejátszó-sáv” látszik (2026-09-28, Q7: a teljes 16:9-es kártyák
    a sok videós lapokon a lap magasságának akár felét elvitték); lejátszáskor (.media-fut) nyílik ki

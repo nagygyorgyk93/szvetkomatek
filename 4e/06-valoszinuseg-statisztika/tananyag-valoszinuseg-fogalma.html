@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mennyi az esély? — a valószínűség fogalma — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Valószínűség és statisztika</a> ›
+  <span class="itt">Mennyi az esély? — a valószínűség fogalma — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Mennyi az esély? — a valószínűség fogalma</h1>
+  <p class="alcim">Relatív gyakoriság és statisztikai valószínűség, a klasszikus valószínűség, az ellentett esemény és az unió, valószínűség kombinatorikával.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Túlélés Esélyei · 2/7</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Mr. Szürreál:</b> Az I.V.H. ezer idővonalat szimulált. A kadétok 997-ben elbuknak. <b>Véd Vilmos:</b> Szimulálni én is tudok! Fej vagy írás — dobjunk. Sokat. <b>Nagol:</b> Jó ötlet, csak figyeljük meg, mi rajzolódik ki a sok dobás után. <b>SZVETI:</b> A védő pénzérméje egyébként burekzsíros. Jegyzőkönyvbe véve.</p></div>
+
+    <h2 id="s1">Sok dobás után</h2>
+
+    <p class="lead">Egy egyszerű kísérlet: az osztályban mindenki tízszer feldob egy pénzérmét, és összesítjük a fejek számát. Egy tanuló tíz dobásából bármi kijöhet — 3 fej, 7 fej —, az osztály néhány száz dobásánál viszont a fejek aránya meglepően közel lesz a feléhez. Próbáld ki a szimulátorral is!</p>
+
+    <div class="doboz definicio" id="def-relativ-gyakorisag">
+      <p class="cim"><span class="ikon">📗</span> Gyakoriság és relatív gyakoriság</p>
+      <p>Ha egy kísérletet <span class="math inline">\(n\)</span>-szer végzünk el, és közben az <span class="math inline">\(A\)</span> esemény <span class="math inline">\(k\)</span>-szor következik be, akkor <span class="math inline">\(k\)</span> az <span class="math inline">\(A\)</span> <b>gyakorisága</b>, a <span class="math inline">\(\dfrac kn\)</span> hányados pedig a <b>relatív gyakorisága</b>. Nyilván <span class="math inline">\(0\le\dfrac kn\le1\)</span>.</p>
+    </div>
+
+    <div class="svgcard interaktiv" data-mod="szimulacio" data-w="420" data-h="230" data-sor="10001100000000101010001100000110110001011101100010110101111001011100110000010010111100101011000000101000100011111011110010100000110001011000010000110011101110101111000101100111010010100100001011111111">
+    <svg viewBox="0 0 420 230" width="420" height="230" role="img" aria-label="Érme- és kockaszimulátor: a relatív gyakoriság a dobások számának függvényében" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+      <line x1="44" y1="200.0" x2="406" y2="200.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="38.0" y="203.8" font-size="10.5" fill="#475569" text-anchor="end">0</text>
+      <line x1="44" y1="153.0" x2="406" y2="153.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="38.0" y="156.8" font-size="10.5" fill="#475569" text-anchor="end">0,25</text>
+      <line x1="44" y1="106.0" x2="406" y2="106.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="38.0" y="109.8" font-size="10.5" fill="#475569" text-anchor="end">0,5</text>
+      <line x1="44" y1="59.0" x2="406" y2="59.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="38.0" y="62.8" font-size="10.5" fill="#475569" text-anchor="end">0,75</text>
+      <line x1="44" y1="12.0" x2="406" y2="12.0" stroke="#cbd5e1" stroke-width=".7"/>
+      <text x="38.0" y="15.8" font-size="10.5" fill="#475569" text-anchor="end">1</text>
+      <line x1="44" y1="12" x2="44" y2="200" stroke="#0f172a" stroke-width="1.2"/>
+      <line x1="44" y1="200" x2="406" y2="200" stroke="#0f172a" stroke-width="1.2"/>
+      <line x1="44.0" y1="200" x2="44.0" y2="204" stroke="#0f172a"/>
+      <text class="iv-szim-xt" x="44.0" y="215" font-size="10.5" fill="#475569" text-anchor="middle">0</text>
+      <line x1="134.5" y1="200" x2="134.5" y2="204" stroke="#0f172a"/>
+      <text class="iv-szim-xt" x="134.5" y="215" font-size="10.5" fill="#475569" text-anchor="middle">50</text>
+      <line x1="225.0" y1="200" x2="225.0" y2="204" stroke="#0f172a"/>
+      <text class="iv-szim-xt" x="225.0" y="215" font-size="10.5" fill="#475569" text-anchor="middle">100</text>
+      <line x1="315.5" y1="200" x2="315.5" y2="204" stroke="#0f172a"/>
+      <text class="iv-szim-xt" x="315.5" y="215" font-size="10.5" fill="#475569" text-anchor="middle">150</text>
+      <line x1="406.0" y1="200" x2="406.0" y2="204" stroke="#0f172a"/>
+      <text class="iv-szim-xt" x="406.0" y="215" font-size="10.5" fill="#475569" text-anchor="middle">200</text>
+      <text x="406.0" y="227.0" font-size="10" fill="#475569" text-anchor="end" font-style="italic">dobások száma</text>
+      <text x="402.0" y="23.0" font-size="10" fill="#475569" text-anchor="end" font-style="italic">relatív gyakoriság</text>
+      <line class="iv-szim-cel" x1="44" y1="106.0" x2="406" y2="106.0" stroke="#b91c1c" stroke-width="1.4" stroke-dasharray="6 4"/>
+      <text class="iv-szim-cel-cimke" x="402" y="102.0" font-size="11" fill="#b91c1c" text-anchor="end" font-weight="600">1/2</text>
+      <path class="iv-szim-gorbe" d="M45.8,12.0 L47.6,106.0 L49.4,137.3 L51.2,153.0 L53.0,124.8 L54.9,106.0 L56.7,119.4 L58.5,129.5 L60.3,137.3 L62.1,143.6 L63.9,148.7 L65.7,153.0 L67.5,156.6 L69.3,159.7 L71.2,149.9 L73.0,153.0 L74.8,144.7 L76.6,147.8 L78.4,140.6 L80.2,143.6 L82.0,146.3 L83.8,148.7 L85.6,142.8 L87.4,137.3 L89.2,139.8 L91.1,142.2 L92.9,144.3 L94.7,146.3 L96.5,148.1 L98.3,143.6 L100.1,139.4 L101.9,141.2 L103.7,137.3 L105.5,133.6 L107.3,135.5 L109.2,137.3 L111.0,139.0 L112.8,135.7 L114.6,137.3 L116.4,134.2 L118.2,131.2 L120.0,128.4 L121.8,130.0 L123.6,127.4 L125.5,124.8 L127.3,126.4 L129.1,128.0 L130.9,129.5 L132.7,127.1 L134.5,128.6 L136.3,126.3 L138.1,124.1 L139.9,125.5 L141.7,123.4 L143.6,124.8 L145.4,122.8 L147.2,120.8 L149.0,119.0 L150.8,117.2 L152.6,118.5 L154.4,119.9 L156.2,118.1 L158.0,119.4 L159.8,117.8 L161.7,116.1 L163.5,114.5 L165.3,115.8 L167.1,117.1 L168.9,115.5 L170.7,114.1 L172.5,115.3 L174.3,116.4 L176.1,117.6 L177.9,118.7 L179.8,119.8 L181.6,118.4 L183.4,119.4 L185.2,120.5 L187.0,119.1 L188.8,120.1 L190.6,118.8 L192.4,117.5 L194.2,116.2 L196.0,115.0 L197.8,116.0 L199.7,116.9 L201.5,115.7 L203.3,116.7 L205.1,115.5 L206.9,116.4 L208.7,115.3 L210.5,114.2 L212.3,115.1 L214.1,116.0 L215.9,116.9 L217.8,117.8 L219.6,118.6 L221.4,119.4 L223.2,118.3 L225.0,119.2 L226.8,118.1 L228.6,118.9 L230.4,119.7 L232.2,120.5 L234.1,119.4 L235.9,120.2 L237.7,120.9 L239.5,121.7 L241.3,120.7 L243.1,119.7 L244.9,118.7 L246.7,117.8 L248.5,116.8 L250.3,117.5 L252.1,116.6 L254.0,115.7 L255.8,114.8 L257.6,114.0 L259.4,114.7 L261.2,115.4 L263.0,114.5 L264.8,115.2 L266.6,114.4 L268.4,115.1 L270.2,115.8 L272.1,116.4 L273.9,117.1 L275.7,117.8 L277.5,116.9 L279.3,116.1 L281.1,116.8 L282.9,117.4 L284.7,118.0 L286.5,117.2 L288.4,117.8 L290.2,117.1 L292.0,116.3 L293.8,116.9 L295.6,117.5 L297.4,118.1 L299.2,118.7 L301.0,117.9 L302.8,118.5 L304.6,119.1 L306.4,119.6 L308.3,120.2 L310.1,119.4 L311.9,118.7 L313.7,119.2 L315.5,119.8 L317.3,119.1 L319.1,118.4 L320.9,117.7 L322.7,118.2 L324.6,117.5 L326.4,116.8 L328.2,116.2 L330.0,116.7 L331.8,116.1 L333.6,116.6 L335.4,115.9 L337.2,115.3 L339.0,114.7 L340.8,114.0 L342.6,114.5 L344.5,115.1 L346.3,115.6 L348.1,115.0 L349.9,115.5 L351.7,114.8 L353.5,114.2 L355.3,114.7 L357.1,115.2 L358.9,114.6 L360.8,114.1 L362.6,113.5 L364.4,114.0 L366.2,113.4 L368.0,113.9 L369.8,114.4 L371.6,113.8 L373.4,114.3 L375.2,113.7 L377.0,114.2 L378.9,114.6 L380.7,114.1 L382.5,114.5 L384.3,115.0 L386.1,115.4 L387.9,115.9 L389.7,115.4 L391.5,115.8 L393.3,115.3 L395.1,114.7 L396.9,114.2 L398.8,113.7 L400.6,113.2 L402.4,112.6 L404.2,112.1 L406.0,111.6" fill="none" stroke="#1d4ed8" stroke-width="1.8" stroke-linejoin="round"/>
+    </svg>
+    <div class="iv-vezerlo iv-gombsor"><label for="iv1">Kísérlet:</label><select id="iv1" class="iv-szim-tipus"><option value="erme">érmedobás — fej</option><option value="kocka">kockadobás — hatos</option></select><button type="button" data-db="1">+1</button><button type="button" data-db="10">+10</button><button type="button" data-db="100">+100</button><button type="button" data-db="1000">+1 000</button><button type="button" class="iv-szim-ujra">Újra</button></div>
+    <p class="iv-kijelzo" aria-live="polite">Érmedobás: 200 dobás, ebből 94 fej — a relatív gyakoriság 94/200 ≈ 0,470. A klasszikus valószínűség 1/2 ≈ 0,500.</p>
+    </div>
+    <p class="cap">Nyomd meg a gombokat! A kék görbe a fej (vagy a hatos) relatív gyakorisága az addigi dobások után, a piros szaggatott vonal a klasszikus valószínűség. A kezdőkép 200 érmedobás; kockára váltva újraindul.</p>
+    <script src="../../assets/js/interaktiv.js"></script>
+
+    <p>Nem mi vagyunk az elsők, akik ezt kipróbálták:</p>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th>ki dobott</th><th>dobások</th><th>fej</th><th>relatív gyakoriság</th></tr><tr><td>Buffon</td><td>4 040</td><td>2 048</td><td><span class="math inline">\(0{,}5069\)</span></td></tr><tr><td>Kerrich</td><td>10 000</td><td>5 067</td><td><span class="math inline">\(0{,}5067\)</span></td></tr><tr><td>Pearson</td><td>24 000</td><td>12 012</td><td><span class="math inline">\(0{,}5005\)</span></td></tr></table></div>
+
+    <p class="cap">Forrás: Történeti pénzfeldobás-kísérletek: G.-L. L. de Buffon (18. sz.), K. Pearson (1900 körül), J. E. Kerrich (1946; közli D. Freedman, R. Pisani, R. Purves: Statistics)</p>
+
+    <div class="doboz definicio" id="def-statisztikai-valoszinuseg">
+      <p class="cim"><span class="ikon">📗</span> A valószínűség statisztikai értelmezése</p>
+      <p>Ha egy kísérlet sokszori ismétlésekor egy esemény relatív gyakorisága egy szám körül ingadozik, és az ismétlések számának növelésével egyre kevésbé tér el tőle, akkor ezt a számot az esemény <b>valószínűségének</b> nevezzük. Jele <span class="math inline">\(P(A)\)</span> (a <i>probabilitas</i>, valószínűség szóból).</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-szuletesek">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — fiú vagy lány?</p>
+      <p>Szerbiában évente 60–65 ezer gyermek születik. Az újszülöttek között a fiúk aránya évről évre:</p><div class="tblwrap"><table class="tt-table"><tr><th>év</th><th>született</th><th>ebből fiú</th><th>a fiúk aránya</th></tr><tr><td>2019</td><td>64 399</td><td>33 137</td><td><span class="math inline">\(0{,}515\)</span></td></tr><tr><td>2020</td><td>61 692</td><td>31 783</td><td><span class="math inline">\(0{,}515\)</span></td></tr><tr><td>2021</td><td>62 180</td><td>31 971</td><td><span class="math inline">\(0{,}514\)</span></td></tr><tr><td>2022</td><td>62 700</td><td>32 266</td><td><span class="math inline">\(0{,}515\)</span></td></tr><tr><td>2023</td><td>61 052</td><td>31 341</td><td><span class="math inline">\(0{,}513\)</span></td></tr><tr><td>2024</td><td>60 845</td><td>31 396</td><td><span class="math inline">\(0{,}516\)</span></td></tr></table></div><p class="cap">Forrás: <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_fasec/default/table">Eurostat: Live births by mother's age and newborn's sex (demo_fasec)</a></p><p>Hat év alatt a fiúk aránya <span class="math inline">\(0{,}513\)</span> és <span class="math inline">\(0{,}516\)</span> között mozog. Annak a valószínűsége, hogy egy Szerbiában született újszülött fiú, nagyjából <span class="math inline">\(0{,}515\)</span> — nem pontosan <span class="math inline">\(\frac12\)</span>, hanem kicsit több (ez világszerte így van). Hasonlóan: 2024-ben Szabadkán 366 napból 79-en esett legalább 1 mm csapadék, a relatív gyakoriság <span class="math inline">\(\frac{79}{366}\approx0{,}216\)</span>.</p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Az érme nem emlékszik</p>
+      <p>Ha öt fej jött egymás után, a hatodik dobásnál is <span class="math inline">\(\frac12\)</span> a fej valószínűsége. A relatív gyakoriság nem azért közelít <span class="math inline">\(\frac12\)</span>-hez, mert a véletlen „kiegyenlít”, hanem mert a sok új dobás mellett a korai eltérés egyre kisebb súlyú. A <i>szerencsejátékos tévedése</i> ennek az ellenkezőjét hiszi: hogy egy hosszú fejsorozat után „már jár” az írás.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ Az érme nem emlékszik: minden dobásnál <span class=&quot;math inline&quot;>\(\frac12\)</span>. (Az <span class=&quot;math inline&quot;>\(\frac1{64}\)</span> a hat fejből álló sorozat valószínűsége lett volna a dobások ELŐTT.)" data-nem="✘ A dobások függetlenek egymástól, az érme nem „tartozik” írással. A hatodik dobás fej valószínűsége <span class=&quot;math inline&quot;>\(\frac12\)</span>.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy szabályos érmével ötször egymás után fejet dobtunk. Mekkora a valószínűsége, hogy a hatodik dobás is fej?</p>
+      <div class="opciok"><button><span class="math inline">\(\frac12\)</span></button><button>kisebb, mint <span class="math inline">\(\frac12\)</span>, mert most már az írás jön</button><button>nagyobb, mint <span class="math inline">\(\frac12\)</span>, mert „fejsorozat” van</button><button><span class="math inline">\(\frac1{64}\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s2">A klasszikus valószínűség</h2>
+
+    <p class="lead">Sokszor kísérletezés nélkül is tudjuk a valószínűséget: ha a kimenetelek <b>szimmetrikusak</b> — egyik sem kitüntetett —, akkor mindegyik ugyanakkora eséllyel jön ki.</p>
+
+    <div class="doboz tetel" id="tetel-klasszikus">
+      <p class="cim"><span class="ikon">📘</span> A klasszikus valószínűség</p>
+      <p>Ha a kísérletnek véges sok, <span class="math inline">\(n\)</span> kimenetele van, és ezek <b>egyformán valószínűek</b>, akkor egy <span class="math inline">\(A\)</span> esemény valószínűsége <span class="math display">\[P(A)=\frac{\text{az }A\text{ szempontjából kedvező kimenetelek száma}}{\text{az összes kimenetel száma}}=\frac kn.\]</span></p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-ket-kocka-osszeg">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — két kocka</p>
+      <p>Két kockával dobunk. Mekkora a valószínűsége, hogy a dobott számok összege 7? A 36 kimenetel egyformán valószínű; a táblázat cellájában most a két szám összege áll, a 7-esek kiemelve:</p><div class="tblwrap"><table class="tt-table"><tr><th>piros \ kék</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr><tr><th>1</th><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td class="res">7</td></tr><tr><th>2</th><td>3</td><td>4</td><td>5</td><td>6</td><td class="res">7</td><td>8</td></tr><tr><th>3</th><td>4</td><td>5</td><td>6</td><td class="res">7</td><td>8</td><td>9</td></tr><tr><th>4</th><td>5</td><td>6</td><td class="res">7</td><td>8</td><td>9</td><td>10</td></tr><tr><th>5</th><td>6</td><td class="res">7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr><tr><th>6</th><td class="res">7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr></table></div><p>Az összeg hat cellában 7: (1;6), (2;5), (3;4), (4;3), (5;2), (6;1). Tehát <span class="math display">\[P(\text{összeg}=7)=\frac6{36}=\frac16.\]</span> Az összeg 2 viszont csak egyféleképpen jöhet ki (1;1): <span class="math inline">\(P=\frac1{36}\)</span>.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda — tizenegy összeg, tizenegy esély?</p>
+      <p>Vilmos szerint az összeg 2 és 12 között 11-féle lehet, ezért <span class="math inline">\(P(7)=\frac1{11}\)</span>. A képlet azonban csak <b>egyformán valószínű</b> kimenetelekre érvényes, az összegek pedig nem ilyenek: a 7 hat cellában áll, a 2 csak egyben. Ugyanez a hiba volt az A1 „0, 1, 2 fej”-e: <span class="math inline">\(P(\text{pontosan 1 fej})\)</span> nem <span class="math inline">\(\frac13\)</span>, hanem <span class="math inline">\(\frac24=\frac12\)</span>.</p>
+    </div>
+
+    <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ 36 egyformán valószínű számpár, ebből 6 adja a 7-et: <span class=&quot;math inline&quot;>\(\frac6{36}=\frac16\)</span>." data-nem="✘ A 11 lehetséges összeg nem egyformán valószínű. A 36 számpárból 6 ad 7-et: <span class=&quot;math inline&quot;>\(\frac6{36}=\frac16\)</span>.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Két kockával dobunk. Mekkora a valószínűsége, hogy a dobott számok összege 7?</p>
+      <div class="opciok"><button><span class="math inline">\(\frac1{11}\)</span></button><button><span class="math inline">\(\frac7{36}\)</span></button><button><span class="math inline">\(\frac1{12}\)</span></button><button><span class="math inline">\(\frac16\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> Egy szerencsejáték, amelyből tudományág lett</p>
+      <p>A valószínűségszámítás 1654-ben kezdődött: Antoine Gombaud, de Méré lovag kockajátékokról tett fel kérdéseket Blaise Pascalnak, aki Pierre de Fermat-val levélben dolgozta ki a választ. A klasszikus valószínűséget Pierre-Simon Laplace foglalta össze 1812-ben. De Méré egyik kérdésére az A3 végén visszatérünk.</p>
+    </div>
+
+    <h2 id="s3">A valószínűség tulajdonságai</h2>
+
+    <p class="lead">A relatív gyakoriság és a klasszikus valószínűség is 0 és 1 közötti hányados — ebből következnek azok a szabályok, amelyek minden valószínűségre igazak.</p>
+
+    <div class="doboz tetel" id="tetel-ellentett">
+      <p class="cim"><span class="ikon">📘</span> Alaptulajdonságok és az ellentett esemény</p>
+      <p><span class="math display">\[0\le P(A)\le1,\qquad P(\Omega)=1,\qquad P(\emptyset)=0,\qquad P(\overline{A})=1-P(A).\]</span> Az utolsó a leghasznosabb: ha egy esemény valószínűségét nehéz kiszámolni, az ellentettjéé gyakran könnyű. Két kockánál annak a valószínűsége, hogy <i>nem</i> dobunk duplát: <span class="math inline">\(1-\frac6{36}=\frac56\)</span>.</p>
+    </div>
+
+    <div class="doboz tetel" id="tetel-unio">
+      <p class="cim"><span class="ikon">📘</span> Két esemény uniója</p>
+      <p>Ha <span class="math inline">\(A\)</span> és <span class="math inline">\(B\)</span> kizárja egymást, akkor <span class="math inline">\(P(A\cup B)=P(A)+P(B)\)</span>. Általában — ha lehetnek közös kimeneteleik — a metszetet egyszer le kell vonni, különben kétszer számolnánk: <span class="math display">\[P(A\cup B)=P(A)+P(B)-P(A\cap B).\]</span></p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-kiraly">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — király vagy kőr</p>
+      <p>Egy 52 lapos francia kártyacsomagból egy lapot húzunk. Mekkora a valószínűsége, hogy király vagy kőr? Király 4 van, kőr 13, de a kőr király mindkettőben benne van: <span class="math display">\[P=\frac4{52}+\frac{13}{52}-\frac1{52}=\frac{16}{52}=\frac4{13}\approx0{,}308.\]</span></p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda — a kétszer számolt kőr király</p>
+      <p>Vilmos összeadta: <span class="math inline">\(\frac4{52}+\frac{13}{52}=\frac{17}{52}\)</span>. A kőr királyt kétszer számolta. A puszta összeadás csak kizáró eseményeknél helyes.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ <span class=&quot;math inline&quot;>\(0{,}4+0{,}5-0{,}2=0{,}7\)</span> — a mindkettőt űzőket csak egyszer számoljuk." data-nem="✘ Az események nem kizárók (van, aki mindkettőt űzi), ezért a metszetet le kell vonni: <span class=&quot;math inline&quot;>\(0{,}4+0{,}5-0{,}2=0{,}7\)</span>.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy osztályban annak a valószínűsége, hogy egy véletlenül választott tanuló kosarazik, <span class="math inline">\(0{,}4\)</span>; hogy focizik, <span class="math inline">\(0{,}5\)</span>; hogy mindkettőt űzi, <span class="math inline">\(0{,}2\)</span>. Mekkora a valószínűsége, hogy kosarazik vagy focizik?</p>
+      <div class="opciok"><button><span class="math inline">\(0{,}7\)</span></button><button><span class="math inline">\(0{,}9\)</span></button><button><span class="math inline">\(0{,}2\)</span></button><button><span class="math inline">\(0{,}1\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Valószínűség kombinatorikával</h2>
+
+    <p class="lead">Ha az összes és a kedvező kimenetelek száma nagy, a <a href="../05-kombinatorika/index.html">kombinatorika</a> számolja meg őket helyettünk.</p>
+
+    <div class="doboz pelda" id="pelda-golyok">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — két golyó</p>
+      <p>Egy dobozban 5 piros és 3 fehér golyó van; egyszerre kihúzunk kettőt. Mekkora a valószínűsége, hogy mindkettő piros?</p><p>Az összes kimenetel a 8 golyóból választott párok száma, <span class="math inline">\(\binom82=28\)</span>; a kedvezők az 5 pirosból választott párok, <span class="math inline">\(\binom52=10\)</span>: <span class="math display">\[P(\text{két piros})=\frac{10}{28}=\frac5{14}\approx0{,}357.\]</span> Pontosan egy piros: egy piros ÉS egy fehér, <span class="math inline">\(5\cdot3=15\)</span> pár, tehát <span class="math inline">\(\frac{15}{28}\)</span>. Két fehér: <span class="math inline">\(\frac{\binom32}{28}=\frac3{28}\)</span>. A három valószínűség összege <span class="math inline">\(\frac{10+15+3}{28}=1\)</span> — ahogy kell.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-lotto">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — a lottó</p>
+      <p>A szerbiai Loto 7/39-en 39 számból hetet húznak. Egy szelvény akkor telitalálat, ha mind a hét szám egyezik. Az összes lehetséges húzás <span class="math inline">\(\binom{39}7=15\,380\,937\)</span>, ebből egy kedvező: <span class="math display">\[P(\text{telitalálat})=\frac1{15\,380\,937}\approx0{,}000\,000\,065.\]</span> (A lottószámok kombinációiról a <a href="../05-kombinatorika/tananyag-kombinaciok.html#erdekesseg-lotto">05-ös leckében</a> volt szó.)</p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-valoszinuseg.html#alap-4">🐶 Véd-eb nyomravezető <span class="cimke">alap 4–6</span></a><a class="sav bruno" href="feladatok-valoszinuseg.html#kozep-3">⚔️ Maximális erőbedobás <span class="cimke">közép 3–4</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Mr. Szürreál:</b> Új bizonyíték. A Titanic 1309 utasából mindössze 500 élte túl a katasztrófát. Ilyen esélyekkel indulnak a kadétok is. <b>Véd Vilmos:</b> Tiltakozom! És ha tudjuk, <i>ki</i> volt az utas? <b>Nagol:</b> Akkor feltételes valószínűséget számolunk.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-esemenyek.html"><span class="irany">← Előző</span><span class="hova">Kísérlet, kimenetel, esemény</span></a>
+      <a class="kov" href="tananyag-felteteles-valoszinuseg.html"><span class="irany">Következő →</span><span class="hova">Feltételes valószínűség</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

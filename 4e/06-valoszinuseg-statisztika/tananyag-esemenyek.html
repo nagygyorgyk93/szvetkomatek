@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A véletlen nyelve — kísérlet, kimenetel, esemény — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Valószínűség és statisztika</a> ›
+  <span class="itt">A véletlen nyelve — kísérlet, kimenetel, esemény — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>A véletlen nyelve — kísérlet, kimenetel, esemény</h1>
+  <p class="alcim">Eseménytér, biztos és lehetetlen esemény, műveletek eseményekkel, ellentett és kizáró események.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Túlélés Esélyei · 1/7</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Mr. Szürreál</b> (I.V.H.): Megnyitom a meghallgatást. A 4. évfolyam érettségije véletlen kísérlet, kimenetele: bukás. Javaslom a teljes évfolyam megmetszését. <b>Véd Vilmos</b> (a védelem): Tiltakozom! Előbb mondja meg, milyen kimenetelek vannak egyáltalán. Itt van például két érme. 🌮 <i>Burek-matek:</i> 0, 1 vagy 2 fej — három kimenetel, igaz? <b>Nagol</b> (szakértő): Nem. Ha az első érme fej és a második írás, az más, mint fordítva. Négy kimenetel van: FF, FI, IF, II. <b>SZVETI</b> (jegyzőkönyv): Rögzítve. A védő az első percben tévedett.</p></div>
+
+    <h2 id="s1">Kísérlet és kimenetel</h2>
+
+    <p class="lead">A valószínűségszámítás olyan helyzetekről szól, amelyeknek az eredményét előre nem tudjuk — de azt igen, hogy <b>mi történhet</b>.</p>
+
+    <div class="doboz definicio" id="def-kiserlet">
+      <p class="cim"><span class="ikon">📗</span> Véletlen kísérlet, kimenetel</p>
+      <p><b>Véletlen kísérlet</b> minden olyan megfigyelés vagy cselekvés, amely (legalább elvben) azonos feltételek mellett akárhányszor megismételhető, és amelynek az eredménye előre nem jósolható meg biztosan: érmedobás, kockadobás, húzás egy dobozból, egy vizsga. A kísérlet lehetséges eredményei a <b>kimenetelek</b> (más néven elemi események).</p>
+    </div>
+
+    <div class="doboz definicio" id="def-esemenyter">
+      <p class="cim"><span class="ikon">📗</span> Eseménytér</p>
+      <p>Egy kísérlet összes lehetséges kimenetelének halmaza az <b>eseménytér</b>, jele <span class="math inline">\(\Omega\)</span> (omega).</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-ket-kocka">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — négy eseménytér</p>
+      <p>Érmedobás: <span class="math inline">\(\Omega=\{F;\ I\}\)</span> (fej, írás). Kockadobás: <span class="math inline">\(\Omega=\{1;\ 2;\ 3;\ 4;\ 5;\ 6\}\)</span>. Két érme: <span class="math inline">\(\Omega=\{FF;\ FI;\ IF;\ II\}\)</span> — az első betű az első érme, a második a második. Két kocka (egy piros és egy kék): a kimenetelek rendezett számpárok, <span class="math inline">\(6\cdot6=36\)</span> darab. Az alábbi táblázat minden cellája egy kimenetel; a cellában a két dobott szám áll (piros; kék):</p><div class="tblwrap"><table class="tt-table"><tr><th>piros \ kék</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr><tr><th>1</th><td>1;1</td><td>1;2</td><td>1;3</td><td>1;4</td><td>1;5</td><td>1;6</td></tr><tr><th>2</th><td>2;1</td><td>2;2</td><td>2;3</td><td>2;4</td><td>2;5</td><td>2;6</td></tr><tr><th>3</th><td>3;1</td><td>3;2</td><td>3;3</td><td>3;4</td><td>3;5</td><td>3;6</td></tr><tr><th>4</th><td>4;1</td><td>4;2</td><td>4;3</td><td>4;4</td><td>4;5</td><td>4;6</td></tr><tr><th>5</th><td>5;1</td><td>5;2</td><td>5;3</td><td>5;4</td><td>5;5</td><td>5;6</td></tr><tr><th>6</th><td>6;1</td><td>6;2</td><td>6;3</td><td>6;4</td><td>6;5</td><td>6;6</td></tr></table></div>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda — összevont kimenetelek</p>
+      <p>Vilmos két érménél három kimenetelt látott: 0, 1 vagy 2 fej. Ezek valóban a lehetséges <i>fejszámok</i>, de nem egyenrangúak: az „1 fej” két kimenetelből áll, FI-ből és IF-ből. Ha a két érmét megkülönböztetjük (például egy régi és egy új pénzérme), rögtön látszik. A következő leckében ebből az összevonásból lesz a hibás <span class="math inline">\(\frac13\)</span>.</p>
+    </div>
+
+    <h2 id="s2">Események</h2>
+
+    <p class="lead">Egy kísérletnél általában nem egyetlen kimenetel érdekel, hanem egy kérdés: páros számot dobtunk-e, átment-e legalább egy kadét.</p>
+
+    <div class="doboz definicio" id="def-esemeny">
+      <p class="cim"><span class="ikon">📗</span> Esemény, biztos és lehetetlen esemény</p>
+      <p><b>Esemény</b> az eseménytér bármely részhalmaza. Az <span class="math inline">\(A\)</span> esemény <b>bekövetkezik</b>, ha a kísérlet kimenetele <span class="math inline">\(A\)</span> egyik eleme. Két szélső eset: a <b>biztos esemény</b> maga <span class="math inline">\(\Omega\)</span> (mindig bekövetkezik), a <b>lehetetlen esemény</b> az üres halmaz, <span class="math inline">\(\emptyset\)</span> (soha nem következik be).</p>
+    </div>
+
+    <div class="doboz pelda">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — események egy kockadobásnál</p>
+      <p><span class="math inline">\(A\)</span> = „páros számot dobunk” <span class="math inline">\(=\{2;\ 4;\ 6\}\)</span> · <span class="math inline">\(B\)</span> = „legalább 5-öt dobunk” <span class="math inline">\(=\{5;\ 6\}\)</span> · <span class="math inline">\(C\)</span> = „legfeljebb 6-ot dobunk” <span class="math inline">\(=\Omega\)</span>, biztos esemény · <span class="math inline">\(D\)</span> = „7-est dobunk” <span class="math inline">\(=\emptyset\)</span>, lehetetlen esemény.</p><p>Ha a dobás 6, akkor <span class="math inline">\(A\)</span> is és <span class="math inline">\(B\)</span> is bekövetkezett; ha 5, akkor csak <span class="math inline">\(B\)</span>; ha 3, akkor egyik sem.</p>
+    </div>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Minden kimenetel (1, 2, …, 6) legfeljebb 6 — ez az egész eseménytér, <span class=&quot;math inline&quot;>\(\Omega\)</span>." data-nem="✘ A biztos esemény nem „nagyon valószínű”, hanem MINDEN kimenetelnél bekövetkezik. Az 1-es dobásnál a „nem dobunk 1-est” és a „legalább 2” nem teljesül, a prímes esemény pedig 1-nél, 4-nél és 6-nál sem. Csak a „legfeljebb 6” biztos.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Egy kockával egyszer dobunk. Melyik esemény biztos?</p>
+      <div class="opciok"><button>legalább 2-t dobunk</button><button>7-nél kisebb prímszámot dobunk</button><button>legfeljebb 6-ot dobunk</button><button>nem dobunk 1-est</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Műveletek eseményekkel</h2>
+
+    <p class="lead">Mivel az események halmazok, a halmazműveletekkel újabb eseményeket képezhetünk — és mindegyiknek egy hétköznapi kötőszó felel meg.</p>
+
+    <div class="venn"><div class="vbox"><svg viewBox="0 0 200 140" width="200" height="140" role="img" aria-label="Az A és B uniója">
+      <defs><marker id="nyil-0a1c9" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <rect x="6" y="6" width="188" height="128" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+      <text x="186" y="128" font-size="12" font-style="italic" fill="#475569" text-anchor="end">Ω</text>
+      <clipPath id="k0-0a1c9"><circle cx="76.6" cy="70.0" r="37.8"/></clipPath>
+      <clipPath id="kk0-0a1c9"><path d="M0,0 h200 v140 h-200 Z M38.8,70.0 a37.8,37.8 0 1,0 75.6,0 a37.8,37.8 0 1,0 -75.6,0" clip-rule="evenodd"/></clipPath>
+      <clipPath id="k1-0a1c9"><circle cx="123.4" cy="70.0" r="37.8"/></clipPath>
+      <clipPath id="kk1-0a1c9"><path d="M0,0 h200 v140 h-200 Z M85.6,70.0 a37.8,37.8 0 1,0 75.6,0 a37.8,37.8 0 1,0 -75.6,0" clip-rule="evenodd"/></clipPath>
+      <g clip-path="url(#k0-0a1c9)"><g clip-path="url(#kk1-0a1c9)"><rect x="0" y="0" width="200" height="140" fill="#f59e0b" fill-opacity=".30"/></g></g>
+      <g clip-path="url(#k1-0a1c9)"><g clip-path="url(#kk0-0a1c9)"><rect x="0" y="0" width="200" height="140" fill="#f59e0b" fill-opacity=".30"/></g></g>
+      <g clip-path="url(#k0-0a1c9)"><g clip-path="url(#k1-0a1c9)"><rect x="0" y="0" width="200" height="140" fill="#f59e0b" fill-opacity=".30"/></g></g>
+      <circle cx="76.6" cy="70.0" r="37.8" fill="none" stroke="#047857" stroke-width="2"/>
+      <text x="49.3" y="40.5" font-size="13" font-style="italic" fill="#047857" font-weight="600" text-anchor="middle">A</text>
+      <circle cx="123.4" cy="70.0" r="37.8" fill="none" stroke="#3b82f6" stroke-width="2"/>
+      <text x="150.7" y="40.5" font-size="13" font-style="italic" fill="#3b82f6" font-weight="600" text-anchor="middle">B</text>
+    </svg><p class="cap"><span class="math inline">\(A\cup B\)</span> — A vagy B</p></div><div class="vbox"><svg viewBox="0 0 200 140" width="200" height="140" role="img" aria-label="Az A és B metszete">
+      <defs><marker id="nyil-45ad1" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <rect x="6" y="6" width="188" height="128" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+      <text x="186" y="128" font-size="12" font-style="italic" fill="#475569" text-anchor="end">Ω</text>
+      <clipPath id="k0-45ad1"><circle cx="76.6" cy="70.0" r="37.8"/></clipPath>
+      <clipPath id="kk0-45ad1"><path d="M0,0 h200 v140 h-200 Z M38.8,70.0 a37.8,37.8 0 1,0 75.6,0 a37.8,37.8 0 1,0 -75.6,0" clip-rule="evenodd"/></clipPath>
+      <clipPath id="k1-45ad1"><circle cx="123.4" cy="70.0" r="37.8"/></clipPath>
+      <clipPath id="kk1-45ad1"><path d="M0,0 h200 v140 h-200 Z M85.6,70.0 a37.8,37.8 0 1,0 75.6,0 a37.8,37.8 0 1,0 -75.6,0" clip-rule="evenodd"/></clipPath>
+      <g clip-path="url(#k0-45ad1)"><g clip-path="url(#k1-45ad1)"><rect x="0" y="0" width="200" height="140" fill="#f59e0b" fill-opacity=".30"/></g></g>
+      <circle cx="76.6" cy="70.0" r="37.8" fill="none" stroke="#047857" stroke-width="2"/>
+      <text x="49.3" y="40.5" font-size="13" font-style="italic" fill="#047857" font-weight="600" text-anchor="middle">A</text>
+      <circle cx="123.4" cy="70.0" r="37.8" fill="none" stroke="#3b82f6" stroke-width="2"/>
+      <text x="150.7" y="40.5" font-size="13" font-style="italic" fill="#3b82f6" font-weight="600" text-anchor="middle">B</text>
+    </svg><p class="cap"><span class="math inline">\(A\cap B\)</span> — A és B</p></div><div class="vbox"><svg viewBox="0 0 200 140" width="200" height="140" role="img" aria-label="Az A ellentettje">
+      <defs><marker id="nyil-352b8" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <rect x="6" y="6" width="188" height="128" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+      <text x="186" y="128" font-size="12" font-style="italic" fill="#475569" text-anchor="end">Ω</text>
+      <clipPath id="k0-352b8"><circle cx="76.6" cy="70.0" r="37.8"/></clipPath>
+      <clipPath id="kk0-352b8"><path d="M0,0 h200 v140 h-200 Z M38.8,70.0 a37.8,37.8 0 1,0 75.6,0 a37.8,37.8 0 1,0 -75.6,0" clip-rule="evenodd"/></clipPath>
+      <clipPath id="k1-352b8"><circle cx="123.4" cy="70.0" r="37.8"/></clipPath>
+      <clipPath id="kk1-352b8"><path d="M0,0 h200 v140 h-200 Z M85.6,70.0 a37.8,37.8 0 1,0 75.6,0 a37.8,37.8 0 1,0 -75.6,0" clip-rule="evenodd"/></clipPath>
+      <g clip-path="url(#k1-352b8)"><g clip-path="url(#kk0-352b8)"><rect x="0" y="0" width="200" height="140" fill="#f59e0b" fill-opacity=".30"/></g></g>
+      <path d="M6,6 h188 v128 h-188 Z M38.8,70.0 a37.8,37.8 0 1,0 75.6,0 a37.8,37.8 0 1,0 -75.6,0 M85.6,70.0 a37.8,37.8 0 1,0 75.6,0 a37.8,37.8 0 1,0 -75.6,0 " fill="#f59e0b" fill-opacity=".22" fill-rule="evenodd"/>
+      <circle cx="76.6" cy="70.0" r="37.8" fill="none" stroke="#047857" stroke-width="2"/>
+      <text x="49.3" y="40.5" font-size="13" font-style="italic" fill="#047857" font-weight="600" text-anchor="middle">A</text>
+      <circle cx="123.4" cy="70.0" r="37.8" fill="none" stroke="#3b82f6" stroke-width="2"/>
+      <text x="150.7" y="40.5" font-size="13" font-style="italic" fill="#3b82f6" font-weight="600" text-anchor="middle">B</text>
+    </svg><p class="cap"><span class="math inline">\(\overline{A}\)</span> — nem A</p></div><div class="vbox"><svg viewBox="0 0 200 140" width="200" height="140" role="img" aria-label="Az A és B különbsége">
+      <defs><marker id="nyil-73d49" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <rect x="6" y="6" width="188" height="128" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+      <text x="186" y="128" font-size="12" font-style="italic" fill="#475569" text-anchor="end">Ω</text>
+      <clipPath id="k0-73d49"><circle cx="76.6" cy="70.0" r="37.8"/></clipPath>
+      <clipPath id="kk0-73d49"><path d="M0,0 h200 v140 h-200 Z M38.8,70.0 a37.8,37.8 0 1,0 75.6,0 a37.8,37.8 0 1,0 -75.6,0" clip-rule="evenodd"/></clipPath>
+      <clipPath id="k1-73d49"><circle cx="123.4" cy="70.0" r="37.8"/></clipPath>
+      <clipPath id="kk1-73d49"><path d="M0,0 h200 v140 h-200 Z M85.6,70.0 a37.8,37.8 0 1,0 75.6,0 a37.8,37.8 0 1,0 -75.6,0" clip-rule="evenodd"/></clipPath>
+      <g clip-path="url(#k0-73d49)"><g clip-path="url(#kk1-73d49)"><rect x="0" y="0" width="200" height="140" fill="#f59e0b" fill-opacity=".30"/></g></g>
+      <circle cx="76.6" cy="70.0" r="37.8" fill="none" stroke="#047857" stroke-width="2"/>
+      <text x="49.3" y="40.5" font-size="13" font-style="italic" fill="#047857" font-weight="600" text-anchor="middle">A</text>
+      <circle cx="123.4" cy="70.0" r="37.8" fill="none" stroke="#3b82f6" stroke-width="2"/>
+      <text x="150.7" y="40.5" font-size="13" font-style="italic" fill="#3b82f6" font-weight="600" text-anchor="middle">B</text>
+    </svg><p class="cap"><span class="math inline">\(A\setminus B\)</span> — A, de nem B</p></div><div class="vbox"><svg viewBox="0 0 200 140" width="200" height="140" role="img" aria-label="Két kizáró esemény: a két halmaznak nincs közös része" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+      <rect x="6" y="6" width="188" height="128" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+      <text x="182" y="126" font-size="12" font-style="italic" fill="#475569" text-anchor="end">Ω</text>
+      <circle cx="62" cy="68" r="36" fill="#f59e0b" fill-opacity=".30" stroke="#047857" stroke-width="2"/>
+      <circle cx="140" cy="68" r="36" fill="#f59e0b" fill-opacity=".30" stroke="#3b82f6" stroke-width="2"/>
+      <text x="62" y="26" font-size="13" font-style="italic" fill="#047857" font-weight="600" text-anchor="middle">C</text>
+      <text x="140" y="26" font-size="13" font-style="italic" fill="#3b82f6" font-weight="600" text-anchor="middle">D</text>
+    </svg><p class="cap">kizárók: <span class="math inline">\(C\cap D=\emptyset\)</span></p></div></div>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th>művelet</th><th>jelölés</th><th>jelentés</th><th>a kockás példában</th></tr><tr><td>unió</td><td><span class="math inline">\(A\cup B\)</span></td><td><span class="math inline">\(A\)</span> vagy <span class="math inline">\(B\)</span> (vagy mindkettő) bekövetkezik</td><td><span class="math inline">\(\{2;\ 4;\ 5;\ 6\}\)</span></td></tr><tr><td>metszet</td><td><span class="math inline">\(A\cap B\)</span></td><td><span class="math inline">\(A\)</span> és <span class="math inline">\(B\)</span> is bekövetkezik</td><td><span class="math inline">\(\{6\}\)</span></td></tr><tr><td>ellentett</td><td><span class="math inline">\(\overline{A}\)</span></td><td><span class="math inline">\(A\)</span> nem következik be</td><td><span class="math inline">\(\{1;\ 3;\ 5\}\)</span></td></tr><tr><td>különbség</td><td><span class="math inline">\(A\setminus B\)</span></td><td><span class="math inline">\(A\)</span> bekövetkezik, <span class="math inline">\(B\)</span> nem</td><td><span class="math inline">\(\{2;\ 4\}\)</span></td></tr></table></div>
+
+    <div class="doboz definicio" id="def-ellentett">
+      <p class="cim"><span class="ikon">📗</span> Ellentett esemény</p>
+      <p>Az <span class="math inline">\(A\)</span> esemény <b>ellentettje</b>, <span class="math inline">\(\overline{A}\)</span>, pontosan akkor következik be, amikor <span class="math inline">\(A\)</span> nem: <span class="math inline">\(\overline{A}=\Omega\setminus A\)</span>. Egy esemény és az ellentettje egyszerre nem következhet be, de az egyikük mindig: <span class="math inline">\(A\cap\overline{A}=\emptyset\)</span> és <span class="math inline">\(A\cup\overline{A}=\Omega\)</span>.</p>
+    </div>
+
+    <div class="doboz definicio" id="def-kizaro">
+      <p class="cim"><span class="ikon">📗</span> Kizáró események</p>
+      <p>Két esemény <b>kizárja egymást</b>, ha nem következhetnek be egyszerre: <span class="math inline">\(A\cap B=\emptyset\)</span>. Például kockadobásnál <span class="math inline">\(C\)</span> = „1-est dobunk” és <span class="math inline">\(D\)</span> = „6-ost dobunk”.</p>
+    </div>
+
+    <div class="doboz tetel" id="tetel-de-morgan">
+      <p class="cim"><span class="ikon">📘</span> A „legalább egy” ellentettje</p>
+      <p><span class="math display">\[\overline{A\cup B}=\overline{A}\cap\overline{B},\qquad \overline{A\cap B}=\overline{A}\cup\overline{B}.\]</span> Szavakkal: „nem igaz, hogy <span class="math inline">\(A\)</span> vagy <span class="math inline">\(B\)</span>” ugyanaz, mint „sem <span class="math inline">\(A\)</span>, sem <span class="math inline">\(B\)</span>”; „nem igaz, hogy <span class="math inline">\(A\)</span> és <span class="math inline">\(B\)</span> is” ugyanaz, mint „legalább az egyik nem”. A kockás példában <span class="math inline">\(\overline{A\cup B}=\{1;\ 3\}\)</span>, és valóban <span class="math inline">\(\overline{A}\cap\overline{B}=\{1;\ 3;\ 5\}\cap\{1;\ 2;\ 3;\ 4\}=\{1;\ 3\}\)</span>. (Ezek a De Morgan-azonosságok; a halmazokra vonatkozó változatukat az <a href="../../1e/01-logika-halmazok-fuggvenyek/tananyag-halmazmuveletek.html#muveletek">1e halmazműveleteinél</a> találod.)</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda — kizáró nem ugyanaz, mint ellentett</p>
+      <p>Az „1-est dobunk” és a „6-ost dobunk” esemény kizárja egymást, de nem ellentettek: ha 3-ast dobunk, egyik sem következik be. Az ellentett párnak a kizáráson túl <b>ki is kell töltenie</b> az eseményteret. Egy másik gyakori hiba a köznapi „vagy”: a matematikában a „vagy” megengedő, az <span class="math inline">\(A\cup B\)</span> akkor is bekövetkezik, ha mindkét esemény bekövetkezik.</p>
+    </div>
+
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ <span class=&quot;math inline&quot;>\(A=\{2;4;6\}\)</span> és <span class=&quot;math inline&quot;>\(B=\{1;3\}\)</span> közös eleme nincs, tehát kizárók. Az 5-ös dobásnál viszont egyik sem következik be, így nem ellentettek." data-nem="✘ A két halmaznak nincs közös eleme — kizárók. Ellentettek akkor lennének, ha együtt kiadnák az egész eseményteret, de az 5 kimarad.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Kockadobásnál <span class="math inline">\(A\)</span> = „páros számot dobunk”, <span class="math inline">\(B\)</span> = „1-est vagy 3-ast dobunk”. Mi igaz?</p>
+      <div class="opciok"><button>kizárják egymást, de nem ellentettek</button><button>ellentett események</button><button>nem zárják ki egymást</button><button>ugyanaz a két esemény</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Szövegből jelölés — és vissza</h2>
+
+    <p class="lead">Három kadét — Ádám, Bea és Csaba — érettségizik. Jelölje <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> és <span class="math inline">\(C\)</span> azt az eseményt, hogy Ádám, Bea, illetve Csaba átmegy. A szöveges állításokat a műveletekkel írhatjuk le:</p>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th>állítás</th><th>jelölés</th></tr><tr><td>mindhárman átmennek</td><td><span class="math inline">\(A\cap B\cap C\)</span></td></tr><tr><td>egyikük sem megy át</td><td><span class="math inline">\(\overline{A}\cap\overline{B}\cap\overline{C}\)</span></td></tr><tr><td>legalább egyikük átmegy</td><td><span class="math inline">\(A\cup B\cup C\)</span></td></tr><tr><td>pontosan egyikük megy át</td><td><span class="math inline">\((A\cap\overline{B}\cap\overline{C})\cup(\overline{A}\cap B\cap\overline{C})\cup(\overline{A}\cap\overline{B}\cap C)\)</span></td></tr><tr><td>legfeljebb ketten mennek át</td><td><span class="math inline">\(\overline{A\cap B\cap C}\)</span></td></tr></table></div>
+
+    <div class="doboz pelda" id="pelda-harom-kadet">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — visszafelé</p>
+      <p>Mit jelent <span class="math inline">\(A\cap\overline{B}\)</span>? Ádám átmegy, Bea nem — Csabáról nem állít semmit.</p><p>És <span class="math inline">\(\overline{A\cup B\cup C}\)</span>? „Nem igaz, hogy legalább egyikük átmegy” — vagyis egyikük sem. Ez ugyanaz, mint <span class="math inline">\(\overline{A}\cap\overline{B}\cap\overline{C}\)</span>: a De Morgan-azonosság három eseményre.</p>
+    </div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-valoszinuseg.html#alap-1">🐶 Véd-eb nyomravezető <span class="cimke">alap 1–3</span></a><a class="sav bruno" href="feladatok-valoszinuseg.html#kozep-1">⚔️ Maximális erőbedobás <span class="cimke">közép 1–2</span></a></div></div></div>
+
+    <div class="brief" data-outro><p>📡 <b>Mr. Szürreál:</b> Szép definíciók. A bizottság azonban számot kér: <i>mekkora</i> az esély? <b>Véd Vilmos:</b> Számot? Azt tudok. Hozom a pénzérméimet.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">Valószínűség és statisztika — áttekintés</span></a>
+      <a class="kov" href="tananyag-valoszinuseg-fogalma.html"><span class="irany">Következő →</span><span class="hova">A valószínűség fogalma</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>

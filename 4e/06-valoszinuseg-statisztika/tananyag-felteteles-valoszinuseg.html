@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="hu" data-root="../..">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ha már tudjuk… — feltételes valószínűség és függetlenség — tananyag | 4e | Szvetkó matek</title>
+<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/css/theme.css">
+<link rel="stylesheet" href="../../assets/css/print.css">
+<link rel="stylesheet" href="../../assets/katex/katex.min.css">
+</head>
+<body data-tagozat="4e" data-hatter="altalanos">
+<div id="progress"></div>
+<header class="fejlec">
+  <div class="fejlec-bel">
+    <a class="logo" href="../../index.html"><span class="jel">√</span><span class="nev">Szvetkó <b>matek</b></span></a>
+    <span class="ter"></span>
+    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
+  </div>
+</header>
+<nav class="morzsa">
+  <a href="../../index.html">Főhadiszállás</a> ›
+  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
+  <a href="index.html">Valószínűség és statisztika</a> ›
+  <span class="itt">Ha már tudjuk… — feltételes valószínűség és függetlenség — tananyag</span>
+</nav>
+<div class="hero">
+  <h1>Ha már tudjuk… — feltételes valószínűség és függetlenség</h1>
+  <p class="alcim">Kétdimenziós táblázat, leszűkített eseménytér, független események és a „legalább egy”.</p>
+  <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Túlélés Esélyei · 3/7</span></div>
+</div>
+<main class="lap toc-os">
+  <div class="tartalom">
+    <h2 id="s0">📡 Küldetés-eligazítás</h2>
+
+    <div class="brief"><p>📡 <b>Mr. Szürreál:</b> A Titanic 1309 utasából 500 élte túl a katasztrófát — alig több mint minden harmadik. A kadétok esélye sem jobb. <b>Véd Vilmos:</b> Tisztelt bizottság, a mentőcsónakokba a „nők és gyermekek először” szabály szerint szálltak be. Ha tudjuk, hogy az utas nő volt, egészen más a kép! <b>Nagol:</b> A védőnek most igaza van. A többletinformáció megváltoztatja a valószínűséget — ezt nevezzük feltételes valószínűségnek.</p></div>
+
+    <h2 id="s1">Kétdimenziós táblázat</h2>
+
+    <p class="lead">A Titanic 1309 utasát két ismérv szerint rendezzük táblázatba: nem és túlélés. Egy véletlenül kiválasztott utas bármelyik utas lehet egyforma eséllyel, ezért a táblázatból klasszikus valószínűségeket olvashatunk ki.</p>
+
+    <div class="tblwrap"><table class="tt-table"><tr><th></th><th>túlélt</th><th>nem élte túl</th><th>összesen</th></tr><tr><td><b>nő</b></td><td>339</td><td>127</td><td>466</td></tr><tr><td><b>férfi</b></td><td>161</td><td>682</td><td>843</td></tr><tr><td><b>összesen</b></td><td>500</td><td>809</td><td>1 309</td></tr></table></div>
+
+    <p class="cap">Forrás: <a href="https://hbiostat.org/data/">Vanderbilt University, Department of Biostatistics: titanic3 (F. E. Harrell)</a></p>
+
+    <p><span class="math inline">\(P(\text{túlélt})=\frac{500}{1309}\approx0{,}382\)</span> · <span class="math inline">\(P(\text{nő})=\frac{466}{1309}\approx0{,}356\)</span> · <span class="math inline">\(P(\text{nő és túlélt})=\frac{339}{1309}\approx0{,}259\)</span>.</p>
+
+    <div class="svgcard">
+    <svg viewBox="0 0 460 250" width="460" height="250" role="img" aria-label="Mozaikábra: a Titanic utasai nem és túlélés szerint. A nők oszlopa keskenyebb, de nagyobb része zöld (túlélt), a férfiaké szélesebb, kisebb zöld résszel." xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+      <rect x="16.0" y="26" width="149.5" height="133.9" fill="#047857" fill-opacity=".8"/>
+      <rect x="16.0" y="159.9" width="149.5" height="50.1" fill="#94a3b8" fill-opacity=".55"/>
+      <text x="90.8" y="96.9" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">túlélt: 339 (72,7%)</text>
+      <text x="90.8" y="188.9" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="600">nem élte túl: 127 (27,3%)</text>
+      <text x="90.8" y="226.0" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">nők (466 fő)</text>
+      <rect x="173.5" y="26" width="270.5" height="35.1" fill="#047857" fill-opacity=".8"/>
+      <rect x="173.5" y="61.1" width="270.5" height="148.9" fill="#94a3b8" fill-opacity=".55"/>
+      <text x="308.8" y="47.6" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="600">túlélt: 161 (19,1%)</text>
+      <text x="308.8" y="139.6" font-size="11" fill="#0f172a" text-anchor="middle" font-weight="600">nem élte túl: 682 (80,9%)</text>
+      <text x="308.8" y="226.0" font-size="11.5" fill="#0f172a" text-anchor="middle" font-weight="600">férfiak (843 fő)</text>
+      <text x="230.0" y="15.0" font-size="10" fill="#475569" text-anchor="middle" font-style="italic">az oszlop szélessége ~ a csoport mérete, a sáv magassága ~ az arány a csoporton belül</text>
+    </svg>
+    </div>
+    <p class="cap">Ugyanez mozaikábrán: az oszlop szélessége a csoport létszámával, a zöld sáv magassága a túlélők arányával arányos.</p>
+
+    <h2 id="s2">Leszűkített eseménytér</h2>
+
+    <p class="lead">Ha tudjuk, hogy a kiválasztott utas nő, akkor már csak a táblázat „nő” sora számít: az eseménytér 466 utasra szűkül. Közülük 339 élte túl: <span class="math inline">\(\frac{339}{466}\approx0{,}727\)</span> — majdnem kétszer annyi, mint a feltétel nélküli <span class="math inline">\(0{,}382\)</span>.</p>
+
+    <div class="doboz definicio" id="def-felteteles">
+      <p class="cim"><span class="ikon">📗</span> Feltételes valószínűség</p>
+      <p>Az <span class="math inline">\(A\)</span> esemény <span class="math inline">\(B\)</span> feltétel melletti valószínűsége (ahol <span class="math inline">\(P(B)>0\)</span>) <span class="math display">\[P(A\mid B)=\frac{P(A\cap B)}{P(B)}.\]</span> Olvasd: „<span class="math inline">\(A\)</span> valószínűsége, feltéve, hogy <span class="math inline">\(B\)</span> bekövetkezett”. Egyformán valószínű kimeneteleknél ez egyszerűen <span class="math inline">\(\frac{k_{A\cap B}}{k_B}\)</span>: a <span class="math inline">\(B\)</span>-hez tartozó kimenetelek közül hány tartozik <span class="math inline">\(A\)</span>-hoz is.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-titanic">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — nők és férfiak</p>
+      <p><span class="math display">\[P(\text{túlélt}\mid\text{nő})=\frac{339}{466}\approx0{,}727,\qquad P(\text{túlélt}\mid\text{férfi})=\frac{161}{843}\approx0{,}191.\]</span> A képlettel ugyanez jön ki: <span class="math inline">\(P(\text{túlélt}\mid\text{nő})=\dfrac{339/1309}{466/1309}=\dfrac{339}{466}\)</span>.</p><p>Egy kockadobás: ha tudjuk, hogy legalább 4-et dobtunk (<span class="math inline">\(\{4;\ 5;\ 6\}\)</span>), akkor a páros szám feltételes valószínűsége <span class="math inline">\(\frac23\)</span> (a 4 és a 6), noha feltétel nélkül csak <span class="math inline">\(\frac12\)</span>.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda — a felcserélt feltétel</p>
+      <p>Mr. Szürreál kedvenc trükkje: „a túlélők 67,8%-a nő volt”. Ez <span class="math inline">\(P(\text{nő}\mid\text{túlélt})=\frac{339}{500}=0{,}678\)</span> — a <b>túlélők</b> közül számol. A kérdés viszont az volt, hogy egy <b>nő</b> mekkora eséllyel élte túl: <span class="math inline">\(P(\text{túlélt}\mid\text{nő})\approx0{,}727\)</span>. A <span class="math inline">\(P(A\mid B)\)</span> és a <span class="math inline">\(P(B\mid A)\)</span> általában különbözik. Mindig nézd meg, melyik sor vagy oszlop a „tudjuk, hogy…” rész: az adja a nevezőt.</p>
+    </div>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A feltétel a „férfi” sor (843 utas); közülük 161 élte túl." data-nem="✘ A „tudjuk, hogy férfi” rész adja a nevezőt: a férfiak sora, 843 fő; közülük 161 élte túl. A <span class=&quot;math inline&quot;>\(\frac{161}{500}\)</span> a túlélők közti férfiarány, vagyis a fordított feltétel.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>A Titanic táblázata alapján melyik szám a <span class="math inline">\(P(\text{túlélt}\mid\text{férfi})\)</span>?</p>
+      <div class="opciok"><button><span class="math inline">\(\frac{161}{1309}\)</span></button><button><span class="math inline">\(\frac{682}{843}\)</span></button><button><span class="math inline">\(\frac{161}{843}\)</span></button><button><span class="math inline">\(\frac{161}{500}\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s3">Független események</h2>
+
+    <p class="lead">Két esemény akkor független, ha az egyik bekövetkezése semmit nem árul el a másikról.</p>
+
+    <div class="doboz definicio" id="def-fuggetlen">
+      <p class="cim"><span class="ikon">📗</span> Független események</p>
+      <p>Az <span class="math inline">\(A\)</span> és a <span class="math inline">\(B\)</span> esemény (ahol <span class="math inline">\(P(B)>0\)</span>) <b>független</b>, ha <span class="math inline">\(P(A\mid B)=P(A)\)</span>: a feltétel nem változtat a valószínűségen.</p>
+    </div>
+
+    <div class="doboz tetel" id="tetel-szorzas-fuggetlen">
+      <p class="cim"><span class="ikon">📘</span> Független események szorzata</p>
+      <p>Két esemény pontosan akkor független, ha <span class="math display">\[P(A\cap B)=P(A)\cdot P(B).\]</span> (A definícióból: <span class="math inline">\(P(A\cap B)=P(A\mid B)\cdot P(B)\)</span>, és függetlenségnél <span class="math inline">\(P(A\mid B)=P(A)\)</span>.)</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-szamitogep">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — független-e?</p>
+      <p>Két kocka: „az első hatos” és „a második hatos” független (a kockák nem hatnak egymásra), így <span class="math inline">\(P=\frac16\cdot\frac16=\frac1{36}\)</span> — egyezik a 36 cella egyikével.</p><p>Egy kockadobásnál <span class="math inline">\(A\)</span> = „páros” és <span class="math inline">\(B\)</span> = „legfeljebb 2”: <span class="math inline">\(P(A\cap B)=P(\{2\})=\frac16\)</span>, és <span class="math inline">\(P(A)\cdot P(B)=\frac12\cdot\frac13=\frac16\)</span>. Függetlenek — pedig ugyanazon a dobáson múlnak!</p><p>Valós adat: a számítógépes ismeret Szerbiában, 2022-ben, a 15 éves és idősebb lakosok körében:</p><div class="tblwrap"><table class="tt-table"><tr><th>2022, 15 éves és idősebb</th><th>összesen</th><th>ismeri a számítógépet</th><th>arány</th></tr><tr><td>nő</td><td>2 951 812</td><td>1 374 578</td><td><span class="math inline">\(0{,}466\)</span></td></tr><tr><td>férfi</td><td>2 739 739</td><td>1 227 972</td><td><span class="math inline">\(0{,}448\)</span></td></tr><tr><td>összesen</td><td>5 691 551</td><td>2 602 550</td><td><span class="math inline">\(0{,}457\)</span></td></tr></table></div><p class="cap">Forrás: <a href="https://popis2022.stat.gov.rs/sr-latn/popisni-podaci-eksel-tabele/">Republički zavod za statistiku (RZS): Popis stanovništva, domaćinstava i stanova 2022, Excel-táblák</a></p><p><span class="math inline">\(P(\text{ismeri})\approx0{,}457\)</span>, <span class="math inline">\(P(\text{ismeri}\mid\text{nő})\approx0{,}466\)</span>, <span class="math inline">\(P(\text{ismeri}\mid\text{férfi})\approx0{,}448\)</span>. A feltétel alig változtat: a számítógépes ismeret és a nem közel független (a különbség kb. 2 százalékpont). A Titanicon a túlélés és a nem erősen függött: <span class="math inline">\(0{,}727\)</span> és <span class="math inline">\(0{,}191\)</span> a <span class="math inline">\(0{,}382\)</span> helyett. Valós adatoknál a pontos egyenlőség szinte sosem teljesül — az a kérdés, mekkora az eltérés.</p>
+    </div>
+
+    <div class="doboz csapda">
+      <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda — kizáró nem ugyanaz, mint független</p>
+      <p>Vilmos szerint az „1-est dobunk” és a „6-ost dobunk” független, „hiszen semmi közük egymáshoz”. Épp ellenkezőleg: kizárják egymást, tehát ha tudjuk, hogy 1-es jött, a 6-os <b>lehetetlen</b>. <span class="math inline">\(P(A\cap B)=0\)</span>, de <span class="math inline">\(P(A)\cdot P(B)=\frac1{36}\)</span>. Két pozitív valószínűségű, kizáró esemény mindig függő.</p>
+    </div>
+
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Kizáró eseményeknél <span class=&quot;math inline&quot;>\(P(A\cap B)=0\)</span>, a függetlenséghez viszont <span class=&quot;math inline&quot;>\(0{,}3\cdot0{,}4=0{,}12\)</span> kellene." data-nem="✘ Ha kizárják egymást, <span class=&quot;math inline&quot;>\(P(A\cap B)=0\)</span>; ha függetlenek volnának, <span class=&quot;math inline&quot;>\(P(A)\cdot P(B)=0{,}12\)</span> lenne. Ez nem teljesül, tehát függők.">
+      <p class="kviz-cim">🎯 Gyors kérdés</p>
+      <p>Az <span class="math inline">\(A\)</span> és a <span class="math inline">\(B\)</span> esemény kizárja egymást, <span class="math inline">\(P(A)=0{,}3\)</span> és <span class="math inline">\(P(B)=0{,}4\)</span>. Függetlenek?</p>
+      <div class="opciok"><button>Igen, mert <span class="math inline">\(0{,}3+0{,}4<1\)</span>.</button><button>A megadott adatokból nem dönthető el.</button><button>Nem, mert <span class="math inline">\(P(A\cap B)=0\ne0{,}12\)</span>.</button><button>Igen, mert kizárják egymást.</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+
+    <h2 id="s4">Legalább egy — független kísérletekből</h2>
+
+    <p class="lead">A „legalább egy” esemény sokféleképpen jöhet létre, az ellentettje viszont egyetlen eset: <i>egyik sem</i>. Független eseményeknél ez szorzással számolható.</p>
+
+    <div class="doboz tetel" id="tetel-legalabb-egy">
+      <p class="cim"><span class="ikon">📘</span> Legalább egy</p>
+      <p><span class="math display">\[P(\text{legalább egy bekövetkezik})=1-P(\text{egyik sem következik be}).\]</span> Ha <span class="math inline">\(A_1,\ldots,A_n\)</span> függetlenek, akkor <span class="math inline">\(P(\text{egyik sem})=\bigl(1-P(A_1)\bigr)\cdot\ldots\cdot\bigl(1-P(A_n)\bigr)\)</span>.</p>
+    </div>
+
+    <div class="doboz pelda" id="pelda-riaszto">
+      <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — három riasztó</p>
+      <p>Az I.V.H.-archívumot három, egymástól függetlenül működő riasztó védi; behatoláskor <span class="math inline">\(0{,}9\)</span>, <span class="math inline">\(0{,}8\)</span>, illetve <span class="math inline">\(0{,}7\)</span> valószínűséggel jeleznek. Mekkora a valószínűsége, hogy legalább egy jelez? <span class="math display">\[1-0{,}1\cdot0{,}2\cdot0{,}3=1-0{,}006=0{,}994.\]</span></p>
+    </div>
+
+    <div class="doboz erdekesseg">
+      <p class="cim"><span class="ikon">💡</span> De Méré lovag két fogadása</p>
+      <p>De Méré lovag azt tapasztalta, hogy megéri fogadni arra, hogy egy kockával négy dobásból legalább egy hatos lesz: <span class="math inline">\(1-\left(\frac56\right)^4\approx0{,}518\)</span>. Arra viszont már nem, hogy két kockával 24 dobásból legalább egyszer dupla hatos jön: <span class="math inline">\(1-\left(\frac{35}{36}\right)^{24}\approx0{,}491\)</span>. A furcsaság Pascalt és Fermat-t is foglalkoztatta — és a „legalább egy” képlete adja a választ.</p>
+    </div>
+
+    <p class="lead">⚔️ <b>Az ötösért:</b> feltételes valószínűség kétdimenziós táblázatból — és döntés — <a href="feladatok-valoszinuseg.html#nehez-1">Zsoldos-lista, nehéz 1</a>.</p>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-valoszinuseg.html#alap-7">🐶 Véd-eb nyomravezető <span class="cimke">alap 7–8</span></a><a class="sav bruno" href="feladatok-valoszinuseg.html#kozep-5">⚔️ Maximális erőbedobás <span class="cimke">közép 5–6</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/ved_vilmos.webp" alt="Véd Vilmos — a negyedik falat áttörő zsoldos" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Véd Vilmos:</b> Megvan a kiút! Ha egy kísérlet független, újra és újra megismételhetem — mint egy büntetődobást. <b>Nagol:</b> Akkor jöhet a binomiális valószínűség. <b>Mr. Szürreál:</b> Ismétlés. Az I.V.H. kedvenc szava.</p></div>
+    <div class="lapozo">
+      <a class="elozo" href="tananyag-valoszinuseg-fogalma.html"><span class="irany">← Előző</span><span class="hova">A valószínűség fogalma</span></a>
+      <a class="kov" href="tananyag-binomialis-valoszinuseg.html"><span class="irany">Következő →</span><span class="hova">Binomiális valószínűség</span></a>
+    </div>
+  </div>
+  <nav class="toc" id="toc" aria-label="Tartalomjegyzék"></nav>
+</main>
+<footer class="lablec">
+  <div class="lablec-bel">
+    <span><b>Szvetkó matek</b> · Nagygyörgy Kristóf — Svetozar Marković Gimnázium, Szabadka</span>
+    <span>Legyél szvetkós!</span>
+  </div>
+</footer>
+<script src="../../assets/katex/katex.min.js"></script>
+<script src="../../assets/katex/auto-render.min.js"></script>
+<script>
+  renderMathInElement(document.body, {delimiters:[
+    {left:'\\(', right:'\\)', display:false},
+    {left:'\\[', right:'\\]', display:true}
+  ]});
+</script>
+<script src="../../assets/js/ui.js"></script>
+<script src="../../assets/js/quiz.js"></script>
+</body>
+</html>
