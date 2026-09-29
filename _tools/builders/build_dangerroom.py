@@ -95,10 +95,9 @@ A01_UJ = [
   ["Ha egy implikáció igaz, akkor a megfordítása is igaz.",
    "Két halmaz metszete mindig részhalmaza az uniójuknak.",
    "Ha $A\\subseteq B$ és $B\\subseteq A$, akkor $A=B$."],
-  ["Hamis. Például „ha esik, akkor vizes az út” igaz lehet, de a megfordítása nem — "
-   "az út mástól is lehet vizes.",
-   "Igaz. A metszet minden eleme mindkét halmazban benne van, tehát az unióban is.",
-   "Igaz — pontosan ez a halmazok egyenlőségének a definíciója."]),
+  ['Hamis.',
+   'Igaz.',
+   'Igaz.']),
 ]
 K01_UJ = [
  ("Egy függvény néhány helyettesítési értéke:"
@@ -109,11 +108,9 @@ K01_UJ = [
    "Ha igen, add meg a hozzárendelési szabályt.",
    "Írj olyan négyelemű táblázatot, amelyik <b>biztosan nem</b> lehet lineáris függvényé, "
    "és indokold, miért nem."],
-  ["Lehet: az $x$ egyesével nő, és az $f(x)$ mindig ugyanannyival, $3$-mal — állandó "
-   "növekedés, ez a lineáris függvény ismertetőjegye.",
+  ['Lehet.',
    "$f(x)=3x+2$.",
-   "Például $1,2,3,4\\mapsto 1,4,9,16$: itt a különbségek $3,5,7$ — nem állandók, "
-   "tehát a hozzárendelés nem lineáris."]),
+   'Például $1,2,3,4\\mapsto 1,4,9,16$.']),
 ]
 
 # --- 02 Trigonometria ---
@@ -131,10 +128,9 @@ K02_UJ = [
   ["Milyen oldalhosszakkal rajzolhatsz ilyen háromszöget? Add meg mindhárom oldalt!",
    "Olvasd le a rajzodról $\\sin\\alpha$-t és $\\cos\\alpha$-t <b>pontosan</b>.",
    "Változna-e a három szögfüggvény értéke, ha minden oldalt megkétszereznél? Indokold!"],
-  ["Például $a=5$, $b=12$, és ekkor $c=\\sqrt{25+144}=13$.",
+  ['Például $a=5$, $b=12$, $c=13$.',
    "$\\sin\\alpha=\\tfrac{5}{13}$, $\\cos\\alpha=\\tfrac{12}{13}$.",
-   "Nem változna: a szögfüggvények <b>arányok</b>, a hasonló háromszögekben pedig az "
-   "oldalak aránya ugyanaz."]),
+   'Nem változna.']),
 ]
 
 # --- 03 Egész és valós számok ---
@@ -144,11 +140,10 @@ A03_UJ = [
    "Minden végtelen tizedes tört irracionális.",
    "Két irracionális szám összege mindig irracionális.",
    "$\\sqrt{9}$ irracionális."],
-  ["Hamis: $\\tfrac13=0{,}333\\ldots$ végtelen.",
-   "Hamis: $0{,}333\\ldots=\\tfrac13$ végtelen, mégis racionális — a szakaszos "
-   "végtelen tizedes törtek racionálisak.",
+  ['Hamis: $\\tfrac13=0{,}333\\ldots$.',
+   'Hamis: $0{,}333\\ldots=\\tfrac13$.',
    "Hamis: $\\sqrt2+(-\\sqrt2)=0$.",
-   "Hamis: $\\sqrt9=3$, ami egész szám."]),
+   'Hamis: $\\sqrt9=3$.']),
 ]
 K03_UJ = [
  ("Egy mérőműszer $3{,}47$-et mutat, és a leírás szerint a mérés hibája legfeljebb $0{,}02$.",
@@ -157,9 +152,8 @@ K03_UJ = [
    "A műszer leolvasását $3{,}5$-re kerekítjük. Mekkora lesz így a legnagyobb lehetséges eltérés "
    "a valódi értéktől?"],
   ["$[3{,}45;\\ 3{,}49]$.",
-   "$3{,}4$-nél biztosan nagyobb, mert a legkisebb lehetséges érték $3{,}45$. "
-   "$3{,}46$-nál viszont nem biztos: a valódi érték lehet $3{,}45$ is.",
-   "A legtávolabbi lehetséges valódi érték $3{,}45$, tehát az eltérés legfeljebb $0{,}05$."]),
+   '$3{,}4$-nél igen; $3{,}46$-nál nem biztosan.',
+   '$0{,}05$.']),
 ]
 
 # --- 04 Arányosság ---
@@ -170,10 +164,10 @@ A04_UJ = [
    "Miért nem esik egybe a két $20\\%$? Fogalmazd meg egy mondatban!",
    "Hány százalékkal kellene márciusban csökkenteni, hogy pontosan az eredeti árat kapjuk vissza? "
    "(Kerekíts egy tizedesre.)"],
-  ["Nem: $2000\\to 2400\\to 1920$ dinár, tehát $80$ dinárral olcsóbb lett.",
+  ['Nem: az új ár $1920$ dinár, $80$ dinárral kevesebb.',
    "Mert a két százalékot <b>különböző alapra</b> számoljuk: az emelést az eredeti árra, "
    "a csökkentést a már megemelt árra.",
-   "$2400\\cdot x=2000$, ahonnan a szorzó $0{,}8\\overline{3}$, tehát kb. $16{,}7\\%$-kal."]),
+   'Kb. $16{,}7\\%$-kal.']),
 ]
 K04_UJ = [
  ("Két táblázat, két különböző kapcsolat:"
@@ -184,8 +178,7 @@ K04_UJ = [
   ["Melyik sor mutat egyenes, és melyik fordított arányosságot? Mi árulja el?",
    "Írd fel mindkettőhöz a szabályt képlettel.",
    "Mennyi lenne $A$ és $B$ értéke $x=3$-nál?"],
-  ["Az $A$ egyenes arányosság: az $A/x$ hányados végig $2{,}5$. A $B$ fordított: "
-   "az $x\\cdot B$ szorzat végig $60$.",
+  ['$A$ egyenes arányosság ($A/x=2{,}5$); $B$ fordított arányosság ($xB=60$).',
    "$A=2{,}5x$, illetve $B=\\dfrac{60}{x}$.",
    "$A=7{,}5$ és $B=20$."]),
 ]
@@ -197,10 +190,10 @@ A05_UJ = [
    "Minden négyzet rombusz.",
    "Ha egy háromszögnek két szöge egyenlő, akkor egyenlő szárú.",
    "Van olyan háromszög, amelynek két tompaszöge van."],
-  ["Hamis: a deltoid átlói is merőlegesek, mégsem rombusz.",
-   "Igaz: a négyzet minden oldala egyenlő, ez pedig a rombusz definíciója.",
-   "Igaz — ez az egyenlő szárú háromszög alaptételének a megfordítása.",
-   "Hamis: két tompaszög összege már meghaladná a $180^\\circ$-ot."]),
+  ['Hamis: például a deltoid.',
+   'Igaz.',
+   'Igaz.',
+   'Hamis.']),
 ]
 
 # --- 06 Racionális algebrai kifejezések ---
@@ -210,10 +203,9 @@ A06_UJ = [
   ["$(a+b)^2=a^2+b^2$",
    "$\\dfrac{a+b}{a}=b$",
    "$\\dfrac{x^2-4}{x-2}=x-2$"],
-  ["Hiányzik a kétszeres szorzat: $(a+b)^2=a^2+2ab+b^2$. Az $a=b=1$ eset azonnal cáfol: "
-   "$4\\neq 2$.",
-   "Összegből nem lehet „kiegyszerűsíteni” egy tagot: $\\dfrac{a+b}{a}=1+\\dfrac{b}{a}$.",
-   "A számláló $ (x-2)(x+2)$, ezért az eredmény $x+2$ — és ki kell kötni, hogy $x\\neq 2$."]),
+  ['A kétszeres szorzat hiányzik: $(a+b)^2=a^2+2ab+b^2$.',
+   'Tagot egyszerűsített tényező helyett; $\\dfrac{a+b}{a}=1+\\dfrac{b}{a}$.',
+   '$x+2$; ÉT: $x\\ne2$.']),
 ]
 K06_UJ = [
  ("Adott a $\\dfrac{x^2-9}{x^2-5x+6}$ kifejezés.",
@@ -221,10 +213,9 @@ K06_UJ = [
    "Egyszerűsítsd a kifejezést!",
    "Az egyszerűsítés után a $x=3$ behelyettesíthetőnek <b>látszik</b>. Behelyettesíthető-e "
    "valójában? Indokold!"],
-  ["A nevező $x^2-5x+6=(x-2)(x-3)$, tehát $x\\neq 2$ és $x\\neq 3$ — nullával nem osztunk.",
-   "$\\dfrac{(x-3)(x+3)}{(x-2)(x-3)}=\\dfrac{x+3}{x-2}$.",
-   "Nem. Az értelmezési tartományt az <b>eredeti</b> kifejezés szabja meg, és azt az "
-   "egyszerűsítés nem bővíti ki. $x=3$-nál az eredeti kifejezésnek nincs értéke."]),
+  ['$x\\ne2$ és $x\\ne3$.',
+   '$\\dfrac{x+3}{x-2}$.',
+   'Nem; $x=3$-nál az eredeti kifejezés nem értelmezett.']),
 ]
 
 # --- 07 Lineáris egyenletek, egyenlőtlenségek, rendszerek ---
@@ -234,12 +225,9 @@ A07_UJ = [
   ["Hol a hiba a gondolatmenetben?",
    "Oldd meg helyesen az egyenletet!",
    "Milyen szabályt érdemes megjegyezni ebből?"],
-  ["Ismeretlennel osztott, holott az $x$ lehet $0$ is — nullával pedig nem szabad osztani. "
-   "Ezzel épp az egyetlen megoldást veszítette el.",
-   "$3x=6x \\Rightarrow 3x-6x=0 \\Rightarrow -3x=0 \\Rightarrow x=0$.",
-   "Egyenletet ismeretlent tartalmazó kifejezéssel osztani csak akkor szabad, ha külön "
-   "megvizsgáljuk azt az esetet is, amikor az a kifejezés nulla. Rendezés és szorzattá "
-   "alakítás helyette mindig biztonságos."]),
+  ['$x$-szel osztott, pedig $x=0$ is lehet.',
+   '$x=0$.',
+   'Ismeretlennel osztás előtt külön kell vizsgálni a nulla esetét.']),
 ]
 K07_UJ = [
  ("Egy egyenletrendszer két egyenlete egy-egy egyenest ad a koordináta-rendszerben. "
@@ -247,9 +235,9 @@ K07_UJ = [
   ["Az első meredeksége $2$, a másodiké $-1$. Hány megoldása van a rendszernek? Miért?",
    "Mindkettő meredeksége $2$, de a tengelymetszetük különböző. Hány megoldás van?",
    "Mindkettő meredeksége $2$, és a tengelymetszetük is ugyanaz. Hány megoldás van?"],
-  ["Pontosan egy: különböző meredekségű egyenesek egyetlen pontban metszik egymást.",
-   "Egy sem: párhuzamosak, de nem esnek egybe — nincs közös pontjuk.",
-   "Végtelen sok: a két egyenes egybeesik, minden pontja közös megoldás."]),
+  ['Pontosan egy.',
+   'Egy sem.',
+   'Végtelen sok.']),
 ]
 
 
@@ -675,7 +663,7 @@ N07 = [
  ("Egy medencét az egyik csap egyedül $6$ óra, a másik egyedül $12$ óra alatt tölt meg. Mennyi idő alatt telik meg együtt?",
   None, "$4$ óra."),
  ("Milyen $k$ esetén van a rendszernek végtelen sok megoldása: $3x+y=5$, $6x+2y=k$?",
-  None, "$k=10$ (ekkor a két egyenlet egybeesik); ha $k\\neq 10$, nincs megoldás."),
+  None, "$k=10$."),
 ]
 brief07 = ("🕹️ <b>SZVETI:</b> <b>Vészterem</b>-szimuláció, A Végső Egyenlet modul. Ez a <b>Vészterem</b> otthoni "
  "edzésváltozata — itt gyakorolsz a saját tempódban. A szimuláció a <b>teljes témakört</b> lefedi: lineáris "

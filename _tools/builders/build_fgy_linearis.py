@@ -125,8 +125,8 @@ KOZEP = [
    'Add meg a metszéspontjukat számolással.',
    'Az $y=2x+1$ egyenes hány pontban metszi az elsőt? Miért? Ehhez nem kell számolnod.'],
   ['Az első meredeksége $2$, tengelymetszete $-3$; a másodiké $-1$, illetve $3$.',
-   '$2x-3=-x+3$, innen $x=2$ és $y=1$, tehát a metszéspont $(2;1)$.',
-   'Egyetlen pontban sem: a meredekségük egyenlő ($2$), a tengelymetszetük viszont különböző, tehát párhuzamosak és nem esnek egybe.']),
+   '$(2;1)$.',
+   'Egyetlen pontban sem; párhuzamosak.']),
 ]
 
 # ======================== NEHÉZ (mechanikus 4 + szöveges 14-17) ========================
@@ -134,7 +134,7 @@ NEHEZ = [
  ("Oldd meg a rendszert az $a$ valós paraméter függvényében: $2x+3y=1$, $-2x+ay=0$.",
   None, "ha $a\\neq -3$: $x=\\dfrac{a}{2(a+3)},\\ y=\\dfrac{1}{a+3}$; ha $a=-3$: nincs megoldás."),
  ("Oldd meg (figyelj az értelmezési tartományra): $1+\\dfrac{5}{(v-3)(v+2)}=-\\dfrac{1}{v+2}$.",
-  None, "$v=2$ (a $v=-2$ az ÉT miatt kizárva)."),
+  None, '$v=2$.'),
  ("Oldd meg kiemeléssel: $x^2-5x=0$.",
   None, "$x=0$ vagy $x=5$."),
  ("Oldd meg az egyenlőtlenséget: $\\dfrac{2x-1}{3}-\\dfrac{x+2}{2}\\le 1$.",
@@ -150,8 +150,7 @@ NEHEZ = [
 
 JOKER = ("<b>Kán csapdája.</b> Kán a következő egyenletet írta a táblára, és azt állítja, hogy a megoldása "
   "$x=2$: $2x+5=2x+1$. Igaza van-e? Ha nem, mi a helyes válasz, és miért?",
-  "Nincs igaza. Az $2x$ mindkét oldalról kiesik, és $5=1$ marad, ami hamis — az egyenletnek "
-  "<b>nincs megoldása</b> (nincs olyan $x$, amely kielégítené).")
+  'Nincs igaza: az egyenletnek nincs megoldása.')
 
 # ======================== GYAKORLÓ DOLGOZAT (🏫 órai + 🏠 otthoni) ========================
 # Verifikáció:

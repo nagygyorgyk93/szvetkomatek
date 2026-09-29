@@ -61,6 +61,8 @@ for p, k in tenyezok(52800).items():
     if k % 2:
         paratlan_kitevo *= p
 
+assert alapbol('210', 3) > alapbol('23', 4)  # A kiírt sorrend független ellenőrzése
+
 # ── nehez-3: (3n+10)/(n+1) egész ──────────────────────────────────────
 N3 = sorted(n for n in range(-100, 101) if n != -1 and (3 * n + 10) % (n + 1) == 0)
 
@@ -91,10 +93,10 @@ TESZT = {
     'alap-6': [('', alapba(1234, 8)), ('', alapba(77, 3)),
                ('', alapba(44, 2)), ('', alapba(543, 8))],
     'kozep-1': [('', lkt(160, 200)), ('', gcd(160, 200))],
-    'kozep-3': [('', paratlan_kitevo)],
+    'kozep-3': [('a', paratlan_kitevo)],
     'kozep-4': [('', alapbol('A2A', 16)), ('', alapbol('351', 6)),
                 ('', alapba(399, 16)), ('', alapba(100, 2))],
-    'kozep-5': [('', len(alapba(100, 2))), ('', alapbol('210', 3))],
+    'kozep-5': [('a', len(alapba(100, 2))), ('b', '210_3>23_4')],
     'kozep-6': [('', K6)],
     'kozep-9': [('', float(delta9))],
     'nehez-3': [('', min(N3)), ('', max(N3))],

@@ -88,7 +88,11 @@ Havi GitHub Action, amely `media.py --online`-t futtat, és hiba esetén issue-t
 | 1e/02 trigonometria: Közép 4 és Nehéz 2 szögtartománya | ◐ A tanár hegyesszögű értelmezést rögzített; a két feladat helyi ágon pontosítva, a kulcs egyezik | Publikálás tanári jóváhagyás után |
 | 1e/02 Alap 11 dupla részfeladatjel; 1e/06 Bővítés címe | ◐ Helyi ágon javítva; kánonellenőrzés 310/0 | Publikálás tanári jóváhagyás után |
 | 1e/02 Alap 10: `\sin 90^\circ` nem hegyesszög | ◐ Helyi ágon hegyesszögű példával javítva; privát felmérő-ütközés ellenőrizve | Publikálás tanári jóváhagyás után |
-| Végeredménydobozok tartalmi tisztítása | ☐ | A2 külön, tanári sorrenddöntés után |
+| 1e/01 halmazok Közép 5 b) és logika Nehéz 3 c): hibás matematikai végeredmény | ◐ Az 1e A2 adagban javítva; független logikai ellenőrzés megtörtént | Publikálás tanári jóváhagyás után |
+| 1e/05 geometria Gyakorló dolgozat 6: elfajuló háromszög az állításban | ☐ | Tanári döntés az eredetileg szándékolt háromszögről és tételről |
+| 1e/01 halmazok Gyakorló órai 4 és 1e/05 Vészterem Alap 12: hamis egzisztenciális állításhoz „ellenpélda” kérése | ☐ | A feladatszöveg pedagógiai pontosítása |
+| 1e/02 trigonometria Nehéz 4–5: a szögfüggvények közül a kotangens hiányzik a Végeredményből | ☐ | Tanári döntés a teljes felsorolásról, majd privát felmérő-ütközés ellenőrzése |
+| Végeredménydobozok tartalmi tisztítása | ◐ 1e helyi ágon: 16 lapon 110 Végeredmény tisztítva; 2e–4e hátra | 1e adag ellenőrizve, publikálás tanári jóváhagyás után |
 
 ### A1 · Teljes ellenőrzés osztályonként
 **Cél:** a már kész anyag hibáinak felderítése és javítása — **tartalmi bővítés nélkül**.
@@ -114,11 +118,14 @@ osztályonként egy PR; utána `kulcs_teszt` + `kulcs_regresszio` (a levezetés 
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ☐ | ☐ | ☐ | ☐ |
+| ◐ 16 lap, 110 kártya (helyi ág, 2026-09-29) | ☐ | ☐ | ☐ |
 
 | 1e | 2e | 3e | 4e (01–04) |
 |---|---|---|---|
-| ☐ | ☐ | ☐ | ☐ |
+| ◐ 1e helyi ágon ellenőrizve | ☐ | ☐ | ☐ |
+
+**1e A2 kivételek:** bizonyítást vagy indoklást kérő kártyákban a rövid érvelés a válasz része maradt: `1e/01` függvények `nehez-2`, `nehez-7`; halmazok `nehez-2`, `nehez-4`; logika `nehez-6`, `nehez-7`; `1e/02` trigonometria `nehez-1`; `1e/03` számok `nehez-1`, `nehez-2`, `nehez-7`, Vészterem `nehez-1`; `1e/04` Vészterem `alap-5`; `1e/05` geometria `nehez-2`, `gye-6`, `joker`, Vészterem `nehez-3`. A hibás `gye-6` szövegének javítása külön tanári döntést igényel.
+
 
 ---
 
