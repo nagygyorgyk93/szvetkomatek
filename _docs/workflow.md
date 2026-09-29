@@ -1,4 +1,4 @@
-<!-- TÜKÖR — ne szerkeszd itt! Forrás (a tanár gépén): projektek/szvetkomatek/_WEBOLDAL_workflow.md · tükrözve: 2026-09-28 · _tools/docs_tukor.py -->
+<!-- TÜKÖR — ne szerkeszd itt! Forrás (a tanár gépén): projektek/szvetkomatek/_WEBOLDAL_workflow.md · tükrözve: 2026-09-29 · _tools/docs_tukor.py -->
 
 # GitHub Pages tananyag-oldal — komplett workflow (mind az 5 tagozat)
 
@@ -13,7 +13,7 @@ témakörönként rendszerezve, sűrű kereszthivatkozásokkal.
 
 > **Helyek (2026-09-27 óta):** a repó-klón `Claude\web\` (publikus); minden privát webes anyag a `Claude\projektek\szvetkomatek\` alatt (térkép: `OLVASSEL.md`) — a `_WEBOLDAL_*` fájlok, `tortenet\`, `web_forras\`, `tiltott\`, osztályonként `1e\`…`4e\` (F0, narratíva, F3-térkép, lektor, terepküldetés-kulcs). **Felmérő-adat a repóba nem kerülhet, a builderek forráskódjába sem:** a tiltott-listák a `projektek\szvetkomatek\tiltott\tiltott_<osztály>_<NN>.py` privát modulokban élnek, a builder a `_tools/builders/tiltott.py` betöltővel éri el őket (`tiltott.modul(…)`, `tiltott.lista(…)`); ha a mappa nem érhető el (felhős munkamenet), figyelmeztetéssel, ellenőrzés nélkül fut. **Minden weboldali szövegpélda** — a feladatokon túl az összefoglaló, az index, a brief is — a builderben típus + paraméter szerint átmegy a tiltott-ellenőrzésen (2026-09-28: a 4e/05 Csalópapír egy példája a felmérő egyik kifejezését használta; push előtt javítva).
 
-- **Egy közös repo** mind az 5 tagozatnak (1e, 2e, 3e, 4e, 4im), osztályonkénti almappákkal.
+- **Egy közös repo** mind a 4 tagozatnak (1e, 2e, 3e, 4e), osztályonkénti almappákkal.
 - **KaTeX a repóban** (nem CDN): nyomdai minőségű matek, offline klónban is működik.
 - **Publikus repo** (van GitHub-fiók). **A felmérők SOHA nem kerülnek fel** — azok
   maradnak DOCX-ben, a lokális projektmappákban.
@@ -79,7 +79,7 @@ web/                              ← repo gyökér = lokális klón
 │   │   └── img/                  ← témakör-specifikus képek (mémek is)
 │   ├── 02-<kovetkezo-temakor>/ …
 │   └── …
-├── 2e/ …   ├── 3e/ …   ├── 4e/ …   └── 4im/ …
+├── 2e/ …   ├── 3e/ …   └── 4e/ …
 ├── _tools/                       ← build_search_index.py, check_links.py,
 │   │                               set_hatter.py, builders/ (feladatgyűjtemény-építők)
 └── _sablonok/                    ← HTML-vázak (tananyag / feladatok / összefoglaló /
@@ -132,7 +132,7 @@ mémek) megmaradnak, közös CSS-be szervezve.
   **példa = borostyán** `#f59e0b`, **„vigyázz, csapda!” = piros** `#ef4444`,
   **érdekesség = lila** `#8b5cf6`.
 - **Tagozat-accent** (`body[data-tagozat]`): 1e `#10b981`, 2e `#14b8a6`, 3e `#06b6d4`,
-  4e `#84cc16`, 4im `#6366f1` — fejléc-sávban, morzsamenüben, chipeken jelenik meg;
+  4e `#84cc16` — fejléc-sávban, morzsamenüben, chipeken jelenik meg;
   az oldal egésze zöld marad.
 - Szint-chipek: Alap = zöld, Közép = borostyán, Nehéz = piros; Joker = lila.
 

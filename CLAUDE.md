@@ -2,7 +2,7 @@
 
 Ez a repó a **Szvetkó matek** oktatási weboldal: középiskolai matematika-tananyagok,
 feladatgyűjtemények és összefoglalók gamifikált köntösben (Hősök Ligája Akadémiája,
-Szvetkó-kampusz), osztályonként (`1e`, `2e`, `3e`, `4e`; `4im` még üres) és témakörönként.
+Szvetkó-kampusz), osztályonként (`1e`, `2e`, `3e`, `4e`) és témakörönként.
 GitHub Pages, **publikus**. A `main` minden pusha automatikusan élesít (`.github/workflows/pages.yml`).
 
 **Nyelv:** magyar — válasz, PR-leírás, kódkomment. Commit-üzenet magyarul, **ékezet nélkül**.

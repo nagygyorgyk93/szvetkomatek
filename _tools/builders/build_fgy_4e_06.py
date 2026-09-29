@@ -487,7 +487,7 @@ KOR = ADAT.KOR["szabadka"]["osszes"]["csoport"]
 g10 = [KOR[i] + KOR[i + 1] for i in range(0, 16, 2)] + [KOR[16] + KOR[17]]
 chk("s-alap-4 összeg", sum(g10), 123952)
 KOR_TABLA = TABLA_V(["életkor", "lakos"], [[c, ezres(v)] for c, v in zip(
-    ["0–9", "10–19", "20–29", "30–39", "40–49", "50–59", "60–69", "70–79", "80+"], g10)], 2)
+    ["0–9", "10–19", "20–29", "30–39", "40–49", "50–59", "60–69", "70–79", "80+"], g10)])
 S_ALAP.append((
     "Szabadka lakói 2022-ben, 10 éves korcsoportok szerint:" + FORRAS("popis") + KOR_TABLA,
     ["Melyik a legnépesebb korcsoport?", "Hány 20 évesnél fiatalabb lakos van?",

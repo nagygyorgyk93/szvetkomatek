@@ -1,4 +1,4 @@
-<!-- TÜKÖR — ne szerkeszd itt! Forrás (a tanár gépén): projektek/szvetkomatek/tortenet/_WEBOLDAL_tortenet.md · tükrözve: 2026-09-27 · _tools/docs_tukor.py -->
+<!-- TÜKÖR — ne szerkeszd itt! Forrás (a tanár gépén): projektek/szvetkomatek/tortenet/_WEBOLDAL_tortenet.md · tükrözve: 2026-09-29 · _tools/docs_tukor.py -->
 
 # Szvetkó matek — VILÁG-BIBLIA (a gamifikált köntös mesterfájlja)
 
@@ -16,7 +16,6 @@
 > | 2e | `_WEBOLDAL_tortenet_2e.md` | Mutáns Osztag | Dr. Baljós |
 > | 3e | `_WEBOLDAL_tortenet_3e.md` | A Különlegesek | Maxi, az Őrült |
 > | 4e | `_WEBOLDAL_tortenet_4e.md` | Véd Vilmos & Nagol | I.V.H. / Mr. Szürreál |
-> | 4im | `_WEBOLDAL_tortenet_4im.md` | Véd Vilmos & Nagol (tech-ág) | I.V.H. / összeomlott Időszövőszék |
 
 ---
 
@@ -47,7 +46,6 @@ iskolai tereknek felelnek meg (lásd 6. pont) — ezek adják az oldal háttérk
 | **2e** — *M-Hullám* | Dr. Baljós erőszakolt evolúciója kaotikussá teszi az egyenleteket | hatványok/gyökök/komplex számok, másodfokú egyenletek és függvények, exponenciális–logaritmikus, trigonometrikus függvények | „A Rezonancia-hullám" (04) |
 | **3e** — *Kristálypára-anomália* | Maxi kristályosítja és meggörbíti magát a teret | poliéderek, forgástestek, egyenletrendszerek, vektorok, analitikus geometria, sorozatok + indukció | „A Végtelen Mutáció" (06) |
 | **4e** — *Törölt idővonal* | Az I.V.H. „megmetszené" a teljes évfolyamot | sorozatok és függvények határértéke, derivált, integrál, kombinatorika, valószínűség és statisztika | „A Túlélés Esélyei" (06) |
-| **4im** — *Összeomlott Időszövőszék* | Ugyanaz, tech-ágon: a rendszer lenullázódik | függvényvizsgálat, derivált (L'Hôpital, Taylor), integrál (forgástest, ívhossz), valószínűség-statisztika, **numerikus matematika** | „A Káosz-Approximáció" (05) |
 
 > Az ív mindig ugyanaz a tanulási ív: **megérteni → modellezni → kiszámítani → bizonyítani.**
 
@@ -55,7 +53,7 @@ iskolai tereknek felelnek meg (lásd 6. pont) — ezek adják az oldal háttérk
 
 | Szereplő | Szerep | Eredet |
 |---|---|---|
-| **SZVETI** | a kampusz MI-asszisztense (filmes MI-asszisztensekre emlékeztető), a briefingek és a gyorstesztek hangja. Arca **Svetozar Marković** 19. századi portréjának holografikus változata. Évadonként „sérül": a 2e-ben glitch-el, a 4e/4im-ben passzív-agresszív. | **saját** |
+| **SZVETI** | a kampusz MI-asszisztense (filmes MI-asszisztensekre emlékeztető), a briefingek és a gyorstesztek hangja. Arca **Svetozar Marković** 19. századi portréjának holografikus változata. Évadonként „sérül": a 2e-ben glitch-el, a 4e-ben passzív-agresszív. | **saját** |
 | **Nova** | a kadét-avatar, akin keresztül a diák azonosul; vele együtt lép évfolyamot | **saját** |
 | **A kiképzőtiszt** | a tanár kibernetikus avatárja (fém kar, izzó technológiai szem) — az üdvözlő videó és a kiképzőtiszt-kártya szereplője | **saját** |
 | **Nikola Furić parancsnok** | az Akadémia igazgatója; a nagy, évadnyitó eligazítások hangja | saját |
@@ -78,20 +76,20 @@ Az **évad-mentorok** (fejezetenként egy-egy hős) és az évad **fő ellenfele
 
 ### 5b. Évadfüggő elnevezések (csak a látható SZÖVEG változik)
 
-| Oldal-elem | 1e (Hősök Ligája) | 2e (Mutáns Osztag) | 3e (A Különlegesek) | 4e (Véd Vilmos) | 4im (Véd Vilmos tech) |
-|---|---|---|---|---|---|
-| témakör-index felütés | Szektor-belépő | UMOTRON-keresés | Kristályvár Archívum | A Negyedik Fal | A Negyedik Fal |
-| `s0` brief hangja | SZVETI + mentor | Dr. Bestia / SZVETI (Mutációs elemzés) | Kanrak / Prizma (Kristály-elemzés) | Véd Vilmos (🌮 Burek-matek) | Véd Vilmos + Uroborosz (🌮 Patch Notes) |
-| kidolgozott példa | Kiképzési szimuláció | Vészterem-szimuláció | Kristály-kamra szimuláció | I.V.H. Akták | I.V.H. Core Logs |
-| kvíz-szöveg | gyorsteszt a HQ-tól | Reflex-teszt | Reflex-teszt | Kardcsapás-reflex | Syntax Error teszt |
-| csapda-doboz | **Kán csapdája** | **Dr. Baljós vírus-kódja** | **Maxi trükkje** | **Vilmos csapdája** | **Vilmos bugja** |
-| feladatgyűjtemény | kiképzési adattár | Kiképzési Adattár | Kiképzési Adattár | Zsoldos-lista | Zsoldos-algoritmusok |
-| házi (Vészterem) | Vészterem | Vészterem | Kristály-kamra | I.V.H. Kihallgató Terem | I.V.H. Szerverterem |
-| könnyített sáv | 🐜 Henrik-bevetés | 🐾 Bestia-protokoll | 🐕 Tér-eb-ugrás | 🐶 Véd-eb nyomravezető | 🐶 Véd-eb debugger |
-| normál sáv | 💥 Brúnó-bevetés | 🔥 Főnix-protokoll | 👑 Királyi Gárda | ⚔️ Maximális erőbedobás | ⚔️ Maximális erőbedobás |
-| projekt | terepküldetés | Geno-szigeti terepküldetés | Kristályvár terepküldetés | Az Üresség tisztítása | Az Üresség tisztítása |
-| összefoglaló | bevetési kártya | Taktikai memóriakártya | Taktikai memóriakártya | Csalópapír | Csalópapír |
-| felmérő (privát) | minősítő vizsga | minősítő vizsga | minősítő vizsga | I.V.H.-meghallgatás | I.V.H.-meghallgatás |
+| Oldal-elem | 1e (Hősök Ligája) | 2e (Mutáns Osztag) | 3e (A Különlegesek) | 4e (Véd Vilmos) |
+|---|---|---|---|---|
+| témakör-index felütés | Szektor-belépő | UMOTRON-keresés | Kristályvár Archívum | A Negyedik Fal |
+| `s0` brief hangja | SZVETI + mentor | Dr. Bestia / SZVETI (Mutációs elemzés) | Kanrak / Prizma (Kristály-elemzés) | Véd Vilmos (🌮 Burek-matek) |
+| kidolgozott példa | Kiképzési szimuláció | Vészterem-szimuláció | Kristály-kamra szimuláció | I.V.H. Akták |
+| kvíz-szöveg | gyorsteszt a HQ-tól | Reflex-teszt | Reflex-teszt | Kardcsapás-reflex |
+| csapda-doboz | **Kán csapdája** | **Dr. Baljós vírus-kódja** | **Maxi trükkje** | **Vilmos csapdája** |
+| feladatgyűjtemény | kiképzési adattár | Kiképzési Adattár | Kiképzési Adattár | Zsoldos-lista |
+| házi (Vészterem) | Vészterem | Vészterem | Kristály-kamra | I.V.H. Kihallgató Terem |
+| könnyített sáv | 🐜 Henrik-bevetés | 🐾 Bestia-protokoll | 🐕 Tér-eb-ugrás | 🐶 Véd-eb nyomravezető |
+| normál sáv | 💥 Brúnó-bevetés | 🔥 Főnix-protokoll | 👑 Királyi Gárda | ⚔️ Maximális erőbedobás |
+| projekt | terepküldetés | Geno-szigeti terepküldetés | Kristályvár terepküldetés | Az Üresség tisztítása |
+| összefoglaló | bevetési kártya | Taktikai memóriakártya | Taktikai memóriakártya | Csalópapír |
+| felmérő (privát) | minősítő vizsga | minősítő vizsga | minősítő vizsga | I.V.H.-meghallgatás |
 
 ## 6. Vizuális rendszer — helyszínek, hátterek, média
 
@@ -136,7 +134,7 @@ matek-mémek a tananyagokba; küldetésnapló / progresszió-felület a kadét h
 - **Matek-első:** a sztori sosem megy a szakmai pontosság rovására; a köntös elhagyható
   anélkül, hogy a feladat sérülne. Ahol nem illik ötletesen, ott **nem erőltetjük**.
 - **Korosztály-skála:** 1e (≈15) lelkes és pörgős → 2e (≈16) drámaibb → 3e (≈17)
-  fegyelmezettebb, „királyibb", tudományosabb → 4e/4im (≈18) önreflexív, ironikus, de
+  fegyelmezettebb, „királyibb", tudományosabb → 4e (≈18) önreflexív, ironikus, de
   **iskolai keretek között** (káromkodás helyett kreatív cenzúra).
 - **Nevek:** a szereplőgárda **teljes egészében saját** — magyaros és balkáni-szerb ízű nevek
   (Hangya Henrik, Dr. Bestia, Crni Grom, Véd Vilmos…), a narráció magyarul. **Jogvédett
@@ -208,14 +206,13 @@ matek-mémek a tananyagokba; küldetésnapló / progresszió-felület a kadét h
 | **Prizma** | térgeometria, poliéderek | `prisma` |
 | **Tér-eb** | teleportáló kutya; koordináta-ugrások | `ter_eb` |
 
-### 4e / 4im — *A Törölt Idővonal* / *A Végső Patch*
+### 4e — *A Törölt Idővonal*
 
 | Szereplő | Szerep | Képtörzs |
 |---|---|---|
 | **Mr. Szürreál** | a fő ellenfél; az I.V.H. bürokratája | — |
 | **Véd Vilmos** | a „mentor", aki áttöri a negyedik falat | `ved_vilmos` +w |
 | **Nagol** | a morcos helyettesítő; a komoly analízis | `nagol` +w |
-| **Uroborosz** | az I.V.H. tech-zsenije; numerikus matematika | — |
 | **Véd-eb** | variáns; nyomravezető | `ved_eb` |
 | **Mini-Vili** | variáns | `baby_vili` |
 | **Nyalka Vili** | variáns; kombinatorika | — |

@@ -64,7 +64,6 @@ body[data-tagozat="1e"]{--accent:#10b981;}
 body[data-tagozat="2e"]{--accent:#14b8a6;}
 body[data-tagozat="3e"]{--accent:#06b6d4;}
 body[data-tagozat="4e"]{--accent:#84cc16;}
-body[data-tagozat="4im"]{--accent:#6366f1;}
 
 /* ---------- Alap ---------- */
 *{box-sizing:border-box;}
@@ -398,9 +397,6 @@ table.tt-table .res{font-weight:800;background:rgba(16,185,129,0.15);}
    „F=2B+ / KH”); a táblázat a .tblwrap-ben gördül. Szélesebb képernyőn a tördelés marad, hogy
    egy majdnem kiférő táblázat ne kapjon gördítősávot. */
 @media(max-width:640px){table.tt-table .katex-html{white-space:nowrap;}}
-/* A feladatkártyában telefonon szűkebb cellatávolság: a 3–4 oszlopos adattábla (pl. kéttényezős táblázat,
-   párba tördelt havi adatsor) így gördítés nélkül kifér 360 px-en is. */
-@media(max-width:640px){.feladat table.tt-table th,.feladat table.tt-table td{padding:.35rem .5rem;}}
 .kbd{font-family:'Cambria Math',Cambria,Georgia,serif;background:rgba(16,185,129,0.15);
   border:1px solid var(--szurke-300);border-radius:6px;padding:1px 7px;font-size:1.02em;color:var(--kampusz-neon);}
 .pill{display:inline-block;background:var(--kampusz-uveg-keret);color:#34d399;

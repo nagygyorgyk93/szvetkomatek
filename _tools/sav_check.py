@@ -30,7 +30,7 @@ def szamok(sp):
 
 def main():
     hibak = 0
-    for tag in ('1e', '2e', '3e', '4e', '4im'):
+    for tag in ('1e', '2e', '3e', '4e'):
         gy = os.path.join(GYOKER, tag)
         if not os.path.isdir(gy):
             continue

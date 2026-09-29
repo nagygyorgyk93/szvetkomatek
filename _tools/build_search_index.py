@@ -48,7 +48,7 @@ def feldolgoz(ut: Path):
     p.feed(ut.read_text(encoding="utf-8"))
     rel = ut.relative_to(GYOKER).as_posix()
     reszek = rel.split("/")
-    tagozat = reszek[0] if reszek[0] in {"1e","2e","3e","4e","4im"} else ""
+    tagozat = reszek[0] if reszek[0] in {"1e","2e","3e","4e"} else ""
     tema = reszek[1].split("-",1)[1].replace("-"," ") if len(reszek) > 2 else ""
     szoveg = re.sub(r"\s+", " ", " ".join(p.szoveg)).strip()
     cim = p.cim.split("|")[0].split("—")[0].strip() or rel

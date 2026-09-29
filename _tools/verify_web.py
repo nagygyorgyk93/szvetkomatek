@@ -110,7 +110,7 @@ def kanon_ellenorzes(ut: Path) -> tuple[list[str], list[str]]:
         reszek = ut.parts
     # A gyökér-oldalak (index, search, kuldetesnaplo) nem tagozathoz tartoznak,
     # és a témakör-mappán belüli oldalakra vonatkoznak a naplo-minták.
-    tagozati = bool(reszek) and reszek[0] in {"1e", "2e", "3e", "4e", "4im", "3im"}
+    tagozati = bool(reszek) and reszek[0] in {"1e", "2e", "3e", "4e", "3im"}
     temakorben = tagozati and len(reszek) >= 3
 
     # --- body attribútumok ---

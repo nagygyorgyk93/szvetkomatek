@@ -128,7 +128,6 @@ SAV_FELIRAT = {
     "2e": ("🐾 Bestia-protokoll", "🔥 Főnix-protokoll"),
     "3e": ("🐕 Tér-eb-ugrás", "👑 Királyi Gárda"),
     "4e": ("🐶 Véd-eb nyomravezető", "⚔️ Maximális erőbedobás"),
-    "4im": ("🐶 Véd-eb debugger", "⚔️ Maximális erőbedobás"),
 }
 
 

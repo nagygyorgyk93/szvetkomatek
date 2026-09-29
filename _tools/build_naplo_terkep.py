@@ -15,7 +15,7 @@ from pathlib import Path
 
 GYOKER = Path(__file__).resolve().parent.parent
 KI = GYOKER / "assets" / "naplo-terkep.json"
-TAGOZATOK = ["1e", "2e", "3e", "4e", "4im"]
+TAGOZATOK = ["1e", "2e", "3e", "4e"]
 
 # Témakör-jelvények: küldetés-cím + mentor + jel (a `_WEBOLDAL_tortenet_[osztály].md`
 # fejezet-térképe szerint). Új témakörnél ide is fel kell venni egy sort — ha kimarad,
