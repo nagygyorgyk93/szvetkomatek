@@ -99,9 +99,7 @@ ALAP = [
   ["$\\dfrac{1}{16}$", "$9$", "$1$", "$4$"], True),
  ("Melyik a nagyobb? Indokold a monotonitással!",
   ["$2^{5}$ vagy $2^{3}$", "$\\left(\\tfrac12\\right)^{5}$ vagy $\\left(\\tfrac12\\right)^{3}$"],
-  ["$2^{5}=32$ a nagyobb — az alap $2&gt;1$, a függvény <b>növekvő</b>.",
-   "$\\left(\\tfrac12\\right)^{3}=\\tfrac18$ a nagyobb — az alap kisebb $1$-nél, "
-   "a függvény <b>csökkenő</b>."], True),
+  ['$2^{5}=32$ a nagyobb; a $2^{x}$ növekvő.', '$\\left(\\tfrac12\\right)^{3}=\\tfrac18$ a nagyobb; a $\\left(\\tfrac12\\right)^{x}$ csökkenő.'], True),
  ("Oldd meg!", ["$2^{x}=32$", "$3^{x}=81$", "$5^{x}=\\tfrac{1}{25}$"],
   ["$x=5$", "$x=4$", "$x=-2$"], True),
  ("Oldd meg!", ["$2^{3x}=64$", "$3^{2x}=81$", "$7^{x+1}=49$"],
@@ -114,11 +112,11 @@ ALAP = [
  ("Oldd meg!", ["$\\left(\\tfrac12\\right)^{x}=8$", "$\\left(\\tfrac13\\right)^{x}=\\tfrac{1}{81}$"],
   ["$x=-3$", "$x=4$"], True),
  ("Oldd meg kiemeléssel!", ["$2^{x+1}+2^{x}=24$", "$3^{x+1}-3^{x}=54$"],
-  ["$3\\cdot 2^{x}=24$, tehát $x=3$", "$2\\cdot 3^{x}=54$, tehát $x=3$"], True),
+  ['$x=3$', '$x=3$'], True),
  ("Oldd meg kiemeléssel!", ["$5^{x+2}-5^{x}=120$", "$2^{x+3}+2^{x+1}=40$"],
-  ["$24\\cdot 5^{x}=120$, tehát $x=1$", "$10\\cdot 2^{x}=40$, tehát $x=2$"], True),
+  ['$x=1$', '$x=2$'], True),
  ("Oldd meg a $t=2^{x}$ helyettesítéssel! $4^{x}-5\\cdot 2^{x}+4=0$", None,
-  "$t^{2}-5t+4=0$, innen $t_{1}=1$ és $t_{2}=4$, tehát $x_{1}=0$ és $x_{2}=2$."),
+  '$x_{1}=0$, $x_{2}=2$.'),
  ("Oldd meg!", ["$2^{x}&lt;16$", "$3^{x}&gt;27$"],
   ["$x\\in(-\\infty;4)$", "$x\\in(3;+\\infty)$"], True),
  ("Oldd meg!", ["$2^{x+1}\\le 8$", "$5^{2x}\\ge 125$"],
@@ -128,9 +126,9 @@ ALAP = [
   ["A jel fordul: $x\\in(-\\infty;-2)$", "A jel fordul: $x\\in[-2;+\\infty)$"], True),
  ("Oldd meg!",
   ["$\\left(\\tfrac12\\right)^{x-1}\\ge\\tfrac18$", "$\\left(\\tfrac15\\right)^{2x}&lt;\\tfrac{1}{25}$"],
-  ["$x-1\\le 3$, tehát $x\\in(-\\infty;4]$", "$2x&gt;2$, tehát $x\\in(1;+\\infty)$"], True),
+  ['$x\\in(-\\infty;4]$', '$x\\in(1;+\\infty)$'], True),
  ("Oldd meg! $2^{3x-1}\\ge\\tfrac14$", None,
-  "$3x-1\\ge -2$, tehát $x\\ge-\\dfrac13$, azaz $x\\in\\left[-\\tfrac13;+\\infty\\right)$."),
+  '$x\\in\\left[-\\tfrac13;+\\infty\\right)$.'),
  ("Válaszolj, és indokolj az értékkészlettel!",
   ["Lehet-e $2^{x}=0$?", "Lehet-e $3^{x}=-9$?", "Igaz-e, hogy $5^{x}&gt;0$ minden $x$-re?"],
   ["Nem — az exponenciális függvény értéke sosem nulla.",
@@ -142,70 +140,58 @@ ALAP = [
 
 KOZEP = [
  ("Ábrázold, és jellemezd (ÉT, ÉK, aszimptota, monotonitás)! $y=2^{x-1}+3$", None,
-  "Az $y=2^{x}$ görbe $1$-gyel jobbra és $3$-mal feljebb. ÉT: $\\mathbb{R}$, "
-  "ÉK: $(3;+\\infty)$, aszimptota: $y=3$, szigorúan növekvő."),
+  'ÉT: $\\mathbb{R}$; ÉK: $(3;+\\infty)$; aszimptota: $y=3$; szigorúan növekvő; az $y=2^x$ görbe $1$-gyel jobbra és $3$-mal feljebb tolva.'),
  ("Ábrázold közös koordináta-rendszerben, és mondd meg, milyen kapcsolat van közöttük!",
   ["$y=2^{x}$ és $y=-2^{x}$", "$y=2^{x}$ és $y=2^{-x}$"],
   ["Az $x$-tengelyre tükrösek.",
    "Az $y$-tengelyre tükrösek — és $2^{-x}=\\left(\\tfrac12\\right)^{x}$."], True),
  ("Egy exponenciális függvény grafikonja átmegy a $(0;1)$ és a $(2;9)$ ponton. "
   "Mi a függvény hozzárendelési szabálya?", None,
-  "$y=a^{x}$ alakú, és $a^{2}=9$, tehát $a=3$: a függvény $y=3^{x}$."),
+  '$y=3^{x}$.'),
  ("Oldd meg!", ["$2^{x}\\cdot 4^{x}=64$", "$3^{x}\\cdot 9^{x-1}=27$"],
-  ["$2^{3x}=2^{6}$, tehát $x=2$", "$3^{3x-2}=3^{3}$, tehát $x=\\dfrac53$"], True),
+  ['$x=2$', '$x=\\dfrac53$'], True),
  ("Oldd meg! $\\left(\\tfrac23\\right)^{2x}=\\left(\\tfrac94\\right)^{3}$", None,
-  "$\\left(\\tfrac94\\right)^{3}=\\left(\\tfrac23\\right)^{-6}$, tehát $2x=-6$ és $x=-3$."),
+  '$x=-3$.'),
  ("Oldd meg helyettesítéssel! $2^{2x}-6\\cdot 2^{x}+8=0$", None,
-  "$t=2^{x}$: $t^{2}-6t+8=0$, innen $t_{1}=2$, $t_{2}=4$, tehát $x_{1}=1$ és $x_{2}=2$."),
+  '$x_{1}=1$, $x_{2}=2$.'),
  ("Oldd meg! $9^{x}-4\\cdot 3^{x}+3=0$", None,
-  "$t=3^{x}$: $t^{2}-4t+3=0$, innen $t_{1}=1$, $t_{2}=3$, tehát $x_{1}=0$ és $x_{2}=1$."),
+  '$x_{1}=0$, $x_{2}=1$.'),
  ("Oldd meg! $25^{x}-6\\cdot 5^{x}+5=0$", None,
-  "$t=5^{x}$: $t^{2}-6t+5=0$, innen $t_{1}=1$, $t_{2}=5$, tehát $x_{1}=0$ és $x_{2}=1$."),
+  '$x_{1}=0$, $x_{2}=1$.'),
  ("Oldd meg! $4^{x}+2^{x}-2=0$", None,
-  "$t=2^{x}&gt;0$: $t^{2}+t-2=0$, a gyökök $t_{1}=1$ és $t_{2}=-2$. A $-2$ nem lehet "
-  "$2^{x}$ értéke, ezért elhagyjuk: <b>egyetlen</b> megoldás, $x=0$."),
+  '$x=0$.'),
  ("Oldd meg! $3^{2x+1}-10\\cdot 3^{x}+3=0$", None,
-  "$3^{2x+1}=3\\cdot t^{2}$, ahol $t=3^{x}$: $3t^{2}-10t+3=0$, innen $t_{1}=\\tfrac13$ "
-  "és $t_{2}=3$, tehát $x_{1}=-1$ és $x_{2}=1$."),
+  '$x_{1}=-1$, $x_{2}=1$.'),
  ("Oldd meg! $2^{x^{2}-5x+6}=1$", None,
-  "A jobb oldal $2^{0}$, tehát $x^{2}-5x+6=0$: $x_{1}=2$, $x_{2}=3$."),
+  '$x_{1}=2$, $x_{2}=3$.'),
  ("Oldd meg! $4^{x}-2^{x+3}+16=0$", None,
-  "$2^{x+3}=8\\cdot 2^{x}$, tehát $t^{2}-8t+16=0$, azaz $(t-4)^{2}=0$ és $t=4$: "
-  "<b>egyetlen</b> megoldás, $x=2$."),
+  '$x=2$.'),
  ("Oldd meg! $2^{x^{2}-3x}&lt;16$", None,
-  "$x^{2}-3x&lt;4$, azaz $x^{2}-3x-4&lt;0$. A gyökök $-1$ és $4$, tehát "
-  "$x\\in(-1;4)$."),
+  '$x\\in(-1;4)$.'),
  ("Oldd meg! $\\left(\\tfrac13\\right)^{x^{2}-4}\\ge 1$", None,
-  "A jobb oldal $\\left(\\tfrac13\\right)^{0}$; az alap kisebb $1$-nél, a jel fordul: "
-  "$x^{2}-4\\le 0$, tehát $x\\in[-2;2]$."),
+  '$x\\in[-2;2]$.'),
 ]
 
 # ============================== NEHÉZ SZINT ==============================
 
 NEHEZ = [
  ("Oldd meg! $4^{x}-3\\cdot 2^{x+1}+8=0$", None,
-  "$2^{x+1}=2\\cdot 2^{x}$, tehát $t^{2}-6t+8=0$: $t_{1}=2$, $t_{2}=4$, "
-  "azaz $x_{1}=1$ és $x_{2}=2$."),
+  '$x_{1}=1$, $x_{2}=2$.'),
  ("Oldd meg! $9^{x}+3^{x+1}-4=0$", None,
-  "$t^{2}+3t-4=0$, a gyökök $t_{1}=1$ és $t_{2}=-4$. A negatív kiesik, marad $x=0$."),
+  '$x=0$.'),
  ("Oldd meg! $2^{2x+1}-9\\cdot 2^{x}+4=0$", None,
-  "$2^{2x+1}=2t^{2}$, tehát $2t^{2}-9t+4=0$: $t_{1}=\\tfrac12$, $t_{2}=4$, "
-  "azaz $x_{1}=-1$ és $x_{2}=2$."),
+  '$x_{1}=-1$, $x_{2}=2$.'),
  ("Oldd meg! $3^{x}+3^{2-x}=10$", None,
-  "$3^{2-x}=\\dfrac{9}{3^{x}}$, tehát $t+\\dfrac9t=10$, azaz $t^{2}-10t+9=0$: "
-  "$t_{1}=1$, $t_{2}=9$, ahonnan $x_{1}=0$ és $x_{2}=2$."),
+  '$x_{1}=0$, $x_{2}=2$.'),
  ("Oldd meg! $4^{x}-5\\cdot 2^{x}+4&lt;0$", None,
-  "$t=2^{x}$: $t^{2}-5t+4&lt;0$, azaz $1&lt;t&lt;4$. Mivel $2^{x}$ növekvő, "
-  "$2^{0}&lt;2^{x}&lt;2^{2}$, tehát $x\\in(0;2)$."),
+  '$x\\in(0;2)$.'),
  ("Egy baktériumtelep óránként megkétszereződik. Hány óra alatt lesz "
   "<b>64-szeres</b> a telep? Írd fel a modellt is!", None,
-  "A modell $N(t)=N_{0}\\cdot 2^{t}$, tehát $2^{t}=64=2^{6}$: $t=6$ óra."),
+  '$N(t)=N_{0}\\cdot 2^{t}$; $t=6$ óra.'),
 ]
 
 JOKER = ("Oldd meg! $2^{x}\\cdot 3^{x}=6^{x^{2}-1}$",
-         "A bal oldal $(2\\cdot 3)^{x}=6^{x}$, tehát $6^{x}=6^{x^{2}-1}$, ahonnan "
-         "$x^{2}-x-1=0$. A megoldások $x_{1,2}=\\dfrac{1\\pm\\sqrt5}{2}$ — a pozitív gyök "
-         "épp az <b>aranymetszés</b> aránya, $\\varphi\\approx 1{,}618$.")
+         '$x_{1,2}=\\dfrac{1\\pm\\sqrt5}{2}$.')
 
 # ============================== GYAKORLÓ ELLENŐRZŐ ==============================
 
@@ -217,19 +203,17 @@ GYE_ORAI = [
   ["Az $y=2^{x}$ görbe $1$-gyel feljebb; aszimptota: $y=1$.",
    "Csökkenő görbe a $(0;1)$ ponton át; aszimptota az $x$-tengely."], True),
  ("Oldd meg! $\\left(\\tfrac34\\right)^{2x}=\\left(\\tfrac{16}{9}\\right)^{3}$", None,
-  "$\\left(\\tfrac{16}{9}\\right)^{3}=\\left(\\tfrac34\\right)^{-6}$, tehát $2x=-6$ és $x=-3$."),
+  '$x=-3$.'),
  ("Oldd meg! $2^{x^{2}-7x+12}=1$", None,
-  "$x^{2}-7x+12=0$, ahonnan $x_{1}=3$ és $x_{2}=4$."),
+  '$x_{1}=3$, $x_{2}=4$.'),
  ("Oldd meg! $5^{x+2}-5^{x}=600$", None,
-  "$5^{x}(25-1)=600$, azaz $24\\cdot 5^{x}=600$ és $5^{x}=25$: $x=2$."),
+  '$x=2$.'),
  ("Oldd meg! $3^{4x+2}\\ge 27$", None,
-  "Az alap $3&gt;1$, a jel marad: $4x+2\\ge 3$, tehát "
-  "$x\\in\\left[\\tfrac14;+\\infty\\right)$."),
+  '$x\\in\\left[\\tfrac14;+\\infty\\right)$.'),
  ("Oldd meg! $\\left(\\tfrac12\\right)^{3x-1}&gt;\\tfrac18$", None,
-  "Az alap kisebb $1$-nél, a jel <b>fordul</b>: $3x-1&lt;3$, tehát "
-  "$x\\in\\left(-\\infty;\\tfrac43\\right)$."),
+  '$x\\in\\left(-\\infty;\\tfrac43\\right)$.'),
  ("★ Oldd meg! $25^{x}-6\\cdot 5^{x}+5=0$", None,
-  "$t=5^{x}$: $t^{2}-6t+5=0$, innen $t_{1}=1$, $t_{2}=5$, tehát $x_{1}=0$ és $x_{2}=1$."),
+  '$x_{1}=0$, $x_{2}=1$.'),
 ]
 
 GYE_OTTHON = [
@@ -241,12 +225,11 @@ GYE_OTTHON = [
    "A csökkenő görbe $2$-vel lejjebb; aszimptota: $y=-2$."], True),
  ("Oldd meg!", ["$2^{5x}=32$", "$9^{x}=\\tfrac{1}{81}$"], ["$x=1$", "$x=-2$"], True),
  ("Oldd meg! $2^{x+3}+2^{x}=72$", None,
-  "$2^{x}(8+1)=72$, azaz $9\\cdot 2^{x}=72$ és $2^{x}=8$: $x=3$."),
+  '$x=3$.'),
  ("Oldd meg! $\\left(\\tfrac14\\right)^{x+1}\\le\\tfrac{1}{16}$", None,
-  "Az alap kisebb $1$-nél, a jel fordul: $x+1\\ge 2$, tehát $x\\in[1;+\\infty)$."),
+  '$x\\in[1;+\\infty)$.'),
  ("★ Oldd meg! $4^{x}-10\\cdot 2^{x}+16=0$", None,
-  "$t=2^{x}$: $t^{2}-10t+16=0$, $D=36$, innen $t_{1}=2$ és $t_{2}=8$, "
-  "tehát $x_{1}=1$ és $x_{2}=3$."),
+  '$x_{1}=1$, $x_{2}=3$.'),
 ]
 
 # ============================== OLDAL ==============================

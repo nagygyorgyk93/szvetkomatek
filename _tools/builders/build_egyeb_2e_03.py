@@ -250,12 +250,7 @@ DR_A_UJ_03 = [
    "$\\log_3 0=0$",
    "$\\log_5 25^{3}=6$",
    "Ha $2^x=2^y$, akkor $x=y$."],
-  ["Hamis. Az összeadás a <b>szorzatnak</b> felel meg: $\\log_2 8+\\log_2 4=\\log_2 32=5$, "
-   "miközben $\\log_2 12$ nem egész.",
-   "Hamis: a nulla logaritmusa nem értelmezett, mert $3$ egyetlen hatványa sem $0$.",
-   "Igaz: $25^3=(5^2)^3=5^6$, tehát a logaritmus $6$.",
-   "Igaz: az exponenciális függvény szigorúan monoton, ezért különböző kitevőhöz "
-   "különböző érték tartozik."]),
+  ['Hamis: $\\log_2 8+\\log_2 4=5$, míg $\\log_2 12\\neq 5$.', 'Hamis: a nulla logaritmusa nem értelmezett.', 'Igaz: $25^3=5^6$.', 'Igaz: a $2^x$ szigorúan növekvő.']),
 ]
 DR_K_UJ_03 = [
  ("Egy gyógyszer mennyisége a szervezetben óránként a $0{,}8$-szorosára csökken. "
@@ -264,10 +259,7 @@ DR_K_UJ_03 = [
    "Mennyi marad $5$ óra múlva? (Kerekíts egészre.)",
    "Hány óra múlva csökken a felére? Írd fel az egyenletet, és add meg a megoldást "
    "logaritmussal, majd számológéppel egy tizedesre."],
-  ["$M(t)=200\\cdot 0{,}8^{\\,t}$ mg.",
-   "$200\\cdot 0{,}8^5\\approx 66\\ \\text{mg}$.",
-   "$200\\cdot 0{,}8^{\\,t}=100$, azaz $0{,}8^{\\,t}=0{,}5$, ahonnan "
-   "$t=\\dfrac{\\lg 0{,}5}{\\lg 0{,}8}\\approx 3{,}1$ óra."]),
+  ['$M(t)=200\\cdot 0{,}8^{\\,t}$ mg.', '$M(5)\\approx 66\\ \\text{mg}$.', '$200\\cdot 0{,}8^{\\,t}=100$; $t=\\dfrac{\\lg 0{,}5}{\\lg 0{,}8}\\approx 3{,}1$ óra.']),
 ]
 
 DR_A = [
@@ -281,49 +273,44 @@ DR_A = [
  ("Oldd meg!", ["$3^{x}=243$", "$5^{2x}=625$", "$\\left(\\tfrac12\\right)^{x}=32$"],
   ["$x=5$", "$x=2$", "$x=-5$"], True),
  ("Oldd meg kiemeléssel! $2^{x+2}-2^{x}=48$", None,
-  "$2^{x}(4-1)=48$, azaz $3\\cdot 2^{x}=48$ és $2^{x}=16$: $x=4$."),
+  '$x=4$.'),
  ("Oldd meg!", ["$2^{x}\\le 64$", "$\\left(\\tfrac13\\right)^{x}&gt;\\tfrac{1}{27}$"],
-  ["$x\\in(-\\infty;6]$", "A jel fordul: $x&lt;3$, azaz $x\\in(-\\infty;3)$"], True),
+  ['$x\\in(-\\infty;6]$', '$x\\in(-\\infty;3)$'], True),
  ("Számold ki!", ["$\\log_{2}128$", "$\\log_{5}\\tfrac{1}{25}$", "$\\log_{9}3$"],
   ["$7$", "$-2$", "$\\dfrac12$"], True),
  ("Vond össze, majd számold ki!",
   ["$\\lg 400-\\lg 4$", "$\\log_{6}4+\\log_{6}54$"],
-  ["$\\lg 100=2$", "$\\log_{6}216=3$"], True),
+  ['$2$', '$3$'], True),
  ("Add meg az értelmezési tartományt! $y=\\log_{2}(3x-9)$", None,
-  "$3x-9&gt;0$, tehát $x\\in(3;+\\infty)$."),
+  '$x\\in(3;+\\infty)$.'),
  ("Oldd meg! $\\log_{3}(x+5)=2$", None,
-  "ÉT: $x&gt;-5$; $x+5=9$, tehát $x=4$."),
+  '$x=4$.'),
 ]
 
 DR_A = DR_A + DR_A_UJ_03
 DR_K = [
  ("Oldd meg helyettesítéssel! $4^{x}-9\\cdot 2^{x}+8=0$", None,
-  "$t=2^{x}$: $t^{2}-9t+8=0$, innen $t_{1}=1$, $t_{2}=8$, tehát $x_{1}=0$ és $x_{2}=3$."),
+  '$x_{1}=0$, $x_{2}=3$.'),
  ("Oldd meg! $2^{x^{2}-x-6}=1$", None,
-  "$x^{2}-x-6=0$, innen $x_{1}=-2$ és $x_{2}=3$."),
+  '$x_{1}=-2$, $x_{2}=3$.'),
  ("Számold ki! $\\log_{4}8$", None,
-  "Közös alap a $2$: $\\dfrac{\\log_{2}8}{\\log_{2}4}=\\dfrac32$."),
+  '$\\dfrac32$.'),
  ("Oldd meg! $\\lg(x+3)+\\lg(x-3)=\\lg 7$", None,
-  "ÉT: $x&gt;3$. Innen $x^{2}-9=7$, azaz $x=\\pm 4$ — az ÉT miatt csak $x=4$."),
+  '$x=4$.'),
  ("Oldd meg! $\\log_{2}(3x-1)&lt;3$", None,
-  "ÉT: $x&gt;\\tfrac13$; $3x-1&lt;8$, tehát $x&lt;3$. A metszet: "
-  "$x\\in\\left(\\tfrac13;3\\right)$."),
- ("Egy befektetés évi $6\\%$-kal gyarapszik. Hány év alatt lesz a másfélszerese?", None,
-  "$1{,}06^{n}=1{,}5$, tehát $n=\\dfrac{\\lg 1{,}5}{\\lg 1{,}06}\\approx 6{,}96$ — "
-  "a <b>7. év</b> folyamán."),
+  '$x\\in\\left(\\tfrac13;3\\right)$.'),
+ ("Egy befektetés összegét minden év végén $6\\%$-kal növelik. Hány teljes év után éri el először legalább a kezdeti összeg másfélszeresét?", None,
+  '7 teljes év után.'),
 ]
 
 DR_K = DR_K + DR_K_UJ_03
 DR_N = [
  ("Oldd meg! $9^{x}-2\\cdot 3^{x+1}-27=0$", None,
-  "$3^{x+1}=3\\cdot 3^{x}$, tehát $t^{2}-6t-27=0$: $t_{1}=9$, $t_{2}=-3$. "
-  "A negatív kiesik, marad $3^{x}=9$, azaz $x=2$."),
+  '$x=2$.'),
  ("Oldd meg! $\\log_{\\frac13}(x-1)\\ge -2$", None,
-  "ÉT: $x&gt;1$. Az alap kisebb $1$-nél, a jel fordul: "
-  "$x-1\\le\\left(\\tfrac13\\right)^{-2}=9$, tehát $x\\le 10$. A metszet: $x\\in(1;10]$."),
+  '$x\\in(1;10]$.'),
  ("Oldd meg! $\\lg^{2}x-3\\lg x+2=0$", None,
-  "ÉT: $x&gt;0$. A $t=\\lg x$ helyettesítéssel $t^{2}-3t+2=0$: $t_{1}=1$, $t_{2}=2$, "
-  "tehát $x_{1}=10$ és $x_{2}=100$."),
+  '$x_{1}=10$, $x_{2}=100$.'),
 ]
 
 dr_brief = ('<div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — Az Evolúciós Ugrás '

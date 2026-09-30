@@ -79,9 +79,9 @@ ALAP = [
   ["$0$", "$1$", "$5$", "$7$"], True),
  ("Vond össze, majd számold ki!",
   ["$\\log_{2}12-\\log_{2}3$", "$\\lg 2+\\lg 5$"],
-  ["$\\log_{2}4=2$", "$\\lg 10=1$"], True),
+  ['$2$', '$1$'], True),
  ("Számold ki!", ["$\\lg 50+\\lg 2$", "$\\log_{2}40-\\log_{2}5$"],
-  ["$\\lg 100=2$", "$\\log_{2}8=3$"], True),
+  ['$2$', '$3$'], True),
  ("Számold ki! (Írd a gyököt hatványalakba.)",
   ["$\\log_{3}\\sqrt3$", "$\\log_{2}\\sqrt[3]{4}$"],
   ["$\\dfrac12$", "$\\dfrac23$"], True),
@@ -114,74 +114,61 @@ ALAP = [
 # ============================== KÖZÉPSZINT ==============================
 
 KOZEP = [
- ("Számold ki! $\\log_{2}48-\\log_{2}3$", None, "$\\log_{2}16=4$"),
- ("Számold ki! $\\log_{6}4+\\log_{6}9$", None, "$\\log_{6}36=2$"),
+ ("Számold ki! $\\log_{2}48-\\log_{2}3$", None, '$4$.'),
+ ("Számold ki! $\\log_{6}4+\\log_{6}9$", None, '$2$.'),
  ("Számold ki! $\\lg 25+2\\lg 2$", None,
-  "$2\\lg 2=\\lg 4$, tehát $\\lg 25+\\lg 4=\\lg 100=2$"),
+  '$2$.'),
  ("Legyen $\\lg 2=a$. Fejezd ki $a$-val!",
   ["$\\lg 5$", "$\\lg 20$", "$\\lg 50$"],
-  ["$\\lg\\tfrac{10}{2}=1-a$", "$\\lg(2\\cdot 10)=1+a$", "$\\lg\\tfrac{100}{2}=2-a$"], True),
+  ['$1-a$', '$1+a$', '$2-a$'], True),
  ("Számold ki! $\\log_{3}\\sqrt[3]{9}$", None,
-  "$\\sqrt[3]{9}=3^{2/3}$, tehát az érték $\\dfrac23$."),
+  '$\\dfrac23$.'),
  ("Számold ki!", ["$5^{\\log_{5}12}$", "$2^{\\log_{2}3+1}$"],
-  ["$12$ — a logaritmus és a hatványozás kioltják egymást.",
-   "$2^{\\log_{2}3}\\cdot 2=3\\cdot 2=6$"], True),
+  ['$12$', '$6$'], True),
  ("Oldd meg!", ["$\\log_{2}x=5$", "$\\log_{3}x=-2$"],
-  ["$x=2^{5}=32$", "$x=3^{-2}=\\dfrac19$"], True),
+  ['$x=32$', '$x=\\dfrac19$'], True),
  ("Számold ki! $\\log_{4}32$", None,
-  "Közös alap a $2$: $\\dfrac{\\log_{2}32}{\\log_{2}4}=\\dfrac{5}{2}$."),
+  '$\\dfrac52$.'),
  ("Számold ki! $\\log_{\\sqrt2}8$", None,
-  "$\\sqrt2=2^{1/2}$ és $8=2^{3}$, tehát $\\dfrac{3}{1/2}=6$."),
- ("Igazold, hogy $\\log_{a}b\\cdot\\log_{b}a=1$!", None,
-  "Áttéréssel $\\log_{b}a=\\dfrac{\\lg a}{\\lg b}$ és $\\log_{a}b=\\dfrac{\\lg b}{\\lg a}$; "
-  "a szorzatuk $1$. (Feltétel: $a,b&gt;0$ és egyik sem $1$.)"),
- ("Számold ki! $\\lg 4+\\lg 250$", None, "$\\lg 1000=3$"),
- ("Egy hangforrás intenzitása a százszorosára nő. Hány decibellel nő a hangerő, "
+  '$6$.'),
+ ("Igazold, hogy $\\log_{a}b\\cdot\\log_{b}a=1$ ($a,b&gt;0$, $a,b\\neq 1$)!", None,
+  '$\\log_{a}b=\\dfrac{\\lg b}{\\lg a}$ és $\\log_{b}a=\\dfrac{\\lg a}{\\lg b}$, ezért a szorzat $1$ ($a,b&gt;0$, $a,b\\neq 1$).'),
+ ("Számold ki! $\\lg 4+\\lg 250$", None, '$3$.'),
+ ("Egy hangforrás intenzitása a százszorosára nő. Hány decibellel nő a hangintenzitásszint, "
   "ha $L=10\\lg\\dfrac{I}{I_{0}}$?", None,
-  "$10\\lg 100=10\\cdot 2=20$ dB-lel."),
+  '$20$ dB-lel.'),
  ("Egy oldat hidrogénion-koncentrációja $[\\mathrm{H}^{+}]=10^{-5}$. Mennyi a pH-ja, "
   "ha $\\mathrm{pH}=-\\lg[\\mathrm{H}^{+}]$? És mennyi lesz, ha az oldat "
-  "<b>százszor savasabb</b> lesz?", None,
-  "$\\mathrm{pH}=5$. Százszor savasabb: $[\\mathrm{H}^{+}]=10^{-3}$, tehát "
-  "$\\mathrm{pH}=3$ — a pH <b>kettővel csökken</b>."),
- ("Egy befektetés évi $8\\%$-kal gyarapszik. Hány év alatt duplázódik meg?", None,
-  "$1{,}08^{n}=2$, tehát $n=\\dfrac{\\lg 2}{\\lg 1{,}08}\\approx 9{,}01$ — "
-  "a <b>10. év</b> folyamán éri el a kétszeresét."),
+  "a hidrogénion-koncentráció a százszorosára nő?", None,
+  '$\\mathrm{pH}=5$, majd $\\mathrm{pH}=3$ (kettővel csökken).'),
+ ("Egy befektetés összegét minden év végén $8\\%$-kal növelik. Hány teljes év után éri el először legalább a kezdeti összeg kétszeresét?", None,
+  '10 teljes év után.'),
 ]
 
 # ============================== NEHÉZ SZINT ==============================
 
 NEHEZ = [
  ("Számold ki! $\\log_{2}3\\cdot\\log_{3}4\\cdot\\log_{4}8$", None,
-  "Áttéréssel minden tényező tízes alapra írható, és a tört „teleszkopikusan” "
-  "kiesik: $\\dfrac{\\lg 3}{\\lg 2}\\cdot\\dfrac{\\lg 4}{\\lg 3}\\cdot"
-  "\\dfrac{\\lg 8}{\\lg 4}=\\dfrac{\\lg 8}{\\lg 2}=\\log_{2}8=3$."),
+  '$3$.'),
  ("Tudjuk, hogy $\\lg 2\\approx 0{,}3010$ és $\\lg 3\\approx 0{,}4771$. "
   "Számold ki <b>táblázat nélkül</b>!",
   ["$\\lg 12$", "$\\lg 1{,}5$"],
-  ["$\\lg(4\\cdot 3)=2\\lg 2+\\lg 3\\approx 1{,}0791$",
-   "$\\lg\\tfrac32=\\lg 3-\\lg 2\\approx 0{,}1761$"], True),
+  ['$1{,}0791$', '$0{,}1761$'], True),
  ("Hány jegyű a $2^{100}$ szám a tízes számrendszerben? "
   "($\\lg 2\\approx 0{,}30103$)", None,
-  "$\\lg 2^{100}=100\\lg 2\\approx 30{,}103$, tehát $10^{30}&lt;2^{100}&lt;10^{31}$: "
-  "a szám <b>31 jegyű</b>."),
+  '31 jegyű.'),
  ("Számold ki! $\\log_{\\frac12}32+\\log_{2}\\tfrac{1}{32}$", None,
-  "$-5+(-5)=-10$."),
+  '$-10$.'),
  ("Oldd meg! $\\log_{2}x+\\log_{2}(x-2)=3$", None,
-  "ÉT: $x&gt;2$. Összevonva $\\log_{2}\\big(x(x-2)\\big)=3$, tehát $x^{2}-2x=8$, "
-  "azaz $x^{2}-2x-8=0$: $x_{1}=4$, $x_{2}=-2$. Az ÉT miatt csak $x=4$ jó."),
+  '$x=4$.'),
  ("Egy radioaktív anyag felezési ideje $5$ nap. Hány nap alatt csökken a mennyisége "
   "a <b>nyolcadára</b>?", None,
-  "A modell $\\left(\\tfrac12\\right)^{t/5}=\\tfrac18=\\left(\\tfrac12\\right)^{3}$, "
-  "tehát $\\dfrac{t}{5}=3$ és $t=15$ nap."),
+  '$15$ nap.'),
 ]
 
 JOKER = ("Számold ki! $\\log_{2}3\\cdot\\log_{3}4\\cdot\\log_{4}5\\cdot\\ldots"
          "\\cdot\\log_{63}64$",
-         "Írd át minden tényezőt tízes alapra: $\\dfrac{\\lg 3}{\\lg 2}\\cdot"
-         "\\dfrac{\\lg 4}{\\lg 3}\\cdot\\ldots\\cdot\\dfrac{\\lg 64}{\\lg 63}$. "
-         "Minden számláló kiesik a következő nevezővel, marad "
-         "$\\dfrac{\\lg 64}{\\lg 2}=\\log_{2}64=\\boxed{6}$.")
+         '$\\boxed{6}$.')
 
 # ============================== OLDAL ==============================
 

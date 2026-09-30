@@ -118,14 +118,16 @@ osztályonként egy PR; utána `kulcs_teszt` + `kulcs_regresszio` (a levezetés 
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ◐ 16 lap, 110 kártya (helyi ág, 2026-09-29) | ☐ | ☐ | ☐ |
+| ◐ 16 lap, 110 kártya (helyi ág, 2026-09-29) | ◐ 03: 4 lap, 113 kártya (helyi ág, 2026-09-30); 01–02 és 04 hátra | ☐ | ☐ |
 
 | 1e | 2e | 3e | 4e (01–04) |
 |---|---|---|---|
-| ◐ 1e helyi ágon ellenőrizve | ☐ | ☐ | ☐ |
+| ◐ 1e helyi ágon ellenőrizve | ◐ 2e/03 helyi ágon ellenőrizve; a többi témakör hátra | ☐ | ☐ |
 
 **1e A2 kivételek:** bizonyítást vagy indoklást kérő kártyákban a rövid érvelés a válasz része maradt: `1e/01` függvények `nehez-2`, `nehez-7`; halmazok `nehez-2`, `nehez-4`; logika `nehez-6`, `nehez-7`; `1e/02` trigonometria `nehez-1`; `1e/03` számok `nehez-1`, `nehez-2`, `nehez-7`, Vészterem `nehez-1`; `1e/04` Vészterem `alap-5`; `1e/05` geometria `nehez-2`, `gye-6`, `joker`, Vészterem `nehez-3`. Mind a 16 kártya kifejezetten bizonyítást, cáfolatot vagy indoklást kér, így az érdemi érvelés maradt. A logika `nehez-7` fölösleges értéktáblázatos mondata kikerült, a halmazok `nehez-4` és a geometria `nehez-2` bizonyítása pontosabb lett; a `gye-6` állítása javítva.
 
+
+**2e/03 A2 részállapot (2026-09-30, helyi ág):** négy feladatlap 113 Végeredmény-doboza tisztult; a 2e/01, 02 és 04 témakörök A2 tisztítása hátra van. A végső válaszhoz szükséges rövid érvelés vagy modell megmaradt az exponenciális lap `alap-6`, `nehez-6` kártyáján, a logaritmus lap `kozep-10` bizonyításán, a logaritmusfüggvény lap `kozep-13` fogalmi kérdésén, valamint a Vészterem `alap-10` és `kozep-7` kártyáján. A HTML-diff 113 Végeredmény-dobozra és 6 feladatszövegre korlátozódik; a kánon, a linkek, a sávok, a kulcsteszt és a háromszélességes böngészőpróba rendben. A friss szemű lektor hat feladatszöveg-pontosítást jelzett; ezek a kérdésekben is javítva vannak.
 
 ---
 
