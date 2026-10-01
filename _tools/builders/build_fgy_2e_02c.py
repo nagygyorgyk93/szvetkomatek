@@ -52,8 +52,8 @@ ALAP = [
   ["$x\\in[-3;3]$", "$x\\in(-\\infty;1]\\cup[4;+\\infty)$"], False),
  ("Oldd meg! (Itt $D=0$.)",
   ["$x^{2}-6x+9&gt;0$", "$x^{2}-6x+9\\le 0$", "$x^{2}+4x+4\\ge 0$"],
-  ["$x\\in\\mathbb{R}\\setminus\\{3\\}$", "Egyetlen megoldás: $x=3$.",
-   "$x\\in\\mathbb{R}$ (minden valós szám)."], False),
+  ["$x\\in\\mathbb{R}\\setminus\\{3\\}$", "$x=3$.",
+   "$x\\in\\mathbb{R}$"], False),
  ("Oldd meg! (Itt $D&lt;0$.)",
   ["$x^{2}+2x+5&gt;0$", "$x^{2}+2x+5&lt;0$", "$-x^{2}+x-3&lt;0$"],
   ["$x\\in\\mathbb{R}$", "Nincs megoldás.", "$x\\in\\mathbb{R}$"], False),
@@ -97,9 +97,9 @@ KOZEP = [
   ['Ellenőrizd a megoldását: teljesül-e $x=-3$-ra az eredeti egyenlőtlenség?',
    'Hol csúszik el a gondolatmenet?',
    'Add meg a helyes megoldáshalmazt!'],
-  ['Igen: $(-3)^2=9>4$, tehát $-3$ megoldás — a kadét válasza viszont kizárja.',
-   'A négyzetgyökvonás nem őrzi meg az egyenlőtlenséget negatív számokra: $\\sqrt{x^2}=|x|$, nem $x$. A helyes lépés tehát $|x|>2$.',
-   '$|x|>2$, azaz $x<-2$ vagy $x>2$: $x\\in(-\\infty;-2)\\cup(2;+\\infty)$.']),
+  ['Igen: $(-3)^2=9>4$.',
+   '$\\sqrt{x^2}=|x|$, ezért a helyes lépés $|x|>2$.',
+   '$x\\in(-\\infty;-2)\\cup(2;+\\infty)$.']),
 ]
 
 NEHEZ = [

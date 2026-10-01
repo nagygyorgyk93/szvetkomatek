@@ -82,14 +82,13 @@ ALAP = [
   ["$y=(x-1)^{2}+4$", "$y=(x+2)^{2}-3$", "$y=(x-3)^{2}$"], True),
  ("Van-e minimuma vagy maximuma, és mennyi az értéke?",
   ["$y=x^{2}-8x+20$", "$y=-x^{2}+2x+3$", "$y=2x^{2}-4x+1$"],
-  ["Minimum, értéke $4$ (az $x=4$ helyen).", "Maximum, értéke $4$ (az $x=1$ helyen).",
-   "Minimum, értéke $-1$ (az $x=1$ helyen)."], False),
+  ["Minimum: $4$.", "Maximum: $4$.", "Minimum: $-1$."], False),
  ("Add meg az értékkészletet!",
   ["$y=x^{2}+1$", "$y=-x^{2}-2$", "$y=x^{2}-6x+5$"],
   ["$[1;+\\infty)$", "$(-\\infty;-2]$", "$[-4;+\\infty)$"], True),
  ("Hány zérushelye van a függvénynek?",
   ["$y=x^{2}-4x+4$", "$y=x^{2}+x+3$", "$y=x^{2}-x-6$"],
-  ["Egy (kettős): $D=0$.", "Egy sem: $D=-11&lt;0$.", "Kettő: $D=25&gt;0$."], True),
+  ["Egy (kettős).", "Egy sem.", "Kettő."], True),
  ("Olvasd le a kanonikus alakból a csúcspontot és a szélsőértéket!",
   ["$y=(x-2)^{2}+3$", "$y=-(x+1)^{2}+5$", "$y=2(x-4)^{2}$"],
   ["$C(2;3)$, minimum $3$.", "$C(-1;5)$, maximum $5$.", "$C(4;0)$, minimum $0$."], True),
@@ -108,16 +107,12 @@ ALAP = [
 KOZEP = [
  ("Végezd el a teljes vizsgálatot! " + VIZSG,
   ["$y=x^{2}-6x+8$", "$y=x^{2}+2x-3$"],
-  ["Zérushelyek $2$ és $4$; $C(3;-1)$; minimum $-1$; értékkészlet $[-1;+\\infty)$; "
-   "$y$-metszet $8$; konvex.",
-   "Zérushelyek $1$ és $-3$; $C(-1;-4)$; minimum $-4$; értékkészlet $[-4;+\\infty)$; "
-   "$y$-metszet $-3$; konvex."], False),
+  ["Zérushelyek $2$ és $4$; $C(3;-1)$; minimum $-1$; értékkészlet $[-1;+\\infty)$; konvex.",
+   "Zérushelyek $1$ és $-3$; $C(-1;-4)$; minimum $-4$; értékkészlet $[-4;+\\infty)$; konvex."], False),
  ("Végezd el a teljes vizsgálatot! $y=-x^{2}+6x-5$", None,
-  "Zérushelyek $1$ és $5$; $C(3;4)$; maximum $4$; értékkészlet $(-\\infty;4]$; "
-  "$y$-metszet $-5$; konkáv."),
+  "Zérushelyek $1$ és $5$; $C(3;4)$; maximum $4$; értékkészlet $(-\\infty;4]$; konkáv."),
  ("Végezd el a teljes vizsgálatot! $y=2x^{2}-8x+6$", None,
-  "Zérushelyek $1$ és $3$; $C(2;-2)$; minimum $-2$; értékkészlet $[-2;+\\infty)$; "
-  "$y$-metszet $6$; konvex."),
+  "Zérushelyek $1$ és $3$; $C(2;-2)$; minimum $-2$; értékkészlet $[-2;+\\infty)$; konvex."),
  ("Írd át általános alakba!",
   ["$y=(x+3)^{2}-4$", "$y=-(x-2)^{2}+9$"],
   ["$y=x^{2}+6x+5$", "$y=-x^{2}+4x+5$"], True),
@@ -133,17 +128,16 @@ KOZEP = [
  ("Egy szám és a nála $10$-zel kisebb szám szorzata mikor a legkisebb? Mennyi ekkor "
   "a szorzat?", None, "Az $x=5$ helyen; a legkisebb szorzat $-25$."),
  ("Egy téglalap kerülete $24$ méter. Mekkora a lehető legnagyobb területe?",
-  None, "$36\\ \\text{m}^{2}$ (a téglalap ekkor $6\\times 6$-os négyzet)."),
+  None, "$36\\ \\text{m}^{2}$"),
  ("Végezd el a teljes vizsgálatot! $y=-2x^{2}+8x-6$", None,
-  "Zérushelyek $1$ és $3$; $C(2;2)$; maximum $2$; értékkészlet $(-\\infty;2]$; "
-  "$y$-metszet $-6$; konkáv."),
+  "Zérushelyek $1$ és $3$; $C(2;2)$; maximum $2$; értékkészlet $(-\\infty;2]$; konkáv."),
 ]
 
 NEHEZ = [
  ("Írd fel a parabola egyenletét, ha a csúcspontja $C(2;-3)$, és átmegy a $(0;1)$ ponton!",
-  None, "$y=(x-2)^{2}-3=x^{2}-4x+1$"),
+  None, "$y=(x-2)^{2}-3$"),
  ("Írd fel a parabola egyenletét, ha a zérushelyei $-1$ és $3$, és átmegy az $(1;-8)$ ponton!",
-  None, "$y=2(x+1)(x-3)=2x^{2}-4x-6$"),
+  None, "$y=2(x+1)(x-3)$"),
  ("Egy feldobott tárgy magassága $t$ másodperc múlva $h(t)=-5t^{2}+20t$ méter.",
   ["Mikor és milyen magasan van a legmagasabban?", "Mikor ér földet?"],
   ["A $t=2$ s pillanatban, $20$ méter magasan.", "A $t=4$ s pillanatban."], False),
@@ -156,7 +150,7 @@ NEHEZ = [
 JOKER = ("<b>Dr. Baljós vírus-kódja.</b> A rendszer az $y=x^{2}-6x+5$ függvény csúcspontját "
          "így számolta: „$u=-\\dfrac{b}{2a}=-\\dfrac{6}{2}=-3$, tehát $C(-3;32)$”. "
          "Hol a hiba, és mi a helyes csúcspont?",
-         "A $b=-6$, ezért $u=-\\dfrac{-6}{2}=3$ (nem $-3$). Helyesen $C(3;-4)$.")
+         "A $b=-6$ előjele maradt ki a csúcs képletéből; helyesen $C(3;-4)$.")
 
 GYD_ORAI = [
  ("Oldd meg a másodfokú egyenletet!",
@@ -166,7 +160,8 @@ GYD_ORAI = [
   ["$x^{2}-11x+28$", "$x^{2}+13x+42$"], ["$(x-4)(x-7)$", "$(x+6)(x+7)$"], True),
  ("Vizsgáld meg az $x^{2}+10x+m=0$ <b>egyenlet</b> megoldásainak számát és típusát "
   "az $m$ paraméter függvényében!", None,
-  "$m&lt;25$: két különböző valós; $m=25$: egy kettős ($x=-5$); $m&gt;25$: két komplex."),
+  "$m&lt;25$: két különböző valós; $m=25$: egy kettős ($x=-5$); "
+  "$m&gt;25$: két nem valós komplex."),
  ("Az $x^{2}-11x+28=0$ egyenlet megoldása nélkül számítsd ki!",
   ["$x_{1}+x_{2}$ és $x_{1}\\cdot x_{2}$", "$\\dfrac{1}{x_{1}}+\\dfrac{1}{x_{2}}$",
    "$x_{1}^{2}+x_{2}^{2}$"],
@@ -181,7 +176,7 @@ GYD_ORAI = [
  ("Írj fel másodfokú egyenletet, amelynek megoldásai a $-2$ és a $7$ számok!",
   None, "$x^{2}-5x-14=0$"),
  ("Egy téglalap kerülete $28$ cm. Mekkora a lehető legnagyobb területe?",
-  None, "$49\\ \\text{cm}^{2}$ (a téglalap ekkor $7\\times 7$-es négyzet)."),
+  None, "$49\\ \\text{cm}^{2}$"),
 ]
 
 GYD_OTTHON = [

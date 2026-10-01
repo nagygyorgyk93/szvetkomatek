@@ -92,7 +92,8 @@ Havi GitHub Action, amely `media.py --online`-t futtat, és hiba esetén issue-t
 | 1e/05 geometria Gyakorló dolgozat 6: elfajuló háromszög az állításban | ◐ Helyi ágon `ABC` és `DEC` háromszögre javítva; az OSO-indoklás pontosítva | Publikálás tanári jóváhagyás után |
 | 1e/01 halmazok Gyakorló órai 4 és 1e/05 Vészterem Alap 12: hamis egzisztenciális állításhoz „ellenpélda” kérése | ◐ Mindkét kérés indoklásra pontosítva; a logikai feladatban `\mathbb{N}` értelmezése rögzítve | Publikálás tanári jóváhagyás után |
 | 1e/02 trigonometria Nehéz 4–5: a szögfüggvények közül a kotangens hiányzik a Végeredményből | ◐ `ctg φ = 5/12`, illetve `√2` pótolva; független SymPy-számítás és új kulcstesztek | Meglévő feladatparaméterekből levezetett értékek; publikálás tanári jóváhagyás után |
-| Végeredménydobozok tartalmi tisztítása | ◐ 1e: 16 lapon 110; 2e/01 és 03: 8 lapon 122 Végeredmény tisztítva helyi ágon | 2e/02 és 04, majd 3e–4e hátra; publikálás tanári jóváhagyás után |
+| Végeredménydobozok tartalmi tisztítása | ◐ 1e: 16 lapon 110; 2e/01–03: 12 lapon 146 Végeredmény tisztítva (az utolsó adag külön helyi ágon) | 2e/04, majd 3e–4e hátra; a 2e/02 még nincs pusholva |
+| 2e/02 tantervi határ: bikvadratikus és paraméteres feladatok az Alap és a gyakorló sávban is | ⚠️ A 2e M2 tantervi skill kizárja ezeket; a 2026/27-es operatív terv csak általánosan nevezi meg a másodfokúra visszavezethető egyenleteket | Tanári döntés kell: maradjanak-e bővítésként, és mely sávban; az A2 adag nem cserélt feladatot |
 
 ### A1 · Teljes ellenőrzés osztályonként
 **Cél:** a már kész anyag hibáinak felderítése és javítása — **tartalmi bővítés nélkül**.
@@ -118,11 +119,11 @@ osztályonként egy PR; utána `kulcs_teszt` + `kulcs_regresszio` (a levezetés 
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ◐ 16 lap, 110 kártya (helyi ág, 2026-09-29) | ◐ 01 és 03: 8 lap, 122 kártya (helyi ág, 2026-10-01); 02 és 04 hátra | ☐ | ☐ |
+| ◐ 16 lap, 110 kártya (helyi ág, 2026-09-29) | ◐ 01–03: 12 lap, 146 Végeredmény-doboz (02 külön helyi ág, 2026-10-01); 04 hátra | ☐ | ☐ |
 
 | 1e | 2e | 3e | 4e (01–04) |
 |---|---|---|---|
-| ◐ 1e helyi ágon ellenőrizve | ◐ 2e/01 és 03 helyi ágon ellenőrizve; 02 és 04 hátra | ☐ | ☐ |
+| ◐ 1e helyi ágon ellenőrizve | ◐ 2e/01–03 helyi ágon ellenőrizve; 04 hátra | ☐ | ☐ |
 
 **1e A2 kivételek:** bizonyítást vagy indoklást kérő kártyákban a rövid érvelés a válasz része maradt: `1e/01` függvények `nehez-2`, `nehez-7`; halmazok `nehez-2`, `nehez-4`; logika `nehez-6`, `nehez-7`; `1e/02` trigonometria `nehez-1`; `1e/03` számok `nehez-1`, `nehez-2`, `nehez-7`, Vészterem `nehez-1`; `1e/04` Vészterem `alap-5`; `1e/05` geometria `nehez-2`, `gye-6`, `joker`, Vészterem `nehez-3`. Mind a 16 kártya kifejezetten bizonyítást, cáfolatot vagy indoklást kér, így az érdemi érvelés maradt. A logika `nehez-7` fölösleges értéktáblázatos mondata kikerült, a halmazok `nehez-4` és a geometria `nehez-2` bizonyítása pontosabb lett; a `gye-6` állítása javítva.
 
@@ -130,6 +131,8 @@ osztályonként egy PR; utána `kulcs_teszt` + `kulcs_regresszio` (a levezetés 
 **2e/03 A2 részállapot (2026-09-30, helyi ág):** négy feladatlap 113 Végeredmény-doboza tisztult; ekkor még a 2e/01, 02 és 04 témakörök A2 tisztítása volt hátra. A végső válaszhoz szükséges rövid érvelés vagy modell megmaradt az exponenciális lap `alap-6`, `nehez-6` kártyáján, a logaritmus lap `kozep-10` bizonyításán, a logaritmusfüggvény lap `kozep-13` fogalmi kérdésén, valamint a Vészterem `alap-10` és `kozep-7` kártyáján. A HTML-diff 113 Végeredmény-dobozra és 6 feladatszövegre korlátozódik; a kánon, a linkek, a sávok, a kulcsteszt és a háromszélességes böngészőpróba rendben. A friss szemű lektor hat feladatszöveg-pontosítást jelzett; ezek a kérdésekben is javítva vannak.
 
 **2e/01 A2 részállapot (2026-10-01, helyi ág):** négy feladatlap 150 kártyáját átnéztük; 9 Végeredmény-doboz rövidült vagy pontosodott. A Vészterem `kozep-7` feladatszövege most saját Gauss-síkbeli ábra készítését kéri, mert a korábbi szöveg nem létező rajzra hivatkozott. A hatványozás és gyökvonás Jokerében, valamint a Vészterem `alap-10` hibakereső feladatában a kért hibaazonosítás, ellenpélda vagy javítás megmaradt. A komplex számok `kozep-4` és Joker kártyájának kért indoklása, a gyökvonás `nehez-4` azonosságának bizonyítása, valamint a Vészterem `kozep-7` képletes számítása és rövid indoka is indokolt kivétel. A friss szemű lektor a kilenc módosított feladat eredményeit megerősítette; a 2e/02 és 04 témakör hátra van.
+
+**2e/02 A2 részállapot (2026-10-01, külön helyi ág):** négy feladatlap 147 kártyáját átnéztük; 24 Végeredmény-doboz és 5 kérdésszöveg pontosodott. A „komplex gyök” többértelműségét a „nem valós komplex” megfogalmazás oldja fel; a `kozep-12` állítása a főegyüttható és a teljes négyzet szorzatáról szól. A Vészterem `alap-10` hamis állításai konkrét ellenpéldát kaptak; `kozep-7` már nem hivatkozik hiányzó ábrára, és a kért szorzat alak is szerepel a válaszban. A hibaazonosítást és indoklást kérő Joker, illetve `kozep-12` rövid érdemi magyarázata megmaradt. A friss szemű lektor a tíz vizsgált feladat eredményeit megerősítette. A HTML-diff 24 válaszdobozra és 5 kérdésre, a keresőindex 308 bejegyzéséből pontosan erre a négy URL-re korlátozódik. A kánon 310/0, a linkellenőrzés 310/0, a sávellenőrzés tiszta, a kulcsteszt 4865/4865, a regresszió 4865/4865 = 100%, a 360/390/1280 px-es böngészőpróba mind a négy lapon hibátlan. A teljes kulcstesztnek nincs 2e modulja; a jsdom- és a valódi képernyőolvasós réteg nem futott. **Tanári döntés kell:** az M2-skill szerint a bikvadratikus és paraméteres egyenletek nem 2e-s törzsanyagok, miközben a témakörben Alap- és gyakorlófeladatok, illetve önálló tananyag is épül rájuk. A 2026/27-es operatív terv csak a tágabb „másodfokúra visszavezethető egyenletek” címet használja. Az esetleges átsorolás külön tartalmi adag legyen.
 
 ---
 
