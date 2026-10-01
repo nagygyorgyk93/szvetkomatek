@@ -80,7 +80,10 @@ ALAP = [
   ["$30^\\circ$", "$30^\\circ$", "$330^\\circ$", "$160^\\circ$"], True),
  ("Melyik negyedben van a szög?",
   ["$100^\\circ$", "$200^\\circ$", "$300^\\circ$", "$400^\\circ$"],
-  ["II.", "III.", "IV.", "I. (mert $400^\\circ-360^\\circ=40^\\circ$)"], True),
+  ['II.',
+   'III.',
+   'IV.',
+   'I.'], True),
  ("Add meg mind a négy szögfüggvény pontos értékét!",
   ["$30^\\circ$", "$45^\\circ$", "$60^\\circ$"],
   ["$\\tfrac12$, $\\tfrac{\\sqrt3}{2}$, $\\tfrac{\\sqrt3}{3}$, $\\sqrt3$",
@@ -109,7 +112,10 @@ ALAP = [
  ("Milyen előjelű? (Csak az előjelet add meg!)",
   ["$\\sin 100^\\circ$", "$\\cos 200^\\circ$", "$\\operatorname{tg}300^\\circ$",
    "$\\operatorname{ctg}160^\\circ$"],
-  ["$+$ (II. negyed)", "$-$ (III. negyed)", "$-$ (IV. negyed)", "$-$ (II. negyed)"], True),
+  ['$+$',
+   '$-$',
+   '$-$',
+   '$-$'], True),
  ("Vezesd vissza az első negyedre! (Csak az alakot írd fel, ne számold ki.)",
   ["$\\sin 160^\\circ$", "$\\cos 190^\\circ$", "$\\operatorname{tg}320^\\circ$"],
   ["$\\sin 20^\\circ$", "$-\\cos 10^\\circ$", "$-\\operatorname{tg}40^\\circ$"], True),
@@ -124,12 +130,10 @@ ALAP = [
   ["$-\\dfrac12$", "$\\dfrac12$", "$-1$"], True),
  ("Add meg az $\\alpha$ szöget, ha $0^\\circ\\le\\alpha&lt;360^\\circ$, "
   "$\\sin\\alpha=\\tfrac12$ és $\\cos\\alpha&lt;0$!", None,
-  "A szinusz pozitív, a koszinusz negatív → II. negyed, alapszög $30^\\circ$: "
-  "$\\alpha=150^\\circ$."),
+  '$\\alpha=150^\\circ$.'),
  ("Add meg az $\\alpha$ szöget, ha $0^\\circ\\le\\alpha&lt;360^\\circ$, "
   "$\\cos\\alpha=\\tfrac{\\sqrt2}{2}$ és $\\sin\\alpha&lt;0$!", None,
-  "A koszinusz pozitív, a szinusz negatív → IV. negyed, alapszög $45^\\circ$: "
-  "$\\alpha=315^\\circ$."),
+  '$\\alpha=315^\\circ$.'),
 ]
 
 # ============================== KÖZÉPSZINT ==============================
@@ -146,62 +150,50 @@ KOZEP = [
   ["$\\dfrac{\\pi}{4}$", "$\\dfrac{5\\pi}{6}$", "$\\dfrac{\\pi}{3}$"], True),
  ("Számold ki! (A nem pontos értéket öt tizedesre kerekítsd.)",
   ["$\\sin 1000^\\circ$", "$\\cos 1110^\\circ$"],
-  ["$1000-2\\cdot 360=280$; a IV. negyedben a szinusz negatív: "
-   "$-\\sin 80^\\circ\\approx -0{,}98481$",
-   "$1110-3\\cdot 360=30$, tehát $\\cos 30^\\circ=\\dfrac{\\sqrt3}{2}$"], False),
+  ['$\\sin 1000^\\circ\\approx-0{,}98481$',
+   '$\\cos 1110^\\circ=\\dfrac{\\sqrt3}{2}$'], False),
  ("Számold ki pontosan! $\\sin 420^\\circ\\cdot\\cos 330^\\circ$", None,
-  "$\\sin 420^\\circ=\\sin 60^\\circ=\\tfrac{\\sqrt3}{2}$ és "
-  "$\\cos 330^\\circ=\\tfrac{\\sqrt3}{2}$, a szorzat $\\dfrac34$."),
+  '$\\dfrac34$.'),
  ("Számold ki pontosan! $\\sin 150^\\circ+\\cos 240^\\circ+\\operatorname{tg}315^\\circ$",
-  None, "$\\tfrac12+\\left(-\\tfrac12\\right)+(-1)=-1$"),
+  None, '$-1$.'),
  ("Számold ki pontosan! "
   "$2\\sin 120^\\circ-3\\cos 150^\\circ+\\operatorname{tg}240^\\circ$", None,
-  "$2\\cdot\\tfrac{\\sqrt3}{2}-3\\cdot\\left(-\\tfrac{\\sqrt3}{2}\\right)+\\sqrt3="
-  "\\sqrt3+\\tfrac{3\\sqrt3}{2}+\\sqrt3=\\dfrac{7\\sqrt3}{2}$"),
+  '$\\dfrac{7\\sqrt3}{2}$.'),
  ("Add meg az $\\alpha$ szöget, ha $0\\le\\alpha&lt;2\\pi$, "
   "$\\operatorname{tg}\\alpha=-1$ és $\\sin\\alpha&gt;0$!", None,
-  "A tangens negatív, a szinusz pozitív → II. negyed, alapszög $\\tfrac{\\pi}{4}$: "
-  "$\\alpha=\\dfrac{3\\pi}{4}$."),
+  '$\\alpha=\\dfrac{3\\pi}{4}$.'),
  ("Add meg az $\\alpha$ szöget, ha $0\\le\\alpha&lt;2\\pi$, "
   "$\\operatorname{ctg}\\alpha=\\sqrt3$ és $\\cos\\alpha&lt;0$!", None,
-  "A kotangens pozitív → I. vagy III. negyed; a koszinusz negatív → III. negyed. "
-  "Az alapszög $\\tfrac{\\pi}{6}$, tehát $\\alpha=\\dfrac{7\\pi}{6}$."),
+  '$\\alpha=\\dfrac{7\\pi}{6}$.'),
  ("Igaz-e, hogy $\\sin 100^\\circ&gt;\\sin 80^\\circ$? Indokold!", None,
-  "<b>Nem</b> — a két érték <b>egyenlő</b>, mert $100^\\circ$ a II. negyedben van, "
-  "alapszöge $80^\\circ$, és ott a szinusz pozitív: $\\sin 100^\\circ=\\sin 80^\\circ$."),
+  'Nem: $\\sin100^\\circ=\\sin80^\\circ$, mert a két szög a $90^\\circ$-ra szimmetrikus.'),
  ("Rendezd nagyság szerint növekvően! $\\sin 30^\\circ$, $\\sin 100^\\circ$, "
   "$\\sin 200^\\circ$", None,
   "$\\sin 200^\\circ\\approx -0{,}34202&lt;\\sin 30^\\circ=0{,}5&lt;"
   "\\sin 100^\\circ\\approx 0{,}98481$"),
  ("Mekkora a $6$ egység sugarú kör $60^\\circ$-os középponti szögéhez tartozó "
   "ívhossza? (Az ívhossz $\\ell=r\\cdot\\alpha$, ahol $\\alpha$ <b>radiánban</b> van.)",
-  None, "$\\alpha=\\tfrac{\\pi}{3}$, tehát $\\ell=6\\cdot\\tfrac{\\pi}{3}=2\\pi\\approx 6{,}28$."),
+  None, '$\\ell=2\\pi\\approx6{,}28$.'),
  ("Mekkora annak a körcikknek a területe, amelynek sugara $4$, középponti szöge "
   "$\\tfrac{\\pi}{6}$? ($T=\\tfrac{r^{2}\\alpha}{2}$)", None,
-  "$T=\\dfrac{16\\cdot\\tfrac{\\pi}{6}}{2}=\\dfrac{4\\pi}{3}\\approx 4{,}19$"),
+  '$T=\\dfrac{4\\pi}{3}\\approx4{,}19$.'),
 ]
 
 # ============================== NEHÉZ SZINT ==============================
 
 NEHEZ = [
  ("Számold ki pontosan! $\\sin^{2}120^\\circ+\\cos^{2}120^\\circ$", None,
-  "Az alapazonosság szerint <b>minden</b> szögre $1$ — nem kell behelyettesíteni. "
-  "(Ellenőrzésül: $\\tfrac34+\\tfrac14=1$.)"),
+  '$1$.'),
  ("Egyszerűsítsd! $\\sin(180^\\circ-\\alpha)+\\cos(180^\\circ+\\alpha)+"
   "\\operatorname{tg}(360^\\circ-\\alpha)$", None,
-  "$\\sin\\alpha+(-\\cos\\alpha)+(-\\operatorname{tg}\\alpha)="
-  "\\sin\\alpha-\\cos\\alpha-\\operatorname{tg}\\alpha$"),
+  '$\\sin\\alpha-\\cos\\alpha-\\operatorname{tg}\\alpha$.'),
  ("Mely $\\alpha\\in[0;2\\pi)$ szögekre teljesül, hogy $\\sin\\alpha=\\cos\\alpha$?",
-  None, "Osztva $\\cos\\alpha$-val: $\\operatorname{tg}\\alpha=1$, tehát "
-        "$\\alpha=\\dfrac{\\pi}{4}$ vagy $\\alpha=\\dfrac{5\\pi}{4}$. "
-        "(A $\\cos\\alpha=0$ eset nem ad megoldást, mert ott a szinusz $\\pm 1$.)"),
+  None, '$\\alpha=\\dfrac{\\pi}{4}$ vagy $\\alpha=\\dfrac{5\\pi}{4}$.'),
  ("Egy kerék $20$ másodperc alatt fordul körbe egyszer. Mekkora szöget fordul "
   "$3$ másodperc alatt? (Radiánban add meg.)", None,
-  "A teljes fordulat $2\\pi$, tehát $\\dfrac{3}{20}\\cdot 2\\pi=\\dfrac{3\\pi}{10}"
-  "\\approx 0{,}94$ radián (azaz $54^\\circ$)."),
+  '$\\dfrac{3\\pi}{10}$ radián.'),
  ("Számold ki pontosan! $\\cos 0^\\circ+\\cos 60^\\circ+\\cos 120^\\circ+\\cos 180^\\circ$",
-  None, "$1+\\tfrac12+\\left(-\\tfrac12\\right)+(-1)=0$ — a tagok páronként kiejtik "
-        "egymást, mert $\\cos(180^\\circ-\\varphi)=-\\cos\\varphi$."),
+  None, '$0$.'),
  ("Mely szögekre nem értelmezett a $\\operatorname{tg}$, és melyekre a "
   "$\\operatorname{ctg}$? Indokold a definícióval!", None,
   "$\\operatorname{tg}\\alpha=\\tfrac{\\sin\\alpha}{\\cos\\alpha}$, tehát ott nincs "
@@ -212,12 +204,7 @@ NEHEZ = [
 
 JOKER = ("Számold ki! $\\sin^{2}10^\\circ+\\sin^{2}20^\\circ+\\sin^{2}30^\\circ+\\ldots"
          "+\\sin^{2}80^\\circ$",
-         "Nyolc tag van. Párosítsuk a végekről: mivel $\\sin 80^\\circ=\\cos 10^\\circ$, "
-         "$\\sin 70^\\circ=\\cos 20^\\circ$ és így tovább,"
-         "$$\\sin^{2}10^\\circ+\\sin^{2}80^\\circ=\\sin^{2}10^\\circ+\\cos^{2}10^\\circ=1.$$"
-         "Ugyanígy a $20^\\circ$–$70^\\circ$, a $30^\\circ$–$60^\\circ$ és a "
-         "$40^\\circ$–$50^\\circ$ pár is $1$-et ad. Négy pár, tehát az összeg "
-         "$\\boxed{4}$.")
+         '$4$.')
 
 # ============================== OLDAL ==============================
 
