@@ -134,7 +134,7 @@ KOZEP = [
   ["$(a+b)^{2}=a^{2}+b^{2}$", "$(ab)^{3}=a^{3}b^{3}$", "$a^{-1}+b^{-1}=(a+b)^{-1}$",
    "$\\left(a^{2}\\right)^{3}=\\left(a^{3}\\right)^{2}$"],
   ["Hamis; $a=b=1$ esetén $4\\neq 2$.", "Igaz.",
-   "Hamis; $a=b=1$ esetén $2\\neq\\dfrac{1}{2}$.", "Igaz, mindkettő $a^{6}$."], False),
+   "Hamis; $a=b=1$ esetén $2\\neq\\dfrac{1}{2}$.", "Igaz."], False),
 
  ("Rendezd növekvő sorrendbe!",
   ["$0{,}9^{10}$, $0{,}9^{2}$, $0{,}9^{5}$",
@@ -177,8 +177,8 @@ JOKER = ("<b>Dr. Baljós vírus-kódja.</b> A rendszerbe a következő átalakí
          "végeredményt! $(a,b&gt;0)$ "
          "$$\\left(\\frac{2a^{-2}}{b^{3}}\\right)^{-2}\\ \\overset{?}{=}\\ "
          "\\frac{2a^{4}}{b^{-6}}\\ =\\ 2a^{4}b^{6}$$",
-         "A $2$-es együttható kimaradt a hatványozásból: azt is a $-2$-edik hatványra kell "
-         "emelni. Helyesen $\\dfrac{a^{4}b^{6}}{4}$.")
+         "A $2$-es együttható hatványozása maradt el; helyesen "
+         "$\\dfrac{a^{4}b^{6}}{4}$.")
 
 # ============================== OLDAL ==============================
 

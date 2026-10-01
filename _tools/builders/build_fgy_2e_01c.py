@@ -142,7 +142,7 @@ ALAP = [
   ["Minden valós szám komplex szám is.", "$\\operatorname{Im}(3-5i)=-5i$",
    "A modulusz mindig nemnegatív valós szám.", "$\\overline{\\overline{z}}=z$",
    "$i^{2}=1$", "A $z=4i$ szám valós része $4$."],
-  ["Igaz.", "Hamis, helyesen $-5$ (az $i$ nélkül).", "Igaz.", "Igaz.",
+  ["Igaz.", "Hamis, helyesen $\\operatorname{Im}(3-5i)=-5$.", "Igaz.", "Igaz.",
    "Hamis, $i^{2}=-1$.", "Hamis, a valós rész $0$."], False),
 
  ("Végezd el az összeadást, illetve a kivonást!",
@@ -193,7 +193,7 @@ ALAP = [
   ["$i^{4k}=1$ minden $k\\in\\mathbb{N}$ esetén", "$i^{2}=i\\cdot i=-1$",
    "$\\dfrac{1}{i}=i$", "$(2i)^{2}=2i^{2}=-2$"],
   ["Igaz.", "Igaz.", "Hamis, helyesen $-i$.",
-   "Hamis: a $2$-t is négyzetre kell emelni, $(2i)^{2}=-4$."], False),
+   "Hamis, helyesen $(2i)^{2}=-4$."], False),
 ]
 
 KOZEP = [
