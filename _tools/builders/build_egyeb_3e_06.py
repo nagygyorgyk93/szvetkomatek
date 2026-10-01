@@ -344,8 +344,7 @@ HA = [
   r"$\frac{5}{2};\ \frac{3}{2};\ \frac{7}{6};\ 1$"),
  (r"Vizsgáld meg az $a_n=5-\frac{3}{n}$ sorozatot: monoton-e, és korlátos-e? Az állításaidat "
   r"indokold is meg!", None,
-  r"$a_{n+1}-a_n=\frac{3}{n(n+1)}\gt 0$, tehát szigorúan növekvő; az első tag $2$ alsó korlát, és "
-  r"$a_n\lt 5$ minden $n$-re, mert $\frac{3}{n}\gt 0$ — a sorozat korlátos: $2\le a_n\lt 5$"),
+  '$a_{n+1}-a_n=\\dfrac3{n(n+1)}\\gt0$, tehát szigorúan növekvő; $2\\le a_n\\lt5$, tehát korlátos.'),
  (r"Egy számtani sorozat első tagja $a_1=-4$, különbsége $d=6$.",
   [r"Számítsd ki $a_{20}$ és $S_{20}$ értékét!",
    r"Ábrázold az első négy tagot, és írd fel annak az egyenesnek az egyenletét, amelyre a pontok "
@@ -362,8 +361,8 @@ HA = [
 ]
 HK = [
  (r"Egy számtani sorozat hetedik tagja $a_7=25$, tizenhatodik tagja $a_{16}=61$. Számítsd ki az első "
-  r"$16$ tag összegét!", None, r"a különbség $4$, az első tag $1$, és $S_{16}=496$"),
- (r"Oldd meg az egyenletet: $3+8+13+\dots+x=366$!", None, r"$n=12$ tagot adunk össze, és $x=58$"),
+  r"$16$ tag összegét!", None, '$S_{16}=496$.'),
+ (r"Oldd meg az egyenletet: $3+8+13+\dots+x=366$!", None, '$x=58$.'),
  (r"Egy mértani sorozat harmadik tagja $b_3=20$, hatodik tagja $b_6=160$. Írd fel a sorozat első "
   r"négy tagját, és számítsd ki az első hat tag összegét!", None,
   r"$q=2$, $b_1=5$: $5;\ 10;\ 20;\ 40$, és $S_6=315$"),
@@ -375,8 +374,8 @@ HN = [
   r"Közvetlenül a gyógyszer bevétele után $400$ mg van a szervezetben.",
   [r"Mennyi marad $30$ óra múlva?",
    r"Hányadik hatórás időszak végén csökken a mennyiség $10$ mg alá?"],
-  [r"$30$ óra alatt $5$ felezés történik: $400\cdot\left(\frac{1}{2}\right)^{5}=12{,}5$ mg",
-   r"a $6.$ időszak végén (vagyis $36$ óra múlva): $6{,}25$ mg"]),
+  ['$12{,}5$ mg',
+   'A $6.$ hatórás időszak végén ($36$ óra múlva)']),
 ]
 
 body = [

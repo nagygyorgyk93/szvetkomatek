@@ -132,8 +132,8 @@ ALAP = [
 
  (r"Hány közös pontja van az $y^2=9x$ parabolának és az egyenesnek? Érintő-e az egyenes?",
   [r"$y=3$", r"$y=-6$"],
-  [r"egy: $(1;3)$; nem érintő, párhuzamos a parabola tengelyével", r"egy: $(4;-6)$; nem érintő, ez is "
-   r"párhuzamos a tengellyel"]),
+  ['egy közös pont: $(1;3)$; nem érintő',
+   'egy közös pont: $(4;-6)$; nem érintő']),
 
  (r"Az $y^2=10x$ parabola $M$ pontjának első koordinátája $\tfrac52$, a második negatív. Írd fel a parabola "
   r"érintőjét $M$-ben!", None, r"$M\left(\tfrac52;-5\right)$, az érintő $2x+2y+5=0$"),
@@ -152,7 +152,7 @@ KOZEP = [
   r"$y^2=160x$, $F(40;0)$: a vevőfej $40$ cm-re van a tányér aljától"),
 
  (r"Maxi szerint az $y^2=12x$ parabola fókuszpontja $F(6;0)$, „hiszen $2p=12$, a fókusz pedig $(p;0)$”. Hol a hiba?",
-  None, r"a fókusz $\left(\tfrac p2;0\right)$: $p=6$, tehát $F(3;0)$"),
+  None, 'Maxi a fókusz képletét tévesztette el: $F\\left(\\tfrac p2;0\\right)=F(3;0)$.'),
 
  (r"Az $y^2=16x$ parabola egy pontjának első koordinátája $6$. Milyen messze van ez a pont a fókuszponttól? "
   r"<i>(Használd a parabola definícióját: a fókusztól és a vezéregyenestől mért távolság egyenlő.)</i>", None,
@@ -173,7 +173,8 @@ KOZEP = [
  (r"Egy parabolaív alakú híd fesztávolsága $20$ m, a legmagasabb pontja $5$ m magasan van. Helyezd a "
   r"koordináta-rendszert úgy, hogy a híd csúcsa az origóba kerüljön!",
   [r"Írd fel az ív egyenletét!", r"Milyen magasan van az ív a híd közepétől vízszintesen $4$ m-re?"],
-  [r"$x^2=-20y$", r"$y=-0{,}8$, tehát $5-0{,}8=4{,}2$ m magasan"]),
+  ['$x^2=-20y$',
+   '$4{,}2$ m magasan']),
 ]
 
 # ============================== NEHÉZ ==============================

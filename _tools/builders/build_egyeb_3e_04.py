@@ -274,13 +274,11 @@ DR_A = [
  (r"Merőleges-e az $\vec a=(3;1;-2)$ és a $\vec b=(2;-4;1)$ vektor?", None,
   r"Igen: $\vec a\cdot\vec b=6-4-2=0$."),
  (r"Mekkora szöget zár be az $\vec a=(2;2;1)$ és a $\vec b=(1;0;-1)$ vektor? (Számológéppel, egy tizedesre.)",
-  None, r"$\vec a\cdot\vec b=1$, $|\vec a|=3$, $|\vec b|=\sqrt2$, $\cos\varphi=\frac{1}{3\sqrt2}\approx0{,}2357$, "
-        r"$\varphi\approx76{,}4^\circ$."),
+  None, '$\\varphi\\approx76{,}4^\\circ$.'),
  (r"Számítsd ki az $\vec a=(1;-1;2)$ és a $\vec b=(3;0;1)$ vektor vektoriális szorzatát!", None,
   r"$\vec a\times\vec b=(-1;5;3)$"),
  (r"Mekkora az $A(0;1;1)$, $B(2;1;3)$, $C(1;3;1)$ csúcsú háromszög területe?", None,
-  r"$\overrightarrow{AB}=(2;0;2)$, $\overrightarrow{AC}=(1;2;0)$, $\overrightarrow{AB}\times\overrightarrow{AC}=(-4;2;4)$, "
-  r"intenzitása $6$, így $T=3$."),
+  '$T=3$.'),
  (r"Az $ABCD$ paralelogramma három egymást követő csúcsa $A(1;0;2)$, $B(4;1;0)$ és $C(5;3;1)$.",
   [r"Határozd meg a $D$ csúcsot!", r"Hol metszik egymást az átlók?"],
   [r"$D=A+C-B=(2;2;3)$", r"az $AC$ felezőpontjában: $\left(3;\tfrac32;\tfrac32\right)$"]),
@@ -288,38 +286,32 @@ DR_A = [
 
 DR_K = [
  (r"Határozd meg a $t$ értékét úgy, hogy a $(2;t;-1)$ és a $(t;4;6)$ vektor merőleges legyen!", None,
-  r"$2t+4t-6=0$, tehát $t=1$."),
+  '$t=1$.'),
  (r"Az $\vec a$ intenzitása $4$, a $\vec b$ intenzitása $3$, szögük $60^\circ$. Mekkora $|\vec a-\vec b|$?", None,
-  r"$|\vec a-\vec b|^2=16-2\cdot6+9=13$ (mert $\vec a\cdot\vec b=6$), tehát $|\vec a-\vec b|=\sqrt{13}\approx3{,}61$."),
+  '$|\\vec a-\\vec b|=\\sqrt{13}\\approx3{,}61$.'),
  (r"Az $ABC$ háromszög csúcsai $A(1;1;0)$, $B(3;2;2)$, $C(2;-1;1)$. Mekkora az $A$ csúcsnál lévő szög? (Számológéppel, egy tizedesre.)", None,
-  r"$\overrightarrow{AB}=(2;1;2)$, $\overrightarrow{AC}=(1;-2;1)$, skaláris szorzatuk $2$; "
-  r"$\cos\alpha=\frac{2}{3\sqrt6}\approx0{,}2722$, $\alpha\approx74{,}2^\circ$."),
+  '$\\alpha\\approx74{,}2^\\circ$.'),
  (r"Tudjuk, hogy $\vec a\times\vec b=(1;0;-2)$. Egyszerűsítsd a $(2\vec a+\vec b)\times(\vec a-\vec b)$ kifejezést, "
   r"majd add meg az értékét és az intenzitását!", None,
-  r"$-2\,\vec a\times\vec b+\vec b\times\vec a=-3\,\vec a\times\vec b=(-3;0;6)$, intenzitása $3\sqrt5\approx6{,}71$."),
+  '$-3(\\vec a\\times\\vec b)=(-3;0;6)$; intenzitása $3\\sqrt5\\approx6{,}71$.'),
  (r"Adj meg egy egységvektort, amely merőleges az $\vec a=(1;1;0)$ és a $\vec b=(0;1;1)$ vektorra is!", None,
-  r"$\vec a\times\vec b=(1;-1;1)$, intenzitása $\sqrt3$; egy megfelelő egységvektor "
-  r"$\frac{1}{\sqrt3}(1;-1;1)$ (az ellentettje is jó)."),
+  '$\\dfrac1{\\sqrt3}(1;-1;1)$ vagy az ellentettje.'),
  (r"Az $A(2;0;1)$, $B(3;2;3)$, $C(4;-2;2)$ pontok egy háromszög csúcsai.",
   [r"Mutasd meg, hogy a háromszög derékszögű és egyenlő szárú!", r"Mekkora a területe?"],
-  [r"$\overrightarrow{AB}=(1;2;2)$, $\overrightarrow{AC}=(2;-2;1)$: skaláris szorzatuk $0$ (a derékszög az $A$-nál van), és mindkettő intenzitása $3$",
-   r"$T=\frac{3\cdot3}{2}=4{,}5$"]),
+  ['$\\overrightarrow{AB}\\cdot\\overrightarrow{AC}=0$ és $|\\overrightarrow{AB}|=|\\overrightarrow{AC}|=3$: az $A$-nál derékszögű és egyenlő szárú',
+   '$T=4{,}5$']),
 ]
 
 DR_N = [
  (r"Bizonyítsd be, hogy ha két nem nullvektorra $|\vec a+\vec b|=|\vec a-\vec b|$, akkor $\vec a$ és "
   r"$\vec b$ merőleges! Mit jelent ez egy paralelogrammára?", None,
-  r"Négyzetre emelve: $|\vec a|^2+2\,\vec a\cdot\vec b+|\vec b|^2=|\vec a|^2-2\,\vec a\cdot\vec b+|\vec b|^2$, "
-  r"így $4\,\vec a\cdot\vec b=0$, tehát $\vec a\perp\vec b$. Paralelogrammára: ha az átlói egyenlő "
-  r"hosszúak, akkor téglalap."),
+  '$|\\vec a+\\vec b|^2-|\\vec a-\\vec b|^2=4\\vec a\\cdot\\vec b=0$, tehát $\\vec a\\perp\\vec b$; a paralelogramma téglalap.'),
  (r"Az $x$ tengely melyik $P$ pontja van egyenlő távolságra az $A(1;2;2)$ és a $B(3;0;4)$ ponttól? "
   r"Mekkora ekkor a $PAB$ háromszög területe?", None,
-  r"$P(p;0;0)$: $(1-p)^2+8=(3-p)^2+16$, ebből $4p=16$, $P(4;0;0)$. "
-  r"$\overrightarrow{PA}\times\overrightarrow{PB}=(-3;2;2)\times(-1;0;4)=(8;10;2)$, "
-  r"$T=\frac{\sqrt{168}}{2}=\sqrt{42}\approx6{,}48$."),
+  '$P(4;0;0)$; $T=\\sqrt{42}\\approx6{,}48$.'),
  (r"Az $\vec a=(1;t;0)$ és a $\vec b=(0;1;2)$ vektor által kifeszített paralelogramma területe $3$. "
   r"Határozd meg $t$-t!", None,
-  r"$\vec a\times\vec b=(2t;-2;1)$, intenzitása $\sqrt{4t^2+5}=3$, így $t^2=1$: $t=1$ vagy $t=-1$."),
+  '$t=1$ vagy $t=-1$.'),
 ]
 
 body_dr = [

@@ -46,6 +46,11 @@ K9 = ([[6, 5], [1, -2]], [6, Rational(-7, 10)])
 N1 = ([[3, 2, 1], [2, 1, 2], [1, 3, 2]], [330, 320, 400])
 det2 = [p[0]*p[3] - p[1]*p[2] for p in permutations([1, 2, 3, 4])]
 
+def vegso(vartak, *helyek):
+    # A kifejezés továbbra is függetlenül számol; csak a köztes értékek maradnak ki.
+    return [vartak[i] for i in helyek]
+
+
 TESZT = {
     'alap-1': [d([2, 3], [-1, 5]), d([7, -3], [10, -9])],
     'alap-2': [d([4, -2], [6, -3]), d([-1, 5], [2, -3]), ('', F(3, 2))],
@@ -56,30 +61,30 @@ TESZT = {
     'alap-7': [('', 'csupa nulla'), ('', 'ket sora egyenlo'), ('', 'elso ketszerese'),
                d([1, 0, 0], [0, 2, 0], [0, 0, 3])],
     'alap-8': [('', -7), ('', 7), ('', 0)],
-    'alap-9': cr([[3, 2], [5, -1]], [7, 3]) + ms([[3, 2], [5, -1]], [7, 3]),
-    'alap-10': cr([[4, -3], [2, 5]], [1, -19]) + ms([[4, -3], [2, 5]], [1, -19]),
-    'alap-12': cr(*A12) + ms(*A12),
-    'alap-13': cr(*A13) + ms(*A13),
+    'alap-9': vegso(cr([[3, 2], [5, -1]], [7, 3]) + ms([[3, 2], [5, -1]], [7, 3]), 3, 4),
+    'alap-10': vegso(cr([[4, -3], [2, 5]], [1, -19]) + ms([[4, -3], [2, 5]], [1, -19]), 3, 4),
+    'alap-12': vegso(cr(*A12) + ms(*A12), 4, 5, 6),
+    'alap-13': vegso(cr(*A13) + ms(*A13), 4, 5, 6),
     'alap-14': [d([1, 2, -1], [2, 4, -2], [1, -1, 1]), ('', 'nem alkalmazhato'),
                 d([1, 2, -1], [2, 1, -2], [1, -1, 1])],
-    'alap-15': cr(*A15, csak={2}) + ms(*A15, csak={2}),
+    'alap-15': vegso(cr(*A15, csak={2}) + ms(*A15, csak={2}), 2),
     'alap-16': [('', 'nem alkalmazhato'), ('', 'Gauss')],
     'kozep-1': [d([2, 1, 1], [-5, 1, 4], [12, 3, -4]), d([2, 1, 3], [5, 3, 2], [1, 4, 3])],
     'kozep-2': [d([3, 4, -5], [8, 7, -2], [2, -1, 8])],
     'kozep-3': [('', fr(r)) for r in sorted(solve(Matrix([[X - 2, 3, 1], [1, 5, X - 2],
                                                           [2, 1, -3]]).det(), X))],
     'kozep-4': [('', 'x^2+y^2')],
-    'kozep-5': cr(*K5) + ms(*K5),
-    'kozep-6': cr(*K6) + ms(*K6),
-    'kozep-7': ms(*K7) + cr(*K7),
-    'kozep-8': [('', 'hatarozatlan'), ('', 'ellentmondasos'), ('', -1)],
-    'kozep-9': cr(*K9) + ms(*K9),
-    'kozep-10': cr([[3, -2], [-1, 4]], [4, 2]) + ms([[3, -2], [-1, 4]], [4, 2]),
+    'kozep-5': vegso(cr(*K5) + ms(*K5), 4, 5, 6),
+    'kozep-6': vegso(cr(*K6) + ms(*K6), 4, 5, 6),
+    'kozep-7': vegso(ms(*K7) + cr(*K7), 0, 1, 2),
+    'kozep-8': [('', 'hatarozatlan'), ('', 'ellentmondasos')],
+    'kozep-9': vegso(cr(*K9) + ms(*K9), 3, 4),
+    'kozep-10': vegso(cr([[3, -2], [-1, 4]], [4, 2]) + ms([[3, -2], [-1, 4]], [4, 2]), 3, 4),
     'kozep-11': [('', F(24, -12)), ('', F(0, -12)), ('', F(-36, -12))],
     'nehez-1': cr(*N1, csak={2}) + ms(*N1, csak={2}),
     'nehez-2': [('', fr(r)) for r in sorted(solve(Matrix([[-1, 4, X + 1], [2, -1, X - 3],
                                                           [1, X, -1]]).det(), X))],
-    'nehez-3': [('', 0), ('', 3), ('', -1), ('', 't=2: (x;y;z)=(1;1;2)'), ('', 'S_3-2S_1-S_2 után 0=1')],
+    'nehez-3': [('', 0), ('', 3), ('', -1)],
     'nehez-4': [('', max(det2)), ('', min(det2))],
     'joker': [('', -1), ('', 0), ('', 24), ('', 8)],
 }

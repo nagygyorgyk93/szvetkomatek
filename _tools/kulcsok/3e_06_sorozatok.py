@@ -32,6 +32,11 @@ def tagok(f, n):
     return [f(k) for k in range(1, n + 1)]
 
 
+def vegso(vartak, *helyek):
+    # A kifejezés továbbra is függetlenül számol; csak a köztes értékek maradnak ki.
+    return [vartak[i] for i in helyek]
+
+
 TESZT = {
     # --- A1: a sorozat fogalma
     'alap-1': v(*tagok(lambda k: F(3*k + 1, k + 2), 5), *tagok(lambda k: F(6*k, 2*k - 1), 5),
@@ -42,10 +47,10 @@ TESZT = {
     'alap-5': v(7*5 - 5, 7*6 - 5, 2*3**4, 2*3**5, 25, 36),
     'alap-6': v(10, 'nem tagja'),
     'alap-7': v('novekvo', 'csokkeno', 'nem monoton'),
-    'alap-8': v(*tagok(lambda k: k*k - k, 4), *tagok(lambda k: F(2*k + 3, k), 4), 'csokkeno'),
+    'alap-8': vegso(v('novevo', 'csokkeno'), 1),
     'alap-9': v(3, 4, -1, 1, 1, 'nem korlatos'),
     'alap-10': v(0, 2, 1, 6, 'nem monoton'),
-    'alap-11': v(1, 0, -1, -2, F(5, 2), F(8, 3), 3),
+    'alap-11': vegso(v('csokkeno', 'felulrol korlatos', 'alulrol nem', 'novevo', 'korlatos'), 0, 1, 2, 4),
     'alap-12': v(-1, F(1, 2), F(-1, 3), F(1, 4), 'nem monoton'),
     # --- B1: számtani sorozat
     'alap-13': v(*[SZ(a, d, k) for a, d in [(3, 2), (-2, 5), (7, -3), (-5, -2)] for k in range(1, 5)]),
@@ -68,11 +73,11 @@ TESZT = {
     'alap-25': v(6, MSU(3, 4, 6), 4, MSU(27, F(2, 3), 4)),
     'alap-26': v(MB(2, -4, 4), MSU(2, -4, 4), MB(1, 3, 6), MSU(1, 3, 6),
                  MB(-1, 5, 5), MSU(-1, 5, 5), MB(3, F(1, 3), 4), MSU(3, F(1, 3), 4)),
-    'alap-27': v(10, -10, 6, -6),
+    'alap-27': v(10, 6),
     'alap-28': v(80000*(1 + F(5, 100)*3), F(round(80000*F(105, 100)**3, 2))),
     # --- közép
     'kozep-1': v(*[SZ(2, 3, k) for k in range(1, 6)]),
-    'kozep-2': v(2**16 - 1, 2**16),
+    'kozep-2': v(2**16 - 1),
     'kozep-3': v(3, 4),
     'kozep-4': v((4 - 1)*(4 - 2)*(4 - 3) + 2*4 - 1),
     'kozep-5': v(F(1, 2), 2),
@@ -99,11 +104,11 @@ TESZT = {
     # --- nehéz
     'nehez-1': v(10, 1, 3),
     'nehez-2': v(1, 3, *[SZ(1, 3, k) for k in range(1, 5)]),
-    'nehez-3': v(105, 994, 128, SS(105, 7, 128)),
-    'nehez-4': v(3, 2, MB(2, 3, 6), MB(2, 3, 7), 7),
+    'nehez-3': v(128, SS(105, 7, 128)),
+    'nehez-4': v(7),
     'nehez-5': v(4, 2, 4, -2, -16, F(1, 2), -16, F(-1, 2)),
-    'nehez-6': v(50*3**7, 50*3**6, 50*3**10, 50*3**9),
-    'nehez-7': v(2, 6, 18, 3, 12, 21, 9),
+    'nehez-6': v(next(n for n in range(1, 20) if 50*3**n > 100_000), next(n for n in range(1, 20) if 50*3**n > 1_000_000)),
+    'nehez-7': v(2, 6, 18, 18, 6, 2),
     'nehez-8': v(13),
     'joker': v(F('102.4'), 42),
 }

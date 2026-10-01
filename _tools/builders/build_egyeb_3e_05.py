@@ -470,7 +470,7 @@ H2K = [
  (r"Milyen hosszú húrt metsz ki az $x^2+y^2=25$ kör az $x+y-1=0$ egyenesből?", None,
   r"a metszéspontok $(4;-3)$ és $(-3;4)$, a húr $7\sqrt2\approx9{,}90$"),
  (r"Hány közös pontja van az $x^2-y^2=9$ hiperbolának és az $y=x-1$ egyenesnek? Érintő-e az egyenes?", None,
-  r"egy: $(5;4)$; nem érintő, mert párhuzamos az $y=x$ aszimptotával"),
+  'Egy közös pont: $(5;4)$; nem érintő.'),
  (r"Határozd meg az $y^2=8x$ parabola és a $2x-3y+8=0$ egyenes metszéspontjait, majd írd fel a parabola "
   r"érintőit ezekben a pontokban!", None, r"$(2;4)$ és $(8;8)$; az érintők $y=x+2$ és $x-2y+8=0$"),
 ]

@@ -308,42 +308,37 @@ DR_A = [
   "$F=2r\\pi(r+H)=6\\pi\\cdot10=60\\pi\\ \\text{cm}^2$."),
  ("Egy kúp alapkörének sugara $9$ cm, magassága $12$ cm. Mekkora az alkotója és a "
   "felszíne?", None,
-  "$s=\\sqrt{81+144}=15$ cm, ezért $F=81\\pi+9\\cdot15\\pi=216\\pi\\ \\text{cm}^2$."),
+  '$s=15$ cm; $F=216\\pi$ cm².'),
  ("Egy kúp alapkörének sugara $6$ cm, magassága $10$ cm. Mekkora a térfogata?", None,
   "$V=\\frac{36\\pi\\cdot10}{3}=120\\pi\\ \\text{cm}^3$."),
  ("Egy gömb sugara $6$ cm. Mekkora a térfogata?", None,
   "$V=\\frac{4\\cdot216\\pi}{3}=288\\pi\\ \\text{cm}^3$."),
  ("Egy gömb felszíne $144\\pi\\ \\text{cm}^2$. Mekkora a sugara?", None,
-  "$4R^2\\pi=144\\pi$, tehát $R^2=36$ és $R=6$ cm."),
+  '$R=6$ cm.'),
  ("Egy csonkakúp alapkörének sugara $R=8$ cm, fedőköréé $r=5$ cm, magassága "
   "$H=9$ cm. Mekkora a térfogata?", None,
   "$V=\\frac{9\\pi}{3}(64+40+25)=3\\pi\\cdot129=387\\pi\\ \\text{cm}^3$."),
  ("Egy henger térfogata $250\\pi\\ \\text{cm}^3$, magassága $10$ cm. Mekkora az "
   "alapkörének sugara?", None,
-  "$r^2\\pi\\cdot10=250\\pi$, tehát $r^2=25$ és $r=5$ cm."),
+  '$r=5$ cm.'),
 ]
 
 DR_K = [
  ("Egy henger felszíne $96\\pi\\ \\text{cm}^2$, és a magassága az átmérővel egyenlő. "
   "Mekkora a térfogata?", None,
-  "A feltétel szerint $H=2r$, tehát $F=6r^2\\pi=96\\pi$, ahonnan $r=4$ cm és "
-  "$H=8$ cm. Így $V=16\\pi\\cdot8=128\\pi\\ \\text{cm}^3$."),
+  '$V=128\\pi$ cm³.'),
  ("Egy kúp felszíne $90\\pi\\ \\text{cm}^2$, alapkörének sugara $5$ cm. Mekkora az "
   "alkotója és a magassága?", None,
-  "$5\\pi(5+s)=90\\pi$, tehát $5+s=18$ és $s=13$ cm. Innen "
-  "$H=\\sqrt{169-25}=12$ cm."),
+  '$s=13$ cm; $H=12$ cm.'),
  ("Egy $12$ cm hosszú cső külső sugara $4$ cm, belső sugara $3$ cm. Mekkora az anyag "
   "térfogata?", None,
   "$V=16\\pi\\cdot12-9\\pi\\cdot12=192\\pi-108\\pi=84\\pi\\ \\text{cm}^3$."),
  ("Egy csonkakúp alapkörének sugara $R=6$ cm, fedőköréé $r=4$ cm, térfogata "
   "$152\\pi\\ \\text{cm}^3$. Mekkora a magassága?", None,
-  "$\\frac{H\\pi}{3}(36+24+16)=\\frac{76H\\pi}{3}=152\\pi$, tehát "
-  "$H=\\frac{152\\cdot3}{76}=6$ cm."),
+  '$H=6$ cm.'),
  ("Egy hengeres tartály ($r=2$ cm, $H=10$ cm) tetején azonos sugarú félgömb van. "
   "Mekkora a test térfogata?", None,
-  "A henger $4\\pi\\cdot10=40\\pi$, a félgömb "
-  "$\\frac12\\cdot\\frac{4\\cdot8\\pi}{3}=\\frac{16\\pi}{3}$, tehát "
-  "$V=40\\pi+\\frac{16\\pi}{3}=\\frac{136\\pi}{3}\\ \\text{cm}^3$."),
+  '$V=\\dfrac{136\\pi}{3}$ cm³.'),
  ("Egy gömb sugarát megduplázzuk. Hányszorosára nő a térfogata, és hányszorosára a "
   "felszíne?", None,
   "A térfogat a <b>nyolcszorosára</b> nő (a sugár köbön áll), a felszín a "
@@ -353,11 +348,10 @@ DR_K = [
 DR_N = [
  ("Egy kúp magassága az alapkör sugarának <b>háromszorosa</b>, a térfogata "
   "$64\\pi\\ \\text{cm}^3$. Mekkora a sugara és a magassága?", None,
-  "$\\frac{r^2\\pi\\cdot3r}{3}=r^3\\pi=64\\pi$, tehát $r=4$ cm és $H=12$ cm."),
+  '$r=4$ cm; $H=12$ cm.'),
  ("Egy hengerre ($r=6$ cm, $H=5$ cm) kúp alakú tetőt teszünk ($r=6$ cm, $H=8$ cm). "
   "Mekkora a keletkező test térfogata?", None,
-  "A kúp $\\frac{36\\pi\\cdot8}{3}=96\\pi$, a henger $36\\pi\\cdot5=180\\pi$, tehát "
-  "$V=276\\pi\\ \\text{cm}^3$."),
+  '$V=276\\pi$ cm³.'),
  ("Igazold, hogy a gömb térfogata a köré írt henger térfogatának pontosan a "
   "<b>kétharmada</b>!", None,
   "A köré írt henger alapköre a főkör ($r=R$), a magassága az átmérő ($H=2R$), ezért "

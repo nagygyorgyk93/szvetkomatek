@@ -140,11 +140,9 @@ ALAP = [
   [r"az összes olyat, amelyik <b>egyenlő</b> a $\overrightarrow{BC}$ vektorral;",
    r"a $\overrightarrow{BC}$ összes <b>ellentett</b> vektorát;",
    r"azokat, amelyek <b>párhuzamosak</b> a $\overrightarrow{BC}$-vel, de <b>nem egyenlő hosszúak</b> vele!"],
-  [r"$\overrightarrow{AO}$, $\overrightarrow{OD}$, $\overrightarrow{FE}$ (mindhárom párhuzamos, "
-   r"egyenlő hosszú és azonos irányítású)",
-   r"$\overrightarrow{CB}$, $\overrightarrow{OA}$, $\overrightarrow{DO}$, $\overrightarrow{EF}$",
-   r"$\overrightarrow{AD}$ és $\overrightarrow{DA}$ (kétszer olyan hosszúak; "
-   r"$\overrightarrow{AD}=2\overrightarrow{BC}$)"]),
+  ['$\\overrightarrow{AO}$, $\\overrightarrow{OD}$, $\\overrightarrow{FE}$',
+   '$\\overrightarrow{CB}$, $\\overrightarrow{OA}$, $\\overrightarrow{DO}$, $\\overrightarrow{EF}$',
+   '$\\overrightarrow{AD}$ és $\\overrightarrow{DA}$']),
 
  (r"Az $ABCD$ paralelogrammában $\overrightarrow{AB}=\vec a$ és $\overrightarrow{AD}=\vec b$. "
   r"Fejezd ki $\vec a$ és $\vec b$ segítségével a következő vektorokat!",
@@ -154,8 +152,8 @@ ALAP = [
  (r"Az $ABCD$ paralelogrammában $\overrightarrow{AB}=\vec a$, $\overrightarrow{AD}=\vec b$, és "
   r"$M$ a $BC$ oldal felezőpontja. Fejezd ki $\vec a$ és $\vec b$ segítségével!",
   [r"$\overrightarrow{AM}$", r"$\overrightarrow{DM}$"],
-  [r"$\overrightarrow{AM}=\overrightarrow{AB}+\overrightarrow{BM}=\vec a+\tfrac12\vec b$",
-   r"$\overrightarrow{DM}=\overrightarrow{DC}+\overrightarrow{CM}=\vec a-\tfrac12\vec b$"], True),
+  ['$\\overrightarrow{AM}=\\vec a+\\tfrac12\\vec b$',
+   '$\\overrightarrow{DM}=\\vec a-\\tfrac12\\vec b$'], True),
 
  (r"Egyszerűsítsd a kifejezéseket!",
   [r"$2(\vec a-3\vec b)+3(\vec b+\vec a)$", r"$4(\vec a+\vec b)-2(2\vec a-\vec b)$",
@@ -165,17 +163,18 @@ ALAP = [
  (r"Az $\vec a$ intenzitása $3$, a $\vec b$ intenzitása $4$. Mekkora $|\vec a+\vec b|$, ha a két "
   r"vektor szöge",
   [r"$0^\circ$;", r"$180^\circ$;", r"$90^\circ$?"],
-  [r"$7$ (azonos irányításúak: a hosszak összeadódnak)",
-   r"$1$ (ellentétes irányításúak: a hosszak kivonódnak)",
-   r"$5$ (az összeg egy $3\times4$-es téglalap átlója: $\sqrt{9+16}=5$)"], True),
+  ['$7$',
+   '$1$',
+   '$5$'], True),
 
  (r"Az $ABC$ szabályos háromszögben mekkora a következő vektorpárok szöge? Vigyázz: két "
   r"vektor szögét közös kezdőpontba tolva mérjük!",
   [r"$\overrightarrow{AB}$ és $\overrightarrow{AC}$", r"$\overrightarrow{AB}$ és $\overrightarrow{BC}$",
    r"$\overrightarrow{AB}$ és $\overrightarrow{CA}$", r"$\overrightarrow{AB}$ és $\overrightarrow{BA}$"],
-  [r"$60^\circ$", r"$120^\circ$ (a szög a $B$ csúcsnál lévő külső szöggel egyenlő: $180^\circ-60^\circ$)",
-   r"$120^\circ$ ($\overrightarrow{CA}=-\overrightarrow{AC}$, ezért $180^\circ-60^\circ$)",
-   r"$180^\circ$ (ellentett vektorok)"], True),
+  ['$60^\\circ$',
+   '$120^\\circ$',
+   '$120^\\circ$',
+   '$180^\\circ$'], True),
 
  (r"A $\vec b$ vektor intenzitása $8$. Számítsd ki a $\vec b$ skaláris vetületét egy $\vec a$ "
   r"vektorra, ha a két vektor szöge",
@@ -217,19 +216,18 @@ ALAP = [
 
  (r"Adottak az $\vec a=(4;-3;1)$ és a $\vec b=(5;-2;-3)$ vektorok. Számítsd ki!",
   [r"$|\vec a|$", r"$|\vec a+\vec b|$", r"$|\vec a-\vec b|$"],
-  [r"$\sqrt{16+9+1}=\sqrt{26}\approx5{,}10$",
-   r"$\vec a+\vec b=(9;-5;-2)$, intenzitása $\sqrt{110}\approx10{,}49$",
-   r"$\vec a-\vec b=(-1;-1;4)$, intenzitása $\sqrt{18}=3\sqrt2\approx4{,}24$"]),
+  ['$\\sqrt{26}\\approx5{,}10$',
+   '$\\sqrt{110}\\approx10{,}49$',
+   '$3\\sqrt2\\approx4{,}24$']),
 
  (r"Mekkora a két pont távolsága?",
   [r"$A(1;0;-2)$ és $B(3;-1;5)$", r"$P(2;3;1)$ és $Q(-4;1;4)$"],
-  [r"$\overrightarrow{AB}=(2;-1;7)$, $|\overrightarrow{AB}|=\sqrt{54}=3\sqrt6\approx7{,}35$",
-   r"$\overrightarrow{PQ}=(-6;-2;3)$, $|\overrightarrow{PQ}|=\sqrt{49}=7$"]),
+  ['$3\\sqrt6\\approx7{,}35$',
+   '$7$']),
 
  (r"Az $ABCD$ paralelogramma három egymást követő csúcsa $A(1;-2;3)$, $B(3;2;1)$ és "
   r"$C(6;4;4)$. Határozd meg a $D$ csúcs koordinátáit!", None,
-  r"$\overrightarrow{AD}=\overrightarrow{BC}$, ezért (koordinátánként, a helyvektorokkal számolva) "
-  r"$D=A+C-B$: $D(4;0;6)$."),
+  '$D(4;0;6)$.'),
 
  (r"Határozd meg az $A(-7;2;8)$ és a $B(6;4;5)$ pont által meghatározott szakasz "
   r"felezőpontjának koordinátáit!", None,
@@ -238,14 +236,16 @@ ALAP = [
  (r"Melyik vektor párhuzamos az $\vec a=(1;-2;4)$ vektorral? Ha párhuzamos, add meg azt a "
   r"$\lambda$ számot is, amelyre az adott vektor $\lambda\vec a$!",
   [r"$\vec b=(-3;6;-12)$", r"$\vec c=(2;-4;6)$", r"$\vec d=\left(\tfrac12;-1;2\right)$"],
-  [r"párhuzamos, $\lambda=-3$", r"nem párhuzamos (az arányok $2$, $2$, de $\tfrac64\ne2$)",
-   r"párhuzamos, $\lambda=\tfrac12$"]),
+  ['párhuzamos, $\\lambda=-3$',
+   'nem párhuzamos',
+   'párhuzamos, $\\lambda=\\tfrac12$']),
 
  (r"Adott az $\vec a=(6;-2;3)$ vektor. Határozd meg",
   [r"az $\vec a$ intenzitását;", r"az $\vec a$-val azonos irányítású egységvektort;",
    r"az $\vec a$-val ellentétes irányítású egységvektort!"],
-  [r"$|\vec a|=\sqrt{36+4+9}=7$", r"$\vec a_0=\left(\frac{6}{7};-\frac{2}{7};\frac{3}{7}\right)$",
-   r"$-\vec a_0=\left(-\frac{6}{7};\frac{2}{7};-\frac{3}{7}\right)$"]),
+  ['$7$',
+   '$\\left(\\frac67;-\\frac27;\\frac37\\right)$',
+   '$\\left(-\\frac67;\\frac27;-\\frac37\\right)$']),
 ]
 
 # ============================== KÖZÉPSZINT ==============================
@@ -255,47 +255,45 @@ KOZEP = [
   r"$\overrightarrow{OB}=\vec b$. Fejezd ki $\vec a$ és $\vec b$ segítségével!" + abra(SVG_HATSZOG),
   [r"$\overrightarrow{OD}$", r"$\overrightarrow{OE}$", r"$\overrightarrow{OF}$",
    r"$\overrightarrow{CE}$", r"$\overrightarrow{DF}$"],
-  [r"$-\vec a$", r"$-\vec b$", r"$\vec a-\vec b$ (mert $\overrightarrow{OF}=\overrightarrow{BA}$)",
-   r"$\overrightarrow{OE}-\overrightarrow{OC}=-\vec b-(\vec b-\vec a)=\vec a-2\vec b$",
-   r"$\overrightarrow{OF}-\overrightarrow{OD}=(\vec a-\vec b)+\vec a=2\vec a-\vec b$"]),
+  ['$-\\vec a$',
+   '$-\\vec b$',
+   '$\\vec a-\\vec b$',
+   '$\\vec a-2\\vec b$',
+   '$2\\vec a-\\vec b$']),
 
  (r"Az $ABC$ háromszögben $\overrightarrow{CA}=\vec a$ és $\overrightarrow{CB}=\vec b$. Az $F$ pont az "
   r"$AB$ oldal felezőpontja, $S$ a háromszög súlypontja. Fejezd ki $\vec a$ és $\vec b$ "
   r"segítségével! <i>(A súlypont a súlyvonalat a csúcstól számítva $2:1$ arányban osztja.)</i>",
   [r"$\overrightarrow{AB}$", r"$\overrightarrow{CF}$", r"$\overrightarrow{CS}$"],
-  [r"$\vec b-\vec a$", r"$\overrightarrow{CA}+\tfrac12\overrightarrow{AB}=\tfrac12(\vec a+\vec b)$",
-   r"$\tfrac23\overrightarrow{CF}=\tfrac13(\vec a+\vec b)$"], True),
+  ['$\\vec b-\\vec a$',
+   '$\\tfrac12(\\vec a+\\vec b)$',
+   '$\\tfrac13(\\vec a+\\vec b)$'], True),
 
  (r"Az $\vec a$ és a $\vec b$ merőleges egymásra, $|\vec a|=5$ és $|\vec b|=3$. Számítsd ki!",
   [r"$|\vec a-\vec b|$", r"$|2\vec a+\vec b|$", r"$|\vec a-2\vec b|$"],
-  [r"$\sqrt{25+9}=\sqrt{34}\approx5{,}83$ (téglalap átlója)",
-   r"$2\vec a$ intenzitása $10$, és ez is merőleges $\vec b$-re: $\sqrt{100+9}=\sqrt{109}\approx10{,}44$",
-   r"$-2\vec b$ intenzitása $6$, és merőleges $\vec a$-ra: $\sqrt{25+36}=\sqrt{61}\approx7{,}81$"]),
+  ['$\\sqrt{34}\\approx5{,}83$',
+   '$\\sqrt{109}\\approx10{,}44$',
+   '$\\sqrt{61}\\approx7{,}81$']),
 
  (r"Egy motorcsónak a vízhez képest $12$ km/h sebességgel halad kelet felé, a folyó pedig "
   r"$5$ km/h sebességgel sodorja dél felé. Mekkora a csónak parthoz viszonyított sebessége, "
   r"és hány fokkal tér el a keleti iránytól?", None,
-  r"A két sebességvektor merőleges, az eredő intenzitása $\sqrt{12^2+5^2}=13$ km/h. Az eltérés "
-  r"szögére $\operatorname{tg}\alpha=\frac{5}{12}$, így $\alpha\approx22{,}6^\circ$ (kelettől dél felé)."),
+  '$13$ km/h, kelettől dél felé $22{,}6^\\circ$-kal.'),
 
  (r"Maxi szerint az $ABC$ szabályos háromszögben, ahol az oldal hossza $a$, az "
   r"$\overrightarrow{AB}+\overrightarrow{BC}+\overrightarrow{CA}$ vektor intenzitása $3a$, "
   r"„hiszen három $a$ hosszú vektort adtunk össze”. Mit rontott el? Mennyi a helyes válasz?", None,
-  r"A vektorok összegének intenzitása nem a hosszak összege. A háromszög-szabállyal "
-  r"$\overrightarrow{AB}+\overrightarrow{BC}=\overrightarrow{AC}$, és "
-  r"$\overrightarrow{AC}+\overrightarrow{CA}=\vec 0$: az összeg a nullvektor, intenzitása $0$."),
+  'Maxi téved: $\\overrightarrow{AB}+\\overrightarrow{BC}+\\overrightarrow{CA}=\\vec0$, ezért az intenzitás $0$.'),
 
  # --- A2 (közép 6–12)
  (r"Határozd meg a $t$ valós számot úgy, hogy az $\vec a=(1;2;t)$ és a "
   r"$\vec b=\left(t\sqrt5;0;2\right)$ vektor intenzitása egyenlő legyen!", None,
-  r"$1+4+t^2=5t^2+4$, azaz $4t^2=1$, tehát $t=\frac12$ vagy $t=-\frac12$."),
+  '$t=\\pm\\dfrac12$.'),
 
  (r"Adott az $A(1;0;-2)$ és a $B(3;-1;5)$ pont, valamint az $S\left(\tfrac12;1;-1\right)$ pont. "
   r"Határozd meg a $C$ és a $D$ pont koordinátáit úgy, hogy az $ABCD$ négyszög olyan "
   r"paralelogramma legyen, amelynek középpontja $S$!", None,
-  r"A paralelogramma átlói felezik egymást: $S$ az $AC$ és a $BD$ felezőpontja. Koordinátánként "
-  r"(helyvektorokkal) számolva "
-  r"$C=2S-A$: $C(0;2;0)$, $D=2S-B$: $D(-2;3;-7)$."),
+  '$C(0;2;0)$; $D(-2;3;-7)$.'),
 
  (r"Az $ABC$ háromszög egyik csúcsa $A(5;-2;3)$. Az $AB$ oldal felezőpontja $F(1;4;1)$, az $AC$ "
   r"oldal felezőpontja $G(7;1;4)$. Határozd meg a másik két csúcs koordinátáit!", None,
@@ -306,30 +304,24 @@ KOZEP = [
 
  (r"Határozd meg az $A(2;-1;4)$ és a $B(2;2;10)$ pont által meghatározott szakasz $A$-hoz "
   r"közelebbi harmadolópontját!", None,
-  r"$H=A+\tfrac13\overrightarrow{AB}=(2;-1;4)+\tfrac13(0;3;6)$, tehát $H(2;0;6)$."),
+  '$H(2;0;6)$.'),
 
  (r"Adott az $A(1;0;-1)$, $B(1;-1;3)$, $C(-7;2;1)$ csúcsú háromszög.",
   [r"Számítsd ki a kerületét!", r"Hegyesszögű, derékszögű vagy tompaszögű a háromszög? Indokold!"],
-  [r"$AB=\sqrt{17}$, $BC=\sqrt{77}$, $AC=\sqrt{72}=6\sqrt2$; a kerület "
-   r"$\sqrt{17}+\sqrt{77}+6\sqrt2\approx21{,}38$",
-   r"hegyesszögű: a leghosszabb oldal négyzete $77$, és $77\lt 17+72=89$, így a vele szemközti szög is "
-   r"hegyesszög"]),
+  ['$K=\\sqrt{17}+\\sqrt{77}+6\\sqrt2\\approx21{,}38$',
+   'hegyesszögű']),
 
  (r"Az $A(3;1;2)$, $B(5;3;3)$, $C(4;-1;4)$ pontok egy háromszög csúcsai. Döntsd el és indokold!",
   [r"Egyenlő szárú-e a háromszög?", r"Derékszögű-e a háromszög?"],
-  [r"igen: $AB=\sqrt{4+4+1}=3$ és $AC=\sqrt{1+4+4}=3$",
-   r"igen: $BC^2=1+16+1=18=AB^2+AC^2$, így Pitagorasz tételének megfordítása szerint az "
-   r"$A$-nál derékszög van"]),
+  ['Igen: $AB=AC=3$',
+   'Igen: $AB^2+AC^2=BC^2=18$, ezért az $A$-nál derékszögű']),
 ]
 
 # ============================== NEHÉZ ==============================
 NEHEZ = [
  (r"Az $ABCDEF$ szabályos hatszög középpontja $K(2;-3;5)$, két szomszédos csúcsa $A(1;-3;6)$ és "
   r"$B(1;-2;5)$. Határozd meg a hatszög másik négy csúcsának koordinátáit!", None,
-  r"$\overrightarrow{KA}=(-1;0;1)$, $\overrightarrow{KB}=(-1;1;0)$. A szabályos hatszögben "
-  r"$\overrightarrow{KC}=\overrightarrow{KB}-\overrightarrow{KA}$, $\overrightarrow{KD}=-\overrightarrow{KA}$, "
-  r"$\overrightarrow{KE}=-\overrightarrow{KB}$, $\overrightarrow{KF}=\overrightarrow{KA}-\overrightarrow{KB}$. "
-  r"Így $C(2;-2;4)$, $D(3;-3;4)$, $E(3;-4;5)$, $F(2;-4;6)$."),
+  '$C(2;-2;4)$, $D(3;-3;4)$, $E(3;-4;5)$, $F(2;-4;6)$.'),
 
  (r"Bizonyítsd be vektorokkal, hogy a háromszög két oldalának felezőpontját összekötő "
   r"szakasz (középvonal) párhuzamos a harmadik oldallal, és hossza annak fele!", None,
@@ -341,16 +333,11 @@ NEHEZ = [
 
  (r"Az $A(1;2;0)$, $B(4;3;1)$ és $C(2;-1;3)$ pont egy paralelogramma három csúcsa, de nem "
   r"tudjuk, milyen sorrendben. Határozd meg a negyedik csúcs összes lehetséges helyzetét!", None,
-  r"$\overrightarrow{AB}=(3;1;1)$ és $\overrightarrow{AC}=(1;-3;3)$ nem párhuzamosak, tehát a pontok nem "
-  r"esnek egy egyenesre. Mindhárom pont lehet a negyedik csúccsal szemközti csúcs. $D_1=B+C-A=(5;0;4)$ (az $A$-val "
-  r"szemközti), $D_2=A+C-B=(-1;-2;2)$ (a $B$-vel szemközti), $D_3=A+B-C=(3;6;-2)$ (a $C$-vel "
-  r"szemközti) — három paralelogramma van."),
+  '$D_1(5;0;4)$, $D_2(-1;-2;2)$, $D_3(3;6;-2)$.'),
 
  (r"Adott az $A(1;2;3)$, a $B(3;t;-1)$ és a $C(5;0;1)$ pont. Határozd meg a $t$ értékét úgy, hogy "
   r"$AB=AC$ legyen! Melyik esetben lesz az $ABC$ háromszög szabályos?", None,
-  r"$AC^2=16+4+4=24$ és $AB^2=4+(t-2)^2+16$, így $(t-2)^2=4$: $t=4$ vagy $t=0$. "
-  r"$t=4$ esetén $B(3;4;-1)$ és $BC^2=4+16+4=24$: a háromszög <b>szabályos</b> (oldala $2\sqrt6$). "
-  r"$t=0$ esetén $BC^2=4+0+4=8$: csak egyenlő szárú."),
+  '$t=0$ vagy $t=4$; $t=4$ esetén szabályos a háromszög.'),
 ]
 
 JOKER = (r"Tér-eb egy háromdimenziós sakktáblán ugrál, a sakkbeli lóhoz hasonlóan: egy ugrással "

@@ -229,8 +229,7 @@ ALAP = [
   r"és írd fel a hiperbola érintőjét $M$-ben!", None, r"$M(-5;-2)$, az érintő $x-y+3=0$"),
 
  (r"Hány közös pontja van az $x^2-4y^2=4$ hiperbolának és az $y=\tfrac12x+2$ egyenesnek? Érintő-e az egyenes?",
-  None, r"egy közös pont: $\left(-\tfrac52;\tfrac34\right)$; nem érintő, mert párhuzamos az $y=\tfrac12x$ "
-  r"aszimptotával, és átmetszi a görbét"),
+  None, 'Egy közös pont: $\\left(-\\tfrac52;\\tfrac34\\right)$; az egyenes nem érintő.'),
 ]
 
 # ============================== KÖZÉPSZINT ==============================

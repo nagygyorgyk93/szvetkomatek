@@ -71,6 +71,11 @@ M58 = metsz(y**2 - 18*x, y - 2*x - 2)
 n1, n2, n3 = n_felt(3, Rational(1, 4)), n_felt(12, 1), n_felt(8, 2)
 p54 = 2 * Rational(-3, 2) * Rational(-3, 2)          # p = 2kn, y = -3/2 x - 3/2
 
+def vegso(vartak, *helyek):
+    # A kifejezés továbbra is függetlenül számol; csak a köztes értékek maradnak ki.
+    return [vartak[i] for i in helyek]
+
+
 TESZT = {
     'alap-1': adat(4) + adat(Rational(5, 2)) + adat(-8) + adat(24),
     'alap-2': [('', 2), ('', fr(ponton_at((1, -3)))), ('', 2), ('', fr(ponton_at((2, 8)))),
@@ -93,7 +98,7 @@ TESZT = {
     'kozep-6': pt(M58[0]) + pt(M58[1]) + Lsz(*erinto_sajat(18, M58[0])) + Lsz(*erinto_sajat(18, M58[1])),
     'kozep-7': pt((-1, -4)) + [('', fr(Rational(-8) / -4)), ('', fr(Rational(-8) * (-1) / -4))]   # -4y = -8(x - 1)
                + pt((solve(2*x - 2, x)[0], 0)) + pt((0, -2)),
-    'kozep-8': [('', 2), ('', fr(-10**2 / Rational(5)))] + [kerek(Rational(-16, 20)), kerek(5 - Rational(16, 20))],
+    'kozep-8': vegso([('', 2), ('', fr(-10**2 / Rational(5)))] + [kerek(Rational(-16, 20)), kerek(5 - Rational(16, 20))], 0, 1, 3),
     'nehez-1': [('', F(1, 4)), ('', 2), ('', 8), ('', -48), ('', 16), ('', 2), ('', fr(n1))]
                + Lsz(1, -4, 4 * n1) + pt(metsz(y**2 - 3*x, y - x / 4 - n1)[0]),
     'nehez-2': [('', 2), ('', 2), ('', -12), ('', 2), ('', fr(n2)), ('', fr(n2))] + pt(metsz(y**2 - 12*x, y - x - n2)[0]),

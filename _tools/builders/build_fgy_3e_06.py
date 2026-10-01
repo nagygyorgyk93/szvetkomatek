@@ -218,20 +218,23 @@ ALAP = [
  # --- A2: monotonitás és korlátosság
  (r"Monoton-e a sorozat? Ha igen, növekvő vagy csökkenő?",
   [r"$a_n=5n-3$", r"$a_n=7-2n$", r"$a_n=(-1)^n\cdot n$"],
-  [r"szigorúan növekvő ($a_{n+1}-a_n=5$)", r"szigorúan csökkenő ($a_{n+1}-a_n=-2$)",
-   r"nem monoton: $-1;\ 2;\ -3;\ 4;\ \dots$"], True),
+  ['szigorúan növekvő',
+   'szigorúan csökkenő',
+   'nem monoton'], True),
 
  (r"Döntsd el a szomszédos tagok különbségéből, monoton-e a sorozat!",
   [r"$a_n=n^2-n$", r"$a_n=\frac{2n+3}{n}$"],
-  [r"a tagok $0;\ 2;\ 6;\ 12;\ \dots$, és $a_{n+1}-a_n=2n\gt 0$, tehát szigorúan növekvő",
-   r"$5;\ \frac{7}{2};\ 3;\ \frac{11}{4};\ \dots$ — szigorúan csökkenő"]),
+  ['$a_{n+1}-a_n=2n\\gt0$: szigorúan növekvő',
+   '$a_{n+1}-a_n=-\\dfrac3{n(n+1)}\\lt0$: szigorúan csökkenő']),
 
  (r"Adj meg egy alsó és egy felső korlátot, ha van!",
   [r"$a_n=3+\frac{1}{n}$", r"$a_n=(-1)^n$", r"$a_n=n^2$"],
   [r"alsó korlát $3$, felső korlát $4$ (az első tag)", r"alsó korlát $-1$, felső korlát $1$",
    r"alsó korlát $1$; felülről nem korlátos"], True),
 
- (A10_ABRA + r"Az ábrán négy sorozat első nyolc tagja látható. Mondd meg mindegyikről, hogy "
+ (A10_ABRA + r"Az ábrán négy sorozat első nyolc tagja látható. A sorozatok szabályai rendre "
+  r"$a_n=\frac{2n}{n+3}$, $a_n=1+\frac5n$, $a_n=(-1)^{n+1}\frac3n$ és "
+  r"$a_n=\frac{n^2+1}{20}$ ($n=1,2,3,\ldots$). Mondd meg mindegyikről, hogy "
   r"monoton-e, és hogy korlátos-e!", None,
   [r"szigorúan növekvő és korlátos (minden tagja $0$ és $2$ között van)",
    r"szigorúan csökkenő és korlátos (minden tagja $1$ fölött van, és egyik sem nagyobb $6$-nál)",
@@ -240,8 +243,8 @@ ALAP = [
 
  (r"Vizsgáld meg a sorozatot monotonitás és korlátosság szempontjából!",
   [r"$a_n=2-n$", r"$a_n=\frac{3n-1}{n}$"],
-  [r"$1;\ 0;\ -1;\ -2;\ \dots$ — szigorúan csökkenő, felülről korlátos ($1$), alulról nem korlátos",
-   r"$2;\ \frac{5}{2};\ \frac{8}{3};\ \dots$ — szigorúan növekvő és korlátos: $2\le a_n\lt 3$"]),
+  ['szigorúan csökkenő; felülről korlátos, alulról nem',
+   'szigorúan növekvő és korlátos: $2\\le a_n\\lt3$']),
 
  (r"<b>Maxi trükkje.</b> Maxi szerint az $a_n=\frac{(-1)^n}{n}$ sorozat csökkenő, „mert a nevező "
   r"egyre nagyobb”. Írd fel az első négy tagot, és cáfold meg!", None,
@@ -316,8 +319,8 @@ ALAP = [
 
  (r"Milyen pozitív $x$ esetén alkot a három szám mértani sorozatot?",
   [r"$4,\ x,\ 25$", r"$2,\ x,\ 18$"],
-  [r"$x=10$ (a $-10$ is megoldás, ha nem kötjük ki a pozitív előjelet)",
-   r"$x=6$ (a $-6$ is megoldás, ha nem kötjük ki a pozitív előjelet)"], True),
+  ['$x=10$',
+   '$x=6$'], True),
 
  (r"💰 $80\,000$ dinárt helyezel el $3$ évre, évi $5\%$-os kamatláb mellett. Mennyi lesz a számlán "
   r"a futamidő végén, ha a kamat",
@@ -332,7 +335,7 @@ KOZEP = [
   r"tagot is!", None, r"$2;\ 5;\ 8;\ 11;\ 14$, az általános tag $a_n=3n-1$"),
 
  (r"Hányadik tagja a $16$ az $a_n=\log_2(n+1)$ sorozatnak?", None,
-  r"a $65\,535.$ tag, mert $n+1=2^{16}=65\,536$"),
+  '$n=65\\,535$.'),
 
  (r"Van-e olyan tagja az $a_n=n^2-7n+12$ sorozatnak, amelyik $0$? Ha igen, melyik — és "
   r"vigyázz, hány ilyen tag van!", None,
@@ -343,12 +346,10 @@ KOZEP = [
   r"$a_4=3\cdot 2\cdot 1+7=13$ — a felsorolás nem határozza meg a sorozatot"),
 
  (r"Vizsgáld meg az $a_n=\frac{2n-1}{n+1}$ sorozatot monotonitás és korlátosság szempontjából!", None,
-  r"$a_{n+1}-a_n=\frac{3}{(n+1)(n+2)}\gt 0$, tehát szigorúan növekvő; korlátos: "
-  r"$\frac{1}{2}\le a_n\lt 2$"),
+  'Szigorúan növekvő és korlátos: $\\dfrac12\\le a_n\\lt2$.'),
 
  (r"Vizsgáld meg az $a_n=\frac{n+2}{2n+1}$ sorozatot monotonitás és korlátosság szempontjából!", None,
-  r"$a_{n+1}-a_n=-\frac{3}{(2n+1)(2n+3)}\lt 0$, tehát szigorúan csökkenő; korlátos: "
-  r"$\frac{1}{2}\lt a_n\le 1$"),
+  'Szigorúan csökkenő és korlátos: $\\dfrac12\\lt a_n\\le1$.'),
 
  (r"Mi a legkisebb egész felső korlátja az $a_n=\frac{3n}{n+1}$ sorozatnak?", None,
   r"$3$ — a tagok ($\frac{3}{2};\ 2;\ \frac{9}{4};\ \dots$) egyre nagyobbak, de $3$ alatt maradnak"),
@@ -411,25 +412,24 @@ KOZEP = [
   [r"Mekkora összeget kell ma elhelyezned ahhoz, hogy $6$ év múlva $100\,000$ dinárod legyen, ha a "
    r"kamatot évente egyszer írják jóvá?",
    r"Mennyi lenne $100\,000$ dinárból $6$ év múlva, ha a kamatot <b>negyedévente</b> írnák jóvá?"],
-  [r"$K_0=\frac{100\,000}{1{,}04^{6}}=79\,031{,}45$ dinár",
-   r"negyedévente $1\%$, összesen $24$ jóváírás: $100\,000\cdot 1{,}01^{24}=126\,973{,}46$ dinár"]),
+  ['$79\\,031{,}45$ dinár',
+   '$126\\,973{,}46$ dinár']),
 ]
 
 # ============================== NEHÉZ (8) ==============================
 NEHEZ = [
  (r"Igazold, hogy az $a_n=\frac{3n+2}{n+4}$ sorozat szigorúan monoton növekvő, és hogy minden "
   r"tagja $1$ és $3$ közé esik!", None,
-  r"$a_{n+1}-a_n=\frac{10}{(n+4)(n+5)}\gt 0$, tehát növekvő; így a legkisebb tag $a_1=1$, felülről "
-  r"pedig $3$ korlátozza, mert $\frac{3n+2}{n+4}\lt 3$ minden $n$-re ($3n+2\lt 3n+12$)"),
+  '$a_{n+1}-a_n=\\dfrac{10}{(n+4)(n+5)}\\gt0$, tehát szigorúan növekvő; $1\\le a_n\\lt3$.'),
 
  (r"Egy számtani sorozat első tíz tagjának összege $145$, az első húsz tagé $590$. Írd fel a "
   r"sorozat első négy tagját!", None, r"$a_1=1$, $d=3$: $1;\ 4;\ 7;\ 10$"),
 
  (r"Hány olyan háromjegyű szám van, amely osztható $7$-tel, és mennyi ezek összege?", None,
-  r"az első $105$, az utolsó $994$, tehát $128$ ilyen szám van, az összegük $70\,336$"),
+  '$128$ szám; összegük $70\\,336$.'),
 
  (r"Egy mértani sorozat harmadik tagja $18$, hatodik tagja $486$. Hányadik tagtól haladja meg a "
-  r"sorozat az $1000$-et?", None, r"$q=3$, $b_1=2$; $b_6=486$, $b_7=1458$, tehát a $7.$ tagtól"),
+  r"sorozat az $1000$-et?", None, 'A $7.$ tagtól.'),
 
  (r"Egy mértani sorozatban a harmadik és az első tag különbsége $12$, az első és a harmadik tag "
   r"szorzata $64$. Határozd meg a sorozatot! <i>(Több megoldás is van — keresd meg mindet!)</i>", None,
@@ -439,14 +439,12 @@ NEHEZ = [
  (r"Egy baktériumtelep óránként a háromszorosára nő. Kezdetben $50$ baktérium van a telepben.",
   [r"Hányadik óra végén haladja meg a telep a $100\,000$ baktériumot?",
    r"És hányadik óra végén az egymilliót?"],
-  [r"$50\cdot 3^{7}=109\,350$, tehát a $7.$ óra végén (a $6.$ óra végén még csak $36\,450$)",
-   r"$50\cdot 3^{10}=2\,952\,450$, tehát a $10.$ óra végén (a $9.$ óra végén még csak $984\,150$)"]),
+  ['A $7.$ óra végén',
+   'A $10.$ óra végén']),
 
  (r"Három szám összege $26$, és mértani sorozatot alkot. Ha rendre $1$-gyel, $6$-tal és $3$-mal "
   r"növeljük őket, számtani sorozatot kapunk. Melyik ez a három szám?", None,
-  r"$2;\ 6;\ 18$ (a megnövelt számok: $3;\ 12;\ 21$ — valóban számtani sorozat, $d=9$). "
-  r"A másodfokú egyenlet másik gyöke, $q=\frac{1}{3}$, ugyanezt a három számot adja fordított "
-  r"sorrendben"),
+  'Két számsorrend: $(2;6;18)$ és $(18;6;2)$.'),
 
  (r"Egy számtani sorozat $n$-edik tagja $a_n=2n+1$.",
   [r"Fejezd ki az első $n$ tag összegét $n$ segítségével!",
@@ -456,9 +454,8 @@ NEHEZ = [
 
 JOKER = (r"Egy papírlap vastagsága $0{,}1$ mm. Képzeld el, hogy félbe tudod hajtani akárhányszor — "
          r"minden hajtásnál kétszereződik a vastagság.",
-         [r"$0{,}1\ \text{mm}\cdot 2^{10}=102{,}4$ mm, azaz nagyjából $10$ cm",
-          r"$42$ hajtás kell: $0{,}1\ \text{mm}\cdot 2^{42}\approx 439\,800$ km, ami már több, "
-          r"mint $384\,000$ km (a $41.$ hajtásnál még csak $219\,900$ km)"],
+         ['$102{,}4$ mm ($10{,}24$ cm)',
+          'A $42.$ hajtás után'],
          [r"Milyen vastag a köteg $10$ hajtás után?",
           r"Hányadik hajtás után haladja meg a vastagság a Hold távolságát, $384\,000$ km-t?"])
 

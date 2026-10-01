@@ -149,11 +149,11 @@ ALAP = [
 
  ("Egy szabályos háromoldalú gúla alapéle $6$ cm, az oldallap magassága $8$ cm. Mekkora a "
   "felszíne?", None,
-  "$B=9\\sqrt3$ cm², $M=72$ cm², tehát $F=9\\sqrt3+72\\approx 87{,}59$ cm²."),
+  '$F=9\\sqrt3+72\\approx87{,}59$ cm².'),
 
  ("Egy szabályos hatoldalú gúla alapéle $4$ cm, az oldallap magassága $6$ cm. Mekkora a "
   "felszíne?", None,
-  "$B=24\\sqrt3$ cm², $M=72$ cm², tehát $F=24\\sqrt3+72\\approx 113{,}57$ cm²."),
+  '$F=24\\sqrt3+72\\approx113{,}57$ cm².'),
 
  ("Egy gúla alapterülete $48$ cm², magassága $9$ cm. Mekkora a térfogata?", None,
   "$V=\\frac{48\\cdot 9}{3}=144$ cm³."),
@@ -172,7 +172,7 @@ ALAP = [
 
  ("Egy szabályos háromoldalú gúla alapéle $8$ cm, az oldallap magassága $10$ cm. Mekkora a "
   "palástja és a felszíne?", None,
-  "$M=120$ cm², $B=16\\sqrt3$ cm², tehát $F=16\\sqrt3+120\\approx 147{,}71$ cm²."),
+  '$M=120$ cm²; $F=16\\sqrt3+120\\approx147{,}71$ cm².'),
 
  ("Egy torony alsó része $6$ m alapélű, $5$ m magas négyzetes hasáb; a teteje a hasáb "
   "fedőlapjára illeszkedő, $4$ m magas szabályos négyoldalú gúla. Mekkora a torony "
@@ -191,7 +191,7 @@ ALAP = [
 
  ("Egy szabályos négyoldalú gúla alapéle $12$ cm. Az alaplappal párhuzamos metszet oldala "
   "$4$ cm. Mekkora a <b>metszet és az alaplap</b> hasonlósági aránya?", None,
-  "$k=\\frac{4}{12}=\\frac13$ — a metszet tehát a magasság harmadánál van (a csúcstól mérve)."),
+  '$k=\\dfrac13$.'),
 
  ("Mi lesz a metszet, ha a szabályos négyoldalú gúlát",
   ["az alaplappal párhuzamos síkkal metsszük",
@@ -217,13 +217,12 @@ ALAP = [
 
  ("Egy csonkagúla alaplapja $25$ cm², fedőlapja $9$ cm², térfogata $98$ cm³. Mekkora a "
   "magassága?", None,
-  "$\\sqrt{B_1B_2}=15$, ezért $\\frac{H}{3}\\cdot 49=98$, ahonnan $H=6$ cm."),
+  '$H=6$ cm.'),
 
  ("Mekkora egy szabályos <b>hatoldalú</b> csonkagúla <b>egyetlen</b> oldallapjának a "
   "területe, ha az alapélek $8$ cm és $5$ cm, az oldallap magassága pedig $4$ cm? És mekkora "
   "az egész palást?", None,
-  "Egy trapéz területe $\\frac{(8+5)\\cdot 4}{2}=26$ cm², a palást pedig "
-  "$6\\cdot 26=156$ cm²."),
+  'Egy oldallap $26$ cm²; a palást $156$ cm².'),
 
  ("Egy virágcserép csonkagúla alakú, lefelé szűkül: az alja $10$ cm oldalú, a felső "
   "pereme $16$ cm oldalú négyzet, a magassága $12$ cm. Hány liter föld fér bele, ha a "
@@ -241,7 +240,7 @@ KOZEP = [
  # --- C1 (közép 1–4)
  ("Egy szabályos négyoldalú gúla <b>testmagassága</b> $4$ cm, az <b>oldallap</b> magassága "
   "$5$ cm. Mekkora az alapéle?", None,
-  "Az apotéma $r=\\sqrt{5^2-4^2}=3$ cm, tehát $a=2r=6$ cm."),
+  '$a=6$ cm.'),
 
  ("Egy szabályos négyoldalú gúla alapéle $6$ cm, térfogata $60$ cm³. Mekkora a magassága?",
   None, "$H=\\frac{3V}{B}=\\frac{180}{36}=5$ cm."),
@@ -251,13 +250,14 @@ KOZEP = [
   ["$10$ cm", "$320$ cm²", "$576$ cm²"], True),
 
  ("Egy szabályos négyoldalú gúla magassága $9$ cm, térfogata $300$ cm³. Mekkora az alapéle?",
-  None, "$B=\\frac{3V}{H}=100$ cm², tehát $a=10$ cm."),
+  None, '$a=10$ cm.'),
 
  # --- C2 (közép 5–12)
  ("Egy szabályos hatoldalú gúla alapéle $4$ cm, magassága $2$ cm. Számítsd ki",
   ["az oldallap magasságát", "a felszínét", "a térfogatát"],
-  ["$4$ cm (mert $r=2\\sqrt3$)", "$24\\sqrt3+48\\approx 89{,}57$ cm²",
-   "$16\\sqrt3\\approx 27{,}71$ cm³"], True),
+  ['$h=4$ cm',
+   '$F=24\\sqrt3+48\\approx89{,}57$ cm²',
+   '$V=16\\sqrt3\\approx27{,}71$ cm³'], True),
 
  ("Egy szabályos háromoldalú gúla alapéle $12$ cm, magassága $5$ cm. Mekkora az "
   "alapterülete és a térfogata?", None,
@@ -265,7 +265,7 @@ KOZEP = [
 
  ("Egy szabályos négyoldalú gúla palástja $260$ cm², az oldallap magassága $13$ cm. Mekkora "
   "az alapéle?", None,
-  "$M=\\frac{4a\\cdot 13}{2}=26a=260$, tehát $a=10$ cm."),
+  '$a=10$ cm.'),
 
  ("Egy gúlát az alaplappal párhuzamosan, félmagasságban elmetszünk. A levágott kis gúla "
   "térfogata hányadrésze az eredetinek?", None,
@@ -285,13 +285,12 @@ KOZEP = [
 
  ("Egy gúla alapterülete $36$ cm², az alaplappal párhuzamos metszet területe $4$ cm². "
   "Mekkora a <b>metszet és az alaplap</b> hasonlósági aránya?", None,
-  "$k^2=\\frac{4}{36}$, tehát $k=\\frac13$."),
+  '$k=\\dfrac13$.'),
 
  # --- C3 (közép 13–15)
  ("Egy gúla térfogata $100$ cm³. Félmagasságban elmetsszük az alaplappal párhuzamosan. "
   "Mekkora az <b>alsó</b> darab (a csonkagúla) térfogata?", None,
-  "A felső kis gúla $\\frac18\\cdot 100=12{,}5$ cm³, tehát az alsó darab "
-  "$100-12{,}5=87{,}5$ cm³."),
+  '$87{,}5$ cm³.'),
 
  ("Egy szabályos négyoldalú gúla oldaléle $13$ cm, az alaplap köréírt sugara $5$ cm. "
   "Mekkora a magassága?", None,
@@ -312,7 +311,7 @@ KOZEP = [
 
  ("Egy csonkagúla alaplapja $49$ cm², fedőlapja $25$ cm², magassága $6$ cm. Mekkora a "
   "térfogata?", None,
-  "$\\sqrt{B_1B_2}=35$, ezért $V=\\frac63(49+25+35)=218$ cm³."),
+  '$V=218$ cm³.'),
 
  ("Egy gúla alapterülete $9$ cm², magassága $4$ cm. Mekkora a térfogata? És mekkora annak "
   "a hasábnak a térfogata, amelynek ugyanez az alaplapja és a magassága?", None,
@@ -335,22 +334,19 @@ NEHEZ = [
 
  ("Két hasonló gúla térfogata $512$ cm³ és $64$ cm³. Hogyan aránylanak a megfelelő éleik?",
   None,
-  "A térfogatok aránya $8:1$, tehát az élek aránya $\\sqrt[3]{8}:1=2:1$."),
+  '$2:1$.'),
 
  ("Egy szabályos négyoldalú gúla <b>oldaléleken átmenő</b> tengelymetszete szabályos "
   "háromszög. Az alapél $8$ cm. Mekkora a gúla magassága?", None,
-  "A tengelymetszet alapja az alaplap átlója, $8\\sqrt2$; mivel szabályos háromszög, az "
-  "oldalél is $8\\sqrt2$. A köréírt sugár $R=4\\sqrt2$, ezért "
-  "$H=\\sqrt{128-32}=4\\sqrt6\\approx 9{,}80$ cm."),
+  '$H=4\\sqrt6\\approx9{,}80$ cm.'),
 
  ("Egy gúla alapterülete $144$ cm². Milyen magasságban (a csúcstól mérve, a magasság "
   "hányadánál) kell elmetszeni, hogy a metszet területe $36$ cm² legyen?", None,
-  "$k^2\\cdot 144=36$, tehát $k=\\frac12$: a magasság felénél."),
+  'A magasság felénél, a csúcstól mérve.'),
 
  ("Egy szabályos négyoldalú csonkagúla alapélei $10$ cm és $6$ cm, a térfogata "
   "$392$ cm³. Mekkora a magassága?", None,
-  "$\\sqrt{B_1B_2}=\\sqrt{100\\cdot 36}=60$, ezért $\\frac{H}{3}(100+36+60)=392$, "
-  "vagyis $\\frac{H}{3}\\cdot 196=392$, ahonnan $H=6$ cm."),
+  '$H=6$ cm.'),
 
  ("Egy gúlát félmagasságban elmetszünk az alaplappal párhuzamosan. Az eredeti gúla "
   "alapterülete $B$, térfogata $V$. Fejezd ki ezekkel",
@@ -360,9 +356,7 @@ NEHEZ = [
 
 JOKER = ("Egy szabályos négyoldalú gúla oldallapjai $45^\\circ$-os szöget zárnak be az "
          "alaplappal, az alapél $12$ cm. Mekkora a felszíne?",
-         "Ha az oldallap hajlásszöge $45^\\circ$, akkor $H=r=6$ cm, tehát "
-         "$h=6\\sqrt2$ cm. Így $M=\\frac{48\\cdot 6\\sqrt2}{2}=144\\sqrt2$ és "
-         "$F=144+144\\sqrt2\\approx 347{,}65$ cm².")
+         '$F=144+144\\sqrt2\\approx347{,}65$ cm².')
 
 # ============================== OLDAL ==============================
 body = [
