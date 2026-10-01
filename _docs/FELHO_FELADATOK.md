@@ -77,6 +77,23 @@ Havi GitHub Action, amely `media.py --online`-t futtat, és hiba esetén issue-t
 
 ## A — Évfolyam-audit
 
+### Átvett hibajegyzék (2026-09-29)
+
+| Terület | Állapot | Következő lépés |
+|---|---|---|
+| Keresőindex: üres szöveg és fejezetek, 3000 karakteres csonkolás | ◐ Helyi ágon javítva: 308/308 lap kereshető, 360/390/1280 px próba rendben; push nélkül | Tanári jóváhagyás után publikálás |
+| Képletes fejezetcímek a tartalomjegyzékben | ☐ | Közös `ui.js` javítása és célzott ellenőrzés |
+| Főoldali videó szüneteltetése; mozgáscsökkentés kezdőértéke | ☐ | Közös HTML/JS/CSS akadálymentességi javítás |
+| 30 régi 1e kvízvisszajelzés élő régiója | ◐ Helyi ágon javítva 26 HTML-ben; 81 böngészőpróba hibátlan | Képernyőolvasós felolvasási próba |
+| 1e/02 trigonometria: Közép 4 és Nehéz 2 szögtartománya | ◐ A tanár hegyesszögű értelmezést rögzített; a két feladat helyi ágon pontosítva, a kulcs egyezik | Publikálás tanári jóváhagyás után |
+| 1e/02 Alap 11 dupla részfeladatjel; 1e/06 Bővítés címe | ◐ Helyi ágon javítva; kánonellenőrzés 310/0 | Publikálás tanári jóváhagyás után |
+| 1e/02 Alap 10: `\sin 90^\circ` nem hegyesszög | ◐ Helyi ágon hegyesszögű példával javítva; privát felmérő-ütközés ellenőrizve | Publikálás tanári jóváhagyás után |
+| 1e/01 halmazok Közép 5 b) és logika Nehéz 3 c): hibás matematikai végeredmény | ◐ Az 1e A2 adagban javítva; független logikai ellenőrzés megtörtént | Publikálás tanári jóváhagyás után |
+| 1e/05 geometria Gyakorló dolgozat 6: elfajuló háromszög az állításban | ◐ Helyi ágon `ABC` és `DEC` háromszögre javítva; az OSO-indoklás pontosítva | Publikálás tanári jóváhagyás után |
+| 1e/01 halmazok Gyakorló órai 4 és 1e/05 Vészterem Alap 12: hamis egzisztenciális állításhoz „ellenpélda” kérése | ◐ Mindkét kérés indoklásra pontosítva; a logikai feladatban `\mathbb{N}` értelmezése rögzítve | Publikálás tanári jóváhagyás után |
+| 1e/02 trigonometria Nehéz 4–5: a szögfüggvények közül a kotangens hiányzik a Végeredményből | ◐ `ctg φ = 5/12`, illetve `√2` pótolva; független SymPy-számítás és új kulcstesztek | Meglévő feladatparaméterekből levezetett értékek; publikálás tanári jóváhagyás után |
+| Végeredménydobozok tartalmi tisztítása | ◐ 1e: 16 lapon 110; 2e/01 és 03: 8 lapon 122 Végeredmény tisztítva helyi ágon | 2e/02 és 04, majd 3e–4e hátra; publikálás tanári jóváhagyás után |
+
 ### A1 · Teljes ellenőrzés osztályonként
 **Cél:** a már kész anyag hibáinak felderítése és javítása — **tartalmi bővítés nélkül**.
 **Lépések:** (1) teljes lánc az osztályra: `verify_web`, `check_links`, `sav_check`, `kulcs_teszt` +
@@ -101,11 +118,18 @@ osztályonként egy PR; utána `kulcs_teszt` + `kulcs_regresszio` (a levezetés 
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ☐ | ☐ | ☐ | ☐ |
+| ◐ 16 lap, 110 kártya (helyi ág, 2026-09-29) | ◐ 01 és 03: 8 lap, 122 kártya (helyi ág, 2026-10-01); 02 és 04 hátra | ☐ | ☐ |
 
 | 1e | 2e | 3e | 4e (01–04) |
 |---|---|---|---|
-| ☐ | ☐ | ☐ | ☐ |
+| ◐ 1e helyi ágon ellenőrizve | ◐ 2e/01 és 03 helyi ágon ellenőrizve; 02 és 04 hátra | ☐ | ☐ |
+
+**1e A2 kivételek:** bizonyítást vagy indoklást kérő kártyákban a rövid érvelés a válasz része maradt: `1e/01` függvények `nehez-2`, `nehez-7`; halmazok `nehez-2`, `nehez-4`; logika `nehez-6`, `nehez-7`; `1e/02` trigonometria `nehez-1`; `1e/03` számok `nehez-1`, `nehez-2`, `nehez-7`, Vészterem `nehez-1`; `1e/04` Vészterem `alap-5`; `1e/05` geometria `nehez-2`, `gye-6`, `joker`, Vészterem `nehez-3`. Mind a 16 kártya kifejezetten bizonyítást, cáfolatot vagy indoklást kér, így az érdemi érvelés maradt. A logika `nehez-7` fölösleges értéktáblázatos mondata kikerült, a halmazok `nehez-4` és a geometria `nehez-2` bizonyítása pontosabb lett; a `gye-6` állítása javítva.
+
+
+**2e/03 A2 részállapot (2026-09-30, helyi ág):** négy feladatlap 113 Végeredmény-doboza tisztult; ekkor még a 2e/01, 02 és 04 témakörök A2 tisztítása volt hátra. A végső válaszhoz szükséges rövid érvelés vagy modell megmaradt az exponenciális lap `alap-6`, `nehez-6` kártyáján, a logaritmus lap `kozep-10` bizonyításán, a logaritmusfüggvény lap `kozep-13` fogalmi kérdésén, valamint a Vészterem `alap-10` és `kozep-7` kártyáján. A HTML-diff 113 Végeredmény-dobozra és 6 feladatszövegre korlátozódik; a kánon, a linkek, a sávok, a kulcsteszt és a háromszélességes böngészőpróba rendben. A friss szemű lektor hat feladatszöveg-pontosítást jelzett; ezek a kérdésekben is javítva vannak.
+
+**2e/01 A2 részállapot (2026-10-01, helyi ág):** négy feladatlap 150 kártyáját átnéztük; 9 Végeredmény-doboz rövidült vagy pontosodott. A Vészterem `kozep-7` feladatszövege most saját Gauss-síkbeli ábra készítését kéri, mert a korábbi szöveg nem létező rajzra hivatkozott. A hatványozás és gyökvonás Jokerében, valamint a Vészterem `alap-10` hibakereső feladatában a kért hibaazonosítás, ellenpélda vagy javítás megmaradt. A komplex számok `kozep-4` és Joker kártyájának kért indoklása, a gyökvonás `nehez-4` azonosságának bizonyítása, valamint a Vészterem `kozep-7` képletes számítása és rövid indoka is indokolt kivétel. A friss szemű lektor a kilenc módosított feladat eredményeit megerősítette; a 2e/02 és 04 témakör hátra van.
 
 ---
 

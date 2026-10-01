@@ -141,7 +141,7 @@ ALAP = [
    "$\\sqrt{4\\cdot 9}=\\sqrt{4}\\cdot\\sqrt{9}$",
    "$\\sqrt[4]{-81}$ nincs értelmezve a valós számok halmazán"],
   ["Hamis, helyesen $|a|$.", "Igaz.", "Hamis, helyesen $5$.",
-   "Hamis: $5\\neq 7$.", "Igaz.", "Igaz."], False),
+   "Hamis; helyesen $\\sqrt{9+16}=5$.", "Igaz.", "Igaz."], False),
 
  ("Egyszerűsítsd a gyökkitevőt! $(a&gt;0)$",
   ["$\\sqrt[6]{a^{2}}$", "$\\sqrt[8]{a^{4}}$", "$\\sqrt[9]{a^{6}}$", "$\\sqrt[4]{a^{2}}$"],
@@ -296,8 +296,8 @@ NEHEZ = [
 JOKER = ("<b>Dr. Baljós vírus-kódja.</b> A rendszer ezt az azonosságot állítja <b>minden</b> valós "
          "$x$-re: $$\\sqrt{(x-5)^{2}}\\ \\overset{?}{=}\\ x-5$$ "
          "Mikor igaz és mikor hamis? Adj ellenpéldát, és írd fel a helyes alakot!",
-         "Csak $x\\ge 5$ esetén igaz. Helyesen $\\sqrt{(x-5)^{2}}=|x-5|$; ellenpélda $x=2$, "
-         "ahol az érték $3$, nem $-3$.")
+         "Igaz, ha $x\\ge 5$; hamis, ha $x&lt;5$. Helyesen "
+         "$\\sqrt{(x-5)^{2}}=|x-5|$; ellenpélda: $x=2$ esetén $3\\neq-3$.")
 
 GYE_ORAI = [
  ("Számítsd ki a számkifejezés pontos értékét! "
@@ -319,7 +319,8 @@ GYE_ORAI = [
  ("Igaz vagy hamis? A hamisat javítsd ki!",
   ["$\\sqrt[3]{-64}=-4$", "$\\sqrt{b^{2}}=b$ minden valós $b$-re",
    "$\\left(\\dfrac{3}{5}\\right)^{-1}=\\dfrac{5}{3}$", "$\\sqrt{16+9}=\\sqrt{16}+\\sqrt{9}$"],
-  ["Igaz.", "Hamis, helyesen $|b|$.", "Igaz.", "Hamis: $5\\neq 7$."], False),
+  ["Igaz.", "Hamis, helyesen $|b|$.", "Igaz.",
+   "Hamis; helyesen $\\sqrt{16+9}=5$."], False),
 ]
 
 GYE_OTTHON = [

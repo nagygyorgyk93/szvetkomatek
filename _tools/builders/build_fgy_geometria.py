@@ -112,7 +112,7 @@ NEHEZ = [
  ("Egy háromszög két belső szögének belső szögfelezői $130^\\circ$-os szöget zárnak be. Mekkora a harmadik belső szög?",
   None, "$80^\\circ$."),
  ("Bizonyítsd be: ha egy háromszögnek két szöge egyenlő, akkor a velük szemközti oldalak is egyenlők!",
-  None, "A csúcsból húzott szögfelező a háromszöget két egybevágó részre bontja (SOS), ezért a szemközti oldalak egyenlők."),
+  None, "Legyen $\\angle A=\\angle B$, és $D\\in AB$ a $C$-ből húzott szögfelező metszéspontja. Ekkor $\\angle ACD=\\angle DCB$ és $\\angle CAD=\\angle CBD$, így $\\angle ADC=\\angle CDB$. A közös $CD$ oldal és a rajta fekvő egyenlő szögek miatt az $ACD\\triangle$ és a $BCD\\triangle$ egybevágó (III., SOS), tehát $AC=BC$."),
  ("Egy húrnégyszög egyik szöge $70^\\circ$, a mellette lévő $100^\\circ$. Add meg mind a négy belső szöget!",
   None, "$70^\\circ,\\ 100^\\circ,\\ 110^\\circ,\\ 80^\\circ$."),
  ("Egy szabályos sokszög egy belső szöge $168^\\circ$. Hány oldala van?",
@@ -138,7 +138,7 @@ JOKER = ("<b>Kán tükör-csapdája.</b> Kán azt állítja: „Rajzoltam egy h�
 GYE_ORAI = [
  ("Karikázd be a helyes állításokat!",
   ["A csúcsszögek egyenlők.","A mellékszögek összege $90^\\circ$.","A pótszögek összege $90^\\circ$.","A háromszög magasságvonalai a magasságpontban metszik egymást.","A szögfelezők metszéspontja a körülírt kör középpontja."],
-  "Igazak: a), c), d). (b hamis: a mellékszögek összege $180^\\circ$; e hamis: az a beírt kör középpontja.)", True),
+  'Igazak: a), c), d).', True),
  ("Számold ki a háromszög harmadik belső szögét és mindhárom külső szögét, ha $\\alpha=52^\\circ$ és $\\beta=61^\\circ$!",
   None, "$\\gamma=67^\\circ$; külső szögek: $128^\\circ,\\ 119^\\circ,\\ 113^\\circ$."),
  ("Az $a\\parallel b$ egyeneseket transzverzális metszi; az egyik szög $124^\\circ$. Add meg a vele egyállású, váltó- és társszögét!",
@@ -147,8 +147,8 @@ GYE_ORAI = [
   None, "$40^\\circ,\\ 60^\\circ,\\ 80^\\circ$."),
  ("A derékszögű háromszögben a két hegyesszög különbsége $28^\\circ$. Mekkorák ezek a hegyesszögek?",
   None, "$59^\\circ$ és $31^\\circ$."),
- ("Bizonyítsd be, hogy az $ABC\\triangle$ egybevágó a $ADC\\triangle$-gel, ha $C$ az $AD$ és a $BE$ szakasznak is felezőpontja — röviden jelöld meg, melyik egybevágósági tétel dönt!",
-  None, "A megfelelő oldalak és a közbezárt (csúcs)szög egyenlők, ezért a <b>II. (OSO)</b> tétel szerint egybevágók."),
+ ("Bizonyítsd be, hogy az $ABC\\triangle$ egybevágó a $DEC\\triangle$-gel, ha $C$ az $AD$ és a $BE$ szakasznak is felezőpontja — röviden jelöld meg, melyik egybevágósági tétel dönt!",
+  None, "$AC=CD$ és $BC=CE$, mert $C$ mindkét szakasz felezőpontja. Mivel $\\angle ACB=\\angle DCE$ (csúcsszögek), ezért a <b>II. (OSO)</b> tétel szerint az $ABC\\triangle$ és a $DEC\\triangle$ egybevágó."),
  ("Egy háromszög egyik belső szöge $52^\\circ$. Mekkora szöget zár be a másik két szög belső szögfelezője?",
   None, "$116^\\circ$."),
  ("Egy egyenlő szárú háromszög szárszöge $44^\\circ$. Mekkorák az alapon fekvő szögek?",
@@ -172,7 +172,7 @@ GYE_OTTHONI = [
 GYD_ORAI = [
  ("Karikázd be a helyes állításokat!",
   ["A paralelogramma átlói felezik egymást.","A rombusz átlói merőlegesek.","A téglalapnak van beírt köre.","A trapéz szárán fekvő két szög összege $180^\\circ$.","Húrnégyszögben a szemközti oldalak összege egyenlő."],
-  "Igazak: a), b), d). (c hamis: a téglalapnak általában nincs beírt köre; e hamis — az az érintőnégyszögre igaz.)", True),
+  'Igazak: a), b), d).', True),
  ("Egy négyszög szögei $\\alpha=88^\\circ$, $\\beta=76^\\circ$, $\\gamma=124^\\circ$. Számold ki a negyediket és mind a négy külső szöget!",
   None, "$\\delta=72^\\circ$; külső szögek: $92^\\circ,\\ 104^\\circ,\\ 56^\\circ,\\ 108^\\circ$."),
  ("Számold ki a háromszög belső szögeit, ha $\\alpha:\\beta:\\gamma=4:5:9$!",
@@ -301,23 +301,22 @@ SZOG_ALAP = [
  (_A2 + "Az ábrán $a\\parallel b$. Számítsd ki a megjelölt szögeket, majd nevezd meg a kért szögpárt!",
   ["$\\alpha$", "$\\beta$", "$\\gamma$",
    "Milyen szögpárt alkot $\\gamma$ a megadott $48^\\circ 23'$-es szöggel?"],
-  ["$131^\\circ 37'$ (a $48^\\circ 23'$ mellékszöge)",
-   "$131^\\circ 37'$ ($\\alpha$-val egyállású)",
+  ["$131^\\circ 37'$",
+   "$131^\\circ 37'$",
    "$48^\\circ 23'$",
-   "Egyállású szögek — párhuzamosoknál egyenlők."]),
+   'Egyállású szögek.']),
 
  (_A3 + "A háromszög két külső szöge $130^\\circ$ és $110^\\circ$. Számítsd ki mind a három belső szöget!",
   None,
-  "Az $A$ csúcsnál $180^\\circ-130^\\circ=50^\\circ$, a $C$ csúcsnál $180^\\circ-110^\\circ=70^\\circ$, "
-  "így $\\alpha=180^\\circ-50^\\circ-70^\\circ=60^\\circ$."),
+  '$\\angle A=50^\\circ$, $\\angle B=60^\\circ$, $\\angle C=70^\\circ$.'),
 
  (_A4 + "A háromszögnek két egyenlő hosszú oldala van (lásd a vonalkákat), az egyik alapszöge $70^\\circ$. "
         "Számítsd ki $\\alpha$-t és $\\beta$-t!",
   None,
-  "$\\beta=70^\\circ$ (egyenlő oldalakkal szemközt egyenlő szögek), $\\alpha=180^\\circ-2\\cdot 70^\\circ=40^\\circ$."),
+  '$\\alpha=40^\\circ$, $\\beta=70^\\circ$.'),
 
  (_A5 + "Számítsd ki a négyszög hiányzó $m$ belső szögét!", None,
-  "A négyszög belső szögeinek összege $360^\\circ$, ezért $m=360^\\circ-(107^\\circ+62^\\circ+54^\\circ)=137^\\circ$."),
+  '$m=137^\\circ$.'),
 ]
 
 SZOG_KOZEP = [
@@ -327,48 +326,38 @@ SZOG_KOZEP = [
    "Miért lesz $\\angle ACB$ ugyanakkora, mint $\\angle CAD$?"],
   ["$\\angle ABC=100^\\circ$, $\\angle BCD=80^\\circ$, $\\angle CDA=100^\\circ$",
    "$\\angle ACB=57^\\circ$",
-   "Mert $AD\\parallel BC$, és az $AC$ átló transzverzálisként metszi őket: a két szög váltószög."]),
+   'Váltószögek.']),
 
  (_K2 + "Az $ABCD$ egyenlő szárú trapézban $AB\\parallel DC$, a szárak pedig egyenlő hosszúak. "
         "Határozd meg $x$ és $y$ értékét, majd add meg mind a négy belső szöget!",
   None,
-  "Egyenlő szárú trapézban az alapon fekvő szögek egyenlők: $\\angle A=\\angle B=70^\\circ$, ezért "
-  "$y-19=70$, azaz $y=89$. A szárak melletti szögek kiegészítők, így $\\angle C=\\angle D=110^\\circ$, "
-  "tehát $3x+50=110$, azaz $x=20$."),
+  '$x=20$, $y=89$; $\\angle A=\\angle B=70^\\circ$, $\\angle C=\\angle D=110^\\circ$.'),
 
  (_K3 + "Az ábrán $a\\parallel b$. Számítsd ki $\\alpha$-t és $\\beta$-t!", None,
-  "A jelölt $46^\\circ 30'$ és $2\\alpha$ mellékszögek, ezért $2\\alpha=133^\\circ 30'$, "
-  "innen $\\alpha=66^\\circ 45'$. A $\\beta$ a $46^\\circ 30'$-es szöggel egyállású, tehát "
-  "$\\beta=46^\\circ 30'$."),
+  "$\\alpha=66^\\circ 45'$, $\\beta=46^\\circ 30'$."),
 
  ("Egy derékszögű háromszögben a két hegyesszög különbsége $22^\\circ$. Mekkorák ezek a hegyesszögek? "
   "Írd le a gondolatmenetet is!", None,
-  "A két hegyesszög összege $90^\\circ$, különbsége $22^\\circ$, ezért a nagyobbik "
-  "$(90^\\circ+22^\\circ):2=56^\\circ$, a kisebbik $(90^\\circ-22^\\circ):2=34^\\circ$."),
+  '$56^\\circ$ és $34^\\circ$.'),
 
  (_K5 + "Egy kadét így okoskodott: <i>„Mivel $a\\parallel b$, és a váltószögek egyenlők, ezért "
         "$\\alpha=62^\\circ$.”</i> A végeredménye hibás. Hol csúszott el a gondolatmenete, és mennyi "
         "valójában $\\alpha$?", None,
-  "A megadott $62^\\circ$ a két párhuzamoson <b>kívül</b> van, $\\alpha$ viszont <b>belül</b> — "
-  "így nem alkotnak váltószögpárt. A $62^\\circ$ egyállású párja az alsó metszéspont jobb felső "
-  "szöge, ez pedig $\\alpha$ mellékszöge, tehát $\\alpha=180^\\circ-62^\\circ=118^\\circ$."),
+  'A megadott és a keresett szög nem váltószög; $\\alpha=118^\\circ$.'),
 ]
 
 SZOG_NEHEZ = [
  (_N1 + "Az $ABCD$ négyszög mind a négy csúcsa ugyanazon a körön van (<b>húrnégyszög</b>). "
         "Számítsd ki $x$ értékét, majd mind a négy belső szöget!", None,
-  "Húrnégyszögben a szemközti szögek összege $180^\\circ$, ezért $(3x+20)+(x+40)=180$, "
-  "ahonnan $x=30$. Így $\\angle A=110^\\circ$, $\\angle C=70^\\circ$, és a másik szemközti párból "
-  "$\\delta=\\angle D=180^\\circ-88^\\circ=92^\\circ$."),
+  '$x=30$; $\\angle A=110^\\circ$, $\\angle B=88^\\circ$, $\\angle C=70^\\circ$, $\\angle D=92^\\circ$.'),
 
  ("Az $A$ és $B$ pont a körvonalat $1:5$ arányban két ívre bontja.",
   ["Mekkora a két ív?",
    "Mekkora a két ívhez tartozó kerületi szög?",
    "A két kerületi szög összege $180^\\circ$. Melyik korábban tanult tétel következik ebből?"],
-  ["A teljes kör $360^\\circ$, hat egyenlő rész egyike $60^\\circ$, tehát az ívek $60^\\circ$ és $300^\\circ$.",
-   "A kerületi szög a hozzá tartozó középponti szög fele: $30^\\circ$, illetve $150^\\circ$.",
-   "Az $AB$ húr két oldalán fekvő kerületi szögek kiegészítik egymást $180^\\circ$-ra — "
-   "ez pontosan a húrnégyszögek szemközti szögeire vonatkozó tétel."]),
+  ['$60^\\circ$ és $300^\\circ$.',
+   '$30^\\circ$ és $150^\\circ$.',
+   'A húrnégyszög szemközti szögei kiegészítik egymást.']),
 ]
 
 ALAP  = ALAP  + SZOG_ALAP

@@ -134,9 +134,9 @@ KOZEP = [
   ['Helyes-e az egyszerűsítés?',
    'Ugyanaz-e a két kifejezés? Nézd meg $x=1$-nél!',
    'Hogyan kell pontosan megfogalmazni az állítást?'],
-  ['Az átalakítás helyes: $x^2-1=(x-1)(x+1)$.',
-   'Nem ugyanaz. Az eredeti kifejezésnek $x=1$-nél nincs értéke (nullával osztanánk), az $x+1$-nek viszont van: $2$.',
-   'A két kifejezés <b>minden $x\\neq 1$ helyen</b> egyenlő. Az egyszerűsítés soha nem bővíti az értelmezési tartományt — a kikötést ki kell írni.']),
+  ['Igen, az egyszerűsítés helyes.',
+   'Nem: $x=1$-nél az eredeti kifejezés nincs értelmezve, az $x+1$ értéke $2$.',
+   'A két kifejezés minden $x\\ne1$ helyen egyenlő.']),
 ]
 
 # =============================== NEHÉZ (8) ===============================
@@ -164,7 +164,7 @@ NEHEZ = [
 JOKER = ("<b>Kán csapdája.</b> Kán egy „egyszerűsített” képletet injektált a rendszerbe: "
   "$\\dfrac{x^2+x}{x+1}=x^2$ — kihúzta a $+x$-et és a $+1$-et. Hol a hiba, és mi a helyes eredmény? "
   "(Emlékezz: <b>csak közös tényezővel</b> egyszerűsíthetünk, taggal nem!)",
-  "A hiba: tagot húzott ki, nem tényezőt. Helyesen $\\dfrac{x^2+x}{x+1}=\\dfrac{x(x+1)}{x+1}=x$ (ÉT: $x\\neq -1$).")
+  'A hiba: tagot húzott ki tényező helyett. Helyesen: $x$; ÉT: $x\\ne-1$.')
 
 # ===================== GYAKORLÓ ELLENŐRZŐ (🏫 órai + 🏠 otthoni) =====================
 GYE_ORAI = [
@@ -180,7 +180,7 @@ GYE_ORAI = [
   ["$x^3-27$","$ax-ay+bx-by$"],
   ["$(x-3)(x^2+3x+9)$","$(a+b)(x-y)$"]),
  ("A Bézout-tétellel add meg a maradékot: $P(x)=x^3-2x^2+4x-3$ osztva $x-1$-gyel.",
-  None, "$0$ (tehát osztható)."),
+  None, '$0$.'),
  ("Egyszerűsítsd, és add meg az értelmezési tartományt: $\\dfrac{x^2-25}{x+5}$.",
   None, "$x-5$, ÉT: $x\\neq -5$."),
  ("Add össze: $\\dfrac{1}{x-1}+\\dfrac{1}{x+1}$.",

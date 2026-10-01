@@ -277,22 +277,20 @@ DR_A_UJ_01 = [
   ["$\\sqrt{a^2}=a$ minden valós $a$-ra",
    "$\\sqrt{9+16}=\\sqrt9+\\sqrt{16}=7$",
    "$(2^3)^2=2^{3+2}=32$"],
-  ["Csak $a\\ge 0$ esetén igaz. Általában $\\sqrt{a^2}=|a|$ — például $a=-3$-nál "
-   "$\\sqrt{9}=3$, nem $-3$.",
-   "A gyökvonás <b>nem</b> bontható szét összegre: $\\sqrt{25}=5$, nem $7$.",
-   "Hatvány hatványozásánál a kitevők <b>szorzódnak</b>: $(2^3)^2=2^{6}=64$."]),
+  ["A négyzetgyök nem mindig $a$: helyesen $\\sqrt{a^2}=|a|$.",
+   "A gyök nem bontható szét összegre; helyesen $\\sqrt{9+16}=5$.",
+   "A kitevők szorzódnak; helyesen $(2^3)^2=64$."]),
 ]
 DR_K_UJ_01 = [
  ("Egy $z$ komplex számról ennyit tudsz: a Gauss-síkon a második síknegyedben van, a "
   "valós tengelytől $3$ egységre, a képzetes tengelytől $4$ egységre.",
   ["Írd fel $z$-t algebrai alakban!",
-   "Mekkora a modulusza? Olvasd le a rajzról is, és számold ki képlettel is.",
+   "Ábrázold a Gauss-síkon! Mekkora a modulusza? Olvasd le az ábrádról, és számold ki képlettel is.",
    "Hol helyezkedik el $\\overline{z}$, és mekkora a modulusza? Miért?"],
-  ["A képzetes tengelytől mért távolság a valós rész abszolút értéke, a valós tengelytől "
-   "mérté a képzetes részé. A második síknegyedben a valós rész negatív: $z=-4+3i$.",
-   "$|z|=\\sqrt{(-4)^2+3^2}=\\sqrt{25}=5$ — a rajzon ez az origótól mért távolság.",
-   "A konjugált a valós tengelyre vett tükörkép, tehát $\\overline{z}=-4-3i$ a harmadik "
-   "síknegyedben. A modulusza ugyanaz, $5$: a tükrözés nem változtat a távolságon."]),
+  ["$z=-4+3i$.",
+   "$|z|=\\sqrt{(-4)^2+3^2}=5$; a rajzon az origótól mért távolság $5$.",
+   "$\\overline{z}=-4-3i$ a harmadik síknegyedben; $|\\overline{z}|=5$, "
+   "mert a valós tengelyre tükrözés megőrzi a távolságot."]),
 ]
 
 DR_A = [
