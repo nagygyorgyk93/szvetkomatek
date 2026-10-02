@@ -105,6 +105,27 @@ subagenttel; (3) matematikai szúrópróba: definíciók, tételek pontossága, 
 **Javítás:** egyértelmű hiba (elírás, rossz kulcs, törött link, kánonsértés) → javítás a builderben /
 1e-ben a HTML-ben, lánc újra. Minden más (pedagógiai döntés, feladat cseréje) → „Tanári döntés kell” lista.
 **Elfogadás:** a lánc tiszta; a PR-ben hibalista táblázatban (hol · mi · javítva/döntés kell).
+
+| 1e | 2e | 3e | 4e |
+|---|---|---|---|
+| ☐ teljes A1 hátra | ☐ teljes A1 hátra | ☐ teljes A1 hátra | ◐ teljes A1 helyi ágon: 73 lap böngészőpróbája, témakörönként 1 tananyag és 1 feladatgyűjtemény friss szemű lektorálása, 14 lap javítva (2026-10-02) |
+
+**4e A1 hibalista (2026-10-02, helyi ág):**
+
+| Hol | Mi volt a hiba | Súlyosság | Státusz |
+|---|---|---|---|
+| 01, végtelen mértani sor | Az aszimptota metszését kizáró mondat, a véges sorösszeg feltétele és a valós inga/modellezett út összemosása | közepes | Builderben javítva |
+| 01, határérték-feladatok A 22–23 | A megtett út és az indulási magasság nélküli abszolút helyzet keveredett | közepes | Kérdések pontosítva |
+| 02, függvénytulajdonságok és aszimptoták | A periódushoz nem kellett a teljes tartomány ismétlődése; a fokszám szerinti kvíz kihagyta a nagyobb különbség esetét | közepes | Builderekben javítva |
+| 03, konvexitás és függvényvizsgálat | A konkáv függvény nem feltétlenül „nem konvex”; a kizárt hely nem feltétlenül pólus; a polinom- és normálisállításból hiányzott kivétel | közepes | Builderben javítva |
+| 04, határozott integrál és terület | Az egymást nem finomító felosztások felső összege nem feltétlenül csökken; az $F+C$ állításhoz összefüggő intervallum kell | közepes | Builderben javítva |
+| 04, határozatlan integrál A 3 és K 1 | Szakadó értelmezési tartományon a pont nem választ ki egyetlen globális primitívet | közepes | Az $M$ pontot tartalmazó intervallum megadva |
+| 04, kulcsteszt A 2 | A második alpontnál hibás „nem” elvárást egy későbbi „nem” elfedett | közepes | Elvárás és sorrendi teszt javítva; célzott hibamutációt elkapja |
+| 05, binomiális tétel | Az $n+1$ tag csak a formális összegre igaz | alacsony | Tétel pontosítva |
+| 06, valószínűség | A feltételes valószínűség nem mindig változik; a Bernoulli-kísérlet több elemi kimenetele is két csoportba sorolható | közepes | Tananyag, összefoglaló és feladat javítva |
+| 06, valós adatok és döntés | A csapadékos nap adatküszöbe és a fogadás/befektetés döntési feltétele hiányzott | közepes | Builderekben pontosítva |
+
+**Ellenőrzés:** 11 érintett builder öntesztje rendben; `kepek.py` → `media.py` → `set_hatter.py` → `build_naplo_terkep.py` → `build_search_index.py` lefutott. A kánon és a linkek 310/0, a sávellenőrzés tiszta, a kulcsteszt 4499/4499, a regresszió 4499/4499 = 100%. A 73 4e lap 360/390/1280 px-es Node Playwright-core próbája (túlcsordulás, JS, KaTeX, helyi fájlok, első kvíz 390 px-en) hibátlan; az utolsó két szövegpontosítás után a két érintett lap külön is hibátlan. A 308 bejegyzéses keresőindexből pontosan a 14 módosult oldal változott. A jsdom, a Python Playwright, a nyomtatási látvány és a valódi képernyőolvasós próba nem futott. **Tanári döntés kell:** a `4e/03` konvexitás/inflexió Alap 7–8 és a `4e/05` kombinatorikai Alap sáv hivatalos szabványszint szerinti besorolása; a Titanic „nők és gyermekek először” történeti mondatának forrásolása vagy puhítása. Az A1 nem végzett feladatátsorolást és nem cserélt feladatot.
 **Javítva (2026-09-28, helyben):** a `3e_05_pontok` `nehez-4` kártyájának Végeredményében levezetés állt
 („\(2t^2=(t-6)^2+t^2\), tehát …”) — a `2`-esei miatt a `kulcs_regresszio` egy mutációt nem kapott el. A levezetés
 kikerült (kánon), az érzékenység most 4445/4445.
@@ -124,7 +145,7 @@ osztályonként egy PR; utána `kulcs_teszt` + `kulcs_regresszio` (a levezetés 
 
 | 1e | 2e | 3e | 4e (01–04) |
 |---|---|---|---|
-| ◐ 1e helyi ágon ellenőrizve | ◐ 2e/01–04 A2 helyi ágon ellenőrizve; teljes A1 tananyagpróba még hátra | ◐ 3e A2 helyi ágon ellenőrizve; teljes A1 tananyagpróba még hátra | ◐ 4e A2 helyi ágon ellenőrizve; teljes A1 tananyagpróba még hátra |
+| ◐ 1e helyi ágon ellenőrizve | ◐ 2e/01–04 A2 helyi ágon ellenőrizve; teljes A1 tananyagpróba még hátra | ◐ 3e A2 helyi ágon ellenőrizve; teljes A1 tananyagpróba még hátra | ◐ 4e A2 helyi ágon ellenőrizve; a teljes A1 tartalmi próba külön helyi ágon elkészült |
 
 **1e A2 kivételek:** bizonyítást vagy indoklást kérő kártyákban a rövid érvelés a válasz része maradt: `1e/01` függvények `nehez-2`, `nehez-7`; halmazok `nehez-2`, `nehez-4`; logika `nehez-6`, `nehez-7`; `1e/02` trigonometria `nehez-1`; `1e/03` számok `nehez-1`, `nehez-2`, `nehez-7`, Vészterem `nehez-1`; `1e/04` Vészterem `alap-5`; `1e/05` geometria `nehez-2`, `gye-6`, `joker`, Vészterem `nehez-3`. Mind a 16 kártya kifejezetten bizonyítást, cáfolatot vagy indoklást kér, így az érdemi érvelés maradt. A logika `nehez-7` fölösleges értéktáblázatos mondata kikerült, a halmazok `nehez-4` és a geometria `nehez-2` bizonyítása pontosabb lett; a `gye-6` állítása javítva.
 

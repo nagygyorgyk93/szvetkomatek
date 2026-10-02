@@ -149,12 +149,13 @@ B1 = [
    r'nyúlunk (<b>felső összeg</b>). A keresett terület a kettő közé esik.</p>',
    SVG_B1_OSSZEG,
    _tabla_osszeg,
-   kviz(r'Növekvő függvénynél mi történik a felső összeggel, ha a téglalapok számát, $n$-et növeljük?',
-        [r'csökken, és a pontos területhez tart', r'nő, mert több téglalapot adunk össze',
+   kviz(r'Növekvő függvénynél mi történik a felső összeggel, ha minden korábbi részintervallumot két részre bontunk?',
+        [r'nem nő, és a pontos területhez tart', r'nő, mert több téglalapot adunk össze',
          r'nem változik, hiszen ugyanaz a terület', r'$0$-hoz tart, mert a téglalapok egyre keskenyebbek'], 0,
-        jo="✔ A felső összeg „túllógó” része egyre kisebb, ezért csökken; az alsó nő; mindkettő a területhez tart.",
-        nem="✘ Több, de keskenyebb téglalap: a görbe fölé lógó részek csökkennek. A felső összeg ezért csökken, és a "
-            "pontos területhez (itt 6) tart — nem 0-hoz."),
+        jo="✔ A régi osztópontok megmaradnak: finomításkor a felső összeg nem nő, az alsó nem csökken; mindkettő "
+           "a területhez tart.",
+        nem="✘ A felosztás finomításakor minden régi osztópont megmarad. A felső összeg nem nő, és a pontos "
+            "területhez (itt 6) tart — nem 0-hoz."),
  ]),
 
  ("A határozott integrál", [
@@ -369,7 +370,7 @@ B3 = [
 
  ("🧾 Gyorsismétlő", [
    TABLA(["", ""], [
-       ["<b>primitív függvény</b>", "$F'=f$; minden primitív függvény $F+C$ alakú"],
+       ["<b>primitív függvény</b>", "$F'=f$; egy összefüggő intervallumon minden primitív függvény $F+C$ alakú"],
        ["<b>határozatlan integrál</b>", "$\\int f(x)\\,dx=F(x)+C$ — ellenőrzés deriválással"],
        ["<b>táblázat</b>", "$\\int x^n\\,dx=\\frac{x^{n+1}}{n+1}+C$ $(n\\ne-1)$, $\\int\\frac1x\\,dx=\\ln\\lvert x\\rvert+C$, "
                            "$\\int e^x\\,dx=e^x+C$ — a teljes táblázat: "

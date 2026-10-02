@@ -63,8 +63,9 @@ TESZT = {
     + P(lambda t: -4 * t ** 3, lambda t: -t ** 4, 4) + P(lambda x: -5 * s(x), lambda x: 5 * c(x), 5)
     + P(lambda x: 2 * e(x), lambda x: 2 * e(x), 2),
     'alap-2': P(lambda x: 3 * x ** 2 - 4 * x + 1, lambda x: x ** 3 - 2 * x ** 2 + x - 5, 'igen')
-    + P(lambda x: 1 / x ** 2, lambda x: 7 - 1 / x, 'nem')
-    + P(lambda x: (3 * x + 2) ** 3, lambda x: (3 * x + 2) ** 4 / 12, '3-mal', 12),
+    + P(lambda x: 1 / x ** 2, lambda x: 7 - 1 / x, 'igen')
+    + P(lambda x: (3 * x + 2) ** 3, lambda x: (3 * x + 2) ** 4 / 12, '3-mal', 12)
+    + v('sorrend:igen>igen>nem'),
     'alap-3': P(lambda x: 3 * x ** 2 - 6 * x, lambda x: x ** 3 - 3 * x ** 2 + 5, 'F(x)=x^3-3x^2+5')
     + P(lambda x: 2 * x - 4 * x ** 3, lambda x: x ** 2 - x ** 4 + 3, 'F(x)=x^2-x^4+3')
     + P(lambda x: 2 * x - 2 / x ** 3, lambda x: x ** 2 + 1 / x ** 2, 'F(x)=x^2+ {1}{x^2}'),

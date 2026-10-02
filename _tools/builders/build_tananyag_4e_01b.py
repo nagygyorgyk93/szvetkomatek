@@ -289,15 +289,16 @@ C = [
 
  ("Valós helyzetek", [
    r'<p class="lead">Minden olyan folyamat, amelyben minden lépés az előzőnek <b>ugyanannyiszorosa</b> (ugyanakkora hányada), '
-   r'mértani sorozatot ad. Ha a lépések végtelen sokáig folytatódnak, a teljes mennyiség a sor összege.</p>',
+   r'mértani sorozatot ad. Ha a lépések végtelen sokáig folytatódnak és a sor konvergens, a teljes mennyiség '
+   r'a sor összege.</p>',
    doboz("pelda", "I.V.H. Akták — a lengő inga",
          r'<p>Egy inga az első lengése során $64$ cm-es ívet fut be, és minden további lengése az előző '
          r'$\frac34$-e. Mekkora az első négy lengés íve, és mekkora utat tesz meg az inga összesen, ha '
          r'(elméletben) végtelen sokáig leng?</p>'
          r'<p>A lengések: $64,\ 48,\ 36,\ 27$ cm. Itt $b_1=64$ és $q=\frac34$, $\lvert q\rvert\lt1$, így</p>'
          r'$$S=\frac{64}{1-\frac34}=\frac{64}{\frac14}=256\ \text{cm}.$$'
-         r'<p>A valóságban az inga véges sok lengés után megáll — a $256$ cm az a felső határ, amelyet '
-         r'a megtett út soha nem lép át.</p>', hid="pelda-valos-sor"),
+         r'<p>Az idealizált modellben a megtett út részösszegei $256$ cm alatt maradnak, és ehhez a számhoz tartanak. '
+         r'A valós inga mozgását a modell csak közelíti.</p>', hid="pelda-valos-sor"),
  ]),
 
  ("Szakaszos tizedes törtek", [
@@ -324,7 +325,7 @@ C = [
    r'<tr><th>típus</th><th>a módszer</th><th>példa</th></tr>'
    r'<tr><td>racionális tört</td><td>kiemelés, fokszám-szabály</td><td>$\frac{6n^2-5n+1}{3n^2+4}\to2$</td></tr>'
    r'<tr><td>$\infty-\infty$</td><td>közös nevező, utána kiemelés</td><td>$\frac{n^2}{n+1}-n\to-1$</td></tr>'
-   r'<tr><td>gyökös</td><td>kiemelés a gyökjel alól: $\sqrt{an^2}=\sqrt a\,n$</td><td>$\frac{\sqrt{16n^2+5n-2}}{3n+1}\to\frac43$</td></tr>'
+   r'<tr><td>gyökös</td><td>kiemelés a gyökjel alól: $\sqrt{an^2}=\sqrt a\,n$ ($a\ge0$, $n\ge0$)</td><td>$\frac{\sqrt{16n^2+5n-2}}{3n+1}\to\frac43$</td></tr>'
    r'<tr><td>$1^\infty$</td><td>$\left(1+\frac kn\right)^{mn}\to e^{km}$; előbb: az alap $1$-hez tart?</td><td>$\left(1+\frac2n\right)^{4n}\to e^8$</td></tr>'
    r'<tr><td>végtelen mértani sor</td><td>$S=\frac{b_1}{1-q}$, csak ha $\lvert q\rvert\lt1$</td><td>$0{,}\dot4=\frac49$</td></tr>'
    r'</table></div>',
@@ -333,7 +334,7 @@ C = [
    brief('<b>Nagol:</b> A sorozatoknál $n$ egyik egész számról a másikra ugrált. A következő '
          'küldetésben $x$ folyamatosan fut, és a határérték <b>falakat</b> rajzol a függvények köré — '
          'az aszimptotákat. <b>Véd Vilmos:</b> Falak? Azokon én mindig átmegyek. '
-         '<b>Nagol:</b> Ezeken nem fogsz.', outro=True),
+         '<b>Nagol:</b> Némelyiken át is mehetsz; a görbe távoli viselkedését mutatják.', outro=True),
  ]),
 ]
 

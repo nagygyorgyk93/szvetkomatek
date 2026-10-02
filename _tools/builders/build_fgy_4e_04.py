@@ -251,7 +251,8 @@ A_I = [
   [r"igen: $F'(x)=3x^2-4x+1=f(x)$", r"igen: $F'(x)=\dfrac{1}{x^2}=f(x)$",
    r"nem: $F'(x)=\dfrac{4(3x+2)^3\cdot 3}{4}=3(3x+2)^3\ne f(x)$ — a belső függvény deriváltja miatt még "
    r"$3$‑mal osztani kell; helyesen például $F(x)=\dfrac{(3x+2)^4}{12}$"]),
- ("Határozd meg az $f$ függvény azon $F$ primitív függvényét, amelynek grafikonja átmegy az $M$ ponton!",
+ ("Az $M$ pontot tartalmazó összefüggő értelmezési intervallumon határozd meg az $f$ azon $F$ primitív "
+  "függvényét, amelynek grafikonja átmegy az $M$ ponton!",
   [r"$f(x)=3x^2-6x$, $M(2;\,1)$", r"$f(x)=2x-4x^3$, $M(1;\,3)$", r"$f(x)=2x-\dfrac{2}{x^3}$, $M(1;\,2)$"],
   [r"$F(x)=x^3-3x^2+5$",
    r"$F(x)=x^2-x^4+3$",
@@ -305,7 +306,8 @@ if [Ex("x**3-3*x**2+5").subs(x, 2), Ex("x**2-x**4+3").subs(x, 1), Ex("x**2+1/x**
     E.append("ponton átmenő")
 
 K_I = [
- ("Határozd meg az $f$ függvénynek azt az $F$ primitív függvényét, amelynek grafikonja átmegy az $M$ ponton!",
+ ("Az $M$ pontot tartalmazó összefüggő értelmezési intervallumon határozd meg az $f$ azon $F$ primitív "
+  "függvényét, amelynek grafikonja átmegy az $M$ ponton!",
   [r"$f(x)=e^x+2x$, $M(0;\,-1)$", r"$f(x)=\sin x+\cos x$, $M\left(\dfrac{\pi}{2};\,2\right)$",
    r"$f(x)=\dfrac{1}{\cos^2x}-\dfrac{1}{\sin^2x}$, $M\left(\dfrac{\pi}{4};\,2\right)$",
    r"$f(x)=\dfrac{3}{x^2}-\dfrac{2}{x^3}$, $M(1;\,4)$"],

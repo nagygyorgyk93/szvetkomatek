@@ -560,13 +560,14 @@ C1 = [
          r'$n=\lim\limits_{x\to+\infty}\left(\dfrac{2x^2+x}{x-1}-2x\right)=\lim\limits_{x\to+\infty}\dfrac{3x}{x-1}=3$ → $y=2x+3$.</li></ul>',
          hid="pelda-teljes"),
    kviz(r'Lehet-e egy racionális törtfüggvénynek vízszintes <b>és</b> ferde aszimptotája is?',
-        [r'nem: $p\le r$ esetén vízszintes van, $p=r+1$ esetén ferde',
+        [r'nem: $p\le r$ esetén vízszintes lehet, $p=r+1$ esetén ferde',
          r'igen, ha a számláló foka nagyobb a nevezőénél',
          r'igen, ha a nevezőnek két zérushelye van',
          r'csak akkor, ha a számláló és a nevező foka egyenlő'], 0,
-        jo="✔ A fokszámok döntenek: vagy a határérték véges (vízszintes), vagy p = r + 1 és ferde. Egyszerre nem.",
-        nem="✘ Racionális törtfüggvénynél a kettő kizárja egymást: p ≤ r esetén a határérték véges (vízszintes "
-            "aszimptota), p = r + 1 esetén a függvény ±∞-be tart, és ferde aszimptotája van."),
+        jo="✔ A fokszámok döntenek: p ≤ r esetén vízszintes, p = r + 1 esetén ferde aszimptota van; p ≥ r + 2 "
+           "esetén egyik sincs. Vízszintes és ferde egyszerre nincs.",
+        nem="✘ Racionális törtfüggvénynél p ≤ r esetén vízszintes, p = r + 1 esetén ferde aszimptota van; "
+            "p ≥ r + 2 esetén egyik sincs. A kettő együtt nem fordul elő."),
    GY(FH + "#alap-15", "A 15–18", FH + "#kozep-10", "K 10–12"),
    brief('<b>Nagol:</b> A falat nem kellett áttörni: tudjuk, hol van, és azt is, hogyan közelít hozzá a görbe. '
          'A határértékkel viszont ennél többet is meg lehet fogni: azt, hogy egy mennyiség <b>egy pillanat alatt</b> '

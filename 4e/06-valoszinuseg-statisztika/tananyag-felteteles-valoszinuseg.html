@@ -33,7 +33,7 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief"><p>📡 <b>Mr. Szürreál:</b> A Titanic 1309 utasából 500 élte túl a katasztrófát — alig több mint minden harmadik. A kadétok esélye sem jobb. <b>Véd Vilmos:</b> Tisztelt bizottság, a mentőcsónakokba a „nők és gyermekek először” szabály szerint szálltak be. Ha tudjuk, hogy az utas nő volt, egészen más a kép! <b>Nagol:</b> A védőnek most igaza van. A többletinformáció megváltoztatja a valószínűséget — ezt nevezzük feltételes valószínűségnek.</p></div>
+    <div class="brief"><p>📡 <b>Mr. Szürreál:</b> A Titanic 1309 utasából 500 élte túl a katasztrófát — alig több mint minden harmadik. A kadétok esélye sem jobb. <b>Véd Vilmos:</b> Tisztelt bizottság, a mentőcsónakokba a „nők és gyermekek először” szabály szerint szálltak be. Ha tudjuk, hogy az utas nő volt, egészen más a kép! <b>Nagol:</b> A védőnek most igaza van. A többletinformáció alapján feltételes valószínűséget számolunk; ez eltérhet az eredetitől.</p></div>
 
     <h2 id="s1">Kétdimenziós táblázat</h2>
 
@@ -94,12 +94,12 @@
 
     <div class="doboz definicio" id="def-fuggetlen">
       <p class="cim"><span class="ikon">📗</span> Független események</p>
-      <p>Az <span class="math inline">\(A\)</span> és a <span class="math inline">\(B\)</span> esemény (ahol <span class="math inline">\(P(B)>0\)</span>) <b>független</b>, ha <span class="math inline">\(P(A\mid B)=P(A)\)</span>: a feltétel nem változtat a valószínűségen.</p>
+      <p>Az <span class="math inline">\(A\)</span> és a <span class="math inline">\(B\)</span> esemény <b>független</b>, ha <span class="math inline">\(P(A\cap B)=P(A)\cdot P(B)\)</span>. Ha <span class="math inline">\(P(B)>0\)</span>, ez egyenértékű azzal, hogy <span class="math inline">\(P(A\mid B)=P(A)\)</span>: a feltétel nem változtat a valószínűségen.</p>
     </div>
 
     <div class="doboz tetel" id="tetel-szorzas-fuggetlen">
       <p class="cim"><span class="ikon">📘</span> Független események szorzata</p>
-      <p>Két esemény pontosan akkor független, ha <span class="math display">\[P(A\cap B)=P(A)\cdot P(B).\]</span> (A definícióból: <span class="math inline">\(P(A\cap B)=P(A\mid B)\cdot P(B)\)</span>, és függetlenségnél <span class="math inline">\(P(A\mid B)=P(A)\)</span>.)</p>
+      <p>Két független eseményre <span class="math display">\[P(A\cap B)=P(A)\cdot P(B).\]</span> Ez az egyenlőség a függetlenség ellenőrzésére is használható. Ha <span class="math inline">\(P(B)>0\)</span>, akkor <span class="math inline">\(P(A\cap B)=P(A\mid B)\cdot P(B)\)</span> miatt a két megfogalmazás egyenértékű; <span class="math inline">\(P(B)=0\)</span> esetén is alkalmazható a szorzatfeltétel.</p>
     </div>
 
     <div class="doboz pelda" id="pelda-szamitogep">
@@ -121,11 +121,11 @@
 
     <h2 id="s4">Legalább egy — független kísérletekből</h2>
 
-    <p class="lead">A „legalább egy” esemény sokféleképpen jöhet létre, az ellentettje viszont egyetlen eset: <i>egyik sem</i>. Független eseményeknél ez szorzással számolható.</p>
+    <p class="lead">A „legalább egy” esemény sokféleképpen jöhet létre, az ellentettje viszont egyetlen eset: <i>egyik sem</i>. Kölcsönösen független eseményeknél ez szorzással számolható.</p>
 
     <div class="doboz tetel" id="tetel-legalabb-egy">
       <p class="cim"><span class="ikon">📘</span> Legalább egy</p>
-      <p><span class="math display">\[P(\text{legalább egy bekövetkezik})=1-P(\text{egyik sem következik be}).\]</span> Ha <span class="math inline">\(A_1,\ldots,A_n\)</span> függetlenek, akkor <span class="math inline">\(P(\text{egyik sem})=\bigl(1-P(A_1)\bigr)\cdot\ldots\cdot\bigl(1-P(A_n)\bigr)\)</span>.</p>
+      <p><span class="math display">\[P(\text{legalább egy bekövetkezik})=1-P(\text{egyik sem következik be}).\]</span> Ha <span class="math inline">\(A_1,\ldots,A_n\)</span> kölcsönösen függetlenek, akkor <span class="math inline">\(P(\text{egyik sem})=\bigl(1-P(A_1)\bigr)\cdot\ldots\cdot\bigl(1-P(A_n)\bigr)\)</span>.</p>
     </div>
 
     <div class="doboz pelda" id="pelda-riaszto">
@@ -135,7 +135,7 @@
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> De Méré lovag két fogadása</p>
-      <p>De Méré lovag azt tapasztalta, hogy megéri fogadni arra, hogy egy kockával négy dobásból legalább egy hatos lesz: <span class="math inline">\(1-\left(\frac56\right)^4\approx0{,}518\)</span>. Arra viszont már nem, hogy két kockával 24 dobásból legalább egyszer dupla hatos jön: <span class="math inline">\(1-\left(\frac{35}{36}\right)^{24}\approx0{,}491\)</span>. A furcsaság Pascalt és Fermat-t is foglalkoztatta — és a „legalább egy” képlete adja a választ.</p>
+      <p>Egyenlő összegű nyeremény és veszteség mellett De Méré lovag első fogadása kedvező: egy kockával négy dobásból legalább egy hatos lesz <span class="math inline">\(1-\left(\frac56\right)^4\approx0{,}518\)</span> valószínűséggel. A második fogadás viszont így már nem kedvező: két kockával 24 dobásból legalább egyszer dupla hatos jön: <span class="math inline">\(1-\left(\frac{35}{36}\right)^{24}\approx0{,}491\)</span>. A furcsaság Pascalt és Fermat-t is foglalkoztatta — és a „legalább egy” képlete adja a választ.</p>
     </div>
 
     <p class="lead">⚔️ <b>Az ötösért:</b> feltételes valószínűség kétdimenziós táblázatból — és döntés — <a href="feladatok-valoszinuseg.html#nehez-1">Zsoldos-lista, nehéz 1</a>.</p>

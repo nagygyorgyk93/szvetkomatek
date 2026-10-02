@@ -93,8 +93,9 @@ B1 = [
    r'együtthatók $1,\,2,\,1$ és $1,\,3,\,3,\,1$ — a Pascal-háromszög 2. és 3. sora. Az $a$ kitevője tagról tagra eggyel '
    r'csökken, a $b$-é eggyel nő, és minden tagban a két kitevő összege $n$.</p>',
    doboz("tetel", "A binomiális tétel",
-         r'<p>$$(a+b)^n=\binom n0a^n+\binom n1a^{n-1}b+\binom n2a^{n-2}b^2+\ldots+\binom n{n-1}ab^{n-1}+\binom nnb^n.$$ '
-         r'A kifejtésnek $n+1$ tagja van; az együtthatók a Pascal-háromszög $n$-edik sorának elemei, a <b>binomiális '
+         r'<p>Ha $n$ nemnegatív egész, akkor $$(a+b)^n=\sum_{k=0}^{n}\binom nk a^{n-k}b^k.$$ '
+         r'A formális összegnek $n+1$ tagja van; összevonás után kevesebb '
+         r'is maradhat. Az együtthatók a Pascal-háromszög $n$-edik sorának elemei, a <b>binomiális '
          r'együtthatók</b>. A tételt bizonyítás nélkül használjuk.</p>', hid="tetel-binomialis"),
    doboz("pelda", "I.V.H. Akták — két kifejtés",
          r'<p>$(x-2)^3$: itt $a=x$, $b=-2$, az együtthatók $1,3,3,1$: '

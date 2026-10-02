@@ -397,7 +397,7 @@ A3 = [
  ("Periodikus függvények", [
    r'<p class="lead">Egy függvény <b>periodikus</b>, ha a grafikonja egy szakasz ismétlődéséből áll.</p>',
    doboz("definicio", "Periodikus függvény",
-         r'<p>Az $f$ függvény periodikus, ha van olyan $p\gt0$ szám, hogy minden $x\in D_f$ esetén $x+p\in D_f$ és '
+         r'<p>Az $f$ függvény periodikus, ha van olyan $p\gt0$ szám, hogy $D_f+p=D_f$, és minden $x\in D_f$ esetén '
          r'$f(x+p)=f(x)$. A legkisebb ilyen $p$ (ha van) az <b>alapperiódus</b>.</p>', hid="def-periodikus"),
    r'<p>Példák: a $\sin x$ és a $\cos x$ alapperiódusa $2\pi$, a $\operatorname{tg}x$-é $\pi$. A nem konstans '
    r'polinomok, az exponenciális és a logaritmusfüggvény <b>nem</b> periodikusak.</p>',

@@ -158,10 +158,10 @@ ALAP = [
  (r"Egy pillangó minden repülési körében az előző kör útjának $\frac15$-ét teszi meg. Az első körben "
   r"$10$ métert repül. Hány métert tesz meg összesen, ha végtelen sok kört repül?", None,
   "$" + latex(MS(10, "1/5")) + r"=12{,}5$ m"),
- (r"Minden lépésed hossza az előző lépés hosszának $\frac34$-e. Az első lépés $1$ méter. Milyen messzire "
-  r"jutsz összesen, ha végtelen sok lépést teszel?", None, "$" + latex(MS(1, "3/4")) + "$ m"),
+ (r"Minden lépésed hossza az előző lépés hosszának $\frac34$-e. Az első lépés $1$ méter. Mekkora utat "
+  r"teszel meg összesen, ha végtelen sok lépést teszel?", None, "$" + latex(MS(1, "3/4")) + "$ m"),
  (r"Egy hőlégballon minden újabb emelkedéskor az előző emelkedés $\frac23$-ával jut feljebb. Az első "
-  r"emelkedéskor $30$ métert emelkedik. Milyen magasra jut összesen, ha végtelen sokszor emelkedik?", None,
+  r"emelkedéskor $30$ métert emelkedik. Összesen hány métert emelkedik, ha végtelen sokszor emelkedik?", None,
   "$" + latex(MS(30, "2/3")) + "$ m"),
  (r"Egy cseppkő minden évben az előző évi növekedésének $\frac45$-ével nő. Az első évben $5$ cm-t nő. "
   r"Mekkora lesz a teljes növekedése, ha végtelen sok évig nő?", None, "$" + latex(MS(5, "4/5")) + "$ cm"),
