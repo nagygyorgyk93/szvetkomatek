@@ -108,7 +108,7 @@ subagenttel; (3) matematikai szúrópróba: definíciók, tételek pontossága, 
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ☐ teljes A1 hátra | ☐ teljes A1 hátra | ☐ teljes A1 hátra | ◐ teljes A1 helyi ágon: 73 lap böngészőpróbája, témakörönként 1 tananyag és 1 feladatgyűjtemény friss szemű lektorálása, 14 lap javítva (2026-10-02) |
+| ☐ teljes A1 hátra | ☐ teljes A1 hátra | ☐ teljes A1 hátra | ☑ teljes A1: 73 lap böngészőpróbája, témakörönként 1 tananyag és 1 feladatgyűjtemény friss szemű lektorálása, 14 lap javítva; a tanári besorolási döntések átvezetve (2026-10-02) |
 
 **4e A1 hibalista (2026-10-02, helyi ág):**
 
@@ -126,6 +126,10 @@ subagenttel; (3) matematikai szúrópróba: definíciók, tételek pontossága, 
 | 06, valós adatok és döntés | A csapadékos nap adatküszöbe és a fogadás/befektetés döntési feltétele hiányzott | közepes | Builderekben pontosítva |
 
 **Ellenőrzés:** 11 érintett builder öntesztje rendben; `kepek.py` → `media.py` → `set_hatter.py` → `build_naplo_terkep.py` → `build_search_index.py` lefutott. A kánon és a linkek 310/0, a sávellenőrzés tiszta, a kulcsteszt 4499/4499, a regresszió 4499/4499 = 100%. A 73 4e lap 360/390/1280 px-es Node Playwright-core próbája (túlcsordulás, JS, KaTeX, helyi fájlok, első kvíz 390 px-en) hibátlan; az utolsó két szövegpontosítás után a két érintett lap külön is hibátlan. A 308 bejegyzéses keresőindexből pontosan a 14 módosult oldal változott. A jsdom, a Python Playwright, a nyomtatási látvány és a valódi képernyőolvasós próba nem futott. **Tanári döntés kell:** a `4e/03` konvexitás/inflexió Alap 7–8 és a `4e/05` kombinatorikai Alap sáv hivatalos szabványszint szerinti besorolása; a Titanic „nők és gyermekek először” történeti mondatának forrásolása vagy puhítása. Az A1 nem végzett feladatátsorolást és nem cserélt feladatot.
+
+**Tanári döntés rendezve (2026-10-02):** a honlap sávjai a feladat tényleges nehézségét jelölik, nem a szabványkód O/S/N szintjének automatikus másolatai. A `4e/03` A 7 egyszerű grafikonfelismerésként Alap marad; az A 8 háromrészes, második deriváltas feladat középszintű átvezetés lett (a végleges `#alap-8` horgony megmaradt). A polinomos K 5–8 Közép, a törtfüggvényes N 1–2 Nehéz marad. A `4e/05` 14 alap kombinatorikai kártyája tanári döntés szerint Alap; összetettebb feladatai Közép vagy Nehéz szintűek. A Titanic történeti mondata tanári döntéssel változatlanul marad. E három besorolási kérdéshez további döntés nem kell.
+
+**Utóellenőrzés:** a 4e/03 builder SymPy-öntesztje, a `kepek.py` → `media.py` → `set_hatter.py` → `build_naplo_terkep.py` → `build_search_index.py` lánc, a kánon 310/0, a linkek 310/0 és a sávellenőrzés tiszta. Kulcsteszt 4499/4499, regresszió 4499/4499 = 100%; az egyetlen módosult lap 360/390/1280 px-en hibátlan. A középre emelt kártya miatt az elérhető XP 12334-ről 12335-re nőtt. A jsdom, a nyomtatási látvány és a valódi képernyőolvasós próba most sem futott.
 **Javítva (2026-09-28, helyben):** a `3e_05_pontok` `nehez-4` kártyájának Végeredményében levezetés állt
 („\(2t^2=(t-6)^2+t^2\), tehát …”) — a `2`-esei miatt a `kulcs_regresszio` egy mutációt nem kapott el. A levezetés
 kikerült (kánon), az érzékenység most 4445/4445.
