@@ -161,13 +161,13 @@ ALAP = [
  (r"Adott az $A(1;1)$, $B(5;1)$, $C(5;4)$ pont.",
   [r"Milyen háromszöget alkotnak? Indokold!", r"Számítsd ki a területét kétféleképpen: a befogókból "
    r"és determinánssal!", r"Milyen hosszú az átfogó?"],
-  [r"derékszögű: $AB$ vízszintes, $BC$ függőleges, a derékszög $B$-nél van", r"$T=\frac{4\cdot3}{2}=6$, "
-   r"és $\frac12|D|=6$", r"$AC=5$"]),
+  ['Derékszögű a $B$ csúcsnál: $AB$ vízszintes, $BC$ függőleges',
+   '$T=6$ mindkét módon',
+   '$AC=5$']),
 
  (r"Maxi kiszámolta az $A(0;0)$, $B(2;6)$, $C(6;6)$ csúcsú háromszög területét: "
   r"$D=2\cdot6-6\cdot6=-24$, „tehát a terület $-12$”. Mit rontott el? Mennyi a helyes terület?", None,
-  r"A determináns lehet negatív (a csúcsok körüljárási irányától függ), a terület viszont nem: "
-  r"$T=\frac12|D|=12$."),
+  'Maxi az előjelet hibázta el: $T=\\dfrac12|D|=12$.'),
 ]
 
 # ============================== KÖZÉPSZINT ==============================
@@ -187,8 +187,7 @@ KOZEP = [
 
  (r"Maxi szerint a $K(2;6)$ pont az $A(1;-1)$ és a $B(-5;7)$ pont által meghatározott szakasz "
   r"felezőpontja, „hiszen mindkét ponttól ugyanolyan messze van”. Ellenőrizd a távolságokat! Igaza van?",
-  None, r"$KA=KB=\sqrt{50}$, de Maxinak nincs igaza: a felezőpont $F(-2;3)$. Az egyenlő távolság nem "
-  r"elég, a pontnak a szakaszon is rajta kell lennie."),
+  None, 'Maxi téved: $K$ egyenlő távol van $A$-tól és $B$-től, de nincs a szakaszon; a felezőpont $F(-2;3)$.'),
 
  # --- A2 (közép 6–10)
  (r"Az $ABC$ háromszög két csúcsa $A(-4;-2)$ és $B(2;4)$, a harmadik $C(-3;y)$. Határozd meg a $C$ "
@@ -219,14 +218,16 @@ NEHEZ = [
    r"Határozd meg az alap $F$ felezőpontját és az alaphoz tartozó magasság hosszát!",
    r"Számítsd ki a területet kétféleképpen: az alapból és a magasságból, illetve determinánssal!",
    r"Határozd meg a súlypontot!"],
-  [r"$AB=CB=\sqrt{65}\approx8{,}06$, az alap $AC=2\sqrt{13}$", r"$F(2;0)$, $m_b=FB=2\sqrt{13}\approx7{,}21$",
-   r"$T=\frac{2\sqrt{13}\cdot2\sqrt{13}}{2}=26$, és $\frac12|D|=26$", r"$S\left(\tfrac23;2\right)$"]),
+  ['$AB=CB=\\sqrt{65}$, ezért az alap $AC=2\\sqrt{13}$',
+   '$F(2;0)$, $h_b=2\\sqrt{13}$',
+   '$T=26$ mindkét módon',
+   '$S\\left(\\tfrac23;2\\right)$']),
 
  (r"Adott az $A(-3;-1)$, $B(2;-2)$, $C(4;3)$ és $D(-1;4)$ pont.",
   [r"Mutasd meg, hogy az $ABCD$ négyszög paralelogramma! <i>(Felezik-e egymást az átlók?)</i>",
    r"Számítsd ki a paralelogramma területét!"],
-  [r"az $AC$ és a $BD$ felezőpontja egyaránt $\left(\tfrac12;1\right)$, tehát paralelogramma",
-   r"$T=27$ (két egybevágó háromszög: $2\cdot13{,}5$)"]),
+  ['Az $AC$ és a $BD$ felezőpontja is $\\left(\\tfrac12;1\\right)$, tehát paralelogramma',
+   '$T=27$']),
 
  (r"Az $ABC$ háromszög csúcsai $A(0;0)$, $B(6;0)$ és $C(t;t)$, ahol $t\ne0$.",
   [r"Határozd meg $t$ értékét úgy, hogy a háromszög területe $15$ legyen!",
@@ -238,8 +239,9 @@ NEHEZ = [
 JOKER = (r"Rácspontnak nevezzük azokat a pontokat, amelyeknek mindkét koordinátája egész szám. "
          r"Pick tétele szerint egy rácspont-csúcsú sokszög területe $T=b+\frac h2-1$, ahol $b$ a sokszög "
          r"belsejében, $h$ a határán lévő rácspontok száma.",
-         [r"$T=24{,}5$", r"$h=21$ (mindhárom oldalon $7$ új rácspont)",
-          r"$24{,}5=b+10{,}5-1$, tehát $b=15$ — és valóban, összeszámolva is $5+4+3+2+1=15$"],
+         ['$T=24{,}5$',
+          '$h=21$',
+          '$b=15$'],
          [r"Mekkora a $(0;0)$, $(7;0)$, $(0;7)$ csúcsú háromszög területe?",
           r"Hány rácspont van a határán?", r"Hány rácspont van a belsejében?"])
 

@@ -67,6 +67,11 @@ K10 = x**2 + y**2 - 6*x - 4*y - 12
 M15 = metsz(K15, 3*x + y + 5)
 M10 = metsz(K10, x - y + 4)
 
+def vegso(vartak, *helyek):
+    # A kifejezés továbbra is függetlenül számol; csak a köztes értékek maradnak ki.
+    return [vartak[i] for i in helyek]
+
+
 TESZT = {
     'alap-1': C(kozep((x - 5)**2 + (y + 2)**2)) + [('', 2), ('', 5)] + C(kozep((x + 4)**2 + y**2))
               + [('', fr(sqrt(121)))] + C((0, 0)) + [('', F(3, 2))] + C((0, 7)) + [('', 5)] + C((0, 0)) + [('', F(5, 2))],
@@ -80,9 +85,9 @@ TESZT = {
               + C(kozep(x**2 + y**2 - 6*x - y + 3)[:2]) + [('', fr(sqrt(kozep(x**2 + y**2 - 6*x - y + 3)[2])))],
     'alap-5': [('', 'a koron'), ('', tav2((6, 1), (1, -2))), ('', tav2((-1, 0), (1, -2)))],
     'alap-6': [('', fr(sqrt(tav2((1, 5), (-2, 1)))))],
-    'alap-7': C(kozep(x**2 + y**2 - 4*x + 6*y + 4)[:2]) + [('', fr(sqrt(kozep(x**2 + y**2 - 4*x + 6*y + 4)[2])))]
+    'alap-7': vegso(C(kozep(x**2 + y**2 - 4*x + 6*y + 4)[:2]) + [('', fr(sqrt(kozep(x**2 + y**2 - 4*x + 6*y + 4)[2])))]
               + [('', fr(kozep(x**2 + y**2 + 2*x - 4*y + 10)[2])), ('', 2), ('', 2)]
-              + C(kozep(x**2 + y**2 - 8*x)[:2]) + [('', fr(sqrt(kozep(x**2 + y**2 - 8*x)[2])))],
+              + C(kozep(x**2 + y**2 - 8*x)[:2]) + [('', fr(sqrt(kozep(x**2 + y**2 - 8*x)[2])))], 0, 1, 2, 6, 7, 8),
     'alap-8': [('', 'igen'), ('', tav2((4, 6), (2, 3))), ('', 'nem'), ('', tav2((6, 7), (2, 3)))],
     'alap-9': pontok(sorted(metsz(K9, x - 2*y - 12), key=lambda u: -u[0]))
               + [('', 'nincs')] + pontok(metsz(K9, 3*x - 4*y + 10)),
@@ -98,7 +103,7 @@ TESZT = {
     'kozep-5': C(M15[0]) + C(M15[1]) + [('', 2), ('', 10), kerek(sqrt(tav2(*M15)))],
     'kozep-6': [('', 2), ('', 3), ('', 2), ('', 7), kerek(2 * sqrt(9 - 2))],
     'kozep-7': [('', 3), ('', 4), ('', -19)],
-    'kozep-8': [('', 'nincs'), ('', tav2((4, 4), (-1, 2)))] + C((3, 5)) + [('', 4), ('', 3), ('', -27)],
+    'kozep-8': vegso([('', 'nincs'), ('', tav2((4, 4), (-1, 2)))] + C((3, 5)) + [('', 4), ('', 3), ('', -27)], 0, 2, 3, 4, 5, 6),
     'kozep-9': pontok(list(reversed(metsz(K16, x - 2*y - 5)))) + [kerek(sqrt(tav2(*metsz(K16, x - 2*y - 5))))],
     'kozep-10': C(kozep(K10)[:2]) + [('', fr(sqrt(kozep(K10)[2])))] + pontok(M10)
                 + [kerek(sqrt(tav2(*M10))), kerek(abs(3 - 2 + 4) / sqrt(2))],
@@ -114,5 +119,5 @@ TESZT = {
     'nehez-5': [('', F(1, 2)), ('', fr(erinto_n(K16, Rational(1, 2), c)[1])),
                 ('', F(1, 2)), ('', fr(erinto_n(K16, Rational(1, 2), c)[0])),
                 ('', -2), ('', fr(erinto_n(K16, -2, c)[1])), ('', -2), ('', fr(erinto_n(K16, -2, c)[0]))],
-    'joker': [('', 10), ('', -7), ('', 3), ('', F(9, 5)), ('', F(12, 5))],
+    'joker': [('', F(9, 5)), ('', F(12, 5)), ('', 3)],
 }

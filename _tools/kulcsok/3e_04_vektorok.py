@@ -32,6 +32,11 @@ p, q = M(4, -3, 1), M(5, -2, -3)
 K, KA, KB = M(2, -3, 5), M(1, -3, 6) - M(2, -3, 5), M(1, -2, 5) - M(2, -3, 5)
 X, Y, Z = M(1, 2, 0), M(4, 3, 1), M(2, -1, 3)
 
+def vegso(vartak, *helyek):
+    # A kifejezés továbbra is függetlenül számol; csak a köztes értékek maradnak ki.
+    return [vartak[i] for i in helyek]
+
+
 TESZT = {
     'alap-5': [('', 7), ('', 1), ('', 5)],
     'alap-6': [('', 60), ('', 120), ('', 120), ('', 180)],
@@ -41,9 +46,8 @@ TESZT = {
     'alap-10': vk(2, -3, 1) + vk(0, 4, -1) + [('', 5), ('', -3)],
     'alap-11': vk(*(M(3, -1, 5) - M(1, 0, -2))) + vk(*(M(1, 0, -2) - M(3, -1, 5))),
     'alap-12': vk(*(2*a - 4*c + 6*d)) + vk(*(c + 3*b - 7*a)),
-    'alap-13': [('', 26), kerek(p.norm()), kerek((p + q).norm()), ('', 18), kerek((p - q).norm())],
-    'alap-14': [('', 54), kerek((M(3, -1, 5) - M(1, 0, -2)).norm()), ('', 49),
-                ('', fr((M(-4, 1, 4) - M(2, 3, 1)).norm()))],
+    'alap-13': [('', 26), kerek(p.norm()), kerek((p + q).norm()), kerek((p - q).norm())],
+    'alap-14': [kerek((M(3, -1, 5) - M(1, 0, -2)).norm()), ('', fr((M(-4, 1, 4) - M(2, 3, 1)).norm()))],
     'alap-15': vk(*(M(1, -2, 3) + M(6, 4, 4) - M(3, 2, 1))),
     'alap-16': vk(*((M(-7, 2, 8) + M(6, 4, 5)) / 2)),
     'alap-17': [('', -3), ('', 'nem parhuzamos'), ('', F(1, 2))],
@@ -51,17 +55,17 @@ TESZT = {
     'alap-18': [('', fr(M(6, -2, 3).norm()))] + vk(*(M(6, -2, 3) / 7)) + vk(*(-M(6, -2, 3) / 7)),
     'kozep-3': [('', 34), kerek(sqrt(34)), ('', 109), kerek(sqrt(109)), ('', 61), kerek(sqrt(61))],
     'kozep-4': [('', fr(sqrt(12**2 + 5**2))), ('', F('22.6'))],
-    'kozep-5': [('', 'nullvektor'), ('', 0)],
-    'kozep-6': [('', fr(r)) for r in sorted(solve(5 + t**2 - (5*t**2 + 4), t), reverse=True)],
+    'kozep-5': [('', 0)],
+    'kozep-6': vegso([('', fr(r)) for r in sorted(solve(5 + t**2 - (5*t**2 + 4), t), reverse=True)], 0),
     'kozep-7': vk(*(2*M(Rational(1, 2), 1, -1) - M(1, 0, -2))) + vk(*(2*M(Rational(1, 2), 1, -1) - M(3, -1, 5))),
     'kozep-8': vk(*(2*M(1, 4, 1) - M(5, -2, 3))) + vk(*(2*M(7, 1, 4) - M(5, -2, 3))),
     'kozep-9': vk(*(2*M(6, 4, 5) - M(-7, 2, 8))),
     'kozep-10': vk(*(M(2, -1, 4) + (M(2, 2, 10) - M(2, -1, 4)) / 3)),
     'kozep-11': [('', 17), ('', 77), kerek(sqrt(17) + sqrt(77) + sqrt(72)), ('', 'hegyesszogu')],
-    'kozep-12': [('', 3), ('', 3), ('', 18), ('', 'derekszog')],
+    'kozep-12': [('', 3), ('', 18), ('', 'derekszog')],
     'nehez-1': vk(*(K + KB - KA)) + vk(*(K - KA)) + vk(*(K - KB)) + vk(*(K + KA - KB)),
     'nehez-3': vk(*(Y + Z - X)) + vk(*(X + Z - Y)) + vk(*(X + Y - Z)),
-    'nehez-4': [('', fr(r)) for r in sorted(solve(4 + (t - 2)**2 + 16 - 24, t), reverse=True)]
-               + [('', 'szabalyos'), ('', 8), ('', 'egyenlo szaru')],
+    'nehez-4': [('', fr(r)) for r in sorted(solve(4 + (t - 2)**2 + 16 - 24, t))]
+               + [('', 'szabalyos')],
     'joker': [('', 24), ('', 5), ('', 3)],
 }

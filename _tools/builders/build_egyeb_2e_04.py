@@ -290,10 +290,10 @@ DR_A_UJ_04 = [
    "$\\sin(x+y)=\\sin x+\\sin y$ minden $x$-re és $y$-ra.",
    "A $\\operatorname{tg}$ függvény minden valós számra értelmezett.",
    "$\\cos(-x)=\\cos x$ minden valós $x$-re."],
-  ["Igaz — ez a szinusz értékkészlete.",
-   "Hamis: $x=y=90^\\circ$ esetén a bal oldal $\\sin 180^\\circ=0$, a jobb oldal $2$.",
-   "Hamis: ahol $\\cos x=0$ (például $x=90^\\circ$), ott nincs értelmezve.",
-   "Igaz: a koszinusz páros függvény, grafikonja szimmetrikus az $y$ tengelyre."]),
+  ['Igaz.',
+   'Hamis: $x=y=90^\\circ$ esetén $\\sin(x+y)=0$, de $\\sin x+\\sin y=2$.',
+   'Hamis: $x=90^\\circ$ esetén $\\operatorname{tg}x$ nincs értelmezve.',
+   'Igaz.']),
 ]
 DR_K_UJ_04 = [
  ("Egy szinuszos rezgést leíró függvény grafikonjáról ennyi olvasható le: a legnagyobb "
@@ -301,11 +301,9 @@ DR_K_UJ_04 = [
   ["Mekkora az amplitúdó és a periódus?",
    "Írd fel a függvényt $y=A\\sin(Bx)$ alakban!",
    "Hogyan változna a képlet, ha a legnagyobb érték $5$, a legkisebb pedig $-1$ lenne?"],
-  ["Az amplitúdó $3$, a periódus $4$.",
-   "A periódus $\\dfrac{2\\pi}{B}=4$, ezért $B=\\dfrac{\\pi}{2}$, tehát "
-   "$y=3\\sin\\!\\left(\\dfrac{\\pi}{2}x\\right)$.",
-   "A két szélsőérték közepe $2$, a fél távolságuk $3$, tehát a görbe $2$-vel feljebb "
-   "tolódik: $y=3\\sin\\!\\left(\\dfrac{\\pi}{2}x\\right)+2$."]),
+  ['Amplitúdó $3$; periódus $4$.',
+   '$y=3\\sin\\!\\left(\\dfrac{\\pi}{2}x\\right)$.',
+   '$y=3\\sin\\!\\left(\\dfrac{\\pi}{2}x\\right)+2$.']),
 ]
 
 DR_A = [
@@ -323,70 +321,58 @@ DR_A = [
   None, "$\\cos\\alpha=\\tfrac45$, $\\operatorname{tg}\\alpha=\\tfrac34$, "
         "$\\operatorname{ctg}\\alpha=\\tfrac43$"),
  ("Számold ki addíciós képlettel! $\\sin 15^\\circ$", None,
-  "$\\sin(45^\\circ-30^\\circ)=\\dfrac{\\sqrt6-\\sqrt2}{4}\\approx 0{,}25882$"),
+  '$\\sin15^\\circ=\\dfrac{\\sqrt6-\\sqrt2}{4}$.'),
  ("Számold ki $\\sin 2\\alpha$ értékét, ha $\\cos\\alpha=\\tfrac{12}{13}$ és "
   "$\\alpha$ hegyesszög!", None,
-  "$\\sin\\alpha=\\tfrac{5}{13}$, tehát $\\sin 2\\alpha=\\tfrac{120}{169}$"),
+  '$\\sin2\\alpha=\\tfrac{120}{169}$.'),
  ("Alakítsd szorzattá, majd egyszerűsítsd! $\\sin 75^\\circ+\\sin 15^\\circ$", None,
   "$2\\sin 45^\\circ\\cos 30^\\circ=\\dfrac{\\sqrt6}{2}\\approx 1{,}22474$"),
  ("Add meg a periódust és az amplitúdót! $y=3\\cos 4x$", None,
-  "Amplitúdó $3$; periódus $\\dfrac{2\\pi}{4}=\\dfrac{\\pi}{2}$."),
+  'Amplitúdó $3$; periódus $\\dfrac{\\pi}{2}$.'),
  ("Oldd meg! $2\\sin x-1=0$", None,
   "$x=\\tfrac{\\pi}{6}+2k\\pi$ vagy $x=\\tfrac{5\\pi}{6}+2k\\pi$, $k\\in\\mathbb{Z}$"),
  ("Mekkora a háromszög területe? $a=9$, $b=12$, $\\gamma=30^\\circ$", None,
-  "$T=\\tfrac12\\cdot 9\\cdot 12\\cdot 0{,}5=27$"),
+  '$T=27$.'),
  ("Számítsd ki a harmadik oldalt! $b=6$, $c=8$, $\\alpha=60^\\circ$", None,
-  "$a^{2}=36+64-2\\cdot 6\\cdot 8\\cdot 0{,}5=52$, tehát $a=\\sqrt{52}\\approx 7{,}21$."),
+  '$a=2\\sqrt{13}\\approx7{,}21$.'),
 ]
 
 DR_A = DR_A + DR_A_UJ_04
 DR_K = [
  ("Számold ki a másik három szögfüggvényt! $\\cos\\alpha=-\\tfrac{15}{17}$ és "
   "$\\operatorname{tg}\\alpha&lt;0$.", None,
-  "A koszinusz negatív, a tangens negatív → II. negyed: $\\sin\\alpha=\\tfrac{8}{17}$, "
-  "$\\operatorname{tg}\\alpha=-\\tfrac{8}{15}$, $\\operatorname{ctg}\\alpha=-\\tfrac{15}{8}$."),
+  '$\\sin\\alpha=\\tfrac{8}{17}$, $\\operatorname{tg}\\alpha=-\\tfrac{8}{15}$, $\\operatorname{ctg}\\alpha=-\\tfrac{15}{8}$.'),
  ("Számold ki addíciós képlettel! $\\cos 105^\\circ$", None,
-  "$\\cos(60^\\circ+45^\\circ)=\\dfrac{\\sqrt2-\\sqrt6}{4}\\approx -0{,}25882$"),
+  '$\\cos105^\\circ=\\dfrac{\\sqrt2-\\sqrt6}{4}$.'),
  ("Számold ki $\\sin 2\\alpha$ és $\\cos 2\\alpha$ értékét, ha "
   "$\\sin\\alpha=\\tfrac{24}{25}$ és $\\alpha$ hegyesszög!", None,
-  "$\\cos\\alpha=\\tfrac{7}{25}$; $\\sin 2\\alpha=\\tfrac{336}{625}$, "
-  "$\\cos 2\\alpha=-\\tfrac{527}{625}$."),
+  '$\\sin2\\alpha=\\tfrac{336}{625}$, $\\cos2\\alpha=-\\tfrac{527}{625}$.'),
  ("Számold ki $\\cos\\tfrac{\\alpha}{2}$ pontos értékét, ha $\\cos\\alpha=-\\tfrac35$ "
   "és $\\alpha\\in\\left(\\tfrac{\\pi}{2};\\pi\\right)$!", None,
-  "$\\tfrac{\\alpha}{2}$ az I. negyedben van, tehát pozitív: "
-  "$\\cos\\tfrac{\\alpha}{2}=\\sqrt{\\tfrac{1-\\tfrac35}{2}}=\\sqrt{\\tfrac15}="
-  "\\tfrac{\\sqrt5}{5}\\approx 0{,}44721$."),
+  '$\\cos\\tfrac{\\alpha}{2}=\\tfrac{\\sqrt5}{5}$.'),
  ("Oldd meg! $2\\sin 2x-1=0$", None,
-  "$2x=\\tfrac{\\pi}{6}+2k\\pi$ vagy $2x=\\tfrac{5\\pi}{6}+2k\\pi$, tehát "
-  "$x=\\tfrac{\\pi}{12}+k\\pi$ vagy $x=\\tfrac{5\\pi}{12}+k\\pi$."),
+  '$x=\\tfrac{\\pi}{12}+k\\pi$ vagy $x=\\tfrac{5\\pi}{12}+k\\pi$, $k\\in\\mathbb{Z}$.'),
  ("Oldd meg a háromszöget! $\\alpha=45^\\circ$, $\\beta=75^\\circ$, $a=20$. "
   "(Szögfüggvény öt, oldal két tizedes.)", None,
-  "$\\gamma=60^\\circ$; $b=\\dfrac{20\\sin 75^\\circ}{\\sin 45^\\circ}\\approx 27{,}32$; "
-  "$c=\\dfrac{20\\sin 60^\\circ}{\\sin 45^\\circ}\\approx 24{,}49$."),
+  '$\\gamma=60^\\circ$; $b\\approx27{,}32$; $c\\approx24{,}49$.'),
  ("Egy háromszög oldalai $7$, $9$ és $12$. Hegyes-, derék- vagy tompaszögű?", None,
-  "A legnagyobb oldallal szemközti szög: "
-  "$\\cos\\gamma=\\dfrac{49+81-144}{2\\cdot 7\\cdot 9}=-\\dfrac{14}{126}\\approx -0{,}11111$, "
-  "tehát $\\gamma\\approx 96{,}38^\\circ$ — <b>tompaszögű</b>."),
+  'Tompaszögű.'),
  ("Mekkora annak a háromszögnek a területe, amelyben $a=11$, $b=14$ és a közbezárt "
   "szög $115^\\circ$?", None,
-  "$T=\\tfrac12\\cdot 11\\cdot 14\\cdot\\sin 115^\\circ\\approx 69{,}79$."),
+  '$T\\approx69{,}79$.'),
 ]
 
 DR_K = DR_K + DR_K_UJ_04
 DR_N = [
  ("Igazold! $\\dfrac{1-\\cos 2\\alpha}{\\sin 2\\alpha}=\\operatorname{tg}\\alpha$", None,
-  "$1-\\cos 2\\alpha=2\\sin^{2}\\alpha$ és $\\sin 2\\alpha=2\\sin\\alpha\\cos\\alpha$, "
-  "a hányados $\\operatorname{tg}\\alpha$ ✔"),
+  '$1-\\cos2\\alpha=2\\sin^2\\alpha$ és $\\sin2\\alpha=2\\sin\\alpha\\cos\\alpha$, ezért a hányados $\\operatorname{tg}\\alpha$ (ha $\\sin2\\alpha\\ne0$).'),
  ("Oldd meg! $\\sin x=\\cos x$", None,
-  "$\\operatorname{tg}x=1$, tehát $x=\\tfrac{\\pi}{4}+k\\pi$."),
+  '$x=\\tfrac{\\pi}{4}+k\\pi$, $k\\in\\mathbb{Z}$.'),
  ("Add meg az $y=\\sin x+\\cos x$ függvény legnagyobb és legkisebb értékét!", None,
-  "$\\sqrt2\\sin\\left(x+\\tfrac{\\pi}{4}\\right)$ alakban: a maximum $\\sqrt2\\approx "
-  "1{,}41421$, a minimum $-\\sqrt2$."),
+  'Maximum $\\sqrt2$, minimum $-\\sqrt2$.'),
  ("Egy háromszög oldalai $13$, $14$, $15$. Mekkora a területe és a legnagyobb "
   "magassága?", None,
-  "$T=84$ (Héron-képlettel vagy koszinusztétel + területképlet). A legnagyobb magasság "
-  "a <b>legrövidebb</b> oldalhoz tartozik: $m=\\dfrac{2T}{13}=\\dfrac{168}{13}"
-  "\\approx 12{,}92$."),
+  '$T=84$; a legnagyobb magasság $\\dfrac{168}{13}\\approx12{,}92$.'),
 ]
 
 dr_brief = ('<div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — A Fázisugrás '

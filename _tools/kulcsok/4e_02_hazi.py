@@ -57,6 +57,6 @@ TESZT = {
     'kozep-1': v(lim(lambda u: (mp.sqrt(u + 2) - 2)/(u - 2), 2), lim(lambda u: (mp.sqrt(9 + u) - 3)/u, 0)),
     'kozep-2': v(oldal(lambda u: (u + 1)/(4 - u), 4, -1), oldal(lambda u: (u + 1)/(4 - u), 4, 1)),
     'kozep-3': v(vegtelen(lambda u: (2*u**3 - u)/(u**2 + 5), -1), vegtelen(lambda u: (3 - u**2)/(u + 1), -1)),
-    'nehez-1': v(1, 3, 1, -2, 5, -1, -2, -2),        # x² − 3x + 5 = (x − 1)(x − 2) + 3 ; a teljes számsor
+    'nehez-1': v(1, -2),        # x² − 3x + 5 = (x − 1)(x − 2) + 3
     'nehez-2': v(1, 1, -2, -2, F(4, 3), -2, 2),     # (x − 2)(x + 2)/((x − 1)(x + 2)) ; x³ − x = x(x² − 4) + 3x
 }

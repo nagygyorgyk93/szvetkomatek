@@ -405,7 +405,7 @@ DR_A = [
  ("Számítsd ki a determinánsokat!", [f"${dm('5&2', '3&4')}$", f"${dm('1&2&0', '3&1&2', '0&1&4')}$"],
   ["$14$", "$-22$"], True),
  ("Oldd meg a Cramer-szabállyal!" + rs(r"4x-y&=5", r"2x+3y&=13"), None,
-  "$D=14$, $D_x=28$, $D_y=42$, tehát $(x;y)=(2;3)$."),
+  '$(x;y)=(2;3)$.'),
  ("Hány megoldása van a rendszernek?",
   ["A Gauss-eljárás végén egy háromismeretlenes rendszer lépcsős alakjának utolsó sora $0=-3$ lett.",
    rs(r"x-2y&=3", r"-2x+4y&=-6")],
@@ -421,11 +421,10 @@ DR_K = [
   "$(x;y;z)=(1;-1;2)$"),
  ("Oldd meg a rendszert, és döntsd el, hány megoldása van!" +
   rs(r"x+y+z&=6", r"x-y+z&=2", r"2x+2z&=8"), None,
-  "Végtelen sok (a harmadik egyenlet az első kettő összege): $z=t$ mellett "
-  "$(x;y;z)=(4-t;\\ 2;\\ t)$, ahol $t$ tetszőleges valós szám."),
+  'Végtelen sok: $(x;y;z)=(4-t;\\ 2;\\ t)$, $t\\in\\mathbb{R}$.'),
  ("Számítsd ki a fő determinánst, és döntsd el, alkalmazható-e a Cramer-szabály! Ha igen, "
   "számítsd ki vele az $y$ értékét." + rs(r"2x-y+z&=3", r"x+y-z&=0", r"3x+2y+z&=10"), None,
-  "$D=9\\ne0$, tehát alkalmazható; $D_y=18$, így $y=2$."),
+  '$D=9$; alkalmazható; $y=2$.'),
  ("Egy büfében három diák vásárolt. Az első $2$ szendvicsért, $1$ üdítőért és $1$ kávéért "
   "$640$ dinárt, a második $1$ szendvicsért, $2$ üdítőért és $1$ kávéért $560$ dinárt, a harmadik "
   "$1$ szendvicsért, $1$ üdítőért és $2$ kávéért $520$ dinárt fizetett. Mennyibe kerül egy-egy "
@@ -436,9 +435,7 @@ DR_K = [
   "$200$ gramm $40\\%$-os és $400$ gramm $10\\%$-os oldatot."),
  ("Maxi az $x+y=2$, $2x+2y=5$ rendszerre ezt írta: „$D=0$, tehát a rendszernek végtelen sok "
   "megoldása van.” Igaza van? Mit mondhatunk a rendszer megoldásairól?", None,
-  "Nincs igaza: a $D=0$ csak azt jelenti, hogy nincs pontosan egy megoldás. Itt a második "
-  "egyenlet bal oldala az első kétszerese, a jobb oldala viszont nem ($5\\ne4$), ezért a "
-  "rendszernek nincs megoldása."),
+  'Nincs igaza: a rendszernek nincs megoldása, mert az első egyenlet kétszerese $2x+2y=4$, nem $5$.'),
 ]
 
 DR_N = [

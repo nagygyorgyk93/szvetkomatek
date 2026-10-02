@@ -163,8 +163,10 @@ ALAP = [
 
  (r"Kör egyenlete-e? Ha igen, add meg a középpontot és a sugarat!",
   [r"$x^2+y^2-4x+6y+4=0$", r"$x^2+y^2+2x-4y+10=0$", r"$x^2+2y^2-4x=0$", r"$x^2+y^2-8x=0$"],
-  [r"igen: $C(2;-3)$, $r=3$", r"nem: teljes négyzetté alakítva a jobb oldalon $-5$ állna, a sugár négyzete nem lehet negatív",
-   r"nem: $x^2$ és $y^2$ együtthatója különböző", r"igen: $C(4;0)$, $r=4$"]),
+  ['igen: $C(2;-3)$, $r=3$',
+   'nem',
+   'nem',
+   'igen: $C(4;0)$, $r=4$']),
 
  (r"Egy kerti öntöző a $(2;3)$ pontban áll (egy egység $1$ méter), és $5$ méter sugarú körben locsol.",
   [r"Írd fel a locsolt terület határának egyenletét!", r"Eléri-e a víz a $(4;6)$ pontban lévő rózsát?",
@@ -225,8 +227,7 @@ KOZEP = [
 
  (r"Maxi a $(x+1)^2+(y-2)^2=25$ kör érintőjét akarta felírni a $Q(4;4)$ pontban. Ellenőrizd előbb, van-e "
   r"értelme a feladatnak! Utána írd fel az érintőt a kör $P(3;5)$ pontjában!", None,
-  r"$Q$ nincs a körön ($25+4=29\ne25$), ezért nem lehet a kör érintési pontja; a $P(3;5)$ pontbeli "
-  r"érintő $4x+3y-27=0$"),
+  '$Q$ nincs a körön, így nem érintési pont; a $P(3;5)$ pontbeli érintő $4x+3y-27=0$.'),
 
  (r"Adott a $K\colon x^2+y^2-4x+6y+8=0$ kör és az $l\colon x-2y-5=0$ egyenes.",
   [r"Határozd meg a metszéspontjaikat!", r"Milyen hosszú húrt metsz ki a kör az egyenesből?"],
@@ -267,8 +268,7 @@ NEHEZ = [
 
 JOKER = (r"A $(x-6)^2+(y-8)^2=49$ kör pontjai közül melyik van a legközelebb az origóhoz? Milyen messze van? "
          r"<i>(Tipp: rajzold le, és gondold végig, merre kell elindulni a középpontból.)</i>",
-         r"A legközelebbi pont a középpontot az origóval összekötő szakaszon van: $|OC|=10$, a távolság "
-         r"$10-7=3$, a pont $\left(\tfrac95;\tfrac{12}{5}\right)$.")
+         'A legközelebbi pont $\\left(\\tfrac95;\\tfrac{12}{5}\\right)$; távolsága $3$.')
 
 # ============================== OLDAL ==============================
 body = [

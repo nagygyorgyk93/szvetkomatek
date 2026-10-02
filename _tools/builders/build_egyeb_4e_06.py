@@ -110,8 +110,8 @@ OSSZ = [
  ]),
 
  ("🎯 Binomiális valószínűség és valószínűségi változó", [
-  r'<p><b>Bernoulli-kísérletsorozat</b> ' + h(A4, "def-bernoulli") + r': $n$ független kísérlet, mindegyiknek két '
-  r'kimenetele van (siker, kudarc), a siker valószínűsége mindig $p$. Pontosan $k$ siker valószínűsége '
+  r'<p><b>Bernoulli-kísérletsorozat</b> ' + h(A4, "def-bernoulli") + r': $n$ független kísérlet; minden eredményt '
+  r'sikerre vagy kudarcra osztunk, a siker valószínűsége mindig $p$. Pontosan $k$ siker valószínűsége '
   + h(A4, "tetel-binomialis-valoszinuseg") + r': $$P_n(k)=\binom nk p^k(1-p)^{n-k}.$$ Jokić öt büntetője, $p=0{,}8$: '
   r'$P_5(4)=5\cdot0{,}8^4\cdot0{,}2=0{,}4096$ ' + h(A4, "pelda-jokic") + r'. „Legalább” és „legfeljebb” esetén több '
   r'$k$ valószínűségét adjuk össze — vagy az ellentett eseményt számoljuk.</p>',

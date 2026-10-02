@@ -103,21 +103,22 @@ ALAP = [
    "Az $x^{2}+4=0$ egyenletnek nincs valós megoldása.",
    "$x^{2}=5x$-ből következik, hogy $x=5$.",
    "Minden másodfokú egyenletnek van valós megoldása."],
-  ["Hamis: kettő van, $\\pm 4$.", "Igaz (a komplex megoldások $\\pm 2i$).",
-   "Hamis: az $x=0$ is megoldás — ne ossz $x$-szel!",
-   "Hamis: ha $D&lt;0$, a megoldások komplexek."], False),
+  ["Hamis: kettő van, $\\pm 4$.", "Igaz.",
+   "Hamis: $x=0$ és $x=5$ is megoldás.",
+   "Hamis: $D&lt;0$ esetén nincs valós megoldás."], False),
  ("Számítsd ki a diszkriminánst!",
   ["$x^{2}-4x+3$", "$x^{2}-4x+4$", "$x^{2}-4x+5$", "$2x^{2}+3x-1$"],
   ["$D=4$", "$D=0$", "$D=-4$", "$D=17$"], True),
  ("Hány valós megoldása van? (Csak a diszkriminánst számold ki!)",
   ["$x^{2}+6x+9=0$", "$x^{2}+x+1=0$", "$3x^{2}-2x-1=0$"],
-  ["Egy (kettős): $D=0$.", "Egy sem: $D=-3&lt;0$ (két komplex megoldás).",
-   "Kettő: $D=16&gt;0$."], True),
+  ["Egy (kettős): $D=0$.", "Egy sem: $D=-3$.",
+   "Kettő: $D=16$."], True),
  ("Oldd meg a komplex számok halmazán!",
   ["$x^{2}+9=0$", "$x^{2}-2x+2=0$", "$x^{2}+4x+13=0$"],
   ["$x_{1,2}=\\pm 3i$", "$x_{1,2}=1\\pm i$", "$x_{1,2}=-2\\pm 3i$"], True),
  ("Az $x^{2}+6x+m=0$ egyenletben $m$ valós paraméter. Milyen $m$ esetén van az egyenletnek",
-  ["két különböző valós megoldása?", "egy (kettős) valós megoldása?", "két komplex megoldása?"],
+  ["két különböző valós megoldása?", "egy (kettős) valós megoldása?",
+   "két nem valós komplex megoldása?"],
   ["$m&lt;9$", "$m=9$", "$m&gt;9$"], False),
  ("Olvasd le a Viète-képletekkel a gyökök összegét és szorzatát!",
   ["$x^{2}-7x+10=0$", "$x^{2}+3x-4=0$", "$2x^{2}-6x+4=0$"],
@@ -143,10 +144,9 @@ ALAP = [
   ["$\\pm 2$ és $\\pm i$", "$\\pm 1$ és $\\pm 2i$"], True),
  ("Igaz vagy hamis?",
   ["Minden bikvadratikus egyenletnek négy valós gyöke van.",
-   "Ha a $t=x^{2}$ helyettesítés után kapott $t$ érték negatív, a hozzá tartozó $x$ komplex.",
+   "Ha a $t=x^{2}$ helyettesítés után kapott $t$ érték negatív, a hozzá tartozó $x$ nem valós komplex szám.",
    "A $t=x^{2}$ helyettesítés után elsőfokú egyenletet kapunk."],
-  ["Hamis: lehetnek komplex gyökei is.", "Igaz.",
-   "Hamis: <b>másodfokú</b> egyenletet kapunk."], False),
+  ["Hamis.", "Igaz.", "Hamis."], False),
 ]
 
 KOZEP = [
@@ -184,7 +184,7 @@ KOZEP = [
  ("Igaz-e? Indokolj!",
   ["Ha $D&gt;0$, akkor a gyökök összege pozitív.",
    "Ha $x_{1}x_{2}&lt;0$, akkor a két gyök különböző előjelű.",
-   "Ha $D=0$, akkor a trinom teljes négyzet."],
+   "Ha $D=0$, akkor a trinom a főegyüttható és egy teljes négyzet szorzata."],
   ["Hamis: az összeg $-\\dfrac{b}{a}$, ez lehet negatív is.",
    "Igaz: negatív szorzat csak ellentétes előjelű tényezőkből jöhet.",
    "Igaz: ekkor $ax^{2}+bx+c=a\\left(x-x_{0}\\right)^{2}$."], False),
@@ -211,14 +211,13 @@ NEHEZ = [
  ("Egy téglalap kerülete $34$ cm, területe $60\\ \\text{cm}^{2}$. Mekkorák az oldalai?",
   None, "$12$ cm és $5$ cm."),
  ("Az $x^{2}-6x+c=0$ egyenlet egyik gyöke a másik <b>ötszöröse</b>. Mennyi $c$?",
-  None, "$c=5$ (a gyökök $1$ és $5$)."),
+  None, "$c=5$"),
 ]
 
 JOKER = ("<b>Dr. Baljós vírus-kódja.</b> A rendszer a következő szorzattá alakítást adta ki. "
          "Hol a hiba, és mi a helyes alak? "
          "$$3x^{2}-12x+9\\ \\overset{?}{=}\\ (x-1)(x-3)$$",
-         "A $3$-as főegyüttható kimaradt. Helyesen $3(x-1)(x-3)$ "
-         "(kibontva valóban $3x^{2}-12x+9$).")
+         "A $3$-as főegyüttható kimaradt; helyesen $3(x-1)(x-3)$.")
 
 GYE_ORAI = [
  ("Oldd meg a másodfokú egyenletet!",
@@ -226,9 +225,10 @@ GYE_ORAI = [
   ["$x_{1,2}=\\pm 11$", "$x_{1}=0$, $x_{2}=5$", "$5$ és $-\\dfrac{1}{2}$", "$2$ és $-7$"], True),
  ("Bontsd tényezőkre! $x^{2}+4x-21$", None, "$(x-3)(x+7)$"),
  ("Bontsd tényezőkre! $2x^{2}-14x+20$", None, "$2(x-2)(x-5)$"),
- ("Milyen $m$ esetén van az $x^{2}-8x+m=0$ egyenletnek komplex megoldása?", None, "$m&gt;16$"),
+ ("Milyen $m$ esetén van az $x^{2}-8x+m=0$ egyenletnek két nem valós komplex gyöke?",
+  None, "$m&gt;16$"),
  ("Az $x^{2}-(2k-4)x+3k-21=0$ egyenlet gyökei ellentett számok. Mennyi $k$, és mik a gyökök?",
-  None, "$k=2$; az egyenlet $x^{2}-15=0$, a gyökök $\\pm\\sqrt{15}$."),
+  None, "$k=2$; a gyökök $\\pm\\sqrt{15}$."),
  ("Írj fel másodfokú egyenletet, amelynek megoldásai a $-4$ és a $6$ számok!",
   None, "$x^{2}-2x-24=0$"),
  ("Az $x^{2}-9x+14=0$ egyenlet megoldása nélkül számítsd ki!",

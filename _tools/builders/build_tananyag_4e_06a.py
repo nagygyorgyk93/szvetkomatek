@@ -484,8 +484,8 @@ A3 = [
    brief('<b>Mr. Szürreál:</b> A Titanic 1309 utasából 500 élte túl a katasztrófát — alig több mint minden harmadik. '
          'A kadétok esélye sem jobb. <b>Véd Vilmos:</b> Tisztelt bizottság, a mentőcsónakokba a „nők és gyermekek '
          'először” szabály szerint szálltak be. Ha tudjuk, hogy az utas nő volt, egészen más a kép! <b>Nagol:</b> A '
-         'védőnek most igaza van. A többletinformáció megváltoztatja a valószínűséget — ezt nevezzük feltételes '
-         'valószínűségnek.'),
+         'védőnek most igaza van. A többletinformáció alapján feltételes valószínűséget számolunk; ez eltérhet az '
+         'eredetitől.'),
  ]),
  ("Kétdimenziós táblázat", [
    '<p class="lead">A Titanic 1309 utasát két ismérv szerint rendezzük táblázatba: nem és túlélés. Egy véletlenül '
@@ -527,11 +527,14 @@ A3 = [
  ("Független események", [
    '<p class="lead">Két esemény akkor független, ha az egyik bekövetkezése semmit nem árul el a másikról.</p>',
    doboz("definicio", "Független események",
-         r'<p>Az $A$ és a $B$ esemény (ahol $P(B)>0$) <b>független</b>, ha $P(A\mid B)=P(A)$: a feltétel nem változtat '
-         r'a valószínűségen.</p>', hid="def-fuggetlen"),
+         r'<p>Az $A$ és a $B$ esemény <b>független</b>, ha $P(A\cap B)=P(A)\cdot P(B)$. Ha $P(B)>0$, ez '
+         r'egyenértékű azzal, hogy $P(A\mid B)=P(A)$: a feltétel nem változtat a valószínűségen.</p>',
+         hid="def-fuggetlen"),
    doboz("tetel", "Független események szorzata",
-         r'<p>Két esemény pontosan akkor független, ha $$P(A\cap B)=P(A)\cdot P(B).$$ (A definícióból: '
-         r'$P(A\cap B)=P(A\mid B)\cdot P(B)$, és függetlenségnél $P(A\mid B)=P(A)$.)</p>', hid="tetel-szorzas-fuggetlen"),
+         r'<p>Két független eseményre $$P(A\cap B)=P(A)\cdot P(B).$$ Ez az egyenlőség a függetlenség '
+         r'ellenőrzésére is használható. Ha $P(B)>0$, akkor $P(A\cap B)=P(A\mid B)\cdot P(B)$ miatt a két '
+         r'megfogalmazás egyenértékű; $P(B)=0$ esetén is alkalmazható a szorzatfeltétel.</p>',
+         hid="tetel-szorzas-fuggetlen"),
    doboz("pelda", "I.V.H. Akták — független-e?",
          r'<p>Két kocka: „az első hatos” és „a második hatos” független (a kockák nem hatnak egymásra), így '
          r'$P=\frac16\cdot\frac16=\frac1{36}$ — egyezik a 36 cella egyikével.</p>'
@@ -558,18 +561,19 @@ A3 = [
  ]),
  ("Legalább egy — független kísérletekből", [
    '<p class="lead">A „legalább egy” esemény sokféleképpen jöhet létre, az ellentettje viszont egyetlen eset: '
-   '<i>egyik sem</i>. Független eseményeknél ez szorzással számolható.</p>',
+   '<i>egyik sem</i>. Kölcsönösen független eseményeknél ez szorzással számolható.</p>',
    doboz("tetel", "Legalább egy",
          r'<p>$$P(\text{legalább egy bekövetkezik})=1-P(\text{egyik sem következik be}).$$ Ha $A_1,\ldots,A_n$ '
-         r'függetlenek, akkor $P(\text{egyik sem})=\bigl(1-P(A_1)\bigr)\cdot\ldots\cdot\bigl(1-P(A_n)\bigr)$.</p>',
+         r'kölcsönösen függetlenek, akkor $P(\text{egyik sem})=\bigl(1-P(A_1)\bigr)\cdot\ldots\cdot\bigl(1-P(A_n)\bigr)$.</p>',
          hid="tetel-legalabb-egy"),
    doboz("pelda", "I.V.H. Akták — három riasztó",
          r'<p>Az I.V.H.-archívumot három, egymástól függetlenül működő riasztó védi; behatoláskor $0{,}9$, $0{,}8$, '
          r'illetve $0{,}7$ valószínűséggel jeleznek. Mekkora a valószínűsége, hogy legalább egy jelez? '
          r'$$1-0{,}1\cdot0{,}2\cdot0{,}3=1-0{,}006=0{,}994.$$</p>', hid="pelda-riaszto"),
    doboz("erdekesseg", "De Méré lovag két fogadása",
-         r'<p>De Méré lovag azt tapasztalta, hogy megéri fogadni arra, hogy egy kockával négy dobásból legalább egy '
-         r'hatos lesz: $1-\left(\frac56\right)^4\approx0{,}518$. Arra viszont már nem, hogy két kockával 24 dobásból '
+         r'<p>Egyenlő összegű nyeremény és veszteség mellett De Méré lovag első fogadása kedvező: egy kockával négy '
+         r'dobásból legalább egy hatos lesz $1-\left(\frac56\right)^4\approx0{,}518$ valószínűséggel. A második '
+         r'fogadás viszont így már nem kedvező: két kockával 24 dobásból '
          r'legalább egyszer dupla hatos jön: $1-\left(\frac{35}{36}\right)^{24}\approx0{,}491$. A furcsaság Pascalt és '
          r'Fermat-t is foglalkoztatta — és a „legalább egy” képlete adja a választ.</p>'),
    NEHEZ(1, "feltételes valószínűség kétdimenziós táblázatból — és döntés"),
@@ -593,8 +597,9 @@ A4 = [
    '<p class="lead">Sok helyzetben ugyanazt a kísérletet ismételjük meg, és minden alkalommal csak az érdekel, hogy '
    '<b>sikerült-e</b>: bement-e a büntető, fej lett-e, hatost dobtunk-e.</p>',
    doboz("definicio", "Bernoulli-kísérletsorozat",
-         r'<p>Egy kísérletet $n$-szer, egymástól <b>függetlenül</b> ismétlünk; minden alkalommal két kimenet van, '
-         r'<b>siker</b> és <b>kudarc</b>, és a siker valószínűsége minden alkalommal ugyanaz, $p$ (a kudarcé $1-p$). A '
+         r'<p>Egy kísérletet $n$-szer, egymástól <b>függetlenül</b> ismétlünk; minden alkalom eredményét két '
+         r'csoportba soroljuk: <b>siker</b> vagy <b>kudarc</b>. A siker valószínűsége minden alkalommal ugyanaz, '
+         r'$p$ (a kudarcé $1-p$). A '
          r'kérdés: mekkora a valószínűsége, hogy pontosan $k$ siker lesz? (Jakob Bernoulli, 1713)</p>',
          hid="def-bernoulli"),
    abra(SVG_FA3, "Három büntető: minden elágazásnál S (siker, $0{,}8$) vagy K (kudarc, $0{,}2$). A pontosan két "

@@ -251,11 +251,12 @@ A_I = [
   [r"igen: $F'(x)=3x^2-4x+1=f(x)$", r"igen: $F'(x)=\dfrac{1}{x^2}=f(x)$",
    r"nem: $F'(x)=\dfrac{4(3x+2)^3\cdot 3}{4}=3(3x+2)^3\ne f(x)$ — a belső függvény deriváltja miatt még "
    r"$3$‑mal osztani kell; helyesen például $F(x)=\dfrac{(3x+2)^4}{12}$"]),
- ("Határozd meg az $f$ függvény azon $F$ primitív függvényét, amelynek grafikonja átmegy az $M$ ponton!",
+ ("Az $M$ pontot tartalmazó összefüggő értelmezési intervallumon határozd meg az $f$ azon $F$ primitív "
+  "függvényét, amelynek grafikonja átmegy az $M$ ponton!",
   [r"$f(x)=3x^2-6x$, $M(2;\,1)$", r"$f(x)=2x-4x^3$, $M(1;\,3)$", r"$f(x)=2x-\dfrac{2}{x^3}$, $M(1;\,2)$"],
-  [r"$F(x)=x^3-3x^2+C$, $F(2)=-4+C=1$, így $C=5$: $F(x)=x^3-3x^2+5$",
-   r"$F(x)=x^2-x^4+C$, $F(1)=C=3$: $F(x)=x^2-x^4+3$",
-   r"$F(x)=x^2+\dfrac{1}{x^2}+C$, $F(1)=2+C=2$, így $C=0$: $F(x)=x^2+\dfrac{1}{x^2}$"]),
+  [r"$F(x)=x^3-3x^2+5$",
+   r"$F(x)=x^2-x^4+3$",
+   r"$F(x)=x^2+\dfrac{1}{x^2}$"]),
  HI("Írd át a törteket és a gyököket hatvánnyá, majd integrálj!",
     [("1/x**3", "-1/(2*x**2)"), ("4/x**5", "-1/x**4"), ("x*sqrt(x)", "Rational(2,5)*x**2*sqrt(x)"),
      ("root(x**2,3)", "Rational(3,5)*x*root(x**2,3)"), ("3/root(x,4)", "4*root(x**3,4)")], rovid=True),
@@ -305,21 +306,20 @@ if [Ex("x**3-3*x**2+5").subs(x, 2), Ex("x**2-x**4+3").subs(x, 1), Ex("x**2+1/x**
     E.append("ponton átmenő")
 
 K_I = [
- ("Határozd meg az $f$ függvénynek azt az $F$ primitív függvényét, amelynek grafikonja átmegy az $M$ ponton!",
+ ("Az $M$ pontot tartalmazó összefüggő értelmezési intervallumon határozd meg az $f$ azon $F$ primitív "
+  "függvényét, amelynek grafikonja átmegy az $M$ ponton!",
   [r"$f(x)=e^x+2x$, $M(0;\,-1)$", r"$f(x)=\sin x+\cos x$, $M\left(\dfrac{\pi}{2};\,2\right)$",
    r"$f(x)=\dfrac{1}{\cos^2x}-\dfrac{1}{\sin^2x}$, $M\left(\dfrac{\pi}{4};\,2\right)$",
    r"$f(x)=\dfrac{3}{x^2}-\dfrac{2}{x^3}$, $M(1;\,4)$"],
-  [r"$F(x)=e^x+x^2+C$, $F(0)=1+C=-1$: $F(x)=e^x+x^2-2$",
-   r"$F(x)=-\cos x+\sin x+C$, $F\left(\dfrac{\pi}{2}\right)=1+C=2$: $F(x)=\sin x-\cos x+1$",
-   r"$F(x)=\operatorname{tg}x+\operatorname{ctg}x+C$, $F\left(\dfrac{\pi}{4}\right)=2+C=2$: "
+  [r"$F(x)=e^x+x^2-2$",
+   r"$F(x)=\sin x-\cos x+1$",
    r"$F(x)=\operatorname{tg}x+\operatorname{ctg}x$",
-   r"$F(x)=-\dfrac{3}{x}+\dfrac{1}{x^2}+C$, $F(1)=-2+C=4$: $F(x)=-\dfrac{3}{x}+\dfrac{1}{x^2}+6$"]),
+   r"$F(x)=-\dfrac{3}{x}+\dfrac{1}{x^2}+6$"]),
  ("Határozd meg az $f$ függvényt, ha ismert a második deriváltja és a grafikonjának két pontja! (Kétszer "
   "integrálj: két állandó lesz, a két pont két egyenletet ad.)",
   [r"$f''(x)=e^x$, $M(0;\,-1)$, $N(2;\,e^2)$", r"$f''(x)=6x-4$, $M(1;\,0)$, $N(2;\,2)$"],
-  [r"$f'(x)=e^x+C_1$, $f(x)=e^x+C_1x+C_2$; $1+C_2=-1$, $e^2+2C_1+C_2=e^2$, így $C_2=-2$, $C_1=1$: "
-   r"$f(x)=e^x+x-2$",
-   r"$f(x)=x^3-2x^2+C_1x+C_2$; $C_1+C_2=1$, $2C_1+C_2=2$, így $C_1=1$, $C_2=0$: $f(x)=x^3-2x^2+x$"]),
+  [r"$f(x)=e^x+x-2$",
+   r"$f(x)=x^3-2x^2+x$"]),
  HI("Szorozz be vagy alakítsd át, és csak utána integrálj!",
     [("(x+1)*(x**2-3)/(3*x**2)", "x**2/6+x/3-log(Abs(x))+1/x",
       r"\dfrac{x^{2}}{6}+\dfrac{x}{3}-\ln\left|x\right|+\dfrac{1}{x}"),
@@ -374,13 +374,14 @@ for f2, F, pts in (("exp(x)", "exp(x)+x-2", ((0, -1), (2, sympy.E ** 2))), ("6*x
 N_I = [
  HI("Keresd meg a jó helyettesítést ($t=g(x)$), írd át az integrált $t$-re (ha kell, $x$-et is fejezd ki $t$-vel), "
     "integrálj, és helyettesíts vissza!",
-    [("x**3*sqrt(x**4+1)", "(x**4+1)*sqrt(x**4+1)/6", None, r"$t=x^4+1$, $dt=4x^3\,dx$"),
+    [("x**3*sqrt(x**4+1)", "(x**4+1)*sqrt(x**4+1)/6", None,
+      r"$t=x^4+1$: $\displaystyle\int x^3\sqrt{x^4+1}\,dx=\frac14\int\sqrt t\,dt$"),
      ("x*sqrt(x-1)", "Rational(2,5)*(x-1)**2*sqrt(x-1)+Rational(2,3)*(x-1)*sqrt(x-1)", None,
-      r"$t=x-1$, $x=t+1$, $dx=dt$: $\displaystyle\int(t+1)\sqrt t\,dt$"),
+      r"$t=x-1$, $x=t+1$: $\displaystyle\int(t+1)\sqrt t\,dt$"),
      ("sin(2*x)/(1+sin(x)**2)", "log(1+sin(x)**2)", r"\ln\left(1+\sin^{2}x\right)",
-      r"$t=1+\sin^2x$, $dt=2\sin x\cos x\,dx=\sin2x\,dx$"),
+      r"$t=1+\sin^2x$: $\displaystyle\int\frac{dt}{t}$"),
      ("x/sqrt(x+1)", "Rational(2,3)*(x+1)*sqrt(x+1)-2*sqrt(x+1)", None,
-      r"$t=x+1$, $x=t-1$, $dx=dt$: $\displaystyle\int\dfrac{t-1}{\sqrt t}\,dt$")]),
+      r"$t=x+1$, $x=t-1$: $\displaystyle\int\dfrac{t-1}{\sqrt t}\,dt$")]),
  HI("Alakítsd át trigonometrikus azonossággal, és utána helyettesíts!",
     [("sin(x)**3", "-cos(x)+cos(x)**3/3"), ("cos(x)**5", "sin(x)-Rational(2,3)*sin(x)**3+sin(x)**5/5"),
      ("sin(2*x)/cos(x)**3", "2/cos(x)"),
@@ -388,11 +389,9 @@ N_I = [
 ]
 JOKER_I = (r"Az $e^{-x^2}$ függvény primitív függvénye nem írható fel elemi függvényekkel — az "
            r"$\displaystyle\int x\,e^{-x^2}\,dx$ viszont könnyen kiszámolható. Számítsd ki, és magyarázd meg a különbséget!",
-           r"$\displaystyle\int x\,e^{-x^2}\,dx=-\dfrac{1}{2}e^{-x^2}+C$ ($t=-x^2$, $dt=-2x\,dx$). Itt az $x$ szorzó "
-           r"(egy $-2$-es szorzótól eltekintve) éppen a belső függvény deriváltja, ezért működik a helyettesítés. Az "
-           r"$\int e^{-x^2}dx$-ből ez a szorzó hiányzik; a primitív függvény létezik, de nem írható fel véges sok elemi "
-           r"függvénnyel (lásd a "
-           '<a href="tananyag-helyettesites.html#erdekesseg-gauss">Gauss-görbét</a>).', None)
+           r"$\displaystyle\int x\,e^{-x^2}\,dx=-\dfrac{1}{2}e^{-x^2}+C$. "
+           r"Az $x$ szorzó arányos a $-x^2$ belső függvény deriváltjával, ezért működik a helyettesítés. "
+           r"Az $\int e^{-x^2}dx$ primitívje nem elemi; ez a helyettesítés hiányából önmagában nem következik.", None)
 primitiv_e("x*exp(-x**2)", "-exp(-x**2)/2", nev="joker I")
 
 
@@ -444,14 +443,12 @@ A_II = [
   "ki az alsó ($s_4$) és a felső ($S_4$) közelítő összeget! Hasonlítsd össze a pontos értékkel: "
   "$\\displaystyle\\int_0^2x^2\\,dx=\\dfrac{8}{3}$.",
   None,
-  r"$\Delta x=0{,}5$; $s_4=0{,}5\cdot(0+0{,}25+1+2{,}25)=1{,}75$, $S_4=0{,}5\cdot(0{,}25+1+2{,}25+4)=3{,}75$; "
-  r"valóban $1{,}75\lt\dfrac{8}{3}\approx2{,}67\lt3{,}75$"),
+  r"$s_4=1{,}75$; $S_4=3{,}75$; $1{,}75\lt\dfrac83\lt3{,}75$"),
  ("Az ábrán az $f$ függvény grafikonja: törtvonal (a rács egysége $1$). A háromszögek és a trapéz területéből "
   "határozd meg a következőket!" + SVG_A2,
   [r"$\displaystyle\int_0^2f(x)\,dx$", r"$\displaystyle\int_2^5f(x)\,dx$", r"$\displaystyle\int_0^6f(x)\,dx$",
    r"a grafikon és az $x$ tengely közötti teljes terület a $[0;\,6]$-on"],
-  [r"$3$ (háromszög: $\dfrac{2\cdot3}{2}$)", r"$-4$ (trapéz: $\dfrac{3+1}{2}\cdot2=4$, a tengely alatt)",
-   r"$3-4+1=0$", r"$T=3+4+1=8$ — nulla csak az előjeles integrál, a terület nem!"]),
+  [r"$3$", r"$-4$", r"$0$", r"$T=8$"]),
  HA("Számítsd ki a Newton–Leibniz-formulával!",
     [("x**3", 1, 3, 20), ("1-2*x+3*x**2", -1, 3, 24), ("x**3-2*x**2+5", -1, 3, Q(64, 3)), ("x**2+2*x", -2, 1, 0)]),
  HA("Írd át a gyököket hatvánnyá, és számolj!",
@@ -469,10 +466,9 @@ A_II = [
   [r"$\displaystyle\int_3^0f(x)\,dx$", r"$\displaystyle\int_3^5f(x)\,dx$",
    r"$\displaystyle\int_0^3\bigl(2f(x)-3g(x)\bigr)\,dx$", r"$\displaystyle\int_0^3\bigl(f(x)+1\bigr)\,dx$",
    r"$\displaystyle\int_5^5f(x)\,dx$"],
-  [r"$-7$ (a határok felcserélésekor az integrál előjelet vált)", r"$4-7=-3$ (additivitás)", r"$2\cdot7-3\cdot(-2)=20$",
-   r"$7+3=10$", r"$0$"], True),
+  [r"$-7$", r"$-3$", r"$20$", r"$10$", r"$0$"], True),
  ("Az ábrán az $f(x)=x^2-2x+3$ függvény grafikonja látható. Számítsd ki az árnyékolt síkidom területét!" + SVG_A8,
-  None, r"$T=\displaystyle\int_0^3\left(x^2-2x+3\right)dx=\left[\dfrac{x^3}{3}-x^2+3x\right]_0^3=9$"),
+  None, r"$T=9$"),
  ("Számítsd ki a függvény grafikonja és az $x$ tengely közötti síkidom területét az adott intervallumon! "
   "(Előbb győződj meg róla, hogy a függvény ott nem negatív.)",
   [r"$f(x)=x^3+1$, $[0;\,2]$", r"$f(x)=4-x^2$, $[-1;\,1]$", r"$f(x)=\sqrt x+1$, $[1;\,4]$"],
@@ -524,9 +520,8 @@ K_II = [
   "$n=4$ egyenlő részre! Melyik közelítő összeget adják a részintervallumok bal, illetve jobb végpontjához tartozó "
   "téglalapok? Miért? Számítsd ki mindkettőt, és becsüld meg a területet!" + SVG_K1,
   None,
-  r"Csökkenő függvénynél a részintervallum bal végpontjában van a legnagyobb érték, ezért a bal végpontos téglalapok "
-  r"adják a felső összeget: $\Delta x=1$, így $S_4=1\cdot(4+3{,}75+3+1{,}75)=12{,}5$; a jobb végpontosak az alsót: "
-  r"$s_4=1\cdot(3{,}75+3+1{,}75+0)=8{,}5$. A kettő átlaga $10{,}5$ — a pontos érték $\dfrac{32}{3}\approx10{,}67$."),
+  r"A függvény csökken, ezért a bal végpontos téglalapok adják a felső összeget: $S_4=12{,}5$; "
+  r"a jobb végpontosak az alsót: $s_4=8{,}5$. A terület becslése $T\approx10{,}5$."),
  HA("Lineáris belső függvény a határozott integrálban:",
     [("(2*x-1)**3", 2, 3, 68), ("exp(3*x)", 0, 1, "(E**3-1)/3", r"\dfrac{e^{3}-1}{3}"),
      ("1/(11+5*x)**3", -2, -1, Q(7, 72)), ("cos(2*x)", 0, "pi/4", Q(1, 2))]),
@@ -535,7 +530,7 @@ K_II = [
    f"${INT('sin(x)*cos(x)**2', 0, 'pi/2')}$", f"${INT('x/sqrt(x**2+1)', 0, 'sqrt(3)')}$"],
   [r"$t=2x^3+1$, $1\le t\le3$: $\dfrac{1}{6}\displaystyle\int_1^3t^4\,dt=\dfrac{121}{15}$",
    r"$t=1+x^3$, $1\le t\le2$: $\dfrac{1}{3}\displaystyle\int_1^2\dfrac{dt}{t}=\dfrac{\ln 2}{3}$",
-   r"$t=\cos x$, $dt=-\sin x\,dx$, a határok $1$ és $0$: $-\displaystyle\int_1^0t^2\,dt=\int_0^1t^2\,dt=\dfrac{1}{3}$",
+   r"$t=\cos x$, a határok $1$ és $0$: $-\displaystyle\int_1^0t^2\,dt=\dfrac{1}{3}$",
    r"$t=x^2+1$, $1\le t\le4$: $\dfrac12\displaystyle\int_1^4\dfrac{dt}{\sqrt t}=1$"]),
  HA("Alakítsd át az integrandust, és számolj!",
     [("(3*x**2-4)/x", 1, 9, "120-8*log(3)", r"120-8\ln 3"), ("x**2+1/x**4", 1, 2, Q(21, 8)),
@@ -548,36 +543,32 @@ K_II = [
  ("A függvény grafikonja az adott intervallumon az $x$ tengely alatt halad. Számítsd ki a grafikon és az $x$ tengely "
   "közötti síkidom területét!",
   [r"$f(x)=x^2-6x+5$ a két zérushelye között", r"$f(x)=x^3-8$, $[0;\,2]$"],
-  [r"zérushelyek: $1$ és $5$; $\displaystyle\int_1^5f\,dx=-\dfrac{32}{3}$, így $T=\dfrac{32}{3}$" + T6[0][2],
-   r"$\displaystyle\int_0^2f\,dx=-12$, így $T=12$" + T6[1][2]]),
+  [r"zérushelyek: $1$ és $5$; $T=\dfrac{32}{3}$" + T6[0][2],
+   r"$T=12$" + T6[1][2]]),
  ("Számítsd ki az $y=x(x-1)(x-2)$ görbe és az $x$ tengely által határolt síkidom területét!", None,
-  r"zérushelyek: $0$, $1$, $2$; " + _resz(T7[1]) + r"; $T=\dfrac{1}{4}+\dfrac{1}{4}=\dfrac{1}{2}$" + T7[2]),
+  r"$T=\dfrac{1}{2}$" + T7[2]),
  ("Az $f(x)=x^2-3x$ függvény a $[0;\\,4]$ intervallumon előjelet vált. Számítsd ki a grafikon és az $x$ tengely "
   "közötti síkidom területét, és hasonlítsd össze a $\\displaystyle\\int_0^4f(x)\\,dx$ értékével!", None,
-  r"zérushelyek: $0$ (végpont) és $3$ — bontani csak a $3$-nál kell; " + _resz(T8k[1]) + r"; $T=\dfrac{9}{2}+\dfrac{11}{6}=\dfrac{19}{3}$, míg "
-  r"$\displaystyle\int_0^4f\,dx=-\dfrac{8}{3}$" + T8k[2]),
+  r"$T=\dfrac{19}{3}$, míg $\displaystyle\int_0^4f\,dx=-\dfrac{8}{3}$" + T8k[2]),
  ("Számítsd ki a grafikon és az $x$ tengely közötti síkidom területét!",
   [r"$y=\sin 2x$, $\left[0;\,\dfrac{\pi}{2}\right]$", r"$y=3\cos x$, $\left[-\dfrac{\pi}{2};\,\dfrac{\pi}{2}\right]$",
    r"$y=2\sin x$, $[0;\,2\pi]$ — mennyi itt a határozott integrál?"],
   [r"$T=1$" + T9k[0][2], r"$T=6$" + T9k[1][2],
-   r"$T=4+4=8$, de $\displaystyle\int_0^{2\pi}2\sin x\,dx=0$" + T9k[2][2]]),
+   r"$T=8$, de $\displaystyle\int_0^{2\pi}2\sin x\,dx=0$" + T9k[2][2]]),
  ("Számítsd ki a grafikon és az $x$ tengely közötti síkidom területét!",
   [r"$y=e^{\frac{x}{2}}$, $[0;\,2\ln 3]$", r"$y=e^x+e^{-x}$, $[-\ln 2;\,\ln 2]$"],
-  [r"$\left[2e^{\frac{x}{2}}\right]_0^{2\ln3}=2\cdot3-2=4$" + T10k[0][2],
-   r"$\left[e^x-e^{-x}\right]_{-\ln2}^{\ln2}=\dfrac{3}{2}-\left(-\dfrac{3}{2}\right)=3$" + T10k[1][2]]),
+  [r"$T=4$" + T10k[0][2],
+   r"$T=3$" + T10k[1][2]]),
  ("Véd Vilmos az $f(x)=x^2-x-2$ grafikonja és az $x$ tengely közötti területet a $[0;\\,3]$-on így számolta: "
   "$T=\\left|\\displaystyle\\int_0^3\\left(x^2-x-2\\right)dx\\right|=\\left|-\\dfrac{3}{2}\\right|=\\dfrac{3}{2}$. "
   "Mit rontott el? Mennyi a helyes terület?", None,
-  r"Nem bontott a zérushelynél: $f$ a $2$-ben előjelet vált, és a tengely alatti és fölötti rész részben kioltja "
-  r"egymást. "
-  r"Helyesen: " + _resz(T11[1]) + r", így $T=\dfrac{10}{3}+\dfrac{11}{6}=\dfrac{31}{6}$" + T11[2]),
+  r"Nem bontott az $x=2$ zérushelynél, ezért az előjeles integrált tévesztette össze a területtel. "
+  r"$T=\dfrac{31}{6}$" + T11[2]),
  ("Az ábrán az $f(x)=x^2-4x+3$ grafikonja és az $x$ tengely közötti síkidom árnyékolva látható. Melyik kifejezés "
   "adja a területét? Számítsd ki!" + SVG_K12,
   [r"$\displaystyle\int_0^4f(x)\,dx$", r"$\left|\displaystyle\int_0^4f(x)\,dx\right|$",
    r"$\displaystyle\int_0^1f\,dx-\int_1^3f\,dx+\int_3^4f\,dx$", r"$\displaystyle\int_0^1f\,dx+\int_1^3f\,dx+\int_3^4f\,dx$"],
-  r"A c) kifejezés: $T=\dfrac{4}{3}-\left(-\dfrac{4}{3}\right)+\dfrac{4}{3}=4$. Az a), b) és d) mind "
-  r"$\dfrac{4}{3}$-ot ad: bennük az $[1;\,3]$-on vett $-\dfrac{4}{3}$ hozzáadódik, vagyis a tengely alatti rész "
-  r"területe levonódik ahelyett, hogy hozzáadódna."),
+  r"A c) kifejezés; $T=4$."),
 ]
 
 # nehéz
@@ -599,36 +590,30 @@ for f, g, xs in (("x+8", "x**2/2+2*x+4", [-4, 2]), ("x+4", "x**2+4*x", [-4, 1]),
 N_II = [
  ("Számítsd ki a parabola és az egyenes által határolt síkidom területét! (Először a metszéspontokat.)",
   [r"$y=\dfrac{1}{2}x^2+2x+4$ és $y=x+8$", r"$y=x^2+4x$ és $y=x+4$"],
-  [r"metszéspontok: $x=-4$ és $x=2$; $T=\displaystyle\int_{-4}^{2}\left(-\dfrac{x^2}{2}-x+4\right)dx=18$" + N1[0][2],
-   r"metszéspontok: $x=-4$ és $x=1$; $T=\displaystyle\int_{-4}^{1}\left(-x^2-3x+4\right)dx=\dfrac{125}{6}$" + N1[1][2]]),
+  [r"metszéspontok: $x=-4$ és $x=2$; $T=18$" + N1[0][2],
+   r"metszéspontok: $x=-4$ és $x=1$; $T=\dfrac{125}{6}$" + N1[1][2]]),
  ("Számítsd ki a két parabola által határolt síkidom területét!",
   [r"$y=2x^2+1$ és $y=x^2+10$", r"$y=x^2-8x+18$ és $y=-2x^2+18$"],
-  [r"metszéspontok: $x=-3$ és $x=3$; $T=\displaystyle\int_{-3}^{3}\left(9-x^2\right)dx=36$" + N2[0][2],
-   r"metszéspontok: $x=0$ és $x=\dfrac{8}{3}$; $T=\displaystyle\int_0^{\frac83}\left(8x-3x^2\right)dx=\dfrac{256}{27}$"
-   + N2[1][2]]),
+  [r"$T=36$" + N2[0][2],
+   r"$T=\dfrac{256}{27}$" + N2[1][2]]),
  ("Számítsd ki a görbe és a két koordinátatengely által határolt síkidom területét (az első síknegyedben)!",
   [r"$y=(x-2)^2$", r"$y=4-e^x$", r"$y=\sqrt{4-x}$"],
-  [r"zérushely: $2$; $T=\displaystyle\int_0^2(x-2)^2\,dx=\dfrac{8}{3}$" + N3[0][2],
-   r"zérushely: $\ln 4$; $T=\left[4x-e^x\right]_0^{\ln4}=4\ln4-3=8\ln 2-3\approx2{,}55$" + N3[1][2],
-   r"zérushely: $4$; $T=\left[-\dfrac{2}{3}(4-x)\sqrt{4-x}\right]_0^4=\dfrac{16}{3}$" + N3[2][2]]),
+  [r"$T=\dfrac{8}{3}$" + N3[0][2],
+   r"$T=8\ln 2-3\approx2{,}55$" + N3[1][2],
+   r"$T=\dfrac{16}{3}$" + N3[2][2]]),
  ("Ábra nélkül: határozd meg a határokat, készíts vázlatot, és számítsd ki a síkidom területét!",
   [r"az $y=x^2-5x+4$ parabola és a két koordinátatengely", r"az $y=x^2-4x+1$ parabola és az $y=1-x$ egyenes",
    r"az $y=8-x^3$ görbe és a két koordinátatengely"],
-  [r"zérushelyek: $1$ és $4$, de a két tengellyel csak a $[0;\,1]$-en zár közre síkidomot; "
-   r"$T=\displaystyle\int_0^1\left(x^2-5x+4\right)dx=\dfrac{11}{6}$" + N4[0][2],
-   r"metszéspontok: $x=0$ és $x=3$; a síkidom egy része az $x$ tengely alatt van, de a "
-   r"$\int(\text{felső}-\text{alsó})$ képlet ettől függetlenül érvényes: "
-   r"$T=\displaystyle\int_0^3\left(3x-x^2\right)dx=\dfrac{9}{2}$" + N4[1][2],
-   r"zérushely: $2$; $T=\displaystyle\int_0^2\left(8-x^3\right)dx=12$" + N4[2][2]]),
+  [r"határok: $0$ és $1$; $T=\dfrac{11}{6}$" + N4[0][2],
+   r"határok: $0$ és $3$; $T=\dfrac{9}{2}$" + N4[1][2],
+   r"határok: $0$ és $2$; $T=12$" + N4[2][2]]),
 ]
 JOKER_II = (r"Arkhimédész tétele: a parabolaszelet területe a beírt háromszög területének $\dfrac{4}{3}$-a, ha a "
             r"háromszög harmadik csúcsa ott van, ahol a parabola érintője párhuzamos a húrral. Ellenőrizd az $y=x^2$ "
             r"parabola és az $y=4$ egyenes esetén! (Itt a beírt háromszög csúcsai: a két metszéspont és a parabola "
             r"csúcsa.)",
-            r"metszéspontok: $(-2;\,4)$ és $(2;\,4)$; a parabolaszelet: "
-            r"$T=\displaystyle\int_{-2}^{2}\left(4-x^2\right)dx=\dfrac{32}{3}$; a háromszög: $t=\dfrac{4\cdot4}{2}=8$, "
-            r"és valóban $\dfrac{4}{3}\cdot8=\dfrac{32}{3}$. Arkhimédész ezt integrál nélkül, a kimerítés módszerével "
-            r"látta be, kb. Kr. e. 250-ben." + ABRA("4", -2, 2, "x**2", feliratok=("y=4", "y=x^2"),
+            r"A parabolaszelet területe $T=\dfrac{32}{3}$, a háromszögé $t=8$; "
+            r"$T=\dfrac{4}{3}t$." + ABRA("4", -2, 2, "x**2", feliratok=("y=4", "y=x^2"),
                                                      xr=(-3.2, 3.2), yr=(-0.8, 5.2)), None)
 if terulet("4", -2, 2, "x**2")[0] != Q(32, 3):
     E.append("joker II")

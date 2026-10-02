@@ -126,8 +126,7 @@ ALAP = [
 
  ("Egy kúp alkotója $10$ cm, alapkörének sugara $6$ cm. Mekkora a hálójában a körcikk "
   "sugara és középponti szöge?", None,
-  "A körcikk sugara az <b>alkotó</b>: $10$ cm. A középponti szög "
-  "$\\varphi=360^\\circ\\cdot\\frac rs=360^\\circ\\cdot\\frac{6}{10}=216^\\circ$."),
+  'A körcikk sugara $10$ cm, középponti szöge $216^\\circ$.'),
 
  ("A kúp három adata közül ($r$, $H$, $s$) melyik a leghosszabb, és miért?", None,
   "Az <b>alkotó</b> ($s$), mert a jellemző derékszögű háromszögben az <b>átfogó</b>: "
@@ -155,19 +154,19 @@ ALAP = [
   "$V=\\frac{36\\pi\\cdot8}{3}=96\\pi\\ \\text{cm}^3$."),
 
  ("Egy egyenlő oldalú kúp alapkörének sugara $3$ cm. Mekkora a felszíne?", None,
-  "Itt $s=2r=6$ cm, ezért $F=r\\pi(r+s)=3\\pi\\cdot9=27\\pi\\ \\text{cm}^2$."),
+  '$F=27\\pi$ cm².'),
 
  ("Egy kúp palástja $65\\pi\\ \\text{cm}^2$, alapkörének sugara $5$ cm. Mekkora az "
   "alkotója?", None,
-  "$M=r\\pi s$, tehát $5\\pi s=65\\pi$, ahonnan $s=13$ cm."),
+  '$s=13$ cm.'),
 
  ("Egy kúp térfogata $96\\pi\\ \\text{cm}^3$, alapkörének sugara $6$ cm. Mekkora a "
   "magassága?", None,
-  "$\\frac{36\\pi H}{3}=96\\pi$, tehát $12H=96$ és $H=8$ cm."),
+  '$H=8$ cm.'),
 
  ("Egy kúp térfogata $100\\pi\\ \\text{cm}^3$, magassága $12$ cm. Mekkora az alapkörének "
   "sugara?", None,
-  "$\\frac{r^2\\pi\\cdot12}{3}=100\\pi$, azaz $4r^2=100$, tehát $r=5$ cm."),
+  '$r=5$ cm.'),
 
  ("Egy kúp alakú homokkupac alapkörének sugara $2$ m, magassága $1{,}5$ m. Hány "
   "köbméter homok van benne? (Két tizedesre kerekítve.)", None,
@@ -176,30 +175,26 @@ ALAP = [
  # --- B3: síkmetszetek (alap 17–21)
  ("Egy henger alapkörének sugara $6$ cm, magassága $10$ cm. Mekkora a "
   "<b>tengelymetszetének</b> a területe?", None,
-  "A tengelymetszet téglalap, oldalai $2r=12$ cm és $H=10$ cm, ezért "
-  "$T=120\\ \\text{cm}^2$."),
+  '$T=120$ cm².'),
 
  ("Egy kúp alapkörének sugara $5$ cm, magassága $12$ cm. Mekkora a tengelymetszetének",
   ["a területe", "a kerülete"],
-  ["$T=\\frac{2r\\cdot H}{2}=\\frac{10\\cdot12}{2}=60\\ \\text{cm}^2$",
-   "$s=13$ cm, ezért $K=2r+2s=10+26=36$ cm"], True),
+  ['$T=60$ cm²',
+   '$K=36$ cm'], True),
 
  ("Egy kúp alapkörének sugara $8$ cm. A <b>csúcstól</b> mérve a magasság felénél elmetsszük "
   "az alaplappal párhuzamos síkkal. Mekkora a metszetkör sugara és "
   "területe?", None,
-  "A hasonlóság aránya $k=\\frac12$, ezért a metszetkör sugara $4$ cm, a területe "
-  "pedig $16\\pi\\ \\text{cm}^2$."),
+  '$r=4$ cm; $T=16\\pi$ cm².'),
 
  ("Egy henger alapkörének sugara $7$ cm. Mekkora az alaplappal párhuzamos "
   "síkmetszetének a területe?", None,
-  "A henger párhuzamos metszete az alapkörrel <b>egybevágó</b>, ezért a területe "
-  "$49\\pi\\ \\text{cm}^2$ — bárhol is metszünk."),
+  '$49\\pi$ cm².'),
 
  ("Egy kúp alapkörének sugara $9$ cm, magassága $12$ cm. A <b>csúcstól</b> mérve a magasság "
   "harmadánál metsszük el az alaplappal párhuzamosan. Mekkora a metszetkör "
   "sugara és területe?", None,
-  "$k=\\frac13$, ezért a sugár $9\\cdot\\frac13=3$ cm, a terület pedig "
-  "$9\\pi\\ \\text{cm}^2$. (A $12$ cm-es magasság ehhez nem is kell.)"),
+  '$r=3$ cm; $T=9\\pi$ cm².'),
 
  # --- B4: csonkakúp (alap 22–28)
  ("Egy csonkakúp alapkörének sugara $R=8$ cm, fedőköréé $r=5$ cm, magassága $H=4$ cm. "
@@ -208,7 +203,7 @@ ALAP = [
 
  ("Egy csonkakúp alapkörének sugara $R=10$ cm, fedőköréé $r=4$ cm, az alkotója $10$ cm. "
   "Mekkora a magassága?", None,
-  "$s^2=H^2+(R-r)^2$, tehát $100=H^2+36$, ahonnan $H=8$ cm."),
+  '$H=8$ cm.'),
 
  ("Egy csonkakúp alapkörének sugara $R=6$ cm, fedőköréé $r=3$ cm, az alkotója $5$ cm. "
   "Mekkora a palástja?", None,
@@ -229,10 +224,7 @@ ALAP = [
 
  ("Egy virágcserép csonkakúp alakú: a felső körének sugara $10$ cm, az aljáé $7$ cm, a "
   "magassága $12$ cm. Hány <b>liter</b> föld fér bele? (Két tizedesre kerekítve.)", None,
-  "$V=\\frac{12\\pi}{3}(100+70+49)=4\\pi\\cdot219=876\\pi\\approx2752{,}04\\ "
-  "\\text{cm}^3$, ami körülbelül $2{,}75$ liter. (A térfogatképlet a két sugárban "
-  "<b>szimmetrikus</b>, ezért mindegy, melyiket nevezzük $R$-nek — a cserép felfelé "
-  "szélesedik.)"),
+  '$2{,}75$ liter.'),
 ]
 
 # ============================== KÖZÉPSZINT ==============================
@@ -240,53 +232,42 @@ KOZEP = [
  # --- B1 (közép 1–3)
  ("Egy kúp tengelymetszete olyan egyenlő szárú háromszög, amelynek az alapja $16$ cm, a "
   "szára $17$ cm. Mekkora a kúp alapkörének sugara, az alkotója és a magassága?", None,
-  "A tengelymetszet alapja az átmérő: $2r=16$, tehát $r=8$ cm. A szár az alkotó: "
-  "$s=17$ cm. Innen $H=\\sqrt{289-64}=15$ cm."),
+  '$r=8$ cm; $s=17$ cm; $H=15$ cm.'),
 
  ("Egy kúp hálójában a körcikk középponti szöge $120^\\circ$, a sugara $12$ cm. Mekkora "
   "a kúp alapkörének sugara?", None,
-  "$\\varphi=360^\\circ\\cdot\\frac rs$, tehát $120=360\\cdot\\frac{r}{12}$, ahonnan "
-  "$r=4$ cm. (A körcikk sugara az alkotó: $s=12$ cm.)"),
+  '$r=4$ cm.'),
 
  ("Egy egyenlő oldalú kúp magassága $6\\sqrt3$ cm. Mekkora az alapkörének sugara és az "
   "alkotója?", None,
-  "Egyenlő oldalú kúpnál $H=r\\sqrt3$, tehát $r\\sqrt3=6\\sqrt3$, ahonnan $r=6$ cm és "
-  "$s=2r=12$ cm."),
+  '$r=6$ cm; $s=12$ cm.'),
 
  # --- B2 (közép 4–11)
  ("Egy kúp felszíne $96\\pi\\ \\text{cm}^2$, alapkörének sugara $6$ cm. Mekkora az "
   "alkotója és a magassága?", None,
-  "$F=r\\pi(r+s)$, tehát $6\\pi(6+s)=96\\pi$, ahonnan $6+s=16$ és $s=10$ cm. Innen "
-  "$H=\\sqrt{100-36}=8$ cm."),
+  '$s=10$ cm; $H=8$ cm.'),
 
  ("Egy kúp felszíne $24\\pi\\ \\text{cm}^2$, az alkotója $5$ cm. Mekkora az alapkörének "
   "sugara?", None,
-  "$r^2\\pi+5r\\pi=24\\pi$, azaz $r^2+5r-24=0$. A megoldóképlet szerint "
-  "$r=\\frac{-5+\\sqrt{25+96}}{2}=\\frac{-5+11}{2}=3$ cm (a negatív gyök nem sugár)."),
+  '$r=3$ cm.'),
 
  ("Egy kúp tengelymetszete <b>szabályos</b> háromszög, amelynek a területe "
   "$9\\sqrt3\\ \\text{cm}^2$. Mekkora a kúp térfogata?", None,
-  "A szabályos háromszög területe $\\frac{a^2\\sqrt3}{4}=9\\sqrt3$, tehát $a^2=36$ és "
-  "$a=6$ cm. Ez az átmérő, ezért $r=3$ cm, az alkotó $s=6$ cm, a magasság "
-  "$H=3\\sqrt3$ cm. Így $V=\\frac{9\\pi\\cdot3\\sqrt3}{3}=9\\sqrt3\\,\\pi\\ "
-  "\\text{cm}^3$."),
+  '$V=9\\sqrt3\\pi$ cm³.'),
 
  ("Két kúp alapköre egybevágó, a magasságuk aránya $3:5$. Hogyan aránylik a térfogatuk?", None,
-  "A térfogat a magassággal egyenesen arányos, ezért a térfogatok aránya is $3:5$."),
+  '$3:5$.'),
 
  ("Egy kúp magassága az alapkör sugarának <b>háromszorosa</b>, a térfogata "
   "$27\\pi\\ \\text{cm}^3$. Mekkora a sugara?", None,
-  "$\\frac{r^2\\pi\\cdot3r}{3}=r^3\\pi=27\\pi$, tehát $r=3$ cm (és $H=9$ cm)."),
+  '$r=3$ cm.'),
 
  ("Egy kúp és egy henger alapköre és magassága is megegyezik: $r=4$ cm, $H=9$ cm. "
   "Mennyivel nagyobb a henger térfogata?", None,
-  "$V_{\\text{henger}}=16\\pi\\cdot9=144\\pi$, $V_{\\text{kúp}}=\\frac{144\\pi}{3}"
-  "=48\\pi$. A különbség $96\\pi\\ \\text{cm}^3$ — vagyis a henger térfogata a "
-  "kúpénak a <b>háromszorosa</b>."),
+  '$96\\pi$ cm³-rel.'),
 
  ("Egy kúp alkotója $25$ cm, magassága $24$ cm. Mekkora a felszíne és a térfogata?", None,
-  "$r=\\sqrt{625-576}=7$ cm. Innen $F=49\\pi+7\\cdot25\\pi=224\\pi\\ \\text{cm}^2$ és "
-  "$V=\\frac{49\\pi\\cdot24}{3}=392\\pi\\ \\text{cm}^3$."),
+  '$F=224\\pi$ cm²; $V=392\\pi$ cm³.'),
 
  ("Egy kúp alakú papírtölcsér alkotója $15$ cm, alapkörének sugara $9$ cm. Hány "
   "négyzetcentiméter papír kell hozzá (a tölcsér felül nyitott), és milyen mély?", None,
@@ -296,24 +277,20 @@ KOZEP = [
  # --- B3 (közép 12–15)
  ("Egy kúp tengelymetszetének területe $84\\ \\text{cm}^2$, az alapkör sugara $7$ cm. "
   "Mekkora a magassága és a térfogata?", None,
-  "A tengelymetszet területe $\\frac{2r\\cdot H}{2}=r\\,H$, tehát $7H=84$ és "
-  "$H=12$ cm. Innen $V=\\frac{49\\pi\\cdot12}{3}=196\\pi\\ \\text{cm}^3$."),
+  '$H=12$ cm; $V=196\\pi$ cm³.'),
 
  ("Egy henger tengelymetszete <b>négyzet</b>, amelynek a területe $64\\ \\text{cm}^2$. "
   "Mekkora a henger térfogata?", None,
-  "A négyzet oldala $8$ cm; ez egyszerre az átmérő és a magasság, tehát $r=4$ cm és "
-  "$H=8$ cm (egyenlő oldalú henger). Így $V=16\\pi\\cdot8=128\\pi\\ \\text{cm}^3$."),
+  '$V=128\\pi$ cm³.'),
 
  ("Egy kúp alapkörének sugara $12$ cm, magassága $16$ cm. Milyen messze kell az "
   "<b>alaplaptól</b> elmetszeni az alaplappal párhuzamos síkkal, hogy a metszetkör "
   "sugara $3$ cm legyen?", None,
-  "A hasonlóság aránya $k=\\frac{3}{12}=\\frac14$, tehát a metszősík a <b>csúcstól</b> "
-  "$16\\cdot\\frac14=4$ cm-re van. Az alaplaptól mérve ez $16-4=12$ cm."),
+  '$12$ cm-re az alaplaptól.'),
 
  ("Egy kúp tengelymetszetének kerülete $32$ cm, az alkotója $10$ cm. Mekkora a "
   "térfogata?", None,
-  "A kerület $2r+2s=32$, tehát $2r+20=32$ és $r=6$ cm. Innen $H=\\sqrt{100-36}=8$ cm, "
-  "és $V=\\frac{36\\pi\\cdot8}{3}=96\\pi\\ \\text{cm}^3$."),
+  '$V=96\\pi$ cm³.'),
 
  # --- B4 (közép 16–21)
  ("Egy csonkakúp alapkörének sugara $R=9$ cm, fedőköréé $r=4$ cm, a magassága $H=12$ cm. "
@@ -324,84 +301,54 @@ KOZEP = [
 
  ("Egy csonkakúp alapkörének sugara $R=5$ cm, fedőköréé $r=3$ cm, a térfogata "
   "$196\\pi\\ \\text{cm}^3$. Mekkora a magassága?", None,
-  "$\\frac{H\\pi}{3}(25+15+9)=\\frac{49H\\pi}{3}=196\\pi$, tehát "
-  "$H=\\frac{196\\cdot3}{49}=12$ cm."),
+  '$H=12$ cm.'),
 
  ("Egy csonkakúp alkotója $13$ cm, magassága $12$ cm, a nagyobbik sugara $10$ cm. "
   "Mekkora a kisebbik sugara?", None,
-  "$s^2=H^2+(R-r)^2$, tehát $169=144+(10-r)^2$, ahonnan $(10-r)^2=25$ és $10-r=5$, "
-  "azaz $r=5$ cm."),
+  '$r=5$ cm.'),
 
  ("Egy csonkakúp palástja $45\\pi\\ \\text{cm}^2$, az alkotója $5$ cm. Mekkora a két "
   "sugár <b>összege</b>?", None,
-  "$M=(R+r)\\pi s$, tehát $(R+r)\\cdot5\\pi=45\\pi$, ahonnan $R+r=9$ cm. (A két sugár "
-  "külön-külön ebből még nem határozható meg.)"),
+  '$R+r=9$ cm.'),
 
  ("Egy $12$ cm magas kúp alapkörének sugara $8$ cm. A magasság <b>felénél</b> "
   "elmetsszük az alaplappal párhuzamosan, és a felső darabot elhagyjuk. Mekkora a "
   "megmaradó csonkakúp térfogata? Ellenőrizd a csonkakúp képletével is!", None,
-  "<b>Kivonással:</b> a teljes kúp $V=\\frac{64\\pi\\cdot12}{3}=256\\pi$; a levágott "
-  "kis kúp sugara $4$ cm, magassága $6$ cm, tehát $\\frac{16\\pi\\cdot6}{3}=32\\pi$. "
-  "A csonkakúp $256\\pi-32\\pi=224\\pi\\ \\text{cm}^3$.<br>"
-  "<b>Képlettel:</b> $\\frac{6\\pi}{3}(64+32+16)=2\\pi\\cdot112=224\\pi\\ \\text{cm}^3$ "
-  "— a két út ugyanazt adja."),
+  '$V=224\\pi$ cm³.'),
 
  ("Egy vödör csonkakúp alakú: a felső körének sugara $15$ cm, az aljáé $12$ cm, a "
   "magassága $25$ cm. Hány liter fér bele? (Két tizedesre kerekítve.)", None,
-  "$V=\\frac{25\\pi}{3}(225+180+144)=\\frac{25\\pi}{3}\\cdot549=4575\\pi\\approx"
-  "14372{,}79\\ \\text{cm}^3$, ami körülbelül $14{,}37$ liter."),
+  '$14{,}37$ liter.'),
 ]
 
 # ============================== NEHÉZ SZINT ==============================
 NEHEZ = [
  ("Egy kúp felszíne $144\\pi\\ \\text{cm}^2$, az alkotója $10$ cm. Mekkora a "
   "térfogata?", None,
-  "$r^2\\pi+10r\\pi=144\\pi$, azaz $r^2+10r-144=0$. Innen "
-  "$r=\\frac{-10+\\sqrt{100+576}}{2}=\\frac{-10+26}{2}=8$ cm. A magasság "
-  "$H=\\sqrt{100-64}=6$ cm, tehát $V=\\frac{64\\pi\\cdot6}{3}=128\\pi\\ "
-  "\\text{cm}^3$."),
+  '$V=128\\pi$ cm³.'),
 
  ("Egy kúpot a magassága <b>felénél</b> elmetszünk az alaplappal párhuzamosan. Hogyan "
   "aránylik a keletkező kis kúp térfogata a csonkakúpéhoz?", None,
-  "A hasonlóság aránya $k=\\frac12$, ezért a kis kúp térfogata a teljesnek "
-  "$\\left(\\frac12\\right)^3=\\frac18$ része. A csonkakúpra így $\\frac78$ marad, "
-  "tehát az arány $\\frac18:\\frac78=\\mathbf{1:7}$."),
+  '$1:7$ (kis kúp : csonkakúp).'),
 
  ("Egy csonkakúp sugarai $6$ cm és $2$ cm, magassága $6$ cm. Mekkora annak a kúpnak a "
   "magassága, amelyből a csonkolással keletkezett?", None,
-  "A levágott kis kúp és a teljes kúp hasonlóak, a sugarak aránya "
-  "$\\frac26=\\frac13$. Ha a teljes kúp magassága $x$, akkor a kis kúpé "
-  "$\\frac x3$, és a különbségük a csonkakúp magassága: $x-\\frac x3=6$, ahonnan "
-  "$\\frac{2x}{3}=6$ és $x=9$ cm."),
+  '$9$ cm.'),
 
  ("Egy egyenlő oldalú kúp és egy egyenlő oldalú henger alapköre azonos, $r$ sugarú. "
   "Hogyan aránylik a térfogatuk?", None,
-  "A kúpnál $H=r\\sqrt3$, tehát $V_{\\text{kúp}}=\\frac{r^2\\pi\\cdot r\\sqrt3}{3}="
-  "\\frac{r^3\\pi\\sqrt3}{3}$. A hengernél $H=2r$, tehát "
-  "$V_{\\text{henger}}=2r^3\\pi$. Az arány "
-  "$\\frac{\\sqrt3}{3}:2=\\sqrt3:6\\approx1:3{,}46$."),
+  '$V_{\\text{kúp}}:V_{\\text{henger}}=\\sqrt3:6$.'),
 
  ("Egy kúp tengelymetszete olyan egyenlő szárú háromszög, amelynek a <b>szárszöge</b> "
   "$90^\\circ$. Mekkora a magassága a sugarához képest, és mekkora a térfogata, ha "
   "$r=6$ cm?", None,
-  "A szárszög $90^\\circ$, ezért az alapon fekvő szögek $45^\\circ$-osak, tehát a "
-  "magasság és a sugár által alkotott háromszög egyenlő szárú: $H=r$. Így "
-  "$H=6$ cm és $V=\\frac{36\\pi\\cdot6}{3}=72\\pi\\ \\text{cm}^3$."),
+  '$H=r$; $r=6$ cm esetén $V=72\\pi$ cm³.'),
 ]
 
 JOKER = ("Egy $20$ cm sugarú körlapból kivágunk egy <b>negyedkörcikket</b>, és <b>abból</b> "
          "hajlítunk tölcsért. Mekkora a tölcsér térfogata? (Adj pontos alakot és "
          "közelítést is!)",
-         "A körcikk sugara lesz az <b>alkotó</b>: $s=20$ cm, a középponti szöge "
-         "$\\varphi=90^\\circ$.<br>"
-         "A $\\varphi=360^\\circ\\cdot\\frac rs$ összefüggésből "
-         "$90=360\\cdot\\frac{r}{20}$, tehát $r=5$ cm.<br>"
-         "A magasság $H=\\sqrt{400-25}=\\sqrt{375}=5\\sqrt{15}\\approx19{,}36$ cm, "
-         "ezért</p>"
-         "<p>$$V=\\frac{25\\pi\\cdot5\\sqrt{15}}{3}=\\frac{125\\sqrt{15}}{3}\\pi"
-         "\\approx506{,}97\\ \\text{cm}^3.$$</p>"
-         "<p>Érdemes megfigyelni, hogy a tölcsér <b>keskeny és mély</b> lett: minél "
-         "kisebb a kivágott cikk, annál hegyesebb a tölcsér.")
+         '$V=\\dfrac{125\\sqrt{15}}{3}\\pi\\approx506{,}97$ cm³.')
 
 # ============================== OLDAL ==============================
 body = [

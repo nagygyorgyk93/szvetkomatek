@@ -105,8 +105,8 @@ ALAP.append((
      "Hányféle sorrendben olvasható fel 10 különböző név?"],
     [f"${P123_TX}$ — {M(chk('alap-4a', fakt(3), len(P123)))} sorrend",
      M(chk("alap-4b", fakt(4), len(list(permutations(range(4)))))),
-     f"$9!={N(chk('alap-4c', fakt(9), sum(1 for _ in permutations(range(9)))))}$",
-     f"$10!={N(chk('alap-4d', fakt(10), 3628800))}$"]))
+     M(chk('alap-4c', fakt(9), sum(1 for _ in permutations(range(9))))),
+     M(chk('alap-4d', fakt(10), 3628800))]))
 
 n = symbols("n", positive=True, integer=True)
 ALAP.append((
@@ -148,9 +148,9 @@ ALAP.append((
      "Hány olyan nyolcjegyű szám van, amelynek minden számjegye 1 vagy 2?",
      "A totószelvényen 13 mérkőzés eredményét kell tippelni: 1, X vagy 2. Hányféleképpen tölthető ki egy oszlop?",
      "Hány négyjegyű szám írható fel az 1, 2, 3, 4 számjegyekből, ha egy számjegy többször is szerepelhet?"],
-    [f"$5^{{10}}={N(chk('alap-8a', 5 ** 10, 9765625))}$",
+    [M(chk('alap-8a', 5 ** 10, 9765625)),
      M(chk('alap-8b', 2 ** 8, szamok([1, 2], 8, True))),
-     f"$3^{{13}}={N(chk('alap-8c', 3 ** 13, 1594323))}$",
+     M(chk('alap-8c', 3 ** 13, 1594323)),
      M(chk('alap-8d', 4 ** 4, szamok([1, 2, 3, 4], 4, True)))]))
 
 ALAP.append((

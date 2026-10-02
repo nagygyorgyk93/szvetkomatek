@@ -282,7 +282,7 @@ print("✓ terepkuldetes.html")
 # ==================================================================== F6h — I.V.H. Kihallgató Terem (Vészterem)
 def ERINTO_SZ(f, x0):
     y0, m, e = FG.ERINTO(f, x0)
-    return f"$P\\left({latex(x0)};\\,{latex(y0)}\\right)$, $f'({latex(x0)})={latex(m)}$, ${FG.EGY(e)}$"
+    return f"${FG.EGY(e)}$"
 
 
 def PARHUZ(f, m):
@@ -290,7 +290,7 @@ def PARHUZ(f, m):
     for x0 in sorted(solve(diff(Ex(f), x) - m, x), key=float):
         y0, _, e = FG.ERINTO(f, x0)
         ki.append(f"$P\\left({latex(x0)};\\,{latex(y0)}\\right)$: ${FG.EGY(e)}$")
-    return f"$f'(x)={latex(m)}$ megoldásai: " + "; ".join(ki)
+    return "; ".join(ki)
 
 
 HA = [
@@ -320,10 +320,8 @@ HN = [
   [r"Az $a$ valós paraméter mely értékeire van az $f(x)=x^3+ax^2+3x-1$ függvénynek két lokális szélsőértéke?",
    r"Határozd meg az $a$ és $b$ értékét úgy, hogy az $f(x)=x^3+ax^2+b$ függvénynek az $x=2$ helyen lokális minimuma "
    r"legyen, és ennek értéke $-1$ legyen!"],
-  [r"$f'(x)=3x^2+2ax+3$; két szélsőérték akkor van, ha $f'$-nek két különböző zérushelye van (ott előjelet is vált): "
-   r"$D=4a^2-36\gt0$, azaz $a\lt-3$ vagy $a\gt3$",
-   r"$f'(2)=12+4a=0$, így $a=-3$; $f(2)=8-12+b=-1$, így $b=3$; ellenőrzés: $f'(x)=3x(x-2)$ a $2$-ben negatívból "
-   r"pozitívba vált, tehát ott valóban minimum van"]),
+  [r"$a\lt-3$ vagy $a\gt3$",
+   r"$a=-3$, $b=3$ (az $x=2$ helyen valóban lokális minimum)"]),
 ]
 # a saját számok önellenőrzése
 for kap, vart in [(FG.szelso(Ex("x**3-3*x**2-24*x+2")), ([(-2, 30)], [(4, -78)])),

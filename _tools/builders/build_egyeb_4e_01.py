@@ -332,7 +332,8 @@ assert not HE, HE
 HA = [
  (r"Írd fel az $a_n=\dfrac{4n+2}{n+1}$ sorozat első öt tagját, és sejtsd meg a határértékét! A sejtésedet "
   r"igazold kiemeléssel!", None,
-  r"$3;\ \frac{10}{3};\ \frac{7}{2};\ \frac{18}{5};\ \frac{11}{3}$ — a határérték: $" + V(LIM("(4*n+2)/(n+1)")) + "$"),
+  r"$3;\ \frac{10}{3};\ \frac{7}{2};\ \frac{18}{5};\ \frac{11}{3}$; "
+  r"$a_n=4-\frac{2}{n+1}\to4$"),
  LIMS("Számítsd ki a határértékeket!", ["(9*n**2-4*n)/(3*n**2+5)", "(7*n+2)/(n**3+1)", "(4-n**3)/(2*n**2+n)"]),
  ("Mihez tart a sorozat? Ha nincs határértéke, indokold meg!",
   [r"$a_n=\left(\dfrac57\right)^n$", r"$a_n=2+\dfrac{7}{n^2}$", r"$a_n=\left(-\dfrac65\right)^n$"],
@@ -345,7 +346,7 @@ HA = [
   ["Mennyit repül a második, a harmadik és a negyedik órában?",
    "Mekkora utat tesz meg összesen, ha végtelen sokáig repül?"],
   [r"$15$ km, $\frac{75}{8}=9{,}375$ km és $\frac{375}{64}\approx5{,}86$ km",
-   r"$\frac{24}{1-\frac58}=" + latex(ms(24, Q(5, 8))) + "$ km"]),
+   "$" + latex(ms(24, Q(5, 8))) + "$ km"]),
 ]
 HK = [
  LIMS("Számítsd ki a határértékeket!", ["(6*n+1)/sqrt(4*n**2+n)", "sqrt(81*n**2-5)/(2-3*n)"]),
@@ -353,9 +354,9 @@ HK = [
  ("Végtelen mértani sorok és szakaszos tizedes törtek.",
   [r"Írd fel közönséges törtként: $0{,}\dot4\dot5$!", r"Írd fel közönséges törtként: $0{,}1\dot2$!",
    r"Van-e összege a $10-\frac{25}{2}+\frac{125}{8}-\dots$ végtelen mértani sornak?"],
-  [r"$\frac{45}{99}=" + latex(ms(Q(45, 100), Q(1, 100))) + "$",
-   r"$\frac{1}{10}+\frac{2}{90}=" + latex(Q(1, 10) + ms(Q(2, 100), Q(1, 10))) + "$",
-   r"nincs, mert $q=-\frac54$, és $\lvert q\rvert\ge1$"]),
+  ["$" + latex(ms(Q(45, 100), Q(1, 100))) + "$",
+   "$" + latex(Q(1, 10) + ms(Q(2, 100), Q(1, 10))) + "$",
+   "nincs összege"]),
 ]
 HN = [
  LIMS("Számítsd ki a határértékeket!", ["(n**2+4)/(n+2)-(n**2-2)/(n+3)", "3*n**2/(3*n+1)-(n**2+1)/(n+2)"]),

@@ -279,9 +279,8 @@ A_I = [
    r"$D_f=(0;\,+\infty)$, $R_f=\mathbb R$", r"$D_f=\mathbb R$, $R_f=[-1;\,1]$"]),
  (r"Párosítsd a grafikonokat a képletekkel: $y=x^4$, $y=\left(\frac13\right)^x$, $y=\log_{\frac12}x$, $y=\dfrac1{x^2}$! "
   r"Minden döntést egy jellegzetességgel indokolj!" + svgwrap(SVG_I_PAROSITAS), None,
-  r"A: $y=\left(\frac13\right)^x$ (a $(0;1)$ ponton megy át, csökken, pozitív) · B: $y=x^4$ (páros, az origón megy át) · "
-  r"C: $y=\log_{\frac12}x$ (az $(1;0)$ ponton megy át, csak pozitív $x$-re létezik) · D: $y=\frac1{x^2}$ (a $0$-ban nincs "
-  r"értelmezve, mindenhol pozitív)"),
+  r"A: $y=\left(\frac13\right)^x$ (csökken) · B: $y=x^4$ (páros) · "
+  r"C: $y=\log_{\frac12}x$ (az $(1;0)$ ponton megy át) · D: $y=\frac1{x^2}$ (a $0$-ban nincs értelmezve)"),
  DOMS("Határozd meg a függvények értelmezési tartományát!",
       ["(x-1)/(x**2-2)", "1/(7*x-3*x**2)", "7*x/(3*x**2+8*x-3)", "(x-3)/(x**2+2*x+1)"]),
  DOMS("Határozd meg a függvények értelmezési tartományát!",
@@ -308,7 +307,7 @@ K_I = [
   ["Melyik görbe melyik függvényé? Indokold két jellegzetességgel!", "Hol veszi fel a $Q$ görbéhez tartozó függvény a $2$ értéket?",
    "Van-e a $P$ görbének zérushelye?"],
   [r"$P$: $y=\left(\frac32\right)^x$ (minden $x$-re értelmezett, a $(0;1)$ ponton megy át); $Q$: $y=\log_3x$ (csak "
-   r"pozitív $x$-re, az $(1;0)$ ponton megy át)", r"az $x=9$ helyen, mert $\log_39=2$", r"nincs: $\left(\frac32\right)^x\gt0$ minden $x$-re"]),
+   r"pozitív $x$-re, az $(1;0)$ ponton megy át)", r"az $x=9$ helyen", r"nincs"]),
  ("Véd Vilmos négy állítást írt fel. Mit rontott el? Add meg a helyes választ!",
   [r"„Az $y=\log_3x$ függvény értelmezési tartománya $[0;\,+\infty)$.”", r"„Az $y=\sqrt x$ függvény értékkészlete $\mathbb R$.”",
    r"„Az $y=\dfrac{1}{x+4}$ függvény értelmezési tartománya $\mathbb R\setminus\{0\}$.”", r"„Az $y=2^x$ függvény értékkészlete $[0;\,+\infty)$.”"],
@@ -400,7 +399,7 @@ K_II = [
  ("Milyen paraméterérték mellett lesz a függvény folytonos a megadott helyen?",
   [r"$f(x)=\begin{cases}x+a, & x\lt2\\ 3x-1, & x\ge2\end{cases}$, az $x=2$ helyen",
    r"$g(x)=\begin{cases}bx^2, & x\lt1\\ 4-x, & x\ge1\end{cases}$, az $x=1$ helyen"],
-  ["$2+a=5$, tehát $a=3$", r"$b\cdot1^2=4-1$, tehát $b=3$"]),
+  ["$a=3$", "$b=3$"]),
  LIMS("Számítsd ki a határértékeket! (Bővíts a konjugálttal.)",
       [("(sqrt(x-2)-2)/(x-6)", 6), ("(sqrt(1+x)-sqrt(1-x))/(4*x)", 0), ("(sqrt(x**2+x+1)-1)/x", 0)]),
  LIMS("Számítsd ki a határértékeket! (Itt a gyök a nevezőben van.)",
@@ -430,15 +429,15 @@ K_II = [
    r"a görbe a két szélén az $y=2$-höz simul; $x\to-1-0$: $-\infty$, $x\to-1+0$: $+\infty$, $x\to1-0$: $+\infty$, $x\to1+0$: $-\infty$; $f(0)=8$"]),
  ("Metszi-e a grafikon a vízszintes aszimptotáját? Ha igen, hol?",
   [r"$f(x)=\dfrac{x^2+2x}{x^2+1}$", r"$g(x)=\dfrac{2x-1}{x+3}$"],
-  [r"a vízszintes aszimptota $y=1$; $\frac{x^2+2x}{x^2+1}=1$ ⇔ $x=\frac12$: a $\left(\frac12;\,1\right)$ pontban",
-   r"a vízszintes aszimptota $y=2$; $\frac{2x-1}{x+3}=2$-ből $-1=6$ adódna, ez ellentmondás: a grafikon nem metszi az aszimptotát"]),
+  [r"igen: a vízszintes aszimptota $y=1$, a metszéspont $\left(\frac12;\,1\right)$",
+   r"nem: a vízszintes aszimptota $y=2$"]),
 ]
 N_II = [
  ASZS("Határozd meg a függvények aszimptotáit!", ["(3-x**2)/(x+2)", "(x**2-8)/(x+3)", "(x**2+x-2)/(x+3)"]),
  ASZS("Határozd meg a függvények aszimptotáit!", ["-x**3/(x**2+3)", "(x**2-x-2)/(x-3)", "(x**2+7*x+10)/(x+1)", "(x**2-5*x+4)/(x-5)"]),
  ASZS("Határozd meg a függvények aszimptotáit! A második függvénynél figyelj a számlálóra is!", ["2*x/3+3/(2*x)", "(x**3+1)/(x**2-1)"]),
  (r"Határozd meg a $b$ értékét úgy, hogy az $f(x)=\dfrac{2x^2+bx}{x+1}$ függvény ferde aszimptotája az $y=2x+1$ egyenes legyen!",
-  None, r"$k=2$; $n=\lim\limits_{x\to+\infty}\dfrac{(b-2)x}{x+1}=b-2=1$, tehát $b=3$ (a függőleges aszimptota $x=-1$)"),
+  None, r"$b=3$"),
 ]
 N_II[2] = (N_II[2][0], N_II[2][1],
            [N_II[2][2][0], N_II[2][2][1] + r" — az $x=-1$ helyen lyuk van (a $\left(-1;\,-\frac32\right)$ pontban), mert ott a számláló is $0$"])

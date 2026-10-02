@@ -152,8 +152,7 @@ ALAP = [
 
  ("Egy $3$ m hosszú létrát a falnak támasztunk; a talajjal $60^\\circ$-os szöget zár be. "
   "Milyen magasan éri a falat, és milyen messze van a talpa a faltól?", None,
-  "Magasság: $3\\sin 60^\\circ=\\frac{3\\sqrt3}{2}\\approx 2{,}60$ m; távolság: "
-  "$3\\cos 60^\\circ=1{,}5$ m."),
+  'Magasság: $\\dfrac{3\\sqrt3}{2}\\approx2{,}60$ m; távolság: $1{,}5$ m.'),
 
  ("Egy $8$ cm élű kocka középpontja mekkora távolságra van",
   ["az egyik lapjától", "az egyik csúcsától"],
@@ -220,9 +219,7 @@ KOZEP = [
  (f"Az {K} kockában hányféle <b>kölcsönös helyzetben</b> lehet két él? Számold meg azt is, hány "
   "élpár <b>metsző</b>, hány <b>párhuzamos</b> és hány <b>kitérő</b>! (A kockának $12$ éle van.)",
   None,
-  "Háromféle helyzet lehetséges: metsző, párhuzamos, kitérő. Összesen $\\binom{12}{2}=66$ élpár. Párhuzamos: $3$ irány, mindegyikben $4$ él, "
-  "azaz $3\\cdot\\binom{4}{2}=18$ pár. Metsző: minden csúcsban $3$ él fut össze, "
-  "$8\\cdot\\binom{3}{2}=24$ pár. Kitérő: $66-18-24=24$ pár."),
+  'Háromféle: metsző ($24$ pár), párhuzamos ($18$ pár), kitérő ($24$ pár).'),
 
  ("Legyen $a$, $b$ és $c$ három <b>páronként különböző</b> egyenes a térben. Igaz vagy "
   "hamis? Indokold!",
@@ -260,7 +257,7 @@ KOZEP = [
   "Csúcs: $n+1$, él: $2n$, lap: $n+1$. Négyoldalú gúlára: $5$, $8$, $5$."),
 
  ("Egy hasábnak $21$ éle van. Hány oldalú az alaplapja, és hány lapja van a testnek?",
-  None, "$3n=21$, tehát $n=7$: hétoldalú hasáb, $9$ lapja van."),
+  None, 'Hétoldalú hasáb; $9$ lapja van.'),
 
  ("Egy szabályos oktaédernek hány csúcsa, éle és lapja van? Hány lap találkozik egy "
   "csúcsában?", None,
@@ -272,7 +269,7 @@ KOZEP = [
 
  ("Egy egyenlő szárú trapéz párhuzamos oldalai $14$ cm és $6$ cm, a szárai $5$ cm-esek. "
   "Mekkora a magassága és a területe?", None,
-  "A szár vetülete $\\frac{14-6}{2}=4$ cm, ezért $H=\\sqrt{5^2-4^2}=3$ cm és $T=30$ cm²."),
+  '$h=3$ cm; $T=30$ cm².'),
 
  ("Egy egyenlő oldalú háromszög magassága $6\\sqrt3$ cm. Mekkora az oldala és a területe?",
   None, "$a=12$ cm, $T=36\\sqrt3\\approx 62{,}35$ cm²."),
@@ -294,7 +291,7 @@ NEHEZ = [
   "síkja, ezért párhuzamosak."),
 
  (f"Az {K} kockában mekkora szöget zár be az $AB_1$ és a $B_1C$ lapátló?", None,
-  "$60^\\circ$ — az $AB_1C$ háromszög mindhárom oldala lapátló, tehát egyenlő oldalú."),
+  '$60^\\circ$.'),
 
  ("Egy szabályos hatszög beírt és köréírt körének területe hogyan aránylik egymáshoz?",
   None, "$3:4$."),
@@ -302,16 +299,12 @@ NEHEZ = [
  ("Egy szabályos négyoldalú hasáb alapéle $a$, magassága $H$. Fejezd ki $a$-val és $H$-mel "
   "a testátló $D$ hosszát! Számítsd ki $a=5$ cm és $H=12$ cm esetén, majd fordítva: "
   "mekkora $H$, ha $a=6$ cm és $D=11$ cm?", None,
-  "$D=\\sqrt{2a^2+H^2}$; behelyettesítve $\\sqrt{50+144}=\\sqrt{194}\\approx 13{,}93$ cm. "
-  "Visszafelé: $\\sqrt{72+H^2}=11$, ahonnan $H^2=49$, tehát $H=7$ cm."),
+  '$D=\\sqrt{2a^2+H^2}$; $a=5$ cm és $H=12$ cm esetén $D=\\sqrt{194}\\approx13{,}93$ cm; $a=6$ cm és $D=11$ cm esetén $H=7$ cm.'),
 ]
 
 JOKER = ("Egy $a$ élű kocka <b>lapközéppontjai</b> egy szabályos oktaéder csúcsai. "
          "Mekkora ennek az oktaédernek az éle?",
-         "Két szomszédos lapközéppontot összekötő szakasz olyan derékszögű háromszög "
-         "átfogója, amelynek mindkét befogója $\\frac{a}{2}$, ezért az oktaéder éle "
-         "$\\sqrt{\\left(\\frac a2\\right)^2+\\left(\\frac a2\\right)^2}="
-         "\\frac{a\\sqrt2}{2}\\approx 0{,}71a$.")
+         '$\\dfrac{a\\sqrt2}{2}$.')
 
 # ============================== OLDAL ==============================
 body = [

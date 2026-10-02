@@ -311,7 +311,7 @@ HK = [
 ]
 HN = [
  (r"Határozd meg az $f(x)=\dfrac{x^2-3x+5}{x-1}$ függvény aszimptotáit!", None,
-  r"függőleges: $x=1$ (a számláló értéke ott $3\ne0$); ferde: $k=1$, $n=\lim\limits_{x\to+\infty}\dfrac{-2x+5}{x-1}=-2$, tehát $y=x-2$"),
+  r"függőleges: $x=1$; ferde: $y=x-2$"),
  ("Határozd meg a függvények aszimptotáit! Előbb nézd meg, hol nulla a számláló.",
   [r"$g(x)=\dfrac{x^2-4}{x^2+x-2}$", r"$h(x)=\dfrac{x^3-x}{x^2-4}$"],
   [r"$g(x)=\frac{x-2}{x-1}$, ha $x\ne-2$: függőleges: $x=1$; vízszintes: $y=1$; az $x=-2$ helyen csak lyuk van (a $\left(-2;\,\frac43\right)$ pontban)",

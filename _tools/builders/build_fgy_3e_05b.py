@@ -258,8 +258,9 @@ ALAP = [
 
  (r"Párhuzamos, merőleges vagy egyik sem?",
   [r"$y=2x+1$ és $4x-2y+3=0$", r"$3x-y+2=0$ és $x+3y-1=0$", r"$y=x$ és $y=-2x+1$"],
-  [r"párhuzamos ($k_1=k_2=2$)", r"merőleges ($k_1k_2=3\cdot\left(-\tfrac13\right)=-1$)",
-   r"egyik sem ($k_1=1$, $k_2=-2$)"]),
+  ['párhuzamos',
+   'merőleges',
+   'egyik sem']),
 
  (r"Írd fel annak az egyenesnek az egyenletét, amely átmegy a $P$ ponton és párhuzamos az $e$ egyenessel!",
   [r"$P(4;-3)$, $e\colon 2x-3y+6=0$", r"$P(-4;3)$, $e\colon 2x-5y-4=0$", r"$P(-2;1)$, $e\colon x-4y-11=0$"],
@@ -307,8 +308,7 @@ ALAP = [
  (r"Maxi a $P(1;2)$ pont távolságát számolta ki az $y=3x+1$ egyenestől. Így írt: $a=3$, $b=1$, $c=1$, "
   r"tehát $d=\dfrac{|3\cdot1+1\cdot2+1|}{\sqrt{10}}=\dfrac{6}{\sqrt{10}}\approx1{,}90$. Hol a hiba? Mennyi a "
   r"helyes távolság?", None,
-  r"Az együtthatókat csak általános alakból lehet leolvasni: $3x-y+1=0$, tehát $b=-1$. A helyes távolság "
-  r"$d=\dfrac{2}{\sqrt{10}}\approx0{,}63$."),
+  'Maxi az explicit alakból olvasta le az együtthatókat: az általános alak $3x-y+1=0$, így $d=\\dfrac2{\\sqrt{10}}\\approx0{,}63$.'),
 ]
 
 # ============================== KÖZÉPSZINT ==============================
@@ -334,8 +334,7 @@ KOZEP = [
 
  (r"Maxi a $3x-2y+6=0$ egyenes tengelymetszetes alakját így írta fel: $\dfrac x2+\dfrac y3=1$. "
   r"Hol a hiba? Mi a helyes alak?", None,
-  r"$3x-2y=-6$, ezt $-6$-tal kell osztani: $\dfrac{x}{-2}+\dfrac{y}{3}=1$ (az $x$-tengelyt a $(-2;0)$ "
-  r"pontban metszi)."),
+  'Maxi az $x$-tengelymetszet előjelét tévesztette el: $\\dfrac{x}{-2}+\\dfrac y3=1$.'),
 
  # --- B2 (közép 7–12)
  (r"Írd fel annak az egyenesnek az egyenletét, amely átmegy az $y=-2x+11$ és az $y=-x+8$ egyenes "

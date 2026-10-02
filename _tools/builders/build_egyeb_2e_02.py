@@ -251,23 +251,20 @@ DR_A_UJ_02 = [
    "Minden másodfokú függvény grafikonja metszi az $x$ tengelyt.",
    "Ha a másodfokú egyenlet két gyökének szorzata negatív, akkor a két gyök ellentétes előjelű.",
    "A parabola csúcspontja mindig a legkisebb függvényértéknél van."],
-  ["Igaz — a megoldóképletben negatív szám gyökét kellene vonni.",
-   "Hamis: az $y=x^2+1$ grafikonja végig a tengely fölött halad.",
-   "Igaz: két szám szorzata csak akkor negatív, ha különböző előjelűek.",
-   "Hamis: ha az együttható negatív ($a<0$), a parabola lefelé nyílik, és a csúcs a "
-   "legnagyobb értéknél van."]),
+  ["Igaz.",
+   "Hamis; ellenpélda $y=x^2+1$, amelynek nincs zérushelye.",
+   "Igaz.",
+   "Hamis; ellenpélda $y=-x^2+5$, amelynek a csúcspontjában maximuma van."]),
 ]
 DR_K_UJ_02 = [
- ("Egy másodfokú függvény grafikonjáról ennyi olvasható le: a parabola felfelé nyílik, "
+ ("Egy másodfokú függvény parabolája felfelé nyílik, "
   "a zérushelyei $-1$ és $5$, és átmegy a $(0;-5)$ ponton.",
-  ["Hol van a csúcspont első koordinátája? Honnan tudod ránézésre?",
+  ["Mennyi a csúcspont első koordinátája? Miből következtetsz rá?",
    "Írd fel a függvény hozzárendelési szabályát szorzat alakban, majd rendezd!",
    "Mekkora a függvény legkisebb értéke?"],
-  ["A zérushelyek felezőpontjában, tehát $x=\\dfrac{-1+5}{2}=2$ — a parabola szimmetrikus "
-   "a csúcson átmenő függőleges egyenesre.",
-   "$f(x)=a(x+1)(x-5)$, és a $(0;-5)$ pontból $a\\cdot 1\\cdot(-5)=-5$, tehát $a=1$: "
-   "$f(x)=x^2-4x-5$.",
-   "$f(2)=4-8-5=-9$."]),
+  ["$x=2$, mert a szimmetriatengely a zérushelyek felezőpontján halad át.",
+   "$f(x)=(x+1)(x-5)=x^2-4x-5$.",
+   "$-9$."]),
 ]
 
 DR_A = [
@@ -279,7 +276,7 @@ DR_A = [
   ["$3$ és $\\dfrac{1}{2}$", "$3$ és $-4$"], True),
  ("Számítsd ki a diszkriminánst, és mondd meg, hány valós megoldás van!",
   ["$x^{2}-2x-3=0$", "$x^{2}+4x+4=0$", "$x^{2}+x+2=0$"],
-  ["$D=16$ → két valós.", "$D=0$ → egy kettős.", "$D=-7$ → egy sem (két komplex)."], True),
+  ["$D=16$: két valós.", "$D=0$: egy kettős.", "$D=-7$: egy sem."], True),
  ("Bontsd tényezőkre!",
   ["$x^{2}-9x+20$", "$x^{2}+2x-15$"], ["$(x-4)(x-5)$", "$(x+5)(x-3)$"], True),
  ("Az $x^{2}-8x+15=0$ egyenlet megoldása nélkül számítsd ki!",
@@ -312,7 +309,7 @@ DR_K = DR_K + DR_K_UJ_02
 DR_N = [
  ("A bázis fala mellé téglalap alakú területet kerítenek $30$ méter kerítéssel "
   "(a fal felőli oldalra nem kell kerítés). Mekkora a legnagyobb bekeríthető terület?",
-  None, "$112{,}5\\ \\text{m}^{2}$ (a merőleges oldalak $7{,}5$ m-esek)."),
+  None, "$112{,}5\\ \\text{m}^{2}$"),
  ("Az $x^{2}-(m+1)x+m=0$ egyenlet egyik gyöke $3$. Mennyi $m$, és mi a másik gyök?",
   None, "$m=3$; a másik gyök $1$."),
  ("Oldd meg a komplex számok halmazán! $x^{4}+5x^{2}-36=0$", None, "$\\pm 2$ és $\\pm 3i$"),

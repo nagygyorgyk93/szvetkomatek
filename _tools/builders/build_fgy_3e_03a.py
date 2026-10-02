@@ -146,9 +146,9 @@ ALAP = [
  # --- A1: két egyenlet, két ismeretlen (alap 1–6)
  ("Melyik számpár megoldása a rendszernek?" + rs(r"2x+y&=5", r"x-3y&=6"),
   ["$(3;-1)$", "$(2;1)$", "$(1;3)$"],
-  ["megoldás: $2\\cdot3-1=5$ és $3+3=6$",
-   "nem megoldás: az első egyenletet teljesíti, a másodikat nem ($2-3=-1$)",
-   "nem megoldás: az első egyenletet teljesíti, a másodikat nem ($1-9=-8$)"], True),
+  ['megoldás',
+   'nem megoldás',
+   'nem megoldás'], True),
 
  ("Oldd meg a rendszert behelyettesítéssel!" + rs(r"2x+y&=16", r"x-4y&=-1"), None,
   "$(x;y)=(7;2)$"),
@@ -158,7 +158,7 @@ ALAP = [
 
  ("Melyik ismeretlent érdemes kiküszöbölni? Oldd meg a rendszert!" +
   rs(r"5x+3y&=19", r"5x-2y&=4"), None,
-  "Az $x$-et, mert az együtthatója a két egyenletben egyenlő. A megoldás $(x;y)=(2;3)$."),
+  'Az $x$-et; $(x;y)=(2;3)$.'),
 
  ("Az ábrán az $x-y=-2$ és az $x+y=4$ egyenes látható. Olvasd le az ábráról a rendszer "
   "megoldását, majd ellenőrizd behelyettesítéssel!" + abra(SVG_A5), None,
@@ -166,9 +166,9 @@ ALAP = [
 
  ("Hány megoldása van a rendszernek? Számolás nélkül, a két egyenes helyzete alapján döntsd el!",
   [rs(r"x+y&=3", r"2x+2y&=6"), rs(r"x+y&=3", r"x+y&=5"), rs(r"x-y&=1", r"x+y&=3")],
-  ["végtelen sok: a második egyenlet az első kétszerese, a két egyenes egybeesik",
-   "nincs megoldás: a bal oldal azonos, a jobb oldal más, a két egyenes párhuzamos",
-   "pontosan egy: a két egyenes se nem párhuzamos, se nem esik egybe, tehát metszik egymást"], True),
+  ['végtelen sok; egybeeső egyenesek',
+   'nincs megoldás; párhuzamos egyenesek',
+   'pontosan egy; metsző egyenesek'], True),
 
  # --- A2: a Gauss-eljárás (alap 7–14)
  ("Maxi a Gauss-eljárás közben az alábbi lépéseket tervezi. Döntsd el mindegyikről, hogy "
@@ -178,15 +178,15 @@ ALAP = [
    "a második egyenletből kivonja az első kétszeresét ($S_2-2S_1$)",
    "az első két egyenletet összeszorozza egymással",
    "a harmadik egyenletet elosztja $-3$-mal"],
-  ["ekvivalens",
-   "nem ekvivalens: az egyenletből $0=0$ lesz, vagyis elveszítünk egy egyenletet",
-   "ekvivalens",
-   "nem ekvivalens: a szorzat már nem lineáris egyenlet, és hamis megoldások kerülhetnek be",
-   "ekvivalens, mert $-3\\ne0$"]),
+  ['ekvivalens',
+   'nem ekvivalens',
+   'ekvivalens',
+   'nem ekvivalens',
+   'ekvivalens']),
 
  ("A Gauss-eljárás után ez a lépcsős alak maradt. Oldd meg visszahelyettesítéssel!" +
   rs(r"x+2y-z&=3", r"y+z&=5", r"2z&=6"), None,
-  "$z=3$, $y=2$, $x=2$, tehát $(x;y;z)=(2;2;3)$."),
+  '$(x;y;z)=(2;2;3)$.'),
 
  ("Oldd meg a Gauss-eljárással!" + rs(r"x+y+z&=9", r"x+2y+3z&=16", r"x+3y+4z&=21"), None,
   "$(x;y;z)=(4;3;2)$"),
@@ -224,21 +224,18 @@ ALAP = [
 
  ("Oldd meg a rendszert! Ha végtelen sok megoldása van, add meg őket a $z=t$ jelöléssel." +
   rs(r"2x+y-z&=-1", r"-4x-2y+2z&=2", r"x+y+z&=2"), None,
-  "Határozatlan (a második egyenlet az első $(-2)$-szerese): "
-  "$(x;y;z)=(2t-3;\\ 5-3t;\\ t)$, ahol $t$ tetszőleges valós szám."),
+  'Végtelen sok: $(x;y;z)=(2t-3;\\ 5-3t;\\ t)$, $t\\in\\mathbb{R}$.'),
 
  ("Írj a $2x+y=5$ egyenlet mellé egy második egyenletet úgy, hogy a kapott rendszernek",
   ["pontosan egy megoldása legyen", "ne legyen megoldása", "végtelen sok megoldása legyen"],
-  ["például $x-y=1$, ekkor a megoldás $(2;1)$; minden olyan egyenlet jó, amelynek egyenese "
-   "metszi a $2x+y=5$ egyenest",
-   "például $2x+y=7$: a bal oldal azonos, a jobb oldal más",
-   "például $4x+2y=10$: az eredeti egyenlet kétszerese"]),
+  ['például $x-y=1$',
+   'például $2x+y=7$',
+   'például $4x+2y=10$']),
 
  # --- C1: szövegből rendszer (alap 19–24)
  ("Két toll és három füzet együtt $480$ dinárba, egy toll és két füzet $290$ dinárba kerül. "
   "Mennyibe kerül <b>egy toll és egy füzet együtt</b>?", None,
-  "Egy toll $90$, egy füzet $100$ dinár, együtt tehát $190$ dinár. "
-  "(Rövidebben: a két egyenlet különbsége éppen $x+y=190$.)"),
+  '$190$ dinár.'),
 
  ("Két szám összege $57$, a különbségük $13$. Melyik ez a két szám?", None,
   "$35$ és $22$"),
@@ -299,32 +296,27 @@ KOZEP = [
 
  ("Oldd meg a rendszert! Mielőtt a szokásos lépésekbe kezdenél, nézd meg alaposan az első "
   "két egyenletet." + rs(r"x+2y+3z&=1", r"x+2y-3z&=-1", r"x-2y-6z&=-4"), None,
-  "Az első két egyenlet különbségéből egyszerre esik ki az $x$ és az $y$: $6z=2$. "
-  "A megoldás $(x;y;z)=\\left(-1;\\ \\frac{1}{2};\\ \\frac{1}{3}\\right)$."),
+  '$(x;y;z)=\\left(-1;\\ \\dfrac12;\\ \\dfrac13\\right)$.'),
 
  # --- A3 (közép 10–13)
  ("Oldd meg a rendszert, és döntsd el, hány megoldása van!" +
   rs(r"x-3y+z&=1", r"2x-5y+2z&=3", r"5x-9y+5z&=10"), None,
-  "Nincs megoldás: $S_2-2S_1$ után $y=1$, $S_3-5S_1$ után $6y=5$, és a kettő ellentmond egymásnak."),
+  'Nincs megoldás.'),
 
  ("Oldd meg a rendszert! Ha végtelen sok megoldása van, add meg őket a $z=t$ jelöléssel." +
   rs(r"x+y-2z&=-3", r"x-2y+z&=2", r"-2x+y+z&=1"), None,
-  "Határozatlan (a három egyenlet összege $0=0$): "
-  "$(x;y;z)=\\left(t-\\frac{4}{3};\\ t-\\frac{5}{3};\\ t\\right)$."),
+  'Végtelen sok: $(x;y;z)=\\left(t-\\dfrac43;\\ t-\\dfrac53;\\ t\\right)$, $t\\in\\mathbb{R}$.'),
 
  ("Az alábbi rendszerben minden egyenlet jobb oldala $0$." +
   rs(r"x+3y-4z&=0", r"2x-y+3z&=0", r"3x+2y-z&=0"),
   ["Melyik megoldása biztosan van, számolás nélkül?",
    "Van-e más megoldása is? Ha igen, add meg mindet a $z=t$ jelöléssel!"],
-  ["a $(0;0;0)$, mert behelyettesítve mindhárom egyenlet $0=0$",
-   "igen, végtelen sok, mert a harmadik egyenlet az első kettő összege: "
-   "$(x;y;z)=\\left(-\\frac{5t}{7};\\ \\frac{11t}{7};\\ t\\right)$"]),
+  ['$(0;0;0)$',
+   'Igen, végtelen sok: $(x;y;z)=\\left(-\\dfrac{5t}{7};\\ \\dfrac{11t}{7};\\ t\\right)$, $t\\in\\mathbb{R}$']),
 
  ("Oldd meg a rendszert! Melyik ismeretlen értéke egyértelmű, és melyiké nem?" +
   rs(r"x-y-z&=1", r"x+3y+3z&=-1", r"x+y+z&=0"), None,
-  "A rendszer határozatlan, de az $x$ egyértelmű: az első és a harmadik egyenlet összegéből "
-  "$x=\\frac{1}{2}$. Az $y$ és a $z$ nem egyértelmű: "
-  "$(x;y;z)=\\left(\\frac{1}{2};\\ -\\frac{1}{2}-t;\\ t\\right)$."),
+  '$x=\\dfrac12$ egyértelmű; $y$ és $z$ nem: $(x;y;z)=\\left(\\dfrac12;\\ -\\dfrac12-t;\\ t\\right)$, $t\\in\\mathbb{R}$.'),
 
  # --- C1 (közép 14–19)
  ("Két autó egymástól $60$ km-re lévő városokból egyszerre indul egymás felé, és fél óra "
@@ -354,20 +346,18 @@ KOZEP = [
 
  ("Írj szöveges feladatot, amely az $x+y=12$, $5x+2y=39$ rendszerre vezet! Oldd meg a "
   "rendszert, és fogalmazd meg mondatban a választ a saját kérdésedre.", None,
-  "A rendszer megoldása $(x;y)=(5;7)$. Egy lehetséges feladat: „Egy perselyben $12$ érme "
-  "van, ötdinárosok és kétdinárosok, összesen $39$ dinár értékben. Hány darab van az egyes "
-  "fajtákból?” Válasz: $5$ darab ötdináros és $7$ darab kétdináros."),
+  'Például: „$12$ érme, ötdinárosok és kétdinárosok, összesen $39$ dinár értékben. Hány darab van az egyes fajtákból?” Válasz: $5$ ötdináros és $7$ kétdináros.'),
 ]
 
 # ============================== NEHÉZ SZINT ==============================
 NEHEZ = [
  ("Az $y=ax^2+bx+c$ parabola átmegy az $(1;2)$, a $(-1;6)$ és a $(2;3)$ ponton. "
   "Határozd meg az $a$, $b$ és $c$ együtthatót!", None,
-  "$a=1$, $b=-2$, $c=3$, tehát a parabola $y=x^2-2x+3$."),
+  '$a=1$, $b=-2$, $c=3$.'),
 
  ("Oldd meg a rendszert ($x\\ne0$, $y\\ne0$)! Ötlet: legyen $u=\\frac{1}{x}$ és $v=\\frac{1}{y}$." +
   rs(r"\frac{2}{x}+\frac{3}{y}&=2", r"\frac{4}{x}-\frac{3}{y}&=1"), None,
-  "$u=\\frac{1}{2}$ és $v=\\frac{1}{3}$, tehát $(x;y)=(2;3)$, ami megfelel a feltételnek."),
+  '$(x;y)=(2;3)$.'),
 
  ("Egy kenyér, egy csomag kávé és egy üveg olívaolaj együtt $500$ dinárba került, és az "
   "olaj ára éppen annyi volt, mint a kenyéré és a kávéé együtt. Egy hónap múlva a kenyér "
@@ -375,17 +365,15 @@ NEHEZ = [
   "$540$ dinárba került.",
   ["Mennyibe került eredetileg egy-egy termék?",
    "Hány százalékkal drágult a három termék együttes ára?"],
-  ["a kenyér $100$, a kávé $150$, az olaj $250$ dinárba (az első és a harmadik feltételből "
-   "azonnal adódik, hogy az olaj az $500$ dinár fele)",
-   "$8\\%$-kal, mert $\\frac{40}{500}=0{,}08$"]),
+  ['Kenyér: $100$, kávé: $150$, olaj: $250$ dinár',
+   '$8\\%$-kal']),
 
  ("Tekintsd a következő rendszert:" +
   rs(r"x+y+2z&=-1", r"2x-y+z&=-1", r"x-2y-z&=0"),
   ["Mutasd meg, hogy végtelen sok megoldása van, és add meg őket a $z=t$ jelöléssel!",
    "A megoldások közül melyikben teljesül, hogy $x+y+z=0$?"],
-  ["$S_2-S_1$ éppen a harmadik egyenletet adja, ezért az elhagyható: "
-   "$(x;y;z)=\\left(-t-\\frac{2}{3};\\ -t-\\frac{1}{3};\\ t\\right)$",
-   "$x+y+z=-t-1=0$, tehát $t=-1$: $(x;y;z)=\\left(\\frac{1}{3};\\ \\frac{2}{3};\\ -1\\right)$"]),
+  ['Végtelen sok, mert $S_2-S_1=S_3$: $(x;y;z)=\\left(-t-\\dfrac23;\\ -t-\\dfrac13;\\ t\\right)$, $t\\in\\mathbb{R}$',
+   '$(x;y;z)=\\left(\\dfrac13;\\ \\dfrac23;\\ -1\\right)$']),
 
  ("Egy kávépörkölő háromféle kávét kever: kilója rendre $1200$, $1600$ és $2000$ dinár. $10$ kg "
   "keveréket készít, amelynek kilója $1560$ dinár, és a legolcsóbb fajtából kétszer annyit "
@@ -396,10 +384,7 @@ NEHEZ = [
   "perc $6$ dinár; a <b>B</b> havidíja $1500$ dinár, és minden perc $3$ dinár; a <b>C</b> "
   "havidíja $2700$ dinár, és korlátlanul lehet vele telefonálni. Havi hány perc beszélgetésnél "
   "melyik tarifa a legolcsóbb?", None,
-  "Az A és a B $200$ percnél, a B és a C $400$ percnél kerül ugyanannyiba. Ezért $200$ percnél "
-  "kevesebb beszélgetésnél az A, $200$ és $400$ perc között a B, $400$ perc fölött a C a "
-  "legolcsóbb (a határokon két tarifa egyenlő). Az A és a C $300$ percnél egyenlő, de ott a B "
-  "mindkettőnél olcsóbb."),
+  'A: $200$ perc alatt; B: $200$ és $400$ perc között; C: $400$ perc fölött. A határokon két tarifa egyenlő áron a legolcsóbb.'),
 ]
 
 JOKER = ("Kínában mintegy kétezer éve írták a <i>Kilenc fejezet a matematika művészetéről</i> "

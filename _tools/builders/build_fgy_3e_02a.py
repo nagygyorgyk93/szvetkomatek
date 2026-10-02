@@ -95,8 +95,7 @@ ALAP = [
 
  ("Egy derékszögű háromszög befogói $6$ cm és $8$ cm. Megforgatjuk a $6$ cm-es befogója "
   "körül. Milyen test keletkezik, és mekkora a sugara, a magassága és az alkotója?", None,
-  "Kúp keletkezik: a tengely a $6$ cm-es befogó, ezért $H=6$ cm és $r=8$ cm. Az alkotó "
-  "az átfogó: $s=\\sqrt{36+64}=10$ cm."),
+  'Kúp; $r=8$ cm, $H=6$ cm, $s=10$ cm.'),
 
  # --- A2: a henger elemei (alap 5–9)
  ("Egy henger alapkörének sugara $7$ cm, magassága $10$ cm. Mekkora a hálójában szereplő "
@@ -108,15 +107,14 @@ ALAP = [
   "fölösleges adat.)"),
 
  ("Egy egyenlő oldalú henger alapkörének sugara $6$ cm. Mekkora a magassága?", None,
-  "A tengelymetszet négyzet, ezért $H=2r=12$ cm."),
+  '$H=12$ cm.'),
 
  ("Egy egyenlő oldalú henger magassága $14$ cm. Mekkora az alapkörének sugara?", None,
-  "$H=2r$, ezért $r=7$ cm."),
+  '$r=7$ cm.'),
 
  ("Egy henger tengelymetszete olyan téglalap, amelynek az <b>alapkörre illeszkedő</b> "
   "oldala $8$ cm, a másik $5$ cm. Mekkora a sugara és a magassága?", None,
-  "A tengelymetszet egyik oldala az <b>átmérő</b>: $2r=8$, tehát $r=4$ cm; a másik a "
-  "magasság: $H=5$ cm."),
+  '$r=4$ cm; $H=5$ cm.'),
 
  # --- A3: felszín és térfogat (alap 10–20)
  ("Egy henger alapkörének sugara $4$ cm, magassága $9$ cm. Számítsd ki a felszínét és a "
@@ -135,8 +133,7 @@ ALAP = [
 
  ("Egy egyenlő oldalú henger alapkörének sugara $4$ cm. Mekkora a felszíne és a "
   "térfogata?", None,
-  "Itt $H=2r=8$ cm, ezért $F=2\\cdot16\\pi+2\\cdot4\\pi\\cdot8=96\\pi\\ \\text{cm}^2$ "
-  "és $V=16\\pi\\cdot8=128\\pi\\ \\text{cm}^3$."),
+  '$F=96\\pi$ cm²; $V=128\\pi$ cm³.'),
 
  ("Egy henger térfogata $245\\pi\\ \\text{cm}^3$, alapkörének sugara $7$ cm. Mekkora a "
   "magassága?", None,
@@ -144,28 +141,23 @@ ALAP = [
 
  ("Egy henger térfogata $100\\pi\\ \\text{cm}^3$, magassága $4$ cm. Mekkora az "
   "alapkörének sugara?", None,
-  "$r^2\\pi\\cdot4=100\\pi$, tehát $r^2=25$ és $r=5$ cm."),
+  '$r=5$ cm.'),
 
  ("Egy henger felszíne $112\\pi\\ \\text{cm}^2$, alapkörének sugara $4$ cm. Mekkora a "
   "magassága?", None,
-  "$32\\pi+8\\pi H=112\\pi$, ahonnan $8H=80$, tehát $H=10$ cm."),
+  '$H=10$ cm.'),
 
  ("Egy hengeres pohár alapkörének sugara $4$ cm, magassága $10$ cm. Hány <b>deciliter</b> "
   "fér bele? (A választ két tizedesre kerekítve add meg!)", None,
-  "$V=16\\pi\\cdot10=160\\pi\\approx502{,}65\\ \\text{cm}^3$. Mivel "
-  "$1\\ \\text{dl}=100\\ \\text{cm}^3$, ez körülbelül $5{,}03$ deciliter."),
+  '$5{,}03$ dl.'),
 
  ("Egy hengeres tartály alapkörének sugara $2$ m, magassága $5$ m. Hány köbméter, és "
   "hány <b>liter</b> víz fér bele? (Két tizedesre kerekítve.)", None,
-  "$V=4\\pi\\cdot5=20\\pi\\approx62{,}83\\ \\text{m}^3$. Mivel "
-  "$1\\ \\text{m}^3=1000$ liter, ez a pontos értékből számolva körülbelül "
-  "$62\\,832$ liter."),
+  '$V=20\\pi\\approx62{,}83\\ \\text{m}^3\\approx62\\,831{,}85$ liter.'),
 
  ("Egy <b>fedél nélküli</b> hengeres tartály alapkörének sugara $3$ dm, magassága "
   "$8$ dm. Hány négyzetdeciméter lemezre van szükség a gyártásához?", None,
-  "Csak <b>egy</b> alapkör kell, ezért a szükséges lemez területe "
-  "$r^2\\pi+2r\\pi H=9\\pi+48\\pi=57\\pi\\ \\text{dm}^2$. (A test teljes felszíne "
-  "ennél nagyobb: $F=66\\pi\\ \\text{dm}^2$ — de a fedél most hiányzik.)"),
+  '$57\\pi$ dm² lemez.'),
 
  ("Egy hengeres oszlop alapkörének sugara $1$ m, magassága $4$ m. Hány négyzetméter a "
   "<b>palástja</b>? (Két tizedesre kerekítve.)", None,
@@ -177,9 +169,7 @@ KOZEP = [
  # --- A1 (közép 1–2)
  ("Egy $4\\times6$-os téglalapot megforgatunk előbb a $4$, majd a $6$ egység hosszú "
   "oldala körül. Melyik henger térfogata nagyobb, és hányszorosa a másikénak?", None,
-  "A $4$-es oldal körül $r=6$ és $H=4$, tehát $V_1=36\\pi\\cdot4=144\\pi$; a $6$-os "
-  "oldal körül $r=4$ és $H=6$, tehát $V_2=16\\pi\\cdot6=96\\pi$. Az első a nagyobb, "
-  "és $\\frac{144\\pi}{96\\pi}=\\frac32$-szerese a másodiknak."),
+  'A $4$ cm-es oldal körül forgatva nagyobb: a másik térfogat $\\dfrac32$-szerese.'),
 
  ("Egy derékszögű háromszög befogói $3$ cm és $4$ cm. Mekkora a keletkező kúp sugara, "
   "magassága és alkotója, ha megforgatjuk",
@@ -190,111 +180,80 @@ KOZEP = [
  # --- A2 (közép 3–5)
  ("Egy henger palástja kiterítve olyan téglalap, amelynek az <b>alapkörre simuló</b> "
   "oldala $12\\pi$ cm, a másik $7$ cm. Mekkora a henger sugara és magassága?", None,
-  "A $12\\pi$ az alapkör kerülete: $2r\\pi=12\\pi$, tehát $r=6$ cm. A magasság a másik "
-  "oldal: $H=7$ cm."),
+  '$r=6$ cm; $H=7$ cm.'),
 
  ("Egy egyenlő oldalú henger tengelymetszetének területe $100\\ \\text{cm}^2$. Mekkora "
   "az alapkörének sugara?", None,
-  "A tengelymetszet négyzet, oldala $2r$, ezért $(2r)^2=100$, tehát $2r=10$ és "
-  "$r=5$ cm."),
+  '$r=5$ cm.'),
 
  ("Egy henger tengelymetszetének kerülete $30$ cm, a magassága $5$ cm. Mekkora az "
   "alapkörének sugara?", None,
-  "A tengelymetszet téglalap: $2(2r+H)=30$, tehát $2r+5=15$, ahonnan $r=5$ cm."),
+  '$r=5$ cm.'),
 
  # --- A3 (közép 6–14)
  ("Egy henger felszíne $96\\pi\\ \\text{cm}^2$, magassága $8$ cm. Mekkora az alapkörének "
   "sugara?", None,
-  "$2r^2\\pi+16r\\pi=96\\pi$, azaz $r^2+8r-48=0$. A megoldóképlet szerint "
-  "$r=\\frac{-8+\\sqrt{64+192}}{2}=\\frac{-8+16}{2}=4$ cm (a negatív gyök nem "
-  "sugár)."),
+  '$r=4$ cm.'),
 
  ("Egy henger térfogata $128\\pi\\ \\text{cm}^3$, a magassága az alapkör sugarának "
   "<b>kétszerese</b>. Mekkora a sugár?", None,
-  "$r^2\\pi\\cdot2r=128\\pi$, tehát $r^3=64$ és $r=4$ cm."),
+  '$r=4$ cm.'),
 
  ("Egy henger magassága az alapkör sugarának <b>háromszorosa</b>, a felszíne "
   "$32\\pi\\ \\text{cm}^2$. Mekkora a sugara és a magassága?", None,
-  "$2r^2\\pi+2r\\pi\\cdot3r=8r^2\\pi=32\\pi$, tehát $r^2=4$, azaz $r=2$ cm és "
-  "$H=6$ cm."),
+  '$r=2$ cm; $H=6$ cm.'),
 
  ("Két henger alapköre egybevágó, a magasságuk aránya $2:3$. Hogyan aránylik a "
   "térfogatuk?", None,
-  "A térfogat a magassággal <b>egyenesen arányos</b> (a $r^2\\pi$ tényező közös), ezért "
-  "a térfogatok aránya is $2:3$."),
+  '$2:3$.'),
 
  ("Két henger magassága egyenlő, az alapköreik sugarának aránya $2:3$. Hogyan aránylik "
   "a térfogatuk?", None,
-  "A sugár <b>négyzetesen</b> szerepel, ezért a térfogatok aránya "
-  "$2^2:3^2=4:9$."),
+  '$4:9$.'),
 
  ("Egy henger tengelymetszetének területe $48\\ \\text{cm}^2$, a magassága $6$ cm. "
   "Mekkora a térfogata?", None,
-  "A tengelymetszet téglalap: $2r\\cdot6=48$, tehát $r=4$ cm. Innen "
-  "$V=16\\pi\\cdot6=96\\pi\\ \\text{cm}^3$."),
+  '$V=96\\pi$ cm³.'),
 
  ("Egy henger palástja $60\\pi\\ \\text{cm}^2$, a felszíne $110\\pi\\ \\text{cm}^2$. "
   "Mekkora a sugara és a magassága?", None,
-  "A két alapkör területe $110\\pi-60\\pi=50\\pi$, tehát $2r^2\\pi=50\\pi$, ahonnan "
-  "$r=5$ cm. A palástból $2\\cdot5\\pi\\cdot H=60\\pi$, tehát $H=6$ cm."),
+  '$r=5$ cm; $H=6$ cm.'),
 
  ("Egy hengeres víztartály belső <b>átmérője</b> $1{,}2$ m, magassága $2$ m. Hány liter "
   "víz fér bele? (Egészre kerekítve.)", None,
-  "A sugár $r=0{,}6$ m, ezért $V=0{,}36\\pi\\cdot2=0{,}72\\pi\\approx2{,}26\\ "
-  "\\text{m}^3$, ami körülbelül $2262$ liter."),
+  '$2262$ liter.'),
 
  ("Egy henger alapkörének sugarát a <b>felére</b> csökkentjük, a magasságát pedig a "
   "<b>négyszeresére</b> növeljük. Hogyan változik a térfogata?", None,
-  "$\\left(\\frac r2\\right)^2\\pi\\cdot4H=\\frac{r^2}{4}\\pi\\cdot4H=r^2\\pi H$ — a "
-  "térfogat <b>nem változik</b>. A sugár negyedelő hatását épp kiegyenlíti a magasság "
-  "négyszerezése."),
+  'A térfogat nem változik.'),
 ]
 
 # ============================== NEHÉZ SZINT ==============================
 NEHEZ = [
  ("Egy henger felszíne $54\\pi\\ \\text{cm}^2$, és a magassága megegyezik az alapkör "
   "<b>átmérőjével</b>. Mekkora a térfogata?", None,
-  "A feltétel szerint $H=2r$, tehát egyenlő oldalú hengerről van szó: "
-  "$F=6r^2\\pi=54\\pi$, ahonnan $r=3$ cm és $H=6$ cm. Így "
-  "$V=9\\pi\\cdot6=54\\pi\\ \\text{cm}^3$."),
+  '$V=54\\pi$ cm³.'),
 
  ("Egy $20\\ \\text{cm}\\times30\\ \\text{cm}$-es téglalapból hengerpalástot hajtunk "
   "össze — ez kétféleképpen lehetséges. Melyik esetben nagyobb a keletkező henger "
   "térfogata, és mennyivel? (Két tizedesre kerekítve.)", None,
-  "Ha a $20$ cm-es oldal lesz a kerület: $2r\\pi=20$, tehát $r=\\frac{10}{\\pi}$ és "
-  "$H=30$, ezért $V_1=\\frac{100}{\\pi^2}\\pi\\cdot30=\\frac{3000}{\\pi}\\approx"
-  "954{,}93\\ \\text{cm}^3$. Ha a $30$ cm-es: $r=\\frac{15}{\\pi}$, $H=20$, ezért "
-  "$V_2=\\frac{4500}{\\pi}\\approx1432{,}39\\ \\text{cm}^3$. A <b>szélesebb, "
-  "alacsonyabb</b> henger a nagyobb, mégpedig $\\frac{1500}{\\pi}\\approx477{,}46\\ "
-  "\\text{cm}^3$-rel."),
+  'A $30$ cm-es oldalból képzett kerület esetén nagyobb; a másik térfogat $\\dfrac32$-szerese.'),
 
  ("Egy $5$ cm sugarú hengeres pohárban víz van. Beleteszünk egy <b>teljesen elmerülő</b> "
   "testet, amitől a vízszint $3$ cm-t emelkedik (a víz nem folyik ki). Mekkora a test "
   "térfogata?", None,
-  "A kiszorított víz térfogata egy $5$ cm sugarú, $3$ cm magas henger térfogata: "
-  "$V=25\\pi\\cdot3=75\\pi\\ \\text{cm}^3$. A pohár eredeti vízszintje nem számít — "
-  "csak az emelkedés mértéke."),
+  '$V=75\\pi$ cm³.'),
 
  ("Egy henger magassága megegyezik az alapkör <b>sugarával</b>, és a felszínének "
   "és a térfogatának a <b>számértéke</b> egyenlő. Mekkora a sugár?", None,
-  "Ha $H=r$, akkor $F=2r^2\\pi+2r^2\\pi=4r^2\\pi$ és $V=r^3\\pi$. A számértékek "
-  "egyenlőségéből $r^3\\pi=4r^2\\pi$, tehát $r=4$. (A „számérték” megszorítás azért "
-  "kell, mert a két mennyiség mértékegysége különböző — az egyenlőség csak a "
-  "számokra vonatkozik.)"),
+  '$r=4$.'),
 ]
 
 JOKER = ("Egy hengeres konzervdoboz térfogata adott. A gyártó a lehető <b>legkevesebb</b> "
          "lemezt akarja felhasználni. Milyen kapcsolat legyen a magasság és a sugár "
          "között? (Elég a sejtésed megfogalmazni és néhány konkrét adattal "
          "alátámasztani.)",
-         "A legkedvezőbb az <b>egyenlő oldalú</b> henger, vagyis amikor $H=2r$ — a "
-         "doboz pontosan olyan magas, mint amilyen széles.<br>"
-         "Próbáld ki $V=54\\pi$ mellett: $r=1$-nél $H=54$ és $F=110\\pi$; $r=3$-nál "
-         "$H=6$ és $F=54\\pi$; $r=5$-nél $H=2{,}16$ és $F\\approx71{,}6\\pi$. A "
-         "középső, $H=2r$ eset adja a legkisebb felszínt.<br>"
-         "A valóságban a dobozok mégis magasabbak ennél: a fedél és az alj vastagabb "
-         "lemezből készül, a hengerpalást pedig olcsóbb — a gyártó ezért nem a "
-         "geometriai, hanem a <b>költség</b>-optimumot keresi.")
+         '$H=2r$ (az egyenlő oldalú henger).')
 
 # ============================== OLDAL ==============================
 body = [

@@ -191,7 +191,7 @@ V_ALAP.append((
     [f"Magyarországon 2024-ben {ezres(SZUL['HU_T'][2024])} gyermek született, közülük {ezres(SZUL['HU_M'][2024])} "
      f"fiú. Mekkora a valószínűsége, hogy egy újszülött fiú?" + FORRAS("eurostat"),
      f"Szabadkán 2024 júliusában {jul_eso} napon esett legalább 1 mm csapadék. Mekkora a valószínűsége, hogy egy "
-     f"júliusi napon esik?" + FORRAS("openmeteo"),
+     f"júliusi napon legalább 1 mm csapadék hullik?" + FORRAS("openmeteo"),
      f"Szabadkán 2024-ben a 366 napból {MELEG} napon volt 25 °C fölött a napi középhőmérséklet. Mekkora a "
      f"valószínűsége, hogy egy véletlenül választott napon így volt?" + FORRAS("openmeteo")],
     [AP(hu_fiu), f"$\\frac{{{jul_eso}}}{{31}}\\approx{D(jul_eso / 31)}$",
@@ -230,8 +230,8 @@ V_ALAP.append((
     [M(FR(v)) for v in va9] + [AP(binom(3, 0.516, 2))]))
 
 V_ALAP.append((
-    "Bernoulli-kísérletsorozat-e? (Rögzített számú, egymástól független kísérlet; mindegyiknek két kimenetele van, "
-    "és a siker valószínűsége minden kísérletben ugyanaz.)",
+    "Bernoulli-kísérletsorozat-e? (Rögzített számú, egymástól független kísérlet; minden eredményt sikerre vagy "
+    "kudarcra sorolunk, és a siker valószínűsége minden kísérletben ugyanaz.)",
     ["Egy kockával tízszer dobunk, és a hatosok számát figyeljük.",
      "A 32 lapos magyar kártyából visszatevés nélkül húzunk öt lapot, és a pirosak számát figyeljük.",
      "Ugyanez, de minden húzás után visszatesszük a lapot és megkeverjük a paklit.",
@@ -337,9 +337,9 @@ V_KOZEP.append((
      "valószínűsége, hogy legalább egyszer talál?",
      "Egy lámpatestben négy izzó van, mindegyik a többitől függetlenül $0{,}95$ valószínűséggel bírja ki az évet. "
      "Mekkora a valószínűsége, hogy legalább egy kiég (három tizedesre)?",
-     f"Szabadkán 2024 júliusában 31 napból {jul_eso} napon esett. Ha minden nap a többitől függetlenül "
-     f"$\\frac{{{jul_eso}}}{{31}}$ valószínűséggel esne, mekkora lenne a valószínűsége, hogy egy júliusi héten "
-     f"(7 nap) legalább egy nap esik?" + FORRAS("openmeteo")],
+     f"Szabadkán 2024 júliusában 31 napból {jul_eso} napon hullott legalább 1 mm csapadék. Ha minden nap a "
+     f"többitől függetlenül $\\frac{{{jul_eso}}}{{31}}$ valószínűséggel hullana legalább 1 mm csapadék, "
+     f"mekkora lenne a valószínűsége, hogy egy júliusi héten (7 nap) legalább egy ilyen nap van?" + FORRAS("openmeteo")],
     [f"$\\frac{{91}}{{216}}\\approx{D(float(vk6a))}$", "$0{,}784$", AP(1 - 0.95 ** 4),
      AP(1 - (1 - jul_eso / 31) ** 7)]))
 
@@ -413,7 +413,7 @@ V_NEHEZ.append((
      "mindenkinek.” Melyik feltételes valószínűséget számolta ki Mr. Szürreál, és mekkora valójában egy harmadik "
      "osztályon utazó túlélési esélye?"],
     [f"$\\approx{D(O['1'][0] / sum(O['1']))}$; $\\approx{D(O['3'][0] / sum(O['3']))}$",
-     f"$\\frac{{200}}{{500}}={D(200 / 500, 1)}$", "nem",
+     f"${D(200 / 500, 1)}$", "nem",
      f"$P(3.\\ \\text{{osztály}}\\mid\\text{{túlélt}})={D(181 / 500)}$; "
      f"$P(\\text{{túlélt}}\\mid 3.\\ \\text{{osztály}})\\approx{D(O['3'][0] / sum(O['3']))}$"]))
 
@@ -438,7 +438,7 @@ V_NEHEZ.append((
     "lehetséges értékek és valószínűségeik:" + BEF,
     ["Mennyi a két befektetés várható nyeresége?", "Mennyi a szórásnégyzetük?",
      "Mennyi a szórásuk (egy tizedesre)?",
-     "Melyik ígér nagyobb várható nyereséget, és melyik a kevésbé kockázatos?"],
+     "Melyik ígér nagyobb várható nyereséget, és melyik kevésbé kockázatos a szórás alapján?"],
     ["$E(X)=8$; $E(Y)=11$", "$D^2(X)=216$; $D^2(Y)=709$",
      f"$D(X)\\approx{D(sqrt(DC), 1)}$; $D(Y)\\approx{D(sqrt(DD), 1)}$",
      "nagyobb várható nyereség: a 2.; kevésbé kockázatos: az 1."]))

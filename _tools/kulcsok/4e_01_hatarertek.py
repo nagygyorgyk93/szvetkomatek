@@ -156,6 +156,6 @@ TESZT = {
     'nehez-6': v(*L(lambda n: ((2*n+5)/(2*n-3))**(5*n-1), lambda n: (1+3/(2*n-5))**(6*n), e=True)),
     'nehez-7': v(1 + 2 * sor(F(3, 4), F(3, 4))),     # le 1, aztán minden pattanás fel+le
     # 1/(1-x) = 5/2 - x  →  2x² - 7x + 3 = 0 (megoldóképlettel), és csak |x| < 1 marad
-    'nehez-8': v(*sorted(F(7 + e*5, 4) for e in (-1, 1)), *[x for x in (F(7 - 5, 4), F(7 + 5, 4)) if abs(x) < 1]),
+    'nehez-8': v(*[x for x in (F(7 - 5, 4), F(7 + 5, 4)) if abs(x) < 1]),
     'joker': v(100, F(1, 10), sor(100, F(1, 10))),
 }

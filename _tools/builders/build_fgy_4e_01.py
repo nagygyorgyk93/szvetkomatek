@@ -158,10 +158,10 @@ ALAP = [
  (r"Egy pillangó minden repülési körében az előző kör útjának $\frac15$-ét teszi meg. Az első körben "
   r"$10$ métert repül. Hány métert tesz meg összesen, ha végtelen sok kört repül?", None,
   "$" + latex(MS(10, "1/5")) + r"=12{,}5$ m"),
- (r"Minden lépésed hossza az előző lépés hosszának $\frac34$-e. Az első lépés $1$ méter. Milyen messzire "
-  r"jutsz összesen, ha végtelen sok lépést teszel?", None, "$" + latex(MS(1, "3/4")) + "$ m"),
+ (r"Minden lépésed hossza az előző lépés hosszának $\frac34$-e. Az első lépés $1$ méter. Mekkora utat "
+  r"teszel meg összesen, ha végtelen sok lépést teszel?", None, "$" + latex(MS(1, "3/4")) + "$ m"),
  (r"Egy hőlégballon minden újabb emelkedéskor az előző emelkedés $\frac23$-ával jut feljebb. Az első "
-  r"emelkedéskor $30$ métert emelkedik. Milyen magasra jut összesen, ha végtelen sokszor emelkedik?", None,
+  r"emelkedéskor $30$ métert emelkedik. Összesen hány métert emelkedik, ha végtelen sokszor emelkedik?", None,
   "$" + latex(MS(30, "2/3")) + "$ m"),
  (r"Egy cseppkő minden évben az előző évi növekedésének $\frac45$-ével nő. Az első évben $5$ cm-t nő. "
   r"Mekkora lesz a teljes növekedése, ha végtelen sok évig nő?", None, "$" + latex(MS(5, "4/5")) + "$ cm"),
@@ -172,22 +172,21 @@ ALAP = [
  (r"Van-e összege a végtelen mértani sornak, és ha igen, mennyi? Minden esetben $b_1=6$.",
   [r"$q=\dfrac13$", r"$q=-\dfrac23$", r"$q=\dfrac32$", r"$q=-1$"],
   ["$" + latex(MS(6, "1/3")) + "$", "$" + latex(MS(6, "-2/3")) + "$",
-   r"nincs, mert $\lvert q\rvert\ge1$", r"nincs, mert $\lvert q\rvert\ge1$"]),
+   "nincs összege", "nincs összege"]),
 ]
 
 # ============================== KÖZÉP ==============================
 KOZEP = [
  TAGOK("Írd fel a sorozat első öt tagját, és sejtsd meg, konvergens-e, és ha igen, mi a határértéke! "
        "Ha kell, számolj ki néhány nagyobb sorszámú tagot is.", ["(-1)**n/(n**2+1)", "n**2/2**n", "(-2)**n/(2*n)"],
-       extra={"(-2)**n/(2*n)": "nincs, a sorozat divergens (a tagok előjele váltakozik, az abszolút értékük nő)"}),
+       extra={"(-2)**n/(2*n)": "nincs, a sorozat divergens"}),
  (r"Az $a_n=\dfrac{4n+1}{n}$ sorozat határértéke $4$. Hányadik tagtól kezdve tér el a sorozat minden tagja "
-  r"$0{,}01$-nál kevesebbel a $4$-től?", None, r"a $101.$ tagtól ($\frac1n\lt\frac{1}{100}$, ha $n\gt100$)"),
+  r"$0{,}01$-nál kevesebbel a $4$-től?", None, r"a $101.$ tagtól"),
  JEGYZ(LIMS("Számítsd ki a határértékeket! Mit mutatnak az eredmények a „$\\infty-\\infty$” alakról?",
       ["(n+7)-n", "(n**2+n)-n**2", "n-(n+3)"],
       tex={"(n+7)-n": r"\big((n+7)-n\big)", "(n**2+n)-n**2": r"\big((n^2+n)-n^2\big)",
            "n-(n+3)": r"\big(n-(n+3)\big)"}),
-      r" — tanulság: a $\infty-\infty$ alak határozatlan, ugyanez az alak $7$-et, $+\infty$-t és "
-      r"$-3$-at is adott, ezért először mindig össze kell vonni."),
+      r" — a $\infty-\infty$ alak határozatlan."),
  ("Határozd meg az $a$ valós paraméter értékét!",
   [r"$\lim\limits_{n\to\infty}\dfrac{an^2+3}{2n^2-n}=3$", r"$\lim\limits_{n\to\infty}\dfrac{an+1}{4n-3}=-\dfrac12$"],
   ["$a=6$", "$a=-2$"]),
@@ -230,7 +229,7 @@ KOZEP = [
   ["$" + latex(MS(8, "-1/2")) + "$", "$" + latex(MS(27, "-1/3")) + "$"]),
  (r"Egy $8$ cm oldalú négyzet oldalfelező pontjai egy újabb négyzetet határoznak meg, ennek oldalfelező "
   r"pontjai egy harmadikat, és így tovább, végtelen sokáig. Mennyi a négyzetek területének összege?", None,
-  r"$64+32+16+\dots=" + latex(MS(64, "1/2")) + r"$ cm$^2$"),
+  "$" + latex(MS(64, "1/2")) + r"$ cm$^2$"),
 ]
 
 # ============================== NEHÉZ ==============================
@@ -243,11 +242,9 @@ NEHEZ = [
  LIMS(HAT, ["((2*n+5)/(2*n-3))**(5*n-1)", "(1+3/(2*n-5))**(6*n)"]),
  (r"Egy labdát $1$ m magasról leejtünk. Minden pattanás után az előző magasság $\frac34$-éig emelkedik "
   r"vissza. Mekkora utat tesz meg a labda összesen, ha (elméletben) végtelen sokszor pattan?", None,
-  r"$1+2\left(\frac34+\frac{9}{16}+\dots\right)=1+2\cdot" + latex(MS("3/4", "3/4")) + "=" +
-  latex(1 + 2 * MS("3/4", "3/4")) + "$ m"),
+  "$" + latex(1 + 2 * MS("3/4", "3/4")) + "$ m"),
  (r"Oldd meg a valós számok halmazán: $1+x+x^2+x^3+\dots=\frac52-x$.", None,
-  r"$\frac{1}{1-x}=\frac52-x$, rendezve $2x^2-7x+3=0$, ebből $x_1=\frac{1}{2}$, $x_2=3$; a sornak csak "
-  r"$\lvert x\rvert\lt1$ esetén van összege, ezért a megoldás csak $x=\frac{1}{2}$"),
+  r"$x=\frac{1}{2}$ (a sor összege csak $|x|<1$ esetén létezik)"),
 ]
 
 JOKER = (r"Akhilleusz tízszer olyan gyorsan fut, mint a teknős, a teknős pedig $100$ m előnnyel indul. Mire "

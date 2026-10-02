@@ -39,6 +39,11 @@ def cipo(pp):
     return abs(sum(pp[i][0] * pp[(i + 1) % n][1] - pp[(i + 1) % n][0] * pp[i][1] for i in range(n))) / F(2)
 
 
+def vegso(vartak, *helyek):
+    # A kifejezés továbbra is függetlenül számol; csak a köztes értékek maradnak ki.
+    return [vartak[i] for i in helyek]
+
+
 TESZT = {
     'alap-2': pt((4, 3)) + pt((-4, -3)) + pt((-4, 3)) + pt((-2, -5)) + pt((2, 5)) + pt((2, -5)),
     'alap-3': [('', fr(tav(P(7, 10), P(-5, 5)))), ('', fr(tav(P(6, -5), P(-2, 1)))),
@@ -61,14 +66,14 @@ TESZT = {
                 ('', cipo([(-3, -2), (3, -2), (4, 1), (0, 4), (-3, 2)]) * 100)],
     'alap-14': [('', fr(Abs(det(P(0, 0), P(6, 1), P(2, 5))) / 2))],
     'alap-15': [('', 'derekszogu'), ('', 6), ('', fr(tav(P(1, 1), P(5, 4))))],
-    'alap-16': [('', 'negativ'), ('', fr(Abs(det(P(0, 0), P(2, 6), P(6, 6))) / 2))],
+    'alap-16': [('', fr(Abs(det(P(0, 0), P(2, 6), P(6, 6))) / 2))],
     'kozep-1': [('', fr(solve((x - 7)**2 + 16 - (x - 1)**2 - 4, x)[0])), ('', 0)],
     'kozep-2': [('', fr(r)) for r in sorted(solve((x + 4)**2 + 25 - 169, x), reverse=True)],
     'kozep-3': pt(2 * P(1, 1) - P(-3, 5)) + pt(2 * P(1, 1) - P(1, 7)),
     'kozep-4': [kerek(tav(P(-7, -3), (P(1, -5) + P(9, 5)) / 2)),
                 ('', fr(tav(P(1, -5), (P(-7, -3) + P(9, 5)) / 2))),
                 ('', fr(tav(P(9, 5), (P(-7, -3) + P(1, -5)) / 2)))],
-    'kozep-5': [('', fr(tav(P(2, 6), P(1, -1))**2)), ('', 'nincs igaza')] + pt((P(1, -1) + P(-5, 7)) / 2),
+    'kozep-5': vegso([('', fr(tav(P(2, 6), P(1, -1))**2)), ('', 'nincs igaza')] + pt((P(1, -1) + P(-5, 7)) / 2), 2, 3),
     'kozep-6': sum((pt((-3, r)) for r in sorted(solve(Abs(det(P(-4, -2), P(2, 4), P(-3, y))) - 42, y),
                                                reverse=True)), []),
     'kozep-7': sum((pt((0, r)) for r in sorted(solve(Abs(det(P(-4, 1), P(2, 5), P(0, y))) - 28, y))), []),
@@ -78,10 +83,10 @@ TESZT = {
     'nehez-1': pt(list(solve([tav(P(x, y), P(-1, -3))**2 - tav(P(x, y), P(-4, 6))**2,
                               tav(P(x, y), P(-1, -3))**2 - tav(P(x, y), P(3, -1))**2], [x, y]).values()))
                + [('', fr(tav(P(-1, 2), P(3, -1))))],
-    'nehez-2': [kerek(tav(P(-1, -2), P(-2, 6)))] + pt((P(-1, -2) + P(5, 2)) / 2)
+    'nehez-2': vegso([kerek(tav(P(-1, -2), P(-2, 6)))] + pt((P(-1, -2) + P(5, 2)) / 2)
                + [kerek(tav((P(-1, -2) + P(5, 2)) / 2, P(-2, 6))),
                   ('', fr(Abs(det(P(-1, -2), P(-2, 6), P(5, 2))) / 2))]
-               + pt((P(-1, -2) + P(-2, 6) + P(5, 2)) / 3),
+               + pt((P(-1, -2) + P(-2, 6) + P(5, 2)) / 3), 1, 2, 4, 5, 6),
     'nehez-3': pt((P(-3, -1) + P(4, 3)) / 2) + [('', cipo([(-3, -1), (2, -2), (4, 3), (-1, 4)]))],
     'nehez-4': [('', fr(r)) for r in sorted(solve(Abs(det(P(0, 0), P(6, 0), P(t, t))) - 30, t), reverse=True)]
                + [('', fr(solve(tav(P(t, t), P(0, 0))**2 - tav(P(t, t), P(6, 0))**2, t)[0])),

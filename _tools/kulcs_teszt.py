@@ -17,6 +17,7 @@ A várt értékeket a `_tools/kulcsok/*.py` modulok írják le:
 
 Támogatott várt típusok: `set` (halmaz), `int`/`float`/`Fraction` (szám),
 `str` (szó szerinti részlet, kisbetűsítve, ékezet- és szóköztűrően).
+Az `sorrend:igen>igen>nem` alak több válaszszó előfordulását és sorrendjét is ellenőrzi.
 """
 from __future__ import annotations
 
@@ -66,7 +67,7 @@ def vegeredmenyek(ut: str) -> dict[str, str]:
 
 
 def _reszek(szoveg: str) -> dict[str, str]:
-    """„a) … ; b) … ; c) …" → {'a': …, 'b': …}. Betűjel nélkül: {'': egész}.
+    r"""„a) … ; b) … ; c) …” → {'a': …, 'b': …}. Betűjel nélkül: {'': egész}.
 
     Csak az „a)"-val kezdődő, egyesével növekvő futam számít részfeladat-jelölésnek.
     Enélkül a képletekben álló zárójeles betű is jelölésnek látszana: az
@@ -157,6 +158,18 @@ def ellenoriz(modul) -> list[str]:
                 allit = 'tautologia' in n and not n.startswith('nem')
                 tenyleges = allit
                 jo = allit == vart
+            elif isinstance(vart, str) and vart.startswith('sorrend:'):
+                tenyleges = _norm(kapott)
+                keresett = [_norm(s) for s in vart[len('sorrend:'):].split('>')]
+                hely = 0
+                jo = bool(keresett) and all(keresett)
+                if jo:
+                    for szo in keresett:
+                        talalat = tenyleges.find(szo, hely)
+                        if talalat < 0:
+                            jo = False
+                            break
+                        hely = talalat + len(szo)
             elif isinstance(vart, set):
                 tenyleges = _halmaz(kapott)
                 jo = tenyleges == vart

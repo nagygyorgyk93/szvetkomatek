@@ -315,7 +315,7 @@ C2 = [
  ("Konvex és konkáv", [
    doboz("definicio", "Konvex és konkáv függvény",
          r'<p>Legyen $f$ deriválható az $I$ intervallumon. $f$ az $I$-n <b>konvex</b> (∪), ha grafikonja minden '
-         r'ottani érintője <b>fölött</b> halad; <b>konkáv</b> (nem konvex, ∩), ha minden érintője <b>alatt</b>. '
+         r'ottani érintőjén vagy <b>fölötte</b> halad; <b>konkáv</b> (∩), ha minden érintőjén vagy <b>alatta</b>. '
          r'(Ekvivalens megfogalmazás: konvexnél bármely két pontját összekötő húr a grafikon fölött van.)</p>',
          hid="def-konvex"),
    IV_C2,
@@ -405,19 +405,19 @@ C3 = [
          r'<li><b>Paritás</b> — páros, páratlan vagy egyik sem (<a href="' + E402 +
          r'tananyag-fuggvenytulajdonsagok.html#def-paros-paratlan">02: paritás</a>).</li>'
          r'<li><b>Aszimptoták</b> — függőleges, vízszintes vagy ferde (<a href="' + E402 +
-         r'tananyag-aszimptotak.html#def-aszimptota">02: aszimptoták</a>); polinomnak nincs.</li>'
+         r'tananyag-aszimptotak.html#def-aszimptota">02: aszimptoták</a>); legalább másodfokú polinomnak nincs egyenes aszimptotája.</li>'
          r'<li><b>Monotonitás és szélsőérték</b> — $f\'$, előjeltáblázat (C1).</li>'
          r'<li><b>Konvexitás és inflexió</b> — $f\'\'$, előjeltáblázat (C2).</li>'
          r'<li><b>Grafikon</b> — a pontok, az aszimptoták és a táblázatok alapján.</li></ol>'
          r'<p>A tanterv (M2) szerint <b>polinomot és racionális törtfüggvényt</b> vizsgálunk.</p>',
          hid="tetel-het-lepes"),
    kviz(r'Miért az értelmezési tartomány a vizsgálat <b>első</b> lépése?',
-        [r'mert a kizárt helyek (pólusok) osztópontok minden táblázatban, és ott keressük a függőleges aszimptotát',
+        [r'mert a kizárt helyek osztópontok a táblázatokban, és ott megvizsgáljuk, van-e függőleges aszimptota',
          r'mert így szokás, a sorrend valójában mindegy',
          r'mert az értelmezési tartományból kiszámolható a derivált',
          r'mert az értelmezési tartomány mindig $\mathbb R$'], 0,
-        jo="✔ Minden további lépés rá épül: a pólus osztópont az előjel-, a monotonitás- és a konvexitás-"
-           "táblázatban is, és ott lehet függőleges aszimptota.",
+        jo="✔ Minden további lépés rá épül: a kizárt hely osztópont az előjel-, a monotonitás- és a "
+           "konvexitástáblázatban is. Ott lyuk vagy függőleges aszimptota lehet.",
         nem="✘ A sorrend nem mindegy: a kizárt helyek nélkül rossz lenne minden táblázat (a pólusnál is válthat "
             "előjelet a függvény), és a függőleges aszimptotát sem találnánk meg."),
  ]),
@@ -494,7 +494,8 @@ C3 = [
                            "<a href=\"tananyag-derivalasi-szabalyok.html#tetel-derivalt-tablazat\">A2</a>"],
        ["<b>szabályok</b>", "$(f\\pm g)'=f'\\pm g'$, $(fg)'=f'g+fg'$, $\\left(\\frac fg\\right)'=\\frac{f'g-fg'}{g^2}$, "
                             "$\\big(f(g(x))\\big)'=f'(g(x))\\,g'(x)$"],
-       ["<b>érintő</b>", "$y-f(x_0)=f'(x_0)(x-x_0)$; normális: meredeksége $-\\frac1{f'(x_0)}$"],
+       ["<b>érintő</b>", "$y-f(x_0)=f'(x_0)(x-x_0)$; normális: ha $f'(x_0)\\ne0$, meredeksége "
+                            "$-\\frac1{f'(x_0)}$; vízszintes érintőnél függőleges"],
        ["<b>monotonitás</b>", "$f'\\gt0$ → nő, $f'\\lt0$ → csökken; szélsőérték: $f'=0$ <b>és</b> előjelváltás"],
        ["<b>görbülés</b>", "$f''\\gt0$ → konvex ∪, $f''\\lt0$ → konkáv ∩; inflexió: $f''=0$ <b>és</b> előjelváltás"],
        ["<b>vizsgálat</b>", "ÉT → zérushely, előjel → paritás → aszimptoták → $f'$ → $f''$ → grafikon"]]),

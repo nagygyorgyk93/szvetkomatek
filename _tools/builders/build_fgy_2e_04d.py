@@ -50,45 +50,39 @@ ALAP = [
  ("Melyik tételt használnád? (Csak a tétel nevét add meg!)",
   ["$\\alpha=40^\\circ$, $\\beta=70^\\circ$, $a=8$",
    "$b=5$, $c=7$, $\\alpha=50^\\circ$", "$a=4$, $b=6$, $c=9$"],
-  ["szinusztétel (ASA/AAS)", "koszinusztétel (SAS)", "koszinusztétel (SSS)"], True),
+  ['szinusztétel',
+   'koszinusztétel',
+   'koszinusztétel'], True),
  ("Oldd meg a háromszöget! $\\alpha=50^\\circ$, $\\beta=60^\\circ$, $a=10$. " + KER,
-  None, "$\\gamma=70^\\circ$; $b=\\dfrac{10\\sin 60^\\circ}{\\sin 50^\\circ}"
-        "\\approx 11{,}31$; $c=\\dfrac{10\\sin 70^\\circ}{\\sin 50^\\circ}\\approx 12{,}27$."),
+  None, '$\\gamma=70^\\circ$; $b\\approx11{,}31$; $c\\approx12{,}27$.'),
  ("Számítsd ki a harmadik oldalt! $b=9$, $c=12$, $\\alpha=40^\\circ$. " + KER, None,
-  "$a^{2}=81+144-2\\cdot 9\\cdot 12\\cdot\\cos 40^\\circ\\approx 59{,}534$, tehát "
-  "$a\\approx 7{,}72$."),
+  '$a\\approx7{,}72$.'),
  ("Számítsd ki a legnagyobb szöget! $a=5$, $b=6$, $c=7$.", None,
-  "A legnagyobb szög a $c=7$ oldallal szemközti: "
-  "$\\cos\\gamma=\\dfrac{25+36-49}{2\\cdot 5\\cdot 6}=\\dfrac{12}{60}=0{,}2$, "
-  "tehát $\\gamma\\approx 78{,}46^\\circ$."),
+  '$\\gamma\\approx78{,}46^\\circ$.'),
  ("Mekkora a háromszög területe? $a=10$, $b=14$, $\\gamma=40^\\circ$.", None,
-  "$T=\\tfrac12\\cdot 10\\cdot 14\\cdot\\sin 40^\\circ\\approx 45{,}00$."),
+  '$T\\approx45{,}00$.'),
  ("Mekkora a háromszög területe? $a=7$, $b=9$, $\\gamma=120^\\circ$.", None,
-  "$T=\\tfrac12\\cdot 7\\cdot 9\\cdot\\sin 120^\\circ=31{,}5\\cdot 0{,}86603"
-  "\\approx 27{,}28$."),
+  '$T=\\dfrac{63\\sqrt3}{4}\\approx27{,}28$.'),
  ("Igaz-e, hogy létezik ilyen háromszög? Indokold!",
   ["$a=3$, $b=4$, $c=10$", "$a=6$, $b=7$, $c=9$"],
   ["<b>Nem</b> — $3+4=7&lt;10$, sérül a háromszög-egyenlőtlenség.",
    "<b>Igen</b> — bármely két oldal összege nagyobb a harmadiknál."], True),
  ("Egy háromszögben $\\alpha=30^\\circ$, $\\beta=45^\\circ$. Mekkora $\\gamma$? "
   "Melyik a leghosszabb oldal?", None,
-  "$\\gamma=105^\\circ$; a leghosszabb oldal a $c$, mert a legnagyobb szöggel van szemközt."),
+  '$\\gamma=105^\\circ$; a leghosszabb oldal $c$.'),
  ("Egy derékszögű háromszögben $\\gamma=90^\\circ$. Mit ad a koszinusztétel?", None,
-  "$c^{2}=a^{2}+b^{2}-2ab\\cos 90^\\circ=a^{2}+b^{2}$ — épp a <b>Pitagorasz-tétel</b>."),
+  '$c^2=a^2+b^2$ (Pitagorasz-tétel).'),
  ("Egy szabályos háromszög oldala $6$. Mekkora a területe?", None,
-  "$T=\\tfrac12\\cdot 6\\cdot 6\\cdot\\sin 60^\\circ=18\\cdot\\tfrac{\\sqrt3}{2}"
-  "=9\\sqrt3\\approx 15{,}59$."),
+  '$T=9\\sqrt3\\approx15{,}59$.'),
  ("Egy háromszög két oldala $8$ és $5$, a közbezárt szög $90^\\circ$. Mekkora a "
   "területe és a harmadik oldala?", None,
-  "$T=\\tfrac12\\cdot 8\\cdot 5\\cdot 1=20$; a harmadik oldal "
-  "$\\sqrt{64+25}=\\sqrt{89}\\approx 9{,}43$."),
+  '$T=20$; a harmadik oldal $\\sqrt{89}\\approx9{,}43$.'),
  ("Mekkora a háromszög köré írt körének sugara, ha $a=12$ és $\\alpha=35^\\circ$? "
   "(Használd a $2R=\\tfrac{a}{\\sin\\alpha}$ alakot.)", None,
-  "$R=\\dfrac{12}{2\\sin 35^\\circ}\\approx 10{,}46$."),
+  '$R\\approx10{,}46$.'),
  ("Egy háromszögben $a=9$, $\\alpha=40^\\circ$, $\\beta=75^\\circ$. Melyik oldal a "
   "leghosszabb? Számold ki!", None,
-  "$\\gamma=65^\\circ$, tehát a legnagyobb szög $\\beta$: a $b$ oldal a leghosszabb. "
-  "$b=\\dfrac{9\\sin 75^\\circ}{\\sin 40^\\circ}\\approx 13{,}53$."),
+  'A $b$ oldal a leghosszabb; $b\\approx13{,}52$.'),
 ]
 
 # ============================== KÖZÉPSZINT ==============================
@@ -97,69 +91,35 @@ KOZEP = [
  ("Oldd meg a háromszöget! $\\alpha=35^\\circ$, $\\beta=80^\\circ$, $a=20$. " + KER,
   None, "$\\gamma=65^\\circ$; $b\\approx 34{,}34$; $c\\approx 31{,}60$."),
  ("Oldd meg a háromszöget! $b=15$, $c=8$, $\\alpha=105^\\circ$. " + KER, None,
-  "$a^{2}=225+64-2\\cdot 15\\cdot 8\\cdot\\cos 105^\\circ\\approx 351{,}116$, tehát "
-  "$a\\approx 18{,}74$. A <b>kisebbik</b> oldal szöge: "
-  "$\\sin\\gamma=\\dfrac{8\\sin 105^\\circ}{18{,}74}$, $\\gamma\\approx 24{,}36^\\circ$, "
-  "és $\\beta\\approx 50{,}64^\\circ$."),
+  '$a\\approx18{,}74$; $\\beta\\approx50{,}64^\\circ$; $\\gamma\\approx24{,}36^\\circ$.'),
  ("Oldd meg a háromszöget! $a=8$, $b=11$, $c=15$. " + KER, None,
-  "A legnagyobb oldal a $c$: $\\cos\\gamma=\\dfrac{64+121-225}{2\\cdot 8\\cdot 11}"
-  "=-\\dfrac{40}{176}\\approx -0{,}22727$, tehát $\\gamma\\approx 103{,}14^\\circ$ "
-  "(<b>tompaszög</b>). Innen $\\alpha\\approx 31{,}29^\\circ$ és "
-  "$\\beta\\approx 45{,}57^\\circ$ (összegük $180^\\circ$ ✔)."),
+  '$\\alpha\\approx31{,}29^\\circ$; $\\beta\\approx45{,}57^\\circ$; $\\gamma\\approx103{,}14^\\circ$.'),
  ("Egy háromszögben $a=7$, $b=10$ és $\\alpha=40^\\circ$. Hány megoldás van? "
   "Számold ki $\\beta$-t!", None,
-  "$\\sin\\beta=\\dfrac{10\\sin 40^\\circ}{7}\\approx 0{,}91820$, tehát "
-  "$\\beta\\approx 66{,}67^\\circ$ <b>vagy</b> $\\beta\\approx 113{,}33^\\circ$ — "
-  "mindkettő ad érvényes háromszöget, mert $\\alpha$ hegyesszög és $a&lt;b$. "
-  "Ez a <b>kétértelmű (SSA) eset</b>."),
- ("Egy torony tövéhez nem tudunk odajutni. Az $A$ pontból a csúcsot $28^\\circ$-os, "
-  "$60$ méterrel közelebbről, a $B$ pontból $43^\\circ$-os emelkedési szögben látjuk. "
-  "Milyen magas a torony?", None,
-  "Az $ABT$ háromszögben a $B$-nél lévő belső szög $180^\\circ-43^\\circ=137^\\circ$, "
-  "tehát $\\angle ATB=15^\\circ$. Szinusztétellel "
-  "$BT=\\dfrac{60\\sin 28^\\circ}{\\sin 15^\\circ}\\approx 108{,}83$ m, végül "
-  "$h=BT\\sin 43^\\circ\\approx 74{,}22$ m."),
- ("Egy hajó a kikötőből $25$ km-t halad, majd $110^\\circ$-kal elfordul, és további "
-  "$35$ km-t tesz meg. Milyen messze van a kikötőtől?", None,
-  "A háromszög belső szöge $180^\\circ-110^\\circ=70^\\circ$: "
-  "$d^{2}=625+1225-2\\cdot 25\\cdot 35\\cdot\\cos 70^\\circ\\approx 1251{,}47$, "
-  "tehát $d\\approx 35{,}38$ km."),
+  'Két megoldás: $\\beta\\approx66{,}67^\\circ$ vagy $\\beta\\approx113{,}33^\\circ$.'),
+ ('Egy torony tövéhez nem tudunk odajutni. Az $A$ és $B$ megfigyelőpont a torony talpával egy vízszintes egyenesen, a torony ugyanazon oldalán van; $B$ $60$ méterrel közelebb áll hozzá. A csúcsot $A$-ból $28^\\circ$-os, $B$-ből $43^\\circ$-os emelkedési szögben látjuk. Milyen magas a torony?', None,
+  '$h\\approx74{,}22$ m.'),
+ ('Egy hajó a kikötőből $25$ km-t halad, majd az eredeti haladási irányához képest $110^\\circ$-kal elfordul, és további $35$ km-t tesz meg. Milyen messze van a kikötőtől?', None,
+  '$d\\approx35{,}38$ km.'),
  ("Egy paralelogramma oldalai $9$ és $6$, a bezárt szög $50^\\circ$. Mekkora a "
   "területe?", None,
-  "A paralelogramma két egybevágó háromszögből áll: "
-  "$T=2\\cdot\\tfrac12\\cdot 9\\cdot 6\\cdot\\sin 50^\\circ=54\\sin 50^\\circ"
-  "\\approx 41{,}37$."),
+  '$T\\approx41{,}37$.'),
  ("Egy háromszög oldalai $13$, $14$, $15$. Mekkora a területe? "
   "(Számold ki előbb az egyik szöget!)", None,
-  "$\\cos\\gamma=\\dfrac{169+196-225}{2\\cdot 13\\cdot 14}=\\dfrac{140}{364}"
-  "\\approx 0{,}38462$, tehát $\\gamma\\approx 67{,}38^\\circ$ és "
-  "$T=\\tfrac12\\cdot 13\\cdot 14\\cdot\\sin\\gamma\\approx 84{,}00$. "
-  "(Héron-képlettel pontosan $84$.)"),
+  'A $15$-ös oldallal szemközti szög $\\gamma\\approx67{,}38^\\circ$; $T=84$.'),
  ("Egy háromszögben $\\alpha=60^\\circ$, $b=8$, $c=5$. Mekkora az $a$ oldal és a "
   "terület?", None,
-  "$a^{2}=64+25-2\\cdot 8\\cdot 5\\cdot 0{,}5=49$, tehát $a=7$ (egész!). "
-  "$T=\\tfrac12\\cdot 8\\cdot 5\\cdot\\sin 60^\\circ=20\\cdot\\tfrac{\\sqrt3}{2}"
-  "=10\\sqrt3\\approx 17{,}32$."),
+  '$a=7$; $T=10\\sqrt3\\approx17{,}32$.'),
  ("Egy rombusz oldala $10$, hegyesszöge $65^\\circ$. Mekkorák az átlói?", None,
-  "A rövidebb átló a hegyesszöggel szemközt: "
-  "$d_{1}^{2}=100+100-200\\cos 65^\\circ\\approx 115{,}47$, $d_{1}\\approx 10{,}75$. "
-  "A hosszabb a tompaszöggel ($115^\\circ$) szemközt: "
-  "$d_{2}^{2}=200-200\\cos 115^\\circ\\approx 284{,}52$, $d_{2}\\approx 16{,}87$."),
+  'A rövidebb átló $\\approx10{,}75$, a hosszabb $\\approx16{,}87$.'),
  ("Egy háromszög két szöge $\\alpha=45^\\circ$ és $\\gamma=60^\\circ$, a köré írt "
   "körének sugara $R=10$. Mekkora az $a$ oldal?", None,
-  "$a=2R\\sin\\alpha=20\\cdot\\tfrac{\\sqrt2}{2}=10\\sqrt2\\approx 14{,}14$."),
- ("Két megfigyelő $500$ méterre áll egymástól, és ugyanazt a léggömböt látja: az egyik "
-  "$40^\\circ$-os, a másik $55^\\circ$-os emelkedési szögben (a léggömb köztük van). "
-  "Milyen magasan van a léggömb?", None,
-  "A háromszög harmadik szöge $180^\\circ-40^\\circ-55^\\circ=85^\\circ$. Az egyik "
-  "ferde távolság $\\dfrac{500\\sin 55^\\circ}{\\sin 85^\\circ}\\approx 411{,}17$ m, "
-  "a magasság ebből $411{,}17\\cdot\\sin 40^\\circ\\approx 264{,}29$ m."),
+  '$a=10\\sqrt2\\approx14{,}14$.'),
+ ('Két megfigyelő $500$ méterre áll egymástól, azonos vízszintes síkon. Ugyanazt a léggömböt látják: az egyik $40^\\circ$-os, a másik $55^\\circ$-os emelkedési szögben. A léggömb a megfigyelőkön átmenő függőleges síkban van, és függőleges vetülete a két megfigyelő közé esik. Milyen magasan van a léggömb?', None,
+  '$h\\approx264{,}28$ m.'),
  ("Egy háromszögben $a=12$, $b=9$, $\\gamma=35^\\circ$. Számold ki a $c$ oldalt, majd "
   "ellenőrizd a szinusztétellel, hogy $\\alpha+\\beta+\\gamma=180^\\circ$!", None,
-  "$c^{2}=144+81-2\\cdot 12\\cdot 9\\cdot\\cos 35^\\circ\\approx 48{,}09$, tehát "
-  "$c\\approx 6{,}93$. A legkisebb oldal a $c$, ezért $\\gamma$ a legkisebb szög ✔ "
-  "$\\sin\\beta=\\dfrac{9\\sin 35^\\circ}{6{,}93}$ → $\\beta\\approx 48{,}18^\\circ$, "
-  "$\\alpha\\approx 96{,}82^\\circ$; az összeg $180^\\circ$ ✔"),
+  '$c\\approx6{,}93$; a szinusztétellel $\\beta\\approx48{,}13^\\circ$, az oldalak alapján $\\alpha\\approx96{,}87^\\circ$; az összeg $180^\\circ$.'),
 ]
 
 # ============================== NEHÉZ SZINT ==============================
@@ -167,45 +127,24 @@ KOZEP = [
 NEHEZ = [
  ("Igazold a koszinusztétellel, hogy ha $a^{2}=b^{2}+c^{2}$, akkor a háromszög "
   "derékszögű!", None,
-  "$a^{2}=b^{2}+c^{2}-2bc\\cos\\alpha$, és ha $a^{2}=b^{2}+c^{2}$, akkor "
-  "$2bc\\cos\\alpha=0$. Mivel $b,c\\neq 0$, csak $\\cos\\alpha=0$ lehet, azaz "
-  "$\\alpha=90^\\circ$ ✔ (Ez a Pitagorasz-tétel megfordítása.)"),
+  'A koszinusztételből $2bc\\cos\\alpha=b^2+c^2-a^2=0$. Mivel $b,c>0$, $\\cos\\alpha=0$, tehát $\\alpha=90^\\circ$.'),
  ("Egy háromszög oldalai $2$, $3$ és $4$. Tompaszögű-e? Indokold számolással!", None,
-  "A legnagyobb oldallal szemközti szög: "
-  "$\\cos\\gamma=\\dfrac{4+9-16}{2\\cdot 2\\cdot 3}=-\\dfrac{3}{12}=-0{,}25$. "
-  "A koszinusz <b>negatív</b>, tehát $\\gamma\\approx 104{,}48^\\circ$ — a háromszög "
-  "<b>tompaszögű</b>."),
+  'Igen: $4^2>2^2+3^2$, tehát a legnagyobb szög tompa.'),
  ("Egy háromszögben $\\alpha=30^\\circ$, $a=5$, $b=8$. Van-e ilyen háromszög? "
   "Hány darab?", None,
-  "$\\sin\\beta=\\dfrac{8\\sin 30^\\circ}{5}=0{,}8$, tehát $\\beta\\approx 53{,}13^\\circ$ "
-  "vagy $\\beta\\approx 126{,}87^\\circ$. Mindkettőnél $\\alpha+\\beta&lt;180^\\circ$, "
-  "tehát <b>két</b> különböző háromszög létezik."),
+  'Igen, két különböző háromszög.'),
  ("Egy szabályos hatszög oldala $4$. Mekkora a leghosszabb átlója és a területe?", None,
-  "A szabályos hatszög hat szabályos háromszögből áll, ezért a leghosszabb átló "
-  "$2\\cdot 4=8$. A terület "
-  "$6\\cdot\\tfrac12\\cdot 4\\cdot 4\\cdot\\sin 60^\\circ=24\\sqrt3\\approx 41{,}57$."),
+  'A leghosszabb átló $8$; $T=24\\sqrt3\\approx41{,}57$.'),
  ("Egy háromszög területe $30$, két oldala $8$ és $10$. Mekkora a közbezárt szög?", None,
-  "$30=\\tfrac12\\cdot 8\\cdot 10\\cdot\\sin\\gamma$, tehát $\\sin\\gamma=0{,}75$: "
-  "$\\gamma\\approx 48{,}59^\\circ$ <b>vagy</b> $\\gamma\\approx 131{,}41^\\circ$ — "
-  "két különböző háromszög adja ugyanazt a területet."),
+  '$\\gamma\\approx48{,}59^\\circ$ vagy $\\gamma\\approx131{,}41^\\circ$.'),
  ("Egy telek háromszög alakú: két oldala $40$ m és $55$ m, a közbezárt szög "
   "$78^\\circ$. Mekkora a harmadik oldal és a telek területe?", None,
-  "$c^{2}=1600+3025-2\\cdot 40\\cdot 55\\cdot\\cos 78^\\circ\\approx 3710{,}0$, tehát "
-  "$c\\approx 60{,}91$ m. $T=\\tfrac12\\cdot 40\\cdot 55\\cdot\\sin 78^\\circ"
-  "\\approx 1076{,}0\\ \\text{m}^{2}$."),
+  '$c\\approx60{,}91$ m; $T\\approx1075{,}96\\ \\text{m}^2$.'),
 ]
 
 JOKER = ("Egy paralelogramma oldalai $8$ és $5$, a hegyesszöge $60^\\circ$. "
          "Mekkorák az átlói, és mit mondhatunk az átlók négyzetösszegéről?",
-         "A <b>rövidebb</b> átló a $60^\\circ$-os szöggel szemközt: "
-         "$d_{1}^{2}=64+25-2\\cdot 8\\cdot 5\\cos 60^\\circ=89-40=49$, tehát $d_{1}=7$. "
-         "A <b>hosszabb</b> a $120^\\circ$-os szöggel szemközt: "
-         "$d_{2}^{2}=89-80\\cos 120^\\circ=89+40=129$, tehát "
-         "$d_{2}=\\sqrt{129}\\approx 11{,}36$. "
-         "Figyeld meg: $d_{1}^{2}+d_{2}^{2}=49+129=178=2(64+25)$ — az átlók "
-         "négyzetösszege mindig az oldalak négyzetösszegének a <b>kétszerese</b> "
-         "(paralelogramma-azonosság), mert a két koszinuszos tag ellentétes előjellel "
-         "kiesik.")
+         '$d_1=7$, $d_2=\\sqrt{129}\\approx11{,}36$; $d_1^2+d_2^2=178=2(8^2+5^2)$, általában is az oldalak négyzetösszegének kétszerese.')
 
 # ============================== OLDAL ==============================
 

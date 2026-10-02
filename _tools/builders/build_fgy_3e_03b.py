@@ -144,11 +144,11 @@ ALAP = [
 
  (f"Melyik sora szerint érdemes kifejteni ezt a determinánst? Számítsd ki! "
   f"$${dm('2&0&0', '5&3&0', '1&4&-1')}$$", None,
-  "Az első sora szerint, mert abban két nulla áll. Az értéke $-6$."),
+  'Az első sora szerint; a determináns $-6$.'),
 
  (f"Melyik oszlopa szerint érdemes kifejteni ezt a determinánst? Számítsd ki! "
   f"$${dm('1&0&2', '3&0&-1', '4&5&6')}$$", None,
-  "A második oszlopa szerint, mert abban csak egy elem nem nulla. Az értéke $35$."),
+  'A második oszlopa szerint; a determináns $35$.'),
 
  ("Döntsd el számolás nélkül, mely determinánsok értéke $0$! Válaszodat indokold!",
   [f"${dm('1&2&3', '0&0&0', '4&5&6')}$", f"${dm('2&-1&4', '2&-1&4', '3&7&1')}$",
@@ -162,46 +162,43 @@ ALAP = [
   ["felcseréljük az első két sorát?",
    "előbb az első és a második, majd a második és a harmadik sorát cseréljük fel?",
    "a harmadik sora helyére az első két sor összegét írjuk?"],
-  ["$-7$, mert egy sorcsere előjelet vált",
-   "$7$, mert két sorcsere kétszer vált előjelet",
-   "$0$, mert a harmadik sor az első kettő összege lesz"]),
+  ['$-7$',
+   '$7$',
+   '$0$']),
 
  # --- B2: a Cramer-szabály (alap 9–16)
  ("Oldd meg a Cramer-szabállyal!" + rs(r"3x+2y&=7", r"5x-y&=3"), None,
-  "$D=-13$, $D_x=-13$, $D_y=-26$, tehát $(x;y)=(1;2)$."),
+  '$(x;y)=(1;2)$.'),
 
  ("Oldd meg a Cramer-szabállyal!" + rs(r"4x-3y&=1", r"2x+5y&=-19"), None,
-  "$D=26$, $D_x=-52$, $D_y=-78$, tehát $(x;y)=(-2;-3)$."),
+  '$(x;y)=(-2;-3)$.'),
 
  ("Írd fel, de ne számítsd ki a $D$, a $D_y$ és a $D_z$ determinánst az alábbi rendszerhez!" +
   rs(r"2x-y+4z&=5", r"x+3z&=-2", r"-3x+2y-z&=7"), None,
   f"$D={dm('2&-1&4', '1&0&3', '-3&2&-1')}$, "
   f"$D_y={dm('2&5&4', '1&-2&3', '-3&7&-1')}$, "
-  f"$D_z={dm('2&-1&5', '1&0&-2', '-3&2&7')}$. "
-  "A második egyenletből hiányzó $y$ együtthatója $0$."),
+  f"$D_z={dm('2&-1&5', '1&0&-2', '-3&2&7')}$."),
 
  ("Oldd meg a Cramer-szabállyal!" + rs(r"x+y+z&=6", r"2x+y+3z&=13", r"-x+5y-2z&=3"), None,
-  "$D=-5$, $D_x=-5$, $D_y=-10$, $D_z=-15$, tehát $(x;y;z)=(1;2;3)$."),
+  '$(x;y;z)=(1;2;3)$.'),
 
  ("Oldd meg a Cramer-szabállyal!" + rs(r"x+2y+3z&=3", r"2x-y+z&=6", r"3x+y-2z&=3"), None,
-  "$D=30$, $D_x=60$, $D_y=-30$, $D_z=30$, tehát $(x;y;z)=(2;-1;1)$."),
+  '$(x;y;z)=(2;-1;1)$.'),
 
  ("Számítsd ki a fő determinánst, és döntsd el, alkalmazható-e a Cramer-szabály!",
   [rs(r"x+2y-z&=3", r"2x+4y-2z&=5", r"x-y+z&=1"),
    rs(r"x+2y-z&=3", r"2x+y-2z&=5", r"x-y+z&=1")],
-  ["$D=0$ (az első két sor arányos), tehát nem alkalmazható",
-   "$D=-6\\ne0$, tehát alkalmazható"], True),
+  ['$D=0$; nem alkalmazható',
+   '$D=-6\\ne0$; alkalmazható'], True),
 
  ("Ebből a rendszerből csak a $z$ értékére vagyunk kíváncsiak. Melyik két determinánst kell "
   "kiszámítanod? Számítsd ki a $z$-t!" + rs(r"2x+y-z&=0", r"x-y+2z&=9", r"3x+2y+z&=7"), None,
-  "Elég a $D$ és a $D_z$: $D=-10$, $D_z=-30$, tehát $z=3$."),
+  '$D$ és $D_z$; $z=3$.'),
 
  ("Maxi egy rendszer megoldásakor ezt írta: „$D=0$ és $D_x=0$, tehát "
   "$x=\\frac{D_x}{D}=\\frac{0}{0}=1$.” Mi a hiba? Mit tudunk ilyenkor a rendszer megoldásairól?",
   None,
-  "Nullával nem osztunk, a $\\frac{0}{0}$ nem szám. Ha $D=0$, a Cramer-szabály nem "
-  "alkalmazható. A rendszer ilyenkor határozatlan vagy ellentmondásos, és hogy melyik, azt a "
-  "Gauss-eljárás dönti el."),
+  'A $0/0$ nem szám, így a Cramer-szabály nem alkalmazható. A rendszer határozatlan vagy ellentmondásos lehet; ezt Gauss-eljárással kell eldönteni.'),
 ]
 
 # ============================== KÖZÉPSZINT ==============================
@@ -224,34 +221,31 @@ KOZEP = [
  (f"Számítsd ki, és vond össze a kapott kifejezést! Mikor lehet az értéke $0$, ha $x$ és $y$ "
   f"valós számok? "
   f"$${dm('x-y&-2', 'xy&x-y')}$$", None,
-  "$x^2+y^2$. Ez csak akkor $0$, ha $x=0$ és $y=0$, mert két négyzet összege, és egyik tag sem negatív."),
+  '$x^2+y^2$; csak $x=y=0$ esetén nulla.'),
 
  # --- B2 (közép 5–11)
  ("Rendezd a rendszert, majd oldd meg a Cramer-szabállyal!" + rs(r"2x+3y&=z+1", r"3x+2z&=2y-1", r"4x+y&=3z-11"), None,
-  "Rendezve $2x+3y-z=1$, $3x-2y+2z=-1$, $4x+y-3z=-11$; $D=48$, $D_x=-48$, $D_y=96$, $D_z=144$, tehát $(x;y;z)=(-1;2;3)$."),
+  'Rendezve: $2x+3y-z=1$, $3x-2y+2z=-1$, $4x+y-3z=-11$; megoldás: $(x;y;z)=(-1;2;3)$.'),
 
  ("Oldd meg a Cramer-szabállyal!" + rs(r"2x+y+z&=2", r"4x-3y+z&=7", r"6x+2y-z&=-1"), None,
-  "$D=38$, $D_x=19$, $D_y=-38$, $D_z=76$, tehát $(x;y;z)=\\left(\\frac{1}{2};\\ -1;\\ 2\\right)$."),
+  '$(x;y;z)=\\left(\\dfrac12;\\ -1;\\ 2\\right)$.'),
 
  ("Oldd meg a rendszert a Gauss-eljárással és a Cramer-szabállyal is! Melyik volt számodra "
   "kevesebb munka, és miért?" + rs(r"x+y+z&=2", r"2x-y+z&=5", r"x+2y-z&=-3"), None,
-  "$(x;y;z)=(1;-1;2)$; a Cramer-szabályhoz $D=7$, $D_x=7$, $D_y=-7$, $D_z=14$. Itt jellemzően a "
-  "Gauss-eljárás a rövidebb: az első egyenletben minden együttható $1$, így két lépésben "
-  "lépcsős alakot kapunk, a Cramer-szabályhoz viszont négy harmadrendű determináns kell."),
+  '$(x;y;z)=(1;-1;2)$; itt a Gauss-eljárás rövidebb, mert a Cramer-szabályhoz négy harmadrendű determináns kell.'),
 
  ("Mindkét rendszer fő determinánsa $0$. Döntsd el a Gauss-eljárással, melyik határozatlan "
   "és melyik ellentmondásos! A határozatlannál add meg a megoldásokat a $z=t$ jelöléssel.",
   [rs(r"x+y+2z&=3", r"2x-y+z&=3", r"4x+y+5z&=9"),
    rs(r"x+y+2z&=3", r"2x-y+z&=3", r"4x+y+5z&=8")],
-  ["határozatlan (a harmadik egyenlet $2S_1+S_2$): $(x;y;z)=(2-t;\\ 1-t;\\ t)$",
-   "ellentmondásos: $S_3-2S_1-S_2$ után $0=-1$"], True),
+  ['Határozatlan: $(x;y;z)=(2-t;\\ 1-t;\\ t)$, $t\\in\\mathbb{R}$',
+   'Ellentmondásos: nincs megoldás'], True),
 
  ("Oldd meg a Cramer-szabállyal!" + rs(r"6x+5y&=6", r"x-2y&=-\frac{7}{10}"), None,
-  "$D=-17$, $D_x=-\\frac{17}{2}$, $D_y=-\\frac{51}{5}$, tehát "
-  "$(x;y)=\\left(\\frac{1}{2};\\ \\frac{3}{5}\\right)$."),
+  '$(x;y)=\\left(\\dfrac12;\\ \\dfrac35\\right)$.'),
 
  ("Rendezd a rendszert, majd oldd meg a Cramer-szabállyal!" + rs(r"3x&=2y+4", r"4y-2&=x"), None,
-  "Rendezve $3x-2y=4$ és $-x+4y=2$; $D=10$, $D_x=20$, $D_y=10$, tehát $(x;y)=(2;1)$."),
+  'Rendezve: $3x-2y=4$, $-x+4y=2$; $(x;y)=(2;1)$.'),
 
  ("Egy háromismeretlenes rendszerről ezt tudjuk: $D=-12$, $D_x=24$, $D_y=0$, $D_z=-36$.",
   ["Add meg a rendszer megoldását!",
@@ -268,8 +262,7 @@ NEHEZ = [
   "$1$ kifliért, $3$ pogácsáért és $2$ perecért $400$ dinárt fizetett. Mennyibe kerül egy perec? "
   "Használd a Cramer-szabályt, és csak azokat a determinánsokat számítsd ki, amelyekre "
   "valóban szükség van!", None,
-  "Ha $x$ a kifli, $y$ a pogácsa, $z$ a perec ára, elég a $D$ és a $D_z$: $D=-11$, "
-  "$D_z=-990$, tehát egy perec $90$ dinár."),
+  '$D=-11$, $D_z=-990$; egy perec $90$ dinár.'),
 
  (f"Oldd meg az egyenletet! $${dm('-1&4&x+1', '2&-1&x-3', '1&x&-1')}=0$$", None,
   "$x=-2$ vagy $x=\\frac{2}{3}$"),
@@ -280,18 +273,15 @@ NEHEZ = [
    "A megoldások közül melyikben lesz $x=y$?",
    "Mire kellene kicserélni a harmadik egyenlet jobb oldalán álló $7$-et, hogy a rendszernek "
    "ne legyen megoldása?"],
-  ["$D=0$ (a harmadik sor az első kétszeresének és a második sornak az összege), tehát a "
-   "Cramer-szabály nem alkalmazható",
-   "végtelen sok: $(x;y;z)=(3-t;\\ t-1;\\ t)$",
-   "$3-t=t-1$, tehát $t=2$: $(x;y;z)=(1;1;2)$",
-   "bármely $7$-től különböző számra, például $8$-ra: ekkor $S_3-2S_1-S_2$ után $0=1$"]),
+  ['$D=0$; a Cramer-szabály nem alkalmazható',
+   'Végtelen sok: $(x;y;z)=(3-t;\\ t-1;\\ t)$, $t\\in\\mathbb{R}$',
+   '$(x;y;z)=(1;1;2)$',
+   'Bármely $7$-től különböző számra, például $8$-ra']),
 
  ("Egy másodrendű determináns négy eleme az $1$, a $2$, a $3$ és a $4$, mindegyik "
   "pontosan egyszer. Mekkora a determináns lehető legnagyobb és lehető legkisebb értéke? Indokold!",
   None,
-  "A legnagyobb érték $10$, például $\\begin{vmatrix}4&1\\\\2&3\\end{vmatrix}=4\\cdot3-1\\cdot2=10$: a "
-  "főátlóba a két legnagyobb, a mellékátlóba a két legkisebb szám kerül. A legkisebb érték "
-  "$-10$, a két sor felcserélésével."),
+  'Legnagyobb $10$: például $\\begin{vmatrix}4&1\\\\2&3\\end{vmatrix}=10$; legkisebb $-10$ a két sor cseréjével.'),
 ]
 
 JOKER = (f"Maxi szerint a Sarrus-szabály $4\\times4$-es determinánsra is működik: mellé írja az "
