@@ -8,7 +8,7 @@ A 32. feladathoz (nincs forraskulcs) osszesito eredmeny + SVG-grafikon keszul (f
 import sys, os, re, math, random
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import tiltott
-from fgy_common import cards, joker_card, oldal, w
+from fgy_common import _one, cards, joker_card, oldal, w
 from tananyag_common import svg_fuggvenyek
 import sympy
 from sympy import (Rational as Q, symbols, limit, oo, latex, sympify, S, simplify, fraction, together, solve, diff,
@@ -482,7 +482,7 @@ A_II = [
    r"maximum az $x=-1$ helyen ($f'$ ott $+$-ból $-$-ba vált), minimum az $x=2$ helyen"]),
  (r"Melyik görbedarab konvex és melyik konkáv? Figyelj: a monotonitás nem számít!" + svgwrap(SVG_A7), None,
   r"konvex (felfelé nyíló): <b>B</b> és <b>C</b>; konkáv (lefelé nyíló): <b>A</b> és <b>D</b>"),
- ("Az $f$ függvény második deriváltja adott. Hol konvex, hol konkáv $f$, és hol van inflexiós helye?",
+ ("<b>Középszintű átvezetés.</b> Az $f$ függvény második deriváltja adott. Hol konvex, hol konkáv $f$, és hol van inflexiós helye?",
   [r"$f''(x)=6x-18$", r"$f''(x)=12x^2-12$", r"$f''(x)=4$"],
   [r"konkáv: $(-\infty;\,3)$; konvex: $(3;\,+\infty)$; inflexiós hely: $x=3$",
    r"konvex: $(-\infty;\,-1)$ és $(1;\,+\infty)$; konkáv: $(-1;\,1)$; inflexiós helyek: $x=-1$ és $x=1$",
@@ -680,9 +680,12 @@ print("sympy önteszt: OK")
 
 
 # ================================================================ OLDALAK
-def lista(A, K, N, J):
+def lista(A, K, N, J, kozep_atvezetes=()):
+    # A végleges A-horgony megmarad, de az összetettebb átvezető feladat közép XP-t ér.
+    alap_kartyak = ("\n".join(_one("alap", i, "kozep" if i in kozep_atvezetes else "alap", it)
+                              for i, it in enumerate(A, 1)) if kozep_atvezetes else cards(A, "alap", "alap"))
     return "\n".join([
-        '    <h2 id="alap">🟢 Alapszint — Zöldfülű</h2>\n' + cards(A, "alap", "alap"),
+        '    <h2 id="alap">🟢 Alapszint — Zöldfülű</h2>\n' + alap_kartyak,
         '    <h2 id="kozep">🟡 Középszint — X-Force</h2>\n' + cards(K, "kozep", "kozep"),
         '    <h2 id="nehez">🔴 Nehéz szint — Maximális erőbedobás</h2>\n' + cards(N, "nehez", "nehez"),
         '    <h2 id="joker">🃏 Joker</h2>\n' + joker_card(J[0], J[1], J[2])])
@@ -711,7 +714,7 @@ if __name__ == "__main__":      # a build_egyeb_4e_03 a segédeket importálja, 
                h1="A függvény deriváltja — Zsoldos-lista II.: függvényvizsgálat", itt="Zsoldos-lista II. — Függvényvizsgálat",
                alcim="Monotonitás és szélsőérték, konvexitás és inflexiós pont, teljes függvényvizsgálat grafikonnal. A "
                      "végeredmény minden feladatnál lenyitható — a 32-es típusú vizsgálatoknál ábrával!",
-               sections_html=lista(_prim(A_II), _prim(K_II), _prim(N_II), JOKER_II), ossz_nev="Csalópapírt",
+               sections_html=lista(_prim(A_II), _prim(K_II), _prim(N_II), JOKER_II, kozep_atvezetes={8}), ossz_nev="Csalópapírt",
                prev="feladatok-derivalas.html", prevc="Zsoldos-lista I. — Deriválás",
                nxt="feladatok-hazi.html", nxtc="I.V.H. Kihallgató Terem — Vészterem")
     print("✓", os.path.basename(u1), "| I.", len(A_I), len(K_I), len(N_I), "+ Joker")
