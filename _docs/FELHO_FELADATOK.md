@@ -61,7 +61,9 @@ kombinatorika/valószínűség), témakörönként 1–4 szimuláció.
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ☑ 10 szimuláció 10 lapon (a 8 témakörből 5-ben: 02, 05, 06, 07, 08; a 01, 03, 04 témakörhöz nincs telefonon használható, tantervhez illő applet) — 2026-09-28 | ☐ | ☐ | ◐ pilot: 4e/05 (a+b)³-kocka (1 szimuláció) |
+| ☑ 10 szimuláció 10 lapon (a 8 témakörből 5-ben: 02, 05, 06, 07, 08; a 01, 03, 04 témakörhöz nincs telefonon használható, tantervhez illő applet) — 2026-09-28 | ◐ 4 szimuláció 4 lapon; mind a 35 egység M2-áttekintése helyi ágon — 2026-10-02 | ☐ | ◐ pilot: 4e/05 (a+b)³-kocka (1 szimuláció) |
+
+**2e M2 (2026-10-02, helyi ág):** négy GeoGebra-szimuláció került be a komplex összeadás, a másodfokú függvény, az inverz függvény és az egységkörből kapott szinusz/koszinusz grafikon oldalára. A 35 egység soronkénti döntése: [`M2_2e_attekintes.md`](M2_2e_attekintes.md). A vizsgált logaritmus-alapcsúszkás jelöltek 0-t vagy 1-et is engedtek, ezért nem kerültek fel. `media.py --online`: 259/259; `media_proba.py`: 4/4 betöltés 390 px-en, képek átnézve. Kánon 65/0, linkek 310/0, sáv tiszta, kulcsteszt 4499/4499, regresszió 4499/4499 = 100%, a négy érintett lap 360/390/1280 px-en rendben. A jsdom-réteg, a nyomtatási látvány és a valódi képernyőolvasós próba nem futott.
 
 **Felhőben (2026-09-28):** a jelöltek adatlapja és mérete az `api.geogebra.org`-ról jön, a próba
 (`_tools/media_proba.py`) a `www.geogebra.org`-ot is kéri. Minden jelöltet 390 px-en és szélső
