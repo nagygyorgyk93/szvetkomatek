@@ -349,8 +349,8 @@ A_I = [
    r"Mikor éri el a $14\ \tfrac{\text{m}}{\text{s}}$ sebességet?",
    r"Egy medencében a víz magassága $t$ perc múlva $h(t)=120-3t+0{,}02t^2$ cm. Milyen ütemben változik a "
    r"vízszint $t=10$ perckor?"],
-  [r"$\dfrac{s(3)}{3}=\dfrac{21}{3}=7\ \tfrac{\text{m}}{\text{s}}$", r"$v(t)=s'(t)=2t+4$, $v(3)=10\ \tfrac{\text{m}}{\text{s}}$",
-   r"$2t+4=14$, $t=5$ s-kor", r"$h'(t)=-3+0{,}04t$, $h'(10)=-2{,}6$: percenként $2{,}6$ cm-t csökken"]),
+  [r"$7\ \tfrac{\text{m}}{\text{s}}$", r"$10\ \tfrac{\text{m}}{\text{s}}$",
+   r"$t=5$ s-kor", r"$h'(10)=-2{,}6$ cm/perc: a vízszint csökken"]),
  DER("Deriváld az összetett függvényeket!", [("(3*x-4)**4", "12*(3*x-4)**3"), ("(x**2-x+1)**5", "(10*x-5)*(x**2-x+1)**4"),
      ("sqrt(2*x-5)", "1/sqrt(2*x-5)"), ("sqrt(1-x**2)", "-x/sqrt(1-x**2)")]),
  DER("Deriváld az összetett függvényeket!", [("2*sqrt(3*x-2)", "3/sqrt(3*x-2)"), ("Rational(3,4)*cos(4*x)", "-3*sin(4*x)"),
@@ -364,9 +364,9 @@ A_I = [
   [r"Írd fel a $v(t)$ sebességet és az $a(t)$ gyorsulást!", r"Mikor áll meg a test (mikor $v(t)=0$)?",
    r"Mekkora a gyorsulás $t=2$ s-kor, és mit jelent ez?"],
   [r"$v(t)=3t^2-12t+9$ $\tfrac{\text{m}}{\text{s}}$, $a(t)=6t-12$ $\tfrac{\text{m}}{\text{s}^2}$",
-   r"$3(t-1)(t-3)=0$: $t=1$ s-kor és $t=3$ s-kor — ott pillanatnyilag megáll és irányt vált",
-   r"$a(2)=0$: ebben a pillanatban a sebesség változási üteme $0$; a sebesség itt a legkisebb, $v(2)=-3\ "
-   r"\tfrac{\text{m}}{\text{s}}$ — a test ekkor halad a leggyorsabban visszafelé"]),
+   r"$t=1$ s-kor és $t=3$ s-kor; mindkét helyen irányt vált",
+   r"$a(2)=0\ \tfrac{\text{m}}{\text{s}^2}$: a sebesség pillanatnyi változási üteme $0$; itt $v(2)=-3\ "
+   r"\tfrac{\text{m}}{\text{s}}$, a visszafelé haladás a leggyorsabb"]),
 ]
 
 K_I = [
@@ -396,12 +396,11 @@ K_I = [
  (r"Legyen $f(x)=x^3-12x+1$.",
   [r"Mely pontokban párhuzamos a grafikon érintője az $y=15x$ egyenessel? Írd fel ezeket az érintőket!",
    r"Hol vízszintes az érintő? Írd fel ezeket az érintőket is!"],
-  [r"$f'(x)=3x^2-12=15$, $x=\pm3$: a $(3;\,-8)$ pontban $y=15x-53$, a $(-3;\,10)$ pontban $y=15x+55$",
-   r"$3x^2-12=0$, $x=\pm2$: $y=-15$ (a $(2;\,-15)$ pontban) és $y=17$ (a $(-2;\,17)$ pontban)"]),
+  [r"a $(3;\,-8)$ pontban $y=15x-53$, a $(-3;\,10)$ pontban $y=15x+55$",
+   r"a $(2;\,-15)$ pontban $y=-15$, a $(-2;\,17)$ pontban $y=17$"]),
  ("Írd fel a törtfüggvény grafikonjának érintőjét az adott helyen!",
   [r"$f(x)=\dfrac{x+3}{x-1}$, $x_0=3$", r"$f(x)=\dfrac{x}{x^2+1}$, $x_0=0$"],
-  [r"$f(3)=3$, $f'(x)=-\dfrac{4}{(x-1)^2}$, $f'(3)=-1$: $y=-x+6$",
-   r"$f(0)=0$, $f'(x)=\dfrac{1-x^2}{(x^2+1)^2}$, $f'(0)=1$: $y=x$"]),
+  [r"$y=-x+6$", r"$y=x$"]),
  DER("Deriváld az összetett függvényeket!", [("root(1-3*x,3)", "-1/root((1-3*x)**2,3)"),
      ("root(2*x**3-3*x**2,3)", "(2*x**2-2*x)/root((2*x**3-3*x**2)**2,3)"), ("cos(1/x)", "sin(1/x)/x**2"),
      ("cot(1/x)", "1/(x**2*sin(1/x)**2)")]),
@@ -435,14 +434,12 @@ N_I = [
  ("Érintő külső pontból és érintési feltétel.",
   [r"Írd fel az $f(x)=x^2-2x+4$ parabola azon érintőit, amelyek átmennek az origón!",
    r"Melyik $c$ értékre érinti az $y=3x+c$ egyenes az $f(x)=x^2+x$ grafikonját?"],
-  [r"az $a$ helyen húzott érintő: $y=(2a-2)(x-a)+a^2-2a+4$; az origón átmegy, ha $4-a^2=0$, $a=\pm2$: $y=2x$ "
-   r"(a $(2;\,4)$ pontban) és $y=-6x$ (a $(-2;\,12)$ pontban)",
-   r"$f'(x)=2x+1=3$, $x=1$, $f(1)=2$, tehát $2=3+c$, $c=-1$"]),
+  [r"$y=2x$ és $y=-6x$",
+   r"$c=-1$"]),
 ]
 JOKER_I = (r"🃏 <b>Véd Vilmos rejtvénye.</b> Adj meg egy olyan $f$ függvényt, amelynek a deriváltja $f'(x)=2x$, és a "
            r"grafikonja átmegy az $(1;\,5)$ ponton! Hány ilyen függvény van?",
-           r"$f(x)=x^2+4$ — pontosan egy. (Az összes $f'(x)=2x$ deriváltú függvény $x^2+C$ alakú; az $(1;\,5)$ pont "
-           r"$C=4$-et adja. Ez már a 04. témakör, az integrál előszele.)", None)
+           r"$f(x)=x^2+4$; pontosan egy ilyen függvény van.", None)
 
 # ================================================================ ZSOLDOS-LISTA II.
 _fA6 = lambda t: t * t - t - 2

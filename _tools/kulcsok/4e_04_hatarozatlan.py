@@ -65,9 +65,9 @@ TESZT = {
     'alap-2': P(lambda x: 3 * x ** 2 - 4 * x + 1, lambda x: x ** 3 - 2 * x ** 2 + x - 5, 'igen')
     + P(lambda x: 1 / x ** 2, lambda x: 7 - 1 / x, 'nem')
     + P(lambda x: (3 * x + 2) ** 3, lambda x: (3 * x + 2) ** 4 / 12, '3-mal', 12),
-    'alap-3': P(lambda x: 3 * x ** 2 - 6 * x, lambda x: x ** 3 - 3 * x ** 2 + 5, 5, 5)
-    + P(lambda x: 2 * x - 4 * x ** 3, lambda x: x ** 2 - x ** 4 + 3, 3, 3)
-    + P(lambda x: 2 * x - 2 / x ** 3, lambda x: x ** 2 + 1 / x ** 2, 0),
+    'alap-3': P(lambda x: 3 * x ** 2 - 6 * x, lambda x: x ** 3 - 3 * x ** 2 + 5, 'F(x)=x^3-3x^2+5')
+    + P(lambda x: 2 * x - 4 * x ** 3, lambda x: x ** 2 - x ** 4 + 3, 'F(x)=x^2-x^4+3')
+    + P(lambda x: 2 * x - 2 / x ** 3, lambda x: x ** 2 + 1 / x ** 2, 'F(x)=x^2+ {1}{x^2}'),
     'alap-4': P(lambda x: 1 / x ** 3, lambda x: -1 / (2 * x ** 2), 2) + P(lambda x: 4 / x ** 5, lambda x: -1 / x ** 4, 4)
     + P(lambda x: x * sq(x), lambda x: 2 * x ** 2 * sq(x) / 5, 5)
     + P(lambda x: cb(x ** 2), lambda x: 3 * x * cb(x ** 2) / 5, 3, 5)
@@ -104,12 +104,14 @@ TESZT = {
     'alap-12': P(lambda x: (4 * x - 1) ** 5, lambda x: (4 * x - 1) ** 6 / 24, 'hibás', 24)
     + P(lambda x: e(-4 * x), lambda x: -e(-4 * x) / 4, 4)
     + P(lambda x: 2 / (3 * x - 1), lambda x: 2 * ln(abs(3 * x - 1)) / 3, F(2, 3), 3),
-    'kozep-1': P(lambda x: e(x) + 2 * x, lambda x: e(x) + x ** 2 - 2, -1, -2)
-    + P(lambda x: s(x) + c(x), lambda x: s(x) - c(x) + 1, 1, 2, 1)
-    + P(lambda x: 1 / c(x) ** 2 - 1 / s(x) ** 2, lambda x: tg(x) + ctg(x), 4, 2, 2)
-    + P(lambda x: 3 / x ** 2 - 2 / x ** 3, lambda x: -3 / x + 1 / x ** 2 + 6, -2, 4, 6),
-    'kozep-2': P(lambda x: e(x), lambda x: e(x) + x - 2, -1, -2, -2, rend=2)
-    + P(lambda x: 6 * x - 4, lambda x: x ** 3 - 2 * x ** 2 + x, 0, 3, -2, 2, rend=2),
+    'kozep-1': P(lambda x: e(x) + 2 * x, lambda x: e(x) + x ** 2 - 2, 'F(x)=e^x+x^2-2')
+    + P(lambda x: s(x) + c(x), lambda x: s(x) - c(x) + 1, 'F(x)= x- x+1')
+    + P(lambda x: 1 / c(x) ** 2 - 1 / s(x) ** 2, lambda x: tg(x) + ctg(x),
+        'F(x)= {tg}x+ {ctg}x')
+    + P(lambda x: 3 / x ** 2 - 2 / x ** 3, lambda x: -3 / x + 1 / x ** 2 + 6,
+        'F(x)=- {3}{x}+ {1}{x^2}+6'),
+    'kozep-2': P(lambda x: e(x), lambda x: e(x) + x - 2, 'f(x)=e^x+x-2', rend=2)
+    + P(lambda x: 6 * x - 4, lambda x: x ** 3 - 2 * x ** 2 + x, 'f(x)=x^3-2x^2+x', rend=2),
     'kozep-3': P(lambda x: (x + 1) * (x ** 2 - 3) / (3 * x ** 2), lambda x: x ** 2 / 6 + x / 3 - ln(abs(x)) + 1 / x, 2, 6, 3, 1)
     + P(lambda x: (sq(x) + 1) * (x - sq(x) + 1), lambda x: 2 * x ** 2 * sq(x) / 5 + x, 2, 2, 5)
     + P(lambda x: (x ** 2 + 1) ** 2, lambda x: x ** 5 / 5 + 2 * x ** 3 / 3 + x, 5, 5, 2, 3, 3)
@@ -146,14 +148,18 @@ TESZT = {
     + P(lambda x: (2 - ln(x)) / x, lambda x: 2 * ln(x) - ln(x) ** 2 / 2, 2, 2, 2)
     + P(lambda x: sq(1 + ln(x)) / x, lambda x: 2 * (1 + ln(x)) * sq(1 + ln(x)) / 3, 2, 1, 1, 3)
     + P(lambda x: 1 / (x * ln(x) ** 2), lambda x: -1 / ln(x), 1),
-    'nehez-1': P(lambda x: x ** 3 * sq(x ** 4 + 1), lambda x: (x ** 4 + 1) * sq(x ** 4 + 1) / 6, 4, 1, 4, 1, 6, 4, 1, 4, 3)
+    'nehez-1': P(lambda x: x ** 3 * sq(x ** 4 + 1), lambda x: (x ** 4 + 1) * sq(x ** 4 + 1) / 6,
+                 't=x^4+1', '1/4 t', 6)
     + P(lambda x: x * sq(x - 1), lambda x: 2 * (x - 1) ** 2 * sq(x - 1) / 5 + 2 * (x - 1) * sq(x - 1) / 3,
-        2, 1, 2, 1, 5, 2, 1, 1, 3, -1, 1, 1)
-    + P(lambda x: s(2 * x) / (1 + s(x) ** 2), lambda x: ln(1 + s(x) ** 2), 1, 2, 1, 2, 2, 2)
-    + P(lambda x: x / sq(x + 1), lambda x: 2 * (x + 1) * sq(x + 1) / 3 - 2 * sq(x + 1), 2, 1, 1, 3, 2, 1, 1, -1, -1),
+        't=x-1', '(t+1) t')
+    + P(lambda x: s(2 * x) / (1 + s(x) ** 2), lambda x: ln(1 + s(x) ** 2),
+        't=1+ ^2x', '{dt}{t}')
+    + P(lambda x: x / sq(x + 1), lambda x: 2 * (x + 1) * sq(x + 1) / 3 - 2 * sq(x + 1),
+        't=x+1', '{t-1}{ t}'),
     'nehez-2': P(lambda x: s(x) ** 3, lambda x: -c(x) + c(x) ** 3 / 3, 3, 3)
     + P(lambda x: c(x) ** 5, lambda x: s(x) - 2 * s(x) ** 3 / 3 + s(x) ** 5 / 5, 2, 3, 3, 5, 5)
     + P(lambda x: s(2 * x) / c(x) ** 3, lambda x: 2 / c(x), 2)
     + P(lambda x: tg(x) ** 3, lambda x: tg(x) ** 2 / 2 + ln(abs(c(x))), 2, 2),
-    'joker': P(lambda x: x * e(-x ** 2), lambda x: -e(-x ** 2) / 2, 2, F(-1, 2), 2, 2, -2, -2, 2),
+    'joker': P(lambda x: x * e(-x ** 2), lambda x: -e(-x ** 2) / 2,
+               '-1/2 e^{-x^2}+C', 'nem elemi'),
 }

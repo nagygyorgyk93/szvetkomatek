@@ -305,34 +305,33 @@ HA_ = [
  FG.HI("Lineáris belső függvény:", [("(6*x+5)**3", "(6*x+5)**4/24"), ("exp(4*x-1)", "exp(4*x-1)/4"),
                                     ("sin(2*x+1)", "-cos(2*x+1)/2")]),
  (r"Határozd meg az $f(x)=4x-3$ függvénynek azt az $F$ primitív függvényét, amelynek grafikonja átmegy az $M(2;\,7)$ "
-  r"ponton!", None, r"$F(x)=2x^2-3x+C$, $F(2)=8-6+C=2+C=7$, így $C=5$: $F(x)=2x^2-3x+5$"),
+  r"ponton!", None, r"$F(x)=2x^2-3x+5$"),
  FG.HA("Számítsd ki a Newton–Leibniz-formulával!",
        [("3*x**2+2*x", 0, 2, 12), ("2/sqrt(x)", 1, 4, 4), ("sin(x)+1", 0, "pi", "2+pi", r"2+\pi")]),
  (r"Számítsd ki az $y=3x^2+1$ függvény grafikonja és az $x$ tengely közötti síkidom területét az $[1;\,2]$ "
   r"intervallumon!", None,
-  r"$T=\displaystyle\int_1^2\left(3x^2+1\right)dx=\left[x^3+x\right]_1^2=10-2=8$" + H5[2]),
+  r"$T=8$" + H5[2]),
 ]
 HK_ = [
  FG.HI(r"Az $\dfrac{f'}{f}$ és az $\bigl[f(x)\bigr]^n\cdot f'(x)$ minta — ha kell, igazítsd a szorzót!",
        [("6*x**2/(x**3+5)", "2*log(Abs(x**3+5))", r"2\ln\left|x^{3}+5\right|"), ("x*(x**2+4)**3", "(x**2+4)**4/8"),
         ("cos(x)*sin(x)**4", "sin(x)**5/5")]),
  (r"Számítsd ki helyettesítéssel, a határokat is átírva: $\displaystyle\int_0^2x\left(x^2+1\right)^2dx$!", None,
-  r"$t=x^2+1$, $dt=2x\,dx$; $x=0\Rightarrow t=1$, $x=2\Rightarrow t=5$: $\dfrac12\displaystyle\int_1^5t^2\,dt=\dfrac12\cdot\dfrac{125-1}{3}=\dfrac{62}{3}$"),
+  r"$t=x^2+1$, az új határok $1$ és $5$: $\dfrac12\displaystyle\int_1^5t^2\,dt=\dfrac{62}{3}$"),
  (r"Az $f(x)=3-3x^2$ függvény a $[0;\,2]$ intervallumon előjelet vált. Számítsd ki a grafikon és az $x$ tengely "
   r"közötti síkidom területét, és hasonlítsd össze a $\displaystyle\int_0^2f(x)\,dx$ értékével!", None,
-  r"zérushely: $1$; " + FG._resz(HK3[1]) + r"; $T=2+4=6$, míg $\displaystyle\int_0^2f\,dx=-2$" + HK3[2]),
+  r"$T=6$, míg $\displaystyle\int_0^2f\,dx=-2$" + HK3[2]),
 ]
 HN_ = [
  (r"Számítsd ki az $y=5-x^2$ és az $y=x^2-2x+1$ parabolák által határolt síkidom területét!", None,
-  r"metszéspontok: $x=-1$ és $x=2$; $T=\displaystyle\int_{-1}^{2}\left(4+2x-2x^2\right)dx=9$" + HN1[2]),
+  r"$T=9$" + HN1[2]),
  ("Görbe és tengelyek, görbe és egyenes.",
   [r"Számítsd ki az $y=2-\dfrac{x^3}{4}$ görbe és a két koordinátatengely által határolt síkidom területét (az első "
    r"síknegyedben)!",
    r"Számítsd ki az $y=x^2-6x+8$ parabola és az $y=x-2$ egyenes által határolt síkidom területét! (Vigyázz: a síkidom "
    r"egy része az $x$ tengely alatt van.)"],
-  [r"zérushely: $2$; $T=\displaystyle\int_0^2\left(2-\dfrac{x^3}{4}\right)dx=4-1=3$" + HN2[2],
-   r"metszéspontok: $x=2$ és $x=5$; felül az egyenes: $T=\displaystyle\int_2^5\left(-x^2+7x-10\right)dx=\dfrac{9}{2}$ — "
-   r"a felső − alsó különbség a tengely alatt is érvényes" + HN3[2]]),
+  [r"$T=3$" + HN2[2],
+   r"$T=\dfrac{9}{2}$" + HN3[2]]),
 ]
 # a saját számok önellenőrzése
 for kap, vart in [(H5[0], 8), (HK3[0], 6), (integrate(Ex("3-3*x**2"), (x, 0, 2)), -2), (HN1[0], 9), (HN2[0], 3),

@@ -58,7 +58,7 @@ TESZT = {
     'alap-5': v(*[24 * F(5, 8) ** k for k in range(1, 4)], sor(24, F(5, 8))),
     'kozep-1': v(*L(lambda n: (6*n+1)/sq(4*n**2+n), lambda n: sq(81*n**2-5)/(2-3*n))),
     'kozep-2': v(*L(lambda n: (1-2/n)**(5*n), lambda n: (1+6/n)**(n/4), e=True)),
-    'kozep-3': v(szakaszos('', '45'), szakaszos('1', '2'), 'nincs', F(-25, 2) / 10),
+    'kozep-3': v(szakaszos('', '45'), szakaszos('1', '2'), 'nincs'),
     'nehez-1': v(*L(lambda n: (n**2+4)/(n+2)-(n**2-2)/(n+3), lambda n: 3*n**2/(3*n+1)-(n**2+1)/(n+2))),
     'nehez-2': v(*L(lambda n: ((n+5)/(n+1))**(3*n), lambda n: (1+2/(3*n+1))**(n+5), e=True)),
 }

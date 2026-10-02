@@ -413,7 +413,7 @@ V_NEHEZ.append((
      "mindenkinek.” Melyik feltételes valószínűséget számolta ki Mr. Szürreál, és mekkora valójában egy harmadik "
      "osztályon utazó túlélési esélye?"],
     [f"$\\approx{D(O['1'][0] / sum(O['1']))}$; $\\approx{D(O['3'][0] / sum(O['3']))}$",
-     f"$\\frac{{200}}{{500}}={D(200 / 500, 1)}$", "nem",
+     f"${D(200 / 500, 1)}$", "nem",
      f"$P(3.\\ \\text{{osztály}}\\mid\\text{{túlélt}})={D(181 / 500)}$; "
      f"$P(\\text{{túlélt}}\\mid 3.\\ \\text{{osztály}})\\approx{D(O['3'][0] / sum(O['3']))}$"]))
 

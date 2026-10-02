@@ -76,7 +76,7 @@ assert abs(sum(_r) - Q(4, 3)) < EPS and abs(_r[0] - _r[1] + _r[2] - 4) < EPS
 
 TESZT = {
     'alap-1': H(lambda x: x ** 2, 0, 2, Q(8, 3), F(7, 4), F(15, 4), F(8, 3)),
-    'alap-2': v(3, 4, 3, -4, 0, 8),
+    'alap-2': v(3, -4, 0, 8),
     'alap-3': H(lambda x: x ** 3, 1, 3, 20, 20) + H(lambda x: 1 - 2 * x + 3 * x ** 2, -1, 3, 24, 24)
     + H(lambda x: x ** 3 - 2 * x ** 2 + 5, -1, 3, Q(64, 3), F(64, 3)) + H(lambda x: x ** 2 + 2 * x, -2, 1, 0, 0),
     'alap-4': H(lambda x: mp.cbrt(x ** 2), 1, 8, Q(93, 5), F(93, 5)) + H(lambda x: 1 / mp.cbrt(x ** 2), 1, 8, 3, 3)
@@ -86,13 +86,13 @@ TESZT = {
     'alap-6': H(lambda x: c(x) - s(x), -pi / 2, pi / 2, 2, 2) + H(lambda x: 1 / s(x) ** 2, pi / 4, pi / 3, 1 - sq(3) / 3, 1, 3)
     + H(lambda x: 1 / c(x) ** 2 - s(x), -pi / 4, pi / 4, 2, 2)
     + H(lambda x: c(x) + 1 / s(x) ** 2, pi / 6, pi / 2, Q(1, 2) + sq(3), F(1, 2), 3),
-    'alap-7': v(-7, 4, -3, 20, 10, 0),
+    'alap-7': v(-7, -3, 20, 10, 0),
     'alap-8': T(lambda x: x ** 2 - 2 * x + 3, [0, 3], 9, 9),
     'alap-9': T(lambda x: x ** 3 + 1, [0, 2], 6, 6) + T(lambda x: 4 - x ** 2, [-1, 1], Q(22, 3), F(22, 3))
     + T(lambda x: sq(x) + 1, [1, 4], Q(23, 3), F(23, 3)),
     'alap-10': T(lambda x: -x ** 2 + 2 * x, [0, 2], Q(4, 3), 0, 2, F(4, 3))
     + T(lambda x: 6 - x - x ** 2, [-3, 2], Q(125, 6), -3, 2, F(125, 6)),
-    'kozep-1': H(lambda x: 4 - x ** 2 / 4, 0, 4, Q(32, 3), F(25, 2), F(17, 2), F(21, 2), F(32, 3)),
+    'kozep-1': H(lambda x: 4 - x ** 2 / 4, 0, 4, Q(32, 3), F(25, 2), F(17, 2), F(21, 2)),
     'kozep-2': H(lambda x: (2 * x - 1) ** 3, 2, 3, 68, 68) + H(lambda x: e(3 * x), 0, 1, (mp.e ** 3 - 1) / 3, 3, -1, 3)
     + H(lambda x: 1 / (11 + 5 * x) ** 3, -2, -1, Q(7, 72), F(7, 72)) + H(lambda x: c(2 * x), 0, pi / 4, Q(1, 2), F(1, 2)),
     'kozep-3': H(lambda x: (2 * x ** 3 + 1) ** 4 * x ** 2, 0, 1, Q(121, 15), F(121, 15))
@@ -106,31 +106,34 @@ TESZT = {
     + H(lambda x: ctg(x) ** 2, pi / 4, pi / 2, 1 - pi / 4, 1, 4)
     + H(lambda x: (s(x) + c(x)) ** 2, 0, pi / 4, pi / 4 + Q(1, 2), 4, F(1, 2))
     + H(lambda x: s(2 * x) * c(x), 0, pi / 2, Q(2, 3), F(2, 3)),
-    'kozep-6': T(lambda x: x ** 2 - 6 * x + 5, [1, 5], Q(32, 3), 1, 5)
-    + H(lambda x: x ** 2 - 6 * x + 5, 1, 5, -Q(32, 3), F(-32, 3), F(32, 3))
-    + T(lambda x: x ** 3 - 8, [0, 2], 12) + H(lambda x: x ** 3 - 8, 0, 2, -12, -12, 12),
-    'kozep-7': T(lambda x: x * (x - 1) * (x - 2), [0, 1, 2], Q(1, 2), 0, 1, 2)
-    + H(lambda x: x * (x - 1) * (x - 2), 0, 1, Q(1, 4), F(1, 4)) + H(lambda x: x * (x - 1) * (x - 2), 1, 2, -Q(1, 4), F(-1, 4))
-    + v(F(1, 2)),
-    'kozep-8': H(lambda x: x ** 2 - 3 * x, 0, 3, -Q(9, 2), 3, F(-9, 2)) + H(lambda x: x ** 2 - 3 * x, 3, 4, Q(11, 6), F(11, 6))
-    + T(lambda x: x ** 2 - 3 * x, [0, 3, 4], Q(19, 3), F(19, 3)) + H(lambda x: x ** 2 - 3 * x, 0, 4, -Q(8, 3), F(-8, 3)),
+    'kozep-6': T(lambda x: x ** 2 - 6 * x + 5, [1, 5], Q(32, 3), 1, 5, F(32, 3))
+    + H(lambda x: x ** 2 - 6 * x + 5, 1, 5, -Q(32, 3))
+    + T(lambda x: x ** 3 - 8, [0, 2], 12, 12) + H(lambda x: x ** 3 - 8, 0, 2, -12),
+    'kozep-7': T(lambda x: x * (x - 1) * (x - 2), [0, 1, 2], Q(1, 2), F(1, 2))
+    + H(lambda x: x * (x - 1) * (x - 2), 0, 1, Q(1, 4))
+    + H(lambda x: x * (x - 1) * (x - 2), 1, 2, -Q(1, 4)),
+    'kozep-8': H(lambda x: x ** 2 - 3 * x, 0, 3, -Q(9, 2))
+    + H(lambda x: x ** 2 - 3 * x, 3, 4, Q(11, 6))
+    + T(lambda x: x ** 2 - 3 * x, [0, 3, 4], Q(19, 3), F(19, 3))
+    + H(lambda x: x ** 2 - 3 * x, 0, 4, -Q(8, 3), F(-8, 3)),
     'kozep-9': T(lambda x: s(2 * x), [0, pi / 2], 1, 1) + T(lambda x: 3 * c(x), [-pi / 2, pi / 2], 6, 6)
     + T(lambda x: 2 * s(x), [0, pi, 2 * pi], 8, 8) + H(lambda x: 2 * s(x), 0, 2 * pi, 0, 0, 2, 2, 0),
-    'kozep-10': T(lambda x: e(x / 2), [0, 2 * ln(3)], 4, 4) + T(lambda x: e(x) + e(-x), [-ln(2), ln(2)], 3, F(3, 2), F(-3, 2), 3),
+    'kozep-10': T(lambda x: e(x / 2), [0, 2 * ln(3)], 4, 4) + T(lambda x: e(x) + e(-x), [-ln(2), ln(2)], 3, 3),
     'kozep-11': H(lambda x: x ** 2 - x - 2, 0, 3, -Q(3, 2))
-    + H(lambda x: x ** 2 - x - 2, 0, 2, -Q(10, 3), 2, F(-10, 3)) + H(lambda x: x ** 2 - x - 2, 2, 3, Q(11, 6), F(11, 6))
-    + T(lambda x: x ** 2 - x - 2, [0, 2, 3], Q(31, 6), F(31, 6)),
-    'kozep-12': T(f12, [0, 1, 3, 4], 4, 'A c) kifejezés', F(4, 3), F(-4, 3), F(4, 3), 4, F(4, 3)),
+    + H(lambda x: x ** 2 - x - 2, 0, 2, -Q(10, 3))
+    + H(lambda x: x ** 2 - x - 2, 2, 3, Q(11, 6))
+    + T(lambda x: x ** 2 - x - 2, [0, 2, 3], Q(31, 6), 2, F(31, 6)),
+    'kozep-12': T(f12, [0, 1, 3, 4], 4, 'A c) kifejezés', 4),
     'nehez-1': T(lambda x: (x + 8) - (x ** 2 / 2 + 2 * x + 4), [-4, 2], 18, -4, 2, 18)
     + T(lambda x: (x + 4) - (x ** 2 + 4 * x), [-4, 1], Q(125, 6), -4, 1, F(125, 6)),
-    'nehez-2': T(lambda x: (x ** 2 + 10) - (2 * x ** 2 + 1), [-3, 3], 36, -3, 3, 36)
-    + T(lambda x: (-2 * x ** 2 + 18) - (x ** 2 - 8 * x + 18), [0, Q(8, 3)], Q(256, 27), F(8, 3), F(256, 27)),
+    'nehez-2': T(lambda x: (x ** 2 + 10) - (2 * x ** 2 + 1), [-3, 3], 36, 36)
+    + T(lambda x: (-2 * x ** 2 + 18) - (x ** 2 - 8 * x + 18), [0, Q(8, 3)], Q(256, 27), F(256, 27)),
     'nehez-3': T(lambda x: (x - 2) ** 2, [0, 2], Q(8, 3), F(8, 3))
     + T(lambda x: 4 - e(x), [0, ln(4)], 8 * ln(2) - 3, 8, 2, -3, F(51, 20))
     + T(lambda x: sq(4 - x), [0, 4], Q(16, 3), F(16, 3)),
-    'nehez-4': T(lambda x: x ** 2 - 5 * x + 4, [0, 1], Q(11, 6), 1, 4, F(11, 6))
-    + T(lambda x: (1 - x) - (x ** 2 - 4 * x + 1), [0, 3], Q(9, 2), 0, 3, F(9, 2), 2)
-    + T(lambda x: 8 - x ** 3, [0, 2], 12, 12),
-    'joker': T(lambda x: 4 - x ** 2, [-2, 2], Q(32, 3), -2, 2, F(32, 3), 8, F(32, 3)),
+    'nehez-4': T(lambda x: x ** 2 - 5 * x + 4, [0, 1], Q(11, 6), 0, 1, F(11, 6))
+    + T(lambda x: (1 - x) - (x ** 2 - 4 * x + 1), [0, 3], Q(9, 2), 0, 3, F(9, 2))
+    + T(lambda x: 8 - x ** 3, [0, 2], 12, 0, 2, 12),
+    'joker': T(lambda x: 4 - x ** 2, [-2, 2], Q(32, 3), F(32, 3), 8, F(4, 3)),
 }
 assert abs(Q(4, 3) * 8 - Q(32, 3)) < EPS
