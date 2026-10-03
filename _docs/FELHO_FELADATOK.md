@@ -37,7 +37,9 @@ egy sor: „nincs jó találat”); `media.py --online` 0 hiba; `verify_web` + `
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ☑ 85 videó 30 lapon (mind a 38 egység megvizsgálva; 8 lap videó nélkül; egy videó csak egy helyen) — 2026-09-28 | ☑ 78 videó 32 lapon (mind a 35 egység megvizsgálva; 3 lap tanári döntéssel videó nélkül) — #1, 2026-09-27 | ☑ 80 videó 41 lapon (mind az 50 egység megvizsgálva; 9 lap videó nélkül) — 2026-09-28 | ◐ pilot: 4e/05 binomiális tétel (1 videó) |
+| ☑ 85 videó 30 lapon (mind a 38 egység megvizsgálva; 8 lap videó nélkül; egy videó csak egy helyen) — 2026-09-28 | ☑ 78 videó 32 lapon (mind a 35 egység megvizsgálva; 3 lap tanári döntéssel videó nélkül) — #1, 2026-09-27 | ☑ 80 videó 41 lapon (mind az 50 egység megvizsgálva; 9 lap videó nélkül) — 2026-09-28 | ◐ 11 videó 4 lapon; a 4e/05 mind az 5 egysége átnézve, 33 egység hátra — 2026-10-03 |
+
+**4e/05 M1 (2026-10-03, helyi main):** a kombinatorika öt egységének videódöntése: [`M1_4e_05_attekintes.md`](M1_4e_05_attekintes.md). Tíz új IV. osztályos MNT-videó került fel a permutáció, variáció, kombináció és binomiális tétel lapjára; a binomiális pilot megmaradt. A szorzási és összeadási szabály lapjához nincs igazolt jó találat. Az ismétléses kombinációról szóló 53. óra nem illik a lapra. `media.py --online`: 278/278; kánon 10/0, linkek 310/0, sáv tiszta, kulcsteszt 4499/4499, regresszió 4499/4499 = 100%; a négy módosult lap 360/390/1280 px-en rendben. A jsdom, a nyomtatási látvány és a valódi képernyőolvasós próba nem futott; a videókat nem néztem végig.
 
 **Felhőben (2026-09-27):** a felhős környezet *Network access* beállításában engedélyezni kell a
 `tavoktatas.mnt.org.rs`, a `youtube.com` és az `api.geogebra.org` tartományt (nélkülük a WebFetch és a
