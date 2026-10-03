@@ -61,7 +61,7 @@ kombinatorika/valószínűség), témakörönként 1–4 szimuláció.
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ☑ 10 szimuláció 10 lapon (a 8 témakörből 5-ben: 02, 05, 06, 07, 08; a 01, 03, 04 témakörhöz nincs telefonon használható, tantervhez illő applet) — 2026-09-28 | ☐ | ☑ 5 szimuláció 5 lapon; 50 egység átnézve, a 02 és 06 témakörhöz nincs megfelelő mobilos modell — 2026-10-02 | ◐ pilot: 4e/05 (a+b)³-kocka (1 szimuláció) |
+| ☑ 10 szimuláció 10 lapon (a 8 témakörből 5-ben: 02, 05, 06, 07, 08; a 01, 03, 04 témakörhöz nincs telefonon használható, tantervhez illő applet) — 2026-09-28 | ☐ | ☑ 5 szimuláció 5 lapon; 50 egység átnézve, a 02 és 06 témakörhöz nincs megfelelő mobilos modell — 2026-10-02 | ◐ 5 szimuláció 5 lapon (4 új, 1 pilot); 38 egység átnézve, helyi ág — 2026-10-02 |
 
 **Felhőben (2026-09-28):** a jelöltek adatlapja és mérete az `api.geogebra.org`-ról jön, a próba
 (`_tools/media_proba.py`) a `www.geogebra.org`-ot is kéri. Minden jelöltet 390 px-en és szélső
@@ -78,6 +78,13 @@ szélső/köztes állását kipróbáltam; a 390 px-es használhatóságot az er
 A 02 témakör kúpos-hengeres jelöltjei mobilon túl aprók, illetve maximális sugárnál lelógnak a
 képről; a 06 mértani sorozatos jelöltje a tananyagban kizárt nulla hányadost is megengedi. Ezek
 nem kerültek be. A részletes ellenőrzési eredmény az állapotnaplóban szerepel.
+
+**4e M2 részállapot (2026-10-02, külön helyi ág):** mind a 38 tananyag-egység döntése a
+[`M2_4e_attekintes.md`](M2_4e_attekintes.md) táblázatban szerepel. Négy új GeoGebra-modell került a
+02, 03, 04 és 06 témakörbe; a 05 korábbi binomiális kockája megmaradt. A saját szelő–érintő,
+Riemann-téglalap, primitívfüggvény, Pascal-háromszög, érme/kocka és adatlabor modellekhez nem adtam
+ismétlődő beágyazást. A kiválasztott modelleket 390 px-en és szélső beállításokkal ellenőriztem;
+a hibás vagy telefonon túl apró jelöltek nem kerültek fel. A lánc eredménye az állapotnaplóban van.
 
 ### M3 · Link-őr (ötlet)
 Havi GitHub Action, amely `media.py --online`-t futtat, és hiba esetén issue-t nyit. ☐
