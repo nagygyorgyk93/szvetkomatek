@@ -61,7 +61,9 @@ kombinatorika/valószínűség), témakörönként 1–4 szimuláció.
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ☑ 10 szimuláció 10 lapon (a 8 témakörből 5-ben: 02, 05, 06, 07, 08; a 01, 03, 04 témakörhöz nincs telefonon használható, tantervhez illő applet) — 2026-09-28 | ☐ | ☑ 5 szimuláció 5 lapon; 50 egység átnézve, a 02 és 06 témakörhöz nincs megfelelő mobilos modell — 2026-10-02 | ◐ 5 szimuláció 5 lapon (4 új, 1 pilot); 38 egység átnézve, helyi ág — 2026-10-02 |
+| ☑ 10 szimuláció 10 lapon (a 8 témakörből 5-ben: 02, 05, 06, 07, 08; a 01, 03, 04 témakörhöz nincs telefonon használható, tantervhez illő applet) — 2026-09-28 | ◐ 4 szimuláció 4 lapon; 35 egység átnézve, helyi main, publikálásra vár — 2026-10-03 | ☑ 5 szimuláció 5 lapon; 50 egység átnézve, a 02 és 06 témakörhöz nincs megfelelő mobilos modell — 2026-10-02 | ☑ 5 szimuláció 5 lapon (4 új, 1 pilot); 38 egység átnézve — #14, 2026-10-03 |
+
+**2e M2 (2026-10-03, helyi main):** négy GeoGebra-szimuláció került be a komplex összeadás, a másodfokú függvény, az inverz függvény és az egységkörből kapott szinusz/koszinusz grafikon oldalára. A 35 egység soronkénti döntése: [`M2_2e_attekintes.md`](M2_2e_attekintes.md). A vizsgált logaritmus-alapcsúszkás jelöltek 0-t vagy 1-et is engedtek, ezért nem kerültek fel. Az egyesítés után `media.py --online`: 268/268; `media_proba.py`: 4/4 betöltés 390 px-en, képek átnézve. Kánon 65/0, linkek 310/0, sáv tiszta, kulcsteszt 4499/4499, regresszió 4499/4499 = 100%, a négy érintett lap 360/390/1280 px-en rendben. A naplótérkép változatlan, a keresőindex 308 bejegyzése közül pontosan e négy oldal szövege változott; nincs üres szöveg vagy fejezetcím. A jsdom-réteg, a nyomtatási látvány és a valódi képernyőolvasós próba nem futott.
 
 **Felhőben (2026-09-28):** a jelöltek adatlapja és mérete az `api.geogebra.org`-ról jön, a próba
 (`_tools/media_proba.py`) a `www.geogebra.org`-ot is kéri. Minden jelöltet 390 px-en és szélső
@@ -70,7 +72,7 @@ esett ki, mert szélső helyzetben 180°-nál nagyobb szöget írt ki (a hároms
 kerületi szög csúcsát a másik ívre húzva). Hibás applet akkor sem marad a lapon, ha a leírás
 figyelmeztetne rá (tanári döntés, 2026-09-28) — ha nincs jobb, a lap szimuláció nélkül marad.
 
-**3e M2 részállapot (2026-10-02, külön helyi ág):** az 50 tananyag-egység M2-döntése egyenként a
+**3e M2 (2026-10-02, publikált main):** az 50 tananyag-egység M2-döntése egyenként a
 [`M2_3e_attekintes.md`](M2_3e_attekintes.md) táblázatban van. Öt GeoGebra-modell került az 01, 03, 04
 és 05 témakör öt lapjára a médiakatalóguson keresztül. A gúla térfogatának, az egyenesek három
 helyzetének, a vektorösszegnek, valamint az ellipszis és a parabola fókuszos meghatározásának
@@ -79,7 +81,7 @@ A 02 témakör kúpos-hengeres jelöltjei mobilon túl aprók, illetve maximáli
 képről; a 06 mértani sorozatos jelöltje a tananyagban kizárt nulla hányadost is megengedi. Ezek
 nem kerültek be. A részletes ellenőrzési eredmény az állapotnaplóban szerepel.
 
-**4e M2 részállapot (2026-10-02, külön helyi ág):** mind a 38 tananyag-egység döntése a
+**4e M2 (2026-10-03, publikált main):** mind a 38 tananyag-egység döntése a
 [`M2_4e_attekintes.md`](M2_4e_attekintes.md) táblázatban szerepel. Négy új GeoGebra-modell került a
 02, 03, 04 és 06 témakörbe; a 05 korábbi binomiális kockája megmaradt. A saját szelő–érintő,
 Riemann-téglalap, primitívfüggvény, Pascal-háromszög, érme/kocka és adatlabor modellekhez nem adtam
