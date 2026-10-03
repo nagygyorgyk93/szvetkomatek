@@ -350,7 +350,7 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-10-03",
-    "megjegyzes": "MNT IV. osztály; az egyedi óraoldal fő videójából azonosítva; a videót nem néztem végig"
+    "megjegyzes": "MNT IV. osztály; az egyedi óraoldal fő videójából azonosítva; a tanár a videó megtartását jóváhagyta 2026-10-03; én nem néztem végig"
   },
   {
     "azon": "4e06-binomialis-73",
@@ -366,55 +366,55 @@
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-10-03",
-    "megjegyzes": "MNT IV. osztály; az egyedi óraoldal fő videójából azonosítva; a videót nem néztem végig"
+    "megjegyzes": "MNT IV. osztály; az egyedi óraoldal fő videójából azonosítva; a tanár a videó megtartását jóváhagyta 2026-10-03; én nem néztem végig"
   },
   {
     "azon": "4e06-statisztika-76",
     "oldal": "4e/06-valoszinuseg-statisztika/tananyag-adatok.html",
-    "hely": "s3",
+    "hely": "s1",
     "tipus": "youtube",
     "forras_azon": "GLlO8hE-soY",
     "cim": "Matematikai statisztika (IV. osztály, 76. óra)",
-    "leiras": "Az MNT statisztikai sorozatának első részét az adatok és diagramok mellé nézd meg.",
+    "leiras": "A statisztikai bevezető órán az adatoktól a középértékekig is eljutsz. Figyeld meg, mit vizsgálunk egy kiválasztott mintán.",
     "szerzo": "Béres Zoltán",
     "forras": "MNT Távoktatás magyar nyelven",
     "forras_url": "https://tavoktatas.mnt.org.rs/iv-osztaly/matematika/matematika-iv-osztaly-76-ora-matematikai-statisztika",
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-10-03",
-    "megjegyzes": "MNT IV. osztály; az egyedi óraoldal fő videójából azonosítva; a videót nem néztem végig"
+    "megjegyzes": "MNT IV. osztály; a tanár szerint bevezető óra, középértékekkel; ezért a sokaság és minta szakasza után szerepel; én nem néztem végig"
   },
   {
     "azon": "4e06-statisztika-77",
     "oldal": "4e/06-valoszinuseg-statisztika/tananyag-statisztikai-mutatok.html",
-    "hely": "s2",
+    "hely": "s3",
     "tipus": "youtube",
     "forras_azon": "RvJLXvbeHx8",
     "cim": "Matematikai statisztika (IV. osztály, 77. óra)",
-    "leiras": "Az MNT statisztikai sorozatának második részét a középértékek áttekintése után nézd meg.",
+    "leiras": "A reprezentatív minta és a szóródás kapcsolatát vesd össze a lap terjedelem-, kvartilis- és szórásfogalmával.",
     "szerzo": "Béres Zoltán",
     "forras": "MNT Távoktatás magyar nyelven",
     "forras_url": "https://tavoktatas.mnt.org.rs/iv-osztaly/matematika/matematika-iv-osztaly-77-ora-matematikai-statisztika",
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-10-03",
-    "megjegyzes": "MNT IV. osztály; az egyedi óraoldal fő videójából azonosítva; a videót nem néztem végig"
+    "megjegyzes": "MNT IV. osztály; a tanár szerint reprezentatív mintával és szóródással foglalkozik; a szórás szakasza után került; én nem néztem végig"
   },
   {
     "azon": "4e06-statisztika-78",
-    "oldal": "4e/06-valoszinuseg-statisztika/tananyag-statisztikai-mutatok.html",
+    "oldal": "4e/06-valoszinuseg-statisztika/tananyag-adatok.html",
     "hely": "s3",
     "tipus": "youtube",
     "forras_azon": "3wj3lMyKE8Q",
     "cim": "Matematikai statisztika (IV. osztály, 78. óra)",
-    "leiras": "Az MNT statisztikai sorozatának harmadik részét a szóródási mutatók után nézd meg.",
+    "leiras": "Ez az óra elsősorban grafikonokkal foglalkozik. Hasonlítsd össze a látott ábrázolásokat a lap diagramjaival.",
     "szerzo": "Béres Zoltán",
     "forras": "MNT Távoktatás magyar nyelven",
     "forras_url": "https://tavoktatas.mnt.org.rs/iv-osztaly/matematika/matematika-iv-osztaly-78-ora-matematikai-statisztika",
     "nyelv": "hu",
     "licenc": "YouTube-beágyazás",
     "ellenorizve": "2026-10-03",
-    "megjegyzes": "MNT IV. osztály; az egyedi óraoldal fő videójából azonosítva; a videót nem néztem végig"
+    "megjegyzes": "MNT IV. osztály; a tanár szerint elsősorban grafikonokkal foglalkozik; ezért a diagramok szakaszába került; én nem néztem végig"
   },
   {
     "azon": "4e02-aszimptotak",
