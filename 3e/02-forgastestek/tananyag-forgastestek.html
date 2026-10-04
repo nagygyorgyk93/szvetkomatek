@@ -111,7 +111,7 @@
     <p class="cap">A <b>derékszögű háromszög</b> az egyik <b>befogója</b> körül forgatva <b>kúpot</b> ad: a tengely a magasság (<span class="math inline">\(H\)</span>), a másik befogó a sugár (<span class="math inline">\(r\)</span>), az átfogó pedig az alkotó (<span class="math inline">\(s\)</span>).</p>
 
     <div class="svgcard">
-    <svg viewBox="0 0 430 250" width="430" height="250" role="img" aria-label="A félkör forgatása a tengely körül: gömb">
+    <svg viewBox="0 0 430 250" width="430" height="250" role="img" aria-label="A félkörlap forgatása az átmérő körül: gömbtest">
       <defs><marker id="nyil-felkor" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
       <line x1="99.3" y1="226.0" x2="99.3" y2="63.1" stroke="#475569" stroke-width="1.4" stroke-dasharray="7 4"/>
       <text x="99.3" y="240.0" font-size="11" fill="#475569" text-anchor="middle" font-weight="600">tengely</text>
@@ -128,7 +128,7 @@
       </g>
     </svg>
     </div>
-    <p class="cap">A <b>félkör</b> az átmérője körül forgatva <b>gömböt</b> ad.</p>
+    <p class="cap">A <b>félkörlap</b> az átmérője körül forgatva <b>gömbtestet</b> ad.</p>
 
     <div class="svgcard">
     <svg viewBox="0 0 430 250" width="430" height="250" role="img" aria-label="A derékszögű trapéz forgatása a tengely körül: csonkakúp">
@@ -193,11 +193,11 @@
 
     <div class="doboz tetel" id="tetel-meroleges-metszet">
       <p class="cim"><span class="ikon">📘</span> A tengelyre merőleges metszet</p>
-      <p>Ha a témakör testeit (henger, kúp, csonkakúp, gömb) a <b>tengelyükre merőleges</b> síkkal metsszük el, a metszet mindig <b>kör</b> (pontosabban körlap), és a középpontja a tengelyen van.</p><p>Ez közvetlenül a keletkezésből jön: a metszősík magasságában lévő pontok mind ugyanakkora körpályát írtak le a forgatás közben.</p>
+      <p>Ha a témakör testeit (henger, kúp, csonkakúp, gömb) a <b>tengelyükre merőleges</b> síkkal a <b>belsejükön át</b> metsszük el, a metszet <b>körlap</b>, és a középpontja a tengelyen van. A csúcsnál, érintéskor vagy a testen kívül a metszet pont, illetve üres is lehet.</p><p>Ez közvetlenül a keletkezésből jön: a metszet határpontjai a forgatás közben azonos sugarú körpályát írnak le.</p>
     </div>
 
     <div class="svgcard">
-    <svg viewBox="0 0 300 270" width="300" height="270" role="img" aria-label="A tengelyre merőleges metszet kör">
+    <svg viewBox="0 0 300 270" width="300" height="270" role="img" aria-label="A tengelyre merőleges sík a hengerből körlapot metsz ki">
       <path d="M70.7,222.2 L70.7,87.4 A79.3,23.8 0 0 0 229.3,87.4 L229.3,222.2 A79.3,23.8 0 0 1 70.7,222.2 z" fill="#047857" fill-opacity="0.08" stroke="none"/>
       <path d="M70.7,222.2 A79.3,23.8 0 0 0 229.3,222.2" fill="none" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 4"/>
       <path d="M70.7,222.2 A79.3,23.8 0 0 1 229.3,222.2" fill="none" stroke="#0f172a" stroke-width="1.6"/>
@@ -207,11 +207,11 @@
       <ellipse cx="150.0" cy="87.4" rx="79.3" ry="23.8" fill="#ffffff" fill-opacity="0.55" stroke="#0f172a" stroke-width="1.6"/>
     </svg>
     </div>
-    <p class="cap">A hengert a tengelyére merőlegesen elmetszve az alapkörrel <b>egybevágó</b> kört kapunk.</p>
+    <p class="cap">A hengert a tengelyére merőlegesen elmetszve az alaplappal <b>egybevágó</b> körlapot kapunk.</p>
 
     <div class="doboz definicio" id="def-tengelymetszet">
       <p class="cim"><span class="ikon">📗</span> Tengelymetszet</p>
-      <p>A forgástest <b>tengelymetszete</b> az a metszet, amelyet a forgástengelyt <b>tartalmazó</b> síkkal kapunk. Minden forgástest tengelymetszete <b>tengelyesen szimmetrikus</b> — a szimmetriatengelye maga a forgástengely.</p><div class="tblwrap"><table class="tt-table"><tr><th>Test</th><th>A tengelymetszete</th></tr><tr><td>henger</td><td>téglalap (<span class="math inline">\(2r\)</span> széles, <span class="math inline">\(H\)</span> magas)</td></tr><tr><td>kúp</td><td>egyenlő szárú háromszög (alapja <span class="math inline">\(2r\)</span>, szárai az alkotók)</td></tr><tr><td>csonkakúp</td><td>egyenlő szárú trapéz</td></tr><tr><td>gömb</td><td><b>főkör</b> — a gömb legnagyobb köre, sugara <span class="math inline">\(R\)</span></td></tr></table></div>
+      <p>A forgástest <b>tengelymetszete</b> az a metszet, amelyet a forgástengelyt <b>tartalmazó</b> síkkal kapunk. Minden forgástest tengelymetszete <b>tengelyesen szimmetrikus</b> — a szimmetriatengelye maga a forgástengely.</p><div class="tblwrap"><table class="tt-table"><tr><th>Test</th><th>A tengelymetszete</th></tr><tr><td>henger</td><td>téglalap (<span class="math inline">\(2r\)</span> széles, <span class="math inline">\(H\)</span> magas)</td></tr><tr><td>kúp</td><td>egyenlő szárú háromszög (alapja <span class="math inline">\(2r\)</span>, szárai az alkotók)</td></tr><tr><td>csonkakúp</td><td>egyenlő szárú trapéz</td></tr><tr><td>gömb</td><td><b>főkör által határolt körlap</b>, sugara <span class="math inline">\(R\)</span> — kiegészítő kitekintés</td></tr></table></div>
     </div>
 
     <div class="svgcard">
@@ -255,7 +255,7 @@
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
-      <p><i>„A tengelymetszet is kör, hiszen minden metszet kör.”</i></p><p>A <b>tengelyre merőleges</b> metszet kör. A <b>tengelyt tartalmazó</b> metszet viszont soha nem az: a hengeré téglalap, a kúpé háromszög, a gömbé pedig kör ugyan, de az a <b>főkör</b> — a lehető legnagyobb, nem akármelyik.</p><p>Segít, ha úgy gondolsz rá, hogy a merőleges metszet <b>keresztben</b> vágja a testet (mint a szalámit), a tengelymetszet pedig <b>hosszában</b> (mint a kettévágott alma).</p>
+      <p><i>„A tengelymetszet is kör, hiszen minden metszet kör.”</i></p><p>A <b>tengelyre merőleges</b> belső metszet körlap. A <b>tengelyt tartalmazó</b> sík metszete a hengernél téglalap, a kúpnál háromszög, a gömbnél pedig főkör által határolt körlap.</p><p>Segít, ha úgy gondolsz rá, hogy a merőleges metszet <b>keresztben</b> vágja a testet (mint a szalámit), a tengelymetszet pedig <b>hosszában</b> (mint a kettévágott alma).</p>
     </div>
 
     <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A tengelymetszet téglalap: az egyik oldala az átmérő (2r), a másik a magasság (H)." data-nem="✘ Kört a tengelyre MERŐLEGES metszet ad. A tengelyt tartalmazó sík hosszában vágja a hengert — az eredmény téglalap.">

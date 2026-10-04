@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-"""3e/06 — C blokk: hianyos es teljes indukcio (C). Mentor: Prizma es Kanrak.
-Rovid, olvasmanyos egyseg: SZAMONKERES NINCS, ezert nincs .gyakorolj sav sem."""
+"""3e/06 — C blokk: hiányos és teljes indukció (C). Mentor: Prizma és Kanrak."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tananyag_common import lap, doboz, brief, kviz, abra
@@ -83,12 +82,12 @@ C = [
          'elhisszük, örökre így marad. Egy állítást <b>minden</b> lépésre kell igazolni — és van rá '
          'egy módszer, amivel ez két lépésben megy.'),
    doboz("erdekesseg", "Mit kell ebből tudni?",
-         r'<p>Ezt az egységet <b>nem kérjük vissza</b>: nem lesz belőle sem feladat, sem házi, sem '
-         r'ellenőrző. '
-         r'Azért van itt, mert ez a matematika egyik legszebb gondolata, és mert enélkül a '
-         r'„bizonyítás” szó üresen csengene.</p>'
-         r'<p>Olvasd el nyugodtan egyszer, végig. A természettudományi-matematikai szakon ebből '
-         r'önálló, huszonöt órás témakör lesz.</p>', hid="erd-mire-jo"),
+         r'<p>A teljes indukció a 3e-s tanulási kimenetek része. Egyszerű egyenlőségek, '
+         r'egyenlőtlenségek és oszthatósági állítások bizonyításánál fel kell ismerned és '
+         r'végig kell vezetned a <b>bázislépést</b> és az <b>indukciós lépést</b>.</p>'
+         r'<p>A kidolgozott példákon figyeld meg, miért szükséges mindkét lépés. A '
+         r'természettudományi-matematikai szakon ezt részletesebben is tanulják.</p>',
+         hid="erd-mire-jo"),
  ]),
 
  ("Sejtés néhány esetből: a hiányos indukció", [
@@ -136,7 +135,7 @@ C = [
          r'bizonyítottuk, ha az ezer eset között szerepel az $n=1$',
          r'az állítás biztosan hamis valahol, csak nem találtuk meg'], 0,
         jo="✔ A sok jó eset erős sejtés, de nem bizonyítás: az n² + n + 41 képlet negyven eseten át "
-           "prímet ad, a negyvenediken mégsem.",
+           "prímet ad, a negyvenegyedik esetben mégsem.",
         nem="✘ Akárhány esetet nézünk végig, végtelen sok marad ellenőrizetlen. A sok jó eset "
             "sejtést ad, nem bizonyítást — és attól még az állítás lehet igaz is."),
  ]),
@@ -221,7 +220,7 @@ KI = [
  lap(**T, fajl="tananyag-indukcio.html",
      cim="Hiányos és teljes indukció",
      alcim="Mikor sejtés és mikor bizonyítás: a hiányos indukció csapdái, a teljes indukció "
-           "dominó-elve, és egy végigvezetett bizonyítás. Számonkérés nincs belőle.",
+           "dominóelve és egy végigvezetett bizonyítás.",
      chip=KUL + " · 5/5", szakaszok=C,
      elozo=("feladatok-hazi.html", "Kristály-kamra — Vészterem"),
      kovetkezo=("osszefoglalo.html", "Taktikai memóriakártya")),

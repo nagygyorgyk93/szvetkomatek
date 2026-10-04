@@ -109,8 +109,8 @@ OSSZ = [
  ]),
 
  ("Metszetek", [
-  '<p><b>Tengelyre merőleges</b> metszet: mindig <b>kör</b> '
-  '(' + h(FO, "tetel-meroleges-metszet") + '). Hengernél az alapkörrel '
+  '<p><b>Tengelyre merőleges</b> metszet: a test belsejében <b>körlap</b> '
+  '(' + h(FO, "tetel-meroleges-metszet") + '). Hengernél az alaplappal '
   '<b>egybevágó</b>, kúpnál <b>hasonló</b> — a hasonlóság aránya a <b>csúcstól</b> '
   'mért magasságok aránya (' + h(SM, "tetel-parhuzamos-metszet") + ').</p>'
   '<p><b>Tengelymetszet</b> (a tengelyt <b>tartalmazó</b> síkkal, '
@@ -121,8 +121,10 @@ OSSZ = [
   '<tr><td>kúp</td><td>egyenlő szárú háromszög (alap $2r$, szárak $s$)</td>'
   '<td>$T=r\\,H$</td></tr>'
   '<tr><td>csonkakúp</td><td>egyenlő szárú trapéz</td><td>$T=(R+r)H$</td></tr>'
-  '<tr><td>gömb</td><td><b>főkör</b> ($R$ sugarú)</td><td>$T=R^2\\pi$</td></tr>'
+  '<tr><td>gömb</td><td><b>főkör által határolt körlap</b> ($R$ sugarú)</td><td>$T=R^2\\pi$</td></tr>'
   '</table>'
+  '<p><b>Kiegészítő kitekintés:</b> a gömb síkmetszetének területe az M2-es tanulási '
+  'kimeneteken túlmutat; a gömbfelület és a sík helyzetének felismerése viszont alapkövetelmény.</p>'
   '<p>Ha a tengelymetszet <b>négyzet</b>, a henger <b>egyenlő oldalú</b> ($H=2r$, '
   + h(HE, "def-egyenlo-oldalu-henger") + '); ha <b>szabályos háromszög</b>, a kúp '
   'egyenlő oldalú ($s=2r$, $H=r\\sqrt3$, ' + h(KU, "def-egyenlo-oldalu-kup") + ').</p>',
@@ -223,7 +225,7 @@ print("✓ osszefoglalo.html")
 
 # ==================================================================== F5p
 
-from fgy_common import cards, oldal, w
+from fgy_common import cards, kiegeszito_jeloles, oldal, w
 
 SVG_TOROY = svg_osszetett("henger-felgomb", w=260, h=280,
     leiras="A kondenzátortorony: hengeres test félgömb tetővel")
@@ -362,7 +364,8 @@ DR_N = [
 body_dr = [
  '    <h2 id="alap">🟢 Alapszint</h2>\n' + cards(DR_A, "alap", "alap"),
  '    <h2 id="kozep">🟡 Középszint</h2>\n' + cards(DR_K, "kozep", "kozep"),
- '    <h2 id="nehez">🔴 Nehéz szint</h2>\n' + cards(DR_N, "nehez", "nehez"),
+ '    <h2 id="nehez">🔴 Nehéz szint</h2>\n' +
+ cards(kiegeszito_jeloles(DR_N, {3}), "nehez", "nehez"),
 ]
 
 oldal(**T, fajl="feladatok-hazi.html", cim="Vészterem",

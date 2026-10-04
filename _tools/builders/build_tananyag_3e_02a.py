@@ -57,7 +57,8 @@ print("sympy önteszt: OK")
 # ---------------------------------------------------------------- ábrák
 SVG_F_TEGLALAP = svg_forgatas("teglalap", w=430, h=250)
 SVG_F_HAROMSZOG = svg_forgatas("haromszog", w=430, h=250)
-SVG_F_FELKOR = svg_forgatas("felkor", w=430, h=250)
+SVG_F_FELKOR = svg_forgatas("felkor", w=430, h=250,
+    leiras="A félkörlap forgatása az átmérő körül: gömbtest")
 SVG_F_TRAPEZ = svg_forgatas("trapez", w=430, h=250)
 SVG_KUPKUP = svg_osszetett("kup-kup", w=300, h=290,
     leiras="Derékszögű háromszög az átfogója körül forgatva: két kúp közös alaplappal")
@@ -66,12 +67,12 @@ SVG_HENGER = svg_henger(alkoto=True, tengely=True, w=310, h=280,
 SVG_HENGER_TM = svg_henger(tengelymetszet=True, magassag=True, w=310, h=270,
     leiras="A henger tengelymetszete téglalap")
 SVG_HENGER_PM = svg_henger(parhuzamos_metszet=True, sugar=False, magassag=False,
-    w=300, h=270, leiras="A tengelyre merőleges metszet kör")
+    w=300, h=270, leiras="A tengelyre merőleges sík a hengerből körlapot metsz ki")
 SVG_HALO_HENGER = svg_halo("henger", w=340, h=280)
 SVG_KUP_TM = svg_kup(tengelymetszet=True, alkoto=False, w=300, h=280,
     leiras="A kúp tengelymetszete egyenlő szárú háromszög")
 SVG_GOMB_FO = svg_gomb(w=270, h=250,
-    leiras="A gömb minden tengelymetszete főkör")
+    leiras="A gömb középponton átmenő síkmetszete főkör által határolt körlap")
 
 # ===================================================================== A1
 
@@ -123,7 +124,7 @@ A1 = [
    abra(SVG_F_HAROMSZOG, 'A <b>derékszögű háromszög</b> az egyik <b>befogója</b> körül '
         'forgatva <b>kúpot</b> ad: a tengely a magasság ($H$), a másik befogó a sugár '
         '($r$), az átfogó pedig az alkotó ($s$).'),
-   abra(SVG_F_FELKOR, 'A <b>félkör</b> az átmérője körül forgatva <b>gömböt</b> ad.'),
+   abra(SVG_F_FELKOR, 'A <b>félkörlap</b> az átmérője körül forgatva <b>gömbtestet</b> ad.'),
    abra(SVG_F_TRAPEZ, 'A <b>derékszögű trapéz</b> a derékszögű szára körül forgatva '
         '<b>csonkakúpot</b> ad: a két párhuzamos oldal a két sugár ($R$ és $r$).'),
    doboz("csapda", "Maxi trükkje",
@@ -165,13 +166,14 @@ A1 = [
    'két állítás végigkíséri az egész témakört.</p>',
    doboz("tetel", "A tengelyre merőleges metszet",
          '<p>Ha a témakör testeit (henger, kúp, csonkakúp, gömb) a <b>tengelyükre '
-         'merőleges</b> síkkal metsszük el, a metszet mindig <b>kör</b> (pontosabban '
-         'körlap), és a középpontja a tengelyen van.</p>'
-         '<p>Ez közvetlenül a keletkezésből jön: a metszősík magasságában lévő pontok '
-         'mind ugyanakkora körpályát írtak le a forgatás közben.</p>',
+         'merőleges</b> síkkal a <b>belsejükön át</b> metsszük el, a metszet '
+         '<b>körlap</b>, és a középpontja a tengelyen van. A csúcsnál, érintéskor '
+         'vagy a testen kívül a metszet pont, illetve üres is lehet.</p>'
+         '<p>Ez közvetlenül a keletkezésből jön: a metszet határpontjai a '
+         'forgatás közben azonos sugarú körpályát írnak le.</p>',
          hid="tetel-meroleges-metszet"),
-   abra(SVG_HENGER_PM, 'A hengert a tengelyére merőlegesen elmetszve az alapkörrel '
-        '<b>egybevágó</b> kört kapunk.'),
+   abra(SVG_HENGER_PM, 'A hengert a tengelyére merőlegesen elmetszve az alaplappal '
+        '<b>egybevágó</b> körlapot kapunk.'),
    doboz("definicio", "Tengelymetszet",
          '<p>A forgástest <b>tengelymetszete</b> az a metszet, amelyet a forgástengelyt '
          '<b>tartalmazó</b> síkkal kapunk. Minden forgástest tengelymetszete '
@@ -181,7 +183,8 @@ A1 = [
          '<tr><td>henger</td><td>téglalap ($2r$ széles, $H$ magas)</td></tr>'
          '<tr><td>kúp</td><td>egyenlő szárú háromszög (alapja $2r$, szárai az alkotók)</td></tr>'
          '<tr><td>csonkakúp</td><td>egyenlő szárú trapéz</td></tr>'
-         '<tr><td>gömb</td><td><b>főkör</b> — a gömb legnagyobb köre, sugara $R$</td></tr>'
+         '<tr><td>gömb</td><td><b>főkör által határolt körlap</b>, sugara $R$ — '
+         'kiegészítő kitekintés</td></tr>'
          '</table>',
          hid="def-tengelymetszet"),
    abra(SVG_HENGER_TM, 'A henger tengelymetszete téglalap: az egyik oldala az '
@@ -189,9 +192,9 @@ A1 = [
    abra(SVG_KUP_TM, 'A kúp tengelymetszete egyenlő szárú háromszög.'),
    doboz("csapda", "Maxi trükkje",
          '<p><i>„A tengelymetszet is kör, hiszen minden metszet kör.”</i></p>'
-         '<p>A <b>tengelyre merőleges</b> metszet kör. A <b>tengelyt tartalmazó</b> '
-         'metszet viszont soha nem az: a hengeré téglalap, a kúpé háromszög, a gömbé '
-         'pedig kör ugyan, de az a <b>főkör</b> — a lehető legnagyobb, nem akármelyik.</p>'
+         '<p>A <b>tengelyre merőleges</b> belső metszet körlap. A <b>tengelyt tartalmazó</b> '
+         'sík metszete a hengernél téglalap, a kúpnál háromszög, a gömbnél pedig '
+         'főkör által határolt körlap.</p>'
          '<p>Segít, ha úgy gondolsz rá, hogy a merőleges metszet <b>keresztben</b> vágja '
          'a testet (mint a szalámit), a tengelymetszet pedig <b>hosszában</b> (mint a '
          'kettévágott alma).</p>'),

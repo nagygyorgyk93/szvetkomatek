@@ -2,7 +2,7 @@
 """3e/02 — C altema feladatgyujtemeny: a gomb es az osszetett testek."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from fgy_common import cards, joker_card, oldal
+from fgy_common import cards, joker_card, kiegeszito_jeloles, oldal
 
 # ============================== ÖNELLENŐRZÉS ==============================
 from sympy import Rational as R, sqrt, pi, simplify, N, symbols, solve, Eq
@@ -282,10 +282,14 @@ JOKER = ("Arkhimédész szerint a gömb és a köré írt henger térfogatának 
 
 # ============================== OLDAL ==============================
 body = [
- '    <h2 id="alap">🟢 Alapszint — Különleges fokozat</h2>\n' + cards(ALAP, "alap", "alap"),
- '    <h2 id="kozep">🟡 Középszint — Királyi Gárda</h2>\n' + cards(KOZEP, "kozep", "kozep"),
- '    <h2 id="nehez">🔴 Nehéz szint — Kristály-protokoll</h2>\n' + cards(NEHEZ, "nehez", "nehez"),
- '    <h2 id="joker">🃏 Joker</h2>\n' + joker_card(JOKER[0], JOKER[1]),
+ '    <h2 id="alap">🟢 Alapszint — Különleges fokozat</h2>\n' +
+ cards(kiegeszito_jeloles(ALAP, {3, 4}), "alap", "alap"),
+ '    <h2 id="kozep">🟡 Középszint — Királyi Gárda</h2>\n' +
+ cards(kiegeszito_jeloles(KOZEP, {8, 9, 17}), "kozep", "kozep"),
+ '    <h2 id="nehez">🔴 Nehéz szint — Kristály-protokoll</h2>\n' +
+ cards(kiegeszito_jeloles(NEHEZ, {1}), "nehez", "nehez"),
+ '    <h2 id="joker">🃏 Joker</h2>\n' +
+ joker_card("<b>Kiegészítő kihívás.</b> " + JOKER[0], JOKER[1]),
 ]
 
 ut = oldal(tagozat="3e", mappa="02-forgastestek", fajl="feladatok-gomb.html",

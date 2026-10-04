@@ -138,8 +138,8 @@ OSSZ = [
   r'<a href="' + B2 + r'">a mértani sorozat és a kamatos kamat</a>.</p>'
   r'<p><b>Gyakorlás:</b> <a href="' + FGY + r'">Kiképzési Adattár</a> (alap · közép · nehéz · joker) '
   r'és a <a href="feladatok-hazi.html">Kristály-kamra</a> házi feladatsor.</p>'
-  r'<p><b>Külön lapon:</b> a <a href="' + C + r'">hiányos és a teljes indukció</a> — ebből nincs '
-  r'számonkérés, de érdemes elolvasni; a témakör zárása pedig '
+  r'<p><b>Külön lapon:</b> a <a href="' + C + r'">hiányos és a teljes indukció</a> — '
+  r'egyszerű bizonyításoknál a bázis- és az indukciós lépést kell alkalmazni; a témakör zárása pedig '
   r'<a href="terepkuldetes.html">A Végtelen Mutáció</a> küldetés.</p></div></div>',
  ]),
 ]
@@ -387,7 +387,7 @@ oldal(**T, fajl="feladatok-hazi.html", cim="Kristály-kamra", h1="Kristály-kamr
       chipek='<span class="chip alap">Alap</span><span class="chip kozep">Közép</span>'
              '<span class="chip nehez">Nehéz</span>',
       alcim="Rövid, vegyes gyakorlósor a sorozatokból — házi feladatnak és a témazáró ellenőrző előtti "
-            "bemelegítésnek. Az indukcióból nincs feladat. Számológép használható: a nem egész "
+            "bemelegítésnek. Ez a feladatsor a sorozatokra összpontosít. Számológép használható: a nem egész "
             "eredményeket két tizedesjegyre kerekítsd. A végeredmény minden feladatnál lenyitható!",
       sections_html="\n".join(body),
       prev=FGY, prevc="Sorozatok — feladatok", nxt=C, nxtc="Hiányos és teljes indukció")
@@ -408,7 +408,7 @@ K = {
  "A2": kartya(A2, "Monotonitás és korlátosság", "Növekvő, csökkenő, nem monoton; alsó és felső korlát, leolvasás a grafikonról"),
  "B1": kartya(B1, "A számtani sorozat", "Állandó különbség, az n-edik tag, Gauss trükkje és az összegképlet"),
  "B2": kartya(B2, "A mértani sorozat", "Állandó hányados, az n-edik tag, összegképlet — és a kamatos kamat"),
- "C": kartya(C, "Hiányos és teljes indukció", "Mikor sejtés és mikor bizonyítás — olvasnivaló, számonkérés nincs belőle"),
+ "C": kartya(C, "Hiányos és teljes indukció", "Mikor sejtés és mikor bizonyítás? Bázis és indukciós lépés egyszerű állításoknál"),
  "fgy": kartya(FGY, "🏋️ Sorozatok — feladatok",
                "Általános tag, monotonitás, korlátosság, számtani és mértani sorozat, kamat — 57 feladat"),
  "hazi": kartya("feladatok-hazi.html", "🕹️ Kristály-kamra — házi feladatok",
@@ -476,8 +476,9 @@ INDEX = '''<!DOCTYPE html>
     <h2>Összefoglaló</h2>
 ''' + racs("ossz") + '''
     <p class="le halvany"><b>Ajánlott sorrend:</b> a négy sorozat-egység sorban, utána a Kiképzési
-    Adattár és a Kristály-kamra — ezekre épül a témazáró ellenőrző. Az indukciós lap ezután jön,
-    olvasnivalóként; a Taktikai memóriakártya az ismétlésé, A Végtelen Mutáció pedig a záróküldetés.</p>
+    Adattár és a Kristály-kamra — ezekre épül a témazáró ellenőrző. Az indukciós lapon az
+    egyszerű bizonyítások lépéseit is tanuld meg; a Taktikai memóriakártya az ismétlésé,
+    A Végtelen Mutáció pedig a záróküldetés.</p>
   </div>
 </main>
 <footer class="lablec">

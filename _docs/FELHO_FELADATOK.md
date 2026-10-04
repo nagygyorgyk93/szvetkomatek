@@ -150,7 +150,19 @@ subagenttel; (3) matematikai szúrópróba: definíciók, tételek pontossága, 
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ☑ teljes A1: 77 lap ellenőrizve, témakörönként friss szemű tartalmi próba, 16 lap pontosítva; helyi main (2026-10-04) | ☑ teljes A1: 65 lap ellenőrizve, nyolc lap javítva, mind a négy témakörből friss szemű tananyag- és feladatpróba; helyi main (2026-10-04) | ☐ teljes A1 hátra | ☑ teljes A1: 73 lap böngészőpróbája, témakörönként 1 tananyag és 1 feladatgyűjtemény friss szemű lektorálása, 14 lap javítva; a tanári besorolási döntések átvezetve (2026-10-02) |
+| ☑ teljes A1: 77 lap ellenőrizve, témakörönként friss szemű tartalmi próba, 16 lap pontosítva; helyi main (2026-10-04) | ☑ teljes A1: 65 lap ellenőrizve, nyolc lap javítva, mind a négy témakörből friss szemű tananyag- és feladatpróba; helyi main (2026-10-04) | ◐ 92 lap kánon-, jsdom- és böngészőpróbája, 02 és 06 témakör 12 lapja pontosítva; a friss szemű próba hátra van (2026-10-04) | ☑ teljes A1: 73 lap böngészőpróbája, témakörönként 1 tananyag és 1 feladatgyűjtemény friss szemű lektorálása, 14 lap javítva; a tanári besorolási döntések átvezetve (2026-10-02) |
+
+**3e A1 hibalista és részállapot (2026-10-04, helyi main):**
+
+| Hol | Mi volt a hiba | Súlyosság | Javítás / teendő |
+|---|---|---|---|
+| 06, indukciós tananyag és témakör-útmutatók | A teljes indukcióról azt állították, hogy nem kérhető számon, holott az M2-es kimenet egyszerű egyenlőség, egyenlőtlenség és oszthatóság indukciós bizonyítását is tartalmazza | magas | A tananyag- és egyéb oldalépítőkben a kimenethez igazítva |
+| 06, indukciós kvíz | Az $n^2+n+41$ ellenpéldája a 0-tól számozott negyvenegyedik esetben jelenik meg; a visszajelzés negyvenediket írt | alacsony | Tananyagépítőben pontosítva |
+| 02, gömb és síkmetszetek | A gömbtest minden pontját a középponttól egyenlő távolságúnak mondta; több helyen a test síkmetszetét körnek nevezte körlap helyett, a szélső helyzetek feltétele nélkül | magas / közepes | Tananyag- és összefoglaló-építőkben pontosítva |
+| 02, gömbfeladatok | A gömb síkmetszetével, illetve beírt/körülírt gömbbel kapcsolatos feladatok M1/M3-as bővítések, de törzsanyagként látszottak | közepes | Az érintett kártyákon és tananyagrészeken kiegészítő jelölés |
+| 06, indukció gyakorlása | Kidolgozott példa van, önálló egyszerű indukciós feladat nincs | közepes | **Tanári döntés kell:** az A1 tartalmi bővítés nélkül zajlik; külön adagban, privát felmérő-ütközésvizsgálat után pótolható |
+
+**3e A1 ellenőrzés:** mind a hét érintett builder SymPy-öntesztje rendben. A képek, a 334 aktív médiaelem, a háttér, a naplótérkép (184 oldal, 2294 feladat, 12335 XP) és a 308 oldalas keresőindex újraépült; az indexből pontosan 12 érintett URL szövege változott. A végső kánon- és jsdom-ellenőrzés 92/92, a belső linkek 310/310, a gyakorlósáv tiszta, a kulcsteszt 4499/4499, a regressziós érzékenység 4499/4499 = 100%. A 92 lap 360/390/1280 px-es böngészőpróbája hibátlan; az utolsó két szövegpontosítás után a két érintett lap külön is hibátlan ezen a három szélességen. Nyomtatási látványt és valódi képernyőolvasót nem vizsgáltam. A témakörönkénti, kontextus nélküli friss szemű lektorálás a szolgáltatás használati korlátja miatt nem indult el; ezért az A1 **részben kész** marad. A következő lépés témakörönként egy tananyag- és egy feladatlap független lektorálása. Az indukcióhoz önálló egyszerű bizonyítási feladatok külön, a privát felmérő-ütközésvizsgálatot is tartalmazó tartalmi adagban pótolhatók.
 
 **2e A1 hibalista (2026-10-04, helyi main):**
 

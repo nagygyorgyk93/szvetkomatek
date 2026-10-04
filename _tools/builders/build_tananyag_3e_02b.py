@@ -73,7 +73,7 @@ SVG_HALO_KUP = svg_halo("kup", w=360, h=260)
 SVG_KUP_TM = svg_kup(tengelymetszet=True, alkoto=True, w=300, h=280,
     leiras="A kúp tengelymetszete egyenlő szárú háromszög")
 SVG_KUP_PM = svg_kup(parhuzamos_metszet=True, alkoto=False, w=300, h=280,
-    leiras="A kúp alaplappal párhuzamos metszete az alapkörhöz hasonló kör")
+    leiras="A kúp alaplappal párhuzamos metszete az alaplaphoz hasonló körlap")
 SVG_HENGER_TM = svg_henger(tengelymetszet=True, w=310, h=270,
     leiras="A henger tengelymetszete téglalap")
 SVG_CSONKA = svg_csonkakup(kiegeszites=True, w=300, h=280,
@@ -411,19 +411,20 @@ B3 = [
 
  ("Az alaplappal párhuzamos metszet", [
    doboz("tetel", "A párhuzamos metszet alakja",
-         '<p>Az alaplappal párhuzamos síkkal vett metszet mindkét testnél <b>kör</b>, '
+         '<p>Az alaplappal párhuzamos síkkal, a test belsejében vett metszet '
+         'mindkét testnél <b>körlap</b>, '
          'de a méretében élesen különböznek:</p>'
          '<ul>'
-         '<li>a <b>hengernél</b> az alapkörrel <b>egybevágó</b> — bárhol metszünk, '
-         'ugyanaz az $r$ sugarú kör;</li>'
-         '<li>a <b>kúpnál</b> az alapkörhöz <b>hasonló</b>, és a hasonlóság aránya a '
+         '<li>a <b>hengernél</b> az alaplappal <b>egybevágó</b> — bárhol metszünk, '
+         'ugyanolyan $r$ sugarú körlapot kapunk;</li>'
+         '<li>a <b>kúpnál</b> az alaplaphoz <b>hasonló</b>, és a hasonlóság aránya a '
          '<b>csúcstól mért magasságok aránya</b>. Ha a metszősík a csúcstól a magasság '
          '$k$-szorosánál van, a metszetkör sugara $k\\cdot r$. Ha a feladat az '
          '<b>alaplaptól</b> mért $d$ távolságot adja meg, akkor '
          '$k=\\frac{H-d}{H}$.</li>'
          '</ul>',
          hid="tetel-parhuzamos-metszet"),
-   abra(SVG_KUP_PM, 'A kúp párhuzamos metszete az alapkörhöz <b>hasonló</b> kör — annál '
+   abra(SVG_KUP_PM, 'A kúp párhuzamos metszete az alaplaphoz <b>hasonló</b> körlap — annál '
         'kisebb, minél közelebb van a csúcshoz.'),
    '<p>A hasonlóság aránya ugyanúgy működik, mint a '
    '<a href="' + POLI + 'tananyag-gula-sikmetszetek.html#tetel-hasonlosag-aranyok">'
@@ -436,7 +437,7 @@ B3 = [
          'ugyanaz az elv, mint amikor a metszetek területéből következtetünk a '
          'térfogatra.</p>'),
    kviz('Egy kúpot a csúcstól mért magasság <b>felénél</b> metszünk el az alaplappal '
-        'párhuzamosan. Hogyan aránylik a metszetkör területe az alapkörhöz?',
+        'párhuzamosan. Hogyan aránylik a metszetkörlap területe az alaplapéhoz?',
         ['A negyede', 'A fele', 'Ugyanakkora'], 0,
         jo="✔ A hosszak aránya k = ½, a területeké k² = ¼ — a metszet területe az "
            "alapkör negyede.",
@@ -462,7 +463,7 @@ B3 = [
    abra(SVG_TM_HAROM, 'A kapott háromszög külön kirajzolva: alapja $10$, szárai $13$, '
         'magassága $12$.'),
    '<p><b>Párhuzamos metszet.</b> Ha ugyanezt a kúpot a csúcstól mért magasság '
-   'harmadánál metsszük el az alaplappal párhuzamosan, a metszetkör sugara '
+   'harmadánál metsszük el az alaplappal párhuzamosan, a metszet határoló körének sugara '
    '$\\frac13\\cdot5=\\frac53$, a területe pedig '
    '$\\left(\\frac13\\right)^2\\cdot25\\pi=\\frac{25\\pi}{9}$ cm².</p>'
    '<p>A tengelymetszet területe általában:</p>'

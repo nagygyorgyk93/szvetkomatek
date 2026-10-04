@@ -80,8 +80,8 @@ SVG_FURT = svg_osszetett("furt-henger", w=290, h=280)
 
 C1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Medúza:</b> A Kristálypára legstabilabb formája a <b>gömb</b> — minden '
-         'pontja ugyanolyan messze van a középponttól, ezért nincs rajta gyenge pont, '
+   brief('<b>Medúza:</b> A Kristálypára legstabilabb formája a <b>gömb</b> — a '
+         'gömbfelület minden pontja ugyanolyan messze van a középponttól, ezért nincs rajta gyenge pont, '
          'amin a nyomás beszakíthatná. Ezért gömbölyű a buborék, a bolygó és a '
          'vízcsepp.'),
    '<p>A gömb az egyetlen test a témakörben, amelyet <b>egyetlen adat</b> — a sugár — '
@@ -123,15 +123,18 @@ C1 = [
  ]),
 
  ("A gömb mint forgástest", [
-   '<p>A gömb is forgástest: egy <b>félkört</b> forgatunk meg az <b>átmérője</b> '
-   'körül.</p>',
-   abra(SVG_F_FELKOR, 'A félkör az átmérője körül forgatva gömböt ad.'),
+   '<p>A gömbtest forgástest: egy <b>félkörlapot</b> forgatunk meg az <b>átmérője</b> '
+   'körül. A félkörív forgatásával a gömbfelületet kapjuk.</p>',
+   abra(SVG_F_FELKOR, 'A félkörlap az átmérője körül forgatva gömbtestet ad.'),
+   '<p><b>Kiegészítő kitekintés:</b> a gömb síkmetszeteinek számítása az M2-es '
+   'tanulási kimeneteken túlmutat. A gömbfelület és a sík kölcsönös helyzetét '
+   'viszont fel kell ismerned.</p>',
    doboz("definicio", "Főkör",
-         '<p>A gömb <b>főköre</b> az a metszet, amelyet a <b>középponton átmenő</b> '
-         'síkkal kapunk. A főkör sugara maga a gömb sugara, $R$ — ez a gömb lehető '
-         'legnagyobb síkmetszete.</p>'
+         '<p>A <b>középponton átmenő</b> sík a gömbfelületből <b>főkört</b>, a '
+         'gömbtestből az általa határolt <b>körlapot</b> metszi ki. A főkör sugara '
+         'maga a gömb sugara, $R$.</p>'
          '<p>A gömbnek — a többi forgástesttel ellentétben — <b>nincs kitüntetett '
-         'tengelye</b>: <b>bármely</b> középponton átmenő sík ugyanazt a főkört adja. '
+         'tengelye</b>: <b>bármely</b> középponton átmenő sík ugyanakkora főkört ad. '
          'Ezért nincs a gömbnek „álló” helyzete sem — bárhogy forgatod, ugyanúgy néz '
          'ki.</p>',
          hid="def-fokor"),
@@ -207,6 +210,8 @@ C1 = [
         nem="✘ Itt d = R = 8, ez az érintés esete — pontosan EGY közös pont. Kört akkor "
             "metszene ki, ha d < R lenne."),
    GY(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–3"),
+   '<p>A gyakorlásban az A 3–4 feladat <b>kiegészítő kihívás</b>: ezek már a '
+   'gömb síkmetszeteivel számolnak.</p>',
    brief('<b>Medúza:</b> A forma megvan. Most jön az a két képlet, amely az egészet '
          'leírja — és mindkettőben ugyanaz az egyetlen adat szerepel.', outro=True),
  ]),
@@ -229,11 +234,11 @@ C2 = [
    doboz("tetel", "A gömb felszíne",
          '$$F=4R^{2}\\pi.$$'
          '<p>Vagyis a gömbfelület területe pontosan <b>négyszerese</b> a főkör '
-         '($R^2\\pi$) területének.</p>',
+         'által határolt körlap ($R^2\\pi$) területének.</p>',
          hid="tetel-gomb-felszin"),
    '<p><b>Miért hihető?</b> Végezd el a narancshéj-kísérletet: rajzold körbe a '
-   'narancsot a papíron <b>négyszer</b> — négy egyforma, $R$ sugarú kört kapsz. '
-   'Ezután hámozd meg, és tördeld a héjat apró darabokra: pontosan a négy kört '
+   'narancsot a papíron <b>négyszer</b> — négy egyforma, $R$ sugarú körlapot kapsz. '
+   'Ezután hámozd meg, és tördeld a héjat apró darabokra: pontosan a négy körlapot '
    'töltöd ki velük, nem hármat és nem ötöt. Ez nem bizonyítás, de meggyőző.</p>',
    doboz("csapda", "Maxi trükkje",
          '<p><i>„A felszín $F=4R\\pi$, a térfogat $V=\\frac{4R^2\\pi}{3}$.”</i></p>'
@@ -257,11 +262,12 @@ C2 = [
    doboz("tetel", "A gömb térfogata",
          '$$V=\\frac{4R^{3}\\pi}{3}.$$',
          hid="tetel-gomb-terfogat"),
-   '<p><b>Miért hihető?</b> Írjunk a gömb köré a lehető legszorosabb <b>hengert</b>: '
+   '<p><b>Kiegészítő kitekintés:</b> írjunk a gömb köré a lehető legszorosabb <b>hengert</b>: '
    'ennek az alapköre a főkör ($r=R$), a magassága pedig az átmérő ($H=2R$). A henger '
    'térfogata</p>'
    '$$V_{\\text{henger}}=R^2\\pi\\cdot2R=2R^3\\pi,$$'
-   '<p>a gömbé pedig ennek pontosan a <b>kétharmada</b>:</p>'
+   '<p>A már megadott gömbképlettel ellenőrizhető, hogy a gömb térfogata ennek '
+   'pontosan a <b>kétharmada</b>. Ez az arány itt szemléltetés, nem a képlet bizonyítása:</p>'
    '$$\\frac{V_{\\text{gömb}}}{V_{\\text{henger}}}='
    '\\frac{\\frac{4R^3\\pi}{3}}{2R^3\\pi}=\\frac23.$$',
    abra(SVG_GOMB_HENGER, 'A gömb és a köré írt henger: a térfogatok aránya $2:3$.'),
@@ -320,6 +326,8 @@ C2 = [
          'sejteknél, és a cukrász, amikor megbecsüli, mennyi csokoládé kell a '
          'bonbonok bevonásához.</p>'),
    GY(FGY + "#alap-7", "A 7–16", FGY + "#kozep-4", "K 4–11"),
+   '<p>A K 8–9 feladat <b>kiegészítő kihívás</b>: a gömb és a köré írt henger '
+   'arányát alkalmazza.</p>',
    brief('<b>Medúza:</b> A négy alaptest megvan. A valóságban viszont ritkán áll egy '
          'test magában — a Kamra minden szerkezete <b>összetett</b>. Ez lesz az utolsó '
          'lépés.', outro=True),
@@ -449,6 +457,7 @@ C3 = [
         nem="✘ A végeken körgyűrűk vannak (nem teli körök), és a belső palást is "
             "látszik: összesen négy darab."),
    GY(FGY + "#alap-17", "A 17–22", FGY + "#kozep-12", "K 12–17"),
+   '<p>A K 17 feladat <b>kiegészítő kihívás</b>: kockába írt gömbbel számol.</p>',
  ]),
 
  ("🧾 Gyorsismétlő — a forgástestek képlettára", [
@@ -499,7 +508,7 @@ KI = [
  lap(**T, fajl="tananyag-gomb-felszin-terfogat.html",
      cim="A gömb felszíne és térfogata",
      cim_tiszta="A gömb felszíne és térfogata",
-     alcim="A két képlet, a gömb és a köré írt henger 2:3 aránya, a fordított feladatok "
+     alcim="A két képlet, kiegészítő kitekintésként a köré írt henger 2:3 aránya, a fordított feladatok "
            "és a valós számítások.",
      chip=KUL + " · 9/10", szakaszok=C2,
      elozo=("tananyag-gomb.html", "A gömbfelület és a gömb"),
