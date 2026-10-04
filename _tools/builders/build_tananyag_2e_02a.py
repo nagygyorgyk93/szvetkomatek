@@ -142,7 +142,7 @@ A1 = [
          'Osztás $(x-4)$-gyel.'], 0,
         jo="✔ A „szorzat = 0” szabály csak nulla jobb oldal mellett használható.",
         nem="✘ A jobb oldal nem nulla, ezért előbb ki kell bontani és rendezni: x²−3x−10=0."),
-   gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–4"),
+   gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–3"),
    brief('<b>Nagol:</b> Megvan a képlet. De nekem nem elég <b>megoldani</b> — előre '
          'tudni akarom, <b>mi vár rám</b>, mielőtt belemegyek. Van a képletben egy szám, '
          'a gyökjel alatt, ami mindent elárul: hány megoldás lesz, és egyáltalán '
@@ -201,7 +201,8 @@ A2 = [
  ]),
 
  ("Paraméteres feladatok", [
-   'A vizsgahelyzetek kedvence: az egyenletben egy <b>paraméter</b> szerepel, és arra '
+   'Ez <b>kiegészítő kihívás</b>: a paraméteres esetszétválasztás nem része a 2e-s '
+   'törzskövetelménynek. Az egyenletben egy <b>paraméter</b> szerepel, és arra '
    'kérdeznek rá, mikor hányféle megoldás van. A recept mindig ugyanaz: '
    '<b>írd fel $D$-t a paraméterrel</b>, aztán oldd meg a $D&gt;0$, $D=0$, $D&lt;0$ '
    'egyenlőtlenségeket.',
@@ -221,6 +222,8 @@ A2 = [
          '($x=-\\tfrac14$). A diszkriminánst tehát csak $m\\neq 2$ mellett szabad használni.</p>'
          '<p><b>Ellenőrző kérdés minden paraméteres feladatnál:</b> hol áll a paraméter? '
          'Ha a főegyütthatóban, akkor van egy „elfajuló” eset is.</p>'),
+   gyakorolj(FGY + "#alap-10", "A 10", FGY + "#kozep-4", "K 4–5",
+             bevezeto="Kiegészítő kihívás: ezeket nem kell a 2e-s törzsanyaghoz megoldanod."),
  ]),
 
  ("Amikor a gyökök komplexek", [
@@ -243,7 +246,7 @@ A2 = [
         ['$1-3i$', '$-1-3i$', '$-1+3i$'], 0,
         jo="✔ Valós együtthatóknál a komplex gyökök konjugált párt alkotnak.",
         nem="✘ A megoldóképlet ± jele csak a képzetes rész előjelét váltja: 1 − 3i."),
-   gyakorolj(FGY + "#alap-7", "A 7–10", FGY + "#kozep-5", "K 5–8"),
+   gyakorolj(FGY + "#alap-7", "A 7–9", FGY + "#kozep-6", "K 6–8"),
    brief('<b>Nagol:</b> Most jön a rész, amit a legjobban szeretek. Kiderül, hogy '
          'a gyököket <b>nem is kell kiszámolni</b> ahhoz, hogy tudjunk róluk. Az összegük '
          'és a szorzatuk közvetlenül az együtthatókból leolvasható — és ezzel az egész '
@@ -381,6 +384,8 @@ A4 = [
          'bevezetésével visszavezetheted arra, amit már tudsz. '
          'A neve <b>bikvadratikus</b>, és a leggyakoribb hiba nem a megoldásában, '
          'hanem a <b>visszahelyettesítésben</b> van.'),
+   '<b>Kiegészítő kihívás:</b> a bikvadratikus egyenletek a honlapon megmaradnak, de '
+   'nem részei a 2e-s törzskövetelménynek.',
  ]),
 
  ("Új ismeretlen bevezetése ($t=x^{2}$)", [
@@ -453,7 +458,8 @@ A4 = [
         ['Kettő: $\\pm 1$.', 'Négy: $\\pm 1$ és $\\pm 2$.', 'Egy sem.'], 0,
         jo="✔ t = 1 vagy t = −4; csak a t = 1 ad valós x-et: ±1.",
         nem="✘ t² + 3t − 4 = 0 → t = 1 vagy t = −4. A t = −4-hez nincs valós x, tehát csak ±1."),
-   gyakorolj(FGY + "#alap-16", "A 16–18", FGY + "#kozep-14", "K 14–16"),
+   gyakorolj(FGY + "#alap-16", "A 16–18", FGY + "#kozep-14", "K 14–16",
+             bevezeto="Kiegészítő kihívás: a bikvadratikus feladatok nem kötelező 2e-s törzsanyag."),
    brief('<b>Küklopsz:</b> Nagol elvégezte a durva munkát — innen én veszem át. '
          'Eddig azt kérdeztük: <b>hol nulla</b> a kifejezés. Most azt fogjuk kérdezni: '
          '<b>hogyan viselkedik mindenütt</b>. Az optikai sugaraim röppályája ugyanaz a görbe, '
@@ -475,8 +481,8 @@ KI = [
      kovetkezo=("tananyag-diszkriminans.html", "A diszkrimináns")),
  lap(**T, fajl="tananyag-diszkriminans.html",
      cim="A diszkrimináns", cim_tiszta="A diszkrimináns",
-     alcim="A $D=b^{2}-4ac$ szám és a megoldások természete, paraméteres feladatok, "
-           "valamint a komplex gyökpárok.",
+     alcim="A $D=b^{2}-4ac$ szám és a megoldások természete, komplex gyökpárok; "
+           "paraméteres esetszétválasztás kiegészítőként.",
      chip="Az M-Faktor · 2/8", szakaszok=A2,
      elozo=("tananyag-masodfoku-egyenlet.html", "A másodfokú egyenlet"),
      kovetkezo=("tananyag-viete-es-szorzatta-alakitas.html", "Viète-képletek és szorzattá alakítás")),
@@ -491,8 +497,8 @@ KI = [
  lap(**T, fajl="tananyag-bikvadratikus.html",
      cim="Másodfokúra visszavezethető egyenletek",
      cim_tiszta="Másodfokúra visszavezethető egyenletek",
-     alcim="A bikvadratikus egyenlet és a $t=x^{2}$ helyettesítés, a visszahelyettesítés "
-           "buktatói, valós és komplex gyökök.",
+     alcim="Kiegészítő kihívás: a bikvadratikus egyenlet és a $t=x^{2}$ helyettesítés, "
+           "a visszahelyettesítés buktatói, valós és komplex gyökök.",
      chip="Az M-Faktor · 4/8", szakaszok=A4,
      elozo=("tananyag-viete-es-szorzatta-alakitas.html", "Viète-képletek és szorzattá alakítás"),
      kovetkezo=(FGY, "Feladatok — másodfokú egyenletek")),

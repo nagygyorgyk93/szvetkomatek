@@ -3,7 +3,7 @@
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tananyag_common import lap, doboz, brief, GYOKER
-from fgy_common import cards, oldal, w
+from fgy_common import cards, kiegeszito_jeloles, oldal, w
 
 T = dict(tagozat="2e", mappa="02-masodfoku-egyenletek-es-fuggvenyek",
          temakor="Másodfokú egyenletek és függvények")
@@ -76,7 +76,7 @@ OSSZ = [
   '<b>$D&gt;0$:</b> két különböző valós gyök · <b>$D=0$:</b> egy kettős gyök, '
   '$x=-\\frac{b}{2a}$ · <b>$D&lt;0$:</b> két <b>konjugált komplex</b> gyök '
   '(<a href="tananyag-diszkriminans.html#tetel-megoldasok-termeszete">→</a>).</p>',
-  '<p><b>Paraméteres feladat receptje:</b> írd fel $D$-t a paraméterrel, majd oldd meg a '
+  '<p><b>Kiegészítő kihívás — paraméteres feladat:</b> írd fel $D$-t a paraméterrel, majd oldd meg a '
   '$D&gt;0$, $D=0$, $D&lt;0$ egyenlőtlenségeket. ⚠️ Ha a paraméter a <b>főegyütthatóban</b> '
   'áll, külön vizsgáld az „ekkor nem másodfokú” esetet '
   '(<a href="tananyag-diszkriminans.html#pelda-parameteres">→</a>).</p>',
@@ -96,7 +96,7 @@ OSSZ = [
   '(<a href="tananyag-viete-es-szorzatta-alakitas.html#tetel-szorzatta-alakitas">→</a>)</p>',
  ]),
  ("Bikvadratikus egyenletek", [
-  '<p>$ax^{4}+bx^{2}+c=0$ → a $t=x^{2}$ helyettesítéssel másodfokú lesz '
+  '<p><b>Kiegészítő kihívás.</b> $ax^{4}+bx^{2}+c=0$ → a $t=x^{2}$ helyettesítéssel másodfokú lesz '
   '(<a href="tananyag-bikvadratikus.html#tetel-bikvadratikus">→</a>). '
   '⚠️ <b>Vissza kell helyettesíteni</b>: minden $t$-hez $x=\\pm\\sqrt{t}$ tartozik. '
   'Negatív $t$ esetén a gyökök <b>komplexek</b>; a valós számok halmazán ezeket elvetjük.</p>',
@@ -140,7 +140,7 @@ OSSZ = [
         '<p>1) $x^{2}=5x$-ből <b>ne ossz</b> $x$-szel — elveszik az $x=0$. &nbsp; '
         '2) A szorzattá bontásból <b>ne hagyd le</b> a főegyütthatót. &nbsp; '
         '3) $u=-\\frac{b}{2a}$ — ha $b$ negatív, $-b$ <b>pozitív</b>. &nbsp; '
-        '4) A bikvadratikusnál <b>helyettesíts vissza</b>, és ne feledd a $\\pm$-t. &nbsp; '
+        '4) A kiegészítő bikvadratikus feladatnál <b>helyettesíts vissza</b>, és ne feledd a $\\pm$-t. &nbsp; '
         '5) Negatív számmal szorozva az egyenlőtlenség <b>iránya megfordul</b>. &nbsp; '
         '6) A végtelen mellett <b>mindig nyitott</b> zárójel áll.</p>'),
   '<div class="gyakorolj"><span class="ikon">🎯</span><p>Élesben: a '
@@ -151,8 +151,8 @@ OSSZ = [
 
 lap(**T, fajl="osszefoglalo.html", cim="Taktikai memóriakártya",
     cim_tiszta="Taktikai memóriakártya", itt="Taktikai memóriakártya",
-    alcim="Az M-Faktor minden képlete, protokollja és tipikus csapdája egy helyen — "
-          "ismétléshez, dolgozat előtti átfutáshoz, nyomtatáshoz.",
+    alcim="Az M-Faktor törzsanyaga és külön jelölt kiegészítő képletei egy helyen — "
+          "ismétléshez és nyomtatáshoz.",
     chip="Az M-Faktor · összefoglaló", chip_tipus="összefoglaló",
     szakaszok=[("📇 " + OSSZ[0][0], OSSZ[0][1])] + OSSZ[1:],
     elozo=("feladatok-egyenlotlensegek-es-rendszerek.html", "Feladatok — egyenlőtlenségek és rendszerek"),
@@ -170,8 +170,9 @@ TEREP = [
          'terepen van; a te dolgod a <b>matematika</b>.'),
    '<p class="lead">Ez a küldetés a teljes témakört használja: másodfokú egyenletet, '
    'diszkriminánst, Viète-képleteket, függvényvizsgálatot, egyenlőtlenséget és rendszert. '
-   'Dolgozz füzetben, és a végén add le a jelentést. <b>A megoldások nincsenek fent</b> — '
-   'ezt a bevetést a tanárod értékeli.</p>',
+   'Dolgozz füzetben, és a végén add le a jelentést. Az I. fázis 4. feladata '
+   '<b>kiegészítő kihívás</b>, nem része a 2e-s törzskövetelménynek. '
+   '<b>A megoldások nincsenek fent</b> — ezt a bevetést a tanárod értékeli.</p>',
  ]),
  ("Fázis I — A röppálya bemérése", [
    doboz("pelda", "I. fázis: ballisztika",
@@ -183,7 +184,7 @@ TEREP = [
          '<li>A védőágyúnk lövedéke egy $25$ méteres toronyból indul: '
          '$g(t)=-5t^{2}+20t+25$. Mikor ér földet? (Az egyik gyök nem lehet megoldás — '
          'indokold meg, miért!)</li>'
-         '<li>Az elfogórakéta vezérlőkódja az $x^{2}-\\left(2k-10\\right)x+3k-33=0$ '
+         '<li><b>Kiegészítő kihívás:</b> az elfogórakéta vezérlőkódja az $x^{2}-\\left(2k-10\\right)x+3k-33=0$ '
          'egyenlet, ahol $k$ valós paraméter. A rendszer akkor stabil, ha a két gyök '
          '<b>ellentett</b> szám. Mennyi $k$, és mik a gyökök?</li>'
          '</ol>'),
@@ -318,13 +319,16 @@ DR_N = [
 dr_brief = ('<div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — Az M-Faktor modul. '
             'A szimuláció a <b>teljes témakört</b> lefedi: másodfokú egyenletek, diszkrimináns, '
             'Viète, szorzattá alakítás, bikvadratikus, függvényvizsgálat, egyenlőtlenségek és '
-            'rendszerek. Haladj a fokozatokon: zöld → sárga → piros. A végeredményt lenyithatod, '
+            'rendszerek. A paraméteres és bikvadratikus kártyák kiegészítő kihívások. '
+            'Haladj a fokozatokon: zöld → sárga → piros. A végeredményt lenyithatod, '
             'de előbb küzdd le magad!</p></div>')
 
 dr_body = ('    ' + dr_brief + '\n'
            '    <h2 id="alap">🟢 Alapfokozat</h2>\n' + cards(DR_A, "alap", "alap") +
-           '\n    <h2 id="kozep">🟡 Középfokozat</h2>\n' + cards(DR_K, "kozep", "kozep") +
-           '\n    <h2 id="nehez">🔴 Nehéz fokozat</h2>\n' + cards(DR_N, "nehez", "nehez"))
+           '\n    <h2 id="kozep">🟡 Középfokozat</h2>\n' +
+           cards(kiegeszito_jeloles(DR_K, {1, 2}), "kozep", "kozep") +
+           '\n    <h2 id="nehez">🔴 Nehéz fokozat</h2>\n' +
+           cards(kiegeszito_jeloles(DR_N, {2, 3}), "nehez", "nehez"))
 
 oldal(**T, fajl="feladatok-hazi.html", cim="Vészterem",
       h1="🕹️ Vészterem — házi feladatgyűjtemény", itt="Vészterem — házi",
@@ -348,11 +352,11 @@ K = [
  kartya("tananyag-masodfoku-egyenlet.html", "A másodfokú egyenlet",
         "Az egyenlet alakja, a három hiányos eset, a megoldóképlet és levezetése, rendezés"),
  kartya("tananyag-diszkriminans.html", "A diszkrimináns",
-        "A $D=b^{2}-4ac$ és a megoldások természete, paraméteres feladatok, komplex gyökpárok"),
+        "A $D=b^{2}-4ac$ és a megoldások természete, komplex gyökpárok; paraméteres kitekintés"),
  kartya("tananyag-viete-es-szorzatta-alakitas.html", "Viète-képletek és szorzattá alakítás",
         "A gyökök összege és szorzata, szimmetrikus kifejezések, a trinom tényezőkre bontása"),
  kartya("tananyag-bikvadratikus.html", "Másodfokúra visszavezethető egyenletek",
-        "A $t=x^{2}$ helyettesítés, a visszahelyettesítés buktatói, valós és komplex gyökök"),
+        "Kiegészítő kihívás: $t=x^{2}$ helyettesítés, visszahelyettesítés, valós és komplex gyökök"),
  kartya("tananyag-masodfoku-fuggveny.html", "A másodfokú függvény és grafikonja",
         "A főegyüttható szerepe, kanonikus alak és csúcspont, a parabola hat esete"),
  kartya("tananyag-fuggvenyvizsgalat.html", "A másodfokú függvény vizsgálata",

@@ -2,7 +2,11 @@
 """2e/02 — A altema feladatgyujtemeny: a masodfoku egyenlet. + gyakorlo ELLENORZO."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from fgy_common import cards, gyt_cards, joker_card, oldal, DISZKLEMER
+from fgy_common import cards, gyt_cards, joker_card, kiegeszito_jeloles, oldal, DISZKLEMER
+
+DISZKLEMER_2E_02 = DISZKLEMER.replace(
+    'A típusok viszont ismerősek lesznek — érdemes végigcsinálni.',
+    'A törzsanyag feladattípusai ismerősek lesznek; a kiegészítő kihívások nem részei a 2e-s törzskövetelménynek.')
 
 # ============================== ÖNELLENŐRZÉS ==============================
 from sympy import symbols, Rational as R, solve, simplify, factor, expand, im, re as _re, I, sqrt, Eq
@@ -262,21 +266,29 @@ GYE_OTTHON = [
 # ============================== OLDAL ==============================
 
 body = [
- '    <h2 id="alap">🟢 Alapszint — Kék Csapat</h2>\n' + cards(ALAP, "alap", "alap"),
- '    <h2 id="kozep">🟡 Középszint — Arany Csapat</h2>\n' + cards(KOZEP, "kozep", "kozep"),
- '    <h2 id="nehez">🔴 Nehéz szint</h2>\n' + cards(NEHEZ, "nehez", "nehez"),
+  '    <h2 id="alap">🟢 Alapszint — Kék Csapat</h2>\n' +
+  cards(kiegeszito_jeloles(ALAP, {10, 16, 17, 18}), "alap", "alap"),
+  '    <h2 id="kozep">🟡 Középszint — Arany Csapat</h2>\n' +
+  cards(kiegeszito_jeloles(KOZEP, {4, 5, 14, 15, 16}), "kozep", "kozep"),
+  '    <h2 id="nehez">🔴 Nehéz szint</h2>\n' +
+  cards(kiegeszito_jeloles(NEHEZ, {1, 2, 6}), "nehez", "nehez"),
  '    <h2 id="joker">🃏 Joker</h2>\n' + joker_card(JOKER[0], JOKER[1]),
- '    <h2 id="gyak-ellenorzo">📝 Gyakorló ellenőrző</h2>\n    ' + DISZKLEMER +
- '\n    <p class="reszcsoport">🏫 Órai ismétlés</p>\n' + gyt_cards(GYE_ORAI, "gye") +
- '\n    <p class="reszcsoport">🏠 Otthoni gyakorlás</p>\n' + gyt_cards(GYE_OTTHON, "gyeh"),
+ '    <h2 id="gyak-ellenorzo">📝 Gyakorló ellenőrző</h2>\n    ' + DISZKLEMER_2E_02 +
+  '\n    <p>A 4–5. órai és a 3. otthoni feladat kiegészítő kihívás; a többi a 2e-s törzset gyakoroltatja.</p>' +
+  '\n    <p class="reszcsoport">🏫 Órai ismétlés</p>\n' +
+  gyt_cards(kiegeszito_jeloles(GYE_ORAI, {4, 5}), "gye") +
+  '\n    <p class="reszcsoport">🏠 Otthoni gyakorlás</p>\n' +
+  gyt_cards(kiegeszito_jeloles(GYE_OTTHON, {3}), "gyeh"),
 ]
 
 ut = oldal(tagozat="2e", mappa="02-masodfoku-egyenletek-es-fuggvenyek",
            fajl="feladatok-masodfoku-egyenletek.html", cim="A másodfokú egyenlet",
            temakor="Másodfokú egyenletek és függvények",
-           alcim="Hiányos és teljes egyenletek, diszkrimináns és paraméteres feladatok, "
-                 "Viète-képletek, szorzattá alakítás és bikvadratikus egyenletek — a végén "
-                 "gyakorló ellenőrzővel. A végeredmény minden feladatnál lenyitható!",
+           alcim="Hiányos és teljes egyenletek, diszkrimináns, Viète-képletek és "
+                 "szorzattá alakítás. A paraméteres és bikvadratikus feladatok "
+                 "kiegészítő kihívások; az Alap/Közép/Nehéz sáv a nehézséget jelöli, "
+                 "nem azt, hogy a feladat törzsanyag-e. "
+                 "A végeredmény minden feladatnál lenyitható!",
            sections_html="\n".join(body),
            prev="tananyag-bikvadratikus.html", prevc="Másodfokúra visszavezethető egyenletek",
            nxt="tananyag-masodfoku-fuggveny.html", nxtc="A másodfokú függvény és grafikonja")

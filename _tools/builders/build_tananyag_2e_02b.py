@@ -268,7 +268,8 @@ B2 = [
          '$x=-6$-nál, az értéke $36$.'], 0,
         jo="✔ u = −12/(−2) = 6, és T(6) = −36 + 72 = 36.",
         nem="✘ A csúcs u = −b/(2a) = −12/(−2) = 6, ahol T(6) = 36."),
-   gyakorolj(FGY + "#alap-6", "A 6–11", FGY + "#kozep-5", "K 5–10"),
+   gyakorolj(FGY + "#alap-6", "A 6–11", FGY + "#kozep-5", "K 5–10",
+             bevezeto="A K 6–7 paraméteres feladat kiegészítő kihívás; a többi a törzset gyakoroltatja."),
    brief('<b>Küklopsz:</b> Eddig azt kérdeztük, <b>hol nulla</b> a függvény. A következő '
          'lépés: hol <b>pozitív</b> és hol <b>negatív</b>? Ez már nem egy pont, hanem '
          'egy egész <b>tartomány</b> — és pontosan ilyen a védőpajzs hatósugara is. '

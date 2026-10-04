@@ -53,6 +53,12 @@ def _one(prefix, i, chip, it):
 def cards(items, prefix, chip):
     return "\n".join(_one(prefix, i, chip, it) for i, it in enumerate(items, 1))
 
+def kiegeszito_jeloles(feladatok, sorszamok):
+    """Bővítő kártyák látható jelölése a sorszám és a horgony megtartásával."""
+    return [(("<b>Kiegészítő kihívás.</b> " + feladat[0], *feladat[1:])
+             if sorszam in sorszamok else feladat)
+            for sorszam, feladat in enumerate(feladatok, 1)]
+
 def gyt_cards(items, prefix="gyt"):
     return "\n".join(_one(prefix, i, None, it) for i, it in enumerate(items, 1))
 

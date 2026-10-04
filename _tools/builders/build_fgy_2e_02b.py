@@ -2,7 +2,11 @@
 """2e/02 — B altema feladatgyujtemeny: a masodfoku fuggveny. + gyakorlo DOLGOZAT (A+B blokk)."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from fgy_common import cards, gyt_cards, joker_card, oldal, DISZKLEMER
+from fgy_common import cards, gyt_cards, joker_card, kiegeszito_jeloles, oldal, DISZKLEMER
+
+DISZKLEMER_2E_02 = DISZKLEMER.replace(
+    'A típusok viszont ismerősek lesznek — érdemes végigcsinálni.',
+    'A törzsanyag feladattípusai ismerősek lesznek; a kiegészítő kihívások nem részei a 2e-s törzskövetelménynek.')
 
 # ============================== ÖNELLENŐRZÉS ==============================
 from sympy import symbols, Rational as R, solve, simplify, expand, im, re as _re, I, sqrt, Eq
@@ -197,12 +201,18 @@ GYD_OTTHON = [
 
 body = [
  '    <h2 id="alap">🟢 Alapszint — Kék Csapat</h2>\n' + cards(ALAP, "alap", "alap"),
- '    <h2 id="kozep">🟡 Középszint — Arany Csapat</h2>\n' + cards(KOZEP, "kozep", "kozep"),
- '    <h2 id="nehez">🔴 Nehéz szint</h2>\n' + cards(NEHEZ, "nehez", "nehez"),
+ '    <h2 id="kozep">🟡 Középszint — Arany Csapat</h2>\n' +
+ cards(kiegeszito_jeloles(KOZEP, {6, 7}), "kozep", "kozep"),
+ '    <h2 id="nehez">🔴 Nehéz szint</h2>\n' +
+ cards(kiegeszito_jeloles(NEHEZ, {4}), "nehez", "nehez"),
  '    <h2 id="joker">🃏 Joker</h2>\n' + joker_card(JOKER[0], JOKER[1]),
- '    <h2 id="gyak-dolgozat">📝 Gyakorló dolgozat — egyenletek és függvény</h2>\n    ' + DISZKLEMER +
- '\n    <p class="reszcsoport">🏫 Órai ismétlés</p>\n' + gyt_cards(GYD_ORAI, "gyd") +
- '\n    <p class="reszcsoport">🏠 Otthoni gyakorlás</p>\n' + gyt_cards(GYD_OTTHON, "gydh"),
+ '    <h2 id="gyak-dolgozat">📝 Gyakorló dolgozat — egyenletek és függvény</h2>\n    ' + DISZKLEMER_2E_02 +
+ '\n    <p>A 3. és 7–8. órai, valamint a 3. és 5. otthoni feladat kiegészítő kihívás. '
+ 'A többi feladat a 2e-s törzsanyagot gyakoroltatja.</p>' +
+ '\n    <p class="reszcsoport">🏫 Órai ismétlés</p>\n' +
+ gyt_cards(kiegeszito_jeloles(GYD_ORAI, {3, 7, 8}), "gyd") +
+ '\n    <p class="reszcsoport">🏠 Otthoni gyakorlás</p>\n' +
+ gyt_cards(kiegeszito_jeloles(GYD_OTTHON, {3, 5}), "gydh"),
 ]
 
 ut = oldal(tagozat="2e", mappa="02-masodfoku-egyenletek-es-fuggvenyek",
