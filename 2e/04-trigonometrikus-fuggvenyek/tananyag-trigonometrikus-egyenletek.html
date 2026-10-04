@@ -26,16 +26,22 @@
 </nav>
 <div class="hero">
   <h1>Trigonometrikus egyenletek és egyenlőtlenségek</h1>
-  <p class="alcim">A három alaptípus és általános megoldásuk, a speciális esetek, a <span class="math inline">\(bx\)</span> alakú szögek kezelése és az alap egyenlőtlenségek.</p>
+  <p class="alcim">Egyszerű szinuszos és koszinuszos egyenletek, egyenlőtlenségek a megadott <span class="math inline">\([0;2\pi]\)</span> intervallumon; általános megoldások kiegészítőként.</p>
   <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Fázisugrás · 9/11</span></div>
 </div>
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/szurke_janka.webp" alt="Szürke Janka — a telepata bemérő-specialista" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Szürke Janka:</b> És most a lényeg: <i>mikor</i> éri el a jel a keresett értéket? Ez trigonometrikus egyenlet — és van benne egy csavar, amihez nem vagy hozzászokva. Mivel a hullám <b>ismétlődik</b>, nem egy megoldás van, hanem <b>végtelen sok</b>. A feladat nem egy szám, hanem egy <b>képlet</b>, amely az összeset megadja.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/szurke_janka.webp" alt="Szürke Janka — a telepata bemérő-specialista" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Szürke Janka:</b> És most a lényeg: <i>mikor</i> éri el a jel a keresett értéket? A 2e-s törzsanyagban a trigonometrikus kör segítségével, a megadott <span class="math inline">\([0;2\pi]\)</span> intervallumon keresed a megoldásokat. A hullám ismétlődik; ha az <b>összes valós</b> megoldást is fel akarod írni, az már kiegészítő kihívás.</p></div>
 
     <h2 id="s1">Az alapegyenletek</h2>
+
+    <p class="lead">Törzsanyag: <span class="math inline">\(\sin(ax)=b\)</span> és <span class="math inline">\(\cos(ax)=b\)</span> megoldása a <span class="math inline">\([0;2\pi]\)</span> intervallumon, a kör alapján. Az alábbi teljes valós megoldáscsaládok és a tangenses egyenletek <b>kiegészítő kihívások</b>.</p>
+
+    <p>A megadott intervallum az <b><span class="math inline">\(x\)</span> értékeire</b> vonatkozik. Ha a belső szög <span class="math inline">\(ax\)</span>, akkor az <span class="math inline">\(x\)</span> végigfutása közben a belső szög több kört is megtehet. A <span class="math inline">\([0;2\pi)\)</span> jelölésből a <span class="math inline">\(2\pi\)</span> végpont kimarad; a zárt <span class="math inline">\([0;2\pi]\)</span> intervallumnál ezt is ellenőrizni kell.</p>
+
+    <p><b>Példa egy körön:</b> <span class="math inline">\(2\sin x-1=0\)</span>, <span class="math inline">\(x\in[0;2\pi]\)</span>. Ekkor <span class="math inline">\(\sin x=\tfrac12\)</span>; a kör I. és II. negyedében <span class="math inline">\(x=\tfrac{\pi}{6}\)</span> vagy <span class="math inline">\(x=\tfrac{5\pi}{6}\)</span>. A megadott intervallumon csak ezt a két szöget kell megadni.</p>
 
     <div class="svgcard">
     <svg viewBox="0 0 560 230" width="560" height="230" role="img" aria-label="A sin x egyenlő fél egyenlet megoldásai: a görbe és a vízszintes egyenes metszéspontjai">
@@ -93,7 +99,7 @@
     <!-- media:end 2e04-trig-egyenlet-video -->
     <h2 id="s2">Ha a szög nem <span class="math inline">\(x\)</span>, hanem <span class="math inline">\(bx\)</span></h2>
 
-    Ez a leggyakoribb továbblépés — és pontosan itt szokott elcsúszni a periódus.
+    A <span class="math inline">\(\sin(bx)=a\)</span> és <span class="math inline">\(\cos(bx)=a\)</span> a megadott <span class="math inline">\(x\)</span>-intervallumon a törzshöz tartozik. A teljes valós számhalmazra felírt megoldáscsalád és az eltolt szög kiegészítő kihívás — pontosan itt szokott elcsúszni a periódus.
 
     <div class="doboz tetel" id="tetel-bx">
       <p class="cim"><span class="ikon">📘</span> A helyettesítéses gondolat</p>
@@ -127,7 +133,7 @@
     <!-- media:end 2e04-trig-egyenlet3-video -->
     <h2 id="s3">Alap trigonometrikus egyenlőtlenségek</h2>
 
-    Az egyenletnél azt kérdeztük: <b>hol</b> veszi fel a függvény az adott értéket. Az egyenlőtlenségnél azt: <b>hol nagyobb</b> (vagy kisebb) nála. A megoldás ezért nem néhány pont lesz, hanem <b>szögtartomány</b> — és a periodicitás miatt abból is végtelen sok.
+    Az egyenletnél azt kérdeztük: <b>hol</b> veszi fel a függvény az adott értéket. Az egyenlőtlenségnél azt: <b>hol nagyobb</b> (vagy kisebb) nála. A törzsanyagban a szinusz és koszinusz egyszerű egyenlőtlenségeit a <span class="math inline">\([0;2\pi]\)</span> körön oldjuk meg. A teljes valós számhalmazra kiterjesztett megoldás kiegészítő kihívás.
 
     <div class="doboz tetel" id="tetel-trig-egyenlotlenseg">
       <p class="cim"><span class="ikon">📘</span> A menet — három lépés</p>
@@ -164,7 +170,9 @@
       <figcaption>Folytatás: gyakorlóóra trigonometrikus egyenlőtlenségekből. <span class="media-forras">Forrás: <a href="https://tavoktatas.mnt.org.rs/ii-osztaly/matematika/matematika-ii-osztaly-85-ora-trigonometrikus-egyenlotlensegek-megoldasa" target="_blank" rel="noopener">MNT Távoktatás magyar nyelven</a> — dr. Ripcó Sípos Elvira.</span> <span class="media-url">(Videó: Trigonometrikus egyenlőtlenségek megoldása (II. osztály, 85. óra) — youtu.be/KD_LmXD0pFI)</span></figcaption>
     </figure>
     <!-- media:end 2e04-trig-egyenlotlenseg2-video -->
-    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-trig-fuggvenyek-egyenletek.html#alap-12">🐾 Bestia-protokoll <span class="cimke">A 12–19</span></a><a class="sav bruno" href="feladatok-trig-fuggvenyek-egyenletek.html#kozep-9">🔥 Főnix-protokoll <span class="cimke">K 9–15</span></a></div></div></div>
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Törzsanyag: értékkészlet; egyszerű egyenlet és egyenlőtlenség a megadott intervallumon.</p><div class="savok"><a class="sav henrik" href="feladatok-trig-fuggvenyek-egyenletek.html#alap-16">🐾 Bestia-protokoll <span class="cimke">A 16, 19</span></a><a class="sav bruno" href="feladatok-trig-fuggvenyek-egyenletek.html#kozep-9">🔥 Főnix-protokoll <span class="cimke">K 9</span></a></div></div></div>
+
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Kiegészítő kihívás: általános megoldáscsaládok és összetettebb egyenletek.</p><div class="savok"><a class="sav henrik" href="feladatok-trig-fuggvenyek-egyenletek.html#alap-12">🐾 Bestia-protokoll <span class="cimke">A 12–15, 17–18</span></a><a class="sav bruno" href="feladatok-trig-fuggvenyek-egyenletek.html#kozep-10">🔥 Főnix-protokoll <span class="cimke">K 10–15</span></a></div></div></div>
 
     <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/szurke_janka.webp" alt="Szürke Janka — a telepata bemérő-specialista" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Szürke Janka:</b> A hullámot értjük, az egyenleteket megoldjuk. Egy dolog maradt, és az a legkézzelfoghatóbb az egészben: ha a terepen ismerek <b>néhány</b> távolságot és szöget, ki tudom-e számolni a többit? Ehhez két tétel kell — és ezekkel bemérhető egy torony, egy hegy vagy egy ellenséges bázis.</p></div>
     <div class="lapozo">

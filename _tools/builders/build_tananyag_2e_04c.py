@@ -240,7 +240,8 @@ C1 = [
         ['$\\pi$', '$2\\pi$', '$\\tfrac{\\pi}{2}$'], 0,
         jo="✔ A tangens 180°-onként ismétlődik.",
         nem="✘ A tg és a ctg periódusa π, csak a sin és a cos periódusa 2π."),
-   gyakorolj(FGY + "#alap-1", "A 1–5", FGY + "#kozep-1", "K 1–3"),
+   gyakorolj(FGY + "#alap-1", "A 1–5", FGY + "#kozep-1", "K 1–3",
+             bevezeto="Az A 1–5 a törzsanyagot gyakoroltatja; a K 1–3 kiegészítő kihívás."),
    brief('<b>Szürke Janka:</b> A két alapgörbét ismered. Egy valódi jel viszont sosem ilyen tiszta: van erőssége, sűrűsége és késése. Három paraméter — és mindhárom másképp nyúl bele a hullámba, mint ahogy elsőre gondolnád.', outro=True),
  ]),
 ]
@@ -253,6 +254,10 @@ C2 = [
          '(mekkorát hullámzik), <b>körfrekvenciája</b> (milyen sűrűn ismétlődik) és <b>fázisa</b> '
          '(mikor kezdődik). Ez a három adat az $A$, a $b$ és a $c$ — és mindhárom a függvénytranszformációk logikáját követi, de kettőnél lesz egy csavar, amire külön figyelmeztetlek. Ha ezt '
          'elolvasod egy grafikonról, gyakorlatilag megfejtetted a jelet.'),
+   '<p class="lead">A 2e-s törzsanyagban a $y=\\sin x+d$ és $y=\\cos x+d$ '
+   'függőleges eltolása szerepel: az alapgörbe $d$-vel feljebb vagy lejjebb kerül, '
+   'periódusa változatlan. Az alábbi amplitúdó-, periódus- és fázisvizsgálat, '
+   'valamint a teljes $A\\sin(bx+c)+d$ alak <b>kiegészítő kihívás</b>.</p>',
  ]),
 
  ("Az amplitúdó", [
@@ -325,7 +330,8 @@ C2 = [
         ['$\\tfrac{\\pi}{2}$-vel jobbra', '$\\pi$-vel jobbra', '$\\pi$-vel balra'], 0,
         jo="✔ Emeld ki a b-t: sin(2x − π) = sin(2(x − π/2)), tehát π/2-vel jobbra.",
         nem="✘ Az eltolás nem −c, hanem −c/b. Emeld ki a 2-t: 2x − π = 2(x − π/2)."),
-   gyakorolj(FGY + "#alap-6", "A 6–11", FGY + "#kozep-4", "K 4–8"),
+   gyakorolj(FGY + "#alap-6", "A 6–11", FGY + "#kozep-4", "K 4–8",
+             bevezeto="Kiegészítő kihívás; az A 9 a) része az egyszerű függőleges eltolást gyakoroltatja."),
    brief('<b>Szürke Janka:</b> A hullámot már le tudod írni. Most jön a fordított kérdés: <b>mikor</b> éri el a jel a keresett értéket? Ez trigonometrikus egyenlet — és mivel a hullám ismétlődik, nem egy megoldás lesz, hanem végtelen sok.', outro=True),
 ]),
 ]
@@ -335,13 +341,23 @@ C2 = [
 C3 = [
  ("📡 Küldetés-eligazítás", [
    brief('<b>Szürke Janka:</b> És most a lényeg: <i>mikor</i> éri el a jel a keresett '
-         'értéket? Ez trigonometrikus egyenlet — és van benne egy csavar, amihez nem '
-         'vagy hozzászokva. Mivel a hullám <b>ismétlődik</b>, nem egy megoldás van, '
-         'hanem <b>végtelen sok</b>. A feladat nem egy szám, hanem egy <b>képlet</b>, '
-         'amely az összeset megadja.'),
+         'értéket? A 2e-s törzsanyagban a trigonometrikus kör segítségével, a megadott '
+         '$[0;2\\pi]$ intervallumon keresed a megoldásokat. A hullám ismétlődik; '
+         'ha az <b>összes valós</b> megoldást is fel akarod írni, az már kiegészítő kihívás.'),
  ]),
 
  ("Az alapegyenletek", [
+   '<p class="lead">Törzsanyag: $\\sin(ax)=b$ és $\\cos(ax)=b$ megoldása a '
+   '$[0;2\\pi]$ intervallumon, a kör alapján. Az alábbi teljes valós megoldáscsaládok '
+   'és a tangenses egyenletek <b>kiegészítő kihívások</b>.</p>',
+   '<p>A megadott intervallum az <b>$x$ értékeire</b> vonatkozik. Ha a belső szög '
+   '$ax$, akkor az $x$ végigfutása közben a belső szög több kört is megtehet. '
+   'A $[0;2\\pi)$ jelölésből a $2\\pi$ végpont kimarad; a zárt '
+   '$[0;2\\pi]$ intervallumnál ezt is ellenőrizni kell.</p>',
+   '<p><b>Példa egy körön:</b> $2\\sin x-1=0$, $x\\in[0;2\\pi]$. '
+   'Ekkor $\\sin x=\\tfrac12$; a kör I. és II. negyedében '
+   '$x=\\tfrac{\\pi}{6}$ vagy $x=\\tfrac{5\\pi}{6}$. '
+   'A megadott intervallumon csak ezt a két szöget kell megadni.</p>',
    abra(SVG_EGY, "A $\\sin x=\\tfrac12$ egyenlet megoldásai ott vannak, ahol a "
                  "hullám metszi az $y=\\tfrac12$ egyenest — <b>periódusonként kétszer</b>."),
    doboz("tetel", "A három alaptípus",
@@ -401,7 +417,9 @@ C3 = [
  ]),
 
  ("Ha a szög nem $x$, hanem $bx$", [
-   'Ez a leggyakoribb továbblépés — és pontosan itt szokott elcsúszni a periódus.',
+   'A $\\sin(bx)=a$ és $\\cos(bx)=a$ a megadott $x$-intervallumon a törzshöz tartozik. '
+   'A teljes valós számhalmazra felírt megoldáscsalád és az eltolt szög '
+   'kiegészítő kihívás — pontosan itt szokott elcsúszni a periódus.',
    doboz("tetel", "A helyettesítéses gondolat",
          '<p>Ha az egyenlet $\\sin bx=a$ alakú és $b\\neq0$, kezeld a $bx$-et <b>egyetlen szögként</b>: '
          'oldd meg a $bx$-re, és <b>csak a legvégén</b> ossz $b$-vel — a $2k\\pi$-t is!</p>'
@@ -435,7 +453,9 @@ C3 = [
 
  ("Alap trigonometrikus egyenlőtlenségek", [
    'Az egyenletnél azt kérdeztük: <b>hol</b> veszi fel a függvény az adott értéket. Az '
-   'egyenlőtlenségnél azt: <b>hol nagyobb</b> (vagy kisebb) nála. A megoldás ezért nem néhány pont lesz, hanem <b>szögtartomány</b> — és a periodicitás miatt abból is végtelen sok.',
+   'egyenlőtlenségnél azt: <b>hol nagyobb</b> (vagy kisebb) nála. A törzsanyagban '
+   'a szinusz és koszinusz egyszerű egyenlőtlenségeit a $[0;2\\pi]$ körön oldjuk meg. '
+   'A teljes valós számhalmazra kiterjesztett megoldás kiegészítő kihívás.',
    doboz("tetel", "A menet — három lépés",
          '<ol><li>Keresd meg a <b>határszögeket</b>: oldd meg az egyenlőséget ($\\sin x=\\tfrac12$).</li>'
          '<li>Nézd meg a <b>trigonometrikus körön</b> (vagy a grafikonon), a két határ <b>melyik oldalán</b> teljesül az egyenlőtlenség.</li>'
@@ -460,7 +480,10 @@ C3 = [
         ['$(30^\\circ;150^\\circ)$', '$(150^\\circ;330^\\circ)$', '$(0^\\circ;30^\\circ)$'], 0,
         jo="✔ A két határszög 30° és 150°, és közöttük halad a kör felső íve, ahol a szinusz (az y-koordináta) nagyobb 1/2-nél.",
         nem="✘ A határszögek 30° és 150°. Kérdés, hogy közöttük vagy rajtuk kívül nagyobb a szinusz 1/2-nél: a kör FELSŐ ívén, tehát 30° és 150° KÖZÖTT."),
-    gyakorolj(FGY + "#alap-12", "A 12–19", FGY + "#kozep-9", "K 9–15"),
+   gyakorolj(FGY + "#alap-16", "A 16, 19", FGY + "#kozep-9", "K 9",
+             bevezeto="Törzsanyag: értékkészlet; egyszerű egyenlet és egyenlőtlenség a megadott intervallumon."),
+   gyakorolj(FGY + "#alap-12", "A 12–15, 17–18", FGY + "#kozep-10", "K 10–15",
+             bevezeto="Kiegészítő kihívás: általános megoldáscsaládok és összetettebb egyenletek."),
    brief('<b>Szürke Janka:</b> A hullámot értjük, az egyenleteket megoldjuk. Egy dolog maradt, '
          'és az a legkézzelfoghatóbb az egészben: ha a terepen ismerek <b>néhány</b> '
          'távolságot és szöget, ki tudom-e számolni a többit? Ehhez két tétel kell — és '
@@ -484,8 +507,8 @@ KI = [
  lap(**T, fajl="tananyag-osszetett-trig-fuggvenyek.html",
      cim="Amplitúdó, periódus és fáziseltolás",
      cim_tiszta="Amplitúdó, periódus és fáziseltolás",
-     alcim="Az $y=A\\sin(bx+c)+d$ alakú függvények: mit csinál külön-külön a négy "
-           "paraméter, és hogyan olvasható le egy grafikonról.",
+     alcim="A függőleges eltolás a 2e-s törzs része; az $y=A\\sin(bx+c)+d$ teljes "
+           "alakjának amplitúdó-, periódus- és fázisvizsgálata kiegészítő kihívás.",
      chip="A Fázisugrás · 8/11", szakaszok=C2,
      elozo=("tananyag-trig-fuggvenyek-grafikonja.html",
             "A trigonometrikus függvények grafikonja"),
@@ -494,8 +517,8 @@ KI = [
  lap(**T, fajl="tananyag-trigonometrikus-egyenletek.html",
      cim="Trigonometrikus egyenletek és egyenlőtlenségek",
      cim_tiszta="Trigonometrikus egyenletek és egyenlőtlenségek",
-     alcim="A három alaptípus és általános megoldásuk, a speciális esetek, a $bx$ "
-           "alakú szögek kezelése és az alap egyenlőtlenségek.",
+     alcim="Egyszerű szinuszos és koszinuszos egyenletek, egyenlőtlenségek a megadott "
+           "$[0;2\\pi]$ intervallumon; általános megoldások kiegészítőként.",
      chip="A Fázisugrás · 9/11", szakaszok=C3,
      elozo=("tananyag-osszetett-trig-fuggvenyek.html", "Amplitúdó, periódus és fáziseltolás"),
      kovetkezo=(FGY, "Feladatok — függvények és egyenletek")),

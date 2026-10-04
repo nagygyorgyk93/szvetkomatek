@@ -3,7 +3,7 @@
 terulet es alkalmazasok."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from fgy_common import cards, joker_card, oldal
+from fgy_common import cards, joker_card, kiegeszito_jeloles, oldal
 
 # ============================== ÖNELLENŐRZÉS ==============================
 from sympy import Rational as R, pi, sqrt, sin, cos, tan, asin, acos, rad, deg, N
@@ -150,16 +150,19 @@ JOKER = ("Egy paralelogramma oldalai $8$ és $5$, a hegyesszöge $60^\\circ$. "
 
 body = [
  '    <h2 id="alap">🟢 Alapszint — Kék Csapat</h2>\n' + cards(ALAP, "alap", "alap"),
- '    <h2 id="kozep">🟡 Középszint — Arany Csapat</h2>\n' + cards(KOZEP, "kozep", "kozep"),
- '    <h2 id="nehez">🔴 Nehéz szint</h2>\n' + cards(NEHEZ, "nehez", "nehez"),
- '    <h2 id="joker">🃏 Joker</h2>\n' + joker_card(JOKER[0], JOKER[1]),
+ '    <h2 id="kozep">🟡 Középszint — Arany Csapat</h2>\n' +
+ cards(kiegeszito_jeloles(KOZEP, {4, 5, 8, 10, 12, 13}), "kozep", "kozep"),
+ '    <h2 id="nehez">🔴 Nehéz szint</h2>\n' +
+ cards(kiegeszito_jeloles(NEHEZ, {1, 3, 4, 5}), "nehez", "nehez"),
+ '    <h2 id="joker">🃏 Joker</h2>\n' +
+ joker_card("<b>Kiegészítő kihívás.</b> " + JOKER[0], JOKER[1]),
 ]
 
 ut = oldal(tagozat="2e", mappa="04-trigonometrikus-fuggvenyek",
            fajl="feladatok-haromszogek.html", cim="Háromszögek",
            temakor="Trigonometrikus függvények",
-           alcim="Szinusz- és koszinusztétel, a négy alapeset, terület, valamint "
-                 "magasság- és távolságmérés a gyakorlatban. "
+           alcim="Szinusz- és koszinusztétel egyszerű háromszögfeladatokban; "
+                 "az összetett bemérések és a kétértelmű SSA-eset kiegészítők. "
                  "A végeredmény minden feladatnál lenyitható!",
            sections_html="\n".join(body),
            prev="tananyag-haromszog-megoldasa.html", prevc="Háromszög megoldása és alkalmazások",

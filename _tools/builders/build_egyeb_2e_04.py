@@ -3,7 +3,7 @@
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tananyag_common import lap, doboz, brief, GYOKER
-from fgy_common import cards, oldal, w
+from fgy_common import cards, kiegeszito_jeloles, oldal, w
 
 T = dict(tagozat="2e", mappa="04-trigonometrikus-fuggvenyek",
          temakor="Trigonometrikus függvények")
@@ -125,11 +125,11 @@ OSSZ = [
   '\\cos 2\\alpha=\\cos^{2}\\alpha-\\sin^{2}\\alpha=2\\cos^{2}\\alpha-1='
   '1-2\\sin^{2}\\alpha$$'
   '<p>(<a href="tananyag-addicios-kepletek.html#tetel-ketszeres">→</a>)</p>',
-  '<p><b>Félszög:</b> $\\sin\\tfrac{\\alpha}{2}=\\pm\\sqrt{\\tfrac{1-\\cos\\alpha}{2}}$, '
+  '<p><b>Kiegészítő kihívás — félszög:</b> $\\sin\\tfrac{\\alpha}{2}=\\pm\\sqrt{\\tfrac{1-\\cos\\alpha}{2}}$, '
   '$\\cos\\tfrac{\\alpha}{2}=\\pm\\sqrt{\\tfrac{1+\\cos\\alpha}{2}}$ — az előjelet '
   'a <b>felezett</b> szög negyede adja '
   '(<a href="tananyag-felszog-es-szorzatta-alakitas.html#tetel-felszog">→</a>).</p>',
-  '<p><b>Szorzattá alakítás:</b></p>'
+  '<p><b>Kiegészítő kihívás — szorzattá alakítás:</b></p>'
   '$$\\sin u\\pm\\sin v=2\\begin{Bmatrix}\\sin\\\\ \\cos\\end{Bmatrix}'
   '\\frac{u+v}{2}\\begin{Bmatrix}\\cos\\\\ \\sin\\end{Bmatrix}\\frac{u-v}{2}$$'
   '$$\\cos u+\\cos v=2\\cos\\frac{u+v}{2}\\cos\\frac{u-v}{2},\\qquad'
@@ -137,6 +137,9 @@ OSSZ = [
   '<p>(<a href="tananyag-felszog-es-szorzatta-alakitas.html#tetel-szorzatta">→</a>)</p>',
  ]),
  ("Függvények és egyenletek", [
+  '<p><b>2e-s törzsanyag:</b> az alapgörbék, az $y=\\sin x+d$ és '
+  '$y=\\cos x+d$ függőleges eltolása, valamint az egyszerű szinuszos és '
+  'koszinuszos egyenletek és egyenlőtlenségek a megadott $[0;2\\pi]$ körön.</p>',
   '<div class="tblwrap"><table>'
   '<tr><th></th><th>$\\sin x$</th><th>$\\cos x$</th><th>$\\operatorname{tg}x$</th></tr>'
   '<tr><td>ÉT</td><td colspan="2">$\\mathbb{R}$</td>'
@@ -148,15 +151,15 @@ OSSZ = [
   '<tr><td>Szimmetria</td><td>páratlan</td><td>páros</td><td>páratlan</td></tr>'
   '</table></div>'
   '<p>(<a href="tananyag-trig-fuggvenyek-grafikonja.html#tetel-sincos">→</a>)</p>',
-  '<p><b>$y=A\\sin(bx+c)+d$:</b> amplitúdó $|A|$ · periódus $\\tfrac{2\\pi}{|b|}$ · '
+  '<p><b>Kiegészítő kihívás — $y=A\\sin(bx+c)+d$:</b> amplitúdó $|A|$ · periódus $\\tfrac{2\\pi}{|b|}$ · '
   'vízszintes eltolás <b>$-\\tfrac{c}{b}$</b> (a $b$-t ki kell emelni!) · középvonal $d$, '
   'értékkészlet $[d-|A|;\\,d+|A|]$ '
   '(<a href="tananyag-osszetett-trig-fuggvenyek.html#tetel-teljes-alak">→</a>).</p>',
-  '<p><b>Egyenletek:</b> $\\sin x=a$ és $\\cos x=a$ csak $|a|\\le 1$ esetén oldható meg, '
+  '<p><b>Kiegészítő kihívás — általános megoldások:</b> $\\sin x=a$ és $\\cos x=a$ csak $|a|\\le 1$ esetén oldható meg, '
   'és <b>két</b> megoldáscsaládot ad ($+2k\\pi$); a $\\operatorname{tg}x=a$ bármely '
   '$a$-ra megoldható, és <b>egy</b> családot ad ($+k\\pi$) '
   '(<a href="tananyag-trigonometrikus-egyenletek.html#tetel-alaptipusok">→</a>).</p>',
-  '<p><b>$bx$ alakú szög:</b> oldd meg a $bx$-re, és <b>a legvégén</b> ossz $b$-vel — '
+  '<p><b>Kiegészítő kihívás — általános megoldás $bx$ esetén:</b> oldd meg a $bx$-re, és <b>a legvégén</b> ossz $b$-vel — '
   'a $2k\\pi$-t is! Így a periódus $\\tfrac{2\\pi}{b}$ lesz '
   '(<a href="tananyag-trigonometrikus-egyenletek.html#tetel-bx">→</a>).</p>',
  ]),
@@ -174,15 +177,15 @@ OSSZ = [
   '<tr><td>ASA / AAS</td><td>harmadik szög, majd szinusztétel</td></tr>'
   '<tr><td>SAS</td><td>koszinusztétel, majd a <b>kisebbik</b> oldal szöge</td></tr>'
   '<tr><td>SSS</td><td>koszinusztétel a <b>legnagyobb</b> oldal szögére</td></tr>'
-  '<tr><td>SSA</td><td>szinusztétel — ⚠️ lehet <b>két</b> megoldás</td></tr>'
+  '<tr><td>SSA — kiegészítő</td><td>szinusztétel — ⚠️ lehet <b>két</b> megoldás</td></tr>'
   '</table></div>'
   '<p>(<a href="tananyag-haromszog-megoldasa.html#tetel-recept">→</a>)</p>',
   doboz("csapda", "Amire a dolgozaton a legtöbben ráfutnak",
         '<p>1) A negyed <b>előbb</b>, az érték utána — írd ki az előjelet, mielőtt '
         'számolsz. &nbsp; 2) $\\sin(\\alpha+\\beta)\\neq\\sin\\alpha+\\sin\\beta$ és '
         '$\\cos 2\\alpha\\neq 2\\cos\\alpha$. &nbsp; 3) A koszinuszos addíciós képletben '
-        'a jel <b>megfordul</b>. &nbsp; 4) A félszögnél a <b>felezett</b> szög negyede '
-        'számít. &nbsp; 5) Az egyenletnél ne felejtsd a $+2k\\pi$-t és a <b>második</b> '
+        'a jel <b>megfordul</b>. &nbsp; 4) Kiegészítő félszögnél a <b>felezett</b> szög negyede '
+        'számít. &nbsp; 5) Kiegészítő általános megoldásnál ne felejtsd a $+2k\\pi$-t és a <b>második</b> '
         'megoldáscsaládot. &nbsp; 6) A $\\operatorname{tg}$ periódusa $\\pi$. &nbsp; '
         '7) A számológép <b>DEG</b> módban legyen. &nbsp; 8) Kerekítés: '
         'szögfüggvényérték <b>öt</b>, oldalhossz <b>két</b> tizedes.</p>'),
@@ -194,8 +197,8 @@ OSSZ = [
 
 lap(**T, fajl="osszefoglalo.html", cim="Taktikai memóriakártya",
     cim_tiszta="Taktikai memóriakártya", itt="Taktikai memóriakártya",
-    alcim="A Fázisugrás minden képlete, protokollja és tipikus csapdája egy helyen — "
-          "ismétléshez, dolgozat előtti átfutáshoz, nyomtatáshoz.",
+    alcim="A Fázisugrás törzsanyaga és külön jelölt kiegészítő képletei egy helyen — "
+          "ismétléshez és nyomtatáshoz.",
     chip="A Fázisugrás · összefoglaló", chip_tipus="összefoglaló",
     szakaszok=[("📇 " + OSSZ[0][0], OSSZ[0][1])] + OSSZ[1:],
     elozo=("feladatok-haromszogek.html", "Feladatok — háromszögek"),
@@ -214,10 +217,12 @@ TEREP = [
    '<p class="lead">Ez a küldetés a teljes témakört használja: grafikonolvasást és '
    'modellalkotást, a trigonometrikus kört, az azonosságokat, egyenletmegoldást, '
    'valamint a szinusz- és koszinusztételt. Dolgozz füzetben, és a végén add le a '
-   'jelentést. <b>A megoldások nincsenek fent</b> — ezt a bevetést a tanárod értékeli.</p>',
+   'jelentést. Az I. fázis négy feladata, a II. fázis 4. és a III. fázis 4. feladata '
+   '<b>kiegészítő kihívás</b>; a többi a 2e-s törzset gyakoroltatja. '
+   '<b>A megoldások nincsenek fent</b> — ezt a bevetést a tanárod értékeli.</p>',
  ]),
  ("Fázis I — A jel megfejtése", [
-   doboz("pelda", "I. fázis: grafikonból képletet",
+   doboz("pelda", "I. fázis: grafikonból képletet — kiegészítő kihívás",
          '<ol class="reszfeladatok">'
          '<li>Az elfogott jel legnagyobb értéke $6$, a legkisebb $-2$, a periódusa '
          '$4\\pi$. Írd fel a jelet $y=A\\sin(bx)+d$ alakban! (Add meg $A$-t, $b$-t és '
@@ -242,7 +247,7 @@ TEREP = [
          '<li><b>a)</b> Számold ki addíciós képlettel $\\cos 15^\\circ$ pontos értékét. '
          '<b>b)</b> Ha $\\sin\\beta=\\tfrac35$ és $\\beta$ hegyesszög, mennyi '
          '$\\sin 2\\beta$ és $\\cos 2\\beta$?</li>'
-         '<li>A zárókód a $2\\sin 2x=\\sqrt3$ egyenlet megoldása. Add meg az '
+         '<li><b>Kiegészítő kihívás:</b> a zárókód a $2\\sin 2x=\\sqrt3$ egyenlet megoldása. Add meg az '
          '<b>összes</b> megoldást!</li>'
          '</ol>'),
  ]),
@@ -256,7 +261,7 @@ TEREP = [
          '<li>Egy másik felderítés adatai: $b=17$ km, $c=23$ km, a közbezárt szög '
          '$\\alpha=64^\\circ$. Mekkora az $a$ oldal?</li>'
          '<li>Mekkora a 2. feladatbeli háromszög <b>területe</b>?</li>'
-         '<li>A bázison álló antennatorony tövéhez nem lehet közel menni. Az $A$ '
+         '<li><b>Kiegészítő kihívás:</b> a bázison álló antennatorony tövéhez nem lehet közel menni. Az $A$ '
          'pontból a csúcsát $25^\\circ$-os, $80$ méterrel közelebbről, a $B$ pontból '
          '$41^\\circ$-os emelkedési szögben látjuk. Milyen magas a torony?</li>'
          '</ol>'),
@@ -269,8 +274,8 @@ TEREP = [
 
 lap(**T, fajl="terepkuldetes.html", cim="A Fantom-frekvencia",
     cim_tiszta="A Fantom-frekvencia", itt="A Fantom-frekvencia terepküldetés",
-    alcim="Háromfázisú felderítés — ismeretlen jel megfejtése grafikonból, "
-          "fáziskód a trigonometrikus körön, végül a bázis bemérése háromszögeléssel.",
+    alcim="Háromfázisú felderítés — trigonometrikus kör és háromszögelés; "
+          "az összetett jelfejtés és bemérés kiegészítő kihívás.",
     chip="A Fázisugrás · terepküldetés", chip_tipus="terepküldetés",
     szakaszok=TEREP,
     elozo=("osszefoglalo.html", "Taktikai memóriakártya"),
@@ -379,17 +384,21 @@ dr_brief = ('<div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — 
             'modul. A szimuláció a <b>teljes témakört</b> lefedi: szögátváltás, '
             'trigonometrikus kör, visszavezetés, alapazonosságok, addíciós és kétszeres '
             'szög, szorzattá alakítás, grafikonok, egyenletek, valamint a szinusz- és '
-            'koszinusztétel. Haladj a fokozatokon: zöld → sárga → piros. A végeredményt '
+            'koszinusztétel. A szorzattá alakítás, az összetett grafikonok és az általános '
+            'egyenletmegoldás kiegészítő kihívások. Haladj a fokozatokon: zöld → sárga → piros. A végeredményt '
             'lenyithatod, de előbb küzdd le magad!</p></div>')
 
 dr_body = ('    ' + dr_brief + '\n'
-           '    <h2 id="alap">🟢 Alapfokozat</h2>\n' + cards(DR_A, "alap", "alap") +
-           '\n    <h2 id="kozep">🟡 Középfokozat</h2>\n' + cards(DR_K, "kozep", "kozep") +
-           '\n    <h2 id="nehez">🔴 Nehéz fokozat</h2>\n' + cards(DR_N, "nehez", "nehez"))
+           '    <h2 id="alap">🟢 Alapfokozat</h2>\n' +
+           cards(kiegeszito_jeloles(DR_A, {8, 9, 10}), "alap", "alap") +
+           '\n    <h2 id="kozep">🟡 Középfokozat</h2>\n' +
+           cards(kiegeszito_jeloles(DR_K, {4, 5, 9}), "kozep", "kozep") +
+           '\n    <h2 id="nehez">🔴 Nehéz fokozat</h2>\n' +
+           cards(kiegeszito_jeloles(DR_N, {1, 2, 3, 4}), "nehez", "nehez"))
 
 oldal(**T, fajl="feladatok-hazi.html", cim="Vészterem",
       h1="🕹️ Vészterem — házi feladatgyűjtemény", itt="Vészterem — házi",
-      alcim="Egyetlen, a teljes témakört lefedő házi feladatsor, óraszám-arányosan. "
+      alcim="A teljes témakör gyakorlása, a 2e-s törzsön túli feladatok külön jelölésével. "
             "Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
       chipek='<span class="chip alap">Alap</span><span class="chip kozep">Közép</span>'
              '<span class="chip nehez">Nehéz</span>',
@@ -419,29 +428,29 @@ K = [
  kartya("tananyag-addicios-kepletek.html", "Addíciós képletek és a kétszeres szög",
         "Két szög összege és különbsége, a képletek felismerése, $\\cos 2\\alpha$ három alakja"),
  kartya("tananyag-felszog-es-szorzatta-alakitas.html", "Félszög és szorzattá alakítás",
-        "A félszög függvényei és az összeg–különbség szorzattá alakításának négy képlete"),
+        "Kiegészítő kihívás: a félszög és az összeg–különbség szorzattá alakítása"),
  kartya("tananyag-trig-fuggvenyek-grafikonja.html", "A trigonometrikus függvények grafikonja",
         "A négy görbe, a periodicitás, az értékkészlet és a szimmetriák"),
  kartya("tananyag-osszetett-trig-fuggvenyek.html", "Amplitúdó, periódus és fáziseltolás",
-        "Az $y=A\\sin(bx+c)+d$ alak négy paramétere és leolvasásuk a grafikonról"),
+        "Függőleges eltolás; az $y=A\\sin(bx+c)+d$ teljes alakja kiegészítő"),
  kartya("tananyag-trigonometrikus-egyenletek.html", "Egyszerű trigonometrikus egyenletek",
-        "A három alaptípus, a végtelen sok megoldás és a $bx$ alakú szögek"),
+        "Sinusz és koszinusz a megadott körön; általános megoldás kiegészítőként"),
  kartya("tananyag-szinusz-es-koszinusztetel.html", "Szinusz- és koszinusztétel",
         "A két tétel, a bizonyítás gondolata és a választás szempontjai"),
  kartya("tananyag-haromszog-megoldasa.html", "Háromszög megoldása és alkalmazások",
-        "A négy alapeset receptje, a területképlet, magasság- és távolságmérés"),
+        "Egyszerű háromszögfeladatok; az SSA és a többlépéses bemérés kiegészítő"),
  kartya("feladatok-trigonometrikus-kor.html", "🏋️ A trigonometrikus kör — feladatok",
         "Kiképzési Adattár: Alap · Közép · Nehéz + Joker — szögek, értékek, visszavezetés"),
  kartya("feladatok-azonossagok.html", "🏋️ Azonosságok — feladatok",
-        "Alapazonosságok, addíciós és kétszeres szög, félszög, szorzattá alakítás"),
+        "Alap- és addíciós azonosságok; félszög és szorzattá alakítás kiegészítőként"),
  kartya("feladatok-trig-fuggvenyek-egyenletek.html", "🏋️ Függvények és egyenletek",
-        "Grafikonok, amplitúdó–periódus–fázis és minden egyenlet-alaptípus"),
+        "Alapgrafikonok és egyszerű egyenletek; összetett alakok kiegészítőként"),
  kartya("feladatok-haromszogek.html", "🏋️ Háromszögek — feladatok",
-        "Szinusz- és koszinusztétel, terület, bemérési és navigációs feladatok"),
+        "Szinusz- és koszinusztétel; összetett alkalmazások kiegészítőként"),
  kartya("feladatok-hazi.html", "🕹️ Vészterem — házi feladatok",
         "A teljes témakört lefedő házi feladatsor, óraszám-arányosan"),
  kartya("terepkuldetes.html", "🎯 A Fantom-frekvencia terepküldetés",
-        "Háromfázisú felderítés — jelfejtés, fáziskód és háromszögelés"),
+        "Háromfázisú felderítés, külön jelölt kiegészítő jelfejtéssel"),
  kartya("osszefoglalo.html", "📇 Taktikai memóriakártya",
         "Minden képlet, protokoll és tipikus csapda egy helyen — dolgozat előtti átfutáshoz"),
 ]

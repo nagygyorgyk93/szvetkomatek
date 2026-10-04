@@ -132,8 +132,8 @@ D1 = [
          '<ul>'
          '<li><b>ASA / AAS</b> (a betűk angolul: S = <i>side</i> = oldal, A = <i>angle</i> = szög — vigyázz, ez épp fordítva van, mint az elsős egybevágósági tételek magyar OSO/SOS jelölésében) — két szög és egy oldal. A harmadik szög a '
          '$180^\\circ$-ból jön, a hiányzó oldalak a szinusztételből.</li>'
-         '<li><b>SSA</b> — két oldal és az egyikkel szemközti szög. ⚠️ Ez a '
-         '<b>kétértelmű</b> eset.</li>'
+         '<li><b>SSA — kiegészítő kihívás:</b> két oldal és az egyikkel szemközti szög. '
+         '⚠️ Ez a <b>kétértelmű</b> eset.</li>'
          '</ul>',
          hid="tetel-mikor-szinusz"),
    doboz("pelda", "Vészterem-szimuláció",
@@ -149,7 +149,7 @@ D1 = [
                   '<p><b>Ellenőrzés:</b> a legnagyobb szög $\\beta=75^\\circ$, és valóban '
                   'a $b$ a leghosszabb oldal ✔</p>')),
    doboz("csapda", "Dr. Baljós vírus-kódja",
-         '<p><b>A kétértelmű (SSA) eset.</b> Ha két oldalt és a <b>kisebbikkel</b> '
+         '<p><b>Kiegészítő kihívás — a kétértelmű (SSA) eset.</b> Ha két oldalt és a <b>kisebbikkel</b> '
          'szemközti szöget ismerjük, két különböző háromszög is illeszkedhet az adatokra — '
          'mert $\\sin\\varphi=\\sin(180^\\circ-\\varphi)$.</p>'
          '<p><b>Mikor egyértelmű, és mikor nem?</b> Ha a megadott szög a <b>hosszabbik</b> oldallal szemközt van, a másik szög biztosan hegyes — a megoldás egyértelmű. Ha viszont a megadott szög a <b>rövidebbik</b> oldallal szemközti (legyen $\\alpha$ az $a$-val szemközt, és $b&gt;a$), akkor a $C$ csúcsból az $AB$-re állított magasság $m=b\\sin\\alpha$, és <b>három</b> eset van:</p>'
@@ -202,7 +202,7 @@ D1 = [
         ['Koszinusztétel', 'Szinusztétel', 'Pitagorasz-tétel'], 0,
         jo="✔ Két oldal és a közbezárt szög (SAS) → koszinusztétel.",
         nem="✘ Nincs teljes oldal–szög pár, viszont a szög a két oldal KÖZÖTT van → koszinusztétel."),
-   gyakorolj(FGY + "#alap-1", "A 1–5", FGY + "#kozep-1", "K 1–4"),
+   gyakorolj(FGY + "#alap-1", "A 1–5", FGY + "#kozep-1", "K 1–3"),
    brief('<b>Szürke Janka:</b> A két tétel a kezedben van. Már csak azt kell eldöntened, <b>melyiket mikor</b> vedd elő — és ha ez megy, a terepen bármilyen háromszöget be tudsz mérni: tornyot, hegyoldalt, folyószélességet.', outro=True),
  ]),
 ]
@@ -213,7 +213,7 @@ D2 = [
  ("📡 Küldetés-eligazítás", [
    brief('<b>Szürke Janka:</b> Utolsó bevetés. Most már mindkét tétel a kezedben van — '
          'a kérdés csak az, <b>melyiket mikor</b>. Van rá egy egyszerű recept, és ha '
-         'követed, bármelyik háromszög megoldható. Utána pedig jön a legjobb rész: '
+         'követed, sok háromszög megoldható. Utána pedig jön a legjobb rész: '
          'ezzel a tudással megmérhető egy torony magassága anélkül, hogy '
          'hozzáérnél.'),
  ]),
@@ -229,7 +229,7 @@ D2 = [
          '<td>szinusztétel a <b>kisebbik</b> oldal szögére, a harmadik $180^\\circ$-ból</td></tr>'
          '<tr><td><b>SSS</b><br>három oldal</td><td>koszinusztétel a <b>legnagyobb</b> '
          'oldal szögére</td><td>szinusztétel a másodikra, a harmadik $180^\\circ$-ból</td></tr>'
-         '<tr><td><b>SSA</b><br>két oldal + nem közbezárt szög</td>'
+         '<tr><td><b>SSA — kiegészítő</b><br>két oldal + nem közbezárt szög</td>'
          '<td>szinusztétel</td><td>⚠️ ellenőrizd, van-e <b>két</b> megoldás</td></tr>'
          '</table></div>'
          '<p>A háromszög akkor és csak akkor létezik, ha a szögek összege '
@@ -271,6 +271,9 @@ D2 = [
  ]),
 
  ("Alkalmazások: bemérés a terepen", [
+   '<p><b>Kiegészítő kihívás:</b> a két mérési pontból végzett többlépéses '
+   'toronybemérés meghaladja az egyszerű 2e-s háromszögalkalmazást. '
+   'A hajóforduló egy koszinusztételes alappélda.</p>',
    doboz("pelda", "Vészterem-szimuláció — a torony magassága",
          '<p>Egy torony tövéhez nem tudunk odajutni. Az $A$ pontból a torony '
          'csúcsát $32^\\circ$-os emelkedési szögben látjuk; $50$ métert közelebb menve, '
@@ -313,9 +316,13 @@ D2 = [
         ['$13{,}5$', '$27$', '$54$'], 0,
         jo="✔ T = ½ · 6 · 9 · sin 30° = 27 · 0,5 = 13,5.",
         nem="✘ T = ½ab sin γ = ½ · 6 · 9 · 0,5 = 13,5."),
-   gyakorolj(FGY + "#alap-6", "A 6–14", FGY + "#kozep-5", "K 5–13"),
+   gyakorolj(FGY + "#alap-6", "A 6–14", FGY + "#kozep-6", "K 6–7, 9, 11",
+             bevezeto="Törzsanyag: egyszerű szinusz- és koszinusztételes alkalmazások."),
+   gyakorolj(FGY + "#kozep-4", "K 4–5, 8, 10", FGY + "#kozep-12", "K 12–13",
+             bevezeto="Kiegészítő kihívás: kétértelmű esetek és többlépéses alkalmazások."),
    brief('<b>Szürke Janka:</b> A Fázisugrás teljesítve, kadétok — és ezzel a második évad '
-         'is a végéhez ért. Ez az anyag a <b>4. írásbeli dolgozat</b> teljes terjedelme. '
+         'is a végéhez ért. A 4. írásbeli dolgozathoz a törzsanyagként jelölt részeket '
+         'ismételd át; a kiegészítő kihívások önkéntesek. '
          'Nézd át a taktikai memóriakártyát, aztán jöhet a terepküldetés: '
          'egy valódi jelet kell megfejtened, és be kell mérned egy bázist.',
          outro=True),
@@ -335,8 +342,8 @@ KI = [
  lap(**T, fajl="tananyag-haromszog-megoldasa.html",
      cim="Háromszög megoldása és alkalmazások",
      cim_tiszta="Háromszög megoldása és alkalmazások",
-     alcim="A négy alapeset döntési receptje, a trigonometrikus területképlet, "
-           "valamint magasság- és távolságmérés a terepen.",
+     alcim="Egyszerű háromszögmegoldások, terület és távolságmérés; "
+           "az SSA kétértelmű esete és a többlépéses bemérés kiegészítő.",
      chip="A Fázisugrás · 11/11", szakaszok=D2,
      elozo=("tananyag-szinusz-es-koszinusztetel.html", "Szinusz- és koszinusztétel"),
      kovetkezo=(FGY, "Feladatok — háromszögek")),

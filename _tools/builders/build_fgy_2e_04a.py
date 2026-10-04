@@ -2,7 +2,7 @@
 """2e/04 — A altema feladatgyujtemeny: a trigonometrikus kor."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from fgy_common import cards, joker_card, oldal
+from fgy_common import cards, joker_card, kiegeszito_jeloles, oldal
 
 # ============================== ÖNELLENŐRZÉS ==============================
 from sympy import Rational as R, pi, sqrt, sin, cos, tan, cot, rad, deg, nsimplify, simplify, N
@@ -211,8 +211,10 @@ JOKER = ("Számold ki! $\\sin^{2}10^\\circ+\\sin^{2}20^\\circ+\\sin^{2}30^\\circ
 body = [
  '    <h2 id="alap">🟢 Alapszint — Kék Csapat</h2>\n' + cards(ALAP, "alap", "alap"),
  '    <h2 id="kozep">🟡 Középszint — Arany Csapat</h2>\n' + cards(KOZEP, "kozep", "kozep"),
- '    <h2 id="nehez">🔴 Nehéz szint</h2>\n' + cards(NEHEZ, "nehez", "nehez"),
- '    <h2 id="joker">🃏 Joker</h2>\n' + joker_card(JOKER[0], JOKER[1]),
+ '    <h2 id="nehez">🔴 Nehéz szint</h2>\n' +
+ cards(kiegeszito_jeloles(NEHEZ, {3}), "nehez", "nehez"),
+ '    <h2 id="joker">🃏 Joker</h2>\n' +
+ joker_card("<b>Kiegészítő kihívás.</b> " + JOKER[0], JOKER[1]),
 ]
 
 ut = oldal(tagozat="2e", mappa="04-trigonometrikus-fuggvenyek",

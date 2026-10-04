@@ -26,20 +26,20 @@
 </nav>
 <div class="hero">
   <h1>Háromszög megoldása és alkalmazások</h1>
-  <p class="alcim">A négy alapeset döntési receptje, a trigonometrikus területképlet, valamint magasság- és távolságmérés a terepen.</p>
+  <p class="alcim">Egyszerű háromszögmegoldások, terület és távolságmérés; az SSA kétértelmű esete és a többlépéses bemérés kiegészítő.</p>
   <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Fázisugrás · 11/11</span></div>
 </div>
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/szurke_janka.webp" alt="Szürke Janka — a telepata bemérő-specialista" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Szürke Janka:</b> Utolsó bevetés. Most már mindkét tétel a kezedben van — a kérdés csak az, <b>melyiket mikor</b>. Van rá egy egyszerű recept, és ha követed, bármelyik háromszög megoldható. Utána pedig jön a legjobb rész: ezzel a tudással megmérhető egy torony magassága anélkül, hogy hozzáérnél.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/szurke_janka.webp" alt="Szürke Janka — a telepata bemérő-specialista" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Szürke Janka:</b> Utolsó bevetés. Most már mindkét tétel a kezedben van — a kérdés csak az, <b>melyiket mikor</b>. Van rá egy egyszerű recept, és ha követed, sok háromszög megoldható. Utána pedig jön a legjobb rész: ezzel a tudással megmérhető egy torony magassága anélkül, hogy hozzáérnél.</p></div>
 
     <h2 id="s1">A háromszög megoldása — a döntési recept</h2>
 
     <div class="doboz tetel" id="tetel-recept">
       <p class="cim"><span class="ikon">📘</span> Melyik tétel kell?</p>
-      <div class="tblwrap"><table><tr><th>Ismert adatok</th><th>Első lépés</th><th>Folytatás</th></tr><tr><td><b>ASA / AAS</b><br>két szög + egy oldal</td><td>a harmadik szög <span class="math inline">\(180^\circ\)</span>-ból</td><td>szinusztétel a két oldalra</td></tr><tr><td><b>SAS</b><br>két oldal + közbezárt szög</td><td>koszinusztétel a harmadik oldalra</td><td>szinusztétel a <b>kisebbik</b> oldal szögére, a harmadik <span class="math inline">\(180^\circ\)</span>-ból</td></tr><tr><td><b>SSS</b><br>három oldal</td><td>koszinusztétel a <b>legnagyobb</b> oldal szögére</td><td>szinusztétel a másodikra, a harmadik <span class="math inline">\(180^\circ\)</span>-ból</td></tr><tr><td><b>SSA</b><br>két oldal + nem közbezárt szög</td><td>szinusztétel</td><td>⚠️ ellenőrizd, van-e <b>két</b> megoldás</td></tr></table></div><p>A háromszög akkor és csak akkor létezik, ha a szögek összege <span class="math inline">\(180^\circ\)</span>, és teljesül a <b>háromszög-egyenlőtlenség</b>: bármely két oldal összege nagyobb a harmadiknál.</p>
+      <div class="tblwrap"><table><tr><th>Ismert adatok</th><th>Első lépés</th><th>Folytatás</th></tr><tr><td><b>ASA / AAS</b><br>két szög + egy oldal</td><td>a harmadik szög <span class="math inline">\(180^\circ\)</span>-ból</td><td>szinusztétel a két oldalra</td></tr><tr><td><b>SAS</b><br>két oldal + közbezárt szög</td><td>koszinusztétel a harmadik oldalra</td><td>szinusztétel a <b>kisebbik</b> oldal szögére, a harmadik <span class="math inline">\(180^\circ\)</span>-ból</td></tr><tr><td><b>SSS</b><br>három oldal</td><td>koszinusztétel a <b>legnagyobb</b> oldal szögére</td><td>szinusztétel a másodikra, a harmadik <span class="math inline">\(180^\circ\)</span>-ból</td></tr><tr><td><b>SSA — kiegészítő</b><br>két oldal + nem közbezárt szög</td><td>szinusztétel</td><td>⚠️ ellenőrizd, van-e <b>két</b> megoldás</td></tr></table></div><p>A háromszög akkor és csak akkor létezik, ha a szögek összege <span class="math inline">\(180^\circ\)</span>, és teljesül a <b>háromszög-egyenlőtlenség</b>: bármely két oldal összege nagyobb a harmadiknál.</p>
     </div>
 
     <div class="doboz csapda">
@@ -94,6 +94,8 @@
 
     <h2 id="s3">Alkalmazások: bemérés a terepen</h2>
 
+    <p><b>Kiegészítő kihívás:</b> a két mérési pontból végzett többlépéses toronybemérés meghaladja az egyszerű 2e-s háromszögalkalmazást. A hajóforduló egy koszinusztételes alappélda.</p>
+
     <div class="doboz pelda" id="pelda-torony">
       <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció — a torony magassága</p>
       <p>Egy torony tövéhez nem tudunk odajutni. Az <span class="math inline">\(A\)</span> pontból a torony csúcsát <span class="math inline">\(32^\circ\)</span>-os emelkedési szögben látjuk; <span class="math inline">\(50\)</span> métert közelebb menve, a <span class="math inline">\(B\)</span> pontból már <span class="math inline">\(48^\circ\)</span>-osban. Milyen magas a torony?</p>
@@ -138,9 +140,11 @@
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
-    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-haromszogek.html#alap-6">🐾 Bestia-protokoll <span class="cimke">A 6–14</span></a><a class="sav bruno" href="feladatok-haromszogek.html#kozep-5">🔥 Főnix-protokoll <span class="cimke">K 5–13</span></a></div></div></div>
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Törzsanyag: egyszerű szinusz- és koszinusztételes alkalmazások.</p><div class="savok"><a class="sav henrik" href="feladatok-haromszogek.html#alap-6">🐾 Bestia-protokoll <span class="cimke">A 6–14</span></a><a class="sav bruno" href="feladatok-haromszogek.html#kozep-6">🔥 Főnix-protokoll <span class="cimke">K 6–7, 9, 11</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/szurke_janka.webp" alt="Szürke Janka — a telepata bemérő-specialista" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Szürke Janka:</b> A Fázisugrás teljesítve, kadétok — és ezzel a második évad is a végéhez ért. Ez az anyag a <b>4. írásbeli dolgozat</b> teljes terjedelme. Nézd át a taktikai memóriakártyát, aztán jöhet a terepküldetés: egy valódi jelet kell megfejtened, és be kell mérned egy bázist.</p></div>
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Kiegészítő kihívás: kétértelmű esetek és többlépéses alkalmazások.</p><div class="savok"><a class="sav henrik" href="feladatok-haromszogek.html#kozep-4">🐾 Bestia-protokoll <span class="cimke">K 4–5, 8, 10</span></a><a class="sav bruno" href="feladatok-haromszogek.html#kozep-12">🔥 Főnix-protokoll <span class="cimke">K 12–13</span></a></div></div></div>
+
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/szurke_janka.webp" alt="Szürke Janka — a telepata bemérő-specialista" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Szürke Janka:</b> A Fázisugrás teljesítve, kadétok — és ezzel a második évad is a végéhez ért. A 4. írásbeli dolgozathoz a törzsanyagként jelölt részeket ismételd át; a kiegészítő kihívások önkéntesek. Nézd át a taktikai memóriakártyát, aztán jöhet a terepküldetés: egy valódi jelet kell megfejtened, és be kell mérned egy bázist.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-szinusz-es-koszinusztetel.html"><span class="irany">← Előző</span><span class="hova">Szinusz- és koszinusztétel</span></a>
       <a class="kov" href="feladatok-haromszogek.html"><span class="irany">Következő →</span><span class="hova">Feladatok — háromszögek</span></a>

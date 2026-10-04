@@ -3,7 +3,7 @@
 A·sin(bx+c) alak, egyszeru trigonometrikus egyenletek."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from fgy_common import cards, joker_card, oldal
+from fgy_common import cards, joker_card, kiegeszito_jeloles, oldal
 
 # ============================== ÖNELLENŐRZÉS ==============================
 from sympy import Rational as R, pi, sqrt, sin, cos, tan, rad, simplify, solve, Symbol
@@ -75,7 +75,7 @@ ALAP = [
   ['$\\dfrac{\\pi}{2}$',
    '$\\dfrac{\\pi}{2}$',
    '$3\\pi$'], True),
- ("Add meg az értékkészletet!",
+ ("Add meg az értékkészletet! A b) rész kiegészítő kihívás.",
   ["$y=\\sin x+2$", "$y=3\\cos x-1$"],
   ["$[1;3]$", "$[-4;2]$"], True),
  ("Merre és mennyivel tolódik el az alapgörbe?",
@@ -99,7 +99,7 @@ ALAP = [
   ['$x=\\tfrac{\\pi}{2}+2k\\pi$, $k\\in\\mathbb{Z}$',
    '$x=\\pi+2k\\pi$, $k\\in\\mathbb{Z}$',
    '$x=k\\pi$, $k\\in\\mathbb{Z}$'], True),
- ("Van-e megoldása? Indokold!",
+ ("Van-e megoldása? Indokold! A tangenses részben csak a létezését döntsd el; az egyenletet nem kell megoldanod.",
   ["$\\sin x=1{,}5$", "$\\cos x=-0{,}8$", "$\\operatorname{tg}x=100$"],
   ["<b>Nincs</b> — a szinusz értékkészlete $[-1;1]$.",
    "<b>Van</b> — a $-0{,}8$ beleesik az értékkészletbe.",
@@ -189,17 +189,22 @@ JOKER = ("Oldd meg! $\\sin x+\\sin 3x=0$",
 # ============================== OLDAL ==============================
 
 body = [
- '    <h2 id="alap">🟢 Alapszint — Kék Csapat</h2>\n' + cards(ALAP, "alap", "alap"),
- '    <h2 id="kozep">🟡 Középszint — Arany Csapat</h2>\n' + cards(KOZEP, "kozep", "kozep"),
- '    <h2 id="nehez">🔴 Nehéz szint</h2>\n' + cards(NEHEZ, "nehez", "nehez"),
- '    <h2 id="joker">🃏 Joker</h2>\n' + joker_card(JOKER[0], JOKER[1]),
+ '    <h2 id="alap">🟢 Alapszint — Kék Csapat</h2>\n' +
+ cards(kiegeszito_jeloles(ALAP, {6, 7, 8, 10, 11, 12, 13, 14, 15, 17, 18}), "alap", "alap"),
+ '    <h2 id="kozep">🟡 Középszint — Arany Csapat</h2>\n' +
+ cards(kiegeszito_jeloles(KOZEP, {1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15}),
+                         "kozep", "kozep"),
+ '    <h2 id="nehez">🔴 Nehéz szint</h2>\n' +
+ cards(kiegeszito_jeloles(NEHEZ, set(range(1, 8))), "nehez", "nehez"),
+ '    <h2 id="joker">🃏 Joker</h2>\n' +
+ joker_card("<b>Kiegészítő kihívás.</b> " + JOKER[0], JOKER[1]),
 ]
 
 ut = oldal(tagozat="2e", mappa="04-trigonometrikus-fuggvenyek",
            fajl="feladatok-trig-fuggvenyek-egyenletek.html",
            cim="Függvények és egyenletek", temakor="Trigonometrikus függvények",
-           alcim="Grafikonok, amplitúdó–periódus–fázis, valamint az egyszerű "
-                 "trigonometrikus egyenletek minden alaptípusa. "
+           alcim="Alapgrafikonok, egyszerű trigonometrikus egyenletek a megadott intervallumon; "
+                 "az összetett transzformációk és az általános megoldások kiegészítők. "
                  "A végeredmény minden feladatnál lenyitható!",
            sections_html="\n".join(body),
            prev="tananyag-trigonometrikus-egyenletek.html",

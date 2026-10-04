@@ -3,7 +3,7 @@
 felszog, szorzatta alakitas)."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from fgy_common import cards, joker_card, oldal
+from fgy_common import cards, joker_card, kiegeszito_jeloles, oldal
 
 # ============================== ÖNELLENŐRZÉS ==============================
 from sympy import Rational as R, sqrt, sin, cos, tan, cot, rad, simplify, N
@@ -209,17 +209,20 @@ JOKER = ("Számold ki pontosan! "
 # ============================== OLDAL ==============================
 
 body = [
- '    <h2 id="alap">🟢 Alapszint — Kék Csapat</h2>\n' + cards(ALAP, "alap", "alap"),
- '    <h2 id="kozep">🟡 Középszint — Arany Csapat</h2>\n' + cards(KOZEP, "kozep", "kozep"),
- '    <h2 id="nehez">🔴 Nehéz szint</h2>\n' + cards(NEHEZ, "nehez", "nehez"),
+ '    <h2 id="alap">🟢 Alapszint — Kék Csapat</h2>\n' +
+ cards(kiegeszito_jeloles(ALAP, {14, 15, 16, 17}), "alap", "alap"),
+ '    <h2 id="kozep">🟡 Középszint — Arany Csapat</h2>\n' +
+ cards(kiegeszito_jeloles(KOZEP, {8, 9, 12}), "kozep", "kozep"),
+ '    <h2 id="nehez">🔴 Nehéz szint</h2>\n' +
+ cards(kiegeszito_jeloles(NEHEZ, {3, 5}), "nehez", "nehez"),
  '    <h2 id="joker">🃏 Joker</h2>\n' + joker_card(JOKER[0], JOKER[1]),
 ]
 
 ut = oldal(tagozat="2e", mappa="04-trigonometrikus-fuggvenyek",
            fajl="feladatok-azonossagok.html", cim="Azonosságok",
            temakor="Trigonometrikus függvények",
-           alcim="Alapazonosságok negyed-információval, addíciós képletek oda-vissza, "
-                 "kétszeres és félszög, valamint szorzattá alakítás. "
+           alcim="Alapazonosságok, az addíciós képletek közvetlen alkalmazása és a "
+                 "kétszeres szög. A félszög és a szorzattá alakítás kiegészítő kihívás. "
                  "A végeredmény minden feladatnál lenyitható!",
            sections_html="\n".join(body),
            prev="tananyag-felszog-es-szorzatta-alakitas.html",

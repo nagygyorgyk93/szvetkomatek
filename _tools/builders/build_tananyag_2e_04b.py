@@ -134,8 +134,8 @@ B1 = [
         ['$-\\tfrac35$', '$\\tfrac35$', '$-\\tfrac45$'], 0,
         jo="✔ cos > 0 és tg < 0 → IV. negyed, ott a szinusz negatív.",
         nem="✘ A cos pozitív, a tg negatív → IV. negyed → a szinusz negatív: −3/5."),
-   gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–3"),
-   brief('<b>Éjjáró:</b> Az alapazonosságokkal egy adatból kiszámolod a többit. A következő lépés nagyobbat üt: mi történik, ha a szög <b>összeg</b>? Onnantól a $75^\circ$ és a $15^\circ$ pontos értéke is elérhető — nem csak a három nevezetes szögé.', outro=True),
+   gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–3, 14"),
+   brief('<b>Éjjáró:</b> Az alapazonosságokkal egy adatból kiszámolod a többit. A következő lépés nagyobbat üt: mi történik, ha a szög <b>összeg</b>? Onnantól a $75^\\circ$ és a $15^\\circ$ pontos értéke is elérhető — nem csak a három nevezetes szögé.', outro=True),
  ]),
 ]
 
@@ -248,7 +248,7 @@ B2 = [
         ['$-\\tfrac79$', '$\\tfrac23$', '$\\tfrac19$'], 0,
         jo="✔ cos 2α = 2cos²α − 1 = 2/9 − 1 = −7/9.",
         nem="✘ Használd a 2cos²α − 1 alakot: 2·(1/9) − 1 = −7/9."),
-   gyakorolj(FGY + "#alap-7", "A 7–13", FGY + "#kozep-4", "K 4–7"),
+   gyakorolj(FGY + "#alap-7", "A 7–13, 18", FGY + "#kozep-4", "K 4–7, 10–11, 13"),
    brief('<b>Éjjáró:</b> Ha a szög összege és kétszerese megy, a <b>fele</b> is menni fog — csak ott az előjelet külön kell eldönteni. És a végén jön a fordítottja: összegből szorzat, ami az egyenletmegoldásnál lesz aranyat érő.', outro=True),
  ]),
 ]
@@ -261,6 +261,9 @@ B3 = [
          'is: a felére. És van még egy trükk, ami a terepen a leghasznosabb — két '
          'szögfüggvény <b>összegét szorzattá</b> alakítani. Miért jó ez? Mert a szorzattal '
          'lehet egyszerűsíteni, nullára hozni, egyenletet megoldani. Az összeggel nem.'),
+   '<p class="lead"><b>Kiegészítő kihívás:</b> a félszög-képletek és az összeg–különbség '
+   'szorzattá alakítása meghaladják a 2e-s törzskövetelményt. Az addíciós tételek '
+   'közvetlen alkalmazását az előző lapon gyakorolhatod.</p>',
  ]),
 
  ("A félszög függvényei", [
@@ -343,9 +346,9 @@ B3 = [
         ['$\\sqrt3\\sin 50^\\circ$', '$\\sin 100^\\circ$', '$2\\sin 50^\\circ$'], 0,
         jo="✔ 2 sin 50° cos 30° = 2 · sin 50° · (√3/2) = √3 sin 50°.",
         nem="✘ sin u + sin v = 2 sin((u+v)/2) cos((u−v)/2) = 2 sin 50° cos 30° = √3 sin 50°."),
-   gyakorolj(FGY + "#alap-14", "A 14–18", FGY + "#kozep-8", "K 8–14"),
-   brief('<b>Éjjáró:</b> Az azonosságok készen vannak — ez a témakör gerince, és '
-         'a záró felmérőn is ezt kérem majd. Innentől viszont átadom a szót Jankának: ő nem egyetlen '
+   gyakorolj(FGY + "#alap-14", "A 14–17", FGY + "#kozep-8", "K 8–9, 12",
+             bevezeto="Kiegészítő kihívás: ezek nem részei a 2e-s törzsanyagnak."),
+   brief('<b>Éjjáró:</b> A kiegészítő azonosságokat is láttad. Innentől átadom a szót Jankának: ő nem egyetlen '
          'szöggel dolgozik, hanem a <b>teljes hullámmal</b>. Meglátod, hogy néz ki a '
          'szinusz, ha nem egy pontban nézed, hanem végig.', outro=True),
  ]),
@@ -372,8 +375,8 @@ KI = [
                 "Félszög és szorzattá alakítás")),
  lap(**T, fajl="tananyag-felszog-es-szorzatta-alakitas.html",
      cim="Félszög és szorzattá alakítás", cim_tiszta="Félszög és szorzattá alakítás",
-     alcim="A félszög függvényei és az előjel kérdése, valamint az összeg és a "
-           "különbség szorzattá alakításának négy képlete.",
+     alcim="Kiegészítő kihívás: a félszög függvényei és az összeg–különbség "
+           "szorzattá alakításának négy képlete.",
      chip="A Fázisugrás · 6/11", szakaszok=B3,
      elozo=("tananyag-addicios-kepletek.html", "Addíciós képletek és a kétszeres szög"),
      kovetkezo=(FGY, "Feladatok — azonosságok")),
