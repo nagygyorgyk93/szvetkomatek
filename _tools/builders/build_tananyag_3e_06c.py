@@ -2,7 +2,7 @@
 """3e/06 — C blokk: hiányos és teljes indukció (C). Mentor: Prizma és Kanrak."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from tananyag_common import lap, doboz, brief, kviz, abra
+from tananyag_common import lap, doboz, brief, abra
 
 T = dict(tagozat="3e", mappa="06-indukcio-sorozatok", temakor="Matematikai indukció. Sorozatok")
 KUL = "A Végtelen Mutáció"
@@ -81,12 +81,12 @@ C = [
          'lépésnél is működnek? Maxi éppen erre játszik: mutat néhány jó lépést, és arra épít, hogy '
          'elhisszük, örökre így marad. Egy állítást <b>minden</b> lépésre kell igazolni — és van rá '
          'egy módszer, amivel ez két lépésben megy.'),
-   doboz("erdekesseg", "Mit kell ebből tudni?",
-         r'<p>A teljes indukció a 3e-s tanulási kimenetek része. Egyszerű egyenlőségek, '
-         r'egyenlőtlenségek és oszthatósági állítások bizonyításánál fel kell ismerned és '
-         r'végig kell vezetned a <b>bázislépést</b> és az <b>indukciós lépést</b>.</p>'
-         r'<p>A kidolgozott példákon figyeld meg, miért szükséges mindkét lépés. A '
-         r'természettudományi-matematikai szakon ezt részletesebben is tanulják.</p>',
+   doboz("erdekesseg", "Miért szerepel itt?",
+         r'<p>Az indukció azt mutatja meg, hogyan igazolhatunk egy állítást minden természetes '
+         r'számra. A <b>bázislépést</b> és az <b>indukciós lépést</b> itt kidolgozott példákon '
+         r'keresztül ismerheted meg.</p>'
+         r'<p>Ehhez a laphoz nincs önálló gyakorló- vagy házi feladat. A '
+         r'természettudományi-matematikai szakon az indukcióval részletesebben is foglalkoznak.</p>',
          hid="erd-mire-jo"),
  ]),
 
@@ -129,15 +129,6 @@ C = [
          r'végtelen sok ellenőrizetlen — és a fenti két példa mutatja, hogy a törés bármikor '
          r'bekövetkezhet. Egyetlen ellenpélda viszont elég ahhoz, hogy az állítást <b>megdöntsük</b>: '
          r'cáfolni egy eset is tud, bizonyítani egy sem.</p>'),
-   kviz(r'Egy állítást ellenőriztünk $n=1,2,\dots,1000$-re, és mindig igaz volt. Mit tudunk?',
-        [r'csak annyit, hogy ezer esetben igaz — általánosan még nem bizonyított',
-         r'bizonyítottuk, hiszen ezer eset épp elég',
-         r'bizonyítottuk, ha az ezer eset között szerepel az $n=1$',
-         r'az állítás biztosan hamis valahol, csak nem találtuk meg'], 0,
-        jo="✔ A sok jó eset erős sejtés, de nem bizonyítás: az n² + n + 41 képlet negyven eseten át "
-           "prímet ad, a negyvenegyedik esetben mégsem.",
-        nem="✘ Akárhány esetet nézünk végig, végtelen sok marad ellenőrizetlen. A sok jó eset "
-            "sejtést ad, nem bizonyítást — és attól még az állítás lehet igaz is."),
  ]),
 
  ("A teljes indukció: a dominó-elv", [
@@ -164,15 +155,6 @@ C = [
          r'<p>A dominósor tehát tökéletesen fel van állítva — csak épp senki nem lökte meg. '
          r'<b>Bázis nélkül a lépés hamis állítást is továbbvisz.</b> Fordítva ugyanígy: pusztán a '
          r'bázisból (néhány jó esetből) sem következik semmi — az az előző szakasz csapdája volt.</p>'),
-   kviz(r'Egy állításnál az indukciós lépés hibátlan, de $n=1$-re az állítás hamis. Mit mondhatunk?',
-        [r'az állítás nincs bizonyítva — a bázis nélkül a lépés önmagában semmit nem igazol',
-         r'az állítás bizonyított, hiszen a lépés a lényeg',
-         r'az állítás minden $n\ge2$-re igaz',
-         r'a lépés biztosan hibás, csak nem vettük észre'], 0,
-        jo="✔ A két feltétel együtt ad bizonyítást: a bázis indítja el a dominósort, a lépés viszi "
-           "tovább. Meglökés nélkül egyik dominó sem dől el.",
-        nem="✘ A lépés csak azt mondja: HA igaz k-ra, AKKOR igaz k + 1-re. Ha soha nem igaz "
-            "egyetlen konkrét számra sem, ebből nem következik semmi — épp ez a +5-ös álképlet esete."),
  ]),
 
  ("Egy teljes bizonyítás, lépésről lépésre", [

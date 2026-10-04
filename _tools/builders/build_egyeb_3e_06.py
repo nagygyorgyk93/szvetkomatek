@@ -139,7 +139,7 @@ OSSZ = [
   r'<p><b>Gyakorlás:</b> <a href="' + FGY + r'">Kiképzési Adattár</a> (alap · közép · nehéz · joker) '
   r'és a <a href="feladatok-hazi.html">Kristály-kamra</a> házi feladatsor.</p>'
   r'<p><b>Külön lapon:</b> a <a href="' + C + r'">hiányos és a teljes indukció</a> — '
-  r'egyszerű bizonyításoknál a bázis- és az indukciós lépést kell alkalmazni; a témakör zárása pedig '
+  r'szemléltető tananyag kidolgozott példákkal, önálló feladat nélkül; a témakör zárása pedig '
   r'<a href="terepkuldetes.html">A Végtelen Mutáció</a> küldetés.</p></div></div>',
  ]),
 ]
@@ -213,8 +213,8 @@ TEREP = [
    r'<p>Négy fázis. Minden lépésnél írd le, melyik sorozatot ismerted fel, és melyik képletet '
    r'használtad. Számológép használható: a nem egész eredményeket két tizedesjegyre kerekítsd, és '
    r'jelöld a kerekítést. A választ fogalmazd meg mondatban is.</p>'
-   r'<p>A 🔴 jelű IV. fázisban a számolás csak eszköz: ott a <b>megfogalmazott érvelés</b> ér annyit, '
-   r'mint máshol a számítás. Mind a négy fázis egyformán számít.</p>'
+   r'<p>A 🔴 jelű IV. fázisban Maxi képletét a valódi sorozat eredményeivel is vesd össze. '
+   r'Mind a négy fázis egyformán számít.</p>'
    r'<p><b>Amire szükséged lesz:</b> a számtani és a mértani sorozat $n$-edik tagja és összegképlete, '
    r'az egyszerű és a kamatos kamat, valamint a sorozatok ábrázolása.</p>'
    r'<p><i>Tervezz rá nagyjából két órát; ez beadandó munka, nem órai feladat.</i></p>',
@@ -270,9 +270,6 @@ TEREP = [
    r'<li>Ellenőrizd Maxi képletét $n=1$, $n=2$ és $n=3$ esetén! Mit tapasztalsz?</li>'
    r'<li>Számold ki most $n=4$-re a képlet szerinti és a <b>valódi</b> összenergiát is! Mekkora az '
    r'eltérés?</li>'
-   r'<li>Mit tanultál ebből arról, hogy elég-e néhány esetben ellenőrizni egy állítást? Fogalmazd meg '
-   r'két-három mondatban — ez a <b>hiányos indukció</b> csapdája '
-   r'(<a href="' + C + r'#def-hianyos-indukcio">olvasnivaló</a>).</li>'
    r'<li>Hányadik lépésnél szakadna át a pajzs Maxi képlete szerint, és hányadiknál a valóságban? '
    r'<b>Hány lépésnyi</b> hamis biztonságot ígér a hazugsága? <i>(A küszöböt elég próbálgatással '
    r'megkeresni.)</i></li>'
@@ -408,7 +405,7 @@ K = {
  "A2": kartya(A2, "Monotonitás és korlátosság", "Növekvő, csökkenő, nem monoton; alsó és felső korlát, leolvasás a grafikonról"),
  "B1": kartya(B1, "A számtani sorozat", "Állandó különbség, az n-edik tag, Gauss trükkje és az összegképlet"),
  "B2": kartya(B2, "A mértani sorozat", "Állandó hányados, az n-edik tag, összegképlet — és a kamatos kamat"),
- "C": kartya(C, "Hiányos és teljes indukció", "Mikor sejtés és mikor bizonyítás? Bázis és indukciós lépés egyszerű állításoknál"),
+ "C": kartya(C, "Hiányos és teljes indukció", "Szemléltető tananyag a bázisról és az indukciós lépésről, kidolgozott példákkal"),
  "fgy": kartya(FGY, "🏋️ Sorozatok — feladatok",
                "Általános tag, monotonitás, korlátosság, számtani és mértani sorozat, kamat — 57 feladat"),
  "hazi": kartya("feladatok-hazi.html", "🕹️ Kristály-kamra — házi feladatok",
@@ -476,8 +473,8 @@ INDEX = '''<!DOCTYPE html>
     <h2>Összefoglaló</h2>
 ''' + racs("ossz") + '''
     <p class="le halvany"><b>Ajánlott sorrend:</b> a négy sorozat-egység sorban, utána a Kiképzési
-    Adattár és a Kristály-kamra — ezekre épül a témazáró ellenőrző. Az indukciós lapon az
-    egyszerű bizonyítások lépéseit is tanuld meg; a Taktikai memóriakártya az ismétlésé,
+    Adattár és a Kristály-kamra — ezekre épül a témazáró ellenőrző. Az indukciós lapot
+    szemléltető tananyagként olvasd el; nem tartozik hozzá feladatsor. A Taktikai memóriakártya az ismétlésé,
     A Végtelen Mutáció pedig a záróküldetés.</p>
   </div>
 </main>
