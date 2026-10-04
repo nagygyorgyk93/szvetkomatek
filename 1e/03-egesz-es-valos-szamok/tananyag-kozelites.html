@@ -59,7 +59,7 @@
     <div class="doboz definicio" id="def-hiba">
       <p class="cim"><span class="ikon">📗</span> Definíció</p>
       <p>Legyen <span class="math inline">\(x\)</span> a pontos, <span class="math inline">\(x^{*}\)</span> a közelítő érték.</p>
-      <p><b>Abszolút hiba:</b> \[\Delta=|x-x^{*}|.\] <b>Relatív hiba:</b> \[\delta=\frac{\Delta}{|x|}\quad(\text{gyakran }\%\text{-ban}).\] Az abszolút hiba a mértékegység nagyságától függ, a relatív hiba viszont <b>összemérhetővé</b> teszi a különböző nagyságú méréseket.</p>
+      <p><b>Abszolút hiba:</b> \[\Delta=|x-x^{*}|.\] <b>Relatív hiba</b> csak <span class="math inline">\(x\neq 0\)</span> esetén: \[\delta=\frac{\Delta}{|x|}\quad(\text{gyakran }\%\text{-ban}).\] Az abszolút hiba a mértékegység nagyságától függ, a relatív hiba viszont <b>összemérhetővé</b> teszi a különböző nagyságú méréseket.</p>
     </div>
     <div class="doboz pelda" id="pelda-hiba">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
@@ -83,7 +83,7 @@
     <h2 id="s3">A normál (tízhatványos) alak</h2>
     <div class="doboz definicio" id="def-normal">
       <p class="cim"><span class="ikon">📗</span> Definíció</p>
-      <p>Egy szám <b>normál alakja</b> (tudományos jelölés): \[a\cdot 10^{k},\qquad 1\le a&lt;10,\ k\in\mathbb{Z}.\] Az <span class="math inline">\(a\)</span> a <b>mantissza</b> (egyetlen jegy áll a tizedesvessző előtt), a <span class="math inline">\(k\)</span> pedig a tízhatvány kitevője. <span class="math inline">\(k>0\)</span>, ha a szám 10-nél nagyobb; <span class="math inline">\(k&lt;0\)</span>, ha 1-nél kisebb; és <span class="math inline">\(k=0\)</span> az 1 és 10 közötti számokra. Minden <b>nullától különböző</b> valós szám felírható így — negatív számnál a mínuszjelet kiemeljük: <span class="math inline">\(-0{,}0045=-4{,}5\cdot 10^{-3}\)</span>.</p>
+      <p>Egy <b>nullától különböző</b> valós szám <b>normál alakja</b> (tudományos jelölés): \[\pm a\cdot 10^{k},\qquad 1\le a&lt;10,\ k\in\mathbb{Z}.\] Az <span class="math inline">\(a\)</span> a pozitív <b>mantissza</b> (egyetlen jegy áll a tizedesvessző előtt), a <span class="math inline">\(k\)</span> pedig a tízhatvány kitevője. A szám abszolút értékére nézve <span class="math inline">\(k>0\)</span>, ha <span class="math inline">\(|x|\ge 10\)</span>; <span class="math inline">\(k=0\)</span>, ha <span class="math inline">\(1\le |x|&lt;10\)</span>; és <span class="math inline">\(k&lt;0\)</span>, ha <span class="math inline">\(0&lt;|x|&lt;1\)</span>. Negatív számnál a mínuszjelet kiemeljük: <span class="math inline">\(-0{,}0045=-4{,}5\cdot 10^{-3}\)</span>.</p>
     </div>
     <div class="doboz pelda" id="pelda-normal">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>

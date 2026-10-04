@@ -112,7 +112,7 @@ KOZEP = [
   None, "$1600$ Ft (a csoki $160$ Ft, a kókuszrúd $400$ Ft)."),
  ("A pénzváltó automata a papírpénzt $10$ és $20$ forintosokra váltja, és megválaszthatjuk, hány érmét kapjunk. Hogyan váltja fel az $1000$ Ft-ot, ha $90$ érmét kérünk?",
   None, "$80$ db tízforintos és $10$ db húszforintos."),
- ("Húsz év múlva az apa kétszer annyi idős lesz, mint a fia; $8$ évvel ezelőtt pedig hatszor idősebb volt nála. Hány évesek külön-külön?",
+ ("Húsz év múlva az apa kétszer annyi idős lesz, mint a fia; $8$ évvel ezelőtt pedig hatszor annyi idős volt, mint a fia. Hány évesek külön-külön?",
   None, "az apa $50$, a fia $15$ éves."),
  ("Egy kétjegyű szám számjegyeinek összege $11$. Ha a számjegyeit felcseréljük, $45$-tel kisebb számot kapunk. Melyik az eredeti szám?",
   None, "$83$."),

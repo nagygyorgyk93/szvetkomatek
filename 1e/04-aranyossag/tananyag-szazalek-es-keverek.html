@@ -42,7 +42,7 @@
     </div>
     <div class="doboz definicio" id="def-gpp">
       <p class="cim"><span class="ikon">📗</span> A három szereplő</p>
-      <p>A százalékszámításban három mennyiség szerepel: az <b>alapérték</b> <span class="math inline">\(G\)</span> (a „száz százalék”), a <b>százalékérték</b> <span class="math inline">\(P\)</span> (a kiszámolt rész) és a <b>százalékláb</b> <span class="math inline">\(p\)</span> (hány százalék). Összefüggésük egyetlen aránypár: \[G:P=100:p,\qquad\text{azaz}\qquad P=\dfrac{G\cdot p}{100}.\]</p>
+      <p>A százalékszámításban három mennyiség szerepel: az <b>alapérték</b> <span class="math inline">\(G\)</span> (a „száz százalék”), a <b>százalékérték</b> <span class="math inline">\(P\)</span> (a kiszámolt rész) és a <b>százalékláb</b> <span class="math inline">\(p\)</span> (hány százalék). Általános összefüggésük \[P=\dfrac{G\cdot p}{100}.\] Ha <span class="math inline">\(P,p\neq 0\)</span>, ezt az <span class="math inline">\(G:P=100:p\)</span> aránypárral is felírhatjuk.</p>
     </div>
     <div class="doboz pelda" id="pelda-alap">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
@@ -51,7 +51,7 @@
     </div>
 
     <h2 id="s2">A három alaptípus</h2>
-    <p>A <span class="math inline">\(G:P=100:p\)</span> aránypárból bármelyik ismeretlent kiszámolhatjuk, ha a másik kettőt ismerjük:</p>
+    <p>A <span class="math inline">\(P=Gp/100\)</span> összefüggésből a harmadik mennyiséget is kiszámolhatjuk, ha a szükséges osztó nem nulla:</p>
     <figure class="abra"><table class="tabla-nevezetes">
       <thead><tr><th>Mit keresünk?</th><th>Képlet</th><th>Példa</th></tr></thead>
       <tbody>
@@ -59,7 +59,7 @@
       <tr><th>a százalékláb (<span class="math inline">\(p\)</span>)</th><td><span class="math inline">\(p=\dfrac{P\cdot 100}{G}\)</span></td><td><span class="math inline">\(160\)</span> a <span class="math inline">\(800\)</span> <span class="math inline">\(20\%\)</span>-a</td></tr>
       <tr><th>az alapérték (<span class="math inline">\(G\)</span>)</th><td><span class="math inline">\(G=\dfrac{P\cdot 100}{p}\)</span></td><td><span class="math inline">\(160\)</span> a <span class="math inline">\(?\)</span> <span class="math inline">\(20\%\)</span>-a <span class="math inline">\(\Rightarrow 800\)</span></td></tr>
       </tbody></table>
-      <figcaption>Ugyanaz az aránypár, három nézőpontból. Mindig azt kérdezd: <b>mi a 100%</b> (az alapérték)?</figcaption>
+      <figcaption>Ugyanaz az összefüggés, három nézőpontból. A százalékláb számításához <span class="math inline">\(G\neq 0\)</span>, az alapértékéhez <span class="math inline">\(p\neq 0\)</span> kell. Mindig azt kérdezd: <b>mi a 100%</b> (az alapérték)?</figcaption>
     </figure>
     <div class="doboz pelda" id="pelda-ezrelek">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció (ezrelék)</p>
@@ -130,7 +130,7 @@
     <h2 id="s5">Keverékszámítás</h2>
     <div class="doboz definicio" id="def-keverek">
       <p class="cim"><span class="ikon">📗</span> A keverési szabály</p>
-      <p>Ha két anyagot keverünk, amelyek mennyisége <span class="math inline">\(m_1\)</span> és <span class="math inline">\(m_2\)</span>, „töménysége” (koncentrációja, ára, hőmérséklete) pedig <span class="math inline">\(c_1\)</span> és <span class="math inline">\(c_2\)</span>, akkor a keverékre \[m_1+m_2=m,\qquad c_1 m_1+c_2 m_2=c\,m,\] ahol <span class="math inline">\(c\)</span> a keverék töménysége. A két egyenletből az ismeretlen mennyiségek kiszámolhatók.</p>
+      <p>Ha két anyag mennyisége <span class="math inline">\(m_1\)</span> és <span class="math inline">\(m_2\)</span>, fajlagos jellemzőjük (például koncentrációjuk vagy egységáruk) pedig <span class="math inline">\(c_1\)</span> és <span class="math inline">\(c_2\)</span>, akkor az összeadódó mennyiségekre alkalmazott modellben \[m_1+m_2=m,\qquad c_1 m_1+c_2 m_2=c\,m,\] ahol <span class="math inline">\(c\)</span> a keverék megfelelő fajlagos jellemzője. A két egyenletből az ismeretlen mennyiségek kiszámolhatók.</p>
     </div>
     <div class="doboz pelda" id="pelda-keverek">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
@@ -139,7 +139,7 @@
     </div>
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
-      A keverési szabály <b>idealizált</b>, <b>lineáris</b> modell: feltételezzük, hogy a mennyiségek egyszerűen összeadódnak, és a töménység a súlyozott átlaguk. Ügyelj a <b>közös mértékegységre</b> — csak azonos egységeket (liter a literrel, gramm a grammal) szabad összekeverni. Egy hőmérséklet-keverésnél is így számolunk, bár a valóság ennél összetettebb.
+      A keverési szabály <b>idealizált</b>, <b>lineáris</b> modell: feltételezzük, hogy a mennyiségek egyszerűen összeadódnak, és a fajlagos jellemző a súlyozott átlaguk. Ügyelj a <b>közös mértékegységre</b> — liter a literrel, gramm a grammal adható össze. Hőmérsékletnél ez azonos anyagok hőveszteség nélküli keverésének közelítése; a feladatokban a térfogatok összeadását is feltételezzük.
     </div>
     <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ x + y = 20 és 20x + 75y = 42·20 = 840 → x = 12 liter (20 °C-os)." data-nem="✘ Keverési szabály: x + y = 20 és 20x + 75y = 42·20 = 840, innen x = 12 liter a 20 °C-os vízből.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>

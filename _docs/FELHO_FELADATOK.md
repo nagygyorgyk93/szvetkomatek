@@ -140,7 +140,23 @@ subagenttel; (3) matematikai szúrópróba: definíciók, tételek pontossága, 
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ☐ teljes A1 hátra | ☐ teljes A1 hátra | ☐ teljes A1 hátra | ☑ teljes A1: 73 lap böngészőpróbája, témakörönként 1 tananyag és 1 feladatgyűjtemény friss szemű lektorálása, 14 lap javítva; a tanári besorolási döntések átvezetve (2026-10-02) |
+| ☑ teljes A1: 77 lap ellenőrizve, témakörönként friss szemű tartalmi próba, 16 lap pontosítva; helyi main (2026-10-04) | ☐ teljes A1 hátra | ☐ teljes A1 hátra | ☑ teljes A1: 73 lap böngészőpróbája, témakörönként 1 tananyag és 1 feladatgyűjtemény friss szemű lektorálása, 14 lap javítva; a tanári besorolási döntések átvezetve (2026-10-02) |
+
+**1e A1 hibalista (2026-10-04, helyi main):**
+
+| Hol | Mi volt a hiba | Súlyosság | Státusz |
+|---|---|---|---|
+| 01, relációk és logika | A párhuzamosság reflexív példaként szerepelt; a hamis egzisztenciális állítás cáfolásához ellenpéldát kért a feladat; az indirekt és kontrapozíciós eljárás keveredett | közepes | HTML-ben javítva, az egész számok és a természetes számok tartománya pontosítva |
+| 02, trigonometriai feladat | A sárkány zsinórjának talajjal bezárt szögét a szöveg félreérthetően adta meg | alacsony | A zsinór szögére pontosítva; csak hegyesszögű szögfüggvény maradt |
+| 03, közelítés és számfeladatok | A relatív hiba nullával oszthatott; a normálalak-szabály nem fedte le pontosan az előjelet és a határeseteket; két egyenlet közös megoldásnak is olvasható volt | közepes | HTML-ben feltételekkel és egyértelmű kérdésszöveggel javítva |
+| 04, arány és százalék | Az arányhoz fölöslegesen kellett nemnulla előtag; a keresztszorzás és százalékos osztás kivételei hiányoztak | közepes | A nemnulla osztó feltételeit kimondva |
+| 04, keverék, haszon, kamat | A hőmérsékleti átlag modellfeltételei, a haszon viszonyítási alapja és a kamat évszámítása nem volt egyértelmű | közepes | Az idealizált modell, a beszerzési ár és a 360 napos egyszerű kamat megadva |
+| 05, geometriai tételek | A párhuzamossági axióma más geometriákra tett következménye, a külső szögek száma és az alakzatok távolsága túl általános volt | közepes | Három tananyaglap szövege pontosítva |
+| 05, kör és téglalap feladatai | A „nagyobbik ív fölött” helymeghatározás félreérthető volt; a „téglalapnak van beírt köre” állítás kvantora hiányzott | közepes | A builderben a csúcs helye és a minden téglalapra vonatkozó állítás megadva |
+| 07, egyenletrendszerek | Az egyenesek metszéspontja és a \(0=0\) eset általános megfogalmazása elfajuló egyenleteknél hibás következtetéshez vezethetett; az életkoros feladat szövege kétféleképpen olvasható volt | közepes | Tananyagban feltételek, builderben egyértelmű életkori arány |
+| 08, hasonlóság | Az átfogóhoz tartozó magasság jelölése eltért a \(h\) jelölési kánontól | alacsony | A tételben és a példában \(h\)-ra javítva |
+
+**1e A1 ellenőrzés:** a 05 és 07 feladatlap builderének öntesztje rendben; egyedi_id.py → kepek.py → media.py → set_hatter.py → build_naplo_terkep.py → build_search_index.py lefutott. A kánon és a jsdom 77/77, a linkek 310/0, a sávellenőrzés tiszta, a kulcsteszt 4499/4499, a regresszió 4499/4499 = 100%. A 77 lap 360/390/1280 px-es böngészőpróbája hibátlan. A 308 nem üres keresőindex-bejegyzésből pontosan a 16 módosult oldal változott. A 08 témakörben szándékosan nincs feladatgyűjtemény: lezáró tananyag. A nyomtatási látvány és a valódi képernyőolvasós próba nem futott. Tanári döntést igénylő új kérdés nincs.
 
 **4e A1 hibalista (2026-10-02, helyi ág):**
 
