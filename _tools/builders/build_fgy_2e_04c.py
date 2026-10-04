@@ -110,11 +110,11 @@ ALAP = [
   False),
  ("Oldd meg! $\\operatorname{tg}2x=1$", None,
   '$x=\\tfrac{\\pi}{8}+\\tfrac{k\\pi}{2}$, $k\\in\\mathbb{Z}$.'),
- ('Oldd meg a $[0^\\circ;360^\\circ)$ körön! (Add meg intervallummal.)',
+ ('Oldd meg a $[0^\\circ;360^\\circ)$ körön! Add meg a megoldáshalmazt!',
   ['$\\sin x&gt;\\tfrac{\\sqrt2}{2}$', '$\\cos x&lt;\\tfrac12$',
    '$\\sin x\\le 0$'],
   ['$(45^\\circ;135^\\circ)$', '$(60^\\circ;300^\\circ)$',
-   '$[180^\\circ;360^\\circ)$']),
+   '$\\{0^\\circ\\}\\cup[180^\\circ;360^\\circ)$']),
 ]
 
 # ============================== KÖZÉPSZINT ==============================

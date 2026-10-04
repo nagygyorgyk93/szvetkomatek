@@ -163,8 +163,8 @@ KOZEP = [
   ["Milyen $m$ esetén van az $x^{2}-2x+m-3=0$ egyenletnek két különböző valós megoldása?",
    "Milyen $m$ esetén van az $x^{2}+mx+9=0$ egyenletnek kettős gyöke?"],
   ["$m&lt;4$", "$m=6$ vagy $m=-6$"], False),
- ("Az $x^{2}-(m+2)x+3m=0$ egyenletben $m$ valós paraméter. Milyen $m$ esetén lesz "
-  "a gyökök összege $8$?", None, "$m=6$"),
+ ("Az $x^{2}-(m+2)x+3m=0$ egyenletben $m$ valós paraméter. A gyökök komplexek is lehetnek. "
+  "Milyen $m$ esetén lesz a gyökök összege $8$?", None, "$m=6$"),
  ("A $2x^{2}-8x+3=0$ egyenlet megoldása nélkül számítsd ki!",
   ["$x_{1}+x_{2}$", "$x_{1}\\cdot x_{2}$",
    "$\\dfrac{1}{x_{1}}+\\dfrac{1}{x_{2}}$", "$x_{1}^{2}+x_{2}^{2}$"],

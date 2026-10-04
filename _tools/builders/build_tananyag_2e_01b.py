@@ -256,7 +256,7 @@ B3 = [
  ("Egytagú nevező", [
    'Ha a nevezőben egyetlen gyökös tag áll, olyan tényezővel bővítünk, amitől a gyökjel alá '
    'a <b>gyökkitevővel megegyező kitevőjű hatvány</b> kerül. (A nevezőben álló gyök alatt '
-   'természetesen pozitív szám áll — a nevező nem lehet nulla.)',
+   'páros gyöknél pozitív szám áll, páratlan gyöknél negatív is állhat — a nevező nem lehet nulla.)',
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Gyöktelenítsd: <b>a)</b> $\\dfrac{6}{\\sqrt{3}}$; <b>b)</b> $\\dfrac{5}{\\sqrt[3]{4}}$.</p>',
          hid="pelda-egytagu",

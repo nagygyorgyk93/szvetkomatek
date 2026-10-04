@@ -265,7 +265,7 @@ A3 = [
 
  ("A Viète-képletek", [
    doboz("tetel", "Viète-képletek",
-         '<p>Ha az $ax^{2}+bx+c=0$ egyenlet gyökei $x_{1}$ és $x_{2}$, akkor</p>'
+         '<p>Ha $a\\neq 0$, és az $ax^{2}+bx+c=0$ egyenlet gyökei $x_{1}$ és $x_{2}$, akkor</p>'
          '$$x_{1}+x_{2}=-\\frac{b}{a},\\qquad x_{1}\\cdot x_{2}=\\frac{c}{a}.$$'
          '<p>Az $x^{2}+px+q=0$ alakú (normált) egyenletnél még egyszerűbb: '
          '$x_{1}+x_{2}=-p$ és $x_{1}x_{2}=q$.</p>',

@@ -140,7 +140,22 @@ subagenttel; (3) matematikai szúrópróba: definíciók, tételek pontossága, 
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ☑ teljes A1: 77 lap ellenőrizve, témakörönként friss szemű tartalmi próba, 16 lap pontosítva; helyi main (2026-10-04) | ☐ teljes A1 hátra | ☐ teljes A1 hátra | ☑ teljes A1: 73 lap böngészőpróbája, témakörönként 1 tananyag és 1 feladatgyűjtemény friss szemű lektorálása, 14 lap javítva; a tanári besorolási döntések átvezetve (2026-10-02) |
+| ☑ teljes A1: 77 lap ellenőrizve, témakörönként friss szemű tartalmi próba, 16 lap pontosítva; helyi main (2026-10-04) | ☑ teljes A1: 65 lap ellenőrizve, nyolc lap javítva, mind a négy témakörből friss szemű tananyag- és feladatpróba; helyi main (2026-10-04) | ☐ teljes A1 hátra | ☑ teljes A1: 73 lap böngészőpróbája, témakörönként 1 tananyag és 1 feladatgyűjtemény friss szemű lektorálása, 14 lap javítva; a tanári besorolási döntések átvezetve (2026-10-02) |
+
+**2e A1 hibalista (2026-10-04, helyi main):**
+
+| Hol | Mi volt a hiba | Súlyosság | Státusz |
+|---|---|---|---|
+| 01, hatványfüggvény | Az aszimptóta meghatározása kizárta a grafikon és az aszimptóta metszését | közepes | Tananyagépítőben pontosítva |
+| 01, gyöktelenítés | A nevezőben álló gyök alatti számot mindig pozitívnak mondta; páratlan gyöknél negatív is lehet | közepes | Tananyagépítőben pontosítva |
+| 01, komplex osztás | A képlet mellől hiányzott a nemnulla nevező feltétele | közepes | Tananyagépítőben pótolva |
+| 02, Viète-képletek | A tételben nem szerepelt az $a\neq0$ feltétel | közepes | Tananyagépítőben pótolva |
+| 02, másodfokú feladatok, Közép 5 | Az $m=6$ válasznál a gyökök nem valósak, amit a kérdés nem tett egyértelművé | közepes | A feladatépítőben kimondva, hogy komplex gyökök is lehetnek |
+| 03, logaritmusos feladatok | Az Alap 12–13 felbontásából hiányoztak a változók és az alap feltételei; a Közép 13 kérdése nyelvtanilag hibás volt | közepes / alacsony | Feladatépítőben javítva, az Alap 14–15 feltételei is kiírva |
+| 04, trigonometrikus egyenletek | A negatív jobb oldalra közölt általános sin-, cos- és tg-képletek hibásak voltak; a $bx$-es esetből hiányzott $b\neq0$ és a periódusból $|b|$ | magas | Tananyagépítőben az előjel szerinti esetekkel és a periódusfeltételekkel javítva |
+| 04, trigonometrikus feladatok, Alap 19 c) | A $\sin x\le0$ megoldásából kimaradt $0^\circ$ | magas | Feladatépítőben a kérdés és a végeredmény javítva |
+
+**2e A1 ellenőrzés:** a nyolc érintett builder lefutott, a SymPy-s önellenőrzések rendben; `kepek.py` → `media.py` → `set_hatter.py` → `build_naplo_terkep.py` → `build_search_index.py` lefutott. A kánon és a jsdom 65/65, a linkek 310/0, a sávellenőrzés tiszta, a kulcsteszt 4499/4499, a regresszió 4499/4499 = 100%. A 65 lap 360/390/1280 px-es böngészőpróbája hibátlan, az utolsó két szövegpontosítás után az érintett lapok külön is. A 308 nem üres keresőindex-bejegyzésből pontosan a nyolc javított oldal változott. A négy témakör kijelölt tananyag- és feladatlapját kontextus nélküli lektorok nézték át. A feladatlapok első kivonatából a végeredmények is látszottak, ezért új, valóban kulcs nélküli kivonatokból külön lektorok mind a négy témakörben változatos feladatokat önállóan újraszámoltak; az egyértelműen kiolvasható példákban további eltérést nem találtak. A sima szöveggé alakítás néhol elveszíti a képletek felső indexeit és törtvonalait; ezt nem minősítettük oldalhibának. A teljes kulcstesztben nincs 2e kulcsmodul, ezért a builderöntesztek és ezek az önálló számolások adtak 2e-s számtani kontrollt. A nyomtatási látvány és a valódi képernyőolvasós próba nem futott. **Tanári döntés kell:** a 2e/02 paraméteres feladatok besorolása és a 2e/04 trigonometriahatár az M2-skill és az operatív terv között továbbra is nyitott; a bikvadratikus egyenletek a korábbi döntés szerint maradnak.
 
 **1e A1 hibalista (2026-10-04, helyi main):**
 

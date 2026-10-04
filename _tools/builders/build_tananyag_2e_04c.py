@@ -345,13 +345,17 @@ C3 = [
    abra(SVG_EGY, "A $\\sin x=\\tfrac12$ egyenlet megoldásai ott vannak, ahol a "
                  "hullám metszi az $y=\\tfrac12$ egyenest — <b>periódusonként kétszer</b>."),
    doboz("tetel", "A három alaptípus",
-         '<p>Legyen $\\alpha$ az az első negyedbeli <b>alapszög</b> ($0\\le\\alpha\\le\\tfrac{\\pi}{2}$), amelyre a szóban forgó szögfüggvény értéke épp $|a|$. Az alábbiakban végig $k\\in\\mathbb{Z}$.</p>'
-         '<p><b>1.</b> $\\sin x=a$ (csak ha $|a|\\le 1$): <b>két</b> megoldáscsalád, mert a szinusz két negyedben veszi fel ugyanazt az értéket.</p>'
-         '$$x=\\alpha+2k\\pi\\qquad\\text{vagy}\\qquad x=\\pi-\\alpha+2k\\pi$$'
-         '<p><b>2.</b> $\\cos x=a$ (csak ha $|a|\\le 1$): szintén két család, de ezek <b>mindig</b> összevonhatók $\\pm$ alakba, mert a koszinusz páros függvény.</p>'
-         '$$x=\\pm\\alpha+2k\\pi$$'
-         '<p><b>3.</b> $\\operatorname{tg}x=a$ (bármely $a$-ra): <b>egyetlen</b> család, mert a periódus $\\pi$.</p>'
-         '$$x=\\alpha+k\\pi$$'
+         '<p>Legyen $\\alpha$ az az első negyedbeli <b>alapszög</b> ($0\\le\\alpha\\le\\tfrac{\\pi}{2}$), amelynél a szóban forgó szögfüggvény értéke $|a|$. Az alábbiakban $k\\in\\mathbb{Z}$; a $0$ és a $\\pm1$ szinusz- és koszinuszértékeket külön táblázat foglalja össze.</p>'
+         '<p><b>1.</b> $\\sin x=a$ csak $|a|\\le1$ esetén oldható meg. Ha $0&lt;a&lt;1$, az I. és II. negyedben kapjuk:</p>'
+         '$$x=\\alpha+2k\\pi\\qquad\\text{vagy}\\qquad x=\\pi-\\alpha+2k\\pi.$$'
+         '<p>Ha $-1&lt;a&lt;0$, a III. és IV. negyedben:</p>'
+         '$$x=\\pi+\\alpha+2k\\pi\\qquad\\text{vagy}\\qquad x=2\\pi-\\alpha+2k\\pi.$$'
+         '<p><b>2.</b> $\\cos x=a$ csak $|a|\\le1$ esetén oldható meg. Ha $0&lt;a&lt;1$, akkor</p>'
+         '$$x=\\pm\\alpha+2k\\pi;$$'
+         '<p>ha $-1&lt;a&lt;0$, akkor</p>'
+         '$$x=\\pi\\pm\\alpha+2k\\pi.$$'
+         '<p><b>3.</b> $\\operatorname{tg}x=a$ bármely $a$-ra megoldható. A periódus $\\pi$, ezért egy család elég:</p>'
+         '$$x=\\alpha+k\\pi\\quad(a\\ge0),\\qquad x=-\\alpha+k\\pi\\quad(a&lt;0).$$'
          '<p>Minden megoldáshoz oda kell írni a periódust — és a $k\\in\\mathbb{Z}$-t!</p>',
          hid="tetel-alaptipusok"),
    doboz("pelda", "Vészterem-szimuláció",
@@ -371,7 +375,7 @@ C3 = [
                   '<p><b>c)</b> A tangens periódusa $\\pi$, ezért egyetlen család elég:</p>'
                   '$$x=\\frac{\\pi}{4}+k\\pi,\\qquad k\\in\\mathbb{Z}$$')),
    doboz("tetel", "A speciális esetek",
-         '<p>Ha az érték épp $\\pm 1$, a két megoldáscsalád <b>egybeesik</b>; ha $0$, akkor a kettő egyetlen képletbe <b>vonható össze</b>. Mindegyik sorban $k\\in\\mathbb{Z}$.</p>'
+         '<p>Szinusznál és koszinusznál, ha az érték épp $\\pm 1$, a két megoldáscsalád <b>egybeesik</b>; ha $0$, akkor a kettő egyetlen képletbe <b>vonható össze</b>. Mindegyik sorban $k\\in\\mathbb{Z}$.</p>'
          '<div class="tblwrap"><table>'
          '<tr><th>Egyenlet</th><th>Megoldás</th></tr>'
          '<tr><td>$\\sin x=1$</td><td>$x=\\tfrac{\\pi}{2}+2k\\pi$</td></tr>'
@@ -399,10 +403,12 @@ C3 = [
  ("Ha a szög nem $x$, hanem $bx$", [
    'Ez a leggyakoribb továbblépés — és pontosan itt szokott elcsúszni a periódus.',
    doboz("tetel", "A helyettesítéses gondolat",
-         '<p>Ha az egyenlet $\\sin bx=a$ alakú, kezeld a $bx$-et <b>egyetlen szögként</b>: '
+         '<p>Ha az egyenlet $\\sin bx=a$ alakú és $b\\neq0$, kezeld a $bx$-et <b>egyetlen szögként</b>: '
          'oldd meg a $bx$-re, és <b>csak a legvégén</b> ossz $b$-vel — a $2k\\pi$-t is!</p>'
-         '<p>Így a megoldáscsaládok periódusa $\\tfrac{2\\pi}{b}$ lesz, tehát <b>sűrűbben</b> '
-         'következnek. Vigyázz: ez a $2k\\pi$-re vonatkozik — <b>tangensnél</b> a $k\\pi$ osztódik $b$-vel, tehát $\\operatorname{tg}bx=a$ megoldása $x=\\tfrac{\\alpha}{b}+\\tfrac{k\\pi}{b}$.</p>'
+         '<p>Így a szinuszos és koszinuszos megoldáscsaládok periódusa $\\tfrac{2\\pi}{|b|}$, '
+         'a tangenseseké $\\tfrac{\\pi}{|b|}$. Csak $|b|&gt;1$ esetén következnek a megoldások sűrűbben. '
+         'Tangensnél is előbb a $bx$ szög összes megoldását írd fel a jobb oldal előjelének megfelelően, '
+         'majd a $k\\pi$-t is oszd el $b$-vel. Ha $b=0$, külön ellenőrizd, igaz-e az így kapott állandó egyenlőség.</p>'
          '<p>Ha a szög nem $bx$, hanem <b>$x+c$</b> alakú (például $\\sin\\left(x+\\tfrac{\\pi}{6}\\right)=1$), ugyanígy járj el: oldd meg az $x+c$-re, és a legvégén vond ki a $c$-t. A periódus ilyenkor nem változik.</p>',
          hid="tetel-bx"),
    doboz("pelda", "Vészterem-szimuláció",

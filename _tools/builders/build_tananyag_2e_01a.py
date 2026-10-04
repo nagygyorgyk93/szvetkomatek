@@ -291,7 +291,8 @@ A2 = [
    doboz("definicio", "Aszimptota",
          '<p>Az $f:\\mathbb{R}\\setminus\\{0\\}\\to\\mathbb{R}$, $f(x)=\\dfrac{1}{x^{n}}=x^{-n}$ '
          'függvény grafikonja <b>hiperbola</b> jellegű görbe. Az egyenest, amelyhez a görbe '
-         'tetszőlegesen közel kerül, de nem éri el, <b>aszimptotának</b> nevezzük. '
+         'egy ág mentén egyre közelebb kerül, <b>aszimptotának</b> nevezzük. '
+         'Más függvény grafikonja akár metszheti is az aszimptotáját. '
          'Itt két aszimptota van: az $x=0$ és az $y=0$ egyenes (a két koordinátatengely).</p>',
          hid="def-aszimptota"),
    doboz("tetel", "Páros vagy páratlan $n$?",

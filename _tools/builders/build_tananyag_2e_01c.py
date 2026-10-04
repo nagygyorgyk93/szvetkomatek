@@ -272,7 +272,7 @@ C2 = [
    '$x+yi$ alakra. Ehhez a <b>nevezőből el kell tüntetni az $i$-t</b> — és pontosan erre '
    'való a $z\\cdot\\overline z=|z|^{2}$ összefüggés.',
    doboz("tetel", "Az osztás algoritmusa",
-         '<p>Bővítsük a törtet a <b>nevező konjugáltjával</b>:</p>'
+         '<p>Ha $z_{2}\\neq 0$, bővítsük a törtet a <b>nevező konjugáltjával</b>:</p>'
          '$$\\frac{z_{1}}{z_{2}}=\\frac{z_{1}\\cdot\\overline{z_{2}}}'
          '{z_{2}\\cdot\\overline{z_{2}}}=\\frac{z_{1}\\cdot\\overline{z_{2}}}{\\left|z_{2}\\right|^{2}}.$$'
          '<p>A nevező így <b>valós</b> szám lesz, a számlálót pedig már csak ki kell bontani. '
