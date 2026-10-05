@@ -270,11 +270,14 @@ A korábbi A1-ellenőrzések nem helyettesítik a teljes stilisztikai átnézés
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ◐ 01: három függvényes tananyag teljes szövege átnézve és javítva (helyi main, 2026-10-05) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
+| ◐ 01: mind a 9 tananyag teljes szövege átnézve és javítva; a többi lap külön A3-auditja hátra (helyi main, 2026-10-05) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
 
-Az első adagban a hétköznapi példák feltételei, a bevezetők és átvezetők,
-valamint több matematikai pontatlanság javult; nyolc SVG kapott teljesebb szöveges
-leírást. Részletek: [A3 nyelvi ellenőrzés](A3_nyelvi_ellenorzes.md).
+Az első adag három függvényes, a második hat logikai és halmazos tananyagot
+ellenőrzött. A példák feltételei, bevezetők, átvezetők és matematikai pontatlanságok
+javultak; nyolc SVG teljesebb leírást kapott. A második adagban a gyorsismétlő
+hiányzó komplementerjelei is javultak: végleges böngésző/axe 36/0, nyomtatás 12/12,
+képletrender 256/0, kvíz 12/12, kulcs 4499/4499. A hat Venn-ábra meglévő neve
+megfelelő. Részletek: [A3 nyelvi ellenőrzés](A3_nyelvi_ellenorzes.md).
 Hátra van a többi tananyag, feladatgyűjtemény, nyitóoldal, összefoglaló és terepküldetés.
 
 ---

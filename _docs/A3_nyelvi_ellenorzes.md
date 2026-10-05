@@ -2,6 +2,12 @@
 
 ## Hatókör és állapot
 
+**Jelenlegi összesítés:** az 1e/01 mind a kilenc tananyaglapjának teljes nyelvi
+és példahitelességi ellenőrzése elkészült két adagban. A feladatgyűjtemények,
+nyitóoldal, összefoglaló és terepküldetés külön A3-ellenőrzése, valamint a többi
+témakör átnézése hátra van. Az alábbi első adag adatai történeti bejegyzések;
+a második adag eredménye a dokumentum végén található.
+
 **2026-10-05, első adag:** az 1e/01 három függvényes tananyaglapjának teljes szövegét
 átnéztük, a bevezetőktől az összefoglalóig. A tanár kérése szerint az egyértelműen
 jobb megfogalmazásokat beépítettük. A tananyag játékos kerete megmaradt.
@@ -94,9 +100,99 @@ változatot újramértük a böngészőben és a képletrenderelővel.
 
 ## Korlátok és következő adag
 
-A teljes webhely nyelvi ellenőrzése hátra van; ez három tananyaglap lezárt adaga.
-Folytatásként az 1e/01 logikai és halmazos lapjain érdemes ugyanezt a nyelvi,
-példahitelességi és ábraleírási ellenőrzést elvégezni.
+A teljes webhely nyelvi ellenőrzése hátra van. Az első adag három függvényes
+tananyagát az alábbi második adag hat logikai és halmazos tananyaga követi.
 Valódi képernyőolvasót, más böngészőt és a külső videók szövegét nem ellenőriztük.
 
 **Tanári döntés kell: nincs új kérdés.**
+
+
+## Második adag — 1e/01 logika és halmazok (2026-10-05)
+
+### Hatókör és a bemutatott hibák
+
+A `44658f7` revízióból, tiszta helyi `main` ágról indultunk. A helyi main és
+origin/main referencia megegyezett; távoli frissítést és push-t nem végeztünk.
+Hat tananyag teljes szövege, táblázatai, példái, kvízei és összefoglalói kerültek sorra:
+kijelentések; logikai műveletek; következtetések és kvantorok; halmaz fogalma;
+halmazműveletek; Descartes-szorzat és relációk. Ezekhez sincs aktuális builder;
+a CLAUDE.md szerinti örökölt HTML-javítás készült.
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Bevezetők és átvezetők | Túlzó ígéretek és erőltetett mondatok: „soha ne lehessen becsapni”, „hat szuperképesség”, „igazi erő”, „a műveleteket bírod” | Nyelvi / fogalmi | HTML: konkrét tanulási célok, természetesebb átvezetés; a szereplők megmaradtak |
+| Kijelentések | Az ismeretlen igazságértéket a nyitott mondattal összekeverhető magyarázat; a „csak behelyettesítéssel” kizárta a kvantoros lezárást | Közepes, fogalmi | HTML: egyértelmű igazságérték és a változó értékének megadása külön szerepel; a kizáró szó elhagyva |
+| Logikai műveletek | „Öt művelet van” túl általános; „hamis feltételből bármi következik” félreérthető; a nullaszorzat feltétel nélküli | Közepes, fogalmi | HTML: öt itt vizsgált alapművelet; az implikáció igazságából az utótag igazsága nem következik; valós számok kimondva |
+| Következtetések és kvantorok | A kvantor nem mondja meg pontosan, „hány x-re” igaz a mondat; a halmazok átvezetése tévesen jövő félévet említett | Közepes, tartalmi | HTML: minden elem / legalább egy elem; következő téma; modus ponens zárójelezése és a páratlan szám paraméterének halmaza kiírva |
+| Halmaz fogalma | A szolgáltatói ajánlók és SQL túl általános példája; a rendszertani példában nem volt világos, mi az elem | Közepes, példa és fogalom | HTML: filmválogatás és meghívólista; az egyedek halmazainak részhalmazkapcsolata; elem és részhalmaz példája pontosítva |
+| Halmazműveletek | A számos analógia „sosem igaz” mondata hibás; 25 focizó vagy úszó helyett 25 sportolót állított a szöveg; szitaképletek végessége hiányzott | Közepes, tartalmi | HTML: idempotencia, focizó vagy úszó tanulók, véges halmazok; konkrét példa szemléltetésként, nem általános bizonyításként |
+| Relációk | Az oszthatóság rendezési példájából hiányzott a számhalmaz; a borbély helyi lakó volta kimaradt; az ekvivalenciaosztály neve magyarázat nélkül állt | Közepes, feltételhiány | HTML: pozitív egész számok, a faluban élő borbély és lehetetlenség, az osztály jelentése |
+| Relációk, gyorsismétlő | A komplementer és a két De Morgan-azonosság `ov` osztályához nincs megjelenítési szabály; a felülvonások a böngészőben is hiányoztak | Magas, hibásan látszó matematika | HTML: három KaTeX-képlet, a hét felülvonás látható és a MathML-ben is szerepel |
+| Nyelv és tipográfia | „Dr. Bizarr-re”, „a halmazok témakör után”, hibás záró idézőjelek | Alacsony, nyelvi | HTML: „Dr. Bizarrhoz”, „témaköre után”, magyar záró idézőjelek |
+
+A kizáró/megengedő „vagy” példája pontosabb lett: egyetlen dolgozat jegyéről
+szól. A sajtból álló Hold feltételes példája szándékos logikai szemléltetés,
+megmaradt. A műveleti sorrendet az itt használt megegyezésként írjuk le,
+egyenrangú műveleteknél zárójelezéssel.
+
+Új feladat, feladat-számadat, külső adat, média és oldalankénti CSS nem készült.
+A hat Venn-ábra már meglévő neve megfelelően leírja a színezett tartományt;
+az ábrák és neveik változatlanok. Az `ov` jelölés teljes HTML-keresése csak
+az érintett relációs lapot találta meg.
+
+### Független lektor és matematikai kontroll
+
+A web-verifikacio szerint a kontextus nélküli lektor kizárólag a hat tananyag
+látható szövegét kapta, válaszindexek és lenyíló megoldások nélkül. **12/12**
+kvízre önállóan helyes választ adott, és a lovag–lókötő példát is megoldotta:
+Anna és Bea lovag. A filmválogatás, meghívólista, rendszertan és sportpélda
+hiteles; a családi ebéd és az esős út megadott logikai feltételként megfelelő.
+A játékos keretet nem minősítette hibának.
+
+A biztos nyelvi és feltételpontosításai beépültek. Az újraolvasás a megváltozott
+mondatokban nem talált további biztos hibát. A kivonat először elvesztette a
+CSS-sel rajzolt felülvonásokat és egy sortörést; a kivonatot helyreállítottuk.
+Ezután a valódi böngésző is megerősítette, hogy az `ov` felülvonásai a lapon
+hiányoznak. A végső KaTeX-cserét renderpróba és képi ellenőrzés igazolta.
+
+Független számolási kontroll: **9 teljes igazságtáblázat**, minden adatcellával;
+**512 végeshalmaz-hármas** disztributivitásra, De Morganra és elemszámra;
+**64 halmazpár** a Descartes-szorzat elemszámára és felcserélhetőségére.
+A kilencelemű abszolútérték-reláció, a hatelemű szorzat, a hatványhalmaz és
+a 25 focizó/úszó, illetve 5 egyik sportot sem űző tanuló eredménye egyezik.
+Ezek kontrollok; véges példák ellenőrzését nem nevezzük általános bizonyításnak.
+
+### Végleges ellenőrzések
+
+- **Megőrzés 54/54:** képek, linkek, média, kvízopciók, válaszindexek,
+  SVG-k, szkriptek, stílusok és horgonyok azonosak a kiinduló hat lapon.
+  A backlog zárolt fejléce változatlan.
+- **Böngésző:** 6 lap × 360/390/1280 px × zárt/nyitott lenyílók = **36 nézet**,
+  0 oldalszintű túlcsordulás, képlethiba és JS-kivétel.
+- **Axe: 36/0 szabályjelzés.** A képes hátterek kézi kontrasztvizsgálata nem
+  teljes; nem állítunk teljes WCAG-megfelelőséget.
+- **Venn-ábrák:** mind a hat név szerepel az Edge hozzáférhetőségi fájában.
+  A mobilos Venn-komponens és a nyomtatási képe szemrevételezve.
+- **Felülvonások:** a komplementerjel és a két De Morgan-képlet hét vonása
+  megjelenik; a javított jelöléstáblázat és képletcsoport szemrevételezve.
+- **JS nélkül:** mind a hat lap bevezető bekezdései láthatók. A képletek
+  TeX alakban maradnak, nem teljes képernyőolvasós megoldás.
+- **Nyomtatás:** 6 lap × JS be/ki = **12 nézet**, a vizsgált bekezdések és
+  SVG-k láthatók. Teljes PDF-oldaltördelést nem vizsgáltunk.
+- **Kánon és belső linkek: 310/310, 0 hiba;** a gyakorlósávok tiszták.
+  Végleges jsdom: **6 lap, 256 képlet, 12/12 kvíz, 0 hiba**.
+- **Kulcsteszt: 4499/4499**, a korábban telepített SymPy-val. Feladat,
+  végeredmény és kulcsmodul nem változott, a regressziós érzékenységvizsgálat
+  most nem ismétlődött.
+- **Helyreállítás:** kép/média/háttér 0 módosítás; 334 médiaelem 139 lapon.
+  Naplótérkép változatlan: 184 oldal, 2294 feladat, 12315 XP. A keresőindex
+  308 nem üres bejegyzéséből pontosan a hat érintett tananyag változott.
+
+### Korlátok és folytatás
+
+Az 1e/01 kilenc tananyaga A3 szerint átnézve; a többi 1e-tananyag és
+a feladatgyűjtemények, nyitóoldalak, összefoglalók, terepküldetések hátra vannak.
+Valódi képernyőolvasót, más böngészőt és a külső videók szövegét nem ellenőriztük.
+Következő lehetséges adag: 1e/02 bevezetői és tananyagszövegei.
+
+**Tanári döntés kell: nincs új kérdés.** Helyi main-commit; új ág és push nélkül.

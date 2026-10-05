@@ -39,34 +39,34 @@
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
       <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/svetozar.webp" alt="SZVETI — a Szvetkó-kampusz mesterséges intelligenciája" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>SZVETI:</b> Kadét, üdv az <b>Igazság Csarnokában</b>! A kiképződ <b>Ikol</b> — senki sem ismeri jobban az igazság és a hazugság határát. Kán hamis állításokkal szórja tele a világot; az első lecke: <b>mi számít egyáltalán igaznak vagy hamisnak?</b> Aki ezt nem tudja szétválasztani, azt Kán átveri.</p></div>
 <span id="intro" class="regi-horgony"></span>
-<p class="lead">Mert a logika az a nyelv, amin a matematika minden állítása meg van fogalmazva.</p>
-      <p>Amikor azt mondod, hogy „ha esik az eső, akkor vizes az út", vagy „minden ember halandó", akkor logikai állításokat mondasz. A matematikai logika ezt teszi pontossá: egyértelmű jelekkel és szabályokkal dolgozik, hogy soha ne lehessen félreérteni, és soha ne lehessen becsapni.</p>
+<p class="lead">A logika segít pontosan megfogalmazni az állításokat és ellenőrizni a következtetéseket.</p>
+      <p>A hétköznapi beszédben is összekapcsolunk állításokat: „Ha esik az eső, akkor vizes az út.” A matematikai logikában megvizsgáljuk, mit jelent a „ha…, akkor…”, és mikor tekintünk helyesnek egy következtetést.</p>
       <div class="doboz erdekesseg">
         <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
         <ul class="clean" style="margin:0">
           <li><b>Programozás:</b> minden <span class="kbd">if</span> feltétel egy logikai kifejezés (<span class="math">\(\text{és}\)</span>, <span class="math">\(\text{vagy}\)</span>, <span class="math">\(\text{nem}\)</span>).</li>
-          <li><b>Jog és vita:</b> egy érvelés akkor jó, ha a következtetés logikailag helyes — pont ezt tanuljuk itt.</li>
-          <li><b>Keresés a neten:</b> „macska AND kutya", „nyaralás NOT Görögország" — ezek logikai műveletek.</li>
-          <li><b>Áramkörök, chipek:</b> a számítógép <i>logikai kapukból</i> épül fel (erről a végén egy mém is vár 👀).</li>
+          <li><b>Érvelés:</b> egy vitában is ellenőrizhetjük, hogy a megadott feltételekből valóban következik-e az állítás.</li>
+          <li><b>Keresési feltételek:</b> egy filmgyűjteményben kereshetünk olyan filmeket, amelyek vígjátékok <i>és</i> magyar nyelvűek. Két feltételt kapcsolunk össze.</li>
+          <li><b>Áramkörök, chipek:</b> a digitális áramkörökben <i>logikai kapuk</i> valósítanak meg olyan műveleteket, mint az „és”, a „vagy” és a „nem”.</li>
         </ul>
       </div>
-      <p>A fejezet végére hat szuperképességed lesz: felismered a <b>kijelentéseket</b>, kombinálod őket <b>műveletekkel</b>, kiszámolod egy <b>formula</b> igazságértékét, felismered a <b>tautológiákat</b>, helyesen <b>következtetsz</b>, és bánni tudsz a <b>kvantorokkal</b>. Menjünk! 🚀</p>
+      <p>Ebben a fejezetben megnézzük, hogyan ismerjük fel a <b>kijelentéseket</b>, kapcsoljuk össze őket <b>műveletekkel</b>, és számítjuk ki egy <b>formula</b> igazságértékét. Megismerjük a <b>tautológiákat</b>, a helyes <b>következtetés</b> szabályait és a <b>kvantorokat</b>.</p>
 
     <h2 id="s1">Kijelentés és igazságérték</h2>
 <span id="kijelentes" class="regi-horgony"></span>
-<p class="lead">Az első kérdés mindig ez: eldönthető-e a mondatról, hogy igaz vagy hamis?</p>
+<p class="lead">Van-e a mondatnak egyértelmű igazságértéke?</p>
 
       <div class="doboz definicio">
         <p class="cim"><span class="ikon">📗</span> Definíció — logikai kijelentés (ítélet)</p>
-        <p><b>Kijelentés</b> az olyan kijelentő mondat, amely a kettő közül <b>pontosan az egyik</b>: vagy <span class="tt">igaz</span>, vagy <span class="ff">hamis</span>. Nem baj, ha épp nem tudjuk, melyik — az számít, hogy a kérdésnek van értelme.</p>
+        <p><b>Kijelentés</b> az olyan kijelentő mondat, amely egyértelműen <span class="tt">igaz</span> vagy <span class="ff">hamis</span>, és a két lehetőség közül <b>pontosan az egyik</b> teljesül. Nem szükséges ismernünk az igazságértékét: attól még kijelentés, hogy nem tudjuk, igaz-e.</p>
       </div>
 
-      <p>A kijelentéseket kis betűkkel jelöljük: <span class="math">\(p, q, r, \ldots\)</span> A kijelentés <b>igazságértéke</b> (logikai értéke) kétféle lehet:</p>
+      <p>A kijelentéseket kisbetűkkel jelöljük: <span class="math">\(p, q, r, \ldots\)</span> A kijelentés <b>igazságértéke</b> (logikai értéke) kétféle lehet:</p>
       <ul class="clean">
-        <li><span class="math tt">⊤</span> — „té", az <b>igaz</b> érték;</li>
-        <li><span class="math ff">⊥</span> — „nem té", a <b>hamis</b> érték.</li>
+        <li><span class="math tt">⊤</span> — „té”, az <b>igaz</b> érték;</li>
+        <li><span class="math ff">⊥</span> — „nem té”, a <b>hamis</b> érték.</li>
       </ul>
-      <p>Egy <span class="math">\(p\)</span> kijelentés igazságértékét így jelöljük: <span class="math">\(\tau (p)\)</span> (olvasd: „tau pé"). Tehát</p>
+      <p>Egy <span class="math">\(p\)</span> kijelentés igazságértékét így jelöljük: <span class="math">\(\tau (p)\)</span> (olvasd: „tau pé”). Tehát</p>
       <p style="text-align:center" class="math">τ(p) = ⊤, ha p igaz &nbsp;&nbsp;•&nbsp;&nbsp; τ(p) = ⊥, ha p hamis.</p>
 
       <div class="doboz tetel">
@@ -77,16 +77,16 @@
 
       <div class="doboz definicio">
         <p class="cim"><span class="ikon">📗</span> Definíció — logikai függvény (nyitott mondat)</p>
-        <p>Az olyan mondatot, amely <b>változót</b> tartalmaz, és a változó konkrét értékére válik csak kijelentéssé, <b>nyitott mondatnak</b> (állításformának) nevezzük. Jelölése: <span class="math">\(P(x)\)</span>.</p>
+        <p>A <b>nyitott mondatban</b> (állításformában) egy vagy több <b>változó</b> értékét még nem adtuk meg. A változók helyére értéket helyettesítve kijelentést kapunk. Jelölése: <span class="math">\(P(x)\)</span>.</p>
       </div>
       <div class="doboz pelda">
         <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
-        <p><span class="math">\(x^{2} = 4\)</span> önmagában <b>nem</b> kijelentés (nem tudjuk, igaz-e, amíg nem tudjuk, mi az <span class="math">\(x\)</span>). De <span class="math">\(x = 2\)</span> esetén már igaz kijelentés, <span class="math">\(x = 5\)</span> esetén hamis. Ez tehát logikai függvény.</p>
+        <p><span class="math">\(x^{2} = 4\)</span> önmagában <b>nem</b> kijelentés (az igazságértéke a meg nem adott <span class="math">\(x\)</span> értékétől függ). De <span class="math">\(x = 2\)</span> esetén már igaz kijelentés, <span class="math">\(x = 5\)</span> esetén hamis. Ez tehát logikai függvény.</p>
       </div>
 
       <div class="doboz csapda">
         <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
-        <p>Nem minden mondat kijelentés! A <b>kérdés</b> („Hány óra van?"), a <b>felszólítás</b> („Mosd meg a kezed!") és a <b>vélemény/ízlés</b> („A csokifagyi a legfinomabb") nem kijelentés, mert nincs egyértelmű igaz/hamis értéke.</p>
+        <p>Nem minden mondat kijelentés! A <b>kérdés</b> („Hány óra van?”), a <b>felszólítás</b> („Mosd meg a kezed!”) és a <b>mérce nélküli ízlésítélet</b> („A csokifagyi a legfinomabb”) nem kijelentés, mert nincs egyértelmű igaz/hamis értéke.</p>
       </div>
 
       <div class="kviz" data-answer="1" data-kevert="1">
@@ -98,11 +98,11 @@
 
       <div class="doboz erdekesseg">
         <p class="cim"><span class="ikon">💡</span> Megegyezés (fontos az egész tananyagban!)</p>
-        <p>A természetes számok halmaza nálunk <span class="math">\(\mathbb{N} = \{1, 2, 3, \ldots \}\)</span> — a <b>0-t nem</b> tekintjük természetes számnak. Így pl. „minden természetes szám pozitív" (<span class="math">\(\forall x\in \mathbb{N}: x &gt; 0\)</span>) igaz állítás.</p>
+        <p>A természetes számok halmaza nálunk <span class="math">\(\mathbb{N} = \{1, 2, 3, \ldots \}\)</span> — a <b>0-t nem</b> tekintjük természetes számnak. Így pl. „minden természetes szám pozitív” (<span class="math">\(\forall x\in \mathbb{N}: x &gt; 0\)</span>) igaz állítás.</p>
       </div>
 
       <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed: <span class="halvany">(kijelentés-e; nyitott mondat vagy kijelentés; igazságérték megadása)</span></p><div class="savok"><a class="sav henrik" href="feladatok-logika.html#alap-1">🐜 Henrik-bevetés <span class="cimke">A 1–2</span></a><a class="sav bruno" href="feladatok-logika.html#kozep-1">💥 Brúnó-bevetés <span class="cimke">K 1–2</span></a></div></div></div>
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/ikol.webp" alt="Ikol — az igaz és a hamis mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Ikol:</b> Már látod, mi igaz és mi nem. De Kán ritkán támad egyetlen állítással — a következő lecke: hogyan kapcsolódnak össze. Tovább!</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/ikol.webp" alt="Ikol — az igaz és a hamis mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Ikol:</b> Már meg tudod különböztetni a kijelentéseket a kérdésektől és a felszólításoktól. Kán azonban több állítást is összekapcsol. Nézzük meg, mit jelentenek közöttük a kötőszavak!</p></div>
     <div class="lapozo">
       <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">Témakör Főhadiszállása</span></a>
       <a class="kov" href="tananyag-logikai-muveletek.html"><span class="irany">Következő →</span><span class="hova">Logikai műveletek és formulák</span></a>
