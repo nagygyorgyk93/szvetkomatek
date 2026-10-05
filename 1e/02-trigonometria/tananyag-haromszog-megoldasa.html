@@ -32,11 +32,12 @@
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
-      <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/barton_kalman_w.webp" alt="Barton Kálmán — a kampusz célzó-oktatója" width="1200" height="670" decoding="async"><p>📡 <b>Barton Kálmán:</b> Itt a lényeg: <b>bemérni a láthatatlant</b>. Egy szög és egy táv, és megvan az anomália forrásának magassága — anélkül, hogy odamennék. Ez a <b>háromszög megoldása</b>, a célzó igazi ereje.</p></div>
+      <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/barton_kalman_w.webp" alt="Barton Kálmán — a kampusz célzó-oktatója" width="1200" height="670" decoding="async"><p>📡 <b>Barton Kálmán:</b> Ideje <b>bemérni az anomália forrását</b>. Előbb megrajzoljuk a derékszögű háromszöget, aztán a mért távolságból és szögből kiszámítjuk a keresett magasságot. Ehhez a <b>háromszög megoldását</b> használjuk.</p></div>
     <p>A derékszögű háromszöget <b>megoldani</b> annyit jelent: néhány adott adatból meghatározzuk az <b>összes</b> hiányzó oldalt és szöget. Ez a trigonometria legkézzelfoghatóbb haszna — így mérünk meg magasságokat és távolságokat, amelyekhez közvetlenül nem férünk hozzá.</p>
     <h2 id="s1">Az alapelv</h2>
-    <p class="halvany">Megállapodás ezen a lapon: a <b>szögfüggvények értékét</b> öt tizedesjegyre, a <b>hosszakat és a szögeket</b> két tizedesjegyre kerekítjük. A köztes lépésekben viszont mindig a pontos vagy a hosszabb értékkel számolj — csak a végeredményt kerekítsd, különben a hiba felhalmozódik.</p>
-    <p>Három lépés: <b>1.</b> Rajzold le a háromszöget, és jelöld be az adott adatokat. <b>2.</b> Válaszd azt a szögfüggvényt, amelyik az <i>adott</i> és a <i>keresett</i> oldalt/szöget köti össze. <b>3.</b> Rendezd az egyenletet a keresettre. A hiányzó szöget gyakran a <span class="math inline">\(\alpha+\beta=90^\circ\)</span> adja, a hiányzó oldalt olykor a Pitagorasz-tétel.</p>
+    <p class="halvany">Megállapodás ezen a lapon: a <b>szögfüggvények értékét</b> öt tizedesjegyre, a <b>hosszakat és a szögeket</b> két tizedesjegyre kerekítjük. A köztes lépésekben a pontos értékkel vagy a számológép teljes pontosságával számolunk; csak a kiírt végeredményt kerekítjük.</p>
+    <p>Emlékeztető a jelölésekre: az <span class="math inline">\(\alpha\)</span> szöggel szemközti befogó <span class="math inline">\(a\)</span>, a mellette fekvő befogó <span class="math inline">\(b\)</span>, az átfogó <span class="math inline">\(c\)</span>. Így <span class="math inline">\(\sin\alpha=\frac{a}{c}\)</span>, <span class="math inline">\(\cos\alpha=\frac{b}{c}\)</span>, <span class="math inline">\(\operatorname{tg}\alpha=\frac{a}{b}\)</span> és <span class="math inline">\(\operatorname{ctg}\alpha=\frac{b}{a}\)</span>.</p>
+    <p>Három lépés: <b>1.</b> Rajzold le a háromszöget, és jelöld be az adott adatokat. <b>2.</b> Válaszd azt a szögfüggvényt, amelyik az <i>adott</i> és a <i>keresett</i> oldalt/szöget köti össze. <b>3.</b> Fejezd ki az egyenletből a keresett mennyiséget. A hiányzó szöget gyakran a <span class="math inline">\(\alpha+\beta=90^\circ\)</span> adja, a hiányzó oldalt olykor a Pitagorasz-tétel.</p>
     <div class="doboz pelda" id="pelda-atfogo-szog">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
       Oldd meg a háromszöget: átfogó <span class="math inline">\(c=14\)</span> cm, <span class="math inline">\(\alpha=24^\circ\)</span>.
@@ -66,23 +67,23 @@
     </div>
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Amit a feladat nem mond ki — a modell feltevései</p>
-      <p>Amikor egy toronyról vagy egy fáról azt kérdezzük, milyen magas, hallgatólagosan többet is feltételezünk: hogy a torony <b>függőleges</b>, a talaj <b>vízszintes</b>, és hogy a megfigyelő a torony talpával <b>azonos szinten</b> áll, a <b>szemmagasságától pedig eltekintünk</b> — a látóvonalat a talajszintről indítjuk. E nélkül ugyanis nem keletkezne (pontosan) derékszögű háromszög — tehát nem is lehetne szögfüggvénnyel számolni.</p>
-      <p>Ez nem szőrszálhasogatás. A modellalkotás <b>mindig</b> feltevésekkel jár, és a jó megoldó tudja, melyekkel él. Ha a terep lejt vagy a torony megdől, ugyanez a képlet már rossz eredményt ad — nem azért, mert elszámoltuk, hanem mert rossz modellt választottunk hozzá.</p>
-      <p>Ezért a feladatok szövegében gyakran ott lesz, hogy „a fal függőleges, a talaj vízszintes”. Ahol nincs kiírva, ott is ez a hallgatólagos megállapodás — de érdemes tudatosan végiggondolni, mielőtt számolni kezdesz.</p>
+      <p>A következő torony- és fapéldákban <b>függőleges</b> toronnyal, illetve fával és <b>vízszintes</b> talajjal számolunk. A megfigyelő és a torony vagy fa töve azonos talajszinten van; a <b>szemmagasságtól eltekintünk</b>, ezért a látóvonalat a talajszintről indítjuk.</p>
+      <p>Szemmagasságból mérve is használhatunk derékszögű háromszöget: a szögfüggvény ilyenkor a csúcs és a szem közötti <b>magasságkülönbséget</b> adja meg. Ha a csúcsra felfelé nézünk, és a megfigyelő talajszintje megegyezik a torony tövének szintjével, a teljes magassághoz <b>hozzáadjuk a szemmagasságot</b>.</p>
+      <p>Lejtős terepen vagy megdőlt toronynál a rajzot és az összefüggéseket a helyzethez kell igazítanunk. A számolás előtt ezért tisztázzuk, melyik távolság vízszintes, és honnan mérjük a magasságot.</p>
     </div>
     <figure class="abra">
-    <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Emelkedési szög: megfigyelő, torony és látóvonal">
+    <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Emelkedési szög: megfigyelő, torony és látóvonal" aria-describedby="abra-emelkedes-leiras">
       <line x1="30" y1="170" x2="290" y2="170" stroke="#64748b" stroke-width="2"/>
       <line x1="250" y1="170" x2="250" y2="60" stroke="#047857" stroke-width="3"/>
       <line x1="40" y1="170" x2="250" y2="60" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5 3"/>
-      <path d="M 90,170 A 50,50 0 0 0 82,156" fill="none" stroke="#b45309" stroke-width="2"/>
+      <path d="M 90,170 A 50,50 0 0 0 84.291577,146.799650" fill="none" stroke="#b45309" stroke-width="2"/>
       <text x="96" y="164" font-size="14" fill="#b45309" font-style="italic">α</text>
       <text x="258" y="115" font-size="14" fill="#0f172a" font-style="italic">m</text>
       <text x="140" y="188" font-size="13" fill="#475569">d (vízszintes táv)</text>
       <text x="30" y="188" font-size="18">🧍</text>
       <text x="150" y="105" font-size="13" fill="#b45309">látóvonal</text>
     </svg>
-    <figcaption>Emelkedési szög: a vízszintes és a felfelé mutató látóvonal szöge. <span class="math inline">\(\operatorname{tg}\alpha=\dfrac{m}{d}\)</span>.</figcaption>
+    <figcaption id="abra-emelkedes-leiras">A torony m magassága függőleges, a megfigyelő és a torony töve közötti d távolság vízszintes. A megfigyelő talajszintjéről induló látóvonal a torony csúcsába vezet, és a vízszintessel alfa emelkedési szöget zár be. Alfa tangense az m magasság és a d távolság hányadosa.</figcaption>
     </figure>
     <div class="doboz pelda" id="pelda-torony">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
@@ -100,7 +101,7 @@
     </div>
     <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A magasság a szemközti, az árnyék a szomszédos: tg α = 12/9." data-nem="✘ A magasság a szemközti, az árnyék a szomszédos befogó → tangens.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
-      <p>Egy <span class="math inline">\(12\)</span> m magas fa árnyéka <span class="math inline">\(9\)</span> m. Mekkora a Nap emelkedési szöge?</p>
+      <p>Egy <span class="math inline">\(12\)</span> m magas fa árnyéka <span class="math inline">\(9\)</span> m. Mekkora a Nap emelkedési szöge? Válaszd az egész fokra kerekített közelítést!</p>
       <div class="opciok"><button><span class="math inline">\(\operatorname{tg}^{-1}\frac{9}{12}\approx 37^\circ\)</span></button><button><span class="math inline">\(\sin^{-1}\frac{12}{9}\)</span></button><button><span class="math inline">\(\operatorname{tg}^{-1}\frac{12}{9}\approx 53^\circ\)</span></button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
@@ -111,14 +112,14 @@
     </figure>
     <!-- media:end 1e02-alkalmazas-video -->
     <h2 id="s3">Kétlépéses feladatok</h2>
-    <p>Bonyolultabb helyzetben (pl. amikor a magasság egy másik magasságra épül) a feladatot két derékszögű háromszögre bontjuk, és lépésenként oldjuk meg — előbb a közös vízszintes távolságot, majd a keresett magasságot. Ilyen a feladatgyűjtemény Joker-feladata (világítótorony).</p>
+    <p>A feladatgyűjtemény egyik Joker-feladatában egy szikla tetején álló világítótorony magasságát keressük. Itt a tenger szintjéből mérjük mindkét emelkedési szöget; a szikla magasságát is ehhez a szinthez viszonyítjuk. A szikla és a torony csúcsához húzott látóvonal két derékszögű háromszöget ad, közös vízszintes befogóval. Előbb a szikla magasságából és emelkedési szögéből kiszámítjuk a vízszintes távolságot, majd a másik szögből a szikla és a torony együttes magasságát. A torony magasságát a kettő különbsége adja.</p>
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Érdekesség</p>
-      A földmérők <b>teodolittal</b> mérik az emelkedési szöget, és trigonometriával számolják a magasságot vagy távolságot. A GPS előtt így készültek a térképek és így mérték meg a hegycsúcsokat — a Mount Everest magasságát is így számolták ki először, 1852-ben (az eredményt 1856-ban hozták nyilvánosságra).
+      A földmérők <b>teodolittal</b> mérik az emelkedési szöget, és trigonometriával számolják a magasságot vagy távolságot. A trigonometriai méréseknek a térképezésben és a hegycsúcsok magasságának meghatározásában is nagy szerepük volt — a Mount Everest magasságát is így számolták ki először, 1852-ben (az eredményt 1856-ban hozták nyilvánosságra).
     </div>
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-trigonometria.html#alap-7">🐜 Henrik-bevetés <span class="cimke">A 7, 9, 12</span></a><a class="sav bruno" href="feladatok-trigonometria.html#kozep-7">💥 Brúnó-bevetés <span class="cimke">K 7–11 · N 3–5</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/barton_kalman.webp" alt="Barton Kálmán — a kampusz célzó-oktatója" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Barton Kálmán:</b> Bemérted az anomália forrását, kadét — a Célzó szektor kész. Készülj a minősítő vizsgára; a következő szektor (a <b>Kódtörő</b>, Iruhsszal) hamarosan nyílik.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/barton_kalman.webp" alt="Barton Kálmán — a kampusz célzó-oktatója" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Barton Kálmán:</b> Bemérted az anomália forrását, kadét — a Célzó szektor kész. Készülj a minősítő vizsgára; utána Iruhs vár a következő szektorban, a <b>Kódtörőben</b>.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-nevezetes-szogek.html"><span class="irany">← Előző</span><span class="hova">Nevezetes szögek</span></a>
       <a class="kov" href="feladatok-trigonometria.html"><span class="irany">Következő →</span><span class="hova">Feladatgyűjtemény</span></a>

@@ -2,11 +2,11 @@
 
 ## Hatókör és állapot
 
-**Jelenlegi összesítés:** az 1e/01 mind a kilenc tananyaglapjának teljes nyelvi
-és példahitelességi ellenőrzése elkészült két adagban. A feladatgyűjtemények,
-nyitóoldal, összefoglaló és terepküldetés külön A3-ellenőrzése, valamint a többi
-témakör átnézése hátra van. Az alábbi első adag adatai történeti bejegyzések;
-a második adag eredménye a dokumentum végén található.
+**Jelenlegi összesítés:** az 1e/01 kilenc és az 1e/02 három tananyaglapjának
+teljes nyelvi és példahitelességi ellenőrzése elkészült három adagban. A
+feladatgyűjtemények, nyitóoldalak, összefoglalók és terepküldetések külön
+A3-ellenőrzése, valamint a többi témakör átnézése hátra van. Az adagok alábbi
+adatai az egyes munkamenetek eredményei; a legfrissebb bejegyzés a végén található.
 
 **2026-10-05, első adag:** az 1e/01 három függvényes tananyaglapjának teljes szövegét
 átnéztük, a bevezetőktől az összefoglalóig. A tanár kérése szerint az egyértelműen
@@ -195,4 +195,90 @@ a feladatgyűjtemények, nyitóoldalak, összefoglalók, terepküldetések hátr
 Valódi képernyőolvasót, más böngészőt és a külső videók szövegét nem ellenőriztük.
 Következő lehetséges adag: 1e/02 bevezetői és tananyagszövegei.
 
+**Tanári döntés kell: nincs új kérdés.** Helyi main-commit; új ág és push nélkül.
+
+
+## Harmadik adag — 1e/02 trigonometria (2026-10-05)
+
+### Hatókör és javítások
+
+A `4eabf6f` revízióból, tiszta helyi `main` ágról indultunk; az origin/main
+helyi referenciája azonos volt. Távoli frissítés nem történt. Mindhárom tananyag
+teljes szövege, lenyíló bizonyításai és megoldásai, példái és kvízei átnézve:
+[szögfüggvények](../1e/02-trigonometria/tananyag-szogfuggvenyek.html),
+[nevezetes szögek](../1e/02-trigonometria/tananyag-nevezetes-szogek.html),
+[háromszög megoldása](../1e/02-trigonometria/tananyag-haromszog-megoldasa.html).
+Ezek kézzel karbantartott 1e-lapok; a CLAUDE.md szerint közvetlenül javíthatók.
+
+Az 1e matematika-skill kimenetei szerint hegyesszögek szögfüggvényeivel és
+derékszögű háromszögek számológépes megoldásával dolgozunk. A karakterek és a
+játékos keret megmaradtak. Javítás előtt a hibák táblázata bemutatva:
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Bevezetők és átvezetők | Túl általános mérési ígéretek, erőltetett fordulatok; a következő szektor tévesen „hamarosan nyílik” | Nyelvi / fogalmi | HTML: konkrét célok és mérési feltételek, természetesebb átvezetők |
+| Nevezetes szögek | A memóriafogás 0° és 90° szögfüggvényeit is bevezette | Tananyagi | HTML: csak 30°, 45° és 60° szerepel a fogásban; a derékszög mint geometriai fogalom megmarad |
+| Nevezetes szögek | A levezetési blokkban kimaradt a 30° és 60° kotangense; a származtatott értékek definícióként szerepeltek | Fogalmi | HTML: a táblázat meglévő kotangensértékei a blokkban is szerepelnek; a két doboz tételként jelölve |
+| Számológép | A negatív kitevőről és az inverz gombról szóló magyarázat félreérthető; a kerekítés köztes eredményekre is vonatkozhatott | Fogalmi | HTML: a gomb felirata, a reciprok és a teljes pontosságú köztes számolás külön szerepel |
+| Magasságmérés | Téves állítás: a szemmagasság figyelembevételével nem használható derékszögű háromszög | Közepes, tartalmi | HTML: a számolt magasságkülönbséghez megfelelő feltételekkel hozzáadjuk a szemmagasságot |
+| Két ábra | A szögív végpontja nem illeszkedett a szög szárára | Közepes, ábrahiba | HTML/SVG: a tényleges csúcsokból számolt végpontok és a megfelelő ívirány |
+| Négy ábra | A rövid feliratból nem volt minden oldal és geometriai viszony kiolvasható | Hozzáférési hiány | Látható, kapcsolt ábraleírás; az SVG neve változatlan |
+
+A Nap emelkedési szögének kvíze külön kéri az egész fokra kerekített választ;
+az opciók és a helyes válasz indexe változatlan. A méretfüggetlenség bizonyításában
+azonos nagyságú hegyesszögről beszélünk, és mind a négy oldalarány szerepel.
+
+A történeti érdekességekből a túlzó általánosítások kikerültek. Hipparkhosznál
+húrtáblázatok szerepelnek: [Otero saját oktatási feldolgozása](https://digitalcommons.ursinus.edu/triumphs_precalc/10/).
+Az Everest korábbi évszámai megmaradtak; a trigonometriai felmérés történetéhez
+[Mishra és munkatársai kutatása](https://insa.nic.in/writereaddata/UpLoadedFiles/IJHS/Vol50_2015_4_Art07.pdf)
+ad kontrollt. A térképezést nem állítjuk egyetlen eljárásból álló folyamatnak.
+Új feladat vagy feladat-számadat, média, CSS és JavaScript nem készült.
+
+### Független lektor és számolás
+
+A kontextus nélküli lektor kizárólag a három tananyag látható szövegét kapta,
+lenyíló megoldások és válaszindexek nélkül. Mind a hat kvíz helyes válaszát és
+az összes számos példa eredményét önállóan megerősítette. A torony- és fapéldák
+a kimondott egyszerűsítésekkel odaillők. Két hiányt jelzett: a harmadik lap
+önálló olvasásához a jelölések és oldalarányok emlékeztetője, illetve a kétlépéses
+világítótorony-példa magassági referenciaszintje kellett. Mindkettő javítva;
+az újraolvasás ezekben nem talált új biztos hibát. A szemléltető megoldások
+szövege és a feladatgyűjtemény változatlan.
+
+SymPy-kontroll: a tényleges értéktáblázat **12 cellája**, **10 azonosság**,
+a 3–4–5 háromszög arányai, három pótszögpélda és a 7/2 értékű kifejezés;
+**10 közelítő érték** független, `ROUND_HALF_UP` kerekítéssel.
+A két szögív sugarát és végpontját a tényleges SVG-csúcsokból ellenőriztük.
+
+### Végleges ellenőrzések
+
+- **Megőrzés 30/30:** a képek, linkek, média, kvízopciók, válaszindexek,
+  megoldások, szkriptek és stílusok változatlanok. Minden régi horgony megmaradt;
+  négy egyedi ábraleírás-horgony került hozzá. Az SVG-kben csak a leíráskapcsolat
+  és a két bemutatott szögív változott. A zárolt backlog-fejléc azonos.
+- **Böngésző:** három lap × 360/390/1280 px × zárt/nyitott lenyílók =
+  **18 végleges nézet**, 0 oldaltúlcsordulás, képlethiba és JS-kivétel.
+  A lektori javítás után a harmadik lap mind a hat nézete újramérve.
+- **Axe: 18/0 szabályjelzés.** A képes hátterek teljes kézi kontrasztvizsgálata
+  továbbra is hátra van; ez nem teljes WCAG-igazolás.
+- Mind a négy SVG neve és teljes leírása szerepel az Edge hozzáférhetőségi fájában.
+  A négy mobilos ábra és a magasságmérés nyomtatási képe szemrevételezve.
+- **JS nélkül:** mindhárom lap bevezetői és mind a négy ábraleírás látható.
+  **Nyomtatás: 6/6** JS be/ki nézet, a vizsgált szövegek és SVG-k láthatók.
+- **jsdom: három lap, 184 képlet, 6/6 kvíz, 0 hiba.**
+  Teljes kánon és belső linkek **310/310, 0 hiba**; a gyakorlósávok tiszták.
+- Kép/média/háttér: **0 módosítás**; változatlan 334 médiaelem 139 lapon.
+  A naplótérkép változatlan: 184 oldal, 2294 feladat, 12315 XP. A keresőindex
+  308 nem üres bejegyzéséből pontosan e három tananyag változott.
+- Feladatgyűjtemény, Végeredmény és kulcsmodul nem változott; a kulcstesztet és
+  a regressziós érzékenységvizsgálatot ebben az adagban nem ismételtük.
+
+### Korlátok és folytatás
+
+Valódi képernyőolvasó, más böngésző, teljes PDF-oldaltördelés és a külső videók
+szövege nem ellenőrizve. JS nélkül a képletek TeX alakban maradnak.
+Az 1e/01 kilenc és az 1e/02 három tananyaga A3 szerint átnézve; a többi tananyag,
+feladatgyűjtemény, nyitóoldal, összefoglaló és terepküldetés teljes A3-auditja hátra van.
+Következő lehetséges adag: az 1e/03 egész és valós számok tananyagai.
 **Tanári döntés kell: nincs új kérdés.** Helyi main-commit; új ág és push nélkül.

@@ -32,15 +32,15 @@
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
-      <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/svetozar.webp" alt="SZVETI — a Szvetkó-kampusz mesterséges intelligenciája" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>SZVETI:</b> Új szektor, új mentor — <b>Barton Kálmán</b>. „Sosem tévesztek célt, mert <b>szögekben látom a világot</b>.” A derékszögű háromszög szögfüggvényei (sin, cos, tg, ctg) az oldalak és szögek titkos kapcsolatát adják. Ez az első lövés.</p></div>
-    <p>Hogyan mérjük meg egy fa, egy torony vagy egy hegy magasságát anélkül, hogy megmásznánk? Hogyan tudja egy hajó, milyen messze van a parttól? A válasz a <b>derékszögű háromszög</b> oldalai és szögei közötti kapcsolat — ez a trigonometria. Egyetlen megmért szög és egy távolság elég, hogy a többit kiszámoljuk.</p>
+      <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/svetozar.webp" alt="SZVETI — a Szvetkó-kampusz mesterséges intelligenciája" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>SZVETI:</b> Új szektor, új mentor — <b>Barton Kálmán</b>. „Sosem tévesztek célt, mert <b>szögekben látom a világot</b>.” A derékszögű háromszög szögfüggvényei (sin, cos, tg, ctg) az oldalak és szögek kapcsolatát írják le. Ez az első lövés.</p></div>
+    <p>Hogyan határozhatjuk meg egy torony magasságát anélkül, hogy felmásznánk rá? Vízszintes talajon, függőleges toronynál a távolságból és a csúcs emelkedési szögéből számolhatunk; a mérés magasságát is figyelembe kell vennünk. A helyzetet <b>derékszögű háromszöggel</b> írjuk le. Egy ilyen háromszögben egy hegyesszög és egy oldal ismeretében a többi oldalt és szöget is meghatározhatjuk. Ehhez használjuk a szögfüggvényeket.</p>
     <h2 id="s1">A hegyesszög szögfüggvényei</h2>
     <p>Vegyünk egy derékszögű háromszöget, és nézzük az egyik <b>hegyesszögét</b>, <span class="math inline">\(\alpha\)</span>-t. A három oldalt a szöghöz viszonyítva nevezzük el: a szöggel <b>szemközti</b> befogó (<span class="math inline">\(a\)</span>), a szög <b>melletti</b> (szomszédos) befogó (<span class="math inline">\(b\)</span>), és a derékszöggel szemközti <b>átfogó</b> (<span class="math inline">\(c\)</span>).</p>
     <figure class="abra">
-    <svg viewBox="0 0 300 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Derékszögű háromszög, a C csúcsnál derékszög, az A csúcsnál az alfa hegyesszög">
+    <svg viewBox="0 0 300 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Derékszögű háromszög, a C csúcsnál derékszög, az A csúcsnál az alfa hegyesszög" aria-describedby="abra-szogfuggvenyek-leiras">
       <polygon points="55,175 250,175 55,45" fill="#d1fae5" stroke="#047857" stroke-width="2.5"/>
       <rect x="55" y="160" width="15" height="15" fill="none" stroke="#64748b" stroke-width="1.5"/>
-      <path d="M 220,175 A 30,30 0 0 0 210,153" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+      <path d="M 220,175 A 30,30 0 0 1 225.038491,158.358994" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
       <text x="232" y="168" font-size="15" fill="#b45309" font-style="italic">α</text>
       <text x="34" y="115" font-size="15" fill="#0f172a" font-style="italic">a</text>
       <text x="148" y="193" font-size="15" fill="#0f172a" font-style="italic">b</text>
@@ -49,7 +49,7 @@
       <text x="256" y="182" font-size="13" fill="#475569">A</text>
       <text x="40" y="188" font-size="13" fill="#475569">C</text>
     </svg>
-    <figcaption>A derékszög a <span class="math inline">\(C\)</span> csúcsnál. Az <span class="math inline">\(\alpha\)</span> szöghöz képest: <span class="math inline">\(a\)</span> a szemközti, <span class="math inline">\(b\)</span> a szomszédos befogó, <span class="math inline">\(c\)</span> az átfogó.</figcaption>
+    <figcaption id="abra-szogfuggvenyek-leiras">Az ABC háromszögben C-nél derékszög, A-nál az alfa hegyesszög van. A BC oldal az a jelű, alfával szemközti befogó; az AC oldal a b jelű, alfa melletti befogó; az AB oldal a c jelű átfogó.</figcaption>
     </figure>
     <div class="doboz definicio" id="def-szogfuggveny">
       <p class="cim"><span class="ikon">📗</span> Definíció</p>
@@ -76,7 +76,7 @@
     <div class="doboz tetel" id="tetel-meretfuggetlen">
       <p class="cim"><span class="ikon">📘</span> Tétel</p>
       <p>Egy adott <span class="math inline">\(\alpha\)</span> hegyesszög szögfüggvényeinek értéke <b>nem függ a háromszög méretétől</b>, csak magától a szögtől.</p>
-      <details><summary>Bizonyítás</summary><div class="bel"><p>Ha két derékszögű háromszögnek van egy közös <span class="math inline">\(\alpha\)</span> hegyesszöge, akkor a szögeik megegyeznek (mindkettőben van <span class="math inline">\(90^\circ\)</span> és <span class="math inline">\(\alpha\)</span>), tehát a háromszögek <b>hasonlók</b>. A hasonlóságból <span class="math inline">\(\frac{a}{a'}=\frac{b}{b'}=\frac{c}{c'}\)</span>, és ezt <b>átrendezve</b> kapjuk, hogy <span class="math inline">\(\frac{a}{c}=\frac{a'}{c'}\)</span> — vagyis a hasonló háromszögekben az egy háromszögön belüli oldalarányok is egyenlők — így az <span class="math inline">\(\frac{a}{c}\)</span>, <span class="math inline">\(\frac{b}{c}\)</span>, <span class="math inline">\(\frac{a}{b}\)</span> arányok is ugyanazok. Ezért a szögfüggvények csak a szögtől függnek. ∎</p></div></details>
+      <details><summary>Bizonyítás</summary><div class="bel"><p>Ha két derékszögű háromszög egyik hegyesszöge egyenlő, és ezt <span class="math inline">\(\alpha\)</span>-val jelöljük, akkor a szögeik megegyeznek (mindkettőben van <span class="math inline">\(90^\circ\)</span> és <span class="math inline">\(\alpha\)</span>), tehát a háromszögek <b>hasonlók</b>. A hasonlóságból <span class="math inline">\(\frac{a}{a'}=\frac{b}{b'}=\frac{c}{c'}\)</span>, és ezt <b>átrendezve</b> kapjuk, hogy <span class="math inline">\(\frac{a}{c}=\frac{a'}{c'}\)</span>. A megfelelő oldalakat ugyanazzal a számmal szorozzuk, ezért az <span class="math inline">\(\frac{a}{c}\)</span>, <span class="math inline">\(\frac{b}{c}\)</span>, <span class="math inline">\(\frac{a}{b}\)</span> és <span class="math inline">\(\frac{b}{a}\)</span> arányok nem változnak. Ezért a szögfüggvények csak a szögtől függnek. ∎</p></div></details>
     </div>
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
@@ -119,11 +119,11 @@
     </div>
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
-      A <span class="math inline">\(\sin^2\alpha\)</span> jelölés a <span class="math inline">\((\sin\alpha)^2\)</span> rövidítése — nem <span class="math inline">\(\sin(\alpha^2)\)</span>! Előbb veszed a szinuszt, aztán négyzetre emeled. Egyetlen kivétel a <span class="math inline">\(-1\)</span> kitevő: a <span class="math inline">\(\operatorname{tg}^{-1}\)</span> <b>nem</b> a tangens reciproka (az a kotangens!), hanem az <b>inverz</b> függvény — ezzel a gombbal keresi vissza a számológép a szöget.
+      A <span class="math inline">\(\sin^2\alpha\)</span> jelölés a <span class="math inline">\((\sin\alpha)^2\)</span> rövidítése — nem <span class="math inline">\(\sin(\alpha^2)\)</span>! Előbb kiszámítjuk a szinusz értékét, aztán négyzetre emeljük. A számológépen a <span class="math inline">\(\operatorname{tg}^{-1}\)</span> (vagy tan⁻¹) feliratú gombnak más a szerepe: az adott tangensértékhez keresi vissza a szöget. A tangens <b>reciprokát</b> az <span class="math inline">\(\frac{1}{\operatorname{tg}\alpha}\)</span> képlettel számoljuk; ez a kotangens.
     </div>
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Érdekesség</p>
-      A „trigonometria” szó a görög <i>trigōnon</i> (háromszög) és <i>metron</i> (mérés) szavakból ered. Az ókori csillagászok (pl. Hipparkhosz) a csillagok helyzetét számolták vele — a szögfüggvény-táblázatok évszázadokig a tudomány legfontosabb segédeszközei voltak.
+      A „trigonometria” szó a görög <i>trigōnon</i> (háromszög) és <i>metron</i> (mérés) szavakból ered. Hipparkhosz ókori csillagász még húrtáblázatokkal dolgozott: körívekhez tartozó húrok hosszát vizsgálta. A későbbi szögfüggvény-táblázatok a csillagászati és földmérési számításokat is segítették.
     </div>
     <!-- media:begin 1e02-azonossagok-video -->
     <figure class="media" id="media-1e02-azonossagok-video" data-tipus="youtube" data-azon="g7hgqIN6a3E" data-cim="Alapvető trigonometriai azonosságok (I. osztály, 3. óra)">
@@ -139,7 +139,7 @@
     <!-- media:end 1e02-azonossagok-gyak-video -->
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-trigonometria.html#alap-1">🐜 Henrik-bevetés <span class="cimke">A 1, 5</span></a><a class="sav bruno" href="feladatok-trigonometria.html#kozep-1">💥 Brúnó-bevetés <span class="cimke">K 1, 4, 6 · N 1–2</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/barton_kalman.webp" alt="Barton Kálmán — a kampusz célzó-oktatója" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Barton Kálmán:</b> A szögfüggvények a tegezedben. Következő lövés: a nevezetes szögek, amiket vakon is tudni kell.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/barton_kalman.webp" alt="Barton Kálmán — a kampusz célzó-oktatója" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Barton Kálmán:</b> A szögfüggvények már a tegezedben vannak. Következő lövés: a 30°, 45° és 60° pontos szögfüggvényértékei.</p></div>
     <div class="lapozo">
       <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">A témakör áttekintése</span></a>
       <a class="kov" href="tananyag-nevezetes-szogek.html"><span class="irany">Következő →</span><span class="hova">Nevezetes szögek</span></a>

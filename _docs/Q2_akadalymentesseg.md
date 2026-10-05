@@ -491,3 +491,23 @@ nem változott, ezért a regressziós érzékenységet most nem ismételtük.
 Valódi képernyőolvasós próba, a többi összetett ábra, külső szolgáltatói felület és
 JS nélküli képlet-felolvasás továbbra is hátra van. Más böngészőt és a teljes
 nyomtatási oldaltördelést nem minősítjük. **Tanári döntés kell: nincs új kérdés.**
+
+
+## Hetedik adag — 1e/02 trigonometriai ábrák (2026-10-05)
+
+A három tananyag négy SVG-je teljesebb, látható leírást kapott, `aria-describedby`
+kapcsolattal. A leírások megadják a csúcsok és oldalak szerepét, a nevezetes
+háromszögek összes oldaladatát és szögét, valamint a magasságmérés modelljét.
+A szögfüggvényes háromszög és a magasságmérés szögívének hibás végpontja javítva.
+
+Mind a négy név és leírás ellenőrizve az Edge hozzáférhetőségi fájában.
+Végleges böngésző/axe: **18 nézet, 0 elrendezési és szabályjelzés**;
+nyomtatás JS be/ki **6/6**, JS nélküli szöveges leírás négy ábrához látható.
+Mind a négy mobilos ábra és a magasságmérés nyomtatási képe szemrevételezve.
+jsdom **184 képlet, 6/6 kvíz, 0 hiba**; teljes kánon/link **310/0**.
+Részletes megőrzés, lektor és számolás: [A3 harmadik adag](A3_nyelvi_ellenorzes.md).
+
+Valódi képernyőolvasós próba, a többi összetett ábra, külső szolgáltatói felület,
+a képes hátterek kézi kontrasztja és JS nélküli képlet-felolvasás még hátra van.
+Más böngészőt és teljes PDF-oldaltördelést nem minősítünk.
+**Tanári döntés kell: nincs új kérdés.**
