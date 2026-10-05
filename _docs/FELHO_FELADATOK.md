@@ -261,6 +261,24 @@ osztályonként egy PR; utána `kulcs_teszt` + `kulcs_regresszio` (a levezetés 
 
 ---
 
+### A3 · Magyar megfogalmazás és a hétköznapi példák hitelessége
+
+**Tanári kérés, 2026-10-05:** külön ellenőrzés a természetes magyar szövegre,
+főként a bevezetőkre, matematikai magyarázatokra és a hétköznapi példákra.
+Az egyértelmű javításokat beépítjük, bizonytalan esetben a szöveg marad.
+A korábbi A1-ellenőrzések nem helyettesítik a teljes stilisztikai átnézést.
+
+| 1e | 2e | 3e | 4e |
+|---|---|---|---|
+| ◐ 01: három függvényes tananyag teljes szövege átnézve és javítva (helyi main, 2026-10-05) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
+
+Az első adagban a hétköznapi példák feltételei, a bevezetők és átvezetők,
+valamint több matematikai pontatlanság javult; nyolc SVG kapott teljesebb szöveges
+leírást. Részletek: [A3 nyelvi ellenőrzés](A3_nyelvi_ellenorzes.md).
+Hátra van a többi tananyag, feladatgyűjtemény, nyitóoldal, összefoglaló és terepküldetés.
+
+---
+
 ## I — Interaktív ábrák
 
 ### I1 · Statikus ábrák → interaktív
@@ -285,7 +303,7 @@ vektorösszeadás; kör és egyenes kölcsönös helyzete; sorozat ε-sávja.
 | Kód | Feladat | Állapot |
 |---|---|---|
 | Q1 | `layout_teszt.py` az összes lapra; minden mobil-túlcsordulás javítása | ☑ 2026-09-28: mind a 293 lap hibátlan 360/390/1280 px-en (fejléc, képletes doboz-cím, táblázat-burok a builderekben, hosszú képletek tördelése, h1, kereső) |
-| Q2 | Akadálymentesség: axe-core Playwrighttal (`npm i axe-core`), kontraszt, `aria`, fókusz-sorrend | ◐ 2026-10-05: közös vezérlők, matematikai nevek, fókusz, mozgás, köszöntővideó és 379 SVG feliratai javítva; 6094 feliratszínpár/0 jelzés, axe 282/0, saját interaktív ábrák 218/218. A korábbi Node-elrendezésmérés helyesbítve: 930 valódi nézet, három mobilhiba javítva, kilenc célzott utópróba/0; 13 gördülő képlet kezelhető. Negyedik adag: külső média indítása, bezárása és forráslinkje javítva; 334 elem/668 sikeres ciklus, 14 állapotpróba, saját felület axe 6/0; [részletes jelentés](Q2_akadalymentesseg.md). Ötödik adag: 4e/06 hat diagramjához 47 szöveges adatsor; axe 24/0, billentyűzet 36/36, nyomtatás 8/8, kulcs 4499/4499 és regresszió 100%; a kulcsolvasó és a JS nélküli nyomtatás javítva. Valódi képernyőolvasó, a többi komplex ábra szöveges egyenértékűsége, szolgáltatói médiafelületek és JS nélküli képlet-felolvasás még ellenőrzendő. |
+| Q2 | Akadálymentesség: axe-core Playwrighttal (`npm i axe-core`), kontraszt, `aria`, fókusz-sorrend | ◐ 2026-10-05: közös vezérlők, matematikai nevek, fókusz, mozgás, köszöntővideó és 379 SVG feliratai javítva; 6094 feliratszínpár/0 jelzés, axe 282/0, saját interaktív ábrák 218/218. A korábbi Node-elrendezésmérés helyesbítve: 930 valódi nézet, három mobilhiba javítva, kilenc célzott utópróba/0; 13 gördülő képlet kezelhető. Negyedik adag: külső média indítása, bezárása és forráslinkje javítva; 334 elem/668 sikeres ciklus, 14 állapotpróba, saját felület axe 6/0; [részletes jelentés](Q2_akadalymentesseg.md). Ötödik adag: 4e/06 hat diagramjához 47 szöveges adatsor; axe 24/0, billentyűzet 36/36, nyomtatás 8/8, kulcs 4499/4499 és regresszió 100%; a kulcsolvasó és a JS nélküli nyomtatás javítva. Hatodik adag: 1e/01 három függvényes tananyag nyolc SVG-je látható, kapcsolt leírással; 18 végleges nézet/0 elrendezés- és axe-jelzés, nyomtatás 6/6, képletrender 200/0, kvíz 4/4. Valódi képernyőolvasó, a többi komplex ábra szöveges egyenértékűsége, szolgáltatói médiafelületek és JS nélküli képlet-felolvasás még ellenőrzendő. |
 | Q3 | „Folytasd, ahol abbahagytad” — a `naplo.js` jegyezze az utolsó lapot, a főoldalon és az osztály-indexen gomb | ☐ |
 | Q4 | Mobil tartalomjegyzék: lebegő „Tartalom” gomb, ha a TOC keskeny kijelzőn nem látszik | ☐ (előbb ellenőrizni) |
 | Q5 | Offline mód (PWA): service worker a meglátogatott lapokra + KaTeX; frissítés-kezelés deploykor | ☐ (tanári döntés kell) |

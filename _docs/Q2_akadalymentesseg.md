@@ -467,3 +467,27 @@ egyenértékűsége, a külső szolgáltatók médiafelülete/felirata/leirata �
 nélküli képlet-felolvasás továbbra is nyitott Q2-tétel. A nyomtatási tartalékot a
 helyi Edge-ben próbáltuk; más böngészőkre nem állítunk teljes ellenőrzést.
 **Tanári döntés kell: nincs új kérdés.**
+
+
+## Hatodik adag — 1e/01 függvényábrák és magyar megfogalmazás (2026-10-05)
+
+A `840f361` revízióból indulva a három függvényes tananyag nyolc SVG-je kapott
+látható, `aria-describedby` kapcsolattal elérhető szöveges leírást. A két számozott
+nyíldiagram minden nyila, a három tulajdonságdiagram összes kapcsolata,
+a gépsor műveleti sorrendje és a két koordináta-grafikon jelentése olvasható.
+A függvényfogalom egyenesének hibás végpontja is javult.
+
+A tanár új kérése szerint a három lap bevezetőit, matematikai prózáját és
+hétköznapi példáit is végigolvastuk és javítottuk. A részletes hibalista,
+a lektor eredménye, a megőrzés és a korlátok: [A3 nyelvi ellenőrzés](A3_nyelvi_ellenorzes.md).
+
+Végleges háromszélességes böngészőpróba, zárt és nyitott lenyílókkal:
+**18/18 nézet, 0 elrendezési és axe-szabályjelzés**. Mind a nyolc leírás az Edge
+hozzáférhetőségi fájában is szerepel. Három JS nélküli lap és hat JS be/ki
+nyomtatási nézet megfelelő. jsdom: **200 képlet, 4/4 kvíz, 0 hiba**;
+kánon/linkek **310/0**, kulcs **4499/4499**. Feladat, végeredmény és kulcsmodul
+nem változott, ezért a regressziós érzékenységet most nem ismételtük.
+
+Valódi képernyőolvasós próba, a többi összetett ábra, külső szolgáltatói felület és
+JS nélküli képlet-felolvasás továbbra is hátra van. Más böngészőt és a teljes
+nyomtatási oldaltördelést nem minősítjük. **Tanári döntés kell: nincs új kérdés.**
