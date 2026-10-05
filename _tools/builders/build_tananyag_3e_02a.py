@@ -98,14 +98,15 @@ A1 = [
          '<p>Vegyünk egy <b>síkidomot</b> és a síkjában egy <b>egyenest</b> (ez lesz a '
          '<b>forgástengely</b>). Ha a síkidomot a tengely körül teljesen körbeforgatjuk, '
          'a bejárt pontok halmaza egy <b>forgástest</b>.</p>'
-         '<p>A forgatás közben a síkidom minden pontja <b>körpályán</b> mozog; a kör '
+         '<p>A forgatás közben a síkidom tengelyen kívüli pontjai <b>körpályán</b> mozognak; a kör '
          'síkja merőleges a tengelyre, a középpontja pedig a tengelyen van.</p>',
          hid="def-forgastest"),
    '<p>Ebből a definícióból két dolog rögtön következik, és mindkettőre szükségünk lesz:</p>'
    '<ul>'
    '<li>a tengelyen fekvő pontok <b>helyben maradnak</b> — ezért lesz a kúpnak csúcsa;</li>'
-   '<li>a tengelytől $d$ távolságra lévő pont egy $d$ sugarú kört ír le — ezért kör '
-   'minden, a tengelyre <b>merőleges</b> metszet.</li>'
+   '<li>a tengelytől $d&gt;0$ távolságra lévő pont egy $d$ sugarú kört ír le. A most '
+   'vizsgált henger, kúp, csonkakúp és gömb belsején áthaladó, a tengelyre '
+   '<b>merőleges</b> sík metszete <b>körlap</b>.</li>'
    '</ul>',
    doboz("erdekesseg", "Hol találkozol vele?",
          '<p>A fazekaskorongon a hüvelykujj a tengelytől mért <b>távolságot</b> állítja '
@@ -140,7 +141,8 @@ A1 = [
          'ugyanabból a téglalapból lett. Az ok: a sugár <b>négyzetesen</b> számít, a magasság csak lineárisan — ezért '
          'mindig a nagyobb sugarú változat a testesebb.</p>'
          '<p>Ugyanez a háromszögnél: a két befogó körül forgatva a sugár és a magasság '
-         '<b>felcserélődik</b>, és két különböző térfogatú kúpot kapsz.</p>'),
+         '<b>felcserélődik</b>. Ha a befogók különböző hosszúak, a két kúp térfogata '
+         'is különbözik; egyenlő befogóknál egybevágó kúpokat kapsz.</p>'),
    doboz("erdekesseg", "És ha az átfogó körül forgatjuk?",
          '<p>A derékszögű háromszöget az <b>átfogója</b> körül is meg lehet forgatni. '
          'Ekkor nem egy kúp keletkezik, hanem <b>kettő</b>, közös alaplappal '

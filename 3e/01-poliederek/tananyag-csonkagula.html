@@ -33,7 +33,7 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/prisma.webp" alt="Prizma — a térgeometria oktatótisztje" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Prizma:</b> A levágott hegyű kristály a leggyakoribb forma a Zónában — és a hétköznapokban is: a szemetes, a rakodólap és a betonoszlop talpazata jellemzően ilyen alakú, a vödör és a virágcserép pedig ennek kerek rokona. Két új képlet vár rád, de minden elemük ismerős: két lap, trapéz oldallapok, és egy meglepő tag a térfogatban.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/prisma.webp" alt="Prizma — a térgeometria oktatótisztje" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Prizma:</b> A levágott hegyű kristály a leggyakoribb forma a Zónában — és a hétköznapokban is találsz ilyen alakú betontalpazatot vagy szögletes virágládát; a kerek virágcserép ennek rokona. Két új képlet vár rád, de minden elemük ismerős: két lap, trapéz oldallapok, és egy meglepő tag a térfogatban.</p></div>
 
     <p>Ez az utolsó test, amellyel ebben a témakörben megismerkedünk. A végén egy <b>gyorsismétlő</b> is vár: a három test képlettára egyetlen táblázatban.</p>
 
@@ -41,7 +41,7 @@
 
     <div class="doboz definicio" id="def-csonkagula">
       <p class="cim"><span class="ikon">📗</span> A csonkagúla</p>
-      <p>Metsszük el a gúlát az alaplappal <b>párhuzamos</b> síkkal, és hagyjuk el a csúcsot tartalmazó részt. A megmaradó test a <b>csonkagúla</b>.</p><p>A két párhuzamos lap az <b>alaplap</b> (<span class="math inline">\(B_1\)</span> területű) és a <b>fedőlap</b> (<span class="math inline">\(B_2\)</span> területű) — ezek <b>hasonló</b> sokszögek. Az oldallapok <b>trapézok</b>, együtt a palást.</p><p>A csonkagúla <b>szabályos</b>, ha szabályos gúlából származik: ekkor az alaplapja és a fedőlapja szabályos sokszög, az oldallapjai pedig egybevágó egyenlő szárú trapézok.</p>
+      <p>Metsszük el a gúlát a csúcs és az alaplap között, az alaplappal <b>párhuzamos</b> síkkal, és hagyjuk el a csúcsot tartalmazó részt. A megmaradó test a <b>csonkagúla</b>.</p><p>A két párhuzamos lap az <b>alaplap</b> (<span class="math inline">\(B_1\)</span> területű) és a <b>fedőlap</b> (<span class="math inline">\(B_2\)</span> területű) — ezek <b>hasonló</b> sokszögek. Az oldallapok <b>trapézok</b>, együtt a palást.</p><p>A csonkagúla <b>szabályos</b>, ha szabályos gúlából származik: ekkor az alaplapja és a fedőlapja szabályos sokszög, az oldallapjai pedig egybevágó egyenlő szárú trapézok.</p>
     </div>
 
     <div class="svgcard">
@@ -77,18 +77,18 @@
     </div>
     <p class="cap">A csonkagúla a gúla alsó darabja. Szürke szaggatottal a levágott csúcsrész, feketével a takart élek, pirossal a magasság.</p>
 
-    <h2 id="s2">A csonkagúla elemei</h2>
+    <h2 id="s2">A szabályos csonkagúla elemei</h2>
 
-    <p>Öt hosszúságot kell megkülönböztetned — plusz a lenti dobozban még az apotémákat és a köréírt sugarakat:</p><ul><li><span class="math inline">\(a_1\)</span> és <span class="math inline">\(a_2\)</span> — az alaplap és a fedőlap éle;</li><li><span class="math inline">\(H\)</span> — a test <b>magassága</b>, vagyis a két lap síkjának távolsága;</li><li><span class="math inline">\(h\)</span> — az <b>oldallap magassága</b>: a trapéz alakú oldallapon az alsó és a felső él távolsága;</li><li><span class="math inline">\(s\)</span> — az <b>oldalél</b>, vagyis a trapéz alakú oldallap szára (ugyanaz a jel, mint a gúlánál).</li></ul>
+    <p>Öt hosszúságot kell megkülönböztetned — plusz a lenti dobozban még az apotémákat és a köré írt körök sugarát:</p><ul><li><span class="math inline">\(a_1\)</span> és <span class="math inline">\(a_2\)</span> — az alaplap és a fedőlap éle;</li><li><span class="math inline">\(H\)</span> — a test <b>magassága</b>, vagyis a két lap síkjának távolsága;</li><li><span class="math inline">\(h\)</span> — az <b>oldallap magassága</b>: a trapéz alakú oldallapon az alsó és a felső él távolsága;</li><li><span class="math inline">\(s\)</span> — az <b>oldalél</b>, vagyis a trapéz alakú oldallap szára (ugyanaz a jel, mint a gúlánál).</li></ul>
 
     <div class="doboz tetel" id="tetel-csonkagula-haromszogek">
       <p class="cim"><span class="ikon">📘</span> A szabályos csonkagúla derékszögű háromszögei</p>
-      <p>Feltesszük, hogy a test <b>szabályos</b>, tehát a két lap középpontját összekötő szakasz merőleges mindkét lapra. Jelölje <span class="math inline">\(r_1\)</span> és <span class="math inline">\(r_2\)</span> az alaplap, illetve a fedőlap <a href="tananyag-gula.html#tetel-harom-haromszog">apotémáját</a>, <span class="math inline">\(R_1\)</span> és <span class="math inline">\(R_2\)</span> a köré írt sugarakat. Ha a fedőlapot merőlegesen levetítjük az alaplapra, a megfelelő szakaszok különbsége adja a befogókat:</p><span class="math display">\[h^{2}=H^{2}+(r_1-r_2)^{2},\qquad s^{2}=H^{2}+(R_1-R_2)^{2},\qquad s^{2}=h^{2}+\left(\frac{a_1-a_2}{2}\right)^{2}.\]</span><p>Négyzet alaplapnál <span class="math inline">\(r_1-r_2=\frac{a_1-a_2}{2}\)</span>, tehát</p><span class="math display">\[h=\sqrt{H^{2}+\left(\frac{a_1-a_2}{2}\right)^{2}}.\]</span><p>A gondolat ugyanaz, mint a gúlánál: a keresett szakasz mindig egy derékszögű háromszög átfogója, és a befogók egyike a magasság vagy az oldallap magassága.</p>
+      <p>Feltesszük, hogy a test <b>szabályos</b>, tehát a két lap középpontját összekötő szakasz merőleges mindkét lapra. Jelölje <span class="math inline">\(r_1\)</span> és <span class="math inline">\(r_2\)</span> az alaplap, illetve a fedőlap <a href="tananyag-gula.html#tetel-harom-haromszog">apotémáját</a>, <span class="math inline">\(R_1\)</span> és <span class="math inline">\(R_2\)</span> a köré írt körök sugarát. Ha a fedőlapot merőlegesen levetítjük az alaplapra, a megfelelő szakaszok különbsége adja a befogókat:</p><span class="math display">\[h^{2}=H^{2}+(r_1-r_2)^{2},\qquad s^{2}=H^{2}+(R_1-R_2)^{2},\qquad s^{2}=h^{2}+\left(\frac{a_1-a_2}{2}\right)^{2}.\]</span><p>Négyzet alaplapnál <span class="math inline">\(r_1-r_2=\frac{a_1-a_2}{2}\)</span>, tehát</p><span class="math display">\[h=\sqrt{H^{2}+\left(\frac{a_1-a_2}{2}\right)^{2}}.\]</span><p>A gondolat ugyanaz, mint a gúlánál: a keresett szakasz mindig egy derékszögű háromszög átfogója, és a befogók egyike a magasság vagy az oldallap magassága.</p>
     </div>
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
-      <p><i>„A magasság és az oldallap magassága — mindkettő „magasság”, tehát behelyettesíthetem bármelyiket."</i></p><p>Nem. A <b>felszínbe</b> (a palásthoz) az <b>oldallap magassága</b> (<span class="math inline">\(h\)</span>) megy, a <b>térfogatba</b> a <b>test magassága</b>. A kettő között éppen a fenti Pitagorasz-összefüggés teremt kapcsolatot, és mindig <span class="math inline">\(H &lt; h\)</span>. Ha a feladat csak az egyiket adja meg, a másikat ki kell számolni.</p>
+      <p><i>„A magasság és az oldallap magassága — mindkettő »magasság«, tehát behelyettesíthetem bármelyiket.”</i></p><p>Nem. A <b>felszínbe</b> (a palásthoz) az <b>oldallap magassága</b> (<span class="math inline">\(h\)</span>) megy, a <b>térfogatba</b> a <b>test magassága</b>. A kettő között éppen a fenti Pitagorasz-összefüggés teremt kapcsolatot, és a szabályos csonkagúlánál <span class="math inline">\(H &lt; h\)</span>. Ha a keresett mennyiséghez a másik magasságra van szükséged, azt előbb számold ki.</p>
     </div>
 
     <h2 id="s3">A felszín</h2>
@@ -177,12 +177,12 @@
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
-      <p>A betonoszlopok talpazata, a szemetesek és a rakodólapok jellemzően csonkagúla alakúak; a vödör, a virágcserép és a lámpaernyő ugyanennek a kerek változata, <b>csonkakúp</b> (a következő témakör anyaga). A forma nem véletlen: a test stabilan áll, a fala felfelé haladva kevesebb anyagot igényel, ráadásul a darabok egymásba rakhatók — ezért lehet a műanyag poharakat egyetlen oszlopba tornyozni.</p>
+      <p>Egyes betontalpazatok és szögletes virágládák alakját csonkagúlával modellezhetjük. A kerek virágcserép vagy lámpaernyő gyakran ennek kerek rokonával, a <b>csonkakúppal</b> közelíthető (a következő témakör anyaga). A vékony falú, felfelé szélesedő poharak megfelelő méretezéssel egymásba rakhatók; ehhez az üreg és a falvastagság is számít.</p>
     </div>
 
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-gula.html#alap-20">🐕 Tér-eb-ugrás <span class="cimke">A 20–26</span></a><a class="sav bruno" href="feladatok-gula.html#kozep-16">👑 Királyi Gárda <span class="cimke">K 16–21 N 1–6</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/prisma.webp" alt="Prizma — a térgeometria oktatótisztje" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Prizma:</b> A Kristálypára szögletes formáit legyőzted: hasáb, gúla, csonkagúla — felszín, térfogat, metszet. De a Zóna mélyén már mozgásba lendült valami: a következő kristályok <b>nem szögletesek</b>. Ha a sokszög helyére <b>kör</b> kerül, a sík elhajlik, és a lapokból palást lesz. Medúza vár rád az Átalakulás Kamrájában.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/prisma.webp" alt="Prizma — a térgeometria oktatótisztje" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Prizma:</b> A Kristálypára szögletes formáit legyőzted: hasáb, gúla, csonkagúla — felszín, térfogat, metszet. De a Zóna mélyén már mozgásba lendült valami: a következő kristályok <b>nem szögletesek</b>. A sokszögű alaplap helyére <b>körlap</b> kerül, a sík oldallapok helyére görbült palást. Medúza vár rád az Átalakulás Kamrájában.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-gula-sikmetszetek.html"><span class="irany">← Előző</span><span class="hova">A gúla síkmetszetei</span></a>
       <a class="kov" href="feladatok-gula.html"><span class="irany">Következő →</span><span class="hova">Feladatok — a gúla és a csonkagúla</span></a>

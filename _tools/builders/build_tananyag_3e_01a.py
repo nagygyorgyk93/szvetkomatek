@@ -116,7 +116,7 @@ A1 = [
    '<b>sík</b> fogalmát nem definiáljuk, hanem az <b>axiómák</b> — bizonyítás nélkül '
    'elfogadott állítások — írják le, hogyan viselkednek. Minden további állítást ezekből '
    'vezetünk le.</p>',
-   doboz("tetel", "A tér három alapaxiómája",
+   doboz("tetel", "A tér négy alapaxiómája",
          '<ol>'
          '<li>Bármely két különböző pontra <b>pontosan egy</b> egyenes illeszkedik.</li>'
          '<li>Ha egy egyenes <b>két</b> pontja illeszkedik egy síkra, akkor az egyenes '

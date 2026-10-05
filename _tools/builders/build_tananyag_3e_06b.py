@@ -292,8 +292,9 @@ B2 = [
          r'számmal szorozva kapjuk a következőt:</p>'
          r'$$b_{n+1}=b_n\cdot q,\qquad\text{azaz}\qquad q=\frac{b_{n+1}}{b_n}\quad (b_n\ne0).$$'
          r'<p>A $q$ szám a sorozat <b>hányadosa</b> (kvóciense). Megköveteljük, hogy $b_1\ne0$ és '
-         r'$q\ne0$ legyen — különben csupa nulla tagot kapnánk, és a hányados sem volna '
-         r'értelmezhető.</p>', hid="def-mertani"),
+         r'$q\ne0$ legyen. Ha $b_1=0$, minden tag nulla lenne; ha $b_1\ne0$, de $q=0$, '
+         r'akkor a második tagtól kapnánk nullákat, és a későbbi szomszédos tagok '
+         r'hányadosa nem volna értelmezhető.</p>', hid="def-mertani"),
    doboz("tetel", "A mértani sorozat n-edik tagja",
          r'<p>Az első tagtól az $n$-edikig $n-1$ szorzás vezet, ezért</p>'
          r'$$b_n=b_1\cdot q^{\,n-1} .$$'
@@ -362,8 +363,10 @@ B2 = [
          r'<p>A mértani sorozat minden tagjának négyzete a két szomszédja szorzata:</p>'
          r'$$b_n^{\,2}=b_{n-1}\cdot b_{n+1}\qquad (n\ge2).$$'
          r'<p>Ezért ha három szám mértani sorozatot alkot, a középső négyzete a két szélső szorzata. '
-         r'(A <i>mértani közép</i> maga $\sqrt{b_{n-1}b_{n+1}}=\lvert b_n\rvert$ — a középső tag '
-         r'ugyanis negatív is lehet.)</p>', hid="tetel-mertani-kozep"),
+         r'Ha a két szélső tag <b>pozitív</b>, a mértani közepük '
+         r'$\sqrt{b_{n-1}b_{n+1}}=\lvert b_n\rvert$; a középső tag negatív is lehet. '
+         r'A négyzetazonosság negatív szélső tagokra is igaz, de a mértani közép '
+         r'elnevezést itt pozitív számpárra használjuk.</p>', hid="tetel-mertani-kozep"),
    doboz("pelda", "Két megadott tagból",
          r'<p>Egy mértani sorozat második tagja $b_2=12$, ötödik tagja $b_5=96$. Határozzuk meg a '
          r'sorozatot!</p>'
@@ -392,7 +395,8 @@ B2 = [
          r'<p>Ha a kezdő tőke $K_0$, az éves kamatláb $p\%$, és a kamatot évente egyszer írják jóvá, '
          r'akkor $n$ év múlva</p>'
          r'$$K_n=K_0\left(1+\frac{p}{100}\right)^{n} .$$'
-         r'<p>Ha évente $t$-szer írnak jóvá kamatot (negyedévente $t=4$, havonta $t=12$), akkor egy '
+         r'<p>Ha $p\%$ a <b>névleges éves kamatláb</b>, és évente $t$-szer írnak jóvá kamatot '
+         r'(negyedévente $t=4$, havonta $t=12$), akkor egy '
          r'jóváírásnál a kamatláb $\frac{p}{t}$ százalék, a jóváírások száma pedig $t\cdot n$:</p>'
          r'$$K_n=K_0\left(1+\frac{p}{100\,t}\right)^{t\,n} .$$'
          r'<p>Az egyszerű kamat ugyanezekkel a jelölésekkel $K_n=K_0\left(1+\frac{p}{100}n\right)$.</p>'
@@ -401,7 +405,7 @@ B2 = [
          r'Ha a számlálást $K_0$-tól kezdjük, a kitevő éppen az eltelt évek száma.</p>',
          hid="tetel-kamatos-kamat"),
    doboz("pelda", "Kristálypára-bank — három szám egymás mellett",
-         r'<p>$200\,000$ dinárt helyezünk el $5$ évre, évi $6\%$-os kamatláb mellett. Mennyi lesz a '
+         r'<p>$200\,000$ dinárt helyezünk el $5$ évre, évi $6\%$-os <b>névleges</b> kamatláb mellett. Mennyi lesz a '
          r'számlán, ha a kamatot <b>a)</b> egyszerű kamatként, <b>b)</b> évente egyszer, '
          r'<b>c)</b> negyedévente írják jóvá? (Kerekítsünk két tizedesjegyre!)</p>'
          r'<p><b>a)</b> $200\,000\left(1+0{,}06\cdot5\right)=200\,000\cdot1{,}3=260\,000$ dinár.</p>'
@@ -443,7 +447,8 @@ B2 = [
    r'<tr><td>a középső tag ($n\ge2$)</td><td>$a_n=\frac{a_{n-1}+a_{n+1}}{2}$</td>'
    r'<td>$b_n^{\,2}=b_{n-1}b_{n+1}$</td></tr>'
    r'<tr><td>a grafikon</td><td>pontok egy <b>egyenesen</b></td>'
-   r'<td>pontok egy <b>exponenciális</b> görbén</td></tr>'
+   r'<td>$q&gt;0$, $q\ne1$: pontok egy <b>exponenciális</b> görbén; $q=1$: vízszintes '
+   r'egyenesen; $q&lt;0$: váltakozó előjellel</td></tr>'
    r'</table></div>'
    r'<p><b>Melyik melyik?</b> Vond ki egymásból a szomszédos tagokat: ha mindig ugyanazt kapod, '
    r'számtani. Oszd el egymással a szomszédos tagokat: ha mindig ugyanazt kapod, mértani. '

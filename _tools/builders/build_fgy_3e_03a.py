@@ -172,11 +172,12 @@ ALAP = [
 
  # --- A2: a Gauss-eljárás (alap 7–14)
  ("Maxi a Gauss-eljárás közben az alábbi lépéseket tervezi. Döntsd el mindegyikről, hogy "
-  "<b>ekvivalens</b> átalakítás-e, vagyis változatlanul hagyja-e a rendszer megoldáshalmazát!",
+  "<b>minden rendszer esetén biztosan ekvivalens</b> átalakítás-e, vagyis garantáltan "
+  "változatlanul hagyja-e a rendszer megoldáshalmazát!",
   ["felcseréli az első és a második egyenletet",
    "a harmadik egyenletet megszorozza $0$-val",
    "a második egyenletből kivonja az első kétszeresét ($S_2-2S_1$)",
-   "az első két egyenletet összeszorozza egymással",
+   "az első két egyenlet helyett csak az összeszorzásukkal kapott egyenletet tartja meg",
    "a harmadik egyenletet elosztja $-3$-mal"],
   ['ekvivalens',
    'nem ekvivalens',
@@ -319,13 +320,17 @@ KOZEP = [
   '$x=\\dfrac12$ egyértelmű; $y$ és $z$ nem: $(x;y;z)=\\left(\\dfrac12;\\ -\\dfrac12-t;\\ t\\right)$, $t\\in\\mathbb{R}$.'),
 
  # --- C1 (közép 14–19)
- ("Két autó egymástól $60$ km-re lévő városokból egyszerre indul egymás felé, és fél óra "
+ ("Két autó egymástól $60$ km-re lévő városokból <b>állandó sebességgel</b>, egyszerre "
+  "indul egymás felé, és fél óra "
   "múlva találkoznak. Ha ugyanabba az irányba indulnának (a gyorsabb hátulról), a gyorsabb "
-  "$3$ óra alatt érné utol a lassabbat. Mekkora a két autó sebessége?", None,
+  "$3$ óra alatt érné utol a lassabbat. Mindkét helyzetben ugyanazokból a városokból "
+  "indulnak, és mindkét autó a saját változatlan sebességével halad. Mekkora a két autó "
+  "sebessége?", None,
   "$70$ km/h és $50$ km/h."),
 
  ("Hány liter $20\\%$-os és hány liter $50\\%$-os oldatot kell összeöntenünk, hogy $30$ liter "
-  "$30\\%$-os oldatot kapjunk?", None,
+  "$30\\%$-os oldatot kapjunk? A százalékok <b>térfogatszázalékot</b> jelentenek; "
+  "a térfogatokat összeadódónak tekintjük.", None,
   "$20$ liter $20\\%$-os és $10$ liter $50\\%$-os oldatot."),
 
  ("Egy taxi viteldíja alapdíjból és kilométerenként azonos díjból áll. Egy $5$ km-es út "

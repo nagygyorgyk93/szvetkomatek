@@ -169,8 +169,8 @@ B1 = [
 
  ("A kúp hálója", [
    '<p>Vágjuk fel a palástot egyetlen alkotó mentén, és terítsük ki. Nem téglalapot '
-   'kapunk, mint a hengernél, hanem <b>körcikket</b> — hiszen a palást minden pontja '
-   'ugyanolyan messze van a csúcstól.</p>',
+   'kapunk, mint a hengernél, hanem <b>körcikket</b>: az egyenes kúp alkotói egyenlő '
+   'hosszúak, és kiterítve a körcikk sugarai lesznek.</p>',
    doboz("tetel", "Az egyenes kúp hálója",
          '<p>A kiterített palást <b>körcikk</b>, amelynek</p>'
          '<ul>'
@@ -204,8 +204,9 @@ B1 = [
    doboz("csapda", "Maxi trükkje",
          '<p><i>„A körcikk sugara az alapkör sugara, tehát $r$.”</i></p>'
          '<p>A körcikk sugara az <b>alkotó</b> ($s$), nem az alapköré. Gondolj bele: a '
-         'kiterített palást minden pontja onnan indul, ahol a <b>csúcs</b> volt — és a '
-         'csúcstól minden palástpont pontosan $s$ távolságra van.</p>'
+         'kiterített alkotók onnan indulnak, ahol a <b>csúcs</b> volt, és a hosszuk $s$. '
+         'Az alapkör pontjai ezért a körcikk $s$ sugarú ívére kerülnek; az alkotók '
+         'belső pontjai közelebb vannak a csúcshoz.</p>'
          '<p>Az alapkör sugara ($r$) a körcikk <b>ívének</b> hosszában bújik meg: '
          'az ív $2r\\pi$ hosszú.</p>'),
    doboz("erdekesseg", "Hol találkozol vele?",
@@ -608,10 +609,10 @@ B4 = [
         nem="✘ Tagonként: R² = 36, Rr = 18, r² = 9, összesen 63. A 81 az (R + r)² = 9², "
             "ami más kifejezés."),
    doboz("erdekesseg", "Hol találkozol vele?",
-         '<p>A virágcserép, a vödör, a lámpaernyő, a papírpohár és a hűtőtorony mind '
-         'csonkakúp. Nem véletlen: a szűkülő forma <b>egymásba rakható</b> (ezért lehet '
-         'a poharakat toronyba állítani), és a ferde fal <b>merevebb</b> is, mint a '
-         'függőleges.</p>'),
+         '<p>Sok kerek virágcserép, vödör, lámpaernyő és papírpohár alakját '
+         '<b>csonkakúppal</b> közelíthetjük. A vékony falú, felül szélesebb poharak '
+         'megfelelő méretezéssel egymásba rakhatók; a lehetőséget az üreg és a '
+         'falvastagság is befolyásolja.</p>'),
    GY(FGY + "#alap-22", "A 22–28", FGY + "#kozep-16", "K 16–21"),
    brief('<b>Medúza:</b> A szögletes és a szűkülő formák megvannak. Marad a '
          'legtökéletesebb — az a test, amelynek a <b>felülete</b> minden pontjában '

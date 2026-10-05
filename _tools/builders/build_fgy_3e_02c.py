@@ -139,7 +139,7 @@ ALAP = [
  ("Egy focilabda átmérője $22$ cm. Mekkora a felszíne? (Két tizedesre kerekítve.)", None,
   '$F=484\\pi\\approx1520{,}53$ cm².'),
 
- ("Egy gömb alakú tartály sugara $10$ cm. Hány <b>liter</b> fér bele? (Két tizedesre "
+ ("Egy gömb alakú tartály <b>belső sugara</b> $10$ cm. Hány <b>liter</b> fér bele? (Két tizedesre "
   "kerekítve.)", None,
   "$V=\\frac{4000\\pi}{3}\\approx4188{,}79\\ \\text{cm}^3$, ami körülbelül "
   "$4{,}19$ liter."),
@@ -162,8 +162,9 @@ ALAP = [
   "számítjuk?", None,
   '$F=170\\pi$ cm².'),
 
- ("Egy $6$ cm sugarú, $10$ cm magas hengerből kifúrunk egy $2$ cm sugarú, végig "
-  "átmenő hengeres lyukat. Mekkora a megmaradó test térfogata?", None,
+ ("Egy $6$ cm sugarú, $10$ cm magas hengerből kifúrunk egy $2$ cm sugarú, "
+  "<b>a hengerrel közös tengelyű</b>, végig átmenő hengeres lyukat. Mekkora a megmaradó "
+  "test térfogata?", None,
   "$V=36\\pi\\cdot10-4\\pi\\cdot10=360\\pi-40\\pi=320\\pi\\ \\text{cm}^3$."),
 
  ("Egy gyertya hengeres törzsből ($r=2$ cm, $H=10$ cm) és a tetején egy kúpból "
@@ -202,7 +203,8 @@ KOZEP = [
   'A felszín a négyszeresére nő.'),
 
  ("Egy gömb és a köré írt henger térfogatának aránya — vezesd le általánosan!", None,
-  "A köré írt henger alapköre a főkör ($r=R$), a magassága az átmérő ($H=2R$), ezért "
+  "A köré írt henger alapkörének sugara a gömb sugarával egyenlő ($r=R$), a magassága "
+  "az átmérő ($H=2R$), ezért "
   "$V_{\\text{henger}}=R^2\\pi\\cdot2R=2R^3\\pi$. A gömbé "
   "$\\frac{4R^3\\pi}{3}$, tehát az arány "
   "$\\frac{4R^3\\pi/3}{2R^3\\pi}=\\frac23$ — ez Arkhimédész $2:3$ aránya."),
@@ -214,9 +216,9 @@ KOZEP = [
   "$7{,}85\\ \\text{g/cm}^3$? (Két tizedesre kerekítve.)", None,
   '$m\\approx887{,}81$ g.'),
 
- ("Egy gömb felszínének és térfogatának a <b>számértéke</b> megegyezik. Mekkora a "
-  "sugara?", None,
-  '$R=3$.'),
+ ("Egy gömb <b>cm²-ben mért felszínének</b> és <b>cm³-ben mért térfogatának</b> a "
+  "<b>számértéke</b> megegyezik. Mekkora a sugara centiméterben?", None,
+  '$R=3$ cm.'),
 
  # --- C3 (közép 12–17)
  ("Egy víztorony tartálya hengerből ($r=6$ m, $H=10$ m) és a rá épített, azonos sugarú "
@@ -224,7 +226,7 @@ KOZEP = [
   '$V=504\\pi$ m³.'),
 
  ("Egy víztorony tartálya hengerből ($r=6$ m, $H=10$ m) és azonos sugarú félgömb tetőből "
-  "áll. Mekkora a <b>külső</b> felülete, ha az alsó körlapot nem festik?", None,
+  "áll. Mekkora <b>külső felületet kell lefesteni</b>, ha az alsó körlapot nem festik?", None,
   '$F=192\\pi$ m².'),
 
  ("Egy mindkét végén nyitott cső hossza $10$ cm, külső sugara $6$ cm, belső sugara "
@@ -232,7 +234,7 @@ KOZEP = [
   ['$V=110\\pi$ cm³',
    '$F=242\\pi$ cm²'], True),
 
- ("Egy tömör dísztárgy kúp alakú részből (alapkör sugara $6$ cm, alkotója $10$ cm) és "
+ ("Egy tömör dísztárgy <b>egyenes körkúp</b> alakú részből (alapkör sugara $6$ cm, alkotója $10$ cm) és "
   "egy hozzáillesztett hengeres nyélből ($r=1$ cm, $H=8$ cm) áll. Mekkora a két rész "
   "térfogatának <b>összege</b>?", None,
   '$V=104\\pi$ cm³.'),
@@ -254,21 +256,22 @@ NEHEZ = [
   '$V_{\\text{kocka}}:V_{\\text{gömb}}=\\dfrac6\\pi\\approx1{,}91$.'),
 
  ("Egy $5$ cm sugarú hengeres pohárban víz van. Beleteszünk egy $3$ cm sugarú gömböt, "
-  "amely teljesen elmerül. Hány centimétert emelkedik a vízszint?", None,
+  "amely teljesen elmerül. <b>A víz nem folyik túl.</b> Hány centimétert emelkedik a "
+  "vízszint?", None,
   '$1{,}44$ cm-rel.'),
 
  ("Egy gömb alakú léggömb sugara $20$ cm-ről $25$ cm-re nő. Hány <b>százalékkal</b> nő "
   "a felszíne és a térfogata? (Két tizedesre kerekítve.)", None,
   'A felszín $56{,}25\\,\\%$-kal, a térfogat $95{,}31\\,\\%$-kal nő.'),
 
- ("Egy víztorony gömb alakú tartályának <b>átmérője</b> $8$ m. Hány liter víz fér "
+ ("Egy víztorony gömb alakú tartályának <b>belső átmérője</b> $8$ m. Hány liter víz fér "
   "bele? (Egészre kerekítve.)", None,
   '$268\\,083$ liter.'),
 ]
 
 JOKER = ("Arkhimédész szerint a gömb és a köré írt henger térfogatának aránya $2:3$. "
          "Igazold, hogy a <b>felszínükre</b> is ugyanez az arány igaz!",
-         "A köré írt henger alapköre a gömb főköre ($r=R$), a magassága az átmérő "
+         "A köré írt henger alapkörének sugara a gömb sugarával egyenlő ($r=R$), a magassága az átmérő "
          "($H=2R$).</p>"
          "<p>$$F_{\\text{henger}}=2R^2\\pi+2R\\pi\\cdot2R=2R^2\\pi+4R^2\\pi=6R^2\\pi,"
          "\\qquad F_{\\text{gömb}}=4R^2\\pi.$$</p>"
@@ -277,8 +280,8 @@ JOKER = ("Arkhimédész szerint a gömb és a köré írt henger térfogatának 
          "<p>Ez a kettős egybeesés tette a tételt Arkhimédész kedvencévé: a "
          "hagyomány szerint ezért vésette a hengerbe írt gömböt a sírkövére. Sőt, "
          "még többről van szó: a gömb <b>felszíne</b> pontosan egyenlő a köré írt henger "
-         "<b>palástjával</b> ($4R^2\\pi$) — mintha a gömbfelületet rá lehetne teríteni "
-         "a hengerre.")
+         "<b>palástjával</b> ($4R^2\\pi$). A területazonosság nem jelent torzításmentes "
+         "ráteríthetőséget.")
 
 # ============================== OLDAL ==============================
 body = [

@@ -456,10 +456,11 @@ A2 = [
 A3 = [
  ("📡 Küldetés-eligazítás", [
    brief('<b>Kanrak:</b> Az anomália-hálózat időnként olyan mérési sort küld, amelyből '
-         '<b>semmi</b> nem következik — és olyat is, amely <b>önmagának mond ellent</b>. '
+         '<b>nem derül ki minden ismeretlen egyértelműen</b> — és olyat is, amely '
+         '<b>önmagának mond ellent</b>. '
          'Az első esetben kevés a mérés, a másodikban valamelyik műszer hazudik. A '
          'Gauss-eljárás mindkettőt megmutatja, ha tudod, mit kell nézni.'),
-   '<p>Ezen az órán nem csak kiszámoljuk a megoldást — meg is <b>indokoljuk, hány van '
+   '<p>Ezen az órán nemcsak kiszámoljuk a megoldást — meg is <b>indokoljuk, hány van '
    'belőle</b>. Ez a témakör egyik legfontosabb készsége: a „nincs megoldás” és a „végtelen '
    'sok megoldás” ugyanolyan teljes értékű válasz, mint egy számhármas — de csak akkor, '
    'ha meg is tudod mutatni, miből jött.</p>',
@@ -477,9 +478,9 @@ A3 = [
          '<td>$x+y=5$, $2x+2y=7$</td></tr>'
          '</table>'
          '<p>Az utolsó két esetet együtt <b>nem határozott</b> rendszernek is szokás '
-         'nevezni. Figyeld meg a két alsó példát: a bal oldalak ugyanazok, a különbség csak '
-         'a jobb oldalon van. Ugyanazt az egyenletet írtuk le kétszer — egyszer '
-         'következetesen, egyszer önmagának ellentmondva.</p>',
+         'nevezni. Figyeld meg a két alsó példát: mindkettőben a második bal oldal '
+         'az első <b>kétszerese</b>. A különbség a jobb oldalon van: az egyik esetben '
+         'az is kétszeres, a másikban nem, ezért az egyenletek ellentmondanak egymásnak.</p>',
          hid="def-harom-eset"),
    kviz('Egy rendszerről kiderül, hogy <b>határozatlan</b>. Mit jelent ez?',
         ['Végtelen sok megoldása van', 'Nincs megoldása',
@@ -546,13 +547,15 @@ A3 = [
    doboz("csapda", "Maxi trükkje",
          '<p><i>„A $0=0$ sor azt jelenti, hogy nincs megoldás — hiszen elfogyott az '
          'egyenlet.”</i></p>'
-         '<p><b>Pont fordítva van.</b> Mondd ki hangosan: <i>„a nulla egyenlő nullával”</i> '
+         '<p>Mondd ki hangosan: <i>„a nulla egyenlő nullával”</i> '
          '— ez <b>mindig igaz</b>. Egy mindig igaz állítás senkit nem zár ki, tehát nem is '
-         'szűkít semmit: a rendszernek <b>marad</b> megoldása, sőt végtelen sok.</p>'
+         'szűkít semmit: a sort elhagyhatjuk. Végtelen sok megoldás akkor marad, ha a '
+         '<b>teljes lépcsős alakban nincs ellentmondás</b>, és kevesebb nem nulla sor '
+         'marad, mint ahány ismeretlen van.</p>'
          '<p>És most a másik: <i>„a nulla egyenlő öttel”</i> — ez <b>soha nem igaz</b>. Egy '
          'soha nem igaz állítás mindenkit kizár: <b>nincs</b> megoldás.</p>'
-         '<p>Az egyetlen dolog, amit meg kell jegyezned: nem a bal oldali nulla számít, '
-         'hanem az, hogy a <b>jobb oldal</b> is nulla-e.</p>'),
+         '<p>Egy nullás bal oldalú sor megítéléséhez a <b>jobb oldalt</b> is nézd meg; '
+         'a teljes rendszer megoldásainak számához pedig a <b>többi sort is</b>.</p>'),
    kviz('A Gauss-eljárás során az egyik sorból $0=0$ lesz. Mi következik?',
         ['A sor fölösleges — elhagyható, és a rendszer határozatlan lehet',
          'A rendszernek nincs megoldása',
@@ -567,7 +570,8 @@ A3 = [
 
  ("Hogyan írjuk fel a végtelen sok megoldást", [
    '<p>Ha a rendszer határozatlan, nem elég annyit írni, hogy „végtelen sok megoldás van”. '
-   'A megoldásokat <b>fel is kell sorolni</b> — ezt egy <b>szabad paraméterrel</b> tesszük.</p>',
+   'A megoldások teljes halmazát <b>fel is kell írni</b> — ehhez annyi <b>szabad '
+   'paraméter</b> kell, ahány szabad ismeretlen marad. Az alábbi példában egy.</p>',
    r'<p>A fenti $c=7$ esetben az $S_2-2S_1$ lépés a $-y-3z=-11$, azaz az $y+3z=11$ sort '
    r'adja. Az $S_3-3S_1$ ugyanezt hozza ki a harmadik sorból ($-y-3z=-11$), ezért a kettő '
    r'különbsége már $0=0$. A lépcsős alak tehát mindössze <b>két</b> egyenletet ad három '
@@ -595,13 +599,16 @@ A3 = [
          '<b>ellentmondásos</b> rendszer általában <b>mérési hibát</b> jelez: a műszerek '
          'olyat állítanak együtt, ami egyszerre nem lehet igaz — valamelyik rosszul mér. A '
          '<b>határozatlan</b> rendszer viszont azt mondja, hogy <b>kevés a mérés</b>: az '
-         'adatok igazak, csak nem elegendők az ismeretlenek egyértelmű meghatározásához. Az '
-         'első esetben javítani kell, a másodikban mérni kell még egyet.</p>'),
+         'adatok <b>összeegyeztethetők</b>, de nem elegendők az ismeretlenek egyértelmű '
+         'meghatározásához. Ez önmagában még nem igazolja a mérések pontosságát. Az '
+         'első esetben a mérést vagy a modellt kell javítani, a másodikban további, '
+         '<b>független feltételt adó</b> mérésekre van szükség.</p>'),
  ]),
 
  ("A geometriai kép", [
    '<p>Két ismeretlennél két egyenest néztünk. Három ismeretlennél az $ax+by+cz=d$ egyenlet '
-   'a térben egy <b>síkot</b> ír le, a rendszer megoldása pedig a három sík <b>közös '
+   'a térben egy <b>síkot</b> ír le, ha $a$, $b$, $c$ közül legalább az egyik nem nulla. '
+   'Ilyen egyenleteknél a rendszer megoldása a három sík <b>közös '
    'pontjainak</b> halmaza. Az eseteket ugyanaz a három szó írja le:</p>'
    '<table class="tt-table">'
    '<tr><th>A három sík</th><th>Közös rész</th><th>A rendszer</th></tr>'

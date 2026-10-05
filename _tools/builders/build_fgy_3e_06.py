@@ -207,7 +207,8 @@ ALAP = [
   r"Hányadik tagtól pozitív a sorozat?", None,
   r"a tagok: $-3;\ -1;\ 1;\ 3;\ 5;\ 7$ — a $3.$ tagtól pozitív"),
 
- (r"Folytasd a sorozatot két taggal, és írd fel az általános tagját!",
+ (r"Adj egy <b>egyszerű lehetséges szabályt</b> a sorozatra, majd ezzel folytasd két taggal, "
+  r"és írd fel az általános tagját! Négy tag önmagában nem határozza meg egyértelműen a folytatást.",
   [r"$2,\ 9,\ 16,\ 23,\ \dots$", r"$2,\ 6,\ 18,\ 54,\ \dots$", r"$1,\ 4,\ 9,\ 16,\ \dots$"],
   [r"$30$ és $37$; $a_n=7n-5$", r"$162$ és $486$; $b_n=2\cdot 3^{n-1}$", r"$25$ és $36$; $a_n=n^2$"], True),
 
@@ -408,7 +409,8 @@ KOZEP = [
  (r"Egy mértani sorozatban a második és a negyedik tag összege $90$, az első és a harmadik tagé "
   r"$30$. Írd fel a sorozat első négy tagját!", None, r"$q=3$, $b_1=3$: $3;\ 9;\ 27;\ 81$"),
 
- (r"💰 A bank évi $4\%$-os kamatot fizet. Kerekíts mindkét részfeladatban két tizedesjegyre!",
+ (r"💰 A bank <b>névleges éves kamatlába</b> $4\%$. Negyedéves jóváírásnál az éves kamatláb "
+  r"negyedével számolj. Kerekíts mindkét részfeladatban két tizedesjegyre!",
   [r"Mekkora összeget kell ma elhelyezned ahhoz, hogy $6$ év múlva $100\,000$ dinárod legyen, ha a "
    r"kamatot évente egyszer írják jóvá?",
    r"Mennyi lenne $100\,000$ dinárból $6$ év múlva, ha a kamatot <b>negyedévente</b> írnák jóvá?"],
@@ -419,7 +421,7 @@ KOZEP = [
 # ============================== NEHÉZ (8) ==============================
 NEHEZ = [
  (r"Igazold, hogy az $a_n=\frac{3n+2}{n+4}$ sorozat szigorúan monoton növekvő, és hogy minden "
-  r"tagja $1$ és $3$ közé esik!", None,
+  r"tagjára $1\le a_n&lt;3$ teljesül!", None,
   '$a_{n+1}-a_n=\\dfrac{10}{(n+4)(n+5)}\\gt0$, tehát szigorúan növekvő; $1\\le a_n\\lt3$.'),
 
  (r"Egy számtani sorozat első tíz tagjának összege $145$, az első húsz tagé $590$. Írd fel a "

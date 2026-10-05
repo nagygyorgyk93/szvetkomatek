@@ -117,7 +117,7 @@ ALAP = [
    "A szabályos gúla oldalélei egyenlők.",
    "Az oldallap magassága hosszabb, mint az oldalél.",
    "Minden háromoldalú gúla szabályos tetraéder."],
-  ["igaz", "igaz", "igaz", "hamis (fordítva: $h &lt; b$)",
+  ["igaz", "igaz", "igaz", "hamis",
    "hamis (csak az, amelyiknek mind a hat éle egyenlő)"], True),
 
  ("Hány csúcsa, éle és lapja van?",
@@ -131,13 +131,13 @@ ALAP = [
 
  ("Egy szabályos négyoldalú gúla alapéle $6$ cm, az oldallap magassága $4$ cm. Mekkora az "
   "oldaléle?", None,
-  "$b=\\sqrt{h^2+\\left(\\frac a2\\right)^2}=\\sqrt{16+9}=5$ cm."),
+  '$s=5$ cm.'),
 
  ("Melyik hosszabb a szabályos gúlában: az oldalél vagy az oldallap magassága? Indokold!",
   None,
-  "Az <b>oldalél</b>. Mindkettő ugyanabból a magasságból indul, de az oldalél az alaplap "
-  "csúcsáig fut ($R$), az oldallap magassága csak az él felezőpontjáig ($r$), és "
-  "$r &lt; R$."),
+  "Az <b>oldalél</b>. A két szakasz a gúla csúcsából indul. A szabályos alaplap köré "
+  "írt sugarára és apotémájára $R&gt;r$, ezért $s^2=H^2+R^2&gt;H^2+r^2=h^2$, "
+  "tehát $s&gt;h$."),
 
  # --- C2: felszín és térfogat (alap 6–15)
  ("Egy szabályos négyoldalú gúla alapéle $6$ cm, az oldallap magassága $5$ cm. Számítsd ki",
@@ -341,7 +341,8 @@ NEHEZ = [
   '$H=4\\sqrt6\\approx9{,}80$ cm.'),
 
  ("Egy gúla alapterülete $144$ cm². Milyen magasságban (a csúcstól mérve, a magasság "
-  "hányadánál) kell elmetszeni, hogy a metszet területe $36$ cm² legyen?", None,
+  "hányadánál) kell <b>az alaplappal párhuzamos síkkal</b> elmetszeni, hogy a metszet "
+  "területe $36$ cm² legyen?", None,
   'A magasság felénél, a csúcstól mérve.'),
 
  ("Egy szabályos négyoldalú csonkagúla alapélei $10$ cm és $6$ cm, a térfogata "

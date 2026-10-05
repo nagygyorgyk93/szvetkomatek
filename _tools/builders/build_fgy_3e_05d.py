@@ -235,10 +235,12 @@ ALAP = [
 # ============================== KÖZÉPSZINT ==============================
 KOZEP = [
  # --- D1 (közép 1–4)
- (r"Írd fel annak az ellipszisnek az egyenletét, amely átmegy a $P(2;-4)$ és a $Q\left(-1;3\sqrt2\right)$ ponton!",
+ (r"Írd fel annak az <b>origó középpontú, koordinátatengelyekkel párhuzamos tengelyű</b> "
+  r"ellipszisnek az egyenletét, amely átmegy a $P(2;-4)$ és a $Q\left(-1;3\sqrt2\right)$ ponton!",
   None, r"$2x^2+3y^2=56$, azaz $\dfrac{x^2}{28}+\dfrac{y^2}{\frac{56}{3}}=1$"),
 
- (r"Írd fel annak az ellipszisnek az egyenletét, amely átmegy az $M(6;4)$ és az $N(-8;3)$ ponton!", None,
+ (r"Írd fel annak az <b>origó középpontú, koordinátatengelyekkel párhuzamos tengelyű</b> "
+  r"ellipszisnek az egyenletét, amely átmegy az $M(6;4)$ és az $N(-8;3)$ ponton!", None,
   r"$\dfrac{x^2}{100}+\dfrac{y^2}{25}=1$"),
 
  (r"Egy ellipszis fókuszai $F_1(8;0)$ és $F_2(-8;0)$, egyik csúcspontja $(0;6)$. Írd fel az egyenletét!", None,
@@ -264,13 +266,16 @@ KOZEP = [
   r"a csík az $y=\frac12x$ egyenesen van.)</i>", None, r"$\sqrt{10}\approx3{,}16$ m"),
 
  # --- D3 (közép 9–12)
- (r"Írd fel annak a hiperbolának az egyenletét, amely átmegy a $P\left(7;-\tfrac32\right)$ és a "
+ (r"Írd fel annak az <b>origó középpontú, $x$-tengelyű</b> hiperbolának az egyenletét, "
+  r"amely átmegy a $P\left(7;-\tfrac32\right)$ és a "
   r"$Q\left(11;\tfrac92\right)$ ponton!", None, r"$x^2-4y^2=40$, azaz $\dfrac{x^2}{40}-\dfrac{y^2}{10}=1$"),
 
- (r"Írd fel annak a hiperbolának az egyenletét, amely átmegy a $K(2;2)$ és az $L(4;5)$ ponton!", None,
+ (r"Írd fel annak az <b>origó középpontú, $x$-tengelyű</b> hiperbolának az egyenletét, "
+  r"amely átmegy a $K(2;2)$ és az $L(4;5)$ ponton!", None,
   r"$7x^2-4y^2=12$, azaz $\dfrac{x^2}{\frac{12}{7}}-\dfrac{y^2}{3}=1$"),
 
- (r"Egy hiperbola valós tengelyének hossza $2$, aszimptotái az $y=\pm\sqrt2\,x$ egyenesek. Írd fel az egyenletét!",
+ (r"Egy hiperbola valós tengelye az <b>$x$-tengelyen</b> van, hossza $2$, aszimptotái "
+  r"az $y=\pm\sqrt2\,x$ egyenesek. Írd fel az egyenletét!",
   None, r"$x^2-\dfrac{y^2}{2}=1$"),
 
  (r"Egy hiperbola fókuszai $F_{1,2}\left(\pm3\sqrt5;0\right)$, aszimptotái az $y=\pm2x$ egyenesek. Írd fel az "

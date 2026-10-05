@@ -238,7 +238,7 @@ B1 = [
  ("Tulajdonságok, amelyek időt takarítanak meg", [
    '<p>Mielőtt bármit kiszámolnál, érdemes ránézni a determinánsra. Néha ugyanis a '
    'végeredmény azonnal látszik.</p>',
-   doboz("tetel", "Négy tulajdonság, amit érdemes fejből tudni",
+   doboz("tetel", "Tulajdonságok, amelyeket érdemes fejből tudni",
          '<p>A determináns értéke <b>nulla</b>, ha</p>'
          '<ul>'
          '<li>valamelyik <b>sora vagy oszlopa csupa nulla</b>;</li>'
@@ -248,7 +248,7 @@ B1 = [
          '<li>valamelyik sora (vagy oszlopa) a másik kettőből <b>összeadással és '
          'számmal szorzással</b> előáll — például az egyik sor a másik kettő összege.</li>'
          '</ul>'
-         '<p>Egy negyedik, számolást könnyítő tulajdonság: két sor (vagy oszlop) '
+         '<p>Egy további, számolást könnyítő tulajdonság: két sor (vagy oszlop) '
          '<b>felcserélése</b> a determináns <b>előjelét megfordítja</b>, az abszolút '
          'értékét nem változtatja.</p>',
          hid="tetel-tulajdonsagok"),

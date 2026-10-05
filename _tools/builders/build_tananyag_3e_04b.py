@@ -282,29 +282,34 @@ B2 = [
 
  ("A definíció", [
    doboz("definicio", "Vektoriális szorzat",
-         r'<p>Két vektor <b>vektoriális szorzata</b> az az $\vec a\times\vec b$ <b>vektor</b>, amelynek</p>'
+         r'<p>Két nem nulla, nem párhuzamos vektor <b>vektoriális szorzata</b> az az '
+         r'$\vec a\times\vec b$ <b>vektor</b>, amelynek</p>'
          r'<ul><li><b>intenzitása</b> $|\vec a\times\vec b|=|\vec a|\,|\vec b|\sin\varphi$;</li>'
          r'<li><b>iránya</b> merőleges az $\vec a$-ra és a $\vec b$-re is (tehát a két vektor '
          r'síkjára);</li>'
          r'<li><b>irányítása</b> a <b>jobbkéz-szabály</b> szerinti: ha jobb kezünk hüvelykujja '
          r'az $\vec a$, mutatóujja a $\vec b$ irányába mutat, akkor a behajlított középső ujjunk '
          r'az $\vec a\times\vec b$ irányítását mutatja.</li></ul>'
-         r'<p>Ha $\vec a$ és $\vec b$ párhuzamos (vagy valamelyik nullvektor), akkor '
-         r'$\vec a\times\vec b=\vec 0$.</p>',
+         r'<p>Itt $\varphi$ a két vektor $0^\circ$ és $180^\circ$ közötti szöge. '
+         r'Ha $\vec a$ és $\vec b$ párhuzamos (vagy valamelyik nullvektor), akkor '
+         r'$\vec a\times\vec b=\vec 0$; a nullvektornak nincs iránya vagy irányítása.</p>',
          hid="def-vektorialis"),
    abra(SVG_VX, 'Az $\\vec a$ és a $\\vec b$ a kék paralelogrammát feszíti ki; az $\\vec a\\times\\vec b$ '
         'merőleges a síkjára, és a jobbkéz-szabály szerint felfelé mutat. (A paralelogrammát '
         'térben, vízszintes síkban fekvőnek képzeld el.)'),
    r'<p>Figyeld meg: a definícióban <b>szinusz</b> áll, nem koszinusz. A szorzat intenzitása '
-   r'merőleges vektoroknál ($\sin90^\circ=1$) a legnagyobb, párhuzamosaknál '
+   r'<b>rögzített vektorhosszak mellett</b> merőleges vektoroknál ($\sin90^\circ=1$) a legnagyobb, párhuzamosaknál '
    r'($\sin0^\circ=\sin180^\circ=0$) nulla — éppen fordítva, mint a skaláris szorzat abszolút '
    r'értéke.</p>',
    doboz("erdekesseg", "Hol találkozol vele?",
          r'<p>A <b>forgatónyomaték</b> vektoriális szorzat: $\vec M=\vec r\times\vec F$, ahol '
-         r'$\vec r$ a forgástengelytől az erő támadáspontjáig mutat. Ezért könnyű az ajtót a '
+         r'$\vec r$ egy választott vonatkoztatási pontból az erő támadáspontjáig mutat. '
+         r'Az ajtónál a pontot a zsanér tengelyén választjuk, a kar és az erő pedig a '
+         r'tengelyre merőleges síkban van. Ezért könnyű az ajtót a '
          r'kilincsnél — a zsanértól <b>távol</b> és <b>merőlegesen</b> — tolni, és ezért nem mozdul, '
-         r'ha a zsanér felé nyomod: ott $\sin\varphi=0$. A nyomaték vektora a forgástengely '
-         r'irányába mutat.</p>'),
+         r'ha a zsanér felé nyomod: ott $\sin\varphi=0$. <b>Ebben a síkbeli modellben</b> '
+         r'a nyomaték vektora a forgástengellyel párhuzamos. Általában a rögzített tengely '
+         r'körüli forgatásnál a nyomaték tengelyirányú összetevője számít.</p>'),
    kviz(r'Melyik állítás igaz a két szorzat eredményére?',
         [r'$\vec a\cdot\vec b$ szám, $\vec a\times\vec b$ vektor',
          'mindkettő szám', 'mindkettő vektor',
@@ -335,7 +340,8 @@ B2 = [
 
  ("Koordinátákkal — determinánssal", [
    doboz("tetel", "A vektoriális szorzat koordinátákkal",
-         r'<p>Ha $\vec a=(x_1;y_1;z_1)$ és $\vec b=(x_2;y_2;z_2)$, akkor</p>'
+         r'<p>A szokásos <b>jobbsodrású, derékszögű koordinátarendszerben</b>, '
+         r'egységnyi bázisvektorokkal: ha $\vec a=(x_1;y_1;z_1)$ és $\vec b=(x_2;y_2;z_2)$, akkor</p>'
          r'$$\begin{aligned}\vec a\times\vec b&=\begin{vmatrix}\vec i&\vec j&\vec k\\ x_1&y_1&z_1\\ x_2&y_2&z_2\end{vmatrix}\\'
          r'&=\vec i\begin{vmatrix}y_1&z_1\\ y_2&z_2\end{vmatrix}'
          r'-\vec j\begin{vmatrix}x_1&z_1\\ x_2&z_2\end{vmatrix}'

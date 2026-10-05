@@ -173,6 +173,7 @@ E2 = [
    brief('<b>Kanrak:</b> Az utolsó csapás. Tér-eb a tükör peremét csak úgy érheti el, hogy közben ne '
          'kerüljön a fókusz lángjába: <b>egy érintő mentén</b>. Megkeressük az érintőt — és még egyszer '
          'figyelünk a hiperbolánál látott csapdára.'),
+   r'<p>A lecke az $y^2=2px$ parabolát tárgyalja, ahol $p&gt;0$.</p>',
  ]),
 
  ("Kölcsönös helyzet — az új eset", [
@@ -250,7 +251,11 @@ E2 = [
  ]),
 
  ("🧾 Gyorsismétlő", [
-   r'<p>A II. rész négy görbéje egy táblázatban — a 4. dolgozat előtt.</p>'
+   r'<p>A II. rész négy görbéje egy táblázatban — a 4. dolgozat előtt. A körnél $r&gt;0$, '
+   r'az ellipszisnél $a&gt;b&gt;0$, a hiperbolánál $a,b&gt;0$, a parabola sorában $p&gt;0$. '
+   r'Az érintőképletekben $T$ a megfelelő görbe pontja. Az iránytényezős feltételek '
+   r'a nem függőleges egyenesekre vonatkoznak; a parabola függőleges érintője $x=0$, '
+   r'a hiperboláé $x=\pm a$.</p>'
    r'<div class="tblwrap"><table class="tt-table">'
    r'<tr><th></th><th>egyenlet</th><th>adatok</th><th>érintő a $T(x_1;y_1)$ pontban</th>'
    r'<th>érintési feltétel ($y=kx+n$)</th></tr>'

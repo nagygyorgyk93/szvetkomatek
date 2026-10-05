@@ -150,9 +150,9 @@ C1 = [
          '<ol>'
          '<li>a magasság, az apotéma és az <b>oldallap magassága</b>: '
          '$h^{2}=H^{2}+r^{2}$;</li>'
-         '<li>a magasság, a köréírt sugár és az <b>oldalél</b>: $b^{2}=H^{2}+R^{2}$;</li>'
+         '<li>a magasság, a köréírt sugár és az <b>oldalél</b>: $s^{2}=H^{2}+R^{2}$;</li>'
          '<li>az oldallap magassága, az alapél fele és az <b>oldalél</b>: '
-         '$b^{2}=h^{2}+\\left(\\frac{a}{2}\\right)^{2}$.</li>'
+         '$s^{2}=h^{2}+\\left(\\frac{a}{2}\\right)^{2}$.</li>'
          '</ol>'
          '<p>A harmadik háromszög magában az <b>oldallapban</b> fekszik: az egyenlő szárú '
          'háromszöget a magassága két derékszögű háromszögre vágja.</p>'
@@ -403,7 +403,7 @@ C3 = [
    doboz("tetel", "A metszet hasonló az alaplaphoz",
          '<p>Ha a gúlát az alaplappal <b>párhuzamos</b> síkkal metsszük, a metszet az '
          'alaplaphoz <b>hasonló</b> sokszög. A hasonlóság aránya</p>'
-         '$$k=\\frac{x}{m},$$'
+         '$$k=\\frac{x}{H},$$'
          '<p>ahol $x$ a <b>metszősík</b> csúcstól mért távolsága (a magasságon mérve), $H$ pedig '
          'a gúla magassága. Értelmes metszethez $0&lt;k&lt;1$ kell: $k=1$ maga az '
          'alaplap, $k=0$ pedig már csak a csúcs.</p>'
@@ -426,7 +426,7 @@ C3 = [
          '$$T_{\\text{metszet}}=k^{2}\\cdot B.$$',
          hid="tetel-hasonlosag-aranyok"),
    '<table class="tt-table">'
-   '<tr><th>$k=\\frac{x}{m}$</th><th>hosszak aránya</th>'
+   '<tr><th>$k=\\frac{x}{H}$</th><th>hosszak aránya</th>'
    '<th>a metszet területe / $B$</th><th>a <b>kis gúla</b> térfogata / $V$</th></tr>'
    '<tr><td>$\\frac12$</td><td>$\\frac12$</td><td>$\\frac14$</td><td>$\\frac18$</td></tr>'
    '<tr><td>$\\frac13$</td><td>$\\frac13$</td><td>$\\frac19$</td><td>$\\frac1{27}$</td></tr>'
@@ -502,8 +502,8 @@ C3 = [
 C4 = [
  ("📡 Küldetés-eligazítás", [
    brief('<b>Prizma:</b> A levágott hegyű kristály a leggyakoribb forma a Zónában — és a '
-         'hétköznapokban is: a szemetes, a rakodólap és a betonoszlop talpazata jellemzően ilyen '
-         'alakú, a vödör és a virágcserép pedig ennek kerek rokona. Két új képlet vár rád, de minden elemük ismerős: két lap, trapéz '
+         'hétköznapokban is találsz ilyen alakú betontalpazatot vagy szögletes virágládát; '
+         'a kerek virágcserép ennek rokona. Két új képlet vár rád, de minden elemük ismerős: két lap, trapéz '
          'oldallapok, és egy meglepő tag a térfogatban.'),
    '<p>Ez az utolsó test, amellyel ebben a témakörben megismerkedünk. A végén egy '
    '<b>gyorsismétlő</b> is vár: a három test képlettára egyetlen táblázatban.</p>',
@@ -511,7 +511,8 @@ C4 = [
 
  ("Hogyan keletkezik a csonkagúla", [
    doboz("definicio", "A csonkagúla",
-         '<p>Metsszük el a gúlát az alaplappal <b>párhuzamos</b> síkkal, és hagyjuk el a '
+         '<p>Metsszük el a gúlát a csúcs és az alaplap között, az alaplappal <b>párhuzamos</b> '
+         'síkkal, és hagyjuk el a '
          'csúcsot tartalmazó részt. A megmaradó test a <b>csonkagúla</b>.</p>'
          '<p>A két párhuzamos lap az <b>alaplap</b> ($B_1$ területű) és a <b>fedőlap</b> '
          '($B_2$ területű) — ezek <b>hasonló</b> sokszögek. Az oldallapok <b>trapézok</b>, '
@@ -524,9 +525,9 @@ C4 = [
         'a takart élek, pirossal a magasság.'),
  ]),
 
- ("A csonkagúla elemei", [
+ ("A szabályos csonkagúla elemei", [
    '<p>Öt hosszúságot kell megkülönböztetned — plusz a lenti dobozban még az apotémákat és '
-   'a köréírt sugarakat:</p>'
+   'a köré írt körök sugarát:</p>'
    '<ul>'
    '<li>$a_1$ és $a_2$ — az alaplap és a fedőlap éle;</li>'
    '<li>$H$ — a test <b>magassága</b>, vagyis a két lap síkjának távolsága;</li>'
@@ -539,7 +540,7 @@ C4 = [
          '<p>Feltesszük, hogy a test <b>szabályos</b>, tehát a két lap középpontját összekötő '
          'szakasz merőleges mindkét lapra. Jelölje $r_1$ és $r_2$ az alaplap, '
          'illetve a fedőlap <a href="tananyag-gula.html#tetel-harom-haromszog">'
-         'apotémáját</a>, $R_1$ és $R_2$ a köré írt sugarakat. Ha a fedőlapot merőlegesen '
+         'apotémáját</a>, $R_1$ és $R_2$ a köré írt körök sugarát. Ha a fedőlapot merőlegesen '
          'levetítjük az alaplapra, a megfelelő szakaszok különbsége adja a befogókat:</p>'
          '$$h^{2}=H^{2}+(r_1-r_2)^{2},\\qquad s^{2}=H^{2}+(R_1-R_2)^{2},'
          '\\qquad s^{2}=h^{2}+\\left(\\frac{a_1-a_2}{2}\\right)^{2}.$$'
@@ -550,12 +551,13 @@ C4 = [
          'magassága.</p>',
          hid="tetel-csonkagula-haromszogek"),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„A magasság és az oldallap magassága — mindkettő „magasság”, tehát '
-         'behelyettesíthetem bármelyiket."</i></p>'
+         '<p><i>„A magasság és az oldallap magassága — mindkettő »magasság«, tehát '
+         'behelyettesíthetem bármelyiket.”</i></p>'
          '<p>Nem. A <b>felszínbe</b> (a palásthoz) az <b>oldallap magassága</b> ($h$) megy, a '
          '<b>térfogatba</b> a <b>test magassága</b>. A kettő között éppen a fenti '
-         'Pitagorasz-összefüggés teremt kapcsolatot, és mindig $H &lt; h$. Ha a feladat csak '
-         'az egyiket adja meg, a másikat ki kell számolni.</p>'),
+         'Pitagorasz-összefüggés teremt kapcsolatot, és a szabályos csonkagúlánál '
+         '$H &lt; h$. Ha a keresett mennyiséghez a másik magasságra van szükséged, '
+         'azt előbb számold ki.</p>'),
  ]),
 
  ("A felszín", [
@@ -638,16 +640,16 @@ C4 = [
    '(<a href="tananyag-gula-sikmetszetek.html#tetel-hasonlosag-aranyok">metszeteknél</a>) '
    'az a két eszköz, amivel a hiányzó adatok előkerülnek.</p>',
    doboz("erdekesseg", "Hol találkozol vele?",
-         '<p>A betonoszlopok talpazata, a szemetesek és a rakodólapok jellemzően csonkagúla '
-         'alakúak; a vödör, a virágcserép és a lámpaernyő ugyanennek a kerek változata, '
-         '<b>csonkakúp</b> (a következő témakör anyaga). A forma nem véletlen: a test '
-         'stabilan áll, a fala felfelé haladva kevesebb anyagot igényel, ráadásul a darabok '
-         'egymásba rakhatók — ezért lehet a műanyag poharakat egyetlen oszlopba tornyozni.</p>'),
+         '<p>Egyes betontalpazatok és szögletes virágládák alakját csonkagúlával '
+         'modellezhetjük. A kerek virágcserép vagy lámpaernyő gyakran ennek kerek '
+         'rokonával, a <b>csonkakúppal</b> közelíthető (a következő témakör anyaga). '
+         'A vékony falú, felfelé szélesedő poharak megfelelő méretezéssel egymásba '
+         'rakhatók; ehhez az üreg és a falvastagság is számít.</p>'),
    GY(FGY + "#alap-20", "A 20–26", FGY + "#kozep-16", "K 16–21 N 1–6"),
    brief('<b>Prizma:</b> A Kristálypára szögletes formáit legyőzted: hasáb, gúla, '
          'csonkagúla — felszín, térfogat, metszet. De a Zóna mélyén már mozgásba lendült '
-         'valami: a következő kristályok <b>nem szögletesek</b>. Ha a sokszög helyére '
-         '<b>kör</b> kerül, a sík elhajlik, és a lapokból palást lesz. Medúza vár rád az '
+         'valami: a következő kristályok <b>nem szögletesek</b>. A sokszögű alaplap helyére '
+         '<b>körlap</b> kerül, a sík oldallapok helyére görbült palást. Medúza vár rád az '
          'Átalakulás Kamrájában.', outro=True),
  ]),
 ]
