@@ -2,8 +2,9 @@
 
 ## Hatókör és állapot
 
-**Jelenlegi összesítés:** az 1e/01 kilenc és az 1e/02 három tananyaglapjának
-teljes nyelvi és példahitelességi ellenőrzése elkészült három adagban. A
+**Jelenlegi összesítés:** az 1e/01 kilenc, az 1e/02 három és az 1e/03 négy
+tananyaglapjának teljes nyelvi és példahitelességi ellenőrzése elkészült négy
+adagban. A
 feladatgyűjtemények, nyitóoldalak, összefoglalók és terepküldetések külön
 A3-ellenőrzése, valamint a többi témakör átnézése hátra van. Az adagok alábbi
 adatai az egyes munkamenetek eredményei; a legfrissebb bejegyzés a végén található.
@@ -282,3 +283,122 @@ Az 1e/01 kilenc és az 1e/02 három tananyaga A3 szerint átnézve; a többi tan
 feladatgyűjtemény, nyitóoldal, összefoglaló és terepküldetés teljes A3-auditja hátra van.
 Következő lehetséges adag: az 1e/03 egész és valós számok tananyagai.
 **Tanári döntés kell: nincs új kérdés.** Helyi main-commit; új ág és push nélkül.
+
+
+## Negyedik adag — 1e/03 egész és valós számok (2026-10-05)
+
+### Hatókör és javítások
+
+A `de24021` revízióból, tiszta helyi `main` ágról indultunk, egy committal az
+origin/main helyi referenciája előtt; erről a tanárt tájékoztattuk. Távoli
+frissítés nem történt. A négy tananyag teljes szövege, lenyíló megoldásai,
+bizonyításai, példái, ábrái és kvízei átnézve:
+[számhalmazok](../1e/03-egesz-es-valos-szamok/tananyag-szamhalmazok.html),
+[oszthatóság](../1e/03-egesz-es-valos-szamok/tananyag-oszthatosag.html),
+[számrendszerek](../1e/03-egesz-es-valos-szamok/tananyag-szamrendszerek.html),
+[közelítés](../1e/03-egesz-es-valos-szamok/tananyag-kozelites.html).
+Ezek kézzel karbantartott 1e-lapok; a CLAUDE.md szerint közvetlenül javíthatók.
+Az 1e matematika-skill egész és valós számokról szóló kimenetei és módszertani
+útmutatói adták a tantárgyi alapot. A szereplők és a játékos keret megmaradtak.
+
+A javítás előtti hibatábla bemutatva; a lektori feltételpótlás is külön jelezve:
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Számhalmaz-ábra | A −3 és 0 az N-ben, a törtek a Z-ben, az irracionális példák a Q-ban látszottak | Magas, matematikai | HTML/SVG: három felirat áthelyezése a helyes tartományba |
+| Számhalmazok | Pontatlan állítások a mérésről és a számkörökben maradásról; az irracionális szám definíciója és az abszolútértékes összefüggések feltétele hiányos | Fogalmi / nyelvi | HTML: pontos állítások, valós számokra korlátozott definíció, x valós és a ≥ 0 feltétel, ekvivalenciák |
+| Két tananyag | A √2 irracionalitásának és a prímek végtelenségének rövid bizonyítása hiányzott | Tartalmi hiány | HTML: a már kimondott tételekhez lenyíló bizonyítás, az 1e útmutatója szerint |
+| Maradékos osztás | Nem szerepelt q és r egész volta, így a kimondott egyértelműség feltétel nélkül hamis | Közepes, matematikai | HTML: egész hányados és egész maradék; a doboz tételként jelölve |
+| Prímtényezős felbontás és LKO | Az osztási eljárás nem nevezte meg a megfelelő prímosztót; az 5² hatványt kitevőnek nevezte a megoldás | Közepes, fogalmi | HTML: mindig a legkisebb prímosztóval osztunk; a megoldásban 2 a kitevő |
+| Számrendszerek | Túl általános áramköri és jogosultsági állítások; a hibás számjegy és a hexadecimális jelek leírása kétértelmű | Fogalmi / nyelvi | HTML: bináris kód, konkrét RGB- és jogosultságpélda, a számjegy jele és értéke külön |
+| Közelítés | A „majd” egymás utáni kerekítésre utalhatott; a páros felé kerekítés és az eltérés szerepe pontatlan | Közepes, fogalmi | HTML: külön kerekítési kérések, a két szabály elkülönítése, pontos hibafogalom |
+| Oszthatóság utolsó kvíze | A kvíz a gyakorlósáv dobozába került | Megjelenési | HTML: lezáró dobozhatárok javítása |
+| Három SVG | A rövid feliratból nem volt minden adat és viszony kiolvasható | Hozzáférési hiány | Látható ábraleírás és aria-describedby kapcsolat |
+
+A százalékos átváltás szabálya a megoldás lenyitása nélkül is olvasható.
+Egy téves kvízopció pontos megfogalmazást kapott: az egész és racionális számok
+halmazának azonosságát állítja, az előző „A kettő ugyanaz” helyett. A helyes
+válasz és az opciók sorrendje változatlan. A rövid számok oszthatósági vizsgálata,
+a 0 és a negatív számok számrendszeres alakja, illetve a kvízben szereplő két
+egész szám pozitív volta kiírva. A közös időpontban induló periodikus események,
+a hosszúságmérés és a tudományos jelölés példái konkrétabbak. Új feladat vagy
+feladat-számadat nem készült; a meglévő példák számai megmaradtak.
+
+### Forráskontroll a hétköznapi példákhoz
+
+A számítógépes állítások pontosításához az RGB színkódot az
+[MDN hexadecimális színdokumentációja](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/hex-color),
+a jogosultsági jelölést a
+[GNU numerikus módokról szóló kézikönyve](https://www.gnu.org/s/coreutils/manual/html_node/Numeric-Modes.html)
+támasztja alá. A kriptográfiai általánosítást egy konkrét eljárásra szűkítettük:
+az [RSA szabványa](https://datatracker.ietf.org/doc/rfc8017/) különböző páratlan
+prímek szorzatával adja meg a modulust. A páros felé kerekítés egyes számítási
+eljárások lehetőségeként szerepel; ezt például a
+[Python Decimal dokumentációja](https://docs.python.org/3/library/decimal.html)
+is leírja. Az oldal példái az 5-ösnél felkerekítő szabályt követik.
+
+A Föld–Nap távolság meglévő száma **átlagos távolságként** szerepel, a
+[NASA földi adatlapjával](https://science.nasa.gov/earth/facts/) összhangban.
+A vízmolekula mérete **jellemző közelítésként** szerepel: a meglévő adat
+megegyezik a [membrántranszport-kutatásban közölt molekulaátmérővel](https://pmc.ncbi.nlm.nih.gov/articles/PMC9640652/).
+A molekula méretének értelmezése modellfüggő, ezért a szöveg nem állít egyetlen
+pontos, minden helyzetre érvényes méretet.
+
+### Független lektor és számolás
+
+A kontextus nélküli lektor kizárólag a négy tananyag szövegét kapta, a két új
+bizonyítással, de a példák megoldásai és a válaszindexek nélkül. Mind a **kilenc
+kvíz** helyes válaszát és az összes számos példa eredményét önállóan
+megerősítette. A két bizonyítás helyes: a √2-nél a páratlan négyzet tulajdonsága
+és az egyszerűsíthetetlenség adja az ellentmondást; a prímeknél a szorzat + 1
+számnak egy új prímosztója van. Utóbbi érvelés nem állítja, hogy maga a szám
+prím. A lektor a q és r egész voltára vonatkozó hiányzó feltételt és hat
+megfogalmazási hibát jelzett. Mind a hét javítva; a javított kivonat újraolvasása
+nem talált biztos új hibát. A százalékos átváltás és a rövid számok vizsgálatának
+kiegészítését is megerősítette.
+
+Független pontos számolás és SymPy-kontroll: tört/tizedes/százalék alakok,
+gyökértékek és abszolútértékes egyenlet, maradékos osztás, prímtényezős alakok,
+prím/összetett listák, LKO/LKT-példák; **501 egész szám** oszthatósági szabályai
+és **900 pozitív számpár** LKO–LKT azonossága; **hat számrendszeres átváltás**
+és a két ismételt osztási sor. A kerekítések Decimal-számolással,
+ROUND_HALF_UP, illetve a megnevezett külön példák ROUND_HALF_EVEN szerint
+ellenőrizve; a hiba és a normálalakok pontosan újraszámolva. A bizonyítások
+algebrájának gépi kontrollját teljes logikai kézi és lektori olvasás egészíti ki.
+
+### Végleges ellenőrzések
+
+- **Megőrzés 40/40:** képek, linkek, média, válaszindexek, szkriptek és stílusok
+  változatlanok. A kvízopciókban csak a bemutatott téves mondat, a meglévő
+  megoldásokban csak az LKO-példa kitevőről szóló magyarázata változott.
+  Minden régi horgony megmaradt; három ábraleírás és egy tétel új horgonya egyedi.
+  Az SVG-kben csak három felirat koordinátája és a leíráskapcsolat változott.
+  A zárolt backlog-fejléc azonos.
+- **Böngésző:** négy lap × 360/390/1280 px × zárt/nyitott lenyílók =
+  **24 végleges nézet**, 0 oldaltúlcsordulás, képlethiba és JS-kivétel.
+  A lektori módosítások után mind a négy lap újramérve. A számhalmaz-ábra
+  feliratainak tényleges teljes befoglaló téglalapja mindhárom szélességen a
+  megfelelő tartományban van, és nem metszi a kizárandó belső halmazt.
+- **Axe: 24/0 szabályjelzés.** A képes hátterek teljes kézi kontrasztvizsgálata
+  továbbra is hátra van; ez nem teljes WCAG-igazolás.
+- Mindhárom SVG neve és teljes leírása szerepel az Edge hozzáférhetőségi fájában.
+  A három mobilos ábra és a számhalmaz-ábra nyomtatási képe szemrevételezve.
+- **JS nélkül:** mind a négy lap bevezetői és mindhárom ábraleírás látható.
+  **Nyomtatás: 8/8** JS be/ki nézet, a vizsgált szövegek és SVG-k láthatók.
+- **jsdom: négy lap, 246 képlet, 9/9 kvíz, 0 hiba.**
+  Teljes kánon és belső linkek **310/310, 0 hiba**; a gyakorlósávok tiszták.
+- Kép/média/háttér: **0 módosítás**; változatlan 334 médiaelem 139 lapon.
+  A naplótérkép változatlan: 184 oldal, 2294 feladat, 12315 XP. A keresőindex
+  308 nem üres bejegyzéséből pontosan e négy tananyag változott.
+- Feladatgyűjtemény, Végeredmény és kulcsmodul nem változott; a kulcstesztet és
+  a regressziós érzékenységvizsgálatot ebben az adagban nem ismételtük.
+
+### Korlátok és folytatás
+
+Valódi képernyőolvasó, más böngésző, teljes PDF-oldaltördelés és a külső videók
+szövege nem ellenőrizve. JS nélkül a képletek TeX alakban maradnak.
+Az 1e/01 kilenc, az 1e/02 három és az 1e/03 négy tananyaga A3 szerint átnézve;
+a többi tananyag, feladatgyűjtemény, nyitóoldal, összefoglaló és terepküldetés
+teljes A3-auditja hátra van. Következő lehetséges adag: az 1e/04 arányosság
+három tananyaga. **Tanári döntés kell: nincs új kérdés.**
+Helyi main-commit; új ág és push nélkül.

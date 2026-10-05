@@ -33,23 +33,23 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
       <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/iruhs.webp" alt="Iruhs — a kampusz fejlesztőmérnöke" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Iruhs:</b> A Nullpont-anomália kódja számokba van rejtve. Aki érti a számok <b>belső szerkezetét</b> — az osztókat, a prímeket, a prímtényezős alakot —, az feltöri a kódot. Ez a <b>Kódtörő</b> első leckéje: bontsuk a számokat építőelemeikre.</p></div>
-    <p>A számelmélet az egész számok „anatómiája”: azt vizsgálja, hogyan épülnek fel a számok szorzás útján. Az <b>oszthatóság</b>, a <b>prímszámok</b> és a <b>prímtényezős alak</b> nemcsak feladattípus — ezekre épül a titkosítás, a törtek egyszerűsítése, a közös nevező és a ritmusok (pl. mikor esik újra egybe több periodikus esemény).</p>
+    <p>Ebben a leckében az <b>oszthatóságot</b>, a <b>prímszámokat</b> és a <b>prímtényezős felbontást</b> vizsgáljuk. Ezeket használjuk a törtek egyszerűsítéséhez és a közös nevező meghatározásához is. A közös többszörös segíthet kiszámítani, mikor esnek újra egybe az egyszerre induló, szabályos időközönként ismétlődő események.</p>
 
     <h2 id="s1">Oszthatóság: osztó és többszörös</h2>
-    <p>Egész számok körében a szorzás nem mindig „fordítható vissza” maradék nélkül. Ha mégis, akkor beszélünk oszthatóságról.</p>
+    <p>Ha egy egész számot egy nem nulla egésszel osztva egész hányadost kapunk, az osztás maradék nélkül elvégezhető. Ezt a kapcsolatot írja le az oszthatóság.</p>
     <div class="doboz definicio" id="def-oszthatosag">
       <p class="cim"><span class="ikon">📗</span> Definíció</p>
       <p>Legyen <span class="math inline">\(a,b\)</span> egész, <span class="math inline">\(a\neq 0\)</span>. Azt mondjuk, hogy <b><span class="math inline">\(a\)</span> osztója <span class="math inline">\(b\)</span>-nek</b> (jelben <span class="math inline">\(a\mid b\)</span>), ha van olyan <span class="math inline">\(k\)</span> egész szám, amelyre <span class="math inline">\(b=a\cdot k\)</span>. Ilyenkor <span class="math inline">\(b\)</span> <b>osztható</b> <span class="math inline">\(a\)</span>-val, illetve <span class="math inline">\(b\)</span> az <span class="math inline">\(a\)</span> <b>többszöröse</b>.</p>
     </div>
-    <p>Néhány alaptulajdonság (<span class="math inline">\(a,b,c\)</span> egészek, és az osztó szerepében álló szám nem <span class="math inline">\(0\)</span>; megfordítva viszont minden nem nulla egész osztója a <span class="math inline">\(0\)</span>-nak, hiszen <span class="math inline">\(0=a\cdot 0\)</span>):</p>
+    <p>Néhány alaptulajdonság (<span class="math inline">\(a,b,c\)</span> egészek, és az osztó szerepében álló szám nem <span class="math inline">\(0\)</span>). Minden nemnulla egész osztója a <span class="math inline">\(0\)</span>-nak, hiszen <span class="math inline">\(0=a\cdot 0\)</span>.</p>
     <ul>
       <li><span class="math inline">\(1\mid a\)</span> és <span class="math inline">\(a\mid a\)</span> (az 1 és önmaga mindig osztó);</li>
       <li>ha <span class="math inline">\(a\mid b\)</span> és <span class="math inline">\(b\mid c\)</span>, akkor <span class="math inline">\(a\mid c\)</span> (tranzitivitás);</li>
       <li>ha <span class="math inline">\(a\mid b\)</span> és <span class="math inline">\(a\mid c\)</span>, akkor <span class="math inline">\(a\mid (b+c)\)</span> és <span class="math inline">\(a\mid (b-c)\)</span>.</li>
     </ul>
-    <div class="doboz definicio" id="def-maradekos">
-      <p class="cim"><span class="ikon">📗</span> Maradékos osztás</p>
-      <p>Bármely <span class="math inline">\(a\)</span> egészhez és <span class="math inline">\(b>0\)</span> egészhez pontosan egy olyan <span class="math inline">\(q\)</span> (hányados) és <span class="math inline">\(r\)</span> (maradék) létezik, amelyre \[a=q\cdot b+r,\qquad 0\le r&lt;b.\] Ha <span class="math inline">\(r=0\)</span>, akkor <span class="math inline">\(b\mid a\)</span>.</p>
+    <div class="doboz tetel" id="def-maradekos">
+      <p class="cim"><span class="ikon">📘</span> Maradékos osztás tétele</p>
+      <p>Bármely <span class="math inline">\(a\)</span> egészhez és <span class="math inline">\(b>0\)</span> egészhez pontosan egy olyan <span class="math inline">\(q\)</span> egész hányados és <span class="math inline">\(r\)</span> egész maradék létezik, amelyre \[a=q\cdot b+r,\qquad 0\le r&lt;b.\] Ha <span class="math inline">\(r=0\)</span>, akkor <span class="math inline">\(b\mid a\)</span>.</p>
     </div>
     <div class="doboz pelda" id="pelda-maradek">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
@@ -58,7 +58,7 @@
     </div>
 
     <h2 id="s2">Oszthatósági szabályok</h2>
-    <p>A prímtényezős felbontás előtt gyorsan eldönthetjük, mi osztja a számot — anélkül, hogy elosztanánk.</p>
+    <p>Tízes számrendszerben felírt egész számoknál a számjegyekből is eldönthetjük az oszthatóságot. Negatív számnál az abszolút érték számjegyeit vizsgáljuk. Ha a számnak kevesebb jegye van, mint amennyit a szabály kér, az egész számot vizsgáljuk.</p>
     <figure class="abra"><table class="tabla-nevezetes">
       <thead><tr><th>Osztó</th><th>Szabály (a szám akkor osztható vele, ha…)</th></tr></thead>
       <tbody>
@@ -69,7 +69,7 @@
       <tr><th>3 (9)</th><td>a <b>számjegyek összege</b> osztható 3-mal (9-cel)</td></tr>
       <tr><th>6</th><td>osztható <b>2-vel ÉS 3-mal</b> is</td></tr>
       </tbody></table>
-      <figcaption>A leggyakrabban használt oszthatósági szabályok. A 12, 15, 45 stb. összetett osztóknál <b>relatív prím</b> tényezőkre bontunk, és mindegyikre külön ellenőrzünk (12 → 4 és 3; 45 → 9 és 5).</figcaption>
+      <figcaption>A leggyakrabban használt oszthatósági szabályok. A 12, 15, 45 stb. összetett osztóknál <b>relatív prím</b> tényezőkre bontunk (ezek egyetlen közös pozitív osztója az 1), és mindegyikre külön ellenőrzünk (12 → 4 és 3; 45 → 9 és 5).</figcaption>
     </figure>
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
@@ -96,7 +96,7 @@
     <p>Prímek: <span class="math inline">\(2,3,5,7,11,13,17,19,23,29,\dots\)</span> — a <span class="math inline">\(2\)</span> az egyetlen páros prím. Összetettek: <span class="math inline">\(4,6,8,9,10,12,\dots\)</span></p>
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Érdekesség</p>
-      <b>Végtelen sok prím van</b> — ezt már Euklidész bebizonyította kb. 2300 éve. <b>Ikerprímek</b> azok a prímpárok, amelyek <b>különbsége 2</b> — vagyis csak egyetlen szám áll közöttük: <span class="math inline">\(3\)</span> és <span class="math inline">\(5\)</span>, <span class="math inline">\(11\)</span> és <span class="math inline">\(13\)</span>, <span class="math inline">\(17\)</span> és <span class="math inline">\(19\)</span>… Máig nyitott kérdés, hogy belőlük is végtelen sok van-e. A prímek a modern titkosítás (pl. a banki adatküldés) alapkövei.
+      <b>Végtelen sok prím van</b> — ezt már Euklidész bebizonyította kb. 2300 éve. <b>Ikerprímek</b> azok a prímpárok, amelyek <b>különbsége 2</b> — vagyis csak egyetlen szám áll közöttük: <span class="math inline">\(3\)</span> és <span class="math inline">\(5\)</span>, <span class="math inline">\(11\)</span> és <span class="math inline">\(13\)</span>, <span class="math inline">\(17\)</span> és <span class="math inline">\(19\)</span>… Máig nyitott kérdés, hogy belőlük is végtelen sok van-e. A prímszámok egyes titkosítási eljárásokban, például az RSA-ban is fontos szerepet kapnak.
     </div>
 
     <h2 id="s4">A kanonikus (prímtényezős) alak</h2>
@@ -104,9 +104,13 @@
       <p class="cim"><span class="ikon">📘</span> A számelmélet alaptétele</p>
       <p>Minden <span class="math inline">\(1\)</span>-nél nagyobb egész szám felírható prímszámok szorzataként, és ez a felírás — a tényezők sorrendjétől eltekintve — <b>egyértelmű</b>. Ezt nevezzük a szám <b>kanonikus</b> vagy <b>prímtényezős alakjának</b>.</p>
     </div>
-    <p>A felbontáshoz a legkisebb prímmel kezdünk, és lépcsősen osztunk, amíg 1-et nem kapunk:</p>
+    <div class="doboz tetel" id="tetel-vegtelen-prim">
+      <p class="cim"><span class="ikon">📘</span> Végtelen sok prímszám van</p>
+      <details><summary>Bizonyítás — ellentmondásra vezetés</summary><div class="bel"><p>Tegyük fel, hogy csak véges sok prím van, és soroljuk fel mindet: <span class="math inline">\(p_1,p_2,\dots,p_n\)</span>. Képezzük a <span class="math inline">\(P=p_1p_2\cdots p_n+1\)</span> számot. Ez 1-nél nagyobb, ezért a számelmélet alaptétele szerint van prímosztója. A felsorolt prímek egyike sem osztja <span class="math inline">\(P\)</span>-t: mindegyikkel osztva 1 a maradék. Tehát találtunk egy prímet a teljesnek feltételezett listán kívül. Ez ellentmondás, így végtelen sok prím van. ∎</p></div></details>
+    </div>
+    <p>A prímtényezős felbontáshoz az aktuális számot a legkisebb prímosztójával osztjuk. Ezt ismételjük, amíg 1-et nem kapunk:</p>
     <figure class="abra">
-    <svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="120 lépcsős prímtényezős felbontása">
+    <svg viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="120 lépcsős prímtényezős felbontása" aria-describedby="abra-felbontas-leiras">
       <line x1="150" y1="18" x2="150" y2="150" stroke="#cbd5e1" stroke-width="1.5"/>
       <text x="120" y="24" font-size="14" fill="#0f172a" text-anchor="end">120</text><text x="165" y="24" font-size="14" fill="#8b5cf6">2</text>
       <text x="120" y="46" font-size="14" fill="#0f172a" text-anchor="end">60</text><text x="165" y="46" font-size="14" fill="#8b5cf6">2</text>
@@ -115,7 +119,7 @@
       <text x="120" y="112" font-size="14" fill="#0f172a" text-anchor="end">5</text><text x="165" y="112" font-size="14" fill="#8b5cf6">5</text>
       <text x="120" y="134" font-size="14" fill="#0f172a" text-anchor="end">1</text>
     </svg>
-    <figcaption><span class="math inline">\(120=2\cdot 2\cdot 2\cdot 3\cdot 5=2^3\cdot 3\cdot 5\)</span>.</figcaption>
+    <figcaption id="abra-felbontas-leiras">A bal oldali számot a jobb oldali prímmel osztva jutunk a következő sorhoz: 120 osztva 2-vel 60, majd 60 osztva 2-vel 30, 30 osztva 2-vel 15, 15 osztva 3-mal 5, végül 5 osztva 5-tel 1. Ezért 120 prímtényezős alakja kettő a harmadikon szorozva hárommal és öttel.</figcaption>
     </figure>
     <div class="doboz pelda" id="pelda-kanonikus">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
@@ -142,7 +146,7 @@
     <div class="doboz pelda" id="pelda-lko-lkt">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
       Határozd meg: <span class="math inline">\(\text{LKO}(75,200)\)</span> és <span class="math inline">\(\text{LKT}(84,154)\)</span>.
-      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(75=3\cdot 5^2\)</span>, <span class="math inline">\(200=2^3\cdot 5^2\)</span> → közös prím az <span class="math inline">\(5\)</span> (kisebb kitevő <span class="math inline">\(5^2\)</span>): <b><span class="math inline">\(\text{LKO}(75,200)=25\)</span></b>.</p><p><span class="math inline">\(84=2^2\cdot 3\cdot 7\)</span>, <span class="math inline">\(154=2\cdot 7\cdot 11\)</span> → minden prím a nagyobb kitevőn: <span class="math inline">\(2^2\cdot 3\cdot 7\cdot 11=\)</span> <b><span class="math inline">\(924\)</span></b>.</p></div></details>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(75=3\cdot 5^2\)</span>, <span class="math inline">\(200=2^3\cdot 5^2\)</span> → közös prím az <span class="math inline">\(5\)</span> (mindkét felbontásban <span class="math inline">\(2\)</span> a kitevő): <b><span class="math inline">\(\text{LKO}(75,200)=25\)</span></b>.</p><p><span class="math inline">\(84=2^2\cdot 3\cdot 7\)</span>, <span class="math inline">\(154=2\cdot 7\cdot 11\)</span> → minden prím a nagyobb kitevőn: <span class="math inline">\(2^2\cdot 3\cdot 7\cdot 11=\)</span> <b><span class="math inline">\(924\)</span></b>.</p></div></details>
     </div>
     <div class="doboz tetel">
       <p class="cim"><span class="ikon">📘</span> Hasznos összefüggés</p>
@@ -155,16 +159,16 @@
       <figcaption>A legnagyobb közös osztó és a legkisebb közös többszörös egy másik tanár magyarázatában. <span class="media-forras">Forrás: <a href="https://tavoktatas.mnt.org.rs/i-osztaly/matematika/matematika-i-osztaly-92-ora-legnagyobb-kozos-oszto-es-legkisebb-kozos" target="_blank" rel="noopener">MNT Távoktatás magyar nyelven</a> — Zombori Eleonóra.</span> <span class="media-url">(Videó: Legnagyobb közös osztó és legkisebb közös többszörös (I. osztály, 92. óra) — youtu.be/oEKNVHlCxSA)</span></figcaption>
     </figure>
     <!-- media:end 1e03-lko-lkt-video -->
-    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-egesz-es-valos-szamok.html#alap-1">🐜 Henrik-bevetés <span class="cimke">A 1–4</span></a><a class="sav bruno" href="feladatok-egesz-es-valos-szamok.html#kozep-1">💥 Brúnó-bevetés <span class="cimke">K 1–3, 6</span></a></div>
+    <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-egesz-es-valos-szamok.html#alap-1">🐜 Henrik-bevetés <span class="cimke">A 1–4</span></a><a class="sav bruno" href="feladatok-egesz-es-valos-szamok.html#kozep-1">💥 Brúnó-bevetés <span class="cimke">K 1–3, 6</span></a></div></div></div>
 
-    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Két szám szorzata mindig egyenlő az LKO és az LKT szorzatával: 216 : 6 = 36." data-nem="✘ Használd az összefüggést: a·b = LKO(a,b) · LKT(a,b). Innen LKT = 216 : 6 = 36.">
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Két pozitív egész szám szorzata egyenlő az LKO és az LKT szorzatával: 216 : 6 = 36." data-nem="✘ Használd az összefüggést: a·b = LKO(a,b) · LKT(a,b). Innen LKT = 216 : 6 = 36.">
       <p class="kviz-cim"><span class="ikon">🎯</span> Gyors kérdés</p>
-      <p>Két szám szorzata 216, a legnagyobb közös osztójuk 6. Mennyi a legkisebb közös többszörösük?</p>
+      <p>Két pozitív egész szám szorzata 216, a legnagyobb közös osztójuk 6. Mennyi a legkisebb közös többszörösük?</p>
       <div class="opciok"><button><span class="math inline">\(6\)</span></button><button><span class="math inline">\(216\)</span></button><button><span class="math inline">\(36\)</span></button></div>
       <p class="visszajelzes" aria-live="polite"></p>
-    </div></div></div>
+    </div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/iruhs.webp" alt="Iruhs — a kampusz fejlesztőmérnöke" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Iruhs:</b> Megvan az anatómia — a prímek az építőelemek. A következő lépés: a számok más „nyelveken” is beszélnek. Irány a <b>számrendszerek</b>, ahol a gépek kódját olvassuk.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/iruhs.webp" alt="Iruhs — a kampusz fejlesztőmérnöke" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Iruhs:</b> A számok prímtényezős alakját már fel tudjuk írni. A következő leckében ugyanazokat a számokat más alapú <b>számrendszerekben</b> is megadjuk.</p></div>
     <div class="lapozo">
       <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">Témakör-nyitó</span></a>
       <a class="kov" href="tananyag-szamrendszerek.html"><span class="irany">Következő →</span><span class="hova">Pozíciós számrendszerek</span></a>

@@ -32,34 +32,34 @@
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
-      <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/banner_bruno_w.webp" alt="Banner Brúnó — a mérés és a hibabecslés tudósa" width="1200" height="670" decoding="async"><p>📡 <b>Banner Brúnó:</b> Egyetlen műszer sem mér tökéletesen — a gamma-detektor is közelít. A profi nem az, aki „pontosan” mond egy értéket, hanem aki tudja, <b>mekkorát tévedhet</b>. Kalibráljuk a hibát.</p></div>
-    <p>A valóságban ritkán számolunk „végtelen pontossággal”: a méréseket <b>kerekítjük</b>, és megbecsüljük a <b>hibát</b>. A nagyon nagy (csillagászati) és nagyon kicsi (atomi) számokat pedig a <b>normál alak</b> teszi kezelhetővé.</p>
+      <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/banner_bruno_w.webp" alt="Banner Brúnó — a mérés és a hibabecslés tudósa" width="1200" height="670" decoding="async"><p>📡 <b>Banner Brúnó:</b> A gamma-detektor kijelzett értéke mellett a <b>mérés pontosságát</b> is ismernünk kell. Nézzük meg, hogyan kerekítünk, és hogyan adjuk meg egy közelítés hibáját.</p></div>
+    <p>A mérési eredményeket és a számológép közelítő értékeit gyakran <b>kerekítjük</b>. Ilyenkor azt is vizsgáljuk, mekkora eltérést okoz a közelítés. A nagyon nagy és nagyon kicsi számokat <b>normál alakban</b> rövidebben írhatjuk fel.</p>
 
     <h2 id="s1">Kerekítés</h2>
     <div class="doboz definicio" id="def-kerekites">
       <p class="cim"><span class="ikon">📗</span> Kerekítési szabály</p>
-      <p>Ha egy számot <span class="math inline">\(n\)</span> tizedesre kerekítünk, az <span class="math inline">\((n{+}1)\)</span>-edik tizedes dönt:</p>
+      <p>Ha egy számot <span class="math inline">\(n\)</span> tizedesjegyre kerekítünk, az <span class="math inline">\((n{+}1)\)</span>-edik tizedesjegyet nézzük:</p>
       <ul>
-        <li>ha az kisebb, mint <span class="math inline">\(5\)</span> → az <span class="math inline">\(n\)</span> tizedest változatlanul hagyjuk (<b>lefelé</b>);</li>
-        <li>ha az <span class="math inline">\(5\)</span> vagy nagyobb → az <span class="math inline">\(n\)</span>-edik tizedesjegyet <b>1-gyel növeljük</b>. Negatív számnál ugyanígy járunk el az <b>abszolút értékkel</b>: <span class="math inline">\(-3{,}148 \approx -3{,}15\)</span>.</li>
+        <li>ha az kisebb, mint <span class="math inline">\(5\)</span> → az első <span class="math inline">\(n\)</span> tizedesjegyet megtartjuk, a többit elhagyjuk;</li>
+        <li>ha az <span class="math inline">\(5\)</span> vagy nagyobb → az utolsó megtartott számjegyet <b>1-gyel növeljük</b>, szükség esetén tízes átlépéssel, és a további tizedesjegyeket elhagyjuk. Negatív számnál ugyanígy járunk el az <b>abszolút értékkel</b>: <span class="math inline">\(-3{,}148 \approx -3{,}15\)</span>.</li>
       </ul>
     </div>
     <div class="doboz pelda" id="pelda-kerekites">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
-      Kerekítsd a <span class="math inline">\(3{,}14159\)</span>-et 2, majd 3 tizedesre.
+      Kerekítsd a <span class="math inline">\(3{,}14159\)</span>-et két, illetve három tizedesjegyre!
       <details><summary>Megoldás</summary><div class="bel"><p>2 tizedesre: a 3. tizedes <span class="math inline">\(1&lt;5\)</span> → <span class="math inline">\(3{,}14\)</span>. 3 tizedesre: a 4. tizedes <span class="math inline">\(5\)</span> → felfelé, <span class="math inline">\(3{,}142\)</span>.</p></div></details>
     </div>
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> A „pontos fél” finomítása</p>
-      Ha a levágandó rész pontosan <span class="math inline">\(\dots5\)</span> (utána csak nullák), egyes szabványok a <b>páros felé</b> kerekítenek (banki kerekítés): <span class="math inline">\(2{,}5\to 2\)</span>, de <span class="math inline">\(3{,}5\to 4\)</span>. Ez sok mérésnél kiegyenlíti a hibát. A mindennapokban a „felfelé” szabály is elfogadott.
+      Ha a levágandó rész pontosan <span class="math inline">\(\dots5\)</span> (utána csak nullák), egyes számítási eljárások a <b>páros felé</b> kerekítenek (banki kerekítés): <span class="math inline">\(2{,}5\to 2\)</span>, de <span class="math inline">\(3{,}5\to 4\)</span>. Így a félértékeket nem mindig ugyanabban az irányban kerekítik. Ezen az oldalon az előbb megadott szabályt követjük: az 5-ös számjegynél is növeljük az utolsó megtartott jegyet; negatív számnál az abszolút értéket kerekítjük, majd visszaírjuk a mínuszjelet.
     </div>
 
 <h2 id="s2">Abszolút és relatív hiba</h2>
-    <p>A kerekített (közelítő) érték eltér a pontostól. Ezt az eltérést kétféleképp mérjük.</p>
+    <p>A közelítő érték eltérhet a pontos értéktől. Az eltérést abszolút és relatív hibával jellemezhetjük.</p>
     <div class="doboz definicio" id="def-hiba">
       <p class="cim"><span class="ikon">📗</span> Definíció</p>
       <p>Legyen <span class="math inline">\(x\)</span> a pontos, <span class="math inline">\(x^{*}\)</span> a közelítő érték.</p>
-      <p><b>Abszolút hiba:</b> \[\Delta=|x-x^{*}|.\] <b>Relatív hiba</b> csak <span class="math inline">\(x\neq 0\)</span> esetén: \[\delta=\frac{\Delta}{|x|}\quad(\text{gyakran }\%\text{-ban}).\] Az abszolút hiba a mértékegység nagyságától függ, a relatív hiba viszont <b>összemérhetővé</b> teszi a különböző nagyságú méréseket.</p>
+      <p><b>Abszolút hiba:</b> \[\Delta=|x-x^{*}|.\] <b>Relatív hiba</b> csak <span class="math inline">\(x\neq 0\)</span> esetén: \[\delta=\frac{\Delta}{|x|}\quad(\text{gyakran }\%\text{-ban}).\] Mért mennyiségnél az abszolút hiba mértékegysége megegyezik a mennyiségével. A relatív hiba mértékegység nélküli arány: az eltérést a pontos érték nagyságához viszonyítja.</p>
     </div>
     <div class="doboz pelda" id="pelda-hiba">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
@@ -69,7 +69,7 @@
 
     <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A relatív hiba az abszolút hibát a mennyiség nagyságához viszonyítja. 0,5 cm egy 15 cm-es ceruzán kb. 3,3%, egy 100 m-es focipályán viszont 0,005% — ezért súlyosabb a ceruzánál." data-nem="✘ Az abszolút hiba önmagában nem mond eleget: a relatív hiba a mért mennyiséghez viszonyít. 0,5 cm a rövid ceruzán arányaiban sokkal nagyobb tévedés, mint a hosszú focipályán.">
       <p class="kviz-cim"><span class="ikon">🎯</span> Gyors kérdés</p>
-      <p>Két mérés abszolút hibája egyaránt <span class="math inline">\(0{,}5\)</span> cm: az egyik egy ceruzáé, a másik egy focipályáé. Melyik állítás igaz?</p>
+      <p>Két mérés abszolút hibája egyaránt <span class="math inline">\(0{,}5\)</span> cm: az egyik egy ceruza, a másik egy focipálya hosszának mérésekor keletkezett. Melyik állítás igaz?</p>
       <div class="opciok"><button>A focipályánál nagyobb a relatív hiba</button><button>Ugyanakkora, hiszen az abszolút hiba egyenlő</button><button>A ceruzánál nagyobb a relatív hiba</button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
@@ -98,12 +98,12 @@
     </div>
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
-      A Föld–Nap távolság kb. <span class="math inline">\(1{,}5\cdot 10^{11}\)</span> m, egy vízmolekula átmérője kb. <span class="math inline">\(2{,}8\cdot 10^{-10}\)</span> m. Ilyen nagyságrendeknél a normál alak nélkül elvesznénk a nullák között — a számológép is <span class="math inline">\(\texttt{E}\)</span> jelöléssel (pl. <span class="math inline">\(\texttt{1.5E11}\)</span>) ezt használja.
+      A Föld és a Nap átlagos távolsága kb. <span class="math inline">\(1{,}5\cdot 10^{11}\)</span> m, egy vízmolekula jellemző mérete kb. <span class="math inline">\(2{,}8\cdot 10^{-10}\)</span> m. A normál alakban könnyebben áttekinthető a sok számjegy. A számológép <span class="math inline">\(\texttt{E}\)</span> jelölése (pl. <span class="math inline">\(\texttt{1.5E11}\)</span>) is tízhatványt jelöl. A kijelzőn használt pont itt a tizedesvessző szerepét tölti be.
     </div>
 
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-egesz-es-valos-szamok.html#alap-10">🐜 Henrik-bevetés <span class="cimke">A 10–11</span></a><a class="sav bruno" href="feladatok-egesz-es-valos-szamok.html#kozep-9">💥 Brúnó-bevetés <span class="cimke">K 9</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/banner_bruno.webp" alt="Banner Brúnó — a mérés és a hibabecslés tudósa" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Banner Brúnó:</b> A műszerek kalibrálva, a hibát kézben tartod. Készen állsz az éles bevetésre — irány a <b>kiképzési adattár</b>, aztán a terepküldetés.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/banner_bruno.webp" alt="Banner Brúnó — a mérés és a hibabecslés tudósa" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Banner Brúnó:</b> A kerekítést és a hibaszámítást most próbáld ki önállóan is: irány a <b>kiképzési adattár</b>, aztán a terepküldetés.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-szamhalmazok.html"><span class="irany">← Előző</span><span class="hova">Számhalmazok: ℕ, ℤ, ℚ, ℝ</span></a>
       <a class="kov" href="feladatok-egesz-es-valos-szamok.html"><span class="irany">Következő →</span><span class="hova">Feladatgyűjtemény</span></a>

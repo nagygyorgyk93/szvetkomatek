@@ -511,3 +511,31 @@ Valódi képernyőolvasós próba, a többi összetett ábra, külső szolgálta
 a képes hátterek kézi kontrasztja és JS nélküli képlet-felolvasás még hátra van.
 Más böngészőt és teljes PDF-oldaltördelést nem minősítünk.
 **Tanári döntés kell: nincs új kérdés.**
+
+
+## Nyolcadik adag — 1e/03 számhalmazok, abszolútérték és felbontás (2026-10-05)
+
+A négy tananyag három SVG-je teljesebb, látható leírást kapott,
+`aria-describedby` kapcsolattal. A számhalmazok egymásba illeszkedése és az
+összes számos példa besorolása, a két szám abszolútértéke, illetve a 120 teljes
+prímtényezős osztási sora szövegesen is olvasható.
+
+A számhalmaz-ábra három példafelirata hibás tartományba került: a −3 és 0
+az N-ben, a törtek a Z-ben, az irracionális példák a Q-ban látszottak.
+A feliratok áthelyezve; a tényleges teljes szövegdobozuk mindhárom vizsgált
+szélességen a megfelelő halmazban van, és nem metszi a kizárt belső halmazt.
+Az oszthatóság utolsó kvíze a gyakorlósáv dobozából a megfelelő helyre került.
+
+Mindhárom név és leírás ellenőrizve az Edge hozzáférhetőségi fájában.
+Végleges böngésző/axe: **24 nézet, 0 elrendezési és szabályjelzés**;
+nyomtatás JS be/ki **8/8**, a három ábraleírás JS nélkül is látható.
+A három mobilos ábra és a számhalmaz-ábra nyomtatási képe szemrevételezve.
+jsdom **246 képlet, 9/9 kvíz, 0 hiba**; teljes kánon/link **310/0**.
+A lektori javítások után mind a négy tananyag újramérve.
+Részletes hibalista, megőrzés, lektor és számolás:
+[A3 negyedik adag](A3_nyelvi_ellenorzes.md).
+
+Valódi képernyőolvasós próba, a többi összetett ábra, külső szolgáltatói felület,
+a képes hátterek kézi kontrasztja és JS nélküli képlet-felolvasás még hátra van.
+Más böngészőt és teljes PDF-oldaltördelést nem minősítünk.
+**Tanári döntés kell: nincs új kérdés.**

@@ -32,19 +32,19 @@
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
-      <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/banner_bruno_w.webp" alt="Banner Brúnó — a mérés és a hibabecslés tudósa" width="1200" height="670" decoding="async"><p>📡 <b>Banner Brúnó:</b> A műszereim méréseihez tudnom kell, <b>milyen számmal</b> dolgozom. Egész? Tört? Vagy olyan, amit tört alakban le sem lehet írni? A <b>számegyenesen</b> minden valós szám elfér — kalibráljuk együtt a számkört.</p></div>
-    <p>A számfogalom nem egyszerre született meg: a számláláshoz elég volt a természetes szám, de a kivonás, az osztás és a mérés újra meg újra kitágította a számkört. A végállomás — ebben az évben — a <b>valós számok</b> halmaza.</p>
+      <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/banner_bruno_w.webp" alt="Banner Brúnó — a mérés és a hibabecslés tudósa" width="1200" height="670" decoding="async"><p>📡 <b>Banner Brúnó:</b> A műszereim méréseihez tudnom kell, <b>milyen számmal</b> dolgozom. Egész? Tört? Vagy olyan, amit tört alakban le sem lehet írni? A <b>számegyenesen</b> minden valós számnak megvan a helye. Nézzük meg, hogyan kapcsolódnak egymáshoz a számhalmazok.</p></div>
+    <p>A számfogalom nem egyszerre született meg: a számláláshoz elég volt a természetes szám, de a kivonás, az osztás és a mérés újra meg újra kitágította a számkört. Ebben a témakörben a <b>valós számok</b> halmazáig jutunk el.</p>
 
     <h2 id="s1">A számkör bővülése</h2>
-    <p>Minden bővítésnek oka van: olyan műveletet vagy feladatot akarunk elvégezni, ami a szűkebb halmazban nem megy.</p>
+    <p>A számhalmazokat úgy bővítjük, hogy újabb műveletek eredményét és geometriai mennyiségeket is felírhassunk bennük.</p>
     <ul>
-      <li><b>Természetes számok</b> <span class="math inline">\(\mathbb{N}=\{1,2,3,\dots\}\)</span> — a számláláshoz. (A nullával bővítve: <span class="math inline">\(\mathbb{N}_0\)</span>.) A kivonás nem mindig végezhető el (<span class="math inline">\(2-5\)</span>).</li>
-      <li><b>Egész számok</b> <span class="math inline">\(\mathbb{Z}=\{\dots,-2,-1,0,1,2,\dots\}\)</span> — a kivonás már mindig megy. De az osztás nem (<span class="math inline">\(3:2\)</span>).</li>
-      <li><b>Racionális számok</b> <span class="math inline">\(\mathbb{Q}\)</span> — a nemnulla számmal való osztás is megy.</li>
-      <li><b>Valós számok</b> <span class="math inline">\(\mathbb{R}\)</span> — a mérés is mindig megy (pl. az egységnégyzet átlója <span class="math inline">\(\sqrt2\)</span>).</li>
+      <li><b>Természetes számok</b> <span class="math inline">\(\mathbb{N}=\{1,2,3,\dots\}\)</span> — a számláláshoz. (A nullával bővítve: <span class="math inline">\(\mathbb{N}_0\)</span>.) Két természetes szám különbsége nem mindig természetes szám (<span class="math inline">\(2-5\)</span>).</li>
+      <li><b>Egész számok</b> <span class="math inline">\(\mathbb{Z}=\{\dots,-2,-1,0,1,2,\dots\}\)</span> — két egész szám különbsége mindig egész. A hányadosuk viszont nem feltétlenül egész (<span class="math inline">\(3:2\)</span>).</li>
+      <li><b>Racionális számok</b> <span class="math inline">\(\mathbb{Q}\)</span> — két racionális szám hányadosa is racionális, ha az osztó nem nulla.</li>
+      <li><b>Valós számok</b> <span class="math inline">\(\mathbb{R}\)</span> — olyan hosszakat is megadhatunk, amelyek nem írhatók fel racionális számmal (pl. az egységnégyzet átlója <span class="math inline">\(\sqrt2\)</span>).</li>
     </ul>
     <figure class="abra">
-    <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Egymásba ágyazott számhalmazok: N a Z-ben, a Q-ban, az R-ben">
+    <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Egymásba ágyazott számhalmazok: N a Z-ben, a Q-ban, az R-ben" aria-describedby="abra-szamhalmazok-leiras">
       <rect x="8" y="8" width="344" height="204" rx="12" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
       <rect x="26" y="30" width="292" height="164" rx="11" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
       <rect x="48" y="54" width="220" height="120" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
@@ -54,11 +54,11 @@
       <text x="250" y="72" font-size="15" fill="#047857" font-style="italic">ℤ</text>
       <text x="90" y="100" font-size="14" fill="#065f46" font-style="italic">ℕ</text>
       <text x="96" y="122" font-size="11" fill="#065f46">1, 2, 3…</text>
-      <text x="150" y="140" font-size="11" fill="#047857">−3, 0</text>
-      <text x="120" y="166" font-size="11" fill="#1d4ed8">½, −0,75</text>
-      <text x="285" y="150" font-size="11" fill="#6d28d9">√2, π</text>
+      <text x="228" y="140" font-size="11" fill="#047857">−3, 0</text>
+      <text x="90" y="188" font-size="11" fill="#1d4ed8">½, −0,75</text>
+      <text x="245" y="207" font-size="11" fill="#6d28d9">√2, π</text>
     </svg>
-    <figcaption><span class="math inline">\(\mathbb{N}\subset\mathbb{Z}\subset\mathbb{Q}\subset\mathbb{R}\)</span> — minden szűkebb halmaz része a tágabbnak.</figcaption>
+    <figcaption id="abra-szamhalmazok-leiras">A természetes számok halmaza az egészekébe, az egészeké a racionálisakéba, a racionálisaké a valósakéba illeszkedik. Az 1, 2 és 3 természetes szám; a −3 és 0 egész, de itt nem természetes; az ½ és −0,75 racionális, de nem egész; a négyzetgyök kettő és pí valós, de nem racionális.</figcaption>
     </figure>
 
     <!-- media:begin 1e03-szamhalmazok-video -->
@@ -72,7 +72,7 @@
       <p class="cim"><span class="ikon">📗</span> Definíció</p>
       <p><b>Racionális szám</b> minden olyan szám, amely felírható <span class="math inline">\(\dfrac{p}{q}\)</span> alakban, ahol <span class="math inline">\(p\)</span> egész, <span class="math inline">\(q\)</span> nemnulla egész. Jele <span class="math inline">\(\mathbb{Q}\)</span>. Tizedes alakban a racionális számok <b>végesek</b> (<span class="math inline">\(\tfrac34=0{,}75\)</span>) vagy <b>szakaszos végtelenek</b> (<span class="math inline">\(\tfrac13=0{,}333\ldots\)</span>).</p>
     </div>
-    <p>Ugyanaz a racionális szám <b>háromféle alakban</b> is felírható — és oda-vissza átváltható:</p>
+    <p>Ugyanaz a racionális szám tört, tizedes és százalékos alakban is felírható. A tört tizedes alakját a számláló és a nevező osztásával kapjuk. Százalékos alakban a tizedes alak százszorosát írjuk a százalékjel elé; visszafelé százzal osztunk. Általánosan: <span class="math inline">\(p\%=\dfrac{p}{100}\)</span>.</p>
     <div class="doboz pelda" id="pelda-alakok">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
       Váltsd át mindhárom alakba (tört, tizedes, százalék): <span class="math inline">\(\tfrac{3}{4}\)</span>, majd <span class="math inline">\(0{,}6\)</span>, majd <span class="math inline">\(35\%\)</span>.
@@ -89,14 +89,15 @@
     <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Minden egész felírható törtként (például 5 = 5/1), tehát racionális is — de fordítva nem igaz." data-nem="✘ Fordítva gondoltad: az egész számok részhalmazát alkotják a racionálisoknak. Az 1/2 racionális, de nem egész.">
       <p class="kviz-cim"><span class="ikon">🎯</span> Gyors kérdés</p>
       <p>Melyik állítás igaz?</p>
-      <div class="opciok"><button>Minden racionális szám egész</button><button>A kettő ugyanaz</button><button>Minden egész szám racionális</button></div>
+      <div class="opciok"><button>Minden racionális szám egész</button><button>Az egész és a racionális számok halmaza azonos</button><button>Minden egész szám racionális</button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
     <h2 id="s3">Irracionális és valós számok</h2>
-    <p>Vannak számok, amelyek <b>nem</b> írhatók fel két egész hányadosaként — ezek az <b>irracionális számok</b>. Tizedes alakjuk végtelen és <b>nem</b> szakaszos.</p>
+    <p>Azok a valós számok, amelyek <b>nem</b> írhatók fel két egész szám hányadosaként, az <b>irracionális számok</b>. Tizedes alakjuk végtelen és <b>nem</b> szakaszos. A halmazukat itt <span class="math inline">\(\mathbb{I}\)</span>-vel jelöljük.</p>
     <div class="doboz tetel" id="tetel-gyok2">
       <p class="cim"><span class="ikon">📘</span> Tétel</p>
-      <p>A <span class="math inline">\(\sqrt2\)</span> nem racionális szám — nincs olyan <span class="math inline">\(\tfrac{p}{q}\)</span> tört (<span class="math inline">\(p,q\)</span> egész, <span class="math inline">\(q\neq 0\)</span>), amelynek négyzete <span class="math inline">\(2\)</span>. Hasonlóan irracionális pl. <span class="math inline">\(\sqrt3\)</span>, <span class="math inline">\(\pi\)</span> és <span class="math inline">\(e\)</span>.</p>
+      <p>A <span class="math inline">\(\sqrt2\)</span> nem racionális szám — nincs olyan <span class="math inline">\(\tfrac{p}{q}\)</span> tört (<span class="math inline">\(p,q\)</span> egész, <span class="math inline">\(q\neq 0\)</span>), amelynek négyzete <span class="math inline">\(2\)</span>. További irracionális számok például <span class="math inline">\(\sqrt3\)</span>, <span class="math inline">\(\pi\)</span> és <span class="math inline">\(e\)</span>.</p>
+      <details><summary>Bizonyítás — a négyzetgyök kettő irracionalitása</summary><div class="bel"><p>Tegyük fel, hogy <span class="math inline">\(\sqrt2=\frac{p}{q}\)</span>, ahol <span class="math inline">\(p,q\)</span> pozitív egészek, és a tört már nem egyszerűsíthető. Négyzetre emelve <span class="math inline">\(p^2=2q^2\)</span>. Ezért <span class="math inline">\(p^2\)</span> páros, tehát <span class="math inline">\(p\)</span> is páros, hiszen páratlan szám négyzete páratlan. Írjuk fel <span class="math inline">\(p=2r\)</span> alakban. Ekkor <span class="math inline">\(4r^2=2q^2\)</span>, vagyis <span class="math inline">\(q^2=2r^2\)</span>, így <span class="math inline">\(q\)</span> is páros. A tört tehát egyszerűsíthető 2-vel, ami ellentmond a feltevésnek. Ezért <span class="math inline">\(\sqrt2\)</span> irracionális. ∎</p></div></details>
     </div>
     <div class="doboz definicio" id="def-valos">
       <p class="cim"><span class="ikon">📗</span> Definíció</p>
@@ -104,7 +105,7 @@
     </div>
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
-      Nem minden gyök irracionális! A <span class="math inline">\(\sqrt9=3\)</span> és a <span class="math inline">\(\sqrt{16}=4\)</span> <b>természetes szám</b>. Besoroláskor mindig <b>egyszerűsíts először</b>: a <span class="math inline">\(\sqrt{9}\)</span> a legszűkebb halmazban (<span class="math inline">\(\mathbb{N}\)</span>) van, nem <span class="math inline">\(\mathbb{R}\)</span>-ben „ragad”.
+      Nem minden gyök irracionális! A <span class="math inline">\(\sqrt9=3\)</span> és a <span class="math inline">\(\sqrt{16}=4\)</span> <b>természetes szám</b>. Besoroláskor mindig <b>egyszerűsíts először</b>: a <span class="math inline">\(\sqrt9=3\)</span> természetes szám, így a legszűkebb felsorolt halmazba, a <span class="math inline">\(\mathbb{N}\)</span>-be soroljuk. A nagyobb számhalmazoknak is eleme.
     </div>
 
     <h2 id="s4">Abszolútérték</h2>
@@ -113,7 +114,7 @@
       <p>Egy szám <b>abszolútértéke</b> a számegyenesen a <b>0-tól mért távolsága</b>: \[|x|=\begin{cases}x,&\text{ha } x\ge 0\\[2pt]-x,&\text{ha } x&lt;0.\end{cases}\] A távolság sosem negatív: <span class="math inline">\(|x|\ge 0\)</span>, és <span class="math inline">\(|{-}7|=|7|=7\)</span>.</p>
     </div>
     <figure class="abra">
-    <svg viewBox="0 0 360 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Számegyenes: −3 és 3 egyaránt 3 távolságra a 0-tól">
+    <svg viewBox="0 0 360 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Számegyenes: −3 és 3 egyaránt 3 távolságra a 0-tól" aria-describedby="abra-abszolut-leiras">
       <line x1="20" y1="55" x2="340" y2="55" stroke="#0f172a" stroke-width="1.5"/>
       <polygon points="340,55 332,51 332,59" fill="#0f172a"/>
       <line x1="180" y1="48" x2="180" y2="62" stroke="#0f172a" stroke-width="1.5"/><text x="176" y="78" font-size="12">0</text>
@@ -122,13 +123,13 @@
       <path d="M100 40 Q140 20 180 40" fill="none" stroke="#ef4444" stroke-width="1.5"/><text x="126" y="24" font-size="11" fill="#ef4444">3</text>
       <path d="M180 40 Q220 20 260 40" fill="none" stroke="#10b981" stroke-width="1.5"/><text x="212" y="24" font-size="11" fill="#047857">3</text>
     </svg>
-    <figcaption><span class="math inline">\(|-3|=|3|=3\)</span>: mindkettő <span class="math inline">\(3\)</span> egység távol a 0-tól.</figcaption>
+    <figcaption id="abra-abszolut-leiras">A számegyenesen a −3 a 0-tól balra, a 3 jobbra helyezkedik el. Mindkettő távolsága 3 egység a 0-tól, ezért mindkét szám abszolútértéke 3.</figcaption>
     </figure>
-    <p>Egyszerű egyenletek és egyenlőtlenségek (a távolság-jelentés alapján):</p>
+    <p>Egyszerű egyenletek és egyenlőtlenségek a távolság jelentése alapján. A következőkben <span class="math inline">\(x\)</span> valós szám, <span class="math inline">\(a\ge 0\)</span>:</p>
     <ul>
-      <li><span class="math inline">\(|x|=a\)</span> (<span class="math inline">\(a\ge 0\)</span>) <span class="math inline">\(\Rightarrow x=a\)</span> vagy <span class="math inline">\(x=-a\)</span>;</li>
-      <li><span class="math inline">\(|x|&lt;a\)</span> <span class="math inline">\(\Rightarrow -a&lt;x&lt;a\)</span> (a 0-hoz közeli sáv);</li>
-      <li><span class="math inline">\(|x|>a\)</span> <span class="math inline">\(\Rightarrow x&lt;-a\)</span> vagy <span class="math inline">\(x>a\)</span> (a széleken).</li>
+      <li><span class="math inline">\(|x|=a\)</span> <span class="math inline">\(\Leftrightarrow x=a\)</span> vagy <span class="math inline">\(x=-a\)</span>;</li>
+      <li><span class="math inline">\(|x|&lt;a\)</span> <span class="math inline">\(\Leftrightarrow -a&lt;x&lt;a\)</span> (a két határpont közötti rész);</li>
+      <li><span class="math inline">\(|x|>a\)</span> <span class="math inline">\(\Leftrightarrow x&lt;-a\)</span> vagy <span class="math inline">\(x>a\)</span> (a széleken).</li>
     </ul>
     <div class="doboz pelda" id="pelda-abszolut">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
@@ -144,7 +145,7 @@
     <!-- media:end 1e03-abszolutertek-video -->
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-egesz-es-valos-szamok.html#alap-7">🐜 Henrik-bevetés <span class="cimke">A 7–9</span></a><a class="sav bruno" href="feladatok-egesz-es-valos-szamok.html#kozep-7">💥 Brúnó-bevetés <span class="cimke">K 7–8, 10</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/banner_bruno.webp" alt="Banner Brúnó — a mérés és a hibabecslés tudósa" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Banner Brúnó:</b> A számkör kész, a számegyenes kalibrálva. De a valódi mérés sosem tökéletes — a következő lépés a <b>közelítés</b> és a <b>hiba</b> kezelése.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/banner_bruno.webp" alt="Banner Brúnó — a mérés és a hibabecslés tudósa" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Banner Brúnó:</b> A számhalmazok közötti kapcsolatokat ismerjük. Most térjünk vissza a műszerekhez: a következő lépés a <b>közelítés</b> és a <b>hiba</b> kezelése.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-szamrendszerek.html"><span class="irany">← Előző</span><span class="hova">Pozíciós számrendszerek</span></a>
       <a class="kov" href="tananyag-kozelites.html"><span class="irany">Következő →</span><span class="hova">Közelítés, kerekítés, normál alak</span></a>
