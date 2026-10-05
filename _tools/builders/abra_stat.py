@@ -16,7 +16,7 @@ import math
 import random
 from html import escape
 
-from tananyag_common import _IV_SZAMLALO, _fmt
+from tananyag_common import _IV_SZAMLALO, _IV_STATIKUS, _fmt
 
 TINTA, SZURKE, HALV, RACS = "#0f172a", "#475569", "#94a3b8", "#cbd5e1"
 KEK, KEKH, ZOLD, ZOLDH, PIROS, BOR = "#1d4ed8", "#dbeafe", "#047857", "#d1fae5", "#b91c1c", "#b45309"
@@ -286,8 +286,8 @@ def svg_mozaik(oszlopok, sor_nevek, *, w=460, h=250, leiras="Mozaikábra"):
         cs = a + b
         sz = px * cs / ossz
         ha = py * a / cs
-        ki.append(f'  <rect x="{x:.1f}" y="{fent}" width="{sz:.1f}" height="{ha:.1f}" fill="{ZOLD}" '
-                  f'fill-opacity=".8"/>')
+        # A fehér sávfelirat kontrasztjához a zöld háttér tömör marad.
+        ki.append(f'  <rect x="{x:.1f}" y="{fent}" width="{sz:.1f}" height="{ha:.1f}" fill="{ZOLD}"/>')
         ki.append(f'  <rect x="{x:.1f}" y="{fent + ha:.1f}" width="{sz:.1f}" height="{py - ha:.1f}" fill="{HALV}" '
                   f'fill-opacity=".55"/>')
         ki.append(_t(x + sz / 2, fent + ha / 2 + 4, f"{sor_nevek[0]}: {ezres(a)} ({tized(100 * a / cs, 1)}%)",
@@ -406,7 +406,7 @@ def svg_szimulacio(kezdo_dobas=200, mag=2026, felirat="", leiras="Érme- és koc
     gombok = "".join(f'<button type="button" data-db="{db}">+{ezres(db)}</button>' for db in (1, 10, 100, 1000))
     cap = f'\n<p class="cap">{felirat}</p>' if felirat else ""
     return (f'<div class="svgcard interaktiv" data-mod="szimulacio" data-w="{w}" data-h="{h}" data-sor="{sor}">\n'
-            f'{svg}\n'
+            f'{svg}\n' + _IV_STATIKUS +
             f'<div class="iv-vezerlo iv-gombsor"><label for="iv{nn}">Kísérlet:</label>'
             f'<select id="iv{nn}" class="iv-szim-tipus"><option value="erme">érmedobás — fej</option>'
             f'<option value="kocka">kockadobás — hatos</option></select>{gombok}'
@@ -496,7 +496,7 @@ def svg_adatlabor(adatsorok, kezdo=0, felirat="", leiras="Adatlabor: pontdiagram
     ert = _al_ertekek(m)
     sorok = "".join(f'<tr><th scope="row">{c}</th><td data-m="{k}">{ert[k]}</td></tr>' for k, c in _AL_SOROK)
     cap = f'\n<p class="cap">{felirat}</p>' if felirat else ""
-    return (f'<div class="svgcard interaktiv adatlabor" data-mod="adatlabor" data-w="{_AL_W}" data-h="{_AL_H}">\n'
+    return (f'<div class="svgcard interaktiv adatlabor" data-mod="adatlabor" data-w="{_AL_W}" data-h="{_AL_H}">\n' + _IV_STATIKUS +
             f'<div class="iv-vezerlo"><label for="iv{nn}">Adatsor:</label><select id="iv{nn}" class="iv-al-valaszt">'
             f'{opciok}</select></div>\n'
             f'<label class="iv-al-cimke" for="iva{nn}">Adatok (szóközzel vagy pontosvesszővel elválasztva; '

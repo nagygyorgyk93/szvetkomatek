@@ -56,12 +56,13 @@ A javítás előtti 310 oldalas, 1280 px-es axe-futásban a szabályonkénti dar
   mindkét szélességen is hibátlan; a tényleges böngészős nevek megegyeznek a lektorált
   kivonattal. A bizonytalan eredményeket az eszköz külön tárolja, nem tekinti tiszta
   kézi ellenőrzésnek.
-- Elrendezés: **310 oldal × 360/390/1280 px = 930 nézet, 0 jelzés**. A végső
-  futás Node Playwrighttal a `layout_teszt.py` változatlanul kiolvasott mérőfüggvényét
-  használta; a helyi fájlokat, JavaScript-kivételeket, konzol- és KaTeX-hibákat is
-  vizsgálta. Az első teljes Python-futás 16 lapon jelezte a rejtett szöveg hibáját;
-  ezt a CSS-javítás utáni teljes futás már nem találta. Egy korábban telepített
-  Python-csomag jogosultsági hibája a repón kívüli futtatókörnyezet problémája volt.
+- Elrendezés — **helyesbítve 2026-10-05:** a korábban jelentett 930/0 Node-eredmény
+  nem érvényes túlcsordulási mérés: a futtató nem hívta meg a kiolvasott függvényt.
+  A harmadik adag alább külön rögzíti a javítást és az új teljes mérést.
+  Az első Python-futás 16 lapon ténylegesen jelezte a rejtett szöveg hibáját;
+  ezt a CSS-ben javítottuk. A későbbi Node-futás a betöltést és a JS-/konzolhibákat
+  vizsgálta, de az elrendezést nem igazolta. A Python-csomag olvasási korlátja
+  a repón kívüli futtatókörnyezet problémája volt.
 - Kánon és jsdom: **310/310 oldal, 0 hiba**, osztályonkénti futásokban és a három
   alaplapon. A főoldal médialejátszására és a kereső `fetch` hívására a jsdom
   figyelmeztet: ezeket nem valósítja meg. A valódi böngészős videó- és keresőpróba sikeres.
@@ -212,3 +213,101 @@ Az automatikus eszköz forrása: [axe-core](https://github.com/dequelabs/axe-cor
 A felirathoz: [W3C — Captions (Prerecorded)](https://www.w3.org/WAI/WCAG21/Understanding/captions-prerecorded.html).
 A szövegkontraszt küszöbeihez: [W3C — Contrast (Minimum)](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html).
 A helyi beszédfelismerő forrása: [faster-whisper](https://github.com/SYSTRAN/faster-whisper).
+
+## Harmadik adag — ábrafeliratok és saját interaktív ábrák (2026-10-05)
+
+Kiindulás: `ce3bca1`, tiszta helyi `main`, a helyi `origin/main` követőreferenciával
+azonos revízió. Új ág és push nem készült. A matek-abra, web-verifikáció és
+média-beágyazás szabályai alapján dolgoztunk.
+
+### Javítás előtt bemutatott hibák
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Több osztály ábrái | Halvány színes és szürke feliratok | közepes | Közös CSS-ben sötétebb árnyalat, a színcsalád megőrzésével |
+| 1e régebbi `.abra` ábrái | Világos ábralap nélkül a sötét tinta a képes háttérre került | magas | Közös világos ábrakeret és megfelelő méretezés |
+| Grafikonok, térbeli vázlatok | Élek és görbék futottak a feliratok mögött | közepes | Világos betűkörvonal; a fehér sávfelirat kivétel |
+| 3e/01 hatszög alapú hasábok | A felső csúcscímke a kép széléhez ért | alacsony | Közös builderben korlátozott felső címkeeltolás |
+| 4e/06 Titanic-mozaikábra | Kevés kontraszt a fehér felirat és az áttetsző zöld sáv között | közepes | Builderben tömör zöld kitöltés |
+| 4e nyolc saját interaktív ábrája | JavaScript nélkül 14 látszólag működő, hatástalan vezérlő maradt | közepes | Builderes statikus tájékoztató, vezérlők csak sikeres JS-indítás után |
+| Korábbi Node QA-futtató | Nem hívta meg az elrendezést mérő függvényt; az üres adatot hibátlannak tekintette | magas | Eszköz: tényleges függvényhívás, kötelező számszerű eredmény, teljes újramérés |
+| 1e/01 halmazok és házi; 4e/06 valószínűség-feladatok | A nyitott végeredmény hosszú képlete mobilon a teljes oldalt szélesítette | közepes | Közös CSS és UI: a képlet saját keretében, billentyűzettel is gördíthető; a képletben nincs örökölt függő behúzás |
+
+A leltár **379 SVG-t talált 141 oldalon**. Mindegyiknek van `role="img"`, nem üres
+`aria-label` és méretezhető `viewBox`; ez a komplex ábrák teljes szöveges
+egyenértékűségét önmagában nem bizonyítja. A javítás előtti színmérés két szélességen
+849 jelzést adott 194 ábrában, 87 oldalon; ezek átfedő mérési jelzések, nem 849
+független hiba. A gyanús minták képen is ellenőrizve lettek. A világos borostyán,
+zöld és cián vonalak sötétebbek, a segédrácsok és halvány területkitöltések megmaradtak.
+
+### Ellenőrzések
+
+- **SVG-feliratok:** 141 oldal × 390/1280 px, 758 ábranézet, 6094 szövegrész,
+  **0 fennmaradó kontrasztjelzés, 0 levágott felirat, 0 betöltési hiba**. A legkisebb
+  kontraszt **5,17:1**. A zárt megoldásdobozok a méréshez nyitva voltak. A betűt
+  körülvevő tömör fehér körvonal háttérként szerepel a színpárban, a fehér feliratot
+  a saját sávjához mérjük. A mobilos skálázás két kezdeti hamis jelzését és 17 túl
+  keskeny szövegrész pixelmintavételi hiányát az SVG-egységben megadott körvonal
+  figyelembevétele rendezte; az érintett öt lap külön újramérve is hibátlan.
+  A módszer a [W3C szövegkontraszt-útmutatóját](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html)
+  követi. Ez a feliratszínek vizsgálata, nem minden vonal és kitöltés teljes
+  akadálymentességi igazolása.
+- **Saját interaktív ábrák:** **218/218 sikeres próba**. Tab és látható fókusz;
+  csúszkák Home/End és nyílbillentyűk; szimulátorgombok Enter/Space; kockaválasztás,
+  újrakezdés; üres adatsor és a meglévő adatok visszaállítása; élő visszajelzés és
+  JS-kivétel ellenőrzése. A billentyűzetes mozgatás utáni 16 ábranézet 170 felirata
+  megfelelő kontrasztú és nem levágott. JavaScript nélkül, illetve az interaktív
+  modul sikertelen betöltésekor mind a nyolc kezdőkép és a statikus tájékoztató
+  látszik; nincs hatástalan, látható vezérlő. Az adatlabor kezdő mutatótáblája megmarad.
+- **Axe:** 141 oldal × két szélesség = **282 vizsgálat, 0 szabályjelzés és 0
+  fennmaradó betöltési hiba**. A futtatókörnyezet átmeneti hálózati hibáit új
+  böngészőkörnyezetekben, a helyi fájlok változatlan bájtjaival megismételtük.
+- **Builder és lánc:** kilenc builder öntesztje sikeres; 29 oldal újraépítve,
+  közülük 14 HTML-ben maradt szándékolt változás. Képek → média → háttér →
+  naplótérkép → keresőindex lefutott. Média: változatlan **334 aktív elem, 139 lap**.
+  Naplótérkép: **184 oldal, 2294 feladat, 12315 XP**, változatlan. Keresőindex:
+  **308 nem üres cím és szöveg**; pontosan a nyolc statikus tájékoztatót kapott
+  oldal bejegyzése változott.
+- **Teljes kánon és jsdom:** **310/310 oldal, 0 hiba**; a főoldali lejátszás és
+  a kereső `fetch` hívása a jsdom ismert korlátjaként figyelmeztetést ad.
+  **Linkek 310/0**, gyakorlósáv tiszta, **kulcsteszt 4499/4499**, regressziós
+  érzékenység **4499/4499 = 100%**. A SymPy 1.14.0 külön, repón kívüli példánnyal
+  futott; a korlátozott környezet csomagolvasási jogosultsága miatt külön futtatás
+  kellett. A matematikai algoritmusok és a megoldókulcsok nem változtak.
+- **Tartalommegőrzés:** a 14 módosult HTML szövege az új kezelési tájékoztatók
+  kivételével azonos; minden korábbi azonosító és link megmaradt. Öt ábraminta
+  390 px-es és nyomtatási képét szemrevételeztük. Teljes nyomtatott oldaltördelést
+  és a teljes webhely nyomtatási látványát ebben az adagban nem ellenőriztük.
+
+### Helyesbítés a korábbi Node-elrendezésmérésekhez
+
+A repón kívüli Node-futtató a Python-eszközből kiolvasott függvényt korábban nem
+hívta meg; így a korábbi 930 nézetben nem keletkezett túlcsordulási mérési adat.
+Az ilyen futások **nem igazolják** a korábban jelentett elrendezési eredményt.
+A futtató most ténylegesen meghívja a változatlan projektfüggvényt, és hibát jelez,
+ha nem kap számszerű eredményt. A teljes webhely tényleges újramérése megtörtént:
+**310 oldal × 360/390/1280 px = 930 nézet**, minden nézetben zárt és kinyitott
+megoldásdobozokkal. Zárt állapotban nincs jelzés; nyitott állapotban három oldalon
+hat mobilos túlcsordulás maradt (360/390 px-en): halmazok +82/+52 px, házi +77/+47 px,
+valószínűség +144/+114 px. Betöltési, helyi fájl-, JavaScript- és KaTeX-hiba nincs.
+
+A három hibát a közös megoldásdoboz-stílus rendezte. A hosszú képlet saját
+keretében gördül, a rövid képlet teljesen látszik; az örökölt függő behúzás a
+képleten belül megszűnt. Csak a ténylegesen gördülő képlet kap Tab-fókuszt és
+magyar kezelési nevet. Nyomtatáskor a gördülő keret kikapcsol, a szöveg megmarad.
+Javítás után **a három érintett oldal kilenc nézete újramérve: 0 jelzés**,
+zárt és nyitott megoldásokkal. A teljes 930-as alapmérés és az érintett kilenc
+nézet ismétlése adja a végső lefedettséget; a javítás után nem futott újabb teljes
+930-as mérés. A három lap kánon- és jsdom-próbája külön is **3/3, 0 hiba**.
+A nyitott megoldások kilenc nézetén külön axe-próba is futott: **9/9, 0 jelzés**;
+mind a **13 ténylegesen gördülő képlet** fókuszolható, látható fókuszt és magyar
+nevet kap, és a jobb nyílbillentyű valóban gördíti. Az első célzott próbában az
+örökölt negatív szövegbehúzás hamis gördülő dobozokat és levágott rövid képleteket
+eredményezett; ezt a végső javítás és az ismételt próba rendezte.
+
+### Fennmaradó ellenőrzések és tanári döntés
+
+Q2 továbbra is részben kész. Valódi NVDA/VoiceOver-próba, a komplex ábrák szöveges
+egyenértékűsége, külső beágyazások és a JS nélküli képlet-felolvasás nincs teljesen
+ellenőrizve. A gépi névleltár és a böngésző hozzáférhetőségi fája nem helyettesíti
+a tényleges felolvasást. **Tanári döntés kell: nincs új kérdés.**

@@ -423,6 +423,10 @@ def _iv_teglalapok(a, ab, n, X, Y):
     return " ".join(lo_d), " ".join(hi_d), lo_s, hi_s
 
 
+_IV_STATIKUS = ('<p class="iv-statikus">Az ábra kezdőállapotát látod. '
+                'Az interaktív vezérléshez JavaScript szükséges.</p>\n')
+
+
 def svg_interaktiv(mod, poly, *, xr, yr, x0=0.0, csuszka=(-2.0, 2.0, 0.01, 1.0), w=360, h=250,
                    gorbe_cimke="f", f2=False, felirat="", leiras="Interaktív függvényábra",
                    pont_cimke="P", szin="#2563eb", ab=(0.0, 1.0), pontos="", sereg_c=(-2, -1, 1, 2)):
@@ -525,7 +529,7 @@ def svg_interaktiv(mod, poly, *, xr, yr, x0=0.0, csuszka=(-2.0, 2.0, 0.01, 1.0),
             f'data-yr="{yr[0]},{yr[1]}" data-w="{w}" data-h="{h}" data-x0="{x0}"' + (' data-f2="1"' if f2 else "")
             + (f' data-ab="{ab[0]},{ab[1]}" data-pontos="{pontos}"' if mod == "osszeg" else ""))
     cap = f'\n<p class="cap">{felirat}</p>' if felirat else ""
-    return (f'<div class="svgcard interaktiv" {attr}>\n{svg}\n'
+    return (f'<div class="svgcard interaktiv" {attr}>\n{svg}\n' + _IV_STATIKUS +
             f'<div class="iv-vezerlo"><label for="iv{n}">{cimke} = <span class="iv-ertek">{_fmt(kezdo)}</span></label>'
             f'<input type="range" id="iv{n}" min="{lo}" max="{hi}" step="{lepes}" value="{kezdo}" '
             f'aria-describedby="ivk{n}"></div>\n'
@@ -580,7 +584,7 @@ def svg_pascal(n_max=7, kezdo=4, w=380, h=252, felirat="", leiras="Interaktív P
         ki.append('  </g>')
     ki.append('</svg>')
     cap = f'\n<p class="cap">{felirat}</p>' if felirat else ""
-    return (f'<div class="svgcard interaktiv" data-mod="pascal" data-nmax="{n_max}">\n' + "\n".join(ki) + '\n'
+    return (f'<div class="svgcard interaktiv" data-mod="pascal" data-nmax="{n_max}">\n' + "\n".join(ki) + '\n' + _IV_STATIKUS +
             f'<div class="iv-vezerlo"><label for="iv{nn}">n = <span class="iv-ertek">{kezdo}</span></label>'
             f'<input type="range" id="iv{nn}" min="0" max="{n_max}" step="1" value="{kezdo}" '
             f'aria-describedby="ivk{nn}"></div>\n'

@@ -144,7 +144,7 @@
   /* Csak a ténylegesen gördülő doboz kerül a Tab-sorrendbe. A lenyílók és a
      betűkészletek betöltése után, valamint átméretezéskor újramérjük. */
   function gordithetok(){
-    document.querySelectorAll('.tblwrap, .katex-display').forEach(function(el){
+    document.querySelectorAll('.tblwrap, .katex-display, details .bel .math.inline').forEach(function(el){
       var tul = el.clientWidth > 0 && el.scrollWidth > el.clientWidth;
       if(tul && !el.hasAttribute('tabindex')){
         el.setAttribute('tabindex', '0'); el.setAttribute('data-gorditheto', '1');

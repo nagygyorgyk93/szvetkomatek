@@ -785,8 +785,9 @@ def _kirajzol_test(r, also3, felso3, cimkez, csucsbetuk=True, felso_betuk=True):
     if felso_betuk:
         for i, p in enumerate(felso3):
             dx, dy = _kifele(p, (0.0, 0.0, p[2]), 17)
+            # A legfelső csúcs fölött az egész betű és az alsó index is elférjen.
             r.felirat(p, f"{ABC[i]}<tspan font-size='9' dy='3'>1</tspan>",
-                      dx=dx, dy=dy - 3, meret=13)
+                      dx=dx, dy=max(dy - 3, -10), meret=13)
 
 
 def _elso_el(poly):

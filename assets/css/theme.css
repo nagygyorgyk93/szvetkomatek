@@ -383,6 +383,10 @@ a.kartya:hover::after{transform:translateX(130%);}
 /* ---------- KaTeX finomítás ---------- */
 .katex{font-size:1.06em;}
 .katex-display{overflow-x:auto;overflow-y:hidden;padding:.2rem 0;}
+/* A hosszú végeredmény a nyitott megoldásdoboz saját keretében gördülhet,
+   a teljes oldal szélességét nem növeli meg. */
+details .bel .math.inline{display:inline-block;max-width:100%;box-sizing:border-box;
+  overflow-x:auto;overflow-y:hidden;padding:.1em 0;vertical-align:middle;text-indent:0;}
 
 /* ---------- Tartalmi segédosztályok (tananyag-egységek kánonja) ---------- */
 .lead{color:var(--szurke-600);font-size:1.06rem;}
@@ -406,11 +410,29 @@ table.tt-table .res{font-weight:800;background:rgba(16,185,129,0.15);}
 /* Az ábrák „tervrajz-lapon" ülnek: az inline SVG-k sötét tintával (#0f172a)
    rajzolnak és világos kitöltéseket használnak, ezért a keretük VILÁGOS marad —
    így a feliratok a sötét témában is élesen olvashatók. */
-.venn .vbox,.svgcard,.svgwrap>svg{background:#eef2f6;border:1px solid var(--kampusz-uveg-keret);
+.venn .vbox,.svgcard,.svgwrap>svg,.abra>svg{background:#eef2f6;border:1px solid var(--kampusz-uveg-keret);
   border-radius:var(--r);padding:8px;box-shadow:0 0 14px rgba(0,255,102,.12),var(--arny);}
 .venn .vbox .cap,.svgcard .cap{color:#334155;}
 .venn .vbox{width:210px;}
-.venn svg,.svgwrap svg,.svgcard svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.venn svg,.svgwrap svg,.svgcard svg,.abra>svg{max-width:100%;height:auto;display:block;margin:0 auto;}
+.svgwrap>svg,.abra>svg{box-sizing:border-box;}
+/* A felirat színcsaládja megmarad, a betű körüli világos tinta pedig elválasztja
+   a szöveget a mögötte futó élektől és görbéktől. A fehér sávfelirat kivétel. */
+svg[role="img"] text{paint-order:stroke;stroke:#ffffff;stroke-width:2.5px;stroke-linejoin:round;}
+svg[role="img"] text[fill="#ffffff"]{stroke:none;}
+svg[role="img"] :is(text,tspan):is([fill="#ef4444"],[fill="#e0392b"]){fill:#b91c1c;}
+svg[role="img"] :is(text,tspan)[fill="#3b82f6"]{fill:#1d4ed8;}
+svg[role="img"] :is(text,tspan)[fill="#0ea5e9"]{fill:#0369a1;}
+svg[role="img"] :is(text,tspan)[fill="#8b5cf6"]{fill:#6d28d9;}
+svg[role="img"] :is(text,tspan):is([fill="#f59e0b"],[fill="#b45309"]){fill:#92400e;}
+svg[role="img"] :is(text,tspan):is([fill="#64748b"],[fill="#94a3b8"],[fill="#8a93a8"]){fill:#475569;}
+svg[role="img"] :is(text,tspan)[fill="#ff5da2"]{fill:#9d174d;}
+svg[role="img"] :is(text,tspan):is([fill="#10b981"],[fill="#0f9d58"],[fill="#047857"]){fill:#065f46;}
+/* A jelentést hordozó világos vonalaknak is szükségük van sötétebb tintára;
+   a halvány segédrács és a területkitöltések változatlanok. */
+svg[role="img"] [stroke="#f59e0b"]{stroke:#b45309;}
+svg[role="img"] [stroke="#10b981"]{stroke:#047857;}
+svg[role="img"] [stroke="#0ea5e9"]{stroke:#0369a1;}
 .svgwrap{text-align:center;margin:1rem 0;}
 .svgwrap,.svgcard,.venn .vbox{break-inside:avoid;}
 .cap{font-size:.86rem;font-weight:600;color:var(--szurke-600);text-align:center;padding:4px 4px 6px;}
@@ -790,6 +812,11 @@ html{scrollbar-color:var(--kampusz-uveg-keret) var(--papir);scrollbar-width:thin
 .interaktiv .iv-vezerlo label{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:600;}
 .interaktiv .iv-vezerlo input[type=range]{flex:1;min-width:8rem;accent-color:#2563eb;cursor:pointer;}
 .interaktiv .iv-kijelzo{color:#334155;font-size:.92rem;text-align:center;max-width:36rem;margin:.35rem auto 0;min-height:2.6em;}
+/* A vezérlők csak a saját ábra sikeres indítása után használhatók. A kezdőkép,
+   a kijelző és az adatlabor mutatótáblája JavaScript nélkül is olvasható. */
+.interaktiv:not(.iv-kesz) :is(.iv-vezerlo,.iv-al-cimke,.iv-al-adat){display:none;}
+.interaktiv .iv-statikus{color:#334155;text-align:center;font-size:.9rem;margin:.5rem auto;max-width:36rem;}
+.interaktiv.iv-kesz .iv-statikus{display:none;}
 /* ---- interaktív: szimulátor és adatlabor (4e/06, 2026-09-29) — gombok, választó, szövegmező, mutatótábla a világos lapon */
 .interaktiv .iv-gombsor{flex-wrap:wrap;gap:.45rem;max-width:36rem;}
 .interaktiv .iv-gombsor button{font:inherit;font-size:.9rem;font-weight:600;padding:.28rem .7rem;border-radius:8px;

@@ -93,6 +93,7 @@
     }
     csuszka.addEventListener("input", frissit);
     frissit();
+    return true;
   }
 
 
@@ -163,6 +164,7 @@
     }
     if (ujra) ujra.addEventListener("click", function () { nullaz(); rajzol(); });
     rajzol();
+    return true;
   }
 
   // ------------------------------------------------------------ adatlabor (2026-09-29)
@@ -272,13 +274,14 @@
       frissit();
     });
     frissit();
+    return true;
   }
 
   function indit(doboz) {
     var mod = doboz.getAttribute("data-mod");
-    if (mod === "pascal") { pascal(doboz); return; }
-    if (mod === "szimulacio") { szimulacio(doboz); return; }
-    if (mod === "adatlabor") { adatlabor(doboz); return; }
+    if (mod === "pascal") return pascal(doboz);
+    if (mod === "szimulacio") return szimulacio(doboz);
+    if (mod === "adatlabor") return adatlabor(doboz);
     var a = szamok(doboz.getAttribute("data-poly"));
     var d1 = derival(a), d2 = derival(d1);
     var xr = szamok(doboz.getAttribute("data-xr")), yr = szamok(doboz.getAttribute("data-yr"));
@@ -402,11 +405,14 @@
     }
     csuszka.addEventListener("input", frissit);
     frissit();
+    return true;
   }
 
   function mind() {
     var dobozok = document.querySelectorAll(".interaktiv[data-mod]");
-    for (var i = 0; i < dobozok.length; i++) indit(dobozok[i]);
+    for (var i = 0; i < dobozok.length; i++) {
+      if (indit(dobozok[i])) dobozok[i].classList.add("iv-kesz");
+    }
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", mind);
   else mind();
