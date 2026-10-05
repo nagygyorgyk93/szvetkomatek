@@ -13,7 +13,7 @@ from math import comb, sqrt
 from collections import Counter
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fgy_common import cards, joker_card, oldal
-from abra_stat import svg_oszlop, mutatok, ezres, tized
+from abra_stat import svg_oszlop, mutatok, ezres, tized, diagram_adatok
 import adat_4e_06 as ADAT
 import tiltott
 TILT = tiltott.modul("tiltott_4e_06")
@@ -666,7 +666,11 @@ SVG_HU = svg_oszlop(["2023", "2024"], [hu23, hu24], ymin=75000, ymax=90000, lepe
                            "2023-ban és 2024-ben")
 S_NEHEZ.append((
     "Egy hírportál ezzel az ábrával mutatta be a magyarországi születések számát:" + FORRAS("eurostat")
-    + f'<div class="svgwrap">{SVG_HU}</div>',
+    + diagram_adatok(SVG_HU, "Magyarországi születések, 2023–2024",
+                     ["év", "születések száma"], [["2023", ezres(hu23)], ["2024", ezres(hu24)]],
+                     megjegyzes="A vízszintes tengelyen az év, a függőlegesen a születések száma szerepel. "
+                                "A függőleges tengely 75 000-től 90 000-ig tart, 5000-es beosztással; az oszlopok "
+                                "75 000-nél kezdődnek."),
     ["Hány százalékkal csökkent valójában a születések száma (egy tizedesre)?",
      "Az ábrán a 2024-es oszlop magassága a 2023-asnak hányad része (három tizedesre)?",
      "Honnan kellene indulnia a függőleges tengelynek, hogy az oszlopok aránya a valódi arányt mutassa?"],

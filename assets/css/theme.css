@@ -397,6 +397,11 @@ table.tt-table{width:auto;min-width:min(100%,420px);margin:14px auto;border-radi
 table.tt-table th,table.tt-table td{padding:.4rem .9rem;}
 table.tt-table .res{font-weight:800;background:rgba(16,185,129,0.15);}
 .tblwrap{overflow-x:auto;}
+/* A diagram és a natív szöveges adattábla közös, teljes szélességű csoport. */
+.diagram-adatok{margin:1rem 0;text-indent:0;}
+.diagram-adatok figcaption{text-align:left;}
+.diagram-adatok summary::before{flex:none;}
+.diagram-adatok summary>span{min-width:0;}
 /* Telefonon a cellában a képlet egyben marad (a KaTeX különben a + és = jelnél sort törne:
    „F=2B+ / KH”); a táblázat a .tblwrap-ben gördül. Szélesebb képernyőn a tördelés marad, hogy
    egy majdnem kiférő táblázat ne kapjon gördítősávot. */

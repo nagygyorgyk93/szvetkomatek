@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import math
 import random
+import re
 from html import escape
 
 from tananyag_common import _IV_SZAMLALO, _IV_STATIKUS, _fmt
@@ -68,6 +69,32 @@ def modusz_szoveg(m):
 
 
 # ------------------------------------------------------------------ közös segédek
+def diagram_adatok(svg, cim, fejlec, sorok, *, megjegyzes="", felirat=""):
+    """A diagram mellé natív lenyílóban, azonos adatokból készült táblázat kerül.
+
+    A táblázat megőrzi a sor- és oszlopfejléceket: nem lapítjuk hosszú ARIA-szöveggé.
+    A számokat a hívó formázza, a cellák sima szövegek; feladatnál csak adott adatot közlünk.
+    """
+    nev = f"{cim} – adatok szövegesen"
+    utalas = escape(f' Az adatok a diagram alatti „{nev}” lenyílóban találhatók.', True)
+    svg = re.sub(r'(aria-label="[^"]*)(")', lambda m: m[1] + utalas + m[2], svg, count=1)
+    fej = "".join(f'<th scope="col">{escape(str(c))}</th>' for c in fejlec)
+    torzs = []
+    for sor in sorok:
+        if len(sor) != len(fejlec):
+            raise ValueError("A diagram adattáblájának sorhossza eltér a fejlécétől.")
+        torzs.append('<tr><th scope="row">' + escape(str(sor[0])) + '</th>'
+                     + "".join(f'<td>{escape(str(c))}</td>' for c in sor[1:]) + '</tr>')
+    cap = f'<p class="cap">{felirat}</p>' if felirat else ""
+    leiras = f'<p>{escape(megjegyzes)}</p>' if megjegyzes else ""
+    return (f'<figure class="diagram-adatok" aria-label="{escape(cim, True)}">'
+            f'<div class="svgcard">{svg}</div><figcaption>{cap}'
+            f'<details class="abra-adatok"><summary><span>{escape(nev)}</span></summary><div class="bel">{leiras}'
+            f'<div class="tblwrap"><table class="tt-table"><caption>{escape(cim)}</caption>'
+            f'<thead><tr>{fej}</tr></thead><tbody>{"".join(torzs)}</tbody></table></div>'
+            '</div></details></figcaption></figure>')
+
+
 def _svg(w, h, leiras, belso, extra_attr=""):
     return (f'<svg viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="{escape(leiras, True)}" '
             f'xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif"{extra_attr}>\n'

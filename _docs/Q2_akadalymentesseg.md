@@ -383,3 +383,87 @@ iframe-ben helyi próbadokumentummal. A szolgáltatók saját lejátszója, feli
 A hozzáférhetőségi fa nem helyettesít valódi NVDA/VoiceOver-felolvasást.
 Q2 továbbra is részben kész: ezen túl a komplex ábrák szöveges egyenértékűsége
 és a JS nélküli képlet-felolvasás is hátravan. **Tanári döntés kell: nincs új kérdés.**
+
+## Ötödik adag — diagramok szöveges adatai, 4e/06 (2026-10-05)
+
+Kiinduló revízió: `2f258a4`, tiszta helyi `main`, egy committal a helyi
+`origin/main` követőreferencia előtt. A hat diagram javítását előzetes hibatáblában
+bemutattuk. Új ág és push ebben az adagban sem készült.
+
+### Megállapítások és javítások
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Adatokból kép — kördiagram | A hozzáférhető név közölte a százalékokat, de a négy darabszám csak az SVG-ben szerepelt | közepes | Builder: darabszám és kerekített százalék együtt, adattáblában |
+| Ugyanott — hisztogram | A 20 éves csoportok táblája nem helyettesítette a rajz 18, ötéves korcsoportját | közepes | Builder: a teljes adatsor, a nyitott 85+ csoport és a tengely leírása |
+| Ugyanott — vonaldiagram | A hozzáférhető név a tendenciát, az SVG csak három pont számértékét közölte | közepes | Builder: mind a kilenc népszámlálás adatai és az arányos időtengely leírása |
+| Statisztika — nehéz 1. | A születésszámok csak a rajzon voltak megadva | magas | Builder: a két adat és a meglévő tengelybeosztás |
+| Házi feladatok — alap 4. | A 12 havi esősnap-szám csak a rajzról volt leolvasható | magas | Builder: havi adattábla, az esős nap és a tengely leírása |
+| Terepküldetés — Jokić-ábra | A két pontátlag csak a rajzon szerepelt | magas | Builder: a két adott pontátlag és a meglévő tengelybeosztás |
+| Kulcsellenőrző, az új adattáblák után | Az első tetszőleges lenyílót válasznak olvasta, így hat téves eltérést jelzett | közepes | Eszköz: kizárólag a `vegeredmeny` osztályú lenyíló olvasása; öt szerkezeti teszt |
+| Nyomtatás JavaScript nélkül | A böngésző natív zárt lenyílója a régi tartalék CSS ellenére sem festette ki a táblázatot | közepes | Közös `print.css`: a natív lenyílótartalom is látható nyomtatáskor |
+
+### Megvalósítás
+
+- Hat diagram mellett **47 adatsor**, natív, billentyűzettel működő lenyílóban.
+  Mindegyik táblázat címet, oszlopfejléceket és sorfejléceket kapott. A rövid SVG-név
+  megmondja, melyik lenyíló tartalmazza az adatokat; a táblázat szerkezete megmarad.
+  A megoldás a [W3C összetett ábrákhoz adott útmutatóját](https://www.w3.org/WAI/tutorials/images/complex/)
+  követi: rövid név mellett mindenki számára elérhető, strukturált szöveges adatközlés.
+- Az új `abra_stat.diagram_adatok` segédet a három érintett builder használja.
+  A diagram és leírása natív `figure`/`figcaption` csoport; nincs új táblázatstílus.
+  A feladatkártya-generátor a csoportot a bekezdésen kívül helyezi el.
+  A terepküldetés listájának függő szövegbehúzását az ábracsoport nem örökli.
+- Érintett lapok: `tananyag-adatok.html`, `feladatok-statisztika.html`,
+  `feladatok-hazi.html`, `terepkuldetes.html`, mind a `4e/06-valoszinuseg-statisztika/`
+  mappában. A keresőindexben csak e négy lap szövege változott.
+  Matematikai feladat, számadat, rajzgeometria, végeredmény és horgony nem változott.
+- A próbák közben az új csoport fölösleges ARIA-szerepét eltávolítottuk;
+  a natív ábraszerep megmaradt. A nyomtatási hibát a kép mutatta meg:
+  az elem méretének mérése önmagában nem igazolta, hogy a böngésző ki is festi.
+  Az utópróbák a natív tartalom láthatóságát és a képet is ellenőrizték.
+
+### Ellenőrzés
+
+- **Adatok:** hat táblázat, 47 sor; mindhárom szélességen pontos egyezés a már
+  meglévő nyilvános adatmodullal. A százalékokat a kontroll függetlenül,
+  decimális `ROUND_HALF_UP` kerekítéssel képezte. **17/17 megőrzési vizsgálat**:
+  a négy lapon az SVG-k (a hozzáférhető név kivételével), végeredmények, kvízek,
+  azonosítók és a backlog zárolt fejléce változatlan. A két feladat új ábrája
+  a nyers HTML-ben is a bekezdésen kívül van.
+- **Böngésző:** négy oldal × 360/390/1280 px × zárt/nyitott állapot = **24 nézet**,
+  0 oldaltúlcsordulás és KaTeX-hiba. Axe ugyanebben a 24 nézetben: **0 szabályjelzés**.
+  A képes háttérhez az axe kézi kontrasztellenőrzést kér; ez nem teljes WCAG-igazolás.
+  A listából örökölt behúzás utolsó javítása után a terepküldetés külön,
+  mindhárom szélességen, zárt és nyitott állapotban is újra ellenőrizve.
+- **Billentyűzet:** hat lenyíló × három szélesség × Enter/Space = **36 sikeres
+  nyitás–zárás ciklus**, megmaradó fókusz. JavaScript nélkül mind a hat lenyíló
+  Space-szel használható, a táblázat hozzáférhető.
+- **Nyomtatás:** négy lap, JavaScripttel és nélküle = **8 sikeres eset**;
+  mind a 47 adatsor látható. Két korábbi feladatlapon kontrollként JavaScript nélkül
+  a 31, illetve 55 zárt Végeredmény-doboz tartalma is megjelenik nyomtatási módban.
+  Mobilos komponensképek és a hisztogram nyomtatási képe szemrevételezve.
+  A külön komponensképeken a lebegő fejléc/rakéta szükség esetén elrejtve, hogy ne
+  takarja a vizsgált ábrát. A teljes PDF-oldaltördelést nem minősítjük.
+- **Friss szemű lektor:** kizárólag az új szövegekből és a két feladatból dolgozott,
+  eredmények nélkül. A független válaszok a meglévő kulcsokkal egyeznek:
+  10,0%; 0,305; 0-tól induló tengely; március/július; 108 nap és 9 nap/hónap; 0,295.
+  Biztos számolási vagy nyelvi hibát nem talált. A tananyag három helyes összehasonlítása
+  maradt; a feladatdiagramok leírása csak adott adatot és tengelybeosztást közöl.
+  A nyitott utolsó korcsoportot a képaláírás és az új leírás egyaránt megnevezi.
+- **Projektlánc:** a három builder öntesztje és privát tiltott-ellenőrzése rendben;
+  képek → média → háttér lefutott, a két érintett tananyaglapon a médiák visszaálltak.
+  Média: változatlan 334 elem, 139 lap. Teljes kánon **310/310, 0 hiba**;
+  a teljes 4e/06 témakör külön jsdom-futásban **13/13**, 0 render-/kvízhiba.
+  Belső linkek **310/0**, gyakorlósáv tiszta. Kulcsellenőrzés **4499/4499**;
+  regressziós érzékenység **4499/4499 = 100%**; új kulcsolvasó-tesztek **5/5**.
+  Naplótérkép: változatlan 184 oldal, 2294 feladat, 12315 XP; kereső: 308 oldal.
+  A diff és a zárolt fejléc ellenőrzése tiszta.
+
+### Korlátok és tanári döntés
+
+Valódi NVDA/VoiceOver-felolvasás, a többi összetett ábra teljes szöveges
+egyenértékűsége, a külső szolgáltatók médiafelülete/felirata/leirata és a JavaScript
+nélküli képlet-felolvasás továbbra is nyitott Q2-tétel. A nyomtatási tartalékot a
+helyi Edge-ben próbáltuk; más böngészőkre nem állítunk teljes ellenőrzést.
+**Tanári döntés kell: nincs új kérdés.**

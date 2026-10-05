@@ -13,7 +13,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tananyag_common import lap, brief, GYOKER
 from fgy_common import cards, oldal, w
 import build_fgy_4e_06 as FG               # a Zsoldos-listák paraméterei (WEB) és a tananyagé (TANANYAG)
-from abra_stat import svg_oszlop, mutatok, ezres, tized
+from abra_stat import svg_oszlop, mutatok, ezres, tized, diagram_adatok
 import adat_4e_06 as ADAT
 import tiltott
 TILT = tiltott.modul("tiltott_4e_06")      # a lista a repón kívül él (projektek/szvetkomatek/tiltott)
@@ -286,7 +286,11 @@ TEREP = [
    r'átlagot és a mediánt! Melyik jellemzi jobban egy tipikus dolgozó keresetét, és miért?</li>'
    r'<li><b>A rekordszezon.</b> „Jokić a 2024–25-ös szezonban meccsenként kilencszer annyi pontot dobott, mint '
    r'egy évvel korábban — nézzék az ábrát!”'
-   + f'<div class="svgwrap">{SVG_JOKIC_CSALO}</div>' + FORRAS("jokic")
+   + diagram_adatok(SVG_JOKIC_CSALO, "Jokić meccsenkénti pontátlaga",
+                    ["szezon", "pont/meccs"], [["2023–24", tized(p23, 1)], ["2024–25", tized(p24, 1)]],
+                    megjegyzes="A vízszintes tengelyen a szezon, a függőlegesen a pont/meccs szerepel. "
+                               "A függőleges tengely 26-tól 30-ig tart, 1-es beosztással; az oszlopok 26-nál kezdődnek.")
+   + FORRAS("jokic")
    + r'Hány százalékkal nőtt valójában a pontátlag? Honnan származik a „kilencszeres”? Hogyan kellene helyesen '
    r'ábrázolni?</li>'
    r'<li><b>A gyakorló órák.</b> „Az elbukott kadétok 80%-a nem járt a gyakorló órákra. Tehát aki nem jár gyakorló '
@@ -372,7 +376,12 @@ HA_ = [
   [f"${D(mt['atlag'], 2)}$", M(int(mt["median"])), M(mt["mod"][0]),
    f"${chk('h-alap-3d', 100 * F(TESTV[2], 25), 28)}\\%$"]),
  ("Az oszlopdiagram azt mutatja, hogy Splitben 2024-ben havonta hány napon esett legalább 1 mm csapadék."
-  + FG.FORRAS("openmeteo") + f'<div class="svgwrap">{SVG_SPLIT}</div>',
+  + FG.FORRAS("openmeteo")
+  + diagram_adatok(SVG_SPLIT, "Esős napok Splitben, 2024",
+                   ["hónap", "esős napok száma"], [[c, ezres(v)] for c, v in zip(HONAP_R, SPLIT_ESO)],
+                   megjegyzes="Esős nap: legalább 1 mm csapadék esett. A vízszintes tengelyen a hónapok januártól "
+                              "decemberig, a függőlegesen a napok száma szerepel 0-tól 18-ig, 3-as beosztással. "
+                              "Az oszlopok 0-nál kezdődnek."),
   ["Melyik hónapban volt a legtöbb, és melyikben a legkevesebb esős nap?",
    "Összesen hány esős nap volt az évben, és mennyi a havi átlag?",
    "A relatív gyakoriság alapján mekkora a valószínűsége, hogy Splitben egy véletlenszerűen választott napon legalább "

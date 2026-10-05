@@ -55,14 +55,18 @@ def _szoveg(h: str) -> str:
 
 def vegeredmenyek(ut: str) -> dict[str, str]:
     """id → a Végeredmény-lenyíló szövege."""
-    s = open(ut, encoding='utf-8', errors='ignore').read()
+    with open(ut, encoding='utf-8', errors='ignore') as forras:
+        s = forras.read()
     ki = {}
     for m in re.finditer(r'<article class="feladat[^"]*"[^>]*id="([^"]+)"(.*?)</article>',
                          s, re.S):
         azon, torzs = m.group(1), m.group(2)
-        v = re.search(r'<details[^>]*>.*?</summary>(.*?)</details>', torzs, re.S)
-        if v:
-            ki[azon] = _szoveg(v.group(1))
+        # A feladatban az ábra adattáblája is lenyílhat; az nem megoldókulcs.
+        for v in re.finditer(r'<details\b([^>]*)>.*?</summary>(.*?)</details>', torzs, re.S):
+            osztaly = re.search(r'\bclass=["\']([^"\']*)["\']', v.group(1))
+            if osztaly and 'vegeredmeny' in osztaly.group(1).split():
+                ki[azon] = _szoveg(v.group(2))
+                break
     return ki
 
 

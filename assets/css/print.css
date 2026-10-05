@@ -43,12 +43,16 @@
   details summary::before{display:none;}
   details .bel{border-top-color:#999 !important;}
   details:not([open]) .bel{display:block !important;} /* JS nyitja; tartalék szabály */
+  /* JS nélkül a böngésző natív lenyílótartalma sem maradhat rejtett papíron. */
+  details::details-content{content-visibility:visible !important;}
   .chip,.statusz,.pill{border:1px solid #999 !important;}
 
   /* --- táblázatok, ábrák --- */
   th,td{border:1px solid #999 !important;}
   th,table.tt-table .res{font-weight:700;}
   figure,.svgwrap,.svgcard,.venn .vbox{break-inside:avoid;}
+  /* A hosszabb diagram-adattábla következő oldalra is folytatódhat. */
+  figure.diagram-adatok{break-inside:auto;}
   img,svg{max-width:100% !important;}
   /* Papíron a képlet teljes szövege maradjon látható, ne a gördülő ablak. */
   details .bel .math.inline{display:inline;max-width:none;overflow:visible;padding:0;vertical-align:baseline;}

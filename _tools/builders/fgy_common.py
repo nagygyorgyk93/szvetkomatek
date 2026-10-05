@@ -30,7 +30,7 @@ def _ans(ans):
         return '<div class="bel"><ol class="reszfeladatok">' + ''.join(f'<li>{w(a)}</li>' for a in ans) + '</ol></div>'
     return f'<div class="bel"><p>{w(ans)}</p></div>'
 
-_ABRA = re.compile(r'<div class="svgwrap">.*?</div>\s*', re.S)
+_ABRA = re.compile(r'(?:<div class="svgwrap">.*?</div>|<figure class="diagram-adatok"[^>]*>.*?</figure>)\s*', re.S)
 
 
 def _one(prefix, i, chip, it):
@@ -39,7 +39,7 @@ def _one(prefix, i, chip, it):
     lvl = f' {chip}' if chip else ''
     szam = '★' if prefix == 'joker' else f'{i}.'
     idattr = 'joker' if prefix == 'joker' else f'{prefix}-{i}'
-    # Az ábra NEM maradhat a <p>-n belül (a <div> ott érvénytelen HTML):
+    # Az ábra NEM maradhat a <p>-n belül (a <div> és a <figure> ott érvénytelen HTML):
     # kiemeljük, és a kérdés szövege UTÁN, a részfeladatok ELÉ tesszük.
     abrak = "".join(_ABRA.findall(intro))
     intro = _ABRA.sub('', intro)

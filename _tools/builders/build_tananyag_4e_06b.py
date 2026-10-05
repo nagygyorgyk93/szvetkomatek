@@ -9,7 +9,7 @@ from fractions import Fraction as Fr
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, _fmt, GYOKER
 from abra_stat import (svg_oszlop, svg_hisztogram, svg_kor, svg_vonal, svg_doboz, svg_adatlabor, mutatok, ezres,
-                       tized)
+                       tized, diagram_adatok)
 import adat_4e_06 as ADAT
 import tiltott
 TILT = tiltott.modul("tiltott_4e_06")
@@ -231,13 +231,33 @@ B1 = [
    'típusától és a kérdéstől függ.</p>',
    abra(SVG_HZ, "<b>Oszlopdiagram</b> — kategóriák vagy diszkrét értékek összehasonlítására. A szabadkai háztartások "
                 "taglétszám szerint (%), 2022."),
-   abra(SVG_KOR, "<b>Kördiagram</b> — egy egész részeinek arányára. A szabadkai 15 éves és idősebb lakosok "
-                 "(105 873 fő) számítógépes ismerete, 2022. (A kerekítés miatt a százalékok összege 100,1.)"),
-   abra(SVG_HISZT, "<b>Hisztogram</b> — osztályközökbe sorolt mennyiségi adatra; az oszlopok összeérnek. Szabadka "
-                   "lakói 5 éves korcsoportok szerint (fő), 2022; az utolsó oszlop a 85 évesek és idősebbek nyitott "
-                   "csoportja."),
-   abra(SVG_VONAL, "<b>Vonaldiagram</b> — időbeli változásra. Szabadka város lakossága a népszámlálások szerint "
-                   "(fő). A népszámlálások módszertana az évtizedek során többször változott."),
+   diagram_adatok(SVG_KOR, "Számítógépes ismeret Szabadkán, 2022",
+                  ["számítógépes ismeret", "lakos (fő)", "arány (%)"],
+                  [[c, ezres(v), tized(100 * v / SGS[0], 1)] for c, v in
+                   zip(["ismeri", "részben ismeri", "nem ismeri", "ismeretlen"], SGS[1:])],
+                  megjegyzes="A négy körcikk együtt a 105 873 főből álló sokaságot mutatja. A legnagyobb cikk az "
+                             "„ismeri”, a legkisebb az „ismeretlen” csoport. A százalékok egy tizedesre kerekítve; "
+                             "összegük a kerekítés miatt 100,1%.",
+                  felirat="<b>Kördiagram</b> — egy egész részeinek arányára. A szabadkai 15 éves és idősebb lakosok "
+                          "(105 873 fő) számítógépes ismerete, 2022. (A kerekítés miatt a százalékok összege 100,1.)"),
+   diagram_adatok(SVG_HISZT, "Szabadka lakói korcsoportonként, 2022",
+                  ["életkor (év)", "lakos (fő)"],
+                  [[c, ezres(v)] for c, v in zip(ADAT.KOR["csoportok"][:-1] + ["85 vagy több"], KOR["csoport"])],
+                  megjegyzes="A vízszintes tengelyen az életkor, a függőlegesen a lakosok száma szerepel "
+                             "0-tól 10 000 főig, 2000 fős beosztással. Az oszlopok összeérnek; az utolsó a 85 évesek "
+                             "és idősebbek nyitott csoportja. A két legmagasabb oszlop a 65–69 és a 40–44 éveseké.",
+                  felirat="<b>Hisztogram</b> — osztályközökbe sorolt mennyiségi adatra; az oszlopok összeérnek. Szabadka "
+                          "lakói 5 éves korcsoportok szerint (fő), 2022; az utolsó oszlop a 85 évesek és idősebbek nyitott "
+                          "csoportja."),
+   diagram_adatok(SVG_VONAL, "Szabadka lakossága a népszámlálások szerint",
+                  ["népszámlálás éve", "lakos (fő)"],
+                  [[str(ev), ezres(v)] for ev, v in zip(NEP["evek"], NEP["szabadka_varos"])],
+                  megjegyzes="A vízszintes tengelyen az évek arányos távolságban, a függőlegesen a lakosok száma "
+                             "0-tól 160 000 főig, 40 000 fős beosztással szerepel. A szomszédos adatpontokat "
+                             "szakaszok kötik össze: a lakosság 1981-ig nő, utána csökken. A népszámlálások "
+                             "módszertana az évtizedek során többször változott.",
+                  felirat="<b>Vonaldiagram</b> — időbeli változásra. Szabadka város lakossága a népszámlálások szerint "
+                          "(fő). A népszámlálások módszertana az évtizedek során többször változott."),
    FORRAS("popis"),
    TABLA(["kérdés, adattípus", "diagram"], [
        ["kategóriák vagy diszkrét értékek összehasonlítása", "oszlopdiagram"],
