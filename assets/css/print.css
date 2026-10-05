@@ -54,7 +54,7 @@
   details .bel .math.inline{display:inline;max-width:none;overflow:visible;padding:0;vertical-align:baseline;}
 
   /* külső média: papíron a lejátszó helyett a forrás címe + URL-je */
-  .media .media-keret{display:none !important;}
+  .media .media-keret,.media .media-vezerlok{display:none !important;}
   .media-url{display:inline !important;font-family:monospace;font-size:9pt;}
 
   h2,h3{break-after:avoid;}

@@ -311,3 +311,75 @@ Q2 továbbra is részben kész. Valódi NVDA/VoiceOver-próba, a komplex ábrák
 egyenértékűsége, külső beágyazások és a JS nélküli képlet-felolvasás nincs teljesen
 ellenőrizve. A gépi névleltár és a böngésző hozzáférhetőségi fája nem helyettesíti
 a tényleges felolvasást. **Tanári döntés kell: nincs új kérdés.**
+
+## Negyedik adag — külső médiák saját kezelőfelülete (2026-10-05)
+
+Kiindulás: `ada7ff5`, tiszta helyi `main`. A munka elején a helyi `origin/main`
+követőreferencia egy committal korábbi volt; a munka közben `ada7ff5`-re frissült,
+a helyi HEAD nem változott. Új ág és push nem készült. A média-beágyazás,
+web-verifikáció és akadálymentességi ellenőrzés szabályait követtük.
+
+### Javítás előtt bemutatott hibák
+
+| Hol | Probléma | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Médiaindító sávok | Hivatkozásként jelentek meg, miközben helyben nyitottak lejátszót; a szóköz nem indította őket | közepes | Közös JS: gombszerep, műveleti név, vezérelt keret és nyitott állapot; Enter és szóköz |
+| Megnyitott videó vagy applet | Nem volt bezáró vezérlő | közepes | Közös JS/CSS: bezárás, iframe eltávolítása és fókusz-visszaadás ugyanarra az indítóra |
+| Megnyitott YouTube-videó | A közvetlen videóhivatkozás eltűnt; a képaláírás MNT-forráslinkje megmaradt | alacsony | Közös JS: külön „Megnyitás a YouTube-on új lapon” link |
+
+Az új vezérlősáv megnyitás után a keret fölött látszik. GeoGebránál is tartalmaz
+közvetlen újlap-linket; az eredeti szerzői és licencadatok a képaláírásban megmaradnak.
+Bezáráskor az eredeti sáv és forráscím tér vissza, a lejátszó iframe-je megszűnik.
+A szóköz csak azon az indítón működik, amelyen lenyomták és elengedték; köztes
+fókuszváltás nem indít másik médiát. A módosítóbillentyűs kattintás kezelése megmaradt.
+
+A gombszerep és az Enter/Space kezelés a
+[W3C gombmintáját](https://www.w3.org/WAI/ARIA/apg/patterns/button/) követi.
+A név és a kinyitott állapot gépi elérhetőségéhez:
+[W3C — Name, Role, Value](https://www.w3.org/WAI/WCAG21/Understanding/name-role-value.html);
+a fókuszhoz: [W3C — Focus Order](https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html).
+
+### Ellenőrzések
+
+- **Teljes médialeltár:** 139 oldal, **334 elem: 310 YouTube és 24 GeoGebra**.
+  Mindegyik két teljes billentyűzetes megnyitás–bezárás ciklust kapott 390 px-en:
+  **668/668 sikeres ciklus, 0 JS-kivétel, 0 nyitott állapotú oldaltúlcsordulás
+  vagy KaTeX-hiba**. Enter és szóköz, ismételt indítás, eredeti forráscím,
+  műveleti név, nyitott állapot, látható fókusz és fókusz-visszaadás ellenőrizve.
+  Az új vezérlők legalább 44 px magasak; a saját tömör hátterükön a szövegkontraszt
+  minimuma **14,94:1**. Ez a vezérlők színpárja, nem a teljes oldal kontrasztja.
+- **Két mintalap, 360/390/1280 px:** hat megnyitott állapotban a saját felület
+  axe-próbája **6/6, 0 szabályjelzés**. A szolgáltatói iframe-ek belseje kizárva;
+  a képes hátterekre továbbra is maradt kézi kontrasztellenőrzési jelzés.
+  A böngésző hozzáférhetőségi fájában a név és a nyitott állapot változik.
+  Tab/Shift+Tab visszajutás a helyi próbakeretből és a szóköz közbeni fókuszváltás
+  ellenőrizve. Két külön megnyitott keret egymástól függetlenül bezárható.
+- **Tartalékmódok és nyomtatás:** a két lap JS nélkül, a médiamodul betöltési
+  hibájával és blokkolt iframe-mel is használható: hat tartalékpróba sikeres.
+  Indítás előtt nem volt külső kérés. JS nélkül/modulhiba esetén a sáv közvetlen
+  forráslink; blokkolt keretnél megmarad a bezárás és az újlap-link. Két mobilos
+  és két nyomtatási képet szemrevételeztünk. Nyomtatáskor a kezelősáv és a keret
+  rejtett, a cím és a rövid forráscím olvasható. A célzott állapotpróba összesen
+  **14/14 sikeres eset**; teljes nyomtatott oldaltördelést nem vizsgáltunk.
+- **Új lap:** a közvetlen link külön böngészőlapot nyitott a várt célcímmel, helyi
+  próbadokumentummal. Ctrl-kattintáskor is létrejött az új lap, és nem nyílt helyi
+  iframe, de a céloldal betöltése ebben a futtatóban böngészőhibával végződött;
+  ennek sikeres hálózati betöltését nem állítjuk.
+- **Projektlánc:** képek → média → háttér: **0 fájl módosult**, a katalógus és a
+  334 elem változatlan. Teljes kánon **310/310, 0 hiba**; külön, a csomagolt Node
+  közvetlen indításával a jsdom **310/310** lapot ténylegesen renderelt és a
+  kvízeket próbálta. Két ismert környezeti figyelmeztetés maradt: a főoldali
+  `play()` és a kereső `fetch` támogatása. A Python-driver első próbájában a
+  render kimaradt, majd időtúllépést adott; ezt nem tekintettük sikeres rendernek.
+  Belső linkek **310/0**, gyakorlósáv tiszta, diff-ellenőrzés tiszta.
+  Builder, HTML, matematikai tartalom, feladat, kulcs, médiakatalógus, keresőindex
+  és naplótérkép nem változott; kulcs-/regressziós és tartalmi újraépítés nem kellett.
+
+### Korlátok és tanári döntés
+
+A cikluspróbák a valódi helyi oldalt és a saját médiakezelőt futtatták, a külső
+iframe-ben helyi próbadokumentummal. A szolgáltatók saját lejátszója, feliratai,
+átiratai és GeoGebra-vezérlői ebben az adagban nem kaptak teljes vizsgálatot.
+A hozzáférhetőségi fa nem helyettesít valódi NVDA/VoiceOver-felolvasást.
+Q2 továbbra is részben kész: ezen túl a komplex ábrák szöveges egyenértékűsége
+és a JS nélküli képlet-felolvasás is hátravan. **Tanári döntés kell: nincs új kérdés.**

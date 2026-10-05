@@ -841,6 +841,12 @@ html{scrollbar-color:var(--kampusz-uveg-keret) var(--papir);scrollbar-width:thin
    16:9-re, ill. az applet saját arányára. JS nélkül a sáv sima link a forrásra. */
 .media{margin:1.1rem 0;break-inside:avoid;}
 .media+.media{margin-top:.7rem;}
+.media-vezerlok{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:.5rem;}
+.media-vezerlok a{display:flex;align-items:center;min-height:44px;max-width:100%;box-sizing:border-box;
+  padding:.55rem .7rem;border:1px solid var(--kampusz-uveg-keret);border-radius:8px;
+  background:var(--kampusz-sotet);color:var(--tinta);font:inherit;font-size:.85rem;
+  text-decoration:none;overflow-wrap:anywhere;}
+.media-vezerlok a:hover{border-color:var(--kampusz-neon);}
 .media-keret{position:relative;border-radius:var(--r);overflow:hidden;
   background:radial-gradient(circle at 12% 50%,rgba(0,255,102,.16),transparent 45%),
              radial-gradient(circle at 90% 90%,rgba(59,130,246,.12),transparent 50%),var(--kampusz-uveg);

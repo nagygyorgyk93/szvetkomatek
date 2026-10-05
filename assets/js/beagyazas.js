@@ -14,6 +14,13 @@
 
   var GGB_KAPCSOLOK = 'border/888888/sfsb/true/szb/true/smb/false/stb/false/stbh/false/' +
                       'ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false';
+  var nyitottak = new WeakMap();
+  var szokozIndito = null;
+
+  function inditoNev(fig){
+    return (fig.getAttribute('data-tipus') === 'youtube' ? 'Videó indítása: ' :
+            'GeoGebra-szimuláció betöltése: ') + (fig.getAttribute('data-cim') || 'beágyazott tartalom');
+  }
 
   function forras(fig, szel, mag){
     var tipus = fig.getAttribute('data-tipus');
@@ -35,7 +42,7 @@
     return null;
   }
 
-  function indit(fig){
+  function indit(fig, a){
     var keret = fig.querySelector('.media-keret');
     if (!keret || keret.querySelector('iframe')) return false;
     // Előbb kinyitjuk a sávot (a .media-fut adja a 16:9-et / az applet arányát), csak utána mérünk.
@@ -50,11 +57,51 @@
     ifr.setAttribute('allow', 'autoplay; encrypted-media; fullscreen; picture-in-picture');
     ifr.setAttribute('allowfullscreen', '');
     ifr.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+    // Az eredeti hivatkozást megőrizzük: bezáráskor ugyanide tér vissza a fókusz.
+    var vezerlok = document.createElement('div');
+    vezerlok.className = 'media-vezerlok';
+    var kulso = document.createElement('a');
+    kulso.href = a.href; kulso.target = '_blank'; kulso.rel = 'noopener';
+    kulso.textContent = fig.getAttribute('data-tipus') === 'youtube' ?
+      'Megnyitás a YouTube-on új lapon' : 'Megnyitás a GeoGebrában új lapon';
+    kulso.setAttribute('aria-label', kulso.textContent + ': ' + (fig.getAttribute('data-cim') || 'beágyazott tartalom'));
+    nyitottak.set(fig, {indito:a, tartalom:a.innerHTML, vezerlok:vezerlok});
+    vezerlok.appendChild(a); vezerlok.appendChild(kulso);
+    keret.parentNode.insertBefore(vezerlok, keret);
+    a.textContent = 'Beágyazás bezárása';
+    a.setAttribute('aria-label', 'Beágyazás bezárása: ' + (fig.getAttribute('data-cim') || 'beágyazott tartalom'));
+    a.setAttribute('aria-expanded', 'true');
     keret.innerHTML = '';
     keret.appendChild(ifr);
     try { ifr.focus(); } catch (e) {}
     return true;
   }
+
+  function bezar(fig){
+    var allapot = nyitottak.get(fig), keret = fig.querySelector('.media-keret');
+    if (!allapot || !keret) return false;
+    var a = allapot.indito;
+    keret.innerHTML = ''; // Az iframe eltávolítása a lejátszást is megszünteti.
+    a.innerHTML = allapot.tartalom;
+    a.setAttribute('aria-label', inditoNev(fig));
+    a.setAttribute('aria-expanded', 'false');
+    keret.appendChild(a);
+    allapot.vezerlok.remove(); nyitottak.delete(fig);
+    fig.classList.remove('media-fut');
+    try { a.focus(); } catch (e) {}
+    return true;
+  }
+
+  document.querySelectorAll('figure.media .media-indito').forEach(function(a){
+    var fig = a.closest('figure.media'), keret = fig.querySelector('.media-keret');
+    if (!keret || !forras(fig, 640, 360)) return;
+    if (!keret.id) keret.id = fig.id + '-keret';
+    // JavaScript nélkül ez továbbra is közvetlen forráshivatkozás.
+    a.setAttribute('role', 'button');
+    a.setAttribute('aria-label', inditoNev(fig));
+    a.setAttribute('aria-controls', keret.id);
+    a.setAttribute('aria-expanded', 'false');
+  });
 
   document.addEventListener('click', function(ev){
     var a = ev.target.closest ? ev.target.closest('.media-indito') : null;
@@ -62,6 +109,26 @@
     // Ctrl/Cmd/Shift/középső gomb: hagyjuk a böngészőt új lapon megnyitni
     if (ev.button !== 0 || ev.ctrlKey || ev.metaKey || ev.shiftKey || ev.altKey) return;
     var fig = a.closest('figure.media');
-    if (fig && indit(fig)) ev.preventDefault();
+    if (fig && (nyitottak.has(fig) ? bezar(fig) : indit(fig, a))) ev.preventDefault();
+  });
+
+  // A gombként működő link szóközzel is aktiválható; az Enter natív kattintást ad.
+  document.addEventListener('keydown', function(ev){
+    if (ev.key !== ' ' || ev.ctrlKey || ev.metaKey || ev.shiftKey || ev.altKey) return;
+    var a = ev.target.closest ? ev.target.closest('.media-indito[role="button"]') : null;
+    if (a){
+      ev.preventDefault();
+      if (!ev.repeat) szokozIndito = a;
+    }
+  });
+  document.addEventListener('keyup', function(ev){
+    if (ev.key !== ' ') return;
+    var kezdet = szokozIndito; szokozIndito = null;
+    if (ev.ctrlKey || ev.metaKey || ev.shiftKey || ev.altKey) return;
+    var a = ev.target.closest ? ev.target.closest('.media-indito[role="button"]') : null;
+    if (a && a === kezdet){ ev.preventDefault(); a.click(); }
+  });
+  document.addEventListener('focusout', function(ev){
+    if (ev.target === szokozIndito) szokozIndito = null;
   });
 })();
