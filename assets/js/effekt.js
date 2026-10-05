@@ -13,10 +13,18 @@
      a Küldetésnapló kapcsolója felülírja (ha a kadét bekapcsolva hagyja, látja az
      effekteket). A `html.effekt-be` osztály jelzi a CSS-nek, hogy a mozgáscsökkentő
      médiablokk ne fojtsa el az animációkat. */
-  function enged() { return !window.Naplo || window.Naplo.effektBe(); }
-  function jelzes() { document.documentElement.classList.toggle('effekt-be', enged()); }
+  function enged() {
+    return window.Naplo ? window.Naplo.effektBe()
+      : !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  }
+  function jelzes() {
+    var be = enged();
+    document.documentElement.classList.toggle('effekt-be', be);
+    if(!be) document.documentElement.classList.remove('anim-be');
+  }
   jelzes();
   document.addEventListener('naplo-kesz', jelzes);
+  document.addEventListener('naplo-beallitas', jelzes);
 
   /* ---------- réteg a látványelemeknek ---------- */
   var reteg = null;

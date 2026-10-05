@@ -36,6 +36,22 @@ const STUB = `
   if (!window.scrollTo) window.scrollTo = () => {};
 `;
 
+// A fromFile a külső szkriptek befejezése előtt visszatérhet. A rögzített
+// várakozás terhelt gépen hamis kvízhibát adott; a load eseményt várjuk meg.
+async function betoltesVege(dom) {
+  if (dom.window.document.readyState !== 'complete') {
+    await new Promise((resolve, reject) => {
+      const kesz = () => { clearTimeout(timer); resolve(); };
+      const timer = setTimeout(() => {
+        dom.window.removeEventListener('load', kesz);
+        reject(new Error('Az oldal betöltése 30 másodperc alatt nem fejeződött be.'));
+      }, 30000);
+      dom.window.addEventListener('load', kesz, { once: true });
+    });
+  }
+  await new Promise(resolve => setTimeout(resolve, 50));
+}
+
 async function egyOldal(fajl) {
   const hibak = [];
   const vc = new VirtualConsole();
@@ -56,7 +72,8 @@ async function egyOldal(fajl) {
     return { fajl, betoltes_hiba: String(e && e.message ? e.message : e) };
   }
 
-  await new Promise(r => setTimeout(r, 2500));
+  try { await betoltesVege(dom); }
+  catch(e) { dom.window.close(); return { fajl, betoltes_hiba: String(e.message || e) }; }
   const w = dom.window, d = w.document;
 
   const katex_db = d.querySelectorAll('.katex').length;
@@ -121,7 +138,8 @@ async function szovegMod(fajl, kulcsNelkul) {
     virtualConsole: vc, url: 'file://' + path.resolve(fajl),
     beforeParse(win) { win.eval(STUB); },
   });
-  await new Promise(r => setTimeout(r, 2500));
+  try { await betoltesVege(dom); }
+  catch(e) { dom.window.close(); throw e; }
   const d = dom.window.document;
   const torzs = d.querySelector('main') || d.body;
   const klon = torzs.cloneNode(true);

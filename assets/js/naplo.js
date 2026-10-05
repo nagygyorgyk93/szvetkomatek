@@ -35,7 +35,7 @@
   ];
 
   /* ---------- tároló ---------- */
-  function ures() { return { v: 1, oldalak: {}, projektek: {}, feladatok: {}, kvizek: {}, beall: { effekt: 1 } }; }
+  function ures() { return { v: 1, oldalak: {}, projektek: {}, feladatok: {}, kvizek: {}, beall: { effekt: null } }; }
   var A = ures();
   try {
     var nyers = localStorage.getItem(KULCS);
@@ -44,7 +44,7 @@
       if (b && typeof b === 'object') {
         A = b;
         ['oldalak', 'projektek', 'feladatok', 'kvizek'].forEach(function (k) { A[k] = A[k] || {}; });
-        A.beall = A.beall || { effekt: 1 };
+        A.beall = A.beall || { effekt: null };
         /* korábbi verzió: a feladat értéke időbélyeg volt → alapszintnek vesszük */
         for (var f in A.feladatok) if (typeof A.feladatok[f] !== 'string') A.feladatok[f] = 'a';
       }
@@ -303,12 +303,20 @@
         var o = JSON.parse(decodeURIComponent(escape(atob(t))));
         if (!o || typeof o !== 'object' || !o.oldalak) return false;
         A = o; ['oldalak','projektek','feladatok','kvizek'].forEach(function (k) { A[k] = A[k] || {}; });
-        A.beall = A.beall || { effekt: 1 };
+        A.beall = A.beall || { effekt: null };
         ment(); return true;
       } catch (e) { return false; }
     },
-    effektBe: function () { return A.beall.effekt !== 0; },
-    effektAllit: function (be) { A.beall.effekt = be ? 1 : 0; ment(); }
+    effektBe: function () {
+      if(A.beall.effekt === 0 || A.beall.effekt === 1) return A.beall.effekt === 1;
+      return !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    },
+    effektAllit: function (be) {
+      A.beall.effekt = be ? 1 : 0; ment();
+      document.dispatchEvent(new CustomEvent('naplo-beallitas'));
+    },
+    gyorskeresoBe: function () { return A.beall.gyorskereso !== 0; },
+    gyorskeresoAllit: function (be) { A.beall.gyorskereso = be ? 1 : 0; ment(); }
   };
 
   /* ---------- indulás ---------- */

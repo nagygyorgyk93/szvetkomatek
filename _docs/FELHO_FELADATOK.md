@@ -285,7 +285,7 @@ vektorösszeadás; kör és egyenes kölcsönös helyzete; sorozat ε-sávja.
 | Kód | Feladat | Állapot |
 |---|---|---|
 | Q1 | `layout_teszt.py` az összes lapra; minden mobil-túlcsordulás javítása | ☑ 2026-09-28: mind a 293 lap hibátlan 360/390/1280 px-en (fejléc, képletes doboz-cím, táblázat-burok a builderekben, hosszú képletek tördelése, h1, kereső) |
-| Q2 | Akadálymentesség: axe-core Playwrighttal (`npm i axe-core`), kontraszt, `aria`, fókusz-sorrend | ☐ |
+| Q2 | Akadálymentesség: axe-core Playwrighttal (`npm i axe-core`), kontraszt, `aria`, fókusz-sorrend | ◐ 2026-10-05: közös vezérlők, matematikai nevek, kontraszt, fókusz, mozgás és videószünet javítva; axe 620/0, elrendezés 930/0, billentyűzet 55/55; [részletes jelentés](Q2_akadalymentesseg.md). Valódi képernyőolvasós próba, további kézi kontrasztminták és a köszöntővideó feliratellenőrzése még szükségesek. |
 | Q3 | „Folytasd, ahol abbahagytad” — a `naplo.js` jegyezze az utolsó lapot, a főoldalon és az osztály-indexen gomb | ☐ |
 | Q4 | Mobil tartalomjegyzék: lebegő „Tartalom” gomb, ha a TOC keskeny kijelzőn nem látszik | ☐ (előbb ellenőrizni) |
 | Q5 | Offline mód (PWA): service worker a meglátogatott lapokra + KaTeX; frissítés-kezelés deploykor | ☐ (tanári döntés kell) |

@@ -121,6 +121,12 @@
       N.effektAllit(kapcsolo.checked);
       szol(kapcsolo.checked ? 'Látványelemek bekapcsolva.' : 'Látványelemek kikapcsolva.');
     });
+    var gyorskereso = document.getElementById('gyorskereso-kapcs');
+    gyorskereso.checked = N.gyorskeresoBe();
+    gyorskereso.addEventListener('change', function () {
+      N.gyorskeresoAllit(gyorskereso.checked);
+      szol(gyorskereso.checked ? 'Keresőgyorsbillentyű bekapcsolva.' : 'Keresőgyorsbillentyű kikapcsolva.');
+    });
   }
 
   if (window.Naplo) indul();

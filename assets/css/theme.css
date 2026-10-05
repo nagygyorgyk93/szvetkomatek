@@ -34,7 +34,7 @@
   --papir: #080101; /* Mély, sötét-vöröses fekete az UMOTRON háttérhez */
   --kartya: #1e293b; /* Kártyák sötétebb panel háttere */
   --tinta: #f8fafc; /* Világos szöveg */
-  --szurke-600: #94a3b8; /* Világosabb szürke a leírásokhoz */
+  --szurke-600: #cbd5e1; /* Olvasható másodlagos szöveg a helyszínfotókon is */
   --szurke-300: #334155; /* Sötét, de látható szegélyek */
 
   --kek:#3b82f6; --kek-100: rgba(59, 130, 246, 0.15);
@@ -127,7 +127,7 @@ body{--hatter-kep: var(--hatter-fekvo);}
 body[data-hatter="foepulet"]{      /* Szvetkó-kampusz főépülete — belépő oldalak */
   --hatter-fekvo:url('../img/foepulet_1.webp');      --hatter-allo:url('../img/foepulet_2.webp');      --hatter-sotet:.70;}
 body[data-hatter="diszterem"]{     /* Holografikus eligazító / közösségi tér */
-  --hatter-fekvo:url('../img/diszterem_1.webp');     --hatter-allo:url('../img/diszterem_2.webp');     --hatter-sotet:.72;}
+  --hatter-fekvo:url('../img/diszterem_1.webp');     --hatter-allo:url('../img/diszterem_2.webp');     --hatter-sotet:.80;}
 body[data-hatter="altalanos"]{     /* Taktikai és Elemző Központ — tananyag */
   --hatter-fekvo:url('../img/altalanos_terem_1.webp');--hatter-allo:url('../img/altalanos_terem_2.webp');--hatter-sotet:.80;}
 body[data-hatter="digitalis"]{     /* Tech-Labor / Páncélműhely — feladatok, összefoglaló */
@@ -399,7 +399,7 @@ table.tt-table .res{font-weight:800;background:rgba(16,185,129,0.15);}
 @media(max-width:640px){table.tt-table .katex-html{white-space:nowrap;}}
 .kbd{font-family:'Cambria Math',Cambria,Georgia,serif;background:rgba(16,185,129,0.15);
   border:1px solid var(--szurke-300);border-radius:6px;padding:1px 7px;font-size:1.02em;color:var(--kampusz-neon);}
-.pill{display:inline-block;background:var(--kampusz-uveg-keret);color:#34d399;
+.pill{display:inline-block;background:#143b25;color:#86efac;
   border-radius:999px;padding:.05rem .6rem;font-size:.8rem;font-weight:700;font-family:var(--fej);}
 .ic{margin-right:.3rem;}
 .venn{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:1rem 0;}
@@ -601,6 +601,9 @@ a.kartya.teljes{border-color:rgba(16,185,129,.55);}
 .naplo-eszkoz textarea{width:100%;min-height:4.5rem;border-radius:10px;border:1px solid var(--szurke-300);
   background:rgba(15,23,42,.75);color:var(--tinta);font:inherit;font-size:.85rem;padding:.6rem .8rem;}
 .naplo-uzenet{color:#34d399;font-size:.9rem;min-height:1.2em;}
+.naplo-szam{margin:.1rem 0 .3rem;font-family:var(--fej);font-size:1.2rem;font-weight:700;}
+#naplo-kod{display:block;width:100%;min-height:4.5rem;border:1px solid var(--szurke-300);
+  border-radius:10px;background:#0f172a;color:var(--tinta);font:inherit;padding:.6rem .8rem;margin:.4rem 0 1rem;}
 
 /* Jelvényfal */
 .jelveny-racs{display:grid;gap:.9rem;grid-template-columns:repeat(auto-fill,minmax(8.5rem,1fr));margin:1.1rem 0 1.6rem;}
@@ -627,9 +630,9 @@ a.kartya.teljes{border-color:rgba(16,185,129,.55);}
 .tetejere{position:fixed;right:1.1rem;bottom:1.1rem;z-index:55;width:2.9rem;height:2.9rem;
   border-radius:50%;border:1px solid var(--kampusz-uveg-keret);background:rgba(10,41,24,.85);
   backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-size:1.2rem;line-height:1;
-  cursor:pointer;opacity:0;pointer-events:none;transform:translateY(10px);
+  cursor:pointer;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(10px);
   transition:opacity .3s ease,transform .3s ease,box-shadow .3s ease;}
-.tetejere.mutat{opacity:1;pointer-events:auto;transform:none;}
+.tetejere.mutat{opacity:1;visibility:visible;pointer-events:auto;transform:none;}
 .tetejere:hover{box-shadow:var(--kampusz-fenylés);border-color:var(--kampusz-neon);}
 .tetejere.kilo{animation:raketa .7s ease-in forwards;}
 @keyframes raketa{0%{transform:none;} 100%{transform:translateY(-160%) scale(.7);opacity:0;}}
@@ -700,6 +703,18 @@ html.anim-be .brief.lathato::after{content:'';position:absolute;inset:0;pointer-
 
 /* ---------- Akadálymentesség + mozgásérzékenység ---------- */
 :focus-visible{outline:2px solid var(--kampusz-neon);outline-offset:2px;border-radius:6px;}
+.kereso-mini input:focus-visible,.kereso-nagy input:focus-visible{outline:2px solid var(--kampusz-neon);outline-offset:2px;}
+.tartalomra{position:fixed;top:.5rem;left:1rem;z-index:1000;padding:.7rem 1rem;
+  border-radius:8px;background:var(--kampusz-sotet);color:var(--kampusz-neon);
+  transform:translateY(-180%);text-decoration:none;font-weight:700;}
+.tartalomra:focus{transform:none;}
+.felolvasas{position:absolute;top:0;left:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip-path:inset(50%);white-space:nowrap;border:0;}
+.video-vezerlok{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem;margin-top:.5rem;}
+.video-vezerlok .hang-gomb{position:static;min-height:44px;background:var(--kampusz-sotet);}
+.szunet-gomb{min-height:44px;padding:.4rem .7rem;border:1px solid var(--kampusz-neon);
+  border-radius:999px;background:var(--kampusz-sotet);color:var(--kampusz-neon);font:inherit;font-size:.8rem;cursor:pointer;}
+.svgcard :focus-visible{outline-color:#2563eb;}
 /* A rendszer mozgáscsökkentő beállítása alapból mindent lefog — DE ha a kadét a
    Küldetésnaplóban bekapcsolva hagyta a látványelemeket (html.effekt-be), akkor
    nem szólunk bele. */

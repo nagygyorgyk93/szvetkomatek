@@ -48,10 +48,10 @@
         </span>
       </div>
       <div class="racs" style="flex:1;min-width:16rem;grid-template-columns:repeat(auto-fit,minmax(7rem,1fr));">
-        <div class="kartya" style="padding:.7rem .9rem"><h3 id="sz-oldal">0</h3><p class="le">📗 teljesített tananyag-egység</p></div>
-        <div class="kartya" style="padding:.7rem .9rem"><h3 id="sz-kviz">0</h3><p class="le">🎯 megoldott gyors kérdés</p></div>
-        <div class="kartya" style="padding:.7rem .9rem"><h3 id="sz-feladat">0</h3><p class="le">✏️ kipipált feladat</p></div>
-        <div class="kartya" style="padding:.7rem .9rem"><h3 id="sz-projekt">0</h3><p class="le">🛰️ teljesített terepküldetés</p></div>
+        <div class="kartya" style="padding:.7rem .9rem"><p class="naplo-szam" id="sz-oldal">0</p><p class="le">📗 teljesített tananyag-egység</p></div>
+        <div class="kartya" style="padding:.7rem .9rem"><p class="naplo-szam" id="sz-kviz">0</p><p class="le">🎯 megoldott gyors kérdés</p></div>
+        <div class="kartya" style="padding:.7rem .9rem"><p class="naplo-szam" id="sz-feladat">0</p><p class="le">✏️ kipipált feladat</p></div>
+        <div class="kartya" style="padding:.7rem .9rem"><p class="naplo-szam" id="sz-projekt">0</p><p class="le">🛰️ teljesített terepküldetés</p></div>
       </div>
     </div>
 
@@ -69,8 +69,9 @@
     <div class="naplo-eszkoz">
       <button type="button" class="btn-kampusz" id="kod-keszit">Napló-kód készítése</button>
       <button type="button" class="btn-kampusz" id="kod-betolt">Napló betöltése</button>
-      <span class="naplo-uzenet" id="naplo-uzenet"></span>
+      <span class="naplo-uzenet" id="naplo-uzenet" role="status" aria-live="polite" aria-atomic="true"></span>
     </div>
+    <label for="naplo-kod">Átvihető naplókód</label>
     <textarea id="naplo-kod" spellcheck="false" placeholder="Ide kerül a kód — vagy ide illeszd be a másik eszközön készítettet."></textarea>
 
     <h2>Beállítások</h2>
@@ -81,6 +82,13 @@
       <span class="halvany" style="font-size:.85rem">Ez a kapcsoló felülírja a rendszered
       „mozgás csökkentése" beállítását is.</span>
       <button type="button" class="btn-kampusz" id="naplo-torles">Napló törlése</button>
+    </div>
+
+    <div class="naplo-eszkoz">
+      <label class="fel-pipa">
+        <input type="checkbox" id="gyorskereso-kapcs"> <span>„/” keresőgyorsbillentyű</span>
+      </label>
+      <span class="halvany">A keresés a fejléc gombjával kikapcsolás után is elérhető.</span>
     </div>
 
     <div class="lapozo">

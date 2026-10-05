@@ -59,6 +59,7 @@
   }
   document.querySelectorAll('.kviz').forEach(function(k){
     var vj = k.querySelector('.visszajelzes');
+    if(vj){ vj.setAttribute('role', 'status'); vj.setAttribute('aria-live', 'polite'); vj.setAttribute('aria-atomic', 'true'); }
     var valt = Array.prototype.slice.call(k.children).filter(function(el){
       return el.classList && el.classList.contains('valtozat');
     });
