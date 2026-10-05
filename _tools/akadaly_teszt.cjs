@@ -32,7 +32,7 @@ const patterns = args.filter(x=>!x.startsWith('--'));
 const pages = walk(repo).sort().filter(p=>!patterns.length || patterns.some(s=>s==='.' || p===s || p.startsWith(s.replaceAll('\\','/').replace(/\/$/,'')+'/')));
 const out = args.find(x=>x.startsWith('--json='))?.slice(7);
 if(!pages.length || widths.some(w=>!Number.isInteger(w)||w<240)) {console.error('Érvénytelen lapminta vagy szélesség.');process.exit(2);}
-const mime = {'.html':'text/html; charset=utf-8','.js':'text/javascript','.css':'text/css','.json':'application/json','.woff2':'font/woff2','.svg':'image/svg+xml','.webp':'image/webp','.mp4':'video/mp4','.webm':'video/webm'};
+const mime = {'.html':'text/html; charset=utf-8','.js':'text/javascript','.css':'text/css','.json':'application/json','.woff2':'font/woff2','.svg':'image/svg+xml','.webp':'image/webp','.mp4':'video/mp4','.webm':'video/webm','.vtt':'text/vtt; charset=utf-8'};
 const server = http.createServer((req,res) => {
   let p;
   try {p=path.resolve(repo, '.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));}

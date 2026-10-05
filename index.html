@@ -43,15 +43,24 @@
       </div>
 
       <figure class="video-panel">
-        <video id="udv-video" playsinline muted loop autoplay preload="metadata"
+        <video id="udv-video" controls playsinline muted loop preload="metadata"
                poster="assets/img/welcome-poster.webp" width="540" height="960">
           <source src="assets/img/welcome.webm" type="video/webm">
           <source src="assets/img/welcome.mp4" type="video/mp4">
+          <track kind="captions" src="assets/img/welcome-hu.vtt" srclang="hu" label="Magyar" default>
         </video>
-        <button type="button" class="hang-gomb" data-video="udv-video">🔊 Hang be</button>
+        <button type="button" class="hang-gomb" data-video="udv-video" hidden>🔊 Hang be</button>
         <figcaption>Kiképzőtiszti fogadás</figcaption>
       </figure>
     </div>
+
+    <details class="video-leirat">
+      <summary>A köszöntővideó szövege</summary>
+      <div class="bel">
+        <p><b>A kiképzőtiszt:</b> „Üdv, kadét! Kezdődik a kiképzés. Húzd ki magad,
+        és villantsd a matekot!”</p>
+      </div>
+    </details>
 
     <h2>🎖️ Válaszd ki az osztályodat</h2>
     <div class="racs">

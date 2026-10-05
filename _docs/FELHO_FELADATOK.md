@@ -115,7 +115,7 @@ Havi GitHub Action, amely `media.py --online`-t futtat, és hiba esetén issue-t
 |---|---|---|
 | Keresőindex: üres szöveg és fejezetek, 3000 karakteres csonkolás | ◐ Helyi ágon javítva: 308/308 lap kereshető, 360/390/1280 px próba rendben; push nélkül | Tanári jóváhagyás után publikálás |
 | Képletes fejezetcímek a tartalomjegyzékben | ☐ | Közös `ui.js` javítása és célzott ellenőrzés |
-| Főoldali videó szüneteltetése; mozgáscsökkentés kezdőértéke | ☐ | Közös HTML/JS/CSS akadálymentességi javítás |
+| Főoldali videó szüneteltetése; mozgáscsökkentés kezdőértéke | ☑ Helyi mainen javítva: rendszerkövető mozgás, videószünet, magyar felirat és leirat; 44/44 videópróba | Publikálásra vár; a Q2 valódi képernyőolvasós próbája külön fennmarad |
 | 30 régi 1e kvízvisszajelzés élő régiója | ◐ Helyi ágon javítva 26 HTML-ben; 81 böngészőpróba hibátlan | Képernyőolvasós felolvasási próba |
 | 1e/02 trigonometria: Közép 4 és Nehéz 2 szögtartománya | ◐ A tanár hegyesszögű értelmezést rögzített; a két feladat helyi ágon pontosítva, a kulcs egyezik | Publikálás tanári jóváhagyás után |
 | 1e/02 Alap 11 dupla részfeladatjel; 1e/06 Bővítés címe | ◐ Helyi ágon javítva; kánonellenőrzés 310/0 | Publikálás tanári jóváhagyás után |
@@ -285,7 +285,7 @@ vektorösszeadás; kör és egyenes kölcsönös helyzete; sorozat ε-sávja.
 | Kód | Feladat | Állapot |
 |---|---|---|
 | Q1 | `layout_teszt.py` az összes lapra; minden mobil-túlcsordulás javítása | ☑ 2026-09-28: mind a 293 lap hibátlan 360/390/1280 px-en (fejléc, képletes doboz-cím, táblázat-burok a builderekben, hosszú képletek tördelése, h1, kereső) |
-| Q2 | Akadálymentesség: axe-core Playwrighttal (`npm i axe-core`), kontraszt, `aria`, fókusz-sorrend | ◐ 2026-10-05: közös vezérlők, matematikai nevek, kontraszt, fókusz, mozgás és videószünet javítva; axe 620/0, elrendezés 930/0, billentyűzet 55/55; [részletes jelentés](Q2_akadalymentesseg.md). Valódi képernyőolvasós próba, további kézi kontrasztminták és a köszöntővideó feliratellenőrzése még szükségesek. |
+| Q2 | Akadálymentesség: axe-core Playwrighttal (`npm i axe-core`), kontraszt, `aria`, fókusz-sorrend | ◐ 2026-10-05: közös vezérlők, matematikai nevek, fókusz és mozgás javítva; első adag: axe 620/0, elrendezés 930/0, billentyűzet 55/55. Második adag: köszöntővideó magyar felirattal és leirattal, további szín- és nyomtatási javítások; kontraszt 128/0, axe 32/0, elrendezés 48/0; [részletes jelentés](Q2_akadalymentesseg.md). Valódi képernyőolvasós próba, külső médiák és ábrák teljes hozzáférhetőségi vizsgálata még szükséges. |
 | Q3 | „Folytasd, ahol abbahagytad” — a `naplo.js` jegyezze az utolsó lapot, a főoldalon és az osztály-indexen gomb | ☐ |
 | Q4 | Mobil tartalomjegyzék: lebegő „Tartalom” gomb, ha a TOC keskeny kijelzőn nem látszik | ☐ (előbb ellenőrizni) |
 | Q5 | Offline mód (PWA): service worker a meglátogatott lapokra + KaTeX; frissítés-kezelés deploykor | ☐ (tanári döntés kell) |

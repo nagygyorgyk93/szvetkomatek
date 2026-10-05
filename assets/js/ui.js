@@ -221,12 +221,41 @@
   document.querySelectorAll('.hang-gomb').forEach(function(gomb){
     var v = document.getElementById(gomb.getAttribute('data-video'));
     if(!v){ gomb.hidden = true; return; }
+    /* JS nélkül a videó saját vezérlői és magyar feliratsávja használhatók. */
+    v.controls = false; gomb.hidden = false;
     var lassit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var vezerlok = document.createElement('div'); vezerlok.className = 'video-vezerlok';
     gomb.parentNode.insertBefore(vezerlok, gomb); vezerlok.appendChild(gomb);
     var szunet = document.createElement('button');
     szunet.type = 'button'; szunet.className = 'szunet-gomb';
     szunet.setAttribute('aria-controls', v.id); vezerlok.appendChild(szunet);
+    var feliratsav = v.querySelector('track[kind="captions"]');
+    if(feliratsav && feliratsav.track){
+      /* A felirat külön dobozban marad kontrasztos: a videó átlátszósági
+         tartaléka (screen-keverés) így nem érinti a szöveg hátterét. A teljes
+         leirat felolvasható; az időzített másolat nem élő régió. */
+      var felirat = document.createElement('p'); felirat.className = 'video-felirat';
+      felirat.setAttribute('aria-hidden', 'true');
+      v.parentNode.insertBefore(felirat, vezerlok);
+      var feliratGomb = document.createElement('button');
+      feliratGomb.type = 'button'; feliratGomb.className = 'felirat-gomb';
+      feliratGomb.textContent = 'Magyar felirat'; feliratGomb.setAttribute('aria-pressed', 'true');
+      felirat.id = v.id + '-felirat'; feliratGomb.setAttribute('aria-controls', felirat.id);
+      vezerlok.appendChild(feliratGomb);
+      var sav = feliratsav.track; sav.mode = 'hidden';
+      function feliratFrissit(){
+        felirat.textContent = Array.prototype.map.call(sav.activeCues || [], function(c){ return c.text; }).join('\n');
+      }
+      sav.addEventListener('cuechange', feliratFrissit);
+      feliratsav.addEventListener('load', feliratFrissit); feliratFrissit();
+      feliratGomb.addEventListener('click', function(){
+        felirat.hidden = !felirat.hidden;
+        feliratGomb.setAttribute('aria-pressed', String(!felirat.hidden));
+      });
+      feliratsav.addEventListener('error', function(){
+        felirat.hidden = true; feliratGomb.hidden = true;
+      });
+    }
     function szunetFrissit(){ szunet.textContent = v.paused ? 'Videó folytatása' : 'Videó szüneteltetése'; }
     szunet.addEventListener('click', function(){
       if(v.paused){ var p = v.play(); if(p && p.catch) p.catch(function(){}); }

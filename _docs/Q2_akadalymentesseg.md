@@ -49,7 +49,7 @@ A javítás előtti 310 oldalas, 1280 px-es axe-futásban a szabályonkénti dar
 | `heading-order` | 1 | 1 |
 | `region` — best-practice | 309 | 309 |
 
-## Ellenőrzési eredmények
+## Ellenőrzési eredmények — első adag (`fec9760`)
 
 - Axe: **310 oldal × 390/1280 px = 620 vizsgálat, 0 szabályjelzés és 0 betöltési
   hiba**. A legutolsó arkuszfüggvény-név pontosítása után az érintett oldal külön,
@@ -108,25 +108,99 @@ A JSON külön őrzi a bizonytalan, kézi ellenőrzést kérő eredményeket és
 vezérlők felolvasási neveit is. A részletes helyi nyers eredmények és képek a
 Codex munkamappájában maradnak, nem kerülnek a nyilvános repóba.
 
-## Korlátok és fennmaradó ellenőrzés
+## Második adag — köszöntővideó és további kontrasztminták (2026-10-05)
+
+Kiinduló revízió: `fec9760`, tiszta helyi `main`, két helyi committal az
+`origin/main` előtt. Új ág és push ebben az adagban sem készült.
+
+### Javítás előtt bemutatott hibák
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Főoldali videó | A beszédhez nem tartozott felirat vagy teljes leirat | közepes | Kézzel karbantartott főoldali HTML, VTT-fájl és közös videókezelő |
+| Osztály- és témakörkártyák | Sötét sorszámok, a mintákban akár 1,46:1 | közepes | Közös CSS, világos másodlagos szövegszín |
+| „Nehéz” szintcímke | Egy képes háttér előtt 3,58:1 | közepes | Közös CSS, világosabb piros szöveg |
+| Összefoglaló szövegközi linkje | 3,95:1 a normál szövegre előírt 4,5:1 helyett | közepes | Közös CSS, világosabb zöld linkszín |
+| Nyomtatás | A fókuszkeret és a lenyíló elválasztója zöld maradt | alacsony | Közös nyomtatási stílus |
+| Videó JavaScript nélkül | Automatikusan indult, így nem alkalmazhatta a rendszer mozgáscsökkentését | közepes | HTML-ben kézi indítás; JS-sel továbbra is rendszerfüggő, néma indítás |
+
+### Mi változott
+
+- `assets/img/welcome-hu.vtt`: három időzített magyar felirat. A helyi
+  beszédfelismerésből készült szöveget a tanár ebben a beszélgetésben pontosként
+  megerősítette: „Üdv, kadét! Kezdődik a kiképzés. Húzd ki magad, és villantsd a matekot!”
+- A főoldalon alapból bekapcsolt, billentyűzettel kapcsolható magyar felirat és
+  külön, nyitható, nyomtatható leirat. A felirat a videó alatt, tömör, sötét
+  dobozon jelenik meg, így az átlátszó videó tartalék-keverése nem rontja a
+  kontrasztját. Az időzített másolat nem élő régió; a teljes szöveg a leiratban
+  hozzáférhető. JS nélkül a videó saját vezérlői és natív felirata használhatók.
+- A sorszámok, nehézségcímkék és szövegközi linkek közös színe világosabb.
+  Nyomtatáskor nincs fókuszkeret, a lenyílók elválasztója szürke. Oldalankénti
+  stíluskivétel és builder-módosítás nem kellett.
+- Az akadálymentességi eszköz helyi kiszolgálója a VTT-fájlokat megfelelő
+  tartalomtípussal adja vissza. A keresőindexben kizárólag a főoldal szövege változott.
+
+### Ellenőrzés
+
+- **Kontraszt: 16 oldal, 390/1280 px, 128 nézet, 5826 látható szövegminta,
+  0 küszöb alatti érték.** Mind a hat háttértípus és négy osztály szerepelt.
+  Nézetek: az oldal eleje/közepe/vége (96), lenyitott rész (12), helyes és
+  téves kvízválasz (10–10). A legkisebb javított sorszámérték 10,14:1,
+  „Nehéz” címkeérték 5,22:1, közös linkszínérték 5,21:1 volt a mintákban.
+  A felirat tömör hátterének számított kontrasztja 14,94:1.
+- A mérés a szöveg mögötti tényleges képpontokkal számolt, az átmenetek
+  lezajlása után. A rögzített fejléc vagy rakéta által takart pontokat kizárta;
+  azok az első mérésben hamis kontrasztjelzéseket okoztak. A logó, dekoráció,
+  színes emoji és SVG nem része ennek a szövegmérésnek. A tíz áttetsző
+  gyakorlósáv-címke külön, öt nézetben mérve is megfelelő: a saját átlátszó
+  hátterük miatt a 0,85-ös szövegopacitás a tényleges háttérre keverhető;
+  a legkisebb érték 5,35:1, küszöb alatti címke nincs.
+- **Axe: 16 oldal × 390/1280 px = 32 vizsgálat, 0 szabályjelzés és betöltési hiba.**
+  A videóhoz tartozó feliratjelzés eltűnt. Mind a 32 nézetben maradt kézi
+  kontrasztellenőrzést kérő eredmény; a fenti mintamérés ezt külön vizsgálta.
+- **Elrendezés: 16 oldal × 360/390/1280 px = 48 vizsgálat, 0 jelzés.**
+  A projekt Python Playwright-eszköze futott; a túlcsordulást, helyi fájlokat,
+  konzolt, JavaScript-kivételeket és KaTeX-hibákat vizsgálta.
+  Az utolsó nyomtatási és JS nélküli indítási pontosítás után a főoldal
+  külön, mindhárom szélességen is hibátlan.
+- **Videó: 44/44 sikeres böngészős ellenőrzés.**
+  A felirat mindhárom időpontban látható és túlcsordulás nélkül olvasható;
+  Enter/Space-szel kapcsolható. A mozgáscsökkentés, szüneteltetés, leirat,
+  nyomtatás, JS nélküli natív felirat és MP4-tartalékforrás is szerepelt.
+  A WebM és MP4 hangjának helyi összevetése 7 ms eltérést és 0,998 körüli
+  csúcskorrelációt mutatott. Az időzítés gépi szóidőkből készült;
+  külön hangos meghallgatást nem állítunk.
+- A főoldali felirat 390/1280 px-es és a leirat nyomtatási képe szemrevételezve.
+  Az első videópróba ugrási hibája a helyi tesztkiszolgáló hiányzó byte-range
+  támogatásából adódott; megfelelő kiszolgálás után az ugrás és a természetes
+  lejátszás is működött. A jsdom feliratsáv-API-jának hiányát képességellenőrzés kezeli.
+- **Kánon: 310 oldal, 0 hiba.** A három alaplap jsdom-próbája 0 hiba;
+  a videólejátszás és keresőhálózat ismert jsdom-korlátai külön figyelmeztetések.
+  **Belső linkek: 310 oldal, 0 hiba; gyakorlósávok: tiszta.**
+- Kép/média/háttér helyreállítás: 0 módosítás. Média: 334 aktív elem 139 lapon;
+  naplótérkép: 184 oldal, 2294 feladat, 12315 XP, változatlan. Kereső: 308 oldal,
+  csak az `index.html` szövege módosult. Feladat és kulcs nem változott,
+  kulcs- és regressziós teszt ebben az adagban nem kellett.
+
+A nyers eredmények, képek, helyi beszédfelismerő és modell a Codex munkamappájában
+maradtak, nem kerültek a repóba. A videót nem töltöttük fel külső átíró szolgáltatásba.
+
+## Korlátok és fennmaradó ellenőrzés — aktuális állapot
 
 - Valódi NVDA/VoiceOver-próba nem történt. A matematikai nevek szöveges vizsgálata
   és a böngésző hozzáférhetőségi fája nem helyettesíti ezt.
 - Az axe több képes/áttetsző hátterű elem kontrasztját nem tudja önállóan megítélni.
   Mind a 620 nézetnél maradt ilyen kézi ellenőrzési jelzés (`incomplete`, nem szabályhiba).
-  A nyolc nézet mérése mintavétel; nem minden oldal minden görgetési helyzetének,
-  ábrájának vagy állapotának kontrasztbizonyítéka.
-- A főoldali köszöntővideó mindkét nézetben kézi feliratellenőrzési jelzést kapott.
-  A hanghoz megfelelő felirat vagy teljes szöveges alternatíva meglétét ez az adag
-  nem igazolja; ez is a Q2 fennmaradó tétele.
+  A második adag 128 nézetes mérése is mintavétel; nem minden oldal minden
+  görgetési helyzetének, SVG-ábrájának vagy állapotának kontrasztbizonyítéka.
 - A külső YouTube/GeoGebra felületek, feliratok és átiratok, illetve a teljes
   nyomtatási látvány nem kaptak új teljes ellenőrzést.
 - A JavaScript nélküli statikus képletek és navigáció képernyőolvasós ellenőrzése
   külön feladat. A most hozzáadott közös kezelőfelületi nevek JavaScriptből készülnek.
 
-**Tanári döntés kell:** nincs új tantervi vagy matematikai döntés. A valódi
-képernyőolvasós próba, a további kézi kontrasztminták és a köszöntővideó feliratellenőrzése fennmaradó Q2-ellenőrzésként
-szerepelnek; ezekig a backlog Q2 sora részben kész.
+**Tanári döntés kell:** nincs nyitott tartalmi döntés; a köszöntővideó szövegét
+a tanár megerősítette. A valódi képernyőolvasós próba, a külső médiák és az ábrák
+teljes hozzáférhetőségi vizsgálata még nem történt meg; a backlog Q2 sora részben kész.
 
 ## A javításokhoz használt hivatalos útmutatók
 
@@ -135,3 +209,6 @@ Az állapotüzenetek, a kikapcsolható karakter-gyorsbillentyű és a videószü
 [W3C — Character Key Shortcuts](https://www.w3.org/WAI/WCAG21/Understanding/character-key-shortcuts.html),
 [W3C — Pause, Stop, Hide](https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html).
 Az automatikus eszköz forrása: [axe-core](https://github.com/dequelabs/axe-core).
+A felirathoz: [W3C — Captions (Prerecorded)](https://www.w3.org/WAI/WCAG21/Understanding/captions-prerecorded.html).
+A szövegkontraszt küszöbeihez: [W3C — Contrast (Minimum)](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html).
+A helyi beszédfelismerő forrása: [faster-whisper](https://github.com/SYSTRAN/faster-whisper).
