@@ -270,7 +270,7 @@ A korábbi A1-ellenőrzések nem helyettesítik a teljes stilisztikai átnézés
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ◐ 01: 9, 02: 3, 03: 4, 04: 3, 05: 9, 06: 3, 07: 4, 08: 3 — mind a 38 tananyag, az 01 további 7 és a 02 további 5 lapja átnézve és javítva; a 03–08 további lapjai hátra (helyi main, 2026-10-06) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
+| ◐ 01: 9, 02: 3, 03: 4, 04: 3, 05: 9, 06: 3, 07: 4, 08: 3 — mind a 38 tananyag, az 01 további 7, a 02 további 5 és a 03 további 5 lapja átnézve és javítva; a 04–08 további lapjai hátra (helyi main, 2026-10-06) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
 
 Az első adag három függvényes, a második hat logikai és halmazos tananyagot
 ellenőrzött. A példák feltételei, bevezetők, átvezetők és matematikai pontatlanságok
@@ -349,6 +349,17 @@ regresszió 100%. Render 586/0; 30 végleges nézet/axe 0, nyomtatás JS be/ki
 10/10. Keresőindex pontosan öt URL-en változott, naplótérkép változatlan.
 Új feladat-számadat, ág és push nincs. Tanári döntés nem maradt nyitva.
 Az 1e/03–08 további lapfajtái és a 2e–4e teljes A3-auditja hátra van.
+
+Tizennegyedik adag (2026-10-06): az 1e/03 öt további lapja, 57 gyakorlófeladat
+és három projektkártya átnézve. Definíciós feltételek, abszolútérték szélső
+esetei, oszthatósági szabályok, normálalak és kerekítés pontosítva. Latin
+betűkód, ismétlődő események LKT-modellje, számjegytartományok, kért indoklások
+és természetesebb bevezetők. Két kontextus nélküli lektor; kánon/link 310/0,
+kulcs 4499/4499, regresszió 100%. Render 465/0; 30 nézet/axe 0,
+nyomtatás JS be/ki 10/10. Keresőindex pontosan öt URL-en változott,
+naplótérkép változatlan. Új feladat-számadat, ág és push nincs.
+Tanári döntés nem maradt nyitva. Az 1e/04–08 további lapfajtái és
+a 2e–4e teljes A3-auditja hátra van.
 
 Részletek:
 [A3 nyelvi ellenőrzés](A3_nyelvi_ellenorzes.md).

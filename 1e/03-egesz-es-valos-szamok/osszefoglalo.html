@@ -26,58 +26,72 @@
 </nav>
 <div class="hero">
   <h1>Egész és valós számok — tömör összefoglaló</h1>
-  <p class="alcim">Minden fontos definíció, szabály és képlet egy helyen — a bevetési kártya.
-  Ismétléshez, dolgozat előtti átfutáshoz, nyomtatáshoz. 😉</p>
+  <p class="alcim">Az oszthatóság, a számrendszerek, a valós számok és a közelítés legfontosabb szabályai.
+  Ismétléshez, dolgozat előtti áttekintéshez; ki is nyomtathatod.</p>
 </div>
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s1">Oszthatóság, prímek, kanonikus alak</h2>
-    <p><b>Oszthatóság:</b> <span class="math inline">\(a\mid b\)</span>, ha van <span class="math inline">\(k\)</span> egész, amelyre <span class="math inline">\(b=a\cdot k\)</span>
-    (<a href="tananyag-oszthatosag.html#def-oszthatosag">→ tananyag</a>). <b>Maradékos osztás:</b> <span class="math inline">\(a=q\cdot b+r\)</span>, <span class="math inline">\(0\le r&lt;b\)</span>
+    <p><b>Oszthatóság:</b> egész <span class="math inline">\(a,b\)</span> számokra, ha <span class="math inline">\(a\ne0\)</span>, akkor <span class="math inline">\(a\mid b\)</span> azt jelenti, hogy van olyan egész <span class="math inline">\(k\)</span>, amelyre <span class="math inline">\(b=a\cdot k\)</span>
+    (<a href="tananyag-oszthatosag.html#def-oszthatosag">→ tananyag</a>).</p>
+    <p><b>Maradékos osztás:</b> egész <span class="math inline">\(a\)</span> osztandó és pozitív egész <span class="math inline">\(b\)</span> osztó esetén <span class="math inline">\(a=q\cdot b+r\)</span>, ahol a hányados <span class="math inline">\(q\)</span> és a maradék <span class="math inline">\(r\)</span> egész, továbbá <span class="math inline">\(0\le r&lt;b\)</span>
     (<a href="tananyag-oszthatosag.html#def-maradekos">→</a>).</p>
-    <p><b>Oszthatósági szabályok</b> (<a href="tananyag-oszthatosag.html#s2">→</a>):</p>
+    <p><b>Oszthatósági szabályok</b> (<a href="tananyag-oszthatosag.html#s2">→</a>): tízes számrendszerben felírt nemnegatív egész számokra.</p>
     <table class="tabla-nevezetes">
       <thead><tr><th>Osztó</th><th>Feltétel</th></tr></thead>
       <tbody>
-      <tr><th>2, 5, 10</th><td>az utolsó számjegy (10-nél: 0)</td></tr>
-      <tr><th>4, 25</th><td>az utolsó két számjegy</td></tr>
-      <tr><th>8, 125</th><td>az utolsó három számjegy</td></tr>
-      <tr><th>3, 9</th><td>a számjegyek összege</td></tr>
-      <tr><th>6, 12, 15…</th><td>a relatív prím osztóira bontva</td></tr>
+      <tr><th>2</th><td>Az utolsó számjegy páros.</td></tr>
+      <tr><th>5</th><td>Az utolsó számjegy 0 vagy 5.</td></tr>
+      <tr><th>10</th><td>Az utolsó számjegy 0.</td></tr>
+      <tr><th>4, 25</th><td>Az utolsó két számjegyből álló szám osztható a választott osztóval.</td></tr>
+      <tr><th>8, 125</th><td>Az utolsó három számjegyből álló szám osztható a választott osztóval.</td></tr>
+      <tr><th>3, 9</th><td>A számjegyek összege osztható a választott osztóval.</td></tr>
+      <tr><th>6</th><td>A szám 2-vel és 3-mal is osztható.</td></tr>
+      <tr><th>12</th><td>A szám 4-gyel és 3-mal is osztható.</td></tr>
+      <tr><th>15</th><td>A szám 3-mal és 5-tel is osztható.</td></tr>
       </tbody></table>
-    <p><b>Kanonikus alak:</b> minden <span class="math inline">\(1\)</span>-nél nagyobb egész egyértelműen prímek szorzata, pl. <span class="math inline">\(120=2^3\cdot 3\cdot 5\)</span>
-    (<a href="tananyag-oszthatosag.html#tetel-alaptetel">→</a>). Prím = pontosan 2 osztó; az <span class="math inline">\(1\)</span> se nem prím, se nem összetett.</p>
-    <p><b>LKO / LKT</b> a kanonikus alakból (<a href="tananyag-oszthatosag.html#def-lko-lkt">→</a>): <b>LKO</b> = közös prímek a <b>kisebb</b> kitevőn; <b>LKT</b> = minden prím a <b>nagyobb</b> kitevőn.
-    Összefüggés: <span class="math inline">\(\text{LKO}(a,b)\cdot\text{LKT}(a,b)=a\cdot b\)</span>; relatív prímek, ha <span class="math inline">\(\text{LKO}=1\)</span>.</p>
-
+    <p>Ha a számnak a szabályban említettnél kevesebb jegye van, balról nullákkal egészítheted ki. Negatív egész számnál az abszolútértékén ellenőrizd a szabályt.</p>
+    <p><b>Prímszám:</b> olyan 1-nél nagyobb természetes szám, amelynek pontosan két pozitív osztója van: 1 és önmaga. Az 1 se nem prím, se nem összetett.</p>
+    <p><b>Kanonikus alak:</b> minden 1-nél nagyobb egész szám felbontható prímtényezők szorzatára; a felbontás a tényezők sorrendjétől eltekintve egyértelmű. Az azonos prímtényezőket hatványként összevonjuk, pl. <span class="math inline">\(120=2^3\cdot3\cdot5\)</span>
+    (<a href="tananyag-oszthatosag.html#tetel-alaptetel">→</a>).</p>
+    <p><b>LKO / LKT</b> pozitív egész <span class="math inline">\(a,b\)</span> számokra, a kanonikus alakból (<a href="tananyag-oszthatosag.html#def-lko-lkt">→</a>): az <b>LKO</b>-hoz a közös prímek kisebb kitevős hatványait, az <b>LKT</b>-hez az összes előforduló prím nagyobb kitevős hatványait szorozzuk össze. Amelyik prím nem szerepel az egyik számban, annak ott 0 a kitevője.
+    Összefüggés: <span class="math inline">\(\text{LKO}(a,b)\cdot\text{LKT}(a,b)=a\cdot b\)</span>. A két szám <b>relatív prím</b>, ha <span class="math inline">\(\text{LKO}(a,b)=1\)</span>.</p>
     <h2 id="s2">Pozíciós számrendszerek</h2>
-    <p>Alapszám <span class="math inline">\(b\)</span>: a jegyek <span class="math inline">\(0\)</span>-tól <span class="math inline">\((b-1)\)</span>-ig, a helyiértékek <span class="math inline">\(b\)</span> hatványai
-    (<a href="tananyag-szamrendszerek.html#s2">→ tananyag</a>). Tíznél nagyobb alapnál betűk: A=10, B=11, …, F=15.</p>
+    <p>Alapszám <span class="math inline">\(b\)</span>, ahol <span class="math inline">\(b\in\mathbb{Z},\ b\ge2\)</span>: a jegyek <span class="math inline">\(0\)</span>-tól <span class="math inline">\((b-1)\)</span>-ig, a helyiértékek <span class="math inline">\(b\)</span> hatványai
+    (<a href="tananyag-szamrendszerek.html#s2">→ tananyag</a>). A tizenhatos számrendszerben a nagyobb számjegyeket betűk jelölik: A=10, B=11, …, F=15.</p>
     <ul>
       <li><b>Más alapból tízesbe:</b> helyiérték-összeg, pl. <span class="math inline">\(321_{4}=3\cdot 16+2\cdot 4+1=57\)</span> (<a href="tananyag-szamrendszerek.html#pelda-tizesbe">→</a>).</li>
-      <li><b>Tízesből más alapba:</b> ismételt osztás az alappal, a maradékok <b>alulról felfelé</b>, pl. <span class="math inline">\(77=2212_{3}\)</span> (<a href="tananyag-szamrendszerek.html#pelda-masikba">→</a>).</li>
+      <li><b>Tízesből más alapba:</b> pozitív egész számot ismételten elosztunk az alappal, amíg a hányados 0 lesz. A maradékokat <b>az utolsótól az elsőig</b> olvassuk, pl. <span class="math inline">\(77=2212_{3}\)</span> (<a href="tananyag-szamrendszerek.html#pelda-masikba">→</a>).</li>
     </ul>
+    <p>A 0 jele minden ilyen számrendszerben 0.</p>
 
     <h2 id="s3">Számhalmazok és abszolútérték</h2>
     <p><b>A számkör:</b> <span class="math inline">\(\mathbb{N}\subset\mathbb{Z}\subset\mathbb{Q}\subset\mathbb{R}\)</span>, és <span class="math inline">\(\mathbb{R}=\mathbb{Q}\cup\mathbb{I}\)</span>
-    (<a href="tananyag-szamhalmazok.html#s1">→ tananyag</a>). <b>Racionális</b>: <span class="math inline">\(\tfrac{p}{q}\)</span> alakú (véges vagy szakaszos tizedes); <b>irracionális</b>: pl. <span class="math inline">\(\sqrt2,\pi\)</span>
+    (<a href="tananyag-szamhalmazok.html#s1">→ tananyag</a>). Itt <span class="math inline">\(\mathbb{N}=\{1,2,3,\ldots\}\)</span>, <span class="math inline">\(\mathbb{I}=\mathbb{R}\setminus\mathbb{Q}\)</span>. <b>Racionális</b>: <span class="math inline">\(\tfrac{p}{q}\)</span> alakban felírható, ahol <span class="math inline">\(p,q\in\mathbb{Z},\ q\ne0\)</span>; tizedes alakja véges vagy végtelen szakaszos. <b>Irracionális</b>: olyan valós szám, amely nem racionális, pl. <span class="math inline">\(\sqrt2,\pi\)</span>
     (<a href="tananyag-szamhalmazok.html#tetel-gyok2">→</a>). Besoroláskor <b>egyszerűsíts</b>: <span class="math inline">\(\sqrt9=3\in\mathbb{N}\)</span>.</p>
     <p><b>Racionális alakok:</b> tört ↔ tizedes ↔ százalék, pl. <span class="math inline">\(\tfrac34=0{,}75=75\%\)</span> (<a href="tananyag-szamhalmazok.html#def-racionalis">→</a>).</p>
-    <p><b>Abszolútérték</b> = a 0-tól mért távolság (<a href="tananyag-szamhalmazok.html#def-abszolut">→</a>): <span class="math inline">\(|x|=a\Rightarrow x=\pm a\)</span>; <span class="math inline">\(|x|&lt;a\Rightarrow -a&lt;x&lt;a\)</span>; <span class="math inline">\(|x|>a\Rightarrow x&lt;-a\)</span> vagy <span class="math inline">\(x>a\)</span>.</p>
+    <p><b>Abszolútérték</b> = a 0-tól mért távolság (<a href="tananyag-szamhalmazok.html#def-abszolut">→</a>). Valós <span class="math inline">\(x\)</span> és <b>pozitív</b> <span class="math inline">\(a\)</span> esetén:</p>
+    <ul>
+      <li><span class="math inline">\(|x|=a\Leftrightarrow x=\pm a\)</span>;</li>
+      <li><span class="math inline">\(|x|&lt;a\Leftrightarrow -a&lt;x&lt;a\)</span>;</li>
+      <li><span class="math inline">\(|x|>a\)</span> akkor és csak akkor igaz, ha <span class="math inline">\(x&lt;-a\)</span> vagy <span class="math inline">\(x>a\)</span>.</li>
+    </ul>
+    <p>Ha <span class="math inline">\(a=0\)</span>, akkor az egyenlet egyetlen megoldása <span class="math inline">\(x=0\)</span>; <span class="math inline">\(|x|&lt;0\)</span>-nak nincs megoldása, míg <span class="math inline">\(|x|>0\)</span> pontosan <span class="math inline">\(x\ne0\)</span> esetén igaz. Ha <span class="math inline">\(a&lt;0\)</span>, az egyenletnek és a <span class="math inline">\(|x|&lt;a\)</span> egyenlőtlenségnek nincs megoldása; <span class="math inline">\(|x|>a\)</span> minden valós <span class="math inline">\(x\)</span>-re igaz.</p>
 
-    <h2 id="s4">Közelítés, hiba, normál alak</h2>
-    <p><b>Kerekítés</b> <span class="math inline">\(n\)</span> tizedesre: az <span class="math inline">\((n{+}1)\)</span>-edik jegy dönt (<span class="math inline">\(&lt;5\)</span> le, <span class="math inline">\(\ge 5\)</span> fel) (<a href="tananyag-kozelites.html#def-kerekites">→ tananyag</a>).</p>
-    <p><b>Hiba</b> (<a href="tananyag-kozelites.html#def-hiba">→</a>): abszolút <span class="math inline">\(\Delta=|x-x^{*}|\)</span>; relatív <span class="math inline">\(\delta=\dfrac{\Delta}{|x|}\)</span> (gyakran <span class="math inline">\(\%\)</span>-ban).</p>
-    <p><b>Normál alak</b> (<a href="tananyag-kozelites.html#def-normal">→</a>): <span class="math inline">\(a\cdot 10^{k}\)</span>, ahol <span class="math inline">\(1\le a&lt;10\)</span>, <span class="math inline">\(k\in\mathbb{Z}\)</span>. Pl. <span class="math inline">\(450\,000\,000\,000=4{,}5\cdot 10^{11}\)</span>, <span class="math inline">\(0{,}000\,000\,000\,067=6{,}7\cdot 10^{-11}\)</span>.</p>
+    <h2 id="s4">Közelítés, hiba, normálalak</h2>
+    <p><b>Kerekítés</b> <span class="math inline">\(n\)</span> tizedesre, ahol <span class="math inline">\(n\)</span> nemnegatív egész: a szám abszolútértékét kerekítjük, majd visszatesszük az eredeti előjelet. Az <span class="math inline">\((n+1)\)</span>-edik tizedesjegy dönt: ha 5-nél kisebb, a megtartott utolsó jegy változatlan; ha legalább 5, a megtartott részt egy egységgel növeljük az utolsó helyiértéken. Az elhagyott jegyeket töröljük
+    (<a href="tananyag-kozelites.html#def-kerekites">→ tananyag</a>).</p>
+    <p><b>Hiba</b> (<a href="tananyag-kozelites.html#def-hiba">→</a>): ha <span class="math inline">\(x\)</span> a pontos érték és <span class="math inline">\(x^{*}\)</span> a közelítő érték, az abszolút hiba <span class="math inline">\(\Delta=|x-x^{*}|\)</span>. A relatív hiba <span class="math inline">\(\delta=\dfrac{\Delta}{|x|}\)</span>, feltéve, hogy <span class="math inline">\(x\ne0\)</span>; százalékban <span class="math inline">\(100\delta\%\)</span>.</p>
+    <p><b>Normálalak</b> (<a href="tananyag-kozelites.html#def-normal">→</a>): nullától különböző valós számra <span class="math inline">\(\pm a\cdot10^k\)</span>, ahol <span class="math inline">\(1\le a&lt;10\)</span> és <span class="math inline">\(k\in\mathbb{Z}\)</span>. Negatív számnál a mínuszjelet kiemeljük. A 0-t egyszerűen 0-ként írjuk. Pl. <span class="math inline">\(450\,000\,000\,000=4{,}5\cdot 10^{11}\)</span>, <span class="math inline">\(0{,}000\,000\,000\,067=6{,}7\cdot 10^{-11}\)</span>.</p>
 
     <h2 id="kulcsotletek">🧠 Kulcsötletek</h2>
     <ul>
-      <li>Szinte minden számelméleti feladat kulcsa a <b>kanonikus alak</b> — abból jön az LKO, LKT, az osztók száma, a négyzetszám-vizsgálat.</li>
+      <li>A <b>kanonikus alakból</b> meghatározhatod az LKO-t, az LKT-t és a pozitív osztók számát; azt is megmutatja, négyzetszám-e a szám.</li>
       <li>A <b>6, 12, 15…</b> oszthatóságát mindig <b>relatív prím</b> tényezőkre bontva ellenőrizd (6 → 2 és 3).</li>
       <li>Számrendszer-átváltásnál a <b>maradékokat alulról felfelé</b> olvasd; ellenőrizz visszaszorzással.</li>
       <li>Besoroláskor előbb <b>egyszerűsíts</b> (<span class="math inline">\(\sqrt{16}=4\)</span>), és a <b>legszűkebb</b> halmazt add meg.</li>
-      <li>Abszolútérték = <b>távolság</b>: az <span class="math inline">\(=\)</span> két esetet, a <span class="math inline">\(&lt;\)</span> egy sávot, a <span class="math inline">\(>\)</span> két szélső tartományt ad.</li>
-      <li>Normál alaknál a mantissza mindig <span class="math inline">\(1\)</span> és <span class="math inline">\(10\)</span> között van; a kitevő előjele a szám nagyságát mutatja.</li>
+      <li>Abszolútérték = <b>távolság</b>. <b>Pozitív</b> jobb oldalnál az egyenlet két megoldást, a <span class="math inline">\(&lt;\)</span> jelű egyenlőtlenség egy nyílt intervallumot, a <span class="math inline">\(>\)</span> jelű egyenlőtlenség két szélső tartományt ad.</li>
+      <li>Normálalaknál <span class="math inline">\(1\le a&lt;10\)</span>. A <span class="math inline">\(k\)</span> kitevő pozitív, ha <span class="math inline">\(|x|\ge10\)</span>; nulla, ha <span class="math inline">\(1\le|x|&lt;10\)</span>; negatív, ha <span class="math inline">\(0&lt;|x|&lt;1\)</span>.</li>
     </ul>
     <div class="lapozo">
       <a class="elozo" href="feladatok-egesz-es-valos-szamok.html"><span class="irany">← Előző</span><span class="hova">Egész és valós számok — feladatok</span></a>

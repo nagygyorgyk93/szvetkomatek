@@ -3,12 +3,12 @@
 ## Hatókör és állapot
 
 **Jelenlegi összesítés:** az 1e mind a 38 tananyaglapjának teljes nyelvi és
-példahitelességi ellenőrzése elkészült tizenegy adagban. A tizenkettedik és
-tizenharmadik adagban az 1e/01 hét és az 1e/02 öt további lapja is átnézve
-és javítva: nyitóoldalak, összefoglalók, terepküldetések és feladatgyűjtemények.
-Az 1e/03–08 további lapfajtáinak és a 2e–4e teljes A3-auditja hátra van.
-Az adagok alábbi adatai az egyes munkamenetek eredményei; a legfrissebb
-bejegyzés a végén található.
+példahitelességi ellenőrzése elkészült tizenegy adagban. A tizenkettedik–
+tizennegyedik adagban az 1e/01 hét, az 1e/02 öt és az 1e/03 öt további lapja
+is átnézve és javítva: nyitóoldalak, összefoglalók, terepküldetések és
+feladatgyűjtemények. Az 1e/04–08 további lapfajtáinak és a 2e–4e teljes
+A3-auditja hátra van. Az adagok alábbi adatai az egyes munkamenetek
+eredményei; a legfrissebb bejegyzés a végén található.
 
 **2026-10-05, első adag:** az 1e/01 három függvényes tananyaglapjának teljes szövegét
 átnéztük, a bevezetőktől az összefoglalóig. A tanár kérése szerint az egyértelműen
@@ -1372,3 +1372,102 @@ ebben az adagban nem telepítettünk másik renderelőt.
 A3-audit szerint átnézve. Az 1e/03–08 további lapjai és a 2e–4e teljes
 A3-auditja hátra van. **Tanári döntés kell: nincs nyitott kérdés.**
 Helyi main, új ág és push nélkül. Következő javasolt adag: az 1e/03 további lapjai.
+
+
+## Tizennegyedik adag — 1e/03 további lapfajták (2026-10-06)
+
+### Hatókör és javítások
+
+Kiinduló revízió: `c306e98`, tiszta helyi main, két committal az origin/main
+helyi referenciája előtt, mögötte nulla. Távoli frissítés nem történt.
+Az egész és valós számok öt további lapja teljes szöveggel átnézve:
+[nyitóoldal](../1e/03-egesz-es-valos-szamok/index.html),
+[összefoglaló](../1e/03-egesz-es-valos-szamok/osszefoglalo.html),
+[terepküldetés](../1e/03-egesz-es-valos-szamok/terepkuldetes.html),
+[feladatgyűjtemény](../1e/03-egesz-es-valos-szamok/feladatok-egesz-es-valos-szamok.html),
+[házi feladatsor](../1e/03-egesz-es-valos-szamok/feladatok-hazi.html).
+Összesen 60 kártya: 44 + 13 gyakorlófeladat és három projektkártya.
+E lapokon nincs SVG vagy kvíz. A négy tananyag korábbi A3-auditja megmaradt.
+
+Az 1e matematika-skill egész és valós számokra vonatkozó kimenetei az alap:
+prímtényezős alak, LKO/LKT, számhalmazok, valós műveletek és összehasonlítás,
+modellalkotás, közelítés és az abszolútérték bevezetése. A számrendszer-váltás
+és hibaszámítás meglévő súlya nem nőtt. Négy kézzel karbantartott lap;
+a házit a `build_dangerroom.py` írja. Csak a DEST03 kiíróhívás futott.
+A builder többi témájának változatlanságát AST-összevetés igazolja.
+Az újraépítés után a lánc visszatette a házi avatarképét és háttérattribútumát.
+
+Javítás előtt bemutatott hibatábla, a lektori pontosításokkal:
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Összefoglaló | Oszthatóság, maradékos osztás, racionális alak és relatív hiba feltételei hiányosak | Közepes | HTML: számhalmazok, pozitív osztó, nemnulla nevezők, pontos/közelítő érték |
+| Összefoglaló | Abszolútértékes képletek feltétel nélkül; nulla esetében téves kétmegoldásos leírás | Magas | HTML: pozitív jobb oldal, ekvivalencia, nulla és negatív jobb oldal külön |
+| Összefoglaló | Oszthatósági szabályok csak utalásként; prím és kanonikus alak pontatlanul tömörítve | Közepes | HTML: kimondott feltételek, pozitív osztók, egyértelműség a sorrendtől eltekintve |
+| Összefoglaló | Normálalak előjele/halmaza; negatív szám kerekítése félreérthető | Közepes | HTML: nemnulla valós, kiemelt előjel, abszolútérték kerekítése és eredeti előjel |
+| Kódfejtő projekt | A 26 betűs ábécé nincs megnevezve; „helyi érték” helyett sorszám kell | Közepes | HTML: latin A–Z, ékezet nélkül, öt bit és bal oldali nullák |
+| Ismétlődő események | Az együttállás általában nem az LKT; a saját esetből hiányzik a közös kezdet és az állandó periódus | Közepes | HTML: kiindulási pontok egyidejű visszatérése; szabályos jelzések modellje és közös időegység |
+| Gyakorlófeladatok | Számjegyek, vezető számjegy, valós ismeretlen és tört nevezője nincs mindenütt rögzítve | Közepes | HTML / builder: tartományok és alapértelmezett tízes alap |
+| Házi | Egy rögzített hamis állításhoz ellenpéldát kér; a mérési „hiba” típusa nincs megnevezve | Közepes | Builder: számítással cáfolat is elfogadott; abszolút hiba |
+| Kért indoklások | Összehasonlításnál csak válasz; köbös azonosságnál a 6-tal oszthatóság indoka hiányos | Közepes | HTML / builder: rövid összehasonlítás és a páros/3-mal osztható tényező |
+| Bevezetők | Idegen szóhasználat, teljességígéret, ellenőrizhetetlen állítás az éles dolgozatról | Enyhe–közepes | HTML / builder: konkrét gyakorlási útmutató, természetesebb magyar mondatok |
+| Nyitóoldal | A kész témakör még „készül” | Enyhe | HTML: kész állapot és tényleges feladatszámok |
+
+Az eredeti feladat-számadatok és számszerű válaszok megmaradtak.
+Új gyakorlófeladat vagy új feladat-számadat nem készült. A javítások
+definíciós feltételeket és a már kért válaszok indoklását egészítik ki.
+Az abszolútértékes szélső esetek definíciós pontosítások. A szondák és
+bolygók feladata az LKT-hoz illő eseményt kér; az eredeti időadatok és
+eredmények változatlanok. A projekt saját példája metronómok állandó
+jelzéseivel, közös indulással számol; a mérési és modellpontatlanságot jelzi.
+A 80 évnyi időtartam megmaradt, életkori általánosítás nélkül.
+A saját becslésnél forrás, mértékegység és feltevések szerepelnek.
+A projekt értékelési arányai és a kártyák/horgonyok változatlanok.
+Projekt-megoldókulcs nem került a repóba, oldalankénti CSS-kivétel nem készült.
+
+### Független ellenőrzés
+
+Két friss szemű, projektkontextus nélküli lektor kizárólag tanulói szöveget
+kapott, végeredmények nélkül. Az egyik önállóan megoldotta mind az 57
+gyakorlókártyát; eredményeik egyeznek a lenyílókkal. A másik ellenőrizte
+az összefoglaló definícióit és a projekt rögzített számításait. A biztos
+észrevételek beépültek. A javított kivonatok második körében új matematikai
+hibát nem találtak; három rövid utasítás és a reláció megnevezése még pontosult.
+
+Független kontroll: 26 matematikai próbacsoport egész osztással,
+prímtényezőkkel, számjegyekkel, számrendszerekkel, törtekkel, Decimal
+ötös felkerekítéssel és SymPy-azonosságokkal. Az abszolútérték három
+tartományában 21 eset. A projekt eredményei csak a privát ellenőrzésben.
+20/20 megőrzési próba: id/href/média/kártyalisták; a régi számadatok,
+szkriptek és stílushivatkozások megmaradtak. A 60 kártya és 57 lenyíló megtartva.
+
+### Ellenőrzések és korlátok
+
+| Ellenőrzés | Eredmény |
+|---|---|
+| Teljes kánon és belső linkek | 310 oldal, 0 hiba |
+| Gyakorlósávok | Minden kártyát felad valamelyik egység |
+| Teljes kulcsteszt | 4499/4499, 0 eltérés |
+| Teljes regresszió | 4499/4499 = 100%; az utolsó prózajavítások nem érintették a tesztelt válaszokat |
+| jsdom / képletrender | Öt végleges lap, 465 képlet, 0 hiba; nincs kvíz |
+| Edge mobil és asztali | Öt lap × 360/390/1280 px × zárt/nyitott lenyílók: 30 nézet, 0 hiba |
+| axe | 30 nézet, 0 jelzés; nem teljes WCAG-minősítés |
+| Nyomtatás JS be/ki | 10/10: címsorok, feladatszövegek és minden végeredmény látható |
+| JavaScript nélkül | 5/5 lap olvasható; képletek TeX alakban |
+| Keresőindex | 308 nem üres bejegyzés, pontosan öt URL változott; két új késői részlet a 3000. karakter után is indexelve |
+| Naplótérkép | Változatlan: 184 egység, 2294 feladat, összesen 12315 XP |
+| Kép, média és háttér | Házi avatar/háttér visszatéve; 334 médiaelem 139 lapon, médiaváltozás nélkül |
+
+A teljes lánc után a végső prózapontosításokkal a statikus lánc újrafutott.
+A teljes regresszióban vizsgált 1e/03 válaszblokkok változatlanságát külön
+összevetés igazolja. A végleges HTML kapta a böngészős és képletrender-próbát.
+Négy 390 px-es részlet szemrevételezve: oszthatósági táblázat, kódfejtés,
+összehasonlító válasz és köbös bizonyítás; jól tördeltek és olvashatók.
+Valódi képernyőolvasó, más böngésző, teljes PDF-oldaltördelés, minden
+háttérpont kézi kontrasztja és külső média tartalma nem ellenőrizve.
+A nyomtatási láthatóság valódi Edge-ben ellenőrizve.
+
+**Állapot:** az 1e 38/38 tananyaga és az 1e/01–03 további 17 lapja teljes
+A3-audit szerint átnézve. Az 1e/04–08 további lapjai és a 2e–4e teljes
+A3-auditja hátra van. **Tanári döntés kell: nincs nyitott kérdés.**
+Helyi main, új ág és push nélkül. Következő javasolt adag: az 1e/04 további lapjai.

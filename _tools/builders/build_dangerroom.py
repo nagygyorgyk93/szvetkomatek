@@ -135,7 +135,7 @@ K02_UJ = [
 
 # --- 03 Egész és valós számok ---
 A03_UJ = [
- ("Döntsd el, igaz vagy hamis, és <b>ha hamis, adj ellenpéldát</b>!",
+ ("Döntsd el, igaz vagy hamis! A hamis állítást <b>ellenpéldával vagy számítással cáfold</b>!",
   ["Minden racionális szám felírható véges tizedes tört alakban.",
    "Minden végtelen tizedes tört irracionális.",
    "Két irracionális szám összege mindig irracionális.",
@@ -146,7 +146,7 @@ A03_UJ = [
    'Hamis: $\\sqrt9=3$.']),
 ]
 K03_UJ = [
- ("Egy mérőműszer $3{,}47$-et mutat, és a leírás szerint a mérés hibája legfeljebb $0{,}02$.",
+ ("Egy mérőműszer $3{,}47$-et mutat, és a leírás szerint a mérés abszolút hibája legfeljebb $0{,}02$.",
   ["Mely valós számok jöhetnek szóba valódi értékként? Add meg intervallummal!",
    "Elmondható-e biztosan, hogy a valódi érték nagyobb $3{,}4$-nél? És hogy nagyobb $3{,}46$-nál?",
    "A műszer leolvasását $3{,}5$-re kerekítjük. Mekkora lesz így a legnagyobb lehetséges eltérés "
@@ -379,7 +379,7 @@ A03 = [
   None, "$84=2^2\\cdot 3\\cdot 7$, $250=2\\cdot 5^3$; $\\text{LKO}=2$."),
  ("A megadott számok közül melyek oszthatók? $1080,\\ 2358,\\ 4526,\\ 7200$.",
   ["$4$-gyel","$9$-cel"], ["$1080,\\ 7200$","$1080,\\ 2358,\\ 7200$"]),
- ("Számrendszer-váltás.",
+ ("Számrendszer-váltás. Ha az alapot külön nem jelöljük, a szám tízes számrendszerbeli.",
   ["$231_4$ tízesbe","$10110_2$ tízesbe","$50$ kettesbe","$200$ nyolcasba"],
   ["$45$","$22$","$110010_2$","$310_8$"]),
  ("Sorold be mindegyik számot a legszűkebb számhalmazba ($\\mathbb{N},\\mathbb{Z},\\mathbb{Q},\\mathbb{R}$)!",
@@ -388,7 +388,7 @@ A03 = [
  ("Töltsd ki a hiányzó alakokat!",
   ["$\\tfrac14$ tizedes törtként és százalékként","$0{,}45$ törtként és százalékként","$30\\%$ törtként és tizedes törtként"],
   ["$0{,}25$; $25\\%$","$\\tfrac{9}{20}$; $45\\%$","$\\tfrac{3}{10}$; $0{,}3$"]),
- ("Oldd meg, illetve írd fel normál alakban!",
+ ("Oldd meg, illetve írd fel normálalakban!",
   ["$|x|=15$","$|x-2|=6$","$73\\,000\\,000$","$0{,}0004$"],
   ["$x=\\pm 15$","$x=8$ vagy $x=-4$","$7{,}3\\cdot 10^{7}$","$4\\cdot 10^{-4}$"]),
 ]
@@ -396,27 +396,26 @@ A03 = A03 + A03_UJ
 K03 = [
  ("Három jelzőfény $8$, $12$ és $20$ másodpercenként villan; most együtt villantak. Hány másodperc múlva villannak legközelebb megint mind együtt? (Prímtényezős alak, majd LKT.)",
   None, "$\\text{LKT}(8,12,20)=120$ másodperc."),
- ("Határozd meg a hiányzó számjegyet — add meg az összes megoldást!",
+ ("Határozd meg a hiányzó tízes számrendszerbeli $x$ számjegyet — add meg az összes megoldást!",
   ["$\\overline{47x}$ osztható $3$-mal","$\\overline{58x0}$ osztható $8$-cal"],
   ["$x\\in\\{1,4,7\\}$","$x\\in\\{0,4,8\\}$"]),
- ("Az $x=7{,}64983$ értéket kerekítsd 2 tizedesre, add meg az abszolút hibát; majd számold ki normál alakban: $(4\\cdot 10^{6})\\cdot(2{,}5\\cdot 10^{-3})$.",
+ ("Az $x=7{,}64983$ értéket kerekítsd 2 tizedesre, add meg az abszolút hibát; majd számold ki normálalakban: $(4\\cdot 10^{6})\\cdot(2{,}5\\cdot 10^{-3})$.",
   None, "$x^{*}=7{,}65$; $\\Delta=0{,}00017$; a szorzat $1\\cdot 10^{4}$."),
 ]
 K03 = K03 + K03_UJ
 N03 = [
  ("Bizonyítsd be, hogy $n^3-n$ osztható $6$-tal minden egész $n$-re!",
-  None, "$n^3-n=(n-1)\\,n\\,(n+1)$ — három egymást követő egész szorzata, ezért osztható $6$-tal."),
+  None, "$n^3-n=(n-1)\\,n\\,(n+1)$ — három egymást követő egész szorzata. Van közöttük páros és 3-mal osztható szám is; mivel 2 és 3 relatív prím, a szorzat 6-tal osztható."),
  ("Melyik a legkisebb pozitív egész szám, amivel a $600$-at szorozva köbszámot kapunk? (Kanonikus alak.)",
   None, "$45$."),
 ]
-brief03 = ("🕹️ <b>SZVETI:</b> <b>Vészterem</b>-szimuláció, kódtörő + kalibráló modul. Ez a <b>Vészterem</b> "
- "otthoni edzésváltozata — itt gyakorolsz a saját tempódban. A szimuláció a <b>teljes témakört</b> lefedi: "
- "számelmélet és számrendszerek (Iruhs szektora), valamint a valós számok, a közelítés és a normál alak (Banner "
- "szektora). Haladj a fokozatokon: zöld (alap) → sárga (közép) → piros (nehéz). A végeredményt minden feladatnál "
- "lenyithatod — de előbb küzdd le magad!")
+brief03 = ("🕹️ <b>SZVETI:</b> A <b>Vészteremben</b> a kódfejtéshez és a közelítő számításokhoz is gyakorolsz: "
+ "oszthatóság, számrendszerek, számhalmazok, kerekítés és normálalak. Haladj a zöld feladatoktól a sárgák, "
+ "majd a piros felé. Előbb dolgozz önállóan, aztán ellenőrizd a végeredményt! "
+ "Itt a természetes számok: 1, 2, 3, …; az egyenletek ismeretlenje valós szám.")
 dr_page(DEST03, "index.html", "Egész és valós számok", "feladatok-hazi.html",
  "🕹️ Vészterem — házi feladatgyűjtemény",
- "Egyetlen, a teljes témakört lefedő házi feladatsor: számelmélet, számrendszerek, számhalmazok, közelítés. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
+ "Házi feladatsor az egész és valós számok fő feladattípusaival. Előbb oldd meg a feladatot, aztán nyisd le a végeredményt!",
  brief03, sect(A03, K03, N03),
  "index.html", "Témakör Főhadiszállása", "osszefoglalo.html", "Tömör összefoglaló",
  "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")
