@@ -32,13 +32,13 @@
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
-      <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/iruhs.webp" alt="Iruhs — a kampusz fejlesztőmérnöke" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Iruhs:</b> Kán fegyvere: <b>túlbonyolítás</b>. Egy hosszú, ijesztő kifejezés mögött gyakran néhány tiszta <b>tényező</b> lapul — a te dolgod, hogy <b>felismerd és szorzattá bontsd</b>. A szorzat alakkal nyersz: ezzel egyszerűsítesz törtet, oldasz egyenletet, számolsz LKO-t és LKT-t. Ez a modul a tisztogatásé: az összeget alakítjuk <b>szorzattá</b>.</p></div>
+      <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/iruhs.webp" alt="Iruhs — a kampusz fejlesztőmérnöke" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Iruhs:</b> Kadét, egy kifejezésen sokat segíthet, ha más alakban írod fel. A <b>szorzatalakból</b> könnyebben észreveszed a közös tényezőket: ezekkel törteket egyszerűsíthetsz, egyenleteket oldhatsz meg, LKO-t és LKT-t határozhatsz meg. Most azt gyakoroljuk, hogyan lehet egy összeget <b>szorzattá alakítani</b>. Kán rossz bontóképleteire itt is figyelj.</p></div>
     <p>A <b>szorzattá alakítás</b> (tényezőkre bontás) az az átalakítás, amikor egy összeget (polinomot) <b>tényezők szorzataként</b> írunk fel. Három fő eszközünk van: közös tényező kiemelése, nevezetes azonosság felismerése, csoportosítás — és ezek kombinációja.</p>
 
     <h2 id="s1">Közös tényező kiemelése</h2>
     <div class="doboz definicio" id="def-kiemeles">
       <p class="cim"><span class="ikon">📗</span> Kiemelés</p>
-      <p>Ha minden tagban szerepel egy közös tényező, azt a zárójel elé <b>kiemeljük</b> (fordított disztributivitás): <span class="math inline">\(ab+ac=a(b+c)\)</span>. Mindig a <b>legnagyobb</b> közös tényezőt emeld ki (az együtthatók legnagyobb közös osztóját, a közös változókat pedig a legkisebb előforduló kitevőn).</p>
+      <p>Ha minden tagban szerepel egy közös tényező, azt a zárójel elé <b>kiemeljük</b> (fordított disztributivitás): <span class="math inline">\(ab+ac=a(b+c)\)</span>. Bármely közös tényező kiemelhető, de érdemes a teljes közös tényezőt kiemelni. <b>Egész együtthatóknál</b> az együtthatók legnagyobb közös osztóját vesszük; a minden tagban szereplő változókat a legkisebb előforduló kitevőn emeljük ki.</p>
     </div>
     <div class="doboz pelda" id="pelda-kiemeles">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
@@ -66,17 +66,17 @@
     </div>
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
-      A négyzetek <b>különbsége</b> bontható (<span class="math inline">\(a^2-b^2\)</span>), de a négyzetek <b>összege</b> — <span class="math inline">\(a^2+b^2\)</span> — a valós számok körében <b>nem</b>! Aki azt írja, hogy <span class="math inline">\(x^2+9=(x+3)^2\)</span>, a Kán csapdájába lépett: <span class="math inline">\((x+3)^2=x^2+6x+9\neq x^2+9\)</span>.
+      A <b>négyzetek különbségének</b> azonosságát nem alkalmazhatod a négyzetek összegére. Az <span class="math inline">\(x^2+9\)</span> például nem bontható két valós együtthatós, elsőfokú tényező szorzatára, mert minden valós <span class="math inline">\(x\)</span>-re pozitív, így nincs valós gyöke. Teljes négyzetnek sem írhatod fel <span class="math inline">\((x+3)^2\)</span> alakban: a helyes azonosság <span class="math inline">\((x+3)^2=x^2+6x+9\)</span>.
     </div>
     <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ x² − 16 = (x−4)(x+4) — négyzetek különbsége." data-nem="✘ Ez négyzetek különbsége: x² − 16 = (x−4)(x+4).">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
-      <p>Mi az <span class="math inline">\(x^2-16\)</span> szorzat alakja?</p>
+      <p>Mi az <span class="math inline">\(x^2-16\)</span> szorzatalakja?</p>
       <div class="opciok"><button><span class="math inline">\((x-8)(x+2)\)</span></button><button><span class="math inline">\((x-4)(x+4)\)</span></button><button><span class="math inline">\((x-4)^2\)</span></button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
     
-    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ x² − 9 = (x−3)(x+3). A két négyzet KÜLÖNBSÉGE bontható; az összeg nem." data-nem="✘ Az a² − b² = (a−b)(a+b) azonosság a KÜLÖNBSÉGRE szól. Az x² + 9 a valós számok között nem bontható, az x² + 6x + 9 pedig teljes négyzet: (x+3)².">
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ x² − 9 = (x−3)(x+3). Erre a különbségre alkalmazható az azonosság." data-nem="✘ A négyzetek különbségének azonossága itt az x² − 9-re alkalmazható. Az x² + 9 nem bontható valós együtthatós, elsőfokú tényezőkre; az x² + 6x + 9 teljes négyzet: (x+3)².">
       <p class="kviz-cim"><span class="ikon">🎯</span> Gyors kérdés</p>
       <p>Melyik alakítható szorzattá a két négyzet különbségének azonosságával?</p>
       <div class="opciok"><button><span class="math inline">\(x^{2}+6x+9\)</span></button><button><span class="math inline">\(x^{2}-9\)</span></button><button><span class="math inline">\(x^{2}+9\)</span></button></div>
@@ -106,7 +106,7 @@
     </div>
 
     <h2 id="s4">Polinomok LKO-ja és LKT-je</h2>
-    <p>Ha a polinomokat <b>szorzat alakra</b> hoztuk, a legnagyobb közös osztó (LKO) és a legkisebb közös többszörös (LKT) ugyanúgy adódik, mint a számoknál: az <b>LKO</b> a közös tényezők (a legkisebb kitevőn), az <b>LKT</b> az összes előforduló tényező (a legnagyobb kitevőn) szorzata.</p>
+    <p>Ebben a részben <b>egyváltozós, nemnulla polinomok</b> LKO-ját és LKT-jét határozzuk meg teljes tényezőkre bontással. Az <b>LKO-ban</b> a közös tényezők szerepelnek a legkisebb előforduló kitevőn; az <b>LKT-ben</b> minden előforduló tényező a legnagyobb kitevőn. A nemnulla konstans szorzók nem változtatják meg a polinomok közötti oszthatóságot. Az LKO-t és az LKT-t itt <b>1 főegyütthatóval</b> adjuk meg.</p>
     <div class="doboz pelda" id="pelda-lko-lkt">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
       Add meg <span class="math inline">\(A=x^2-1\)</span> és <span class="math inline">\(B=x^2-2x+1\)</span> LKO-ját és LKT-jét.
@@ -114,7 +114,7 @@
     </div>
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Miért hasznos?</p>
-      A szorzat alak a <b>kulcs</b> a következő modulhoz: törtet egyszerűsíteni csak <b>közös tényezővel</b> lehet — és a törtek összeadásánál a <b>legkisebb</b> közös nevező pontosan az <b>LKT</b>.
+      A következő leckében törtekkel dolgozunk. Az egyszerűsítéshez <b>közös tényezőt</b> keresünk a számlálóban és a nevezőben; összeadáskor pedig a nevezők <b>LKT-je</b> segít megtalálni a legkisebb közös nevezőt.
     </div>
 
     <!-- media:begin 1e06-lko-lkt-video -->
@@ -125,7 +125,7 @@
     <!-- media:end 1e06-lko-lkt-video -->
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-racionalis-algebrai-kifejezesek.html#alap-7">🐜 Henrik-bevetés <span class="cimke">A 7–9</span></a><a class="sav bruno" href="feladatok-racionalis-algebrai-kifejezesek.html#kozep-5">💥 Brúnó-bevetés <span class="cimke">K 5–6</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/krats_ynot.webp" alt="Krats Ynot — a kampusz fővezető mérnöke" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Krats Ynot:</b> Most már tisztán látod a tényezőket. Ideje bekapcsolni a <b>törteket</b> — az arányok nyelvét. Ott derül ki, mikor van egyáltalán <b>értelme</b> egy kifejezésnek, és hogyan egyszerűsíted a legbonyolultabbat is.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/krats_ynot.webp" alt="Krats Ynot — a kampusz fővezető mérnöke" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Krats Ynot:</b> A tényezőkre bontás a <b>törteknél</b> is hasznos lesz. Előbb megnézzük, mely változóértékeknél nem nulla a nevező, majd megkeressük az egyszerűsíthető közös tényezőket.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-polinomok.html"><span class="irany">← Előző</span><span class="hova">Polinomok</span></a>
       <a class="kov" href="tananyag-algebrai-tortek.html"><span class="irany">Következő →</span><span class="hova">Algebrai törtek</span></a>

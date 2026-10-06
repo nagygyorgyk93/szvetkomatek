@@ -26,19 +26,19 @@
 </nav>
 <div class="hero">
   <h1>Algebrai törtek</h1>
-  <p class="alcim">A racionális algebrai tört fogalma és értelmezési tartománya, egyszerűsítés (csak közös tényezővel!), a négy alapművelet és az összetett (emeletes) törtek — a hatalom nyelvének legmagasabb szintje.</p>
+  <p class="alcim">A racionális algebrai tört fogalma és értelmezési tartománya, egyszerűsítés (csak közös tényezővel!), a négy alapművelet és az összetett (emeletes) törtek — műveletek polinomok hányadosaival.</p>
   <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Hatalom Nyelve · 3/3</span></div>
 </div>
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
-      <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/krats_ynot_w.webp" alt="Krats Ynot — a kampusz fővezető mérnöke" width="1200" height="670" decoding="async"><p>📡 <b>Krats Ynot &amp; Iruhs:</b> A törtek a tech <b>arányai</b>: teljesítmény per tömeg, jel per zaj. De egy törtnek csak akkor van értelme, ha a <b>nevező nem nulla</b> — ezt hívjuk értelmezési tartománynak. Aki ezt figyelmen kívül hagyja, annak a rendszere lefagy (nullával osztás = Kán kedvenc rése). Ebben a modulban megtanulsz <b>értelmezni</b>, <b>egyszerűsíteni</b> és a <b>négy alapműveletet</b> elvégezni törtekkel — a legbonyolultabb emeletes törtet is letisztítod.</p></div>
-    <p>A <b>racionális algebrai tört</b> két polinom hányadosa: <span class="math inline">\(\dfrac{P(x)}{Q(x)}\)</span>, ahol <span class="math inline">\(Q(x)\)</span> nem az azonosan nulla polinom. Az egyszerűsítés, a bővítés és a műveletek mind a törtek ismerős szabályaira épülnek — csak most számok helyett polinomok állnak a helyükön.</p>
+      <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/krats_ynot_w.webp" alt="Krats Ynot — a kampusz fővezető mérnöke" width="1200" height="670" decoding="async"><p>📡 <b>Krats Ynot &amp; Iruhs:</b> Kadét, törtekkel arányokat is leírhatunk: az <b>átlagsebesség</b> például a megtett út és az eltelt idő hányadosa. Itt pozitív időtartammal számolunk. Algebrai törteknél is az első lépés a feltételek vizsgálata: a <b>nevező nem lehet nulla</b>. Ezután egyszerűsítünk, és elvégezzük a műveleteket. Kán leginkább arra számít, hogy számolás közben elfelejted a kizárt értékeket.</p></div>
+    <p>A <b>racionális algebrai tört</b> két polinom hányadosa: <span class="math inline">\(\dfrac{P(x)}{Q(x)}\)</span>, ahol <span class="math inline">\(Q(x)\)</span> nem az azonosan nulla polinom. Az egyszerűsítés, a bővítés és a műveletek mind a törtek ismerős szabályaira épülnek — itt a számláló és a nevező is polinom.</p>
 
     <h2 id="s1">Értelmezési tartomány (mikor van értelme?)</h2>
     <div class="doboz definicio" id="def-ert">
       <p class="cim"><span class="ikon">📗</span> Értelmezési tartomány (ÉT)</p>
-      <p>Egy algebrai tört <b>értelmezési tartománya</b> azon értékek halmaza, amelyekre a <b>nevező nem nulla</b>. A tört értéke ezeken kívül nincs értelmezve. Feladatokban a nevezőt <span class="math inline">\(0\)</span>-val egyenlővé téve megkeressük a <b>kizárt</b> értékeket.</p>
+      <p>Egy algebrai tört <b>értelmezési tartománya</b> azoknak a valós változóértékeknek a halmaza, amelyekre a <b>nevező nem nulla</b>. A tört értéke ezeken kívül nincs értelmezve. Feladatokban a nevezőt <span class="math inline">\(0\)</span>-val egyenlővé téve megkeressük a <b>kizárt</b> értékeket.</p>
     </div>
     <div class="doboz pelda" id="pelda-ert">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
@@ -55,7 +55,7 @@
     <h2 id="s2">Törtek egyszerűsítése</h2>
     <div class="doboz tetel" id="tetel-egyszerusites">
       <p class="cim"><span class="ikon">📘</span> Az egyszerűsítés szabálya</p>
-      <p>Törtet a számláló és a nevező <b>közös tényezőjével</b> lehet egyszerűsíteni: <span class="math inline">\(\dfrac{a\cdot c}{b\cdot c}=\dfrac{a}{b}\)</span> (ha <span class="math inline">\(c\neq 0\)</span>). Ezért <b>először szorzattá alakítunk</b>, és csak azután egyszerűsítünk. Taggal (összeadandóval) <b>soha</b> nem egyszerűsítünk!</p>
+      <p>Törtet a számláló és a nevező <b>közös tényezőjével</b> lehet egyszerűsíteni: <span class="math inline">\(\dfrac{a\cdot c}{b\cdot c}=\dfrac{a}{b}\)</span>, ha <span class="math inline">\(b\neq 0\)</span> és <span class="math inline">\(c\neq 0\)</span>. Ha szükséges, először <b>szorzattá alakítjuk</b> a számlálót és a nevezőt. Összeadandó tagot nem törölhetünk ki belőlük. <b>Az eredetileg kizárt értékek egyszerűsítés után is kizártak maradnak.</b></p>
     </div>
     <div class="doboz pelda" id="pelda-egyszerusites">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
@@ -64,7 +64,7 @@
     </div>
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
-      Kán szereti „kihúzni” az azonos betűket: azt állítja, hogy <span class="math inline">\(\dfrac{x+5}{x+7}=\dfrac{5}{7}\)</span>. <b>Hamis!</b> Az <span class="math inline">\(x\)</span> itt <b>tag</b>, nem tényező — nem ejthető ki. A tört nem is egyszerűsíthető. Csak <b>közös szorzótényezővel</b> szabad egyszerűsíteni.
+      Kán szereti „kihúzni” az azonos betűket: azt állítja, hogy <span class="math inline">\(\dfrac{x+5}{x+7}=\dfrac{5}{7}\)</span>. <b>Ez nem azonosság.</b> Az <span class="math inline">\(x\)</span> itt <b>tag</b>, nem tényező — nem ejthető ki. A tört nem is egyszerűsíthető. Csak <b>közös szorzótényezővel</b> szabad egyszerűsíteni.
     </div>
     <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ Nem: x tag, nem tényező — a tört nem egyszerűsíthető." data-nem="✘ x itt tag (nem szorzótényező), így nem húzható ki.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
@@ -106,7 +106,7 @@
     <h2 id="s4">Összeadás és kivonás</h2>
     <div class="doboz tetel" id="tetel-osszeadas">
       <p class="cim"><span class="ikon">📘</span> Szabály</p>
-      <p>Azonos nevezőjű törteknél a számlálókat adjuk össze / vonjuk ki. Különböző nevezőnél <b>közös nevezőre</b> hozunk (a közös nevező a nevezők LKT-je), bővítjük a törteket, majd a számlálókkal számolunk: <span class="math inline">\(\dfrac{a}{b}\pm\dfrac{c}{d}=\dfrac{ad\pm bc}{bd}\)</span> (itt is <span class="math inline">\(b\neq 0\)</span> és <span class="math inline">\(d\neq 0\)</span>).</p>
+      <p><b>Azonos nevezőjű</b> törteknél a számlálókat adjuk össze vagy vonjuk ki, a nevezőt megtartjuk. <b>Különböző nevezők</b> esetén közös nevezőre hozzuk a törteket, majd a számlálókkal számolunk. Közös nevezőnek a nevezők szorzata is megfelel; gyakran egyszerűbb a <b>legkisebb közös többszörösüket</b> választani. A szorzatot használva: <span class="math inline">\(\dfrac{a}{b}\pm\dfrac{c}{d}=\dfrac{ad\pm bc}{bd}\)</span>, ahol <span class="math inline">\(b\neq 0\)</span> és <span class="math inline">\(d\neq 0\)</span>.</p>
     </div>
     <div class="doboz pelda" id="pelda-osszeadas">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
@@ -128,11 +128,11 @@
     </figure>
     <!-- media:end 1e06-tort-osszeadas-video -->
     <h2 id="s5">Összetett (emeletes) törtek</h2>
-    <p>Az <b>emeletes tört</b> olyan tört, amelynek számlálójában és/vagy nevezőjében újabb tört áll. Két úton bontható: vagy külön elvégezzük a számláló és a nevező műveleteit, majd osztunk, vagy a fő törtvonalat osztásnak tekintjük és reciprokkal szorzunk.</p>
+    <p>Az <b>emeletes tört</b> számlálójában, nevezőjében vagy mindkettőben újabb tört áll. Először a belső nevezők nemnulla feltételeit írjuk fel; a teljes nevező sem lehet nulla. Ezután külön egyszerűsítjük a számlálót és a nevezőt, majd az osztást <b>reciprokkal való szorzásra</b> cseréljük.</p>
     <div class="doboz pelda" id="pelda-emeletes">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
       Egyszerűsítsd: <span class="math inline">\(\dfrac{\dfrac{x}{y}-\dfrac{y}{x}}{\dfrac{1}{y}+\dfrac{1}{x}}\)</span>.
-      <details><summary>Megoldás</summary><div class="bel"><p>Számláló: <span class="math inline">\(\dfrac{x^2-y^2}{xy}\)</span>; nevező: <span class="math inline">\(\dfrac{x+y}{xy}\)</span>. Osztás: <span class="math inline">\(\dfrac{x^2-y^2}{xy}\cdot\dfrac{xy}{x+y}=\dfrac{(x-y)(x+y)}{x+y}=x-y\)</span>.</p><p><b>Kikötés:</b> <span class="math inline">\(x\neq 0\)</span>, <span class="math inline">\(y\neq 0\)</span> (ezek a belső törtek nevezői) és <span class="math inline">\(x\neq -y\)</span> (a nagy tört nevezője). Az eredmény <span class="math inline">\(x-y\)</span> — de az eredeti kifejezés ezeken a helyeken nincs értelmezve, hiába „szép” az egyszerűsített alak.</p></div></details>
+      <details><summary>Megoldás</summary><div class="bel"><p>Számláló: <span class="math inline">\(\dfrac{x^2-y^2}{xy}\)</span>; nevező: <span class="math inline">\(\dfrac{x+y}{xy}\)</span>. Osztás: <span class="math inline">\(\dfrac{x^2-y^2}{xy}\cdot\dfrac{xy}{x+y}=\dfrac{(x-y)(x+y)}{x+y}=x-y\)</span>.</p><p><b>Kikötés:</b> <span class="math inline">\(x\neq 0\)</span>, <span class="math inline">\(y\neq 0\)</span> (ezek a belső törtek nevezői) és <span class="math inline">\(x\neq -y\)</span> (a nagy tört nevezője). Az <span class="math inline">\(x-y\)</span> alakot csak a fenti kikötések mellett tekintjük az eredeti tört egyszerűsített alakjának.</p></div></details>
     </div>
 
     <!-- media:begin 1e06-ismetles-video -->
@@ -141,10 +141,10 @@
       <figcaption>Ismétlő óra a témakör végére: vegyes feladatok racionális algebrai kifejezésekkel. <span class="media-forras">Forrás: <a href="https://tavoktatas.mnt.org.rs/i-osztaly/matematika/matematika-i-osztaly-62-ora-ismetles-racionalis-algebrai-kifejezesek" target="_blank" rel="noopener">MNT Távoktatás magyar nyelven</a> — Bálint Nóra.</span> <span class="media-url">(Videó: Ismétlés - Racionális algebrai kifejezések (I. osztály, 62. óra) — youtu.be/He4vQTUYqBc)</span></figcaption>
     </figure>
     <!-- media:end 1e06-ismetles-video -->
-    <h2 id="s6">Bővítés — Kán legmélyebb csapdája (emelt, nem kötelező)</h2>
+    <h2 id="s6">Kitekintés — a négyzet nemnegatív (emelt, nem kötelező)</h2>
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> A négyzet sosem negatív</p>
-      <p>Egy fontos igazság, amit érdemes ismerni: minden valós <span class="math inline">\(t\)</span>-re <span class="math inline">\(t^2\ge 0\)</span>. Ebből egy elegáns azonosság-egyenlőtlenség fakad: mivel <span class="math inline">\((a-b)^2\ge 0\)</span>, kibontva <span class="math inline">\(a^2-2ab+b^2\ge 0\)</span>, azaz \[a^2+b^2\ge 2ab.\] Egyenlőség pontosan akkor, ha <span class="math inline">\(a=b\)</span>. Ez a <b>számtani–mértani közép</b> közötti összefüggés előszobája — a felsőbb évek egyik kulcsa. <b>Ez emelt-szintű kitekintés: az ellenőrzőn nem kérjük, de jó, ha látod, hova vezet a nyelv.</b></p>
+      <p>Minden valós <span class="math inline">\(t\)</span>-re <span class="math inline">\(t^2\ge 0\)</span>. Így valós <span class="math inline">\(a\)</span> és <span class="math inline">\(b\)</span> esetén <span class="math inline">\((a-b)^2\ge 0\)</span>. A zárójelet felbontva és rendezve: \[a^2+b^2\ge 2ab.\] Egyenlőség pontosan akkor áll fenn, ha <span class="math inline">\(a=b\)</span>.</p><p>Ugyanezzel az ötlettel a <b>számtani és a mértani közép kapcsolatát</b> is megkapjuk. <b>Nemnegatív</b> <span class="math inline">\(a\)</span> és <span class="math inline">\(b\)</span> esetén <span class="math inline">\((\sqrt{a}-\sqrt{b})^2\ge 0\)</span>, ezért <span class="math inline">\(a+b\ge 2\sqrt{ab}\)</span>, vagyis \[\underbrace{\frac{a+b}{2}}_{\text{számtani közép}}\ge\underbrace{\sqrt{ab}}_{\text{mértani közép}}.\] Egyenlőség itt is pontosan akkor van, ha <span class="math inline">\(a=b\)</span>. <b>Ez emelt szintű kitekintés: az ellenőrzőn nem kérjük.</b></p>
     </div>
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
@@ -154,12 +154,12 @@
     <h2 id="s7">🧾 Gyorsismétlő</h2>
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> A teljes témakör egy lapon</p>
-      <p><b>Polinomok:</b> összevonás, szorzás, nevezetes azonosságok, osztás, Bézout (<span class="math inline">\(M=P(a)\)</span>). <b>Szorzattá alakítás:</b> kiemelés, <span class="math inline">\(a^2-b^2\)</span>, teljes négyzet, köbök, csoportosítás, LKO/LKT. <b>Törtek:</b> előbb az <b>ÉT</b> (nevező <span class="math inline">\(\neq 0\)</span>), egyszerűsítés csak <b>közös tényezővel</b>, a négy alapművelet, emeletes törtek. Egyetlen szabály mindenre: <b>előbb szorzattá alakíts, azután számolj.</b></p>
+      <p><b>Polinomok:</b> összevonás, szorzás, nevezetes azonosságok, osztás, Bézout (<span class="math inline">\(M=P(a)\)</span>). <b>Szorzattá alakítás:</b> kiemelés, <span class="math inline">\(a^2-b^2\)</span>, teljes négyzet, köbök, csoportosítás, LKO/LKT. <b>Törtek:</b> előbb az <b>ÉT</b> (nevező <span class="math inline">\(\neq 0\)</span>), egyszerűsítés csak <b>közös tényezővel</b>, a négy alapművelet, emeletes törtek. Az átalakítás céljától függ, hogy a <b>rendezett alak</b> vagy a <b>szorzatalak</b> hasznosabb. Törteknél mindig tartsd meg az eredeti kikötéseket.</p>
     </div>
 
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-racionalis-algebrai-kifejezesek.html#alap-10">🐜 Henrik-bevetés <span class="cimke">A 10–12</span></a><a class="sav bruno" href="feladatok-racionalis-algebrai-kifejezesek.html#kozep-7">💥 Brúnó-bevetés <span class="cimke">K 7–10</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/iruhs.webp" alt="Iruhs — a kampusz fejlesztőmérnöke" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Iruhs:</b> Uralod a hatalom nyelvét — a kifejezésektől a legbonyolultabb törtekig. Most élesben: a <b>kiképzési adattárban</b> gyakorolj, majd a <b>terepküldetésen</b> építsd meg a saját tech-képleteidet.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/iruhs.webp" alt="Iruhs — a kampusz fejlesztőmérnöke" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Iruhs:</b> Most már a törteknél is tudod, mire kell figyelni: a <b>kikötésekre</b> és a <b>közös tényezőkre</b>. Próbáld ki a műveleteket a <b>kiképzési adattár</b> feladataiban, majd a <b>terepküldetésben</b> használd őket összetettebb helyzetekben.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-szorzatta-alakitas.html"><span class="irany">← Előző</span><span class="hova">Szorzattá alakítás</span></a>
       <a class="kov" href="feladatok-racionalis-algebrai-kifejezesek.html"><span class="irany">Következő →</span><span class="hova">Feladatgyűjtemény</span></a>

@@ -32,18 +32,18 @@
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
-      <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/krats_ynot_w.webp" alt="Krats Ynot — a kampusz fővezető mérnöke" width="1200" height="670" decoding="async"><p>📡 <b>Krats Ynot &amp; Iruhs:</b> Kadét, a technológia nyelve a <b>képlet</b>. Egy algebrai kifejezés olyan, mint egy gép terve: ugyanazt a működést sokféleképpen le lehet írni, de mindig van egy <b>legtisztább, kanonikus alak</b>. Aki uralja a polinomok műveleteit és a <b>nevezetes azonosságokat</b>, az bármilyen bonyolult kifejezést a legegyszerűbb formájára hoz — és azonnal kiszúrja, ha Kán egy <b>hibás képletet</b> csempészett a rendszerbe. Ez „A Hatalom Nyelve” első leckéje: <b>a tiszta alak a hatalom</b>.</p></div>
-    <p>Az <b>algebrai kifejezés</b> számokból és betűkkel jelölt (ismeretlen vagy változó) mennyiségekből, műveleti jelekkel felépített kifejezés. Ha csak összeadás, kivonás és szorzás (illetve természetes kitevős hatványozás) szerepel benne, <b>egész</b> algebrai kifejezésről beszélünk — ezek a <b>polinomok</b>. Ebben az egységben ezekkel dolgozunk.</p>
+      <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/krats_ynot_w.webp" alt="Krats Ynot — a kampusz fővezető mérnöke" width="1200" height="670" decoding="async"><p>📡 <b>Krats Ynot &amp; Iruhs:</b> Kadét, a kampusz műszaki terveiben sok <b>képlettel</b> találkozol. Ugyanazt a polinomot többféle alakban is felírhatod: az összevont, rendezett alakban könnyebb áttekinteni a tagokat, a szorzatalakban pedig a tényezőket. Ebben a leckében a <b>polinomok műveleteit</b> és a <b>nevezetes azonosságokat</b> gyakoroljuk. Ha ezeket ismered, Kán hibás átalakításait is könnyebben észreveszed.</p></div>
+    <p>Az <b>algebrai kifejezés</b> számokból, betűkkel jelölt mennyiségekből és műveleti jelekből áll. Ha csak összeadás, kivonás, szorzás és <b>nemnegatív egész kitevős hatványozás</b> szerepel benne, <b>egész algebrai kifejezésről</b>, vagyis <b>polinomról</b> beszélünk. Ebben az egységben valós együtthatókkal és valós változóértékekkel dolgozunk.</p>
 
     <h2 id="s1">Egytag, polinom, fokszám</h2>
     <div class="doboz definicio" id="def-egytag">
       <p class="cim"><span class="ikon">📗</span> Egytag (monom)</p>
-      <p>Az <b>egytag</b> számok és változók <b>természetes kitevős hatványainak</b> szorzata, pl. <span class="math inline">\(-3x^2y\)</span>. A szám a monom <b>együtthatója</b> (itt <span class="math inline">\(-3\)</span>), a változók kitevőinek összege a monom <b>foka</b> (itt <span class="math inline">\(2+1=3\)</span>). Az <b>egynemű</b> egytagok ugyanazokat a változókat ugyanazokon a kitevőkön tartalmazzák (pl. <span class="math inline">\(5x^2y\)</span> és <span class="math inline">\(-2x^2y\)</span>) — ezeket össze lehet vonni.</p>
+      <p>Az <b>egytag</b> egy szám és a változók <b>nemnegatív egész kitevős hatványainak</b> szorzata, például <span class="math inline">\(-3x^2y\)</span>. A szám az <b>együttható</b> (itt <span class="math inline">\(-3\)</span>). Nemnulla együttható esetén a változók kitevőinek összege az egytag <b>foka</b> (itt <span class="math inline">\(2+1=3\)</span>). Az <b>egynemű</b> egytagokban ugyanazok a változók ugyanazokon a kitevőkön szerepelnek, például <span class="math inline">\(5x^2y\)</span> és <span class="math inline">\(-2x^2y\)</span>. Ezeket az együtthatók összeadásával vonjuk össze.</p>
       <p>Ha a változó helyére konkrét számot írunk, a kapott számot a polinom <b>helyettesítési értékének</b> nevezzük; jelölése <span class="math inline">\(P(2)\)</span>, <span class="math inline">\(P(-3)\)</span> és így tovább. Például <span class="math inline">\(P(x)=2x^{3}-5x^{2}+9x-1\)</span> esetén <span class="math inline">\(P(1)=2-5+9-1=5\)</span>.</p>
     </div>
     <div class="doboz definicio" id="def-polinom">
       <p class="cim"><span class="ikon">📗</span> Polinom</p>
-      <p>A <b>polinom</b> egytagok (a <b>tagok</b>) összege. Egy változóban a <b>rendezett (kanonikus) alak</b> a kitevők csökkenő sorrendje szerint írja fel, pl. <span class="math inline">\(P(x)=2x^3-5x^2+9x-1\)</span>. A polinom <b>foka</b> a legmagasabb fokú tag foka (itt <span class="math inline">\(3\)</span>), a <b>főegyütthatója</b> a legmagasabb fokú tag együtthatója (itt <span class="math inline">\(2\)</span>).</p><p>Két szélső eset: a nem nulla <b>konstans</b> polinom (pl. <span class="math inline">\(P(x)=7\)</span>) foka <span class="math inline">\(0\)</span>, a <b>nullpolinomnak</b> (<span class="math inline">\(P(x)=0\)</span>) viszont <b>nem értelmezzük</b> a fokát — nincs olyan tagja, amelynek a fokát nézhetnénk.</p>
+      <p>A <b>polinom</b> egytagok összege. A <b>rendezett (kanonikus) alakhoz</b> először összevonjuk az egynemű tagokat, elhagyjuk a nulla együtthatójú tagokat, majd egyváltozós polinomnál a kitevők csökkenő sorrendjében írjuk fel a megmaradt tagokat. Például <span class="math inline">\(P(x)=2x^3-5x^2+9x-1\)</span> már rendezett alakban van. A nemnulla polinom <b>foka</b> a megmaradt tagok fokának maximuma (itt <span class="math inline">\(3\)</span>); egyváltozós polinomnál a legmagasabb fokú tag együtthatója a <b>főegyüttható</b> (itt <span class="math inline">\(2\)</span>).</p><p>Két szélső eset: a nem nulla <b>konstans</b> polinom (pl. <span class="math inline">\(P(x)=7\)</span>) foka <span class="math inline">\(0\)</span>, a <b>nullpolinomnak</b> (<span class="math inline">\(P(x)=0\)</span>) viszont <b>nem értelmezzük</b> a fokát — nincs olyan tagja, amelynek a fokát nézhetnénk.</p>
     </div>
     <div class="doboz pelda" id="pelda-osszevonas">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
@@ -52,7 +52,7 @@
     </div>
 
     <h2 id="s2">Műveletek polinomokkal</h2>
-    <p>Polinomokat úgy <b>adunk össze / vonunk ki</b>, hogy az egynemű tagokat összevonjuk (kivonásnál a kivonandó minden tagjának előjelét megfordítjuk). <b>Szorzásnál</b> minden tagot minden taggal megszorzunk (disztributivitás), majd összevonunk.</p>
+    <p>Polinomokat úgy <b>adunk össze vagy vonunk ki</b>, hogy az egynemű tagokat összevonjuk (kivonásnál a kivonandó minden tagjának előjelét megfordítjuk). <b>Szorzásnál</b> minden tagot minden taggal megszorzunk (disztributivitás), majd összevonunk.</p>
     <div class="doboz pelda" id="pelda-szorzas">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
       Végezd el: <span class="math inline">\(3a(2-5b)\)</span> és <span class="math inline">\((x-2)(x+7)\)</span>.
@@ -71,7 +71,7 @@
     </figure>
     <!-- media:end 1e06-polinom-szorzas-video -->
     <h2 id="s3">Nevezetes azonosságok</h2>
-    <p>Néhány szorzat annyiszor tér vissza, hogy érdemes fejből tudni. Ezek „A Hatalom Nyelvének” alapszavai — oda-vissza (kibontáshoz és tényezőkre bontáshoz egyaránt).</p>
+    <p>Az alábbi azonosságokat gyakran használjuk. Érdemes mindkét irányban felismerni őket: segítenek a zárójelek felbontásában és a szorzattá alakításban is.</p>
     <div class="doboz tetel" id="tetel-azonossagok">
       <p class="cim"><span class="ikon">📘</span> Nevezetes azonosságok — négyzetek és köbök</p>
       \[(a+b)^2=a^2+2ab+b^2,\qquad (a-b)^2=a^2-2ab+b^2,\]
@@ -85,7 +85,7 @@
     </div>
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
-      <span class="math inline">\((a+b)^2\)</span> <b>nem</b> egyenlő <span class="math inline">\(a^2+b^2\)</span>-tel! Mindig ott a <b>kétszeres szorzat</b>: <span class="math inline">\(+2ab\)</span>. Aki ezt lehagyja, annak a képlete „majdnem jó” — és pont ezzel nyit rést Kán.
+      Az összeg négyzetének képletéből nem hagyhatod el a <b>kétszeres szorzatot</b>: <span class="math inline">\((a+b)^2=a^2+2ab+b^2\)</span>. Ha lemarad a <span class="math inline">\(2ab\)</span> tag, általában más értéket kapsz. Kán erre a hibára számít.
     </div>
     <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ (x−3)² = x² − 6x + 9 — ott a −2·x·3 = −6x középső tag." data-nem="✘ Ne feledd a kétszeres szorzatot: (x−3)² = x² − 6x + 9.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
@@ -108,7 +108,7 @@
     </figure>
     <!-- media:end 1e06-osszeg-negyzete-ggb -->
     <h2 id="s4">Polinom osztása polinommal</h2>
-    <p>A polinomosztás ugyanúgy működik, mint a számok maradékos osztása: minden lépésben a maradék legmagasabb fokú tagját osztjuk az osztó legmagasabb fokú tagjával. A vége: <span class="math inline">\(P(x)=O(x)\cdot H(x)+M(x)\)</span>, ahol <span class="math inline">\(P\)</span> az <b>osztandó</b>, <span class="math inline">\(O\)</span> az <b>osztó</b>, <span class="math inline">\(H\)</span> a <b>hányados</b>, <span class="math inline">\(M\)</span> a <b>maradék</b>, ahol az <span class="math inline">\(M(x)\)</span> maradék <b>vagy a nullpolinom</b>, vagy a foka kisebb az osztóénál.</p>
+    <p>Ebben a részben <b>egyváltozós polinomok</b> maradékos osztását végezzük. Az osztó <b>nem lehet nullpolinom</b>. A maradékos osztás során minden lépésben a még megmaradt kifejezés legmagasabb fokú tagját osztjuk az osztó legmagasabb fokú tagjával, majd levonjuk az osztó megfelelő többszörösét. A végén <span class="math inline">\(P(x)=O(x)\cdot H(x)+M(x)\)</span>, ahol <span class="math inline">\(P\)</span> az <b>osztandó</b>, <span class="math inline">\(O\)</span> az <b>osztó</b>, <span class="math inline">\(H\)</span> a <b>hányados</b>, <span class="math inline">\(M\)</span> a <b>maradék</b>. A maradék vagy a nullpolinom, vagy a foka kisebb az osztó fokánál.</p>
     <div class="doboz pelda" id="pelda-osztas">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
       Végezd el: <span class="math inline">\((2x^3+3x^2-6x+5):(x+2)\)</span>.
@@ -124,7 +124,7 @@
     <h2 id="s5">A Bézout-tétel</h2>
     <div class="doboz tetel" id="tetel-bezout">
       <p class="cim"><span class="ikon">📘</span> Bézout-tétel (maradéktétel)</p>
-      <p>A <span class="math inline">\(P(x)\)</span> polinomnak az <span class="math inline">\((x-a)\)</span> elsőfokú polinommal (binommal) való osztási <b>maradéka</b> éppen a helyettesítési érték: <span class="math inline">\(M=P(a)\)</span>. Következmény: <span class="math inline">\(P(x)\)</span> pontosan akkor osztható <span class="math inline">\((x-a)\)</span>-val, ha <span class="math inline">\(P(a)=0\)</span>.</p>
+      <p>A <span class="math inline">\(P(x)\)</span> polinomnak az <span class="math inline">\((x-a)\)</span> elsőfokú polinommal való osztási <b>maradéka</b> éppen a helyettesítési érték: <span class="math inline">\(M=P(a)\)</span>. Következmény: <span class="math inline">\(P(x)\)</span> pontosan akkor osztható <span class="math inline">\((x-a)\)</span>-val, ha <span class="math inline">\(P(a)=0\)</span>.</p>
     </div>
     <div class="doboz pelda" id="pelda-bezout">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
@@ -140,7 +140,7 @@
 
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-racionalis-algebrai-kifejezesek.html#alap-1">🐜 Henrik-bevetés <span class="cimke">A 1–6</span></a><a class="sav bruno" href="feladatok-racionalis-algebrai-kifejezesek.html#kozep-1">💥 Brúnó-bevetés <span class="cimke">K 1–4</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/iruhs.webp" alt="Iruhs — a kampusz fejlesztőmérnöke" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Iruhs:</b> Megvannak a nyelv alapszavai. A következő modulban <b>visszafelé</b> tanulsz meg olvasni: hogyan bontasz egy bonyolult kifejezést a <b>legegyszerűbb tényezőire</b> — ez a tisztogatás művészete.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/iruhs.webp" alt="Iruhs — a kampusz fejlesztőmérnöke" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Iruhs:</b> A zárójelek felbontása után most a <b>fordított irányt</b> próbáljuk ki: összegeket írunk fel tényezők szorzataként. A következő leckében megtanulod felismerni a közös tényezőket és a nevezetes azonosságokat.</p></div>
     <div class="lapozo">
       <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">Témakör-nyitó</span></a>
       <a class="kov" href="tananyag-szorzatta-alakitas.html"><span class="irany">Következő →</span><span class="hova">Szorzattá alakítás</span></a>

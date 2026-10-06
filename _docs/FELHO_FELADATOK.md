@@ -270,7 +270,7 @@ A korábbi A1-ellenőrzések nem helyettesítik a teljes stilisztikai átnézés
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ◐ 01: 9, 02: 3, 03: 4, 04: 3, 05: 9/9 tananyag teljes szövege átnézve és javítva; a többi lap külön A3-auditja hátra (helyi main, 2026-10-06) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
+| ◐ 01: 9, 02: 3, 03: 4, 04: 3, 05: 9, 06: 3/3 tananyag teljes szövege átnézve és javítva; a többi lap külön A3-auditja hátra (helyi main, 2026-10-06) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
 
 Az első adag három függvényes, a második hat logikai és halmazos tananyagot
 ellenőrzött. A példák feltételei, bevezetők, átvezetők és matematikai pontatlanságok
@@ -305,7 +305,15 @@ vektorok. Kvízsorrend és ívmegnevezés, szimmetriák kivételei, forgatási k
 nullvektor és paralelogrammafeltétel javítva; természetesebb példák,
 kilenc kapcsolt ábraleírás, Thalész-jel és forgatási körív pontosítva.
 Független lektor és számolás; 18 végleges nézet/0, képletrender 152/0,
-kvíz 7/7, nyomtatás 6/6. Részletek:
+kvíz 7/7, nyomtatás 6/6. A kilencedik adag az 1e/06 mindhárom tananyaga:
+polinomok, szorzattá alakítás, algebrai törtek. Fokszám és osztófeltételek,
+négyzetösszeg túláltalánosítása, egyszerűsítési feltételek és közös nevező
+pontosítva; természetesebb bevezetők, az eredeti kikötések megtartása.
+A meglévő kitekintésben kiírt számtani–mértani közép-kapcsolat, az 1e
+kimenetei szerint. Független lektor: 15/15 példakártya és 9/9 kvíz;
+SymPy-kontroll és 30/30 megőrzési próba. 18 végleges nézet/0,
+képletrender 185/0, kvíz 9/9, nyomtatás 6/6. Összesen 31/38 tananyag kész.
+Részletek:
 [A3 nyelvi ellenőrzés](A3_nyelvi_ellenorzes.md).
 Hátra van a többi tananyag, feladatgyűjtemény, nyitóoldal, összefoglaló és terepküldetés.
 

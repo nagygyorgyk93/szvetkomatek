@@ -3,8 +3,8 @@
 ## Hatókör és állapot
 
 **Jelenlegi összesítés:** az 1e/01 kilenc, az 1e/02 három, az 1e/03 négy,
-az 1e/04 három és az 1e/05 mind a kilenc tananyaglapjának teljes nyelvi és
-példahitelességi ellenőrzése elkészült nyolc adagban: összesen 28 tananyag. A
+az 1e/04 három, az 1e/05 kilenc és az 1e/06 mindhárom tananyaglapjának teljes
+nyelvi és példahitelességi ellenőrzése elkészült kilenc adagban: összesen 31 tananyag. A
 feladatgyűjtemények, nyitóoldalak, összefoglalók és terepküldetések külön
 A3-ellenőrzése, valamint a többi témakör átnézése hátra van. Az adagok alábbi
 adatai az egyes munkamenetek eredményei; a legfrissebb bejegyzés a végén található.
@@ -847,4 +847,101 @@ fa nem jelent teljes WCAG-minősítést vagy felolvasási próbát.
 **Állapot:** az 1e/05 mind a 9 tananyaga teljes A3-audit szerint átnézve;
 az 1e/01–05 összesen 28 tananyaglapja kész. Következő tananyag-adag az
 1e/06 három racionális algebrai leckéje. A többi lapfajta külön A3-auditja hátra van.
+**Tanári döntés kell: nincs új kérdés.** Helyi main; új ág és push nem készült.
+
+
+## Kilencedik adag — 1e/06 racionális algebrai kifejezések (2026-10-06)
+
+### Hatókör és javítások
+
+Kiinduló revízió: `12e4b52`, tiszta helyi main, az origin/main helyi referenciájával
+egyező állapot. Távoli frissítés nem történt. Három kézzel karbantartott tananyag
+teljes szövege, 15 kidolgozott példakártyája és 9 kvíze átnézve:
+[polinomok](../1e/06-racionalis-algebrai-kifejezesek/tananyag-polinomok.html),
+[szorzattá alakítás](../1e/06-racionalis-algebrai-kifejezesek/tananyag-szorzatta-alakitas.html),
+[algebrai törtek](../1e/06-racionalis-algebrai-kifejezesek/tananyag-algebrai-tortek.html).
+A builderkeresés csak hivatkozásokat talált; a CLAUDE.md alapján a kézi 1e lapok
+közvetlenül javíthatók. Egyik lapon sincs saját SVG-ábra. Az 1e matematika-skill
+racionális kifejezésekre vonatkozó kimenetei adták az alapot: algebrai átalakítások,
+a négyzet nemnegativitása és a számtani–mértani közép kapcsolata.
+
+Javítás előtt bemutatott hibák és a későbbi biztos lektori pontosítás:
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Polinom, fokszám | A rendezett alak csak sorrendként szerepelt; a nulla együtthatójú tagok elhagyása és a fokszám előtti összevonás hiányzott | Közepes, fogalmi | HTML: összevonás, nulla tagok elhagyása, nemnulla polinom/egytag feltétele; nemnegatív egész kitevők |
+| Polinomosztás | A nemnulla osztó feltétele és az egyváltozós kör nem szerepelt | Közepes, feltételhiány | HTML: mindkét feltétel kimondva, a kivonási lépés is megnevezve |
+| Bézout | Az x−a osztót mindig binomnak nevezte, az a=0 esetet is | Enyhe, fogalmi | HTML: elsőfokú polinom; a maradéktétel tartalma megmaradt |
+| Szorzattá alakítás, csapda és kvíz | Minden négyzetösszeg felbonthatatlanságát állította | Közepes, hibás általánosítás | HTML és két visszajelzés: a különbségazonosság alkalmazási köre; konkrétan x²+9 nem bontható valós együtthatós, elsőfokú tényezőkre |
+| Kiemelés, LKO és LKT | Minden együtthatóra számbeli LKO-t mondott; a konstans szorzó és a főegyüttható választása nem szerepelt | Fogalmi | HTML: egész együtthatóknál számbeli LKO; egyváltozós nemnulla polinomok, az LKO/LKT 1 főegyütthatóval megadva |
+| Törtek, bevezető | A nemnulla nevező feltételét nevezte értelmezési tartománynak; a lefagyást általános következménynek állította | Közepes, fogalmi / példahitelességi | HTML: valós változóértékek halmaza; út/idő átlagsebesség-példa pozitív időtartammal |
+| Egyszerűsítési képlet | Az ac/bc=a/b mellől hiányzott b≠0 | Közepes, feltételhiány | HTML: b≠0 és c≠0; az eredetileg kizárt értékek megmaradásának szabálya |
+| Összeadás | Minden közös nevezőt az LKT-vel azonosított, miközben a képlet a nevezők szorzatát használta | Közepes, fogalmi | HTML: a nevezők szorzata is megfelel; az LKT gyakran egyszerűbb választás |
+| Emeletes tört, utolsó mondat | Az „ezeken a helyeken nincs értelmezve” az előző nemegyenlőségekre is utalhatott | Közepes, kétértelmű | HTML: az x−y csak a fenti kikötésekkel az eredeti tört egyszerűsített alakja |
+| Kitekintés | A számtani–mértani közép kapcsolatát csak említette, képlet nélkül | Kisebb kimeneti hiány | HTML: a meglévő kitekintésben a nemnegatív feltétel, két közép képlete, rövid négyzetes indoklás és egyenlőségeset |
+| Bevezetők, átvezetők, összefoglaló | „Bármilyen bonyolult”, „legegyszerűbb”, „egyetlen szabály mindenre”, tisztogatás és legmagasabb szint túlzásai | Enyhe–közepes, nyelvi | HTML: konkrét tanulási célok, rendezett és szorzatalak eltérő használata; rövidebb magyar mondatok |
+
+Krats Ynot, Iruhs, Kán és a játékos keret megmaradtak. A szorzatalak megnevezése
+egybeírva szerepel. Az összeg négyzetének téves képlete és a betűk törlése
+azonosságként hibás, a szöveg nem állít minden helyettesítési értékre egyenlőtlenséget.
+A kitekintés címe nem keveredik a törtek bővítésének műveletével. A korábbi
+emelt/nem kötelező besorolás és az ellenőrzőre vonatkozó közlés megmaradt;
+a középegyenlőtlenséghez nem készült gyakorlófeladat vagy új számpélda.
+
+### Független lektor és matematikai kontroll
+
+A kontextus nélküli lektor csak a három lap tanulói szövegét kapta, a kidolgozott
+példák megoldásai, a válaszindexek és a kvíz-visszajelzések nélkül. Önállóan
+megoldotta mind a 15 példakártyát és a 9 kvízt; minden eredmény egyezik a lappal.
+Egyik feladathoz sem kellett találgatnia. A nyelvet követhetőnek ítélte.
+Két feltételt kért kimondani: a maradékos osztás és az LKO/LKT egyváltozós
+polinomokra vonatkozik. Mindkét biztos pontosítás beépítve.
+
+Független SymPy-kontroll:
+
+- A polinom helyettesítési értéke, fokszáma, főegyütthatója és az összes
+  kidolgozott összevonás, szorzás, hatványozás, rendezés és maradékos osztás.
+- Az összes tényezőkre bontás, LKO/LKT, nevezetes azonosság mindkét iránya,
+  csoportosítás; az x²+9 valós gyökhalmaza üres.
+- A törtek kizárt nevezőértékei, a kivonás/szorzás/osztás/összeadás képletei,
+  az összetett tört belső nevezői és teljes nevezőjének x+y számlálója.
+- A nem egyszerűsíthető törtek polinom-LKO-ja 1; a hibás törlési képlet nem azonosság.
+- a²+b²−2ab=(a−b)²; nemnegatív a,b esetén a+b−2√(ab)=(√a−√b)²;
+  a két közép kapcsolatának egyenlőségesete.
+- Mind a kilenc kvíz matematikai eredménye; a megmaradt válaszindexek helyesek.
+
+Megőrzési ellenőrzés **30/30**: képek, linkek, média, válaszopciók/indexek,
+szkriptek, stílusok és az összes régi horgony változatlan. A 15 példakártya
+számadatai, képletei, eredményei és kikötései változatlanok; csak az emeletes
+tört utolsó prózamondatának dokumentált pontosítása tér el. Két kvíz-visszajelzés
+a négyzetek különbségére vonatkozó magyarázattal pontosult. Új feladat,
+feladat-számadat, oldalankénti CSS vagy médiablokk nem készült.
+
+### Végleges ellenőrzés
+
+| Réteg | Eredmény |
+|---|---|
+| Kép → média → háttér | 0 módosítás; 334 aktív médiaelem 139 lapon |
+| Naplótérkép | Változatlan: 184 oldal, 2294 feladat, 12315 XP |
+| Keresőindex | 308 nem üres bejegyzés; pontosan a három tananyag változott; a késői közép- és kikötésszöveg is bekerült |
+| Teljes kánon | 310 oldal, 0 hiba |
+| Belső linkek és horgonyok | 310 oldal, 0 hiba |
+| Gyakorlósávok | 0 hiba |
+| jsdom, három módosított lap | 185 képlet, 9/9 kvíz, 0 render-/JS-hiba |
+| Edge, 360/390/1280 px, zárt/nyitott lenyílók | 18 nézet, 0 oldaltúlcsordulás, képlethiba, JS-kivétel, saját konzolhiba vagy helyi 404 |
+| axe, ugyanez a 18 állapot | 0 jelzett szabálysértés |
+| JS nélkül | Három lecke bevezetői és törzsszövege olvasható |
+| Nyomtatási stílus, JS be/ki | 6/6; törzsszöveg, bevezetők és megoldáslenyílók láthatók; kvízek rejtettek |
+| Szemrevételezés | Három mobilos bevezető és három nyomtatási dobozminta rendben |
+
+Feladatgyűjtemény és Végeredmény nem változott; a CLAUDE.md feltételes szabálya
+szerint a teljes kulcs- és regressziós teszt ebben az adagban nem ismétlődött.
+A tananyag példáit és kvízeit a fenti két független matematikai kontroll vizsgálta.
+Valódi képernyőolvasó, más böngésző, teljes PDF-oldaltördelés, képes hátterek
+teljes kézi kontrasztja és külső videók/appletek tartalma nem ellenőrizve.
+JS nélkül a képletek TeX alakban maradnak. Az axe-próba nem teljes WCAG-minősítés.
+
+**Állapot:** az 1e/06 mindhárom tananyaga teljes A3-audit szerint átnézve;
+az 1e/01–06 összesen 31/38 tananyaglapja kész. Következő tananyag-adag az
+1e/07 négy lineáris leckéje. A többi lapfajta és osztály külön A3-auditja hátra van.
 **Tanári döntés kell: nincs új kérdés.** Helyi main; új ág és push nem készült.
