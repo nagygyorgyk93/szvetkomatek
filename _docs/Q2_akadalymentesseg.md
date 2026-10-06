@@ -596,3 +596,31 @@ Valódi képernyőolvasó, a többi komplex ábra, szolgáltatói médiafelület
 képes hátterek teljes kézi kontrasztja és JS nélküli képlet-felolvasás hátra van.
 Más böngészőt és teljes PDF-oldaltördelést nem minősítünk.
 **Tanári döntés kell: nincs új kérdés.**
+
+
+## Tizenegyedik adag — 1e/05 sokszögek és kör, transzformációk, vektorok, 9 ábra (2026-10-06)
+
+Három tananyag kilenc SVG-je látható, teljesebb leírást kapott aria-describedby
+kapcsolattal: hatszög átlói, középponti és kerületi szög, Thalész-tétel,
+eltolás, tükrözés és forgatás, irányított szakasz és a két vektorösszeadási szabály.
+A közös világos ábrakártyák maradtak; oldalankénti CSS-kivétel nem készült.
+
+A Thalész-ábra derékszögjele most a két szárra illeszkedik. A forgatási körív
+középpontja O, a megtartott csúcsok útját a megfelelő sugár írja le.
+Független pontos geometriai és tényleges böngészős útvonal-kontroll sikeres;
+a numerikus közelítés mért eltérése és 0,003-as SVG-egységű tűrése dokumentált.
+Mind a kilenc név és leírás megjelenik az Edge hozzáférhetőségi fájában;
+a MathML-szöveg külön ellenőrzött, a rejtett TeX/KaTeX-rétegeket elkülönítve.
+Minimum leíráskontraszt 9,20:1.
+
+Végleges böngésző/axe: **18 nézet, 0 elrendezési és szabályjelzés**.
+Nyomtatás JS be/ki **6/6**, kilenc ábra/leírás látható; JS nélkül is olvashatók.
+Kilenc mobilos ábrakártya és három nyomtatási minta szemrevételezve.
+jsdom **152 képlet, 7/7 kvíz, 0 hiba**; teljes kánon/link **310/0**.
+Részletes lektor, megőrzés és matematikai kontroll:
+[A3 nyolcadik adag](A3_nyelvi_ellenorzes.md).
+
+Valódi képernyőolvasó, a többi komplex ábra, szolgáltatói médiafelületek,
+képes hátterek teljes kézi kontrasztja és JS nélküli képlet-felolvasás hátra van.
+Más böngészőt és teljes PDF-oldaltördelést nem minősítünk.
+**Tanári döntés kell: nincs új kérdés.**

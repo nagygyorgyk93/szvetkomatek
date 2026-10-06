@@ -3,8 +3,8 @@
 ## Hatókör és állapot
 
 **Jelenlegi összesítés:** az 1e/01 kilenc, az 1e/02 három, az 1e/03 négy,
-az 1e/04 három és az 1e/05 első hat tananyaglapjának teljes nyelvi és
-példahitelességi ellenőrzése elkészült hét adagban. A
+az 1e/04 három és az 1e/05 mind a kilenc tananyaglapjának teljes nyelvi és
+példahitelességi ellenőrzése elkészült nyolc adagban: összesen 28 tananyag. A
 feladatgyűjtemények, nyitóoldalak, összefoglalók és terepküldetések külön
 A3-ellenőrzése, valamint a többi témakör átnézése hátra van. Az adagok alábbi
 adatai az egyes munkamenetek eredményei; a legfrissebb bejegyzés a végén található.
@@ -736,3 +736,115 @@ Az 1e/01–04 19 tananyaga és az 1e/05 első hat lapja, összesen 25 tananyag A
 szerint átnézve. Az 1e/05 további három tananyaga és a többi lapfajta külön
 A3-ellenőrzése hátra van. Következő adag: sokszögek és kör, transzformációk, vektorok.
 **Tanári döntés kell: nincs új kérdés.** Helyi main-commit; új ág és push nélkül.
+
+
+## Nyolcadik adag — 1e/05 sokszögek és kör, transzformációk, vektorok (2026-10-06)
+
+### Hatókör és javítások
+
+Kiinduló revízió: `6e19421`, tiszta helyi main, az origin/main helyi referenciájával
+egyező állapot. Távoli frissítés nem történt. Három kézzel karbantartott tananyag
+teljes szövege, négy példája, hét kvíze és kilenc SVG-je átnézve:
+[sokszögek és a kör](../1e/05-geometria/tananyag-sokszogek-es-kor.html),
+[egybevágósági transzformációk](../1e/05-geometria/tananyag-transzformaciok.html),
+[vektorok](../1e/05-geometria/tananyag-vektorok.html).
+A builderkeresés csak hivatkozásokat talált; a CLAUDE.md szerint a kézi lapok
+közvetlenül javíthatók. Az 1e matematika-skill egybevágósági kimenetei az alap:
+körök és sokszögek tulajdonságai, síkbeli izometriák, lineáris vektorműveletek,
+pontos matematikai nyelv és valós alkalmazás.
+
+Javítás előtt bemutatott hibák és az utólagos biztos lektori feltételpontosítás:
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Kör, első kvíz | A kerületi szög tételét a tananyag még nem tanította, amikor rákérdezett | Közepes, sorrendi | HTML: a kvíz a tétel és a hozzá tartozó példa után került |
+| Kör, ív és szög | Az „ugyanezen az íven” összekeverhette a szög csúcsának helyét az átfogott ívvel; a bevezető nem nevezte meg, mit látunk szög alatt | Közepes, fogalmi | HTML: ugyanazt az ívet átfogó szögek; húr és a húr egyik oldalán mozgó körvonalpont |
+| Kör és sokszög alapfogalmai | Az átló, körlap, érintő egyenes, kerületi szög szára és a külsőszögszámolás feltétele hiányos | Fogalmi | HTML: meghatározások, különböző végpontok, sugárnyi távolság és konvex eset, csúcsonként egy külső szög |
+| Thalész-ábra | A forgatott téglalap nem illeszkedett a két szögszárra | Közepes, ábrahiba | SVG: a meglévő körvonalpont pontosítása, a két szárból számított derékszögjel |
+| Forgatás ábrája | A csúcs útját jelző ív sugara nem felelt meg a csúcs középponttól mért távolságának, az ív középpontja eltért O-tól | Magas, szemléltetési | SVG: az eredeti forgatás megtartása, pontos képcsúcsok és O középpontú körív |
+| Tükrözés és forgatás | A felezőmerőleges/forgatási szög a tengelyen vagy a középpontban lévő pontra is megfogalmazódott; ismétlődő és nehézkes forgatásmagyarázat | Közepes, feltételbeli / nyelvi | HTML: a rögzített pont külön esete, irányított szög, pozitív és negatív forgatási irány |
+| Szimmetriák | Az egyenlő szárú háromszögre egy tengelyt, minden téglalapra/rombuszra kettőt mondott, a szabályos és négyzetes kivétel nélkül | Magas, fogalmi | HTML: nem szabályos háromszög 1, szabályos 3; négyzettől különböző téglalap/rombusz 2, négyzet 4 tengely |
+| Szabályos sokszög forgatása, lektori jelzés | A forgatási középpont nem szerepelt | Feltételhiány | HTML: a csúcsokon átmenő kör középpontja; az ötszögkérdésben is megnevezve |
+| Vektor | Egy konkrét irányított szakasszal azonosította a vektort; több irányállítás a nullvektort sem zárta ki | Fogalmi | HTML: irányított szakaszos ábrázolás, helytől független vektor, nemnulla feltételek; nullvektor ellentettje önmaga |
+| Paralelogramma-szabály | A nem egy egyenesbe esés a vektorok helyétől függő feltételnek volt olvasható | Közepes, félreértés | HTML: előbb közös kezdőpont, majd az ábrázoló szakaszokra mondott feltétel |
+| Bevezetők, alkalmazások | Túlzó „tökéletes szimmetria”, „teljes mozgás”, a videojáték sosem torzul és a navigáció csak utat összegez állítás | Nyelvi / példahitelességi | HTML: konkrét célok, csempeminta, feltételes logópélda, papírsablon, indulópontba visszatérő séta |
+| Kilenc ábra | Rövid feliratok nem írták le az összes geometriai kapcsolatot | Hozzáférési hiány | Látható részletes leírás és aria-describedby kapcsolat |
+
+A játékos keret, Vanda és Fürge Pjotr megmaradtak. Az elmozdulás és a megtett
+út megkülönböztetése konkrét kezdő-/végpontra vonatkozik. Az identitás jelentése
+ki van írva; a k valós szám külön mondatban szerepel. A körszögek tétele
+a félkörnél hosszabb ívhez tartozó középponti szöget is pontosan kezeli.
+Új feladat és új feladat-számadat nem készült; a példák számai és eredményei
+változatlanok. A geometriai rajzkoordináták javítása a meglévő ábrákhoz kötött.
+
+### Független lektor és matematika
+
+A kontextus nélküli lektor csak a három tananyag látható szövegét és leírásait kapta,
+példamegoldások és válaszindexek nélkül. A hét kvíz önálló válasza: 40°, 60°,
+nem nulla eltolásnál nincs fix pont, tengelyes tükrözés, 72°, azonos hossz és irány,
+AB = −BA. Mind megoldható a tananyagból. A négy példa önálló eredménye:
+13 oldal / 65 átló / 1980°; 20°; 62°; DC = −m−n, BA = m+n, BC = n−m, CA = 2m.
+A csempeminta, szimmetrikus logó, papírsablon és körbesétálás helyénvaló.
+A középpont megnevezése, paralelogrammafeltétel és biztos nyelvi pontosítások
+beépítve. Újraolvasáskor a lektor nem talált biztos hibát vagy új félreértést.
+
+Független SymPy/pontos kontroll:
+
+- Átlók nem szomszédos csúcspárok szerinti leszámlálása n = 3–18 esetén;
+  a három számos példa, kvízszámolások és a paralelogramma négy vektorának helyvektoros levezetése.
+- Nullvektor ellentettje és skalárszorosa, számszoros hosszának négyzete,
+  ellentettek összege; a két összeadásábra tényleges nyilai.
+- Eltolás és tükrözés képcsúcsai, oldaltávolságok és körüljárás; a forgatás
+  három képcsúcsa és O-tól mért távolsága egymilliomod SVG-egységen belül pontos.
+- A körív két lehetséges középpontja a végpontokból és sugárból számolva:
+  a megfelelő középpont O, az analitikus eltérés egymilliomod egység alatti.
+- Thalész-körvonalpont és merőlegesség, a két szár egységvektorából számított
+  derékszögjel. A megtartott hatszög és középponti/kerületi ábra korábbi
+  koordinátakerekítése vonalvastagságnál jóval kisebb eltérésű.
+- Szimmetriatengelyek és középponti szimmetria pontos ponttükrözéssel:
+  nem szabályos egyenlő szárú / szabályos háromszög, nem négyzet téglalap /
+  rombusz, négyzet, ferde paralelogramma.
+
+Megőrzési ellenőrzés **33/33**: képek, linkek, médiablokkok, kvízopciók és
+válaszindexek, szkriptek, stílusok, példamegoldások és régi horgonyok megmaradtak.
+Négy kvízvisszajelzés megfogalmazása a fent dokumentált ív-/vektorpontosítással
+változott. Kilenc új leíráshorgony egyedi. Hét SVG geometriai tartalma változatlan,
+csak a Thalész- és forgatásábra alakzata/jelölése változott.
+
+### Végleges ellenőrzés
+
+| Réteg | Eredmény |
+|---|---|
+| Kép → média → háttér | 0 módosítás; 334 aktív médiaelem 139 lapon |
+| Naplótérkép | Változatlan: 184 oldal, 2294 feladat, 12315 XP |
+| Keresőindex | 308 nem üres bejegyzés; pontosan a három tananyag változott |
+| Teljes kánon | 310 oldal, 0 hiba |
+| Belső linkek és horgonyok | 310 oldal, 0 hiba |
+| Gyakorlósávok | 0 hiba |
+| jsdom, három módosított lap | 152 képlet, 7/7 kvíz, 0 render-/JS-hiba |
+| Edge, 360/390/1280 px, zárt/nyitott lenyílók | 18 nézet, 0 oldaltúlcsordulás, képlethiba vagy JS-kivétel |
+| axe, ugyanez a 18 állapot | 0 jelzett szabálysértés |
+| Hozzáférhetőségi fa | Mind a 9 ábranév és teljes, MathML-től helyesen kivont leírás szerepel |
+| JS nélkül | Három bevezető és mind a 9 leírás olvasható |
+| Nyomtatási stílus, JS be/ki | 6/6; szövegek, lenyílók, ábrák és leírások láthatók; kvízek rejtettek |
+| Szemrevételezés | Kilenc mobilos ábrakártya és három nyomtatási ábraminta rendben |
+
+A leírások a közös világos ábrakártyákban vannak; minimum mért kontraszt
+**9,20:1**. A tényleges forgatási körív 21 mintapontja, kezdő-/végpontja
+és szögtartománya mindhárom szélességen ellenőrzött. Az Edge numerikus
+getPointAtLength közelítésének első jelzését 101 pontos diagnosztika tisztázta:
+0,002477 SVG-egység maximális sugáreltérés, dokumentált 0,003-as mérési tűrés.
+Az SVG-körív analitikus középpontja és végpontjai ettől függetlenül pontosak;
+a diagnosztika miatt nem változtattuk meg a geometriai tartalmat.
+
+Feladatgyűjtemény és Végeredmény nem változott. A CLAUDE.md feltételes előírása
+szerint a kulcs- és regressziós teszt ebben az adagban nem ismétlődött.
+Valódi képernyőolvasó, más böngésző, teljes PDF-oldaltördelés, képes hátterek
+teljes kézi kontrasztja és külső videók/appletek tartalma nem ellenőrizve.
+JS nélkül a képletek TeX alakban maradnak. A gépi axe-próba és hozzáférhetőségi
+fa nem jelent teljes WCAG-minősítést vagy felolvasási próbát.
+
+**Állapot:** az 1e/05 mind a 9 tananyaga teljes A3-audit szerint átnézve;
+az 1e/01–05 összesen 28 tananyaglapja kész. Következő tananyag-adag az
+1e/06 három racionális algebrai leckéje. A többi lapfajta külön A3-auditja hátra van.
+**Tanári döntés kell: nincs új kérdés.** Helyi main; új ág és push nem készült.

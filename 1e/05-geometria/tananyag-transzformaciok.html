@@ -33,11 +33,10 @@
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
-      <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/vanda.webp" alt="Vanda — a valóságformálás mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Vanda:</b> Most jön a szektor névadója. A <b>Tükör-világ</b> nem más, mint a
-      tér <b>mozgatása</b>: eltolom, elforgatom, tükrözöm — de az alakzat mérete és formája <b>nem változik</b>. Ezek az
-      <b>izometrikus</b> (távolságtartó) transzformációk, és épp ezek adják az egybevágóság igazi értelmét: két alakzat
-      akkor egybevágó, ha az egyik ilyen mozgatással a másikba vihető.</p></div>
-    <p>Egy <b>izometria</b> minden ponthoz egy képpontot rendel úgy, hogy <b>bármely két pont egymástól mért távolsága megmarad</b>: ha <span class="math inline">\(P\)</span> képe <span class="math inline">\(P'\)</span> és <span class="math inline">\(Q\)</span> képe <span class="math inline">\(Q'\)</span>, akkor <span class="math inline">\(|PQ|=|P'Q'|\)</span>. Ezért az
+      <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/vanda.webp" alt="Vanda — a valóságformálás mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Vanda:</b> Most én mozgatom a Tükör-világ alakzatait: eltolom, elforgatom vagy tükrözöm őket a síkban.
+      A méretük és alakjuk közben megmarad. Megnézzük, hogyan szerkeszthető meg egy pont képe,
+      és melyik transzformáció fordítja meg az alakzat körüljárásának irányát.</p></div>
+    <p>Egy síkbeli <b>izometria</b> a sík minden pontjához egy képpontot rendel úgy, hogy <b>bármely két pont egymástól mért távolsága megmarad</b>: ha <span class="math inline">\(P\)</span> képe <span class="math inline">\(P'\)</span> és <span class="math inline">\(Q\)</span> képe <span class="math inline">\(Q'\)</span>, akkor <span class="math inline">\(|PQ|=|P'Q'|\)</span>. Ezért az
     eredeti alakzat és a képe mindig <b>egybevágó</b>. Négy transzformációt nézünk meg — közülük az egyikről ki fog derülni, hogy egy másiknak a speciális esete.</p>
 
     <h2 id="s1">Eltolás</h2>
@@ -47,14 +46,14 @@
       változatlan, és nem is fordul el — csak a helye tolódik.</p>
     </div>
     <div class="svgcard">
-      <svg viewBox="0 0 300 200" width="300" height="200" role="img" aria-label="Háromszög eltolása egy vektorral">
+      <svg viewBox="0 0 300 200" width="300" height="200" role="img" aria-describedby="abra-transzformaciok-1" aria-label="Háromszög eltolása egy vektorral">
         <defs><marker id="el" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L6.5,3 L0,6 Z" fill="#8b5cf6"/></marker></defs>
         <polygon points="70,55 120,150 55,140" fill="#d1fae5" stroke="#047857" stroke-width="2.5"/>
         <polygon points="190,80 240,175 175,165" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="5 3"/>
         <line x1="70" y1="55" x2="190" y2="80" stroke="#8b5cf6" stroke-width="2" marker-end="url(#el)"/>
         <text x="120" y="60" font-size="14" fill="#8b5cf6" font-style="italic">v</text>
       </svg>
-      <div class="cap">Minden pont ugyanazzal a \(\vec{v}\) vektorral tolódik el; a kép egybevágó az eredetivel.</div>
+      <div class="cap" id="abra-transzformaciok-1">A kitöltött háromszög eltolás utáni képe a szaggatott háromszög. Minden csúcs ugyanannyival jobbra és lefelé mozdul el. A nyíl egy megfelelő csúcspár között a \(\vec v\) eltolásvektort mutatja; ugyanilyen vektor köti össze a másik két csúcsot is a képével.</div>
     </div>
 
     <!-- media:begin 1e05-eltolas-video -->
@@ -66,23 +65,23 @@
     <h2 id="s2">Tengelyes tükrözés</h2>
     <div class="doboz definicio" id="def-tengelyes">
       <p class="cim"><span class="ikon">📗</span> Tengelyes tükrözés</p>
-      <p>Egy <span class="math inline">\(t\)</span> egyenesre (a <b>tengelyre</b>) tükrözve minden <span class="math inline">\(P\)</span> pont képe az a <span class="math inline">\(P'\)</span> pont, amelyre a
+      <p>Egy <span class="math inline">\(t\)</span> egyenesre (a <b>tengelyre</b>) tükrözve minden, <b>a tengelyen kívüli</b> <span class="math inline">\(P\)</span> pont képe az a <span class="math inline">\(P'\)</span> pont, amelyre a
       tengely a <span class="math inline">\(PP'\)</span> szakasz <b>felezőmerőlegese</b>. A tengelyen lévő pontok helyben maradnak. A tükrözés
       <b>megfordítja</b> a körüljárás irányát.</p>
     </div>
     <div class="svgcard">
-      <svg viewBox="0 0 300 200" width="300" height="200" role="img" aria-label="Háromszög tengelyes tükrözése függőleges tengelyre">
+      <svg viewBox="0 0 300 200" width="300" height="200" role="img" aria-describedby="abra-transzformaciok-2" aria-label="Háromszög tengelyes tükrözése függőleges tengelyre">
         <line x1="150" y1="20" x2="150" y2="185" stroke="#3b82f6" stroke-width="1.8" stroke-dasharray="6 4"/>
         <text x="156" y="34" font-size="13" fill="#3b82f6" font-style="italic">t</text>
         <polygon points="70,55 120,150 55,140" fill="#d1fae5" stroke="#047857" stroke-width="2.5"/>
         <polygon points="230,55 180,150 245,140" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="5 3"/>
       </svg>
-      <div class="cap">A \(t\) tengely a megfelelő pontpárok (\(P,P'\)) szakaszának felezőmerőlegese.</div>
+      <div class="cap" id="abra-transzformaciok-2">A kitöltött háromszög képe a \(t\) függőleges tengelyre való tükrözés után a szaggatott háromszög. A megfelelő csúcsok azonos magasságban, a tengely két oldalán és attól egyenlő távolságra vannak. A \(t\) tengely minden ilyen pontpárt összekötő szakasz felezőmerőlegese; a körüljárás iránya megfordul.</div>
     </div>
     <div class="doboz definicio" id="def-kozeppontos">
       <p class="cim"><span class="ikon">📗</span> Középpontos tükrözés</p>
-      <p>Egy <span class="math inline">\(O\)</span> pontra (a <b>centrumra</b>) tükrözve minden <span class="math inline">\(P\)</span> képe az a <span class="math inline">\(P'\)</span>, amelyre <span class="math inline">\(O\)</span> a <span class="math inline">\(PP'\)</span>
-      szakasz <b>felezőpontja</b>; maga az <span class="math inline">\(O\)</span> helyben marad. Ez pontosan egy <span class="math inline">\(180^\circ\)</span>-os forgatás az <span class="math inline">\(O\)</span> körül; az irányítás megmarad.</p>
+      <p>Egy <span class="math inline">\(O\)</span> pontra (a <b>centrumra</b>) tükrözve minden <span class="math inline">\(P\ne O\)</span> pont képe az a <span class="math inline">\(P'\)</span>, amelyre <span class="math inline">\(O\)</span> a <span class="math inline">\(PP'\)</span>
+      szakasz <b>felezőpontja</b>; maga az <span class="math inline">\(O\)</span> helyben marad. Ez pontosan egy <span class="math inline">\(180^\circ\)</span>-os forgatás az <span class="math inline">\(O\)</span> körül; a körüljárás iránya megmarad.</p>
     </div>
 
     
@@ -107,17 +106,19 @@
     <h2 id="s3">Forgatás</h2>
     <div class="doboz definicio" id="def-forgatas">
       <p class="cim"><span class="ikon">📗</span> Forgatás (rotáció)</p>
-      <p>Az <span class="math inline">\(O\)</span> <b>középpont</b> körüli, <span class="math inline">\(\alpha\)</span> szögű forgatás minden <span class="math inline">\(P\)</span> pontot úgy visz <span class="math inline">\(P'\)</span>-be, hogy
-      <span class="math inline">\(|OP|=|OP'|\)</span> és a <span class="math inline">\(POP'\)</span> szög éppen <span class="math inline">\(\alpha\)</span> — <b>egy rögzített irányban</b> mérve (megállapodás szerint az óramutató járásával <b>ellentétesen</b>, ez a pozitív irány). Ez a kikötés nem elhagyható: nélküle a <span class="math inline">\(0^\circ\)</span>-tól és <span class="math inline">\(180^\circ\)</span>-tól különböző <span class="math inline">\(\alpha\)</span> esetén két különböző képpont is szóba jönne. (A középpont képe mindig önmaga.) A középpont helyben marad; az irányítás megmarad.</p>
+      <p>Az <span class="math inline">\(O\)</span> <b>középpont</b> körüli, <span class="math inline">\(\alpha\)</span> szögű forgatás minden <span class="math inline">\(P\ne O\)</span> pontot úgy visz <span class="math inline">\(P'\)</span>-be, hogy
+      <span class="math inline">\(|OP|=|OP'|\)</span>, és az <span class="math inline">\(OP\)</span> félegyenesről az <span class="math inline">\(OP'\)</span> félegyenesre mért <b>irányított szög</b> <span class="math inline">\(\alpha\)</span>.
+      A pozitív irány az óramutató járásával <b>ellentétes</b>, a negatív irány azzal megegyező. A forgatásnál tehát a szög nagyságát és irányát is meg kell adni.
+      A középpont helyben marad; a körüljárás iránya megmarad.</p>
     </div>
     <div class="svgcard">
-      <svg viewBox="0 0 230 275" width="230" height="275" role="img" aria-label="Háromszög forgatása egy O középpont körül">
+      <svg viewBox="0 0 230 275" width="230" height="275" role="img" aria-describedby="abra-transzformaciok-3" aria-label="Háromszög forgatása egy O középpont körül">
         <polygon points="70,55 120,150 55,140" fill="#d1fae5" stroke="#047857" stroke-width="2.5"/>
-        <polygon points="30.6,208.7 136.9,194.2 105.3,251.8" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="5 3"/>
+        <polygon points="30.550462,208.660221 136.922268,194.167503 105.294033,251.827322" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="5 3"/>
         <circle cx="160" cy="160" r="3.5" fill="#ef4444"/><text x="166" y="157" font-size="13" fill="#ef4444">O</text>
-        <path d="M 120 150 A 60 60 0 0 0 136.9 194.2" fill="none" stroke="#8b5cf6" stroke-width="1.6"/>
+        <path d="M 120 150 A 41.231056 41.231056 0 0 0 136.922268 194.167503" fill="none" stroke="#8b5cf6" stroke-width="1.6"/>
       </svg>
-      <div class="cap">Forgatás az \(O\) középpont körül: a távolságok a középponttól változatlanok.</div>
+      <div class="cap" id="abra-transzformaciok-3">A kitöltött háromszög az \(O\) pont körül, az óramutató járásával ellentétesen forgatva a szaggatott háromszögbe kerül. Minden csúcs és a képe ugyanolyan távol van \(O\)-tól, és minden csúcs ugyanakkora irányított szöggel fordul el. A lila körív az egyik csúcs útját mutatja; középpontja \(O\).</div>
     </div>
 
     <!-- media:begin 1e05-forgatas-video -->
@@ -138,8 +139,8 @@
     </div>
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
-      A tapéta- és csempeminták, a hópehely szimmetriája, a logók tükrözése mind izometria. A videojátékok is így
-      „mozgatják” a karaktereket: eltolás + forgatás, miközben az alak sosem torzul.
+      Csempemintában ugyanazt az alakzatot eltolva vagy elforgatva ismételheted. Ha egy logó tengelyesen szimmetrikus,
+      a tengelyes tükrözés önmagába viszi. Egy kivágott papírsablont eltolva vagy elforgatva a pontjai közötti távolságok nem változnak.
     </div>
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
@@ -166,28 +167,29 @@
         </figure>
         <!-- media:end 1e05-izometria-osztalyozas-video -->
         <h2 id="s5">Szimmetrikus alakzatok</h2>
-    <p>Egy alakzat akkor <b>szimmetrikus</b>, ha van olyan egybevágósági transzformáció — az identitáson kívül —, amely önmagába viszi. A két leggyakoribb eset:</p>
+    <p>Egy alakzat akkor <b>szimmetrikus</b>, ha van olyan egybevágósági transzformáció, amely önmagába viszi, és nem az <b>identitás</b> (az a leképezés, amely minden pontot a helyén hagy). A két leggyakoribb eset:</p>
     <div class="doboz definicio" id="def-szimmetria">
       <p class="cim"><span class="ikon">📗</span> Szimmetriatengely és szimmetriaközéppont</p>
       <p>A <b>szimmetriatengely</b> olyan egyenes, amelyre az alakzat önmagára tükröződik. A <b>szimmetriaközéppont</b> olyan pont, amely körüli <span class="math inline">\(180^\circ\)</span>-os forgatás az alakzatot önmagába viszi.</p>
       <ul>
-        <li>Az <b>egyenlő szárú háromszögnek</b> egy szimmetriatengelye van; középpontja nincs.</li>
-        <li>A <b>téglalapnak</b> kettő, a <b>rombusznak</b> szintén kettő, a <b>négyzetnek</b> négy — és mindháromnak van szimmetriaközéppontja (az átlók metszéspontja).</li>
+        <li>A <b>nem szabályos egyenlő szárú háromszögnek</b> egy, a <b>szabályos háromszögnek</b> három szimmetriatengelye van; egyiknek sincs szimmetriaközéppontja.</li>
+        <li>Ha a <b>téglalap</b> vagy a <b>rombusz</b> nem négyzet, akkor két szimmetriatengelye van. A <b>négyzetnek</b> négy.
+        Mindháromnak van szimmetriaközéppontja: az átlók metszéspontja.</li>
         <li>A <b>paralelogrammának</b> (ha nem rombusz és nem téglalap) <b>nincs</b> szimmetriatengelye, szimmetriaközéppontja viszont van.</li>
-        <li>A <b>szabályos <span class="math inline">\(n\)</span>-szögnek</b> pontosan <span class="math inline">\(n\)</span> szimmetriatengelye van, és önmagába viszi a <span class="math inline">\(\dfrac{360^\circ}{n}\)</span>-os forgatás — ez a legkisebb ilyen pozitív forgásszög.</li>
+        <li>A <b>szabályos <span class="math inline">\(n\)</span>-szögnek</b> pontosan <span class="math inline">\(n\)</span> szimmetriatengelye van, és a középpontja (a csúcsokon átmenő kör középpontja) körüli <span class="math inline">\(\dfrac{360^\circ}{n}\)</span>-os forgatás önmagába viszi — ez a legkisebb ilyen pozitív forgásszög.</li>
       </ul>
     </div>
     <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ A szabályos ötszög 360°/5 = 72°-os forgatásra megy önmagába, és 5 szimmetriatengelye van." data-nem="✘ Szabályos n-szögnél a legkisebb ilyen forgásszög 360°/n — itt 360°/5.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
-      <p>Mekkora a legkisebb pozitív forgásszög, amely a szabályos ötszöget önmagába viszi?</p>
+      <p>Mekkora a legkisebb pozitív forgásszög, amely a szabályos ötszöget a középpontja körül forgatva önmagába viszi?</p>
       <div class="opciok"><button><span class="math inline">\(108^\circ\)</span></button><button><span class="math inline">\(72^\circ\)</span></button><button><span class="math inline">\(60^\circ\)</span></button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
 <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-geometria.html#alap-14">🐜 Henrik-bevetés <span class="cimke">Alap 14–15</span></a><a class="sav bruno" href="feladatok-geometria.html#kozep-9">💥 Brúnó-bevetés <span class="cimke">Közép 9</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/vanda.webp" alt="Vanda — a valóságformálás mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Vanda:</b> A Tükör-világ meghajolt előtted — a teljes geometriai szektor a kezedben van.
-    Most jöhet a <b>kiképzési adattár</b>: gyakorolj a feladatgyűjteménnyel, majd zárd le a <b>bevetési kártyával</b>.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/vanda.webp" alt="Vanda — a valóságformálás mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Vanda:</b> Most már el tudod különíteni az eltolást, a tükrözéseket és a forgatást.
+    A feladatgyűjteményben próbáld ki őket, majd a bevetési kártyával ismételd át a geometriai szabályokat.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-vektorok.html"><span class="irany">← Előző</span><span class="hova">Vektorok</span></a>
       <a class="kov" href="feladatok-geometria.html"><span class="irany">Következő →</span><span class="hova">Geometria — feladatgyűjtemény</span></a>

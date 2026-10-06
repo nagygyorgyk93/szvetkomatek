@@ -33,10 +33,11 @@
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
-      <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/vanda.webp" alt="Vanda — a valóságformálás mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Vanda:</b> A sokszög a formák nagy családja — háromszögtől a szabályos tizennyolcszögig.
-      A kör pedig a tökéletes szimmetria. A Tükör-világban a <b>kerületi szög</b> a legfurcsább trükk: a körvonal ugyanazon ívének
-      bármely pontjából ugyanakkora szögben látod. Ez a láthatatlan szabály stabilizálja a portálgyűrűket.</p></div>
-    <p>A sokszög olyan síkidom, amelyet <b>zárt, önmagát nem metsző</b> töröttvonal határol. Két képlettel az összes átlóját és szögösszegét kiszámolod.</p>
+      <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/vanda.webp" alt="Vanda — a valóságformálás mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Vanda:</b> A Tükör-világban most a sokszögeket és a kört vizsgáljuk. Előbb megszámoljuk a sokszög átlóit,
+      majd megmutatom a kör egyik meglepő tulajdonságát: ha a körvonalon egy pontot mozgatok egy húr egyik oldalán,
+      abból a pontból a húr mindig ugyanakkora szögben látszik.</p></div>
+    <p>A sokszög olyan síkidom, amelyet <b>zárt, önmagát nem metsző</b> töröttvonal határol; szomszédos oldalai nem esnek egy egyenesbe.
+    Az <b>átló</b> két nem szomszédos csúcsot összekötő szakasz. Megnézzük, hány átlója van egy sokszögnek, és hogyan számolható ki a belső szögeinek összege.</p>
 
     <h2 id="s1">Átlók és szögösszeg</h2>
     <div class="doboz tetel" id="tetel-sokszog-atlo">
@@ -45,18 +46,19 @@
         <li>Legyen <span class="math inline">\(n\ge 3\)</span> egész szám. Ekkor egy csúcsból húzható átlók száma: <span class="math inline">\(n-3\)</span>;</li>
         <li>az összes átló száma: <span class="math inline">\(\dfrac{n(n-3)}{2}\)</span>;</li>
         <li>a belső szögek összege: <span class="math inline">\((n-2)\cdot 180^\circ\)</span>;</li>
-        <li>a külső szögek összege bármely <b>konvex</b> (azaz 180°-nál nagyobb belső szöget nem tartalmazó) sokszögnél: <span class="math inline">\(360^\circ\)</span>.</li>
+        <li>a külső szögek összege bármely <b>konvex</b> sokszögnél — amelynek minden belső szöge <span class="math inline">\(180^\circ\)</span>-nál kisebb —,
+        ha csúcsonként egy, a belső szög mellékszögeként vett külső szöget számolunk: <span class="math inline">\(360^\circ\)</span>.</li>
       </ul>
     </div>
     <div class="svgcard">
-      <svg viewBox="0 0 300 220" width="300" height="220" role="img" aria-label="Szabályos hatszög az egy csúcsból induló átlóival">
+      <svg viewBox="0 0 300 220" width="300" height="220" role="img" aria-describedby="abra-sokszogek-es-kor-1" aria-label="Szabályos hatszög az egy csúcsból induló átlóival">
         <polygon points="150,30 219.3,70 219.3,150 150,190 80.7,150 80.7,70" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2.5"/>
         <line x1="150" y1="30" x2="219.3" y2="150" stroke="#ef4444" stroke-width="1.5"/>
         <line x1="150" y1="30" x2="150" y2="190" stroke="#ef4444" stroke-width="1.5"/>
         <line x1="150" y1="30" x2="80.7" y2="150" stroke="#ef4444" stroke-width="1.5"/>
         <circle cx="150" cy="30" r="3.5" fill="#0f172a"/>
       </svg>
-      <div class="cap">A hatszög (\(n=6\)) egy csúcsából \(n-3=3\) átló indul; összesen \(\dfrac{6\cdot 3}{2}=9\) átlója van.</div>
+      <div class="cap" id="abra-sokszogek-es-kor-1">A szabályos hatszög felső csúcsából három átló indul: a három nem szomszédos csúcsba vezetnek. Egy csúcsból \(n-3\) átló húzható; a hatszögnél ez három. Összesen \(\dfrac{6\cdot3}{2}=9\) átló van, mert a csúcsonkénti számolás minden átlót kétszer vesz figyelembe.</div>
     </div>
     <div class="doboz pelda" id="pelda-sokszog">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
@@ -75,7 +77,7 @@
     <h2 id="s2">Szabályos sokszög</h2>
     <div class="doboz definicio" id="def-szabalyos-sokszog">
       <p class="cim"><span class="ikon">📗</span> Szabályos sokszög</p>
-      <p>A <b>szabályos</b> sokszögben minden oldal és minden szög egyenlő. Egy belső szöge <span class="math inline">\(\dfrac{(n-2)\cdot 180^\circ}{n}\)</span>,
+      <p>A <b>szabályos</b> sokszög konvex, minden oldala egyenlő hosszú, és minden belső szöge egyenlő. Egy belső szöge <span class="math inline">\(\dfrac{(n-2)\cdot 180^\circ}{n}\)</span>,
       egy külső szöge <span class="math inline">\(\dfrac{360^\circ}{n}\)</span>.</p>
     </div>
     <div class="doboz pelda" id="pelda-szabalyos">
@@ -85,29 +87,29 @@
     </div>
 
     
-    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A kerületi szög a hozzá tartozó középponti szög fele: 80° : 2 = 40°." data-nem="✘ Ugyanazon íven a kerületi szög a középponti szög FELE: 80° : 2 = 40°.">
-      <p class="kviz-cim"><span class="ikon">🎯</span> Gyors kérdés</p>
-      <p>Egy körben egy <span class="math inline">\(80^\circ\)</span>-os középponti szöghöz mekkora kerületi szög tartozik?</p>
-      <div class="opciok"><button><span class="math inline">\(80^\circ\)</span></button><button><span class="math inline">\(160^\circ\)</span></button><button><span class="math inline">\(40^\circ\)</span></button></div>
-      <p class="visszajelzes" aria-live="polite"></p>
-    </div>
     <h2 id="s3">A kör részei</h2>
     <div class="doboz definicio" id="def-kor">
       <p class="cim"><span class="ikon">📗</span> Alapfogalmak</p>
-      <p>A <b>kör</b> a középponttól egyenlő (<span class="math inline">\(r\)</span> sugárnyi) távolságra lévő pontok halmaza. Az <b>átmérő</b>
-      <span class="math inline">\(d=2r\)</span>. A <b>húr</b> a kör két pontját összekötő szakasz (a leghosszabb húr az átmérő). Az <b>érintő</b> a kört
-      egy pontban érinti, és ott <b>merőleges</b> a sugárra. A <b>szelő</b> két pontban metszi a kört.</p>
+      <p>A <b>kör</b> (körvonal) a középponttól <span class="math inline">\(r&gt;0\)</span> távolságra lévő síkbeli pontok halmaza; <span class="math inline">\(r\)</span> a sugár.
+      A körvonal és a belseje együtt a <b>körlap</b>. A <b>húr</b> a körvonal két különböző pontját összekötő szakasz.
+      Az <b>átmérő</b> a középponton átmenő húr, hossza <span class="math inline">\(d=2r\)</span>; ez a leghosszabb húr.
+      Az <b>érintő</b> olyan egyenes, amelynek pontosan egy közös pontja van a körrel; ebben a pontban <b>merőleges</b> a sugárra.
+      A <b>szelő</b> olyan egyenes, amely két pontban metszi a kört.</p>
     </div>
 
     <h2 id="s4">Középponti és kerületi szög</h2>
     <div class="doboz tetel" id="tetel-keruleti-szog">
       <p class="cim"><span class="ikon">📘</span> A kerületi szögek tétele</p>
-      <p>Ugyanahhoz az ívhez tartozó <b>kerületi szög</b> (csúcsa a körvonalon van, szárai húrok) a <b>középponti szög</b> (csúcsa a kör középpontja) <b>fele</b>: <span class="math inline">\(\varphi=\dfrac{\gamma}{2}\)</span>.
+      <p>A <b>kerületi szög</b> csúcsa a körvonalon van, szárai két húrt tartalmazó félegyenesek.
+      Az ugyanahhoz az ívhez tartozó <b>középponti szög</b> csúcsa a kör középpontja, szárai az ív végpontjaihoz húzott sugarakon haladnak.
+      A kerületi szög a hozzá tartozó középponti szög <b>fele</b>: <span class="math inline">\(\varphi=\dfrac{\gamma}{2}\)</span>.
       Ebből következik: az ugyanazt az ívet átfogó kerületi szögek egyenlők.</p>
-      <p class="halvany">Két pont a körvonalat két <b>ívre</b> bontja. A kerületi szög csúcsa az egyik íven van, és a <b>másikat</b> fogja át — ezt hívjuk „az ívhez tartozó” szögnek. A két sugár és a köztük lévő ív által határolt síkrész a <b>körcikk</b>.</p>
+      <p class="halvany">A körvonal két különböző pontja két <b>ívre</b> bontja a körvonalat. A kerületi szög csúcsa az egyik ív belső pontja, és a <b>másik ívet</b> fogja át.
+      A hozzá tartozó középponti szöget ennek az átfogott ívnek megfelelően választjuk: a félkörnél hosszabb ívhez <span class="math inline">\(180^\circ\)</span>-nál nagyobb középponti szög tartozik.
+      A két sugár és a választott ív által határolt síkrész a <b>körcikk</b>.</p>
     </div>
     <div class="svgcard">
-      <svg viewBox="0 0 300 230" width="300" height="230" role="img" aria-label="Kör középponti és kerületi szöggel ugyanazon AB ívhez">
+      <svg viewBox="0 0 300 230" width="300" height="230" role="img" aria-describedby="abra-sokszogek-es-kor-2" aria-label="Kör középponti és kerületi szöggel ugyanazon AB ívhez">
         <circle cx="150" cy="120" r="95" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
         <line x1="150" y1="120" x2="88.9" y2="192.8" stroke="#047857" stroke-width="2"/>
         <line x1="150" y1="120" x2="211.1" y2="192.8" stroke="#047857" stroke-width="2"/>
@@ -118,12 +120,18 @@
         <text x="142" y="52" font-size="13" fill="#8b5cf6" font-style="italic">φ</text>
         <text x="78" y="208" font-size="12" fill="#0f172a">A</text><text x="214" y="208" font-size="12" fill="#0f172a">B</text><text x="150" y="20" font-size="12" fill="#0f172a">P</text>
       </svg>
-      <div class="cap">Az \(AB\) ívhez tartozó középponti szög \(\gamma\), a \(P\)-ből látott kerületi szög \(\varphi=\dfrac{\gamma}{2}\).</div>
+      <div class="cap" id="abra-sokszogek-es-kor-2">Az \(O\) középpontból az \(A\) és \(B\) pontba húzott sugarak az alsó \(AB\) ívhez tartozó \(\gamma\) középponti szöget határolják. A felső \(P\) pontból induló \(PA\) és \(PB\) húrokhoz tartozó \(\varphi\) kerületi szög ugyanezt az alsó ívet fogja át, ezért \(\varphi=\dfrac{\gamma}{2}\).</div>
     </div>
     <div class="doboz pelda" id="pelda-keruleti">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
       Egy <span class="math inline">\(124^\circ\)</span>-os középponti szöghöz mekkora kerületi szög tartozik (vagyis mekkora az ugyanazt az ívet átfogó kerületi szög)?
       <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(\varphi=\dfrac{124^\circ}{2}=62^\circ\)</span>.</p></div></details>
+    </div>
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A kerületi szög a hozzá tartozó középponti szög fele: 80° : 2 = 40°." data-nem="✘ Ugyanahhoz az ívhez tartozva a kerületi szög a középponti szög FELE: 80° : 2 = 40°.">
+      <p class="kviz-cim"><span class="ikon">🎯</span> Gyors kérdés</p>
+      <p>Egy körben egy <span class="math inline">\(80^\circ\)</span>-os középponti szöghöz mekkora az <b>ugyanazt az ívet átfogó</b> kerületi szög?</p>
+      <div class="opciok"><button><span class="math inline">\(80^\circ\)</span></button><button><span class="math inline">\(160^\circ\)</span></button><button><span class="math inline">\(40^\circ\)</span></button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
     </div>
     <div class="doboz tetel" id="tetel-thalesz">
       <p class="cim"><span class="ikon">📘</span> Thalész-tétel</p>
@@ -131,25 +139,25 @@
       a félkörhöz tartozó középponti szög <span class="math inline">\(180^\circ\)</span>, ennek fele <span class="math inline">\(90^\circ\)</span>.)</p>
     </div>
     <div class="svgcard">
-      <svg viewBox="0 0 300 210" width="300" height="210" role="img" aria-label="Thalész-tétel: átmérő fölé rajzolt derékszög">
+      <svg viewBox="0 0 300 210" width="300" height="210" role="img" aria-describedby="abra-sokszogek-es-kor-3" aria-label="Thalész-tétel: átmérő fölé rajzolt derékszög">
         <circle cx="150" cy="110" r="90" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
         <line x1="60" y1="110" x2="240" y2="110" stroke="#047857" stroke-width="2"/>
-        <line x1="60" y1="110" x2="98.4" y2="36.3" stroke="#8b5cf6" stroke-width="2"/>
-        <line x1="240" y1="110" x2="98.4" y2="36.3" stroke="#8b5cf6" stroke-width="2"/>
-        <rect x="90.5" y="46" width="14" height="14" fill="none" stroke="#ef4444" stroke-width="1.6" transform="rotate(28,97,50)"/>
+        <line x1="60" y1="110" x2="98.378121" y2="36.276316" stroke="#8b5cf6" stroke-width="2"/>
+        <line x1="240" y1="110" x2="98.378121" y2="36.276316" stroke="#8b5cf6" stroke-width="2"/>
+        <polyline points="92.837137,46.920446 103.481267,52.461429 109.022251,41.817299" fill="none" stroke="#ef4444" stroke-width="1.6"/>
         <circle cx="150" cy="110" r="3" fill="#0f172a"/>
         <text x="50" y="124" font-size="12" fill="#0f172a">A</text><text x="244" y="124" font-size="12" fill="#0f172a">B</text><text x="92" y="30" font-size="12" fill="#0f172a">P</text>
       </svg>
-      <div class="cap">Ha \(AB\) átmérő, akkor az \(APB\sphericalangle=90^\circ\) bármely olyan \(P\) körvonalpontra, amely \(A\)-tól és \(B\)-től különbözik.</div>
+      <div class="cap" id="abra-sokszogek-es-kor-3">Az \(AB\) szakasz a kör átmérője, \(P\) pedig a felső félkörön van, és különbözik \(A\)-tól és \(B\)-től. A \(PA\) és \(PB\) szár közötti jelölés derékszöget mutat: \(APB\sphericalangle=90^\circ\). Ez az alsó félkört átfogó kerületi szög; a hozzá tartozó középponti szög \(180^\circ\).</div>
     </div>
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
       A kerületi szög a középponti szög <b>fele</b> — de csak akkor, ha <b>ugyanahhoz az ívhez</b> tartoznak! Ne
       számold ki a kerületi szöget egy másik ív középponti szögéből.
     </div>
-    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A kerületi szög a középponti fele: 120° : 2 = 60°." data-nem="✘ Ugyanazon íven a kerületi szög a középponti fele: 120° : 2 = 60°.">
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A kerületi szög a középponti fele: 120° : 2 = 60°." data-nem="✘ Ugyanahhoz az ívhez tartozva a kerületi szög a középponti fele: 120° : 2 = 60°.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
-      <p>Egy ívhez <span class="math inline">\(120^\circ\)</span>-os középponti szög tartozik. Mekkora a kerületi szög ugyanezen az íven?</p>
+      <p>Egy ívhez <span class="math inline">\(120^\circ\)</span>-os középponti szög tartozik. Mekkora az <b>ugyanazt az ívet átfogó</b> kerületi szög?</p>
       <div class="opciok"><button><span class="math inline">\(240^\circ\)</span></button><button><span class="math inline">\(120^\circ\)</span></button><button><span class="math inline">\(60^\circ\)</span></button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
