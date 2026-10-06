@@ -539,3 +539,33 @@ Valódi képernyőolvasós próba, a többi összetett ábra, külső szolgálta
 a képes hátterek kézi kontrasztja és JS nélküli képlet-felolvasás még hátra van.
 Más böngészőt és teljes PDF-oldaltördelést nem minősítünk.
 **Tanári döntés kell: nincs új kérdés.**
+
+
+## Kilencedik adag — 1e/05 geometria, 11 ábra (2026-10-06)
+
+Három tananyag 11 SVG-je teljesebb, látható szöveges leírást kapott,
+aria-describedby kapcsolattal: illeszkedés, szög, metsző/párhuzamos egyenesek,
+háromszögfajták és külső szög, körülírt és beírt kör, súlyvonalak.
+A leírások a feliratokat, elrendezést és geometriai kapcsolatokat is megadják.
+Két korábbi svgwrap leírása a közös világos svgcard keretbe került;
+oldalankénti CSS-kivétel nincs.
+
+A „szabályos” ábrán a három oldal nem volt egyenlő: a felső csúcs javítva.
+A külső szög íve rossz tartományt jelölt: helyes körív a meghosszabbított
+alap és a ferde oldal között. Az α-felirat teljes doboza a belső szögben van.
+Minden felirat elfér a viewBox-ban 360/390/1280 px-en. Független geometriai
+számolás és a böngésző tényleges SVG-útvonalának mérése egyezik.
+
+Mind a 11 név és teljes leírás szerepel az Edge hozzáférhetőségi fájában.
+A MathML-t a szövegellenőrzés elkülöníti a rejtett TeX/KaTeX-rétegektől.
+Végleges böngésző/axe: **18 nézet, 0 elrendezési és szabályjelzés**.
+Nyomtatás JS be/ki **6/6**, mind a 11 ábra/leírás látható;
+a leírások JS nélkül is olvashatók. A 11 mobilos ábra és három nyomtatási
+ábraminta szemrevételezve. jsdom **135 képlet, 6/6 kvíz, 0 hiba**;
+teljes kánon/link **310/0**. Részletes lektor, megőrzés és számolás:
+[A3 hatodik adag](A3_nyelvi_ellenorzes.md).
+
+Valódi képernyőolvasó, a többi összetett ábra, szolgáltatói médiafelület,
+képes hátterek teljes kézi kontrasztja és JS nélküli képlet-felolvasás hátra van.
+Más böngészőt és teljes PDF-oldaltördelést nem minősítünk.
+**Tanári döntés kell: nincs új kérdés.**

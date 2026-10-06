@@ -33,42 +33,38 @@
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
-      <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/vanda.webp" alt="Vanda — a valóságformálás mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Vanda:</b> A háromszög a legerősebb alakzat — ezért épül belőle híd, daru, keret.
-      A Tükör-világ egyik alaptörvénye az <b>egybevágóság</b>: két alakzat egybevágó, ha <b>tükrözéssel, forgatással,
-      eltolással pontosan fedésbe hozható</b>. <b>Fürge Pjotr:</b> És a legjobb: nem kell mindent lemérni! Elég <b>néhány</b>
-      adat — a többi már kötelezően következik. Ezek az <b>egybevágósági tételek</b>.</p></div>
-    <p>A háromszög három oldalból és három szögből áll. Csúcsai <span class="math inline">\(A,B,C\)</span>, a velük szemközti oldalak
-    <span class="math inline">\(a,b,c\)</span>, a szögei <span class="math inline">\(\alpha,\beta,\gamma\)</span>.</p>
+      <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/vanda.webp" alt="Vanda — a valóságformálás mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Vanda:</b> Hidak és daruk rácsos szerkezeteiben gyakran látsz háromszögeket. Ha három merev rudat a végeiknél összekötünk, a kialakult háromszög alakja a rudak hosszának változtatása nélkül nem módosítható. A Tükör-világban is a <b>háromszögek tulajdonságaiból</b> indulunk ki. <b>Fürge Pjotr:</b> Megnézzük, mikor határoz meg néhány oldal- és szögadat egy háromszöget egybevágóság erejéig — vagyis mikor egyezik meg biztosan két háromszög alakja és mérete.</p></div>
+    <p>Három, nem egy egyenesbe eső pontot szakaszokkal összekötve kapjuk a háromszög határát. A háromszögnek három csúcsa, három oldala és három belső szöge van. A csúcsok <span class="math inline">\(A,B,C\)</span>, a velük szemközti oldalak hossza rendre <span class="math inline">\(a,b,c\)</span>, a csúcsoknál lévő belső szögek pedig <span class="math inline">\(\alpha,\beta,\gamma\)</span>.</p>
 
     <h2 id="s1">Háromszögfajták</h2>
     <div class="doboz definicio" id="def-haromszogfajtak">
       <p class="cim"><span class="ikon">📗</span> Oldalak és szögek szerint</p>
-      <p><b>Oldalak szerint:</b> általános (mind különböző), <b>egyenlő szárú</b> (két oldala egyenlő), <b>szabályos</b>
+      <p><b>Oldalak szerint:</b> általános (mind különböző), <b>egyenlő szárú</b> (legalább két oldala egyenlő), <b>szabályos</b>
        (mindhárom oldala egyenlő). Az „egyenlő szárú” <b>legalább</b> két egyenlő oldalt
-       jelent, ezért a szabályos háromszög is egyenlő szárú — csak a legszimmetrikusabb esetük. <b>Szögek szerint:</b> <b>hegyesszögű</b> (mind hegyes), <b>derékszögű</b> (van
+       jelent, ezért a szabályos háromszög is egyenlő szárú — az egyenlő szárú háromszögek egyik különleges esete. <b>Szögek szerint:</b> <b>hegyesszögű</b> (mind hegyes), <b>derékszögű</b> (van
       <span class="math inline">\(90^\circ\)</span>-os szöge), <b>tompaszögű</b> (van tompaszöge).</p>
     </div>
     <div class="venn">
       <div class="vbox">
-        <svg viewBox="0 0 150 120" width="150" height="120" role="img" aria-label="Egyenlő szárú háromszög">
+        <svg viewBox="0 0 150 120" width="150" height="120" role="img" aria-label="Egyenlő szárú háromszög" aria-describedby="abra-haromszogek-1">
           <polygon points="75,20 25,100 125,100" fill="#d1fae5" stroke="#047857" stroke-width="2"/>
           <text x="40" y="60" font-size="12" fill="#0f172a">b</text><text x="104" y="60" font-size="12" fill="#0f172a">a</text>
         </svg>
-        <div class="cap">egyenlő szárú</div>
+        <div class="cap" id="abra-haromszogek-1">Egyenlő szárú háromszög: a felső csúcs az alsó oldal felezőpontja fölött van. A bal oldali szár jele <span class="math inline">\(b\)</span>, a jobb oldalié <span class="math inline">\(a\)</span>; a két szár egyenlő hosszú, <span class="math inline">\(a=b\)</span>.</div>
       </div>
       <div class="vbox">
-        <svg viewBox="0 0 150 120" width="150" height="120" role="img" aria-label="Szabályos háromszög">
-          <polygon points="75,22 27,102 123,102" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+        <svg viewBox="0 0 150 120" width="150" height="120" role="img" aria-label="Szabályos háromszög" aria-describedby="abra-haromszogek-2">
+          <polygon points="75,18.861561 27,102 123,102" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
           <text x="44" y="66" font-size="12" fill="#0f172a">a</text><text x="100" y="66" font-size="12" fill="#0f172a">a</text><text x="72" y="115" font-size="12" fill="#0f172a">a</text>
         </svg>
-        <div class="cap">szabályos</div>
+        <div class="cap" id="abra-haromszogek-2">Szabályos háromszög: mindhárom oldalon <span class="math inline">\(a\)</span> szerepel, mindhárom oldal egyenlő hosszú. A felső csúcs az alsó oldal felezőpontja fölött helyezkedik el.</div>
       </div>
       <div class="vbox">
-        <svg viewBox="0 0 150 120" width="150" height="120" role="img" aria-label="Derékszögű háromszög">
+        <svg viewBox="0 0 150 120" width="150" height="120" role="img" aria-label="Derékszögű háromszög" aria-describedby="abra-haromszogek-3">
           <polygon points="30,100 130,100 30,25" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
           <rect x="30" y="85" width="15" height="15" fill="none" stroke="#64748b" stroke-width="1.5"/>
         </svg>
-        <div class="cap">derékszögű</div>
+        <div class="cap" id="abra-haromszogek-3">Derékszögű háromszög: a bal alsó csúcsnál kis négyzet jelöli a derékszöget. Az egyik befogó vízszintes, a másik függőleges; a derékszöggel szemközti ferde oldal az átfogó.</div>
       </div>
     </div>
 
@@ -80,20 +76,20 @@
     </div>
     <div class="doboz tetel" id="tetel-kulso-szog">
       <p class="cim"><span class="ikon">📘</span> A külső szög tétele</p>
-      <p>A háromszög <b>külső szöge</b> egyenlő a nem mellette fekvő két <b>belső szög összegével</b>. Például a
+      <p>A háromszög egyik oldalát a csúcson túl meghosszabbítva kapjuk az ottani belső szög melletti <b>külső szöget</b>. Ez a belső szöggel együtt egyenesszöget alkot, az összegük <span class="math inline">\(180^\circ\)</span>. A külső szög egyenlő a nem mellette fekvő két <b>belső szög összegével</b>. Például a
       <span class="math inline">\(\beta\)</span>-nál lévő külső szög: <span class="math inline">\(\beta'=\alpha+\gamma\)</span>. Csúcsonként egy-egy külső szöget választva ezek összege <span class="math inline">\(360^\circ\)</span>.</p>
     </div>
     <div class="svgcard">
-      <svg viewBox="0 0 320 170" width="320" height="170" role="img" aria-label="Háromszög egy meghosszabbított oldallal és a külső szöggel">
+      <svg viewBox="0 0 320 170" width="320" height="170" role="img" aria-label="Háromszög egy meghosszabbított oldallal és a külső szöggel" aria-describedby="abra-haromszogek-4">
         <polygon points="60,130 210,130 130,45" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
         <line x1="210" y1="130" x2="290" y2="130" stroke="#0f172a" stroke-width="2" stroke-dasharray="4 3"/>
-        <text x="62" y="148" font-size="13" fill="#0f172a" font-style="italic">α</text>
+        <text x="82" y="122" font-size="13" fill="#0f172a" font-style="italic">α</text>
         <text x="196" y="123" font-size="13" fill="#0f172a" font-style="italic">β</text>
         <text x="128" y="70" font-size="13" fill="#0f172a" font-style="italic">γ</text>
-        <path d="M 232 130 A 22 22 0 0 0 224 114" fill="none" stroke="#ef4444" stroke-width="2.5"/>
+        <path d="M 232 130 A 22 22 0 0 0 194.921977 113.979600" fill="none" stroke="#ef4444" stroke-width="2.5"/>
         <text x="236" y="120" font-size="13" fill="#ef4444" font-style="italic">β′</text>
       </svg>
-      <div class="cap">A \(\beta\)-nál lévő külső szög: \(\beta'=\alpha+\gamma\) (a másik két belső szög összege).</div>
+      <div class="cap" id="abra-haromszogek-4">A háromszög bal alsó belső szöge <span class="math inline">\(\alpha\)</span>, a jobb alsóé <span class="math inline">\(\beta\)</span>, a felsőé <span class="math inline">\(\gamma\)</span>. Az alsó oldalt a jobb csúcson túl meghosszabbítottuk. A piros ív az ottani <span class="math inline">\(\beta'\)</span> külső szöget jelöli: <span class="math inline">\(\beta'=\alpha+\gamma\)</span>, és <span class="math inline">\(\beta+\beta'=180^\circ\)</span>.</div>
     </div>
     <div class="doboz pelda" id="pelda-szogosszeg">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
@@ -143,17 +139,16 @@
     <h2 id="s4">Az egybevágóság és a négy tétel</h2>
     <div class="doboz definicio" id="def-egybevagosag">
       <p class="cim"><span class="ikon">📗</span> Egybevágóság</p>
-      <p>Két alakzat <b>egybevágó</b> (jelben <span class="math inline">\(\cong\)</span>), ha egybevágósági transzformációval (eltolás, forgatás,
-      tükrözés) pontosan fedésbe hozható. Egybevágó háromszögek <b>megfelelő</b> oldalai és szögei rendre egyenlők.</p>
+      <p>Két síkbeli alakzat <b>egybevágó</b> (jelben <span class="math inline">\(\cong\)</span>), ha eltolással, forgatással, tükrözéssel vagy ezek egymás utáni alkalmazásával pontosan fedésbe hozható. Egybevágó háromszögek <b>megfelelő</b> oldalai és szögei rendre egyenlők.</p>
     </div>
     <div class="doboz tetel" id="tetel-egybevagosagi-tetelek">
       <p class="cim"><span class="ikon">📘</span> A négy egybevágósági tétel</p>
-      <p>Két háromszög egybevágó, ha megegyeznek:</p>
+      <p>Két háromszög egybevágó, ha a megfelelő adataik megegyeznek:</p>
       <ul>
         <li><b>I. (OOO):</b> mindhárom oldalukban;</li>
         <li><b>II. (OSO):</b> két oldalukban és az <b>általuk bezárt</b> szögben;</li>
-        <li><b>III. (SOS):</b> egy oldalukban és a rajta fekvő <b>két</b> szögben;</li>
-        <li><b>IV.:</b> két oldalukban és a <b>nagyobbikkal szemközti</b> szögben.</li>
+        <li><b>III. (SOS):</b> egy oldalukban és az oldal két végpontjánál lévő belső szögekben;</li>
+        <li><b>IV.:</b> két oldalukban és a két megadott oldal közül a hosszabbal szemközti szögben.</li>
       </ul>
     </div>
     <div class="doboz pelda" id="pelda-bizonyitas">
@@ -197,8 +192,7 @@
     <!-- media:end 1e05-egybevagosag-gyak-video -->
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-geometria.html#alap-6">🐜 Henrik-bevetés <span class="cimke">Alap 6–7</span></a><a class="sav bruno" href="feladatok-geometria.html#kozep-4">💥 Brúnó-bevetés <span class="cimke">Közép 4</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/furge_pjotr.webp" alt="Fürge Pjotr — a kampusz leggyorsabb kadétja" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Fürge Pjotr:</b> Megvan a háromszög és az egybevágóság. Most nézzük meg, hol rejtőznek a
-    háromszög <b>nevezetes pontjai</b> — a súlypont, a magasságpont és a két kör középpontja.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/furge_pjotr.webp" alt="Fürge Pjotr — a kampusz leggyorsabb kadétja" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Fürge Pjotr:</b> Már tudod, milyen adatokból ismerhetünk fel egybevágó háromszögeket. A következő egységben a <b>nevezetes vonalakat és pontokat</b> vizsgáljuk: a súlypontot, a magasságpontot és a két kör középpontját.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-szogek.html"><span class="irany">← Előző</span><span class="hova">Szögek és szögpárok</span></a>
       <a class="kov" href="tananyag-nevezetes-pontok.html"><span class="irany">Következő →</span><span class="hova">A háromszög nevezetes pontjai</span></a>

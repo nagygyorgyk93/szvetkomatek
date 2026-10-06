@@ -33,21 +33,16 @@
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
-      <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/dr_bizarr_w.webp" alt="Dr. Bizarr — a multiverzum térképésze" width="1200" height="670" decoding="async"><p>📡 <b>Dr. Bizarr:</b> Mielőtt bármit stabilizálnál, fel kell térképezned a harcteret.
-      A geometria a <b>tér nyelve</b> — de nem építhetsz mindent bizonyításra: kell néhány <b>alapfogalom</b>, amelyet nem
-      definiálunk, csak elfogadunk. A <b>pont</b>, az <b>egyenes</b> és a <b>sík</b> ilyen. Ezekre épül minden portál, minden
-      alakzat, minden támadási vonal. Tanuld meg a jeleiket — ez a térképed jelmagyarázata.</p></div>
-    <p>A geometriában van néhány fogalom, amelyet <b>nem határozunk meg</b>: ezek az <b>alapfogalmak</b>. Elfogadjuk őket,
-    és a tulajdonságaikat <b>axiómákban</b> (alapigazságokban) rögzítjük. Minden más fogalmat és tételt ezekből építünk fel.</p>
+      <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/dr_bizarr_w.webp" alt="Dr. Bizarr — a multiverzum térképésze" width="1200" height="670" decoding="async"><p>📡 <b>Dr. Bizarr:</b> A Csatatér-térképen pontokkal jelöljük a helyeket, egyenesekkel az irányokat, síkokkal a felületeket. Ebben a modulban megtanulod a jelöléseiket, és megvizsgáljuk, hogyan illeszkednek egymáshoz. A <b>pont</b>, az <b>egyenes</b> és a <b>sík</b> alapfogalom: nem határozzuk meg őket más fogalmakkal. Tulajdonságaik leírásához néhány <b>axiómából</b> indulunk ki.</p></div>
+    <p>A geometria felépítésében külön szerepe van a fogalmaknak és az állításoknak. Az <b>alapfogalmakat</b> nem definiáljuk; a további fogalmakat ezek segítségével határozzuk meg. Az <b>axiómákat</b> bizonyítás nélkül fogadjuk el, a <b>tételeket</b> pedig az axiómákból és a már bizonyított állításokból vezetjük le. Ezen a lapon euklideszi geometriával foglalkozunk.</p>
 
     <h2 id="s1">Pont, egyenes, sík</h2>
     <div class="doboz definicio" id="def-alapfogalmak">
       <p class="cim"><span class="ikon">📗</span> Az alapfogalmak</p>
-      <p>A <b>pont</b>, az <b>egyenes</b> és a <b>sík</b> a geometria alapfogalmai. A pontnak nincs kiterjedése; az egyenes és
-      a sík mindkét, illetve minden irányban végtelen. Jelölésük:</p>
+      <p>A <b>pont</b>, az <b>egyenes</b> és a <b>sík</b> a geometria alapfogalmai. A pontnak nincs kiterjedése. Az egyenes mindkét irányban korlátlanul folytatódik; a sík minden irányban korlátlanul kiterjed. Jelölésük:</p>
       <ul>
         <li><b>pont</b>: nagybetű — <span class="math inline">\(A,\ B,\ C,\dots\)</span></li>
-        <li><b>egyenes</b>: kisbetű vagy két pontja — <span class="math inline">\(a,\ b,\dots\)</span> vagy <span class="math inline">\(AB\)</span></li>
+        <li><b>egyenes</b>: kisbetű vagy két különböző pontja — <span class="math inline">\(a,\ b,\dots\)</span> vagy <span class="math inline">\(AB\)</span></li>
         <li><b>sík</b>: görög kisbetű — <span class="math inline">\(\alpha,\ \beta,\ \gamma,\dots\)</span></li>
       </ul>
     </div>
@@ -56,15 +51,15 @@
       <p>Azt mondjuk, hogy egy <span class="math inline">\(A\)</span> pont <b>illeszkedik</b> az <span class="math inline">\(a\)</span> egyenesre (jelben <span class="math inline">\(A\in a\)</span>),
       ha az egyenes áthalad a ponton. Ha nem, akkor <span class="math inline">\(A\notin a\)</span>. Ugyanígy beszélünk pont és sík illeszkedéséről (<span class="math inline">\(A\in\alpha\)</span>). Egyenes és sík esetén viszont azt mondjuk, hogy az egyenes <b>a síkban fekszik</b> — jelben <span class="math inline">\(a\subset\alpha\)</span>, mert az egyenes nem eleme, hanem részhalmaza a síknak.</p>
     </div>
-    <div class="svgwrap">
-      <svg viewBox="0 0 340 170" width="340" height="170" role="img" aria-label="Egy e egyenes az A és B ponttal, valamint egy rajta kívüli C pont">
+    <div class="svgcard">
+      <svg viewBox="0 0 340 170" width="340" height="170" role="img" aria-label="Egy e egyenes az A és B ponttal, valamint egy rajta kívüli C pont" aria-describedby="abra-alapfogalmak-1">
         <line x1="20" y1="120" x2="320" y2="120" stroke="#047857" stroke-width="2.5"/>
         <text x="300" y="112" font-size="14" fill="#047857" font-style="italic">e</text>
         <circle cx="90" cy="120" r="4" fill="#0f172a"/><text x="82" y="140" font-size="14" fill="#0f172a">A</text>
         <circle cx="210" cy="120" r="4" fill="#0f172a"/><text x="202" y="140" font-size="14" fill="#0f172a">B</text>
         <circle cx="170" cy="55" r="4" fill="#ef4444"/><text x="178" y="52" font-size="14" fill="#ef4444">C</text>
       </svg>
-      <div class="cap">Az \(A\) és \(B\) pont illeszkedik az \(e\) egyenesre (\(A\in e\), \(B\in e\)); a \(C\) pont nem (\(C\notin e\)).</div>
+      <div class="cap" id="abra-alapfogalmak-1">Az ábrán az <span class="math inline">\(e\)</span> egyenes vízszintes. Az <span class="math inline">\(A\)</span> pont balra, a <span class="math inline">\(B\)</span> jobbra helyezkedik el rajta: <span class="math inline">\(A\in e\)</span>, <span class="math inline">\(B\in e\)</span>. A <span class="math inline">\(C\)</span> pont az egyenes fölött van, nem illeszkedik rá: <span class="math inline">\(C\notin e\)</span>.</div>
     </div>
 
     <!-- media:begin 1e05-bevezeto-video -->
@@ -85,12 +80,11 @@
     </div>
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
-      Egy háromlábú szék sosem billeg: a három talppont — ha nem esik egy egyenesbe — mindig <b>pontosan egy</b> síkot
-      határoz meg. Négy lábnál elég, hogy az egyik láb egy hajszállal rövidebb legyen, vagy hogy a padló hullámos: a négy talppont már nem esik egy síkba, és a szék billeg.
+      Egy háromlábú állvány három talppontja — ha nem esik egy egyenesbe — <b>pontosan egy</b> síkot határoz meg. Merev lábakat és sík talajt feltételezve az állvány úgy helyezhető el, hogy mindhárom lába támaszkodjon. Négy talppont már nem feltétlenül esik egy síkba: ha például egy négylábú szék egyik lába rövidebb a többinél, a szék billeghet.
     </div>
 
     
-    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Három, nem egy egyenesbe eső pont pontosan egy síkot határoz meg — ezért nem billeg a háromlábú szék." data-nem="✘ Végtelen sok sík csak akkor van, ha a három pont EGY egyenesbe esik. Ha nem, pontosan egy sík illeszkedik rájuk.">
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Három, nem egy egyenesbe eső pont pontosan egy síkot határoz meg." data-nem="✘ Végtelen sok sík csak akkor van, ha a három pont EGY egyenesbe esik. Ha nem, pontosan egy sík illeszkedik rájuk.">
       <p class="kviz-cim"><span class="ikon">🎯</span> Gyors kérdés</p>
       <p>Hány sík fektethető át három ponton, ha azok nem esnek egy egyenesbe?</p>
       <div class="opciok"><button>Végtelen sok</button><button>Egy sem</button><button>Pontosan egy</button></div>
@@ -103,22 +97,20 @@
     </figure>
     <!-- media:end 1e05-illeszkedes-video -->
     <h2 id="s3">Félegyenes, szakasz, szög</h2>
-    <p>Egy egyenesen kijelölt pont az egyenest <b>két félegyenesre</b> bontja. Két pont a köztük lévő résszel együtt egy
-    <b>szakaszt</b> ad.</p>
+    <p>Egy egyenesen kijelölt pontból két ellentétes irányba indulhatunk: így kapjuk a két <b>félegyenest</b>. Két különböző pont a köztük lévő pontokkal együtt egy <b>szakaszt</b> ad.</p>
     <div class="doboz definicio" id="def-felegyenes-szakasz">
       <p class="cim"><span class="ikon">📗</span> Félegyenes és szakasz</p>
-      <p>Az <span class="math inline">\(A\)</span> pont az egyenest két <b>félegyenesre</b> osztja; <span class="math inline">\(A\)</span> a félegyenes <b>kezdőpontja</b>.
-      Az <span class="math inline">\(A\)</span> és <span class="math inline">\(B\)</span> pont közötti egyenesdarab az <span class="math inline">\(AB\)</span> <b>szakasz</b>; az <span class="math inline">\(A\)</span> és <span class="math inline">\(B\)</span> a <b>végpontjai</b>,
-      hossza <span class="math inline">\(|AB|\)</span>.</p>
+      <p>Az egyenesen kijelölt <span class="math inline">\(A\)</span> pontból induló két <b>félegyenes</b> egy-egy irányban korlátlanul folytatódik. Az <span class="math inline">\(A\)</span> pont mindkettőhöz hozzátartozik: ez a közös <b>kezdőpontjuk</b>.
+      Két különböző pont, <span class="math inline">\(A\)</span> és <span class="math inline">\(B\)</span>, a köztük lévő pontokkal együtt alkotja az <span class="math inline">\(AB\)</span> <b>szakaszt</b>. Az <span class="math inline">\(A\)</span> és a <span class="math inline">\(B\)</span> pont a szakasz <b>végpontjai</b>. A szakasz hossza <span class="math inline">\(|AB|\)</span>.</p>
     </div>
     <div class="doboz definicio" id="def-szog">
       <p class="cim"><span class="ikon">📗</span> Szög</p>
-      <p>A közös kezdőpontból kiinduló két félegyenes egy <b>szöget</b> zár be. A közös kezdőpont a szög <b>csúcsa</b>, a két
+      <p>A <b>szög</b> megadásakor a két közös kezdőpontú félegyenes mellett a köztük választott szögtartományt is kijelöljük. Az alábbi ábrán a kisebb szögtartományt választjuk. A közös kezdőpont a szög <b>csúcsa</b>, a két
       félegyenes a szög <b>szárai</b>. Jelölés: <span class="math inline">\(\angle AOB\)</span> vagy egy görög betű, pl. <span class="math inline">\(\alpha\)</span>. A szöget fokban mérjük
       (a teljes szög <span class="math inline">\(360^\circ\)</span>).</p>
     </div>
-    <div class="svgwrap">
-      <svg viewBox="0 0 300 150" width="300" height="150" role="img" aria-label="Az O csúcsú szög az OA és OB szárral">
+    <div class="svgcard">
+      <svg viewBox="0 0 300 150" width="300" height="150" role="img" aria-label="Az O csúcsú szög az OA és OB szárral" aria-describedby="abra-alapfogalmak-2">
         <line x1="60" y1="120" x2="270" y2="120" stroke="#0f172a" stroke-width="2"/>
         <line x1="60" y1="120" x2="240" y2="30" stroke="#0f172a" stroke-width="2"/>
         <path d="M 110 120 A 50 50 0 0 0 104.7 97.6" fill="none" stroke="#8b5cf6" stroke-width="2.5"/>
@@ -127,7 +119,7 @@
         <text x="256" y="118" font-size="14" fill="#0f172a">A</text>
         <text x="246" y="26" font-size="14" fill="#0f172a">B</text>
       </svg>
-      <div class="cap">Az \(O\) csúcsú \(\alpha=\angle AOB\) szög, szárai az \(OA\) és \(OB\) félegyenesek.</div>
+      <div class="cap" id="abra-alapfogalmak-2">Az <span class="math inline">\(O\)</span> csúcsból az <span class="math inline">\(OA\)</span> félegyenes jobbra, az <span class="math inline">\(OB\)</span> ferdén jobbra fölfelé indul. A lila ív a köztük lévő <span class="math inline">\(\alpha=\angle AOB\)</span> szöget jelöli. A szárak a rajzon látható részen túl is folytatódnak.</div>
     </div>
 
     <!-- media:begin 1e05-rendezes-video -->
@@ -145,21 +137,21 @@
     </div>
     <div class="venn">
       <div class="vbox">
-        <svg viewBox="0 0 190 120" width="190" height="120" role="img" aria-label="Két metsző egyenes egy közös ponttal">
+        <svg viewBox="0 0 190 120" width="190" height="120" role="img" aria-label="Két metsző egyenes egy közös ponttal" aria-describedby="abra-alapfogalmak-3">
           <line x1="15" y1="100" x2="175" y2="30" stroke="#047857" stroke-width="2.5"/>
           <line x1="20" y1="25" x2="170" y2="105" stroke="#3b82f6" stroke-width="2.5"/>
           <circle cx="95" cy="65" r="4" fill="#ef4444"/><text x="100" y="60" font-size="13" fill="#ef4444">M</text>
         </svg>
-        <div class="cap">Metsző: egy közös pont</div>
+        <div class="cap" id="abra-alapfogalmak-3">Két egyenes keresztezi egymást: az egyik balról jobbra emelkedik, a másik lejt. Egyetlen közös pontjuk a pirossal jelölt <span class="math inline">\(M\)</span> metszéspont.</div>
       </div>
       <div class="vbox">
-        <svg viewBox="0 0 190 120" width="190" height="120" role="img" aria-label="Két párhuzamos egyenes">
+        <svg viewBox="0 0 190 120" width="190" height="120" role="img" aria-label="Két párhuzamos egyenes" aria-describedby="abra-alapfogalmak-4">
           <line x1="15" y1="45" x2="175" y2="45" stroke="#047857" stroke-width="2.5"/>
           <line x1="15" y1="85" x2="175" y2="85" stroke="#3b82f6" stroke-width="2.5"/>
           <text x="150" y="38" font-size="13" fill="#047857" font-style="italic">a</text>
           <text x="150" y="102" font-size="13" fill="#3b82f6" font-style="italic">b</text>
         </svg>
-        <div class="cap">Párhuzamos: \(a\parallel b\)</div>
+        <div class="cap" id="abra-alapfogalmak-4">A két egyenes vízszintes; az <span class="math inline">\(a\)</span> felül, a <span class="math inline">\(b\)</span> alul van. Különböző, párhuzamos egyenesek: <span class="math inline">\(a\parallel b\)</span>, nincs közös pontjuk.</div>
       </div>
     </div>
     <div class="doboz tetel" id="tetel-parhuzamossagi-axioma">
@@ -169,8 +161,8 @@
     </div>
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
-      „Ha két egyenesnek nincs közös pontja, akkor párhuzamosak.” — Ez <b>csak a síkban</b> igaz! A <b>térben</b> két
-      egyenesnek úgy is lehet, hogy nincs közös pontja, mégsem párhuzamos: ezek a <b>kitérő</b> egyenesek. Erről szól a
+      „Ha két egyenesnek nincs közös pontja, akkor párhuzamosak.” — Ez csak két, <b>ugyanabban a síkban</b> fekvő egyenesre igaz! A <b>térben</b> két
+      egyenesnek akkor is lehet nulla közös pontja, ha nem párhuzamosak: ezek a <b>kitérő</b> egyenesek. Erről szól a
       következő egység.
     </div>
     <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A síkban két különböző egyenes vagy metsző (1 közös pont), vagy párhuzamos (0 közös pont)." data-nem="✘ A síkban két egyenesnek legfeljebb egy közös pontja lehet — 2 közös pont esetén egybeesnének.">
@@ -194,8 +186,7 @@
     <!-- media:end 1e05-nemeuklideszi-video -->
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-geometria.html#alap-1">🐜 Henrik-bevetés <span class="cimke">Alap 1–2</span></a><a class="sav bruno" href="feladatok-geometria.html#kozep-1">💥 Brúnó-bevetés <span class="cimke">Közép 1</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/dr_bizarr.webp" alt="Dr. Bizarr — a multiverzum térképésze" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Dr. Bizarr:</b> A jelmagyarázat megvan. Most lépjünk ki a síkból: a valódi harctér
-    <b>háromdimenziós</b>. Jönnek a kitérő egyenesek, a merőleges síkok és a távolság a térben.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/dr_bizarr.webp" alt="Dr. Bizarr — a multiverzum térképésze" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Dr. Bizarr:</b> Már ismered a jelöléseket és az egyenesek síkbeli helyzetét. A következő egységben a <b>térbeli kapcsolatokat</b> vizsgáljuk: az egyeneseket és a síkokat, valamint a közöttük mért távolságot.</p></div>
     <div class="lapozo">
       <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">Témakör-nyitó</span></a>
       <a class="kov" href="tananyag-ter-es-tavolsag.html"><span class="irany">Következő →</span><span class="hova">A tér: kölcsönös helyzet és távolság</span></a>

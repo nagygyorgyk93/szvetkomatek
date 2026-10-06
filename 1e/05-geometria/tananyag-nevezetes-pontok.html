@@ -33,12 +33,8 @@
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
-      <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/vanda.webp" alt="Vanda — a valóságformálás mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Vanda:</b> Minden háromszögnek van négy „rejtett” pontja, ahol három-három vonal
-      <b>mindig egy pontban</b> találkozik — bármilyen is a háromszög. Ezek a nevezetes pontok. Kettőjükhöz egy-egy
-      <b>kör</b> tartozik: az egyik köré rajzolható, a másik belé. Ha ismered őket, egyetlen ponttal stabilizálod az
-      egész alakzatot.</p></div>
-    <p>Négy vonaltípust vizsgálunk: az oldalfelező merőlegeseket, a szögfelezőket, a súlyvonalakat és a
-    magasságvonalakat. Mindegyikből három van, és mindegyik hármas <b>egy közös pontban</b> metszi egymást.</p>
+      <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/vanda.webp" alt="Vanda — a valóságformálás mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Vanda:</b> A háromszög oldalfelező merőlegesei, belső szögfelezői, súlyvonalai és magasságvonalai négyféle <b>nevezetes pontot</b> adnak. Két pont körközéppont: segítségükkel a háromszög köré és belsejébe is kört szerkeszthetünk. Ebben a modulban megkülönböztetjük ezeket a vonalakat, és megvizsgáljuk, hol van a közös metszéspontjuk.</p></div>
+    <p>Mind a négy vonaltípusból három tartozik egy háromszöghöz. Az azonos típusú három vonalnak <b>egyetlen közös metszéspontja</b> van. Ezek a pontok nem feltétlenül különbözők: szabályos háromszögben a négy nevezetes pont egybeesik.</p>
 
     <h2 id="s1">Oldalfelező merőlegesek — a körülírt kör</h2>
     <div class="doboz definicio" id="def-oldalfelezo-meroleges">
@@ -49,10 +45,10 @@
     <div class="doboz tetel" id="tetel-korulirt">
       <p class="cim"><span class="ikon">📘</span> A körülírt kör középpontja</p>
       <p>A háromszög három oldalfelező merőlegese <b>egy pontban</b> metszi egymást. Ez a pont (<span class="math inline">\(O\)</span>) egyenlő
-      távol van mindhárom csúcstól, ezért ő a <b>körülírt kör</b> középpontja.</p>
+      távol van mindhárom csúcstól, ezért ez a <b>körülírt kör</b> középpontja.</p>
     </div>
     <div class="svgcard">
-      <svg viewBox="0 0 330 300" width="330" height="300" role="img" aria-label="Háromszög a körülírt körével és O középponttal">
+      <svg viewBox="0 0 330 300" width="330" height="300" role="img" aria-label="Háromszög a körülírt körével és O középponttal" aria-describedby="abra-nevezetes-pontok-1">
         <circle cx="165" cy="166" r="121.5" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
         <polygon points="45,185 285,185 175,45" fill="none" stroke="#047857" stroke-width="2.5"/>
         <line x1="165" y1="166" x2="165" y2="185" stroke="#64748b" stroke-width="1.2" stroke-dasharray="4 3"/>
@@ -61,7 +57,7 @@
         <circle cx="165" cy="166" r="4" fill="#ef4444"/><text x="171" y="162" font-size="14" fill="#ef4444">O</text>
         <text x="34" y="198" font-size="13" fill="#0f172a">A</text><text x="288" y="198" font-size="13" fill="#0f172a">B</text><text x="170" y="40" font-size="13" fill="#0f172a">C</text>
       </svg>
-      <div class="cap">A körülírt kör átmegy mind a három csúcson; középpontja \(O\) az oldalfelező merőlegesek metszéspontja.</div>
+      <div class="cap" id="abra-nevezetes-pontok-1">Az <span class="math inline">\(ABC\)</span> háromszögben <span class="math inline">\(A\)</span> balra lent, <span class="math inline">\(B\)</span> jobbra lent, <span class="math inline">\(C\)</span> fölöttük van. Az ábrán hegyesszögű háromszög látható. A kör mindhárom csúcson átmegy: ez a körülírt kör. Középpontja <span class="math inline">\(O\)</span> a háromszög belsejében látható. A szaggatott szakaszok az oldalfelező merőlegesek <span class="math inline">\(O\)</span>-tól az oldalak felezőpontjáig tartó részeit mutatják.</div>
     </div>
 
     <!-- media:begin 1e05-nevezetes-video -->
@@ -85,10 +81,10 @@
     <div class="doboz tetel" id="tetel-beirt">
       <p class="cim"><span class="ikon">📘</span> A beírt kör középpontja</p>
       <p>A háromszög három belső szögfelezője <b>egy pontban</b> metszi egymást. Ez a pont (<span class="math inline">\(I\)</span>) egyenlő távol
-      van mindhárom oldaltól, ezért ő a <b>beírt kör</b> középpontja.</p>
+      van mindhárom oldaltól, ezért ez a <b>beírt kör</b> középpontja.</p>
     </div>
     <div class="svgcard">
-      <svg viewBox="0 0 330 210" width="330" height="210" role="img" aria-label="Háromszög a beírt körével és I középponttal">
+      <svg viewBox="0 0 330 210" width="330" height="210" role="img" aria-label="Háromszög a beírt körével és I középponttal" aria-describedby="abra-nevezetes-pontok-2">
         <polygon points="45,185 285,185 175,45" fill="none" stroke="#047857" stroke-width="2.5"/>
         <circle cx="171.5" cy="129.8" r="55.2" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
         <line x1="45" y1="185" x2="171.5" y2="129.8" stroke="#64748b" stroke-width="1.2" stroke-dasharray="4 3"/>
@@ -97,16 +93,11 @@
         <circle cx="171.5" cy="129.8" r="4" fill="#ef4444"/><text x="177" y="126" font-size="14" fill="#ef4444">I</text>
         <text x="34" y="198" font-size="13" fill="#0f172a">A</text><text x="288" y="198" font-size="13" fill="#0f172a">B</text><text x="170" y="40" font-size="13" fill="#0f172a">C</text>
       </svg>
-      <div class="cap">A beírt kör érinti mind a három oldalt; középpontja \(I\) a belső szögfelezők metszéspontja.</div>
+      <div class="cap" id="abra-nevezetes-pontok-2">Az <span class="math inline">\(ABC\)</span> háromszögben <span class="math inline">\(A\)</span> balra lent, <span class="math inline">\(B\)</span> jobbra lent, <span class="math inline">\(C\)</span> fölöttük van. A kék kör a háromszög belsejében van, és mindhárom oldalát érinti: ez a beírt kör. Középpontja <span class="math inline">\(I\)</span>; a szaggatott szakaszok a belső szögfelezők csúcsoktól <span class="math inline">\(I\)</span>-ig tartó részei.</div>
     </div>
 
-    
-    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A súlypont mindig belül van; a másik kettő tompaszögű háromszögnél kívülre kerül." data-nem="✘ Tompaszögű háromszögnél a körülírt kör középpontja és a magasságpont is a háromszögön KÍVÜLRE esik. A súlypont viszont mindig belül marad.">
-      <p class="kviz-cim"><span class="ikon">🎯</span> Gyors kérdés</p>
-      <p>Melyik nevezetes pont van MINDIG a háromszög belsejében?</p>
-      <div class="opciok"><button>A körülírt kör középpontja</button><button>A magasságpont</button><button>A súlypont</button></div>
-      <p class="visszajelzes" aria-live="polite"></p>
-    </div>
+
+
     <h2 id="s3">Súlyvonalak — a súlypont</h2>
     <div class="doboz definicio" id="def-sulyvonal">
       <p class="cim"><span class="ikon">📗</span> Súlyvonal és súlypont</p>
@@ -115,7 +106,7 @@
       <span class="math inline">\(2:1\)</span> arányban osztja.</p>
     </div>
     <div class="svgcard">
-      <svg viewBox="0 0 330 210" width="330" height="210" role="img" aria-label="Háromszög a három súlyvonalával és S súlyponttal">
+      <svg viewBox="0 0 330 210" width="330" height="210" role="img" aria-label="Háromszög a három súlyvonalával és S súlyponttal" aria-describedby="abra-nevezetes-pontok-3">
         <polygon points="45,185 285,185 175,45" fill="none" stroke="#047857" stroke-width="2.5"/>
         <line x1="45" y1="185" x2="230" y2="115" stroke="#8b5cf6" stroke-width="1.6"/>
         <line x1="285" y1="185" x2="110" y2="115" stroke="#8b5cf6" stroke-width="1.6"/>
@@ -123,48 +114,50 @@
         <circle cx="168.3" cy="138.3" r="4" fill="#ef4444"/><text x="174" y="135" font-size="14" fill="#ef4444">S</text>
         <text x="34" y="198" font-size="13" fill="#0f172a">A</text><text x="288" y="198" font-size="13" fill="#0f172a">B</text><text x="170" y="40" font-size="13" fill="#0f172a">C</text>
       </svg>
-      <div class="cap">A súlypont \(S\) a súlyvonalakat a csúcstól \(2:1\) arányban osztja.</div>
+      <div class="cap" id="abra-nevezetes-pontok-3">Az <span class="math inline">\(ABC\)</span> háromszögben <span class="math inline">\(A\)</span> balra lent, <span class="math inline">\(B\)</span> jobbra lent, <span class="math inline">\(C\)</span> fölöttük van. A három lila súlyvonal egy-egy csúcsot köt össze a szemközti oldal felezőpontjával. Közös metszéspontjuk <span class="math inline">\(S\)</span>, a súlypont; mindegyik súlyvonalat a csúcstól számítva <span class="math inline">\(2:1\)</span> arányban osztja.</div>
     </div>
 
     <h2 id="s4">Magasságvonalak — a magasságpont</h2>
     <div class="doboz definicio" id="def-magassag">
       <p class="cim"><span class="ikon">📗</span> Magasságvonal és magasságpont</p>
-      <p>A <b>magasságvonal</b> a csúcsból a szemközti oldal egyenesére bocsátott merőleges. A három magasságvonal
-      egyenese <b>egy pontban</b> metszi egymást: ez a <b>magasságpont</b> (<span class="math inline">\(M\)</span>).</p>
+      <p>A <b>magasságvonal</b> a csúcson áthaladó, a szemközti oldal egyenesére merőleges egyenes. A csúcs és a merőleges talppontja közötti szakasz a magasságszakasz. A három magasságvonal <b>egy pontban</b> metszi egymást: ez a <b>magasságpont</b> (<span class="math inline">\(M\)</span>).</p>
     </div>
     <div class="tblwrap">
     <table>
       <tr><th>Vonal (3 db)</th><th>Metszéspont</th><th>Kapcsolódó kör</th></tr>
-      <tr><td>oldalfelező merőlegesek</td><td>körülírt kör közép, <span class="math inline">\(O\)</span></td><td>körülírt kör (a csúcsokon át)</td></tr>
-      <tr><td>szögfelezők</td><td>beírt kör közép, <span class="math inline">\(I\)</span></td><td>beírt kör (érinti az oldalakat)</td></tr>
+      <tr><td>oldalfelező merőlegesek</td><td>körülírt kör középpontja, <span class="math inline">\(O\)</span></td><td>körülírt kör (a csúcsokon át)</td></tr>
+      <tr><td>belső szögfelezők</td><td>beírt kör középpontja, <span class="math inline">\(I\)</span></td><td>beírt kör (érinti az oldalakat)</td></tr>
       <tr><td>súlyvonalak</td><td>súlypont, <span class="math inline">\(S\)</span></td><td>—</td></tr>
       <tr><td>magasságvonalak</td><td>magasságpont, <span class="math inline">\(M\)</span></td><td>—</td></tr>
     </table>
     </div>
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
-      Könnyű felcserélni: a <b>szögfelezők</b> adják a <b>beírt</b> kör közepét, az <b>oldalfelező merőlegesek</b> a
-      <b>körülírt</b> kör közepét. Segít a logika: a szögfelező az oldalaktól egyenlő távol → a kör az oldalakat
-      érinti (beírt); a felezőmerőleges a csúcsoktól egyenlő távol → a kör a csúcsokon megy át (körülírt).
+      Könnyű felcserélni: a <b>belső szögfelezők</b> metszéspontja a <b>beírt</b> kör középpontja, az <b>oldalfelező merőlegeseké</b> a <b>körülírt</b> köré. A távolságok segítenek megkülönböztetni őket: a beírt kör középpontja az oldalak egyeneseitől, a körülírt kör középpontja a csúcsoktól van egyenlő távolságra.
     </div>
 
     <div class="doboz tetel" id="tetel-hol-vannak">
       <p class="cim"><span class="ikon">📘</span> Hol helyezkednek el ezek a pontok?</p>
       <p>A négy pont közül kettő <b>minden</b> háromszögben belül van, kettő viszont attól függ, milyen a háromszög legnagyobb szöge:</p>
       <div class="tblwrap"><table><thead><tr><th>Pont</th><th>Hegyesszögű</th><th>Derékszögű</th><th>Tompaszögű</th></tr></thead><tbody><tr><th>súlypont <span class="math inline">\(S\)</span></th><td colspan="3"><b>mindig belül</b></td></tr><tr><th>beírt kör középpontja <span class="math inline">\(I\)</span></th><td colspan="3"><b>mindig belül</b></td></tr><tr><th>körülírt kör középpontja <span class="math inline">\(O\)</span></th><td>belül</td><td>az átfogó felezőpontján</td><td><b>kívül</b></td></tr><tr><th>magasságpont <span class="math inline">\(M\)</span></th><td>belül</td><td>a derékszögű csúcsban</td><td><b>kívül</b></td></tr></tbody></table></div>
-      <p>A súlypont és a beírt kör középpontja azért nem tud kicsúszni: a súlyvonalak és a belső szögfelezők <b>szakaszai</b> a háromszögön belül haladnak, tehát a metszéspontjuk is csak belül lehet. Az oldalfelező merőlegesek és a magasságvonalak viszont egyenesek — ezek a háromszögön kívül is metszhetik egymást.</p>
+      <p>A súlyvonalak és a belső szögfelezők csúcstól a szemközti oldalig tartó szakaszai a háromszög belsejében haladnak, a végpontjaik a határán vannak. Közös metszéspontjuk a belsejébe esik. Az oldalfelező merőlegesek és a magasságvonalak metszéspontja a háromszögön kívülre is kerülhet.</p>
     </div>
-    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A szögfelezők metszéspontja a beírt kör középpontja." data-nem="✘ A szögfelezők pontjai az oldalaktól egyenlő távol vannak → a beírt kör középpontját adják.">
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A súlypont mindig belül van; a másik kettő tompaszögű háromszögnél kívülre kerül." data-nem="✘ Tompaszögű háromszögnél a körülírt kör középpontja és a magasságpont is a háromszögön KÍVÜLRE esik. A súlypont viszont mindig belül marad.">
+      <p class="kviz-cim"><span class="ikon">🎯</span> Gyors kérdés</p>
+      <p>Melyik nevezetes pont van MINDIG a háromszög belsejében?</p>
+      <div class="opciok"><button>A körülírt kör középpontja</button><button>A magasságpont</button><button>A súlypont</button></div>
+      <p class="visszajelzes" aria-live="polite"></p>
+    </div>
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A belső szögfelezők metszéspontja a beírt kör középpontja." data-nem="✘ A belső szögfelezők pontjai az oldalak egyeneseitől egyenlő távol vannak → a beírt kör középpontját adják.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
       <p>Melyik három vonal metszéspontja a <b>beírt</b> kör középpontja?</p>
-      <div class="opciok"><button>az oldalfelező merőlegesek</button><button>a magasságvonalak</button><button>a szögfelezők</button></div>
+      <div class="opciok"><button>az oldalfelező merőlegesek</button><button>a magasságvonalak</button><button>a belső szögfelezők</button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-geometria.html#alap-6">🐜 Henrik-bevetés <span class="cimke">Alap 6–8</span></a><a class="sav bruno" href="feladatok-geometria.html#kozep-4">💥 Brúnó-bevetés <span class="cimke">Közép 4–5</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/furge_pjotr.webp" alt="Fürge Pjotr — a kampusz leggyorsabb kadétja" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Fürge Pjotr:</b> A háromszög minden titkát ismered. Ideje kitágítani a világot: jönnek a
-    <b>négyszögek</b> — a paralelogrammától a húr- és érintőnégyszögig.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/furge_pjotr.webp" alt="Fürge Pjotr — a kampusz leggyorsabb kadétja" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Fürge Pjotr:</b> Már meg tudod különböztetni a négy nevezetes pontot és a hozzájuk tartozó vonalakat. A következő egységben a <b>négyszögek</b> tulajdonságait vizsgáljuk, a paralelogrammától a húr- és érintőnégyszögig.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-haromszogek.html"><span class="irany">← Előző</span><span class="hova">Háromszögek és egybevágóság</span></a>
       <a class="kov" href="tananyag-negyszogek.html"><span class="irany">Következő →</span><span class="hova">Négyszögek</span></a>
