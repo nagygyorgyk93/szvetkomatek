@@ -32,11 +32,11 @@
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
-      <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/pajzs_kapitany.webp" alt="Pajzs kapitány — a teljes csapat vezetője" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Pajzs kapitány &amp; a teljes csapat:</b> Ez az. A <b>Végső Egyenlet</b> nem egyetlen feltétel, hanem <b>több feltétel egyszerre</b> — egy egyenletrendszer, amelynek közös megoldása lezárja a Nullpont-anomáliát. Mindenki hozza a maga szálát: Krats Ynot az egyenleteket, Petar Pauk a grafikont, Nada a korlátokat. A rendszer megoldása ott van, ahol <b>minden feltétel egyszerre teljesül</b>. Csapat, gyülekező!</p></div>
-    <p>A <b>lineáris egyenletrendszer</b> több lineáris egyenlet együttese, közös ismeretlenekkel. A megoldás az az érték-<b>együttes</b>, amely <b>minden</b> egyenletet egyszerre kielégít. Kétismeretlenes rendszernél három egyenértékű módszerünk van.</p>
+      <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/pajzs_kapitany.webp" alt="Pajzs kapitány — a teljes csapat vezetője" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Pajzs kapitány &amp; a teljes csapat:</b> Kadét, a <b>Végső Egyenlet</b> több összefüggést fog össze. Most olyan számokat keresünk, amelyek <b>minden egyenletet egyszerre</b> teljesítenek. Krats Ynot a számolást, Petar Pauk a grafikus megoldást mutatja meg. A két módszerrel egymást is ellenőrizhetjük. Csapat, gyülekező!</p></div>
+    <p>A <b>lineáris egyenletrendszer</b> több lineáris egyenlet együttese, közös ismeretlenekkel. Megoldása olyan rendezett számpár vagy számhármas, amely minden egyenletet egyszerre kielégít. Ebben a leckében valós megoldásokat keresünk. Először <b>két egyenletből álló, kétismeretlenes rendszerekkel</b> foglalkozunk: behelyettesítéssel, kiküszöböléssel és grafikusan is megoldhatjuk őket.</p>
 
     <h2 id="s1">Behelyettesítő módszer</h2>
-    <p>Az egyik egyenletből kifejezzük az egyik ismeretlent, és behelyettesítjük a másik egyenletbe — így egyismeretlenes egyenletet kapunk.</p>
+    <p>Az egyik egyenletből kifejezünk egy nemnulla együtthatójú ismeretlent, és a kapott kifejezést behelyettesítjük a másik egyenletbe. Így legfeljebb egy ismeretlen marad. A kapott egyenletet megoldjuk, majd visszahelyettesítünk; ha az ismeretlen is kiesett, a megoldások számát külön vizsgáljuk.</p>
     <div class="doboz pelda" id="pelda-behelyettesites">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
       Oldd meg: <span class="math inline">\(x+y=5\)</span>, <span class="math inline">\(x-y=1\)</span>.
@@ -49,8 +49,8 @@
       <figcaption>A kétismeretlenes lineáris egyenletrendszerek egy másik tanár magyarázatában. <span class="media-forras">Forrás: <a href="https://tavoktatas.mnt.org.rs/i-osztaly/matematika/matematika-i-osztaly-78-ora-ket-valtozos-linearis-egyenletrendszerek" target="_blank" rel="noopener">MNT Távoktatás magyar nyelven</a> — Gyorgyevics Elvira.</span> <span class="media-url">(Videó: Két változós lineáris egyenletrendszerek (I. osztály, 78. óra) — youtu.be/sKOHELIVyTs)</span></figcaption>
     </figure>
     <!-- media:end 1e07-rendszer-video -->
-    <h2 id="s2">Az együtthatók kiküszöbölése</h2>
-    <p>A két egyenletet úgy szorozzuk (ha kell), hogy az egyik ismeretlen együtthatói ellentettek legyenek, majd <b>összeadjuk</b> az egyenleteket — az egyik ismeretlen kiesik.</p>
+    <h2 id="s2">Az ismeretlen kiküszöbölése</h2>
+    <p>Ha szükséges, <b>nemnulla számmal</b> szorozzuk az egyenleteket, hogy az egyik ismeretlen együtthatói ellentettek legyenek. Az egyik egyenletet a kettő összegére cseréljük, a másikat megtartjuk. Az összegben a kiválasztott ismeretlen kiesik. A kapott egyenletből számolunk tovább, majd a megmaradt egyenletbe visszahelyettesítünk.</p>
     <div class="doboz pelda" id="pelda-kikuszoboles">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
       Oldd meg: <span class="math inline">\(2x+y=7\)</span>, <span class="math inline">\(x-y=2\)</span>.
@@ -58,9 +58,9 @@
     </div>
 
     <h2 id="s3">Grafikus megoldás</h2>
-    <p>Mindkét nemelfajuló, kétismeretlenes lineáris egyenlet egy-egy <b>egyenest</b> határoz meg a koordináta-rendszerben. Ha a két egyenes metszi egymást, a rendszer megoldása a <b>metszéspontjuk</b> — az egyetlen pont, amely mindkét egyenesen (tehát mindkét egyenletben) rajta van.</p>
+    <p>Az <span class="math inline">\(ax+by=c\)</span> egyenlet egyenest határoz meg a koordináta-rendszerben, ha <span class="math inline">\(a\)</span> és <span class="math inline">\(b\)</span> nem egyszerre nulla. Az ilyen egyenletet itt <b>nemelfajulónak</b> nevezzük. Két ilyen egyenlet közös megoldásai a két egyenes közös pontjai. Ha az egyenesek metszik egymást, a metszéspont koordinátái adják a rendszer egyetlen megoldását.</p>
     <div class="svgwrap svgcard">
-      <svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Két egyenes metszéspontja az (1,2) pontban">
+      <svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-describedby="abra-egyenletrendszerek-1" aria-label="Két egyenes metszéspontja az (1;2) pontban">
         <line x1="20" y1="200" x2="300" y2="200" stroke="#94a3b8" stroke-width="1.5"/>
         <line x1="60" y1="220" x2="60" y2="20" stroke="#94a3b8" stroke-width="1.5"/>
         <polygon points="300,200 292,196 292,204" fill="#94a3b8"/>
@@ -70,11 +70,11 @@
         <line x1="20" y1="200" x2="220" y2="0" stroke="#3b82f6" stroke-width="2.5"/>
         <line x1="20" y1="40" x2="180" y2="200" stroke="#f59e0b" stroke-width="2.5"/>
         <circle cx="100" cy="120" r="4.5" fill="#047857"/>
-        <text x="108" y="116" font-size="11" fill="#047857">(1, 2)</text>
+        <text x="108" y="116" font-size="11" fill="#047857">(1; 2)</text>
         <text x="188" y="30" font-size="11" fill="#3b82f6">y = x + 1</text>
         <text x="150" y="196" font-size="11" fill="#b45309">y = −x + 3</text>
       </svg>
-      <p class="cap">Az <span class="math inline">\(y=x+1\)</span> és <span class="math inline">\(y=-x+3\)</span> egyenesek metszéspontja <span class="math inline">\((1,2)\)</span> — ez a rendszer megoldása.</p>
+      <p class="cap" id="abra-egyenletrendszerek-1">A kék <span class="math inline">\(y=x+1\)</span> egyenes növekvő, a narancssárga <span class="math inline">\(y=-x+3\)</span> egyenes csökkenő. Közös pontjuk a zölddel jelölt <span class="math inline">\((1;2)\)</span>: itt mindkét egyenlet teljesül. A rendszer megoldása tehát <span class="math inline">\(x=1\)</span>, <span class="math inline">\(y=2\)</span>.</p>
     </div>
 
     
@@ -102,18 +102,18 @@
       <figcaption>A piros egyenes \(ax+by=c\), a kék \(ex+fy=g\) — a csúszkákkal az együtthatókat állítod. A két egyenes metszéspontjának koordinátái a rendszer megoldása: olvasd le, és ellenőrizd behelyettesítéssel. Próbáld ki azt is, mikor párhuzamos a két egyenes (nincs megoldás), és mikor esik egybe (végtelen sok megoldás). <span class="media-forras">Készült a <a href="https://www.geogebra.org/m/FsMeUj4Q" target="_blank" rel="noopener">GeoGebra®</a> segítségével, szerző: David Smith (CC BY-NC-SA 4.0).</span> <span class="media-url">(GeoGebra-szimuláció: Simultaneous Equations Graphical Solution — egyenletrendszer grafikusan — geogebra.org/m/FsMeUj4Q)</span></figcaption>
     </figure>
     <!-- media:end 1e07-grafikus-megoldas-ggb -->
-    <h2 id="s4">Háromismeretlenes rendszer — a Gauss-módszer</h2>
-    <p>Három ismeretlennél a cél a <b>lépcsős alak</b>: az egyenletekből sorra kiküszöböljük az ismeretleneket, míg egy egyismeretlenes egyenlet marad, majd <b>visszafelé</b> behelyettesítünk.</p>
+    <h2 id="s4">Háromismeretlenes rendszer — lépésenkénti kiküszöbölés</h2>
+    <p>Három ismeretlennél is <b>kiküszöböléssel és behelyettesítéssel</b> dolgozunk. A sorban végzett kiküszöbölést Gauss-módszernek is nevezik: az egyenleteket <b>lépcsős alakra</b> hozzuk. A cél, hogy az első egyenletben kiválasztott ismeretlen a továbbiakból, a másodikban kiválasztott pedig a harmadikból kiküszöbölődjön. Három egyenletből álló, egyetlen megoldású rendszernél végül egy egyismeretlenes egyenlethez jutunk, majd visszafelé behelyettesítünk. Ha közben csak számos állítás marad, megvizsgáljuk, igaz-e; a hamis állítás ellentmondást jelez.</p>
     <div class="doboz pelda" id="pelda-gauss">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
       Oldd meg: <span class="math inline">\(x+y+z=6\)</span>, <span class="math inline">\(x-y+z=2\)</span>, <span class="math inline">\(2x+y-z=1\)</span>.
-      <details><summary>Megoldás</summary><div class="bel"><p>Az első két egyenlet különbségéből <span class="math inline">\(2y=4\)</span>, azaz <span class="math inline">\(y=2\)</span>. Ekkor <span class="math inline">\(x+z=4\)</span> (az elsőből) és <span class="math inline">\(2x-z=-1\)</span> (a harmadikból, <span class="math inline">\(y=2\)</span>-vel). Ezeket összeadva <span class="math inline">\(3x=3\)</span>, innen <span class="math inline">\(x=1\)</span>, majd <span class="math inline">\(z=3\)</span>. Megoldás: <span class="math inline">\((1,2,3)\)</span>.</p></div></details>
+      <details><summary>Megoldás</summary><div class="bel"><p>Az első két egyenlet különbségéből <span class="math inline">\(2y=4\)</span>, azaz <span class="math inline">\(y=2\)</span>. Ekkor <span class="math inline">\(x+z=4\)</span> (az elsőből) és <span class="math inline">\(2x-z=-1\)</span> (a harmadikból, <span class="math inline">\(y=2\)</span>-vel). Ezeket összeadva <span class="math inline">\(3x=3\)</span>, innen <span class="math inline">\(x=1\)</span>, majd <span class="math inline">\(z=3\)</span>. Megoldás: <span class="math inline">\((1;2;3)\)</span>.</p></div></details>
     </div>
 
     
-    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Így van: a Gauss-módszer lépcsős alakra hoz, és az utolsó egyenletből visszafelé haladva adódik a többi ismeretlen." data-nem="✘ A Gauss-módszer célja a LÉPCSŐS alak: az utolsó egyenletben már csak egy ismeretlen marad, onnan visszafelé haladva jön ki a többi.">
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Így van: a Gauss-módszer lépcsős alakra hoz, és az utolsó egyenletből visszafelé haladva adódik a többi ismeretlen." data-nem="✘ Ebben az egyetlen megoldású rendszerben lépcsős alakra törekszünk: az utolsó egyenletből egy ismeretlent határozunk meg, majd visszafelé behelyettesítünk.">
       <p class="kviz-cim"><span class="ikon">🎯</span> Gyors kérdés</p>
-      <p>Mi a Gauss-módszer célja háromismeretlenes rendszernél?</p>
+      <p>Egyetlen megoldású, három egyenletből álló, háromismeretlenes rendszernél milyen alakra törekszünk a Gauss-módszerrel?</p>
       <div class="opciok"><button>Minden egyenletből kiejteni az <span class="math inline">\(x\)</span>-et</button><button>Az egyenleteket összeadni</button><button>Lépcsős alakra hozni, hogy az utolsó egyenletben egy ismeretlen maradjon</button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
@@ -136,10 +136,10 @@
     </figure>
     <!-- media:end 1e07-harom-gyak2-video -->
     <h2 id="s5">Szöveges feladatok rendszerrel</h2>
-    <p>A modellezés lépései: (1) <b>vezess be ismeretleneket</b> (mit keresünk?); (2) a szöveg minden feltételéből írj fel egy <b>egyenletet</b>; (3) oldd meg a rendszert; (4) <b>értelmezd</b> a választ a feladat szövegében (és ellenőrizd).</p>
+    <p><b>Modellezéskor</b> először megmondjuk, mit jelölnek az ismeretlenek. A mennyiségek közötti összefüggésekből egyenleteket írunk fel, a további kikötéseket pedig külön rögzítjük. Ezután megoldjuk a rendszert, és ellenőrizzük, hogy az eredmény a szöveg minden feltételének megfelel-e. Szobaszámnál például <b>nemnegatív egész számot</b> várunk.</p>
     <div class="doboz pelda" id="pelda-szoveges">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
-      Egy panzióban három- és kétágyas szobák vannak: összesen <span class="math inline">\(14\)</span> szoba, <span class="math inline">\(34\)</span> férőhely. Hány szoba van mindkét fajtából?
+      Egy panzióban három- és kétágyas szobák vannak: összesen <span class="math inline">\(14\)</span> szoba, <span class="math inline">\(34\)</span> férőhely. Hány háromágyas és hány kétágyas szoba van?
       <details><summary>Megoldás</summary><div class="bel"><p>Legyen <span class="math inline">\(h\)</span> a háromágyas, <span class="math inline">\(k\)</span> a kétágyas. Ekkor <span class="math inline">\(h+k=14\)</span> és <span class="math inline">\(3h+2k=34\)</span>. Behelyettesítve <span class="math inline">\(h=6,\ k=8\)</span>: <b>6 háromágyas</b> és <b>8 kétágyas</b>.</p></div></details>
     </div>
 
@@ -177,8 +177,8 @@
     </div>
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Kán csapdája — a „0 = 0” nem azt jelenti, hogy nincs megoldás</p>
-      <p>A két fajuló eset könnyen összekeverhető, mert mindkettőnél eltűnnek az ismeretlenek. Csakhogy az eredmény <b>ellentétes</b>:</p>
-      <ul><li><span class="math">\(0=13\)</span> — hamis állítás → <b>nincs megoldás</b> (üres halmaz);</li><li><span class="math">\(0=0\)</span> — igaz állítás → ha egy nemelfajuló kétismeretlenes egyenlet marad, annak <b>végtelen sok</b> megoldása van.</li></ul>
+      <p>A két esetben ugyanúgy kieshetnek az ismeretlenek, de a megmaradt állítás mást jelent:</p>
+      <ul><li><span class="math">\(0=-13\)</span> — hamis állítás → <b>nincs megoldás</b> (üres halmaz);</li><li><span class="math">\(0=0\)</span> — igaz állítás → ha egy nemelfajuló kétismeretlenes egyenlet marad, annak <b>végtelen sok</b> megoldása van.</li></ul>
       <p>Ha a végén <span class="math">\(0=0\)</span>-t kapsz, ne írd oda, hogy „<span class="dolt">nincs megoldás</span>”, és ne is hagyd üresen a választ: vizsgáld meg a megmaradt egyenletet, és add meg annak megoldáshalmazát. Ugyanez a különbség köszön vissza az <span class="math">\(ax=b\)</span> alakú egyenletnél is.</p>
     </div>
     <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Így van: a 0 = 0 azonosság azt jelenti, hogy a második egyenlet nem hoz új információt — a megoldások a megmaradt egyenlet összes megoldása." data-nem="✘ Gondold végig: a 0 = 0 IGAZ állítás. Ha hamisat kaptunk volna (pl. 0 = 5), akkor nem lenne megoldás.">
@@ -202,12 +202,12 @@
     <h2 id="s7">🧾 Gyorsismétlő</h2>
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> A teljes témakör egy lapon</p>
-      <p><b>Egyenlet:</b> mérlegelv, zárójel/tört felszorzás, <span class="math inline">\(ax=b\)</span> eset-vizsgálat. <b>Egyenlőtlenség:</b> mint az egyenlet, de negatívval szorzáskor a reláció <b>fordul</b>; megoldás számegyenesen/intervallummal. <b>Függvény:</b> <span class="math inline">\(f(x)=kx+n\)</span> — meredekség, tengelymetszet, nullahely, két pontból ábra. <b>Rendszer:</b> behelyettesítés / kiküszöbölés / grafikus; 3 ismeretlen → Gauss; szövegesnél modellezz. Megoldások száma: egy / nincs / végtelen.</p>
+      <p><b>Egyenlet:</b> mérlegelv, zárójel/tört felszorzás, <span class="math inline">\(ax=b\)</span> esetvizsgálat. <b>Egyenlőtlenség:</b> mint az egyenlet, de negatívval szorzáskor a reláció <b>fordul</b>; megoldás számegyenesen/intervallummal. <b>Függvény:</b> <span class="math inline">\(f(x)=kx+n\)</span> — meredekség, tengelymetszet, nullahely, két pontból ábra. <b>Rendszer:</b> behelyettesítés, kiküszöbölés vagy grafikus megoldás; három ismeretlennél lépésenkénti kiküszöbölés. Szöveges feladatnál az ismeretlenek jelentéséből és az összefüggésekből indulunk ki, a kikötéseket is ellenőrizzük. Valós lineáris rendszernél lehet egy, végtelen sok vagy egyetlen megoldás sem.</p>
     </div>
 
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-linearis-egyenletek-es-rendszerek.html#alap-6">🐜 Henrik-bevetés <span class="cimke">A 6–7</span></a><a class="sav bruno" href="feladatok-linearis-egyenletek-es-rendszerek.html#kozep-4">💥 Brúnó-bevetés <span class="cimke">K 4, 6–19</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/svetozar.webp" alt="SZVETI — a Szvetkó-kampusz mesterséges intelligenciája" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>SZVETI:</b> A Végső Egyenlet összeállt — a szakadás zárul. Most élesben: a <b>kiképzési adattárban</b> gyakorolj (ott vár a 16 valós szöveges bevetés is), majd a <b>terepküldetésen</b> vezesd le a saját fináléd.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/svetozar.webp" alt="SZVETI — a Szvetkó-kampusz mesterséges intelligenciája" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>SZVETI:</b> A Végső Egyenlet összeállt, a szakadás bezárul. A <b>kiképzési adattárban</b> számolási és szöveges feladatokkal gyakorolhatsz. A <b>terepküldetésben</b> pedig te írod fel az összefüggéseket: nevezd meg az ismeretleneket, oldd meg az egyenleteket, és ellenőrizd a választ.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-linearis-fuggveny.html"><span class="irany">← Előző</span><span class="hova">Lineáris függvény</span></a>
       <a class="kov" href="feladatok-linearis-egyenletek-es-rendszerek.html"><span class="irany">Következő →</span><span class="hova">Feladatgyűjtemény</span></a>

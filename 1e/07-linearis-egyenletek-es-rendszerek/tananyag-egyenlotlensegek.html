@@ -32,14 +32,14 @@
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
-      <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/nada.webp" alt="Nada — a becslés és a korlátok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Nada:</b> A terepen ritkán van pontos érték — inkább <b>korlátok</b> vannak: „legalább ennyi üzemanyag", „legfeljebb ennyi idő". Az <b>egyenlőtlenség</b> ezeket a taktikai határokat írja le, és a megoldása nem egyetlen szám, hanem egy egész <b>tartomány</b>. A megoldás majdnem ugyanúgy megy, mint az egyenletnél — egyetlen csavarral, amit Kán imád kihasználni.</p></div>
-    <p>A <b>lineáris egyenlőtlenség</b> az egyenlethez hasonló, de az <span class="math inline">\(=\)</span> helyett <span class="math inline">\(&lt;,\ >,\ \le,\ \ge\)</span> reláció áll. A <b>megoldáshalmaz</b> azoknak az <span class="math inline">\(x\)</span> értékeknek a halmaza, amelyekre a reláció igaz.</p>
+      <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/nada.webp" alt="Nada — a becslés és a korlátok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Nada:</b> Kadét, egy küldetéshez meghatározott idő és készlet áll rendelkezésre. A <b>„legfeljebb ennyi idő”</b> vagy a <b>„legalább ennyi üzemanyag”</b> feltételt egyenlőtlenséggel adhatjuk meg. Megoldáskor az összes megfelelő értéket keressük. Az átalakítások hasonlítanak az egyenleteknél tanultakhoz, de a <b>negatív számmal való szorzásra és osztásra</b> külön figyelj: Kán itt próbál megtéveszteni.</p></div>
+    <p>A <b>lineáris egyenlőtlenség</b> rendezés után <span class="math inline">\(ax&lt;b\)</span>, <span class="math inline">\(ax>b\)</span>, <span class="math inline">\(ax\le b\)</span> vagy <span class="math inline">\(ax\ge b\)</span> alakú, ahol <span class="math inline">\(a\)</span> és <span class="math inline">\(b\)</span> adott valós számok. Az <span class="math inline">\(a=0\)</span> esetben a megmaradó számos állítás igazságát vizsgáljuk. A <b>megoldáshalmaz</b> azoknak a valós <span class="math inline">\(x\)</span> értékeknek a halmaza, amelyekre az egyenlőtlenség igaz; ez üres halmaz vagy az összes valós szám halmaza is lehet.</p>
 
     <h2 id="s1">Megoldás és a relációjel megfordulásának szabálya</h2>
     <div class="doboz tetel" id="tetel-atalakitas">
       <p class="cim"><span class="ikon">📘</span> Ekvivalens átalakítások</p>
-      <p><b>Ekvivalensnek</b> nevezzük azt az átalakítást, amely nem változtatja meg a megoldáshalmazt — ezért baj, ha a relációjel nem fordul meg ott, ahol kell.</p>
-      <p>Mindkét oldalhoz hozzáadhatunk/kivonhatunk ugyanannyit, és szorozhatunk/oszthatunk ugyanazzal a <b>pozitív</b> számmal — a reláció iránya marad. <b>Negatív</b> számmal való szorzáskor / osztáskor viszont a reláció iránya <b>megfordul</b>: <span class="math inline">\(&lt;\)</span> ből <span class="math inline">\(>\)</span> lesz, és fordítva.</p>
+      <p><b>Ekvivalensnek</b> nevezzük azt az átalakítást, amely nem változtatja meg a megoldáshalmazt.</p>
+      <p>Mindkét oldalhoz hozzáadhatjuk ugyanazt a számot, illetve kivonhatjuk belőlük. Ugyanazzal a <b>pozitív számmal</b> szorozva vagy osztva a relációjel iránya megmarad. <b>Negatív számmal</b> szorozva vagy osztva megfordul: <span class="math inline">\(&lt;\)</span> helyett <span class="math inline">\(>\)</span>, <span class="math inline">\(\le\)</span> helyett <span class="math inline">\(\ge\)</span> lesz, és fordítva. Nullával való szorzás nem ekvivalens átalakítás; nullával osztani nem lehet.</p>
     </div>
     <div class="doboz pelda" id="pelda-alap">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
@@ -48,7 +48,7 @@
     </div>
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
-      A leggyakoribb hiba: negatívval szorzol/osztasz, de <b>elfelejted megfordítani</b> a relációt. Kán pontosan erre a résre épít. Mindig kérdezd meg magadtól: „negatívval osztottam? akkor fordul!"
+      Kán arra számít, hogy <b>negatív számmal szorzol vagy osztasz</b>, de a relációjelet változatlanul hagyod. Ilyenkor mindig fordítsd meg a jel irányát.
     </div>
 
     
@@ -71,11 +71,11 @@
     </figure>
     <!-- media:end 1e07-egyenlotlenseg-gyak-video -->
     <h2 id="s2">Ábrázolás: számegyenes és intervallum</h2>
-    <p>A megoldáshalmazt kétféleképpen adjuk meg. A <b>számegyenesen</b> a határ <b>üres karika</b>, ha nem tartozik bele (<span class="math inline">\(&lt;,\ >\)</span>), és <b>tele karika</b>, ha beletartozik (<span class="math inline">\(\le,\ \ge\)</span>). <b>Intervallummal</b>: nyitott végpont <span class="math inline">\(( \ )\)</span>, zárt végpont <span class="math inline">\([\ ]\)</span>. A <span class="math inline">\(+\infty\)</span> és a <span class="math inline">\(-\infty\)</span> nem szám, ezért ott a végpont <b>mindig nyílt</b>.</p>
+    <p>A megoldáshalmazt kétféleképpen adjuk meg. A <b>számegyenesen</b> a határpontot <b>üres karika</b> jelöli, ha nem tartozik a megoldáshalmazba (<span class="math inline">\(&lt;,\ >\)</span>), és <b>teli karika</b>, ha beletartozik (<span class="math inline">\(\le,\ \ge\)</span>). <b>Intervallummal</b>: nyitott végpont <span class="math inline">\(( \ )\)</span>, zárt végpont <span class="math inline">\([\ ]\)</span>. A <span class="math inline">\(+\infty\)</span> és a <span class="math inline">\(-\infty\)</span> nem szám, ezért ott a végpont <b>mindig nyílt</b>.</p>
     <div class="doboz pelda" id="pelda-intervallum">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
       Add meg intervallummal: <span class="math inline">\(x>2\)</span>; <span class="math inline">\(x\le -1\)</span>; <span class="math inline">\(-3\le x&lt;4\)</span>.
-      <div class="svgwrap"><svg viewBox="0 0 460 92" width="460" height="92" role="img" aria-label="Az x nagyobb mint 2 megoldáshalmaza a számegyenesen">
+      <div class="svgwrap svgcard"><svg viewBox="0 0 460 92" width="460" height="92" role="img" aria-describedby="abra-egyenlotlensegek-1" aria-label="Az x nagyobb mint 2 megoldáshalmaza a számegyenesen">
   <defs><marker id="nyil-1" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
   <line x1="14" y1="52" x2="446" y2="52" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-1)"/>
   <line x1="26.0" y1="47" x2="26.0" y2="57" stroke="#0f172a" stroke-width="1"/>
@@ -98,7 +98,8 @@
   <text x="434.0" y="72" font-size="11" fill="#475569" text-anchor="middle">6</text>
   <line x1="230.0" y1="38" x2="434.0" y2="38" stroke="#047857" stroke-width="3.4" stroke-linecap="round"/>
   <circle cx="230.0" cy="38" r="4.2" fill="#ffffff" stroke="#047857" stroke-width="2"/>
-</svg></div><p class="cap"><span class="math inline">\(x>2\)</span> — üres karika, mert a 2 nem tartozik bele</p><div class="svgwrap"><svg viewBox="0 0 460 92" width="460" height="92" role="img" aria-label="Az x kisebb vagy egyenlő mint mínusz 1 megoldáshalmaza">
+  <polygon points="434.0,38 426.0,34 426.0,42" fill="#047857"/>
+</svg><p class="cap" id="abra-egyenlotlensegek-1">Az <span class="math inline">\(x>2\)</span> megoldáshalmaza <span class="math inline">\((2;+\infty)\)</span>. A 2-nél üres karika jelzi, hogy a határérték nem tartozik bele; a zöld félegyenes jobbra halad, a nyíl mutatja a korlátlan folytatását.</p></div><div class="svgwrap svgcard"><svg viewBox="0 0 460 92" width="460" height="92" role="img" aria-describedby="abra-egyenlotlensegek-2" aria-label="Az x kisebb vagy egyenlő mint mínusz 1 megoldáshalmaza">
   <defs><marker id="nyil-2" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
   <line x1="14" y1="52" x2="446" y2="52" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-2)"/>
   <line x1="26.0" y1="47" x2="26.0" y2="57" stroke="#0f172a" stroke-width="1"/>
@@ -120,8 +121,9 @@
   <line x1="434.0" y1="47" x2="434.0" y2="57" stroke="#0f172a" stroke-width="1"/>
   <text x="434.0" y="72" font-size="11" fill="#475569" text-anchor="middle">3</text>
   <line x1="26.0" y1="38" x2="230.0" y2="38" stroke="#047857" stroke-width="3.4" stroke-linecap="round"/>
+  <polygon points="26.0,38 34.0,34 34.0,42" fill="#047857"/>
   <circle cx="230.0" cy="38" r="4.2" fill="#047857"/>
-</svg></div><p class="cap"><span class="math inline">\(x\le -1\)</span> — tele karika, mert a &minus;1 beletartozik</p><div class="svgwrap"><svg viewBox="0 0 460 92" width="460" height="92" role="img" aria-label="A mínusz 3 kisebb vagy egyenlő x kisebb mint 4 megoldáshalmaza">
+</svg><p class="cap" id="abra-egyenlotlensegek-2">Az <span class="math inline">\(x\le -1\)</span> megoldáshalmaza <span class="math inline">\((-\infty;-1]\)</span>. A −1-nél teli karika jelzi, hogy a határérték beletartozik; a zöld félegyenes balra halad, a nyíl mutatja a korlátlan folytatását.</p></div><div class="svgwrap svgcard"><svg viewBox="0 0 460 92" width="460" height="92" role="img" aria-describedby="abra-egyenlotlensegek-3" aria-label="A mínusz 3 kisebb vagy egyenlő x kisebb mint 4 megoldáshalmaza">
   <defs><marker id="nyil-3" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
   <line x1="14" y1="52" x2="446" y2="52" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-3)"/>
   <line x1="26.0" y1="47" x2="26.0" y2="57" stroke="#0f172a" stroke-width="1"/>
@@ -151,12 +153,12 @@
   <line x1="100.2" y1="38" x2="359.8" y2="38" stroke="#047857" stroke-width="3.4" stroke-linecap="round"/>
   <circle cx="100.2" cy="38" r="4.2" fill="#047857"/>
   <circle cx="359.8" cy="38" r="4.2" fill="#ffffff" stroke="#047857" stroke-width="2"/>
-</svg></div><p class="cap"><span class="math inline">\(-3\le x&lt;4\)</span> — egyik végpont zárt, a másik nyílt</p>
+</svg><p class="cap" id="abra-egyenlotlensegek-3">A <span class="math inline">\(-3\le x&lt;4\)</span> megoldáshalmaza <span class="math inline">\([-3;4)\)</span>. A zöld szakasz a két határ közötti értékeket jelöli: a −3-nál teli karika van, így ez a végpont beletartozik; a 4-nél üres karika van, így ez a végpont nem tartozik bele.</p></div>
       <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\((2;+\infty)\)</span>; <span class="math inline">\((-\infty;-1]\)</span>; <span class="math inline">\([-3;4)\)</span>.</p></div></details>
     </div>
 
     <h2 id="s3">Zárójeles egyenlőtlenségek</h2>
-    <p>Mint az egyenleteknél: előbb zárójelbontás és felszorzás a nevezők legkisebb közös többszörösével, majd rendezés. Ha ez a szám negatív, a relációjel iránya megfordul. Az iránnyal csak akkor kell foglalkozni, ha közben negatív számmal szorzunk/osztunk.</p>
+    <p>Felbontjuk a zárójeleket, összevonjuk a tagokat, majd rendezzük az egyenlőtlenséget. <b>Állandó, nemnulla nevezők</b> esetén a törteket egy <b>pozitív közös nevezővel</b> való szorzással tüntethetjük el, így a relációjel iránya megmarad. Később, ha negatív számmal szorzunk vagy osztunk, megfordítjuk a jelet. Ismeretlent tartalmazó kifejezéssel csak az előjelének és értelmezhetőségének vizsgálata után szabad szorozni vagy osztani.</p>
     <div class="doboz pelda" id="pelda-zarojeles">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
       Oldd meg: <span class="math inline">\(4(x-1)-3(x+2)>-8\)</span>.
@@ -171,7 +173,7 @@
 
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-linearis-egyenletek-es-rendszerek.html#alap-3">🐜 Henrik-bevetés <span class="cimke">A 3, 10</span></a><a class="sav bruno" href="feladatok-linearis-egyenletek-es-rendszerek.html#kozep-3">💥 Brúnó-bevetés <span class="cimke">K 3</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/pauk_petar.webp" alt="Petar Pauk — a hálók és a függvények mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Petar Pauk:</b> Egyenletek, egyenlőtlenségek — mind számokról szól. De van, aki képben gondolkodik. A következő modulban <b>rajzolunk</b>: a lineáris függvény egy egyenes, és minden titkát elárulja a grafikonja.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/pauk_petar.webp" alt="Petar Pauk — a hálók és a függvények mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Petar Pauk:</b> A megoldáshalmazt már fel tudod rajzolni a számegyenesre. A következő leckében <b>függvénygrafikont</b> készítünk: az összetartozó x- és y-értékeket pontokként jelöljük, majd megnézzük, mit olvashatunk le a kapott egyenesről.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-linearis-egyenletek.html"><span class="irany">← Előző</span><span class="hova">Lineáris egyenletek</span></a>
       <a class="kov" href="tananyag-linearis-fuggveny.html"><span class="irany">Következő →</span><span class="hova">Lineáris függvény</span></a>

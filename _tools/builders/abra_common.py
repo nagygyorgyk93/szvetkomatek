@@ -109,9 +109,13 @@ def svg_szamegyenes(xr=(-4, 4), pontok=None, intervallumok=None, w=520, h=96,
         xa, xb = X(a), X(b)
         ki.append(f'  <line x1="{xa:.1f}" y1="{y}" x2="{xb:.1f}" y2="{y}" '
                   f'stroke="{szin}" stroke-width="3.4" stroke-linecap="round"/>')
-        for x, tip, szel in ((xa, a_tip, a), (xb, b_tip, b)):
+        for oldal, (x, tip, szel) in enumerate(((xa, a_tip, a), (xb, b_tip, b))):
             if szel in (float("-inf"), float("inf")) or tip == "nyil":
-                # nyílban végződik: a szakasz kilóg a képből
+                # A nyílfej a képen belül mutatja a megoldásrész folytatását.
+                irany = 1 if oldal == 0 else -1
+                ki.append(f'  <polygon points="{x:.1f},{y} '
+                          f'{x + 8 * irany:.1f},{y - 4} '
+                          f'{x + 8 * irany:.1f},{y + 4}" fill="{szin}"/>')
                 continue
             if tip == "zart":
                 ki.append(f'  <circle cx="{x:.1f}" cy="{y}" r="4.2" fill="{szin}"/>')

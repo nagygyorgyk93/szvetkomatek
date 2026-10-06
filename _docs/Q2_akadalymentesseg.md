@@ -624,3 +624,36 @@ Valódi képernyőolvasó, a többi komplex ábra, szolgáltatói médiafelület
 képes hátterek teljes kézi kontrasztja és JS nélküli képlet-felolvasás hátra van.
 Más böngészőt és teljes PDF-oldaltördelést nem minősítünk.
 **Tanári döntés kell: nincs új kérdés.**
+
+
+## Tizenkettedik adag — 1e/07 lineáris tananyagok, öt ábra (2026-10-06)
+
+A négy tananyag öt SVG-je teljesebb, látható leírást kapott aria-describedby
+kapcsolattal: két lineáris függvény grafikonja, három megoldáshalmaz a
+számegyenesen és egy egyenletrendszer két egyenese. A leírások a közös világos
+ábrakártyákban vannak, oldalankénti CSS-kivétel nélkül. A grafikon tengelyeinek
+eltérő egységhossza szerepel; a határpontok nyitott/zárt volta és a megoldásrész
+iránya világos. Egy koordinátajelölés pontosvesszőre változott.
+
+Két korlátlan zöld félegyenes végéről hiányzott a nyíl. A közös
+számegyenes-generátorban a végtelen és a nyíl típusú végek most nyílfejet
+kapnak; a két tananyagbeli SVG az eredeti adatokkal készült újra.
+Hat generátorellenőrzés és az öt ábra tényleges koordinátáinak matematikai
+kontrollja sikeres. Más témák korábban generált számegyenesei ebben az
+adagban nem épültek újra; nyílfejeik vizsgálata a Q2 folytatásának része.
+
+Mind az öt név és teljes leírás megjelenik az Edge hozzáférhetőségi fájában.
+Az ellenőrzés a MathML-szöveget elkülöníti a rejtett TeX/KaTeX-rétegektől.
+Minimum leíráskontraszt **9,20:1**. Végleges böngésző/axe:
+**24 nézet, 0 elrendezési és szabályjelzés**. Nyomtatás JS be/ki **8/8**;
+az öt ábra és leírás látható, a leírások JS nélkül is olvashatók.
+Öt mobilos ábrakártya, egy bevezető és négy nyomtatási minta szemrevételezve.
+jsdom **217 képlet, 10/10 kvíz, 0 hiba**; teljes kánon/link **310/0**.
+Kulcs **4499/4499**, regressziós érzékenység **100%**.
+Részletes lektor, megőrzés és matematikai kontroll:
+[A3 tizedik adag](A3_nyelvi_ellenorzes.md).
+
+Valódi képernyőolvasó, a többi komplex ábra, szolgáltatói médiafelületek,
+képes hátterek teljes kézi kontrasztja és JS nélküli képlet-felolvasás hátra van.
+Más böngészőt és teljes PDF-oldaltördelést nem minősítünk.
+**Tanári döntés kell: nincs új kérdés.**

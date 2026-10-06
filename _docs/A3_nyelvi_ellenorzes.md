@@ -3,8 +3,9 @@
 ## Hatókör és állapot
 
 **Jelenlegi összesítés:** az 1e/01 kilenc, az 1e/02 három, az 1e/03 négy,
-az 1e/04 három, az 1e/05 kilenc és az 1e/06 mindhárom tananyaglapjának teljes
-nyelvi és példahitelességi ellenőrzése elkészült kilenc adagban: összesen 31 tananyag. A
+az 1e/04 három, az 1e/05 kilenc, az 1e/06 három és az 1e/07 mind a négy
+tananyaglapjának teljes nyelvi és példahitelességi ellenőrzése elkészült
+tíz adagban: összesen 35 tananyag. A
 feladatgyűjtemények, nyitóoldalak, összefoglalók és terepküldetések külön
 A3-ellenőrzése, valamint a többi témakör átnézése hátra van. Az adagok alábbi
 adatai az egyes munkamenetek eredményei; a legfrissebb bejegyzés a végén található.
@@ -945,3 +946,110 @@ JS nélkül a képletek TeX alakban maradnak. Az axe-próba nem teljes WCAG-min�
 az 1e/01–06 összesen 31/38 tananyaglapja kész. Következő tananyag-adag az
 1e/07 négy lineáris leckéje. A többi lapfajta és osztály külön A3-auditja hátra van.
 **Tanári döntés kell: nincs új kérdés.** Helyi main; új ág és push nem készült.
+
+
+## Tizedik adag — 1e/07 lineáris függvények, egyenletek és rendszerek (2026-10-06)
+
+### Hatókör és javítások
+
+Kiinduló revízió: `4e0478f`, tiszta helyi main, az origin/main helyi
+referenciájával egyező állapot. Távoli frissítés nem történt. Az 1e/07 mind a négy
+kézzel karbantartott tananyaglapjának teljes szövege, 13 példakártyája,
+10 kvíze és öt SVG-je átnézve:
+[lineáris függvények](../1e/07-linearis-egyenletek-es-rendszerek/tananyag-linearis-fuggveny.html),
+[lineáris egyenletek](../1e/07-linearis-egyenletek-es-rendszerek/tananyag-linearis-egyenletek.html),
+[egyenlőtlenségek](../1e/07-linearis-egyenletek-es-rendszerek/tananyag-egyenlotlensegek.html),
+[egyenletrendszerek](../1e/07-linearis-egyenletek-es-rendszerek/tananyag-egyenletrendszerek.html).
+Az egyik példakártya két nyíltan kidolgozott rendszert tartalmaz.
+A builderkeresés csak hivatkozásokat talált; a CLAUDE.md szerint a kézi
+tananyagok közvetlenül javíthatók. A két számegyenes hiányzó nyílfejét
+előállító közös `_tools/builders/abra_common.py` is javult.
+
+Az 1e matematika-skill kimenetei az alap: lineáris egyenletek és paraméteres
+eseteik, egyenlőtlenségek, lineáris függvények ábrázolása/elemzése,
+szöveges feladatok modellezése és értelmezése legfeljebb három ismeretlennel.
+A háromismeretlenes részt lépésenkénti kiküszöbölésként nevezzük meg;
+a Gauss-elnevezés és a korábbi példa megmaradt, mátrixos anyag nem került be.
+
+Javítás előtt bemutatott hibák és a későbbi biztos lektori pontosítások:
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Egyenlet, ekvivalens átalakítás | Tetszőleges kifejezés hozzáadásához nem szerepelt értelmezhetőségi feltétel | Közepes, feltételhiány | HTML: az eredeti értelmezési tartomány minden pontján értelmezett kifejezés; a kizárt értékek megmaradása |
+| Egyenlőtlenség | A negatív közös nevezőt LKT-nek nevezte; néhány előjel- és értelmezési feltétel hiányzott | Közepes, fogalmi | HTML: pozitív közös nevező; a nemszigorú relációk, nulla és ismeretlenes osztó külön feltételei |
+| Lineáris függvény | Az ábrázolási pontválasztás és a paraméter egyértelmű meghatározása túl általános volt | Közepes, fogalmi | HTML: két különböző pont; tengelymetszetek és paraméter feltételes használata |
+| Rendszerek, modellezés | A kiküszöbölés mindig egy ismeretlent ígért; minden szöveges feltételt egyenletté tett | Közepes, túláltalánosítás | HTML: egyetlen megoldású rendszer feltétele a kvízben is; a megmaradó egyenlet és további modellkorlátok szerepe |
+| Két korlátlan megoldásrész | A zöld félegyenesek végéről hiányzott a nyílfej | Közepes, ábra | Eszköz és HTML: közös generátor javítása, a két meglévő SVG újragenerálása azonos adatokkal |
+| Öt ábra | A rövid leírások nem közölték mindenütt a grafikont és a határpontok szerepét; egy koordinátajelölés nem a kánont követte | Közepes, hozzáférhetőség / enyhe jelölés | HTML: látható, kapcsolt leírások; pontosvesszős koordináták |
+| Bevezetők és lezárások | Túlzó, körülményes vagy a módszereket elmosó megfogalmazások | Enyhe, nyelvi | HTML: rövidebb mondatok, konkrét tanulási cél és következő lépés |
+| Megoldásszám csapdadoboza | A 0=13 ellentmondás előjele eltért a feltüntetett −2-szerezésből és összeadásból kapott 0=−13-tól | Enyhe, következetlenség | HTML: az előjel egyezik a kidolgozott példával; a nincs megoldás következtetés helyes marad |
+| Számegyenes prózája | A határpontot a karikával azonosította | Enyhe, nyelvi | HTML: a határpontot karika jelöli; nyitott/zárt végpont szerepe világos |
+
+A játékos keret és szereplők megmaradtak. A panziópélda életszerű:
+14 szoba és 34 férőhely mellett 6 háromágyas és 8 kétágyas szoba adódik.
+A kérdés a két szobatípus számára kérdez rá; a számadatok változatlanok,
+a nemnegatív egész darabszám feltétele kimondva. Nincs új feladat vagy új
+feladat-számadat. Az egyenesgrafikon két tengelyén eltérő az egység hossza;
+a leírás ezért a koordinátákból való meredekségolvasásra figyelmeztet.
+
+### Független lektor és matematikai kontroll
+
+A kontextus nélküli lektor csak a tanulói szöveget és ábraleírásokat kapta,
+a példák kidolgozása, kvíz-válaszindexek és visszajelzések nélkül. A nyíltan
+kidolgozott két rendszerből is csak az egyenleteket látta. Mind a 13 példakártyát
+és a 10 kvízt önállóan helyesen megoldotta; az öt ábraleírás állításai helyesek,
+a panziópélda reális. Lényegi hibát nem talált. A fenti két biztos lektori
+pontosítás beépítve; a végleges négy lap utána újra ellenőrizve.
+
+SymPy-kontroll: minden lineáris és törtes példaszámítás, paraméter,
+intervallum, két- és háromismeretlenes rendszer, panziómodell, két elfajuló
+rendszer megoldásszáma, valamint mind a 10 kvíz. Az öt SVG tényleges
+koordinátái visszaszámolva: egyenesek képletei, metszéspontok, határpontok,
+nyitott/zárt karikák és nyílirányok. A függvénygrafikon eredeti egytizedes
+SVG-kerekítésének legnagyobb eltérése 0,10 SVG-egység, a 0,20-as tűrésen belül.
+A közös számegyenes-generátor hat esete ellenőrzött: bal/jobb végtelen,
+kétirányú folytatás, véges nyitott/zárt intervallum és a nyíl végponttípus.
+
+Megőrzési kontroll **44/44**: képek, linkek, média, válaszopciók/indexek,
+szkriptek, stílusok és minden régi horgony megmaradt. Öt új, egyedi leíráshorgony.
+A példamegoldások változatlanok az egy számhármas pontosvesszős jelölésén kívül;
+egy Gauss-kvíz hibás válaszának magyarázata a feltétellel pontosult.
+Az SVG-koordináták változatlanok: csak két nyílfej, leíráskapcsolatok és egy
+koordinátajelölés módosult. Oldalankénti CSS-kivétel nem készült.
+
+### Végleges ellenőrzés
+
+| Réteg | Eredmény |
+|---|---|
+| Kép → média → háttér | 0 módosítás; 334 aktív médiaelem 139 lapon |
+| Naplótérkép | Változatlan: 184 oldal, 2294 feladat, 12315 XP |
+| Keresőindex | 308 nem üres bejegyzés; pontosan a négy lecke változott; mind a négy lezárás késői szövege indexelve |
+| Teljes kánon és belső linkek | Mindkettő 310 oldal, 0 hiba |
+| Gyakorlósávok | 0 hiba |
+| jsdom, négy lecke | 217 képlet, 10/10 kvíz, 0 render-/JS-hiba |
+| Edge, 360/390/1280 px, zárt/nyitott lenyílók | 24 nézet, 0 túlcsordulás, képlethiba, JS-kivétel, saját konzolhiba vagy helyi 404 |
+| axe, ugyanez a 24 állapot | 0 jelzett szabálysértés |
+| Ábraleírások | Öt teljes név és leírás az Edge hozzáférhetőségi fájában; látható mindhárom szélességen, minimum kontraszt 9,20:1 |
+| JS nélkül | Négy lecke bevezetői, törzsszövege és mind az öt ábraleírás olvasható |
+| Nyomtatási stílus, JS be/ki | 8/8; szöveg, megoldáslenyílók, öt ábra és leírás látható; kvízek rejtettek |
+| Szemrevételezés | Öt mobilos ábrakártya, egy mobilos bevezető és négy nyomtatási minta rendben |
+| Teljes kulcsteszt | 4499/4499, 0 eltérés |
+| Regressziós érzékenység | 4499/4499, 100% |
+
+A tízlépéses lánc hibátlan; a két lektori prózapontosítás után a kulcsok
+előtti nyolc lépés, az önálló matematikai és az összes böngészős próba
+ismét lefutott. A kulcs- és regressziós próba azonos feladatgyűjteményeken
+futott; ezek, a Végeredmények és a kulcsmodul nem változtak.
+
+A közös generátor javítása a később készülő számegyenesekre is érvényes.
+Más témák korábban generált SVG-jeit ebben az adagban nem építettük újra;
+ezek nyílfejeinek célzott vizsgálata Q2-folytatás. Valódi képernyőolvasó,
+más böngésző, teljes PDF-oldaltördelés, képes hátterek teljes kézi kontrasztja
+és külső média tartalma nem ellenőrizve. JS nélkül a képletek TeX alakban
+maradnak; az axe-próba nem teljes WCAG-minősítés.
+
+**Állapot:** az 1e/07 4/4 tananyaga teljes A3-audit szerint átnézve;
+az 1e/01–07 összesen 35/38 tananyaglapja kész. Következő adag:
+az 1e/08 három hasonlósági leckéje. A többi lapfajta és osztály külön
+A3-auditja hátra van. **Tanári döntés kell: nincs új kérdés.**
+Helyi main; új ág és push nem készült.
