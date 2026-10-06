@@ -657,3 +657,35 @@ Valódi képernyőolvasó, a többi komplex ábra, szolgáltatói médiafelület
 képes hátterek teljes kézi kontrasztja és JS nélküli képlet-felolvasás hátra van.
 Más böngészőt és teljes PDF-oldaltördelést nem minősítünk.
 **Tanári döntés kell: nincs új kérdés.**
+
+
+## Tizenharmadik adag — 1e/08 hasonlóság, három ábra és kvízdoboz (2026-10-06)
+
+Három tananyag három SVG-je teljes, látható, aria-describedby kapcsolattal
+elérhető leírást kapott. A Thalész-ábra négy metszéspontja a megtartott
+szárakra illeszkedik; a két szelő pontosan párhuzamos. A háromszög-ábra
+jobb szélső B₁-felirata teljesen elfér a viewBox-ban. Független racionális
+geometriai kontroll a hossz- és területarányokra is sikeres.
+A közös világos ábrakártyák maradtak, CSS-kivétel nélkül.
+
+A homotéciás lecke első kvízéből hiányzó záró div az egész s3 részt
+kvízbe ágyazta. Az eredeti HTML Edge-ben is ezt mutatta: a címsor és a
+kerület–terület doboz nyomtatáskor nem volt látható. A javítás után két
+önálló háromopciós kvíz marad, a szöveg és címsorok nyomtatásban láthatók.
+
+A hosszú Thalész-képlet miatt az Edge hozzáférhetőségi leírása megszakadt.
+A három aránykapcsolatot szavakkal adjuk meg; az így teljes leírás JS nélkül
+is olvasható. Mindhárom név és teljes leírás megjelenik a hozzáférhetőségi
+fában; minimum leíráskontraszt **9,20:1**.
+
+Végleges böngésző/axe **18 nézet/0 jelzés**, nyomtatás JS be/ki **6/6**,
+jsdom **171 képlet, 6/6 kvíz, 0 hiba**, kánon/link **310/0**.
+A homotécia utolsó pontosítása után hat nézet/axe és két nyomtatási mód
+külön újramérve. Három mobilos ábrakártya és három nyomtatási minta
+szemrevételezve. Részletek: [A3 tizenegyedik adag](A3_nyelvi_ellenorzes.md).
+
+Valódi képernyőolvasó, a többi komplex ábra, a korábban generált többi
+számegyenes nyílfejei, szolgáltatói médiafelületek, képes hátterek teljes
+kézi kontrasztja és JS nélküli képlet-felolvasás hátra van.
+Más böngészőt és teljes PDF-oldaltördelést nem minősítünk.
+**Tanári döntés kell: nincs új tartalmi kérdés.**

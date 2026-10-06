@@ -2,12 +2,10 @@
 
 ## Hatókör és állapot
 
-**Jelenlegi összesítés:** az 1e/01 kilenc, az 1e/02 három, az 1e/03 négy,
-az 1e/04 három, az 1e/05 kilenc, az 1e/06 három és az 1e/07 mind a négy
-tananyaglapjának teljes nyelvi és példahitelességi ellenőrzése elkészült
-tíz adagban: összesen 35 tananyag. A
-feladatgyűjtemények, nyitóoldalak, összefoglalók és terepküldetések külön
-A3-ellenőrzése, valamint a többi témakör átnézése hátra van. Az adagok alábbi
+**Jelenlegi összesítés:** az 1e mind a 38 tananyaglapjának teljes nyelvi és
+példahitelességi ellenőrzése elkészült tizenegy adagban. A feladatgyűjtemények,
+nyitóoldalak, összefoglalók és terepküldetések külön A3-ellenőrzése,
+valamint a 2e–4e osztályok teljes A3-auditja hátra van. Az adagok alábbi
 adatai az egyes munkamenetek eredményei; a legfrissebb bejegyzés a végén található.
 
 **2026-10-05, első adag:** az 1e/01 három függvényes tananyaglapjának teljes szövegét
@@ -1053,3 +1051,117 @@ az 1e/01–07 összesen 35/38 tananyaglapja kész. Következő adag:
 az 1e/08 három hasonlósági leckéje. A többi lapfajta és osztály külön
 A3-auditja hátra van. **Tanári döntés kell: nincs új kérdés.**
 Helyi main; új ág és push nem készült.
+
+
+## Tizenegyedik adag — 1e/08 hasonlóság; az 1e tananyagok lezárása (2026-10-06)
+
+### Hatókör és javítások
+
+Kiinduló revízió: `7a76885`, tiszta helyi main, az origin/main helyi referenciájával
+egyező állapot. Távoli frissítés nem történt. Három kézzel karbantartott tananyag
+teljes szövege, három példakártyája, hat kvíze és három SVG-je átnézve:
+[arányos szakaszok](../1e/08-hasonlosag/tananyag-aranyos-szakaszok.html),
+[homotécia és hasonlóság](../1e/08-hasonlosag/tananyag-homotecia-es-hasonlosag.html),
+[háromszögek hasonlósága](../1e/08-hasonlosag/tananyag-haromszogek-hasonlosaga.html).
+A builderkeresés csak más leckék hivatkozásait találta; a CLAUDE.md szerint
+ezek a kézi 1e lapok közvetlenül javíthatók. Builder nem futott újra.
+
+Az 1e matematika-skill kimenete az alap: a hasonlóság és a középpontos hasonlóság
+alkalmazása a síkban. A párhuzamos szelők és a háromszög-hasonlóság, a mérési
+alkalmazás és a derékszögű háromszög tételei ehhez kapcsolódnak.
+A meglévő térfogati és ponthatvány-kitekintés megmaradt, gyakorlófeladat nélkül.
+
+Javítás előtt bemutatott hibák, majd a böngészős és lektori pontosítások:
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Párhuzamos szelők ábrája | A négy metszéspont nem illeszkedett a szárakra, a szelők nem voltak pontosan párhuzamosak | Közepes, matematikai ábra | HTML: a megtartott csúcsból és szárakból számolt metszéspontok, hozzáigazított feliratok |
+| Thalész-tétel és megfordítás | A pontok sorrendje hiányzott; teljes metsző egyenesekre is irányítás nélküli hosszarányokat mondott | Közepes, feltételhiány | HTML: egy szög két szárán a pontsorrend és a párhuzamos összekötők megnevezése; megfordítás ugyanebben az elrendezésben |
+| Arány és szerkesztések | A pozitív hossz / nemnulla osztó nem szerepelt; a párhuzamosok meghúzásának lépései hiányosak voltak | Fogalmi / didaktikai | HTML: feltételek és végrehajtható szerkesztési lépések; negyedik arányosnál az a=b eset is |
+| Hasonlósági kvízek | Az arány iránya kétértelmű, a kisebbikről a nagyobbikra mondott 2:5 arány a lecke k-konvenciójával ellentétes | Közepes, jelölés | HTML: képhossz/eredeti hossz; a másik kérdésben kisebb:nagyobb oldalhányados; helyes válaszok/indexek maradtak |
+| Árnyékos mérés | A függőlegesség, vízszintes talaj és az árnyék megfelelő végpontja nem szerepelt | Közepes, modellhiány | HTML: egyidejű mérés, párhuzamos napsugarak, függőleges szakaszként modellezett fa, a csúcspont árnyéka |
+| Kapcsolódás az egybevágósághoz | A két szög egyezését is az egybevágósági esetekkel mosta össze | Közepes, fogalmi | HTML: OOO/OSzO összevetés; két szög önmagában csak hasonlóságot biztosít |
+| Homotéciás lecke első kvíze | Hiányzó záró div; a s3 rész és a második kvíz az első kvízbe ágyazódott | Magas, szerkezet/működés | HTML: doboz lezárása; két önálló háromopciós kvíz, a további lecke nyomtatásban látható |
+| Homotécia megfogalmazása | A nagyítás/kicsinyítés nem foglalta magába a méretmegőrző eseteket | Enyhe–közepes, fogalmi | HTML: k=1 és k=−1, valós nemnulla arány; negatív aránynál irány és abszolútérték szerinti távolság |
+| Bevezetők és hétköznapi kapcsolatok | „Bármit”, „minden hiányzó adat”, „mind a Thalész-elven”; körülményes túlzások | Enyhe–közepes, nyelvi | HTML: konkrét tanulási célok, méretarányos alaprajz, a mérés és a tételek feltételei |
+| Három ábra | Rövid leírások; a B₁-felirat szűken fért el; a hosszú Thalész-képlet megszakadt az Edge hozzáférhetőségi leírásában | Közepes, hozzáférhetőség / enyhe tördelés | HTML: három teljes, kapcsolt leírás, B₁ igazítása; Thalész-arányok szavakkal |
+
+A szereplők és a játékos keret megmaradtak. Az Euklideszi tételekhez a már
+szereplő a,b,c,h,p,q jelölésekkel rövid hasonlósági arányok kerültek, amelyekből
+a három képlet keresztbeszorzással következik. A befogóhoz tartozó szelet a
+merőleges vetület hossza. A pont hatványa körön kívüli pontra, a szelő
+közelebbi/távolabbi metszéspontjaival egyértelmű. Új feladat és új
+feladat-számadat nem készült; a három példakártya adatai és megoldásai maradtak.
+
+### Független lektor és matematikai kontroll
+
+A projektkontextus nélküli lektor csak a három tanulói szöveget és leírást kapta,
+példamegoldások, kvízindexek és visszajelzések nélkül. Önálló eredményei:
+SB₁=9; a fa magassága 8 m; c=25, h=12, a=15, b=20. Mind a hat kvíz helyes
+opciója egyezik az oldallal. A feltételezett modellben az árnyékos adatok
+életszerűek; az ábraleírások állításai helyesek. A homotécia méretmegőrző
+eseteiről, a negyedik arányos szerkesztéséről és a korona miatt szükséges
+szakaszmodellről szóló biztos pontosításai beépítve. Az újraolvasás a
+szerkesztést a<b, a>b és a=b esetben is végrehajthatónak találta;
+a negatív arány mondatának k=−1-re adott utolsó javítása is beépült.
+
+Független SymPy-kontroll minden példára, kvízre és skálázási számolásra.
+A negyedik arányos általános képlete és a szerkesztés vektoros
+párhuzamossága ellenőrizve, az a=b eset is. A befogó-, magasság- és
+Pitagorasz-tétel arányai pozitív p,q változókkal; a külső pont szelőjének
+metszési egyenletében a két távolság szorzata d²−r².
+
+Tényleges SVG-koordinátákból, pontos racionális számolással:
+
+- A Thalész-ábrán mind a négy pont a megfelelő száron van; a két szelő
+  párhuzamos, és a három megadott hosszarány egyenlő.
+- A homotécia mindhárom képcsúcsának középpontból vett vektora kétszeres;
+  az oldalhosszak kétszeresek, a terület négyszeres.
+- A két másik háromszög 3/2-szeres nagyítással és eltolással kapcsolódik;
+  minden megfelelő oldalhányados 3/2, a területarány 9/4.
+
+Megőrzés **33/33**: képek, linkek, médiablokkok, válaszopciók/indexek,
+szkriptek, stílusok és minden régi horgony maradt. A három példamegoldás
+változatlan. Három visszajelzés az arány irányával pontosult. Az SVG-kben
+csak a Thalész-pontok és felirataik, egy szöveghorgony, valamint a három
+leíráskapcsolat változott. A leírások a közös világos kártyákon vannak;
+oldalankénti CSS-kivétel nem készült.
+
+### Végleges ellenőrzés
+
+| Réteg | Eredmény |
+|---|---|
+| Kép → média → háttér | 0 módosítás; 334 aktív médiaelem 139 lapon |
+| Naplótérkép | Változatlan: 184 oldal, 2294 feladat, 12315 XP |
+| Keresőindex | 308 nem üres bejegyzés; pontosan a három lecke változott; mindhárom lezárás késői szövege indexelve |
+| Teljes kánon és belső linkek | Mindkettő 310 oldal, 0 hiba |
+| Gyakorlósávok | 0 hiba |
+| jsdom, három végleges lecke | 171 képlet, 6/6 kvíz, 0 render-/JS-hiba |
+| Edge, 360/390/1280 px, zárt/nyitott lenyílók | 18 végleges nézet, 0 túlcsordulás, képlethiba, JS-kivétel, saját konzolhiba vagy helyi 404 |
+| axe, ugyanez a 18 állapot | 0 jelzett szabálysértés |
+| Kvízszerkezet | Nincs beágyazott kvíz vagy kvízbe került címsor; oldalanként két önálló háromopciós kérdés |
+| Ábraleírások | Három teljes név és leírás az Edge hozzáférhetőségi fájában; minimum kontraszt 9,20:1 |
+| JS nélkül | Három lecke szövege és mindhárom ábraleírás olvasható |
+| Nyomtatási stílus, JS be/ki | 6/6; szöveg, címsorok, megoldáslenyílók, ábrák és leírások láthatók; kvízek rejtettek |
+| Szemrevételezés | Három mobilos ábrakártya és három nyomtatási minta rendben |
+
+A kiinduló homotéciás HTML valódi böngészős próbájában egy beágyazott kvíz
+volt, a s3 címsor és kerület–terület doboz nyomtatáskor rejtett.
+A javított HTML-ben ez megszűnt. A Thalész-képletes hosszú leírás Edge-ben
+megszakadt; a szavakkal megadott változat teljes. Az első jsdom-próba
+elavult segédmappa-útvonal miatt nem töltött lapot; az útvonal javítása után
+mindhárom végleges lap lefutott. A homotécia legutolsó prózapontosítása után
+a lecke hat böngészős/axe-nézete és két nyomtatási módja külön újramérve.
+
+Feladatgyűjtemény, Végeredmény és kulcsmodul nem változott; a CLAUDE.md
+feltételes előírása szerint a teljes kulcs- és regressziós próba nem ismétlődött.
+A tananyag számításait a fenti két független kontroll ellenőrizte.
+Valódi képernyőolvasó, más böngésző, teljes PDF-oldaltördelés, képes hátterek
+teljes kézi kontrasztja és külső média tartalma nem ellenőrizve.
+JS nélkül a képletek TeX alakban maradnak; az axe nem teljes WCAG-minősítés.
+
+**Állapot:** az 1e/08 3/3 tananyaga kész; az 1e mind a **38/38 tananyaglapja**
+teljes A3-audit szerint átnézve. A feladatgyűjtemények, nyitóoldalak,
+összefoglalók, terepküldetések és a 2e–4e külön A3-auditja hátra van.
+**Tanári döntés kell:** új tartalmi kérdés nincs; a következő nagyobb adag
+sorrendjéről egyeztetés indult. Helyi main; új ág és push nem készült.

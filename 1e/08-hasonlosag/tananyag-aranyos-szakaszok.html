@@ -32,13 +32,13 @@
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
-      <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/hangya_henrik.webp" alt="Hangya Henrik — a méretarányok szakértője" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Hangya Henrik:</b> Kadét, a szakadás zárul — ez az <b>epilógus</b>. Emlékszel a Zsugor-protokollra? A skálázás megőrzi az <b>arányokat</b>. Most ugyanez térben: ha egy egyenessereg <b>párhuzamos</b>, akkor a szakaszokat is <b>arányosan</b> vágja. Ez a Thalész-tétel — a skálázás geometriai törvénye, amivel helyreállítjuk a valóság megbomlott méreteit.</p></div>
+      <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/hangya_henrik.webp" alt="Hangya Henrik — a méretarányok szakértője" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Hangya Henrik:</b> Kadét, a szakadás zárul. A Zsugor-protokollban a hosszakat ugyanazzal a tényezővel változtattuk. Most ennek a geometriai oldalát nézzük meg: hogyan vágnak ki a <b>párhuzamos egyenesek arányos szakaszokat</b> egy szög szárain? Ezt mondja ki a párhuzamos szelők tétele.</p></div>
     <p>A <b>hasonlóság</b> témaköre az arányosság geometriai folytatása: alakzatokat <b>nagyítunk és kicsinyítünk</b> úgy, hogy az arányok megmaradnak. Az első lépés a szakaszok arányának pontos fogalma és a párhuzamosok arányosságtörvénye.</p>
 
     <h2 id="s1">Szakaszok aránya, arányos szakaszok</h2>
     <div class="doboz definicio" id="def-arany">
       <p class="cim"><span class="ikon">📗</span> Szakaszok aránya</p>
-      <p>Két szakasz, <span class="math inline">\(a\)</span> és <span class="math inline">\(b\)</span> <b>aránya</b> a hosszaik hányadosa: <span class="math inline">\(a:b=\dfrac{a}{b}\)</span> (azonos mértékegységben mérve). Ez tiszta szám, mértékegység nélkül.</p>
+      <p>A szakaszok hosszát jelölje \(a\) és \(b\), azonos mértékegységben mérve. Ha \(b\neq 0\), az arányuk a hosszaik hányadosa: \(a:b=\dfrac{a}{b}\). Az arány mértékegység nélküli szám. Ebben a leckében pozitív hosszúságú szakaszokkal dolgozunk.</p>
     </div>
     <div class="doboz definicio" id="def-aranyos">
       <p class="cim"><span class="ikon">📗</span> Arányos szakaszok</p>
@@ -48,21 +48,21 @@
     <h2 id="s2">A Thalész-tétel (párhuzamos szelők tétele)</h2>
     <div class="doboz tetel" id="tetel-thalesz">
       <p class="cim"><span class="ikon">📘</span> Thalész-tétel</p>
-      <p>Ha egy szög két szárát (vagy két, <span class="math inline">\(S\)</span>-ben metsző egyenest) két <b>párhuzamos</b> egyenes metszi, akkor a szárakon keletkező szakaszok <b>arányosak</b>: \[\frac{SA}{SB}=\frac{SA_1}{SB_1}=\frac{AA_1}{BB_1}.\] <b>Megfordítás:</b> ha a szárakon kimetszett szakaszok arányosak, akkor a metsző egyenesek párhuzamosak.</p>
+      <p>Egy \(S\) csúcsú szög egyik szárán az \(S,A,B\), a másikon az \(S,A_1,B_1\) pontok ebben a sorrendben helyezkednek el. Ha az \(AA_1\) és a \(BB_1\) egyenes <b>párhuzamos</b>, akkor \[\frac{SA}{SB}=\frac{SA_1}{SB_1}=\frac{AA_1}{BB_1}.\] <b>Megfordítás:</b> ebben az elrendezésben az \(\dfrac{SA}{SB}=\dfrac{SA_1}{SB_1}\) egyenlőségből következik, hogy az \(AA_1\) és a \(BB_1\) egyenes párhuzamos. Itt a párhuzamos szelők tételét nevezzük Thalész-tételnek; a kör félkörívéről szóló, korábban tanult tétel másik állítás.</p>
     </div>
     <div class="svgwrap svgcard">
-      <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Thalész-tétel: az S csúcsból induló két szárat két párhuzamos egyenes metszi">
+      <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-describedby="abra-aranyos-szakaszok-1" aria-label="Thalész-tétel: az S csúcsból induló két szárat két párhuzamos egyenes metszi">
         <line x1="40" y1="30" x2="290" y2="120" stroke="#0f172a" stroke-width="1.5"/>
         <line x1="40" y1="30" x2="250" y2="200" stroke="#0f172a" stroke-width="1.5"/>
-        <line x1="110" y1="58" x2="97" y2="119" stroke="#3b82f6" stroke-width="2"/>
-        <line x1="210" y1="94" x2="188" y2="185" stroke="#f59e0b" stroke-width="2"/>
+        <line x1="110" y1="55.2" x2="98.8" y2="77.6" stroke="#3b82f6" stroke-width="2"/>
+        <line x1="210" y1="91.2" x2="182.8" y2="145.6" stroke="#f59e0b" stroke-width="2"/>
         <circle cx="40" cy="30" r="3" fill="#0f172a"/><text x="26" y="30" font-size="12" fill="#0f172a">S</text>
-        <circle cx="110" cy="58" r="3" fill="#3b82f6"/><text x="112" y="52" font-size="11" fill="#3b82f6">A</text>
-        <circle cx="210" cy="94" r="3" fill="#f59e0b"/><text x="214" y="90" font-size="11" fill="#b45309">B</text>
-        <circle cx="97" cy="119" r="3" fill="#3b82f6"/><text x="80" y="128" font-size="11" fill="#3b82f6">A₁</text>
-        <circle cx="188" cy="185" r="3" fill="#f59e0b"/><text x="192" y="196" font-size="11" fill="#b45309">B₁</text>
+        <circle cx="110" cy="55.2" r="3" fill="#3b82f6"/><text x="112" y="49.2" font-size="11" fill="#3b82f6">A</text>
+        <circle cx="210" cy="91.2" r="3" fill="#f59e0b"/><text x="214" y="85.2" font-size="11" fill="#b45309">B</text>
+        <circle cx="98.8" cy="77.6" r="3" fill="#3b82f6"/><text x="80" y="88.6" font-size="11" fill="#3b82f6">A₁</text>
+        <circle cx="182.8" cy="145.6" r="3" fill="#f59e0b"/><text x="184.8" y="157.6" font-size="11" fill="#b45309">B₁</text>
       </svg>
-      <p class="cap">A kék és a narancs egyenes párhuzamos, ezért <span class="math inline">\(\dfrac{SA}{SB}=\dfrac{SA_1}{SB_1}\)</span>.</p>
+      <p class="cap" id="abra-aranyos-szakaszok-1">Az S csúcsból induló szárakon a pontok sorrendje S, A, B, illetve S, A₁, B₁. A kék AA₁ és a narancssárga BB₁ szelő párhuzamos. Az SA és SB hosszának aránya megegyezik az SA₁ és SB₁, valamint az AA₁ és BB₁ hosszának arányával. Az ábra az elrendezést szemlélteti; a következő számolós példa adatai külön szerepelnek.</p>
     </div>
     <div class="doboz pelda" id="pelda-thalesz">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
@@ -71,7 +71,7 @@
     </div>
     <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ SB₁ = 9: a 4/6 = 6/SB₁ aránypárból." data-nem="✘ A Thalész-aránypár: 4/6 = 6/SB₁ → SB₁ = 9.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
-      <p><span class="math inline">\(SA=4,\ SB=6,\ SA_1=6\)</span> mellett mennyi <span class="math inline">\(SB_1\)</span>?</p>
+      <p><span class="math inline">\(SA=4,\ SB=6,\ SA_1=6\)</span> mellett, az ábrán jelölt párhuzamosok esetén mennyi <span class="math inline">\(SB_1\)</span>?</p>
       <div class="opciok"><button><span class="math inline">\(9\)</span></button><button><span class="math inline">\(12\)</span></button><button><span class="math inline">\(8\)</span></button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
@@ -90,13 +90,13 @@
     </figure>
     <!-- media:end 1e08-parhuzamos-szelok-ggb -->
     <h2 id="s3">Alkalmazás: szakasz osztása és a negyedik arányos</h2>
-    <p>A Thalész-tétel a klasszikus szerkesztések alapja. Egy szakaszt <b>egyenlő részekre</b> osztunk úgy, hogy egy segédfélegyenesre felmérünk annyi egyenlő egységet, ahány részre osztunk, majd párhuzamosokat húzunk. Ugyanígy megszerkeszthető három adott szakasz <b>negyedik arányosa</b> (az <span class="math inline">\(x\)</span>, amelyre <span class="math inline">\(a:b=c:x\)</span>).</p>
+    <p>A Thalész-tétel a klasszikus szerkesztések alapja. Egy szakasz egyik végpontjából segédfélegyenest húzunk, amely nem esik a szakasz egyenesére. Felmérünk rá annyi egyenlő egységet, ahány részre osztanánk a szakaszt. Az utolsó osztópontot összekötjük a szakasz másik végpontjával, majd a többi osztóponton át ezzel párhuzamos egyeneseket húzunk. Ezek a szakaszt <b>egyenlő részekre</b> osztják. Három pozitív hosszúságú szakasz <b>negyedik arányosát</b> is megszerkeszthetjük: azt az <span class="math inline">\(x\)</span>-et, amelyre <span class="math inline">\(a:b=c:x\)</span>. Egy <span class="math inline">\(O\)</span> pontból két, nem egy egyenesre eső félegyenest húzunk. Az egyikre felmérjük az <span class="math inline">\(OA=a\)</span> és <span class="math inline">\(OB=b\)</span>, a másikra az <span class="math inline">\(OC=c\)</span> szakaszt. Ha <span class="math inline">\(a=b\)</span>, akkor rögtön <span class="math inline">\(x=c\)</span>. Egyébként összekötjük <span class="math inline">\(A\)</span>-t és <span class="math inline">\(C\)</span>-t; a <span class="math inline">\(B\)</span>-n át húzott párhuzamos a másik félegyenest <span class="math inline">\(D\)</span>-ben metszi. Az <span class="math inline">\(OD\)</span> a keresett szakasz, mert <span class="math inline">\(OA:OB=OC:OD\)</span>.</p>
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
-      A térképek, makettek és tervrajzok mind a Thalész-elven skáláznak: párhuzamos rácsvonalak arányosan viszik át a méreteket. Hangya Henrik zsugorodása is „arányos szelés" — minden hossz ugyanazzal a tényezővel változik.
+      Egy <b>méretarányos alaprajz</b> ugyanazzal a tényezővel kicsinyíti a valós hosszakat. A párhuzamos szelők tételével szerkesztéskor vihetünk át szakaszarányokat. Hangya Henrik zsugorodása is ezt az aránytartást idézi: minden hossz ugyanazzal a tényezővel változik.
     </div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/hangya_henrik.webp" alt="Hangya Henrik — a méretarányok szakértője" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Hangya Henrik:</b> Megvan a párhuzamosok törvénye. Most jön a skálázás igazi motorja: a <b>homotécia</b> — a szabályos nagyítás egy középpontból —, és vele a <b>hasonlóság</b> fogalma.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/hangya_henrik.webp" alt="Hangya Henrik — a méretarányok szakértője" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Hangya Henrik:</b> A párhuzamos szelők tételét már tudod használni. A következő leckében egy választott középponthoz képest nagyítunk és kicsinyítünk. Ez a <b>középpontos hasonlóság</b>, más néven homotécia.</p></div>
     <div class="lapozo">
       <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">Témakör-nyitó</span></a>
       <a class="kov" href="tananyag-homotecia-es-hasonlosag.html"><span class="irany">Következő →</span><span class="hova">Homotécia és hasonlóság</span></a>

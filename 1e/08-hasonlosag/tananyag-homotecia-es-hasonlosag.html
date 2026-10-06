@@ -32,16 +32,16 @@
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
-      <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/hangya_henrik.webp" alt="Hangya Henrik — a méretarányok szakértője" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Hangya Henrik &amp; Darázs Dorka:</b> A zsugor-részecske egy középpontból <b>skáláz</b>: minden pontot ugyanabból az irányból, ugyanazzal a tényezővel tol ki vagy húz be. Ez a <b>homotécia</b> — a szabályos nagyítás/kicsinyítés. Ami így keletkezik, az az eredetihez <b>hasonló</b>: azonos alak, más méret. Ez a Skála Törvénye szíve.</p></div>
-    <p>A homotécia a nagyítás/kicsinyítés pontos matematikai leírása; a hasonlóság pedig az az általánosabb fogalom, amely szerint két alakzat „ugyanolyan alakú", csak más méretű.</p>
+      <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/hangya_henrik.webp" alt="Hangya Henrik — a méretarányok szakértője" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Hangya Henrik &amp; Darázs Dorka:</b> A zsugor-részecske most egy választott középponthoz képest változtatja meg az alakzat méretét. Ez a <b>homotécia</b>. Megnézzük, hová kerülnek a pontok, hogyan változnak a hosszak, és mi marad meg a szögekből. Így lesz pontos matematikai fogalom a Skála Törvénye.</p></div>
+    <p>A <b>homotécia</b> egy középponthoz kötött, aránytartó leképezés. Nagyíthat, kicsinyíthet, de a méretet meg is őrizheti. A <b>hasonlóság</b> általánosabb: az alakzatot el is tolhatjuk, elforgathatjuk vagy tükrözhetjük. Hasonló alakzatok mérete eltérhet, de meg is egyezhet.</p>
 
     <h2 id="s1">A homotécia</h2>
     <div class="doboz definicio" id="def-homotecia">
       <p class="cim"><span class="ikon">📗</span> Homotécia (középpontos hasonlóság)</p>
-      <p>Adott egy <span class="math inline">\(O\)</span> középpont és egy <span class="math inline">\(k\neq 0\)</span> szám. A homotécia minden <span class="math inline">\(M\)</span> ponthoz azt az <span class="math inline">\(M_1\)</span> pontot rendeli, amelyre <span class="math inline">\(\overrightarrow{OM_1}=k\cdot\overrightarrow{OM}\)</span>. A <span class="math inline">\(k\)</span> a homotécia <b>aránya</b> — ez lehet negatív is. A keletkező <b>hasonlóság</b> aránya viszont mindig a pozitív <span class="math inline">\(|k|\)</span>.</p>
+      <p>Adott egy <span class="math inline">\(O\)</span> középpont és egy <span class="math inline">\(k\neq 0\)</span> valós szám. A homotécia minden <span class="math inline">\(M\)</span> ponthoz azt az <span class="math inline">\(M_1\)</span> pontot rendeli, amelyre <span class="math inline">\(\overrightarrow{OM_1}=k\cdot\overrightarrow{OM}\)</span>. A <span class="math inline">\(k\)</span> a homotécia <b>aránya</b> — ez lehet negatív is. A keletkező <b>hasonlóság</b> aránya viszont mindig a pozitív <span class="math inline">\(|k|\)</span>.</p>
     </div>
     <div class="svgwrap svgcard">
-      <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Homotécia: az O középpontból kétszeresére nagyított háromszög">
+      <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-describedby="abra-homotecia-es-hasonlosag-1" aria-label="Homotécia: az O középpontból kétszeresére nagyított háromszög">
         <line x1="30" y1="180" x2="250" y2="40" stroke="#cbd5e1" stroke-width="1"/>
         <line x1="30" y1="180" x2="170" y2="150" stroke="#cbd5e1" stroke-width="1"/>
         <line x1="30" y1="180" x2="150" y2="70" stroke="#cbd5e1" stroke-width="1"/>
@@ -51,29 +51,30 @@
         <text x="96" y="128" font-size="11" fill="#3b82f6">F</text>
         <text x="196" y="96" font-size="11" fill="#b45309">F₁ (k = 2)</text>
       </svg>
-      <p class="cap">Az <span class="math inline">\(O\)</span> középpontú, <span class="math inline">\(k=2\)</span> arányú homotécia az <span class="math inline">\(F\)</span> háromszöget a kétszeresére nagyított <span class="math inline">\(F_1\)</span>-be viszi.</p>
+      <p class="cap" id="abra-homotecia-es-hasonlosag-1">Az \(O\) középpontú, \(k=2\) arányú homotécia a kék \(F\) háromszöget a narancssárga \(F_1\)-be viszi. A megfelelő csúcsok ugyanazon az \(O\)-ból induló félegyenesen vannak; a képcsúcsok \(O\)-tól mért távolsága kétszeres. A megfelelő oldalak hossza és a kerület kétszeres, a terület négyszeres, a szögek változatlanok.</p>
     </div>
     <div class="doboz tetel" id="tetel-homotecia">
       <p class="cim"><span class="ikon">📘</span> A homotécia tulajdonságai</p>
-      <p>Egyenest vele párhuzamos egyenesbe visz (az <span class="math inline">\(O\)</span>-n átmenő egyeneseket önmagukba); a szakaszokat a <span class="math inline">\(|k|\)</span>-szorosára változtatja (<span class="math inline">\(|k|&lt;1\)</span> esetén tehát <b>kicsinyít</b>). Ha <span class="math inline">\(k&gt;0\)</span>, a kép a középpontból nézve ugyanabban az irányban van, mint az eredeti; ha <span class="math inline">\(k&lt;0\)</span>, a középpont <b>másik</b> oldalán, félfordulattal elforgatva (<span class="math inline">\(\overrightarrow{A_1B_1}=k\cdot\overrightarrow{AB}\)</span>); a <b>szögeket megtartja</b>. Speciális esetek: <span class="math inline">\(k=1\)</span> az identikus leképezés; <span class="math inline">\(k=-1\)</span> az <span class="math inline">\(O\)</span> körüli középpontos tükrözés.</p>
+      <p>A középponton átmenő egyenes képe önmaga. A többi egyenes képe párhuzamos vele; \(k=1\) esetén minden egyenes változatlan marad. A szakaszok hossza \(|k|\)-szorosára változik: \(0&lt;|k|&lt;1\) esetén kicsinyítünk, \(|k|&gt;1\) esetén nagyítunk. A szögek nagysága megmarad.</p><p>Az \(O\)-tól különböző pont képe \(k&gt;0\) esetén ugyanazon az \(O\)-ból induló félegyenesen van, mint az eredeti pont. Ha \(k&lt;0\), a kép az ellenkező félegyenesre kerül; az \(O\)-tól mért távolság \(|k|\)-szoros lesz. A megfelelő vektorokra \(\overrightarrow{A_1B_1}=k\cdot\overrightarrow{AB}\).</p><p>Ha \(k=1\), minden pont a helyén marad: ez az <b>identikus leképezés</b>. Ha \(k=-1\), az \(O\) körüli <b>középpontos tükrözést</b> kapjuk.</p>
     </div>
 
     <h2 id="s2">A hasonlóság fogalma</h2>
     <div class="doboz definicio" id="def-hasonlosag">
       <p class="cim"><span class="ikon">📗</span> Hasonló alakzatok</p>
-      <p>Két alakzat <b>hasonló</b> (<span class="math inline">\(\sim\)</span>), ha az egyik a másikból nagyítással/kicsinyítéssel (és esetleg egybevágósági transzformációval: eltolással, forgatással, tükrözéssel) megkapható. Az <b>egybevágóság</b> a hasonlóság <span class="math inline">\(k=1\)</span> esete: azonos alak <b>és</b> azonos méret — minden egybevágó alakzat hasonló, de a hasonlók általában nem egybevágók. Hasonló sokszögeknél a <b>megfelelő szögek egyenlők</b>, a <b>megfelelő oldalak aránya</b> pedig állandó — ez a <b>hasonlósági arány</b> <span class="math inline">\(k\)</span>. Pl. <span class="math inline">\(\triangle ABC\sim\triangle A_1B_1C_1\)</span> esetén \[\frac{A_1B_1}{AB}=\frac{B_1C_1}{BC}=\frac{A_1C_1}{AC}=k.\]</p>
+      <p>Két alakzat <b>hasonló</b> (\(\sim\)), ha az egyik a másikból középpontos nagyítással vagy kicsinyítéssel és egybevágósági transzformációval — eltolással, forgatással vagy tükrözéssel — megkapható. A hosszakat szorzó, <b>pozitív hasonlósági arányt</b> itt \(k\)-val jelöljük. Ha \(k=1\), a méret is megmarad: az alakzatok <b>egybevágók</b>.</p><p>Hasonló sokszögeknél a megfelelő szögek egyenlők, a megfelelő oldalak aránya állandó. Például \(\triangle ABC\sim\triangle A_1B_1C_1\) esetén, az \(ABC\)-ről az \(A_1B_1C_1\)-re haladva, \[\frac{A_1B_1}{AB}=\frac{B_1C_1}{BC}=\frac{A_1C_1}{AC}=k.\] Fordított irányban az arány \(1/k\).</p>
     </div>
 
     
-    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ k = 10 : 4 = 2,5 — a megfelelő oldalak hányadosa." data-nem="✘ A hasonlósági arány a megfelelő oldalak hányadosa: 10 : 4 = 2,5.">
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ k = 10 : 4 = 2,5 — a képháromszög és az eredeti háromszög megfelelő oldalainak hányadosa." data-nem="✘ Az ABC-ről az A₁B₁C₁-re vett arány: A₁B₁/AB = 10 : 4 = 2,5.">
       <p class="kviz-cim"><span class="ikon">🎯</span> Gyors kérdés</p>
-      <p>Az <span class="math inline">\(ABC\)</span> és az <span class="math inline">\(A_1B_1C_1\)</span> háromszög hasonló, <span class="math inline">\(AB=4\)</span> és <span class="math inline">\(A_1B_1=10\)</span>. Mekkora a hasonlósági arány?</p>
+      <p>Az <span class="math inline">\(ABC\)</span> és az <span class="math inline">\(A_1B_1C_1\)</span> háromszög hasonló, <span class="math inline">\(AB=4\)</span> és <span class="math inline">\(A_1B_1=10\)</span>. Mekkora az \(ABC\)-ről az \(A_1B_1C_1\)-re vett hasonlósági arány?</p>
       <div class="opciok"><button><span class="math inline">\(6\)</span></button><button><span class="math inline">\(2{,}5\)</span></button><button><span class="math inline">\(0{,}4\)</span></button></div>
       <p class="visszajelzes" aria-live="polite"></p>
+    </div>
     <h2 id="s3">Kerület és terület aránya</h2>
     <div class="doboz tetel" id="tetel-kerulet-terulet">
       <p class="cim"><span class="ikon">📘</span> A skálázás törvénye</p>
-      <p>Ha két alakzat hasonlósági aránya <span class="math inline">\(k\)</span>, akkor a <b>kerületük</b> aránya szintén <span class="math inline">\(k\)</span>, a <b>területük</b> aránya viszont <span class="math inline">\(k^2\)</span>: \[\frac{K_1}{K}=k,\qquad \frac{T_1}{T}=k^2.\] Térben a hasonló testek <b>térfogatának</b> aránya ugyanígy <span class="math inline">\(k^3\)</span>.</p>
+      <p>Ha két sokszög hasonlósági aránya <span class="math inline">\(k\)</span>, akkor a <b>kerületük</b> aránya szintén <span class="math inline">\(k\)</span>, a <b>területük</b> aránya viszont <span class="math inline">\(k^2\)</span>: \[\frac{K_1}{K}=k,\qquad \frac{T_1}{T}=k^2.\] <b>Térbeli kitekintés:</b> a hasonló testek <b>térfogatának</b> aránya ugyanígy <span class="math inline">\(k^3\)</span>.</p>
     </div>
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
@@ -87,10 +88,10 @@
     </div>
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Visszakötés az arányossághoz</p>
-      A hasonlóság az <b>arányosság</b> (04. témakör) geometriai arca: a hasonlósági arány egy állandó szorzó, épp mint az egyenes arányosság <span class="math inline">\(k\)</span> tényezője. A Zsugor-protokoll és a Skála Törvénye ugyanazt mondja, csak más nyelven.
+      A <b>megfelelő hosszúságok egyenesen arányosak</b>: a képalakzat minden hosszát az eredeti hossz \(k\)-szorosaként kapjuk. Ez a kapcsolat köti össze a korábbi arányossági számolásokat a geometriai nagyítással és kicsinyítéssel.
     </div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/hangya_henrik.webp" alt="Hangya Henrik — a méretarányok szakértője" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Hangya Henrik:</b> Uralod a skálázást. Az utolsó bevetés a <b>háromszögek hasonlósága</b>: pár egyszerű ismérv, amivel bármit bemérsz — magasságot, távolságot —, és lezárul a szakadás.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/hangya_henrik.webp" alt="Hangya Henrik — a méretarányok szakértője" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Hangya Henrik:</b> A hossz-, kerület- és területarányt már meg tudod különböztetni. Az utolsó bevetésben a <b>háromszögek hasonlóságát</b> ismerjük fel, majd árnyékhossz alapján magasságot számolunk.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-aranyos-szakaszok.html"><span class="irany">← Előző</span><span class="hova">Arányos szakaszok és Thalész</span></a>
       <a class="kov" href="tananyag-haromszogek-hasonlosaga.html"><span class="irany">Következő →</span><span class="hova">Háromszögek hasonlósága</span></a>
