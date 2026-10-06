@@ -124,13 +124,13 @@ A02_UJ = [
   "\\dfrac{\\text{szemközti befogó}}{\\text{átfogó}}$."),
 ]
 K02_UJ = [
- ("Egy derékszögű háromszögről csak annyit tudsz, hogy $\\operatorname{tg}\\alpha=\\tfrac{5}{12}$.",
+ ("Egy derékszögű háromszög $\\alpha$ hegyesszögére $\\operatorname{tg}\\alpha=\\tfrac{5}{12}$. Az $a$ befogó ezzel a szöggel szemközti, $b$ a mellette fekvő, $c$ az átfogó.",
   ["Milyen oldalhosszakkal rajzolhatsz ilyen háromszöget? Add meg mindhárom oldalt!",
    "Olvasd le a rajzodról $\\sin\\alpha$-t és $\\cos\\alpha$-t <b>pontosan</b>.",
    "Változna-e a három szögfüggvény értéke, ha minden oldalt megkétszereznél? Indokold!"],
   ['Például $a=5$, $b=12$, $c=13$.',
    "$\\sin\\alpha=\\tfrac{5}{13}$, $\\cos\\alpha=\\tfrac{12}{13}$.",
-   'Nem változna.']),
+   'Nem változna: a szögfüggvények oldalhosszarányok, és a közös 2-es szorzó minden hányadosból kiesik.']),
 ]
 
 # --- 03 Egész és valós számok ---
@@ -342,16 +342,16 @@ K02 = [
 ]
 K02 = K02 + K02_UJ
 N02 = [
- ("<b>Terep-alkalmazás.</b> Egy fa árnyéka $12\\,\\text{m}$ hosszú, amikor a napsugarak $40^\\circ$-os emelkedési szöget zárnak be a vízszintessel. Milyen magas a fa? Rajzolj, és számolj 2 tizedesre!",
+ ("<b>Terepi alkalmazás.</b> Egy függőleges fa csúcsának árnyéka a talpponttól $12\\,\\text{m}$ távolságra van a vízszintes talajon. A napsugarak $40^\\circ$-os szöget zárnak be a vízszintessel. A csúcs a talppont fölött van; a korona alakjától eltekintünk. Milyen magas a fa? Rajzolj, és számolj 2 tizedesre!",
   None, "$m\\approx 10{,}07\\,\\text{m}$."),
 ]
-brief02 = ("🕹️ <b>SZVETI:</b> <b>Vészterem</b>-szimuláció, célzó modul. Ez a <b>Vészterem</b> otthoni "
- "edzésváltozata — itt gyakorolsz a terepküldetés előtt és után. A szimuláció a <b>teljes trigonometria-témakört</b> "
- "lefedi: szögfüggvények, nevezetes szögek, a derékszögű háromszög megoldása és valós mérések. Tartsd a "
- "<b>kerekítési szabályt</b> (szögfüggvény-érték 5 tizedes, hossz és szög 2 tizedes). Fokozatok: zöld → sárga → piros.")
+brief02 = ("🕹️ <b>SZVETI:</b> A <b>Vészteremben</b> a terepméréshez is gyakorolsz: "
+ "szögfüggvények, nevezetes szögek, a derékszögű háromszög megoldása és mérési modellek. "
+ "Haladj a zöld feladatoktól a sárgák, majd a pirosak felé. Számolás közben tartsd meg a számológép teljes pontosságát; "
+ "a közelítő szögfüggvényértéket 5, a kiszámított hosszat és szöget 2 tizedesre kerekítsd, ha a feladat mást nem kér.")
 dr_page(DEST02, "index.html", "Trigonometria", "feladatok-hazi.html",
  "🕹️ Vészterem — házi feladatgyűjtemény",
- "Egyetlen, a teljes trigonometria-témakört lefedő házi feladatsor. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
+ "Házi feladatsor a hegyesszögek szögfüggvényeihez és a derékszögű háromszög megoldásához. Előbb dolgozz önállóan, aztán ellenőrizd a végeredményt!",
  brief02, sect(A02, K02, N02),
  "index.html", "Témakör Főhadiszállása", "osszefoglalo.html", "Tömör összefoglaló",
  "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")

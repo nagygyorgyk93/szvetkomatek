@@ -3,11 +3,12 @@
 ## Hatókör és állapot
 
 **Jelenlegi összesítés:** az 1e mind a 38 tananyaglapjának teljes nyelvi és
-példahitelességi ellenőrzése elkészült tizenegy adagban. A tizenkettedik adagban
-az 1e/01 hét további lapja is átnézve és javítva: nyitóoldal, összefoglaló,
-terepküldetés és négy feladatgyűjtemény. Az 1e/02–08 további lapfajtáinak,
-valamint a 2e–4e osztályok teljes A3-auditja hátra van. Az adagok alábbi
-adatai az egyes munkamenetek eredményei; a legfrissebb bejegyzés a végén található.
+példahitelességi ellenőrzése elkészült tizenegy adagban. A tizenkettedik és
+tizenharmadik adagban az 1e/01 hét és az 1e/02 öt további lapja is átnézve
+és javítva: nyitóoldalak, összefoglalók, terepküldetések és feladatgyűjtemények.
+Az 1e/03–08 további lapfajtáinak és a 2e–4e teljes A3-auditja hátra van.
+Az adagok alábbi adatai az egyes munkamenetek eredményei; a legfrissebb
+bejegyzés a végén található.
 
 **2026-10-05, első adag:** az 1e/01 három függvényes tananyaglapjának teljes szövegét
 átnéztük, a bevezetőktől az összefoglalóig. A tanár kérése szerint az egyértelműen
@@ -1274,3 +1275,100 @@ láthatósága valódi Edge-ben ellenőrizve.
 is elkészült. Az 1e/02–08 további lapfajtái és a 2e–4e teljes A3-auditja hátra
 van. **Tanári döntés kell: nincs nyitott kérdés.** Helyi main; új ág és push
 nem készült. Következő javasolt adag: az 1e/02 trigonometria további lapjai.
+
+
+## Tizenharmadik adag — 1e/02 további lapfajták (2026-10-06)
+
+### Hatókör és javítások
+
+Kiinduló revízió: `d2f874a`, tiszta helyi main, egy committal az origin/main
+helyi referenciája előtt, mögötte nulla. Távoli frissítés nem történt.
+Az 1e/02 öt további lapja teljes szöveggel átnézve:
+[nyitóoldal](../1e/02-trigonometria/index.html),
+[összefoglaló](../1e/02-trigonometria/osszefoglalo.html),
+[terepküldetés](../1e/02-trigonometria/terepkuldetes.html),
+[feladatgyűjtemény](../1e/02-trigonometria/feladatok-trigonometria.html),
+[házi feladatsor](../1e/02-trigonometria/feladatok-hazi.html).
+Összesen 64 kártya: 51 + 10 gyakorlófeladat és három projektkártya.
+E lapokon nincs SVG vagy kvíz. A három tananyag korábbi A3-auditja megmaradt.
+
+Az 1e matematika-skill 10. referenciaanyagának kimenetei az alap:
+hegyesszögek szögfüggvényei, nevezetes értékek és derékszögű háromszögek
+alkalmazása számológéppel. A kotangens összefüggései szerepelnek.
+Négy lap kézzel karbantartott; a házit a `build_dangerroom.py` írja.
+A builder csak a DEST02 kiíróhívással futott: a többi témakör HTML-je
+nem épült újra. A lánc visszatette a házi avatarképét és háttérattribútumát.
+
+Javítás előtt bemutatott hibatábla, a lektori pontosításokkal:
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Nyitóoldal | Téves szintdarabszámok | Közepes | HTML: 12/11/5, 21 ismétlő és két Joker; házi 5/4/1 |
+| Összefoglaló | Pontos érték csak nevezetes szögként leírva; inverz gomb és reciprok összemosható; szemmagasság nincs | Közepes | HTML: pontos értékből számolás, inverz/reciprok, magasságkülönbség és szemmagasság |
+| Klinométer | Skálairánytól függő előjel; a zsineg helye tévesen a 90°-os jelhez kötve | Magas | HTML: középpont az egyenes él közepén, lefelé néző félkör, függőleges sík, abszolút eltérés és kalibrálás |
+| Távolságmérés | Függőleges eszközzel vízszintes szög; AB helyett a B-ből A felé mutató irány kell | Magas | HTML: vízszintes irányzós szögmérő, egyenes alapvonal, merőlegesség és az ABP szög |
+| Magasság- és elitmérés | Hiányzó közös talaj, talppont, szemmagasság és pontsorrend | Közepes | HTML: szükséges feltételek, a közelebbi mérési állás nagyobb hegyesszöge |
+| Terepi feladatok | Árnyék, sárkány, torony és lejtő mérési modellje bizonytalan | Közepes | HTML / builder: függőlegesség, vízszintes távolság, egyenes zsinór és talajszinti pont |
+| Létrás példa | Az ajánlott szögként leírt állítás felesleges a matematikai modellhez | Közepes | HTML: az egyenes szakaszmodell kimondva, az ajánlás elhagyva |
+| Gyakorló dolgozat | Ellenőrizhetetlen állítás az éles dolgozat összetételéről és a felkészültségről | Közepes | HTML: gyakorlóválogatás, újraolvasási útmutató |
+| Feladatutasítások | Hiányzó oldal–szög megfeleltetés, hegyesszög és függvénytartomány | Közepes | HTML / builder: pontos jelölések és R→R |
+| Kért indoklások | Négy válasz csak eredményt vagy bizonyítási utalást adott | Közepes | HTML / builder: rövid érdemi indoklás, tíz azonosság bizonyítása, kért igazságtáblázat |
+| Világítótorony Joker | A sziklatető mért pontja nem feltétlenül a torony talppontja | Közepes | HTML: függőleges torony, közvetlenül a talppontjára mért alsó szög |
+| Bevezetők és mérési pontosság | Túlzó teljességígéret, nehézkes mondatok, saját mérésnél túlzott tizedesjegy-elvárás | Enyhe–közepes | HTML / builder: rövidebb szöveg; leolvasási pontosság és kijelzett tizedesek külön |
+
+Az eredeti számadatok és számszerű eredmények megmaradtak. Új feladat vagy
+új feladat-számadat nem készült; a horgonyok és gyakorlási sávok változatlanok.
+A kifejezetten indoklást vagy bizonyítást kérő válaszokban megmaradt, illetve
+pótlódott a szükséges rövid érvelés. Két hosszú bizonyításképlet két sorba tördelve,
+oldalankénti CSS-kivétel nélkül. Az alap 9 táblázata az utasítás átírásakor
+átmenetileg kiesett; az eredeti táblázat változatlan adatokkal visszakerült,
+szabályosan a bevezető bekezdés után. Megőrzési próba ellenőrzi az eredeti táblákat.
+Projekt-megoldókulcs nem került a repóba.
+
+### Független ellenőrzés
+
+Két friss szemű, projektkontextus nélküli lektor csak tanulói szöveget kapott.
+Az egyik mind a 61 gyakorlókártyát önállóan megoldotta, válaszok nélkül;
+az eredmények a lenyílókkal egyeznek. A helyreállított táblázat három sorát
+és a pontosított világítótornyos feladatot újra megoldotta. Új biztos
+feltételhiányt nem talált. A másik lektor önállóan levezette a három mérési
+képletet és ellenőrizte a klinométer skáláját, valamint az összefoglalót.
+A biztos nyelvi és modellpontosítások beépültek; választható ötletek nem
+változtatták meg az adatokat. Nincs nyitott tanári kérdés.
+
+Független SymPy-kontroll a tíz azonosságra, az egyszerű és kétállásos
+magasságképletre; mindkét klinométerskála 14 esete; nevezetes értékek és
+a táblázat közvetlen szögpercre kerekítése. 20/20 megőrzési próba:
+horgonyok, linkek, média, kártyalisták. Az eredeti táblázatok, szkriptek
+és stílushivatkozások megmaradtak. A 64 kártya és a 61 lenyíló megtartva.
+
+### Ellenőrzések és korlátok
+
+| Ellenőrzés | Eredmény |
+|---|---|
+| Teljes kánon és belső linkek | 310 oldal, 0 hiba |
+| Gyakorlósávok | Minden kártyát felad valamelyik egység |
+| Teljes kulcsteszt | 4499/4499, 0 eltérés; a lektori javítások után is |
+| Teljes regresszió | 4499/4499 = 100%; a tesztelt válaszkártyák változatlanok |
+| jsdom / képletrender | Öt végleges lap, 586 képlet, 0 hiba; nincs kvíz |
+| Edge mobil és asztali | Öt lap × 360/390/1280 px × zárt/nyitott lenyílók: 30 végleges nézet, 0 hiba |
+| axe | 30 végleges nézet, 0 jelzés; nem teljes WCAG-minősítés |
+| Nyomtatás JS be/ki | 10/10: címsorok, feladatszövegek és minden végeredmény látható |
+| JavaScript nélkül | 5/5 lap olvasható; képletek TeX alakban |
+| Keresőindex | 308 nem üres bejegyzés, pontosan öt URL változott; két új késői részlet 3000 után is indexelve |
+| Naplótérkép | Változatlan: 184 egység, 2294 feladat, összesen 12315 XP |
+| Kép, média és háttér | A házi avatar/háttér visszatéve; 334 médiaelem 139 lapon, médiaváltozás nélkül |
+
+Az utolsó változtatások után csak az érintett lapok ismételve. A végleges
+nézet- és renderadatok a lapok legutolsó megfelelő változatából összevonva.
+Négy mobilos kártyaminta szemrevételezve; a két hosszú bizonyítás új tördelése
+külön végleges ellenőrzést kapott. Valódi képernyőolvasó, más böngésző,
+teljes PDF-oldaltördelés, háttérképek minden pontjának kézi kontrasztja
+és külső média tartalma nem ellenőrizve. A nyomtatási láthatóság valódi
+Edge-ben ellenőrizve; a PDF-renderelő modul korábban nem volt elérhető,
+ebben az adagban nem telepítettünk másik renderelőt.
+
+**Állapot:** az 1e 38/38 tananyaga és az 1e/01–02 további 12 lapja teljes
+A3-audit szerint átnézve. Az 1e/03–08 további lapjai és a 2e–4e teljes
+A3-auditja hátra van. **Tanári döntés kell: nincs nyitott kérdés.**
+Helyi main, új ág és push nélkül. Következő javasolt adag: az 1e/03 további lapjai.

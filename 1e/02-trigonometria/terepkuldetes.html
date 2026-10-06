@@ -26,13 +26,12 @@
 </nav>
 <div class="hero">
   <h1>Terepküldetés — A Célzó</h1>
-  <p class="alcim">Igazi <b>terepmérés</b>: saját kezűleg mérsz meg egy magasságot és egy távolságot —
-  közvetlen odajutás nélkül, csak szöggel és háromszögeléssel. Csoportban, 2–3 fő.</p>
+  <p class="alcim"><b>Terepmérés</b>: magasságot és távolságot határozol meg mért szögekből és egy ismert távolságból.
+  Készíts mérőeszközt, rajzolj, és számolj! Csoportban, 2–3 fő.</p>
   <div class="meta-sor"><span class="chip ora">projekt</span><span class="chip alap">2 bevetés</span><span class="chip nehez">+ elit</span></div>
-  <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/barton_kalman_w.webp" alt="Barton Kálmán — a kampusz célzó-oktatója" width="1200" height="670" decoding="async"><p>🏹 <b>Barton Kálmán:</b> Kadét, az anomália forrása egy magas szerkezet tetején ül —
-  nem tudsz odamászni, és nem is kell. Egy jó íjász <b>bemér</b>: szögből és egyetlen ismert
-  távolságból kiszámolja, amit közvetlenül nem érhet el. Építs egy szögmérőt, menj ki a terepbe, és
-  hozd nekem a számokat. <b>A célzás fél siker — a másik fele a pontos számítás.</b></p></div>
+  <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/barton_kalman_w.webp" alt="Barton Kálmán — a kampusz célzó-oktatója" width="1200" height="670" decoding="async"><p>🏹 <b>Barton Kálmán:</b> Kadét, az anomália forrása egy magas szerkezet tetején van.
+  A magasságát a talajról is meghatározhatod: mérj távolságot és szöget, majd számolj a rajzod alapján.
+  <b>Hozd el a mérési adatokat és a számításodat!</b></p></div>
 </div>
 <main class="lap toc-os">
   <div class="tartalom">
@@ -41,8 +40,10 @@
     <p>Előbb elkészíted az eszközt (egy egyszerű <b>szögmérőt</b>), majd két bevetést hajtasz végre a
     terepen: egy <b>magasságmérést</b> és egy <b>távolságmérést</b>. Mindkettőnél <b>rajzot</b>
     készítesz a derékszögű háromszögről, felírod a mért adatokat, és kiszámolod a keresett mennyiséget.
-    A vállalkozó szelleműeknek van egy <b>elit</b> bevetés is. Minden mérésnél tartsd a
-    kerekítési szabályt: a <b>szögfüggvény-értékek 5 tizedesre</b>, a <b>szögek és hosszak 2 tizedesre</b>.</p>
+    Az <b>elit</b> bevetés választható. A mérési adatokat az eszközöd leolvasási pontosságával jegyezd fel.
+    Számolás közben tartsd meg a számológép teljes pontosságát; ha kiírsz egy közelítő szögfüggvényértéket,
+    öt tizedesre kerekítsd. A kiszámított hosszt két tizedesre add meg, de jelezd: a kijelzett tizedesjegyek száma
+    nem teszi pontosabbá a mérést.</p>
 
     <h2 id="eszkoz">🛠️ Az eszköz — szögmérő (klinométer)</h2>
     <div class="gyakorolj">
@@ -52,23 +53,26 @@
         pálcika, kb. <b>20 cm zsineg</b> és egy kis <b>súly</b> (pl. anyacsavar, gyurma).</p>
         <ol class="reszfeladatok">
           <li>Ragaszd a szívószálat a szögmérő egyenes (átmérő menti) éléhez — ezen fogsz „célozni”.</li>
-          <li>Kösd a zsineget a szögmérő középpontjához (a \(90^\circ\)-os jelnél lévő lyukhoz), a
-          végére a súlyt: ez egy <b>függőón</b>, ami mindig lefelé mutat.</li>
-          <li>Amikor a szívászálon át egy magas pont <em>tetejére</em> célzol, a zsineg kimutat egy
-          számot a skálán. Az <b>emelkedési szög</b>: \(\alpha = 90^\circ - (\text{leolvasott érték})\).
-          Érdemes párszor „bemérni” egy ismert szögön, hogy biztos jól olvasod.</li>
+          <li>Kösd a zsineget a szögmérő középpontjához, az egyenes él közepéhez; a
+          végére kerüljön a súly. Ez a <b>függőón</b> jelöli a függőleges irányt.</li>
+          <li>Tartsd a szögmérőt <b>függőleges síkban, a félkörös részével lefelé</b>, hogy a szabadon lógó zsineg a skálára essen.
+          A szívószálon át célozz a mérendő pont tetejére, és olvasd le a zsineg mellett a <span class="math inline">\(r\)</span> értéket.
+          Az <b>emelkedési szög</b>: <span class="math inline">\(\alpha=|90^\circ-r|\)</span>.
+          Ellenőrizd az eszközt: vízszintes célzásnál a zsinegnek a <span class="math inline">\(90^\circ\)</span>-os jelnél kell állnia.
+          Csak a szemmagasságodnál magasabb pontra célozz; ekkor <span class="math inline">\(0^\circ<\alpha<90^\circ\)</span>.</li>
         </ol>
       </div>
     </div>
 
     <h2 id="b1">🟢 1. bevetés — Magasságmérés</h2>
     <p>Válassz egy magas, de a <b>talpánál megközelíthető</b> tárgyat: az iskola épülete, egy fa, egy
-    kosárpalánk vagy egy lámpaoszlop. Cél a <b>teljes magasság</b>, közvetlen mérés nélkül.</p>
+    kosárpalánk vagy egy lámpaoszlop. Válassz függőleges tárgyat, amelynek teteje a talppont fölött van.
+    A mérés helye és a talppont közös vízszintes talajon legyen. Cél a <b>teljes magasság</b>.</p>
     <article class="feladat alap" id="magassag">
       <p><span class="szam">1.</span> <b>Protokoll.</b></p>
       <ol class="reszfeladatok">
-        <li>Állj a tárgytól egy kényelmes, <b>lemért</b> \(d\) vízszintes távolságra
-        (lépéssel vagy mérőszalaggal).</li>
+        <li>Állj a tárgy talppontjától egy kényelmes, <b>lemért</b> <span class="math inline">\(d\)</span> vízszintes távolságra.
+        Használj mérőszalagot; lépéssel csak becslést kapsz, hacsak előtte nem mértétek meg a lépéshosszt.</li>
         <li>Célozz a tárgy <em>tetejére</em>, olvasd le az \(\alpha\) emelkedési szöget.</li>
         <li>Mérd meg a saját <b>szemmagasságod</b>, \(e\)-t (a talajtól a szemedig).</li>
         <li>A magasság: \[ m = e + d\cdot \operatorname{tg}\alpha. \]</li>
@@ -78,27 +82,34 @@
     </article>
 
     <h2 id="b2">🟡 2. bevetés — Távolság/szélesség mérése</h2>
-    <p>Most egy olyan szakaszt mérsz meg, amelyet nem tudsz közvetlenül végigmérni: az udvar
-    egy „árka”, egy kerítéssel elzárt sáv, vagy egy képzeletbeli „szakadék” két pontja. A trükk egy
-    <b>derékszögű</b> elrendezés.</p>
+    <p>Egy elkerített udvarrész szélességét méred meg. Gyakorláskor kijelölt vonallal is határolhatjátok
+    a területet, amelyre nem léptek be. Válasszatok <b>sík, vízszintes terepet</b> és egy egyenes mérési alapvonalat.
+    Itt <b>vízszintes irányszöget</b> mérsz: a függőónos klinométer erre nem alkalmas.
+    Használj vízszintesen tartott szögmérőt, a középpontjából a két cél irányába állítható pálcikákkal.</p>
     <article class="feladat kozep" id="tavolsag">
       <p><span class="szam">1.</span> <b>Protokoll.</b> Jelölj ki a túloldalon egy jól látható \(P\)
-      pontot (pl. egy fa vagy oszlop).</p>
+      pontot (pl. egy oszlop talppontját). A <span class="math inline">\(P\)</span> pont és a két mérési állás ugyanazon a vízszintes síkon legyen.</p>
       <ol class="reszfeladatok">
         <li>Állj a \(P\)-vel <em>szemközti</em> \(A\) pontba az innenső oldalon úgy, hogy az \(AP\)
-        szakasz <b>merőleges</b> legyen a partvonaladra (a sávra, amin mozogsz).</li>
+        szakasz <b>merőleges</b> legyen az egyenes mérési alapvonalra. A vízszintes szögmérővel ellenőrizd a derékszöget.</li>
         <li>Menj végig a saját oldaladon egy <b>lemért</b> \(d\) távolságot a \(B\) pontig
-        (\(AB\) a partvonalad mentén).</li>
-        <li>A \(B\) pontból célozz \(P\)-re, és mérd meg a \(\beta\) szöget az \(AB\) iránytól.</li>
+        (<span class="math inline">\(AB\)</span> az egyenes mérési alapvonalon fekszik).</li>
+        <li>A <span class="math inline">\(B\)</span> pont fölött, vízszintesen tartott szögmérővel mérd meg a <span class="math inline">\(\beta=\angle ABP\)</span> hegyesszöget:
+        az egyik irányzó <span class="math inline">\(B\)</span>-ből <span class="math inline">\(A\)</span> felé, a másik <span class="math inline">\(P\)</span> felé mutasson.
+        A pontok felé mutató <b>vízszintes irányokat</b> állítsd be, ne a talppontokhoz tartozó lefelé nézési szöget.</li>
         <li>A keresett szélesség: \[ AP = d\cdot \operatorname{tg}\beta. \]</li>
       </ol>
     </article>
 
     <article class="feladat nehez" id="elit">
       <p><span class="szam">★</span> <b>Elit-bevetés — magasság megközelíthetetlen talppal.</b>
-      Mi van, ha a magas pont talpához <em>nem</em> tudsz odaállni (pl. túlparton áll)? Két állásból
-      is menni fog. Célozz a tetőpontra egy távolabbi \(A\) helyről (szög: \(\alpha\)), majd lépj
-      <b>egyenesen felé</b> egy lemért \(k\) távolságot a közelebbi \(B\) helyig (szög: \(\beta\)).
+      Ha a tárgy talppontját nem tudod megközelíteni, két mérési állásból is meghatározhatod a magasságot.
+      A tárgy legyen függőleges; a talppont és a két állás közös vízszintes talajon legyen.
+      Az <span class="math inline">\(A\)</span> és <span class="math inline">\(B\)</span> állás a talpponttal egy egyenesbe essen, annak ugyanazon az oldalán;
+      <span class="math inline">\(B\)</span> legyen a közelebbi. Mindkét állásból <b>azonos <span class="math inline">\(e\)</span> szemmagasságból</b> mérj.
+      Célozz a tetőpontra <span class="math inline">\(A\)</span>-ból (emelkedési szög: <span class="math inline">\(\alpha\)</span>), majd menj a talppont felé
+      egy lemért <span class="math inline">\(k=AB\)</span> távolságot <span class="math inline">\(B\)</span>-ig, és ott mérd meg a <span class="math inline">\(\beta\)</span> emelkedési szöget.
+      A felállásban <span class="math inline">\(0^\circ<\alpha<\beta<90^\circ\)</span>.
       A szemvonal fölötti magasság:
       \[ h = \frac{k}{\operatorname{ctg}\alpha - \operatorname{ctg}\beta}, \qquad m = e + h. \]
       Mérd le \(k\)-t, \(\alpha\)-t, \(\beta\)-t és \(e\)-t, és számold ki \(m\)-et!</p>
@@ -113,17 +124,17 @@
         <ol class="reszfeladatok">
           <li>a mért nyers adatokat (\(d\), \(\alpha\), \(e\), a távolságnál \(d\), \(\beta\));</li>
           <li>a derékszögű háromszög <b>rajzát</b> a jelölt oldalakkal/szögekkel;</li>
-          <li>a <b>számítást</b> lépésről lépésre, a kerekítési szabály betartásával
-          (érték 5, hossz/szög 2 tizedes);</li>
+          <li>a <b>számítást</b> lépésről lépésre, a hosszak mértékegységével és a mérőeszközök leolvasási pontosságával;
+          a kiszámított hosszat két tizedesre kerekítve;</li>
           <li>a magasságmérés <b>két</b> eredményét és az eltérésüket — mit gondolsz, mi okozza a
           különbséget?</li>
         </ol>
       </div>
     </div>
     <p class="le halvany"><b>Biztonság:</b> ne mássz fel semmire és ne mérj forgalmas úton — a talajról,
-    nyugodt helyről minden kimérhető. <b>Hogyan értékelem?</b> Helyes felállás/rajz ~30%, helyes
+    nyugodt helyről válassz megmérhető tárgyat. <b>Hogyan értékelem?</b> Helyes felállás/rajz ~30%, helyes
     szögfüggvény és számítás ~40%, kerekítés + két mérés összevetése ~20%, igényes jegyzőkönyv ~10%.
-    A köntös csak keret — <b>a mérés és a matek pontossága az igazi cél</b>.</p>
+    <b>Az adatokat és a számítást is ellenőrizd a leadás előtt.</b></p>
 
     <div class="lapozo">
       <a class="elozo" href="osszefoglalo.html"><span class="irany">← Előző</span><span class="hova">Tömör összefoglaló</span></a>

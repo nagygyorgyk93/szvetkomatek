@@ -26,8 +26,8 @@
 </nav>
 <div class="hero">
   <h1>Trigonometria — tömör összefoglaló</h1>
-  <p class="alcim">Minden fontos definíció, érték és képlet egy helyen. Ismétléshez, dolgozat
-  előtti átfutáshoz — nyomtasd ki, ez a hivatalos „puska”. 😉</p>
+  <p class="alcim">A hegyesszögek szögfüggvényei és a derékszögű háromszög képletei egy helyen.
+  Ismétléshez, dolgozat előtti áttekintéshez; ki is nyomtathatod.</p>
 </div>
 <main class="lap toc-os">
   <div class="tartalom">
@@ -36,9 +36,11 @@
     <span class="math inline">\(\sin\alpha=\frac{a}{c}\)</span>, <span class="math inline">\(\cos\alpha=\frac{b}{c}\)</span>, <span class="math inline">\(\operatorname{tg}\alpha=\frac{a}{b}\)</span>,
     <span class="math inline">\(\operatorname{ctg}\alpha=\frac{b}{a}\)</span>. Részletek: <a href="tananyag-szogfuggvenyek.html#def-szogfuggveny">→ tananyag</a>.</p>
     <p><b>Pótszögek:</b> <span class="math inline">\(\sin(90^\circ-\alpha)=\cos\alpha\)</span>, <span class="math inline">\(\operatorname{tg}(90^\circ-\alpha)=\operatorname{ctg}\alpha\)</span>
+    , <span class="math inline">\(\cos(90^\circ-\alpha)=\sin\alpha\)</span>, <span class="math inline">\(\operatorname{ctg}(90^\circ-\alpha)=\operatorname{tg}\alpha\)</span>
     (<a href="tananyag-szogfuggvenyek.html#tetel-potszog">→</a>).</p>
     <p><b>Alapazonosságok:</b> <span class="math inline">\(\sin^2\alpha+\cos^2\alpha=1\)</span>; <span class="math inline">\(\operatorname{tg}\alpha=\frac{\sin\alpha}{\cos\alpha}\)</span>;
     <span class="math inline">\(\operatorname{tg}\alpha\cdot\operatorname{ctg}\alpha=1\)</span>; <span class="math inline">\(1+\operatorname{tg}^2\alpha=\frac{1}{\cos^2\alpha}\)</span>
+    ; <span class="math inline">\(\operatorname{ctg}\alpha=\frac{\cos\alpha}{\sin\alpha}\)</span>; <span class="math inline">\(1+\operatorname{ctg}^2\alpha=\frac{1}{\sin^2\alpha}\)</span>
     (<a href="tananyag-szogfuggvenyek.html#tetel-azonossagok">→</a>). Hegyesszögnél <span class="math inline">\(0&lt;\sin\alpha&lt;1\)</span>, <span class="math inline">\(0&lt;\cos\alpha&lt;1\)</span>.</p>
 
     <h2 id="s2">Nevezetes szögek</h2>
@@ -50,27 +52,33 @@
       <tr><th>tg</th><td>\(\frac{\sqrt3}{3}\)</td><td>\(1\)</td><td>\(\sqrt3\)</td></tr>
       <tr><th>ctg</th><td>\(\sqrt3\)</td><td>\(1\)</td><td>\(\frac{\sqrt3}{3}\)</td></tr>
       </tbody></table>
-    <p>Levezetés: <span class="math inline">\(45^\circ\)</span> az egyenlő szárú, <span class="math inline">\(30^\circ/60^\circ\)</span> az egyenlő oldalú háromszögből
+    <p>Levezetés: a <span class="math inline">\(45^\circ\)</span>-os értékeket egy egyenlő szárú derékszögű háromszögből,
+    a <span class="math inline">\(30^\circ\)</span>-os és <span class="math inline">\(60^\circ\)</span>-os értékeket egy egyenlő oldalú háromszög magasságának behúzásával kapjuk
     (<a href="tananyag-nevezetes-szogek.html#def-harminc-hatvan">→ tananyag</a>). Nem nevezetes szögnél
-    számológép <b>fok (DEG)</b> módban; szögkereséshez inverz gomb (<span class="math inline">\(\operatorname{tg}^{-1}\)</span> stb.).</p>
+    számológéppel, <b>fok (DEG)</b> módban számolhatsz közelítő értéket.
+    Szögkereséshez a sin⁻¹, cos⁻¹ vagy tan⁻¹ gombot használd: ezek a szöget adják vissza,
+    nem a szögfüggvény értékének reciprokát. A kotangens értéke <span class="math inline">\(\operatorname{ctg}\alpha=1/\operatorname{tg}\alpha\)</span>.</p>
 
     <h2 id="s3">A derékszögű háromszög megoldása</h2>
-    <p>Cél: minden hiányzó oldal és szög. Válaszd az adott + keresett mennyiséget összekötő szögfüggvényt.
-    A hiányzó hegyesszög: <span class="math inline">\(\beta=90^\circ-\alpha\)</span>; a hiányzó oldal olykor Pitagorasszal.</p>
+    <p>Az <span class="math inline">\(\alpha\)</span> szöggel szemközti befogó <span class="math inline">\(a\)</span>, a mellette fekvő <span class="math inline">\(b\)</span>, az átfogó <span class="math inline">\(c\)</span>;
+    a másik hegyesszög <span class="math inline">\(\beta\)</span>. Válaszd azt a szögfüggvényt, amely az ismert és a keresett mennyiséget kapcsolja össze.
+    A hiányzó hegyesszög: <span class="math inline">\(\beta=90^\circ-\alpha\)</span>; a hiányzó oldalt a Pitagorasz-tétellel is kiszámíthatod.</p>
     <ul>
       <li>Átfogó + szög: <span class="math inline">\(a=c\sin\alpha\)</span>, <span class="math inline">\(b=c\cos\alpha\)</span>.</li>
-      <li>Befogó + szög: <span class="math inline">\(c=\frac{a}{\sin\alpha}\)</span>, <span class="math inline">\(b=\frac{a}{\operatorname{tg}\alpha}\)</span>.</li>
+      <li>Szemközti befogó + szög: <span class="math inline">\(c=\frac{a}{\sin\alpha}\)</span>, <span class="math inline">\(b=\frac{a}{\operatorname{tg}\alpha}\)</span>.</li>
       <li>Két befogó: <span class="math inline">\(\operatorname{tg}\alpha=\frac{a}{b}\Rightarrow\alpha=\operatorname{tg}^{-1}\frac{a}{b}\)</span>, <span class="math inline">\(c=\sqrt{a^2+b^2}\)</span>.</li>
     </ul>
-    <p><b>Alkalmazás:</b> emelkedési/depressziós szög a vízszinteshez mérve; magasság <span class="math inline">\(m=d\cdot\operatorname{tg}\alpha\)</span>
+    <p><b>Alkalmazás:</b> az emelkedési szög a vízszintestől fölfelé, a depressziószög lefelé mért szög.
+    Ha <span class="math inline">\(d\)</span> a vízszintes távolság, akkor a célpont mérési pont fölötti magassága <span class="math inline">\(h=d\cdot\operatorname{tg}\alpha\)</span>.
+    Függőleges tárgynál, közös vízszintes talajon az <span class="math inline">\(e\)</span> szemmagasságot hozzáadjuk: <span class="math inline">\(m=e+h\)</span>
     (<a href="tananyag-haromszog-megoldasa.html#def-emelkedesi-szog">→ tananyag</a>).</p>
 
     <h2 id="kulcsotletek">🧠 Kulcsötletek</h2>
     <ul>
       <li>Mindig <b>rajzolj</b>, és jelöld, melyik oldal a szemközti / szomszédos / átfogó az adott szöghöz.</li>
-      <li>Ha egy szögfüggvény adott, a többit a <span class="math inline">\(\sin^2+\cos^2=1\)</span> és a definíciók adják — pitagoraszi számhármasnál pontosan.</li>
+      <li>Ha egy hegyesszög szögfüggvényének pontos értéke adott, a többit a <span class="math inline">\(\sin^2\alpha+\cos^2\alpha=1\)</span> azonosságból és a definíciókból pontosan is kiszámíthatod. A pozitív gyököt választjuk.</li>
       <li>A pótszög-összefüggések sok kifejezést egyszerűsítenek (<span class="math inline">\(\sin 50^\circ-\cos 40^\circ=0\)</span>).</li>
-      <li>Pontos érték = nevezetes szög (számológép nélkül); közelítő = tetszőleges szög (DEG mód).</li>
+      <li>A nevezetes szögek értékeit számológép nélkül, pontosan add meg. Más hegyesszögnél a számológép közelítő értékét használd, ha a feladat ezt kéri.</li>
       <li>Szög keresése két oldalból: inverz szögfüggvény (<span class="math inline">\(\operatorname{tg}^{-1}\)</span>).</li>
     </ul>
     <div class="lapozo">
