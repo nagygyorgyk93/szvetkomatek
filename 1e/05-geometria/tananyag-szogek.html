@@ -33,12 +33,9 @@
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
-      <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/furge_pjotr_w.webp" alt="Fürge Pjotr — a kampusz leggyorsabb kadétja" width="1200" height="670" decoding="async"><p>📡 <b>Fürge Pjotr:</b> Én mindent szögben látok — az irányt, a kanyart, a becsapódást.
-      <b>Vanda:</b> A Tükör-világban a szög az első kulcs. Ha két szög összege kiadja a helyeset, a szerkezet stabil;
-      ha Kán eltol egy szöget, minden eldől. Tanuld meg felismerni a <b>szögpárokat</b> — melyik egyenlő, melyik
-      egészíti ki a másikat. Ez a legtöbbet visszatérő eszközöd az egész szektorban.</p></div>
+      <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/furge_pjotr_w.webp" alt="Fürge Pjotr — a kampusz leggyorsabb kadétja" width="1200" height="670" decoding="async"><p>📡 <b>Fürge Pjotr:</b> Forduláskor az irányváltozást szöggel írhatjuk le. <b>Vanda:</b> A geometriai rajzokon gyakran már egyetlen szögből meghatározhatunk más szögeket. Ehhez azt kell felismerned, mely szögpárok tagjai egyenlők, és melyek egészítik ki egymást derék- vagy egyenesszöggé.</p></div>
     <p>A szöget fokban mérjük. A teljesszög <span class="math inline">\(360^\circ\)</span>, az egyenesszög <span class="math inline">\(180^\circ\)</span>, a derékszög <span class="math inline">\(90^\circ\)</span>.
-    Ebből a három „mérőrúdból” minden szögkapcsolat levezethető.</p>
+    A szögpárok megkülönböztetésénél a nagyságuk mellett a szárak helyzetét is figyeld.</p>
 
     <h2 id="s1">A szög fajtái</h2>
     <div class="doboz definicio" id="def-szogfajtak">
@@ -53,31 +50,31 @@
     </div>
     <div class="venn">
       <div class="vbox">
-        <svg viewBox="0 0 150 110" width="150" height="110" role="img" aria-label="Hegyesszög">
+        <svg viewBox="0 0 150 110" width="150" height="110" role="img" aria-describedby="abra-szogek-1" aria-label="Hegyesszög">
           <line x1="25" y1="90" x2="130" y2="90" stroke="#0f172a" stroke-width="2"/>
           <line x1="25" y1="90" x2="120" y2="35" stroke="#0f172a" stroke-width="2"/>
-          <path d="M 70 90 A 45 45 0 0 0 62 66" fill="none" stroke="#10b981" stroke-width="2.5"/>
+          <path d="M 70 90 A 45 45 0 0 0 63.944183 67.453368" fill="none" stroke="#10b981" stroke-width="2.5"/>
           <circle cx="25" cy="90" r="3" fill="#0f172a"/>
         </svg>
-        <div class="cap">hegyes (\(&lt;90^\circ\))</div>
+        <div class="cap" id="abra-szogek-1">A két szár közös kezdőpontja balra lent van. Az egyik jobbra, a másik jobbra felfelé halad. A köztük jelölt kisebb szög hegyesszög: nagyobb \(0^\circ\)-nál és kisebb \(90^\circ\)-nál.</div>
       </div>
       <div class="vbox">
-        <svg viewBox="0 0 150 110" width="150" height="110" role="img" aria-label="Derékszög">
+        <svg viewBox="0 0 150 110" width="150" height="110" role="img" aria-describedby="abra-szogek-2" aria-label="Derékszög">
           <line x1="25" y1="90" x2="130" y2="90" stroke="#0f172a" stroke-width="2"/>
           <line x1="25" y1="90" x2="25" y2="20" stroke="#0f172a" stroke-width="2"/>
           <rect x="25" y="75" width="15" height="15" fill="none" stroke="#f59e0b" stroke-width="2"/>
           <circle cx="25" cy="90" r="3" fill="#0f172a"/>
         </svg>
-        <div class="cap">derék (\(=90^\circ\))</div>
+        <div class="cap" id="abra-szogek-2">A két szár közös kezdőpontja balra lent van. Az egyik vízszintesen jobbra, a másik függőlegesen felfelé halad. A kis négyzet a köztük levő derékszöget jelöli: nagysága \(90^\circ\).</div>
       </div>
       <div class="vbox">
-        <svg viewBox="0 0 150 110" width="150" height="110" role="img" aria-label="Tompaszög">
+        <svg viewBox="0 0 150 110" width="150" height="110" role="img" aria-describedby="abra-szogek-3" aria-label="Tompaszög">
           <line x1="60" y1="90" x2="145" y2="90" stroke="#0f172a" stroke-width="2"/>
           <line x1="60" y1="90" x2="12" y2="30" stroke="#0f172a" stroke-width="2"/>
-          <path d="M 100 90 A 40 40 0 0 0 32 62" fill="none" stroke="#ef4444" stroke-width="2.5"/>
+          <path d="M 100 90 A 40 40 0 0 0 35.012198 58.765248" fill="none" stroke="#ef4444" stroke-width="2.5"/>
           <circle cx="60" cy="90" r="3" fill="#0f172a"/>
         </svg>
-        <div class="cap">tompa (\(90^\circ\!-\!180^\circ\))</div>
+        <div class="cap" id="abra-szogek-3">A két szár közös kezdőpontja lent van. Az egyik jobbra, a másik balra felfelé halad. A köztük jelölt kisebb szög tompaszög: nagyobb \(90^\circ\)-nál és kisebb \(180^\circ\)-nál.</div>
       </div>
     </div>
 
@@ -91,14 +88,14 @@
     <div class="doboz definicio" id="def-mellek-csucs">
       <p class="cim"><span class="ikon">📗</span> Mellékszögek és csúcsszögek</p>
       <ul>
-        <li><b>Mellékszögek</b>: közös csúcsú, közös szárú szögek, amelyek másik szára egymás kiegészítő félegyenese
+        <li><b>Mellékszögek</b>: közös csúcsú, közös szárú szögek, amelyek nem közös szárai egymás ellentétes félegyenesei
         (együtt egyenesszöget adnak). Összegük <span class="math inline">\(180^\circ\)</span>.</li>
         <li><b>Csúcsszögek</b>: két metsző egyenes által alkotott, egymással <b>szemközti</b> szögek. A csúcsszögek
         <b>egyenlők</b>.</li>
       </ul>
     </div>
     <div class="svgcard">
-      <svg viewBox="0 0 300 180" width="300" height="180" role="img" aria-label="Két metsző egyenes négy szöggel: alfa, béta mellékszögpár és a csúcsszögek">
+      <svg viewBox="0 0 300 180" width="300" height="180" role="img" aria-describedby="abra-szogek-4" aria-label="Két metsző egyenes négy szöggel: alfa, béta mellékszögpár és a csúcsszögek">
         <line x1="30" y1="90" x2="270" y2="90" stroke="#0f172a" stroke-width="2"/>
         <line x1="70" y1="160" x2="230" y2="20" stroke="#0f172a" stroke-width="2"/>
         <circle cx="150" cy="90" r="3.5" fill="#0f172a"/><text x="150" y="108" font-size="12" fill="#64748b">O</text>
@@ -107,7 +104,7 @@
         <text x="98" y="112" font-size="15" fill="#10b981" font-style="italic">α</text>
         <text x="176" y="120" font-size="15" fill="#3b82f6" font-style="italic">β</text>
       </svg>
-      <div class="cap">\(\alpha\) és \(\beta\) mellékszögek (\(\alpha+\beta=180^\circ\)); a szemközti \(\alpha\)-k és \(\beta\)-k csúcsszögek, ezért egyenlők.</div>
+      <div class="cap" id="abra-szogek-4">A vízszintes és a jobbra emelkedő egyenes az \(O\) pontban metszi egymást. Az \(\alpha\) szögek jobbra fent és balra lent, a \(\beta\) szögek balra fent és jobbra lent vannak. Az azonos betűjű csúcsszögek egyenlők; a szomszédos \(\alpha\) és \(\beta\) mellékszögek összege \(180^\circ\).</div>
     </div>
     <div class="doboz definicio" id="def-pot-kiegeszito">
       <p class="cim"><span class="ikon">📗</span> Pótszögek és kiegészítő szögek</p>
@@ -124,7 +121,7 @@
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
       Ne keverd össze: a <b>pótszög</b> a <span class="math inline">\(90^\circ\)</span>-ra, a <b>kiegészítő szög</b> a <span class="math inline">\(180^\circ\)</span>-ra egészít ki. A
-      <b>mellékszög</b> mindig kiegészítő szög (<span class="math inline">\(180^\circ\)</span>), a <b>csúcsszög</b> pedig egyenlő — nem kiegészítő!
+      <b>mellékszög</b> mindig kiegészítő szög (<span class="math inline">\(180^\circ\)</span>), a <b>csúcsszög</b> pedig az eredeti szöggel <b>egyenlő</b>. Két derékszög csúcsszögpárként is kiegészítő, hiszen összegük ugyanúgy \(180^\circ\).
     </div>
     <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A csúcsszögek egyenlők, tehát a szemközti szög is 63°." data-nem="✘ A szemközti szög a csúcsszög — az mindig egyenlő az eredetivel, tehát 63°.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
@@ -143,24 +140,24 @@
     <h2 id="s3">Párhuzamos és merőleges szárú szögek</h2>
     <div class="doboz tetel" id="tetel-parhuzamos-meroleges-szaru">
       <p class="cim"><span class="ikon">📘</span> Amikor a szárak párhuzamosak vagy merőlegesek</p>
-      <p>Ha két szög <b>szárai páronként párhuzamosak</b>, akkor a két szög vagy <b>egyenlő</b>, vagy <b>kiegészítő</b>
+      <p>A síkban két \(0^\circ\) és \(180^\circ\) közötti szöget vizsgálunk. Ha a száraik <b>páronként párhuzamosak</b>, akkor a két szög vagy <b>egyenlő</b>, vagy <b>kiegészítő</b>
       (<span class="math inline">\(180^\circ\)</span>). Ugyanez igaz, ha a szárak páronként <b>merőlegesek</b> egymásra. Hogy melyik eset áll fenn, az a szárak
       irányításából derül ki.</p>
     </div>
 
     <h2 id="s4">Transzverzálisok szögei</h2>
     <p>Ha egy egyenes két <b>párhuzamos</b> egyenest metsz, ezt az egyenest <b>transzverzálisnak</b> nevezzük. Nyolc szög
-    keletkezik, de csak <b>kétféle</b> nagyság — és három egyszerű szabály köti össze őket.</p>
+    keletkezik, legfeljebb kétféle nagysággal. Ha a metsző egyenes merőleges a párhuzamosokra, mind a nyolc szög derékszög.</p>
     <div class="doboz tetel" id="tetel-transzverzalis">
       <p class="cim"><span class="ikon">📘</span> A transzverzális három szabálya (ha <span class="math inline">\(a\parallel b\)</span>)</p>
       <ul>
         <li><b>Egyállású (megfelelő) szögek egyenlők</b> — azonos állásban a két metszéspontnál.</li>
-        <li><b>Váltószögek egyenlők</b> — a transzverzális két oldalán, „átlósan”.</li>
+        <li><b>Váltószögek egyenlők</b> — a két különböző metszéspontnál, a transzverzális két oldalán; mindkettő a párhuzamosok közötti sávban vagy mindkettő azon kívül.</li>
         <li><b>Társszögek (egyoldali belső szögek) kiegészítők</b> — összegük <span class="math inline">\(180^\circ\)</span>.</li>
       </ul>
     </div>
     <div class="svgcard">
-      <svg viewBox="0 0 320 200" width="320" height="200" role="img" aria-label="Két párhuzamos egyenest metsző transzverzális, egyállású szögekkel">
+      <svg viewBox="0 0 320 200" width="320" height="200" role="img" aria-describedby="abra-szogek-5" aria-label="Két párhuzamos egyenest metsző transzverzális, egyállású szögekkel">
         <line x1="20" y1="70" x2="300" y2="70" stroke="#047857" stroke-width="2.5"/>
         <text x="286" y="62" font-size="14" fill="#047857" font-style="italic">a</text>
         <line x1="20" y1="140" x2="300" y2="140" stroke="#047857" stroke-width="2.5"/>
@@ -170,11 +167,11 @@
         <text x="150" y="60" font-size="15" fill="#8b5cf6" font-style="italic">α</text>
         <text x="176" y="130" font-size="15" fill="#8b5cf6" font-style="italic">α</text>
       </svg>
-      <div class="cap">Egyállású (megfelelő) szögek: azonos állásban vannak, ezért egyenlők (\(a\parallel b\)).</div>
+      <div class="cap" id="abra-szogek-5">A vízszintes \(a\) és \(b\) egyenes párhuzamos. A \(t\) transzverzális mindkettőt metszi, balról jobbra lefelé haladva. A két \(\alpha\) szög azonos állásban, mindkét metszésponttól jobbra fent látható: egyállású szögek, ezért egyenlők.</div>
     </div>
     <div class="doboz pelda" id="pelda-transzverzalis">
       <p class="cim"><span class="ikon">✏️</span> Kiképzési szimuláció</p>
-      Egy transzverzális az <span class="math inline">\(a\parallel b\)</span> egyeneseket metszi. Az egyik keletkező szög <span class="math inline">\(112^\circ\)</span>. Add meg a
+      Egy transzverzális az <span class="math inline">\(a\parallel b\)</span> egyeneseket metszi. A párhuzamosok közötti egyik belső szög <span class="math inline">\(112^\circ\)</span>. Add meg a
       vele egyállású, a váltó- és a társszögét!
       <details><summary>Megoldás</summary><div class="bel"><p>Egyállású: <span class="math inline">\(112^\circ\)</span> (egyenlő). Váltószög: <span class="math inline">\(112^\circ\)</span> (egyenlő). Társszög: <span class="math inline">\(180^\circ-112^\circ=68^\circ\)</span>.</p></div></details>
     </div>
@@ -186,8 +183,7 @@
 
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-geometria.html#alap-3">🐜 Henrik-bevetés <span class="cimke">Alap 3–5</span></a><a class="sav bruno" href="feladatok-geometria.html#kozep-2">💥 Brúnó-bevetés <span class="cimke">Közép 2–3</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/vanda.webp" alt="Vanda — a valóságformálás mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Vanda:</b> A szögek a kezedben vannak. A következő állomás a legfontosabb alakzat: a
-    <b>háromszög</b> — és vele az <b>egybevágóság</b>, a Tükör-világ szíve.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/vanda.webp" alt="Vanda — a valóságformálás mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Vanda:</b> A szögpárok szabályait a következő leckében a <b>háromszögekben</b> is használjuk. Megnézzük a szögek és az oldalak kapcsolatát, majd azt, mikor egybevágó két háromszög.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-ter-es-tavolsag.html"><span class="irany">← Előző</span><span class="hova">A tér: kölcsönös helyzet és távolság</span></a>
       <a class="kov" href="tananyag-haromszogek.html"><span class="irany">Következő →</span><span class="hova">Háromszögek és egybevágóság</span></a>

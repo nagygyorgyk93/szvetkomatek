@@ -3,8 +3,8 @@
 ## Hatókör és állapot
 
 **Jelenlegi összesítés:** az 1e/01 kilenc, az 1e/02 három, az 1e/03 négy,
-az 1e/04 három és az 1e/05 első három tananyaglapjának teljes nyelvi és
-példahitelességi ellenőrzése elkészült hat adagban. A
+az 1e/04 három és az 1e/05 első hat tananyaglapjának teljes nyelvi és
+példahitelességi ellenőrzése elkészült hét adagban. A
 feladatgyűjtemények, nyitóoldalak, összefoglalók és terepküldetések külön
 A3-ellenőrzése, valamint a többi témakör átnézése hátra van. Az adagok alábbi
 adatai az egyes munkamenetek eredményei; a legfrissebb bejegyzés a végén található.
@@ -629,4 +629,110 @@ szövege nem ellenőrizve. JS nélkül a képletek TeX alakban maradnak.
 Az 1e/01–04 19 tananyaga és az 1e/05 első három lapja A3 szerint átnézve;
 az 1e/05 további hat tananyaga és a többi lapfajta külön A3-auditja hátra van.
 Következő lehetséges adag: tér és távolság, szögek, négyszögek.
+**Tanári döntés kell: nincs új kérdés.** Helyi main-commit; új ág és push nélkül.
+
+
+## Hetedik adag — 1e/05 tér, szögek és négyszögek (2026-10-06)
+
+### Hatókör és javítások
+
+Kiinduló revízió: `e4ca92e`, tiszta helyi main, az origin/main helyi referenciájával
+egyező állapot. Távoli frissítés nem történt. Három kézzel karbantartott lap teljes
+szövege, példái, hat kvíze és 13 SVG-je átnézve:
+[tér és távolság](../1e/05-geometria/tananyag-ter-es-tavolsag.html),
+[szögek](../1e/05-geometria/tananyag-szogek.html),
+[négyszögek](../1e/05-geometria/tananyag-negyszogek.html).
+Builder nem tartozik hozzájuk; a CLAUDE.md szerint közvetlenül javíthatók.
+Az 1e matematika-skill geometriai kimenetei adták az alapot: kölcsönös helyzetek,
+pontos geometriai nyelv, négyszögek tulajdonságai és alkalmazásuk valós helyzetben.
+
+Javítás előtt bemutatott hibák, valamint az utólagos biztos lektori jelzések:
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Térbeli távolság | A rajz kitérő éleinek összekötő normálisát lapátló irányúnak nevezte; szakaszt mondott távolságnak és közös normálisnak | Magas, fogalmi | HTML: az összekötő él, a szakaszhossz és a normális egyenes megkülönböztetve |
+| Egyenes és sík | Nem volt egyértelmű, mely ponton átmenő egyenesekre kell merőlegesnek lennie | Fogalmi | HTML: a döféspont és az ott átmenő síkbeli egyenesek kimondva |
+| Metsző síkok ábrája | Egy sarok a viewBox-on kívülre esett | Közepes, ábrahiba | SVG: a keret 160 helyett 180 egység magas; geometria változatlan |
+| Hegyes- és tompaszög ábrája | Az ív nem a megfelelő szárra érkezett, és nem pontosan a szög csúcsa körül futott | Közepes, ábrahiba | SVG: a megtartott csúcs, szár és sugár alapján számolt végpontok |
+| Szögek | A csúcsszöget kizárta a kiegészítő szögek közül; a nyolc transzverzális szögre mindig kétféle nagyságot állított | Magas, fogalmi | HTML: a derékszögű eset is szerepel |
+| Szögkapcsolatok, lektori jelzés | A merőleges szárú szögek síkbeli feltétele és a váltószögek két különböző metszéspontja hiányzott | Magas, feltételhiány | HTML: közös sík és eltérő metszéspontok kimondva |
+| Transzverzálisos példa | Társszöget kért egy tetszőleges keletkező szögre, miközben a definíció belső szögekről szól | Közepes, feltételhiány | HTML: az eredeti 112° egy belső szög, számadat és eredmény változatlan |
+| Négyszögek | „Egyetlen adatból az összes többit” hamis általánosítás; a vizsgált konvex eset nem volt kimondva | Fogalmi / nyelvi | HTML: tulajdonságokból hiányzó adatok keresése, konvex eset és csúcssorrend |
+| Trapéz, lektori jelzés | A befoglaló definíció mellett az egyenlő szár és a tengelyes szimmetria nem ekvivalens | Magas, feltételhiány | HTML: szimmetrikus trapéz tengely szerinti meghatározása; a ferde paralelogramma kivétele |
+| Trapéz ábrája | Az alapok a és c jelűek voltak a jelöléskánon a és b jelölése helyett | Jelölési | SVG és leírás: a, b alapok; az érintőnégyszög külön meghatározott körbejárási jelölése megmaradt |
+| Bevezetők és példák | Túlzó stabilitási és „minden eldől” állítások, mérőrudas fordulat, eltérő mentor-nevek | Nyelvi / példahitelességi | HTML: konkrét tanulási célok; doboz, fordulás, ablak/képernyő és belmagasság |
+| 13 ábra | Rövid feliratokból nem állt össze a teljes kapcsolat | Hozzáférési hiány | Látható, kapcsolt részletes ábraleírások |
+
+A szereplők és a játékos keret megmaradtak; a térlecke lezárásában is Vanda és
+Fürge Pjotr szerepel. A radarpélda helyett egy téglatest alakú szoba belmagassága
+szemlélteti a párhuzamos síkok távolságát, kimondott vízszintes padlóval és
+párhuzamos mennyezettel. A ferde testátló ettől eltérő hosszúság. A belső kör
+az oldalszakaszokat érinti; a deltoid szimmetriaátlója a megadott csúcsjelöléshez
+kötve szerepel. Új feladat és új feladat-számadat nem készült.
+
+### Független lektor és matematika
+
+A kontextus nélküli lektor csak a három tananyag szövegét és ábraleírásait kapta,
+példamegoldások és válaszindexek nélkül. A hat kvíz válaszát önállóan megerősítette:
+nem feltétlenül párhuzamosak; kitérők; 63°; 50°; minden négyzet rombusz; 70°.
+A négy példát újraszámolta: 53° és 143°; 112°, 112°, 68°; 75°; AB = 23.
+A belmagasság, doboz, ablak és képernyő példáját megfelelőnek találta.
+Négy biztos feltételpontosítás és két biztos nyelvi javítás beépítve.
+A javított bekezdések újraolvasásakor nem talált biztos hibát vagy új félreértést.
+
+A húrnégyszög és az érintőnégyszög megfordítása konvex négyszögre helyes,
+ezek megmaradtak. Elsődleges kontroll:
+[A. F. Beardon: Pitot’s theorem, dynamic geometry and conics, The Mathematical Gazette](https://www.cambridge.org/core/journals/mathematical-gazette/article/abs/pitots-theorem-dynamic-geometry-and-conics/3E40A70B857EEEAAC5A6FDBAB4BF419B).
+
+Pontos/SymPy-kontroll: mind a négy számos példa; a téglatest háromdimenziós modellje
+és a tényleges SVG-vetülete, kitérő élek és közös normális; merőleges távolság
+minimuma; szögfajták, két ív végpontja és sugara; metsző egyenesek és két
+transzverzális metszéspont; paralelogramma átlófelezése, párhuzamos oldalai;
+trapézalapok és alapjelölések; rombusz/deltoid tulajdonságok szimbolikusan.
+A régi húrkör csúcs-sugártávolságainak kerekítési hibája 0,5 SVG-egységen,
+az érintőkör oldal-távolságainak hibája 0,1 egységen belüli, a vonalvastagságnál
+kisebb; ezek a rajzok nem módosultak. A húrkör szemközti szögösszege és a
+Pitot-összeg az eredeti kerekítéseknek megfelelően ellenőrizve.
+
+### Végleges ellenőrzések
+
+- **Megőrzés 33/33:** képek, linkek, média, kvízopciók, válaszindexek,
+  szkriptek, stílusok, példamegoldások és kvízvisszajelzések változatlanok.
+  Minden régi horgony megmaradt, 13 új leíráshorgony egyedi.
+  Az SVG-kben csak két ív, egy rajzkeret, egy alapjel és leíráskapcsolatok változtak.
+- **Böngésző:** három lap × 360/390/1280 px × nyitott/zárt lenyílók =
+  **18 nézet**, 0 oldaltúlcsordulás, képlethiba és JS-kivétel.
+  Minden SVG-felirat a rajzkeretén belül van. A síkábra csúcsai is elférnek.
+  A két szögív tényleges útvonala a megfelelő szögtartományban fut, végpontja
+  a száron van. Az analitikus sugár/végpont hibája egymilliomod egység alatti.
+  Az Edge útvonal-lekérdezésének numerikus közelítése külön, 0,002 SVG-egységes
+  tűréssel ellenőrzött; a kezdeti 0,001-es jelzés mérési közelítésből adódott,
+  nem új ábrahibából.
+- **Axe 18/0:** nincs jelzett szabályhiba. Ez nem teljes WCAG-igazolás.
+  Mind a 13 ábra neve és teljes leírása az Edge hozzáférhetőségi fájában szerepel.
+  A képletes leírások összevetése a MathML szövegét használja a KaTeX rejtett
+  rétegeivel megsokszorozott DOM-szöveg helyett.
+- Mind a **13 mobilos ábra** és három nyomtatási ábraminta szemrevételezve.
+  A világos ábrakártyák leírásszövegének legkisebb mért kontrasztja 9,20:1.
+- **JS nélkül:** három bevezető és 13 leírás látható.
+  **Nyomtatás 6/6**, JS be/ki: a vizsgált szövegek, lenyílók, SVG-k és leírások
+  láthatók; a kvízek a kánon szerint rejtettek.
+- **jsdom:** három lap, **121 képlet, 6/6 kvíz, 0 hiba**.
+  Teljes kánon és belső linkek **310/310, 0 hiba**; gyakorlósávok tiszták.
+- Kép → média → háttér: 0 módosítás; 334 médiaelem 139 lapon.
+  Naplótérkép változatlan: 184 oldal, 2294 feladat, 12315 XP.
+  A keresőindex 308 nem üres bejegyzéséből pontosan e három tananyag változott.
+  Backlog zárolt fejléce azonos; diff-ellenőrzés tiszta.
+- Feladatgyűjtemény, Végeredmény és kulcsmodul változatlan: a CLAUDE.md
+  feltételes előírása szerint kulcsteszt és regressziós érzékenységvizsgálat
+  ebben az adagban nem ismétlődött.
+
+### Korlátok és folytatás
+
+Valódi képernyőolvasó, más böngésző, teljes PDF-oldaltördelés, a képes hátterek
+teljes kézi kontrasztja és külső videók szövege nem ellenőrizve.
+JS nélkül a képletek TeX alakban maradnak.
+Az 1e/01–04 19 tananyaga és az 1e/05 első hat lapja, összesen 25 tananyag A3
+szerint átnézve. Az 1e/05 további három tananyaga és a többi lapfajta külön
+A3-ellenőrzése hátra van. Következő adag: sokszögek és kör, transzformációk, vektorok.
 **Tanári döntés kell: nincs új kérdés.** Helyi main-commit; új ág és push nélkül.

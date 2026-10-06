@@ -33,16 +33,13 @@
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
-      <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/dr_bizarr_w.webp" alt="Dr. Bizarr — a multiverzum térképésze" width="1200" height="670" decoding="async"><p>📡 <b>Dr. Bizarr:</b> A síkbeli térkép csak vetület. A valódi ütközet a <b>térben</b> zajlik —
-      ott két egyenes úgy is elkerülheti egymást, hogy közben nem is párhuzamos. Meg kell tanulnod olvasni a
-      három dimenziót: mikor metsz, mikor párhuzamos, mikor <b>kitérő</b>, és mit jelent a <b>merőlegesség</b> egy sík
-      felé. Enélkül nem tudod bemérni a portál pontos helyét.</p></div>
-    <p>A síkban két egyenes csak metsző vagy párhuzamos lehet. A térben egy <b>harmadik</b> lehetőség is megjelenik.
+      <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/dr_bizarr_w.webp" alt="Dr. Bizarr — a multiverzum térképésze" width="1200" height="670" decoding="async"><p>📡 <b>Dr. Bizarr:</b> Nézd meg egy doboz éleit: van köztük olyan pár, amelynek egyenesei nem találkoznak, mégsem párhuzamosak. Ezek a <b>kitérő egyenesek</b>. A Csatatér-térképen most a térbeli helyzeteket vizsgáljuk meg, és azt is, hogyan mérünk távolságot egy egyenestől vagy síktól.</p></div>
+    <p>A síkban két <b>különböző</b> egyenes metsző vagy párhuzamos lehet. A térben egy <b>harmadik</b> lehetőség is megjelenik.
     Nézzük végig a lehetséges helyzeteket.</p>
 
     <h2 id="s1">Két egyenes a térben</h2>
     <div class="doboz definicio" id="def-ket-egyenes">
-      <p class="cim"><span class="ikon">📗</span> Két egyenes: három eset</p>
+      <p class="cim"><span class="ikon">📗</span> Két különböző egyenes: három eset</p>
       <ul>
         <li><b>metsző</b>: <b>pontosan egy</b> közös pontjuk van (és így egy közös síkban vannak);</li>
         <li><b>párhuzamos</b>: nincs közös pontjuk, de <b>egy síkban</b> vannak, <span class="math inline">\(a\parallel b\)</span>;</li>
@@ -50,7 +47,7 @@
       </ul>
     </div>
     <div class="svgcard">
-      <svg viewBox="0 0 300 210" width="300" height="210" role="img" aria-label="Téglatest, benne egy alsó él és egy hátsó függőleges él mint kitérő egyenesek">
+      <svg viewBox="0 0 300 210" width="300" height="210" role="img" aria-describedby="abra-ter-es-tavolsag-1" aria-label="Téglatest, benne egy alsó él és egy hátsó függőleges él mint kitérő egyenesek">
         <!-- hátsó lap -->
         <polygon points="100,40 240,40 240,130 100,130" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
         <!-- összekötők -->
@@ -66,7 +63,7 @@
         <line x1="240" y1="40" x2="240" y2="130" stroke="#ef4444" stroke-width="3.5"/>
         <text x="248" y="90" font-size="14" fill="#ef4444" font-style="italic">b</text>
       </svg>
-      <div class="cap">Kitérő egyenesek: az \(a\) él és a \(b\) él nem metszik egymást, és nincs közös síkjuk.</div>
+      <div class="cap" id="abra-ter-es-tavolsag-1">A téglatest elülső lapja balra lent, a hátsó jobbra fent látható. Az \(a\) az elülső lap alsó élének, a \(b\) a hátsó lap jobb függőleges élének egyenesét jelöli. Nincs közös pontjuk és közös síkjuk: kitérők. A jobb oldali lap alsó éle mindkettőre merőleges összekötő szakasz.</div>
     </div>
 
     <h2 id="s2">Egyenes és sík</h2>
@@ -80,11 +77,10 @@
     </div>
     <div class="doboz definicio" id="def-meroleges-egyenes-sik">
       <p class="cim"><span class="ikon">📗</span> Merőleges egyenes és sík</p>
-      <p>Az egyenes akkor <b>merőleges</b> a síkra (<span class="math inline">\(e\perp\alpha\)</span>), ha merőleges a sík <b>minden</b> rajta áthaladó
-      egyenesére. Elég ellenőrizni: ha a döféspontban a sík <b>két</b> különböző egyenesére merőleges, akkor az egész síkra merőleges.</p>
+      <p>Az \(e\) egyenes akkor <b>merőleges</b> az \(\alpha\) síkra, ha egy \(T\) pontban metszi, és merőleges a sík <b>minden, a \(T\) ponton átmenő egyenesére</b>. Jelölése: \(e\perp\alpha\). Ehhez elég, ha a \(T\) ponton átmenő <b>két különböző síkbeli egyenesre</b> merőleges.</p>
     </div>
     <div class="svgcard">
-      <svg viewBox="0 0 300 200" width="300" height="200" role="img" aria-label="Vízszintes sík és rá merőleges függőleges egyenes derékszög-jellel">
+      <svg viewBox="0 0 300 200" width="300" height="200" role="img" aria-describedby="abra-ter-es-tavolsag-2" aria-label="Vízszintes sík és rá merőleges függőleges egyenes derékszög-jellel">
         <polygon points="40,150 210,150 260,110 90,110" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
         <text x="224" y="128" font-size="14" fill="#10b981" font-style="italic">α</text>
         <line x1="150" y1="130" x2="150" y2="30" stroke="#3b82f6" stroke-width="2.5"/>
@@ -92,7 +88,7 @@
         <rect x="150" y="115" width="15" height="15" fill="none" stroke="#64748b" stroke-width="1.5"/>
         <circle cx="150" cy="130" r="3.5" fill="#0f172a"/><text x="126" y="146" font-size="13" fill="#0f172a">T</text>
       </svg>
-      <div class="cap">\(e\perp\alpha\): az \(e\) egyenes merőleges az \(\alpha\) síkra, \(T\) a döféspont.</div>
+      <div class="cap" id="abra-ter-es-tavolsag-2">Az \(\alpha\) síkot egy vízszintes lap perspektivikus képe szemlélteti. A függőleges \(e\) egyenes a \(T\) pontban metszi a síkot, és merőleges rá. A derékszögjel a merőlegességet jelzi; a sík minden, \(T\)-n átmenő egyenese merőleges \(e\)-re.</div>
     </div>
 
     
@@ -110,46 +106,45 @@
     </div>
     <div class="venn">
       <div class="vbox">
-        <svg viewBox="0 0 200 160" width="200" height="160" role="img" aria-label="Két metsző sík közös metszésvonallal">
+        <svg viewBox="0 0 200 180" width="200" height="180" role="img" aria-describedby="abra-ter-es-tavolsag-3" aria-label="Két metsző sík közös metszésvonallal">
           <polygon points="100,20 100,150 30,170 30,40" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8"/>
           <polygon points="100,20 100,150 175,135 175,5" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.8"/>
           <line x1="100" y1="20" x2="100" y2="150" stroke="#ef4444" stroke-width="3"/>
           <text x="104" y="90" font-size="12" fill="#ef4444">m</text>
         </svg>
-        <div class="cap">Metsző síkok: \(m\) a metszésvonal</div>
+        <div class="cap" id="abra-ter-es-tavolsag-3">A két síkot két eltérő irányú lap szemlélteti. Közös részük a rajzon függőleges \(m\) egyenes, a metszésvonal. A síkoknak nem csupán egy közös pontjuk van: az \(m\) minden pontja mindkettőhöz tartozik.</div>
       </div>
       <div class="vbox">
-        <svg viewBox="0 0 200 160" width="200" height="160" role="img" aria-label="Két párhuzamos sík egymás felett">
+        <svg viewBox="0 0 200 160" width="200" height="160" role="img" aria-describedby="abra-ter-es-tavolsag-4" aria-label="Két párhuzamos sík egymás felett">
           <polygon points="30,70 150,70 190,40 70,40" fill="#ecfdf5" stroke="#10b981" stroke-width="1.8"/>
           <polygon points="30,130 150,130 190,100 70,100" fill="#ecfdf5" stroke="#10b981" stroke-width="1.8"/>
           <text x="158" y="60" font-size="13" fill="#10b981" font-style="italic">α</text>
           <text x="158" y="120" font-size="13" fill="#10b981" font-style="italic">β</text>
         </svg>
-        <div class="cap">Párhuzamos síkok: \(\alpha\parallel\beta\)</div>
+        <div class="cap" id="abra-ter-es-tavolsag-4">A felső lap az \(\alpha\), az alsó a \(\beta\) síkot szemlélteti. A két lap azonos irányú, és egymás fölött helyezkedik el. A síkok különbözők és párhuzamosak: nincs közös pontjuk, akármilyen messzire képzeljük is a folytatásukat.</div>
       </div>
     </div>
 
     <h2 id="s4">Távolság a térben</h2>
     <div class="doboz definicio" id="def-tavolsag">
       <p class="cim"><span class="ikon">📗</span> Távolság merőleges szakasszal</p>
-      <p>Az alábbi alakzatpároknál a <b>távolságot</b> a legrövidebb összekötő szakasz hossza adja. Ez a szakasz merőleges az érintett egyenesre vagy síkra.</p>
+      <p>Az alábbi alakzatpároknál a <b>távolságot</b> a legrövidebb összekötő szakasz hossza adja. Ha a két alakzatnak van közös pontja, a távolságuk nulla; különben az itt felsorolt esetekben a legrövidebb összekötő szakasz merőleges az érintett egyenesre vagy síkra.</p>
       <ul>
         <li><b>Pont és egyenes</b> távolsága: a pontból az egyenesre bocsátott merőleges szakasz hossza.</li>
         <li><b>Pont és sík</b> távolsága: a pontból a síkra bocsátott merőleges szakasz hossza.</li>
-        <li><b>Két párhuzamos</b> egyenes / sík távolsága: bármely merőleges „híd” hossza közöttük.</li>
+        <li><b>Két párhuzamos</b> egyenes / sík távolsága: bármely őket összekötő, rájuk merőleges szakasz hossza.</li>
         <li><b>Egyenes és vele párhuzamos sík</b> távolsága: az egyenes bármely pontjának a síktól mért távolsága — ez mindenütt ugyanannyi.</li>
-        <li><b>Két kitérő egyenes</b> távolsága: az a szakasz, amely <b>mindkettőre merőleges</b> (a közös normális). Ez a legrövidebb összekötő szakasz közöttük — a téglatest ábráján például a két kiemelt él között épp egy lapátló-irányú, mindkettőre merőleges szakasz.</li>
+        <li><b>Két kitérő egyenes</b> távolsága: az őket összekötő, <b>mindkettőre merőleges</b> szakasz hossza. A szakasz egyenesét <b>közös normálisnak</b> nevezzük. A téglatest ábráján a két kiemelt élt a jobb oldali lap alsó, elölről hátrafelé haladó éle köti össze merőlegesen.</li>
       </ul>
     </div>
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Kán csapdája</p>
-      A távolság <b>nem</b> akármelyik összekötő szakasz! Egy pontból az egyenesig sok szakaszt húzhatsz — a
+      A távolság <b>nem</b> akármelyik összekötő szakasz! Egy egyenesen kívüli pontból az egyenesig sok szakaszt húzhatsz — a
       <b>távolság</b> ezek közül a <b>legrövidebb</b>, ami mindig <b>merőleges</b> az egyenesre. A ferde szakasz mindig hosszabb.
     </div>
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
-      Egy repülőgép „magassága” a talaj felett a <b>merőleges</b> távolság a földsíktól — nem a rézsútos táv a
-      kifutópálya végéig. A radar valójában a <b>rézsútos</b> távolságot méri — a magasságot ebből és az emelkedési szögből számolja ki, épp a merőleges szakasz hosszaként.
+      Egy téglatest alakú helyiség <b>belmagassága</b> a vízszintes padló és a vele párhuzamos mennyezet távolsága. Ezt függőlegesen mérjük. A padló egyik sarkától a mennyezet túlsó sarkáig húzott ferde szakasz hosszabb: az a helyiség átlója, nem a magassága.
     </div>
     <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ A térben van harmadik eset is: a kitérő egyenesek — nincs közös pontjuk és nincs közös síkjuk." data-nem="✘ A térben két egyenes lehet metsző, párhuzamos VAGY kitérő — ez utóbbi a síkban nem fordul elő.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
@@ -160,9 +155,7 @@
 
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-geometria.html#alap-1">🐜 Henrik-bevetés <span class="cimke">Alap 1–2</span></a><a class="sav bruno" href="feladatok-geometria.html#kozep-1">💥 Brúnó-bevetés <span class="cimke">Közép 1</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/dr_bizarr.webp" alt="Dr. Bizarr — a multiverzum térképésze" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Dr. Bizarr:</b> A harctér feltérképezve. Innen átadom a stafétát Wandának és
-    Pietrónak: a <b>Tükör-világ</b> következik — a szögek, az alakzatok és az egybevágóság. Ott már nem csak nézed a
-    formákat, hanem <b>mozgatod</b> is őket.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/dr_bizarr.webp" alt="Dr. Bizarr — a multiverzum térképésze" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Dr. Bizarr:</b> Most már meg tudod különböztetni a térbeli helyzeteket, és tudod, melyik szakasz adja a távolságot. A következő leckében Vanda és Fürge Pjotr a <b>szögpárokat</b> mutatja meg.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-alapfogalmak.html"><span class="irany">← Előző</span><span class="hova">Alapfogalmak és a sík</span></a>
       <a class="kov" href="tananyag-szogek.html"><span class="irany">Következő →</span><span class="hova">Szögek és szögpárok</span></a>

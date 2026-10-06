@@ -569,3 +569,30 @@ Valódi képernyőolvasó, a többi összetett ábra, szolgáltatói médiafelü
 képes hátterek teljes kézi kontrasztja és JS nélküli képlet-felolvasás hátra van.
 Más böngészőt és teljes PDF-oldaltördelést nem minősítünk.
 **Tanári döntés kell: nincs új kérdés.**
+
+
+## Tizedik adag — 1e/05 tér, szögek és négyszögek, 13 ábra (2026-10-06)
+
+Három tananyag 13 SVG-je teljesebb, látható leírást kapott aria-describedby
+kapcsolattal. Kitérő egyenesek, merőleges egyenes/sík, síkpárok, szögfajták,
+csúcs- és mellékszögek, egyállású szögek, négyszögek átlói, trapézalapok,
+húr- és érintőkör szerepelnek. A közös világos ábrakártyák megmaradtak,
+oldalankénti CSS-kivétel nem készült.
+
+Két szögív pontos végpontot kapott, a metsző síkok korábban levágott sarka
+most elfér a bővített viewBox-ban; a trapéz alapjelölése a/b.
+Független geometriai kontroll és tényleges böngészős ívútvonal-mérés sikeres.
+Mind a 13 név és teljes leírás szerepel az Edge hozzáférhetőségi fájában;
+az ellenőrzés a MathML-t külön kezeli a KaTeX rejtett rétegeitől.
+
+Végleges böngésző/axe: **18 nézet, 0 elrendezési és szabályjelzés**.
+Nyomtatás JS be/ki **6/6**, 13 ábra/leírás látható; JS nélkül is olvashatók.
+13 mobilos ábra és három nyomtatási minta szemrevételezve.
+jsdom **121 képlet, 6/6 kvíz, 0 hiba**; teljes kánon/link **310/0**.
+Részletes lektor, megőrzés, matematikai és numerikus kontroll:
+[A3 hetedik adag](A3_nyelvi_ellenorzes.md).
+
+Valódi képernyőolvasó, a többi komplex ábra, szolgáltatói médiafelületek,
+képes hátterek teljes kézi kontrasztja és JS nélküli képlet-felolvasás hátra van.
+Más böngészőt és teljes PDF-oldaltördelést nem minősítünk.
+**Tanári döntés kell: nincs új kérdés.**
