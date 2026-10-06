@@ -290,7 +290,7 @@ K01 = [
   None, "$f^{-1}(x)=\\dfrac{x+6}{2}$; $f^{-1}(4)=5$."),
  ("Az $f(x)=ax+b$ lineáris függvényről tudjuk: $f(1)=5$ és $f(3)=11$. Határozd meg $a$-t, $b$-t, majd írd fel $f(x)$-et!",
   None, "$a=3$, $b=2$; $f(x)=3x+2$."),
- ("<b>Jelszó.</b> Egy kód 2 betűből (az $A,B,C,D$ közül) és 2 számjegyből ($0$–$9$) áll, az ismétlés megengedett. Hány különböző kód lehetséges?",
+ ("<b>Jelszó.</b> Egy kód első két helyére betűt írunk (az $A,B,C,D$ közül), az utolsó két helyére számjegyet ($0$–$9$). Az ismétlés megengedett. Hány különböző kód lehetséges?",
   None, "$1600$."),
 ]
 K01 = K01 + K01_UJ
@@ -302,11 +302,11 @@ N01 = [
  ("$f(x)=2x+1$, $g(x)=x^2$. Add meg $(f\\circ g)(x)$-et és $(g\\circ f)(x)$-et — egyenlők-e? Számítsd ki mindkettőt $x=3$-ra!",
   None, "$(f\\circ g)(x)=2x^2+1$, $(g\\circ f)(x)=4x^2+4x+1$; nem egyenlők. $(f\\circ g)(3)=19$, $(g\\circ f)(3)=49$."),
 ]
-brief01 = ("🕹️ <b>SZVETI:</b> Üdv a <b>Vészteremben</b>, kadét! Ez a <b>Vészterem</b> — a kampusz "
- "szimulációs edzőterme (a technológiát az X. Károly Intézet Mutáns Osztagától licenceltük). Itt otthon, a saját "
- "tempódban gyakorolsz két küldetés között. A szimuláció a <b>teljes témakört</b> lefedi: logika, halmazok, "
- "függvények. Haladj a fokozatokon: zöld (alap) → sárga (közép) → piros (nehéz). A végeredményt minden "
- "feladatnál lenyithatod — de előbb küzdd le magad!")
+brief01 = ("🕹️ <b>SZVETI:</b> Üdv a <b>Vészteremben</b>, kadét! A kampusz szimulációs edzőtermében "
+ "két küldetés között, a saját tempódban gyakorolhatsz. A felszerelést az X. Károly Intézet Mutáns "
+ "Osztagától kaptuk kölcsön; most a logikai, halmazos és függvényes feladatokon a sor. Haladj a "
+ "fokozatokon: zöld (alap) → sárga (közép) → piros (nehéz). A végeredményt minden feladatnál "
+ "lenyithatod, de előbb próbáld meg önállóan!")
 dr_page(DEST01, "index.html", "Logika, halmazok, függvények", "feladatok-hazi.html",
  "🕹️ Vészterem — házi feladatgyűjtemény",
  "Egyetlen, a teljes témakört lefedő házi feladatsor: logika, halmazok és függvények. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",

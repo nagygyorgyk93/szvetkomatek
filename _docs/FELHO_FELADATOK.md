@@ -270,7 +270,7 @@ A korábbi A1-ellenőrzések nem helyettesítik a teljes stilisztikai átnézés
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ◐ 01: 9, 02: 3, 03: 4, 04: 3, 05: 9, 06: 3, 07: 4, 08: 3 — mind a 38 tananyag teljes szövege átnézve és javítva; a többi lap külön A3-auditja hátra (helyi main, 2026-10-06) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
+| ◐ 01: 9, 02: 3, 03: 4, 04: 3, 05: 9, 06: 3, 07: 4, 08: 3 — mind a 38 tananyag és az 01 további 7 lapja átnézve és javítva; a 02–08 további lapjai hátra (helyi main, 2026-10-06) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
 
 Az első adag három függvényes, a második hat logikai és halmazos tananyagot
 ellenőrzött. A példák feltételei, bevezetők, átvezetők és matematikai pontatlanságok
@@ -329,6 +329,17 @@ nyomtatási tananyagrész javítva. Független lektor: 3/3 példa és 6/6 kvíz;
 SymPy-kontroll és 33/33 megőrzés. 18 végleges nézet/0, képletrender 171/0,
 kvíz 6/6, nyomtatás 6/6. Az 1e mind a 38/38 tananyaga kész; a többi
 lapfajta teljes A3-auditja hátra van.
+Tizenkettedik adag (2026-10-06): az 1e/01 hét további lapja és 132 kártyája
+átnézve. Nyitóoldali darabszámok, összefoglaló két matematikai hibája,
+logikai többértelműségek és hiányos válaszok, relációlista, modellfeltételek,
+kódsorrend és saját felmérés alaphalmaza javítva. Két független lektor;
+az átnevezett filmcím tanári pontosítással maradt, csak kijelentésként osztályozandó.
+Kánon/link 310/0, teljes kulcs 4499/4499 és regresszió 100%; végleges érintett
+kulcs/regresszió 145/145. Render 1133/0; 42 végleges nézet és axe/0,
+nyomtatás JS be/ki 14/14. Keresőindex 308/7 változott; naplótérkép változatlan.
+Új feladat-számadat, ág és push nincs. Új tanári döntés nem maradt nyitva.
+Az 1e/02–08 további lapfajtáinak és a 2e–4e teljes A3-auditja hátra van.
+
 Részletek:
 [A3 nyelvi ellenőrzés](A3_nyelvi_ellenorzes.md).
 Hátra van a többi tananyag, feladatgyűjtemény, nyitóoldal, összefoglaló és terepküldetés.

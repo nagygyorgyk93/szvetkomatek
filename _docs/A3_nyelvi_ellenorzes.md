@@ -3,8 +3,9 @@
 ## Hatókör és állapot
 
 **Jelenlegi összesítés:** az 1e mind a 38 tananyaglapjának teljes nyelvi és
-példahitelességi ellenőrzése elkészült tizenegy adagban. A feladatgyűjtemények,
-nyitóoldalak, összefoglalók és terepküldetések külön A3-ellenőrzése,
+példahitelességi ellenőrzése elkészült tizenegy adagban. A tizenkettedik adagban
+az 1e/01 hét további lapja is átnézve és javítva: nyitóoldal, összefoglaló,
+terepküldetés és négy feladatgyűjtemény. Az 1e/02–08 további lapfajtáinak,
 valamint a 2e–4e osztályok teljes A3-auditja hátra van. Az adagok alábbi
 adatai az egyes munkamenetek eredményei; a legfrissebb bejegyzés a végén található.
 
@@ -1165,3 +1166,111 @@ teljes A3-audit szerint átnézve. A feladatgyűjtemények, nyitóoldalak,
 összefoglalók, terepküldetések és a 2e–4e külön A3-auditja hátra van.
 **Tanári döntés kell:** új tartalmi kérdés nincs; a következő nagyobb adag
 sorrendjéről egyeztetés indult. Helyi main; új ág és push nem készült.
+
+
+## Tizenkettedik adag — 1e/01 további lapfajták (2026-10-06)
+
+### Hatókör és javítások
+
+Kiinduló revízió: `4ba162c`, tiszta helyi main, egy committal az origin/main
+helyi referenciája előtt. Távoli frissítés nem történt. A logika–halmazok–függvények
+témakör hét, tananyagon kívüli lapja teljes szöveggel átnézve:
+[nyitóoldal](../1e/01-logika-halmazok-fuggvenyek/index.html),
+[összefoglaló](../1e/01-logika-halmazok-fuggvenyek/osszefoglalo.html),
+[terepküldetés](../1e/01-logika-halmazok-fuggvenyek/terepkuldetes.html),
+[logika](../1e/01-logika-halmazok-fuggvenyek/feladatok-logika.html),
+[halmazok](../1e/01-logika-halmazok-fuggvenyek/feladatok-halmazok.html),
+[függvények](../1e/01-logika-halmazok-fuggvenyek/feladatok-fuggvenyek.html),
+[házi feladatsor](../1e/01-logika-halmazok-fuggvenyek/feladatok-hazi.html).
+Összesen 132 feladatkártya: 125 gyakorlókártya és a projekt hét kártyája.
+A részfeladatok ettől külön számolandók. SVG és kvíz nincs e hét lapon.
+
+Az 1e matematika-skill 01. témakörének kimenetei az alap: pontos matematikai
+nyelv, logikai és halmazműveletek, relációk, függvények, valamint az összeadási
+és szorzási számlálási szabály. Új tantervi követelmény nem keletkezett.
+Hat lap kézzel karbantartott; a builderkeresés nem talált hozzájuk generátort.
+A házit a `build_dangerroom.py` írja: csak az első témakör forrásrésze futott
+újra, a többi témakör kimenete nem változott. Utána az előírt lánc visszatette
+az avatart és a hátteret. Kézzel nem illesztettünk be médiát.
+
+Javítás előtt bemutatott hibatábla, a lektori kiegészítésekkel:
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Nyitóoldal | A halmazos alapfeladatok és a házi szintdarabszámok elavultak; a projektkártya megoldókulcsot ígért | Enyhe | HTML: tényleges darabszámok, saját felmérést említő leírás |
+| Összefoglaló | Az üres halmaz valódi részhalmazként szerepelt minden A-ra; a függvény képletében z nem volt kvantálva, a kvantorok hatóköre bizonytalan | Közepes, matematikai | HTML: részhalmazjel, külön létezési és egyértelműségi feltétel |
+| Összefoglaló nyelve és jelölése | Eldönthetőség összemosása az igazságértékkel; nyitott mondatnál kötött változó is beleérthető; pontatlan Descartes-mondat, idegen idézőjelek | Közepes / enyhe | HTML: szabad változó, értelmezés, magyar idézőjel, szabályos komplementer és világos zárójelek |
+| Logika alap 2, 6 és 9 | Felesleges p,q-feltétel; részben téves közös utasítás; a leves/saláta és a vezetői „vagy” kétféleképpen olvasható | Közepes, utasítás | HTML: pontos részfeladat-tartományok és konkrét választási feltételek |
+| Logika alap 3, 10 és 11 | A kért magyar fordítás vagy a p,q,r jelentése hiányzott a válaszból; −3 formalizálásánál mást írt a kulcs | Közepes, hiányos válasz | HTML: a kért végső mondatok és jelölések, levezetés nélkül |
+| Logika közép 10 és Joker | „Mindenkinek” önmagát is jelentette; a Joker „vagy”-ától kétféle megoldás függött | Közepes, többértelműség | HTML: minden másik hős; megengedő vagy kimondása |
+| Halmazok közép 5 | Egy reláció alaphalmaza hiányzott; a kért rendezett párok nem szerepeltek a válaszban, a tulajdonságlista részleges volt | Közepes, feltétel és válasz | HTML: alaphalmaz, kilenc pár és teljes tulajdonságlista; a hosszú lista több sorba tördelve |
+| Halmazos szöveges feladatok | A páronkénti létszámokról nem mondta ki, hogy tartalmazzák a hármas metszetet; a kézfogások ismétléséről nem nyilatkozott | Közepes, modell | HTML: az inkluzív létszám és a pontosan egyszeri kézfogás kimondása |
+| Függvények alap 1 | Az e)–f) más halmazai is az a)–d) közös A→B kérdésébe kerültek | Közepes, típus | HTML: külön a)–d) relációk és saját halmazokon megadott e)–f) függvények |
+| Függvényes modellek | Hiányzott a képletes alapértelmezés és több alkalmazás tartománya; a mobilszámla díjfajtái nem voltak kimondva | Közepes, feltétel | HTML: R→R alapértelmezés, külön alkalmazási korlátozások, egyszerű díjmodellek és az inverzek tartománya |
+| Házi közép 7 és bevezető | A kód karakterfajtáinak helye nem volt rögzítve; a bevezető ismétlődött és magyartalan volt | Közepes / enyhe | Builder: két betű után két számjegy; rövidebb, természetes szöveg |
+| Terepküldetés | U lehetett az egész osztály vagy csak a válaszadók; önmagára képezést kizáró hasonlat; az elitmondat számjegyek és függvényértékek összegét keverte | Közepes | HTML: válaszadók alaphalmaza, függvény pontos képfeltételei, függvényértékek összege |
+
+Természetesebb lett a terepküldetés és a Vészterem felvezetése; a játékos
+keret megmaradt. A felmérő konkrét összeállításáról szóló ellenőrizhetetlen
+ígéret helyére gyakorlási útmutató került. Új gyakorlófeladat vagy új
+feladat-számadat nem készült. A megtartott díjak egyszerű modellek,
+nem aktuális szolgáltatói ajánlatok. A példák adatai és számszerű válaszai
+megmaradtak; a hiányzó végső válaszrészek az eredeti feladatból számolva készültek.
+A korábban tanári döntéssel megtartott rövid bizonyításindoklásokat ez az
+A3-adag nem törölte. Terepküldetés-megoldókulcs nem került a publikus repóba.
+
+### Független lektor és tanári pontosítás
+
+Két projektkontextus nélküli lektor csak tanulói szöveget kapott. Az egyik
+önállóan megoldotta a 31 logikai kártyát, válaszok nélkül. A másik az
+összefoglaló definícióit és a projektfeladatokat vizsgálta. Az első kivonatból
+kimaradt fejléc miatt jelzett N-konvenció az oldalon már szerepelt; a teljes
+fejléccel megismételt kivonatban a lektor ezt igazolta. Biztos pontosításaik
+beépültek; az újraolvasás nem talált új biztos matematikai hibát. A kizáró vagy
+jelét az összefoglaló és a korábbi tananyag definiálja.
+
+Az alap 1/k filmcíméről a tanár pontosított: az átnevezés szándékos.
+Az átnevezett cím megmaradt; ennél a részfeladatnál csak a kijelentésként
+besorolás a kérdés, az igazságértékét nem kell megadni. A válasz ehhez igazodik.
+A lektor ezt önállóan megoldhatónak találta. Új tanári döntés nincs nyitva.
+
+Független kontroll: a függvény két feltétele 31 kis véges reláción, üres
+tartományokat is beleértve, pontosan az egyértékű teljes hozzárendelést adja.
+A tényleges HTML-ből kiolvasott kilenc relációpár megegyezik az abszolútérték
+szerint önállóan képzett párokkal; tulajdonságai ellenőrizve. SymPy igazolta a
+két alkalmazási inverz képletét, a tartományhatárokat és a nemnegatív idő/út
+kapcsolatát. A kódok darabszáma önálló felsorolással, a háromhalmazos
+létszámok és a projekt saját számolással ellenőrizve. Projekt-eredmények csak
+a repón kívüli bizonyítékban vannak. 28/28 megőrzési ellenőrzés: horgonyok,
+linkek, média és kártyalisták; a 132 kártya megmaradt.
+
+### Ellenőrzések és korlátok
+
+| Ellenőrzés | Eredmény |
+|---|---|
+| Teljes kánon és belső linkek | 310 oldal, 0 hiba |
+| Gyakorlósávok | Minden kártyát felad valamelyik egység |
+| Teljes kulcsteszt és regresszió | 4499/4499, 0 eltérés; 100% hibafelismerés |
+| Utolsó pontosítások utáni érintett kulcs és regresszió | Logika, halmazok, függvények: 145/145, 100%; a tesztelt logikai válaszblokkok változatlanok |
+| jsdom / képletrender | 7 lap, 1133 képlet, 0 render- vagy JS-hiba; nincs kvíz |
+| Edge mobil és asztali | Hét lap × 360/390/1280 px × zárt/nyitott válaszok: 42 végleges nézet, 0 hiba |
+| axe | 42 végleges nézet, 0 jelzés; nem teljes WCAG-minősítés |
+| Nyomtatás JS be/ki | 14/14: címsorok, feladatszövegek és 125 végeredmény látható; a projektnek nincs publikus lenyílókulcsa |
+| JavaScript nélkül | 7/7 lap szövege olvasható; a képletek TeX alakban maradnak |
+| Keresőindex | 308 nem üres bejegyzés, pontosan a hét lap változott; öt 3000. karakter utáni új részlet is benne van |
+| Naplótérkép | Változatlan: 184 egység, 2294 feladat, összesen 12315 XP |
+| Kép, média és háttér | A házi egy avatart és hátteret kapott vissza; 334 médiaelem/139 lap, médiaváltozás nélkül |
+
+A lektori és tanári pontosítások után az érintett lapok célzottan újramérve;
+a végleges nézetszám a legutolsó, megfelelő lapverziók összevonása. Négy
+mobilos feladatkártya szemrevételezve. A relációlista öt sorban olvasható,
+oldalankénti CSS-kivétel nélkül. Valódi képernyőolvasó, más böngésző,
+teljes PDF-oldaltördelés, háttérképek minden pontjára végzett kézi kontrasztmérés
+és külső média tartalmi ellenőrzése nem történt. A PDF-renderelő modul ebben
+a futtatókörnyezetben nem volt elérhető; a nyomtatási CSS és a tartalom
+láthatósága valódi Edge-ben ellenőrizve.
+
+**Állapot:** az 1e/01 kilenc tananyaga mellé most a hét további lap A3-auditja
+is elkészült. Az 1e/02–08 további lapfajtái és a 2e–4e teljes A3-auditja hátra
+van. **Tanári döntés kell: nincs nyitott kérdés.** Helyi main; új ág és push
+nem készült. Következő javasolt adag: az 1e/02 trigonometria további lapjai.
