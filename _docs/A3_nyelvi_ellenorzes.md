@@ -2,9 +2,9 @@
 
 ## Hatókör és állapot
 
-**Jelenlegi összesítés:** az 1e/01 kilenc, az 1e/02 három és az 1e/03 négy
-tananyaglapjának teljes nyelvi és példahitelességi ellenőrzése elkészült négy
-adagban. A
+**Jelenlegi összesítés:** az 1e/01 kilenc, az 1e/02 három, az 1e/03 négy és
+az 1e/04 három tananyaglapjának teljes nyelvi és példahitelességi ellenőrzése
+elkészült öt adagban. A
 feladatgyűjtemények, nyitóoldalak, összefoglalók és terepküldetések külön
 A3-ellenőrzése, valamint a többi témakör átnézése hátra van. Az adagok alábbi
 adatai az egyes munkamenetek eredményei; a legfrissebb bejegyzés a végén található.
@@ -402,3 +402,118 @@ a többi tananyag, feladatgyűjtemény, nyitóoldal, összefoglaló és terepkü
 teljes A3-auditja hátra van. Következő lehetséges adag: az 1e/04 arányosság
 három tananyaga. **Tanári döntés kell: nincs új kérdés.**
 Helyi main-commit; új ág és push nélkül.
+
+
+## Ötödik adag — 1e/04 arányosság (2026-10-06)
+
+### Hatókör és javítások
+
+A munka október 5-én indult a `9918338` revízióból, tiszta helyi `main` ágon,
+két committal az origin/main helyi referenciája előtt; erről a tanárt
+tájékoztattuk. A lezárás október 6-án történt. Távoli frissítés nem volt.
+A három tananyag teljes szövege, lenyíló megoldásai, példái és kvízei átnézve:
+[arány és arányosság](../1e/04-aranyossag/tananyag-arany-es-aranyossag.html),
+[százalék és keverék](../1e/04-aranyossag/tananyag-szazalek-es-keverek.html),
+[kamatszámítás](../1e/04-aranyossag/tananyag-kamatszamitas.html).
+Ezek kézzel karbantartott 1e-lapok; builder nem tartozik hozzájuk, a CLAUDE.md
+szerint közvetlenül javíthatók. Az 1e matematika-skill kimenetei és az
+arányosság módszertani útmutatója adta a tantárgyi alapot. A kimenetek az
+egyszerű kamatra helyezik a hangsúlyt; a meglévő kamatoskamat-rész és kvíze
+megmaradt, de kiegészítő anyagként szerepel.
+
+A javítás előtt bemutatott hibatábla:
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Egymás utáni százalékváltozás | A +50%, majd −40% után drágább árat állított | Magas, hibás következtetés | HTML: az 1,5 · 0,6 = 0,9 szorzó szerint az ár alacsonyabb |
+| Fogyásos példa | Az eredmény helyes, de az indoklás rossz alapértékre hivatkozott; az „eredményesség” célja nem egyértelmű | Közepes | HTML: műhelyi készletváltozás, ugyanazokkal a számokkal; a második százalék alapja a csökkent készlet |
+| Arányossági próba | A fordított arányosságnál is állandó hányadost keresett | Közepes, fogalmi | HTML: egyenesnél hányados, fordítottnál szorzat |
+| Aránypár, arányos osztás | Hiányzó feltételek; arányszámot tényleges értéknek nevezett | Fogalmi | HTML: nem nulla nevezők, pozitív osztandó és arányszámok; közös számú arányrész |
+| Munkavégzés, tapéta, keverés | A modellek feltételei hiányosak | Fogalmi | HTML: egyenlő teljesítmény, felosztható munka, azonos tekercsméret; térfogat- és hőmérsékletmodell feltételei |
+| Kamatszámítás | Az éves kamatláb, a futamidő és a tőkésítés kapcsolata hiányos | Fogalmi | HTML: közvetlen év/hónap/nap képletek, állandó éves kamatláb és év végi tőkésítés |
+| Kamatos kamat | Nem volt világosan jelölt kiegészítés az 1e kimeneteihez képest | Tananyagi | HTML: a meglévő rész és kvíz kiegészítő jelölése |
+| Bevezetők, átvezetők | Túlzó ígéretek és erőltetett fordulatok | Nyelvi | HTML: konkrétabb, természetesebb magyarázat |
+
+Hangya Henrik és Darázs Dorka, illetve a játékos keret megmaradt.
+A térképes példa légvonalbeli távolságot számol. A pénzváltás rögzített
+árfolyamú, díjmentes modell; a töltéses példa független, egyenletes munkát és
+elegendő töltőt feltételez. A testsúlyos helyzet helyett készletváltozás
+szerepel: a meglévő 72 kg, 8%, 10% és 72,864 kg változatlan. Minden meglévő
+feladat-számadat és helyes kvízválasz megmaradt. Új feladat nem készült.
+Az éves, havi és napi kamatképlet egymás alatt jelenik meg, hogy mindhárom
+telefonon is rögtön látható legyen; oldalankénti CSS-kivétel nincs.
+
+### Forráskontroll és a modellek határai
+
+A hitelajánlatok összevetésénél a díjak és az EKS szerepének rövid megnevezése
+a [Szerb Nemzeti Bank fogyasztói tájékoztatójával](https://tvojnovac.nbs.rs/sr-Latn-RS/finansijski_proizvodi/krediti)
+összhangban szerepel: a névleges kamatláb önmagában nem adja meg a hitel
+teljes költségét. A példák díj- és adómentes, állandó kamatlábú számítási
+modellek; a 360 napos számítási év választott modell, valódi ajánlatnál a
+megadott napszámolást is ellenőrizni kell. A megtartott H0, 1:87 modellvasút-
+példa méretarányát a [Märklin termékútmutatója](https://static.maerklin.de/damcontent/1d/0b/1d0bb9033af154bb5c58fa8989c7bff11655100549.pdf)
+is megadja.
+
+Az alkohololdatoknál térfogatszázalék és ideális térfogat-összeadódás szerepel.
+A vízkeverés azonos sűrűséget és fajhőt, elhanyagolt hőveszteséget és
+térfogatváltozást feltételez. Ezek kimondott modellek, nem a tényleges
+folyadékkeverés feltétel nélküli állításai. Az általános keverési szabály
+nemnegatív részmennyiségeket és pozitív összmennyiséget kér; eltérő
+összetevőjellemzőknél egyértelmű a felbontás. Két pozitív mennyiségnél az
+eredmény szigorúan a két jellemző közé esik. Azonos jellemzőkből az arány
+nem határozható meg, más céljellemző pedig nem érhető el.
+
+### Független lektor és számolás
+
+A web-verifikacio skill szerint kontextus nélküli lektor csak a három lap
+szövegét kapta, a példák lenyíló megoldásai és válaszindexek nélkül.
+Mind a **nyolc kvíz** helyes válaszát és minden számos példát önállóan
+megerősített; a kvízek a saját lapjuk alapján megválaszolhatók.
+Négy biztos pontosítása beépítve: a keverési szabály feltételei, az egyenes
+arányosság nem nulla szorzója a megadott tartományban, az „a G : P” névelő,
+illetve a századrész/ezredrész írásmód. A fordított százalékos mondat is
+egyértelműbb. A javított részek újraolvasásakor nem talált biztos hibát.
+
+A független pontos és SymPy-számolás ellenőrizte az aránypárt, a két
+összekapcsolt arányt, az arányos osztást, térképet, tapétát, munkavégzést,
+töltést; a százalék- és ezrelékszámítást, eredeti árakat, egymás utáni
+változásokat, területváltozást és mindkét keverést. Az egyszerű kamat
+év/hónap/nap képlete és a kamatos kamat példái is helyesek.
+A két hibás magyarázat javult: +50%, majd −40% → 0,9-szeres ár;
+72 · 0,92 · 1,10 = 72,864 kg → a kezdetinél több készlet.
+
+### Végleges ellenőrzések
+
+- **Megőrzés 30/30:** képek, linkek, média, kvízopciók, válaszindexek,
+  szkriptek, stílusok és minden régi horgony változatlan. A meglévő
+  megoldásszövegekben kizárólag a bemutatott arányrész-magyarázat és a
+  készletpélda változott. E három lapon nincs SVG.
+- **Böngésző:** három lap × 360/390/1280 px × zárt/nyitott lenyílók =
+  **18 végleges nézet**, 0 oldaltúlcsordulás, képlethiba és JS-kivétel.
+  A három futamidőképlet mindhárom szélességen gördítés nélkül elfér.
+- **Axe: 18/0 szabályjelzés.** A képes hátterek teljes kézi kontrasztvizsgálata
+  hátra van; ez nem teljes WCAG-igazolás.
+- **JS nélkül:** három lap bevezető szövege látható. **Nyomtatás: 6/6**
+  JS be/ki nézetben a vizsgált szövegek és lenyíló tartalmak láthatók;
+  a kvízek a kánon szerint rejtettek. A készletpélda és az árváltozás mobilos
+  képe, a végleges kamatképlet-kártya és a készletpélda nyomtatási képe
+  szemrevételezve.
+- **jsdom: három lap, 273 képlet, 8/8 kvíz, 0 hiba.**
+  Teljes kánon és belső linkek **310/310, 0 hiba**; a gyakorlósávok tiszták.
+- Kép → média → háttér: **0 módosítás**; 334 aktív médiaelem 139 lapon.
+  Naplótérkép változatlan: 184 oldal, 2294 feladat, 12315 XP.
+  A keresőindex 308 nem üres bejegyzéséből pontosan e három tananyag változott.
+  A backlog zárolt fejléce változatlan, a diff-ellenőrzés tiszta.
+- Feladatgyűjtemény, Végeredmény és kulcsmodul nem változott; a CLAUDE.md
+  feltételes előírása szerint a kulcsteszt és a regressziós érzékenységvizsgálat
+  ebben az adagban nem ismétlődött.
+
+### Korlátok és folytatás
+
+Valódi képernyőolvasó, más böngésző, teljes PDF-oldaltördelés és a külső videók
+szövege nem ellenőrizve. JS nélkül a képletek TeX alakban maradnak.
+Az 1e/01–04 összesen 19 tananyaga A3 szerint átnézve. A többi tananyag,
+feladatgyűjtemény, nyitóoldal, összefoglaló és terepküldetés teljes A3-auditja
+hátra van. Következő lehetséges adag: az 1e/05 síkgeometria tananyagai,
+először az alapfogalmak, a háromszögek és a nevezetes vonalak.
+**Tanári döntés kell: nincs új kérdés.** Helyi main-commit; új ág és push nélkül.

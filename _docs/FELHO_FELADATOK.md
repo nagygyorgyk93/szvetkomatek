@@ -270,7 +270,7 @@ A korábbi A1-ellenőrzések nem helyettesítik a teljes stilisztikai átnézés
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ◐ 01: 9, 02: 3, 03: 4 tananyag teljes szövege átnézve és javítva; a többi lap külön A3-auditja hátra (helyi main, 2026-10-05) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
+| ◐ 01: 9, 02: 3, 03: 4, 04: 3 tananyag teljes szövege átnézve és javítva; a többi lap külön A3-auditja hátra (helyi main, 2026-10-06) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
 
 Az első adag három függvényes, a második hat logikai és halmazos tananyagot
 ellenőrzött. A példák feltételei, bevezetők, átvezetők és matematikai pontatlanságok
@@ -283,7 +283,12 @@ képletrender 184/0, kvíz 6/6, nyomtatás 6/6. A negyedik adag az 1e/03 négy
 tananyaga: három hibás számhalmaz-felirat, a maradékos osztás egész változói,
 az LKO kitevőszövege, két rövid bizonyítás és a számítógépes/mérési példák
 pontosítva; három ábraleírás, 24 végleges nézet/0, képletrender 246/0,
-kvíz 9/9, nyomtatás 8/8. Részletek:
+kvíz 9/9, nyomtatás 8/8. Az ötödik adag az 1e/04 három tananyaga:
+a +50%, majd −40% hibás következtetése javult; a fogyásos példa helyett
+azonos számú készletváltozás, világos arányossági, munkavégzési és keverési
+feltételek, éves kamatláb és futamidő, kiegészítőként jelölt kamatos kamat.
+Mobilon egymás alatti futamidőképletek; független lektor és pontos újraszámolás,
+18 végleges nézet/0, képletrender 273/0, kvíz 8/8, nyomtatás 6/6. Részletek:
 [A3 nyelvi ellenőrzés](A3_nyelvi_ellenorzes.md).
 Hátra van a többi tananyag, feladatgyűjtemény, nyitóoldal, összefoglaló és terepküldetés.
 
