@@ -26,42 +26,55 @@
 </nav>
 <div class="hero">
   <h1>Arányosság — tömör összefoglaló</h1>
-  <p class="alcim">A Zsugor-protokoll minden definíciója, szabálya és képlete egy helyen — a bevetési kártya. Ismétléshez, ellenőrző előtti átfutáshoz, nyomtatáshoz. 😉</p>
+  <p class="alcim">Arányok, százalékok, keverékek és kamatszámítás: a legfontosabb fogalmak és képletek. Ismétléshez, ellenőrző előtti áttekintéshez; ki is nyomtathatod.</p>
 </div>
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s1">Arány, aránypár, összetett arány</h2>
-    <p><b>Arány:</b> <span class="math inline">\(a:b=\dfrac{a}{b}\)</span> (<span class="math inline">\(ab\neq 0\)</span>) — az előtag és az utótag hányadosa (<a href="tananyag-arany-es-aranyossag.html#def-arany">→ tananyag</a>). <b>Aránypár:</b> <span class="math inline">\(a:b=c:d\)</span>; a <span class="math inline">\(a,d\)</span> a kültagok, a <span class="math inline">\(b,c\)</span> a beltagok (<a href="tananyag-arany-es-aranyossag.html#def-aranypar">→</a>).</p>
-    <p><b>Alaptétel (keresztszorzat):</b> <span class="math inline">\(a:b=c:d\iff a d=b c\)</span> — ezzel oldunk meg minden ismeretlenes aránypárt (<a href="tananyag-arany-es-aranyossag.html#tetel-keresztszorzat">→</a>).</p>
-    <p><b>Összetett arány:</b> <span class="math inline">\(a:b:c\)</span>; két láncból (<span class="math inline">\(x:y\)</span> és <span class="math inline">\(y:z\)</span>) a közös tag egyenlővé tételével kapjuk (<a href="tananyag-arany-es-aranyossag.html#def-osszetett">→</a>).</p>
+    <p><b>Arány:</b> <span class="math inline">\(a:b=\dfrac{a}{b}\)</span> (<span class="math inline">\(b\ne0\)</span>) — két valós szám hányadosa: az előtagot osztjuk az utótaggal (<a href="tananyag-arany-es-aranyossag.html#def-arany">→ tananyag</a>). <b>Aránypár:</b> <span class="math inline">\(a:b=c:d\)</span> (<span class="math inline">\(b,d\ne0\)</span>); <span class="math inline">\(a\)</span> és <span class="math inline">\(d\)</span> a kültagok, <span class="math inline">\(b\)</span> és <span class="math inline">\(c\)</span> a beltagok (<a href="tananyag-arany-es-aranyossag.html#def-aranypar">→</a>).</p>
+    <p><b>Alaptétel (keresztszorzat):</b> <span class="math inline">\(a:b=c:d\iff a d=b c\)</span>  (<span class="math inline">\(b,d\ne0\)</span>). Az ismeretlent a keresztszorzattal kapott egyenletből határozzuk meg, és ellenőrizzük, hogy az eredeti nevezők nem nullák (<a href="tananyag-arany-es-aranyossag.html#tetel-keresztszorzat">→</a>).</p>
+    <p><b>Összetett arány:</b> <span class="math inline">\(a:b:c\)</span>; például a <span class="math inline">\(x:y\)</span> és <span class="math inline">\(y:z\)</span> arányokból állítjuk össze. Az arányokat úgy bővítjük, hogy a közös <span class="math inline">\(y\)</span> tag ugyanakkora legyen; a bővítés tényezője nem lehet nulla (<a href="tananyag-arany-es-aranyossag.html#def-osszetett">→</a>).</p>
     <p><b>Méretarány:</b> a rajzon mért és a valós hossz aránya azonos egységben, pl. <span class="math inline">\(1:150\,000\)</span> (<a href="tananyag-arany-es-aranyossag.html#def-meretarany">→</a>).</p>
-    <p><b>Arányos elosztás:</b> <span class="math inline">\(S\)</span>-et <span class="math inline">\(a:b:c\)</span> arányban egy rész <span class="math inline">\(\dfrac{S}{a+b+c}\)</span>, az adagok ennek <span class="math inline">\(a\)</span>-, <span class="math inline">\(b\)</span>-, <span class="math inline">\(c\)</span>-szorosa (<a href="tananyag-arany-es-aranyossag.html#def-osztas">→</a>).</p>
+    <p><b>Arányos elosztás:</b> pozitív <span class="math inline">\(a,b,c\)</span> aránytagokra, ha az elosztandó összeg <span class="math inline">\(S\)</span>, egy rész <span class="math inline">\(\dfrac{S}{a+b+c}\)</span>, az adagok ennek <span class="math inline">\(a\)</span>-, <span class="math inline">\(b\)</span>-, <span class="math inline">\(c\)</span>-szorosa (<a href="tananyag-arany-es-aranyossag.html#def-osztas">→</a>).</p>
 
     <h2 id="s2">Egyenes és fordított arányosság</h2>
     <table class="tabla-nevezetes">
-      <thead><tr><th></th><th>Egyenes</th><th>Fordított</th></tr></thead>
+      <caption>Egyenes arányosság</caption>
+      <thead><tr><th>Tulajdonság</th><th>Összefüggés</th></tr></thead>
       <tbody>
-      <tr><th>feltétel</th><td>hányados állandó: <span class="math inline">\(\dfrac{y}{x}=k\)</span></td><td>szorzat állandó: <span class="math inline">\(x\cdot y=l\)</span></td></tr>
-      <tr><th>összefüggés</th><td><span class="math inline">\(y=kx\)</span></td><td><span class="math inline">\(y=\dfrac{l}{x}\)</span></td></tr>
-      <tr><th>aránypár</th><td><span class="math inline">\(\dfrac{y_1}{y_2}=\dfrac{x_1}{x_2}\)</span></td><td><span class="math inline">\(\dfrac{y_1}{y_2}=\dfrac{x_2}{x_1}\)</span></td></tr>
+      <tr><th>Képlet</th><td><span class="math inline">\(y=kx\)</span>, ahol <span class="math inline">\(k\)</span> állandó.</td></tr>
+      <tr><th>Hányados</th><td><span class="math inline">\(\dfrac{y}{x}=k\)</span>, ha <span class="math inline">\(x\ne0\)</span>.</td></tr>
+      <tr><th>Aránypár</th><td><span class="math inline">\(\dfrac{y_1}{y_2}=\dfrac{x_1}{x_2}\)</span>, ha <span class="math inline">\(k,x_2\ne0\)</span>.</td></tr>
       </tbody></table>
-    <p>Több szereplő egyszerre változik (munkás · óra · nap): mindig gondold végig, melyik hogyan hat — a naiv „ugyanannyi” gyakran csapda (<a href="tananyag-arany-es-aranyossag.html#s4">→ tananyag</a>).</p>
-
+    <table class="tabla-nevezetes">
+      <caption>Fordított arányosság</caption>
+      <thead><tr><th>Tulajdonság</th><th>Összefüggés</th></tr></thead>
+      <tbody>
+      <tr><th>Szorzat</th><td><span class="math inline">\(x\cdot y=l\)</span>, ahol <span class="math inline">\(l\ne0\)</span> állandó.</td></tr>
+      <tr><th>Képlet</th><td><span class="math inline">\(y=\dfrac{l}{x}\)</span>, ha <span class="math inline">\(x\ne0\)</span>.</td></tr>
+      <tr><th>Aránypár</th><td><span class="math inline">\(\dfrac{y_1}{y_2}=\dfrac{x_2}{x_1}\)</span>, ha <span class="math inline">\(x_1,x_2\ne0\)</span>.</td></tr>
+      </tbody></table>
+    <p>A munkás–óra–nap feladatokban az elkészült munka a létszámmal és a munkaidővel arányos, ha mindenki azonos, állandó tempóban dolgozik, és a munkát meg lehet osztani. A feladatok modellje nem számol az együttműködésből eredő időveszteséggel
+    (<a href="tananyag-arany-es-aranyossag.html#s4">→ tananyag</a>).</p>
     <h2 id="s3">Százalék és ezrelék</h2>
-    <p><b>Alapösszefüggés:</b> <span class="math inline">\(G:P=100:p\)</span>, azaz <span class="math inline">\(P=\dfrac{G\,p}{100}\)</span>; <span class="math inline">\(p=\dfrac{P\cdot 100}{G}\)</span>; <span class="math inline">\(G=\dfrac{P\cdot 100}{p}\)</span> — alapérték <span class="math inline">\(G\)</span>, százalékérték <span class="math inline">\(P\)</span>, százalékláb <span class="math inline">\(p\)</span> (<a href="tananyag-szazalek-es-keverek.html#def-gpp">→ tananyag</a>). <b>Ezrelék</b> (jele: ‰): az ezred rész, <span class="math inline">\(\dfrac{p}{1000}\)</span>.</p>
-    <p><b>Növelés/csökkentés szorzóval:</b> <span class="math inline">\(G\cdot\big(1\pm\tfrac{p}{100}\big)\)</span>; a fordított feladatnál <b>osztunk</b> ezzel a szorzóval (<a href="tananyag-szazalek-es-keverek.html#tetel-novel-csokkent">→</a>).</p>
-    <p><b>Egymás utáni változás:</b> a szorzók <b>összeszorzódnak</b>, nem összeadódnak: <span class="math inline">\(G\big(1\pm\tfrac{p_1}{100}\big)\big(1\pm\tfrac{p_2}{100}\big)\)</span>. Pl. <span class="math inline">\(+25\%\)</span> és <span class="math inline">\(-25\%\)</span> területre <span class="math inline">\(0{,}9375\)</span> (<span class="math inline">\(-6{,}25\%\)</span>) (<a href="tananyag-szazalek-es-keverek.html#tetel-egymasutan">→</a>).</p>
+    <p><b>Alapösszefüggés:</b> <span class="math inline">\(P=\dfrac{G\,p}{100}\)</span>, ahol <span class="math inline">\(G\)</span> az alapérték, <span class="math inline">\(P\)</span> a százalékérték és <span class="math inline">\(p\)</span> a százalékláb. Visszaszámítás: <span class="math inline">\(p=\dfrac{P\cdot100}{G}\)</span>, ha <span class="math inline">\(G\ne0\)</span>; <span class="math inline">\(G=\dfrac{P\cdot100}{p}\)</span>, ha <span class="math inline">\(p\ne0\)</span>
+    (<a href="tananyag-szazalek-es-keverek.html#def-gpp">→ tananyag</a>). <b>Ezrelék:</b> egy ezrelék az egész ezredrésze; <span class="math inline">\(p\)</span>‰ az egész <span class="math inline">\(\dfrac{p}{1000}\)</span> része.</p>
+    <p><b>Növelés/csökkentés szorzóval:</b> <span class="math inline">\(G\cdot\big(1\pm\tfrac{p}{100}\big)\)</span>; az eredeti értéket a megváltozott értékből a szorzóval <b>osztva</b> kapjuk, ha a szorzó nem nulla. 100%-os csökkentésből az eredeti érték nem állapítható meg (<a href="tananyag-szazalek-es-keverek.html#tetel-novel-csokkent">→</a>).</p>
+    <p><b>Egymás utáni változás:</b> a szorzók <b>összeszorzódnak</b>, nem összeadódnak: <span class="math inline">\(G\big(1\pm\tfrac{p_1}{100}\big)\big(1\pm\tfrac{p_2}{100}\big)\)</span>. Pl. <span class="math inline">\(25\%\)</span>-os növelést követő <span class="math inline">\(25\%\)</span>-os csökkentés után az eredeti érték <span class="math inline">\(0{,}9375\)</span>-szorosát kapjuk: a csökkenés <span class="math inline">\(6{,}25\%\)</span> (<a href="tananyag-szazalek-es-keverek.html#tetel-egymasutan">→</a>).</p>
 
     <h2 id="s4">Keverékszámítás</h2>
-    <p><b>Keverési szabály</b> (idealizált, lineáris; azonos mértékegység!): \[m_1+m_2=m,\qquad c_1 m_1+c_2 m_2=c\,m,\] ahol <span class="math inline">\(c\)</span> a keverék töménysége (koncentráció, ár, hőmérséklet). A két egyenletből az ismeretlen mennyiségek adódnak (<a href="tananyag-szazalek-es-keverek.html#def-keverek">→ tananyag</a>).</p>
+    <p><b>Keverési szabály</b> (idealizált, lineáris; azonos mértékegység!): \[m_1+m_2=m,\qquad c_1 m_1+c_2 m_2=c\,m,\] ahol <span class="math inline">\(m_1,m_2\)</span> a két összetevő mennyisége, <span class="math inline">\(m\)</span> az összmennyiség, <span class="math inline">\(c_1,c_2\)</span> az összetevők jellemzőértékei, <span class="math inline">\(c\)</span> pedig a keverék súlyozott jellemzőértéke, például koncentrációja vagy egységára. A mennyiségek és a jellemzők azonos fajtájúak és mértékegységűek legyenek. Literes oldatfeladatoknál térfogatszázalékkal és összeadódó térfogatokkal számolunk; grammos ötvözeteknél a nemesfém tömegarányával. Vízkeverésnél azonos sűrűséget és fajhőt feltételezünk, a hőveszteséget és a térfogatváltozást elhanyagoljuk. A két egyenletből számítjuk az ismeretleneket (<a href="tananyag-szazalek-es-keverek.html#def-keverek">→ tananyag</a>).</p>
 
     <h2 id="s5">Kamatszámítás</h2>
-    <p><b>Egyszerű kamat</b> (a tőke végig változatlan): <span class="math inline">\(T:K=100:p\)</span>, azaz <span class="math inline">\(K=\dfrac{T\,p}{100}\)</span> egy évre (<a href="tananyag-kamatszamitas.html#def-kamat">→ tananyag</a>). Tőke <span class="math inline">\(T\)</span>, kamat <span class="math inline">\(K\)</span>, kamatláb <span class="math inline">\(p\)</span>.</p>
-    <p><b>Rövidebb futamidő:</b> <span class="math inline">\(K=\dfrac{T\,p\,h}{1200}\)</span> hónapra, <span class="math inline">\(K=\dfrac{T\,p\,n}{36000}\)</span> napra (az évet <span class="math inline">\(360\)</span> nappal) (<a href="tananyag-kamatszamitas.html#tetel-honap-nap">→</a>). <b>Kamatos kamat:</b> <span class="math inline">\(T_n=T\big(1+\tfrac{p}{100}\big)^n\)</span>.</p>
+    <p><b>Egyszerű kamat:</b> végig az eredeti <span class="math inline">\(T\)</span> tőkéből számolunk, állandó <span class="math inline">\(p\)</span> <b>éves</b> kamatlábbal. Egy évre <span class="math inline">\(K=\dfrac{T\,p}{100}\)</span> a kamat, <span class="math inline">\(e\)</span> évre <span class="math inline">\(K=\dfrac{T\,p\,e}{100}\)</span>. A tőke és a kamat együtt <span class="math inline">\(T+K\)</span>
+    (<a href="tananyag-kamatszamitas.html#def-kamat">→ tananyag</a>).</p>
+    <p><b>Hónapra és napra:</b> <span class="math inline">\(h\)</span> hónapra <span class="math inline">\(K=\dfrac{T\,p\,h}{1200}\)</span>, <span class="math inline">\(n\)</span> napra <span class="math inline">\(K=\dfrac{T\,p\,n}{36000}\)</span>. A hónapos képlet 12 hónapos, a napos 360 napos <b>számítási évvel</b> dolgozik. Valós ajánlatnál a megadott napelszámolást kell használni
+    (<a href="tananyag-kamatszamitas.html#tetel-honap-nap">→</a>).</p>
+    <p><b>Kiegészítés — kamatos kamat:</b> állandó éves kamatláb és évenkénti tőkésítés mellett <span class="math inline">\(n\)</span> egész számú év után <span class="math inline">\(T_n=T\big(1+\tfrac{p}{100}\big)^n\)</span>. Közben nem fizetünk be és nem veszünk ki pénzt. Az alapfeladatok nem számolnak külön díjakkal vagy adóval.</p>
 
     <div class="gyakorolj">
       <span class="ikon">🎯</span>
-      <p>Élesben: a <a href="feladatok-aranyossag.html">feladatgyűjtemény</a> gyakorló ellenőrzőjével mérd fel magad, majd a <a href="terepkuldetes.html">Zsugor-protokoll terepküldetésen</a> alkalmazd!</p>
+      <p>Gyakorláshoz: a <a href="feladatok-aranyossag.html">feladatgyűjtemény</a> gyakorló ellenőrzőjével mérd fel magad, majd a <a href="terepkuldetes.html">Zsugor-protokoll terepküldetésen</a> alkalmazd!</p>
     </div>
     <div class="lapozo">
       <a class="elozo" href="feladatok-aranyossag.html"><span class="irany">← Előző</span><span class="hova">Feladatgyűjtemény</span></a>

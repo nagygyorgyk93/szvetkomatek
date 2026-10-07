@@ -161,7 +161,7 @@ A04_UJ = [
  ("Egy bolt februárban $20\\%$-kal <b>megemeli</b> egy termék árát, majd márciusban ugyanennek a "
   "terméknek az árát $20\\%$-kal <b>csökkenti</b>.",
   ["Visszakapjuk-e az eredeti árat? Számolj $2000$ dináros kiinduló árral!",
-   "Miért nem esik egybe a két $20\\%$? Fogalmazd meg egy mondatban!",
+   "Miért nem ugyanakkora összeg az áremelés és az árcsökkentés? Fogalmazd meg egy mondatban!",
    "Hány százalékkal kellene márciusban csökkenteni, hogy pontosan az eredeti árat kapjuk vissza? "
    "(Kerekíts egy tizedesre.)"],
   ['Nem: az új ár $1920$ dinár, $80$ dinárral kevesebb.',
@@ -170,7 +170,7 @@ A04_UJ = [
    'Kb. $16{,}7\\%$-kal.']),
 ]
 K04_UJ = [
- ("Két táblázat, két különböző kapcsolat:"
+ ("Egy táblázat, két különböző kapcsolat:"
   "<div class=\"tblwrap\"><table><thead><tr><th>$x$</th><td>$2$</td><td>$4$</td><td>$6$</td>"
   "<td>$12$</td></tr></thead><tbody><tr><th>$A$</th><td>$5$</td><td>$10$</td><td>$15$</td>"
   "<td>$30$</td></tr><tr><th>$B$</th><td>$30$</td><td>$15$</td><td>$10$</td><td>$5$</td>"
@@ -435,7 +435,7 @@ A04 = [
   ["$8:x=3:12$","$(x+4):5=x:3$","Egy $1:20\\,000$ méretarányú térképen a táv $7$ cm — mennyi a valóságban?"],
   ["$x=32$","$x=6$","$1{,}4$ km"], True),
  ("Elosztás és arányosság.",
-  ["Ossz szét $5400$ dinárt $4:5$ arányban.","$6$ pumpa $9$ óra alatt tölt fel egy tartályt — hány óra kell $9$ pumpának?","$4$ kg alma $520$ din — mennyibe kerül $7$ kg?"],
+  ["Ossz szét $5400$ dinárt $4:5$ arányban.","$6$ szivattyú $9$ óra alatt tölt fel egy tartályt — hány óra kell $9$ szivattyúnak?","$4$ kg alma $520$ din — mennyibe kerül $7$ kg?"],
   ["$2400$ és $3000$ din","$6$ óra","$910$ din"]),
  ("Százalék — a három alaptípus.",
   ["$2400$ $35\\%$-a","$180$ hány $\\%$-a a $720$-nak?","Egy szám $8\\%$-a $40$ — mennyi a szám?"],
@@ -446,28 +446,29 @@ A04 = [
 ]
 A04 = A04 + A04_UJ
 K04 = [
- ("Összetett arány és munkaidő-elosztás.",
+ ("Összetett arány és munkaidő szerinti elosztás. Az óradíj mindkét embernél azonos.",
   ["$x:y=2:5$ és $y:z=3:4$ — add meg $x:y:z$-t","$154\\,000$ din: egyik $10$ napot napi $8$ órával, másik $12$ napot napi $5$ órával dolgozott — mennyit kap fejenként?"],
   ["$6:15:20$","$88\\,000$ és $66\\,000$ din"]),
  ("Egymás utáni százalékváltozás.",
   ["$50\\,000$ din-t előbb $20\\%$-kal emelnek, majd $10\\%$-kal csökkentenek — mennyi a végső ár?","Egy téglalap szélessége $+30\\%$, hossza $-30\\%$ — hány $\\%$-kal változik a terület?"],
   ["$54\\,000$ din","$9\\%$-kal csökken"]),
- ("Kamatszámítás.",
+ ("Egyszerű kamat állandó éves kamatlábbal. A napos futamidőnél 360 napos számítási évet használj!",
   ["$120\\,000$ din $9\\%$-os kamatlábbal $8$ hónap alatt mennyi kamatot hoz?","Mekkora kamatláb hoz $200\\,000$ din után $60$ nap alatt $2000$ din kamatot?"],
   ["$7200$ din","$6\\%$"]),
 ]
 K04 = K04 + K04_UJ
 N04 = [
- ("A Henrik Tech $400\\,000$ dinárt fektet be $2$ évre. Az <b>A</b> bank $10\\%$ egyszerű kamatot, a <b>B</b> bank $9\\%$ kamatos kamatot kínál. Melyiknél lesz több pénz $2$ év múlva, és mennyivel?",
+ ("<b>Kiegészítés — kamatos kamat.</b> A Henrik Tech $400\\,000$ dinárt fektet be $2$ évre. Az <b>A</b> bank $10\\%$ éves egyszerű kamatot, a <b>B</b> bank $9\\%$ éves kamatos kamatot, évenkénti tőkésítéssel kínál. Külön díjjal vagy adóval nem számolunk, közben nincs befizetés vagy pénzkivétel. Melyiknél lesz több pénz $2$ év múlva, és mennyivel?",
   None, "$A$: $480\\,000$, $B$: $475\\,240$ → az $A$ a jobb, $4760$ dinárral."),
 ]
-brief04 = ("🕹️ <b>SZVETI:</b> <b>Vészterem</b>-szimuláció, Zsugor-protokoll modul. Ez a <b>Vészterem</b> otthoni "
- "edzésváltozata — itt gyakorolsz a saját tempódban. A szimuláció a <b>teljes témakört</b> lefedi: arány és arányos "
- "osztás, egyenes és fordított arányosság, méretarány, keverék, százalék, ezrelék és kamat. Haladj a fokozatokon: "
- "zöld (alap) → sárga (közép) → piros (nehéz). A végeredményt minden feladatnál lenyithatod — de előbb küzdd le magad!")
+brief04 = ("🕹️ <b>SZVETI:</b> A <b>Vészteremben</b> arányokkal, százalékokkal és kamattal számolsz. "
+ "Haladj a zöld feladatoktól a sárgák, majd a piros felé. Előbb oldd meg a feladatot, aztán ellenőrizd a végeredményt! "
+ "A szivattyúk egyformák, állandó teljesítménnyel, időveszteség nélkül dolgoznak; az alma egységára állandó. "
+ "A keverési modell térfogatszázalékokkal és összeadódó térfogatokkal számol. Az aránypárok ismeretlenje valós szám, "
+ "a nevezők nem lehetnek nullák. A kamatos kamattal foglalkozó feladat kiegészítés.")
 dr_page(DEST04, "index.html", "Arányosság", "feladatok-hazi.html",
  "🕹️ Vészterem — házi feladatgyűjtemény",
- "Egyetlen, a teljes témakört lefedő házi feladatsor: arány, arányos osztás, egyenes és fordított arányosság, méretarány, keverék, százalék és kamat. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
+ "Házi feladatsor az arányosság fő feladattípusaival. Előbb dolgozz önállóan, aztán nyisd le a végeredményt!",
  brief04, sect(A04, K04, N04),
  "index.html", "Témakör Főhadiszállása", "osszefoglalo.html", "Tömör összefoglaló",
  "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")

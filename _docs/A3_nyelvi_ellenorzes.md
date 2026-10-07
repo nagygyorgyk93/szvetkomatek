@@ -4,11 +4,11 @@
 
 **Jelenlegi összesítés:** az 1e mind a 38 tananyaglapjának teljes nyelvi és
 példahitelességi ellenőrzése elkészült tizenegy adagban. A tizenkettedik–
-tizennegyedik adagban az 1e/01 hét, az 1e/02 öt és az 1e/03 öt további lapja
-is átnézve és javítva: nyitóoldalak, összefoglalók, terepküldetések és
-feladatgyűjtemények. Az 1e/04–08 további lapfajtáinak és a 2e–4e teljes
-A3-auditja hátra van. Az adagok alábbi adatai az egyes munkamenetek
-eredményei; a legfrissebb bejegyzés a végén található.
+tizenötödik adagban az 1e/01 hét, az 1e/02, 03 és 04 öt-öt további lapja
+is átnézve és javítva, összesen 22 lap: nyitóoldalak, összefoglalók,
+terepküldetések és feladatgyűjtemények. Az 1e/05–08 további lapfajtáinak
+és a 2e–4e teljes A3-auditja hátra van. Az adagok alábbi adatai az egyes
+munkamenetek eredményei; a legfrissebb bejegyzés a végén található.
 
 **2026-10-05, első adag:** az 1e/01 három függvényes tananyaglapjának teljes szövegét
 átnéztük, a bevezetőktől az összefoglalóig. A tanár kérése szerint az egyértelműen
@@ -1471,3 +1471,126 @@ A nyomtatási láthatóság valódi Edge-ben ellenőrizve.
 A3-audit szerint átnézve. Az 1e/04–08 további lapjai és a 2e–4e teljes
 A3-auditja hátra van. **Tanári döntés kell: nincs nyitott kérdés.**
 Helyi main, új ág és push nélkül. Következő javasolt adag: az 1e/04 további lapjai.
+
+
+## Tizenötödik adag — 1e/04 további lapfajták (2026-10-06–07)
+
+### Hatókör és javítások
+
+Kiinduló revízió: `5f21cec`, tiszta helyi main, három committal az origin/main
+helyi referenciája előtt, mögötte nulla. Távoli frissítés nem történt.
+Az arányosság öt további lapja teljes szöveggel átnézve:
+[nyitóoldal](../1e/04-aranyossag/index.html),
+[összefoglaló](../1e/04-aranyossag/osszefoglalo.html),
+[terepküldetés](../1e/04-aranyossag/terepkuldetes.html),
+[feladatgyűjtemény](../1e/04-aranyossag/feladatok-aranyossag.html),
+[házi feladatsor](../1e/04-aranyossag/feladatok-hazi.html).
+Összesen 55 kártya: 42 + 10 gyakorlófeladat és három projektkártya.
+E lapokon nincs SVG vagy kvíz. A három tananyag korábbi A3-auditja megmaradt.
+
+Az 1e matematika-skill kimenetei az alap: valós arányossági és százalékos
+helyzetek, egyszerű kamat, eredmények értelmezése. A meglévő kamatos kamatos
+részek kiegészítésként jelölve; a tanár által adott feladatsor és a projekt
+értékelési arányai változatlanok. Négy kézzel karbantartott lap; a házit
+a `build_dangerroom.py` írja. Csak a DEST04 kiíróhívás futott. A builder
+többi témájának változatlanságát AST-összevetés igazolja.
+
+Javítás előtt bemutatott hibatábla, a lektori pontosításokkal:
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Összefoglaló | Az arány tévesen kizárja a nulla előtagot; hiányzó nevezőfeltételek | Magas | HTML: csak a nevező nemnulla; aránypár és arányossági képletek feltételei |
+| Összefoglaló | A keverési és kamatképletek jelölése, időegysége és modellje hiányos | Közepes | HTML: mennyiség/jellemzőérték, éves kamatláb, egyszerű és kamatos kamat külön |
+| Munka, keverés | Hiányzik az állandó teljesítmény, fogyasztás, térfogat- és hőmodell | Közepes | HTML / builder: kimondott idealizált feltételek |
+| Pénzügyi feladatok | Éves kamatláb, kamatmód, százalékalap és 360 napos számítási év nincs rögzítve | Közepes | HTML / builder: egyértelmű modell és számítási alap |
+| Valós példák | Fagylaltfogyasztás állandó teljesítménnyel; „valódi ár”; dátum nélküli árfolyam | Közepes | HTML: könyvjelzők készítése, beszerzési ár, kitalált árfolyam |
+| Projekt | Valódi banki ajánlat megítélése pusztán az egyévi kamatból | Közepes | HTML: ajánlati feltételek, teljes visszafizetés és effektív kamatláb |
+| Bevezetők és válaszok | Ismétlődő nevek, nehézkes szöveg, dolgozatígéret, hiányzó kért indoklás | Enyhe–közepes | HTML / builder: természetes magyar szöveg és rövid kért indok |
+| Házi táblázat | Táblázat bekezdésbe ágyazva, érvénytelen HTML-szerkezet | Közepes | Közös generátor: a táblázat külön blokkba kerül, képletei átalakulnak |
+
+Az összefoglalóban a kültag/beltag, kibővített arány, arányos elosztás,
+egyenes és fordított arányosság feltételei pontosultak. Az egyenes arányosság
+kétértékes hányadosa engedi a nulla első értéket, de a hányados nevezője
+nem lehet nulla. A százalék visszaszámításának és a permillének feltételei
+kimondva. A két arányossági táblázat kétoszlopos, közös stílusú; oldalankénti
+CSS-kivétel nem készült.
+
+A munkafeladatok állandó egyéni teljesítménnyel és párhuzamosan végezhető
+munkával számolnak. A napok szerinti és munkaórák szerinti díjelosztás
+megkülönböztetve. Az oldatok térfogatszázaléka és a térfogatok összeadódása,
+az ötvözetek tömegaránya, a vízkeverés hőveszteség nélküli modellje kimondva.
+A kénsavas történet helyén általános, azonos anyagot tartalmazó oldatok állnak.
+A mobilcsomagnál a teljes költség és az egy további perc ára megkülönböztetve.
+
+A fagylaltos kérdés azonos számadatokkal könyvjelzők készítésére változott;
+a készítők egymástól függetlenül, állandó ütemben dolgoznak. A NOK/RSD
+árfolyam kitalált feladatadatként megnevezve, díjak nélkül. A levonásos példa
+százalékalapja egyértelmű. A súlyváltozást a végső tömeggel hasonlítjuk össze,
+életmódbeli sikerességre tett következtetés nélkül. A Joker kért indoklása
+a két kedvezmény eredményét is összehasonlítja.
+
+A pénzügyi modell éves kamatlábat, egyszerű kamatot és a napos példáknál
+360 napos számítási évet használ. A kamatos kamatnál éves tőkésítés,
+közbenső pénzmozgás és díjak hiánya szerepel; kiegészítésként megjelölve.
+A banki projekt külön kezeli a rögzített számítási modellt és a saját
+valódi ajánlatot: betétnél az adott feltételek szerint számolt kamat;
+hitelnél a bank szerinti részletek, teljes visszafizetés és költségek.
+Forrás, dátum és feltételek szükségesek. Az effektív kamatláb (EKS)
+jelentését az [NBS hivatalos tájékoztatója](https://tvojnovac.nbs.rs/sr-Latn-RS/finansijski_proizvodi/krediti)
+alapján pontosítottuk (ellenőrizve: 2026-10-06); a projekt ezt a forrást is
+linkeli. Aktuális banki kamatláb vagy ajánlás nem került a feladatba.
+
+Az eredeti feladat-számadatok és számszerű válaszok megmaradtak; új feladat
+vagy új bemeneti számadat nem készült. Egy ismételt 20% csak az instrukcióból
+tűnt el, a feladat adatai megmaradtak. A projekt saját méretezése kitalált
+helyzet, az eredmény mértékegységét és mérési pontosságát kéri. Az értékelési
+arányok és horgonyok változatlanok; projekt-megoldókulcs nem került a repóba.
+
+### Független ellenőrzés
+
+Két friss szemű, projektkontextus nélküli lektor kizárólag tanulói szöveget
+kapott, végeredmények nélkül. Egyikük önállóan megoldotta mind az 52
+gyakorlókártyát; eredményeik egyeznek a lenyílókkal. Másikuk ellenőrizte
+az összefoglaló definícióit és a projekt rögzített számításait. A biztos
+észrevételek beépültek. A javított kivonatok második körében öt utasítás-
+és modellpontosítás történt; új számszerű hibát nem találtak.
+
+Független kontroll: 31 matematikai próbacsoport törtekkel, Decimal
+ötös felkerekítéssel és SymPy-egyenletekkel/azonosságokkal. Nulla előtag,
+arányossági szélső esetek, keverékek, munka, kamat, a táblázat és a Joker
+indoklása külön ellenőrizve. A projekt eredményei csak privát kontrollban.
+20/20 megőrzési próba: id/href/média/kártyalisták; a régi bemeneti adatok,
+szkriptek és stílushivatkozások megmaradtak. A banki tájékoztató az egyetlen
+új hivatkozás. A közös generátor hat privát próbája igazolja a régi SVG/figure
+kimenet változatlanságát, a táblázat érvényes helyét és képletrenderét.
+Más témakör HTML-je nem változott.
+
+### Ellenőrzések és korlátok
+
+| Ellenőrzés | Eredmény |
+|---|---|
+| Teljes kánon és belső linkek | 310 oldal, 0 hiba |
+| Gyakorlósávok | Minden kártyát felad valamelyik egység |
+| Teljes kulcsteszt | 4499/4499, 0 eltérés |
+| Teljes regresszió | 4499/4499 = 100% |
+| jsdom / képletrender | Öt végleges lap, 543 képlet, 0 hiba; nincs kvíz |
+| Edge mobil és asztali | Öt lap × 360/390/1280 px × zárt/nyitott lenyílók: 30 nézet, 0 hiba |
+| axe | 30 nézet, 0 jelzés; nem teljes WCAG-minősítés |
+| Nyomtatás JS be/ki | 10/10: címsorok, feladatszövegek és minden végeredmény látható |
+| JavaScript nélkül | 5/5 lap olvasható; képletek TeX alakban |
+| Keresőindex | 308 nem üres bejegyzés, pontosan öt URL változott; két új késői részlet a 3000. karakter után is indexelve |
+| Naplótérkép | Változatlan: 184 egység, 2294 feladat, 12315 XP |
+| Kép, média és háttér | Házi avatar/háttér visszatéve; 334 médiaelem 139 lapon, médiaváltozás nélkül |
+
+A teljes lánc után az utolsó prózapontosításokkal a statikus lánc újrafutott.
+A végleges HTML kapta a böngészős és képletrender-próbát. Négy 390 px-es
+részlet szemrevételezve: egyenes és fordított arányossági táblázat, könyvjelzős
+feladat és a házi képletes táblázata; jól tördeltek és olvashatók.
+Valódi képernyőolvasó, más böngésző, teljes PDF-oldaltördelés, minden
+háttérpont kézi kontrasztja és külső média tartalma nem ellenőrizve.
+A nyomtatási láthatóság valódi Edge-ben ellenőrizve.
+
+**Állapot:** az 1e 38/38 tananyaga és az 1e/01–04 további 22 lapja teljes
+A3-audit szerint átnézve. Az 1e/05–08 további lapjai és a 2e–4e teljes
+A3-auditja hátra van. **Tanári döntés kell: nincs nyitott kérdés.**
+Helyi main, új ág és push nélkül. Következő javasolt adag: az 1e/05 további lapjai.
