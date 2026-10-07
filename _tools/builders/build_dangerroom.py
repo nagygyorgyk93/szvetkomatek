@@ -226,16 +226,14 @@ A07_UJ = [
    '$x=0$.',
    'Ismeretlennel osztás előtt külön kell vizsgálni a nulla esetét.']),
 ]
-K07_UJ = [
- ("Egy egyenletrendszer két egyenlete egy-egy egyenest ad a koordináta-rendszerben. "
-  "Az egyenesekről csak ennyit tudsz:",
-  ["Az első meredeksége $2$, a másodiké $-1$. Hány megoldása van a rendszernek? Miért?",
-   "Mindkettő meredeksége $2$, de a tengelymetszetük különböző. Hány megoldás van?",
-   "Mindkettő meredeksége $2$, és a tengelymetszetük is ugyanaz. Hány megoldás van?"],
-  ['Pontosan egy.',
+K07_UJ = [('Egy egyenletrendszer két egyenlete egy-egy egyenest ad a koordináta-rendszerben. Az '
+  'egyenesekről csak ennyit tudsz:',
+  ['Az első meredeksége $2$, a másodiké $-1$. Hány megoldása van a rendszernek? Miért?',
+   'Mindkettő meredeksége $2$, de a y-tengelymetszetük különböző. Hány megoldás van?',
+   'Mindkettő meredeksége $2$, és a y-tengelymetszetük is ugyanaz. Hány megoldás van?'],
+  ['Pontosan egy: az eltérő meredekségű egyenesek egy pontban metszik egymást.',
    'Egy sem.',
-   'Végtelen sok.']),
-]
+   'Végtelen sok.'])]
 
 
 # =========================================================== 01
@@ -618,59 +616,59 @@ print("06 Vészterem kész: Alap", len(A06), "Közép", len(K06), "Nehéz", len(
 # Gauss (3×3) NEM kerül ide (felhasználói döntés) — csak a tananyagban és max 1 feladat a feladatgyűjteményben.
 assert 40==4*10 and 5*8+20==60  # sanity
 DEST07 = os.path.join(_WEB, "1e", "07-linearis-egyenletek-es-rendszerek")
-A07 = [
- ("Oldd meg az egyenleteket!",
-  ["$4x-5=11$","$3(x-2)=x+2$","$\\dfrac{x}{4}+1=3$"],
-  "a) $x=4$; b) $x=4$; c) $x=8$.", True),
- ("Oldd meg az egyenlőtlenségeket!",
-  ["$2x+1>7$","$-x\\le 4$","$3x-1<2x+5$"],
-  "a) $x>3$; b) $x\\ge -4$; c) $x<6$.", True),
- ("Adott az $f(x)=-2x+6$ függvény.",
-  ["$f(0)$","$f(3)$","a nullahelye"],
-  "a) $6$; b) $0$; c) $x=3$.", True),
- ("Add meg a megoldáshalmazt intervallummal!",
-  ["$x\\ge 5$","$x<0$"],
-  ["$[5,\\infty)$","$(-\\infty,0)$"]),
- ("Oldd meg a rendszert: $x+y=7$, $x-y=3$.",
-  None, "$x=5,\\ y=2$."),
- ("Oldd meg a rendszert: $2x+y=8$, $x+y=5$.",
-  None, "$x=3,\\ y=2$."),
- ("Oldd meg a törtes egyenletet: $\\dfrac{x-1}{2}=x-4$.",
-  None, "$x=7$."),
- ("Melyik szám a megoldás?",
-  ["$5x=35$","$x+9=4$","$2x-6=0$"],
-  "a) $7$; b) $-5$; c) $3$.", True),
-]
+A07 = [('Oldd meg az egyenleteket!',
+  ['$4x-5=11$', '$3(x-2)=x+2$', '$\\dfrac{x}{4}+1=3$'],
+  'a) $x=4$; b) $x=4$; c) $x=8$.',
+  True),
+ ('Oldd meg az egyenlőtlenségeket!',
+  ['$2x+1>7$', '$-x\\le 4$', '$3x-1<2x+5$'],
+  'a) $x>3$; b) $x\\ge -4$; c) $x<6$.',
+  True),
+ ('Adott az $f(x)=-2x+6$ függvény. Számítsd ki, illetve add meg:',
+  ['$f(0)$', '$f(3)$', 'a nullahelyét'],
+  'a) $6$; b) $0$; c) $x=3$.',
+  True),
+ ('Add meg a megoldáshalmazt intervallummal!',
+  ['$x\\ge 5$', '$x<0$'],
+  ['$[5,\\infty)$', '$(-\\infty,0)$']),
+ ('Oldd meg a rendszert: $x+y=7$, $x-y=3$.', None, '$x=5,\\ y=2$.'),
+ ('Oldd meg a rendszert: $2x+y=8$, $x+y=5$.', None, '$x=3,\\ y=2$.'),
+ ('Oldd meg a törtes egyenletet: $\\dfrac{x-1}{2}=x-4$.', None, '$x=7$.'),
+ ('Melyik szám a megoldás?', ['$5x=35$', '$x+9=4$', '$2x-6=0$'], 'a) $7$; b) $-5$; c) $3$.', True)]
 A07 = A07 + A07_UJ
-K07 = [
- ("Oldd meg a törtes egyenletet: $\\dfrac{2x+1}{3}-\\dfrac{x-1}{2}=2$.",
-  None, "$x=7$."),
- ("Oldd meg a kibontással: $(x-2)(x+3)-(x+1)(x-1)=-1$.",
-  None, "$x=4$."),
- ("Oldd meg a rendszert: $3x-2y=5$, $x+2y=7$.",
-  None, "$x=3,\\ y=2$."),
- ("Egy szám és a nála $12$-vel nagyobb szám összege $50$. Melyik ez a két szám?",
-  None, "$19$ és $31$."),
- ("Egy teljes árú jegy $500$ Ft, egy diákjegy $300$ Ft. Összesen $15$ jegyet vettek $5900$ Ft-ért. Hány teljes árú és hány diákjegyet?",
-  None, "$7$ teljes árú és $8$ diákjegy."),
-]
+K07 = [('Oldd meg a törtes egyenletet: $\\dfrac{2x+1}{3}-\\dfrac{x-1}{2}=2$.', None, '$x=7$.'),
+ ('Bontsd ki a zárójeleket, majd oldd meg az egyenletet: $(x-2)(x+3)-(x+1)(x-1)=-1$.',
+  None,
+  '$x=4$.'),
+ ('Oldd meg a rendszert: $3x-2y=5$, $x+2y=7$.', None, '$x=3,\\ y=2$.'),
+ ('Egy szám és a nála $12$-vel nagyobb szám összege $50$. Melyik ez a két szám?',
+  None,
+  '$19$ és $31$.'),
+ ('Egy teljes árú jegy $500$ Ft, egy diákjegy $300$ Ft. Összesen $15$ jegyet vettek $5900$ Ft-ért. '
+  'Hány teljes árú és hány diákjegyet?',
+  None,
+  '$7$ teljes árú és $8$ diákjegy.')]
 K07 = K07 + K07_UJ
-N07 = [
- ("Az anya most négyszer annyi idős, mint a lánya; $5$ év múlva már csak háromszor annyi. Hány évesek most?",
-  None, "az anya $40$, a lánya $10$ éves."),
- ("Egy medencét az egyik csap egyedül $6$ óra, a másik egyedül $12$ óra alatt tölt meg. Mennyi idő alatt telik meg együtt?",
-  None, "$4$ óra."),
- ("Milyen $k$ esetén van a rendszernek végtelen sok megoldása: $3x+y=5$, $6x+2y=k$?",
-  None, "$k=10$."),
-]
-brief07 = ("🕹️ <b>SZVETI:</b> <b>Vészterem</b>-szimuláció, A Végső Egyenlet modul. Ez a <b>Vészterem</b> otthoni "
- "edzésváltozata — itt gyakorolsz a saját tempódban. A szimuláció a <b>teljes témakört</b> lefedi: lineáris "
- "egyenletek és egyenlőtlenségek, a lineáris függvény, a kétismeretlenes rendszerek és a szöveges feladatok. Haladj "
- "a fokozatokon: zöld (alap) → sárga (közép) → piros (nehéz). A végeredményt minden feladatnál lenyithatod — de "
- "előbb küzdd le magad!")
+N07 = [('Az anya most négyszer olyan idős, mint a lánya; $5$ év múlva már csak háromszor olyan idős '
+  'lesz, mint a lánya. Hány évesek most?',
+  None,
+  'az anya $40$, a lánya $10$ éves.'),
+ ('Egy kezdetben üres medencét az egyik csap egyedül $6$, a másik $12$ óra alatt töltene meg. '
+  'Állandó vízhozammal működnek, a medencéből nem folyik ki víz. Egyszerre nyitják meg őket. '
+  'Mennyi idő alatt telik meg a medence?',
+  None,
+  '$4$ óra.'),
+ ('Milyen $k$ esetén van a rendszernek végtelen sok megoldása: $3x+y=5$, $6x+2y=k$?',
+  None,
+  '$k=10$.')]
+brief07 = (('🕹️ <b>SZVETI:</b> A Végső Egyenlet modulban önállóan gyakorolhatsz egyenletekkel, '
+ 'egyenlőtlenségekkel, függvényekkel és rendszerekkel. A szöveges feladatoknál írd le, mit '
+ 'jelölnek az ismeretlenek, és ellenőrizd, hogy a válasz megfelel-e a helyzetnek! Haladj az '
+ 'alapfeladatoktól a nehezebbek felé. A változók és paraméterek valósak, ha a feladat másként nem '
+ 'rendelkezik. Előbb számolj, csak utána nyisd le a végeredményt!'))
 dr_page(DEST07, "index.html", "Lineáris egyenletek és rendszerek", "feladatok-hazi.html",
  "🕹️ Vészterem — házi feladatgyűjtemény",
- "Egyetlen, a teljes témakört lefedő házi feladatsor: egyenletek, egyenlőtlenségek, lineáris függvény, rendszerek és szöveges feladatok. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
+ "Házi gyakorlás egyenletekkel, egyenlőtlenségekkel, lineáris függvényekkel és rendszerekkel. A végeredményt csak az önálló megoldás után nézd meg!",
  brief07, sect(A07, K07, N07),
  "index.html", "Témakör Főhadiszállása", "osszefoglalo.html", "Tömör összefoglaló",
  "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")

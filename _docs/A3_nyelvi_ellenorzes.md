@@ -4,9 +4,9 @@
 
 **Jelenlegi összesítés:** az 1e mind a 38 tananyaglapjának teljes nyelvi és
 példahitelességi ellenőrzése elkészült tizenegy adagban. A tizenkettedik–
-tizenhetedik adagban az 1e/01 hét, az 1e/02–06 öt-öt további lapja
-is átnézve és javítva, összesen 32 lap: nyitóoldalak, összefoglalók,
-terepküldetések és feladatgyűjtemények. Az 1e/07–08 további lapfajtáinak
+tizennyolcadik adagban az 1e/01 hét, az 1e/02–07 öt-öt további lapja
+is átnézve és javítva, összesen 37 lap: nyitóoldalak, összefoglalók,
+terepküldetések és feladatgyűjtemények. Az 1e/08 nyitóoldala
 és a 2e–4e teljes A3-auditja hátra van. Az adagok alábbi adatai az egyes
 munkamenetek eredményei; a legfrissebb bejegyzés a végén található.
 
@@ -1836,3 +1836,136 @@ A nyomtatási láthatóság valódi Edge-ben ellenőrizve.
 A3-audit szerint átnézve. Az 1e/07–08 további lapjai és a 2e–4e teljes
 A3-auditja hátra van. **Tanári döntés kell: nincs nyitott kérdés.**
 Helyi main, új ág és push nélkül. Következő javasolt adag: az 1e/07 további lapjai.
+
+## Tizennyolcadik adag — 1e/07 további lapfajták (2026-10-07)
+
+### Hatókör
+
+Az 1e/07 öt további lapjának teljes szövege átnézve:
+
+| Lap | Hatókör |
+|---|---|
+| [Nyitóoldal](../1e/07-linearis-egyenletek-es-rendszerek/index.html) | Bevezetők, útmutatók és feladatszámok |
+| [Összefoglaló](../1e/07-linearis-egyenletek-es-rendszerek/osszefoglalo.html) | Egyenletek, egyenlőtlenségek, függvény és rendszerek |
+| [Terepküldetés](../1e/07-linearis-egyenletek-es-rendszerek/terepkuldetes.html) | Három projektkártya, nyolc rögzített és három saját részfeladat |
+| [Feladatgyűjtemény](../1e/07-linearis-egyenletek-es-rendszerek/feladatok-linearis-egyenletek-es-rendszerek.html) | 55 gyakorlókártya |
+| [Házi feladatsor](../1e/07-linearis-egyenletek-es-rendszerek/feladatok-hazi.html) | 18 gyakorlókártya |
+
+Összesen 73 gyakorlókártya és három projektkártya. E lapokon nincs SVG
+és kvíz. Kiindulás: be1bd7c, tiszta helyi main, az origin/main helyi
+referenciájával azonos állapot. Távoli frissítés nem történt.
+Az 1e matematika-skill lineáris témakörének kimenetei az alap:
+egyenlet és egyenlőtlenség megoldása, lineáris függvény értelmezése és
+ábrázolása, legfeljebb háromismeretlenes rendszer, szöveges modell
+felírása és a kapott megoldás értelmezése.
+A négy tananyaglap korábbi A3-auditja megmaradt.
+
+### Javítás előtt bemutatott hibák
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Órai ismétlés, 2. és 6. feladat | Hibás végeredmény: −5 helyett 1, illetve 2 helyett 4/3 | Magas | Builder: a válaszok javítása |
+| Összefoglaló | A nullahely képleténél és az egyenleteknél hiányoznak külön esetek; a rendszer geometriai értelmezésének feltétele hiányos | Magas | HTML: feltételek és külön esetek |
+| Szöveges feladatok | A séta, a „kétszer hosszabb” oldal és néhány munkamodell félreérthető | Közepes | Builder: pontos magyar szöveg és modellfeltételek |
+| Projekt | Kitalált adatokat valós adatnak nevez; a saját képletnél hiányzik az időtartomány | Közepes | HTML: a modell és a saját rész pontosítása |
+| Indoklást kérő kártyák | A válasz helyenként nem adja meg a kért rövid indokot | Közepes | Builder: szükséges indoklás |
+| Nyitóoldal és bevezetők | Nyelvtani hiba, nehézkes mondatok, túlzó teljességígéretek | Enyhe | HTML / builder: természetesebb útmutató |
+
+A gyűjtemény gyd-2 válasza x = 1, a gyd-6 válasza x = 4/3 lett.
+Az eredeti egyenletek változatlanok; a builder öntesztje is ezekből számol.
+A gyűjtemény 14 és a házi egy válaszkártyája változott: a két számszerű
+javítás mellett koordinátajelölés, kért grafikonpont, tartomány, a kérdés
+sorrendje, mértékegység vagy szükséges rövid indoklás pontosult.
+A nem kért részválaszok kikerültek. A „miért?” kérdések rövid érdemi
+indoklása a végválasz szükséges része maradt; nincs öncélú levezetés.
+
+Az összefoglaló valós együtthatókkal és az eredeti tartományon dolgozik.
+Az ax = b egyenlet minden nulla együtthatós esete szerepel; a nemnulla
+esetben a megoldásjelöltnek a tartományba is bele kell esnie. Törtes
+egyenletnél az eredeti kizárásokat előre rögzítjük, és az eredeti
+egyenletben ellenőrzünk. Egyenlőtlenségnél az ismeretlen előjel külön
+eseteket kér; nullával nem osztunk, a nullával szorzás nem őrzi meg az
+összes információt. A nulla meredekségű függvény nullahelye külön,
+a meredekség és az y-tengelymetszet megkülönböztetve szerepel.
+A rendszerek geometriai megoldásszáma csak valódi egyenesekre vonatkozik.
+A létszám- és darabszámmodellek nemnegatív egész megoldást kérnek.
+
+A séta külön-külön megtett utak összegéről szól, a téglalap oldala
+„kétszer olyan hosszú”. A találkozásnál két külön turistaház, egy útvonal,
+egyidejű indulás és állandó sebesség szerepel. A festés, feltöltés és
+szállítás állandó teljesítménnyel, a megfelelő szakaszfeltételekkel
+számol; a teherautóknál a mértékegység munkanap. A játékbeli automata
+és a mesefigurák tömege kitalált helyzetként szerepel.
+Minden eredeti feladatadat megmaradt, új bemeneti számadat vagy új
+feladat nem készült. A meglévő kiemeléses x² − 5x = 0 feladat
+kitekintésként szerepel. A korábbi Gauss-kikötés megmaradt: a gyűjteményben
+egy ilyen kártya, a háziban nincs; grafikus rendszermegoldási gyakorló
+feladatot sem adtunk hozzá.
+
+A projekt kitalált kampuszban játszódik; a saját adat mért vagy feltételezett
+volta és eredete megadandó. A generátorképlet a vizsgált időszak modellje,
+az idő nemnegatív. A saját töltési/fogyási modell nemállandó, megadott
+időtartománnyal és mértékegységekkel. A képlet nullahelyének kiszámítása
+után külön ellenőrzés dönti el, hogy az időpont a modell tartományába
+esik-e. A saját rendszereknél a feltételeket és a megoldás életszerűségét
+is vizsgálni kell. A nyolc rögzített részfeladat számítása csak privát
+kontrollban szerepel; projekt-megoldókulcs nem került a repóba.
+Az értékelési arányok és a játékos keret megmaradtak.
+
+### Független ellenőrzés
+
+Két projektkontextus nélküli lektor csak a tanulói szöveget kapta,
+végválaszok nélkül. Egyikük mind a 73 gyakorlókártyát önállóan megoldotta;
+a másik az összefoglalót és a projekt nyolc rögzített részfeladatát
+ellenőrizte. Mindketten megtalálták a rájuk tartozó biztos hibákat,
+a javítások utáni visszaolvasásuk pontosításai is beépültek.
+A saját projektfeladatok végrehajthatók.
+
+Privát, buildertől független kontroll a tényleges HTML-ből:
+73/73 gyakorlókártya, 213 matematikai ellenőrzés. SymPy: eredeti egyenletek,
+rendszerek, egyenlőtlenségek megoldáshalmaza, grafikonpontok és nullahelyek,
+paraméteres külön esetek, eredeti törttartományok és szöveges modellek.
+A szállítási idő kerekítése Decimal ROUND_HALF_UP szerint történik.
+A projekt nyolc rögzített részfeladata is külön újraszámolva.
+112 megőrzési próba: id/href/média/kártyasorrend, szkriptek,
+stílushivatkozások, régi bemeneti számadatok, a 15 változó válaszkártya
+pontos halmaza. Más házi témakör forrása AST szerint változatlan;
+más témakör HTML-je nem változott.
+
+### Ellenőrzések és korlátok
+
+| Ellenőrzés | Eredmény |
+|---|---|
+| Kánon és belső linkek | 310 oldal, 0 hiba |
+| Gyakorlósávok | Minden kártyát felad valamelyik egység |
+| Meglévő teljes kulcsteszt | 4499/4499, 0 eltérés |
+| Meglévő teljes regresszió | 4499/4499 = 100% |
+| 1e/07 külön matematikai kontroll | 73/73 kártya, 213 próba; két független lektor |
+| jsdom / képletrender | Öt végleges lap, 348 képlet, 0 hiba; nincs kvíz |
+| Edge mobil és asztali | 360/390/1280 px, zárt/nyitott lenyílók: 30 végleges nézet, 0 elrendezési/KaTeX/JS/saját konzol/helyi 404 hiba |
+| axe | 30 végleges nézet, 0 jelzés; nem teljes WCAG-minősítés |
+| Nyomtatás JS be/ki | 10/10: címsorok, feladatszövegek és minden végeredmény látható |
+| JavaScript nélkül | 5/5 lap olvasható; képletek TeX alakban |
+| Keresőindex | 308 nem üres bejegyzés, pontosan öt URL változott; új szavak a 7400. és 7454. karakteren is indexelve |
+| Naplótérkép | Byte szerint változatlan: 184 egység, 2294 feladat, 12315 XP |
+| Kép, média, háttér | Újraépített lapok háttere/avatarja megvan; 334 médiaelem 139 lapon, médiaváltozás nélkül |
+
+**Kulcslefedettség:** a repó meglévő kulcstesztje nem tartalmaz 1e/07
+kulcsmodult. A 4499-es eredmény a már lefedett oldalak kontrollja;
+a jelenlegi adag közvetlen ellenőrzését a külön HTML/SymPy-kontroll
+és a lektorok végezték. A kulcsmodul pótlása hátralévő automatizálás.
+
+A két builder után teljes újraépítési lánc futott. Az utolsó lektori
+szövegpontosítás után a statikus lánc ismételve, majd mind az öt lap
+render-, böngészős és nyomtatási próbája a végleges változaton lefutott.
+Kilenc kiválasztott kártya/bekezdés 390 px-en szemrevételezve.
+Valódi képernyőolvasó, más böngésző, teljes PDF-oldaltördelés, minden
+háttérpont kézi kontrasztja és külső média tartalma nem ellenőrizve.
+A nyomtatási láthatóság valódi Edge-ben ellenőrizve.
+
+**Állapot:** az 1e 38/38 tananyaga és az 1e/01–07 további 37 lapja teljes
+A3-audit szerint átnézve. Az 1e/08 nyitóoldala és a 2e–4e teljes A3-auditja
+hátra van. Az 1e/08 jelenleg csak a nyitóoldalt és három tananyagot tartalmaz;
+összefoglaló, terepküldetés és feladatsor nincs benne.
+**Tanári döntés kell: nincs nyitott kérdés.**
+Helyi main, új ág és push nélkül. Következő javasolt adag: az 1e/08 nyitóoldala.

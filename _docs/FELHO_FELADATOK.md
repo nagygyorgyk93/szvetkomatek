@@ -270,7 +270,7 @@ A korábbi A1-ellenőrzések nem helyettesítik a teljes stilisztikai átnézés
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ◐ 01: 9, 02: 3, 03: 4, 04: 3, 05: 9, 06: 3, 07: 4, 08: 3 — mind a 38 tananyag, az 01 további 7 és a 02–06 további 5-5 lapja átnézve és javítva; a 07–08 további lapjai hátra (helyi main, 2026-10-07) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
+| ◐ 01: 9, 02: 3, 03: 4, 04: 3, 05: 9, 06: 3, 07: 4, 08: 3 — mind a 38 tananyag, az 01 további 7 és a 02–07 további 5-5 lapja átnézve és javítva; a 08 nyitóoldala hátra (helyi main, 2026-10-07) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
 
 Az első adag három függvényes, a második hat logikai és halmazos tananyagot
 ellenőrzött. A példák feltételei, bevezetők, átvezetők és matematikai pontatlanságok
@@ -398,6 +398,21 @@ Render 380/0, 30 végleges nézet/axe 0, nyomtatás JS be/ki 10/10.
 Keresőindex pontosan öt URL-en változott, naplótérkép változatlan.
 Új feladat-számadat, ág és push nincs. Tanári döntés nem maradt nyitva.
 Az 1e/07–08 további lapfajtái és a 2e–4e teljes A3-auditja hátra van.
+
+Tizennyolcadik adag (2026-10-07): az 1e/07 öt további lapja, 73 gyakorlófeladat
+és három projektkártya átnézve. Az órai ismétlés 2. és 6. feladatának hibás
+végeredménye javítva: 1, illetve 4/3. Eredeti egyenletek és feladatadatok
+megmaradtak. Nulla együtthatós és nulla meredekségű esetek, eredeti
+tartományok, szöveges modellek, kért indoklások és magyar bevezetők pontosítva.
+A projekt nyolc rögzített részfeladata privát kontrollban újraszámolva;
+a saját modell tartománya és a képlet nullahelyének értelmezése egyértelmű.
+Két kontextus nélküli lektor, 73/73 külön HTML/SymPy-kontroll,
+213 matematikai és 112 megőrzési próba. Kánon/link 310/0, meglévő kulcs
+4499/4499, regresszió 100%; az 1e/07-hez még nincs saját repóbeli kulcsmodulja.
+Render 348/0, 30 végleges nézet/axe 0, nyomtatás JS be/ki 10/10.
+Keresőindex pontosan öt URL-en változott, naplótérkép változatlan.
+Új feladat-számadat, ág és push nincs. Tanári döntés nem maradt nyitva.
+Az 1e/08 nyitóoldala és a 2e–4e teljes A3-auditja hátra van.
 
 Részletek:
 [A3 nyelvi ellenőrzés](A3_nyelvi_ellenorzes.md).

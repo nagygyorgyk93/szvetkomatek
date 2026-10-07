@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """1e/07 — Lineáris egyenletek, egyenlőtlenségek és rendszerek KÖZÖS feladatgyűjtemény.
 Küldetés „A Végső Egyenlet" (teljes csapat). Egy drill-deck. Végeredmény = KIZÁRÓLAG a végső válasz.
-A 3_Szöveges feladatok.docx MIND a 17 feladata bekerül (Közép 1-13, Nehéz 14-17). Gauss: max 1 feladat.
+16 szöveges feladat (Közép 7–19, Nehéz 5–7). Gauss: max 1 feladat.
 Grafikus rendszermegoldás NINCS a gyűjteményben (csak a tananyagban)."""
 import sys, os, glob
 # A repó gyökere a builder helyéből (korábban /sessions/… glob: csak a helyi munkakörnyezetben működött)
@@ -47,156 +47,198 @@ assert 1/(Rational(1,5)+Rational(1,8)+Rational(1,9))==Rational(360,157)
 print("MINDEN ASSERT OK")
 
 # ======================== ALAP (11) ========================
-ALAP = [
- ("Oldd meg a lineáris egyenleteket!",
-  ["$3x-7=8$","$2(x-3)=x+4$","$5x+1=3x-7$","$\\dfrac{x}{2}+3=7$"],
-  "a) $x=5$; b) $x=10$; c) $x=-4$; d) $x=8$.", True),
- ("Oldd meg a törtes egyenleteket!",
-  ["$\\dfrac{x+1}{2}=3$","$\\dfrac{x}{3}-\\dfrac{x}{4}=1$","$\\dfrac{2x-1}{3}=x-2$"],
-  "a) $x=5$; b) $x=12$; c) $x=5$.", True),
- ("Oldd meg az egyenlőtlenségeket, és ábrázold a megoldáshalmazt a számegyenesen!",
-  ["$2x-3<5$","$3(x-1)\\ge x+1$","$-2x>6$"],
-  "a) $x<4$; b) $x\\ge 2$; c) $x<-3$.", True),
- ("Adott az $f(x)=2x-4$ függvény.",
-  ["$f(0)$","$f(3)$","a nullahelye","a tengelymetszete az $y$-tengelyen"],
-  "a) $-4$; b) $2$; c) $x=2$; d) $(0,-4)$.", True),
- ("Add meg az $f(x)=-x+3$ függvény három pontját (az ábrázoláshoz)!",
-  None, "pl. $(0,3),\\ (1,2),\\ (3,0)$."),
- ("Oldd meg a rendszert behelyettesítéssel: $x+y=5$, $x-y=1$.",
-  None, "$x=3,\\ y=2$."),
- ("Oldd meg a rendszert az együtthatók egyenlővé tételével: $2x+y=7$, $x-y=2$.",
-  None, "$x=3,\\ y=1$."),
- ("Melyik szám a megoldás?",
-  ["$4x=20$","$x-8=-3$","$3x+6=0$","$7-x=2$"],
-  "a) $5$; b) $5$; c) $-2$; d) $5$.", True),
- ("Adott az $f(x)=-3x+2$ függvény. Számítsd ki:",
-  ["$f(1)$","$f(-2)$","$f(0)$"],
-  "a) $-1$; b) $8$; c) $2$.", True),
- ("Add meg a megoldáshalmazt intervallummal!",
-  ["$x>2$","$x\\le -1$","$-3\\le x<4$"],
-  "a) $(2,\\infty)$; b) $(-\\infty,-1]$; c) $[-3,4)$.", True),
- ("Rendezd lineáris egyenletté, és oldd meg: $5-(2x-1)=3x-4$.",
-  None, "$x=2$."),
-]
+ALAP = [('Oldd meg a lineáris egyenleteket!',
+  ['$3x-7=8$', '$2(x-3)=x+4$', '$5x+1=3x-7$', '$\\dfrac{x}{2}+3=7$'],
+  'a) $x=5$; b) $x=10$; c) $x=-4$; d) $x=8$.',
+  True),
+ ('Oldd meg a törtes egyenleteket!',
+  ['$\\dfrac{x+1}{2}=3$', '$\\dfrac{x}{3}-\\dfrac{x}{4}=1$', '$\\dfrac{2x-1}{3}=x-2$'],
+  'a) $x=5$; b) $x=12$; c) $x=5$.',
+  True),
+ ('Oldd meg az egyenlőtlenségeket, és ábrázold a megoldáshalmazt a számegyenesen!',
+  ['$2x-3<5$', '$3(x-1)\\ge x+1$', '$-2x>6$'],
+  'a) $x<4$; b) $x\\ge 2$; c) $x<-3$.',
+  True),
+ ('Adott az $f(x)=2x-4$ függvény. Számítsd ki, illetve add meg:',
+  ['$f(0)$', '$f(3)$', 'a nullahelyét', 'az $y$-tengellyel való metszéspontját'],
+  'a) $-4$; b) $2$; c) $x=2$; d) $(0;-4)$.',
+  True),
+ ('Add meg az $f(x)=-x+3$ függvény grafikonjának három pontját!',
+  None,
+  'Például $(0;3)$, $(1;2)$ és $(3;0)$.'),
+ ('Oldd meg a rendszert behelyettesítéssel: $x+y=5$, $x-y=1$.', None, '$x=3,\\ y=2$.'),
+ ('Oldd meg a rendszert az együtthatók egyenlővé tételével: $2x+y=7$, $x-y=2$.',
+  None,
+  '$x=3,\\ y=1$.'),
+ ('Melyik szám a megoldás?',
+  ['$4x=20$', '$x-8=-3$', '$3x+6=0$', '$7-x=2$'],
+  'a) $5$; b) $5$; c) $-2$; d) $5$.',
+  True),
+ ('Adott az $f(x)=-3x+2$ függvény. Számítsd ki:',
+  ['$f(1)$', '$f(-2)$', '$f(0)$'],
+  'a) $-1$; b) $8$; c) $2$.',
+  True),
+ ('Add meg a megoldáshalmazt intervallummal!',
+  ['$x>2$', '$x\\le -1$', '$-3\\le x<4$'],
+  'a) $(2,\\infty)$; b) $(-\\infty,-1]$; c) $[-3,4)$.',
+  True),
+ ('Bontsd fel a zárójeleket, és oldd meg az egyenletet: $5-(2x-1)=3x-4$.', None, '$x=2$.')]
 
 # ======================== KÖZÉP (mechanikus 5 + Gauss 1 + szöveges 1-13) ========================
-KOZEP = [
- ("Oldd meg a törtes egyenletet: $\\dfrac{3x+1}{2}-\\dfrac{x-2}{3}=7$.",
-  None, "$x=5$."),
- ("Oldd meg a kibontással: $(x+3)(x-2)-(x-1)(x+4)=4$.",
-  None, "$x=-3$."),
- ("Oldd meg az egyenlőtlenséget, és ábrázold: $4(x-1)-3(x+2)>-8$.",
-  None, "$x>2$."),
- ("Oldd meg a törtes egyenletrendszert: $\\dfrac{4x+5y}{3}=\\dfrac{x-3y}{2}+4$ és $\\dfrac{3x+y}{2}=\\dfrac{2x+7y}{3}-1$.",
-  None, "$x=1,\\ y=1$."),
- ("Milyen $m$ esetén halad át az $y=(2m-1)x+3$ egyenes a $P(2,5)$ ponton?",
-  None, "$m=1$."),
- ("Oldd meg a háromismeretlenes rendszert (Gauss): $x+y+z=6$, $x-y+z=2$, $2x+y-z=1$.",
-  None, "$x=1,\\ y=2,\\ z=3$."),
- # --- 3_Szöveges feladatok.docx 1-13 (hiánytalanul) ---
- ("A ketrecben nyulak és fácánok vannak. Ha a ketrecben $35$ fej és $94$ láb látható, akkor hány nyúl és hány fácán van a ketrecben?",
-  None, "$12$ nyúl és $23$ fácán."),
- ("Pistike gombát szed az erdőben. Hétfőn $1{,}1$ kg-mal kevesebbet szedett, mint szerdán, pénteken pedig $0{,}8$ kg-mal többet, mint szerdán. Melyik nap mennyit szedett, ha a három nap összesen $4{,}8$ kg jött össze?",
-  None, "hétfő $0{,}6$ kg, szerda $1{,}7$ kg, péntek $2{,}5$ kg."),
- ("Timon és Pumba együtt $112$ kg-ot nyomnak. Pumba $15$-ször olyan nehéz, mint Timon. Hány kilogramm külön-külön Timon és Pumba?",
-  None, "Timon $7$ kg, Pumba $105$ kg."),
- ("Jancsika és Juliska sétálnak az erdőben; összesen $9{,}2$ km-t sétáltak. Mennyit sétáltak külön-külön, ha Juliska háromszor akkora utat tett meg, mint Jancsika?",
-  None, "Jancsika $2{,}3$ km, Juliska $6{,}9$ km."),
- ("A téglalap egyik oldala kétszer hosszabb a másiknál. Határozd meg az oldalak hosszát, ha a kerület $24$ cm!",
-  None, "$4$ cm és $8$ cm."),
- ("Egy panzióban három- és kétágyas szobák vannak. Összesen $14$ szoba van, a férőhelyek száma $34$. Hány két-, illetve háromágyas szoba van?",
-  None, "$6$ háromágyas és $8$ kétágyas szoba."),
- ("Egy- és kéteurós pénzérméből összegyűjtöttünk $35$ db-ot, összesen $56$ eurót. Melyik pénzérméből hány db-ot gyűjtöttünk?",
-  None, "$14$ db egyeurós és $21$ db kéteurós."),
- ("Egy kókuszrúd és egy csokiszelet ára $560$ Ft. Három csokiszelet $80$ Ft-tal drágább, mint egy kókuszrúd. Mennyit kell fizetnünk öt csokiszeletért és két kókuszrúdért?",
-  None, "$1600$ Ft (a csoki $160$ Ft, a kókuszrúd $400$ Ft)."),
- ("A pénzváltó automata a papírpénzt $10$ és $20$ forintosokra váltja, és megválaszthatjuk, hány érmét kapjunk. Hogyan váltja fel az $1000$ Ft-ot, ha $90$ érmét kérünk?",
-  None, "$80$ db tízforintos és $10$ db húszforintos."),
- ("Húsz év múlva az apa kétszer annyi idős lesz, mint a fia; $8$ évvel ezelőtt pedig hatszor annyi idős volt, mint a fia. Hány évesek külön-külön?",
-  None, "az apa $50$, a fia $15$ éves."),
- ("Egy kétjegyű szám számjegyeinek összege $11$. Ha a számjegyeit felcseréljük, $45$-tel kisebb számot kapunk. Melyik az eredeti szám?",
-  None, "$83$."),
- ("Karcsi $17$ évvel fiatalabb mogorva szomszédjánál. Ha kétszer annyi idős lenne, mint most, akkor egy évvel volna idősebb, mint a szomszédja most. Hány éves a mogorva szomszéd?",
-  None, "$35$ éves (Karcsi $18$)."),
- ("Két iskolai csoport két, egymástól $25$ km-re lévő turistaházban szállt meg, melyeket egy ösvény köt össze. Az egyik csoport óránként $4$, a másik $6$ km-t tesz meg. Ha egyszerre indulnak egymás felé, mennyi idő múlva és hol találkoznak?",
-  None, "$2{,}5$ óra múlva; a lassabb csoport házától $10$ km-re (a gyorsabbétól $15$ km-re)."),
+KOZEP = [('Oldd meg a törtes egyenletet: $\\dfrac{3x+1}{2}-\\dfrac{x-2}{3}=7$.', None, '$x=5$.'),
+ ('Bontsd ki a zárójeleket, majd oldd meg az egyenletet: $(x+3)(x-2)-(x-1)(x+4)=4$.',
+  None,
+  '$x=-3$.'),
+ ('Oldd meg az egyenlőtlenséget, és ábrázold: $4(x-1)-3(x+2)>-8$.', None, '$x>2$.'),
+ ('Oldd meg a törtes egyenletrendszert: $\\dfrac{4x+5y}{3}=\\dfrac{x-3y}{2}+4$ és '
+  '$\\dfrac{3x+y}{2}=\\dfrac{2x+7y}{3}-1$.',
+  None,
+  '$x=1,\\ y=1$.'),
+ ('Milyen $m$ esetén halad át az $y=(2m-1)x+3$ egyenes a $P(2;5)$ ponton?', None, '$m=1$.'),
+ ('Oldd meg a háromismeretlenes rendszert (Gauss): $x+y+z=6$, $x-y+z=2$, $2x+y-z=1$.',
+  None,
+  '$x=1,\\ y=2,\\ z=3$.'),
+ ('A ketrecben nyulak és fácánok vannak. Ha a ketrecben $35$ fej és $94$ láb látható, akkor hány '
+  'nyúl és hány fácán van a ketrecben?',
+  None,
+  '$12$ nyúl és $23$ fácán.'),
+ ('Pisti gombát szedett az erdőben. Hétfőn $1{,}1$ kg-mal kevesebbet szedett, mint szerdán, '
+  'pénteken pedig $0{,}8$ kg-mal többet, mint szerdán. Melyik nap mennyit szedett, ha a három '
+  'napon összesen $4{,}8$ kg gyűlt össze?',
+  None,
+  'hétfő $0{,}6$ kg, szerda $1{,}7$ kg, péntek $2{,}5$ kg.'),
+ ('A kitalált történetben Timon és Pumba együttes tömege $112$ kg. Pumba tömege Timonénak a '
+  '$15$-szöröse. Mekkora Timon és Pumba tömege külön-külön?',
+  None,
+  'Timon $7$ kg, Pumba $105$ kg.'),
+ ('Jancsi és Juliska külön-külön sétáltak az erdőben. A megtett útjaik összege $9{,}2$ km. Mekkora '
+  'utat tett meg külön-külön Jancsi és Juliska, ha Juliska háromszor akkora utat tett meg, mint '
+  'Jancsi?',
+  None,
+  'Jancsi $2{,}3$ km, Juliska $6{,}9$ km.'),
+ ('A téglalap egyik oldala kétszer olyan hosszú, mint a másik. Határozd meg az oldalak hosszát, ha '
+  'a kerület $24$ cm!',
+  None,
+  '$4$ cm és $8$ cm.'),
+ ('Egy panzióban három- és kétágyas szobák vannak. Összesen $14$ szoba van, a férőhelyek száma '
+  '$34$. Hány két-, illetve háromágyas szoba van?',
+  None,
+  '$8$ kétágyas és $6$ háromágyas szoba.'),
+ ('Egy- és kéteurós érmékből összegyűjtöttünk $35$ darabot, összesen $56$ euró értékben. Hány érme '
+  'van az egyes fajtákból?',
+  None,
+  '$14$ db egyeurós és $21$ db kéteurós.'),
+ ('Egy kókuszrúd és egy csokiszelet ára $560$ Ft. Három csokiszelet $80$ Ft-tal drágább, mint egy '
+  'kókuszrúd. Mennyit kell fizetnünk öt csokiszeletért és két kókuszrúdért?',
+  None,
+  '$1600$ Ft.'),
+ ('Egy játékbeli aprópénzre váltó automata $10$ és $20$ forintos érmékre váltja a papírpénzt. A '
+  'kiadott érmék számát megválaszthatjuk. Hány érmét ad az egyes fajtákból, ha $1000$ Ft-ot '
+  'váltunk fel, és összesen $90$ érmét kérünk?',
+  None,
+  '$80$ db tízforintos és $10$ db húszforintos.'),
+ ('Húsz év múlva az apa kétszer olyan idős lesz, mint a fia; $8$ évvel ezelőtt pedig hatszor olyan '
+  'idős volt, mint a fia. Hány évesek külön-külön?',
+  None,
+  'az apa $50$, a fia $15$ éves.'),
+ ('Egy kétjegyű szám számjegyeinek összege $11$. Ha a számjegyeit felcseréljük, $45$-tel kisebb '
+  'számot kapunk. Melyik az eredeti szám?',
+  None,
+  '$83$.'),
+ ('Karcsi $17$ évvel fiatalabb mogorva szomszédjánál. Ha kétszer olyan idős lenne, mint most, '
+  'akkor egy évvel volna idősebb, mint a szomszédja most. Hány éves a mogorva szomszéd?',
+  None,
+  '$35$ éves.'),
+ ('Egy $25$ km hosszú ösvény két végén egy-egy turistaház áll. Két iskolai csoportot külön-külön '
+  'ezekben a turistaházakban szállásoltak el. Egyszerre indulnak el az ösvényen egymás felé, '
+  'állandó sebességgel, megállás nélkül. Az egyik csoport óránként $4$, a másik $6$ km-t tesz meg. '
+  'Mennyi idő múlva és hol találkoznak?',
+  None,
+  '$2{,}5$ óra múlva; a lassabb csoport házától $10$ km-re (a gyorsabbétól $15$ km-re).'),
  ('Két egyenes egyenlete: $y=2x-3$ és $y=-x+3$.',
   ['Olvasd le mindkét egyenes meredekségét és $y$-tengelymetszetét!',
    'Add meg a metszéspontjukat számolással.',
    'Az $y=2x+1$ egyenes hány pontban metszi az elsőt? Miért? Ehhez nem kell számolnod.'],
   ['Az első meredeksége $2$, tengelymetszete $-3$; a másodiké $-1$, illetve $3$.',
    '$(2;1)$.',
-   'Egyetlen pontban sem; párhuzamosak.']),
-]
+   'Egyetlen pontban sem: a meredekségük azonos, a tengelymetszetük különböző.'])]
 
-# ======================== NEHÉZ (mechanikus 4 + szöveges 14-17) ========================
-NEHEZ = [
- ("Oldd meg a rendszert az $a$ valós paraméter függvényében: $2x+3y=1$, $-2x+ay=0$.",
-  None, "ha $a\\neq -3$: $x=\\dfrac{a}{2(a+3)},\\ y=\\dfrac{1}{a+3}$; ha $a=-3$: nincs megoldás."),
- ("Oldd meg (figyelj az értelmezési tartományra): $1+\\dfrac{5}{(v-3)(v+2)}=-\\dfrac{1}{v+2}$.",
-  None, '$v=2$.'),
- ("Oldd meg kiemeléssel: $x^2-5x=0$.",
-  None, "$x=0$ vagy $x=5$."),
- ("Oldd meg az egyenlőtlenséget: $\\dfrac{2x-1}{3}-\\dfrac{x+2}{2}\\le 1$.",
-  None, "$x\\le 14$."),
- # --- 3_Szöveges feladatok.docx 14-17 („Nehezebb", hiánytalanul) ---
- ("Apa és fia kerítést fest; egyedül $6$, illetve $10$ óra alatt lennének kész. Egyórányi közös munka után a fiút elküldték, így az apa fél órán át egyedül dolgozott, majd közösen befejezték. Összesen mennyi ideig tartott a festés?",
-  None, "$\\dfrac{63}{16}$ óra $=3$ óra $56$ perc $15$ mp."),
- ("Egy medencét két csap tölt: az első egyedül $18$ óra, a második egyedül $15$ óra alatt. Az első csapból $2$ órán át folyik a víz, majd elzárják (a második végig folyik). Mennyi idő alatt telik meg a medence?",
-  None, "$\\dfrac{40}{3}$ óra $=13$ óra $20$ perc."),
- ("Három teherautó kavicsot hord: egyedül $5$, $8$, illetve $9$ nap alatt végezne. Mennyi idő alatt végeznek, ha párhuzamosan dolgoznak?",
-  None, "$\\dfrac{360}{157}$ nap $\\approx 2{,}29$ nap."),
-]
+# ======================== NEHÉZ (mechanikus 4 + szöveges 3) ========================
+NEHEZ = [('Oldd meg a rendszert az $a$ valós paraméter függvényében: $2x+3y=1$, $-2x+ay=0$.',
+  None,
+  'ha $a\\neq -3$: $x=\\dfrac{a}{2(a+3)},\\ y=\\dfrac{1}{a+3}$; ha $a=-3$: nincs megoldás.'),
+ ('Oldd meg, és add meg az eredeti értelmezési tartományt: '
+  '$1+\\dfrac{5}{(v-3)(v+2)}=-\\dfrac{1}{v+2}$.',
+  None,
+  '$v=2$; ÉT: $v\\ne3$, $v\\ne-2$.'),
+ ('<b>Kitekintés.</b> Oldd meg kiemeléssel: $x^2-5x=0$.', None, '$x=0$ vagy $x=5$.'),
+ ('Oldd meg az egyenlőtlenséget: $\\dfrac{2x-1}{3}-\\dfrac{x+2}{2}\\le 1$.', None, '$x\\le 14$.'),
+ ('Apa és fia ugyanazt a kerítést festik. Egyedül az apa $6$, a fia $10$ óra alatt lenne kész. '
+  'Állandó teljesítménnyel dolgoznak, egymás munkáját nem akadályozzák. Egyórányi közös munka után '
+  'a fiú fél órára elment; ezalatt az apa egyedül dolgozott. Ezután közösen fejezték be a festést. '
+  'Összesen mennyi idő telt el a kezdéstől a befejezésig?',
+  None,
+  '$\\dfrac{63}{16}$ óra $=3$ óra $56$ perc $15$ mp.'),
+ ('Egy kezdetben üres medencét két csap tölt. Állandó vízhozammal az első egyedül $18$, a második '
+  '$15$ óra alatt töltené meg. Egyszerre nyitják meg őket; az elsőt $2$ óra után elzárják, a '
+  'második végig nyitva marad. A medencéből nem folyik ki víz. Mennyi idő telik el a megnyitástól, '
+  'amíg megtelik?',
+  None,
+  '$\\dfrac{40}{3}$ óra $=13$ óra $20$ perc.'),
+ ('Három teherautó ugyanazt a kavicsmennyiséget hordja el. Külön-külön $5$, $8$, illetve $9$ '
+  'munkanap alatt végeznének, azonos napi munkaidővel és állandó teljesítménnyel. Mennyi idő alatt '
+  'végeznek, ha párhuzamosan dolgoznak, egymást nem akadályozva?',
+  None,
+  '$\\dfrac{360}{157}$ munkanap $\\approx 2{,}29$ munkanap.')]
 
-JOKER = ("<b>Kán csapdája.</b> Kán a következő egyenletet írta a táblára, és azt állítja, hogy a megoldása "
-  "$x=2$: $2x+5=2x+1$. Igaza van-e? Ha nem, mi a helyes válasz, és miért?",
-  'Nincs igaza: az egyenletnek nincs megoldása.')
+JOKER = ('<b>Kán csapdája.</b> Kán a következő egyenletet írta a táblára, és azt állítja, hogy a megoldása '
+ '$x=2$: $2x+5=2x+1$. Igaza van-e? Ha nem, mi a helyes válasz, és miért?',
+ 'Nincs igaza: mindkét oldalból $2x$-et kivonva az ellentmondó $5=1$ egyenlőséget kapjuk. Nincs '
+ 'megoldás.')
 
 # ======================== GYAKORLÓ DOLGOZAT (🏫 órai + 🏠 otthoni) ========================
 # Verifikáció:
-assert solve(Eq((2*x-1)/4+(x+1)/2,3),x)  # dummy solvable
+assert solve(Eq((x+2)/3-(x-1)/2,1),x)==[1]
+assert solve(Eq((x+2)**2-(x-3)*(x+1),15),x)==[Rational(4,3)]
 assert solve(Eq(3*(x+2)-2*(x-1),10),x)==[2]
 from sympy import symbols as S
 chk(solve([Eq(2*x+3*y,12),Eq(x-y,1)],[x,y],dict=True)[0], x=3,y=2)
 chk(solve([Eq(x+2*y,7),Eq(3*x-y,7)],[x,y],dict=True)[0], x=3,y=2)
 assert solve(Eq((3*m-1)*1+2,4),m)==[1]
 
-GYD_ORAI = [
- ("Ábrázold az $f(x)=3x-6$ függvényt, és add meg a nullahelyét!",
-  None, "nullahely: $x=2$; a grafikon a $(0,-6)$ és $(2,0)$ pontokon halad át."),
- ("Oldd meg a törtes egyenletet: $\\dfrac{x+2}{3}-\\dfrac{x-1}{2}=1$.",
-  None, "$x=-5$."),
- ("Oldd meg az egyenlőtlenséget, és ábrázold: $3(x+2)-2(x-1)\\ge 10$.",
-  None, "$x\\ge 2$."),
- ("Oldd meg a rendszert: $2x+3y=12$, $x-y=1$.",
-  None, "$x=3,\\ y=2$."),
- ("Egy szám kétszeresének és $7$-nek az összege $19$. Melyik ez a szám?",
-  None, "$6$."),
- ("Oldd meg a kibontással: $(x+2)^2-(x-3)(x+1)=15$.",
-  None, "$x=2$."),
- ("Milyen $m$ esetén halad át az $y=(3m-1)x+2$ egyenes a $P(1,4)$ ponton?",
-  None, "$m=1$."),
- ("Egy osztályban $30$ tanuló van; $8$-cal több lány, mint fiú. Hány fiú és hány lány van?",
-  None, "$11$ fiú és $19$ lány."),
- ("Egy mozijegy $1200$ Ft, egy diákjegy $800$ Ft. Összesen $20$ jegyet vettek $19\\,200$ Ft-ért. Hány teljes árú és hány diákjegyet?",
-  None, "$8$ teljes árú és $12$ diákjegy."),
- ("Oldd meg: $\\dfrac{x}{2}-\\dfrac{x-4}{3}=2$.",
-  None, "$x=4$."),
-]
-GYD_OTTHONI = [
- ("Ábrázold az $f(x)=-2x+1$ függvényt, és add meg a nullahelyét!",
-  None, "nullahely: $x=\\dfrac{1}{2}$; a $(0,1)$ ponton halad át."),
- ("Oldd meg az egyenlőtlenséget: $2(x-3)<4x+2$.",
-  None, "$x>-4$."),
- ("Oldd meg a rendszert: $3x+y=10$, $x+2y=5$.",
-  None, "$x=3,\\ y=1$."),
- ("Két szám összege $30$, különbségük $6$. Melyik ez a két szám?",
-  None, "$18$ és $12$."),
- ("Egy kétjegyű szám számjegyeinek összege $9$; a felcserélt szám $27$-tel nagyobb. Melyik a szám?",
-  None, "$36$."),
- ("Egy raktárban $3$ kg-os és $5$ kg-os zsákok vannak, összesen $20$ zsák és $76$ kg. Hány $3$ kg-os és hány $5$ kg-os zsák van?",
-  None, "$12$ db $3$ kg-os és $8$ db $5$ kg-os."),
-]
+GYD_ORAI = [('Ábrázold az $f(x)=3x-6$ függvényt, és add meg a nullahelyét!',
+  None,
+  'Nullahely: $x=2$; a grafikon a $(0;-6)$ és $(2;0)$ pontokon halad át.'),
+ ('Oldd meg a törtes egyenletet: $\\dfrac{x+2}{3}-\\dfrac{x-1}{2}=1$.', None, '$x=1$.'),
+ ('Oldd meg az egyenlőtlenséget, és ábrázold: $3(x+2)-2(x-1)\\ge 10$.', None, '$x\\ge 2$.'),
+ ('Oldd meg a rendszert: $2x+3y=12$, $x-y=1$.', None, '$x=3,\\ y=2$.'),
+ ('Egy szám kétszeresének és $7$-nek az összege $19$. Melyik ez a szám?', None, '$6$.'),
+ ('Bontsd ki a zárójeleket, majd oldd meg az egyenletet: $(x+2)^2-(x-3)(x+1)=15$.',
+  None,
+  '$x=\\dfrac{4}{3}$.'),
+ ('Milyen $m$ esetén halad át az $y=(3m-1)x+2$ egyenes a $P(1;4)$ ponton?', None, '$m=1$.'),
+ ('Egy osztályban $30$ tanuló van; $8$-cal több lány, mint fiú. Hány fiú és hány lány van?',
+  None,
+  '$11$ fiú és $19$ lány.'),
+ ('Egy teljes árú mozijegy $1200$ Ft, egy diákjegy $800$ Ft. Összesen $20$ jegyet vettek '
+  '$19\\,200$ Ft-ért. Hány teljes árú és hány diákjegyet?',
+  None,
+  '$8$ teljes árú és $12$ diákjegy.'),
+ ('Oldd meg: $\\dfrac{x}{2}-\\dfrac{x-4}{3}=2$.', None, '$x=4$.')]
+GYD_OTTHONI = [('Ábrázold az $f(x)=-2x+1$ függvényt, és add meg a nullahelyét!',
+  None,
+  'Nullahely: $x=\\dfrac{1}{2}$; a grafikon például a $(0;1)$ és $(\\dfrac{1}{2};0)$ pontokon '
+  'halad át.'),
+ ('Oldd meg az egyenlőtlenséget: $2(x-3)<4x+2$.', None, '$x>-4$.'),
+ ('Oldd meg a rendszert: $3x+y=10$, $x+2y=5$.', None, '$x=3,\\ y=1$.'),
+ ('Két szám összege $30$, különbségük $6$. Melyik ez a két szám?', None, '$18$ és $12$.'),
+ ('Egy kétjegyű szám számjegyeinek összege $9$; a felcserélt szám $27$-tel nagyobb. Melyik a szám?',
+  None,
+  '$36$.'),
+ ('Egy raktárban $3$ kg-os és $5$ kg-os zsákok vannak, összesen $20$ zsák és $76$ kg. Hány $3$ '
+  'kg-os és hány $5$ kg-os zsák van?',
+  None,
+  '$12$ db $3$ kg-os és $8$ db $5$ kg-os.')]
 # gyakorló asserts
 chk(solve([Eq(3*x+y,10),Eq(x+2*y,5)],[x,y],dict=True)[0], x=3,y=1)
 assert solve(Eq(x/2-(x-4)/3,2),x)==[4]
@@ -221,9 +263,10 @@ body.append('    <h2 id="gyak-dolgozat">📝 Gyakorló dolgozat</h2>\n    ' + di
   '\n    <p class="reszcsoport">🏠 Otthoni gyakorlás</p>\n' + gyt_cards(GYD_OTTHONI, "gydh"))
 
 sections = "\n".join(body)
-alcim = ("Közös kiképzési adattár a teljes lineáris szektorhoz: egyenletek, egyenlőtlenségek, függvény, rendszerek és "
- "szöveges feladatok. Haladj a szinteken, vagy ugorj a szükséges témára. A végeredmény minden feladatnál lenyitható — "
- "előbb számolj, csak utána nézd meg!")
+alcim = (('Gyakorlás egyenletekkel, egyenlőtlenségekkel, lineáris függvényekkel és rendszerekkel; a '
+ 'szöveges feladatokban a modell felírását is gyakorolhatod. A változók és paraméterek valósak, ha '
+ 'a feladat másként nem rendelkezik. Haladj a szinteken, vagy válaszd a szükséges témát! A '
+ 'végeredmény lenyitható; előbb dolgozz önállóan!'))
 
 html = f'''<!DOCTYPE html>
 <html lang="hu" data-root="../..">
@@ -294,4 +337,4 @@ html = f'''<!DOCTYPE html>
 '''
 open(os.path.join(DEST, "feladatok-linearis-egyenletek-es-rendszerek.html"), "w", encoding="utf-8").write(html)
 print("feladatok kész: Alap", len(ALAP), "Közép", len(KOZEP), "(ebből 13 szöveges) Nehéz", len(NEHEZ),
-      "(ebből 4 szöveges) | gyak.dolg.", len(GYD_ORAI)+len(GYD_OTTHONI))
+      "(ebből 3 szöveges) | gyak.dolg.", len(GYD_ORAI)+len(GYD_OTTHONI))
