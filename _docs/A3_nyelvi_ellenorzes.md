@@ -4,9 +4,9 @@
 
 **Jelenlegi összesítés:** az 1e mind a 38 tananyaglapjának teljes nyelvi és
 példahitelességi ellenőrzése elkészült tizenegy adagban. A tizenkettedik–
-tizenötödik adagban az 1e/01 hét, az 1e/02, 03 és 04 öt-öt további lapja
-is átnézve és javítva, összesen 22 lap: nyitóoldalak, összefoglalók,
-terepküldetések és feladatgyűjtemények. Az 1e/05–08 további lapfajtáinak
+tizenhatodik adagban az 1e/01 hét, az 1e/02–05 öt-öt további lapja
+is átnézve és javítva, összesen 27 lap: nyitóoldalak, összefoglalók,
+terepküldetések és feladatgyűjtemények. Az 1e/06–08 további lapfajtáinak
 és a 2e–4e teljes A3-auditja hátra van. Az adagok alábbi adatai az egyes
 munkamenetek eredményei; a legfrissebb bejegyzés a végén található.
 
@@ -1594,3 +1594,120 @@ A nyomtatási láthatóság valódi Edge-ben ellenőrizve.
 A3-audit szerint átnézve. Az 1e/05–08 további lapjai és a 2e–4e teljes
 A3-auditja hátra van. **Tanári döntés kell: nincs nyitott kérdés.**
 Helyi main, új ág és push nélkül. Következő javasolt adag: az 1e/05 további lapjai.
+
+
+## Tizenhatodik adag — 1e/05 további lapfajták (2026-10-07)
+
+### Hatókör és javítások
+
+Kiinduló revízió: `6de4047`, tiszta helyi main, az origin/main helyi
+referenciájával azonos állapot. Távoli frissítés nem történt.
+A geometria öt további lapjának teljes szövege átnézve:
+[nyitóoldal](../1e/05-geometria/index.html),
+[összefoglaló](../1e/05-geometria/osszefoglalo.html),
+[terepküldetés](../1e/05-geometria/terepkuldetes.html),
+[feladatgyűjtemény](../1e/05-geometria/feladatok-geometria.html),
+[házi feladatsor](../1e/05-geometria/feladatok-hazi.html).
+Összesen 99 kártya: 74 + 22 gyakorlófeladat és három projektkártya.
+Kilenc SVG, kvíz nincs. A kilenc tananyag korábbi A3-auditja megmaradt.
+
+Az 1e matematika-skill geometriai kimenetei az alap: alakzatok tulajdonságai,
+valós helyzetek geometriai modellje, egybevágósági transzformációk,
+lineáris vektorműveletek és egyszerű bizonyítások. Új tananyagrész nem került be.
+A házi feladatsor korábbi tanári kikötése — nincs benne transzformációs vagy
+szerkesztési gyakorlófeladat — megmaradt. A két feladatlap builderes:
+`build_fgy_geometria.py`, illetve `build_dangerroom.py` DEST05.
+A másik három lap kézzel karbantartott HTML.
+
+Javítás előtt bemutatott hibatábla, a lektori pontosításokkal:
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Összefoglaló | Hiányzó feltételek, a távolság szakaszként definiálva; nullvektort is érintő hibás általánosítás | Magas | HTML: különböző pontok/egyenesek, nem elfajuló és egyszerű alakzatok; távolság mint hossz; nemnulla vektorok |
+| Körös feladatok | Az adott ívhez tartozó szög és az íven fekvő csúcs összekeverhető | Közepes | Builder: az adott ív és a csúcs helye megnevezve; ívhossz helyett szögmérték |
+| Szögfelezős feladatok | Nem egyértelmű, melyik szög számítandó | Közepes | HTML / builder: ABC, belső szögfelezők, I metszéspont, AIB/BIC szög |
+| Ábrás feladatok | Két hegyesszög értéke tompának rajzolt szögben; több rajz koordinátái nem követik a feladat szögeit | Közepes | Builder: nyolc rajz geometriája a megtartott adatokból; kilenc kapcsolt, látható leírás |
+| Projekt | Tompaszögnél nem teljesíthető pótszögkérés; bizonytalan mérési és szimmetriamodell | Közepes | HTML: két hegyesszög mérése, síkbeli vázlat, pontosság; idealizált alakzat és elhagyott részletek |
+| Válaszok | Hiányzik a kért gondolatmenet; a gömbi kitekintés nem igazolja a létezést | Közepes | Builder: rövid kért indok, valóban két derékszögű gömbi példa |
+| Bevezetők | Ismétlődő nevek, nehézkes mondatok és teljesség-/dolgozatígéretek | Enyhe | HTML / builder: természetesebb magyar szöveg, tényleges darabszámok és gyakorlási útmutató |
+
+Az összefoglalóban külön szerepelnek az egybeeső egyenesek/síkok, az
+egyenes–sík háromféle helyzete és a merőlegesség metszésponti feltétele.
+A távolság szakaszhossz, közös pontnál nulla. Mellékszögek szárai,
+háromszög-egyenlőtlenségek, egybevágósági tételek megfelelő adatai,
+belső szögfelezők, súlyponti arány és egyszerű sokszögek feltételei kimondva.
+A párhuzamos vektorok tételében létező valós szorzó és két nemnulla vektor
+szerepel; a nullvektor és a tengely pontjainak tükrözése külön eset.
+A kánon szerint a matematikai kisebbjelek HTML-ben escapelve.
+
+Az ábrákban a megadott szögek azonos helyen értelmezhetők a rajz és a
+szöveges leírás alapján. A három párhuzamos-egyeneses rajz dőlésszöge,
+a háromszögek, négyszög, paralelogramma és trapéz pontjai újraszámolva;
+a húrnégyszög meglévő koordinátái helyesek. Mind a kilenc ábrához látható,
+szavakkal megadott adatleírás és `aria-describedby` kapcsolat tartozik.
+A világos ábrakártyák és a közös stílus megmaradtak, CSS-kivétel nélkül.
+
+A projekt rögzített helyzetei síkbeli modellek. Folyosóknál alaprajzi
+középvonalak, szögfelezőknél megnevezett csúcsok, forgatásnál a hatszög
+középpontja szerepel. A saját mérés két hegyesszöget, szögszárakat,
+szögmérőt és mérési pontosságot kér. A valós terület egyszerű sokszögmodell,
+konkáv esetben az átló kívül is haladhat. A szimmetriapélda megnevezi,
+mely részleteket tekinti az alakzat részének és mit idealizál.
+
+Az eredeti feladatadatok, számszerű válaszok, kártyák és horgonyok megmaradtak.
+Új gyakorlófeladat vagy bemeneti számadat nincs. A kért indoklásokhoz tartozó
+négy válaszblokk pontosult; a házi egy válasza csak a nevezetes középpontok
+magyar elnevezésében változott. A projekt értékelési arányai megmaradtak;
+projekt-megoldókulcs nem került a repóba. A DEST05 kiíróhívás mellett más
+házi témakör forrásának változatlanságát AST-összevetés igazolja.
+
+### Független ellenőrzés
+
+Két friss szemű, projektkontextus nélküli lektor kizárólag tanulói szövegeket
+kapott, végeredmények nélkül. Mind a 96 gyakorlófeladat számszerű válasza
+helyes. Az első kör értelmezési és feltételhiányai javultak; a második kör
+mind a kilenc ábra jelöléseit helyesnek és a feladatokat egyértelműnek találta.
+A másik lektor utolsó négy szövegpontosítása beépült: nemnulla vektorok
+egyenlősége, a sokszögképletek feltételének hatóköre, tükörszimmetria,
+természetesebb naplóutasítás.
+
+Független kontroll: 17 matematikai próbacsoport SymPy-egyenletekkel,
+vektorazonosságokkal és geometriai határesetekkel. A gömbi példa tényleges
+meridián–egyenlítő merőlegessége is ellenőrizve. A kilenc kész SVG
+koordinátáiból mért szögek egyeznek a feladatadatokkal; a kerekített
+képpontkoordináták megengedett eltérése legfeljebb 0,05 fok.
+A projekt számításai csak privát kontrollban szerepelnek.
+20/20 megőrzési próba: régi id/href/média/kártyalisták; bemeneti számadatok,
+szkriptek és stílushivatkozások megmaradtak. Más témakör HTML-je nem változott.
+
+### Ellenőrzések és korlátok
+
+| Ellenőrzés | Eredmény |
+|---|---|
+| Teljes kánon és belső linkek | 310 oldal, 0 hiba |
+| Gyakorlósávok | Minden kártyát felad valamelyik egység |
+| Teljes kulcsteszt | 4499/4499, 0 eltérés |
+| Teljes regresszió | 4499/4499 = 100% |
+| jsdom / képletrender | Öt végleges lap, 469 képlet, 0 hiba; nincs kvíz |
+| Edge mobil és asztali | Öt lap × 360/390/1280 px × zárt/nyitott lenyílók: 30 végleges nézet, 0 hiba |
+| axe | 30 végleges nézet, 0 jelzés; nem teljes WCAG-minősítés |
+| Ábrák és hozzáférhetőségi fa | 9/9 teljes név és leírás; három szélességen minden felirat a rajzkereten belül |
+| Nyomtatás JS be/ki | 10/10: címsorok, feladatszövegek, minden végeredmény és mind a kilenc ábra/leírás látható |
+| JavaScript nélkül | 5/5 lap olvasható; képletek TeX alakban |
+| Keresőindex | 308 nem üres bejegyzés, pontosan öt URL változott; új késői kifejezések a 11727. és 5200. karakteren is indexelve |
+| Naplótérkép | Változatlan: 184 egység, 2294 feladat, 12315 XP |
+| Kép, média és háttér | Újraépített lapok avatarja/háttere visszatéve; 334 médiaelem 139 lapon, médiaváltozás nélkül |
+
+A teljes lánc után az utolsó három kézi lap prózapontosításával a statikus
+lánc újrafutott. Az érintett három lap render-, böngészős és nyomtatási
+próbája ismételve; a végleges számok a legutolsó megfelelő lapverziókból
+összevonva. A kulcsteszt és teljes regresszió a végleges feladatlapokon futott.
+Mind a kilenc 390 px-es ábrakártya szemrevételezve, olvasható, nem levágott.
+Valódi képernyőolvasó, más böngésző, teljes PDF-oldaltördelés, minden
+háttérpont kézi kontrasztja és külső média tartalma nem ellenőrizve.
+A nyomtatási láthatóság valódi Edge-ben ellenőrizve.
+
+**Állapot:** az 1e 38/38 tananyaga és az 1e/01–05 további 27 lapja teljes
+A3-audit szerint átnézve. Az 1e/06–08 további lapjai és a 2e–4e teljes
+A3-auditja hátra van. **Tanári döntés kell: nincs nyitott kérdés.**
+Helyi main, új ág és push nélkül. Következő javasolt adag: az 1e/06 további lapjai.

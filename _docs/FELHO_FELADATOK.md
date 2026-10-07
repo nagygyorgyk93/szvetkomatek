@@ -270,7 +270,7 @@ A korábbi A1-ellenőrzések nem helyettesítik a teljes stilisztikai átnézés
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ◐ 01: 9, 02: 3, 03: 4, 04: 3, 05: 9, 06: 3, 07: 4, 08: 3 — mind a 38 tananyag, az 01 további 7 és a 02–04 további 5-5 lapja átnézve és javítva; a 05–08 további lapjai hátra (helyi main, 2026-10-07) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
+| ◐ 01: 9, 02: 3, 03: 4, 04: 3, 05: 9, 06: 3, 07: 4, 08: 3 — mind a 38 tananyag, az 01 további 7 és a 02–05 további 5-5 lapja átnézve és javítva; a 06–08 további lapjai hátra (helyi main, 2026-10-07) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
 
 Az első adag három függvényes, a második hat logikai és halmazos tananyagot
 ellenőrzött. A példák feltételei, bevezetők, átvezetők és matematikai pontatlanságok
@@ -371,6 +371,19 @@ Két kontextus nélküli lektor; kánon/link 310/0, kulcs 4499/4499, regresszió
 Render 543/0; 30 nézet/axe 0, nyomtatás JS be/ki 10/10. Keresőindex pontosan
 öt URL-en változott, naplótérkép változatlan. Új feladat-számadat, ág és push
 nincs. Tanári döntés nem maradt nyitva. Az 1e/05–08 további lapfajtái és
+a 2e–4e teljes A3-auditja hátra van.
+
+Tizenhatodik adag (2026-10-07): az 1e/05 öt további lapja, 96 gyakorlófeladat
+és három projektkártya átnézve. Geometriai feltételek, távolság és nullvektor,
+szögfelezők és körívek megnevezése, kért indoklások pontosítva. Nyolc rajz
+geometriája javult; kilenc látható, kapcsolt ábraleírás. Mérési/szimmetria-
+modellek és természetesebb magyar szöveg. Két kontextus nélküli lektor;
+17 matematikai próbacsoport, kilenc kész SVG koordinátáinak kontrollja.
+Kánon/link 310/0, kulcs 4499/4499, regresszió 100%. Render 469/0;
+30 végleges nézet/axe 0, nyomtatás JS be/ki 10/10; kilenc teljes leírás
+a hozzáférhetőségi fában. Keresőindex pontosan öt URL-en változott,
+naplótérkép változatlan. Új feladat-számadat, ág és push nincs.
+Tanári döntés nem maradt nyitva. Az 1e/06–08 további lapfajtái és
 a 2e–4e teljes A3-auditja hátra van.
 
 Részletek:

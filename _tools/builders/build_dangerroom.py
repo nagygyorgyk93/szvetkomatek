@@ -497,9 +497,9 @@ A05 = [
  ("Melyik szakaszhármasból szerkeszthető háromszög?",
   ["$5,\\ 7,\\ 11$","$3,\\ 4,\\ 8$","$6,\\ 6,\\ 6$"],
   "a) igen; b) nem; c) igen.", True),
- ("Párosítsd a vonalhármast a metszéspontjával!",
-  ["szögfelezők","oldalfelező merőlegesek","súlyvonalak","magasságvonalak"],
-  ["beírt kör közép","körülírt kör közép","súlypont","magasságpont"], True),
+ ("Egy háromszög nevezetes vonalairól van szó. Párosítsd a vonalhármast a metszéspontjával!",
+  ["belső szögfelezők","oldalfelező merőlegesek","súlyvonalak","magasságvonalak"],
+  ["a beírt kör középpontja","a körülírt kör középpontja","súlypont","magasságpont"], True),
  ("Egy négyszög három belső szöge $100^\\circ$, $90^\\circ$ és $85^\\circ$. Mekkora a negyedik?",
   None, "$85^\\circ$."),
  ("Egy érintőnégyszög oldalai (sorban) $AB=10$, $BC=8$, $CD=14$. Mekkora az $AD$?",
@@ -507,7 +507,7 @@ A05 = [
  ("A szabályos $15$-szögről.",
   ["Mekkora egy külső szöge?","Mekkora egy belső szöge?"],
   ["$24^\\circ$","$156^\\circ$"]),
- ("Egy ívhez $130^\\circ$-os középponti szög tartozik. Mekkora a kerületi szög ugyanezen az íven?",
+ ("Egy ívhez $130^\\circ$-os középponti szög tartozik. Mekkora az ugyanehhez az ívhez tartozó kerületi szög, amelynek csúcsa a kör másik ívén van?",
   None, "$65^\\circ$."),
  ("Egészítsd ki!",
   ["$\\overrightarrow{AB}+\\overrightarrow{BC}+\\overrightarrow{CA}$","$\\overrightarrow{AB}+\\overrightarrow{BA}$"],
@@ -531,21 +531,20 @@ K05 = [
   None, "$\\overrightarrow{AB}=\\vec{n}-\\vec{m}$; $\\overrightarrow{BC}=-\\vec{m}-\\vec{n}$."),
 ]
 N05 = [
- ("Egy háromszög két belső szögének belső szögfelezői $128^\\circ$-os szöget zárnak be. Mekkora a harmadik belső szög?",
+ ("Az $ABC$ háromszög $A$ és $B$ csúcsából induló belső szögfelezőinek metszéspontja $I$. Ha $\\angle AIB=128^\\circ$, mekkora a $C$ csúcsnál lévő belső szög?",
   None, "$76^\\circ$."),
  ("Egy húrnégyszög két szemközti szöge úgy aránylik, mint $4:5$. Mekkorák?",
   None, "$80^\\circ$ és $100^\\circ$."),
  ("Bizonyítsd be, hogy a paralelogramma szemközti oldalai egyenlők!",
   None, "Egy átló a paralelogrammát két egybevágó háromszögre bontja (SOS: a váltószögek egyenlők, az átló közös), ezért a szemközti oldalak egyenlők."),
 ]
-brief05 = ("🕹️ <b>SZVETI:</b> <b>Vészterem</b>-szimuláció, geometriai modul. Ez a <b>Vészterem</b> otthoni "
- "edzésváltozata — itt gyakorolsz a saját tempódban. A szimuláció a témakör <b>vizsgára menő magját</b> fedi le: "
- "szögek és szögpárok, háromszögek és egybevágóság, nevezetes pontok, négyszögek, sokszögek, a kör kerületi szöge és "
- "a vektorok. Haladj a fokozatokon: zöld (alap) → sárga (közép) → piros (nehéz). A végeredményt minden feladatnál "
- "lenyithatod — de előbb küzdd le magad!")
+brief05 = ("🕹️ <b>SZVETI:</b> A <b>Vészteremben</b> szögekkel, alakzatokkal és vektorokkal gyakorolsz. "
+ "Haladj a zöld feladatoktól a sárgák, majd a piros felé. Előbb dolgozz önállóan, aztán ellenőrizd a végeredményt! "
+ "A feladatok az euklideszi síkban értendők. A háromszögek nem elfajulók, a sokszögek egyszerűek és konvexek; "
+ "a csúcsokat körüljárási sorrendben nevezzük meg. A külső szög a belső szöget kiegészíti.")
 dr_page(DEST05, "index.html", "Geometria", "feladatok-hazi.html",
  "🕹️ Vészterem — házi feladatgyűjtemény",
- "Egyetlen, a témakör vizsgára menő magját lefedő házi feladatsor: szögek, háromszögek, egybevágóság, négyszögek, sokszögek, kör és vektorok. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
+ "Házi feladatok szögekkel, háromszögekkel, négyszögekkel, sokszögekkel, körrel és vektorokkal. Előbb oldd meg a feladatot, aztán nyisd le a végeredményt!",
  brief05, sect(A05, K05, N05),
  "index.html", "Témakör Főhadiszállása", "osszefoglalo.html", "Tömör összefoglaló",
  "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")

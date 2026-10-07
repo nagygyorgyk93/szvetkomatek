@@ -26,24 +26,25 @@
 </nav>
 <div class="hero">
   <h1>Geometria — tömör összefoglaló</h1>
-  <p class="alcim">A teljes szektor „bevetési kártyája”: a legfontosabb definíciók, tételek és képletek egy helyen —
-  dolgozat előtti ismétléshez. A címekre kattintva a részletes tananyaghoz jutsz.</p>
+  <p class="alcim">A geometria legfontosabb fogalmai, tételei és képletei ismétléshez.
+  A címekre kattintva a részletes tananyaghoz jutsz.</p>
   <div class="meta-sor"><span class="chip ora">puska</span></div>
 </div>
 <main class="lap toc-os">
   <div class="tartalom">
-    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/svetozar.webp" alt="SZVETI — a Szvetkó-kampusz mesterséges intelligenciája" width="320" height="320" loading="lazy" decoding="async"><p>🛡️ <b>SZVETI:</b> Bevetési kártya betöltve. Ez a sűrített összefoglaló — végigfut a szektor minden
-    kulcstételén. Ha valamit nem tudsz fejből, kattints a címre, és ott a teljes eligazítás.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/svetozar.webp" alt="SZVETI — a Szvetkó-kampusz mesterséges intelligenciája" width="320" height="320" loading="lazy" decoding="async"><p>🛡️ <b>SZVETI:</b> Ismétlés közben ellenőrizd a tételek feltételeit is! Ha egy fogalom vagy összefüggés még bizonytalan,
+    nyisd meg a hozzá kapcsolódó tananyagot.</p></div>
 
     <h2 id="s1">A sík és a tér</h2>
     <div class="doboz definicio">
       <p class="cim"><span class="ikon">📗</span> <a href="tananyag-alapfogalmak.html#s1">Alapfogalmak</a> és <a href="tananyag-ter-es-tavolsag.html#s1">kölcsönös helyzet</a></p>
       <ul>
-        <li>Alapfogalmak: <b>pont</b> (<span class="math inline">\(A\)</span>), <b>egyenes</b> (<span class="math inline">\(a\)</span>), <b>sík</b> (<span class="math inline">\(\alpha\)</span>). Két pont egy egyenest, három (nem egy egyenesbe eső) pont egy síkot határoz meg.</li>
-        <li>A <b>síkban</b> két egyenes: metsző (1 közös pont) vagy párhuzamos (<span class="math inline">\(a\parallel b\)</span>).</li>
-        <li>A <b>térben</b> ráadásul <b>kitérő</b> is lehet (nincs közös pont és közös sík sem).</li>
-        <li>Egyenes és sík: benne fekszik / párhuzamos / döfi. <span class="math inline">\(e\perp\alpha\)</span>, ha a sík két metsző egyenesére merőleges.</li>
-        <li>Két sík: párhuzamos vagy metsző (közös rész = metszésvonal). <b>Távolság</b> = mindig a merőleges (legrövidebb) szakasz.</li>
+        <li>Alapfogalmak: <b>pont</b> (<span class="math inline">\(A\)</span>), <b>egyenes</b> (<span class="math inline">\(a\)</span>), <b>sík</b> (<span class="math inline">\(\alpha\)</span>). Két <b>különböző</b> pont egy egyenest, három nem egy egyenesre illeszkedő pont egy síkot határoz meg.</li>
+        <li>A <b>síkban</b> két különböző egyenes metsző (egy közös pont) vagy párhuzamos (<span class="math inline">\(a\parallel b\)</span>). Az egybeeső egyeneseknek minden pontjuk közös.</li>
+        <li>A <b>térben</b> két különböző egyenes metsző, párhuzamos vagy <b>kitérő</b>; a kitérő egyeneseknek sem közös pontjuk, sem közös síkjuk nincs.</li>
+        <li>Egy egyenes a síkban fekszik, egy pontban metszi (döfi), vagy nincs közös pontjuk, és párhuzamos a síkkal. Ha az <span class="math inline">\(e\)</span> egyenes az <span class="math inline">\(F\)</span> pontban metszi az <span class="math inline">\(\alpha\)</span> síkot, és merőleges a sík két, <span class="math inline">\(F\)</span>-ben metsző egyenesére, akkor <span class="math inline">\(e\perp\alpha\)</span>.</li>
+        <li>Két különböző sík párhuzamos vagy egy egyenesben metszi egymást; egybeeső síkoknak minden pontjuk közös.</li>
+        <li>A <b>távolság</b> a két alakzat legközelebbi pontjai közötti szakasz <b>hossza</b>; közös pont esetén nulla. Pont–egyenes és pont–sík távolságnál a merőleges vetületig mérünk; kitérő egyeneseknél a közös merőleges szakasz hosszát vesszük.</li>
       </ul>
     </div>
 
@@ -51,10 +52,10 @@
     <div class="doboz tetel">
       <p class="cim"><span class="ikon">📘</span> A szögkapcsolatok</p>
       <ul>
-        <li>Fajták: hegyes <span class="math inline">\(&lt;90^\circ\)</span>, derék <span class="math inline">\(=90^\circ\)</span>, tompa <span class="math inline">\(90^\circ\!-\!180^\circ\)</span>, egyenes <span class="math inline">\(180^\circ\)</span>.</li>
-        <li><b>Pótszögek</b>: összegük <span class="math inline">\(90^\circ\)</span>. <b>Kiegészítő szögek</b>: összegük <span class="math inline">\(180^\circ\)</span>.</li>
-        <li><b>Mellékszögek</b>: összegük <span class="math inline">\(180^\circ\)</span>. <b>Csúcsszögek</b>: egyenlők.</li>
-        <li>Transzverzális (<span class="math inline">\(a\parallel b\)</span>): <b>egyállású</b> és <b>váltószögek egyenlők</b>, <b>társszögek kiegészítők</b> (<span class="math inline">\(180^\circ\)</span>).</li>
+        <li>Szögfajták: hegyesszög <span class="math inline">\(0^\circ&lt;\alpha&lt;90^\circ\)</span>; derékszög <span class="math inline">\(\alpha=90^\circ\)</span>; tompaszög <span class="math inline">\(90^\circ&lt;\alpha&lt;180^\circ\)</span>; egyenesszög <span class="math inline">\(\alpha=180^\circ\)</span>.</li>
+        <li><b>Pótszögek:</b> összegük <span class="math inline">\(90^\circ\)</span>. <b>Kiegészítő szögek:</b> összegük <span class="math inline">\(180^\circ\)</span>.</li>
+        <li><b>Mellékszögek:</b> közös csúcsuk és egy közös száruk van, másik két száruk ellentétes félegyenes; összegük <span class="math inline">\(180^\circ\)</span>. Két metsző egyenes <b>csúcsszögei</b> egyenlők.</li>
+        <li>Ha egy transzverzális két párhuzamos egyenest metsz (<span class="math inline">\(a\parallel b\)</span>), az <b>egyállású</b> és a <b>váltószögek egyenlők</b>, a <b>társszögek kiegészítők</b>.</li>
       </ul>
     </div>
 
@@ -62,9 +63,9 @@
     <div class="doboz tetel">
       <p class="cim"><span class="ikon">📘</span> Alaptételek</p>
       <ul>
-        <li>Belső szögösszeg: <span class="math inline">\(\alpha+\beta+\gamma=180^\circ\)</span>. Külső szög = a két nem szomszédos belső szög összege; külső szögösszeg <span class="math inline">\(360^\circ\)</span>.</li>
-        <li>Háromszög-egyenlőtlenség: <span class="math inline">\(a&lt;b+c\)</span> (bármely két oldal összege nagyobb a harmadiknál).</li>
-        <li>Egybevágósági tételek: <b>OOO</b>, <b>OSO</b> (közbezárt szög), <b>SOS</b> (oldal + rajta fekvő két szög), <b>IV.</b> (két oldal + a nagyobbal szemközti szög).</li>
+        <li>Síkbeli, nem elfajuló háromszög belső szögösszege <span class="math inline">\(\alpha+\beta+\gamma=180^\circ\)</span>. A belső szög melletti külső szög a két nem szomszédos belső szög összege. Csúcsonként egy-egy külső szöget véve összegük <span class="math inline">\(360^\circ\)</span>.</li>
+        <li><b>Háromszög-egyenlőtlenség:</b> a pozitív <span class="math inline">\(a,b,c\)</span> oldalhosszakra <span class="math inline">\(a&lt;b+c\)</span>, <span class="math inline">\(b&lt;a+c\)</span>, <span class="math inline">\(c&lt;a+b\)</span>.</li>
+        <li>Egybevágósági tételek megfelelő adatok egyenlősége esetén: <b>OOO</b> (három oldal), <b>OSO</b> (két oldal és a közbezárt szög), <b>SOS</b> (egy oldal és a rajta fekvő két szög), <b>IV.</b> (két oldal és közülük a nagyobbikkal szemközti szög).</li>
       </ul>
     </div>
 
@@ -72,10 +73,10 @@
     <div class="doboz definicio">
       <p class="cim"><span class="ikon">📗</span> Négy pont, két kör</p>
       <ul>
-        <li><b>oldalfelező merőlegesek</b> → körülírt kör közép (<span class="math inline">\(O\)</span>), a csúcsoktól egyenlő távol;</li>
-        <li><b>szögfelezők</b> → beírt kör közép (<span class="math inline">\(I\)</span>), az oldalaktól egyenlő távol;</li>
-        <li><b>súlyvonalak</b> → súlypont (<span class="math inline">\(S\)</span>), a súlyvonalat a csúcstól <span class="math inline">\(2:1\)</span> arányban osztja;</li>
-        <li><b>magasságvonalak</b> → magasságpont (<span class="math inline">\(M\)</span>).</li>
+        <li><b>Oldalfelező merőlegesek</b> → a körülírt kör középpontja (<span class="math inline">\(O\)</span>), a csúcsoktól egyenlő távolságra;</li>
+        <li><b>belső szögfelezők</b> → a beírt kör középpontja (<span class="math inline">\(I\)</span>), az oldalegyenesektől egyenlő távolságra;</li>
+        <li><b>súlyvonalak</b> → súlypont (<span class="math inline">\(S\)</span>), a súlyvonalat a csúcstól az oldalfelező pont felé <span class="math inline">\(2:1\)</span> arányban osztja;</li>
+        <li><b>magasságvonalak</b> → magasságpont (<span class="math inline">\(M\)</span>); tompaszögű háromszögben a háromszögön kívül van.</li>
       </ul>
     </div>
 
@@ -83,10 +84,10 @@
     <div class="doboz tetel">
       <p class="cim"><span class="ikon">📘</span> Szögösszeg és a család</p>
       <ul>
-        <li>Belső szögösszeg: <span class="math inline">\(\alpha+\beta+\gamma+\delta=360^\circ\)</span>.</li>
-        <li>Paralelogramma: szemközti oldalak/szögek egyenlők, átlók felezik egymást. Téglalap: átlók egyenlők. Rombusz: átlók merőlegesek, felezik a szögeket.</li>
-        <li>Trapéz: a száron fekvő szögek kiegészítők (<span class="math inline">\(180^\circ\)</span>).</li>
-        <li><b>Húrnégyszög</b>: szemközti szögek összege <span class="math inline">\(180^\circ\)</span>. <b>Érintőnégyszög</b>: szemközti oldalak összege egyenlő, <span class="math inline">\(a+c=b+d\)</span>.</li>
+        <li>Egyszerű, önmagát nem metsző négyszög belső szögösszege <span class="math inline">\(\alpha+\beta+\gamma+\delta=360^\circ\)</span>.</li>
+        <li>Néhány <b>tulajdonság:</b> a paralelogramma szemközti oldalai és szögei egyenlők, átlói felezik egymást. A téglalap átlói egyenlők; a rombusz átlói merőlegesek egymásra és felezik a szemközti csúcsok szögeit.</li>
+        <li>A trapéz egy szárán fekvő belső szögek összege <span class="math inline">\(180^\circ\)</span>.</li>
+        <li><b>Húrnégyszög:</b> szemközti szögeinek összege <span class="math inline">\(180^\circ\)</span>. <b>Érintőnégyszög:</b> egymást követő <span class="math inline">\(a,b,c,d\)</span> oldalakkal <span class="math inline">\(a+c=b+d\)</span>.</li>
       </ul>
     </div>
 
@@ -94,10 +95,10 @@
     <div class="doboz tetel">
       <p class="cim"><span class="ikon">📘</span> Képletek</p>
       <ul>
-        <li>Átlók egy csúcsból: <span class="math inline">\(n-3\)</span>; összes átló: <span class="math inline">\(\dfrac{n(n-3)}{2}\)</span>.</li>
-        <li>Belső szögösszeg: <span class="math inline">\((n-2)\cdot 180^\circ\)</span>; külső szögösszeg: <span class="math inline">\(360^\circ\)</span>.</li>
-        <li>Szabályos <span class="math inline">\(n\)</span>-szög: belső szög <span class="math inline">\(\dfrac{(n-2)\cdot 180^\circ}{n}\)</span>, külső szög <span class="math inline">\(\dfrac{360^\circ}{n}\)</span>.</li>
-        <li>Kör: <span class="math inline">\(d=2r\)</span>; az érintő merőleges a sugárra. <b>Kerületi szög</b> = a középponti fele: <span class="math inline">\(\varphi=\dfrac{\gamma}{2}\)</span>. <b>Thalész</b>: az átmérő fölötti kerületi szög <span class="math inline">\(90^\circ\)</span>.</li>
+        <li>Az alábbi sokszögképletekben <span class="math inline">\(n\ge3\)</span> egész, az egyszerű, önmagát nem metsző sokszög csúcsainak száma. Egy csúcsból <span class="math inline">\(n-3\)</span> átló húzható; összesen <span class="math inline">\(\dfrac{n(n-3)}{2}\)</span> átló van.</li>
+        <li>Belső szögösszeg: <span class="math inline">\((n-2)\cdot180^\circ\)</span>. Konvex sokszögben csúcsonként egy, a belső szöget kiegészítő külső szöget véve az összeg <span class="math inline">\(360^\circ\)</span>.</li>
+        <li>Szabályos <span class="math inline">\(n\)</span>-szög: belső szög <span class="math inline">\(\dfrac{(n-2)\cdot180^\circ}{n}\)</span>, külső szög <span class="math inline">\(\dfrac{360^\circ}{n}\)</span>.</li>
+        <li>Kör: átmérő <span class="math inline">\(d=2r\)</span>, ahol <span class="math inline">\(r>0\)</span> a sugár. Az érintő merőleges az érintési pontba húzott sugárra. <b>Azonos körívhez tartozó</b> kerületi és középponti szögre <span class="math inline">\(\varphi=\dfrac{\gamma}{2}\)</span>; a kerületi szög csúcsa a másik íven van. <b>Thalész:</b> az átmérő végpontjai és a kör egy harmadik pontja derékszögű háromszöget alkotnak.</li>
       </ul>
     </div>
 
@@ -105,9 +106,9 @@
     <div class="doboz definicio">
       <p class="cim"><span class="ikon">📗</span> Műveletek</p>
       <ul>
-        <li>Vektor: nagyság + irány; <span class="math inline">\(\overrightarrow{AB}=-\overrightarrow{BA}\)</span>. Egyenlő vektorok: azonos hossz + irány.</li>
+        <li>A nemnulla vektort a hossza, iránya és irányítása adja meg; az ellentétes irányítású vektor <span class="math inline">\(\overrightarrow{AB}=-\overrightarrow{BA}\)</span>. Két nemnulla vektor akkor és csak akkor egyenlő, ha hosszuk, irányuk és irányításuk egyezik. A nullvektor hossza nulla, iránya és irányítása nincs.</li>
         <li>Összeadás: háromszög- vagy paralelogramma-szabály; kivonás: <span class="math inline">\(\vec{a}-\vec{b}=\vec{a}+(-\vec{b})\)</span>.</li>
-        <li>Skalárszorzás: <span class="math inline">\(k\vec{a}\)</span> hossza <span class="math inline">\(|k|\cdot|\vec{a}|\)</span>; <span class="math inline">\(k&lt;0\)</span> megfordítja az irányt. <span class="math inline">\(\vec{b}=k\vec{a}\)</span> ⇔ párhuzamosak.</li>
+        <li><b>Szorzás számmal:</b> valós <span class="math inline">\(k\)</span> esetén <span class="math inline">\(k\vec{a}\)</span> hossza <span class="math inline">\(|k|\cdot|\vec{a}|\)</span>. Nemnulla vektornál <span class="math inline">\(k&lt;0\)</span> megfordítja az irányítást; <span class="math inline">\(k=0\)</span> nullvektort ad. Két nemnulla vektor pontosan akkor párhuzamos, ha <b>létezik</b> valós <span class="math inline">\(k\)</span>, amelyre <span class="math inline">\(\vec{b}=k\vec{a}\)</span>.</li>
       </ul>
     </div>
 
@@ -115,15 +116,15 @@
     <div class="doboz tetel">
       <p class="cim"><span class="ikon">📘</span> Az izometriák</p>
       <ul>
-        <li><b>Eltolás</b> (vektorral), <b>forgatás</b> (középpont + szög), <b>tengelyes tükrözés</b> (a tengely a szakasz felezőmerőlegese), <b>középpontos tükrözés</b> (= <span class="math inline">\(180^\circ\)</span>-os forgatás).</li>
-        <li>Mind <b>távolságtartó</b> → az eredeti és a kép <b>egybevágó</b>.</li>
-        <li>A tengelyes tükrözés <b>megfordítja</b> a körüljárás irányát; a többi megtartja.</li>
+        <li>Síkbeli <b>eltolás</b> (vektorral), <b>forgatás</b> (középponttal és irányított szöggel), <b>tengelyes tükrözés</b> és <b>középpontos tükrözés</b> (ugyanazon középpont körüli <span class="math inline">\(180^\circ\)</span>-os forgatás). Tengelyes tükrözésnél, ha <span class="math inline">\(P\)</span> nincs a tengelyen, a tengely a <span class="math inline">\(PP'\)</span> szakasz felezőmerőlegese; a tengely pontjai helyben maradnak.</li>
+        <li>Ezek <b>távolságtartó</b> transzformációk: az eredeti alakzat és képe <b>egybevágó</b>.</li>
+        <li>A felsorolt transzformációk közül a tengelyes tükrözés <b>megfordítja</b> a körüljárás irányát; a többi megtartja.</li>
       </ul>
     </div>
 
     <div class="gyakorolj">
       <span class="ikon">🎯</span>
-      <p>Készen állsz? Élesítsd a tudást a <a href="feladatok-geometria.html">feladatgyűjteményben</a> és a
+      <p>Gyakorolj a <a href="feladatok-geometria.html">feladatgyűjteményben</a> és a
       <a href="feladatok-hazi.html">Vészteremben</a>, végül a <a href="terepkuldetes.html">terepküldetéssel</a>.</p>
     </div>
     <div class="lapozo">

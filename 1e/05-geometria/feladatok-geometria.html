@@ -26,7 +26,7 @@
 </nav>
 <div class="hero">
   <h1>Geometria — feladatgyűjtemény</h1>
-  <p class="alcim">Közös kiképzési adattár a teljes geometria-szektorhoz: haladj a szinteken, vagy ugorj a szükséges témára. A végeredmény minden feladatnál lenyitható — előbb számolj, csak utána nézd meg!</p>
+  <p class="alcim">Feladatok három nehézségi szinten, ismétlőválogatásokkal és egy Jokerrel. Haladj sorban, vagy válaszd ki a gyakorolni kívánt témát! Előbb oldd meg a feladatot, aztán nyisd le a végeredményt.</p>
   <div class="meta-sor">
     <span class="chip alap">Alap</span><span class="chip kozep">Közép</span>
     <span class="chip nehez">Nehéz</span><span class="chip joker">Joker</span>
@@ -34,7 +34,7 @@
 </div>
 <main class="lap toc-os">
   <div class="tartalom">
-    <h2 id="alap">🟢 Alapszint</h2>
+    <p>A feladatok euklideszi síkban értendők, kivéve a külön jelölt térbeli és gömbi kitekintést. A háromszögek nem elfajulók; a sokszögek egyszerűek és konvexek, a csúcsokat körüljárási sorrendben nevezzük meg. Külső szögnél a belső szöget kiegészítő szöget vesszük, csúcsonként egyet. Az ívhez tartozó kerületi szög csúcsa a kör másik ívén van. A rajzokból a jelölt adatokat olvasd le; szöget és hosszt ne méréssel határozz meg!</p>    <h2 id="alap">🟢 Alapszint</h2>
     <article class="feladat alap" id="alap-1">
       <p><span class="szam">1.</span> Döntsd el, igaz vagy hamis (a síkban)!</p><ol class="reszfeladatok rovid"><li>Két különböző egyenesnek lehet két közös pontja.</li><li>Egy egyenesen kívüli ponton át pontosan egy párhuzamos húzható hozzá.</li><li>Két metsző egyenesnek pontosan egy közös pontja van.</li><li>Ha két egyenesnek nincs közös pontja, akkor a síkban párhuzamosak.</li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
@@ -42,7 +42,7 @@
       </details>
     </article>
     <article class="feladat alap" id="alap-2">
-      <p><span class="szam">2.</span> Döntsd el, igaz vagy hamis (a térben)!</p><ol class="reszfeladatok rovid"><li>Két egyenesnek lehet úgy, hogy sem közös pontjuk, sem közös síkjuk nincs.</li><li>Két metsző síknak egyetlen közös pontja van.</li><li>Egy pont és egy sík távolsága a merőleges szakasz hossza.</li><li>A kitérő egyenesek párhuzamosak.</li></ol>
+      <p><span class="szam">2.</span> Döntsd el, igaz vagy hamis (a térben)!</p><ol class="reszfeladatok rovid"><li>Két egyenes elhelyezkedhet úgy, hogy sem közös pontjuk, sem közös síkjuk nincs.</li><li>Két metsző síknak egyetlen közös pontja van.</li><li>Egy pont és egy sík távolsága a merőleges szakasz hossza.</li><li>A kitérő egyenesek párhuzamosak.</li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p>a) igaz; b) hamis; c) igaz; d) hamis.</p></div>
       </details>
@@ -78,7 +78,7 @@
       </details>
     </article>
     <article class="feladat alap" id="alap-8">
-      <p><span class="szam">8.</span> Párosítsd a vonalhármast a metszéspontjával!</p><ol class="reszfeladatok rovid"><li>a szögfelezők</li><li>az oldalfelező merőlegesek</li><li>a súlyvonalak</li><li>a magasságvonalak</li></ol>
+      <p><span class="szam">8.</span> Egy háromszög nevezetes vonalairól van szó. Párosítsd a vonalhármast a metszéspontjával!</p><ol class="reszfeladatok rovid"><li>a belső szögfelezők</li><li>az oldalfelező merőlegesek</li><li>a súlyvonalak</li><li>a magasságvonalak</li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><ol class="reszfeladatok"><li>beírt kör középpontja</li><li>körülírt kör középpontja</li><li>súlypont</li><li>magasságpont</li></ol></div>
       </details>
@@ -120,7 +120,7 @@
       </details>
     </article>
     <article class="feladat alap" id="alap-15">
-      <p><span class="szam">15.</span> Az izometriákról.</p><ol class="reszfeladatok"><li>Melyik transzformáció fordítja meg a körüljárás irányát?</li><li>A középpontos tükrözés hány fokos forgatással azonos?</li></ol>
+      <p><span class="szam">15.</span> Az izometriákról.</p><ol class="reszfeladatok"><li>Az eltolás, forgatás, tengelyes és középpontos tükrözés közül melyik fordítja meg a körüljárás irányát?</li><li>A középpontos tükrözés hány fokos forgatással azonos?</li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><ol class="reszfeladatok"><li>a tengelyes tükrözés</li><li><span class="math inline">\(180^\circ\)</span></li></ol></div>
       </details>
@@ -132,9 +132,9 @@
       </details>
     </article>
     <article class="feladat alap" id="alap-17">
-      <p><span class="szam">17.</span> Az ábrán <span class="math inline">\(a\parallel b\)</span>. Számítsd ki a megjelölt szögeket, majd nevezd meg a kért szögpárt!</p><div class="svgwrap"><svg viewBox="0 0 460 250" width="460" height="250" role="img" aria-label="Két párhuzamos egyenest transzverzális metsz; a felső metszéspont jobb felső szöge 48 fok 23 perc">
-  <defs><marker id="nyil-6f94c" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
-  <line x1="141.1" y1="28.1" x2="245.3" y2="223.9" stroke="#475569" stroke-width="1.9"/>
+      <p><span class="szam">17.</span> Az ábrán <span class="math inline">\(a\parallel b\)</span>. Számítsd ki a megjelölt szögeket, majd nevezd meg a kért szögpárt!</p><figure class="diagram-adatok"><div class="svgwrap"><svg viewBox="0 0 460 250" width="460" height="250" role="img" aria-describedby="abra-alap-17" aria-label="Két párhuzamos egyenes és transzverzális, négy jelölt szöggel">
+  <defs><marker id="nyil-293af" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+  <line x1="112.5" y1="35.1" x2="273.9" y2="216.9" stroke="#475569" stroke-width="1.9"/>
   <line x1="28.0" y1="74.0" x2="426.0" y2="74.0" stroke="#0f172a" stroke-width="2.2"/>
   <text x="433.0" y="79.0" font-size="15" font-style="italic" fill="#0f172a">a</text>
   <path d="M48.0,69.0 L54.0,74.0 L48.0,79.0" fill="none" stroke="#0f172a" stroke-width="1.5"/>
@@ -143,74 +143,74 @@
   <text x="433.0" y="183.0" font-size="15" font-style="italic" fill="#0f172a">b</text>
   <path d="M48.0,173.0 L54.0,178.0 L48.0,183.0" fill="none" stroke="#0f172a" stroke-width="1.5"/>
   <path d="M58.0,173.0 L64.0,178.0 L58.0,183.0" fill="none" stroke="#0f172a" stroke-width="1.5"/>
-  <path d="M139.6,74.0 A26.0,26.0 0 0 1 153.3,51.0" fill="none" stroke="#ef4444" stroke-width="1.8"/>
-  <text x="127.0" y="55.8" font-size="15" text-anchor="middle" fill="#ef4444" font-weight="700">α</text>
-  <path d="M153.3,51.0 A26.0,26.0 0 0 1 191.6,74.0" fill="none" stroke="#ef4444" stroke-width="1.8"/>
-  <text x="188.7" y="40.4" font-size="15" text-anchor="middle" fill="#ef4444" font-weight="700">48°23′</text>
-  <path d="M194.8,178.0 A26.0,26.0 0 0 1 208.6,155.0" fill="none" stroke="#ef4444" stroke-width="1.8"/>
-  <text x="182.3" y="159.8" font-size="15" text-anchor="middle" fill="#ef4444" font-weight="700">β</text>
-  <path d="M208.6,155.0 A26.0,26.0 0 0 1 246.8,178.0" fill="none" stroke="#ef4444" stroke-width="1.8"/>
-  <text x="244.0" y="144.4" font-size="15" text-anchor="middle" fill="#ef4444" font-weight="700">γ</text>
-  <circle cx="165.6" cy="74.0" r="3.2" fill="#0f172a"/>
-  <circle cx="220.8" cy="178.0" r="3.2" fill="#0f172a"/>
-</svg></div><ol class="reszfeladatok"><li><span class="math inline">\(\alpha\)</span></li><li><span class="math inline">\(\beta\)</span></li><li><span class="math inline">\(\gamma\)</span></li><li>Milyen szögpárt alkot <span class="math inline">\(\gamma\)</span> a megadott <span class="math inline">\(48^\circ 23'\)</span>-es szöggel?</li></ol>
+  <path d="M121.0,74.0 A26.0,26.0 0 0 1 129.7,54.6" fill="none" stroke="#ef4444" stroke-width="1.8"/>
+  <text x="106.0" y="60.6" font-size="15" text-anchor="middle" fill="#ef4444" font-weight="700">48°23′</text>
+  <path d="M129.7,54.6 A26.0,26.0 0 0 1 173.0,74.0" fill="none" stroke="#ef4444" stroke-width="1.8"/>
+  <text x="165.4" y="38.0" font-size="15" text-anchor="middle" fill="#ef4444" font-weight="700">α</text>
+  <path d="M213.4,178.0 A26.0,26.0 0 0 1 222.1,158.6" fill="none" stroke="#ef4444" stroke-width="1.8"/>
+  <text x="198.3" y="164.6" font-size="15" text-anchor="middle" fill="#ef4444" font-weight="700">γ</text>
+  <path d="M222.1,158.6 A26.0,26.0 0 0 1 265.4,178.0" fill="none" stroke="#ef4444" stroke-width="1.8"/>
+  <text x="257.8" y="142.0" font-size="15" text-anchor="middle" fill="#ef4444" font-weight="700">β</text>
+  <circle cx="147.0" cy="74.0" r="3.2" fill="#0f172a"/>
+  <circle cx="239.4" cy="178.0" r="3.2" fill="#0f172a"/>
+</svg></div><figcaption id="abra-alap-17"><b>Az ábra adatai:</b> A felső metszéspont bal felső szöge 48 fok 23 perc, jobb felső szöge alfa. Az alsó metszéspont bal felső szöge gamma, jobb felső szöge béta; a két egyenes párhuzamos.</figcaption></figure><ol class="reszfeladatok"><li><span class="math inline">\(\alpha\)</span></li><li><span class="math inline">\(\beta\)</span></li><li><span class="math inline">\(\gamma\)</span></li><li>Milyen szögpárt alkot <span class="math inline">\(\gamma\)</span> a megadott <span class="math inline">\(48^\circ 23'\)</span>-es szöggel?</li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(131^\circ 37'\)</span></li><li><span class="math inline">\(131^\circ 37'\)</span></li><li><span class="math inline">\(48^\circ 23'\)</span></li><li>Egyállású szögek.</li></ol></div>
       </details>
     </article>
     <article class="feladat alap" id="alap-18">
-      <p><span class="szam">18.</span> A háromszög két külső szöge <span class="math inline">\(130^\circ\)</span> és <span class="math inline">\(110^\circ\)</span>. Számítsd ki mind a három belső szöget!</p><div class="svgwrap"><svg viewBox="0 0 400 250" width="400" height="250" role="img" aria-label="Háromszög, amelynek két külső szöge 130 és 110 fok">
-  <defs><marker id="nyil-b6e92" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <p><span class="szam">18.</span> A háromszög két külső szöge <span class="math inline">\(130^\circ\)</span> és <span class="math inline">\(110^\circ\)</span>. Számítsd ki mind a három belső szöget!</p><figure class="diagram-adatok"><div class="svgwrap"><svg viewBox="0 0 400 250" width="400" height="250" role="img" aria-describedby="abra-alap-18" aria-label="ABC háromszög, két adott külső szöggel">
+  <defs><marker id="nyil-97a07" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
   <line x1="46.0" y1="204.0" x2="0.0" y2="204.0" stroke="#475569" stroke-width="1.7" stroke-dasharray="6 4"/>
-  <line x1="138.6" y1="46.0" x2="161.9" y2="6.3" stroke="#475569" stroke-width="1.7" stroke-dasharray="6 4"/>
-  <polygon points="46.0,204.0 340.2,204.0 138.6,46.0" fill="#eff6ff" stroke="#0f172a" stroke-width="2.1" stroke-linejoin="round"/>
-  <path d="M313.2,204.0 A27.0,27.0 0 0 1 319.0,187.3" fill="none" stroke="#ef4444" stroke-width="1.9"/>
-  <text x="296.7" y="194.0" font-size="14.5" text-anchor="middle" fill="#ef4444" font-weight="700">α</text>
-  <path d="M22.0,204.0 A24.0,24.0 0 0 1 58.1,183.3" fill="none" stroke="#f59e0b" stroke-width="1.9"/>
-  <text x="24.6" y="171.7" font-size="14.5" text-anchor="middle" fill="#f59e0b" font-weight="700">130°</text>
-  <path d="M150.8,25.3 A24.0,24.0 0 0 1 157.5,60.8" fill="none" stroke="#f59e0b" stroke-width="1.9"/>
-  <text x="180.9" y="43.0" font-size="14.5" text-anchor="middle" fill="#f59e0b" font-weight="700">110°</text>
-  <text x="30.3" y="215.4" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">A</text>
-  <text x="356.4" y="214.2" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">B</text>
-  <text x="133.1" y="34.9" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">C</text>
-</svg></div>
+  <line x1="178.6" y1="46.0" x2="208.1" y2="10.8" stroke="#475569" stroke-width="1.7" stroke-dasharray="6 4"/>
+  <polygon points="46.0,204.0 269.8,204.0 178.6,46.0" fill="#eff6ff" stroke="#0f172a" stroke-width="2.1" stroke-linejoin="round"/>
+  <path d="M242.8,204.0 A27.0,27.0 0 0 1 256.3,180.6" fill="none" stroke="#ef4444" stroke-width="1.9"/>
+  <text x="230.0" y="186.0" font-size="14.5" text-anchor="middle" fill="#ef4444" font-weight="700">α</text>
+  <path d="M22.0,204.0 A24.0,24.0 0 0 1 61.4,185.6" fill="none" stroke="#f59e0b" stroke-width="1.9"/>
+  <text x="27.8" y="170.0" font-size="14.5" text-anchor="middle" fill="#f59e0b" font-weight="700">130°</text>
+  <path d="M194.0,27.6 A24.0,24.0 0 0 1 190.6,66.8" fill="none" stroke="#f59e0b" stroke-width="1.9"/>
+  <text x="221.4" y="54.7" font-size="14.5" text-anchor="middle" fill="#f59e0b" font-weight="700">110°</text>
+  <text x="30.5" y="215.9" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">A</text>
+  <text x="285.0" y="216.6" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">B</text>
+  <text x="180.8" y="34.1" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">C</text>
+</svg></div><figcaption id="abra-alap-18"><b>Az ábra adatai:</b> Az ABC háromszög A csúcsánál 130 fokos, C csúcsánál 110 fokos külső szög van; a B csúcs belső szögét alfa jelöli.</figcaption></figure>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\(\angle A=50^\circ\)</span>, <span class="math inline">\(\angle B=60^\circ\)</span>, <span class="math inline">\(\angle C=70^\circ\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat alap" id="alap-19">
-      <p><span class="szam">19.</span> A háromszögnek két egyenlő hosszú oldala van (lásd a vonalkákat), az egyik alapszöge <span class="math inline">\(70^\circ\)</span>. Számítsd ki <span class="math inline">\(\alpha\)</span>-t és <span class="math inline">\(\beta\)</span>-t!</p><div class="svgwrap"><svg viewBox="0 0 340 280" width="340" height="280" role="img" aria-label="Egyenlő szárú háromszög 70 fokos alapszöggel">
-  <defs><marker id="nyil-b26dd" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
-  <polygon points="46.0,234.0 285.3,234.0 165.6,46.0" fill="#eff6ff" stroke="#0f172a" stroke-width="2.1" stroke-linejoin="round"/>
-  <line x1="230.5" y1="136.8" x2="220.4" y2="143.2" stroke="#0f172a" stroke-width="1.6"/>
-  <line x1="100.8" y1="136.8" x2="110.9" y2="143.2" stroke="#0f172a" stroke-width="1.6"/>
-  <path d="M60.5,211.2 A27.0,27.0 0 0 1 73.0,234.0" fill="none" stroke="#ef4444" stroke-width="1.9"/>
-  <text x="86.3" y="216.9" font-size="14.5" text-anchor="middle" fill="#ef4444" font-weight="700">70°</text>
-  <path d="M258.3,234.0 A27.0,27.0 0 0 1 270.8,211.2" fill="none" stroke="#ef4444" stroke-width="1.9"/>
-  <text x="244.9" y="216.9" font-size="14.5" text-anchor="middle" fill="#ef4444" font-weight="700">β</text>
-  <path d="M180.1,68.8 A27.0,27.0 0 0 1 151.1,68.8" fill="none" stroke="#ef4444" stroke-width="1.9"/>
-  <text x="165.6" y="97.0" font-size="14.5" text-anchor="middle" fill="#ef4444" font-weight="700">α</text>
-  <text x="30.9" y="246.9" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">B</text>
-  <text x="300.3" y="246.9" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">C</text>
-  <text x="165.6" y="34.0" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">A</text>
-</svg></div>
+      <p><span class="szam">19.</span> A háromszögnek két egyenlő hosszú oldala van (lásd a vonalkákat), az egyik alapszöge <span class="math inline">\(70^\circ\)</span>. Számítsd ki <span class="math inline">\(\alpha\)</span>-t és <span class="math inline">\(\beta\)</span>-t!</p><figure class="diagram-adatok"><div class="svgwrap"><svg viewBox="0 0 340 280" width="340" height="280" role="img" aria-describedby="abra-alap-19" aria-label="Egyenlő szárú ABC háromszög, jelölt belső szögekkel">
+  <defs><marker id="nyil-8c1b7" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+  <polygon points="46.0,234.0 182.9,234.0 114.4,46.0" fill="#eff6ff" stroke="#0f172a" stroke-width="2.1" stroke-linejoin="round"/>
+  <line x1="154.3" y1="137.9" x2="143.0" y2="142.1" stroke="#0f172a" stroke-width="1.6"/>
+  <line x1="74.6" y1="137.9" x2="85.9" y2="142.1" stroke="#0f172a" stroke-width="1.6"/>
+  <path d="M55.2,208.6 A27.0,27.0 0 0 1 73.0,234.0" fill="none" stroke="#ef4444" stroke-width="1.9"/>
+  <text x="83.7" y="212.6" font-size="14.5" text-anchor="middle" fill="#ef4444" font-weight="700">70°</text>
+  <path d="M155.9,234.0 A27.0,27.0 0 0 1 173.6,208.6" fill="none" stroke="#ef4444" stroke-width="1.9"/>
+  <text x="145.2" y="212.6" font-size="14.5" text-anchor="middle" fill="#ef4444" font-weight="700">β</text>
+  <path d="M123.7,71.4 A27.0,27.0 0 0 1 105.2,71.4" fill="none" stroke="#ef4444" stroke-width="1.9"/>
+  <text x="114.4" y="97.0" font-size="14.5" text-anchor="middle" fill="#ef4444" font-weight="700">α</text>
+  <text x="33.5" y="250.5" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">B</text>
+  <text x="195.4" y="250.5" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">C</text>
+  <text x="114.4" y="34.0" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">A</text>
+</svg></div><figcaption id="abra-alap-19"><b>Az ábra adatai:</b> Az AB és AC oldalak egyenlők. A B csúcs belső szöge 70 fok, a C csúcsé béta, az A csúcsé alfa.</figcaption></figure>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\(\alpha=40^\circ\)</span>, <span class="math inline">\(\beta=70^\circ\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat alap" id="alap-20">
-      <p><span class="szam">20.</span> Számítsd ki a négyszög hiányzó <span class="math inline">\(m\)</span> belső szögét!</p><div class="svgwrap"><svg viewBox="0 0 380 275" width="380" height="275" role="img" aria-label="Négyszög, amelynek három belső szöge 107, 62 és 54 fok">
-  <defs><marker id="nyil-0fab7" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
-  <polygon points="46.0,229.0 282.8,229.0 315.1,67.5 94.4,46.0" fill="#eff6ff" stroke="#0f172a" stroke-width="2.1" stroke-linejoin="round"/>
-  <path d="M52.9,202.9 A27.0,27.0 0 0 1 73.0,229.0" fill="none" stroke="#ef4444" stroke-width="1.9"/>
-  <text x="82.5" y="205.9" font-size="14.5" text-anchor="middle" fill="#ef4444" font-weight="700">62°</text>
-  <path d="M255.8,229.0 A27.0,27.0 0 0 1 288.1,202.5" fill="none" stroke="#ef4444" stroke-width="1.9"/>
-  <text x="253.7" y="198.4" font-size="14.5" text-anchor="middle" fill="#ef4444" font-weight="700">54°</text>
-  <path d="M309.8,94.0 A27.0,27.0 0 0 1 288.2,64.9" fill="none" stroke="#ef4444" stroke-width="1.9"/>
-  <text x="278.2" y="99.9" font-size="14.5" text-anchor="middle" fill="#ef4444" font-weight="700">m</text>
-  <path d="M121.3,48.6 A27.0,27.0 0 0 1 87.5,72.1" fill="none" stroke="#ef4444" stroke-width="1.9"/>
-  <text x="120.7" y="88.8" font-size="14.5" text-anchor="middle" fill="#ef4444" font-weight="700">107°</text>
-</svg></div>
+      <p><span class="szam">20.</span> Számítsd ki a négyszög hiányzó <span class="math inline">\(m\)</span> belső szögét!</p><figure class="diagram-adatok"><div class="svgwrap"><svg viewBox="0 0 380 275" width="380" height="275" role="img" aria-describedby="abra-alap-20" aria-label="Négyszög három adott és egy keresett belső szöggel">
+  <defs><marker id="nyil-a37a3" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+  <polygon points="46.0,229.0 334.0,229.0 218.6,70.1 138.7,54.6" fill="#eff6ff" stroke="#0f172a" stroke-width="2.1" stroke-linejoin="round"/>
+  <path d="M58.7,205.2 A27.0,27.0 0 0 1 73.0,229.0" fill="none" stroke="#ef4444" stroke-width="1.9"/>
+  <text x="85.4" y="210.3" font-size="14.5" text-anchor="middle" fill="#ef4444" font-weight="700">62°</text>
+  <path d="M307.0,229.0 A27.0,27.0 0 0 1 318.1,207.2" fill="none" stroke="#ef4444" stroke-width="1.9"/>
+  <text x="293.0" y="213.1" font-size="14.5" text-anchor="middle" fill="#ef4444" font-weight="700">54°</text>
+  <path d="M234.5,92.0 A27.0,27.0 0 0 1 192.1,65.0" fill="none" stroke="#ef4444" stroke-width="1.9"/>
+  <text x="193.9" y="113.9" font-size="14.5" text-anchor="middle" fill="#ef4444" font-weight="700">m</text>
+  <path d="M165.2,59.8 A27.0,27.0 0 0 1 126.0,78.5" fill="none" stroke="#ef4444" stroke-width="1.9"/>
+  <text x="158.5" y="101.1" font-size="14.5" text-anchor="middle" fill="#ef4444" font-weight="700">107°</text>
+</svg></div><figcaption id="abra-alap-20"><b>Az ábra adatai:</b> A négyszög belső szögei körüljárási sorrendben 62 fok, 54 fok, m és 107 fok.</figcaption></figure>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\(m=137^\circ\)</span>.</p></div>
       </details>
@@ -271,50 +271,50 @@
       </details>
     </article>
     <article class="feladat kozep" id="kozep-10">
-      <p><span class="szam">10.</span> Az <span class="math inline">\(ABCD\)</span> paralelogramma <span class="math inline">\(A\)</span> csúcsánál lévő szöge <span class="math inline">\(80^\circ\)</span>. Az <span class="math inline">\(AC\)</span> átló ezt a szöget úgy bontja két részre, hogy <span class="math inline">\(\angle BAC=23^\circ\)</span>. Számítsd ki:</p><div class="svgwrap"><svg viewBox="0 0 410 255" width="410" height="255" role="img" aria-label="Paralelogramma az AC átlóval, az A csúcsnál 80 fok">
-  <defs><marker id="nyil-1ff09" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
-  <polygon points="46.0,209.0 288.3,209.0 364.0,67.7 121.7,67.7" fill="#eff6ff" stroke="#0f172a" stroke-width="2.1" stroke-linejoin="round"/>
-  <line x1="46.0" y1="209.0" x2="364.0" y2="67.7" stroke="#475569" stroke-width="1.5" stroke-dasharray="5 3"/>
-  <path d="M162.1,214.0 L172.1,209.0 L162.1,204.0" fill="none" stroke="#0f172a" stroke-width="1.5"/>
-  <path d="M247.9,62.7 L237.9,67.7 L247.9,72.7" fill="none" stroke="#0f172a" stroke-width="1.5"/>
-  <path d="M58.7,185.2 A27.0,27.0 0 0 1 73.0,209.0" fill="none" stroke="#ef4444" stroke-width="1.9"/>
-  <text x="85.5" y="190.4" font-size="14.5" text-anchor="middle" fill="#ef4444" font-weight="700">80°</text>
-  <text x="30.5" y="220.9" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">A</text>
-  <text x="301.2" y="225.0" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">B</text>
-  <text x="379.5" y="65.8" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">C</text>
-  <text x="108.8" y="61.7" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">D</text>
-</svg></div><ol class="reszfeladatok"><li>a paralelogramma másik három belső szögét</li><li>az <span class="math inline">\(\angle ACB\)</span> szöget</li><li>Miért lesz <span class="math inline">\(\angle ACB\)</span> ugyanakkora, mint <span class="math inline">\(\angle CAD\)</span>?</li></ol>
+      <p><span class="szam">10.</span> Az <span class="math inline">\(ABCD\)</span> paralelogramma <span class="math inline">\(A\)</span> csúcsánál lévő szöge <span class="math inline">\(80^\circ\)</span>. Az <span class="math inline">\(AC\)</span> átló ezt a szöget úgy bontja két részre, hogy <span class="math inline">\(\angle BAC=23^\circ\)</span>. Számítsd ki:</p><figure class="diagram-adatok"><div class="svgwrap"><svg viewBox="0 0 410 255" width="410" height="255" role="img" aria-describedby="abra-kozep-10" aria-label="ABCD paralelogramma az AC átlóval">
+  <defs><marker id="nyil-9fed5" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+  <polygon points="46.0,209.0 340.2,209.0 364.0,74.0 69.8,74.0" fill="#eff6ff" stroke="#0f172a" stroke-width="2.1" stroke-linejoin="round"/>
+  <line x1="46.0" y1="209.0" x2="364.0" y2="74.0" stroke="#475569" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <path d="M188.1,214.0 L198.1,209.0 L188.1,204.0" fill="none" stroke="#0f172a" stroke-width="1.5"/>
+  <path d="M221.9,69.0 L211.9,74.0 L221.9,79.0" fill="none" stroke="#0f172a" stroke-width="1.5"/>
+  <path d="M50.7,182.4 A27.0,27.0 0 0 1 73.0,209.0" fill="none" stroke="#ef4444" stroke-width="1.9"/>
+  <text x="81.2" y="184.4" font-size="14.5" text-anchor="middle" fill="#ef4444" font-weight="700">80°</text>
+  <text x="30.4" y="220.6" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">A</text>
+  <text x="355.4" y="221.6" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">B</text>
+  <text x="379.6" y="72.4" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">C</text>
+  <text x="54.6" y="71.4" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">D</text>
+</svg></div><figcaption id="abra-kozep-10"><b>Az ábra adatai:</b> Az ABCD paralelogramma A csúcsánál 80 fokos belső szög van. Az AC átló a szöget két részre bontja; a BAC szög a feladat szerint 23 fok.</figcaption></figure><ol class="reszfeladatok"><li>a paralelogramma másik három belső szögét</li><li>az <span class="math inline">\(\angle ACB\)</span> szöget</li><li>Miért lesz <span class="math inline">\(\angle ACB\)</span> ugyanakkora, mint <span class="math inline">\(\angle CAD\)</span>?</li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\angle ABC=100^\circ\)</span>, <span class="math inline">\(\angle BCD=80^\circ\)</span>, <span class="math inline">\(\angle CDA=100^\circ\)</span></li><li><span class="math inline">\(\angle ACB=57^\circ\)</span></li><li>Váltószögek.</li></ol></div>
+        <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(\angle ABC=100^\circ\)</span>, <span class="math inline">\(\angle BCD=80^\circ\)</span>, <span class="math inline">\(\angle CDA=100^\circ\)</span></li><li><span class="math inline">\(\angle ACB=57^\circ\)</span></li><li>Váltószögek, mert <span class="math inline">\(AD\parallel BC\)</span>.</li></ol></div>
       </details>
     </article>
     <article class="feladat kozep" id="kozep-11">
-      <p><span class="szam">11.</span> Az <span class="math inline">\(ABCD\)</span> egyenlő szárú trapézban <span class="math inline">\(AB\parallel DC\)</span>, a szárak pedig egyenlő hosszúak. Határozd meg <span class="math inline">\(x\)</span> és <span class="math inline">\(y\)</span> értékét, majd add meg mind a négy belső szöget!</p><div class="svgwrap"><svg viewBox="0 0 420 275" width="420" height="275" role="img" aria-label="Egyenlő szárú trapéz, betűs kifejezésekkel megadott szögekkel">
-  <defs><marker id="nyil-84070" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
-  <polygon points="46.0,229.0 374.0,229.0 297.9,47.4 122.1,47.4" fill="#eff6ff" stroke="#0f172a" stroke-width="2.1" stroke-linejoin="round"/>
-  <line x1="341.5" y1="135.9" x2="330.4" y2="140.5" stroke="#0f172a" stroke-width="1.6"/>
-  <line x1="78.5" y1="135.9" x2="89.6" y2="140.5" stroke="#0f172a" stroke-width="1.6"/>
-  <path d="M205.0,234.0 L215.0,229.0 L205.0,224.0" fill="none" stroke="#0f172a" stroke-width="1.5"/>
-  <path d="M215.0,42.4 L205.0,47.4 L215.0,52.4" fill="none" stroke="#0f172a" stroke-width="1.5"/>
-  <path d="M56.4,204.1 A27.0,27.0 0 0 1 73.0,229.0" fill="none" stroke="#ef4444" stroke-width="1.9"/>
-  <text x="84.3" y="208.5" font-size="14.5" text-anchor="middle" fill="#ef4444" font-weight="700">70°</text>
-  <path d="M347.0,229.0 A27.0,27.0 0 0 1 363.6,204.1" fill="none" stroke="#ef4444" stroke-width="1.9"/>
-  <text x="335.7" y="208.5" font-size="14.5" text-anchor="middle" fill="#ef4444" font-weight="700">(y−19)°</text>
-  <path d="M149.1,47.4 A27.0,27.0 0 0 1 111.7,72.3" fill="none" stroke="#ef4444" stroke-width="1.9"/>
-  <text x="147.6" y="90.7" font-size="14.5" text-anchor="middle" fill="#ef4444" font-weight="700">(3x+50)°</text>
-  <text x="31.1" y="242.2" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">A</text>
-  <text x="388.9" y="242.2" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">B</text>
-  <text x="309.7" y="40.2" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">C</text>
-  <text x="110.3" y="40.2" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">D</text>
-</svg></div>
+      <p><span class="szam">11.</span> Az <span class="math inline">\(ABCD\)</span> egyenlő szárú trapézban <span class="math inline">\(AB\parallel DC\)</span>, a szárak pedig egyenlő hosszúak. Határozd meg <span class="math inline">\(x\)</span> és <span class="math inline">\(y\)</span> értékét, majd add meg mind a négy belső szöget!</p><figure class="diagram-adatok"><div class="svgwrap"><svg viewBox="0 0 420 275" width="420" height="275" role="img" aria-describedby="abra-kozep-11" aria-label="Egyenlő szárú ABCD trapéz, jelölt belső szögekkel">
+  <defs><marker id="nyil-f5c5d" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+  <polygon points="46.0,229.0 332.9,229.0 266.3,46.0 112.6,46.0" fill="#eff6ff" stroke="#0f172a" stroke-width="2.1" stroke-linejoin="round"/>
+  <line x1="305.3" y1="135.4" x2="294.0" y2="139.6" stroke="#0f172a" stroke-width="1.6"/>
+  <line x1="73.7" y1="135.4" x2="84.9" y2="139.6" stroke="#0f172a" stroke-width="1.6"/>
+  <path d="M184.5,234.0 L194.5,229.0 L184.5,224.0" fill="none" stroke="#0f172a" stroke-width="1.5"/>
+  <path d="M194.5,41.0 L184.5,46.0 L194.5,51.0" fill="none" stroke="#0f172a" stroke-width="1.5"/>
+  <path d="M55.2,203.6 A27.0,27.0 0 0 1 73.0,229.0" fill="none" stroke="#ef4444" stroke-width="1.9"/>
+  <text x="83.7" y="207.6" font-size="14.5" text-anchor="middle" fill="#ef4444" font-weight="700">70°</text>
+  <path d="M305.9,229.0 A27.0,27.0 0 0 1 323.7,203.6" fill="none" stroke="#ef4444" stroke-width="1.9"/>
+  <text x="295.2" y="207.6" font-size="14.5" text-anchor="middle" fill="#ef4444" font-weight="700">(y−19)°</text>
+  <path d="M139.6,46.0 A27.0,27.0 0 0 1 103.4,71.4" fill="none" stroke="#ef4444" stroke-width="1.9"/>
+  <text x="139.0" y="88.7" font-size="14.5" text-anchor="middle" fill="#ef4444" font-weight="700">(3x+50)°</text>
+  <text x="31.7" y="243.1" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">A</text>
+  <text x="347.3" y="243.1" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">B</text>
+  <text x="277.2" y="38.0" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">C</text>
+  <text x="101.7" y="38.0" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">D</text>
+</svg></div><figcaption id="abra-kozep-11"><b>Az ábra adatai:</b> Az AB és DC alap párhuzamos, az AD és BC szár egyenlő. Az A csúcs belső szöge 70 fok, a B csúcsé y mínusz 19 fok, a D csúcsé 3x plusz 50 fok.</figcaption></figure>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\(x=20\)</span>, <span class="math inline">\(y=89\)</span>; <span class="math inline">\(\angle A=\angle B=70^\circ\)</span>, <span class="math inline">\(\angle C=\angle D=110^\circ\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat kozep" id="kozep-12">
-      <p><span class="szam">12.</span> Az ábrán <span class="math inline">\(a\parallel b\)</span>. Számítsd ki <span class="math inline">\(\alpha\)</span>-t és <span class="math inline">\(\beta\)</span>-t!</p><div class="svgwrap"><svg viewBox="0 0 460 250" width="460" height="250" role="img" aria-label="Két párhuzamost transzverzális metsz; az egyik szög 46 fok 30 perc, a szomszédja 2 alfa">
-  <defs><marker id="nyil-0c48a" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
-  <line x1="120.6" y1="33.0" x2="265.8" y2="219.0" stroke="#475569" stroke-width="1.9"/>
+      <p><span class="szam">12.</span> Az ábrán <span class="math inline">\(a\parallel b\)</span>. Számítsd ki <span class="math inline">\(\alpha\)</span>-t és <span class="math inline">\(\beta\)</span>-t!</p><figure class="diagram-adatok"><div class="svgwrap"><svg viewBox="0 0 460 250" width="460" height="250" role="img" aria-describedby="abra-kozep-12" aria-label="Két párhuzamos és transzverzális, három jelölt szöggel">
+  <defs><marker id="nyil-3cfac" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+  <line x1="108.1" y1="36.3" x2="278.3" y2="215.7" stroke="#475569" stroke-width="1.9"/>
   <line x1="28.0" y1="74.0" x2="426.0" y2="74.0" stroke="#0f172a" stroke-width="2.2"/>
   <text x="433.0" y="79.0" font-size="15" font-style="italic" fill="#0f172a">a</text>
   <path d="M48.0,69.0 L54.0,74.0 L48.0,79.0" fill="none" stroke="#0f172a" stroke-width="1.5"/>
@@ -323,15 +323,15 @@
   <text x="433.0" y="183.0" font-size="15" font-style="italic" fill="#0f172a">b</text>
   <path d="M48.0,173.0 L54.0,178.0 L48.0,183.0" fill="none" stroke="#0f172a" stroke-width="1.5"/>
   <path d="M58.0,173.0 L64.0,178.0 L58.0,183.0" fill="none" stroke="#0f172a" stroke-width="1.5"/>
-  <path d="M126.6,74.0 A26.0,26.0 0 0 1 136.6,53.5" fill="none" stroke="#ef4444" stroke-width="1.8"/>
-  <text x="112.1" y="59.3" font-size="15" text-anchor="middle" fill="#ef4444" font-weight="700">46°30′</text>
-  <path d="M168.6,94.5 A26.0,26.0 0 0 1 126.6,74.0" fill="none" stroke="#ef4444" stroke-width="1.8"/>
-  <text x="132.8" y="119.4" font-size="15" text-anchor="middle" fill="#ef4444" font-weight="700">2α</text>
-  <path d="M259.8,178.0 A26.0,26.0 0 0 1 249.8,198.5" fill="none" stroke="#ef4444" stroke-width="1.8"/>
-  <text x="274.3" y="202.7" font-size="15" text-anchor="middle" fill="#ef4444" font-weight="700">β</text>
-  <circle cx="152.6" cy="74.0" r="3.2" fill="#0f172a"/>
-  <circle cx="233.8" cy="178.0" r="3.2" fill="#0f172a"/>
-</svg></div>
+  <path d="M117.9,74.0 A26.0,26.0 0 0 1 126.0,55.1" fill="none" stroke="#ef4444" stroke-width="1.8"/>
+  <text x="102.5" y="61.2" font-size="15" text-anchor="middle" fill="#ef4444" font-weight="700">46°30′</text>
+  <path d="M161.8,92.9 A26.0,26.0 0 0 1 117.9,74.0" fill="none" stroke="#ef4444" stroke-width="1.8"/>
+  <text x="126.1" y="120.3" font-size="15" text-anchor="middle" fill="#ef4444" font-weight="700">2α</text>
+  <path d="M268.5,178.0 A26.0,26.0 0 0 1 260.4,196.9" fill="none" stroke="#ef4444" stroke-width="1.8"/>
+  <text x="283.9" y="200.8" font-size="15" text-anchor="middle" fill="#ef4444" font-weight="700">β</text>
+  <circle cx="143.9" cy="74.0" r="3.2" fill="#0f172a"/>
+  <circle cx="242.5" cy="178.0" r="3.2" fill="#0f172a"/>
+</svg></div><figcaption id="abra-kozep-12"><b>Az ábra adatai:</b> A felső metszéspont bal felső szöge 46 fok 30 perc, bal alsó szöge két alfa. Az alsó metszéspont jobb alsó szöge béta.</figcaption></figure>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\(\alpha=66^\circ 45'\)</span>, <span class="math inline">\(\beta=46^\circ 30'\)</span>.</p></div>
       </details>
@@ -339,13 +339,13 @@
     <article class="feladat kozep" id="kozep-13">
       <p><span class="szam">13.</span> Egy derékszögű háromszögben a két hegyesszög különbsége <span class="math inline">\(22^\circ\)</span>. Mekkorák ezek a hegyesszögek? Írd le a gondolatmenetet is!</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p><span class="math inline">\(56^\circ\)</span> és <span class="math inline">\(34^\circ\)</span>.</p></div>
+        <div class="bel"><p><span class="math inline">\(56^\circ\)</span> és <span class="math inline">\(34^\circ\)</span>. Összegük <span class="math inline">\(90^\circ\)</span>, különbségük <span class="math inline">\(22^\circ\)</span>; ha a kisebb szög <span class="math inline">\(x\)</span>, akkor <span class="math inline">\(x+(x+22^\circ)=90^\circ\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat kozep" id="kozep-14">
-      <p><span class="szam">14.</span> Egy kadét így okoskodott: <i>„Mivel <span class="math inline">\(a\parallel b\)</span>, és a váltószögek egyenlők, ezért <span class="math inline">\(\alpha=62^\circ\)</span>.”</i> A végeredménye hibás. Hol csúszott el a gondolatmenete, és mennyi valójában <span class="math inline">\(\alpha\)</span>?</p><div class="svgwrap"><svg viewBox="0 0 460 250" width="460" height="250" role="img" aria-label="Két párhuzamost transzverzális metsz; a felső szög 62 fok, alfa a másik metszéspont belső szöge">
-  <defs><marker id="nyil-80ceb" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
-  <line x1="148.9" y1="26.5" x2="237.5" y2="225.5" stroke="#475569" stroke-width="1.9"/>
+      <p><span class="szam">14.</span> Egy kadét így okoskodott: <i>„Mivel <span class="math inline">\(a\parallel b\)</span>, és a váltószögek egyenlők, ezért <span class="math inline">\(\alpha=62^\circ\)</span>.”</i> A végeredménye hibás. Hol csúszott el a gondolatmenete, és mennyi valójában <span class="math inline">\(\alpha\)</span>?</p><figure class="diagram-adatok"><div class="svgwrap"><svg viewBox="0 0 460 250" width="460" height="250" role="img" aria-describedby="abra-kozep-14" aria-label="Két párhuzamos és transzverzális, adott és keresett szöggel">
+  <defs><marker id="nyil-25991" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+  <line x1="141.1" y1="28.1" x2="245.3" y2="223.9" stroke="#475569" stroke-width="1.9"/>
   <line x1="28.0" y1="74.0" x2="426.0" y2="74.0" stroke="#0f172a" stroke-width="2.2"/>
   <text x="433.0" y="79.0" font-size="15" font-style="italic" fill="#0f172a">a</text>
   <path d="M48.0,69.0 L54.0,74.0 L48.0,79.0" fill="none" stroke="#0f172a" stroke-width="1.5"/>
@@ -354,20 +354,20 @@
   <text x="433.0" y="183.0" font-size="15" font-style="italic" fill="#0f172a">b</text>
   <path d="M48.0,173.0 L54.0,178.0 L48.0,183.0" fill="none" stroke="#0f172a" stroke-width="1.5"/>
   <path d="M58.0,173.0 L64.0,178.0 L58.0,183.0" fill="none" stroke="#0f172a" stroke-width="1.5"/>
-  <path d="M159.5,50.2 A26.0,26.0 0 0 1 196.0,74.0" fill="none" stroke="#ef4444" stroke-width="1.8"/>
-  <text x="194.6" y="41.3" font-size="15" text-anchor="middle" fill="#ef4444" font-weight="700">62°</text>
-  <path d="M190.4,178.0 A26.0,26.0 0 0 1 205.8,154.2" fill="none" stroke="#ef4444" stroke-width="1.8"/>
-  <text x="178.6" y="158.5" font-size="15" text-anchor="middle" fill="#ef4444" font-weight="700">α</text>
-  <circle cx="170.0" cy="74.0" r="3.2" fill="#0f172a"/>
-  <circle cx="216.4" cy="178.0" r="3.2" fill="#0f172a"/>
-</svg></div>
+  <path d="M139.6,74.0 A26.0,26.0 0 0 1 153.3,51.0" fill="none" stroke="#ef4444" stroke-width="1.8"/>
+  <text x="127.0" y="55.8" font-size="15" text-anchor="middle" fill="#ef4444" font-weight="700">62°</text>
+  <path d="M208.6,155.0 A26.0,26.0 0 0 1 246.8,178.0" fill="none" stroke="#ef4444" stroke-width="1.8"/>
+  <text x="244.0" y="144.4" font-size="15" text-anchor="middle" fill="#ef4444" font-weight="700">α</text>
+  <circle cx="165.6" cy="74.0" r="3.2" fill="#0f172a"/>
+  <circle cx="220.8" cy="178.0" r="3.2" fill="#0f172a"/>
+</svg></div><figcaption id="abra-kozep-14"><b>Az ábra adatai:</b> A felső metszéspont bal felső szöge 62 fok; alfa az alsó metszéspont jobb felső szöge. A két egyenes párhuzamos.</figcaption></figure>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>A megadott és a keresett szög nem váltószög; <span class="math inline">\(\alpha=118^\circ\)</span>.</p></div>
+        <div class="bel"><p>A megadott és a keresett szög nem váltószög. A megadott szög mellékszöge egyállású <span class="math inline">\(\alpha\)</span>-val, ezért <span class="math inline">\(\alpha=118^\circ\)</span>.</p></div>
       </details>
     </article>
     <h2 id="nehez">🔴 Nehéz szint</h2>
     <article class="feladat nehez" id="nehez-1">
-      <p><span class="szam">1.</span> Egy háromszög két belső szögének belső szögfelezői <span class="math inline">\(130^\circ\)</span>-os szöget zárnak be. Mekkora a harmadik belső szög?</p>
+      <p><span class="szam">1.</span> Az <span class="math inline">\(ABC\)</span> háromszög <span class="math inline">\(A\)</span> és <span class="math inline">\(B\)</span> csúcsából induló belső szögfelezőinek metszéspontja <span class="math inline">\(I\)</span>. Ha <span class="math inline">\(\angle AIB=130^\circ\)</span>, mekkora a <span class="math inline">\(C\)</span> csúcsnál lévő belső szög?</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\(80^\circ\)</span>.</p></div>
       </details>
@@ -415,8 +415,8 @@
       </details>
     </article>
     <article class="feladat nehez" id="nehez-9">
-      <p><span class="szam">9.</span> Az <span class="math inline">\(ABCD\)</span> négyszög mind a négy csúcsa ugyanazon a körön van (<b>húrnégyszög</b>). Számítsd ki <span class="math inline">\(x\)</span> értékét, majd mind a négy belső szöget!</p><div class="svgwrap"><svg viewBox="0 0 400 340" width="400" height="340" role="img" aria-label="Húrnégyszög a körülírt körével">
-  <defs><marker id="nyil-a2cef" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+      <p><span class="szam">9.</span> Az <span class="math inline">\(ABCD\)</span> négyszög mind a négy csúcsa ugyanazon a körön van (<b>húrnégyszög</b>). Számítsd ki <span class="math inline">\(x\)</span> értékét, majd mind a négy belső szöget!</p><figure class="diagram-adatok"><div class="svgwrap"><svg viewBox="0 0 400 340" width="400" height="340" role="img" aria-describedby="abra-nehez-9" aria-label="ABCD húrnégyszög a körülírt körével">
+  <defs><marker id="nyil-5ec5e" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
   <circle cx="179.2" cy="157.1" r="137.3" fill="none" stroke="#3b82f6" stroke-width="1.6"/>
   <polygon points="314.4,133.2 259.9,46.0 46.0,190.3 188.8,294.0" fill="#eff6ff" stroke="#0f172a" stroke-width="2.1" stroke-linejoin="round"/>
   <path d="M297.8,154.5 A27.0,27.0 0 0 1 300.1,110.3" fill="none" stroke="#ef4444" stroke-width="1.9"/>
@@ -431,26 +431,26 @@
   <text x="267.3" y="35.7" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">B</text>
   <text x="29.2" y="197.9" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">C</text>
   <text x="187.0" y="315.9" font-size="14.5" text-anchor="middle" fill="#0f172a" font-weight="700">D</text>
-</svg></div>
+</svg></div><figcaption id="abra-nehez-9"><b>Az ábra adatai:</b> A húrnégyszög csúcsai körüljárási sorrendben A, B, C, D. Belső szögei: A-nál 3x plusz 20 fok, B-nél 88 fok, C-nél x plusz 40 fok, D-nél delta.</figcaption></figure>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\(x=30\)</span>; <span class="math inline">\(\angle A=110^\circ\)</span>, <span class="math inline">\(\angle B=88^\circ\)</span>, <span class="math inline">\(\angle C=70^\circ\)</span>, <span class="math inline">\(\angle D=92^\circ\)</span>.</p></div>
       </details>
     </article>
     <article class="feladat nehez" id="nehez-10">
-      <p><span class="szam">10.</span> Az <span class="math inline">\(A\)</span> és <span class="math inline">\(B\)</span> pont a körvonalat <span class="math inline">\(1:5\)</span> arányban két ívre bontja.</p><ol class="reszfeladatok"><li>Mekkora a két ív?</li><li>Mekkora a két ívhez tartozó kerületi szög?</li><li>A két kerületi szög összege <span class="math inline">\(180^\circ\)</span>. Melyik korábban tanult tétel következik ebből?</li></ol>
+      <p><span class="szam">10.</span> Az <span class="math inline">\(A\)</span> és <span class="math inline">\(B\)</span> pont a körvonalat <span class="math inline">\(1:5\)</span> arányban két ívre bontja.</p><ol class="reszfeladatok"><li>Mekkora a két ív szögmértéke?</li><li>Mekkora a két ívhez tartozó kerületi szög?</li><li>A két kerületi szög összege <span class="math inline">\(180^\circ\)</span>. Melyik korábban tanult tétel következik ebből?</li></ol>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><ol class="reszfeladatok"><li><span class="math inline">\(60^\circ\)</span> és <span class="math inline">\(300^\circ\)</span>.</li><li><span class="math inline">\(30^\circ\)</span> és <span class="math inline">\(150^\circ\)</span>.</li><li>A húrnégyszög szemközti szögei kiegészítik egymást.</li></ol></div>
       </details>
     </article>
     <h2 id="joker-szint">🃏 Joker</h2>
     <article class="feladat joker" id="joker">
-      <p><span class="szam">★</span> <b>Kán tükör-csapdája.</b> Kán azt állítja: „Rajzoltam egy háromszöget, amelynek két derékszöge van — a Tükör-világ szabályai szerint ez lehetséges.” Cáfold meg egyetlen mondattal, a belső szögösszegre hivatkozva! Majd döntsd el: <b>gömbfelületen</b> (nem síkban) létezhet-e ilyen háromszög?</p>
+      <p><span class="szam">★</span> <b>Kán tükör-csapdája.</b> Kán azt állítja: „Rajzoltam egy háromszöget, amelynek két derékszöge van — a Tükör-világ szabályai szerint ez lehetséges.” Cáfold meg egyetlen mondattal, a belső szögösszegre hivatkozva! Majd döntsd el: <b>Kiegészítés:</b> gömbfelületen, nagykörívekkel határolva létezhet-e ilyen háromszög?</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
-        <div class="bel"><p>Síkban nem: két derékszög már <span class="math inline">\(180^\circ\)</span>, a harmadik szögnek nem maradna hely (a szögösszeg pontosan <span class="math inline">\(180^\circ\)</span>). Gömbfelületen viszont igen — ott a szögösszeg <span class="math inline">\(180^\circ\)</span>-nál nagyobb lehet.</p></div>
+        <div class="bel"><p>Síkban nem: két derékszög már <span class="math inline">\(180^\circ\)</span>, a harmadik szögnek nem maradna hely (a szögösszeg pontosan <span class="math inline">\(180^\circ\)</span>). Gömbfelületen igen: az északi sarkot és az egyenlítő két, nem átellenes pontját összekötő meridiánívek, valamint az egyenlítő rövidebb íve ilyen háromszöget határolnak. A két egyenlítői csúcsnál derékszög van.</p></div>
       </details>
     </article>
     <h2 id="gyak-ellenorzo">🏫 Gyakorló ellenőrző</h2>
-    <p class="diszklemer">⚠️ Ez <b>gyakorló</b> anyag: nincs garancia, hogy az éles felmérőn pontosan ennyi vagy pont ilyen feladat lesz. A cél a biztos rutin — a valódi feladatok ettől eltérhetnek.</p>
+    <p class="diszklemer">Ez gyakorlóválogatás. Amelyik feladatnál elakadsz, ahhoz nézd át a kapcsolódó tananyagot, majd próbáld meg újra önállóan!</p>
     <p class="reszcsoport">🏫 Órai ismétlés</p>
     <article class="feladat" id="gye-1">
       <p><span class="szam">1.</span> Karikázd be a helyes állításokat!</p><ol class="reszfeladatok rovid"><li>A csúcsszögek egyenlők.</li><li>A mellékszögek összege <span class="math inline">\(90^\circ\)</span>.</li><li>A pótszögek összege <span class="math inline">\(90^\circ\)</span>.</li><li>A háromszög magasságvonalai a magasságpontban metszik egymást.</li><li>A szögfelezők metszéspontja a körülírt kör középpontja.</li></ol>
@@ -489,7 +489,7 @@
       </details>
     </article>
     <article class="feladat" id="gye-7">
-      <p><span class="szam">7.</span> Egy háromszög egyik belső szöge <span class="math inline">\(52^\circ\)</span>. Mekkora szöget zár be a másik két szög belső szögfelezője?</p>
+      <p><span class="szam">7.</span> Az <span class="math inline">\(ABC\)</span> háromszög <span class="math inline">\(A\)</span> csúcsánál lévő belső szöge <span class="math inline">\(52^\circ\)</span>. A <span class="math inline">\(B\)</span> és <span class="math inline">\(C\)</span> csúcsból induló belső szögfelezők metszéspontja <span class="math inline">\(I\)</span>. Mekkora az <span class="math inline">\(\angle BIC\)</span>?</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\(116^\circ\)</span>.</p></div>
       </details>
@@ -532,7 +532,7 @@
       </details>
     </article>
     <h2 id="gyak-dolgozat">📝 Gyakorló dolgozat</h2>
-    <p class="diszklemer">⚠️ Ez <b>gyakorló</b> anyag: nincs garancia, hogy az éles felmérőn pontosan ennyi vagy pont ilyen feladat lesz. A cél a biztos rutin — a valódi feladatok ettől eltérhetnek.</p>
+    <p class="diszklemer">Ez gyakorlóválogatás. Amelyik feladatnál elakadsz, ahhoz nézd át a kapcsolódó tananyagot, majd próbáld meg újra önállóan!</p>
     <p class="reszcsoport">🏫 Órai ismétlés</p>
     <article class="feladat" id="gyd-1">
       <p><span class="szam">1.</span> Karikázd be a helyes állításokat!</p><ol class="reszfeladatok rovid"><li>A paralelogramma átlói felezik egymást.</li><li>A rombusz átlói merőlegesek.</li><li>Minden téglalapnak van beírt köre.</li><li>A trapéz szárán fekvő két szög összege <span class="math inline">\(180^\circ\)</span>.</li><li>Húrnégyszögben a szemközti oldalak összege egyenlő.</li></ol>
@@ -559,7 +559,7 @@
       </details>
     </article>
     <article class="feladat" id="gyd-5">
-      <p><span class="szam">5.</span> Rajzolj derékszögű trapézt! Ha egyik belső szöge <span class="math inline">\(59^\circ\)</span>, add meg a többi belső szögét!</p>
+      <p><span class="szam">5.</span> Rajzolj derékszögű trapézt! Ha egyik belső szöge <span class="math inline">\(59^\circ\)</span>, add meg mind a négy belső szögét!</p>
       <details class="vegeredmeny"><summary>Végeredmény</summary>
         <div class="bel"><p><span class="math inline">\(90^\circ,\ 90^\circ,\ 59^\circ,\ 121^\circ\)</span>.</p></div>
       </details>
