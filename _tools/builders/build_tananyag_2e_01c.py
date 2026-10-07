@@ -16,9 +16,9 @@ def gauss_sik():
     zx, zy = ox + 3 * e, oy - 2 * e   # z = 3 + 2i
     kx, ky = ox + 3 * e, oy + 2 * e   # konjugált
     r = []
-    r.append('<svg viewBox="0 0 360 262" width="360" height="262" role="img" '
-             'aria-label="A z = 3 + 2i komplex szám és konjugáltja a Gauss-síkon, '
-             'a modulussal mint helyvektor-hosszal">')
+    r.append(('<svg viewBox="0 0 360 262" width="360" height="262" role="img" '
+ 'aria-describedby="abra-komplex-sik-leiras" aria-label="A z = 3 + 2i komplex szám és konjugáltja '
+ 'a Gauss-síkon, a modulussal mint helyvektor-hosszal">'))
     r.append('  <defs><marker id="ny2" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" '
              'markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker>'
              '<marker id="ny3" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" '
@@ -68,36 +68,29 @@ def gauss_sik():
 
 C1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>X. Károly professzor:</b> Kadét, üljön le. Amit most mondok, az kezdetben '
-         'képtelenségnek fog hangzani — pontosan úgy, ahogy a negatív számok hangzottak '
-         'képtelenségnek, amíg valaki ki nem mondta, hogy „tartozás". '
-         'Az $x^{2}=-1$ egyenletnek <b>nincs</b> valós megoldása. Ez nem a mi hibánk, és nem is az '
-         'egyenleté: a valós számok halmaza egyszerűen <b>kicsi</b> hozzá. '
-         'Dr. Baljós már régen kilépett belőle. Most mi is kilépünk.'),
-   'A matematika története bővítések sorozata: valahányszor felírtunk egy egyenletet, '
-   'amit az addig ismert számokkal nem lehetett megoldani, <b>kibővítettük a számhalmazt</b>. '
-   'A komplex számok ennek a sornak az utolsó — és legmeglepőbb — lépése.',
+   brief(('<b>X. Károly professzor:</b> Kadét, az $x^{2}=-1$ egyenletnek <b>nincs valós megoldása</b>. Dr. '
+ 'Baljós kódjában mégis szerepel. Olyan számokat vezetünk be, amelyekkel ez az egyenlet is '
+ 'megoldható. A negatív számoknál már találkoztál hasonló bővítéssel: velük például tartozást is '
+ 'kifejezhetünk.')),
+   ('<p>A korábban tanult számhalmazok bővítésével újabb egyenleteket tudtunk megoldani. Most a valós '
+ 'számok halmazát bővítjük a <b>komplex számokkal</b>. Az alábbi példák azt mutatják, miért '
+ 'hasznos egy ilyen bővítés.</p>'),
  ]),
 
  ("Miért kell bővíteni a számhalmazt?", [
-   'Nézd meg a mintát: minden lépésben egy „megoldhatatlan" egyenlet kényszerít ki '
-   'egy új számfajtát.',
+   ('<p>A táblázat minden sorában olyan egyenlet szerepel, amelynek a megadott számhalmazban nincs '
+ 'megoldása, egy bővebb halmazban viszont van.</p>'),
    doboz("erdekesseg", "A számhalmazok építkezése",
-         '<div class="tblwrap"><table>'
-         '<tr><th>Egyenlet</th><th>Megoldhatatlan itt…</th><th>…ezért bővítünk ide</th></tr>'
-         '<tr><td>$x+3=1$</td><td>$\\mathbb{N}$ — természetes számok</td>'
-         '<td>$\\mathbb{Z}$ — negatív számok</td></tr>'
-         '<tr><td>$2x=1$</td><td>$\\mathbb{Z}$ — egész számok</td>'
-         '<td>$\\mathbb{Q}$ — törtek</td></tr>'
-         '<tr><td>$x^{2}=2$</td><td>$\\mathbb{Q}$ — racionális számok</td>'
-         '<td>$\\mathbb{R}$ — irracionális számok</td></tr>'
-         '<tr><td>$x^{2}=-1$</td><td>$\\mathbb{R}$ — valós számok</td>'
-         '<td>$\\mathbb{C}$ — <b>komplex számok</b></td></tr>'
-         '</table></div>'
-         '<p>Miért nincs valós megoldása az utolsónak? Mert minden valós $x$-re $x^{2}\\ge 0$ — '
-         'ezt épp az előző egységben, a <a href="tananyag-hatvanyfuggveny.html">hatványfüggvény grafikonján</a> láttuk.</p>'),
-   'A bővítés módja mindig ugyanaz: <b>bevezetünk</b> egy új objektumot, kimondjuk róla, '
-   'mit tud, és megköveteljük, hogy a régi számolási szabályok érvényben maradjanak.',
+         ('<div class="tblwrap"><table><tr><th>Egyenlet</th><th>Megoldhatatlan itt…</th><th>…ezért bővítünk '
+ 'ide</th></tr><tr><td>$x+3=1$</td><td>$\\mathbb{N}$ — természetes számok</td><td>$\\mathbb{Z}$ — '
+ 'egész számok</td></tr><tr><td>$2x=1$</td><td>$\\mathbb{Z}$ — egész számok</td><td>$\\mathbb{Q}$ '
+ '— racionális számok</td></tr><tr><td>$x^{2}=2$</td><td>$\\mathbb{Q}$ — racionális '
+ 'számok</td><td>$\\mathbb{R}$ — valós számok</td></tr><tr><td>$x^{2}=-1$</td><td>$\\mathbb{R}$ — '
+ 'valós számok</td><td>$\\mathbb{C}$ — <b>komplex számok</b></td></tr></table></div><p>Miért nincs '
+ 'valós megoldása az utolsónak? Mert minden valós $x$-re $x^{2}\\ge 0$ — ezt épp az előző '
+ 'egységben, a <a href="tananyag-hatvanyfuggveny.html">hatványfüggvény grafikonján</a> láttuk.</p>')),
+   ('<p>A komplex számok bevezetésekor megőrizzük a valós számok összeadási és szorzási szabályait. '
+ 'Ezekhez kapcsoljuk az új képzetes egység tulajdonságát.</p>'),
  ]),
 
  ("A képzetes egység és az algebrai alak", [
@@ -108,12 +101,11 @@ C1 = [
          'az $x^{2}=-9$ egyenletéi pedig $x_{1,2}=\\pm 3i$, hiszen $(3i)^{2}=9i^{2}=-9$.</p>',
          hid="def-kepzetes-egyseg"),
    doboz("definicio", "Komplex szám, algebrai alak",
-         '<p><b>Komplex számnak</b> nevezzük az $z=x+yi$ alakú kifejezéseket, ahol '
-         '$x,y\\in\\mathbb{R}$. A komplex számok halmaza:</p>'
-         '$$\\mathbb{C}=\\left\\{\\,x+yi \\mid x,y\\in\\mathbb{R}\\ \\wedge\\ i^{2}=-1\\,\\right\\}.$$'
-         '<p>Itt $x=\\operatorname{Re}(z)$ a $z$ <b>valós része</b>, $y=\\operatorname{Im}(z)$ '
-         'pedig a <b>képzetes (imaginárius) része</b>. Figyelem: a képzetes rész is '
-         '<b>valós szám</b> — nem tartozik hozzá az $i$!</p>',
+         ('<p><b>Komplex számnak</b> nevezzük a $z=x+yi$ alakú kifejezéseket, ahol $x,y\\in\\mathbb{R}$. A '
+ 'komplex számok halmaza:</p>$$\\mathbb{C}=\\left\\{\\,x+yi \\mid x,y\\in\\mathbb{R}\\ \\wedge\\ '
+ 'i^{2}=-1\\,\\right\\}.$$<p>Itt $x=\\operatorname{Re}(z)$ a $z$ <b>valós része</b>, '
+ '$y=\\operatorname{Im}(z)$ pedig a <b>képzetes (imaginárius) része</b>. Figyelem: a képzetes rész '
+ 'is <b>valós szám</b> — nem tartozik hozzá az $i$!</p>'),
          hid="def-komplex-szam"),
    doboz("tetel", "Két komplex szám egyenlősége",
          '<p>Ha $z_{1}=x_{1}+y_{1}i$ és $z_{2}=x_{2}+y_{2}i$, akkor</p>'
@@ -125,7 +117,7 @@ C1 = [
          '<p>Ha $y=0$, akkor $z=x$ — közönséges valós szám. Ha viszont $x=0$ és $y\\neq0$, '
          'akkor $z=yi$ <b>tisztán képzetes</b>. Tehát $\\mathbb{R}\\subset\\mathbb{C}$: '
          'nem elvesztettük a régi számokat, hanem <b>beágyaztuk</b> őket egy nagyobb világba.</p>'),
-   kviz('Mennyi az $z=-4+7i$ szám valós és képzetes része?',
+   kviz('Mennyi a $z=-4+7i$ szám valós és képzetes része?',
         ['$\\operatorname{Re}(z)=-4$, $\\operatorname{Im}(z)=7$',
          '$\\operatorname{Re}(z)=-4$, $\\operatorname{Im}(z)=7i$',
          '$\\operatorname{Re}(z)=4$, $\\operatorname{Im}(z)=7$'], 0,
@@ -139,8 +131,10 @@ C1 = [
    '<b>Gauss-síknak</b> vagy komplex számsíknak hívjuk: a vízszintes tengelyen a valós rész, '
    'a függőlegesen a képzetes rész.',
    abra(gauss_sik(),
-        "A $z=3+2i$ szám a $(3;2)$ pontnak felel meg. A helyvektor hossza a <b>modulusz</b>, "
-        "a valós tengelyre vett tükörkép pedig a <b>konjugált</b>."),
+        ('<span id="abra-komplex-sik-leiras">A $z=3+2i$ szám a $(3;2)$ pontnak felel meg; a vízszintes '
+ 'tengely a valós, a függőleges a képzetes részt mutatja. A konjugált $3-2i$, pontja $(3;-2)$: az '
+ 'eredeti pont valós tengelyre vett tükörképe. Az origóból a $z$ pontjába mutató helyvektor hossza '
+ 'a <b>modulusz</b>: $|z|=\\sqrt{13}$.</span>')),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Hol helyezkednek el a Gauss-síkon a $z_{1}=2$, $z_{2}=-3i$ és $z_{3}=-1+i$ számok?</p>',
          lenyilo=("Megoldás",
@@ -193,20 +187,19 @@ C1 = [
 
  ("Egy jelölés, amivel vigyázni kell", [
    doboz("csapda", "Dr. Baljós vírus-kódja",
-         '<p>A mutálódott kódban ez a „bizonyítás" szerepel:</p>'
-         '$$-1=i^{2}=\\sqrt{-1}\\cdot\\sqrt{-1}\\overset{?}{=}\\sqrt{(-1)\\cdot(-1)}=\\sqrt{1}=1.$$'
-         '<p>Tehát $-1=1$? Nyilván nem. A hiba a harmadik lépésben van: a '
-         '$\\sqrt{a}\\cdot\\sqrt{b}=\\sqrt{ab}$ azonosság <b>csak $a,b\\ge 0$ esetén</b> érvényes — '
-         'épp ezt a kikötést tettük a gyökvonás azonosságainál.</p>'
-         '<p><b>Tanulság:</b> negatív szám négyzetgyökét ne írjuk $\\sqrt{-9}$ alakban. '
-         'Helyette mondjuk azt, hogy az $x^{2}=-9$ egyenlet megoldásai $x_{1,2}=\\pm 3i$, '
-         'vagy egyszerűen írjuk fel közvetlenül: $3i$. A gyökjel a komplex számok között '
-         'nem egyértelmű — <b>két</b> szám négyzete is $-9$.</p>'),
+         ('<p>A mutálódott kódban ez a „bizonyítás" '
+ 'szerepel:</p>$$-1=i^{2}=\\sqrt{-1}\\cdot\\sqrt{-1}\\overset{?}{=}\\sqrt{(-1)\\cdot(-1)}=\\sqrt{1}=1.$$<p>Tehát '
+ '$-1=1$? Nem: a kérdőjellel jelölt átalakítás hibás. A valós négyzetgyökökre tanult '
+ '$\\sqrt{a}\\cdot\\sqrt{b}=\\sqrt{ab}$ szabály feltétele <b>$a,b\\ge 0$</b>. Ezt itt nem '
+ 'teljesítik a gyökjelek alatti számok.</p><p><b>Jelölés ebben a tananyagban:</b> a gyökjelet '
+ 'valós négyzetgyökként használjuk, ezért a $\\sqrt{-9}$ alakot nem értelmezzük. Az $x^{2}=-9$ '
+ 'egyenletnek a komplex számok között <b>két megoldása</b> van: $x_{1,2}=\\pm 3i$. Egyik sem '
+ 'helyettesíti önmagában a teljes megoldáshalmazt. A komplex gyökjel külön jelölési szabályaival '
+ 'itt nem foglalkozunk.</p>')),
    gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–4"),
-   brief('<b>X. Károly professzor:</b> Megvan az új világ térképe. Most meg kell tanulnod <b>mozogni</b> '
-         'benne: összeadni, szorozni, osztani. Meg fog lepni, mennyire ismerős lesz — '
-         'úgy számolunk, mint a betűs kifejezésekkel, egyetlen extra szabállyal: '
-         'ahol $i^{2}$-t látsz, oda $-1$-et írsz.',
+   brief(('<b>X. Károly professzor:</b> A komplex számot már el tudod helyezni a síkon, és meg tudod adni a '
+ 'konjugáltját és a moduluszát. Következnek a műveletek: a betűs kifejezéseknél tanult szabályokat '
+ 'használjuk, és $i^{2}$ helyére $-1$-et írunk.'),
          outro=True),
  ]),
 ]
@@ -215,12 +208,10 @@ C1 = [
 
 C2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>X. Károly professzor:</b> A jó hír, kadét: nem kell új algebrát tanulnia. '
-         'A komplex számokkal <b>pontosan úgy</b> számolunk, mint az $a+bx$ alakú kéttagú '
-         'kifejezésekkel — összevonunk, kibontunk, nevezetes azonosságokat használunk. '
-         'Egyetlen extra szabály van: valahányszor $i^{2}$ keletkezik, azonnal '
-         'helyettesítse be, hogy $i^{2}=-1$. Ettől lesz a szorzat mindig ugyanolyan '
-         '$x+yi$ alakú, mint amiből indultunk.'),
+   brief(('<b>X. Károly professzor:</b> Kadét, a műveleti szabályok ismerősek lesznek. A komplex számokkal '
+ 'úgy számolunk, mint az $a+bx$ alakú kéttagú kifejezésekkel: összevonjuk a tagokat, kibontjuk a '
+ 'zárójeleket, használjuk a nevezetes azonosságokat. Ha $i^{2}$ keletkezik, helyettesítsd '
+ '$-1$-gyel. Így a szorzatot is $x+yi$ algebrai alakra hozhatod.')),
  ]),
 
  ("Összeadás és kivonás", [
@@ -231,9 +222,9 @@ C2 = [
          'hasonló tagok összevonása.</p>',
          hid="tetel-komplex-osszeadas"),
    doboz("erdekesseg", "Geometriai jelentés",
-         '<p>A Gauss-síkon a komplex számok <b>helyvektorok</b>, és az összeadásuk pontosan '
-         'a vektorok összeadása: a paralelogramma-szabály. Ezért viselkedik a komplex '
-         'összeadás olyan „jól" — geometriailag eltolás.</p>'),
+         ('<p>A Gauss-síkon a komplex számok <b>helyvektorok</b>, és az összeadásuk pontosan a vektorok '
+ 'összeadása: a paralelogramma-szabály. Ha egy rögzített komplex számot adunk a sík minden '
+ 'pontjához, az a hozzá tartozó vektorral való eltolás.</p>')),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Legyen $z_{1}=5+3i$ és $z_{2}=2-7i$. Számítsd ki $z_{1}+z_{2}$ és $z_{1}-z_{2}$ értékét!</p>',
          lenyilo=("Megoldás",
@@ -246,10 +237,9 @@ C2 = [
    'Bontsuk ki a szorzatot úgy, ahogy két kéttagú kifejezést szoktunk, majd használjuk '
    'az $i^{2}=-1$ helyettesítést.',
    doboz("tetel", "A szorzás szabálya",
-         '$$\\left(x_{1}+y_{1}i\\right)\\left(x_{2}+y_{2}i\\right)'
-         '=\\left(x_{1}x_{2}-y_{1}y_{2}\\right)+\\left(x_{1}y_{2}+x_{2}y_{1}\\right)i$$'
-         '<p>Nem érdemes bemagolni — elég kibontani és $i^{2}$ helyére $-1$-et írni. '
-         'A képlet csak azt mutatja, hogy az eredmény <b>mindig</b> $x+yi$ alakú marad.</p>',
+         ('$$\\left(x_{1}+y_{1}i\\right)\\left(x_{2}+y_{2}i\\right)=\\left(x_{1}x_{2}-y_{1}y_{2}\\right)+\\left(x_{1}y_{2}+x_{2}y_{1}\\right)i$$<p>A '
+ 'szabályt a szorzat kibontásával is megkapod: $i^{2}$ helyére $-1$-et írunk, majd összevonjuk a '
+ 'tagokat. Az eredmény ismét $x+yi$ algebrai alakú.</p>'),
          hid="tetel-komplex-szorzas"),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Számítsd ki: $(4+3i)(2-5i)$.</p>',
@@ -260,7 +250,7 @@ C2 = [
    doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>„$(2i)^{2}=2i^{2}=-2$." — <b>Hamis.</b> A négyzetre emelés a <b>teljes</b> '
          'tényezőre vonatkozik: $(2i)^{2}=2^{2}\\cdot i^{2}=4\\cdot(-1)=-4$. '
-         'Ugyanez a hiba a $-15i^{2}$ kezelésénél: az eredmény $+15$, nem $-15$.</p>'),
+         'Másik gyakori hiba a $-15i^{2}$ kezelésénél: az eredmény $+15$, nem $-15$.</p>'),
    kviz('Mennyi $(1+i)^{2}$?',
         ['$2i$', '$1+i^{2}$', '$2+2i$'], 0,
         jo="✔ 1 + 2i + i² = 1 + 2i − 1 = 2i.",
@@ -272,11 +262,10 @@ C2 = [
    '$x+yi$ alakra. Ehhez a <b>nevezőből el kell tüntetni az $i$-t</b> — és pontosan erre '
    'való a $z\\cdot\\overline z=|z|^{2}$ összefüggés.',
    doboz("tetel", "Az osztás algoritmusa",
-         '<p>Ha $z_{2}\\neq 0$, bővítsük a törtet a <b>nevező konjugáltjával</b>:</p>'
-         '$$\\frac{z_{1}}{z_{2}}=\\frac{z_{1}\\cdot\\overline{z_{2}}}'
-         '{z_{2}\\cdot\\overline{z_{2}}}=\\frac{z_{1}\\cdot\\overline{z_{2}}}{\\left|z_{2}\\right|^{2}}.$$'
-         '<p>A nevező így <b>valós</b> szám lesz, a számlálót pedig már csak ki kell bontani. '
-         'Ez szó szerint ugyanaz a fogás, mint a gyöktelenítés a kéttagú nevezőnél.</p>',
+         ('<p>Ha $z_{2}\\neq 0$, bővítsük a törtet a <b>nevező '
+ 'konjugáltjával</b>:</p>$$\\frac{z_{1}}{z_{2}}=\\frac{z_{1}\\cdot\\overline{z_{2}}}{z_{2}\\cdot\\overline{z_{2}}}=\\frac{z_{1}\\cdot\\overline{z_{2}}}{\\left|z_{2}\\right|^{2}}.$$<p>A '
+ 'nevező így <b>pozitív valós</b> szám lesz; a számlálót kibontjuk, majd algebrai alakra hozzuk az '
+ 'eredményt. A bővítés a kéttagú gyökös nevező gyöktelenítésénél használt eljáráshoz hasonlít.</p>'),
          hid="tetel-komplex-osztas"),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Számítsd ki: $\\dfrac{5+i}{2-3i}$.</p>',
@@ -287,25 +276,21 @@ C2 = [
                   '=\\frac{10-3+17i}{13}=\\frac{7+17i}{13}.$$'
                   '<p>Végalak: $\\dfrac{7}{13}+\\dfrac{17}{13}i$.</p>')),
    doboz("erdekesseg", "Ugyanaz a trükk, kétszer",
-         '<p>Vesd össze a két lépést:</p>'
-         '$$\\frac{4}{\\sqrt7-\\sqrt3}\\cdot\\frac{\\sqrt7+\\sqrt3}{\\sqrt7+\\sqrt3},'
-         '\\qquad\\qquad \\frac{5+i}{2-3i}\\cdot\\frac{2+3i}{2+3i}$$'
-         '<p>Mindkettőben a „konjugálttal" bővítünk, hogy a nevező <b>racionális</b>, '
-         'illetve <b>valós</b> legyen. A matematika ugyanazt a jó ötletet szereti '
-         'többször is elsütni.</p>'),
+         ('<p>Vesd össze a két '
+ 'lépést:</p>$$\\frac{4}{\\sqrt7-\\sqrt3}\\cdot\\frac{\\sqrt7+\\sqrt3}{\\sqrt7+\\sqrt3},\\qquad\\qquad '
+ '\\frac{5+i}{2-3i}\\cdot\\frac{2+3i}{2+3i}$$<p>Mindkettőben a „konjugálttal" bővítünk, hogy a '
+ 'nevező <b>racionális</b>, illetve <b>valós</b> legyen. A tört értéke nem változik, a nevezővel '
+ 'viszont egyszerűbb lesz számolni.</p>')),
  ]),
 
  ("A konjugálás és a modulusz tulajdonságai", [
    doboz("tetel", "Számolási szabályok",
-         '<p>Bármely $z,w\\in\\mathbb{C}$ esetén:</p>'
-         '$$\\overline{z+w}=\\overline{z}+\\overline{w},\\qquad '
-         '\\overline{z\\cdot w}=\\overline{z}\\cdot\\overline{w},\\qquad '
-         '\\overline{\\overline{z}}=z$$'
-         '$$z+\\overline{z}=2\\operatorname{Re}(z),\\qquad '
-         'z-\\overline{z}=2\\operatorname{Im}(z)\\cdot i,\\qquad '
-         '\\left|z\\cdot w\\right|=|z|\\cdot|w|$$'
-         '<p>A negyedik és ötödik különösen hasznos: velük egy komplex szám valós és '
-         'képzetes része <b>kiszámolható</b>, ha ismerjük $z$-t és $\\overline z$-t.</p>',
+         ('<p>Bármely $z,w\\in\\mathbb{C}$ esetén:</p>$$\\overline{z+w}=\\overline{z}+\\overline{w},\\qquad '
+ '\\overline{z\\cdot w}=\\overline{z}\\cdot\\overline{w},\\qquad '
+ '\\overline{\\overline{z}}=z$$$$z+\\overline{z}=2\\operatorname{Re}(z),\\qquad '
+ 'z-\\overline{z}=2\\operatorname{Im}(z)\\cdot i,\\qquad \\left|z\\cdot '
+ 'w\\right|=|z|\\cdot|w|$$<p>Az összegre és a különbségre vonatkozó összefüggésből kiolvasható a '
+ 'valós, illetve a képzetes rész.</p>'),
          hid="tetel-konjugalas-tulajdonsagok"),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Legyen $z=6-2i$. Mennyi $z+\\overline{z}$ és $z\\cdot\\overline{z}$?</p>',
@@ -314,11 +299,9 @@ C2 = [
                   'és $z\\cdot\\overline z=36+4=40=|z|^{2}$ (valóban '
                   '$|z|=\\sqrt{36+4}=\\sqrt{40}$). Mindkét eredmény <b>valós</b>.</p>')),
    gyakorolj(FGY + "#alap-7", "A 7–12", FGY + "#kozep-5", "K 5–9"),
-   brief('<b>X. Károly professzor:</b> Van még egy dolog, amit Dr. Baljós kihasznál: az $i$ hatványai '
-         '<b>ismétlődnek</b>. Négyes ciklusban. Aki ezt észreveszi, másodpercek alatt '
-         'kiszámolja $i^{2026}$ értékét — aki nem, az órákig szorozgat. '
-         'Az utolsó kiképzési egység erről szól, és arról, hogyan oldunk meg egyenletet '
-         'ebben az új világban.',
+   brief(('<b>X. Károly professzor:</b> Az $i$ hatványai <b>négyes ciklusban ismétlődnek</b>. Ezzel például '
+ '$i^{2026}$ értékét is gyorsan kiszámíthatod. A következő egységben ezt a mintát használjuk, majd '
+ 'komplex számokat tartalmazó egyenleteket oldunk meg.'),
          outro=True),
    kviz('Mennyi $|3-4i|$?',
         ['$5$', '$-1$', '$7$'], 0,
@@ -332,10 +315,9 @@ C2 = [
 
 C3 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>X. Károly professzor:</b> Az utolsó lecke a fejezetben: a <b>minta</b> felismerése. '
-         'Dr. Baljós kódjai hatalmas kitevőket használnak, hogy elrejtsék az egyszerű '
-         'szerkezetet. De az $i$ hatványai négyesével ismétlődnek — ez a ciklus a kulcs '
-         'az egész titkosításhoz. Aztán megoldunk pár egyenletet, és a fejezet lezárul.'),
+   brief(('<b>X. Károly professzor:</b> Dr. Baljós kódsoraiban nagy kitevők szerepelnek. Az $i$ '
+ 'hatványainál mégis elég a négyes ismétlődést figyelned: a kitevő maradéka megadja az értéket. '
+ 'Ezután néhány komplex egyenlet megoldásával zárjuk a fejezetet.')),
  ]),
 
  ("A képzetes egység hatványai", [
@@ -343,11 +325,15 @@ C3 = [
    '$i^{4}=i^{2}\\cdot i^{2}=(-1)(-1)=1$. És innentől minden ismétlődik, hiszen '
    '$i^{5}=i^{4}\\cdot i=1\\cdot i=i$.',
    doboz("tetel", "Négyes ciklus",
-         '$$i^{0}=1,\\qquad i^{1}=i,\\qquad i^{2}=-1,\\qquad i^{3}=-i,\\qquad i^{4}=1$$'
-         '<p>Általánosan: bármely <b>pozitív egész</b> $n$ kitevőre az $i^{n}$ értéke csak attól függ, hogy $n$ <b>4-gyel osztva</b> mennyi maradékot ad:</p>'
-         '$$i^{4k}=1,\\qquad i^{4k+1}=i,\\qquad i^{4k+2}=-1,\\qquad i^{4k+3}=-i.$$'
-         '<p>A ciklus <b>negatív</b> kitevőre is kiterjed: $\\dfrac{1}{i}=\\dfrac{i^{3}}{i^{4}}=i^{3}=-i$, tehát $i^{-1}=-i$, $i^{-2}=-1$ és így tovább — a maradékos gondolatmenet ugyanaz.</p>'
-         '<p class="halvany">Emlékeztető: az $i^{2}$-t sose írd $\\sqrt{-1}\\cdot\\sqrt{-1}$ alakban — a gyökazonosság csak nemnegatív számokra érvényes (lásd a ⚠️ dobozt a <a href="tananyag-komplex-szam-fogalma.html">Komplex szám fogalma</a> lapon).</p>',
+         ('$$i^{0}=1,\\qquad i^{1}=i,\\qquad i^{2}=-1,\\qquad i^{3}=-i,\\qquad i^{4}=1$$<p>Általánosan: '
+ 'bármely <b>egész</b> $n$ kitevőre az $i^{n}$ értéke csak attól függ, hogy $n$ <b>4-gyel '
+ 'osztva</b> mennyi maradékot ad:</p>$$i^{4k}=1,\\qquad i^{4k+1}=i,\\qquad i^{4k+2}=-1,\\qquad '
+ 'i^{4k+3}=-i.$$<p>A fenti képletekben $k$ egész szám. A ciklus <b>negatív</b> kitevőre is '
+ 'kiterjed: $\\dfrac{1}{i}=\\dfrac{i^{3}}{i^{4}}=i^{3}=-i$, tehát $i^{-1}=-i$, $i^{-2}=-1$ és így '
+ 'tovább — a maradékos gondolatmenet ugyanaz.</p><p class="halvany">Emlékeztető: az $i^{2}$-t sose '
+ 'írd $\\sqrt{-1}\\cdot\\sqrt{-1}$ alakban — a gyökazonosság csak nemnegatív számokra érvényes '
+ '(lásd a ⚠️ dobozt a <a href="tananyag-komplex-szam-fogalma.html">Komplex szám fogalma</a> '
+ 'lapon).</p>'),
          hid="tetel-i-hatvanyai"),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Mennyi $i^{27}$, $i^{100}$ és $i^{2026}$?</p>',
@@ -392,10 +378,10 @@ C3 = [
  ]),
 
  ("Ha $z$ és $\\overline{z}$ is szerepel", [
-   'Itt nem lehet egyszerűen „átosztani": $z$ és $\\overline z$ két különböző dolog. '
-   'A megoldás kulcsa a <a href="tananyag-komplex-szam-fogalma.html">Két komplex szám '
-   'egyenlősége</a> tétel — <b>egy</b> komplex egyenlet <b>két</b> valós egyenletet '
-   'jelent.',
+   ('<p>Ha az egyenletben $z$ és $\\overline z$ is szerepel, írjuk fel $z$-t algebrai alakban. A '
+ 'konjugáltja ugyanazt a valós részt tartalmazza, a képzetes rész előjele pedig ellentétes; valós '
+ 'szám esetén a két szám egyenlő. A <a href="tananyag-komplex-szam-fogalma.html">Két komplex szám '
+ 'egyenlősége</a> tétel alapján külön egyenletet írunk fel a valós és a képzetes részekre.</p>'),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg: $2z+3\\overline{z}=10-4i$.</p>',
          hid="pelda-z-es-konjugalt",
@@ -414,11 +400,9 @@ C3 = [
         jo="✔ Két komplex szám akkor egyenlő, ha a valós ÉS a képzetes részük is egyenlő.",
         nem="✘ Kettőre: külön a valós, külön a képzetes részek egyenlősége."),
    gyakorolj(FGY + "#alap-13", "A 13–18", FGY + "#kozep-10", "K 10–14"),
-   brief('<b>X. Károly professzor:</b> Kadét, a fejezet lezárult. Kibővítette a valóságát, és '
-         'megtanult mozogni benne. De figyeljen: az $x^{2}=-1$ csak a kezdet volt. '
-         'A következő küldetésben olyan egyenletekkel találkozik, amelyeknek <b>néha</b> '
-         'van valós megoldásuk, néha nincs — és ez a „néha" egyetlen számon fog múlni. '
-         'Nagol és Küklopsz már várja a Vészteremben. Az M-Faktor küldetés indul.',
+   brief(('<b>X. Károly professzor:</b> Kadét, a komplex számokkal már számolni és egyenletet megoldani is '
+ 'tudsz. Az $x^{2}=-1$ után következnek a másodfokú egyenletek: megvizsgáljuk, mitől függ a valós '
+ 'megoldásaik száma. Nagol és Küklopsz várnak a Vészteremben; indul az M-Faktor küldetés.'),
          outro=True),
  ]),
 ]

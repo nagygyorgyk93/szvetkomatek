@@ -33,20 +33,20 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/x_karoly_w.webp" alt="X. Károly professzor — a Mutáns Osztag alapítója" width="1200" height="670" decoding="async"><p>📡 <b>X. Károly professzor:</b> Kadét, üljön le. Amit most mondok, az kezdetben képtelenségnek fog hangzani — pontosan úgy, ahogy a negatív számok hangzottak képtelenségnek, amíg valaki ki nem mondta, hogy „tartozás". Az <span class="math inline">\(x^{2}=-1\)</span> egyenletnek <b>nincs</b> valós megoldása. Ez nem a mi hibánk, és nem is az egyenleté: a valós számok halmaza egyszerűen <b>kicsi</b> hozzá. Dr. Baljós már régen kilépett belőle. Most mi is kilépünk.</p></div>
+    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/x_karoly_w.webp" alt="X. Károly professzor — a Mutáns Osztag alapítója" width="1200" height="670" decoding="async"><p>📡 <b>X. Károly professzor:</b> Kadét, az <span class="math inline">\(x^{2}=-1\)</span> egyenletnek <b>nincs valós megoldása</b>. Dr. Baljós kódjában mégis szerepel. Olyan számokat vezetünk be, amelyekkel ez az egyenlet is megoldható. A negatív számoknál már találkoztál hasonló bővítéssel: velük például tartozást is kifejezhetünk.</p></div>
 
-    A matematika története bővítések sorozata: valahányszor felírtunk egy egyenletet, amit az addig ismert számokkal nem lehetett megoldani, <b>kibővítettük a számhalmazt</b>. A komplex számok ennek a sornak az utolsó — és legmeglepőbb — lépése.
+    <p>A korábban tanult számhalmazok bővítésével újabb egyenleteket tudtunk megoldani. Most a valós számok halmazát bővítjük a <b>komplex számokkal</b>. Az alábbi példák azt mutatják, miért hasznos egy ilyen bővítés.</p>
 
     <h2 id="s1">Miért kell bővíteni a számhalmazt?</h2>
 
-    Nézd meg a mintát: minden lépésben egy „megoldhatatlan" egyenlet kényszerít ki egy új számfajtát.
+    <p>A táblázat minden sorában olyan egyenlet szerepel, amelynek a megadott számhalmazban nincs megoldása, egy bővebb halmazban viszont van.</p>
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> A számhalmazok építkezése</p>
-      <div class="tblwrap"><table><tr><th>Egyenlet</th><th>Megoldhatatlan itt…</th><th>…ezért bővítünk ide</th></tr><tr><td><span class="math inline">\(x+3=1\)</span></td><td><span class="math inline">\(\mathbb{N}\)</span> — természetes számok</td><td><span class="math inline">\(\mathbb{Z}\)</span> — negatív számok</td></tr><tr><td><span class="math inline">\(2x=1\)</span></td><td><span class="math inline">\(\mathbb{Z}\)</span> — egész számok</td><td><span class="math inline">\(\mathbb{Q}\)</span> — törtek</td></tr><tr><td><span class="math inline">\(x^{2}=2\)</span></td><td><span class="math inline">\(\mathbb{Q}\)</span> — racionális számok</td><td><span class="math inline">\(\mathbb{R}\)</span> — irracionális számok</td></tr><tr><td><span class="math inline">\(x^{2}=-1\)</span></td><td><span class="math inline">\(\mathbb{R}\)</span> — valós számok</td><td><span class="math inline">\(\mathbb{C}\)</span> — <b>komplex számok</b></td></tr></table></div><p>Miért nincs valós megoldása az utolsónak? Mert minden valós <span class="math inline">\(x\)</span>-re <span class="math inline">\(x^{2}\ge 0\)</span> — ezt épp az előző egységben, a <a href="tananyag-hatvanyfuggveny.html">hatványfüggvény grafikonján</a> láttuk.</p>
+      <div class="tblwrap"><table><tr><th>Egyenlet</th><th>Megoldhatatlan itt…</th><th>…ezért bővítünk ide</th></tr><tr><td><span class="math inline">\(x+3=1\)</span></td><td><span class="math inline">\(\mathbb{N}\)</span> — természetes számok</td><td><span class="math inline">\(\mathbb{Z}\)</span> — egész számok</td></tr><tr><td><span class="math inline">\(2x=1\)</span></td><td><span class="math inline">\(\mathbb{Z}\)</span> — egész számok</td><td><span class="math inline">\(\mathbb{Q}\)</span> — racionális számok</td></tr><tr><td><span class="math inline">\(x^{2}=2\)</span></td><td><span class="math inline">\(\mathbb{Q}\)</span> — racionális számok</td><td><span class="math inline">\(\mathbb{R}\)</span> — valós számok</td></tr><tr><td><span class="math inline">\(x^{2}=-1\)</span></td><td><span class="math inline">\(\mathbb{R}\)</span> — valós számok</td><td><span class="math inline">\(\mathbb{C}\)</span> — <b>komplex számok</b></td></tr></table></div><p>Miért nincs valós megoldása az utolsónak? Mert minden valós <span class="math inline">\(x\)</span>-re <span class="math inline">\(x^{2}\ge 0\)</span> — ezt épp az előző egységben, a <a href="tananyag-hatvanyfuggveny.html">hatványfüggvény grafikonján</a> láttuk.</p>
     </div>
 
-    A bővítés módja mindig ugyanaz: <b>bevezetünk</b> egy új objektumot, kimondjuk róla, mit tud, és megköveteljük, hogy a régi számolási szabályok érvényben maradjanak.
+    <p>A komplex számok bevezetésekor megőrizzük a valós számok összeadási és szorzási szabályait. Ezekhez kapcsoljuk az új képzetes egység tulajdonságát.</p>
 
     <h2 id="s2">A képzetes egység és az algebrai alak</h2>
 
@@ -57,7 +57,7 @@
 
     <div class="doboz definicio" id="def-komplex-szam">
       <p class="cim"><span class="ikon">📗</span> Komplex szám, algebrai alak</p>
-      <p><b>Komplex számnak</b> nevezzük az <span class="math inline">\(z=x+yi\)</span> alakú kifejezéseket, ahol <span class="math inline">\(x,y\in\mathbb{R}\)</span>. A komplex számok halmaza:</p><span class="math display">\[\mathbb{C}=\left\{\,x+yi \mid x,y\in\mathbb{R}\ \wedge\ i^{2}=-1\,\right\}.\]</span><p>Itt <span class="math inline">\(x=\operatorname{Re}(z)\)</span> a <span class="math inline">\(z\)</span> <b>valós része</b>, <span class="math inline">\(y=\operatorname{Im}(z)\)</span> pedig a <b>képzetes (imaginárius) része</b>. Figyelem: a képzetes rész is <b>valós szám</b> — nem tartozik hozzá az <span class="math inline">\(i\)</span>!</p>
+      <p><b>Komplex számnak</b> nevezzük a <span class="math inline">\(z=x+yi\)</span> alakú kifejezéseket, ahol <span class="math inline">\(x,y\in\mathbb{R}\)</span>. A komplex számok halmaza:</p><span class="math display">\[\mathbb{C}=\left\{\,x+yi \mid x,y\in\mathbb{R}\ \wedge\ i^{2}=-1\,\right\}.\]</span><p>Itt <span class="math inline">\(x=\operatorname{Re}(z)\)</span> a <span class="math inline">\(z\)</span> <b>valós része</b>, <span class="math inline">\(y=\operatorname{Im}(z)\)</span> pedig a <b>képzetes (imaginárius) része</b>. Figyelem: a képzetes rész is <b>valós szám</b> — nem tartozik hozzá az <span class="math inline">\(i\)</span>!</p>
     </div>
 
     <div class="doboz tetel" id="tetel-komplex-egyenloseg">
@@ -70,10 +70,10 @@
       <p>Ha <span class="math inline">\(y=0\)</span>, akkor <span class="math inline">\(z=x\)</span> — közönséges valós szám. Ha viszont <span class="math inline">\(x=0\)</span> és <span class="math inline">\(y\neq0\)</span>, akkor <span class="math inline">\(z=yi\)</span> <b>tisztán képzetes</b>. Tehát <span class="math inline">\(\mathbb{R}\subset\mathbb{C}\)</span>: nem elvesztettük a régi számokat, hanem <b>beágyaztuk</b> őket egy nagyobb világba.</p>
     </div>
 
-    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ A képzetes rész az i EGYÜTTHATÓJA — maga is valós szám." data-nem="✘ Re(z) az i nélküli tag (−4), Im(z) pedig az i együtthatója (7), i nélkül.">
+    <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A képzetes rész az i EGYÜTTHATÓJA — maga is valós szám." data-nem="✘ Re(z) az i nélküli tag (−4), Im(z) pedig az i együtthatója (7), i nélkül.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
-      <p>Mennyi az <span class="math inline">\(z=-4+7i\)</span> szám valós és képzetes része?</p>
-      <div class="opciok"><button><span class="math inline">\(\operatorname{Re}(z)=-4\)</span>, <span class="math inline">\(\operatorname{Im}(z)=7\)</span></button><button><span class="math inline">\(\operatorname{Re}(z)=-4\)</span>, <span class="math inline">\(\operatorname{Im}(z)=7i\)</span></button><button><span class="math inline">\(\operatorname{Re}(z)=4\)</span>, <span class="math inline">\(\operatorname{Im}(z)=7\)</span></button></div>
+      <p>Mennyi a <span class="math inline">\(z=-4+7i\)</span> szám valós és képzetes része?</p>
+      <div class="opciok"><button><span class="math inline">\(\operatorname{Re}(z)=-4\)</span>, <span class="math inline">\(\operatorname{Im}(z)=7i\)</span></button><button><span class="math inline">\(\operatorname{Re}(z)=4\)</span>, <span class="math inline">\(\operatorname{Im}(z)=7\)</span></button><button><span class="math inline">\(\operatorname{Re}(z)=-4\)</span>, <span class="math inline">\(\operatorname{Im}(z)=7\)</span></button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
@@ -88,7 +88,7 @@
     Egy komplex számot <b>két</b> valós adat határoz meg: a valós és a képzetes része. Két adat pedig természetes módon egy <b>pontot</b> jelöl ki a síkon. Ezt a szemléltetést <b>Gauss-síknak</b> vagy komplex számsíknak hívjuk: a vízszintes tengelyen a valós rész, a függőlegesen a képzetes rész.
 
     <div class="svgcard">
-    <svg viewBox="0 0 360 262" width="360" height="262" role="img" aria-label="A z = 3 + 2i komplex szám és konjugáltja a Gauss-síkon, a modulussal mint helyvektor-hosszal">
+    <svg viewBox="0 0 360 262" width="360" height="262" role="img" aria-describedby="abra-komplex-sik-leiras" aria-label="A z = 3 + 2i komplex szám és konjugáltja a Gauss-síkon, a modulussal mint helyvektor-hosszal">
       <defs><marker id="ny2" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker><marker id="ny3" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#047857"/></marker></defs>
       <g stroke="#cbd5e1" stroke-width=".6">
         <line x1="46" y1="18" x2="46" y2="246"/>
@@ -128,7 +128,7 @@
       <text x="182" y="92" font-size="12" fill="#047857" font-style="italic">|z| = √13</text>
     </svg>
     </div>
-    <p class="cap">A <span class="math inline">\(z=3+2i\)</span> szám a <span class="math inline">\((3;2)\)</span> pontnak felel meg. A helyvektor hossza a <b>modulusz</b>, a valós tengelyre vett tükörkép pedig a <b>konjugált</b>.</p>
+    <p class="cap"><span id="abra-komplex-sik-leiras">A <span class="math inline">\(z=3+2i\)</span> szám a <span class="math inline">\((3;2)\)</span> pontnak felel meg; a vízszintes tengely a valós, a függőleges a képzetes részt mutatja. A konjugált <span class="math inline">\(3-2i\)</span>, pontja <span class="math inline">\((3;-2)\)</span>: az eredeti pont valós tengelyre vett tükörképe. Az origóból a <span class="math inline">\(z\)</span> pontjába mutató helyvektor hossza a <b>modulusz</b>: <span class="math inline">\(|z|=\sqrt{13}\)</span>.</span></p>
 
     <div class="doboz pelda">
       <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
@@ -173,12 +173,12 @@
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
-      <p>A mutálódott kódban ez a „bizonyítás" szerepel:</p><span class="math display">\[-1=i^{2}=\sqrt{-1}\cdot\sqrt{-1}\overset{?}{=}\sqrt{(-1)\cdot(-1)}=\sqrt{1}=1.\]</span><p>Tehát <span class="math inline">\(-1=1\)</span>? Nyilván nem. A hiba a harmadik lépésben van: a <span class="math inline">\(\sqrt{a}\cdot\sqrt{b}=\sqrt{ab}\)</span> azonosság <b>csak <span class="math inline">\(a,b\ge 0\)</span> esetén</b> érvényes — épp ezt a kikötést tettük a gyökvonás azonosságainál.</p><p><b>Tanulság:</b> negatív szám négyzetgyökét ne írjuk <span class="math inline">\(\sqrt{-9}\)</span> alakban. Helyette mondjuk azt, hogy az <span class="math inline">\(x^{2}=-9\)</span> egyenlet megoldásai <span class="math inline">\(x_{1,2}=\pm 3i\)</span>, vagy egyszerűen írjuk fel közvetlenül: <span class="math inline">\(3i\)</span>. A gyökjel a komplex számok között nem egyértelmű — <b>két</b> szám négyzete is <span class="math inline">\(-9\)</span>.</p>
+      <p>A mutálódott kódban ez a „bizonyítás" szerepel:</p><span class="math display">\[-1=i^{2}=\sqrt{-1}\cdot\sqrt{-1}\overset{?}{=}\sqrt{(-1)\cdot(-1)}=\sqrt{1}=1.\]</span><p>Tehát <span class="math inline">\(-1=1\)</span>? Nem: a kérdőjellel jelölt átalakítás hibás. A valós négyzetgyökökre tanult <span class="math inline">\(\sqrt{a}\cdot\sqrt{b}=\sqrt{ab}\)</span> szabály feltétele <b><span class="math inline">\(a,b\ge 0\)</span></b>. Ezt itt nem teljesítik a gyökjelek alatti számok.</p><p><b>Jelölés ebben a tananyagban:</b> a gyökjelet valós négyzetgyökként használjuk, ezért a <span class="math inline">\(\sqrt{-9}\)</span> alakot nem értelmezzük. Az <span class="math inline">\(x^{2}=-9\)</span> egyenletnek a komplex számok között <b>két megoldása</b> van: <span class="math inline">\(x_{1,2}=\pm 3i\)</span>. Egyik sem helyettesíti önmagában a teljes megoldáshalmazt. A komplex gyökjel külön jelölési szabályaival itt nem foglalkozunk.</p>
     </div>
 
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-komplex-szamok.html#alap-1">🐾 Bestia-protokoll <span class="cimke">A 1–6</span></a><a class="sav bruno" href="feladatok-komplex-szamok.html#kozep-1">🔥 Főnix-protokoll <span class="cimke">K 1–4</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/x_karoly.webp" alt="X. Károly professzor — a Mutáns Osztag alapítója" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>X. Károly professzor:</b> Megvan az új világ térképe. Most meg kell tanulnod <b>mozogni</b> benne: összeadni, szorozni, osztani. Meg fog lepni, mennyire ismerős lesz — úgy számolunk, mint a betűs kifejezésekkel, egyetlen extra szabállyal: ahol <span class="math inline">\(i^{2}\)</span>-t látsz, oda <span class="math inline">\(-1\)</span>-et írsz.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/x_karoly.webp" alt="X. Károly professzor — a Mutáns Osztag alapítója" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>X. Károly professzor:</b> A komplex számot már el tudod helyezni a síkon, és meg tudod adni a konjugáltját és a moduluszát. Következnek a műveletek: a betűs kifejezéseknél tanult szabályokat használjuk, és <span class="math inline">\(i^{2}\)</span> helyére <span class="math inline">\(-1\)</span>-et írunk.</p></div>
     <div class="lapozo">
       <a class="elozo" href="feladatok-gyokvonas.html"><span class="irany">← Előző</span><span class="hova">Feladatok — gyökvonás</span></a>
       <a class="kov" href="tananyag-muveletek-komplex-szamokkal.html"><span class="irany">Következő →</span><span class="hova">Műveletek a komplex számokkal</span></a>

@@ -270,7 +270,7 @@ A korábbi A1-ellenőrzések nem helyettesítik a teljes stilisztikai átnézés
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ◐ Helyben kész: 77/77 oldal — 38 tananyag, 38 további témaköroldal és az osztály főoldala; teljes nyelvi és példahitelességi audit (helyi main, 2026-10-07; az utolsó adag még nincs pusholva) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
+| ◐ Helyben kész: 77/77 oldal — 38 tananyag, 38 további témaköroldal és az osztály főoldala; teljes nyelvi és példahitelességi audit (2026-10-07) | ◐ 3/65 oldal: 01 három komplexszámos tananyaga teljesen átnézve és javítva (helyi main, 2026-10-07; ez az adag még nincs pusholva) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
 
 Az első adag három függvényes, a második hat logikai és halmazos tananyagot
 ellenőrzött. A példák feltételei, bevezetők, átvezetők és matematikai pontatlanságok
@@ -425,6 +425,24 @@ Kulcs/regresszió most nem ismételve, feladat és válasz nem változott.
 Keresőindex pontosan három URL-en változott, naplótérkép változatlan.
 Új feladat-számadat, ág és push nincs. Tanári döntés nem maradt nyitva.
 Az 1e teljes A3-auditja helyben kész: 77/77 oldal. A 2e–4e A3-auditja hátra.
+
+Huszadik adag (2026-10-07): a tanár a 2e A3-at választotta; a 01 három
+komplexszámos tananyaga teljes szöveg szerint átnézve. Helyes számhalmaznevek,
+pontos gyökjel-megállapodás és konjugáltas magyarázat, következetes tegezés,
+természetesebb bevezetők/átvezetők; az i-ciklus egész paraméterei kimondva,
+osztási és geometriai magyarázat pontosítva. Egy Gauss-ábra teljesebb leírást
+és ARIA-kapcsolatot kapott, geometriája változatlan. Kontextus nélküli lektor,
+majd a javított szövegek lektori visszaellenőrzése rendben. 152 külön próba:
+44 megőrzési, 108 matematikai/szöveges; 10 kidolgozott példa és 7 kvíz
+helyes, eredeti adataik és válaszaik megmaradtak. Teljes builderlánc: kánon/
+link 310/0, kulcs 4499/4499, regresszió 100%. Render 223/0, kvíz 7/7;
+18 Edge-nézet és axe 0, nyomtatás JS be/ki 6/6. A hiányzó Python Playwright
+helyett Node Playwright/Edge azonos layout-függvénnyel, 360/390/1280 px-en.
+A 2e tananyagokhoz külön SymPy-kontroll, meglévő 2e kulcsmodul nincs.
+Keresőindex pontosan három URL-en változott, naplótérkép változatlan.
+Új gyakorlóadat, ág és push nincs; tanári döntés nem maradt nyitva.
+1e 77/77 kész, 2e 3/65 oldal átnézve; a 2e többi lapja és a 3e–4e hátra.
+Következő adag a 2e/01 öt hatványozási/gyökvonási tananyaga.
 
 Részletek:
 [A3 nyelvi ellenőrzés](A3_nyelvi_ellenorzes.md).

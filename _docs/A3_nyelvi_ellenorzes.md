@@ -4,11 +4,11 @@
 
 **Jelenlegi összesítés:** az 1e teljes A3-auditja helyben elkészült,
 összesen **77/77 HTML-oldal**: 38 tananyaglap, 38 további témaköroldal
-és az osztály főoldala. A munka tizenkilenc adagban készült; a tizenkilencedik
-adag az 1e/08 nyitóoldalát és az osztály főoldalát zárta, valamint három
-névalakot egységesített a már ellenőrzött hasonlósági tananyagban.
-A 2e–4e teljes A3-auditja hátra van. Az adagok alábbi adatai az egyes
-munkamenetek eredményei; a legfrissebb bejegyzés a végén található.
+és az osztály főoldala. A tanár a 2e A3-auditját választotta folytatásként.
+A 2e első adagjában a három komplexszámos tananyaglap teljes szövege
+átnézve és javítva: **3/65 oldal**. A 2e többi lapja és a 3e–4e teljes
+A3-auditja hátra van. A munka eddig húsz adagban készült; az alábbi adatok
+az egyes munkamenetek eredményei, a legfrissebb bejegyzés a végén található.
 
 **2026-10-05, első adag:** az 1e/01 három függvényes tananyaglapjának teljes szövegét
 átnéztük, a bevezetőktől az összefoglalóig. A tanár kérése szerint az egyértelműen
@@ -2043,3 +2043,94 @@ háttérpont kézi kontrasztja és külső média tartalma nem ellenőrizve.
 A 2e–4e A3-auditja hátra van. **Tanári döntés kell: nincs nyitott kérdés.**
 Helyi main, új ág és push nélkül. Következő javaslat: a 2e A3-auditja;
 a nagyobb adag megkezdéséhez a korábbi tanári munkarend szerint választás kell.
+
+## Huszadik adag — 2e/01 komplexszámos tananyagok (2026-10-07)
+
+### Hatókör és javítások
+
+A tanár a 2e A3-auditját választotta. Az első adag három tananyaga:
+
+| Lap | Átnézett tartalom |
+|---|---|
+| [A komplex szám fogalma](../2e/01-hatvanyozas-gyokvonas-komplex-szamok/tananyag-komplex-szam-fogalma.html) | Teljes szöveg, 2 kidolgozott példa, 3 kvíz, 1 Gauss-ábra |
+| [Műveletek a komplex számokkal](../2e/01-hatvanyozas-gyokvonas-komplex-szamok/tananyag-muveletek-komplex-szamokkal.html) | Teljes szöveg, 4 kidolgozott példa, 2 kvíz |
+| [Az i hatványai és egyenletek](../2e/01-hatvanyozas-gyokvonas-komplex-szamok/tananyag-i-hatvanyai-es-egyenletek.html) | Teljes szöveg, 4 kidolgozott példa, 2 kvíz |
+
+Kiindulás: 1880649, tiszta helyi main, az origin/main helyi referenciájával
+azonos állapot. Távoli frissítés nem történt. A matematika-2e skill és a
+szabvanyok skill MAT.A.SO.S.1.1 kimenetei az alap: algebrai alak, részek,
+egyenlőség, műveletek, számsík és egyszerű komplex megoldások. A kimenetek
+elsőbbsége és a bikvadratikus egyenletek megtartásáról szóló tanári döntés
+érvényben marad; ebben az adagban nem módosult a másodfokú témakör.
+
+Javítás előtt bemutatott hibák és a független lektor kiegészítése:
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Számhalmaztáblázat | Az egész számokat „negatív”, a valós számokat „irracionális”, a racionálisakat „törtek” felirat jelöli | Magas | Builder: helyes halmaznevek |
+| Fogalom, bevezető | Minden megoldhatatlan egyenlethez számhalmazbővítést kapcsol; a komplex számokat az utolsó lépésnek nevezi | Közepes | Builder: konkrét bővítések bemutatása, túlzó történeti állítás nélkül |
+| Gyökjeles csapda | A gyökjel megállapodását és az egyenlet két megoldását összemossa | Közepes | Builder: a valós gyökjel helyi megállapodása és a két komplex megoldás külön kimondva |
+| Konjugáltas egyenlet | Különböző számnak mondja z-t és konjugáltját; valós z esetén egyenlők | Közepes | Builder: az azonos valós rész, ellentétes képzetes rész és a valós eset tisztázva |
+| Bevezetők, átvezetők | Váltakozó tegezés/magázás, túlzó és nehézkes mondatok | Enyhe | Builder: következetes tegezés, természetesebb, konkrétabb mondatok |
+| Gauss-ábra | A képaláírás nem mondja el a pont, a konjugált és a modulusz minden fontos adatát | Enyhe | Builder: teljesebb leírás és aria-describedby kapcsolat; SVG-geometria változatlan |
+| Műveleti csapda — lektori észrevétel | „Ugyanez a hiba” két eltérő hibára: a tényező négyzete marad el, illetve az i² helyettesítésének előjele hibás | Enyhe | Builder: „Másik gyakori hiba” |
+
+Az i-hatványok általános szabályánál n és k egész volta kifejezett.
+Az osztás nevezője nem nulla osztónál pozitív valós szám; az összeadás
+eltolásként való értelmezése rögzített komplex szám hozzáadására vonatkozik.
+A gyöktelenítéssel való párhuzam pontosabb. A tartozásra vonatkozó hétköznapi
+utalás reális; a kitalált kódok a játékos történet részei, valódi titkosításról
+nem teszünk túlzó állítást. Új hétköznapi számadat vagy gyakorlófeladat nincs.
+
+### Független ellenőrzés és megőrzés
+
+Kontextus nélküli lektor csak az eredeti három tanulói szöveget kapta.
+Minden kidolgozott példát újraszámolt, a hét kvíz válaszát ellenőrizte.
+Öt biztos megfogalmazási hibát jelzett; a javított szövegek visszaellenőrzésekor
+mind az öt javítását megfelelőnek találta, további érdemi hibát nem talált.
+
+Külön HTML/SymPy-kontroll: **152 próba**, ebből 44 megőrzési és 108
+matematikai/szöveges ellenőrzés. A tíz kidolgozott példa teljes tartalma és
+a hét kvíz válaszlehetősége, helyes válasza és visszajelzése megmaradt.
+Egy kvíz nyelvi javítása a builderben új választási sorrendet eredményezett;
+a helyesnek jelölt gomb ugyanazt a választ tartalmazza.
+Minden régi id/href, szkript, stílus, kép, médiablokk és SVG-geometria
+változatlan. Új az ábraleírás azonosítója és ARIA-kapcsolata. A builder
+programszerkezete és minden numerikus konstansa változatlan, csak szövegek
+módosultak. A gyakorló-, házi-, összefoglaló- és projektlapok nem változtak.
+
+### Ellenőrzések és korlátok
+
+| Ellenőrzés | Eredmény |
+|---|---|
+| Kép, média, háttér | Három újraépített lap képei/médiái helyreállítva; 334 médiaelem 139 lapon, tartalmuk változatlan |
+| Kánon és belső linkek | 310 oldal, 0 hiba |
+| Gyakorlósávok | Minden kártyát felad valamelyik egység |
+| Meglévő kulcsteszt | 4499/4499, 0 eltérés |
+| Meglévő regresszió | 4499/4499 = 100% |
+| jsdom / képletrender | 3 lap, 223 képlet és 7/7 kvíz, 0 hiba |
+| Edge | 360/390/1280 px, zárt/nyitott példák: 18 nézet, 0 elrendezési/KaTeX/JS/saját konzol/helyi 404 hiba |
+| axe | 18 nézet, 0 jelzés; nem teljes WCAG-minősítés |
+| Nyomtatás JS be/ki | 6/6: címsorok, szövegek és minden példamegoldás látható |
+| JavaScript nélkül | 3/3 lap olvasható; képletek TeX alakban |
+| Keresőindex | 308 nem üres bejegyzés, pontosan három URL változott |
+| Naplótérkép | Byte szerint változatlan: 184 egység, 2294 feladat, 12315 XP |
+
+Builder: _tools/builders/build_tananyag_2e_01c.py. A végleges újraépítés után
+kép → média → háttér → naplótérkép → keresőindex → kánon → link → sáv →
+kulcs → regresszió lánc lefutott. A layout_teszt.py Python-belépője a hiányzó
+Python Playwright miatt nem indult; a telepített Node Playwright és Edge
+ugyanazt a változatlan TULLOGOK ellenőrzőfüggvényt futtatta, mindhárom előírt
+szélességen, nyitott példákkal is. A 18 nézet, a nyomtatási és a kvízpróbák
+a végleges HTML-en futottak. A Gauss-ábra, a három módosított bevezető,
+az ábraleírás és a gyökjeles magyarázat 390 px-en szemrevételezve.
+Valódi képernyőolvasó, más böngésző, teljes PDF-oldaltördelés, minden
+háttérpont kézi kontrasztja és külső média tartalma nem ellenőrizve.
+A meglévő kulcsmodulok nem fedik le a 2e-t: a 4499-es eredmény más,
+már lefedett gyakorlóoldalak kontrollja; a jelenlegi három tananyag közvetlen
+matematikai ellenőrzését a külön SymPy-kontroll és a lektor végezte.
+
+**Állapot:** 1e 77/77 kész; 2e **3/65** oldal teljes A3-audit szerint átnézve.
+A 2e többi lapja és a 3e–4e teljes A3-auditja hátra van.
+**Tanári döntés kell: nincs nyitott kérdés.** Helyi main, új ág és push nélkül.
+Következő adag: a 2e/01 öt hatványozási/gyökvonási tananyaglapjának A3-auditja.

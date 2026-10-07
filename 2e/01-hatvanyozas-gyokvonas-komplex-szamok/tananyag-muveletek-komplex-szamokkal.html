@@ -33,7 +33,7 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/x_karoly_w.webp" alt="X. Károly professzor — a Mutáns Osztag alapítója" width="1200" height="670" decoding="async"><p>📡 <b>X. Károly professzor:</b> A jó hír, kadét: nem kell új algebrát tanulnia. A komplex számokkal <b>pontosan úgy</b> számolunk, mint az <span class="math inline">\(a+bx\)</span> alakú kéttagú kifejezésekkel — összevonunk, kibontunk, nevezetes azonosságokat használunk. Egyetlen extra szabály van: valahányszor <span class="math inline">\(i^{2}\)</span> keletkezik, azonnal helyettesítse be, hogy <span class="math inline">\(i^{2}=-1\)</span>. Ettől lesz a szorzat mindig ugyanolyan <span class="math inline">\(x+yi\)</span> alakú, mint amiből indultunk.</p></div>
+    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/x_karoly_w.webp" alt="X. Károly professzor — a Mutáns Osztag alapítója" width="1200" height="670" decoding="async"><p>📡 <b>X. Károly professzor:</b> Kadét, a műveleti szabályok ismerősek lesznek. A komplex számokkal úgy számolunk, mint az <span class="math inline">\(a+bx\)</span> alakú kéttagú kifejezésekkel: összevonjuk a tagokat, kibontjuk a zárójeleket, használjuk a nevezetes azonosságokat. Ha <span class="math inline">\(i^{2}\)</span> keletkezik, helyettesítsd <span class="math inline">\(-1\)</span>-gyel. Így a szorzatot is <span class="math inline">\(x+yi\)</span> algebrai alakra hozhatod.</p></div>
 
     <h2 id="s1">Összeadás és kivonás</h2>
 
@@ -44,7 +44,7 @@
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Geometriai jelentés</p>
-      <p>A Gauss-síkon a komplex számok <b>helyvektorok</b>, és az összeadásuk pontosan a vektorok összeadása: a paralelogramma-szabály. Ezért viselkedik a komplex összeadás olyan „jól" — geometriailag eltolás.</p>
+      <p>A Gauss-síkon a komplex számok <b>helyvektorok</b>, és az összeadásuk pontosan a vektorok összeadása: a paralelogramma-szabály. Ha egy rögzített komplex számot adunk a sík minden pontjához, az a hozzá tartozó vektorral való eltolás.</p>
     </div>
 
     <div class="doboz pelda">
@@ -65,7 +65,7 @@
 
     <div class="doboz tetel" id="tetel-komplex-szorzas">
       <p class="cim"><span class="ikon">📘</span> A szorzás szabálya</p>
-      <span class="math display">\[\left(x_{1}+y_{1}i\right)\left(x_{2}+y_{2}i\right)=\left(x_{1}x_{2}-y_{1}y_{2}\right)+\left(x_{1}y_{2}+x_{2}y_{1}\right)i\]</span><p>Nem érdemes bemagolni — elég kibontani és <span class="math inline">\(i^{2}\)</span> helyére <span class="math inline">\(-1\)</span>-et írni. A képlet csak azt mutatja, hogy az eredmény <b>mindig</b> <span class="math inline">\(x+yi\)</span> alakú marad.</p>
+      <span class="math display">\[\left(x_{1}+y_{1}i\right)\left(x_{2}+y_{2}i\right)=\left(x_{1}x_{2}-y_{1}y_{2}\right)+\left(x_{1}y_{2}+x_{2}y_{1}\right)i\]</span><p>A szabályt a szorzat kibontásával is megkapod: <span class="math inline">\(i^{2}\)</span> helyére <span class="math inline">\(-1\)</span>-et írunk, majd összevonjuk a tagokat. Az eredmény ismét <span class="math inline">\(x+yi\)</span> algebrai alakú.</p>
     </div>
 
     <div class="doboz pelda" id="pelda-szorzas">
@@ -76,7 +76,7 @@
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
-      <p>„<span class="math inline">\((2i)^{2}=2i^{2}=-2\)</span>." — <b>Hamis.</b> A négyzetre emelés a <b>teljes</b> tényezőre vonatkozik: <span class="math inline">\((2i)^{2}=2^{2}\cdot i^{2}=4\cdot(-1)=-4\)</span>. Ugyanez a hiba a <span class="math inline">\(-15i^{2}\)</span> kezelésénél: az eredmény <span class="math inline">\(+15\)</span>, nem <span class="math inline">\(-15\)</span>.</p>
+      <p>„<span class="math inline">\((2i)^{2}=2i^{2}=-2\)</span>." — <b>Hamis.</b> A négyzetre emelés a <b>teljes</b> tényezőre vonatkozik: <span class="math inline">\((2i)^{2}=2^{2}\cdot i^{2}=4\cdot(-1)=-4\)</span>. Másik gyakori hiba a <span class="math inline">\(-15i^{2}\)</span> kezelésénél: az eredmény <span class="math inline">\(+15\)</span>, nem <span class="math inline">\(-15\)</span>.</p>
     </div>
 
     <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ 1 + 2i + i² = 1 + 2i − 1 = 2i." data-nem="✘ Bontsd ki: 1 + 2i + i², és i² = −1, tehát az eredmény 2i.">
@@ -92,7 +92,7 @@
 
     <div class="doboz tetel" id="tetel-komplex-osztas">
       <p class="cim"><span class="ikon">📘</span> Az osztás algoritmusa</p>
-      <p>Ha <span class="math inline">\(z_{2}\neq 0\)</span>, bővítsük a törtet a <b>nevező konjugáltjával</b>:</p><span class="math display">\[\frac{z_{1}}{z_{2}}=\frac{z_{1}\cdot\overline{z_{2}}}{z_{2}\cdot\overline{z_{2}}}=\frac{z_{1}\cdot\overline{z_{2}}}{\left|z_{2}\right|^{2}}.\]</span><p>A nevező így <b>valós</b> szám lesz, a számlálót pedig már csak ki kell bontani. Ez szó szerint ugyanaz a fogás, mint a gyöktelenítés a kéttagú nevezőnél.</p>
+      <p>Ha <span class="math inline">\(z_{2}\neq 0\)</span>, bővítsük a törtet a <b>nevező konjugáltjával</b>:</p><span class="math display">\[\frac{z_{1}}{z_{2}}=\frac{z_{1}\cdot\overline{z_{2}}}{z_{2}\cdot\overline{z_{2}}}=\frac{z_{1}\cdot\overline{z_{2}}}{\left|z_{2}\right|^{2}}.\]</span><p>A nevező így <b>pozitív valós</b> szám lesz; a számlálót kibontjuk, majd algebrai alakra hozzuk az eredményt. A bővítés a kéttagú gyökös nevező gyöktelenítésénél használt eljáráshoz hasonlít.</p>
     </div>
 
     <div class="doboz pelda" id="pelda-osztas">
@@ -103,7 +103,7 @@
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Ugyanaz a trükk, kétszer</p>
-      <p>Vesd össze a két lépést:</p><span class="math display">\[\frac{4}{\sqrt7-\sqrt3}\cdot\frac{\sqrt7+\sqrt3}{\sqrt7+\sqrt3},\qquad\qquad \frac{5+i}{2-3i}\cdot\frac{2+3i}{2+3i}\]</span><p>Mindkettőben a „konjugálttal" bővítünk, hogy a nevező <b>racionális</b>, illetve <b>valós</b> legyen. A matematika ugyanazt a jó ötletet szereti többször is elsütni.</p>
+      <p>Vesd össze a két lépést:</p><span class="math display">\[\frac{4}{\sqrt7-\sqrt3}\cdot\frac{\sqrt7+\sqrt3}{\sqrt7+\sqrt3},\qquad\qquad \frac{5+i}{2-3i}\cdot\frac{2+3i}{2+3i}\]</span><p>Mindkettőben a „konjugálttal" bővítünk, hogy a nevező <b>racionális</b>, illetve <b>valós</b> legyen. A tört értéke nem változik, a nevezővel viszont egyszerűbb lesz számolni.</p>
     </div>
 
     <!-- media:begin 2e01-komplex-muveletek-video -->
@@ -116,7 +116,7 @@
 
     <div class="doboz tetel" id="tetel-konjugalas-tulajdonsagok">
       <p class="cim"><span class="ikon">📘</span> Számolási szabályok</p>
-      <p>Bármely <span class="math inline">\(z,w\in\mathbb{C}\)</span> esetén:</p><span class="math display">\[\overline{z+w}=\overline{z}+\overline{w},\qquad \overline{z\cdot w}=\overline{z}\cdot\overline{w},\qquad \overline{\overline{z}}=z\]</span><span class="math display">\[z+\overline{z}=2\operatorname{Re}(z),\qquad z-\overline{z}=2\operatorname{Im}(z)\cdot i,\qquad \left|z\cdot w\right|=|z|\cdot|w|\]</span><p>A negyedik és ötödik különösen hasznos: velük egy komplex szám valós és képzetes része <b>kiszámolható</b>, ha ismerjük <span class="math inline">\(z\)</span>-t és <span class="math inline">\(\overline z\)</span>-t.</p>
+      <p>Bármely <span class="math inline">\(z,w\in\mathbb{C}\)</span> esetén:</p><span class="math display">\[\overline{z+w}=\overline{z}+\overline{w},\qquad \overline{z\cdot w}=\overline{z}\cdot\overline{w},\qquad \overline{\overline{z}}=z\]</span><span class="math display">\[z+\overline{z}=2\operatorname{Re}(z),\qquad z-\overline{z}=2\operatorname{Im}(z)\cdot i,\qquad \left|z\cdot w\right|=|z|\cdot|w|\]</span><p>Az összegre és a különbségre vonatkozó összefüggésből kiolvasható a valós, illetve a képzetes rész.</p>
     </div>
 
     <div class="doboz pelda">
@@ -133,7 +133,7 @@
     <!-- media:end 2e01-komplex-tulajdonsagok-video -->
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-komplex-szamok.html#alap-7">🐾 Bestia-protokoll <span class="cimke">A 7–12</span></a><a class="sav bruno" href="feladatok-komplex-szamok.html#kozep-5">🔥 Főnix-protokoll <span class="cimke">K 5–9</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/x_karoly.webp" alt="X. Károly professzor — a Mutáns Osztag alapítója" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>X. Károly professzor:</b> Van még egy dolog, amit Dr. Baljós kihasznál: az <span class="math inline">\(i\)</span> hatványai <b>ismétlődnek</b>. Négyes ciklusban. Aki ezt észreveszi, másodpercek alatt kiszámolja <span class="math inline">\(i^{2026}\)</span> értékét — aki nem, az órákig szorozgat. Az utolsó kiképzési egység erről szól, és arról, hogyan oldunk meg egyenletet ebben az új világban.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/x_karoly.webp" alt="X. Károly professzor — a Mutáns Osztag alapítója" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>X. Károly professzor:</b> Az <span class="math inline">\(i\)</span> hatványai <b>négyes ciklusban ismétlődnek</b>. Ezzel például <span class="math inline">\(i^{2026}\)</span> értékét is gyorsan kiszámíthatod. A következő egységben ezt a mintát használjuk, majd komplex számokat tartalmazó egyenleteket oldunk meg.</p></div>
 
     <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ A modulusz a Gauss-síkon az origótól mért távolság: √(3² + (−4)²) = √25 = 5." data-nem="✘ A modulusz nem a valós és a képzetes rész összege vagy különbsége, hanem az origótól mért távolság: √(3² + (−4)²) = 5. Mindig nemnegatív valós szám.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
