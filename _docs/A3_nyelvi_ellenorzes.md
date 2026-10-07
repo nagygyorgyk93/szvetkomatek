@@ -2,12 +2,12 @@
 
 ## Hatókör és állapot
 
-**Jelenlegi összesítés:** az 1e mind a 38 tananyaglapjának teljes nyelvi és
-példahitelességi ellenőrzése elkészült tizenegy adagban. A tizenkettedik–
-tizennyolcadik adagban az 1e/01 hét, az 1e/02–07 öt-öt további lapja
-is átnézve és javítva, összesen 37 lap: nyitóoldalak, összefoglalók,
-terepküldetések és feladatgyűjtemények. Az 1e/08 nyitóoldala
-és a 2e–4e teljes A3-auditja hátra van. Az adagok alábbi adatai az egyes
+**Jelenlegi összesítés:** az 1e teljes A3-auditja helyben elkészült,
+összesen **77/77 HTML-oldal**: 38 tananyaglap, 38 további témaköroldal
+és az osztály főoldala. A munka tizenkilenc adagban készült; a tizenkilencedik
+adag az 1e/08 nyitóoldalát és az osztály főoldalát zárta, valamint három
+névalakot egységesített a már ellenőrzött hasonlósági tananyagban.
+A 2e–4e teljes A3-auditja hátra van. Az adagok alábbi adatai az egyes
 munkamenetek eredményei; a legfrissebb bejegyzés a végén található.
 
 **2026-10-05, első adag:** az 1e/01 három függvényes tananyaglapjának teljes szövegét
@@ -1969,3 +1969,77 @@ hátra van. Az 1e/08 jelenleg csak a nyitóoldalt és három tananyagot tartalma
 összefoglaló, terepküldetés és feladatsor nincs benne.
 **Tanári döntés kell: nincs nyitott kérdés.**
 Helyi main, új ág és push nélkül. Következő javasolt adag: az 1e/08 nyitóoldala.
+
+## Tizenkilencedik adag — az 1e nyitóoldalainak lezárása (2026-10-07)
+
+### Hatókör és javítások
+
+Az [1e/08 nyitóoldala](../1e/08-hasonlosag/index.html) és az
+[osztály főoldala](../1e/index.html) teljes szövege átnézve.
+A [háromszögek hasonlóságának tananyagában](../1e/08-hasonlosag/tananyag-haromszogek-hasonlosaga.html)
+csak három névalak változott; a korábbi teljes A3-audit megmaradt.
+Kiindulás: 3777c0e, tiszta helyi main, az origin/main helyi referenciájával
+azonos állapot. Távoli frissítés nem történt.
+
+Javítás előtt bemutatott hibák:
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| 1e főoldal | Minden témakörhöz feladatsort és összefoglalót ígér, pedig a hasonlóságnál csak tananyag van | Közepes | HTML: az első hét témakör és a hasonlóság kivételének megkülönböztetése |
+| Hasonlóság, bevezető | Hangya Henrik neve háromszor ismétlődik; nehézkes és túlzó mondatok | Enyhe | HTML: egyetlen névemlítés, rövidebb bevezető |
+| Hasonlóság, áttekintés | A Thalész-tétel megnevezése kétértelmű lehet | Enyhe | HTML: a párhuzamos szelők tételének megnevezése |
+| Áttekintés és kapcsolódó tananyag | Nem egységes az Eukleidész-tételek névalakja | Enyhe | HTML: egységes elnevezés, a végleges horgonyok megtartásával |
+
+A három tananyagkártya leírása és az ajánlott haladási sorrend természetesebb.
+A játékos keret és Hangya Henrik mentor szerepe megmaradt. A tantervi skill
+hasonlósági kimenete az alap: hasonlóság és középpontos hasonlóság alkalmazása
+a síkban; a leírások a tényleges három tananyag tartalmát foglalják össze.
+A „csak tananyag” állapot változatlan: nem készült új feladatsor, házi,
+összefoglaló vagy projekt. A tananyag saját példái továbbra is elérhetők.
+
+### Független ellenőrzés és megőrzés
+
+A web-verifikacio skill alapján kontextus nélküli lektor kizárólag a két
+nyitóoldal tanulói szövegét és a három javított címrészletet kapta.
+Nem talált további biztos nyelvi hibát vagy belső ellentmondást.
+A kinyert szövegben összefolyó státuszcímkék a tényleges mobilnézetben
+elkülönülnek; ez a szövegkinyerés mellékhatása volt.
+
+132 megőrzési és szerkezeti próba. Az 1e mind a 77 oldalán minden képlet
+és Végeredmény változatlan. A három érintett lap id/href/szkript/stílus/
+média/SVG/kvíz tartalma és minden számadata megmaradt. A tananyag teljes
+szövege a három névalak lecserélésével pontosan egyezik a kiindulással.
+Az osztály főoldalán nyolc témakör, 136 tananyagóra szerepel; a 12 dolgozati
+és javítási órával egyezik a 148 éves óraszám. Az első hét témakör tényleges
+feladatsora és összefoglalója létezik; a nyolcadikban csak négy HTML van:
+nyitóoldal és három tananyag. A 77 lapos teljes leltár ellenőrizve.
+
+### Ellenőrzések és korlátok
+
+| Ellenőrzés | Eredmény |
+|---|---|
+| Kép, média, háttér | 0 módosítás; 334 médiaelem 139 lapon |
+| Kánon és belső linkek | 310 oldal, 0 hiba |
+| Gyakorlósávok | Minden kártyát felad valamelyik egység |
+| jsdom / képletrender | Három lap, 66 képlet és 2/2 kvíz, 0 hiba |
+| Edge | 360/390/1280 px; két nyitóoldal és a tananyag zárt/nyitott példái: 12 nézet, 0 elrendezési/KaTeX/JS/saját konzol/helyi 404 hiba |
+| axe | 12 nézet, 0 jelzés; nem teljes WCAG-minősítés |
+| Nyomtatás JS be/ki | 6/6: címsorok, szövegek és a tananyag példamegoldásai láthatók |
+| JavaScript nélkül | 3/3 lap olvasható; képletek TeX alakban |
+| Keresőindex | 308 nem üres bejegyzés, pontosan három URL változott |
+| Naplótérkép | Byte szerint változatlan: 184 egység, 2294 feladat, 12315 XP |
+
+Mindhárom lap kézzel karbantartott; újraépített builder nincs. A kép/média/
+háttér, a napló- és keresőindex, valamint a statikus ellenőrzőlánc lefutott.
+Kulcsteszt és regresszió ebben az adagban nem futott újra: sem feladat,
+sem képlet, sem végeredmény nem változott. Az előző adagban a meglévő
+teljes teszt 4499/4499, a regresszió 100% volt; ez korábbi, külön jelölt
+eredmény. A három végleges lap render-, böngészős és nyomtatási próbája
+lefutott. A mobilos nyitóoldalak és a javított tételdoboz szemrevételezve.
+Valódi képernyőolvasó, más böngésző, teljes PDF-oldaltördelés, minden
+háttérpont kézi kontrasztja és külső média tartalma nem ellenőrizve.
+
+**Állapot:** az 1e teljes A3-auditja helyben kész, **77/77 oldal**.
+A 2e–4e A3-auditja hátra van. **Tanári döntés kell: nincs nyitott kérdés.**
+Helyi main, új ág és push nélkül. Következő javaslat: a 2e A3-auditja;
+a nagyobb adag megkezdéséhez a korábbi tanári munkarend szerint választás kell.

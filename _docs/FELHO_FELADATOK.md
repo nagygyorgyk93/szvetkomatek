@@ -270,7 +270,7 @@ A korábbi A1-ellenőrzések nem helyettesítik a teljes stilisztikai átnézés
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ◐ 01: 9, 02: 3, 03: 4, 04: 3, 05: 9, 06: 3, 07: 4, 08: 3 — mind a 38 tananyag, az 01 további 7 és a 02–07 további 5-5 lapja átnézve és javítva; a 08 nyitóoldala hátra (helyi main, 2026-10-07) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
+| ◐ Helyben kész: 77/77 oldal — 38 tananyag, 38 további témaköroldal és az osztály főoldala; teljes nyelvi és példahitelességi audit (helyi main, 2026-10-07; az utolsó adag még nincs pusholva) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
 
 Az első adag három függvényes, a második hat logikai és halmazos tananyagot
 ellenőrzött. A példák feltételei, bevezetők, átvezetők és matematikai pontatlanságok
@@ -413,6 +413,18 @@ Render 348/0, 30 végleges nézet/axe 0, nyomtatás JS be/ki 10/10.
 Keresőindex pontosan öt URL-en változott, naplótérkép változatlan.
 Új feladat-számadat, ág és push nincs. Tanári döntés nem maradt nyitva.
 Az 1e/08 nyitóoldala és a 2e–4e teljes A3-auditja hátra van.
+
+Tizenkilencedik adag (2026-10-07): az 1e/08 és az osztály nyitóoldala átnézve.
+A „minden témakörhöz feladatsor és összefoglaló” ígéret a hasonlóság kivételével
+pontosítva; egyszer szereplő mentor, természetesebb bevezető és kártyaleírások.
+Eukleidész névalakja a kapcsolódó tananyag három helyén egységesítve.
+Kontextus nélküli lektor, 132 megőrzési/szerkezeti próba; az 1e 77 oldalának
+minden képlete és végválasza változatlan. Kánon/link 310/0, render 66/0,
+kvíz 2/2; 12 mobil/asztali nézet és axe 0, nyomtatás JS be/ki 6/6.
+Kulcs/regresszió most nem ismételve, feladat és válasz nem változott.
+Keresőindex pontosan három URL-en változott, naplótérkép változatlan.
+Új feladat-számadat, ág és push nincs. Tanári döntés nem maradt nyitva.
+Az 1e teljes A3-auditja helyben kész: 77/77 oldal. A 2e–4e A3-auditja hátra.
 
 Részletek:
 [A3 nyelvi ellenőrzés](A3_nyelvi_ellenorzes.md).
