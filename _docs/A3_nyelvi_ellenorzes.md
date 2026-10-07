@@ -4,9 +4,9 @@
 
 **Jelenlegi összesítés:** az 1e mind a 38 tananyaglapjának teljes nyelvi és
 példahitelességi ellenőrzése elkészült tizenegy adagban. A tizenkettedik–
-tizenhatodik adagban az 1e/01 hét, az 1e/02–05 öt-öt további lapja
-is átnézve és javítva, összesen 27 lap: nyitóoldalak, összefoglalók,
-terepküldetések és feladatgyűjtemények. Az 1e/06–08 további lapfajtáinak
+tizenhetedik adagban az 1e/01 hét, az 1e/02–06 öt-öt további lapja
+is átnézve és javítva, összesen 32 lap: nyitóoldalak, összefoglalók,
+terepküldetések és feladatgyűjtemények. Az 1e/07–08 további lapfajtáinak
 és a 2e–4e teljes A3-auditja hátra van. Az adagok alábbi adatai az egyes
 munkamenetek eredményei; a legfrissebb bejegyzés a végén található.
 
@@ -1711,3 +1711,128 @@ A nyomtatási láthatóság valódi Edge-ben ellenőrizve.
 A3-audit szerint átnézve. Az 1e/06–08 további lapjai és a 2e–4e teljes
 A3-auditja hátra van. **Tanári döntés kell: nincs nyitott kérdés.**
 Helyi main, új ág és push nélkül. Következő javasolt adag: az 1e/06 további lapjai.
+
+## Tizenhetedik adag — 1e/06 további lapfajták (2026-10-07)
+
+### Hatókör és javítások
+
+Kiinduló revízió: `7b66709`, tiszta helyi main, az origin/main helyi
+referenciájával azonos állapot. Távoli frissítés nem történt.
+Az öt lap teljes szövege átnézve:
+[nyitóoldal](../1e/06-racionalis-algebrai-kifejezesek/index.html),
+[összefoglaló](../1e/06-racionalis-algebrai-kifejezesek/osszefoglalo.html),
+[terepküldetés](../1e/06-racionalis-algebrai-kifejezesek/terepkuldetes.html),
+[feladatgyűjtemény](../1e/06-racionalis-algebrai-kifejezesek/feladatok-racionalis-algebrai-kifejezesek.html),
+[házi feladatsor](../1e/06-racionalis-algebrai-kifejezesek/feladatok-hazi.html).
+Összesen 68 kártya: 47 + 18 gyakorlófeladat és három projektkártya.
+Ezeken a lapokon nincs SVG vagy kvíz. A három tananyag korábbi A3-auditja megmaradt.
+
+Az 1e matematika-skill kimenetei az alap: polinomműveletek, nevezetes
+azonosságok, szorzattá alakítás és algebrai törtek átalakítása, az eredeti
+értelmezési tartománnyal. A korábbi tanári kikötés szerinti négyzetes
+nemnegativitás/AM–GM gyakorlófeladat-kizárás megmaradt a házigenerátorban.
+Új gyakorlófeladat vagy bemeneti számadat nem került be.
+A két feladatlap builderben javítva: `build_fgy_racionalis.py`, illetve
+`build_dangerroom.py` DEST06. A másik három lap kézzel karbantartott HTML.
+
+Javítás előtt bemutatott hibatábla, a lektori pontosításokkal:
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Gyűjtemény, hat kártya | A megoldandó kifejezés vagy polinompár csak a lenyíló válaszban szerepel | Magas | Builder: az eredeti adatok vissza a feladatszövegbe |
+| Összefoglaló | Túl általános négyzetösszeg-állítás és feltétel nélkül leírt egyenlőtlenség | Magas | HTML: nem azonosság, egyenlőségi határeset; konkrét valós polinom |
+| Algebrai törtek | Több válaszból hiányoznak az eredeti kizárások | Közepes | Builder: minden eredeti nevező és a teljes osztó feltétele |
+| Polinomosztás, LKO/LKT | Hiányos feltételek; hamis hányadosegyenlőség nemnulla maradéknál | Közepes | HTML / builder: polinomazonosság, nulla maradék; hányados és maradék külön |
+| Indoklást kérő feladatok | A válasz nem teljesíti a kért indoklást | Közepes | Builder: a szükséges rövid indoklás |
+| Projekt | A Bézout-próba műszaki stabilitásvizsgálatnak látszik; a modell és a saját részek feltételei hiányosak | Közepes | HTML: kitalált labor, játékbeli oszthatósági szabály, végrehajtható saját részek |
+| Bevezetők | Nehézkes magyar mondatok, ismétlődő név, túlzó teljességígéretek | Enyhe | HTML / builder: konkrét útmutató és feladatszámok |
+
+A gyűjtemény `kozep-3`, `nehez-1`, `nehez-2`, `nehez-3`, `nehez-6` és
+`nehez-7` feladata most a válasz megnyitása nélkül is megoldható. A kifejezések
+és az A/B polinomok a korábbi válaszokból származnak. A polinomosztás válasza
+csak a hányadost és a maradékot adja meg; nincs téves hányadosegyenlőség.
+A gyűjtemény 15, a házi hat válaszkártyájában változtak a feltételek,
+a kért indoklások vagy az adatok elhelyezése. A végső algebrai és számszerű
+eredmények megmaradtak. A bizonyítást és hibakeresést kérő kártyákban az
+érdemi, rövid érvelés a válasz szükséges része.
+
+Az összefoglaló meghatározza az egytagok kitevőit és együtthatóit, az
+összevonást és az egyváltozós rendezést. A polinomosztásnál nemnulla
+osztópolinom és nulla vagy kisebb fokú maradék szerepel; a polinom egy
+adott gyöke nem azonos a nulla polinommal. Az LKO/LKT nemnulla, egyváltozós
+polinomokra vonatkozik, az eredmények főegyütthatója 1. A négyzetazonosság
+hibás változata csak az ab = 0 határesetben igaz. A négyzetösszegnél a
+négyzetkülönbség szabályának alkalmazhatatlansága, valamint a már meglévő
+x² + 1 valós felbonthatatlansága szerepel. A bd közös nevező, de nem
+feltétlenül a legkisebb. Egyszerűsítéskor minden eredeti kizárás megmarad;
+emeletes törtnél a résztörtek és a teljes osztó feltételeit is ellenőrizzük.
+
+A projekt játékbeli képletmodelleket használ, valós változókkal és
+paraméterekkel. A Bézout-próba oszthatósági elfogadási szabály, műszaki
+stabilitási állítás nélkül. Minden törtes részhez eredeti tartomány kell.
+A saját többváltozós képlet kibontást és összevonást kér, meghatározatlan
+„kanonikus” sorrend nélkül. A saját törtben nemállandó közös polinomtényező
+és nemnulla nevezőpolinom kell; a saját Bézout-rész maradékot és tényleges
+oszthatósági döntést kér. Az értékelési arányok megmaradtak.
+Projekt-megoldókulcs nem került a repóba.
+
+### Független ellenőrzés
+
+Két projektkontextus nélküli lektor kizárólag tanulói szövegeket kapott,
+végeredmények nélkül. A gyakorlófeladatok első körében 59 feladat
+megoldható volt; hatnak az adatai csak a válaszban szerepeltek.
+Az adatok helyreállítása után ezeket is önállóan megoldotta a lektor.
+Mind a 65 gyakorlófeladat eredménye helyes. Az összefoglaló matematikája,
+a projekt kilenc rögzített részfeladata és a saját részek végrehajthatósága
+is ellenőrizve. A biztos észrevételek beépültek; az utolsó kör szóhasználati
+és írásjeljavításai is megtörténtek.
+
+Privát, a buildereket nem futtató kontroll a tényleges HTML-ből:
+65/65 gyakorlókártya, 319 matematikai ellenőrzés. A SymPy az eredeti
+kifejezésekből számol: kibontás, tényezőkre bontás, törtek, polinomosztás,
+Bézout-maradék, paraméter és normált LKO/LKT. Kiértékelés nélkül feltárt
+eredeti nevezők és teljes osztók alapján ellenőrzi a válaszok kizárásait is.
+A projekt eredményei csak privát kontrollban szerepelnek.
+115 megőrzési próba: régi id/href/média/kártyasorrend, szkriptek és
+stílushivatkozások, régi bemeneti számadatok; hat visszaállított adat,
+21 módosított válaszkártya pontos halmaza. Más házi témakör forrása
+AST szerint változatlan; más témakör HTML-je nem változott.
+
+### Ellenőrzések és korlátok
+
+| Ellenőrzés | Eredmény |
+|---|---|
+| Kánon és belső linkek | 310 oldal, 0 hiba |
+| Gyakorlósávok | Minden kártyát felad valamelyik egység |
+| Meglévő teljes kulcsteszt | 4499/4499, 0 eltérés |
+| Meglévő teljes regresszió | 4499/4499 = 100% |
+| 1e/06 külön matematikai kontroll | 65/65 kártya, 319 próba; két független lektor |
+| jsdom / képletrender | Öt végleges lap, 380 képlet, 0 hiba; nincs kvíz |
+| Edge mobil és asztali | 360/390/1280 px, zárt/nyitott lenyílók: 30 végleges nézet, 0 elrendezési/KaTeX/JS/saját konzol/helyi 404 hiba |
+| axe | 30 végleges nézet, 0 jelzés; nem teljes WCAG-minősítés |
+| Nyomtatás JS be/ki | 10/10: címsorok, feladatszövegek és minden végeredmény látható |
+| JavaScript nélkül | 5/5 lap olvasható; képletek TeX alakban |
+| Keresőindex | 308 nem üres bejegyzés, pontosan öt URL változott; új szavak a 4991. és 6029. karakteren is indexelve |
+| Naplótérkép | Változatlan: 184 egység, 2294 feladat, 12315 XP |
+| Kép, média, háttér | Az újraépített lapok háttere/avatarja megvan; 334 médiaelem 139 lapon, médiaváltozás nélkül |
+
+**Kulcslefedettség:** a repó meglévő kulcstesztje nem tartalmaz 1e/06
+kulcsmodult. A 4499-es eredmény a már lefedett oldalak változatlanságát
+ellenőrzi; a jelenlegi adag közvetlen ellenőrzését a külön HTML/SymPy-kontroll
+és a lektorok végezték. A kulcsmodul pótlása továbbra is hátralévő automatizálás.
+
+A két builder után teljes újraépítési lánc futott. Az utolsó szóhasználati
+és írásjeljavítás után a statikus lánc ismételve; a projekt és a gyűjtemény
+render-, böngészős és nyomtatási próbái a végleges változaton is lefutottak.
+A végleges összesítés a legutolsó megfelelő lapverziókból készült.
+A nyitóoldal és nyolc kiválasztott kártya/doboz 390 px-en szemrevételezve.
+A gyűjtemény emeletes törtjének válaszából a külön sorra törő záró pont
+kikerült; a képlet és a feltételei változatlanok.
+Valódi képernyőolvasó, más böngésző, teljes PDF-oldaltördelés, minden
+háttérpont kézi kontrasztja és külső média tartalma nem ellenőrizve.
+A nyomtatási láthatóság valódi Edge-ben ellenőrizve.
+
+**Állapot:** az 1e 38/38 tananyaga és az 1e/01–06 további 32 lapja teljes
+A3-audit szerint átnézve. Az 1e/07–08 további lapjai és a 2e–4e teljes
+A3-auditja hátra van. **Tanári döntés kell: nincs nyitott kérdés.**
+Helyi main, új ág és push nélkül. Következő javasolt adag: az 1e/07 további lapjai.

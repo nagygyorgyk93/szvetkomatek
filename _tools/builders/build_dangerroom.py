@@ -198,24 +198,21 @@ A05_UJ = [
 
 # --- 06 Racionális algebrai kifejezések ---
 A06_UJ = [
- ("Az alábbi „levezetésekben” egy-egy tipikus hiba van. Keresd meg, hol csúszik el, és "
-  "javítsd ki!",
-  ["$(a+b)^2=a^2+b^2$",
-   "$\\dfrac{a+b}{a}=b$",
-   "$\\dfrac{x^2-4}{x-2}=x-2$"],
-  ['A kétszeres szorzat hiányzik: $(a+b)^2=a^2+2ab+b^2$.',
-   'Tagot egyszerűsített tényező helyett; $\\dfrac{a+b}{a}=1+\\dfrac{b}{a}$.',
-   '$x+2$; ÉT: $x\\ne2$.']),
+ ('Az alábbi egyenlőségeket azonosságként írták fel. Keresd meg a hibát, és javítsd ki!',
+ ['$(a+b)^2=a^2+b^2$', '$\\dfrac{a+b}{a}=b$', '$\\dfrac{x^2-4}{x-2}=x-2$'],
+ ['A kétszeres szorzat hiányzik: $(a+b)^2=a^2+2ab+b^2$.',
+  'Tagot egyszerűsített tényező helyett; $\\dfrac{a+b}{a}=1+\\dfrac{b}{a}$, ahol $a\\ne0$.',
+  '$x+2$; ÉT: $x\\ne2$.']),
 ]
 K06_UJ = [
- ("Adott a $\\dfrac{x^2-9}{x^2-5x+6}$ kifejezés.",
-  ["Mely $x$ értékekre nincs értelmezve? Miért éppen azokra?",
-   "Egyszerűsítsd a kifejezést!",
-   "Az egyszerűsítés után a $x=3$ behelyettesíthetőnek <b>látszik</b>. Behelyettesíthető-e "
-   "valójában? Indokold!"],
-  ['$x\\ne2$ és $x\\ne3$.',
-   '$\\dfrac{x+3}{x-2}$.',
-   'Nem; $x=3$-nál az eredeti kifejezés nem értelmezett.']),
+ ('Adott a $\\dfrac{x^2-9}{x^2-5x+6}$ kifejezés.',
+ ['Mely $x$ értékekre nincs értelmezett értéke? Miért éppen azokra?',
+  'Egyszerűsítsd a kifejezést!',
+  'Az egyszerűsítés után az $x=3$ behelyettesíthetőnek látszik. Behelyettesíthető-e valójában? '
+  'Indokold!'],
+ ['$x\\ne2$, $x\\ne3$: a nevező $(x-2)(x-3)$, ezért e két értéknél nulla.',
+  '$\\dfrac{x+3}{x-2}$.',
+  'Nem; $x=3$-nál az eredeti kifejezés nem értelmezett.']),
 ]
 
 # --- 07 Lineáris egyenletek, egyenlőtlenségek, rendszerek ---
@@ -574,9 +571,9 @@ A06 = [
   ["$x\\neq -5$","$x\\neq \\pm 3$"]),
  ("Egyszerűsítsd, és add meg az értelmezési tartományt: $\\dfrac{x^2-1}{x+1}$.",
   None, "$x-1$, ÉT: $x\\neq -1$."),
- ("Végezd el a törtek műveleteit!",
-  ["$\\dfrac{1}{x}+\\dfrac{2}{x}$","$\\dfrac{a}{2}\\cdot\\dfrac{4}{a}$"],
-  ["$\\dfrac{3}{x}$","$2$"]),
+ ('Végezd el a törtek műveleteit!',
+ ['$\\dfrac{1}{x}+\\dfrac{2}{x}$', '$\\dfrac{a}{2}\\cdot\\dfrac{4}{a}$'],
+ ['$\\dfrac{3}{x}$, ÉT: $x\\ne0$', '$2$, ÉT: $a\\ne0$']),
 ]
 A06 = A06 + A06_UJ
 K06 = [
@@ -589,26 +586,28 @@ K06 = [
   ["$(x+4)(x^2-4x+16)$","$x(x-1)(x+1)$"]),
  ("Egyszerűsítsd, és add meg az értelmezési tartományt: $\\dfrac{x^2+5x+6}{x^2-4}$.",
   None, "$\\dfrac{x+3}{x-2}$, ÉT: $x\\neq \\pm 2$."),
- ("Add össze: $\\dfrac{1}{x-3}+\\dfrac{1}{x+3}$.",
-  None, "$\\dfrac{2x}{x^2-9}$."),
+ ('Add össze: $\\dfrac{1}{x-3}+\\dfrac{1}{x+3}$.', None, '$\\dfrac{2x}{x^2-9}$; ÉT: $x\\ne\\pm3$.'),
 ]
 K06 = K06 + K06_UJ
 N06 = [
- ("Egyszerűsítsd az emeletes törtet: $\\dfrac{\\dfrac{1}{x}-\\dfrac{1}{y}}{\\dfrac{1}{x}+\\dfrac{1}{y}}$.",
-  None, "$\\dfrac{y-x}{y+x}$."),
- ("Vond egyetlen törtté: $\\dfrac{1}{a-2}-\\dfrac{1}{a+2}+\\dfrac{4}{a^2-4}$.",
-  None, "$\\dfrac{8}{a^2-4}$."),
+ ('Egyszerűsítsd az emeletes törtet: '
+ '$\\dfrac{\\dfrac{1}{x}-\\dfrac{1}{y}}{\\dfrac{1}{x}+\\dfrac{1}{y}}$.',
+ None,
+ '$\\dfrac{y-x}{y+x}$; ÉT: $x\\ne0$, $y\\ne0$, $x+y\\ne0$.'),
+ ('Vond egyetlen törtté: $\\dfrac{1}{a-2}-\\dfrac{1}{a+2}+\\dfrac{4}{a^2-4}$.',
+ None,
+ '$\\dfrac{8}{a^2-4}$; ÉT: $a\\ne\\pm2$.'),
  ("Határozd meg az $m$ paramétert úgy, hogy $P(x)=x^3-3x^2+mx+2$ osztható legyen $x-2$-vel!",
   None, "$m=1$."),
 ]
-brief06 = ("🕹️ <b>SZVETI:</b> <b>Vészterem</b>-szimuláció, A Hatalom Nyelve modul. Ez a <b>Vészterem</b> otthoni "
- "edzésváltozata — itt gyakorolsz a saját tempódban. A szimuláció a <b>teljes témakört</b> lefedi: polinomműveletek "
+brief06 = ("🕹️ <b>SZVETI:</b> A <b>Vészteremben</b> polinomokkal és algebrai törtekkel gyakorolsz. Ez az otthoni "
+ "gyakorlósor a következőkre épül: polinomműveletek "
  "és nevezetes azonosságok, polinomosztás és a Bézout-tétel, tényezőkre bontás, valamint az algebrai törtek "
  "(értelmezési tartomány, egyszerűsítés, alapműveletek). Haladj a fokozatokon: zöld (alap) → sárga (közép) → piros "
- "(nehéz). A végeredményt minden feladatnál lenyithatod — de előbb küzdd le magad!")
+ "(nehéz). A változók valósak. Minden törtes feladatnál add meg az eredeti értelmezési tartományt is; a korábbi kizárások egyszerűsítés után is megmaradnak. Előbb oldd meg önállóan, aztán ellenőrizd a végeredményt!")
 dr_page(DEST06, "index.html", "Racionális algebrai kifejezések", "feladatok-hazi.html",
  "🕹️ Vészterem — házi feladatgyűjtemény",
- "Egyetlen, a teljes témakört lefedő házi feladatsor: polinomok, nevezetes azonosságok, tényezőkre bontás, Bézout-tétel és algebrai törtek. Minden feladatnál lenyitható végeredmény — előbb számolj, csak utána nézd meg!",
+ "Házi gyakorlás polinomműveletekkel, nevezetes azonosságokkal, szorzattá alakítással, a Bézout-tétellel és algebrai törtekkel. Előbb dolgozz önállóan, aztán nyisd le a végeredményt!",
  brief06, sect(A06, K06, N06),
  "index.html", "Témakör Főhadiszállása", "osszefoglalo.html", "Tömör összefoglaló",
  "Elakadtál? Nézd át a <a href=\"index.html\">témakör tananyagait</a> vagy a <a href=\"osszefoglalo.html\">tömör összefoglalót</a>.")

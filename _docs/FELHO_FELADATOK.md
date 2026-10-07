@@ -270,7 +270,7 @@ A korábbi A1-ellenőrzések nem helyettesítik a teljes stilisztikai átnézés
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ◐ 01: 9, 02: 3, 03: 4, 04: 3, 05: 9, 06: 3, 07: 4, 08: 3 — mind a 38 tananyag, az 01 további 7 és a 02–05 további 5-5 lapja átnézve és javítva; a 06–08 további lapjai hátra (helyi main, 2026-10-07) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
+| ◐ 01: 9, 02: 3, 03: 4, 04: 3, 05: 9, 06: 3, 07: 4, 08: 3 — mind a 38 tananyag, az 01 további 7 és a 02–06 további 5-5 lapja átnézve és javítva; a 07–08 további lapjai hátra (helyi main, 2026-10-07) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
 
 Az első adag három függvényes, a második hat logikai és halmazos tananyagot
 ellenőrzött. A példák feltételei, bevezetők, átvezetők és matematikai pontatlanságok
@@ -385,6 +385,19 @@ a hozzáférhetőségi fában. Keresőindex pontosan öt URL-en változott,
 naplótérkép változatlan. Új feladat-számadat, ág és push nincs.
 Tanári döntés nem maradt nyitva. Az 1e/06–08 további lapfajtái és
 a 2e–4e teljes A3-auditja hátra van.
+
+Tizenhetedik adag (2026-10-07): az 1e/06 öt további lapja, 65 gyakorlófeladat
+és három projektkártya átnézve. Hat feladat eredeti adatai a lenyíló válaszból
+a feladatszövegbe kerültek; polinomosztás, négyzetazonosság-határeset,
+LKO/LKT, eredeti törttartományok és kért indoklások pontosítva. A projekt
+játékbeli modellje és saját részei egyértelműek, a bevezetők természetesebbek.
+Két kontextus nélküli lektor, 65/65 külön HTML/SymPy-kontroll, 319 matematikai
+és 115 megőrzési próba. Kánon/link 310/0, meglévő kulcs 4499/4499,
+regresszió 100%; az 1e/06-nak még nincs saját repóbeli kulcsmodulja.
+Render 380/0, 30 végleges nézet/axe 0, nyomtatás JS be/ki 10/10.
+Keresőindex pontosan öt URL-en változott, naplótérkép változatlan.
+Új feladat-számadat, ág és push nincs. Tanári döntés nem maradt nyitva.
+Az 1e/07–08 további lapfajtái és a 2e–4e teljes A3-auditja hátra van.
 
 Részletek:
 [A3 nyelvi ellenőrzés](A3_nyelvi_ellenorzes.md).

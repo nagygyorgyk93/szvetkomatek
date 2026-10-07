@@ -26,13 +26,13 @@
 </nav>
 <div class="hero">
   <h1>Racionális algebrai kifejezések — tömör összefoglaló</h1>
-  <p class="alcim">A Hatalom Nyelvének minden definíciója, azonossága és eljárása egy helyen — a bevetési kártya. Ismétléshez, ellenőrző előtti átfutáshoz, nyomtatáshoz. 😉</p>
+  <p class="alcim">A polinomok és algebrai törtek legfontosabb fogalmai, azonosságai és átalakítási szabályai ismétléshez.</p>
 </div>
 <main class="lap toc-os">
   <div class="tartalom">
     <h2 id="s1">Polinomok és műveletek</h2>
-    <p><b>Egytag:</b> számok és változók szorzata; <b>polinom:</b> egytagok összege, rendezett (kanonikus) alakban a kitevők csökkenő sorrendjében (<a href="tananyag-polinomok.html#def-polinom">→ tananyag</a>). Összeadás/kivonás: egynemű tagok összevonása; szorzás: minden tag minden taggal.</p>
-    <p><b>Polinomosztás:</b> <span class="math inline">\(P(x)=Q(x)\,H(x)+M(x)\)</span>, a maradék foka kisebb az osztóénál (<a href="tananyag-polinomok.html#pelda-osztas">→</a>). <b>Bézout-tétel:</b> az <span class="math inline">\((x-a)\)</span>-val való osztás maradéka <span class="math inline">\(M=P(a)\)</span>; osztható <span class="math inline">\(\iff P(a)=0\)</span> (<a href="tananyag-polinomok.html#tetel-bezout">→</a>).</p>
+    <p><b>Egytag:</b> valós együttható és a változók nemnegatív egész kitevőjű hatványainak szorzata; <b>polinom:</b> egytagok összege. Rendezett alakban összevonjuk az egynemű tagokat; egyváltozós polinomnál a kitevők szerint csökkenő sorrendbe írjuk a megmaradt tagokat (<a href="tananyag-polinomok.html#def-polinom">→ tananyag</a>). Összeadás/kivonás: egynemű tagok összevonása; szorzás: minden tagot megszorzunk a másik polinom minden tagjával.</p>
+    <p><b>Polinomosztás:</b> egyváltozós polinomokra <span class="math inline">\(P(x)=Q(x)\,H(x)+M(x)\)</span>, ahol <span class="math inline">\(Q\)</span> nemnulla polinom, <span class="math inline">\(H\)</span> a hányados, <span class="math inline">\(M\)</span> a maradék. A maradék nulla, vagy a foka kisebb az osztó fokánál (<a href="tananyag-polinomok.html#pelda-osztas">→</a>). <b>Bézout-tétel:</b> az <span class="math inline">\((x-a)\)</span> polinommal való osztás maradéka <span class="math inline">\(P(a)\)</span>; <span class="math inline">\(P\)</span> pontosan akkor osztható <span class="math inline">\((x-a)\)</span>-val, ha <span class="math inline">\(P(a)=0\)</span> (<a href="tananyag-polinomok.html#tetel-bezout">→</a>).</p>
 
     <h2 id="s2">Nevezetes azonosságok</h2>
     <div class="doboz tetel">
@@ -44,21 +44,21 @@
     </div>
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Két klasszikus csapda</p>
-      <p><span class="math inline">\((a+b)^2\neq a^2+b^2\)</span> (ott a <span class="math inline">\(+2ab\)</span>); és a négyzetek <b>összege</b> <span class="math inline">\((a^2+b^2)\)</span> valósban <b>nem</b> bontható.</p>
+      <p>Az <span class="math inline">\((a+b)^2=a^2+b^2\)</span> <b>nem azonosság</b>: hiányzik a <span class="math inline">\(2ab\)</span> tag. A két oldal csak akkor egyenlő, ha <span class="math inline">\(ab=0\)</span>. A négyzetek összege <b>nem</b> bontható a négyzetkülönbség szabályával; például az <span class="math inline">\(x^2+1\)</span> polinom nem bontható két nemállandó, valós együtthatós polinom szorzatára.</p>
     </div>
 
     <h2 id="s3">Szorzattá alakítás</h2>
     <p><b>Négy eszköz:</b> (1) közös tényező kiemelése <span class="math inline">\(ab+ac=a(b+c)\)</span> (<a href="tananyag-szorzatta-alakitas.html#def-kiemeles">→</a>); (2) nevezetes azonosságok visszafelé (négyzetkülönbség, teljes négyzet, köbök) (<a href="tananyag-szorzatta-alakitas.html#tetel-bontas-azonossagok">→</a>); (3) csoportosítás <span class="math inline">\(ax+ay+bx+by=(a+b)(x+y)\)</span> (<a href="tananyag-szorzatta-alakitas.html#def-csoportositas">→</a>); (4) ezek kombinációja.</p>
-    <p><b>Polinomok LKO/LKT-je:</b> szorzat alakból — LKO = a közös tényezők (legkisebb kitevőn), LKT = az összes tényező (legnagyobb kitevőn) (<a href="tananyag-szorzatta-alakitas.html#pelda-lko-lkt">→</a>).</p>
+    <p><b>Polinomok LKO/LKT-je:</b> egyváltozós, nemnulla polinomoknál a tovább nem bontható polinomtényezőket használjuk. LKO: a közös tényezők szorzata a kisebb kitevőkkel; LKT: az összes különböző tényező szorzata a nagyobb kitevőkkel. Az eredmény főegyütthatóját <span class="math inline">\(1\)</span>-nek választjuk (<a href="tananyag-szorzatta-alakitas.html#pelda-lko-lkt">→</a>).</p>
 
     <h2 id="s4">Algebrai törtek</h2>
-    <p><b>Értelmezési tartomány:</b> a nevező <span class="math inline">\(\neq 0\)</span> — mindig ezzel kezdd (<a href="tananyag-algebrai-tortek.html#def-ert">→</a>). <b>Egyszerűsítés:</b> csak <b>közös tényezővel</b>, ezért előbb szorzattá alakíts; taggal soha (<a href="tananyag-algebrai-tortek.html#tetel-egyszerusites">→</a>).</p>
-    <p><b>Műveletek:</b> szorzás <span class="math inline">\(\dfrac{a}{b}\cdot\dfrac{c}{d}=\dfrac{ac}{bd}\)</span>, osztás a reciprokkal (<a href="tananyag-algebrai-tortek.html#tetel-szorzas-osztas">→</a>); összeadás/kivonás közös nevezőre (LKT) hozva: <span class="math inline">\(\dfrac{a}{b}\pm\dfrac{c}{d}=\dfrac{ad\pm bc}{bd}\)</span> (<a href="tananyag-algebrai-tortek.html#tetel-osszeadas">→</a>). <b>Emeletes tört:</b> a fő törtvonal osztás — reciprokkal szorozz (<a href="tananyag-algebrai-tortek.html#pelda-emeletes">→</a>).</p>
-    <p class="le halvany">Egyetlen aranyszabály mindenre: <b>előbb szorzattá alakíts, azután számolj</b> — így egyszerűsödik minden.</p>
+    <p><b>Értelmezési tartomány:</b> azok a valós változóértékek, amelyekre az eredeti kifejezés minden művelete elvégezhető. Minden nevezőnek nemnullának kell lennie, osztáskor pedig az osztó teljes értéke sem lehet nulla (<a href="tananyag-algebrai-tortek.html#def-ert">→</a>). <b>Egyszerűsítés:</b> a teljes számláló és nevező közös, nemnulla tényezőjével osztunk, összeadandó taggal nem. Az eredeti kizárások egyszerűsítés után is megmaradnak (<a href="tananyag-algebrai-tortek.html#tetel-egyszerusites">→</a>).</p>
+    <p><b>Műveletek:</b> szorzás <span class="math inline">\(\dfrac{a}{b}\cdot\dfrac{c}{d}=\dfrac{ac}{bd}\)</span>, ahol <span class="math inline">\(b,d\ne0\)</span>. Osztáskor a reciprokkal szorzunk, és az osztó nem lehet nulla (<a href="tananyag-algebrai-tortek.html#tetel-szorzas-osztas">→</a>). Összeadás/kivonás: közös nevezőt választunk, lehetőleg a legkisebb közös többszöröst. A <span class="math inline">\(bd\)</span> is közös nevező, de nem mindig a legkisebb: <span class="math inline">\(\dfrac{a}{b}\pm\dfrac{c}{d}=\dfrac{ad\pm bc}{bd}\)</span>, <span class="math inline">\(b,d\ne0\)</span> (<a href="tananyag-algebrai-tortek.html#tetel-osszeadas">→</a>). <b>Emeletes tört:</b> a fő törtvonal osztást jelöl; a résztörtek és a teljes osztó feltételeit is ellenőrizzük (<a href="tananyag-algebrai-tortek.html#pelda-emeletes">→</a>).</p>
+    <p class="le halvany">Tört egyszerűsítésénél <b>előbb keresd meg a közös tényezőt</b>! Más feladatnál a cél dönti el, hogy a kibontott vagy a szorzatalak hasznosabb.</p>
 
     <div class="gyakorolj">
       <span class="ikon">🎯</span>
-      <p>Élesben: a <a href="feladatok-racionalis-algebrai-kifejezesek.html">feladatgyűjtemény</a> gyakorló ellenőrzőjével mérd fel magad, majd <a href="terepkuldetes.html">A Hatalom Nyelve terepküldetésen</a> alkalmazd!</p>
+      <p>A <a href="feladatok-racionalis-algebrai-kifejezesek.html">feladatgyűjtemény</a> gyakorló ellenőrzőjével mérd fel magad, majd <a href="terepkuldetes.html">A Hatalom Nyelve terepküldetésen</a> alkalmazd!</p>
     </div>
     <div class="lapozo">
       <a class="elozo" href="feladatok-racionalis-algebrai-kifejezesek.html"><span class="irany">← Előző</span><span class="hova">Feladatgyűjtemény</span></a>

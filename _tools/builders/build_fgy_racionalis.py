@@ -64,12 +64,14 @@ print("MINDEN ASSERT OK")
 
 # =============================== ALAP (12) ===============================
 ALAP = [
- ("Vonj össze (egynemű tagok)!",
-  ["$5a+8a-3a$","$7x^2-2x^2+x^2$","$4ab+9ab-ab$","$2y^3+5y^3-4y^3$"],
-  "a) $10a$; b) $6x^2$; c) $12ab$; d) $3y^3$.", True),
- ("Végezd el a szorzást (egytag $\\cdot$ polinom)!",
-  ["$3x(2x-5)$","$-2a(a+4)$","$4(3x^2-2x+1)$","$x^2(x-7)$"],
-  "a) $6x^2-15x$; b) $-2a^2-8a$; c) $12x^2-8x+4$; d) $x^3-7x^2$.", True),
+ ('Vond össze az egynemű tagokat!',
+ ['$5a+8a-3a$', '$7x^2-2x^2+x^2$', '$4ab+9ab-ab$', '$2y^3+5y^3-4y^3$'],
+ 'a) $10a$; b) $6x^2$; c) $12ab$; d) $3y^3$.',
+ True),
+ ('Szorozd meg a polinomot az egytagú kifejezéssel!',
+ ['$3x(2x-5)$', '$-2a(a+4)$', '$4(3x^2-2x+1)$', '$x^2(x-7)$'],
+ 'a) $6x^2-15x$; b) $-2a^2-8a$; c) $12x^2-8x+4$; d) $x^3-7x^2$.',
+ True),
  ("Alkalmazd a nevezetes azonosságot!",
   ["$(x+4)^2$","$(a-3)^2$","$(2x+1)^2$","$(x-5)(x+5)$"],
   "a) $x^2+8x+16$; b) $a^2-6a+9$; c) $4x^2+4x+1$; d) $x^2-25$.", True),
@@ -88,18 +90,24 @@ ALAP = [
  ("Bontsd tényezőkre (négyzetek különbsége)!",
   ["$x^2-9$","$4x^2-25$","$a^2-1$","$49-y^2$"],
   "a) $(x-3)(x+3)$; b) $(2x-5)(2x+5)$; c) $(a-1)(a+1)$; d) $(7-y)(7+y)$.", True),
- ("Ismerd fel a teljes négyzetet, és bontsd fel!",
-  ["$x^2+6x+9$","$x^2-10x+25$","$4x^2+4x+1$"],
-  "a) $(x+3)^2$; b) $(x-5)^2$; c) $(2x+1)^2$.", True),
- ("Egyszerűsítsd a törtet!",
-  ["$\\dfrac{6x^2}{3x}$","$\\dfrac{x^2-x}{x}$","$\\dfrac{5a+10}{5}$"],
-  ["$2x$","$x-1$","$a+2$"]),
+ ('Írd fel teljes négyzetként!',
+ ['$x^2+6x+9$', '$x^2-10x+25$', '$4x^2+4x+1$'],
+ 'a) $(x+3)^2$; b) $(x-5)^2$; c) $(2x+1)^2$.',
+ True),
+ ('Egyszerűsítsd a törtet!',
+ ['$\\dfrac{6x^2}{3x}$', '$\\dfrac{x^2-x}{x}$', '$\\dfrac{5a+10}{5}$'],
+ ['$2x$, ÉT: $x\\ne0$', '$x-1$, ÉT: $x\\ne0$', '$a+2$, ÉT: $a\\in\\mathbb{R}$']),
  ("Mely értékekre értelmezett a kifejezés (nevező $\\neq 0$)?",
   ["$\\dfrac{1}{x}$","$\\dfrac{1}{x-3}$","$\\dfrac{5}{x+2}$","$\\dfrac{x}{(x-1)(x+4)}$"],
   "a) $x\\neq 0$; b) $x\\neq 3$; c) $x\\neq -2$; d) $x\\neq 1$ és $x\\neq -4$.", True),
- ("Végezd el a törtek szorzását, osztását!",
-  ["$\\dfrac{2}{x}\\cdot\\dfrac{x}{5}$","$\\dfrac{a}{b}\\cdot\\dfrac{b}{a}$","$\\dfrac{3}{x}:\\dfrac{6}{x^2}$","$\\dfrac{x}{2}:\\dfrac{x}{4}$"],
-  "a) $\\dfrac{2}{5}$; b) $1$; c) $\\dfrac{x}{2}$; d) $2$.", True),
+ ('Végezd el a törtek szorzását, osztását!',
+ ['$\\dfrac{2}{x}\\cdot\\dfrac{x}{5}$',
+  '$\\dfrac{a}{b}\\cdot\\dfrac{b}{a}$',
+  '$\\dfrac{3}{x}:\\dfrac{6}{x^2}$',
+  '$\\dfrac{x}{2}:\\dfrac{x}{4}$'],
+ 'a) $\\dfrac{2}{5}$, $x\\ne0$; b) $1$, $a\\ne0$, $b\\ne0$; c) $\\dfrac{x}{2}$, $x\\ne0$; d) $2$, '
+ '$x\\ne0$.',
+ True),
 ]
 
 # =============================== KÖZÉP (9) ===============================
@@ -110,8 +118,9 @@ KOZEP = [
  ("Írd fel kanonikus alakban!",
   ["$(x-2)^3+(x+2)^3$","$(2x-1)^2-(x+3)(x-3)$"],
   ["$2x^3+24x$","$3x^2-4x+10$"]),
- ("Végezd el a polinomosztást (add meg a hányadost és a maradékot)!",
-  None, "$(x^3-2x^2+3x-5):(x-1)=x^2-x+2$, a maradék $-3$."),
+ ('Végezd el a polinomosztást, és add meg a hányadost és a maradékot: $(x^3-2x^2+3x-5):(x-1)$.',
+ None,
+ 'Hányados: $x^2-x+2$; maradék: $-3$.'),
  ("A Bézout-tétellel add meg az osztási maradékot!",
   ["$P(x)=x^3+2x^2-x+4$, osztó $x-2$","$P(x)=2x^3-3x+1$, osztó $x+1$"],
   ["$18$","$2$"]),
@@ -124,12 +133,16 @@ KOZEP = [
  ("Egyszerűsítsd a törtet, és add meg az értelmezési tartományát!",
   ["$\\dfrac{x^2-9}{x-3}$","$\\dfrac{x^2-4}{x^2+4x+4}$","$\\dfrac{a^2-ab}{a^2-b^2}$"],
   ["$x+3$, ÉT: $x\\neq 3$","$\\dfrac{x-2}{x+2}$, ÉT: $x\\neq -2$","$\\dfrac{a}{a+b}$, ÉT: $a\\neq \\pm b$"]),
- ("Add össze, illetve vond ki a törteket!",
-  ["$\\dfrac{1}{x}+\\dfrac{1}{x+1}$","$\\dfrac{2}{a-1}-\\dfrac{3}{a+1}$","$\\dfrac{1}{x-2}+\\dfrac{x}{x^2-4}$"],
-  ["$\\dfrac{2x+1}{x(x+1)}$","$\\dfrac{5-a}{a^2-1}$","$\\dfrac{2x+2}{x^2-4}$"]),
- ("Végezd el a törtek szorzását, osztását (egyszerűsíts)!",
-  ["$\\dfrac{x^2-1}{x}\\cdot\\dfrac{x}{x+1}$","$\\dfrac{a^2-b^2}{a+b}:\\dfrac{a-b}{2}$"],
-  ["$x-1$","$2$"]),
+ ('Add össze, illetve vond ki a törteket!',
+ ['$\\dfrac{1}{x}+\\dfrac{1}{x+1}$',
+  '$\\dfrac{2}{a-1}-\\dfrac{3}{a+1}$',
+  '$\\dfrac{1}{x-2}+\\dfrac{x}{x^2-4}$'],
+ ['$\\dfrac{2x+1}{x(x+1)}$, ÉT: $x\\ne0$, $x\\ne-1$',
+  '$\\dfrac{5-a}{a^2-1}$, ÉT: $a\\ne\\pm1$',
+  '$\\dfrac{2x+2}{x^2-4}$, ÉT: $x\\ne\\pm2$']),
+ ('Végezd el a törtek szorzását, osztását (egyszerűsíts)!',
+ ['$\\dfrac{x^2-1}{x}\\cdot\\dfrac{x}{x+1}$', '$\\dfrac{a^2-b^2}{a+b}:\\dfrac{a-b}{2}$'],
+ ['$x-1$, ÉT: $x\\ne0$, $x\\ne-1$', '$2$, ÉT: $a\\ne b$, $a\\ne-b$']),
  ('Egy kadét ezt írta: <i>„A $\\dfrac{x^2-1}{x-1}$ kifejezés egyszerűsítve $x+1$, tehát a két kifejezés ugyanaz.”</i>',
   ['Helyes-e az egyszerűsítés?',
    'Ugyanaz-e a két kifejezés? Nézd meg $x=1$-nél!',
@@ -141,30 +154,40 @@ KOZEP = [
 
 # =============================== NEHÉZ (8) ===============================
 NEHEZ = [
- ("Egyszerűsítsd az összetett kifejezést!",
-  None, "$\\dfrac{x^2-y^2}{x^2+2xy+y^2}\\cdot\\dfrac{x+y}{x-y}=1$."),
- ("Vond össze egyetlen törtté!",
-  None, "$\\dfrac{1}{a-1}-\\dfrac{1}{a+1}+\\dfrac{2}{a^2-1}=\\dfrac{4}{a^2-1}$."),
- ("Egyszerűsítsd!",
-  None, "$\\left(\\dfrac{1}{x-y}+\\dfrac{1}{x+y}\\right)\\cdot\\dfrac{x^2-y^2}{2}=x$."),
- ("Bontsd a lehető legtöbb tényezőre!",
-  ["$x^4-16$","$x^4-1$","$a^3-a$"],
-  ["$(x-2)(x+2)(x^2+4)$","$(x-1)(x+1)(x^2+1)$","$a(a-1)(a+1)$"]),
+ ('Egyszerűsítsd az összetett kifejezést: $\\dfrac{x^2-y^2}{x^2+2xy+y^2}\\cdot\\dfrac{x+y}{x-y}$.',
+ None,
+ '$1$; ÉT: $x\\ne y$, $x\\ne-y$.'),
+ ('Vond össze egyetlen törtté: $\\dfrac{1}{a-1}-\\dfrac{1}{a+1}+\\dfrac{2}{a^2-1}$.',
+ None,
+ '$\\dfrac{4}{a^2-1}$; ÉT: $a\\ne\\pm1$.'),
+ ('Egyszerűsítsd: $\\left(\\dfrac{1}{x-y}+\\dfrac{1}{x+y}\\right)\\cdot\\dfrac{x^2-y^2}{2}$.',
+ None,
+ '$x$; ÉT: $x\\ne y$, $x\\ne-y$.'),
+ ('Bontsd a lehető legtöbb nemállandó polinomtényező szorzatára valós együtthatókkal!',
+ ['$x^4-16$', '$x^4-1$', '$a^3-a$'],
+ ['$(x-2)(x+2)(x^2+4)$', '$(x-1)(x+1)(x^2+1)$', '$a(a-1)(a+1)$']),
  ("Határozd meg az $m$ paramétert úgy, hogy $P(x)=x^3+mx^2-4$ osztható legyen $x-2$-vel!",
   None, "$m=-1$."),
- ("Egyszerűsítsd az emeletes törtet!",
-  None, "$\\dfrac{\\dfrac{x}{y}-\\dfrac{y}{x}}{\\dfrac{1}{y}+\\dfrac{1}{x}}=x-y$."),
- ("Add meg a két polinom legnagyobb közös osztóját (LKO) és legkisebb közös többszörösét (LKT)!",
-  None, "$A=x^2-x=x(x-1)$, $B=x^2-1=(x-1)(x+1)$; LKO $=x-1$, LKT $=x(x-1)(x+1)$."),
- ("Igazold az azonosságokat (alakítsd át mindkét oldalt)!",
-  ["$(a+b)^2-(a-b)^2=4ab$","$(a+b)^2+(a-b)^2=2(a^2+b^2)$"],
-  "Mindkettő azonosság: a bal oldalt kibontva a jobb oldalt kapjuk.", True),
+ ('Egyszerűsítsd az emeletes törtet: '
+ '$\\dfrac{\\dfrac{x}{y}-\\dfrac{y}{x}}{\\dfrac{1}{y}+\\dfrac{1}{x}}$.',
+ None,
+ '$x-y$; ÉT: $x\\ne0$, $y\\ne0$, $x+y\\ne0$'),
+ ('Add meg az $A(x)=x^2-x$ és $B(x)=x^2-1$ polinom legnagyobb közös osztóját (LKO) és legkisebb közös '
+ 'többszörösét (LKT)!',
+ None,
+ 'LKO: $x-1$; LKT: $x(x-1)(x+1)$.'),
+ ('Igazold az azonosságokat: bontsd ki a bal oldalon álló négyzeteket, majd vesd össze az eredményt a '
+ 'jobb oldallal!',
+ ['$(a+b)^2-(a-b)^2=4ab$', '$(a+b)^2+(a-b)^2=2(a^2+b^2)$'],
+ 'A különbségben az $a^2$ és $b^2$ tagok kiesnek: $2ab-(-2ab)=4ab$. Az összegben a vegyes tagok '
+ 'kiesnek: $2a^2+2b^2=2(a^2+b^2)$.',
+ True),
 ]
 
-JOKER = ("<b>Kán csapdája.</b> Kán egy „egyszerűsített” képletet injektált a rendszerbe: "
-  "$\\dfrac{x^2+x}{x+1}=x^2$ — kihúzta a $+x$-et és a $+1$-et. Hol a hiba, és mi a helyes eredmény? "
-  "(Emlékezz: <b>csak közös tényezővel</b> egyszerűsíthetünk, taggal nem!)",
-  'A hiba: tagot húzott ki tényező helyett. Helyesen: $x$; ÉT: $x\\ne-1$.')
+JOKER = ('<b>Kán csapdája.</b> Kán ezt az egyenlőséget csempészte a rendszerbe: $\\dfrac{x^2+x}{x+1}=x^2$. '
+ 'Összeadandó tagokkal próbált egyszerűsíteni. Hol a hiba, és mi a helyes eredmény? (Csak a teljes '
+ 'számláló és nevező közös tényezőjével egyszerűsíthetünk!)',
+ 'A hiba: tagot húzott ki tényező helyett. Helyesen: $x$; ÉT: $x\\ne-1$.')
 
 # ===================== GYAKORLÓ ELLENŐRZŐ (🏫 órai + 🏠 otthoni) =====================
 GYE_ORAI = [
@@ -183,14 +206,13 @@ GYE_ORAI = [
   None, '$0$.'),
  ("Egyszerűsítsd, és add meg az értelmezési tartományt: $\\dfrac{x^2-25}{x+5}$.",
   None, "$x-5$, ÉT: $x\\neq -5$."),
- ("Add össze: $\\dfrac{1}{x-1}+\\dfrac{1}{x+1}$.",
-  None, "$\\dfrac{2x}{x^2-1}$."),
- ("Végezd el: $\\dfrac{a^2-b^2}{a}\\cdot\\dfrac{a}{a-b}$.",
-  None, "$a+b$."),
+ ('Add össze: $\\dfrac{1}{x-1}+\\dfrac{1}{x+1}$.', None, '$\\dfrac{2x}{x^2-1}$; ÉT: $x\\ne\\pm1$.'),
+ ('Végezd el: $\\dfrac{a^2-b^2}{a}\\cdot\\dfrac{a}{a-b}$.', None, '$a+b$; ÉT: $a\\ne0$, $a\\ne b$.'),
  ("Végezd el a polinomosztást: $(x^3+3x^2-4):(x+2)$.",
   None, "$x^2+x-2$ (a maradék $0$)."),
- ("Egyszerűsítsd a $\\dfrac{x^2-4}{x-2}$ törtet, majd számítsd ki az értékét $x=3$ esetén!",
-  None, "$x+2$; értéke $5$."),
+ ('Egyszerűsítsd a $\\dfrac{x^2-4}{x-2}$ törtet, majd számítsd ki az értékét $x=3$ esetén!',
+ None,
+ '$x+2$; ÉT: $x\\ne2$; az értéke $x=3$ esetén $5$.'),
 ]
 GYE_OTTHONI = [
  ("Végezd el a műveleteket!",
@@ -205,8 +227,9 @@ GYE_OTTHONI = [
   None, "$-2$."),
  ("Egyszerűsítsd, és add meg az értelmezési tartományt: $\\dfrac{a^2-ab}{a^2-b^2}$.",
   None, "$\\dfrac{a}{a+b}$, ÉT: $a\\neq \\pm b$."),
- ("Vond ki a törteket: $\\dfrac{3}{x}-\\dfrac{1}{x+2}$.",
-  None, "$\\dfrac{2x+6}{x(x+2)}$."),
+ ('Vond ki a törteket: $\\dfrac{3}{x}-\\dfrac{1}{x+2}$.',
+ None,
+ '$\\dfrac{2x+6}{x(x+2)}$; ÉT: $x\\ne0$, $x\\ne-2$.'),
 ]
 
 # =============================== OLDAL ===============================
@@ -217,7 +240,7 @@ body.append('    <h2 id="nehez">🔴 Nehéz szint</h2>\n' + cards(NEHEZ, "nehez"
 body.append('    <h2 id="joker">🃏 Joker</h2>\n' + joker_card(JOKER[0], JOKER[1]))
 
 diszk = ('<p class="diszklemer">⚠️ Ez <b>gyakorló</b> anyag: nincs garancia, hogy az éles ellenőrzőn pontosan '
- 'ennyi vagy pont ilyen feladat lesz. A cél a biztos rutin — a valódi feladatok ettől eltérhetnek.</p>')
+ 'ilyen feladatok lesznek. Amelyik feladatnál elakadsz, ahhoz nézd át a tananyagot, majd próbáld meg újra önállóan!</p>')
 
 body.append('    <h2 id="gyak-ellenorzo">🏫 Gyakorló ellenőrző</h2>\n    ' + diszk +
   '\n    <p class="reszcsoport">🏫 Órai ismétlés</p>\n' + gyt_cards(GYE_ORAI, "gye") +
@@ -225,8 +248,8 @@ body.append('    <h2 id="gyak-ellenorzo">🏫 Gyakorló ellenőrző</h2>\n    ' 
 
 sections = "\n".join(body)
 
-alcim = ("Közös kiképzési adattár a teljes racionális-kifejezés szektorhoz: haladj a szinteken, vagy ugorj a "
- "szükséges témára. A végeredmény minden feladatnál lenyitható — előbb számolj, csak utána nézd meg!")
+alcim = ("Polinomok és algebrai törtek közös gyakorlótára. Haladj a szinteken, vagy ugorj a "
+ "szükséges témára. A végeredmény lenyitható; előbb dolgozz önállóan! A változók és együtthatók valósak. Algebrai törteknél az eredeti értelmezési tartományt is add meg; egyszerűsítés után is tartsd meg a kizárásokat! A polinomok LKO-ját és LKT-jét 1-es főegyütthatóval kérjük.")
 
 html = f'''<!DOCTYPE html>
 <html lang="hu" data-root="../..">
