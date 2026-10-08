@@ -33,7 +33,7 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> Maxi drónjai <b>egyenes pályán</b> repülnek. Egy pálya — egy egyenlet. Ha az egyenlet pontos, Tér-eb a pálya bármelyik pontjára odaugrik, és elvágja az utat. Az egyenletet háromféleképpen is felírhatjuk, és mindegyik alak mást árul el a pályáról: milyen meredek, hol metszi a tengelyeket, hogyan kell átrendezni.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> Maxi drónjai <b>egyenes pályán</b> repülnek. Egy pálya — egy egyenlet. Ha az egyenlet pontos, Tér-eb a pálya bármelyik pontjára odaugrik, és elvágja az utat. Három egyenletalakot tanulunk; nem mindegyik használható minden egyenesnél, és mindegyik alak mást árul el a pályáról: milyen meredek, hol metszi a tengelyeket, hogyan kell átrendezni.</p></div>
 
     <h2 id="s1">Az egyenes iránytényezője</h2>
 
@@ -124,7 +124,7 @@
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
-      <p>A „10%-os emelkedő” közlekedési tábla azt jelenti, hogy vízszintesen mért <span class="math inline">\(100\)</span> méteren <span class="math inline">\(10\)</span> métert emelkedik az út: <span class="math inline">\(k=0{,}1\)</span>, a hajlásszög <span class="math inline">\(\operatorname{arctg}0{,}1\approx5{,}7^\circ\)</span>. Ami a táblán ijesztően hangzik, szögben alig több mint öt fok.</p>
+      <p>A százalékos emelkedés nem szögérték: a <span class="math inline">\(10\%\)</span> azt jelenti, hogy <span class="math inline">\(100\)</span> m vízszintes távolságon <span class="math inline">\(10\)</span> m a szintkülönbség. Az iránytényező <span class="math inline">\(k=0{,}1\)</span>, ezért a hajlásszög <span class="math inline">\(\alpha=\operatorname{arctg}0{,}1\approx5{,}7^\circ\)</span>.</p>
     </div>
 
     <h2 id="s2">Az iránytényezős alak</h2>
@@ -170,7 +170,7 @@
 
     <div class="doboz tetel" id="tetel-tengelymetszetes">
       <p class="cim"><span class="ikon">📘</span> Az egyenes tengelymetszetes (szegmens) egyenlete</p>
-      <p>Ha az egyenes az <span class="math inline">\(x\)</span>-tengelyt az <span class="math inline">\((m;0)\)</span>, az <span class="math inline">\(y\)</span>-tengelyt a <span class="math inline">\((0;n)\)</span> pontban metszi, és <span class="math inline">\(m\ne0\)</span>, <span class="math inline">\(n\ne0\)</span>, akkor egyenlete</p><span class="math display">\[\frac xm+\frac yn=1 .\]</span><p>Nincs ilyen alakja az <b>origón átmenő</b> egyenesnek (ott <span class="math inline">\(m=n=0\)</span>), és a <b>tengellyel párhuzamos</b> egyenesnek sem (annak csak egy tengelymetszete van).</p>
+      <p>Ha az egyenes az <span class="math inline">\(x\)</span>-tengelyt az <span class="math inline">\((m;0)\)</span>, az <span class="math inline">\(y\)</span>-tengelyt a <span class="math inline">\((0;n)\)</span> pontban metszi, és <span class="math inline">\(m\ne0\)</span>, <span class="math inline">\(n\ne0\)</span>, akkor egyenlete</p><span class="math display">\[\frac xm+\frac yn=1 .\]</span><p>Nincs ilyen alakja az <b>origón átmenő</b> egyenesnek, és a <b>tengellyel párhuzamos</b> egyenesnek sem.</p>
     </div>
 
     <div class="doboz pelda" id="pelda-atvaltas">
@@ -261,7 +261,7 @@
 
     <div class="doboz tetel" id="tetel-ket-pont">
       <p class="cim"><span class="ikon">📘</span> Adott ponton, illetve két adott ponton átmenő egyenes</p>
-      <p>Az <span class="math inline">\(A(x_1;y_1)\)</span> ponton átmenő, <span class="math inline">\(k\)</span> iránytényezőjű egyenes egyenlete</p><span class="math display">\[y-y_1=k\,(x-x_1).\]</span><p>Az <span class="math inline">\(A(x_1;y_1)\)</span> és a <span class="math inline">\(B(x_2;y_2)\)</span> ponton átmenő egyenesnél (<span class="math inline">\(x_1\ne x_2\)</span>) előbb kiszámítjuk az iránytényezőt, és ugyanezt a képletet használjuk:</p><span class="math display">\[y-y_1=\frac{y_2-y_1}{x_2-x_1}\,(x-x_1).\]</span><p>Ha <span class="math inline">\(x_1=x_2\)</span>, az egyenes függőleges: <span class="math inline">\(x=x_1\)</span>.</p>
+      <p>Az <span class="math inline">\(A(x_1;y_1)\)</span> ponton átmenő, <span class="math inline">\(k\)</span> iránytényezőjű egyenes egyenlete</p><span class="math display">\[y-y_1=k\,(x-x_1).\]</span><p>Az <span class="math inline">\(A(x_1;y_1)\)</span> és a <span class="math inline">\(B(x_2;y_2)\)</span> ponton átmenő egyenesnél (<span class="math inline">\(x_1\ne x_2\)</span>) előbb kiszámítjuk az iránytényezőt, és ugyanezt a képletet használjuk:</p><span class="math display">\[y-y_1=\frac{y_2-y_1}{x_2-x_1}\,(x-x_1).\]</span><p>Két különböző pontnál, ha <span class="math inline">\(x_1=x_2\)</span>, az egyenes függőleges: <span class="math inline">\(x=x_1\)</span>.</p>
     </div>
 
     <p><b>Példa.</b> A <span class="math inline">\(P(2;-1)\)</span> ponton átmenő, <span class="math inline">\(k=3\)</span> iránytényezőjű egyenes: <span class="math inline">\(y-(-1)=3(x-2)\)</span>, azaz <span class="math inline">\(y=3x-7\)</span>.</p>
@@ -383,7 +383,7 @@
     <!-- media:end 3e05-egyenes-gyak-video -->
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-egyenesek.html#alap-1">🐕 Tér-eb-ugrás <span class="cimke">A 1–10</span></a><a class="sav bruno" href="feladatok-egyenesek.html#kozep-1">👑 Királyi Gárda <span class="cimke">K 1–6</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> Egy pályát már le tudunk írni. A mi járőrvonalunk is egy egyenes — a kérdés az, <b>hol keresztezi</b> Maxi pályája a miénket, és <b>milyen szögben</b>. Mert ha a két pálya párhuzamos, soha nem érjük utol.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> Egy pályát már le tudunk írni. A mi járőrvonalunk is egy egyenes — a kérdés az, <b>hol keresztezi</b> Maxi pályája a miénket, és <b>milyen szögben</b>. Ha a két pálya különböző és párhuzamos, nincs közös pontjuk.</p></div>
     <div class="lapozo">
       <a class="elozo" href="feladatok-pontok.html"><span class="irany">← Előző</span><span class="hova">Pontok — feladatok</span></a>
       <a class="kov" href="tananyag-ket-egyenes.html"><span class="irany">Következő →</span><span class="hova">Két egyenes</span></a>

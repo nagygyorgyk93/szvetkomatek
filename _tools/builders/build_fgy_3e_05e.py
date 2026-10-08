@@ -170,9 +170,12 @@ KOZEP = [
   r"$M$-ben, és határozd meg, hol metszi az érintő a koordinátatengelyeket!", None,
   r"$M(-1;-4)$, az érintő $y=2x-2$; tengelymetszetei $(1;0)$ és $(0;-2)$"),
 
- (r"Egy parabolaív alakú híd fesztávolsága $20$ m, a legmagasabb pontja $5$ m magasan van. Helyezd a "
-  r"koordináta-rendszert úgy, hogy a híd csúcsa az origóba kerüljön!",
-  [r"Írd fel az ív egyenletét!", r"Milyen magasan van az ív a híd közepétől vízszintesen $4$ m-re?"],
+ ((
+      'Egy parabolaív alakú híd fesztávolsága $20$ m, a csúcsa az azonos magasságban lévő végpontjai '
+      'fölött $5$ m-rel van. A csúcs legyen az origó, az $x$-tengely vízszintes, az $y$-tengely pedig '
+      'felfelé mutasson!'
+  ),
+  [r"Írd fel az ív egyenletét!", 'Milyen magasan van az ív a végpontok szintje fölött, a híd közepétől vízszintesen $4$ m-re?'],
   ['$x^2=-20y$',
    '$4{,}2$ m magasan']),
 ]

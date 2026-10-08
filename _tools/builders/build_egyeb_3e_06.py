@@ -53,12 +53,13 @@ OSSZ = [
   r'<tr><th>Mit</th><th>Hogyan</th><th>Megjegyzés</th></tr>'
   r'<tr><td>megadás képlettel (' + h(A1, "def-sorozat") + r')</td><td>$a_n$ az $n$ függvényeként</td>'
   r'<td>bármelyik tag egy lépésben megkapható</td></tr>'
-  r'<tr><td>megadás rekurzívan (' + h(A1, "def-rekurzio") + r')</td>'
-  r'<td>kezdőtag + továbblépési szabály</td><td>kezdőtag nélkül semmit nem határoz meg</td></tr>'
-  r'<tr><td>„hányadik tag?”</td><td>oldd meg az $a_n=c$ egyenletet</td>'
-  r'<td>csak <b>természetes</b> $n$ jó; különben a szám nem tagja a sorozatnak</td></tr>'
-  r'<tr><td>grafikon</td><td>az $(n;a_n)$ pontok</td><td><b>különálló pontok</b>, nem összekötött vonal</td></tr>'
-  r'<tr><td>monotonitás (' + h(A2, "def-monoton") + r')</td>'
+  r'<tr><td>megadás rekurzívan (' + h(A1, "def-rekurzio") + (
+                                                                  ')</td><td>kezdőtag + továbblépési szabály</td><td>kezdőtag nélkül nem határoz meg egyetlen '
+                                                                  'sorozatot egyértelműen</td></tr><tr><td>„hányadik tag?”</td><td>oldd meg az $a_n=c$ '
+                                                                  'egyenletet</td><td>csak <b>pozitív egész</b> $n$ jó; különben a szám nem tagja a '
+                                                                  'sorozatnak</td></tr><tr><td>grafikon</td><td>az $(n;a_n)$ pontok</td><td><b>különálló pontok</b>, '
+                                                                  'nem összekötött vonal</td></tr><tr><td>monotonitás ('
+                                                              ) + h(A2, "def-monoton") + r')</td>'
   r'<td>$a_{n+1}-a_n\gt0$ szigorúan növekvő · $\lt0$ szigorúan csökkenő</td>'
   r'<td><b>minden</b> $n$-re kell teljesülnie — nem elég néhány tag</td></tr>'
   r'<tr><td>korlátosság (' + h(A2, "def-korlatos") + r')</td>'
@@ -71,28 +72,9 @@ OSSZ = [
  ("📐 Számtani és mértani sorozat", [
   r'<div class="tblwrap"><table class="tt-table">'
   r'<tr><th></th><th>számtani (' + h(B1, "def-szamtani") + r')</th>'
-  r'<th>mértani (' + h(B2, "def-mertani") + r')</th></tr>'
-  r'<tr><td>a szabály</td><td>$a_{n+1}=a_n+d$</td><td>$b_{n+1}=b_n\cdot q$ ($b_1\ne0$, $q\ne0$)</td></tr>'
-  r'<tr><td>a jellemző adat</td><td>$d=a_{n+1}-a_n$</td><td>$q=\dfrac{b_{n+1}}{b_n}$</td></tr>'
-  r'<tr><td>az $n$-edik tag</td><td>$a_n=a_1+(n-1)d$</td><td>$b_n=b_1q^{\,n-1}$</td></tr>'
-  r'<tr><td>két tag között</td><td>$a_m=a_k+(m-k)d$</td><td>$b_m=b_k\cdot q^{\,m-k}$</td></tr>'
-  r'<tr><td>az első $n$ tag összege</td>'
-  r'<td>$S_n=\dfrac{n(a_1+a_n)}{2}=\dfrac n2\bigl(2a_1+(n-1)d\bigr)$</td>'
-  r'<td>$S_n=b_1\dfrac{q^{\,n}-1}{q-1}$, ha $q\ne1$; $q=1$ esetén $S_n=n\,b_1$</td></tr>'
-  r'<tr><td>a középső tag ($n\ge2$)</td><td>$a_n=\dfrac{a_{n-1}+a_{n+1}}{2}$</td>'
-  r'<td>$b_n^{\,2}=b_{n-1}\cdot b_{n+1}$</td></tr>'
-  r'<tr><td>a grafikon</td><td>pontok egy <b>egyenesen</b> ($d$ a meredekség)</td>'
-  r'<td>$q\gt0$ esetén pontok egy <b>exponenciális</b> görbén; $q\lt0$ esetén a pontok váltakozva a '
-  r'tengely fölött és alatt vannak</td></tr>'
-  r'<tr><td>mikor melyik</td><td>a szomszédos tagok <b>különbsége</b> állandó</td>'
-  r'<td>a szomszédos tagok <b>hányadosa</b> állandó</td></tr>'
-  r'</table></div>'
-  r'<p><b>Két adat elég.</b> Mindkét sorozatot meghatározza az első tag és a jellemző adat ($d$, '
-  r'illetve $q$); ha más két adat ismert, egyenletrendszert írunk fel rájuk. ⚠️ Mértani sorozatnál '
-  r'<b>páros</b> lépéstávolságból ($q^2=9$, $q^4=16$ …) a hányados <b>előjele kétféle</b> lehet — '
-  r'ilyenkor mindkét esetet végig kell gondolni. Ha a keresett $n$ az összegképletben van, másodfokú '
-  r'egyenletre jutunk; ha a kitevőben, a hatványok kiszámításával keressük meg a legkisebb megfelelő '
-  r'$n$-t — és a tagszám mindig <b>természetes szám</b>.</p>',
+  r'<th>mértani (' + h(B2, "def-mertani") + (
+                                                 ')</th></tr><tr><td>a szabály</td><td>$a_{n+1}=a_n+d$</td><td>$b_{n+1}=b_n\\cdot q$ ($b_1\\ne0$, $q\\ne0$)</td></tr><tr><td>a jellemző adat</td><td>$d=a_{n+1}-a_n$</td><td>$q=\\dfrac{b_{n+1}}{b_n}$</td></tr><tr><td>az $n$-edik tag</td><td>$a_n=a_1+(n-1)d$</td><td>$b_n=b_1q^{\\,n-1}$</td></tr><tr><td>két tag között</td><td>$a_m=a_k+(m-k)d$</td><td>$b_m=b_k\\cdot q^{\\,m-k}$</td></tr><tr><td>az első $n$ tag összege</td><td>$S_n=\\dfrac{n(a_1+a_n)}{2}=\\dfrac n2\\bigl(2a_1+(n-1)d\\bigr)$</td><td>$S_n=b_1\\dfrac{q^{\\,n}-1}{q-1}$, ha $q\\ne1$; $q=1$ esetén $S_n=n\\,b_1$</td></tr><tr><td>a középső tag ($n\\ge2$)</td><td>$a_n=\\dfrac{a_{n-1}+a_{n+1}}{2}$</td><td>$b_n^{\\,2}=b_{n-1}\\cdot b_{n+1}$</td></tr><tr><td>a grafikon</td><td>pontok egy <b>egyenesen</b> ($d$ a meredekség)</td><td>$q\\gt0$, $q\\ne1$ esetén pontok egy <b>exponenciális</b> görbén; $q=1$ esetén vízszintes egyenesen; $q\\lt0$ esetén a pontok váltakozva a tengely fölött és alatt vannak</td></tr><tr><td>mikor melyik</td><td>a szomszédos tagok <b>különbsége</b> állandó</td><td>a szomszédos tagok <b>hányadosa</b> állandó</td></tr></table></div><p><b>Két adat elég.</b> Mindkét sorozatot meghatározza az első tag és a jellemző adat ($d$, illetve $q$); ha más adatok ismertek, egyenletrendszert írunk fel rájuk. ⚠️ Mértani sorozatnál <b>páros</b> lépéstávolságból ($q^2=9$, $q^4=16$ …) a hányados <b>előjele kétféle</b> lehet — ilyenkor mindkét esetet végig kell gondolni. Számtani sorozatnál az ismeretlen tagszámra $d\\ne0$ esetén másodfokú, $d=0$ esetén elsőfokú vagy azonosan teljesülő, illetve lehetetlen egyenletet kapunk. Mértani sorozatnál a tagszám a kitevőben szerepel; az összegből az <b>összes megfelelő pozitív egész</b> $n$-t keressük. A $q=1$ esetben $S_n=n\\,b_1$, a $q=-1$ esetben az összeg $n$ párosságától függ. Küszöbfeladatnál a <b>legkisebb</b> megfelelő $n$-t kell megadni.</p>'
+                                             ),
  ]),
 
  ("Kamat: egyszerű és kamatos", [
@@ -100,16 +82,16 @@ OSSZ = [
   r'<tr><th></th><th>képlet</th><th>milyen sorozat</th></tr>'
   r'<tr><td>egyszerű kamat</td><td>$K_n=K_0\left(1+\dfrac{p}{100}\,n\right)$</td>'
   r'<td><b>számtani</b>: minden évben ugyanannyival nő</td></tr>'
-  r'<tr><td>kamatos kamat (' + h(B2, "tetel-kamatos-kamat") + r')</td>'
-  r'<td>$K_n=K_0\left(1+\dfrac{p}{100}\right)^{n}$</td>'
-  r'<td><b>mértani</b>: minden évben ugyanazzal a szorzóval nő</td></tr>'
-  r'<tr><td>évi $t$-szeri jóváírás</td>'
-  r'<td>$K_n=K_0\left(1+\dfrac{p}{100\,t}\right)^{t\,n}$</td>'
-  r'<td>egy időszakra $\frac pt$ százalék, a jóváírások száma $t\cdot n$</td></tr>'
-  r'</table></div>'
-  r'<p>A kitevőben azért áll $n$ (és nem $n-1$), mert a kiinduló összeg a <b>nulladik</b> év adata, '
-  r'$K_0$ — ez a tudatos kivétel az „1-től indexelünk” megállapodás alól (a mértani sorozat nyelvén '
-  r'$b_1=K_0$). Pénznél mindig <b>két tizedesjegyre</b> kerekítünk.</p>',
+  r'<tr><td>kamatos kamat (' + h(B2, "tetel-kamatos-kamat") + (
+                                                                  ')</td><td>$K_n=K_0\\left(1+\\dfrac{p}{100}\\right)^{n}$</td><td><b>mértani</b>: minden évben '
+                                                                  'ugyanazzal a szorzóval nő</td></tr><tr><td>évi $t$-szeri '
+                                                                  'jóváírás</td><td>$K_n=K_0\\left(1+\\dfrac{p}{100\\,t}\\right)^{t\\,n}$</td><td>egy időszakra $\\frac pt$ '
+                                                                  'százalék, a jóváírások száma $t\\cdot n$</td></tr></table></div><p>A kamatmodellekben $p$ az állandó '
+                                                                  'névleges éves kamatláb százalékban; további befizetés, kivét és költség nélkül számolunk. A '
+                                                                  'kitevőben azért áll $n$ (és nem $n-1$), mert a kiinduló összeg a <b>nulladik</b> év adata, $K_0$ — '
+                                                                  'ez a tudatos kivétel az „1-től indexelünk” megállapodás alól (a mértani sorozat nyelvén $b_1=K_0$). '
+                                                                  'Pénznél mindig <b>két tizedesjegyre</b> kerekítünk.</p>'
+                                                              ),
  ]),
 
  ("⚠️ Maxi csapdái — amin a legtöbben elcsúsznak", [
@@ -251,15 +233,15 @@ TEREP = [
  ]),
 
  ("III. fázis — A Kristálypára-bank", [
-   r'<p>A Királyi Család tartaléka $150\,000$ dinár, amit $4$ évre helyeztek el évi $8\%$-os '
-   r'kamatlábbal. Kerekíts két tizedesjegyre!</p>'
-   r'<ol class="reszfeladatok">'
-   r'<li>Mennyi lenne a tartalék a futamidő végén <b>egyszerű</b> kamat mellett?</li>'
-   r'<li>És <b>kamatos</b> kamat mellett, évente egyszeri jóváírással? Mekkora a különbség a kettő '
-   r'között?</li>'
-   r'<li>Mennyi lenne, ha a kamatot <b>negyedévente</b> írnák jóvá?</li>'
-   r'<li>Melyik sorozat írja le az egyszerű, és melyik a kamatos kamatot? Indokold meg!</li>'
-   r'</ol>',
+   (
+       '<p>A Királyi Család tartaléka $150\\,000$ dinár, amit $4$ évre helyeztek el évi $8\\%$-os névleges '
+       'kamatlábbal. Állandó kamatlábbal, további befizetés, kivét és költség nélkül számolunk. Kerekíts '
+       'két tizedesjegyre!</p><ol class="reszfeladatok"><li>Mennyi lenne a tartalék a futamidő végén '
+       '<b>egyszerű</b> kamat mellett?</li><li>És <b>kamatos</b> kamat mellett, évente egyszeri '
+       'jóváírással? Mekkora a különbség a kettő között?</li><li>Mennyi lenne, ha a kamatot '
+       '<b>negyedévente</b> írnák jóvá?</li><li>Melyik sorozat írja le az egyszerű, és melyik a kamatos '
+       'kamatot? Indokold meg!</li></ol>'
+   ),
  ]),
 
  ("🔴 IV. fázis — Maxi képlete", [

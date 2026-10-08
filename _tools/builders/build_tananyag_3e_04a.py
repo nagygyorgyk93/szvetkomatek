@@ -335,27 +335,33 @@ A1 = [
          r'<p><i>„A két vektor épp egymás után jön, a szögük ott van a csatlakozásnál: '
          r'$120^\circ$.”</i></p>'
          + abra(SVG_MAXI_SZOG) +
-         r'<p>A csatlakozásnál látszó szög a <b>mellékszög</b>: Maxi $180^\circ-\varphi$-t '
-         r'olvasott le. Két vektor szögét csak <b>közös kezdőpontba tolt</b> vektorok között '
-         r'mérjük — itt $\varphi=60^\circ$.</p>'
-         r'<p>Maxi másik kedvence: $|\vec a+\vec b|=|\vec a|+|\vec b|$. Ez csak <b>azonos '
-         r'irányítású</b> vektorokra igaz; általában $|\vec a+\vec b|\le|\vec a|+|\vec b|$ '
-         r'(a háromszög-egyenlőtlenség), ahogy az összeadásnál látott gyors kérdésben is.</p>'),
+         (
+             '<p>A csatlakozásnál látszó szög a <b>mellékszög</b>: Maxi $180^\\circ-\\varphi$-t olvasott le. Két '
+             'vektor szögét csak <b>közös kezdőpontba tolt</b> vektorok között mérjük — itt '
+             '$\\varphi=60^\\circ$.</p><p>Maxi másik kedvence: $|\\vec a+\\vec b|=|\\vec a|+|\\vec b|$. Két nem '
+             'nullvektornál ez csak <b>azonos irányítás</b> esetén igaz; akkor is teljesül, ha valamelyik vektor '
+             'nullvektor; általában $|\\vec a+\\vec b|\\le|\\vec a|+|\\vec b|$ (a háromszög-egyenlőtlenség), ahogy az '
+             'összeadásnál látott gyors kérdésben is.</p>'
+         )),
    GY(FGY + "#alap-1", "A 1–8", FGY + "#kozep-1", "K 1–5"),
-   brief('<b>Medúza:</b> A síkban két irány elég mindenhez — balra-jobbra, előre-hátra. '
-         'A Kristály-kamra viszont <b>térben</b> van: a kristályok a padlótól a mennyezetig '
-         'lebegnek. Crni Grom azt mutatja, hogy a nyilakat ezentúl nem rajzolni fogjuk, hanem '
-         '<b>számokká</b> fordítani.', outro=True),
+   brief((
+             '<b>Medúza:</b> A síkban két irány elég mindenhez — balra-jobbra, előre-hátra. A Kristály-kamra '
+             'viszont <b>térben</b> van: a kristályok a padlótól a mennyezetig lebegnek. Crni Grom azt mutatja, '
+             'hogy a nyilakat most térbeli koordinátákkal is leírjuk. A rajz segít elképzelni a helyzetet, a '
+             'koordináták pedig a számolást könnyítik meg.'
+         ), outro=True),
  ]),
 ]
 
 # ---------------------------------------------------------------- A2
 A2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Medúza:</b> A Kamra három irányban nyúlik, és a műszerek minden pontra '
-         '<b>három számot</b> adnak. Crni Grom szerint ez nem teher, hanem ajándék: ha a nyilat '
-         'három számmá fordítjuk, a vektorműveletek egyszerű <b>számolássá</b> válnak. Nem kell '
-         'rajzolni — elég összeadni.'),
+   brief((
+             '<b>Medúza:</b> A Kamra három irányban nyúlik, és a műszerek minden pontra <b>három számot</b> '
+             'adnak. Crni Grom szerint ez nem teher, hanem ajándék: ha a nyilat három számmá fordítjuk, a '
+             'vektorműveletek egyszerű <b>számolássá</b> válnak. A koordinátákkal külön-külön számolunk; egy '
+             'vázlat közben segíthet ellenőrizni az irányokat.'
+         )),
    r'<p>Ebben az egységben felépítjük a <b>térbeli derékszögű koordináta-rendszert</b>, '
    r'megadjuk a vektorokat koordinátáikkal, és megtanuljuk, hogyan számolható ki velük '
    r'egy vektor <b>intenzitása</b> és két pont <b>távolsága</b>.</p>',
@@ -363,16 +369,16 @@ A2 = [
 
  ("A térbeli derékszögű koordináta-rendszer", [
    doboz("definicio", "Térbeli koordináta-rendszer · a pont koordinátái",
-         r'<p>A <b>térbeli derékszögű koordináta-rendszer</b> három, közös $O$ kezdőpontú, '
-         r'páronként merőleges számegyenes: az $x$, az $y$ és a $z$ tengely. A rendszer '
-         r'<b>jobbsodrású</b>: ha jobb kezünk hüvelykujja az $x$, mutatóujja az $y$ tengely '
-         r'pozitív fele felé mutat, akkor a behajlított középső ujjunk a $z$ tengely pozitív fele '
-         r'felé mutat.</p>'
-         r'<p>A tér egy $P$ pontjának <b>koordinátái</b>: vetítsük merőlegesen a pontot a '
-         r'három tengelyre — a vetületek helyén leolvasott három szám $P(x;y;z)$. Szemléletesen: '
-         r'az $O$ és a $P$ egy olyan tengelyekkel párhuzamos élű <b>téglatest</b> testátlójának két '
-         r'végpontja, amelynek élei $|x|$, $|y|$ és $|z|$. (Ha egy koordináta $0$, a „doboz” '
-         r'téglalappá vagy szakasszá lapul.)</p>',
+         (
+             '<p>A <b>térbeli derékszögű koordináta-rendszer</b> három, közös $O$ kezdőpontú, páronként merőleges '
+             'számegyenes: az $x$, az $y$ és a $z$ tengely. A rendszer <b>jobbsodrású</b>: ha jobb kezünk '
+             'hüvelykujja az $x$, mutatóujja az $y$ tengely pozitív fele felé mutat, akkor a behajlított középső '
+             'ujjunk a $z$ tengely pozitív fele felé mutat.</p><p>A tér egy $P$ pontjának <b>koordinátái</b>: '
+             'vetítsük merőlegesen a pontot a három tengelyre — a vetületek helyén leolvasott három szám '
+             '$P(x;y;z)$. Szemléletesen: az $O$ és a $P$ egy olyan tengelyekkel párhuzamos élű <b>téglatest</b> '
+             'testátlójának két végpontja, amelynek élei $|x|$, $|y|$ és $|z|$. (Ha valamelyik koordináta $0$, a '
+             '„doboz” téglalappá, szakasszá vagy ponttá lapul.)</p>'
+         ),
          hid="def-koordinatak"),
    abra(SVG_TER_PONT, 'A $P(3;4;2)$ pont a „dobozában”: az $x$ tengely mentén $3$, az $y$ '
         'mentén $4$, a $z$ mentén $2$ egységet haladunk.'),
@@ -399,11 +405,11 @@ A2 = [
                   r'<p class="vegeredmeny">$Q$: hátsó felső jobb csúcs (az $yz$ síkban) · '
                   r'$R$: elülső alsó jobb csúcs, $P$ alatt (az $xy$ síkban)</p>')),
    doboz("erdekesseg", "Hol találkozol vele?",
-         r'<p>Egy 3D-nyomtató fúvókája és minden videojáték-motor pontosan így, derékszögű '
-         r'<b>számhármasokkal</b> írja le a teret (a telefonod GPS-e is számhármast ad: '
-         r'szélességet, hosszúságot és magasságot). Amikor egy játékban a szereplő '
-         r'előrelép, a program valójában egy vektort ad hozzá a helyzetét leíró '
-         r'számhármashoz — ennyi az egész.</p>'),
+         (
+             '<p>Egy derékszögű koordinátákkal vezérelt 3D-nyomtatónál számhármas adja meg a fúvóka helyzetét. '
+             'Egy térbeli játékban is leírhatjuk így a szereplő helyét: ha elmozdul, az elmozdulásvektor '
+             'koordinátáit hozzáadjuk a helyét megadó számhármashoz.</p>'
+         )),
  ]),
 
  ("A vektor koordinátái", [

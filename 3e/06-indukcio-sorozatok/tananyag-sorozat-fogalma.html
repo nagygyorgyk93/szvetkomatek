@@ -37,7 +37,7 @@
 
     <h2 id="s1">Minden sorszámhoz egy szám</h2>
 
-    <p class="lead">A generátor naplója így néz ki: az 1. lépésnél <span class="math inline">\(0{,}33\)</span>, a 2.-nál <span class="math inline">\(0{,}75\)</span>, a 3.-nál <span class="math inline">\(1\)</span>… A lényeg a <b>hozzárendelés</b>: a lépés sorszámához tartozik egy szám. Pontosan ez a sorozat.</p>
+    <p class="lead">A generátor naplója így néz ki: az 1. lépésnél körülbelül <span class="math inline">\(0{,}33\)</span>, a 2.-nál <span class="math inline">\(0{,}75\)</span>, a 3.-nál <span class="math inline">\(1\)</span>… A lényeg a <b>hozzárendelés</b>: a lépés sorszámához tartozik egy szám. Pontosan ez a sorozat.</p>
 
     <div class="doboz definicio" id="def-sorozat">
       <p class="cim"><span class="ikon">📗</span> A sorozat</p>
@@ -51,32 +51,32 @@
 
     <h2 id="s2">Hogyan adhatunk meg egy sorozatot?</h2>
 
-    <p>Három úton szoktuk megadni, és mindháromnak megvan a maga haszna.</p><p><b>1. Az általános tag képletével.</b> Ez a leggyorsabb: bármelyik tagot egy lépésben megkapjuk, a századikat is.</p><p><b>2. Rekurzívan.</b> Megadjuk a kezdőtagot, és azt a szabályt, ahogyan egy tagból a következő adódik. Ilyenkor lépésről lépésre haladunk.</p><p><b>3. Felsorolással.</b> Leírjuk az első néhány tagot. Ez a legkényelmesebb — és a legcsalókább.</p>
+    <p>Egy sorozat szabályát képlettel vagy rekurzívan is megadhatjuk. Az első néhány tag felsorolása segít felismerni a mintát, de önmagában nem határozza meg a teljes sorozatot.</p><p><b>1. Az általános tag képletével.</b> Az előző tagok kiszámítása nélkül bármelyik tagot egy lépésben megkapjuk, a századikat is.</p><p><b>2. Rekurzívan.</b> Megadjuk a kezdőtagot, és azt a szabályt, ahogyan egy tagból a következő adódik. Ilyenkor lépésről lépésre haladunk.</p><p><b>3. Felsorolással.</b> Leírjuk az első néhány tagot. Így csak a sorozat egy kezdeti részét mutatjuk be.</p>
 
     <div class="doboz definicio" id="def-rekurzio">
       <p class="cim"><span class="ikon">📗</span> Rekurzív megadás</p>
-      <p>A sorozat <b>rekurzív</b> megadásához két dolog kell: a <b>kezdőtag</b> (esetleg az első néhány tag), és a <b>továbblépési szabály</b>, amely megmondja, hogyan kapjuk az előző tagból (tagokból) a következőt.</p><p>Például <span class="math inline">\(a_1=2\)</span> és <span class="math inline">\(a_{n+1}=3a_n-1\)</span>: a sorozat <span class="math inline">\(2,\ 5,\ 14,\ 41,\ \dots\)</span> — a kezdőtag nélkül a szabály önmagában semmit nem határoz meg.</p>
+      <p>A sorozat <b>rekurzív</b> megadásához két dolog kell: a <b>kezdőtag</b> (esetleg az első néhány tag), és a <b>továbblépési szabály</b>, amely megmondja, hogyan kapjuk az előző tagból (tagokból) a következőt.</p><p>Például <span class="math inline">\(a_1=2\)</span> és <span class="math inline">\(a_{n+1}=3a_n-1\)</span>: a sorozat <span class="math inline">\(2,\ 5,\ 14,\ 41,\ \dots\)</span> — a kezdőtag nélkül a szabály önmagában nem határoz meg egyetlen sorozatot egyértelműen.</p>
     </div>
 
     <div class="doboz pelda" id="pelda-rekurziv">
       <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció — a rétegek naplója</p>
-      <p>A generátor naplója rekurzív: <span class="math inline">\(a_1=5\)</span>, és minden további réteg az előző kétszerese mínusz 3, azaz <span class="math inline">\(a_{n+1}=2a_n-3\)</span>. Írjuk fel az első hat réteget, és állapítsuk meg, hányadik lépésnél lépi át a vastagság a 100 egységet!</p><p>Lépésről lépésre haladunk:</p><span class="math display">\[5,\quad 7,\quad 11,\quad 19,\quad 35,\quad 67 .\]</span><p>A hatodik tag még <span class="math inline">\(67\)</span>, a következő viszont <span class="math inline">\(a_7=2\cdot67-3=131\)</span>: a <b>7. lépésnél</b> lépi át a 100-at. Rekurzív megadásnál nincs ugrás — a hetedik taghoz tényleg végig kell számolni az összes előzőt.</p>
+      <p>A generátor naplója rekurzív: <span class="math inline">\(a_1=5\)</span>, és minden további réteg az előző kétszerese mínusz 3, azaz <span class="math inline">\(a_{n+1}=2a_n-3\)</span>. Írjuk fel az első hat réteget, és állapítsuk meg, hányadik lépésnél lépi át a vastagság a 100 egységet!</p><p>Lépésről lépésre haladunk:</p><span class="math display">\[5,\quad 7,\quad 11,\quad 19,\quad 35,\quad 67 .\]</span><p>A hatodik tag még <span class="math inline">\(67\)</span>, a következő viszont <span class="math inline">\(a_7=2\cdot67-3=131\)</span>: a <b>7. lépésnél</b> lépi át a 100-at. Ha közvetlenül a rekurzív szabályt használjuk, lépésről lépésre számolunk. Ha megtaláljuk az általános tag képletét, abból közvetlenül is kiszámíthatjuk a hetedik tagot.</p>
     </div>
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
-      <p>Maxi bemutat három számot — <span class="math inline">\(3,\ 5,\ 7,\ \dots\)</span> —, és azt állítja, hogy a következő „nyilvánvalóan” a <span class="math inline">\(9\)</span>.</p><p>Csakhogy ez lehet a <b>páratlan számok</b> sorozata (akkor <span class="math inline">\(9\)</span> jön), de lehet a <b>prímszámok</b> sorozata is a 3-tól kezdve (akkor <span class="math inline">\(11\)</span>). Mindkettő tökéletesen illik az első három tagra.</p><p><b>A felsorolás nem definíció.</b> Egyértelművé csak a képlet vagy a rekurzív szabály teszi a sorozatot; a felsorolásból legfeljebb <b>sejtünk</b> egy szabályt. A feladatokban ezért mindig azt kérdezzük, melyik a <i>legegyszerűbb</i> szabály, amely illik rá.</p>
+      <p>Maxi bemutat három számot — <span class="math inline">\(3,\ 5,\ 7,\ \dots\)</span> —, és azt állítja, hogy a következő „nyilvánvalóan” a <span class="math inline">\(9\)</span>.</p><p>Csakhogy ez lehet a <b>páratlan számok</b> sorozata (akkor <span class="math inline">\(9\)</span> jön), de lehet a <b>prímszámok</b> sorozata is a 3-tól kezdve (akkor <span class="math inline">\(11\)</span>). Mindkettő tökéletesen illik az első három tagra.</p><p><b>Az első néhány tagból nem következik egyetlen folytatás.</b> Egyértelmű szabályra és a szükséges kezdőadatokra van szükség. Ha a feladat csak néhány tagot sorol fel, egy lehetséges egyszerű szabályt keresünk; más folytatás is illeszkedhet hozzájuk.</p>
     </div>
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
-      <p>A <b>Fibonacci-sorozat</b> rekurzív: <span class="math inline">\(a_1=1\)</span>, <span class="math inline">\(a_2=1\)</span>, és minden további tag az előző kettő összege — <span class="math inline">\(1, 1, 2, 3, 5, 8, 13, \dots\)</span> Ez írja le a nyúlpárok szaporodását, a napraforgó magjainak spirálszámait és a levelek elhelyezkedését.</p><p>Sorozat a havi villanyóra-állás, a törlesztőrészletek listája és egy játék szintjeinek pontküszöbe is: mindegyiknél sorszámhoz tartozik egy szám.</p>
+      <p>A <b>Fibonacci-sorozat</b> rekurzív: <span class="math inline">\(a_1=1\)</span>, <span class="math inline">\(a_2=1\)</span>, és minden további tag az előző kettő összege — <span class="math inline">\(1, 1, 2, 3, 5, 8, 13, \dots\)</span> Fibonacci egy idealizált nyúlszaporodási feladatban használta ezt a sorozatot. A modell szabályai egyszerűek; a valódi nyulak szaporodását nem írják le teljesen.</p><p>Sorozat a havi villanyóra-állás, a törlesztőrészletek listája és egy játék szintjeinek pontküszöbe is: mindegyiknél sorszámhoz tartozik egy szám.</p>
     </div>
 
-    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ A rekurzív megadáshoz KÉT dolog kell: a kezdőtag és a továbblépési szabály. Ugyanez a szabály a₁ = 2-ből 2, 5, 14, 41-et, a₁ = 3-ból 3, 8, 23-at ad." data-nem="✘ Mindhárom felsorolt sorozat kielégíti a szabályt — csak más a kezdőtagjuk. A rekurzív szabály önmagában, kezdőtag nélkül nem határoz meg sorozatot.">
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ A rekurzív megadáshoz KÉT dolog kell: a kezdőtag és a továbblépési szabály. Ugyanez a szabály a₁ = 2-ből 2, 5, 14, 41-et, a₁ = 3-ból 3, 8, 23-at ad." data-nem="✘ Mindhárom felsorolt sorozat kielégíti a szabályt — csak más a kezdőtagjuk. A rekurzív szabály önmagában, kezdőtag nélkül nem határoz meg egyetlen sorozatot egyértelműen.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
       <p>Melyik sorozatot határozza meg <b>egyértelműen</b> az <span class="math inline">\(a_{n+1}=3a_n-1\)</span> szabály?</p>
-      <div class="opciok"><button>egyiket sem — kezdőtag nélkül a szabály nem határoz meg sorozatot</button><button>a <span class="math inline">\(2,\ 5,\ 14,\ 41,\dots\)</span> sorozatot</button><button>a <span class="math inline">\(3,\ 8,\ 23,\dots\)</span> sorozatot</button><button>az <span class="math inline">\(1,\ 2,\ 5,\ 14,\dots\)</span> sorozatot</button></div>
+      <div class="opciok"><button>egyiket sem — kezdőtag nélkül a szabály nem határoz meg egyetlen sorozatot egyértelműen</button><button>a <span class="math inline">\(2,\ 5,\ 14,\ 41,\dots\)</span> sorozatot</button><button>a <span class="math inline">\(3,\ 8,\ 23,\dots\)</span> sorozatot</button><button>az <span class="math inline">\(1,\ 2,\ 5,\ 14,\dots\)</span> sorozatot</button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
 
@@ -88,7 +88,7 @@
     <!-- media:end 3e06-sorozat-video -->
     <h2 id="s3">Hányadik tag? Tagja-e egyáltalán?</h2>
 
-    <p>Gyakori kérdés a fordítottja is: adott egy szám, és azt kérdezzük, <b>szerepel-e</b> a sorozatban, és ha igen, hányadikként. Ilyenkor egyenletet oldunk meg — majd a megoldásról ellenőrizzük, hogy <b>természetes szám-e</b>.</p>
+    <p>Gyakori kérdés a fordítottja is: adott egy szám, és azt kérdezzük, <b>szerepel-e</b> a sorozatban, és ha igen, hányadikként. Ilyenkor egyenletet oldunk meg — majd a megoldásról ellenőrizzük, hogy <b>pozitív egész szám-e</b>.</p>
 
     <div class="doboz pelda" id="pelda-hanyadik">
       <p class="cim"><span class="ikon">✏️</span> Tagja-e a sorozatnak?</p>
@@ -97,12 +97,12 @@
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
-      <p>Maxi kiszámolja, hogy <span class="math inline">\(n=\frac{49}{3}\approx16{,}33\)</span>, és bejelenti: „a <span class="math inline">\(47\)</span> a sorozat 16,33-adik tagja”.</p><p>Ilyen tag nincs. A sorozatnak <b>csak egész sorszámú</b> tagjai vannak: van 16. és van 17. tag, a kettő között semmi. Ha az egyenlet megoldása tört vagy negatív, a válasz az, hogy a szám <b>nem tagja</b> a sorozatnak.</p>
+      <p>Maxi kiszámolja, hogy <span class="math inline">\(n=\frac{49}{3}\approx16{,}33\)</span>, és bejelenti: „a <span class="math inline">\(47\)</span> a sorozat 16,33-adik tagja”.</p><p>Ilyen tag nincs. A sorozatnak <b>csak egész sorszámú</b> tagjai vannak: van 16. és van 17. tag, a kettő között semmi. Ha az egyenletnek nincs pozitív egész megoldása, a válasz az, hogy a szám <b>nem tagja</b> a sorozatnak.</p>
     </div>
 
     <h2 id="s4">A sorozat grafikonja</h2>
 
-    <p>A tagokat ábrázolhatjuk is: a vízszintes tengelyre a sorszámot, a függőlegesre a tag értékét mérjük, és felrajzoljuk az <span class="math inline">\((n;a_n)\)</span> pontokat. A kép ugyanazt mondja el, mint a képlet — csak egy pillantás alatt.</p>
+    <p>A tagokat ábrázolhatjuk is: a vízszintes tengelyre a sorszámot, a függőlegesre a tag értékét mérjük, és felrajzoljuk az <span class="math inline">\((n;a_n)\)</span> pontokat. A grafikon az ábrázolt tagok viszonyát teszi szemléletessé. A teljes sorozatra vonatkozó állítást a szabály alapján ellenőrizzük.</p>
 
     <div class="svgcard">
     <svg viewBox="0 0 380 240" width="380" height="240" role="img" aria-label="Az aₙ = (2n − 1)/(n + 2) sorozat első nyolc tagja különálló pontokként, a pontok balról jobbra emelkednek és 2 alatt maradnak">
@@ -140,7 +140,7 @@
 
     <div class="doboz erdekesseg" id="erd-fuggveny">
       <p class="cim"><span class="ikon">💡</span> Sorozat és függvény</p>
-      <p>A sorozat valójában <b>függvény</b>, csak az értelmezési tartománya nem intervallum, hanem a természetes számok halmaza: külön álló, elszigetelt helyek. Ezért nincs értelme <span class="math inline">\(a_{2{,}5}\)</span>-ről beszélni, és ezért nem kötjük össze a pontokat.</p><p>Az <a href="../../2e/03-exponencialis-es-logaritmus-fuggveny/index.html">exponenciális és a logaritmusfüggvény</a> grafikonja folytonos vonal; a sorozaté pontsor, amely „ráül” egy ilyen görbére — a vízszintes tengelyen az <span class="math inline">\(x=n\)</span> pozitív egész helyeken. A mértani sorozatnál ezt látni is fogjuk.</p>
+      <p>A sorozat valójában <b>függvény</b>, csak az értelmezési tartománya nem intervallum, hanem a természetes számok halmaza: külön álló, elszigetelt helyek. Ezért nincs értelme <span class="math inline">\(a_{2{,}5}\)</span>-ről beszélni, és ezért nem kötjük össze a pontokat.</p><p>Az <a href="../../2e/03-exponencialis-es-logaritmus-fuggveny/index.html">exponenciális és a logaritmusfüggvény</a> grafikonja folytonos vonal. Egy mértani sorozat pontjai pozitív, <span class="math inline">\(1\)</span>-től különböző hányados esetén exponenciális görbére esnek — a vízszintes tengelyen az <span class="math inline">\(x=n\)</span> pozitív egész helyeken. A mértani sorozatnál ezt látni is fogjuk.</p>
     </div>
 
     <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ A sorozat csak természetes sorszámokon van értelmezve, ezért a grafikonja különálló pontok sora." data-nem="✘ A sorozat értelmezési tartománya a természetes számok halmaza: az 1 és a 2 sorszám között nincs tag, tehát összekötni sincs mit. A grafikon különálló pontokból áll.">

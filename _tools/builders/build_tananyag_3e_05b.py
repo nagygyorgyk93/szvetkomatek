@@ -161,10 +161,12 @@ SVG_HAROMSZOG = svg_koordsik(
 # ---------------------------------------------------------------- B1
 B1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Kanrak:</b> Maxi drónjai <b>egyenes pályán</b> repülnek. Egy pálya — egy egyenlet. '
-         'Ha az egyenlet pontos, Tér-eb a pálya bármelyik pontjára odaugrik, és elvágja az utat. '
-         'Az egyenletet háromféleképpen is felírhatjuk, és mindegyik alak mást árul el a pályáról: '
-         'milyen meredek, hol metszi a tengelyeket, hogyan kell átrendezni.'),
+   brief((
+             '<b>Kanrak:</b> Maxi drónjai <b>egyenes pályán</b> repülnek. Egy pálya — egy egyenlet. Ha az '
+             'egyenlet pontos, Tér-eb a pálya bármelyik pontjára odaugrik, és elvágja az utat. Három '
+             'egyenletalakot tanulunk; nem mindegyik használható minden egyenesnél, és mindegyik alak mást árul '
+             'el a pályáról: milyen meredek, hol metszi a tengelyeket, hogyan kell átrendezni.'
+         )),
  ]),
 
  ("Az egyenes iránytényezője", [
@@ -186,9 +188,11 @@ B1 = [
    r'$k=\frac{8-2}{4-1}=2$, hajlásszöge $\alpha=\operatorname{arctg}2\approx63{,}4^\circ$ '
    r'(számológépen $\tan^{-1}$, fok üzemmódban).</p>',
    doboz("erdekesseg", "Hol találkozol vele?",
-         r'<p>A „10%-os emelkedő” közlekedési tábla azt jelenti, hogy vízszintesen mért $100$ méteren '
-         r'$10$ métert emelkedik az út: $k=0{,}1$, a hajlásszög $\operatorname{arctg}0{,}1\approx5{,}7^\circ$. '
-         r'Ami a táblán ijesztően hangzik, szögben alig több mint öt fok.</p>'),
+         (
+             '<p>A százalékos emelkedés nem szögérték: a $10\\%$ azt jelenti, hogy $100$ m vízszintes távolságon '
+             '$10$ m a szintkülönbség. Az iránytényező $k=0{,}1$, ezért a hajlásszög '
+             '$\\alpha=\\operatorname{arctg}0{,}1\\approx5{,}7^\\circ$.</p>'
+         )),
  ]),
 
  ("Az iránytényezős alak", [
@@ -236,11 +240,11 @@ B1 = [
 
  ("A tengelymetszetes alak", [
    doboz("tetel", "Az egyenes tengelymetszetes (szegmens) egyenlete",
-         r'<p>Ha az egyenes az $x$-tengelyt az $(m;0)$, az $y$-tengelyt a $(0;n)$ pontban metszi, '
-         r'és $m\ne0$, $n\ne0$, akkor egyenlete</p>'
-         r'$$\frac xm+\frac yn=1 .$$'
-         r'<p>Nincs ilyen alakja az <b>origón átmenő</b> egyenesnek (ott $m=n=0$), és a '
-         r'<b>tengellyel párhuzamos</b> egyenesnek sem (annak csak egy tengelymetszete van).</p>',
+         (
+             '<p>Ha az egyenes az $x$-tengelyt az $(m;0)$, az $y$-tengelyt a $(0;n)$ pontban metszi, és $m\\ne0$, '
+             '$n\\ne0$, akkor egyenlete</p>$$\\frac xm+\\frac yn=1 .$$<p>Nincs ilyen alakja az <b>origón átmenő</b> '
+             'egyenesnek, és a <b>tengellyel párhuzamos</b> egyenesnek sem.</p>'
+         ),
          hid="tetel-tengelymetszetes"),
    doboz("pelda", "Egy egyenes, három alak",
          r'<p>Írd fel a $2x-3y+6=0$ egyenletet explicit és tengelymetszetes alakban, és rajzold meg '
@@ -266,12 +270,13 @@ B1 = [
 
  ("Egyenes adott pontból", [
    doboz("tetel", "Adott ponton, illetve két adott ponton átmenő egyenes",
-         r'<p>Az $A(x_1;y_1)$ ponton átmenő, $k$ iránytényezőjű egyenes egyenlete</p>'
-         r'$$y-y_1=k\,(x-x_1).$$'
-         r'<p>Az $A(x_1;y_1)$ és a $B(x_2;y_2)$ ponton átmenő egyenesnél ($x_1\ne x_2$) előbb '
-         r'kiszámítjuk az iránytényezőt, és ugyanezt a képletet használjuk:</p>'
-         r'$$y-y_1=\frac{y_2-y_1}{x_2-x_1}\,(x-x_1).$$'
-         r'<p>Ha $x_1=x_2$, az egyenes függőleges: $x=x_1$.</p>',
+         (
+             '<p>Az $A(x_1;y_1)$ ponton átmenő, $k$ iránytényezőjű egyenes '
+             'egyenlete</p>$$y-y_1=k\\,(x-x_1).$$<p>Az $A(x_1;y_1)$ és a $B(x_2;y_2)$ ponton átmenő egyenesnél '
+             '($x_1\\ne x_2$) előbb kiszámítjuk az iránytényezőt, és ugyanezt a képletet '
+             'használjuk:</p>$$y-y_1=\\frac{y_2-y_1}{x_2-x_1}\\,(x-x_1).$$<p>Két különböző pontnál, ha $x_1=x_2$, '
+             'az egyenes függőleges: $x=x_1$.</p>'
+         ),
          hid="tetel-ket-pont"),
    r'<p><b>Példa.</b> A $P(2;-1)$ ponton átmenő, $k=3$ iránytényezőjű egyenes: '
    r'$y-(-1)=3(x-2)$, azaz $y=3x-7$.</p>',
@@ -294,18 +299,22 @@ B1 = [
                   r'<p class="vegeredmeny">a) $y=-2x+2$ · $2x+y-2=0$ · $\frac x1+\frac y2=1$ · '
                   r'b) igen, $K$ a pályán van</p>')),
    GY(FGY + "#alap-1", "A 1–10", FGY + "#kozep-1", "K 1–6"),
-   brief('<b>Kanrak:</b> Egy pályát már le tudunk írni. A mi járőrvonalunk is egy egyenes — '
-         'a kérdés az, <b>hol keresztezi</b> Maxi pályája a miénket, és <b>milyen szögben</b>. '
-         'Mert ha a két pálya párhuzamos, soha nem érjük utol.', outro=True),
+   brief((
+             '<b>Kanrak:</b> Egy pályát már le tudunk írni. A mi járőrvonalunk is egy egyenes — a kérdés az, '
+             '<b>hol keresztezi</b> Maxi pályája a miénket, és <b>milyen szögben</b>. Ha a két pálya különböző és '
+             'párhuzamos, nincs közös pontjuk.'
+         ), outro=True),
  ]),
 ]
 
 # ---------------------------------------------------------------- B2
 B2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Kanrak:</b> Két pálya, két egyenlet. Találkoznak? Ha igen, hol — és milyen szögben? '
-         'A párhuzamos pályán repülő drónt Tér-eb sosem éri utol, a merőleges vonal viszont a '
-         'leggyorsabb elzárás. Ma megtanuljuk két egyenletből kiolvasni, melyik eset áll fenn.'),
+   brief((
+             '<b>Kanrak:</b> Két egyenes pálya, két egyenlet. Van közös pontjuk? Ha igen, hol, és milyen szögben '
+             'metszik egymást? A különböző párhuzamos pályáknak nincs közös pontjuk; két merőleges pálya '
+             'derékszöget zár be. Ma ezt olvassuk ki az egyenletekből.'
+         )),
  ]),
 
  ("Két egyenes kölcsönös helyzete", [
@@ -331,11 +340,13 @@ B2 = [
 
  ("Párhuzamosság és merőlegesség", [
    doboz("tetel", "A párhuzamosság és a merőlegesség feltétele",
-         r'<p>Az $y=k_1x+n_1$ és az $y=k_2x+n_2$ egyenes</p>'
-         r'<ul><li><b>párhuzamos</b> (vagy egybeesik), ha $k_1=k_2$;</li>'
-         r'<li><b>merőleges</b>, ha $k_1\cdot k_2=-1$, azaz $k_2=-\dfrac1{k_1}$.</li></ul>'
-         r'<p>A vízszintes ($k=0$) és a függőleges egyenes (nincs $k$) szintén merőleges egymásra — '
-         r'ezt az esetet a képlet nem fedi le, külön kell észrevenni.</p>',
+         (
+             '<p>A két nem függőleges, $y=k_1x+n_1$ és $y=k_2x+n_2$ egyenletű '
+             'egyenes</p><ul><li><b>párhuzamos</b> (vagy egybeesik), ha $k_1=k_2$;</li><li><b>merőleges</b>, ha '
+             '$k_1\\cdot k_2=-1$, azaz $k_2=-\\dfrac1{k_1}$.</li></ul><p>A vízszintes ($k=0$) és a függőleges '
+             'egyenes (nincs $k$) szintén merőleges egymásra — ezt az esetet a képlet nem fedi le, külön kell '
+             'észrevenni.</p>'
+         ),
          hid="tetel-parhuzamos-meroleges"),
    r'<p><i>Miért $-1$?</i> Az egyenesek irányvektora $(1;k_1)$, illetve $(1;k_2)$. Két vektor '
    r'pontosan akkor <a href="' + V04 + r'tananyag-skalaris-szorzat.html#tetel-merolegesseg">'
@@ -474,8 +485,10 @@ B3 = [
                   r'<p>$d=\frac{|3\cdot1+4\cdot1+8|}{\sqrt{9+16}}=\frac{15}{5}=3$.</p>'
                   r'<p class="vegeredmeny">$d=3$</p>')),
    doboz("erdekesseg", "Hol találkozol vele?",
-         r'<p>Egy autópálya-sáv két szélét leíró egyenesek párhuzamosak; a sáv szélessége a két '
-         r'egyenes távolsága. Nálunk egy forgalmi sáv jellemzően $3{,}5$–$3{,}75$ méter széles.</p>'),
+         (
+             '<p>Egy egyenes útszakasz forgalmi sávjának két szélét párhuzamos egyenesekkel modellezhetjük. A sáv '
+             'szélességét a két szélre merőlegesen mérjük: ez a két egyenes távolsága.</p>'
+         )),
  ]),
 
  ("Háromszög koordinátákkal", [
@@ -486,7 +499,7 @@ B3 = [
    r'<li>a $C$-hez tartozó <b>súlyvonal</b> átmegy a $C$-n és az $AB$ oldal <b>felezőpontján</b>.</li></ul>'
    r'<p>A magasság hossza a $C$ csúcs távolsága az $AB$ egyenestől. Ha csak az oldalegyenesek '
    r'adottak, a csúcsokat két-két oldalegyenes <b>metszéspontja</b> adja.</p>',
-   doboz("pelda", "Kristály-kamra szimuláció — a háromszög minden adata",
+   doboz("pelda", 'Kristály-kamra szimuláció — a háromszög oldalegyenese, magassága, területe és súlyvonala',
          r'<p>Maxi három jeladója egy háromszöget alkot: $A(-2;-1)$, $B(6;3)$, $C(1;5)$.</p>'
          r'<ol type="a"><li>Írd fel az $AB$ oldal egyenesének egyenletét!</li>'
          r'<li>Írd fel a $C$-hez tartozó magasságvonal egyenletét!</li>'
@@ -519,33 +532,37 @@ B3 = [
  ]),
 
  ("🧾 Gyorsismétlő", [
-   r'<p>Az I. rész minden képlete egy helyen — a 3. dolgozat előtt.</p>'
-   r'<div class="tblwrap"><table class="tt-table">'
-   r'<tr><th>Mit keresünk?</th><th>Képlet</th><th>Hol tanultuk?</th></tr>'
-   r'<tr><td>két pont távolsága</td><td>$|AB|=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$</td>'
-   r'<td><a href="tananyag-pontok-a-sikban.html#tetel-tavolsag">Pontok a síkban</a></td></tr>'
-   r'<tr><td>osztópont, felezőpont</td><td>$C\left(\frac{nx_1+mx_2}{m+n};\frac{ny_1+my_2}{m+n}\right)$, '
-   r'$F\left(\frac{x_1+x_2}2;\frac{y_1+y_2}2\right)$</td>'
-   r'<td><a href="tananyag-pontok-a-sikban.html#tetel-osztopont">Pontok a síkban</a></td></tr>'
-   r'<tr><td>súlypont</td><td>$S\left(\frac{x_1+x_2+x_3}3;\frac{y_1+y_2+y_3}3\right)$</td>'
-   r'<td><a href="tananyag-pontok-a-sikban.html#tetel-sulypont">Pontok a síkban</a></td></tr>'
-   r'<tr><td>háromszög területe</td><td>$T=\frac12|D|$, $D=x_1(y_2-y_3)+x_2(y_3-y_1)+x_3(y_1-y_2)$</td>'
-   r'<td><a href="tananyag-haromszog-terulete.html#tetel-terulet">A háromszög területe</a></td></tr>'
-   r'<tr><td>kollinearitás</td><td>$D=0$</td>'
-   r'<td><a href="tananyag-haromszog-terulete.html#tetel-kollinearitas">A háromszög területe</a></td></tr>'
-   r'<tr><td>iránytényező</td><td>$k=\operatorname{tg}\alpha=\frac{y_2-y_1}{x_2-x_1}$ ($x_1\ne x_2$)</td>'
-   r'<td><a href="tananyag-egyenes-egyenlete.html#def-iranytenyezo">Az egyenes egyenlete</a></td></tr>'
-   r'<tr><td>az egyenes alakjai</td><td>$y=kx+n$ · $ax+by+c=0$ · $\frac xm+\frac yn=1$</td>'
-   r'<td><a href="tananyag-egyenes-egyenlete.html#tetel-altalanos">Az egyenes egyenlete</a></td></tr>'
-   r'<tr><td>egyenes adott pontból</td><td>$y-y_1=k(x-x_1)$</td>'
-   r'<td><a href="tananyag-egyenes-egyenlete.html#tetel-ket-pont">Az egyenes egyenlete</a></td></tr>'
-   r'<tr><td>párhuzamos · merőleges</td><td>$k_1=k_2$ · $k_1k_2=-1$</td>'
-   r'<td><a href="tananyag-ket-egyenes.html#tetel-parhuzamos-meroleges">Két egyenes</a></td></tr>'
-   r'<tr><td>két egyenes szöge</td><td>$\operatorname{tg}\varphi=\left|\frac{k_2-k_1}{1+k_1k_2}\right|$</td>'
-   r'<td><a href="tananyag-ket-egyenes.html#tetel-szog">Két egyenes</a></td></tr>'
-   r'<tr><td>pont és egyenes távolsága</td><td>$d=\frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}$</td>'
-   r'<td><a href="#tetel-tavolsagkeplet">fent</a></td></tr>'
-   r'</table></div>',
+   (
+       '<p>Az I. rész képletei egy helyen — a 3. dolgozat előtt. Az osztópontnál $m,n>0$; két pontból '
+       'egyenest két különböző pont határoz meg. Az általános egyenletalakban $a^2+b^2\\ne0$. Az '
+       'iránytényezős képletek nem függőleges egyenesekre vonatkoznak; a tengelymetszetes alaknál '
+       '$m,n\\ne0$. A szögképletben a nevező nem lehet nulla; a merőleges esetet külön kezeljük.</p><div '
+       'class="tblwrap"><table class="tt-table"><tr><th>Mit keresünk?</th><th>Képlet</th><th>Hol '
+       'tanultuk?</th></tr><tr><td>két pont távolsága</td><td>$|AB|=\\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$</td><td>'
+       '<a href="tananyag-pontok-a-sikban.html#tetel-tavolsag">Pontok a '
+       'síkban</a></td></tr><tr><td>osztópont, felezőpont</td><td>$C\\left(\\frac{nx_1+mx_2}{m+n};\\frac{ny_1+m'
+       'y_2}{m+n}\\right)$, $F\\left(\\frac{x_1+x_2}2;\\frac{y_1+y_2}2\\right)$</td><td><a '
+       'href="tananyag-pontok-a-sikban.html#tetel-osztopont">Pontok a '
+       'síkban</a></td></tr><tr><td>súlypont</td><td>$S\\left(\\frac{x_1+x_2+x_3}3;\\frac{y_1+y_2+y_3}3\\right)$'
+       '</td><td><a href="tananyag-pontok-a-sikban.html#tetel-sulypont">Pontok a '
+       'síkban</a></td></tr><tr><td>háromszög területe</td><td>$T=\\frac12|D|$, '
+       '$D=x_1(y_2-y_3)+x_2(y_3-y_1)+x_3(y_1-y_2)$</td><td><a '
+       'href="tananyag-haromszog-terulete.html#tetel-terulet">A háromszög '
+       'területe</a></td></tr><tr><td>kollinearitás</td><td>$D=0$</td><td><a '
+       'href="tananyag-haromszog-terulete.html#tetel-kollinearitas">A háromszög '
+       'területe</a></td></tr><tr><td>iránytényező</td><td>$k=\\operatorname{tg}\\alpha=\\frac{y_2-y_1}{x_2-x_1'
+       '}$ ($x_1\\ne x_2$)</td><td><a href="tananyag-egyenes-egyenlete.html#def-iranytenyezo">Az egyenes '
+       'egyenlete</a></td></tr><tr><td>az egyenes alakjai</td><td>$y=kx+n$ · $ax+by+c=0$ · $\\frac xm+\\frac '
+       'yn=1$</td><td><a href="tananyag-egyenes-egyenlete.html#tetel-altalanos">Az egyenes '
+       'egyenlete</a></td></tr><tr><td>egyenes adott pontból</td><td>$y-y_1=k(x-x_1)$</td><td><a '
+       'href="tananyag-egyenes-egyenlete.html#tetel-ket-pont">Az egyenes '
+       'egyenlete</a></td></tr><tr><td>párhuzamos · merőleges</td><td>$k_1=k_2$ · $k_1k_2=-1$</td><td><a '
+       'href="tananyag-ket-egyenes.html#tetel-parhuzamos-meroleges">Két egyenes</a></td></tr><tr><td>két '
+       'egyenes szöge</td><td>$\\operatorname{tg}\\varphi=\\left|\\frac{k_2-k_1}{1+k_1k_2}\\right|$</td><td><a '
+       'href="tananyag-ket-egyenes.html#tetel-szog">Két egyenes</a></td></tr><tr><td>pont és egyenes '
+       'távolsága</td><td>$d=\\frac{|ax_0+by_0+c|}{\\sqrt{a^2+b^2}}$</td><td><a '
+       'href="#tetel-tavolsagkeplet">fent</a></td></tr></table></div>'
+   ),
    GY(FGY + "#alap-19", "A 19–24", FGY + "#kozep-13", "K 13–18"),
    brief('<b>Kanrak:</b> Az egyenes pályákat lezártuk: Maxi drónjai nem jutnak át a hálózaton. '
          'Csakhogy Maxi nem adta fel — <b>teleport-kapukat</b> nyitott a Kamrában, és ezeknek a '

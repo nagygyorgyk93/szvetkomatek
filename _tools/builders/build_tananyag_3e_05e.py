@@ -133,10 +133,13 @@ E1 = [
  ]),
 
  ("Adatok és felírás", [
-   r'<p><b>Egyenletből az adatok.</b> Az $y^2=2px$ alakban az $x$ együtthatója $2p$: ebből előbb $p$-t, '
-   r'aztán a fókusz első koordinátáját, $\frac p2$-t kapjuk. Például $y^2=12x$: $2p=12$, $p=6$, a fókusz $F(3;0)$, a vezéregyenes $x=-3$.</p>'
-   r'<p><b>Egy pontból az egyenlet.</b> Ha tudjuk, melyik alak (például jobbra nyílik), a pont '
-   r'koordinátáit behelyettesítve megkapjuk a $p$-t.</p>',
+   (
+       '<p><b>Egyenletből az adatok.</b> Az $y^2=2px$ alakban az $x$ együtthatója $2p$: ebből előbb $p$-t, '
+       'aztán a fókusz első koordinátáját, $\\frac p2$-t kapjuk. Például $y^2=12x$: $2p=12$, $p=6$, a fókusz '
+       '$F(3;0)$, a vezéregyenes $x=-3$.</p><p><b>Egy pontból az egyenlet.</b> Ha a csúcs az origó, '
+       'ismerjük a tengelyt és a nyílás irányát, és a pont nem a csúcs, a pont koordinátáit behelyettesítve '
+       'megkapjuk a $p$-t.</p>'
+   ),
    doboz("pelda", "Kristály-kamra szimuláció — hol a tükör fókusza?",
          r'<p>Maxi tükre jobbra nyíló, csúcsa az origó, és a pereme átmegy a $P(9;6)$ ponton. '
          r'Írd fel a tükör egyenletét, és add meg a fókuszát meg a vezéregyenesét! Ellenőrizd, hogy a '
@@ -161,9 +164,11 @@ E1 = [
         nem="✘ Az x együtthatója 2p, nem p: 2p = 20 → p = 10, és a fókusz p/2-re van: F(5; 0). "
             "Az y² miatt a fókusz az x-tengelyen van."),
    GY(FGY + "#alap-1", "A 1–5", FGY + "#kozep-1", "K 1–4"),
-   brief('<b>Kanrak:</b> A fókusz megvan: Tér-eb oda nem ugorhat, mert elégetné a Kristálypára. A '
-         'tükör peremét csak <b>egyetlen egyenes</b> mentén lehet biztonságosan elérni — egy '
-         '<b>érintő</b> mentén. Az utolsó csapás következik.', outro=True),
+   brief((
+             '<b>Kanrak:</b> A fókusz megvan: Tér-eb oda nem ugorhat, mert elégetné a Kristálypára. A következő '
+             'lépésben <b>érintőt</b> húzunk a tükör peremének egy megadott pontjában. Az utolsó csapás '
+             'következik.'
+         ), outro=True),
  ]),
 ]
 
@@ -251,31 +256,29 @@ E2 = [
  ]),
 
  ("🧾 Gyorsismétlő", [
-   r'<p>A II. rész négy görbéje egy táblázatban — a 4. dolgozat előtt. A körnél $r&gt;0$, '
-   r'az ellipszisnél $a&gt;b&gt;0$, a hiperbolánál $a,b&gt;0$, a parabola sorában $p&gt;0$. '
-   r'Az érintőképletekben $T$ a megfelelő görbe pontja. Az iránytényezős feltételek '
-   r'a nem függőleges egyenesekre vonatkoznak; a parabola függőleges érintője $x=0$, '
-   r'a hiperboláé $x=\pm a$.</p>'
-   r'<div class="tblwrap"><table class="tt-table">'
-   r'<tr><th></th><th>egyenlet</th><th>adatok</th><th>érintő a $T(x_1;y_1)$ pontban</th>'
-   r'<th>érintési feltétel ($y=kx+n$)</th></tr>'
-   r'<tr><td><a href="tananyag-kor-egyenlete.html#tetel-kor-egyenlete">kör</a></td>'
-   r'<td>$(x-p)^2+(y-q)^2=r^2$</td><td>$C(p;q)$, $r$</td>'
-   r'<td>$(x_1-p)(x-p)+(y_1-q)(y-q)=r^2$</td><td>$r^2(1+k^2)=(kp-q+n)^2$</td></tr>'
-   r'<tr><td><a href="tananyag-ellipszis.html#tetel-ellipszis-egyenlete">ellipszis</a></td>'
-   r'<td>$\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$</td><td>$e^2=a^2-b^2$, $F(\pm e;0)$</td>'
-   r'<td>$\frac{x_1x}{a^2}+\frac{y_1y}{b^2}=1$</td><td>$a^2k^2+b^2=n^2$</td></tr>'
-   r'<tr><td><a href="tananyag-hiperbola.html#tetel-hiperbola-egyenlete">hiperbola</a></td>'
-   r'<td>$\frac{x^2}{a^2}-\frac{y^2}{b^2}=1$</td><td>$e^2=a^2+b^2$, $F(\pm e;0)$, $y=\pm\frac bax$</td>'
-   r'<td>$\frac{x_1x}{a^2}-\frac{y_1y}{b^2}=1$</td><td>$a^2k^2-b^2=n^2$ (ha $|k|\gt\frac ba$)</td></tr>'
-   r'<tr><td><a href="tananyag-parabola.html#tetel-parabola-egyenlete">parabola</a></td>'
-   r'<td>$y^2=2px$</td><td>$F\left(\frac p2;0\right)$, $x=-\frac p2$</td>'
-   r'<td>$y_1y=p(x+x_1)$</td><td>$p=2kn$ ($k\ne0$)</td></tr>'
-   r'</table></div>'
-   r'<p><b>A kölcsönös helyzet receptje</b> mind a négy görbénél: behelyettesítés → másodfokú '
-   r'egyenlet → $D\gt0$ szelő, $D=0$ érintő, $D\lt0$ nincs közös pont. Ha elsőfokú egyenlet jön '
-   r'ki (hiperbola: aszimptotával párhuzamos; parabola: tengellyel párhuzamos egyenes), egy közös '
-   r'pont van, de <b>nem érintés</b>. (Magának az aszimptotának nincs közös pontja a hiperbolával.)</p>',
+   (
+       '<p>A II. rész négy görbéje egy táblázatban — a 4. dolgozat előtt. A körnél $r&gt;0$, az '
+       'ellipszisnél $a&gt;b&gt;0$, a hiperbolánál $a,b&gt;0$, a parabola sorában $p&gt;0$. Az '
+       'érintőképletekben $T$ a megfelelő görbe pontja. Az iránytényezős feltételek a nem függőleges '
+       'egyenesekre vonatkoznak; a parabola függőleges érintője $x=0$, a hiperboláé $x=\\pm a$.</p><div '
+       'class="tblwrap"><table class="tt-table"><tr><th></th><th>egyenlet</th><th>adatok</th><th>érintő a '
+       '$T(x_1;y_1)$ pontban</th><th>érintési feltétel ($y=kx+n$)</th></tr><tr><td><a '
+       'href="tananyag-kor-egyenlete.html#tetel-kor-egyenlete">kör</a></td><td>$(x-p)^2+(y-q)^2=r^2$</td><td'
+       '>$C(p;q)$, $r$</td><td>$(x_1-p)(x-p)+(y_1-q)(y-q)=r^2$</td><td>$r^2(1+k^2)=(kp-q+n)^2$</td></tr><tr>'
+       '<td><a href="tananyag-ellipszis.html#tetel-ellipszis-egyenlete">ellipszis</a></td><td>$\\frac{x^2}{a^'
+       '2}+\\frac{y^2}{b^2}=1$</td><td>$e^2=a^2-b^2$, $F(\\pm '
+       'e;0)$</td><td>$\\frac{x_1x}{a^2}+\\frac{y_1y}{b^2}=1$</td><td>$a^2k^2+b^2=n^2$</td></tr><tr><td><a '
+       'href="tananyag-hiperbola.html#tetel-hiperbola-egyenlete">hiperbola</a></td><td>$\\frac{x^2}{a^2}-\\fra'
+       'c{y^2}{b^2}=1$</td><td>$e^2=a^2+b^2$, $F(\\pm e;0)$, $y=\\pm\\frac '
+       'bax$</td><td>$\\frac{x_1x}{a^2}-\\frac{y_1y}{b^2}=1$</td><td>$a^2k^2-b^2=n^2$ (ha $|k|\\gt\\frac '
+       'ba$)</td></tr><tr><td><a href="tananyag-parabola.html#tetel-parabola-egyenlete">parabola</a></td><td'
+       '>$y^2=2px$</td><td>$F\\left(\\frac p2;0\\right)$, $x=-\\frac '
+       'p2$</td><td>$y_1y=p(x+x_1)$</td><td>$p=2kn$ ($k\\ne0$)</td></tr></table></div><p><b>A kölcsönös '
+       'helyzetet</b> mind a négy görbénél behelyettesítéssel vizsgáljuk. Ha másodfokú egyenletet kapunk: '
+       '$D\\gt0$ szelő, $D=0$ érintő, $D\\lt0$ nincs közös pont. Ha elsőfokú egyenlet jön ki (hiperbola: '
+       'aszimptotával párhuzamos; parabola: tengellyel párhuzamos egyenes), egy közös pont van, de <b>nem '
+       'érintés</b>. (Magának az aszimptotának nincs közös pontja a hiperbolával.)</p>'
+   ),
    GY(FGY + "#alap-6", "A 6–10", FGY + "#kozep-5", "K 5–8"),
    brief('<b>Kanrak:</b> Maxi bemérve: minden kapuját, mezőjét és tükrét feltérképeztük, Tér-eb '
          'mindegyiken átjutott. De amit elindított, az nem áll meg magától. A Kristálypára-generátor '

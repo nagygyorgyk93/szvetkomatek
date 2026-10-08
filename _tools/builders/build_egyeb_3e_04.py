@@ -99,22 +99,27 @@ OSSZ = [
  ("A vektor és a műveletek", [
   r'<p>A <b>vektor</b> az egymásba eltolható irányított szakaszok közös jellemzője; három adata '
   r'az <b>iránya</b> (az egyenes állása), az <b>irányítása</b> (merre mutat) és az '
-  r'<b>intenzitása</b> — más néven hossza — $|\vec a|$ (' + h(A1, "def-vektor") + r'). Két vektor '
-  r'<b>egyenlő</b>, ha eltolással fedésbe hozhatók. A nullvektor $\vec 0$ (intenzitása $0$, iránya és '
-  r'irányítása nincs), az ellentett $-\vec a$.</p>'
-  r'<table class="tt-table">'
-  r'<tr><th>Művelet</th><th>Szabály</th><th>Megjegyzés</th></tr>'
-  r'<tr><td>összeadás</td><td>háromszög-szabály: $\overrightarrow{AB}+\overrightarrow{BC}=\overrightarrow{AC}$; '
-  r'paralelogramma-szabály: közös kezdőpontból az átló</td><td>$|\vec a+\vec b|\le|\vec a|+|\vec b|$, egyenlőség csak azonos irányításnál (vagy nullvektorral)</td></tr>'
-  r'<tr><td>kivonás</td><td>$\vec a-\vec b=\vec a+(-\vec b)$; $\overrightarrow{OB}-\overrightarrow{OA}=\overrightarrow{AB}$</td>'
-  r'<td>a paralelogramma másik átlója, a $\vec b$ végpontjából az $\vec a$ végpontjába mutat</td></tr>'
-  r'<tr><td>skalárral szorzás</td><td>$|\lambda\vec a|=|\lambda|\,|\vec a|$; $\lambda>0$: azonos, $\lambda<0$: ellentétes irányítás; $\lambda=0$ vagy $\vec a=\vec 0$: nullvektor</td>'
-  r'<td>ha $\vec a\ne\vec 0$: $\vec b\parallel\vec a\iff\vec b=\lambda\vec a$ (' + h(A1, "def-skalarral-szorzas") + r')</td></tr>'
+  r'<b>intenzitása</b> — más néven hossza — $|\vec a|$ (' + h(A1, "def-vektor") + (
+                                                                                             '). Két vektor <b>egyenlő</b>, ha eltolással fedésbe hozhatók. A nullvektor $\\vec 0$ (intenzitása '
+                                                                                             '$0$, iránya és irányítása nincs), az ellentett $-\\vec a$.</p><table '
+                                                                                             'class="tt-table"><tr><th>Művelet</th><th>Szabály</th><th>Megjegyzés</th></tr><tr><td>összeadás</td><'
+                                                                                             'td>háromszög-szabály: $\\overrightarrow{AB}+\\overrightarrow{BC}=\\overrightarrow{AC}$; '
+                                                                                             'paralelogramma-szabály: közös kezdőpontból az átló</td><td>$|\\vec a+\\vec b|\\le|\\vec a|+|\\vec b|$, '
+                                                                                             'egyenlőség csak azonos irányításnál (vagy nullvektorral)</td></tr><tr><td>kivonás</td><td>$\\vec '
+                                                                                             'a-\\vec b=\\vec a+(-\\vec b)$; $\\overrightarrow{OB}-\\overrightarrow{OA}=\\overrightarrow{AB}$</td><td>a '
+                                                                                             'paralelogramma másik átlója, a $\\vec b$ végpontjából az $\\vec a$ végpontjába '
+                                                                                             'mutat</td></tr><tr><td>skalárral szorzás</td><td>$|\\lambda\\vec a|=|\\lambda|\\,|\\vec a|$; '
+                                                                                             '$\\lambda>0$: azonos, $\\lambda<0$: ellentétes irányítás; $\\lambda=0$ vagy $\\vec a=\\vec 0$: '
+                                                                                             'nullvektor</td><td>ha $\\vec a\\ne\\vec 0$ és $\\vec b\\ne\\vec 0$: $\\vec b\\parallel\\vec a\\iff\\vec '
+                                                                                             'b=\\lambda\\vec a$ ('
+                                                                                         ) + h(A1, "def-skalarral-szorzas") + r')</td></tr>'
   r'</table>'
-  r'<p>A műveletekkel úgy számolunk, mint a betűs kifejezésekkel (' + h(A1, "tetel-muveletek") + r').</p>'
-  r'<p><b>Két nem nullvektor szöge</b>: közös kezdőpontba tolva, $0^\circ\le\varphi\le180^\circ$. A $\vec b$ '
-  r'<b>skaláris vetülete</b> az $\vec a$-ra $|\vec b|\cos\varphi$ — hegyesszögnél pozitív, '
-  r'derékszögnél $0$, tompaszögnél negatív (' + h(A1, "def-szog-vetulet") + r').</p>',
+  r'<p>A műveletekkel úgy számolunk, mint a betűs kifejezésekkel (' + h(A1, "tetel-muveletek") + (
+                                                                                                          ').</p><p><b>Két nem nullvektor szöge</b>: közös kezdőpontba tolva, $0^\\circ\\le\\varphi\\le180^\\circ$. '
+                                                                                                          'A $\\vec b$ <b>skaláris vetülete</b> az $\\vec a$-ra $|\\vec b|\\cos\\varphi$ — '
+                                                                                                          '$0^\\circ\\le\\varphi<90^\\circ$ esetén pozitív, derékszögnél $0$, $90^\\circ<\\varphi\\le180^\\circ$ '
+                                                                                                          'esetén negatív ('
+                                                                                                      ) + h(A1, "def-szog-vetulet") + r').</p>',
  ]),
 
  ("Koordináták a térben", [
@@ -133,10 +138,12 @@ OSSZ = [
  ]),
 
  ("A két szorzat egymás mellett", [
-  r'<table class="tt-table">'
-  r'<tr><th></th><th>skaláris szorzat $\vec a\cdot\vec b$</th><th>vektoriális szorzat $\vec a\times\vec b$</th></tr>'
-  r'<tr><td>eredménye</td><td><b>szám</b></td><td><b>vektor</b>, merőleges mindkét tényezőre</td></tr>'
-  r'<tr><td>definíció</td><td>$|\vec a|\,|\vec b|\cos\varphi$ (' + h(B1, "def-skalaris") + r')</td>'
+  (
+      '<table class="tt-table"><tr><th></th><th>skaláris szorzat $\\vec a\\cdot\\vec b$</th><th>vektoriális '
+      'szorzat $\\vec a\\times\\vec b$</th></tr><tr><td>eredménye</td><td><b>szám</b></td><td><b>vektor</b>, '
+      'nem nulla eredménynél merőleges mindkét tényezőre</td></tr><tr><td>definíció</td><td>$|\\vec '
+      'a|\\,|\\vec b|\\cos\\varphi$ ('
+  ) + h(B1, "def-skalaris") + r')</td>'
   r'<td>intenzitása $|\vec a|\,|\vec b|\sin\varphi$, irányítása jobbkéz-szabály (' + h(B2, "def-vektorialis") + r')</td></tr>'
   r'<tr><td>koordinátákkal</td><td>$x_1x_2+y_1y_2+z_1z_2$ (' + h(B1, "tetel-skalaris-koordinatak") + r')</td>'
   r'<td>$\begin{vmatrix}\vec i&\vec j&\vec k\\ x_1&y_1&z_1\\ x_2&y_2&z_2\end{vmatrix}$, előjelek $+\,-\,+$ (' + h(B2, "tetel-vektorialis-koordinatak") + r')</td></tr>'
@@ -145,26 +152,31 @@ OSSZ = [
   r'<tr><td>sorrend</td><td>$\vec a\cdot\vec b=\vec b\cdot\vec a$</td><td>$\vec b\times\vec a=-\vec a\times\vec b$</td></tr>'
   r'<tr><td>önmagával</td><td>$\vec a\cdot\vec a=|\vec a|^2$</td><td>$\vec a\times\vec a=\vec 0$</td></tr>'
   r'<tr><td>legfontosabb használat</td><td><b>szög</b> (nem nullvektorokra): $\cos\varphi=\dfrac{\vec a\cdot\vec b}{|\vec a|\,|\vec b|}$</td>'
-  r'<td><b>terület</b>: $T_{\text{par}}=|\vec a\times\vec b|$, $T_{\triangle}=\tfrac12|\vec a\times\vec b|$ (' + h(B2, "tetel-terulet") + r')</td></tr>'
-  r'<tr><td>további alkalmazás</td><td><b>munka</b>: $W=\vec F\cdot\vec s=|\vec F|\,|\vec s|\cos\varphi$</td>'
-  r'<td><b>magasság, pont–egyenes távolság</b>: $m=\dfrac{2T}{\text{alap}}=\dfrac{|\vec a\times\vec b|}{|\vec a|}$</td></tr>'
-  r'</table>'
-  r'<p>Mindkettő disztributív, és a számszorzó kiemelhető; a vektoriális szorzat tagonkénti kifejtésénél a tényezők sorrendje nem cserélhető fel. Részletes döntési táblázat: '
-  r'melyik szorzat mire (' + h(C1, "tetel-melyik-szorzat") + r').</p>'
-  r'<p><b>A szög számológéppel</b> (' + h(B1, "pelda-szog") + r'): fok üzemmód (<b>D</b>/<b>DEG</b>); '
-  r'előbb a tört értéke, majd <code>SHIFT cos Ans =</code> (más gépeken <code>2nd cos</code> vagy <code>INV cos</code>). '
-  r'A skaláris szorzat előjele előre megmondja, hogy $90^\circ$ alatti vagy fölötti szöget kell kapnod ($0$ esetén pontosan $90^\circ$).</p>',
+  r'<td><b>terület</b>: $T_{\text{par}}=|\vec a\times\vec b|$, $T_{\triangle}=\tfrac12|\vec a\times\vec b|$ (' + h(B2, "tetel-terulet") + (
+                                                                                                                                               ')</td></tr><tr><td>további alkalmazás</td><td><b>állandó erő munkája</b>: $W=\\vec F\\cdot\\vec '
+                                                                                                                                               's=|\\vec F|\\,|\\vec s|\\cos\\varphi$</td><td><b>magasság, pont–egyenes távolság</b> ($\\vec a\\ne\\vec '
+                                                                                                                                               '0$): $m=\\dfrac{2T}{\\text{alap}}=\\dfrac{|\\vec a\\times\\vec b|}{|\\vec '
+                                                                                                                                               'a|}$</td></tr></table><p>Mindkettő disztributív, és a számszorzó kiemelhető; a vektoriális szorzat '
+                                                                                                                                               'tagonkénti kifejtésénél a tényezők sorrendje nem cserélhető fel. Részletes döntési táblázat: melyik '
+                                                                                                                                               'szorzat mire ('
+                                                                                                                                           ) + h(C1, "tetel-melyik-szorzat") + r').</p>'
+  r'<p><b>A szög számológéppel</b> (' + h(B1, "pelda-szog") + '): fok üzemmód (<b>D</b>/<b>DEG</b>); előbb a tört értéke, majd <code>SHIFT cos Ans =</code> (más gépeken <code>2nd cos</code> vagy <code>INV cos</code>). Két nem nullvektornál a skaláris szorzat előjele előre megmondja, hogy $90^\\circ$ alatti vagy fölötti szöget kell kapnod ($0$ esetén pontosan $90^\\circ$).</p>',
  ]),
 
  ("Maxi csapdái — a tipikus hibák", [
-  r'<ul>'
-  r'<li><b>Fej–láb szög:</b> ha a $\vec b$-t az $\vec a$ végpontjához illeszted, a csatlakozásnál látszó szög a mellékszög — a szöget közös kezdőpontból mérjük.</li>'
-  r'<li><b>$\overrightarrow{AB}=A-B$:</b> fordítva! Végpont mínusz kezdőpont.</li>'
-  r'<li><b>Hiányzó tag:</b> $2\vec i-\vec k=(2;0;-1)$, nem $(2;-1)$.</li>'
-  r'<li><b>$|\vec a+\vec b|=|\vec a|+|\vec b|$:</b> csak azonos irányításnál igaz.</li>'
-  r'<li><b>A skaláris szorzat nem vektor:</b> nem $(x_1x_2;\,y_1y_2;\,z_1z_2)$, hanem a három szorzat <b>összege</b>, egy szám.</li>'
-  r'<li><b>A középső előjel:</b> a vektoriális szorzatban $-\vec j(\dots)$ áll. Ellenőrzés: az eredmény skaláris szorzata mindkét tényezővel $0$.</li>'
-  r'<li><b>A háromszög szöge:</b> mindkét vektor abból a csúcsból induljon ($\overrightarrow{AB}$, $\overrightarrow{AC}$) — ha csak az egyiket fordítod meg (pl. $\overrightarrow{AB}$ és $\overrightarrow{CA}$), a mellékszöget kapod (' + h(C1, "pelda-haromszog") + r').</li>'
+  (
+      '<ul><li><b>Fej–láb szög:</b> ha a $\\vec b$-t az $\\vec a$ végpontjához illeszted, a csatlakozásnál '
+      'látszó szög a mellékszög — a szöget közös kezdőpontból '
+      'mérjük.</li><li><b>$\\overrightarrow{AB}=A-B$:</b> fordítva! Végpont mínusz '
+      'kezdőpont.</li><li><b>Hiányzó tag:</b> $2\\vec i-\\vec k=(2;0;-1)$, nem $(2;-1)$.</li><li><b>$|\\vec '
+      'a+\\vec b|=|\\vec a|+|\\vec b|$:</b> nem nullvektoroknál csak azonos irányítás esetén igaz; akkor is '
+      'teljesül, ha valamelyik nullvektor.</li><li><b>A skaláris szorzat nem vektor:</b> nem '
+      '$(x_1x_2;\\,y_1y_2;\\,z_1z_2)$, hanem a három szorzat <b>összege</b>, egy szám.</li><li><b>A középső '
+      'előjel:</b> a vektoriális szorzatban $-\\vec j(\\dots)$ áll. Ellenőrzés: az eredmény skaláris '
+      'szorzata mindkét tényezővel $0$.</li><li><b>A háromszög szöge:</b> mindkét vektor abból a csúcsból '
+      'induljon ($\\overrightarrow{AB}$, $\\overrightarrow{AC}$) — ha csak az egyiket fordítod meg (pl. '
+      '$\\overrightarrow{AB}$ és $\\overrightarrow{CA}$), a mellékszöget kapod ('
+  ) + h(C1, "pelda-haromszog") + r').</li>'
   r'<li><b>Radián mód:</b> nézd meg a kijelzőn a <b>D</b> / <b>R</b> / <b>G</b> jelet. Gyanús, ha $0$ és $3{,}14$ közötti szám jön ki, pedig a skaláris szorzat alapján nagyobb szögre számítasz.</li>'
   r'</ul>',
   abra(svg_vektorialis(w=340, h=250, leiras="Az a és b vektor paralelogrammája és a rá merőleges a × b"),

@@ -33,7 +33,7 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/meduza.webp" alt="Medúza — a Királyi Család hangja" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Medúza:</b> A Kamra három irányban nyúlik, és a műszerek minden pontra <b>három számot</b> adnak. Crni Grom szerint ez nem teher, hanem ajándék: ha a nyilat három számmá fordítjuk, a vektorműveletek egyszerű <b>számolássá</b> válnak. Nem kell rajzolni — elég összeadni.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/meduza.webp" alt="Medúza — a Királyi Család hangja" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Medúza:</b> A Kamra három irányban nyúlik, és a műszerek minden pontra <b>három számot</b> adnak. Crni Grom szerint ez nem teher, hanem ajándék: ha a nyilat három számmá fordítjuk, a vektorműveletek egyszerű <b>számolássá</b> válnak. A koordinátákkal külön-külön számolunk; egy vázlat közben segíthet ellenőrizni az irányokat.</p></div>
 
     <p>Ebben az egységben felépítjük a <b>térbeli derékszögű koordináta-rendszert</b>, megadjuk a vektorokat koordinátáikkal, és megtanuljuk, hogyan számolható ki velük egy vektor <b>intenzitása</b> és két pont <b>távolsága</b>.</p>
 
@@ -41,7 +41,7 @@
 
     <div class="doboz definicio" id="def-koordinatak">
       <p class="cim"><span class="ikon">📗</span> Térbeli koordináta-rendszer · a pont koordinátái</p>
-      <p>A <b>térbeli derékszögű koordináta-rendszer</b> három, közös <span class="math inline">\(O\)</span> kezdőpontú, páronként merőleges számegyenes: az <span class="math inline">\(x\)</span>, az <span class="math inline">\(y\)</span> és a <span class="math inline">\(z\)</span> tengely. A rendszer <b>jobbsodrású</b>: ha jobb kezünk hüvelykujja az <span class="math inline">\(x\)</span>, mutatóujja az <span class="math inline">\(y\)</span> tengely pozitív fele felé mutat, akkor a behajlított középső ujjunk a <span class="math inline">\(z\)</span> tengely pozitív fele felé mutat.</p><p>A tér egy <span class="math inline">\(P\)</span> pontjának <b>koordinátái</b>: vetítsük merőlegesen a pontot a három tengelyre — a vetületek helyén leolvasott három szám <span class="math inline">\(P(x;y;z)\)</span>. Szemléletesen: az <span class="math inline">\(O\)</span> és a <span class="math inline">\(P\)</span> egy olyan tengelyekkel párhuzamos élű <b>téglatest</b> testátlójának két végpontja, amelynek élei <span class="math inline">\(|x|\)</span>, <span class="math inline">\(|y|\)</span> és <span class="math inline">\(|z|\)</span>. (Ha egy koordináta <span class="math inline">\(0\)</span>, a „doboz” téglalappá vagy szakasszá lapul.)</p>
+      <p>A <b>térbeli derékszögű koordináta-rendszer</b> három, közös <span class="math inline">\(O\)</span> kezdőpontú, páronként merőleges számegyenes: az <span class="math inline">\(x\)</span>, az <span class="math inline">\(y\)</span> és a <span class="math inline">\(z\)</span> tengely. A rendszer <b>jobbsodrású</b>: ha jobb kezünk hüvelykujja az <span class="math inline">\(x\)</span>, mutatóujja az <span class="math inline">\(y\)</span> tengely pozitív fele felé mutat, akkor a behajlított középső ujjunk a <span class="math inline">\(z\)</span> tengely pozitív fele felé mutat.</p><p>A tér egy <span class="math inline">\(P\)</span> pontjának <b>koordinátái</b>: vetítsük merőlegesen a pontot a három tengelyre — a vetületek helyén leolvasott három szám <span class="math inline">\(P(x;y;z)\)</span>. Szemléletesen: az <span class="math inline">\(O\)</span> és a <span class="math inline">\(P\)</span> egy olyan tengelyekkel párhuzamos élű <b>téglatest</b> testátlójának két végpontja, amelynek élei <span class="math inline">\(|x|\)</span>, <span class="math inline">\(|y|\)</span> és <span class="math inline">\(|z|\)</span>. (Ha valamelyik koordináta <span class="math inline">\(0\)</span>, a „doboz” téglalappá, szakasszá vagy ponttá lapul.)</p>
     </div>
 
     <div class="svgcard">
@@ -85,7 +85,7 @@
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
-      <p>Egy 3D-nyomtató fúvókája és minden videojáték-motor pontosan így, derékszögű <b>számhármasokkal</b> írja le a teret (a telefonod GPS-e is számhármast ad: szélességet, hosszúságot és magasságot). Amikor egy játékban a szereplő előrelép, a program valójában egy vektort ad hozzá a helyzetét leíró számhármashoz — ennyi az egész.</p>
+      <p>Egy derékszögű koordinátákkal vezérelt 3D-nyomtatónál számhármas adja meg a fúvóka helyzetét. Egy térbeli játékban is leírhatjuk így a szereplő helyét: ha elmozdul, az elmozdulásvektor koordinátáit hozzáadjuk a helyét megadó számhármashoz.</p>
     </div>
 
     <h2 id="s2">A vektor koordinátái</h2>

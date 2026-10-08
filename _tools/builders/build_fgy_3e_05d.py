@@ -168,8 +168,11 @@ ALAP = [
  (r"Egy origó középpontú, $x$-tengelyen fekvő fókuszú ellipszis nagytengelye $10$, kistengelye $4$ egység. "
   r"Írd fel az egyenletét!", None, r"$\dfrac{x^2}{25}+\dfrac{y^2}{4}=1$"),
 
- (r"Egy kertész így jelöl ki ellipszis alakú virágágyást: két cöveket $6$ méterre ver le egymástól, egy "
-  r"$10$ méteres zsinór két végét a cövekekhez köti, és a kifeszített zsinór mentén körbe rajzol.",
+ ((
+      'Egy kertész így jelöl ki ellipszis alakú virágágyást: két cöveket $6$ méterre ver le egymástól, egy '
+      '$10$ méteres zsinór két végét a cövekekhez köti, és egy pálcával feszesen tartja a zsinórt, és a '
+      'pálcát körbevezetve megrajzolja a virágágyás határát.'
+  ),
   [r"Az ellipszis mely adatainak felel meg a zsinór hossza és a cövekek távolsága?",
    r"Írd fel az ellipszis egyenletét, ha a cövekek az $x$-tengelyen, az origóra szimmetrikusan állnak!",
    r"Milyen hosszú és milyen széles lesz a virágágyás?"],

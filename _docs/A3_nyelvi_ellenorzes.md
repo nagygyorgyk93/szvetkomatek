@@ -2,12 +2,11 @@
 
 ## Hatókör és állapot
 
-**Jelenlegi összesítés:** az 1e és a 2e teljes A3-auditja helyben elkészült:
-**1e 77/77**, **2e 65/65 HTML-oldal**. A 3e/01–03 három teljes témakörével
-a 3e **47/92 oldalra** jutott. A 3e/04–06 és az osztály főoldala, továbbá
-a 4e teljes A3-auditja hátra van.
+**Jelenlegi összesítés:** az 1e, a 2e és a 3e teljes A3-auditja helyben elkészült:
+**1e 77/77**, **2e 65/65**, **3e 92/92 HTML-oldal**.
+A 4e teljes A3-auditja hátra van.
 A tanár kérésére az adagok 2–3 teljes témakört fognak össze.
-A munka eddig huszonhárom adagban készült; az alábbi adatok
+A munka eddig huszonnégy adagban készült; az alábbi adatok
 az egyes munkamenetek eredményei, a legfrissebb bejegyzés a végén található.
 
 **2026-10-05, első adag:** az 1e/01 három függvényes tananyaglapjának teljes szövegét
@@ -2479,3 +2478,118 @@ helyett a repó végleges helyi fájljait ellenőriztük.
 A 3e/04–06 és az osztály főoldala 45 további oldal; a 4e A3-auditja hátra van.
 **Tanári döntés kell: nincs nyitott kérdés.** Helyi main, új ág és push nélkül.
 Következő adag: a 3e/04–06 három teljes témaköre és az osztály főoldala.
+
+## 2026-10-08 — huszonnegyedik adag: 3e/04–06 és az osztály főoldala; a 3e A3 lezárása
+
+A vektorok, analitikus geometria, indukció és sorozatok három teljes témaköre,
+valamint a 3e osztály főoldala: **45 HTML-oldal** teljes szöveg szerint átnézve.
+Ebből 23 tananyag, 12 gyakorló/házi, három témakörnyitó, három összefoglaló,
+három terepküldetés és az osztály főoldala. A tanár munkarendje szerint három
+témakör egy adagban készült. Ezzel a 3e teljes A3-auditja **92/92 oldalra** kész.
+
+Kiindulás: **73d097d**, tiszta helyi main, az origin/main helyi referenciája
+előtt egy committal; az eltérés a munka elején jelezve. Távoli frissítés nem
+történt. A matematika-3e skill kimenetei és sztandardjai mérvadók, a meglévő
+kiegészítő anyagok megmaradtak. Az indukcióhoz továbbra is csak tananyag és
+kidolgozott szemléltető példák tartoznak; önálló gyakorlófeladat nem került be.
+
+| Témakör | Oldal | Feladatkártya | SVG | Kvíz |
+|---|---:|---:|---:|---:|
+| 04 — vektorok | 11 | 97 | 17 | 10 |
+| 05 — analitikus geometria | 23 | 199 | 34 | 26 |
+| 06 — indukció, sorozatok | 10 | 67 | 17 | 9 |
+| Osztály főoldala | 1 | 0 | 0 | 0 |
+| Összesen | 45 | 363 | 68 | 45 |
+
+### Javítás előtt bemutatott hibák és a lektori pontosítások
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Vektorok, szög és összefoglaló | Nullvektoros kivételek hiányoznak; a 180°-os szöget tompaszögként kezeli; a jobbkéz-szabálynál irány és irányítás keveredik | Magas/közepes | Builder: nem nullvektorok és nem párhuzamos tényezők feltételei, 90° fölötti szög, helyes irányítás |
+| Vektorok fizikai példái és bevezetők | GPS-koordinátát és síkbeli modellt kever; állandó erő és vízszintes elmozdulás feltétele hiányos; túlzó átvezetők | Közepes | Builder: derékszögű koordináta-rendszer, állandó erők, feltételezett mozgás, rövidebb magyar mondatok |
+| Vektorszög számológéppel | Kerekített érték után végtelen tizedestörtet jelöl; a szög további jegyei pontatlanok | Közepes | Builder: közelítés külön jelölve; a közbenső eredmény megőrzése és helyes számjegyek, végső válasz változatlan |
+| Analitikus geometria képletei és összefoglalók | Különböző pontok, tengelyhelyzetek és nem nulla együtthatók feltételei hiányoznak; hiperbólánál távolságkülönbség előjele bizonytalan | Magas | Builder: helyben kimondott feltételek, abszolút távolságkülönbség, mindkét lehetséges metszéspont |
+| Ellipszis, második házi K1 | Középpont és tengelyirány nélkül nem egyértelmű az egyenlet | Magas | Builder: origó középpontú, koordinátatengelyekkel párhuzamos tengelyű ellipszis |
+| Parabola, kúpszelet és hétköznapi példák | A sík és alkotó párhuzamossága önmagában nem elég; tetszőleges üstököst vagy hajított pályát túl általánosan ír le | Magas/közepes | Builder: a metszősík és a tengely megfelelő szöge, idealizált fénykúp, Halley konkrét pályája, pillanatnyi sebesség és érintő |
+| Parabola, repülési terület és híd K8 | Repülési irány nélkül belépést/kilépést nevez meg; a híd magasságának viszonyítási szintje és a tengelyek nem egyértelműek | Magas | Builder: határpontok; azonos magasságú végpontok, vízszintes x és felfelé mutató y, végpontok szintje fölötti magasság |
+| Analitikus ábra és kertészes példa | Az érintési pont T helyett P felirattal szerepel; a zsineg–ceruza művelet nehezen követhető | Közepes | Builder: az SVG-ben csak P→T címke, változatlan koordinátákkal; követhető szerkesztési leírás |
+| Rekurzió, monotonitás és összegképletek | Kezdőtag nélkül is egyértelműséget sugall; néhány tagból általános következtetés; q=1 és ismeretlen tagszám kivételei hiányosak | Magas | Builder: kezdőfeltétel, minden indexre szóló követelmény, vízszintes grafikon, d=0 és q=±1 kivételek, összes pozitív egész megoldás |
+| Indukció magyarázata | A húrok körvonali találkozását is kizárja; a korábbi algebrai bizonyításokat puszta trükknek mondja | Magas/közepes | Builder: a körlap belsejében nincs hármas találkozás; teljes indukció mint másik bizonyítási módszer |
+| Sorozatok példái és kamatmodell | Azonos anyagból nem következik azonos vastagság; túl általános növekedés és világgazdasági összehasonlítás; egyszerű kamatnál is tőkésítést sugall | Közepes | Builder: azonos vastagság; megadott mértani modellek és papírfélbevágás; tőkésítés csak kamatos kamatnál, állandó névleges éves kamatláb és további pénzmozgások/költségek kizárása |
+| Bevezetők, magyar mondatok és történeti keret | Nehézkes, túlzó vagy lekezelő mondatok, indokolatlan teljesítményjóslatok, Gauss-anekdota bizonytalan életkora | Enyhe/közepes | Builder: konkrét tanulási lépések, természetesebb átvezetők, magyar idézőjelek és névelők; a játékos keret megmaradt, a bizonytalan életkor kikerült |
+| Média nyelvcímkéje és backlog | Egy angol applet „en-GB” címkéje nyersen jelenik meg; a 23. A3-adag összefoglalója az I fejezetbe került | Enyhe | Médiakatalógus: en, automatikus beillesztés; az előző és a mostani adag az A3 fejezetben szerepel |
+
+A történelem és a valós modellek ellenőrzött háttere: a Halley pályájáról
+a [NASA Halley-oldala](https://science.nasa.gov/solar-system/comets/1p-halley/),
+a bolygók ellipszispályájáról és a Nap fókuszhelyzetéről a
+[NASA Kepler-összefoglalója](https://science.nasa.gov/solar-system/orbits-and-keplers-laws/)
+tájékoztat. A Fibonacci-nyúlmodell történeti példájához a
+[St Andrews matematikatörténeti összefoglalója](https://mathshistory.st-andrews.ac.uk/Glossary/fibonacci_sequence/),
+a Hamilton-történethez a
+[Trinity College Hamilton-forrása](https://www.maths.tcd.ie/pub/HistMath/People/Hamilton/Quaternions.html)
+szolgált ellenőrzésül. A bizonytalan vagy fölöslegesen általános állítások
+helyén a konkrét matematikai modell feltételei szerepelnek.
+
+### Független ellenőrzés és megőrzés
+
+Három friss, kontextus nélküli lektor csak az eredeti tanulói szöveget kapta;
+a gyakorlók végeredményeit az első számolás előtt nem látták. Mind a 45 lap
+szövegét, a kidolgozott példákat, a 45 kvízt és a három terepküldetést átnézték.
+A szorzatok **45**, az ellipszis–hiperbola **43**, a parabola **23** és a
+sorozatok **57 kártyájának** minden részválaszát önállóan számolták, majd
+a tényleges kulcsokkal összevetették: **168/168 kártya kulcsa helyes**.
+Egy eltérés a lektor korábbi saját számításában volt; külön helyesbítette,
+a honlap kulcsát nem kellett javítani. Projektválaszok csak privát kontrollban.
+A teljes javított szövegeket újraolvasták; a végső hét mondatpontosítást is
+ellenőrizték. Teljes A3-szövegaudit; a 363 kártya újramegoldásánál mintavétel.
+
+**21 builder** újraépítve, a beépített öntesztek sikeresek; **16 builder**
+módosult. Az AST-kontroll szerint a programszerkezet és numerikus konstansok
+megmaradtak, az egyetlen engedélyezett ábrabeavatkozás a T címke cseréje.
+**30 HTML-oldal** változott; a másik 15 átnézett oldalhoz nem kellett javítás.
+Új feladat és új feladatszámadat nincs.
+
+Mind a **363 végeredmény**, az összes feladat számadata, állandó horgonya,
+korábbi hivatkozása, képe, szkriptje, háttér- és médiaazonosítója megmaradt.
+A híd K8 szövegébe két tengelyjel, x és y került a koordinátafeltételhez;
+a számértékek változatlanok. A 45 kvíz helyes válasza megmaradt; egy
+válaszlehetőségben a rekurzió egyértelműségének megfogalmazása pontosult.
+**68 SVG** megmaradt, geometriájuk változatlan: egy látható P→T feliratcsere;
+a hatszög nyílmarkerének belső azonosítója és hivatkozása következetesen
+újragenerálódott, más eltérés nincs. Egy applet nyelvcímkéje „angol” lett,
+tartalma és beállításai változatlanok. Az indukcióhoz önálló gyakorlófeladat
+nem került be, a szemléltető példák megmaradtak.
+
+### Ellenőrzések és korlátok
+
+| Ellenőrzés | Eredmény |
+|---|---|
+| Kép → média → háttér → naplótérkép → keresőindex | Végleges újraépítés után sikeres; 334 aktív média 139 lapon |
+| Kánon, linkek, gyakorlósáv | 310 oldal, 0 kánon-/linkhiba; minden kártyát felad valamelyik egység |
+| Független kulcsteszt | 4499/4499, 0 eltérés |
+| Regressziós érzékenység | 4499/4499 = 100% |
+| jsdom / képletrender | Végleges 45 oldal, 5485 képlet, 45/45 kvíz, 0 hiba |
+| Edge, 360/390/1280 px | Zárt/nyitott lenyílók: 270 nézet; az utolsó hat lap külön 36 nézet; 0 elrendezési/KaTeX/JS/saját konzol/helyi 404 hiba |
+| axe, 390 px | 90 + 12 próba, 0 szabálysértés |
+| Nyomtatás, JavaScript be/ki | 90 + 12 lappróba; szövegek és lenyitható megoldások láthatók |
+| JavaScript nélkül | 45 + 6 oldal olvasható; képletek TeX-alakban |
+| Keresőindex | 308 nem üres bejegyzés, 30 változó URL, kizárólag e három témakörből |
+| Naplótérkép | Byte szerint változatlan: 184 egység, 2294 feladat, 12315 XP |
+
+A kánon két korábbi, 2e-s heurisztikus visszautalás-figyelmeztetése megmaradt;
+az érintett helyeken érvényes belső horgonylink van. A Python layout_teszt
+Playwright-csomagja nincs telepítve; a Node Playwright/Edge a jelenlegi
+forrásból ellenőrzött, azonos TULLOGOK függvényt futtatta. A mobilos bevezető,
+számológépes kidolgozás, T ábracímke, ellipszis- és hídfeltételek, tagszámos
+összefoglaló és kamatfeltételek 390 px-en szemrevételezve. A széles táblázat
+a közös keretben görgethető, egyedi oldalszintű CSS nincs.
+
+Valódi képernyőolvasó, más böngésző, minden PDF-oldaltörés és háttérpont kézi
+kontrasztja, valamint a külső média új működési/tartalmi próbája nem történt.
+Az axe eredménye nem teljes WCAG-minősítés. A végleges helyi repófájlokat
+vizsgáltuk; az élő publikált oldal nem tartalmazza automatikusan ezt az adagot.
+
+**Állapot:** 1e **77/77**, 2e **65/65**, 3e **92/92** teljes A3-auditja helyben kész.
+A 4e teljes A3-auditja hátra van. **Tanári döntés kell: nincs nyitott tartalmi kérdés.**
+Helyi main, új ág és push nélkül. A következő nagyobb adaghoz választás:
+javaslat a 4e A3, első három témakör egy adagban.

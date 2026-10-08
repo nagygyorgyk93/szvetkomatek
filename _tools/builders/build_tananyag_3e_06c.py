@@ -112,23 +112,25 @@ C = [
    r'megy tovább <b>negyven</b> eseten át, egészen $n=39$-ig. Aztán $n=40$-nél:</p>'
    r'$$40^2+40+41=1681=41^2 ,$$'
    r'<p>ami nem prím. Negyven jó eset — és a negyvenegyedik megdönti az egészet.</p>',
-   r'<p><b>2. A kör tartományai.</b> Vegyél fel a körvonalon néhány pontot <b>általános '
-   r'helyzetben</b> — vagyis úgy, hogy semelyik három húr ne menjen át ugyanazon a ponton (hat '
-   r'pontnál tehát ne szabályos hatszöget rajzolj) —, és kösd össze mindegyiket mindegyikkel. '
-   r'Hány részre osztják a húrok a körlapot?</p>'
-   r'<div class="tblwrap"><table class="tt-table">'
-   r'<tr><th>pontok száma</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td><b>6</b></td></tr>'
-   r'<tr><th>tartományok</th><td>1</td><td>2</td><td>4</td><td>8</td><td>16</td><td><b>31</b></td></tr>'
-   r'</table></div>'
-   r'<p>Az első öt adat alapján mindenki $32$-t mond — a valódi érték $31$. A kettőzés szabálya '
-   r'öt eseten át tökéletesen működik, aztán vége.</p>',
+   (
+       '<p><b>2. A kör tartományai.</b> Vegyél fel a körvonalon néhány pontot <b>általános helyzetben</b> — '
+       'vagyis úgy, hogy a körlap belsejében semelyik három húr ne találkozzon ugyanabban a pontban (hat '
+       'pontnál tehát ne szabályos hatszöget rajzolj) —, és kösd össze mindegyiket mindegyikkel. Hány '
+       'részre osztják a húrok a körlapot?</p><div class="tblwrap"><table class="tt-table"><tr><th>pontok '
+       'száma</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td><b>6</b></td></tr><tr><th>tartományo'
+       'k</th><td>1</td><td>2</td><td>4</td><td>8</td><td>16</td><td><b>31</b></td></tr></table></div><p>Az '
+       'első öt adatból sejtett kettőzési szabály $32$-t adna — a valódi érték $31$. A kettőzés szabálya öt '
+       'eseten át tökéletesen működik, aztán vége.</p>'
+   ),
    doboz("csapda", "Maxi trükkje",
-         r'<p>Maxi kiszámolja a láncreakció első három lépését, mindhárom a jóslata szerint alakul, '
-         r'és bejelenti: „a képletem igaz 1-re, 2-re és 3-ra, tehát minden $n$-re igaz”.</p>'
-         r'<p>Ez a <b>hiányos indukció</b> csapdája. Akárhány esetet ellenőrzünk, mindig marad '
-         r'végtelen sok ellenőrizetlen — és a fenti két példa mutatja, hogy a törés bármikor '
-         r'bekövetkezhet. Egyetlen ellenpélda viszont elég ahhoz, hogy az állítást <b>megdöntsük</b>: '
-         r'cáfolni egy eset is tud, bizonyítani egy sem.</p>'),
+         (
+             '<p>Maxi kiszámolja a láncreakció első három lépését, mindhárom a jóslata szerint alakul, és '
+             'bejelenti: „a képletem igaz 1-re, 2-re és 3-ra, tehát minden $n$-re igaz”.</p><p>Ez a <b>hiányos '
+             'indukció</b> csapdája. Akárhány esetet ellenőrzünk, mindig marad végtelen sok ellenőrizetlen — és a '
+             'fenti két példa mutatja, hogy a törés bármikor bekövetkezhet. Egyetlen ellenpélda viszont elég '
+             'ahhoz, hogy az állítást <b>megdöntsük</b>: egy „minden $n$-re” állítás cáfolásához elég egy '
+             'ellenpélda, az igazolásához viszont nem elég néhány jó eset.</p>'
+         )),
  ]),
 
  ("A teljes indukció: a dominó-elv", [
@@ -147,14 +149,15 @@ C = [
          r'<p>A két feltétel elválaszthatatlan: a bázis indítja el a sort, a lépés pedig továbbviszi.</p>',
          hid="def-teljes-indukcio"),
    doboz("csapda", "Maxi trükkje — a hiányzó bázis",
-         r'<p>Maxi „bebizonyítja”, hogy az első $n$ természetes szám összege '
-         r'$\frac{n(n+1)}{2}+5$. A lépést valóban hibátlanul végzi el: ha a $k$-ra igaz lenne, akkor</p>'
-         r'$$\frac{k(k+1)}{2}+5+(k+1)=\frac{(k+1)(k+2)}{2}+5 ,$$'
-         r'<p>vagyis a képlet öröklődne $k+1$-re. Csakhogy a <b>bázis hamis</b>: $n=1$-re a bal oldal '
-         r'$1$, a képlet szerint viszont $6$ lenne.</p>'
-         r'<p>A dominósor tehát tökéletesen fel van állítva — csak épp senki nem lökte meg. '
-         r'<b>Bázis nélkül a lépés hamis állítást is továbbvisz.</b> Fordítva ugyanígy: pusztán a '
-         r'bázisból (néhány jó esetből) sem következik semmi — az az előző szakasz csapdája volt.</p>'),
+         (
+             '<p>Maxi „bebizonyítja”, hogy az első $n$ természetes szám összege $\\frac{n(n+1)}{2}+5$. A lépést '
+             'valóban hibátlanul végzi el: ha a $k$-ra igaz lenne, '
+             'akkor</p>$$\\frac{k(k+1)}{2}+5+(k+1)=\\frac{(k+1)(k+2)}{2}+5 ,$$<p>vagyis a képlet öröklődne '
+             '$k+1$-re. Csakhogy a <b>bázis hamis</b>: $n=1$-re a bal oldal $1$, a képlet szerint viszont $6$ '
+             'lenne.</p><p>A dominósor tehát tökéletesen fel van állítva — csak épp senki nem lökte meg. <b>Igaz '
+             'bázis nélkül az indukciós lépés nem igazolja az állítást.</b> Fordítva: pusztán a bázis vagy néhány '
+             'jó eset sem bizonyítja a minden $n$-re szóló állítást — az az előző szakasz csapdája volt.</p>'
+         )),
  ]),
 
  ("Egy teljes bizonyítás, lépésről lépésre", [
@@ -181,19 +184,21 @@ C = [
    r'<p>Figyeld meg a lépés szerkezetét: a feltevést (a $k$-ra vonatkozó egyenlőséget) '
    r'<b>felhasználjuk</b>, nem bizonyítjuk — a bizonyítandó a $k+1$-re szóló állítás. Ezért '
    r'nevezzük a feltevést <i>indukciós feltevésnek</i>.</p>',
-   r'<p>És innen nézve derül ki, mire volt jó az egész: a '
-   r'<a href="tananyag-szamtani-sorozat.html#tetel-szamtani-sn">számtani sorozat összegképletét</a> '
-   r'és a <a href="tananyag-mertani-sorozat.html#tetel-mertani-sn">mértani sorozat összegképletét</a> '
-   r'ugyanígy lehet igazolni. Eddig úgy használtuk őket, hogy egy ügyes trükkel megkaptuk; az '
-   r'indukció az, ami <b>garantálja</b>, hogy nemcsak az első néhány, hanem minden $n$-re '
-   r'érvényesek.</p>',
-   brief('<b>Kanrak:</b> A láncreakció képletét felírtuk, a bizonyítás áll — és ez az, amit Maxi nem '
-         'tudott kivédeni. Nem lépésről lépésre fogtuk meg, hanem egyszerre az összesre: az '
-         '$n$-edik lépésnél pontosan tudjuk, hol tart, tehát tudjuk, hol kell megállítani. '
-         '<b>A Kristálypára-anomália lezárva.</b><br>'
-         'Prizma: a zóna stabil, a Királyi Család visszavonul. A következő évadban már nem a tér '
-         'görbül — hanem a változás sebessége lesz a tét. Addig is: a '
-         '<a href="osszefoglalo.html">Taktikai memóriakártya</a> mindent egy lapon tart.', outro=True),
+   (
+       '<p>És innen nézve derül ki, mire volt jó az egész: a <a '
+       'href="tananyag-szamtani-sorozat.html#tetel-szamtani-sn">számtani sorozat összegképletét</a> és a <a '
+       'href="tananyag-mertani-sorozat.html#tetel-mertani-sn">mértani sorozat összegképletét</a> ugyanígy '
+       'lehet igazolni. A korábbi, általános $n$-re elvégzett algebrai levezetések már <b>bizonyították</b> '
+       'ezeket a képleteket. Teljes indukcióval másik bizonyítást is adhatunk rájuk.</p>'
+   ),
+   brief((
+             '<b>Kanrak:</b> A láncreakció képletét felírtuk, a bizonyítás áll — és ez az, amit Maxi nem tudott '
+             'kivédeni. Nem lépésről lépésre fogtuk meg, hanem egyszerre az összesre: az $n$-edik lépésnél '
+             'pontosan tudjuk, hol tart, tehát tudjuk, hol kell megállítani. <b>A Kristálypára-anomália '
+             'lezárva.</b><br><b>Prizma:</b> A zóna stabil, a Királyi Család visszavonul. A következő évadban már '
+             'nem a tér görbül — hanem a változás sebessége lesz a tét. Addig is: a <a '
+             'href="osszefoglalo.html">Taktikai memóriakártya</a> mindent egy lapon tart.'
+         ), outro=True),
  ]),
 ]
 

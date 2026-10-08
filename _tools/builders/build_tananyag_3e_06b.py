@@ -146,10 +146,12 @@ SVG_GAUSS = svg_gauss()
 # ---------------------------------------------------------------- B1
 B1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Kanrak:</b> A mutáció első fázisában a generátor <b>ugyanannyit</b> tesz hozzá minden '
-         'lépésben. Ez a legszelídebb forgatókönyv — és a legjobban számolható: nem kell '
-         'végigkövetnünk száz lépést, egyetlen képlet megmondja a századik réteg vastagságát és '
-         'azt is, mennyi anyag épült be összesen.'),
+   brief((
+             '<b>Kanrak:</b> A mutáció első fázisában a generátor <b>ugyanannyit</b> tesz hozzá minden lépésben. '
+             'Ez a legszelídebb forgatókönyv — és a legjobban számolható: nem kell végigkövetnünk száz lépést, '
+             'egyetlen képlet megmondja a századik réteg vastagságát és az első száz réteg együttes vastagságát '
+             'is.'
+         )),
  ]),
 
  ("Az állandó különbség", [
@@ -193,8 +195,11 @@ B1 = [
  ]),
 
  ("Az első n tag összege", [
-   r'<p>A generátornak nemcsak az egyes rétegek vastagsága érdekes, hanem az is, hogy <b>összesen</b> '
-   r'mennyi anyag épült be. Írjuk fel az összeget kétszer: egyszer előrefelé, egyszer visszafelé.</p>',
+   (
+       '<p>A generátornak nemcsak az egyes rétegek vastagsága érdekes, hanem az is, hogy mekkora a rétegek '
+       '<b>együttes vastagsága</b>. Írjuk fel az összeget kétszer: egyszer előrefelé, egyszer '
+       'visszafelé.</p>'
+   ),
    abra(SVG_GAUSS, 'A párok összege mindig ugyanannyi: $a_1+a_6=6+26=32$. Hat ilyen párunk van, de '
         'közben az összeget kétszer írtuk fel — ezért osztunk kettővel.'),
    doboz("tetel", "Az első n tag összege",
@@ -203,19 +208,20 @@ B1 = [
          r'<b>másodikat</b> akkor, ha csak az $a_1$ és a $d$ adott. A kettő ugyanaz: az '
          r'$a_n=a_1+(n-1)d$ behelyettesítésével egymásba mennek át.</p>',
          hid="tetel-szamtani-sn"),
-   doboz("erdekesseg", "A kilencéves Gauss",
+   doboz("erdekesseg", 'A Gaussról szóló történet',
          r'<p>A történet szerint a tanító azzal akarta lefoglalni az osztályt, hogy adja össze az '
          r'$1$-től $100$-ig terjedő számokat. Carl Friedrich Gauss percek alatt végzett: észrevette, '
          r'hogy $1+100=101$, $2+99=101$, és így tovább — ötven ilyen pár van, tehát az összeg '
          r'$50\cdot101=5050$. Pontosan ezt a párosítást általánosítja a fenti képlet.</p>',
          hid="erd-gauss"),
    doboz("pelda", "Kristály-kamra szimuláció — a beépült anyag",
-         r'<p>A rétegek vastagsága számtani sorozatot alkot: $a_1=6$, $d=4$. Mekkora a 25. réteg, és '
-         r'mennyi anyag épült be az első 25 lépésben?</p>'
-         r'<p>A 25. réteg: $a_{25}=6+24\cdot4=102$.</p>'
-         r'<p>Az összeg az első alakkal: $S_{25}=\dfrac{25\,(6+102)}{2}=\dfrac{25\cdot108}{2}=1350$.</p>'
-         r'<p>Ellenőrzésképp a második alakkal: '
-         r'$S_{25}=\dfrac{25}{2}\bigl(12+24\cdot4\bigr)=\dfrac{25\cdot108}{2}=1350$ ✔</p>',
+         (
+             '<p>A rétegek vastagsága számtani sorozatot alkot: $a_1=6$, $d=4$. Mekkora a 25. réteg vastagsága, '
+             'és mekkora az első 25 réteg együttes vastagsága?</p><p>A 25. réteg: '
+             '$a_{25}=6+24\\cdot4=102$.</p><p>Az összeg az első alakkal: '
+             '$S_{25}=\\dfrac{25\\,(6+102)}{2}=\\dfrac{25\\cdot108}{2}=1350$.</p><p>Ellenőrzésképp a második alakkal: '
+             '$S_{25}=\\dfrac{25}{2}\\bigl(12+24\\cdot4\\bigr)=\\dfrac{25\\cdot108}{2}=1350$ ✔</p>'
+         ),
          hid="pelda-retegek"),
    kviz(r'Hány tagot adunk össze a $2+5+8+\dots+29$ összegben?',
         [r'$10$-et', r'$29$-et', r'$9$-et', r'$28$-at'], 0,
@@ -225,9 +231,10 @@ B1 = [
  ]),
 
  ("Két adatból az egész sorozat", [
-   r'<p>A számtani sorozatot <b>két adat</b> meghatározza: az $a_1$ és a $d$. Ha más két adatot '
-   r'ismerünk, egyenletrendszert írunk fel rájuk — pontosan úgy, ahogy a '
-   r'<a href="' + LIN3E + r'">lineáris egyenletrendszereknél</a> tanultuk.</p>',
+   (
+       '<p>A számtani sorozatot <b>két adat</b> meghatározza: az $a_1$ és a $d$. Ha más adatokból kell '
+       'meghatároznunk, egyenletrendszert írunk fel rájuk — pontosan úgy, ahogy a <a href="'
+   ) + LIN3E + r'">lineáris egyenletrendszereknél</a> tanultuk.</p>',
    doboz("pelda", "Két megadott tagból",
          r'<p>Egy számtani sorozat negyedik tagja $a_4=11$, tizenegyedik tagja $a_{11}=39$. '
          r'Mennyi az első húsz tag összege?</p>'
@@ -263,14 +270,17 @@ B1 = [
          r'fordítanunk a sorozat nyelvére ($a_1$, $d$, $n$), a végén pedig vissza.</p>',
          hid="pelda-szeksorok"),
    doboz("erdekesseg", "Hol találkozol vele?",
-         r'<p>Számtani sorozat az egyenlő <b>tőkerészletekben</b> törlesztett kölcsön fennálló '
-         r'tartozása, a fix '
-         r'alapdíj + óradíj szerinti számla, az egyenletesen gyorsuló mozgás másodpercenként megtett '
-         r'útja, és a raktárban minden nap ugyanannyival csökkenő készlet.</p>'),
+         (
+             '<p>Számtani sorozat az egyenlő <b>tőkerészletekben</b> törlesztett kölcsön fennálló tartozása, a '
+             'fix alapdíj + óradíj szerinti számla, az azonos irányú, állandó gyorsulású mozgás egymást követő '
+             'másodperceiben megtett út, és a raktárban minden nap ugyanannyival csökkenő készlet.</p>'
+         )),
    GY(FGY + "#alap-13", "A 13–20", FGY + "#kozep-9", "K 9–14"),
-   brief('<b>Kanrak:</b> A generátor átkapcsolt. A műszerek szerint a következő fázisban már nem '
-         'hozzáad, hanem <b>szoroz</b>: minden lépés az előző állapot többszöröse. Ez az a pont, '
-         'ahol a láncreakció veszélyessé válik — és ahol a bank is dolgozik.', outro=True),
+   brief((
+             '<b>Kanrak:</b> A generátor átkapcsolt. A műszerek szerint a következő fázisban már nem hozzáad, '
+             'hanem <b>szoroz</b>: minden lépés az előző állapot többszöröse. Ez az a pont, ahol a sorozat '
+             'hányadosát is meg kell ismernünk, hogy kiszámíthassuk a későbbi rétegeket.'
+         ), outro=True),
  ]),
 ]
 
@@ -300,30 +310,33 @@ B2 = [
          r'$$b_n=b_1\cdot q^{\,n-1} .$$'
          r'<p>Két tetszőleges tag között ugyanígy: $b_m=b_k\cdot q^{\,m-k}$.</p>',
          hid="tetel-mertani-bn"),
-   r'<p>Az alábbi táblázat <b>pozitív első tag</b> ($b_1\gt0$) esetére érvényes; negatív első '
-   r'tagnál minden tag előjelet vált, és a növekvő–csökkenő szerep megfordul.</p>'
-   r'<div class="tblwrap"><table class="tt-table">'
-   r'<tr><th>a hányados</th><th>a sorozat</th><th>példa</th></tr>'
-   r'<tr><td>$q\gt1$</td><td>növekvő</td><td>$3,\ 6,\ 12,\ 24,\dots$</td></tr>'
-   r'<tr><td>$0\lt q\lt1$</td><td>csökkenő, de pozitív marad</td><td>$80,\ 40,\ 20,\ 10,\dots$</td></tr>'
-   r'<tr><td>$q\lt0$</td><td>váltakozó előjelű</td><td>$4,\ -2,\ 1,\ -\frac12,\dots$</td></tr>'
-   r'<tr><td>$q=1$</td><td>állandó</td><td>$5,\ 5,\ 5,\dots$</td></tr>'
-   r'</table></div>',
+   (
+       '<p>Az alábbi táblázat <b>pozitív első tag</b> ($b_1\\gt0$) esetére érvényes; negatív első tagnál '
+       'minden tag előjelet vált. Pozitív hányadosnál a növekvő és csökkenő eset felcserélődik; negatív '
+       'hányadosnál továbbra is váltakoznak az előjelek.</p><div class="tblwrap"><table '
+       'class="tt-table"><tr><th>a hányados</th><th>a '
+       'sorozat</th><th>példa</th></tr><tr><td>$q\\gt1$</td><td>növekvő</td><td>$3,\\ 6,\\ 12,\\ '
+       '24,\\dots$</td></tr><tr><td>$0\\lt q\\lt1$</td><td>csökkenő, de pozitív marad</td><td>$80,\\ 40,\\ 20,\\ '
+       '10,\\dots$</td></tr><tr><td>$q\\lt0$</td><td>váltakozó előjelű</td><td>$4,\\ -2,\\ 1,\\ '
+       '-\\frac12,\\dots$</td></tr><tr><td>$q=1$</td><td>állandó</td><td>$5,\\ 5,\\ '
+       '5,\\dots$</td></tr></table></div>'
+   ),
    abra(SVG_MERTANI, 'A $3,\\ 6,\\ 12,\\ 24,\\ 48$ sorozat pontjai egy exponenciális görbére ülnek — '
         'ahogy a számtani sorozat pontjai egyenesre. A függőleges tengely egy osztása $5$ egység.'),
    doboz("erdekesseg", "Ismerős görbe",
-         r'<p>A pontok az <a href="' + EXP2E + r'">exponenciális függvény</a> grafikonjára esnek: a '
-         r'$b_n=3\cdot2^{\,n-1}$ sorozat ugyanaz, mint az $y=1{,}5\cdot2^{x}$ függvény értékei a '
-         r'pozitív egész $x=n$ helyeken. Ezért nő a mértani sorozat olyan gyorsan: a kitevőben van '
-         r'az $n$.</p>'),
+         r'<p>A pontok az <a href="' + EXP2E + (
+                                                   '">exponenciális függvény</a> grafikonjára esnek: a $b_n=3\\cdot2^{\\,n-1}$ sorozat ugyanaz, mint az '
+                                                   '$y=1{,}5\\cdot2^{x}$ függvény értékei a pozitív egész $x=n$ helyeken. Ezért nő ez a kétszereződő '
+                                                   'sorozat ilyen gyorsan: a kitevőben van az $n$.</p>'
+                                               )),
    doboz("csapda", "Maxi trükkje",
-         r'<p>Maxi két hibát is elkövet, és mindkettő ugyanoda vezet: túl nagy vagy rossz előjelű '
-         r'energiát jelent.</p>'
-         r'<p><b>1.</b> $b_{10}=b_1\cdot q^{10}$ — egy szorzással több a kelleténél. Helyesen a '
-         r'kitevő $n-1=9$.</p>'
-         r'<p><b>2.</b> A $(-2)^n$ és a $-2^n$ összekeverése. A $(-2)^4=16$, de $-2^4=-16$: a '
-         r'zárójel nélküli alakban a hatványozás megelőzi az előjelet. Váltakozó előjelű sorozatnál '
-         r'ezért mindig zárójelbe tesszük a negatív hányadost.</p>'),
+         (
+             '<p>Maxi két hibát is elkövet, és emiatt rossz értéket ad meg.</p><p><b>1.</b> $b_{10}=b_1\\cdot '
+             'q^{10}$ — egy szorzással több a kelleténél. Helyesen a kitevő $n-1=9$.</p><p><b>2.</b> A $(-2)^n$ '
+             'és a $-2^n$ összekeverése. A $(-2)^4=16$, de $-2^4=-16$: a zárójel nélküli alakban a hatványozás '
+             'megelőzi az előjelet. Váltakozó előjelű sorozatnál ezért mindig zárójelbe tesszük a negatív '
+             'hányadost.</p>'
+         )),
    kviz(r'Egy mértani sorozat első tagja $b_1=5$, hányadosa $q=-2$. Mennyi $b_4$?',
         [r'$-40$', r'$40$', r'$-80$', r'$80$'], 0,
         jo="✔ b₄ = 5 · (−2)³ = 5 · (−8) = −40: három szorzás, és a páratlan kitevő miatt negatív.",
@@ -350,11 +363,12 @@ B2 = [
          r'tehát a <b>11. lépésnél</b> lépi át. Ez a mértani növekedés lényege: a 9. lépésnél még '
          r'csak $S_9=1533$-nál tartott — az 5000 harmadánál sem.</p>', hid="pelda-lancreakcio"),
    doboz("erdekesseg", "A rizsszemek a sakktáblán",
-         r'<p>A legenda szerint a sakk feltalálója annyi rizsszemet kért jutalmul, hogy az első '
-         r'mezőre egy szem kerüljön, a másodikra kettő, a harmadikra négy, és így tovább. A hatvannégy '
-         r'mezőn $S_{64}=2^{64}-1$ szem lenne — több, mint a világ mai rizstermésének több száz '
-         r'évnyi mennyisége. '
-         r'A király a számtani sorozatra gondolt, a feltaláló a mértanira.</p>',
+         (
+             '<p>A legenda szerint a sakk feltalálója annyi rizsszemet kért jutalmul, hogy az első mezőre egy '
+             'szem kerüljön, a másodikra kettő, a harmadikra négy, és így tovább. A hatvannégy mezőn '
+             '$S_{64}=2^{64}-1$ szem lenne — ez tizennyolc trilliónál is több szem. A történet az ismételt '
+             'kétszerezés gyors növekedését szemlélteti.</p>'
+         ),
          hid="erd-sakktabla"),
  ]),
 
@@ -386,8 +400,9 @@ B2 = [
  ]),
 
  ("Kamat: egyszerű és kamatos", [
-   r'<p>A két sorozat különbsége a pénzügyekben a legszemléletesebb. Az '
-   r'<a href="' + KAMAT1E + r'#s1">egyszerű kamat</a> mindig a kezdő tőkére jár: minden évben '
+   (
+       '<p>A két sorozat különbségét egy egyszerű kamatmodellben is láthatjuk. Állandó kamatlábbal számolunk, további befizetés, kivét és költség nélkül. Kamatos kamat esetén a kamatot a megadott időközönként tőkésítjük. Az <a href="'
+   ) + KAMAT1E + r'#s1">egyszerű kamat</a> mindig a kezdő tőkére jár: minden évben '
    r'ugyanakkora összeggel nő a számla — ez <b>számtani</b> sorozat. A <b>kamatos kamat</b> esetén a '
    r'kamat is kamatozik tovább: minden évben ugyanazzal a szorzóval nő a számla — ez '
    r'<b>mértani</b> sorozat.</p>',
@@ -417,16 +432,20 @@ B2 = [
    abra(SVG_KAMAT, '$200\\,000$ dinár $10$ éven át, évi $6\\%$-kal. Az egyszerű kamat egyenes mentén '
         'nő, a kamatos kamat egyre meredekebben. A függőleges tengely egy osztása $100\\,000$ dinár.'),
    doboz("csapda", "Maxi trükkje",
-         r'<p>Maxi fejben számol: „$20$ év, évi $10\%$ — az összesen $200\%$, vagyis a pénzem '
-         r'háromszorosa”.</p>'
-         r'<p>Ez az <b>egyszerű</b> kamat esete. Kamatos kamatnál a szorzók szorzódnak: '
-         r'$1{,}1^{20}\approx6{,}7275$, tehát a tőke nem háromszorosára, hanem közel '
-         r'<b>hétszeresére</b> nő — a kamat $572{,}7\%$. Minél hosszabb a futamidő, annál nagyobb a '
-         r'különbség; hitelnél ugyanez a mechanizmus dolgozik az adós ellen.</p>'),
+         (
+             '<p>Maxi fejben számol: „$20$ év, évi $10\\%$ — az összesen $200\\%$, vagyis a pénzem '
+             'háromszorosa”.</p><p>Ez az <b>egyszerű</b> kamat esete. Kamatos kamatnál a szorzók szorzódnak: '
+             '$1{,}1^{20}\\approx6{,}7275$, tehát a tőke nem háromszorosára, hanem közel <b>hétszeresére</b> nő — '
+             'a kamat $572{,}7\\%$. Minél hosszabb a futamidő, annál nagyobb a különbség. Ez a számítás törlesztés '
+             'nélküli, állandó kamatlábú modellre vonatkozik; egy valódi hitel alakulásához a törlesztéseket és a '
+             'költségeket is ismerni kell.</p>'
+         )),
    doboz("erdekesseg", "Hol találkozol vele?",
-         r'<p>Kamatos kamat szerint nő a megtakarítás és a hiteltartozás, és ugyanígy — csak lefelé — '
-         r'működik az infláció (a pénz értéke évente ugyanazzal a szorzóval csökken) meg a gyógyszer '
-         r'kiürülése a szervezetből (felezési idő: $q=\frac12$).</p>'),
+         (
+             '<p>Állandó kamatlábbal, további befizetés és kivét nélkül a megtakarítást mértani sorozattal '
+             'modellezhetjük. Csökkenésre példa egy papírlap ismételt félbevágása: ha mindig az egyik felet '
+             'vágjuk tovább, annak területe minden lépésben az előző fele ($q=\\frac12$).</p>'
+         )),
    kviz(r'Évi $6\%$ kamat, <b>havi</b> jóváírás, $5$ év. Melyik számolás helyes?',
         [r'$K_0\left(1+\frac{0{,}06}{12}\right)^{60}$', r'$K_0\left(1+0{,}06\right)^{60}$',
          r'$K_0\left(1+0{,}06\right)^{12}$', r'$K_0\left(1+\frac{0{,}06}{12}\right)^{5}$'], 0,
@@ -456,10 +475,11 @@ B2 = [
    r'<p><b>És a leggyakoribb hiba mindkettőnél ugyanaz:</b> a kitevőben, illetve a szorzóban '
    r'$n$ helyett $n-1$ áll, mert az első tagtól az $n$-edikig csak $n-1$ lépés vezet.</p>',
    GY(FGY + "#alap-21", "A 21–28", FGY + "#kozep-15", "K 15–20"),
-   brief('<b>Kanrak:</b> A képletek megvannak, a küszöb kiszámolva. Előbb éles helyzetben is '
-         'használd őket — a Kiképzési Adattár és a Kristály-kamra vár —, aztán jön a nehezebb '
-         'kérdés: honnan tudjuk, hogy ezek a képletek <b>minden</b> $n$-re igazak, nem csak az első '
-         'néhány lépésre?', outro=True),
+   brief((
+             '<b>Kanrak:</b> A képletek megvannak, a küszöb kiszámolva. Előbb éles helyzetben is használd őket — '
+             'a Kiképzési Adattár és a Kristály-kamra vár —, aztán jön a nehezebb kérdés: hogyan adhatunk a már '
+             'levezetett képletekre másik bizonyítást teljes indukcióval?'
+         ), outro=True),
  ]),
 ]
 

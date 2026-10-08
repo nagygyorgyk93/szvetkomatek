@@ -118,7 +118,7 @@ SVG_ERINTO = svg_kupszelet(
     feliratok=[((7.4, 1.5), "3x + 4y − 20 = 0", {"szin": BOROSTYAN, "meret": 13})],
     szogivek=[((4, 2), (1, -2), (8, -1), SZURKE, "")],
     xr=(-5, 10), yr=(-8, 6), egyseg=24,
-    leiras="Az (x − 1)² + (y + 2)² = 25 kör érintője a T(4;2) pontban merőleges a CT sugárra")
+    leiras="Az (x − 1)² + (y + 2)² = 25 kör érintője a T(4;2) pontban merőleges a CT sugárra").replace('>P</text>', '>T</text>')
 
 # ---------------------------------------------------------------- C1
 C1 = [
@@ -134,14 +134,16 @@ C1 = [
 
  ("Kúpszeletek és mértani helyek", [
    doboz("erdekesseg", "Honnan a név?",
-         r'<p>Ha egy kettős kúpfelületet (két, csúcsával összeillesztett tölcsért) a csúcsán át nem '
-         r'haladó síkkal elmetszünk, a metszet a sík állásától függően négyféle lehet:</p>'
-         r'<ul><li>a sík merőleges a kúp tengelyére → <b>kör</b>;</li>'
-         r'<li>a sík ferde, és a kúp minden alkotóját metszi → <b>ellipszis</b>;</li>'
-         r'<li>a sík párhuzamos a kúp egyik alkotójával → <b>parabola</b>;</li>'
-         r'<li>a sík mindkét kúpfelet metszi → <b>hiperbola</b> (két ága van).</li></ul>'
-         r'<p>Ezért hívjuk őket <b>kúpszeleteknek</b>. Ha egy zseblámpát a falra irányítasz és '
-         r'döntögetsz, a fénykör széle felveszi a kör, az ellipszis, a parabola és a hiperbola egyik ágának alakját.</p>'),
+         (
+             '<p>Ha egy kettős kúpfelületet (két, csúcsával összeillesztett tölcsért) a csúcsán át nem haladó '
+             'síkkal elmetszünk, a metszet a sík állásától függően négyféle lehet:</p><ul><li>a sík merőleges a '
+             'kúp tengelyére → <b>kör</b>;</li><li>a sík ferde, és a kúp minden alkotóját metszi → '
+             '<b>ellipszis</b>;</li><li>a sík és a kúptengely szöge megegyezik az alkotó és a kúptengely szögével '
+             '→ <b>parabola</b>;</li><li>a sík mindkét kúpfelet metszi → <b>hiperbola</b> (két ága '
+             'van).</li></ul><p>Ezért hívjuk őket <b>kúpszeleteknek</b>. Ha a zseblámpa fényét ideális kúppal, a '
+             'falat síkkal modellezzük, a lámpát döntögetve a fénykör széle felveszi a kör, az ellipszis, a '
+             'parabola és a hiperbola egyik ágának alakját.</p>'
+         )),
    doboz("definicio", "Mértani hely",
          r'<p>A sík azon pontjainak halmazát, amelyek egy adott tulajdonsággal rendelkeznek, a '
          r'tulajdonsághoz tartozó <b>mértani helynek</b> nevezzük. A mondat mindig így épül: '
@@ -189,13 +191,13 @@ C1 = [
    r'<p>Ha a középponti egyenletben kibontjuk a zárójeleket, $x^2+y^2-2px-2qy+p^2+q^2-r^2=0$ '
    r'adódik. A képlettár ezt így írja:</p>',
    doboz("tetel", "A kör általános egyenlete",
-         r'$$x^2+y^2+dx+ey+f=0,$$'
-         r'<p>ahol $p=-\frac d2$, $q=-\frac e2$ és $r^2=p^2+q^2-f$.</p>'
-         r'<p>Egy ilyen alakú egyenlet <b>pontosan akkor</b> kör, ha $p^2+q^2-f\gt0$. (Ha $0$, '
-         r'egyetlen pontot ír le, ha negatív, egyetlen pontot sem.) Ha az $x^2$ és az $y^2$ '
-         r'együtthatója egyenlő, de nem $1$, előbb azzal osztunk; ha különböző, vagy van $xy$-os tag, '
-         r'az egyenlet nem kör.</p>'
-         r'<p><i>A tanulói képlettárban itt elírás van: „$q=-\frac p2$” áll, helyesen $q=-\frac e2$.</i></p>',
+         (
+             '$$x^2+y^2+dx+ey+f=0,$$<p>ahol $p=-\\frac d2$, $q=-\\frac e2$ és $r^2=p^2+q^2-f$.</p><p>Egy ilyen '
+             'alakú egyenlet <b>pontosan akkor</b> kör, ha $p^2+q^2-f\\gt0$. (Ha $0$, egyetlen pontot ír le, ha '
+             'negatív, egyetlen pontot sem.) Ha az $x^2$ és az $y^2$ közös együtthatója nem nulla és nem $1$, '
+             'előbb azzal osztunk; ha különböző, vagy van $xy$-os tag, az egyenlet nem kör.</p><p><i>A tanulói '
+             'képlettárban itt elírás van: „$q=-\\frac p2$” áll, helyesen $q=-\\frac e2$.</i></p>'
+         ),
          hid="tetel-altalanos-alak"),
    r'<p>A képlet helyett biztosabb a <b>teljes négyzetté kiegészítés</b>, amelyet a '
    r'<a href="' + E2F + r'tananyag-masodfoku-fuggveny.html#tetel-kanonikus">másodfokú függvény '
@@ -305,11 +307,12 @@ C2 = [
    r'<p>Az előző példában a metszéspontok $x=3$ és $x=-4$ mellett $(3;4)$ és $(-4;-3)$, a húr '
    r'$\sqrt{7^2+7^2}=7\sqrt2\approx9{,}90$. Képlettel: $2\sqrt{25-\frac12}=2\sqrt{\frac{49}{2}}=7\sqrt2$ ✔.</p>',
    doboz("pelda", "Kristály-kamra szimuláció — Maxi átvág a körzeten",
-         r'<p>Tér-eb teleport-körzete a $(4;3)$ középpontú, $5$ km sugarú körlap. Maxi drónja az '
-         r'$x+y-2=0$ egyenes mentén repül (a koordináta-rendszer egysége $1$ km).</p>'
-         r'<ol type="a"><li>Áthalad-e a drón a körzeten?</li>'
-         r'<li>Hol lép be és hol lép ki?</li>'
-         r'<li>Milyen hosszú az az útszakasz, amelyen Tér-eb körzetében repül? (Két tizedesre kerekíts!)</li></ol>',
+         (
+             '<p>Tér-eb teleport-körzete a $(4;3)$ középpontú, $5$ km sugarú körlap. Maxi drónja az $x+y-2=0$ '
+             'egyenes mentén repül (a koordináta-rendszer egysége $1$ km).</p><ol type="a"><li>Áthalad-e a drón a '
+             'körzeten?</li><li>Melyik két pontban metszi az útvonala a körzet határát?</li><li>Milyen hosszú az '
+             'az útszakasz, amelyen Tér-eb körzetében repül? (Két tizedesre kerekíts!)</li></ol>'
+         ),
          hid="pelda-korzet",
          lenyilo=("Megoldás",
                   r'<p><b>a)</b> $d=\frac{|4+3-2|}{\sqrt{1+1}}=\frac5{\sqrt2}\approx3{,}54\lt5$, tehát '
@@ -351,9 +354,11 @@ C2 = [
          r'<p>A másik gyakori hiba a behelyettesítésnél: $(kx+n)^2$ nem $k^2x^2+n^2$, hanem '
          r'$k^2x^2+2knx+n^2$ — a kétszeres szorzat nem maradhat el.</p>'),
    doboz("erdekesseg", "Hol találkozol vele?",
-         r'<p>A kalapácsvető körpályán forgatja a kalapácsot. Abban a pillanatban, amikor elengedi, '
-         r'a kalapács az <b>érintő</b> irányában repül tovább — ezért a dobás iránya attól függ, a kör '
-         r'melyik pontjában engedi el.</p>'),
+         (
+             '<p>A kalapácsvető körpályán forgatja a kalapácsot. Abban a pillanatban, amikor elengedi, a kalapács '
+             'sebessége az <b>érintő</b> irányába mutat; a további röppályáját a gravitáció és a légellenállás is '
+             'befolyásolja — ezért a dobás iránya attól függ, a kör melyik pontjában engedi el.</p>'
+         )),
  ]),
 
  ("Az érintési feltétel", [

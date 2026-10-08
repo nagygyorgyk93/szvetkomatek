@@ -86,11 +86,12 @@ OSSZ = [
   r'<tr><th>Mit</th><th>Képlet</th><th>Megjegyzés</th></tr>'
   r'<tr><td>két pont távolsága (' + h(A1, "tetel-tavolsag") + r')</td>'
   r'<td>$|AB|=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$</td><td>a kivonás sorrendje mindegy; az origótól: $\sqrt{x^2+y^2}$</td></tr>'
-  r'<tr><td>osztópont, $AC:CB=m:n$ (' + h(A1, "tetel-osztopont") + r')</td>'
-  r'<td>$C\left(\dfrac{n\,x_1+m\,x_2}{m+n};\ \dfrac{n\,y_1+m\,y_2}{m+n}\right)$</td><td>keresztbe súlyozunk</td></tr>'
-  r'<tr><td>felezőpont</td><td>$F\left(\dfrac{x_1+x_2}{2};\ \dfrac{y_1+y_2}{2}\right)$</td>'
-  r'<td>paralelogrammában az átlók felezik egymást: $D=A+C-B$ (koordinátánként)</td></tr>'
-  r'<tr><td>súlypont (' + h(A1, "tetel-sulypont") + r')</td>'
+  r'<tr><td>osztópont, $AC:CB=m:n$ (' + h(A1, "tetel-osztopont") + (
+                                                                        ')</td><td>$C\\left(\\dfrac{n\\,x_1+m\\,x_2}{m+n};\\ \\dfrac{n\\,y_1+m\\,y_2}{m+n}\\right)$</td><td>belső '
+                                                                        'osztópont: $m,n>0$; keresztben súlyozunk</td></tr><tr><td>felezőpont</td><td>$F\\left(\\dfrac{x_1+x_2}'
+                                                                        '{2};\\ \\dfrac{y_1+y_2}{2}\\right)$</td><td>paralelogrammában az átlók felezik egymást: $D=A+C-B$ '
+                                                                        '(koordinátánként)</td></tr><tr><td>súlypont ('
+                                                                    ) + h(A1, "tetel-sulypont") + r')</td>'
   r'<td>$S\left(\dfrac{x_1+x_2+x_3}{3};\ \dfrac{y_1+y_2+y_3}{3}\right)$</td><td>a csúcsok koordinátáinak átlaga</td></tr>'
   r'<tr><td>háromszög területe (' + h(A2, "tetel-terulet") + r')</td>'
   r'<td>$T=\frac12|D|$, $D=x_1(y_2-y_3)+x_2(y_3-y_1)+x_3(y_1-y_2)$</td>'
@@ -109,32 +110,37 @@ OSSZ = [
   r'<td>$k=-\frac ab$ (ha $b\ne0$); a függőleges egyenes is ilyen: $x=-\frac ca$</td></tr>'
   r'<tr><td>tengelymetszetes (' + h(B1, "tetel-tengelymetszetes") + r')</td><td>$\dfrac xm+\dfrac yn=1$</td>'
   r'<td>$(m;0)$ és $(0;n)$; nincs ilyen alakja az origón átmenő és a tengellyel párhuzamos egyenesnek</td></tr>'
-  r'<tr><td>pontból és iránytényezőből (' + h(B1, "tetel-ket-pont") + r')</td><td>$y-y_1=k(x-x_1)$</td>'
-  r'<td>két pontból: előbb $k=\dfrac{y_2-y_1}{x_2-x_1}$; ha $x_1=x_2$, az egyenes $x=x_1$</td></tr>'
-  r'</table></div>'
-  r'<div class="tblwrap"><table class="tt-table">'
-  r'<tr><th>Két egyenes, pont és egyenes</th><th>Feltétel, képlet</th></tr>'
-  r'<tr><td>kölcsönös helyzet (' + h(B2, "tetel-kolcsonos-helyzet") + r')</td>'
+  r'<tr><td>pontból és iránytényezőből (' + h(B1, "tetel-ket-pont") + (
+                                                                                ')</td><td>$y-y_1=k(x-x_1)$</td><td>két különböző pontból: előbb $k=\\dfrac{y_2-y_1}{x_2-x_1}$; ha '
+                                                                                '$x_1=x_2$, az egyenes $x=x_1$</td></tr></table></div><div class="tblwrap"><table '
+                                                                                'class="tt-table"><tr><th>Két egyenes, pont és egyenes</th><th>Feltétel, '
+                                                                                'képlet</th></tr><tr><td>kölcsönös helyzet ('
+                                                                            ) + h(B2, "tetel-kolcsonos-helyzet") + r')</td>'
   r'<td>$k_1\ne k_2$: metszők (a közös pont az egyenletrendszer megoldása); $k_1=k_2$: párhuzamosak vagy egybeesnek</td></tr>'
   r'<tr><td>párhuzamos, merőleges (' + h(B2, "tetel-parhuzamos-meroleges") + r')</td>'
   r'<td>$k_1=k_2$, illetve $k_1\cdot k_2=-1$; a vízszintes és a függőleges egyenes is merőleges</td></tr>'
   r'<tr><td>két egyenes szöge (' + h(B2, "tetel-szog") + r')</td>'
   r'<td>$\operatorname{tg}\varphi=\left|\dfrac{k_2-k_1}{1+k_1k_2}\right|$, $0^\circ\lt\varphi\le90^\circ$; ha $1+k_1k_2=0$, akkor $90^\circ$</td></tr>'
-  r'<tr><td>pont és egyenes távolsága (' + h(B3, "tetel-tavolsagkeplet") + r')</td>'
-  r'<td>$d=\dfrac{|a\,x_0+b\,y_0+c|}{\sqrt{a^2+b^2}}$ — csak <b>általános alakból</b></td></tr>'
-  r'<tr><td>két párhuzamos egyenes távolsága</td><td>az egyik egyenes egy pontjának távolsága a másiktól</td></tr>'
-  r'<tr><td>háromszög magassága</td><td>$m_c$ = a $C$ csúcs távolsága az $AB$ egyenestől; $T=\dfrac{|AB|\cdot m_c}{2}$</td></tr>'
-  r'</table></div>'
-  r'<p><b>Szög számológéppel:</b> fok üzemmód (<b>D</b>/<b>DEG</b>), a tört értéke után <code>SHIFT tan Ans =</code> '
-  r'(más gépeken <code>2nd tan</code> vagy <code>INV tan</code>); egy tizedesre kerekítünk.</p>',
+  r'<tr><td>pont és egyenes távolsága (' + h(B3, "tetel-tavolsagkeplet") + (
+                                                                                  ')</td><td>$d=\\dfrac{|a\\,x_0+b\\,y_0+c|}{\\sqrt{a^2+b^2}}$ — csak <b>általános '
+                                                                                  'alakból</b></td></tr><tr><td>két párhuzamos egyenes távolsága</td><td>az egyik egyenes egy '
+                                                                                  'pontjának távolsága a másiktól</td></tr><tr><td>háromszög magassága</td><td>$m_c$ = a $C$ csúcs '
+                                                                                  'távolsága az $AB$ egyenestől; $T=\\dfrac{|AB|\\cdot m_c}{2}$</td></tr></table></div><p><b>A fenti '
+                                                                                  'általános egyenletnél $a^2+b^2\\ne0$. Az iránytényezős képletek nem függőleges egyenesekre '
+                                                                                  'vonatkoznak; a tengelymetszetes alaknál $m,n\\ne0$. <b>Szög számológéppel:</b></b> fok üzemmód '
+                                                                                  '(<b>D</b>/<b>DEG</b>), a tört értéke után <code>SHIFT tan Ans =</code> (más gépeken <code>2nd '
+                                                                                  'tan</code> vagy <code>INV tan</code>); egy tizedesre kerekítünk.</p>'
+                                                                              ),
  ]),
 
  ("II. rész — a négy görbe egy táblázatban", [
-  r'<p>A második rész a <b>4. dolgozat</b> anyaga. Minden görbe középpontja, illetve csúcsa az origóban van, '
-  r'a kör kivételével.</p>'
-  r'<div class="tblwrap"><table class="tt-table">'
-  r'<tr><th></th><th>definíció (mértani hely)</th><th>egyenlet</th><th>adatok</th></tr>'
-  r'<tr><td>kör (' + h(C1, "tetel-kor-egyenlete") + r')</td><td>a $C$ ponttól $r$ távolságra lévő pontok</td>'
+  (
+      '<p>A második rész a <b>4. dolgozat</b> anyaga. Minden görbe középpontja, illetve csúcsa az origóban '
+      'van, a kör kivételével. A táblázatban a körnél $r>0$, az ellipszisnél $a>b>0$, a hiperbolánál '
+      '$a,b>0$, a parabolánál $p>0$; a fókusz nem illeszkedhet a vezéregyenesre.</p><div '
+      'class="tblwrap"><table class="tt-table"><tr><th></th><th>definíció (mértani '
+      'hely)</th><th>egyenlet</th><th>adatok</th></tr><tr><td>kör ('
+  ) + h(C1, "tetel-kor-egyenlete") + r')</td><td>a $C$ ponttól $r$ távolságra lévő pontok</td>'
   r'<td>${(x-p)^2+(y-q)^2=r^2}$</td>'
   r'<td>$C(p;q)$, $r$</td></tr>'
   r'<tr><td>ellipszis (' + h(D1, "tetel-ellipszis-egyenlete") + r')</td><td>két ponttól (a fókuszoktól) mért távolságok <b>összege</b> állandó: $2a$</td>'
@@ -182,18 +188,21 @@ OSSZ = [
 
  ("Maxi trükkjei — a tipikus hibák", [
   r'<ul>'
-  r'<li><b>Elveszett mínuszjel a távolságnál:</b> az $A(-2;5)$ és a $B(6;-1)$ pontnál $x_2-x_1=6-(-2)=8$, nem $6-2$ (' + h(A1, "tetel-tavolsag") + r').</li>'
-  r'<li><b>Iránytényező az általános alakból:</b> a $2x-3y+6=0$ egyenesnél nem $2$, hanem $k=\frac23$ — előbb $y$-ra rendezz.</li>'
-  r'<li><b>Merőleges iránytényező:</b> nem az ellentett és nem a reciprok, hanem a <b>negatív reciprok</b>: $4\to-\frac14$.</li>'
-  r'<li><b>Távolság explicit alakból:</b> az $y=kx+n$ egyenletből nem olvasható ki $a$, $b$, $c$; előbb $kx-y+n=0$.</li>'
-  r'<li><b>Terület előjele:</b> a $D$ lehet negatív, a terület nem: $T=\frac12|D|$.</li>'
-  r'<li><b>Kör leolvasása:</b> $(x+3)^2+(y-1)^2=16$ középpontja $C(-3;1)$, sugara $4$ — nem $C(3;-1)$ és nem $16$.</li>'
-  r'<li><b>Az ellipszis együtthatói nem féltengelyek:</b> $9x^2+16y^2=144$-ből előbb osztunk: $a=4$, $b=3$.</li>'
-  r'<li><b>Felcserélt $e$-képlet:</b> ellipszis $e^2=a^2-b^2$, hiperbola $e^2=a^2+b^2$ — a hiperbola fókusza a csúcsokon kívül van.</li>'
-  r'<li><b>A parabola fókusza:</b> $y^2=12x$-ben $2p=12$, $p=6$, a fókusz $\left(\frac p2;0\right)=(3;0)$.</li>'
-  r'<li><b>Érintő olyan pontban, amely nincs a görbén:</b> a képlet ekkor is ad egy egyenest, de az nem érintő.</li>'
-  r'<li><b>„Egy közös pont, tehát érintő”:</b> a körnél és az ellipszisnél igaz, a hiperbolánál és a parabolánál nem mindig.</li>'
-  r'</ul>',
+  r'<li><b>Elveszett mínuszjel a távolságnál:</b> az $A(-2;5)$ és a $B(6;-1)$ pontnál $x_2-x_1=6-(-2)=8$, nem $6-2$ (' + h(A1, "tetel-tavolsag") + (
+                                                                                                                                                             ').</li><li><b>Iránytényező az általános alakból:</b> a $2x-3y+6=0$ egyenesnél nem $2$, hanem '
+                                                                                                                                                             '$k=\\frac23$ — előbb $y$-ra rendezz.</li><li><b>Merőleges iránytényező:</b> nem az ellentett és nem '
+                                                                                                                                                             'a reciprok, hanem a <b>negatív reciprok</b>: $4\\to-\\frac14$.</li><li><b>Távolság explicit '
+                                                                                                                                                             'alakból:</b> az $y=kx+n$ egyenletből nem olvasható ki $a$, $b$, $c$; előbb '
+                                                                                                                                                             '$kx-y+n=0$.</li><li><b>Terület előjele:</b> a $D$ lehet negatív, a terület nem: '
+                                                                                                                                                             '$T=\\frac12|D|$.</li><li><b>Kör leolvasása:</b> $(x+3)^2+(y-1)^2=16$ középpontja $C(-3;1)$, sugara '
+                                                                                                                                                             '$4$ — nem $C(3;-1)$ és nem $16$.</li><li><b>Az ellipszis együtthatói nem féltengelyek:</b> '
+                                                                                                                                                             '$9x^2+16y^2=144$-ből előbb osztunk: $a=4$, $b=3$.</li><li><b>Felcserélt $e$-képlet:</b> ellipszis '
+                                                                                                                                                             '$e^2=a^2-b^2$, hiperbola $e^2=a^2+b^2$ — a hiperbola fókusza a csúcsokon kívül van.</li><li><b>A '
+                                                                                                                                                             'parabola fókusza:</b> $y^2=12x$-ben $2p=12$, $p=6$, a fókusz $\\left(\\frac '
+                                                                                                                                                             'p2;0\\right)=(3;0)$.</li><li><b>Érintő olyan pontban, amely nincs a görbén:</b> a saját pontbeli '
+                                                                                                                                                             'érintő képlete ilyenkor nem használható érintő felírására.</li><li><b>„Egy közös pont, tehát '
+                                                                                                                                                             'érintő”:</b> a körnél és az ellipszisnél igaz, a hiperbolánál és a parabolánál nem mindig.</li></ul>'
+                                                                                                                                                         ),
  ]),
 
  ("Mit hol találsz?", [
@@ -328,17 +337,17 @@ TEREP = [
  ]),
 
  ("II. fázis — A teleport-kör", [
-   r'<p>A drónokat a $K\colon x^2+y^2-2x-6y=0$ teleport-kör köti össze.</p>'
-   r'<ol class="reszfeladatok">'
-   r'<li>Határozd meg a kör középpontját és sugarát! A drónháromszög melyik nevezetes pontja a középpont?</li>'
-   r'<li>A körön belül, a körön vagy a körön kívül van a három drón?</li>'
-   r'<li>Metszi-e a $BC$ útvonal a kört? Határozd meg a metszéspontokat és a húr hosszát, és a középpont '
-   r'meg az egyenes távolságával is indokold a választ!</li>'
-   r'<li>Tér-eb a kör $T(4;2)$ pontjából az érintő mentén ugrik tovább. Ellenőrizd, hogy $T$ a körön van, írd '
-   r'fel az érintőt, és határozd meg, hol metszi az $x$-tengelyt!</li>'
-   r'<li>🔴 Írd fel a körnek a $BC$ egyenessel párhuzamos érintőit! Bontsd lépésekre: milyen alakú az '
-   r'egyenes, mi a feltétele annak, hogy pontosan egy közös pontja legyen a körrel, és mik az érintők?</li>'
-   r'</ol>',
+   (
+       '<p>A hálózat egyik teleport-köre a $K\\colon x^2+y^2-2x-6y=0$ teleport-kör.</p><ol '
+       'class="reszfeladatok"><li>Határozd meg a kör középpontját és sugarát! A drónháromszög melyik '
+       'nevezetes pontja a középpont?</li><li>A körön belül, a körön vagy a körön kívül van a három '
+       'drón?</li><li>Metszi-e a $BC$ útvonal a kört? Határozd meg a metszéspontokat és a húr hosszát, és a '
+       'középpont meg az egyenes távolságával is indokold a választ!</li><li>Tér-eb a kör $T(4;2)$ '
+       'pontjából az érintő mentén ugrik tovább. Ellenőrizd, hogy $T$ a körön van, írd fel az érintőt, és '
+       'határozd meg, hol metszi az $x$-tengelyt!</li><li>🔴 Írd fel a körnek a $BC$ egyenessel párhuzamos '
+       'érintőit! Bontsd lépésekre: milyen alakú az egyenes, mi a feltétele annak, hogy pontosan egy közös '
+       'pontja legyen a körrel, és mik az érintők?</li></ol>'
+   ),
  ]),
 
  ("III. fázis — Az ellipszis-pálya", [
@@ -465,7 +474,10 @@ H2A = [
   r"$3x+10y-25=0$"),
 ]
 H2K = [
- (r"Írd fel annak az ellipszisnek az egyenletét, amely átmegy a $P(6;1)$ és a $Q(2;3)$ ponton!", None,
+ ((
+      'Írd fel annak az origó középpontú, koordinátatengelyekkel párhuzamos tengelyű ellipszisnek az '
+      'egyenletét, amely átmegy a $P(6;1)$ és a $Q(2;3)$ ponton!'
+  ), None,
   r"$\dfrac{x^2}{40}+\dfrac{y^2}{10}=1$"),
  (r"Milyen hosszú húrt metsz ki az $x^2+y^2=25$ kör az $x+y-1=0$ egyenesből?", None,
   r"a metszéspontok $(4;-3)$ és $(-3;4)$, a húr $7\sqrt2\approx9{,}90$"),

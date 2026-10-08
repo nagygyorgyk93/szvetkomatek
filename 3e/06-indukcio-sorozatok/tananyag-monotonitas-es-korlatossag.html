@@ -33,22 +33,22 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/prisma.webp" alt="Prizma — a térgeometria oktatótisztje" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Prizma:</b> Két adat kell a parancsnokságnak. Az egyik: <b>emelkedik-e</b> a görbe minden egyes lépésben — ez a monotonitás. A másik: van-e <b>olyan szint, amit a mutáció soha nem lép át</b> — ez a korlátosság. A kettő együtt mondja meg, hogy a Kristály Karantén-Zóna kitart-e.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/prisma.webp" alt="Prizma — a térgeometria oktatótisztje" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Prizma:</b> Két adat kell a parancsnokságnak. Az egyik: <b>nőnek-e</b> a sorozat tagjai minden egyes lépésben — ez a monotonitás. A másik: van-e <b>olyan szint, amit a mutáció soha nem lép át</b> — ez a korlátosság. A kettő együtt mondja meg, hogy a Kristály Karantén-Zóna kitart-e.</p></div>
 
-    <h2 id="s1">Növekvő, csökkenő, se nem</h2>
+    <h2 id="s1">Növekvő, csökkenő vagy nem monoton</h2>
 
     <p class="lead">A kérdés mindig két <b>szomszédos</b> tag viszonya: mi történik, ha egy lépéssel továbbmegyünk?</p>
 
     <div class="doboz definicio" id="def-monoton">
       <p class="cim"><span class="ikon">📗</span> Monoton sorozatok</p>
-      <p>Az <span class="math inline">\((a_n)\)</span> sorozat</p><ul><li><b>szigorúan monoton növekvő</b>, ha minden <span class="math inline">\(n\)</span>-re <span class="math inline">\(a_{n+1}\gt a_n\)</span>;</li><li><b>szigorúan monoton csökkenő</b>, ha minden <span class="math inline">\(n\)</span>-re <span class="math inline">\(a_{n+1}\lt a_n\)</span>;</li><li><b>monoton növekvő</b> (illetve <b>csökkenő</b>), ha a fenti egyenlőtlenségek megengedik az egyenlőséget is (<span class="math inline">\(a_{n+1}\ge a_n\)</span>, illetve <span class="math inline">\(a_{n+1}\le a_n\)</span>).</li></ul><p>Ha sem az <span class="math inline">\(a_{n+1}\ge a_n\)</span>, sem az <span class="math inline">\(a_{n+1}\le a_n\)</span> nem igaz az <b>összes</b> <span class="math inline">\(n\)</span>-re, a sorozat <b>nem monoton</b>. A minden <span class="math inline">\(n\)</span>-re szó a lényeg: egyetlen kivétel elrontja.</p>
+      <p>Az <span class="math inline">\((a_n)\)</span> sorozat</p><ul><li><b>szigorúan monoton növekvő</b>, ha minden <span class="math inline">\(n\)</span>-re <span class="math inline">\(a_{n+1}\gt a_n\)</span>;</li><li><b>szigorúan monoton csökkenő</b>, ha minden <span class="math inline">\(n\)</span>-re <span class="math inline">\(a_{n+1}\lt a_n\)</span>;</li><li><b>monoton növekvő</b> (illetve <b>csökkenő</b>), ha a fenti egyenlőtlenségek megengedik az egyenlőséget is (<span class="math inline">\(a_{n+1}\ge a_n\)</span>, illetve <span class="math inline">\(a_{n+1}\le a_n\)</span>).</li></ul><p>Ha sem az <span class="math inline">\(a_{n+1}\ge a_n\)</span>, sem az <span class="math inline">\(a_{n+1}\le a_n\)</span> nem igaz az <b>összes</b> <span class="math inline">\(n\)</span>-re, a sorozat <b>nem monoton</b>. Az adott egyenlőtlenségnek minden <span class="math inline">\(n\)</span>-re teljesülnie kell.</p>
     </div>
 
     <p>Az <span class="math inline">\(1,\ 1,\ 2,\ 2,\ 3,\ 3,\dots\)</span> sorozat például monoton növekvő, de nem szigorúan (vannak egyenlő szomszédok). A <span class="math inline">\(7,\ 7,\ 7,\dots\)</span> állandó sorozat egyszerre monoton növekvő és csökkenő. A <span class="math inline">\(-1,\ 1,\ -1,\ 1,\dots\)</span> váltakozó sorozat pedig nem monoton.</p>
 
     <h2 id="s2">Hogyan döntjük el?</h2>
 
-    <p>Nem az első néhány tagot nézzük meg, hanem <b>általánosan</b> kiszámoljuk a szomszédos tagok különbségét, és megvizsgáljuk az előjelét. Ha <b>minden</b> <span class="math inline">\(n\)</span>-re</p><span class="math display">\[a_{n+1}-a_n\gt 0,\ \text{ a sorozat szigorúan növekvő;}\qquad a_{n+1}-a_n\lt 0,\ \text{ a sorozat szigorúan csökkenő.}\]</span><p>Ha a különbség előjele <span class="math inline">\(n\)</span>-től függően változik, a sorozat nem monoton.</p>
+    <p>Nem az első néhány tagot nézzük meg, hanem <b>általánosan</b> kiszámoljuk a szomszédos tagok különbségét, és megvizsgáljuk az előjelét. Ha <b>minden</b> <span class="math inline">\(n\)</span>-re</p><span class="math display">\[a_{n+1}-a_n\gt 0,\ \text{ a sorozat szigorúan növekvő;}\qquad a_{n+1}-a_n\lt 0,\ \text{ a sorozat szigorúan csökkenő.}\]</span><p>Ha a különbség egyes <span class="math inline">\(n\)</span> értékeknél pozitív, másoknál negatív, a sorozat nem monoton.</p>
 
     <div class="doboz pelda">
       <p class="cim"><span class="ikon">✏️</span> A legegyszerűbb eset</p>
@@ -111,7 +111,7 @@
       <p>Maxi kiszámolja az első három tagot, látja, hogy csökkennek, és kijelenti: „a mutáció visszahúzódik, a sorozat csökkenő”.</p><p>Ez a fenti sorozatnál éppen a csapda: az ötödik tagig tényleg csökkenés, a hatodik tagtól viszont emelkedés. <b>Néhány tagból nem lehet monotonitást kimondani</b> — a döntéshez az <span class="math inline">\(a_{n+1}-a_n\)</span> különbség előjelét kell megvizsgálni <i>minden</i> <span class="math inline">\(n\)</span>-re.</p>
     </div>
 
-    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ Az általánosan felírt különbség előjele minden lépésre egyszerre ad választ." data-nem="✘ Néhány tag csak sejtést ad: az aₙ = n² − 10n + 3 sorozat öt lépésen át csökken, aztán nő. A döntés az a_{n+1} − aₙ különbség előjelén múlik.">
+    <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ Az általánosan felírt különbség előjele minden lépésre egyszerre ad választ." data-nem="✘ Néhány tag csak sejtést ad: az aₙ = n² − 10n + 3 sorozat az ötödik tagig csökken, aztán nő. A döntés az a_{n+1} − aₙ különbség előjelén múlik.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
       <p>Mi alapján dönthető el biztosan, hogy egy sorozat monoton növekvő-e?</p>
       <div class="opciok"><button>az <span class="math inline">\(a_{n+1}-a_n\)</span> különbség előjele minden <span class="math inline">\(n\)</span>-re</button><button>az első három tag: ha nőnek, a sorozat növekvő</button><button>az első tag előjele</button><button>az, hogy a képletben szerepel-e mínuszjel</button></div>
@@ -163,7 +163,7 @@
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
-      <p>Maxi szerint „ami csökken, az előbb-utóbb minden határon túl süllyed, tehát alulról nem korlátos”.</p><p>Az <span class="math inline">\(a_n=1+\frac1n\)</span> sorozat csökken — de minden tagja nagyobb <span class="math inline">\(1\)</span>-nél, az <span class="math inline">\(1\)</span>-et soha nem éri el. Ez a sorozat <b>korlátos</b>: alulról az <span class="math inline">\(1\)</span>, felülről az első tagja, a <span class="math inline">\(2\)</span> korlátozza.</p><p>Fordítva ugyanez: a monoton csökkenő sorozat <b>felülről</b> mindig korlátos (az első tagjával), a monoton növekvő pedig <b>alulról</b> — a másik irányról külön kell dönteni.</p>
+      <p>Maxi szerint „ami csökken, az előbb-utóbb minden határon túl süllyed, tehát alulról nem korlátos”.</p><p>Az <span class="math inline">\(a_n=1+\frac1n\)</span> sorozat csökken — de minden tagja nagyobb <span class="math inline">\(1\)</span>-nél, az <span class="math inline">\(1\)</span>-et soha nem éri el. Ez a sorozat <b>korlátos</b>: alulról az <span class="math inline">\(1\)</span>, felülről az első tagja, a <span class="math inline">\(2\)</span> korlátozza.</p><p>Általánosan: a monoton csökkenő sorozat <b>felülről</b> mindig korlátos (az első tagjával), a monoton növekvő pedig <b>alulról</b> — a másik irányról külön kell dönteni.</p>
     </div>
 
     <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ A csökkenés önmagában nem jelent határtalan süllyedést: a tagok „megtorpanhatnak” egy szint fölött." data-nem="✘ Az aₙ = 1 + 1/n sorozat csökken (2; 1,5; 1,33; …), mégis minden tagja 1 fölött marad — alulról korlátos. A csökkenés és a korlátosság két külön kérdés.">
@@ -175,7 +175,7 @@
 
     <h2 id="s4">Négy sorozat, négy jellemzés</h2>
 
-    <p>A monotonitás és a korlátosság <b>független</b> egymástól: a négy kombináció mindegyike előfordul. Nézd meg a négy ábrát, és mondd ki magadban a jellemzést, mielőtt elolvasod a képaláírást!</p>
+    <p>A monotonitás és a korlátosság <b>független</b> egymástól: egyik tulajdonságból sem következik a másik. Nézd meg az alábbi négy példát, és mondd ki magadban a jellemzést, mielőtt elolvasod a képaláírást!</p>
 
     <div class="svgcard">
     <svg viewBox="0 0 330 210" width="330" height="210" role="img" aria-label="Növekvő, felülről 1-gyel korlátos sorozat pontjai">

@@ -131,10 +131,9 @@ SVG_VX_ANTI = svg_vektorialis(ellentett=True, leiras="Az a × b és a b × a ell
 # ---------------------------------------------------------------- B1
 B1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Medúza:</b> Egy hanghullám csak annyit ér, amennyi belőle <b>a cél irányába</b> '
-         'esik. A többi elszáll a Kamra falai felé. Crni Grom most két nyilat tart egymás mellé: '
-         'az egyik a hullám, a másik a cél iránya. Amit tőlük kapunk, az <b>egyetlen szám</b> — '
-         'és ez a szám megmondja, dolgozik-e a hullám a cél felé.'),
+   brief((
+             '<b>Medúza:</b> Crni Grom két nyilat tart egymás mellé: az egyik a tervezett elmozdulást, a másik a cél irányát mutatja. Mekkora része esik az elsőnek a második irányára? A <a href="tananyag-vektorok-sikban.html#def-szog-vetulet">vetületet</a> már ismerjük; most ebből jutunk el egy új művelethez, a <b>skaláris szorzathoz</b>. Az eredménye egyetlen szám.'
+         )),
    r'<p>Ebben az egységben a két vektorból számot adó <b>skaláris szorzattal</b> '
    r'ismerkedünk meg. Két kérdésre ad választ: <b>merőleges-e</b> két vektor, és <b>mekkora a '
    r'szögük</b>. A szöget számológéppel fogjuk kiszámítani.</p>',
@@ -142,11 +141,12 @@ B1 = [
 
  ("A definíció", [
    doboz("definicio", "Skaláris szorzat",
-         r'<p>Két vektor <b>skaláris szorzata</b> az intenzitásaik és a közös kezdőpontba tolt '
-         r'vektorok $\varphi$ szöge ($0^\circ\le\varphi\le180^\circ$) koszinuszának szorzata:</p>'
-         r'$$\vec a\cdot\vec b=|\vec a|\,|\vec b|\cos\varphi .$$'
-         r'<p>Az eredmény <b>szám</b> (skalár) — innen a neve. Ha valamelyik vektor a '
-         r'nullvektor, a skaláris szorzat $0$.</p>',
+         (
+             '<p>Két nem nullvektor <b>skaláris szorzata</b> az intenzitásaik és a közös kezdőpontba tolt '
+             'vektorok $\\varphi$ szöge ($0^\\circ\\le\\varphi\\le180^\\circ$) koszinuszának szorzata:</p>$$\\vec '
+             'a\\cdot\\vec b=|\\vec a|\\,|\\vec b|\\cos\\varphi .$$<p>Az eredmény <b>szám</b> (skalár) — innen a neve. '
+             'Ha valamelyik vektor a nullvektor, a skaláris szorzat $0$.</p>'
+         ),
          hid="def-skalaris"),
    r'<p><b>Kapcsolat a vetülettel.</b> A $|\vec b|\cos\varphi$ a $\vec b$ '
    r'<a href="tananyag-vektorok-sikban.html#def-szog-vetulet">skaláris vetülete</a> az $\vec a$ '
@@ -159,11 +159,13 @@ B1 = [
    r'$\varphi=150^\circ$, akkor $\vec a\cdot\vec b=2\cdot3\cdot\left(-\tfrac{\sqrt3}{2}\right)'
    r'=-3\sqrt3\approx-5{,}20$.</p>',
    doboz("erdekesseg", "Hol találkozol vele?",
-         r'<p>A fizikában a <b>munka</b> skaláris szorzat: $W=\vec F\cdot\vec s$. Ha egy szánkót '
-         r'$50$ N erővel húzol, a kötél $30^\circ$-os szöget zár be a talajjal, és a szánkó '
-         r'$10$ m-t halad, akkor a munka $W=50\cdot10\cdot\cos30^\circ\approx433$ J — nem '
-         r'$500$ J, mert az erőnek csak a mozgás irányába eső része dolgozik. A felfelé húzó '
-         r'része nem végez munkát, mert merőleges az elmozdulásra.</p>'),
+         (
+             '<p>Állandó erő munkáját skaláris szorzattal számítjuk: $W=\\vec F\\cdot\\vec s$. Ha egy szánkót '
+             'állandó $50$ N erővel húzol, a kötél $30^\\circ$-os szöget zár be a talajjal, és a szánkó $10$ m-t '
+             'halad egyenes, vízszintes pályán, akkor a húzóerő munkája $W=50\\cdot10\\cdot\\cos30^\\circ\\approx433$ '
+             'J — nem $500$ J, mert az erőnek csak a mozgás irányába eső része dolgozik. A felfelé húzó része nem '
+             'végez munkát, mert merőleges az elmozdulásra.</p>'
+         )),
    kviz(r'Milyen típusú az $\vec a\cdot\vec b$ skaláris szorzat eredménye?',
         ['egy valós szám', r'az $\vec a$-val párhuzamos vektor',
          r'az $\vec a$-ra és $\vec b$-re merőleges vektor', 'egy szám, de csak ha a két vektor párhuzamos'], 0,
@@ -204,13 +206,13 @@ B1 = [
    r'Ha az $(x_1\vec i+y_1\vec j+z_1\vec k)\cdot(x_2\vec i+y_2\vec j+z_2\vec k)$ szorzatban '
    r'minden tagot minden taggal összeszorzunk, a kilenc tagból hat nulla lesz, és csak ez marad:</p>',
    doboz("tetel", "A skaláris szorzat koordinátákkal · tulajdonságok",
-         r'<p>Ha $\vec a=(x_1;y_1;z_1)$ és $\vec b=(x_2;y_2;z_2)$, akkor</p>'
-         r'$$\vec a\cdot\vec b=x_1x_2+y_1y_2+z_1z_2 .$$'
-         r'<p>Bármely vektorokra és $\lambda$ valós számra:</p>'
-         r'<ul><li>$\vec a\cdot\vec b=\vec b\cdot\vec a$ <i>(kommutativitás)</i></li>'
-         r'<li>$\vec a\cdot(\vec b+\vec c)=\vec a\cdot\vec b+\vec a\cdot\vec c$ <i>(disztributivitás)</i></li>'
-         r'<li>$(\lambda\vec a)\cdot\vec b=\lambda(\vec a\cdot\vec b)$</li>'
-         r'<li>$\vec a\cdot\vec a=|\vec a|^2$</li></ul>',
+         (
+             '<p>Ha $\\vec a=(x_1;y_1;z_1)$ és $\\vec b=(x_2;y_2;z_2)$, akkor</p>$$\\vec a\\cdot\\vec '
+             'b=x_1x_2+y_1y_2+z_1z_2 .$$<p>Tetszőleges vektorokra és $\\lambda$ valós számra:</p><ul><li>$\\vec '
+             'a\\cdot\\vec b=\\vec b\\cdot\\vec a$ <i>(kommutativitás)</i></li><li>$\\vec a\\cdot(\\vec b+\\vec c)=\\vec '
+             'a\\cdot\\vec b+\\vec a\\cdot\\vec c$ <i>(disztributivitás)</i></li><li>$(\\lambda\\vec a)\\cdot\\vec '
+             'b=\\lambda(\\vec a\\cdot\\vec b)$</li><li>$\\vec a\\cdot\\vec a=|\\vec a|^2$</li></ul>'
+         ),
          hid="tetel-skalaris-koordinatak"),
    r'<p><b>Példa.</b> $\vec a=(2;-1;3)$ és $\vec b=(1;4;-2)$: '
    r'$\vec a\cdot\vec b=2\cdot1+(-1)\cdot4+3\cdot(-2)=2-4-6=-8$. A szorzat negatív, tehát a két '
@@ -220,44 +222,37 @@ B1 = [
    r'$\vec p\cdot\vec q=-4+3+0=-1<0$, tehát a szögük <b>kicsit nagyobb</b> $90^\circ$-nál '
    r'(számológéppel kb. $94{,}4^\circ$). A rajz becslésre jó, a döntést a skaláris szorzat hozza.</p>',
    doboz("csapda", "Maxi trükkje",
-         r'<p><i>„$(3;-1;2)\cdot(1;2;4)=(3\cdot1;\,-1\cdot2;\,2\cdot4)=(3;-2;8)$.”</i></p>'
-         r'<p>Maxi a koordinátánkénti szorzatokat <b>vektorba</b> írta — pedig a skaláris '
-         r'szorzat <b>egyetlen szám</b>. A három szorzatot össze kell adni: '
-         r'$3-2+8=9$.</p>'
-         r'<p>Maxi másik reakciója: <i>„negatív lett a koszinusz, biztos elszámoltam”</i>. '
-         r'Nem feltétlenül! $\cos\varphi<0$ egyszerűen azt jelenti, hogy a szög '
-         r'<b>tompaszög</b> — és a számológép ilyenkor $90^\circ$-nál nagyobb szöget ad.</p>'),
+         (
+             '<p><i>„$(3;-1;2)\\cdot(1;2;4)=(3\\cdot1;\\,-1\\cdot2;\\,2\\cdot4)=(3;-2;8)$.”</i></p><p>Maxi a '
+             'koordinátánkénti szorzatokat <b>vektorba</b> írta — pedig a skaláris szorzat <b>egyetlen szám</b>. '
+             'A három szorzatot össze kell adni: $3-2+8=9$.</p><p>Maxi másik reakciója: <i>„negatív lett a '
+             'koszinusz, biztos elszámoltam”</i>. Nem feltétlenül! $\\cos\\varphi<0$ egyszerűen azt jelenti, hogy a '
+             'szög <b>nagyobb $90^\\circ$-nál</b>, akár $180^\\circ$ is lehet — és a számológép ilyenkor '
+             '$90^\\circ$-nál nagyobb szöget ad.</p>'
+         )),
  ]),
 
  ("A két vektor szögének kiszámítása", [
-   r'<p>A definíciót és a koordinátás képletet összekapcsolva kifejezhető a két vektor '
-   r'szögének koszinusza — <b>csupa koordinátákból számolható</b> mennyiséggel:</p>'
-   r'$$\cos\varphi=\frac{\vec a\cdot\vec b}{|\vec a|\,|\vec b|}'
-   r'=\frac{x_1x_2+y_1y_2+z_1z_2}{\sqrt{x_1^2+y_1^2+z_1^2}\cdot\sqrt{x_2^2+y_2^2+z_2^2}} .$$',
+   (
+       '<p>Két nem nullvektor esetén a definíciót és a koordinátás képletet összekapcsolva kifejezhető a '
+       'két vektor szögének koszinusza — <b>csupa koordinátákból számolható</b> '
+       'mennyiséggel:</p>$$\\cos\\varphi=\\frac{\\vec a\\cdot\\vec b}{|\\vec a|\\,|\\vec '
+       'b|}=\\frac{x_1x_2+y_1y_2+z_1z_2}{\\sqrt{x_1^2+y_1^2+z_1^2}\\cdot\\sqrt{x_2^2+y_2^2+z_2^2}} .$$'
+   ),
    doboz("pelda", "Kristály-kamra szimuláció — a szög számológéppel",
          r'<p>Számítsd ki az $\vec a=(3;-1;2)$ és a $\vec b=(1;2;4)$ vektor szögét fokban, '
          r'egy tizedesjegyre kerekítve! Merőleges-e az $\vec a$ a $\vec d=(2;4;-1)$ vektorra?</p>',
          hid="pelda-szog",
          lenyilo=("Megoldás",
-                  r'<p><b>1. A skaláris szorzat:</b> $\vec a\cdot\vec b=3\cdot1+(-1)\cdot2+2\cdot4=9$.</p>'
-                  r'<p><b>2. Az intenzitások:</b> $|\vec a|=\sqrt{9+1+4}=\sqrt{14}$, '
-                  r'$|\vec b|=\sqrt{1+4+16}=\sqrt{21}$.</p>'
-                  r'<p><b>3. A koszinusz:</b> $\cos\varphi=\dfrac{9}{\sqrt{14}\cdot\sqrt{21}}='
-                  r'\dfrac{9}{\sqrt{294}}\approx0{,}5249$.</p>'
-                  r'<p><b>4. A szög számológéppel</b> (fok üzemmódban, <b>D</b>/<b>DEG</b>), két '
-                  r'lépésben: előbb <code>9 ÷ √294 =</code> (ez $0{,}5249\ldots$), majd '
-                  r'<code>SHIFT</code> <code>cos</code> <code>Ans</code> <code>=</code> — a '
-                  r'<code>SHIFT cos</code> a $\cos^{-1}$. Az eredmény $58{,}34\ldots$, kerekítve '
-                  r'$\varphi\approx58{,}3^\circ$. <i>Az <code>Ans</code> a teljes részeredményt '
-                  r'viszi tovább, így nem kerekítesz menet közben.</i></p>'
-                  r'<p><b>5. Merőlegesség:</b> $\vec a\cdot\vec d=3\cdot2+(-1)\cdot4+2\cdot(-1)='
-                  r'6-4-2=0$, tehát $\vec a\perp\vec d$.</p>'
-                  r'<p class="vegeredmeny">$\varphi\approx58{,}3^\circ$ · $\vec a\cdot\vec d=0$, '
-                  r'tehát $\vec a$ és $\vec d$ merőleges</p>')),
-   r'<p><b>Ellenőrzés fejben.</b> Mielőtt a gépet elővennéd, nézd meg a skaláris szorzat '
-   r'<b>előjelét</b>: pozitívnál $90^\circ$ alatti, negatívnál fölötti szöget kell kapnod — ha '
-   r'nem így van, elírtad a törtet. Ha pedig $0$ és $3{,}14$ közötti tizedes tört jön ki, a gép '
-   r'valószínűleg <b>radiánban</b> számol: nézd meg, hogy <b>D</b> (DEG) áll-e a kijelzőn.</p>',
+                  (
+                      '<p><b>1. A skaláris szorzat:</b> $\\vec a\\cdot\\vec b=3\\cdot1+(-1)\\cdot2+2\\cdot4=9$.</p><p><b>2. Az intenzitások:</b> $|\\vec a|=\\sqrt{9+1+4}=\\sqrt{14}$, $|\\vec b|=\\sqrt{1+4+16}=\\sqrt{21}$.</p><p><b>3. A koszinusz:</b> $\\cos\\varphi=\\dfrac{9}{\\sqrt{14}\\cdot\\sqrt{21}}=\\dfrac{9}{\\sqrt{294}}\\approx0{,}5249$.</p><p><b>4. A szög számológéppel</b> (fok üzemmódban, <b>D</b>/<b>DEG</b>), két lépésben: előbb <code>9 ÷ √294 =</code> (ez közelítőleg $0{,}5249$), majd <code>SHIFT</code> <code>cos</code> <code>Ans</code> <code>=</code> — a <code>SHIFT cos</code> a $\\cos^{-1}$. Az eredmény $58{,}339\\ldots$, kerekítve $\\varphi\\approx58{,}3^\\circ$. <i>Az <code>Ans</code> a teljes részeredményt viszi tovább, így nem kerekítesz menet közben.</i></p><p><b>5. Merőlegesség:</b> $\\vec a\\cdot\\vec d=3\\cdot2+(-1)\\cdot4+2\\cdot(-1)=6-4-2=0$, tehát $\\vec a\\perp\\vec d$.</p><p class="vegeredmeny">$\\varphi\\approx58{,}3^\\circ$ · $\\vec a\\cdot\\vec d=0$, tehát $\\vec a$ és $\\vec d$ merőleges</p>'
+                  ))),
+   (
+       '<p><b>Ellenőrzés fejben.</b> Mielőtt a gépet elővennéd, nézd meg a skaláris szorzat '
+       '<b>előjelét</b>: pozitívnál $90^\\circ$ alatti, negatívnál $90^\\circ$ fölötti szöget kell kapnod. '
+       'Ellenőrizd a törtet és a gép szögmértékét: fokban megadott válaszhoz <b>D</b> vagy <b>DEG</b> '
+       'üzemmódot válassz.</p>'
+   ),
    GY(FGY + "#alap-1", "A 1–8", FGY + "#kozep-1", "K 1–6"),
    brief('<b>Medúza:</b> A skaláris szorzat számot adott: megmondta, mennyire dolgozik egyik '
          'nyíl a másik irányában. Crni Grom most két hullámot indít egyszerre, és a kristály '
@@ -269,10 +264,9 @@ B1 = [
 # ---------------------------------------------------------------- B2
 B2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Medúza:</b> Amikor a hullám két irányból érkezik, a kristály egy <b>harmadik</b> '
-         'irányban rezdül meg — mindkettőre merőlegesen. Crni Grom a jobb kezét emeli: '
-         'hüvelykujj, mutatóujj, középső ujj. A vektoriális szorzat ezt a harmadik irányt adja '
-         'meg, a hossza pedig elárulja, <b>mekkora felületet</b> feszít ki a két hullám.'),
+   brief((
+             '<b>Medúza:</b> Crni Grom két nem párhuzamos vektorral jelöli ki a kristálylapot. Egy harmadik vektort keresünk, amely mindkettőre merőleges. Ehhez a <b>vektoriális szorzatot</b> használjuk: az irányítását a jobbkéz-szabály adja meg, az intenzitása pedig a két vektorral kifeszített paralelogramma területe.'
+         )),
    r'<p>Ebben az egységben a két vektorból <b>vektort</b> adó szorzattal ismerkedünk meg. '
    r'A legfontosabb alkalmazása a <b>terület</b>: paralelogrammáé és háromszögé, akár '
    r'térbeli pontokból is. A koordinátás kiszámításához a '
@@ -302,14 +296,15 @@ B2 = [
    r'($\sin0^\circ=\sin180^\circ=0$) nulla — éppen fordítva, mint a skaláris szorzat abszolút '
    r'értéke.</p>',
    doboz("erdekesseg", "Hol találkozol vele?",
-         r'<p>A <b>forgatónyomaték</b> vektoriális szorzat: $\vec M=\vec r\times\vec F$, ahol '
-         r'$\vec r$ egy választott vonatkoztatási pontból az erő támadáspontjáig mutat. '
-         r'Az ajtónál a pontot a zsanér tengelyén választjuk, a kar és az erő pedig a '
-         r'tengelyre merőleges síkban van. Ezért könnyű az ajtót a '
-         r'kilincsnél — a zsanértól <b>távol</b> és <b>merőlegesen</b> — tolni, és ezért nem mozdul, '
-         r'ha a zsanér felé nyomod: ott $\sin\varphi=0$. <b>Ebben a síkbeli modellben</b> '
-         r'a nyomaték vektora a forgástengellyel párhuzamos. Általában a rögzített tengely '
-         r'körüli forgatásnál a nyomaték tengelyirányú összetevője számít.</p>'),
+         (
+             '<p>A <b>forgatónyomaték</b> vektoriális szorzat: $\\vec M=\\vec r\\times\\vec F$, ahol $\\vec r$ egy '
+             'választott vonatkoztatási pontból az erő támadáspontjáig mutat. Az ajtónál a pontot a zsanér '
+             'tengelyén választjuk, a kar és az erő pedig a tengelyre merőleges síkban van. Ezért könnyű az ajtót '
+             'a kilincsnél — a zsanértól <b>távol</b> és <b>merőlegesen</b> — tolni, a zsanér felé mutató erő '
+             'viszont nem forgatja az ajtót: ott $\\sin\\varphi=0$. <b>Ebben a síkbeli modellben</b> a nyomaték '
+             'vektora a forgástengellyel párhuzamos. Általában a rögzített tengely körüli forgatásnál a nyomaték '
+             'tengelyirányú összetevője számít.</p>'
+         )),
    kviz(r'Melyik állítás igaz a két szorzat eredményére?',
         [r'$\vec a\cdot\vec b$ szám, $\vec a\times\vec b$ vektor',
          'mindkettő szám', 'mindkettő vektor',
@@ -435,31 +430,24 @@ B2 = [
 # ---------------------------------------------------------------- C1
 C1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Medúza:</b> Az irányítótű elkészült. Most már nem az a kérdés, hogyan számolunk, '
-         'hanem hogy <b>melyik eszközt</b> vesszük elő. Szög? Merőlegesség? Terület? Erő? Crni '
-         'Grom szerint minden kérdésnek megvan a maga szorzata — és aki rosszat választ, az '
-         'hibátlan számolással is rossz eredményt kap.'),
-   r'<p>Ez a témakör záró egysége: rendszerezzük, <b>mire melyik szorzat</b> való, egy '
-   r'háromszögről három pontból mindent kiszámolunk, és egy rövid kitekintésben megnézzük, '
-   r'hogyan számol a fizika erőkkel és munkával.</p>',
+   brief((
+             '<b>Medúza:</b> Az irányítótű elkészült. Most már nem az a kérdés, hogyan számolunk, hanem hogy '
+             '<b>melyik eszközt</b> vesszük elő. Szög? Merőlegesség? Terület? Erő? Crni Grom szerint előbb azt '
+             'kell eldöntenünk, melyik művelet válaszol a kérdésre — és aki rosszat választ, az hibátlan '
+             'számolással is rossz eredményt kap.'
+         )),
+   (
+       '<p>Ez a témakör záró egysége: rendszerezzük, <b>mire melyik szorzat</b> való, három pontból '
+       'kiszámoljuk egy háromszög oldalait, egyik szögét és területét, és egy rövid kitekintésben '
+       'megnézzük, hogyan számol a fizika erőkkel és munkával.</p>'
+   ),
  ]),
 
  ("Melyik szorzat mire jó", [
    doboz("tetel", "Melyik eszköz melyik kérdésre",
-         r'<table class="tt-table"><tr><th>A kérdés</th><th>Az eszköz</th><th>A képlet</th></tr>'
-         r'<tr><td>két pont távolsága, egy oldal hossza</td><td>intenzitás</td>'
-         r'<td>ha $\overrightarrow{AB}=(x;y;z)$: $|\overrightarrow{AB}|=\sqrt{x^2+y^2+z^2}$</td></tr>'
-         r'<tr><td>két vektor <b>szöge</b></td><td>skaláris szorzat</td>'
-         r'<td>$\cos\varphi=\dfrac{\vec a\cdot\vec b}{|\vec a|\,|\vec b|}$</td></tr>'
-         r'<tr><td><b>merőleges</b>-e</td><td>skaláris szorzat</td><td>$\vec a\cdot\vec b=0$</td></tr>'
-         r'<tr><td>a $\vec b$ skaláris vetülete az $\vec a$ irányára, munka</td><td>skaláris szorzat</td>'
-         r'<td>$\dfrac{\vec a\cdot\vec b}{|\vec a|}$, &nbsp; $W=\vec F\cdot\vec s$</td></tr>'
-         r'<tr><td>paralelogramma, háromszög <b>területe</b></td><td>vektoriális szorzat</td>'
-         r'<td>$|\vec a\times\vec b|$, &nbsp; $\tfrac12|\vec a\times\vec b|$</td></tr>'
-         r'<tr><td><b>párhuzamos</b>-e</td><td>vektoriális szorzat (vagy arányos koordináták)</td>'
-         r'<td>$\vec a\times\vec b=\vec 0$</td></tr>'
-         r'<tr><td>mindkét vektorra <b>merőleges irány</b></td><td>vektoriális szorzat</td>'
-         r'<td>$\vec a\times\vec b$</td></tr></table>',
+         (
+             '<table class="tt-table"><tr><th>A kérdés</th><th>Az eszköz</th><th>A képlet</th></tr><tr><td>két pont távolsága, egy oldal hossza</td><td>intenzitás</td><td>ha $\\overrightarrow{AB}=(x;y;z)$: $|\\overrightarrow{AB}|=\\sqrt{x^2+y^2+z^2}$</td></tr><tr><td>két vektor <b>szöge</b></td><td>skaláris szorzat</td><td>$\\cos\\varphi=\\dfrac{\\vec a\\cdot\\vec b}{|\\vec a|\\,|\\vec b|}$</td></tr><tr><td><b>merőleges</b>-e</td><td>skaláris szorzat</td><td>$\\vec a\\cdot\\vec b=0$</td></tr><tr><td>a $\\vec b$ skaláris vetülete az $\\vec a$ irányára, munka</td><td>skaláris szorzat</td><td>$\\dfrac{\\vec a\\cdot\\vec b}{|\\vec a|}$, &nbsp; $W=\\vec F\\cdot\\vec s$</td></tr><tr><td>paralelogramma, háromszög <b>területe</b></td><td>vektoriális szorzat</td><td>$|\\vec a\\times\\vec b|$, &nbsp; $\\tfrac12|\\vec a\\times\\vec b|$</td></tr><tr><td><b>párhuzamos</b>-e</td><td>vektoriális szorzat (vagy arányos koordináták)</td><td>$\\vec a\\times\\vec b=\\vec 0$</td></tr><tr><td>mindkét vektorra <b>merőleges irány</b></td><td>vektoriális szorzat</td><td>$\\vec a\\times\\vec b$</td></tr></table><p>A szög, a merőlegesség és a párhuzamosság sorában két nem nullvektort vizsgálunk. Vetülethez az irányt megadó vektor nem lehet nulla; a nullvektor vetülete nulla. Két nem nullvektor vektoriális szorzata pontosan akkor ad mindkettőre merőleges irányt, ha a tényezők nem párhuzamosak. A munkaképlet állandó erőre vonatkozik.</p>'
+         ),
          hid="tetel-melyik-szorzat"),
    r'<p>A táblázat egy mondatban: <b>a skaláris szorzat a szöghöz, a vektoriális a '
    r'területhez</b> tartozik. A skaláris vetület képlete a definícióból jön: '
@@ -474,7 +462,7 @@ C1 = [
  ]),
 
  ("Geometriai alkalmazások", [
-   doboz("pelda", "Kristály-kamra szimuláció — egy háromszögről mindent",
+   doboz("pelda", 'Kristály-kamra szimuláció — a háromszög oldalai, szöge és területe',
          r'<p>A Kamra egyik kristálylapja az $A(2;1;0)$, $B(4;3;1)$, $C(1;3;2)$ csúcsú háromszög. '
          r'Számítsd ki</p>'
          r'<ol type="a"><li>az oldalai hosszát,</li>'
@@ -527,18 +515,15 @@ C1 = [
  ]),
 
  ("Fizikai alkalmazások", [
-   r'<p>A fizikában az erő, az elmozdulás és a sebesség vektor — a velük végzett számolás '
-   r'pontosan az, amit ebben a témakörben tanultál. Két alapeset:</p>'
-   r'<ul><li>Több erő együttes hatása az <b>eredő erő</b>: a vektorok <b>összege</b>; '
-   r'nagysága (erőnél így mondjuk az intenzitást) az összeg intenzitása.</li>'
-   r'<li>Az állandó $\vec F$ erő <b>munkája</b> az $\vec s$ elmozdulás során a <b>skaláris '
-   r'szorzat</b>: $W=\vec F\cdot\vec s=|\vec F|\,|\vec s|\cos\varphi$. Például egy $40$ N-os, '
-   r'az elmozdulással $60^\circ$-os szöget bezáró erő munkája $5$ m-es elmozdulás során '
-   r'$40\cdot5\cdot\tfrac12=100$ J.</li></ul>',
+   (
+       '<p>A fizikában az erő, az elmozdulás és a sebesség vektor — a velük végzett számolás pontosan az, amit ebben a témakörben tanultál. Két alapeset:</p><ul><li>Az <b>eredő erő</b> az erővektorok <b>összege</b>; nagysága (erőnél így mondjuk az intenzitást) az összeg intenzitása.</li><li>Az állandó $\\vec F$ erő <b>munkája</b> az $\\vec s$ elmozdulás során a <b>skaláris szorzat</b>: $W=\\vec F\\cdot\\vec s=|\\vec F|\\,|\\vec s|\\cos\\varphi$. Például egy $40$ N-os, az elmozdulással $60^\\circ$-os szöget bezáró erő munkája $5$ m-es elmozdulás során $40\\cdot5\\cdot\\tfrac12=100$ J.</li></ul>'
+   ),
    doboz("pelda", "Kristály-kamra szimuláció — eredő erő és munka",
-         r'<p>Egy kristályra két erő hat: $\vec F_1=(2;3;1)$ N és $\vec F_2=(1;-1;1)$ N. '
-         r'a) Mekkora az eredő erő, és mekkora a nagysága? b) Miközben a két erő hat rá, a kristály '
-         r'elmozdulása $\vec s=(4;1;0)$ m. Mennyi munkát végez az eredő erő?</p>',
+         (
+             '<p>Egy kristályra két állandó erő hat: $\\vec F_1=(2;3;1)$ N és $\\vec F_2=(1;-1;1)$ N. a) Mekkora az '
+             'eredő erő, és mekkora a nagysága? b) Miközben a két erő hat rá, a kristály elmozdulása $\\vec '
+             's=(4;1;0)$ m. Mennyi munkát végez az eredő erő?</p>'
+         ),
          hid="pelda-ero",
          lenyilo=("Megoldás",
                   r'<p><b>a)</b> $\vec F=\vec F_1+\vec F_2=(3;2;2)$ N, nagysága '

@@ -314,7 +314,7 @@ KOZEP = [
   [r"$(1;-5;-3)$", r"$2\,\vec a\times\vec b=(2;-10;-6)$", r"$4\,\vec a\times\vec b=(4;-20;-12)$"]),
 
  (r"Az $A(2;-3;4)$, $B(5;3;-4)$, $C(6;-7;2)$ pontok egy háromszög csúcsai. Számítsd ki",
-  [r"a háromszög területét;", r"a $B$ csúcsból induló magasságot;", r"a $C$ csúcsnál lévő szöget!"],
+  [r"a háromszög területét;", 'a $B$ csúcsból induló magasság hosszát;', r"a $C$ csúcsnál lévő szöget!"],
   ['$T=\\sqrt{977}\\approx31{,}26$',
    '$h_b\\approx10{,}42$',
    '$\\gamma\\approx62{,}9^\\circ$']),
@@ -333,7 +333,7 @@ KOZEP = [
 
  # --- C1 (közép 13–18)
  (r"A $K(2;-3;-4)$, $L(1;3;-4)$, $M(6;-5;-2)$ pontok egy háromszög csúcsai. Számítsd ki",
-  [r"a háromszög területét;", r"a $K$ csúcsból induló magasságot;", r"az $L$ csúcsnál lévő szöget!"],
+  [r"a háromszög területét;", 'a $K$ csúcsból induló magasság hosszát;', r"az $L$ csúcsnál lévő szöget!"],
   ['$T=\\sqrt{158}\\approx12{,}57$',
    '$h_k\\approx2{,}61$',
    '$\\lambda\\approx25{,}4^\\circ$']),

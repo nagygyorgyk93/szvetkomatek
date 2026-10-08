@@ -49,7 +49,7 @@
       <p>Az első tagtól az <span class="math inline">\(n\)</span>-edikig <span class="math inline">\(n-1\)</span> szorzás vezet, ezért</p><span class="math display">\[b_n=b_1\cdot q^{\,n-1} .\]</span><p>Két tetszőleges tag között ugyanígy: <span class="math inline">\(b_m=b_k\cdot q^{\,m-k}\)</span>.</p>
     </div>
 
-    <p>Az alábbi táblázat <b>pozitív első tag</b> (<span class="math inline">\(b_1\gt0\)</span>) esetére érvényes; negatív első tagnál minden tag előjelet vált, és a növekvő–csökkenő szerep megfordul.</p><div class="tblwrap"><table class="tt-table"><tr><th>a hányados</th><th>a sorozat</th><th>példa</th></tr><tr><td><span class="math inline">\(q\gt1\)</span></td><td>növekvő</td><td><span class="math inline">\(3,\ 6,\ 12,\ 24,\dots\)</span></td></tr><tr><td><span class="math inline">\(0\lt q\lt1\)</span></td><td>csökkenő, de pozitív marad</td><td><span class="math inline">\(80,\ 40,\ 20,\ 10,\dots\)</span></td></tr><tr><td><span class="math inline">\(q\lt0\)</span></td><td>váltakozó előjelű</td><td><span class="math inline">\(4,\ -2,\ 1,\ -\frac12,\dots\)</span></td></tr><tr><td><span class="math inline">\(q=1\)</span></td><td>állandó</td><td><span class="math inline">\(5,\ 5,\ 5,\dots\)</span></td></tr></table></div>
+    <p>Az alábbi táblázat <b>pozitív első tag</b> (<span class="math inline">\(b_1\gt0\)</span>) esetére érvényes; negatív első tagnál minden tag előjelet vált. Pozitív hányadosnál a növekvő és csökkenő eset felcserélődik; negatív hányadosnál továbbra is váltakoznak az előjelek.</p><div class="tblwrap"><table class="tt-table"><tr><th>a hányados</th><th>a sorozat</th><th>példa</th></tr><tr><td><span class="math inline">\(q\gt1\)</span></td><td>növekvő</td><td><span class="math inline">\(3,\ 6,\ 12,\ 24,\dots\)</span></td></tr><tr><td><span class="math inline">\(0\lt q\lt1\)</span></td><td>csökkenő, de pozitív marad</td><td><span class="math inline">\(80,\ 40,\ 20,\ 10,\dots\)</span></td></tr><tr><td><span class="math inline">\(q\lt0\)</span></td><td>váltakozó előjelű</td><td><span class="math inline">\(4,\ -2,\ 1,\ -\frac12,\dots\)</span></td></tr><tr><td><span class="math inline">\(q=1\)</span></td><td>állandó</td><td><span class="math inline">\(5,\ 5,\ 5,\dots\)</span></td></tr></table></div>
 
     <div class="svgcard">
     <svg viewBox="0 0 390 250" width="390" height="250" role="img" aria-label="A 3, 6, 12, 24, 48 mértani sorozat pontjai egy exponenciális görbére esnek">
@@ -95,12 +95,12 @@
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Ismerős görbe</p>
-      <p>A pontok az <a href="../../2e/03-exponencialis-es-logaritmus-fuggveny/index.html">exponenciális függvény</a> grafikonjára esnek: a <span class="math inline">\(b_n=3\cdot2^{\,n-1}\)</span> sorozat ugyanaz, mint az <span class="math inline">\(y=1{,}5\cdot2^{x}\)</span> függvény értékei a pozitív egész <span class="math inline">\(x=n\)</span> helyeken. Ezért nő a mértani sorozat olyan gyorsan: a kitevőben van az <span class="math inline">\(n\)</span>.</p>
+      <p>A pontok az <a href="../../2e/03-exponencialis-es-logaritmus-fuggveny/index.html">exponenciális függvény</a> grafikonjára esnek: a <span class="math inline">\(b_n=3\cdot2^{\,n-1}\)</span> sorozat ugyanaz, mint az <span class="math inline">\(y=1{,}5\cdot2^{x}\)</span> függvény értékei a pozitív egész <span class="math inline">\(x=n\)</span> helyeken. Ezért nő ez a kétszereződő sorozat ilyen gyorsan: a kitevőben van az <span class="math inline">\(n\)</span>.</p>
     </div>
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
-      <p>Maxi két hibát is elkövet, és mindkettő ugyanoda vezet: túl nagy vagy rossz előjelű energiát jelent.</p><p><b>1.</b> <span class="math inline">\(b_{10}=b_1\cdot q^{10}\)</span> — egy szorzással több a kelleténél. Helyesen a kitevő <span class="math inline">\(n-1=9\)</span>.</p><p><b>2.</b> A <span class="math inline">\((-2)^n\)</span> és a <span class="math inline">\(-2^n\)</span> összekeverése. A <span class="math inline">\((-2)^4=16\)</span>, de <span class="math inline">\(-2^4=-16\)</span>: a zárójel nélküli alakban a hatványozás megelőzi az előjelet. Váltakozó előjelű sorozatnál ezért mindig zárójelbe tesszük a negatív hányadost.</p>
+      <p>Maxi két hibát is elkövet, és emiatt rossz értéket ad meg.</p><p><b>1.</b> <span class="math inline">\(b_{10}=b_1\cdot q^{10}\)</span> — egy szorzással több a kelleténél. Helyesen a kitevő <span class="math inline">\(n-1=9\)</span>.</p><p><b>2.</b> A <span class="math inline">\((-2)^n\)</span> és a <span class="math inline">\(-2^n\)</span> összekeverése. A <span class="math inline">\((-2)^4=16\)</span>, de <span class="math inline">\(-2^4=-16\)</span>: a zárójel nélküli alakban a hatványozás megelőzi az előjelet. Váltakozó előjelű sorozatnál ezért mindig zárójelbe tesszük a negatív hányadost.</p>
     </div>
 
     <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ b₄ = 5 · (−2)³ = 5 · (−8) = −40: három szorzás, és a páratlan kitevő miatt negatív." data-nem="✘ b₄ = b₁ · q³ = 5 · (−2)³. A kitevő 3 (nem 4), és a (−2)³ = −8, tehát b₄ = −40.">
@@ -126,7 +126,7 @@
 
     <div class="doboz erdekesseg" id="erd-sakktabla">
       <p class="cim"><span class="ikon">💡</span> A rizsszemek a sakktáblán</p>
-      <p>A legenda szerint a sakk feltalálója annyi rizsszemet kért jutalmul, hogy az első mezőre egy szem kerüljön, a másodikra kettő, a harmadikra négy, és így tovább. A hatvannégy mezőn <span class="math inline">\(S_{64}=2^{64}-1\)</span> szem lenne — több, mint a világ mai rizstermésének több száz évnyi mennyisége. A király a számtani sorozatra gondolt, a feltaláló a mértanira.</p>
+      <p>A legenda szerint a sakk feltalálója annyi rizsszemet kért jutalmul, hogy az első mezőre egy szem kerüljön, a másodikra kettő, a harmadikra négy, és így tovább. A hatvannégy mezőn <span class="math inline">\(S_{64}=2^{64}-1\)</span> szem lenne — ez tizennyolc trilliónál is több szem. A történet az ismételt kétszerezés gyors növekedését szemlélteti.</p>
     </div>
 
     <!-- media:begin 3e06-mertani-video -->
@@ -156,7 +156,7 @@
 
     <h2 id="s4">Kamat: egyszerű és kamatos</h2>
 
-    <p>A két sorozat különbsége a pénzügyekben a legszemléletesebb. Az <a href="../../1e/04-aranyossag/tananyag-kamatszamitas.html#s1">egyszerű kamat</a> mindig a kezdő tőkére jár: minden évben ugyanakkora összeggel nő a számla — ez <b>számtani</b> sorozat. A <b>kamatos kamat</b> esetén a kamat is kamatozik tovább: minden évben ugyanazzal a szorzóval nő a számla — ez <b>mértani</b> sorozat.</p>
+    <p>A két sorozat különbségét egy egyszerű kamatmodellben is láthatjuk. Állandó kamatlábbal számolunk, további befizetés, kivét és költség nélkül. Kamatos kamat esetén a kamatot a megadott időközönként tőkésítjük. Az <a href="../../1e/04-aranyossag/tananyag-kamatszamitas.html#s1">egyszerű kamat</a> mindig a kezdő tőkére jár: minden évben ugyanakkora összeggel nő a számla — ez <b>számtani</b> sorozat. A <b>kamatos kamat</b> esetén a kamat is kamatozik tovább: minden évben ugyanazzal a szorzóval nő a számla — ez <b>mértani</b> sorozat.</p>
 
     <div class="doboz tetel" id="tetel-kamatos-kamat">
       <p class="cim"><span class="ikon">📘</span> A kamatos kamat képlete</p>
@@ -211,12 +211,12 @@
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
-      <p>Maxi fejben számol: „<span class="math inline">\(20\)</span> év, évi <span class="math inline">\(10\%\)</span> — az összesen <span class="math inline">\(200\%\)</span>, vagyis a pénzem háromszorosa”.</p><p>Ez az <b>egyszerű</b> kamat esete. Kamatos kamatnál a szorzók szorzódnak: <span class="math inline">\(1{,}1^{20}\approx6{,}7275\)</span>, tehát a tőke nem háromszorosára, hanem közel <b>hétszeresére</b> nő — a kamat <span class="math inline">\(572{,}7\%\)</span>. Minél hosszabb a futamidő, annál nagyobb a különbség; hitelnél ugyanez a mechanizmus dolgozik az adós ellen.</p>
+      <p>Maxi fejben számol: „<span class="math inline">\(20\)</span> év, évi <span class="math inline">\(10\%\)</span> — az összesen <span class="math inline">\(200\%\)</span>, vagyis a pénzem háromszorosa”.</p><p>Ez az <b>egyszerű</b> kamat esete. Kamatos kamatnál a szorzók szorzódnak: <span class="math inline">\(1{,}1^{20}\approx6{,}7275\)</span>, tehát a tőke nem háromszorosára, hanem közel <b>hétszeresére</b> nő — a kamat <span class="math inline">\(572{,}7\%\)</span>. Minél hosszabb a futamidő, annál nagyobb a különbség. Ez a számítás törlesztés nélküli, állandó kamatlábú modellre vonatkozik; egy valódi hitel alakulásához a törlesztéseket és a költségeket is ismerni kell.</p>
     </div>
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
-      <p>Kamatos kamat szerint nő a megtakarítás és a hiteltartozás, és ugyanígy — csak lefelé — működik az infláció (a pénz értéke évente ugyanazzal a szorzóval csökken) meg a gyógyszer kiürülése a szervezetből (felezési idő: <span class="math inline">\(q=\frac12\)</span>).</p>
+      <p>Állandó kamatlábbal, további befizetés és kivét nélkül a megtakarítást mértani sorozattal modellezhetjük. Csökkenésre példa egy papírlap ismételt félbevágása: ha mindig az egyik felet vágjuk tovább, annak területe minden lépésben az előző fele (<span class="math inline">\(q=\frac12\)</span>).</p>
     </div>
 
     <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ Egy hónapra 6/12 = 0,5% jár, és 5 év alatt 60 jóváírás történik." data-nem="✘ A gyakoribb jóváírás nem az éves kamatlábat hatványozza többször: egy időszakra a kamatláb p/t (itt 0,06/12), a kitevő pedig a jóváírások száma (itt 12 · 5 = 60).">
@@ -256,7 +256,7 @@
 
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-sorozatok.html#alap-21">🐕 Tér-eb-ugrás <span class="cimke">A 21–28</span></a><a class="sav bruno" href="feladatok-sorozatok.html#kozep-15">👑 Királyi Gárda <span class="cimke">K 15–20</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> A képletek megvannak, a küszöb kiszámolva. Előbb éles helyzetben is használd őket — a Kiképzési Adattár és a Kristály-kamra vár —, aztán jön a nehezebb kérdés: honnan tudjuk, hogy ezek a képletek <b>minden</b> <span class="math inline">\(n\)</span>-re igazak, nem csak az első néhány lépésre?</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/kanrak.webp" alt="Kanrak — a rendszerek és töréspontok mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Kanrak:</b> A képletek megvannak, a küszöb kiszámolva. Előbb éles helyzetben is használd őket — a Kiképzési Adattár és a Kristály-kamra vár —, aztán jön a nehezebb kérdés: hogyan adhatunk a már levezetett képletekre másik bizonyítást teljes indukcióval?</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-szamtani-sorozat.html"><span class="irany">← Előző</span><span class="hova">A számtani sorozat</span></a>
       <a class="kov" href="feladatok-sorozatok.html"><span class="irany">Következő →</span><span class="hova">Sorozatok — feladatok</span></a>

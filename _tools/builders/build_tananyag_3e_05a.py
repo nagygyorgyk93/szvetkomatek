@@ -226,10 +226,13 @@ A1 = [
  ]),
 
  ("Két pont távolsága", [
-   r'<p>Legyen $A(x_1;y_1)$ és $B(x_2;y_2)$ két pont. Vegyük fel a $C(x_2;y_1)$ segédpontot: '
-   r'az $AC$ szakasz vízszintes, hossza $|x_2-x_1|$, a $CB$ szakasz függőleges, hossza '
-   r'$|y_2-y_1|$. Az $ACB$ háromszög derékszögű, az $AB$ az átfogója — a Pitagorasz-tételből '
-   r'megkapjuk a távolságot.</p>',
+   (
+       '<p>Legyen $A(x_1;y_1)$ és $B(x_2;y_2)$ két pont. Vegyük fel a $C(x_2;y_1)$ segédpontot: az $AC$ '
+       'szakasz vízszintes, hossza $|x_2-x_1|$, a $CB$ szakasz függőleges, hossza $|y_2-y_1|$. Ha mindkét '
+       'koordinátakülönbség nem nulla, az $ACB$ háromszög derékszögű, az $AB$ az átfogója — a '
+       'Pitagorasz-tételből megkapjuk a távolságot. Ha valamelyik koordinátakülönbség nulla, a pontok '
+       'vízszintes vagy függőleges szakaszt alkotnak; a távolságképlet ekkor is érvényes.</p>'
+   ),
    abra(SVG_TAV, 'Az $A(-2;5)$ és a $B(6;-1)$ távolsága egy $8$ és $6$ befogójú derékszögű '
         'háromszög átfogója: $d=\\sqrt{8^2+6^2}=10$.'),
    doboz("tetel", "Két pont távolsága",
@@ -440,13 +443,13 @@ A2 = [
  ]),
 
  ("A négyszög területe", [
-   r'<p>Egy négyszöget egy <b>átlóval</b> két háromszögre bontunk, és a két terület összegét '
-   r'vesszük. Ehhez a csúcsokat <b>körüljárási sorrendben</b> kell megadni: $ABCD$ esetén '
-   r'a $PR$ és a $QS$ az átló. <i>(Konvex négyszögnél bármelyik átló jó; konkávnál a '
-   r'négyszög belsejében futó átlót válaszd.)</i></p>'
-   r'<p><b>Példa.</b> $P(-2;-2)$, $Q(4;-1)$, $R(3;3)$, $S(-1;4)$. A $PR$ átló mentén: '
-   r'$T_{PQR}=\frac12\cdot|25|=12{,}5$ és $T_{PRS}=\frac12\cdot|25|=12{,}5$, tehát '
-   r'$T_{PQRS}=25$.</p>',
+   (
+       '<p>Egy négyszöget egy <b>átlóval</b> két háromszögre bontunk, és a két terület összegét vesszük. '
+       'Ehhez a csúcsokat <b>körüljárási sorrendben</b> kell megadni: $PQRS$ esetén a $PR$ és a $QS$ az '
+       'átló. <i>(Konvex négyszögnél bármelyik átló jó; konkávnál a négyszög belsejében futó átlót '
+       'válaszd.)</i></p><p><b>Példa.</b> $P(-2;-2)$, $Q(4;-1)$, $R(3;3)$, $S(-1;4)$. A $PR$ átló mentén: '
+       '$T_{PQR}=\\frac12\\cdot|25|=12{,}5$ és $T_{PRS}=\\frac12\\cdot|25|=12{,}5$, tehát $T_{PQRS}=25$.</p>'
+   ),
    abra(SVG_NEGY, 'A $PQRS$ négyszög a $PR$ átlóval két háromszögre bontva.'),
    r'<p><b>Figyelj a sorrendre!</b> Ha valaki a $P$, $Q$, $S$, $R$ sorrendben köti össze '
    r'ugyanezt a négy pontot, az „oldalak” keresztezik egymást, és az „átló” mentén bontva hibás '
@@ -454,11 +457,13 @@ A2 = [
    r'Mielőtt számolsz, rajzold fel a pontokat, és ellenőrizd, hogy a sorrend körbejár-e.</p>',
    abra(SVG_NEGY_ROSSZ, 'Hibás sorrend, P–Q–S–R: a vonal önmagát metszi — ez nem a $PQRS$ négyszög.'),
    doboz("erdekesseg", "Hol találkozol vele?",
-         r'<p>A földmérők egy telek területét a sarokpontok koordinátáiból számolják. Bármely '
-         r'$n$ csúcsú, nem önmetsző sokszögre működik az úgynevezett <b>Gauss-féle területképlet</b> (angol nevén '
-         r'<i>shoelace formula</i>, azaz „cipőfűző-képlet”): körbejárva a csúcsokat</p>'
-         r'$$T=\frac12\left|x_1y_2-x_2y_1+x_2y_3-x_3y_2+\dots+x_ny_1-x_1y_n\right|.$$'
-         r'<p>Háromszögre ez pontosan a fenti $\frac12|D|$.</p>'),
+         (
+             '<p>Egy telek síkbeli térképi területét a sarokpontok azonos mértékegységű koordinátáiból is '
+             'kiszámíthatjuk. Bármely $n$ csúcsú, nem önmetsző sokszögre működik az úgynevezett <b>Gauss-féle '
+             'területképlet</b> (angol nevén <i>shoelace formula</i>, azaz „cipőfűző-képlet”): körbejárva a '
+             'csúcsokat</p>$$T=\\frac12\\left|x_1y_2-x_2y_1+x_2y_3-x_3y_2+\\dots+x_ny_1-x_1y_n\\right|.$$<p>Háromszögr'
+             'e ez pontosan a fenti $\\frac12|D|$.</p>'
+         )),
    GY(FGY + "#alap-10", "A 10–16", FGY + "#kozep-6", "K 6–10"),
    brief('<b>Kanrak:</b> A zónákat lemértük. Maxi drónjai azonban nem ugrálnak ide-oda: '
          '<b>egyenes pályán</b> repülnek. Ha egy pályát egyenlettel le tudunk írni, Tér-eb '

@@ -157,10 +157,11 @@ D1 = [
    r'pálcával feszesen tartva körbevezetjük, a pálca ellipszist rajzol: a zsinór két darabja mindig '
    r'$2a$ hosszú együtt. Így jelölik ki a kertészek az ellipszis alakú virágágyásokat.</p>',
    doboz("erdekesseg", "Hol találkozol vele?",
-         r'<p>Kepler felismerése szerint a bolygók <b>ellipszispályán</b> keringenek, és a Nap az '
-         r'ellipszis egyik <b>fókuszában</b> van. A Föld pályája alig tér el a körtől, az '
-         r'üstökösöké viszont nagyon megnyúlt: a Halley-üstökös nagyjából hetvenhat évente tér vissza a Nap '
-         r'közelébe.</p>'),
+         (
+             '<p>Kepler felismerése szerint a bolygók <b>ellipszispályán</b> keringenek, és a Nap az ellipszis '
+             'egyik <b>fókuszában</b> van. A Föld pályája alig tér el a körtől, a Halley-üstökösé viszont nagyon '
+             'megnyúlt: a Halley-üstökös nagyjából hetvenhat évente tér vissza a Nap közelébe.</p>'
+         )),
  ]),
 
  ("Az ellipszis egyenlete", [
@@ -215,11 +216,13 @@ D1 = [
  ]),
 
  ("Ellipszis felírása adatokból", [
-   r'<ul><li><b>$a$ és $b$ adott:</b> behelyettesítünk. $a=6$, $b=2$: $\frac{x^2}{36}+\frac{y^2}{4}=1$.</li>'
-   r'<li><b>$a$ és $e$ adott:</b> $b^2=a^2-e^2$. $a=5$, $e=4$: $b^2=9$, $\frac{x^2}{25}+\frac{y^2}{9}=1$.</li>'
-   r'<li><b>Két pontja adott:</b> a pontok koordinátáit beírjuk az egyenletbe. Két egyenletet kapunk, '
-   r'amely az $\frac1{a^2}$ és $\frac1{b^2}$ ismeretlenekre nézve '
-   r'<a href="' + V03 + r'tananyag-ket-ismeretlen.html#def-rendszer">lineáris rendszer</a>.</li></ul>',
+   (
+       '<ul><li><b>$a$ és $b$ adott:</b> behelyettesítünk. $a=6$, $b=2$: '
+       '$\\frac{x^2}{36}+\\frac{y^2}{4}=1$.</li><li><b>$a$ és $e$ adott:</b> $b^2=a^2-e^2$. $a=5$, $e=4$: '
+       '$b^2=9$, $\\frac{x^2}{25}+\\frac{y^2}{9}=1$.</li><li><b>Origó középpontú, koordinátatengelyekkel '
+       'párhuzamos tengelyű ellipszis két pontja adott:</b> a pontok koordinátáit beírjuk az egyenletbe. '
+       'Két egyenletet kapunk, amely az $\\frac1{a^2}$ és $\\frac1{b^2}$ ismeretlenekre nézve <a href="'
+   ) + V03 + r'tananyag-ket-ismeretlen.html#def-rendszer">lineáris rendszer</a>.</li></ul>',
    doboz("pelda", "Kristály-kamra szimuláció — a mező két peremi pontjából",
          r'<p>A műszerek egy origó középpontú, $x$-tengelyen fekvő fókuszú, ellipszis alakú mező peremén két pontot '
          r'mértek be: $M(4;1)$ és $N(2;2)$. Írd fel a mező egyenletét!</p>',
@@ -330,9 +333,11 @@ D2 = [
 # ---------------------------------------------------------------- D3
 D3 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Kanrak:</b> Itt a tér két ágra szakad. A mezőnek most is két magja van, de a perem '
-         'pontjaira nem az összeg, hanem a <b>különbség</b> állandó. És van két vonal, amelyhez a '
-         'szakadás egyre közelebb húzódik, de soha nem éri el — ezek az <b>aszimptoták</b>.'),
+   brief((
+             '<b>Kanrak:</b> Itt a tér két ágra szakad. A mezőnek most is két magja van, de a perem pontjaira nem '
+             'a két magtól mért távolság összege, hanem a <b>különbségük abszolút értéke</b> állandó. És van két '
+             'vonal, amelyhez a szakadás egyre közelebb húzódik, de soha nem éri el — ezek az <b>aszimptoták</b>.'
+         )),
  ]),
 
  ("A hiperbola mint mértani hely", [
@@ -347,11 +352,13 @@ D3 = [
    r'<p>Vesd össze az <a href="tananyag-ellipszis.html#def-ellipszis">ellipszissel</a>: ott a két '
    r'távolság <b>összege</b> állandó, és $2a\gt2e$; itt a <b>különbségük</b>, és $2a\lt2e$.</p>',
    doboz("erdekesseg", "Hol találkozol vele?",
-         r'<p>Ha két rádióállomás egyszerre ad jelet, és a hajó műszere azt méri, hogy az egyik jel '
-         r'mennyivel később érkezett, akkor ismert, hogy a hajó mennyivel van közelebb az egyik '
-         r'állomáshoz, mint a másikhoz — vagyis a hajó egy hiperbola egyik ágán van. Egy harmadik '
-         r'állomással egy második hiperbolát kapunk, a helyet a kettő metszéspontja adja. Így működött '
-         r'például a LORAN-rendszer.</p>'),
+         (
+             '<p>Ha két rádióállomás egyszerre ad jelet, és a hajó műszere azt méri, hogy az egyik jel mennyivel '
+             'később érkezett, akkor ismert, hogy a hajó mennyivel van közelebb az egyik állomáshoz, mint a '
+             'másikhoz — vagyis a hajó egy hiperbola egyik ágán van. Egy harmadik állomással egy második '
+             'hiperbolát kapunk, a két feltételt teljesítő helyeket a metszéspontok adják. Így működött például a '
+             'LORAN-rendszer.</p>'
+         )),
  ]),
 
  ("A hiperbola egyenlete", [
@@ -399,21 +406,21 @@ D3 = [
  ]),
 
  ("Adatokból egyenlet — melyik görbe?", [
-   r'<ul><li><b>$a$ és $e$ adott:</b> $b^2=e^2-a^2$.</li>'
-   r'<li><b>Két pont adott:</b> ahogy az ellipszisnél, lineáris rendszer az $\frac1{a^2}$ és '
-   r'$\frac1{b^2}$ ismeretlenre. Ha az egyik pont csúcspont, $(\pm a;0)$, az rögtön megadja az '
-   r'$a$-t. Például a $(2;0)$ és a $(4;3)$ ponton átmenő hiperbolánál $a^2=4$, és '
-   r'$\frac{16}4-\frac9{b^2}=1$-ből $b^2=3$: $\frac{x^2}4-\frac{y^2}3=1$.</li></ul>'
-   r'<p><b>Melyik görbe?</b> Ha az egyenlet a tanult alapalakok egyikére hozható, és valóban '
-   r'görbét ír le (a körnél és az ellipszisnél a rendezés után a jobb oldal pozitív, a parabolánál '
-   r'a másik változó elsőfokon szerepel), akkor az alakjáról ránézésre eldönthető, melyik:</p>'
-   r'<div class="tblwrap"><table class="tt-table">'
-   r'<tr><th>az egyenletben</th><th>görbe</th></tr>'
-   r'<tr><td>$x^2$ és $y^2$ azonos előjellel, egyenlő együtthatóval</td><td>kör</td></tr>'
-   r'<tr><td>$x^2$ és $y^2$ azonos előjellel, különböző együtthatóval</td><td>ellipszis</td></tr>'
-   r'<tr><td>$x^2$ és $y^2$ ellentétes előjellel</td><td>hiperbola</td></tr>'
-   r'<tr><td>csak az egyik változó szerepel négyzeten</td><td>parabola</td></tr>'
-   r'</table></div>',
+   (
+       '<ul><li><b>$a$ és $e$ adott:</b> $b^2=e^2-a^2$.</li><li><b>Origó középpontú, $x$-tengelyű hiperbola '
+       'két pontja adott:</b> ahogy az ellipszisnél, lineáris rendszer az $\\frac1{a^2}$ és $\\frac1{b^2}$ '
+       'ismeretlenre. Ha az egyik pont csúcspont, $(\\pm a;0)$, az rögtön megadja az $a$-t. Például a '
+       '$(2;0)$ és a $(4;3)$ ponton átmenő hiperbolánál $a^2=4$, és $\\frac{16}4-\\frac9{b^2}=1$-ből $b^2=3$: '
+       '$\\frac{x^2}4-\\frac{y^2}3=1$.</li></ul><p><b>Melyik görbe?</b> Ha az egyenlet a tanult alapalakok '
+       'egyikére hozható, és valóban görbét ír le (a körnél és az ellipszisnél a rendezés után a jobb oldal '
+       'pozitív, a parabolánál a másik változó elsőfokon szerepel), akkor az alakjáról ránézésre '
+       'eldönthető, melyik:</p><div class="tblwrap"><table class="tt-table"><tr><th>az '
+       'egyenletben</th><th>görbe</th></tr><tr><td>$x^2$ és $y^2$ azonos előjellel, egyenlő '
+       'együtthatóval</td><td>kör</td></tr><tr><td>$x^2$ és $y^2$ azonos előjellel, különböző '
+       'együtthatóval</td><td>ellipszis</td></tr><tr><td>$x^2$ és $y^2$ ellentétes '
+       'előjellel</td><td>hiperbola</td></tr><tr><td>csak az egyik változó szerepel '
+       'négyzeten</td><td>parabola</td></tr></table></div>'
+   ),
    doboz("pelda", "Kristály-kamra szimuláció — melyik mező melyik?",
          r'<p>A műszer négy mező egyenletét rögzítette: (A) $x^2+y^2=9$, (B) $\frac{x^2}9+\frac{y^2}4=1$, '
          r'(C) $\frac{x^2}4-y^2=1$, (D) $y^2=4x$. Párosítsd az egyenleteket az ábrákkal! <i>(A parabolát a 12. lapon részletezzük; itt '

@@ -88,9 +88,11 @@ A1 = [
  ]),
 
  ("Minden sorszámhoz egy szám", [
-   r'<p class="lead">A generátor naplója így néz ki: az 1. lépésnél $0{,}33$, a 2.-nál $0{,}75$, '
-   r'a 3.-nál $1$… A lényeg a <b>hozzárendelés</b>: a lépés sorszámához tartozik egy szám. '
-   r'Pontosan ez a sorozat.</p>',
+   (
+       '<p class="lead">A generátor naplója így néz ki: az 1. lépésnél körülbelül $0{,}33$, a 2.-nál '
+       '$0{,}75$, a 3.-nál $1$… A lényeg a <b>hozzárendelés</b>: a lépés sorszámához tartozik egy szám. '
+       'Pontosan ez a sorozat.</p>'
+   ),
    doboz("definicio", "A sorozat",
          r'<p><b>Sorozatnak</b> nevezzük azt a hozzárendelést, amely minden $n$ természetes számhoz '
          r'egyetlen valós számot rendel. Ez a szám a sorozat <b>$n$-edik tagja</b> (vagy általános '
@@ -108,60 +110,69 @@ A1 = [
  ]),
 
  ("Hogyan adhatunk meg egy sorozatot?", [
-   r'<p>Három úton szoktuk megadni, és mindháromnak megvan a maga haszna.</p>'
-   r'<p><b>1. Az általános tag képletével.</b> Ez a leggyorsabb: bármelyik tagot egy lépésben '
-   r'megkapjuk, a századikat is.</p>'
-   r'<p><b>2. Rekurzívan.</b> Megadjuk a kezdőtagot, és azt a szabályt, ahogyan egy tagból a '
-   r'következő adódik. Ilyenkor lépésről lépésre haladunk.</p>'
-   r'<p><b>3. Felsorolással.</b> Leírjuk az első néhány tagot. Ez a legkényelmesebb — és a '
-   r'legcsalókább.</p>',
+   (
+       '<p>Egy sorozat szabályát képlettel vagy rekurzívan is megadhatjuk. Az első néhány tag felsorolása '
+       'segít felismerni a mintát, de önmagában nem határozza meg a teljes sorozatot.</p><p><b>1. Az '
+       'általános tag képletével.</b> Az előző tagok kiszámítása nélkül bármelyik tagot egy lépésben '
+       'megkapjuk, a századikat is.</p><p><b>2. Rekurzívan.</b> Megadjuk a kezdőtagot, és azt a szabályt, '
+       'ahogyan egy tagból a következő adódik. Ilyenkor lépésről lépésre haladunk.</p><p><b>3. '
+       'Felsorolással.</b> Leírjuk az első néhány tagot. Így csak a sorozat egy kezdeti részét mutatjuk '
+       'be.</p>'
+   ),
    doboz("definicio", "Rekurzív megadás",
-         r'<p>A sorozat <b>rekurzív</b> megadásához két dolog kell: a <b>kezdőtag</b> (esetleg az első '
-         r'néhány tag), és a <b>továbblépési szabály</b>, amely megmondja, hogyan kapjuk az előző '
-         r'tagból (tagokból) a következőt.</p>'
-         r'<p>Például $a_1=2$ és $a_{n+1}=3a_n-1$: a sorozat $2,\ 5,\ 14,\ 41,\ \dots$ — '
-         r'a kezdőtag nélkül a szabály önmagában semmit nem határoz meg.</p>',
+         (
+             '<p>A sorozat <b>rekurzív</b> megadásához két dolog kell: a <b>kezdőtag</b> (esetleg az első néhány '
+             'tag), és a <b>továbblépési szabály</b>, amely megmondja, hogyan kapjuk az előző tagból (tagokból) a '
+             'következőt.</p><p>Például $a_1=2$ és $a_{n+1}=3a_n-1$: a sorozat $2,\\ 5,\\ 14,\\ 41,\\ \\dots$ — a '
+             'kezdőtag nélkül a szabály önmagában nem határoz meg egyetlen sorozatot egyértelműen.</p>'
+         ),
          hid="def-rekurzio"),
    doboz("pelda", "Kristály-kamra szimuláció — a rétegek naplója",
-         r'<p>A generátor naplója rekurzív: $a_1=5$, és minden további réteg az előző '
-         r'kétszerese mínusz 3, azaz $a_{n+1}=2a_n-3$. Írjuk fel az első hat réteget, és '
-         r'állapítsuk meg, hányadik lépésnél lépi át a vastagság a 100 egységet!</p>'
-         r'<p>Lépésről lépésre haladunk:</p>'
-         r'$$5,\quad 7,\quad 11,\quad 19,\quad 35,\quad 67 .$$'
-         r'<p>A hatodik tag még $67$, a következő viszont $a_7=2\cdot67-3=131$: a <b>7. lépésnél</b> '
-         r'lépi át a 100-at. '
-         r'Rekurzív megadásnál nincs ugrás — a hetedik taghoz tényleg végig kell számolni az összes '
-         r'előzőt.</p>', hid="pelda-rekurziv"),
+         (
+             '<p>A generátor naplója rekurzív: $a_1=5$, és minden további réteg az előző kétszerese mínusz 3, '
+             'azaz $a_{n+1}=2a_n-3$. Írjuk fel az első hat réteget, és állapítsuk meg, hányadik lépésnél lépi át '
+             'a vastagság a 100 egységet!</p><p>Lépésről lépésre haladunk:</p>$$5,\\quad 7,\\quad 11,\\quad 19,\\quad '
+             '35,\\quad 67 .$$<p>A hatodik tag még $67$, a következő viszont $a_7=2\\cdot67-3=131$: a <b>7. '
+             'lépésnél</b> lépi át a 100-at. Ha közvetlenül a rekurzív szabályt használjuk, lépésről lépésre '
+             'számolunk. Ha megtaláljuk az általános tag képletét, abból közvetlenül is kiszámíthatjuk a hetedik '
+             'tagot.</p>'
+         ), hid="pelda-rekurziv"),
    doboz("csapda", "Maxi trükkje",
-         r'<p>Maxi bemutat három számot — $3,\ 5,\ 7,\ \dots$ —, és azt állítja, hogy a következő '
-         r'„nyilvánvalóan” a $9$.</p>'
-         r'<p>Csakhogy ez lehet a <b>páratlan számok</b> sorozata (akkor $9$ jön), de lehet a '
-         r'<b>prímszámok</b> sorozata is a 3-tól kezdve (akkor $11$). Mindkettő tökéletesen illik az '
-         r'első három tagra.</p>'
-         r'<p><b>A felsorolás nem definíció.</b> Egyértelművé csak a képlet vagy a rekurzív szabály '
-         r'teszi a sorozatot; a felsorolásból legfeljebb <b>sejtünk</b> egy szabályt. A feladatokban '
-         r'ezért mindig azt kérdezzük, melyik a <i>legegyszerűbb</i> szabály, amely illik rá.</p>'),
+         (
+             '<p>Maxi bemutat három számot — $3,\\ 5,\\ 7,\\ \\dots$ —, és azt állítja, hogy a következő '
+             '„nyilvánvalóan” a $9$.</p><p>Csakhogy ez lehet a <b>páratlan számok</b> sorozata (akkor $9$ jön), '
+             'de lehet a <b>prímszámok</b> sorozata is a 3-tól kezdve (akkor $11$). Mindkettő tökéletesen illik '
+             'az első három tagra.</p><p><b>Az első néhány tagból nem következik egyetlen folytatás.</b> '
+             'Egyértelmű szabályra és a szükséges kezdőadatokra van szükség. Ha a feladat csak néhány tagot sorol '
+             'fel, egy lehetséges egyszerű szabályt keresünk; más folytatás is illeszkedhet hozzájuk.</p>'
+         )),
    doboz("erdekesseg", "Hol találkozol vele?",
-         r'<p>A <b>Fibonacci-sorozat</b> rekurzív: $a_1=1$, $a_2=1$, és minden további tag az előző '
-         r'kettő összege — $1, 1, 2, 3, 5, 8, 13, \dots$ Ez írja le a nyúlpárok szaporodását, a '
-         r'napraforgó magjainak spirálszámait és a levelek elhelyezkedését.</p>'
-         r'<p>Sorozat a havi villanyóra-állás, a törlesztőrészletek listája és egy játék '
-         r'szintjeinek pontküszöbe is: mindegyiknél sorszámhoz tartozik egy szám.</p>'),
+         (
+             '<p>A <b>Fibonacci-sorozat</b> rekurzív: $a_1=1$, $a_2=1$, és minden további tag az előző kettő '
+             'összege — $1, 1, 2, 3, 5, 8, 13, \\dots$ Fibonacci egy idealizált nyúlszaporodási feladatban '
+             'használta ezt a sorozatot. A modell szabályai egyszerűek; a valódi nyulak szaporodását nem írják le '
+             'teljesen.</p><p>Sorozat a havi villanyóra-állás, a törlesztőrészletek listája és egy játék '
+             'szintjeinek pontküszöbe is: mindegyiknél sorszámhoz tartozik egy szám.</p>'
+         )),
    kviz(r'Melyik sorozatot határozza meg <b>egyértelműen</b> az $a_{n+1}=3a_n-1$ szabály?',
-        [r'egyiket sem — kezdőtag nélkül a szabály nem határoz meg sorozatot',
+        ['egyiket sem — kezdőtag nélkül a szabály nem határoz meg egyetlen sorozatot egyértelműen',
          r'a $2,\ 5,\ 14,\ 41,\dots$ sorozatot',
          r'a $3,\ 8,\ 23,\dots$ sorozatot',
          r'az $1,\ 2,\ 5,\ 14,\dots$ sorozatot'], 0,
         jo="✔ A rekurzív megadáshoz KÉT dolog kell: a kezdőtag és a továbblépési szabály. "
            "Ugyanez a szabály a₁ = 2-ből 2, 5, 14, 41-et, a₁ = 3-ból 3, 8, 23-at ad.",
-        nem="✘ Mindhárom felsorolt sorozat kielégíti a szabályt — csak más a kezdőtagjuk. "
-            "A rekurzív szabály önmagában, kezdőtag nélkül nem határoz meg sorozatot."),
+        nem=(
+                '✘ Mindhárom felsorolt sorozat kielégíti a szabályt — csak más a kezdőtagjuk. A rekurzív szabály '
+                'önmagában, kezdőtag nélkül nem határoz meg egyetlen sorozatot egyértelműen.'
+            )),
  ]),
 
  ("Hányadik tag? Tagja-e egyáltalán?", [
-   r'<p>Gyakori kérdés a fordítottja is: adott egy szám, és azt kérdezzük, <b>szerepel-e</b> a '
-   r'sorozatban, és ha igen, hányadikként. Ilyenkor egyenletet oldunk meg — majd a megoldásról '
-   r'ellenőrizzük, hogy <b>természetes szám-e</b>.</p>',
+   (
+       '<p>Gyakori kérdés a fordítottja is: adott egy szám, és azt kérdezzük, <b>szerepel-e</b> a '
+       'sorozatban, és ha igen, hányadikként. Ilyenkor egyenletet oldunk meg — majd a megoldásról '
+       'ellenőrizzük, hogy <b>pozitív egész szám-e</b>.</p>'
+   ),
    doboz("pelda", "Tagja-e a sorozatnak?",
          r'<p>Az $a_n=3n-2$ sorozatról két kérdést teszünk fel.</p>'
          r'<p><b>a)</b> Tagja-e a $100$? Az egyenlet $3n-2=100$, ebből $3n=102$, tehát $n=34$. Ez '
@@ -170,26 +181,31 @@ A1 = [
          r'nem természetes szám, tehát a $47$ <b>nem tagja</b> a sorozatnak (a 16. tag $46$, a 17. '
          r'már $49$).</p>', hid="pelda-hanyadik"),
    doboz("csapda", "Maxi trükkje",
-         r'<p>Maxi kiszámolja, hogy $n=\frac{49}{3}\approx16{,}33$, és bejelenti: „a $47$ a sorozat '
-         r'16,33-adik tagja”.</p>'
-         r'<p>Ilyen tag nincs. A sorozatnak <b>csak egész sorszámú</b> tagjai vannak: van 16. és van '
-         r'17. tag, a kettő között semmi. Ha az egyenlet megoldása tört vagy negatív, a válasz az, '
-         r'hogy a szám <b>nem tagja</b> a sorozatnak.</p>'),
+         (
+             '<p>Maxi kiszámolja, hogy $n=\\frac{49}{3}\\approx16{,}33$, és bejelenti: „a $47$ a sorozat 16,33-adik '
+             'tagja”.</p><p>Ilyen tag nincs. A sorozatnak <b>csak egész sorszámú</b> tagjai vannak: van 16. és '
+             'van 17. tag, a kettő között semmi. Ha az egyenletnek nincs pozitív egész megoldása, a válasz az, '
+             'hogy a szám <b>nem tagja</b> a sorozatnak.</p>'
+         )),
  ]),
 
  ("A sorozat grafikonja", [
-   r'<p>A tagokat ábrázolhatjuk is: a vízszintes tengelyre a sorszámot, a függőlegesre a tag '
-   r'értékét mérjük, és felrajzoljuk az $(n;a_n)$ pontokat. A kép ugyanazt mondja el, mint a '
-   r'képlet — csak egy pillantás alatt.</p>',
+   (
+       '<p>A tagokat ábrázolhatjuk is: a vízszintes tengelyre a sorszámot, a függőlegesre a tag értékét '
+       'mérjük, és felrajzoljuk az $(n;a_n)$ pontokat. A grafikon az ábrázolt tagok viszonyát teszi '
+       'szemléletessé. A teljes sorozatra vonatkozó állítást a szabály alapján ellenőrizzük.</p>'
+   ),
    abra(SVG_PONTOK, 'Az $a_n=\\frac{2n-1}{n+2}$ sorozat első nyolc tagja. A pontok balról jobbra '
         'emelkednek, és $2$ alatt maradnak — a grafikon <b>különálló pontokból</b> áll.'),
    doboz("erdekesseg", "Sorozat és függvény",
          r'<p>A sorozat valójában <b>függvény</b>, csak az értelmezési tartománya nem intervallum, '
          r'hanem a természetes számok halmaza: külön álló, elszigetelt helyek. Ezért nincs értelme '
          r'$a_{2{,}5}$-ről beszélni, és ezért nem kötjük össze a pontokat.</p>'
-         r'<p>Az <a href="' + E2F + r'">exponenciális és a logaritmusfüggvény</a> grafikonja '
-         r'folytonos vonal; a sorozaté pontsor, amely „ráül” egy ilyen görbére — a vízszintes tengelyen '
-         r'az $x=n$ pozitív egész helyeken. A mértani sorozatnál ezt látni is fogjuk.</p>',
+         r'<p>Az <a href="' + E2F + (
+                                        '">exponenciális és a logaritmusfüggvény</a> grafikonja folytonos vonal. Egy mértani sorozat pontjai '
+                                        'pozitív, $1$-től különböző hányados esetén exponenciális görbére esnek — a vízszintes tengelyen az '
+                                        '$x=n$ pozitív egész helyeken. A mértani sorozatnál ezt látni is fogjuk.</p>'
+                                    ),
          hid="erd-fuggveny"),
    kviz(r'Hogyan néz ki egy sorozat grafikonja?',
         [r'különálló pontokból áll, a sorszámok fölött',
@@ -210,25 +226,25 @@ A1 = [
 # ---------------------------------------------------------------- A2
 A2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Prizma:</b> Két adat kell a parancsnokságnak. Az egyik: <b>emelkedik-e</b> a görbe '
-         'minden egyes lépésben — ez a monotonitás. A másik: van-e <b>olyan szint, amit a mutáció '
-         'soha nem lép át</b> — ez a korlátosság. A kettő együtt mondja meg, hogy a Kristály '
-         'Karantén-Zóna kitart-e.'),
+   brief((
+             '<b>Prizma:</b> Két adat kell a parancsnokságnak. Az egyik: <b>nőnek-e</b> a sorozat tagjai minden '
+             'egyes lépésben — ez a monotonitás. A másik: van-e <b>olyan szint, amit a mutáció soha nem lép '
+             'át</b> — ez a korlátosság. A kettő együtt mondja meg, hogy a Kristály Karantén-Zóna kitart-e.'
+         )),
  ]),
 
- ("Növekvő, csökkenő, se nem", [
+ ('Növekvő, csökkenő vagy nem monoton', [
    r'<p class="lead">A kérdés mindig két <b>szomszédos</b> tag viszonya: mi történik, ha egy '
    r'lépéssel továbbmegyünk?</p>',
    doboz("definicio", "Monoton sorozatok",
-         r'<p>Az $(a_n)$ sorozat</p>'
-         r'<ul>'
-         r'<li><b>szigorúan monoton növekvő</b>, ha minden $n$-re $a_{n+1}\gt a_n$;</li>'
-         r'<li><b>szigorúan monoton csökkenő</b>, ha minden $n$-re $a_{n+1}\lt a_n$;</li>'
-         r'<li><b>monoton növekvő</b> (illetve <b>csökkenő</b>), ha a fenti egyenlőtlenségek '
-         r'megengedik az egyenlőséget is ($a_{n+1}\ge a_n$, illetve $a_{n+1}\le a_n$).</li>'
-         r'</ul>'
-         r'<p>Ha sem az $a_{n+1}\ge a_n$, sem az $a_{n+1}\le a_n$ nem igaz az <b>összes</b> $n$-re, '
-         r'a sorozat <b>nem monoton</b>. A minden $n$-re szó a lényeg: egyetlen kivétel elrontja.</p>',
+         (
+             '<p>Az $(a_n)$ sorozat</p><ul><li><b>szigorúan monoton növekvő</b>, ha minden $n$-re $a_{n+1}\\gt '
+             'a_n$;</li><li><b>szigorúan monoton csökkenő</b>, ha minden $n$-re $a_{n+1}\\lt '
+             'a_n$;</li><li><b>monoton növekvő</b> (illetve <b>csökkenő</b>), ha a fenti egyenlőtlenségek '
+             'megengedik az egyenlőséget is ($a_{n+1}\\ge a_n$, illetve $a_{n+1}\\le a_n$).</li></ul><p>Ha sem az '
+             '$a_{n+1}\\ge a_n$, sem az $a_{n+1}\\le a_n$ nem igaz az <b>összes</b> $n$-re, a sorozat <b>nem '
+             'monoton</b>. Az adott egyenlőtlenségnek minden $n$-re teljesülnie kell.</p>'
+         ),
          hid="def-monoton"),
    r'<p>Az $1,\ 1,\ 2,\ 2,\ 3,\ 3,\dots$ sorozat például monoton növekvő, de nem szigorúan '
    r'(vannak egyenlő szomszédok). A $7,\ 7,\ 7,\dots$ állandó sorozat egyszerre monoton növekvő és '
@@ -236,11 +252,12 @@ A2 = [
  ]),
 
  ("Hogyan döntjük el?", [
-   r'<p>Nem az első néhány tagot nézzük meg, hanem <b>általánosan</b> kiszámoljuk a szomszédos '
-   r'tagok különbségét, és megvizsgáljuk az előjelét. Ha <b>minden</b> $n$-re</p>'
-   r'$$a_{n+1}-a_n\gt 0,\ \text{ a sorozat szigorúan növekvő;}\qquad '
-   r'a_{n+1}-a_n\lt 0,\ \text{ a sorozat szigorúan csökkenő.}$$'
-   r'<p>Ha a különbség előjele $n$-től függően változik, a sorozat nem monoton.</p>',
+   (
+       '<p>Nem az első néhány tagot nézzük meg, hanem <b>általánosan</b> kiszámoljuk a szomszédos tagok '
+       'különbségét, és megvizsgáljuk az előjelét. Ha <b>minden</b> $n$-re</p>$$a_{n+1}-a_n\\gt 0,\\ \\text{ a '
+       'sorozat szigorúan növekvő;}\\qquad a_{n+1}-a_n\\lt 0,\\ \\text{ a sorozat szigorúan csökkenő.}$$<p>Ha a '
+       'különbség egyes $n$ értékeknél pozitív, másoknál negatív, a sorozat nem monoton.</p>'
+   ),
    doboz("pelda", "A legegyszerűbb eset",
          r'<p>Az $a_n=3n-2$ sorozatnál $a_{n+1}-a_n=3(n+1)-2-(3n-2)=3$, ami minden $n$-re pozitív: '
          r'a sorozat szigorúan monoton növekvő. Ilyenkor a különbség állandó — a következő '
@@ -274,8 +291,10 @@ A2 = [
          r'az első tag előjele',
          r'az, hogy a képletben szerepel-e mínuszjel'], 0,
         jo="✔ Az általánosan felírt különbség előjele minden lépésre egyszerre ad választ.",
-        nem="✘ Néhány tag csak sejtést ad: az aₙ = n² − 10n + 3 sorozat öt lépésen át csökken, "
-            "aztán nő. A döntés az a_{n+1} − aₙ különbség előjelén múlik."),
+        nem=(
+                '✘ Néhány tag csak sejtést ad: az aₙ = n² − 10n + 3 sorozat az ötödik tagig csökken, aztán nő. A '
+                'döntés az a_{n+1} − aₙ különbség előjelén múlik.'
+            )),
  ]),
 
  ("Korlátosság", [
@@ -290,13 +309,13 @@ A2 = [
    abra(SVG_CSOKKEN, 'Az $a_n=1+\\frac1n$ sorozat: $2,\\ \\frac32,\\ \\frac43,\\ \\frac54,\\dots$ — '
         'csökken, mégis minden tagja nagyobb $1$-nél.'),
    doboz("csapda", "Maxi trükkje",
-         r'<p>Maxi szerint „ami csökken, az előbb-utóbb minden határon túl süllyed, tehát alulról '
-         r'nem korlátos”.</p>'
-         r'<p>Az $a_n=1+\frac1n$ sorozat csökken — de minden tagja nagyobb $1$-nél, az $1$-et soha '
-         r'nem éri el. Ez a sorozat <b>korlátos</b>: alulról az $1$, '
-         r'felülről az első tagja, a $2$ korlátozza.</p>'
-         r'<p>Fordítva ugyanez: a monoton csökkenő sorozat <b>felülről</b> mindig korlátos (az első '
-         r'tagjával), a monoton növekvő pedig <b>alulról</b> — a másik irányról külön kell dönteni.</p>'),
+         (
+             '<p>Maxi szerint „ami csökken, az előbb-utóbb minden határon túl süllyed, tehát alulról nem '
+             'korlátos”.</p><p>Az $a_n=1+\\frac1n$ sorozat csökken — de minden tagja nagyobb $1$-nél, az $1$-et '
+             'soha nem éri el. Ez a sorozat <b>korlátos</b>: alulról az $1$, felülről az első tagja, a $2$ '
+             'korlátozza.</p><p>Általánosan: a monoton csökkenő sorozat <b>felülről</b> mindig korlátos (az első '
+             'tagjával), a monoton növekvő pedig <b>alulról</b> — a másik irányról külön kell dönteni.</p>'
+         )),
    kviz(r'Igaz-e, hogy egy csökkenő sorozat soha nem korlátos alulról?',
         [r'nem igaz — például az $1+\frac1n$ sorozat csökken, de minden tagja nagyobb $1$-nél',
          r'igaz, mert a csökkenés előbb-utóbb minden határon túl visz',
@@ -309,9 +328,11 @@ A2 = [
  ]),
 
  ("Négy sorozat, négy jellemzés", [
-   r'<p>A monotonitás és a korlátosság <b>független</b> egymástól: a négy kombináció mindegyike '
-   r'előfordul. Nézd meg a négy ábrát, és mondd ki magadban a jellemzést, mielőtt elolvasod a '
-   r'képaláírást!</p>',
+   (
+       '<p>A monotonitás és a korlátosság <b>független</b> egymástól: egyik tulajdonságból sem következik a '
+       'másik. Nézd meg az alábbi négy példát, és mondd ki magadban a jellemzést, mielőtt elolvasod a '
+       'képaláírást!</p>'
+   ),
    abra(SVG_NO_KORLATOS, '<b>Növekvő és korlátos:</b> $a_n=\\frac{n}{n+2}$ — nő, de $1$ fölé nem ér.'),
    abra(SVG_CSOKKEN, '<b>Csökkenő és korlátos:</b> $a_n=1+\\frac1n$ — csökken, de $1$ alá nem megy.'),
    abra(SVG_VALTAKOZO, '<b>Nem monoton, de korlátos:</b> $a_n=(-1)^n\\frac{n}{n+1}$ — a tagok '

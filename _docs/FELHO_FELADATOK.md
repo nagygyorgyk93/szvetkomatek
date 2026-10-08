@@ -270,7 +270,7 @@ A korábbi A1-ellenőrzések nem helyettesítik a teljes stilisztikai átnézés
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ◐ Helyben kész: 77/77 oldal — 38 tananyag, 38 további témaköroldal és az osztály főoldala; teljes nyelvi és példahitelességi audit (2026-10-07) | ◐ Helyben kész: 65/65 oldal — mind a négy témakör és az osztály főoldala; teljes nyelvi és példahitelességi audit (helyi main, 2026-10-08) | ◐ 3e/01–03 kész: 47/92 oldal — három teljes témakör (helyi main, 2026-10-08; nincs pusholva) | ☐ A3 külön audit hátra |
+| ◐ Helyben kész: 77/77 oldal — 38 tananyag, 38 további témaköroldal és az osztály főoldala; teljes nyelvi és példahitelességi audit (2026-10-07) | ◐ Helyben kész: 65/65 oldal — mind a négy témakör és az osztály főoldala; teljes nyelvi és példahitelességi audit (helyi main, 2026-10-08) | ◐ Helyben kész: 92/92 oldal — mind a hat témakör és az osztály főoldala; teljes nyelvi és példahitelességi audit (helyi main, 2026-10-08; ez az adag nincs pusholva) | ☐ A3 külön audit hátra |
 
 Az első adag három függvényes, a második hat logikai és halmazos tananyagot
 ellenőrzött. A példák feltételei, bevezetők, átvezetők és matematikai pontatlanságok
@@ -495,11 +495,7 @@ Részletek: [A3 nyelvi ellenőrzés](A3_nyelvi_ellenorzes.md).
 
 Részletek:
 [A3 nyelvi ellenőrzés](A3_nyelvi_ellenorzes.md).
-Hátra van a 3e–4e teljes A3-auditja.
-
----
-
-## I — Interaktív ábrák
+Hátra van a 4e teljes A3-auditja.
 
 Huszonharmadik adag (2026-10-08): a 3e/01–03 három teljes témakörének
 47 HTML-oldala teljes szöveg szerint átnézve, a bevezetők, kidolgozott példák,
@@ -535,6 +531,46 @@ zárolt első 23 sor változatlan. 1e 77/77, 2e 65/65 kész; 3e 47/92,
 3e/04–06 és osztályfőoldal, 4e hátra. Tanári döntés kell: nincs.
 Következő adag 3e/04–06 és az osztály főoldala. Új ág és push nincs.
 Részletek: [A3 nyelvi ellenőrzés](A3_nyelvi_ellenorzes.md).
+
+Huszonnegyedik adag (2026-10-08): 3e/04–06 és az osztály főoldala,
+45 HTML teljes szöveg szerint átnézve, 23 tananyag, 363 kártya, 68 SVG,
+45 kvíz. Ezzel a 3e teljes A3-auditja 92/92 oldalra helyben kész.
+Kiindulás 73d097d, tiszta main, az origin/main helyi referenciája előtt
+egy committal; eltérés jelezve, távoli frissítés nincs. A 3e kimenetek
+mérvadók, kiegészítések megmaradtak. Indukcióból csak tananyag és
+kidolgozott példák, önálló gyakorlófeladat nincs. Hibatábla előre bemutatva.
+Vektorok nullvektoros kivételei, szög/irányítás, fizikai modellfeltételek,
+számológépes kerekítés; analitikus képletek feltételei, ellipszis középpontja
+és tengelyei, parabola kúpszeletfeltétele, híd viszonyítási szintje/tengelyei,
+repülési határpontok, T ábracímke; rekurzív egyértelműség, monotonitás,
+q=1 grafikon és d=0/q=±1 tagszámkivételek, indukció bizonyítási jelentése,
+állandó névleges kamat és tőkésítés pontosítva. Természetesebb magyar
+bevezetők/átvezetők, hitelesebb konkrét példák, egy applet nyelvcímkéje.
+Három kontextus nélküli lektor mind a 45 eredeti és javított szöveget
+ellenőrizte; 168 kijelölt kártya minden részválaszát önállóan megoldotta,
+összevetés után a honlap valamennyi kulcsa helyes. 45 kvíz és három projekt
+átnézve; projektkulcs privát. Mind a 363 végeredmény és a feladatszámadatok,
+horgonyok/régi linkek/képek/média/háttér/szkriptek megmaradtak. K8-ba csak
+x/y tengelyjel került. 68 SVG geometriája azonos, egy P→T felirat és egy
+következetesen újragenerált belső nyílmarker-azonosító eltér. Új feladat nincs.
+16 builder módosult, 21 újraépítve, öntesztek és AST/numerikus kontroll rendben.
+Végleges teljes lánc: 334 média 139 lapon, kánon/link 310/0, sáv tiszta,
+kulcs 4499/4499, regresszió 100%. Render 45 lap/5485 képlet/45 kvíz, 0 hiba.
+Edge 360/390/1280 zárt/nyitott 270+36 nézet, axe390 90+12/0, nyomtatás
+JS be/ki 90+12, JS nélkül 45+6 lap olvasható. Python Playwright helyett
+Node/Edge azonos TULLOGOK-kal. Hét mobilos részlet szemrevételezve.
+Index 308 bejegyzés, 30 változó URL e három témakörből; naplótérkép byte
+szerint azonos. A korábbi 23. adag összefoglalója visszakerült az A3 részbe.
+Zárolt első 23 sor és tükrök megmaradtak. Korlátok: valódi képernyőolvasó,
+más böngésző, teljes PDF-tördelés, háttérpontok kézi kontrasztja, külső média
+új próbája és élő publikált oldal nincs ellenőrizve. Tanári döntés kell: nincs.
+1e 77/77, 2e 65/65, 3e 92/92 kész; 4e A3 hátra. Következő nagyobb adaghoz
+választás kell, javaslat 4e A3 első három témaköre. Helyi main, új ág és push nélkül.
+Részletek: [A3 nyelvi ellenőrzés](A3_nyelvi_ellenorzes.md).
+
+---
+
+## I — Interaktív ábrák
 
 ### I1 · Statikus ábrák → interaktív
 **Cél:** a kulcsfogalmak ábráiból csúszkás/húzható változat, a meglévő `assets/js/interaktiv.js`
