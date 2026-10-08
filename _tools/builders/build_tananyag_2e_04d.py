@@ -55,7 +55,7 @@ def svg_haromszog(cimkek=("A", "B", "C"), oldalak=("c", "a", "b"), szogek=("α",
                   'stroke="#94a3b8" stroke-width="1"/>')
         ki.append(f'  <text x="{cx + 8}" y="{(cy + ay)/2:.0f}" font-size="11" '
                   f'fill="#64748b">{magassag}</text>')
-    ki.append(f'  <polygon points="{ax},{ay} {bx},{by} {cx},{cy}" fill="#f1f5f9" '
+    ki.append(f'  <polygon points="{ax},{ay} {bx},{by} {cx},{cy}" fill="none" '
               'stroke="#0f172a" stroke-width="1.8" stroke-linejoin="round"/>')
     for (x, y), t, dx, dy in ((P[0], cimkek[0], -14, 6), (P[1], cimkek[1], 10, 6),
                               (P[2], cimkek[2], 0, -12)):
@@ -77,36 +77,33 @@ def svg_haromszog(cimkek=("A", "B", "C"), oldalak=("c", "a", "b"), szogek=("α",
 SVG_HSZ = svg_haromszog(leiras="A háromszög szokásos jelölései: az oldal a vele "
                                "szemközti szög betűjét kapja")
 SVG_TER = svg_haromszog(leiras="A háromszög területe két oldalból és a közbezárt szögből",
-                        magassag="m")
-SVG_TORONY = ('<svg viewBox="0 0 460 240" width="460" height="240" role="img" '
-              'aria-label="Toronymagasság meghatározása két mérési pontból">\n'
-              '  <line x1="30" y1="200" x2="430" y2="200" stroke="#0f172a" stroke-width="1.8"/>\n'
-              '  <line x1="360" y1="200" x2="360" y2="60" stroke="#0f172a" stroke-width="2.4"/>\n'
-              '  <rect x="360" y="60" width="11" height="11" fill="none" stroke="#94a3b8"/>\n'
-              '  <line x1="70" y1="200" x2="360" y2="60" stroke="#3b82f6" stroke-width="1.6"/>\n'
-              '  <line x1="215" y1="200" x2="360" y2="60" stroke="#ef4444" stroke-width="1.6"/>\n'
-              '  <circle cx="70" cy="200" r="4" fill="#3b82f6"/>\n'
-              '  <circle cx="215" cy="200" r="4" fill="#ef4444"/>\n'
-              '  <text x="70" y="218" font-size="12" fill="#3b82f6" text-anchor="middle">A</text>\n'
-              '  <text x="215" y="218" font-size="12" fill="#ef4444" text-anchor="middle">B</text>\n'
-              '  <text x="360" y="218" font-size="12" fill="#0f172a" text-anchor="middle">T</text>\n'
-              '  <text x="142" y="218" font-size="11" fill="#475569" text-anchor="middle">'
-              '50 m</text>\n'
-              '  <text x="98" y="194" font-size="11" fill="#3b82f6">32°</text>\n'
-              '  <text x="240" y="194" font-size="11" fill="#ef4444">48°</text>\n'
-              '  <text x="374" y="135" font-size="12" font-style="italic" fill="#047857">'
-              'h</text>\n'
-              '</svg>')
+                        magassag='h<tspan baseline-shift="sub" font-size="8">c</tspan>')
+SVG_TORONY = ((
+                  '<svg viewBox="0 0 460 240" width="460" height="240" role="img" aria-label="Toronymagasság '
+                  'meghatározása két mérési pontból">\n  <line x1="30" y1="200" x2="430" y2="200" stroke="#0f172a" '
+                  'stroke-width="1.8"/>\n  <line x1="360" y1="200" x2="360" y2="60" stroke="#0f172a" '
+                  'stroke-width="2.4"/>\n  <rect x="360" y="189" width="11" height="11" fill="none" stroke="#94a3b8"/>\n '
+                  ' <line x1="70" y1="200" x2="360" y2="60" stroke="#3b82f6" stroke-width="1.6"/>\n  <line x1="215" '
+                  'y1="200" x2="360" y2="60" stroke="#ef4444" stroke-width="1.6"/>\n  <circle cx="70" cy="200" r="4" '
+                  'fill="#3b82f6"/>\n  <circle cx="215" cy="200" r="4" fill="#ef4444"/>\n  <text x="70" y="218" '
+                  'font-size="12" fill="#3b82f6" text-anchor="middle">A</text>\n  <text x="215" y="218" font-size="12" '
+                  'fill="#ef4444" text-anchor="middle">B</text>\n  <text x="360" y="48" font-size="12" fill="#0f172a" '
+                  'text-anchor="middle">T</text>\n  <text x="142" y="218" font-size="11" fill="#475569" '
+                  'text-anchor="middle">50 m</text>\n  <text x="98" y="194" font-size="11" fill="#3b82f6">32°</text>\n  '
+                  '<text x="240" y="194" font-size="11" fill="#ef4444">48°</text>\n  <text x="374" y="135" '
+                  'font-size="12" font-style="italic" fill="#047857">h</text>\n</svg>'
+              ))
 
 # ===================================================================== D1
 
 D1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Szürke Janka:</b> Bemérés. Ez a legrégibb és legpraktikusabb feladat: '
-         'ismerek <b>néhány</b> adatot egy háromszögből, és tudni akarom a többit. '
-         'Nem kell derékszög, nem kell hozzáférnem a célponthoz — elég két mérési pont '
-         'és egy szögmérő. Két tétel visz el idáig, és mindegyiknek pontosan megvan '
-         'a maga helyzete.'),
+   brief((
+             '<b>Szürke Janka:</b> Bemérés. Ez a legrégibb és legpraktikusabb feladat: ismerek <b>néhány</b> '
+             'adatot egy háromszögből, és tudni akarom a többit. Nem kell derékszög, nem kell hozzáférnem a '
+             'célponthoz — két ismert távolságú mérési pontból a szükséges szögek megmérésével számolhatunk. Két '
+             'tétel visz el idáig, és mindegyiknek pontosan megvan a maga helyzete.'
+         )),
    abra(SVG_HSZ, "A megszokott jelölés: az $a$ oldal az $\\alpha$ szöggel <b>szemközt</b> "
                  "van, a $b$ a $\\beta$-val, a $c$ a $\\gamma$-val."),
  ]),
@@ -121,11 +118,15 @@ D1 = [
          'leghosszabb oldallal szemben van a legnagyobb szög.</p>',
          hid="tetel-szinusztetel",
          lenyilo=("Miért igaz?",
-                  '<p>Húzzuk be a $C$ csúcsból az $m$ magasságot az $AB$ oldalra. Az így '
-                  'keletkező két derékszögű háromszögből</p>'
-                  '$$m=b\\sin\\alpha\\quad\\text{és}\\quad m=a\\sin\\beta,$$'
-                  '<p>tehát $b\\sin\\alpha=a\\sin\\beta$, ami átrendezve épp '
-                  '$\\dfrac{a}{\\sin\\alpha}=\\dfrac{b}{\\sin\\beta}$.</p>')),
+                  (
+                      '<p>Hegyesszögű háromszögben húzzuk be a $C$ csúcsból a $h_{c}$ magasságot az $AB$ oldalra. Az így '
+                      'keletkező két derékszögű háromszögből</p>$$h_{c}=b\\sin\\alpha\\quad\\text{és}\\quad '
+                      'h_{c}=a\\sin\\beta,$$<p>tehát $b\\sin\\alpha=a\\sin\\beta$, ami átrendezve épp '
+                      '$\\dfrac{a}{\\sin\\alpha}=\\dfrac{b}{\\sin\\beta}$.</p><p>Tompaszögnél a magasság az oldal '
+                      'meghosszabbítására eshet; a mellékszög azonos szinusza miatt ugyanígy számolunk. Derékszögű esetben '
+                      'a szemben lévő átfogóval és a befogóval kapjuk ugyanezt az arányt. A harmadik oldalpárra hasonlóan '
+                      'járunk el. A $2R$-rel való egyenlőséget ez a magasságos érvelés nem bizonyítja.</p>'
+                  ))),
    doboz("tetel", "Mikor használjuk?",
          '<p>Akkor, ha van egy <b>teljes oldal–szög pár</b> (egy oldal és a vele '
          'szemközti szög):</p>'
@@ -149,17 +150,19 @@ D1 = [
                   '<p><b>Ellenőrzés:</b> a legnagyobb szög $\\beta=75^\\circ$, és valóban '
                   'a $b$ a leghosszabb oldal ✔</p>')),
    doboz("csapda", "Dr. Baljós vírus-kódja",
-         '<p><b>Kiegészítő kihívás — a kétértelmű (SSA) eset.</b> Ha két oldalt és a <b>kisebbikkel</b> '
-         'szemközti szöget ismerjük, két különböző háromszög is illeszkedhet az adatokra — '
-         'mert $\\sin\\varphi=\\sin(180^\\circ-\\varphi)$.</p>'
-         '<p><b>Mikor egyértelmű, és mikor nem?</b> Ha a megadott szög a <b>hosszabbik</b> oldallal szemközt van, a másik szög biztosan hegyes — a megoldás egyértelmű. Ha viszont a megadott szög a <b>rövidebbik</b> oldallal szemközti (legyen $\\alpha$ az $a$-val szemközt, és $b&gt;a$), akkor a $C$ csúcsból az $AB$-re állított magasság $m=b\\sin\\alpha$, és <b>három</b> eset van:</p>'
-         '<ul>'
-         '<li>$a&lt;b\\sin\\alpha$ → <b>nincs</b> ilyen háromszög (a számolásban $\\sin\\beta&gt;1$ jönne ki),</li>'
-         '<li>$a=b\\sin\\alpha$ → <b>pontosan egy</b>, és az derékszögű ($\\beta=90^\\circ$),</li>'
-         '<li>$b\\sin\\alpha&lt;a&lt;b$ → <b>két</b> különböző háromszög.</li>'
-         '</ul>'
-         '<p>A gyakorlati ellenőrzés egyszerű: ha $\\sin\\beta&gt;1$ adódik, nincs megoldás; ha két $\\beta$ is szóba jön, azt tartsd meg, amelyre $\\alpha+\\beta&lt;180^\\circ$ — csak akkor marad pozitív érték a harmadik szögnek. Ha mindkettőre teljesül, valóban két háromszög létezik.</p>'
-         '<p><b>Példa.</b> Legyen $a=6$, $b=8$ és $\\alpha=40^\\circ$ (a megadott szög a rövidebb oldallal szemközt). A szinusztételből $\\sin\\beta=\\dfrac{8\\sin 40^\\circ}{6}\\approx 0{,}857$, ahonnan $\\beta\\approx 59^\\circ$ <b>vagy</b> $\\beta\\approx 121^\\circ$. Mindkettő működik: $40+59=99&lt;180$ és $40+121=161&lt;180$ — tehát <b>két</b> különböző háromszög is illeszkedik az adatokra.</p>'),
+         (
+             '<p><b>Mikor egyértelmű, és mikor nem?</b> Legyen $a,b&gt;0$ és $0^\\circ&lt;\\alpha&lt;180^\\circ$, '
+             'ahol $a$ az $\\alpha$-val szemközti oldal. Ha $a&gt;b$, a háromszög egyértelmű, és $\\beta$ '
+             'hegyesszög. Ha $a=b$, akkor $\\beta=\\alpha$; csak $\\alpha&lt;90^\\circ$ esetén marad pozitív harmadik '
+             'szög. Ha $a&lt;b$ és <b>$0^\\circ&lt;\\alpha&lt;90^\\circ$</b>, a $h_{c}=b\\sin\\alpha$ magassággal '
+             'három eset van:</p><ul><li>$a&lt;h_{c}$: nincs ilyen háromszög.</li><li>$a=h_{c}$: pontosan egy, és '
+             '$\\beta=90^\\circ$.</li><li>$h_{c}&lt;a&lt;b$: két különböző háromszög.</li></ul><p>Ha '
+             '$\\alpha\\ge90^\\circ$ és $a\\le b$, nincs ilyen háromszög. A számolásban kapott minden $\\beta$-nál '
+             'ellenőrizd, hogy $\\alpha+\\beta&lt;180^\\circ$; csak így marad pozitív harmadik '
+             'szög.</p><p><b>Példa.</b> $a=6$, $b=8$ és $\\alpha=40^\\circ$. Ekkor '
+             '$\\sin\\beta=\\dfrac{8\\sin40^\\circ}{6}\\approx0{,}857$, így $\\beta\\approx59^\\circ$ vagy $121^\\circ$. '
+             'Mindkettőnél pozitív a harmadik szög, tehát két háromszög illeszkedik az adatokra.</p>'
+         )),
  ]),
 
  ("A koszinusztétel", [
@@ -172,12 +175,13 @@ D1 = [
          '$$\\cos\\alpha=\\frac{b^{2}+c^{2}-a^{2}}{2bc}.$$',
          hid="tetel-koszinusztetel"),
    doboz("tetel", "Mikor használjuk?",
-         '<p>Akkor, ha <b>nincs</b> teljes oldal–szög pár:</p>'
-         '<ul>'
-         '<li><b>SAS</b> — két oldal és a <b>közbezárt</b> szög → a harmadik oldal.</li>'
-         '<li><b>SSS</b> — mindhárom oldal → bármelyik szög.</li>'
-         '</ul>'
-         '<p>Utána már van teljes pár, tehát a többit a szinusztétellel is folytathatod — de <b>mindig a kisebbik oldal szögére</b> alkalmazd, mert az biztosan hegyesszög, tehát ott nincs kétértelműség. A harmadik szög $180^\\circ$-ból jön.</p>',
+         (
+             '<p>Közvetlenül használható, ha az alábbi adatokat ismerjük:</p><ul><li><b>SAS</b> — két oldal és a '
+             '<b>közbezárt</b> szög → a harmadik oldal.</li><li><b>SSS</b> — mindhárom oldal → bármelyik '
+             'szög.</li></ul><p>Utána már van teljes pár, tehát a többit a szinusztétellel is folytathatod — de '
+             '<b>mindig a kisebbik oldal szögére</b> alkalmazd, mert az biztosan hegyesszög, tehát ott nincs '
+             'kétértelműség. A harmadik szög $180^\\circ$-ból jön.</p>'
+         ),
          hid="tetel-mikor-koszinusz"),
    doboz("pelda", "Vészterem-szimuláció",
          '<p><b>a)</b> $b=7$, $c=10$, $\\alpha=60^\\circ$ — mekkora $a$?<br>'
@@ -220,21 +224,20 @@ D2 = [
 
  ("A háromszög megoldása — a döntési recept", [
    doboz("tetel", "Melyik tétel kell?",
-         '<div class="tblwrap"><table>'
-         '<tr><th>Ismert adatok</th><th>Első lépés</th><th>Folytatás</th></tr>'
-         '<tr><td><b>ASA / AAS</b><br>két szög + egy oldal</td>'
-         '<td>a harmadik szög $180^\\circ$-ból</td><td>szinusztétel a két oldalra</td></tr>'
-         '<tr><td><b>SAS</b><br>két oldal + közbezárt szög</td>'
-         '<td>koszinusztétel a harmadik oldalra</td>'
-         '<td>szinusztétel a <b>kisebbik</b> oldal szögére, a harmadik $180^\\circ$-ból</td></tr>'
-         '<tr><td><b>SSS</b><br>három oldal</td><td>koszinusztétel a <b>legnagyobb</b> '
-         'oldal szögére</td><td>szinusztétel a másodikra, a harmadik $180^\\circ$-ból</td></tr>'
-         '<tr><td><b>SSA — kiegészítő</b><br>két oldal + nem közbezárt szög</td>'
-         '<td>szinusztétel</td><td>⚠️ ellenőrizd, van-e <b>két</b> megoldás</td></tr>'
-         '</table></div>'
-         '<p>A háromszög akkor és csak akkor létezik, ha a szögek összege '
-         '$180^\\circ$, és teljesül a <b>háromszög-egyenlőtlenség</b>: bármely két oldal '
-         'összege nagyobb a harmadiknál.</p>',
+         (
+             '<div class="tblwrap"><table><tr><th>Ismert adatok</th><th>Első '
+             'lépés</th><th>Folytatás</th></tr><tr><td><b>ASA / AAS</b><br>két szög és egy oldal</td><td>harmadik '
+             'szög</td><td>szinusztétel a hiányzó oldalakra</td></tr><tr><td><b>SAS</b><br>két oldal és a '
+             'közbezárt szög</td><td>koszinusztétel a harmadik oldalra</td><td>szinusztétel a kisebbik oldal '
+             'szögére, majd a harmadik szög</td></tr><tr><td><b>SSS</b><br>három oldal</td><td>koszinusztétel a '
+             'legnagyobb oldal szögére</td><td>szinusztétel a második szögre, majd a harmadik '
+             'szög</td></tr><tr><td><b>SSA — kiegészítő</b><br>két oldal és nem közbezárt '
+             'szög</td><td>szinusztétel</td><td>ellenőrizd az összes lehetséges '
+             'háromszöget</td></tr></table></div><p>Három <b>pozitív oldalhossz</b> akkor és csak akkor alkot '
+             'háromszöget, ha bármely két oldal összege nagyobb a harmadiknál. A belső szögek pozitívak és '
+             'összegük $180^\\circ$. Ha oldalakat és szögeket együtt adunk meg, ezeknek a szinusz- és '
+             'koszinusztétellel is összhangban kell lenniük.</p>'
+         ),
          hid="tetel-recept"),
    doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p><b>Miért a legnagyobb oldal szögével kezdünk SSS-nél?</b> Mert az lehet '
@@ -247,8 +250,11 @@ D2 = [
  ]),
 
  ("A háromszög területe", [
-   abra(SVG_TER, "A $T=\\tfrac{a\\cdot m}{2}$ képletben a magasság kifejezhető: "
-                 "$m=b\\sin\\gamma$ — innen jön a trigonometrikus területképlet."),
+   abra(SVG_TER, (
+                     'Az ábrán a $c$ oldalhoz tartozó magasság $h_{c}$. Ezért $T=\\tfrac{c h_{c}}{2}$ és '
+                     '$h_{c}=b\\sin\\alpha$, így $T=\\tfrac12bc\\sin\\alpha$. Másik oldalt választva a területképlet további '
+                     'alakjait kapjuk.'
+                 )),
    doboz("tetel", "Terület két oldalból és a közbezárt szögből",
          '$$T=\\frac{1}{2}ab\\sin\\gamma=\\frac{1}{2}bc\\sin\\alpha=\\frac{1}{2}ac\\sin\\beta$$'
          '<p>A szögnek mindig a <b>két megadott oldal közötti</b> szögnek kell lennie.</p>',
@@ -261,7 +267,7 @@ D2 = [
                   '$$T=\\frac12\\cdot 8\\cdot 11\\cdot\\sin 35^\\circ=44\\cdot 0{,}57358'
                   '\\approx\\boxed{25{,}24}$$'
                   '<p>(területegység)</p>')),
-   kviz('Melyik adatokból számolható a háromszög területe a $T=\\tfrac12ab\\sin\\gamma$ képlettel?',
+   kviz('Milyen adatokból számolható a háromszög területe a $T=\\tfrac12ab\\sin\\gamma$ képlettel?',
         ['Két oldal és a KÖZBEZÁRT szög', 'Két oldal és bármelyik szög',
          'Három oldal'], 0,
         jo="✔ A szögnek a két megadott oldal KÖZÖTT kell lennie — a képletben a gamma "
@@ -275,9 +281,13 @@ D2 = [
    'toronybemérés meghaladja az egyszerű 2e-s háromszögalkalmazást. '
    'A hajóforduló egy koszinusztételes alappélda.</p>',
    doboz("pelda", "Vészterem-szimuláció — a torony magassága",
-         '<p>Egy torony tövéhez nem tudunk odajutni. Az $A$ pontból a torony '
-         'csúcsát $32^\\circ$-os emelkedési szögben látjuk; $50$ métert közelebb menve, '
-         'a $B$ pontból már $48^\\circ$-osban. Milyen magas a torony?</p>',
+         (
+             '<p>Egy függőleges torony tövéhez nem tudunk odajutni. A két megfigyelőpont és a torony talpa '
+             'ugyanazon vízszintes egyenesen van, a megfigyelők a torony ugyanazon oldalán állnak. Az emelkedési '
+             'szögeket a talaj szintjéről mérjük. Az $A$ pontból a torony csúcsát $32^\\circ$-os emelkedési '
+             'szögben látjuk; $50$ métert közelebb menve, a $B$ pontból már $48^\\circ$-osban. Milyen magas a '
+             'torony?</p>'
+         ),
          hid="pelda-torony",
          lenyilo=("Megoldás",
                   '<p>Nézzük az $ABT$ háromszöget ($T$ a torony csúcsa). Az $A$-nál lévő '
@@ -290,11 +300,15 @@ D2 = [
                   '<p>Végül a $BT$ szakaszból a derékszögű háromszögben:</p>'
                   '$$h=BT\\cdot\\sin 48^\\circ\\approx 96{,}13\\cdot 0{,}74314'
                   '\\approx\\boxed{71{,}44\\ \\text{m}}$$')),
-   abra(SVG_TORONY, "A két mérési pont és a torony egyetlen háromszöget alkot — "
-                    "a $16^\\circ$-os csúcsszög a két emelkedési szög <b>különbsége</b>."),
+   abra(SVG_TORONY, (
+                        'A két mérési pont és a torony csúcsa háromszöget alkot (az ábra nem méretarányos) — a $16^\\circ$-os '
+                        'csúcsszög a két emelkedési szög <b>különbsége</b>.'
+                    )),
    doboz("pelda", "Vészterem-szimuláció — navigáció",
-         '<p>Egy hajó a kikötőből $30$ km-t halad egyenesen, majd $115^\\circ$-kal '
-         'elfordul, és további $40$ km-t tesz meg. Milyen messze van a kikötőtől?</p>',
+         (
+             '<p>Egy hajó a kikötőből $30$ km-t halad egyenesen, majd az eredeti haladási irányához képest '
+             '$115^\\circ$-kal elfordul, és további $40$ km-t tesz meg. Milyen messze van a kikötőtől?</p>'
+         ),
          hid="pelda-navigacio",
          lenyilo=("Megoldás",
                   '<p>A két útszakasz és a keresett távolság háromszöget alkot. A '
@@ -307,11 +321,12 @@ D2 = [
                   'a háromszög belső szöge ennek a mellékszöge. Ez a leggyakoribb hiba a '
                   'navigációs feladatokban.</p>')),
    doboz("erdekesseg", "Így mérték meg a Földet",
-         '<p>A <b>háromszögelés</b> évszázadokig a térképészet alapmódszere volt: '
-         'kijelöltek egy pontosan lemért alapvonalat, majd szögméréssel, '
-         'szinusztétellel terjeszkedtek tovább, háromszögről háromszögre. Így készült '
-         'a Nagy Trigonometriai Felmérés Indiában is, amely a Mount Everest magasságát '
-         'megadta — $8840$ méternek, alig $8$ méterrel a mai értéktől.</p>'),
+         (
+             '<p>A <b>háromszögelés</b> sokáig a térképészet egyik alapmódszere volt. Először pontosan lemértek '
+             'egy alapvonalat, majd a hozzá kapcsolódó háromszögek szögeiből számolták a további távolságokat. Az '
+             '<a href="https://royalsociety.org/blog/2023/09/mapping-india/">indiai Nagy Trigonometriai '
+             'Felmérés</a> során így azonosították a Mount Everestet a legmagasabb hegyként.</p>'
+         )),
    kviz('Egy háromszögben $a=6$, $b=9$, $\\gamma=30^\\circ$. Mekkora a területe?',
         ['$13{,}5$', '$27$', '$54$'], 0,
         jo="✔ T = ½ · 6 · 9 · sin 30° = 27 · 0,5 = 13,5.",

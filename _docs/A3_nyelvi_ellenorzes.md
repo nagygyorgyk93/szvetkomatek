@@ -2,14 +2,12 @@
 
 ## Hatókör és állapot
 
-**Jelenlegi összesítés:** az 1e teljes A3-auditja helyben elkészült,
-összesen **77/77 HTML-oldal**: 38 tananyaglap, 38 további témaköroldal
-és az osztály főoldala. A tanár a 2e A3-auditját választotta folytatásként.
-A 2e első két témaköre teljesen átnézve: **30/65 oldal**. Ebben az adagban
-27 további oldal auditja készült el a korábbi három komplexszámos tananyag mellett.
-A 2e/03–04, az osztály főoldala és a 3e–4e teljes A3-auditja hátra van.
+**Jelenlegi összesítés:** az 1e és a 2e teljes A3-auditja helyben elkészült:
+**1e 77/77**, **2e 65/65 HTML-oldal**. A legutóbbi adag a 2e/03–04 két
+teljes témakörét és az osztály főoldalát ellenőrizte, összesen 35 oldalt.
+A 3e–4e teljes A3-auditja hátra van.
 A tanár kérésére a további adagok 2–3 teljes témakört fognak össze.
-A munka eddig huszonegy adagban készült; az alábbi adatok
+A munka eddig huszonkét adagban készült; az alábbi adatok
 az egyes munkamenetek eredményei, a legfrissebb bejegyzés a végén található.
 
 **2026-10-05, első adag:** az 1e/01 három függvényes tananyaglapjának teljes szövegét
@@ -2243,3 +2241,119 @@ ellenőrzés alapja a builder-önteszt és a külön független újraszámolás.
 A 2e/03–04 és az osztály főoldala, továbbá a 3e–4e hátra van.
 **Tanári döntés kell: nincs nyitott kérdés.** Helyi main, új ág és push nélkül.
 Következő adag: a 2e/03 és 2e/04 két teljes témaköre, az új munkarend szerint.
+
+
+## 2026-10-08 — huszonkettedik adag: a 2e/03–04 és az osztály főoldala, a 2e A3 lezárása
+
+Két teljes témakör és az osztály főoldala, összesen **35 HTML-oldal** teljes
+szöveg szerinti auditja: 19 tananyag, 9 gyakorló/házi, 2 témakörnyitó,
+2 összefoglaló, 2 terepküldetés és 1 osztályfőoldal. Ezzel a 2e A3-auditja
+**65/65 oldalra** teljes. Kiindulás: 29f54ff, tiszta helyi main,
+az origin/main helyi referenciájával azonos állapot; távoli frissítés nem történt.
+Új ág és push nincs. A matematika-2e skill kimenetei és sztandardjai mérvadók;
+a korábbi tanári döntések és a kiegészítő anyagok megmaradtak.
+
+### Javítás előtt bemutatott hibák és a lektori kiegészítések
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Exponenciális függvény, bevezető és ábra | Túlzó természeti állítás; a nagyobb alaphoz minden x-re nagyobb értéket társít | Közepes | Builder: feltételezett növekedési modell, pozitív x-re szóló összehasonlítás, pontosabb ábraleírás |
+| Egyenletek és összefoglaló | Bármely exponenciális egyenletre egyetlen megoldást/módszert ígér; több értelmezési feltétel hiányzik | Magas | Builder: a konkrét a^x=b típus külön; alap-, argumentum- és helyettesítési feltételek |
+| Egyenlőtlenség, inverz | Végtelen intervallumvégpont hibás jelölését érvényesnek kezeli; a négyzetgyök inverz-példájának tartománya hiányzik | Magas | Builder: nyílt végtelen végpont, nemnegatív tartomány |
+| Logaritmus, azonosságok | Az összeadásra vonatkozó szabály hiányát minden esetben fennálló egyenlőtlenségként írja; feltételek nélkül bont logaritmust | Magas | Builder: „nem azonosság”, pozitív változók, értelmezési tartomány megőrzése |
+| Kalkulátor és történeti példák | Túl általános gombkiosztás; pontatlan Napier-, Apollo- és papírhajtási állítás | Közepes | Builder: készüléktől függő lehetőségek, ellenőrzött történeti források, idealizált hajtásmodell |
+| Logaritmikus skálák | A pH koncentrációs képletét pontos általános definícióként kezeli; Richter- és dB-összehasonlítás feltételei hiányosak | Magas | Builder: híg oldat közelítése, aktivitásra utalás, referenciaértékek, amplitúdó és intenzitás külön |
+| Növekedési példák | Folytonos idő és egész szaporodási/kamatjóváírási lépések összemosása; a modell fizikai időtartománya nincs kimondva | Közepes | Builder: folytonos becslés és első egész lépés külön, éves jóváírás, nemnegatív idő |
+| Szögfüggvények | Tengelyhelyzetek és tangens/kotangens kivételei hiányosak; minden szögre pontos nevezetes értéket ígér | Magas | Builder: tengelyek, értelmezési kivételek, a 1000°-os érték közelítésként kérve |
+| Periodicitás, összetett függvény | Az alapperiódus létét általánosan feltételezi; negatív belső együttható eltolása pontatlan; konstans esetek kimaradnak | Magas | Builder: tartományfeltétel, alapperiódus létezése, abszolútértékek, −c/b eltolás és konstans kivételek |
+| Egyenletek és egyenlőtlenségek | Az összes valós és a korlátozott tartomány megoldásai összemosódnak; speciális szinuszértékekre is két külön megoldást sugall | Magas | Builder: k egész, tartomány és végpontok, 0 és ±1 kivételei |
+| Trigonometrikus összefoglaló | Kotangens-hiány; feltétel nélküli képletek; nehezen olvasható összevont táblázat és szinuszösszeg-jelölés | Közepes | Builder: ctg és feltételek, külön sin/cos és tg/ctg táblázat, két explicit összegképlet |
+| Háromszögek | A 0/1/2 megoldás hegyesszög-feltétele hiányzik; az oldalháromszög-egyenlőtlenséget vegyes adatokra is elégségesnek mondja | Magas | Builder: SSA esetek hegyes/tompaszögnél, pozitív három oldal kritériuma, vegyes adatok összeegyeztethetősége |
+| Magasságábra és terület | A kitöltés eltakarja a magasságot; a képlet más magasságot használ; T a torony lábánál, derékszög fent | Magas | Builder: átlátszó kitöltés, h_c és c·h_c/2, toronycsúcs és talajszinti derékszög jelölése |
+| Hétköznapi geometriai példák | Toronymérés geometriai feltevései, hajó irányváltozása és mérési alapvonal nem egyértelmű | Közepes | Builder: függőleges torony, egyenes/vízszintes talaj, azonos oldal, talajszinti mérés; relatív fordulás, ismert alapvonal |
+| Terepküldetések | Nem megadott grafikonból kér leolvasást; periódus helyett alapperiódus kell; elektromos jel mennyisége nincs definiálva; jelentési utasítás túl általános | Közepes | Builder: megadott leolvasási adatok, pozitív A/b és alapperiódus, I(t) amperben, pontos feladathivatkozás |
+| Bevezetők, házik és átvezetők | Ismétlődő, túlzó vagy magyartalan mondatok, néhány pontatlan szó és írásjel | Enyhe/közepes | Builder: rövidebb magyar mondatok, konkrét magyarázatok, egységes szinusz névalak |
+| Végső mobilos szemrevételezés | A skálák háromoszlopos és a szögfüggvények ötoszlopos táblázata nehézkes | Közepes | Builder: skála/képlet tábla, magyarázat alatta; két háromoszlopos szögfüggvénytábla, közös stílussal |
+
+A játékos történet megmaradt. A bizonytalan stilisztikai ízléskérdéseket
+nem írtuk át; a biztosan nehézkes mondatok és hibás általánosítások javultak.
+Új gyakorlófeladat és új feladatszámadat nincs. A kamatos kamat rögzített
+éves modell, a gyógyszeres házi absztrakt csökkenési modell; egyik sem
+aktuális pénzügyi ajánlat vagy alkalmazási útmutató. A papírhajtásnál az
+elméleti vastagság és a fizikai kivitelezhetőség külön szerepel.
+
+A történeti és fizikai példák forrásai: [NASA: Hold-adatok](https://science.nasa.gov/moon/facts/),
+[Smithsonian: Napier 1614-es műve](https://library.si.edu/digital-library/book/mirificilogarit00napi),
+[Smithsonian: Apollo–13 logarléc](https://www.si.edu/object/slide-rule-5-inch-pickett-n600-es-apollo-13%3Anasm_A19840160000)
+és [Royal Society: India felmérése](https://royalsociety.org/blog/2023/09/mapping-india/).
+A pH pontos definíciója aktivitáson alapul; a koncentrációs képlet közelítésként
+szerepel. [IUPAC](https://goldbook.iupac.org/terms/view/P04524)
+A Richter-példa azonos mérési feltételek mellett amplitúdóarányt hasonlít össze.
+[USGS: magnitúdótípusok](https://www.usgs.gov/programs/earthquake-hazards/magnitude-types)
+A hangintenzitásszint 10 dB-es különbsége tízszeres intenzitásarány;
+nem a hangerőérzet tízszeresét állítja.
+[NPS: hang és zaj](https://home.nps.gov/subjects/sound/understandingsound.htm)
+
+### Független ellenőrzés és megőrzés
+
+Három üres kontextusú lektor csak a kijelölt tanulói szövegeket kapta;
+a gyakorlóoldalakat a végeredmények nélkül. A logaritmusok **39**, a
+trigonometrikus kör **38**, a háromszögek **34** kártyáját függetlenül
+megoldották. A **111 kártya** eredményeinek összevetése a tényleges HTML-lel
+nem mutatott számszerű eltérést; az egyenértékű alakok megfelelőek.
+A tananyagok kidolgozott példái, kvízei és a két projekt feladatai is
+ellenőrizve. Külön, zárt képletes kontroll **21 számszerű eredményt**,
+valamint a modellhatárokat, a kotangensazonosságot, a negatív együttható
+eltolását, egy tompaszögű SSA ellenpéldát és az ábra területképletét vizsgálta.
+
+Negyedik, üres kontextusú lektor a javított 19 tananyagot és 2 projektet
+olvasta el, minden számszerű példát és projektfeladatot újraszámolt.
+Hibás eredményt nem talált. Három további szövegpontosítását beépítettük:
+előjel és nulla érték elkülönítése, alapperiódus, egy felsorolás írásjele.
+A projektmegoldások csak a privát kontrollban szerepelnek.
+
+Mind a **16 builder** újraépítve, a beépített SymPy-öntesztek sikeresek.
+**12 builder** módosult; az AST-összevetés szerint a programszerkezet és
+a numerikus konstansok változatlanok, csak szövegértékek változtak.
+HTML-megőrzés: **338 kártya**, minden állandó horgony, régi hivatkozás,
+kép, szkript, háttér és médiabejegyzés megmaradt. A 338-ban a 25 próbadolgozati
+kártya is benne van. **21 SVG** maradt; három lap ábraleírása vagy rajza
+változott a fenti hibák miatt. A **33 kvíz** válaszlehetőségei megmaradtak.
+Két feladat képlete csak értelmezési pontosítást kapott: pH közelítése és
+mértékegysége, illetve nemnegatív idő. Három végeredmény szükségesen változott:
+hat alapazonosság a kotangenssel, a logaritmusos hamis állítás konkrét cáfolata,
+és k egész voltának kimondása. A további 335 válasz változatlan.
+
+### Ellenőrzések és korlátok
+
+| Ellenőrzés | Eredmény |
+|---|---|
+| Kép, média, háttér | Minden újraépítés után helyreállítva; 334 médiaelem 139 lapon, médiakatalógus byte szerint változatlan |
+| Kánon | 310 oldal, 0 hiba; két heurisztikus figyelmeztetés, mindkettőnél érvényes, ugyanazon lapra mutató horgonylink van |
+| Belső linkek és gyakorlósávok | 310 oldal, 0 linkhiba; minden kártyát felad valamelyik egység |
+| Meglévő kulcsteszt | 4499/4499, 0 eltérés |
+| Meglévő regresszió | 4499/4499 = 100% |
+| jsdom / képletrender | 35 lap, 3261 képlet, 33/33 kvíz, 0 hiba |
+| Edge | 360/390/1280 px, zárt/nyitott lenyílók: 210 nézet + 48 végleges visszaellenőrzés, 0 elrendezési/KaTeX/JS/saját konzol/helyi 404 hiba |
+| axe | 390 px-en zárt/nyitott lenyílók: 70 + 16 nézet, 0 jelzés; nem teljes WCAG-minősítés |
+| Nyomtatás JS be/ki | 70 + 16 próba, szövegek, példamegoldások és végeredmények láthatók |
+| JavaScript nélkül | 35 + 8 oldal olvasható; képletek TeX alakban |
+| Keresőindex | 308 nem üres bejegyzés; 30 változó URL, mind a két témakörből |
+| Naplótérkép | Byte szerint változatlan: 184 egység, 2294 feladat, 12315 XP |
+
+A végleges kép → média → háttér → naplótérkép → keresőindex → kánon → link →
+sáv → kulcs → regresszió lánc lefutott. A Python layout_teszt Playwright-csomagja
+nincs telepítve; a Node Playwright és Edge a jelenlegi forrásból ellenőrzött,
+azonos TULLOGOK függvényt futtatta mindhárom szélességen. Az utolsó javítások
+nyolc oldala külön végleges böngészős kontrollt kapott. A mobilos bevezetők,
+valamint a magasság-, toronyábra és az átrendezett táblázatok szemrevételezve.
+
+Valódi képernyőolvasó, más böngésző, minden PDF-oldaltörés, minden háttérpont
+kézi kontrasztja és a külső médiatartalmak újbóli működési/tartalmi próbája
+nem történt. A meglévő 4499-es kulcsmodul **nem fedi le a 2e-t**; az itteni
+számolási ellenőrzés alapja a builder-önteszt és a külön független újraszámolás.
+
+**Állapot:** 1e 77/77 és 2e **65/65** teljes A3-audit szerint helyben kész.
+A 3e–4e A3-auditja hátra van.
+**Tanári döntés kell: nincs nyitott tartalmi kérdés.** Helyi main, új ág és push nélkül.
+Következő nagyobb adaghoz osztályválasztás szükséges; javaslat: 3e A3.

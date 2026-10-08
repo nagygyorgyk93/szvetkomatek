@@ -167,11 +167,11 @@ SVG_EGY = svg_hullam(
 
 C1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Szürke Janka:</b> Amikor telepatikusan keresek valakit, nem egy pontot érzékelek, '
-         'hanem egy <b>hullámot</b>. Minden elme saját frekvencián rezeg — és a rezgés '
-         'matematikai alakja pontosan az, amit most rajzolunk fel. Eddig egy-egy szögnél '
-         'kérdeztük meg a szinuszt; most nézzük meg, mit csinál <b>végig</b>, minden '
-         'szögre egyszerre.'),
+   brief((
+             '<b>Szürke Janka:</b> A képzeletbeli felderítőműszer ismétlődő jelet mutat. Egy-egy szögnél már ki '
+             'tudjuk számolni a szinuszt és a koszinuszt. Most az összes értéket közös grafikonon ábrázoljuk: '
+             'ebből látszik a jel alakja és ismétlődése.'
+         )),
    'A trigonometrikus kör ehhez kész eszköz: ha a pont körbefut a körön, a szinusza (az '
    '$y$-koordinátája) fel-le mozog $-1$ és $1$ között. Ezt a mozgást „kiterítve” kapjuk '
    'a hullámot.',
@@ -182,27 +182,27 @@ C1 = [
                     "$\\tfrac{\\pi}{2}$-vel balra tolt képe: "
                     "$\\cos x=\\sin\\left(x+\\tfrac{\\pi}{2}\\right)$."),
    doboz("tetel", "Az $y=\\sin x$ és az $y=\\cos x$ tulajdonságai",
-         '<div class="tblwrap"><table>'
-         '<tr><th>Tulajdonság</th><th>$\\sin x$</th><th>$\\cos x$</th></tr>'
-         '<tr><td>Értelmezési tartomány</td><td colspan="2">$\\mathbb{R}$</td></tr>'
-         '<tr><td>Értékkészlet</td><td colspan="2">$[-1;1]$</td></tr>'
-         '<tr><td>Periódus</td><td colspan="2">$2\\pi$ ($360^\\circ$)</td></tr>'
-         '<tr><td>Nullahelyek</td><td>$x=k\\pi$</td><td>$x=\\tfrac{\\pi}{2}+k\\pi$</td></tr>'
-         '<tr><td>Maximum ($1$)</td><td>$x=\\tfrac{\\pi}{2}+2k\\pi$</td><td>$x=2k\\pi$</td></tr>'
-         '<tr><td>Minimum ($-1$)</td><td>$x=\\tfrac{3\\pi}{2}+2k\\pi$</td>'
-         '<td>$x=\\pi+2k\\pi$</td></tr>'
-         '<tr><td>Szimmetria</td><td><b>páratlan</b> (origóra)</td>'
-         '<td><b>páros</b> ($y$-tengelyre)</td></tr>'
-         '</table></div>'
-         '<p>A szimmetria képlettel: $\\sin(-x)=-\\sin x$ és $\\cos(-x)=\\cos x$ — '
-         'ezt a visszavezetésnél már használtuk.</p>',
+         (
+             '<div class="tblwrap"><table><tr><th>Tulajdonság</th><th>$\\sin x$</th><th>$\\cos '
+             'x$</th></tr><tr><td>Értelmezési tartomány</td><td '
+             'colspan="2">$\\mathbb{R}$</td></tr><tr><td>Értékkészlet</td><td '
+             'colspan="2">$[-1;1]$</td></tr><tr><td>Periódus</td><td colspan="2">$2\\pi$ '
+             '($360^\\circ$)</td></tr><tr><td>Nullahelyek</td><td>$x=k\\pi$</td><td>$x=\\tfrac{\\pi}{2}+k\\pi$</td></tr'
+             '><tr><td>Maximum ($1$)</td><td>$x=\\tfrac{\\pi}{2}+2k\\pi$</td><td>$x=2k\\pi$</td></tr><tr><td>Minimum '
+             '($-1$)</td><td>$x=\\tfrac{3\\pi}{2}+2k\\pi$</td><td>$x=\\pi+2k\\pi$</td></tr><tr><td>Szimmetria</td><td><'
+             'b>páratlan</b> (origóra)</td><td><b>páros</b> ($y$-tengelyre)</td></tr></table></div><p>A '
+             'táblázatokban $k\\in\\mathbb{Z}$.</p><p>A szimmetria képlettel: $\\sin(-x)=-\\sin x$ és $\\cos(-x)=\\cos '
+             'x$ — ezt a visszavezetésnél már használtuk.</p>'
+         ),
          hid="tetel-sincos"),
    doboz("definicio", "Periodikus függvény",
-         '<p>Az $f$ függvény <b>periodikus</b>, ha van olyan $p\\neq 0$ szám, hogy minden '
-         '$x$-re</p>'
-         '$$f(x+p)=f(x).$$'
-         '<p>A legkisebb ilyen pozitív $p$ a függvény <b>periódusa</b>. A szinusznál és a '
-         'koszinusznál ez $2\\pi$: egy teljes körbefordulás után minden ismétlődik.</p>',
+         (
+             '<p>Az $f$ függvény <b>periodikus</b>, ha van olyan $p&gt;0$, hogy az értelmezési tartományt a '
+             '$p$-vel való eltolás mindkét irányban megőrzi, és minden $x$-re az értelmezési '
+             'tartományban</p>$$f(x+p)=f(x).$$<p>Ha létezik legkisebb pozitív periódus, azt '
+             '<b>alapperiódusnak</b> nevezzük. A szinusznál és a koszinusznál ez $2\\pi$. A konstans függvénynek '
+             'minden pozitív szám periódusa, így nincs legkisebb pozitív periódusa.</p>'
+         ),
          hid="def-periodikus"),
    kviz('Hol van az $y=\\cos x$ függvénynek maximuma?',
         ['$x=2k\\pi$', '$x=\\tfrac{\\pi}{2}+2k\\pi$', '$x=k\\pi$'], 0,
@@ -230,19 +230,24 @@ C1 = [
          '</table></div>',
          hid="tetel-tgctg"),
    doboz("csapda", "Dr. Baljós vírus-kódja",
-         '<p><b>A tangens periódusa $\\pi$, nem $2\\pi$!</b> Ezért a '
-         '$\\operatorname{tg}x=1$ egyenlet megoldása $x=\\tfrac{\\pi}{4}+k\\pi$ — '
-         'egyetlen családdal, míg a $\\sin x=a$ típusnál <b>kettő</b> kell.</p>'
-         '<p>És a tangens értékkészlete a <b>teljes</b> $\\mathbb{R}$: a '
-         '$\\operatorname{tg}x=100$ egyenletnek <b>van</b> megoldása, míg a '
-         '$\\sin x=100$-nak nincs.</p>'),
+         (
+             '<p><b>A tangens periódusa $\\pi$, nem $2\\pi$!</b> Ezért a $\\operatorname{tg}x=1$ egyenlet megoldása '
+             '$x=\\tfrac{\\pi}{4}+k\\pi$ — egyetlen családdal. A $\\sin x=a$ egyenletnek $0&lt;|a|&lt;1$ esetén két '
+             'külön megoldáscsaládja van; a $0$ és a $\\pm1$ értéket külön vizsgáljuk.</p><p>És a tangens '
+             'értékkészlete a <b>teljes</b> $\\mathbb{R}$: a $\\operatorname{tg}x=100$ egyenletnek <b>van</b> '
+             'megoldása, míg a $\\sin x=100$-nak nincs.</p>'
+         )),
    kviz('Mennyi az $y=\\operatorname{tg}x$ függvény periódusa?',
         ['$\\pi$', '$2\\pi$', '$\\tfrac{\\pi}{2}$'], 0,
         jo="✔ A tangens 180°-onként ismétlődik.",
         nem="✘ A tg és a ctg periódusa π, csak a sin és a cos periódusa 2π."),
    gyakorolj(FGY + "#alap-1", "A 1–5", FGY + "#kozep-1", "K 1–3",
              bevezeto="Az A 1–5 a törzsanyagot gyakoroltatja; a K 1–3 kiegészítő kihívás."),
-   brief('<b>Szürke Janka:</b> A két alapgörbét ismered. Egy valódi jel viszont sosem ilyen tiszta: van erőssége, sűrűsége és késése. Három paraméter — és mindhárom másképp nyúl bele a hullámba, mint ahogy elsőre gondolnád.', outro=True),
+   brief((
+             '<b>Szürke Janka:</b> Az alapgörbéket már ismered. Egy szinuszos jel amplitúdója, periódusa és '
+             'fázisa is eltérhet az alapgörbéétől. A következő részben azt nézzük meg, hogyan jelennek meg ezek '
+             'az eltérések a képletben és a grafikonon.'
+         ), outro=True),
  ]),
 ]
 
@@ -250,10 +255,12 @@ C1 = [
 
 C2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Szürke Janka:</b> Egy valódi jel sosem a tiszta $\\sin x$. Van <b>erőssége</b> '
-         '(mekkorát hullámzik), <b>körfrekvenciája</b> (milyen sűrűn ismétlődik) és <b>fázisa</b> '
-         '(mikor kezdődik). Ez a három adat az $A$, a $b$ és a $c$ — és mindhárom a függvénytranszformációk logikáját követi, de kettőnél lesz egy csavar, amire külön figyelmeztetlek. Ha ezt '
-         'elolvasod egy grafikonról, gyakorlatilag megfejtetted a jelet.'),
+   brief((
+             '<b>Szürke Janka:</b> Egy szinuszos jel más magasságig térhet ki, más ütemben ismétlődhet, és '
+             'vízszintesen is eltolódhat az alapgörbéhez képest. Ezeket az eltéréseket az $A$, $b$ és $c$ '
+             'paraméter írja le; a $d$ a középvonal magasságát adja. Megnézzük, melyik paraméter mit változtat a '
+             'grafikonon.'
+         )),
    '<p class="lead">A 2e-s törzsanyagban a $y=\\sin x+d$ és $y=\\cos x+d$ '
    'függőleges eltolása szerepel: az alapgörbe $d$-vel feljebb vagy lejjebb kerül, '
    'periódusa változatlan. Az alábbi amplitúdó-, periódus- és fázisvizsgálat, '
@@ -261,9 +268,11 @@ C2 = [
  ]),
 
  ("Az amplitúdó", [
-   abra(SVG_AMPL, "Az $y=A\\sin x$ görbe $|A|$-szorosára nyúlik — $|A|&lt;1$ esetén "
-                  "lapul — függőlegesen. "
-                  "Az értékkészlet $[-|A|;|A|]$, a periódus <b>nem változik</b>."),
+   abra(SVG_AMPL, (
+                      'Az $y=A\\sin x$ görbe $|A|$-szorosára nyúlik — $|A|&lt;1$ esetén lapul — függőlegesen. Az '
+                      'értékkészlet $[-|A|;|A|]$, az alapperiódus $A\\neq0$ esetén <b>nem változik</b>. Ha $A=0$, konstans '
+                      'függvényt kapunk.'
+                  )),
    doboz("tetel", "Amplitúdó",
          '<p>Az $y=A\\sin x$ függvény <b>amplitúdója</b> $|A|$: ennyivel tér ki a görbe '
          'a középvonaltól. Az értékkészlet $[-|A|;|A|]$.</p>'
@@ -275,10 +284,12 @@ C2 = [
    abra(SVG_PER, "Az $y=\\sin bx$ görbe vízszintesen <b>összenyomódik</b> ($b&gt;1$) "
                  "vagy <b>széthúzódik</b> ($0&lt;b&lt;1$)."),
    doboz("tetel", "Periódus",
-         '<p>Az $y=\\sin bx$ (és az $y=\\cos bx$) függvény periódusa</p>'
-         '$$p=\\frac{2\\pi}{|b|}\\qquad(b\\neq 0),$$'
-         '<p>az $y=\\operatorname{tg}bx$ függvényé pedig $p=\\dfrac{\\pi}{|b|}$.</p>'
-         '<p>Vagyis $b$ azt mondja meg, hogy a megszokott $2\\pi$ hosszra <b>hány hullám jut</b> — $b=\\tfrac12$ esetén például csak fél.</p>',
+         (
+             '<p>Az $y=\\sin bx$ (és az $y=\\cos bx$) függvény periódusa</p>$$p=\\frac{2\\pi}{|b|}\\qquad(b\\neq '
+             '0),$$<p>az $y=\\operatorname{tg}bx$ függvényé pedig $p=\\dfrac{\\pi}{|b|}$.</p><p>Vagyis $|b|$ azt '
+             'mondja meg, hogy a megszokott $2\\pi$ hosszra <b>hány hullám jut</b> — $b=\\tfrac12$ esetén például '
+             'csak fél.</p>'
+         ),
          hid="tetel-periodus"),
    doboz("csapda", "Dr. Baljós vírus-kódja",
          '<p>A $b$ <b>osztja</b> a periódust, nem szorozza. Az $y=\\sin 2x$ periódusa '
@@ -293,22 +304,25 @@ C2 = [
  ]),
 
  ("Fáziseltolás és a teljes alak", [
-   abra(SVG_FAZIS, "A zárójelben álló $+c$ <b>balra</b>, a $-c$ <b>jobbra</b> tolja a "
-                   "görbét — méghozzá $\\tfrac{|c|}{b}$-vel, nem $|c|$-vel; a végén álló "
-                   "$+d$ pedig <b>felfelé</b>."),
+   abra(SVG_FAZIS, (
+                       'A vízszintes eltolás előjeles értéke $-\\tfrac{c}{b}$, mértéke $|\\tfrac{c}{b}|$ ($b\\neq0$). Pozitív '
+                       'eltolásnál jobbra, negatívnál balra mozdul a görbe. A végén álló $d$ pozitív értéke felfelé, '
+                       'negatív értéke lefelé tol.'
+                   )),
    doboz("tetel", "Az $y=A\\sin(bx+c)+d$ alak",
-         '<div class="tblwrap"><table>'
-         '<tr><th>Paraméter</th><th>Neve</th><th>Hatása</th></tr>'
-         '<tr><td>$A$</td><td>amplitúdó</td><td>függőleges nyújtás $|A|$-szorosára; '
-         '$A&lt;0$ → tükrözés</td></tr>'
-         '<tr><td>$b$</td><td>körfrekvencia</td><td>a periódus $\\tfrac{2\\pi}{|b|}$</td></tr>'
-         '<tr><td>$c$</td><td>fázis</td><td>vízszintes eltolás '
-         '<b>$-\\tfrac{c}{b}$-vel</b></td></tr>'
-         '<tr><td>$d$</td><td>középvonal</td><td>függőleges eltolás; az értékkészlet '
-         '$[d-|A|;\\,d+|A|]$</td></tr>'
-         '</table></div>'
-         '<p>⚠️ A vízszintes eltolás <b>nem</b> $c$, hanem $-\\tfrac{c}{b}$ — mert a '
-         'zárójelből ki kell emelni a $b$-t: $bx+c=b\\left(x+\\tfrac{c}{b}\\right)$.</p>',
+         (
+             '<p>A táblázatban $A\\neq0$ és $b\\neq0$.</p><div '
+             'class="tblwrap"><table><tr><th>Paraméter</th><th>Neve</th><th>Hatása</th></tr><tr><td>$A$</td><td>fü'
+             'ggőleges szorzótényező</td><td>függőleges nyújtás $|A|$-szorosára; $A&lt;0$ → '
+             'tükrözés</td></tr><tr><td>$b$</td><td>a belső szög együtthatója</td><td>a periódus '
+             '$\\tfrac{2\\pi}{|b|}$</td></tr><tr><td>$c$</td><td>fázis</td><td>vízszintes eltolás '
+             '<b>$-\\tfrac{c}{b}$-vel</b></td></tr><tr><td>$d$</td><td>a középvonal magassága</td><td>függőleges '
+             'eltolás; az értékkészlet $[d-|A|;\\,d+|A|]$</td></tr></table></div><p>⚠️ A vízszintes eltolás '
+             '<b>nem</b> $c$, hanem $-\\tfrac{c}{b}$ — mert a zárójelből ki kell emelni a $b$-t: '
+             '$bx+c=b\\left(x+\\tfrac{c}{b}\\right)$.</p><p>Ha $A=0$, a függvény az állandó $d$. Ha $b=0$, az '
+             'állandó $A\\sin c+d$. Ezekben az esetekben az értékkészlet egyetlen értékből áll, és nincs legkisebb '
+             'pozitív periódus.</p>'
+         ),
          hid="tetel-teljes-alak"),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Add meg az $y=3\\sin\\left(2x-\\tfrac{\\pi}{3}\\right)+1$ függvény '
@@ -323,16 +337,25 @@ C2 = [
                   '<p><b>Értékkészlet:</b> a középvonal $y=1$, az amplitúdó $3$, tehát '
                   '$[1-3;\\,1+3]=\\boxed{[-2;4]}$.</p>')),
    doboz("erdekesseg", "Ez a hangod és a váltakozó áram is",
-         '<p>Egy tiszta hang matematikai alakja $y=A\\sin(2\\pi f t)$: az $A$ a '
-         '<b>hangerő</b>, az $f$ a <b>frekvencia</b> (hertzben), ami a hang <b>magasságát</b> adja. '
-         'A hálózati feszültség szintén ilyen hullám: a <b>csúcsértéke</b> $A\\approx 325\\,\\text{V}$, ebből adódik a jól ismert $230\\,\\text{V}$ <b>effektív</b> érték; a frekvencia $50\\,\\text{Hz}$ — vagyis másodpercenként ötvenszer fut le a teljes hullám.</p>'),
+         (
+             '<p>Egy tiszta hang hangnyomását közelítő modell $y=A\\sin(2\\pi f t)$: az $A$ a '
+             '<b>hangnyomás-amplitúdó</b>, az $f$ a <b>frekvencia</b> (hertzben), ami a hang <b>magasságát</b> '
+             'adja. A hálózati feszültség szinuszos modelljében: a <b>csúcsértéke</b> $A\\approx 325\\,\\text{V}$, '
+             'ebből adódik a jól ismert $230\\,\\text{V}$ <b>effektív</b> érték; a frekvencia $50\\,\\text{Hz}$ — '
+             'vagyis másodpercenként ötvenszer fut le a teljes hullám.</p>'
+         )),
    kviz('Mennyivel tolódik el az $y=\\sin(2x-\\pi)$ görbe?',
         ['$\\tfrac{\\pi}{2}$-vel jobbra', '$\\pi$-vel jobbra', '$\\pi$-vel balra'], 0,
         jo="✔ Emeld ki a b-t: sin(2x − π) = sin(2(x − π/2)), tehát π/2-vel jobbra.",
         nem="✘ Az eltolás nem −c, hanem −c/b. Emeld ki a 2-t: 2x − π = 2(x − π/2)."),
    gyakorolj(FGY + "#alap-6", "A 6–11", FGY + "#kozep-4", "K 4–8",
              bevezeto="Kiegészítő kihívás; az A 9 a) része az egyszerű függőleges eltolást gyakoroltatja."),
-   brief('<b>Szürke Janka:</b> A hullámot már le tudod írni. Most jön a fordított kérdés: <b>mikor</b> éri el a jel a keresett értéket? Ez trigonometrikus egyenlet — és mivel a hullám ismétlődik, nem egy megoldás lesz, hanem végtelen sok.', outro=True),
+   brief((
+             '<b>Szürke Janka:</b> A hullámot már le tudod írni. Most a fordított kérdést tesszük fel: '
+             '<b>mikor</b> éri el a jel a keresett értéket? Ha ez az érték elérhető és az összes valós megoldást '
+             'keressük, a periodicitás miatt végtelen sokat kapunk. Megadott intervallumon csak az oda eső '
+             'megoldásokat adjuk meg.'
+         ), outro=True),
 ]),
 ]
 
@@ -361,18 +384,20 @@ C3 = [
    abra(SVG_EGY, "A $\\sin x=\\tfrac12$ egyenlet megoldásai ott vannak, ahol a "
                  "hullám metszi az $y=\\tfrac12$ egyenest — <b>periódusonként kétszer</b>."),
    doboz("tetel", "A három alaptípus",
-         '<p>Legyen $\\alpha$ az az első negyedbeli <b>alapszög</b> ($0\\le\\alpha\\le\\tfrac{\\pi}{2}$), amelynél a szóban forgó szögfüggvény értéke $|a|$. Az alábbiakban $k\\in\\mathbb{Z}$; a $0$ és a $\\pm1$ szinusz- és koszinuszértékeket külön táblázat foglalja össze.</p>'
-         '<p><b>1.</b> $\\sin x=a$ csak $|a|\\le1$ esetén oldható meg. Ha $0&lt;a&lt;1$, az I. és II. negyedben kapjuk:</p>'
-         '$$x=\\alpha+2k\\pi\\qquad\\text{vagy}\\qquad x=\\pi-\\alpha+2k\\pi.$$'
-         '<p>Ha $-1&lt;a&lt;0$, a III. és IV. negyedben:</p>'
-         '$$x=\\pi+\\alpha+2k\\pi\\qquad\\text{vagy}\\qquad x=2\\pi-\\alpha+2k\\pi.$$'
-         '<p><b>2.</b> $\\cos x=a$ csak $|a|\\le1$ esetén oldható meg. Ha $0&lt;a&lt;1$, akkor</p>'
-         '$$x=\\pm\\alpha+2k\\pi;$$'
-         '<p>ha $-1&lt;a&lt;0$, akkor</p>'
-         '$$x=\\pi\\pm\\alpha+2k\\pi.$$'
-         '<p><b>3.</b> $\\operatorname{tg}x=a$ bármely $a$-ra megoldható. A periódus $\\pi$, ezért egy család elég:</p>'
-         '$$x=\\alpha+k\\pi\\quad(a\\ge0),\\qquad x=-\\alpha+k\\pi\\quad(a&lt;0).$$'
-         '<p>Minden megoldáshoz oda kell írni a periódust — és a $k\\in\\mathbb{Z}$-t!</p>',
+         (
+             '<p>Legyen $\\alpha$ az az első negyedbeli <b>alapszög</b> ($0\\le\\alpha\\le\\tfrac{\\pi}{2}$), amelynél '
+             'a szóban forgó szögfüggvény értéke $|a|$. Tangensnél $\\alpha&lt;\\tfrac{\\pi}{2}$. Az alábbiakban '
+             '$k\\in\\mathbb{Z}$; a $0$ és a $\\pm1$ szinusz- és koszinuszértékeket külön táblázat foglalja '
+             'össze.</p><p><b>1.</b> $\\sin x=a$ csak $|a|\\le1$ esetén oldható meg. Ha $0&lt;a&lt;1$, az I. és II. '
+             'negyedben kapjuk:</p>$$x=\\alpha+2k\\pi\\qquad\\text{vagy}\\qquad x=\\pi-\\alpha+2k\\pi.$$<p>Ha '
+             '$-1&lt;a&lt;0$, a III. és IV. negyedben:</p>$$x=\\pi+\\alpha+2k\\pi\\qquad\\text{vagy}\\qquad '
+             'x=2\\pi-\\alpha+2k\\pi.$$<p><b>2.</b> $\\cos x=a$ csak $|a|\\le1$ esetén oldható meg. Ha $0&lt;a&lt;1$, '
+             'akkor</p>$$x=\\pm\\alpha+2k\\pi;$$<p>ha $-1&lt;a&lt;0$, akkor</p>$$x=\\pi\\pm\\alpha+2k\\pi.$$<p><b>3.</b> '
+             '$\\operatorname{tg}x=a$ bármely $a$-ra megoldható. A periódus $\\pi$, ezért egy család '
+             'elég:</p>$$x=\\alpha+k\\pi\\quad(a\\ge0),\\qquad x=-\\alpha+k\\pi\\quad(a&lt;0).$$<p>Az összes valós '
+             'megoldás megadásakor a megoldáscsaládokhoz a periódust és a $k\\in\\mathbb{Z}$ feltételt is oda kell '
+             'írni. Megadott intervallumon a megfelelő szögeket soroljuk fel.</p>'
+         ),
          hid="tetel-alaptipusok"),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg! <b>a)</b> $2\\sin x-1=0$; <b>b)</b> $2\\cos x+\\sqrt3=0$; '
@@ -403,17 +428,14 @@ C3 = [
          '</table></div>',
          hid="tetel-specialis"),
    doboz("csapda", "Dr. Baljós vírus-kódja",
-         '<p>Három visszatérő hiba:</p>'
-         '<ol class="reszfeladatok">'
-         '<li><b>Elhagyni a $+2k\\pi$-t.</b> Az $x=\\tfrac{\\pi}{6}$ önmagában <b>nem</b> '
-         'a megoldás, csak egy megoldás. A feladat az <b>összeset</b> kérdezi.</li>'
-         '<li><b>Csak az egyik családot megadni.</b> A $\\sin x=\\tfrac12$-nek '
-         '<b>két</b> családja van — a második nem $\\tfrac{\\pi}{6}$-ból, hanem a '
-         'másik negyedből jön.</li>'
-         '<li><b>Nem venni észre, ha nincs megoldás.</b> A $\\sin x=1{,}5$ vagy a '
-         '$\\cos x=-3$ egyenletnek <b>nincs</b> megoldása, mert az értékkészlet '
-         '$[-1;1]$.</li>'
-         '</ol>'),
+         (
+             '<p>Három visszatérő hiba:</p><ol class="reszfeladatok"><li><b>Elhagyni a $+2k\\pi$-t.</b> Az '
+             '$x=\\tfrac{\\pi}{6}$ önmagában <b>nem</b> a megoldás, csak egy megoldás. Ha a feladat az <b>összes '
+             'valós megoldást</b> kéri, a teljes megoldáscsaládot kell megadni.</li><li><b>Csak az egyik családot '
+             'megadni.</b> A $\\sin x=\\tfrac12$-nek <b>két</b> családja van — a második nem $\\tfrac{\\pi}{6}$-ból, '
+             'hanem a másik negyedből jön.</li><li><b>Nem venni észre, ha nincs megoldás.</b> A $\\sin x=1{,}5$ '
+             'vagy a $\\cos x=-3$ egyenletnek <b>nincs</b> megoldása, mert az értékkészlet $[-1;1]$.</li></ol>'
+         )),
  ]),
 
  ("Ha a szög nem $x$, hanem $bx$", [
@@ -457,25 +479,43 @@ C3 = [
    'a szinusz és koszinusz egyszerű egyenlőtlenségeit a $[0;2\\pi]$ körön oldjuk meg. '
    'A teljes valós számhalmazra kiterjesztett megoldás kiegészítő kihívás.',
    doboz("tetel", "A menet — három lépés",
-         '<ol><li>Keresd meg a <b>határszögeket</b>: oldd meg az egyenlőséget ($\\sin x=\\tfrac12$).</li>'
-         '<li>Nézd meg a <b>trigonometrikus körön</b> (vagy a grafikonon), a két határ <b>melyik oldalán</b> teljesül az egyenlőtlenség.</li>'
-         '<li>Írd fel a tartományt, és told el <b>periódusonként</b>: $+k\\cdot 360^\\circ$, ahol $k\\in\\mathbb{Z}$.</li></ol>'
-         '<p>A zárójel a szokásos: szigorú egyenlőtlenségnél <b>nyílt</b>, $\\le$ vagy $\\ge$ esetén <b>zárt</b> végpont.</p>',
+         (
+             '<ol><li>Keresd meg a <b>határszögeket</b>: oldd meg az egyenlőséget ($\\sin '
+             'x=\\tfrac12$).</li><li>Nézd meg a <b>trigonometrikus körön</b> (vagy a grafikonon), a két határ '
+             '<b>melyik oldalán</b> teljesül az egyenlőtlenség.</li><li>Írd fel a megadott intervallumon belüli '
+             'megoldást. Csak az összes valós megoldás keresésekor told el <b>periódusonként</b>: $+k\\cdot '
+             '360^\\circ$, ahol $k\\in\\mathbb{Z}$.</li></ol><p>Az egyenlőséget adó határszög szigorú '
+             'egyenlőtlenségnél kimarad, $\\le$ vagy $\\ge$ esetén beletartozik. A megadott vizsgálati intervallum '
+             'végpontjait külön ellenőrizd.</p>'
+         ),
          hid="tetel-trig-egyenlotlenseg"),
    doboz("pelda", "Vészterem-szimuláció",
-         '<p>Oldd meg: <b>a)</b> $\\sin x&gt;\\tfrac12$; <b>b)</b> $\\cos x\\le\\tfrac12$.</p>',
+         (
+             '<p>Oldd meg először a $[0^\\circ;360^\\circ]$ intervallumon, majd kiegészítőként add meg az összes '
+             'valós megoldást: <b>a)</b> $\\sin x&gt;\\tfrac12$; <b>b)</b> $\\cos x\\le\\tfrac12$.</p>'
+         ),
          hid="pelda-trig-egyenlotlenseg",
          lenyilo=("Megoldás",
-                  '<p><b>a)</b> A határszögek: $\\sin x=\\tfrac12$ esetén $x=30^\\circ$ és $x=150^\\circ$. A körön a szinusz az <b>y-koordináta</b>, ez a kettő <b>között</b> nagyobb $\\tfrac12$-nél (ott halad a felső ív). Tehát</p>'
-                  '$$x\\in\\left(30^\\circ+k\\cdot 360^\\circ;\\ 150^\\circ+k\\cdot 360^\\circ\\right).$$'
-                  '<p>Ellenőrzés: $x=90^\\circ$ benne van, és $\\sin 90^\\circ=1&gt;\\tfrac12$ ✔; $x=200^\\circ$ nincs benne, és $\\sin 200^\\circ&lt;0$ ✔</p>'
-                  '<p><b>b)</b> A határszögek: $\\cos x=\\tfrac12$ esetén $x=60^\\circ$ és $x=300^\\circ$. A koszinusz az <b>x-koordináta</b>, és a két határ <b>között</b> (a kör bal oldalán haladva) kisebb $\\tfrac12$-nél. Mivel $\\le$ áll, a végpontok is beletartoznak:</p>'
-                  '$$x\\in\\left[60^\\circ+k\\cdot 360^\\circ;\\ 300^\\circ+k\\cdot 360^\\circ\\right].$$'
-                  '<p>Ellenőrzés: $x=180^\\circ$ benne van, és $\\cos 180^\\circ=-1\\le\\tfrac12$ ✔; $x=10^\\circ$ nincs benne, és $\\cos 10^\\circ\\approx 0{,}98&gt;\\tfrac12$ ✔</p>')),
+                  (
+                      '<p><b>a)</b> A határszögek: $\\sin x=\\tfrac12$ esetén $x=30^\\circ$ és $x=150^\\circ$. A körön a '
+                      'szinusz az <b>y-koordináta</b>, ez a kettő <b>között</b> nagyobb $\\tfrac12$-nél (ott halad a felső '
+                      'ív). A megadott intervallumon $x\\in(30^\\circ;150^\\circ)$. Az összes valós '
+                      'megoldás:</p>$$x\\in\\left(30^\\circ+k\\cdot 360^\\circ;\\ 150^\\circ+k\\cdot '
+                      '360^\\circ\\right).$$<p>Ellenőrzés: $x=90^\\circ$ benne van, és $\\sin 90^\\circ=1&gt;\\tfrac12$ ✔; '
+                      '$x=200^\\circ$ nincs benne, és $\\sin 200^\\circ&lt;0$ ✔</p><p><b>b)</b> A határszögek: $\\cos '
+                      'x=\\tfrac12$ esetén $x=60^\\circ$ és $x=300^\\circ$. A koszinusz az <b>x-koordináta</b>, és a két '
+                      'határ <b>között</b> (a kör bal oldalán haladva) kisebb $\\tfrac12$-nél. Mivel $\\le$ áll, a '
+                      'határszögek is beletartoznak. A megadott intervallumon $x\\in[60^\\circ;300^\\circ]$. Az összes valós '
+                      'megoldás:</p>$$x\\in\\left[60^\\circ+k\\cdot 360^\\circ;\\ 300^\\circ+k\\cdot '
+                      '360^\\circ\\right].$$<p>Ellenőrzés: $x=180^\\circ$ benne van, és $\\cos 180^\\circ=-1\\le\\tfrac12$ ✔; '
+                      '$x=10^\\circ$ nincs benne, és $\\cos 10^\\circ\\approx 0{,}98&gt;\\tfrac12$ ✔</p>'
+                  ))),
    doboz("csapda", "Dr. Baljós vírus-kódja",
-         '<p><b>„Megvan a két határszög, kész.”</b> — Nem. Két dolog hiányzik még: '
-         'melyik <b>oldalon</b> teljesül az egyenlőtlenség, és a <b>periódus</b>.</p>'
-         '<p>A $+k\\cdot 360^\\circ$ elhagyása a leggyakoribb hiba: az egyenlőtlenségnek <b>végtelen sok</b> megoldás-intervalluma van, nem csak egy. Ha a feladat mégis egyetlen körre szorítkozik (pl. $x\\in[0^\\circ;360^\\circ)$), azt a szöveg külön kimondja.</p>'),
+         (
+             '<p>A határszögek megkeresése után azt is meg kell vizsgálni, <b>hol</b> teljesül az egyenlőtlenség. '
+             'Megadott intervallumon annak végpontjait is ellenőrizd. Ha az összes valós megoldást kérik, az '
+             'intervallumok periódusonkénti eltolását is fel kell írni, a $k\\in\\mathbb{Z}$ feltétellel.</p>'
+         )),
    kviz('Mi a $\\sin x&gt;\\tfrac12$ megoldása a $[0^\\circ;360^\\circ)$ körön?',
         ['$(30^\\circ;150^\\circ)$', '$(150^\\circ;330^\\circ)$', '$(0^\\circ;30^\\circ)$'], 0,
         jo="✔ A két határszög 30° és 150°, és közöttük halad a kör felső íve, ahol a szinusz (az y-koordináta) nagyobb 1/2-nél.",

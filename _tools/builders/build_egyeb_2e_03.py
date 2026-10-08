@@ -74,18 +74,22 @@ OSSZ = [
   '<p><b>Monotonitás:</b> $a&gt;1$ → szigorúan <b>növekvő</b>; $0&lt;a&lt;1$ → szigorúan '
   '<b>csökkenő</b>. Mindkettő kölcsönösen egyértelmű — erre épül minden egyenlet '
   '(<a href="tananyag-exponencialis-fuggveny.html#tetel-monotonitas">→</a>).</p>',
-  '<p><b>Transzformációk:</b> $y=a^{x}+c$ függőleges eltolás (az aszimptota is mozdul, '
-  '$y=c$) · $y=a^{x-b}$ vízszintes eltolás <b>jobbra</b> · $y=a^{-x}$ tükrözés az '
-  '$y$-tengelyre · $y=-a^{x}$ tükrözés az $x$-tengelyre '
-  '(<a href="tananyag-exponencialis-fuggveny.html#tetel-transzformaciok">→</a>).</p>',
+  (
+      '<p><b>Transzformációk:</b> $y=a^{x}+c$ függőleges eltolás (az aszimptota is mozdul, $y=c$) · '
+      '$y=a^{x-b}$ vízszintes eltolás: $b&gt;0$ esetén $b$ egység jobbra, $b&lt;0$ esetén $|b|$ egység '
+      'balra · $y=a^{-x}$ tükrözés az $y$-tengelyre · $y=-a^{x}$ tükrözés az $x$-tengelyre (<a '
+      'href="tananyag-exponencialis-fuggveny.html#tetel-transzformaciok">→</a>).</p>'
+  ),
  ]),
  ("Exponenciális egyenletek", [
   '<p><b>Alapelv:</b> $a^{u}=a^{v}\\iff u=v$ — hozd <b>közös alapra</b> a két oldalt, '
   'majd hagyd el az alapot '
   '(<a href="tananyag-exponencialis-egyenletek.html#tetel-alapelv">→</a>).</p>',
-  '<p><b>Kiemelés:</b> $a^{x+k}=a^{x}\\cdot a^{k}$, tehát $a^{x}$ minden tagból kiemelhető. '
-  '⚠️ $2^{x+2}\\neq 2^{x}+4$ — a kitevőben álló összeg <b>szorzattá</b> bomlik '
-  '(<a href="tananyag-exponencialis-egyenletek.html#tetel-kiemeles">→</a>).</p>',
+  (
+      '<p><b>Kiemelés:</b> $a^{x+k}=a^{x}\\cdot a^{k}$, tehát $a^{x}$ minden tagból kiemelhető. ⚠️ a '
+      '$2^{x+2}=2^{x}+4$ átalakítás nem azonosság — a kitevőben álló összeg <b>szorzattá</b> bomlik (<a '
+      'href="tananyag-exponencialis-egyenletek.html#tetel-kiemeles">→</a>).</p>'
+  ),
   '<p><b>Másodfokúra visszavezethető:</b> ha $a^{2x}$ és $a^{x}$ is szerepel, legyen '
   '$t=a^{x}$, ahol <b>$t&gt;0$</b>. Ekkor $a^{2x}=t^{2}$, és másodfokú egyenlet marad. '
   '⚠️ A $t$-t <b>vissza kell helyettesíteni</b>, a nem pozitív gyököt pedig <b>eldobni</b> '
@@ -109,25 +113,33 @@ OSSZ = [
   '$a^{\\log_{a}b}=b$ '
   '(<a href="tananyag-logaritmus-fogalma.html#tetel-alaposszefuggesek">→</a>). '
   'Jelölés: $\\lg b=\\log_{10}b$ és $\\ln b=\\log_{e}b$.</p>',
-  '<p><b>Azonosságok</b> ($u,v&gt;0$):</p>'
-  '$$\\log_{a}(uv)=\\log_{a}u+\\log_{a}v,\\qquad'
-  '\\log_{a}\\frac{u}{v}=\\log_{a}u-\\log_{a}v,\\qquad'
-  '\\log_{a}u^{k}=k\\log_{a}u.$$'
-  '<p>⚠️ $\\log_{a}(u+v)\\neq\\log_{a}u+\\log_{a}v$ — a logaritmusnak az '
-  '<b>összeadásról nincs mondanivalója</b> '
-  '(<a href="tananyag-logaritmus-azonossagai.html#tetel-azonossagok">→</a>).</p>',
+  (
+      '<p><b>Azonosságok</b> ($u,v&gt;0$):</p>$$\\log_{a}(uv)=\\log_{a}u+\\log_{a}v,\\qquad\\log_{a}\\frac{u}{v}='
+      '\\log_{a}u-\\log_{a}v,\\qquad\\log_{a}u^{k}=k\\log_{a}u.$$<p>⚠️ a $\\log_{a}(u+v)=\\log_{a}u+\\log_{a}v$ '
+      'átalakítás <b>nem azonosság</b> (<a href="tananyag-logaritmus-azonossagai.html#tetel-azonossagok">→<'
+      '/a>).</p>'
+  ),
  ]),
  ("Áttérés más alapra és alkalmazások", [
-  '<p>$$\\log_{a}b=\\frac{\\log_{t}b}{\\log_{t}a}=\\frac{\\lg b}{\\lg a}$$'
-  '<p>Felül az <b>argumentum</b> logaritmusa, alul az <b>alapé</b> — és <b>osztás</b>, nem kivonás '
-  '(<a href="tananyag-attetes-mas-alapra.html#tetel-attetes">→</a>). '
-  'Ellenőrzés fejben: $\\log_{2}7$ a $2$ és a $3$ között van, mert $4&lt;7&lt;8$.</p>',
-  '<p><b>Logaritmikus skálák:</b> $\\mathrm{pH}=-\\lg[\\mathrm{H}^{+}]$ · Richter · '
-  'decibel ($L=10\\lg\\frac{I}{I_{0}}$) — minden egység <b>tízszeres</b> különbség '
-  '(<a href="tananyag-attetes-mas-alapra.html#pelda-alkalmazas">→</a>).</p>',
-  '<p><b>Növekedési feladat:</b> a modell $q^{n}=k$ alakú, a megoldás '
-  '$n=\\log_{q}k=\\dfrac{\\lg k}{\\lg q}$. Kamat: $1{,}05^{n}=2$; felezés: '
-  '$\\left(\\tfrac12\\right)^{t/T}=r$.</p>',
+  (
+      '<p>Az alapok: $a,t&gt;0$, $a,t\\neq1$; az argumentum: '
+      '$b&gt;0$.</p>$$\\log_{a}b=\\frac{\\log_{t}b}{\\log_{t}a}=\\frac{\\lg b}{\\lg a}$$<p>Felül az '
+      '<b>argumentum</b> logaritmusa, alul az <b>alapé</b> — és <b>osztás</b>, nem kivonás (<a '
+      'href="tananyag-attetes-mas-alapra.html#tetel-attetes">→</a>). Ellenőrzés fejben: $\\log_{2}7$ a $2$ '
+      'és a $3$ között van, mert $4&lt;7&lt;8$.</p>'
+  ),
+  (
+      '<p><b>Logaritmikus skálák:</b> a híg oldatok koncentrációmodelljében egy pH-egység tízszeres '
+      'koncentrációarányt jelent. A Richter-modellben azonos mérési feltételek mellett egy magnitúdóegység '
+      'tízszeres mért amplitúdóarány. A $L=10\\lg(I/I_{0})$ hangintenzitásszintnél <b>10 dB</b> jelent '
+      'tízszeres intenzitásarányt (<a href="tananyag-attetes-mas-alapra.html#pelda-alkalmazas">→</a>).</p>'
+  ),
+  (
+      '<p><b>Növekedési feladat:</b> a modell $q^{n}=k$ alakú ($q&gt;0$, $q\\neq1$, $k&gt;0$), a megoldás '
+      '$n=\\log_{q}k=\\dfrac{\\lg k}{\\lg q}$. Kamat: $1{,}05^{n}=2$; felezés: '
+      '$\\left(\\tfrac12\\right)^{t/T}=r$, ahol $T&gt;0$ a felezési idő és $r$ a megmaradt mennyiség '
+      'kezdetihez viszonyított aránya. Év végi kamatjóváírásnál teljes éveket keresünk.</p>'
+  ),
  ]),
  ("A logaritmusfüggvény, egyenletek és egyenlőtlenségek", [
   '<p><b>$f(x)=\\log_{a}x$ az $y=a^{x}$ inverze</b>, a grafikonjuk az $y=x$ egyenesre '
@@ -142,15 +154,17 @@ OSSZ = [
   '<p><b>Egyenlőtlenség:</b> ugyanez, de az alap szerint <b>fordulhat a jel</b>, és a '
   'végeredmény mindig az ÉT és a kapott halmaz <b>metszete</b> '
   '(<a href="tananyag-logaritmusos-egyenletek.html#tetel-log-egyenlotlenseg">→</a>).</p>',
-  doboz("csapda", "Amire a dolgozaton a legtöbben ráfutnak",
-        '<p>1) <b>Jelfordulás</b>: mielőtt elhagyod az alapot, kérdezd meg, nagyobb-e '
-        '$1$-nél. &nbsp; 2) $a^{x+k}=a^{x}\\cdot a^{k}$, <b>nem</b> $a^{x}+a^{k}$. &nbsp; '
-        '3) A helyettesítésnél $t&gt;0$ — a negatív gyököt <b>eldobod</b>, és a $t$-ből '
-        '<b>vissza kell számolni</b> $x$-et. &nbsp; 4) Logaritmusnál <b>mindig ÉT-tel kezdj</b>; '
-        'nem az $x$ előjelét nézed, hanem az <b>argumentum értékét</b>. &nbsp; '
-        '5) $\\lg(u+v)\\neq\\lg u+\\lg v$. &nbsp; 6) Áttérésnél <b>osztás</b>, felül az '
-        'argumentum. &nbsp; 7) A végtelen mellett <b>nyitott</b> zárójel; az ÉT és a megoldás '
-        'között <b>metszet</b> van, nem unió.</p>'),
+  doboz("csapda", 'Gyakori hibák',
+        (
+            '<p>1) <b>Jelfordulás</b>: mielőtt elhagyod az alapot, kérdezd meg, nagyobb-e $1$-nél. &nbsp; 2) '
+            '$a^{x+k}=a^{x}\\cdot a^{k}$, <b>nem</b> $a^{x}+a^{k}$. &nbsp; 3) Exponenciális helyettesítésnél '
+            '$t=a^{x}&gt;0$, így a nem pozitív $t$-gyök kiesik. Logaritmusos helyettesítésnél $t=\\log_{a}x$ '
+            'bármilyen valós szám lehet. Mindkét esetben vissza kell számolni $x$-et. &nbsp; 4) Logaritmusnál '
+            '<b>mindig ÉT-tel kezdj</b>; nem az $x$ előjelét nézed, hanem az <b>argumentum értékét</b>. &nbsp; '
+            '5) Az összeg logaritmusa általában nem a tagok logaritmusának összege. &nbsp; 6) Áttérésnél '
+            '<b>osztás</b>, felül az argumentum. &nbsp; 7) A végtelen mellett <b>nyitott</b> zárójel; az ÉT és a '
+            'megoldás között <b>metszet</b> van, nem unió.</p>'
+        )),
   '<div class="gyakorolj"><span class="ikon">🎯</span><p>Élesben: a '
   '<a href="feladatok-logaritmusfuggveny.html#gyak-dolgozat">gyakorló dolgozattal</a> mérd fel '
   'magad, majd indulj <a href="terepkuldetes.html">A Vírusgörbe terepküldetésre</a>!</p></div>',
@@ -171,30 +185,32 @@ print("✓ osszefoglalo.html")
 
 TEREP = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Dr. Bestia:</b> Kadét, ez már nem szimuláció. Dr. Baljós vírusa kijutott a '
-         'laborból, és <b>exponenciálisan</b> terjed. Három dolgot kell tudnom, méghozzá '
-         'gyorsan: milyen ütemben nő a fertőzés, <b>mennyi időnk van</b> a kritikus '
-         'küszöbig, és meddig tart ki a karanténpajzs. Az első kérdésre az exponenciális '
-         'függvény felel, a másodikra a <b>logaritmus</b>, a harmadikra az '
-         'egyenlőtlenségek. Indulhatsz.'),
-   '<p class="lead">Ez a küldetés a teljes témakört használja: exponenciális függvényt és '
-   'egyenletet, helyettesítést, logaritmus-azonosságokat, áttérést más alapra, valamint '
-   'exponenciális és logaritmusos egyenlőtlenséget. Dolgozz füzetben, és a végén add le a '
-   'jelentést. <b>A megoldások nincsenek fent</b> — ezt a bevetést a tanárod értékeli.</p>',
+   brief((
+             '<b>Dr. Bestia:</b> A történetben Dr. Baljós vírusa kijutott a laborból. A feladatok kitalált '
+             'modelljeivel azt számoljuk ki, milyen ütemben nő a sejtszám, mikor ér el egy kritikus küszöböt, és '
+             'meddig működik a karanténpajzs. A három fázisban az exponenciális függvényt, a logaritmust és az '
+             'egyenlőtlenségeket használod.'
+         )),
+   (
+       '<p class="lead">Ez a küldetés a teljes témakört használja: exponenciális függvényt és egyenletet, '
+       'helyettesítést, logaritmus-azonosságokat, áttérést más alapra, valamint exponenciális és '
+       'logaritmusos egyenlőtlenséget. Dolgozz füzetben, és a végén add le a jelentést. Az időt a megadott '
+       'kezdőpillanattól mérjük: $t\\ge0$; ahol másként nem jelezzük, az egysége óra. A sejtszámot folytonos '
+       'exponenciális modell közelíti: két egész óra között is ezzel számolj. A kapott sejtszám '
+       'modellérték, nem mindig egész szám. <b>A megoldások nincsenek fent</b> — ezt a bevetést a tanárod '
+       'értékeli.</p>'
+   ),
  ]),
  ("Fázis I — A terjedés modellezése", [
    doboz("pelda", "I. fázis: a növekedési görbe",
-         '<p>A fertőzött sejtek száma óránként a <b>háromszorosára</b> nő, és $5$ sejtből '
-         'indul: $N(t)=5\\cdot 3^{t}$.</p>'
-         '<ol class="reszfeladatok">'
-         '<li>Hány fertőzött sejt lesz <b>4 óra</b> múlva?</li>'
-         '<li>Mikor éri el a telep az <b>1215</b> sejtet?</li>'
-         '<li>Az ellenszérum hatóanyaga $6$ óránként feleződik: '
-         '$M(t)=80\\cdot\\left(\\tfrac12\\right)^{t/6}$ mg. Mennyi marad belőle '
-         '<b>18 óra</b> után?</li>'
-         '<li>A vírus két kritikus időpontban mutálódik; ezeket a '
-         '$9^{t}-12\\cdot 3^{t}+27=0$ egyenlet adja meg. Mikor?</li>'
-         '</ol>'),
+         (
+             '<p>A fertőzött sejtek száma óránként a <b>háromszorosára</b> nő, és $5$ sejtből indul: $N(t)=5\\cdot '
+             '3^{t}$.</p><ol class="reszfeladatok"><li>Hány fertőzött sejt lesz <b>4 óra</b> múlva?</li><li>Mikor '
+             'éri el a telep az <b>1215</b> sejtet?</li><li>Az ellenszérum hatóanyaga $6$ óránként feleződik: '
+             '$M(t)=80\\cdot\\left(\\tfrac12\\right)^{t/6}$ mg. Mennyi marad belőle <b>18 óra</b> után?</li><li>A '
+             'történetben két kritikus esemény időpontját a $9^{t}-12\\cdot 3^{t}+27=0$ egyenlet adja meg. '
+             'Mikor?</li></ol>'
+         )),
  ]),
  ("Fázis II — A visszaszámlálás", [
    doboz("pelda", "II. fázis: mennyi időnk van?",
@@ -211,19 +227,20 @@ TEREP = [
  ]),
  ("Fázis III — A karantén határai", [
    doboz("pelda", "III. fázis: meddig tart ki a pajzs?",
-         '<ol class="reszfeladatok">'
-         '<li>A helyzet <b>kritikus</b>, ha a sejtszám eléri az $1024$-et, azaz '
-         '$2^{t}\\ge 1024$. Mettől kritikus?</li>'
-         '<li>A pajzs addig működik, amíg $3^{2t-1}&lt;27$. Meddig?</li>'
-         '<li>Az ellenszérum akkor még hatásos, ha '
-         '$\\left(\\tfrac12\\right)^{t-2}&gt;\\tfrac{1}{32}$. Hány óráig?</li>'
-         '<li>A zárókód: $\\log_{0,5}(4x-2)\\ge\\log_{0,5}(x+7)$. Add meg a megoldást '
-         'intervallummal — és <b>ne feledd az értelmezési tartományt</b>!</li>'
-         '</ol>'),
-   '<div class="gyakorolj"><span class="ikon">📋</span><p><b>Jelentés:</b> a füzetedben '
-   'minden fázisnál legyen ott a <b>modell</b> (a felírt egyenlet vagy egyenlőtlenség), '
-   'a levezetés és a <b>mértékegységgel</b> ellátott válasz. A logaritmusos feladatoknál '
-   'az értelmezési tartomány is része a megoldásnak.</p></div>',
+         (
+             '<ol class="reszfeladatok"><li>A helyzet <b>kritikus</b>, ha a sejtszám eléri az $1024$-et, azaz '
+             '$2^{t}\\ge 1024$. Mettől kritikus?</li><li>A pajzs addig működik, amíg $3^{2t-1}&lt;27$. '
+             'Meddig?</li><li>A történetben az ellenszérum akkor még hatásos, ha '
+             '$\\left(\\tfrac12\\right)^{t-2}&gt;\\tfrac{1}{32}$. Hány óráig?</li><li>A zárókód: '
+             '$\\log_{0,5}(4x-2)\\ge\\log_{0,5}(x+7)$. Add meg a megoldást intervallummal — és <b>ne feledd az '
+             'értelmezési tartományt</b>!</li></ol>'
+         )),
+   (
+       '<div class="gyakorolj"><span class="ikon">📋</span><p><b>Jelentés:</b> a füzetedben minden fázisnál '
+       'legyen ott a <b>modell</b> (a felírt egyenlet vagy egyenlőtlenség), a levezetés és a '
+       '<b>mértékegységgel</b> ellátott válasz. A karanténkód $x$-e mértékegység nélküli szám. A '
+       'logaritmusos feladatoknál az értelmezési tartomány is része a megoldásnak.</p></div>'
+   ),
  ]),
 ]
 
@@ -253,9 +270,11 @@ DR_A_UJ_03 = [
   ['Hamis: $\\log_2 8+\\log_2 4=5$, míg $\\log_2 12\\neq 5$.', 'Hamis: a nulla logaritmusa nem értelmezett.', 'Igaz: $25^3=5^6$.', 'Igaz: a $2^x$ szigorúan növekvő.']),
 ]
 DR_K_UJ_03 = [
- ("Egy gyógyszer mennyisége a szervezetben óránként a $0{,}8$-szorosára csökken. "
-  "A beadott adag $200\\ \\text{mg}$.",
-  ["Írd fel a mennyiséget megadó függvényt az eltelt $t$ óra függvényében!",
+ ((
+      'Egy gyógyszer mennyisége egy egyszerűsített, folytonos modellben óránként a $0{,}8$-szorosára '
+      'csökken. A beadott adag $200\\ \\text{mg}$.'
+  ),
+  ['Írd fel a mennyiséget megadó függvényt az eltelt $t\\ge0$ óra függvényében!',
    "Mennyi marad $5$ óra múlva? (Kerekíts egészre.)",
    "Hány óra múlva csökken a felére? Írd fel az egyenletet, és add meg a megoldást "
    "logaritmussal, majd számológéppel egy tizedesre."],
@@ -313,12 +332,13 @@ DR_N = [
   '$x_{1}=10$, $x_{2}=100$.'),
 ]
 
-dr_brief = ('<div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — Az Evolúciós Ugrás '
-            'modul. A szimuláció a <b>teljes témakört</b> lefedi: exponenciális függvény és '
-            'egyenletek, helyettesítés, egyenlőtlenségek, a logaritmus fogalma és azonosságai, '
-            'áttérés más alapra, logaritmusfüggvény és logaritmusos egyenletek. Haladj a '
-            'fokozatokon: zöld → sárga → piros. A végeredményt lenyithatod, de előbb küzdd '
-            'le magad!</p></div>')
+dr_brief = ((
+                '<div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — Az Evolúciós Ugrás modul. A szimuláció a '
+                '<b>teljes témakört</b> lefedi: exponenciális függvény és egyenletek, helyettesítés, '
+                'egyenlőtlenségek, a logaritmus fogalma és azonosságai, áttérés más alapra, logaritmusfüggvény és '
+                'logaritmusos egyenletek. Haladj a fokozatokon: zöld → sárga → piros. A végeredményt lenyithatod, de '
+                'előbb próbáld meg önállóan!</p></div>'
+            ))
 
 dr_body = ('    ' + dr_brief + '\n'
            '    <h2 id="alap">🟢 Alapfokozat</h2>\n' + cards(DR_A, "alap", "alap") +
@@ -376,50 +396,32 @@ K = [
         "Minden képlet, protokoll és tipikus csapda egy helyen — dolgozat előtti átfutáshoz"),
 ]
 
-INDEX = '''<!DOCTYPE html>
-<html lang="hu" data-root="../..">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Exponenciális és logaritmusfüggvény | 2e | Szvetkó matek</title>
-<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../../assets/css/theme.css">
-<link rel="stylesheet" href="../../assets/css/print.css">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
-</head>
-<body data-tagozat="2e">
-<div id="progress"></div>
-<header class="fejlec">
-  <div class="fejlec-bel">
-    <a class="logo" href="../../index.html"><span class="jel">&#8730;</span><span class="nev">Szvetkó <b>matek</b></span></a>
-    <span class="ter"></span>
-    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
-  </div>
-</header>
-<nav class="morzsa">
-  <a href="../../index.html">Főhadiszállás</a> ›
-  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
-  <span class="itt">Exponenciális és logaritmusfüggvény</span>
-</nav>
-<div class="hero">
-  <h1>Exponenciális és logaritmusfüggvény</h1>
-  <p class="alcim">A robbanásszerű növekedés függvényétől a logaritmuson át az inverz
-  függvényig — modellezés, visszaszámlálás, egyenletek és egyenlőtlenségek.</p>
-  <div class="meta-sor"><span class="chip ora">21 óra</span><span class="statusz kesz">kész</span></div>
-  <div class="brief"><p>🧬 <b>Szektor 03 — Az Evolúciós Ugrás (A Vírusgörbe).</b> Kiképző:
-  <b>Dr. Bestia</b> (Dr. Bestia). Dr. Baljós vírusa nem lineárisan és nem másodfokon terjed, hanem
-  <b>megkétszereződik</b> minden lépésben — ezt a növekedést a másodfokú függvény már nem
-  írja le. Dr. Bestia a laborból vezeti a bevetést: előbb megtanuljuk <b>modellezni</b> a
-  terjedést, aztán megfordítjuk a kérdést, és a <b>logaritmussal</b> számoljuk ki, mennyi
-  időnk maradt.</p></div>
-</div>
-<main class="lap">
-  <div class="tartalom">
-    <h2>Tananyag</h2>
-
-    <h3>🧬 Az exponenciális függvény — Dr. Bestia</h3>
-    <div class="racs">
-''' + "\n".join(K[0:3]) + '''
+INDEX = (
+            '<!DOCTYPE html>\n<html lang="hu" data-root="../..">\n<head>\n<meta charset="utf-8">\n<meta '
+            'name="viewport" content="width=device-width,initial-scale=1">\n<title>Exponenciális és '
+            'logaritmusfüggvény | 2e | Szvetkó matek</title>\n<link rel="icon" '
+            'href="../../assets/img/common/favicon.svg" type="image/svg+xml">\n<link rel="stylesheet" '
+            'href="../../assets/css/theme.css">\n<link rel="stylesheet" href="../../assets/css/print.css">\n<link '
+            'rel="stylesheet" href="../../assets/katex/katex.min.css">\n</head>\n<body data-tagozat="2e">\n<div '
+            'id="progress"></div>\n<header class="fejlec">\n  <div class="fejlec-bel">\n    <a class="logo" '
+            'href="../../index.html"><span class="jel">&#8730;</span><span class="nev">Szvetkó '
+            '<b>matek</b></span></a>\n    <span class="ter"></span>\n    <form class="kereso-mini"><input '
+            'type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button '
+            'type="submit">Keres</button></form>\n  </div>\n</header>\n<nav class="morzsa">\n  <a '
+            'href="../../index.html">Főhadiszállás</a> ›\n  <a href="../index.html"><span '
+            'class="tagozat-jel">2e</span></a> ›\n  <span class="itt">Exponenciális és '
+            'logaritmusfüggvény</span>\n</nav>\n<div class="hero">\n  <h1>Exponenciális és logaritmusfüggvény</h1>\n '
+            ' <p class="alcim">A robbanásszerű növekedés függvényétől a logaritmuson át az inverz\n  függvényig — '
+            'modellezés, visszaszámlálás, egyenletek és egyenlőtlenségek.</p>\n  <div class="meta-sor"><span '
+            'class="chip ora">21 óra</span><span class="statusz kesz">kész</span></div>\n  <div '
+            'class="brief"><p>🧬 <b>Szektor 03 — Az Evolúciós Ugrás (A Vírusgörbe).</b> Kiképző:\n  <b>Dr. '
+            'Bestia</b> (Dr. Bestia). Dr. Baljós vírusa nem lineárisan és nem másodfokú függvény szerint terjed, '
+            'hanem\n  <b>megkétszereződik</b> minden lépésben — ezt a növekedést a másodfokú függvény már nem\n  '
+            'írja le. Dr. Bestia a laborból vezeti a bevetést: előbb megtanuljuk <b>modellezni</b> a\n  '
+            'terjedést, aztán megfordítjuk a kérdést, és a <b>logaritmussal</b> számoljuk ki, mennyi\n  időnk '
+            'maradt.</p></div>\n</div>\n<main class="lap">\n  <div class="tartalom">\n    <h2>Tananyag</h2>\n\n    '
+            '<h3>🧬 Az exponenciális függvény — Dr. Bestia</h3>\n    <div class="racs">\n'
+        ) + "\n".join(K[0:3]) + '''
     </div>
 
     <h3>🔬 A logaritmus — Dr. Bestia</h3>

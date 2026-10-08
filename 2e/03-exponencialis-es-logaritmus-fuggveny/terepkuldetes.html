@@ -33,15 +33,15 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/dr_bestia.webp" alt="Dr. Bestia — a kampusz fővezető tudósa" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Dr. Bestia:</b> Kadét, ez már nem szimuláció. Dr. Baljós vírusa kijutott a laborból, és <b>exponenciálisan</b> terjed. Három dolgot kell tudnom, méghozzá gyorsan: milyen ütemben nő a fertőzés, <b>mennyi időnk van</b> a kritikus küszöbig, és meddig tart ki a karanténpajzs. Az első kérdésre az exponenciális függvény felel, a másodikra a <b>logaritmus</b>, a harmadikra az egyenlőtlenségek. Indulhatsz.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/dr_bestia.webp" alt="Dr. Bestia — a kampusz fővezető tudósa" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Dr. Bestia:</b> A történetben Dr. Baljós vírusa kijutott a laborból. A feladatok kitalált modelljeivel azt számoljuk ki, milyen ütemben nő a sejtszám, mikor ér el egy kritikus küszöböt, és meddig működik a karanténpajzs. A három fázisban az exponenciális függvényt, a logaritmust és az egyenlőtlenségeket használod.</p></div>
 
-    <p class="lead">Ez a küldetés a teljes témakört használja: exponenciális függvényt és egyenletet, helyettesítést, logaritmus-azonosságokat, áttérést más alapra, valamint exponenciális és logaritmusos egyenlőtlenséget. Dolgozz füzetben, és a végén add le a jelentést. <b>A megoldások nincsenek fent</b> — ezt a bevetést a tanárod értékeli.</p>
+    <p class="lead">Ez a küldetés a teljes témakört használja: exponenciális függvényt és egyenletet, helyettesítést, logaritmus-azonosságokat, áttérést más alapra, valamint exponenciális és logaritmusos egyenlőtlenséget. Dolgozz füzetben, és a végén add le a jelentést. Az időt a megadott kezdőpillanattól mérjük: <span class="math inline">\(t\ge0\)</span>; ahol másként nem jelezzük, az egysége óra. A sejtszámot folytonos exponenciális modell közelíti: két egész óra között is ezzel számolj. A kapott sejtszám modellérték, nem mindig egész szám. <b>A megoldások nincsenek fent</b> — ezt a bevetést a tanárod értékeli.</p>
 
     <h2 id="s1">Fázis I — A terjedés modellezése</h2>
 
     <div class="doboz pelda">
       <p class="cim"><span class="ikon">✏️</span> I. fázis: a növekedési görbe</p>
-      <p>A fertőzött sejtek száma óránként a <b>háromszorosára</b> nő, és <span class="math inline">\(5\)</span> sejtből indul: <span class="math inline">\(N(t)=5\cdot 3^{t}\)</span>.</p><ol class="reszfeladatok"><li>Hány fertőzött sejt lesz <b>4 óra</b> múlva?</li><li>Mikor éri el a telep az <b>1215</b> sejtet?</li><li>Az ellenszérum hatóanyaga <span class="math inline">\(6\)</span> óránként feleződik: <span class="math inline">\(M(t)=80\cdot\left(\tfrac12\right)^{t/6}\)</span> mg. Mennyi marad belőle <b>18 óra</b> után?</li><li>A vírus két kritikus időpontban mutálódik; ezeket a <span class="math inline">\(9^{t}-12\cdot 3^{t}+27=0\)</span> egyenlet adja meg. Mikor?</li></ol>
+      <p>A fertőzött sejtek száma óránként a <b>háromszorosára</b> nő, és <span class="math inline">\(5\)</span> sejtből indul: <span class="math inline">\(N(t)=5\cdot 3^{t}\)</span>.</p><ol class="reszfeladatok"><li>Hány fertőzött sejt lesz <b>4 óra</b> múlva?</li><li>Mikor éri el a telep az <b>1215</b> sejtet?</li><li>Az ellenszérum hatóanyaga <span class="math inline">\(6\)</span> óránként feleződik: <span class="math inline">\(M(t)=80\cdot\left(\tfrac12\right)^{t/6}\)</span> mg. Mennyi marad belőle <b>18 óra</b> után?</li><li>A történetben két kritikus esemény időpontját a <span class="math inline">\(9^{t}-12\cdot 3^{t}+27=0\)</span> egyenlet adja meg. Mikor?</li></ol>
     </div>
 
     <h2 id="s2">Fázis II — A visszaszámlálás</h2>
@@ -55,10 +55,10 @@
 
     <div class="doboz pelda">
       <p class="cim"><span class="ikon">✏️</span> III. fázis: meddig tart ki a pajzs?</p>
-      <ol class="reszfeladatok"><li>A helyzet <b>kritikus</b>, ha a sejtszám eléri az <span class="math inline">\(1024\)</span>-et, azaz <span class="math inline">\(2^{t}\ge 1024\)</span>. Mettől kritikus?</li><li>A pajzs addig működik, amíg <span class="math inline">\(3^{2t-1}&lt;27\)</span>. Meddig?</li><li>Az ellenszérum akkor még hatásos, ha <span class="math inline">\(\left(\tfrac12\right)^{t-2}&gt;\tfrac{1}{32}\)</span>. Hány óráig?</li><li>A zárókód: <span class="math inline">\(\log_{0,5}(4x-2)\ge\log_{0,5}(x+7)\)</span>. Add meg a megoldást intervallummal — és <b>ne feledd az értelmezési tartományt</b>!</li></ol>
+      <ol class="reszfeladatok"><li>A helyzet <b>kritikus</b>, ha a sejtszám eléri az <span class="math inline">\(1024\)</span>-et, azaz <span class="math inline">\(2^{t}\ge 1024\)</span>. Mettől kritikus?</li><li>A pajzs addig működik, amíg <span class="math inline">\(3^{2t-1}&lt;27\)</span>. Meddig?</li><li>A történetben az ellenszérum akkor még hatásos, ha <span class="math inline">\(\left(\tfrac12\right)^{t-2}&gt;\tfrac{1}{32}\)</span>. Hány óráig?</li><li>A zárókód: <span class="math inline">\(\log_{0,5}(4x-2)\ge\log_{0,5}(x+7)\)</span>. Add meg a megoldást intervallummal — és <b>ne feledd az értelmezési tartományt</b>!</li></ol>
     </div>
 
-    <div class="gyakorolj"><span class="ikon">📋</span><p><b>Jelentés:</b> a füzetedben minden fázisnál legyen ott a <b>modell</b> (a felírt egyenlet vagy egyenlőtlenség), a levezetés és a <b>mértékegységgel</b> ellátott válasz. A logaritmusos feladatoknál az értelmezési tartomány is része a megoldásnak.</p></div>
+    <div class="gyakorolj"><span class="ikon">📋</span><p><b>Jelentés:</b> a füzetedben minden fázisnál legyen ott a <b>modell</b> (a felírt egyenlet vagy egyenlőtlenség), a levezetés és a <b>mértékegységgel</b> ellátott válasz. A karanténkód <span class="math inline">\(x\)</span>-e mértékegység nélküli szám. A logaritmusos feladatoknál az értelmezési tartomány is része a megoldásnak.</p></div>
     <div class="lapozo">
       <a class="elozo" href="osszefoglalo.html"><span class="irany">← Előző</span><span class="hova">Taktikai memóriakártya</span></a>
       <a class="kov" href="index.html"><span class="irany">Következő →</span><span class="hova">Témakör Főhadiszállása</span></a>

@@ -69,12 +69,13 @@ SVG_VISSZA = svg_egysegkor(
 
 A1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Éjjáró:</b> <i>Bamf!</i> — és már itt sem vagyok. Amikor teleportálok, '
-         'nem távolságot adok meg, hanem <b>irányt</b>: egy szöget. És ha elég sokat ugrom '
-         'körbe, egyszer csak ugyanoda érkezem, ahonnan indultam. Ez a trigonometria '
-         'egész titka: <b>a szög körbeér</b>. Ehhez viszont előbb ki kell tágítanunk a '
-         'szög fogalmát — mert $370^\\circ$-os szög a háromszögben nincs, a körön viszont '
-         'nagyon is van.'),
+   brief((
+             '<b>Éjjáró:</b> <i>Bamf!</i> — és már itt sem vagyok. Amikor teleportálok, nem távolságot adok meg, '
+             'hanem <b>irányt</b>: egy szöget. És ha elég sokat ugrom körbe, egyszer csak ugyanoda érkezem, '
+             'ahonnan indultam. Egy teljes fordulat után <b>ugyanazt az irányt</b> kapjuk; ezt használjuk az '
+             'azonos állású szögeknél. Ehhez viszont előbb ki kell tágítanunk a szög fogalmát — mert '
+             '$370^\\circ$-os szög a háromszögben nincs, a körön viszont nagyon is van.'
+         )),
    'Az <a href="../../1e/02-trigonometria/index.html">1e trigonometriájában</a> a szögfüggvényeket '
    '<b>derékszögű háromszögben</b> értelmeztük, ezért csak $0^\\circ$ és $90^\\circ$ közötti '
    'szögekről lehetett szó. Ez a témakör ezt a korlátot bontja le.',
@@ -104,8 +105,10 @@ A1 = [
          'közé nem kerülsz.</p>',
          hid="tetel-tarsszogek"),
    doboz("pelda", "Vészterem-szimuláció",
-         '<p>Melyik $[0^\\circ;360^\\circ)$ közötti szöggel egyezik meg? '
-         '<b>a)</b> $420^\\circ$; <b>b)</b> $1000^\\circ$; <b>c)</b> $-50^\\circ$.</p>',
+         (
+             '<p>Melyik $[0^\\circ;360^\\circ)$ közötti szöggel azonos állású? <b>a)</b> $420^\\circ$; <b>b)</b> '
+             '$1000^\\circ$; <b>c)</b> $-50^\\circ$.</p>'
+         ),
          hid="pelda-tarsszog",
          lenyilo=("Megoldás",
                   '<p><b>a)</b> $420-360=60$, tehát $\\boxed{60^\\circ}$.</p>'
@@ -169,7 +172,12 @@ A1 = [
         jo="✔ 270/180 = 3/2, tehát 3π/2.",
         nem="✘ Oszd el 180-nal: 270/180 = 3/2 → 3π/2."),
    gyakorolj(FGY + "#alap-1", "A 1–5", FGY + "#kozep-1", "K 1–2"),
-   brief('<b>Éjjáró:</b> A szögmérés kereteit lefektettük. Most jön a szerkezet, amitől az egész témakör működik: az <b>egységsugarú kör</b>. Ezen a szögfüggvények egyszerű koordinátákká válnak — és onnantól minden szögre értelmesek, nem csak hegyesszögre.', outro=True),
+   brief((
+             '<b>Éjjáró:</b> A <a href="#def-forgasszog">forgásszöget</a> és a <a href="#def-radian">radiánt</a> '
+             'már ismerjük. Következik az <b>egységsugarú kör</b>: a pont koordinátáiból minden valós forgásszög '
+             'szinusza és koszinusza leolvasható. A tangensnél és a kotangensnél arra is figyelni kell, hogy a '
+             'nevező ne legyen nulla.'
+         ), outro=True),
  ]),
 ]
 
@@ -177,11 +185,13 @@ A1 = [
 
 A2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Éjjáró:</b> Most jön a trükk, ami mindent megold. Rajzolj egy '
-         '<b>egységsugarú</b> kört az origó köré, és forgasd rá a szöget. Ahová a szög '
-         'szára metszi a kört, ott van egy pont — és ennek a pontnak a <b>koordinátái adják a '
-         'szögfüggvények értékét</b>. Nem kell háromszög, nem kell hegyesszög: ez a '
-         'definíció <b>minden</b> szögre működik.'),
+   brief((
+             '<b>Éjjáró:</b> Most jön a trükk, ami mindent megold. Rajzolj egy <b>egységsugarú</b> kört az origó '
+             'köré, és forgasd rá a szöget. Ahová a szög szára metszi a kört, ott van egy pont — és ennek a '
+             'pontnak a <b>koordinátái adják a szögfüggvények értékét</b>. Nem kell háromszög, nem kell '
+             'hegyesszög: a szinusz és a koszinusz így <b>minden</b> valós forgásszögre értelmezhető. A '
+             'tangensnél és a kotangensnél a nevező nem lehet nulla.'
+         )),
  ]),
 
  ("A trigonometrikus kör", [
@@ -216,19 +226,11 @@ A2 = [
    'Mivel a szinusz az $y$-, a koszinusz az $x$-koordináta, az előjelüket egyszerűen '
    'a negyed helyzete adja meg.',
    doboz("tetel", "Az előjeltáblázat",
-         '<div class="tblwrap"><table>'
-         '<tr><th>Negyed</th><th>$\\sin$</th><th>$\\cos$</th><th>$\\operatorname{tg}$</th>'
-         '<th>$\\operatorname{ctg}$</th></tr>'
-         '<tr><td><b>I.</b> ($0^\\circ<\\alpha<90^\\circ$)</td><td>+</td><td>+</td><td>+</td><td>+</td></tr>'
-         '<tr><td><b>II.</b> ($90^\\circ<\\alpha<180^\\circ$)</td><td>+</td><td>−</td><td>−</td><td>−</td></tr>'
-         '<tr><td><b>III.</b> ($180^\\circ<\\alpha<270^\\circ$)</td><td>−</td><td>−</td><td>+</td><td>+</td></tr>'
-         '<tr><td><b>IV.</b> ($270^\\circ<\\alpha<360^\\circ$)</td><td>−</td><td>+</td><td>−</td><td>−</td></tr>'
-         '</table></div>'
-         '<p>Nem kell bemagolni: a $\\sin$ ott pozitív, ahol a pont az $x$-tengely <b>fölött</b> '
-         'van (I–II.), a $\\cos$ ott, ahol a pont az $y$-tengelytől <b>jobbra</b> van '
-         '(I. és IV.). A tengelyekre eső $0^\\circ$, $90^\\circ$, $180^\\circ$ és $360^\\circ$ egyik negyedhez sem tartozik: ott a függvényérték vagy $0$, vagy nem létezik. A $\\operatorname{tg}$ és a '
-         '$\\operatorname{ctg}$ hányados, tehát ott pozitív, ahol a kettő <b>azonos előjelű</b> '
-         '(I. és III.).</p>',
+         (
+             '<p>A tengelyekre eső $0^\\circ$, $90^\\circ$, $180^\\circ$ és $270^\\circ$ egyik nyílt síknegyedhez sem '
+             'tartoznak; a $360^\\circ$ a $0^\\circ$-kal azonos állású. Ilyenkor a szinusz és a koszinusz értéke '
+             '$0$, $1$ vagy $-1$. A tangens, illetve a kotangens lehet nulla vagy nem értelmezett.</p>'
+         ),
          hid="tetel-elojelek"),
    kviz('Milyen előjelű $\\cos 200^\\circ$?',
         ['Negatív', 'Pozitív', 'Nulla'], 0,
@@ -293,32 +295,35 @@ A2 = [
 
 A3 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Éjjáró:</b> Ne ijedj meg a $217^\\circ$-tól. Minden szögnek van egy '
-         '<b>alapszöge</b> az első negyedben — az, amennyire a legközelebbi vízszintes '
-         'tengelytől eltér. A függvényérték <b>nagysága</b> ugyanaz, mint az alapszögé; '
-         'már csak az <b>előjelet</b> kell hozzátenni. Két lépés, és bármelyik szöget '
-         'visszahoztad ismerős terepre.'),
+   brief((
+             '<b>Éjjáró:</b> A $217^\\circ$-os szöget is vissza tudjuk vezetni egy hegyesszögre: az alapszöge '
+             '$37^\\circ$. A tengelyekre nem eső szögeknél a függvényérték abszolút értékét az <b>alapszög</b>, az '
+             'előjelét a <b>síknegyed</b> adja. A tengelyekre eső szögek értékeit külön, közvetlenül a körön '
+             'olvassuk le.'
+         )),
  ]),
 
  ("A módszer", [
-   abra(SVG_VISSZA, "Ugyanaz az $\\alpha$ alapszög négy különböző szöget ad meg: "
-                    "$\\alpha$, $180^\\circ-\\alpha$, $180^\\circ+\\alpha$ és "
-                    "$360^\\circ-\\alpha$. A négy pont a tengelyekre tükrös."),
+   abra(SVG_VISSZA, (
+                        'Ugyanaz az $\\alpha$ alapszög négy különböző szöget ad meg: $\\alpha$, $180^\\circ-\\alpha$, '
+                        '$180^\\circ+\\alpha$ és $360^\\circ-\\alpha$. A négy pont a koordinátatengelyekre nézve szimmetrikus.'
+                    )),
    doboz("tetel", "Visszavezetés az első negyedre",
-         '<p><b>1. lépés:</b> ha a szög nincs $[0^\\circ;360^\\circ)$-ban, vidd oda '
-         'teljes fordulatokkal.</p>'
-         '<p><b>2. lépés:</b> keresd meg az <b>alapszöget</b> $\\alpha$:</p>'
-         '<div class="tblwrap"><table>'
-         '<tr><th>Negyed</th><th>A szög alakja</th><th>Alapszög</th></tr>'
-         '<tr><td>I.</td><td>$\\alpha$</td><td>maga a szög</td></tr>'
-         '<tr><td>II.</td><td>$180^\\circ-\\alpha$</td><td>$180^\\circ-$ szög</td></tr>'
-         '<tr><td>III.</td><td>$180^\\circ+\\alpha$</td><td>szög $-180^\\circ$</td></tr>'
-         '<tr><td>IV.</td><td>$360^\\circ-\\alpha$</td><td>$360^\\circ-$ szög</td></tr>'
-         '</table></div>'
-         '<p><b>3. lépés:</b> a függvényérték <b>abszolút értéke</b> az alapszögé, '
-         'az <b>előjelet</b> az <a href="tananyag-trigonometrikus-kor.html#tetel-elojelek">előjeltáblázat</a> adja (az előző egységben).</p>',
+         (
+             '<p><b>1. lépés:</b> ha a szög nincs $[0^\\circ;360^\\circ)$-ban, vidd oda teljes '
+             'fordulatokkal.</p><p>A tengelyekre eső szögeket közvetlenül a körön vizsgáld. A többi '
+             'szögnél:</p><p><b>2. lépés:</b> keresd meg az <b>alapszöget</b> $\\alpha$:</p><div '
+             'class="tblwrap"><table><tr><th>Negyed</th><th>A szög '
+             'alakja</th><th>Alapszög</th></tr><tr><td>I.</td><td>$\\alpha$</td><td>maga a '
+             'szög</td></tr><tr><td>II.</td><td>$180^\\circ-\\alpha$</td><td>$180^\\circ-$ '
+             'szög</td></tr><tr><td>III.</td><td>$180^\\circ+\\alpha$</td><td>szög '
+             '$-180^\\circ$</td></tr><tr><td>IV.</td><td>$360^\\circ-\\alpha$</td><td>$360^\\circ-$ '
+             'szög</td></tr></table></div><p><b>3. lépés:</b> a függvényérték <b>abszolút értéke</b> az '
+             'alapszögé, az <b>előjelet</b> az <a href="tananyag-trigonometrikus-kor.html#tetel-elojelek">előjeltá'
+             'blázat</a> adja (az előző egységben).</p>'
+         ),
          hid="tetel-visszavezetes"),
-   doboz("tetel", "A négy összefüggés képlettel",
+   doboz("tetel", 'A visszavezetés összefüggései',
          '$$\\sin(180^\\circ-\\alpha)=\\sin\\alpha,\\qquad \\cos(180^\\circ-\\alpha)=-\\cos\\alpha,$$'
          '$$\\sin(180^\\circ+\\alpha)=-\\sin\\alpha,\\qquad \\cos(180^\\circ+\\alpha)=-\\cos\\alpha,$$'
          '$$\\sin(360^\\circ-\\alpha)=-\\sin\\alpha,\\qquad \\cos(360^\\circ-\\alpha)=\\cos\\alpha.$$'
@@ -327,9 +332,11 @@ A3 = [
          'látni fogod.</p>',
          hid="tetel-kepletek"),
    doboz("pelda", "Vészterem-szimuláció",
-         '<p>Vezesd vissza az első negyedre, és add meg a pontos értéket! '
-         '<b>a)</b> $\\sin 150^\\circ$; <b>b)</b> $\\cos 210^\\circ$; '
-         '<b>c)</b> $\\operatorname{tg}300^\\circ$; <b>d)</b> $\\sin 1000^\\circ$.</p>',
+         (
+             '<p>Vezesd vissza az első negyedre! Az a)–c) részben pontos értéket, a d) részben öt tizedesre '
+             'kerekített közelítést adj! <b>a)</b> $\\sin 150^\\circ$; <b>b)</b> $\\cos 210^\\circ$; <b>c)</b> '
+             '$\\operatorname{tg}300^\\circ$; <b>d)</b> $\\sin 1000^\\circ$.</p>'
+         ),
          hid="pelda-visszavezetes",
          lenyilo=("Megoldás",
                   '<p><b>a)</b> $150^\\circ$ a II. negyedben, alapszöge $30^\\circ$; ott a '
@@ -387,8 +394,7 @@ KI = [
      kovetkezo=("tananyag-visszavezetes.html", "Visszavezetés az első negyedre")),
  lap(**T, fajl="tananyag-visszavezetes.html",
      cim="Visszavezetés az első negyedre", cim_tiszta="Visszavezetés az első negyedre",
-     alcim="Az alapszög megkeresése, a négy negyed és az előjelek — bármely szög "
-           "pontos értéke két lépésben.",
+     alcim='Az alapszög megkeresése és az előjelek; nevezetes alapszögeknél pontos érték, más esetben számológépes közelítés.',
      chip="A Fázisugrás · 3/11", szakaszok=A3,
      elozo=("tananyag-trigonometrikus-kor.html", "A trigonometrikus kör"),
      kovetkezo=(FGY, "Feladatok — a trigonometrikus kör")),

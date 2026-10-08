@@ -106,7 +106,7 @@ ALAP = [
  ("Igaz vagy hamis? Indokold!",
   ["$\\lg(3+4)=\\lg 3+\\lg 4$", "$\\lg(3\\cdot 4)=\\lg 3+\\lg 4$",
    "$\\log_{2}(-8)=-3$"],
-  ["<b>Hamis</b> — a logaritmusnak az összeadásról nincs mondanivalója.",
+  ['<b>Hamis:</b> $\\lg3+\\lg4=\\lg12$, míg $\\lg(3+4)=\\lg7$.',
    "<b>Igaz</b> — ez a szorzatra vonatkozó azonosság.",
    "<b>Hamis</b> — negatív szám logaritmusa nem létezik."], True),
 ]
@@ -137,9 +137,11 @@ KOZEP = [
  ("Egy hangforrás intenzitása a százszorosára nő. Hány decibellel nő a hangintenzitásszint, "
   "ha $L=10\\lg\\dfrac{I}{I_{0}}$?", None,
   '$20$ dB-lel.'),
- ("Egy oldat hidrogénion-koncentrációja $[\\mathrm{H}^{+}]=10^{-5}$. Mennyi a pH-ja, "
-  "ha $\\mathrm{pH}=-\\lg[\\mathrm{H}^{+}]$? És mennyi lesz, ha az oldat "
-  "hidrogénion-koncentrációja a százszorosára nő?", None,
+ ((
+      'Híg oldat egyszerűsített modelljében a hidrogénion-koncentráció mol/dm³-ben mért számértéke '
+      '$[\\mathrm{H}^{+}]=10^{-5}$. Mennyi a pH-ja a $\\mathrm{pH}\\approx-\\lg[\\mathrm{H}^{+}]$ közelítéssel? '
+      'És mennyi lesz, ha az oldat hidrogénion-koncentrációja a százszorosára nő?'
+  ), None,
   '$\\mathrm{pH}=5$, majd $\\mathrm{pH}=3$ (kettővel csökken).'),
  ("Egy befektetés összegét minden év végén $8\\%$-kal növelik. Hány teljes év után éri el először legalább a kezdeti összeg kétszeresét?", None,
   '10 teljes év után.'),

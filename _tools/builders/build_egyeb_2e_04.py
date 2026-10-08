@@ -78,10 +78,12 @@ print("sympy önteszt: OK")
 
 OSSZ = [
  ("Szögmérés és a trigonometrikus kör", [
-  '<p><b>Forgásszög:</b> pozitív irány az óramutatóval <b>ellentétes</b>. Az '
-  '$\\alpha$ és az $\\alpha+k\\cdot 360^\\circ$ ugyanaz az irány, tehát minden '
-  'szögfüggvényük megegyezik '
-  '(<a href="tananyag-szogmeres-es-radian.html#tetel-tarsszogek">→</a>).</p>',
+  (
+      '<p><b>Forgásszög:</b> pozitív irány az óramutatóval <b>ellentétes</b>. Az $\\alpha$ és az '
+      '$\\alpha+k\\cdot 360^\\circ$ ugyanaz az irány, tehát szögfüggvényeik megegyeznek ott, ahol '
+      'értelmezettek; $k\\in\\mathbb{Z}$ (<a href="tananyag-szogmeres-es-radian.html#tetel-tarsszogek">→</a>)'
+      '.</p>'
+  ),
   '<p><b>Radián:</b> $180^\\circ=\\pi$. Fokból radiánba: $\\cdot\\tfrac{\\pi}{180}$; '
   'radiánból fokba: a $\\pi$ helyére $180^\\circ$ '
   '(<a href="tananyag-szogmeres-es-radian.html#tetel-atvaltas">→</a>).</p>'
@@ -91,11 +93,13 @@ OSSZ = [
   '<tr><th>rad</th><td>$\\tfrac{\\pi}{6}$</td><td>$\\tfrac{\\pi}{4}$</td>'
   '<td>$\\tfrac{\\pi}{3}$</td><td>$\\tfrac{\\pi}{2}$</td><td>$\\pi$</td>'
   '<td>$\\tfrac{3\\pi}{2}$</td><td>$2\\pi$</td></tr></table></div>',
-  '<p><b>Definíció az egységkörön:</b> $P(\\cos\\alpha;\\sin\\alpha)$ — előbb a '
-  'koszinusz! $\\operatorname{tg}\\alpha=\\tfrac{\\sin\\alpha}{\\cos\\alpha}$, '
-  '$\\operatorname{ctg}\\alpha=\\tfrac{\\cos\\alpha}{\\sin\\alpha}$ '
-  '(<a href="tananyag-trigonometrikus-kor.html#def-trigonometrikus-kor">→</a>). '
-  'Ebből azonnal: $-1\\le\\sin\\alpha\\le 1$ és $-1\\le\\cos\\alpha\\le 1$.</p>',
+  (
+      '<p><b>Definíció az egységkörön:</b> $P(\\cos\\alpha;\\sin\\alpha)$ — előbb a koszinusz! '
+      '$\\operatorname{tg}\\alpha=\\tfrac{\\sin\\alpha}{\\cos\\alpha}$ ($\\cos\\alpha\\neq0$), '
+      '$\\operatorname{ctg}\\alpha=\\tfrac{\\cos\\alpha}{\\sin\\alpha}$ ($\\sin\\alpha\\neq0$) (<a '
+      'href="tananyag-trigonometrikus-kor.html#def-trigonometrikus-kor">→</a>). Ebből azonnal: '
+      '$-1\\le\\sin\\alpha\\le 1$ és $-1\\le\\cos\\alpha\\le 1$.</p>'
+  ),
   '<p><b>Előjelek:</b> I. mind + · II. csak $\\sin$ · III. csak $\\operatorname{tg}$ és '
   '$\\operatorname{ctg}$ · IV. csak $\\cos$ '
   '(<a href="tananyag-trigonometrikus-kor.html#tetel-elojelek">→</a>).</p>',
@@ -103,18 +107,21 @@ OSSZ = [
   '$0,\\ \\tfrac12,\\ \\tfrac{\\sqrt2}{2},\\ \\tfrac{\\sqrt3}{2},\\ 1$; a $\\cos$ '
   'ugyanez visszafelé '
   '(<a href="tananyag-trigonometrikus-kor.html#tetel-jellegzetes">→</a>).</p>',
-  '<p><b>Visszavezetés:</b> ① teljes fordulatok le · ② alapszög az I. negyedben · '
-  '③ előjel a negyed szerint. $\\sin(-\\alpha)=-\\sin\\alpha$ (páratlan), '
-  '$\\cos(-\\alpha)=\\cos\\alpha$ (páros) '
-  '(<a href="tananyag-visszavezetes.html#tetel-visszavezetes">→</a>).</p>',
+  (
+      '<p><b>Visszavezetés:</b> ① teljes fordulatok le · ② a tengelyekre nem eső szögeknél alapszög az I. '
+      'negyedben · ③ előjel a negyed szerint. A tengelyekre eső szögeket közvetlenül a körön vizsgáljuk. '
+      '$\\sin(-\\alpha)=-\\sin\\alpha$ (páratlan), $\\cos(-\\alpha)=\\cos\\alpha$ (páros) (<a '
+      'href="tananyag-visszavezetes.html#tetel-visszavezetes">→</a>).</p>'
+  ),
  ]),
  ("Azonosságok", [
-  '<p><b>Alapazonosságok:</b></p>'
-  '$$\\sin^{2}\\alpha+\\cos^{2}\\alpha=1,\\qquad'
-  '\\operatorname{tg}\\alpha\\cdot\\operatorname{ctg}\\alpha=1,\\qquad'
-  '1+\\operatorname{tg}^{2}\\alpha=\\frac{1}{\\cos^{2}\\alpha}$$'
-  '<p>⚠️ A gyökvonásnál az előjelet <b>a negyed</b> dönti el '
-  '(<a href="tananyag-alapazonossagok.html#tetel-alapazonossagok">→</a>).</p>',
+  (
+      '<p><b>Alapazonosságok:</b></p>$$\\sin^{2}\\alpha+\\cos^{2}\\alpha=1,\\qquad\\operatorname{tg}\\alpha\\cdot\\o'
+      'peratorname{ctg}\\alpha=1,\\qquad1+\\operatorname{tg}^{2}\\alpha=\\frac{1}{\\cos^{2}\\alpha}$$<p>A '
+      'tangens–kotangens szorzathoz mindkét függvénynek értelmezettnek kell lennie; a tangens négyzetét '
+      'tartalmazó képletnél $\\cos\\alpha\\neq0$.</p><p>⚠️ A gyökvonásnál az előjelet <b>a negyed</b> dönti '
+      'el (<a href="tananyag-alapazonossagok.html#tetel-alapazonossagok">→</a>).</p>'
+  ),
   '<p><b>Addíciós képletek:</b></p>'
   '$$\\sin(\\alpha\\pm\\beta)=\\sin\\alpha\\cos\\beta\\pm\\cos\\alpha\\sin\\beta$$'
   '$$\\cos(\\alpha\\pm\\beta)=\\cos\\alpha\\cos\\beta\\mp\\sin\\alpha\\sin\\beta$$'
@@ -129,44 +136,56 @@ OSSZ = [
   '$\\cos\\tfrac{\\alpha}{2}=\\pm\\sqrt{\\tfrac{1+\\cos\\alpha}{2}}$ — az előjelet '
   'a <b>felezett</b> szög negyede adja '
   '(<a href="tananyag-felszog-es-szorzatta-alakitas.html#tetel-felszog">→</a>).</p>',
-  '<p><b>Kiegészítő kihívás — szorzattá alakítás:</b></p>'
-  '$$\\sin u\\pm\\sin v=2\\begin{Bmatrix}\\sin\\\\ \\cos\\end{Bmatrix}'
-  '\\frac{u+v}{2}\\begin{Bmatrix}\\cos\\\\ \\sin\\end{Bmatrix}\\frac{u-v}{2}$$'
-  '$$\\cos u+\\cos v=2\\cos\\frac{u+v}{2}\\cos\\frac{u-v}{2},\\qquad'
-  '\\cos u-\\cos v=-2\\sin\\frac{u+v}{2}\\sin\\frac{u-v}{2}$$'
-  '<p>(<a href="tananyag-felszog-es-szorzatta-alakitas.html#tetel-szorzatta">→</a>)</p>',
+  (
+      '<p><b>Kiegészítő kihívás — szorzattá alakítás:</b></p>$$\\sin u+\\sin '
+      'v=2\\sin\\frac{u+v}{2}\\cos\\frac{u-v}{2}$$ $$\\sin u-\\sin v=2\\cos\\frac{u+v}{2}\\sin\\frac{u-v}{2}$$$$\\cos '
+      'u+\\cos v=2\\cos\\frac{u+v}{2}\\cos\\frac{u-v}{2},\\qquad\\cos u-\\cos '
+      'v=-2\\sin\\frac{u+v}{2}\\sin\\frac{u-v}{2}$$<p>(<a '
+      'href="tananyag-felszog-es-szorzatta-alakitas.html#tetel-szorzatta">→</a>)</p>'
+  ),
  ]),
  ("Függvények és egyenletek", [
   '<p><b>2e-s törzsanyag:</b> az alapgörbék, az $y=\\sin x+d$ és '
   '$y=\\cos x+d$ függőleges eltolása, valamint az egyszerű szinuszos és '
   'koszinuszos egyenletek és egyenlőtlenségek a megadott $[0;2\\pi]$ körön.</p>',
-  '<div class="tblwrap"><table>'
-  '<tr><th></th><th>$\\sin x$</th><th>$\\cos x$</th><th>$\\operatorname{tg}x$</th></tr>'
-  '<tr><td>ÉT</td><td colspan="2">$\\mathbb{R}$</td>'
-  '<td>$x\\neq\\tfrac{\\pi}{2}+k\\pi$</td></tr>'
-  '<tr><td>ÉK</td><td colspan="2">$[-1;1]$</td><td>$\\mathbb{R}$</td></tr>'
-  '<tr><td>Periódus</td><td colspan="2">$2\\pi$</td><td><b>$\\pi$</b></td></tr>'
-  '<tr><td>Nullahely</td><td>$k\\pi$</td><td>$\\tfrac{\\pi}{2}+k\\pi$</td>'
-  '<td>$k\\pi$</td></tr>'
-  '<tr><td>Szimmetria</td><td>páratlan</td><td>páros</td><td>páratlan</td></tr>'
-  '</table></div>'
-  '<p>(<a href="tananyag-trig-fuggvenyek-grafikonja.html#tetel-sincos">→</a>)</p>',
-  '<p><b>Kiegészítő kihívás — $y=A\\sin(bx+c)+d$:</b> amplitúdó $|A|$ · periódus $\\tfrac{2\\pi}{|b|}$ · '
-  'vízszintes eltolás <b>$-\\tfrac{c}{b}$</b> (a $b$-t ki kell emelni!) · középvonal $d$, '
-  'értékkészlet $[d-|A|;\\,d+|A|]$ '
-  '(<a href="tananyag-osszetett-trig-fuggvenyek.html#tetel-teljes-alak">→</a>).</p>',
-  '<p><b>Kiegészítő kihívás — általános megoldások:</b> $\\sin x=a$ és $\\cos x=a$ csak $|a|\\le 1$ esetén oldható meg, '
-  'és <b>két</b> megoldáscsaládot ad ($+2k\\pi$); a $\\operatorname{tg}x=a$ bármely '
-  '$a$-ra megoldható, és <b>egy</b> családot ad ($+k\\pi$) '
-  '(<a href="tananyag-trigonometrikus-egyenletek.html#tetel-alaptipusok">→</a>).</p>',
-  '<p><b>Kiegészítő kihívás — általános megoldás $bx$ esetén:</b> oldd meg a $bx$-re, és <b>a legvégén</b> ossz $b$-vel — '
-  'a $2k\\pi$-t is! Így a periódus $\\tfrac{2\\pi}{b}$ lesz '
-  '(<a href="tananyag-trigonometrikus-egyenletek.html#tetel-bx">→</a>).</p>',
+  (
+      '<div class="tblwrap"><table><tr><th>Függvény</th><th>$\\sin x$</th><th>$\\cos '
+      'x$</th></tr><tr><td>ÉT</td><td colspan="2">$\\mathbb{R}$</td></tr><tr><td>ÉK</td><td '
+      'colspan="2">$[-1;1]$</td></tr><tr><td>Periódus</td><td '
+      'colspan="2">$2\\pi$</td></tr><tr><td>Nullahely</td><td>$k\\pi$</td><td>$\\tfrac{\\pi}{2}+k\\pi$</td></tr>'
+      '<tr><td>Szimmetria</td><td>páratlan</td><td>páros</td></tr></table></div><div '
+      'class="tblwrap"><table><tr><th>Függvény</th><th>$\\operatorname{tg}x$</th><th>$\\operatorname{ctg}x$</'
+      'th></tr><tr><td>ÉT</td><td>$x\\neq\\tfrac{\\pi}{2}+k\\pi$</td><td>$x\\neq '
+      'k\\pi$</td></tr><tr><td>ÉK</td><td colspan="2">$\\mathbb{R}$</td></tr><tr><td>Periódus</td><td '
+      'colspan="2">$\\pi$</td></tr><tr><td>Nullahely</td><td>$k\\pi$</td><td>$\\tfrac{\\pi}{2}+k\\pi$</td></tr><'
+      'tr><td>Szimmetria</td><td colspan="2">páratlan</td></tr></table></div><p>A táblázatokban '
+      '$k\\in\\mathbb{Z}$. (<a href="tananyag-trig-fuggvenyek-grafikonja.html#tetel-sincos">→</a>)</p>'
+  ),
+  (
+      '<p><b>Kiegészítő kihívás — $y=A\\sin(bx+c)+d$:</b> $A\\neq0$ és $b\\neq0$ mellett amplitúdó $|A|$ · '
+      'periódus $\\tfrac{2\\pi}{|b|}$ · vízszintes eltolás <b>$-\\tfrac{c}{b}$</b> (a $b$-t ki kell emelni!) '
+      '· középvonal $d$, értékkészlet $[d-|A|;\\,d+|A|]$ (<a '
+      'href="tananyag-osszetett-trig-fuggvenyek.html#tetel-teljes-alak">→</a>).</p>'
+  ),
+  (
+      '<p><b>Kiegészítő kihívás — általános megoldások:</b> $\\sin x=a$ és $\\cos x=a$ csak $|a|\\le 1$ '
+      'esetén oldható meg (a $0$ és $\\pm1$ értékeket külön vizsgáljuk), és $0&lt;|a|&lt;1$ esetén '
+      '<b>két</b> külön megoldáscsaládot ad ($+2k\\pi$); a $\\operatorname{tg}x=a$ bármely $a$-ra '
+      'megoldható, és <b>egy</b> családot ad ($+k\\pi$) (<a '
+      'href="tananyag-trigonometrikus-egyenletek.html#tetel-alaptipusok">→</a>).</p>'
+  ),
+  (
+      '<p><b>Kiegészítő kihívás — általános megoldás $bx$ esetén:</b> oldd meg a $bx$-re, és <b>a '
+      'legvégén</b> ossz $b$-vel — a $2k\\pi$-t is! $b\\neq0$ esetén így a periódushossz $\\tfrac{2\\pi}{|b|}$ '
+      'lesz (<a href="tananyag-trigonometrikus-egyenletek.html#tetel-bx">→</a>).</p>'
+  ),
  ]),
  ("Háromszögek", [
-  '<p><b>Szinusztétel:</b> $\\dfrac{a}{\\sin\\alpha}=\\dfrac{b}{\\sin\\beta}='
-  '\\dfrac{c}{\\sin\\gamma}=2R$ — akkor, ha van teljes <b>oldal–szög pár</b> '
-  '(<a href="tananyag-szinusz-es-koszinusztetel.html#tetel-szinusztetel">→</a>).</p>',
+  (
+      '<p><b>Szinusztétel:</b> $\\dfrac{a}{\\sin\\alpha}=\\dfrac{b}{\\sin\\beta}=\\dfrac{c}{\\sin\\gamma}=2R$ — '
+      'akkor célszerű közvetlenül alkalmazni, ha ismert egy oldal és a vele szemközti szög (<a '
+      'href="tananyag-szinusz-es-koszinusztetel.html#tetel-szinusztetel">→</a>).</p>'
+  ),
   '<p><b>Koszinusztétel:</b> $a^{2}=b^{2}+c^{2}-2bc\\cos\\alpha$, illetve '
   '$\\cos\\alpha=\\dfrac{b^{2}+c^{2}-a^{2}}{2bc}$ — SAS és SSS esetén '
   '(<a href="tananyag-szinusz-es-koszinusztetel.html#tetel-koszinusztetel">→</a>).</p>',
@@ -180,15 +199,16 @@ OSSZ = [
   '<tr><td>SSA — kiegészítő</td><td>szinusztétel — ⚠️ lehet <b>két</b> megoldás</td></tr>'
   '</table></div>'
   '<p>(<a href="tananyag-haromszog-megoldasa.html#tetel-recept">→</a>)</p>',
-  doboz("csapda", "Amire a dolgozaton a legtöbben ráfutnak",
-        '<p>1) A negyed <b>előbb</b>, az érték utána — írd ki az előjelet, mielőtt '
-        'számolsz. &nbsp; 2) $\\sin(\\alpha+\\beta)\\neq\\sin\\alpha+\\sin\\beta$ és '
-        '$\\cos 2\\alpha\\neq 2\\cos\\alpha$. &nbsp; 3) A koszinuszos addíciós képletben '
-        'a jel <b>megfordul</b>. &nbsp; 4) Kiegészítő félszögnél a <b>felezett</b> szög negyede '
-        'számít. &nbsp; 5) Kiegészítő általános megoldásnál ne felejtsd a $+2k\\pi$-t és a <b>második</b> '
-        'megoldáscsaládot. &nbsp; 6) A $\\operatorname{tg}$ periódusa $\\pi$. &nbsp; '
-        '7) A számológép <b>DEG</b> módban legyen. &nbsp; 8) Kerekítés: '
-        'szögfüggvényérték <b>öt</b>, oldalhossz <b>két</b> tizedes.</p>'),
+  doboz("csapda", 'Gyakori hibák',
+        (
+            '<p>1) A negyed <b>előbb</b>, az érték utána — írd ki az előjelet, mielőtt számolsz. &nbsp; 2) A '
+            '$\\sin(\\alpha+\\beta)=\\sin\\alpha+\\sin\\beta$ és a $\\cos2\\alpha=2\\cos\\alpha$ átalakítás nem azonosság. '
+            '&nbsp; 3) A koszinuszos addíciós képletben a jel <b>megfordul</b>. &nbsp; 4) Kiegészítő félszögnél '
+            'a <b>felezett</b> szög negyede számít. &nbsp; 5) Kiegészítő általános megoldásnál ne felejtsd a '
+            '$+2k\\pi$-t és a <b>második</b> megoldáscsaládot. &nbsp; 6) A $\\operatorname{tg}$ periódusa $\\pi$. '
+            '&nbsp; 7) Fokban megadott szögnél <b>DEG</b>, radiánban megadott szögnél <b>RAD</b> módot használj. '
+            '&nbsp; 8) Kerekítés: szögfüggvényérték <b>öt</b>, oldalhossz <b>két</b> tizedes.</p>'
+        )),
   '<div class="gyakorolj"><span class="ikon">🎯</span><p>Élesben: nézd át a négy '
   '<a href="feladatok-haromszogek.html">feladatgyűjteményt</a>, majd indulj '
   '<a href="terepkuldetes.html">A Fantom-frekvencia terepküldetésre</a>!</p></div>',
@@ -209,11 +229,12 @@ print("✓ osszefoglalo.html")
 
 TEREP = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Szürke Janka:</b> Ismeretlen jel érkezik a Baljós-bázisról, és nem tudjuk '
-         'megfejteni. A műszer csak a <b>grafikont</b> rajzolja ki — nekünk kell '
-         'kiolvasnunk belőle a képletet. Utána Kurt bemér néhány szöget a körön, '
-         'végül pedig háromszögeléssel megkeressük magát a bázist. Három fázis, '
-         'három eszköz: <b>grafikon</b>, <b>azonosság</b>, <b>háromszög</b>.'),
+   brief((
+             '<b>Szürke Janka:</b> Ismeretlen jel érkezik a történetbeli Baljós-bázisról. A műszer leolvasott '
+             'adatai és a megadott képletek alapján megfejtjük a jelet. Utána a trigonometrikus körön számolunk, '
+             'végül háromszögeléssel meghatározunk néhány távolságot. A három fázisban a függvényeket, az '
+             'azonosságokat és a háromszögekről tanultakat használod.'
+         )),
    '<p class="lead">Ez a küldetés a teljes témakört használja: grafikonolvasást és '
    'modellalkotást, a trigonometrikus kört, az azonosságokat, egyenletmegoldást, '
    'valamint a szinusz- és koszinusztételt. Dolgozz füzetben, és a végén add le a '
@@ -223,19 +244,18 @@ TEREP = [
  ]),
  ("Fázis I — A jel megfejtése", [
    doboz("pelda", "I. fázis: grafikonból képletet — kiegészítő kihívás",
-         '<ol class="reszfeladatok">'
-         '<li>Az elfogott jel legnagyobb értéke $6$, a legkisebb $-2$, a periódusa '
-         '$4\\pi$. Írd fel a jelet $y=A\\sin(bx)+d$ alakban! (Add meg $A$-t, $b$-t és '
-         '$d$-t is külön.)</li>'
-         '<li>Egy másik csatornán ezt fogtuk: $y=3\\sin\\left(2x-\\tfrac{\\pi}{2}\\right)$. '
-         'Add meg az <b>amplitúdóját</b>, a <b>periódusát</b>, a <b>fáziseltolását</b> '
-         '(irány és mérték!) és az <b>értékkészletét</b>.</li>'
-         '<li>Ábrázold közös koordináta-rendszerben a $[0;2\\pi]$ intervallumon az '
-         '$y=\\sin x$ és az $y=2\\sin\\left(x+\\tfrac{\\pi}{3}\\right)$ függvényt! '
-         'Hol veszi fel a második a maximumát?</li>'
-         '<li>A bázis áramellátása $y=0{,}5\\sin(120\\pi t)$ alakú (a $t$ '
-         'másodpercben). Mekkora a rezgés <b>periódusa</b> és <b>frekvenciája</b>?</li>'
-         '</ol>'),
+         (
+             '<ol class="reszfeladatok"><li>Az elfogott jel legnagyobb értéke $6$, a legkisebb $-2$, az '
+             'alapperiódusa $4\\pi$. Írd fel a jelet $y=A\\sin(bx)+d$ alakban, $A&gt;0$ és $b&gt;0$ mellett! (Add '
+             'meg $A$-t, $b$-t és $d$-t is külön.)</li><li>Egy másik csatornán ezt fogtuk: '
+             '$y=3\\sin\\left(2x-\\tfrac{\\pi}{2}\\right)$. Add meg az <b>amplitúdóját</b>, a <b>periódusát</b>, a '
+             '<b>fáziseltolását</b> (irány és mérték!) és az <b>értékkészletét</b>.</li><li>Ábrázold közös '
+             'koordináta-rendszerben a $[0;2\\pi]$ intervallumon az $y=\\sin x$ és az '
+             '$y=2\\sin\\left(x+\\tfrac{\\pi}{3}\\right)$ függvényt! Hol veszi fel a második a maximumát?</li><li>A '
+             'bázis egyik áramkörének pillanatnyi áramerősségét az $I(t)=0{,}5\\sin(120\\pi t)$ modell írja le, '
+             'amperben; $t$ másodpercben értendő. Mekkora a rezgés <b>periódusa</b> és '
+             '<b>frekvenciája</b>?</li></ol>'
+         )),
  ]),
  ("Fázis II — A körön", [
    doboz("pelda", "II. fázis: szögek és azonosságok",
@@ -253,22 +273,24 @@ TEREP = [
  ]),
  ("Fázis III — A bemérés", [
    doboz("pelda", "III. fázis: háromszögelés",
-         '<p>Minden számításnál a szögfüggvények értékeit <b>öt</b>, a hosszakat '
-         '<b>két</b> tizedesre kerekítsd!</p>'
-         '<ol class="reszfeladatok">'
-         '<li>Két megfigyelőpont és a bázis háromszöget alkot: $\\alpha=38^\\circ$, '
-         '$\\gamma=61^\\circ$, és a szemközti oldal $a=24$ km. Oldd meg a háromszöget!</li>'
-         '<li>Egy másik felderítés adatai: $b=17$ km, $c=23$ km, a közbezárt szög '
-         '$\\alpha=64^\\circ$. Mekkora az $a$ oldal?</li>'
-         '<li>Mekkora a 2. feladatbeli háromszög <b>területe</b>?</li>'
-         '<li><b>Kiegészítő kihívás:</b> a bázison álló antennatorony tövéhez nem lehet közel menni. Az $A$ '
-         'pontból a csúcsát $25^\\circ$-os, $80$ méterrel közelebbről, a $B$ pontból '
-         '$41^\\circ$-os emelkedési szögben látjuk. Milyen magas a torony?</li>'
-         '</ol>'),
-   '<div class="gyakorolj"><span class="ikon">📋</span><p><b>Jelentés:</b> az I. '
-   'fázisnál legyen ott a <b>grafikon</b> és a leolvasott paraméterek, a II.-nál a '
-   'használt <b>azonosság neve</b>, a III.-nál pedig az, hogy <b>melyik tételt</b> '
-   'miért választottad. A kerekítési szabály betartása is pont.</p></div>',
+         (
+             '<p>Minden számításnál a szögfüggvények értékeit <b>öt</b>, a hosszakat <b>két</b> tizedesre '
+             'kerekítsd!</p><ol class="reszfeladatok"><li>Két megfigyelőpont és a bázis háromszöget alkot: '
+             '$\\alpha=38^\\circ$, $\\gamma=61^\\circ$, és az $\\alpha$-val szemközti oldal $a=24$ km. Oldd meg a '
+             'háromszöget!</li><li>Egy másik felderítés adatai: $b=17$ km, $c=23$ km, a közbezárt szög '
+             '$\\alpha=64^\\circ$. Mekkora az $a$ oldal?</li><li>Mekkora a 2. feladatbeli háromszög '
+             '<b>területe</b>?</li><li><b>Kiegészítő kihívás:</b> a bázison álló függőleges antennatorony tövéhez '
+             'nem lehet közel menni. A két megfigyelőpont és a torony talpa ugyanazon vízszintes egyenesen van; a '
+             'megfigyelők a torony ugyanazon oldalán állnak. Az emelkedési szögeket a talaj szintjéről mérjük. Az '
+             '$A$ pontból a csúcsát $25^\\circ$-os, $80$ méterrel közelebbről, a $B$ pontból $41^\\circ$-os '
+             'emelkedési szögben látjuk. Milyen magas a torony?</li></ol>'
+         )),
+   (
+       '<div class="gyakorolj"><span class="ikon">📋</span><p><b>Jelentés:</b> az I. fázisban add meg a '
+       'kiszámolt paramétereket és a felírt modelleket; a 3. feladathoz rajzold meg a grafikonokat is. A '
+       'II. fázisban nevezd meg a használt azonosságot vagy a megoldási módszert, a III.-ban indokold meg a '
+       'tételválasztást. Ahol szükséges, a mértékegységet és a kerekítést is tüntesd fel.</p></div>'
+   ),
  ]),
 ]
 
@@ -380,13 +402,14 @@ DR_N = [
   '$T=84$; a legnagyobb magasság $\\dfrac{168}{13}\\approx12{,}92$.'),
 ]
 
-dr_brief = ('<div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — A Fázisugrás '
-            'modul. A szimuláció a <b>teljes témakört</b> lefedi: szögátváltás, '
-            'trigonometrikus kör, visszavezetés, alapazonosságok, addíciós és kétszeres '
-            'szög, szorzattá alakítás, grafikonok, egyenletek, valamint a szinusz- és '
-            'koszinusztétel. A szorzattá alakítás, az összetett grafikonok és az általános '
-            'egyenletmegoldás kiegészítő kihívások. Haladj a fokozatokon: zöld → sárga → piros. A végeredményt '
-            'lenyithatod, de előbb küzdd le magad!</p></div>')
+dr_brief = ((
+                '<div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — A Fázisugrás modul. A szimuláció a '
+                '<b>teljes témakört</b> lefedi: szögátváltás, trigonometrikus kör, visszavezetés, alapazonosságok, '
+                'addíciós és kétszeres szög, szorzattá alakítás, grafikonok, egyenletek, valamint a szinusz- és '
+                'koszinusztétel. A szorzattá alakítás, az összetett grafikonok és az általános egyenletmegoldás '
+                'kiegészítő kihívások. Haladj a fokozatokon: zöld → sárga → piros. A végeredményt lenyithatod, de '
+                'előbb próbáld meg önállóan!</p></div>'
+            ))
 
 dr_body = ('    ' + dr_brief + '\n'
            '    <h2 id="alap">🟢 Alapfokozat</h2>\n' +
@@ -422,7 +445,7 @@ K = [
  kartya("tananyag-trigonometrikus-kor.html", "A trigonometrikus kör",
         "A négy függvény definíciója az egységkörön, előjelek, jellegzetes szögek"),
  kartya("tananyag-visszavezetes.html", "Visszavezetés az első negyedre",
-        "Alapszög, a négy negyed és az előjelek — bármely szög két lépésben"),
+        'Alapszög, a négy negyed és az előjelek — visszavezetés alapszögre'),
  kartya("tananyag-alapazonossagok.html", "Alapazonosságok",
         "A trigonometriai Pitagorasz-tétel és a leggyakoribb feladattípus: érték + negyed"),
  kartya("tananyag-addicios-kepletek.html", "Addíciós képletek és a kétszeres szög",
@@ -434,7 +457,7 @@ K = [
  kartya("tananyag-osszetett-trig-fuggvenyek.html", "Amplitúdó, periódus és fáziseltolás",
         "Függőleges eltolás; az $y=A\\sin(bx+c)+d$ teljes alakja kiegészítő"),
  kartya("tananyag-trigonometrikus-egyenletek.html", "Egyszerű trigonometrikus egyenletek",
-        "Sinusz és koszinusz a megadott körön; általános megoldás kiegészítőként"),
+        'Szinusz és koszinusz a megadott körön; általános megoldás kiegészítőként'),
  kartya("tananyag-szinusz-es-koszinusztetel.html", "Szinusz- és koszinusztétel",
         "A két tétel, a bizonyítás gondolata és a választás szempontjai"),
  kartya("tananyag-haromszog-megoldasa.html", "Háromszög megoldása és alkalmazások",

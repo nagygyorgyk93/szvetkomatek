@@ -67,12 +67,15 @@ print("sympy önteszt: OK")
 # ============================== ALAPSZINT ==============================
 
 ALAP = [
- ("Írd fel az öt alapazonosságot fejből, majd ellenőrizd a tananyagban!", None,
-  "$\\sin^{2}\\alpha+\\cos^{2}\\alpha=1$; &nbsp; "
-  "$\\operatorname{tg}\\alpha=\\dfrac{\\sin\\alpha}{\\cos\\alpha}$; &nbsp; "
-  "$\\operatorname{ctg}\\alpha=\\dfrac{\\cos\\alpha}{\\sin\\alpha}$; &nbsp; "
-  "$\\operatorname{tg}\\alpha\\operatorname{ctg}\\alpha=1$; &nbsp; "
-  "$1+\\operatorname{tg}^{2}\\alpha=\\dfrac{1}{\\cos^{2}\\alpha}$."),
+ ('Írd fel a hat alapazonosságot fejből, majd ellenőrizd a tananyagban!', None,
+  (
+      '$\\sin^{2}\\alpha+\\cos^{2}\\alpha=1$; &nbsp; $\\operatorname{tg}\\alpha=\\dfrac{\\sin\\alpha}{\\cos\\alpha}$; '
+      '&nbsp; $\\operatorname{ctg}\\alpha=\\dfrac{\\cos\\alpha}{\\sin\\alpha}$; &nbsp; '
+      '$\\operatorname{tg}\\alpha\\operatorname{ctg}\\alpha=1$; &nbsp; '
+      '$1+\\operatorname{tg}^{2}\\alpha=\\dfrac{1}{\\cos^{2}\\alpha}$; &nbsp; '
+      '$1+\\operatorname{ctg}^{2}\\alpha=\\dfrac{1}{\\sin^{2}\\alpha}$. A tangenses képleteknél '
+      '$\\cos\\alpha\\neq0$, a kotangenseseknél $\\sin\\alpha\\neq0$; a szorzatazonosságnál mindkettő szükséges.'
+  )),
  ("Számold ki a másik három szögfüggvény pontos értékét! "
   "$\\sin\\alpha=\\tfrac35$ és $\\alpha$ hegyesszög.", None,
   "$\\cos\\alpha=\\tfrac45$, $\\operatorname{tg}\\alpha=\\tfrac34$, "

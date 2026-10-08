@@ -270,7 +270,7 @@ A korábbi A1-ellenőrzések nem helyettesítik a teljes stilisztikai átnézés
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ◐ Helyben kész: 77/77 oldal — 38 tananyag, 38 további témaköroldal és az osztály főoldala; teljes nyelvi és példahitelességi audit (2026-10-07) | ◐ 30/65 oldal: 01–02 két teljes témaköre átnézve; nyelvi és feltételhibák javítva (helyi main, 2026-10-08; ez az adag nincs pusholva) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
+| ◐ Helyben kész: 77/77 oldal — 38 tananyag, 38 további témaköroldal és az osztály főoldala; teljes nyelvi és példahitelességi audit (2026-10-07) | ◐ Helyben kész: 65/65 oldal — mind a négy témakör és az osztály főoldala; teljes nyelvi és példahitelességi audit (helyi main, 2026-10-08; ez az adag nincs pusholva) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
 
 Az első adag három függvényes, a második hat logikai és halmazos tananyagot
 ellenőrzött. A példák feltételei, bevezetők, átvezetők és matematikai pontatlanságok
@@ -463,9 +463,39 @@ más böngésző és teljes PDF-oldaltördelés új ellenőrzése nincs.
 Állapot: 1e 77/77 kész, 2e 30/65; következő adag a 2e/03–04 két témaköre.
 Tanári döntés kell: nincs. Új ág/push nincs. Részletek: A3_nyelvi_ellenorzes.md.
 
+Huszonkettedik adag (2026-10-08): a 2e/03–04 két teljes témaköre és az
+osztály főoldala, 35 oldal teljes szöveg szerinti A3-auditja lezárva.
+Ezzel 1e 77/77 és 2e 65/65 helyben kész; a 3e–4e A3 hátra van.
+19 tananyag, 9 gyakorló/házi, 2 témakörnyitó, 2 összefoglaló, 2 projekt,
+1 osztályfőoldal. Természetesebb magyar mondatok, exponenciális/logaritmikus
+feltételek, folytonos/egész idejű modellek, pH/Richter/dB értelmezése,
+periódus/eltolás és konstans esetek, tengelyhelyzetek, háromszögek SSA esetei,
+torony/navigáció feltételei javítva. Magasság h_c és területképlet összhangban,
+torony T jelölése/derékszöge helyesen; két táblázat mobilon átrendezve.
+Új feladat vagy feladatszámadat nincs; 338 kártya, állandó horgonyok,
+képek/médiák/szkriptek/hátterek és 33 kvízválasz megmaradt. Három szükséges
+végeredmény-pontosítás: ctg-azonosság, logaritmusos cáfolat, k egész.
+16 builder öntesztje rendben, 12 módosított builder csak szövegértékeiben változott.
+Három üres kontextusú lektor, 111 függetlenül megoldott gyakorlókártya;
+negyedik lektor a javított 19 tananyagot és 2 projektet újraszámolta,
+három szövegpontosítása beépítve. Külön 21 számszerű kontroll és modellhatárok.
+Teljes lánc: 310/0 kánon/link, két érvényes horgonylink miatti heurisztikus
+figyelmeztetés; sáv tiszta, kulcs 4499/4499, regresszió 100%.
+A kulcsmodul a 2e-t nem fedi le; közvetlen kontrollja a builder és az újraszámolás.
+Render 35 lap, 3261 képlet, 33/33 kvíz, 0 hiba. Edge 360/390/1280 px,
+zárt/nyitott 210+48 nézet, axe 390 px-en 70+16/0, nyomtatás JS be/ki 70+16,
+JS nélkül 35+8 oldal olvasható; Python Playwright helyett azonos TULLOGOK-kal
+Node/Edge. Ábrák és átrendezett táblázatok 390 px-en szemrevételezve.
+Index 308 nem üres bejegyzés, 30 változó URL; naplótérkép és médiakatalógus
+byte szerint változatlan. Valódi képernyőolvasó/más böngésző/teljes PDF-tördelés,
+minden háttérpont kézi kontrasztja és külső média újbóli próbája nincs.
+Tanári döntés kell: nincs nyitott tartalmi kérdés. Következő nagyobb adaghoz
+osztályválasztás kell; javaslat 3e A3. Helyi main, új ág és push nélkül.
+Részletek: [A3 nyelvi ellenőrzés](A3_nyelvi_ellenorzes.md).
+
 Részletek:
 [A3 nyelvi ellenőrzés](A3_nyelvi_ellenorzes.md).
-Hátra van a 2e/03–04, az osztály főoldala és a 3e–4e teljes A3-auditja.
+Hátra van a 3e–4e teljes A3-auditja.
 
 ---
 

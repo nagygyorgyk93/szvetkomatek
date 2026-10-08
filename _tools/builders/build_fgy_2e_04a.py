@@ -75,7 +75,7 @@ ALAP = [
  ("Váltsd át fokba!",
   ["$\\dfrac{7\\pi}{6}$", "$\\dfrac{5\\pi}{4}$", "$\\dfrac{11\\pi}{6}$", "$2\\pi$"],
   ["$210^\\circ$", "$225^\\circ$", "$330^\\circ$", "$360^\\circ$"], True),
- ("Melyik $[0^\\circ;360^\\circ)$ közötti szöggel egyezik meg?",
+ ('Melyik $[0^\\circ;360^\\circ)$ közötti szöggel azonos állású?',
   ["$390^\\circ$", "$750^\\circ$", "$-30^\\circ$", "$-200^\\circ$"],
   ["$30^\\circ$", "$30^\\circ$", "$330^\\circ$", "$160^\\circ$"], True),
  ("Melyik negyedben van a szög?",
@@ -145,10 +145,10 @@ KOZEP = [
  ("Váltsd át fokba!",
   ["$\\dfrac{5\\pi}{18}$", "$\\dfrac{7\\pi}{9}$", "$\\dfrac{13\\pi}{12}$"],
   ["$50^\\circ$", "$140^\\circ$", "$195^\\circ$"], True),
- ("Melyik $[0;2\\pi)$ közötti szöggel egyezik meg?",
+ ('Melyik $[0;2\\pi)$ közötti szöggel azonos állású?',
   ["$\\dfrac{9\\pi}{4}$", "$\\dfrac{17\\pi}{6}$", "$-\\dfrac{5\\pi}{3}$"],
   ["$\\dfrac{\\pi}{4}$", "$\\dfrac{5\\pi}{6}$", "$\\dfrac{\\pi}{3}$"], True),
- ("Számold ki! (A nem pontos értéket öt tizedesre kerekítsd.)",
+ ('Számold ki! (A nem nevezetes szög függvényértékét öt tizedesre kerekítsd.)',
   ["$\\sin 1000^\\circ$", "$\\cos 1110^\\circ$"],
   ['$\\sin 1000^\\circ\\approx-0{,}98481$',
    '$\\cos 1110^\\circ=\\dfrac{\\sqrt3}{2}$'], False),
@@ -189,17 +189,21 @@ NEHEZ = [
   '$\\sin\\alpha-\\cos\\alpha-\\operatorname{tg}\\alpha$.'),
  ("Mely $\\alpha\\in[0;2\\pi)$ szögekre teljesül, hogy $\\sin\\alpha=\\cos\\alpha$?",
   None, '$\\alpha=\\dfrac{\\pi}{4}$ vagy $\\alpha=\\dfrac{5\\pi}{4}$.'),
- ("Egy kerék $20$ másodperc alatt fordul körbe egyszer. Mekkora szöget fordul "
-  "$3$ másodperc alatt? (Radiánban add meg.)", None,
+ ((
+      'Egy kerék egyenletesen forog, és $20$ másodperc alatt tesz meg egy teljes fordulatot. Mekkora '
+      'szöget fordul $3$ másodperc alatt? (Radiánban add meg.)'
+  ), None,
   '$\\dfrac{3\\pi}{10}$ radián.'),
  ("Számold ki pontosan! $\\cos 0^\\circ+\\cos 60^\\circ+\\cos 120^\\circ+\\cos 180^\\circ$",
   None, '$0$.'),
  ("Mely szögekre nem értelmezett a $\\operatorname{tg}$, és melyekre a "
   "$\\operatorname{ctg}$? Indokold a definícióval!", None,
-  "$\\operatorname{tg}\\alpha=\\tfrac{\\sin\\alpha}{\\cos\\alpha}$, tehát ott nincs "
-  "értelmezve, ahol $\\cos\\alpha=0$: $\\alpha=\\tfrac{\\pi}{2}+k\\pi$. "
-  "$\\operatorname{ctg}\\alpha=\\tfrac{\\cos\\alpha}{\\sin\\alpha}$ ott nincs, ahol "
-  "$\\sin\\alpha=0$: $\\alpha=k\\pi$."),
+  (
+      '$\\operatorname{tg}\\alpha=\\tfrac{\\sin\\alpha}{\\cos\\alpha}$, tehát ott nincs értelmezve, ahol '
+      '$\\cos\\alpha=0$: $\\alpha=\\tfrac{\\pi}{2}+k\\pi$. '
+      '$\\operatorname{ctg}\\alpha=\\tfrac{\\cos\\alpha}{\\sin\\alpha}$ ott nincs, ahol $\\sin\\alpha=0$: '
+      '$\\alpha=k\\pi$, ahol mindkét képletben $k\\in\\mathbb{Z}$.'
+  )),
 ]
 
 JOKER = ("Számold ki! $\\sin^{2}10^\\circ+\\sin^{2}20^\\circ+\\sin^{2}30^\\circ+\\ldots"

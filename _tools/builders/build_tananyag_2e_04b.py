@@ -52,11 +52,12 @@ SVG_ALAP = svg_egysegkor(
 
 B1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Éjjáró:</b> Van egy visszatérő helyzet a terepen: tudom az egyik '
-         'koordinátámat, és tudom, melyik <b>negyedben</b> vagyok — a másikat magamtól '
-         'kell kitalálnom. Erre való az alapazonosság. Egyetlen képlet, egyetlen '
-         'négyzetgyök, és a <b>negyed dönti el az előjelet</b>. Ez a témakör '
-         'leggyakoribb feladattípusa, úgyhogy érdemes automatikussá tenni.'),
+   brief((
+             '<b>Éjjáró:</b> Van egy visszatérő helyzet a terepen: tudom az egyik koordinátámat, és tudom, melyik '
+             '<b>negyedben</b> vagyok — a másikat magamtól kell kitalálnom. Erre való az alapazonosság. Egyetlen '
+             'képlet, egyetlen négyzetgyök, és a <b>negyed dönti el az előjelet</b>. Először az összefüggést '
+             'írjuk fel, utána az előjelet választjuk meg.'
+         )),
  ]),
 
  ("Az alapazonosságok", [
@@ -77,16 +78,17 @@ B1 = [
          '1+\\operatorname{ctg}^{2}\\alpha=\\frac{1}{\\sin^{2}\\alpha}\\ (\\sin\\alpha\\neq 0).$$',
          hid="tetel-alapazonossagok"),
    doboz("csapda", "Dr. Baljós vírus-kódja",
-         '<p><b>A négyzetre emelés elveszíti az előjelet</b> — nem a gyökvonás enged meg két '
-         'értéket, hiszen $\\sqrt{\\cos^{2}\\alpha}=|\\cos\\alpha|$. Abból viszont, hogy '
-         '$\\cos^{2}\\alpha$ ismert, két lehetséges $\\cos\\alpha$ következik:</p>'
-         '$$\\cos\\alpha=\\pm\\sqrt{1-\\sin^{2}\\alpha},\\qquad'
-         '\\sin\\alpha=\\pm\\sqrt{1-\\cos^{2}\\alpha}$$'
-         '<p>A negyed dönti el, melyik kell — <b>függvényenként külön</b>: a koszinusz a II. és '
-         'a III., a szinusz a III. és a IV. negyedben negatív. Ezért ad a feladatszöveg '
-         '<b>jellemzően</b> egy második információt ($\\cos\\alpha&lt;0$, '
-         '$\\operatorname{tg}\\alpha&gt;0$, $\\alpha\\in\\left(\\tfrac{\\pi}{2};\\pi\\right)$…) '
-         '— enélkül a feladatnak két megoldása van.</p>'),
+         (
+             '<p><b>A négyzetre emelés elveszíti az előjelet</b> — nem a gyökvonás enged meg két értéket, hiszen '
+             '$\\sqrt{\\cos^{2}\\alpha}=|\\cos\\alpha|$. Abból viszont, hogy $\\cos^{2}\\alpha$ ismert, általában két '
+             'lehetséges $\\cos\\alpha$ következik; nulla négyzetgyök esetén csak '
+             'egy:</p>$$\\cos\\alpha=\\pm\\sqrt{1-\\sin^{2}\\alpha},\\qquad\\sin\\alpha=\\pm\\sqrt{1-\\cos^{2}\\alpha}$$<p>A '
+             'negyed dönti el, melyik kell — <b>függvényenként külön</b>: a koszinusz a II. és a III., a szinusz '
+             'a III. és a IV. negyedben negatív. Ezért ad a feladatszöveg <b>jellemzően</b> egy második '
+             'információt ($\\cos\\alpha&lt;0$, $\\operatorname{tg}\\alpha&gt;0$, '
+             '$\\alpha\\in\\left(\\tfrac{\\pi}{2};\\pi\\right)$…) — enélkül a hiányzó érték előjele általában nem '
+             'dönthető el.</p>'
+         )),
    kviz('Mennyi $\\sin^{2}\\alpha+\\cos^{2}\\alpha$ értéke?',
         ['$1$ — minden valós $\\alpha$-ra', '$\\alpha$', 'Az $\\alpha$-tól függ'], 0,
         jo="✔ Ez a négyzetes alapazonosság. Az egységkörön a P pont koordinátái cos α és "
@@ -143,12 +145,12 @@ B1 = [
 
 B2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Éjjáró:</b> Eddig csak a $30^\\circ$, $45^\\circ$, $60^\\circ$ alapszögből '
-         'származó értékeket tudtuk pontosan. '
-         'De mi van, ha $75^\\circ$-ra kell ugranom? Egyszerű: $75=45+30$ — <b>két ugrás '
-         'egymás után</b>. Az addíciós képletek pontosan ezt mondják meg: hogyan lehet '
-         'két szög összegének a szögfüggvényét a külön-külön ismert értékekből '
-         'kiszámolni.'),
+   brief((
+             '<b>Éjjáró:</b> Eddig főként a $30^\\circ$, $45^\\circ$, $60^\\circ$ alapszögből származó értékeket '
+             'tudtuk pontosan. De mi van, ha $75^\\circ$-ra kell ugranom? Egyszerű: $75=45+30$ — <b>két ugrás '
+             'egymás után</b>. Az addíciós képletek pontosan ezt mondják meg: hogyan lehet két szög összegének a '
+             'szögfüggvényét a külön-külön ismert értékekből kiszámolni.'
+         )),
  ]),
 
  ("Az addíciós képletek", [
@@ -162,14 +164,15 @@ B2 = [
          '<p class="halvany">A szinuszos és a koszinuszos képlet <b>minden</b> valós $\\alpha$-ra és $\\beta$-ra érvényes. A tangenses csak ott, ahol mindhárom tangens értelmezett — tehát $\\cos\\alpha\\neq 0$, $\\cos\\beta\\neq 0$ és $\\cos(\\alpha\\pm\\beta)\\neq 0$ — ez egyben azt is jelenti, hogy a nevező nem tűnik el, hiszen $1\\mp\\operatorname{tg}\\alpha\\operatorname{tg}\\beta$ pontosan akkor nulla, amikor $\\cos(\\alpha\\pm\\beta)=0$.</p>',
          hid="tetel-addicios"),
    doboz("csapda", "Dr. Baljós vírus-kódja",
-         '<p><b>A szögfüggvény nem „szorzó”!</b></p>'
-         '<p>✘ $\\sin(\\alpha+\\beta)=\\sin\\alpha+\\sin\\beta$ &nbsp;&nbsp; '
-         '✔ $\\sin(\\alpha+\\beta)=\\sin\\alpha\\cos\\beta+\\cos\\alpha\\sin\\beta$</p>'
-         '<p>Próbáld ki: $\\sin(30^\\circ+60^\\circ)=\\sin 90^\\circ=1$, míg '
-         '$\\sin 30^\\circ+\\sin 60^\\circ=\\tfrac12+\\tfrac{\\sqrt3}{2}\\approx 1{,}37$ — '
-         'nem egyenlők.</p>'
-         '<p>A koszinusznál pedig <b>ellentétes</b> a jel: $\\cos(\\alpha+\\beta)$-ban '
-         '<b>mínusz</b> áll, $\\cos(\\alpha-\\beta)$-ban <b>plusz</b>.</p>'),
+         (
+             '<p><b>Az összeg szögfüggvényét nem számolhatjuk tagonként!</b></p><p>✘ '
+             '$\\sin(\\alpha+\\beta)=\\sin\\alpha+\\sin\\beta$ &nbsp;&nbsp; ✔ '
+             '$\\sin(\\alpha+\\beta)=\\sin\\alpha\\cos\\beta+\\cos\\alpha\\sin\\beta$</p><p>Próbáld ki: '
+             '$\\sin(30^\\circ+60^\\circ)=\\sin 90^\\circ=1$, míg $\\sin 30^\\circ+\\sin '
+             '60^\\circ=\\tfrac12+\\tfrac{\\sqrt3}{2}\\approx 1{,}37$ — nem egyenlők.</p><p>A koszinusznál pedig '
+             '<b>ellentétes</b> a jel: $\\cos(\\alpha+\\beta)$-ban <b>mínusz</b> áll, $\\cos(\\alpha-\\beta)$-ban '
+             '<b>plusz</b>.</p>'
+         )),
    doboz("pelda", "Vészterem-szimuláció",
          '<p><b>a)</b> Számold ki pontosan: $\\cos 75^\\circ$.<br>'
          '<b>b)</b> Számold ki $\\sin(\\alpha+\\beta)$-t, ha $\\sin\\alpha=\\tfrac35$ és '
@@ -257,10 +260,12 @@ B2 = [
 
 B3 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Éjjáró:</b> Ha a kétszeres szög működik, működnie kell <b>visszafelé</b> '
-         'is: a felére. És van még egy trükk, ami a terepen a leghasznosabb — két '
-         'szögfüggvény <b>összegét szorzattá</b> alakítani. Miért jó ez? Mert a szorzattal '
-         'lehet egyszerűsíteni, nullára hozni, egyenletet megoldani. Az összeggel nem.'),
+   brief((
+             '<b>Éjjáró:</b> Ha a kétszeres szög működik, működnie kell <b>visszafelé</b> is: a felére. És van '
+             'még egy trükk, ami a terepen a leghasznosabb — két szögfüggvény <b>összegét szorzattá</b> '
+             'alakítani. Miért jó ez? Ha az egyenlet egyik oldalán nulla szorzat áll, a tényezőit külön '
+             'vizsgálhatjuk. Ebben segít a szorzattá alakítás.'
+         )),
    '<p class="lead"><b>Kiegészítő kihívás:</b> a félszög-képletek és az összeg–különbség '
    'szorzattá alakítása meghaladják a 2e-s törzskövetelményt. Az addíciós tételek '
    'közvetlen alkalmazását az előző lapon gyakorolhatod.</p>',
@@ -367,8 +372,10 @@ KI = [
  lap(**T, fajl="tananyag-addicios-kepletek.html",
      cim="Addíciós képletek és a kétszeres szög",
      cim_tiszta="Addíciós képletek és a kétszeres szög",
-     alcim="Két szög összegének és különbségének szögfüggvényei, a képletek felismerése "
-           "visszafelé, és a kétszeres szög három koszinusz-alakja.",
+     alcim=(
+               'Két szög összegének és különbségének szögfüggvényei, a képletek felismerése visszafelé, és a '
+               'kétszeres szög koszinuszának három alakja.'
+           ),
      chip="A Fázisugrás · 5/11", szakaszok=B2,
      elozo=("tananyag-alapazonossagok.html", "Alapazonosságok"),
      kovetkezo=("tananyag-felszog-es-szorzatta-alakitas.html",

@@ -40,7 +40,7 @@ SVG_NO = svg_fuggvenyek(
      (lambda u: 3**u, "#3b82f6", "y = 3ˣ", [(-3.4, 1.6)]),
      (lambda u: 1.5**u, "#8b5cf6", "y = 1,5ˣ", [(-3.4, 3.4)])],
     xr=(-3.4, 3.4), yr=(-1.2, 5.0), w=380, h=260,
-    leiras="Növekvő exponenciális függvények: minél nagyobb az alap, annál meredekebb a görbe",
+    leiras='Növekvő exponenciális függvények: pozitív x-nél a nagyobb alaphoz nagyobb érték tartozik',
     pontok=[(0, 1, "(0; 1)", "#ef4444", 8, 16)])
 
 SVG_CS = svg_fuggvenyek(
@@ -62,17 +62,19 @@ SVG_ELT = svg_fuggvenyek(
 
 A1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Dr. Bestia:</b> Kadétok, a laborban rossz hírt kaptam. Dr. Baljós vírusa nem '
-         'lineárisan és nem is másodfokon terjed: minden órában <b>megkétszereződik</b> '
-         'a fertőzött sejtek száma. Egy óra múlva 2, kettő múlva 4, tíz óra múlva már '
-         'több mint ezer. Ez az <b>exponenciális növekedés</b> — a természet '
-         'leggyorsabb hétköznapi mechanizmusa. Ha meg akarjuk állítani, előbb le kell '
-         'írnunk. Kezdjük a görbével.'),
-   'Eddig a hatványozásnál az <b>alap</b> volt a változó ($x^{2}$, $x^{3}$ — '
-   '<a href="../01-hatvanyozas-gyokvonas-komplex-szamok/tananyag-hatvanyfuggveny.html">'
-   'hatványfüggvény</a>). Most cserét hajtunk végre: az alap lesz <b>rögzített</b>, '
-   'és a <b>kitevő</b> válik változóvá. Ez az egyetlen csere gyökeresen más '
-   'viselkedésű függvényt ad.',
+   brief((
+             '<b>Dr. Bestia:</b> A képzeletbeli laborban egyetlen fertőzött sejtből indulunk. A modellben a '
+             'sejtek száma óránként <b>megkétszereződik</b>: egy óra múlva 2, kettő múlva 4, tíz óra múlva már '
+             'több mint ezer. Ezt <b>exponenciális növekedésnek</b> nevezzük. Először a függvényét és a '
+             'grafikonját vizsgáljuk meg. A modell csak a megadott időszakra szól: a valóságban a növekedésnek '
+             'korlátai vannak.'
+         )),
+   (
+       'Eddig a hatványfüggvényeknél az <b>alap</b> volt a változó ($x^{2}$, $x^{3}$ — <a '
+       'href="../01-hatvanyozas-gyokvonas-komplex-szamok/tananyag-hatvanyfuggveny.html">hatványfüggvény</a>)'
+       '. Most cserét hajtunk végre: az alap lesz <b>rögzített</b>, és a <b>kitevő</b> válik változóvá. Így '
+       'más tulajdonságú függvényt kapunk.'
+   ),
  ]),
 
  ("Az exponenciális függvény fogalma", [
@@ -107,26 +109,29 @@ A1 = [
    'Az egész témakör legfontosabb megkülönböztetése az, hogy az alap <b>nagyobb</b> vagy '
    '<b>kisebb</b> $1$-nél. Ez dönti el, hogy a függvény nő vagy csökken — és később ez '
    'fogja eldönteni az egyenlőtlenségek irányát is.',
-   abra(SVG_NO, "$a&gt;1$ esetén a függvény <b>növekvő</b>. Minél nagyobb az alap, "
-                "annál meredekebben emelkedik — de mindegyik görbe átmegy a $(0;1)$ ponton."),
+   abra(SVG_NO, (
+                    '$a&gt;1$ esetén a függvény <b>növekvő</b>. Pozitív $x$ mellett a nagyobb alaphoz nagyobb '
+                    'függvényérték tartozik. Mindegyik görbe átmegy a $(0;1)$ ponton.'
+                )),
    abra(SVG_CS, "$0&lt;a&lt;1$ esetén a függvény <b>csökkenő</b>. Az $y=\\left(\\tfrac12\\right)^{x}$ "
                 "az $y=2^{x}$ tükörképe az $y$-tengelyre, hiszen "
                 "$\\left(\\tfrac12\\right)^{x}=2^{-x}$."),
    doboz("tetel", "Monotonitás",
-         '<p>Az $f(x)=a^{x}$ függvény</p>'
-         '<ul>'
-         '<li><b>szigorúan növekvő</b>, ha $a&gt;1$;</li>'
-         '<li><b>szigorúan csökkenő</b>, ha $0&lt;a&lt;1$.</li>'
-         '</ul>'
-         '<p>Mindkét esetben <b>kölcsönösen egyértelmű</b> (injektív): különböző kitevőkhöz '
-         'különböző értékek tartoznak. Ez az a tulajdonság, amire az összes exponenciális '
-         'egyenlet megoldása épül.</p>',
+         (
+             '<p>Az $f(x)=a^{x}$ függvény</p><ul><li><b>szigorúan növekvő</b>, ha $a&gt;1$;</li><li><b>szigorúan '
+             'csökkenő</b>, ha $0&lt;a&lt;1$.</li></ul><p>Mindkét esetben <b>kölcsönösen egyértelmű</b> '
+             '(injektív): különböző kitevőkhöz különböző értékek tartoznak. Ez az a tulajdonság, amely a közös '
+             'alapra hozott egyenleteknél lehetővé teszi a kitevők összehasonlítását.</p>'
+         ),
          hid="tetel-monotonitas"),
    doboz("erdekesseg", "Miért ilyen gyors?",
-         '<p>Ha egy papírlapot elméletben $42$-szer félbehajtanál, a vastagsága '
-         '$0{,}1\\ \\text{mm}\\cdot 2^{42}$ lenne — nagyjából <b>440 000 km</b>, több mint '
-         'a Föld–Hold távolság. Ez ugyanaz a $2^{x}$, amit a grafikonon látsz: a bal oldalon '
-         'szinte rátapad a tengelyre, a jobb oldalon pedig elszalad.</p>'),
+         (
+             '<p>Egy kezdetben $0{,}1\\ \\text{mm}$ vastag papírlap vastagsága minden félbehajtáskor '
+             'megkétszereződne. Ha ezt elméletben $42$-szer megismételnénk, $0{,}1\\ \\text{mm}\\cdot2^{42}$, '
+             'nagyjából <b>440\xa0000 km</b> adódna. Ez több a <a href="https://science.nasa.gov/moon/facts/">Föld '
+             'és a Hold átlagos távolságánál</a>. Ennyiszer egy valódi lapot nem lehet félbehajtani; a '
+             'gondolatkísérlet a növekedés ütemét szemlélteti.</p>'
+         )),
  ]),
 
  ("Tulajdonságok", [
@@ -187,7 +192,12 @@ A1 = [
                   'az értékkészlet $(0;+\\infty)$, és a görbe a $(0;\\tfrac14)$ ponton halad át, '
                   'mert $\\left(\\tfrac12\\right)^{2}=\\tfrac14$.</p>')),
    gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–3"),
-   brief('<b>Dr. Bestia:</b> A görbét ismerjük: a $2^{x}$ sosem áll meg, és sosem éri el a nullát. Most jön a kérdés, amiért az egészet csináljuk: <b>mikor</b> ér el egy adott értéket? Ez már egyenlet — és a jó hír, hogy a monotonitás miatt legfeljebb egy megoldása lesz.', outro=True),
+   brief((
+             '<b>Dr. Bestia:</b> Az <a href="#tetel-tulajdonsagok">alapfüggvény tulajdonságait</a> már ismerjük. '
+             'Most azt keressük, melyik $x$-nél vesz fel egy adott pozitív értéket. Az $a^{x}=b$ alakú '
+             'egyenletnek a szigorú monotonitás miatt legfeljebb egy megoldása van. Az összetettebb exponenciális '
+             'egyenleteknél több megoldás is előfordulhat.'
+         ), outro=True),
  ]),
 ]
 
@@ -195,11 +205,12 @@ A1 = [
 
 A2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Dr. Bestia:</b> A görbét ismerjük — most jön a kérdés, amiért az egészet '
-         'csináljuk: <b>mikor</b> éri el a fertőzés a kritikus szintet? Ez egy egyenlet, '
-         'amelyben az ismeretlen a <b>kitevőben</b> ül. Jó hír: nem kell új gépezet. '
-         'Egyetlen ötlet elég — ha a két oldalt <b>ugyanarra az alapra</b> hozzuk, '
-         'a kitevők egyenlővé tehetők.'),
+   brief((
+             '<b>Dr. Bestia:</b> Mikor éri el a modellben a fertőzött sejtek száma a kritikus szintet? Az '
+             'ismeretlen most a <b>kitevőben</b> szerepel. Először azokat az egyenleteket nézzük meg, amelyek két '
+             'oldala <b>közös alapra</b> hozható. Utána a kiemelés és a helyettesítés is segít az összetettebb '
+             'esetekben.'
+         )),
  ]),
 
  ("Az alapelv", [
@@ -249,10 +260,11 @@ A2 = [
                   'tehát $3^{x}=81$ és $\\boxed{x=4}$.</p>'
                   '<p><b>Ellenőrzés:</b> $2^{5}+2^{3}=32+8=40$ ✔ és $3^{6}-3^{4}=729-81=648$ ✔</p>')),
    doboz("csapda", "Dr. Baljós vírus-kódja",
-         '<p>A $2^{x+2}$ <b>nem</b> $2^{x}+2^{2}$! A kitevőben álló összeg '
-         '<b>szorzattá</b> bomlik, nem összeggé:</p>'
-         '<p>✘ $2^{x+2}=2^{x}+4$ &nbsp;&nbsp;&nbsp; ✔ $2^{x+2}=2^{x}\\cdot 4$</p>'
-         '<p>Próbáld ki $x=1$-gyel: $2^{3}=8$, míg $2^{1}+4=6$ — nem ugyanaz.</p>'),
+         (
+             '<p>A $2^{x+2}=2^{x}+2^{2}$ átalakítás <b>nem azonosság</b>! A kitevőben álló összeg '
+             '<b>szorzattá</b> bomlik, nem összeggé:</p><p>✘ $2^{x+2}=2^{x}+4$ &nbsp;&nbsp;&nbsp; ✔ '
+             '$2^{x+2}=2^{x}\\cdot 4$</p><p>Próbáld ki $x=1$-gyel: $2^{3}=8$, míg $2^{1}+4=6$ — nem ugyanaz.</p>'
+         )),
    kviz('Mivel egyenlő $5^{x+1}$?',
         ['$5\\cdot 5^{x}$', '$5^{x}+5$', '$25^{x}$'], 0,
         jo="✔ A kitevőben álló összeg szorzattá bomlik.",
@@ -260,10 +272,12 @@ A2 = [
  ]),
 
  ("Másodfokúra visszavezethető exponenciális egyenlet", [
-   'Ez a témakör legszebb típusa — és pontosan ugyanaz a gondolat, mint a '
-   '<a href="../02-masodfoku-egyenletek-es-fuggvenyek/tananyag-bikvadratikus.html">'
-   'bikvadratikus egyenletnél</a>: egy ügyes <b>helyettesítéssel</b> visszavezetjük '
-   'a feladatot olyanra, amit már tudunk.',
+   (
+       'Ugyanazt a helyettesítéses gondolatot használjuk, mint a <a '
+       'href="../02-masodfoku-egyenletek-es-fuggvenyek/tananyag-bikvadratikus.html">bikvadratikus '
+       'egyenletnél</a>: egy ügyes <b>helyettesítéssel</b> visszavezetjük a feladatot olyanra, amit már '
+       'tudunk.'
+   ),
    doboz("tetel", "A helyettesítés módszere",
          '<p>Ha az egyenletben $a^{2x}$ (vagy $a^{x}$ négyzete) és $a^{x}$ is szerepel, '
          'vezess be új ismeretlent:</p>'
@@ -307,11 +321,12 @@ A2 = [
 
 A3 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Dr. Bestia:</b> Az egyenlet arra felel, <b>mikor pontosan</b> — de a valóságban '
-         'sokkal fontosabb, hogy <b>meddig</b> maradunk biztonságban. Ez már '
-         'egyenlőtlenség. És itt van a témakör egyetlen igazi buktatója: ha az alap '
-         '<b>kisebb $1$-nél</b>, a reláció jele <b>megfordul</b>. Ne tanuld be — értsd meg. '
-         'A grafikon megmutatja, miért.'),
+   brief((
+             '<b>Dr. Bestia:</b> Az egyenlet arra felel, <b>mikor pontosan</b> — de a valóságban sokkal '
+             'fontosabb, hogy <b>meddig</b> maradunk biztonságban. Ez már egyenlőtlenség. És itt van a témakör '
+             'egy fontos buktatója: ha az alap <b>kisebb $1$-nél</b>, a reláció jele <b>megfordul</b>. Ne tanuld '
+             'be — értsd meg. A grafikon megmutatja, miért.'
+         )),
  ]),
 
  ("Az alapelv és a jelfordulás", [
@@ -352,16 +367,14 @@ A3 = [
                   'a jel <b>fordul</b>: $2x+3&lt;-1$, tehát $2x&lt;-4$ és '
                   '$\\boxed{x&lt;-2}$, azaz $x\\in(-\\infty;-2)$.</p>')),
    doboz("csapda", "Dr. Baljós vírus-kódja",
-         '<p>Három hiba, amit a dolgozatokon a legtöbbször látni:</p>'
-         '<ol class="reszfeladatok">'
-         '<li><b>A jelfordulás elfelejtése.</b> Mielőtt elhagyod az alapot, mindig kérdezd '
-         'meg: <i>nagyobb ez az alap $1$-nél?</i> Írd is oda a lap szélére.</li>'
-         '<li><b>Rossz irányba fordítani.</b> A jel csak akkor fordul, ha '
-         '$0&lt;a&lt;1$ — az $a&gt;1$ eset változatlan.</li>'
-         '<li><b>Zárt zárójel a végtelennél.</b> A $\\pm\\infty$ mellett '
-         '<b>mindig nyitott</b> zárójel áll: $(-\\infty;2)$, sosem $(-\\infty;2]$ '
-         'a végtelen oldalán.</li>'
-         '</ol>'),
+         (
+             '<p>Három hiba, amit a dolgozatokon a legtöbbször látni:</p><ol class="reszfeladatok"><li><b>A '
+             'jelfordulás elfelejtése.</b> Mielőtt elhagyod az alapot, mindig kérdezd meg: <i>nagyobb ez az alap '
+             '$1$-nél?</i> Írd is oda a lap szélére.</li><li><b>Rossz irányba fordítani.</b> A jel csak akkor '
+             'fordul, ha $0&lt;a&lt;1$ — az $a&gt;1$ eset változatlan.</li><li><b>Zárt zárójel a végtelennél.</b> '
+             'A $\\pm\\infty$ mellett <b>mindig nyitott</b> zárójel áll: például $(-\\infty;2]$ helyes, '
+             '$[-\\infty;2]$ helytelen.</li></ol>'
+         )),
    kviz('Mi a megoldása a $\\left(\\tfrac14\\right)^{x}&gt;\\tfrac{1}{64}$ egyenlőtlenségnek?',
         ['$x&lt;3$', '$x&gt;3$', '$x&gt;\\tfrac{1}{64}$'], 0,
         jo="✔ Az alap ¼ < 1, ezért a jel megfordul: x < 3.",

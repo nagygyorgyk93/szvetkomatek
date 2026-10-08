@@ -53,11 +53,12 @@ SVG_LOG = svg_fuggvenyek(
 
 C1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Dr. Bestia:</b> Két függvényünk van, amelyek ugyanarról a jelenségről beszélnek, '
-         'csak ellenkező irányból. Az egyik azt mondja meg, <i>mennyi lesz $x$ óra múlva</i>, '
-         'a másik azt, <i>hány óra kell hozzá</i>. Az ilyen párokat a matematika '
-         '<b>inverz</b> függvényeknek nevezi — és a grafikonjuk mindig ugyanabban '
-         'a tükörben néz egymásra.'),
+   brief((
+             '<b>Dr. Bestia:</b> A növekedési modell megmondja, mennyi lesz a sejtszám egy adott idő elteltével. '
+             'A logaritmus segítségével fordítva számolunk: egy sejtszámhoz keressük a szükséges időt. Az ilyen '
+             'függvénypárokat <b>inverz függvényeknek</b> nevezzük. Megnézzük, hogyan kapcsolódnak egymáshoz a '
+             'grafikonjaik.'
+         )),
  ]),
 
  ("Az inverz függvény", [
@@ -124,13 +125,14 @@ C1 = [
          '<b>a)</b> $y=\\log_{2}(x-3)$; <b>b)</b> $y=\\log_{2}x+1$.</p>',
          hid="pelda-logf-eltolas",
          lenyilo=("Megoldás",
-                  '<p><b>a)</b> A logaritmus argumentuma pozitív kell legyen: $x-3&gt;0$, '
-                  'tehát az ÉT: $x&gt;3$, azaz $(3;+\\infty)$. A grafikon az '
-                  '$y=\\log_{2}x$ görbe <b>3 egységgel jobbra</b> tolva; az aszimptota '
-                  'is átvándorol az $x=3$ egyenesre. Nullahely: $x-3=1$, azaz $x=4$.</p>'
-                  '<p><b>b)</b> Itt az argumentum maga az $x$, tehát az ÉT változatlanul '
-                  '$x&gt;0$. A grafikon <b>1 egységgel feljebb</b> tolva; az aszimptota '
-                  'marad az $y$-tengely. Nullahely: $\\log_{2}x=-1$, azaz $x=\\tfrac12$.</p>')),
+                  (
+                      '<p><b>a)</b> A logaritmus argumentumának pozitívnak kell lennie: $x-3&gt;0$, tehát az ÉT: $x&gt;3$, '
+                      'azaz $(3;+\\infty)$. A grafikont az $y=\\log_{2}x$ görbe <b>3 egységgel jobbra</b> tolásával kapjuk; '
+                      'az aszimptota is átvándorol az $x=3$ egyenesre. Nullahely: $x-3=1$, azaz $x=4$.</p><p><b>b)</b> Itt '
+                      'az argumentum maga az $x$, tehát az ÉT változatlanul $x&gt;0$. A grafikont az alapgörbe <b>1 '
+                      'egységgel feljebb</b> tolásával kapjuk; az aszimptota marad az $y$-tengely. Nullahely: '
+                      '$\\log_{2}x=-1$, azaz $x=\\tfrac12$.</p>'
+                  ))),
    gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–3"),
    brief('<b>Dr. Bestia:</b> Az inverz kapcsolat a kulcs: amit az exponenciális elrejt, azt a logaritmus visszafejti. Innen már csak egy lépés az egyenlet — de vigyázz, ott vár a témakör legalattomosabb csapdája: az <b>értelmezési tartomány</b>.', outro=True),
  ]),
@@ -149,16 +151,18 @@ C2 = [
 
  ("Az értelmezési tartomány — az első lépés", [
    doboz("tetel", "A munkamenet",
-         '<p><b>1.</b> Írd fel az <b>értelmezési tartományt</b>: minden logaritmus '
-         'argumentuma legyen pozitív. Több logaritmus esetén a feltételek '
-         '<b>metszete</b> az ÉT.</p>'
-         '<p><b>2.</b> Az azonosságokkal <b>vond össze</b> a logaritmusokat, hogy mindkét '
-         'oldalon egyetlen logaritmus (vagy egy szám) maradjon. <b>Vigyázz:</b> az '
-         'összevonás <b>kitágíthatja</b> az értelmezési tartományt — a $\\log_a x+\\log_a y$ csak $x&gt;0$ és $y&gt;0$ mellett írható le, a $\\log_a(xy)$ viszont akkor is, ha mindkettő negatív. Ezért keletkeznek hamis gyökök, és ezért kell a végén az <b>eredeti</b> egyenlet ÉT-jével ellenőrizni.</p>'
-         '<p><b>3.</b> Hagyd el a logaritmust — a függvény kölcsönösen egyértelmű:</p>'
-         '$$\\log_{a}u=\\log_{a}v\\iff u=v,\\qquad \\log_{a}u=c\\iff u=a^{c}.$$'
-         '<p><b>4.</b> Oldd meg a kapott egyenletet, és <b>vesd össze az ÉT-vel</b>: '
-         'ami kilóg belőle, azt eldobod.</p>',
+         (
+             '<p><b>1.</b> Írd fel az <b>értelmezési tartományt</b>: minden logaritmus argumentuma legyen '
+             'pozitív. Több logaritmus esetén a feltételek <b>metszete</b> az ÉT.</p><p><b>2.</b> Az '
+             'azonosságokkal <b>vond össze</b> a logaritmusokat, hogy mindkét oldalon egyetlen logaritmus (vagy '
+             'egy szám) maradjon. <b>Vigyázz:</b> az összevonás <b>kitágíthatja</b> az értelmezési tartományt — a '
+             '$\\log_a x+\\log_a y$ csak $x&gt;0$ és $y&gt;0$ mellett írható le, a $\\log_a(xy)$ viszont akkor is, '
+             'ha mindkettő negatív. Ezért keletkeznek hamis gyökök, és ezért kell a végén az <b>eredeti</b> '
+             'egyenlet ÉT-jével ellenőrizni.</p><p>A következő átalakításoknál $a&gt;0$, '
+             '$a\\neq1$.</p><p><b>3.</b> Hagyd el a logaritmust — a függvény kölcsönösen '
+             'egyértelmű:</p>$$\\log_{a}u=\\log_{a}v\\iff u=v,\\qquad \\log_{a}u=c\\iff u=a^{c}.$$<p><b>4.</b> Oldd meg '
+             'a kapott egyenletet, és <b>vesd össze az ÉT-vel</b>: ami kilóg belőle, azt eldobod.</p>'
+         ),
          hid="tetel-log-egyenlet-menete"),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg: <b>a)</b> $\\log_{2}(x-3)=3$; <b>b)</b> $\\log_{5}(2x+1)=2$; '
@@ -183,7 +187,12 @@ C2 = [
                   '<p><b>3. Ellenőrzés az ÉT-vel.</b> A $2&gt;1$, tehát jó. A $-3$ viszont nincs benne az ÉT-ben — és tényleg: a $\\log_{2}(-3-1)$ nem is írható le. Tehát $\\boxed{x=2}$.</p>'
                   '<p>Figyeld meg, honnan jött a hamis gyök: az összevont $(x-1)(x+2)=4$ egyenletnek $x=-3$ <b>jó</b> megoldása (a szorzat $(-4)\\cdot(-1)=4$), mert ott a két tényező <b>egyszerre negatív</b>. Az eredeti egyenletben viszont külön-külön kellene pozitívnak lenniük. Épp ezt tágítja ki az összevonás.</p>')),
    doboz("tetel", "Ha a logaritmus négyzeten szerepel: helyettesítés",
-         '<p>Ha az egyenletben ugyanaz a logaritmus szerepel többféle hatványon (például $\\log_{2}x$ és $\\big(\\log_{2}x\\big)^{2}$), vezess be új ismeretlent: legyen $t=\\log_{2}x$. Ezzel az egyenlet <b>másodfokúvá</b> válik.</p>',
+         (
+             '<p>Ha az egyenletben ugyanannak a logaritmusnak az első és a második hatványa szerepel, például '
+             '$\\log_{2}x$ és $(\\log_{2}x)^{2}$, a $t=\\log_{2}x$ helyettesítéssel <b>másodfokú egyenletet</b> '
+             'kapunk. A $t$ itt bármilyen valós szám lehet.</p><p>A $\\lg^{2}x$ jelölés is $(\\lg x)^{2}$-et '
+             'jelent.</p>'
+         ),
          hid="tetel-helyettesites",
          lenyilo=("Vészterem-szimuláció",
                   '<p>Oldd meg: $\\big(\\log_{2}x\\big)^{2}-3\\log_{2}x+2=0$.</p>'

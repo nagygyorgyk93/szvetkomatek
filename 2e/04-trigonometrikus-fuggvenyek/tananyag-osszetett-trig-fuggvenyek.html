@@ -33,7 +33,7 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/szurke_janka.webp" alt="Szürke Janka — a telepata bemérő-specialista" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Szürke Janka:</b> Egy valódi jel sosem a tiszta <span class="math inline">\(\sin x\)</span>. Van <b>erőssége</b> (mekkorát hullámzik), <b>körfrekvenciája</b> (milyen sűrűn ismétlődik) és <b>fázisa</b> (mikor kezdődik). Ez a három adat az <span class="math inline">\(A\)</span>, a <span class="math inline">\(b\)</span> és a <span class="math inline">\(c\)</span> — és mindhárom a függvénytranszformációk logikáját követi, de kettőnél lesz egy csavar, amire külön figyelmeztetlek. Ha ezt elolvasod egy grafikonról, gyakorlatilag megfejtetted a jelet.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/szurke_janka.webp" alt="Szürke Janka — a telepata bemérő-specialista" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Szürke Janka:</b> Egy szinuszos jel más magasságig térhet ki, más ütemben ismétlődhet, és vízszintesen is eltolódhat az alapgörbéhez képest. Ezeket az eltéréseket az <span class="math inline">\(A\)</span>, <span class="math inline">\(b\)</span> és <span class="math inline">\(c\)</span> paraméter írja le; a <span class="math inline">\(d\)</span> a középvonal magasságát adja. Megnézzük, melyik paraméter mit változtat a grafikonon.</p></div>
 
     <p class="lead">A 2e-s törzsanyagban a <span class="math inline">\(y=\sin x+d\)</span> és <span class="math inline">\(y=\cos x+d\)</span> függőleges eltolása szerepel: az alapgörbe <span class="math inline">\(d\)</span>-vel feljebb vagy lejjebb kerül, periódusa változatlan. Az alábbi amplitúdó-, periódus- és fázisvizsgálat, valamint a teljes <span class="math inline">\(A\sin(bx+c)+d\)</span> alak <b>kiegészítő kihívás</b>.</p>
 
@@ -71,7 +71,7 @@
       <text x="478" y="60" font-size="11" fill="#0f172a">y = ½ sin x</text>
     </svg>
     </div>
-    <p class="cap">Az <span class="math inline">\(y=A\sin x\)</span> görbe <span class="math inline">\(|A|\)</span>-szorosára nyúlik — <span class="math inline">\(|A|&lt;1\)</span> esetén lapul — függőlegesen. Az értékkészlet <span class="math inline">\([-|A|;|A|]\)</span>, a periódus <b>nem változik</b>.</p>
+    <p class="cap">Az <span class="math inline">\(y=A\sin x\)</span> görbe <span class="math inline">\(|A|\)</span>-szorosára nyúlik — <span class="math inline">\(|A|&lt;1\)</span> esetén lapul — függőlegesen. Az értékkészlet <span class="math inline">\([-|A|;|A|]\)</span>, az alapperiódus <span class="math inline">\(A\neq0\)</span> esetén <b>nem változik</b>. Ha <span class="math inline">\(A=0\)</span>, konstans függvényt kapunk.</p>
 
     <div class="doboz tetel" id="tetel-amplitudo">
       <p class="cim"><span class="ikon">📘</span> Amplitúdó</p>
@@ -114,7 +114,7 @@
 
     <div class="doboz tetel" id="tetel-periodus">
       <p class="cim"><span class="ikon">📘</span> Periódus</p>
-      <p>Az <span class="math inline">\(y=\sin bx\)</span> (és az <span class="math inline">\(y=\cos bx\)</span>) függvény periódusa</p><span class="math display">\[p=\frac{2\pi}{|b|}\qquad(b\neq 0),\]</span><p>az <span class="math inline">\(y=\operatorname{tg}bx\)</span> függvényé pedig <span class="math inline">\(p=\dfrac{\pi}{|b|}\)</span>.</p><p>Vagyis <span class="math inline">\(b\)</span> azt mondja meg, hogy a megszokott <span class="math inline">\(2\pi\)</span> hosszra <b>hány hullám jut</b> — <span class="math inline">\(b=\tfrac12\)</span> esetén például csak fél.</p>
+      <p>Az <span class="math inline">\(y=\sin bx\)</span> (és az <span class="math inline">\(y=\cos bx\)</span>) függvény periódusa</p><span class="math display">\[p=\frac{2\pi}{|b|}\qquad(b\neq 0),\]</span><p>az <span class="math inline">\(y=\operatorname{tg}bx\)</span> függvényé pedig <span class="math inline">\(p=\dfrac{\pi}{|b|}\)</span>.</p><p>Vagyis <span class="math inline">\(|b|\)</span> azt mondja meg, hogy a megszokott <span class="math inline">\(2\pi\)</span> hosszra <b>hány hullám jut</b> — <span class="math inline">\(b=\tfrac12\)</span> esetén például csak fél.</p>
     </div>
 
     <div class="doboz csapda">
@@ -166,11 +166,11 @@
       <text x="412" y="60" font-size="11" fill="#0f172a">y = 2sin(x − π/3) + 1</text>
     </svg>
     </div>
-    <p class="cap">A zárójelben álló <span class="math inline">\(+c\)</span> <b>balra</b>, a <span class="math inline">\(-c\)</span> <b>jobbra</b> tolja a görbét — méghozzá <span class="math inline">\(\tfrac{|c|}{b}\)</span>-vel, nem <span class="math inline">\(|c|\)</span>-vel; a végén álló <span class="math inline">\(+d\)</span> pedig <b>felfelé</b>.</p>
+    <p class="cap">A vízszintes eltolás előjeles értéke <span class="math inline">\(-\tfrac{c}{b}\)</span>, mértéke <span class="math inline">\(|\tfrac{c}{b}|\)</span> (<span class="math inline">\(b\neq0\)</span>). Pozitív eltolásnál jobbra, negatívnál balra mozdul a görbe. A végén álló <span class="math inline">\(d\)</span> pozitív értéke felfelé, negatív értéke lefelé tol.</p>
 
     <div class="doboz tetel" id="tetel-teljes-alak">
       <p class="cim"><span class="ikon">📘</span> Az <span class="math inline">\(y=A\sin(bx+c)+d\)</span> alak</p>
-      <div class="tblwrap"><table><tr><th>Paraméter</th><th>Neve</th><th>Hatása</th></tr><tr><td><span class="math inline">\(A\)</span></td><td>amplitúdó</td><td>függőleges nyújtás <span class="math inline">\(|A|\)</span>-szorosára; <span class="math inline">\(A&lt;0\)</span> → tükrözés</td></tr><tr><td><span class="math inline">\(b\)</span></td><td>körfrekvencia</td><td>a periódus <span class="math inline">\(\tfrac{2\pi}{|b|}\)</span></td></tr><tr><td><span class="math inline">\(c\)</span></td><td>fázis</td><td>vízszintes eltolás <b><span class="math inline">\(-\tfrac{c}{b}\)</span>-vel</b></td></tr><tr><td><span class="math inline">\(d\)</span></td><td>középvonal</td><td>függőleges eltolás; az értékkészlet <span class="math inline">\([d-|A|;\,d+|A|]\)</span></td></tr></table></div><p>⚠️ A vízszintes eltolás <b>nem</b> <span class="math inline">\(c\)</span>, hanem <span class="math inline">\(-\tfrac{c}{b}\)</span> — mert a zárójelből ki kell emelni a <span class="math inline">\(b\)</span>-t: <span class="math inline">\(bx+c=b\left(x+\tfrac{c}{b}\right)\)</span>.</p>
+      <p>A táblázatban <span class="math inline">\(A\neq0\)</span> és <span class="math inline">\(b\neq0\)</span>.</p><div class="tblwrap"><table><tr><th>Paraméter</th><th>Neve</th><th>Hatása</th></tr><tr><td><span class="math inline">\(A\)</span></td><td>függőleges szorzótényező</td><td>függőleges nyújtás <span class="math inline">\(|A|\)</span>-szorosára; <span class="math inline">\(A&lt;0\)</span> → tükrözés</td></tr><tr><td><span class="math inline">\(b\)</span></td><td>a belső szög együtthatója</td><td>a periódus <span class="math inline">\(\tfrac{2\pi}{|b|}\)</span></td></tr><tr><td><span class="math inline">\(c\)</span></td><td>fázis</td><td>vízszintes eltolás <b><span class="math inline">\(-\tfrac{c}{b}\)</span>-vel</b></td></tr><tr><td><span class="math inline">\(d\)</span></td><td>a középvonal magassága</td><td>függőleges eltolás; az értékkészlet <span class="math inline">\([d-|A|;\,d+|A|]\)</span></td></tr></table></div><p>⚠️ A vízszintes eltolás <b>nem</b> <span class="math inline">\(c\)</span>, hanem <span class="math inline">\(-\tfrac{c}{b}\)</span> — mert a zárójelből ki kell emelni a <span class="math inline">\(b\)</span>-t: <span class="math inline">\(bx+c=b\left(x+\tfrac{c}{b}\right)\)</span>.</p><p>Ha <span class="math inline">\(A=0\)</span>, a függvény az állandó <span class="math inline">\(d\)</span>. Ha <span class="math inline">\(b=0\)</span>, az állandó <span class="math inline">\(A\sin c+d\)</span>. Ezekben az esetekben az értékkészlet egyetlen értékből áll, és nincs legkisebb pozitív periódus.</p>
     </div>
 
     <div class="doboz pelda" id="pelda-teljes-alak">
@@ -181,7 +181,7 @@
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Ez a hangod és a váltakozó áram is</p>
-      <p>Egy tiszta hang matematikai alakja <span class="math inline">\(y=A\sin(2\pi f t)\)</span>: az <span class="math inline">\(A\)</span> a <b>hangerő</b>, az <span class="math inline">\(f\)</span> a <b>frekvencia</b> (hertzben), ami a hang <b>magasságát</b> adja. A hálózati feszültség szintén ilyen hullám: a <b>csúcsértéke</b> <span class="math inline">\(A\approx 325\,\text{V}\)</span>, ebből adódik a jól ismert <span class="math inline">\(230\,\text{V}\)</span> <b>effektív</b> érték; a frekvencia <span class="math inline">\(50\,\text{Hz}\)</span> — vagyis másodpercenként ötvenszer fut le a teljes hullám.</p>
+      <p>Egy tiszta hang hangnyomását közelítő modell <span class="math inline">\(y=A\sin(2\pi f t)\)</span>: az <span class="math inline">\(A\)</span> a <b>hangnyomás-amplitúdó</b>, az <span class="math inline">\(f\)</span> a <b>frekvencia</b> (hertzben), ami a hang <b>magasságát</b> adja. A hálózati feszültség szinuszos modelljében: a <b>csúcsértéke</b> <span class="math inline">\(A\approx 325\,\text{V}\)</span>, ebből adódik a jól ismert <span class="math inline">\(230\,\text{V}\)</span> <b>effektív</b> érték; a frekvencia <span class="math inline">\(50\,\text{Hz}\)</span> — vagyis másodpercenként ötvenszer fut le a teljes hullám.</p>
     </div>
 
     <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Emeld ki a b-t: sin(2x − π) = sin(2(x − π/2)), tehát π/2-vel jobbra." data-nem="✘ Az eltolás nem −c, hanem −c/b. Emeld ki a 2-t: 2x − π = 2(x − π/2).">
@@ -205,7 +205,7 @@
     <!-- media:end 2e04-osszetett2-video -->
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Kiegészítő kihívás; az A 9 a) része az egyszerű függőleges eltolást gyakoroltatja.</p><div class="savok"><a class="sav henrik" href="feladatok-trig-fuggvenyek-egyenletek.html#alap-6">🐾 Bestia-protokoll <span class="cimke">A 6–11</span></a><a class="sav bruno" href="feladatok-trig-fuggvenyek-egyenletek.html#kozep-4">🔥 Főnix-protokoll <span class="cimke">K 4–8</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/szurke_janka.webp" alt="Szürke Janka — a telepata bemérő-specialista" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Szürke Janka:</b> A hullámot már le tudod írni. Most jön a fordított kérdés: <b>mikor</b> éri el a jel a keresett értéket? Ez trigonometrikus egyenlet — és mivel a hullám ismétlődik, nem egy megoldás lesz, hanem végtelen sok.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/szurke_janka.webp" alt="Szürke Janka — a telepata bemérő-specialista" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Szürke Janka:</b> A hullámot már le tudod írni. Most a fordított kérdést tesszük fel: <b>mikor</b> éri el a jel a keresett értéket? Ha ez az érték elérhető és az összes valós megoldást keressük, a periodicitás miatt végtelen sokat kapunk. Megadott intervallumon csak az oda eső megoldásokat adjuk meg.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-trig-fuggvenyek-grafikonja.html"><span class="irany">← Előző</span><span class="hova">A trigonometrikus függvények grafikonja</span></a>
       <a class="kov" href="tananyag-trigonometrikus-egyenletek.html"><span class="irany">Következő →</span><span class="hova">Egyszerű trigonometrikus egyenletek</span></a>

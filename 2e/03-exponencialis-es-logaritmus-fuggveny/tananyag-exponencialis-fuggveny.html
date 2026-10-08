@@ -33,9 +33,9 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/dr_bestia.webp" alt="Dr. Bestia — a kampusz fővezető tudósa" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Dr. Bestia:</b> Kadétok, a laborban rossz hírt kaptam. Dr. Baljós vírusa nem lineárisan és nem is másodfokon terjed: minden órában <b>megkétszereződik</b> a fertőzött sejtek száma. Egy óra múlva 2, kettő múlva 4, tíz óra múlva már több mint ezer. Ez az <b>exponenciális növekedés</b> — a természet leggyorsabb hétköznapi mechanizmusa. Ha meg akarjuk állítani, előbb le kell írnunk. Kezdjük a görbével.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/dr_bestia.webp" alt="Dr. Bestia — a kampusz fővezető tudósa" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Dr. Bestia:</b> A képzeletbeli laborban egyetlen fertőzött sejtből indulunk. A modellben a sejtek száma óránként <b>megkétszereződik</b>: egy óra múlva 2, kettő múlva 4, tíz óra múlva már több mint ezer. Ezt <b>exponenciális növekedésnek</b> nevezzük. Először a függvényét és a grafikonját vizsgáljuk meg. A modell csak a megadott időszakra szól: a valóságban a növekedésnek korlátai vannak.</p></div>
 
-    Eddig a hatványozásnál az <b>alap</b> volt a változó (<span class="math inline">\(x^{2}\)</span>, <span class="math inline">\(x^{3}\)</span> — <a href="../01-hatvanyozas-gyokvonas-komplex-szamok/tananyag-hatvanyfuggveny.html">hatványfüggvény</a>). Most cserét hajtunk végre: az alap lesz <b>rögzített</b>, és a <b>kitevő</b> válik változóvá. Ez az egyetlen csere gyökeresen más viselkedésű függvényt ad.
+    Eddig a hatványfüggvényeknél az <b>alap</b> volt a változó (<span class="math inline">\(x^{2}\)</span>, <span class="math inline">\(x^{3}\)</span> — <a href="../01-hatvanyozas-gyokvonas-komplex-szamok/tananyag-hatvanyfuggveny.html">hatványfüggvény</a>). Most cserét hajtunk végre: az alap lesz <b>rögzített</b>, és a <b>kitevő</b> válik változóvá. Így más tulajdonságú függvényt kapunk.
 
     <h2 id="s1">Az exponenciális függvény fogalma</h2>
 
@@ -63,8 +63,8 @@
     Az egész témakör legfontosabb megkülönböztetése az, hogy az alap <b>nagyobb</b> vagy <b>kisebb</b> <span class="math inline">\(1\)</span>-nél. Ez dönti el, hogy a függvény nő vagy csökken — és később ez fogja eldönteni az egyenlőtlenségek irányát is.
 
     <div class="svgcard">
-    <svg viewBox="0 0 380 260" width="380" height="260" role="img" aria-label="Növekvő exponenciális függvények: minél nagyobb az alap, annál meredekebb a görbe">
-      <defs><marker id="nyil-2ffde" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+    <svg viewBox="0 0 380 260" width="380" height="260" role="img" aria-label="Növekvő exponenciális függvények: pozitív x-nél a nagyobb alaphoz nagyobb érték tartozik">
+      <defs><marker id="nyil-4b1ee" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
       <g stroke="#cbd5e1" stroke-width=".6">
         <line x1="96.4" y1="238.0" x2="96.4" y2="14.0"/>
         <line x1="146.7" y1="238.0" x2="146.7" y2="14.0"/>
@@ -77,8 +77,8 @@
         <line x1="26.0" y1="50.1" x2="368.0" y2="50.1"/>
         <line x1="26.0" y1="14.0" x2="368.0" y2="14.0"/>
       </g>
-      <line x1="26.0" y1="194.6" x2="368.0" y2="194.6" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-2ffde)"/>
-      <line x1="197.0" y1="238.0" x2="197.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-2ffde)"/>
+      <line x1="26.0" y1="194.6" x2="368.0" y2="194.6" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-4b1ee)"/>
+      <line x1="197.0" y1="238.0" x2="197.0" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-4b1ee)"/>
       <text x="364.0" y="208.6" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
       <text x="189.0" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
       <text x="247.3" y="207.6" font-size="10" fill="#475569" text-anchor="middle">1</text>
@@ -97,7 +97,7 @@
       <text x="318" y="60" font-size="11" fill="#0f172a">y = 1,5ˣ</text>
     </svg>
     </div>
-    <p class="cap"><span class="math inline">\(a&gt;1\)</span> esetén a függvény <b>növekvő</b>. Minél nagyobb az alap, annál meredekebben emelkedik — de mindegyik görbe átmegy a <span class="math inline">\((0;1)\)</span> ponton.</p>
+    <p class="cap"><span class="math inline">\(a&gt;1\)</span> esetén a függvény <b>növekvő</b>. Pozitív <span class="math inline">\(x\)</span> mellett a nagyobb alaphoz nagyobb függvényérték tartozik. Mindegyik görbe átmegy a <span class="math inline">\((0;1)\)</span> ponton.</p>
 
     <div class="svgcard">
     <svg viewBox="0 0 380 260" width="380" height="260" role="img" aria-label="Az y = 2 az x-edik és az y = fél az x-edik függvény grafikonja egymás tükörképe az y-tengelyre">
@@ -135,12 +135,12 @@
 
     <div class="doboz tetel" id="tetel-monotonitas">
       <p class="cim"><span class="ikon">📘</span> Monotonitás</p>
-      <p>Az <span class="math inline">\(f(x)=a^{x}\)</span> függvény</p><ul><li><b>szigorúan növekvő</b>, ha <span class="math inline">\(a&gt;1\)</span>;</li><li><b>szigorúan csökkenő</b>, ha <span class="math inline">\(0&lt;a&lt;1\)</span>.</li></ul><p>Mindkét esetben <b>kölcsönösen egyértelmű</b> (injektív): különböző kitevőkhöz különböző értékek tartoznak. Ez az a tulajdonság, amire az összes exponenciális egyenlet megoldása épül.</p>
+      <p>Az <span class="math inline">\(f(x)=a^{x}\)</span> függvény</p><ul><li><b>szigorúan növekvő</b>, ha <span class="math inline">\(a&gt;1\)</span>;</li><li><b>szigorúan csökkenő</b>, ha <span class="math inline">\(0&lt;a&lt;1\)</span>.</li></ul><p>Mindkét esetben <b>kölcsönösen egyértelmű</b> (injektív): különböző kitevőkhöz különböző értékek tartoznak. Ez az a tulajdonság, amely a közös alapra hozott egyenleteknél lehetővé teszi a kitevők összehasonlítását.</p>
     </div>
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Miért ilyen gyors?</p>
-      <p>Ha egy papírlapot elméletben <span class="math inline">\(42\)</span>-szer félbehajtanál, a vastagsága <span class="math inline">\(0{,}1\ \text{mm}\cdot 2^{42}\)</span> lenne — nagyjából <b>440 000 km</b>, több mint a Föld–Hold távolság. Ez ugyanaz a <span class="math inline">\(2^{x}\)</span>, amit a grafikonon látsz: a bal oldalon szinte rátapad a tengelyre, a jobb oldalon pedig elszalad.</p>
+      <p>Egy kezdetben <span class="math inline">\(0{,}1\ \text{mm}\)</span> vastag papírlap vastagsága minden félbehajtáskor megkétszereződne. Ha ezt elméletben <span class="math inline">\(42\)</span>-szer megismételnénk, <span class="math inline">\(0{,}1\ \text{mm}\cdot2^{42}\)</span>, nagyjából <b>440 000 km</b> adódna. Ez több a <a href="https://science.nasa.gov/moon/facts/">Föld és a Hold átlagos távolságánál</a>. Ennyiszer egy valódi lapot nem lehet félbehajtani; a gondolatkísérlet a növekedés ütemét szemlélteti.</p>
     </div>
 
     <h2 id="s3">Tulajdonságok</h2>
@@ -223,7 +223,7 @@
 
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-exponencialis.html#alap-1">🐾 Bestia-protokoll <span class="cimke">A 1–6</span></a><a class="sav bruno" href="feladatok-exponencialis.html#kozep-1">🔥 Főnix-protokoll <span class="cimke">K 1–3</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/dr_bestia.webp" alt="Dr. Bestia — a kampusz fővezető tudósa" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Dr. Bestia:</b> A görbét ismerjük: a <span class="math inline">\(2^{x}\)</span> sosem áll meg, és sosem éri el a nullát. Most jön a kérdés, amiért az egészet csináljuk: <b>mikor</b> ér el egy adott értéket? Ez már egyenlet — és a jó hír, hogy a monotonitás miatt legfeljebb egy megoldása lesz.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/dr_bestia.webp" alt="Dr. Bestia — a kampusz fővezető tudósa" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Dr. Bestia:</b> Az <a href="#tetel-tulajdonsagok">alapfüggvény tulajdonságait</a> már ismerjük. Most azt keressük, melyik <span class="math inline">\(x\)</span>-nél vesz fel egy adott pozitív értéket. Az <span class="math inline">\(a^{x}=b\)</span> alakú egyenletnek a szigorú monotonitás miatt legfeljebb egy megoldása van. Az összetettebb exponenciális egyenleteknél több megoldás is előfordulhat.</p></div>
     <div class="lapozo">
       <a class="elozo" href="index.html"><span class="irany">← Előző</span><span class="hova">Exponenciális és logaritmusfüggvény</span></a>
       <a class="kov" href="tananyag-exponencialis-egyenletek.html"><span class="irany">Következő →</span><span class="hova">Exponenciális egyenletek</span></a>

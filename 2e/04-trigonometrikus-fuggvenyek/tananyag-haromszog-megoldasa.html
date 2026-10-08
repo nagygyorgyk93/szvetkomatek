@@ -39,7 +39,7 @@
 
     <div class="doboz tetel" id="tetel-recept">
       <p class="cim"><span class="ikon">📘</span> Melyik tétel kell?</p>
-      <div class="tblwrap"><table><tr><th>Ismert adatok</th><th>Első lépés</th><th>Folytatás</th></tr><tr><td><b>ASA / AAS</b><br>két szög + egy oldal</td><td>a harmadik szög <span class="math inline">\(180^\circ\)</span>-ból</td><td>szinusztétel a két oldalra</td></tr><tr><td><b>SAS</b><br>két oldal + közbezárt szög</td><td>koszinusztétel a harmadik oldalra</td><td>szinusztétel a <b>kisebbik</b> oldal szögére, a harmadik <span class="math inline">\(180^\circ\)</span>-ból</td></tr><tr><td><b>SSS</b><br>három oldal</td><td>koszinusztétel a <b>legnagyobb</b> oldal szögére</td><td>szinusztétel a másodikra, a harmadik <span class="math inline">\(180^\circ\)</span>-ból</td></tr><tr><td><b>SSA — kiegészítő</b><br>két oldal + nem közbezárt szög</td><td>szinusztétel</td><td>⚠️ ellenőrizd, van-e <b>két</b> megoldás</td></tr></table></div><p>A háromszög akkor és csak akkor létezik, ha a szögek összege <span class="math inline">\(180^\circ\)</span>, és teljesül a <b>háromszög-egyenlőtlenség</b>: bármely két oldal összege nagyobb a harmadiknál.</p>
+      <div class="tblwrap"><table><tr><th>Ismert adatok</th><th>Első lépés</th><th>Folytatás</th></tr><tr><td><b>ASA / AAS</b><br>két szög és egy oldal</td><td>harmadik szög</td><td>szinusztétel a hiányzó oldalakra</td></tr><tr><td><b>SAS</b><br>két oldal és a közbezárt szög</td><td>koszinusztétel a harmadik oldalra</td><td>szinusztétel a kisebbik oldal szögére, majd a harmadik szög</td></tr><tr><td><b>SSS</b><br>három oldal</td><td>koszinusztétel a legnagyobb oldal szögére</td><td>szinusztétel a második szögre, majd a harmadik szög</td></tr><tr><td><b>SSA — kiegészítő</b><br>két oldal és nem közbezárt szög</td><td>szinusztétel</td><td>ellenőrizd az összes lehetséges háromszöget</td></tr></table></div><p>Három <b>pozitív oldalhossz</b> akkor és csak akkor alkot háromszöget, ha bármely két oldal összege nagyobb a harmadiknál. A belső szögek pozitívak és összegük <span class="math inline">\(180^\circ\)</span>. Ha oldalakat és szögeket együtt adunk meg, ezeknek a szinusz- és koszinusztétellel is összhangban kell lenniük.</p>
     </div>
 
     <div class="doboz csapda">
@@ -59,8 +59,8 @@
     <svg viewBox="0 0 400 250" width="400" height="250" role="img" aria-label="A háromszög területe két oldalból és a közbezárt szögből">
       <line x1="230" y1="55" x2="230" y2="200" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="5 4"/>
       <rect x="230" y="189" width="11" height="11" fill="none" stroke="#94a3b8" stroke-width="1"/>
-      <text x="238" y="128" font-size="11" fill="#64748b">m</text>
-      <polygon points="60,200 330,200 230,55" fill="#f1f5f9" stroke="#0f172a" stroke-width="1.8" stroke-linejoin="round"/>
+      <text x="238" y="128" font-size="11" fill="#64748b">h<tspan baseline-shift="sub" font-size="8">c</tspan></text>
+      <polygon points="60,200 330,200 230,55" fill="none" stroke="#0f172a" stroke-width="1.8" stroke-linejoin="round"/>
       <text x="46" y="206" font-size="14" font-weight="700" fill="#0f172a" text-anchor="middle">A</text>
       <text x="340" y="206" font-size="14" font-weight="700" fill="#0f172a" text-anchor="middle">B</text>
       <text x="230" y="43" font-size="14" font-weight="700" fill="#0f172a" text-anchor="middle">C</text>
@@ -72,7 +72,7 @@
       <text x="232" y="81" font-size="12" fill="#3b82f6" text-anchor="middle">γ</text>
     </svg>
     </div>
-    <p class="cap">A <span class="math inline">\(T=\tfrac{a\cdot m}{2}\)</span> képletben a magasság kifejezhető: <span class="math inline">\(m=b\sin\gamma\)</span> — innen jön a trigonometrikus területképlet.</p>
+    <p class="cap">Az ábrán a <span class="math inline">\(c\)</span> oldalhoz tartozó magasság <span class="math inline">\(h_{c}\)</span>. Ezért <span class="math inline">\(T=\tfrac{c h_{c}}{2}\)</span> és <span class="math inline">\(h_{c}=b\sin\alpha\)</span>, így <span class="math inline">\(T=\tfrac12bc\sin\alpha\)</span>. Másik oldalt választva a területképlet további alakjait kapjuk.</p>
 
     <div class="doboz tetel" id="tetel-terulet">
       <p class="cim"><span class="ikon">📘</span> Terület két oldalból és a közbezárt szögből</p>
@@ -87,7 +87,7 @@
 
     <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A szögnek a két megadott oldal KÖZÖTT kell lennie — a képletben a gamma épp az a és b által bezárt szög." data-nem="✘ A képlet csak a két oldal ÁLTAL BEZÁRT szöggel működik. Ha a szög máshol van, előbb a szinusztétellel kell a hiányzó adatot megkeresni.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
-      <p>Melyik adatokból számolható a háromszög területe a <span class="math inline">\(T=\tfrac12ab\sin\gamma\)</span> képlettel?</p>
+      <p>Milyen adatokból számolható a háromszög területe a <span class="math inline">\(T=\tfrac12ab\sin\gamma\)</span> képlettel?</p>
       <div class="opciok"><button>Két oldal és bármelyik szög</button><button>Három oldal</button><button>Két oldal és a KÖZBEZÁRT szög</button></div>
       <p class="visszajelzes" aria-live="polite"></p>
     </div>
@@ -98,7 +98,7 @@
 
     <div class="doboz pelda" id="pelda-torony">
       <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció — a torony magassága</p>
-      <p>Egy torony tövéhez nem tudunk odajutni. Az <span class="math inline">\(A\)</span> pontból a torony csúcsát <span class="math inline">\(32^\circ\)</span>-os emelkedési szögben látjuk; <span class="math inline">\(50\)</span> métert közelebb menve, a <span class="math inline">\(B\)</span> pontból már <span class="math inline">\(48^\circ\)</span>-osban. Milyen magas a torony?</p>
+      <p>Egy függőleges torony tövéhez nem tudunk odajutni. A két megfigyelőpont és a torony talpa ugyanazon vízszintes egyenesen van, a megfigyelők a torony ugyanazon oldalán állnak. Az emelkedési szögeket a talaj szintjéről mérjük. Az <span class="math inline">\(A\)</span> pontból a torony csúcsát <span class="math inline">\(32^\circ\)</span>-os emelkedési szögben látjuk; <span class="math inline">\(50\)</span> métert közelebb menve, a <span class="math inline">\(B\)</span> pontból már <span class="math inline">\(48^\circ\)</span>-osban. Milyen magas a torony?</p>
       <details><summary>Megoldás</summary><div class="bel"><p>Nézzük az <span class="math inline">\(ABT\)</span> háromszöget (<span class="math inline">\(T\)</span> a torony csúcsa). Az <span class="math inline">\(A\)</span>-nál lévő szög <span class="math inline">\(32^\circ\)</span>. A <span class="math inline">\(B\)</span>-nél lévő <b>belső</b> szög a <span class="math inline">\(48^\circ\)</span> mellékszöge: <span class="math inline">\(180^\circ-48^\circ=132^\circ\)</span>. Ezért</p><span class="math display">\[\angle ATB=180^\circ-32^\circ-132^\circ=16^\circ.\]</span><p>Szinusztétel az <span class="math inline">\(ABT\)</span> háromszögben:</p><span class="math display">\[BT=\frac{AB\cdot\sin 32^\circ}{\sin 16^\circ}=\frac{50\cdot 0{,}52992}{0{,}27564}\approx 96{,}13\ \text{m}\]</span><p>Végül a <span class="math inline">\(BT\)</span> szakaszból a derékszögű háromszögben:</p><span class="math display">\[h=BT\cdot\sin 48^\circ\approx 96{,}13\cdot 0{,}74314\approx\boxed{71{,}44\ \text{m}}\]</span></div></details>
     </div>
 
@@ -106,31 +106,31 @@
     <svg viewBox="0 0 460 240" width="460" height="240" role="img" aria-label="Toronymagasság meghatározása két mérési pontból">
       <line x1="30" y1="200" x2="430" y2="200" stroke="#0f172a" stroke-width="1.8"/>
       <line x1="360" y1="200" x2="360" y2="60" stroke="#0f172a" stroke-width="2.4"/>
-      <rect x="360" y="60" width="11" height="11" fill="none" stroke="#94a3b8"/>
+      <rect x="360" y="189" width="11" height="11" fill="none" stroke="#94a3b8"/>
       <line x1="70" y1="200" x2="360" y2="60" stroke="#3b82f6" stroke-width="1.6"/>
       <line x1="215" y1="200" x2="360" y2="60" stroke="#ef4444" stroke-width="1.6"/>
       <circle cx="70" cy="200" r="4" fill="#3b82f6"/>
       <circle cx="215" cy="200" r="4" fill="#ef4444"/>
       <text x="70" y="218" font-size="12" fill="#3b82f6" text-anchor="middle">A</text>
       <text x="215" y="218" font-size="12" fill="#ef4444" text-anchor="middle">B</text>
-      <text x="360" y="218" font-size="12" fill="#0f172a" text-anchor="middle">T</text>
+      <text x="360" y="48" font-size="12" fill="#0f172a" text-anchor="middle">T</text>
       <text x="142" y="218" font-size="11" fill="#475569" text-anchor="middle">50 m</text>
       <text x="98" y="194" font-size="11" fill="#3b82f6">32°</text>
       <text x="240" y="194" font-size="11" fill="#ef4444">48°</text>
       <text x="374" y="135" font-size="12" font-style="italic" fill="#047857">h</text>
     </svg>
     </div>
-    <p class="cap">A két mérési pont és a torony egyetlen háromszöget alkot — a <span class="math inline">\(16^\circ\)</span>-os csúcsszög a két emelkedési szög <b>különbsége</b>.</p>
+    <p class="cap">A két mérési pont és a torony csúcsa háromszöget alkot (az ábra nem méretarányos) — a <span class="math inline">\(16^\circ\)</span>-os csúcsszög a két emelkedési szög <b>különbsége</b>.</p>
 
     <div class="doboz pelda" id="pelda-navigacio">
       <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció — navigáció</p>
-      <p>Egy hajó a kikötőből <span class="math inline">\(30\)</span> km-t halad egyenesen, majd <span class="math inline">\(115^\circ\)</span>-kal elfordul, és további <span class="math inline">\(40\)</span> km-t tesz meg. Milyen messze van a kikötőtől?</p>
+      <p>Egy hajó a kikötőből <span class="math inline">\(30\)</span> km-t halad egyenesen, majd az eredeti haladási irányához képest <span class="math inline">\(115^\circ\)</span>-kal elfordul, és további <span class="math inline">\(40\)</span> km-t tesz meg. Milyen messze van a kikötőtől?</p>
       <details><summary>Megoldás</summary><div class="bel"><p>A két útszakasz és a keresett távolság háromszöget alkot. A <b>belső</b> szög nem <span class="math inline">\(115^\circ\)</span>, hanem a mellékszöge: <span class="math inline">\(180^\circ-115^\circ=65^\circ\)</span>.</p><span class="math display">\[d^{2}=30^{2}+40^{2}-2\cdot 30\cdot 40\cdot\cos 65^\circ=2500-2400\cdot 0{,}42262\approx 1485{,}7\]</span><span class="math display">\[d\approx\boxed{38{,}54\ \text{km}}\]</span><p>⚠️ Az „elfordul <span class="math inline">\(115^\circ\)</span>-kal” az <b>iránytól</b> való eltérés — a háromszög belső szöge ennek a mellékszöge. Ez a leggyakoribb hiba a navigációs feladatokban.</p></div></details>
     </div>
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Így mérték meg a Földet</p>
-      <p>A <b>háromszögelés</b> évszázadokig a térképészet alapmódszere volt: kijelöltek egy pontosan lemért alapvonalat, majd szögméréssel, szinusztétellel terjeszkedtek tovább, háromszögről háromszögre. Így készült a Nagy Trigonometriai Felmérés Indiában is, amely a Mount Everest magasságát megadta — <span class="math inline">\(8840\)</span> méternek, alig <span class="math inline">\(8\)</span> méterrel a mai értéktől.</p>
+      <p>A <b>háromszögelés</b> sokáig a térképészet egyik alapmódszere volt. Először pontosan lemértek egy alapvonalat, majd a hozzá kapcsolódó háromszögek szögeiből számolták a további távolságokat. Az <a href="https://royalsociety.org/blog/2023/09/mapping-india/">indiai Nagy Trigonometriai Felmérés</a> során így azonosították a Mount Everestet a legmagasabb hegyként.</p>
     </div>
 
     <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ T = ½ · 6 · 9 · sin 30° = 27 · 0,5 = 13,5." data-nem="✘ T = ½ab sin γ = ½ · 6 · 9 · 0,5 = 13,5.">

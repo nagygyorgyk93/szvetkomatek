@@ -115,40 +115,43 @@ B1 = [
 
  ("A négy alapösszefüggés", [
    doboz("tetel", "Amit fejből kell tudni",
-         '<p>Legyen $a&gt;0$ és $a\\neq 1$. Ekkor minden $b&gt;0$ esetén:</p>'
-         '$$\\log_{a}1=0,\\qquad \\log_{a}a=1,\\qquad a^{\\log_{a}b}=b,$$'
-         '<p>és tetszőleges $k\\in\\mathbb{R}$ kitevőre:</p>'
-         '$$\\log_{a}a^{k}=k.$$'
-         '<p>Figyeld meg a különbséget: az $a^{k}$ magától pozitív, ezért a negyedikhez '
-         'nem kell külön kikötés; az $a^{\\log_{a}b}=b$-hez viszont kell a $b&gt;0$, '
-         'különben a $\\log_{a}b$ le sem írható.</p>'
-         '<p>Az első kettő közvetlenül a definícióból jön ($a^{0}=1$, $a^{1}=a$). '
-         'A harmadik és a negyedik azt fejezi ki, hogy a <b>logaritmus és a hatványozás '
-         'kioltják egymást</b> — pontosan úgy, ahogy a négyzetre emelés és a négyzetgyök.</p>',
+         (
+             '<p>Legyen $a&gt;0$ és $a\\neq 1$. Ekkor minden $b&gt;0$ esetén:</p>$$\\log_{a}1=0,\\qquad '
+             '\\log_{a}a=1,\\qquad a^{\\log_{a}b}=b,$$<p>és tetszőleges $k\\in\\mathbb{R}$ '
+             'kitevőre:</p>$$\\log_{a}a^{k}=k.$$<p>Figyeld meg a különbséget: az $a^{k}$ magától pozitív, ezért a '
+             'negyedikhez nem kell külön kikötés; az $a^{\\log_{a}b}=b$-hez viszont kell a $b&gt;0$, különben a '
+             '$\\log_{a}b$ le sem írható.</p><p>Az első kettő közvetlenül a definícióból jön ($a^{0}=1$, '
+             '$a^{1}=a$). A harmadik és a negyedik azt fejezi ki, hogy a <b>logaritmus és a hatványozás kioltják '
+             'egymást</b> — ahogy a négyzetre emelés és a négyzetgyökvonás a nemnegatív számokon: '
+             '$\\sqrt{x^{2}}=x$, ha $x\\ge0$.</p>'
+         ),
          hid="tetel-alaposszefuggesek",
          lenyilo=("Miért igaz a harmadik és a negyedik?",
-                  '<p><b>A harmadik.</b> A $\\log_{a}a^{k}$ arra kérdez rá, hogy az $a$-t '
-                  'hányadik hatványra kell emelni ahhoz, hogy $a^{k}$-t kapjunk. A válasz '
-                  'ránézésre adódik: a $k$-adikra — tehát $\\log_{a}a^{k}=k$.</p>'
-                  '<p><b>A negyedik.</b> A $\\log_{a}b$ definíció szerint az a kitevő, amelyre '
-                  '$a$-t emelve $b$-t kapunk. Ha tehát $a$-t épp erre a kitevőre emeljük, '
-                  'definíció szerint $b$-t kell kapnunk. Ez a legfontosabb azonosság a '
-                  'logaritmusos egyenletek megoldásánál.</p>')),
+                  (
+                      '<p><b>A negyedik.</b> A $\\log_{a}a^{k}$ arra kérdez rá, hogy az $a$-t hányadik hatványra kell '
+                      'emelni ahhoz, hogy $a^{k}$-t kapjunk. A válasz ránézésre adódik: a $k$-adikra — tehát '
+                      '$\\log_{a}a^{k}=k$.</p><p><b>A harmadik.</b> A $\\log_{a}b$ definíció szerint az a kitevő, amelyre '
+                      '$a$-t emelve $b$-t kapunk. Ha tehát $a$-t épp erre a kitevőre emeljük, definíció szerint $b$-t kell '
+                      'kapnunk. Ez a legfontosabb azonosság a logaritmusos egyenletek megoldásánál.</p>'
+                  ))),
    doboz("definicio", "Két kitüntetett alap",
-         '<p><b>Tízes alapú (Briggs-féle) logaritmus:</b> ha az alap $10$, gyakran '
-         'elhagyjuk a jelölésből:</p>'
-         '$$\\log_{10}b=\\lg b\\quad(\\text{vagy egyszerűen }\\log b).$$'
-         '<p><b>Természetes alapú logaritmus:</b> az alap az $e\\approx 2{,}71828$ '
-         'Euler-féle szám:</p>'
-         '$$\\log_{e}b=\\ln b.$$'
-         '<p>A számológépeden ez a két gomb szerepel — minden más alapú logaritmust '
-         'ezekre kell visszavezetni (lásd az <a href="tananyag-attetes-mas-alapra.html">Áttérés más alapra</a> egységben).</p>',
+         (
+             '<p><b>Tízes alapú (Briggs-féle) logaritmus:</b> ha az alap $10$, gyakran elhagyjuk a '
+             'jelölésből:</p>$$\\log_{10}b=\\lg b\\quad(\\text{vagy egyszerűen }\\log b).$$<p><b>Természetes alapú '
+             'logaritmus:</b> az alap az $e\\approx 2{,}71828$ Euler-féle szám:</p>$$\\log_{e}b=\\ln b.$$<p>Sok '
+             'számológépen ez a két logaritmus számolható közvetlenül. Más alaphoz ilyenkor az áttérési képletet '
+             'használjuk (lásd az <a href="tananyag-attetes-mas-alapra.html">Áttérés más alapra</a> '
+             'egységben).</p>'
+         ),
          hid="def-lg-ln"),
    doboz("erdekesseg", "Miért találták ki?",
-         '<p>John Napier 1614-ben azért publikálta a logaritmustáblákat, hogy a csillagászok '
-         'megússzák a többjegyű <b>szorzásokat</b>: a logaritmus a szorzást összeadássá '
-         'alakítja. Három és fél évszázadon át a logarléc volt a mérnökök „számológépe” — az '
-         'Apollo-küldetések űrhajósai is vittek magukkal egyet.</p>'),
+         (
+             '<p>John Napier <a href="https://library.si.edu/digital-library/book/mirificilogarit00napi">1614-ben '
+             'megjelent könyvében</a> logaritmustáblákat közölt. Ezekkel a többjegyű számok szorzását '
+             'összeadással lehetett elvégezni. Később a logarléc lett a mérnökök egyik számolóeszköze; az <a '
+             'href="https://www.si.edu/object/slide-rule-5-inch-pickett-n600-es-apollo-13%3Anasm_A19840160000">Apo'
+             'llo–13 legénysége is használt ilyet</a>.</p>'
+         )),
    kviz('Mennyi $\\log_{7}1+\\log_{4}4$?',
         ['$1$', '$0$', '$2$'], 0,
         jo="✔ log₇1 = 0 és log₄4 = 1, az összeg 1.",
@@ -190,20 +193,21 @@ B2 = [
                   '$\\log_{a}u^{k}=pk=k\\log_{a}u$.</p>'
                   '<p>Mindhárom ugyanarra épül: a logaritmus a <b>kitevőt</b> adja vissza, a hatványozás azonosságai pedig épp a kitevőkkel végzett műveleteket írják le.</p>')),
    doboz("csapda", "Dr. Baljós vírus-kódja",
-         '<p>A leggyakoribb — és legköltségesebb — hiba az azonosságok <b>összegre</b> '
-         'való alkalmazása:</p>'
-         '<p>✘ $\\log_{a}(u+v)=\\log_{a}u+\\log_{a}v$ &nbsp;&nbsp; '
-         '✔ $\\log_{a}(u\\cdot v)=\\log_{a}u+\\log_{a}v$</p>'
-         '<p>Próbáld ki (a $\\lg$ a <a href="tananyag-logaritmus-fogalma.html#def-lg-ln">tízes alapú logaritmus</a>): $\\lg(1+9)=\\lg 10=1$, míg $\\lg 1+\\lg 9=0+\\lg 9\\approx 0{,}95$ — '
-         'nem egyenlők. <b>A logaritmusnak a szorzásról van mondanivalója, az összeadásról nincs.</b></p>'
-         '<p>Ugyanígy hibás: $\\dfrac{\\log_{a}u}{\\log_{a}v}=\\log_{a}\\dfrac{u}{v}$. Az '
-         'argumentumok osztásából a logaritmusok <b>kivonása</b> lesz, nem az osztásuk. '
-         '(A logaritmusok hányadosának egyébként van jelentése — de egészen más: erre való '
-         'az <a href="tananyag-attetes-mas-alapra.html">áttérési képlet</a>.)</p>'
-         '<p>Végül vigyázz a <b>páros</b> kitevőre: a $\\log_{a}(x^{2})$ minden $x\\neq 0$-ra '
-         'létezik, a $2\\log_{a}x$ viszont csak $x&gt;0$-ra — a kettő tehát nem ugyanaz. '
-         'Helyesen $\\log_{a}(x^{2})=2\\log_{a}|x|$. Bontáskor mindig kérdezd meg: az új '
-         'alak ugyanazokra az $x$-ekre értelmes-e, mint a régi?</p>'),
+         (
+             '<p>A leggyakoribb — és legköltségesebb — hiba az azonosságok <b>összegre</b> való '
+             'alkalmazása:</p><p>✘ $\\log_{a}(u+v)=\\log_{a}u+\\log_{a}v$ &nbsp;&nbsp; ✔ $\\log_{a}(u\\cdot '
+             'v)=\\log_{a}u+\\log_{a}v$</p><p>Próbáld ki (a $\\lg$ a <a '
+             'href="tananyag-logaritmus-fogalma.html#def-lg-ln">tízes alapú logaritmus</a>): $\\lg(1+9)=\\lg 10=1$, '
+             'míg $\\lg 1+\\lg 9=0+\\lg 9\\approx 0{,}95$ — nem egyenlők. <b>Az összeg logaritmusa általában nem '
+             'egyenlő a tagok logaritmusának összegével.</b></p><p>Ugyanígy hibás: '
+             '$\\dfrac{\\log_{a}u}{\\log_{a}v}=\\log_{a}\\dfrac{u}{v}$. Az argumentumok osztásából a logaritmusok '
+             '<b>kivonása</b> lesz, nem az osztásuk. (A logaritmusok hányadosának egyébként van jelentése — de '
+             'egészen más: erre való az <a href="tananyag-attetes-mas-alapra.html">áttérési '
+             'képlet</a>.)</p><p>Végül vigyázz a <b>páros</b> kitevőre: a $\\log_{a}(x^{2})$ minden $x\\neq 0$-ra '
+             'létezik, a $2\\log_{a}x$ viszont csak $x&gt;0$-ra — a kettő tehát nem ugyanaz. Helyesen '
+             '$\\log_{a}(x^{2})=2\\log_{a}|x|$. Bontáskor mindig kérdezd meg: az új alak ugyanazokra az $x$-ekre '
+             'értelmes-e, mint a régi?</p>'
+         )),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Számold ki: <b>a)</b> $\\lg 50+\\lg 2$; <b>b)</b> $\\log_{2}48-\\log_{2}3$; '
          '<b>c)</b> $\\log_{3}\\sqrt{27}$; <b>d)</b> $2\\log_{3}9$.</p>',
@@ -220,16 +224,18 @@ B2 = [
  ]),
 
  ("Kifejezések bontása és összevonása", [
-   'Az azonosságokat <b>mindkét irányban</b> használjuk — de a két irány nem egyformán '
-   'ártalmatlan: összevonáskor az értelmezési tartomány bővülhet, bontáskor szűkül, ezért '
-   'egyenletmegoldásnál a végén mindig ellenőrizni kell a kapott gyököket. '
-   'Egyenletmegoldásnál általában '
-   '<b>összevonunk</b> (hogy egyetlen logaritmus maradjon), számoláskor pedig '
-   '<b>szétbontunk</b> (hogy ismert értékekre jussunk).',
+   (
+       '<p>Az azonosságokat <b>mindkét irányban</b> használjuk, a feltételeik megtartásával. '
+       'Egyenletmegoldáskor rendszerint összevonunk, hogy egyetlen logaritmus maradjon; számoláskor gyakran '
+       'bontunk, hogy ismert értékekhez jussunk. Az eredeti értelmezési tartományt végig meg kell tartani, '
+       'mert az átalakított kifejezés több helyen is értelmes lehet.</p>'
+   ),
    doboz("pelda", "Vészterem-szimuláció",
-         '<p><b>a)</b> Bontsd fel: $\\log_{a}\\dfrac{x^{3}\\sqrt{y}}{z}$.<br>'
-         '<b>b)</b> Vond össze egyetlen logaritmussá: '
-         '$2\\log_{a}x+\\tfrac12\\log_{a}y-3\\log_{a}z$.</p>',
+         (
+             '<p>Legyen $a&gt;0$, $a\\neq1$ és $x,y,z&gt;0$.</p><p><b>a)</b> Bontsd fel: '
+             '$\\log_{a}\\dfrac{x^{3}\\sqrt{y}}{z}$.<br><b>b)</b> Vond össze egyetlen logaritmussá: '
+             '$2\\log_{a}x+\\tfrac12\\log_{a}y-3\\log_{a}z$.</p>'
+         ),
          hid="pelda-bontas",
          lenyilo=("Megoldás",
                   '<p><b>a)</b> Először a hányados, majd a szorzat, végül a hatvány:</p>'
@@ -243,7 +249,11 @@ B2 = [
         jo="✔ Az összeg szorzattá válik az argumentumban: log₂(5·4) = log₂20.",
         nem="✘ A logaritmusok ÖSSZEGE az argumentumok SZORZATÁnak logaritmusa: log₂20."),
    gyakorolj(FGY + "#alap-7", "A 7–12", FGY + "#kozep-4", "K 4–8"),
-   brief('<b>Dr. Bestia:</b> Három azonosság, és bármit szét tudsz szedni. Egy dolog hiányzik még: a számológépeden csak <b>két</b> gomb van, $\lg$ és $\ln$. Hogyan számolsz ki egy $\log_{3}20$-at? Egyetlen képlet kell hozzá.', outro=True),
+   brief((
+             '<b>Dr. Bestia:</b> A szorzatot, hányadost és hatványt tartalmazó logaritmuskifejezéseket már tudjuk '
+             'bontani és összevonni. De hogyan számolunk ki például egy $\\log_{3}20$-at, ha a számológépünkön '
+             'csak $\\lg$ és $\\ln$ van? Erre szolgál az áttérési képlet.'
+         ), outro=True),
  ]),
 ]
 
@@ -251,20 +261,21 @@ B2 = [
 
 B3 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Dr. Bestia:</b> Itt az igazság pillanata. A számológépeden két logaritmus-gomb van: '
-         '<b>lg</b> és <b>ln</b>. De a vírus kettesével szaporodik, tehát nekem '
-         '$\\log_{2}$ kellene. Elakadtunk? Nem — létezik egy képlet, amely '
-         '<b>bármely</b> alapot visszavezet egy másikra. Ezzel a logaritmus '
-         'végre használható eszközzé válik a laborban is.'),
+   brief((
+             '<b>Dr. Bestia:</b> A modellben a fertőzött sejtek száma óránként megkétszereződik. Az idő '
+             'kiszámításához ezért kettes alapú logaritmus kell. Ha a számológépeden csak $\\lg$ és $\\ln$ van, az '
+             '<b>áttérési képlettel</b> ezekből is megkaphatod a keresett értéket.'
+         )),
  ]),
 
  ("Áttérés más alapra", [
    doboz("tetel", "Az áttérési képlet",
-         '<p>Legyen $a,t&gt;0$, $a\\neq 1$, $t\\neq 1$ és $b&gt;0$ — a $t$ az <b>új alap</b>. '
-         'Ekkor</p>'
-         '$$\\log_{a}b=\\frac{\\log_{t}b}{\\log_{t}a}.$$'
-         '<p>A gyakorlatban $t=10$ (vagy $t=e$), így a számológéppel bármi kiszámolható:</p>'
-         '$$\\log_{a}b=\\frac{\\lg b}{\\lg a}=\\frac{\\ln b}{\\ln a}.$$',
+         (
+             '<p>Legyen $a,t&gt;0$, $a\\neq 1$, $t\\neq 1$ és $b&gt;0$ — a $t$ az <b>új alap</b>. '
+             'Ekkor</p>$$\\log_{a}b=\\frac{\\log_{t}b}{\\log_{t}a}.$$<p>A gyakorlatban $t=10$ (vagy $t=e$), így a '
+             'logaritmus értéke számológéppel közelíthető:</p>$$\\log_{a}b=\\frac{\\lg b}{\\lg a}=\\frac{\\ln b}{\\ln '
+             'a}.$$'
+         ),
          hid="tetel-attetes",
          lenyilo=("Miért igaz?",
                   '<p>Legyen $\\log_{a}b=c$, azaz $a^{c}=b$ (a $c$ itt is a logaritmus '
@@ -274,13 +285,13 @@ B3 = [
                   '<p>Mivel $a\\neq 1$, a $\\log_{t}a\\neq 0$, tehát oszthatunk vele: '
                   '$c=\\dfrac{\\log_{t}b}{\\log_{t}a}$.</p>')),
    doboz("csapda", "Dr. Baljós vírus-kódja",
-         '<p><b>Ne keverd össze!</b> A képletben <b>osztás</b> áll, nem kivonás; a '
-         'számlálóban az <b>argumentum</b> logaritmusa áll, a nevezőben az <b>alapé</b>:</p>'
-         '<p>✔ $\\log_{2}7=\\dfrac{\\lg 7}{\\lg 2}$ &nbsp;&nbsp;&nbsp; '
-         '✘ $\\log_{2}7=\\dfrac{\\lg 2}{\\lg 7}$ &nbsp;&nbsp;&nbsp; '
-         '✘ $\\log_{2}7=\\lg 7-\\lg 2$</p>'
-         '<p>Ellenőrzés fejben: $\\log_{2}7$ valahol $2$ és $3$ között van (mert '
-         '$2^{2}=4&lt;7&lt;8=2^{3}$). Ha a géped $0{,}36$-ot ad, felcserélted a törtet.</p>'),
+         (
+             '<p><b>Ne keverd össze!</b> A képletben <b>osztás</b> áll, nem kivonás; a számlálóban az '
+             '<b>argumentum</b> logaritmusa áll, a nevezőben az <b>alapé</b>:</p><p>✔ $\\log_{2}7=\\dfrac{\\lg '
+             '7}{\\lg 2}$ &nbsp;&nbsp;&nbsp; ✘ $\\log_{2}7=\\dfrac{\\lg 2}{\\lg 7}$ &nbsp;&nbsp;&nbsp; ✘ '
+             '$\\log_{2}7=\\lg 7-\\lg 2$</p><p>Ellenőrzés fejben: $\\log_{2}7$ valahol $2$ és $3$ között van (mert '
+             '$2^{2}=4&lt;7&lt;8=2^{3}$). Ha a géped $0{,}36$-ot ad, felcserélted a számlálót és a nevezőt.</p>'
+         )),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Számold ki négy tizedesjegy pontossággal: <b>a)</b> $\\log_{11}12$; '
          '<b>b)</b> $\\log_{7}23$.</p>',
@@ -301,48 +312,56 @@ B3 = [
  ]),
 
  ("Mire jó a logaritmus?", [
-   'A logaritmus azért fontos, mert <b>a nagyságrendeket kezelhetővé teszi</b>. Ahol '
-   'a mért mennyiségek több nagyságrendet fognak át, ott szinte biztosan logaritmikus '
-   'skálát találsz.',
+   (
+       'Több nagyságrendet átfogó mennyiségeknél gyakran használunk <b>logaritmikus skálát</b>. Így a nagy '
+       'arányokat kisebb számkülönbségekkel tudjuk leírni.'
+   ),
    doboz("erdekesseg", "Logaritmikus skálák a természetben",
-         '<div class="tblwrap"><table>'
-         '<tr><th>Skála</th><th>Képlet</th><th>Mit mér?</th></tr>'
-         '<tr><td>pH</td><td>$\\mathrm{pH}=-\\lg[\\mathrm{H}^{+}]$</td>'
-         '<td>a savasságot; egy egység = <b>tízszeres</b> különbség</td></tr>'
-         '<tr><td>Richter</td><td>$M=\\lg\\dfrac{A}{A_{0}}$</td>'
-         '<td>a földrengés <b>kilengését</b>; egy egység = tízszeres kilengés, tehát a 6-os '
-         '<b>ezerszer</b> akkora kilengésű, mint a 3-as</td></tr>'
-         '<tr><td>decibel</td><td>$L=10\\lg\\dfrac{I}{I_{0}}$</td>'
-         '<td>a hangerőt</td></tr>'
-         '</table></div>'),
+         (
+             '<div class="tblwrap"><table><tr><th>Skála</th><th>Képlet</th></tr><tr><td>pH</td><td>$\\mathrm{pH}\\ap'
+             'prox-\\lg[\\mathrm{H}^{+}]$</td></tr><tr><td>Richter</td><td>$M=\\lg\\dfrac{A}{A_{0}}$</td></tr><tr><td>'
+             'Hangintenzitásszint</td><td>$L=10\\lg\\dfrac{I}{I_{0}}$</td></tr></table></div><p><b>pH:</b> híg '
+             'oldatok egyszerűsített modellje. Itt $[\\mathrm{H}^{+}]$ a mol/dm³-ben mért koncentráció számértéke. '
+             'Egy pH-egység tízszeres koncentrációarányt jelent. A pontos definíció az ionok aktivitásán alapul: '
+             '<a href="https://goldbook.iupac.org/terms/view/P04524">IUPAC</a>.</p><p><b>Richter:</b> $A$ a '
+             'szeizmogramon mért amplitúdó, $A_{0}$ a mérési távolsághoz tartozó referencia. Azonos mérési '
+             'feltételeknél egy magnitúdóegység tízszeres amplitúdóarány. Ez nem a felszabaduló energiát '
+             'hasonlítja össze: <a href="https://www.usgs.gov/programs/earthquake-hazards/magnitude-types">USGS</a'
+             '>.</p><p><b>Hangintenzitásszint:</b> $I$ a hangintenzitás, $I_{0}$ a referencia-intenzitás. <b>10 '
+             'dB</b> különbség tízszeres intenzitásarányt jelent.</p>'
+         )),
    doboz("pelda", "Vészterem-szimuláció",
-         '<p><b>a)</b> A fertőzött sejtek száma óránként megkétszereződik, egyetlen sejtből '
-         'indulva. Hány óra múlva éri el az egymilliót?<br>'
-         '<b>b)</b> Egy bankban a pénz évi $5\\%$-kal gyarapszik. Hány év alatt '
-         'duplázódik meg?</p>',
+         (
+             '<p><b>a)</b> Egy egyszerűsített, folytonos modellben a fertőzött sejtek számát $N(t)=2^{t}$ '
+             'közelíti, ahol $t\\ge0$ az órákban mért idő. Mikor éri el a modell az egymilliót? Egész órákban '
+             'mérve mikor lesz először legalább ennyi?<br><b>b)</b> Egy betét összegét minden év végén $5\\%$ '
+             'kamattal növelik. Nincs további befizetés, kivét vagy költség. Hány <b>teljes év</b> után lesz '
+             'először legalább a kezdeti összeg kétszerese?</p>'
+         ),
          hid="pelda-alkalmazas",
          lenyilo=("Megoldás",
-                  '<p><b>a)</b> A modell: $2^{x}=1\\,000\\,000$. Innen</p>'
-                  '$$x=\\log_{2}1\\,000\\,000=\\frac{\\lg 10^{6}}{\\lg 2}='
-                  '\\frac{6}{0{,}30103}\\approx 19{,}93.$$'
-                  '<p>Tehát a <b>20. órában</b> lépi át az egymilliót — a modell óránként duplázódik, és $2^{19}=524\\,288$ még kevesebb, $2^{20}=1\\,048\\,576$ már több. Figyeld meg: '
-                  'a millió hatalmas szám, de a logaritmusa csak $20$ — ez a '
-                  'nagyságrend-kezelés lényege.</p>'
-                  '<p><b>b)</b> A modell: $1{,}05^{n}=2$, tehát</p>'
-                  '$$n=\\log_{1{,}05}2=\\frac{\\lg 2}{\\lg 1{,}05}\\approx'
-                  '\\frac{0{,}30103}{0{,}02119}\\approx 14{,}21.$$'
-                  '<p>Vagyis nagyjából <b>15 év</b> alatt duplázódik meg a pénz (a 14. '
-                  'év végén még nincs meg a kétszeres).</p>')),
-   kviz('Hányszorosa egy 7-es erősségű földrengés kilengése a 4-esének?',
+                  (
+                      '<p><b>a)</b> A modell: $2^{x}=1\\,000\\,000$. Innen</p>$$x=\\log_{2}1\\,000\\,000=\\frac{\\lg 10^{6}}{\\lg '
+                      '2}=\\frac{6}{0{,}30103}\\approx 19{,}93.$$<p>A folytonos modell szerint körülbelül <b>19,93 óra</b> '
+                      'múlva éri el az egymilliót. Egész órák között először <b>20 teljes óra</b> után lesz legalább '
+                      'ennyi: $2^{19}=524\\,288$ még kevesebb, $2^{20}=1\\,048\\,576$ már több. Figyeld meg: a millió nagy '
+                      'szám, a kettes alapú logaritmusa viszont körülbelül $20$ — ez a nagyságrend-kezelés '
+                      'lényege.</p><p><b>b)</b> A modell: $1{,}05^{n}=2$, tehát</p>$$n=\\log_{1{,}05}2=\\frac{\\lg 2}{\\lg '
+                      '1{,}05}\\approx\\frac{0{,}30103}{0{,}02119}\\approx 14{,}21.$$<p>Az év végi jóváírás miatt először '
+                      '<b>15 teljes év</b> után éri el a kétszeres összeget; a 14. év végén még kevesebb annál. A tört '
+                      'évre kapott érték itt csak az egész évek összehasonlítását segíti.</p>'
+                  ))),
+   kviz('A Richter-modellben, azonos mérési feltételeknél hányszorosa egy 7-es magnitúdójú földrengés mért amplitúdója egy 4-esének?',
         ['1000-szer', '3-szor', '$\\tfrac74$-szer'], 0,
         jo="✔ A Richter-skála logaritmikus: 3 egység különbség = 10³ = 1000-szeres.",
-        nem="✘ A skála logaritmikus — minden egység tízszeres kilengést jelent, tehát 10³ = 1000."),
+        nem='✘ A skála logaritmikus — minden egység tízszeres amplitúdóarányt jelent, tehát 10³ = 1000.'),
    gyakorolj(FGY + "#alap-13", "A 13–18", FGY + "#kozep-9", "K 9–14"),
-   brief('<b>Dr. Bestia:</b> Megvan az eszköz. Most már bármelyik exponenciális egyenletet meg '
-         'tudjuk oldani — akkor is, ha a két oldal nem hozható közös alapra. Egy dolog '
-         'maradt hátra: ha a logaritmus a hatványozás fordítottja, akkor a '
-         '<b>logaritmusfüggvény</b> az exponenciális függvény <b>inverze</b>. '
-         'A következő küldetésben ezt a tükörképet nézzük meg.', outro=True),
+   brief((
+             '<b>Dr. Bestia:</b> Az $a^{x}=b$ alakú egyenletet pozitív $b$ esetén akkor is meg tudjuk oldani, ha '
+             '$b$ nem írható fel egyszerűen az $a$ hatványaként. A következő kérdés: milyen függvényt kapunk, ha '
+             'egy hatványértékhez rendeljük hozzá a kitevőt? A <b>logaritmusfüggvényt</b>, az exponenciális '
+             'függvény inverzét.'
+         ), outro=True),
  ]),
 ]
 
