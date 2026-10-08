@@ -151,7 +151,7 @@
 
     <div class="doboz definicio" id="def-egyoldali">
       <p class="cim"><span class="ikon">📗</span> Egyoldali határérték</p>
-      <p><span class="math inline">\(\lim\limits_{x\to a-0}f(x)\)</span> a <b>bal oldali</b> határérték (csak <span class="math inline">\(a\)</span>-nál kisebb <span class="math inline">\(x\)</span>-ekkel közelítünk), <span class="math inline">\(\lim\limits_{x\to a+0}f(x)\)</span> a <b>jobb oldali</b> (csak <span class="math inline">\(a\)</span>-nál nagyobbakkal).</p><p>A <span class="math inline">\(\lim\limits_{x\to a}f(x)\)</span> határérték akkor és csak akkor létezik, ha a két egyoldali határérték létezik és egyenlő; ekkor ez a közös érték a határérték.</p>
+      <p><span class="math inline">\(\lim\limits_{x\to a-0}f(x)\)</span> a <b>bal oldali</b> határérték (csak <span class="math inline">\(a\)</span>-nál kisebb <span class="math inline">\(x\)</span>-ekkel közelítünk), <span class="math inline">\(\lim\limits_{x\to a+0}f(x)\)</span> a <b>jobb oldali</b> (csak <span class="math inline">\(a\)</span>-nál nagyobbakkal).</p><p>Ha <span class="math inline">\(a\)</span>-hoz mindkét oldalról közelíthetünk az értelmezési tartományban, a <span class="math inline">\(\lim\limits_{x\to a}f(x)\)</span> kétoldali határérték akkor és csak akkor létezik, ha a két egyoldali határérték létezik és egyenlő; ekkor ez a közös érték a határérték.</p>
     </div>
 
     <div class="svgcard">
@@ -203,7 +203,7 @@
 
     <div class="doboz definicio" id="def-folytonos">
       <p class="cim"><span class="ikon">📗</span> Folytonosság egy pontban</p>
-      <p>Az <span class="math inline">\(f\)</span> függvény folytonos az <span class="math inline">\(a\in D_f\)</span> helyen, ha <span class="math inline">\(\lim\limits_{x\to a}f(x)=f(a)\)</span> — vagyis a határérték létezik, és egyenlő a helyettesítési értékkel.</p>
+      <p>Az <span class="math inline">\(f\)</span> függvény folytonos az <span class="math inline">\(a\in D_f\)</span> helyen, ha <span class="math inline">\(\lim\limits_{x\to a}f(x)=f(a)\)</span> — vagyis a határérték létezik, és egyenlő a helyettesítési értékkel. A tartomány végpontjában csak a tartomány felől közelítünk: például a négyzetgyökfüggvény a <span class="math inline">\(0\)</span>-ban jobbról folytonos.</p>
     </div>
 
     <div class="doboz tetel" id="tetel-folytonos-elemi">
@@ -215,7 +215,7 @@
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
-      <p>Ugró, „lépcsős” függvény a postai díjszabás (20 grammig egy ár, fölötte egy másik) és a taxióra: az ár egy-egy határon hirtelen változik, közben nem.</p>
+      <p>Képzelj el egy tömegsávok szerinti postai díjszabást: egy sávon belül az ár állandó, a következő sáv határán megváltozik. A távolsági díjat meghatározott útszakaszonként növelő taxióra kijelzése is lépcsős függvénnyel modellezhető.</p>
     </div>
 
     <!-- media:begin 4e02-folytonos-11 -->

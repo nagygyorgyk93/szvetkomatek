@@ -127,22 +127,28 @@ B3 = [
  ]),
 
  ("$\\left(1+\\frac1n\\right)^n$ — táblázatból", [
-   r'<p class="lead">A Burek-bank számlája $n$ jóváírás után $\left(1+\frac1n\right)^n$ dinár: '
-   r'minden alkalommal $\frac1n$-ed résznyi kamat jár (lásd a '
-   r'<a href="' + E306 + r'tananyag-mertani-sorozat.html#tetel-kamatos-kamat">kamatos kamat képletét</a>).</p>'
-   r'<div class="tblwrap"><table class="tt-table">'
-   r'<tr><th>jóváírás</th><td>évente</td><td>félévente</td><td>negyedévente</td><td>havonta</td>'
-   r'<td>naponta</td><td>$10\,000$-szer</td></tr>'
-   r'<tr><th>$n$</th><td>1</td><td>2</td><td>4</td><td>12</td><td>365</td><td>$10\,000$</td></tr>'
-   r'<tr><th>$\left(1+\frac1n\right)^n$</th><td>$2$</td><td>$2{,}25$</td><td>$\approx2{,}4414$</td>'
-   r'<td>$\approx2{,}6130$</td><td>$\approx2{,}7146$</td><td>$\approx2{,}7181$</td></tr></table></div>'
-   r'<p>Az összeg nő, de egyre lassabban, és egy $2{,}718$ körüli értéknél „megtorpan”.</p>',
+   (
+       '<p class="lead">A Burek-bank modelljében egy évre osztjuk el a jóváírásokat. A névleges éves '
+       'kamatláb változatlan, további befizetés, kivét és költség nincs. A számlán az év végén, $n$ '
+       'jóváírás után $\\left(1+\\frac1n\\right)^n$ dinár lesz: minden alkalommal $\\frac1n$-ed résznyi kamat '
+       'jár (lásd a <a href="'
+   ) + E306 + (
+                             'tananyag-mertani-sorozat.html#tetel-kamatos-kamat">kamatos kamat képletét</a>).</p><div '
+                             'class="tblwrap"><table class="tt-table"><tr><th>jóváírás</th><td>évente</td><td>félévente</td><td>ne'
+                             'gyedévente</td><td>havonta</td><td>naponta</td><td>$10\\,000$-szer</td></tr><tr><th>$n$</th><td>1</td'
+                             '><td>2</td><td>4</td><td>12</td><td>365</td><td>$10\\,000$</td></tr><tr><th>$\\left(1+\\frac1n\\right)^n'
+                             '$</th><td>$2$</td><td>$2{,}25$</td><td>$\\approx2{,}4414$</td><td>$\\approx2{,}6130$</td><td>$\\approx2'
+                             '{,}7146$</td><td>$\\approx2{,}7181$</td></tr></table></div><p>A jóváírások számának növelésével az '
+                             'év végi összeg egyre lassabban nő, és egy $2{,}718$ körüli értékhez közelít.</p>'
+                         ),
    abra(SVG_E, 'Az $\\left(1+\\frac1n\\right)^n$ sorozat első nyolc tagja alulról közelít az $e$ '
         'szintjéhez (zöld vonal), de egyik tag sem éri el.'),
    doboz("definicio", "Az $e$ szám",
-         r'$$e=\lim_{n\to\infty}\left(1+\frac1n\right)^n\approx2{,}71828 .$$'
-         r'<p>Az $e$ irracionális szám, ugyanolyan fontos, mint a $\pi$. A tanterv szerint a határérték '
-         r'létezését nem bizonyítjuk — a táblázat és a grafikon szemlélteti.</p>', hid="def-e"),
+         (
+             '$$e=\\lim_{n\\to\\infty}\\left(1+\\frac1n\\right)^n\\approx2{,}71828 .$$<p>Az $e$ irracionális szám, '
+             'ugyanolyan fontos, mint a $\\pi$. A határérték létezését itt bizonyítás nélkül használjuk — a '
+             'táblázat és a grafikon szemlélteti.</p>'
+         ), hid="def-e"),
    doboz("csapda", "Véd Vilmos csapda",
          r'<p>„Az alap $1$-hez tart, és $1$ akárhányadik hatványa $1$. Tehát a határérték $1$” — '
          r'érvel Véd Vilmos.</p>'
@@ -162,10 +168,14 @@ B3 = [
    r'<p class="lead">A gyakorlatban ritkán áll ott pontosan $\left(1+\frac1n\right)^n$. Ha a törtben '
    r'$\frac kn$ szerepel, a kitevőben pedig $mn$, a határérték szintén $e$ valamelyik hatványa.</p>',
    doboz("tetel", "Az $e$-típusú határérték",
-         r'<p>Bármely $k\ne0$ és $m$ valós számra</p>'
-         r'$$\lim_{n\to\infty}\left(1+\frac kn\right)^{mn}=e^{km} .$$'
-         r'<p>(Negatív $k$ esetén elég nagy $n$-re, $n\gt\lvert k\rvert$-ra az alap pozitív.) Szemléletesen: $\left(1+\frac kn\right)^{mn}=\left[\left(1+\frac{1}{n/k}\right)^{n/k}\right]^{km}$, '
-         r'és a szögletes zárójelben álló kifejezés $e$-hez tart.</p>', hid="tetel-e-altalanos"),
+         (
+             '<p>Bármely $k\\ne0$ és $m$ valós számra</p>$$\\lim_{n\\to\\infty}\\left(1+\\frac kn\\right)^{mn}=e^{km} '
+             '.$$<p>(Negatív $k$ esetén elég nagy $n$-re, $n\\gt\\lvert k\\rvert$-ra az alap pozitív.) Pozitív $k$ '
+             'esetén a következő átírás szemlélteti az összefüggést: $\\left(1+\\frac '
+             'kn\\right)^{mn}=\\left[\\left(1+\\frac{1}{n/k}\\right)^{n/k}\\right]^{km}$, és a szögletes zárójelben '
+             'álló kifejezés $e$-hez tart. Az általános képlet negatív $k$-ra is érvényes; ezt itt bizonyítás '
+             'nélkül használjuk.</p>'
+         ), hid="tetel-e-altalanos"),
    doboz("pelda", "I.V.H. Akták — egyenesen a képletből",
          r'<p><b>a)</b> $\lim\left(1+\dfrac2n\right)^{4n}=e^{2\cdot4}=e^8$. Ennyi az egész: a két számot '
          r'összeszorozzuk — akkor is, ha $k$ negatív vagy $m$ tört, ahogy a b) és a c) mutatja.</p>'
@@ -202,10 +212,12 @@ B3 = [
  ]),
 
  ("Nem minden hatvány $1^\\infty$", [
-   r'<p class="lead">Az $e$-es módszer csak akkor jön szóba, ha az alap $1$-hez tart. Ha a kitevő a '
-   r'végtelenbe tart, az alap pedig nem $1$-hez, a hatvány egyszerűen viselkedik: $1$-nél nagyobb '
-   r'számhoz tartó alap a végtelenbe visz, $0$ és $1$ közötti számhoz tartó a $0$-hoz. (Ha a kitevő nem '
-   r'tart a végtelenbe, mint a c)-ben, egyszerűen behelyettesítünk.)</p>',
+   (
+       '<p class="lead">Először az alap és a kitevő határértékét nézzük meg. Ha a kitevő $+\\infty$-hez '
+       'tart, az alap pedig egy $1$-nél nagyobb számhoz, a hatvány $+\\infty$-hez tart; $0$ és $1$ közötti '
+       'számhoz tartó alapnál $0$-hoz. Ha az alap pozitív számhoz, a kitevő pedig véges számhoz tart, a két '
+       'határértékkel kiszámolhatjuk a hatványt — ezt használjuk a c) példában.</p>'
+   ),
    doboz("pelda", "I.V.H. Akták — először az alapot nézzük",
          r'<p><b>a)</b> $\lim\left(\dfrac{5n+1}{2n}\right)^{n}$: az alap $\frac52$-hez tart, és '
          r'$\left(\frac52\right)^n\to+\infty$. A határérték $+\infty$.</p>'
@@ -213,10 +225,12 @@ B3 = [
          r'<p><b>c)</b> $\lim\left(1+\dfrac{n}{n+1}\right)^{1/n}$: az alap $2$-höz, a kitevő $0$-hoz tart — '
          r'ez nem határozatlan alak, a határérték $2^0=1$.</p>', hid="pelda-nem-e"),
    doboz("csapda", "Véd Vilmos csapda",
-         r'<p>Véd Vilmos minden hatványra $e$-t ír: az a) feladatra „$e^{5/2}$”-t (mert az alap $\frac52$-höz '
-         r'tart), a c)-re „$e^0$”-t. A c)-nél a végeredmény véletlenül stimmel, a gondolatmenet azonban '
-         r'mindkettőnél hibás.</p>'
-         r'<p><b>Az első lépés mindig: mihez tart az alap?</b> Csak ha $1$-hez, akkor van szükség az $e$-re.</p>'),
+         (
+             '<p>Véd Vilmos minden hatványra $e$-t ír: az a) feladatra „$e^{5/2}$”-t (mert az alap $\\frac52$-höz '
+             'tart), a c)-re „$e^0$”-t. A c)-nél a végeredmény véletlenül stimmel, a gondolatmenet azonban '
+             'mindkettőnél hibás.</p><p><b>Az első lépés mindig: mihez tart az alap?</b> Az $1^\\infty$ alaknál az '
+             'alap és a változó kitevő együttes viselkedését kell vizsgálnunk.</p>'
+         )),
    kviz(r'Mihez tart az $\left(1+\frac{n}{n+1}\right)^{n}$ sorozat?',
         [r'a $+\infty$-hez, mert az alap $2$-höz tart',
          r'az $e$-hez, mert $\left(1+\frac1n\right)^n$-re hasonlít',

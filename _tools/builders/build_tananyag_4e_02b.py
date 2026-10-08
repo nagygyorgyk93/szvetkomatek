@@ -243,10 +243,13 @@ B1 = [
    r'<p class="lead">Előfordul, hogy balról és jobbról közelítve <b>más</b> értékhez jutunk. Ilyenkor '
    r'külön beszélünk bal és jobb oldali határértékről.</p>',
    doboz("definicio", "Egyoldali határérték",
-         r'<p>$\lim\limits_{x\to a-0}f(x)$ a <b>bal oldali</b> határérték (csak $a$-nál kisebb $x$-ekkel '
-         r'közelítünk), $\lim\limits_{x\to a+0}f(x)$ a <b>jobb oldali</b> (csak $a$-nál nagyobbakkal).</p>'
-         r'<p>A $\lim\limits_{x\to a}f(x)$ határérték akkor és csak akkor létezik, ha a két egyoldali '
-         r'határérték létezik és egyenlő; ekkor ez a közös érték a határérték.</p>', hid="def-egyoldali"),
+         (
+             '<p>$\\lim\\limits_{x\\to a-0}f(x)$ a <b>bal oldali</b> határérték (csak $a$-nál kisebb $x$-ekkel '
+             'közelítünk), $\\lim\\limits_{x\\to a+0}f(x)$ a <b>jobb oldali</b> (csak $a$-nál '
+             'nagyobbakkal).</p><p>Ha $a$-hoz mindkét oldalról közelíthetünk az értelmezési tartományban, a '
+             '$\\lim\\limits_{x\\to a}f(x)$ kétoldali határérték akkor és csak akkor létezik, ha a két egyoldali '
+             'határérték létezik és egyenlő; ekkor ez a közös érték a határérték.</p>'
+         ), hid="def-egyoldali"),
    abra(SVG_UGRAS, 'A $h$ függvény az $x=1$-nél „ugrik”: balról a $3$-hoz tart, jobbról a $0$-ból indul.'),
    r'<p>Itt $\lim\limits_{x\to1-0}h(x)=3$ és $\lim\limits_{x\to1+0}h(x)=0$. A kettő különbözik, tehát a '
    r'$\lim\limits_{x\to1}h(x)$ határérték <b>nem létezik</b> — pedig $h(1)=0$ létezik.</p>',
@@ -264,8 +267,11 @@ B1 = [
    r'<p class="lead">Szemléletesen: ha egy függvény egy intervallumon <b>folytonos</b>, ott a grafikonja a ceruza '
    r'felemelése nélkül megrajzolható — a görbe nem szakad meg és nem „ugrik”.</p>',
    doboz("definicio", "Folytonosság egy pontban",
-         r'<p>Az $f$ függvény folytonos az $a\in D_f$ helyen, ha $\lim\limits_{x\to a}f(x)=f(a)$ — vagyis a '
-         r'határérték létezik, és egyenlő a helyettesítési értékkel.</p>', hid="def-folytonos"),
+         (
+             '<p>Az $f$ függvény folytonos az $a\\in D_f$ helyen, ha $\\lim\\limits_{x\\to a}f(x)=f(a)$ — vagyis a '
+             'határérték létezik, és egyenlő a helyettesítési értékkel. A tartomány végpontjában csak a tartomány '
+             'felől közelítünk: például a négyzetgyökfüggvény a $0$-ban jobbról folytonos.</p>'
+         ), hid="def-folytonos"),
    doboz("tetel", "Az elemi függvények folytonossága",
          r'<p>Minden elemi függvény folytonos értelmezési tartományának minden pontjában. (Bizonyítás nélkül.)</p>'
          r'<p>Ezért egy elemi függvény határértéke egy értelmezési tartománybeli pontban '
@@ -276,8 +282,11 @@ B1 = [
    r'más — mint az $f$ és a $g$ fent), <b>ugrás</b> (a két egyoldali határérték különbözik — mint a $h$), és '
    r'<b>végtelenbe szakadás</b> (a függvény abszolút értéke a pont közelében minden határon túl nő — ebből lesz az aszimptota).</p>',
    doboz("erdekesseg", "Hol találkozol vele?",
-         r'<p>Ugró, „lépcsős” függvény a postai díjszabás (20 grammig egy ár, fölötte egy másik) és a '
-         r'taxióra: az ár egy-egy határon hirtelen változik, közben nem.</p>'),
+         (
+             '<p>Képzelj el egy tömegsávok szerinti postai díjszabást: egy sávon belül az ár állandó, a következő '
+             'sáv határán megváltozik. A távolsági díjat meghatározott útszakaszonként növelő taxióra kijelzése '
+             'is lépcsős függvénnyel modellezhető.</p>'
+         )),
    GY(FH + "#alap-1", "A 1–4", FH + "#kozep-1", "K 1–2"),
    brief('<b>Nagol:</b> Grafikon nem mindig van kéznél. Ha csak a képlet van meg, a határértéket ki kell '
          '<b>számolni</b> — és ott jön majd a $\\frac00$. <b>Véd Vilmos:</b> Az egyszerű, az 1. '
@@ -460,9 +469,12 @@ B3 = [
 # ---------------------------------------------------------------- C1
 C1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Véd Vilmos:</b> Futok a fal felé. Minden lépéssel közelebb vagyok, de valahogy soha nem érek '
-         'oda. Áttöröm! <b>Nagol:</b> Nem fogod. Ez egy <b>aszimptota</b>: a görbe végtelenbe nyúló ága egyre '
-         'közelebb simul hozzá. A feladat nem áttörni, hanem kiszámolni, <b>hol van</b>.'),
+   brief((
+             '<b>Véd Vilmos:</b> Futok a fal felé. Minden lépéssel közelebb vagyok, de valahogy soha nem érek '
+             'oda. Áttöröm! <b>Nagol:</b> Egy grafikon metszheti is az <b>aszimptotáját</b>. Az a fontos, hogy a '
+             'görbe végtelenbe nyúló ága egyre közelebb simul hozzá. Számítsuk ki, melyik egyeneshez simul a '
+             'görbe.'
+         )),
  ]),
 
  ("Mi az aszimptota?", [
@@ -476,8 +488,10 @@ C1 = [
    r'<p>Az A1 leckében megígért első aszimptota: a $\log_2 x$ függőleges aszimptotája az $x=0$, mert '
    r'$\lim\limits_{x\to0+0}\log_2x=-\infty$.</p>',
    doboz("erdekesseg", "Hol találkozol vele?",
-         r'<p>A kihűlő tea hőmérséklete a szoba hőmérsékletéhez közelít, de (elméletben) sosem éri el: a '
-         r'hőmérséklet–idő grafikon vízszintes aszimptotája a szobahőmérséklet.</p>'),
+         (
+             '<p>Állandó szobahőmérsékletet feltételező ideális modellben a kihűlő tea hőmérséklete a szoba '
+             'hőmérsékletéhez közelít: a hőmérséklet–idő grafikon vízszintes aszimptotája a szobahőmérséklet.</p>'
+         )),
  ]),
 
  ("Függőleges aszimptota", [
@@ -569,9 +583,12 @@ C1 = [
         nem="✘ Racionális törtfüggvénynél p ≤ r esetén vízszintes, p = r + 1 esetén ferde aszimptota van; "
             "p ≥ r + 2 esetén egyik sincs. A kettő együtt nem fordul elő."),
    GY(FH + "#alap-15", "A 15–18", FH + "#kozep-10", "K 10–12"),
-   brief('<b>Nagol:</b> A falat nem kellett áttörni: tudjuk, hol van, és azt is, hogyan közelít hozzá a görbe. '
-         'A határértékkel viszont ennél többet is meg lehet fogni: azt, hogy egy mennyiség <b>egy pillanat alatt</b> '
-         'mennyit változik. Ez lesz a derivált. <b>Véd Vilmos:</b> Pillanatnyi? Én mindig pillanatnyi vagyok.',
+   brief((
+             '<b>Nagol:</b> A falat nem kellett áttörni: tudjuk, hol van, és azt is, hogyan közelít hozzá a '
+             'görbe. A határértékkel viszont ennél többet is meg lehet fogni: azt, hogy <b>milyen gyorsan '
+             'változik</b> egy mennyiség egy adott pillanatban. Ez lesz a derivált. <b>Véd Vilmos:</b> '
+             'Pillanatnyi? Én mindig pillanatnyi vagyok.'
+         ),
          outro=True),
  ]),
 ]

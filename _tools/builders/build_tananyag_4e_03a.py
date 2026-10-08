@@ -175,12 +175,14 @@ SVG_B2 = svg_fuggvenyek(
 # ---------------------------------------------------------------- A1
 A1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Véd Vilmos:</b> Az I.V.H. traffipaxa egyetlen villanással lemérte a sebességemet a kismotoron. '
-         '🌮 <i>Burek-matek:</i> két óra alatt 60 kilométert mentem, vagyis végig 30-cal, tehát ártatlan vagyok. '
-         '<b>Nagol:</b> Ez az <b>átlag</b>. A traffipax a <b>pillanatot</b> méri — és egyetlen pillanat alatt nem '
-         'teszel meg utat, tehát osztani sincs mit mivel. Ezt a „pillanatnyi sebességet” találta ki Newton a '
-         'mozgáshoz és Leibniz a görbék érintőjéhez — ugyanazzal az eszközzel: a határértékkel. Üdv a '
-         '<b>Pillanatnyi Káoszban</b>.'),
+   brief((
+             '<b>Véd Vilmos:</b> Az I.V.H. traffipaxa egyetlen villanással lemérte a sebességemet a kismotoron. 🌮 '
+             '<i>Burek-matek:</i> két óra alatt 60 kilométert mentem, vagyis végig 30-cal, tehát ártatlan vagyok. '
+             '<b>Nagol:</b> Ez az <b>átlag</b>. A traffipax a <b>pillanatot</b> méri — és egyetlen pillanat alatt '
+             'nem teszel meg utat, tehát osztani sincs mit mivel. Az ilyen kérdések vizsgálatára dolgozta ki '
+             'Newton a differenciálszámítást; Leibniz a görbék érintőivel foglalkozott. A mai megfogalmazásban '
+             'mindkettőt a határérték kapcsolja össze. Üdv a <b>Pillanatnyi Káoszban</b>.'
+         )),
  ]),
 
  ("Átlagsebesség és növekmény", [
@@ -246,10 +248,12 @@ A1 = [
          r'<p><i>Véd Vilmos széljegyzete:</i> „ezt minden függvényre végig kéne csinálni? — <b>Nem.</b> A '
          r'többit a következő leckében kész táblázatként kapod.”</p>', hid="pelda-x-negyzet"),
    doboz("erdekesseg", "Newton, Leibniz és a jelölések",
-         r'<p>A differenciálszámítást egymástól függetlenül fedezte fel Isaac Newton (a mozgás felől) és '
-         r'Gottfried Wilhelm Leibniz (az érintő felől) a 17. század végén; a „ki volt az első” vita évtizedekig '
-         r'tartott. Leibniztől ered a $\frac{dy}{dx}$ jelölés, Newtontól a pont ($\dot s$ — a fizikában ma is '
-         r'használják), a vessző ($f\'$) pedig Lagrange-tól.</p>'),
+         (
+             '<p>A differenciálszámítást egymástól függetlenül fedezte fel Isaac Newton (a mozgás felől) és '
+             'Gottfried Wilhelm Leibniz (az érintő felől) a 17. század második felében; a „ki volt az első” vita '
+             'évtizedekig tartott. Leibniztől ered a $\\frac{dy}{dx}$ jelölés, Newtontól a pont ($\\dot s$ — a '
+             "fizikában ma is használják), a vessző ($f\\'$) pedig Lagrange-tól.</p>"
+         )),
  ]),
 
  ("A derivált a grafikonról", [
@@ -259,12 +263,18 @@ A1 = [
          r'<p>Ha $f$ egy intervallum minden pontjában deriválható, akkor az $x\mapsto f\'(x)$ hozzárendelés az '
          r'$f$ <b>deriváltfüggvénye</b> (röviden: deriváltja), jele $f\'$.</p>', hid="def-derivaltfuggveny"),
    abra(SVG_A1_GRAF, 'Az $f(x)=\\frac{x^3}{3}-x$ grafikonja: az érintő meredeksége a derivált értéke.'),
-   r'<p>Az ábrán az <b>A</b> pontban az érintő vízszintes, tehát $f\'(-1)=0$; a <b>B</b> pontban a görbe '
-   r'csökken, az érintő meredeksége $-1$; a <b>C</b> pontban meredeken emelkedik: ha az érintőn $1$-et lépünk '
-   r'jobbra, $3$-at megyünk fel, tehát $f\'(2)=3$. <b>Ahol a függvény nő, ott a derivált pozitív; ahol csökken, '
-   r'ott negatív; ahol „megfordul”, ott $0$.</b></p>',
-   kviz(r'Egy függvény grafikonján az <b>A</b> pont a görbe csúcsa (ott a legnagyobb a függvényérték), a '
-        r'<b>B</b> pontban pedig a görbe meredeken emelkedik. Hol nagyobb a derivált?',
+   (
+       "<p>Az ábrán az <b>A</b> pontban az érintő vízszintes, tehát $f\\'(-1)=0$; a <b>B</b> pontban a görbe "
+       'csökken, az érintő meredeksége $-1$; a <b>C</b> pontban meredeken emelkedik: ha az érintőn $1$-et '
+       "lépünk jobbra, $3$-at megyünk fel, tehát $f\\'(2)=3$. <b>Ha a derivált egy intervallum minden "
+       'pontjában pozitív, a függvény ott szigorúan nő; ha negatív, szigorúan csökken. Deriválható függvény '
+       'belső lokális szélsőértékénél a derivált $0$, de a nulla derivált önmagában még nem jelent '
+       'szélsőértéket.</b></p>'
+   ),
+   kviz((
+            'Egy deriválható függvény grafikonján az <b>A</b> pont a görbe csúcsa (ott a legnagyobb a '
+            'függvényérték), a <b>B</b> pontban pedig a görbe meredeken emelkedik. Hol nagyobb a derivált?'
+        ),
         [r'a <b>B</b> pontban',
          r'az <b>A</b> pontban, mert ott a legnagyobb a függvényérték',
          r'egyenlők, hiszen mindkettő ugyanannak a függvénynek a pontja',
@@ -286,7 +296,7 @@ A1 = [
 # ---------------------------------------------------------------- A2
 _TABLA = TABLA(["$f(x)$", "$f'(x)$", "megjegyzés"], [
     ["$c$ (állandó)", "$0$", "a vízszintes egyenes meredeksége $0$"],
-    ["$x^n$", "$n\\,x^{n-1}$", "bármely valós $n$-re (ahol értelmezett)"],
+    ["$x^n$", "$n\\,x^{n-1}$", 'valós $n$-re $x\\gt0$ mellett'],
     ["$\\sqrt x$", "$\\dfrac{1}{2\\sqrt x}$", "$x\\gt0$; ez az $n=\\frac12$ eset"],
     ["$\\dfrac1x$", "$-\\dfrac{1}{x^2}$", "$x\\ne0$; ez az $n=-1$ eset"],
     ["$\\sin x$", "$\\cos x$", ""],
@@ -308,13 +318,20 @@ A2 = [
 
  ("Az elemi függvények deriváltjai", [
    doboz("tetel", "A deriválttáblázat", _TABLA, hid="tetel-derivalt-tablazat"),
-   r'<p>A táblázat sorait a definícióból lehet igazolni, mint az $x^2$-nél; a tanterv szerint ezt nem '
-   r'gyakoroljuk, a táblázatot kész szabályként használjuk.</p>',
+   (
+       '<p>A trigonometrikus függvények szögeit radiánban mérjük. A logaritmus alapja pozitív és $1$-től '
+       'különböző. A hatványfüggvény képlete pozitív egész kitevőnél minden valós $x$-re, negatív egész '
+       'kitevőnél $x\\ne0$-ra is használható.</p><p>A táblázat sorait a definícióból lehet igazolni, mint az '
+       '$x^2$-nél; itt a táblázatot kész szabályként használjuk.</p>'
+   ),
    abra(SVG_A2_SINCOS, 'Ahol a szinusz a csúcson van, ott a koszinusz $0$ — mert a csúcsban az érintő vízszintes.'),
    doboz("erdekesseg", "Miért éppen $e^x$?",
-         r'<p>Az $e^x$ az egyetlen (nem nulla) függvény, amely <b>önmaga deriváltja</b>: minden pontban '
-         r'pontosan olyan gyorsan nő, amekkora az értéke. Ezért jelenik meg mindenütt, ahol a növekedés üteme '
-         r'a pillanatnyi mennyiséggel arányos — baktériumoknál, kamatos kamatnál, radioaktív bomlásnál.</p>'),
+         (
+             '<p>Az $e^x$ <b>önmaga deriváltja</b>: minden pontban pontosan olyan gyorsan nő, amekkora az értéke. '
+             'Exponenciális modell használható, ha a változás üteme a pillanatnyi mennyiséggel arányos. '
+             'Növekedésnél az arányossági tényező pozitív, bomlásnál negatív; a modellekben az $e$ megfelelő '
+             'hatványai jelennek meg.</p>'
+         )),
  ]),
 
  ("Konstansszoros, összeg, különbség", [
@@ -336,9 +353,11 @@ A2 = [
 
  ("A szorzat deriváltja", [
    doboz("tetel", "A szorzat deriválási szabálya",
-         r'$$\big(f(x)\cdot g(x)\big)\'=f\'(x)\cdot g(x)+f(x)\cdot g\'(x)$$'
-         r'<p>Szóban: az első deriváltja szorozva a másodikkal, <b>plusz</b> az első szorozva a második '
-         r'deriváltjával.</p>', hid="tetel-szorzat"),
+         (
+             "$$\\big(f(x)\\cdot g(x)\\big)\\'=f\\'(x)\\cdot g(x)+f(x)\\cdot g\\'(x)$$<p>A szabályokhoz a szereplő "
+             'függvényeknek az adott helyen deriválhatóknak kell lenniük. Szóban: az első deriváltja szorozva a '
+             'másodikkal, <b>plusz</b> az első szorozva a második deriváltjával.</p>'
+         ), hid="tetel-szorzat"),
    doboz("pelda", "I.V.H. Akták — szorzatok",
          r'<ul><li>$\big((x^2+1)(3x-2)\big)\'=2x(3x-2)+(x^2+1)\cdot3=9x^2-4x+3$. (Ellenőrzés: beszorozva '
          r'$3x^3-2x^2+3x-2$, ennek deriváltja ugyanez.)</li>'
@@ -385,18 +404,23 @@ A2 = [
    r'<p>Fordított sorrendben nem megy: $f(2)=1$ egy <b>szám</b>, és egy szám deriváltja $0$ — ami semmit sem '
    r'mond a görbe meredekségéről.</p>',
    GY(FD + "#alap-3", "A 3–9", FD + "#kozep-2", "K 2–5"),
-   brief('<b>Nagol:</b> Most már bármely polinom meredekségét tudod bármely pontban. <b>Véd Vilmos:</b> És mire '
-         'jó a meredekség, ha nem vagyok síugró? <b>Nagol:</b> Megmondja, merre repül tovább a dobócsillag, amit '
-         'elengedsz. A következő leckében: az érintő egyenlete.', outro=True),
+   brief((
+             '<b>Nagol:</b> Most már bármely polinom meredekségét tudod bármely pontban. <b>Véd Vilmos:</b> És '
+             'mire jó a meredekség, ha nem vagyok síugró? <b>Nagol:</b> Megmondja, milyen irányban indul a '
+             'dobócsillag az elengedés pillanatában. A következő leckében: az érintő egyenlete.'
+         ), outro=True),
  ]),
 ]
 
 # ---------------------------------------------------------------- A3
 A3 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Nagol</b> egy görbe pályán pörgeti a dobócsillagot: Merre repül tovább, ha elengedem? '
-         '<b>Az érintő mentén.</b> <b>Véd Vilmos:</b> Én mindig merőlegesen dobok. <b>Nagol:</b> Az a '
-         '<b>normális</b> — azt is felírjuk. A kulcs mindkettőhöz ugyanaz: a derivált az érintő meredeksége.'),
+   brief((
+             '<b>Nagol</b> egy görbe pályán pörgeti a dobócsillagot: Merre repül tovább, ha elengedem? <b>Az '
+             'elengedés pillanatában az érintő irányában indul; a későbbi pályáját a gravitáció is '
+             'befolyásolja.</b> <b>Véd Vilmos:</b> Én mindig merőlegesen dobok. <b>Nagol:</b> Az a '
+             '<b>normális</b> — azt is felírjuk. A kulcs mindkettőhöz ugyanaz: a derivált az érintő meredeksége.'
+         )),
  ]),
 
  ("Az érintő egyenlete", [
@@ -462,16 +486,22 @@ A3 = [
    r'<p class="lead">Ha egy mennyiség az időtől függ, a deriváltja megmondja, <b>milyen gyorsan változik</b> '
    r'abban a pillanatban. A mértékegysége: a mennyiség egysége osztva az idő egységével.</p>',
    doboz("pelda", "I.V.H. Akták — pillanatnyi sebesség és hűlési ütem",
-         r'<p><b>Út–idő.</b> Egy ügynök $t$ másodperc alatt $s(t)=2t^2+3t$ métert fut. A sebessége '
-         r'$v(t)=s\'(t)=4t+3$, így a $t=2$ s-kor $v(2)=11\ \tfrac{\text{m}}{\text{s}}$. (Az első két másodperc '
-         r'<b>átlagsebessége</b> csak $\frac{s(2)}{2}=\frac{14}{2}=7\ \tfrac{\text{m}}{\text{s}}$.)</p>'
-         r'<p><b>Hőmérséklet.</b> Egy bögre tea hőmérséklete $t$ perc után $T(t)=80-4t+0{,}05t^2$ °C '
-         r'($0\le t\le40$). $T\'(t)=-4+0{,}1t$, így $T\'(10)=-3$: a $t=10$ perckor a tea percenként kb. 3 fokot '
-         r'hűl. A negatív előjel a csökkenést jelzi.</p>', hid="pelda-sebesseg"),
+         (
+             '<p><b>Út–idő.</b> Egy jármű a vizsgált rövid időszakban $t$ másodperc alatt $s(t)=2t^2+3t$ métert '
+             "tesz meg. A sebessége $v(t)=s\\'(t)=4t+3$, így $t=2$ s-kor $v(2)=11\\ \\tfrac{\\text{m}}{\\text{s}}$. "
+             '(Az első két másodperc <b>átlagsebessége</b> csak $\\frac{s(2)}{2}=\\frac{14}{2}=7\\ '
+             '\\tfrac{\\text{m}}{\\text{s}}$.)</p><p><b>Hőmérséklet.</b> Egy hűtőberendezésben hűlő minta '
+             'hőmérsékletét a következő közelítő modell írja le: $t$ perc után $T(t)=80-4t+0{,}05t^2$ °C ($0\\le '
+             "t\\le40$). $T\\'(t)=-4+0{,}1t$, így $T\\'(10)=-3$: $t=10$ perckor a minta hőmérséklete abban a "
+             'pillanatban kb. 3 °C/perc ütemben csökken. A negatív előjel a csökkenést jelzi.</p>'
+         ), hid="pelda-sebesseg"),
    doboz("erdekesseg", "Hol találkozol vele?",
-         r'<p>Az autó sebességmérője és a „pillanatnyi fogyasztás” kijelzője egyaránt deriváltat mutat. '
-         r'Grafikonról is le lehet olvasni: az idő–mennyiség görbe érintőjének meredeksége a változás üteme az '
-         r'adott pillanatban.</p>'),
+         (
+             '<p>Az autó sebességmérője az adott pillanatbeli sebességet jelzi. Az üzemanyag-felhasználás idő '
+             'szerinti ütemét is deriválttal írhatjuk le: az addig elfogyasztott üzemanyag mennyiségét deriváljuk '
+             'az idő szerint. Az idő–mennyiség görbe érintőjének meredeksége a változás üteme az adott '
+             'pillanatban.</p>'
+         )),
    GY(FD + "#alap-10", "A 10–13", FD + "#kozep-6", "K 6–8"),
    brief('<b>Véd Vilmos:</b> Eddig csak „tisztességes” függvényeket deriváltunk. Mi van, ha egy függvény belsejében '
          'egy másik függvény lakik, mint a $\\sqrt{x^2+4}$-ben? <b>Nagol:</b> Az egy matrjoska. Szétszedjük — '
@@ -512,19 +542,23 @@ B1 = [
 
  ("A láncszabály", [
    doboz("tetel", "Az összetett függvény deriváltja (láncszabály)",
-         r'$$\Big(f\big(g(x)\big)\Big)\'=f\'\big(g(x)\big)\cdot g\'(x)$$'
-         r'<p>Szóban: <b>a külső függvény deriváltja</b> (a belsőt változatlanul hagyva) <b>szorozva a belső '
-         r'függvény deriváltjával</b>.</p>', hid="tetel-lancszabaly"),
+         (
+             "$$\\Big(f\\big(g(x)\\big)\\Big)\\'=f\\'\\big(g(x)\\big)\\cdot g\\'(x)$$<p>A belső függvény az adott helyen, a "
+             'külső függvény a belső függvény értékénél legyen deriválható. Szóban: <b>a külső függvény '
+             'deriváltja</b> (a belsőt változatlanul hagyva) <b>szorozva a belső függvény deriváltjával</b>.</p>'
+         ), hid="tetel-lancszabaly"),
    doboz("pelda", "I.V.H. Akták — rétegenként",
          r'<p>$y=(2x+5)^3$. Külső: $u^3$, deriváltja $3u^2$; belső: $2x+5$, deriváltja $2$. Tehát</p>'
          r'$$y\'=3(2x+5)^2\cdot2=6(2x+5)^2.$$'
          r'<p><i>Véd Vilmos széljegyzete:</i> „ellenőriztem: beszorozva $8x^3+60x^2+150x+125$, ennek deriváltja '
          r'$24x^2+120x+150=6(2x+5)^2$. Stimmel — de a láncszabály rövidebb.”</p>', hid="pelda-lanc"),
    doboz("csapda", "Véd Vilmos csapda",
-         r'<p>Véd Vilmos a belső deriváltat elhagyja: $\big((2x+5)^3\big)\'=3(2x+5)^2$. Ez <b>hiányzik egy '
-         r'szorzóval</b> — a belső $2x+5$ is változik, kétszer olyan gyorsan, mint $x$.</p>'
-         r'<p>Rokon hiba: a $\sin^2x$ és a $\sin x^2$ összekeverése. $(\sin^2x)\'=2\sin x\cos x$ (a külső a '
-         r'négyzetre emelés), de $(\sin x^2)\'=\cos x^2\cdot2x$ (a külső a szinusz).</p>'),
+         (
+             "<p>Véd Vilmos a belső deriváltat elhagyja: $\\big((2x+5)^3\\big)\\'=3(2x+5)^2$. <b>Egy szorzó hiányzik "
+             'belőle</b> — a belső $2x+5$ is változik, kétszer olyan gyorsan, mint $x$.</p><p>Rokon hiba: a '
+             "$\\sin^2x$ és a $\\sin x^2$ összekeverése. $(\\sin^2x)\\'=2\\sin x\\cos x$ (a külső a négyzetre emelés), "
+             "de $(\\sin x^2)\\'=\\cos x^2\\cdot2x$ (a külső a szinusz).</p>"
+         )),
    kviz(r'Mennyi a $(4x-1)^5$ deriváltja?',
         [r'$20(4x-1)^4$', r'$5(4x-1)^4$', r'$5(4x)^4$', r'$20x(4x-1)^4$'], 0,
         jo="✔ Külső: 5u⁴, belső deriváltja 4 → 5(4x − 1)⁴ · 4 = 20(4x − 1)⁴.",
@@ -533,7 +567,11 @@ B1 = [
  ]),
 
  ("Tipikus minták", [
-   r'<p class="lead">A leggyakoribb összetett függvények deriváltja — mindegyik a láncszabályból jön:</p>',
+   (
+       '<p class="lead">A leggyakoribb összetett függvények deriváltja — mindegyik a láncszabályból jön. A '
+       'belső függvény legyen deriválható; a gyökös és logaritmusos mintában a belső függvény értéke '
+       'pozitív. A valós kitevős hatványminta szintén pozitív alapra érvényes:</p>'
+   ),
    TABLA(["függvény", "deriváltja", "példa"], [
        ["$(ax+b)^n$", "$n\\,a\\,(ax+b)^{n-1}$", "$\\big((2x+5)^3\\big)'=6(2x+5)^2$"],
        ["$\\sqrt{g(x)}$", "$\\dfrac{g'(x)}{2\\sqrt{g(x)}}$", "$\\big(\\sqrt{x^2+4}\\big)'=\\dfrac{x}{\\sqrt{x^2+4}}$"],
@@ -597,13 +635,14 @@ B2 = [
 
  ("Sebesség és gyorsulás", [
    doboz("pelda", "I.V.H. Akták — a feldobott labda",
-         r'<p>Egy labda $t$ másodperc múlva $s(t)=-5t^2+20t$ méter magasan van.</p>'
-         r'<ul><li>sebessége: $v(t)=s\'(t)=-10t+20$ ($\tfrac{\text{m}}{\text{s}}$);</li>'
-         r'<li>gyorsulása: $a(t)=v\'(t)=s\'\'(t)=-10$ ($\tfrac{\text{m}}{\text{s}^2}$) — ez a nehézségi '
-         r'gyorsulás (kerekítve), lefelé mutat;</li>'
-         r'<li>a pálya csúcsán $v(t)=0$, azaz $t=2$ s, a magasság $s(2)=20$ m.</li></ul>'
-         r'<p><i>Véd Vilmos széljegyzete:</i> „a csúcson a sebesség $0$ — a gyorsulás mégsem. Ha az is $0$ '
-         r'lenne, a labda ott maradna lebegni.”</p>', hid="pelda-mozgas"),
+         (
+             '<p>Egy labda $t$ másodperc múlva $s(t)=-5t^2+20t$ méter magasan van.</p><ul><li>sebessége: '
+             "$v(t)=s\\'(t)=-10t+20$ ($\\tfrac{\\text{m}}{\\text{s}}$);</li><li>gyorsulása: "
+             "$a(t)=v\\'(t)=s\\'\\'(t)=-10$ ($\\tfrac{\\text{m}}{\\text{s}^2}$) — ez a nehézségi gyorsulás (kerekítve), "
+             'lefelé mutat;</li><li>a pálya csúcsán $v(t)=0$, azaz $t=2$ s, a magasság $s(2)=20$ '
+             'm.</li></ul><p><i>Véd Vilmos széljegyzete:</i> „a csúcson a sebesség $0$ — a gyorsulás mégsem. A '
+             'modellben a lefelé mutató gyorsulás a csúcs után ismét mozgásba hozza a labdát.”</p>'
+         ), hid="pelda-mozgas"),
    kviz(r'A feldobott labda a pálya legmagasabb pontján egy pillanatra megáll. Mekkora ott a gyorsulása '
         r'(a fenti példában)?',
         [r'$-10\ \tfrac{\text{m}}{\text{s}^2}$', r'$0$, mert a labda áll', r'$20\ \tfrac{\text{m}}{\text{s}^2}$',
@@ -612,9 +651,11 @@ B2 = [
         nem="✘ Az, hogy a sebesség pillanatnyilag 0, nem jelenti, hogy nem is változik. a(t) = s″(t) = −10 "
             "állandó: a csúcson is lefelé gyorsul a labda."),
    doboz("erdekesseg", "Hol találkozol vele?",
-         r'<p>A harmadik derivált (a gyorsulás változási üteme) a <b>rántás</b>. A hullámvasutak és a liftek '
-         r'tervezői erre figyelnek: a hirtelen gyorsulásváltozást érezzük „rángatásnak”, nem magát a '
-         r'gyorsulást.</p>'),
+         (
+             '<p>A harmadik derivált (a gyorsulás változási üteme) a <b>rántás</b>. A hullámvasutak és a liftek '
+             'tervezői erre figyelnek: a gyorsulás hirtelen változása rántást okoz, ezért a kényelmesebb '
+             'mozgáshoz fokozatosan változtatják a gyorsulást.</p>'
+         )),
  ]),
 
  ("Mire jó még? — előretekintés", [

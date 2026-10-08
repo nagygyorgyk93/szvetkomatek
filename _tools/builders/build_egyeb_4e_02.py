@@ -49,18 +49,22 @@ def par(s):
 # ==================================================================== F4 — Csalópapír
 OSSZ = [
  ("📇 Az elemi függvények névjegye", [
-  r'<div class="tblwrap"><table class="tt-table">'
-  r'<tr><th>függvény</th><th>$D_f$</th><th>$R_f$</th><th>jellegzetesség</th></tr>'
-  r'<tr><td>$y=x^n$, $n\ge2$ páros</td><td>$\mathbb R$</td><td>$[0;\,+\infty)$</td><td>az $y$ tengelyre szimmetrikus</td></tr>'
-  r'<tr><td>$y=x^n$, $n\ge1$ páratlan</td><td>$\mathbb R$</td><td>$\mathbb R$</td><td>az origóra szimmetrikus</td></tr>'
-  r'<tr><td>$y=\sqrt x$</td><td>$[0;\,+\infty)$</td><td>$[0;\,+\infty)$</td><td>csak nemnegatív $x$-re</td></tr>'
-  r'<tr><td>$y=\dfrac1x$</td><td>$\mathbb R\setminus\{0\}$</td><td>$\mathbb R\setminus\{0\}$</td><td>két ág, aszimptoták: $x=0$, $y=0$</td></tr>'
-  r'<tr><td>$y=a^x$ ($a\gt0$, $a\ne1$)</td><td>$\mathbb R$</td><td>$(0;\,+\infty)$</td><td>átmegy a $(0;\,1)$ ponton</td></tr>'
-  r'<tr><td>$y=\log_ax$ ($\ln x=\log_ex$)</td><td>$(0;\,+\infty)$</td><td>$\mathbb R$</td><td>átmegy az $(1;\,0)$ ponton</td></tr>'
-  r'<tr><td>$y=\sin x$, $y=\cos x$</td><td>$\mathbb R$</td><td>$[-1;\,1]$</td><td>periódus: $2\pi$</td></tr>'
-  r'<tr><td>$y=\operatorname{tg}x$</td><td>$x\ne\frac\pi2+k\pi$, $k\in\mathbb Z$</td><td>$\mathbb R$</td><td>periódus: $\pi$</td></tr>'
-  r'</table></div>'
-  r'<p>Részletesen: <a href="' + A1 + r'">az elemi függvények</a>.</p>',
+  (
+      '<div class="tblwrap"><table class="tt-table"><tr><th>függvény</th><th>$D_f$</th><th>$R_f$</th><th>je'
+      'llegzetesség</th></tr><tr><td>$y=x^n$, $n\\ge2$ páros</td><td>$\\mathbb '
+      'R$</td><td>$[0;\\,+\\infty)$</td><td>az $y$ tengelyre szimmetrikus</td></tr><tr><td>$y=x^n$, $n\\ge1$ '
+      'páratlan</td><td>$\\mathbb R$</td><td>$\\mathbb R$</td><td>az origóra '
+      'szimmetrikus</td></tr><tr><td>$y=\\sqrt x$</td><td>$[0;\\,+\\infty)$</td><td>$[0;\\,+\\infty)$</td><td>cs'
+      'ak nemnegatív $x$-re</td></tr><tr><td>$y=\\dfrac1x$</td><td>$\\mathbb '
+      'R\\setminus\\{0\\}$</td><td>$\\mathbb R\\setminus\\{0\\}$</td><td>két ág, aszimptoták: $x=0$, '
+      '$y=0$</td></tr><tr><td>$y=a^x$ ($a\\gt0$, $a\\ne1$)</td><td>$\\mathbb '
+      'R$</td><td>$(0;\\,+\\infty)$</td><td>átmegy a $(0;\\,1)$ ponton</td></tr><tr><td>$y=\\log_ax$ ($a\\gt0$, '
+      '$a\\ne1$; $\\ln x=\\log_ex$)</td><td>$(0;\\,+\\infty)$</td><td>$\\mathbb R$</td><td>átmegy az $(1;\\,0)$ '
+      'ponton</td></tr><tr><td>$y=\\sin x$, $y=\\cos x$</td><td>$\\mathbb '
+      'R$</td><td>$[-1;\\,1]$</td><td>periódus: $2\\pi$</td></tr><tr><td>$y=\\operatorname{tg}x$</td><td>$x\\ne'
+      '\\frac\\pi2+k\\pi$, $k\\in\\mathbb Z$</td><td>$\\mathbb R$</td><td>periódus: '
+      '$\\pi$</td></tr></table></div><p>Részletesen: <a href="'
+  ) + A1 + r'">az elemi függvények</a>.</p>',
  ]),
 
  ("📐 Értelmezési tartomány, zérushely, előjel", [
@@ -79,20 +83,27 @@ OSSZ = [
   r'<tr><th></th><th>feltétel (minden $x\in D_f$-re)</th><th>a grafikon</th></tr>'
   r'<tr><td>páros ' + h(A3, "def-paros-paratlan") + r'</td><td>$D_f$ szimmetrikus, és $f(-x)=f(x)$</td><td>az $y$ tengelyre szimmetrikus</td></tr>'
   r'<tr><td>páratlan</td><td>$D_f$ szimmetrikus, és $f(-x)=-f(x)$</td><td>az origóra szimmetrikus</td></tr>'
-  r'<tr><td>periodikus ' + h(A3, "def-periodikus") + r'</td><td>van $T\gt0$, amelyre $x+T\in D_f$ és $f(x+T)=f(x)$</td><td>egy szakasz ismétlődik</td></tr>'
-  r'</table></div>'
-  r'<p>Egy konkrét ellenpélda elég a cáfolathoz; igazolni csak az általános $f(-x)$ kiszámolásával lehet. '
-  r'A függvény lehet <b>egyik sem</b>. A monotonitást itt grafikonról olvassuk le; kiszámolni a deriválttal fogjuk.</p>',
+  r'<tr><td>periodikus ' + h(A3, "def-periodikus") + (
+                                                         '</td><td>van $T\\gt0$, amelyre $D_f+T=D_f$ és $f(x+T)=f(x)$</td><td>egy szakasz '
+                                                         'ismétlődik</td></tr></table></div><p>Egy konkrét ellenpélda elég a cáfolathoz; igazoláshoz minden '
+                                                         '$x\\in D_f$-re teljesülnie kell a megfelelő feltételnek. A függvény lehet <b>egyik sem</b>. A '
+                                                         'monotonitást itt grafikonról olvassuk le; kiszámolni a deriválttal fogjuk.</p>'
+                                                     ),
  ]),
 
  ("🎯 A határérték", [
   r'<p class="lead">$\lim\limits_{x\to a}f(x)=A$: $f(x)$ akármilyen közel vihető $A$-hoz, ha $x$ elég közel van $a$-hoz '
   r'($x\ne a$) ' + h(B1, "def-fv-hatarertek") + r'. A pontbeli érték nem számít: ha a görbe mindkét oldalról ugyanahhoz az '
   r'<b>üres</b> ponthoz tart, annak magassága a határérték; a <b>teli</b> ponté a függvényérték.</p>'
-  r'<p><b>Egyoldali határérték</b> ' + h(B1, "def-egyoldali") + r': $x\to a-0$ (balról), $x\to a+0$ (jobbról). A '
-  r'határérték akkor és csak akkor létezik, ha a kettő létezik és egyenlő.</p>'
-  r'<p><b>Folytonosság</b> ' + h(B1, "def-folytonos") + r': $\lim\limits_{x\to a}f(x)=f(a)$. Az elemi függvények '
-  r'az értelmezési tartományukban folytonosak — ott a határérték <b>behelyettesítéssel</b> kiszámolható.</p>',
+  r'<p><b>Egyoldali határérték</b> ' + h(B1, "def-egyoldali") + (
+                                                                       ': $x\\to a-0$ (balról), $x\\to a+0$ (jobbról). Ha $a$-hoz az értelmezési tartományban mindkét '
+                                                                       'oldalról közelíthetünk, a kétoldali határérték akkor és csak akkor létezik, ha a két egyoldali '
+                                                                       'határérték létezik és egyenlő.</p><p><b>Folytonosság</b> '
+                                                                   ) + h(B1, "def-folytonos") + (
+                                                             ': $\\lim\\limits_{x\\to a}f(x)=f(a)$. Az elemi függvények az értelmezési tartományukban folytonosak — '
+                                                             'ott a határérték <b>behelyettesítéssel</b> kiszámolható. A tartomány végpontjában csak a tartomány '
+                                                             'felől közelítünk.</p>'
+                                                         ),
  ]),
 
  ("🧮 Határérték-számítás — mit csinálj?", [
@@ -246,10 +257,13 @@ TEREP = [
    r'<li>Mi a közös a négy hibában? Fogalmazd meg két-három mondatban, mit kell <b>ellenőrizni</b>, mielőtt egy '
    r'szabályt alkalmazunk!</li>'
    r'</ol>',
-   brief('<b>Nagol:</b> A szenzor bemérve, a fal határértékei kiszámolva, és Vilmos pályájáról is tudjuk, hogy a fal '
-         'mellett fut, de soha nem éri el. A számításaidat a tanárod ellenőrzi; a kulcs nem kerül a hálózatra. '
-         '<b>Véd Vilmos:</b> Akkor a falat nem is kellett áttörni? <b>Nagol:</b> Megérteni kellett. A következő '
-         'fejezetben azt nézzük meg, milyen gyorsan változik minden — egy pillanat alatt.', outro=True),
+   brief((
+             '<b>Nagol:</b> A szenzor bemérve, a fal határértékei kiszámolva, és Vilmos pályájáról is tudjuk, '
+             'hogy a fal mellett fut, de soha nem éri el. A számításaidat a tanárod ellenőrzi; minden '
+             'eredményedhez írd le az indoklást is. <b>Véd Vilmos:</b> Akkor a falat nem is kellett áttörni? '
+             '<b>Nagol:</b> Megérteni kellett. A következő fejezetben azt nézzük meg, milyen gyorsan változik egy '
+             'mennyiség egy adott pillanatban.'
+         ), outro=True),
  ]),
 ]
 
@@ -357,47 +371,31 @@ def racs(*kulcsok):
     return '    <div class="racs">\n' + "\n".join(KT[k] for k in kulcsok) + '\n    </div>\n'
 
 
-INDEX = '''<!DOCTYPE html>
-<html lang="hu" data-root="../..">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Függvények | 4e | Szvetkó matek</title>
-<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../../assets/css/theme.css">
-<link rel="stylesheet" href="../../assets/css/print.css">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
-</head>
-<body data-tagozat="4e">
-<div id="progress"></div>
-<header class="fejlec">
-  <div class="fejlec-bel">
-    <a class="logo" href="../../index.html"><span class="jel">&#8730;</span><span class="nev">Szvetkó <b>matek</b></span></a>
-    <span class="ter"></span>
-    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
-  </div>
-</header>
-<nav class="morzsa">
-  <a href="../../index.html">Főhadiszállás</a> ›
-  <a href="../index.html"><span class="tagozat-jel">4e</span></a> ›
-  <span class="itt">Függvények</span>
-</nav>
-<div class="hero">
-  <h1>Függvények</h1>
-  <p class="alcim">Az elemi függvények névjegye, értelmezési tartomány, zérushely, előjel és paritás — aztán a
-  függvény határértéke, a határérték-számítás fogásai és az aszimptoták, amelyekhez a görbe simul.</p>
-  <div class="meta-sor"><span class="chip ora">19 óra</span><span class="statusz kesz">kész</span></div>
-  <div class="brief"><p>🧱 <b>02 — Az Aszimptota-fal Áttörése.</b> Mentor: <b>Nagol</b> (és <b>Véd Vilmos</b>, aki
-  folyton nekimegy a falnak). Szia, megint én vagyok, Vilmos. Az I.V.H. falat húzott körénk, és én már háromszor
-  nekifutottam. Nagol szerint nem áttörni kell, hanem kiszámolni, hol van — és hogy miért nem érem el soha. Kezdd a
-  függvények névjegyével; a falig úgyis eljutunk.</p></div>
-</div>
-<main class="lap">
-  <div class="tartalom">
-    <h2>Tananyag</h2>
-
-    <h3>🧩 A függvény tulajdonságai — Nagol</h3>
-''' + racs("A1", "A2", "A3") + '''
+INDEX = (
+            '<!DOCTYPE html>\n<html lang="hu" data-root="../..">\n<head>\n<meta charset="utf-8">\n<meta '
+            'name="viewport" content="width=device-width,initial-scale=1">\n<title>Függvények | 4e | Szvetkó '
+            'matek</title>\n<link rel="icon" href="../../assets/img/common/favicon.svg" '
+            'type="image/svg+xml">\n<link rel="stylesheet" href="../../assets/css/theme.css">\n<link '
+            'rel="stylesheet" href="../../assets/css/print.css">\n<link rel="stylesheet" '
+            'href="../../assets/katex/katex.min.css">\n</head>\n<body data-tagozat="4e">\n<div '
+            'id="progress"></div>\n<header class="fejlec">\n  <div class="fejlec-bel">\n    <a class="logo" '
+            'href="../../index.html"><span class="jel">&#8730;</span><span class="nev">Szvetkó '
+            '<b>matek</b></span></a>\n    <span class="ter"></span>\n    <form class="kereso-mini"><input '
+            'type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button '
+            'type="submit">Keres</button></form>\n  </div>\n</header>\n<nav class="morzsa">\n  <a '
+            'href="../../index.html">Főhadiszállás</a> ›\n  <a href="../index.html"><span '
+            'class="tagozat-jel">4e</span></a> ›\n  <span class="itt">Függvények</span>\n</nav>\n<div '
+            'class="hero">\n  <h1>Függvények</h1>\n  <p class="alcim">Az elemi függvények névjegye, értelmezési '
+            'tartomány, zérushely, előjel és paritás — aztán a\n  függvény határértéke, a határérték-számítás '
+            'fogásai és az aszimptoták, amelyekhez a görbe simul.</p>\n  <div class="meta-sor"><span class="chip '
+            'ora">19 óra</span><span class="statusz kesz">kész</span></div>\n  <div class="brief"><p>🧱 <b>02 — Az '
+            'Aszimptota-fal Áttörése.</b> Mentor: <b>Nagol</b> (és <b>Véd Vilmos</b>, aki\n  folyton nekimegy a '
+            'falnak). Szia, megint én vagyok, Vilmos. Az I.V.H. falat húzott körénk, és én már háromszor\n  '
+            'nekifutottam. Nagol szerint nem áttörni kell, hanem kiszámolni, hol van — és hogy melyik görbe '
+            'hogyan közelít hozzá. Kezdd a\n  függvények névjegyével; a falig úgyis '
+            'eljutunk.</p></div>\n</div>\n<main class="lap">\n  <div class="tartalom">\n    <h2>Tananyag</h2>\n\n    '
+            '<h3>🧩 A függvény tulajdonságai — Nagol</h3>\n'
+        ) + racs("A1", "A2", "A3") + '''
     <h3>🎯 A határérték — Nagol</h3>
 ''' + racs("B1", "B2", "B3") + '''
     <h3>🧱 Az aszimptota-fal — Nagol és Véd Vilmos</h3>

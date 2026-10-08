@@ -344,11 +344,13 @@ A_I = [
  ("Írd fel az $f$ függvény grafikonjának érintőjét az adott $P$ pontban!",
   [r"$f(x)=-3x^3+3x^2+3x+3$, $P(-1;\,y)$", r"$f(x)=-2x^3-2x^2+2x-2$, $P(1;\,y)$"],
   [r"$P(-1;\,6)$, $y=-12x-6$", r"$P(1;\,-4)$, $y=-8x+4$"]),
- (r"Változási sebesség. Egy futó $t$ másodperc alatt $s(t)=t^2+4t$ métert tesz meg (a–c).",
-  [r"Mekkora a futó átlagsebessége az első $3$ másodpercben?", r"Mekkora a pillanatnyi sebessége $t=3$ s-kor?",
+ ('Változási sebesség. Egy motoros a vizsgált rövid időszakban $t$ másodperc alatt $s(t)=t^2+4t$ métert tesz meg (a–c).',
+  ['Mekkora a motoros átlagsebessége az első $3$ másodpercben?', r"Mekkora a pillanatnyi sebessége $t=3$ s-kor?",
    r"Mikor éri el a $14\ \tfrac{\text{m}}{\text{s}}$ sebességet?",
-   r"Egy medencében a víz magassága $t$ perc múlva $h(t)=120-3t+0{,}02t^2$ cm. Milyen ütemben változik a "
-   r"vízszint $t=10$ perckor?"],
+   (
+       'Egy medencében a víz magasságát a vizsgált időszakban a következő modell írja le: $t$ perc múlva '
+       '$h(t)=120-3t+0{,}02t^2$ cm. Milyen ütemben változik a vízszint $t=10$ perckor?'
+   )],
   [r"$7\ \tfrac{\text{m}}{\text{s}}$", r"$10\ \tfrac{\text{m}}{\text{s}}$",
    r"$t=5$ s-kor", r"$h'(10)=-2{,}6$ cm/perc: a vízszint csökken"]),
  DER("Deriváld az összetett függvényeket!", [("(3*x-4)**4", "12*(3*x-4)**3"), ("(x**2-x+1)**5", "(10*x-5)*(x**2-x+1)**4"),
@@ -437,8 +439,11 @@ N_I = [
   [r"$y=2x$ és $y=-6x$",
    r"$c=-1$"]),
 ]
-JOKER_I = (r"🃏 <b>Véd Vilmos rejtvénye.</b> Adj meg egy olyan $f$ függvényt, amelynek a deriváltja $f'(x)=2x$, és a "
-           r"grafikonja átmegy az $(1;\,5)$ ponton! Hány ilyen függvény van?",
+JOKER_I = ((
+               '🃏 <b>Véd Vilmos rejtvénye.</b> Adj meg egy olyan, az egész valós számegyenesen értelmezett és '
+               "deriválható $f$ függvényt, amelynek a deriváltja $f'(x)=2x$, és a grafikonja átmegy az $(1;\\,5)$ "
+               'ponton! Hány ilyen függvény van?'
+           ),
            r"$f(x)=x^2+4$; pontosan egy ilyen függvény van.", None)
 
 # ================================================================ ZSOLDOS-LISTA II.
@@ -712,8 +717,10 @@ if __name__ == "__main__":      # a build_egyeb_4e_03 a segédeket importálja, 
                nxt="feladatok-fuggvenyvizsgalat.html", nxtc="Zsoldos-lista II. — Függvényvizsgálat")
     u2 = oldal(**T, fajl="feladatok-fuggvenyvizsgalat.html", cim="Zsoldos-lista II. — Függvényvizsgálat",
                h1="A függvény deriváltja — Zsoldos-lista II.: függvényvizsgálat", itt="Zsoldos-lista II. — Függvényvizsgálat",
-               alcim="Monotonitás és szélsőérték, konvexitás és inflexiós pont, teljes függvényvizsgálat grafikonnal. A "
-                     "végeredmény minden feladatnál lenyitható — a 32-es típusú vizsgálatoknál ábrával!",
+               alcim=(
+                         'Monotonitás és szélsőérték, konvexitás és inflexiós pont, teljes függvényvizsgálat grafikonnal. A '
+                         'végeredmény minden feladatnál lenyitható — a teljes függvényvizsgálatoknál ábrával!'
+                     ),
                sections_html=lista(_prim(A_II), _prim(K_II), _prim(N_II), JOKER_II, kozep_atvezetes={8}), ossz_nev="Csalópapírt",
                prev="feladatok-derivalas.html", prevc="Zsoldos-lista I. — Deriválás",
                nxt="feladatok-hazi.html", nxtc="I.V.H. Kihallgató Terem — Vészterem")

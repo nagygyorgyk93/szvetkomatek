@@ -270,7 +270,7 @@ A korábbi A1-ellenőrzések nem helyettesítik a teljes stilisztikai átnézés
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ◐ Helyben kész: 77/77 oldal — 38 tananyag, 38 további témaköroldal és az osztály főoldala; teljes nyelvi és példahitelességi audit (2026-10-07) | ◐ Helyben kész: 65/65 oldal — mind a négy témakör és az osztály főoldala; teljes nyelvi és példahitelességi audit (helyi main, 2026-10-08) | ◐ Helyben kész: 92/92 oldal — mind a hat témakör és az osztály főoldala; teljes nyelvi és példahitelességi audit (helyi main, 2026-10-08; ez az adag nincs pusholva) | ☐ A3 külön audit hátra |
+| ◐ Helyben kész: 77/77 oldal — 38 tananyag, 38 további témaköroldal és az osztály főoldala; teljes nyelvi és példahitelességi audit (2026-10-07) | ◐ Helyben kész: 65/65 oldal — mind a négy témakör és az osztály főoldala; teljes nyelvi és példahitelességi audit (helyi main, 2026-10-08) | ◐ Helyben kész: 92/92 oldal — mind a hat témakör és az osztály főoldala; teljes nyelvi és példahitelességi audit (helyi main, 2026-10-08; ez az adag nincs pusholva) | ◐ Folyamatban: 37/73 oldal — 4e/01–03 teljes nyelvi és példahitelességi auditja helyben kész (helyi main, 2026-10-08; nincs push); 04–06 és az osztály főoldala hátra |
 
 Az első adag három függvényes, a második hat logikai és halmazos tananyagot
 ellenőrzött. A példák feltételei, bevezetők, átvezetők és matematikai pontatlanságok
@@ -566,6 +566,39 @@ más böngésző, teljes PDF-tördelés, háttérpontok kézi kontrasztja, küls
 új próbája és élő publikált oldal nincs ellenőrizve. Tanári döntés kell: nincs.
 1e 77/77, 2e 65/65, 3e 92/92 kész; 4e A3 hátra. Következő nagyobb adaghoz
 választás kell, javaslat 4e A3 első három témaköre. Helyi main, új ág és push nélkül.
+Részletek: [A3 nyelvi ellenőrzés](A3_nyelvi_ellenorzes.md).
+
+Huszonötödik adag (2026-10-08): 4e/01–03 három teljes témakörének
+37 HTML-oldala teljes szöveg szerint átnézve: 20 lecke, 204 kártya, 61 SVG,
+48 kvíz. Kiindulás 735a938, tiszta main és azonos helyi origin/main referencia,
+távoli frissítés nélkül. A 4e kimenetek/sztandardok mérvadók; kiegészítések,
+nehézségi szintek és a kanonikus gyakorlósáv-címke megmaradtak. Hibatábla előre.
+Határérték el nem érésének túláltalánosítása, monotonitás, gyök/e feltételek,
+végponti határérték/folytonosság, periodicitás és logalap, derivált tételiránya,
+e hatványfüggvényének kizárólagossága, radián/láncszabály, kizárt hely/pólus és
+inflexió értelmezése pontosítva. Hihetőbb virtuális rétegtorony, motoros és
+hűtőberendezésben hűlő minta, azonos számadatokkal. Természetesebb bevezetők,
+átvezetők; belső feladattípus helyett érthető név. Új feladat/számadat nincs.
+Három friss, kontextus nélküli lektor mind a 37 eredeti és javított szöveget,
+48 kvízt, kidolgozott példákat és három projektet ellenőrizte; mind a 204 kártya
+független kulcsszámítása egyezik (65+68+71), az ábrás feladatokhoz kulcs nélküli
+képet kaptak. Projektválaszok csak privát kontrollban. Az utolsó két nyelvi
+apróság és a kétoldali feltétel újraellenőrizve. 12 builder csak szövegében
+változott; AST/numerikus kontroll rendben. Minden feladatadat és kulcsképlet,
+61 SVG, 48 kvíz helyes válasza, horgony/link/kép/szkript/háttér/média azonos.
+Egy kulcsszövegben csak a hozzáadott törttag megnevezése pontosabb.
+Teljes kép/média/háttér/napló/index/kánon/link/sáv/kulcs/regresszió lánc tiszta:
+334 média 139 lapon, kánon/link 310/0, sáv rendben, kulcs 4499/4499,
+regresszió 100%. Render 37 lap/4398 képlet/48 kvíz, 0 hiba.
+Edge 360/390/1280 zárt/nyitott 222+24 nézet; axe390 74+8/0;
+nyomtatás JS be/ki 74+8; JS nélkül 37+4 lap olvasható. Node/Edge az aktuális
+TULLOGOK-kal; hét mobilos részlet szemrevételezve. 28 HTML és 28 index-URL
+változott, 9 lap azonos; index 308 nem üres bejegyzés; naplótérkép byte szerint
+azonos, 184 egység/2294 feladat/12315 XP. Médiakatalógus, tükrök és zárolt
+első 23 sor megmaradtak. Korlát: valódi képernyőolvasó, más böngésző, teljes
+PDF-tördelés, háttérpontok kézi kontrasztja, külső média új próbája és élő oldal
+nincs ellenőrizve. Tanári döntés kell: nincs. 4e A3: 37/73; következő 04–06
+és az osztály főoldala. Helyi main, új ág és push nélkül.
 Részletek: [A3 nyelvi ellenőrzés](A3_nyelvi_ellenorzes.md).
 
 ---

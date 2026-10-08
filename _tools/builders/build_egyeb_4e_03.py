@@ -48,12 +48,16 @@ OSSZ = [
   r'<p class="lead"><b>Differenciahányados</b> ' + h(A1, "def-differenciahanyados") + r': '
   r'$\dfrac{\Delta y}{\Delta x}=\dfrac{f(x_0+\Delta x)-f(x_0)}{\Delta x}$ — a szelő meredeksége, az átlagos '
   r'változási sebesség az $x_0$ és $x_0+\Delta x$ között ($\Delta x\ne0$).</p>'
-  r'<p><b>Derivált</b> ' + h(A1, "def-derivalt") + r': $f\'(x_0)=\lim\limits_{\Delta x\to0}\dfrac{f(x_0+\Delta x)-f(x_0)}{\Delta x}$ '
-  r'— az érintő meredeksége, a <b>pillanatnyi</b> változási sebesség. Ahol ez a határérték létezik, ott az '
-  r'$x\mapsto f\'(x)$ hozzárendelés az $f\'$ <b>deriváltfüggvény</b> ' + h(A1, "def-derivaltfuggveny") + r'.</p>'
-  r'<p><b>Grafikonról:</b> ahol $f\'\gt0$, ott a görbe emelkedik; ahol $f\'\lt0$, ott süllyed; a csúcsban és a '
-  r'völgyben (vízszintes érintő) $f\'=0$. A meredekebb szakaszon nagyobb $\lvert f\'\rvert$. Fordítva nem mindig igaz: '
-  r'az $x^3$ a $0$-ban is emelkedik, pedig ott $f\'(0)=0$.</p>',
+  r'<p><b>Derivált</b> ' + h(A1, "def-derivalt") + (
+                                                        ": $f\\'(x_0)=\\lim\\limits_{\\Delta x\\to0}\\dfrac{f(x_0+\\Delta x)-f(x_0)}{\\Delta x}$ — az érintő "
+                                                        'meredeksége, a <b>pillanatnyi</b> változási sebesség. Ahol ez a határérték létezik és véges, ott az '
+                                                        "$x\\mapsto f\\'(x)$ hozzárendelés az $f\\'$ <b>deriváltfüggvény</b> "
+                                                    ) + h(A1, "def-derivaltfuggveny") + (
+                                                                                                                  ".</p><p><b>Grafikonról:</b> ahol $f\\'\\gt0$, ott a görbe emelkedik; ahol $f\\'\\lt0$, ott süllyed; "
+                                                                                                                  "deriválható függvény belső csúcsában és völgyében (vízszintes érintő) $f\\'=0$. A meredekebb "
+                                                                                                                  "szakaszon nagyobb $\\lvert f\\'\\rvert$. Fordítva nem mindig igaz: az $x^3$ a $0$-ban is emelkedik, "
+                                                                                                                  "pedig ott $f\\'(0)=0$.</p>"
+                                                                                                              ),
  ]),
 
  ("📋 A deriválttáblázat", [
@@ -64,8 +68,14 @@ OSSZ = [
       ["$\\dfrac1x$", "$-\\dfrac{1}{x^2}$", "$\\operatorname{ctg}x$", "$-\\dfrac{1}{\\sin^2x}$"],
       ["$e^x$", "$e^x$", "$\\ln x$", "$\\dfrac1x$"],
       ["$a^x$", "$a^x\\ln a$", "$\\log_ax$", "$\\dfrac{1}{x\\ln a}$"]]),
-  r'<p>A gyököt és a törtet írd <b>hatványként</b>: $\sqrt[3]{x^2}=x^{\frac23}$, $\dfrac{3}{x^4}=3x^{-4}$ — utána az '
-  r'$x^n$ sora dolgozik. A teljes táblázat megjegyzésekkel: ' + h(A2, "tetel-derivalt-tablazat", "A2") + r'.</p>',
+  (
+      '<p>A trigonometrikus képletek radiánban érvényesek; az exponenciális és logaritmusfüggvény alapja '
+      'pozitív és $1$-től különböző. Valós kitevőnél a hatványszabály pozitív $x$-re érvényes; egész '
+      'kitevőnél a szabály az értelmezési tartomány további pontjaira is alkalmazható. A négyzetgyök és a '
+      'logaritmus deriválásánál $x\\gt0$; a törtek nevezője nem lehet nulla. A gyököt és a törtet írd '
+      '<b>hatványként</b>: $\\sqrt[3]{x^2}=x^{\\frac23}$, $\\dfrac{3}{x^4}=3x^{-4}$ — utána az $x^n$ sora '
+      'dolgozik. A teljes táblázat megjegyzésekkel: '
+  ) + h(A2, "tetel-derivalt-tablazat", "A2") + r'.</p>',
  ]),
 
  ("🔧 A deriválás szabályai", [
@@ -76,9 +86,14 @@ OSSZ = [
       ["összetett függvény (láncszabály) " + h(B1, "tetel-lancszabaly"),
        "$\\big(f(g(x))\\big)'=f'\\big(g(x)\\big)\\cdot g'(x)$ — külső derivált × belső derivált"],
       ["második derivált " + h(B2, "def-masodik-derivalt"), "$f''=(f')'$"]]),
-  r'<p><b>Gyakori minták</b> ($u$ a belső függvény): $\big(u^n\big)\'=n\,u^{n-1}\cdot u\'$, '
-  r'$\big(\sqrt u\big)\'=\dfrac{u\'}{2\sqrt u}$, $\big(e^u\big)\'=e^u\cdot u\'$, $\big(\ln u\big)\'=\dfrac{u\'}{u}$, '
-  r'$\big(\sin u\big)\'=\cos u\cdot u\'$, $\big(\cos u\big)\'=-\sin u\cdot u\'$.</p>',
+  (
+      '<p>A szabályok deriválható függvényekre érvényesek; hányadosnál a nevező nem lehet nulla. A '
+      'láncszabályhoz a belső függvény az adott helyen, a külső a belső értéknél legyen deriválható. A '
+      'gyökös, logaritmusos és általános valós kitevős mintában $u\\gt0$. <b>Gyakori minták</b> ($u$ a '
+      "belső függvény): $\\big(u^n\\big)\\'=n\\,u^{n-1}\\cdot u\\'$, $\\big(\\sqrt u\\big)\\'=\\dfrac{u\\'}{2\\sqrt "
+      "u}$, $\\big(e^u\\big)\\'=e^u\\cdot u\\'$, $\\big(\\ln u\\big)\\'=\\dfrac{u\\'}{u}$, $\\big(\\sin u\\big)\\'=\\cos "
+      "u\\cdot u\\'$, $\\big(\\cos u\\big)\\'=-\\sin u\\cdot u\\'$.</p>"
+  ),
  ]),
 
  ("📐 Érintő, normális, változási sebesség", [
@@ -89,7 +104,7 @@ OSSZ = [
       ["adott $m$ meredekségű érintő", "oldd meg az $f'(x)=m$ egyenletet; párhuzamos egyenesnek ugyanaz a meredeksége"],
       ["változási sebesség " + h(A3, "pelda-sebesseg"), "$v(t)=s'(t)$, $\\;a(t)=v'(t)=s''(t)$; mértékegység: a mennyiség "
        "egysége / az idő egysége"]]),
-  r'<p>Ha $v(t)=0$, a test megáll; ha $v(t)\lt0$, visszafelé halad ' + h(B2, "pelda-mozgas") + r'.</p>',
+  '<p>Ha $v(t)=0$, a test abban a pillanatban áll; ha $v(t)\\lt0$, visszafelé halad ' + h(B2, "pelda-mozgas") + r'.</p>',
  ]),
 
  ("⛰️ Monotonitás és szélsőérték", [
@@ -100,9 +115,11 @@ OSSZ = [
   r'<b>belső</b> $x_0$ pontjában lokális szélsőértéke van, és ott deriválható, akkor $f\'(x_0)=0$.</li>'
   r'<li><b>Elégséges feltétel:</b> $f\'(x_0)=0$ <b>és</b> $f\'$ előjelet vált — $+\to-$: lokális <b>maximum</b>, '
   r'$-\to+$: lokális <b>minimum</b>.</li>'
-  r'<li><b>Előjeltáblázat</b> ' + h(C1, "pelda-harmadfoku") + r': osztópontok az $f\'$ zérushelyei <b>és</b> a pólusok; '
-  r'minden szakaszon egy próbaérték dönt.</li>'
-  r'<li>A szélsőérték <b>helye</b> $x_0$, <b>értéke</b> $f(x_0)$ — a pont $\big(x_0;\,f(x_0)\big)$.</li></ul>',
+  r'<li><b>Előjeltáblázat</b> ' + h(C1, "pelda-harmadfoku") + (
+                                                                     ": osztópontok az $f\\'$ zérushelyei <b>és</b> az értelmezési tartományból kizárt helyek; minden "
+                                                                     'szakaszon egy próbaérték dönt.</li><li>A szélsőérték <b>helye</b> $x_0$, <b>értéke</b> $f(x_0)$ — a '
+                                                                     'pont $\\big(x_0;\\,f(x_0)\\big)$.</li></ul>'
+                                                                 ),
  ]),
 
  ("〰️ Konvexitás és inflexió", [
@@ -127,20 +144,22 @@ OSSZ = [
  ]),
 
  ("⚠️ Véd Vilmos csapdái — amin a legtöbben elcsúsznak", [
-  r'<div class="doboz csapda"><p class="cim"><span class="ikon">⚠️</span> A nyolc leggyakoribb hiba</p>'
-  r'<ol class="reszfeladatok">'
-  r'<li><b>$(f\cdot g)\'=f\'\cdot g\'$:</b> nem! A szorzat deriváltja két tag összege: $f\'g+fg\'$.</li>'
-  r'<li><b>A hányados sorrendje:</b> a számlálóban $f\'g-fg\'$ — fordított sorrendben az előjel is fordul; a '
-  r'nevező $g^2$.</li>'
-  r'<li><b>Elfelejtett belső derivált:</b> $\big(\sin 3x\big)\'=3\cos 3x$, nem $\cos 3x$; $\big(e^{2x}\big)\'=2e^{2x}$.</li>'
-  r'<li><b>Az állandó deriváltja:</b> $(\pi^2)\'=0$, $(\ln 5)\'=0$ — ezek számok, nem függvények.</li>'
-  r'<li><b>Érintő $f\'(x)$-szel:</b> az érintő meredeksége az $f\'(x_0)$ <b>szám</b>; ha $x$ marad benne, nem egyenest kapsz.</li>'
-  r'<li><b>„$f\'(x_0)=0$, tehát szélsőérték”:</b> csak ha $f\'$ előjelet is vált — az $x^3$-nek a $0$-ban nincs.</li>'
-  r'<li><b>„$f\'\'(x_0)=0$, tehát inflexió”:</b> az $x^4$-nél $f\'\'(0)=0$, mégis végig konvex.</li>'
-  r'<li><b>Pólus a táblázatból kihagyva:</b> a pólusnál is válthat előjelet $f$, $f\'$ és $f\'\'$ — és az $\frac1x$ '
-  r'a teljes értelmezési tartományán nem szigorúan monoton csökkenő, csak a $(-\infty;\,0)$ és a $(0;\,+\infty)$ '
-  r'intervallumon külön-külön.</li>'
-  r'</ol></div>',
+  (
+      '<div class="doboz csapda"><p class="cim"><span class="ikon">⚠️</span> A nyolc leggyakoribb '
+      'hiba</p><ol class="reszfeladatok"><li><b>$(f\\cdot g)\\\'=f\\\'\\cdot g\\\'$:</b> nem! A szorzat deriváltja '
+      "két tag összege: $f\\'g+fg\\'$.</li><li><b>A hányados sorrendje:</b> a számlálóban $f\\'g-fg\\'$ — "
+      'fordított sorrendben az előjel is fordul; a nevező $g^2$.</li><li><b>Elfelejtett belső '
+      "derivált:</b> $\\big(\\sin 3x\\big)\\'=3\\cos 3x$, nem $\\cos 3x$; "
+      "$\\big(e^{2x}\\big)\\'=2e^{2x}$.</li><li><b>Az állandó deriváltja:</b> $(\\pi^2)\\'=0$, $(\\ln 5)\\'=0$ — "
+      "ezek $x$-től független állandók, vagyis konstans függvények.</li><li><b>Érintő $f\\'(x)$-szel:</b> "
+      "az érintő meredeksége az $f\\'(x_0)$ <b>szám</b>; ha $x$ marad benne, nem egyenest "
+      "kapsz.</li><li><b>„$f\\'(x_0)=0$, tehát szélsőérték”:</b> az itt vizsgált polinomoknál és racionális "
+      'törtfüggvényeknél előjelváltást is ellenőrzünk — az $x^3$-nek a $0$-ban '
+      "nincs.</li><li><b>„$f\\'\\'(x_0)=0$, tehát inflexió”:</b> az $x^4$-nél $f\\'\\'(0)=0$, mégis végig "
+      "konvex.</li><li><b>Pólus a táblázatból kihagyva:</b> a pólusnál is válthat előjelet $f$, $f\\'$ és "
+      "$f\\'\\'$ — és az $\\frac1x$ a teljes értelmezési tartományán nem szigorúan monoton csökkenő, csak a "
+      '$(-\\infty;\\,0)$ és a $(0;\\,+\\infty)$ intervallumon külön-külön.</li></ol></div>'
+  ),
  ]),
 
  ("Mit hol találsz?", [
@@ -265,10 +284,12 @@ TEREP = [
    r'<li>Mi a közös a négy hibában? Fogalmazd meg két-három mondatban, mit kell <b>ellenőrizni</b>, mielőtt egy '
    r'szabályt vagy egy tételt alkalmazunk!</li>'
    r'</ol>',
-   brief('<b>Nagol:</b> Az ügynök sebessége megmérve, Vilmos ugrása kiszámolva, az ütésem íve felrajzolva. A '
-         'számításaidat a tanárod ellenőrzi; a kulcs nem kerül a hálózatra. <b>Véd Vilmos:</b> Szóval a káoszban is van '
-         'rend — csak deriválni kell. <b>Nagol:</b> És most visszafelé: a következő fejezetben <b>SZVETI</b> a '
-         'darabokból rakja össze az egészet. <i>A Valóság Összefoltozása</i> vár.', outro=True),
+   brief((
+             '<b>Nagol:</b> Az ügynök sebessége megmérve, Vilmos ugrása kiszámolva, az ütésem íve felrajzolva. A '
+             'számításaidat a tanárod ellenőrzi; minden eredményedhez írd le az indoklást is. <b>Véd Vilmos:</b> '
+             'Szóval a káoszban is van rend — csak deriválni kell. <b>Nagol:</b> És most visszafelé: a következő '
+             'fejezetben <b>SZVETI</b> a darabokból rakja össze az egészet. <i>A Valóság Összefoltozása</i> vár.'
+         ), outro=True),
  ]),
 ]
 

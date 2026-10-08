@@ -62,7 +62,7 @@
 
     <div class="doboz tetel" id="tetel-lancszabaly">
       <p class="cim"><span class="ikon">📘</span> Az összetett függvény deriváltja (láncszabály)</p>
-      <span class="math display">\[\Big(f\big(g(x)\big)\Big)'=f'\big(g(x)\big)\cdot g'(x)\]</span><p>Szóban: <b>a külső függvény deriváltja</b> (a belsőt változatlanul hagyva) <b>szorozva a belső függvény deriváltjával</b>.</p>
+      <span class="math display">\[\Big(f\big(g(x)\big)\Big)'=f'\big(g(x)\big)\cdot g'(x)\]</span><p>A belső függvény az adott helyen, a külső függvény a belső függvény értékénél legyen deriválható. Szóban: <b>a külső függvény deriváltja</b> (a belsőt változatlanul hagyva) <b>szorozva a belső függvény deriváltjával</b>.</p>
     </div>
 
     <div class="doboz pelda" id="pelda-lanc">
@@ -72,7 +72,7 @@
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda</p>
-      <p>Véd Vilmos a belső deriváltat elhagyja: <span class="math inline">\(\big((2x+5)^3\big)'=3(2x+5)^2\)</span>. Ez <b>hiányzik egy szorzóval</b> — a belső <span class="math inline">\(2x+5\)</span> is változik, kétszer olyan gyorsan, mint <span class="math inline">\(x\)</span>.</p><p>Rokon hiba: a <span class="math inline">\(\sin^2x\)</span> és a <span class="math inline">\(\sin x^2\)</span> összekeverése. <span class="math inline">\((\sin^2x)'=2\sin x\cos x\)</span> (a külső a négyzetre emelés), de <span class="math inline">\((\sin x^2)'=\cos x^2\cdot2x\)</span> (a külső a szinusz).</p>
+      <p>Véd Vilmos a belső deriváltat elhagyja: <span class="math inline">\(\big((2x+5)^3\big)'=3(2x+5)^2\)</span>. <b>Egy szorzó hiányzik belőle</b> — a belső <span class="math inline">\(2x+5\)</span> is változik, kétszer olyan gyorsan, mint <span class="math inline">\(x\)</span>.</p><p>Rokon hiba: a <span class="math inline">\(\sin^2x\)</span> és a <span class="math inline">\(\sin x^2\)</span> összekeverése. <span class="math inline">\((\sin^2x)'=2\sin x\cos x\)</span> (a külső a négyzetre emelés), de <span class="math inline">\((\sin x^2)'=\cos x^2\cdot2x\)</span> (a külső a szinusz).</p>
     </div>
 
     <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ Külső: 5u⁴, belső deriváltja 4 → 5(4x − 1)⁴ · 4 = 20(4x − 1)⁴." data-nem="✘ A külső deriváltja 5(4x − 1)⁴, de ezt még szorozni kell a belső (4x − 1) deriváltjával, 4-gyel: 20(4x − 1)⁴.">
@@ -96,7 +96,7 @@
     <!-- media:end 4e03-lancszabaly -->
     <h2 id="s3">Tipikus minták</h2>
 
-    <p class="lead">A leggyakoribb összetett függvények deriváltja — mindegyik a láncszabályból jön:</p>
+    <p class="lead">A leggyakoribb összetett függvények deriváltja — mindegyik a láncszabályból jön. A belső függvény legyen deriválható; a gyökös és logaritmusos mintában a belső függvény értéke pozitív. A valós kitevős hatványminta szintén pozitív alapra érvényes:</p>
 
     <div class="tblwrap"><table class="tt-table"><tr><th>függvény</th><th>deriváltja</th><th>példa</th></tr><tr><td><span class="math inline">\((ax+b)^n\)</span></td><td><span class="math inline">\(n\,a\,(ax+b)^{n-1}\)</span></td><td><span class="math inline">\(\big((2x+5)^3\big)'=6(2x+5)^2\)</span></td></tr><tr><td><span class="math inline">\(\sqrt{g(x)}\)</span></td><td><span class="math inline">\(\dfrac{g'(x)}{2\sqrt{g(x)}}\)</span></td><td><span class="math inline">\(\big(\sqrt{x^2+4}\big)'=\dfrac{x}{\sqrt{x^2+4}}\)</span></td></tr><tr><td><span class="math inline">\(\sin(ax)\)</span>, <span class="math inline">\(\cos(ax)\)</span></td><td><span class="math inline">\(a\cos(ax)\)</span>, <span class="math inline">\(-a\sin(ax)\)</span></td><td><span class="math inline">\((\cos3x)'=-3\sin3x\)</span></td></tr><tr><td><span class="math inline">\(e^{kx}\)</span></td><td><span class="math inline">\(k\,e^{kx}\)</span></td><td><span class="math inline">\((e^{2x})'=2e^{2x}\)</span></td></tr><tr><td><span class="math inline">\(\ln g(x)\)</span></td><td><span class="math inline">\(\dfrac{g'(x)}{g(x)}\)</span></td><td><span class="math inline">\(\big(\ln(x^2+1)\big)'=\dfrac{2x}{x^2+1}\)</span></td></tr><tr><td><span class="math inline">\(g(x)^n\)</span></td><td><span class="math inline">\(n\,g(x)^{n-1}g'(x)\)</span></td><td><span class="math inline">\((\operatorname{tg}^3x)'=3\operatorname{tg}^2x\cdot\dfrac1{\cos^2x}\)</span></td></tr></table></div>
 

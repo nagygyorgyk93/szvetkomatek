@@ -443,7 +443,10 @@ N_II[2] = (N_II[2][0], N_II[2][1],
            [N_II[2][2][0], N_II[2][2][1] + r" — az $x=-1$ helyen lyuk van (a $\left(-1;\,-\frac32\right)$ pontban), mert ott a számláló is $0$"])
 JOKER_II = ("Véd Vilmos saját falat akar építeni: olyan racionális függvényt keres, amelynek függőleges aszimptotája "
             "az $x=2$, ferde aszimptotája az $y=x-1$ egyenes.",
-            [r"Például $f(x)=x-1+\dfrac{1}{x-2}=\dfrac{x^2-3x+3}{x-2}$ (a tört a végtelenben $0$-hoz tart, a $2$-ben végtelenbe szakad).",
+            [(
+                 'Például $f(x)=x-1+\\dfrac{1}{x-2}=\\dfrac{x^2-3x+3}{x-2}$ (az egyeneshez hozzáadott törttag a '
+                 'végtelenben $0$-hoz tart, a $2$-ben végtelenbe szakad).'
+             ),
              r"$k=\lim\limits_{x\to+\infty}\frac{f(x)}{x}=1$, $n=\lim\limits_{x\to+\infty}\big(f(x)-x\big)=-1$, és $x=2$-ben a számláló $1\ne0$."],
             ["Adj meg egy ilyen függvényt!", "Ellenőrizd, hogy $k=1$, $n=-1$, és hogy az $x=2$ valóban függőleges aszimptota!"])
 

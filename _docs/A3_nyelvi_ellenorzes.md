@@ -4,9 +4,10 @@
 
 **Jelenlegi összesítés:** az 1e, a 2e és a 3e teljes A3-auditja helyben elkészült:
 **1e 77/77**, **2e 65/65**, **3e 92/92 HTML-oldal**.
-A 4e teljes A3-auditja hátra van.
+A 4e A3-auditja **37/73 oldalra** kész: az első három témakör lezárva.
+A 4e/04–06 és az osztály főoldala hátra van.
 A tanár kérésére az adagok 2–3 teljes témakört fognak össze.
-A munka eddig huszonnégy adagban készült; az alábbi adatok
+A munka eddig huszonöt adagban készült; az alábbi adatok
 az egyes munkamenetek eredményei, a legfrissebb bejegyzés a végén található.
 
 **2026-10-05, első adag:** az 1e/01 három függvényes tananyaglapjának teljes szövegét
@@ -2593,3 +2594,95 @@ vizsgáltuk; az élő publikált oldal nem tartalmazza automatikusan ezt az adag
 A 4e teljes A3-auditja hátra van. **Tanári döntés kell: nincs nyitott tartalmi kérdés.**
 Helyi main, új ág és push nélkül. A következő nagyobb adaghoz választás:
 javaslat a 4e A3, első három témakör egy adagban.
+
+
+## 2026-10-08 — huszonötödik adag: 4e/01–03, három teljes témakör
+
+**Hatókör:** a sorozatok határértéke, a függvények és a derivált témakörének
+mind a 37 oldala teljes szöveg szerint átnézve: 20 tananyag, 8 gyakorló/házi,
+3 témakörnyitó, 3 összefoglaló és 3 projekt. Összesen 204 kártya, 61 SVG
+és 48 kvíz. Ezzel a 4e A3 állapota 37/73; a 04–06 és az osztály főoldala hátra van.
+
+Kiindulás: `735a938`, tiszta helyi `main`. A `main` és az `origin/main` helyi
+referenciája azonos volt; távoli frissítés nem történt. A 4e tantárgyi skill,
+kimenetek és sztandardok voltak mérvadók. A kiegészítő anyagok és a korábban
+rögzített nehézségi besorolások megmaradtak. A hibalista javítás előtt bemutatva.
+
+### A javított hibák és félreérthető megfogalmazások
+
+| Hol | Mi volt a probléma | Súlyosság | Javítás módja és eredménye |
+|---|---|---|---|
+| 01, határérték és emlékeztető | A határérték el nem érése általános szabálynak tűnt; a monotonitás egyik irányában kimaradt az egyenlőség | közepes | Builder: az el nem érést a konkrét példára szűkítettük; mindkét monoton irány pontos; az index pozitív egész |
+| 01, gyökös és e-szám lecke | A gyök értelmezhetősége, a negatív paraméter szemléltetése és a hatványba helyettesítés feltétele nem volt elég pontos | közepes | Builder: kellően nagy pozitív index, pozitív alap és véges kitevő; a negatív paraméterre érvényes tétel és a pozitív paraméterű szemléltetés különválasztva |
+| 01, példák és projekt | Nem hihető cseppkőnövekedés, a konvergencia „megtorpanásként” leírva, a végtelen fékezésnél valódi megállásra kérdező szöveg | közepes | Builder: virtuális rétegtorony az eredeti adatokkal; állandó éves kamatú bankmodell; a projekt a határ átlépésére kérdez |
+| 02, zérushely és határérték | A tengely érintése kimaradt; a kétoldali feltétel a végpontbeli határértékre is általánosítva szerepelt | közepes | Builder: metszés vagy érintés; a kétoldali közelítés feltétele és a tartomány végpontjának kezelése a leckében és az összefoglalóban is pontos |
+| 02, összefoglaló | A periodicitás tartományfeltétele és a logaritmusalap feltétele hiányos volt; a paritás igazolására kizárólagos módszert írt elő | közepes | Builder: eltolásra változatlan tartomány, helyes alapfeltételek és minden tartományi pontra teljesítendő paritásfeltétel |
+| 02, bevezetők és valós példák | Áttörhetetlen aszimptotafal, pontosan periodikusnak nevezett valós jelenségek, feltétel nélkül leírt exponenciális növekedés | közepes | Builder: az aszimptota metszhetősége; közelítő, idealizált modellek megnevezése; az általános díjszabás kitalált sávos példaként szerepel |
+| 03, derivált és e-szám | A növekedésből pozitív deriváltra következtetett; az e hatványfüggvényét önmaga deriváltjaként egyedülinek nevezte | közepes | Builder: a tétel helyes iránya és belső szélsőérték feltétele; a kizárólagosság kikerült, új differenciálegyenletes kitérő nélkül |
+| 03, szabályok és összefoglaló | A radián, alap, pozitív belső érték és pontbeli deriválhatóság feltételei nem mindenütt szerepeltek | közepes | Builder: közös és mintánkénti érvényességi feltételek, az egész kitevős esetek kiterjesztése |
+| 03, függvényvizsgálat | Minden kizárt hely pólusnak tűnt; a megszakadó tartományra azt írta, hogy „nem intervallum”; az inflexiót maximális változásnak nevezte | közepes | Builder: kizárt tartományi helyek; a függvény nincs a teljes intervallumon értelmezve; a helyi és abszolút változás külön kezelve, az érintő ábrafelirata a megfelelő hajlású szakaszra korlátozva |
+| 03, mozgás és hűlés | Emberi futásként túl gyors mozgás, szobai teaként nem hihető hűlési függvény, az elengedési érintő összekeverése a teljes röppályával | közepes | Builder: jármű és motoros rövid időszakra szóló modellje; hűtőberendezésben hűlő minta; az érintő csak a kezdeti irány; a számadatok azonosak |
+| 01–03, nyelv és belső hivatkozások | Hiányzó állítmány/mennyiségnév, nehézkes magyar mondatok, diák számára értelmezhetetlen belső feladattípus, tantervi és dolgozatütemezési kijelentések | alacsony | Builder: természetesebb bevezetők és átvezetők, hiányzó szavak pótlása, tanuló számára érthető megnevezések; a játékos történet megmaradt |
+
+A Richter-skála kitérési és a decibelskála intenzitási arányát az
+[USGS](https://earthquake.usgs.gov/education/how_much_bigger.php) és az
+[NIDCD](https://www.nidcd.nih.gov/health/how-sound-measured) forrásával ellenőriztük.
+A deriválás történeti idejét és jelöléseit a
+[St Andrews matematikatörténeti összefoglalója](https://mathshistory.st-andrews.ac.uk/HistTopics/The_rise_of_calculus/)
+és az [Open University tananyaga](https://www.open.edu/openlearn/science-maths-technology/introduction-differentiation/content-section-3.4.2)
+alapján pontosítottuk. A mai határértékes megfogalmazás külön szerepel a történeti leírástól.
+
+### Független lektorálás és a meglévő tartalom megőrzése
+
+Három friss, előzmény és kulcs nélküli lektor végigolvasta az eredeti tanulói
+szövegeket, ellenőrizte a kidolgozott példákat, a 48 kvízt és a három projektet.
+Mind a 204 gyakorló/házi kártyát önállóan újraszámolták: 01-ben 65/65,
+02-ben 68/68, 03-ban 71/71 egyezik az oldalon látható kulccsal. A csak ábráról
+leolvasható feladatokhoz kulcs nélküli képet is kaptak. A projektválaszok és
+a részletes lektori számítások kizárólag a privát kontrollban maradnak.
+
+Mind a 37 javított szöveg második lektori olvasása megtörtént. Az utolsó kör
+két nyelvi apróságát és a kétoldali határérték feltételét javítottuk;
+a végleges szöveghelyek ismételt ellenőrzése után nincs nyitott biztos hiba.
+A gyakorlósáv történetbeli címkéje a világkánon része; nem azonos a kártyák
+nehézségi jelzésével, ezért megmaradt. A K-tartományok és nehézségi szintek azonosak.
+
+Mind a 12 builder kizárólag szövegében módosult, a program és numerikus
+állandói AST-kontroll szerint azonosak. A 204 feladat matematikai adatai és
+kulcsképletei, a 61 teljes SVG, a 48 kvíz válaszai/helyes válaszai, a horgonyok,
+régi linkek, képek, szkriptek, háttér és médiablokkok megmaradtak. Egyetlen
+nyilvános kulcsszövegben a hozzáadott törttag megnevezése pontosabb lett;
+a képlete és eredménye azonos. Új feladat, számadat és felmérőadat nincs.
+Tükrözött dokumentációt és közös stílust nem módosítottunk.
+
+### Ellenőrzések a végleges helyi állapoton
+
+- Mind a 12 builder újrafutott; beépített öntesztek és numerikus/AST-kontroll rendben.
+- Kép → média → háttér → naplótérkép → keresőindex → kánon → belső link →
+  gyakorlósáv → kulcs → regresszió lánc hibamentes. 334 aktív média 139 lapon;
+  kánon és link 310 oldal, 0 hiba; sáv tiszta; kulcs 4499/4499;
+  regressziós érzékenység 4499/4499 = 100%.
+- A két korábbi 2e visszautalási heurisztika figyelmeztetése megmaradt;
+  az érvényes horgonylinkeket ez az adag nem érinti.
+- Külön jsdom/render: 37 lap, 4398 képlet, 48/48 kvíz, 0 hiba.
+- Edge: 360/390/1280 px, zárt és nyitott lenyílókkal 222 nézet, 0 hiba;
+  axe 390 px-en 74 állapot, 0 jelzett sértés; nyomtatási láthatóság JavaScript
+  be/ki 74 állapot; JavaScript nélkül 37 oldal olvasható.
+- Az utolsó szövegpontosítások után az érintett négy lap külön is:
+  24 nézet, 8 axe, 8 nyomtatás, 4 JavaScript nélküli lap, 0 hiba.
+- A Python Playwright helyett Node/Edge futott a jelenlegi `layout_teszt.py`
+  forrásával egyező `TULLOGOK` kifejezéssel. Hét javított részlet mobilos
+  képe szemrevételezve; oldalankénti CSS-kivétel nincs.
+- 28 HTML-oldal és az index 28 URL-je változott, csak e három témakörben;
+  9 átnézett lap byte szerint változatlan. Keresőindex: 308 nem üres bejegyzés.
+  A naplótérkép byte szerint azonos: 184 egység, 2294 feladat, 12315 XP.
+  A 4e médiakatalógusa és a backlog zárolt első 23 sora byte szerint azonos.
+
+**Korlátok:** valódi képernyőolvasó, más böngésző, teljes PDF-oldaltördelés,
+minden háttérpont kézi kontrasztja, külső média új működési/tartalmi próbája
+és az élő publikált oldal nem volt ellenőrizve. JavaScript nélkül a képletek
+TeX-alakban olvashatók; az axe eredménye nem teljes WCAG-minősítés.
+
+**Tanári döntés kell:** nincs új nyitott tartalmi kérdés.
+**Következő adag:** 4e/04–06 és az osztály főoldala, a teljes 4e A3 lezárásához.
+Helyi main, új ág és push nélkül; e munkamenet eredménye helyi.

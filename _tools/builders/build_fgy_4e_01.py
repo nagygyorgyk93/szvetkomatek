@@ -163,10 +163,16 @@ ALAP = [
  (r"Egy hőlégballon minden újabb emelkedéskor az előző emelkedés $\frac23$-ával jut feljebb. Az első "
   r"emelkedéskor $30$ métert emelkedik. Összesen hány métert emelkedik, ha végtelen sokszor emelkedik?", None,
   "$" + latex(MS(30, "2/3")) + "$ m"),
- (r"Egy cseppkő minden évben az előző évi növekedésének $\frac45$-ével nő. Az első évben $5$ cm-t nő. "
-  r"Mekkora lesz a teljes növekedése, ha végtelen sok évig nő?", None, "$" + latex(MS(5, "4/5")) + "$ cm"),
- (r"Egy cseppkő minden évben az előző évi növekedésének $\frac25$-ével nő. Az első évben $10$ cm-t nő.",
-  ["Sorold fel az első hat év növekedését!", "Mekkora lesz a teljes növekedése, ha végtelen sok évig nő?"],
+ ((
+      'Egy virtuális torony egymásra helyezett rétegekből áll. Minden réteg vastagsága az előző réteg '
+      'vastagságának $\\frac45$-e; az első $5$ cm vastag. Mekkora a torony rétegeinek együttes vastagsága, '
+      'ha a modellben végtelen sok réteggel számolunk?'
+  ), None, "$" + latex(MS(5, "4/5")) + "$ cm"),
+ ((
+      'Egy virtuális torony egymásra helyezett rétegekből áll. Minden réteg vastagsága az előző réteg '
+      'vastagságának $\\frac25$-e; az első $10$ cm vastag.'
+  ),
+  ['Sorold fel az első hat réteg vastagságát!', 'Mekkora a torony rétegeinek együttes vastagsága, ha a modellben végtelen sok réteggel számolunk?'],
   [r"$10;\ 4;\ \frac85;\ \frac{16}{25};\ \frac{32}{125};\ \frac{64}{625}$ cm",
    "$" + latex(MS(10, "2/5")) + r"\approx16{,}67$ cm"]),
  (r"Van-e összege a végtelen mértani sornak, és ha igen, mennyi? Minden esetben $b_1=6$.",

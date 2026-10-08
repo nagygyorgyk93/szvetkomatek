@@ -119,21 +119,24 @@ SVG_DIVERGENS = svg_fuggvenyek(
 # ---------------------------------------------------------------- A
 A = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Véd Vilmos:</b> Kismotorral indulok. Az első percben 1 km-t teszek meg, a másodikban '
-         'ennek a felét, a harmadikban a negyedét, és így tovább — végtelen sok lépés, tehát végtelen '
-         'messzire jutok. 🌮 <i>Burek-matek:</i> „végtelen sok lépés = végtelen távolság.” '
-         '<b>Nagol:</b> Hibás. A lépések egyre rövidebbek, és a megtett út egy <b>jól meghatározott '
-         'számhoz</b> közelít, amelyet soha nem ér el. Ebben a témakörben azt tanuljuk meg, hogyan '
-         'számoljuk ki, <b>mihez közelít</b> valami, ami soha nem ér oda.'),
+   brief((
+             '<b>Véd Vilmos:</b> Kismotorral indulok. Az első percben 1 km-t teszek meg, a másodikban ennek a '
+             'felét, a harmadikban a negyedét, és így tovább — végtelen sok lépés, tehát végtelen messzire jutok. '
+             '🌮 <i>Burek-matek:</i> „végtelen sok lépés = végtelen távolság.” <b>Nagol:</b> Hibás. A lépések '
+             'egyre rövidebbek, és a megtett út egy <b>jól meghatározott számhoz</b> közelít, amelyet soha nem ér '
+             'el. Ebben a témakörben azt tanuljuk meg, hogyan számoljuk ki, <b>mihez tart egy sorozat</b>. A '
+             'mostani példában a megtett út minden véges időpontban kisebb a határértékénél.'
+         )),
  ]),
 
  ("Emlékeztető: mit tudunk a sorozatokról?", [
-   r'<p class="lead">A tavalyi évből négy dolog kell. A <b>sorozat</b> minden $n$ természetes számhoz '
-   r'egy valós számot rendel, ez az $a_n$ általános tag. <b>Monoton</b> a sorozat, ha a tagjai '
-   r'végig nőnek (vagy legalábbis nem csökkennek), vagy végig csökkennek; <b>korlátos</b>, ha minden tagja két rögzített szám közé esik. '
-   r'A <b>mértani sorozat</b> első $n$ tagjának összegére képletünk van.</p>'
-   r'<p>Ha bármelyik bizonytalan, itt a tavalyi anyag: '
-   '<a href="' + E306 + 'tananyag-sorozat-fogalma.html#def-sorozat">a sorozat fogalma</a> · '
+   (
+       '<p class="lead">A tavalyi évből négy dolog kell. A <b>sorozat</b> minden $n$ pozitív egész számhoz '
+       'egy valós számot rendel, ez az $a_n$ általános tag. <b>Monoton</b> a sorozat, ha a tagjai végig nem '
+       'csökkennek, vagy végig nem nőnek; <b>korlátos</b>, ha minden tagja két rögzített szám közé esik. A '
+       '<b>mértani sorozat</b> első $n$ tagjának összegére képletünk van.</p><p>Ha bármelyik bizonytalan, '
+       'itt a tavalyi anyag: <a href="'
+   ) + E306 + 'tananyag-sorozat-fogalma.html#def-sorozat">a sorozat fogalma</a> · '
    '<a href="' + E306 + 'tananyag-monotonitas-es-korlatossag.html#def-monoton">monotonitás</a> · '
    '<a href="' + E306 + 'tananyag-monotonitas-es-korlatossag.html#def-korlatos">korlátosság</a> · '
    '<a href="' + E306 + 'tananyag-mertani-sorozat.html#tetel-mertani-sn">a mértani sorozat összege</a>.</p>',
@@ -178,11 +181,12 @@ A = [
          r'Jelölése:</p>$$\lim_{n\to\infty}a_n=A .$$'
          r'<p>Ilyenkor azt mondjuk, hogy a sorozat <b>konvergens</b>, és $A$-hoz <b>tart</b>.</p>',
          hid="def-hatarertek"),
-   r'<p>Az előző sorozatnál a $2\pm0{,}3$ sávba a negyedik tagtól esik minden tag, a $2\pm0{,}1$ sávba a '
-   r'tizenegyediktől ($\frac1n\lt0{,}1$ akkor, ha $n\gt10$; a tizedik tag, $2{,}1$, éppen a sáv szélén '
-   r'van, a szélét nem számítjuk bele). Minél keskenyebb a sáv, annál később '
-   r'„lép be” a sorozat — de mindig belép. A tanterv ennél a pontnál megáll: a definíció szerinti '
-   r'bizonyítást nem gyakoroljuk, a sáv-kép a lényeg.</p>',
+   (
+       '<p>Az előző sorozatnál a $2\\pm0{,}3$ sávba a negyedik tagtól esik minden tag, a $2\\pm0{,}1$ sávba a '
+       'tizenegyediktől ($\\frac1n\\lt0{,}1$ akkor, ha $n\\gt10$; a tizedik tag, $2{,}1$, éppen a sáv szélén '
+       'van, a szélét nem számítjuk bele). Minél keskenyebb a sáv, annál később „lép be” a sorozat — de '
+       'mindig belép. A definíció szerinti bizonyítást nem gyakoroljuk, a sáv-kép a lényeg.</p>'
+   ),
    doboz("definicio", "Konvergens és divergens sorozat",
          r'<p>Ha a sorozatnak van (véges) határértéke, <b>konvergens</b>; ha nincs, <b>divergens</b>. '
          r'A divergens sorozatok két csoportja:</p>'
@@ -279,9 +283,11 @@ A = [
 # ---------------------------------------------------------------- B1
 B1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Véd Vilmos:</b> A számláló is nő, a nevező is nő. Ki nyer? Én a számlálóra fogadok, '
-         'mert szimpatikusabb. <b>Nagol:</b> Ne fogadj, hanem emeld ki a legnagyobb hatványt. Az '
-         'eredményt a <b>fokszámok</b> döntik el — és ezt egyetlen sorban meg lehet mutatni.'),
+   brief((
+             '<b>Véd Vilmos:</b> A számláló is nő, a nevező is nő. Ki nyer? Én a számlálóra fogadok, mert '
+             'szimpatikusabb. <b>Nagol:</b> Ne fogadj, hanem emeld ki a legnagyobb hatványt. Az eredményt a '
+             '<b>fokszámok és a főegyütthatók</b> döntik el — és ezt egyetlen sorban meg lehet mutatni.'
+         )),
  ]),
 
  ("Kiemelés lépésről lépésre", [
@@ -385,11 +391,12 @@ B2 = [
    r'<p class="lead">A sorozatoknál $n$ mindig pozitív, ezért $\sqrt{n^2}=n$. Ezzel a gyökjel alól is '
    r'kiemelhetjük $n^2$-et, és a gyök elé $n$ kerül.</p>',
    doboz("tetel", "Kiemelés a gyökjel alól",
-         r'<p>Ha $n\gt0$ és $a\gt0$, akkor</p>'
-         r'$$\sqrt{an^2+bn+c}=\sqrt{n^2\left(a+\frac bn+\frac c{n^2}\right)}'
-         r'=n\sqrt{a+\frac bn+\frac c{n^2}} ,$$'
-         r'<p>és a gyökjel alatti kifejezés $a$-hoz tart, így a jobb oldali $\sqrt{a+\frac bn+\frac c{n^2}}$ '
-         r'tényező $\sqrt a$-hoz.</p>',
+         (
+             '<p>Ha $a\\gt0$, minden kellően nagy pozitív $n$-re a gyök alatti kifejezés pozitív, '
+             'és</p>$$\\sqrt{an^2+bn+c}=\\sqrt{n^2\\left(a+\\frac bn+\\frac c{n^2}\\right)}=n\\sqrt{a+\\frac bn+\\frac '
+             'c{n^2}} ,$$<p>és a gyökjel alatti kifejezés $a$-hoz tart, így a jobb oldali $\\sqrt{a+\\frac bn+\\frac '
+             'c{n^2}}$ tényező $\\sqrt a$-hoz.</p>'
+         ),
          hid="tetel-gyok-kiemeles"),
    doboz("pelda", "I.V.H. Akták — gyök a számlálóban",
          r'<p>Számítsuk ki: $\lim\limits_{n\to\infty}\dfrac{\sqrt{16n^2+5n-2}}{3n+1}$.</p>'
@@ -423,9 +430,11 @@ B2 = [
    r'<p>Emlékeztető: a három eset pontos megfogalmazása a <a href="tananyag-racionalis-tortek.html#tetel-fokszam">'
    r'fokszám-szabálynál</a> van.</p>',
    GY(FGY + "#alap-15", "A 15–16", FGY + "#kozep-7", "K 7–11"),
-   brief('<b>Véd Vilmos:</b> Kiemeléssel mindent megoldok! <b>Nagol:</b> Majdnem. Van egy '
-         'határozatlan alak, amelyen semmilyen kiemelés nem segít: az $1^\\infty$. Az alap $1$-hez tart, a '
-         'kitevő a végtelenbe — és a legegyszerűbb esetben egy új, nevezetes szám jön ki.', outro=True),
+   brief((
+             '<b>Véd Vilmos:</b> Kiemeléssel mindent megoldok! <b>Nagol:</b> Majdnem. Van egy határozatlan alak, '
+             'amelyet önmagában a kiemelés még nem old meg: az $1^\\infty$. Az alap $1$-hez tart, a kitevő a '
+             'végtelenbe — és a legegyszerűbb esetben egy új, nevezetes szám jön ki.'
+         ), outro=True),
  ]),
 ]
 

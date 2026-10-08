@@ -125,8 +125,10 @@ OSSZ = [
  ]),
 
  ("♾️ A végtelen mértani sor", [
-  r'<p class="lead">A $b_1+b_1q+b_1q^2+\dots$ végtelen mértani sor összege a részletösszegek '
-  r'határértéke, $S=\lim\limits_{n\to\infty}S_n$ ' + h(C, "tetel-vegtelen-mertani-sor") + r'.</p>'
+  (
+      '<p class="lead">A $b_1+b_1q+b_1q^2+\\dots$ végtelen mértani sor összege a részösszegek határértéke, '
+      '$S=\\lim\\limits_{n\\to\\infty}S_n$ '
+  ) + h(C, "tetel-vegtelen-mertani-sor") + r'.</p>'
   r'$$S=\frac{b_1}{1-q},\qquad\text{ha }\lvert q\rvert\lt1 .$$'
   r'<p>Ha $\lvert q\rvert\ge1$ (és $b_1\ne0$), a sornak <b>nincs</b> összege — a képletet ilyenkor nem '
   r'szabad használni. A feltételt <b>mindig</b> ellenőrizzük, mielőtt behelyettesítünk.</p>'
@@ -139,23 +141,20 @@ OSSZ = [
  ]),
 
  ("⚠️ Véd Vilmos csapdái — amin a legtöbben elcsúsznak", [
-  r'<div class="doboz csapda"><p class="cim"><span class="ikon">⚠️</span> A nyolc leggyakoribb hiba</p>'
-  r'<ol class="reszfeladatok">'
-  r'<li><b>Határozatlan alak eredményként:</b> ✗ „$\frac\infty\infty=1$”, ✗ „$\infty-\infty=0$”, '
-  r'✗ „$1^\infty=1$” — ezek nem számok, hanem jelzések, hogy át kell alakítani.</li>'
-  r'<li><b>Rossz főtag:</b> a főtag a <b>legmagasabb fokú</b> tag, nem az elsőnek leírt: '
-  r'$\dfrac{3-2n^2}{n^2+5}\to-2$.</li>'
-  r'<li><b>Elveszett előjel:</b> ha $p\gt r$, az előjelet a főegyütthatók döntik el: '
-  r'$\dfrac{n^2+1}{3-n}\to-\infty$.</li>'
-  r'<li><b>Gyökvonás a főegyütthatóból:</b> $\sqrt{9n^2+1}$ úgy viselkedik, mint $3n$, nem mint $9n$.</li>'
-  r'<li><b>Mindenre $e$:</b> először nézd meg, mihez tart az alap! '
-  r'$\left(\frac{2n+1}{n}\right)^n\to+\infty$, mert az alap $2$-höz tart.</li>'
-  r'<li><b>A kitevő előjele:</b> $\left(1-\frac2n\right)^{n}\to e^{-2}$ — a $k$ itt $-2$.</li>'
-  r'<li><b>Mértani sor feltétel nélkül:</b> $\lvert q\rvert\ge1$ esetén nincs összeg, bármit ad is a '
-  r'képlet.</li>'
-  r'<li><b>A $q^n$ negatív $q$-val:</b> ha $q\le-1$, a sorozat nem $+\infty$-hez tart, hanem '
-  r'oszcillál: divergens.</li>'
-  r'</ol></div>',
+  (
+      '<div class="doboz csapda"><p class="cim"><span class="ikon">⚠️</span> A nyolc leggyakoribb '
+      'hiba</p><ol class="reszfeladatok"><li><b>Határozatlan alak eredményként:</b> ✗ '
+      '„$\\frac\\infty\\infty=1$”, ✗ „$\\infty-\\infty=0$”, ✗ „$1^\\infty=1$” — ezek nem számok, hanem jelzések, '
+      'hogy át kell alakítani.</li><li><b>Rossz főtag:</b> a főtag a <b>legmagasabb fokú</b> tag, nem az '
+      'elsőnek leírt: $\\dfrac{3-2n^2}{n^2+5}\\to-2$.</li><li><b>Elveszett előjel:</b> ha $p\\gt r$, az '
+      'előjelet a főegyütthatók döntik el: $\\dfrac{n^2+1}{3-n}\\to-\\infty$.</li><li><b>Gyökvonás a '
+      'főegyütthatóból:</b> $\\sqrt{9n^2+1}$ úgy viselkedik, mint $3n$, nem mint $9n$.</li><li><b>Mindenre '
+      '$e$:</b> először nézd meg, mihez tart az alap! $\\left(\\frac{2n+1}{n}\\right)^n\\to+\\infty$, mert az '
+      'alap $2$-höz tart.</li><li><b>Az $e$ kitevőjének előjele:</b> $\\left(1-\\frac2n\\right)^{n}\\to '
+      'e^{-2}$ — a $k$ itt $-2$.</li><li><b>Mértani sor feltétel nélkül:</b> $\\lvert q\\rvert\\ge1$ és '
+      '$b_1\\ne0$ esetén nincs véges összeg, bármit ad is a képlet.</li><li><b>A $q^n$ negatív $q$-val:</b> '
+      'ha $q\\le-1$, a sorozat nem $+\\infty$-hez tart, hanem oszcillál: divergens.</li></ol></div>'
+  ),
  ]),
 
  ("Mit hol találsz?", [
@@ -273,20 +272,19 @@ TEREP = [
  ]),
 
  ("III. fázis — A fékút", [
-   r'<p>Vilmos fékez. Az első másodpercben még $12$ métert tesz meg, és minden további másodpercben az '
-   r'előző másodperc útjának $\frac56$-át. A fékezés kezdetekor $70$ méterre előtte egy szakadék széle van.</p>'
-   r'<ol class="reszfeladatok">'
-   r'<li>Mennyit tesz meg az első öt másodperc mindegyikében (tört alakban és két tizedesjegyre kerekítve)? '
-   r'Milyen sorozatot alkotnak ezek az utak?</li>'
-   r'<li>Mekkora a teljes fékút, ha a fékezés (elméletben) végtelen sokáig tart?</li>'
-   r'<li>Megáll-e Vilmos a szakadék előtt? Ha nem, hányadik másodpercben lépi át a $70$ métert? '
-   r'<i>(Elég próbálgatással megkeresni, számológéppel.)</i></li>'
-   r'<li>Nagol szerint erősebben kellene fékezni. Legfeljebb mekkora lehet a hányados (az első '
-   r'másodperc $12$ métere mellett), hogy a teljes fékút legfeljebb $70$ méter legyen? Add meg tört '
-   r'alakban és három tizedesjegyre lefelé kerekítve is!</li>'
-   r'<li>Vilmos „fékezés” helyett gyorsít: minden másodpercben az előző út $\frac65$-át teszi meg. '
-   r'Van-e ilyenkor véges teljes útja? Indokold meg!</li>'
-   r'</ol>',
+   (
+       '<p>Vilmos fékez. Az első másodpercben még $12$ métert tesz meg, és minden további másodpercben az '
+       'előző másodperc útjának $\\frac56$-át. A fékezés kezdetekor $70$ méterre előtte egy szakadék széle '
+       'van.</p><ol class="reszfeladatok"><li>Mennyit tesz meg az első öt másodperc mindegyikében (tört '
+       'alakban és két tizedesjegyre kerekítve)? Milyen sorozatot alkotnak ezek az utak?</li><li>Mekkora a '
+       'teljes fékút, ha a fékezés (elméletben) végtelen sokáig tart?</li><li>Átlépi-e Vilmos a szakadék '
+       'előtti határt ebben a modellben? Ha igen, hányadik másodpercben lépi át a $70$ métert? <i>(Elég '
+       'próbálgatással megkeresni, számológéppel.)</i></li><li>Nagol szerint erősebben kellene fékezni. '
+       'Legfeljebb mekkora lehet a hányados (az első másodperc $12$ métere mellett), hogy a teljes fékút '
+       'legfeljebb $70$ méter legyen? Add meg tört alakban és három tizedesjegyre lefelé kerekítve '
+       'is!</li><li>Vilmos „fékezés” helyett gyorsít: minden másodpercben az előző út $\\frac65$-át teszi '
+       'meg. Van-e ilyenkor véges teljes útja? Indokold meg!</li></ol>'
+   ),
  ]),
 
  ("🔴 IV. fázis — Véd Vilmos jegyzőkönyve", [
@@ -301,10 +299,12 @@ TEREP = [
    r'<li>Mi a közös a négy hibában? Fogalmazd meg két-három mondatban, mit kell <b>ellenőrizni</b>, '
    r'mielőtt egy szabályt vagy képletet alkalmazunk!</li>'
    r'</ol>',
-   brief('<b>Nagol:</b> A szenzor be van mérve, a kijelzők újraindultak, és tudjuk, hol állna meg '
-         'a motor — ha jobban fékezne. Vilmos jegyzőkönyve pedig megmutatta, hogy a végtelennel nem lehet '
-         'úgy bánni, mint egy számmal. A számításaidat a tanárod ellenőrzi; a kulcs nem kerül a hálózatra. '
-         '<b>Véd Vilmos:</b> Szóval megúsztuk? <b>Nagol:</b> Ezt a fejezetet igen.', outro=True),
+   brief((
+             '<b>Nagol:</b> A szenzor be van mérve, a kijelzők újraindultak, és tudjuk, meddig jutna a motor — ha '
+             'jobban fékezne. Vilmos jegyzőkönyve pedig megmutatta, hogy a végtelennel nem lehet úgy bánni, mint '
+             'egy számmal. A számításaidat a tanárod ellenőrzi; a kulcs nem kerül a hálózatra. <b>Véd Vilmos:</b> '
+             'Szóval megúsztuk? <b>Nagol:</b> Ezt a fejezetet igen.'
+         ), outro=True),
  ]),
 ]
 

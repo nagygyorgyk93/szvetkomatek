@@ -143,8 +143,11 @@ IV_C1 = svg_interaktiv(
            "érintő, amelynek színe a derivált előjelét mutatja")
 IV_C2 = svg_interaktiv(
     "erinto", [1, 0, -3, 1], xr=(-1.3, 3.3), yr=(-5.4, 3.8), csuszka=(-1.1, 3.1, 0.01, 0.2), w=W, h=H, f2=True,
-    felirat="Figyeld, hol van a görbe az érintőhöz képest! Az $x_0=1$-től balra a görbe az érintő <b>alatt</b> "
-            "halad (konkáv, $f''\\lt0$), jobbra <b>fölötte</b> (konvex, $f''\\gt0$). Az $x_0=1$ az inflexiós hely.",
+    felirat=(
+                "Figyeld, hol van a görbe az érintőhöz képest! Az $x=1$-től balra a görbe <b>konkáv</b> ($f''\\lt0$), "
+                "jobbra <b>konvex</b> ($f''\\gt0$). A konkáv szakasz érintője ezen a szakaszon a görbe fölött, a "
+                'konvex szakaszé pedig alatta halad; az érintési pontban találkoznak. Az $x=1$ az inflexiós hely.'
+            ),
     leiras="Interaktív ábra: az f(x) = x³ − 3x² + 1 grafikonja mozgatható érintővel; a kijelző az első és a második "
            "derivált előjelét is mutatja")
 SVG_C1_POL = svg_fuggvenyek(
@@ -190,10 +193,11 @@ NO, CS, MX, MN = "↗ nő", "↘ csökken", "max", "min"
 # ---------------------------------------------------------------- C1
 C1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Véd Vilmos:</b> Hegyek és völgyek! A legmagasabb pont, a legmélyebb pont — ott történik minden. '
-         '<b>Nagol:</b> És ott vízszintes az érintő. Ennyi a titok — <i>majdnem</i>. A 02. témakörben a '
-         'monotonitást még csak ránéztük a grafikonra '
-         '(<a href="' + E402 + 'tananyag-fuggvenytulajdonsagok.html#def-monoton-fv">a monoton függvény</a>); '
+   brief((
+             '<b>Véd Vilmos:</b> Hegyek és völgyek! A legmagasabb pont, a legmélyebb pont — ott történik minden. '
+             '<b>Nagol:</b> És ott vízszintes az érintő. Ennyi a titok — <i>majdnem</i>. A 02. témakörben a '
+             'monotonitást még a grafikonról olvastuk le (<a href="'
+         ) + E402 + 'tananyag-fuggvenytulajdonsagok.html#def-monoton-fv">a monoton függvény</a>); '
          'most a derivált előjeléből <b>kiszámoljuk</b>. Ez a harmadik dolgozat gerince.'),
  ]),
 
@@ -224,10 +228,12 @@ C1 = [
          r'$x_0$, <b>értéke</b> az $f(x_0)$. Ahol $f\'(x_0)=0$, azt a helyet <b>stacionárius</b> helynek hívjuk.</p>',
          hid="def-lokalis-szelsoertek"),
    doboz("tetel", "A szélsőérték feltételei",
-         r'<ul><li><b>Szükséges feltétel:</b> ha $f$ deriválható $x_0$-ban, és ott lokális szélsőértéke van, '
-         r'akkor $f\'(x_0)=0$.</li>'
-         r'<li><b>Elégséges feltétel:</b> ha $f\'(x_0)=0$, és $f\'$ az $x_0$-ban <b>előjelet vált</b>, akkor ott '
-         r'szélsőérték van: ha $+$-ból $-$-ba vált, <b>maximum</b>; ha $-$-ból $+$-ba, <b>minimum</b>.</li></ul>',
+         (
+             '<ul><li><b>Szükséges feltétel:</b> ha $x_0$ az intervallum belső pontja, $f$ ott deriválható, és '
+             "lokális szélsőértéke van, akkor $f\\'(x_0)=0$.</li><li><b>Elégséges feltétel:</b> ha $f\\'(x_0)=0$, "
+             "és $f\\'$ az $x_0$-ban <b>előjelet vált</b>, akkor ott szélsőérték van: ha $+$-ból $-$-ba vált, "
+             '<b>maximum</b>; ha $-$-ból $+$-ba, <b>minimum</b>.</li></ul>'
+         ),
          hid="tetel-szelsoertek-feltetel"),
    kviz(r'Döntsd el: az $f(x)=x^3$ függvénynél $f\'(0)=0$. Van-e szélsőértéke a $0$-ban?',
         [r'nincs: $f\'(0)=0$, de $f\'$ a $0$-ban nem vált előjelet',
@@ -241,10 +247,13 @@ C1 = [
  ]),
 
  ("Az előjeltáblázat", [
-   r'<p class="lead">A módszer mindig ugyanaz: <b>1.</b> $f\'(x)$ kiszámítása, szorzattá alakítva · <b>2.</b> '
-   r'$f\'(x)=0$ megoldása (és a pólusok, ahol $f$ nincs értelmezve) · <b>3.</b> ezek az <b>osztópontok</b>: '
-   r'közöttük $f\'$ előjele állandó, egy-egy próbaszámmal eldönthető · <b>4.</b> nő/csökken, és ahol előjelet '
-   r'vált: maximum vagy minimum · <b>5.</b> a szélsőérték <b>értéke</b>: behelyettesítés $f$-be.</p>',
+   (
+       '<p class="lead">A módszer mindig ugyanaz: <b>1.</b> $f\\\'(x)$ kiszámítása, szorzattá alakítva · '
+       "<b>2.</b> $f\\'(x)=0$ megoldása (és az értelmezési tartományból kizárt helyek) · <b>3.</b> ezek az "
+       "<b>osztópontok</b>: közöttük $f\\'$ előjele állandó, egy-egy próbaszámmal eldönthető · <b>4.</b> "
+       'nő/csökken, és ahol előjelet vált: maximum vagy minimum · <b>5.</b> a szélsőérték <b>értéke</b>: '
+       'behelyettesítés $f$-be.</p>'
+   ),
    doboz("pelda", "I.V.H. Akták — harmadfokú polinom",
          r'<p>$f(x)=x^3-6x^2+9x-2$. Ekkor $f\'(x)=3x^2-12x+9=3(x-1)(x-3)$, a stacionárius helyek $x=1$ és '
          r'$x=3$.</p>'
@@ -268,9 +277,11 @@ C1 = [
  ]),
 
  ("Racionális törtfüggvény", [
-   r'<p class="lead">Törtfüggvénynél a módszer ugyanaz, két kiegészítéssel: a <b>pólus</b> (ahol a nevező $0$) is '
-   r'osztópont, de ott a függvény nincs értelmezve; és a derivált nevezője egy <b>négyzet</b>, ami mindig '
-   r'pozitív — az előjelet a számláló dönti el.</p>',
+   (
+       '<p class="lead">Törtfüggvénynél a módszer ugyanaz, két kiegészítéssel: az értelmezési tartományból '
+       'kizárt helyek is osztópontok; és a hányadosszabállyal kapott derivált nevezője az eredeti nevező '
+       '<b>négyzete</b>, ezért az értelmezési tartományban pozitív — az előjelet a számláló dönti el.</p>'
+   ),
    doboz("pelda", "I.V.H. Akták — törtfüggvény monotonitása",
          r'<p>$f(x)=\dfrac{x^2+5}{x-2}$, $D_f=\mathbb R\setminus\{2\}$. A hányadosszabállyal</p>'
          r'$$f\'(x)=\frac{2x(x-2)-(x^2+5)}{(x-2)^2}=\frac{x^2-4x-5}{(x-2)^2}=\frac{(x+1)(x-5)}{(x-2)^2}.$$'
@@ -281,11 +292,14 @@ C1 = [
          r'$(5;\,10)$ pontban.</p>', hid="pelda-tort-monoton"),
    abra(SVG_C1_TORT, 'Két ág a pólus két oldalán: a maximum a bal, a minimum a jobb ágon.'),
    doboz("csapda", "Véd Vilmos csapda",
-         r'<p>Véd Vilmos kihagyja a pólust a táblázatból, és azt írja: „a függvény a $(-1;\,5)$ intervallumon '
-         r'csökken”. <b>Nem intervallum</b>, hiszen a $2$-ben nincs értelmezve: két külön intervallumon, a '
-         r'$(-1;\,2)$-n és a $(2;\,5)$-ön csökken. A pólus nem is szélsőérték — ott nincs függvényérték.</p>'
-         r'<p>És ne zavarjon, hogy a maximum ($-2$) kisebb a minimumnál ($10$): <b>lokális</b> szélsőértékek, '
-         r'csak a saját környezetükben a legnagyobbak, illetve a legkisebbek.</p>'),
+         (
+             '<p>Véd Vilmos kihagyja a pólust a táblázatból, és azt írja: „a függvény a $(-1;\\,5)$ intervallumon '
+             'csökken”. A függvény <b>nincs a teljes intervallumon értelmezve</b>, mert a $2$-ben nincs '
+             'függvényértéke: két külön intervallumon, a $(-1;\\,2)$-n és a $(2;\\,5)$-ön csökken. A pólus nem is '
+             'szélsőérték — ott nincs függvényérték.</p><p>És ne zavarjon, hogy a maximum ($-2$) kisebb a '
+             'minimumnál ($10$): <b>lokális</b> szélsőértékek, csak a saját környezetükben a legnagyobbak, '
+             'illetve a legkisebbek.</p>'
+         )),
  ]),
 
  ("Nem minden nulla hely szélsőérték", [
@@ -307,16 +321,22 @@ C1 = [
 # ---------------------------------------------------------------- C2
 C2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Nagol</b> a saját ütései ívét elemzi a lassított felvételen: Felfelé nyíló ív — <b>konvex</b>. '
-         'Lefelé nyíló — <b>konkáv</b>. Ahol vált, ott a legnagyobb a lendület. <b>Véd Vilmos:</b> Én mindig '
-         'konkáv vagyok. Főleg hétfőn. <b>Nagol:</b> Ezt most ki is számoljuk — a második deriválttal.'),
+   brief((
+             '<b>Nagol</b> a saját ütései ívét elemzi a lassított felvételen: Felfelé nyíló ív — <b>konvex</b>. '
+             'Lefelé nyíló — <b>konkáv</b>. Ahol a hajlás irányt vált, ott inflexiós pontot keresünk. <b>Véd '
+             'Vilmos:</b> Én mindig konkáv vagyok. Főleg hétfőn. <b>Nagol:</b> Ezt most ki is számoljuk — a '
+             'második deriválttal.'
+         )),
  ]),
 
  ("Konvex és konkáv", [
    doboz("definicio", "Konvex és konkáv függvény",
-         r'<p>Legyen $f$ deriválható az $I$ intervallumon. $f$ az $I$-n <b>konvex</b> (∪), ha grafikonja minden '
-         r'ottani érintőjén vagy <b>fölötte</b> halad; <b>konkáv</b> (∩), ha minden érintőjén vagy <b>alatta</b>. '
-         r'(Ekvivalens megfogalmazás: konvexnél bármely két pontját összekötő húr a grafikon fölött van.)</p>',
+         (
+             '<p>Legyen $f$ deriválható az $I$ intervallumon. $f$ az $I$-n <b>konvex</b> (∪), ha grafikonja '
+             'minden ottani érintőjén vagy <b>fölötte</b> halad; <b>konkáv</b> (∩), ha minden érintőjén vagy '
+             '<b>alatta</b>. (Ekvivalens megfogalmazás: konvexnél bármely két pontját összekötő húr a grafikon '
+             'fölött vagy rajta halad.)</p>'
+         ),
          hid="def-konvex"),
    IV_C2,
    abra(SVG_C2_IVEK, 'A monotonitás és a görbülés független: mind a négy párosítás előfordul.'),
@@ -357,10 +377,13 @@ C2 = [
          r'$f\'\'(x)=12x^2$, ez a $0$-ban $0$ — de mindkét oldalon <b>pozitív</b>, tehát a függvény végig konvex, '
          r'inflexió nincs. Ugyanaz a hiba, mint a szélsőértéknél: <b>a nulla hely csak jelölt, az előjelváltás '
          r'dönt</b>. Rokon hiba a „konvex” és a „konkáv” felcserélése — jegyezd meg: konvex ∪, mint egy tál.</p>'),
-   doboz("erdekesseg", "A leggyorsabb változás pontja",
-         r'<p>Az inflexiós pontban a derivált (a meredekség) szélsőértéket vesz fel: ott a leggyorsabb a növekedés '
-         r'vagy a csökkenés. Egy járvány „inflexiós pontja” az a nap, amikor a legtöbb új eset jelentkezik — '
-         r'utána lassul a terjedés.</p>'),
+   doboz("erdekesseg", 'Az inflexió és az érintő meredeksége',
+         (
+             '<p>Inflexiónál az érintő meredeksége helyi maximumot vagy minimumot vehet fel. Ez önmagában nem '
+             'jelenti, hogy ott a legnagyobb a változás sebességének abszolút értéke. Az előző polinomnál a két '
+             'szélsőérték között az inflexiós helyen a legkisebb a derivált, ezért ott csökken legmeredekebben a '
+             'görbe.</p>'
+         )),
    kviz(r'Az $f(x)=x^4$ függvényre $f\'\'(0)=0$. Van-e inflexiós pontja a $0$-ban?',
         [r'nincs, mert $f\'\'$ a $0$ két oldalán is pozitív', r'van, mert $f\'\'(0)=0$',
          r'van, mert $f\'(0)=0$', r'nincs, mert $f(0)=0$'], 0,
@@ -389,10 +412,12 @@ C2 = [
 # ---------------------------------------------------------------- C3
 C3 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Véd Vilmos</b> és <b>Nagol</b> egy ismeretlen függvény profilját rajzolják fel az I.V.H. '
-         'aktájába. Minden lépés egy nyom: hol él, hol metszi a tengelyt, merre szökik a végtelenbe, hol fordul, '
-         'hogyan hajlik. <b>Véd Vilmos:</b> Hé, aki most a pad alatt a telefonját nyomkodja: <b>a harmadik '
-         'dolgozat pontosan ez lesz.</b>'),
+   brief((
+             '<b>Véd Vilmos</b> és <b>Nagol</b> egy ismeretlen függvény profilját rajzolják fel az I.V.H. '
+             'aktájába. Minden lépés egy nyom: hol él, hol metszi a tengelyt, merre szökik a végtelenbe, hol '
+             'fordul, hogyan hajlik. <b>Véd Vilmos:</b> Hé, aki most a pad alatt a telefonját nyomkodja: <b>most '
+             'együtt használjuk a függvényvizsgálat eszközeit.</b>'
+         )),
  ]),
 
  ("A hét lépés", [
@@ -405,11 +430,13 @@ C3 = [
          r'<li><b>Paritás</b> — páros, páratlan vagy egyik sem (<a href="' + E402 +
          r'tananyag-fuggvenytulajdonsagok.html#def-paros-paratlan">02: paritás</a>).</li>'
          r'<li><b>Aszimptoták</b> — függőleges, vízszintes vagy ferde (<a href="' + E402 +
-         r'tananyag-aszimptotak.html#def-aszimptota">02: aszimptoták</a>); legalább másodfokú polinomnak nincs egyenes aszimptotája.</li>'
-         r'<li><b>Monotonitás és szélsőérték</b> — $f\'$, előjeltáblázat (C1).</li>'
-         r'<li><b>Konvexitás és inflexió</b> — $f\'\'$, előjeltáblázat (C2).</li>'
-         r'<li><b>Grafikon</b> — a pontok, az aszimptoták és a táblázatok alapján.</li></ol>'
-         r'<p>A tanterv (M2) szerint <b>polinomot és racionális törtfüggvényt</b> vizsgálunk.</p>',
+         (
+             'tananyag-aszimptotak.html#def-aszimptota">02: aszimptoták</a>); legalább másodfokú polinomnak nincs '
+             "egyenes aszimptotája.</li><li><b>Monotonitás és szélsőérték</b> — $f\\'$, előjeltáblázat "
+             "(C1).</li><li><b>Konvexitás és inflexió</b> — $f\\'\\'$, előjeltáblázat (C2).</li><li><b>Grafikon</b> "
+             '— a pontok, az aszimptoták és a táblázatok alapján.</li></ol><p>Ebben a leckében <b>polinomot és '
+             'racionális törtfüggvényt</b> vizsgálunk.</p>'
+         ),
          hid="tetel-het-lepes"),
    kviz(r'Miért az értelmezési tartomány a vizsgálat <b>első</b> lépése?',
         [r'mert a kizárt helyek osztópontok a táblázatokban, és ott megvizsgáljuk, van-e függőleges aszimptota',
@@ -474,9 +501,11 @@ C3 = [
          r'maximum lehet a minimum alatt (a fenti törtnél $1\lt9$); az aszimptotához a görbe a táblázat szerinti '
          r'oldalról simul.</p>'),
    doboz("erdekesseg", "Nem elég a GeoGebra?",
-         r'<p>A számítógép is csak pontokat köt össze — ha rossz ablakot választasz, elbújik a szélsőérték, és a '
-         r'pólusnál függőleges vonalat húz. A vizsgálat mondja meg, <b>hova kell nézni</b>. A kettő együtt a '
-         r'legjobb: számolj, aztán ellenőrizd a géppel.</p>'),
+         (
+             '<p>A képernyőn a grafikon csak egy részét látod. Ha nem megfelelő ablakot választasz, elbújhat a '
+             'szélsőérték; a pólus közelében egy megtévesztő vonal is megjelenhet. A vizsgálat mondja meg, '
+             '<b>hova kell nézni</b>. A kettő együtt a legjobb: számolj, aztán ellenőrizd a géppel.</p>'
+         )),
    kviz(r'Az összesítő táblázat szerint az $(1;\,3)$ intervallumon $f\'\lt0$ és $f\'\'\gt0$. Milyen ott a görbe?',
         [r'csökken, és felfelé nyíló (∪) ívben hajlik', r'csökken, és lefelé nyíló (∩) ívben hajlik',
          r'nő, és felfelé nyíló (∪) ívben hajlik', r'nő, és lefelé nyíló (∩) ívben hajlik'], 0,

@@ -154,11 +154,14 @@ SVG_ELEMZES = svg_fuggvenyek(
 # ---------------------------------------------------------------- A1
 A1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Nagol:</b> Az I.V.H. személyazonosság-ellenőrzést tart. Minden függvénynek fel kell mutatnia a '
-         '<b>névjegyét</b>: hol van értelmezve, milyen értékeket vesz fel, és hogyan néz ki a grafikonja. '
-         '<b>Véd Vilmos:</b> Ismerem mindet, tavaly együtt buliztunk. <b>Nagol:</b> Akkor mondd meg, hol nincs '
-         'értelmezve a logaritmus. <b>Véd Vilmos:</b> … a hétvégén? Ebben a fejezetben egyébként egy falba '
-         'fogok ütközni, amit soha nem érek el. Az aszimptotáról van szó — de előbb ismerkedjünk.'),
+   brief((
+             '<b>Nagol:</b> Az I.V.H. személyazonosság-ellenőrzést tart. Minden függvénynek fel kell mutatnia a '
+             '<b>névjegyét</b>: hol van értelmezve, milyen értékeket vesz fel, és hogyan néz ki a grafikonja. '
+             '<b>Véd Vilmos:</b> Ismerem mindet, tavaly együtt buliztunk. <b>Nagol:</b> Akkor mondd meg, hol '
+             'nincs értelmezve a logaritmus. <b>Véd Vilmos:</b> … a hétvégén? Ebben a fejezetben egyébként egy '
+             'falba fogok ütközni, amelyhez egyre közelebb futok. Az aszimptotáról van szó — de előbb '
+             'ismerkedjünk.'
+         )),
  ]),
 
  ("Emlékeztető: mi a függvény?", [
@@ -214,9 +217,13 @@ A1 = [
          r'vagy negatív számot kapnánk, ezért $\log_2 0$ és $\log_2(-8)$ nem létezik. A $0$-hoz közeledve a '
          r'logaritmus a $-\infty$ felé zuhan — ez lesz az első aszimptotánk.</p>'),
    doboz("erdekesseg", "Hol találkozol vele?",
-         r'<p>Exponenciálisan nő a kamatos kamatozású betét és egy baktériumtenyészet, exponenciálisan '
-         r'fogy a radioaktív anyag. A logaritmus pedig ott van a földrengések Richter-skáláján (egy egység '
-         r'tízszeres kitérés) és a decibel-skálán (10 dB tízszeres hangintenzitás).</p>'),
+         (
+             '<p>Állandó kamatlábbal, további befizetés és kivét nélkül a kamatos kamattal növelt tőke '
+             'exponenciálisan gyarapszik. Egy baktériumtenyészet növekedésének kezdeti szakaszát is közelíthetjük '
+             'exponenciális modellel; a radioaktív bomlásra csökkenő exponenciális modell használható. A '
+             'logaritmus megjelenik a Richter-skálán (egy egységnyi növekedés tízszeres mért kitérésnek felel '
+             'meg) és a decibelskálán (10 dB növekedés tízszeres hangintenzitást jelent).</p>'
+         )),
  ]),
 
  ("A trigonometrikus függvények", [
@@ -308,11 +315,13 @@ A2 = [
  ]),
 
  ("Zérushelyek", [
-   r'<p class="lead">A függvény <b>zérushelye</b> az az $x$, amelyre $f(x)=0$ — ott metszi a grafikon az '
-   r'$x$ tengelyt. Zérushely <b>csak az értelmezési tartományban</b> lehet.</p>'
-   r'<p>Törtnél: a tört akkor $0$, ha a <b>számlálója</b> $0$, a nevezője pedig nem. Például '
-   r'$f(x)=\dfrac{x^2-9}{x-3}$ esetén a számláló $x=3$-ban és $x=-3$-ban nulla, de a $3$ nincs benne '
-   r'$D_f$-ben — ezért az egyetlen zérushely $x=-3$.</p>',
+   (
+       '<p class="lead">A függvény <b>zérushelye</b> az az $x$, amelyre $f(x)=0$ — ott a grafikon az $x$ '
+       'tengelyen van: metszheti vagy érintheti is. Zérushely <b>csak az értelmezési tartományban</b> '
+       'lehet.</p><p>Törtnél: a tört akkor $0$, ha a <b>számlálója</b> $0$, a nevezője pedig nem. Például '
+       '$f(x)=\\dfrac{x^2-9}{x-3}$ esetén a számláló $x=3$-ban és $x=-3$-ban nulla, de a $3$ nincs benne '
+       '$D_f$-ben — ezért az egyetlen zérushely $x=-3$.</p>'
+   ),
    doboz("csapda", "Véd Vilmos csapda",
          r'<p>Véd Vilmos a $\dfrac{x^2-9}{x-3}$ zérushelyeinek a $3$-at és a $-3$-at adja meg — a $3$-at is, pedig '
          r'ott a nevező $0$.</p>'
@@ -402,14 +411,20 @@ A3 = [
    r'<p>Példák: a $\sin x$ és a $\cos x$ alapperiódusa $2\pi$, a $\operatorname{tg}x$-é $\pi$. A nem konstans '
    r'polinomok, az exponenciális és a logaritmusfüggvény <b>nem</b> periodikusak.</p>',
    doboz("erdekesseg", "Hol találkozol vele?",
-         r'<p>Periodikus a hangrezgés (a hangmagasság a periódus hosszán múlik), a nappalok hossza az év során, '
-         r'a szívritmus EKG-görbéje és a váltakozó áram feszültsége.</p>'),
+         (
+             '<p>Periodikus függvényekkel ismétlődő jelenségeket modellezünk: például egy állandó hang rezgését '
+             'vagy az ideális váltakozó feszültséget. A nappalok hosszának éves változása és a szívritmus '
+             'ismétlődése közelítő példák; a valós jel nem feltétlenül ismétlődik pontosan.</p>'
+         )),
  ]),
 
  ("Monotonitás és korlátosság — a grafikonról", [
-   r'<p class="lead">A grafikonról leolvasható, hol <b>nő</b> és hol <b>csökken</b> a függvény, és van-e '
-   r'legnagyobb vagy legkisebb értéke. Pontos kiszámolásukhoz a deriválás kell — ez a következő témakör '
-   r'(A függvény deriváltja) eszköze.</p>',
+   (
+       '<p class="lead">A grafikonról leolvasható, hol <b>nő</b> és hol <b>csökken</b> a függvény, és van-e '
+       'legnagyobb vagy legkisebb értéke. Összetettebb függvényeknél a monotonitás és a szélsőértékek '
+       'pontos meghatározásában a deriválás segít — ez a következő témakör (A függvény deriváltja) '
+       'eszköze.</p>'
+   ),
    doboz("definicio", "Monoton függvény",
          r'<p>Az $f$ egy intervallumon <b>szigorúan növekvő</b>, ha ott bármely $x_1\lt x_2$ esetén '
          r'$f(x_1)\lt f(x_2)$, és <b>szigorúan csökkenő</b>, ha $f(x_1)\gt f(x_2)$. Az $f$ <b>korlátos</b>, ha '
