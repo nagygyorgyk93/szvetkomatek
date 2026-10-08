@@ -293,7 +293,7 @@ NEHEZ = [
  (f"Az {K} kockában mekkora szöget zár be az $AB_1$ és a $B_1C$ lapátló?", None,
   '$60^\\circ$.'),
 
- ("Egy szabályos hatszög beírt és köréírt körének területe hogyan aránylik egymáshoz?",
+ ('Egy szabályos hatszög beírt és köré írt körének területe hogyan aránylik egymáshoz?',
   None, "$3:4$."),
 
  ("Egy szabályos négyoldalú hasáb alapéle $a$, magassága $H$. Fejezd ki $a$-val és $H$-mel "

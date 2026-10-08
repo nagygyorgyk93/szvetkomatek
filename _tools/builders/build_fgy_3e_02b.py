@@ -187,8 +187,7 @@ ALAP = [
   "területe?", None,
   '$r=4$ cm; $T=16\\pi$ cm².'),
 
- ("Egy henger alapkörének sugara $7$ cm. Mekkora az alaplappal párhuzamos "
-  "síkmetszetének a területe?", None,
+ ('Egy henger alapkörének sugara $7$ cm. Mekkora a test belsejében vett, az alaplappal párhuzamos síkmetszetének a területe?', None,
   '$49\\pi$ cm².'),
 
  ("Egy kúp alapkörének sugara $9$ cm, magassága $12$ cm. A <b>csúcstól</b> mérve a magasság "
@@ -222,8 +221,10 @@ ALAP = [
   "Mekkora a térfogata?", None,
   "$V=\\frac{6\\pi}{3}(25+10+4)=2\\pi\\cdot39=78\\pi\\ \\text{cm}^3$."),
 
- ("Egy virágcserép csonkakúp alakú: a felső körének sugara $10$ cm, az aljáé $7$ cm, a "
-  "magassága $12$ cm. Hány <b>liter</b> föld fér bele? (Két tizedesre kerekítve.)", None,
+ ((
+      'Egy virágcserép belső ürege csonkakúp alakú: a felső körének sugara $10$ cm, az aljáé $7$ cm, a '
+      'magassága $12$ cm. Hány <b>liter</b> föld fér bele? (Két tizedesre kerekítve.)'
+  ), None,
   '$2{,}75$ liter.'),
 ]
 
@@ -316,8 +317,10 @@ KOZEP = [
   "megmaradó csonkakúp térfogata? Ellenőrizd a csonkakúp képletével is!", None,
   '$V=224\\pi$ cm³.'),
 
- ("Egy vödör csonkakúp alakú: a felső körének sugara $15$ cm, az aljáé $12$ cm, a "
-  "magassága $25$ cm. Hány liter fér bele? (Két tizedesre kerekítve.)", None,
+ ((
+      'Egy vödör belső ürege csonkakúp alakú: a felső körének sugara $15$ cm, az aljáé $12$ cm, a '
+      'magassága $25$ cm. Hány liter fér bele? (Két tizedesre kerekítve.)'
+  ), None,
   '$14{,}37$ liter.'),
 ]
 

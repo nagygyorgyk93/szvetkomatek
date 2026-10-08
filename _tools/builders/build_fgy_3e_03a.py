@@ -364,10 +364,11 @@ NEHEZ = [
   rs(r"\frac{2}{x}+\frac{3}{y}&=2", r"\frac{4}{x}-\frac{3}{y}&=1"), None,
   '$(x;y)=(2;3)$.'),
 
- ("Egy kenyér, egy csomag kávé és egy üveg olívaolaj együtt $500$ dinárba került, és az "
-  "olaj ára éppen annyi volt, mint a kenyéré és a kávéé együtt. Egy hónap múlva a kenyér "
-  "$10\\%$-kal, a kávé $20\\%$-kal drágult, az olaj ára nem változott, így a három együtt "
-  "$540$ dinárba került.",
+ ((
+      'Egy kenyér, egy kis csomag kávé és egy kis üveg olívaolaj együtt $500$ dinárba került, és az olaj '
+      'ára éppen annyi volt, mint a kenyéré és a kávéé együtt. Egy hónap múlva a kenyér $10\\%$-kal, a kávé '
+      '$20\\%$-kal drágult, az olaj ára nem változott, így a három együtt $540$ dinárba került.'
+  ),
   ["Mennyibe került eredetileg egy-egy termék?",
    "Hány százalékkal drágult a három termék együttes ára?"],
   ['Kenyér: $100$, kávé: $150$, olaj: $250$ dinár',

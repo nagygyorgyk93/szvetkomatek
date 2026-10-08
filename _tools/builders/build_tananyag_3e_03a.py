@@ -117,18 +117,21 @@ SVG_TARIFA = svg_fuggvenyek(
 # ---------------------------------------------------------------- A1
 A1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Kanrak:</b> A Kristálypára-hálózat nem egyetlen ismeretlent rejt, hanem '
-         '<b>többet egyszerre</b> — és minden egyes mérés csak egy <b>összefüggést</b> ad '
-         'közöttük, nem magukat az értékeket. Egy összefüggés végtelen sok lehetőséget '
-         'hagy nyitva. Ami kimetszi belőlük az egyetlen igazat, az a <b>rendszer</b>: '
-         'több feltétel, egyszerre.'),
+   brief((
+             '<b>Kanrak:</b> A Kristálypára-hálózat több ismeretlen értéket rejt. Egy mérés csak egy kapcsolatot '
+             'ad közöttük; a többi feltételt is figyelembe kell vennünk. Ezért együtt írjuk fel az egyenleteket, '
+             'és azokat az értékeket keressük, amelyek mindegyiket teljesítik. A rendszernek lehet egy, több vagy '
+             'akár egyetlen megoldása sem.'
+         )),
    '<p>Ez a témakör az 1e <b>lineáris egyenletek és rendszerek</b> témakörére épül — '
    'ott már megoldottál '
-   '<a href="' + EGY1E + 'tananyag-egyenletrendszerek.html">kétismeretlenes rendszereket</a>. '
-   'Most három dolgot teszünk hozzá: <b>rendszerezzük</b> a módszereket, kiterjesztjük őket '
-   '<b>három ismeretlenre</b>, és megtanulunk <b>beszélni</b> arról, hogy hány megoldás van.</p>'
-   '<p>Az első óra célja ezért nem az új anyag, hanem a <b>diagnózis</b>: ha a 2×2-es '
-   'rendszer nem megy magabiztosan, a Gauss-eljárás sem fog.</p>',
+   '<a href="' + EGY1E + (
+                             'tananyag-egyenletrendszerek.html">kétismeretlenes rendszereket</a>. Most három dolgot teszünk '
+                             'hozzá: <b>rendszerezzük</b> a módszereket, kiterjesztjük őket <b>három ismeretlenre</b>, és '
+                             'megtanulunk <b>beszélni</b> arról, hogy hány megoldás van.</p><p>Érdemes először a kétismeretlenes '
+                             'rendszerek megoldását átismételni: a Gauss-eljárásban is ugyanezekre az átalakításokra lesz '
+                             'szükség.</p>'
+                         ),
  ]),
 
  ("Mi a lineáris egyenletrendszer", [
@@ -264,15 +267,18 @@ A1 = [
    '<p>A következő órán, három ismeretlennél ez a döntés már nem luxus, hanem '
    'időmegtakarítás: ott ugyanezt a választást <b>többször</b> kell meghozni.</p>',
    doboz("erdekesseg", "És ha ránézésre nem megy?",
-         '<p>Épp ez a témakör oka. Két ismeretlennél még elboldogulsz ötletekkel; három '
-         'ismeretlennél az ötlet elfogy. Ezért fogunk a következő órán olyan eljárást '
-         'tanulni, amely <b>ötlet nélkül is működik</b>: mindig ugyanazokat a lépéseket '
-         'kell végrehajtani, és a végén ott a megoldás. Ez az <b>algoritmus</b> lényege.</p>'),
+         (
+             '<p>Épp ez a témakör oka. Két ismeretlennél még elboldogulsz ötletekkel; három ismeretlennél az '
+             'ötlet elfogy. Ezért fogunk a következő órán olyan eljárást tanulni, amely <b>rendezett lépésekben '
+             'követhető</b>: mindig ugyanazokat a lépéseket kell végrehajtani, és a végén ott a megoldás. Ez az '
+             '<b>algoritmus</b> lényege.</p>'
+         )),
    GY(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–3"),
-   brief('<b>Kanrak:</b> Két ismeretlen még kezes jószág. De a Kamra mérőállomásai '
-         '<b>hármasával</b> küldik az adatot — és ott elfogy az ötlet. Kell egy '
-         'eljárás, amit akkor is végig tudsz vinni, ha közben fogalmad sincs, hova '
-         'tartasz. Ez következik.', outro=True),
+   brief((
+             '<b>Kanrak:</b> Két ismeretlennél már kipróbáltad a behelyettesítést és a kiküszöbölést. A Kamra '
+             'következő mérési soraiban három ismeretlen szerepel. A Gauss-eljárás segít rendezett lépésekben '
+             'megoldani ezeket a rendszereket is.'
+         ), outro=True),
  ]),
 ]
 
@@ -323,23 +329,12 @@ A2 = [
          '(az első sor változatlan marad).</p>',
          hid="def-ekvivalens-lepesek"),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„Ha szorozhatok, akkor nullával is szorozhatok. És ha összeadhatok két '
-         'egyenletet, akkor össze is szorozhatom őket.”</i></p>'
-         '<p><b>Egyik sem igaz.</b></p>'
-         '<ul>'
-         '<li><b>Nullával szorozva</b> az egyenletből $0=0$ lesz — ez igaz állítás, de '
-         'semmit nem mond. Elveszítettük az egyenletben tárolt <b>információt</b>, és így '
-         'a kapott rendszernek <b>több megoldása lehet</b>, mint az eredetinek — az '
-         'átalakítás tehát nem ekvivalens. Ezért kell a szorzóban a „nem nulla” '
-         'kikötés.</li>'
-         '<li><b>Összeszorozva</b> két egyenletet a bal oldalon $xy$-os tagok jelennek '
-         'meg: az eredmény már nem is lineáris. Ráadásul a szorzat akkor is nulla, ha '
-         'csak az <b>egyik</b> tényező az — vagyis ha csak az egyik egyenlet teljesül. '
-         'Így olyan számpárok is átcsúsznak, amelyek az eredeti rendszernek nem '
-         'megoldásai.</li>'
-         '</ul>'
-         '<p>Összeadni szabad, szorozni <b>számmal</b> szabad — egyenlettel nem.</p>'),
-   kviz('Melyik lépés után <b>nem</b> lesz az új rendszer ekvivalens az eredetivel?',
+         (
+             '<p>A két egyenlet összeszorzása nem megengedett sorművelet. Ha például mindkettőt nulla jobb '
+             'oldalra rendezzük, a szorzatuk már akkor is nulla lehet, ha csak az egyik egyenlet teljesül. Így az '
+             'eredeti rendszerhez képest új megoldásokat engedhetünk meg.</p>'
+         )),
+   kviz('Melyik lépés <b>nem garantálja</b>, hogy a rendszer megoldáshalmaza változatlan marad?',
         ['Ha az egyik egyenletet $0$-val szorozzuk',
          'Ha felcseréljük az első és a harmadik egyenletet',
          'Ha az egyik egyenletet $-3$-mal szorozzuk',
@@ -351,14 +346,16 @@ A2 = [
  ]),
 
  ("A cél: a lépcsős alak", [
-   r'<p>Az eljárás célja, hogy a rendszert <b>lépcsős (háromszög) alakra</b> hozzuk: az '
-   r'első egyenletben mindhárom ismeretlen szerepel, a másodikban már csak kettő, a '
-   r'harmadikban csak egy.</p>'
-   r'$$\begin{aligned}a_{11}x+a_{12}y+a_{13}z&=b_1\\ a_{22}y+a_{23}z&=b_2\\ '
-   r'a_{33}z&=b_3\end{aligned}$$'
-   r'<p>Ez az alak akkor vezet egyértelmű megoldáshoz, ha a „lépcsőfokokon” álló '
-   r'$a_{11}$, $a_{22}$, $a_{33}$ együtthatók egyike sem nulla. Hogy mi történik, ha '
-   r'valamelyik mégis nullává válik, arról a következő órán lesz szó.</p>',
+   (
+       '<p>Az eljárás célja, hogy a rendszert <b>lépcsős (háromszög) alakra</b> hozzuk: az első egyenletben '
+       'legfeljebb három ismeretlen szerepel, a másodikban legfeljebb kettő, a harmadikban legfeljebb '
+       'egy.</p>$$\\begin{aligned}a_{11}x+a_{12}y+a_{13}z&=b_1\\\\ a_{22}y+a_{23}z&=b_2\\\\ '
+       'a_{33}z&=b_3\\end{aligned}$$<p>Ez az alak akkor vezet egyértelmű megoldáshoz, ha a „lépcsőfokokon” '
+       'álló $a_{11}$, $a_{22}$, $a_{33}$ együtthatók egyike sem nulla. Ha a következő lépéshez választott '
+       'együttható nulla, keressünk alkalmas sort, és cseréljük előre. Ha az adott ismeretlen minden '
+       'megmaradt sorból hiányzik, lépjünk tovább a következőre. A nulla bal oldalú sorokat a következő '
+       'órán értelmezzük.</p>'
+   ),
    doboz("tetel", "A Gauss-eljárás menete",
          '<p><b>1. Előre haladó szakasz (elimináció).</b></p>'
          '<ol>'
@@ -403,16 +400,13 @@ A2 = [
                   r'$1+2\cdot2-3=2$ ✔</p>'
                   r'<p class="vegeredmeny">A rendszer megoldása: $(x;y;z)=(1;2;3)$.</p>')),
    doboz("erdekesseg", "Hol találkozol vele?",
-         '<p>A Gauss-elimináció az egyik <b>legtöbbet futtatott algoritmus</b> a világon. '
-         'A szerkezetek statikai számítása, az áramkör-szimulációk és a 3D-s renderelés '
-         'mélyén lineáris egyenletrendszerek állnak — csak nem három, hanem több millió '
-         'ismeretlennel —, és ezeket a Gauss-elimináció továbbfejlesztett változatai '
-         'oldják meg. (A legnagyobb rendszereknél, például az időjárás-előrejelzésben, '
-         'már más, közelítő eljárások futnak.) Az elv ott is pontosan ugyanez: nullákat '
-         'gyártani a főátló alá.</p>'
-         '<p>A név Carl Friedrich Gaussé, de a módszer jóval régebbi: egy ókori kínai '
-         'matematikai gyűjtemény, a <i>Kilenc fejezet a matematika művészetéről</i> már '
-         'kétezer évvel ezelőtt lényegében ugyanígy oldott meg rendszereket.</p>'),
+         (
+             '<p>Lineáris egyenletrendszerek például áramkörök és tartószerkezetek számításában is megjelennek. A '
+             'Gauss-elimináció ezek megoldásának egyik alapvető módszere. Nagy rendszereknél a feladat '
+             'szerkezetéhez igazodó más eljárásokat is használnak.</p><p>A név Carl Friedrich Gaussé, de a '
+             'módszer jóval régebbi: az ókori kínai <i>Kilenc fejezet a matematika művészetéről</i> gyűjtemény '
+             'már mintegy kétezer éve lényegében ugyanilyen kiküszöböléssel oldott meg rendszereket.</p>'
+         )),
    kviz('A lépcsős alak utolsó sora $7z=21$. Milyen sorrendben kapod meg az ismeretleneket?',
         ['$z$, majd $y$, majd $x$', '$x$, majd $y$, majd $z$',
          '$z$, majd $x$, majd $y$', 'Mindegy, bármelyik sorrendben'], 0,
@@ -423,20 +417,17 @@ A2 = [
  ]),
 
  ("Amikor érdemes eltérni az algoritmustól", [
-   '<p>A Gauss-eljárás <b>mindig</b> működik — de nem mindig a leggyorsabb út. Két '
-   'egyszerű trükk sok törtet spórol:</p>'
-   '<ul>'
-   '<li><b>Válaszd az $1$-es együtthatót.</b> Ha valamelyik egyenletben egy ismeretlen '
-   'együtthatója $1$ vagy $-1$, azt az egyenletet tedd az élre, és azzal ejtsd ki az '
-   'ismeretlent — így a szorzók egészek maradnak. A fenti példában épp ezért cseréltük '
-   'fel a két alsó sort.</li>'
-   '<li><b>Egyszerűsíts.</b> Ha egy egyenlet minden együtthatója (a jobb oldali számot is '
-   'beleértve) osztható ugyanazzal a számmal, oszd el vele: $4x-6y+2z=10$ helyett írj '
-   '$2x-3y+z=5$-öt. Ez ekvivalens lépés (2. sorművelet), és lényegesen könnyíti a további '
-   'számolást.</li>'
-   '</ul>'
-   '<p>Az eltérés tehát <b>nem</b> az algoritmus megsértése: ugyanazokat a megengedett '
-   'lépéseket használjuk, csak ügyesebb sorrendben.</p>',
+   (
+       '<p>A Gauss-eljárás <b>mindig</b> működik — de nem mindig a leggyorsabb út. Két egyszerű trükk sok '
+       'törtet spórol:</p><ul><li><b>Válaszd az $1$-es együtthatót.</b> Ha valamelyik egyenletben egy '
+       'ismeretlen együtthatója $1$ vagy $-1$, azt az egyenletet tedd az élre, és azzal ejtsd ki az '
+       'ismeretlent — egész együtthatók esetén így a szorzók egészek maradnak. A fenti példában épp ezért '
+       'cseréltük fel a két alsó sort.</li><li><b>Egyszerűsíts.</b> Ha egy egyenlet minden együtthatója (a '
+       'jobb oldali számot is beleértve) osztható ugyanazzal a számmal, oszd el vele: $4x-6y+2z=10$ helyett '
+       'írj $2x-3y+z=5$-öt. Ez ekvivalens lépés (2. sorművelet), és lényegesen könnyíti a további '
+       'számolást.</li></ul><p>Az eltérés tehát <b>nem</b> az algoritmus megsértése: ugyanazokat a '
+       'megengedett lépéseket használjuk, csak ügyesebb sorrendben.</p>'
+   ),
    doboz("csapda", "Két gyakori elszámolás",
          '<p><b>1. Az elhagyott jobb oldal.</b> A sorművelet a sor <b>minden</b> elemére '
          'vonatkozik, a jobb oldali számra is. Aki csak az együtthatókat vonja ki, annak a '
@@ -455,11 +446,12 @@ A2 = [
 # ---------------------------------------------------------------- A3
 A3 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Kanrak:</b> Az anomália-hálózat időnként olyan mérési sort küld, amelyből '
-         '<b>nem derül ki minden ismeretlen egyértelműen</b> — és olyat is, amely '
-         '<b>önmagának mond ellent</b>. '
-         'Az első esetben kevés a mérés, a másodikban valamelyik műszer hazudik. A '
-         'Gauss-eljárás mindkettőt megmutatja, ha tudod, mit kell nézni.'),
+   brief((
+             '<b>Kanrak:</b> Az anomália-hálózat időnként olyan mérési sort küld, amelyből <b>nem derül ki minden '
+             'ismeretlen egyértelműen</b> — és olyat is, amely <b>önmagának mond ellent</b>. Az első esetben '
+             'kevés a független mérés, a másodikban valamelyik műszer hazudik. A Gauss-eljárás mindkettőt '
+             'megmutatja, ha tudod, mit kell nézni.'
+         )),
    '<p>Ezen az órán nemcsak kiszámoljuk a megoldást — meg is <b>indokoljuk, hány van '
    'belőle</b>. Ez a témakör egyik legfontosabb készsége: a „nincs megoldás” és a „végtelen '
    'sok megoldás” ugyanolyan teljes értékű válasz, mint egy számhármas — de csak akkor, '
@@ -595,14 +587,15 @@ A3 = [
          '<p>A szabad paraméter, amit az imént bevezettünk ($z=t$), <b>nem ilyen</b>: az a '
          '<b>megoldás</b> leírásának eszköze, nem az egyenletrendszer adata.</p>'),
    doboz("erdekesseg", "Hol találkozol vele?",
-         '<p>A mérnöki gyakorlatban a két eset két különböző üzenetet hordoz. Az '
-         '<b>ellentmondásos</b> rendszer általában <b>mérési hibát</b> jelez: a műszerek '
-         'olyat állítanak együtt, ami egyszerre nem lehet igaz — valamelyik rosszul mér. A '
-         '<b>határozatlan</b> rendszer viszont azt mondja, hogy <b>kevés a mérés</b>: az '
-         'adatok <b>összeegyeztethetők</b>, de nem elegendők az ismeretlenek egyértelmű '
-         'meghatározásához. Ez önmagában még nem igazolja a mérések pontosságát. Az '
-         'első esetben a mérést vagy a modellt kell javítani, a másodikban további, '
-         '<b>független feltételt adó</b> mérésekre van szükség.</p>'),
+         (
+             '<p>A mérnöki gyakorlatban a két eset két különböző üzenetet hordoz. Az <b>ellentmondásos</b> '
+             'rendszer általában <b>mérési hibát</b> jelez: a műszerek olyat állítanak együtt, ami egyszerre nem '
+             'lehet igaz — a mérési adatokat és a modell feltevéseit is ellenőrizni kell. A <b>határozatlan</b> '
+             'rendszer viszont azt mondja, hogy <b>kevés a független mérés</b>: az adatok '
+             '<b>összeegyeztethetők</b>, de nem elegendők az ismeretlenek egyértelmű meghatározásához. Ez '
+             'önmagában még nem igazolja a mérések pontosságát. Az első esetben a mérést vagy a modellt kell '
+             'javítani, a másodikban további, <b>független feltételt adó</b> mérésekre van szükség.</p>'
+         )),
  ]),
 
  ("A geometriai kép", [
@@ -622,11 +615,13 @@ A3 = [
         'az <b>egyenesen</b> megy át (mint egy nyitott könyv lapjai a gerincnél). Jobbra '
         'a három sík páronként metszi egymást, de a <b>három metszésvonal különböző</b> '
         'és párhuzamos — nincs olyan pont, amely mindhárom síkon rajta volna.'),
-   '<p>Fogj két füzetlapot és nézz körül a szobában — a három esetet kézzel is meg tudod '
-   'mutatni. A szoba két fala és a mennyezet egyetlen <b>sarokban</b> találkozik: ez a '
-   'határozott eset. Egy nyitott könyv lapjai a <b>gerincnél</b> futnak össze: ez a '
-   'határozatlan. Egy háromoldalú hasáb három oldallapja pedig <b>háromszöget zár be</b> '
-   'anélkül, hogy volna közös pontjuk: ez az ellentmondásos eset.</p>',
+   (
+       '<p>Fogj három füzetlapot és nézz körül a szobában — a három esetet kézzel is meg tudod mutatni. A '
+       'szoba két fala és a mennyezet egyetlen <b>sarokban</b> találkozik: ez a határozott eset. Egy '
+       'nyitott könyv lapjai a <b>gerincnél</b> futnak össze: ez a határozatlan. Egy háromoldalú hasáb '
+       'három oldallapja pedig <b>háromszöget zár be</b> anélkül, hogy volna közös pontjuk: ez az '
+       'ellentmondásos eset.</p>'
+   ),
    doboz("csapda", "Nem elég a válasz — indokolni is kell",
          '<p>Ha egy feladat azt kérdezi, hogy „hány megoldása van a rendszernek”, a '
          'válaszhoz <b>hozzátartozik a bizonyíték</b>: melyik sorból, milyen sorművelet után '
@@ -641,10 +636,11 @@ A3 = [
             "ellentmondásos, egyetlen megoldása sincs. (Ha 0 = 0 lenne, akkor volna "
             "végtelen sok.)"),
    GY(FGY + "#alap-15", "A 15–18", FGY + "#kozep-10", "K 10–13"),
-   brief('<b>Kanrak:</b> Most már meg tudod mondani, <b>hány</b> megoldás van — de csak úgy, '
-         'ha végigcsinálod az eliminációt. Van gyorsabb út is: egyetlen szám, amit az '
-         'együtthatókból számolsz, és amely előre elárulja, hogy a rendszer határozott-e. '
-         'Ehhez viszont új eszköz kell.', outro=True),
+   brief((
+             '<b>Kanrak:</b> A lépcsős alakból már meg tudod állapítani a megoldások számát. A következő '
+             'egységben megismerünk egy számot, a determinánst: ha nem nulla, a rendszernek pontosan egy '
+             'megoldása van.'
+         ), outro=True),
  ]),
 ]
 

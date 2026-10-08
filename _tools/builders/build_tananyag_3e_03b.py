@@ -179,15 +179,16 @@ B1 = [
                   '<p>$46-31=15$.</p>'
                   '<p class="vegeredmeny">$D=15$.</p>')),
    doboz("csapda", "Maxi trükkje",
-         r'<p><i>„A Sarrus-szabály jó — akkor négy sorra is felírom.”</i></p>'
-         r'<p><b>Nem működik.</b> A Sarrus-szabály <b>kizárólag $3\times3$-as</b> '
-         r'determinánsra érvényes. Négyedrendű determinánsnál az „átlós” eljárás nem a '
-         r'helyes értéket adja (ott $24$ tagra volna szükség, nem $8$-ra) — a $4\times4$-es '
-         r'determinánst kifejtéssel kell számolni, és az már nem a mi tananyagunk.</p>'
-         r'<p>A másik gyakori hiba az <b>előjelek elkeverése</b>. Segít, ha mindig ugyanúgy '
-         r'rajzolod meg a sémát: előbb az <b>összes</b> zöld átlót, összeadod őket, aztán az '
-         r'<b>összes</b> pirosat, és csak a végén vonod ki a második összeget az elsőből. Aki '
-         r'tagonként váltogatja az előjelet, az előbb-utóbb eltéveszti.</p>'),
+         (
+             '<p><i>„A Sarrus-szabály jó — akkor négy sorra is felírom.”</i></p><p><b>Nem működik.</b> A '
+             'Sarrus-szabály <b>kizárólag $3\\times3$-as</b> determinánsra érvényes. Negyedrendű determinánsnál az '
+             '„átlós” eljárás nem általánosan érvényes szabály (ott $24$ tagra volna szükség, nem $8$-ra) — a '
+             '$4\\times4$-es determinánst például kifejtéssel számolhatjuk, és az már nem a mi '
+             'tananyagunk.</p><p>A másik gyakori hiba az <b>előjelek elkeverése</b>. Segít, ha mindig ugyanúgy '
+             'rajzolod meg a sémát: előbb az <b>összes</b> zöld átlót, összeadod őket, aztán az <b>összes</b> '
+             'pirosat, és csak a végén vonod ki a második összeget az elsőből. A következetesen felrajzolt séma '
+             'segít ellenőrizni az előjeleket.</p>'
+         )),
    kviz(r'Mennyi $\begin{vmatrix}1&2\\ 3&4\end{vmatrix}$ értéke?',
         ['$-2$', '$2$', '$10$', '$-10$'], 0,
         jo="✔ 1 · 4 − 2 · 3 = 4 − 6 = −2.",
@@ -213,17 +214,15 @@ B1 = [
          r'elemhez tartozó tagot ki sem kell számolni.</p>',
          hid="tetel-kifejtes"),
    doboz("pelda", "Kristály-kamra szimuláció — ugyanaz a determináns kifejtéssel",
-         r'<p>Fejtsük ki a fenti $D$ determinánst a <b>harmadik sora</b> szerint — itt van '
-         r'ugyanis nulla:</p>'
-         r'$$D=\begin{vmatrix}2&-1&3\\ 1&4&-2\\ 3&0&5\end{vmatrix}$$'
-         r'<p>A harmadik sor előjelei $+\,-\,+$, az elemei pedig $3$, $0$, $5$:</p>'
-         r'$$D=+3\cdot\begin{vmatrix}-1&3\\ 4&-2\end{vmatrix}'
-         r'-0\cdot\begin{vmatrix}2&3\\ 1&-2\end{vmatrix}'
-         r'+5\cdot\begin{vmatrix}2&-1\\ 1&4\end{vmatrix}.$$'
-         r'<p>Az aldeterminánsok: $(-1)\cdot(-2)-3\cdot4=2-12=-10$, illetve '
-         r'$2\cdot4-(-1)\cdot1=8+1=9$. A középső tag nulla, mert $0$-val szorozzuk. Tehát</p>'
-         r'<p>Add össze a két tagot — és vesd össze a Sarrus-szabállyal kapott '
-         r'értékkel.</p>',
+         (
+             '<p>Fejtsük ki a fenti $D$ determinánst a <b>harmadik sora</b> szerint — itt van ugyanis '
+             'nulla:</p>$$D=\\begin{vmatrix}2&-1&3\\\\ 1&4&-2\\\\ 3&0&5\\end{vmatrix}$$<p>A harmadik sor előjelei '
+             '$+\\,-\\,+$, az elemei pedig $3$, $0$, $5$:</p>$$D=+3\\cdot\\begin{vmatrix}-1&3\\\\ '
+             '4&-2\\end{vmatrix}-0\\cdot\\begin{vmatrix}2&3\\\\ 1&-2\\end{vmatrix}+5\\cdot\\begin{vmatrix}2&-1\\\\ '
+             '1&4\\end{vmatrix}.$$<p>Az aldeterminánsok: $(-1)\\cdot(-2)-3\\cdot4=2-12=-10$, illetve '
+             '$2\\cdot4-(-1)\\cdot1=8+1=9$. A középső tag nulla, mert $0$-val szorozzuk.</p><p>Add össze a két '
+             'tagot — és vesd össze a Sarrus-szabállyal kapott értékkel.</p>'
+         ),
          hid="pelda-ketfele",
          lenyilo=("Végeredmény",
                   r'<p>$D=3\cdot(-10)+5\cdot9=-30+45=15$ — ugyanaz az érték, mint a '
@@ -344,14 +343,14 @@ B2 = [
 
  ("A Cramer-szabály", [
    doboz("tetel", "Cramer-szabály",
-         r'<p>Egy $n$ egyenletből álló, $n$ ismeretlenes rendszer <b>akkor és csak akkor</b> '
-         r'határozott, ha a fő determinánsa nem nulla. Ha $D\ne0$, akkor tehát pontosan '
-         r'egy megoldás van, és ez a megoldás:</p>'
-         r'$$x=\frac{D_x}{D},\qquad y=\frac{D_y}{D},\qquad z=\frac{D_z}{D}.$$'
-         r'<p>A $D\ne0$ feltétel <b>nem díszítés</b>: nélküle a képletnek nincs értelme, '
-         r'hiszen nullával nem oszthatunk.</p>'
-         r'<p>Kétismeretlenes rendszerre ugyanez érvényes, csak két determinánssal: '
-         r'$x=\frac{D_x}{D}$ és $y=\frac{D_y}{D}$.</p>',
+         (
+             '<p>Egy $n$ egyenletből álló, $n$ ismeretlenes lineáris rendszer <b>akkor és csak akkor</b> '
+             'határozott, ha a fő determinánsa nem nulla. Ha $D\\ne0$, akkor tehát pontosan egy megoldás van, és '
+             'ez a megoldás:</p>$$x=\\frac{D_x}{D},\\qquad y=\\frac{D_y}{D},\\qquad z=\\frac{D_z}{D}.$$<p>A $D\\ne0$ '
+             'feltétel <b>nem díszítés</b>: nélküle a képletnek nincs értelme, hiszen nullával nem '
+             'oszthatunk.</p><p>Kétismeretlenes rendszerre ugyanez érvényes, három determinánssal és két '
+             'hányadossal: $x=\\frac{D_x}{D}$ és $y=\\frac{D_y}{D}$.</p>'
+         ),
          hid="tetel-cramer"),
    doboz("pelda", "Kristály-kamra szimuláció — Cramer-szabály végig",
          r'<p>Oldjuk meg a</p>'
@@ -375,28 +374,28 @@ B2 = [
                   r'&nbsp;&nbsp; $3\cdot2+5\cdot1=11$ ✔</p>'
                   r'<p class="vegeredmeny">A rendszer megoldása: $(x;y;z)=(2;1;1)$.</p>')),
    doboz("csapda", "Maxi trükkje",
-         r'<p><i>„$D=0$? Semmi baj: $x=\frac{D_x}{D}=\frac{0}{0}=1$.”</i></p>'
-         r'<p><b>A nullával osztás nem művelet</b>, és a $\frac00$ nem $1$ — semmi. Ha '
-         r'$D=0$, a Cramer-szabály nem „nehezebben használható”, hanem <b>érvénytelen</b>: '
-         r'a képlet feltétele nem teljesül, tehát a képlet nem mond semmit.</p>'
-         r'<p>És ha $D=0$, de $D_x$ történetesen <b>nem</b> nulla? Akkor a hányados alakja '
-         r'$\frac{\text{nem nulla}}{0}$ — ez ugyanúgy értelmetlen. A $D=0$ tehát minden '
-         r'esetben kizárja a szabály használatát, nem csak akkor, ha a helyettesítési '
-         r'determinánsok is nullák.</p>'
-         r'<p>A másik gyakori hiba: <b>rossz oszlopot</b> cserélnek. A $D_y$-nál a '
-         r'<b>második</b> oszlop helyére kerül a jobb oldal — nem a második sor, és nem az '
-         r'első oszlop. Aki a sémát egyszer rendesen felírja (lásd a fenti táblázatot), az '
-         r'többé nem téveszti el.</p>'),
+         (
+             '<p><i>„$D=0$? Semmi baj: $x=\\frac{D_x}{D}=\\frac{0}{0}=1$.”</i></p><p><b>A nullával osztás nem '
+             'művelet</b>, és a $\\frac00$ nem $1$ — semmi. Ha $D=0$, a Cramer-szabály nem „nehezebben '
+             'használható”, hanem <b>érvénytelen</b>: a képlet feltétele nem teljesül, tehát a képlet nem mond '
+             'semmit.</p><p>És ha $D=0$, de $D_x$ történetesen <b>nem</b> nulla? Akkor a hányados alakja '
+             '$\\frac{\\text{nem nulla}}{0}$ — ez ugyanúgy értelmetlen. A $D=0$ tehát minden esetben kizárja a '
+             'szabály használatát, nem csak akkor, ha a helyettesítési determinánsok is nullák.</p><p>A másik '
+             'gyakori hiba: <b>rossz oszlopot</b> cserélnek. A $D_y$-nál a <b>második</b> oszlop helyére kerül a '
+             'jobb oldal — nem a második sor, és nem az első oszlop. Írd fel a sémát a fenti táblázat szerint, és '
+             'ellenőrizd, hogy a megfelelő oszlopot cserélted-e ki.</p>'
+         )),
  ]),
 
  ("Mit jelent, ha a determináns nulla", [
    doboz("tetel", "A Cramer-szabály korlátja",
-         r'<p>Ha $D=0$, a Cramer-szabály <b>nem alkalmazható</b>. Ilyenkor a rendszer '
-         r'<b>nem határozott</b>: vagy <b>határozatlan</b> (végtelen sok megoldás), vagy '
-         r'<b>ellentmondásos</b> (nincs megoldás) — de hogy melyik, azt a determinánsokból '
-         r'<b>nem</b> lehet eldönteni. Ehhez a Gauss-eljárást kell elvégezni.</p>'
-         r'<p>Vigyázat a megfogalmazásra: a $D=0$ nem azt jelenti, hogy „nincs megoldás”. '
-         r'Azt jelenti, hogy <b>nincs pontosan egy</b> megoldás.</p>',
+         (
+             '<p>Ha $D=0$, a Cramer-szabály <b>nem alkalmazható</b>. Ilyenkor a rendszer <b>nem határozott</b>: '
+             'vagy <b>határozatlan</b> (végtelen sok megoldás), vagy <b>ellentmondásos</b> (nincs megoldás) — de '
+             'a fő determináns nullasága önmagában nem dönti el, melyik esetről van szó. Ehhez a Gauss-eljárást '
+             'kell elvégezni.</p><p>Vigyázat a megfogalmazásra: a $D=0$ nem azt jelenti, hogy „nincs megoldás”. '
+             'Azt jelenti, hogy <b>nincs pontosan egy</b> megoldás.</p>'
+         ),
          hid="tetel-cramer-korlat"),
    doboz("pelda", "Kristály-kamra szimuláció — amikor $D=0$",
          r'<p>Vegyük a <b>megoldások számáról</b> szóló órán megismert rendszert:</p>'
@@ -448,15 +447,12 @@ B2 = [
    'válasz. Ha viszont a feladat a <b>megoldást</b> kéri, és nem tudod előre, hogy '
    'határozott-e, a Gauss-eljárás a biztosabb út: az soha nem akad el.</p>',
    doboz("erdekesseg", "Hol találkozol vele?",
-         '<p>Gabriel Cramer svájci matematikus $1750$-ben publikálta a szabályt (bár '
-         'lényegében ugyanezt már Leibniz és Maclaurin is ismerte). A képlet elegáns, és '
-         'kézzel, három ismeretlenre kényelmes.</p>'
-         '<p>Nagy rendszerekre viszont <b>használhatatlanul lassú</b>: a determinánsok '
-         'kiszámításának munkája az ismeretlenek számával robbanásszerűen nő. Egy '
-         'húszismeretlenes rendszernél a Cramer-szabály egy átlagos számítógépen már '
-         '<b>évekig</b> futna, míg a Gauss-eljárás ezredmásodpercek alatt végez. Ezért '
-         'épül minden komoly numerikus eljárás a Gauss-elimináció <b>elvére</b> — a '
-         'Cramer-szabály <b>elméleti</b> eszköz maradt, nem számolási.</p>'),
+         (
+             '<p>Nagy rendszereknél a Cramer-szabály rendszerint több munkát igényel, mint a közvetlen '
+             'elimináció. A számítás ideje attól is függ, hogyan értékeljük ki a determinánsokat: a teljes '
+             'kifejtés sokkal több műveletet igényelhet, mint a sorműveletekre épülő módszer. A Gauss-elimináció '
+             'ezért gyakori számítási eszköz; nagy feladatokhoz más módszereket is használnak.</p>'
+         )),
    GY(FGY + "#alap-9", "A 9–16", FGY + "#kozep-5", "K 5–11"),
    brief('<b>Kanrak:</b> A gép megvan: eljárás, képlet, döntési szabály. De a Kamra '
          'műszerei nem egyenletrendszerekben beszélnek, hanem <b>mérési jegyzőkönyvekben</b>. '

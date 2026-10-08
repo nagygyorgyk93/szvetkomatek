@@ -83,14 +83,14 @@ A1 = [
          'kúpot, gömböt. A Kamra tartályai, tölcsérei és gömbszelencéi mind így '
          'készültek. Mielőtt bármit kiszámolnánk, értsük meg a <b>keletkezésüket</b>: '
          'melyik lapos formából mi lesz, ha megpörgetjük.'),
-   '<p>Az előző témakörben (<a href="' + POLI + 'index.html">poliéderek</a>) minden '
-   'testet <b>lapok</b> határoltak. Most olyan testek '
-   'jönnek, amelyek felülete <b>görbe</b>: nem lehet őket sokszögekre bontani. Közös '
-   'bennük, hogy mindegyik egy <b>síkidom megforgatásával</b> keletkezik — ezért hívjuk '
-   'őket <b>forgástesteknek</b>.</p>'
-   '<p>A jó hír: a görbült felület nem tesz nehezebbé semmit. A képletekben ugyanaz a $B$ '
-   '(alapterület) és $H$ (magasság) szerepel, mint a hasábnál és a gúlánál — csak az '
-   'alaplap most <b>kör</b>.</p>',
+   '<p>Az előző témakörben (<a href="' + POLI + (
+                                                        'index.html">poliéderek</a>) minden testet <b>lapok</b> határoltak. Most olyan testek jönnek, '
+                                                        'amelyek felülete <b>görbe</b>: nem lehet őket sokszögekre bontani. Közös bennük, hogy mindegyik egy '
+                                                        '<b>síkidom megforgatásával</b> keletkezik — ezért hívjuk őket <b>forgástesteknek</b>.</p><p>A '
+                                                        'henger és a kúp térfogatképlete a hasáb és a gúla képletére emlékeztet: itt is az alapterületet és '
+                                                        'a magasságot használjuk. A körlap területe $B=r^2\\pi$. A csonkakúpnál két alapkörrel, a gömbnél '
+                                                        'pedig a sugárral számolunk.</p>'
+                                                    ),
  ]),
 
  ("Mi a forgástest", [
@@ -109,11 +109,13 @@ A1 = [
    '<b>merőleges</b> sík metszete <b>körlap</b>.</li>'
    '</ul>',
    doboz("erdekesseg", "Hol találkozol vele?",
-         '<p>A fazekaskorongon a hüvelykujj a tengelytől mért <b>távolságot</b> állítja '
-         'be — a korong pörgése a többit elvégzi. Ugyanez az elve az <b>esztergapadnak</b>: '
-         'a munkadarab forog, a kés csak a profilt vágja ki. Ezért olyan olcsó ipari '
-         'szempontból minden forgásszimmetrikus alkatrész — csavar, tengely, palack —, '
-         'és ezért drága, ami nem az.</p>'),
+         (
+             '<p>A fazekaskorongon a hüvelykujj a tengelytől mért <b>távolságot</b> állítja be — a korong pörgése '
+             'a többit elvégzi. Ugyanez az elve az <b>esztergapadnak</b>: a munkadarab forog, a kés csak a '
+             'profilt vágja ki. Így például egy tengely sima, forgásszimmetrikus külső felülete esztergálással '
+             'kialakítható. A geometriai forgatás az alakot írja le; egy alkatrész tényleges gyártása több '
+             'műveletet is igényelhet.</p>'
+         )),
  ]),
 
  ("Melyik síkidomból mi lesz", [
@@ -164,8 +166,7 @@ A1 = [
  ]),
 
  ("Amit minden forgástest tud", [
-   '<p>Bármelyik forgástestet nézzük, két metszetfajta mindig ugyanúgy viselkedik. Ez a '
-   'két állítás végigkíséri az egész témakört.</p>',
+   '<p>Az itt vizsgált négy alaptestnél két metszetfajtát különböztetünk meg. Ez a két állítás végigkíséri az egész témakört.</p>',
    doboz("tetel", "A tengelyre merőleges metszet",
          '<p>Ha a témakör testeit (henger, kúp, csonkakúp, gömb) a <b>tengelyükre '
          'merőleges</b> síkkal a <b>belsejükön át</b> metsszük el, a metszet '
@@ -213,24 +214,24 @@ A1 = [
    '<p>Eddig a keletkezés felől néztük a testeket. Van egy másik, precízebb út is, és a '
    'tankönyv ezt használja — érdemes felismerni, ha találkozol vele.</p>',
    doboz("definicio", "Hengerfelület és kúpfelület",
-         '<p>Adott egy <b>zárt görbe</b> (a <b>vezérgörbe</b>) és egy egyenes, amely nem '
-         'esik a görbe síkjába.</p>'
-         '<ul>'
-         '<li><b>Hengerfelület:</b> a vezérgörbe minden pontján át az adott egyenessel '
-         '<b>párhuzamos</b> egyenest húzunk. Ezek az egyenesek az <b>alkotók</b>.</li>'
-         '<li><b>Kúpfelület:</b> a vezérgörbe minden pontját összekötjük egy rögzített, '
-         'a görbe síkján kívüli <b>ponttal</b> (a csúccsal).</li>'
-         '</ul>'
-         '<p>Ha a vezérgörbe <b>kör</b>, <b>körhenger-</b>, illetve '
-         '<b>körkúpfelületről</b> beszélünk. A továbbiakban mindig ez az eset szerepel, '
-         'ezért a „kör” jelzőt el is hagyjuk.</p>',
+         (
+             '<p>Adott egy <b>zárt görbe</b> (a <b>vezérgörbe</b>) és egy egyenes, amely nem párhuzamos a görbe '
+             'síkjával.</p><ul><li><b>Hengerfelület:</b> a vezérgörbe minden pontján át az adott egyenessel '
+             '<b>párhuzamos</b> egyenest húzunk. Ezek az egyenesek az <b>alkotók</b>.</li><li><b>Kúpfelület:</b> '
+             'a vezérgörbe minden pontját összekötjük egy rögzített, a görbe síkján kívüli <b>ponttal</b> (a '
+             'csúccsal).</li></ul><p>Ha a vezérgörbe <b>kör</b>, <b>körhenger-</b>, illetve '
+             '<b>körkúpfelületről</b> beszélünk. A továbbiakban mindig ez az eset szerepel, ezért a „kör” jelzőt '
+             'el is hagyjuk.</p>'
+         ),
          hid="def-hengerfelulet"),
-   '<p>A <b>test</b> ebből úgy lesz, hogy a felületet két párhuzamos síkkal (henger), '
-   'illetve egy síkkal és a csúccsal (kúp) elmetsszük, és a közbezárt részt tekintjük.</p>'
-   '<p>A forgatásos és a vezérgörbés megközelítés ugyanoda vezet, ha az alkotók '
-   '<b>merőlegesek</b> az alaplapra — ezek az <b>egyenes</b> testek. Ha nem merőlegesek, '
-   '<b>ferde</b> hengert, illetve kúpot kapunk; ezek felszínével és térfogatával nem '
-   'foglalkozunk, csak a fogalmat kell felismerned.</p>',
+   (
+       '<p>A <b>test</b> ebből úgy lesz, hogy a hengerfelületet a vezérkör síkjával párhuzamos két síkkal '
+       'határoljuk, a kúpfelületnél pedig a vezérkör síkjával párhuzamos metszősík és a csúcs közti részt '
+       'vesszük.</p><p>Az egyenes henger alkotói merőlegesek az alaplapra. Az egyenes körkúpnál a csúcsot '
+       'az alapkör középpontjával összekötő <b>tengely</b> merőleges az alaplapra, az alkotók nem azok. Ha '
+       'ezek a merőlegességi feltételek nem teljesülnek, <b>ferde</b> hengert, illetve kúpot kapunk; ezek '
+       'felszínével és térfogatával nem foglalkozunk, csak a fogalmat kell felismerned.</p>'
+   ),
    GY(FGY + "#alap-1", "A 1–4", FGY + "#kozep-1", "K 1–2"),
    brief('<b>Medúza:</b> A fogalmak megvannak. A Kamra legegyszerűbb tartálya a '
          '<b>henger</b> — nézzük meg közelről, mi micsoda rajta, és hogyan lehet '
@@ -252,16 +253,15 @@ A2 = [
  ]),
 
  ("Hogyan keletkezik a henger", [
-   '<p>Kétféleképpen is eljuthatunk ugyanahhoz a testhez, és mindkét út hasznos:</p>'
-   '<ul>'
-   '<li><b>Forgatással:</b> egy <b>téglalapot</b> megforgatunk az egyik oldala körül.</li>'
-   '<li><b>Metszéssel:</b> egy hengerfelületet elmetszünk két <b>párhuzamos</b> síkkal, '
-   'és a közbezárt részt vesszük.</li>'
-   '</ul>'
-   '<p>A henger <b>egyenes</b>, ha az alkotói merőlegesek az alaplapokra — a forgatásból '
-   'mindig ilyen keletkezik. Ha az alkotók ferdék, <b>ferde</b> hengerről beszélünk; '
-   'ilyenkor az alkotó hosszabb a magasságnál. A továbbiakban „henger” mindig egyenes '
-   'hengert jelent.</p>',
+   (
+       '<p>Kétféleképpen is eljuthatunk ugyanahhoz a testhez, és mindkét út '
+       'hasznos:</p><ul><li><b>Forgatással:</b> egy <b>téglalapot</b> megforgatunk az egyik oldala '
+       'körül.</li><li><b>Metszéssel:</b> egy hengerfelületet elmetszünk a vezérkör síkjával párhuzamos két '
+       'síkkal, és a közbezárt részt vesszük.</li></ul><p>A henger <b>egyenes</b>, ha az alkotói '
+       'merőlegesek az alaplapokra — a forgatásból mindig ilyen keletkezik. Ha az alkotók ferdék, '
+       '<b>ferde</b> hengerről beszélünk; ilyenkor az alkotó hosszabb a magasságnál. A továbbiakban '
+       '„henger” mindig egyenes hengert jelent.</p>'
+   ),
    abra(SVG_HENGER, 'Az egyenes henger: két egybevágó, párhuzamos <b>alapkör</b>, '
         'közöttük a <b>palást</b>. A tengely (szürke) a két középpontot köti össze.'),
  ]),
@@ -284,11 +284,12 @@ A2 = [
    'már élesen különböznek, és ott a legtöbb hiba abból származik, hogy valaki a '
    'kettőt összekeveri. Érdemes már itt szokni a különbségtételt.</p>',
    doboz("erdekesseg", "Hol találkozol vele?",
-         '<p>Miért hengeres a konzervdoboz, a boiler és a búvárpalack? Két oka van. '
-         'Egyrészt adott térfogathoz a henger <b>kevés anyaggal</b> beéri — a gömb '
-         'ennél is jobb, de gömb alakú dobozt nem lehet egymásra rakni. Másrészt a '
-         'belső nyomás a hengeres falon <b>egyenletesen</b> oszlik el; egy szögletes '
-         'tartály éleinél feszültséggyűjtő helyek keletkeznének, és ott szakadna el.</p>'),
+         (
+             '<p>A konzervdoboz, a bojler és a búvárpalack alakját gyakran hengerrel modellezhetjük. A '
+             'konzervdoboz palástjára simuló címke kiterítve téglalap: így a területét egyszerűen kiszámolhatjuk. '
+             'A tényleges tárgyakon a peremek, lekerekítések és illesztések miatt a geometriai modell csak '
+             'közelítés.</p>'
+         )),
  ]),
 
  ("A henger hálója", [
@@ -379,9 +380,11 @@ A3 = [
          '<b>mennyi anyag kell hozzá</b>. Az első a térfogat, a második a felszín. A '
          'Kamrában ez a két szám külön naplóba megy — aki összekeveri őket, az vagy '
          'kifolyatja a párát, vagy elpazarolja a lemezt.'),
-   '<p>A felszín <b>területjellegű</b> mennyiség (cm², m²), a térfogat <b>köbös</b> '
-   '(cm³, m³). Ha a végeredményed mértékegysége nem stimmel, nem is kell tovább '
-   'ellenőrizned: rossz képletet használtál.</p>',
+   (
+       '<p>A felszín <b>területjellegű</b> mennyiség (cm², m²), a térfogat <b>köbös</b> (cm³, m³). Ha a '
+       'végeredményed mértékegysége nem stimmel, ellenőrizd a képletet, az adatok mértékegységét és az '
+       'egységváltásokat is.</p>'
+   ),
  ]),
 
  ("A palást a hálóból", [
@@ -428,8 +431,11 @@ A3 = [
          'közelítjük.</p>',
          hid="tetel-henger-terfogat"),
    doboz("pelda", "Átalakulás-kamra szimuláció",
-         '<p>Egy hengeres tartály alapkörének sugara $3$ dm, magassága $8$ dm. Hány '
-         '<b>liter</b> fér bele, és hány négyzetdeciméter lemez kell a gyártásához?</p>',
+         (
+             '<p>Egy zárt hengeres tartály belső alapkörének sugara $3$ dm, magassága $8$ dm. Hány <b>liter</b> '
+             'fér bele, és hány négyzetdeciméter lemez kell a gyártásához, ha a falvastagságot és az illesztési '
+             'ráhagyásokat elhanyagoljuk?</p>'
+         ),
          hid="pelda-tartaly",
          lenyilo=("Megoldás",
                   '<p><b>Térfogat.</b></p>'
@@ -486,11 +492,12 @@ A3 = [
  ]),
 
  ("Nagyságrend és mértékegység", [
-   '<p>A hengeres tartályok a valóságban <b>literben</b> vannak megadva, a képlet viszont '
-   'köbegységet ad. A váltás egyetlen összefüggésen múlik:</p>'
-   '$$1\\ \\text{dm}^3=1\\ \\text{liter},\\qquad 1\\ \\text{m}^3=1000\\ \\text{dm}^3=1000\\ \\text{liter}.$$'
-   '<p>Ezért érdemes a hengeres tartályok adatait <b>deciméterben</b> felvenni: akkor a '
-   'térfogat rögtön literben jön ki.</p>',
+   (
+       '<p>A hengeres tartályok űrtartalmát gyakran <b>literben</b> adják meg, a képlet viszont köbegységet '
+       'ad. A váltás egyetlen összefüggésen múlik:</p>$$1\\ \\text{dm}^3=1\\ \\text{liter},\\qquad 1\\ '
+       '\\text{m}^3=1000\\ \\text{dm}^3=1000\\ \\text{liter}.$$<p>Ezért érdemes a hengeres tartályok adatait '
+       '<b>deciméterben</b> felvenni: akkor a térfogat rögtön literben jön ki.</p>'
+   ),
    doboz("csapda", "Maxi trükkje",
          '<p><i>„A tartály $0{,}4\\ \\text{m}^3$-es, tehát $40$ liter.”</i></p>'
          '<p>A hosszúságnál $1$ m $=10$ dm, de a <b>térfogatnál</b> a váltószám ennek a '

@@ -58,7 +58,7 @@
 
     <div class="doboz tetel" id="tetel-cramer">
       <p class="cim"><span class="ikon">📘</span> Cramer-szabály</p>
-      <p>Egy <span class="math inline">\(n\)</span> egyenletből álló, <span class="math inline">\(n\)</span> ismeretlenes rendszer <b>akkor és csak akkor</b> határozott, ha a fő determinánsa nem nulla. Ha <span class="math inline">\(D\ne0\)</span>, akkor tehát pontosan egy megoldás van, és ez a megoldás:</p><span class="math display">\[x=\frac{D_x}{D},\qquad y=\frac{D_y}{D},\qquad z=\frac{D_z}{D}.\]</span><p>A <span class="math inline">\(D\ne0\)</span> feltétel <b>nem díszítés</b>: nélküle a képletnek nincs értelme, hiszen nullával nem oszthatunk.</p><p>Kétismeretlenes rendszerre ugyanez érvényes, csak két determinánssal: <span class="math inline">\(x=\frac{D_x}{D}\)</span> és <span class="math inline">\(y=\frac{D_y}{D}\)</span>.</p>
+      <p>Egy <span class="math inline">\(n\)</span> egyenletből álló, <span class="math inline">\(n\)</span> ismeretlenes lineáris rendszer <b>akkor és csak akkor</b> határozott, ha a fő determinánsa nem nulla. Ha <span class="math inline">\(D\ne0\)</span>, akkor tehát pontosan egy megoldás van, és ez a megoldás:</p><span class="math display">\[x=\frac{D_x}{D},\qquad y=\frac{D_y}{D},\qquad z=\frac{D_z}{D}.\]</span><p>A <span class="math inline">\(D\ne0\)</span> feltétel <b>nem díszítés</b>: nélküle a képletnek nincs értelme, hiszen nullával nem oszthatunk.</p><p>Kétismeretlenes rendszerre ugyanez érvényes, három determinánssal és két hányadossal: <span class="math inline">\(x=\frac{D_x}{D}\)</span> és <span class="math inline">\(y=\frac{D_y}{D}\)</span>.</p>
     </div>
 
     <div class="doboz pelda" id="pelda-cramer">
@@ -69,7 +69,7 @@
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
-      <p><i>„<span class="math inline">\(D=0\)</span>? Semmi baj: <span class="math inline">\(x=\frac{D_x}{D}=\frac{0}{0}=1\)</span>.”</i></p><p><b>A nullával osztás nem művelet</b>, és a <span class="math inline">\(\frac00\)</span> nem <span class="math inline">\(1\)</span> — semmi. Ha <span class="math inline">\(D=0\)</span>, a Cramer-szabály nem „nehezebben használható”, hanem <b>érvénytelen</b>: a képlet feltétele nem teljesül, tehát a képlet nem mond semmit.</p><p>És ha <span class="math inline">\(D=0\)</span>, de <span class="math inline">\(D_x\)</span> történetesen <b>nem</b> nulla? Akkor a hányados alakja <span class="math inline">\(\frac{\text{nem nulla}}{0}\)</span> — ez ugyanúgy értelmetlen. A <span class="math inline">\(D=0\)</span> tehát minden esetben kizárja a szabály használatát, nem csak akkor, ha a helyettesítési determinánsok is nullák.</p><p>A másik gyakori hiba: <b>rossz oszlopot</b> cserélnek. A <span class="math inline">\(D_y\)</span>-nál a <b>második</b> oszlop helyére kerül a jobb oldal — nem a második sor, és nem az első oszlop. Aki a sémát egyszer rendesen felírja (lásd a fenti táblázatot), az többé nem téveszti el.</p>
+      <p><i>„<span class="math inline">\(D=0\)</span>? Semmi baj: <span class="math inline">\(x=\frac{D_x}{D}=\frac{0}{0}=1\)</span>.”</i></p><p><b>A nullával osztás nem művelet</b>, és a <span class="math inline">\(\frac00\)</span> nem <span class="math inline">\(1\)</span> — semmi. Ha <span class="math inline">\(D=0\)</span>, a Cramer-szabály nem „nehezebben használható”, hanem <b>érvénytelen</b>: a képlet feltétele nem teljesül, tehát a képlet nem mond semmit.</p><p>És ha <span class="math inline">\(D=0\)</span>, de <span class="math inline">\(D_x\)</span> történetesen <b>nem</b> nulla? Akkor a hányados alakja <span class="math inline">\(\frac{\text{nem nulla}}{0}\)</span> — ez ugyanúgy értelmetlen. A <span class="math inline">\(D=0\)</span> tehát minden esetben kizárja a szabály használatát, nem csak akkor, ha a helyettesítési determinánsok is nullák.</p><p>A másik gyakori hiba: <b>rossz oszlopot</b> cserélnek. A <span class="math inline">\(D_y\)</span>-nál a <b>második</b> oszlop helyére kerül a jobb oldal — nem a második sor, és nem az első oszlop. Írd fel a sémát a fenti táblázat szerint, és ellenőrizd, hogy a megfelelő oszlopot cserélted-e ki.</p>
     </div>
 
     <!-- media:begin 3e03-cramer-video -->
@@ -82,7 +82,7 @@
 
     <div class="doboz tetel" id="tetel-cramer-korlat">
       <p class="cim"><span class="ikon">📘</span> A Cramer-szabály korlátja</p>
-      <p>Ha <span class="math inline">\(D=0\)</span>, a Cramer-szabály <b>nem alkalmazható</b>. Ilyenkor a rendszer <b>nem határozott</b>: vagy <b>határozatlan</b> (végtelen sok megoldás), vagy <b>ellentmondásos</b> (nincs megoldás) — de hogy melyik, azt a determinánsokból <b>nem</b> lehet eldönteni. Ehhez a Gauss-eljárást kell elvégezni.</p><p>Vigyázat a megfogalmazásra: a <span class="math inline">\(D=0\)</span> nem azt jelenti, hogy „nincs megoldás”. Azt jelenti, hogy <b>nincs pontosan egy</b> megoldás.</p>
+      <p>Ha <span class="math inline">\(D=0\)</span>, a Cramer-szabály <b>nem alkalmazható</b>. Ilyenkor a rendszer <b>nem határozott</b>: vagy <b>határozatlan</b> (végtelen sok megoldás), vagy <b>ellentmondásos</b> (nincs megoldás) — de a fő determináns nullasága önmagában nem dönti el, melyik esetről van szó. Ehhez a Gauss-eljárást kell elvégezni.</p><p>Vigyázat a megfogalmazásra: a <span class="math inline">\(D=0\)</span> nem azt jelenti, hogy „nincs megoldás”. Azt jelenti, hogy <b>nincs pontosan egy</b> megoldás.</p>
     </div>
 
     <div class="doboz pelda" id="pelda-D-nulla">
@@ -108,7 +108,7 @@
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
-      <p>Gabriel Cramer svájci matematikus <span class="math inline">\(1750\)</span>-ben publikálta a szabályt (bár lényegében ugyanezt már Leibniz és Maclaurin is ismerte). A képlet elegáns, és kézzel, három ismeretlenre kényelmes.</p><p>Nagy rendszerekre viszont <b>használhatatlanul lassú</b>: a determinánsok kiszámításának munkája az ismeretlenek számával robbanásszerűen nő. Egy húszismeretlenes rendszernél a Cramer-szabály egy átlagos számítógépen már <b>évekig</b> futna, míg a Gauss-eljárás ezredmásodpercek alatt végez. Ezért épül minden komoly numerikus eljárás a Gauss-elimináció <b>elvére</b> — a Cramer-szabály <b>elméleti</b> eszköz maradt, nem számolási.</p>
+      <p>Nagy rendszereknél a Cramer-szabály rendszerint több munkát igényel, mint a közvetlen elimináció. A számítás ideje attól is függ, hogyan értékeljük ki a determinánsokat: a teljes kifejtés sokkal több műveletet igényelhet, mint a sorműveletekre épülő módszer. A Gauss-elimináció ezért gyakori számítási eszköz; nagy feladatokhoz más módszereket is használnak.</p>
     </div>
 
     <!-- media:begin 3e03-cramer-gyak-video -->

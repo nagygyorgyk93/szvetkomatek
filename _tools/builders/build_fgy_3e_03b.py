@@ -311,6 +311,6 @@ ut = oldal(tagozat="3e", mappa="03-linearis-rendszerek", fajl="feladatok-determi
                  "lenyitható — előbb számolj, csak utána nézd meg!",
            sections_html="\n".join(body),
            prev="feladatok-rendszerek.html", prevc="Egyenletrendszerek — feladatok",
-           nxt="osszefoglalo.html", nxtc="Taktikai memóriakártya")
+           nxt="osszefoglalo.html", nxtc='Töréspont-térkép')
 print("✓", os.path.basename(ut), "| Alap", len(ALAP), "Közép", len(KOZEP),
       "Nehéz", len(NEHEZ), "+ Joker")

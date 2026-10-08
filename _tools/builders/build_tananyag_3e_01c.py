@@ -67,8 +67,7 @@ print("sympy önteszt: OK")
 # ---------------------------------------------------------------- ábrák
 SVG_GULA = svg_gula("negyzet", a=1.0, m=1.5, apotema=True, oldalel=True, sugar=True,
                     w=340, h=310, feliratok={"a": "a"},
-                    leiras="Szabályos négyoldalú gúla: magasság, apotéma, köréírt sugár, "
-                           "oldallap-magasság és oldalél")
+                    leiras='Szabályos négyoldalú gúla: magasság, apotéma, köré írt sugár, oldallap-magasság és oldalél')
 SVG_GULA3 = svg_gula("haromszog", a=1.0, m=1.4, apotema=True, w=310, h=295,
                      feliratok={"a": "a"},
                      leiras="Szabályos háromoldalú gúla az oldallap magasságával; "
@@ -95,11 +94,13 @@ SVG_TRAPEZ_LAP = svg_haromszog(csucsok=[(0, 0), (5, 0), (3.5, 3), (1.5, 3)],
 
 C1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Prizma:</b> A Zóna mélyén a kristályok <b>tüskévé</b> húzódnak össze: az '
-         'alaplapból minden él egyetlen pontba fut. Ez a gúla. A gúlafeladatokban ritkán a '
-         'képlet a nehéz — sokkal inkább az, hogy megtaláld, <b>melyik derékszögű háromszögben</b> van '
-         'az az adat, amit keresel. Ez az egység erről szól, és ha ezt megérted, a következő '
-         'két egység már csak behelyettesítés.'),
+   brief((
+             '<b>Prizma:</b> A Zóna mélyén a kristályok <b>tüskévé</b> húzódnak össze: az alaplap minden '
+             'csúcsából egy oldalél fut ugyanabba a pontba. Ez a gúla. A gúlafeladatokban ritkán a képlet a nehéz '
+             '— sokkal inkább az, hogy megtaláld, <b>melyik derékszögű háromszögben</b> van az az adat, amit '
+             'keresel. Ez az egység erről szól, és ha ezt megérted, a következő egységek felszín- és '
+             'térfogatszámításaihoz is könnyebb lesz kiválasztani a szükséges adatot.'
+         )),
    '<p>Három derékszögű háromszög lakik minden szabályos gúlában. Aki ezt a hármat látja, '
    'annak a gúla nem okoz gondot; aki nem, az a képletet is hiába tudja.</p>',
  ]),
@@ -129,84 +130,79 @@ C1 = [
          '<p>Ebből következik, hogy a szabályos gúla minden <b>oldaléle</b> egyenlő, és '
          'minden <b>oldallapja</b> egybevágó egyenlő szárú háromszög.</p>',
          hid="def-szabalyos-gula"),
-   '<p>A „középpont” itt a szabályos sokszög beírt és köréírt körének közös középpontját '
-   'jelenti. <b>Vigyázz a szóhasználattal:</b> nálunk az <b>apotéma</b> mindig az '
-   '<i>alaplap</i> apotémája; a szerb tankönyvek <i>apotema piramide</i> néven az oldallap '
-   'magasságát értik — azt itt végig $h$ jelöli. Innen az alapél <b>felezőpontjáig</b> mért távolság az apotéma ($r$), a '
-   '<b>csúcsig</b> mért távolság pedig a köréírt kör sugara ($R$) — mindkettőre szükség '
-   'lesz.</p>',
-   abra(SVG_GULA, 'Szabályos négyoldalú gúla: a magasság ($H$, piros), az alaplap apotémája '
-        '($r$, zöld), a köréírt kör sugara ($R$, lila), az oldallap magassága '
-        '($h$, narancs) és az oldalél ($s$, kék).'),
+   (
+       '<p>A „középpont” itt a szabályos sokszög beírt és köré írt körének közös középpontját jelenti. '
+       '<b>Vigyázz a szóhasználattal:</b> nálunk az <b>apotéma</b> mindig az <i>alaplap</i> apotémája; a '
+       'szerb tankönyvek <i>apotema piramide</i> néven az oldallap magasságát értik — azt itt végig $h$ '
+       'jelöli. Az alaplap középpontjától egy alapél <b>felezőpontjáig</b> mért távolság az apotéma ($r$), '
+       'az alaplap középpontjától az alaplap egyik <b>csúcsáig</b> mért távolság pedig a köré írt kör '
+       'sugara ($R$) — mindkettőre szükség lesz.</p>'
+   ),
+   abra(SVG_GULA, (
+                      'Szabályos négyoldalú gúla: a magasság ($H$, piros), az alaplap apotémája ($r$, zöld), a köré írt '
+                      'kör sugara ($R$, lila), az oldallap magassága ($h$, narancs) és az oldalél ($s$, kék).'
+                  )),
  ]),
 
  ("A szabályos gúla három derékszögű háromszöge", [
    '<p>A szabályos gúla adatai három derékszögű háromszögbe rendeződnek. Mindháromban '
    'szerepel a magasság vagy az alapél fele, és mindhárom a Pitagorasz-tétellel dolgozik.</p>',
    doboz("tetel", "A szabályos gúla három derékszögű háromszöge",
-         '<p>Ezek a képletek <b>szabályos</b> gúlára érvényesek: kell hozzájuk, hogy a '
-         'magasság talppontja az alaplap középpontja legyen. Jelölje $a$ az alapélt, $H$ a magasságot, $r$ az alaplap apotémáját, $R$ az '
-         'alaplap köréírt sugarát, $h$ az oldallap magasságát és $s$ az oldalélt. Ekkor</p>'
-         '<ol>'
-         '<li>a magasság, az apotéma és az <b>oldallap magassága</b>: '
-         '$h^{2}=H^{2}+r^{2}$;</li>'
-         '<li>a magasság, a köréírt sugár és az <b>oldalél</b>: $s^{2}=H^{2}+R^{2}$;</li>'
-         '<li>az oldallap magassága, az alapél fele és az <b>oldalél</b>: '
-         '$s^{2}=h^{2}+\\left(\\frac{a}{2}\\right)^{2}$.</li>'
-         '</ol>'
-         '<p>A harmadik háromszög magában az <b>oldallapban</b> fekszik: az egyenlő szárú '
-         'háromszöget a magassága két derékszögű háromszögre vágja.</p>'
-         '<p>Van egy negyedik, immár <b>síkbeli</b> összefüggés is, amely az alaplapon '
-         'belül köti össze a két sugarat:</p>'
-         '$$R^{2}=r^{2}+\\left(\\frac{a}{2}\\right)^{2}.$$'
-         '<p>A leggyakoribb alaplapokra:</p>'
-         '<table class="tt-table">'
-         '<tr><th>alaplap</th><th>apotéma $r$</th><th>köréírt sugár $R$</th></tr>'
-         '<tr><td>négyzet</td><td>$\\dfrac{a}{2}$</td><td>$\\dfrac{a\\sqrt2}{2}$</td></tr>'
-         '<tr><td>szabályos háromszög</td><td>$\\dfrac{a\\sqrt3}{6}$</td>'
-         '<td>$\\dfrac{a\\sqrt3}{3}$</td></tr>'
-         '<tr><td>szabályos hatszög</td><td>$\\dfrac{a\\sqrt3}{2}$</td><td>$a$</td></tr>'
-         '</table>'
-         '<p>Mivel $r &lt; R$, mindig $h &lt; s$: az <b>oldallap magassága rövidebb</b>, '
-         'mint az oldalél.</p>',
+         (
+             '<p>Ezek a képletek <b>szabályos</b> gúlára érvényesek: kell hozzájuk, hogy a magasság talppontja az '
+             'alaplap középpontja legyen. Jelölje $a$ az alapélt, $H$ a magasságot, $r$ az alaplap apotémáját, '
+             '$R$ az alaplap köré írt sugarát, $h$ az oldallap magasságát és $s$ az oldalélt. Ekkor</p><ol><li>a '
+             'magasság, az apotéma és az <b>oldallap magassága</b>: $h^{2}=H^{2}+r^{2}$;</li><li>a magasság, a '
+             'köré írt sugár és az <b>oldalél</b>: $s^{2}=H^{2}+R^{2}$;</li><li>az oldallap magassága, az alapél '
+             'fele és az <b>oldalél</b>: $s^{2}=h^{2}+\\left(\\frac{a}{2}\\right)^{2}$.</li></ol><p>A harmadik '
+             'háromszög magában az <b>oldallapban</b> fekszik: az egyenlő szárú háromszöget a magassága két '
+             'derékszögű háromszögre vágja.</p><p>Van egy negyedik, immár <b>síkbeli</b> összefüggés is, amely az '
+             'alaplapon belül köti össze a két sugarat:</p>$$R^{2}=r^{2}+\\left(\\frac{a}{2}\\right)^{2}.$$<p>A '
+             'leggyakoribb alaplapokra:</p><table class="tt-table"><tr><th>alaplap</th><th>apotéma '
+             '$r$</th><th>köré írt sugár $R$</th></tr><tr><td>négyzet</td><td>$\\dfrac{a}{2}$</td><td>$\\dfrac{a\\sqr'
+             't2}{2}$</td></tr><tr><td>szabályos háromszög</td><td>$\\dfrac{a\\sqrt3}{6}$</td><td>$\\dfrac{a\\sqrt3}{3'
+             '}$</td></tr><tr><td>szabályos hatszög</td><td>$\\dfrac{a\\sqrt3}{2}$</td><td>$a$</td></tr></table><p>M'
+             'ivel $r &lt; R$, mindig $h &lt; s$: az <b>oldallap magassága rövidebb</b>, mint az oldalél.</p>'
+         ),
          hid="tetel-harom-haromszog"),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„Az oldalél és az oldallap magassága — mindkettő a csúcsba fut, tehát '
-         'ugyanaz."</i></p>'
-         '<p>Nem ugyanaz. Az <b>oldalél</b> ($s$) a csúcsot az alaplap egy <b>csúcsával</b> '
-         'köti össze, az <b>oldallap magassága</b> ($h$) pedig egy alapél '
-         '<b>felezőpontjával</b>. A kettő két különböző derékszögű háromszögben él, és '
-         'mindig $h &lt; s$. A palásthoz $h$ kell — ha $s$-vel számolsz, túl nagy felszínt '
-         'kapsz.</p>'),
+         (
+             '<p><i>„Az oldalél és az oldallap magassága — mindkettő a csúcsba fut, tehát ugyanaz.”</i></p><p>Nem '
+             'ugyanaz. Az <b>oldalél</b> ($s$) a csúcsot az alaplap egy <b>csúcsával</b> köti össze, az '
+             '<b>oldallap magassága</b> ($h$) pedig egy alapél <b>felezőpontjával</b>. A kettő két különböző '
+             'derékszögű háromszögben él, és mindig $h &lt; s$. A palásthoz $h$ kell — ha $s$-vel számolsz, túl '
+             'nagy felszínt kapsz.</p>'
+         )),
    abra(SVG_GULA3, 'Szabályos háromoldalú gúla — itt az alaplap $ABC$, a gúla csúcsa pedig '
         '$D$. Az oldallap magassága az alapél felezőpontjába érkezik, nem a csúcsába.'),
-   kviz('A szabályos gúla melyik derékszögű háromszöge köti össze az <b>oldalélt</b> a '
-        '<b>magassággal</b>?',
-        ['A magasság és a köréírt sugár ($R$) alkotta háromszögben',
+   kviz('Melyik derékszögű háromszögben szerepel együtt a szabályos gúla oldaléle és testmagassága?',
+        ['A magasság és a köré írt sugár ($R$) alkotta háromszögben',
          'A magasság és az apotéma ($r$) alkotta háromszögben',
          'Egyikben sem — az oldalél nem derékszögű háromszög oldala'], 0,
-        jo="✔ b² = m² + R²: az oldalél az alaplap CSÚCSÁIG fut, ezért a köréírt sugár tartozik hozzá.",
-        nem="✘ Az apotéma az alapél felezőpontjához vezet, tehát az az oldallap magasságához "
-            "tartozik. Az oldalél a csúcsba fut, oda a köréírt sugár visz."),
+        jo='✔ s² = H² + R²: az oldalél az alaplap CSÚCSÁIG fut, ezért a köré írt sugár tartozik hozzá.',
+        nem=(
+                '✘ Az apotéma az alapél felezőpontjához vezet, tehát az az oldallap magasságához tartozik. Az '
+                'oldalél a csúcsba fut, oda a köré írt sugár visz.'
+            )),
  ]),
 
  ("Adatból adat", [
    doboz("pelda", "Kristály-kamra szimuláció",
-         '<p>Egy szabályos négyoldalú gúla alapéle $6$ cm, magassága $4$ cm. Számítsd ki az '
-         'apotémát, az oldallap magasságát, a köréírt sugarat és az oldalélt!</p>',
+         (
+             '<p>Egy szabályos négyoldalú gúla alapéle $6$ cm, magassága $4$ cm. Számítsd ki az apotémát, az '
+             'oldallap magasságát, a köré írt sugarat és az oldalélt!</p>'
+         ),
          hid="pelda-gula-adatok",
          lenyilo=("Megoldás",
-                  '<p><b>Apotéma.</b> Négyzet alaplapnál az apotéma az oldal fele: '
-                  '$r=\\frac{a}{2}=3$ cm.</p>'
-                  '<p><b>Oldallap magassága</b> (1. háromszög):</p>'
-                  '$$h=\\sqrt{H^2+r^2}=\\sqrt{4^2+3^2}=\\sqrt{25}=5\\ \\text{cm}.$$'
-                  '<p><b>Köréírt sugár.</b> A négyzet átlójának fele: '
-                  '$R=\\frac{a\\sqrt2}{2}=3\\sqrt2\\approx 4{,}24$ cm.</p>'
-                  '<p><b>Oldalél</b> (2. háromszög):</p>'
-                  '$$b=\\sqrt{H^2+R^2}=\\sqrt{16+18}=\\sqrt{34}\\approx 5{,}83\\ \\text{cm}.$$'
-                  '<p><b>Ellenőrzés a 3. háromszöggel:</b> '
-                  '$\\sqrt{h^2+\\left(\\frac a2\\right)^2}=\\sqrt{25+9}=\\sqrt{34}$ — '
-                  'ugyanaz. És valóban $h=5<5{,}83=b$.</p>')),
+                  (
+                      '<p><b>Apotéma.</b> Négyzet alaplapnál az apotéma az oldal fele: $r=\\frac{a}{2}=3$ '
+                      'cm.</p><p><b>Oldallap magassága</b> (1. háromszög):</p>$$h=\\sqrt{H^2+r^2}=\\sqrt{4^2+3^2}=\\sqrt{25}=5'
+                      '\\ \\text{cm}.$$<p><b>A köré írt kör sugara.</b> A négyzet átlójának fele: '
+                      '$R=\\frac{a\\sqrt2}{2}=3\\sqrt2\\approx 4{,}24$ cm.</p><p><b>Oldalél</b> (2. '
+                      'háromszög):</p>$$s=\\sqrt{H^2+R^2}=\\sqrt{16+18}=\\sqrt{34}\\approx 5{,}83\\ '
+                      '\\text{cm}.$$<p><b>Ellenőrzés a 3. háromszöggel:</b> $\\sqrt{h^2+\\left(\\frac '
+                      'a2\\right)^2}=\\sqrt{25+9}=\\sqrt{34}$ — ugyanaz. És valóban $h=5<5{,}83=s$.</p>'
+                  ))),
  ]),
 
  ("A tetraéder", [
@@ -229,10 +225,10 @@ C1 = [
         nem="✘ Képzelj el egy nagyon magas, hegyes gúlát szabályos háromszög alaplappal: "
             "szabályos gúla, de az oldalélei jóval hosszabbak az alapélnél."),
    GY(FGY + "#alap-1", "A 1–5", FGY + "#kozep-1", "K 1–4"),
-   brief('<b>Prizma:</b> A három háromszög a kezedben van — innentől minden hiányzó adatot '
-         'ki tudsz számolni. Jöhet a mérés: mennyi anyag kell a tüske burkolatához, és '
-         'mennyi energiát zár be. Az utóbbinál vár rád a témakör legmakacsabb száma: egy '
-         '<b>harmad</b>.', outro=True),
+   brief((
+             '<b>Prizma:</b> A három derékszögű háromszög sok szabályos gúlás feladatban segít kiszámítani a '
+             'hiányzó adatot. Most ezekkel az adatokkal állítjuk össze a palást területét és a térfogatot.'
+         ), outro=True),
  ]),
 ]
 
@@ -265,12 +261,12 @@ C2 = [
    abra(SVG_HALO_G, 'A négyzetes gúla hálója: az alaplap és a négy oldallap. A háromszögek '
         'magassága $h$ — ez a szám kell a palásthoz.'),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„Az oldallap háromszög, az oldala $s$ — a területe tehát '
-         '$\\frac{a\\cdot b}{2}$."</i></p>'
-         '<p>A háromszög területéhez az alaphoz tartozó <b>magasság</b> kell, nem a szár. '
-         'Az oldallap alapja $a$, a hozzá tartozó magasság $h$ — az oldalél ($s$) csak a '
-         'háromszög szára, és mindig hosszabb, mint $h$. Ha $s$-vel számolsz, a palást '
-         'túl nagy lesz.</p>'),
+         (
+             '<p><i>„Az oldallap háromszög, az oldala $s$ — a területe tehát $\\frac{a\\cdot s}{2}$.”</i></p><p>A '
+             'háromszög területéhez az alaphoz tartozó <b>magasság</b> kell, nem a szár. Az oldallap alapja $a$, '
+             'a hozzá tartozó magasság $h$ — az oldalél ($s$) csak a háromszög szára, és mindig hosszabb, mint '
+             '$h$. Ha $s$-vel számolsz, a palást túl nagy lesz.</p>'
+         )),
    kviz('Melyik képlet adja a szabályos négyoldalú gúla palástját?',
         ['$M=4\\cdot\\frac{a\\,h}{2}$, ahol $h$ az oldallap magassága',
          '$M=4\\cdot\\frac{a\\,s}{2}$, ahol $s$ az oldalél',
@@ -286,24 +282,21 @@ C2 = [
          '$$V=\\frac{B\\cdot H}{3},$$'
          '<p>ahol $B$ az alaplap területe, $H$ pedig a magasság.</p>',
          hid="tetel-gula-terfogat"),
-   '<p>A <b>harmad</b> nem önkényes szám. Vegyük az $ABCA_1B_1C_1$ háromoldalú hasábot, és '
-   'bontsuk fel a következő három gúlára: $A_1ABC$, $A_1B_1BC$ és $A_1B_1C_1C$.</p>'
-   '<ul>'
-   '<li>Az első kettőnek közös a $C$ csúcsa, az alapjuk pedig az $A_1AB$, illetve az '
-   '$A_1B_1B$ háromszög — ezek az $ABB_1A_1$ paralelogramma két fele, tehát egyenlő '
-   'területűek és egy síkban vannak.</li>'
-   '<li>A második és a harmadik közös csúcsa $A_1$, az alapjuk a $B_1BC$, illetve a '
-   '$B_1C_1C$ háromszög — a $BCC_1B_1$ paralelogramma két fele.</li>'
-   '</ul>'
-   '<p>Az <b>egyenlő alapterületű és egyenlő magasságú gúlák térfogata egyenlő</b> — ezt '
-   'itt alapelvként fogadjuk el, a pontos bizonyítása nem tananyagunk. Eszerint mind a '
-   'három darab térfogata ugyanakkora, és együtt kiadják a hasábot, tehát</p>'
-   '$$V_{\\text{gúla}}=\\frac{V_{\\text{hasáb}}}{3}=\\frac{B\\cdot H}{3}.$$'
-   '<p>Tetszőleges alapú gúlára ebből következik a képlet: az alaplapot háromszögekre '
-   'bontjuk, minden darab háromoldalú gúla lesz — <b>ugyanazzal az $H$ magassággal</b>, '
-   'hiszen a csúcs közös —, ezért a térfogatok összege '
-   '$\\frac{T_1H}{3}+\\dots+\\frac{T_kH}{3}=\\frac{B\\,H}{3}$, ahol $T_1,\\dots,T_k$ a '
-   'részháromszögek területe és $T_1+\\dots+T_k=B$.</p>',
+   (
+       '<p>A <b>harmad</b> nem önkényes szám. Vegyük az $ABCA_1B_1C_1$ háromoldalú hasábot, és bontsuk fel '
+       'a következő három gúlára: $A_1ABC$, $A_1B_1BC$ és $A_1B_1C_1C$.</p><ul><li>Az első kettőnek közös a '
+       '$C$ csúcsa, az alapjuk pedig az $A_1AB$, illetve az $A_1B_1B$ háromszög — ezek az $ABB_1A_1$ '
+       'paralelogramma két fele, tehát egyenlő területűek és egy síkban vannak.</li><li>A második és a '
+       'harmadik közös csúcsa $A_1$, az alapjuk a $B_1BC$, illetve a $B_1C_1C$ háromszög — a $BCC_1B_1$ '
+       'paralelogramma két fele.</li></ul><p>Az <b>egyenlő alapterületű és egyenlő magasságú gúlák '
+       'térfogata egyenlő</b> — ezt itt alapelvként fogadjuk el, a pontos bizonyítása nem tananyagunk. '
+       'Eszerint mind a három darab térfogata ugyanakkora, és együtt kiadják a hasábot, '
+       'tehát</p>$$V_{\\text{gúla}}=\\frac{V_{\\text{hasáb}}}{3}=\\frac{B\\cdot H}{3}.$$<p>Tetszőleges alapú '
+       'gúlára ebből következik a képlet: az alaplapot háromszögekre bontjuk, minden darab háromoldalú gúla '
+       'lesz — <b>ugyanazzal a $H$ magassággal</b>, hiszen a csúcs közös —, ezért a térfogatok összege '
+       '$\\frac{T_1H}{3}+\\dots+\\frac{T_kH}{3}=\\frac{B\\,H}{3}$, ahol $T_1,\\dots,T_k$ a részháromszögek '
+       'területe és $T_1+\\dots+T_k=B$.</p>'
+   ),
    doboz("erdekesseg", "Hol találkozol vele?",
          '<p>Ezért fér egy kúpos fagylalttölcsérbe pontosan harmadannyi, mint egy ugyanolyan '
          'széles és magas hengeres pohárba — a kúpra ugyanez a harmad érvényes, ahogy azt a '
@@ -317,16 +310,14 @@ C2 = [
          'felszíne és a térfogata?</p>',
          hid="pelda-gula-felszin",
          lenyilo=("Megoldás",
-                  '<p>Az <a href="tananyag-gula.html#pelda-gula-adatok">előző egységben</a> '
-                  'már kiszámoltuk: az alaplap apotémája $r=\\frac a2=3$ cm, az oldallap '
-                  'magassága pedig $h=\\sqrt{4^2+3^2}=5$ cm.</p>'
-                  '<p><b>Alaplap:</b> $B=a^2=36\\ \\text{cm}^2$. '
-                  '<b>Kerület:</b> $K=4\\cdot 6=24$ cm.</p>'
-                  '<p><b>Palást:</b> $M=\\frac{K\\,h}{2}=\\frac{24\\cdot 5}{2}='
-                  '60\\ \\text{cm}^2$.</p>'
-                  '<p><b>Felszín:</b> $F=B+M=36+60=96\\ \\text{cm}^2$.</p>'
-                  '<p><b>Térfogat:</b> $V=\\frac{B\\,m}{3}=\\frac{36\\cdot 4}{3}='
-                  '48\\ \\text{cm}^3$.</p>')),
+                  (
+                      '<p>Az <a href="tananyag-gula.html#pelda-gula-adatok">előző egységben</a> már kiszámoltuk: az '
+                      'alaplap apotémája $r=\\frac a2=3$ cm, az oldallap magassága pedig $h=\\sqrt{4^2+3^2}=5$ '
+                      'cm.</p><p><b>Alaplap:</b> $B=a^2=36\\ \\text{cm}^2$. <b>Kerület:</b> $K=4\\cdot 6=24$ '
+                      'cm.</p><p><b>Palást:</b> $M=\\frac{K\\,h}{2}=\\frac{24\\cdot 5}{2}=60\\ '
+                      '\\text{cm}^2$.</p><p><b>Felszín:</b> $F=B+M=36+60=96\\ \\text{cm}^2$.</p><p><b>Térfogat:</b> '
+                      '$V=\\frac{B\\,H}{3}=\\frac{36\\cdot 4}{3}=48\\ \\text{cm}^3$.</p>'
+                  ))),
    doboz("pelda", "Kristály-kamra szimuláció",
          '<p>Egy szabályos hatoldalú gúla alapéle $4$ cm, az oldallap magassága $5$ cm. '
          'Mekkora a felszíne? És a magassága?</p>',
@@ -354,21 +345,22 @@ C2 = [
    abra(SVG_HAZ, 'Négyzetes hasáb és a rá állított szabályos négyoldalú gúla. A közös '
         'négyzetlap belülre kerül: a felszínbe nem számít bele.'),
    doboz("pelda", "Kristály-kamra szimuláció",
-         '<p>Egy torony alsó része $6$ m alapélű, $5$ m magas négyzetes hasáb; a teteje a '
-         'hasáb fedőlapjára illesztett, $4$ m magas szabályos négyoldalú gúla. Mekkora a '
-         'torony térfogata és a felszíne?</p>',
+         (
+             '<p>Egy torony alsó része $6$ m alapélű, $5$ m magas négyzetes hasáb; a teteje a hasáb fedőlapjával '
+             'egybevágó alaplapú, arra illesztett, $4$ m magas szabályos négyoldalú gúla. Mekkora a torony '
+             'térfogata és a felszíne?</p>'
+         ),
          hid="pelda-gula-osszetett",
          lenyilo=("Megoldás",
-                  '<p>A hasáb térfogata $V_1=6^2\\cdot 5=180\\ \\text{m}^3$.</p>'
-                  '<p>A gúla alaplapja ugyanaz a négyzet, ezért '
-                  '$V_2=\\frac{36\\cdot 4}{3}=48\\ \\text{m}^3$.</p>'
-                  '<p>A torony térfogata $V=180+48=228\\ \\text{m}^3$.</p>'
-                  '<p><b>Felszín.</b> A hasáb fedőlapja és a gúla alaplapja egymáshoz '
-                  'simul, tehát belülre kerül; a talpon lévő négyzet viszont látszik. A gúla '
-                  'oldallap-magassága $h=\\sqrt{4^2+3^2}=5$ m, ezért</p>'
-                  '$$F=36+4\\cdot 6\\cdot 5+\\frac{24\\cdot 5}{2}=36+120+60='
-                  '216\\ \\text{m}^2,$$'
-                  '<p>ahol a három tag rendre a talp, a hasáb palástja és a gúla palástja.</p>')),
+                  (
+                      '<p>A hasáb térfogata $V_1=6^2\\cdot 5=180\\ \\text{m}^3$.</p><p>A gúla alaplapja ugyanaz a négyzet, '
+                      'ezért $V_2=\\frac{36\\cdot 4}{3}=48\\ \\text{m}^3$.</p><p>A torony térfogata $V=180+48=228\\ '
+                      '\\text{m}^3$.</p><p><b>Felszín.</b> A hasáb fedőlapja és a gúla alaplapja egymáshoz simul, tehát '
+                      'belülre kerül; a talplap viszont hozzátartozik a test teljes geometriai felszínéhez, akkor is, ha a '
+                      'torony a földön áll. A gúla oldallap-magassága $h=\\sqrt{4^2+3^2}=5$ m, ezért</p>$$F=36+4\\cdot '
+                      '6\\cdot 5+\\frac{24\\cdot 5}{2}=36+120+60=216\\ \\text{m}^2,$$<p>ahol a három tag rendre a talp, a hasáb '
+                      'palástja és a gúla palástja.</p>'
+                  ))),
    kviz('Egy hasábra a fedőlapjával <b>pontosan egybevágó</b> alaplapú gúlát állítunk. '
         'Hogyan kapjuk meg az összetett test <b>felszínét</b>?',
         ['A hasáb alaplapja + a hasáb palástja + a gúla palástja',
@@ -390,10 +382,12 @@ C2 = [
 
 C3 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Prizma:</b> Vágd el a tüskét félmagasságban. A metszet <b>nem</b> feleakkora '
-         'területű, mint az alaplap, hanem <b>negyedakkora</b>. Aki ezt elrontja, a '
-         'Kristálypára felét számolja el — és ez az a hiba, amit Maxi a torz '
-         'tér-egyenleteiben szándékosan meghagy.'),
+   brief((
+             '<b>Prizma:</b> Vágd el a tüskét az alaplappal párhuzamos síkkal, félmagasságban. A metszet '
+             '<b>nem</b> feleakkora területű, mint az alaplap, hanem <b>negyedakkora</b>. Aki ezt elrontja, a '
+             'Kristálypára felét számolja el — és ez az a hiba, amit Maxi a torz tér-egyenleteiben szándékosan '
+             'meghagy.'
+         )),
    '<p>Ebben az egységben a gúla metszeteit nézzük meg, és közben egy olyan szabály '
    'bukkan elő, ami az egész geometriában érvényes: a hasonlóság <b>hossz–terület–térfogat</b> '
    'arányai.</p>',
@@ -401,14 +395,13 @@ C3 = [
 
  ("Alappal párhuzamos metszet", [
    doboz("tetel", "A metszet hasonló az alaplaphoz",
-         '<p>Ha a gúlát az alaplappal <b>párhuzamos</b> síkkal metsszük, a metszet az '
-         'alaplaphoz <b>hasonló</b> sokszög. A hasonlóság aránya</p>'
-         '$$k=\\frac{x}{H},$$'
-         '<p>ahol $x$ a <b>metszősík</b> csúcstól mért távolsága (a magasságon mérve), $H$ pedig '
-         'a gúla magassága. Értelmes metszethez $0&lt;k&lt;1$ kell: $k=1$ maga az '
-         'alaplap, $k=0$ pedig már csak a csúcs.</p>'
-         '<p>A metszet fölötti rész maga is gúla — az eredetihez hasonló, $k$ arányban '
-         'kicsinyítve.</p>',
+         (
+             '<p>Ha a gúlát az alaplappal <b>párhuzamos</b> síkkal metsszük, a metszet az alaplaphoz '
+             '<b>hasonló</b> sokszög. A hasonlóság aránya</p>$$k=\\frac{x}{H},$$<p>ahol $x$ a <b>metszősík</b> '
+             'csúcstól mért távolsága (a magasságon mérve), $H$ pedig a gúla magassága. Belső metszethez '
+             '$0&lt;k&lt;1$ kell: $k=1$ maga az alaplap, $k=0$ pedig már csak a csúcs.</p><p>A metszet fölötti '
+             'rész maga is gúla — az eredetihez hasonló, $k$ arányban kicsinyítve.</p>'
+         ),
          hid="tetel-parhuzamos-metszet"),
    abra(SVG_METSZET_G, 'Félmagasságban metszve $k=\\frac12$: a metszet oldalai feleakkorák, '
         'mint az alaplapé.'),
@@ -433,9 +426,11 @@ C3 = [
    '<tr><td>$\\frac23$</td><td>$\\frac23$</td><td>$\\frac49$</td><td>$\\frac8{27}$</td></tr>'
    '</table>',
    doboz("pelda", "Kristály-kamra szimuláció",
-         '<p>Egy szabályos négyoldalú gúla alapéle $6$ cm, magassága $4$ cm (tehát '
-         '$B=36\\ \\text{cm}^2$ és $V=48\\ \\text{cm}^3$). Elvágjuk félmagasságban. Mekkora '
-         'a metszet területe, és mekkora a levágott kis gúla térfogata?</p>',
+         (
+             '<p>Egy szabályos négyoldalú gúla alapéle $6$ cm, magassága $4$ cm (tehát $B=36\\ \\text{cm}^2$ és '
+             '$V=48\\ \\text{cm}^3$). Elvágjuk az alaplappal párhuzamos síkkal, félmagasságban. Mekkora a metszet '
+             'területe, és mekkora a levágott kis gúla térfogata?</p>'
+         ),
          hid="pelda-felmagassag",
          lenyilo=("Megoldás",
                   '<p>Félmagasságban $k=\\frac12$, ezért a metszet oldalai feleakkorák: az '
@@ -449,13 +444,14 @@ C3 = [
                   '$48-6=42\\ \\text{cm}^3$ — vagyis a test térfogatának hétnyolcada van '
                   'alul, pedig félmagasságban vágtunk.</p>')),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„Félmagasságban vágtam, tehát a metszet feleakkora, és a levágott rész is a '
-         'térfogat fele."</i></p>'
-         '<p>Egyik sem igaz. A <b>hosszak</b> feleződnek, a <b>területek</b> negyedelődnek, '
-         'a <b>térfogatok</b> nyolcadolódnak. Ez a hasonlóság alapszabálya, és nemcsak a '
-         'gúlára igaz: ezért kerül négyszer annyi festék egy kétszer akkora táblára, és '
-         'ezért nyolcszor nehezebb egy kétszer akkora, ugyanabból az anyagból készült '
-         'szobor.</p>'),
+         (
+             '<p><i>„Félmagasságban vágtam, tehát a metszet feleakkora, és a levágott rész is a térfogat '
+             'fele.”</i></p><p>Egyik sem igaz. A <b>hosszak</b> feleződnek, a <b>területek</b> negyedelődnek, a '
+             '<b>térfogatok</b> nyolcadolódnak. Ez a hasonlóság alapszabálya, és nemcsak a gúlára igaz: ezért '
+             'kell négyszer annyi festék egy minden hosszméretében kétszeresére nagyított táblához, ha ugyanolyan '
+             'festékkel ugyanolyan vastag réteget festünk rá, és ezért nyolcszor nehezebb egy minden '
+             'hosszméretében kétszeresére nagyított, azonos sűrűségű tömör szobor.</p>'
+         )),
    kviz('Egy gúlát a magasság <b>harmadánál</b> metszünk el (a csúcstól mérve). Hányadrésze '
         'a metszet területe az alaplapénak?',
         ['$\\frac19$', '$\\frac13$', '$\\frac1{27}$'], 0,
@@ -584,31 +580,27 @@ C4 = [
          '$V=\\frac{B_1H}{3}$ — a gúla képlete.</p>',
          hid="tetel-csonkagula-terfogat"),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„Két alaplap van, tehát az átlaguk kell: '
-         '$V=\\frac{H\\,(B_1+B_2)}{2}$."</i></p>'
-         '<p>A trapéz területképletét nem lehet átvinni a térfogatra. A helyes képletben '
-         'három tag áll, köztük a <b>mértani közép</b>, $\\sqrt{B_1B_2}$ — és ennek elhagyása '
-         'nem apró eltérés. A lenti példában a helyes érték $208\\ \\text{cm}^3$, a '
-         '$\\frac{H(B_1+B_2)}{2}$ képlet viszont $232\\ \\text{cm}^3$-t adna, a $\\sqrt{B_1B_2}$ '
-         'nélküli harmados alak pedig $154{,}7\\ \\text{cm}^3$-t. Egyik sem jó.</p>'),
+         (
+             '<p><i>„Két alaplap van, tehát az átlaguk kell: $V=\\frac{H\\,(B_1+B_2)}{2}$.”</i></p><p>A trapéz '
+             'területképletét nem lehet átvinni a térfogatra. A helyes képletben három tag áll, köztük a '
+             '<b>mértani közép</b>, $\\sqrt{B_1B_2}$ — és ennek elhagyása nem apró eltérés. A lenti példában a '
+             'helyes érték $208\\ \\text{cm}^3$, a $\\frac{H(B_1+B_2)}{2}$ képlet viszont $232\\ \\text{cm}^3$-t adna, '
+             'a $\\sqrt{B_1B_2}$ nélküli harmados alak pedig $154{,}7\\ \\text{cm}^3$-t. Egyik sem jó.</p>'
+         )),
    doboz("pelda", "Kristály-kamra szimuláció",
          '<p>Egy szabályos négyoldalú csonkagúla alapélei $10$ cm és $4$ cm, az oldallap '
          'magassága $5$ cm. Mekkora a felszíne és a térfogata?</p>',
          hid="pelda-csonkagula",
          lenyilo=("Megoldás",
-                  '<p><b>Lapok:</b> $B_1=10^2=100\\ \\text{cm}^2$, '
-                  '$B_2=4^2=16\\ \\text{cm}^2$.</p>'
-                  '<p><b>Palást:</b> négy egybevágó trapéz, mindegyik területe '
-                  '$\\frac{(10+4)\\cdot 5}{2}=35\\ \\text{cm}^2$, tehát '
-                  '$M=4\\cdot 35=140\\ \\text{cm}^2$.</p>'
-                  '<p><b>Felszín:</b> $F=B_1+B_2+M=100+16+140=256\\ \\text{cm}^2$.</p>'
-                  '<p><b>Magasság.</b> A trapéz magasságából (ez az $h$) és a '
-                  '$\\frac{a_1-a_2}{2}=3$ cm-es vetületből:</p>'
-                  '$$H=\\sqrt{h^2-\\left(\\frac{a_1-a_2}{2}\\right)^2}='
-                  '\\sqrt{25-9}=4\\ \\text{cm}.$$'
-                  '<p><b>Térfogat:</b></p>'
-                  '$$V=\\frac{4}{3}\\left(100+16+\\sqrt{100\\cdot 16}\\right)'
-                  '=\\frac{4}{3}\\cdot 156=208\\ \\text{cm}^3.$$')),
+                  (
+                      '<p><b>Lapok:</b> $B_1=10^2=100\\ \\text{cm}^2$, $B_2=4^2=16\\ \\text{cm}^2$.</p><p><b>Palást:</b> négy '
+                      'egybevágó trapéz, mindegyik területe $\\frac{(10+4)\\cdot 5}{2}=35\\ \\text{cm}^2$, tehát $M=4\\cdot '
+                      '35=140\\ \\text{cm}^2$.</p><p><b>Felszín:</b> $F=B_1+B_2+M=100+16+140=256\\ '
+                      '\\text{cm}^2$.</p><p><b>Magasság.</b> A trapéz magasságából (ez a $h$) és a $\\frac{a_1-a_2}{2}=3$ '
+                      'cm-es vetületből:</p>$$H=\\sqrt{h^2-\\left(\\frac{a_1-a_2}{2}\\right)^2}=\\sqrt{25-9}=4\\ '
+                      '\\text{cm}.$$<p><b>Térfogat:</b></p>$$V=\\frac{4}{3}\\left(100+16+\\sqrt{100\\cdot '
+                      '16}\\right)=\\frac{4}{3}\\cdot 156=208\\ \\text{cm}^3.$$'
+                  ))),
    kviz('Egy csonkagúla alaplapja $36\\ \\text{cm}^2$, fedőlapja $9\\ \\text{cm}^2$, '
         'magassága $5$ cm. Mekkora a térfogata?',
         ['$105\\ \\text{cm}^3$', '$112{,}5\\ \\text{cm}^3$', '$75\\ \\text{cm}^3$'], 0,

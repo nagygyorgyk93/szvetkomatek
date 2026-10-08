@@ -3,11 +3,11 @@
 ## Hatókör és állapot
 
 **Jelenlegi összesítés:** az 1e és a 2e teljes A3-auditja helyben elkészült:
-**1e 77/77**, **2e 65/65 HTML-oldal**. A legutóbbi adag a 2e/03–04 két
-teljes témakörét és az osztály főoldalát ellenőrizte, összesen 35 oldalt.
-A 3e–4e teljes A3-auditja hátra van.
-A tanár kérésére a további adagok 2–3 teljes témakört fognak össze.
-A munka eddig huszonkét adagban készült; az alábbi adatok
+**1e 77/77**, **2e 65/65 HTML-oldal**. A 3e/01–03 három teljes témakörével
+a 3e **47/92 oldalra** jutott. A 3e/04–06 és az osztály főoldala, továbbá
+a 4e teljes A3-auditja hátra van.
+A tanár kérésére az adagok 2–3 teljes témakört fognak össze.
+A munka eddig huszonhárom adagban készült; az alábbi adatok
 az egyes munkamenetek eredményei, a legfrissebb bejegyzés a végén található.
 
 **2026-10-05, első adag:** az 1e/01 három függvényes tananyaglapjának teljes szövegét
@@ -2357,3 +2357,125 @@ számolási ellenőrzés alapja a builder-önteszt és a külön független újr
 A 3e–4e A3-auditja hátra van.
 **Tanári döntés kell: nincs nyitott tartalmi kérdés.** Helyi main, új ág és push nélkül.
 Következő nagyobb adaghoz osztályválasztás szükséges; javaslat: 3e A3.
+
+## 2026-10-08 — huszonharmadik adag: a 3e/01–03 három teljes témaköre
+
+A poliéderek, forgástestek és lineáris egyenletrendszerek **47 HTML-oldala**
+teljes szöveg szerint átnézve: 27 tananyag, 11 gyakorló/házi, 3 nyitóoldal,
+3 összefoglaló és 3 terepküldetés. A tanár kérésére három témakör együtt
+készült. Kiindulás: **20a62f9**, tiszta helyi main; a main és az origin/main
+helyi referenciája azonos volt. Távoli frissítés nem történt. A 3e skill
+kimenetei és sztandardjai az alap; a meglévő kiegészítő anyagok megmaradtak.
+
+| Témakör | Oldal | Feladatkártya | SVG | Kvíz |
+|---|---:|---:|---:|---:|
+| 01 — poliéderek | 18 | 154 | 33 | 19 |
+| 02 — forgástestek | 17 | 155 | 33 | 21 |
+| 03 — lineáris egyenletrendszerek | 12 | 99 | 11 | 13 |
+| Összesen | 47 | 408 | 77 | 53 |
+
+### Javítás előtt bemutatott hibák és a lektori pontosítások
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Térelemek, axiómák és merőlegesség | A két pont különbözősége hiányzik; a két párhuzamos egyenes síkkifeszítésének magyarázata hibás; a síkszögnél félegyenesek választása nem egyértelmű | Magas | Builder: különböző pontok, merőlegesség a döféspontban, azonos irányú párhuzamosok, két merőleges egyenes nem tompaszögű szöge |
+| Térelemek és alaplap, hétköznapi példák | A háromlábú állvány billegése és borulási stabilitása összemosódik; szoba és fényvisszaverődés feltevései hiányoznak; a hatszög példáihoz közös okot sugall | Közepes | Builder: merev állvány, sík padló, téglatest alakú szoba, beeső sugár; a geometriai hasonlóság és a fizikai ok külön |
+| Poliéderek és alaplapképletek | Pontatlan szabályostest-általánosítás, nevezőre utaló rossz szó, trapéz jelölése kevert | Közepes | Builder: konvex szabályos poliéderek; helyes képletrész és (a+b)·h/2 |
+| Hasáb, felszín és síkmetszet | A ferde hasábnál a teljes felszínképletet is érvénytelennek mondja; ferde metszetből kizárja a téglalapot; a metszet oldalszámát feltétel nélkül állítja | Magas | Builder: M=K·H és F=2B+M külön; lehetséges metszetek, oldalszám felső korlátja |
+| Gúla, jelölések és magyarázat | b/s és m/H keveredése, a kvíz visszajelzésében is; az alaplap élei helyett a csúcsaiból futnak az oldalélek | Magas | Builder: következetes s és H, s²=H²+R² visszajelzés, az alaplap csúcsai |
+| Méretarány és összetett poliéder | „Kétszer akkora” nem határozza meg a nagyítást; festék, sűrűség és közös illesztési lap feltételei hiányoznak | Közepes | Builder: minden hosszméret nagyítása, azonos festék/réteg/sűrűség, egybevágó illesztési lap |
+| Doboz, akvárium, cserép és torony | Belső/külső méret és ráhagyás keveredik; a talplapot láthatóság alapján hagyja ki | Közepes | Builder: belső üreg és elhanyagolt falvastagság/ráhagyás; a teljes geometriai felszínhez a talplap is hozzátartozik |
+| Forgástestek keletkezése | A kúp alkotóit merőlegesnek mondja; tetszőleges határoló síkokból körhengert/kúpot következtet | Magas | Builder: az egyenes kúp tengelye merőleges; a síkok a vezérkör síkjával párhuzamosak |
+| Forgástestek áttekintése és összefoglaló | Minden testhez ugyanazt a két adatot ígéri; félkör és félkörlap keveredik; a négyzet forgatásának kivételét kihagyja | Magas | Builder: henger/kúp, csonkakúp és gömb adatainak szétválasztása; félkörlap, nem négyzet alakú téglalap |
+| Tartály, pohár, tölcsér és gömbpéldák | A fizikai tárgy és a geometriai modell túl szorosan azonosított; gyártási költség és stabilitás túl általános | Közepes | Builder: közelítő modellek, belső méretek, falvastagság és ráhagyás; a tölcsér teljes felszíne lezárt alappal kérve |
+| Henger, N4 | Felszín és térfogat számértékének egyenlősége mértékegység nélkül nem egyértelmű | Magas | Builder: cm², cm³ és centiméterben kért sugár; a válasz 4 cm, a számérték változatlan |
+| Összetett/üreges testek és gömb | „Kívülről látható” kizárhatja az üreg falát; a köré írt henger alapköre nem a gömb tényleges főköre | Magas | Builder: határfelület és belső palást; egyenlő sugarak, a házi bizonyítás szövegében is |
+| Gauss-eljárás és megoldások száma | Egyértelmű megoldást ígér minden rendszerre; nulla pivot és független feltételek kezelése hiányos; a szorzás nem rendszerátalakítás | Magas | Builder: lehetséges megoldásszámok, sorcsere/átlépés, elegendő független feltétel, megoldáshalmazt megőrző műveletek |
+| Determináns és Cramer | A nulla determináns egyedül nem dönt a megoldhatóságról; két ismeretlennél négy determinánst mond; nagy rendszerekre hatékony Cramer-számolást sugall | Magas | Builder: D=0 további vizsgálata, két ismeretlennél három determináns, három hányados, nagyobb rendszereknél más módszer |
+| Szöveges rendszerek és projekt | Hajó mozgásának feltételei hiányosak; pozitív árakat piaci realitással azonosít; kristálytömegeknél a fizikai pozitivitás nincs kimondva | Közepes | Builder: állandó sebesség és megállás nélküli mozgás, kisméretű csomag, pozitív ár és modellezés külön, pozitív tömegek |
+| Bevezetők, átvezetők és néhány cím | Túlzó vagy magyartalan mondatok, „fogalmad sincs”, „ötlet nélkül”, tanulói teljesítményre vonatkozó indokolatlan jóslatok, rossz névelő/idézőjel | Enyhe/közepes | Builder: rövidebb magyar mondatok, konkrét tanulási lépések, névelők és magyar idézőjelek; a játékos keret megmaradt |
+| Ábraleírás és egy GeoGebra-leírás | „köréírt” helyesírás és m/H jelölés maradványa | Enyhe/közepes | Közös ábraépítőben egy szövegjavítás; 3e médiakatalógusban egy leírás, automatikus visszaillesztéssel |
+
+A gombok helyes válaszai és a gyakorlófeladatok matematikai bemenetei
+változatlanok. A hétköznapi helyzeteknél a meglévő számokat megőriztük;
+új feladat és új feladatszámadat nincs. Az átalakítások a builderforrásokban
+készültek, a HTML-t az építők és a projekt eszközei állították elő.
+
+A geometriai és történeti háttér ellenőrzött forrásai: a kocka 35 hexominója
+közül 11 ad hálót. [Carnegie Mellon: megoldások](https://www.math.cmu.edu/~bkell/21110-2010s/homework-2-sol.pdf)
+Arkhimédész gömb–henger kapcsolatának történeti példája megmaradt.
+[St Andrews: Arkhimédész](https://mathshistory.st-andrews.ac.uk/Biographies/Archimedes/)
+A Föld sugarát csak gömbmodellben használjuk.
+[NASA: Föld-adatok](https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html)
+A kínai Kilenc fejezet kiküszöbölési módszere és a Cramer-módszer története
+ellenőrizve. [St Andrews: Kilenc fejezet](https://mathshistory.st-andrews.ac.uk/HistTopics/Nine_chapters/),
+[St Andrews: mátrixok és determinánsok](https://mathshistory.st-andrews.ac.uk/HistTopics/Matrices_and_determinants/)
+A nagyobb determinánsoknál a Gauss-módszer előnyét és az egyetlen megoldás
+Cramer-feltételét az [MIT determinánsfejezete](https://math.mit.edu/~djk/18_022/chapter15/section05.html)
+és [Cramer-fejezete](https://www-math.mit.edu/~djk/18_022/chapter17/section01.html) támasztja alá.
+
+### Független ellenőrzés és megőrzés
+
+Három üres kontextusú lektor csak a témakörök tanulói szövegét kapta,
+a gyakorlóoldalakat végeredmények nélkül. Mind a 47 oldal megfogalmazását
+és feltételeit ellenőrizték. A gúla **54**, a kúp **55**, a lineáris rendszerek
+**50 kártyáját** önállóan megoldották, majd a tényleges HTML-válaszokkal
+összevetették: **159/159 egyezés**, számszerű eltérés nincs.
+A 27 lecke kidolgozott példái, mind az 53 kvíz és a három projekt is átnézve.
+A projektmegoldások csak a privát kontrollban szerepelnek.
+A javított teljes szövegeket újraolvasták; a végső nyelvi, jelölési és
+modellpontosításaikat beépítettük. Ez teljes A3-szövegaudit, a 408 kártya
+független újramegoldására nézve mintavétel.
+
+Mind a **20 builder** újraépítve, a beépített SymPy-öntesztek sikeresek.
+**19 builder** és a közös ábraépítő egy sztringje módosult; az AST-összevetés
+szerint a programszerkezet és a numerikus konstansok változatlanok.
+**42 HTML-oldal** változott; a további öt átnézett oldalhoz nem kellett javítás.
+
+Megőrzés: 408 kártya matematikai bemenete, minden állandó horgony, korábbi
+hivatkozás, kép, szkript, háttér és médiaazonosító megmaradt. **406 végeredmény**
+szövege változatlan. Két szükséges pontosítás: a henger N4 válaszában „cm”,
+a forgástestek házi N3 bizonyításában az alapkör helyett a sugáregyenlőség.
+Az összes numerikus eredmény változatlan. Az 53 kvíz helyes válasza megmaradt;
+egy válaszlehetőség helyesírása és a gúla helyesválasz-visszajelzésének jelölése
+pontosodott.
+
+**77 SVG** megmaradt, geometriájuk változatlan. Négy oldalon öt SVG tér el:
+három ábraleírás helyesírása javult; a jelenlegi közös ábraépítő két D₁-felirat
+függőleges helyét újra számította. A két csonkagúlaábra 390 px-en
+szemrevételezve, a címkék olvashatók. A többi SVG változatlan.
+Egy GeoGebra-leírásban H a helyes testmagasság; az applet beállításai és
+azonosítói nem változtak.
+
+### Ellenőrzések és korlátok
+
+| Ellenőrzés | Eredmény |
+|---|---|
+| Kép → média → háttér → naplótérkép → keresőindex | Végleges újraépítés után sikeres; 334 médiaelem 139 lapon |
+| Kánon, linkek, gyakorlósáv | 310 oldal, 0 kánon-/linkhiba; minden kártyát felad valamelyik egység |
+| Független kulcsteszt | 4499/4499, 0 eltérés |
+| Regressziós érzékenység | 4499/4499 = 100% |
+| jsdom / képletrender | Végleges 47 lap, 3410 képlet, 53/53 kvíz, 0 hiba |
+| Edge, 360/390/1280 px | Zárt/nyitott lenyílók: 282 nézet; a végső hat lap külön 36 nézet; 0 elrendezési/KaTeX/JS/saját konzol/helyi 404 hiba |
+| axe, 390 px | 94 + 12 próba, 0 szabálysértés |
+| Nyomtatás, JS be/ki | 94 + 12 lappróba; feladatszövegek és lenyitható megoldások láthatók |
+| JavaScript nélkül | 47 + 6 lap olvasható; a képletek TeX-alakban jelennek meg |
+| Keresőindex | 308 nem üres bejegyzés, 42 változó URL, kizárólag a három témakörből |
+| Naplótérkép | Byte szerint változatlan: 184 egység, 2294 feladat, 12315 XP |
+
+A kánon két korábbi, 2e-s heurisztikus visszautalás-figyelmeztetése megmaradt;
+az érintett helyeken érvényes horgonylink van. A Python layout_teszt
+Playwright-csomagja nincs telepítve: a Node Playwright/Edge a jelenlegi
+forrásból ellenőrzött, azonos TULLOGOK függvényt futtatta mindhárom szélességen.
+A mobilos bevezető, Cramer-tábla, kvíz, a mértékegységes feladat és a két
+csonkagúlaábra szemrevételezve. A széles táblázat a közös keretben görgethető.
+
+Valódi képernyőolvasó, más böngésző, minden PDF-oldaltörés és háttérpont
+kézi kontrasztja, valamint a külső médiák új tartalmi/működési próbája nem
+történt. Az axe eredménye nem teljes WCAG-minősítés. Az élő publikált oldal
+helyett a repó végleges helyi fájljait ellenőriztük.
+
+**Állapot:** 1e 77/77 és 2e 65/65 kész; 3e **47/92** oldal A3 szerint átnézve.
+A 3e/04–06 és az osztály főoldala 45 további oldal; a 4e A3-auditja hátra van.
+**Tanári döntés kell: nincs nyitott kérdés.** Helyi main, új ág és push nélkül.
+Következő adag: a 3e/04–06 három teljes témaköre és az osztály főoldala.

@@ -93,19 +93,17 @@ OT = "tananyag-osszetett-testek.html"
 OSSZ = [
  ("Forgástestek — a keletkezés", [
   '<p>Minden forgástest egy <b>síkidom</b> és egy <b>tengely</b> párosából születik '
-  '(' + h(FO, "def-forgastest") + '):</p>'
-  '<table class="tt-table">'
-  '<tr><th>Síkidom</th><th>Tengely</th><th>A keletkező test</th></tr>'
-  '<tr><td>téglalap</td><td>az egyik oldala</td><td><b>henger</b></td></tr>'
-  '<tr><td>derékszögű háromszög</td><td>az egyik <b>befogó</b></td><td><b>kúp</b></td></tr>'
-  '<tr><td>derékszögű háromszög</td><td>az <b>átfogó</b></td>'
-  '<td>két kúp közös alaplappal</td></tr>'
-  '<tr><td>félkör</td><td>az átmérője</td><td><b>gömb</b></td></tr>'
-  '<tr><td>derékszögű trapéz</td><td>a merőleges szára</td><td><b>csonkakúp</b></td></tr>'
-  '</table>'
-  '<p>⚠️ A tengely megválasztása <b>nem</b> mindegy: a téglalap két oldala körül '
-  'forgatva két <b>különböző</b> térfogatú henger keletkezik, mert a sugár '
-  'négyzetesen, a magasság csak lineárisan számít.</p>',
+  '(' + h(FO, "def-forgastest") + (
+                                      '):</p><table class="tt-table"><tr><th>Síkidom</th><th>Tengely</th><th>A keletkező '
+                                      'test</th></tr><tr><td>téglalap</td><td>az egyik '
+                                      'oldala</td><td><b>henger</b></td></tr><tr><td>derékszögű háromszög</td><td>az egyik '
+                                      '<b>befogó</b></td><td><b>kúp</b></td></tr><tr><td>derékszögű háromszög</td><td>az '
+                                      '<b>átfogó</b></td><td>két kúp közös alaplappal</td></tr><tr><td>félkörlap</td><td>az '
+                                      'átmérője</td><td><b>gömb</b></td></tr><tr><td>derékszögű trapéz</td><td>a merőleges '
+                                      'szára</td><td><b>csonkakúp</b></td></tr></table><p>⚠️ A tengely megválasztása <b>nem</b> mindegy: a '
+                                      'nem négyzet alakú téglalap két különböző hosszúságú oldala körül forgatva két <b>különböző</b> '
+                                      'térfogatú henger keletkezik, mert a sugár négyzetesen, a magasság csak lineárisan számít.</p>'
+                                  ),
  ]),
 
  ("Metszetek", [
@@ -156,14 +154,15 @@ OSSZ = [
 
  ("Összetett és üreges testek", [
   '<p><b>Térfogat:</b> a részek térfogata <b>összeadódik</b> '
-  '(' + h(OT, "tetel-osszetett-terfogat") + '); üreges testnél <b>kivonunk</b>.</p>'
-  '<p><b>Felszín:</b> csak a <b>kívülről látható</b> felületek számítanak — az '
-  'illeszkedő lapok <b>kiesnek</b> (' + h(OT, "tetel-osszetett-felszin") + '). A '
-  'biztos módszer: rajzold le, és satírozd be, ami látszik.</p>'
-  '<p>A cső felszíne <b>négy</b> darabból áll: két körgyűrű, a külső és a '
-  '<b>belső</b> palást.</p>'
-  '<p><b>Fél-testek:</b> félgömb térfogata $\\frac23R^3\\pi$, görbült felülete '
-  '$2R^2\\pi$ — az alapköre csak akkor számít, ha kívülről látszik.</p>',
+  '(' + h(OT, "tetel-osszetett-terfogat") + (
+                                                '); üreges testnél <b>kivonunk</b>.</p><p><b>Felszín:</b> a kész testet <b>határoló</b> felületek '
+                                                'számítanak; az üreg falát is figyelembe vesszük — az illeszkedő lapok <b>kiesnek</b> ('
+                                            ) + h(OT, "tetel-osszetett-felszin") + (
+                                                                                '). A biztos módszer: rajzold le a testet, és jelöld meg a határfelületeit.</p><p>A cső felszíne '
+                                                                                '<b>négy</b> darabból áll: két körgyűrű, a külső és a <b>belső</b> palást.</p><p><b>Fél-testek:</b> '
+                                                                                'félgömb térfogata $\\frac23R^3\\pi$, görbült felülete $2R^2\\pi$ — az alaplap akkor számít, ha a kész '
+                                                                                'test határfelületének része.</p>'
+                                                                            ),
  ]),
 
  ("A gömb és a sík", [
@@ -259,17 +258,15 @@ TEREP = [
  ]),
 
  ("II. fázis — A tölcsér", [
-   '<p>A kúpos tölcsér alapkörének sugara $6$ m, magassága $8$ m.</p>'
-   '<ol class="reszfeladatok">'
-   '<li>Mekkora az <b>alkotója</b>?</li>'
-   '<li>Mekkora a palástja és a felszíne?</li>'
-   '<li>Mekkora a térfogata?</li>'
-   '<li>A tölcsér palástját egyetlen lemezből vágjuk ki. Mekkora <b>középponti '
-   'szögű</b> körcikk kell hozzá, és mekkora a körcikk sugara?</li>'
-   '<li>A tölcsért a magassága <b>felénél</b> elvágjuk, és a felső darabot '
-   'kicseréljük. Mekkora a megmaradó alsó darab (csonkakúp) térfogata? Ellenőrizd '
-   '<b>két</b> úton!</li>'
-   '</ol>',
+   (
+       '<p>A kúpos tölcsér alapkörének sugara $6$ m, magassága $8$ m.</p><ol '
+       'class="reszfeladatok"><li>Mekkora az <b>alkotója</b>?</li><li>Mekkora a palást területe, és mekkora '
+       'lenne a teljes felszín, ha a kúpot az alaplapján is lezárnánk?</li><li>Mekkora a '
+       'térfogata?</li><li>A tölcsér palástját egyetlen lemezből vágjuk ki. Mekkora <b>középponti szögű</b> '
+       'körcikk kell hozzá, és mekkora a körcikk sugara?</li><li>A tölcsért a magassága <b>felénél</b>, az '
+       'alaplappal párhuzamos síkkal elvágjuk, és a csúcsot tartalmazó darabot kicseréljük. Mekkora a '
+       'megmaradó csonkakúp térfogata? Ellenőrizd <b>két</b> úton!</li></ol>'
+   ),
  ]),
 
  ("III. fázis — A szelence és a torony", [
@@ -356,9 +353,11 @@ DR_N = [
   '$V=276\\pi$ cm³.'),
  ("Igazold, hogy a gömb térfogata a köré írt henger térfogatának pontosan a "
   "<b>kétharmada</b>!", None,
-  "A köré írt henger alapköre a főkör ($r=R$), a magassága az átmérő ($H=2R$), ezért "
-  "$V_{\\text{henger}}=R^2\\pi\\cdot2R=2R^3\\pi$. A gömbé $\\frac{4R^3\\pi}{3}$, "
-  "tehát az arány $\\frac{4R^3\\pi/3}{2R^3\\pi}=\\frac23$ — ez Arkhimédész tétele."),
+  (
+      'A köré írt henger alapkörsugara a gömb sugarával egyenlő ($r=R$), a magassága az átmérő ($H=2R$), '
+      'ezért $V_{\\text{henger}}=R^2\\pi\\cdot2R=2R^3\\pi$. A gömbé $\\frac{4R^3\\pi}{3}$, tehát az arány '
+      '$\\frac{4R^3\\pi/3}{2R^3\\pi}=\\frac23$ — ez Arkhimédész tétele.'
+  )),
 ]
 
 body_dr = [
@@ -418,49 +417,31 @@ K = [
         "Minden definíció, képlet és tipikus csapda egy helyen — dolgozat előtti átfutáshoz"),
 ]
 
-INDEX = '''<!DOCTYPE html>
-<html lang="hu" data-root="../..">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Forgástestek | 3e | Szvetkó matek</title>
-<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../../assets/css/theme.css">
-<link rel="stylesheet" href="../../assets/css/print.css">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
-</head>
-<body data-tagozat="3e">
-<div id="progress"></div>
-<header class="fejlec">
-  <div class="fejlec-bel">
-    <a class="logo" href="../../index.html"><span class="jel">&#8730;</span><span class="nev">Szvetkó <b>matek</b></span></a>
-    <span class="ter"></span>
-    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
-  </div>
-</header>
-<nav class="morzsa">
-  <a href="../../index.html">Főhadiszállás</a> ›
-  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
-  <span class="itt">Forgástestek</span>
-</nav>
-<div class="hero">
-  <h1>Forgástestek</h1>
-  <p class="alcim">A hengertől és a kúptól a csonkakúpon át a gömbig és az összetett
-  testekig — minden test egyetlen síkidom megforgatásából születik.</p>
-  <div class="meta-sor"><span class="chip ora">17 óra</span><span class="statusz kesz">kész</span></div>
-  <div class="brief"><p>🔷 <b>Szektor 02 — Az Átalakulás Kamrája.</b> Kiképző:
-  <b>Medúza</b>. Ebben a kamrában a Kristálypára már nem szögletesen csapódik ki, hanem
-  <b>pörög</b> — és ami pörög, az gömbölyű nyomot hagy. Medúza megmutatja, hogyan lehet
-  minden ilyen testet ugyanazzal a két adattal — a <b>sugárral</b> és a <b>magassággal</b> —
-  felmérni, és mikor kell melléjük az <b>alkotó</b>.</p></div>
-</div>
-<main class="lap">
-  <div class="tartalom">
-    <h2>Tananyag</h2>
-
-    <h3>🛢️ Forgástestek és a henger — Medúza</h3>
-    <div class="racs">
-''' + "\n".join(K[0:3]) + '''
+INDEX = (
+            '<!DOCTYPE html>\n<html lang="hu" data-root="../..">\n<head>\n<meta charset="utf-8">\n<meta '
+            'name="viewport" content="width=device-width,initial-scale=1">\n<title>Forgástestek | 3e | Szvetkó '
+            'matek</title>\n<link rel="icon" href="../../assets/img/common/favicon.svg" '
+            'type="image/svg+xml">\n<link rel="stylesheet" href="../../assets/css/theme.css">\n<link '
+            'rel="stylesheet" href="../../assets/css/print.css">\n<link rel="stylesheet" '
+            'href="../../assets/katex/katex.min.css">\n</head>\n<body data-tagozat="3e">\n<div '
+            'id="progress"></div>\n<header class="fejlec">\n  <div class="fejlec-bel">\n    <a class="logo" '
+            'href="../../index.html"><span class="jel">&#8730;</span><span class="nev">Szvetkó '
+            '<b>matek</b></span></a>\n    <span class="ter"></span>\n    <form class="kereso-mini"><input '
+            'type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button '
+            'type="submit">Keres</button></form>\n  </div>\n</header>\n<nav class="morzsa">\n  <a '
+            'href="../../index.html">Főhadiszállás</a> ›\n  <a href="../index.html"><span '
+            'class="tagozat-jel">3e</span></a> ›\n  <span class="itt">Forgástestek</span>\n</nav>\n<div '
+            'class="hero">\n  <h1>Forgástestek</h1>\n  <p class="alcim">A hengertől és a kúptól a csonkakúpon át a '
+            'gömbig és az összetett\n  testekig — minden test egyetlen síkidom megforgatásából születik.</p>\n  '
+            '<div class="meta-sor"><span class="chip ora">17 óra</span><span class="statusz '
+            'kesz">kész</span></div>\n  <div class="brief"><p>🔷 <b>Szektor 02 — Az Átalakulás Kamrája.</b> '
+            'Kiképző:\n  <b>Medúza</b>. Ebben a kamrában a Kristálypára már nem szögletesen csapódik ki, hanem\n  '
+            '<b>pörög</b> — és ami pörög, az gömbölyű nyomot hagy. Medúza megmutatja, hogyan lehet\n  a hengerhez '
+            'és a kúphoz a <b>sugarat és a magasságot</b>, a csonkakúphoz két sugarat és a magasságot használni. '
+            'A palást számításánál az alkotóra is szükség lehet; a gömb méretét egyetlen sugár határozza '
+            'meg.</p></div>\n</div>\n<main class="lap">\n  <div class="tartalom">\n    <h2>Tananyag</h2>\n\n    <h3>🛢️ '
+            'Forgástestek és a henger — Medúza</h3>\n    <div class="racs">\n'
+        ) + "\n".join(K[0:3]) + '''
     </div>
 
     <h3>🔻 A kúp és a csonkakúp — Medúza</h3>

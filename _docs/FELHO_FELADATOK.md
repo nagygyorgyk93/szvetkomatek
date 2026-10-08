@@ -270,7 +270,7 @@ A korábbi A1-ellenőrzések nem helyettesítik a teljes stilisztikai átnézés
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ◐ Helyben kész: 77/77 oldal — 38 tananyag, 38 további témaköroldal és az osztály főoldala; teljes nyelvi és példahitelességi audit (2026-10-07) | ◐ Helyben kész: 65/65 oldal — mind a négy témakör és az osztály főoldala; teljes nyelvi és példahitelességi audit (helyi main, 2026-10-08; ez az adag nincs pusholva) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
+| ◐ Helyben kész: 77/77 oldal — 38 tananyag, 38 további témaköroldal és az osztály főoldala; teljes nyelvi és példahitelességi audit (2026-10-07) | ◐ Helyben kész: 65/65 oldal — mind a négy témakör és az osztály főoldala; teljes nyelvi és példahitelességi audit (helyi main, 2026-10-08) | ◐ 3e/01–03 kész: 47/92 oldal — három teljes témakör (helyi main, 2026-10-08; nincs pusholva) | ☐ A3 külön audit hátra |
 
 Az első adag három függvényes, a második hat logikai és halmazos tananyagot
 ellenőrzött. A példák feltételei, bevezetők, átvezetők és matematikai pontatlanságok
@@ -500,6 +500,41 @@ Hátra van a 3e–4e teljes A3-auditja.
 ---
 
 ## I — Interaktív ábrák
+
+Huszonharmadik adag (2026-10-08): a 3e/01–03 három teljes témakörének
+47 HTML-oldala teljes szöveg szerint átnézve, a bevezetők, kidolgozott példák,
+feladatok, összefoglalók és terepküldetések együtt. Kiindulás 20a62f9,
+tiszta helyi main, az origin/main helyi referenciájával azonos állapot;
+távoli frissítés nincs. A 3e kimenetek mérvadók, kiegészítések megmaradtak.
+Javítás előtti hibatábla bemutatva. Javultak a térelem-feltételek, a ferde
+hasáb és metszetei, a gúla jelölései, a forgástestek keletkezése, a cm²/cm³
+számértékek, az üreges testek határfelületei, a Gauss/Cramer kivételei,
+valamint a fizikai/hétköznapi modellek feltételei. Természetesebb magyar
+bevezetők és magyarázatok, javított idézőjelek/névelők, egy GeoGebra-leírás.
+Három kontextus nélküli lektor a 47 eredeti és javított tanulói szöveget
+átnézte; 159 kijelölt kártya független megoldása egyezik a HTML-lel,
+53 kvíz és a projektek ellenőrizve. A 408 kártya bemenetei és minden horgony,
+korábbi link, kép/média/háttér megmaradt. Két válasz szövege szükségesen
+pontosult: 4 cm, illetve a köré írt henger sugáregyenlősége; számérték nem
+változott. 77 SVG geometriája változatlan, három leírás helyesírása és két
+D₁-felirat helye módosult. 19 builder és a közös ábraépítő egy sztringje
+javítva; 20 builder SymPy-öntesztje hibátlan, AST és numerikus konstansok
+megmaradtak. Új feladat/feladatszámadat nincs.
+Végleges kép/média/háttér/napló/index/kánon/link/sáv/kulcs/regresszió lánc
+rendben: 334 média 139 lapon, 310/0 kánon/link, sáv tiszta, kulcs 4499/4499,
+regresszió 100%. Render 47 lap, 3410 képlet, 53/53 kvíz, 0 hiba.
+Edge 360/390/1280 zárt/nyitott 282+36 nézet, axe390 94+12/0,
+nyomtatás JS be/ki 94+12, JS nélkül 47+6 lap olvasható. A hiányzó Python
+Playwright helyett Node Playwright/Edge azonos TULLOGOK függvénnyel.
+Hat mobilos részlet szemrevételezve. Keresőindex 308 bejegyzés, 42 változó
+URL, kizárólag 3e/01–03; naplótérkép byte szerint azonos, 184 egység,
+2294 feladat, 12315 XP. Valódi képernyőolvasó, más böngésző, minden PDF-
+oldaltörés és háttérpont kézi kontrasztja, külső média új próbája, élő
+publikált oldal nem ellenőrizve. A3-jelentés/állapotnapló frissítve,
+zárolt első 23 sor változatlan. 1e 77/77, 2e 65/65 kész; 3e 47/92,
+3e/04–06 és osztályfőoldal, 4e hátra. Tanári döntés kell: nincs.
+Következő adag 3e/04–06 és az osztály főoldala. Új ág és push nincs.
+Részletek: [A3 nyelvi ellenőrzés](A3_nyelvi_ellenorzes.md).
 
 ### I1 · Statikus ábrák → interaktív
 **Cél:** a kulcsfogalmak ábráiból csúszkás/húzható változat, a meglévő `assets/js/interaktiv.js`

@@ -1324,7 +1324,7 @@ def svg_sikidom(tipus="trapez", a=1.0, c=0.55, m=0.55, n=6, w=340, h=210,
                 leiras=None, cimkek=True):
     """`tipus` = "trapez" (magassággal) | "sokszog" (szabályos n-szög apotémával)."""
     SZOVEG = {"trapez": "Trapéz a párhuzamos oldalakkal és a magassággal",
-              "sokszog": f"Szabályos {n} oldalú sokszög az apotémával és a köréírt kör sugarával"}
+              "sokszog": f"Szabályos {n} oldalú sokszög az apotémával és a köré írt kör sugarával"}
     ki = _fej2(w, h, leiras or SZOVEG.get(tipus, "Síkidom"))
     par = 30
 

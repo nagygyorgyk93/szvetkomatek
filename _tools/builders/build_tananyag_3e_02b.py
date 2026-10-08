@@ -90,30 +90,28 @@ SVG_TM_HAROM = svg_haromszog(csucsok=[(0, 0), (10, 0), (5, 12)],
 
 B1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Medúza:</b> A Kamra szűkülő aknái kúpot formáznak — a pára fölfelé halad '
-         'bennük, és egyetlen pontban távozik. A kúpnál <b>három</b> adat van: sugár, '
-         'magasság, alkotó. És a feladatok pontosan azt hallgatják el, amelyikre '
-         'szükséged lenne.'),
+   brief((
+             '<b>Medúza:</b> A Kamra szűkülő aknái kúpot formáznak — a pára fölfelé halad bennük, és a forma '
+             'egyetlen csúcs felé szűkül. A kúpnál <b>három</b> adat van: sugár, magasság, alkotó. És a feladatok '
+             'pontosan azt hallgatják el, amelyikre szükséged lenne.'
+         )),
    '<p>Jó hír, hogy a három adat nem független: egy <b>derékszögű háromszög</b> köti '
    'össze őket. Ha kettőt tudsz, a harmadik egy Pitagorasz-tétel. Ebben az egységben ezt '
    'a háromszöget építjük fel, és kiterítjük a kúp palástját.</p>',
  ]),
 
  ("Hogyan keletkezik a kúp", [
-   '<p>A kúp is kétféleképpen írható le, és mindkettőt érdemes látni:</p>'
-   '<ul>'
-   '<li><b>Forgatással:</b> egy <b>derékszögű háromszöget</b> megforgatunk az egyik '
-   '<b>befogója</b> körül. A tengely lesz a magasság, a másik befogó a sugár, az átfogó '
-   'pedig az alkotó.</li>'
-   '<li><b>Metszéssel:</b> egy '
-   '<a href="tananyag-forgastestek.html#def-hengerfelulet">kúpfelületet</a> elmetszünk '
-   'egy olyan síkkal, amely <b>minden alkotót</b> metsz és nem megy át a csúcson; a '
-   'csúcs és a sík közötti darabot vesszük.</li>'
-   '</ul>'
-   '<p>A kúp <b>egyenes</b>, ha a csúcsot az alapkör <b>középpontjával</b> összekötő '
-   'szakasz merőleges az alaplapra — a forgatásból mindig ilyen keletkezik. Ha a csúcs '
-   'oldalra csúszik, <b>ferde</b> kúpról beszélünk; ennek a felszínével és térfogatával '
-   'nem foglalkozunk.</p>',
+   (
+       '<p>A kúp is kétféleképpen írható le, és mindkettőt érdemes látni:</p><ul><li><b>Forgatással:</b> '
+       'egy <b>derékszögű háromszöget</b> megforgatunk az egyik <b>befogója</b> körül. A tengely lesz a '
+       'magasság, a másik befogó a sugár, az átfogó pedig az alkotó.</li><li><b>Metszéssel:</b> egy <a '
+       'href="tananyag-forgastestek.html#def-hengerfelulet">kúpfelületet</a> elmetszünk a vezérkör síkjával '
+       'párhuzamos síkkal, amely <b>minden alkotót</b> metsz és nem megy át a csúcson; a csúcs és a sík '
+       'közötti darabot vesszük.</li></ul><p>A kúp <b>egyenes</b>, ha a csúcsot az alapkör '
+       '<b>középpontjával</b> összekötő szakasz merőleges az alaplapra — a forgatásból mindig ilyen '
+       'keletkezik. Ha a csúcs oldalra csúszik, <b>ferde</b> kúpról beszélünk; ennek a felszínével és '
+       'térfogatával nem foglalkozunk.</p>'
+   ),
    abra(SVG_KUP_TISZTA, 'Az egyenes körkúp: egy <b>alapkör</b>, egy <b>csúcs</b>, és a '
         'kettőt összekötő görbe palást.'),
  ]),
@@ -139,12 +137,12 @@ B1 = [
    'nevezzük <b>tengelymetszetnek</b> — <b>fele</b> egy derékszögű háromszög, amelynek '
    'a befogói a sugár és a magasság, az átfogója pedig az alkotó.</p>',
    doboz("tetel", "A kúp három adata",
-         '<p>Az egyenes körkúpban</p>'
-         '$$s^{2}=r^{2}+H^{2}.$$'
-         '<p>Ez a témakör legtöbbet használt összefüggése: bármelyik két adatból megadja '
-         'a harmadikat. Mivel az alkotó az <b>átfogó</b>, mindig</p>'
-         '$$s>r\\quad\\text{és}\\quad s>H.$$'
-         '<p>A gúlánál (<a href="' + POLI + 'tananyag-gula.html#tetel-harom-haromszog">'
+         (
+             '<p>Az egyenes körkúpban</p>$$s^{2}=r^{2}+H^{2}.$$<p>Ez a témakör legtöbbet használt összefüggése: a '
+             'kúpnak megfelelő két méretadatból megadja a harmadikat. A sugár és a magasság pozitív; ha az '
+             'alkotót is megadjuk, annak hosszabbnak kell lennie a másik megadott szakasznál. Mivel az alkotó az '
+             '<b>átfogó</b>, mindig</p>$$s>r\\quad\\text{és}\\quad s>H.$$<p>A gúlánál (<a href="'
+         ) + POLI + 'tananyag-gula.html#tetel-harom-haromszog">'
          '01-es témakör</a>) <b>három</b> ilyen derékszögű háromszög volt. Ott az alaplap '
          'beírt és köré írt köre <b>különböző</b> ($r\\ne R$), a kúpnál viszont '
          '<b>egybeesik</b> — és alapél sincs, amihez a harmadik háromszög tartozna. '
@@ -210,10 +208,12 @@ B1 = [
          '<p>Az alapkör sugara ($r$) a körcikk <b>ívének</b> hosszában bújik meg: '
          'az ív $2r\\pi$ hosszú.</p>'),
    doboz("erdekesseg", "Hol találkozol vele?",
-         '<p>Nézd meg egy papír fagylalttölcsér vagy egy partikalap kiterített mintáját: '
-         'mindig körcikk. Ugyanezért körcikk alakú a szabásminta a kúpos lámpaernyőnél és '
-         'a kémény bádogsapkájánál is — aki lemezből kúpot akar, körcikket vág ki és '
-         'összehajtja.</p>'),
+         (
+             '<p>Nézd meg egy papír fagylalttölcsér vagy egy partikalap kiterített mintáját: közelítőleg körcikk; '
+             'az összeillesztéshez ráhagyás is tartozhat. Ugyanezért körcikk alakú a szabásminta a kúpos '
+             'lámpaernyőnél és a kémény bádogsapkájánál is — aki lemezből kúpot akar, körcikket vág ki és '
+             'összehajtja.</p>'
+         )),
    kviz('Egy kúp alkotója $12$ cm, alapkörének sugara $4$ cm. Mekkora a kiterített '
         'palást (körcikk) középponti szöge?',
         ['$120^\\circ$', '$30^\\circ$', '$360^\\circ$'], 0,
@@ -234,9 +234,10 @@ B1 = [
    '$r$-t, adódik az alkotó és a magasság is. Sok feladat pontosan ezért indul innen — '
    'egyetlen számot ad meg, és a többit neked kell felépítened.</p>',
    GY(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–3"),
-   brief('<b>Medúza:</b> A háromszög és a körcikk a helyén van. Innen a palást területe '
-         'már nem definíció kérdése, hanem <b>levezetés</b> — a témakör egyetlen igazi '
-         'levezetése.', outro=True),
+   brief((
+             '<b>Medúza:</b> A háromszög és a körcikk a helyén van. Innen a palást területe már nem definíció '
+             'kérdése, hanem <b>levezetés</b> — a körcikk területére épülő számítás.'
+         ), outro=True),
  ]),
 ]
 
@@ -300,11 +301,13 @@ B2 = [
          'pontosan megtöltöd a vele azonos alapú és magasságú hengert.</p>',
          hid="tetel-kup-terfogat"),
    doboz("erdekesseg", "Hol találkozol vele?",
-         '<p>Ezért fér a fagylalttölcsérbe harmadannyi, mint egy ugyanolyan széles és '
-         'magas pohárba — és ezért csalódás, ha a gombóc nem magasodik ki belőle.</p>'
-         '<p>A kiöntött homok, cement vagy gabona magától <b>kúp</b> alakú halomba áll. '
-         'Az iparban ebből becsülik a mennyiséget: elég megmérni a halom kerületét és '
-         'magasságát, a többi a $\\frac{r^2\\pi H}{3}$ képlet.</p>'),
+         (
+             '<p>Ezért fér a fagylalttölcsérbe harmadannyi, mint egy ugyanolyan belső sugarú és magasságú '
+             'hengeres pohárba, a falvastagságot elhanyagolva — és ezért csalódás, ha a gombóc nem magasodik ki '
+             'belőle.</p><p>A kiöntött homok, cement vagy gabona közelítőleg <b>kúp</b> alakú halmot alkothat. Az '
+             'iparban ebből becsülik a mennyiséget: elég megmérni a halom kerületét és magasságát, a többi a '
+             '$\\frac{r^2\\pi H}{3}$ képlet.</p>'
+         )),
    kviz('Egy henger és egy kúp alapköre és magassága is megegyezik. Hogyan aránylik a '
         'térfogatuk?',
         ['A kúpé a henger térfogatának harmada', 'A kúpé a henger térfogatának fele',
@@ -432,11 +435,11 @@ B3 = [
    'gúlánál</a>: ha a hosszak aránya $k$, akkor a <b>területeké</b> $k^2$, a '
    '<b>térfogatoké</b> pedig $k^3$.</p>',
    doboz("erdekesseg", "Hol találkozol vele?",
-         '<p>A szeletelt sonka, a fatörzs évgyűrűi és a CT-felvétel mind alappal '
-         'párhuzamos metszetek sorozata. A CT épp azért működik, mert a szervezetről '
-         'készült sok vékony metszetből a számítógép vissza tudja építeni a testet — '
-         'ugyanaz az elv, mint amikor a metszetek területéből következtetünk a '
-         'térfogatra.</p>'),
+         (
+             '<p>Egy megközelítőleg hengeres fatörzsből a tengelyére merőlegesen vágott szelet közel kör alakú. A '
+             'szelet alakját a tárgy formája és a vágás iránya együtt határozza meg. A geometriai testeknél '
+             'ugyanezt vizsgáljuk: milyen alakú és mekkora területű metszetet ad a megadott sík.</p>'
+         )),
    kviz('Egy kúpot a csúcstól mért magasság <b>felénél</b> metszünk el az alaplappal '
         'párhuzamosan. Hogyan aránylik a metszetkörlap területe az alaplapéhoz?',
         ['A negyede', 'A fele', 'Ugyanakkora'], 0,

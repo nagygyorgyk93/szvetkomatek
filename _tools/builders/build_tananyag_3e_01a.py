@@ -117,16 +117,15 @@ A1 = [
    'elfogadott állítások — írják le, hogyan viselkednek. Minden további állítást ezekből '
    'vezetünk le.</p>',
    doboz("tetel", "A tér négy alapaxiómája",
-         '<ol>'
-         '<li>Bármely két különböző pontra <b>pontosan egy</b> egyenes illeszkedik.</li>'
-         '<li>Ha egy egyenes <b>két</b> pontja illeszkedik egy síkra, akkor az egyenes '
-         '<b>minden</b> pontja illeszkedik arra a síkra.</li>'
-         '<li>Ha két különböző síknak van <b>közös pontja</b>, akkor a közös pontjaik halmaza '
-         '<b>pontosan egy egyenes</b> (a metszésvonaluk).</li>'
-         '<li>Bármely három, <b>nem egy egyenesre eső</b> pontra pontosan egy sík illeszkedik.</li>'
-         '</ol>'
-         '<p>A második axióma az, amiért a vonalzó működik: ha a vonalzó élének mindkét végpontja '
-         'az asztallapon van, akkor a teljes él a lapon fekszik.</p>',
+         (
+             '<ol><li>Bármely két különböző pontra <b>pontosan egy</b> egyenes illeszkedik.</li><li>Ha egy '
+             'egyenes <b>két különböző</b> pontja illeszkedik egy síkra, akkor az egyenes <b>minden</b> pontja '
+             'illeszkedik arra a síkra.</li><li>Ha két különböző síknak van <b>közös pontja</b>, akkor a közös '
+             'pontjaik halmaza <b>pontosan egy egyenes</b> (a metszésvonaluk).</li><li>Bármely három, <b>nem egy '
+             'egyenesre eső</b> pontra pontosan egy sík illeszkedik.</li></ol><p>A második axióma az, amiért a '
+             'vonalzó működik: ha a vonalzó élének mindkét végpontja az asztallapon van, akkor a teljes él a '
+             'lapon fekszik.</p>'
+         ),
          hid="tetel-axiomak"),
  ]),
 
@@ -145,11 +144,12 @@ A1 = [
          'átmenő sík az egyenes körül szabadon elfordítható.</p>',
          hid="tetel-sikmeghatarozas"),
    doboz("erdekesseg", "Hol találkozol vele?",
-         '<p>Miért nem billeg a háromlábú fényképezőállvány, és miért billeg a négylábú asztal? '
-         'Mert három talppont — bármilyen hosszúak is a lábak — <b>mindig egy síkba esik</b>, '
-         'és ez a sík hozzáilleszthető a padlóéhoz: az állvány addig dől, amíg mindhárom láb '
-         'földet ér. Négy pont viszont általában <b>nem</b> esik egy síkba, ezért ha az egyik '
-         'láb egy hajszállal rövidebb, az asztal billeg.</p>'),
+         (
+             '<p>A merev háromlábú állvány három, nem egy egyenesre eső talppontja egy síkot határoz meg. Sík '
+             'padlón ezért mindhárom talppont egyszerre támaszkodhat. A négylábú asztal talppontjai nem '
+             'feltétlenül esnek egy síkba: emiatt az asztal billeghet. Ez a geometriai feltétel a billegést '
+             'magyarázza; a felborulás elleni stabilitás külön kérdés.</p>'
+         )),
    kviz('Igaz-e, hogy <b>bármely</b> három pont pontosan egy síkot határoz meg?',
         ['Nem: ha egy egyenesre esnek, végtelen sok sík megy át rajtuk',
          'Igen, bármely három pont esetén',
@@ -172,15 +172,18 @@ A1 = [
          '<b>párhuzamos</b>, vagy <b>kitérő</b>.</p>',
          hid="def-kitero"),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„Ennek a két folyosónak nincs közös pontja — akkor párhuzamosak, és a '
-         'zárórendszer ugyanúgy állítható be mindkettőn."</i></p>'
-         '<p>A síkban ez igaz lenne. A térben <b>nem</b>: a kitérő egyeneseknek sincs közös '
-         'pontjuk. A párhuzamossághoz az is kell, hogy a két egyenes <b>egy síkban</b> legyen. '
-         'Aki csak a közös pont hiányát nézi, minden kitérő élpárt párhuzamosnak hisz.</p>'),
-   abra(SVG_KOCKA, 'A kockán mind a három eset megtalálható. Az <span class="math inline">\\(AB\\)</span> '
-        'és a <span class="math inline">\\(BC\\)</span> él metsző, az <span class="math inline">\\(AB\\)</span> '
-        'és a <span class="math inline">\\(A_1B_1\\)</span> párhuzamos, az '
-        '<span class="math inline">\\(AB\\)</span> és a <span class="math inline">\\(CC_1\\)</span> pedig kitérő.'),
+         (
+             '<p><i>„Ennek a két folyosónak nincs közös pontja — akkor párhuzamosak, és a zárórendszer ugyanúgy '
+             'állítható be mindkettőn.”</i></p><p>A síkban ez igaz lenne. A térben <b>nem</b>: a kitérő '
+             'egyeneseknek sincs közös pontjuk. A párhuzamossághoz az is kell, hogy a két egyenes <b>egy '
+             'síkban</b> legyen. Aki csak a közös pont hiányát nézi, minden kitérő élpárt párhuzamosnak hisz.</p>'
+         )),
+   abra(SVG_KOCKA, (
+                       'A kockán mind a három eset megtalálható. Az <span class="math inline">\\(AB\\)</span> és a <span '
+                       'class="math inline">\\(BC\\)</span> él metsző, az <span class="math inline">\\(AB\\)</span> és az <span '
+                       'class="math inline">\\(A_1B_1\\)</span> párhuzamos, az <span class="math inline">\\(AB\\)</span> és a '
+                       '<span class="math inline">\\(CC_1\\)</span> pedig kitérő.'
+                   )),
    doboz("pelda", "Kristály-kamra szimuláció",
          '<p>Az $ABCDA_1B_1C_1D_1$ kockában — ahol az $A_1$ csúcs az $A$ fölött, a $B_1$ a $B$ '
          'fölött van, és így tovább — milyen helyzetű az $AB$ és a $CC_1$ él?</p>',
@@ -216,10 +219,12 @@ A1 = [
    abra(SVG_KETSIK, 'Két metsző sík és a $p$ metszésvonaluk.'),
    abra(SVG_PSIKOK, 'Két párhuzamos sík: nincs közös pontjuk.'),
    doboz("erdekesseg", "Hol találkozol vele?",
-         '<p>A szoba két szemközti fala párhuzamos sík; a fal és a padló metsző, a '
-         'metszésvonaluk az a vonal, ahol a szegélyléc fut. A sátorcövek pedig <b>döfi</b> a '
-         'talaj síkját: a föld fölött és alatt is folytatódik, egyetlen közös pontja a '
-         'talajszinttel a döféspont.</p>'),
+         (
+             '<p>Egy téglatest alakú szoba két szemközti fala párhuzamos sík; a fal és a padló metsző, a '
+             'metszésvonaluk az a vonal, ahol a szegélyléc fut. A sátorcövek pedig <b>döfi</b> a sík '
+             'talajfelszínt modellező síkot: a föld fölött és alatt is folytatódik, egyetlen közös pontja a '
+             'talajszinttel a döféspont.</p>'
+         )),
    GY(FGY + "#alap-1", "A 1–5", FGY + "#kozep-1", "K 1–3"),
    brief('<b>Prizma:</b> A térképed megvan: tudod, mi hol van. A következő lépés a '
          '<b>mérés</b> — mert a kristálylapok nem csak elhelyezkednek, hanem <b>szöget is '
@@ -232,11 +237,12 @@ A1 = [
 
 A2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Prizma:</b> A kristálylap nem véletlenszerűen veri vissza az energiát: a '
-         'visszaverődés irányát a lap <b>hajlásszöge</b> dönti el. Egy fokot tévedsz, és a '
-         'sugár a szomszéd folyosóra érkezik. Ebben az egységben megtanuljuk, mit jelent '
-         'pontosan, hogy egy egyenes <b>merőleges egy síkra</b>, és hogyan mérünk szöget a '
-         'térben — mert itt nem elég ránézésre becsülni.'),
+   brief((
+             '<b>Prizma:</b> A kristálylap nem véletlenszerűen veri vissza az energiát: a visszaverődés iránya a '
+             'beeső sugár irányától és a lap helyzetétől függ. Egy fokot tévedsz, és a sugár a szomszéd folyosóra '
+             'érkezik. Ebben az egységben megtanuljuk, mit jelent pontosan, hogy egy egyenes <b>merőleges egy '
+             'síkra</b>, és hogyan mérünk szöget a térben — mert itt nem elég ránézésre becsülni.'
+         )),
    'Két új szöget vezetünk be: az <b>egyenes és a sík</b> hajlásszögét, valamint <b>két sík</b> '
    'szögét. Mindkettőt visszavezetjük arra, amit már tudsz: két <i>egyenes</i> szögére.',
  ]),
@@ -246,20 +252,23 @@ A2 = [
    'síkban végtelen sok egyenes fut, és a síkot ferdén döfő egyenes is lehet merőleges '
    'közülük <b>az egyikre</b>.</p>',
    doboz("tetel", "A merőlegesség feltétele",
-         '<p>Egy egyenes <b>pontosan akkor</b> merőleges egy síkra, ha a síknak <b>két '
-         'metsző</b> egyenesére merőleges.</p>'
-         '<p>Ekkor a síknak a döfésponton átmenő <b>minden</b> egyenesére merőleges — de a '
-         'feltétel ellenőrzéséhez elég kettő, feltéve, hogy azok <b>metszik</b> egymást.</p>',
+         (
+             '<p>Egy egyenes <b>pontosan akkor</b> merőleges egy síkra, ha merőleges a síknak a döféspontban '
+             'találkozó <b>két egyenesére</b>.</p><p>Ekkor a síknak a döfésponton átmenő <b>minden</b> egyenesére '
+             'merőleges — de a feltétel ellenőrzéséhez elég kettő, feltéve, hogy azok <b>metszik</b> egymást.</p>'
+         ),
          hid="tetel-meroleges-feltetel"),
    abra(SVG_MEROLEGES, 'Az $a$ egyenes merőleges a síkra, mert merőleges a síkban fekvő, '
         'egymást metsző $b$ és $c$ egyenesre.'),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„Ez a tartórúd merőleges a padló egyik vonalára, tehát merőleges a padlóra. '
-         'A szerkezet stabil."</i></p>'
-         '<p>Nem az. Dönts meg egy ceruzát az asztalon úgy, hogy az asztal lapján lévő '
-         'egyik vonalra merőleges maradjon — ez könnyen megy, mégsem áll függőlegesen. '
-         '<b>Egy</b> egyenesre való merőlegesség kevés; <b>két metsző</b> egyenes kell. '
-         'Ha a két egyenes párhuzamos, az sem elég: azok együtt nem „feszítik ki” a síkot.</p>'),
+         (
+             '<p><i>„Ez a tartórúd merőleges a padló egyik vonalára, tehát merőleges a padlóra. A szerkezet '
+             'stabil.”</i></p><p>A síkra való merőlegesség ebből még nem következik. Dönts meg egy ceruzát az '
+             'asztalon úgy, hogy az asztal lapján lévő egyik vonalra merőleges maradjon — ez könnyen megy, mégsem '
+             'áll függőlegesen. <b>Egy</b> egyenesre való merőlegesség kevés; <b>két metsző</b> egyenes kell. Ha '
+             'a két egyenes párhuzamos, az sem elég: azok ugyanazt az irányt vizsgálják, így továbbra is csak egy '
+             'irányra ellenőrizted a merőlegességet.</p>'
+         )),
    kviz('Az $a$ egyenes merőleges a síkban fekvő $b$ egyenesre. Következik-e ebből, hogy '
         '$a$ merőleges a síkra?',
         ['Nem — ehhez a sík két metsző egyenesére kell merőlegesnek lennie',
@@ -317,12 +326,12 @@ A2 = [
          hid="def-dieder"),
    abra(SVG_DIEDER, 'A diéder éle a $p$ egyenes; a lapszöget az élre merőlegesen mérjük.'),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„Ráteszem a szögmérőt a lapra, ahogy éppen esik — a lapszög úgyis '
-         'ugyanannyi."</i></p>'
-         '<p>Nem ugyanannyi. Ha a félegyenesek <b>nem merőlegesek az élre</b>, a mért érték a '
-         'valódi lapszögnél kisebb és nagyobb is lehet — $0^\\circ$ és $180^\\circ$ között '
-         'bármi kijöhet. A tetőn ezért nem mindegy, milyen irányban mérve olvasod le a lejtő '
-         'szögét.</p>'),
+         (
+             '<p><i>„Ráteszem a szögmérőt a lapra, ahogy éppen esik — a lapszög úgyis ugyanannyi.”</i></p><p>Nem '
+             'ugyanannyi. Ha a félegyenesek <b>nem merőlegesek az élre</b>, a mért érték a valódi lapszögnél '
+             'kisebb és nagyobb is lehet — $0^\\circ$ és $180^\\circ$ között bármi kijöhet. A tetőn ezért nem '
+             'mindegy, milyen irányban mérve olvasod le a lejtő szögét.</p>'
+         )),
    kviz('Hol mérjük a diéder lapszögét?',
         ['Az élen felvett pontból, mindkét lapban az élre merőlegesen',
          'Bárhol, ahol a két lap találkozik',
@@ -349,9 +358,11 @@ A2 = [
          '<i>oldalélt</i> vagy a <i>magasságot</i> használod — a képletekben mindig a '
          'merőleges távolság szerepel.</p>'),
    GY(FGY + "#alap-6", "A 6–10", FGY + "#kozep-4", "K 4–7"),
-   brief('<b>Prizma:</b> Mérni tudsz. Most nézzük meg, milyen <b>testeket</b> zárnak be ezek '
-         'a lapok — és miért van a természetben pontosan <b>öt</b> tökéletesen szabályos '
-         'kristályforma. Nem több, nem kevesebb. Ez nem megfigyelés, hanem bizonyítható.',
+   brief((
+             '<b>Prizma:</b> Mérni tudsz. Most nézzük meg, milyen <b>testeket</b> zárnak be ezek a lapok — és '
+             'miért van pontosan <b>öt konvex szabályos poliéder</b>. Nem több, nem kevesebb. Ez nem megfigyelés, '
+             'hanem bizonyítható.'
+         ),
          outro=True),
  ]),
 ]
@@ -360,11 +371,12 @@ A2 = [
 
 A3 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Prizma:</b> A Kristálypára nem gömbökben csapódik ki, hanem <b>lapos, éles '
-         'formákban</b> — és a legtisztább kristályok tökéletesen szabályosak. A '
-         'meglepetés az, hogy ilyen tökéletes testből összesen <b>pontosan öt</b> '
-         'létezik. Nem azért, mert nem találtunk többet: mert nem is létezhet több. '
-         'Ezt ma be is fogjuk látni.'),
+   brief((
+             '<b>Prizma:</b> A Kristálypára nem gömbökben csapódik ki, hanem <b>lapos, éles formákban</b> — és a '
+             'legtisztább kristályok tökéletesen szabályosak. A meglepetés az, hogy konvex szabályos poliéderből '
+             '<b>pontosan öt</b> létezik. Nem azért, mert nem találtunk többet: mert nem is létezhet több. Ezt ma '
+             'be is fogjuk látni.'
+         )),
    'Ebben az egységben a testeket <b>osztályozzuk</b>: mi számít poliédernek, mit jelent a '
    'konvexitás, és mitől lesz egy test szabályos. A számolás a következő egységekben jön — '
    'de a fogalmak nélkül ott csak képletet másolnánk.',
@@ -378,14 +390,17 @@ A3 = [
          '<p>Minden él pontosan <b>két</b> lap közös oldala, és minden csúcsban legalább '
          '<b>három</b> lap találkozik.</p>',
          hid="def-polieder"),
-   '<p>A henger, a kúp és a gömb <b>nem</b> poliéder: a határoló felületük nem áll csupa '
-   'síksokszögből — a palástjuk görbült, az alaplapjuk pedig kör. Ezek a <b>forgástestek</b> — '
-   'a következő témakör anyaga.</p>',
+   (
+       '<p>A henger, a kúp és a gömb nem poliéder: határoló felületük nem áll csupa síksokszögből. A henger '
+       'és a kúp palástja görbült, alaplapjuk körlap; a gömböt mindenütt görbült felület határolja. Ezekkel '
+       'a forgástestekkel a következő témakörben foglalkozunk.</p>'
+   ),
    doboz("erdekesseg", "Hol találkozol vele?",
-         '<p>A kősó kockákban, a kvarc hatszögű oszlopokban, a gyémánt oktaéderes formában '
-         'kristályosodik. A kristály lapjai azért síkok, mert az atomok szabályos rácsban '
-         'helyezkednek el — a poliéder tehát nem emberi találmány, hanem az anyag szerkezetének a '
-         'következménye.</p>'),
+         (
+             '<p>A kősó kristályai gyakran kocka alakúak. A kvarc kristályain hatszögű hasábforma, a gyémánton '
+             'oktaéderforma is felismerhető. A kristályrács szerkezete és a növekedés körülményei befolyásolják '
+             'az alakot: a valódi kristályokat poliéderekkel modellezhetjük, de nem mind szabályos test.</p>'
+         )),
  ]),
 
  ("Konvex és nem konvex testek", [
@@ -435,14 +450,14 @@ A3 = [
          'esetenként pontosan egy. Több tehát nem lehet.</p>',
          hid="tetel-ot-szabalyos-test"),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„Minden lapja szabályos háromszög — akkor ez egy szabályos test, és a '
-         'szimmetria-protokoll alkalmazható rá."</i></p>'
-         '<p>Ellenpélda: ragassz össze két szabályos tetraédert egy-egy lapjuknál. Az így '
-         'kapott testnek <b>mind a hat lapja</b> egybevágó szabályos háromszög — mégsem '
-         'szabályos test, mert a két „hegyes” csúcsában <b>3</b>, a másik három csúcsában '
-         'viszont <b>4</b> lap találkozik. A definíció második feltétele bukik el.</p>'
-         '<p>Így működik a jó ellenpélda: egyetlen példa elég ahhoz, hogy egy „nyilvánvaló” '
-         'állítást megdöntsünk.</p>'),
+         (
+             '<p><i>„Minden lapja szabályos háromszög — akkor ez egy szabályos test, és a szimmetria-protokoll '
+             'alkalmazható rá.”</i></p><p>Ellenpélda: ragassz össze két szabályos tetraédert egy-egy lapjuknál. '
+             'Az így kapott testnek <b>mind a hat lapja</b> egybevágó szabályos háromszög — mégsem szabályos '
+             'test, mert a két „hegyes” csúcsában <b>3</b>, a másik három csúcsában viszont <b>4</b> lap '
+             'találkozik. A definíció második feltétele bukik el.</p><p>Így működik a jó ellenpélda: egyetlen '
+             'példa elég ahhoz, hogy egy „nyilvánvaló” állítást megdöntsünk.</p>'
+         )),
    kviz('Igaz-e: ha egy poliéder minden lapja egybevágó szabályos sokszög, akkor a poliéder '
         'szabályos?',
         ['Nem — a csúcsokban is ugyanannyi lapnak kell találkoznia',
@@ -493,10 +508,11 @@ A3 = [
         nem="✘ A lapok száma valóban hat — de próbáld gondolatban összehajtani a lépcsős "
             "elrendezést: két lap egymásra kerül."),
    GY(FGY + "#alap-11", "A 11–15", FGY + "#kozep-8", "K 8–10"),
-   brief('<b>Prizma:</b> A formákat felismered, a hálót látod. Egyetlen dolog hiányzik a '
-         'számoláshoz — és ez az, amin a kadétok fele elvérzik: az <b>alaplap területe</b>. Minden '
-         'test-képletben ott áll egy $B$, és ha azt elrontod, a legszebb térfogatképlet is '
-         'rossz számot ad. Fegyverzet-ellenőrzés következik.', outro=True),
+   brief((
+             '<b>Prizma:</b> A formákat felismered, a hálót látod. A felszín- és térfogatszámításhoz most az '
+             '<b>alaplap területére</b> lesz szükség. Átismételjük a használható síkidomképleteket, és azt is, '
+             'hogyan válaszd ki hozzájuk a megfelelő adatot.'
+         ), outro=True),
  ]),
 ]
 
@@ -507,25 +523,24 @@ HAS = "../../1e/08-hasonlosag/"
 
 A4 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Prizma:</b> Minden test-képletben ott áll egy $B$ — az alaplap területe. A '
-         'kadétok többsége nem a térfogatképletet rontja el, hanem az alaplapot: '
-         'összekeveri a háromszög oldalát a magasságával, a trapéz szárát a magasságával, '
-         'vagy a szabályos hatszögnél elfelejti, hogy hat háromszögből áll. Ez az egység a '
-         '<b>fegyverzet-ellenőrzés</b>: mindaz a síkgeometria, amire a hasábnál, a gúlánál '
-         'és a csonkagúlánál szükséged lesz.'),
-   'Új anyag itt nincs — de a következő nyolc egység ezen áll vagy bukik. Ha valamelyik '
-   'képlet bizonytalan, most nézd meg az <a href="' + GEO + 'index.html">1e geometria</a> '
-   'megfelelő leckéjét, ne majd a dolgozat közben.',
+   brief((
+             '<b>Prizma:</b> A hasáb és a gúla térfogatképletében ott áll a <b>$B$</b>, az alaplap területe. '
+             'Ehhez néha előbb egy háromszög magasságát vagy egy szabályos sokszög apotémáját kell kiszámolni. '
+             'Ebben az egységben átismételjük a szükséges síkgeometriát: előkészítjük a hasáb, a gúla és a '
+             'csonkagúla számításait.'
+         )),
+   'Itt a korábban tanult képleteket ismételjük át. Ha valamelyik bizonytalan, nézd meg az <a href="' + GEO + 'index.html">1e geometria megfelelő leckéjét</a>, és próbáld ki egy példán, mielőtt a testszámításokkal továbbhaladsz.',
  ]),
 
  ("Miért az alaplapon múlik minden", [
-   '<p>A következő egységek képletei ilyen alakúak: a hasáb térfogata $V = B\\cdot H$, a '
-   'gúláé $V = \\frac{B\\cdot H}{3}$, a felszín pedig $F = 2B + M$, illetve $F = B + M$. '
-   'Itt $B$ az <b>alaplap területe</b>, $H$ a <b>test magassága</b>, $M$ pedig a '
-   '<b>palást</b> (az oldallapok együttes) területe. Mindegyik képletben ott van a $B$.</p>'
-   '<p>Ha a testfeladat alaplapja szabályos háromszög, akkor a feladat fele valójában '
-   '„számítsd ki egy szabályos háromszög területét”. Ezért érdemes ezt a néhány képletet '
-   'készségszinten tudni.</p>',
+   (
+       '<p>A következő egységek képletei ilyen alakúak: a hasáb térfogata $V = B\\cdot H$, a gúláé $V = '
+       '\\frac{B\\cdot H}{3}$, a felszín pedig $F = 2B + M$, illetve $F = B + M$. Itt $B$ az <b>alaplap '
+       'területe</b>, $H$ a <b>test magassága</b>, $M$ pedig a <b>palást</b> (az oldallapok együttes) '
+       'területe. Mindegyik képletben ott van a $B$.</p><p>Ha a testfeladat alaplapja szabályos háromszög, '
+       'akkor az egyik részfeladat „számítsd ki egy szabályos háromszög területét”. Ezért érdemes ezt a '
+       'néhány képletet készségszinten tudni.</p>'
+   ),
    doboz("tetel", "A képlettár",
          '<table class="tt-table">'
          '<tr><th>Síkidom</th><th>Terület</th><th>Amire figyelj</th></tr>'
@@ -567,12 +582,13 @@ A4 = [
          'Pitagorasz-tétel</a>.</p>',
          hid="tetel-egyenlo-oldalu"),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„Az oldal $6$, a $\\sqrt3$ ott van a képletben — a terület tehát $3\\sqrt3$.”</i></p>'
-         '<p>A $3\\sqrt3$ a <b>magasság</b> ($\\frac{6\\sqrt3}{2}$), nem a terület. A terület '
-         '$\\frac{6^2\\sqrt3}{4}=9\\sqrt3\\approx 15{,}59$. A két képlet hasonlít, de az '
-         'egyikben $a$, a másikban $a^2$ áll — és a $\\sqrt3$ nevezője is más. '
-         'Gyors ellenőrzés: a magasság <b>hosszúság</b> (cm), a terület <b>négyzetes</b> '
-         'mennyiség (cm²). Ha a válaszod cm-ben jött ki, nem területet számoltál.</p>'),
+         (
+             '<p><i>„Az oldal $6$, a $\\sqrt3$ ott van a képletben — a terület tehát $3\\sqrt3$.”</i></p><p>A '
+             '$3\\sqrt3$ a <b>magasság</b> ($\\frac{6\\sqrt3}{2}$), nem a terület. A terület '
+             '$\\frac{6^2\\sqrt3}{4}=9\\sqrt3\\approx 15{,}59$. A két képlet hasonlít, de az egyikben $a$, a másikban '
+             '$a^2$ áll — és a képletek nevezője is más. Gyors ellenőrzés: a magasság <b>hosszúság</b> (cm), a '
+             'terület <b>négyzetes</b> mennyiség (cm²). Ha a válaszod cm-ben jött ki, nem területet számoltál.</p>'
+         )),
    kviz('Mekkora a $6$ cm oldalú szabályos háromszög <b>magassága</b>?',
         ['$3\\sqrt3\\approx 5{,}20$ cm', '$9\\sqrt3\\approx 15{,}59$ cm', '$6\\sqrt3\\approx 10{,}39$ cm'], 0,
         jo="✔ $h=\\frac{a\\sqrt3}{2}=\\frac{6\\sqrt3}{2}=3\\sqrt3$.",
@@ -586,12 +602,13 @@ A4 = [
    abra(SVG_TRAPEZ, 'A trapéz magassága a két <b>párhuzamos</b> oldal merőleges távolsága — '
         'nem a szár.'),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„Az egyenlő szárú trapéz párhuzamos oldalai $10$ és $4$, a szára $5$ — a '
-         'területe tehát $\\frac{(10+4)\\cdot 5}{2}=35$."</i></p>'
-         '<p>A képletben <b>magasság</b> szerepel, nem szár. A magasságot itt ki kell '
-         'számolni: a szár vetülete az alapon $\\frac{10-4}{2}=3$, ezért '
-         '$h=\\sqrt{5^2-3^2}=4$, és a terület $\\frac{(10+4)\\cdot 4}{2}=28$. Ugyanez a hiba '
-         'a paralelogrammánál is: ott sem a másik <i>oldal</i> kell, hanem a magasság.</p>'),
+         (
+             '<p><i>„Az egyenlő szárú trapéz párhuzamos oldalai $10$ és $4$, a szára $5$ — a területe tehát '
+             '$\\frac{(10+4)\\cdot 5}{2}=35$.”</i></p><p>A képletben <b>magasság</b> szerepel, nem szár. A '
+             'magasságot itt ki kell számolni: a szár vetülete az alapon $\\frac{10-4}{2}=3$, ezért '
+             '$h=\\sqrt{5^2-3^2}=4$, és a terület $\\frac{(10+4)\\cdot 4}{2}=28$. Ugyanez a hiba a paralelogrammánál '
+             'is: ott sem a másik <i>oldal</i> kell, hanem a magasság.</p>'
+         )),
    '<p>Emlékeztetőül: a trapéz tulajdonságai és a középvonala az '
    '<a href="' + GEO + 'tananyag-negyszogek.html#tetel-trapez">1e négyszögek</a> leckéjében '
    'vannak.</p>',
@@ -605,7 +622,7 @@ A4 = [
  ]),
 
  ("Szabályos sokszögek", [
-   doboz("definicio", "Apotéma és köréírt sugár",
+   doboz("definicio", 'Apotéma és a köré írt kör sugara',
          '<p>A szabályos sokszög <b>apotémája</b> ($r$) a középpont és egy oldal '
          'távolsága — vagyis a <b>beírt kör</b> sugara. A <b>köré írt kör</b> sugara ($R$) a '
          'középpont és egy csúcs távolsága. Mindig $r &lt; R$.</p>',
@@ -638,10 +655,11 @@ A4 = [
                   'tehát a <b>számolási</b> hibát szűri ki, nem a módszertanit — de erre '
                   'nagyon jó.</p>')),
    doboz("erdekesseg", "Hol találkozol vele?",
-         '<p>A méhsejt, a csavarfej, a csempézés és a kvarckristály keresztmetszete is hatszög. '
-         'Miért? Mert a szabályos háromszög, a négyzet és a szabályos hatszög az a három '
-         'szabályos sokszög, amellyel a sík <b>hézagmentesen</b> kirakható — és a három közül '
-         '<b>azonos kerület mellett</b> a hatszög fogja körbe a legnagyobb területet.</p>'),
+         (
+             '<p>A méhsejtekben és sok csempemintában hatszögeket látsz. Szabályos hatszögekkel hézagmentesen '
+             'kirakható a sík. Hatszögű csavarfejen és kvarckristályon is felismerhető ez az alak, de ezek '
+             'formájának más oka van: a geometriai hasonlóság nem jelent közös magyarázatot.</p>'
+         )),
  ]),
 
  ("A két nevezetes derékszögű háromszög", [
@@ -660,9 +678,10 @@ A4 = [
    'kocka <b>testátlója</b> $a\\sqrt3$: ez már nem a nevezetes arányokból jön, hanem a '
    'Pitagorasz-tétel <b>kétszeri</b> alkalmazásából (előbb a lapátló, aztán a testátló).</p>',
    GY(FGY + "#alap-16", "A 16–22", FGY + "#kozep-11", "K 11–14 N 1–4"),
-   brief('<b>Prizma:</b> A fegyverzet rendben. Innentől minden alaplapot ki tudsz számolni — '
-         'és ez pontosan az a tudás, amire a következő blokkban szükség lesz. Emeljük ki a '
-         'sokszöget a síkból: jön az <b>első test</b>, a hasáb.', outro=True),
+   brief((
+             '<b>Prizma:</b> A szükséges alaplapképleteket átismételtük. Emeljük ki a sokszöget a síkból: '
+             'következik a hasáb, ahol a területhez már testmagasság is társul.'
+         ), outro=True),
  ]),
 ]
 

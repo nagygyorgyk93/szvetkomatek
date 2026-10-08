@@ -91,9 +91,10 @@ OSSZ = [
   '<p><b>Hajlásszög:</b> ha az egyenes nem merőleges a síkra, akkor az egyenes és a '
   'síkra eső <b>merőleges vetülete</b> által bezárt szög — ez a legkisebb szög, amit '
   'az egyenes a sík egyeneseivel bezár (merőleges egyenesnél a hajlásszög $90^\\circ$) '
-  '(' + h(ME, "def-hajlasszog") + '). <b>Két sík szöge (diéder):</b> a metszésvonal egy '
-  'pontjában mindkét síkban a metszésvonalra <b>merőlegesen</b> húzott két félegyenes '
-  'szöge (' + h(ME, "def-dieder") + ').</p>',
+  '(' + h(ME, "def-hajlasszog") + (
+                                      '). <b>Két sík szöge (diéder):</b> a metszésvonal egy pontjában mindkét síkban a metszésvonalra '
+                                      '<b>merőlegesen</b> húzott két egyenes által bezárt nem tompaszögű szög ('
+                                  ) + h(ME, "def-dieder") + ').</p>',
  ]),
  ("Poliéderek és az alaplap", [
   '<p><b>Poliéder:</b> véges sok <b>sokszöglap</b> által határolt test. <b>Konvex</b>, ha bármely '
@@ -109,14 +110,13 @@ OSSZ = [
   '<tr><td>ikozaéder</td><td>szabályos háromszög</td><td>20</td><td>30</td><td>12</td></tr>'
   '</table></div>',
   '<p><b>Az alaplap területe</b> — ezen múlik minden felszín- és térfogatszámítás '
-  '(' + h(AL, "tetel-teruletkepletek") + '):</p>'
-  '$$T_\\triangle=\\frac{a\\cdot h_a}{2},\\qquad '
-  'T_{\\text{egyenlő oldalú}}=\\frac{a^{2}\\sqrt3}{4},\\qquad '
-  'T_{\\square}=a^{2},\\qquad T_{\\text{téglalap}}=ab$$'
-  '$$T_{\\text{paralelogramma}}=a\\cdot h_a,\\qquad '
-  'T_{\\text{trapéz}}=\\frac{(a+c)\\cdot H}{2},\\qquad '
-  'T_{\\text{rombusz}}=\\frac{e\\cdot f}{2},\\qquad '
-  'T_{\\text{szab. hatszög}}=\\frac{3a^{2}\\sqrt3}{2}$$',
+  '(' + h(AL, "tetel-teruletkepletek") + (
+                                             '):</p>$$T_\\triangle=\\frac{a\\cdot h_a}{2},\\qquad T_{\\text{egyenlő '
+                                             'oldalú}}=\\frac{a^{2}\\sqrt3}{4},\\qquad T_{\\square}=a^{2},\\qquad '
+                                             'T_{\\text{téglalap}}=ab$$$$T_{\\text{paralelogramma}}=a\\cdot h_a,\\qquad '
+                                             'T_{\\text{trapéz}}=\\frac{(a+b)\\cdot h}{2},\\qquad T_{\\text{rombusz}}=\\frac{e\\cdot f}{2},\\qquad '
+                                             'T_{\\text{szab. hatszög}}=\\frac{3a^{2}\\sqrt3}{2}$$'
+                                         ),
   '<p><b>Szabályos sokszög:</b> $T=\\dfrac{K\\,r}{2}$, ahol $K$ a kerület és '
   '$r$ az <b>apotéma</b> (a beírt kör sugara, azaz a középpont és az oldal '
   'távolsága), $R$ pedig a köré írt kör sugara (a középpont és a csúcs távolsága) '
@@ -125,8 +125,7 @@ OSSZ = [
   '$R=\\dfrac{a\\sqrt2}{2}$, a szabályos háromszögnél $r=\\dfrac{a\\sqrt3}{6}$ és '
   '$R=\\dfrac{a\\sqrt3}{3}$ (' + h(AL, "def-apotema") + '). A szabályos hatszög '
   '<b>hosszabb</b> átlója $2a$, a <b>rövidebb</b> $a\\sqrt3$.</p>',
-  '<p><b>A két nevezetes derékszögű háromszög</b> — enélkül a térbeli feladatok fele '
-  'megoldhatatlan (' + h(AL, "tetel-nevezetes-haromszogek") + '):</p>'
+  '<p><b>A két nevezetes derékszögű háromszög</b> — ezek az arányok sok térbeli számítást megkönnyítenek (' + h(AL, "tetel-nevezetes-haromszogek") + '):</p>'
   '<div class="tblwrap"><table>'
   '<tr><th>$30^\\circ$–$60^\\circ$–$90^\\circ$</th>'
   '<td>oldalai $x$ : $x\\sqrt3$ : $2x$ — a <b>rövidebb</b> befogó az átfogó fele</td></tr>'
@@ -171,14 +170,12 @@ OSSZ = [
   'talppontja az alaplap <b>középpontja</b>; ekkor minden oldalél egyenlő, és minden '
   'oldallap egybevágó egyenlő szárú háromszög (' + h(GU, "def-gula") + ', ' +
   h(GU, "def-szabalyos-gula", "szabályos") + ').</p>',
-  '<p><b>A szabályos gúla három derékszögű háromszöge</b> — minden gúlás feladat '
-  'ezekből él (' + h(GU, "tetel-harom-haromszog") + '):</p>'
-  '$$h^{2}=H^{2}+r^{2},\\qquad s^{2}=H^{2}+R^{2},\\qquad '
-  's^{2}=h^{2}+\\left(\\frac a2\\right)^{2},\\qquad '
-  'R^{2}=r^{2}+\\left(\\frac a2\\right)^{2}$$'
-  '<p>$H$ = testmagasság, $h$ = az oldallap magassága (a gúla apotémája), '
-  '$s$ = oldalél, $r$ = az alaplap apotémája (a beírt kör sugara), $R$ = az alaplap köré '
-  'írt körének sugara.</p>',
+  '<p><b>A szabályos gúla három derékszögű háromszöge</b> — sok gúlás feladat ezekre vezethető vissza (' + h(GU, "tetel-harom-haromszog") + (
+                                                          '):</p>$$h^{2}=H^{2}+r^{2},\\qquad s^{2}=H^{2}+R^{2},\\qquad s^{2}=h^{2}+\\left(\\frac '
+                                                          'a2\\right)^{2},\\qquad R^{2}=r^{2}+\\left(\\frac a2\\right)^{2}$$<p>$H$ = testmagasság, $h$ = az '
+                                                          'oldallap magassága, $s$ = oldalél, $r$ = az alaplap apotémája (a beírt kör sugara), $R$ = az '
+                                                          'alaplap köré írt körének sugara.</p>'
+                                                      ),
   '<p><b>Felszín és térfogat</b> — a palást a szabályos gúlánál $n$ egybevágó '
   'háromszög (' + h(GF, "tetel-gula-felszin") + ', ' + h(GF, "tetel-gula-terfogat", "térfogat") + '):</p>'
   '$$M=\\frac{K\\cdot h}{2},\\qquad F=B+M,\\qquad V=\\frac{B\\cdot H}{3}$$'
@@ -200,26 +197,27 @@ OSSZ = [
   'derékszögű háromszögek: $h^2=H^2+(r_1-r_2)^2$ és $s^2=H^2+(R_1-R_2)^2$.</p>',
  ]),
  ("Csapdák és utolsó ellenőrzés", [
-  doboz("csapda", "Amire a dolgozaton a legtöbben ráfutnak",
-        '<p>1) A <b>kitérő</b> nem ugyanaz, mint a párhuzamos — a térben a „nincs közös '
-        'pont" kevés. &nbsp; 2) Merőlegességhez a síkban <b>két metsző</b> egyenes kell, '
-        'nem egy. &nbsp; 3) A hasábnál az alappal párhuzamos metszet <b>egybevágó</b>, a '
-        'gúlánál <b>hasonló</b>. &nbsp; 4) A gúla térfogatában a <b>test</b>magasság van, '
-        'a palástban az <b>oldallap</b> magassága. &nbsp; 5) A hasonlóságnál a terület '
-        '$k^{2}$-tel, a térfogat $k^{3}$-nel változik — nem $k$-val. &nbsp; 6) A '
-        'csonkagúla térfogatában a $\\sqrt{B_1B_2}$ tag nem hagyható el, és nem egyenlő '
-        '$\\frac{B_1+B_2}{2}$-vel. &nbsp; 7) A „szabályos hasáb” magassága tetszőleges. '
-        '&nbsp; 8) Térfogatban <b>ezerszeres</b> a váltószám, nem tízszeres. &nbsp; '
-        '9) A négyzetes hasáb testátlójában $2a^{2}$ áll — az alaplap átlója '
-        '$a\\sqrt2$. &nbsp; 10) Az apotéma az <b>oldalhoz</b>, a köré írt sugár a '
-        '<b>csúcshoz</b> mért távolság.</p>'),
+  doboz("csapda", 'Amire érdemes külön figyelni',
+        (
+            '<p>1) A <b>kitérő</b> nem ugyanaz, mint a párhuzamos — a térben a „nincs közös pont” kevés. &nbsp; '
+            '2) Merőlegességhez a síkban <b>két metsző</b> egyenes kell, nem egy. &nbsp; 3) A hasábnál az '
+            'alappal párhuzamos metszet <b>egybevágó</b>, a gúlánál <b>hasonló</b>. &nbsp; 4) A gúla '
+            'térfogatában a <b>test</b>magasság van, a palástban az <b>oldallap</b> magassága. &nbsp; 5) A '
+            'hasonlóságnál a terület $k^{2}$-tel, a térfogat $k^{3}$-nel változik — nem $k$-val. &nbsp; 6) A '
+            'csonkagúla térfogatában a $\\sqrt{B_1B_2}$ tag nem hagyható el, és nem egyenlő '
+            '$\\frac{B_1+B_2}{2}$-vel. &nbsp; 7) A „szabályos hasáb” magassága tetszőleges. &nbsp; 8) Térfogatban '
+            '<b>ezerszeres</b> a váltószám, nem tízszeres. &nbsp; 9) A négyzetes hasáb testátlójában $2a^{2}$ '
+            'áll — az alaplap átlója $a\\sqrt2$. &nbsp; 10) Az apotéma az <b>oldalhoz</b>, a köré írt sugár a '
+            '<b>csúcshoz</b> mért távolság.</p>'
+        )),
   doboz("erdekesseg", "Így állj neki bármelyik térgeometriai feladatnak",
-        '<p><b>①</b> Rajzolj — a rossz ábra a leggyakoribb hibaforrás. &nbsp; '
-        '<b>②</b> Keresd meg az <b>alaplapot</b>, és számold ki $B$-t és $K$-t. &nbsp; '
-        '<b>③</b> Rajzold ki külön a derékszögű háromszöget, amelyben az ismeretlen van '
-        '($H$, $h$, $s$, $r$, $R$). &nbsp; <b>④</b> Pitagorasz. &nbsp; '
-        '<b>⑤</b> Csak a legvégén helyettesíts be a felszín- vagy térfogatképletbe, és '
-        'írd ki a mértékegységet.</p>'),
+        (
+            '<p><b>①</b> Rajzolj — az ábra segít felismerni a keresett szakaszt vagy metszetet. &nbsp; <b>②</b> '
+            'Keresd meg az <b>alaplapot</b>, és számold ki $B$-t és $K$-t. &nbsp; <b>③</b> Rajzold ki külön a '
+            'derékszögű háromszöget, amelyben az ismeretlen van ($H$, $h$, $s$, $r$, $R$). &nbsp; <b>④</b> '
+            'Pitagorasz. &nbsp; <b>⑤</b> Csak a legvégén helyettesíts be a felszín- vagy térfogatképletbe, és '
+            'írd ki a mértékegységet.</p>'
+        )),
   '<div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Élesben:</b> fuss át a '
   'három feladatgyűjteményen — <a href="feladatok-terelemek.html">térelemek</a> · '
   '<a href="feladatok-hasab.html">hasáb</a> · '
@@ -304,10 +302,12 @@ TEREP = [
          '<li>Egy másik kristályból szabályos négyoldalú csonkagúlát faragtak: az '
          'alapélei $10$ m és $6$ m, a testmagassága $8$ m. Mekkora a térfogata?</li>'
          '</ol>'),
-   '<div class="gyakorolj"><span class="ikon">📋</span><div><p><b>Jelentés:</b> minden '
-   'feladathoz legyen <b>ábra</b>, és jelöld be rajta azt a derékszögű háromszöget, '
-   'amelyben számoltál. Írd le, melyik képletet miért választottad, és mindenhol tedd ki '
-   'a <b>mértékegységet</b>. A kerekítési szabály betartása is pont.</p></div></div>',
+   (
+       '<div class="gyakorolj"><span class="ikon">📋</span><div><p><b>Jelentés:</b> minden feladathoz legyen '
+       '<b>ábra</b>, és ahol derékszögű háromszöggel számolsz, jelöld be külön azt is. Írd le, melyik '
+       'képletet miért választottad, és mindenhol tedd ki a <b>mértékegységet</b>. A kerekítési szabály '
+       'betartása is pont.</p></div></div>'
+   ),
  ]),
 ]
 
@@ -476,7 +476,7 @@ K = [
  kartya("tananyag-hasab.html", "A hasáb és elemei",
         "Hogyan keletkezik a hasáb, fajták, a háló, valamint a lapátló és a testátló"),
  kartya("tananyag-hasab-felszin-terfogat.html", "A hasáb felszíne és térfogata",
-        "A palást a hálóból, a $V=Bm$ képlet, fordított feladatok és a mértékegységek"),
+        'A palást a hálóból, a $V=BH$ képlet, fordított feladatok és a mértékegységek'),
  kartya("tananyag-hasab-sikmetszetek.html", "A hasáb síkmetszetei",
         "Az alappal párhuzamos metszet, az átlós metszetek és a területük kiszámítása"),
  kartya("tananyag-gula.html", "A gúla és elemei",
@@ -501,50 +501,31 @@ K = [
         "Minden definíció, képlet és tipikus csapda egy helyen — dolgozat előtti átfutáshoz"),
 ]
 
-INDEX = '''<!DOCTYPE html>
-<html lang="hu" data-root="../..">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Poliéderek | 3e | Szvetkó matek</title>
-<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../../assets/css/theme.css">
-<link rel="stylesheet" href="../../assets/css/print.css">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
-</head>
-<body data-tagozat="3e">
-<div id="progress"></div>
-<header class="fejlec">
-  <div class="fejlec-bel">
-    <a class="logo" href="../../index.html"><span class="jel">&#8730;</span><span class="nev">Szvetkó <b>matek</b></span></a>
-    <span class="ter"></span>
-    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
-  </div>
-</header>
-<nav class="morzsa">
-  <a href="../../index.html">Főhadiszállás</a> ›
-  <a href="../index.html"><span class="tagozat-jel">3e</span></a> ›
-  <span class="itt">Poliéderek</span>
-</nav>
-<div class="hero">
-  <h1>Poliéderek</h1>
-  <p class="alcim">A tér alaptörvényeitől a hasáb és a gúla felszínén és térfogatán át
-  a síkmetszetekig és a csonkagúláig — a harmadik év első és leghosszabb geometriai
-  témaköre.</p>
-  <div class="meta-sor"><span class="chip ora">21 óra</span><span class="statusz kesz">kész</span></div>
-  <div class="brief"><p>🔷 <b>Szektor 01 — A Kristálypára Kristályok.</b> Kiképző:
-  <b>Prizma</b>. A Kristálypára minden cseppje ugyanúgy fagy meg: <b>lapokból</b> épülő
-  testté. Prizma megtanítja, hogyan lehet egy testet két adatból — az <b>alaplapból</b> és
-  a <b>magasságból</b> — teljesen felmérni: mekkora a felülete, mennyi fér bele, és mi
-  látszik belőle, ha elmetsszük.</p></div>
-</div>
-<main class="lap">
-  <div class="tartalom">
-    <h2>Tananyag</h2>
-
-    <h3>🧭 A tér és a poliéderek — Prizma</h3>
-    <div class="racs">
-''' + "\n".join(K[0:4]) + '''
+INDEX = (
+            '<!DOCTYPE html>\n<html lang="hu" data-root="../..">\n<head>\n<meta charset="utf-8">\n<meta '
+            'name="viewport" content="width=device-width,initial-scale=1">\n<title>Poliéderek | 3e | Szvetkó '
+            'matek</title>\n<link rel="icon" href="../../assets/img/common/favicon.svg" '
+            'type="image/svg+xml">\n<link rel="stylesheet" href="../../assets/css/theme.css">\n<link '
+            'rel="stylesheet" href="../../assets/css/print.css">\n<link rel="stylesheet" '
+            'href="../../assets/katex/katex.min.css">\n</head>\n<body data-tagozat="3e">\n<div '
+            'id="progress"></div>\n<header class="fejlec">\n  <div class="fejlec-bel">\n    <a class="logo" '
+            'href="../../index.html"><span class="jel">&#8730;</span><span class="nev">Szvetkó '
+            '<b>matek</b></span></a>\n    <span class="ter"></span>\n    <form class="kereso-mini"><input '
+            'type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button '
+            'type="submit">Keres</button></form>\n  </div>\n</header>\n<nav class="morzsa">\n  <a '
+            'href="../../index.html">Főhadiszállás</a> ›\n  <a href="../index.html"><span '
+            'class="tagozat-jel">3e</span></a> ›\n  <span class="itt">Poliéderek</span>\n</nav>\n<div '
+            'class="hero">\n  <h1>Poliéderek</h1>\n  <p class="alcim">A tér alaptörvényeitől a hasáb és a gúla '
+            'felszínén és térfogatán át\n  a síkmetszetekig és a csonkagúláig — a harmadik év első és leghosszabb '
+            'geometriai\n  témaköre.</p>\n  <div class="meta-sor"><span class="chip ora">21 óra</span><span '
+            'class="statusz kesz">kész</span></div>\n  <div class="brief"><p>🔷 <b>Szektor 01 — A Kristálypára '
+            'Kristályok.</b> Kiképző:\n  <b>Prizma</b>. A Kristálypára minden cseppje ugyanúgy fagy meg: '
+            '<b>lapokból</b> épülő\n  testté. Prizma megtanítja, hogyan lehet az <b>alaplap és a magasság</b> '
+            'segítségével kiszámítani a hasáb és a gúla térfogatát, majd a további méretadatokból a felszínüket '
+            'és metszeteik területét is meghatározni.</p></div>\n</div>\n<main class="lap">\n  <div '
+            'class="tartalom">\n    <h2>Tananyag</h2>\n\n    <h3>🧭 A tér és a poliéderek — Prizma</h3>\n    <div '
+            'class="racs">\n'
+        ) + "\n".join(K[0:4]) + '''
     </div>
 
     <h3>🧱 A hasáb — Prizma</h3>

@@ -81,7 +81,7 @@ ALAP = [
  ("Milyen forgástest keletkezik, ha megforgatjuk",
   ["a téglalapot az egyik oldala körül",
    "a derékszögű háromszöget az egyik befogója körül",
-   "a félkört az átmérője körül",
+   'a félkörlapot az átmérője körül',
    "a derékszögű trapézt a párhuzamos oldalakra merőleges szára körül"],
   ["henger", "kúp", "gömb", "csonkakúp"], True),
 
@@ -244,9 +244,11 @@ NEHEZ = [
   "térfogata?", None,
   '$V=75\\pi$ cm³.'),
 
- ("Egy henger magassága megegyezik az alapkör <b>sugarával</b>, és a felszínének "
-  "és a térfogatának a <b>számértéke</b> egyenlő. Mekkora a sugár?", None,
-  '$r=4$.'),
+ ((
+      'Egy henger magassága megegyezik az alapkör <b>sugarával</b>, és cm²-ben mért felszínének és cm³-ben '
+      'mért térfogatának <b>számértéke</b> egyenlő. Mekkora a sugár centiméterben?'
+  ), None,
+  '$r=4$ cm.'),
 ]
 
 JOKER = ("Egy hengeres konzervdoboz térfogata adott. A gyártó a lehető <b>legkevesebb</b> "

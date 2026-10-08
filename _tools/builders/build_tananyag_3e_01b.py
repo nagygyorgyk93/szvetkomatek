@@ -73,19 +73,24 @@ SVG_METSZET_ATLOS = svg_hasab("negyzet", a=1.0, m=1.4, metszet="atlos", w=310, h
 SVG_METSZET_PARH = svg_hasab("hatszog", a=1.0, m=1.6, metszet="parhuzamos", w=330, h=290,
                              leiras="Az alaplappal párhuzamos metszet egybevágó az alaplappal")
 SVG_HATSZOG_ATLOK = svg_sikidom("sokszog", n=6, w=300, h=250,
-                                leiras="A szabályos hatszög apotémája és köréírt sugara")
+                                leiras='A szabályos hatszög apotémája és köré írt sugara')
 
 # ===================================================================== B1
 
 B1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Prizma:</b> A Karantén-Zóna legtöbb kristálya <b>oszlopos</b>: egy sokszög '
-         'elindul a saját síkjából, és söpör végig egy térrészt. Ez a hasáb. Ha meg tudod mondani, '
-         'melyik éle mekkora, akkor a benne tárolt energiát is ki tudod számolni — de előbb '
-         'ismerni kell a test <b>alkatrészeit</b>: melyik él az alapél, mekkora a magasság, '
-         'és mi az a testátló, amit a kadétok fele meg sem talál a testben.'),
-   '<p>Ebben a blokkban találkozol az első igazi <b>testtel</b>. Az előző egységekben a tér szabályait és '
-   '<a href="tananyag-alaplap.html">az alaplapot</a> néztük meg — most ezek összeállnak.</p>',
+   brief((
+             '<b>Prizma:</b> A Karantén-Zóna legtöbb kristálya <b>oszlopos</b>: egy sokszög elindul a saját '
+             'síkjából, és söpör végig egy térrészt. Ez a hasáb. Ha meg tudod mondani, melyik éle mekkora, akkor '
+             'a benne tárolt energiát is ki tudod számolni — de előbb ismerni kell a test <b>alkatrészeit</b>: '
+             'melyik él az alapél, mekkora a magasság, és mi az a testátló, amelyet érdemes külön is megkeresni '
+             'az ábrán.'
+         )),
+   (
+       '<p>Ebben a blokkban találkozol a hasábbal mint az első részletesen vizsgált <b>testtel</b>. Az '
+       'előző egységekben a tér szabályait és <a href="tananyag-alaplap.html">az alaplapot</a> néztük meg — '
+       'most ezek összeállnak.</p>'
+   ),
  ]),
 
  ("Hogyan keletkezik a hasáb", [
@@ -130,13 +135,14 @@ B1 = [
          'mind a hat lapja téglalap. Ha ezenfelül minden éle egyenlő, <b>kockát</b> kapunk.</p>',
          hid="def-teglatest"),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„Szabályos hasáb — akkor minden éle egyenlő, tehát az alapélből következik '
-         'a magasság is."</i></p>'
-         '<p>Nem következik. A „szabályos” itt csak az <b>alaplapra</b> és az oldalélek '
-         '<b>állására</b> vonatkozik: a magasság ettől függetlenül bármekkora lehet. Egy '
-         '$2$ cm alapélű, $50$ cm magas szabályos négyoldalú hasáb ugyanolyan szabályos, '
-         'mint egy $2$ cm magas. Az az <b>egyenes</b> hasáb, amelynek az alaplapja '
-         'négyzet és minden éle egyenlő, a <b>kocka</b> — az csak egy speciális eset.</p>'),
+         (
+             '<p><i>„Szabályos hasáb — akkor minden éle egyenlő, tehát az alapélből következik a magasság '
+             'is.”</i></p><p>Nem következik. A „szabályos” itt csak az <b>alaplapra</b> és az oldalélek '
+             '<b>állására</b> vonatkozik: a magasság ettől függetlenül bármekkora lehet. Egy $2$ cm alapélű, $50$ '
+             'cm magas szabályos négyoldalú hasáb ugyanolyan szabályos, mint egy $2$ cm magas. Az az '
+             '<b>egyenes</b> hasáb, amelynek az alaplapja négyzet és minden éle egyenlő, a <b>kocka</b> — az csak '
+             'egy speciális eset.</p>'
+         )),
    kviz('Melyik állítás igaz <b>minden</b> szabályos négyoldalú hasábra?',
         ['Az alaplapja négyzet, a magassága viszont tetszőleges',
          'Minden éle egyenlő hosszú',
@@ -154,10 +160,11 @@ B1 = [
    abra(SVG_HALO6, 'A szabályos hatoldalú hasáb hálója: két szabályos hatszög és a palást '
         'téglalapja, hat egyenlő részre osztva.'),
    doboz("erdekesseg", "Hol találkozol vele?",
-         '<p>A dobozok gyártása pontosan ez a művelet visszafelé: a gép egyetlen '
-         'kartonlapból stancolja ki a hálót, és a hajtásélek adják a test éleit. Ezért '
-         'számít a csomagolóiparban a <b>háló területe</b> — vagyis a felszín —, nem a '
-         'doboz térfogata.</p>'),
+         (
+             '<p>A kartondoboz hálójából kiindulva megtervezhető a kivágandó forma. A háló területe a doboz '
+             'geometriai felszíne; a gyártáshoz ezen felül ragasztófülekre és illesztési ráhagyásokra is szükség '
+             'lehet. A térfogat azt mutatja meg, mennyi fér a dobozba.</p>'
+         )),
  ]),
 
  ("Átlók: lapátló és testátló", [
@@ -217,14 +224,14 @@ B2 = [
 
  ("A felszín a hálóból", [
    doboz("tetel", "Az egyenes hasáb felszíne",
-         '<p><b>Egyenes</b> hasáb esetén a palást kiterítve téglalap, amelynek egyik oldala az '
-         'alaplap kerülete ($K$), a másik a magasság ($H$). A palást területét $M$-mel, a '
-         'felszínt $F$-fel jelöljük:</p>'
-         '$$M=K\\cdot H,\\qquad F=2B+M=2B+K\\cdot H,$$'
-         '<p>ahol $B$ az alaplap területe. A $2B$ azért szerepel, mert a testnek <b>két</b> '
-         'egybevágó alaplapja van.</p>'
-         '<p><b>Ferde</b> hasábnál ez a képlet nem érvényes: ott az oldallapok '
-         'paralelogrammák, és külön-külön kell kiszámolni a területüket, majd összeadni.</p>',
+         (
+             '<p><b>Egyenes</b> hasáb esetén a palást kiterítve téglalap, amelynek egyik oldala az alaplap '
+             'kerülete ($K$), a másik a magasság ($H$). A palást területét $M$-mel, a felszínt $F$-fel '
+             'jelöljük:</p>$$M=K\\cdot H,\\qquad F=2B+M=2B+K\\cdot H,$$<p>ahol $B$ az alaplap területe. A $2B$ azért '
+             'szerepel, mert a testnek <b>két</b> egybevágó alaplapja van.</p><p><b>Ferde</b> hasábnál a $M=K H$ '
+             'palástképlet általában nem érvényes; a $F=2B+M$ összefüggés továbbra is igaz: ott az oldallapok '
+             'paralelogrammák, és külön-külön kell kiszámolni a területüket, majd összeadni.</p>'
+         ),
          hid="tetel-hasab-felszin"),
    abra(SVG_HALO4, 'A négyzetes hasáb hálója: a palást téglalapjának egyik oldala az '
         'alaplap kerülete, a másik a magasság.'),
@@ -324,8 +331,10 @@ B3 = [
          'hogy háromszöget, téglalapot vagy éppen szabályos hatszöget kapunk. Két kérdésre '
          'kell tudnod válaszolni: <b>milyen alakzat</b> a metszet, és <b>mekkora</b> a '
          'területe.'),
-   '<p>Ez a témakör harmadik tanulási célja. A felmérőkön rendszeresen szerepel — általában '
-   'úgy, hogy a metszet fajtáját megadják, és a területet kell kiszámolni.</p>',
+   (
+       '<p>A metszet alakjának felismerése után a területét a megfelelő síkidom képletével számoljuk ki. '
+       'Figyelj arra, mely adatok a metszet oldalaihoz vagy magasságához tartoznak.</p>'
+   ),
  ]),
 
  ("Mi a síkmetszet", [
@@ -337,18 +346,22 @@ B3 = [
          '<p>A metszet csúcsai tehát ott vannak, ahol a metszősík a test <b>éleit</b> '
          'döfi.</p>',
          hid="def-sikmetszet"),
-   '<p>Ebből következik egy hasznos szabály: a metszet <b>annyi oldalú</b>, ahány lapját a '
-   'sík ténylegesen elmetszi — egy lapból legfeljebb egy oldal származhat. A négyzetes '
-   'hasábnak hat lapja van, ezért a metszete legfeljebb hatszög; a hatoldalú hasábnak nyolc '
-   'lapja van, ott a metszet akár nyolcszög is lehet.</p>',
+   (
+       '<p>Ebből következik egy hasznos szabály: a metszetnek <b>legfeljebb annyi oldala van</b>, ahány '
+       'lapot a sík metsz — egy lapból legfeljebb egy oldal származhat. A négyzetes hasábnak hat lapja van, '
+       'ezért a metszete legfeljebb hatszög; a hatoldalú hasábnak nyolc lapja van, ott a metszet akár '
+       'nyolcszög is lehet.</p>'
+   ),
  ]),
 
  ("Alappal párhuzamos metszet", [
    doboz("tetel", "Az alappal párhuzamos metszet",
-         '<p>Ha a metszősík <b>párhuzamos az alaplappal</b>, a metszet az alaplappal '
-         '<b>egybevágó</b> sokszög — függetlenül attól, milyen magasan metszünk.</p>'
-         '<p>Ez a hasáb sajátossága: minden alappal párhuzamos keresztmetszete ugyanakkora. (A gúlánál ez '
-         'másképp lesz — ott a metszet <b>hasonló</b>, de kisebb.)</p>',
+         (
+             '<p>Ha a test belsejében haladó metszősík <b>párhuzamos az alaplappal</b>, a metszet az alaplappal '
+             '<b>egybevágó</b> sokszög — függetlenül attól, milyen magasan metszünk.</p><p>Ez a hasáb '
+             'sajátossága: minden alappal párhuzamos keresztmetszete ugyanakkora. (A gúlánál ez másképp lesz — '
+             'ott a metszet <b>hasonló</b>, de kisebb.)</p>'
+         ),
          hid="tetel-hasab-parhuzamos-metszet"),
    abra(SVG_METSZET_PARH, 'Az alaplappal párhuzamos metszet egybevágó az alaplappal.'),
  ]),
@@ -368,41 +381,41 @@ B3 = [
          hid="tetel-hasab-atlos-metszet"),
    abra(SVG_METSZET_ATLOS, 'A négyzetes hasáb átlós metszete az $AC$ és az $A_1C_1$ átlón át.'),
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„A hasáb metszete olyan, mint az alaplapja — hatszög alapú hasábnál mindig '
-         'hatszög."</i></p>'
-         '<p>Csak az <b>alappal párhuzamos</b> metszetre igaz. Egyenes hasábnál az átlós metszet '
-         '<b>téglalap</b>, egy ferdén álló sík metszete pedig sem az alaplappal nem '
-         'egybevágó, sem nem téglalap. Metszet előtt mindig azt kérdezd: <b>hogyan áll a '
-         'sík?</b> — nem azt, hogy milyen a test.</p>'),
+         (
+             '<p><i>„A hasáb metszete olyan, mint az alaplapja — hatszög alapú hasábnál mindig '
+             'hatszög.”</i></p><p>Csak az <b>alappal párhuzamos</b> metszetre igaz. Egyenes hasábnál az átlós '
+             'metszet <b>téglalap</b>, egy ferde síkkal vett metszet alakja a sík helyzetétől függ: téglalap is '
+             'lehet, de más sokszöget is kaphatunk. Metszet előtt mindig azt kérdezd: <b>hogyan áll a sík?</b> — '
+             'nem azt, hogy milyen a test.</p>'
+         )),
  ]),
 
  ("A metszet területének kiszámítása", [
-   '<p>A számolás mindig két lépés: (1) melyik alaplapi <b>átló</b> mentén metszünk, '
-   '(2) az átló és a magasság szorzata. Az első lépés a nehezebb, mert a szabályos '
-   'sokszögeknek <b>többféle hosszúságú</b> átlójuk van. A szabályos hatszögnél a hosszabb '
-   'átló a szemközti csúcsokat köti össze, és átmegy a középponton, ezért a köréírt kör '
-   'átmérője: $2R=2a$. A rövidebb átló egy csúcsot hagy ki, és a beírt kör átmérőjével '
-   'egyenlő: $2r=a\\sqrt3$.</p>',
-   abra(SVG_HATSZOG_ATLOK, 'A szabályos hatszögben a köréírt kör sugara $R=a$, az apotéma '
-        '$r=\\frac{a\\sqrt3}{2}$. Innen a hosszabb átló $2R=2a$, a rövidebb pedig '
-        '$2r=a\\sqrt3$.'),
+   (
+       '<p>Konvex alaplapú egyenes hasáb átlós metszeténél a számolás két lépés: (1) melyik alaplapi '
+       '<b>átló</b> mentén metszünk, (2) az átló és a magasság szorzata. Az első lépés a nehezebb, mert a '
+       'szabályos sokszögeknek <b>többféle hosszúságú</b> átlójuk van. A szabályos hatszögnél a hosszabb '
+       'átló a szemközti csúcsokat köti össze, és átmegy a középponton, ezért a köré írt kör átmérője: '
+       '$2R=2a$. A rövidebb átló egy csúcsot hagy ki; a hossza a beírt kör átmérőjével egyenlő: '
+       '$2r=a\\sqrt3$.</p>'
+   ),
+   abra(SVG_HATSZOG_ATLOK, (
+                               'A szabályos hatszögben a köré írt kör sugara $R=a$, az apotéma $r=\\frac{a\\sqrt3}{2}$. Innen a '
+                               'hosszabb átló $2R=2a$, a rövidebb pedig $2r=a\\sqrt3$.'
+                           )),
    doboz("pelda", "Kristály-kamra szimuláció",
          '<p>Egy szabályos hatoldalú hasáb alapéle $5$ cm, magassága $7$ cm. Mekkora a '
          'kétféle átlós metszetének a területe?</p>',
          hid="pelda-hatszog-metszet",
          lenyilo=("Megoldás",
-                  '<p>A szabályos hatszögnek <b>kétféle</b> átlója van:</p>'
-                  '<ul>'
-                  '<li>a <b>hosszabb</b> a szemközti csúcsokat köti össze, és átmegy a '
-                  'középponton: $d_1=2R=2a=10$ cm;</li>'
-                  '<li>a <b>rövidebb</b> egy csúcsot hagy ki, és a beírt kör átmérője: '
-                  '$d_2=2r=a\\sqrt3=5\\sqrt3\\approx 8{,}66$ cm.</li>'
-                  '</ul>'
-                  '<p>A két metszet területe ezért</p>'
-                  '$$T_1=d_1\\cdot H=10\\cdot 7=70\\ \\text{cm}^2,\\qquad '
-                  'T_2=d_2\\cdot H=5\\sqrt3\\cdot 7=35\\sqrt3\\approx 60{,}62\\ \\text{cm}^2.$$'
-                  '<p>Ugyanaz a test, két különböző metszet — a feladat szövegéből mindig ki '
-                  'kell derülnie, melyikről van szó.</p>')),
+                  (
+                      '<p>A szabályos hatszögnek <b>kétféle</b> átlója van:</p><ul><li>a <b>hosszabb</b> a szemközti '
+                      'csúcsokat köti össze, és átmegy a középponton: $d_1=2R=2a=10$ cm;</li><li>a <b>rövidebb</b> egy '
+                      'csúcsot hagy ki, és a hossza a beírt kör átmérőjével egyenlő: $d_2=2r=a\\sqrt3=5\\sqrt3\\approx '
+                      '8{,}66$ cm.</li></ul><p>A két metszet területe ezért</p>$$T_1=d_1\\cdot H=10\\cdot 7=70\\ '
+                      '\\text{cm}^2,\\qquad T_2=d_2\\cdot H=5\\sqrt3\\cdot 7=35\\sqrt3\\approx 60{,}62\\ \\text{cm}^2.$$<p>Ugyanaz '
+                      'a test, két különböző metszet — a feladat szövegéből mindig ki kell derülnie, melyikről van szó.</p>'
+                  ))),
    doboz("erdekesseg", "Csak érdekesség",
          '<p>A kockát el lehet metszeni úgy is, hogy a metszet <b>szabályos hatszög</b> '
          'legyen: a metszősík hat élt döf, mindegyiket a felezőpontjában. Ez az egyik '

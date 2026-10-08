@@ -61,28 +61,31 @@ print("sympy önteszt: OK")
 # ---------------------------------------------------------------- C1
 C1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Kanrak:</b> A Kamra nem egyenletrendszerekben beszél, hanem <b>mérési '
-         'jegyzőkönyvekben</b>: „a hármas tartály és a hatos tartály együtt kétszer annyit '
-         'nyelt el, mint a négyes”. A nehéz rész nem a megoldás — azt már tudod. A nehéz '
-         'rész a <b>fordítás</b>: szövegből jelekbe.'),
-   '<p>Ez a témakör egyetlen <b>alapszintű</b> kimenete, és egyben a legfontosabb: az '
-   'egyenletrendszer önmagában nem hasznos, csak akkor, ha fel tudod írni. A fordítás '
-   'képessége az, ami a matematikát az iskolán kívül is használhatóvá teszi.</p>',
+   brief((
+             '<b>Kanrak:</b> A Kamra nem egyenletrendszerekben beszél, hanem <b>mérési jegyzőkönyvekben</b>: „a '
+             'hármas tartály és a hatos tartály együtt kétszer annyit nyelt el, mint a négyes”. Most a '
+             '<b>fordítást</b> gyakoroljuk: a szöveg kapcsolataiból írjuk fel az egyenleteket.'
+         )),
+   (
+       '<p>Most azt gyakoroljuk, hogyan írhatók le egyenletekkel a szövegben megadott kapcsolatok. Előbb '
+       'megválasztjuk az ismeretleneket és felírjuk a rendszert, majd megoldjuk, és a kapott értékeket '
+       'összevetjük a feladat helyzetével.</p>'
+   ),
  ]),
 
  ("A négy lépés", [
    doboz("tetel", "A szöveges feladat menete",
-         '<ol>'
-         '<li><b>Mi az ismeretlen?</b> Írd le <b>szavakkal is</b>, és ne csak betűvel: '
-         '„legyen $x$ egy toll ára dinárban”. A mértékegység a megnevezés része.</li>'
-         '<li><b>Az adatokat közlő mondatokból lesznek az egyenletek.</b> Haladj sorban a '
-         'szövegen — a legtöbb ilyen mondat egy-egy egyenletet ad. Annyi egyenlet kell, '
-         'ahány ismeretlent bevezettél, és <b>egyik se következzen a többiből</b>.</li>'
-         '<li><b>Oldd meg</b> a rendszert — behelyettesítéssel, kiküszöböléssel, '
-         'Gauss-eljárással vagy Cramer-szabállyal, amelyik kényelmesebb.</li>'
-         '<li><b>Ellenőrizz a szöveggel</b>, ne csak az egyenlettel — és <b>olvasd vissza a '
-         'kérdést</b>: pontosan arra válaszolj, amit kérdeztek.</li>'
-         '</ol>',
+         (
+             '<ol><li><b>Mi az ismeretlen?</b> Írd le <b>szavakkal is</b>, és ne csak betűvel: „legyen $x$ egy '
+             'toll ára dinárban”. A mértékegység a megnevezés része.</li><li><b>Az adatokat közlő mondatokból '
+             'lesznek az egyenletek.</b> Haladj sorban a szövegen — a legtöbb ilyen mondat egy-egy egyenletet ad. '
+             'Az egyértelmű megoldáshoz elegendő független feltételre van szükség. Az itteni példákban két vagy '
+             'három ismeretlenhez ugyanennyi egyenletet írunk fel; azt is ellenőrizzük, hogy ezek meghatározzák-e '
+             'az értékeket.</li><li><b>Oldd meg</b> a rendszert — behelyettesítéssel, kiküszöböléssel, '
+             'Gauss-eljárással vagy Cramer-szabállyal, amelyik kényelmesebb.</li><li><b>Ellenőrizz a '
+             'szöveggel</b>, ne csak az egyenlettel — és <b>olvasd vissza a kérdést</b>: pontosan arra válaszolj, '
+             'amit kérdeztek.</li></ol>'
+         ),
          hid="tetel-negy-lepes"),
    '<p>A negyedik lépés két külön dolgot takar. Az <b>egyenletbe</b> való visszahelyettesítés '
    'a számolási hibát szűri ki; a <b>szöveggel</b> való ellenőrzés viszont a felírás '
@@ -90,18 +93,11 @@ C1 = [
    'valami biztosan hibás — és először a felírást nézd meg, mert azt az egyenletbe való '
    'visszahelyettesítés <b>nem</b> szűri ki.</p>',
    doboz("csapda", "Maxi trükkje",
-         '<p><i>„Megvan: $x=220$. Kész.”</i></p>'
-         '<p>Csakhogy ha a kérdés az volt, hogy <b>mennyibe kerül együtt</b> négy toll és '
-         'három füzet, akkor a válasz nem $x$ értéke, hanem $4x+3y$ — azt még ki kell '
-         'számolni.</p>'
-         '<p>Ez a leggyakoribb pontveszteség a szöveges feladatoknál — nem tudáshiány, '
-         'hanem figyelmetlenség. Az utolsó lépés mindig ugyanaz: <b>olvasd vissza a '
-         'kérdést</b>, és fogalmazd meg a választ egész mondatban, mértékegységgel együtt. '
-         'A mértékegység elhagyása ugyanígy pontlevonás: a „$220$” nem válasz, a „$220$ '
-         'dinár” az.</p>'
-         '<p>Ugyanez a hiba fordítva is előfordul: van, aki a részeredményeket '
-         '<b>nem</b> írja le, csak a végszámot. A dolgozatban mindkettő kell — az '
-         'ismeretlenek értéke <b>és</b> a kérdésre adott válasz.</p>'),
+         (
+             '<p>Olvasd vissza a kérdést, és fogalmazd meg a választ mondatban, mértékegységgel együtt. Ha a '
+             'feladat egy vásárlás összárát kérdezi, az ismeretlenek értéke még csak részeredmény lehet: ezekből '
+             'kell kiszámítani a kért összeget.</p>'
+         )),
    kviz('Két szám összege $40$, különbsége $8$. Mennyi a két szám <b>szorzata</b>?',
         ['$384$', '$24$', '$16$', '$320$'], 0,
         jo="✔ A rendszerből x = 24 és y = 16, a kérdés viszont a szorzatra vonatkozott: "
@@ -126,18 +122,19 @@ C1 = [
    '<tr><td><b>kétjegyű szám számjegyei</b></td><td>a számjegyek</td>'
    '<td>maga a szám $10a+b$, a felcserélt $10b+a$</td></tr>'
    '</table>',
-   '<p>Egy tipikus sebességes példa: egy hajó $120$ km-t tesz meg a folyón lefelé $4$ óra '
-   'alatt, fölfelé ugyanezt $6$ óra alatt. Ha $x$ a hajó saját sebessége és $y$ a folyó '
-   'sodrásáé, akkor $4(x+y)=120$ és $6(x-y)=120$, ahonnan $x=25$ km/h és $y=5$ km/h.</p>',
+   (
+       '<p>Egy tipikus sebességes példa: egy hajó $120$ km-t tesz meg a folyón lefelé $4$ óra alatt, '
+       'fölfelé ugyanezt $6$ óra alatt. Feltesszük, hogy nem áll meg, saját sebessége és a sodrás sebessége '
+       'mindkét úton állandó. Ha $x$ a hajó saját sebessége és $y$ a folyó sodrásáé, akkor $4(x+y)=120$ és '
+       '$6(x-y)=120$, ahonnan $x=25$ km/h és $y=5$ km/h.</p>'
+   ),
    doboz("erdekesseg", "Hol találkozol vele?",
-         '<p>A <b>keverési feladat</b> pontosan az, amit a gyógyszertárban, a festékkeverő '
-         'gépnél és a laborban csinálnak: adott töménységű oldatokból kell adott '
-         'töménységűt kikeverni. A <b>sebesség–idő–út</b> típus pedig minden menetrend '
-         'mögött ott van — és minden repülőút-tervezésben, ahol a szél ugyanúgy '
-         'hozzáadódik vagy levonódik, mint a folyó sodrása.</p>'
-         '<p>Közös bennük, hogy a valóságban is <b>több</b> ismeretlen van, és soha nem '
-         'mérjük őket közvetlenül: csak összefüggéseket látunk. Ezért a rendszer nem '
-         'iskolai mesterkéltség, hanem a helyzet természetes leírása.</p>'),
+         (
+             '<p>Keverési feladatokkal egyszerűsített laboratóriumi helyzeteket írhatunk le: ismert töménységű '
+             'oldatokból kell meghatározott töménységű keveréket készíteni. A sebesség–idő–út összefüggést pedig '
+             'egyenletes mozgás modellezésére használjuk. Ezekben a helyzetekben több ismeretlen mennyiséget a '
+             'köztük megadott kapcsolatokból határozunk meg.</p>'
+         )),
    kviz('„Egy jegy felnőtteknek $x$ dinár, diákoknak $y$ dinár. Három felnőtt és két diák '
         'együtt $1300$ dinárt fizetett.” Melyik egyenlet írja le ezt a mondatot?',
         ['$3x+2y=1300$', '$x+y=1300$', '$3x\\cdot2y=1300$', '$5(x+y)=1300$'], 0,
@@ -150,30 +147,27 @@ C1 = [
 
  ("Kidolgozott példa — két ismeretlen", [
    doboz("pelda", "Kristály-kamra szimuláció — a raktár árlistája",
-         r'<p><b>Feladat.</b> A Kamra írószerraktárában három toll és két füzet együtt '
-         r'$1560$ dinárba kerül, öt toll és négy füzet pedig $2900$ dinárba. '
-         r'<b>Mennyibe kerül együtt négy toll és három füzet?</b></p>'
-         r'<p><b>1. Az ismeretlenek.</b> Legyen $x$ egy toll ára dinárban, $y$ pedig egy '
-         r'füzeté dinárban.</p>'
-         r'<p><b>2. Az egyenletek.</b> A két mondat egy-egy egyenletet ad:</p>'
-         r'$$\begin{aligned}3x+2y&=1560\\ 5x+4y&=2900\end{aligned}$$'
-         r'<p><b>3. A megoldás.</b> Az $y$ együtthatói $2$ és $4$: az elsőt $2$-vel '
-         r'szorozva egyenlővé tehetők, majd kivonjuk a másodikat:</p>'
-         r'$$\begin{aligned}6x+4y&=3120\\ 5x+4y&=2900\end{aligned}$$'
-         r'<p>A különbség $x=220$. Ezt az első eredeti egyenletbe írva '
-         r'$660+2y=1560$, tehát $2y=900$ és $y=450$.</p>'
-         r'<p><b>4. Ellenőrzés és válasz.</b> $3\cdot220+2\cdot450=660+900=1560$ ✔, '
-         r'$5\cdot220+4\cdot450=1100+1800=2900$ ✔. Az árak reálisak (pozitívak, egész '
-         r'dinárok).</p>'
-         r'<p>De a kérdés <b>nem</b> az árakra vonatkozott! Négy toll és három füzet ára:</p>'
-         r'$$4\cdot220+3\cdot450=880+1350=2230.$$',
+         (
+             '<p><b>Feladat.</b> A Kamra írószerraktárában három toll és két füzet együtt $1560$ dinárba kerül, '
+             'öt toll és négy füzet pedig $2900$ dinárba. <b>Mennyibe kerül együtt négy toll és három '
+             'füzet?</b></p><p><b>1. Az ismeretlenek.</b> Legyen $x$ egy toll ára dinárban, $y$ pedig egy füzeté '
+             'dinárban.</p><p><b>2. Az egyenletek.</b> A két mondat egy-egy egyenletet '
+             'ad:</p>$$\\begin{aligned}3x+2y&=1560\\\\ 5x+4y&=2900\\end{aligned}$$<p><b>3. A megoldás.</b> Az $y$ '
+             'együtthatói $2$ és $4$: az elsőt $2$-vel szorozva egyenlővé tehetők, majd kivonjuk a '
+             'másodikat:</p>$$\\begin{aligned}6x+4y&=3120\\\\ 5x+4y&=2900\\end{aligned}$$<p>A különbség $x=220$. Ezt '
+             'az első eredeti egyenletbe írva $660+2y=1560$, tehát $2y=900$ és $y=450$.</p><p><b>4. Ellenőrzés és '
+             'válasz.</b> $3\\cdot220+2\\cdot450=660+900=1560$ ✔, $5\\cdot220+4\\cdot450=1100+1800=2900$ ✔. Az árak '
+             'pozitívak, és megfelelnek a megadott feltételeknek.</p><p>De a kérdés <b>nem</b> az árakra '
+             'vonatkozott! Négy toll és három füzet ára:</p>$$4\\cdot220+3\\cdot450=880+1350=2230.$$'
+         ),
          hid="pelda-arak",
          lenyilo=("Végeredmény",
                   r'<p>Egy toll $220$ dinár, egy füzet $450$ dinár.</p>'
                   r'<p class="vegeredmeny">Négy toll és három füzet együtt <b>2230 dinár</b>.</p>')),
-   '<p>Figyeld meg, hogy a megoldás <b>három</b> számot tartalmaz: a két ismeretlen értékét '
-   'és a kérdésre adott választ. A dolgozatban mindhármat le kell írni — az első kettőt '
-   'azért, mert azok a rendszer megoldásai, a harmadikat azért, mert az a válasz.</p>',
+   (
+       '<p>A teljes megoldásban mindhárom számot adjuk meg: a két ismeretlen értéke együtt adja a rendszer '
+       'megoldását, a harmadik szám pedig a feladat kérdésére válaszol.</p>'
+   ),
  ]),
 
  ("Kidolgozott példa — három ismeretlen", [
@@ -205,15 +199,16 @@ C1 = [
          lenyilo=("Végeredmény",
                   r'<p>$18$ kicsi, $8$ közepes és $4$ nagy tartály van.</p>'
                   r'<p class="vegeredmeny">A közepes tartályokba összesen <b>40 liter</b> fér.</p>')),
-   '<p>Ez a feladat jól mutatja, hogy a <b>megoldás módszerét</b> is a szöveg választja ki. '
-   'A harmadik egyenlet ($y=2z$) már kifejezett alakban áll — kár lenne determinánsokat '
-   'számolni hozzá.</p>'
-   '<p>Menne persze Cramer-szabállyal is: a rendszer fő determinánsa</p>'
-   '$$D=\\begin{vmatrix}1&1&1\\\\ 2&5&9\\\\ 0&1&-2\\end{vmatrix}=-13\\ne0,$$'
-   '<p>tehát a rendszer határozott, és a megoldás felírható a négy determináns '
-   'hányadosaként. Csak épp <b>négy</b> harmadrendű determinánst kellene kiszámolni '
-   'ahhoz, amihez itt egyetlen behelyettesítés is elég. A gyorsabb út majdnem mindig '
-   'az, amelyik az adott szöveghez illik.</p>',
+   (
+       '<p>Ez a feladat jól mutatja, hogy a <b>megoldás módszerét</b> is a szöveg választja ki. A harmadik '
+       'egyenlet ($y=2z$) már kifejezett alakban áll — kár lenne determinánsokat számolni '
+       'hozzá.</p><p>Menne persze Cramer-szabállyal is: a rendszer fő '
+       'determinánsa</p>$$D=\\begin{vmatrix}1&1&1\\\\ 2&5&9\\\\ 0&1&-2\\end{vmatrix}=-13\\ne0,$$<p>tehát a '
+       'rendszer határozott, és a megoldás felírható a helyettesítési determinánsok és a fő determináns '
+       'három hányadosaként. Csak épp <b>négy</b> harmadrendű determinánst kellene kiszámolni ahhoz, amihez '
+       'itt egyetlen behelyettesítés is elég. A gyorsabb út majdnem mindig az, amelyik az adott szöveghez '
+       'illik.</p>'
+   ),
    doboz("csapda", "Az arány iránya",
          '<p>„Közepesből <b>kétszer annyi</b> van, mint nagyból” — ez $y=2z$, nem $2y=z$. '
          'Az ellenőrzés egyszerű: ha nagyból $4$ van, akkor közepesből $8$-nak kell lennie — '

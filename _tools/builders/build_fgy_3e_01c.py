@@ -174,9 +174,11 @@ ALAP = [
   "palástja és a felszíne?", None,
   '$M=120$ cm²; $F=16\\sqrt3+120\\approx147{,}71$ cm².'),
 
- ("Egy torony alsó része $6$ m alapélű, $5$ m magas négyzetes hasáb; a teteje a hasáb "
-  "fedőlapjára illeszkedő, $4$ m magas szabályos négyoldalú gúla. Mekkora a torony "
-  "térfogata?", None,
+ ((
+      'Egy torony alsó része $6$ m alapélű, $5$ m magas négyzetes hasáb; a teteje a hasáb fedőlapjával '
+      'egybevágó alaplapú, arra illeszkedő, $4$ m magas szabályos négyoldalú gúla. Mekkora a torony '
+      'térfogata?'
+  ), None,
   "$V=180+48=228\\ \\text{m}^3$."),
 
  # --- C3: metszetek (alap 16–19)
@@ -224,9 +226,11 @@ ALAP = [
   "az egész palást?", None,
   'Egy oldallap $26$ cm²; a palást $156$ cm².'),
 
- ("Egy virágcserép csonkagúla alakú, lefelé szűkül: az alja $10$ cm oldalú, a felső "
-  "pereme $16$ cm oldalú négyzet, a magassága $12$ cm. Hány liter föld fér bele, ha a "
-  "peremig töltjük? (Kerekíts egy tizedesre.)", None,
+ ((
+      'Egy virágcserép belső ürege csonkagúla alakú, lefelé szűkül: az alja $10$ cm oldalú, a felső pereme '
+      '$16$ cm oldalú négyzet, a magassága $12$ cm. Hány liter föld fér bele, ha a peremig töltjük? '
+      '(Kerekíts egy tizedesre.)'
+  ), None,
   "$V=\\frac{12}{3}(100+256+160)=2064\\ \\text{cm}^3\\approx 2{,}1$ liter."),
 
  ("Melyik képlet melyik testé? Párosítsd!",
@@ -292,8 +296,7 @@ KOZEP = [
   "Mekkora az <b>alsó</b> darab (a csonkagúla) térfogata?", None,
   '$87{,}5$ cm³.'),
 
- ("Egy szabályos négyoldalú gúla oldaléle $13$ cm, az alaplap köréírt sugara $5$ cm. "
-  "Mekkora a magassága?", None,
+ ('Egy szabályos négyoldalú gúla oldaléle $13$ cm, az alaplap köré írt körének sugara $5$ cm. Mekkora a magassága?', None,
   "$H=\\sqrt{13^2-5^2}=12$ cm."),
 
  ("Egy szabályos négyoldalú csonkagúla alapélei $14$ cm és $8$ cm, az oldallap magassága "

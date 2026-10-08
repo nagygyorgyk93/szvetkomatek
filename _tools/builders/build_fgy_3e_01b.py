@@ -143,7 +143,10 @@ ALAP = [
   ["$3{,}2\\ \\text{m}^3$ hány liter?", "$4500\\ \\text{cm}^3$ hány $\\text{dm}^3$?"],
   ["$3200$ liter", "$4{,}5\\ \\text{dm}^3$"], True),
 
- ("Egy akvárium belső méretei: hossza $80$ cm, szélessége $40$ cm, magassága $50$ cm.",
+ ((
+      'Egy akvárium belső méretei: hossza $80$ cm, szélessége $40$ cm, magassága $50$ cm. Az üveg '
+      'vastagságát és az illesztési ráhagyásokat elhanyagoljuk.'
+  ),
   ["Hány liter víz fér bele, ha színültig töltjük?",
    "Hány négyzetméter üveg kell hozzá, ha felül nyitott?"],
   ["$160$ liter", "$1{,}52\\ \\text{m}^2$ (az alja és négy oldala)"]),

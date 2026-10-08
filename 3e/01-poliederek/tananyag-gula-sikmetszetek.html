@@ -33,7 +33,7 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/prisma.webp" alt="Prizma — a térgeometria oktatótisztje" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Prizma:</b> Vágd el a tüskét félmagasságban. A metszet <b>nem</b> feleakkora területű, mint az alaplap, hanem <b>negyedakkora</b>. Aki ezt elrontja, a Kristálypára felét számolja el — és ez az a hiba, amit Maxi a torz tér-egyenleteiben szándékosan meghagy.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/prisma.webp" alt="Prizma — a térgeometria oktatótisztje" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Prizma:</b> Vágd el a tüskét az alaplappal párhuzamos síkkal, félmagasságban. A metszet <b>nem</b> feleakkora területű, mint az alaplap, hanem <b>negyedakkora</b>. Aki ezt elrontja, a Kristálypára felét számolja el — és ez az a hiba, amit Maxi a torz tér-egyenleteiben szándékosan meghagy.</p></div>
 
     <p>Ebben az egységben a gúla metszeteit nézzük meg, és közben egy olyan szabály bukkan elő, ami az egész geometriában érvényes: a hasonlóság <b>hossz–terület–térfogat</b> arányai.</p>
 
@@ -41,7 +41,7 @@
 
     <div class="doboz tetel" id="tetel-parhuzamos-metszet">
       <p class="cim"><span class="ikon">📘</span> A metszet hasonló az alaplaphoz</p>
-      <p>Ha a gúlát az alaplappal <b>párhuzamos</b> síkkal metsszük, a metszet az alaplaphoz <b>hasonló</b> sokszög. A hasonlóság aránya</p><span class="math display">\[k=\frac{x}{H},\]</span><p>ahol <span class="math inline">\(x\)</span> a <b>metszősík</b> csúcstól mért távolsága (a magasságon mérve), <span class="math inline">\(H\)</span> pedig a gúla magassága. Értelmes metszethez <span class="math inline">\(0&lt;k&lt;1\)</span> kell: <span class="math inline">\(k=1\)</span> maga az alaplap, <span class="math inline">\(k=0\)</span> pedig már csak a csúcs.</p><p>A metszet fölötti rész maga is gúla — az eredetihez hasonló, <span class="math inline">\(k\)</span> arányban kicsinyítve.</p>
+      <p>Ha a gúlát az alaplappal <b>párhuzamos</b> síkkal metsszük, a metszet az alaplaphoz <b>hasonló</b> sokszög. A hasonlóság aránya</p><span class="math display">\[k=\frac{x}{H},\]</span><p>ahol <span class="math inline">\(x\)</span> a <b>metszősík</b> csúcstól mért távolsága (a magasságon mérve), <span class="math inline">\(H\)</span> pedig a gúla magassága. Belső metszethez <span class="math inline">\(0&lt;k&lt;1\)</span> kell: <span class="math inline">\(k=1\)</span> maga az alaplap, <span class="math inline">\(k=0\)</span> pedig már csak a csúcs.</p><p>A metszet fölötti rész maga is gúla — az eredetihez hasonló, <span class="math inline">\(k\)</span> arányban kicsinyítve.</p>
     </div>
 
     <div class="svgcard">
@@ -78,13 +78,13 @@
 
     <div class="doboz pelda" id="pelda-felmagassag">
       <p class="cim"><span class="ikon">✏️</span> Kristály-kamra szimuláció</p>
-      <p>Egy szabályos négyoldalú gúla alapéle <span class="math inline">\(6\)</span> cm, magassága <span class="math inline">\(4\)</span> cm (tehát <span class="math inline">\(B=36\ \text{cm}^2\)</span> és <span class="math inline">\(V=48\ \text{cm}^3\)</span>). Elvágjuk félmagasságban. Mekkora a metszet területe, és mekkora a levágott kis gúla térfogata?</p>
+      <p>Egy szabályos négyoldalú gúla alapéle <span class="math inline">\(6\)</span> cm, magassága <span class="math inline">\(4\)</span> cm (tehát <span class="math inline">\(B=36\ \text{cm}^2\)</span> és <span class="math inline">\(V=48\ \text{cm}^3\)</span>). Elvágjuk az alaplappal párhuzamos síkkal, félmagasságban. Mekkora a metszet területe, és mekkora a levágott kis gúla térfogata?</p>
       <details><summary>Megoldás</summary><div class="bel"><p>Félmagasságban <span class="math inline">\(k=\frac12\)</span>, ezért a metszet oldalai feleakkorák: az oldala <span class="math inline">\(3\)</span> cm. A metszet területe</p><span class="math display">\[T=k^2\cdot B=\frac14\cdot 36=9\ \text{cm}^2,\]</span><p>tehát <b>negyedakkora</b>, nem feleakkora. Ellenőrzés közvetlenül: a metszet <span class="math inline">\(3\)</span> cm oldalú négyzet, területe <span class="math inline">\(3^2=9\ \text{cm}^2\)</span>. ✔</p><p>A levágott kis gúla térfogata</p><span class="math display">\[V_{\text{kis}}=k^3\cdot V=\frac18\cdot 48=6\ \text{cm}^3.\]</span><p>Ez azt is jelenti, hogy az <b>alsó</b> darab (a csonkagúla) térfogata <span class="math inline">\(48-6=42\ \text{cm}^3\)</span> — vagyis a test térfogatának hétnyolcada van alul, pedig félmagasságban vágtunk.</p></div></details>
     </div>
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Maxi trükkje</p>
-      <p><i>„Félmagasságban vágtam, tehát a metszet feleakkora, és a levágott rész is a térfogat fele."</i></p><p>Egyik sem igaz. A <b>hosszak</b> feleződnek, a <b>területek</b> negyedelődnek, a <b>térfogatok</b> nyolcadolódnak. Ez a hasonlóság alapszabálya, és nemcsak a gúlára igaz: ezért kerül négyszer annyi festék egy kétszer akkora táblára, és ezért nyolcszor nehezebb egy kétszer akkora, ugyanabból az anyagból készült szobor.</p>
+      <p><i>„Félmagasságban vágtam, tehát a metszet feleakkora, és a levágott rész is a térfogat fele.”</i></p><p>Egyik sem igaz. A <b>hosszak</b> feleződnek, a <b>területek</b> negyedelődnek, a <b>térfogatok</b> nyolcadolódnak. Ez a hasonlóság alapszabálya, és nemcsak a gúlára igaz: ezért kell négyszer annyi festék egy minden hosszméretében kétszeresére nagyított táblához, ha ugyanolyan festékkel ugyanolyan vastag réteget festünk rá, és ezért nyolcszor nehezebb egy minden hosszméretében kétszeresére nagyított, azonos sűrűségű tömör szobor.</p>
     </div>
 
     <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A területek aránya k² = (1/3)² = 1/9." data-nem="✘ A hosszak aránya 1/3, a területeké ennek a <b>négyzete</b> (1/9), a térfogatoké pedig a <b>köbe</b> (1/27).">
