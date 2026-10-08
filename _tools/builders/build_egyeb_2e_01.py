@@ -70,83 +70,82 @@ print("sympy önteszt: OK")
 
 OSSZ = [
  ("Hatványozás", [
-  '<p><b>Definíció:</b> $a^{n}$ az $n$ tényezős szorzat '
-  '(<a href="tananyag-hatvanyozas.html#def-hatvany">→ tananyag</a>). '
-  '<b>Egész kitevő</b> ($a\\neq 0$): $a^{0}=1$, $a^{-n}=\\dfrac{1}{a^{n}}$, '
-  '$\\left(\\dfrac{a}{b}\\right)^{-n}=\\left(\\dfrac{b}{a}\\right)^{n}$ '
-  '(<a href="tananyag-hatvanyozas.html#def-egesz-kitevo">→</a>). '
-  'A $0^{0}$ <b>nincs értelmezve</b>.</p>',
-  '<p><b>Azonosságok</b> (<a href="tananyag-hatvanyozas.html#tetel-hatvany-azonossagok">→</a>): '
-  '$a^{m}a^{n}=a^{m+n}$ · $\\dfrac{a^{m}}{a^{n}}=a^{m-n}$ · $\\left(a^{m}\\right)^{n}=a^{mn}$ · '
-  '$a^{m}b^{m}=(ab)^{m}$ · $\\dfrac{a^{m}}{b^{m}}=\\left(\\dfrac{a}{b}\\right)^{m}$.</p>',
-  '<p><b>Előjel:</b> $-2^{4}=-16$, de $(-2)^{4}=16$; a negatív <b>kitevő</b> soha nem tesz '
-  'negatívvá ($(-2)^{-2}=\\frac14$) '
-  '(<a href="tananyag-hatvanyozas.html#s4">→</a>). '
-  '<b>Nagyságrend:</b> $a&gt;1$ és $m&gt;n$ → $a^{m}&gt;a^{n}$; $0&lt;a&lt;1$ esetén fordítva '
-  '(<a href="tananyag-hatvanyozas.html#tetel-hatvany-elojel">→</a>).</p>',
+  ('<p><b>Definíció:</b> $a^{n}$ az $n$ tényezős szorzat ($n\\ge1$ egész) (<a '
+ 'href="tananyag-hatvanyozas.html#def-hatvany">→ tananyag</a>). <b>Egész kitevő</b> ($a\\neq 0$): '
+ '$a^{0}=1$, $a^{-n}=\\dfrac{1}{a^{n}}$, '
+ '$\\left(\\dfrac{a}{b}\\right)^{-n}=\\left(\\dfrac{b}{a}\\right)^{n}$ ($a,b\\neq0$) (<a '
+ 'href="tananyag-hatvanyozas.html#def-egesz-kitevo">→</a>). A $0^{0}$ <b>nincs értelmezve</b>.</p>'),
+  ('<p><b>Azonosságok</b> (<a href="tananyag-hatvanyozas.html#tetel-hatvany-azonossagok">→</a>): '
+ 'Nemnulla $a,b$ alapokra és egész $m,n$ kitevőkre: $a^{m}a^{n}=a^{m+n}$ · '
+ '$\\dfrac{a^{m}}{a^{n}}=a^{m-n}$ · $\\left(a^{m}\\right)^{n}=a^{mn}$ · $a^{m}b^{m}=(ab)^{m}$ · '
+ '$\\dfrac{a^{m}}{b^{m}}=\\left(\\dfrac{a}{b}\\right)^{m}$.</p>'),
+  ('<p><b>Előjel:</b> $-2^{4}=-16$, de $(-2)^{4}=16$; a negatív <b>kitevő</b> reciprokot jelent, nem '
+ 'ellentettet ($(-2)^{-2}=\\frac14$) (<a href="tananyag-hatvanyozas.html#s4">→</a>). '
+ '<b>Nagyságrend:</b> $a&gt;1$ és $m&gt;n$ → $a^{m}&gt;a^{n}$; $0&lt;a&lt;1$ esetén fordítva (<a '
+ 'href="tananyag-hatvanyozas.html#tetel-hatvany-elojel">→</a>).</p>'),
   '<p><b>Kitevőben betű:</b> emelj ki! Pl. '
   '$\\dfrac{3^{n+2}-3^{n}}{3^{n+1}}=\\dfrac{3^{n}(9-1)}{3^{n}\\cdot 3}=\\dfrac{8}{3}$ '
   '(<a href="tananyag-hatvanyozas.html#pelda-kitevoben-betu">→</a>).</p>',
  ]),
  ("A hatványfüggvény", [
-  '<p><b>Páros kitevő</b> ($y=x^{2k}$): $D=\\mathbb{R}$, $\\mathcal{R}=[0,+\\infty)$, '
-  '$y$-tengelyre <b>tükrös</b>, egy zérushely ($x=0$), konvex '
-  '(<a href="tananyag-hatvanyfuggveny.html#tetel-paros-kitevo">→</a>).</p>',
-  '<p><b>Páratlan kitevő</b> ($y=x^{2k+1}$): $D=\\mathcal{R}=\\mathbb{R}$, <b>origóra</b> '
-  'szimmetrikus, mindenütt növekvő '
-  '(<a href="tananyag-hatvanyfuggveny.html#tetel-paratlan-kitevo">→</a>).</p>',
-  '<p><b>Negatív kitevő</b> ($y=x^{-n}$): $D=\\mathbb{R}\\setminus\\{0\\}$, hiperbola, '
-  'a két tengely <b>aszimptota</b>; páros $n$ → mindkét ág fent, páratlan $n$ → 1. és 3. síknegyed '
-  '(<a href="tananyag-hatvanyfuggveny.html#tetel-negativ-kitevo">→</a>).</p>',
+  ('<p><b>Páros kitevő</b> ($y=x^{2k}$, $k\\ge1$ egész): $D=\\mathbb{R}$, '
+ '$\\mathcal{R}=[0,+\\infty)$, $y$-tengelyre <b>tükrös</b>, egy zérushely ($x=0$), konvex (<a '
+ 'href="tananyag-hatvanyfuggveny.html#tetel-paros-kitevo">→</a>).</p>'),
+  ('<p><b>Páratlan kitevő</b> ($y=x^{2k+1}$, $k\\ge0$ egész): $D=\\mathcal{R}=\\mathbb{R}$, '
+ '<b>origóra</b> szimmetrikus, mindenütt növekvő (<a '
+ 'href="tananyag-hatvanyfuggveny.html#tetel-paratlan-kitevo">→</a>).</p>'),
+  ('<p><b>Negatív kitevő</b> ($y=x^{-n}$, $n\\ge1$ egész): $D=\\mathbb{R}\\setminus\\{0\\}$; az '
+ '$n=1$ esetben hiperbola; a két tengely <b>aszimptota</b>; páros $n$ → mindkét ág fent, páratlan '
+ '$n$ → 1. és 3. síknegyed (<a '
+ 'href="tananyag-hatvanyfuggveny.html#tetel-negativ-kitevo">→</a>).</p>'),
   '<p><b>Kölcsönös helyzet:</b> ha $x\\in(0,1)$: $x&gt;x^{2}&gt;x^{3}&gt;\\ldots$; '
   'ha $x&gt;1$: $x&lt;x^{2}&lt;x^{3}&lt;\\ldots$ '
   '(<a href="tananyag-hatvanyfuggveny.html#tetel-kolcsonos-helyzet">→</a>).</p>',
  ]),
  ("Gyökvonás", [
-  '<p><b>Definíció:</b> $\\sqrt[n]{a}$ — <b>páratlan</b> $n$: minden valós $a$-ra létezik, egyértelmű; '
-  '<b>páros</b> $n$: csak $a\\ge 0$-ra, és az érték <b>nemnegatív</b> '
-  '(<a href="tananyag-gyokvonas.html#def-nedik-gyok">→</a>).</p>',
-  '<p><b>A nagy csapda:</b> $\\left(\\sqrt[n]{a}\\right)^{n}=a$ mindig, de</p>'
-  '$$\\sqrt[n]{a^{n}}=\\begin{cases} a, &amp; n \\text{ páratlan},\\\\ |a|, &amp; n \\text{ páros}.\\end{cases}$$'
-  '<p>(<a href="tananyag-gyokvonas.html#tetel-gyok-hatvany">→</a>) '
-  'Ha a feladat kiköti, hogy a betűk pozitívak, az abszolút érték elhagyható.</p>',
-  '<p><b>Azonosságok</b> ($a,b\\ge0$) '
-  '(<a href="tananyag-gyokvonas.html#tetel-gyok-azonossagok">→</a>): '
-  '$\\sqrt[n]{a}\\sqrt[n]{b}=\\sqrt[n]{ab}$ · '
-  '$\\dfrac{\\sqrt[n]{a}}{\\sqrt[n]{b}}=\\sqrt[n]{\\dfrac{a}{b}}$ · '
-  '$\\left(\\sqrt[n]{a}\\right)^{m}=\\sqrt[n]{a^{m}}$ · '
-  '$\\sqrt[m]{\\sqrt[n]{a}}=\\sqrt[mn]{a}$ · '
-  '$\\sqrt[n]{a^{m}}=\\sqrt[nk]{a^{mk}}$ · $b\\sqrt[n]{a}=\\sqrt[n]{ab^{n}}$. '
-  '<b>Nincs</b> ilyen: $\\sqrt{a+b}=\\sqrt{a}+\\sqrt{b}$ — ellenpélda $9$ és $16$.</p>',
+  ('<p><b>Definíció:</b> $\\sqrt[n]{a}$ ($n\\ge2$ egész) — <b>páratlan</b> $n$: minden valós $a$-ra '
+ 'létezik, egyértelmű; <b>páros</b> $n$: csak $a\\ge 0$-ra, és az érték <b>nemnegatív</b> (<a '
+ 'href="tananyag-gyokvonas.html#def-nedik-gyok">→</a>).</p>'),
+  ('<p><b>A nagy csapda:</b> $\\left(\\sqrt[n]{a}\\right)^{n}=a$, ahol a gyök létezik, '
+ 'de</p>$$\\sqrt[n]{a^{n}}=\\begin{cases} a, &amp; n \\text{ páratlan},\\\\ |a|, &amp; n \\text{ '
+ 'páros}.\\end{cases}$$<p>(<a href="tananyag-gyokvonas.html#tetel-gyok-hatvany">→</a>) Ha a '
+ 'feladat kiköti, hogy a betűk pozitívak, az abszolút érték elhagyható.</p>'),
+  ('<p><b>Azonosságok</b> ($a,b\\ge0$, $n\\ge2$, $m,k\\ge1$ egész; a beágyazott gyöknél $m\\ge2$, a '
+ 'hányadosnál $b&gt;0$) (<a href="tananyag-gyokvonas.html#tetel-gyok-azonossagok">→</a>): '
+ '$\\sqrt[n]{a}\\sqrt[n]{b}=\\sqrt[n]{ab}$ · '
+ '$\\dfrac{\\sqrt[n]{a}}{\\sqrt[n]{b}}=\\sqrt[n]{\\dfrac{a}{b}}$ · '
+ '$\\left(\\sqrt[n]{a}\\right)^{m}=\\sqrt[n]{a^{m}}$ · $\\sqrt[m]{\\sqrt[n]{a}}=\\sqrt[mn]{a}$ · '
+ '$\\sqrt[n]{a^{m}}=\\sqrt[nk]{a^{mk}}$ · $b\\sqrt[n]{a}=\\sqrt[n]{ab^{n}}$. <b>Nincs</b> ilyen: '
+ '$\\sqrt{a+b}=\\sqrt{a}+\\sqrt{b}$ — ellenpélda $9$ és $16$.</p>'),
  ]),
  ("Műveletek és gyöktelenítés", [
-  '<p><b>Kihozatal/bevitel:</b> keresd a legnagyobb teljes hatvány osztót — $\\sqrt{72}=6\\sqrt2$; '
-  'visszafelé $3\\sqrt5=\\sqrt{45}$ '
-  '(<a href="tananyag-muveletek-gyokokkel.html#pelda-kihozatal">→</a>). '
-  '<b>Összevonás:</b> csak <b>hasonló</b> (azonos gyök alatti) tagok '
-  '(<a href="tananyag-muveletek-gyokokkel.html#pelda-osszevonas">→</a>).</p>',
-  '<p><b>Nevezetes azonosságok:</b> '
-  '$\\left(\\sqrt a+\\sqrt b\\right)\\left(\\sqrt a-\\sqrt b\\right)=a-b$ és '
-  '$\\left(\\sqrt a\\pm\\sqrt b\\right)^{2}=a\\pm 2\\sqrt{ab}+b$ '
-  '(<a href="tananyag-muveletek-gyokokkel.html#tetel-gyokos-nevezetes">→</a>).</p>',
-  '<p><b>Gyöktelenítés:</b> egytagú nevezőnél olyan tényezővel bővíts, hogy teljes hatvány '
-  'keletkezzen ($\\frac{5}{\\sqrt[3]{4}}\\to\\sqrt[3]2$-vel) '
-  '(<a href="tananyag-gyoktelenites-es-racionalis-kitevo.html#pelda-egytagu">→</a>); '
-  'kéttagúnál a <b>konjugálttal</b> — és a <b>számlálót is</b> szorozd! '
-  '(<a href="tananyag-gyoktelenites-es-racionalis-kitevo.html#pelda-kettagu">→</a>)</p>',
-  '<p><b>Összehasonlítás:</b> hozd közös gyökkitevőre (a gyökkitevők LKT-ja), aztán elég a '
-  'gyök alatti számokat összevetni '
-  '(<a href="tananyag-muveletek-gyokokkel.html#pelda-osszehasonlitas">→</a>).</p>',
+  ('<p><b>Kihozatal/bevitel:</b> keresd a teljes négyzetet, illetve teljes köböt a tényezők között — '
+ '$\\sqrt{72}=6\\sqrt2$; visszafelé $3\\sqrt5=\\sqrt{45}$ (<a '
+ 'href="tananyag-muveletek-gyokokkel.html#pelda-kihozatal">→</a>). <b>Összevonás:</b> csak '
+ '<b>hasonló</b> (azonos gyökkitevőjű és gyökmennyiségű) tagok (<a '
+ 'href="tananyag-muveletek-gyokokkel.html#pelda-osszevonas">→</a>).</p>'),
+  ('<p><b>Nevezetes azonosságok</b> ($a,b\\ge0$): $\\left(\\sqrt a+\\sqrt b\\right)\\left(\\sqrt '
+ 'a-\\sqrt b\\right)=a-b$ és $\\left(\\sqrt a\\pm\\sqrt b\\right)^{2}=a\\pm 2\\sqrt{ab}+b$ (<a '
+ 'href="tananyag-muveletek-gyokokkel.html#tetel-gyokos-nevezetes">→</a>).</p>'),
+  ('<p><b>Gyöktelenítés:</b> egytagú nevezőnél olyan tényezővel bővíts, hogy teljes hatvány '
+ 'keletkezzen ($\\frac{5}{\\sqrt[3]{4}}\\to\\sqrt[3]2$-vel) (<a '
+ 'href="tananyag-gyoktelenites-es-racionalis-kitevo.html#pelda-egytagu">→</a>); a bemutatott '
+ 'kéttagú négyzetgyökös nevezőknél a <b>konjugálttal</b> — és a <b>számlálót is</b> szorozd! (<a '
+ 'href="tananyag-gyoktelenites-es-racionalis-kitevo.html#pelda-kettagu">→</a>)</p>'),
+  ('<p><b>Összehasonlítás:</b> nemnegatív gyökmennyiségek esetén hozd közös gyökkitevőre (a '
+ 'gyökkitevők LKT-ja), aztán elég a gyök alatti számokat összevetni. Negatív gyökök esetén előbb '
+ 'vizsgáld meg az előjeleket (<a '
+ 'href="tananyag-muveletek-gyokokkel.html#pelda-osszehasonlitas">→</a>).</p>'),
  ]),
  ("Racionális kitevőjű hatvány", [
-  '<p><b>Definíció</b> ($a&gt;0$): $a^{\\frac{m}{n}}=\\sqrt[n]{a^{m}}$ '
-  '(<a href="tananyag-gyoktelenites-es-racionalis-kitevo.html#def-racionalis-kitevo">→</a>). '
-  'Ezzel a hatványozás <b>öt azonossága minden racionális kitevőre</b> érvényes.</p>',
-  '<p><b>Miért kell $a&gt;0$?</b> Negatív alapnál $\\sqrt[3]{-8}=-2$, de '
-  '$\\sqrt[6]{(-8)^{2}}=2$ — pedig $\\frac13=\\frac26$. '
-  '<b>Stratégia:</b> írj mindent tört kitevőre, add össze a kitevőket, majd — ha kell — '
-  'írd vissza gyökös alakba '
-  '(<a href="tananyag-gyoktelenites-es-racionalis-kitevo.html#pelda-vegyes">→</a>).</p>',
+  ('<p><b>Definíció</b> ($a&gt;0$, $m\\in\\mathbb{Z}$, $n\\ge2$ egész): '
+ '$a^{\\frac{m}{n}}=\\sqrt[n]{a^{m}}$ (<a '
+ 'href="tananyag-gyoktelenites-es-racionalis-kitevo.html#def-racionalis-kitevo">→</a>). Ezzel a '
+ 'hatványozás <b>öt azonossága minden racionális kitevőre</b> érvényes.</p>'),
+  ('<p><b>Miért kell $a&gt;0$?</b> Negatív alapnál $\\sqrt[3]{-8}=-2$, de $\\sqrt[6]{(-8)^{2}}=2$ — '
+ 'pedig $\\frac13=\\frac26$. <b>Stratégia:</b> írd a gyököket hatványalakba, alkalmazd a '
+ 'hatványozás azonosságait, majd — ha kell — írd vissza gyökös alakba (<a '
+ 'href="tananyag-gyoktelenites-es-racionalis-kitevo.html#pelda-vegyes">→</a>).</p>'),
  ]),
  ("Komplex számok", [
   '<p><b>Képzetes egység:</b> $i^{2}=-1$; <b>algebrai alak:</b> $z=x+yi$, ahol '
@@ -160,21 +159,21 @@ OSSZ = [
   '(<a href="tananyag-komplex-szam-fogalma.html#def-konjugalt-modulusz">→</a>). '
   'Kulcs: $z\\cdot\\overline{z}=|z|^{2}$ — mindig <b>valós</b> '
   '(<a href="tananyag-komplex-szam-fogalma.html#tetel-z-zkonj">→</a>).</p>',
-  '<p><b>Műveletek:</b> összeadás/kivonás tagonként; szorzás kibontással, $i^{2}\\to-1$ '
-  'helyettesítéssel; <b>osztás:</b> bővíts a nevező konjugáltjával — ugyanaz a fogás, mint a '
-  'gyöktelenítés '
-  '(<a href="tananyag-muveletek-komplex-szamokkal.html#tetel-komplex-osztas">→</a>).</p>',
-  '<p><b>$i$ hatványai — négyes ciklus:</b> $i^{4k}=1$, $i^{4k+1}=i$, $i^{4k+2}=-1$, '
-  '$i^{4k+3}=-i$; oszd a kitevőt $4$-gyel és nézd a maradékot '
-  '(<a href="tananyag-i-hatvanyai-es-egyenletek.html#tetel-i-hatvanyai">→</a>).</p>',
-  '<p><b>Egyenletek:</b> $az=b$ → osztás (konjugálttal bővítve). Ha $z$ és $\\overline{z}$ is '
-  'szerepel: írd $z=x+yi$ alakban, és bontsd két valós egyenletre '
-  '(<a href="tananyag-i-hatvanyai-es-egyenletek.html#pelda-z-es-konjugalt">→</a>).</p>',
-  doboz("csapda", "Amire a dolgozaton a legtöbben ráfutnak",
-        '<p>1) $\\sqrt{a^{2}}=|a|$, nem $a$. &nbsp; 2) $-2^{4}\\neq(-2)^{4}$. &nbsp; '
-        '3) $(2i)^{2}=-4$, nem $-2$. &nbsp; 4) Bővítéskor a <b>számlálót is</b> szorozd. &nbsp; '
-        '5) Negatív szám négyzetgyökét ne írd $\\sqrt{-9}$ alakban — az $x^{2}=-9$ '
-        'megoldásai $\\pm 3i$.</p>'),
+  ('<p><b>Műveletek:</b> összeadás/kivonás tagonként; szorzás kibontással, $i^{2}\\to-1$ '
+ 'helyettesítéssel; <b>osztás:</b> a nevező nem lehet nulla; bővíts a konjugáltjával — ugyanaz a '
+ 'fogás, mint a gyöktelenítés (<a '
+ 'href="tananyag-muveletek-komplex-szamokkal.html#tetel-komplex-osztas">→</a>).</p>'),
+  ('<p><b>$i$ hatványai — négyes ciklus:</b> $i^{4k}=1$, $i^{4k+1}=i$, $i^{4k+2}=-1$, $i^{4k+3}=-i$ '
+ '($k$ egész); oszd a kitevőt $4$-gyel és nézd a maradékot (<a '
+ 'href="tananyag-i-hatvanyai-es-egyenletek.html#tetel-i-hatvanyai">→</a>).</p>'),
+  ('<p><b>Egyenletek:</b> Ha $a\\neq0$, akkor $az=b$ → $z=b/a$ (szükség esetén konjugálttal '
+ 'bővítve). Ha $z$ és $\\overline{z}$ is szerepel: írd $z=x+yi$ alakban, és bontsd két valós '
+ 'egyenletre (<a href="tananyag-i-hatvanyai-es-egyenletek.html#pelda-z-es-konjugalt">→</a>).</p>'),
+  doboz("csapda", 'Gyakori hibák',
+        ('<p>1) $\\sqrt{a^{2}}=|a|$, nem $a$. &nbsp; 2) $-2^{4}\\neq(-2)^{4}$. &nbsp; 3) $(2i)^{2}=-4$, '
+ 'nem $-2$. &nbsp; 4) Bővítéskor a <b>számlálót is</b> szorozd. &nbsp; 5) Ebben a tananyagban a '
+ 'gyökjelet valós gyökként használjuk: a negatív szám négyzetgyökét nem értelmezzük, ezért ne írd '
+ '$\\sqrt{-9}$ alakban — az $x^{2}=-9$ megoldásai $\\pm 3i$.</p>')),
   '<div class="gyakorolj"><span class="ikon">🎯</span><p>Élesben: a '
   '<a href="feladatok-komplex-szamok.html#gyak-dolgozat">gyakorló dolgozattal</a> mérd fel magad, '
   'majd indulj a <a href="terepkuldetes.html">Geno-szigeti terepküldetésre</a>!</p></div>',
@@ -183,8 +182,8 @@ OSSZ = [
 
 lap(**T, fajl="osszefoglalo.html", cim="Taktikai memóriakártya",
     cim_tiszta="Taktikai memóriakártya", itt="Taktikai memóriakártya",
-    alcim="A Képzelet Határa minden definíciója, azonossága és fogása egy helyen — "
-          "ismétléshez, dolgozat előtti átfutáshoz, nyomtatáshoz.",
+    alcim=('A Képzelet Határa főbb definíciói, azonosságai és számolási fogásai egy helyen — ismétléshez, '
+ 'dolgozat előtti átfutáshoz, nyomtatáshoz.'),
     chip="A Képzelet Határa · összefoglaló", chip_tipus="összefoglaló",
     szakaszok=[("📇 " + OSSZ[0][0], OSSZ[0][1])] + OSSZ[1:],
     elozo=("feladatok-komplex-szamok.html", "Feladatok — komplex számok"),
@@ -195,26 +194,23 @@ print("✓ osszefoglalo.html")
 
 TEREP = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>X. Károly professzor:</b> Kadét, ez már nem szimuláció. Az UMOTRON bemérte Dr. Baljós bázisát '
-         '<b>Geno-sziget</b> szigetén: egy rezonancia-torony, amely az M-Hullámot erősíti. '
-         'Három védelmi réteget kell áttörnie — mindegyikhez más matematikai fegyver kell. '
-         'A jelentését <b>egyben</b> adja le: minden fázis végén írja fel a kulcsértéket.'),
+   brief(('<b>X. Károly professzor:</b> Kadét, ez már nem szimuláció. Az UMOTRON bemérte Dr. Baljós bázisát '
+ '<b>Geno-szigeten</b>: egy rezonanciatorony, amely az M-Hullámot erősíti. Három védelmi réteget '
+ 'kell áttörnöd — mindegyikhez más matematikai fegyver kell. A jelentésedet <b>egyben</b> add le: '
+ 'minden fázis végén írd fel a kulcsértéket.')),
    '<p class="lead">Ez a küldetés a teljes témakört használja: hatványozást, gyökvonást és '
    'komplex számokat. Dolgozz füzetben, a végén pedig foglald össze a három fázis eredményét '
    'egyetlen jelentésben. <b>A megoldások nincsenek fent</b> — ezt a bevetést a tanárod értékeli.</p>',
  ]),
- ("Fázis I — Az energiaszint dekódolása", [
+ ('Fázis I — A generátorkódok dekódolása', [
    doboz("pelda", "I. védelmi réteg: a generátorok",
-         '<p>A torony három generátora rendre $2^{12}$, $2^{9}$ és $2^{-3}$ egységnyi energiát ad le.</p>'
-         '<ol class="reszfeladatok">'
-         '<li>Add meg a három energia <b>szorzatát</b> egyetlen hatvány alakjában!</li>'
-         '<li>A pajzs energiaigénye $\\dfrac{6^{5}\\cdot 3^{-2}}{2^{3}\\cdot 3^{2}}$. '
-         'Számítsd ki a <b>pontos értékét</b>!</li>'
-         '<li>A műszerek $4{,}2\\cdot 10^{7}$ és $6\\cdot 10^{-3}$ mérőszámot mutatnak. '
-         'Mennyi a <b>hányadosuk</b> normálalakban?</li>'
-         '<li>Az M-Hullám erőssége $\\dfrac{5^{n+2}-5^{n}}{5^{n+1}}$, ahol $n$ a lüktetés sorszáma. '
-         'Mutasd meg, hogy az érték <b>nem függ $n$-től</b>, és add meg!</li>'
-         '</ol>'),
+         ('<p>A torony három generátorának beállítási kódja rendre $2^{12}$, $2^{9}$ és $2^{-3}$.</p><ol '
+ 'class="reszfeladatok"><li>Add meg a három kód <b>szorzatát</b> egyetlen hatvány '
+ 'alakjában!</li><li>A pajzs energiaigénye $\\dfrac{6^{5}\\cdot 3^{-2}}{2^{3}\\cdot 3^{2}}$. '
+ 'Számítsd ki a <b>pontos értékét</b>!</li><li>A műszerek $4{,}2\\cdot 10^{7}$ és $6\\cdot '
+ '10^{-3}$ mérőszámot mutatnak. Mennyi a <b>hányadosuk</b> normálalakban?</li><li>Az M-Hullám '
+ 'erőssége $\\dfrac{5^{n+2}-5^{n}}{5^{n+1}}$, ahol $n$ a lüktetés sorszáma. Mutasd meg, hogy az '
+ 'érték <b>nem függ $n$-től</b>, és add meg!</li></ol>')),
  ]),
  ("Fázis II — A pajzsfrekvencia hangolása", [
    doboz("pelda", "II. védelmi réteg: a rezonanciapajzs",
@@ -232,33 +228,30 @@ TEREP = [
  ]),
  ("Fázis III — A kapu koordinátái", [
    doboz("pelda", "III. védelmi réteg: a dimenziókapu",
-         '<p>A kapu a <b>Gauss-síkon</b> nyílik. Két sarokpontja $z_{1}=6+8i$ és $z_{2}=2-3i$.</p>'
-         '<ol class="reszfeladatok">'
-         '<li>Ábrázold a két pontot, és add meg $\\left|z_{1}\\right|$-et és '
-         '$\\overline{z_{2}}$-t!</li>'
-         '<li>A kapu középpontja $\\dfrac{z_{1}+z_{2}}{2}$. Számítsd ki!</li>'
-         '<li>A stabilizáló kód $z_{1}\\cdot z_{2}$. Számítsd ki!</li>'
-         '<li>A zárókulcs az a $z$, amelyre $(3-i)z=20$. Oldd meg!</li>'
-         '<li>Az önmegsemmisítő szekvencia $i^{2027}+i^{2026}$. Mennyi?</li>'
-         '<li><b>Dr. Baljós utolsó csapdája:</b> a kapu csak akkor marad nyitva, ha megtalálod '
-         'azt a $z$ komplex számot, amelyre $2z+3\\overline{z}=25-5i$.</li>'
-         '</ol>'),
+         ('<p>A kapu a <b>Gauss-síkon</b> nyílik. Két szemközti sarokpontja $z_{1}=6+8i$ és '
+ '$z_{2}=2-3i$.</p><ol class="reszfeladatok"><li>Ábrázold a két pontot, és add meg '
+ '$\\left|z_{1}\\right|$-et és $\\overline{z_{2}}$-t!</li><li>A kapu középpontja '
+ '$\\dfrac{z_{1}+z_{2}}{2}$. Számítsd ki!</li><li>A stabilizáló kód $z_{1}\\cdot z_{2}$. Számítsd '
+ 'ki!</li><li>A zárókulcs az a $z$, amelyre $(3-i)z=20$. Oldd meg!</li><li>Az önmegsemmisítő '
+ 'szekvencia $i^{2027}+i^{2026}$. Mennyi?</li><li><b>Dr. Baljós utolsó csapdája:</b> a kapu csak '
+ 'akkor marad nyitva, ha megtalálod azt a $z$ komplex számot, amelyre '
+ '$2z+3\\overline{z}=25-5i$.</li></ol>')),
    doboz("erdekesseg", "Jelentés a Főhadiszállásnak",
-         '<p>Zárásként foglald össze <b>egyetlen táblázatban</b> a három fázis kulcsértékeit: '
-         'az energiaszintet, a két gyöktelenített frekvenciát és a kapu zárókulcsát. '
-         'Írj mellé <b>2–3 mondatot</b> arról, melyik fázisnál melyik azonosságot használtad — '
-         'az X. Károly professzor a gondolatmenetre is kíváncsi, nem csak a számokra.</p>'),
-   brief('<b>X. Károly professzor:</b> Ha a hat kulcsérték helyes, a torony leáll, és Geno-sziget felett '
-         'elül az M-Hullám. De ne dőljön hátra, kadét: Dr. Baljós nem lineárisan gondolkodik. '
-         'A következő támadás <b>másodfokon</b> érkezik — és ott már a röppályát is ki kell '
-         'számolnia. Nagol és Küklopsz készen áll.', outro=True),
+         ('<p>Zárásként foglald össze <b>egyetlen táblázatban</b> a három fázis kulcsértékeit: a '
+ 'generátorkódok szorzatát (I/1), a két gyöktelenített frekvenciát (II/1–2) és a kapu zárókulcsát '
+ '(III/4). Írj mellé <b>2–3 mondatot</b> arról, melyik fázisnál melyik azonosságot használtad — X. '
+ 'Károly professzor a gondolatmenetre is kíváncsi, nem csak a számokra.</p>')),
+   brief(('<b>X. Károly professzor:</b> Ha a jelentés négy kulcsértéke helyes, a torony leáll, és '
+ 'Geno-sziget felett elül az M-Hullám. De ne dőlj hátra, kadét: Dr. Baljós nem lineárisan '
+ 'gondolkodik. A következő támadás <b>másodfokon</b> érkezik — és ott már a röppályát is ki kell '
+ 'számolnod. Nagol és Küklopsz készen áll.'), outro=True),
  ]),
 ]
 
 lap(**T, fajl="terepkuldetes.html", cim="Geno-szigeti terepküldetés",
     cim_tiszta="Geno-szigeti terepküldetés", itt="Geno-szigeti terepküldetés",
-    alcim="Háromfázisú bevetés Dr. Baljós rezonancia-tornya ellen: hatványok, gyöktelenített "
-          "frekvenciák és a dimenziókapu komplex koordinátái.",
+    alcim=('Háromfázisú bevetés Dr. Baljós rezonanciatornya ellen: hatványok, gyöktelenített frekvenciák és '
+ 'a dimenziókapu komplex koordinátái.'),
     chip="A Képzelet Határa · terepküldetés", chip_tipus="terepküldetés",
     szakaszok=TEREP,
     elozo=("osszefoglalo.html", "Taktikai memóriakártya"),
@@ -345,11 +338,11 @@ DR_N = [
  ("Számítsd ki! $(1+i)^{10}$", None, "$32i$"),
 ]
 
-dr_brief = ('<div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — A Képzelet Határa modul. '
-            'Ez a Vészterem otthoni edzésváltozata: a <b>teljes témakört</b> lefedi — hatványozás, '
-            'hatványfüggvény, gyökvonás, gyöktelenítés, racionális kitevő és komplex számok. '
-            'Haladj a fokozatokon: zöld → sárga → piros. A végeredményt lenyithatod, de előbb '
-            'küzdd le magad!</p></div>')
+dr_brief = (('<div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — A Képzelet Határa modul. Ez a '
+ 'Vészterem otthoni edzésváltozata: a <b>teljes témakört</b> lefedi — hatványozás, '
+ 'hatványfüggvény, gyökvonás, gyöktelenítés, racionális kitevő és komplex számok. Haladj a '
+ 'fokozatokon: zöld → sárga → piros. A végeredményt lenyithatod, de előbb próbáld meg '
+ 'önállóan!</p></div>'))
 
 dr_body = (f'    {dr_brief}\n'
            '    <h2 id="alap">🟢 Alapfokozat</h2>\n' + cards(DR_A, "alap", "alap") +
@@ -378,9 +371,9 @@ K = {}
 K[1] = kartya("tananyag-hatvanyozas.html", "Hatványozás egész kitevővel",
         "A hatvány fogalma és azonosságai, a nulla és a negatív kitevő, előjelszabályok, összetett kifejezések")
 K[2] = kartya("tananyag-hatvanyfuggveny.html", "A hatványfüggvény és grafikonja",
-        "Az $y=x^{{n}}$ családok páros, páratlan és negatív kitevőre, kölcsönös helyzet, aszimptoták")
+        'Az $y=x^{n}$ családok páros, páratlan és negatív kitevőre, kölcsönös helyzet, aszimptoták')
 K[3] = kartya("tananyag-gyokvonas.html", "Gyökvonás",
-        "Az $n$-edik gyök definíciója, a $\\\\sqrt[n]{{a^{{n}}}}=|a|$ csapda és a gyökvonás hat azonossága")
+        'Az $n$-edik gyök definíciója, a $\\sqrt{a^{2}}=|a|$ összefüggés és a gyökvonás hat azonossága')
 K[4] = kartya("tananyag-muveletek-gyokokkel.html", "Műveletek a gyökökkel",
         "Kihozatal és bevitel, összevonás, nevezetes azonosságok, beágyazott gyökök, összehasonlítás")
 K[5] = kartya("tananyag-gyoktelenites-es-racionalis-kitevo.html", "Gyöktelenítés és racionális kitevő",
@@ -390,7 +383,7 @@ K[6] = kartya("tananyag-komplex-szam-fogalma.html", "A komplex szám fogalma",
 K[7] = kartya("tananyag-muveletek-komplex-szamokkal.html", "Műveletek a komplex számokkal",
         "A négy alapművelet — az osztás a nevező konjugáltjával való bővítéssel")
 K[8] = kartya("tananyag-i-hatvanyai-es-egyenletek.html", "Az $i$ hatványai és egyenletek",
-        "A négyes ciklus, összetett kifejezések, lineáris egyenletek, $z$ és $\\\\overline{{z}}$ együtt")
+        'A négyes ciklus, összetett kifejezések, lineáris egyenletek, $z$ és $\\overline{z}$ együtt')
 K[9] = kartya("feladatok-hatvanyozas.html", "🏋️ Hatványozás — feladatok",
         "Kiképzési Adattár: Alap · Közép · Nehéz + Joker")
 K[10] = kartya("feladatok-gyokvonas.html", "🏋️ Gyökvonás — feladatok",
@@ -400,7 +393,7 @@ K[11] = kartya("feladatok-komplex-szamok.html", "🏋️ Komplex számok — fel
 K[12] = kartya("feladatok-hazi.html", "🕹️ Vészterem — házi feladatok",
         "A teljes témakört lefedő házi feladatsor, óraszám-arányosan")
 K[13] = kartya("terepkuldetes.html", "🌋 Geno-szigeti terepküldetés",
-        "Háromfázisú bevetés Dr. Baljós rezonancia-tornya ellen — a teljes témakör egyben")
+        'Háromfázisú bevetés Dr. Baljós rezonanciatornya ellen — a teljes témakör egyben')
 K[14] = kartya("osszefoglalo.html", "📇 Taktikai memóriakártya",
         "Minden definíció, azonosság és tipikus csapda egy helyen — dolgozat előtti átfutáshoz")
 
@@ -436,10 +429,10 @@ INDEX = f'''<!DOCTYPE html>
   <div class="meta-sor"><span class="chip ora">22 óra</span><span class="statusz kesz">kész</span></div>
   <div class="brief"><p>🧬 <b>Szektor 01 — A Képzelet Határa.</b> Kiképzők: <b>Vihar Vera</b>
   (hatványok, gyökök) és <b>X. Károly professzor</b> (komplex számok). A Nullpont-anomália lezárása után
-  a valóság megremegett: az M-Hullám olyan egyenleteket sodor a kampuszra, amelyeknek a régi
-  számhalmazokban <b>nincs megoldásuk</b>. Célod uralni a vihar erejét, visszafejteni a gyökereit —
-  majd átlépni a <b>képzelet határán</b>, és megérteni a valóság új, komplex dimenzióit,
-  mielőtt <b>Dr. Baljós</b> visszafordíthatatlan jövőt kódol a rendszerbe.</p></div>
+  az UMOTRON új kódjaiban hatványok és gyökök szerepelnek. Vihar Verával átismétled
+  a hatványozás szabályait, majd gyökös kifejezésekkel számolsz. X. Károly professzorral
+  megismered a <b>komplex számokat</b>, amelyek között olyan egyenleteket is megoldhatsz,
+  amelyeknek a valós számok között nincs megoldásuk.</p></div>
 </div>
 <main class="lap">
   <div class="tartalom">

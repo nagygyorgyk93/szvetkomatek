@@ -33,9 +33,9 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/vihar_vera.webp" alt="Vihar Vera — az időjárás úrnője" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Vihar Vera:</b> Eddig előre néztünk: adott alap, adott kitevő, mekkora az eredmény? Most fordítsd meg a kérdést. Ismerem a vihar <b>energiáját</b> — mekkora volt a kiváltó ok? Ez a gyökvonás: a hatványozás visszafejtése. És itt van az évad első igazi csapdája — a <b>páros</b> gyökkitevő nem viselkedik úgy, mint a páratlan. Dr. Baljós pontosan ezen a résen fér be.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/vihar_vera.webp" alt="Vihar Vera — az időjárás úrnője" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Vihar Vera:</b> Eddig adott alapból és kitevőből számoltuk ki a hatvány értékét. Most fordítsd meg a kérdést: ha ismerjük az értéket és a kitevőt, mit tudunk az alapról? A gyökvonásnál külön kell figyelnünk a <b>páros és a páratlan gyökkitevőre</b>.</p></div>
 
-    A gyökvonás a hatványozás <b>visszafejtése</b>: azt a számot keressük, amelynek adott kitevőjű hatványa a megadott szám. Páros kitevőnél ebből a keresésből mindjárt két jelölt kerül ki — ezért kell megállapodni. A definíciót viszont <b>két külön esetre</b> kell bontanunk — és ennek a kettéválasztásnak messzemenő következményei lesznek.
+    A gyökvonás a hatványozás <b>visszafejtése</b>: azt a számot keressük, amelynek adott kitevőjű hatványa a megadott szám. Pozitív számhoz páros kitevő esetén két lehetséges alap tartozik, ezért a gyök jelöléséhez megállapodásra van szükség. A definíciót <b>két esetre</b> bontjuk.
 
     <h2 id="s1">Az <span class="math inline">\(n\)</span>-edik gyök fogalma</h2>
 
@@ -47,7 +47,7 @@
     <div class="doboz pelda" id="pelda-gyok-ertekek">
       <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
       <p>Számítsd ki, ahol létezik: <span class="math inline">\(\sqrt{144}\)</span>, <span class="math inline">\(\sqrt[3]{-125}\)</span>, <span class="math inline">\(\sqrt[4]{16}\)</span>, <span class="math inline">\(\sqrt[5]{-32}\)</span>, <span class="math inline">\(\sqrt{-49}\)</span>.</p>
-      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(\sqrt{144}=12\)</span> (nem <span class="math inline">\(\pm12\)</span>! a négyzetgyök definíció szerint <b>nemnegatív</b>) · <span class="math inline">\(\sqrt[3]{-125}=-5\)</span> (páratlan gyökkitevő, negatív alap megengedett) · <span class="math inline">\(\sqrt[4]{16}=2\)</span> · <span class="math inline">\(\sqrt[5]{-32}=-2\)</span> · <span class="math inline">\(\sqrt{-49}\)</span> a valós számok halmazán <b>nem értelmezett</b> (páros gyökkitevő, negatív alap).</p></div></details>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(\sqrt{144}=12\)</span> (nem <span class="math inline">\(\pm12\)</span>! a négyzetgyök definíció szerint <b>nemnegatív</b>) · <span class="math inline">\(\sqrt[3]{-125}=-5\)</span> (páratlan gyökkitevő, negatív gyökmennyiség megengedett) · <span class="math inline">\(\sqrt[4]{16}=2\)</span> · <span class="math inline">\(\sqrt[5]{-32}=-2\)</span> · <span class="math inline">\(\sqrt{-49}\)</span> a valós számok halmazán <b>nem értelmezett</b> (páros gyökkitevő, negatív gyökmennyiség).</p></div></details>
     </div>
 
     <div class="doboz erdekesseg">
@@ -63,7 +63,7 @@
     </div>
 
     <div class="doboz csapda">
-      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
+      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós víruskódja</p>
       <p>A mutálódott kódban ez áll: <span class="math inline">\(\sqrt{a^{2}}=a\)</span> <b>minden valós <span class="math inline">\(a\)</span>-ra</b>. <b>Hamis.</b> Próbáld ki <span class="math inline">\(a=-7\)</span>-tel:</p><span class="math display">\[\sqrt{(-7)^{2}}=\sqrt{49}=7\neq -7.\]</span><p>A helyes alak <span class="math inline">\(\sqrt{a^{2}}=|a|\)</span>. Páratlan gyökkitevőnél viszont nincs baj: <span class="math inline">\(\sqrt[3]{(-7)^{3}}=\sqrt[3]{-343}=-7\)</span>. <b>Ökölszabály:</b> ha a gyökkitevő páros és a betűről nem tudod, hogy nemnegatív, <b>abszolút érték kell</b>. Ha a feladat kiköti, hogy a betűk pozitívak, akkor elhagyható.</p>
     </div>
 
@@ -76,7 +76,7 @@
 
     <h2 id="s3">A gyökvonás azonosságai</h2>
 
-    Az alábbi szabályok <span class="math inline">\(a,b\ge 0\)</span> és <span class="math inline">\(m,n,k\in\mathbb{N}\)</span>, <span class="math inline">\(n\ge 2\)</span>, <span class="math inline">\(m,k\ge 1\)</span> mellett mindig érvényesek. Páratlan gyökkitevőnél a szorzás, az osztás, a hatványozás és a tényező be-, illetve kivitele negatív alapra is igaz. A <b>bővítés</b> azonban ilyenkor is csak páratlan <span class="math inline">\(k\)</span>-val végezhető el: <span class="math inline">\(\sqrt[3]{-8}=-2\)</span>, de <span class="math inline">\(\sqrt[6]{(-8)^{2}}=\sqrt[6]{64}=2\)</span>. A feladatokban a biztonság kedvéért többnyire nemnegatív alapokkal dolgozunk.
+    Az alábbi szabályok <span class="math inline">\(a,b\ge0\)</span>, valamint egész <span class="math inline">\(m,n,k\)</span> mellett érvényesek, ahol <span class="math inline">\(n\ge2\)</span> és <span class="math inline">\(m,k\ge1\)</span>. A hányadosnál <span class="math inline">\(b&gt;0\)</span> szükséges, a beágyazott gyöknél pedig <span class="math inline">\(m\ge2\)</span>. Páratlan gyökkitevőnél a szorzás, az osztás, a hatványozás és a tényező be-, illetve kivitele negatív gyökmennyiségre is használható. <b>Negatív gyökmennyiséget csak páratlan számmal bővíthetünk</b>: <span class="math inline">\(\sqrt[3]{-8}=-2\)</span>, de <span class="math inline">\(\sqrt[6]{(-8)^{2}}=\sqrt[6]{64}=2\)</span>. Nemnegatív gyökmennyiségnél páros számmal is szabad bővíteni.
 
     <div class="doboz tetel" id="tetel-gyok-azonossagok">
       <p class="cim"><span class="ikon">📘</span> A gyökvonás hat azonossága</p>
@@ -84,11 +84,11 @@
     </div>
 
     <div class="doboz csapda">
-      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
-      <p>Nincs olyan azonosság, hogy <span class="math inline">\(\sqrt{a+b}=\sqrt{a}+\sqrt{b}\)</span>. Ellenpélda:</p><span class="math display">\[\sqrt{9+16}=\sqrt{25}=5,\qquad\text{de}\qquad \sqrt{9}+\sqrt{16}=3+4=7.\]</span><p>A gyökvonás a <b>szorzással és osztással</b> barátkozik — az összeadással soha.</p>
+      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós víruskódja</p>
+      <p>Nincs olyan azonosság, hogy <span class="math inline">\(\sqrt{a+b}=\sqrt{a}+\sqrt{b}\)</span>. Ellenpélda:</p><span class="math display">\[\sqrt{9+16}=\sqrt{25}=5,\qquad\text{de}\qquad \sqrt{9}+\sqrt{16}=3+4=7.\]</span><p>Egy összeg gyökét általában <b>nem bonthatjuk a tagok gyökeinek összegére</b>.</p>
     </div>
 
-    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ Így van: az azonosság a SZORZÁSRA szól. Számokkal: 1,41 + 1,73 ≈ 3,15, míg √5 ≈ 2,24." data-nem="✘ A √a·√b = √(ab) a szorzásra érvényes; összegre nincs ilyen szabály. 1,41 + 1,73 ≈ 3,15, míg √5 ≈ 2,24 — nem egyenlők.">
+    <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ Így van: az azonosság a SZORZÁSRA szól. Számokkal: √2 + √3 ≈ 3,15, míg √5 ≈ 2,24." data-nem="✘ A √a·√b = √(ab) a szorzásra érvényes; összegre nincs ilyen szabály. √2 + √3 ≈ 3,15, míg √5 ≈ 2,24 — nem egyenlők.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
       <p>Igaz-e, hogy <span class="math inline">\(\sqrt{2}+\sqrt{3}=\sqrt{5}\)</span>?</p>
       <div class="opciok"><button>Csak pozitív számokra igaz.</button><button>Nem — a gyökvonás összegre nem bontható.</button><button>Igen, mindig.</button></div>
@@ -109,7 +109,7 @@
     <!-- media:end 2e01-gyokvonas-video -->
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-gyokvonas.html#alap-1">🐾 Bestia-protokoll <span class="cimke">A 1–5</span></a><a class="sav bruno" href="feladatok-gyokvonas.html#kozep-1">🔥 Főnix-protokoll <span class="cimke">K 1–4</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/vihar_vera.webp" alt="Vihar Vera — az időjárás úrnője" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Vihar Vera:</b> Megvan a nyelvtan — jöjjön a mondatalkotás. A gyököket össze kell tudnod vonni, szorozni, egymásba ágyazni. Ez a rész tiszta kézügyesség: sok kis lépés, mindegyik egyszerű, de egyetlen elrontott előjel az egész számítást viszi.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/vihar_vera.webp" alt="Vihar Vera — az időjárás úrnője" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Vihar Vera:</b> Most az azonosságokat használjuk számolás közben: tényezőt viszünk ki és be, összevonjuk a hasonló gyökös tagokat, majd szorzunk és osztunk. Haladj lépésenként, és figyelj az előjelekre.</p></div>
     <div class="lapozo">
       <a class="elozo" href="feladatok-hatvanyozas.html"><span class="irany">← Előző</span><span class="hova">Feladatok — hatványozás</span></a>
       <a class="kov" href="tananyag-muveletek-gyokokkel.html"><span class="irany">Következő →</span><span class="hova">Műveletek a gyökökkel</span></a>

@@ -33,14 +33,14 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/nagol_w.webp" alt="Nagol — a morcos kiképzőtiszt" width="1200" height="670" decoding="async"><p>📡 <b>Nagol:</b> Van egy trükk, amit François Viète francia matematikus talált ki a 16. században, és azóta minden vizsgázó hálás érte. A gyökök <b>összege</b> és <b>szorzata</b> ránézésre kiolvasható az együtthatókból — megoldóképlet nélkül. Ez nemcsak gyorsít: ezzel lehet <b>szétvágni</b> a másodfokú kifejezést két elsőfokú tényezőre. Az én szakterületem.</p></div>
+    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/nagol_w.webp" alt="Nagol — a morcos kiképzőtiszt" width="1200" height="670" decoding="async"><p>📡 <b>Nagol:</b> A gyökök <b>összege és szorzata</b> az együtthatókból is kiszámítható, megoldóképlet nélkül. Ezek a Viète-képletek. Velük ellenőrizheted a gyököket, és a másodfokú kifejezést is tényezőkre bonthatod.</p></div>
 
     <h2 id="s1">A Viète-képletek</h2>
 
     <div class="doboz tetel" id="tetel-viete">
       <p class="cim"><span class="ikon">📘</span> Viète-képletek</p>
       <p>Ha <span class="math inline">\(a\neq 0\)</span>, és az <span class="math inline">\(ax^{2}+bx+c=0\)</span> egyenlet gyökei <span class="math inline">\(x_{1}\)</span> és <span class="math inline">\(x_{2}\)</span>, akkor</p><span class="math display">\[x_{1}+x_{2}=-\frac{b}{a},\qquad x_{1}\cdot x_{2}=\frac{c}{a}.\]</span><p>Az <span class="math inline">\(x^{2}+px+q=0\)</span> alakú (normált) egyenletnél még egyszerűbb: <span class="math inline">\(x_{1}+x_{2}=-p\)</span> és <span class="math inline">\(x_{1}x_{2}=q\)</span>.</p>
-      <details><summary>Levezetés</summary><div class="bel"><p>A megoldóképletből <span class="math inline">\(x_{1}=\dfrac{-b+\sqrt D}{2a}\)</span> és <span class="math inline">\(x_{2}=\dfrac{-b-\sqrt D}{2a}\)</span>. Összeadva a <span class="math inline">\(\sqrt D\)</span> kiesik:</p><span class="math display">\[x_{1}+x_{2}=\frac{-2b}{2a}=-\frac{b}{a}.\]</span><p>Összeszorozva a négyzetek különbsége azonosságot használjuk:</p><span class="math display">\[x_{1}x_{2}=\frac{b^{2}-D}{4a^{2}}=\frac{b^{2}-(b^{2}-4ac)}{4a^{2}}=\frac{4ac}{4a^{2}}=\frac{c}{a}.\]</span><p>Figyeld meg: a levezetés <b>nem használta</b>, hogy <span class="math inline">\(D\ge0\)</span> — a képletek a komplex gyökökre is érvényesek.</p></div></details>
+      <details><summary>Levezetés</summary><div class="bel"><p>Először legyen <span class="math inline">\(D\ge0\)</span>. A megoldóképletből <span class="math inline">\(x_{1}=\dfrac{-b+\sqrt D}{2a}\)</span> és <span class="math inline">\(x_{2}=\dfrac{-b-\sqrt D}{2a}\)</span>. Összeadva a <span class="math inline">\(\sqrt D\)</span> kiesik:</p><span class="math display">\[x_{1}+x_{2}=\frac{-2b}{2a}=-\frac{b}{a}.\]</span><p>Összeszorozva a négyzetek különbsége azonosságot használjuk:</p><span class="math display">\[x_{1}x_{2}=\frac{b^{2}-D}{4a^{2}}=\frac{b^{2}-(b^{2}-4ac)}{4a^{2}}=\frac{4ac}{4a^{2}}=\frac{c}{a}.\]</span><p>Ha <span class="math inline">\(D&lt;0\)</span>, a gyökökben <span class="math inline">\(\sqrt D\)</span> helyén <span class="math inline">\(i\sqrt{-D}\)</span> szerepel. Az összegben ezek a tagok ugyanúgy kiesnek, szorzatuknál pedig <span class="math inline">\((i\sqrt{-D})^{2}=D\)</span>. Ezért a Viète-képletek a nem valós komplex gyökökre is érvényesek.</p></div></details>
     </div>
 
     <div class="doboz pelda">
@@ -108,8 +108,8 @@
     </div>
 
     <div class="doboz csapda">
-      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
-      <p>„Minden másodfokú kifejezés felbontható két zárójel szorzatára.” — <b>A valós számok körében nem.</b> Nézd meg az <span class="math inline">\(x^{2}+1\)</span> kifejezést: <span class="math inline">\(D=0-4=-4&lt;0\)</span>, tehát nincs valós gyöke — a grafikonja végig az <span class="math inline">\(x\)</span> tengely fölött halad, sehol nem metszi.</p><p>Mielőtt tényezőkre bontasz, <b>számold ki a diszkriminánst</b>. Ha negatív, a valós körben készen vagy: a kifejezés tovább nem bontható.</p>
+      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós víruskódja</p>
+      <p>„Minden másodfokú kifejezés felbontható két elsőfokú tényező szorzatára.” — <b>A valós számok körében nem.</b> Nézd meg az <span class="math inline">\(x^{2}+1\)</span> kifejezést: <span class="math inline">\(D=0-4=-4&lt;0\)</span>, tehát nincs valós gyöke — a grafikonja végig az <span class="math inline">\(x\)</span>-tengely fölött halad, sehol nem metszi.</p><p>Mielőtt tényezőkre bontasz, <b>számold ki a diszkriminánst</b>. Ha negatív, a valós körben készen vagy: a kifejezés nem bontható két valós együtthatós elsőfokú tényezőre.</p>
     </div>
 
     <div class="doboz pelda" id="pelda-szorzatta">
@@ -119,7 +119,7 @@
     </div>
 
     <div class="doboz csapda">
-      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
+      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós víruskódja</p>
       <p>A mutálódott kód a <span class="math inline">\(2x^{2}+5x-3\)</span> bontását így írja: gyökök <span class="math inline">\(\tfrac12\)</span> és <span class="math inline">\(-3\)</span>, tehát <span class="math inline">\(\left(x-\tfrac12\right)(x+3)\)</span>. <b>Hiányos!</b> A <b>főegyüttható</b> lemaradt — így a szorzat kibontva <span class="math inline">\(x^{2}+\tfrac52x-\tfrac32\)</span> lenne, nem az eredeti. Helyesen:</p><span class="math display">\[2x^{2}+5x-3=2\left(x-\tfrac12\right)(x+3)=(2x-1)(x+3).\]</span><p>Az utolsó lépésben a <span class="math inline">\(2\)</span>-t „beszoroztuk” az első tényezőbe — így szebb az alak.</p>
     </div>
 

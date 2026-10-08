@@ -172,11 +172,10 @@ NEHEZ = [
   None, "$3^{200}$ a nagyobb."),
 ]
 
-JOKER = ("<b>Dr. Baljós vírus-kódja.</b> A rendszerbe a következő átalakítás került be — "
-         "az eredmény hibás. Keresd meg, melyik lépésnél romlott el, és add meg a helyes "
-         "végeredményt! $(a,b&gt;0)$ "
-         "$$\\left(\\frac{2a^{-2}}{b^{3}}\\right)^{-2}\\ \\overset{?}{=}\\ "
-         "\\frac{2a^{4}}{b^{-6}}\\ =\\ 2a^{4}b^{6}$$",
+JOKER = (('<b>Dr. Baljós víruskódja.</b> A rendszerbe a következő átalakítás került be — az eredmény hibás. '
+ 'Keresd meg, melyik lépésnél romlott el, és add meg a helyes végeredményt! $(a,b&gt;0)$ '
+ '$$\\left(\\frac{2a^{-2}}{b^{3}}\\right)^{-2}\\ \\overset{?}{=}\\ \\frac{2a^{4}}{b^{-6}}\\ =\\ '
+ '2a^{4}b^{6}$$'),
          "A $2$-es együttható hatványozása maradt el; helyesen "
          "$\\dfrac{a^{4}b^{6}}{4}$.")
 

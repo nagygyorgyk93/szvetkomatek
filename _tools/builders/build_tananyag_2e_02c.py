@@ -119,7 +119,7 @@ C1 = [
                   '<p><b>b)</b> $D=49-24=25$, a gyökök $\\tfrac12$ és $3$. Mivel $a=2&gt;0$ '
                   'és negatív értéket keresünk, a gyökök közötti <b>nyílt</b> intervallum '
                   'a megoldás: $x\\in\\left(\\tfrac12;3\\right)$.</p>')),
-   doboz("csapda", "Dr. Baljós vírus-kódja",
+   doboz("csapda", 'Dr. Baljós víruskódja',
          '<p>Három klasszikus hiba:</p>'
          '<ol class="reszfeladatok">'
          '<li><b>Negatív számmal szorozni a relációjel megfordítása nélkül.</b> '
@@ -146,23 +146,22 @@ C1 = [
 
 C2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Küklopsz:</b> Két feltétel, két egyenlet. Az egyik <b>lineáris</b>, a másik '
-         '<b>másodfokú</b>. Tavaly két egyenes metszéspontját kerested — most egy '
-         'egyenes és egy parabola találkozási pontjait. A módszer ugyanaz, mint akkor: '
-         '<b>behelyettesítés</b>. A különbség csak annyi, hogy a végén másodfokú '
-         'egyenletet kapsz — és így akár <b>két</b> megoldás is lehet.'),
+   brief(('<b>Küklopsz:</b> Két feltétel, két egyenlet. Az egyik <b>lineáris</b>, a másik <b>másodfokú</b>. '
+ 'Tavaly két egyenes metszéspontját kerested — most egy egyenes és egy parabola találkozási '
+ 'pontjait. A módszer ugyanaz, mint akkor: <b>behelyettesítés</b>. A különbség csak annyi, hogy '
+ 'behelyettesítés után rendszerint másodfokú egyenletet kapsz — és így akár <b>két</b> megoldás is '
+ 'lehet.')),
  ]),
 
  ("A behelyettesítés módszere", [
    doboz("tetel", "Az eljárás",
-         '<p>Egy másodfokú és egy lineáris egyenletből álló rendszer megoldása:</p>'
-         '<p><b>1.</b> A <b>lineáris</b> egyenletből fejezd ki az egyik ismeretlent '
-         '(azt, amelyiket könnyebb).</p>'
-         '<p><b>2.</b> Helyettesítsd be a másodfokú egyenletbe — így egyismeretlenes '
-         'másodfokú egyenletet kapsz.</p>'
-         '<p><b>3.</b> Oldd meg, majd <b>minden</b> gyökhöz számold ki a másik ismeretlent is.</p>'
-         '<p><b>4.</b> A megoldás <b>számpárokból</b> áll — annyiból, ahány gyököt a másodfokú '
-         'egyenlet adott: $(x_{1};y_{1})$, $(x_{2};y_{2})$.</p>',
+         ('<p>Egy másodfokú és egy lineáris egyenletből álló rendszer megoldása:</p><p><b>1.</b> A '
+ '<b>lineáris</b> egyenletből fejezd ki az egyik ismeretlent (azt, amelyiket '
+ 'könnyebb).</p><p><b>2.</b> Helyettesítsd be a másodfokú egyenletbe — így egyismeretlenes '
+ 'egyenletet kapsz, amely rendszerint másodfokú. Ha a másodfokú tag kiesik, a megmaradó egyenletet '
+ 'oldd meg.</p><p><b>3.</b> Oldd meg, majd <b>minden</b> gyökhöz számold ki a másik ismeretlent '
+ 'is.</p><p><b>4.</b> Ha másodfokú egyenletet kaptunk, minden gyökből egy <b>számpárt</b> állítunk '
+ 'össze: $(x_{1};y_{1})$, $(x_{2};y_{2})$.</p>'),
          hid="tetel-rendszer-menete"),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg a rendszert: $y=x^{2}-2x$ &nbsp;és&nbsp; $y=x-2$.</p>',
@@ -179,15 +178,15 @@ C2 = [
  ]),
 
  ("Hány megoldás lehet?", [
-   'A behelyettesítés után másodfokú egyenletet kapunk — és annak a diszkriminánsa '
-   'dönti el a megoldások számát. Geometriailag: hányszor metszi az egyenes a parabolát?',
+   ('Ha a behelyettesítés után valóban másodfokú egyenletet kapunk, annak a diszkriminánsa dönti el a '
+ 'megoldások számát. Geometriailag: hányszor metszi az egyenes a parabolát?'),
    doboz("tetel", "Három eset",
-         '<p>(A „parabola” helyett bármilyen másodfokú görbe állhat — kör, hiperbola —, '
-         'feltéve, hogy a behelyettesítés után valóban másodfokú egyenletet kapunk.)</p>'
-         '<p><b>$D&gt;0$:</b> az egyenes <b>két pontban</b> metszi a görbét → '
-         'két megoldáspár.</p>'
-         '<p><b>$D=0$:</b> az egyenes <b>érinti</b> a parabolát → egy (kettős) megoldás.</p>'
-         '<p><b>$D&lt;0$:</b> nincs közös pontjuk → a rendszernek <b>nincs valós megoldása</b>.</p>',
+         ('<p>A következő esetek az $y=ax^{2}+bx+c$ ($a\\neq0$) parabola és egy nem függőleges egyenes '
+ 'metszésére vonatkoznak. Más másodfokú görbénél is használhatjuk a behelyettesítést, de mindig '
+ 'ellenőrizzük a kapott egyenlet fokszámát.</p><p><b>$D&gt;0$:</b> az egyenes <b>két pontban</b> '
+ 'metszi a görbét → két megoldáspár.</p><p><b>$D=0$:</b> az egyenes <b>érinti</b> a parabolát → '
+ 'egy (kettős) megoldás.</p><p><b>$D&lt;0$:</b> nincs közös pontjuk → a rendszernek <b>nincs valós '
+ 'megoldása</b>.</p>'),
          hid="tetel-rendszer-esetek"),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Hány közös pontja van az $y=x^{2}$ parabolának <b>a)</b> az $y=2x-1$, '
@@ -230,23 +229,24 @@ C2 = [
                   '<p>Innen $y_{1}=1$ és $y_{2}=-3$, tehát $x_{1}=3$ és $x_{2}=-1$.</p>'
                   '<p><b>Megoldás:</b> $(3;1)$ és $(-1;-3)$. '
                   '<b>Ellenőrzés:</b> $(3;1)$: $3-1=2$ ✔ és $9+1=10$ ✔; $(-1;-3)$: $-1-(-3)=2$ ✔ és $1+9=10$ ✔</p>')),
-   doboz("csapda", "Dr. Baljós vírus-kódja",
-         '<p>A leggyakoribb hiba: <b>megállni $x$-nél</b>. A rendszer megoldása nem szám, '
-         'hanem <b>számpár</b> — minden $x$-hez ki kell számolni a hozzá tartozó $y$-t. '
-         'És vigyázz: a visszahelyettesítést a <b>lineáris</b> egyenletbe végezd, '
-         'mert az mindig egyetlen értéket ad. Ha a másodfokúba helyettesítesz vissza — például '
-         'az $x^{2}+y^{2}=10$-be —, két érték is jöhet, és közülük csak az egyik illik a párba.</p>'),
+   doboz("csapda", 'Dr. Baljós víruskódja',
+         ('<p>A leggyakoribb hiba: <b>megállni $x$-nél</b>. A rendszer megoldása nem szám, hanem '
+ '<b>számpár</b> — minden $x$-hez ki kell számolni a hozzá tartozó $y$-t. És vigyázz: a '
+ 'visszahelyettesítést a lineáris egyenletből <b>korábban kifejezett ismeretlen képletébe</b> '
+ 'végezd. Ez minden kapott értékhez egyértelműen megadja a másik ismeretlent. Ha a másodfokúba '
+ 'helyettesítesz vissza — például az $x^{2}+y^{2}=10$-be —, két érték is jöhet, és közülük csak az '
+ 'egyik illik a párba.</p>')),
    kviz('Az $x+y=5$, $xy=6$ rendszer megoldásai:',
         ['$(2;3)$ és $(3;2)$', 'Csak $(2;3)$', '$(1;6)$ és $(6;1)$'], 0,
         jo="✔ A t² − 5t + 6 = 0 egyenlet gyökei 2 és 3; a rendszer szimmetrikus.",
         nem="✘ Írd fel a t² − 5t + 6 = 0 egyenletet: gyökei 2 és 3, tehát mindkét sorrend megoldás."),
    gyakorolj(FGY + "#alap-7", "A 7–12", FGY + "#kozep-6", "K 6–10"),
-   brief('<b>Dr. Bestia:</b> Kadétok, jó munka — a Parabola-csapást elhárítottuk. De miközben '
-         'ti a röppályákkal foglalkoztatok, én a laborban mértem valamit, és nem tetszik: '
-         'Dr. Baljós vírusa nem másodfokon terjed többé. <b>Megduplázódik</b> minden '
-         'lépésben. Az ilyen növekedést a másodfokú függvény már nem írja le — sokkal '
-         'gyorsabb annál. A következő küldetés az <b>Evolúciós Ugrás</b>, és a fegyverünk '
-         'az exponenciális függvény lesz.',
+   brief(('<b>Dr. Bestia:</b> Kadétok, jó munka — a Parabola-csapást elhárítottuk. De miközben ti a '
+ 'röppályákkal foglalkoztatok, én a laborban mértem valamit, és nem tetszik: Dr. Baljós vírusa nem '
+ 'másodfokon terjed többé. <b>Megduplázódik</b> minden lépésben. Az azonos időközönkénti '
+ 'duplázódást <b>exponenciális növekedéssel</b> írjuk le. Hosszabb távon ez gyorsabb a másodfokú '
+ 'növekedésnél. A következő küldetés az <b>Evolúciós Ugrás</b>, és a fegyverünk az exponenciális '
+ 'függvény lesz.'),
          outro=True),
  ]),
 ]

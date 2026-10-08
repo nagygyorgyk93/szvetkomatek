@@ -5,9 +5,11 @@
 **Jelenlegi összesítés:** az 1e teljes A3-auditja helyben elkészült,
 összesen **77/77 HTML-oldal**: 38 tananyaglap, 38 további témaköroldal
 és az osztály főoldala. A tanár a 2e A3-auditját választotta folytatásként.
-A 2e első adagjában a három komplexszámos tananyaglap teljes szövege
-átnézve és javítva: **3/65 oldal**. A 2e többi lapja és a 3e–4e teljes
-A3-auditja hátra van. A munka eddig húsz adagban készült; az alábbi adatok
+A 2e első két témaköre teljesen átnézve: **30/65 oldal**. Ebben az adagban
+27 további oldal auditja készült el a korábbi három komplexszámos tananyag mellett.
+A 2e/03–04, az osztály főoldala és a 3e–4e teljes A3-auditja hátra van.
+A tanár kérésére a további adagok 2–3 teljes témakört fognak össze.
+A munka eddig huszonegy adagban készült; az alábbi adatok
 az egyes munkamenetek eredményei, a legfrissebb bejegyzés a végén található.
 
 **2026-10-05, első adag:** az 1e/01 három függvényes tananyaglapjának teljes szövegét
@@ -2134,3 +2136,110 @@ matematikai ellenőrzését a külön SymPy-kontroll és a lektor végezte.
 A 2e többi lapja és a 3e–4e teljes A3-auditja hátra van.
 **Tanári döntés kell: nincs nyitott kérdés.** Helyi main, új ág és push nélkül.
 Következő adag: a 2e/01 öt hatványozási/gyökvonási tananyaglapjának A3-auditja.
+
+
+## 2026-10-07–08 — huszonegyedik adag: a 2e/01–02 teljes A3-auditja
+
+A tanár kérésére a munka megállási gyakorisága csökkent: ebben az adagban
+két teljes témakört zártunk le. A hatványozás–gyökvonás–komplex számok és a
+másodfokú egyenletek–függvények mind a **30 HTML-oldala** teljes szöveg szerint
+átnézve: 16 tananyag, 8 feladatgyűjtemény/házi, 2 nyitóoldal,
+2 összefoglaló és 2 terepküldetés. A korábbi három komplexszámos tananyag
+mellett **27 további oldal** auditja készült el. Kiindulás: 47771dc,
+tiszta helyi main, az origin/main helyi referenciájával azonos állapot;
+távoli frissítés nem történt. Új ág és push nincs.
+
+A matematika-2e és a tananyag-narrativa skill alapján a kimenetek mérvadók.
+A korábbi tanári döntés szerint a bikvadratikus és paraméteres kiegészítések
+megmaradnak. A játékos történet megmaradt; a biztosan hibás vagy nehézkes
+mondatokat pontosabb magyar szöveg váltotta fel.
+
+### Javítás előtt bemutatott hibák és a lektori kiegészítések
+
+| Hol | Hiba | Súlyosság | Javítás módja |
+|---|---|---|---|
+| Hatványozás | Nem megalapozott villám/vihar-állítás; hibás számjegyszám; túl általános számolási recept | Közepes | Builder: rövidítés és nagyságrend, pontosabb módszerleírás |
+| Hatványazonosságok | Kezdeti pozitív kitevők, a hányados és a negatív kitevős tört feltételei hiányosak | Magas | Builder: kitevő- és nevezőfeltételek |
+| Hatványfüggvények | Hiányzó k-tartomány; a negatív oldali grafikon pontatlan leírása; összefoglaló minden negatív hatványgrafikont hiperbolának nevez | Közepes | Builder: feltételek, értékek összehasonlítása, hiperbola csak n=1 esetén |
+| Gyökvonás | Páros kitevőhöz feltétel nélkül két alapot ígér; bővítési szabály túl szigorú; beágyazott gyöknél m=1 nincs definiálva | Magas | Builder: pozitív gyökmennyiség, negatív gyökmennyiség bővítésének korlátja, m legalább 2 |
+| Gyökös műveletek | Az abszolút érték és az értelmezhetőség feltételét összemossa; a gyök és a hatvány azonosságát túl általánosan állítja | Magas | Builder: külön feltételek, racionális kitevő pozitív alapra |
+| 01 nyitóoldal | Dupla perjelek/zárójelek, valamint párossági feltétel nélküli gyökazonosság a kártyaleírásban | Közepes | Builder: helyes képletjelölés és négyzetgyökös összefüggés |
+| Mindkét összefoglaló | Hiányzó osztási és egyéb értelmezési feltételek; hibás általánosítások | Magas | Builder: nemnulla osztó, kitevők/gyökkitevők, reciprokösszeg c-feltétele, bikvadratikus esetek |
+| Másodfokú egyenlet | a=0 esetét mindig elsőfokúnak mondja; valós megoldóképlet és ismeretlennel osztás feltételei hiányosak | Magas | Builder: b szerinti esetek, diszkrimináns-feltétel, nulla eset külön vizsgálata |
+| Viète-levezetés | Negatív diszkrimináns mellett az előző témakör helyi gyökjel-megállapodásával ütköző jelölés | Közepes | Builder: valós levezetés, majd külön komplex értelmezés |
+| Másodfokú rendszerek | Behelyettesítés mindig másodfokú egyenletet ígér; a lineáris egyenlet mindig egyetlen másik értéket adna | Magas | Builder: kieső másodfokú tag, visszahelyettesítés a kifejezett ismeretlen képletébe |
+| Függvényvizsgálat | Nyílt intervallum végpontjára ígér szélsőértéket; komplex/valós gyökök összemosása | Közepes | Builder: megengedett tartomány és végpontok, nem valós komplex gyökök |
+| 01 terepküldetés | Energia szorzatát energiaszintként kezeli; hat helyett négy jelentési érték; a középponthoz nem mond szemközti sarkokat | Közepes | Builder: generátorkódok, pontos feladathivatkozások, négy érték, szemközti sarokpontok |
+| 02 terepküldetés | Komplementer helyett relációmegfordítást sugall; két metszéspontot egy becsapódásként kér | Magas | Builder: szigorú komplementerfeltétel; tervrajzi metszés, minden metszéspont kérve |
+| Bevezetők, házik, videóleírás | Magázás/tegezés keverése; magyartalan vagy túlzó fordulatok; optikai sugár általános parabolapályája | Enyhe/közepes | Builder és médiakatalógus: természetesebb mondatok, feltételezett hajításmodell |
+| Komplex Joker | A gyökjel helyi értelmezése miatt már az első gyökjeles lépés sem érvényes | Közepes | Builder: mindkét kifogás elfogadható, a tananyag csapdája is pontosítva |
+| Utolsó lektor | Gyök-összehasonlítás előjelfeltétele hiányzik; két írásjelhiba | Közepes/enyhe | Builder: nemnegatív gyökmennyiségek, mondatzárás, x-tengely |
+
+Új gyakorlófeladat vagy új feladatszámadat nincs. A generátoros feladat
+kódokra átnevezése, a tervrajzi metszés és a jelentések pontos hivatkozásai
+a meglévő matematikai adatokat használják. A hétköznapi hajítási példák
+légellenállást elhanyagoló modellek; a kerítéses és téglalapos példák
+megadott feltételekkel reálisak. A gyöktelenítés magyarázata pontosságnövekedést
+és megalapozatlan történeti állítást nem ígér. A függvényes feladatsor egyik
+utasítása kifejezetten jelzi, hogy több megfelelő függvény is megadható.
+
+### Független ellenőrzés és megőrzés
+
+Három kontextus nélküli lektor csak a kijelölt tanulói szövegeket kapta;
+a gyakorlóoldalakat a végeredmények nélkül. A gyökvonási gyűjtemény **52** és
+a másodfokú egyenletek gyűjteményének **55** kártyáját függetlenül megoldották.
+A 107 kártya eredményeinek összevetése a tényleges HTML-válaszokkal nem
+mutatott hibát; az eltérő, de egyenértékű alakokat és a Jokerben adott
+másik érvényes ellenpéldát elfogadtuk. Az öt hatványos/gyökös tananyag
+13 kvíze és a nyolc másodfokú tananyag 16 kvíze egyértelmű.
+
+Új, üres kontextusú lektor a javított összefoglalókat, a fontosabb elméleti
+lapokat és mindkét terepküldetést ellenőrizte. Minden projektfeladatot
+újraszámolt, hibát vagy ellentmondó feltételt nem talált. Három további
+pontosítását beépítettük; a közös gyökkitevőre hozás feltételét a kapcsolódó
+tananyagban is átvezettük. Végleges lektori visszaellenőrzés: mindhárom javítás
+megfelelő, a kapcsolódó mondat magyarul is természetes, további módosítás nem kell.
+
+A 14 builder programszerkezete és numerikus konstansai változatlanok;
+csak szövegértékek módosultak. A beépített SymPy-öntesztek lefutottak.
+Külön HTML-összevetés: **297 kártya** matematikai feladatadata, minden
+horgony és hivatkozás, kép, szkript, háttér, valamint a **10 SVG** teljes
+tartalma megmaradt. A kidolgozott példák feladatadatai és eredményei
+változatlanok; egy magyarázó mondat a már szereplő közös alapot képletben
+is kiírja. A kvízek válaszlehetőségei megmaradtak. Egyetlen végeredmény
+magyarázata változott: a komplex Joker hibájának pontosítása szükséges
+a feladat megválaszolásához.
+
+### Ellenőrzések és korlátok
+
+| Ellenőrzés | Eredmény |
+|---|---|
+| Kép, média, háttér | Minden újraépítés után helyreállítva; 334 médiaelem 139 lapon, egy videóleírás nyelvi javítása |
+| Kánon és belső linkek | 310 oldal, 0 hiba |
+| Gyakorlósávok | Minden kártyát felad valamelyik egység |
+| Meglévő kulcsteszt | 4499/4499, 0 eltérés |
+| Meglévő regresszió | 4499/4499 = 100% |
+| jsdom / képletrender | 30 lap, 3202 képlet, 36/36 kvíz, 0 hiba |
+| Edge | 360/390/1280 px, zárt/nyitott lenyílók: 180 nézet + 30 lektori visszaellenőrzés, 0 elrendezési/KaTeX/JS/saját konzol/helyi 404 hiba |
+| axe | 180 + 30 nézet, 0 jelzés; nem teljes WCAG-minősítés |
+| Nyomtatás JS be/ki | 60 + 10 próba: szövegek, példamegoldások és végeredmények láthatók |
+| JavaScript nélkül | 30 + 5 oldal olvasható; képletek TeX alakban |
+| Keresőindex | 308 nem üres bejegyzés; 28 változó URL, mind a két témakörből |
+| Naplótérkép | Byte szerint változatlan: 184 egység, 2294 feladat, 12315 XP |
+
+A végleges újraépítés után kép → média → háttér → naplótérkép → keresőindex →
+kánon → link → sáv → kulcs → regresszió lánc lefutott. A Python layout_teszt
+Playwright-csomagja nincs telepítve; a Node Playwright és Edge a jelenlegi
+forrásból ellenőrzött, azonos TULLOGOK függvényt futtatta mindhárom szélességen.
+A lektor után változó négy oldal és a kapcsolódó gyökvonási tananyag
+külön végleges böngészős próbát kapott.
+A nyitóoldalak bevezetői, képletes kártyák és javított feltételek 390 px-en
+szemrevételezve. Valódi képernyőolvasó, más böngésző, minden PDF-oldaltörés,
+minden háttérpont kézi kontrasztja és a külső médiatartalmak újbóli próbája
+nem történt. A 4499-es kulcsmodul nem fedi le a 2e-t; az itteni számolási
+ellenőrzés alapja a builder-önteszt és a külön független újraszámolás.
+
+**Állapot:** 1e 77/77 kész; 2e **30/65** oldal teljes A3-audit szerint átnézve.
+A 2e/03–04 és az osztály főoldala, továbbá a 3e–4e hátra van.
+**Tanári döntés kell: nincs nyitott kérdés.** Helyi main, új ág és push nélkül.
+Következő adag: a 2e/03 és 2e/04 két teljes témaköre, az új munkarend szerint.

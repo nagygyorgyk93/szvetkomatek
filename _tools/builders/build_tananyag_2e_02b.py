@@ -53,11 +53,9 @@ SVG_NEG = svg_fuggvenyek(
 
 B1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Küklopsz:</b> Az optikai sugaram nem egyenesen halad, ha közeg téríti el — '
-         'hanem <b>parabola</b> mentén. Ugyanígy repül a kilőtt lövedék, esik a labda, '
-         'és így terjed Dr. Baljós energiahulláma is. Aki ismeri ezt a görbét, egyetlen '
-         'pillantással megmondja, hol a legmagasabb pont, hol éri a földet, és hogy '
-         'egyáltalán eléri-e. Ezért kezdünk a <b>képpel</b>, nem a képlettel.'),
+   brief(('<b>Küklopsz:</b> A ferdén elhajított labda pályája az egyszerűsített, légellenállást elhanyagoló '
+ 'modellben <b>parabola</b>. Dr. Baljós lövedékeinél is ilyen modellel dolgozunk. Először '
+ 'megismerjük a görbe alakját, majd kiszámítjuk a csúcspontját és a tengelyekkel közös pontjait.')),
    'Az előző egységekben azt kérdeztük: <a href="tananyag-masodfoku-egyenlet.html"><b>hol nulla</b></a> a kifejezés. Most azt nézzük, '
    'hogyan viselkedik <b>mindenütt</b> — és kiderül, hogy a két kérdés ugyanannak '
    'a görbének két különböző olvasata.',
@@ -124,27 +122,24 @@ B1 = [
                  "$D=0$ → egy (érinti a tengelyt) · $D&lt;0$ → egy sem (végig a tengely fölött)."),
    abra(SVG_NEG, "$a&lt;0$: lefelé nyíló parabola — ugyanaz a három eset, tükrözve."),
    doboz("tetel", "A hat eset összefoglalva",
-         '<div class="tblwrap"><table>'
-         '<tr><th></th><th>$D&gt;0$</th><th>$D=0$</th><th>$D&lt;0$</th></tr>'
-         '<tr><td><b>$a&gt;0$</b></td><td>két zérushely; a csúcs a tengely <b>alatt</b></td>'
-         '<td>egy (kettős) zérushely; a csúcs <b>a tengelyen</b></td>'
-         '<td>nincs zérushely; a görbe <b>végig a tengely fölött</b></td></tr>'
-         '<tr><td><b>$a&lt;0$</b></td><td>két zérushely; a csúcs a tengely <b>fölött</b></td>'
-         '<td>egy (kettős) zérushely; a csúcs <b>a tengelyen</b></td>'
-         '<td>nincs zérushely; a görbe <b>végig a tengely alatt</b></td></tr>'
-         '</table></div>'
-         '<p>Vagyis a diszkrimináns nem elvont szám: azt mondja meg, <b>hányszor metszi</b> '
-         'a parabola az $x$-tengelyt. A komplex gyökök épp azt jelentik, hogy '
-         '<b>egyszer sem</b>.</p>',
+         ('<div '
+ 'class="tblwrap"><table><tr><th></th><th>$D&gt;0$</th><th>$D=0$</th><th>$D&lt;0$</th></tr><tr><td><b>$a&gt;0$</b></td><td>két '
+ 'zérushely; a csúcs a tengely <b>alatt</b></td><td>egy (kettős) zérushely; a csúcs <b>a '
+ 'tengelyen</b></td><td>nincs zérushely; a görbe <b>végig a tengely '
+ 'fölött</b></td></tr><tr><td><b>$a&lt;0$</b></td><td>két zérushely; a csúcs a tengely '
+ '<b>fölött</b></td><td>egy (kettős) zérushely; a csúcs <b>a tengelyen</b></td><td>nincs '
+ 'zérushely; a görbe <b>végig a tengely alatt</b></td></tr></table></div><p>Vagyis a diszkrimináns '
+ 'nem elvont szám: azt mondja meg, <b>hányszor metszi</b> a parabola az $x$-tengelyt. A nem valós '
+ 'komplex gyökök azt jelentik, hogy <b>egyszer sem</b>.</p>'),
          hid="tetel-hat-eset"),
    kviz('Az $y=-x^{2}+2x-5$ parabola hol helyezkedik el az $x$-tengelyhez képest?',
         ['Végig a tengely alatt.', 'Két pontban metszi.', 'Érinti a tengelyt.'], 0,
         jo="✔ a = −1 < 0 (lefelé nyílik) és D = 4 − 20 = −16 < 0 → nincs metszéspont.",
         nem="✘ Számold ki D-t: 4 − 20 = −16 < 0, és a < 0 → a parabola végig a tengely alatt van."),
    gyakorolj(FGY + "#alap-1", "A 1–5", FGY + "#kozep-1", "K 1–4"),
-   brief('<b>Küklopsz:</b> A kép megvan. Most tegyük rendszerbe: van egy fix szempontsor, '
-         'amit minden másodfokú függvényen végig kell futtatni. Ha ezt a listát fejből '
-         'tudod, a dolgozat legnagyobb pontszámú feladatát rutinból megcsinálod.',
+   brief(('<b>Küklopsz:</b> Már ismered a parabola alapvető adatait. A következő egységben egy '
+ 'szempontsorba rendezzük őket. Így végig tudod követni a függvény tulajdonságait, és az adatok '
+ 'alapján megrajzolhatod a grafikont.'),
          outro=True),
  ]),
 ]
@@ -161,29 +156,25 @@ SVG_VIZSG = svg_fuggvenyek(
 
 B2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Küklopsz:</b> A csapatnak protokoll kell, nem ötletelés. A függvényvizsgálat '
-         'is protokoll: ugyanaz a néhány kérdés, mindig ugyanabban a sorrendben. '
-         'Ha végigmész rajta, a végén ott a teljes kép — és a grafikon már csak '
-         'a jegyzőkönyv. Dr. Baljós energiagörbéit is így mérjük be.'),
+   brief(('<b>Küklopsz:</b> A függvényvizsgálatban sorra vesszük a zérushelyeket, a csúcspontot és a '
+ 'függvény további tulajdonságait. Dr. Baljós energiagörbéit is így elemezzük. A számításaidat '
+ 'ellenőrizd a rajzon, a rajzot pedig a kiszámított adatokkal.')),
  ]),
 
  ("A vizsgálat protokollja", [
    doboz("definicio", "Mit kérdezünk meg?",
-         '<ol class="reszfeladatok">'
-         '<li><b>Nyílásirány:</b> az $a$ előjele — konvex (felfelé) vagy konkáv (lefelé)?</li>'
-         '<li><b>Zérushelyek:</b> az $ax^{2}+bx+c=0$ egyenlet megoldásai — itt metszi '
-         'a görbe az $x$-tengelyt. $D&gt;0$: két zérushely (metszés), $D=0$: egy (érintés), $D&lt;0$: egy sincs — ilyenkor ez a lépés üresen marad, a többi ugyanúgy megy.</li>'
-         '<li><b>$y$-tengelymetszet:</b> $f(0)=c$.</li>'
-         '<li><b>Csúcspont:</b> $C(u;v)$, ahol $u=-\\dfrac{b}{2a}$ és $v=f(u)$.</li>'
-         '<li><b>Szélsőérték:</b> $a&gt;0$ esetén <b>minimum</b>, $a&lt;0$ esetén '
-         '<b>maximum</b>; az értéke $v$.</li>'
-         '<li><b>Értékkészlet:</b> $a&gt;0$ esetén $[v;+\\infty)$, $a&lt;0$ esetén '
-         '$(-\\infty;v]$.</li>'
-         '<li><b>Monotonitás:</b> a csúcspont osztja két részre. $a&gt;0$ esetén a függvény '
-         '$(-\\infty;u]$-n <b>csökken</b>, $[u;+\\infty)$-n <b>nő</b>; $a&lt;0$ esetén '
-         'fordítva.</li>'
-         '</ol>'
-         '<p>A <b>másodfokú függvény</b> értelmezési tartománya a teljes $\\mathbb{R}$ — ezt nem kell keresni. A valós helyzetből származó feladatokban viszont a szöveg leszűkítheti (lásd a szélsőérték-feladatot).</p>',
+         ('<ol class="reszfeladatok"><li><b>Nyílásirány:</b> az $a$ előjele — konvex (felfelé) vagy konkáv '
+ '(lefelé)?</li><li><b>Zérushelyek:</b> az $ax^{2}+bx+c=0$ egyenlet megoldásai — itt metszi a '
+ 'görbe az $x$-tengelyt. $D&gt;0$: két zérushely (metszés), $D=0$: egy (érintés), $D&lt;0$: egy '
+ 'sincs — ilyenkor írd le, hogy nincs valós zérushely, majd folytasd a '
+ 'vizsgálatot.</li><li><b>$y$-tengelymetszet:</b> $f(0)=c$.</li><li><b>Csúcspont:</b> $C(u;v)$, '
+ 'ahol $u=-\\dfrac{b}{2a}$ és $v=f(u)$.</li><li><b>Szélsőérték:</b> $a&gt;0$ esetén '
+ '<b>minimum</b>, $a&lt;0$ esetén <b>maximum</b>; az értéke $v$.</li><li><b>Értékkészlet:</b> '
+ '$a&gt;0$ esetén $[v;+\\infty)$, $a&lt;0$ esetén $(-\\infty;v]$.</li><li><b>Monotonitás:</b> a '
+ 'csúcspont osztja két részre. $a&gt;0$ esetén a függvény $(-\\infty;u]$-n <b>csökken</b>, '
+ '$[u;+\\infty)$-n <b>nő</b>; $a&lt;0$ esetén fordítva.</li></ol><p>A <b>másodfokú függvény</b> '
+ 'értelmezési tartománya a teljes $\\mathbb{R}$ — ezt nem kell keresni. A valós helyzetből '
+ 'származó feladatokban viszont a szöveg leszűkítheti (lásd a szélsőérték-feladatot).</p>'),
          hid="def-vizsgalat-protokoll"),
    doboz("erdekesseg", "Miért ilyen sorrendben?",
          '<p>Mert minden lépés a következőt készíti elő. A nyílásirányból már tudod, '
@@ -212,7 +203,7 @@ B2 = [
                    "kell — legkényelmesebb a <b>két zérushely</b> és az "
                    "<b>$y$-tengelymetszet</b>. A parabola szimmetrikus az $x=1$ "
                    "egyenesre."),
-   doboz("csapda", "Dr. Baljós vírus-kódja",
+   doboz("csapda", 'Dr. Baljós víruskódja',
          '<p>Három visszatérő hiba:</p>'
          '<ol class="reszfeladatok">'
          '<li><b>A csúcs $y$-koordinátáját „megsaccolni”.</b> A $v$ nem a két zérushely '
@@ -254,15 +245,16 @@ B2 = [
          'rendelkezésre. Mekkora a lehető legnagyobb bekeríthető terület?</p>',
          hid="pelda-szelsoertek",
          lenyilo=("Megoldás",
-                  '<p>Legyen a fallal <b>párhuzamos</b> oldal $y$, a rá merőleges kettő '
-                  'pedig $x$-$x$. Ekkor $2x+y=20$, tehát $y=20-2x$.</p>'
-                  '<p>A terület:</p>'
-                  '$$T(x)=x\\left(20-2x\\right)=-2x^{2}+20x.$$'
-                  '<p>Itt az értelmezési tartomány <b>nem</b> a teljes $\\mathbb{R}$: mivel $x&gt;0$ és $y=20-2x&gt;0$, ezért $0&lt;x&lt;10$. (Ha a csúcs kiesne ebből, a szélsőérték a végponton lenne — ezért érdemes ellenőrizni.)</p>'
-                  '<p>Ez másodfokú függvény $a=-2&lt;0$ főegyütthatóval → van <b>maximuma</b> '
-                  'a csúcspontban: $u=-\\dfrac{20}{-4}=5$ — ez beleesik a $(0;10)$ tartományba —, és $T(5)=-50+100=50$.</p>'
-                  '<p><b>Válasz:</b> a merőleges oldalak $5$ m-esek, a fallal párhuzamos '
-                  '$10$ m, a legnagyobb terület $50\\ \\text{m}^{2}$.</p>')),
+                  ('<p>Legyen a fallal <b>párhuzamos</b> oldal $y$, a rá merőleges kettő pedig $x$-$x$. Ekkor '
+ '$2x+y=20$, tehát $y=20-2x$.</p><p>A '
+ 'terület:</p>$$T(x)=x\\left(20-2x\\right)=-2x^{2}+20x.$$<p>Itt az értelmezési tartomány '
+ '<b>nem</b> a teljes $\\mathbb{R}$: mivel $x&gt;0$ és $y=20-2x&gt;0$, ezért $0&lt;x&lt;10$. '
+ '(Ellenőrizni kell, hogy a csúcspont első koordinátája megengedett-e. Zárt intervallumon a '
+ 'végpontokban felvett értékeket is vizsgáljuk; nyílt végpontban a függvény nem feltétlenül veszi '
+ 'fel a szélsőértéket.)</p><p>Ez másodfokú függvény $a=-2&lt;0$ főegyütthatóval → van '
+ '<b>maximuma</b> a csúcspontban: $u=-\\dfrac{20}{-4}=5$ — ez beleesik a $(0;10)$ tartományba —, '
+ 'és $T(5)=-50+100=50$.</p><p><b>Válasz:</b> a merőleges oldalak $5$ m-esek, a fallal párhuzamos '
+ '$10$ m, a legnagyobb terület $50\\ \\text{m}^{2}$.</p>'))),
    kviz('Hol és mekkora a $T(x)=-x^{2}+12x$ területfüggvény maximuma?',
         ['$x=6$-nál, az értéke $36$.', '$x=12$-nél, az értéke $0$.',
          '$x=-6$-nál, az értéke $36$.'], 0,

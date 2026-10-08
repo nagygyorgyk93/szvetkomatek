@@ -293,9 +293,9 @@ NEHEZ = [
   "$\\sqrt[3]{2}&lt;\\sqrt[6]{5}&lt;\\sqrt[4]{3}$"),
 ]
 
-JOKER = ("<b>Dr. Baljós vírus-kódja.</b> A rendszer ezt az azonosságot állítja <b>minden</b> valós "
-         "$x$-re: $$\\sqrt{(x-5)^{2}}\\ \\overset{?}{=}\\ x-5$$ "
-         "Mikor igaz és mikor hamis? Adj ellenpéldát, és írd fel a helyes alakot!",
+JOKER = (('<b>Dr. Baljós víruskódja.</b> A rendszer ezt az azonosságot állítja <b>minden</b> valós $x$-re: '
+ '$$\\sqrt{(x-5)^{2}}\\ \\overset{?}{=}\\ x-5$$ Mikor igaz és mikor hamis? Adj ellenpéldát, és írd '
+ 'fel a helyes alakot!'),
          "Igaz, ha $x\\ge 5$; hamis, ha $x&lt;5$. Helyesen "
          "$\\sqrt{(x-5)^{2}}=|x-5|$; ellenpélda: $x=2$ esetén $3\\neq-3$.")
 

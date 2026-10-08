@@ -33,13 +33,13 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/vihar_vera.webp" alt="Vihar Vera — az időjárás úrnője" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Vihar Vera:</b> Utolsó lépés a viharok fejezetében — és a legelegánsabb. Megszabadulunk a nevezőben álló gyököktől, aztán felfedezzük, hogy a <span class="math inline">\(\sqrt[n]{a^{m}}\)</span> jelölés valójában <b>hatvány</b>: <span class="math inline">\(a^{m/n}\)</span>. Ettől kezdve nincs külön gyök- és külön hatványszabály — <b>egyetlen</b> szabályrendszer van. Ez a felismerés vezet majd az exponenciális függvényhez — de előbb egy egészen más irányba indulunk.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/vihar_vera.webp" alt="Vihar Vera — az időjárás úrnője" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Vihar Vera:</b> Ebben az egységben gyöktelenítjük a nevezőt, majd bevezetjük a racionális kitevőt. Pozitív alap esetén a <span class="math inline">\(\sqrt[n]{a^{m}}\)</span> kifejezést <span class="math inline">\(a^{m/n}\)</span> alakban is felírhatjuk, és használhatjuk a hatványozás azonosságait.</p></div>
 
     <h2 id="s1">Miért gyöktelenítünk?</h2>
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Egy szokás, amit érdemes megérteni</p>
-      <p>A számológépek előtti korban a <span class="math inline">\(\dfrac{1}{\sqrt{2}}\)</span> kiszámítása azt jelentette, hogy <span class="math inline">\(1\)</span>-et el kellett osztani egy végtelen, nem szakaszos tizedes törttel — kézzel, papíron. Ezzel szemben a <span class="math inline">\(\dfrac{\sqrt{2}}{2}\)</span> alaknál elég <span class="math inline">\(1{,}41421\ldots\)</span>-t elosztani <b>kettővel</b>. Ma már a számológép mindkettőt kiszámolja, de a gyöktelenített alak maradt a <b>megállapodás szerinti végalak</b>: így két megoldás összehasonlítható, és a további átalakítások is egyszerűbbek.</p>
+      <p>A <span class="math inline">\(\dfrac{1}{\sqrt2}\)</span> és a <span class="math inline">\(\dfrac{\sqrt2}{2}\)</span> ugyanazt a pontos értéket jelöli. A második alak nevezőjében nincs gyök: ezt nevezzük <b>gyöktelenített alaknak</b>. Az ilyen végalak megkönnyítheti a megoldások összehasonlítását és a további átalakításokat. A gyöktelenítés nem változtatja meg a szám értékét vagy pontosságát.</p>
     </div>
 
     <h2 id="s2">Egytagú nevező</h2>
@@ -70,8 +70,8 @@
     </div>
 
     <div class="doboz csapda">
-      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
-      <p>„A konjugálttal bővítés annyi, hogy átírom a nevező előjelét." — <b>Hamis.</b> A törtet a konjugálttal <b>bővíteni</b> kell, tehát a <b>számlálót is</b> szorozni:</p><span class="math display">\[\frac{4}{\sqrt7-\sqrt3}\neq\frac{4}{\sqrt7+\sqrt3}.\]</span><p>Ha csak a nevezőt írnád át, egy másik számot kapnál. Bővítés = a számlálót és a nevezőt <b>ugyanazzal</b> szorozzuk.</p>
+      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós víruskódja</p>
+      <p>„A konjugálttal bővítés annyi, hogy átírom a nevező előjelét." — <b>Hamis.</b> A törtet a konjugálttal <b>bővíteni</b> kell, tehát a <b>számlálót is</b> szorozni:</p><span class="math display">\[\frac{4}{\sqrt7-\sqrt3}\neq\frac{4}{\sqrt7+\sqrt3}.\]</span><p>Ha csak a nevezőt írnád át, egy másik számot kapnál. Bővítés = a számlálót és a nevezőt <b>ugyanazzal a nemnulla számmal</b> szorozzuk.</p>
     </div>
 
     <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ A konjugálttal: (√5+2)(√5−2) = 5 − 4 = 1 — a nevező racionális lesz." data-nem="✘ A konjugáltban a KÖZÉPSŐ előjel fordul meg: √5−2. Így a nevező (√5)² − 2² = 1.">
@@ -108,7 +108,7 @@
     <div class="doboz pelda" id="pelda-racionalis-kitevo">
       <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>
       <p>Számítsd ki: <span class="math inline">\(8^{\frac{2}{3}}\)</span>, <span class="math inline">\(16^{-\frac{3}{4}}\)</span>, <span class="math inline">\(32^{0{,}4}\)</span>.</p>
-      <details><summary>Megoldás</summary><div class="bel"><p>Írjuk az alapot közös prímhatványként:</p><p><span class="math inline">\(8^{2/3}=\left(2^{3}\right)^{2/3}=2^{2}=4\)</span> · <span class="math inline">\(16^{-3/4}=\left(2^{4}\right)^{-3/4}=2^{-3}=\dfrac18\)</span> · <span class="math inline">\(32^{0{,}4}=32^{2/5}=\left(2^{5}\right)^{2/5}=2^{2}=4\)</span>.</p></div></details>
+      <details><summary>Megoldás</summary><div class="bel"><p>Mindhárom alap a <span class="math inline">\(2\)</span> egy-egy hatványa:</p><p><span class="math inline">\(8^{2/3}=\left(2^{3}\right)^{2/3}=2^{2}=4\)</span> · <span class="math inline">\(16^{-3/4}=\left(2^{4}\right)^{-3/4}=2^{-3}=\dfrac18\)</span> · <span class="math inline">\(32^{0{,}4}=32^{2/5}=\left(2^{5}\right)^{2/5}=2^{2}=4\)</span>.</p></div></details>
     </div>
 
     <div class="kviz" data-answer="1" data-kevert="1" data-jo="✔ 27 = 3³, tehát 27^(−2/3) = 3^(−2) = 1/9." data-nem="✘ Írd az alapot 3 hatványaként: (3³)^(−2/3) = 3^(−2) = 1/9. A negatív kitevő reciprokot jelent, nem előjelváltást.">
@@ -132,7 +132,7 @@
     <!-- media:end 2e01-racionalis2-video -->
     <h2 id="s5">Hatvány és gyök együtt</h2>
 
-    A tört kitevő igazi haszna, hogy a <b>vegyes</b> kifejezéseket egyetlen nyelvre fordítja: átírunk mindent hatványra, összeadjuk a kitevőket, majd — ha kell — visszaírjuk gyökös alakba.
+    A tört kitevő igazi haszna, hogy a <b>vegyes</b> kifejezéseket egyetlen nyelvre fordítja: átírjuk a gyököket hatványalakba, alkalmazzuk a hatványozás azonosságait, majd szükség esetén visszaírjuk az eredményt gyökös alakba.
 
     <div class="doboz pelda" id="pelda-vegyes">
       <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>

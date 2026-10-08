@@ -33,20 +33,20 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/nagol_w.webp" alt="Nagol — a morcos kiképzőtiszt" width="1200" height="670" decoding="async"><p>📡 <b>Nagol:</b> Kölyök, az első félévben minden szépen sorban állt: ha nőtt a baj, <b>egyenletesen</b> nőtt. Ennek vége. Dr. Baljós új fegyvere <b>másodfokon</b> terjed — a fenyegetés nem lineárisan, hanem <b>négyzetesen</b> gyorsul. Az ilyet nem lehet átrendezéssel elintézni: fel kell darabolni. Én ehhez a karmomat használom, te a <b>megoldóképletet</b>. Ugyanaz az elv: megkeresed a gyenge pontot, és két részre vágod.</p></div>
+    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/nagol_w.webp" alt="Nagol — a morcos kiképzőtiszt" width="1200" height="670" decoding="async"><p>📡 <b>Nagol:</b> Dr. Baljós új kódjaiban négyzetes tagok szerepelnek. Most a <b>másodfokú egyenleteket</b> oldjuk meg. Először megnézzük, elég-e a kiemelés vagy a gyökvonás; ha nem, használjuk a megoldóképletet.</p></div>
 
-    A másodfokú egyenlet a matematika egyik legjobban kidolgozott eszköze: van rá <b>képlet</b>, ami mindig működik. De mielőtt előrántanád, érdemes megnézni — sokszor sokkal gyorsabb út is van.
+    A másodfokú egyenletekhez megoldóképletet is tanulunk. Használatakor a gyökjel alatti kifejezés előjele dönti el, vannak-e valós megoldások. Előtte azonban érdemes megnézni, találunk-e <b>egyszerűbb megoldási módot</b>.
 
     <h2 id="s1">A másodfokú egyenlet alakja</h2>
 
     <div class="doboz definicio" id="def-masodfoku-egyenlet">
       <p class="cim"><span class="ikon">📗</span> Másodfokú egyenlet</p>
-      <p>Az egyismeretlenes <b>másodfokú egyenlet</b> általános alakja</p><span class="math display">\[ax^{2}+bx+c=0,\qquad a,b,c\in\mathbb{R},\ a\neq 0.\]</span><p>Itt <span class="math inline">\(a\)</span> a <b>főegyüttható</b>, <span class="math inline">\(b\)</span> a lineáris tag együtthatója, <span class="math inline">\(c\)</span> a <b>konstans tag</b>. Az <span class="math inline">\(a\neq 0\)</span> kikötés lényeges: ha <span class="math inline">\(a=0\)</span> lenne, az egyenlet <b>elsőfokúvá</b> esne szét.</p>
+      <p>Az egyismeretlenes <b>másodfokú egyenlet</b> általános alakja</p><span class="math display">\[ax^{2}+bx+c=0,\qquad a,b,c\in\mathbb{R},\ a\neq 0.\]</span><p>Itt <span class="math inline">\(a\)</span> a <b>főegyüttható</b>, <span class="math inline">\(b\)</span> a lineáris tag együtthatója, <span class="math inline">\(c\)</span> a <b>konstans tag</b>. Az <span class="math inline">\(a\neq 0\)</span> kikötés lényeges: ha <span class="math inline">\(a=0\)</span>, az egyenlet már nem másodfokú. Ha emellett <span class="math inline">\(b\neq0\)</span>, elsőfokú; ha <span class="math inline">\(b=0\)</span> is, csak a <span class="math inline">\(c=0\)</span> feltétel marad.</p>
     </div>
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Hol találkozol vele?</p>
-      <p>Ferde hajításnál a test pályája parabola, és a „mikor ér földet?” kérdés másodfokú egyenlet. Ugyanígy másodfokú a szabadesés úttörvénye, egy téglalap területének maximalizálása adott kerület mellett, és a fizika szinte minden olyan képlete, amelyben egy mennyiség <b>négyzete</b> szerepel.</p>
+      <p>A ferde hajítást állandó nehézségi gyorsulással, légellenállás nélkül leíró modellben a röppálya parabola. A földet érés idejét másodfokú egyenlettel kereshetjük meg. Adott kerületű téglalap területét szintén másodfokú függvénnyel írhatjuk le.</p>
     </div>
 
     <h2 id="s2">Hiányos másodfokú egyenletek</h2>
@@ -55,7 +55,7 @@
 
     <div class="doboz tetel" id="tetel-hianyos">
       <p class="cim"><span class="ikon">📘</span> A három hiányos eset</p>
-      <p><b>1.</b> <span class="math inline">\(ax^{2}=0\)</span> &nbsp;→&nbsp; egyetlen (kettős) megoldás: <span class="math inline">\(x=0\)</span>.</p><p><b>2.</b> <span class="math inline">\(ax^{2}+bx=0\)</span> &nbsp;→&nbsp; <b>kiemelés</b>: <span class="math inline">\(x(ax+b)=0\)</span>, tehát <span class="math inline">\(x_{1}=0\)</span> és <span class="math inline">\(x_{2}=-\dfrac{b}{a}\)</span>.</p><p><b>3.</b> <span class="math inline">\(ax^{2}+c=0\)</span> &nbsp;→&nbsp; rendezés és <b>négyzetgyökvonás</b>: <span class="math inline">\(x^{2}=-\dfrac{c}{a}\)</span>, tehát <span class="math inline">\(x_{1,2}=\pm\sqrt{-\dfrac{c}{a}}\)</span> — ha a jobb oldal negatív, a megoldások <b>komplexek</b>.</p>
+      <p><b>1.</b> <span class="math inline">\(ax^{2}=0\)</span> &nbsp;→&nbsp; egyetlen (kettős) megoldás: <span class="math inline">\(x=0\)</span>.</p><p><b>2.</b> <span class="math inline">\(ax^{2}+bx=0\)</span> &nbsp;→&nbsp; <b>kiemelés</b>: <span class="math inline">\(x(ax+b)=0\)</span>, tehát <span class="math inline">\(x_{1}=0\)</span> és <span class="math inline">\(x_{2}=-\dfrac{b}{a}\)</span>.</p><p><b>3.</b> <span class="math inline">\(ax^{2}+c=0\)</span> &nbsp;→&nbsp; rendezés és <b>négyzetgyökvonás</b>: <span class="math inline">\(x^{2}=-\dfrac{c}{a}\)</span>. Ha <span class="math inline">\(-c/a&gt;0\)</span>, akkor <span class="math inline">\(x_{1,2}=\pm\sqrt{-\dfrac{c}{a}}\)</span>; ha <span class="math inline">\(-c/a=0\)</span>, akkor <span class="math inline">\(x=0\)</span>. Negatív jobb oldal esetén nincs valós megoldás, a komplex számok között pedig <span class="math inline">\(x_{1,2}=\pm i\sqrt{c/a}\)</span>.</p>
     </div>
 
     <div class="doboz pelda" id="pelda-hianyos">
@@ -65,8 +65,8 @@
     </div>
 
     <div class="doboz csapda">
-      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
-      <p>Az <span class="math inline">\(x^{2}=5x\)</span> egyenletet a mutálódott kód így „oldja meg”: elosztja mindkét oldalt <span class="math inline">\(x\)</span>-szel, és kihozza, hogy <span class="math inline">\(x=5\)</span>. <b>Hibás!</b> Az osztás csak akkor megengedett, ha <span class="math inline">\(x\neq 0\)</span> — és épp az <span class="math inline">\(x=0\)</span> is <b>megoldás</b>. Helyesen rendezünk és kiemelünk:</p><span class="math display">\[x^{2}-5x=0\ \Rightarrow\ x(x-5)=0\ \Rightarrow\ x_{1}=0,\ x_{2}=5.\]</span><p><b>Ökölszabály:</b> ismeretlent tartalmazó kifejezéssel <b>soha</b> ne oszd az egyenletet — kiemelj helyette.</p>
+      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós víruskódja</p>
+      <p>Az <span class="math inline">\(x^{2}=5x\)</span> egyenletet a mutálódott kód így „oldja meg”: elosztja mindkét oldalt <span class="math inline">\(x\)</span>-szel, és kihozza, hogy <span class="math inline">\(x=5\)</span>. <b>Hibás!</b> Az osztás csak akkor megengedett, ha <span class="math inline">\(x\neq 0\)</span> — és épp az <span class="math inline">\(x=0\)</span> is <b>megoldás</b>. Helyesen rendezünk és kiemelünk:</p><span class="math display">\[x^{2}-5x=0\ \Rightarrow\ x(x-5)=0\ \Rightarrow\ x_{1}=0,\ x_{2}=5.\]</span><p><b>Ökölszabály:</b> ismeretlent tartalmazó kifejezéssel csak akkor oszthatsz, ha nem nulla. Előbb vizsgáld meg a nulla esetét; itt egyszerűbb, ha <b>helyette kiemelsz</b>.</p>
     </div>
 
     <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Kiemelés: x(4x−9)=0 → x₁=0, x₂=9/4." data-nem="✘ Emelj ki x-et: x(4x−9)=0. Az x=0 is megoldás — ne oszd el x-szel!">
@@ -82,7 +82,7 @@
 
     <div class="doboz tetel" id="tetel-megoldokeplet">
       <p class="cim"><span class="ikon">📘</span> A megoldóképlet</p>
-      <p>Az <span class="math inline">\(ax^{2}+bx+c=0\)</span> (<span class="math inline">\(a\neq 0\)</span>) egyenlet megoldásai</p><span class="math display">\[x_{1,2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}.\]</span>
+      <p>Az <span class="math inline">\(ax^{2}+bx+c=0\)</span> (<span class="math inline">\(a\neq 0\)</span>) egyenlet valós megoldásai, ha <span class="math inline">\(b^{2}-4ac\ge0\)</span>:</p><span class="math display">\[x_{1,2}=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}.\]</span>
       <details><summary>Honnan jön? — teljes négyzetté alakítás</summary><div class="bel"><p>Osszunk <span class="math inline">\(a\)</span>-val, majd egészítsük ki teljes négyzetté:</p><span class="math display">\[x^{2}+\frac{b}{a}x+\frac{c}{a}=0\ \Rightarrow\ \left(x+\frac{b}{2a}\right)^{2}=\frac{b^{2}}{4a^{2}}-\frac{c}{a}=\frac{b^{2}-4ac}{4a^{2}}.\]</span><p>Innen gyököt vonva <span class="math inline">\(x+\dfrac{b}{2a}=\pm\dfrac{\sqrt{b^{2}-4ac}}{2a}\)</span>, és átrendezve épp a megoldóképletet kapjuk. Vagyis a képlet nem varázslat: a teljes négyzetté alakítás <b>egyszer s mindenkorra</b> elvégzett változata.</p></div></details>
     </div>
 
@@ -101,7 +101,7 @@
     <!-- media:begin 2e02-masodfoku-egyenlet2-video -->
     <figure class="media" id="media-2e02-masodfoku-egyenlet2-video" data-tipus="youtube" data-azon="ndEu9iU7m5E" data-cim="Másodfokú egyenletek – első rész (II. osztály, 16. óra)">
       <div class="media-keret"><a class="media-indito" href="https://www.youtube.com/watch?v=ndEu9iU7m5E" target="_blank" rel="noopener"><span class="media-ikon" aria-hidden="true">▶</span><span class="media-szoveg"><span class="media-cimke">Videó</span><span class="media-cim">Másodfokú egyenletek – első rész (II. osztály, 16. óra)</span><span class="media-info">kattints a lejátszáshoz</span></span></a></div>
-      <figcaption>Másodfokú egyenletek, első rész — újabb kidolgozott példák ugyanettől a sorozattól. <span class="media-forras">Forrás: <a href="https://tavoktatas.mnt.org.rs/ii-osztaly/matematika/matematika-ii-osztaly-16-ora-masodfoku-egyenletek-elso-resz" target="_blank" rel="noopener">MNT Távoktatás magyar nyelven</a> — Tikvicki Lídia.</span> <span class="media-url">(Videó: Másodfokú egyenletek – első rész (II. osztály, 16. óra) — youtu.be/ndEu9iU7m5E)</span></figcaption>
+      <figcaption>Másodfokú egyenletek, első rész — újabb kidolgozott példák ugyanebből a sorozatból. <span class="media-forras">Forrás: <a href="https://tavoktatas.mnt.org.rs/ii-osztaly/matematika/matematika-ii-osztaly-16-ora-masodfoku-egyenletek-elso-resz" target="_blank" rel="noopener">MNT Távoktatás magyar nyelven</a> — Tikvicki Lídia.</span> <span class="media-url">(Videó: Másodfokú egyenletek – első rész (II. osztály, 16. óra) — youtu.be/ndEu9iU7m5E)</span></figcaption>
     </figure>
     <!-- media:end 2e02-masodfoku-egyenlet2-video -->
     <!-- media:begin 2e02-masodfoku-egyenlet3-video -->
@@ -121,7 +121,7 @@
     </div>
 
     <div class="doboz csapda">
-      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
+      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós víruskódja</p>
       <p>A mutálódott kód a <span class="math inline">\((x-3)(x+2)=6\)</span> egyenletre azt írja: „szorzat, tehát <span class="math inline">\(x-3=6\)</span> vagy <span class="math inline">\(x+2=6\)</span>". <b>Hibás!</b> A „szorzat = 0” szabály <b>kizárólag</b> akkor működik, ha a jobb oldalon <b>nulla</b> áll. Hatnak végtelen sok szorzatfelbontása van — nullának viszont csak úgy, ha valamelyik tényező nulla.</p>
     </div>
 

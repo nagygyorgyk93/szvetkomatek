@@ -38,42 +38,38 @@ print("sympy önteszt: OK")
 
 A1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Nagol:</b> Kölyök, az első félévben minden szépen sorban állt: '
-         'ha nőtt a baj, <b>egyenletesen</b> nőtt. Ennek vége. Dr. Baljós új fegyvere '
-         '<b>másodfokon</b> terjed — a fenyegetés nem lineárisan, hanem <b>négyzetesen</b> '
-         'gyorsul. Az ilyet nem lehet átrendezéssel elintézni: fel kell darabolni. '
-         'Én ehhez a karmomat használom, te a <b>megoldóképletet</b>. Ugyanaz az elv: '
-         'megkeresed a gyenge pontot, és két részre vágod.'),
-   'A másodfokú egyenlet a matematika egyik legjobban kidolgozott eszköze: van rá '
-   '<b>képlet</b>, ami mindig működik. De mielőtt előrántanád, érdemes megnézni — sokszor '
-   'sokkal gyorsabb út is van.',
+   brief(('<b>Nagol:</b> Dr. Baljós új kódjaiban négyzetes tagok szerepelnek. Most a <b>másodfokú '
+ 'egyenleteket</b> oldjuk meg. Először megnézzük, elég-e a kiemelés vagy a gyökvonás; ha nem, '
+ 'használjuk a megoldóképletet.')),
+   ('A másodfokú egyenletekhez megoldóképletet is tanulunk. Használatakor a gyökjel alatti kifejezés '
+ 'előjele dönti el, vannak-e valós megoldások. Előtte azonban érdemes megnézni, találunk-e '
+ '<b>egyszerűbb megoldási módot</b>.'),
  ]),
 
  ("A másodfokú egyenlet alakja", [
    doboz("definicio", "Másodfokú egyenlet",
-         '<p>Az egyismeretlenes <b>másodfokú egyenlet</b> általános alakja</p>'
-         '$$ax^{2}+bx+c=0,\\qquad a,b,c\\in\\mathbb{R},\\ a\\neq 0.$$'
-         '<p>Itt $a$ a <b>főegyüttható</b>, $b$ a lineáris tag együtthatója, $c$ a '
-         '<b>konstans tag</b>. Az $a\\neq 0$ kikötés lényeges: ha $a=0$ lenne, az egyenlet '
-         '<b>elsőfokúvá</b> esne szét.</p>',
+         ('<p>Az egyismeretlenes <b>másodfokú egyenlet</b> általános alakja</p>$$ax^{2}+bx+c=0,\\qquad '
+ 'a,b,c\\in\\mathbb{R},\\ a\\neq 0.$$<p>Itt $a$ a <b>főegyüttható</b>, $b$ a lineáris tag '
+ 'együtthatója, $c$ a <b>konstans tag</b>. Az $a\\neq 0$ kikötés lényeges: ha $a=0$, az egyenlet '
+ 'már nem másodfokú. Ha emellett $b\\neq0$, elsőfokú; ha $b=0$ is, csak a $c=0$ feltétel '
+ 'marad.</p>'),
          hid="def-masodfoku-egyenlet"),
    doboz("erdekesseg", "Hol találkozol vele?",
-         '<p>Ferde hajításnál a test pályája parabola, és a „mikor ér földet?” kérdés '
-         'másodfokú egyenlet. Ugyanígy másodfokú a szabadesés úttörvénye, egy téglalap '
-         'területének maximalizálása adott kerület mellett, és a fizika szinte minden '
-         'olyan képlete, amelyben egy mennyiség <b>négyzete</b> szerepel.</p>'),
+         ('<p>A ferde hajítást állandó nehézségi gyorsulással, légellenállás nélkül leíró modellben a '
+ 'röppálya parabola. A földet érés idejét másodfokú egyenlettel kereshetjük meg. Adott kerületű '
+ 'téglalap területét szintén másodfokú függvénnyel írhatjuk le.</p>')),
  ]),
 
  ("Hiányos másodfokú egyenletek", [
    'Ha $b=0$ vagy $c=0$ (esetleg mindkettő), az egyenletet <b>hiányosnak</b> nevezzük. '
    'Ezeket <b>nem érdemes</b> megoldóképlettel bántani — sokkal gyorsabb út is van.',
    doboz("tetel", "A három hiányos eset",
-         '<p><b>1.</b> $ax^{2}=0$ &nbsp;→&nbsp; egyetlen (kettős) megoldás: $x=0$.</p>'
-         '<p><b>2.</b> $ax^{2}+bx=0$ &nbsp;→&nbsp; <b>kiemelés</b>: $x(ax+b)=0$, tehát '
-         '$x_{1}=0$ és $x_{2}=-\\dfrac{b}{a}$.</p>'
-         '<p><b>3.</b> $ax^{2}+c=0$ &nbsp;→&nbsp; rendezés és <b>négyzetgyökvonás</b>: '
-         '$x^{2}=-\\dfrac{c}{a}$, tehát $x_{1,2}=\\pm\\sqrt{-\\dfrac{c}{a}}$ — ha a jobb oldal '
-         'negatív, a megoldások <b>komplexek</b>.</p>',
+         (('<p><b>1.</b> $ax^{2}=0$ &nbsp;→&nbsp; egyetlen (kettős) megoldás: $x=0$.</p><p><b>2.</b> '
+ '$ax^{2}+bx=0$ &nbsp;→&nbsp; <b>kiemelés</b>: $x(ax+b)=0$, tehát $x_{1}=0$ és '
+ '$x_{2}=-\\dfrac{b}{a}$.</p><p><b>3.</b> $ax^{2}+c=0$ &nbsp;→&nbsp; rendezés és '
+ '<b>négyzetgyökvonás</b>: $x^{2}=-\\dfrac{c}{a}$. Ha $-c/a&gt;0$, akkor '
+ '$x_{1,2}=\\pm\\sqrt{-\\dfrac{c}{a}}$; ha $-c/a=0$, akkor $x=0$. Negatív jobb oldal esetén nincs '
+ 'valós megoldás, a komplex számok között pedig $x_{1,2}=\\pm i\\sqrt{c/a}$.</p>')),
          hid="tetel-hianyos"),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Oldd meg: <b>a)</b> $3x^{2}-27=0$; <b>b)</b> $5x^{2}+20x=0$.</p>',
@@ -82,14 +78,13 @@ A1 = [
                   '<p><b>a)</b> $3x^{2}=27\\Rightarrow x^{2}=9\\Rightarrow x_{1,2}=\\pm 3$.</p>'
                   '<p><b>b)</b> Kiemeléssel $5x(x+4)=0$, és egy szorzat pontosan akkor nulla, '
                   'ha valamelyik tényezője nulla: $x_{1}=0$, $x_{2}=-4$.</p>')),
-   doboz("csapda", "Dr. Baljós vírus-kódja",
-         '<p>Az $x^{2}=5x$ egyenletet a mutálódott kód így „oldja meg”: elosztja mindkét '
-         'oldalt $x$-szel, és kihozza, hogy $x=5$. <b>Hibás!</b> Az osztás csak akkor '
-         'megengedett, ha $x\\neq 0$ — és épp az $x=0$ is <b>megoldás</b>. '
-         'Helyesen rendezünk és kiemelünk:</p>'
-         '$$x^{2}-5x=0\\ \\Rightarrow\\ x(x-5)=0\\ \\Rightarrow\\ x_{1}=0,\\ x_{2}=5.$$'
-         '<p><b>Ökölszabály:</b> ismeretlent tartalmazó kifejezéssel <b>soha</b> ne oszd '
-         'az egyenletet — kiemelj helyette.</p>'),
+   doboz("csapda", 'Dr. Baljós víruskódja',
+         ('<p>Az $x^{2}=5x$ egyenletet a mutálódott kód így „oldja meg”: elosztja mindkét oldalt $x$-szel, '
+ 'és kihozza, hogy $x=5$. <b>Hibás!</b> Az osztás csak akkor megengedett, ha $x\\neq 0$ — és épp '
+ 'az $x=0$ is <b>megoldás</b>. Helyesen rendezünk és kiemelünk:</p>$$x^{2}-5x=0\\ \\Rightarrow\\ '
+ 'x(x-5)=0\\ \\Rightarrow\\ x_{1}=0,\\ x_{2}=5.$$<p><b>Ökölszabály:</b> ismeretlent tartalmazó '
+ 'kifejezéssel csak akkor oszthatsz, ha nem nulla. Előbb vizsgáld meg a nulla esetét; itt '
+ 'egyszerűbb, ha <b>helyette kiemelsz</b>.</p>')),
    kviz('Hány valós megoldása van a $4x^{2}-9x=0$ egyenletnek?',
         ['Kettő: $0$ és $\\dfrac{9}{4}$.', 'Egy: $\\dfrac{9}{4}$.', 'Egy sem.'], 0,
         jo="✔ Kiemelés: x(4x−9)=0 → x₁=0, x₂=9/4.",
@@ -100,8 +95,8 @@ A1 = [
    'Ha mindhárom együttható nem nulla, <b>teljes</b> másodfokú egyenletről beszélünk. '
    'Ilyenkor jön a nehéztüzérség.',
    doboz("tetel", "A megoldóképlet",
-         '<p>Az $ax^{2}+bx+c=0$ ($a\\neq 0$) egyenlet megoldásai</p>'
-         '$$x_{1,2}=\\frac{-b\\pm\\sqrt{b^{2}-4ac}}{2a}.$$',
+         ('<p>Az $ax^{2}+bx+c=0$ ($a\\neq 0$) egyenlet valós megoldásai, ha '
+ '$b^{2}-4ac\\ge0$:</p>$$x_{1,2}=\\frac{-b\\pm\\sqrt{b^{2}-4ac}}{2a}.$$'),
          hid="tetel-megoldokeplet",
          lenyilo=("Honnan jön? — teljes négyzetté alakítás",
                   '<p>Osszunk $a$-val, majd egészítsük ki teljes négyzetté:</p>'
@@ -131,7 +126,7 @@ A1 = [
                   '<p>Kibontva $x^{2}-x-6=6$, rendezve $x^{2}-x-12=0$. '
                   'Itt $D=1+48=49$, $\\sqrt{49}=7$:</p>'
                   '$$x_{1,2}=\\frac{1\\pm 7}{2}\\ \\Rightarrow\\ x_{1}=4,\\quad x_{2}=-3.$$')),
-   doboz("csapda", "Dr. Baljós vírus-kódja",
+   doboz("csapda", 'Dr. Baljós víruskódja',
          '<p>A mutálódott kód a $(x-3)(x+2)=6$ egyenletre azt írja: „szorzat, tehát '
          '$x-3=6$ vagy $x+2=6$". <b>Hibás!</b> A „szorzat = 0” szabály <b>kizárólag</b> '
          'akkor működik, ha a jobb oldalon <b>nulla</b> áll. Hatnak végtelen sok '
@@ -160,16 +155,16 @@ A2 = [
          '<b>diszkrimináns</b> — egyetlen számolással megmondja, mi vár rád: két '
          'különböző megoldás, egyetlen kettős, vagy olyan gyökök, amelyek kiléptek '
          'a valós világból. Dr. Baljós paraméteres egyenletei pontosan ezen a ponton támadnak.'),
-   'A „diszkriminál” szó itt a régi értelmében szerepel: <b>megkülönböztet</b>. '
-   'Ez a szám különbözteti meg egymástól a három lehetséges esetet.',
+   ('A „diszkriminál” szó itt azt jelenti: <b>megkülönböztet</b>. Ez a szám különbözteti meg '
+ 'egymástól a három lehetséges esetet.'),
  ]),
 
  ("Mi a diszkrimináns?", [
    doboz("definicio", "Diszkrimináns",
-         '<p>Az $ax^{2}+bx+c=0$ egyenlet — ahol $a\\neq 0$ — <b>diszkriminánsa</b></p>'
-         '$$D=b^{2}-4ac.$$'
-         '<p>A megoldóképlet ezzel $x_{1,2}=\\dfrac{-b\\pm\\sqrt{D}}{2a}$ alakot ölt — '
-         'látszik, hogy minden a $\\sqrt{D}$-n múlik.</p>',
+         ('<p>Az $ax^{2}+bx+c=0$ egyenlet — ahol $a\\neq 0$ — '
+ '<b>diszkriminánsa</b></p>$$D=b^{2}-4ac.$$<p>$D\\ge0$ esetén a megoldóképlet '
+ '$x_{1,2}=\\dfrac{-b\\pm\\sqrt{D}}{2a}$ alakot ölt — látszik, hogy minden a $\\sqrt{D}$-n '
+ 'múlik.</p>'),
          hid="def-diszkriminans"),
  ]),
 
@@ -215,13 +210,13 @@ A2 = [
                   '<p>$16-4m&gt;0\\iff m&lt;4$ → két különböző valós megoldás.</p>'
                   '<p>$16-4m=0\\iff m=4$ → egy kettős megoldás ($x=2$).</p>'
                   '<p>$16-4m&lt;0\\iff m&gt;4$ → két konjugált komplex megoldás.</p>')),
-   doboz("csapda", "Dr. Baljós vírus-kódja",
-         '<p>Ha a paraméter a <b>főegyütthatóban</b> áll, egy külön esetet is meg kell '
-         'vizsgálni. Például az $(m-2)x^{2}+4x+1=0$ egyenlet <b>nem másodfokú</b>, ha '
-         '$m=2$ — akkor a $4x+1=0$ elsőfokú egyenletet kapjuk, egyetlen megoldással '
-         '($x=-\\tfrac14$). A diszkriminánst tehát csak $m\\neq 2$ mellett szabad használni.</p>'
-         '<p><b>Ellenőrző kérdés minden paraméteres feladatnál:</b> hol áll a paraméter? '
-         'Ha a főegyütthatóban, akkor van egy „elfajuló” eset is.</p>'),
+   doboz("csapda", 'Dr. Baljós víruskódja',
+         ('<p>Ha a paraméter a <b>főegyütthatóban</b> áll, egy külön esetet is meg kell vizsgálni. Például '
+ 'az $(m-2)x^{2}+4x+1=0$ egyenlet <b>nem másodfokú</b>, ha $m=2$ — akkor a $4x+1=0$ elsőfokú '
+ 'egyenletet kapjuk, egyetlen megoldással ($x=-\\tfrac14$). A diszkriminánst tehát csak $m\\neq 2$ '
+ 'mellett szabad használni.</p><p><b>Ellenőrző kérdés minden paraméteres feladatnál:</b> hol áll a '
+ 'paraméter? Ha a főegyütthatóban, ellenőrizd, felveheti-e az a nulla értéket. Ezekben az '
+ 'esetekben az egyenlet nem másodfokú.</p>')),
    gyakorolj(FGY + "#alap-10", "A 10", FGY + "#kozep-4", "K 4–5",
              bevezeto="Kiegészítő kihívás: ezeket nem kell a 2e-s törzsanyaghoz megoldanod."),
  ]),
@@ -238,13 +233,12 @@ A2 = [
                   '$$x_{1,2}=\\frac{-2\\pm 4i}{2}=-1\\pm 2i.$$'
                   '<p><b>Ellenőrzés:</b> $(-1+2i)^{2}+2(-1+2i)+5=(1-4i-4)+(-2+4i)+5=0$ ✔</p>')),
    doboz("erdekesseg", "A gyökök mindig párban járnak",
-         '<p>Ha egy <b>valós együtthatós</b> másodfokú egyenletnek van komplex gyöke, akkor '
-         'a másik gyök annak <b>konjugáltja</b>: ha $x_{1}=p+qi$, akkor $x_{2}=p-qi$. '
-         'Ez a megoldóképletből azonnal látszik — a $\\pm$ jel csak a képzetes rész '
-         'előjelét fordítja meg.</p>'),
+         ('<p>Ha egy <b>valós együtthatós</b> másodfokú egyenletnek van nem valós komplex gyöke, akkor a '
+ 'másik gyök annak <b>konjugáltja</b>: ha $x_{1}=p+qi$, akkor $x_{2}=p-qi$. Ez a megoldóképletből '
+ 'azonnal látszik — a $\\pm$ jel csak a képzetes rész előjelét fordítja meg.</p>')),
    kviz('Az $x^{2}-2x+10=0$ egyenlet egyik gyöke $1+3i$. Mi a másik?',
         ['$1-3i$', '$-1-3i$', '$-1+3i$'], 0,
-        jo="✔ Valós együtthatóknál a komplex gyökök konjugált párt alkotnak.",
+        jo='✔ Valós együtthatóknál a nem valós komplex gyökök konjugált párt alkotnak.',
         nem="✘ A megoldóképlet ± jele csak a képzetes rész előjelét váltja: 1 − 3i."),
    gyakorolj(FGY + "#alap-7", "A 7–9", FGY + "#kozep-6", "K 6–8"),
    brief('<b>Nagol:</b> Most jön a rész, amit a legjobban szeretek. Kiderül, hogy '
@@ -259,11 +253,9 @@ A2 = [
 
 A3 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Nagol:</b> Van egy trükk, amit François Viète francia matematikus talált ki '
-         'a 16. században, és azóta minden vizsgázó hálás érte. A gyökök <b>összege</b> és '
-         '<b>szorzata</b> ránézésre kiolvasható az együtthatókból — megoldóképlet nélkül. '
-         'Ez nemcsak gyorsít: ezzel lehet <b>szétvágni</b> a másodfokú kifejezést két '
-         'elsőfokú tényezőre. Az én szakterületem.'),
+   brief(('<b>Nagol:</b> A gyökök <b>összege és szorzata</b> az együtthatókból is kiszámítható, '
+ 'megoldóképlet nélkül. Ezek a Viète-képletek. Velük ellenőrizheted a gyököket, és a másodfokú '
+ 'kifejezést is tényezőkre bonthatod.')),
  ]),
 
  ("A Viète-képletek", [
@@ -274,14 +266,14 @@ A3 = [
          '$x_{1}+x_{2}=-p$ és $x_{1}x_{2}=q$.</p>',
          hid="tetel-viete",
          lenyilo=("Levezetés",
-                  '<p>A megoldóképletből $x_{1}=\\dfrac{-b+\\sqrt D}{2a}$ és '
-                  '$x_{2}=\\dfrac{-b-\\sqrt D}{2a}$. Összeadva a $\\sqrt D$ kiesik:</p>'
-                  '$$x_{1}+x_{2}=\\frac{-2b}{2a}=-\\frac{b}{a}.$$'
-                  '<p>Összeszorozva a négyzetek különbsége azonosságot használjuk:</p>'
-                  '$$x_{1}x_{2}=\\frac{b^{2}-D}{4a^{2}}=\\frac{b^{2}-(b^{2}-4ac)}{4a^{2}}'
-                  '=\\frac{4ac}{4a^{2}}=\\frac{c}{a}.$$'
-                  '<p>Figyeld meg: a levezetés <b>nem használta</b>, hogy $D\\ge0$ — '
-                  'a képletek a komplex gyökökre is érvényesek.</p>')),
+                  ('<p>Először legyen $D\\ge0$. A megoldóképletből $x_{1}=\\dfrac{-b+\\sqrt D}{2a}$ és '
+ '$x_{2}=\\dfrac{-b-\\sqrt D}{2a}$. Összeadva a $\\sqrt D$ '
+ 'kiesik:</p>$$x_{1}+x_{2}=\\frac{-2b}{2a}=-\\frac{b}{a}.$$<p>Összeszorozva a négyzetek különbsége '
+ 'azonosságot '
+ 'használjuk:</p>$$x_{1}x_{2}=\\frac{b^{2}-D}{4a^{2}}=\\frac{b^{2}-(b^{2}-4ac)}{4a^{2}}=\\frac{4ac}{4a^{2}}=\\frac{c}{a}.$$<p>Ha '
+ '$D&lt;0$, a gyökökben $\\sqrt D$ helyén $i\\sqrt{-D}$ szerepel. Az összegben ezek a tagok '
+ 'ugyanúgy kiesnek, szorzatuknál pedig $(i\\sqrt{-D})^{2}=D$. Ezért a Viète-képletek a nem valós '
+ 'komplex gyökökre is érvényesek.</p>'))),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Ellenőrizd a Viète-képleteket a $2x^{2}-10x+8=0$ egyenleten!</p>',
          lenyilo=("Megoldás",
@@ -344,9 +336,12 @@ A3 = [
          '$$ax^{2}+bx+c=a\\left(x-x_{1}\\right)\\left(x-x_{2}\\right).$$'
          '<p><b>Mikor ad ez valós tényezőket?</b> Akkor, ha $D\\ge 0$ — vagyis ha vannak valós gyökök. Ha $D&lt;0$, a trinom a <b>valós</b> számok körében <b>nem</b> bontható két elsőfokú tényezőre; a fenti alak ilyenkor is felírható, de a gyökök konjugált komplex párt alkotnak.</p>',
          hid="tetel-szorzatta-alakitas"),
-   doboz("csapda", "Dr. Baljós vírus-kódja",
-         '<p>„Minden másodfokú kifejezés felbontható két zárójel szorzatára.” — <b>A valós számok körében nem.</b> Nézd meg az $x^{2}+1$ kifejezést: $D=0-4=-4&lt;0$, tehát nincs valós gyöke — a grafikonja végig az $x$ tengely fölött halad, sehol nem metszi.</p>'
-         '<p>Mielőtt tényezőkre bontasz, <b>számold ki a diszkriminánst</b>. Ha negatív, a valós körben készen vagy: a kifejezés tovább nem bontható.</p>'),
+   doboz("csapda", 'Dr. Baljós víruskódja',
+         (('<p>„Minden másodfokú kifejezés felbontható két elsőfokú tényező szorzatára.” — <b>A valós számok '
+ 'körében nem.</b> Nézd meg az $x^{2}+1$ kifejezést: $D=0-4=-4&lt;0$, tehát nincs valós gyöke — a '
+ 'grafikonja végig az $x$-tengely fölött halad, sehol nem metszi.</p><p>Mielőtt tényezőkre '
+ 'bontasz, <b>számold ki a diszkriminánst</b>. Ha negatív, a valós körben készen vagy: a kifejezés '
+ 'nem bontható két valós együtthatós elsőfokú tényezőre.</p>'))),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Bontsd tényezőkre: <b>a)</b> $x^{2}-x-12$; <b>b)</b> $2x^{2}-10x+12$.</p>',
          hid="pelda-szorzatta",
@@ -355,7 +350,7 @@ A3 = [
                   '$$x^{2}-x-12=(x-4)(x+3).$$'
                   '<p><b>b)</b> $D=100-96=4$, a gyökök $3$ és $2$, a főegyüttható $2$:</p>'
                   '$$2x^{2}-10x+12=2(x-3)(x-2).$$')),
-   doboz("csapda", "Dr. Baljós vírus-kódja",
+   doboz("csapda", 'Dr. Baljós víruskódja',
          '<p>A mutálódott kód a $2x^{2}+5x-3$ bontását így írja: gyökök $\\tfrac12$ és $-3$, '
          'tehát $\\left(x-\\tfrac12\\right)(x+3)$. <b>Hiányos!</b> A <b>főegyüttható</b> '
          'lemaradt — így a szorzat kibontva $x^{2}+\\tfrac52x-\\tfrac32$ lenne, nem az '
@@ -439,7 +434,7 @@ A4 = [
    doboz("erdekesseg", "A módszer ennél tágabb",
          '<p>Nem csak az $x^{2}$-et nevezhetjük $t$-nek — bármit, ami az egyenletben <b>négyzeten és elsőfokon</b> is szerepel. Ha például $\\left(x^{2}-3\\right)^{2}-5\\left(x^{2}-3\\right)+6=0$, legyen $t=x^{2}-3$: így $t^{2}-5t+6=0$, ahonnan $t_{1}=2$ és $t_{2}=3$ — és utána <b>mindkettőt</b> vissza kell helyettesíteni ($x^{2}-3=2$, illetve $x^{2}-3=3$).</p>'
          '<p>Ugyanez a fogás működik $\\sqrt{x}=t$ helyettesítéssel is; ott a kikötés $t\\ge 0$.</p>'),
-   doboz("csapda", "Dr. Baljós vírus-kódja",
+   doboz("csapda", 'Dr. Baljós víruskódja',
          '<p>Két klasszikus hiba:</p>'
          '<ol class="reszfeladatok">'
          '<li><b>Megállni $t$-nél.</b> A kód azt írja: „a megoldások $9$ és $4$”. '
@@ -460,11 +455,9 @@ A4 = [
         nem="✘ t² + 3t − 4 = 0 → t = 1 vagy t = −4. A t = −4-hez nincs valós x, tehát csak ±1."),
    gyakorolj(FGY + "#alap-16", "A 16–18", FGY + "#kozep-14", "K 14–16",
              bevezeto="Kiegészítő kihívás: a bikvadratikus feladatok nem kötelező 2e-s törzsanyag."),
-   brief('<b>Küklopsz:</b> Nagol elvégezte a durva munkát — innen én veszem át. '
-         'Eddig azt kérdeztük: <b>hol nulla</b> a kifejezés. Most azt fogjuk kérdezni: '
-         '<b>hogyan viselkedik mindenütt</b>. Az optikai sugaraim röppályája ugyanaz a görbe, '
-         'mint amit a másodfokú függvény rajzol — és ha ismered a görbét, egyetlen '
-         'pillantással látod azt is, amit az egyenlet csak hosszú számolás után árul el.',
+   brief(('<b>Küklopsz:</b> Eddig az egyenlet megoldásait kerestük. Most azt vizsgáljuk, <b>hogyan '
+ 'viselkedik a másodfokú függvény</b>: hol nő, hol csökken, hol van a csúcspontja. A számolást és '
+ 'a grafikon leolvasását együtt használjuk.'),
          outro=True),
  ]),
 ]

@@ -33,13 +33,13 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/kuklopsz.webp" alt="Küklopsz — az optikai sugarak mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Küklopsz:</b> Két feltétel, két egyenlet. Az egyik <b>lineáris</b>, a másik <b>másodfokú</b>. Tavaly két egyenes metszéspontját kerested — most egy egyenes és egy parabola találkozási pontjait. A módszer ugyanaz, mint akkor: <b>behelyettesítés</b>. A különbség csak annyi, hogy a végén másodfokú egyenletet kapsz — és így akár <b>két</b> megoldás is lehet.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/kuklopsz.webp" alt="Küklopsz — az optikai sugarak mestere" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Küklopsz:</b> Két feltétel, két egyenlet. Az egyik <b>lineáris</b>, a másik <b>másodfokú</b>. Tavaly két egyenes metszéspontját kerested — most egy egyenes és egy parabola találkozási pontjait. A módszer ugyanaz, mint akkor: <b>behelyettesítés</b>. A különbség csak annyi, hogy behelyettesítés után rendszerint másodfokú egyenletet kapsz — és így akár <b>két</b> megoldás is lehet.</p></div>
 
     <h2 id="s1">A behelyettesítés módszere</h2>
 
     <div class="doboz tetel" id="tetel-rendszer-menete">
       <p class="cim"><span class="ikon">📘</span> Az eljárás</p>
-      <p>Egy másodfokú és egy lineáris egyenletből álló rendszer megoldása:</p><p><b>1.</b> A <b>lineáris</b> egyenletből fejezd ki az egyik ismeretlent (azt, amelyiket könnyebb).</p><p><b>2.</b> Helyettesítsd be a másodfokú egyenletbe — így egyismeretlenes másodfokú egyenletet kapsz.</p><p><b>3.</b> Oldd meg, majd <b>minden</b> gyökhöz számold ki a másik ismeretlent is.</p><p><b>4.</b> A megoldás <b>számpárokból</b> áll — annyiból, ahány gyököt a másodfokú egyenlet adott: <span class="math inline">\((x_{1};y_{1})\)</span>, <span class="math inline">\((x_{2};y_{2})\)</span>.</p>
+      <p>Egy másodfokú és egy lineáris egyenletből álló rendszer megoldása:</p><p><b>1.</b> A <b>lineáris</b> egyenletből fejezd ki az egyik ismeretlent (azt, amelyiket könnyebb).</p><p><b>2.</b> Helyettesítsd be a másodfokú egyenletbe — így egyismeretlenes egyenletet kapsz, amely rendszerint másodfokú. Ha a másodfokú tag kiesik, a megmaradó egyenletet oldd meg.</p><p><b>3.</b> Oldd meg, majd <b>minden</b> gyökhöz számold ki a másik ismeretlent is.</p><p><b>4.</b> Ha másodfokú egyenletet kaptunk, minden gyökből egy <b>számpárt</b> állítunk össze: <span class="math inline">\((x_{1};y_{1})\)</span>, <span class="math inline">\((x_{2};y_{2})\)</span>.</p>
     </div>
 
     <div class="doboz pelda" id="pelda-rendszer">
@@ -92,11 +92,11 @@
     <!-- media:end 2e02-rendszer-video -->
     <h2 id="s2">Hány megoldás lehet?</h2>
 
-    A behelyettesítés után másodfokú egyenletet kapunk — és annak a diszkriminánsa dönti el a megoldások számát. Geometriailag: hányszor metszi az egyenes a parabolát?
+    Ha a behelyettesítés után valóban másodfokú egyenletet kapunk, annak a diszkriminánsa dönti el a megoldások számát. Geometriailag: hányszor metszi az egyenes a parabolát?
 
     <div class="doboz tetel" id="tetel-rendszer-esetek">
       <p class="cim"><span class="ikon">📘</span> Három eset</p>
-      <p>(A „parabola” helyett bármilyen másodfokú görbe állhat — kör, hiperbola —, feltéve, hogy a behelyettesítés után valóban másodfokú egyenletet kapunk.)</p><p><b><span class="math inline">\(D&gt;0\)</span>:</b> az egyenes <b>két pontban</b> metszi a görbét → két megoldáspár.</p><p><b><span class="math inline">\(D=0\)</span>:</b> az egyenes <b>érinti</b> a parabolát → egy (kettős) megoldás.</p><p><b><span class="math inline">\(D&lt;0\)</span>:</b> nincs közös pontjuk → a rendszernek <b>nincs valós megoldása</b>.</p>
+      <p>A következő esetek az <span class="math inline">\(y=ax^{2}+bx+c\)</span> (<span class="math inline">\(a\neq0\)</span>) parabola és egy nem függőleges egyenes metszésére vonatkoznak. Más másodfokú görbénél is használhatjuk a behelyettesítést, de mindig ellenőrizzük a kapott egyenlet fokszámát.</p><p><b><span class="math inline">\(D&gt;0\)</span>:</b> az egyenes <b>két pontban</b> metszi a görbét → két megoldáspár.</p><p><b><span class="math inline">\(D=0\)</span>:</b> az egyenes <b>érinti</b> a parabolát → egy (kettős) megoldás.</p><p><b><span class="math inline">\(D&lt;0\)</span>:</b> nincs közös pontjuk → a rendszernek <b>nincs valós megoldása</b>.</p>
     </div>
 
     <div class="doboz pelda" id="pelda-metszespontok">
@@ -129,8 +129,8 @@
     </div>
 
     <div class="doboz csapda">
-      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós vírus-kódja</p>
-      <p>A leggyakoribb hiba: <b>megállni <span class="math inline">\(x\)</span>-nél</b>. A rendszer megoldása nem szám, hanem <b>számpár</b> — minden <span class="math inline">\(x\)</span>-hez ki kell számolni a hozzá tartozó <span class="math inline">\(y\)</span>-t. És vigyázz: a visszahelyettesítést a <b>lineáris</b> egyenletbe végezd, mert az mindig egyetlen értéket ad. Ha a másodfokúba helyettesítesz vissza — például az <span class="math inline">\(x^{2}+y^{2}=10\)</span>-be —, két érték is jöhet, és közülük csak az egyik illik a párba.</p>
+      <p class="cim"><span class="ikon">⚠️</span> Dr. Baljós víruskódja</p>
+      <p>A leggyakoribb hiba: <b>megállni <span class="math inline">\(x\)</span>-nél</b>. A rendszer megoldása nem szám, hanem <b>számpár</b> — minden <span class="math inline">\(x\)</span>-hez ki kell számolni a hozzá tartozó <span class="math inline">\(y\)</span>-t. És vigyázz: a visszahelyettesítést a lineáris egyenletből <b>korábban kifejezett ismeretlen képletébe</b> végezd. Ez minden kapott értékhez egyértelműen megadja a másik ismeretlent. Ha a másodfokúba helyettesítesz vissza — például az <span class="math inline">\(x^{2}+y^{2}=10\)</span>-be —, két érték is jöhet, és közülük csak az egyik illik a párba.</p>
     </div>
 
     <div class="kviz" data-answer="0" data-kevert="1" data-jo="✔ A t² − 5t + 6 = 0 egyenlet gyökei 2 és 3; a rendszer szimmetrikus." data-nem="✘ Írd fel a t² − 5t + 6 = 0 egyenletet: gyökei 2 és 3, tehát mindkét sorrend megoldás.">
@@ -142,7 +142,7 @@
 
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-egyenlotlensegek-es-rendszerek.html#alap-7">🐾 Bestia-protokoll <span class="cimke">A 7–12</span></a><a class="sav bruno" href="feladatok-egyenlotlensegek-es-rendszerek.html#kozep-6">🔥 Főnix-protokoll <span class="cimke">K 6–10</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/dr_bestia.webp" alt="Dr. Bestia — a kampusz fővezető tudósa" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Dr. Bestia:</b> Kadétok, jó munka — a Parabola-csapást elhárítottuk. De miközben ti a röppályákkal foglalkoztatok, én a laborban mértem valamit, és nem tetszik: Dr. Baljós vírusa nem másodfokon terjed többé. <b>Megduplázódik</b> minden lépésben. Az ilyen növekedést a másodfokú függvény már nem írja le — sokkal gyorsabb annál. A következő küldetés az <b>Evolúciós Ugrás</b>, és a fegyverünk az exponenciális függvény lesz.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/dr_bestia.webp" alt="Dr. Bestia — a kampusz fővezető tudósa" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Dr. Bestia:</b> Kadétok, jó munka — a Parabola-csapást elhárítottuk. De miközben ti a röppályákkal foglalkoztatok, én a laborban mértem valamit, és nem tetszik: Dr. Baljós vírusa nem másodfokon terjed többé. <b>Megduplázódik</b> minden lépésben. Az azonos időközönkénti duplázódást <b>exponenciális növekedéssel</b> írjuk le. Hosszabb távon ez gyorsabb a másodfokú növekedésnél. A következő küldetés az <b>Evolúciós Ugrás</b>, és a fegyverünk az exponenciális függvény lesz.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-masodfoku-egyenlotlensegek.html"><span class="irany">← Előző</span><span class="hova">Másodfokú egyenlőtlenségek</span></a>
       <a class="kov" href="feladatok-egyenlotlensegek-es-rendszerek.html"><span class="irany">Következő →</span><span class="hova">Feladatok — egyenlőtlenségek és rendszerek</span></a>

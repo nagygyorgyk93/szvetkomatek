@@ -33,9 +33,9 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/vihar_vera.webp" alt="Vihar Vera — az időjárás úrnője" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Vihar Vera:</b> A műszerek tucatnyi gyökös jelet dobnak ki egyszerre, és ránézésre mind különbözőnek látszik. Pedig <span class="math inline">\(\sqrt{20}\)</span>, <span class="math inline">\(\sqrt{45}\)</span> és <span class="math inline">\(\sqrt{80}\)</span> ugyanannak a jelnek a többszörösei — csak <b>ki kell hozni</b> belőlük a közös részt. Aki ezt látja, két sorban rendet tesz ott, ahol más fél oldalt számol.</p></div>
+    <div class="brief karakter"><img class="avatar" src="../../assets/img/kar/vihar_vera.webp" alt="Vihar Vera — az időjárás úrnője" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Vihar Vera:</b> A kijelzőn <span class="math inline">\(\sqrt{20}\)</span>, <span class="math inline">\(\sqrt{45}\)</span> és <span class="math inline">\(\sqrt{80}\)</span> szerepel. Különböző alakúnak látszanak, de mindegyik felírható <span class="math inline">\(\sqrt5\)</span> többszöröseként. Ha kihozzuk a megfelelő tényezőt a gyökjel alól, könnyebb lesz összevonni az ilyen tagokat.</p></div>
 
-    Ebben az egységben megtanuljuk a gyökös kifejezések „házimunkáját”: tényezőt viszünk ki és be, összevonjuk a hasonló tagokat, szorzunk, és egymásba ágyazott gyököket bontunk.
+    Ebben az egységben megtanuljuk a gyökös kifejezésekkel való számolást: tényezőt viszünk ki és be, összevonjuk a hasonló tagokat, szorzunk, és egymásba ágyazott gyököket bontunk.
 
     <h2 id="s1">Tényező kivitele és bevitele</h2>
 
@@ -43,19 +43,19 @@
 
     <div class="doboz tetel" id="tetel-gyok-kikotes">
       <p class="cim"><span class="ikon">📘</span> Mikor szabad? — a kikötés</p>
-      <p><b>Páros</b> gyökkitevőnél (négyzetgyök, negyedik gyök…) a gyökjel alatt csak <b>nemnegatív</b> szám állhat, és a kihozott tényező is nemnegatív. Ezért ilyenkor a <span class="math inline">\(b\ge 0\)</span> és <span class="math inline">\(a\ge 0\)</span> feltétel kell — különben a helyes alak <span class="math inline">\(\sqrt{a^{2}}=|a|\)</span> szerint abszolútérték jelenik meg.</p><p><b>Páratlan</b> gyökkitevőnél (köbgyök, ötödik gyök…) nincs ilyen megkötés: negatív szám köbgyöke is értelmezett, és az előjel gond nélkül átmegy a gyökjel alatt.</p><p>Ezért szerepel a betűs feladatokban az <span class="math inline">\(a&gt;0\)</span> típusú kikötés — nem díszítés, hanem az azonosság érvényességi feltétele.</p>
+      <p><b>Páros</b> gyökkitevőnél <span class="math inline">\(a\ge0\)</span> szükséges. A fenti alakban <span class="math inline">\(b\ge0\)</span>-t is kikötünk. Ha a kiemelendő tényező előjelét nem ismerjük, abszolút értéket írunk: <span class="math inline">\(\sqrt[n]{ab^{n}}=|b|\sqrt[n]{a}\)</span>.</p><p><b>Páratlan</b> gyökkitevőnél (köbgyök, ötödik gyök…) nincs ilyen megkötés: negatív szám köbgyöke is értelmezett, és a negatív tényező is bevihető a gyökjel alá, illetve kihozható onnan.</p><p>Ezért szerepel a betűs feladatokban az <span class="math inline">\(a&gt;0\)</span> típusú kikötés — nem díszítés, hanem az azonosság érvényességi feltétele.</p>
     </div>
 
     <div class="doboz pelda" id="pelda-kihozatal">
       <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció — kihozatal</p>
       <p>Hozd ki a gyökjel alól a lehető legnagyobb tényezőt: <span class="math inline">\(\sqrt{72}\)</span>, <span class="math inline">\(\sqrt[3]{54}\)</span>, <span class="math inline">\(\sqrt{50a^{3}}\)</span> (<span class="math inline">\(a&gt;0\)</span>).</p>
-      <details><summary>Megoldás</summary><div class="bel"><p>A trükk: keresd meg a legnagyobb <b>teljes hatvány</b> osztót.</p><p><span class="math inline">\(\sqrt{72}=\sqrt{36\cdot 2}=6\sqrt{2}\)</span> · <span class="math inline">\(\sqrt[3]{54}=\sqrt[3]{27\cdot 2}=3\sqrt[3]{2}\)</span> · <span class="math inline">\(\sqrt{50a^{3}}=\sqrt{25a^{2}\cdot 2a}=5a\sqrt{2a}\)</span>.</p></div></details>
+      <details><summary>Megoldás</summary><div class="bel"><p>Négyzetgyöknél teljes négyzetet, köbgyöknél teljes köböt keress a tényezők között.</p><p><span class="math inline">\(\sqrt{72}=\sqrt{36\cdot 2}=6\sqrt{2}\)</span> · <span class="math inline">\(\sqrt[3]{54}=\sqrt[3]{27\cdot 2}=3\sqrt[3]{2}\)</span> · <span class="math inline">\(\sqrt{50a^{3}}=\sqrt{25a^{2}\cdot 2a}=5a\sqrt{2a}\)</span>.</p></div></details>
     </div>
 
     <div class="doboz pelda">
       <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció — bevitel</p>
       <p>Vidd be a gyökjel alá: <span class="math inline">\(3\sqrt{5}\)</span> és <span class="math inline">\(2\sqrt[3]{7}\)</span>.</p>
-      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(3\sqrt{5}=\sqrt{5\cdot 3^{2}}=\sqrt{45}\)</span> · <span class="math inline">\(2\sqrt[3]{7}=\sqrt[3]{7\cdot 2^{3}}=\sqrt[3]{56}\)</span>. Figyelj: a tényező a <b>gyökkitevő</b> hatványán megy be.</p></div></details>
+      <details><summary>Megoldás</summary><div class="bel"><p><span class="math inline">\(3\sqrt{5}=\sqrt{5\cdot 3^{2}}=\sqrt{45}\)</span> · <span class="math inline">\(2\sqrt[3]{7}=\sqrt[3]{7\cdot 2^{3}}=\sqrt[3]{56}\)</span>. Figyelj: a tényezőt a <b>gyökkitevőnek megfelelő hatványra emelve</b> visszük be.</p></div></details>
     </div>
 
     <h2 id="s2">Hasonló gyökös tagok összevonása</h2>
@@ -97,7 +97,7 @@
 
     <h2 id="s4">Beágyazott gyökök és a gyökök összehasonlítása</h2>
 
-    Az egymásba ágyazott gyököket a <span class="math inline">\(\sqrt[m]{\sqrt[n]{a}}=\sqrt[m\cdot n]{a}\)</span> azonosság bontja fel. Ha a gyökök alatt hatványok is vannak, a legbiztosabb út a <b>közös gyökkitevőre hozás</b> — pontosan úgy, ahogy a törteket közös nevezőre hozzuk.
+    Az egymásba ágyazott gyököket a <span class="math inline">\(\sqrt[m]{\sqrt[n]{a}}=\sqrt[m\cdot n]{a}\)</span> azonosság bontja fel. Nemnegatív gyökmennyiségeknél, ha a gyökök alatt hatványok is vannak, használhatjuk a <b>közös gyökkitevőre hozást</b> — pontosan úgy, ahogy a törteket közös nevezőre hozzuk.
 
     <div class="doboz pelda" id="pelda-beagyazott">
       <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció — beágyazott gyök</p>
@@ -138,7 +138,7 @@
     <!-- media:end 2e01-gyokok3-video -->
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-gyokvonas.html#alap-6">🐾 Bestia-protokoll <span class="cimke">A 6–11</span></a><a class="sav bruno" href="feladatok-gyokvonas.html#kozep-5">🔥 Főnix-protokoll <span class="cimke">K 5–9</span></a></div></div></div>
 
-    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/vihar_vera.webp" alt="Vihar Vera — az időjárás úrnője" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Vihar Vera:</b> Egy dolog maradt, ami elrontja a jelentéseinket: a <b>nevezőben álló gyök</b>. Ki kell onnan takarítani — és közben rájössz, hogy a hatvány és a gyök valójában ugyanaz a művelet, két különböző jelöléssel.</p></div>
+    <div class="brief karakter" data-outro><img class="avatar" src="../../assets/img/kar/vihar_vera.webp" alt="Vihar Vera — az időjárás úrnője" width="320" height="320" loading="lazy" decoding="async"><p>📡 <b>Vihar Vera:</b> Következik a nevezőben álló gyök eltüntetése. Ezután megnézzük, hogyan írhatjuk fel pozitív alap esetén a gyökös kifejezéseket <b>tört kitevőjű hatványként</b>.</p></div>
     <div class="lapozo">
       <a class="elozo" href="tananyag-gyokvonas.html"><span class="irany">← Előző</span><span class="hova">Gyökvonás</span></a>
       <a class="kov" href="tananyag-gyoktelenites-es-racionalis-kitevo.html"><span class="irany">Következő →</span><span class="hova">Gyöktelenítés és racionális kitevő</span></a>

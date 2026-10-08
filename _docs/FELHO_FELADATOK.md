@@ -270,7 +270,7 @@ A korábbi A1-ellenőrzések nem helyettesítik a teljes stilisztikai átnézés
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ◐ Helyben kész: 77/77 oldal — 38 tananyag, 38 további témaköroldal és az osztály főoldala; teljes nyelvi és példahitelességi audit (2026-10-07) | ◐ 3/65 oldal: 01 három komplexszámos tananyaga teljesen átnézve és javítva (helyi main, 2026-10-07; ez az adag még nincs pusholva) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
+| ◐ Helyben kész: 77/77 oldal — 38 tananyag, 38 további témaköroldal és az osztály főoldala; teljes nyelvi és példahitelességi audit (2026-10-07) | ◐ 30/65 oldal: 01–02 két teljes témaköre átnézve; nyelvi és feltételhibák javítva (helyi main, 2026-10-08; ez az adag nincs pusholva) | ☐ A3 külön audit hátra | ☐ A3 külön audit hátra |
 
 Az első adag három függvényes, a második hat logikai és halmazos tananyagot
 ellenőrzött. A példák feltételei, bevezetők, átvezetők és matematikai pontatlanságok
@@ -444,9 +444,28 @@ Keresőindex pontosan három URL-en változott, naplótérkép változatlan.
 1e 77/77 kész, 2e 3/65 oldal átnézve; a 2e többi lapja és a 3e–4e hátra.
 Következő adag a 2e/01 öt hatványozási/gyökvonási tananyaga.
 
+Huszonegyedik adag (2026-10-07–08): a tanár kérésére adagonként 2–3 témakör.
+A 2e/01–02 mind a 30 lapjának teljes A3-auditja lezárva, 27 új oldal a korábbi
+három komplexszámos tananyag mellett. Természetesebb bevezetők és háziutasítások;
+hatvány/gyök/reciprok/megoldóképlet feltételei; másodfokú kivételes esetek;
+nyílt intervallum és grafikonleírás; két terepküldetés jelentési és modellhibái;
+nyitóoldal képletjelölései és komplex Joker pontosítása. A bikvadratikus
+kiegészítések és minden meglévő feladatszámadat megmaradtak.
+Független lektorok: 107 gyökös/másodfokú kártya, kidolgozott példák és mindkét
+projekt újraszámolva; a végleges elmélet három lektori pontosítása beépítve.
+297 kártya adatai/horgonyai és 10 SVG megmaradt. 14 builder és teljes lánc:
+310/0 kánon/link, sáv tiszta, kulcs 4499/4499, regresszió 100%; 30 lap,
+3202 képlet, 36 kvíz, 0 hiba. Edge 180 + 30 nézet, axe ugyanennyi, nyomtatás
+60 + 10 JS be/ki, mind rendben; Node azonos TULLOGOK-kontrollal.
+Index 308 bejegyzés, 28 változó URL; naplótérkép byte szerint azonos.
+A meglévő kulcsmodul a 2e-t nem fedi le. Külső média, valódi képernyőolvasó,
+más böngésző és teljes PDF-oldaltördelés új ellenőrzése nincs.
+Állapot: 1e 77/77 kész, 2e 30/65; következő adag a 2e/03–04 két témaköre.
+Tanári döntés kell: nincs. Új ág/push nincs. Részletek: A3_nyelvi_ellenorzes.md.
+
 Részletek:
 [A3 nyelvi ellenőrzés](A3_nyelvi_ellenorzes.md).
-Hátra van a többi tananyag, feladatgyűjtemény, nyitóoldal, összefoglaló és terepküldetés.
+Hátra van a 2e/03–04, az osztály főoldala és a 3e–4e teljes A3-auditja.
 
 ---
 

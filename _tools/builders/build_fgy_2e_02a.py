@@ -218,9 +218,8 @@ NEHEZ = [
   None, "$c=5$"),
 ]
 
-JOKER = ("<b>Dr. Baljós vírus-kódja.</b> A rendszer a következő szorzattá alakítást adta ki. "
-         "Hol a hiba, és mi a helyes alak? "
-         "$$3x^{2}-12x+9\\ \\overset{?}{=}\\ (x-1)(x-3)$$",
+JOKER = (('<b>Dr. Baljós víruskódja.</b> A rendszer a következő szorzattá alakítást adta ki. Hol a hiba, és '
+ 'mi a helyes alak? $$3x^{2}-12x+9\\ \\overset{?}{=}\\ (x-1)(x-3)$$'),
          "A $3$-as főegyüttható kimaradt; helyesen $3(x-1)(x-3)$.")
 
 GYE_ORAI = [

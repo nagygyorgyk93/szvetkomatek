@@ -15,11 +15,9 @@ FGY = "feladatok-hatvanyozas.html"
 
 A1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Vihar Vera:</b> Kadét, a vihar ereje nem összeadódik — <b>szorzódik</b>. '
-         'Egy villám feszültsége nem „valamivel több" a másiknál: <b>nagyságrendekkel</b> nagyobb. '
-         'Ez a hatványozás nyelve, és az M-Hullám is ezen a nyelven beszél. '
-         'Ha nem tudod egyetlen tömör alakba sűríteni a kaotikus kifejezéseket, '
-         'Dr. Baljós mutációi olvashatatlanná torzítják a műszereinket. Kezdjük az alapoknál.'),
+   brief(('<b>Vihar Vera:</b> Kadét, a viharok adataiban nagyon nagy és nagyon kicsi számokkal találkozunk. '
+ 'A hatványozás segít ezeket <b>röviden leírni</b>. Az UMOTRON műszereinek kijelzőjén is ilyen '
+ 'alakok szerepelnek. Először az ismételt szorzásból indulunk ki, majd bővítjük a kitevők körét.')),
    'Az általánosban a hatványozás csak rövidítés volt az ismételt szorzásra. Idén <b>kitágítjuk</b>: '
    'lesz nulla, negatív, majd (a témakör végére) <b>tört</b> kitevő is. A trükk mindvégig ugyanaz — '
    'úgy bővítünk, hogy a megszokott <b>azonosságok érvényben maradjanak</b>.',
@@ -27,38 +25,35 @@ A1 = [
 
  ("A hatvány fogalma", [
    doboz("definicio", "Természetes kitevőjű hatvány",
-         '<p>Ha $a\\in\\mathbb{R}$ és $n\\in\\mathbb{N}$, akkor az $a$ szám $n$-edik hatványa '
-         'az az $n$ tényezős szorzat, amelynek minden tényezője $a$:</p>'
-         '$$a^{n}=\\underbrace{a\\cdot a\\cdot\\ldots\\cdot a}_{n\\ \\text{tényező}}$$'
-         '<p>Itt $a$ a hatvány <b>alapja</b>, $n$ pedig a <b>kitevője</b>.</p>',
+         ('<p>Ha $a\\in\\mathbb{R}$ és $n\\in\\mathbb{N}$, $n\\ge 1$, akkor az $a$ szám $n$-edik hatványa '
+ 'az az $n$ tényezős szorzat, amelynek minden tényezője $a$:</p>$$a^{n}=\\underbrace{a\\cdot '
+ 'a\\cdot\\ldots\\cdot a}_{n\\ \\text{tényező}}$$<p>Itt $a$ a hatvány <b>alapja</b>, $n$ pedig a '
+ '<b>kitevője</b>.</p>'),
          hid="def-hatvany"),
    doboz("erdekesseg", "Hol találkozol vele? — a normálalak",
-         '<p>A természettudomány a nagyon nagy és nagyon kicsi mennyiségeket <b>normálalakban</b> '
-         '(tudományos jelöléssel) írja: $a\\cdot 10^{k}$, ahol $1\\le a&lt;10$ és $k\\in\\mathbb{Z}$. '
-         'Egy fényév kb. $9{,}46\\cdot 10^{15}\\ \\text{m}$, egy elektron tömege '
-         '$9{,}11\\cdot 10^{-31}\\ \\text{kg}$. A két szám kiírva 16, illetve 31 jegyű volna — '
-         'a hatvány itt nem dísz, hanem <b>olvashatóság</b>.</p>'),
+         ('<p>A természettudomány a nagyon nagy és nagyon kicsi mennyiségeket <b>normálalakban</b> '
+ '(tudományos jelöléssel) írja: $a\\cdot 10^{k}$, ahol $1\\le a&lt;10$ és $k\\in\\mathbb{Z}$. Egy '
+ 'fényév kb. $9{,}46\\cdot 10^{15}\\ \\text{m}$, egy elektron tömege $9{,}11\\cdot 10^{-31}\\ '
+ '\\text{kg}$. A hatványos alakban a számok nagyságrendje is könnyen leolvasható.</p>')),
  ]),
 
  ("A hatványozás azonosságai", [
    'Ezek a szabályok a definícióból egyenesen következnek: elég megszámolni, hány tényező van.',
    doboz("tetel", "A hatványozás öt alapazonossága",
-         '<p>Ha $a,b\\in\\mathbb{R}$ és $m,n\\in\\mathbb{N}$, akkor</p>'
-         '$$a^{m}\\cdot a^{n}=a^{m+n}\\qquad '
-         '\\frac{a^{m}}{a^{n}}=a^{m-n}\\ (a\\neq 0)\\qquad '
-         '\\left(a^{m}\\right)^{n}=a^{m\\cdot n}$$'
-         '$$a^{m}\\cdot b^{m}=(a\\cdot b)^{m}\\qquad '
-         '\\frac{a^{m}}{b^{m}}=\\left(\\frac{a}{b}\\right)^{m}\\ (b\\neq 0)$$',
+         ('<p>Ha $a,b\\in\\mathbb{R}$ és $m,n\\in\\mathbb{N}$, $m,n\\ge1$, akkor</p>$$a^{m}\\cdot '
+ 'a^{n}=a^{m+n}\\qquad \\frac{a^{m}}{a^{n}}=a^{m-n}\\ (a\\neq 0,\\ m&gt;n)\\qquad '
+ '\\left(a^{m}\\right)^{n}=a^{m\\cdot n}$$$$a^{m}\\cdot b^{m}=(a\\cdot b)^{m}\\qquad '
+ '\\frac{a^{m}}{b^{m}}=\\left(\\frac{a}{b}\\right)^{m}\\ (b\\neq 0)$$'),
          hid="tetel-hatvany-azonossagok",
          lenyilo=("Miért igaz az első?",
                   '<p>Az $a^{m}$ pontosan $m$ darab $a$ tényező szorzata, az $a^{n}$ pedig $n$ darabé. '
                   'Egymás mellé írva összesen $m+n$ tényezőt kapunk — ez éppen $a^{m+n}$. '
                   'A többi azonosság ugyanígy, tényezőszámlálással igazolható.</p>')),
    doboz("tetel", "Előjel és nagyságrend",
-         '<p>$1^{m}=1$, továbbá $0^{m}=0$ minden $m&gt;0$ esetén, és</p>'
-         '$$(-1)^{m}=\\begin{cases}\\ \\ 1,&\\text{ha } m \\text{ páros},\\\\ -1,&\\text{ha } m \\text{ páratlan}.\\end{cases}$$'
-         '<p>Ha $m&gt;n$, akkor $a&gt;1$ esetén $a^{m}&gt;a^{n}$, viszont $0&lt;a&lt;1$ esetén '
-         '$a^{m}&lt;a^{n}$ — a törtszám hatványai <b>csökkennek</b>.</p>',
+         ('<p>$1^{m}=1$, továbbá $0^{m}=0$ minden $m&gt;0$ esetén, és</p>$$(-1)^{m}=\\begin{cases}\\ \\ '
+ '1,&\\text{ha } m \\text{ páros},\\\\ -1,&\\text{ha } m \\text{ páratlan}.\\end{cases}$$<p>Ha '
+ '$m&gt;n$, akkor $a&gt;1$ esetén $a^{m}&gt;a^{n}$, viszont $0&lt;a&lt;1$ esetén $a^{m}&lt;a^{n}$ '
+ '— a $0$ és $1$ közötti szám hatványai a kitevő növelésével <b>csökkennek</b>.</p>'),
          hid="tetel-hatvany-elojel"),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Állítsd növekvő sorrendbe: $A=\\dfrac{1}{3}$, $B=-\\dfrac{1}{3}$, '
@@ -77,23 +72,21 @@ A1 = [
  ]),
 
  ("Nulla és negatív kitevő", [
-   'Mi legyen $a^{0}$ vagy $a^{-3}$? A definíció („ennyi tényező szorzata") itt már nem segít — '
-   'nem lehet nulla darab vagy mínusz három darab tényezőt összeszorozni. Ezért nem <i>kitaláljuk</i> '
-   'az értéküket, hanem <b>kikényszerítjük</b>: úgy definiáljuk őket, hogy a fenti azonosságok '
-   'továbbra is igazak maradjanak. Ezt hívják <b>permanenciaelvnek</b>.',
+   ('Mi legyen $a^{0}$ vagy $a^{-3}$? Az ismételt szorzásból ezek értéke közvetlenül nem olvasható '
+ 'le. Úgy definiáljuk őket, hogy a már megismert <b>azonosságok továbbra is igazak maradjanak</b>. '
+ 'Ezt nevezzük <b>permanenciaelvnek</b>.'),
    doboz("tetel", "Így jön ki a nulla és a negatív kitevő",
-         '<p>Legyen $a\\neq 0$. Ha az $\\dfrac{a^{m}}{a^{n}}=a^{m-n}$ szabály $m=n$-re is érvényes:</p>'
-         '$$1=\\frac{a^{n}}{a^{n}}=a^{n-n}=a^{0}.$$'
-         '<p>Ha pedig $m=0$-ra is érvényes:</p>'
-         '$$\\frac{1}{a^{n}}=\\frac{a^{0}}{a^{n}}=a^{0-n}=a^{-n}.$$'
-         '<p>Nincs választásunk: <b>ez az egyetlen</b> értelmezés, amivel az azonosságok megmaradnak.</p>',
+         ('<p>Legyen $a\\neq 0$. Ha az $\\dfrac{a^{m}}{a^{n}}=a^{m-n}$ szabály $m=n$-re is '
+ 'érvényes:</p>$$1=\\frac{a^{n}}{a^{n}}=a^{n-n}=a^{0}.$$<p>Ha pedig $m=0$-ra is '
+ 'érvényes:</p>$$\\frac{1}{a^{n}}=\\frac{a^{0}}{a^{n}}=a^{0-n}=a^{-n}.$$<p>Ezekkel az értékekkel a '
+ 'hányadosra vonatkozó azonosság a nulla és a negatív kitevőre is érvényes marad.</p>'),
          hid="tetel-permanencia"),
    doboz("definicio", "Egész kitevőjű hatvány",
-         '<p>Ha $a\\in\\mathbb{R}$, $a\\neq 0$ és $n\\in\\mathbb{N}$, akkor</p>'
-         '$$a^{0}=1,\\qquad a^{-n}=\\frac{1}{a^{n}}=\\left(\\frac{1}{a}\\right)^{n}.$$'
-         '<p>Speciálisan $\\left(\\dfrac{a}{b}\\right)^{-n}=\\left(\\dfrac{b}{a}\\right)^{n}$ — '
-         'a negatív kitevő a törtet <b>megfordítja</b>. Ezek után az öt azonosság már '
-         '<b>minden egész</b> kitevőre érvényes.</p>',
+         ('<p>Ha $a\\in\\mathbb{R}$, $a\\neq 0$ és $n\\in\\mathbb{N}$, $n\\ge1$, akkor</p>$$a^{0}=1,\\qquad '
+ 'a^{-n}=\\frac{1}{a^{n}}=\\left(\\frac{1}{a}\\right)^{n}.$$<p>Speciálisan '
+ '$\\left(\\dfrac{a}{b}\\right)^{-n}=\\left(\\dfrac{b}{a}\\right)^{n}$ ($a,b\\neq0$): a negatív '
+ 'kitevő a törtet <b>megfordítja</b>. Nemnulla alapokra az öt azonosság <b>minden egész '
+ 'kitevővel</b> érvényes.</p>'),
          hid="def-egesz-kitevo"),
    kviz('Mennyi $\\left(\\dfrac{2}{5}\\right)^{-2}$?',
         ['$\\dfrac{25}{4}$', '$-\\dfrac{4}{25}$', '$\\dfrac{4}{25}$'], 0,
@@ -102,17 +95,15 @@ A1 = [
  ]),
 
  ("Előjelek — ahol Dr. Baljós a leggyakrabban támad", [
-   doboz("csapda", "Dr. Baljós vírus-kódja",
-         '<p>A mutálódott kód négy klasszikus hibát rejt. Mindegyik <b>hamis</b>:</p>'
-         '<ol class="reszfeladatok">'
-         '<li>$-2^{4}=16$ — <b>nem</b>: a hatványozás előbb jön, mint az előjel, tehát '
-         '$-2^{4}=-\\left(2^{4}\\right)=-16$. Ezzel szemben $(-2)^{4}=16$.</li>'
-         '<li>$(-2)^{-2}=-\\dfrac14$ — <b>nem</b>: $(-2)^{-2}=\\dfrac{1}{(-2)^{2}}=\\dfrac14$. '
-         'A negatív <b>kitevő</b> soha nem tesz negatívvá egy hatványt.</li>'
-         '<li>$a^{-n}=-a^{n}$ — <b>nem</b>: a negatív kitevő <b>reciprokot</b> jelent, nem ellentettet.</li>'
-         '<li>$0^{0}=1$ — <b>nem</b>: a $0^{0}$ kifejezés <b>nincs értelmezve</b> '
-         '(a $a^{0}=1$ szabály csak $a\\neq0$ mellett érvényes).</li>'
-         '</ol>'),
+   doboz("csapda", 'Dr. Baljós víruskódja',
+         ('<p>A mutálódott kód négy klasszikus hibát rejt. Mindegyik <b>hamis</b>:</p><ol '
+ 'class="reszfeladatok"><li>$-2^{4}=16$ — <b>nem</b>: a hatványozás előbb jön, mint az előjel, '
+ 'tehát $-2^{4}=-\\left(2^{4}\\right)=-16$. Ezzel szemben '
+ '$(-2)^{4}=16$.</li><li>$(-2)^{-2}=-\\dfrac14$ — <b>nem</b>: '
+ '$(-2)^{-2}=\\dfrac{1}{(-2)^{2}}=\\dfrac14$. A negatív <b>kitevő</b> reciprokot jelent; önmagában '
+ 'nem változtatja meg az előjelet.</li><li>$a^{-n}=-a^{n}$ — <b>nem</b>: a negatív kitevő '
+ '<b>reciprokot</b> jelent, nem ellentettet.</li><li>$0^{0}=1$ — <b>nem</b>: a $0^{0}$ kifejezés '
+ '<b>nincs értelmezve</b> (a $a^{0}=1$ szabály csak $a\\neq0$ mellett érvényes).</li></ol>')),
    kviz('Mennyi $-3^{2}+(-3)^{2}$?',
         ['$0$', '$18$', '$-18$'], 0,
         jo="✔ −3² = −9, (−3)² = 9, az összegük 0.",
@@ -120,9 +111,9 @@ A1 = [
  ]),
 
  ("Összetett hatványkifejezések", [
-   'A vizsgahelyzetek nagy része két típus: <b>számkifejezés pontos értéke</b> és '
-   '<b>betűs kifejezés egyszerűsítése</b>. Mindkettőnél ugyanaz a stratégia — '
-   'előbb minden hatványt közös alapra hozunk, aztán az azonosságokkal összevonunk.',
+   ('Két gyakori feladattípus a <b>számkifejezések értékének kiszámítása</b> és a <b>betűs '
+ 'kifejezések egyszerűsítése</b>. Keresd a közös alapú hatványokat, majd alkalmazd az '
+ 'azonosságokat.'),
    doboz("pelda", "Vészterem-szimuláció — számkifejezés",
          '<p>Számítsd ki: $\\left(\\dfrac{3}{5}\\right)^{2}-\\dfrac{3}{5^{2}}'
          '+\\left(-\\dfrac{3}{5}\\right)^{2}-\\left(\\dfrac{5}{3}\\right)^{-2}$.</p>',
@@ -151,10 +142,11 @@ A1 = [
                   '$$\\frac{3^{n}\\left(9-1\\right)}{3^{n}\\cdot 3}=\\frac{8}{3}.$$'
                   '<p>A $3^{n}$ kiesik — az eredmény <b>nem függ</b> $n$-től.</p>')),
    gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–5, 8"),
-   brief('<b>Vihar Vera:</b> A hatvány mostantól nem csak szám — <b>függvény</b> is. '
-         'Ha az alapot rögzítjük és a kitevőt változtatjuk, exponenciális görbét kapunk (az a tavaszi küldetés). '
-         'Ha viszont a <b>kitevőt</b> rögzítjük és az alapot változtatjuk, megkapjuk a '
-         '<b>hatványfüggvényt</b> — és annak a képe elárulja, hogyan viselkedik a rendszer. Nézzük meg.',
+   brief(('<b>Vihar Vera:</b> A hatvány mostantól nem csak szám — <b>függvény</b> is. Ha egy $a&gt;0$, '
+ '$a\\neq1$ alapot rögzítünk, és a kitevőt változtatjuk, exponenciális függvényt kapunk; ezzel egy '
+ 'későbbi témakörben foglalkozunk. Ha viszont a <b>kitevőt</b> rögzítjük és az alapot '
+ 'változtatjuk, megkapjuk a <b>hatványfüggvényt</b> — és annak a képe elárulja, hogyan viselkedik '
+ 'a rendszer. Nézzük meg.'),
          outro=True),
  ]),
 ]
@@ -183,10 +175,9 @@ TUL_PARATLAN = (
 
 A2 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Vihar Vera:</b> Egy szám még nem fenyegetés. A fenyegetés az, ahogyan a szám <b>változik</b>. '
-         'A hatványfüggvény grafikonja egyetlen pillantással megmutatja, mi történik: hol nő, milyen '
-         'gyorsan, szimmetrikus-e, van-e hova „elszaladnia". Dr. Baljós mutációi görbék alakjában '
-         'jelennek meg az UMOTRON műszerein — ezért kell felismerned őket.'),
+   brief(('<b>Vihar Vera:</b> Az UMOTRON kijelzőjén most görbéket látsz. A hatványfüggvények grafikonján '
+ 'megvizsgáljuk, hol nőnek vagy csökkennek a függvényértékek, és milyen szimmetriákat találunk. A '
+ 'kitevő előjele és párossága segít felismerni a görbét.')),
    'Ebben az egységben a rögzített kitevőjű $y=x^{n}$ függvényeket vizsgáljuk. Minden a kitevő '
    '<b>paritásán</b> és <b>előjelén</b> múlik — három családot kapunk.',
  ]),
@@ -219,11 +210,12 @@ A2 = [
         leiras="Az y = x² és y = x⁴ függvények grafikonja: mindkettő az y-tengelyre tükrös, "
                "legalsó pontjuk az origó"),
         "Páros kitevő: a görbe az $y$-tengelyre tükrös, és soha nem megy az $x$-tengely alá."),
-   'A $y=x^{2}$ grafikonját <b>parabolának</b> hívjuk; a nagyobb páros kitevők grafikonja '
-   'hasonló jellegű (de már nem parabola): a $(-1;1)$ intervallumon <b>közelebb simul</b> '
-   'az $x$-tengelyhez, azon kívül pedig <b>meredekebben emelkedik</b>.',
+   ('Ebben a családban $k\\ge1$ egész szám. A $y=x^{2}$ grafikonját <b>parabolának</b> hívjuk; a '
+ 'nagyobb páros kitevők grafikonja hasonló jellegű (de már nem parabola): a nagyobb páros '
+ 'kitevőhöz tartozó grafikon $0&lt;|x|&lt;1$ esetén közelebb van az $x$-tengelyhez, $|x|&gt;1$ '
+ 'esetén pedig nagyobb függvényértéket vesz fel.'),
    doboz("tetel", "Az $x^{2k}$ függvény tulajdonságai", TUL_PAROS, hid="tetel-paros-kitevo"),
-   doboz("csapda", "Dr. Baljós vírus-kódja",
+   doboz("csapda", 'Dr. Baljós víruskódja',
          '<p>„A $y=x^{2}$ függvény minden $y$ értéket felvesz." — <b>Hamis.</b> '
          'Az értékkészlet csak $[0;+\\infty)$: negatív szám <b>nem</b> lehet páros kitevőjű '
          'hatvány értéke. Ezért nincs valós megoldása az $x^{2}=-1$ egyenletnek — '
@@ -243,8 +235,8 @@ A2 = [
         leiras="Az y = x³ és y = x⁵ függvények grafikonja: mindkettő az origóra "
                "középpontosan szimmetrikus és növekvő"),
         "Páratlan kitevő: a görbe átmegy a harmadik síknegyedbe, és végig növekvő."),
-   'A $y=x^{3}$ grafikonja a <b>harmadfokú parabola</b>. A páros esettel szemben itt '
-   'a negatív $x$-ekhez negatív érték tartozik — a görbe „átfordul" az origóban.',
+   ('Itt $k\\ge0$ egész szám. A $y=x^{3}$ grafikonja a <b>harmadfokú parabola</b>. A páros esettel '
+ 'szemben itt a negatív $x$-ekhez negatív érték tartozik — a görbe „átfordul" az origóban.'),
    doboz("tetel", "Az $x^{2k+1}$ függvény tulajdonságai", TUL_PARATLAN, hid="tetel-paratlan-kitevo"),
    kviz('Melyik állítás igaz a $y=x^{5}$ függvényre?',
         ['Az origóra középpontosan szimmetrikus.',
@@ -281,7 +273,9 @@ A2 = [
 
  ("Negatív kitevő: az $x^{-n}$ család", [
    'Eddig a <b>hatványfüggvény</b> kitevője pozitív egész volt. A negatív kitevőt a hatványozásnál már bevezettük — most nézzük meg, milyen <b>görbét</b> ad — a hozzárendelési szabály ugyanaz marad, az értelmezési tartomány viszont szűkül.',
-   'Ha a kitevő negatív, a függvény $f(x)=x^{-n}=\\dfrac{1}{x^{n}}$ alakú, és $f:\\mathbb{R}\\setminus\\{0\\}\\to\\mathbb{R}$. A $0$ tehát <b>kimarad</b> az értelmezési tartományból — nullával nem osztunk.',
+   ('Legyen $n\\ge1$ egész szám. Ha a kitevő negatív, a függvény $f(x)=x^{-n}=\\dfrac{1}{x^{n}}$ '
+ 'alakú, és $f:\\mathbb{R}\\setminus\\{0\\}\\to\\mathbb{R}$. A $0$ tehát <b>kimarad</b> az '
+ 'értelmezési tartományból — nullával nem osztunk.'),
    abra(svg_fuggvenyek(
         [(lambda x: 1 / x, "#047857", "y = 1/x", [(-4.2, -0.26), (0.26, 4.2)]),
          (lambda x: 1 / x**2, "#3b82f6", "y = 1/x²", [(-4.2, -0.5), (0.5, 4.2)])],
@@ -310,9 +304,9 @@ A2 = [
         jo="✔ Pozitív értékek, de a 0-t sosem éri el (az x-tengely aszimptota).",
         nem="✘ A tört értéke sosem 0 és sosem negatív → az értékkészlet (0; +∞)."),
    gyakorolj(FGY + "#alap-7", "A 7–10", FGY + "#kozep-6", "K 6–7"),
-   brief('<b>Vihar Vera:</b> Uraltad a vihar erejét — most fejtsd is vissza. Ha ismerem a hatvány '
-         '<b>eredményét</b>, meg tudom-e találni az <b>alapot</b>? Ez a gyökvonás, és vele '
-         'megérkezik az első igazi buktató is: a páros gyökkitevő. Vigyázz a lábad elé.',
+   brief(('<b>Vihar Vera:</b> Uraltad a vihar erejét — most fejtsd is vissza. Ha ismerem a hatvány '
+ '<b>eredményét</b>, meg tudom-e találni az <b>alapot</b>? Ez a gyökvonás, és vele megérkezik az '
+ 'első igazi buktató is: a páros gyökkitevő. Figyelj majd a gyökkitevő párosságára és az előjelre.'),
          outro=True),
  ]),
 ]

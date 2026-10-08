@@ -61,14 +61,14 @@ OSSZ = [
  ("A másodfokú egyenlet", [
   '<p><b>Alak:</b> $ax^{2}+bx+c=0$, ahol $a\\neq 0$ '
   '(<a href="tananyag-masodfoku-egyenlet.html#def-masodfoku-egyenlet">→ tananyag</a>).</p>',
-  '<p><b>Hiányos esetek</b> — ne használj megoldóképletet! '
-  '$ax^{2}+bx=0\\Rightarrow x(ax+b)=0$ (<b>kiemelés</b>) · '
-  '$ax^{2}+c=0\\Rightarrow x^{2}=-\\frac{c}{a}$ (<b>gyökvonás</b>, $\\pm$ jellel!) '
-  '(<a href="tananyag-masodfoku-egyenlet.html#tetel-hianyos">→</a>).</p>',
-  '<p><b>Megoldóképlet:</b> $x_{1,2}=\\dfrac{-b\\pm\\sqrt{b^{2}-4ac}}{2a}$ '
-  '(<a href="tananyag-masodfoku-egyenlet.html#tetel-megoldokeplet">→</a>). '
-  'Nem rendezett egyenletnél <b>előbb bonts és rendezz nullára</b> — a „szorzat = 0” '
-  'szabály csak nulla jobb oldal mellett működik.</p>',
+  ('<p><b>Hiányos esetek</b> — gyakran egyszerűbb kiemeléssel vagy gyökvonással: '
+ '$ax^{2}+bx=0\\Rightarrow x(ax+b)=0$ (<b>kiemelés</b>) · $ax^{2}+c=0\\Rightarrow '
+ 'x^{2}=-\\frac{c}{a}$ (<b>gyökvonás</b>; nemnegatív jobb oldalnál van valós megoldás) (<a '
+ 'href="tananyag-masodfoku-egyenlet.html#tetel-hianyos">→</a>).</p>'),
+  ('<p><b>Megoldóképlet</b> ($D\\ge0$ esetén): $x_{1,2}=\\dfrac{-b\\pm\\sqrt{b^{2}-4ac}}{2a}$ (<a '
+ 'href="tananyag-masodfoku-egyenlet.html#tetel-megoldokeplet">→</a>). Nem rendezett egyenletnél '
+ '<b>előbb bonts és rendezz nullára</b> — a „szorzat = 0” szabály csak nulla jobb oldal mellett '
+ 'működik.</p>'),
  ]),
  ("A diszkrimináns", [
   '<p>$D=b^{2}-4ac$ '
@@ -85,21 +85,21 @@ OSSZ = [
   '<p>$x_{1}+x_{2}=-\\dfrac{b}{a}$ &nbsp;és&nbsp; $x_{1}x_{2}=\\dfrac{c}{a}$ '
   '(<a href="tananyag-viete-es-szorzatta-alakitas.html#tetel-viete">→</a>). '
   'A képletek a <b>komplex</b> gyökökre is érvényesek.</p>',
-  '<p><b>Szimmetrikus kifejezések</b> gyökök nélkül: '
-  '$\\dfrac{1}{x_{1}}+\\dfrac{1}{x_{2}}=\\dfrac{x_{1}+x_{2}}{x_{1}x_{2}}$ · '
-  '$x_{1}^{2}+x_{2}^{2}=\\left(x_{1}+x_{2}\\right)^{2}-2x_{1}x_{2}$ · '
-  '$\\left(x_{1}-x_{2}\\right)^{2}=\\left(x_{1}+x_{2}\\right)^{2}-4x_{1}x_{2}$ '
-  '(<a href="tananyag-viete-es-szorzatta-alakitas.html#tetel-szimmetrikus">→</a>).</p>',
+  ('<p><b>Szimmetrikus kifejezések</b> a gyökök kiszámítása nélkül; a reciprokösszegnél $c\\neq0$ '
+ 'szükséges: $\\dfrac{1}{x_{1}}+\\dfrac{1}{x_{2}}=\\dfrac{x_{1}+x_{2}}{x_{1}x_{2}}$ · '
+ '$x_{1}^{2}+x_{2}^{2}=\\left(x_{1}+x_{2}\\right)^{2}-2x_{1}x_{2}$ · '
+ '$\\left(x_{1}-x_{2}\\right)^{2}=\\left(x_{1}+x_{2}\\right)^{2}-4x_{1}x_{2}$ (<a '
+ 'href="tananyag-viete-es-szorzatta-alakitas.html#tetel-szimmetrikus">→</a>).</p>'),
   '<p><b>Egyenlet a gyökeiből:</b> $x^{2}-\\left(x_{1}+x_{2}\\right)x+x_{1}x_{2}=0$. '
   '<b>Szorzattá alakítás:</b> $ax^{2}+bx+c=a\\left(x-x_{1}\\right)\\left(x-x_{2}\\right)$ — '
   '⚠️ az $a$-t <b>ne hagyd le</b>! '
   '(<a href="tananyag-viete-es-szorzatta-alakitas.html#tetel-szorzatta-alakitas">→</a>)</p>',
  ]),
  ("Bikvadratikus egyenletek", [
-  '<p><b>Kiegészítő kihívás.</b> $ax^{4}+bx^{2}+c=0$ → a $t=x^{2}$ helyettesítéssel másodfokú lesz '
-  '(<a href="tananyag-bikvadratikus.html#tetel-bikvadratikus">→</a>). '
-  '⚠️ <b>Vissza kell helyettesíteni</b>: minden $t$-hez $x=\\pm\\sqrt{t}$ tartozik. '
-  'Negatív $t$ esetén a gyökök <b>komplexek</b>; a valós számok halmazán ezeket elvetjük.</p>',
+  ('<p><b>Kiegészítő kihívás.</b> $ax^{4}+bx^{2}+c=0$ → a $t=x^{2}$ helyettesítéssel másodfokú lesz '
+ '(<a href="tananyag-bikvadratikus.html#tetel-bikvadratikus">→</a>). ⚠️ <b>Vissza kell '
+ 'helyettesíteni</b>: ha $t&gt;0$, akkor $x=\\pm\\sqrt t$; ha $t=0$, akkor $x=0$. Negatív $t$ '
+ 'esetén $x=\\pm i\\sqrt{-t}$; a valós számok halmazán ezeket elvetjük.</p>'),
  ]),
  ("A másodfokú függvény", [
   '<p><b>Nyílásirány:</b> $a&gt;0$ → felfelé (konvex, <b>minimum</b>); $a&lt;0$ → lefelé '
@@ -112,31 +112,33 @@ OSSZ = [
   '($f(0)=c$) → csúcspont → szélsőérték → értékkészlet '
   '($a&gt;0$: $[v;+\\infty)$, $a&lt;0$: $(-\\infty;v]$) '
   '(<a href="tananyag-fuggvenyvizsgalat.html#def-vizsgalat-protokoll">→</a>).</p>',
-  '<p><b>A hat eset:</b> a $D$ előjele adja meg, hányszor metszi a parabola az '
-  '$x$-tengelyt (2 · 1 · 0), az $a$ előjele pedig, hogy melyik oldalon van a csúcs '
-  '(<a href="tananyag-masodfoku-fuggveny.html#tetel-hat-eset">→</a>).</p>',
-  '<p><b>Szélsőérték-feladat:</b> írd fel a keresett mennyiséget egyetlen változó '
-  'másodfokú függvényeként, majd számold ki a csúcspontot '
-  '(<a href="tananyag-fuggvenyvizsgalat.html#pelda-szelsoertek">→</a>).</p>',
+  ('<p><b>A hat eset:</b> a $D$ előjele adja meg az $x$-tengellyel közös pontok számát (2 · 1 · 0), '
+ 'az $a$ előjele a nyílásirányt. A csúcs tengelyhez viszonyított helyét a $v=-D/(4a)$ csúcsérték '
+ 'mutatja (<a href="tananyag-masodfoku-fuggveny.html#tetel-hat-eset">→</a>).</p>'),
+  ('<p><b>Szélsőérték-feladat:</b> írd fel a keresett mennyiséget egyetlen változó másodfokú '
+ 'függvényeként, majd számold ki a csúcspontot. Ellenőrizd a szöveg szerinti megengedett '
+ 'tartományt; zárt intervallumon a végpontok értékeit is hasonlítsd össze (<a '
+ 'href="tananyag-fuggvenyvizsgalat.html#pelda-szelsoertek">→</a>).</p>'),
  ]),
  ("Egyenlőtlenségek és rendszerek", [
   '<p><b>Egyenlőtlenség:</b> rendezz nullára → oldd meg az <b>egyenletet</b> → '
   'olvasd le a parabola képéről. $a&gt;0$ és két gyök esetén: a kifejezés a gyökök '
   '<b>között negatív</b>, azokon <b>kívül pozitív</b>; $a&lt;0$-nál fordítva '
   '(<a href="tananyag-masodfoku-egyenlotlensegek.html#tetel-egyenlotlenseg-menete">→</a>).</p>',
-  '<p><b>$D=0$:</b> $a&gt;0$ mellett a kifejezés mindenütt nemnegatív → a szigorú '
-  'egyenlőtlenség megoldása $\\mathbb{R}\\setminus\\{x_{0}\\}$. <b>$D&lt;0$:</b> a parabola '
-  'végig a tengely egyik oldalán van → vagy <b>minden</b> valós szám megoldás, vagy '
-  '<b>egy sem</b> (<a href="tananyag-masodfoku-egyenlotlensegek.html#tetel-egyenlotlenseg-D">→</a>).</p>',
-  '<p><b>Rendszer:</b> a <b>lineáris</b> egyenletből fejezd ki az egyik ismeretlent, '
-  'helyettesítsd be, oldd meg a keletkező másodfokú egyenletet, majd <b>minden</b> gyökhöz '
-  'számold ki a másik ismeretlent. A megoldás <b>számpár</b> '
-  '(<a href="tananyag-masodfoku-linearis-rendszer.html#tetel-rendszer-menete">→</a>).</p>',
-  '<p><b>Metszéspontok száma:</b> $D&gt;0$ két pont · $D=0$ <b>érintés</b> · $D&lt;0$ '
-  'nincs közös pont. <b>Összeg–szorzat rendszer:</b> ha $x+y=s$ és $xy=p$, akkor $x$ és $y$ '
-  'a $t^{2}-st+p=0$ egyenlet gyökei '
-  '(<a href="tananyag-masodfoku-linearis-rendszer.html#pelda-osszeg-szorzat">→</a>).</p>',
-  doboz("csapda", "Amire a dolgozaton a legtöbben ráfutnak",
+  ('<p><b>$D=0$:</b> $a&gt;0$ mellett a kifejezés mindenütt nemnegatív → a $ax^{2}+bx+c&gt;0$ '
+ 'egyenlőtlenség megoldása $\\mathbb{R}\\setminus\\{x_{0}\\}$. <b>$D&lt;0$:</b> a parabola végig a '
+ 'tengely egyik oldalán van → vagy <b>minden</b> valós szám megoldás, vagy <b>egy sem</b> (<a '
+ 'href="tananyag-masodfoku-egyenlotlensegek.html#tetel-egyenlotlenseg-D">→</a>).</p>'),
+  ('<p><b>Rendszer:</b> a <b>lineáris</b> egyenletből fejezd ki az egyik ismeretlent, helyettesítsd '
+ 'be, oldd meg a keletkező egyenletet (rendszerint másodfokú; ha a másodfokú tag kiesik, külön '
+ 'vizsgáld), majd <b>minden</b> gyökhöz számold ki a másik ismeretlent. A megoldás <b>számpár</b> '
+ '(<a href="tananyag-masodfoku-linearis-rendszer.html#tetel-rendszer-menete">→</a>).</p>'),
+  ('<p><b>Metszéspontok száma</b> a parabola és egy nem függőleges egyenes esetén, ha a '
+ 'behelyettesítés másodfokú egyenletet ad: $D&gt;0$ két pont · $D=0$ <b>érintés</b> · $D&lt;0$ '
+ 'nincs közös pont. <b>Összeg–szorzat rendszer:</b> ha $x+y=s$ és $xy=p$, akkor $x$ és $y$ a '
+ '$t^{2}-st+p=0$ egyenlet gyökei (<a '
+ 'href="tananyag-masodfoku-linearis-rendszer.html#pelda-osszeg-szorzat">→</a>).</p>'),
+  doboz("csapda", 'Gyakori hibák',
         '<p>1) $x^{2}=5x$-ből <b>ne ossz</b> $x$-szel — elveszik az $x=0$. &nbsp; '
         '2) A szorzattá bontásból <b>ne hagyd le</b> a főegyütthatót. &nbsp; '
         '3) $u=-\\frac{b}{2a}$ — ha $b$ negatív, $-b$ <b>pozitív</b>. &nbsp; '
@@ -176,18 +178,14 @@ TEREP = [
  ]),
  ("Fázis I — A röppálya bemérése", [
    doboz("pelda", "I. fázis: ballisztika",
-         '<p>Dr. Baljós lövedékének magassága $t$ másodperc múlva '
-         '$h(t)=-5t^{2}+30t$ méter.</p>'
-         '<ol class="reszfeladatok">'
-         '<li>Mikor van a lövedék <b>$40$ méter</b> magasan? (Két időpont is van!)</li>'
-         '<li>Mikor ér földet?</li>'
-         '<li>A védőágyúnk lövedéke egy $25$ méteres toronyból indul: '
-         '$g(t)=-5t^{2}+20t+25$. Mikor ér földet? (Az egyik gyök nem lehet megoldás — '
-         'indokold meg, miért!)</li>'
-         '<li><b>Kiegészítő kihívás:</b> az elfogórakéta vezérlőkódja az $x^{2}-\\left(2k-10\\right)x+3k-33=0$ '
-         'egyenlet, ahol $k$ valós paraméter. A rendszer akkor stabil, ha a két gyök '
-         '<b>ellentett</b> szám. Mennyi $k$, és mik a gyökök?</li>'
-         '</ol>'),
+         ('<p>Egyszerűsített, a légellenállást elhanyagoló modellben Dr. Baljós lövedékének magassága $t$ '
+ 'másodperc múlva $h(t)=-5t^{2}+30t$ méter.</p><ol class="reszfeladatok"><li>Mikor van a lövedék '
+ '<b>$40$ méter</b> magasan? (Két időpont is van!)</li><li>Mikor ér földet a kilövés '
+ 'után?</li><li>A védőágyúnk lövedéke egy $25$ méteres toronyból indul: $g(t)=-5t^{2}+20t+25$. '
+ 'Mikor ér földet? (Az egyik gyök nem lehet megoldás — indokold meg, miért!)</li><li><b>Kiegészítő '
+ 'kihívás:</b> az elfogórakéta vezérlőkódja az $x^{2}-\\left(2k-10\\right)x+3k-33=0$ egyenlet, '
+ 'ahol $k$ valós paraméter. A rendszer akkor stabil, ha a két gyök <b>ellentett</b> szám. Mennyi '
+ '$k$, és mik a gyökök?</li></ol>')),
  ]),
  ("Fázis II — A csúcspont", [
    doboz("pelda", "II. fázis: a legmagasabb pont",
@@ -205,26 +203,22 @@ TEREP = [
  ]),
  ("Fázis III — A pajzs hatósugara", [
    doboz("pelda", "III. fázis: a védelmi zóna",
-         '<ol class="reszfeladatok">'
-         '<li>A pajzs ott véd, ahol $x^{2}-10x+21\\le 0$. Add meg a védett zónát '
-         'intervallummal!</li>'
-         '<li>Hol <b>nem</b> véd a pajzs? (Ugyanaz a kifejezés, fordított relációval.)</li>'
-         '<li>A becsapódás helyét a röppálya és a terepszint metszéspontja adja: '
-         '$y=x^{2}-6x+8$ és $y=x-2$. Hol csapódik be a lövedék?</li>'
-         '<li>Két energiacella össztöltése $20$ egység, a szorzatuk $96$. '
-         'Mennyi külön-külön? (Viète!)</li>'
-         '<li>A lézerkerítés az $y=2x+c$ egyenes. Milyen $c$ esetén <b>érinti</b> — '
-         'tehát pontosan egy pontban éri — az $y=x^{2}$ pályát?</li>'
-         '</ol>'),
+         ('<ol class="reszfeladatok"><li>A pajzs ott véd, ahol $x^{2}-10x+21\\le 0$. Add meg a védett zónát '
+ 'intervallummal!</li><li>Hol <b>nem</b> véd a pajzs? (A védett zóna komplementerét keresd: '
+ '$x^{2}-10x+21&gt;0$.)</li><li>Egy védelmi szakasz tervrajzán a pajzs határvonala $y=x^{2}-6x+8$, '
+ 'a terepszint $y=x-2$. Add meg a két görbe <b>összes metszéspontját</b>!</li><li>Két energiacella '
+ 'össztöltése $20$ egység, a szorzatuk $96$. Mennyi külön-külön? (Viète!)</li><li>A lézerkerítés '
+ 'az $y=2x+c$ egyenes. Milyen $c$ esetén <b>érinti</b> — tehát pontosan egy pontban éri — az '
+ '$y=x^{2}$ pályát?</li></ol>')),
    doboz("erdekesseg", "Jelentés a Főhadiszállásnak",
-         '<p>Zárásként foglald össze <b>egyetlen táblázatban</b>: a becsapódás időpontját, '
-         'a röppálya legmagasabb pontját, a pajzs maximális teljesítményét és a védett zóna '
-         'határait. Írj mellé <b>2–3 mondatot</b> arról, hol használtad a diszkriminánst és '
-         'hol a Viète-képleteket — Küklopsz a gondolatmenetre is kíváncsi.</p>'),
-   brief('<b>Dr. Bestia:</b> Kiváló munka, kadét. A ballisztikát megoldottuk — de miközben ti '
-         'a röppályákat számoltátok, a laborban valami sokkal rosszabbat mértem. '
-         'Dr. Baljós vírusa <b>megduplázódik</b> minden ciklusban. Az ilyen növekedést '
-         'a parabola meg sem közelíti. A következő küldetés az <b>Evolúciós Ugrás</b>.',
+         ('<p>Zárásként foglald össze <b>egyetlen táblázatban</b>: Dr. Baljós lövedékének földet érési '
+ 'idejét (I/2), röppályájának legmagasabb pontját (II/1), a pajzs maximális teljesítményét (II/2) '
+ 'és a védett zóna határait (III/1). Írj mellé <b>2–3 mondatot</b> arról, hol használtad a '
+ 'diszkriminánst és hol a Viète-képleteket — Küklopsz a gondolatmenetre is kíváncsi.</p>')),
+   brief(('<b>Dr. Bestia:</b> Kiváló munka, kadét. A ballisztikát megoldottuk — de miközben ti a '
+ 'röppályákat számoltátok, a laborban valami sokkal rosszabbat mértem. Dr. Baljós vírusa '
+ '<b>megduplázódik</b> minden ciklusban. Az azonos időközönkénti duplázódás hosszabb távon '
+ 'gyorsabb a másodfokú növekedésnél. A következő küldetés az <b>Evolúciós Ugrás</b>.'),
          outro=True),
  ]),
 ]
@@ -316,12 +310,11 @@ DR_N = [
  ("Oldd meg a komplex számok halmazán! $x^{4}+5x^{2}-36=0$", None, "$\\pm 2$ és $\\pm 3i$"),
 ]
 
-dr_brief = ('<div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — Az M-Faktor modul. '
-            'A szimuláció a <b>teljes témakört</b> lefedi: másodfokú egyenletek, diszkrimináns, '
-            'Viète, szorzattá alakítás, bikvadratikus, függvényvizsgálat, egyenlőtlenségek és '
-            'rendszerek. A paraméteres és bikvadratikus kártyák kiegészítő kihívások. '
-            'Haladj a fokozatokon: zöld → sárga → piros. A végeredményt lenyithatod, '
-            'de előbb küzdd le magad!</p></div>')
+dr_brief = (('<div class="brief"><p>🕹️ <b>SZVETI:</b> <b>Vészterem</b> — Az M-Faktor modul. A szimuláció a '
+ '<b>teljes témakört</b> lefedi: másodfokú egyenletek, diszkrimináns, Viète, szorzattá alakítás, '
+ 'bikvadratikus, függvényvizsgálat, egyenlőtlenségek és rendszerek. A paraméteres és bikvadratikus '
+ 'kártyák kiegészítő kihívások. Haladj a fokozatokon: zöld → sárga → piros. A végeredményt '
+ 'lenyithatod, de előbb próbáld meg önállóan!</p></div>'))
 
 dr_body = ('    ' + dr_brief + '\n'
            '    <h2 id="alap">🟢 Alapfokozat</h2>\n' + cards(DR_A, "alap", "alap") +
@@ -379,50 +372,52 @@ K = [
         "Minden képlet, protokoll és tipikus csapda egy helyen — dolgozat előtti átfutáshoz"),
 ]
 
-INDEX = '''<!DOCTYPE html>
-<html lang="hu" data-root="../..">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Másodfokú egyenletek és függvények | 2e | Szvetkó matek</title>
-<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../../assets/css/theme.css">
-<link rel="stylesheet" href="../../assets/css/print.css">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
-</head>
-<body data-tagozat="2e">
-<div id="progress"></div>
-<header class="fejlec">
-  <div class="fejlec-bel">
-    <a class="logo" href="../../index.html"><span class="jel">&#8730;</span><span class="nev">Szvetkó <b>matek</b></span></a>
-    <span class="ter"></span>
-    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az oldalon"><button type="submit">Keres</button></form>
-  </div>
-</header>
-<nav class="morzsa">
-  <a href="../../index.html">Főhadiszállás</a> ›
-  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›
-  <span class="itt">Másodfokú egyenletek és függvények</span>
-</nav>
-<div class="hero">
-  <h1>Másodfokú egyenletek és függvények</h1>
-  <p class="alcim">A megoldóképlettől a diszkriminánson és a Viète-képleteken át a parabola
-  teljes vizsgálatáig — majd az egyenlőtlenségekig és a rendszerekig.</p>
-  <div class="meta-sor"><span class="chip ora">22 óra</span><span class="statusz kesz">kész</span></div>
-  <div class="brief"><p>🧬 <b>Szektor 02 — Az M-Faktor (A Parabola-csapás).</b> Kiképzők:
-  <b>Nagol</b> (egyenletek) és <b>Küklopsz</b> (függvények). A fenyegetés többé nem
-  lineárisan nő: Dr. Baljós <b>másodfokon</b> támad, és a lövedékei parabola mentén repülnek.
-  Nagol szétvágja a problémát — tényezőkre bontja, ami darabolható; Küklopsz pedig az
-  optikai sugarak röppályáján tanítja meg, hol a csúcspont, meddig ér a pajzs, és hol
-  csapódik be a töltet.</p></div>
-</div>
-<main class="lap">
-  <div class="tartalom">
-    <h2>Tananyag</h2>
-
-    <h3>⚔️ A másodfokú egyenlet — Nagol</h3>
-    <div class="racs">
-''' + "\n".join(K[0:4]) + '''
+INDEX = ('<!DOCTYPE html>\n'
+ '<html lang="hu" data-root="../..">\n'
+ '<head>\n'
+ '<meta charset="utf-8">\n'
+ '<meta name="viewport" content="width=device-width,initial-scale=1">\n'
+ '<title>Másodfokú egyenletek és függvények | 2e | Szvetkó matek</title>\n'
+ '<link rel="icon" href="../../assets/img/common/favicon.svg" type="image/svg+xml">\n'
+ '<link rel="stylesheet" href="../../assets/css/theme.css">\n'
+ '<link rel="stylesheet" href="../../assets/css/print.css">\n'
+ '<link rel="stylesheet" href="../../assets/katex/katex.min.css">\n'
+ '</head>\n'
+ '<body data-tagozat="2e">\n'
+ '<div id="progress"></div>\n'
+ '<header class="fejlec">\n'
+ '  <div class="fejlec-bel">\n'
+ '    <a class="logo" href="../../index.html"><span class="jel">&#8730;</span><span '
+ 'class="nev">Szvetkó <b>matek</b></span></a>\n'
+ '    <span class="ter"></span>\n'
+ '    <form class="kereso-mini"><input type="search" placeholder="Keresés…" aria-label="Keresés az '
+ 'oldalon"><button type="submit">Keres</button></form>\n'
+ '  </div>\n'
+ '</header>\n'
+ '<nav class="morzsa">\n'
+ '  <a href="../../index.html">Főhadiszállás</a> ›\n'
+ '  <a href="../index.html"><span class="tagozat-jel">2e</span></a> ›\n'
+ '  <span class="itt">Másodfokú egyenletek és függvények</span>\n'
+ '</nav>\n'
+ '<div class="hero">\n'
+ '  <h1>Másodfokú egyenletek és függvények</h1>\n'
+ '  <p class="alcim">A megoldóképlettől a diszkriminánson és a Viète-képleteken át a parabola\n'
+ '  teljes vizsgálatáig — majd az egyenlőtlenségekig és a rendszerekig.</p>\n'
+ '  <div class="meta-sor"><span class="chip ora">22 óra</span><span class="statusz '
+ 'kesz">kész</span></div>\n'
+ '  <div class="brief"><p>🧬 <b>Szektor 02 — Az M-Faktor (A Parabola-csapás).</b> Kiképzők:\n'
+ '  <b>Nagol</b> (egyenletek) és <b>Küklopsz</b> (függvények). A fenyegetés többé nem\n'
+ '  lineárisan nő: Dr. Baljós <b>másodfokon</b> támad, és a lövedékei parabola mentén repülnek.\n'
+ '  Nagol az egyenletek megoldását és a tényezőkre bontást tanítja. Küklopsz a parabolák\n'
+ '  grafikonján mutatja meg a csúcspontot és a tengelymetszeteket, majd ezekkel vizsgáljuk\n'
+ '  a pajzs határait és a lövedékek egyszerűsített röppályáját.</p></div>\n'
+ '</div>\n'
+ '<main class="lap">\n'
+ '  <div class="tartalom">\n'
+ '    <h2>Tananyag</h2>\n'
+ '\n'
+ '    <h3>⚔️ A másodfokú egyenlet — Nagol</h3>\n'
+ '    <div class="racs">\n') + "\n".join(K[0:4]) + '''
     </div>
 
     <h3>🎯 A másodfokú függvény — Küklopsz</h3>

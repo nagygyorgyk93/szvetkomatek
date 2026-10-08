@@ -269,12 +269,12 @@ NEHEZ = [
  ("Számítsd ki! $\\left(\\dfrac{1-i}{1+i}\\right)^{2027}$", None, "$i$"),
 ]
 
-JOKER = ("<b>Dr. Baljós vírus-kódja.</b> A rendszer ezzel a „bizonyítással” próbálja igazolni, "
-         "hogy $-1=1$: $$-1=i^{2}=\\sqrt{-1}\\cdot\\sqrt{-1}\\ \\overset{?}{=}\\ "
-         "\\sqrt{(-1)\\cdot(-1)}=\\sqrt{1}=1$$ "
-         "Melyik lépés hibás, és miért?",
-         "A harmadik lépés: a $\\sqrt{a}\\cdot\\sqrt{b}=\\sqrt{ab}$ azonosság csak $a,b\\ge 0$ "
-         "esetén érvényes.")
+JOKER = (('<b>Dr. Baljós víruskódja.</b> A rendszer ezzel a „bizonyítással” próbálja igazolni, hogy $-1=1$: '
+ '$$-1=i^{2}=\\sqrt{-1}\\cdot\\sqrt{-1}\\ \\overset{?}{=}\\ \\sqrt{(-1)\\cdot(-1)}=\\sqrt{1}=1$$ '
+ 'Melyik lépés hibás, és miért?'),
+         ('Ebben a tananyagban a $\\sqrt{-1}$ jelölést nem értelmezzük, ezért már az ezt használó lépés sem '
+ 'érvényes. A kérdőjellel jelölt átalakítás sem megengedett: a $\\sqrt a\\cdot\\sqrt b=\\sqrt{ab}$ '
+ 'valós gyökazonosság feltétele $a,b\\ge0$.'))
 
 GYD_ORAI = [
  ("Számítsd ki a számkifejezés pontos értékét! "

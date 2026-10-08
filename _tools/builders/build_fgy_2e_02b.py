@@ -63,7 +63,8 @@ for n, g, w in P:
 assert not E, E[:4]
 print("sympy önteszt: OK")
 
-VIZSG = "Ábrázold a grafikont, és vizsgáld ki! (értékkészlet, szélsőérték, zérushely(ek), konvexitás)"
+VIZSG = ('Vizsgáld meg a függvényt, és ábrázold a grafikonját! (értékkészlet, szélsőérték, zérushely(ek), '
+ 'konvexitás)')
 
 # ============================== FELADATOK ==============================
 
@@ -120,7 +121,7 @@ KOZEP = [
  ("Írd át általános alakba!",
   ["$y=(x+3)^{2}-4$", "$y=-(x-2)^{2}+9$"],
   ["$y=x^{2}+6x+5$", "$y=-x^{2}+4x+5$"], True),
- ("Melyik függvény illik a leíráshoz?",
+ ('Írj fel minden leíráshoz egy megfelelő függvényt! Több jó válasz is lehet.',
   ["Csúcspontja az origó, felfelé nyílik, karcsúbb az $y=x^{2}$-nél.",
    "Csúcspontja $(0;-2)$, felfelé nyílik, ugyanolyan karcsú, mint $y=x^{2}$.",
    "Csúcspontja $(2;0)$, lefelé nyílik."],
@@ -151,9 +152,8 @@ NEHEZ = [
   None, "Az $(1;4)$ és az $(5;12)$ pontban."),
 ]
 
-JOKER = ("<b>Dr. Baljós vírus-kódja.</b> A rendszer az $y=x^{2}-6x+5$ függvény csúcspontját "
-         "így számolta: „$u=-\\dfrac{b}{2a}=-\\dfrac{6}{2}=-3$, tehát $C(-3;32)$”. "
-         "Hol a hiba, és mi a helyes csúcspont?",
+JOKER = (('<b>Dr. Baljós víruskódja.</b> A rendszer az $y=x^{2}-6x+5$ függvény csúcspontját így számolta: '
+ '„$u=-\\dfrac{b}{2a}=-\\dfrac{6}{2}=-3$, tehát $C(-3;32)$”. Hol a hiba, és mi a helyes csúcspont?'),
          "A $b=-6$ előjele maradt ki a csúcs képletéből; helyesen $C(3;-4)$.")
 
 GYD_ORAI = [

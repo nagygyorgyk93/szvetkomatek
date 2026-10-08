@@ -187,15 +187,16 @@ C1 = [
 
  ("Egy jelölés, amivel vigyázni kell", [
    doboz("csapda", "Dr. Baljós vírus-kódja",
-         ('<p>A mutálódott kódban ez a „bizonyítás" '
+         (('<p>A mutálódott kódban ez a „bizonyítás" '
  'szerepel:</p>$$-1=i^{2}=\\sqrt{-1}\\cdot\\sqrt{-1}\\overset{?}{=}\\sqrt{(-1)\\cdot(-1)}=\\sqrt{1}=1.$$<p>Tehát '
- '$-1=1$? Nem: a kérdőjellel jelölt átalakítás hibás. A valós négyzetgyökökre tanult '
+ '$-1=1$? Nem. Az alább rögzített jelölésünk szerint már a $\\sqrt{-1}$ alakot sem értelmezzük. A '
+ 'kérdőjellel jelölt átalakítás sem megengedett. A valós négyzetgyökökre tanult '
  '$\\sqrt{a}\\cdot\\sqrt{b}=\\sqrt{ab}$ szabály feltétele <b>$a,b\\ge 0$</b>. Ezt itt nem '
  'teljesítik a gyökjelek alatti számok.</p><p><b>Jelölés ebben a tananyagban:</b> a gyökjelet '
  'valós négyzetgyökként használjuk, ezért a $\\sqrt{-9}$ alakot nem értelmezzük. Az $x^{2}=-9$ '
  'egyenletnek a komplex számok között <b>két megoldása</b> van: $x_{1,2}=\\pm 3i$. Egyik sem '
  'helyettesíti önmagában a teljes megoldáshalmazt. A komplex gyökjel külön jelölési szabályaival '
- 'itt nem foglalkozunk.</p>')),
+ 'itt nem foglalkozunk.</p>'))),
    gyakorolj(FGY + "#alap-1", "A 1–6", FGY + "#kozep-1", "K 1–4"),
    brief(('<b>X. Károly professzor:</b> A komplex számot már el tudod helyezni a síkon, és meg tudod adni a '
  'konjugáltját és a moduluszát. Következnek a műveletek: a betűs kifejezéseknél tanult szabályokat '
