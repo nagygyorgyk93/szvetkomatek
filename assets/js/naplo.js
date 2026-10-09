@@ -8,6 +8,7 @@
      · „megoldva” pipa a feladatkártyákon      → feladatgyűjtemények
      · kvíz-találat rögzítése                  → a quiz.js `kviz-helyes` eseményéből
      · haladás-gyűrű a kártyákon               → index-oldalak
+     · legutóbbi tanulási oldal folytatása     → főoldal / osztály-index
    A jutalom-pillanatokat a `szvetko-jutalom` esemény jelzi (effekt.js figyeli).
    Nyilvános API: window.Naplo (a kuldetesnaplo.html használja). */
 (function () {
@@ -15,6 +16,7 @@
 
   var ROOT   = document.documentElement.getAttribute('data-root') || '.';
   var KULCS  = 'szvetko-naplo-v1';
+  var FOLYTATAS_KULCS = 'szvetko-folytatas-v1';
   /* A feladatok pontja a NEHÉZSÉGGEL nő; a szintet a kártya osztálya adja
      (a gyakorló blokkok kártyáin nincs szint → alapszintnek számítanak). */
   var FPONT  = { a: 2, k: 3, n: 5, j: 5, g: 2 };
@@ -76,7 +78,9 @@
     return r.slice(Math.max(0, r.length - 1 - MELY)).join('/');
   }
   var OK = oldalKulcs();
-  var BAZIS = location.pathname.slice(0, location.pathname.length - encodeURI(OK).length);
+  /* A mappacímként megnyitott indexnek is ugyanaz a webhelygyökere. */
+  var GYOKER_URL = new URL(ROOT + '/', location.href);
+  var BAZIS = GYOKER_URL.pathname;
   function linkKulcs(a) {
     try {
       var p = new URL(a.getAttribute('href'), location.href).pathname;
@@ -85,6 +89,89 @@
       return /\.html?$/i.test(k) ? k : (k.replace(/\/?$/, '/') + 'index.html');
     } catch (e) { return null; }
   }
+
+  /* ---------- legutóbbi tanulási oldal (a teljesítésektől külön) ---------- */
+  function tanulasiKulcs(k) {
+    return typeof k === 'string' && /^[1-4]e\/[a-z0-9-]+\/(?:tananyag-[a-z0-9-]+|feladatok-[a-z0-9-]+|osszefoglalo|terepkuldetes)\.html$/.test(k);
+  }
+  function folytatasOlvas() {
+    var f = { v: 1, utolso: '', osztalyok: {} };
+    try {
+      var o = JSON.parse(localStorage.getItem(FOLYTATAS_KULCS));
+      if (!o || o.v !== 1) return f;
+      if (tanulasiKulcs(o.utolso)) f.utolso = o.utolso;
+      if (o.osztalyok && typeof o.osztalyok === 'object') {
+        ['1e', '2e', '3e', '4e'].forEach(function (tag) {
+          var k = o.osztalyok[tag];
+          if (tanulasiKulcs(k) && k.split('/')[0] === tag) f.osztalyok[tag] = k;
+        });
+      }
+    } catch (e) { /* Hibás vagy letiltott tároló mellett az oldal használható marad. */ }
+    return f;
+  }
+  function folytatasMegjegyez() {
+    if (!tanulasiKulcs(OK)) return;
+    var f = folytatasOlvas();
+    f.utolso = OK; f.osztalyok[OK.split('/')[0]] = OK;
+    try { localStorage.setItem(FOLYTATAS_KULCS, JSON.stringify(f)); } catch (e) {}
+  }
+  function folytatasCel() {
+    var f = folytatasOlvas();
+    if (OK === 'index.html') return f.utolso;
+    if (/^[1-4]e\/index\.html$/.test(OK)) return f.osztalyok[OK.split('/')[0]] || '';
+    return '';
+  }
+  function folytatasAdat(T, k) {
+    if (!T || !T.tagozatok || !tanulasiKulcs(k)) return null;
+    var tag = k.split('/')[0], tg = T.tagozatok[tag];
+    if (!tg || !Array.isArray(tg.temakorok)) return null;
+    for (var i = 0; i < tg.temakorok.length; i++) {
+      var t = tg.temakorok[i], oldalak = (t.oldalak || []).concat(t.fgy || []);
+      for (var j = 0; j < oldalak.length; j++) {
+        var o = oldalak[j];
+        if (o.u !== k) continue;
+        var tipus = o.t === 'tananyag' ? 'Tananyag' : o.t === 'osszefoglalo' ? 'Összefoglaló'
+                  : o.t === 'projekt' ? 'Terepküldetés' : o.hazi ? 'Házi feladatok' : 'Feladatgyűjtemény';
+        /* Az indexeken nincs képletrender: a két változós cím szöveges alakja. */
+        var cim = String(o.c || tipus).replace(/\\\(\\mathbb\{C\}\\\)-ben/g, 'a komplex számok körében')
+          .replace(/\\\(([ie])\\\)/g, '$1');
+        if (/\\|[<>]/.test(cim)) cim = tipus;
+        return { cim: cim, meta: tag + ' · ' + tipus };
+      }
+    }
+    return null;   /* Törölt oldalra vagy külső címre nem kínálunk folytatást. */
+  }
+  var folytatasKartya = null;
+  function folytatasRajzol() {
+    if (!(OK === 'index.html' || /^[1-4]e\/index\.html$/.test(OK))) return;
+    var ujraFokusz = folytatasKartya && document.activeElement === folytatasKartya;
+    if (folytatasKartya) { folytatasKartya.remove(); folytatasKartya = null; }
+    if (!folytatasCel()) return;
+    terkepBetolt(function (T) {
+      var k = folytatasCel(), adat = folytatasAdat(T, k);
+      var tartalom = document.querySelector('.tartalom');
+      if (!adat || !tartalom) return;
+      if (folytatasKartya) folytatasKartya.remove();
+      var a = document.createElement('a');
+      a.className = 'folytatas'; a.href = new URL(k, GYOKER_URL).href;
+      var szoveg = document.createElement('span'); szoveg.className = 'folytatas-szoveg';
+      [['folytatas-cimke', 'Legutóbb megnyitott oldal'], ['folytatas-cim', adat.cim], ['folytatas-meta', adat.meta]].forEach(function (s) {
+        var elem = document.createElement('span'); elem.className = s[0]; elem.textContent = s[1]; szoveg.appendChild(elem);
+      });
+      var irany = document.createElement('span'); irany.className = 'folytatas-irany'; irany.textContent = 'Folytatás ';
+      var nyil = document.createElement('span'); nyil.textContent = '→'; nyil.setAttribute('aria-hidden', 'true'); irany.appendChild(nyil);
+      a.appendChild(szoveg); a.appendChild(irany); tartalom.insertBefore(a, tartalom.firstChild);
+      folytatasKartya = a;
+      if (ujraFokusz) a.focus({ preventScroll: true });
+    });
+  }
+  window.addEventListener('storage', function (ev) {
+    if (ev.key === FOLYTATAS_KULCS || ev.key === null) folytatasRajzol();
+  });
+  /* A böngésző vissza gombja a teljes lapot is visszahozhatja a gyorsítótárból. */
+  window.addEventListener('pageshow', function (ev) {
+    if (ev.persisted) { folytatasMegjegyez(); folytatasRajzol(); }
+  });
 
   /* ---------- jutalom ---------- */
   var SZAVAK = ['BANG!', 'POW!', 'BOOM!', 'ZAP!', 'WHAM!'];
@@ -248,13 +335,18 @@
     for (var k2 in A.kvizek) if (k2.indexOf(elotag) === 0) p += PONT.kviz;
     return p;
   }
+  var terkepIgeret = null;
   function terkepBetolt(kesz) {
     if (window.__naploTerkep) { kesz(window.__naploTerkep); return; }
     if (!window.fetch) { kesz(null); return; }
-    fetch(ROOT + '/assets/naplo-terkep.json')
-      .then(function (v) { return v.json(); })
-      .then(function (d) { window.__naploTerkep = d; kesz(d); })
-      .catch(function () { kesz(null); });   /* file:// alatt nem működik — nem baj */
+    /* A folytatáskártya és a haladásgyűrűk ugyanazt az egy kérést várják. */
+    if (!terkepIgeret) {
+      terkepIgeret = fetch(ROOT + '/assets/naplo-terkep.json')
+        .then(function (v) { return v.ok ? v.json() : null; })
+        .then(function (d) { if (d) window.__naploTerkep = d; return d; })
+        .catch(function () { return null; });   /* file:// alatt nem működik — nem baj */
+    }
+    terkepIgeret.then(kesz);
   }
   function gyuruk() {
     var kartyak = document.querySelectorAll('a.kartya');
@@ -292,7 +384,11 @@
     xp: xp, rang: rang, db: db,
     teljesitheto: teljesitheto, elert: elert, terkep: terkepBetolt,
     ment: ment,
-    torol: function () { A = ures(); ment(); },
+    torol: function () {
+      A = ures(); ment();
+      try { localStorage.removeItem(FOLYTATAS_KULCS); } catch (e) {}
+      folytatasRajzol();
+    },
     kod: function () {                                   /* napló-kód: tömör, másolható */
       try { return btoa(unescape(encodeURIComponent(JSON.stringify(A)))).replace(/=+$/, ''); }
       catch (e) { return ''; }
@@ -321,7 +417,8 @@
 
   /* ---------- indulás ---------- */
   function indul() {
-    chipBe(); oldalGomb(); feladatPipak(); kvizek(); gyuruk();
+    folytatasMegjegyez();
+    chipBe(); oldalGomb(); feladatPipak(); kvizek(); folytatasRajzol(); gyuruk();
     document.dispatchEvent(new CustomEvent('naplo-kesz'));
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', indul);

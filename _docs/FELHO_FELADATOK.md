@@ -653,11 +653,31 @@ vektorösszeadás; kör és egyenes kölcsönös helyzete; sorozat ε-sávja.
 |---|---|---|
 | Q1 | `layout_teszt.py` az összes lapra; minden mobil-túlcsordulás javítása | ☑ 2026-09-28: mind a 293 lap hibátlan 360/390/1280 px-en (fejléc, képletes doboz-cím, táblázat-burok a builderekben, hosszú képletek tördelése, h1, kereső) |
 | Q2 | Akadálymentesség: axe-core Playwrighttal (`npm i axe-core`), kontraszt, `aria`, fókusz-sorrend | ◐ 2026-10-06: közös vezérlők, matematikai nevek, fókusz, mozgás, köszöntővideó és 379 SVG feliratai javítva; 6094 feliratszínpár/0 jelzés, axe 282/0, saját interaktív ábrák 218/218. A korábbi Node-elrendezésmérés helyesbítve: 930 valódi nézet, három mobilhiba javítva, kilenc célzott utópróba/0; 13 gördülő képlet kezelhető. Negyedik adag: külső média indítása, bezárása és forráslinkje javítva; 334 elem/668 sikeres ciklus, 14 állapotpróba, saját felület axe 6/0; [részletes jelentés](Q2_akadalymentesseg.md). Ötödik adag: 4e/06 hat diagramjához 47 szöveges adatsor; axe 24/0, billentyűzet 36/36, nyomtatás 8/8, kulcs 4499/4499 és regresszió 100%; a kulcsolvasó és a JS nélküli nyomtatás javítva. Hatodik adag: 1e/01 három függvényes tananyag nyolc SVG-je látható, kapcsolt leírással; 18 végleges nézet/0 elrendezés- és axe-jelzés, nyomtatás 6/6, képletrender 200/0, kvíz 4/4. Hetedik adag: 1e/02 négy SVG-je kapcsolt leírással, két szögív javítva; 18 végleges nézet/0, nyomtatás 6/6, képletrender 184/0, kvíz 6/6. Nyolcadik adag: 1e/03 három SVG-je kapcsolt leírással, három hibás számhalmaz-felirat javítva; 24 végleges nézet/0, nyomtatás 8/8, képletrender 246/0, kvíz 9/9. Kilencedik adag: 1e/05 három tananyag 11 SVG-je kapcsolt leírással, szabályos háromszög és külső szög ábrája javítva; 18 végleges nézet/0, nyomtatás 6/6, képletrender 135/0, kvíz 6/6. Tizedik adag: 1e/05 további három tananyag 13 SVG-je kapcsolt leírással, két szögív és egy levágott síkábrakeret javítva; 18 végleges nézet/0, nyomtatás 6/6, képletrender 121/0, kvíz 6/6. Tizenegyedik adag: 1e/05 utolsó három tananyag kilenc SVG-je kapcsolt leírással, Thalész-jel és forgatási körív javítva; 18 végleges nézet/0, nyomtatás 6/6, képletrender 152/0, kvíz 7/7. Tizenkettedik adag: 1e/07 négy tananyag öt SVG-je kapcsolt leírással; két hiányzó számegyenesnyíl és a közös generátor javítva. 24 végleges nézet/0, nyomtatás 8/8, képletrender 217/0, kvíz 10/10, kulcs 4499/4499, regresszió 100%. Tizenharmadik adag: 1e/08 három teljes ábraleírás, Thalész-pontok és B₁-felirat javítva; a homotécia hiányzó kvízdoboz-zárása és a rejtett nyomtatási rész javítva. 18 végleges nézet/0, nyomtatás 6/6, képletrender 171/0, kvíz 6/6. A korábban generált többi számegyenes nyílfejei, valamint valódi képernyőolvasó, a többi komplex ábra szöveges egyenértékűsége, szolgáltatói médiafelületek és JS nélküli képlet-felolvasás még ellenőrzendő. |
-| Q3 | „Folytasd, ahol abbahagytad” — a `naplo.js` jegyezze az utolsó lapot, a főoldalon és az osztály-indexen gomb | ☐ |
+| Q3 | „Folytasd, ahol abbahagytad” — a `naplo.js` jegyezze az utolsó lapot, a főoldalon és az osztály-indexen gomb | ◐ Helyben kész (2026-10-09): főoldal + négy osztályoldal, külön osztályelőzmény, törlés és gyorsítótári visszalépés. 122 + 16 + 7 működéspróba, 15 mobil/asztali nézet és axe/nyomtatás, 0 hiba; [jelentés](Q3_folytatas.md). Helyi main, push nélkül. |
 | Q4 | Mobil tartalomjegyzék: lebegő „Tartalom” gomb, ha a TOC keskeny kijelzőn nem látszik | ☐ (előbb ellenőrizni) |
 | Q5 | Offline mód (PWA): service worker a meglátogatott lapokra + KaTeX; frissítés-kezelés deploykor | ☐ (tanári döntés kell) |
 | Q6 | Teljesítmény: képméretek, font-preload, a szkriptek `defer`-je; mérés Playwrighttal | ☐ |
 | Q7 | Kompakt médiakártya: kattintásig alacsony sáv (ikon, címke, cím), lejátszáskor nyílik 16:9-re / az applet arányára (`.media-fut`) | ☑ 2026-09-28 (helyben): az 1e/07 egyenletrendszer-lapon a médiablokkok aránya asztalon 46% → 19% |
+
+### Q3 helyi lezárás — 2026-10-09
+
+A „Legutóbb megnyitott oldal” kártya a főoldalon a legfrissebb, az osztályoldalon
+az adott osztály tanulási oldalára vezet. Lecke, gyakorló/házi, összefoglaló és projekt;
+index/kereső/napló nem írja felül. Hibás vagy címjegyzékből törölt célhoz nincs link.
+Naplótörlés, fülközi frissítés/fókusz és gyorsítótári visszalépés rendben;
+pontozás és naplókód változatlan. Egy térképkérés, közös CSS és nyomtatási elrejtés.
+Javítva a mappacímként megnyitott indexek haladásgyűrűinek gyökérútvonala.
+
+Kánon/link 310/0; 28319 képlet és 335 kvíz rendben. A jsdom két környezeti hiánya
+(főoldali play, kereső fetch) tényleges Edge-próbával ellenőrizve; nyers jelzések megőrizve.
+122 fő + 16 végleges + 7 kiegészítő működéspróba, 15 nézet 360/390/1280 px-en,
+axe 15/0, nyomtatás 15/15, JS nélkül öt nyitóoldal; kontraszt minimum 10,53:1.
+Friss szemű lektor alapján pontosított címke, öt nyitóoldal látványa átnézve.
+Mind a 310 HTML, naplótérkép és keresőindex byte szerint megmaradt; builder és
+feladatadat nem változott, ezért matematikai újraépítési/kulcs/regressziós lánc nem futott.
+Korlát: élő oldal, más böngésző, valódi telefon és képernyőolvasó nincs újrapróbálva.
+Tanári döntés kell: nincs. Q3 helyben kész; következő javaslat Q4, választás után.
+Részletek: [Q3-jelentés](Q3_folytatas.md). Új ág és push nélkül.
 
 ---
 

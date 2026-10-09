@@ -728,6 +728,18 @@ html.anim-be .brief.lathato::after{content:'';position:absolute;inset:0;pointer-
   transform:translateX(-115%);animation:hq-szkennel 1.5s ease-out .25s 1;}
 @keyframes hq-szkennel{to{transform:translateX(115%);}}
 
+/* ---------- Legutóbbi tanulási oldal ---------- */
+.folytatas{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  margin:0 0 1.5rem;padding:1rem 1.2rem;min-height:44px;border:1px solid var(--kampusz-uveg-keret);
+  border-radius:var(--r);background:var(--kampusz-sotet);color:var(--tinta);text-decoration:none;}
+.folytatas:hover{border-color:var(--kampusz-neon);color:var(--tinta);}
+.folytatas-szoveg{display:block;flex:1 1 15rem;min-width:0;overflow-wrap:anywhere;}
+.folytatas-cimke,.folytatas-cim,.folytatas-meta{display:block;}
+.folytatas-cimke{color:var(--kampusz-neon);font-size:.85rem;font-weight:600;}
+.folytatas-cim{margin:.2rem 0;font-family:var(--fej);font-size:1.1rem;font-weight:700;line-height:1.4;}
+.folytatas-meta{color:var(--szurke-600);font-size:.85rem;}
+.folytatas-irany{color:var(--kampusz-neon);font-weight:700;white-space:nowrap;}
+
 /* ---------- Akadálymentesség + mozgásérzékenység ---------- */
 :focus-visible{outline:2px solid var(--kampusz-neon);outline-offset:2px;border-radius:6px;}
 .kereso-mini input:focus-visible,.kereso-nagy input:focus-visible{outline:2px solid var(--kampusz-neon);outline-offset:2px;}
