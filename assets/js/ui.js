@@ -172,6 +172,89 @@
     upd();
   }
 
+  /* A képletes címet megjelenített képletként, nem három összefűzött szövegként másoljuk. */
+  function tocCim(el, a){
+    if(!el.querySelector('.katex')){ a.textContent = el.textContent.replace(/[¶#]\s*$/,''); return; }
+    Array.prototype.forEach.call(el.childNodes, function(n){ a.appendChild(n.cloneNode(true)); });
+    a.querySelectorAll('[id], [tabindex]').forEach(function(n){ n.removeAttribute('id'); n.removeAttribute('tabindex'); });
+    var nev = felolvasas(el).replace(/\s+/g, ' ').trim();
+    /* A képlet szöveges megnevezéséhez igazítjuk a névelőt. */
+    a.setAttribute('aria-label', nev.replace(/\b([Aa])z (?=(?:hatvány|tört):)/g, '$1 '));
+  }
+
+  /* A szűk nézet tartalomjegyzéke natív párbeszédablak: az alapoldal ilyenkor nem kezelhető. */
+  function mobilTartalom(toc){
+    var ablak = document.createElement('dialog');
+    if(typeof ablak.showModal !== 'function') return [];
+    ablak.className = 'mobil-toc-ablak'; azonosit(ablak, 'mobil-toc');
+    var fej = document.createElement('div'); fej.className = 'mobil-toc-fej';
+    var cim = document.createElement('h2'); cim.textContent = 'Tartalomjegyzék';
+    ablak.setAttribute('aria-labelledby', azonosit(cim, 'mobil-toc-cim'));
+    var vissza = document.createElement('button'); vissza.type = 'button';
+    vissza.className = 'mobil-toc-bezar'; vissza.textContent = 'Bezárás';
+    vissza.setAttribute('aria-label', 'Tartalomjegyzék bezárása');
+    fej.appendChild(cim); fej.appendChild(vissza); ablak.appendChild(fej);
+    var lista = document.createElement('nav'); lista.className = 'mobil-toc-lista';
+    lista.setAttribute('aria-label', 'Ugrás a szakaszhoz');
+    var linkek = Array.prototype.map.call(toc.querySelectorAll('a'), function(a){
+      var masolat = a.cloneNode(true); lista.appendChild(masolat); return masolat;
+    });
+    ablak.appendChild(lista);
+    var gomb = document.createElement('button'); gomb.type = 'button'; gomb.className = 'mobil-toc-gomb';
+    gomb.textContent = 'Tartalom'; gomb.setAttribute('aria-haspopup', 'dialog');
+    gomb.setAttribute('aria-controls', ablak.id); gomb.setAttribute('aria-expanded', 'false');
+    document.body.appendChild(gomb); document.body.appendChild(ablak);
+    document.body.classList.add('mobil-toc-van');
+    var mobil = window.matchMedia('(max-width: 959px)'), cel = null;
+    function alapallapot(){
+      document.documentElement.classList.remove('mobil-toc-nyitva');
+      gomb.setAttribute('aria-expanded', 'false');
+    }
+    function bezar(h){
+      cel = h || null; alapallapot();
+      if(ablak.open) ablak.close();
+    }
+    gomb.addEventListener('click', function(){
+      if(!mobil.matches || ablak.open) return;
+      cel = null; ablak.showModal();
+      document.documentElement.classList.add('mobil-toc-nyitva');
+      gomb.setAttribute('aria-expanded', 'true');
+      (lista.querySelector('a.aktiv') || linkek[0]).focus();
+    });
+    vissza.addEventListener('click', function(){ bezar(); });
+    /* A Tab a menü két végén is a menüben maradjon. */
+    ablak.addEventListener('keydown', function(ev){
+      if(ev.key !== 'Tab' || ev.ctrlKey || ev.altKey || ev.metaKey) return;
+      var utolso = linkek[linkek.length-1], aktiv = document.activeElement;
+      if(ev.shiftKey && aktiv === vissza){ ev.preventDefault(); utolso.focus(); }
+      else if(!ev.shiftKey && aktiv === utolso){ ev.preventDefault(); vissza.focus(); }
+    });
+    ablak.addEventListener('close', function(){
+      if(ablak.open) return;
+      alapallapot();
+      if(cel){
+        if(!cel.hasAttribute('tabindex')) cel.setAttribute('tabindex', '-1');
+        cel.focus({preventScroll:true}); cel = null;
+      } else if(mobil.matches) gomb.focus({preventScroll:true});
+      else (toc.querySelector('a.aktiv') || toc.querySelector('a')).focus({preventScroll:true});
+    });
+    ablak.addEventListener('click', function(ev){
+      var r = ablak.getBoundingClientRect();
+      if(ev.target === ablak && (ev.clientX < r.left || ev.clientX > r.right || ev.clientY < r.top || ev.clientY > r.bottom)) bezar();
+    });
+    linkek.forEach(function(a){
+      a.addEventListener('click', function(){
+        bezar(document.getElementById(decodeURIComponent(a.hash.slice(1))));
+      });
+    });
+    function atmeretez(){ if(!mobil.matches && ablak.open) bezar(); }
+    if(mobil.addEventListener) mobil.addEventListener('change', atmeretez);
+    else mobil.addListener(atmeretez);
+    window.addEventListener('beforeprint', function(){ if(ablak.open) bezar(); });
+    window.addEventListener('pagehide', function(){ if(ablak.open) bezar(); });
+    return linkek;
+  }
+
   /* TOC felépítése a h2/h3 címekből (ha van #toc) */
   var toc = document.getElementById('toc');
   if(toc){
@@ -184,17 +267,17 @@
       cimek.forEach(function(el){
         var a = document.createElement('a');
         a.href = '#'+el.id;
-        a.textContent = el.textContent.replace(/[¶#]\s*$/,'');
+        tocCim(el, a);
         if(el.tagName==='H3') a.className='h3';
         frag.appendChild(a);
       });
       toc.appendChild(frag);
       /* aktív szakasz jelölése */
-      var linkek = toc.querySelectorAll('a');
+      var linkek = Array.prototype.slice.call(toc.querySelectorAll('a')).concat(mobilTartalom(toc));
       var obs = new IntersectionObserver(function(entries){
         entries.forEach(function(e){
           if(e.isIntersecting){
-            linkek.forEach(function(l){l.classList.toggle('aktiv', l.hash==='#'+e.target.id);});
+            linkek.forEach(function(l){l.classList.toggle('aktiv', l.getAttribute('href')==='#'+e.target.id);});
           }
         });
       }, {rootMargin:'-20% 0px -70% 0px'});
@@ -336,6 +419,7 @@
   /* „/” → ugrás a keresőbe (ha épp nem beviteli mezőben vagyunk) */
   document.addEventListener('keydown', function(ev){
     if(ev.key !== '/' || ev.ctrlKey || ev.altKey || ev.metaKey) return;
+    if(document.querySelector('dialog[open]')) return;
     if(window.Naplo && !window.Naplo.gyorskeresoBe()) return;
     var a = document.activeElement;
     if(a && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)) return;

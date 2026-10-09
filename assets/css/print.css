@@ -15,12 +15,14 @@
     filter:none !important;
   }
   html,body{background:#fff !important;}
+  html.mobil-toc-nyitva{overflow:visible !important;}
+  body.mobil-toc-van{padding-bottom:0 !important;}
   body::before{display:none !important;}   /* helyszín-háttérkép */
 
   /* --- képernyő-only elemek --- */
   #progress,.fejlec,.toc,.kereso-mini,.kereso-nagy,.lapozo,.gyakorolj,.kviz,
   .morzsa,.matek-dekor,.savok,.video-panel,.hang-gomb,
-  .folytatas,.naplo-chip,.egyseg-kesz,.fel-pipa,.effekt-reteg,.gyuru,.naplo-eszkoz,.tetejere,.tartalomra{display:none !important;}
+  .mobil-toc-gomb,.mobil-toc-ablak,.folytatas,.naplo-chip,.egyseg-kesz,.fel-pipa,.effekt-reteg,.gyuru,.naplo-eszkoz,.tetejere,.tartalomra{display:none !important;}
   .brief::after{display:none !important;}
   /* interaktív vezérlők (szimulátor, adatlabor): papíron csak a kép és a mutatótábla marad */
   .iv-gombsor,.adatlabor .iv-vezerlo,.adatlabor textarea,.iv-al-cimke{display:none !important;}
