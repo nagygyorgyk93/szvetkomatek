@@ -45,8 +45,10 @@ def TABLA(fejlec, sorok):
 # ==================================================================== F4 — Csalópapír
 OSSZ = [
  ("🎯 Primitív függvény és határozatlan integrál", [
-  r'<p><b>Primitív függvény</b> ' + h(A1, "def-primitiv") + r': $F$ az $f$ primitív függvénye egy '
-  r'intervallumon, ha ott $F\'(x)=f(x)$. Ha $F$ az, akkor $F+C$ is az — és más nincs ' + h(A1, "tetel-plusz-c") + r'.</p>'
+  r'<p><b>Primitív függvény</b> ' + h(A1, "def-primitiv") + (
+                                                                   ": $F$ az $f$ primitív függvénye egy intervallumon, ha ott $F\\'(x)=f(x)$. Ha $F$ az, akkor $F+C$ is "
+                                                                   'az — ugyanezen az intervallumon minden primitív függvény ilyen alakú '
+                                                               ) + h(A1, "tetel-plusz-c") + r'.</p>'
   r'<p><b>Határozatlan integrál</b> ' + h(A1, "def-hatarozatlan-integral") + r': $\displaystyle\int f(x)\,dx=F(x)+C$ '
   r'— a primitív függvények serege; $f$ az <b>integrandus</b>, $C$ az <b>integrációs konstans</b>.</p>'
   r'<ul><li><b>Ellenőrzés:</b> az eredményt deriváld vissza — az integrandust kell kapnod.</li>'
@@ -62,8 +64,12 @@ OSSZ = [
       ["$e^x$", "$e^x+C$", "$\\dfrac{1}{\\cos^2x}$", "$\\operatorname{tg}x+C$"],
       ["$a^x$", "$\\dfrac{a^x}{\\ln a}+C$", "$\\dfrac{1}{\\sin^2x}$", "$-\\operatorname{ctg}x+C$"],
       ["$k$ (állandó)", "$kx+C$", "$\\sqrt x$", "$\\dfrac23x\\sqrt x+C$"]]),
-  r'<p class="le halvany">Feltételek: $\dfrac1x$-nél $x\ne0$; $a^x$-nél $a\gt0$, $a\ne1$; $\dfrac{1}{\cos^2x}$-nél '
-  r'$\cos x\ne0$; $\dfrac{1}{\sin^2x}$-nél $\sin x\ne0$; $\sqrt x$-nél $x\ge0$.</p>',
+  (
+      '<p class="le halvany">Feltételek: a hatványszabály tetszőleges valós kitevővel $x>0$-ra '
+      'használható; más intervallumon akkor, ha a hatványok valósak és deriválhatók. A $\\dfrac1x$-nél '
+      '$x\\ne0$; $a^x$-nél $a\\gt0$, $a\\ne1$; $\\dfrac{1}{\\cos^2x}$-nél $\\cos x\\ne0$; '
+      '$\\dfrac{1}{\\sin^2x}$-nél $\\sin x\\ne0$; $\\sqrt x$-nél $x\\ge0$.</p>'
+  ),
   r'<p><b>Szabályok</b> ' + h(A2, "tetel-linearitas") + r': $\int c\cdot f=c\int f$, $\;\int(f\pm g)=\int f\pm\int g$. '
   r'Szorzatra és hányadosra <b>nincs</b> ilyen szabály — előbb alakíts át (beszorzás, tagokra bontás) '
   + h(A2, "pelda-atalakitas") + r'. A gyököt és a törtet írd <b>hatványként</b>: $\sqrt[3]{x^2}=x^{\frac23}$, '
@@ -76,10 +82,14 @@ OSSZ = [
       ["lineáris belső függvény " + h(A3, "tetel-linearis-belso"),
        "$\\displaystyle\\int f(ax+b)\\,dx=\\dfrac1a\\,F(ax+b)+C$ $(a\\ne0)$",
        "$\\displaystyle\\int(2x-5)^7dx=\\dfrac{(2x-5)^8}{16}+C$"],
-      ["$\\dfrac{f'}{f}$ " + h(A3, "tetel-f-per-f"), "$\\displaystyle\\int\\dfrac{f'(x)}{f(x)}\\,dx=\\ln\\lvert f(x)\\rvert+C$",
+      ["$\\dfrac{f'}{f}$ " + h(A3, "tetel-f-per-f"), "$\\displaystyle\\int\\dfrac{f'(x)}{f(x)}\\,dx=\\ln\\lvert f(x)\\rvert+C$, ha $f$ deriválható és nem nulla az adott intervallumon",
        "$\\displaystyle\\int\\dfrac{2x}{x^2+7}\\,dx=\\ln\\left(x^2+7\\right)+C$ ($x^2+7\\gt0$, abszolút érték nem kell)"],
       ["$f^n\\cdot f'$ " + h(A3, "tetel-f-hatvany"),
-       "$\\displaystyle\\int\\bigl[f(x)\\bigr]^nf'(x)\\,dx=\\dfrac{\\bigl[f(x)\\bigr]^{n+1}}{n+1}+C$ $(n\\ne-1)$",
+       (
+           "$\\displaystyle\\int\\bigl[f(x)\\bigr]^nf'(x)\\,dx=\\dfrac{\\bigl[f(x)\\bigr]^{n+1}}{n+1}+C$ $(n\\ne-1)$; "
+           '$f$ deriválható, a szereplő hatványok valósak és a láncszabály alkalmazható (valós $n$-re elegendő '
+           '$f>0$)'
+       ),
        "$\\displaystyle\\int\\cos x\\sin^3x\\,dx=\\dfrac{\\sin^4x}{4}+C$"],
       ["általános " + h(A3, "tetel-helyettesites"), "$t=g(x)$, $dt=g'(x)\\,dx$: "
        "$\\displaystyle\\int f\\bigl(g(x)\\bigr)g'(x)\\,dx=\\int f(t)\\,dt$ — $x$ nem maradhat benne; a végén "
@@ -109,11 +119,16 @@ OSSZ = [
       ["$f\\ge0$ az $[a;\\,b]$-n " + h(B3, "pelda-gorbe-alatti"), "$T=\\displaystyle\\int_a^bf(x)\\,dx$"],
       ["$f\\le0$ az $[a;\\,b]$-n " + h(B3, "tetel-elojelvaltas"), "$T=-\\displaystyle\\int_a^bf(x)\\,dx=\\left|\\int_a^bf(x)\\,dx\\right|$"],
       ["$f$ előjelet vált " + h(B3, "tetel-elojelvaltas"), "bonts a zérushelyeknél, és a részek abszolút értékét add össze"],
-      ["görbe és a két tengely " + h(B3, "pelda-ket-tengely"), "a határok: $0$ és a zérushely (az első síknegyedben)"],
-      ["két görbe " + h(B3, "tetel-ket-gorbe"), "$T=\\displaystyle\\int_a^b\\bigl(\\text{felső}-\\text{alsó}\\bigr)\\,dx$, "
-       "$a$ és $b$ a metszéspontok — akkor is, ha a síkidom a tengely alá lóg"]]),
-  r'<p><b>Menetrend:</b> 1. vázlat · 2. zérushelyek, metszéspontok · 3. melyik görbe van felül (egy próbapont dönt) · '
-  r'4. integrálás · 5. a részek összege. A terület <b>sosem negatív</b>.</p>',
+      ["görbe és a két tengely " + h(B3, "pelda-ket-tengely"), 'a határok: $0$ és a pozitív zérushely (ha az adott görbe az első síknegyedben zárt síkidomot határol a tengelyekkel)'],
+      ["két görbe " + h(B3, "tetel-ket-gorbe"), (
+                                                      '$T=\\displaystyle\\int_a^b\\bigl(\\text{felső}-\\text{alsó}\\bigr)\\,dx$, $a$ és $b$ a határoló '
+                                                      'metszéspontok $x$-koordinátái — akkor is, ha a síkidom a tengely alá nyúlik'
+                                                  )]]),
+  (
+      '<p><b>Menetrend:</b> 1. vázlat · 2. zérushelyek, metszéspontok · 3. melyik görbe van felül (két '
+      'szomszédos metszéspont között egy próbapont dönt) · 4. integrálás · 5. a részek összege. A terület '
+      '<b>sosem negatív</b>.</p>'
+  ),
  ]),
 
  ("⚠️ Véd Vilmos csapdái — amelyeken a legtöbben elcsúsznak", [

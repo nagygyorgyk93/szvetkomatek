@@ -2,13 +2,12 @@
 
 ## Hatókör és állapot
 
-**Jelenlegi összesítés:** az 1e, a 2e és a 3e teljes A3-auditja helyben elkészült:
-**1e 77/77**, **2e 65/65**, **3e 92/92 HTML-oldal**.
-A 4e A3-auditja **37/73 oldalra** kész: az első három témakör lezárva.
-A 4e/04–06 és az osztály főoldala hátra van.
+**Jelenlegi összesítés:** mind a négy osztály teljes A3-auditja helyben elkészült:
+**1e 77/77**, **2e 65/65**, **3e 92/92**, **4e 73/73 HTML-oldal**.
+Összesen 307 osztályoldal kapott teljes nyelvi és példahitelességi ellenőrzést.
 A tanár kérésére az adagok 2–3 teljes témakört fognak össze.
-A munka eddig huszonöt adagban készült; az alábbi adatok
-az egyes munkamenetek eredményei, a legfrissebb bejegyzés a végén található.
+A munka huszonhat adagban készült; az alábbi adatok az egyes munkamenetek
+eredményei, a legfrissebb bejegyzés a végén található.
 
 **2026-10-05, első adag:** az 1e/01 három függvényes tananyaglapjának teljes szövegét
 átnéztük, a bevezetőktől az összefoglalóig. A tanár kérése szerint az egyértelműen
@@ -2686,3 +2685,87 @@ TeX-alakban olvashatók; az axe eredménye nem teljes WCAG-minősítés.
 **Tanári döntés kell:** nincs új nyitott tartalmi kérdés.
 **Következő adag:** 4e/04–06 és az osztály főoldala, a teljes 4e A3 lezárásához.
 Helyi main, új ág és push nélkül; e munkamenet eredménye helyi.
+
+
+## 2026-10-09 — huszonhatodik adag: 4e/04–06 és az osztály főoldala; a teljes A3 lezárása
+
+**Hatókör:** mind a 36 oldal teljes szöveg szerint átnézve: integrál 12,
+kombinatorika 10, valószínűség–statisztika 13 oldal, továbbá a 4e főoldala.
+18 tananyag, 155 gyakorló/házi kártya, 71 SVG és 37 kvíz.
+Ezzel a teljes 4e A3 **73/73**, a négy osztály összesen **307/307**.
+
+Kiindulás: `7d760ab`, tiszta helyi `main`, azonos helyi `origin/main` referencia;
+távoli frissítés nem történt. A 4e tantárgyi skill, kimenetek és sztandardok
+mérvadók. A tanár kombinatorikai nehézségi döntései és az elfogadott videók
+megmaradtak. Javítás előtt a hibacsoportokat táblázatban bemutattuk.
+
+### Javított hibák és félreérthető megfogalmazások
+
+| Hol | Mi volt a probléma | Súlyosság | Javítás módja és eredménye |
+|---|---|---|---|
+| 04, integrálszabályok | Feltétel nélkül létező primitív függvény; valós hatvány, nem nulla nevező és intervallum feltétele; téves táblázatsor | közepes | Builder: feltételes létezés, érvényességi intervallum, hatvány- és láncszabály feltételei a leckében és az összefoglalóban; helyes szabályhivatkozás |
+| 04, határozott integrál és terület | Előjeles terület növekedése, több zérushely kezelése, pont és koordináta keverése, tengelymetszet síknegyednek nevezése | közepes | Builder: előjeles hozzájárulás, szakaszonkénti bontás és szomszédos metszések, x-koordinátás határok, első síknegyed pozitív határa |
+| 04, mozgás és rugó | Út és elmozdulás összekeverése; lépésszámláló indokolatlan műszaki állítása; külső és visszahúzó erő munkája | közepes | Builder: egyenes mozgás helyfüggvénye, előjeles elmozdulás és abszolút sebességű út; ideális rugó lassú nyújtása a nyújtatlan állapotból |
+| 04, magyarázat és történet | „Nem számolható ki” és „ilyen integrál nincs” túlzó mondatok; Arkhimédész háromszöge nem volt meghatározva | közepes | Builder: elemi primitív függvény hiánya, befejezetlen változócsere, húrhoz párhuzamos érintő feltétele |
+| 05, kombinatorikai feltételek | Ismétléses variációnál is k≤n; az összeadási szabály eseteket számolt lehetőségek helyett; Morse- és PIN-konvenció hiánya | közepes | Builder: k≤n csak ismétlés nélkül; esetenkénti darabszámok; nem üres jelsorozatok, kezdő nulla, egyszeri kézfogások |
+| 05, példa és binomiális magyarázat | Minden énekes minden szólamra alkalmas; Pascal eredetállítása és szélső elemei pontatlanok | közepes | Builder: négy különböző dalhoz választott szólisták azonos adatokkal; széleken 1, Pascal előtti előzmények; formális kifejtés megnevezése |
+| 06, valószínűségi modell | Függetlenség, egyenlő esély és pozitív feltételes nevező hiánya; gyakorisági közelítés túlzó ígérete | közepes | Builder: szükséges feltételek, becslés és ingadozás, nem garantált egyedi sorozat; a sport- és születési modell határai |
+| 06, csoportosított adatok | A 6 vagy több tagú háztartás egyetlen értéknek tűnt; nyers TeX háztartásszám; hiányzó ismeretlen kategória | közepes | Builder: csoportosított eloszlás és P(X≥6), alsó várhatóérték-becslés, helyes számmegjelenítés, teljes kategórialista |
+| 06, minta és diagram | Véletlen minta kategorikus ígérete; több sport és kedvenc sport keverése; eltérő osztályközök, nyitott korcsoport | közepes | Builder: mintavétel és bizonytalanság, válaszadók köre; egy- és többválaszos kérdés; gyakoriságsűrűség, korcsoport-ábra nyitott végének korlátja |
+| 06, statisztikai mutatók és kutatás | Medián szigorú alatta/fölötte állítása; standardizálás nulla szórással; egyéves adatból éghajlat; minőségi kutatáshoz átlag/szórás | közepes | Builder: nem szigorú mediánfeltétel, pozitív szórás, 2024-es adatsorra korlátozott összevetés, mennyiségi kutatási kérdés és óvatos oksági értelmezés |
+| 04–06, nyelv | Nehézkes mondatok és indokolatlan kizárólagosságok | alacsony | Builder: természetesebb magyar megfogalmazás, pontosabb átvezetők; a történet és a bevett szakkifejezések megmaradtak |
+
+A Pascal-háromszög korábbi történetét a
+[St Andrews matematikatörténeti forrása](https://mathshistory.st-andrews.ac.uk/Biographies/Jia_Xian/)
+alapján ellenőriztük. A szerbiai 7/39 lottó példájának szabályát a
+[szervező hivatalos útmutatójával](https://lutrija.rs/Help/Instructions?helpTypeId=1)
+vetettük össze; a számadata nem változott.
+
+### Független lektorálás és tartalommegőrzés
+
+Három friss, előzmény és kulcs nélküli lektor teljesen végigolvasta az eredeti
+36 tanulói szöveget, ellenőrizte a kidolgozott példákat, 37 kvízt, három projektet
+és mind a 155 gyakorló/házi kártyát. Az ábrás feladatokhoz kulcs nélküli képet
+kaptak. Az első számításokat lezárt jelentésben rögzítették, majd külön
+összevetették a meglévő kulcsokkal: 62 integrál-, 38 kombinatorikai és 55
+valószínűségi/statisztikai kártya kulcsa helyes. Egy lektor saját kezdeti
+szórásszámítási hibáját az összevetésben javította; az adott oldalkulcs helyes
+volt és változatlan maradt. A javított 36 szöveg második olvasata is megtörtént;
+nincs nyitott biztos szöveghiba. A részletes számítások és a projektválaszok
+csak a privát kontrollban maradnak.
+
+Mind a 12 builder újrafutott; 11 forrás csak szövegében változott.
+AST-kontroll szerint a program és numerikus állandói azonosak. Mind a 155
+kártya matematikai adata és teljes kulcsa, 71 teljes SVG, 37 kvíz válaszai és
+helyes válaszai, horgonyok, régi linkek, képek, szkriptek, háttér és médiablokkok
+megmaradtak. A valós adatok forrásmodulja byte szerint azonos. Új feladat,
+számadat és felmérőadat nincs; tükrözött dokumentációt nem módosítottunk.
+A főoldal szövege átnézve, változatlan.
+
+### Ellenőrzések a végleges helyi állapoton
+
+- Kép → média → háttér → naplótérkép → keresőindex → kánon → link → sáv →
+  kulcs → regresszió lánc hibamentes. 334 aktív média 139 lapon; kánon és link
+  310 oldal, 0 hiba; sáv tiszta; kulcs **4499/4499**; regresszió **100%**.
+- A két korábbi 2e visszautalási heurisztika figyelmeztetése változatlan;
+  az érvényes horgonylinkeket ez az adag nem érinti.
+- Külön jsdom/render: 36 lap, 2499 képlet, 37/37 kvíz, 0 hiba.
+- Edge 360/390/1280 px: zárt és nyitott lenyílókkal 216 nézet, 0 hiba;
+  axe 390 px-en 72 állapot, 0 jelzett sértés; nyomtatási láthatóság JavaScript
+  be/ki 72 állapot; JavaScript nélkül 36 oldal olvasható.
+- A Python Playwright helyett Node/Edge az aktuális `layout_teszt.py`
+  `TULLOGOK` kifejezésével. Hét javított részlet mobilos képe szemrevételezve.
+- 26 HTML és 26 keresőindex-URL változott, csak a három témakörben;
+  10 átnézett lap byte szerint változatlan. Index 308 nem üres bejegyzés.
+  Naplótérkép byte szerint azonos: 184 egység, 2294 feladat, 12315 XP.
+  Médiakatalógus és a backlog zárolt első 23 sora byte szerint azonos.
+
+**Korlátok:** valódi képernyőolvasó, más böngésző, teljes PDF-oldaltördelés,
+minden háttérpont kézi kontrasztja, külső média új működési/tartalmi próbája
+és az élő publikált oldal nem volt ellenőrizve. JavaScript nélkül a képletek
+TeX-alakban olvashatók; az axe nem teljes WCAG-minősítés. A rögzített külső
+adatforrások teljes újraimportálása nem volt ennek a nyelvi adagnak része.
+
+**Tanári döntés kell:** nincs új nyitott tartalmi kérdés.
+**Állapot:** a teljes A3 helyben elkészült; következő nagyobb backlogtétel
+kiválasztása a tanárral. Helyi main, új ág és push nélkül.

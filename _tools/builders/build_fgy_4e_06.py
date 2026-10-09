@@ -498,7 +498,7 @@ S_ALAP.append((
     "Melyik diagramot választanád? (oszlop-, kör-, vonaldiagram vagy hisztogram)",
     ["a szerbiai háztartások száma taglétszám szerint (1, 2, …, 6 vagy több tag)",
      "Szabadka napi középhőmérséklete 2024 minden napján",
-     "a lakosság százalékos megoszlása a számítógépes ismeret szerint (ismeri, részben ismeri, nem ismeri)",
+     'a lakosság százalékos megoszlása a számítógépes ismeret szerint (ismeri, részben ismeri, nem ismeri, ismeretlen)',
      "egy 30 fős osztály tanulóinak testmagassága (cm)"],
     ["oszlopdiagram", "vonaldiagram", "kördiagram", "hisztogram"]))
 
@@ -752,18 +752,26 @@ def lista(A, K, N_, J):
 if __name__ == "__main__":
     u1 = oldal(**T, fajl="feladatok-valoszinuseg.html", cim="Zsoldos-lista — Valószínűség",
                h1="Valószínűség — Zsoldos-lista", itt="Zsoldos-lista — Valószínűség",
-               alcim="Események, klasszikus és statisztikai valószínűség, feltételes valószínűség és függetlenség, "
-                     "binomiális valószínűség, valószínűségi változó, várható érték és szórás — sok valós adattal. A "
-                     "végeredmény lenyitható: előbb számolj!",
+               alcim=(
+                         'Események, klasszikus és statisztikai valószínűség, feltételes valószínűség és függetlenség, '
+                         'binomiális valószínűség, valószínűségi változó, várható érték és szórás — sok valós adattal. A '
+                         'végeredmény lenyitható: előbb számolj! Ha nincs külön feltétel, a kockák szabályosak és '
+                         'hatoldalúak, az érmék szabályosak, a külön dobások egymástól függetlenek; véletlen választáskor '
+                         'minden elemnek azonos esélyt adunk.'
+                     ),
                sections_html=lista(V_ALAP, V_KOZEP, V_NEHEZ, V_JOKER), ossz_nev="Csalópapírt",
                prev="tananyag-valoszinusegi-valtozo.html", prevc="Valószínűségi változó és várható érték",
                nxt="tananyag-adatok.html", nxtc="Adatokból kép — sokaság, minta, diagram")
     print("✓", os.path.basename(u1))
     u2 = oldal(**T, fajl="feladatok-statisztika.html", cim="Zsoldos-lista — Statisztika",
                h1="Statisztika — Zsoldos-lista", itt="Zsoldos-lista — Statisztika",
-               alcim="Ismérvek és skálák, gyakorisági táblázat, diagramok, középértékek, kvartilisek, szórás és "
-                     "standardizált érték — valós szerbiai, magyarországi és nemzetközi adatokkal. A végeredmény "
-                     "lenyitható: előbb számolj!",
+               alcim=(
+                         'Ismérvek és skálák, gyakorisági táblázat, diagramok, középértékek, kvartilisek, szórás és '
+                         'standardizált érték — valós szerbiai, magyarországi és nemzetközi adatokkal. A végeredmény '
+                         'lenyitható: előbb számolj! Ha nincs külön feltétel, a kockák szabályosak és hatoldalúak, az érmék '
+                         'szabályosak, a külön dobások egymástól függetlenek; véletlen választáskor minden elemnek azonos '
+                         'esélyt adunk.'
+                     ),
                sections_html=lista(S_ALAP, S_KOZEP, S_NEHEZ, S_JOKER), ossz_nev="Csalópapírt",
                prev="tananyag-statisztikai-mutatok.html", prevc="Középértékek és szóródás",
                nxt="feladatok-hazi.html", nxtc="I.V.H. Kihallgató Terem — Vészterem")

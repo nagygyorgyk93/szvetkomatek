@@ -144,9 +144,12 @@ B1 = [
    r'<p class="lead">Mekkora az $f(x)=\frac{x^2}{3}+1$ grafikonja alatti terület a $[0;\,3]$ intervallumon? '
    r'Téglalapot, háromszöget ki tudunk számolni — görbe vonalú alakzatot még nem. Ezért <b>téglalapokkal '
    r'közelítünk</b>.</p>',
-   r'<p>Osszuk az intervallumot $n$ egyenlő részre. Minden részre állítsunk egy téglalapot: a <b>kisebbik</b> '
-   r'végpontbeli függvényérték magasságával a görbe alatt maradunk (<b>alsó összeg</b>), a <b>nagyobbikkal</b> fölé '
-   r'nyúlunk (<b>felső összeg</b>). A keresett terület a kettő közé esik.</p>',
+   (
+       '<p>Osszuk az intervallumot $n$ egyenlő részre. Ennél a növekvő függvénynél minden részre állítsunk '
+       'egy téglalapot: a <b>kisebbik</b> végpontbeli függvényérték magasságával a görbe alatt maradunk '
+       '(<b>alsó összeg</b>), a <b>nagyobbikkal</b> fölé nyúlunk (<b>felső összeg</b>). A keresett terület '
+       'a kettő közé esik.</p>'
+   ),
    SVG_B1_OSSZEG,
    _tabla_osszeg,
    kviz(r'Növekvő függvénynél mi történik a felső összeggel, ha minden korábbi részintervallumot két részre bontunk?',
@@ -169,9 +172,13 @@ B1 = [
    r'<p>A határozatlan integrál <b>függvénysereg</b>, a határozott integrál <b>egyetlen szám</b>. A kettőt a '
    r'következő egység köti össze.</p>',
    doboz("erdekesseg", "Arkhimédész parabolaszelete",
-         r'<p>Arkhimédész (Kr. e. 3. század) a parabolaszelet területét egyre több, egyre kisebb háromszöggel töltötte '
-         r'ki, és megmutatta, hogy a terület a beírt háromszög $\frac43$-a. Ez a „kimerítés módszere” — a határozott '
-         r'integrál ősének tekintjük. A $\int$ jel egy megnyújtott S: a latin <i>summa</i>, összeg.</p>'),
+         (
+             '<p>Arkhimédész (Kr. e. 3. század) a parabolaszelet területét egyre több, egyre kisebb háromszöggel '
+             'töltötte ki, és megmutatta, hogy a terület annak a beírt háromszögnek a $\\frac43$-a, amelynek '
+             'harmadik csúcsában az érintő párhuzamos a szeletet határoló húrral. Ez a „kimerítés módszere” — a '
+             'határozott integrál ősének tekintjük. A $\\int$ jel egy megnyújtott S: a latin <i>summa</i>, '
+             'összeg.</p>'
+         )),
  ]),
 
  ("Előjeles terület", [
@@ -191,9 +198,12 @@ B1 = [
         nem="✘ A tengely alatti rész negatívan számít: 5 − 2 = 3. A 7 a két rész területének összege — az nem a "
             "határozott integrál."),
    doboz("erdekesseg", "Út a sebesség–idő grafikon alatt",
-         r'<p>Ha egy test sebességét az idő függvényében ábrázoljuk, a grafikon alatti terület a <b>megtett út</b>: '
-         r'$s=\int_{t_1}^{t_2}v(t)\,dt$. Ha a sebesség negatív (visszafelé halad), az a rész negatívan számít — így '
-         r'az integrál az elmozdulást adja.</p>'),
+         (
+             '<p>Egyenes vonalú mozgásnál a sebességfüggvény integrálja az <b>előjeles elmozdulást</b> adja: '
+             '$\\Delta s=\\int_{t_1}^{t_2}v(t)\\,dt$. Ha a test közben visszafelé halad, a negatív sebességű szakasz '
+             'levonódik. A <b>megtett út</b> ehelyett $\\int_{t_1}^{t_2}|v(t)|\\,dt$: ehhez a pozitív és a negatív '
+             'részek területét egyaránt pozitívan számítjuk.</p>'
+         )),
    GY(FB + "#alap-1", "A 1–2", FB + "#kozep-1", "K 1"),
    brief('<b>SZVETI:</b> Téglalapokkal csak közelítünk, és negyven téglalapnál már az én processzorom is melegszik. '
          '<b>Nagol:</b> Van egy híd, amely pontosan kiszámolja — és a primitív függvényen át vezet.', outro=True),
@@ -214,10 +224,13 @@ B2 = [
          r'$$\int_a^b f(x)\,dx=F(b)-F(a)=\big[F(x)\big]_a^b.$$</p>'
          r'<p>A határozott integrált tehát <b>nem</b> téglalapokkal számoljuk ki: keresünk egy primitív függvényt, és '
          r'kivonjuk a két határon vett értékét.</p>', hid="tetel-newton-leibniz"),
-   r'<p><b>Miért igaz? (szemléletesen)</b> Jelölje $T(x)$ a görbe alatti területet $a$-tól $x$-ig. Ha $x$-et egy '
-   r'kicsit, $\Delta x$-szel növeljük, a terület egy keskeny sávval nő, amely majdnem téglalap: '
-   r'$T(x+\Delta x)-T(x)\approx f(x)\cdot\Delta x$. Osztva $\Delta x$-szel és $\Delta x\to0$: $T\'(x)=f(x)$. A '
-   r'területfüggvény tehát <b>primitív függvény</b>, és $T(a)=0$, így $T(b)=F(b)-F(a)$.</p>',
+   (
+       '<p><b>Miért igaz? (szemléletesen)</b> Jelölje $T(x)$ a görbe alatti előjeles területet $a$-tól '
+       '$x$-ig. Ha $x$-et egy kicsit, $\\Delta x$-szel növeljük, az előjeles terület egy keskeny sáv '
+       'hozzájárulásával változik, amely majdnem téglalap: $T(x+\\Delta x)-T(x)\\approx f(x)\\cdot\\Delta x$. '
+       "Osztva $\\Delta x$-szel és $\\Delta x\\to0$: $T\\'(x)=f(x)$. A területfüggvény tehát <b>primitív "
+       'függvény</b>, és $T(a)=0$, így $T(b)=F(b)-F(a)$.</p>'
+   ),
    abra(SVG_B2_TERULETFV, 'A kék terület $T(x)$; a narancssárga sáv $T(x+\\Delta x)-T(x)\\approx f(x)\\cdot\\Delta x$.'),
    r'<p>A B1 példája most egy sorban: $\int_0^3\left(\frac{x^2}{3}+1\right)dx=\left[\frac{x^3}{9}+x\right]_0^3='
    r'(3+3)-0=6$ — pontosan az, amihez a téglalapok tartottak.</p>',
@@ -299,15 +312,18 @@ B3 = [
          r'<p>Az $f(x)=\frac{x^2}{2}+2$ a $[-1;\,2]$-n pozitív (sőt mindenütt), ezért '
          r'$$T=\int_{-1}^{2}\left(\frac{x^2}{2}+2\right)dx=\left[\frac{x^3}{6}+2x\right]_{-1}^{2}='
          r'\left(\frac86+4\right)-\left(-\frac16-2\right)=\frac{15}{2}.$$</p>', hid="pelda-gorbe-alatti"),
-   abra(SVG_B3_TRAPEZ, 'A kiemelt terület $\\frac{15}{2}=7{,}5$ egység.'),
+   abra(SVG_B3_TRAPEZ, 'A kiemelt terület $\\frac{15}{2}=7{,}5$ területegység.'),
  ]),
 
  ("Ha a görbe a tengely alá bukik", [
    doboz("tetel", "Terület előjelváltásnál",
-         r'<p>Ha $f\le0$ az $[a;\,b]$-n, a terület $T=\left\lvert\int_a^b f(x)\,dx\right\rvert$. Ha $f$ az intervallumon '
-         r'<b>előjelet vált</b>, a zérushelyeinél <b>részekre bontunk</b>, és a részintegrálok abszolút értékét adjuk '
-         r'össze: $$T=\left\lvert\int_a^c f(x)\,dx\right\rvert+\left\lvert\int_c^b f(x)\,dx\right\rvert,$$ ahol $c$ a '
-         r'zérushely.</p>', hid="tetel-elojelvaltas"),
+         (
+             '<p>Ha $f\\le0$ az $[a;\\,b]$-n, a terület $T=\\left\\lvert\\int_a^b f(x)\\,dx\\right\\rvert$. Ha $f$ az '
+             'intervallumon <b>előjelet vált</b>, a zérushelyeinél <b>részekre bontunk</b>, és a részintegrálok '
+             'abszolút értékét adjuk össze: $$T=\\left\\lvert\\int_a^c f(x)\\,dx\\right\\rvert+\\left\\lvert\\int_c^b '
+             'f(x)\\,dx\\right\\rvert,$$ ahol $c$ az egyetlen belső zérushely; több zérushelynél minden érintett '
+             'szakaszt külön számolunk.</p>'
+         ), hid="tetel-elojelvaltas"),
    doboz("pelda", "I.V.H. Akták — bontás a zérushelynél",
          r'<p>Az $f(x)=x^2-4x=x(x-4)$ és az $x$ tengely közötti terület a $[0;\,5]$-ön. A zérushelyek $0$ és $4$: a '
          r'$[0;\,4]$-en $f\le0$, a $[4;\,5]$-ön $f\ge0$.</p>'
@@ -331,19 +347,24 @@ B3 = [
    r'<p class="lead">Ha a síkidomot a görbe, az $x$ és az $y$ tengely határolja, az egyik határ az $y$ tengely '
    r'($x=0$), a másik a görbe <b>zérushelye</b> — ezt nekünk kell kiszámolni.</p>',
    doboz("pelda", "I.V.H. Akták — a két tengely között",
-         r'<p>Az $f(x)=8-2x^2$ grafikonja, az $x$ és az $y$ tengely az első síknegyedben zár be egy síkidomot. A '
-         r'zérushely: $8-2x^2=0\Rightarrow x=2$ (a $-2$ a másik síknegyedben van). A $[0;\,2]$-n $f\ge0$, ezért '
-         r'$$T=\int_0^2(8-2x^2)\,dx=\left[8x-\frac{2x^3}{3}\right]_0^2=16-\frac{16}{3}=\frac{32}{3}.$$</p>',
+         (
+             '<p>Az $f(x)=8-2x^2$ grafikonja, az $x$ és az $y$ tengely az első síknegyedben zár be egy síkidomot. '
+             'A zérushely: $8-2x^2=0\\Rightarrow x=2$ (a másik zérushely $-2$; az első síknegyedbeli tartomány '
+             'határát a pozitív zérushely adja). A $[0;\\,2]$-n $f\\ge0$, ezért '
+             '$$T=\\int_0^2(8-2x^2)\\,dx=\\left[8x-\\frac{2x^3}{3}\\right]_0^2=16-\\frac{16}{3}=\\frac{32}{3}.$$</p>'
+         ),
          hid="pelda-ket-tengely"),
    abra(SVG_B3_TENGELYEK, 'A kiemelt síkidomot a görbe és a két tengely határolja.'),
  ]),
 
  ("Két görbe közötti terület", [
    doboz("tetel", "Terület két görbe között",
-         r'<p>Ha az $[a;\,b]$-n $f(x)\ge g(x)$, a két grafikon közötti síkidom területe '
-         r'$$T=\int_a^b\big(f(x)-g(x)\big)\,dx\quad(\text{a felső mínusz az alsó}).$$</p>'
-         r'<p><b>Lépések:</b> 1. a metszéspontok: $f(x)=g(x)$; 2. melyik van felül — egy próbapont a metszéspontok '
-         r'között; 3. az integrál a metszéspontok között.</p>', hid="tetel-ket-gorbe"),
+         (
+             '<p>Ha az $[a;\\,b]$-n $f(x)\\ge g(x)$, a két grafikon közötti síkidom területe '
+             '$$T=\\int_a^b\\big(f(x)-g(x)\\big)\\,dx\\quad(\\text{a felső mínusz az alsó}).$$</p><p><b>Lépések:</b> 1. '
+             'a metszéspontok: $f(x)=g(x)$; 2. melyik van felül — egy próbapont két szomszédos metszéspont '
+             'között; 3. az integrál a metszéspontok között.</p>'
+         ), hid="tetel-ket-gorbe"),
    doboz("pelda", "I.V.H. Akták — parabola és egyenes",
          r'<p>Az $f(x)=x^2$ és a $g(x)=x+2$ közötti terület.</p>'
          r'<p><b>1.</b> $x^2=x+2\Rightarrow x^2-x-2=0\Rightarrow x=-1$ vagy $x=2$.</p>'
@@ -352,8 +373,11 @@ B3 = [
          r'\frac{10}{3}-\left(-\frac76\right)=\frac92.$$</p>', hid="pelda-ket-gorbe"),
    abra(SVG_B3_KET, 'Fekete: $f(x)=x^2$, kék: $g(x)=x+2$. A két metszéspont $(-1;\\,1)$ és $(2;\\,4)$; a köztük lévő terület $\\frac92$.'),
    doboz("csapda", "Véd Vilmos csapda",
-         r'<p>„Mindegy, melyiket vonom ki.” — Ha az alsóból vonod ki a felsőt, negatív „területet” kapsz. Mindig a '
-         r'<b>felső mínusz az alsó</b> — ha nem tudod, melyik van felül, egy próbapont eldönti.</p>'),
+         (
+             '<p>„Mindegy, melyiket vonom ki.” — Ha az alsóból vonod ki a felsőt, negatív „területet” kapsz. '
+             'Mindig a <b>felső mínusz az alsó</b> — ha nem tudod, melyik van felül, két szomszédos metszéspont '
+             'között egy próbapont eldönti (folytonos görbéknél).</p>'
+         )),
    kviz(r'Az $f(x)=x^2$ és a $g(x)=x+2$ közül melyik van felül a $[-1;\,2]$-n?',
         [r'a $g$, mert például $g(0)=2\gt f(0)=0$', r'az $f$, mert négyzetes függvény', r'mindegy, az integrál '
          r'úgyis ugyanaz', r'egyik sem, mert metszik egymást'], 0,
@@ -362,9 +386,12 @@ B3 = [
             "f(0) = 0, tehát g van felül."),
    NEHEZ(1, 4, "két görbe közötti és a két tengely által határolt területek"),
    doboz("erdekesseg", "Munka mint terület",
-         r'<p>Állandó erő munkája erő szorozva úttal. Ha az erő változik — például egy rugó annál erősebben húz, minél '
-         r'jobban megnyújtjuk —, a munka az erő–út grafikon alatti terület: $W=\int_{s_1}^{s_2}F(s)\,ds$. A rugónál '
-         r'$F=D\cdot s$, és $W=\frac12Ds^2$.</p>', hid="erdekesseg-munka"),
+         (
+             '<p>Egyenes mozgásnál az elmozdulás irányába ható állandó erő munkája az erő és az út szorzata. '
+             'Változó erőnél a megfelelő erőkomponenst integráljuk: $W=\\int_{s_1}^{s_2}F(s)\\,ds$. Ha egy ideális '
+             'rugót lassan, a nyújtatlan állapotától $s$-ig nyújtunk, a húzóerő nagysága $F(s)=D\\cdot s$, a '
+             'húzóerő munkája pedig $W=\\frac12Ds^2$. A rugó visszahúzó erejének munkája eközben negatív.</p>'
+         ), hid="erdekesseg-munka"),
    GY(FB + "#alap-8", "A 8–10", FB + "#kozep-6", "K 6–12"),
  ]),
 

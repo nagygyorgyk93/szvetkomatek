@@ -37,7 +37,7 @@
 
     <h2 id="s1">Sok dobás után</h2>
 
-    <p class="lead">Egy egyszerű kísérlet: az osztályban mindenki tízszer feldob egy pénzérmét, és összesítjük a fejek számát. Egy tanuló tíz dobásából bármi kijöhet — 3 fej, 7 fej —, az osztály néhány száz dobásánál viszont a fejek aránya meglepően közel lesz a feléhez. Próbáld ki a szimulátorral is!</p>
+    <p class="lead">Egy egyszerű kísérlet: az osztályban mindenki tízszer feldob egy pénzérmét, és összesítjük a fejek számát. Egy tanuló tíz dobásából 3 fej vagy 7 fej is kijöhet. Szabályos érme egymástól független dobásainál sok dobás után a fejek aránya nagy valószínűséggel közel lesz a feléhez, de ezt egyetlen kísérletsor sem garantálja. Próbáld ki a szimulátorral is!</p>
 
     <div class="doboz definicio" id="def-relativ-gyakorisag">
       <p class="cim"><span class="ikon">📗</span> Gyakoriság és relatív gyakoriság</p>
@@ -89,12 +89,12 @@
 
     <div class="doboz definicio" id="def-statisztikai-valoszinuseg">
       <p class="cim"><span class="ikon">📗</span> A valószínűség statisztikai értelmezése</p>
-      <p>Ha egy kísérlet sokszori ismétlésekor egy esemény relatív gyakorisága egy szám körül ingadozik, és az ismétlések számának növelésével egyre kevésbé tér el tőle, akkor ezt a számot az esemény <b>valószínűségének</b> nevezzük. Jele <span class="math inline">\(P(A)\)</span> (a <i>probabilitas</i>, valószínűség szóból).</p>
+      <p>Az esemény valószínűségét sok, azonos feltételek mellett végzett, egymástól független ismétlés relatív gyakoriságával <b>becsülhetjük</b>. Sok ismétlésnél a relatív gyakoriság rendszerint a valószínűség közelében ingadozik; nem kell minden új kísérlet után közelebb kerülnie hozzá. A valószínűség jele <span class="math inline">\(P(A)\)</span> (a latin <i>probabilitas</i>, valószínűség szóból).</p>
     </div>
 
     <div class="doboz pelda" id="pelda-szuletesek">
       <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — fiú vagy lány?</p>
-      <p>Szerbiában évente 60–65 ezer gyermek születik. Az újszülöttek között a fiúk aránya évről évre:</p><div class="tblwrap"><table class="tt-table"><tr><th>év</th><th>született</th><th>ebből fiú</th><th>a fiúk aránya</th></tr><tr><td>2019</td><td>64 399</td><td>33 137</td><td><span class="math inline">\(0{,}515\)</span></td></tr><tr><td>2020</td><td>61 692</td><td>31 783</td><td><span class="math inline">\(0{,}515\)</span></td></tr><tr><td>2021</td><td>62 180</td><td>31 971</td><td><span class="math inline">\(0{,}514\)</span></td></tr><tr><td>2022</td><td>62 700</td><td>32 266</td><td><span class="math inline">\(0{,}515\)</span></td></tr><tr><td>2023</td><td>61 052</td><td>31 341</td><td><span class="math inline">\(0{,}513\)</span></td></tr><tr><td>2024</td><td>60 845</td><td>31 396</td><td><span class="math inline">\(0{,}516\)</span></td></tr></table></div><p class="cap">Forrás: <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_fasec/default/table">Eurostat: Live births by mother's age and newborn's sex (demo_fasec)</a></p><p>Hat év alatt a fiúk aránya <span class="math inline">\(0{,}513\)</span> és <span class="math inline">\(0{,}516\)</span> között mozog. Annak a valószínűsége, hogy egy Szerbiában született újszülött fiú, nagyjából <span class="math inline">\(0{,}515\)</span> — nem pontosan <span class="math inline">\(\frac12\)</span>, hanem kicsit több (ez világszerte így van). Hasonlóan: 2024-ben Szabadkán 366 napból 79-en esett legalább 1 mm csapadék, a relatív gyakoriság <span class="math inline">\(\frac{79}{366}\approx0{,}216\)</span>.</p>
+      <p>Szerbiában 2019–2024 között évente 60–65 ezer gyermek született. Az újszülöttek között a fiúk aránya évről évre:</p><div class="tblwrap"><table class="tt-table"><tr><th>év</th><th>született</th><th>ebből fiú</th><th>a fiúk aránya</th></tr><tr><td>2019</td><td>64 399</td><td>33 137</td><td><span class="math inline">\(0{,}515\)</span></td></tr><tr><td>2020</td><td>61 692</td><td>31 783</td><td><span class="math inline">\(0{,}515\)</span></td></tr><tr><td>2021</td><td>62 180</td><td>31 971</td><td><span class="math inline">\(0{,}514\)</span></td></tr><tr><td>2022</td><td>62 700</td><td>32 266</td><td><span class="math inline">\(0{,}515\)</span></td></tr><tr><td>2023</td><td>61 052</td><td>31 341</td><td><span class="math inline">\(0{,}513\)</span></td></tr><tr><td>2024</td><td>60 845</td><td>31 396</td><td><span class="math inline">\(0{,}516\)</span></td></tr></table></div><p class="cap">Forrás: <a href="https://ec.europa.eu/eurostat/databrowser/view/demo_fasec/default/table">Eurostat: Live births by mother's age and newborn's sex (demo_fasec)</a></p><p>Hat év alatt a fiúk aránya <span class="math inline">\(0{,}513\)</span> és <span class="math inline">\(0{,}516\)</span> között mozog. Annak a valószínűsége, hogy egy Szerbiában született újszülött fiú, nagyjából <span class="math inline">\(0{,}515\)</span> — nem pontosan <span class="math inline">\(\frac12\)</span>, hanem kicsit több (ez világszerte így van). Hasonlóan: 2024-ben Szabadkán 366 napból 79-en esett legalább 1 mm csapadék, a relatív gyakoriság <span class="math inline">\(\frac{79}{366}\approx0{,}216\)</span>.</p>
     </div>
 
     <div class="doboz erdekesseg">
@@ -126,7 +126,7 @@
 
     <div class="doboz pelda" id="pelda-ket-kocka-osszeg">
       <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — két kocka</p>
-      <p>Két kockával dobunk. Mekkora a valószínűsége, hogy a dobott számok összege 7? A 36 kimenetel egyformán valószínű; a táblázat cellájában most a két szám összege áll, a 7-esek kiemelve:</p><div class="tblwrap"><table class="tt-table"><tr><th>piros \ kék</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr><tr><th>1</th><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td class="res">7</td></tr><tr><th>2</th><td>3</td><td>4</td><td>5</td><td>6</td><td class="res">7</td><td>8</td></tr><tr><th>3</th><td>4</td><td>5</td><td>6</td><td class="res">7</td><td>8</td><td>9</td></tr><tr><th>4</th><td>5</td><td>6</td><td class="res">7</td><td>8</td><td>9</td><td>10</td></tr><tr><th>5</th><td>6</td><td class="res">7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr><tr><th>6</th><td class="res">7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr></table></div><p>Az összeg hat cellában 7: (1;6), (2;5), (3;4), (4;3), (5;2), (6;1). Tehát <span class="math display">\[P(\text{összeg}=7)=\frac6{36}=\frac16.\]</span> Az összeg 2 viszont csak egyféleképpen jöhet ki (1;1): <span class="math inline">\(P=\frac1{36}\)</span>.</p>
+      <p>Két szabályos kockával, egymástól függetlenül dobunk. Mekkora a valószínűsége, hogy a dobott számok összege 7? A 36 kimenetel egyformán valószínű; a táblázat cellájában most a két szám összege áll, a 7-esek kiemelve:</p><div class="tblwrap"><table class="tt-table"><tr><th>piros \ kék</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr><tr><th>1</th><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td class="res">7</td></tr><tr><th>2</th><td>3</td><td>4</td><td>5</td><td>6</td><td class="res">7</td><td>8</td></tr><tr><th>3</th><td>4</td><td>5</td><td>6</td><td class="res">7</td><td>8</td><td>9</td></tr><tr><th>4</th><td>5</td><td>6</td><td class="res">7</td><td>8</td><td>9</td><td>10</td></tr><tr><th>5</th><td>6</td><td class="res">7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr><tr><th>6</th><td class="res">7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr></table></div><p>Az összeg hat cellában 7: (1;6), (2;5), (3;4), (4;3), (5;2), (6;1). Tehát <span class="math display">\[P(\text{összeg}=7)=\frac6{36}=\frac16.\]</span> Az összeg 2 viszont csak egyféleképpen jöhet ki (1;1): <span class="math inline">\(P=\frac1{36}\)</span>.</p>
     </div>
 
     <div class="doboz csapda">
@@ -143,7 +143,7 @@
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Egy szerencsejáték, amelyből tudományág lett</p>
-      <p>A valószínűségszámítás 1654-ben kezdődött: Antoine Gombaud, de Méré lovag kockajátékokról tett fel kérdéseket Blaise Pascalnak, aki Pierre de Fermat-val levélben dolgozta ki a választ. A klasszikus valószínűséget Pierre-Simon Laplace foglalta össze 1812-ben. De Méré egyik kérdésére az A3 végén visszatérünk.</p>
+      <p>A modern valószínűségszámítás egyik fontos kiindulópontja az 1654-es levelezés: Antoine Gombaud, de Méré lovag kockajátékokról tett fel kérdéseket Blaise Pascalnak, aki Pierre de Fermat-val levélben dolgozta ki a választ. A klasszikus valószínűséget Pierre-Simon Laplace foglalta össze 1812-ben. De Méré egyik kérdésére az A3 végén visszatérünk.</p>
     </div>
 
     <!-- media:begin 4e06-klasszikus-62 -->
@@ -154,7 +154,7 @@
     <!-- media:end 4e06-klasszikus-62 -->
     <h2 id="s3">A valószínűség tulajdonságai</h2>
 
-    <p class="lead">A relatív gyakoriság és a klasszikus valószínűség is 0 és 1 közötti hányados — ebből következnek azok a szabályok, amelyek minden valószínűségre igazak.</p>
+    <p class="lead">A relatív gyakoriság és a klasszikus valószínűség példái az alábbi általános szabályokat szemléltetik. Ezek minden valószínűségre érvényesek.</p>
 
     <div class="doboz tetel" id="tetel-ellentett">
       <p class="cim"><span class="ikon">📘</span> Alaptulajdonságok és az ellentett esemény</p>
@@ -168,7 +168,7 @@
 
     <div class="doboz pelda" id="pelda-kiraly">
       <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — király vagy kőr</p>
-      <p>Egy 52 lapos francia kártyacsomagból egy lapot húzunk. Mekkora a valószínűsége, hogy király vagy kőr? Király 4 van, kőr 13, de a kőr király mindkettőben benne van: <span class="math display">\[P=\frac4{52}+\frac{13}{52}-\frac1{52}=\frac{16}{52}=\frac4{13}\approx0{,}308.\]</span></p>
+      <p>Egy 52 lapos francia kártyacsomagból egy lapot húzunk úgy, hogy minden lap egyforma eséllyel kerülhet hozzánk. Mekkora a valószínűsége, hogy király vagy kőr? Király 4 van, kőr 13, de a kőr király mindkettőben benne van: <span class="math display">\[P=\frac4{52}+\frac{13}{52}-\frac1{52}=\frac{16}{52}=\frac4{13}\approx0{,}308.\]</span></p>
     </div>
 
     <div class="doboz csapda">
@@ -189,7 +189,7 @@
 
     <div class="doboz pelda" id="pelda-golyok">
       <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — két golyó</p>
-      <p>Egy dobozban 5 piros és 3 fehér golyó van; egyszerre kihúzunk kettőt. Mekkora a valószínűsége, hogy mindkettő piros?</p><p>Az összes kimenetel a 8 golyóból választott párok száma, <span class="math inline">\(\binom82=28\)</span>; a kedvezők az 5 pirosból választott párok, <span class="math inline">\(\binom52=10\)</span>: <span class="math display">\[P(\text{két piros})=\frac{10}{28}=\frac5{14}\approx0{,}357.\]</span> Pontosan egy piros: egy piros ÉS egy fehér, <span class="math inline">\(5\cdot3=15\)</span> pár, tehát <span class="math inline">\(\frac{15}{28}\)</span>. Két fehér: <span class="math inline">\(\frac{\binom32}{28}=\frac3{28}\)</span>. A három valószínűség összege <span class="math inline">\(\frac{10+15+3}{28}=1\)</span> — ahogy kell.</p>
+      <p>Egy dobozban 5 piros és 3 fehér golyó van; egyszerre, véletlenszerűen kihúzunk kettőt, minden golyópár azonos esélyével. Mekkora a valószínűsége, hogy mindkettő piros?</p><p>Az összes kimenetel a 8 golyóból választott párok száma, <span class="math inline">\(\binom82=28\)</span>; a kedvezők az 5 pirosból választott párok, <span class="math inline">\(\binom52=10\)</span>: <span class="math display">\[P(\text{két piros})=\frac{10}{28}=\frac5{14}\approx0{,}357.\]</span> Pontosan egy piros: egy piros ÉS egy fehér, <span class="math inline">\(5\cdot3=15\)</span> pár, tehát <span class="math inline">\(\frac{15}{28}\)</span>. Két fehér: <span class="math inline">\(\frac{\binom32}{28}=\frac3{28}\)</span>. A három valószínűség összege <span class="math inline">\(\frac{10+15+3}{28}=1\)</span> — ahogy kell.</p>
     </div>
 
     <div class="doboz pelda" id="pelda-lotto">

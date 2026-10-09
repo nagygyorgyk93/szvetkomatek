@@ -306,8 +306,11 @@ A2 = [
    TABLA(["$n$", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
          [["$n!$", "1", "2", "6", "24", "120", "720", "5040", "40&#8239;320", "362&#8239;880", "3&#8239;628&#8239;800"]]),
    doboz("erdekesseg", "Milyen gyorsan nő?",
-         r'<p>$10!=3\,628\,800$: tíz embert több mint hárommillió sorrendben lehet egy padra leültetni. Ha másodpercenként '
-         r'egy új sorrendet próbálnánk ki, 42 napig tartana.</p>'),
+         (
+             '<p>$10!=3\\,628\\,800$: tíz embert több mint hárommillió sorrendben lehet egy padra leültetni. Ha '
+             'másodpercenként egy új sorrendet próbálnánk ki, 42 napig tartana — itt a számolás idejét '
+             'szemléltetjük, nem a valódi helycserékét.</p>'
+         )),
    kviz('Hányféle sorrendben állhat fel 4 variáns egy sorban?', ['$24$', '$16$', '$12$', '$10$'], 0,
         jo="✔ $4!=4\\cdot3\\cdot2\\cdot1=24$.",
         nem="✘ Az első helyre 4, a másodikra 3, a harmadikra 2, az utolsóra 1 variáns jut: $4!=24$. A $4^2=16$ és a "
@@ -394,25 +397,33 @@ A3 = [
          r'minden elemet sorba rakunk: $V_n^n=n!=P_n$ — a permutáció a variáció speciális esete.</p>',
          hid="tetel-variacio"),
    doboz("erdekesseg", "Jelölés a szerb tankönyvben",
-         r'<p>A szerb tankönyvek és feladatgyűjtemények fordítva írják az indexeket: $V_k^n$ (felül az elemek száma, alul '
-         r'a kiválasztottaké). A jelentés ugyanaz — csak olvasd el figyelmesen, melyik szám melyik.</p>'),
+         (
+             '<p>Egyes szerb tankönyvek és feladatgyűjtemények fordítva írják az indexeket: $V_k^n$ (felül az '
+             'elemek száma, alul a kiválasztottaké). A jelentés ugyanaz — csak olvasd el figyelmesen, melyik szám '
+             'melyik.</p>'
+         )),
    kviz('Egy 8 fős döntőből hányféle lehet az érmesek (arany, ezüst, bronz) sorrendje?',
         ['$8\\cdot7\\cdot6=336$', '$\\binom83=56$', '$8^3=512$', '$3!=6$'], 0,
         jo="✔ Hármat választunk ki, és számít, ki hányadik: $V_8^3=336$.",
         nem="✘ A dobogón számít a sorrend, és egy versenyző csak egy érmet kaphat: $V_8^3=8\\cdot7\\cdot6=336$."),
  ]),
  ("Ha egy elem többször is választható", [
-   r'<p class="lead">A széf PIN-kódja négy számjegyből áll, és a számjegyek <b>ismétlődhetnek</b> (az 1111 is jó kód). '
-   r'Most minden helyre mind a tíz számjegy kerülhet: $10\cdot10\cdot10\cdot10=10^4=10\,000$ kód.</p>',
+   (
+       '<p class="lead">A széf PIN-kódja négy számjegyből áll (0-val is kezdődhet), és a számjegyek '
+       '<b>ismétlődhetnek</b> (az 1111 is jó kód). Most minden helyre mind a tíz számjegy kerülhet: '
+       '$10\\cdot10\\cdot10\\cdot10=10^4=10\\,000$ kód.</p>'
+   ),
    doboz("tetel", "Az ismétléses variációk száma",
          r'<p>Ha $n$ különböző elemből $k$-szor választunk úgy, hogy egy elem <b>többször is</b> választható, és a '
          r'sorrend számít, akkor ezek — az <b>ismétléses variációk</b> — száma $$V_n^{k,i}=n^k.$$ Itt $k$ nagyobb is lehet '
          r'$n$-nél.</p>', hid="tetel-ismetleses-variacio"),
    doboz("pelda", "I.V.H. Akták — Morse-jelek",
-         r'<p>A Morse-ábécé két alapjelből, pontból és vonásból áll. Hány különböző jel rakható össze <b>legfeljebb '
-         r'négy</b> alapjelből?</p>'
-         r'<p>Esetek szerint (összeadási szabály), mindegyikben ismétléses variáció: '
-         r'$$2^1+2^2+2^3+2^4=2+4+8+16=30.$$</p>', hid="pelda-morse"),
+         (
+             '<p>A Morse-ábécé két alapjelből, pontból és vonásból áll. Hány különböző, nem üres jelsorozat '
+             'rakható össze <b>legfeljebb négy</b> alapjelből, ha nem követeljük meg, hogy a Morse-ábécé érvényes '
+             'jele legyen?</p><p>Esetek szerint (összeadási szabály), mindegyikben ismétléses variáció: '
+             '$$2^1+2^2+2^3+2^4=2+4+8+16=30.$$</p>'
+         ), hid="pelda-morse"),
    doboz("csapda", "Véd Vilmos csapda — ismétlődhet vagy nem?",
          r'<p>Vilmos a PIN-kódra $10\cdot9\cdot8\cdot7=5040$-et mondott, mintha egy számjegy csak egyszer szerepelhetne. '
          r'Olvasd el a feltételt: <i>ismétlődhet</i> → $n^k$; <i>nem ismétlődhet</i> (különböző jegyek, különböző '
@@ -469,9 +480,12 @@ A4 = [
          r'Számoláshoz a középső alak a legkényelmesebb: $\binom{10}{3}=\frac{10\cdot9\cdot8}{3\cdot2\cdot1}=120$.</p>',
          hid="tetel-kombinacio"),
    doboz("pelda", "I.V.H. Akták — kézfogás",
-         r'<p>A lottó előtt tíz variáns mindegyike kezet fog mindegyikkel. Hány kézfogás történik?</p>'
-         r'<p>Egy kézfogás egy <b>pár</b>: A–B ugyanaz, mint B–A. Tehát $\binom{10}{2}=\frac{10\cdot9}{2}=45$. Aki '
-         r'$10\cdot9=90$-et mond, minden kézfogást kétszer számolt.</p>', hid="pelda-kezfogas"),
+         (
+             '<p>A lottó előtt tíz variáns mindegyike minden másikkal pontosan egyszer fog kezet. Hány kézfogás '
+             'történik?</p><p>Egy kézfogás egy <b>pár</b>: A–B ugyanaz, mint B–A. Tehát '
+             '$\\binom{10}{2}=\\frac{10\\cdot9}{2}=45$. Aki $10\\cdot9=90$-et mond, minden kézfogást kétszer '
+             'számolt.</p>'
+         ), hid="pelda-kezfogas"),
    kviz('Egy hatfős társaságban mindenki mindenkivel egyszer koccint. Hány koccintás hallatszik?',
         ['$15$', '$30$', '$36$', '$6$'], 0,
         jo="✔ Egy koccintás egy pár, a sorrend nem számít: $\\binom62=\\frac{6\\cdot5}{2}=15$.",
@@ -500,13 +514,18 @@ A4 = [
    '<p class="lead">A Szvetkó-kampusz 10 lány és 8 fiú kadétja közül négyfős csapatot küld a Multiverzum Lottó '
    'döntőjébe. Hogy a sorrend nem számít, az biztos. A kérdés: hogyan kezeljük a feltételeket?</p>',
    doboz("pelda", "I.V.H. Akták — pontosan kettő",
-         r'<p>Hányféleképpen állítható össze a csapat, ha <b>pontosan 2 lány</b> legyen benne?</p>'
-         r'<p>Két egymás utáni döntés (szorzási szabály): a 2 lányt a 10 közül, a 2 fiút a 8 közül választjuk: '
-         r'$$\binom{10}{2}\cdot\binom82=45\cdot28=1260.$$</p>', hid="pelda-ket-csoport"),
+         (
+             '<p>Hányféleképpen állítható össze a csapat, ha <b>pontosan 2 lány</b> van benne?</p><p>Két egymás '
+             'utáni döntés (szorzási szabály): a 2 lányt a 10 közül, a 2 fiút a 8 közül választjuk: '
+             '$$\\binom{10}{2}\\cdot\\binom82=45\\cdot28=1260.$$</p>'
+         ), hid="pelda-ket-csoport"),
    doboz("pelda", "I.V.H. Akták — legalább egy",
-         r'<p>Hányféleképpen, ha <b>legalább egy lány</b> legyen a csapatban?</p>'
-         r'<p>Összes mínusz rossz (lásd <a href="tananyag-szorzasi-szabaly.html#pelda-legalabb">A1</a>): az összes '
-         r'csapat $\binom{18}{4}=3060$, a lány nélküli (csak fiú) csapat $\binom84=70$. Tehát $3060-70=2990$.</p>',
+         (
+             '<p>Hányféleképpen állítható össze a csapat, ha <b>legalább egy lány</b> van benne?</p><p>Összes '
+             'mínusz rossz (lásd <a href="tananyag-szorzasi-szabaly.html#pelda-legalabb">A1</a>): az összes '
+             'csapat $\\binom{18}{4}=3060$, a lány nélküli (csak fiú) csapat $\\binom84=70$. Tehát '
+             '$3060-70=2990$.</p>'
+         ),
          hid="pelda-legalabb-egy"),
    doboz("csapda", "Véd Vilmos csapda — a fiúkról megfeledkezett",
          r'<p>Vilmos a „pontosan 2 lány” feladatra $\binom{10}2=45$-öt mondott. Csakhogy a csapat négyfős: a maradék két '

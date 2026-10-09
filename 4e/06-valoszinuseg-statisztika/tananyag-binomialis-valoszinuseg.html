@@ -33,7 +33,7 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/ved_vilmos_w.webp" alt="Véd Vilmos — a negyedik falat áttörő zsoldos" width="1200" height="670" decoding="async"><p>📡 <b>Véd Vilmos:</b> Tisztelt bizottság, a védelem tanúja Nikola Jokić! A 2024–25-ös NBA-alapszakaszban büntetőinek 80,0%-át dobta be. Öt büntetőből tehát pontosan négy megy be. Biztosan. <b>Mr. Szürreál:</b> A bizonyosság hivatali fogalom, kadét. <b>Nagol:</b> A 80% azt jelenti, hogy egy dobás <span class="math inline">\(0{,}8\)</span> valószínűséggel sikeres. Hogy ötből pontosan négy menjen be, annak kiszámolható az esélye — és korántsem biztos.</p></div>
+    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/ved_vilmos_w.webp" alt="Véd Vilmos — a negyedik falat áttörő zsoldos" width="1200" height="670" decoding="async"><p>📡 <b>Véd Vilmos:</b> Tisztelt bizottság, a védelem tanúja Nikola Jokić! A 2024–25-ös NBA-alapszakaszban büntetőinek 80,0%-át dobta be. Öt büntetőből tehát pontosan négy megy be. Biztosan. <b>Mr. Szürreál:</b> A bizonyosság hivatali fogalom, kadét. <b>Nagol:</b> A szezon 80%-os arányát a modellben egy dobás <span class="math inline">\(0{,}8\)</span> siker-valószínűségének vesszük. Hogy ötből pontosan négy menjen be, annak kiszámolható az esélye — és korántsem biztos.</p></div>
 
     <h2 id="s1">Bernoulli-kísérletsorozat</h2>
 
@@ -104,7 +104,7 @@
     </div>
     <p class="cap">Három büntető: minden elágazásnál S (siker, <span class="math inline">\(0{,}8\)</span>) vagy K (kudarc, <span class="math inline">\(0{,}2\)</span>). A pontosan két sikert adó három ág zöld.</p>
 
-    <p>Az ágak mentén szorzunk, mert a dobások függetlenek. Pontosan két siker háromféle sorrendben jöhet: SSK, SKS, KSS — ahány helyre a kudarc kerülhet, <span class="math inline">\(\binom32=3\)</span>. Mindhárom ág valószínűsége <span class="math inline">\(0{,}8\cdot0{,}8\cdot0{,}2=0{,}128\)</span>, tehát <span class="math display">\[P(\text{pontosan 2 siker a 3-ból})=3\cdot0{,}8^2\cdot0{,}2=0{,}384.\]</span> A büntetőket függetlennek és azonos <span class="math inline">\(p\)</span>-jűnek tekintjük — ez <b>modell</b>. A valóságban a fáradtság vagy a meccs állása is számíthat, a modell mégis jól közelít.</p>
+    <p>Az ágak mentén szorzunk, mert a dobások függetlenek. Pontosan két siker háromféle sorrendben jöhet: SSK, SKS, KSS — ahány helyre a kudarc kerülhet, <span class="math inline">\(\binom32=3\)</span>. Mindhárom ág valószínűsége <span class="math inline">\(0{,}8\cdot0{,}8\cdot0{,}2=0{,}128\)</span>, tehát <span class="math display">\[P(\text{pontosan 2 siker a 3-ból})=3\cdot0{,}8^2\cdot0{,}2=0{,}384.\]</span> A büntetőket függetlennek és azonos <span class="math inline">\(p\)</span>-jűnek tekintjük — ez <b>modell</b>. A valóságban a fáradtság vagy a meccs állása is számíthat, a modell pontosságát külön adatokkal lehetne ellenőrizni.</p>
 
     <h2 id="s2">A binomiális képlet</h2>
 
@@ -185,12 +185,12 @@
 
     <div class="doboz pelda" id="pelda-legalabb">
       <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — legalább</p>
-      <p>Jokić öt büntetőjéből legalább négy megy be: <span class="math display">\[P_5(4)+P_5(5)=0{,}4096+0{,}32768=0{,}73728.\]</span></p><p>Egy szerbiai újszülött kb. <span class="math inline">\(0{,}516\)</span> valószínűséggel fiú (a 2024-es adat, A2). Három újszülöttből legalább egy fiú: <span class="math display">\[1-P(\text{egy sem})=1-0{,}484^3\approx1-0{,}113=0{,}887.\]</span></p>
+      <p>Jokić öt büntetőjéből legalább négy megy be: <span class="math display">\[P_5(4)+P_5(5)=0{,}4096+0{,}32768=0{,}73728.\]</span></p><p>Egy szerbiai újszülött kb. <span class="math inline">\(0{,}516\)</span> valószínűséggel fiú (a 2024-es adat, A2). Ha három szülésnél az újszülött neme egymástól független, és mindháromnál ezt a valószínűséget használjuk, legalább egy fiú esélye: <span class="math display">\[1-P(\text{egy sem})=1-0{,}484^3\approx1-0{,}113=0{,}887.\]</span></p>
     </div>
 
     <div class="doboz pelda" id="pelda-gyanus-kocka">
       <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — gyanús kocka</p>
-      <p>Mr. Szürreál kockája tíz dobásból hatszor mutatott hatost. Ha a kocka szabályos, ennek a valószínűsége <span class="math display">\[P_{10}(6)=\binom{10}6\left(\frac16\right)^6\left(\frac56\right)^4=\frac{210\cdot625}{60\,466\,176}\approx0{,}0022.\]</span> Szabályos kockánál ez ezer próbálkozásból kb. kétszer fordulna elő. Ez még nem bizonyíték, de erős gyanú: a valószínűség segít eldönteni, mennyire meglepő egy megfigyelt eredmény.</p>
+      <p>Mr. Szürreál kockája tíz dobásból hatszor mutatott hatost. Ha a kocka szabályos, ennek a valószínűsége <span class="math display">\[P_{10}(6)=\binom{10}6\left(\frac16\right)^6\left(\frac56\right)^4=\frac{210\cdot625}{60\,466\,176}\approx0{,}0022.\]</span> Szabályos kockánál ez ezer, egyenként tíz dobásból álló sorozatban átlagosan kb. kétszer fordulna elő. Ez önmagában nem bizonyítja, hogy a kocka szabálytalan, de további vizsgálatra ad okot: a valószínűség segít eldönteni, mennyire meglepő egy megfigyelt eredmény.</p>
     </div>
 
     <div class="kviz" data-answer="3" data-kevert="1" data-jo="✔ Az ellentett esemény: egyik dobás sem hatos, <span class=&quot;math inline&quot;>\(\left(\frac56\right)^6\approx0{,}335\)</span>. Tehát <span class=&quot;math inline&quot;>\(1-0{,}335=0{,}665\)</span>." data-nem="✘ A <span class=&quot;math inline&quot;>\(6\cdot\frac16=1\)</span> biztos eseményt jelentene — pedig hat dobásból is lehet, hogy egy hatos sem jön. Az ellentettel: <span class=&quot;math inline&quot;>\(1-\left(\frac56\right)^6\approx0{,}665\)</span>.">

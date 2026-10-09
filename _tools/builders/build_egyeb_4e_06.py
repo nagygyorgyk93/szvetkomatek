@@ -98,9 +98,11 @@ OSSZ = [
  ]),
 
  ("🔀 Feltételes valószínűség, függetlenség, „legalább egy”", [
-  r'<ul><li><b>Feltételes valószínűség</b> ' + h(A3, "def-felteteles") + r': $P(A\mid B)=\dfrac{P(A\cap B)}{P(B)}$ — a '
-  r'$B$-re leszűkített eseménytérben számolunk. Titanic: $P(\text{túlélt}\mid\text{nő})=\frac{339}{466}\approx0{,}727$, '
-  r'de $P(\text{nő}\mid\text{túlélt})=\frac{339}{500}=0{,}678$ ' + h(A3, "pelda-titanic") + r' — a feltétel nem '
+  r'<ul><li><b>Feltételes valószínűség</b> ' + h(A3, "def-felteteles") + (
+                                                                                  ': $P(A\\mid B)=\\dfrac{P(A\\cap B)}{P(B)}$, ha $P(B)>0$ — a $B$-re leszűkített eseménytérben '
+                                                                                  'számolunk. Titanic: $P(\\text{túlélt}\\mid\\text{nő})=\\frac{339}{466}\\approx0{,}727$, de '
+                                                                                  '$P(\\text{nő}\\mid\\text{túlélt})=\\frac{339}{500}=0{,}678$ '
+                                                                              ) + h(A3, "pelda-titanic") + r' — a feltétel nem '
   r'cserélhető fel.</li>'
   r'<li><b>Független események</b> ' + h(A3, "def-fuggetlen") + r': $P(A\cap B)=P(A)\cdot P(B)$, azaz '
   r'(ha $P(B)>0$) $P(A\mid B)=P(A)$ — a $B$ ismerete nem változtat $A$ esélyén.</li>'
@@ -127,9 +129,11 @@ OSSZ = [
  ]),
 
  ("📊 Adatok és diagramok", [
-  r'<ul><li><b>Sokaság, minta</b> ' + h(B1, "def-sokasag") + r': a minta akkor jó, ha véletlenszerűen választjuk; az '
-  r'önkéntes jelentkezés („aki akar, kitölti”) és a kényelmi minta („az első 30 érkező”) torzíthat.</li>'
-  r'<li><b>Ismérv</b> ' + h(B1, "def-ismerv") + r': minőségi (kategóriák) vagy mennyiségi — diszkrét (megszámolt) vagy '
+  r'<ul><li><b>Sokaság, minta</b> ' + h(B1, "def-sokasag") + (
+                                                                  ': a véletlen választás segít elkerülni a mintavételi torzítást, de az elemszám és a válaszadók köre '
+                                                                  'is számít; az önkéntes jelentkezés („aki akar, kitölti”) és a kényelmi minta („az első 30 érkező”) '
+                                                                  'torzíthat.</li><li><b>Ismérv</b> '
+                                                              ) + h(B1, "def-ismerv") + r': minőségi (kategóriák) vagy mennyiségi — diszkrét (megszámolt) vagy '
   r'folytonos (mért). <b>Skálák</b> ' + h(B1, "def-skalak") + r': nominális (csak megkülönböztet), ordinális (sorba '
   r'rendez), intervallum (a különbségnek is van értelme); ha valódi nullpont is van, és a hányadosnak is '
   r'van értelme (idő, hossz, darabszám), arányskáláról beszélünk.</li>'
@@ -156,8 +160,7 @@ OSSZ = [
       ["átlagos abszolút eltérés " + h(B2, "def-szoras"), "$\\dfrac{|x_1-\\bar x|+\\ldots+|x_n-\\bar x|}{n}$", "$2$"],
       ["szórásnégyzet, szórás", "$\\sigma^2=\\dfrac{(x_1-\\bar x)^2+\\ldots+(x_n-\\bar x)^2}{n}$, "
        "$\\;\\sigma=\\sqrt{\\sigma^2}$", "$7{,}2$; $\\;\\approx2{,}68$"],
-      ["standardizált érték " + h(B2, "tetel-standardizalt"), "$z=\\dfrac{x-\\bar x}{\\sigma}$ — hány szórásnyira "
-       "van az átlagtól", "a $10$-é: $\\approx1{,}86$"]]),
+      ["standardizált érték " + h(B2, "tetel-standardizalt"), '$z=\\dfrac{x-\\bar x}{\\sigma}$ — hány szórásnyira van az átlagtól (csak pozitív szórásnál)', "a $10$-é: $\\approx1{,}86$"]]),
   r'<p>A <b>dobozdiagram</b> öt számot mutat: a legkisebb adatot, $Q_1$-et, a mediánt, $Q_3$-at és a legnagyobb adatot. '
   r'Kiugró adat esetén a medián jobban jellemzi a „tipikus” értéket, mint az átlag. Az adatokat az '
   r'<a href="' + B2 + r'#s4">adatlaborban</a> is kipróbálhatod.</p>',
@@ -241,41 +244,46 @@ TEREP = [
          'cáfolatából. A végén a védelem záróbeszéde következik.'),
    r'<p>Minden lépésnél írd le, mit és <b>miért</b> csinálsz: melyik mutatót, képletet vagy diagramot választod, és miért '
    r'az illik ide. Számológép és táblázatkezelő (Excel, LibreOffice Calc, Google Táblázatok) használható; a mutatókat '
-   r'az <a href="' + B2 + r'#s4">adatlaborban</a> is ellenőrizheted.</p>'
-   r'<p><b>Beadandó:</b> a táblázatkezelő-fájl (adatok, gyakorisági táblázat, mutatók, diagram, dobozdiagram) és egy '
-   r'legfeljebb két A4-es oldalas jegyzőkönyv (az I. fázis kérdése, módszere, a diagramválasztás indoklása, a '
-   r'kvartilisek kézi ellenőrzése, az eredmények és az értelmezés; a II. fázis megoldásai és a záróbeszéd), valamint '
-   r'egyetlen dia „a bíráknak”. A határidőt és a beadás módját a tanárod adja meg.</p>'
-   r'<p><i>Tervezz rá nagyjából három-négy órát az adatgyűjtéssel együtt, egy hétre elosztva; ez beadandó munka, nem '
-   r'órai feladat. Az I. fázis a pontszám fele, a II. fázis kétötöde, a záróbeszéd egytizede.</i></p>',
+   r'az <a href="' + B2 + (
+                              '#s4">adatlaborban</a> is ellenőrizheted.</p><p><b>Beadandó:</b> a táblázatkezelő-fájl (adatok, '
+                              'gyakorisági táblázat, mutatók, diagram, dobozdiagram) és egy legfeljebb két A4-es oldal terjedelmű '
+                              'jegyzőkönyv (az I. fázis kérdése, módszere, a diagramválasztás indoklása, a kvartilisek kézi '
+                              'ellenőrzése, az eredmények és az értelmezés; a II. fázis megoldásai és a záróbeszéd), valamint '
+                              'egyetlen dia „a bíráknak”. A határidőt és a beadás módját a tanárod adja meg.</p><p><i>Tervezz rá '
+                              'nagyjából három-négy órát az adatgyűjtéssel együtt, egy hétre elosztva; ez beadandó munka, nem órai '
+                              'feladat. Az I. fázis a pontszám fele, a II. fázis kétötöde, a záróbeszéd egytizede.</i></p>'
+                          ),
  ]),
 
  ("I. fázis — A védelem bizonyítéka: saját kutatás", [
-   r'<p>Válassz egy kérdést, amelyre <b>20–30 adattal</b> felelni lehet. Gyűjtheted magad (például: hány percet '
-   r'utaznak iskolába az évfolyamtársaid; hány órát alszanak egy tanítási napon; hány lépést tesznek meg naponta), vagy '
-   r'dolgozhatsz nyílt adatokkal: a szerb népszámlálás (' + '<a href="' + ADAT.FORRAS["popis"][1] + r'">RZS, Popis '
+   (
+       '<p>Válassz egy kérdést, amelyet <b>20–30 mennyiségi adattal</b> meg lehet vizsgálni, és amelynél az '
+       'átlag, a medián és a szórás is értelmezhető. Gyűjtheted magad (például: hány percet utaznak '
+       'iskolába az évfolyamtársaid; hány órát alszanak egy tanítási napon; hány lépést tesznek meg '
+       'naponta), vagy dolgozhatsz nyílt adatokkal: a szerb népszámlálás ('
+   ) + '<a href="' + ADAT.FORRAS["popis"][1] + r'">RZS, Popis '
    r'2022</a>), az <a href="https://ec.europa.eu/eurostat/data/database">Eurostat</a> vagy az <a href="'
-   + ADAT.FORRAS["openmeteo"][1] + r'">Open-Meteo</a> időjárás-archívuma (bármely város, bármely év). Olyan kérdést '
-   r'válassz, amelyet ezen a honlapon még nem dolgoztunk fel.</p>'
-   r'<ol class="reszfeladatok">'
-   r'<li><b>A kérdés.</b> Fogalmazd meg a kérdést egy mondatban! Mi a sokaság, mi a minta, mi az ismérv? Minőségi vagy '
-   r'mennyiségi (diszkrét vagy folytonos) ismérvről van szó, és milyen skálán mérsz? Ha a teljes sokaságot vizsgálod '
-   r'(például egy hónap minden napját), ezt írd le.</li>'
-   r'<li><b>Az adatgyűjtés.</b> Hogyan gyűjtötted az adatokat? Lehet-e torz a mintád — és ha igen, merre torzít? '
-   r'Nyílt adatnál add meg a pontos forrást (a tábla nevét és a linket).</li>'
-   r'<li><b>A táblázat és a diagram.</b> Készíts gyakorisági táblázatot (abszolút és relatív gyakorisággal; folytonos '
-   r'adatnál vagy sok különböző értéknél egyenlő szélességű osztályközökkel) és hozzá illő diagramot! Indokold a '
-   r'diagram típusát!</li>'
-   r'<li><b>A mutatók.</b> Add meg a módusz(oka)t, a mediánt, az átlagot, a terjedelmet, a két kvartilist és a szórást! '
-   r'A szórást $1/n$-nel számold: táblázatkezelőben magyarul SZÓR.S, angolul STDEV.P (vigyázz: a magyar „S” a '
-   r'sokaságot, az angol „S” a mintát jelenti; a SZÓR.M, illetve a STDEV.S $n-1$-gyel oszt). Készíts dobozdiagramot '
-   r'(kézzel vagy az adatlaborban)! A mediánt és a kvartiliseket a rendezett adatsorból kézzel is határozd meg, és '
-   r'vesd össze a táblázatkezelő eredményével (ha eltér, nézd meg, milyen kvartilisfüggvényt használt).</li>'
-   r'<li><b>Az értelmezés.</b> Négy–hat mondatban: mit mondanak a számok a kérdésedre? Melyik középérték jellemzi '
-   r'jobban az adataidat, és miért? Mit mond a szórás, illetve a dobozdiagram? Van-e kiugró adat?</li>'
-   r'<li><b>A dia a bíráknak.</b> Egyetlen diagram és egy egymondatos következtetés — tisztességesen: a tengely 0-tól '
-   r'indul (vagy jelölve van a törés), van címe, szerepel a mértékegység és az adatok forrása.</li>'
-   r'</ol>',
+   + ADAT.FORRAS["openmeteo"][1] + (
+                                       '">Open-Meteo</a> időjárás-archívuma (bármely város, bármely év). Olyan kérdést válassz, amelyet '
+                                       'ezen a honlapon még nem dolgoztunk fel.</p><ol class="reszfeladatok"><li><b>A kérdés.</b> Fogalmazd '
+                                       'meg a kérdést egy mondatban! Mi a sokaság, mi a minta, mi az ismérv? Diszkrét vagy folytonos '
+                                       'mennyiségi ismérvről van szó, és milyen skálán mérsz? Ha a teljes sokaságot vizsgálod (például egy '
+                                       'hónap minden napját), ezt írd le.</li><li><b>Az adatgyűjtés.</b> Hogyan gyűjtötted az adatokat? '
+                                       'Lehet-e torz a mintád — és ha igen, merre torzít? Nyílt adatnál add meg a pontos forrást (a tábla '
+                                       'nevét és a linket).</li><li><b>A táblázat és a diagram.</b> Készíts gyakorisági táblázatot '
+                                       '(abszolút és relatív gyakorisággal; folytonos adatnál vagy sok különböző értéknél egyenlő '
+                                       'szélességű osztályközökkel) és hozzá illő diagramot! Indokold a diagram típusát!</li><li><b>A '
+                                       'mutatók.</b> Add meg a módusz(oka)t, a mediánt, az átlagot, a terjedelmet, a két kvartilist és a '
+                                       'szórást! A szórást $1/n$-nel számold: táblázatkezelőben magyarul SZÓR.S, angolul STDEV.P (vigyázz: '
+                                       'a magyar „S” a sokaságot, az angol „S” a mintát jelenti; a SZÓR.M, illetve a STDEV.S $n-1$-gyel '
+                                       'oszt). Készíts dobozdiagramot (kézzel vagy az adatlaborban)! A mediánt és a kvartiliseket a '
+                                       'rendezett adatsorból kézzel is határozd meg, és vesd össze a táblázatkezelő eredményével (ha eltér, '
+                                       'nézd meg, milyen kvartilisfüggvényt használt).</li><li><b>Az értelmezés.</b> Négy–hat mondatban: '
+                                       'mit mondanak a számok a kérdésedre? Melyik középérték jellemzi jobban az adataidat, és miért? Mit '
+                                       'mond a szórás, illetve a dobozdiagram? Van-e kiugró adat?</li><li><b>A dia a bíráknak.</b> Egyetlen '
+                                       'diagram és egy egymondatos következtetés — tisztességesen: a tengely 0-tól indul (vagy jelölve van '
+                                       'a törés), van címe, szerepel a mértékegység és az adatok forrása.</li></ol>'
+                                   ),
  ]),
 
  ("II. fázis — Mr. Szürreál öt állítása", [
@@ -295,20 +303,21 @@ TEREP = [
    r'ábrázolni?</li>'
    r'<li><b>A gyakorló órák.</b> „Az elbukott kadétok 80%-a nem járt a gyakorló órákra. Tehát aki nem jár gyakorló '
    r'órára, az 80% eséllyel elbukik.” Az évfolyam 200 kadétjának adatai:' + GY_TABLA
-   + r'Melyik feltételes valószínűséget számolta ki Mr. Szürreál? Mekkora valójában annak a valószínűsége, hogy egy, a '
-   r'gyakorló órákra nem járó kadét elbukik — és mekkora ugyanez a gyakorló órákra járóknál? Mit mond a két szám '
-   r'együtt?</li>'
-   r'<li><b>A bevetések.</b> „Egy kadét minden bevetésen $0{,}15$ valószínűséggel kerül bajba, a bevetések egymástól '
-   r'függetlenek. Öt bevetésből tehát $5\cdot0{,}15=0{,}75$ valószínűséggel kerül bajba, hét bevetésből pedig 105%-os '
-   r'biztonsággal.” Miért nem lehet igaz? Mekkora a helyes valószínűség öt, illetve hét bevetésre (három tizedesre)? '
-   r'Legalább hány bevetés után lesz legalább $0{,}9$ annak a valószínűsége, hogy a kadét legalább egyszer bajba '
-   r'került?</li>'
-   r'<li><b>A kiegyenlítés.</b> „A szabályos kísérleti érmével hétszer egymás után fej jött. A relatív gyakoriságnak $0{,}5$ felé '
-   r'kell tartania, ezért most nagy valószínűséggel írás jön.” Mekkora a valószínűsége, hogy a nyolcadik dobás írás? '
-   r'Mekkora volt a dobások előtt annak a valószínűsége, hogy az első hét dobás mind fej lesz? Hogyan „egyenlít ki” '
-   r'mégis a relatív gyakoriság? (Segítség: mi lesz a fejek relatív gyakorisága, ha a hét fej után további 1000 '
-   r'dobásból 500 fej?)</li>'
-   r'</ol>',
+   + (
+         'Melyik feltételes valószínűséget számolta ki Mr. Szürreál? Mekkora valójában annak a valószínűsége, '
+         'hogy egy, a gyakorló órákra nem járó kadét elbukik — és mekkora ugyanez a gyakorló órákra járóknál? '
+         'Mit mond a két szám együtt? A kapcsolatból önmagában következik-e, hogy az eltérést a gyakorló órák '
+         'okozták?</li><li><b>A bevetések.</b> „Egy kadét minden bevetésen $0{,}15$ valószínűséggel kerül '
+         'bajba, a bevetések egymástól függetlenek. Öt bevetésből tehát $5\\cdot0{,}15=0{,}75$ valószínűséggel '
+         'kerül bajba, hét bevetésből pedig 105%-os biztonsággal.” Miért nem lehet igaz? Mekkora a helyes '
+         'valószínűség öt, illetve hét bevetésre (három tizedesre)? Legalább hány bevetés után lesz legalább '
+         '$0{,}9$ annak a valószínűsége, hogy a kadét legalább egyszer bajba került?</li><li><b>A '
+         'kiegyenlítés.</b> „A szabályos kísérleti érmével hétszer egymás után fej jött. A relatív '
+         'gyakoriságnak $0{,}5$ felé kell tartania, ezért most nagy valószínűséggel írás jön.” Mekkora a '
+         'valószínűsége, hogy a nyolcadik dobás írás? Mekkora volt a dobások előtt annak a valószínűsége, '
+         'hogy az első hét dobás mind fej lesz? Hogyan „egyenlít ki” mégis a relatív gyakoriság? (Segítség: '
+         'mi lesz a fejek relatív gyakorisága, ha a hét fej után további 1000 dobásból 500 fej?)</li></ol>'
+     ),
  ]),
 
  ("III. fázis — A védelem záróbeszéde", [
@@ -384,8 +393,11 @@ HA_ = [
                               "Az oszlopok 0-nál kezdődnek."),
   ["Melyik hónapban volt a legtöbb, és melyikben a legkevesebb esős nap?",
    "Összesen hány esős nap volt az évben, és mennyi a havi átlag?",
-   "A relatív gyakoriság alapján mekkora a valószínűsége, hogy Splitben egy véletlenszerűen választott napon legalább "
-   "1 mm csapadék esik (a 2024-es szökőév 366 napja alapján, három tizedesre)?"],
+   (
+       'A relatív gyakoriság alapján mekkora a valószínűsége, hogy Splitben a 2024-es napok közül egyet '
+       'egyenlő eséllyel kiválasztva azon legalább 1 mm csapadék esett (a 2024-es szökőév 366 napja '
+       'alapján, három tizedesre)?'
+   )],
   [f"legtöbb: {HONAP_T[SPLIT_ESO.index(max(SPLIT_ESO))]} (${max(SPLIT_ESO)}$ nap); legkevesebb: "
    f"{HONAP_T[SPLIT_ESO.index(min(SPLIT_ESO))]} (${min(SPLIT_ESO)}$ nap)",
    f"${sum(SPLIT_ESO)}$; ${FR(chk('h-alap-4b', F(sum(SPLIT_ESO), 12), 9))}$",
@@ -609,9 +621,13 @@ if __name__ == "__main__":
     oldal(**T, fajl="feladatok-hazi.html", cim="I.V.H. Kihallgató Terem", h1="I.V.H. Kihallgató Terem — házi feladatok",
           chipek='<span class="chip alap">Alap</span><span class="chip kozep">Közép</span>'
                  '<span class="chip nehez">Nehéz</span>',
-          alcim="Rövid, vegyes gyakorlósor a klasszikus valószínűségtől a várható értékig és a szórásig — házi "
-                "feladatnak és a témakör végi ismétléshez. Az I.V.H. minden választ ellenőriz: a végeredmény "
-                "lenyitható, de csak a számolás után nézd meg!",
+          alcim=(
+                    'Rövid, vegyes gyakorlósor a klasszikus valószínűségtől a várható értékig és a szórásig — házi '
+                    'feladatnak és a témakör végi ismétléshez. A dobókockák szabályos, hatoldalú kockák, az érmék '
+                    'szabályosak, a külön dobások egymástól függetlenek. Véletlen választáskor minden elemnek azonos '
+                    'esélyt adunk, ha a feladat más feltételt nem ír elő. Az I.V.H. minden választ ellenőriz: a '
+                    'végeredmény lenyitható, de csak a számolás után nézd meg!'
+                ),
           sections_html="\n".join(body), ossz_nev="Csalópapírt",
           prev=FS, prevc="Zsoldos-lista — Statisztika", nxt="osszefoglalo.html", nxtc="Csalópapír")
     print("✓ feladatok-hazi.html | Alap", len(HA_), "Közép", len(HK_), "Nehéz", len(HN_))

@@ -65,7 +65,7 @@ A1b = chk("alap-1b", 4 * 5 * 3, len(list(product(range(4), range(5), range(3))))
 A1c = chk("alap-1c", 6 * 6, len(list(product(range(1, 7), repeat=2))))
 A1d = chk("alap-1d", 2 ** 3, len(list(product("FI", repeat=3))))
 ALAP = [(
-    "Számold ki a szorzási szabállyal!",
+    'Számold ki a szorzási szabállyal! Az itt szereplő dobókockák hatoldalúak.',
     ["$A$-ból $B$-be 3 út vezet, $B$-ből $C$-be 4. Hányféleképpen juthatunk el $A$-ból $C$-be, $B$-n keresztül?",
      "Egy étteremben 4-féle előétel, 5-féle főétel és 3-féle desszert közül lehet választani. Hányféle háromfogásos "
      "menü állítható össze?",
@@ -178,8 +178,10 @@ ALAP.append((
 ALAP.append((
     "<b>Számít-e a sorrend?</b> Döntsd el, és számolj!",
     ["Egy 15 fős kórusból 4 egyenrangú szólistát választanak.",
-     "Ugyanebből a kórusból egy szopránt, egy altot, egy tenort és egy basszust választanak (mindenki bármelyik "
-     "szólamot el tudja énekelni, de csak egyet kaphat).",
+     (
+         'Ugyanebből a kórusból négy különböző dalhoz választanak egy-egy szólistát (mindenki bármelyik dalt '
+         'el tudja énekelni, de csak egy dal szólóját kaphatja).'
+     ),
      "Egy pontból 5 félegyenes indul. Hány szöget határoznak meg, ha bármely két félegyenes egy, legfeljebb "
      "$180^\\circ$-os szöget határoz meg?",
      "9 futó közül hányféleképpen alakulhat a dobogó (1., 2. és 3. hely)?"],

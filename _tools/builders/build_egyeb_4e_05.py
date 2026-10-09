@@ -81,23 +81,29 @@ OSSZ = [
        "$P_n^{k_1,k_2,\\ldots,k_r}=\\dfrac{n!}{k_1!\\,k_2!\\cdots k_r!}$, ahol $k_1+\\ldots+k_r=n$",
        "ANNA: $\\dfrac{4!}{2!\\cdot2!}=6$"],
       ["számít", "nincs; $n$-ből $k$", "variáció " + h(A3, "def-variacio"),
-       "$V_n^k=\\dfrac{n!}{(n-k)!}=n(n-1)\\cdots(n-k+1)$", "10 versenyzőből a 3 helyes dobogó: $10\\cdot9\\cdot8=720$"],
+       "$V_n^k=\\dfrac{n!}{(n-k)!}=n(n-1)\\cdots(n-k+1)$", '10 versenyzőből a háromhelyes dobogó: $10\\cdot9\\cdot8=720$'],
       ["számít", "megengedett", "ismétléses variáció " + h(A3, "tetel-ismetleses-variacio"), "$V_n^{k,i}=n^k$",
        "PIN-kód: $10^4$"],
       ["nem számít", "nincs; $n$-ből $k$", "kombináció " + h(A4, "def-kombinacio"),
        "$C_n^k=\\dbinom nk=\\dfrac{n!}{k!\\,(n-k)!}$", "10 főből 3 fős csapat: $\\dbinom{10}3=120$"]]),
-  r'<p class="le halvany">Mindenhol $0\le k\le n$, és $0!=1$. A kombináció és a variáció kapcsolata: $V_n^k=\binom nk\cdot k!$ — minden csapat '
-  r'$k!$-féle sorrendben állhat a dobogón ' + h(A4, "tetel-kombinacio") + '.</p>',
+  (
+      '<p class="le halvany">Az ismétlés nélküli variációnál és kombinációnál $0\\le k\\le n$; az ismétléses '
+      'variációnál $k$ nagyobb is lehet $n$-nél. A darabszámok nemnegatív egészek, és $0!=1$. A kombináció '
+      'és a variáció kapcsolata: $V_n^k=\\binom nk\\cdot k!$ — minden csapat $k!$-féle sorrendben állhat a '
+      'dobogón '
+  ) + h(A4, "tetel-kombinacio") + '.</p>',
  ]),
 
  ("✖️ ÉS, ➕ VAGY — a szorzási és az összeadási szabály", [
   r'<ul><li><b>Szorzási szabály</b> ' + h(A1, "tetel-szorzasi-szabaly") + r': ha egy választás egymás utáni lépésekből '
   r'áll (<i>ÉS</i>), a lehetőségek száma a lépések lehetőségeinek szorzata — fadiagrammal is látszik. Feltétel: egy '
   r'lépés lehetőségeinek <i>száma</i> nem függhet attól, mit választottunk korábban.</li>'
-  r'<li><b>Összeadási szabály</b> ' + h(A1, "tetel-osszeadasi-szabaly") + r': ha a lehetőségek egymást kizáró esetekre '
-  r'bomlanak (<i>VAGY</i>), az esetek számát összeadjuk.</li>'
-  r'<li><b>Korlátozott hely először:</b> a 0 nem állhat elöl; a páros szám utolsó jegye páros — ha a kettő ütközik '
-  r'(0 a végén?), a lehetőségek száma a korábbi választástól függ — ilyenkor bonts esetekre ' + h(A3, "pelda-paros") + r'.</li>'
+  r'<li><b>Összeadási szabály</b> ' + h(A1, "tetel-osszeadasi-szabaly") + (
+                                                                                 ': ha a lehetőségek egymást kizáró esetekre bomlanak (<i>VAGY</i>), az egyes esetekhez tartozó '
+                                                                                 'lehetőségek számát összeadjuk.</li><li><b>Korlátozott hely először:</b> a 0 nem állhat elöl; a '
+                                                                                 'páros szám utolsó jegye páros — ha a kettő ütközik (0 a végén?), a lehetőségek száma a korábbi '
+                                                                                 'választástól függ — ilyenkor bonts esetekre '
+                                                                             ) + h(A3, "pelda-paros") + r'.</li>'
   r'<li><b>„Legalább egy”</b> = összes − „egy sincs” ' + h(A1, "pelda-legalabb") + r': a háromjegyű számok közül '
   r'$900-9^3=171$-ben szerepel 0-s számjegy.</li></ul>',
  ]),
@@ -110,18 +116,23 @@ OSSZ = [
       ["$\\dbinom nk=\\dbinom n{n-k}$", "szimmetria " + h(A4, "tetel-szimmetria"), "a kiválasztottak helyett a "
        "kimaradókat is kiválaszthatjuk"],
       ["$\\dbinom n2=\\dfrac{n(n-1)}{2}$", "", "kézfogások, körmérkőzés " + h(A4, "pelda-kezfogas") + ": 8 fő → $28$"]]),
-  r'<p><b>Pontosan</b> ' + h(A4, "pelda-ket-csoport") + ': ha két csoportból pontosan megadott számú elemet '
-  r'választunk, a két kombináció szorzata a válasz (pl. 10 lány és 8 fiú közül pontosan 2 lány egy 4 fős csapatban: '
-  r'$\binom{10}2\binom82$). <b>Legalább:</b> a lehetséges esetek összege — vagy egyszerűbben a komplementer '
-  r'segítségével: összes − „egy sincs” ' + h(A4, "pelda-legalabb-egy") + '.</p>',
+  r'<p><b>Pontosan</b> ' + h(A4, "pelda-ket-csoport") + (
+                                                            ': ha két csoportból pontosan megadott számú elemet választunk, a két kombináció szorzata a válasz '
+                                                            '(pl. 10 lány és 8 fiú közül pontosan 2 lány egy 4 fős csapatban: $\\binom{10}2\\binom82$). '
+                                                            '<b>Legalább egy:</b> az egyes megfelelő esetekben adódó lehetőségek számának összege — vagy '
+                                                            'egyszerűbben a komplementer segítségével: összes − „egy sincs” '
+                                                        ) + h(A4, "pelda-legalabb-egy") + '.</p>',
  ]),
 
  ("🔺 A Pascal-háromszög és a binomiális tétel", [
   PASCAL,
   r'<p>Minden sor két szélén $1$ áll, minden belső szám a fölötte álló két szám összege; az $n$-edik sor az $\binom n0,\binom n1,'
   r'\ldots,\binom nn$ számok sora, szimmetrikus, és az összege $2^n$ ' + h(B1, "tetel-pascal") + '.</p>'
-  r'<p><b>Binomiális tétel</b> ' + h(B1, "tetel-binomialis") + r' (minden $n$ természetes számra): $$(a+b)^n=\binom n0a^n+\binom n1a^{n-1}b+\binom n2a^{n-2}b^2+'
-  r'\ldots+\binom nnb^n.$$ A kifejtésnek $n+1$ tagja van; a <b>$(k+1)$-edik tag</b> $T_{k+1}=\binom nka^{n-k}b^k$ '
+  r'<p><b>Binomiális tétel</b> ' + h(B1, "tetel-binomialis") + (
+                                                                     ' (minden $n$ természetes számra): $$(a+b)^n=\\binom n0a^n+\\binom n1a^{n-1}b+\\binom '
+                                                                     'n2a^{n-2}b^2+\\ldots+\\binom nnb^n.$$ A formális kifejtésnek $n+1$ tagja van (összevonás után '
+                                                                     'kevesebb is maradhat); a <b>$(k+1)$-edik tag</b> $T_{k+1}=\\binom nka^{n-k}b^k$ '
+                                                                 )
   + h(B1, "tetel-altalanos-tag") + r'. Az $(a-b)^n$ kifejtésében az előjelek váltakoznak.</p>'
   r'<p><b>Egy együttható</b> ' + h(B1, "pelda-egyutthato") + r': az $(x+2)^6$-ban az $x^3$-ös tag $\binom63x^3\cdot2^3=160x^3$. '
   r'A tagok együtthatóinak összege $x=1$ helyettesítéssel adódik; $(1+1)^n=2^n$ — egy $n$ elemű halmaz részhalmazainak '
@@ -129,20 +140,22 @@ OSSZ = [
  ]),
 
  ("⚠️ Véd Vilmos csapdái — amelyeken a legtöbben elcsúsznak", [
-  r'<div class="doboz csapda"><p class="cim"><span class="ikon">⚠️</span> A kilenc leggyakoribb hiba</p>'
-  r'<ol class="reszfeladatok">'
-  r'<li><b>ÉS vagy VAGY:</b> 3 zakó és 2 nadrág $3\cdot2=6$ szett, nem $5$; „vagy burek, vagy pizza” viszont összeadás.</li>'
-  r'<li><b>A nulla előre tolakszik:</b> $9\cdot9\cdot8=648$ különböző jegyű háromjegyű szám van, nem '
-  r'$10\cdot9\cdot8=720$.</li>'
-  r'<li><b>Egyben számolni ott, ahol esetek vannak:</b> ha az utolsó jegy lehet 0 is, a páros számokat két esetre bontsd.</li>'
-  r'<li><b>A blokk belseje:</b> ha kettő egymás mellett áll, a blokkon belül is van sorrend — szorozz $2!$-sal.</li>'
-  r'<li><b>Csak az egyik ismétlődés:</b> az ANNA-nál $2!\cdot2!$-sal kell osztani: $6$, nem $12$.</li>'
-  r'<li><b>Ismétlődhet vagy nem?</b> PIN-kód: $10^4$ — nem $10\cdot9\cdot8\cdot7$.</li>'
-  r'<li><b>A „kiválaszt” szó csal:</b> ha a kiválasztottak különböző szerepet kapnak (elnök és titkár), az variáció.</li>'
-  r'<li><b>A többi hely is számít:</b> „pontosan 2 lány” egy 4 fős csapatban: $\binom{10}2\cdot\binom82$, nem $\binom{10}2$.</li>'
-  r'<li><b>A hatvány a zárójel egészére vonatkozik:</b> szorzatnál minden tényezőre szétosztható ($(2x)^3=8x^3$, nem '
-  r'$2x^3$), összegnél nem: $(a+b)^2\ne a^2+b^2$ — a kifejtéshez a binomiális tétel kell.</li>'
-  r'</ol></div>',
+  (
+      '<div class="doboz csapda"><p class="cim"><span class="ikon">⚠️</span> A kilenc leggyakoribb '
+      'hiba</p><ol class="reszfeladatok"><li><b>ÉS vagy VAGY:</b> 3 zakó és 2 nadrág $3\\cdot2=6$ szett, '
+      'nem $5$; „vagy burek, vagy pizza” viszont összeadás.</li><li><b>A nulla előre tolakszik:</b> '
+      '$9\\cdot9\\cdot8=648$ különböző jegyű háromjegyű szám van, nem '
+      '$10\\cdot9\\cdot8=720$.</li><li><b>Egyben számolni ott, ahol esetek vannak:</b> ha az utolsó jegy '
+      'lehet 0 is, a páros számokat két esetre bontsd.</li><li><b>A blokk belseje:</b> ha kettő egymás '
+      'mellett áll, a blokkon belül is van sorrend — szorozz $2!$-sal.</li><li><b>Csak az egyik '
+      'ismétlődés:</b> az ANNA-nál $2!\\cdot2!$-sal kell osztani: $6$, nem $12$.</li><li><b>Ismétlődhet '
+      'vagy nem?</b> PIN-kód: $10^4$ — nem $10\\cdot9\\cdot8\\cdot7$.</li><li><b>A „kiválaszt” szó csal:</b> '
+      'ha a kiválasztottak különböző szerepet kapnak (elnök és titkár), az variáció.</li><li><b>A többi '
+      'hely is számít:</b> „pontosan 2 lány” egy 4 fős csapatban: $\\binom{10}2\\cdot\\binom82$, nem '
+      '$\\binom{10}2$.</li><li><b>A hatvány a zárójel egészére vonatkozik:</b> szorzatnál minden tényezőre '
+      'szétosztható ($(2x)^3=8x^3$, nem $2x^3$), összegnél nem osztható szét így: $(a+b)^2=a^2+2ab+b^2$ — '
+      'a kifejtéshez a binomiális tétel kell.</li></ol></div>'
+  ),
  ]),
 
  ("Mit hol találsz?", [
@@ -381,7 +394,7 @@ def kartya(href, cim, le):
 
 
 KT = {
- "A1": kartya(A1, "ÉS vagy VAGY — a szorzási és az összeadási szabály", "Szorzási és összeadási szabály, fadiagram, rendszámtábla, „legalább egy” komplementerrel"),
+ "A1": kartya(A1, "ÉS vagy VAGY — a szorzási és az összeadási szabály", 'Szorzási és összeadási szabály, fadiagram, azonosítók, „legalább egy” komplementerrel'),
  "A2": kartya(A2, "Sorba állítva — permutációk", "$n!$, ismétlés nélküli és ismétléses permutáció, blokk, a 0 nem állhat elöl"),
  "A3": kartya(A3, "Dobogó és PIN-kód — variációk", "Ismétlés nélküli és ismétléses variáció, számjegyes feladatok feltételekkel"),
  "A4": kartya(A4, "Csapat, nem sorrend — kombinációk", "$\\binom nk$, döntési fa, „pontosan” és „legalább”, kézfogás és visszafelé számolás; a lottó"),

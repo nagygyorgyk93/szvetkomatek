@@ -71,10 +71,13 @@ SVG_PASCAL = svg_pascal(
 
 B1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Nyalka Vili:</b> Az I.V.H.-archívumban ezt a háromszöget találtam: minden szám a fölötte álló kettő összege. '
-         'Blaise Pascal rajzolta a szerencsejátékok számolásához — a lottó őse. <b>Véd Vilmos:</b> Tudom, mire jó! 🌮 '
-         '<i>Burek-matek:</i> $(a+b)^2=a^2+b^2$. <b>Nagol:</b> A középső tagot, a $2ab$-t a multiverzum nem bocsátja '
-         'meg. Ez a háromszög pontosan megmondja, mi hiányzik.'),
+   brief((
+             '<b>Nyalka Vili:</b> Az I.V.H.-archívumban ezt a háromszöget találtam: a két szélen 1 áll, minden '
+             'belső szám a fölötte álló kettő összege. Blaise Pascal a szerencsejátékok kérdéseihez is használta; '
+             'a háromszöget már jóval előtte ismerték. <b>Véd Vilmos:</b> Tudom, mire jó! 🌮 <i>Burek-matek:</i> '
+             '$(a+b)^2=a^2+b^2$. <b>Nagol:</b> A középső tagot, a $2ab$-t a multiverzum nem bocsátja meg. Ez a '
+             'háromszög pontosan megmondja, mi hiányzik.'
+         )),
  ]),
  ("A Pascal-háromszög", [
    '<p class="lead">A háromszög csúcsán és minden sor két szélén 1 áll; minden más szám a <b>fölötte álló két szám '

@@ -195,9 +195,13 @@ B1 = [
          'is rendez (számítógépes ismeret: nem ismeri &lt; részben ismeri &lt; ismeri; iskolai végzettség). Az '
          '<b>intervallumskálán</b> a különbségeknek is van értelme (hőmérséklet °C-ban, évszám, pontszám).</p>',
          hid="def-skalak"),
-   '<p>A minta akkor mond valamit a sokaságról, ha <b>véletlenszerűen</b> választjuk: minden egyednek ugyanakkora '
-   'esélye van bekerülni. Ha csak a könnyen elérhetőket kérdezzük meg (a barátainkat, egy közösségi oldal '
-   'követőit), a minta <b>torz</b> lesz, és a következtetés sem érvényes a sokaságra.</p>',
+   (
+       '<p>A mintavétel módja meghatározza, mennyire következtethetünk a sokaságra. <b>Egyszerű véletlen '
+       'mintavételnél</b> minden egyednek ugyanakkora esélye van bekerülni. Más megfelelő eljárás is '
+       'létezik, például osztályonként, létszámarányosan sorsolni. Ha csak a barátainkat vagy egy közösségi '
+       'oldal önként jelentkező követőit kérdezzük meg, a minta torzíthat. A véletlen választás mellett az '
+       'elemszámra és a válaszmegtagadásokra is figyelni kell.</p>'
+   ),
    doboz("csapda", "Véd Vilmos csapda — „a barátaim szerint…”",
          '<p>Vilmos megkérdezte hét barátját, szeretik-e a matekot. Mind igent mondtak, ezért kijelentette: „a '
          'gimnazisták 100%-a szereti a matekot”. A minta kicsi és torz: a barátok hasonlítanak egymásra, és a '
@@ -223,8 +227,10 @@ B1 = [
    'például 0–19, 20–39 éves. Szabadka 123 952 lakosa 20 éves korcsoportokban:</p>',
    doboz("pelda", "I.V.H. Akták — Szabadka korösszetétele",
          TABLA(["életkor (év)", "lakos", "relatív gyakoriság (%)"], kor_sorok) + FORRAS("popis")
-         + '<p>(A százalékok egy tizedesre kerekítve; a kerekítés miatt az összegük 100,1.) Az 5 éves korcsoportokat '
-           'a következő szakasz hisztogramja mutatja.</p>', hid="pelda-korosszetetel"),
+         + (
+               '<p>(A százalékok egy tizedesre kerekítve; a kerekítés miatt az összegük 100,1.) Az 5 éves '
+               'korcsoportokat a következő szakasz korcsoport-ábrája mutatja.</p>'
+           ), hid="pelda-korosszetetel"),
  ]),
  ("Melyik diagram mire jó?", [
    '<p class="lead">Ugyanaz az adat többféleképpen ábrázolható, de nem mindegy, hogyan: a diagram típusa az ismérv '
@@ -243,12 +249,16 @@ B1 = [
    diagram_adatok(SVG_HISZT, "Szabadka lakói korcsoportonként, 2022",
                   ["életkor (év)", "lakos (fő)"],
                   [[c, ezres(v)] for c, v in zip(ADAT.KOR["csoportok"][:-1] + ["85 vagy több"], KOR["csoport"])],
-                  megjegyzes="A vízszintes tengelyen az életkor, a függőlegesen a lakosok száma szerepel "
-                             "0-tól 10 000 főig, 2000 fős beosztással. Az oszlopok összeérnek; az utolsó a 85 évesek "
-                             "és idősebbek nyitott csoportja. A két legmagasabb oszlop a 65–69 és a 40–44 éveseké.",
-                  felirat="<b>Hisztogram</b> — osztályközökbe sorolt mennyiségi adatra; az oszlopok összeérnek. Szabadka "
-                          "lakói 5 éves korcsoportok szerint (fő), 2022; az utolsó oszlop a 85 évesek és idősebbek nyitott "
-                          "csoportja."),
+                  megjegyzes=(
+                                 'A vízszintes tengelyen az életkor, a függőlegesen a lakosok száma szerepel 0-tól 10 000 főig, 2000 '
+                                 'fős beosztással. Az oszlopok összeérnek; az utolsó a 85 évesek és idősebbek nyitott csoportja. A '
+                                 'nyitott utolsó csoport szélessége nem ismert: annak oszlopa csak a csoport létszámát mutatja, és '
+                                 'nem értelmezhető öt évre jutó gyakoriságként. A két legmagasabb oszlop a 65–69 és a 40–44 éveseké.'
+                             ),
+                  felirat=(
+                              '<b>Korcsoport-ábra</b> — a zárt, 5 éves osztályközök hisztogramként olvashatók. Szabadka lakói 5 '
+                              'éves korcsoportok szerint (fő), 2022; az utolsó oszlop a 85 évesek és idősebbek nyitott csoportja.'
+                          )),
    diagram_adatok(SVG_VONAL, "Szabadka lakossága a népszámlálások szerint",
                   ["népszámlálás éve", "lakos (fő)"],
                   [[str(ev), ezres(v)] for ev, v in zip(NEP["evek"], NEP["szabadka_varos"])],
@@ -265,13 +275,21 @@ B1 = [
        ["mennyiségi adat eloszlása osztályközökben", "hisztogram"],
        ["változás az időben", "vonaldiagram"]]),
    doboz("csapda", "Véd Vilmos csapda — rossz diagram, rossz üzenet",
-         '<p>Kördiagram csak akkor jó, ha a részek egy egészet adnak ki: ha valaki több sportot is űz, a „kedvenc '
-         'sportok” százalékainak összege 100 fölé mehet — ide oszlopdiagram kell. A hisztogram oszlopai összeérnek, '
-         'mert az osztályközök egymáshoz csatlakoznak; ha az osztályközök nem egyforma szélesek, azt jelezni kell.</p>'),
+         (
+             '<p>Kördiagram csak akkor jó, ha a részek egy egészet adnak ki: ha mindenki több űzött sportot is '
+             'megjelölhet, az egyes sportokhoz tartozó százalékok összege 100 fölé mehet — ide oszlopdiagram '
+             'kell. Egyetlen kedvenc sport megadásakor viszont a kategóriák kiadhatnak egy egészet. A hisztogram '
+             'oszlopai összeérnek, mert az osztályközök egymáshoz csatlakoznak; eltérő szélességű osztályközöknél '
+             'a gyakoriságot az oszlop területének kell mutatnia, ezért a magasságot a gyakoriság és az '
+             'osztályköz szélességének hányadosából számítjuk.</p>'
+         )),
    doboz("erdekesseg", "A kopás mint hisztogram",
-         '<p>Egy edzőtermi súlyzógépen a lyukak körüli kopás megmutatja, melyik súlyt használják a legtöbben: a középső '
-         'értékeknél a legnagyobb, a két szél felé fogy — mint egy harang alakú hisztogram. (A harang alakú, '
-         '„normális” eloszlásról a felsőbb matematika szól.)</p>' + MEM),
+         (
+             '<p>A képen a középső súlybeállításoknál nagyobb a kopás, a két szélén kisebb: ez emlékeztethet egy '
+             'harang alakú hisztogramra. A kopás azonban nem pontos használati gyakoriság: függhet a gép korától '
+             'és a kezelés módjától is. A „normális eloszlás” felirat itt játékos hasonlat, nem mérési '
+             'eredmény.</p>'
+         ) + MEM),
    kviz('Melyik diagram mutatja a legjobban, hogyan változott Szabadka lakossága 1948 és 2022 között?',
         ['vonaldiagram', 'kördiagram', 'hisztogram', 'dobozdiagram'], 0,
         jo="✔ Időbeli változásra a vonaldiagram való: a vízszintes tengelyen az évek, a pontok összekötve.",
@@ -314,7 +332,7 @@ MUT_TABLA = TABLA(["mutató", "Split", "Lisszabon"], [
     ["$Q_1$ / $Q_3$", _fmt(ms["q1"]) + " / " + _fmt(ms["q3"]), _fmt(ml["q1"]) + " / " + _fmt(ml["q3"])],
     ["interkvartilis terjedelem", _fmt(ms["q3"] - ms["q1"]), _fmt(ml["q3"] - ml["q1"])],
     ["szórás ($\\sigma$)", _fmt(ms["sz"]), _fmt(ml["sz"])]])
-FUGG_TABLA = TABLA(["mutató", "magyar nyelvű program", "angol nyelvű program"], [
+FUGG_TABLA = TABLA(["mutató", 'magyar Excel', 'angol Excel'], [
     ["átlag", '<span class="kbd">ÁTLAG</span>', '<span class="kbd">AVERAGE</span>'],
     ["medián", '<span class="kbd">MEDIÁN</span>', '<span class="kbd">MEDIAN</span>'],
     ["módusz", '<span class="kbd">MÓDUSZ.EGY</span>', '<span class="kbd">MODE.SNGL</span>'],
@@ -386,8 +404,10 @@ B2 = [
          'adatlaborban — a „fél mediánja” módszert használjuk.</p>'),
  ]),
  ("Szórás", [
-   '<p class="lead">A terjedelem csak a két szélső adatot nézi. A szórás minden adatot figyelembe vesz: azt méri, '
-   'átlagosan mennyire térnek el az adatok az átlagtól.</p>',
+   (
+       '<p class="lead">A terjedelem csak a két szélső adatot nézi. A szórás minden adatot figyelembe vesz: '
+       'az átlagtól való eltérések négyzeteiből számított mutató.</p>'
+   ),
    doboz("definicio", "Átlagos abszolút eltérés, szórásnégyzet, szórás",
          r'<p>$$\text{átlagos abszolút eltérés}=\frac{|x_1-\bar x|+\ldots+|x_n-\bar x|}{n},\qquad '
          r'\sigma^2=\frac{(x_1-\bar x)^2+\ldots+(x_n-\bar x)^2}{n},\qquad \sigma=\sqrt{\sigma^2}.$$ A $\sigma^2$ az '
@@ -398,11 +418,15 @@ B2 = [
          r'(ez mindig így van). Az átlagos abszolút eltérés $\frac{3+1+1+0+5}5=2$; a szórásnégyzet '
          r'$\frac{9+1+1+0+25}5=7{,}2$; a szórás $\sqrt{7{,}2}\approx2{,}68$.</p>'
          r'<p>Split és Lisszabon: az átlag szinte ugyanaz, a szórás Splitben $\sigma\approx' + K(ms["sz"], 1)
-         + r'$ °C, Lisszabonban $\sigma\approx' + K(ml["sz"], 1) + r'$ °C. Lisszabon éghajlata kiegyenlítettebb '
-           r'(óceáni), Splité szélsőségesebb.</p>', hid="pelda-szoras"),
+         + r'$ °C, Lisszabonban $\sigma\approx' + K(ml["sz"], 1) + (
+                                                                        '$ °C. Ebben a 2024-es adatsorban Lisszabon havi középhőmérsékletei kevésbé ingadoznak. A két város '
+                                                                        'éghajlatának összevetéséhez sok év adata kellene.</p>'
+                                                                    ), hid="pelda-szoras"),
    doboz("tetel", "Standardizált érték",
-         r'<p>Különböző átlagú és szórású adatsorok összehasonlításakor azt nézzük, hány szórásnyira van egy adat a '
-         r'saját átlagától: $$z=\frac{x-\bar x}{\sigma}.$$</p>', hid="tetel-standardizalt"),
+         (
+             '<p>Különböző átlagú és szórású adatsorok összehasonlításakor azt nézzük, hány szórásnyira van egy '
+             'adat a saját átlagától (csak $\\sigma>0$ esetén): $$z=\\frac{x-\\bar x}{\\sigma}.$$</p>'
+         ), hid="tetel-standardizalt"),
    doboz("pelda", "I.V.H. Akták — melyik teszt sikerült jobban?",
          r'<p>Egy kadét a logikai teszten 78 pontot ért el (a csoport átlaga 70, szórása 5), a statisztikai teszten '
          r'85-öt (átlag 80, szórás 10). Nyers pontszámban a statisztika a jobb, de $$z_{\text{logika}}=\frac{78-70}5='
@@ -425,12 +449,17 @@ B2 = [
    SVG_LAB,
    FORRAS("openmeteo", "jokic"),
    doboz("erdekesseg", "Táblázatkezelő-sarok",
-         '<p>Ugyanezek a mutatók egy táblázatkezelőben (Excel, LibreOffice Calc, Google Táblázatok) egy-egy függvénnyel '
-         'számolhatók, például <span class="kbd">=ÁTLAG(A1:A12)</span>:</p>' + FUGG_TABLA
-         + '<p>Vigyázat, a betűk csalnak: a magyar nyelvű programban az „S” a <i>sokaságot</i> jelenti '
-           '(<span class="kbd">SZÓR.S</span> = STDEV.P), az angolban a <i>mintát</i> (sample). A magyar '
-           '<span class="kbd">VAR.M</span> és <span class="kbd">SZÓR.M</span> (angolul VAR.S és STDEV.S) $n$ helyett '
-           '$n-1$-gyel oszt — ez a mintából becslő, „korrigált” változat, amelyet most nem használunk.</p>'),
+         (
+             '<p>Ugyanezek a mutatók egy táblázatkezelőben (Excel, LibreOffice Calc, Google Táblázatok) '
+             'függvényekkel számolhatók. Az alábbi táblázat az Excel függvényneveit mutatja; más programban vagy '
+             'nyelvi beállításnál a név eltérhet, például <span class="kbd">=ÁTLAG(A1:A12)</span>:</p>'
+         ) + FUGG_TABLA
+         + (
+               '<p>Vigyázat, a betűk csalnak: a magyar Excelben az „S” a <i>sokaságot</i> jelenti (<span '
+               'class="kbd">SZÓR.S</span> = STDEV.P), az angolban a <i>mintát</i> (sample). A magyar <span '
+               'class="kbd">VAR.M</span> és <span class="kbd">SZÓR.M</span> (angolul VAR.S és STDEV.S) $n$ helyett '
+               '$n-1$-gyel oszt — ez a mintából becslő, „korrigált” változat, amelyet most nem használunk.</p>'
+           )),
    NEHEZ(2, "hiányzó adat visszafelé az átlagból"),
    NEHEZ(3, "két adatsor összevetése középértékkel és szórással"),
    GY("#alap-6", "A 6–10", "#kozep-4", "K 4–7"),
@@ -438,13 +467,13 @@ B2 = [
  ("🧾 Gyorsismétlő", [
    TABLA(["mutató", "kiszámítás", "mit mond?"], [
        ["módusz", "a leggyakoribb érték", "a „divatos” érték — kategóriára is"],
-       ["medián", "a rendezett adatsor közepe", "fele alatta, fele fölötte; a kiugró érték alig mozdítja"],
+       ["medián", "a rendezett adatsor közepe", 'legalább fele legfeljebb, legalább fele legalább ekkora; a kiugró értékekre kevésbé érzékeny'],
        ["átlag", "$\\bar x=\\dfrac{x_1+\\ldots+x_n}{n}$", "a „kiegyenlített” érték; a kiugró érték elhúzza"],
        ["terjedelem", "legnagyobb − legkisebb", "a teljes szélesség"],
        ["kvartilisek", "a két fél mediánja", "a középső 50% helye: $[Q_1;\\,Q_3]$"],
        ["szórás", "$\\sigma=\\sqrt{\\dfrac{(x_1-\\bar x)^2+\\ldots+(x_n-\\bar x)^2}{n}}$",
-        "átlagosan mennyire térnek el az adatok az átlagtól"],
-       ["standardizált érték", "$z=\\dfrac{x-\\bar x}{\\sigma}$", "hány szórásnyira van az átlagtól"]]),
+        'az átlag körüli szóródás, az eltérések négyzeteiből számítva'],
+       ["standardizált érték", "$z=\\dfrac{x-\\bar x}{\\sigma}$", 'hány szórásnyira van az átlagtól (pozitív szórásnál)']]),
    brief('<b>Mr. Szürreál:</b> Elfogytak a grafikonjaim. <b>Nagol:</b> A bizottság utolsó kérése: a kadétok saját '
          'adatokkal feleljenek — kérdés, adatgyűjtés, táblázat, diagram, mutatók, értelmezés. <b>Véd Vilmos:</b> Ez a '
          '<a href="terepkuldetes.html">terepküldetés</a>, a végső meghallgatás. És utána? Az utolsó ítéletet nem az '

@@ -270,7 +270,7 @@ A korábbi A1-ellenőrzések nem helyettesítik a teljes stilisztikai átnézés
 
 | 1e | 2e | 3e | 4e |
 |---|---|---|---|
-| ◐ Helyben kész: 77/77 oldal — 38 tananyag, 38 további témaköroldal és az osztály főoldala; teljes nyelvi és példahitelességi audit (2026-10-07) | ◐ Helyben kész: 65/65 oldal — mind a négy témakör és az osztály főoldala; teljes nyelvi és példahitelességi audit (helyi main, 2026-10-08) | ◐ Helyben kész: 92/92 oldal — mind a hat témakör és az osztály főoldala; teljes nyelvi és példahitelességi audit (helyi main, 2026-10-08; ez az adag nincs pusholva) | ◐ Folyamatban: 37/73 oldal — 4e/01–03 teljes nyelvi és példahitelességi auditja helyben kész (helyi main, 2026-10-08; nincs push); 04–06 és az osztály főoldala hátra |
+| ◐ Helyben kész: 77/77 oldal — 38 tananyag, 38 további témaköroldal és az osztály főoldala; teljes nyelvi és példahitelességi audit (2026-10-07) | ◐ Helyben kész: 65/65 oldal — mind a négy témakör és az osztály főoldala; teljes nyelvi és példahitelességi audit (helyi main, 2026-10-08) | ◐ Helyben kész: 92/92 oldal — mind a hat témakör és az osztály főoldala; teljes nyelvi és példahitelességi audit (helyi main, 2026-10-08; ez az adag nincs pusholva) | ◐ Helyben kész: 73/73 oldal — mind a hat témakör és az osztály főoldala; teljes nyelvi és példahitelességi audit (helyi main, 2026-10-09; ez az adag nincs pusholva) |
 
 Az első adag három függvényes, a második hat logikai és halmazos tananyagot
 ellenőrzött. A példák feltételei, bevezetők, átvezetők és matematikai pontatlanságok
@@ -599,6 +599,31 @@ első 23 sor megmaradtak. Korlát: valódi képernyőolvasó, más böngésző, 
 PDF-tördelés, háttérpontok kézi kontrasztja, külső média új próbája és élő oldal
 nincs ellenőrizve. Tanári döntés kell: nincs. 4e A3: 37/73; következő 04–06
 és az osztály főoldala. Helyi main, új ág és push nélkül.
+Részletek: [A3 nyelvi ellenőrzés](A3_nyelvi_ellenorzes.md).
+
+Huszonhatodik adag (2026-10-09): 4e/04–06 és az osztály főoldala,
+36 oldal teljes szöveg szerinti auditja lezárva. Integrál 12, kombinatorika 10,
+valószínűség–statisztika 13 oldal, főoldal 1; 18 lecke, 155 kártya, 71 SVG,
+37 kvíz. Integrálszabályok feltételei, út/elmozdulás és rugó modellje,
+terület és metszéspont-koordináta; kombinatorikai k≤n, összeadás, Morse/PIN,
+reális szólisták, Pascal; függetlenség és egyenlő esély, csoportosított
+eloszlás, mintavétel, hisztogram, medián, pozitív szórás, egyéves adatok és
+mennyiségi kutatás pontosítva. Hibatábla előre; kimenetek/sztandardok mérvadók.
+Három friss lektor, 155 eredeti kulcs helyes (62+38+55); egy saját lektori
+hibát külön rögzítve javított, a kulcs változatlan. Mind a 36 javított szöveg
+újraolvasva. 12 builder újrafutott, 11 csak szövegében változott; AST és
+numerikus kontroll rendben. Kártyaadatok/kulcsok, SVG/kvíz/link/horgony/kép/
+szkript/háttér/média és valós adatmodul azonosak. Új feladat/számadat nincs.
+Teljes lánc: 334 média 139 lapon, kánon/link 310/0, sáv rendben, kulcs
+4499/4499, regresszió 100%. Render 36 lap/2499 képlet/37 kvíz; Edge
+360/390/1280 zárt/nyitott 216 nézet, axe390 72/0, nyomtatás JS be/ki 72,
+JS nélkül 36 olvasható oldal. Hét mobilos részlet szemrevételezve.
+26 HTML és 26 index-URL változott, csak a három témakörben; index 308.
+Naplótérkép/médiakatalógus/zárolt első 23 sor azonos. Projektválaszok privátak.
+Korlát: valódi képernyőolvasó, más böngésző, teljes PDF-tördelés, külső média
+új próbája, háttérpontok kézi kontrasztja, forrásadatok újraimportja és élő oldal
+nincs ellenőrizve. Tanári döntés kell: nincs. **4e A3 73/73 kész; a teljes
+négyosztályos A3 307/307 helyben lezárva.** Helyi main, új ág és push nélkül.
 Részletek: [A3 nyelvi ellenőrzés](A3_nyelvi_ellenorzes.md).
 
 ---

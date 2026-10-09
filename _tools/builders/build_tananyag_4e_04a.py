@@ -116,8 +116,11 @@ A1 = [
  ]),
 
  ("Végtelen sok primitív függvény", [
-   r'<p class="lead">Az $x^2$, az $x^2+5$ és az $x^2-7$ deriváltja egyaránt $2x$, mert az állandó deriváltja $0$. '
-   r'Egy függvénynek tehát nem egy, hanem <b>végtelen sok</b> primitív függvénye van.</p>',
+   (
+       '<p class="lead">Az $x^2$, az $x^2+5$ és az $x^2-7$ deriváltja egyaránt $2x$, mert az állandó '
+       'deriváltja $0$. Ha egy függvénynek van primitív függvénye egy intervallumon, akkor ott <b>végtelen '
+       'sok</b> van: bármelyikhez hozzáadhatunk egy állandót.</p>'
+   ),
    doboz("tetel", "A primitív függvények serege",
          r'<p>Ha $F$ az $f$ primitív függvénye az $I$ intervallumon, akkor minden $C$ valós számra $F+C$ is az; és '
          r'az $f$ <b>minden</b> primitív függvénye $F+C$ alakú.</p>'
@@ -163,8 +166,11 @@ A1 = [
         nem="✘ Deriváld a választásod! A 2x az x² deriváltja (nem az integrálja), az x³ deriváltja 3x², az x³/3-ból "
             "pedig hiányzik a +C."),
    doboz("erdekesseg", "Hol találkozol vele?",
-         r'<p>A lépésszámláló és a navigáció a pillanatnyi sebességből számolja vissza a megtett utat: ez a primitív '
-         r'függvény keresése. A $C$ itt a kiindulási pont — azt külön meg kell adni.</p>'),
+         (
+             '<p>Egyenes vonalú mozgásnál a sebességből integrálással kapjuk meg a helyet leíró függvényt. A $C$ '
+             'értékét a kezdeti hely határozza meg. Így ugyanaz a sebességfüggvény különböző kiindulási helyekhez '
+             'is tartozhat.</p>'
+         )),
    GY(FA + "#alap-1", "A 1–3", FA + "#kozep-1", "K 1–2"),
    brief('<b>SZVETI:</b> Egy darab a helyén. De ha minden deriválási sort így, egyenként fordítunk vissza, a '
          'regenerációm tovább tart, mint Vilmos reggeli öltözködése. <b>Nagol:</b> Akkor fordítsuk meg az egész '
@@ -175,7 +181,7 @@ A1 = [
 # ---------------------------------------------------------------- A2
 _TABLA_INT = TABLA(["$f(x)$", "$\\int f(x)\\,dx$", "megjegyzés"], [
     ["$k$ (állandó)", "$kx+C$", ""],
-    ["$x^n$", "$\\dfrac{x^{n+1}}{n+1}+C$", "$n\\ne-1$ (a gyök és a tört is: $n\\in\\mathbb R$)"],
+    ["$x^n$", "$\\dfrac{x^{n+1}}{n+1}+C$", '$n\\ne-1$; valós kitevőnél biztosan használható $x>0$-ra'],
     ["$\\dfrac1x$", "$\\ln\\lvert x\\rvert+C$", "$x\\ne0$ — ez az $n=-1$ eset"],
     ["$e^x$", "$e^x+C$", ""],
     ["$a^x$", "$\\dfrac{a^x}{\\ln a}+C$", "$a\\gt0$, $a\\ne1$"],
@@ -193,9 +199,12 @@ A2 = [
 
  ("Az alapintegrálok táblázata", [
    doboz("tetel", "Az alapintegrálok táblázata", _TABLA_INT, hid="tetel-integraltablazat"),
-   r'<p>Minden sor <b>deriválással igazolható</b>: például $\left(\frac{x^{n+1}}{n+1}\right)\'=x^n$, és '
-   r'$\left(\frac{a^x}{\ln a}\right)\'=\frac{a^x\ln a}{\ln a}=a^x$. Így: $\int x^5\,dx=\frac{x^6}{6}+C$, '
-   r'$\int 2^x\,dx=\frac{2^x}{\ln2}+C$.</p>',
+   (
+       '<p>A képleteket olyan intervallumon használjuk, ahol az integrandus értelmezett. A különálló '
+       'intervallumokon a $C$ értéke eltérhet. Minden sor <b>deriválással igazolható</b>: például '
+       "$\\left(\\frac{x^{n+1}}{n+1}\\right)\\'=x^n$, és $\\left(\\frac{a^x}{\\ln a}\\right)\\'=\\frac{a^x\\ln a}{\\ln "
+       'a}=a^x$. Így: $\\int x^5\\,dx=\\frac{x^6}{6}+C$, $\\int 2^x\\,dx=\\frac{2^x}{\\ln2}+C$.</p>'
+   ),
    doboz("erdekesseg", "Miért $\\ln\\lvert x\\rvert$, és nem $\\ln x$?",
          r'<p>Az $\frac1x$ a negatív számokra is értelmezett, a $\ln x$ viszont nem. Negatív $x$-re '
          r'$\big(\ln(-x)\big)\'=\frac{-1}{-x}=\frac1x$, így a két ágat egy képlet fogja össze: $\ln\lvert x\rvert$.</p>'),
@@ -216,8 +225,11 @@ A2 = [
  ]),
 
  ("Gyök és tört hatványként", [
-   r'<p class="lead">A gyököt és a törtet <b>hatványként</b> írjuk, és utána a táblázat első sora dolgozik: '
-   r'$\sqrt[3]{x^2}=x^{\frac23}$, $\;\frac1{x^3}=x^{-3}$, $\;\frac1{\sqrt x}=x^{-\frac12}$.</p>',
+   (
+       '<p class="lead">A gyököt és a törtet <b>hatványként</b> írjuk, és utána a hatványszabályt '
+       'alkalmazzuk: $\\sqrt[3]{x^2}=x^{\\frac23}$, $\\;\\frac1{x^3}=x^{-3}$, $\\;\\frac1{\\sqrt '
+       'x}=x^{-\\frac12}$.</p>'
+   ),
    doboz("pelda", "I.V.H. Akták — gyök és tört",
          r'<ol><li>$\int\sqrt x\,dx=\int x^{\frac12}dx=\frac{x^{\frac32}}{\frac32}+C=\frac23x\sqrt x+C$;</li>'
          r'<li>$\int\frac{2}{x^3}dx=\int2x^{-3}dx=2\cdot\frac{x^{-2}}{-2}+C=-\frac1{x^2}+C$;</li>'
@@ -230,8 +242,11 @@ A2 = [
  ]),
 
  ("Átalakítás integrálás előtt", [
-   r'<p class="lead">Szorzatra és hányadosra <b>nincs</b> „integrálási szabály”. Előbb alakítsd át az integrandust '
-   r'összeggé: a törtet tagonként osztva, a szorzatot beszorozva.</p>',
+   (
+       '<p class="lead">A szorzat és a hányados integrálját nem kapjuk meg a tényezők integráljának '
+       'összeszorzásával vagy elosztásával. Az itt szereplő példákban előbb alakítsd át az integrandust '
+       'összeggé: a törtet tagonként osztva, a szorzatot beszorozva.</p>'
+   ),
    doboz("pelda", "I.V.H. Akták — előbb átalakítunk",
          r'<ol><li>Tört szétbontása: $\int\frac{x^2+3x-2}{x}dx=\int\left(x+3-\frac2x\right)dx=\frac{x^2}2+3x-2\ln\lvert x\rvert+C$;</li>'
          r'<li>beszorzás: $\int(2x-1)^2dx=\int(4x^2-4x+1)\,dx=\frac43x^3-2x^2+x+C$ (az A3-ban rövidebben is megy);</li>'
@@ -284,8 +299,10 @@ A3 = [
 
  ("Az $\\frac{f'}{f}$ minta", [
    doboz("tetel", "Ha a számláló a nevező deriváltja",
-         r'<p>$$\int\frac{f\'(x)}{f(x)}\,dx=\ln\lvert f(x)\rvert+C,$$ mert $\big(\ln\lvert f(x)\rvert\big)\'=\frac{f\'(x)}{f(x)}$ '
-         r'(a láncszabály).</p>', hid="tetel-f-per-f"),
+         (
+             "<p>Olyan intervallumon, ahol $f$ deriválható és $f(x)\\ne0$: $$\\int\\frac{f\\'(x)}{f(x)}\\,dx=\\ln\\lvert "
+             "f(x)\\rvert+C,$$ mert $\\big(\\ln\\lvert f(x)\\rvert\\big)\\'=\\frac{f\\'(x)}{f(x)}$ (a láncszabály).</p>"
+         ), hid="tetel-f-per-f"),
    doboz("pelda", "I.V.H. Akták — felismerés és igazítás",
          r'<ol><li>$\int\frac{2x}{x^2+4}dx=\ln(x^2+4)+C$ — a számláló pontosan a nevező deriváltja (és $x^2+4\gt0$);</li>'
          r'<li>$\int\frac{x}{x^2-9}dx=\frac12\int\frac{2x}{x^2-9}dx=\frac12\ln\lvert x^2-9\rvert+C$ — a hiányzó 2-es '
@@ -301,7 +318,11 @@ A3 = [
 
  ("Az $f^n\\cdot f'$ minta", [
    doboz("tetel", "Hatvány szorozva a belső deriválttal",
-         r'<p>Ha $n\ne-1$, akkor $$\int f(x)^n\cdot f\'(x)\,dx=\frac{f(x)^{n+1}}{n+1}+C.$$</p>', hid="tetel-f-hatvany"),
+         (
+             '<p>Ha $f$ deriválható az adott intervallumon, $n\\ne-1$, és a szereplő hatványok valósak, a '
+             'láncszabály pedig alkalmazható, akkor (tetszőleges valós $n$-re elegendő $f>0$): $$\\int f(x)^n\\cdot '
+             "f\\'(x)\\,dx=\\frac{f(x)^{n+1}}{n+1}+C.$$</p>"
+         ), hid="tetel-f-hatvany"),
    doboz("pelda", "I.V.H. Akták — a belső függvény deriváltja ott van",
          r'<ol><li>$\int2x(x^2+1)^3dx=\frac{(x^2+1)^4}{4}+C$ — itt $f=x^2+1$, $f\'=2x$;</li>'
          r'<li>$\int\sin x\cos^3x\,dx=-\int\cos^3x\cdot(-\sin x)\,dx=-\frac{\cos^4x}{4}+C$;</li>'
@@ -324,15 +345,21 @@ A3 = [
          r'$\frac{dx}{\sqrt x}=2\,dt$: $$\int\frac{e^{\sqrt x}}{\sqrt x}dx=2\int e^t\,dt=2e^{\sqrt x}+C.$$</p>',
          hid="pelda-helyettesites"),
    doboz("csapda", "Véd Vilmos csapda",
-         r'<p><b>1.</b> A $dx$ átírása elmarad: „$\int x^2\sqrt t\,dx$” — keverék, ilyen integrál nincs. A $t$-re '
-         r'áttérve a $dx$-et is $dt$-vel kell kifejezni.</p>'
-         r'<p><b>2.</b> A visszahelyettesítés elmarad: az eredmény $x$ függvénye, nem $t$-é.</p>'),
+         (
+             '<p><b>1.</b> A $dx$ átírása elmarad: „$\\int x^2\\sqrt t\\,dx$” — az átírás még nem kész: az új '
+             'változó mellett a régi változó és a régi differenciál is ott maradt. A $t$-re áttérve a $dx$-et is '
+             '$dt$-vel kell kifejezni.</p><p><b>2.</b> A visszahelyettesítés elmarad: az eredmény $x$ függvénye, '
+             'nem $t$-é.</p>'
+         )),
    NEHEZ(1, 2, "helyettesítés, amikor a belső függvényt magadnak kell megtalálnod"),
-   doboz("erdekesseg", "Ahol a matematika megáll",
-         r'<p>A deriválás mindig sikerül: minden elemi függvény deriváltja elemi. Az integrálásnál nem így van. Az '
-         r'$\int e^{-x^2}dx$ primitív függvénye <b>létezik</b>, de semmilyen véges képlettel nem írható fel az elemi '
-         r'függvényekből (J. Liouville bizonyította a 19. században). Pedig a $y=e^{-x^2}$ a statisztika híres '
-         r'<b>Gauss-féle harang görbéje</b> — az alatta lévő területeket ezért táblázatból vagy számítógéppel kapjuk.</p>',
+   doboz("erdekesseg", 'Amikor az elemi függvények nem elegendők',
+         (
+             '<p>Egy elemi függvény deriváltja is elemi függvény ott, ahol a derivált létezik. Az integrálásnál '
+             'nem így van. Az $\\int e^{-x^2}dx$ primitív függvénye <b>létezik</b>, de semmilyen véges képlettel '
+             'nem írható fel az elemi függvényekből (J. Liouville bizonyította a 19. században). Pedig a '
+             '$y=e^{-x^2}$ a statisztika híres <b>Gauss-féle harang görbéje</b> — az alatta lévő területeket '
+             'ezért táblázatból vagy számítógéppel kapjuk.</p>'
+         ),
          hid="erdekesseg-gauss"),
    GY(FA + "#alap-9", "A 9–12", FA + "#kozep-6", "K 6–10"),
    brief('<b>SZVETI:</b> A határozatlan integrál egy egész sereget ad vissza, nem engem. <b>Nagol:</b> Mert nincs '
@@ -366,8 +393,10 @@ lapok = [
      kovetkezo=("tananyag-helyettesites.html", "Helyettesítéses integrálás")),
  lap(**T, fajl="tananyag-helyettesites.html",
      cim="Nagol trükkje — helyettesítéses integrálás",
-     alcim="Lineáris belső függvény, az f′/f és az fⁿ·f′ minta, az általános helyettesítés lépései — és egy "
-           "integrál, amely nem számolható ki.",
+     alcim=(
+               'Lineáris belső függvény, az f′/f és az fⁿ·f′ minta, az általános helyettesítés lépései — és egy '
+               'integrál, amelynek primitív függvénye nem írható fel elemi függvényekkel.'
+           ),
      chip=KUL + " · 3/6", szakaszok=A3,
      elozo=("tananyag-integraltablazat.html", "Az integráltáblázat"),
      kovetkezo=("tananyag-hatarozott-integral.html", "A határozott integrál")),

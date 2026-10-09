@@ -39,7 +39,7 @@
 
     <p class="lead">Mekkora az <span class="math inline">\(f(x)=\frac{x^2}{3}+1\)</span> grafikonja alatti terület a <span class="math inline">\([0;\,3]\)</span> intervallumon? Téglalapot, háromszöget ki tudunk számolni — görbe vonalú alakzatot még nem. Ezért <b>téglalapokkal közelítünk</b>.</p>
 
-    <p>Osszuk az intervallumot <span class="math inline">\(n\)</span> egyenlő részre. Minden részre állítsunk egy téglalapot: a <b>kisebbik</b> végpontbeli függvényérték magasságával a görbe alatt maradunk (<b>alsó összeg</b>), a <b>nagyobbikkal</b> fölé nyúlunk (<b>felső összeg</b>). A keresett terület a kettő közé esik.</p>
+    <p>Osszuk az intervallumot <span class="math inline">\(n\)</span> egyenlő részre. Ennél a növekvő függvénynél minden részre állítsunk egy téglalapot: a <b>kisebbik</b> végpontbeli függvényérték magasságával a görbe alatt maradunk (<b>alsó összeg</b>), a <b>nagyobbikkal</b> fölé nyúlunk (<b>felső összeg</b>). A keresett terület a kettő közé esik.</p>
 
     <div class="svgcard interaktiv" data-mod="osszeg" data-poly="1.0,0.0,0.3333333333333333" data-xr="-0.4,3.4" data-yr="-0.5,4.6" data-w="360" data-h="250" data-x0="0.0" data-ab="0,3" data-pontos="6">
     <svg viewBox="0 0 360 250" width="360" height="250" role="img" aria-label="Interaktív ábra: az f(x) = x²/3 + 1 görbe alatti terület a [0; 3] intervallumon, n darab téglalappal közelítve; a csúszka az n-et állítja">
@@ -91,7 +91,7 @@
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Arkhimédész parabolaszelete</p>
-      <p>Arkhimédész (Kr. e. 3. század) a parabolaszelet területét egyre több, egyre kisebb háromszöggel töltötte ki, és megmutatta, hogy a terület a beírt háromszög <span class="math inline">\(\frac43\)</span>-a. Ez a „kimerítés módszere” — a határozott integrál ősének tekintjük. A <span class="math inline">\(\int\)</span> jel egy megnyújtott S: a latin <i>summa</i>, összeg.</p>
+      <p>Arkhimédész (Kr. e. 3. század) a parabolaszelet területét egyre több, egyre kisebb háromszöggel töltötte ki, és megmutatta, hogy a terület annak a beírt háromszögnek a <span class="math inline">\(\frac43\)</span>-a, amelynek harmadik csúcsában az érintő párhuzamos a szeletet határoló húrral. Ez a „kimerítés módszere” — a határozott integrál ősének tekintjük. A <span class="math inline">\(\int\)</span> jel egy megnyújtott S: a latin <i>summa</i>, összeg.</p>
     </div>
 
     <!-- media:begin 4e04-mnt-35 -->
@@ -157,7 +157,7 @@
 
     <div class="doboz erdekesseg">
       <p class="cim"><span class="ikon">💡</span> Út a sebesség–idő grafikon alatt</p>
-      <p>Ha egy test sebességét az idő függvényében ábrázoljuk, a grafikon alatti terület a <b>megtett út</b>: <span class="math inline">\(s=\int_{t_1}^{t_2}v(t)\,dt\)</span>. Ha a sebesség negatív (visszafelé halad), az a rész negatívan számít — így az integrál az elmozdulást adja.</p>
+      <p>Egyenes vonalú mozgásnál a sebességfüggvény integrálja az <b>előjeles elmozdulást</b> adja: <span class="math inline">\(\Delta s=\int_{t_1}^{t_2}v(t)\,dt\)</span>. Ha a test közben visszafelé halad, a negatív sebességű szakasz levonódik. A <b>megtett út</b> ehelyett <span class="math inline">\(\int_{t_1}^{t_2}|v(t)|\,dt\)</span>: ehhez a pozitív és a negatív részek területét egyaránt pozitívan számítjuk.</p>
     </div>
 
     <div class="gyakorolj"><span class="ikon">🎯</span><div><p><b>Gyakorolj!</b> Válaszd ki a bevetésed:</p><div class="savok"><a class="sav henrik" href="feladatok-hatarozott-integral.html#alap-1">🐶 Véd-eb nyomravezető <span class="cimke">A 1–2</span></a><a class="sav bruno" href="feladatok-hatarozott-integral.html#kozep-1">⚔️ Maximális erőbedobás <span class="cimke">K 1</span></a></div></div></div>

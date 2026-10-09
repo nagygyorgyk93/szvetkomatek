@@ -236,12 +236,15 @@ SVG_KETERME = svg_oszlop(["0", "1", "2"], [0.25, 0.5, 0.25], ymax=0.6, lepes=0.2
 # ---------------------------------------------------------------- A1
 A1 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Mr. Szürreál</b> (I.V.H.): Megnyitom a meghallgatást. A 4. évfolyam érettségije véletlen kísérlet, '
-         'kimenetele: bukás. Javaslom a teljes évfolyam megmetszését. <b>Véd Vilmos</b> (a védelem): Tiltakozom! Előbb '
-         'mondja meg, milyen kimenetelek vannak egyáltalán. Itt van például két érme. 🌮 <i>Burek-matek:</i> 0, 1 vagy '
-         '2 fej — három kimenetel, igaz? <b>Nagol</b> (szakértő): Nem. Ha az első érme fej és a második írás, az más, '
-         'mint fordítva. Négy kimenetel van: FF, FI, IF, II. <b>SZVETI</b> (jegyzőkönyv): Rögzítve. A védő az első '
-         'percben tévedett.'),
+   brief((
+             '<b>Mr. Szürreál</b> (I.V.H.): Megnyitom a meghallgatást. A 4. évfolyam érettségije véletlen '
+             'kísérlet, kimenetele: bukás. Javaslom a teljes évfolyam megmetszését. <b>Véd Vilmos</b> (a '
+             'védelem): Tiltakozom! Előbb mondja meg, milyen kimenetelek vannak egyáltalán. Itt van például két '
+             'érme. 🌮 <i>Burek-matek:</i> 0, 1 vagy 2 fej — három kimenetel, igaz? <b>Nagol</b> (szakértő): A '
+             'fejek száma háromféle lehet. Ha viszont a két érme eredményét külön rögzítjük, és az első érme fej '
+             'és a második írás, az más, mint fordítva. Négy kimenetel van: FF, FI, IF, II. <b>SZVETI</b> '
+             '(jegyzőkönyv): Rögzítve. A védő az első percben tévedett.'
+         )),
  ]),
  ("Kísérlet és kimenetel", [
    '<p class="lead">A valószínűségszámítás olyan helyzetekről szól, amelyeknek az eredményét előre nem tudjuk — de azt '
@@ -356,9 +359,12 @@ A2 = [
          'véve.'),
  ]),
  ("Sok dobás után", [
-   '<p class="lead">Egy egyszerű kísérlet: az osztályban mindenki tízszer feldob egy pénzérmét, és összesítjük a fejek '
-   'számát. Egy tanuló tíz dobásából bármi kijöhet — 3 fej, 7 fej —, az osztály néhány száz dobásánál viszont a fejek '
-   'aránya meglepően közel lesz a feléhez. Próbáld ki a szimulátorral is!</p>',
+   (
+       '<p class="lead">Egy egyszerű kísérlet: az osztályban mindenki tízszer feldob egy pénzérmét, és '
+       'összesítjük a fejek számát. Egy tanuló tíz dobásából 3 fej vagy 7 fej is kijöhet. Szabályos érme '
+       'egymástól független dobásainál sok dobás után a fejek aránya nagy valószínűséggel közel lesz a '
+       'feléhez, de ezt egyetlen kísérletsor sem garantálja. Próbáld ki a szimulátorral is!</p>'
+   ),
    doboz("definicio", "Gyakoriság és relatív gyakoriság",
          r'<p>Ha egy kísérletet $n$-szer végzünk el, és közben az $A$ esemény $k$-szor következik be, akkor $k$ az $A$ '
          r'<b>gyakorisága</b>, a $\dfrac kn$ hányados pedig a <b>relatív gyakorisága</b>. Nyilván '
@@ -368,12 +374,15 @@ A2 = [
    TABLA(["ki dobott", "dobások", "fej", "relatív gyakoriság"], tort_sorok),
    FORRAS("penz"),
    doboz("definicio", "A valószínűség statisztikai értelmezése",
-         r'<p>Ha egy kísérlet sokszori ismétlésekor egy esemény relatív gyakorisága egy szám körül ingadozik, és az '
-         r'ismétlések számának növelésével egyre kevésbé tér el tőle, akkor ezt a számot az esemény '
-         r'<b>valószínűségének</b> nevezzük. Jele $P(A)$ (a <i>probabilitas</i>, valószínűség szóból).</p>',
+         (
+             '<p>Az esemény valószínűségét sok, azonos feltételek mellett végzett, egymástól független ismétlés '
+             'relatív gyakoriságával <b>becsülhetjük</b>. Sok ismétlésnél a relatív gyakoriság rendszerint a '
+             'valószínűség közelében ingadozik; nem kell minden új kísérlet után közelebb kerülnie hozzá. A '
+             'valószínűség jele $P(A)$ (a latin <i>probabilitas</i>, valószínűség szóból).</p>'
+         ),
          hid="def-statisztikai-valoszinuseg"),
    doboz("pelda", "I.V.H. Akták — fiú vagy lány?",
-         '<p>Szerbiában évente 60–65 ezer gyermek születik. Az újszülöttek között a fiúk aránya évről évre:</p>'
+         '<p>Szerbiában 2019–2024 között évente 60–65 ezer gyermek született. Az újszülöttek között a fiúk aránya évről évre:</p>'
          + TABLA(["év", "született", "ebből fiú", "a fiúk aránya"], szul_sorok) + FORRAS("eurostat")
          + '<p>Hat év alatt a fiúk aránya $0{,}513$ és $0{,}516$ között mozog. Annak a valószínűsége, hogy egy '
            'Szerbiában született újszülött fiú, nagyjából $0{,}515$ — nem pontosan $\\frac12$, hanem kicsit több (ez '
@@ -400,8 +409,11 @@ A2 = [
          r'esemény valószínűsége $$P(A)=\frac{\text{az }A\text{ szempontjából kedvező kimenetelek száma}}'
          r'{\text{az összes kimenetel száma}}=\frac kn.$$</p>', hid="tetel-klasszikus"),
    doboz("pelda", "I.V.H. Akták — két kocka",
-         r'<p>Két kockával dobunk. Mekkora a valószínűsége, hogy a dobott számok összege 7? A 36 kimenetel egyformán '
-         r'valószínű; a táblázat cellájában most a két szám összege áll, a 7-esek kiemelve:</p>'
+         (
+             '<p>Két szabályos kockával, egymástól függetlenül dobunk. Mekkora a valószínűsége, hogy a dobott '
+             'számok összege 7? A 36 kimenetel egyformán valószínű; a táblázat cellájában most a két szám összege '
+             'áll, a 7-esek kiemelve:</p>'
+         )
          + kocka_tabla(kiemel=lambda i, j: i + j == 7)
          + r'<p>Az összeg hat cellában 7: (1;6), (2;5), (3;4), (4;3), (5;2), (6;1). Tehát '
            r'$$P(\text{összeg}=7)=\frac6{36}=\frac16.$$ Az összeg 2 viszont csak egyféleképpen jöhet ki (1;1): '
@@ -416,14 +428,18 @@ A2 = [
         jo="✔ 36 egyformán valószínű számpár, ebből 6 adja a 7-et: $\\frac6{36}=\\frac16$.",
         nem="✘ A 11 lehetséges összeg nem egyformán valószínű. A 36 számpárból 6 ad 7-et: $\\frac6{36}=\\frac16$."),
    doboz("erdekesseg", "Egy szerencsejáték, amelyből tudományág lett",
-         '<p>A valószínűségszámítás 1654-ben kezdődött: Antoine Gombaud, de Méré lovag kockajátékokról tett fel '
-         'kérdéseket Blaise Pascalnak, aki Pierre de Fermat-val levélben dolgozta ki a választ. A klasszikus '
-         'valószínűséget Pierre-Simon Laplace foglalta össze 1812-ben. De Méré egyik kérdésére az A3 végén '
-         'visszatérünk.</p>'),
+         (
+             '<p>A modern valószínűségszámítás egyik fontos kiindulópontja az 1654-es levelezés: Antoine Gombaud, '
+             'de Méré lovag kockajátékokról tett fel kérdéseket Blaise Pascalnak, aki Pierre de Fermat-val '
+             'levélben dolgozta ki a választ. A klasszikus valószínűséget Pierre-Simon Laplace foglalta össze '
+             '1812-ben. De Méré egyik kérdésére az A3 végén visszatérünk.</p>'
+         )),
  ]),
  ("A valószínűség tulajdonságai", [
-   '<p class="lead">A relatív gyakoriság és a klasszikus valószínűség is 0 és 1 közötti hányados — ebből következnek '
-   'azok a szabályok, amelyek minden valószínűségre igazak.</p>',
+   (
+       '<p class="lead">A relatív gyakoriság és a klasszikus valószínűség példái az alábbi általános '
+       'szabályokat szemléltetik. Ezek minden valószínűségre érvényesek.</p>'
+   ),
    doboz("tetel", "Alaptulajdonságok és az ellentett esemény",
          r'<p>$$0\le P(A)\le1,\qquad P(\Omega)=1,\qquad P(\emptyset)=0,\qquad P(\overline{A})=1-P(A).$$ Az utolsó a '
          r'leghasznosabb: ha egy esemény valószínűségét nehéz kiszámolni, az ellentettjéé gyakran könnyű. Két kockánál '
@@ -433,9 +449,12 @@ A2 = [
          r'kimeneteleik — a metszetet egyszer le kell vonni, különben kétszer számolnánk: '
          r'$$P(A\cup B)=P(A)+P(B)-P(A\cap B).$$</p>', hid="tetel-unio"),
    doboz("pelda", "I.V.H. Akták — király vagy kőr",
-         r'<p>Egy 52 lapos francia kártyacsomagból egy lapot húzunk. Mekkora a valószínűsége, hogy király vagy kőr? '
-         r'Király 4 van, kőr 13, de a kőr király mindkettőben benne van: '
-         r'$$P=\frac4{52}+\frac{13}{52}-\frac1{52}=\frac{16}{52}=\frac4{13}\approx0{,}308.$$</p>', hid="pelda-kiraly"),
+         (
+             '<p>Egy 52 lapos francia kártyacsomagból egy lapot húzunk úgy, hogy minden lap egyforma eséllyel '
+             'kerülhet hozzánk. Mekkora a valószínűsége, hogy király vagy kőr? Király 4 van, kőr 13, de a kőr '
+             'király mindkettőben benne van: $$P=\\frac4{52}+\\frac{13}{52}-\\frac1{52}=\\frac{16}{52}=\\frac4{13}\\appr'
+             'ox0{,}308.$$</p>'
+         ), hid="pelda-kiraly"),
    doboz("csapda", "Véd Vilmos csapda — a kétszer számolt kőr király",
          r'<p>Vilmos összeadta: $\frac4{52}+\frac{13}{52}=\frac{17}{52}$. A kőr királyt kétszer számolta. A puszta '
          r'összeadás csak kizáró eseményeknél helyes.</p>'),
@@ -450,11 +469,15 @@ A2 = [
    '<p class="lead">Ha az összes és a kedvező kimenetelek száma nagy, a <a href="' + KOMB + 'index.html">kombinatorika</a> '
    'számolja meg őket helyettünk.</p>',
    doboz("pelda", "I.V.H. Akták — két golyó",
-         r'<p>Egy dobozban 5 piros és 3 fehér golyó van; egyszerre kihúzunk kettőt. Mekkora a valószínűsége, hogy '
-         r'mindkettő piros?</p><p>Az összes kimenetel a 8 golyóból választott párok száma, $\binom82=28$; a kedvezők '
-         r'az 5 pirosból választott párok, $\binom52=10$: $$P(\text{két piros})=\frac{10}{28}=\frac5{14}\approx0{,}357.$$ '
-         r'Pontosan egy piros: egy piros ÉS egy fehér, $5\cdot3=15$ pár, tehát $\frac{15}{28}$. Két fehér: '
-         r'$\frac{\binom32}{28}=\frac3{28}$. A három valószínűség összege $\frac{10+15+3}{28}=1$ — ahogy kell.</p>',
+         (
+             '<p>Egy dobozban 5 piros és 3 fehér golyó van; egyszerre, véletlenszerűen kihúzunk kettőt, minden '
+             'golyópár azonos esélyével. Mekkora a valószínűsége, hogy mindkettő piros?</p><p>Az összes kimenetel '
+             'a 8 golyóból választott párok száma, $\\binom82=28$; a kedvezők az 5 pirosból választott párok, '
+             '$\\binom52=10$: $$P(\\text{két piros})=\\frac{10}{28}=\\frac5{14}\\approx0{,}357.$$ Pontosan egy piros: '
+             'egy piros ÉS egy fehér, $5\\cdot3=15$ pár, tehát $\\frac{15}{28}$. Két fehér: '
+             '$\\frac{\\binom32}{28}=\\frac3{28}$. A három valószínűség összege $\\frac{10+15+3}{28}=1$ — ahogy '
+             'kell.</p>'
+         ),
          hid="pelda-golyok"),
    doboz("pelda", "I.V.H. Akták — a lottó",
          r'<p>A szerbiai Loto 7/39-en 39 számból hetet húznak. Egy szelvény akkor telitalálat, ha mind a hét szám '
@@ -543,10 +566,12 @@ A3 = [
          r'<p>Valós adat: a számítógépes ismeret Szerbiában, 2022-ben, a 15 éves és idősebb lakosok körében:</p>'
          + SG_TABLA + FORRAS("popis")
          + r'<p>$P(\text{ismeri})\approx' + K(p_ism) + r'$, $P(\text{ismeri}\mid\text{nő})\approx' + K(p_ism_no)
-         + r'$, $P(\text{ismeri}\mid\text{férfi})\approx' + K(p_ism_fe) + r'$. A feltétel alig változtat: a '
-           r'számítógépes ismeret és a nem közel független (a különbség kb. 2 százalékpont). A Titanicon a túlélés és a '
-           r'nem erősen függött: $0{,}727$ és $0{,}191$ a $0{,}382$ helyett. Valós adatoknál a pontos egyenlőség '
-           r'szinte sosem teljesül — az a kérdés, mekkora az eltérés.</p>', hid="pelda-szamitogep"),
+         + r'$, $P(\text{ismeri}\mid\text{férfi})\approx' + K(p_ism_fe) + (
+                                                                               '$. A feltétel alig változtat: az „ismeri a számítógépet” kategória aránya a két csoportban közeli '
+                                                                               '(a különbség kb. 2 százalékpont). A Titanicon a túlélés és a nem erősen függött: $0{,}727$ és '
+                                                                               '$0{,}191$ a $0{,}382$ helyett. Valós adatoknál a pontos egyenlőség szinte sosem teljesül — az a '
+                                                                               'kérdés, mekkora az eltérés.</p>'
+                                                                           ), hid="pelda-szamitogep"),
    doboz("csapda", "Véd Vilmos csapda — kizáró nem ugyanaz, mint független",
          r'<p>Vilmos szerint az „1-est dobunk” és a „6-ost dobunk” független, „hiszen semmi közük egymáshoz”. Épp '
          r'ellenkezőleg: kizárják egymást, tehát ha tudjuk, hogy 1-es jött, a 6-os <b>lehetetlen</b>. '
@@ -578,20 +603,24 @@ A3 = [
          r'Fermat-t is foglalkoztatta — és a „legalább egy” képlete adja a választ.</p>'),
    NEHEZ(1, "feltételes valószínűség kétdimenziós táblázatból — és döntés"),
    GY("#alap-7", "A 7–8", "#kozep-5", "K 5–6"),
-   brief('<b>Véd Vilmos:</b> Megvan a kiút! Ha egy kísérlet független, újra és újra megismételhetem — mint egy '
-         'büntetődobást. <b>Nagol:</b> Akkor jöhet a binomiális valószínűség. <b>Mr. Szürreál:</b> Ismétlés. Az '
-         'I.V.H. kedvenc szava.', outro=True),
+   brief((
+             '<b>Véd Vilmos:</b> Megvan a kiút! Ha a kísérletek egymástól függetlenek, és a siker esélye nem '
+             'változik, számolhatok az ismétléseikkel — például egymást követő büntetődobásoknál. <b>Nagol:</b> '
+             'Akkor jöhet a binomiális valószínűség. <b>Mr. Szürreál:</b> Ismétlés. Az I.V.H. kedvenc szava.'
+         ), outro=True),
  ]),
 ]
 
 # ---------------------------------------------------------------- A4
 A4 = [
  ("📡 Küldetés-eligazítás", [
-   brief('<b>Véd Vilmos:</b> Tisztelt bizottság, a védelem tanúja Nikola Jokić! A 2024–25-ös NBA-alapszakaszban '
-         'büntetőinek 80,0%-át dobta be. Öt büntetőből tehát pontosan négy megy be. Biztosan. <b>Mr. Szürreál:</b> A '
-         'bizonyosság hivatali fogalom, kadét. <b>Nagol:</b> A 80% azt jelenti, hogy egy dobás $0{,}8$ '
-         'valószínűséggel sikeres. Hogy ötből pontosan négy menjen be, annak kiszámolható az esélye — és korántsem '
-         'biztos.'),
+   brief((
+             '<b>Véd Vilmos:</b> Tisztelt bizottság, a védelem tanúja Nikola Jokić! A 2024–25-ös '
+             'NBA-alapszakaszban büntetőinek 80,0%-át dobta be. Öt büntetőből tehát pontosan négy megy be. '
+             'Biztosan. <b>Mr. Szürreál:</b> A bizonyosság hivatali fogalom, kadét. <b>Nagol:</b> A szezon 80%-os '
+             'arányát a modellben egy dobás $0{,}8$ siker-valószínűségének vesszük. Hogy ötből pontosan négy '
+             'menjen be, annak kiszámolható az esélye — és korántsem biztos.'
+         )),
  ]),
  ("Bernoulli-kísérletsorozat", [
    '<p class="lead">Sok helyzetben ugyanazt a kísérletet ismételjük meg, és minden alkalommal csak az érdekel, hogy '
@@ -604,11 +633,14 @@ A4 = [
          hid="def-bernoulli"),
    abra(SVG_FA3, "Három büntető: minden elágazásnál S (siker, $0{,}8$) vagy K (kudarc, $0{,}2$). A pontosan két "
                  "sikert adó három ág zöld."),
-   r'<p>Az ágak mentén szorzunk, mert a dobások függetlenek. Pontosan két siker háromféle sorrendben jöhet: SSK, SKS, '
-   r'KSS — ahány helyre a kudarc kerülhet, $\binom32=3$. Mindhárom ág valószínűsége $0{,}8\cdot0{,}8\cdot0{,}2=0{,}128$, '
-   r'tehát $$P(\text{pontosan 2 siker a 3-ból})=3\cdot0{,}8^2\cdot0{,}2=0{,}384.$$ A büntetőket függetlennek és azonos '
-   r'$p$-jűnek tekintjük — ez <b>modell</b>. A valóságban a fáradtság vagy a meccs állása is számíthat, a modell mégis '
-   r'jól közelít.</p>',
+   (
+       '<p>Az ágak mentén szorzunk, mert a dobások függetlenek. Pontosan két siker háromféle sorrendben '
+       'jöhet: SSK, SKS, KSS — ahány helyre a kudarc kerülhet, $\\binom32=3$. Mindhárom ág valószínűsége '
+       '$0{,}8\\cdot0{,}8\\cdot0{,}2=0{,}128$, tehát $$P(\\text{pontosan 2 siker a '
+       '3-ból})=3\\cdot0{,}8^2\\cdot0{,}2=0{,}384.$$ A büntetőket függetlennek és azonos $p$-jűnek tekintjük '
+       '— ez <b>modell</b>. A valóságban a fáradtság vagy a meccs állása is számíthat, a modell pontosságát '
+       'külön adatokkal lehetne ellenőrizni.</p>'
+   ),
  ]),
  ("A binomiális képlet", [
    doboz("tetel", "Binomiális valószínűség",
@@ -643,14 +675,22 @@ A4 = [
    '<p class="lead">A „legalább” és a „legfeljebb” kérdésekben több $k$ valószínűségét adjuk össze — vagy az ellentett '
    'eseményt számoljuk ki.</p>',
    doboz("pelda", "I.V.H. Akták — legalább",
-         r'<p>Jokić öt büntetőjéből legalább négy megy be: $$P_5(4)+P_5(5)=0{,}4096+0{,}32768=0{,}73728.$$</p>'
-         r'<p>Egy szerbiai újszülött kb. $0{,}516$ valószínűséggel fiú (a 2024-es adat, A2). Három újszülöttből '
-         r'legalább egy fiú: $$1-P(\text{egy sem})=1-0{,}484^3\approx1-0{,}113=0{,}887.$$</p>', hid="pelda-legalabb"),
+         (
+             '<p>Jokić öt büntetőjéből legalább négy megy be: '
+             '$$P_5(4)+P_5(5)=0{,}4096+0{,}32768=0{,}73728.$$</p><p>Egy szerbiai újszülött kb. $0{,}516$ '
+             'valószínűséggel fiú (a 2024-es adat, A2). Ha három szülésnél az újszülött neme egymástól független, '
+             'és mindháromnál ezt a valószínűséget használjuk, legalább egy fiú esélye: $$1-P(\\text{egy '
+             'sem})=1-0{,}484^3\\approx1-0{,}113=0{,}887.$$</p>'
+         ), hid="pelda-legalabb"),
    doboz("pelda", "I.V.H. Akták — gyanús kocka",
-         r'<p>Mr. Szürreál kockája tíz dobásból hatszor mutatott hatost. Ha a kocka szabályos, ennek a valószínűsége '
-         r'$$P_{10}(6)=\binom{10}6\left(\frac16\right)^6\left(\frac56\right)^4=\frac{210\cdot625}{60\,466\,176}'
-         r'\approx0{,}0022.$$ Szabályos kockánál ez ezer próbálkozásból kb. kétszer fordulna elő. Ez még nem '
-         r'bizonyíték, de erős gyanú: a valószínűség segít eldönteni, mennyire meglepő egy megfigyelt eredmény.</p>',
+         (
+             '<p>Mr. Szürreál kockája tíz dobásból hatszor mutatott hatost. Ha a kocka szabályos, ennek a '
+             'valószínűsége $$P_{10}(6)=\\binom{10}6\\left(\\frac16\\right)^6\\left(\\frac56\\right)^4=\\frac{210\\cdot625}'
+             '{60\\,466\\,176}\\approx0{,}0022.$$ Szabályos kockánál ez ezer, egyenként tíz dobásból álló sorozatban '
+             'átlagosan kb. kétszer fordulna elő. Ez önmagában nem bizonyítja, hogy a kocka szabálytalan, de '
+             'további vizsgálatra ad okot: a valószínűség segít eldönteni, mennyire meglepő egy megfigyelt '
+             'eredmény.</p>'
+         ),
          hid="pelda-gyanus-kocka"),
    kviz('Egy kockával hatszor dobunk. Mekkora a valószínűsége, hogy legalább egy hatos lesz?',
         ['$1-\\left(\\frac56\\right)^6\\approx0{,}665$', '$6\\cdot\\frac16=1$', '$\\left(\\frac16\\right)^6$',
@@ -669,7 +709,7 @@ A4 = [
 
 # ---------------------------------------------------------------- A5
 hz_p = [f / HZ["ossz"] for f in HZ["tag_1_5_6plusz"]]
-HZ_TABLA = TABLA(["$x_i$ (tagok száma)", "1", "2", "3", "4", "5", "6 vagy több"], [
+HZ_TABLA = TABLA(['taglétszám vagy taglétszámcsoport', "1", "2", "3", "4", "5", "6 vagy több"], [
     ["háztartás"] + [ezres(f) for f in HZ["tag_1_5_6plusz"]],
     ["$p_i$"] + ["$" + K(q) + "$" for q in hz_p]])
 STRAT_TABLA = TABLA(["A stratégia: nyereség", "valószínűség", "", "B stratégia: nyereség", "valószínűség"], [
@@ -688,9 +728,12 @@ A5 = [
    '<p class="lead">Sok kísérlet kimenetele eleve szám (a dobott pontszám), máskor mi rendelünk számot a kimenetelhez: '
    'hány fej lett, mennyi a nyereség.</p>',
    doboz("definicio", "Valószínűségi változó",
-         r'<p>A <b>valószínűségi változó</b> a kísérlet minden kimeneteléhez egy valós számot rendel; jele többnyire '
-         r'$X$. Ha véges sok értéke van ($x_1,x_2,\ldots,x_n$), akkor <b>diszkrét</b>. Az <b>eloszlása</b> megmondja, '
-         r'melyik értéket mekkora valószínűséggel veszi fel: $p_i=P(X=x_i)$.</p>', hid="def-valoszinusegi-valtozo"),
+         (
+             '<p>A <b>valószínűségi változó</b> a kísérlet minden kimeneteléhez egy valós számot rendel; jele '
+             'többnyire $X$. Ha véges sok lehetséges értéke van ($x_1,x_2,\\ldots,x_n$), akkor <b>diszkrét</b>; '
+             'megszámlálhatóan végtelen sok érték is lehet diszkrét eloszlású, de itt véges példákkal dolgozunk. '
+             'Az <b>eloszlása</b> megmondja, melyik értéket mekkora valószínűséggel veszi fel: $p_i=P(X=x_i)$.</p>'
+         ), hid="def-valoszinusegi-valtozo"),
    doboz("pelda", "I.V.H. Akták — fejek száma",
          r'<p>Két érmét dobunk fel, $X$ a fejek száma. A négy egyformán valószínű kimenetel (FF, FI, IF, II) közül '
          r'$X=2$ egynél, $X=1$ kettőnél, $X=0$ egynél teljesül:</p>'
@@ -700,10 +743,15 @@ A5 = [
          r'<p>Minden kimenetelhez pontosan egy érték tartozik, ezért a valószínűségek összege mindig '
          r'$$p_1+p_2+\ldots+p_n=1.$$</p>', hid="tetel-eloszlas"),
    doboz("pelda", "I.V.H. Akták — egy szabadkai háztartás",
-         r'<p>A 2022-es népszámlálás szerint Szabadkán ' + E3(HZ["ossz"]) + r' háztartás volt. Válasszunk ki egyet '
-         r'véletlenszerűen, és legyen $X$ a taglétszáma:</p>' + HZ_TABLA + FORRAS("popis")
-         + r'<p>Itt a valószínűségek a relatív gyakoriságok — az A2 statisztikai valószínűsége. Az utolsó érték '
-           r'„6 vagy több”; erről a következő szakaszban még lesz szó.</p>', hid="pelda-haztartas"),
+         '<p>A 2022-es népszámlálás szerint Szabadkán $' + E3(HZ["ossz"]) + (
+                                                                                     '$ háztartás volt. Válasszunk ki egyet az összes közül egyenlő eséllyel, és legyen $X$ a '
+                                                                                     'taglétszáma. A táblázat a csoportosított eloszlást mutatja:</p>'
+                                                                                 ) + HZ_TABLA + FORRAS("popis")
+         + (
+               '<p>Itt a darabszámokból pontos kiválasztási valószínűségeket kapunk. Az utolsó oszlop nem egyetlen '
+               'értékhez tartozik: a $P(X\\ge6)$ valószínűséget adja meg. A következő szakaszban a várható értéket '
+               'úgy közelítjük alulról, hogy a „6 vagy több” helyett 6-tal számolunk.</p>'
+           ), hid="pelda-haztartas"),
    kviz('Egy valószínűségi változó eloszlása: $P(X=1)=0{,}2$, $P(X=2)=0{,}5$, $P(X=3)=p$, és más értéket nem vesz '
         'fel. Mennyi a $p$?', ['$0{,}3$', '$0{,}7$', 'bármennyi lehet', '$0{,}5$'], 0,
         jo="✔ $0{,}2+0{,}5+p=1$, tehát $p=0{,}3$.",
@@ -735,10 +783,13 @@ A5 = [
  ]),
  ("Megéri? — döntés várható értékkel", [
    doboz("pelda", "I.V.H. Akták — Mr. Szürreál ajánlata",
-         r'<p>Legyen $X$ a nyereség egy játékban. Hatosnál $+400$ kredit (az 500-ból 100 a saját tétünk volt), '
-         r'máskor $-100$: $$E(X)=400\cdot\frac16+(-100)\cdot\frac56=\frac{400-500}6\approx-16{,}7.$$ Játékonként '
-         r'átlagosan 16,7 kreditet veszítünk — az ajánlat Mr. Szürreálnak éri meg. Az „ötszörös nyeremény” azért '
-         r'csalóka, mert a hatos csak minden hatodik dobásnál jön.</p>', hid="pelda-ajanlat"),
+         (
+             '<p>Legyen $X$ a nyereség egy játékban. Hatosnál $+400$ kredit (az 500-ból 100 a saját tétünk volt), '
+             'máskor $-100$: $$E(X)=400\\cdot\\frac16+(-100)\\cdot\\frac56=\\frac{400-500}6\\approx-16{,}7.$$ '
+             'Játékonként átlagosan 16,7 kreditet veszítünk — az ajánlat Mr. Szürreálnak éri meg. Az „ötszörös '
+             'nyeremény” azért csalóka, mert a hatos esélye dobásonként $\\frac16$; nem szabályos időközönként '
+             'következik be.</p>'
+         ), hid="pelda-ajanlat"),
    doboz("pelda", "I.V.H. Akták — két stratégia",
          r'<p>A kadétok két túlélési stratégia közül választhatnak; a nyereség (pontban) és a valószínűségek:</p>'
          + STRAT_TABLA
@@ -749,7 +800,7 @@ A5 = [
          r'<p>Vilmos súlyozás nélkül átlagolta az értékeket: az A-nál $\frac{30+10-20}3\approx6{,}7$, a B-nél '
          r'$\frac{60+0-30}3=10$, és a B-t választotta. Csakhogy az A-nál a $-20$ ritka ($0{,}2$), a $30$ gyakori '
          r'($0{,}5$): a valószínűségekkel súlyozni kell.</p>'),
-   doboz("erdekesseg", "Miért nyer mindig a kaszinó?",
+   doboz("erdekesseg", 'Miért kedvez a várható érték a kaszinónak?',
          '<p>A szerencsejátékokat úgy tervezik, hogy a játékos nyereségének várható értéke negatív legyen, a szervezőé '
          'pedig pozitív. Egy-egy játékos nyerhet, de sok játékban az átlag a várható érték felé tart — a szervező '
          'javára.</p>'),
@@ -780,7 +831,7 @@ A5 = [
        ["egyformán valószínű kimenetelek", "klasszikus valószínűség", "$P(A)=\\dfrac kn$"],
        ["nem következik be", "ellentett esemény", "$P(\\overline{A})=1-P(A)$"],
        ["$A$ vagy $B$", "unió", "$P(A\\cup B)=P(A)+P(B)-P(A\\cap B)$"],
-       ["„tudjuk, hogy $B$”", "feltételes valószínűség", "$P(A\\mid B)=\\dfrac{P(A\\cap B)}{P(B)}$"],
+       ['„tudjuk, hogy $B$”, $P(B)>0$', "feltételes valószínűség", "$P(A\\mid B)=\\dfrac{P(A\\cap B)}{P(B)}$"],
        ["$A$ és $B$, függetlenek", "szorzás", "$P(A\\cap B)=P(A)\\cdot P(B)$"],
        ["legalább egy", "ellentett esemény", "$1-P(\\text{egyik sem})$"],
        ["pontosan $k$ siker $n$-ből", "binomiális valószínűség", "$\\binom nk p^k(1-p)^{n-k}$"],

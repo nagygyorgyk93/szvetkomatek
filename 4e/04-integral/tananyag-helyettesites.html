@@ -26,7 +26,7 @@
 </nav>
 <div class="hero">
   <h1>Nagol trükkje — helyettesítéses integrálás</h1>
-  <p class="alcim">Lineáris belső függvény, az f′/f és az fⁿ·f′ minta, az általános helyettesítés lépései — és egy integrál, amely nem számolható ki.</p>
+  <p class="alcim">Lineáris belső függvény, az f′/f és az fⁿ·f′ minta, az általános helyettesítés lépései — és egy integrál, amelynek primitív függvénye nem írható fel elemi függvényekkel.</p>
   <div class="meta-sor"><span class="chip ora">tananyag</span><span class="chip">A Valóság Összefoltozása · 3/6</span></div>
 </div>
 <main class="lap toc-os">
@@ -65,7 +65,7 @@
 
     <div class="doboz tetel" id="tetel-f-per-f">
       <p class="cim"><span class="ikon">📘</span> Ha a számláló a nevező deriváltja</p>
-      <p><span class="math display">\[\int\frac{f'(x)}{f(x)}\,dx=\ln\lvert f(x)\rvert+C,\]</span> mert <span class="math inline">\(\big(\ln\lvert f(x)\rvert\big)'=\frac{f'(x)}{f(x)}\)</span> (a láncszabály).</p>
+      <p>Olyan intervallumon, ahol <span class="math inline">\(f\)</span> deriválható és <span class="math inline">\(f(x)\ne0\)</span>: <span class="math display">\[\int\frac{f'(x)}{f(x)}\,dx=\ln\lvert f(x)\rvert+C,\]</span> mert <span class="math inline">\(\big(\ln\lvert f(x)\rvert\big)'=\frac{f'(x)}{f(x)}\)</span> (a láncszabály).</p>
     </div>
 
     <div class="doboz pelda">
@@ -84,7 +84,7 @@
 
     <div class="doboz tetel" id="tetel-f-hatvany">
       <p class="cim"><span class="ikon">📘</span> Hatvány szorozva a belső deriválttal</p>
-      <p>Ha <span class="math inline">\(n\ne-1\)</span>, akkor <span class="math display">\[\int f(x)^n\cdot f'(x)\,dx=\frac{f(x)^{n+1}}{n+1}+C.\]</span></p>
+      <p>Ha <span class="math inline">\(f\)</span> deriválható az adott intervallumon, <span class="math inline">\(n\ne-1\)</span>, és a szereplő hatványok valósak, a láncszabály pedig alkalmazható, akkor (tetszőleges valós <span class="math inline">\(n\)</span>-re elegendő <span class="math inline">\(f>0\)</span>): <span class="math display">\[\int f(x)^n\cdot f'(x)\,dx=\frac{f(x)^{n+1}}{n+1}+C.\]</span></p>
     </div>
 
     <div class="doboz pelda">
@@ -106,14 +106,14 @@
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda</p>
-      <p><b>1.</b> A <span class="math inline">\(dx\)</span> átírása elmarad: „<span class="math inline">\(\int x^2\sqrt t\,dx\)</span>” — keverék, ilyen integrál nincs. A <span class="math inline">\(t\)</span>-re áttérve a <span class="math inline">\(dx\)</span>-et is <span class="math inline">\(dt\)</span>-vel kell kifejezni.</p><p><b>2.</b> A visszahelyettesítés elmarad: az eredmény <span class="math inline">\(x\)</span> függvénye, nem <span class="math inline">\(t\)</span>-é.</p>
+      <p><b>1.</b> A <span class="math inline">\(dx\)</span> átírása elmarad: „<span class="math inline">\(\int x^2\sqrt t\,dx\)</span>” — az átírás még nem kész: az új változó mellett a régi változó és a régi differenciál is ott maradt. A <span class="math inline">\(t\)</span>-re áttérve a <span class="math inline">\(dx\)</span>-et is <span class="math inline">\(dt\)</span>-vel kell kifejezni.</p><p><b>2.</b> A visszahelyettesítés elmarad: az eredmény <span class="math inline">\(x\)</span> függvénye, nem <span class="math inline">\(t\)</span>-é.</p>
     </div>
 
     <p class="lead">⚔️ <b>Az ötösért:</b> helyettesítés, amikor a belső függvényt magadnak kell megtalálnod — <a href="feladatok-hatarozatlan-integral.html#nehez-1">Zsoldos-lista I., nehéz 1–2</a>.</p>
 
     <div class="doboz erdekesseg" id="erdekesseg-gauss">
-      <p class="cim"><span class="ikon">💡</span> Ahol a matematika megáll</p>
-      <p>A deriválás mindig sikerül: minden elemi függvény deriváltja elemi. Az integrálásnál nem így van. Az <span class="math inline">\(\int e^{-x^2}dx\)</span> primitív függvénye <b>létezik</b>, de semmilyen véges képlettel nem írható fel az elemi függvényekből (J. Liouville bizonyította a 19. században). Pedig a <span class="math inline">\(y=e^{-x^2}\)</span> a statisztika híres <b>Gauss-féle harang görbéje</b> — az alatta lévő területeket ezért táblázatból vagy számítógéppel kapjuk.</p>
+      <p class="cim"><span class="ikon">💡</span> Amikor az elemi függvények nem elegendők</p>
+      <p>Egy elemi függvény deriváltja is elemi függvény ott, ahol a derivált létezik. Az integrálásnál nem így van. Az <span class="math inline">\(\int e^{-x^2}dx\)</span> primitív függvénye <b>létezik</b>, de semmilyen véges képlettel nem írható fel az elemi függvényekből (J. Liouville bizonyította a 19. században). Pedig a <span class="math inline">\(y=e^{-x^2}\)</span> a statisztika híres <b>Gauss-féle harang görbéje</b> — az alatta lévő területeket ezért táblázatból vagy számítógéppel kapjuk.</p>
     </div>
 
     <!-- media:begin 4e04-mnt-33 -->
