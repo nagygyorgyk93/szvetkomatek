@@ -1,0 +1,9 @@
+#!/bin/sh
+# Privát-őr: felmérő-adat, tanulónév és tiltólista-elem nem kerülhet a publikus repóba.
+# Bekapcsolás egyszer: git config core.hooksPath .githooks
+ROOT="$(git rev-parse --show-toplevel)"
+for PY in python python3 py; do
+  if command -v "$PY" >/dev/null 2>&1; then exec "$PY" "$ROOT/_tools/privat_or.py"; fi
+done
+echo "Privát-őr: nem találok Pythont, a commit megáll (kivétel: git commit --no-verify)" >&2
+exit 1
