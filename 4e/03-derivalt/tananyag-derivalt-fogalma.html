@@ -8,6 +8,16 @@
 <link rel="stylesheet" href="../../assets/css/theme.css">
 <link rel="stylesheet" href="../../assets/css/print.css">
 <link rel="stylesheet" href="../../assets/katex/katex.min.css">
+<!-- Szvetkó: betöltési jelzések -->
+<link rel="preload" href="../../assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/inter-latin-ext-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/inter-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/inter-latin-ext-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/space-grotesk-latin-ext-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/katex/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/katex/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin>
+<!-- /Szvetkó: betöltési jelzések -->
 </head>
 <body data-tagozat="4e" data-hatter="altalanos">
 <div id="progress"></div>
@@ -103,7 +113,7 @@
     <p class="iv-kijelzo" id="ivk1" aria-live="polite">Δx = 1,5,  Δy = 5,25,  a szelő meredeksége Δy/Δx = 3,5.</p>
     </div>
     <p class="cap">Mozgasd a csúszkát! A kék egyenes a <span class="math inline">\(P(1;\,1)\)</span> és a <span class="math inline">\(Q\)</span> ponton átmenő <b>szelő</b>, a zöld szaggatott az <b>érintő</b>. Ahogy <span class="math inline">\(\Delta x\to0\)</span>, a <span class="math inline">\(Q\)</span> a <span class="math inline">\(P\)</span>-hez csúszik, és a szelő meredeksége <span class="math inline">\(2\)</span>-höz tart.</p>
-    <script src="../../assets/js/interaktiv.js"></script>
+    <script src="../../assets/js/interaktiv.js" defer></script>
 
     <p>A táblázat és az ábra ugyanazt mondja: a <span class="math inline">\(2+\Delta x\)</span> meredekség <span class="math inline">\(2\)</span>-höz tart, ha <span class="math inline">\(\Delta x\to0\)</span>. Ez a függvény határértéke, amit a 02. témakörben tanultunk (<a href="../02-fuggvenyek/tananyag-fuggveny-hatarerteke.html#def-fv-hatarertek">a függvény határértéke</a>) — csak most a változó a <span class="math inline">\(\Delta x\)</span>, és a <span class="math inline">\(0\)</span>-hoz tart.</p>
 
@@ -222,7 +232,7 @@
     {left:'\\[', right:'\\]', display:true}
   ]});
 </script>
-<script src="../../assets/js/ui.js"></script>
-<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/ui.js" defer></script>
+<script src="../../assets/js/quiz.js" defer></script>
 </body>
 </html>

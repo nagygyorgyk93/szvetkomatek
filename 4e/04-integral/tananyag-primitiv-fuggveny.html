@@ -8,6 +8,16 @@
 <link rel="stylesheet" href="../../assets/css/theme.css">
 <link rel="stylesheet" href="../../assets/css/print.css">
 <link rel="stylesheet" href="../../assets/katex/katex.min.css">
+<!-- Szvetkó: betöltési jelzések -->
+<link rel="preload" href="../../assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/inter-latin-ext-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/inter-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/inter-latin-ext-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/space-grotesk-latin-ext-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/katex/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/katex/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin>
+<!-- /Szvetkó: betöltési jelzések -->
 </head>
 <body data-tagozat="4e" data-hatter="altalanos">
 <div id="progress"></div>
@@ -90,7 +100,7 @@
     <p class="iv-kijelzo" id="ivk1" aria-live="polite">C = 0:  az x₀ = 1,5 helyen az érintő meredeksége 1,25 — minden C-re ugyanannyi, mert (F + C)′ = F′ = f.</p>
     </div>
     <p class="cap">Mozgasd a csúszkát! A fekete görbe az <span class="math inline">\(F(x)+C=\frac{x^3}{3}-x+C\)</span>, a szürkék a sereg néhány másik tagja. A görbe fel-le tolódik, de az <span class="math inline">\(x_0=1{,}5\)</span> helyen az érintő meredeksége mindig <span class="math inline">\(f(1{,}5)=1{,}25\)</span>.</p>
-    <script src="../../assets/js/interaktiv.js"></script>
+    <script src="../../assets/js/interaktiv.js" defer></script>
 
     <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ Bármely állandót hozzáadhatsz: a deriválásnál eltűnik. A primitív függvények egy seregét alkotják." data-nem="✘ Az állandó deriváltja 0, ezért az x² + 3x + C mindegyike 2x + 3-at ad — végtelen sok primitív függvény van.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
@@ -166,7 +176,7 @@
     {left:'\\[', right:'\\]', display:true}
   ]});
 </script>
-<script src="../../assets/js/ui.js"></script>
-<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/ui.js" defer></script>
+<script src="../../assets/js/quiz.js" defer></script>
 </body>
 </html>

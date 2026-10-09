@@ -20,7 +20,7 @@ GitHub Pages, **publikus**. A `main` minden pusha automatikusan élesít (`.gith
    jellemzően a `_tools/builders/build_*.py` kimenetei (keress rá a témakör-mappa nevére és a
    fájlnévre); ilyenkor a buildert javítsd, futtasd újra, majd a teljes láncot (lent). Az 1e lapjai
    többnyire kézzel migráltak — azokat közvetlenül lehet javítani. Kivétel mindenhol: amit a
-   `kepek.py` (karakterképek), a `media.py` (videó/GeoGebra) és a `set_hatter.py` (háttér) ír —
+   `kepek.py` (karakterképek), a `media.py` (videó/GeoGebra) és a `set_hatter.py` (háttér és betöltési jelzések) ír —
    azt csak a saját eszköze kezelheti.
 4. **Matematikai precizitás nem alku tárgya.** Jelölés: `_docs/jelolesek.md` (kötelező).
    Minden számítást gépileg ellenőrizz (sympy), a feladatkulcsokat a `_tools/kulcsok/` modulok.
@@ -40,6 +40,7 @@ GitHub Pages, **publikus**. A `main` minden pusha automatikusan élesít (`.gith
 | Közös CSS / JS | `assets/css/theme.css`, `print.css`; `assets/js/` (`ui.js` tölti be a `naplo.js`, `effekt.js`, `beagyazas.js` modult) |
 | Interaktív ábrák | `assets/js/interaktiv.js` (módok: szelo, erinto, sereg, osszeg, pascal, **szimulacio**, **adatlabor**) + `tananyag_common.svg_interaktiv/svg_pascal`, `abra_stat.svg_szimulacio/svg_adatlabor` |
 | Builderek és közös részeik | `_tools/builders/` (`tananyag_common.py`, `fgy_common.py`, `abra_common.py`, `abra_stat.py` — statisztikai ábrák és mutatók; valós adatok: `adat_<osztaly>_<NN>.py`) |
+| Betöltési jelzések (font-preload, biztonságos script-defer) | `_tools/betoltes.py`; a `set_hatter.py` az újraépítési lánc végén ezt is futtatja |
 | Külső média katalógusa | `_tools/media/<osztaly>.json` → `_tools/media.py` (skill: `media-beagyazas`) |
 | Kulcs-öntesztek | `_tools/kulcsok/*.py` → `kulcs_teszt.py`, `kulcs_regresszio.py` |
 
@@ -51,7 +52,7 @@ python3 _tools/egyedi_id.py                      # csak a régi 1e-builderek ut�
                                                  #   _linearis, _racionalis, build_dangerroom): ismétlődő SVG-id-k
 python3 _tools/kepek.py . --apply                # karakterképek a .brief dobozokba
 python3 _tools/media.py . --apply                # videó / GeoGebra blokkok a katalógusból
-python3 _tools/set_hatter.py                     # helyszín-hátterek
+python3 _tools/set_hatter.py                     # helyszín-hátterek + közös betöltési jelzések
 python3 _tools/verify_web.py [minta]             # kánon + jsdom-render (0 hiba kell)
 python3 _tools/check_links.py                    # belső linkek + horgonyok
 python3 _tools/sav_check.py                      # Gyakorolj!-sávok ↔ feladatkártyák

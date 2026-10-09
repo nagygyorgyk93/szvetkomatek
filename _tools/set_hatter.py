@@ -12,6 +12,7 @@ Futtatás a repo gyökeréből:  python _tools/set_hatter.py [--dry]
 import re
 import sys
 from pathlib import Path
+from betoltes import feldolgoz as betoltes_feldolgoz, web_lap
 
 GYOKER = Path(__file__).resolve().parent.parent
 
@@ -77,6 +78,7 @@ def feldolgoz(f: Path, dry: bool = False) -> bool:
 def main() -> None:
     dry = "--dry" in sys.argv
     valtozott = 0
+    betoltes_valtozott = 0
     osszes = 0
     for f in sorted(GYOKER.rglob("*.html")):
         if "assets" in f.parts or ".git" in f.parts:
@@ -84,7 +86,11 @@ def main() -> None:
         osszes += 1
         if feldolgoz(f, dry):
             valtozott += 1
+        if web_lap(f.relative_to(GYOKER)) and betoltes_feldolgoz(f, dry=dry):
+            betoltes_valtozott += 1
     print(f"data-hatter: {valtozott} oldal frissítve / {osszes} összesen"
+          + (" (próba)" if dry else ""))
+    print(f"Betöltési jelzések: {betoltes_valtozott} oldal frissítve"
           + (" (próba)" if dry else ""))
 
 

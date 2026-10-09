@@ -144,21 +144,39 @@
   /* Csak a ténylegesen gördülő doboz kerül a Tab-sorrendbe. A lenyílók és a
      betűkészletek betöltése után, valamint átméretezéskor újramérjük. */
   function gordithetok(){
-    document.querySelectorAll('.tblwrap, .katex-display, details .bel .math.inline').forEach(function(el){
-      var tul = el.clientWidth > 0 && el.scrollWidth > el.clientWidth;
-      if(tul && !el.hasAttribute('tabindex')){
+    /* Előbb minden méretet kiolvasunk, csak utána módosítjuk az elemeket.
+       Így egy attribútumváltozás nem kényszerít új elrendezést a következő mérésre. */
+    var meresek = Array.prototype.map.call(
+      document.querySelectorAll('.tblwrap, .katex-display, details .bel .math.inline'),
+      function(el){
+        /* A zárt lenyílók tartalmának méretlekérdezése önmagában is drága lehet.
+           Megnyitáskor a toggle esemény újraméri; a summary továbbra is látható. */
+        var rejtett = el.closest('[hidden], details:not([open]) > :not(summary)');
+        return {elem:el, tul:!rejtett && el.clientWidth > 0 && el.scrollWidth > el.clientWidth};
+      });
+    meresek.forEach(function(m){
+      var el = m.elem;
+      if(m.tul && !el.hasAttribute('tabindex')){
         el.setAttribute('tabindex', '0'); el.setAttribute('data-gorditheto', '1');
         el.setAttribute('role', 'group');
         el.setAttribute('aria-label', el.classList.contains('tblwrap') ? 'Gördíthető táblázat' : 'Gördíthető képlet');
-      } else if(!tul && el.getAttribute('data-gorditheto') === '1'){
+      } else if(!m.tul && el.getAttribute('data-gorditheto') === '1'){
         ['tabindex','data-gorditheto','role','aria-label'].forEach(function(a){ el.removeAttribute(a); });
       }
     });
   }
-  gordithetok(); window.addEventListener('resize', gordithetok);
-  document.addEventListener('toggle', gordithetok, true);
-  if(document.fonts && document.fonts.ready) document.fonts.ready.then(gordithetok);
-  if(document.fonts && document.fonts.addEventListener) document.fonts.addEventListener('loadingdone', gordithetok);
+  var meresVar = false;
+  function meresUtemez(){
+    if(meresVar) return;
+    meresVar = true;
+    window.requestAnimationFrame(function(){ meresVar = false; gordithetok(); });
+  }
+  gordithetok(); window.addEventListener('resize', meresUtemez);
+  document.addEventListener('toggle', function(ev){
+    if(ev.target.tagName === 'DETAILS') meresUtemez();
+  }, true);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(meresUtemez);
+  if(document.fonts && document.fonts.addEventListener) document.fonts.addEventListener('loadingdone', meresUtemez);
 
   /* Scroll-progress sáv */
   var bar = document.getElementById('progress');
@@ -437,7 +455,8 @@
   if (document.querySelector('figure.media')) szkriptek.push('beagyazas.js');
   szkriptek.forEach(function(f){
     var s = document.createElement('script');
-    s.src = ROOT + '/assets/js/' + f; s.defer = true;
+    /* A dinamikus szkriptek a napló után induljanak; a defer itt nem rendezné őket. */
+    s.src = ROOT + '/assets/js/' + f; s.async = false;
     document.body.appendChild(s);
   });
 

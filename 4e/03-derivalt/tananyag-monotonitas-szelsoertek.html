@@ -8,6 +8,16 @@
 <link rel="stylesheet" href="../../assets/css/theme.css">
 <link rel="stylesheet" href="../../assets/css/print.css">
 <link rel="stylesheet" href="../../assets/katex/katex.min.css">
+<!-- Szvetkó: betöltési jelzések -->
+<link rel="preload" href="../../assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/inter-latin-ext-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/inter-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/inter-latin-ext-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/space-grotesk-latin-ext-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/katex/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/katex/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin>
+<!-- /Szvetkó: betöltési jelzések -->
 </head>
 <body data-tagozat="4e" data-hatter="altalanos">
 <div id="progress"></div>
@@ -75,7 +85,7 @@
     <p class="iv-kijelzo" id="ivk1" aria-live="polite">x₀ = −0,6:  f′(x₀) = 4,68, pozitív → itt a függvény nő.</p>
     </div>
     <p class="cap">Mozgasd a csúszkát! Ahol az érintő <b>zöld</b>, ott <span class="math inline">\(f'(x_0)\gt0\)</span> és a függvény nő; ahol <b>piros</b>, ott <span class="math inline">\(f'(x_0)\lt0\)</span> és csökken. A szürke, vízszintes érintő a fordulópontokban jelenik meg.</p>
-    <script src="../../assets/js/interaktiv.js"></script>
+    <script src="../../assets/js/interaktiv.js" defer></script>
 
     <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A derivált előjele a monotonitást adja. Hogy f pozitív-e, arról f′ nem szól: egy növekvő függvény lehet végig negatív is." data-nem="✘ Az f′ > 0 a MERedekségről szól: f ott nő. Az f előjeléről (pozitív-e) vagy a görbüléséről (konvex-e) ebből semmi nem következik.">
       <p class="kviz-cim">🎯 Gyors kérdés</p>
@@ -273,7 +283,7 @@
     {left:'\\[', right:'\\]', display:true}
   ]});
 </script>
-<script src="../../assets/js/ui.js"></script>
-<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/ui.js" defer></script>
+<script src="../../assets/js/quiz.js" defer></script>
 </body>
 </html>

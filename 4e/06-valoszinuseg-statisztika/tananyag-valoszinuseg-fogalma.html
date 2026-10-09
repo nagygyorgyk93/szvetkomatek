@@ -8,6 +8,16 @@
 <link rel="stylesheet" href="../../assets/css/theme.css">
 <link rel="stylesheet" href="../../assets/css/print.css">
 <link rel="stylesheet" href="../../assets/katex/katex.min.css">
+<!-- Szvetkó: betöltési jelzések -->
+<link rel="preload" href="../../assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/inter-latin-ext-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/inter-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/inter-latin-ext-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/space-grotesk-latin-ext-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/katex/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/katex/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin>
+<!-- /Szvetkó: betöltési jelzések -->
 </head>
 <body data-tagozat="4e" data-hatter="altalanos">
 <div id="progress"></div>
@@ -79,7 +89,7 @@
     <p class="iv-kijelzo" aria-live="polite">Érmedobás: 200 dobás, ebből 94 fej — a relatív gyakoriság 94/200 ≈ 0,470. A klasszikus valószínűség 1/2 ≈ 0,500.</p>
     </div>
     <p class="cap">Nyomd meg a gombokat! A kék görbe a fej (vagy a hatos) relatív gyakorisága az addigi dobások után, a piros szaggatott vonal a klasszikus valószínűség. A kezdőkép 200 érmedobás; kockára váltva újraindul.</p>
-    <script src="../../assets/js/interaktiv.js"></script>
+    <script src="../../assets/js/interaktiv.js" defer></script>
 
     <p>Nem mi vagyunk az elsők, akik ezt kipróbálták:</p>
 
@@ -227,7 +237,7 @@
     {left:'\\[', right:'\\]', display:true}
   ]});
 </script>
-<script src="../../assets/js/ui.js"></script>
-<script src="../../assets/js/quiz.js"></script>
+<script src="../../assets/js/ui.js" defer></script>
+<script src="../../assets/js/quiz.js" defer></script>
 </body>
 </html>
