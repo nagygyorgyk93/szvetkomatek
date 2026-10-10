@@ -5,7 +5,7 @@ Specifikacio: projektek/szvetkomatek/4e/narrativa_04-integral.md
 Tiltott adatok: a 25/26-os es 26/27-es integral-felmerok (tiltott_4e_04.py) — lent ellenorizve."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_fuggvenyek, svg_interaktiv, _fmt
+from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_fuggvenyek, svg_interaktiv, _fmt, svg_terulet_interaktiv
 import tiltott
 TILT = tiltott.modul("tiltott_4e_04")      # a lista a repón kívül él (projektek/szvetkomatek/tiltott)
 
@@ -112,10 +112,7 @@ SVG_B3_TRAPEZ = svg_fuggvenyek(
     [(_fb3a, SOT, "f", [(-1.8, 2.6)])], xr=(-2.2, 3.0), yr=(-0.6, 5.4), w=W, h=H, jelmagyarazat=False,
     terulet=[(_fb3a, None, -1, 2, KEK, 0.35)],
     leiras="Görbe vonalú trapéz: az f(x) = x²/2 + 2 grafikonja alatti terület a [−1; 2] intervallumon")
-SVG_B3_ELOJEL = svg_fuggvenyek(
-    [(_f4, SOT, "f", [(-0.5, 5.6)])], xr=(-0.8, 6.0), yr=(-5.2, 6.2), w=W, h=H, jelmagyarazat=False,
-    terulet=[(_f4, None, 0, 4, PIROS, 0.35), (_f4, None, 4, 5, ZOLD, 0.35)],
-    leiras="Az f(x) = x² − 4x a [0; 5] intervallumon: a [0; 4]-en a tengely alatt (piros), a [4; 5]-ön fölötte (zöld)")
+IV_B3_ELOJEL = svg_terulet_interaktiv()
 _fb3c = lambda v: 8 - 2 * v * v
 SVG_B3_TENGELYEK = svg_fuggvenyek(
     [(_fb3c, SOT, "f", [(-2.4, 2.4)])], xr=(-2.8, 3.0), yr=(-1.6, 9.0), w=W, h=H, jelmagyarazat=False,
@@ -330,16 +327,16 @@ B3 = [
          r'<p>$\int_0^4(x^2-4x)\,dx=\left[\frac{x^3}{3}-2x^2\right]_0^4=\frac{64}{3}-32=-\frac{32}{3}$, '
          r'$\;\int_4^5(x^2-4x)\,dx=\left(\frac{125}{3}-50\right)-\left(-\frac{32}{3}\right)=\frac73$.</p>'
          r'<p>$$T=\frac{32}{3}+\frac73=13.$$ Ha nem bontanánk: $\int_0^5(x^2-4x)\,dx=-\frac{25}{3}$ — ez nem terület.</p>'),
-   abra(SVG_B3_ELOJEL, 'Piros: a tengely alatti rész ($\\frac{32}{3}$), zöld: a fölötti ($\\frac73$).'),
+   IV_B3_ELOJEL,
    doboz("csapda", "Véd Vilmos csapda",
          r'<p>„Kiszámolom egyben, és veszem az abszolút értékét.” — Ha a függvény előjelet vált, a pozitív és a '
-         r'negatív rész <b>kiegyenlíti</b> egymást, és kevesebbet kapsz: itt $\frac{25}{3}$-ot $13$ helyett. Először '
+         r'negatív rész <b>részben vagy teljesen kioltja</b> egymást, és kevesebbet kapsz: itt $\frac{25}{3}$-ot $13$ helyett. Először '
          r'mindig a zérushelyeket keresd meg!</p>'),
    kviz(r'Az $f$ az $[a;\,b]$ intervallumon előjelet vált. Helyes-e a $T=\left\lvert\int_a^b f(x)\,dx\right\rvert$ képlet a '
         r'grafikon és az $x$ tengely közötti területre?',
         [r'nem: a zérushelynél bontani kell, és a részek abszolút értékét összeadni', r'igen, mindig',
          r'csak akkor, ha $f$ polinom', r'igen, ha $b\gt a$'], 0,
-        jo="✔ Egyben integrálva a pozitív és a negatív részek kiegyenlítik egymást — a terület ennél nagyobb.",
+        jo="✔ Egyben integrálva a pozitív és a negatív részek részben vagy teljesen kioltják egymást — a terület ennél nagyobb.",
         nem="✘ Az abszolút érték csak a végeredményen nem segít: a részek előbb kioltják egymást. Bonts a zérushelynél!"),
  ]),
 
@@ -402,7 +399,7 @@ B3 = [
        ["<b>táblázat</b>", "$\\int x^n\\,dx=\\frac{x^{n+1}}{n+1}+C$ $(n\\ne-1)$, $\\int\\frac1x\\,dx=\\ln\\lvert x\\rvert+C$, "
                            "$\\int e^x\\,dx=e^x+C$ — a teljes táblázat: "
                            "<a href=\"tananyag-integraltablazat.html#tetel-integraltablazat\">A2</a>"],
-       ["<b>helyettesítés</b>", "$\\int f(ax+b)\\,dx=\\frac1aF(ax+b)+C$, $\\int\\frac{f'}{f}=\\ln\\lvert f\\rvert+C$, "
+       ["<b>helyettesítés</b>", "$\\int f(ax+b)\\,dx=\\frac1aF(ax+b)+C$ ($a\\ne0$), $\\int\\frac{f'}{f}=\\ln\\lvert f\\rvert+C$, "
                                 "$t=g(x)$, $dt=g'(x)\\,dx$"],
        ["<b>Newton–Leibniz</b>", "$\\int_a^b f(x)\\,dx=F(b)-F(a)$ — a határozott integrál előjeles szám"],
        ["<b>terület</b>", "$f\\ge0$: $\\int_a^b f$; előjelváltásnál bontás a zérushelyeken; két görbe: "

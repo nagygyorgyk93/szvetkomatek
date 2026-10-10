@@ -621,6 +621,49 @@ def svg_kor_helyzet_interaktiv():
         r'$T$ a középpontból bocsátott merőleges talppontja; érintésnél ez a közös pont.',
         attr='data-xr="-8,8" data-yr="-8,8" data-unit="22" data-par="22" data-h="396"')
 
+
+def svg_hatarertek_interaktiv():
+    """Közelítés a meglévő g grafikonján, változatlan lyukkal és pontbeli értékkel."""
+    from abra_common import svg_hatarertek_pont
+    controls=('<div class="iv-vezerlo"><label for="iv-hat-oldal">Közelítés iránya</label>'
+        '<select id="iv-hat-oldal" class="iv-hat-oldal" aria-describedby="iv-hatarertek-kijelzo">'
+        '<option value="-1">Balról</option><option value="1">Jobbról</option></select></div>\n'
+        '<div class="iv-vezerlo"><label for="iv-hat-tav">Az x távolsága a 2-től: '
+        '<span class="iv-hat-tav-ertek">1</span></label><input id="iv-hat-tav" class="iv-hat-tav" '
+        'type="range" min="0" max="3" step="1" value="0" aria-valuetext="Az x távolsága a 2-től: 1" '
+        'aria-describedby="iv-hatarertek-kijelzo"></div>\n')
+    return _iv_modell_keret('hatarertek',svg_hatarertek_pont(),controls,
+        'Balról közelítünk: x = 1, g(x) = 3. A 2-től mért távolság 1. '
+        'A határérték mindkét oldalról 2; a rögzített pontbeli érték g(2) = 1.',
+        r'$g(x)=4-x$, ha $x\ne2$; $g(2)=1$. A teli pont a pontbeli érték, '
+        r'a $(2;2)$ üres pont nem része a grafikonnak. Válts oldalt, és csökkentsd '
+        'a távolságot! A barna pont a közelítő függvényértéket mutatja. '
+        'Nagyon kis távolságnál a pontok a rajzon összemosódhatnak; a kijelző számai '
+        'mutatják, hogy a közelítő pont még nem érte el a lyuk helyét.',
+        attr='data-xr="-1,5.4" data-yr="-.8,4.6" data-w="380" data-h="280"')
+
+
+def svg_terulet_interaktiv():
+    """Pontos törtértékek és változó jobb határ a meglévő előjelváltó példán."""
+    from abra_common import svg_integral_terulet
+    controls=('<div class="iv-vezerlo"><label for="iv-ter-b">A jobb határ: $b$ = '
+        '<span class="iv-ter-b-ertek">5</span></label><input id="iv-ter-b" class="iv-ter-b" '
+        'type="range" min="0" max="24" step="1" value="20" aria-valuetext="A jobb határ b: 5" '
+        'aria-describedby="iv-terulet-kijelzo"></div>\n')
+    return _iv_modell_keret('terulet',svg_integral_terulet(),controls,
+        'A jobb határ b = 5. Az előjeles integrál −25/3, a terület 13. '
+        'A tengely alatti rész területe 32/3, a fölöttié 7/3. '
+        'Az integrál abszolút értéke 25/3: kisebb az összterületnél.',
+        r'A függvény rögzített: $f(x)=x^2-4x$. A kezdőállapot a szöveges példa '
+        r'$[0;5]$ intervalluma; a csúszka csak a szemléltetés jobb határát változtatja '
+        r'$0$ és $6$ között, negyedegységes lépéssel. A szaggatott barna egyenes jelöli a $b$ jobb határt. '
+        'A piros rész a tengely alatt, '
+        r'a zöld fölötte van. A terület a részek területének összege; az integrálban '
+        'a tengely alatti rész negatív előjellel szerepel. A kijelző törtértékei pontosak. '
+        'A szöveges példa megoldása a kezdőállapotra vonatkozik.',
+        attr='data-xr="-.8,6.6" data-yr="-5.2,14.2" data-w="380" data-h="300"')
+
+
 def svg_interaktiv(mod, poly, *, xr, yr, x0=0.0, csuszka=(-2.0, 2.0, 0.01, 1.0), w=360, h=250,
                    gorbe_cimke="f", f2=False, felirat="", leiras="Interaktív függvényábra",
                    pont_cimke="P", szin="#2563eb", ab=(0.0, 1.0), pontos="", sereg_c=(-2, -1, 1, 2)):

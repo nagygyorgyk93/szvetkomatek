@@ -2911,3 +2911,68 @@ def svg_kor_egyenes_interaktiv():
             'font-size':13,'font-weight':600,'fill':'#b45309'},'T = M'),
         '<g class="iv-kor-metszesek"></g>']
     return svg.replace('</svg>','\n'.join(extra)+'\n</svg>')
+
+# =====================================================================
+# I1: a 4e határérték- és területpéldájának vezérelhető kezdőképe
+# =====================================================================
+
+def _iv_grafikon_alap(azon, xr, yr, w, h, leiras):
+    """A bevált grafikonkeret, egyedi markerrel; a két tengely skálája külön adott."""
+    from tananyag_common import svg_fuggvenyek
+    svg = svg_fuggvenyek([], xr=xr, yr=yr, w=w, h=h, jelmagyarazat=False, leiras=leiras)
+    svg = svg.replace('id="nyil"', f'id="{azon}-nyil"').replace('url(#nyil)', f'url(#{azon}-nyil)')
+    def P(x, y):
+        return (26+(x-xr[0])/(xr[1]-xr[0])*(w-38),
+                14+(yr[1]-y)/(yr[1]-yr[0])*(h-36))
+    left, top = P(xr[0], yr[1]); right, bottom = P(xr[1], yr[0])
+    defs = (f'<defs><clipPath id="{azon}-ablak"><rect x="{left}" y="{top}" '
+            f'width="{right-left}" height="{bottom-top}"/></clipPath></defs>')
+    return svg.replace('</svg>', defs+'\n</svg>'), P
+
+
+def svg_hatarertek_pont():
+    """A meglévő g: 4−x, ha x≠2; a pontbeli érték g(2)=1 rögzített."""
+    svg,P = _iv_grafikon_alap('iv-hatarertek',(-1,5.4),(-.8,4.6),380,280,
+        'A g függvény határértéke 2 az x = 2 helyen; a pontbeli érték g(2) = 1. Közelítés balról és jobbról.')
+    a,b=P(-.6,4.6),P(4.4,-.4);q=P(1,3);hole=P(2,2);point=P(2,1)
+    extra=['<g clip-path="url(#iv-hatarertek-ablak)">',
+        _iv_sik_elem('line',{'x1':a[0],'y1':a[1],'x2':b[0],'y2':b[1],
+            'stroke':KEK,'stroke-width':2.2}),
+        _iv_sik_elem('line',{'class':'iv-hat-vet','x1':q[0],'y1':P(1,0)[1],
+            'x2':q[0],'y2':q[1],'stroke':'#b45309','stroke-width':1.6,'stroke-dasharray':'4 3'}),
+        _iv_sik_elem('circle',{'class':'iv-hat-Q','cx':q[0],'cy':q[1],'r':3.5,'fill':'#b45309'}),
+        # A rögzített lyuk legfelül marad; a közelítés sosem tölti ki.
+        _iv_sik_elem('circle',{'class':'iv-hat-lyuk','cx':hole[0],'cy':hole[1],'r':4.3,
+            'fill':'#ffffff','stroke':TINTA,'stroke-width':1.8}),
+        _iv_sik_elem('circle',{'class':'iv-hat-ertek','cx':point[0],'cy':point[1],'r':4,'fill':TINTA}),'</g>',
+        _iv_sik_elem('text',{'x':hole[0]+10,'y':hole[1]-8,'font-size':13,'fill':TINTA},'határérték: 2'),
+        _iv_sik_elem('text',{'x':point[0]+10,'y':point[1]+17,'font-size':13,'fill':TINTA},'g(2) = 1')]
+    return svg.replace('</svg>','\n'.join(extra)+'\n</svg>')
+
+
+def svg_integral_terulet():
+    """A meglévő x²−4x példa [0;5]-ön; a jobb határ később 0–6 között változik."""
+    svg,P = _iv_grafikon_alap('iv-terulet',(-.8,6.6),(-5.2,14.2),380,300,
+        'Az f(x) = x² − 4x grafikonja, előjeles integrálja és területe a [0; b] intervallumon; a kezdő b értéke 5.')
+    f=lambda x:x*x-4*x
+    def area(lo,hi):
+        pts=[P(lo,0)]+[P(lo+(hi-lo)*i/120,f(lo+(hi-lo)*i/120)) for i in range(121)]+[P(hi,0)]
+        return ' '.join(f'{x:.3f},{y:.3f}' for x,y in pts)
+    curve='M'+' L'.join(f'{P(-.5+6.9*i/240,f(-.5+6.9*i/240))[0]:.3f},'
+                       f'{P(-.5+6.9*i/240,f(-.5+6.9*i/240))[1]:.3f}' for i in range(241))
+    shaded=['<g clip-path="url(#iv-terulet-ablak)">',
+        _iv_sik_elem('polygon',{'class':'iv-ter-neg','points':area(0,4),'fill':PIROS,'fill-opacity':.3}),
+        _iv_sik_elem('polygon',{'class':'iv-ter-pos','points':area(4,5),'fill':ZOLD,'fill-opacity':.3}),'</g>']
+    # A kitöltés a tengelyek alatt van; a görbét a rajzablak vágja, nem a függvényértéket.
+    end=svg.index('</g>')+len('</g>')
+    svg=svg[:end]+'\n'+'\n'.join(shaded)+svg[end:]
+    pt=P(5,f(5));x=P(5,0)[0]
+    extra=['<g clip-path="url(#iv-terulet-ablak)">',
+        _iv_sik_elem('path',{'class':'iv-ter-gorbe','d':curve,'fill':'none','stroke':TINTA,'stroke-width':2.2}),
+        _iv_sik_elem('line',{'class':'iv-ter-hatar','x1':x,'x2':x,'y1':14,'y2':278,
+            'stroke':'#b45309','stroke-width':1.6,'stroke-dasharray':'4 3'}),
+        _iv_sik_elem('circle',{'class':'iv-ter-vegpont','cx':pt[0],'cy':pt[1],'r':3.5,'fill':'#b45309'}),'</g>',
+        _iv_sik_elem('text',{'class':'iv-ter-b-nev','x':x-7,'y':31,
+            'fill':'#b45309','font-size':13,'font-weight':600,'text-anchor':'end'},'b'),
+        _iv_sik_elem('text',{'x':368,'y':295,'font-size':13,'text-anchor':'end','fill':TINTA},'f(x) = x² − 4x')]
+    return svg.replace('</svg>','\n'.join(extra)+'\n</svg>')

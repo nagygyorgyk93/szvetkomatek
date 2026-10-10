@@ -6,7 +6,7 @@ Tiltott adatok: a 24/25–26/27 felmerok kifejezesei (Felmero_elemzes_es_ajanlas
 import sys, os, math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import tiltott
-from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_fuggvenyek
+from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_fuggvenyek, svg_hatarertek_interaktiv
 
 T = dict(tagozat="4e", mappa="02-fuggvenyek", temakor="Függvények")
 KUL = "Az Aszimptota-fal Áttörése"
@@ -123,10 +123,7 @@ SVG_LYUK = svg_fuggvenyek(
     pontok=[(1, 2, "(1; 2)", "o:" + SOT, 8, 14)],
     leiras="Az y = (x² − 1)/(x − 1) grafikonja egy egyenes, amelyből hiányzik az (1; 2) pont (üres kör)")
 XR2, YR2 = (-1, 5.4), (-0.8, 4.6)
-SVG_TELI_URES = svg_fuggvenyek(
-    [(lambda t: -t + 4, KEK, "g", [(-0.6, 4.4)])], xr=XR2, yr=YR2, w=W, h=H, jelmagyarazat=False,
-    pontok=[(2, 2, "", "o:" + SOT), (2, 1, "", SOT)],
-    leiras="A g függvény grafikonja: egy csökkenő egyenes, a (2; 2) pontban üres kör, alatta a (2; 1) pontban teli pont")
+IV_TELI_URES = svg_hatarertek_interaktiv()
 SVG_UGRAS = svg_fuggvenyek(
     [(lambda t: t + 2, KEK, "h", [(-2, 1)]), (lambda t: t - 1, KEK, "", [(1, 4.2)])],
     xr=(-2.4, 4.6), yr=(-1.2, 4.4), w=W, h=H, jelmagyarazat=False,
@@ -168,7 +165,7 @@ B1 = [
  ("📡 Küldetés-eligazítás", [
    brief('<b>Nagol:</b> A sorozatoknál $n$ egyik természetes számról a következőre ugrált. Most $x$ folyamatosan fut — '
          'és néha egy olyan pont felé, ahol a függvénynek <b>nincs</b> értéke. <b>Véd Vilmos:</b> Akkor ott '
-         'nincs határérték sem. <b>Nagol:</b> Dehogynem. A határérték nem azt kérdezi, mennyi a függvény a '
+         'nincs határérték sem. <b>Nagol:</b> Attól még lehet határérték. A határérték nem azt kérdezi, mennyi a függvény a '
          'pontban, hanem azt, <b>mihez közelít</b>, ha egyre közelebb megyünk.'),
  ]),
 
@@ -211,8 +208,8 @@ B1 = [
          r'Az $f$ függvény határértéke az $a$ helyen az $A$ szám, ha bármely $a$-hoz tartó $(x_n)$ '
          r'sorozatra ($x_n\ne a$, $x_n\in D_f$) az $f(x_n)$ függvényértékek sorozata $A$-hoz tart. Jele: '
          r'$\lim\limits_{x\to a}f(x)=A$.</p>'
-         r'<p>Szemléletesen: $f(x)$ akármilyen közel vihető $A$-hoz, ha $x$-et elég közel választjuk $a$-hoz '
-         r'($x\ne a$).</p>', hid="def-fv-hatarertek"),
+         r'<p>Szemléletesen: ha $x$ elég közel van $a$-hoz, de nem egyenlő vele, akkor minden ilyen $x$-re '
+         r'$f(x)$ tetszőlegesen közel van $A$-hoz.</p>', hid="def-fv-hatarertek"),
    r'<p>A definíció két fontos üzenete: az $x=a$ helyet <b>kihagyjuk</b> (a függvénynek ott nem is kell '
    r'értelmezve lennie), és <b>minden irányból</b> történő közelítésnek ugyanoda kell vezetnie.</p>',
  ]),
@@ -220,7 +217,7 @@ B1 = [
  ("Határérték ≠ helyettesítési érték", [
    r'<p class="lead">A grafikonon a <b>teli pont</b> a függvény értékét jelöli, az <b>üres pont</b> azt, '
    r'hogy ott a grafikonnak nincs pontja. A kettő ugyanannál az $x$-nél más magasságban is lehet.</p>',
-   abra(SVG_TELI_URES, 'A $g$ függvény: az egyenesből a $(2;\\,2)$ pont hiányzik, és $g(2)=1$.'),
+   IV_TELI_URES,
    doboz("pelda", "I.V.H. Akták — teli és üres pont",
          r'<p>Olvassuk le a $g$ grafikonjáról $g(2)$ értékét és a $\lim\limits_{x\to2}g(x)$ határértéket!</p>'
          r'<ul><li>$g(2)=1$ — ez a <b>teli</b> pont magassága;</li>'
@@ -230,8 +227,7 @@ B1 = [
    doboz("csapda", "Véd Vilmos csapda",
          r'<p>Véd Vilmos szerint „a határérték az, amit behelyettesítéssel kapok” — ezért a fenti grafikonra '
          r'$\lim\limits_{x\to2}g(x)=1$-et ír.</p>'
-         r'<p><b>A határérték nem a pontbeli érték.</b> Sok függvénynél a kettő egyenlő (ezek a folytonos '
-         r'függvények), de nem mindig: itt a görbe a $2$-höz tart, a teli pont pedig „kilóg”.</p>'),
+         r'<p><b>A határérték nem a pontbeli érték.</b> A folytonossági pontokban a kettő egyenlő. Más pontokban eltérhetnek: itt a görbe a $2$-höz tart, a teli pont pedig „kilóg”.</p>'),
    kviz(r'Mennyi a fenti $g$ függvényre a $\lim\limits_{x\to2}g(x)$ határérték?',
         [r'$2$', r'$1$', r'nem létezik, mert a grafikon megszakad', r'$1$ és $2$ is — a $2$-nél két pont van'], 0,
         jo="✔ A görbe mindkét oldalról a 2 magasságú üres ponthoz tart. A teli pont (g(2) = 1) a határértéket nem befolyásolja.",
@@ -250,7 +246,7 @@ B1 = [
              '$\\lim\\limits_{x\\to a}f(x)$ kétoldali határérték akkor és csak akkor létezik, ha a két egyoldali '
              'határérték létezik és egyenlő; ekkor ez a közös érték a határérték.</p>'
          ), hid="def-egyoldali"),
-   abra(SVG_UGRAS, 'A $h$ függvény az $x=1$-nél „ugrik”: balról a $3$-hoz tart, jobbról a $0$-ból indul.'),
+   abra(SVG_UGRAS, 'A $h$ függvény az $x=1$-nél „ugrik”: balról a $3$-hoz tart, jobbról közelítve a $0$-hoz tart.'),
    r'<p>Itt $\lim\limits_{x\to1-0}h(x)=3$ és $\lim\limits_{x\to1+0}h(x)=0$. A kettő különbözik, tehát a '
    r'$\lim\limits_{x\to1}h(x)$ határérték <b>nem létezik</b> — pedig $h(1)=0$ létezik.</p>',
    kviz(r'Tudjuk, hogy $\lim\limits_{x\to a-0}f(x)=5$. Mit mondhatunk a $\lim\limits_{x\to a}f(x)$ határértékről?',

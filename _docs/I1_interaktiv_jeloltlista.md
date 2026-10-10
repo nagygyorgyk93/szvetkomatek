@@ -5,8 +5,9 @@
 **A négy évfolyam jelöltlistája helyben elkészült.** Kiindulás: `c4059b2`, tiszta
 helyi `main`, az `origin/main` helyi referenciájával azonos; távoli frissítés nem történt.
 A tanár az I1-listát választotta, majd jóváhagyta az első három modell elkészítését.
-**I1-04, I1-06, I1-09, I1-11, I1-12 és I1-13 helyben megvalósult és ellenőrizve van.**
-A további 10 jelölt terv. Részletek: [első adag](I1_elso_adag.md), [3e geometriai adag](I1_masodik_adag.md).
+**I1-04, I1-06, I1-09, I1-11, I1-12, I1-13, I1-14 és I1-15 helyben megvalósult és ellenőrizve van.**
+A további 8 jelölt terv. Részletek: [első adag](I1_elso_adag.md), [3e geometriai adag](I1_masodik_adag.md),
+[4e fogalmi adag](I1_harmadik_adag.md).
 
 A 161 tananyaglap ábráinak és médiáinak leltárából **16 jelöltet** választottam,
 évfolyamonként négyet. **P1:** elsőként érdemes megvalósítani; **P2:** későbbi,
@@ -28,8 +29,8 @@ mind a négy médiakatalógus. A listán szereplő konkrét szakaszok szövegét
 
 ## A jelöltlista induló leltára
 
-Az alábbi számok az első megvalósítás előtti állapotot rögzítik. A két megvalósítási adag
-után 14 saját interaktív ábra van (1e: 1, 2e: 1, 3e: 3, 4e: 9);
+Az alábbi számok az első megvalósítás előtti állapotot rögzítik. A három megvalósítási adag
+után 16 saját interaktív ábra van (1e: 1, 2e: 1, 3e: 3, 4e: 11);
 a matematikai SVG-k száma és a GeoGebra-lefedettség megmaradt.
 
 Csak a tananyaglapok matematikai, `role="img"` jelölésű SVG-it számoltam.
@@ -50,8 +51,8 @@ jelenti. Az appletek mostani külső működését ebben a dokumentációs adagb
 ## Jelöltek évfolyamonként
 
 A link az ábra tényleges tananyagszakaszára vezet. A javasolt vezérlő és a kijelzett
-értékek a többi 10 jelöltnél tervként szerepelnek. I1-04, I1-06, I1-09, I1-11,
-I1-12 és I1-13 helyben elkészült; ezek kezelése és matematikai szélső esetei ellenőrizve vannak.
+értékek a többi 8 jelöltnél tervként szerepelnek. I1-04, I1-06, I1-09, I1-11,
+I1-12, I1-13, I1-14 és I1-15 helyben elkészült; ezek kezelése és matematikai szélső esetei ellenőrizve vannak.
 
 ### 1e
 
@@ -85,8 +86,8 @@ I1-12 és I1-13 helyben elkészült; ezek kezelése és matematikai szélső ese
 | Azonosító · sorrend | Lap és meglévő ábra | Mit állítana a vezérlő? | Tanulási haszon | Kimenet |
 |---|---|---|---|---|
 | **I1-13 · P1 · helyben kész** | [A sorozat határértéke](../4e/01-sorozatok-hatarerteke/tananyag-hatarertek-fogalma.html#s2) — A határértékhez közelítő sorozat pontjai és a körülötte lévő sáv | A sáv ε félszélessége és a látható tagok száma. | Látszik, hogyan kerülnek egy indextől kezdve a tagok a szűkebb sávba is. | `MAT.F.SO.S.1.7 (7.3)` |
-| **I1-14 · P1** | [A függvény határértéke](../4e/02-fuggvenyek/tananyag-fuggveny-hatarerteke.html#s4) — Eltérő határérték és pontbeli érték: üres/teli pont | Közelítés a megjelölt ponthoz balról vagy jobbról; a pontbeli érték külön jelölve marad. | Elválasztja a közelítés eredményét a függvény adott pontban felvett értékétől. | `MAT.F.SO.S.1.8 (8.1)` |
-| **I1-15 · P1** | [A Void kivágása — síkidomok területe](../4e/04-integral/tananyag-terulet.html#s2) — Előjelet váltó görbe alatti két területrész | A jobb integrálási határ állítása; előjeles integrál és geometriai terület egymás mellett. | Megmutatja, miért kell a zérushelynél külön számolni a területet. | `MAT.F.SO.S.1.9 (9.2–9.3)` |
+| **I1-14 · P1 · helyben kész** | [A függvény határértéke](../4e/02-fuggvenyek/tananyag-fuggveny-hatarerteke.html#s4) — Eltérő határérték és pontbeli érték: üres/teli pont | Közelítés a megjelölt ponthoz balról vagy jobbról; a pontbeli érték külön jelölve marad. | Elválasztja a közelítés eredményét a függvény adott pontban felvett értékétől. | `MAT.F.SO.S.1.8 (8.1)` |
+| **I1-15 · P1 · helyben kész** | [A Void kivágása — síkidomok területe](../4e/04-integral/tananyag-terulet.html#s2) — Előjelet váltó görbe alatti két területrész | A jobb integrálási határ állítása; előjeles integrál és geometriai terület egymás mellett. | Megmutatja, miért kell a zérushelynél külön számolni a területet. | `MAT.F.SO.S.1.9 (9.2–9.3)` |
 | **I1-16 · P2** | [Adatokból kép — sokaság, minta, gyakoriság, diagram](../4e/06-valoszinuseg-statisztika/tananyag-adatok.html#s4) — Ugyanaz a népességadat normál és levágott tengelyű oszlopdiagramon | Váltás a meglévő két tengelybeállítás között; az adatok és a százalékos változás rögzítve. | A tanuló elkülöníti a valódi változást a megjelenítés okozta benyomástól. | `MAT.V.SO.O.1.9 (9.4); MAT.SO.O.3.4` |
 
 ## Jóváhagyott és megvalósított első adag
@@ -107,6 +108,14 @@ A kör mellett egy párhuzamos egyenes mozog: c = −35–35, az érintés ±25-
 Minden modell natív vezérlővel, Kezdőállapot gombbal és szöveges állapotjelzéssel
 készült. Próba és korlát: [második adag](I1_masodik_adag.md).
 
+## Megvalósított harmadik adag — 4e
+
+**I1-14 — határérték és pontbeli érték; I1-15 — előjeles integrál és terület.**
+A bal/jobb oldali közelítésben a lyuk és a pontbeli érték rögzített, a távolság
+mindig pozitív. A meglévő x² − 4x példában a jobb határ 0–6 között mozgatható;
+az integrál és a terület pontos törtértéke együtt látszik. A kezdő b = 5
+megfelel a szöveges példának. Próba és korlát: [harmadik adag](I1_harmadik_adag.md).
+
 ## Meglévő modellekhez kötődő cserejavaslatok
 
 Ezeket külön kell mérlegelni, mert azonos célt szolgáló GeoGebra már van a lapon.
@@ -121,7 +130,7 @@ Ha saját változat készül, a tanár választ a két megoldás között.
 
 Az I1-10 a **skalárral szorzásra**, az I1-05 a **konjugálásra** irányul;
 a vektor- és komplexszám-összeadási appletek más műveletet mutatnak.
-Az I1-15 az **előjeles integrál és a geometriai terület eltérését** mutatná;
+Az elkészült I1-15 az **előjeles integrál és a geometriai terület eltérését** mutatja;
 a meglévő pozitív görbe alatti téglalapos közelítés más kérdést szemléltet.
 
 ## Ami már saját interaktív ábra
@@ -129,8 +138,8 @@ a meglévő pozitív görbe alatti téglalapos közelítés más kérdést szeml
 A 4e-ben a szelő/derivált, monotonitás/érintő, konvexitás, primitív függvénysereg,
 téglalapos integrálközelítés, Pascal-háromszög, érme- és kockaszimulátor, valamint
 adatlabor már működő saját modell. A két érintős ábra azonos módra épül:
-**nyolc ábra, hét működési mód**. Az I1 első és második adaga további hat
-ábrát és hat módot adott: összesen 14 ábra, 13 mód. A jelöltlista ezeket
+**nyolc ábra, hét működési mód**. Az I1 három adaga további nyolc
+ábrát és nyolc módot adott: összesen 16 ábra, 15 mód. A jelöltlista ezeket
 megvalósult lefedettségként kezeli.
 
 A szinusz/koszinusz egységkörből való kirajzolása, az ellipszis és a parabola
@@ -173,8 +182,7 @@ Az új modellek mobilos és billentyűzetes viselkedése, matematikai szélső e
 külső appletek jelenlegi működése és a képernyőolvasós eredmény a megvalósításkor,
 illetve a célzott próba során lesz ellenőrizhető.
 
-**Tanári döntés kell:** az elkészült hat modellhez nincs. A további 10 jelölt
+**Tanári döntés kell:** az elkészült nyolc modellhez nincs. A további 8 jelölt
 a listán marad. A meglévő GeoGebra cseréjéről külön választás szükséges, ha ilyen
-tétel kerül sorra. A végleges próbák és korlátok az [első adag](I1_elso_adag.md)
-és a [második adag](I1_masodik_adag.md) jelentésében szerepelnek.
+tétel kerül sorra. A végleges próbák és korlátok az [első adag](I1_elso_adag.md), a [második adag](I1_masodik_adag.md) és a [harmadik adag](I1_harmadik_adag.md) jelentésében szerepelnek.
 Helyi `main`, új ág és push nélkül.

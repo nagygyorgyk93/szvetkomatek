@@ -43,7 +43,7 @@
   <div class="tartalom">
     <h2 id="s0">📡 Küldetés-eligazítás</h2>
 
-    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/nagol_w.webp" alt="Nagol — a morcos kiképzőtiszt" width="1200" height="670" decoding="async"><p>📡 <b>Nagol:</b> A sorozatoknál <span class="math inline">\(n\)</span> egyik természetes számról a következőre ugrált. Most <span class="math inline">\(x\)</span> folyamatosan fut — és néha egy olyan pont felé, ahol a függvénynek <b>nincs</b> értéke. <b>Véd Vilmos:</b> Akkor ott nincs határérték sem. <b>Nagol:</b> Dehogynem. A határérték nem azt kérdezi, mennyi a függvény a pontban, hanem azt, <b>mihez közelít</b>, ha egyre közelebb megyünk.</p></div>
+    <div class="brief karakter-nagy"><img class="portre" src="../../assets/img/kar/nagol_w.webp" alt="Nagol — a morcos kiképzőtiszt" width="1200" height="670" decoding="async"><p>📡 <b>Nagol:</b> A sorozatoknál <span class="math inline">\(n\)</span> egyik természetes számról a következőre ugrált. Most <span class="math inline">\(x\)</span> folyamatosan fut — és néha egy olyan pont felé, ahol a függvénynek <b>nincs</b> értéke. <b>Véd Vilmos:</b> Akkor ott nincs határérték sem. <b>Nagol:</b> Attól még lehet határérték. A határérték nem azt kérdezi, mennyi a függvény a pontban, hanem azt, <b>mihez közelít</b>, ha egyre közelebb megyünk.</p></div>
 
     <h2 id="s1">Emlékeztető: a sorozat határértéke</h2>
 
@@ -101,7 +101,7 @@
 
     <div class="doboz definicio" id="def-fv-hatarertek">
       <p class="cim"><span class="ikon">📗</span> A függvény határértéke</p>
-      <p>Legyen <span class="math inline">\(f\)</span> értelmezve az <span class="math inline">\(a\)</span> valamely környezetében, kivéve esetleg magát az <span class="math inline">\(a\)</span>-t. Az <span class="math inline">\(f\)</span> függvény határértéke az <span class="math inline">\(a\)</span> helyen az <span class="math inline">\(A\)</span> szám, ha bármely <span class="math inline">\(a\)</span>-hoz tartó <span class="math inline">\((x_n)\)</span> sorozatra (<span class="math inline">\(x_n\ne a\)</span>, <span class="math inline">\(x_n\in D_f\)</span>) az <span class="math inline">\(f(x_n)\)</span> függvényértékek sorozata <span class="math inline">\(A\)</span>-hoz tart. Jele: <span class="math inline">\(\lim\limits_{x\to a}f(x)=A\)</span>.</p><p>Szemléletesen: <span class="math inline">\(f(x)\)</span> akármilyen közel vihető <span class="math inline">\(A\)</span>-hoz, ha <span class="math inline">\(x\)</span>-et elég közel választjuk <span class="math inline">\(a\)</span>-hoz (<span class="math inline">\(x\ne a\)</span>).</p>
+      <p>Legyen <span class="math inline">\(f\)</span> értelmezve az <span class="math inline">\(a\)</span> valamely környezetében, kivéve esetleg magát az <span class="math inline">\(a\)</span>-t. Az <span class="math inline">\(f\)</span> függvény határértéke az <span class="math inline">\(a\)</span> helyen az <span class="math inline">\(A\)</span> szám, ha bármely <span class="math inline">\(a\)</span>-hoz tartó <span class="math inline">\((x_n)\)</span> sorozatra (<span class="math inline">\(x_n\ne a\)</span>, <span class="math inline">\(x_n\in D_f\)</span>) az <span class="math inline">\(f(x_n)\)</span> függvényértékek sorozata <span class="math inline">\(A\)</span>-hoz tart. Jele: <span class="math inline">\(\lim\limits_{x\to a}f(x)=A\)</span>.</p><p>Szemléletesen: ha <span class="math inline">\(x\)</span> elég közel van <span class="math inline">\(a\)</span>-hoz, de nem egyenlő vele, akkor minden ilyen <span class="math inline">\(x\)</span>-re <span class="math inline">\(f(x)\)</span> tetszőlegesen közel van <span class="math inline">\(A\)</span>-hoz.</p>
     </div>
 
     <p>A definíció két fontos üzenete: az <span class="math inline">\(x=a\)</span> helyet <b>kihagyjuk</b> (a függvénynek ott nem is kell értelmezve lennie), és <b>minden irányból</b> történő közelítésnek ugyanoda kell vezetnie.</p>
@@ -110,33 +110,46 @@
 
     <p class="lead">A grafikonon a <b>teli pont</b> a függvény értékét jelöli, az <b>üres pont</b> azt, hogy ott a grafikonnak nincs pontja. A kettő ugyanannál az <span class="math inline">\(x\)</span>-nél más magasságban is lehet.</p>
 
-    <div class="svgcard">
-    <svg viewBox="0 0 360 250" width="360" height="250" role="img" aria-label="A g függvény grafikonja: egy csökkenő egyenes, a (2; 2) pontban üres kör, alatta a (2; 1) pontban teli pont">
-      <defs><marker id="nyil-06241" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+    <div class="svgcard interaktiv iv-modell" data-mod="hatarertek" data-xr="-1,5.4" data-yr="-.8,4.6" data-w="380" data-h="280">
+    <svg viewBox="0 0 380 280" width="380" height="280" role="img" aria-describedby="iv-hatarertek-kijelzo iv-hatarertek-leiras" aria-label="A g függvény határértéke 2 az x = 2 helyen; a pontbeli érték g(2) = 1. Közelítés balról és jobbról.">
+      <defs><marker id="iv-hatarertek-nyil" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
       <g stroke="#cbd5e1" stroke-width=".6">
-        <line x1="26.0" y1="228.0" x2="26.0" y2="14.0"/>
-        <line x1="126.6" y1="228.0" x2="126.6" y2="14.0"/>
-        <line x1="176.9" y1="228.0" x2="176.9" y2="14.0"/>
-        <line x1="227.2" y1="228.0" x2="227.2" y2="14.0"/>
-        <line x1="277.6" y1="228.0" x2="277.6" y2="14.0"/>
-        <line x1="327.9" y1="228.0" x2="327.9" y2="14.0"/>
-        <line x1="26.0" y1="156.7" x2="348.0" y2="156.7"/>
-        <line x1="26.0" y1="117.0" x2="348.0" y2="117.0"/>
-        <line x1="26.0" y1="77.4" x2="348.0" y2="77.4"/>
-        <line x1="26.0" y1="37.8" x2="348.0" y2="37.8"/>
+        <line x1="26.0" y1="258.0" x2="26.0" y2="14.0"/>
+        <line x1="132.9" y1="258.0" x2="132.9" y2="14.0"/>
+        <line x1="186.3" y1="258.0" x2="186.3" y2="14.0"/>
+        <line x1="239.8" y1="258.0" x2="239.8" y2="14.0"/>
+        <line x1="293.2" y1="258.0" x2="293.2" y2="14.0"/>
+        <line x1="346.6" y1="258.0" x2="346.6" y2="14.0"/>
+        <line x1="26.0" y1="176.7" x2="368.0" y2="176.7"/>
+        <line x1="26.0" y1="131.5" x2="368.0" y2="131.5"/>
+        <line x1="26.0" y1="86.3" x2="368.0" y2="86.3"/>
+        <line x1="26.0" y1="41.1" x2="368.0" y2="41.1"/>
       </g>
-      <line x1="26.0" y1="196.3" x2="348.0" y2="196.3" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-06241)"/>
-      <line x1="76.3" y1="228.0" x2="76.3" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#nyil-06241)"/>
-      <text x="344.0" y="210.3" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
-      <text x="68.3" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
-      <text x="126.6" y="209.3" font-size="10" fill="#475569" text-anchor="middle">1</text>
-      <text x="71.3" y="160.7" font-size="10" fill="#475569" text-anchor="end">1</text>
-      <polyline points="46.1,14.0 48.6,16.0 51.2,18.0 53.7,19.9 56.2,21.9 58.7,23.9 61.2,25.9 63.7,27.9 66.2,29.9 68.8,31.8 71.3,33.8 73.8,35.8 76.3,37.8 78.8,39.8 81.3,41.7 83.9,43.7 86.4,45.7 88.9,47.7 91.4,49.7 93.9,51.6 96.4,53.6 99.0,55.6 101.5,57.6 104.0,59.6 106.5,61.6 109.0,63.5 111.5,65.5 114.0,67.5 116.6,69.5 119.1,71.5 121.6,73.4 124.1,75.4 126.6,77.4 129.1,79.4 131.7,81.4 134.2,83.4 136.7,85.3 139.2,87.3 141.7,89.3 144.2,91.3 146.8,93.3 149.3,95.2 151.8,97.2 154.3,99.2 156.8,101.2 159.3,103.2 161.8,105.1 164.4,107.1 166.9,109.1 169.4,111.1 171.9,113.1 174.4,115.1 176.9,117.0 179.5,119.0 182.0,121.0 184.5,123.0 187.0,125.0 189.5,126.9 192.0,128.9 194.5,130.9 197.1,132.9 199.6,134.9 202.1,136.9 204.6,138.8 207.1,140.8 209.6,142.8 212.2,144.8 214.7,146.8 217.2,148.7 219.7,150.7 222.2,152.7 224.7,154.7 227.2,156.7 229.8,158.6 232.3,160.6 234.8,162.6 237.3,164.6 239.8,166.6 242.3,168.6 244.9,170.5 247.4,172.5 249.9,174.5 252.4,176.5 254.9,178.5 257.4,180.4 260.0,182.4 262.5,184.4 265.0,186.4 267.5,188.4 270.0,190.4 272.5,192.3 275.0,194.3 277.6,196.3 280.1,198.3 282.6,200.3 285.1,202.2 287.6,204.2 290.1,206.2 292.7,208.2 295.2,210.2 297.7,212.1" fill="none" stroke="#3b82f6" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle cx="176.9" cy="117.0" r="4" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"/>
-      <circle cx="176.9" cy="156.7" r="4" fill="#0f172a"/>
+      <line x1="26.0" y1="221.9" x2="368.0" y2="221.9" stroke="#0f172a" stroke-width="1.4" marker-end="url(#iv-hatarertek-nyil)"/>
+      <line x1="79.4" y1="258.0" x2="79.4" y2="14.0" stroke="#0f172a" stroke-width="1.4" marker-end="url(#iv-hatarertek-nyil)"/>
+      <text x="364.0" y="235.9" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">x</text>
+      <text x="71.4" y="26.0" font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">y</text>
+      <text x="132.9" y="234.9" font-size="10" fill="#475569" text-anchor="middle">1</text>
+      <text x="74.4" y="180.7" font-size="10" fill="#475569" text-anchor="end">1</text>
+    <defs><clipPath id="iv-hatarertek-ablak"><rect x="26.0" y="14.0" width="342.0" height="244.0"/></clipPath></defs>
+    <g clip-path="url(#iv-hatarertek-ablak)">
+    <line x1="47.375" y1="14.0" x2="314.5625" y2="239.92592592592595" stroke="#3b82f6" stroke-width="2.2"></line>
+    <line class="iv-hat-vet" x1="132.875" y1="221.85185185185185" x2="132.875" y2="86.29629629629629" stroke="#b45309" stroke-width="1.6" stroke-dasharray="4 3"></line>
+    <circle class="iv-hat-Q" cx="132.875" cy="86.29629629629629" r="3.5" fill="#b45309"></circle>
+    <circle class="iv-hat-lyuk" cx="186.3125" cy="131.48148148148147" r="4.3" fill="#ffffff" stroke="#0f172a" stroke-width="1.8"></circle>
+    <circle class="iv-hat-ertek" cx="186.3125" cy="176.66666666666666" r="4" fill="#0f172a"></circle>
+    </g>
+    <text x="196.3125" y="123.48148148148147" font-size="13" fill="#0f172a">határérték: 2</text>
+    <text x="196.3125" y="193.66666666666666" font-size="13" fill="#0f172a">g(2) = 1</text>
     </svg>
+    <p class="iv-statikus">Az ábra kezdőállapotát látod. Az interaktív vezérléshez JavaScript szükséges.</p>
+    <div class="iv-vezerlo"><label for="iv-hat-oldal">Közelítés iránya</label><select id="iv-hat-oldal" class="iv-hat-oldal" aria-describedby="iv-hatarertek-kijelzo"><option value="-1">Balról</option><option value="1">Jobbról</option></select></div>
+    <div class="iv-vezerlo"><label for="iv-hat-tav">Az x távolsága a 2-től: <span class="iv-hat-tav-ertek">1</span></label><input id="iv-hat-tav" class="iv-hat-tav" type="range" min="0" max="3" step="1" value="0" aria-valuetext="Az x távolsága a 2-től: 1" aria-describedby="iv-hatarertek-kijelzo"></div>
+    <div class="iv-vezerlo iv-gombsor"><button type="button" class="iv-alaphelyzet">Kezdőállapot</button></div>
+    <p class="iv-kijelzo" id="iv-hatarertek-kijelzo" aria-live="polite" aria-atomic="true">Balról közelítünk: x = 1, g(x) = 3. A 2-től mért távolság 1. A határérték mindkét oldalról 2; a rögzített pontbeli érték g(2) = 1.</p>
+    <p class="cap iv-leiras" id="iv-hatarertek-leiras"><span class="math inline">\(g(x)=4-x\)</span>, ha <span class="math inline">\(x\ne2\)</span>; <span class="math inline">\(g(2)=1\)</span>. A teli pont a pontbeli érték, a <span class="math inline">\((2;2)\)</span> üres pont nem része a grafikonnak. Válts oldalt, és csökkentsd a távolságot! A barna pont a közelítő függvényértéket mutatja. Nagyon kis távolságnál a pontok a rajzon összemosódhatnak; a kijelző számai mutatják, hogy a közelítő pont még nem érte el a lyuk helyét.</p>
     </div>
-    <p class="cap">A <span class="math inline">\(g\)</span> függvény: az egyenesből a <span class="math inline">\((2;\,2)\)</span> pont hiányzik, és <span class="math inline">\(g(2)=1\)</span>.</p>
+    <script src="../../assets/js/interaktiv.js" defer></script>
 
     <div class="doboz pelda" id="pelda-teli-ures">
       <p class="cim"><span class="ikon">✏️</span> I.V.H. Akták — teli és üres pont</p>
@@ -145,7 +158,7 @@
 
     <div class="doboz csapda">
       <p class="cim"><span class="ikon">⚠️</span> Véd Vilmos csapda</p>
-      <p>Véd Vilmos szerint „a határérték az, amit behelyettesítéssel kapok” — ezért a fenti grafikonra <span class="math inline">\(\lim\limits_{x\to2}g(x)=1\)</span>-et ír.</p><p><b>A határérték nem a pontbeli érték.</b> Sok függvénynél a kettő egyenlő (ezek a folytonos függvények), de nem mindig: itt a görbe a <span class="math inline">\(2\)</span>-höz tart, a teli pont pedig „kilóg”.</p>
+      <p>Véd Vilmos szerint „a határérték az, amit behelyettesítéssel kapok” — ezért a fenti grafikonra <span class="math inline">\(\lim\limits_{x\to2}g(x)=1\)</span>-et ír.</p><p><b>A határérték nem a pontbeli érték.</b> A folytonossági pontokban a kettő egyenlő. Más pontokban eltérhetnek: itt a görbe a <span class="math inline">\(2\)</span>-höz tart, a teli pont pedig „kilóg”.</p>
     </div>
 
     <div class="kviz" data-answer="2" data-kevert="1" data-jo="✔ A görbe mindkét oldalról a 2 magasságú üres ponthoz tart. A teli pont (g(2) = 1) a határértéket nem befolyásolja." data-nem="✘ Nézd, hová tart a görbe, ha x balról és jobbról a 2-höz közelít: az üres ponthoz, a 2 magasságba. A teli pont csak a függvényértéket mutatja.">
@@ -190,7 +203,7 @@
       <circle cx="182.4" cy="182.1" r="4" fill="#0f172a"/>
     </svg>
     </div>
-    <p class="cap">A <span class="math inline">\(h\)</span> függvény az <span class="math inline">\(x=1\)</span>-nél „ugrik”: balról a <span class="math inline">\(3\)</span>-hoz tart, jobbról a <span class="math inline">\(0\)</span>-ból indul.</p>
+    <p class="cap">A <span class="math inline">\(h\)</span> függvény az <span class="math inline">\(x=1\)</span>-nél „ugrik”: balról a <span class="math inline">\(3\)</span>-hoz tart, jobbról közelítve a <span class="math inline">\(0\)</span>-hoz tart.</p>
 
     <p>Itt <span class="math inline">\(\lim\limits_{x\to1-0}h(x)=3\)</span> és <span class="math inline">\(\lim\limits_{x\to1+0}h(x)=0\)</span>. A kettő különbözik, tehát a <span class="math inline">\(\lim\limits_{x\to1}h(x)\)</span> határérték <b>nem létezik</b> — pedig <span class="math inline">\(h(1)=0\)</span> létezik.</p>
 

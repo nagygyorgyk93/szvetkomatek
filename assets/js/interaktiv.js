@@ -25,6 +25,8 @@
  *   gula — a szabályos négyoldalú gúla három derékszögű háromszögének kiemelése
  *   tavolsag — próbapont és rögzített egyenes; merőleges talppont és távolság
  *   kor — kör és párhuzamosan eltolt egyenes; távolság és közös pontok
+ *   hatarertek — közelítés balról/jobbról, külön rögzített lyukkal és pontbeli értékkel
+ *   terulet — változó jobb határ; előjeles integrál és nemnegatív terület pontos törtértékekkel
  * A függvény polinom: data-poly="a0,a1,a2,…" (a0 + a1·x + a2·x² + …) — nincs eval.
  * Koordináták: data-xr="x0,x1", data-yr="y0,y1", data-w, data-h (a svg_fuggvenyek() margóival).
  */
@@ -540,6 +542,69 @@
     frissit(); return true;
   }
 
+  // ------------------------------------------------------------ a 4e fogalmi szemléltetései
+  function ivGrafikon(doboz) {
+    var xr=szamok(doboz.getAttribute('data-xr')),yr=szamok(doboz.getAttribute('data-yr'));
+    var w=Number(doboz.getAttribute('data-w')),h=Number(doboz.getAttribute('data-h'));
+    return {P:function(x,y){return [BAL+(x-xr[0])/(xr[1]-xr[0])*(w-BAL-JOBB),
+      FENT+(yr[1]-y)/(yr[1]-yr[0])*(h-FENT-LENT)];}};
+  }
+
+  function hatarertek(doboz) {
+    var oldal=doboz.querySelector('.iv-hat-oldal'),tav=doboz.querySelector('.iv-hat-tav');
+    var Q=doboz.querySelector('.iv-hat-Q'),vet=doboz.querySelector('.iv-hat-vet');
+    var ki=doboz.querySelector('.iv-hat-tav-ertek'),kijelzo=doboz.querySelector('.iv-kijelzo');
+    if(!(oldal&&tav&&Q&&vet&&ki&&kijelzo))return;
+    var sik=ivGrafikon(doboz),tavok=[1,.1,.01,.001];
+    function frissit(){
+      var d=tavok[Number(tav.value)],sign=Number(oldal.value),x=2+sign*d,y=4-x,p=sik.P(x,y);
+      ivPont(Q,p,x,y);ivVonal(vet,sik.P(x,0),p);
+      ki.textContent=pontosFmt(d);tav.setAttribute('aria-valuetext','Az x távolsága a 2-től: '+pontosFmt(d));
+      kijelzo.textContent=(sign<0?'Balról':'Jobbról')+' közelítünk: x = '+pontosFmt(x)+', g(x) = '+pontosFmt(y)+
+        '. A 2-től mért távolság '+pontosFmt(d)+'. A határérték mindkét oldalról 2; '+
+        'a rögzített pontbeli érték g(2) = 1.';
+    }
+    oldal.addEventListener('change',frissit);tav.addEventListener('input',frissit);
+    visszaallit(doboz,function(){oldal.value='-1';tav.value='0';frissit();});
+    frissit();return true;
+  }
+
+  function ivTort(sz,nev) {
+    // Az integrál negyedegységes bemenetének racionális értéke, kerekítés nélkül.
+    var a=Math.abs(sz),b=nev;while(b){var c=a%b;a=b;b=c;}
+    var oszto=a||nev;sz/=oszto;nev/=oszto;
+    return String(sz).replace('-','−')+(nev===1?'':'/'+nev);
+  }
+
+  function terulet(doboz) {
+    var csuszka=doboz.querySelector('.iv-ter-b'),neg=doboz.querySelector('.iv-ter-neg'),pos=doboz.querySelector('.iv-ter-pos');
+    var hatar=doboz.querySelector('.iv-ter-hatar'),pont=doboz.querySelector('.iv-ter-vegpont'),nev=doboz.querySelector('.iv-ter-b-nev');
+    var ki=doboz.querySelector('.iv-ter-b-ertek'),kijelzo=doboz.querySelector('.iv-kijelzo');
+    if(!(csuszka&&neg&&pos&&hatar&&pont&&nev&&ki&&kijelzo))return;
+    var sik=ivGrafikon(doboz);
+    function f(x){return x*x-4*x;}
+    function ter(lo,hi){var pts=[sik.P(lo,0)];for(var i=0;i<=120;i++){var x=lo+(hi-lo)*i/120;pts.push(sik.P(x,f(x)));}
+      pts.push(sik.P(hi,0));return pts.map(function(p){return p[0].toFixed(3)+','+p[1].toFixed(3);}).join(' ');}
+    function frissit(){
+      var ticks=Number(csuszka.value),b=ticks/4,n=ticks*ticks*ticks-24*ticks*ticks;
+      var alul=ticks<=16?-n:2048,felul=ticks<=16?0:n+2048,total=alul+felul;
+      neg.setAttribute('points',ter(0,Math.min(b,4)));pos.setAttribute('points',ter(4,Math.max(b,4)));
+      neg.style.display=ticks===0?'none':'';pos.style.display=ticks<=16?'none':'';
+      ivVonal(hatar,sik.P(b,14.2),sik.P(b,-5.2));ivPont(pont,sik.P(b,f(b)),b,f(b));
+      // A felirat felső sávja a teljes tartományban elkerüli a görbét és a végpontot.
+      var balra=b>=.5;ivFelirat(nev,[sik.P(b,0)[0],31],balra?-7:7,0);
+      nev.setAttribute('text-anchor',balra?'end':'start');
+      ki.textContent=pontosFmt(b);csuszka.setAttribute('aria-valuetext','A jobb határ b: '+pontosFmt(b));
+      doboz.setAttribute('data-integral-szamlalo',n);doboz.setAttribute('data-terulet-szamlalo',total);
+      doboz.setAttribute('data-alul-szamlalo',alul);doboz.setAttribute('data-felul-szamlalo',felul);
+      kijelzo.textContent='A jobb határ b = '+pontosFmt(b)+'. Az előjeles integrál '+ivTort(n,192)+', a terület '+ivTort(total,192)+
+        '. A tengely alatti rész területe '+ivTort(alul,192)+', a fölöttié '+ivTort(felul,192)+
+        '. Az integrál abszolút értéke '+ivTort(Math.abs(n),192)+(ticks>16?': kisebb az összterületnél.':': megegyezik az összterülettel.');
+    }
+    csuszka.addEventListener('input',frissit);visszaallit(doboz,function(){csuszka.value='20';frissit();});
+    frissit();return true;
+  }
+
   function indit(doboz) {
     var mod = doboz.getAttribute("data-mod");
     if (mod === "pascal") return pascal(doboz);
@@ -548,6 +613,8 @@
     if (mod === "homotecia") return homotecia(doboz);
     if (mod === "exponencialis") return exponencialis(doboz);
     if (mod === "sorozat") return sorozat(doboz);
+    if (mod === "hatarertek") return hatarertek(doboz);
+    if (mod === "terulet") return terulet(doboz);
     if (mod === "gula") return gula(doboz);
     if (mod === "tavolsag") return tavolsag(doboz);
     if (mod === "kor") return kor(doboz);

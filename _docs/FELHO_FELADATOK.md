@@ -646,13 +646,14 @@ vektorösszeadás; kör és egyenes kölcsönös helyzete; sorozat ε-sávja.
 | ◐ Helyi jelöltlista kész, 2026-10-10 | ◐ 4 jelölt | ◐ 4 jelölt | ◐ 4 jelölt | ◐ 4 jelölt |
 | ◐ Első megvalósítás helyben kész, 2026-10-10 | ◐ I1-04 homotécia | ◐ I1-06 exponenciális alap | — | ◐ I1-13 sorozat/ε-sáv |
 | ◐ Második megvalósítás helyben kész, 2026-10-10 | — | — | ◐ I1-09 gúla; I1-11 távolság; I1-12 kör–egyenes | — |
+| ◐ Harmadik megvalósítás helyben kész, 2026-10-10 | — | — | — | ◐ I1-14 határérték/pontérték; I1-15 előjeles integrál/terület |
 
 A 16 jelölt rangsora és kimenetkapcsolata: [I1 interaktív jelöltlista](I1_interaktiv_jeloltlista.md).
 A tanár jóváhagyta az első három modell elkészítését; [az első adag](I1_elso_adag.md)
 helyben megvalósult, matematikai/mobilos/billentyűzetes és nyomtatási próbái rendben.
 A folytatásban [a 3e három geometriai modellje](I1_masodik_adag.md) is elkészült:
-I1-09, I1-11, I1-12. Összesen 6/16 jelölt kész, 10 terv maradt; négy további
-ötlet a meglévő GeoGebra cseréjére. Az elkészült modellekhez nincs nyitott döntés.
+I1-09, I1-11, I1-12. [A harmadik adagban](I1_harmadik_adag.md) I1-14 és I1-15 is kész.
+Összesen 8/16 jelölt kész, 8 terv maradt; négy további ötlet a meglévő GeoGebra cseréjére. Az elkészült modellekhez nincs nyitott döntés.
 Tanári kérésre helyi mainen dolgozunk, új ág nélkül; push csak külön kérésre.
 
 ---
@@ -825,3 +826,38 @@ Korlát: élő oldal, valódi telefon/képernyőolvasó, más böngésző, telje
 PDF-tördelés és külső média új lejátszása nincs ellenőrizve. Tanári döntés
 az elkészült adaghoz nem kell. Helyi main, új ág és push nélkül.
 Részletek: [I1 második adag](I1_masodik_adag.md).
+
+
+### I1 harmadik megvalósítás — 4e határérték és terület, 2026-10-10
+
+I1-14: bal/jobb oldali közelítés a meglévő g(x)=4−x (x≠2), g(2)=1 példán;
+rögzített lyuk és pontbeli érték, pozitív távolság. I1-15: f(x)=x²−4x,
+jobb határ b=0–6 negyedegységgel; integrál, két területrész, terület és
+abszolút érték pontos törtekkel. A b=5 kezdőállapot az eredeti szöveges példa.
+Két builder, közös ábra/tananyagsegéd és JS, natív címkézett vezérlők,
+Kezdőállapot, élő szöveges állapot, statikus kezdőkép és nyomtatás.
+Új gyakorlófeladat/feladatszámadat nincs; meglévő GeoGebra megmaradt.
+Kimenet és 4e-skill alapján. Hibatábla után a határérték négy mondata,
+az integrálismétlő a≠0 feltétele és a kioltás megfogalmazása pontosítva.
+Friss szemű lektor és visszaellenőrzése rendben. A b felirat 25 állásban
+ütközésmentes a javított felső sávban.
+
+Lánc rendben: 334 média/139 lap, kánon/link310/0, sáv tiszta; végleges
+render2/212 képlet/5 kvíz/0; kulcs4499/0, regresszió4499/4499=100%.
+Edge360/390/1280 kezdő/szélső12/0, axe2/0, billentyűzet9, 2 tényleges
+érintéses csúszkapróba; natív választó érintéssel nyitva/billentyűzettel
+kiválasztva. Nyomtatás4 JS be/ki, 14 korábbi modell működik.
+Független matematika: 8 közelítő pont és 25 pontos integrál/területállás,
+241 görbepont, két123pontos poligon állásonként, 0 eltérés.
+308 HTML és 634 korábbi követett fájl byte szerint azonos; két lap az
+új ábrákon és jelzett pontosításokon kívül azonos DOM. A 32 régi oldalhorgony
+és öt kvíz kérdése/válasza megmaradt; egy kvíz visszajelzése pontosabb.
+Index308, csak2 URL változott; naplótérkép/katalógus/tükör/első23 zárolt sor
+azonos. I1-modellek8/16 kész; saját ábrák16, módok15. Nyers próba és függőségek
+a repón kívül. Új teljesítménymérés nincs.
+
+Korlát: élő oldal, valódi telefon/képernyőolvasó, más böngésző, teljes PDF
+és külső média új lejátszása nincs. JS nélkül a caption képletei TeX-jelölést
+mutatnak; a statikus SVG és a számszerű állapot olvasható.
+Tanári döntés az elkészült két modellhez nem kell. Helyi main, új ág/push nélkül.
+Részletek: [I1 harmadik adag](I1_harmadik_adag.md).
