@@ -1,10 +1,23 @@
 # Q6 — Teljesítménymérés és betöltés
 
-## Állapot — 2026-10-10
+## Lezárás — 2026-10-10
 
-**A második adag helyben elkészült; a Q6 részben kész.** A betűcsere okozta
+**A Q6 helyben lezárva.** A tanár kérésére a további sebességhangolást nem folytatom.
+A helyi használati és böngészőpróbák alapján a sebesség a jelenlegi munkához
+elfogadható; a következő tétel az I1 interaktívábra-jelöltlista.
+
+A korábbi mérési eredmények és a kedvezőtlen eltérések lent megmaradnak.
+Nem igazolt minden oldalon gyorsulás; ebből további optimalizálási feladat most nem következik.
+A halmazfogalom idézőjeles KaTeX-figyelmeztetése külön tipográfiai tétel.
+A valódi telefonon, más böngészőben vagy az élő oldalon végzett új mérés hiánya
+az eredmények korlátja; nem akadályozza az I1-lista elkészítését.
+
+## Második adag mért állapota — 2026-10-10 (korábbi munkameneti jelentés)
+
+**A második adag lezárásakor a Q6 még részben kész volt.** A betűcsere okozta
 elmozdulás a hét mintalap mobilos mediánjában csökkent. Az első megjelenés és a
-betöltési idő több helyen kedvezőtlenebb lett, ezért további gyorsítás szükséges.
+betöltési idő több helyen kedvezőtlenebb lett, ezért további gyorsítás szerepelt
+a tervben. Ezt a fent rögzített tanári döntés lezárta.
 Kiindulás: `27b5de2`, tiszta `main`, az `origin/main` helyi referenciájával azonos;
 távoli frissítés nem történt. Új ág és push nélkül.
 
@@ -103,15 +116,15 @@ naplókód/térkép, keresőindex, builder és tükör nem változott. Újraép�
 matematikai kulcs/regresszió és új szöveglektor ehhez a CSS-adaghoz nem kellett;
 a működést valódi böngészővel ellenőriztem.
 
-### Hátra és korlát
+### Rögzített mérési korlátok
 
-- Első megjelenés és a betöltés CPU-költségének következő vizsgálata; különösen a 2e hatványfüggvény kedvezőtlen mutatói.
+- Az első megjelenés és a betöltés ideje vegyesen alakult; a 2e hatványfüggvény mutatói kedvezőtlenebbek. A további hangolás a fenti lezárás szerint nincs napirenden.
 - Az 1e/01 halmazfogalom idézőjeleinek korábbi KaTeX-figyelmeztetése.
 - Élő GitHub Pages, valódi telefon, más böngésző és képernyőolvasó nincs ellenőrizve. Az Arial nélküli telefonos betűcsere külön mérendő.
 - Az axe nem teljes WCAG-minősítés, a nyomtatási próba nem teljes PDF-tördelés; külső videó/applet lejátszási és tartalmi próbája nem történt.
 
 **Tanári döntés kell:** az elkészült CSS-adaghoz nincs. Helyi `main`, push nélkül;
-a Q6 további gyorsítást igényel.
+a Q6 a fenti tanári prioritás alapján helyben lezárva.
 
 ## Első adag — 2026-10-09 (korábbi, lezárt mérési állapot)
 

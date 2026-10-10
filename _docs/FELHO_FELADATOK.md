@@ -643,7 +643,11 @@ vektorösszeadás; kör és egyenes kölcsönös helyzete; sorozat ε-sávja.
 
 | jelöltlista | 1e | 2e | 3e | 4e |
 |---|---|---|---|---|
-| ☐ | ☐ | ☐ | ☐ | ☐ |
+| ◐ Helyi jelöltlista kész, 2026-10-10 | ◐ 4 jelölt | ◐ 4 jelölt | ◐ 4 jelölt | ◐ 4 jelölt |
+
+A 16 jelölt rangsora és kimenetkapcsolata: [I1 interaktív jelöltlista](I1_interaktiv_jeloltlista.md).
+Első javaslat: I1-04 homotécia, I1-06 exponenciális alap, I1-13 sorozat/ε-sáv.
+Tanári választásra vár a megvalósítás; négy további ötlet a meglévő GeoGebra cseréjére.
 
 ---
 
@@ -656,7 +660,7 @@ vektorösszeadás; kör és egyenes kölcsönös helyzete; sorozat ε-sávja.
 | Q3 | „Folytasd, ahol abbahagytad” — a `naplo.js` jegyezze az utolsó lapot, a főoldalon és az osztály-indexen gomb | ◐ Helyben kész (2026-10-09): főoldal + négy osztályoldal, külön osztályelőzmény, törlés és gyorsítótári visszalépés. 122 + 16 + 7 működéspróba, 15 mobil/asztali nézet és axe/nyomtatás, 0 hiba; [jelentés](Q3_folytatas.md). Helyi main, push nélkül. |
 | Q4 | Mobil tartalomjegyzék: lebegő „Tartalom” gomb, ha a TOC keskeny kijelzőn nem látszik | ◐ Helyben kész (2026-10-09): 279 lap/1306 szakasz; natív menü és fókusz, 20 képletes cím és ékezetes kijelölés javítva. Edge 310/0, 20 célzott nézet/axe, 12 nyomtatási nézet; [jelentés](Q4_mobil_tartalomjegyzek.md). Helyi main, push nélkül. |
 | Q5 | Offline mód (PWA): service worker a meglátogatott lapokra + KaTeX; frissítés-kezelés deploykor | ☐ (tanári döntés kell) |
-| Q6 | Teljesítmény: képméretek, font-preload, a szkriptek `defer`-je; mérés Playwrighttal | ◐ 2026-10-10: két adag helyben kész. Első: 310 lap betöltési jelzése, 9 változatlan JPEG külön fájlban, zárt válaszok mérése javítva. Második: célzott fonttartalék és stabil mobil logó; 310 HTML azonos, 98 összehasonlító futás/0 hiba, a hosszú című 1e lap CLS-mediánja 90%-kal kisebb. Edge 310/0, 45 nézet/0, axe5/0, 82+13 kezelési próba; [jelentés](Q6_teljesitmeny.md). Az első megjelenés/betöltés még nyitott, a 2e hatványfüggvény mért ideje kedvezőtlenebb. Helyi main, push nélkül. |
+| Q6 | Teljesítmény: képméretek, font-preload, a szkriptek `defer`-je; mérés Playwrighttal | ☑ Helyben lezárva (2026-10-10): két gyorsítási adag, a sebesség a jelenlegi használathoz elfogadható; tanári kérésre további hangolás nincs napirenden. 310 oldal, 45 végleges nézet/0 hiba, 98 összehasonlító futás/0 hiba; a vegyes betöltési eredmények megőrizve a [jelentésben](Q6_teljesitmeny.md). Következő tétel: I1 jelöltlista. Helyi main, új ág és push nélkül. |
 | Q7 | Kompakt médiakártya: kattintásig alacsony sáv (ikon, címke, cím), lejátszáskor nyílik 16:9-re / az applet arányára (`.media-fut`) | ☑ 2026-09-28 (helyben): az 1e/07 egyenletrendszer-lapon a médiablokkok aránya asztalon 46% → 19% |
 
 ### Q3 helyi lezárás — 2026-10-09
@@ -733,3 +737,21 @@ nem kellett. Jelentés és állapotnapló frissítve.
 élő oldal/valódi telefon és Arial nélküli betűcsere. Más böngésző/képernyőolvasó,
 teljes PDF-tördelés és külső média új próbája nincs. Tanári döntés az elkészült
 CSS-adaghoz nem kell. Helyi main, új ág és push nélkül.
+
+### Q6 lezárás és I1 jelöltlista — 2026-10-10
+
+A tanár kérésére a Q6 további sebességhangolása lezárva: a helyi használati próbák
+alapján a sebesség elfogadható. A korábbi mérések és kedvezőtlen eltérések a jelentésben
+megmaradnak. A régi KaTeX-idézőjel-figyelmeztetés külön tipográfiai tétel.
+
+A tanár az I1-listát választotta. Mind a 161 tananyaglap ábrái és médiái leltározva:
+286 matematikai SVG, közülük 8 saját interaktív kezdőkép; 24 aktív GeoGebra-modell.
+16 jelölt, évfolyamonként négy; 9 P1 és 7 P2, meglévő szakaszhoz és ellenőrzött
+kimenethez kötve. Négy cserejavaslat a meglévő appletekhez külön jelölve.
+Első ajánlott adag: I1-04, I1-06, I1-13; 3e alternatíva I1-09.
+
+Dokumentációs munka: a weboldal, tanulói tartalom és minden korábbi horgony megmaradt.
+Új modell működési/matematikai/mobilos tesztje a megvalósításkor következik; a mostani
+külső appletlejátszás nincs újrapróbálva. A jelöltlista linkjei, célképei, kimenetkódjai
+és a forrásmegőrzés ellenőrizve. Tanári döntés: melyik 2–3 jelölt induljon először?
+Részletek: [I1 jelöltlista](I1_interaktiv_jeloltlista.md). Helyi main, új ág és push nélkül.
