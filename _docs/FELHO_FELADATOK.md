@@ -656,7 +656,7 @@ vektorösszeadás; kör és egyenes kölcsönös helyzete; sorozat ε-sávja.
 | Q3 | „Folytasd, ahol abbahagytad” — a `naplo.js` jegyezze az utolsó lapot, a főoldalon és az osztály-indexen gomb | ◐ Helyben kész (2026-10-09): főoldal + négy osztályoldal, külön osztályelőzmény, törlés és gyorsítótári visszalépés. 122 + 16 + 7 működéspróba, 15 mobil/asztali nézet és axe/nyomtatás, 0 hiba; [jelentés](Q3_folytatas.md). Helyi main, push nélkül. |
 | Q4 | Mobil tartalomjegyzék: lebegő „Tartalom” gomb, ha a TOC keskeny kijelzőn nem látszik | ◐ Helyben kész (2026-10-09): 279 lap/1306 szakasz; natív menü és fókusz, 20 képletes cím és ékezetes kijelölés javítva. Edge 310/0, 20 célzott nézet/axe, 12 nyomtatási nézet; [jelentés](Q4_mobil_tartalomjegyzek.md). Helyi main, push nélkül. |
 | Q5 | Offline mód (PWA): service worker a meglátogatott lapokra + KaTeX; frissítés-kezelés deploykor | ☐ (tanári döntés kell) |
-| Q6 | Teljesítmény: képméretek, font-preload, a szkriptek `defer`-je; mérés Playwrighttal | ◐ 2026-10-09: első gyorsítási adag helyben kész, 310 lap, 9 változatlan JPEG külön fájlban, zárt válaszok mérése javítva. Előtte/utána 49–49 mérés; a nagy integrálos lap kész pontja 53%-kal korábbi. Edge 310/0, végleges 45 nézet/0, render 37/0; [jelentés](Q6_teljesitmeny.md). Első megjelenés/CLS még finomítandó; helyi main, push nélkül. |
+| Q6 | Teljesítmény: képméretek, font-preload, a szkriptek `defer`-je; mérés Playwrighttal | ◐ 2026-10-10: két adag helyben kész. Első: 310 lap betöltési jelzése, 9 változatlan JPEG külön fájlban, zárt válaszok mérése javítva. Második: célzott fonttartalék és stabil mobil logó; 310 HTML azonos, 98 összehasonlító futás/0 hiba, a hosszú című 1e lap CLS-mediánja 90%-kal kisebb. Edge 310/0, 45 nézet/0, axe5/0, 82+13 kezelési próba; [jelentés](Q6_teljesitmeny.md). Az első megjelenés/betöltés még nyitott, a 2e hatványfüggvény mért ideje kedvezőtlenebb. Helyi main, push nélkül. |
 | Q7 | Kompakt médiakártya: kattintásig alacsony sáv (ikon, címke, cím), lejátszáskor nyílik 16:9-re / az applet arányára (`.media-fut`) | ☑ 2026-09-28 (helyben): az 1e/07 egyenletrendszer-lapon a médiablokkok aránya asztalon 46% → 19% |
 
 ### Q3 helyi lezárás — 2026-10-09
@@ -712,3 +712,24 @@ Részletek: [Q4-jelentés](Q4_mobil_tartalomjegyzek.md). Helyi main, új ág és
 Hibatábla után közös felület és tartós betöltési generátor, hét régi 1e/01 lap kilenc JPEG-je változatlan képtartalommal külön fájlban. A set_hatter.py a jelzéseket is visszaállítja; 310 idempotens oldal. A teljes lánc rendben, matematikai tartalom, naplókód/térkép, keresőindex és tükrök változatlanok. Edge 310/0; a logó-CSS visszavonása után végleges 45 nézet/0, axe5/0, nyomtatás15/15, render37/3644 képlet/52 kvíz/0, 82+10 kezelési próba és hét interaktív mód. A képek JS nélkül/nyomtatásban is láthatók két lapon.
 
 **Hátra:** első megjelenés és fontcsere okozta elmozdulás, a halmazfogalom képletbe tett idézőjeleinek KaTeX-figyelmeztetése, élő oldal/valódi telefon. A késleltetett napló nem növelte a fejlécet; az ezzel kapcsolatos logó-CSS visszavonva. A kedvezőtlen mérési mutatók is a Q6-jelentésben szerepelnek. Tanári döntés az elkészült adaghoz nem kell. Új ág és push nincs.
+
+### Q6 helyi második adag — 2026-10-10
+
+A közös CSS öt méretigazított helyi fonttartalékot kapott a fejléc/morzsa/cím és
+bevezető számára; a telefonos logó legfeljebb 520 px-en eleve kétsoros. Más CSS,
+fontfájl/előtöltés, szkript, builder és mind a 310 HTML változatlan. A teljes
+folyószövegre és a kevesebb előtöltésre tett próbák visszavonva. Végleges 98 mérés,
+a hét mintában kisebb mobilos CLS-medián; az első megjelenés vegyes, a 2e
+hatványfüggvény hideg betöltése lassabb. Q6 ezért továbbra is részben kész.
+
+Kánon/link310/0, sáv tiszta, háttér/betöltés0 változás; Edge310/0, 45 nézet/0,
+axe5/0, nyomtatás15+2, 82+13 kezelési próba, hét interaktív mód. A késleltetett
+naplójelző 360/390 px-en nem módosítja a fejléc magasságát. Kilenc kép megmaradt,
+két tananyag JS nélkül is olvasható képpel. 736 további forrás és a zárolt első
+23 sor azonos. Tanulói tartalom nem változott; kulcs/regresszió és újraépítés
+nem kellett. Jelentés és állapotnapló frissítve.
+
+**Hátra:** első megjelenés/CPU-költség, a korábbi KaTeX-idézőjel-figyelmeztetés,
+élő oldal/valódi telefon és Arial nélküli betűcsere. Más böngésző/képernyőolvasó,
+teljes PDF-tördelés és külső média új próbája nincs. Tanári döntés az elkészült
+CSS-adaghoz nem kell. Helyi main, új ág és push nélkül.

@@ -25,6 +25,16 @@
 @font-face{font-family:'Inter';font-weight:700;font-style:normal;font-display:swap;
   src:url('../fonts/inter-latin-ext-700-normal.woff2') format('woff2');unicode-range:U+0100-024F,U+1E00-1EFF;}
 
+/* A betűcsere előtti Arial szélessége és sormérete közelítse a végleges betűt.
+   A méretek a meglévő címek/bevezetők karaktereloszlásából és böngészős mérésből
+   származnak. Ha helyben nincs Arial, a következő rendszerbetű marad a tartalék.
+   A webfontok és a magyar karakterkészletek változatlanok; fontcsere után újramérendő. */
+@font-face{font-family:'Inter Tartalek';font-weight:400;font-style:normal;font-display:swap;src:local('Arial'),local('ArialMT');size-adjust:106.5697%;ascent-override:90.9264%;descent-override:22.6143%;line-gap-override:0%;unicode-range:U+0000-024F,U+1E00-1EFF,U+2000-206F;}
+@font-face{font-family:'Inter Tartalek';font-weight:600;font-style:normal;font-display:swap;src:local('Arial Bold'),local('Arial-BoldMT');size-adjust:101.9404%;ascent-override:95.0556%;descent-override:23.6413%;line-gap-override:0%;unicode-range:U+0000-024F,U+1E00-1EFF,U+2000-206F;}
+@font-face{font-family:'Inter Tartalek';font-weight:700;font-style:normal;font-display:swap;src:local('Arial Bold'),local('Arial-BoldMT');size-adjust:103.0545%;ascent-override:94.0279%;descent-override:23.3857%;line-gap-override:0%;unicode-range:U+0000-024F,U+1E00-1EFF,U+2000-206F;}
+@font-face{font-family:'Space Grotesk Tartalek';font-weight:500;font-style:normal;font-display:swap;src:local('Arial'),local('ArialMT');size-adjust:108.8172%;ascent-override:90.4269%;descent-override:26.8340%;line-gap-override:0%;unicode-range:U+0000-024F,U+1E00-1EFF,U+2000-206F;}
+@font-face{font-family:'Space Grotesk Tartalek';font-weight:700;font-style:normal;font-display:swap;src:local('Arial Bold'),local('Arial-BoldMT');size-adjust:101.9933%;ascent-override:96.4769%;descent-override:28.6293%;line-gap-override:0%;unicode-range:U+0000-024F,U+1E00-1EFF,U+2000-206F;}
+
 /* ---------- Tokenek (Sötét Téma bázis) ---------- */
 :root{
   --zold-900:#064e3b; --zold-700:#047857; --zold-500:#10b981;
@@ -64,6 +74,14 @@ body[data-tagozat="1e"]{--accent:#10b981;}
 body[data-tagozat="2e"]{--accent:#14b8a6;}
 body[data-tagozat="3e"]{--accent:#06b6d4;}
 body[data-tagozat="4e"]{--accent:#84cc16;}
+
+/* A tördelést módosító fontcsere főleg az oldal tetején látszik.
+   A méretigazítás csak itt érvényes: a folyószöveg közös betűsora változatlan. */
+.fejlec,.morzsa,.hero{
+  --fej:'Space Grotesk','Space Grotesk Tartalek','Inter',system-ui,sans-serif;
+  --szoveg:'Inter','Inter Tartalek',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-family:var(--szoveg);
+}
 
 /* ---------- Alap ---------- */
 *{box-sizing:border-box;}
@@ -578,6 +596,8 @@ svg[role="img"] [stroke="#0ea5e9"]{stroke:#0369a1;}
    ~90 px vízszintes túlcsordulás volt MINDEN lapon) → a mező eltűnik, a gomb a kereső-oldalra visz. */
 @media(max-width:520px){
   .fejlec-bel{gap:.6rem;padding:.55rem .9rem;}
+  /* A napló és a fontcsere előtt is két sorra foglalt logó stabil fejlécet ad. */
+  .logo .nev{width:min-content;line-height:1.2;}
   .kereso-mini input{display:none;}
   /* Egy hosszú összetett szó (pl. „Függvénytulajdonságok”) 2rem-mel nem fért ki 360–390 px-en. */
   h1{font-size:1.65rem;}
