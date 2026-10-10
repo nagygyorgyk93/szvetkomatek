@@ -636,7 +636,7 @@ mintájára (új `data-mod`); a builder oldalán `tananyag_common` helper.
 **Kánon** (`_docs/workflow.md` 4b): JS nélkül is értelmes kezdőállapot (a statikus SVG az első
 képkocka); címkézett, billentyűzettel kezelhető vezérlő; külső könyvtár nélkül; sötét tinta világos
 lapon; `verify_web` hibátlan; ha 2+ lapon kell, közös modul.
-**Első lépés (külön PR):** jelöltlista osztályonként (lap · ábra · mit mutatna a csúszka · haszon),
+**Első lépés:** jelöltlista osztályonként (lap · ábra · mit mutatna a csúszka · haszon),
 a tanár választ belőle. Ötletek: lineáris függvény (m, b); másodfokú függvény csúcsalakja;
 exponenciális/logaritmus alapváltás; egységkör → szinuszgörbe; a·sin(bx+c)+d paraméterei;
 vektorösszeadás; kör és egyenes kölcsönös helyzete; sorozat ε-sávja.
@@ -644,13 +644,16 @@ vektorösszeadás; kör és egyenes kölcsönös helyzete; sorozat ε-sávja.
 | jelöltlista | 1e | 2e | 3e | 4e |
 |---|---|---|---|---|
 | ◐ Helyi jelöltlista kész, 2026-10-10 | ◐ 4 jelölt | ◐ 4 jelölt | ◐ 4 jelölt | ◐ 4 jelölt |
-| ◐ Első megvalósítás helyben kész, 2026-10-10 | ◐ I1-04 homotécia | ◐ I1-06 exponenciális alap | Még nincs megvalósítás | ◐ I1-13 sorozat/ε-sáv |
+| ◐ Első megvalósítás helyben kész, 2026-10-10 | ◐ I1-04 homotécia | ◐ I1-06 exponenciális alap | — | ◐ I1-13 sorozat/ε-sáv |
+| ◐ Második megvalósítás helyben kész, 2026-10-10 | — | — | ◐ I1-09 gúla; I1-11 távolság; I1-12 kör–egyenes | — |
 
 A 16 jelölt rangsora és kimenetkapcsolata: [I1 interaktív jelöltlista](I1_interaktiv_jeloltlista.md).
 A tanár jóváhagyta az első három modell elkészítését; [az első adag](I1_elso_adag.md)
 helyben megvalósult, matematikai/mobilos/billentyűzetes és nyomtatási próbái rendben.
-A további 13 jelölt terv; négy további ötlet a meglévő GeoGebra cseréjére. A következő
-2–3 jelöltet a tanár választja ki. Az elkészült három modellhez nincs nyitott döntés.
+A folytatásban [a 3e három geometriai modellje](I1_masodik_adag.md) is elkészült:
+I1-09, I1-11, I1-12. Összesen 6/16 jelölt kész, 10 terv maradt; négy további
+ötlet a meglévő GeoGebra cseréjére. Az elkészült modellekhez nincs nyitott döntés.
+Tanári kérésre helyi mainen dolgozunk, új ág nélkül; push csak külön kérésre.
 
 ---
 
@@ -790,3 +793,35 @@ heurisztikus visszautalás-jelzés megmaradt. Az axe nem teljes WCAG-minősíté
 Tanári döntés az elkészült adaghoz nem kell; a további 13 jelöltből választás
 szükséges a következő nagyobb adag előtt. Helyi main, új ág és push nélkül.
 Részletek: [I1 első adag](I1_elso_adag.md).
+
+
+### I1 második megvalósítás — 3e geometria, 2026-10-10
+
+I1-09 gúla: EOM/EOB/EMB háromszög kiemelése natív választóval; I1-11 távolság:
+rögzített eredeti egyenes, 0–7 közötti próbapont negyedegységes koordinátákkal;
+I1-12 kör–egyenes: rögzített x²+y²=25 kör és 3x+4y=c párhuzamosok, c=−35–35.
+Közös generátor/JS, Kezdőállapot, élő szöveges állapot, JS nélküli kezdőkép,
+nyomtatás. Új gyakorlófeladat/számadat/indukciós feladat nincs.
+Kimenet és 3e-skill alapján; normálalak-levezetés nélkül.
+
+Hibatábla után az oldalél/oldallapmagasság mondata, a gyorsismétlő osztási
+aránya és a kör ábrafelirata pontosítva. Friss szemű lektor és visszaellenőrzése
+rendben. A fix egyenletfeliratok végleges igazítása 912 állásban ütközésmentes.
+Lánc rendben: 334 média/139 lap; kánon/link310/0, sáv tiszta; végleges
+render3/272 képlet/6 kvíz/0; kulcs4499/0, regresszió4499/4499=100%.
+Edge360/390/1280 kezdő/szélső nézet18/0 a végleges igazítás után is;
+axe3/0, billentyűzet12, három tényleges érintéses csúszkapróba, választó
+érintéssel nyitva/billentyűzettel kiválasztva, nyomtatás6 JS be/ki;
+11 korábbi modell működik. Független geometria: 3 derékszögű háromszög,
+841 pontállás (8 egyenesre eső, 8 pontosan3), 71 kör–egyenes állás
+(49 szelő,2 érintő,20 elkerülő), 0 eltérés.
+
+307 HTML és 631 korábbi követett fájl byte szerint azonos; a három lap
+az új ábrákon/feliratokon és jelzett mondatokon kívül azonos DOM, 43 korábbi
+oldalhorgony és 6 kvíz megmaradt. Index308, csak három URL változott;
+naplótérkép/katalógus/tükör/első23 zárolt sor azonos. Saját ábrák14,
+I1-modellek6/16 kész. Nyers eredmény és függőségek a repón kívül.
+Korlát: élő oldal, valódi telefon/képernyőolvasó, más böngésző, teljes
+PDF-tördelés és külső média új lejátszása nincs ellenőrizve. Tanári döntés
+az elkészült adaghoz nem kell. Helyi main, új ág és push nélkül.
+Részletek: [I1 második adag](I1_masodik_adag.md).

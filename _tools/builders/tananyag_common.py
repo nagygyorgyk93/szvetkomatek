@@ -567,6 +567,60 @@ def svg_sorozat_interaktiv():
         attr=f'data-w="{w}" data-h="{h}" data-yr="{yr[0]},{yr[1]}"')
 
 
+
+def svg_gula_interaktiv():
+    """A jelölés-kánon három derékszögű háromszöge külön kiemelve."""
+    from abra_common import svg_gula_haromszogek
+    controls=('<div class="iv-vezerlo"><label for="iv-gula-valasztas">Kiemelt háromszög</label>'
+        '<select id="iv-gula-valasztas" class="iv-gula-valasztas" aria-describedby="iv-gula-kijelzo">'
+        '<option value="hrh">EOM: H, r, h</option><option value="HRs">EOB: H, R, s</option>'
+        '<option value="has">EMB: h, a/2, s</option><option value="osszes">Összes jelölés</option>'
+        '</select></div>\n')
+    return _iv_modell_keret('gula',svg_gula_haromszogek(),controls,
+        'Az EOM háromszög derékszögű O-nál. Befogói H és r, átfogója h.',
+        r'$O$ az alaplap középpontja, $M$ az $AB$ alapél felezőpontja. '
+        r'Válassz háromszöget, és keresd meg a két befogót és az átfogót! '
+        r'$h^2=H^2+r^2$; $s^2=H^2+R^2$; $s^2=h^2+(a/2)^2$. '
+        'A térbeli vetítésen a derékszög is torzulhat; a jel a valódi derékszöget mutatja.')
+
+
+def svg_tavolsag_interaktiv():
+    """A szöveges példa adatai a kezdőállapotban; a csúszkák csak a próbapontot mozgatják."""
+    from abra_common import svg_pont_egyenes_interaktiv
+    controls=''
+    for axis,ticks,value in [('x',8,2),('y',12,3)]:
+        controls+=(f'<div class="iv-vezerlo"><label for="iv-tav-{axis}">A próbapont ${axis}_0$ '
+            f'koordinátája = <span class="iv-tav-{axis}-ertek">{value}</span></label>'
+            f'<input id="iv-tav-{axis}" class="iv-tav-{axis}" type="range" min="0" max="28" step="1" '
+            f'value="{ticks}" aria-valuetext="A próbapont {axis} koordinátája: {value}" '
+            'aria-describedby="iv-tavolsag-kijelzo"></div>\n')
+    return _iv_modell_keret('tavolsag',svg_pont_egyenes_interaktiv(),controls,
+        'A K próbapont koordinátái (2; 3), a T talpponté (3,6; 4,2). A távolság 2. '
+        'A próbapont 3 egységnél közelebb van az egyeneshez.',
+        r'A kezdőállapot a szöveges példa $K(2;3)$ bázisa. Mozgasd a próbapontot: '
+        r'a $4x+3y-27=0$ egyenes rögzített, $T$ a merőleges talppont. '
+        r'A $KT$ szakasz hossza a távolság. A csúszkák a próbapontot változtatják; '
+        'a szöveges példa adatai és megoldása a kezdőállapotra vonatkoznak.',
+        attr='data-xr="-1,8" data-yr="-1,8" data-unit="34" data-par="22" data-h="350"')
+
+
+def svg_kor_helyzet_interaktiv():
+    """Rögzített 5 sugarú kör; az egyenes párhuzamos eltolása és közös pontjai."""
+    from abra_common import svg_kor_egyenes_interaktiv
+    controls=('<div class="iv-vezerlo"><label for="iv-kor-c">A $3x+4y=c$ egyenes: $c$ = '
+        '<span class="iv-kor-c-ertek">25</span></label>'
+        '<input id="iv-kor-c" class="iv-kor-c" type="range" min="-35" max="35" step="1" value="25" '
+        'aria-valuetext="Az egyenes jobb oldalán álló c: 25" aria-describedby="iv-kor-kijelzo"></div>\n')
+    return _iv_modell_keret('kor',svg_kor_egyenes_interaktiv(),controls,
+        'Az egyenes 3x + 4y = 25. A középpont távolsága 5, a sugár 5: az egyenes érintő. '
+        'Egy közös pont: (3; 4).',
+        r'A kör rögzített: $x^2+y^2=25$, középpontja $C(0;0)$, sugara $r=5$. '
+        r'Változtasd $c$ értékét: az egyenes így önmagával párhuzamosan tolódik el. '
+        'Figyeld a közös pontok számát! '
+        r'$d\lt r$: szelő; $d=r$: érintő; $d\gt r$: az egyenes elkerüli a kört. '
+        r'$T$ a középpontból bocsátott merőleges talppontja; érintésnél ez a közös pont.',
+        attr='data-xr="-8,8" data-yr="-8,8" data-unit="22" data-par="22" data-h="396"')
+
 def svg_interaktiv(mod, poly, *, xr, yr, x0=0.0, csuszka=(-2.0, 2.0, 0.01, 1.0), w=360, h=250,
                    gorbe_cimke="f", f2=False, felirat="", leiras="Interaktív függvényábra",
                    pont_cimke="P", szin="#2563eb", ab=(0.0, 1.0), pontos="", sereg_c=(-2, -1, 1, 2)):

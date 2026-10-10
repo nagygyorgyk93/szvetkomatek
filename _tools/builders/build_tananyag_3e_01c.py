@@ -3,7 +3,7 @@
 csonkagula (C4). Mentor: Prizma. Kuldetes: A Kristalypara Kristalyok."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra
+from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_gula_interaktiv
 from abra_common import svg_gula, svg_csonkagula, svg_halo, svg_haztest, svg_haromszog
 
 T = dict(tagozat="3e", mappa="01-poliederek", temakor="Poliéderek")
@@ -65,9 +65,7 @@ assert not E, E
 print("sympy önteszt: OK")
 
 # ---------------------------------------------------------------- ábrák
-SVG_GULA = svg_gula("negyzet", a=1.0, m=1.5, apotema=True, oldalel=True, sugar=True,
-                    w=340, h=310, feliratok={"a": "a"},
-                    leiras='Szabályos négyoldalú gúla: magasság, apotéma, köré írt sugár, oldallap-magasság és oldalél')
+IV_GULA = svg_gula_interaktiv()
 SVG_GULA3 = svg_gula("haromszog", a=1.0, m=1.4, apotema=True, w=310, h=295,
                      feliratok={"a": "a"},
                      leiras="Szabályos háromoldalú gúla az oldallap magasságával; "
@@ -138,10 +136,7 @@ C1 = [
        'az alaplap középpontjától az alaplap egyik <b>csúcsáig</b> mért távolság pedig a köré írt kör '
        'sugara ($R$) — mindkettőre szükség lesz.</p>'
    ),
-   abra(SVG_GULA, (
-                      'Szabályos négyoldalú gúla: a magasság ($H$, piros), az alaplap apotémája ($r$, zöld), a köré írt '
-                      'kör sugara ($R$, lila), az oldallap magassága ($h$, narancs) és az oldalél ($s$, kék).'
-                  )),
+   IV_GULA,
  ]),
 
  ("A szabályos gúla három derékszögű háromszöge", [
@@ -169,8 +164,9 @@ C1 = [
          (
              '<p><i>„Az oldalél és az oldallap magassága — mindkettő a csúcsba fut, tehát ugyanaz.”</i></p><p>Nem '
              'ugyanaz. Az <b>oldalél</b> ($s$) a csúcsot az alaplap egy <b>csúcsával</b> köti össze, az '
-             '<b>oldallap magassága</b> ($h$) pedig egy alapél <b>felezőpontjával</b>. A kettő két különböző '
-             'derékszögű háromszögben él, és mindig $h &lt; s$. A palásthoz $h$ kell — ha $s$-vel számolsz, túl '
+             '<b>oldallap magassága</b> ($h$) pedig egy alapél <b>felezőpontjával</b>. Az oldallap '
+             'derékszögű félháromszögében $h$ befogó, $s$ átfogó, ezért $h &lt; s$. '
+             'A palásthoz $h$ kell — ha $s$-vel számolsz, túl '
              'nagy felszínt kapsz.</p>'
          )),
    abra(SVG_GULA3, 'Szabályos háromoldalú gúla — itt az alaplap $ABC$, a gúla csúcsa pedig '

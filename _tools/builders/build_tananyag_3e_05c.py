@@ -3,7 +3,7 @@
 Mentor: Kanrak (Ter-eb). Kuldetes: A Terkep Halozata."""
 import sys, os, math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra
+from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_kor_helyzet_interaktiv
 from abra_common import svg_koordsik, svg_kupszelet, KEK, BOROSTYAN, ZOLD, PIROS, SZURKE, LILA
 
 T = dict(tagozat="3e", mappa="05-analitikus-geometria", temakor="Síkbeli analitikus geometria")
@@ -93,15 +93,7 @@ SVG_ATMERO = svg_kupszelet(
     pontok=[((-1, 5), "A", {"dx": -10, "dy": -6}), ((5, -3), "B", {"dx": 11, "dy": 12})],
     xr=(-4, 8), yr=(-5, 7), egyseg=26,
     leiras="Az A(−1;5) és B(5;−3) átmérőjű kör, középpontja C(2;1)")
-SVG_HELYZET = svg_kupszelet(
-    "kor", {"p": 0, "q": 0, "r": 5},
-    egyenesek=[((1, -1, 1), ZOLD, "szelő", {"hely": 0.9, "dx": -30, "dolt": False}),
-               ((3, 4, -25), BOROSTYAN, "érintő", {"hely": 0.18, "dx": 26, "dy": -4, "dolt": False}),
-               ((1, 1, 9), LILA, "elkerülő", {"hely": 0.25, "dx": -24, "dy": 22, "dolt": False})],
-    pontok=[((3, 4), "", {"szin": BOROSTYAN}), ((-4, -3), "", {"szin": ZOLD})],
-    xr=(-8, 7), yr=(-7, 7), egyseg=22, origo=False,
-    leiras="Az x² + y² = 25 kör egy szelővel (két közös pont), egy érintővel (egy közös pont) és egy "
-           "egyenessel, amelynek nincs közös pontja a körrel")
+IV_HELYZET = svg_kor_helyzet_interaktiv()
 SVG_KORZET = svg_kupszelet(
     "kor", {"p": 4, "q": 3, "r": 5},
     egyenesek=[((1, 1, -2), KEK, "Maxi útvonala", {"hely": 0.08, "dx": 58, "dy": -2, "dolt": False})],
@@ -275,7 +267,7 @@ C2 = [
          r'<a href="tananyag-pont-es-egyenes-tavolsaga.html#tetel-tavolsagkeplet">távolságát</a> az '
          r'egyenestől: $d\lt r$ szelő, $d=r$ érintő, $d\gt r$ nincs közös pont.</p>',
          hid="tetel-kolcsonos-helyzet-kor"),
-   abra(SVG_HELYZET, 'A három helyzet ugyanazon a körön.'),
+   IV_HELYZET,
    r'<p>Az 1. módszer ugyanaz a recept, mint a '
    r'<a href="' + E2F + r'tananyag-masodfoku-linearis-rendszer.html#tetel-rendszer-esetek">lineáris '
    r'és másodfokú egyenletből álló rendszernél</a>, és a metszéspontokat is megadja. A 2. módszer '

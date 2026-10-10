@@ -3,7 +3,7 @@
 Mentor: Kanrak (Ter-eb). Kuldetes: A Terkep Halozata."""
 import sys, os, math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra
+from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_tavolsag_interaktiv
 from abra_common import svg_koordsik, KEK, BOROSTYAN, ZOLD, PIROS, SZURKE, LILA
 
 T = dict(tagozat="3e", mappa="05-analitikus-geometria", temakor="Síkbeli analitikus geometria")
@@ -139,12 +139,7 @@ SVG_SZOG = svg_koordsik(
                ((3.0, 5.2), "y = 2x + 1", {"szin": KEK, "meret": 13}),
                ((-1.9, 5.2), "y = −3x + 4", {"szin": PIROS, "meret": 13})],
     leiras="Az y = 2x + 1 és az y = −3x + 4 egyenes 45 fokos szöget zár be")
-SVG_TAVOLSAG = svg_koordsik(
-    xr=(-1, 8), yr=(-1, 8), egyseg=30,
-    egyenesek=[((4, 3, -27), KEK, "pálya", {"hely": 0.8, "dx": 22, "dolt": False})],
-    merolegesek=[((2, 3), (4, 3, -27), PIROS, "d")],
-    pontok=[((2, 3), "K", {"dx": -12, "dy": -4})],
-    leiras="A K(2;3) bázis és a 4x + 3y − 27 = 0 pálya távolsága a merőleges talppontig mért d szakasz")
+IV_TAVOLSAG = svg_tavolsag_interaktiv()
 A_, B_, C_ = (-2, -1), (6, 3), (1, 5)
 SVG_HAROMSZOG = svg_koordsik(
     xr=(-3, 7), yr=(-2, 6), egyseg=34,
@@ -452,7 +447,7 @@ B3 = [
    doboz("pelda", "Szól-e a riasztó?",
          r'<p>A bázis a $K(2;3)$ pontban van, Maxi drónja a $4x+3y-27=0$ egyenes mentén repül. '
          r'Megszólal-e a riasztó, amely $3$ egységnél közelebbi elhaladásra van beállítva?</p>'
-         + abra(SVG_TAVOLSAG, 'A bázis és a pálya távolsága a merőleges szakasz, $d$.'),
+         + IV_TAVOLSAG,
          hid="pelda-riasztas",
          lenyilo=("Megoldás",
                   r'<p>$d=\frac{|4\cdot2+3\cdot3-27|}{\sqrt{4^2+3^2}}=\frac{|8+9-27|}{5}=\frac{10}{5}=2$.</p>'
@@ -533,8 +528,9 @@ B3 = [
 
  ("🧾 Gyorsismétlő", [
    (
-       '<p>Az I. rész képletei egy helyen — a 3. dolgozat előtt. Az osztópontnál $m,n>0$; két pontból '
-       'egyenest két különböző pont határoz meg. Az általános egyenletalakban $a^2+b^2\\ne0$. Az '
+       '<p>Az I. rész képletei egy helyen — a 3. dolgozat előtt. Az osztópontnál $AC:CB=m:n$, '
+       'ahol $m,n>0$. Egyenest két különböző pont határoz meg. '
+       'Az általános egyenletalakban $a^2+b^2\\ne0$. Az '
        'iránytényezős képletek nem függőleges egyenesekre vonatkoznak; a tengelymetszetes alaknál '
        '$m,n\\ne0$. A szögképletben a nevező nem lehet nulla; a merőleges esetet külön kezeljük.</p><div '
        'class="tblwrap"><table class="tt-table"><tr><th>Mit keresünk?</th><th>Képlet</th><th>Hol '

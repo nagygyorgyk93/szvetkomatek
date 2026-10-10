@@ -2810,3 +2810,104 @@ def svg_kupszelet(tipus, par, xr=None, yr=None, egyseg=30, szin=KEK, felirat="",
 
 
 __all__ += ["svg_koordsik", "svg_kupszelet"]
+
+
+# =====================================================================
+# I1: a 3e három meglévő ábrájának vezérelhető kezdőképe
+# =====================================================================
+
+def svg_gula_haromszogek():
+    """A meglévő négyzetes gúla három derékszögű háromszöge, azonos vetítéssel."""
+    w, h = 380, 340
+    poly = [(x, y, 0.0) for x, y in _alap('negyzet', 1.0)]
+    E, O = (0.0, 0.0, 1.5), (0.0, 0.0, 0.0)
+    M = tuple((poly[0][i] + poly[1][i])/2 for i in range(3))
+    B = poly[1]
+    rajz = _Rajz(w, h, '')
+    rajz.befoglal(*poly, E)
+    rajz._sk = rajz._skala()
+    svg = svg_gula('negyzet', a=1.0, m=1.5, apotema=True, oldalel=True, sugar=True,
+                   w=w, h=h, feliratok={'a':'a'},
+                   leiras='Szabályos négyoldalú gúla; kiemelhető az EOM, EOB és EMB derékszögű háromszög')
+    extra = []
+    for key, names, pts, corner, arms in [
+        ('hrh', 'E,O,M', [E, O, M], O, [E, M]),
+        ('HRs', 'E,O,B', [E, O, B], O, [E, B]),
+        ('has', 'E,M,B', [E, M, B], M, [E, B])]:
+        visible = key == 'hrh'
+        px = ' '.join(f'{rajz.P(p)[0]:.2f},{rajz.P(p)[1]:.2f}' for p in pts)
+        xyz = ';'.join(','.join(str(v) for v in p) for p in pts)
+        extra.append(f'<g class="iv-gula-haromszog" data-haromszog="{key}" data-csucsok="{names}" '
+                     f'data-pontok3d="{xyz}" style="display:{"inline" if visible else "none"}" '
+                     f'aria-hidden="{"false" if visible else "true"}">')
+        extra.append(f'<polygon points="{px}" fill="#1d4ed8" fill-opacity="0.12" '
+                     'stroke="#1d4ed8" stroke-width="2.8" stroke-linejoin="round"/>')
+        extra.append(_dszog(rajz.P(corner), rajz.P(arms[0]), rajz.P(arms[1]), szin='#1d4ed8'))
+        if key == 'has':
+            mid = tuple((M[i]+B[i])/2 for i in range(3))
+            extra.append(_txt(rajz.P(mid), 'a/2', dy=17, meret=13))
+        extra.append('</g>')
+    for point, name, dx, dy in [(O,'O',12,10),(M,'M',0,23)]:
+        px, py = rajz.P(point)
+        extra.append(f'<circle cx="{px:.2f}" cy="{py:.2f}" r="2.7" fill="{TINTA}"/>')
+        extra.append(_txt((px,py),name,dx=dx,dy=dy,meret=13))
+    return svg.replace('</svg>', '\n'.join(extra)+'\n</svg>')
+
+
+def _iv_sik_elem(tag, attrs, text=''):
+    """A közös síkbeli ábrák állítható elemei, egyedi vezérlőosztályokkal."""
+    fields = ' '.join(f'{k}="{_esc(str(v))}"' for k,v in attrs.items())
+    return f'<{tag} {fields}>{_esc(text)}</{tag}>'
+
+
+def svg_pont_egyenes_interaktiv():
+    """A meglévő K(2;3), 4x+3y−27=0 példa. Azonos egység a két tengelyen."""
+    xr, yr, unit = (-1,8), (-1,8), 34
+    L = _Sik(xr,yr,unit,22,'iv-tavolsag')
+    svg = svg_koordsik(xr=xr,yr=yr,egyseg=unit,
+        egyenesek=[((4,3,-27),KEK,'',{})],azon='iv-tavolsag',
+        leiras='A K próbapont és a 4x + 3y − 27 = 0 egyenes; T a merőleges talppont, KT hossza a távolság')
+    K,T = (2,3),(3.6,4.2)
+    a,b = L.P(K),L.P(T)
+    extra = [
+        _iv_sik_elem('line',{'class':'iv-tav-szakasz','x1':a[0],'y1':a[1],
+            'x2':b[0],'y2':b[1],'stroke':PIROS,'stroke-width':2,'stroke-dasharray':'5 3'}),
+        _dszog(b,a,L.P((T[0]+.6,T[1]-.8)),szin=PIROS).replace('<path ','<path class="iv-tav-derek" ',1),
+        _iv_sik_elem('text',{'x':L.w-22,'y':L.h-5,
+            'fill':KEK,'font-size':13,'text-anchor':'end'},'4x + 3y − 27 = 0')]
+    for p,stem,name,color,dx,dy in [(K,'K','K',TINTA,-13,-9),(T,'T','T',PIROS,12,15)]:
+        x,y=L.P(p)
+        extra.append(_iv_sik_elem('circle',{'class':f'iv-tav-{stem}','cx':x,'cy':y,'r':3.5,'fill':color}))
+        extra.append(_iv_sik_elem('text',{'class':f'iv-tav-{stem}-nev','x':x+dx,'y':y+dy,
+            'font-size':14,'font-weight':600,'fill':color},name))
+    extra.append(_iv_sik_elem('text',{'class':'iv-tav-d','x':(a[0]+b[0])/2-10,
+        'y':(a[1]+b[1])/2-6,'font-size':14,'fill':PIROS},'d'))
+    return svg.replace('</svg>','\n'.join(extra)+'\n</svg>')
+
+
+def svg_kor_egyenes_interaktiv():
+    """Az x²+y²=25 meglévő kör és az eredeti érintőből kapott 3x+4y=c egyenesek."""
+    xr,yr,unit = (-8,8),(-8,8),22
+    L=_Sik(xr,yr,unit,22,'iv-kor')
+    svg=svg_koordsik(xr=xr,yr=yr,egyseg=unit,origo=False,azon='iv-kor',
+        leiras='Az 5 sugarú, C(0;0) középpontú kör és a mozgatható 3x + 4y = c egyenes; közös pontok és középponttávolság')
+    C,T=L.P((0,0)),L.P((3,4))
+    lo,hi=L.P((xr[0],yr[1])),L.P((xr[1],yr[0]))
+    extra=[f'<defs><clipPath id="iv-kor-ablak"><rect x="{lo[0]}" y="{lo[1]}" '
+           f'width="{hi[0]-lo[0]}" height="{hi[1]-lo[1]}"/></clipPath></defs>',
+        _iv_sik_elem('circle',{'cx':C[0],'cy':C[1],'r':5*unit,'stroke':KEK,'stroke-width':2,'fill':'none'}),
+        _iv_sik_elem('text',{'x':L.w-22,'y':L.h-5,
+            'font-size':14,'text-anchor':'end','fill':KEK},'x² + y² = 25'),
+        _iv_sik_elem('line',{'class':'iv-kor-tav','x1':C[0],'y1':C[1],'x2':T[0],'y2':T[1],
+            'stroke':SZURKE,'stroke-width':1.7,'stroke-dasharray':'5 3'}),
+        _iv_sik_elem('circle',{'cx':C[0],'cy':C[1],'r':3.3,'fill':TINTA}),
+        _iv_sik_elem('text',{'x':C[0]-16,'y':C[1]+17,'font-size':14,'font-weight':600,'fill':TINTA},'C'),
+        '<g clip-path="url(#iv-kor-ablak)">',
+        _iv_sik_elem('line',{'class':'iv-kor-egyenes','x1':L.P((-21,22))[0],
+            'y1':L.P((-21,22))[1],'x2':L.P((27,-14))[0],'y2':L.P((27,-14))[1],
+            'stroke':'#b45309','stroke-width':2.4}),'</g>',
+        _iv_sik_elem('circle',{'class':'iv-kor-T','cx':T[0],'cy':T[1],'r':3.5,'fill':'#b45309'}),
+        _iv_sik_elem('text',{'class':'iv-kor-T-nev','x':T[0]+10,'y':T[1]-10,
+            'font-size':13,'font-weight':600,'fill':'#b45309'},'T = M'),
+        '<g class="iv-kor-metszesek"></g>']
+    return svg.replace('</svg>','\n'.join(extra)+'\n</svg>')

@@ -22,6 +22,9 @@
  *   homotecia — a meglévő háromszög képe: k előjele, |k|, hossz- és területarány
  *   exponencialis — az aˣ alapgrafikonja, külön 0 < a < 1 és a > 1 tartománnyal
  *   sorozat — aₙ = 2 + 1/n, nyílt ε-sáv és látható tagszám; a sávhatár egész számokkal ellenőrizve
+ *   gula — a szabályos négyoldalú gúla három derékszögű háromszögének kiemelése
+ *   tavolsag — próbapont és rögzített egyenes; merőleges talppont és távolság
+ *   kor — kör és párhuzamosan eltolt egyenes; távolság és közös pontok
  * A függvény polinom: data-poly="a0,a1,a2,…" (a0 + a1·x + a2·x² + …) — nincs eval.
  * Koordináták: data-xr="x0,x1", data-yr="y0,y1", data-w, data-h (a svg_fuggvenyek() margóival).
  */
@@ -401,6 +404,142 @@
     frissit(); return true;
   }
 
+
+  // ------------------------------------------------------------ a 3e térbeli és síkbeli szemléltetései
+  function gula(doboz) {
+    var valaszto = doboz.querySelector('.iv-gula-valasztas');
+    var csoportok = doboz.querySelectorAll('.iv-gula-haromszog');
+    var kijelzo = doboz.querySelector('.iv-kijelzo');
+    if (!(valaszto && csoportok.length === 3 && kijelzo)) return;
+    var szovegek = {
+      hrh: 'Az EOM háromszög derékszögű O-nál. Befogói H és r, átfogója h.',
+      HRs: 'Az EOB háromszög derékszögű O-nál. Befogói H és R, átfogója s.',
+      has: 'Az EMB háromszög derékszögű M-nél. Befogói h és a/2, átfogója s.',
+      osszes: 'Az összes jelölés látható. H a testmagasság, r az alaplap apotémája, R a köré írt kör sugara, h az oldallap magassága, s az oldalél.'
+    };
+    function frissit() {
+      csoportok.forEach(function (g) {
+        var be = g.getAttribute('data-haromszog') === valaszto.value;
+        g.style.display = be ? 'inline' : 'none';
+        g.setAttribute('aria-hidden', String(!be));
+      });
+      kijelzo.textContent = szovegek[valaszto.value];
+    }
+    valaszto.addEventListener('change', frissit);
+    visszaallit(doboz, function () { valaszto.value = 'hrh'; frissit(); });
+    frissit(); return true;
+  }
+
+  function ivSik(doboz) {
+    var xr = szamok(doboz.getAttribute('data-xr')), yr = szamok(doboz.getAttribute('data-yr'));
+    var unit = Number(doboz.getAttribute('data-unit')), par = Number(doboz.getAttribute('data-par'));
+    var h = Number(doboz.getAttribute('data-h'));
+    return {unit: unit, P: function (x, y) { return [par + (x - xr[0]) * unit, h - par - (y - yr[0]) * unit]; }};
+  }
+  function ivVonal(el, a, b) {
+    el.setAttribute('x1', a[0]); el.setAttribute('y1', a[1]);
+    el.setAttribute('x2', b[0]); el.setAttribute('y2', b[1]);
+  }
+  function ivPont(el, p, x, y) {
+    el.setAttribute('cx', p[0]); el.setAttribute('cy', p[1]);
+    el.setAttribute('data-x', x); el.setAttribute('data-y', y);
+  }
+  function ivFelirat(el, p, dx, dy, text) {
+    el.setAttribute('x', p[0] + dx); el.setAttribute('y', p[1] + dy);
+    if (text !== undefined) el.textContent = text;
+  }
+  function ivSvgElem(tag, attrs, text) {
+    var e = document.createElementNS('http://www.w3.org/2000/svg', tag);
+    Object.keys(attrs).forEach(function (k) { e.setAttribute(k, attrs[k]); });
+    if (text !== undefined) e.textContent = text;
+    return e;
+  }
+
+  function tavolsag(doboz) {
+    var sx = doboz.querySelector('.iv-tav-x'), sy = doboz.querySelector('.iv-tav-y');
+    var K = doboz.querySelector('.iv-tav-K'), T = doboz.querySelector('.iv-tav-T');
+    var nevK = doboz.querySelector('.iv-tav-K-nev'), nevT = doboz.querySelector('.iv-tav-T-nev');
+    var szakasz = doboz.querySelector('.iv-tav-szakasz'), derek = doboz.querySelector('.iv-tav-derek');
+    var dNev = doboz.querySelector('.iv-tav-d'), kijelzo = doboz.querySelector('.iv-kijelzo');
+    var kiX = doboz.querySelector('.iv-tav-x-ertek'), kiY = doboz.querySelector('.iv-tav-y-ertek');
+    if (!(sx && sy && K && T && nevK && nevT && szakasz && derek && dNev && kijelzo && kiX && kiY)) return;
+    var sik = ivSik(doboz);
+    function frissit() {
+      // Negyedegységű bemenet; a 0 és a riasztási határ összehasonlítása egész számmal.
+      var ix = Number(sx.value), iy = Number(sy.value), x = ix / 4, y = iy / 4;
+      var s = 4 * ix + 3 * iy - 108;
+      var tx = x - 4 * s / 100, ty = y - 3 * s / 100, d = Math.abs(s) / 20;
+      var pk = sik.P(x,y), pt = sik.P(tx,ty);
+      ivPont(K, pk, x, y); ivPont(T, pt, tx, ty); ivVonal(szakasz, pk, pt);
+      ivFelirat(nevK, pk, -13, -9, 'K'); ivFelirat(nevT, pt, 12, 15, s === 0 ? 'K = T' : 'T');
+      K.style.display = nevK.style.display = s === 0 ? 'none' : '';
+      szakasz.style.display = derek.style.display = s === 0 ? 'none' : '';
+      var sign = Math.sign(s), m = Math.min(9, d * sik.unit * .45);
+      var u = [sign * .8 * m, -sign * .6 * m], v = [.6 * m, .8 * m];
+      derek.setAttribute('d', 'M' + (pt[0]+u[0])+','+(pt[1]+u[1])+' L'+
+        (pt[0]+u[0]+v[0])+','+(pt[1]+u[1]+v[1])+' L'+(pt[0]+v[0])+','+(pt[1]+v[1]));
+      ivFelirat(dNev, [(pk[0]+pt[0])/2,(pk[1]+pt[1])/2], -10, -6, 'd');
+      dNev.style.display = d < .6 ? 'none' : '';
+      kiX.textContent = pontosFmt(x); kiY.textContent = pontosFmt(y);
+      sx.setAttribute('aria-valuetext', 'A próbapont x koordinátája: '+pontosFmt(x));
+      sy.setAttribute('aria-valuetext', 'A próbapont y koordinátája: '+pontosFmt(y));
+      doboz.setAttribute('data-tavolsag', d);
+      var hely = s === 0 ? ' A próbapont az egyenesen van.' :
+        Math.abs(s) < 60 ? ' A próbapont 3 egységnél közelebb van az egyeneshez.' :
+        Math.abs(s) === 60 ? ' A távolság éppen 3: a próbapont nincs 3 egységnél közelebb.' :
+        ' A próbapont 3 egységnél távolabb van az egyenestől.';
+      kijelzo.textContent = 'A K próbapont koordinátái ('+pontosFmt(x)+'; '+pontosFmt(y)+
+        '), a T talpponté ('+pontosFmt(tx)+'; '+pontosFmt(ty)+'). A távolság '+pontosFmt(d)+'.'+hely;
+    }
+    sx.addEventListener('input', frissit); sy.addEventListener('input', frissit);
+    visszaallit(doboz, function () { sx.value='8'; sy.value='12'; frissit(); });
+    frissit(); return true;
+  }
+
+  function kor(doboz) {
+    var csuszka = doboz.querySelector('.iv-kor-c'), kijelzo = doboz.querySelector('.iv-kijelzo');
+    var egyenes = doboz.querySelector('.iv-kor-egyenes'), tav = doboz.querySelector('.iv-kor-tav');
+    var T = doboz.querySelector('.iv-kor-T'), nevT = doboz.querySelector('.iv-kor-T-nev');
+    var metszesek = doboz.querySelector('.iv-kor-metszesek'), kiC = doboz.querySelector('.iv-kor-c-ertek');
+    if (!(csuszka && kijelzo && egyenes && tav && T && nevT && metszesek && kiC)) return;
+    var sik = ivSik(doboz), C = sik.P(0,0);
+    function frissit() {
+      var c = Number(csuszka.value), tx = 3*c/25, ty = 4*c/25, pt = sik.P(tx,ty);
+      var erint = Math.abs(c) === 25, szelo = Math.abs(c) < 25, pontok = [];
+      ivVonal(egyenes, sik.P(tx-24,ty+18), sik.P(tx+24,ty-18));
+      ivVonal(tav,C,pt); ivPont(T,pt,tx,ty); ivFelirat(nevT,pt,10,-10,'T');
+      T.style.display = nevT.style.display = erint || c === 0 ? 'none' : '';
+      tav.style.display = c === 0 ? 'none' : '';
+      if (erint) pontok = [[tx,ty]];
+      else if (szelo) {
+        var z = Math.sqrt(625-c*c)/5;
+        pontok = [[tx-.8*z,ty+.6*z],[tx+.8*z,ty-.6*z]];
+      }
+      while (metszesek.firstChild) metszesek.removeChild(metszesek.firstChild);
+      pontok.forEach(function (q,i) {
+        var p = sik.P(q[0],q[1]), nev = erint ? 'T = M' : 'M'+(i+1);
+        metszesek.appendChild(ivSvgElem('circle',{cx:p[0],cy:p[1],r:4,fill:'#047857',
+          'data-x':q[0],'data-y':q[1]}));
+        metszesek.appendChild(ivSvgElem('text',{x:p[0]+10,y:p[1]-10,'font-size':13,
+          'font-weight':600,fill:'#047857'},nev));
+      });
+      kiC.textContent = pontosFmt(c);
+      csuszka.setAttribute('aria-valuetext','Az egyenes jobb oldalán álló c: '+pontosFmt(c));
+      var d = Math.abs(c)/5, rel = szelo ? 'kisebb a sugárnál: az egyenes szelő.' :
+        erint ? 'egyenlő a sugárral: az egyenes érintő.' : 'nagyobb a sugárnál: az egyenes elkerüli a kört.';
+      var szoveg = pontok.length ? (erint ? ' Egy közös pont: ' : ' Két közös pont, közelítő koordinátákkal: ')+
+        pontok.map(function (q) { return '('+pontosFmt(q[0])+'; '+pontosFmt(q[1])+')'; }).join(' és ')+'.' :
+        ' Nincs közös pont.';
+      if (c === 0) szoveg += ' A T talppont egybeesik a C középponttal.';
+      kijelzo.textContent = 'Az egyenes 3x + 4y = '+pontosFmt(c)+'. A középpont távolsága '+
+        pontosFmt(d)+', a sugár 5. A távolság '+rel+szoveg;
+      doboz.setAttribute('data-kozos-pontok',pontok.length);
+    }
+    csuszka.addEventListener('input',frissit);
+    visszaallit(doboz,function () { csuszka.value='25'; frissit(); });
+    frissit(); return true;
+  }
+
   function indit(doboz) {
     var mod = doboz.getAttribute("data-mod");
     if (mod === "pascal") return pascal(doboz);
@@ -409,6 +548,9 @@
     if (mod === "homotecia") return homotecia(doboz);
     if (mod === "exponencialis") return exponencialis(doboz);
     if (mod === "sorozat") return sorozat(doboz);
+    if (mod === "gula") return gula(doboz);
+    if (mod === "tavolsag") return tavolsag(doboz);
+    if (mod === "kor") return kor(doboz);
     var a = szamok(doboz.getAttribute("data-poly"));
     var d1 = derival(a), d2 = derival(d1);
     var xr = szamok(doboz.getAttribute("data-xr")), yr = szamok(doboz.getAttribute("data-yr"));
