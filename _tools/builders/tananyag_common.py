@@ -427,6 +427,146 @@ _IV_STATIKUS = ('<p class="iv-statikus">Az ábra kezdőállapotát látod. '
                 'Az interaktív vezérléshez JavaScript szükséges.</p>\n')
 
 
+def _iv_modell_keret(mod, svg, vezerlok, kijelzo, felirat, *, cap_id="", attr=""):
+    """Címkézett vezérlők, közös visszaállítás és szöveges állapot az új szemléltetésekhez."""
+    azon = f"iv-{mod}"
+    leiras_id = cap_id or f"{azon}-leiras"
+    svg = svg.replace('role="img"', f'role="img" aria-describedby="{azon}-kijelzo {leiras_id}"', 1)
+    return (f'<div class="svgcard interaktiv iv-modell" data-mod="{mod}" {attr}>\n{svg}\n'
+            + _IV_STATIKUS + vezerlok
+            + '<div class="iv-vezerlo iv-gombsor"><button type="button" class="iv-alaphelyzet">'
+              'Kezdőállapot</button></div>\n'
+            + f'<p class="iv-kijelzo" id="{azon}-kijelzo" aria-live="polite" aria-atomic="true">{kijelzo}</p>\n'
+            + f'<p class="cap iv-leiras" id="{leiras_id}">{felirat}</p>\n</div>\n'
+            + '<script src="../../assets/js/interaktiv.js"></script>')
+
+
+def svg_homotecia_interaktiv():
+    """Az 1e meglévő homotécia-példája; az előjel és az arány nagysága külön állítható."""
+    from abra_common import svg_homotecia
+    vezerlok = ('<div class="iv-vezerlo"><label for="iv-homotecia-oldal">A kép helye</label>'
+                '<select id="iv-homotecia-oldal" class="iv-homo-oldal" aria-describedby="iv-homotecia-kijelzo">'
+                '<option value="1">Pozitív arány: azonos félegyenes</option>'
+                '<option value="-1">Negatív arány: ellenkező félegyenes</option></select></div>\n'
+                '<div class="iv-vezerlo"><label for="iv-homotecia-arany">$|k|$ = '
+                '<span class="iv-homo-ertek">2</span></label>'
+                '<input id="iv-homotecia-arany" class="iv-homo-arany" type="range" '
+                'min="0.25" max="2.5" step="0.25" value="2" aria-valuetext="Az arány nagysága: 2" '
+                'aria-describedby="iv-homotecia-kijelzo"></div>\n')
+    return _iv_modell_keret('homotecia', svg_homotecia(), vezerlok,
+        'A homotécia aránya 2. A képpontok a középpontból induló azonos félegyenesre kerülnek. '
+        'A megfelelő oldalak és a kerületek aránya 2, a területek aránya 4.',
+        'A kék $F$ az eredeti háromszög, a narancssárga, szaggatott $F_1$ a képe. '
+        'Változtasd az arány nagyságát és előjelét! Figyeld az $A$ és $A_1$ pont helyét: '
+        r'$OA_1 = |k|\cdot OA$. A szögek változatlanok; a hossz- és kerületarány $|k|$, a területarány $k^2$.',
+        cap_id='abra-homotecia-es-hasonlosag-1')
+
+
+def _iv_exp_ut(alap, xr, yr, w, h):
+    """Az exponenciális görbe látható része; a felső határnál pontosan vágjuk el."""
+    import math
+    bal, jobb, fent, lent = 26, 12, 14, 22
+    lo, hi = xr
+    felso_x = math.log(yr[1]) / math.log(alap)
+    if alap > 1:
+        hi = min(hi, felso_x)
+    else:
+        lo = max(lo, felso_x)
+    pontok = []
+    for i in range(161):
+        x = lo + (hi-lo) * i/160
+        y = alap ** x
+        X = bal + (x-xr[0])/(xr[1]-xr[0]) * (w-bal-jobb)
+        Y = fent + (yr[1]-y)/(yr[1]-yr[0]) * (h-fent-lent)
+        pontok.append(f'{"M" if i == 0 else "L"}{X:.2f},{Y:.2f}')
+    return ' '.join(pontok)
+
+
+def svg_exponencialis_interaktiv():
+    """Változtatható alapú alapgrafikon: a > 0, a ≠ 1, eltolás nélkül."""
+    xr, yr, w, h = (-3.4, 3.4), (-0.4, 5), 440, 280
+    svg = svg_fuggvenyek([], xr=xr, yr=yr, w=w, h=h, jelmagyarazat=False,
+        leiras='Az y = aˣ exponenciális függvény alapgrafikonja, kezdetben a = 2',
+        pontok=[(0, 1, '(0; 1)', '#0f172a', 8, 16)])
+    rajz = ('<defs><clipPath id="iv-exp-clip"><rect x="26" y="14" width="402" height="244"/>'
+            '</clipPath></defs>\n'
+            f'<path class="iv-exp-gorbe" d="{_iv_exp_ut(2, xr, yr, w, h)}" fill="none" '
+            'stroke="#047857" stroke-width="2.5" clip-path="url(#iv-exp-clip)"/>\n'
+            '<text class="iv-exp-cimke" x="414" y="35" font-size="14" text-anchor="end" '
+            'fill="#0f172a">y = 2ˣ</text>\n')
+    svg = svg.replace('</svg>', rajz + '</svg>')
+    vezerlok = ('<div class="iv-vezerlo"><label for="iv-exponencialis-tipus">Alaptartomány</label>'
+                '<select id="iv-exponencialis-tipus" class="iv-exp-tipus" aria-describedby="iv-exponencialis-kijelzo">'
+                '<option value="no">Növekvő: 1-nél nagyobb alap</option>'
+                '<option value="csokken">Csökkenő: 0 és 1 közötti alap</option></select></div>\n'
+                '<div class="iv-vezerlo"><label for="iv-exponencialis-alap">$a$ = '
+                '<span class="iv-exp-ertek">2</span></label>'
+                '<input id="iv-exponencialis-alap" class="iv-exp-alap" type="range" min="101" max="500" '
+                'step="1" value="200" aria-valuetext="Az exponenciális függvény alapja: 2" '
+                'aria-describedby="iv-exponencialis-kijelzo"></div>\n')
+    return _iv_modell_keret('exponencialis', svg, vezerlok,
+        'Az alap 2: a függvény szigorúan növekvő. Az értéke −1-nél közelítőleg 0,5; 0-nál 1; 1-nél 2.',
+        'Válassz alaptartományt, majd változtasd az $a$ alapot! Minden görbe átmegy a $(0; 1)$ ponton. '
+        'Figyeld, melyik irányban nőnek az értékek! A görbe mindig az $x$-tengely fölött halad; '
+        'a rajz csak a megjelenített ablakba eső részét mutatja.',
+        attr=f'data-xr="{xr[0]},{xr[1]}" data-yr="{yr[0]},{yr[1]}" data-w="{w}" data-h="{h}"')
+
+
+def svg_sorozat_interaktiv():
+    """A meglévő aₙ = 2 + 1/n példa; a sáv nyílt, a besorolás egész számokkal pontos."""
+    w, h, db, szazad = 480, 270, 12, 30
+    xr, yr = (0, db+1), (0, 3.4)
+    X = lambda n: 26 + n/(db+1) * (w-38)
+    Y = lambda y: 14 + (yr[1]-y)/yr[1] * (h-36)
+    svg = svg_fuggvenyek([], xr=xr, yr=yr, w=w, h=h, jelmagyarazat=False,
+        tengely=('n', 'aₙ'), egyseg=('', '1'),
+        leiras='Az aₙ = 2 + 1/n sorozat: pontok és a 2 körüli nyílt sáv')
+    # A függőleges rácsot a tagszám változásával együtt rajzolja újra a közös JS.
+    racs = '<g class="iv-sor-racs">'
+    for y in range(1, 4):
+        racs += f'<line x1="26" y1="{Y(y):.2f}" x2="{w-12}" y2="{Y(y):.2f}" stroke="#cbd5e1" stroke-width=".6"/>'
+    for n in range(2, db+1, 2):
+        racs += f'<line x1="{X(n):.2f}" y1="14" x2="{X(n):.2f}" y2="{Y(0):.2f}" stroke="#cbd5e1" stroke-width=".6"/>'
+    racs += '</g>'
+    svg = re.sub(r'<g stroke="#cbd5e1".*?</g>', racs, svg, count=1, flags=re.S)
+    svg = re.sub(r'<text[^>]*>n</text>', f'<text x="{w-16}" y="{Y(0)-6:.1f}" '
+                 'font-size="11" font-style="italic" fill="#0f172a" text-anchor="end">n</text>', svg, count=1)
+    band = ('<rect class="iv-sor-sav" x="26" '
+            f'y="{Y(2.3):.2f}" width="{w-38}" height="{Y(1.7)-Y(2.3):.2f}" '
+            'fill="#10b981" fill-opacity=".16"/>\n')
+    for y, cls in [(1.7, 'iv-sor-also'), (2.3, 'iv-sor-felso'), (2, 'iv-sor-cel')]:
+        band += (f'<line class="{cls}" x1="26" y1="{Y(y):.2f}" x2="{w-12}" y2="{Y(y):.2f}" '
+                 'stroke="#047857" stroke-width="1.3" stroke-dasharray="5 4"/>\n')
+    band += (f'<text x="{w-18}" y="{Y(2)+16:.2f}" font-size="13" text-anchor="end" fill="#065f46">A = 2</text>\n'
+             '<g class="iv-sor-pontok">')
+    for n in range(1, db+1):
+        belul = n*szazad > 100
+        band += (f'<circle data-n="{n}" data-hely="{"belul" if belul else "kivul"}" '
+                 f'cx="{X(n):.2f}" cy="{Y(2+1/n):.2f}" r="4" '
+                 f'fill="{"#047857" if belul else "#dc2626"}"/>')
+    band += '</g>\n<g class="iv-sor-tengely">'
+    for n in range(2, db+1, 2):
+        band += f'<text x="{X(n):.2f}" y="{Y(0)+14:.2f}" font-size="11" fill="#475569" text-anchor="middle">{n}</text>'
+    band += '</g>\n'
+    svg = svg.replace('</svg>', band + '</svg>')
+    vezerlok = (r'<div class="iv-vezerlo"><label for="iv-sorozat-sav">$\varepsilon$ = '
+                '<span class="iv-sor-eps">0,3</span></label>'
+                '<input id="iv-sorozat-sav" class="iv-sor-szelesseg" type="range" min="5" max="50" '
+                'step="5" value="30" aria-valuetext="A sáv félszélessége: 0,3" '
+                'aria-describedby="iv-sorozat-kijelzo"></div>\n'
+                '<div class="iv-vezerlo"><label for="iv-sorozat-tagszam">Látható tagok: '
+                '<span class="iv-sor-db">12</span></label>'
+                '<input id="iv-sorozat-tagszam" class="iv-sor-tagszam" type="range" min="12" max="60" '
+                'step="1" value="12" aria-describedby="iv-sorozat-kijelzo"></div>\n')
+    return _iv_modell_keret('sorozat', svg, vezerlok,
+        'A sáv félszélessége 0,3: a nyílt sáv 1,7 és 2,3 között van. A 4. tagtól kezdve minden további tag benne van. '
+        'Az első 12 tagból 9 belül, 3 kívül van; határra eső tag nincs.',
+        r'A sorozat $a_n = 2 + \frac1n$. Szűkítsd a $2$ körüli sávot, és figyeld, hányadik tagtól kerül '
+        'minden további tag belülre! Zöld, teli pont: belül; piros, teli pont: kívül; '
+        'narancssárga, üres pont: a határon. A sáv széle nem tartozik bele.',
+        attr=f'data-w="{w}" data-h="{h}" data-yr="{yr[0]},{yr[1]}"')
+
+
 def svg_interaktiv(mod, poly, *, xr, yr, x0=0.0, csuszka=(-2.0, 2.0, 0.01, 1.0), w=360, h=250,
                    gorbe_cimke="f", f2=False, felirat="", leiras="Interaktív függvényábra",
                    pont_cimke="P", szin="#2563eb", ab=(0.0, 1.0), pontos="", sereg_c=(-2, -1, 1, 2)):

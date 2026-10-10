@@ -3,7 +3,7 @@
 es egyenlotlensegek (A3). Mentor: Dr. Bestia."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_fuggvenyek
+from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_fuggvenyek, svg_exponencialis_interaktiv
 
 T = dict(tagozat="2e", mappa="03-exponencialis-es-logaritmus-fuggveny",
          temakor="Exponenciális és logaritmusfüggvény")
@@ -35,13 +35,7 @@ assert not E, E
 print("sympy önteszt: OK")
 
 # ---------------------------------------------------------------- ábrák
-SVG_NO = svg_fuggvenyek(
-    [(lambda u: 2**u, "#047857", "y = 2ˣ", [(-3.4, 2.3)]),
-     (lambda u: 3**u, "#3b82f6", "y = 3ˣ", [(-3.4, 1.6)]),
-     (lambda u: 1.5**u, "#8b5cf6", "y = 1,5ˣ", [(-3.4, 3.4)])],
-    xr=(-3.4, 3.4), yr=(-1.2, 5.0), w=380, h=260,
-    leiras='Növekvő exponenciális függvények: pozitív x-nél a nagyobb alaphoz nagyobb érték tartozik',
-    pontok=[(0, 1, "(0; 1)", "#ef4444", 8, 16)])
+IV_EXPO = svg_exponencialis_interaktiv()
 
 SVG_CS = svg_fuggvenyek(
     [(lambda u: 2**u, "#047857", "y = 2ˣ", [(-3.4, 2.3)]),
@@ -109,10 +103,7 @@ A1 = [
    'Az egész témakör legfontosabb megkülönböztetése az, hogy az alap <b>nagyobb</b> vagy '
    '<b>kisebb</b> $1$-nél. Ez dönti el, hogy a függvény nő vagy csökken — és később ez '
    'fogja eldönteni az egyenlőtlenségek irányát is.',
-   abra(SVG_NO, (
-                    '$a&gt;1$ esetén a függvény <b>növekvő</b>. Pozitív $x$ mellett a nagyobb alaphoz nagyobb '
-                    'függvényérték tartozik. Mindegyik görbe átmegy a $(0;1)$ ponton.'
-                )),
+   IV_EXPO,
    abra(SVG_CS, "$0&lt;a&lt;1$ esetén a függvény <b>csökkenő</b>. Az $y=\\left(\\tfrac12\\right)^{x}$ "
                 "az $y=2^{x}$ tükörképe az $y$-tengelyre, hiszen "
                 "$\\left(\\tfrac12\\right)^{x}=2^{-x}$."),
@@ -120,7 +111,7 @@ A1 = [
          (
              '<p>Az $f(x)=a^{x}$ függvény</p><ul><li><b>szigorúan növekvő</b>, ha $a&gt;1$;</li><li><b>szigorúan '
              'csökkenő</b>, ha $0&lt;a&lt;1$.</li></ul><p>Mindkét esetben <b>kölcsönösen egyértelmű</b> '
-             '(injektív): különböző kitevőkhöz különböző értékek tartoznak. Ez az a tulajdonság, amely a közös '
+             '(bijektív): a pozitív valós számokat pontosan egyszer veszi fel. Különösen <b>injektív</b>: különböző kitevőkhöz különböző értékek tartoznak. Ez az a tulajdonság, amely a közös '
              'alapra hozott egyenleteknél lehetővé teszi a kitevők összehasonlítását.</p>'
          ),
          hid="tetel-monotonitas"),

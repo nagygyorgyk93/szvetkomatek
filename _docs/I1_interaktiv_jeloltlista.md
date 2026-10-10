@@ -4,7 +4,9 @@
 
 **A négy évfolyam jelöltlistája helyben elkészült.** Kiindulás: `c4059b2`, tiszta
 helyi `main`, az `origin/main` helyi referenciájával azonos; távoli frissítés nem történt.
-A tanár az I1-listát választotta. A megvalósítás a következő tanári választás után indul.
+A tanár az I1-listát választotta, majd jóváhagyta az első három modell elkészítését.
+**I1-04, I1-06 és I1-13 helyben megvalósult és ellenőrizve van.**
+A további 13 jelölt terv; a jelenlegi megvalósítás részletei: [első adag](I1_elso_adag.md).
 
 A 161 tananyaglap ábráinak és médiáinak leltárából **16 jelöltet** választottam,
 évfolyamonként négyet. **P1:** elsőként érdemes megvalósítani; **P2:** későbbi,
@@ -24,7 +26,11 @@ referenciái, a szabvanyok skill beolvasott alap- és középszintű kimenetei,
 a matek-abra skill; továbbá a jelenlegi HTML, az `interaktiv.js`, a médiaeszköz és
 mind a négy médiakatalógus. A listán szereplő konkrét szakaszok szövegét is ellenőriztem.
 
-## Leltár
+## A jelöltlista induló leltára
+
+Az alábbi számok az első megvalósítás előtti állapotot rögzítik. Az új három
+modell után 11 saját interaktív ábra van (1e: 1, 2e: 1, 3e: 0, 4e: 9);
+a matematikai SVG-k száma és a GeoGebra-lefedettség megmaradt.
 
 Csak a tananyaglapok matematikai, `role="img"` jelölésű SVG-it számoltam.
 A 286 SVG-ből 8 saját interaktív ábra kezdőképe, 278 állókép. A JPEG-eket
@@ -44,7 +50,8 @@ jelenti. Az appletek mostani külső működését ebben a dokumentációs adagb
 ## Jelöltek évfolyamonként
 
 A link az ábra tényleges tananyagszakaszára vezet. A javasolt vezérlő és a kijelzett
-értékek tervként szerepelnek; az új viselkedés még nincs megvalósítva vagy kipróbálva.
+értékek a többi 13 jelöltnél tervként szerepelnek. I1-04, I1-06 és I1-13
+helyben elkészült; ezek kezelése és matematikai szélső esetei ellenőrizve vannak.
 
 ### 1e
 
@@ -53,14 +60,14 @@ A link az ábra tényleges tananyagszakaszára vezet. A javasolt vezérlő és a
 | **I1-01 · P2** | [A függvény fogalma és megadása](../1e/01-logika-halmazok-fuggvenyek/tananyag-fuggveny-fogalma.html#s1) — Függvény és nem függvény nyíldiagramja | Bemenet és a meglévő két példa kiválasztása; a hozzá tartozó nyilak és képek kiemelése. | Megkülönbözteti a „mindenhez tartozik” és a „pontosan egy tartozik” feltételt. | `MAT.F.SO.O.1.8 (8.1)` |
 | **I1-02 · P2** | [Egybevágósági transzformációk](../1e/05-geometria/tananyag-transzformaciok.html#s1) — Eltolt háromszög; később a tükrözés és forgatás ábrája is | Az eltolásvektor két komponense; a többi transzformáció külön nézetben. | Látszik, hogy a hely változik, az oldalak és szögek megmaradnak. | `MAT.G.SO.O.1.5 (5.3)` |
 | **I1-03 · P2** | [Lineáris egyenlőtlenségek](../1e/07-linearis-egyenletek-es-rendszerek/tananyag-egyenlotlensegek.html#s2) — Nyílt/zárt határpont és félegyenes | Határpont mozgatása; <, ≤, >, ≥ közötti választás. | Összeköti az egyenlőtlenséget, a számegyenest és az intervallumjelölést. | `MAT.A.SO.O.1.2 (2.2–2.3)` |
-| **I1-04 · P1** | [Homotécia és hasonlóság](../1e/08-hasonlosag/tananyag-homotecia-es-hasonlosag.html#s1) — Az O középpontú homotécia | A k arány állítása; megfelelő csúcspárok és sugarak kiemelése. | Együtt követhető a hossz- és kerületarány, valamint a területarány. | `MAT.G.SO.O.1.5 (5.2); MAT.G.SO.S.1.6 (6.2)` |
+| **I1-04 · P1 · helyben kész** | [Homotécia és hasonlóság](../1e/08-hasonlosag/tananyag-homotecia-es-hasonlosag.html#s1) — Az O középpontú homotécia | A k arány állítása; megfelelő csúcspárok és sugarak kiemelése. | Együtt követhető a hossz- és kerületarány, valamint a területarány. | `MAT.G.SO.O.1.5 (5.2); MAT.G.SO.S.1.6 (6.2)` |
 
 ### 2e
 
 | Azonosító · sorrend | Lap és meglévő ábra | Mit állítana a vezérlő? | Tanulási haszon | Kimenet |
 |---|---|---|---|---|
 | **I1-05 · P2** | [A komplex szám fogalma](../2e/01-hatvanyozas-gyokvonas-komplex-szamok/tananyag-komplex-szam-fogalma.html#s3) — Komplex szám, konjugált és modulusz a Gauss-síkon | Valós és képzetes rész állítása; a pont és a konjugált együtt mozog. | A szám algebrai alakja, koordinátái, tükrözése és modulusza összekapcsolódik. | `MAT.A.SO.S.1.1 (1.1, 1.5)` |
-| **I1-06 · P1** | [Az exponenciális függvény](../2e/03-exponencialis-es-logaritmus-fuggveny/tananyag-exponencialis-fuggveny.html#s2) — Növekvő és csökkenő exponenciális alapgrafikon | Az a alap változtatása a megengedett két tartományban. | Megmutatja a monotonitás különbségét és a közös tengelymetszetet. | `MAT.F.SO.O.1.8 (8.2, 8.4)` |
+| **I1-06 · P1 · helyben kész** | [Az exponenciális függvény](../2e/03-exponencialis-es-logaritmus-fuggveny/tananyag-exponencialis-fuggveny.html#s2) — Növekvő és csökkenő exponenciális alapgrafikon | Az a alap változtatása a megengedett két tartományban. | Megmutatja a monotonitás különbségét és a közös tengelymetszetet. | `MAT.F.SO.O.1.8 (8.2, 8.4)` |
 | **I1-07 · P2** | [Másodfokú és lineáris egyenletből álló rendszer](../2e/02-masodfoku-egyenletek-es-fuggvenyek/tananyag-masodfoku-linearis-rendszer.html#s1) — Parabola és egyenes metszéspontjai | A meglévő parabola mellett az egyenes eltolása; később a meredeksége is. | A rendszer megoldáspárjai közös pontként jelennek meg; látszik a nulla/egy/két megoldás. | `MAT.A.SO.S.1.2 (2.9)` |
 | **I1-08 · P1** | [Trigonometrikus egyenletek és egyenlőtlenségek](../2e/04-trigonometrikus-fuggvenyek/tananyag-trigonometrikus-egyenletek.html#s1) — Szinuszgörbe és vízszintes egyenes | A sin x = b egyenlet b értéke; a [0; 2π] intervallum megoldásai kiemelve. | A két gyök, az érintési határeset és a megoldás nélküli eset közvetlenül összevethető. | `MAT.A.SO.S.1.2 (2.4)` |
 
@@ -77,12 +84,12 @@ A link az ábra tényleges tananyagszakaszára vezet. A javasolt vezérlő és a
 
 | Azonosító · sorrend | Lap és meglévő ábra | Mit állítana a vezérlő? | Tanulási haszon | Kimenet |
 |---|---|---|---|---|
-| **I1-13 · P1** | [A sorozat határértéke](../4e/01-sorozatok-hatarerteke/tananyag-hatarertek-fogalma.html#s2) — A határértékhez közelítő sorozat pontjai és a körülötte lévő sáv | A sáv ε fél-szélessége és a látható tagok száma. | Látszik, hogyan kerülnek egy indextől kezdve a tagok a szűkebb sávba is. | `MAT.F.SO.S.1.7 (7.3)` |
+| **I1-13 · P1 · helyben kész** | [A sorozat határértéke](../4e/01-sorozatok-hatarerteke/tananyag-hatarertek-fogalma.html#s2) — A határértékhez közelítő sorozat pontjai és a körülötte lévő sáv | A sáv ε félszélessége és a látható tagok száma. | Látszik, hogyan kerülnek egy indextől kezdve a tagok a szűkebb sávba is. | `MAT.F.SO.S.1.7 (7.3)` |
 | **I1-14 · P1** | [A függvény határértéke](../4e/02-fuggvenyek/tananyag-fuggveny-hatarerteke.html#s4) — Eltérő határérték és pontbeli érték: üres/teli pont | Közelítés a megjelölt ponthoz balról vagy jobbról; a pontbeli érték külön jelölve marad. | Elválasztja a közelítés eredményét a függvény adott pontban felvett értékétől. | `MAT.F.SO.S.1.8 (8.1)` |
 | **I1-15 · P1** | [A Void kivágása — síkidomok területe](../4e/04-integral/tananyag-terulet.html#s2) — Előjelet váltó görbe alatti két területrész | A jobb integrálási határ állítása; előjeles integrál és geometriai terület egymás mellett. | Megmutatja, miért kell a zérushelynél külön számolni a területet. | `MAT.F.SO.S.1.9 (9.2–9.3)` |
 | **I1-16 · P2** | [Adatokból kép — sokaság, minta, gyakoriság, diagram](../4e/06-valoszinuseg-statisztika/tananyag-adatok.html#s4) — Ugyanaz a népességadat normál és levágott tengelyű oszlopdiagramon | Váltás a meglévő két tengelybeállítás között; az adatok és a százalékos változás rögzítve. | A tanuló elkülöníti a valódi változást a megjelenítés okozta benyomástól. | `MAT.V.SO.O.1.9 (9.4); MAT.SO.O.3.4` |
 
-## Javasolt első adag
+## Jóváhagyott és megvalósított első adag
 
 **I1-04 — homotécia; I1-06 — exponenciális alap; I1-13 — sorozat és ε-sáv.**
 Mindhárom egyetlen fő paraméter változását teszi érthetővé, és az adott lapon
@@ -142,7 +149,9 @@ kép/média/háttér, kánon/render, link/sáv és mobil/nyomtatási ellenőrzé
 Új feladatszámadat csak a privát ütközésellenőrzés mellett készülhet.
 A közös modul számítása és a kijelzett értékek független matematikai kontrollt kapjanak.
 
-## Ellenőrzés és korlát
+## A jelöltlista kezdeti ellenőrzése és korlátja
+
+Az alábbi bekezdések a megvalósítás előtti dokumentációs adag eredményét rögzítik.
 
 Ez dokumentációs adag: a weboldal működése és tanulói tartalma megmaradt.
 A 16 célhelyhez létező tananyag, szakaszhorgony és állókép tartozik; mindegyiknél
@@ -156,6 +165,8 @@ Az új modellek mobilos és billentyűzetes viselkedése, matematikai szélső e
 külső appletek jelenlegi működése és a képernyőolvasós eredmény a megvalósításkor,
 illetve a célzott próba során lesz ellenőrizhető.
 
-**Tanári döntés kell:** melyik 2–3 jelölt induljon elsőként? Javaslat: I1-04, I1-06,
-I1-13. A meglévő GeoGebra cseréjéről külön választás szükséges, ha ilyen tétel kerül sorra.
+**Tanári döntés kell:** az első három, jóváhagyott modellhez nincs. A következő
+2–3 jelölt kiválasztása még hátravan. A meglévő GeoGebra cseréjéről külön választás
+szükséges, ha ilyen tétel kerül sorra. A megvalósítás végleges próbái és korlátai
+az [első adag jelentésében](I1_elso_adag.md) szerepelnek.
 Helyi `main`, új ág és push nélkül.

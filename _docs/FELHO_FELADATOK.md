@@ -644,10 +644,13 @@ vektorösszeadás; kör és egyenes kölcsönös helyzete; sorozat ε-sávja.
 | jelöltlista | 1e | 2e | 3e | 4e |
 |---|---|---|---|---|
 | ◐ Helyi jelöltlista kész, 2026-10-10 | ◐ 4 jelölt | ◐ 4 jelölt | ◐ 4 jelölt | ◐ 4 jelölt |
+| ◐ Első megvalósítás helyben kész, 2026-10-10 | ◐ I1-04 homotécia | ◐ I1-06 exponenciális alap | Még nincs megvalósítás | ◐ I1-13 sorozat/ε-sáv |
 
 A 16 jelölt rangsora és kimenetkapcsolata: [I1 interaktív jelöltlista](I1_interaktiv_jeloltlista.md).
-Első javaslat: I1-04 homotécia, I1-06 exponenciális alap, I1-13 sorozat/ε-sáv.
-Tanári választásra vár a megvalósítás; négy további ötlet a meglévő GeoGebra cseréjére.
+A tanár jóváhagyta az első három modell elkészítését; [az első adag](I1_elso_adag.md)
+helyben megvalósult, matematikai/mobilos/billentyűzetes és nyomtatási próbái rendben.
+A további 13 jelölt terv; négy további ötlet a meglévő GeoGebra cseréjére. A következő
+2–3 jelöltet a tanár választja ki. Az elkészült három modellhez nincs nyitott döntés.
 
 ---
 
@@ -755,3 +758,35 @@ Dokumentációs munka: a weboldal, tanulói tartalom és minden korábbi horgony
 külső appletlejátszás nincs újrapróbálva. A jelöltlista linkjei, célképei, kimenetkódjai
 és a forrásmegőrzés ellenőrizve. Tanári döntés: melyik 2–3 jelölt induljon először?
 Részletek: [I1 jelöltlista](I1_interaktiv_jeloltlista.md). Helyi main, új ág és push nélkül.
+
+
+### I1 első megvalósítás — 2026-10-10
+
+Tanári jóváhagyással I1-04 (1e homotécia), I1-06 (2e exponenciális alap) és
+I1-13 (4e sorozat/ε-sáv) helyben elkészült. Közös generátor, három új interaktiv.js
+mód, modellre korlátozott közös CSS; címkézett natív vezérlők, Kezdőállapot és
+szöveges állapot. k = 0 és a = 0/1 kizárva; a nyílt ε-sáv határpontja kívül marad,
+egész számos összehasonlítás. JS nélkül és nyomtatásban értelmes kezdőkép.
+Három szöveges matematikai pontosítás és a „félszélesség” / „Véd Vilmos csapdája”
+nyelvi javítása beépítve, a friss lektor második ellenőrzése rendben.
+
+Teljes lánc: 334 média 139 lapon; kánon/link 310/0, sáv rendben; kulcs4499/0,
+regresszió4499/4499 = 100%. Végleges render öt módosult lap, 411 képlet,
+10/10 kvíz, 0 hiba. Edge360/390/1280: 18 nézet/0, axe3/0, nyomtatás6,
+billentyűzet11, érintés3, nyolc régi ábra működéspróbája rendben. Független
+kontroll: 20 homotéciaállás, 8 alap/1288 exponenciális görbepont, 30 ε/tagszám
+állapot/930 sorozatpont, 0 eltérés; 490 megengedett alapnál érvényes görbe.
+
+Megőrzés: 305 HTML és 627 korábbi követett fájl byte szerint változatlan;
+az öt módosult lap a három célábrán/feliraton és a jelzett szövegen kívül
+azonos DOM. Kvízek, horgonyok, feladatok, média és többi ábra megmaradt.
+Index308, csak öt érintett URL változott; naplótérkép, médiakatalógus,
+tükrök és zárolt első23 sor azonos. Új gyakorlófeladat/számadat/indukciós
+feladat nincs; a nyers próbák és SymPy-környezet a repón kívül maradnak.
+
+Korlát: élő oldal, valódi telefon/képernyőolvasó, más böngésző, teljes
+PDF-tördelés és külső média új lejátszása nincs ellenőrizve. Két korábbi
+heurisztikus visszautalás-jelzés megmaradt. Az axe nem teljes WCAG-minősítés.
+Tanári döntés az elkészült adaghoz nem kell; a további 13 jelöltből választás
+szükséges a következő nagyobb adag előtt. Helyi main, új ág és push nélkül.
+Részletek: [I1 első adag](I1_elso_adag.md).

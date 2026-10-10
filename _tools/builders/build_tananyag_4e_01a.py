@@ -4,7 +4,7 @@ gyokos kifejezesek (B2). Mentor: Ved Vilmos (Nagol javit). Kuldetes: A Vegtelenb
 Specifikacio: projektek/szvetkomatek/4e/narrativa_01-sorozatok-hatarerteke.md"""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_fuggvenyek
+from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_fuggvenyek, svg_sorozat_interaktiv
 
 T = dict(tagozat="4e", mappa="01-sorozatok-hatarerteke", temakor="Sorozatok határértéke")
 FGY = "feladatok-hatarertek.html"
@@ -85,31 +85,7 @@ print("sympy önteszt: OK")
 
 
 # ---------------------------------------------------------------- ábrák
-def sav(svg, xr, yr, w, h, A, eps, felirat=""):
-    """Vízszintes sáv (A − eps, A + eps) és szaggatott A-vonal a rácsháló fölé.
-    A koordináta-leképezés a `svg_fuggvenyek` margóival egyezik."""
-    bal, jobb, fent, lent = 26, 12, 14, 22
-    px, py = w - bal - jobb, h - fent - lent
-    X = lambda x: bal + (x - xr[0]) / (xr[1] - xr[0]) * px
-    Y = lambda y: fent + (yr[1] - y) / (yr[1] - yr[0]) * py
-    reszlet = (f'  <rect x="{X(xr[0]):.1f}" y="{Y(A + eps):.1f}" width="{px:.1f}" '
-               f'height="{Y(A - eps) - Y(A + eps):.1f}" fill="#10b981" fill-opacity=".16"/>\n'
-               f'  <line x1="{X(xr[0]):.1f}" y1="{Y(A):.1f}" x2="{X(xr[1]):.1f}" y2="{Y(A):.1f}" '
-               f'stroke="#047857" stroke-width="1.2" stroke-dasharray="5 4"/>\n')
-    if felirat:
-        reszlet += (f'  <text x="{X(xr[1]) - 4:.1f}" y="{Y(A + eps) - 4:.1f}" font-size="11" '
-                    f'fill="#047857" text-anchor="end">{felirat}</text>\n')
-    i = svg.index("  </g>") + len("  </g>\n")
-    return svg[:i] + reszlet + svg[i:]
-
-
-XR, YR, W, H = (0, 13), (0, 3.4), 400, 250
-SVG_SAV = sav(svg_fuggvenyek(
-    [], xr=XR, yr=YR, w=W, h=H, jelmagyarazat=False, tengely=("n", "aₙ"),
-    leiras="Az aₙ = (2n + 1)/n sorozat első tizenkét tagja pontokként; a pontok a 2-es "
-           "szinthez közelítenek, és a negyedik tagtól kezdve mind a 2 körüli sávban vannak",
-    pontok=[(k, float(a(k)), "", ZOLD if k >= 4 else PIROS) for k in range(1, 13)]),
-    XR, YR, W, H, 2, 0.3, "2 ± 0,3")
+IV_SAV = svg_sorozat_interaktiv()
 
 SVG_DIVERGENS = svg_fuggvenyek(
     [], xr=(0, 9), yr=(-1.6, 1.6), w=330, h=200, jelmagyarazat=False, tengely=("n", "aₙ"),
@@ -152,8 +128,7 @@ A = [
    r'<p>A tagok egyre közelebb kerülnek a $2$-höz. Ez nem véletlen: $a_n=\dfrac{2n+1}{n}=2+\dfrac1n$, és '
    r'az $\dfrac1n$ tag egyre kisebb. A $2$-t viszont <b>egyik tag sem éri el</b> — mindegyik nagyobb '
    r'nála.</p>',
-   abra(SVG_SAV, 'Az $a_n=\\frac{2n+1}{n}$ sorozat első tizenkét tagja. A zöld sáv a $2\\pm0{,}3$ '
-        'sáv: a <b>negyedik tagtól kezdve</b> minden pont benne van.'),
+   IV_SAV,
    doboz("pelda", "I.V.H. Akták — határérték táblázatból",
          r'<p>Sejtsük meg az $a_n=\dfrac{3n-1}{n+1}$ sorozat határértékét!</p>'
          r'<div class="tblwrap"><table class="tt-table">'
@@ -190,7 +165,7 @@ A = [
    doboz("definicio", "Konvergens és divergens sorozat",
          r'<p>Ha a sorozatnak van (véges) határértéke, <b>konvergens</b>; ha nincs, <b>divergens</b>. '
          r'A divergens sorozatok két csoportja:</p>'
-         r'<ul><li>a tagok minden határon túl nőnek (csökkennek): ilyenkor azt írjuk, hogy '
+         r'<ul><li>bármely adott számnál egy idő után minden tag nagyobb lesz (illetve minden tag kisebb lesz): ilyenkor azt írjuk, hogy '
          r'$\lim a_n=+\infty$ (illetve $-\infty$), és azt mondjuk, hogy a sorozat a végtelenbe tart — '
          r'például $a_n=n^2$, illetve $a_n=-3n$. Ez is divergencia, mert a $+\infty$ nem szám;</li>'
          r'<li>a tagok sem egy számhoz, sem a végtelenbe nem tartanak — például az $a_n=(-1)^n$ sorozat '
@@ -262,7 +237,7 @@ A = [
    r'<p>Például $\dfrac nn\to1$, $\dfrac{n^2}{n}\to+\infty$ és $\dfrac{n}{n^2}\to0$ — mindhárom '
    r'„$\frac\infty\infty$” alakú, mégis más a határértékük. A határozatlan alakokat a következő leckék '
    r'módszerei oldják fel.</p>',
-   doboz("csapda", "Véd Vilmos csapda",
+   doboz("csapda", "Véd Vilmos csapdája",
          r'<p>Véd Vilmos szerint „$\frac\infty\infty=1$, mert ami egyforma, az kiejti egymást”, és '
          r'„$\infty-\infty=0$”.</p>'
          r'<p>A $\infty$ nem szám, hanem annak a rövidítése, hogy valami <b>minden határon túl nő</b> — '
@@ -328,7 +303,7 @@ B1 = [
          r'végtelen — de melyik? Kiemelve $\dfrac{n^2\left(1-\frac4n\right)}{n\left(\frac5n-2\right)}'
          r'=n\cdot\dfrac{1-\frac4n}{\frac5n-2}$, ahol a második tényező $-\frac12$-hez tart, az $n$ pedig '
          r'$+\infty$-hez. A határérték $-\infty$.</p>', hid="pelda-harom-eset"),
-   doboz("csapda", "Véd Vilmos csapda",
+   doboz("csapda", "Véd Vilmos csapdája",
          r'<p>Véd Vilmos minden törtnél a főegyütthatók hányadosát írja: a b) példára „$\frac{1}{-2}$”-t.</p>'
          r'<p>Ez <b>csak azonos fokszámnál</b> igaz. Előbb mindig a fokszámokat hasonlítjuk össze, és '
          r'ha a számláló a magasabb fokú, a végtelen <b>előjelére</b> is figyelünk: itt a számláló '
@@ -361,7 +336,7 @@ B1 = [
          r'<p>A számlálóban a harmadfokú tagok kiesnek: $(3n^3+3n^2+n+1)-(3n^3+5n^2-2n)=-2n^2+3n+1$. '
          r'A nevező $n^2+3n+2$. Így</p>'
          r'$$\lim\frac{-2n^2+3n+1}{n^2+3n+2}=\frac{-2}{1}=-2 .$$', hid="pelda-kulonbseg"),
-   doboz("csapda", "Véd Vilmos csapda",
+   doboz("csapda", "Véd Vilmos csapdája",
          r'<p>„Mindkét tört a végtelenbe tart, a különbségük tehát $\infty-\infty=0$” — írja Véd Vilmos.</p>'
          r'<p>A két tört nagyjából ugyanolyan gyorsan nő (mindkettő körülbelül $3n$), de nem pontosan '
          r'egyformán: a különbségük itt $-2$-höz tart. '
@@ -403,7 +378,7 @@ B2 = [
          r'$$\frac{n\sqrt{16+\frac5n-\frac2{n^2}}}{n\left(3+\frac1n\right)}'
          r'=\frac{\sqrt{16+\frac5n-\frac2{n^2}}}{3+\frac1n}\ \longrightarrow\ \frac{\sqrt{16}}{3}=\frac43 .$$',
          hid="pelda-gyokos"),
-   doboz("csapda", "Véd Vilmos csapda",
+   doboz("csapda", "Véd Vilmos csapdája",
          r'<p>Véd Vilmos szerint a fenti határérték $\frac{16}{3}$, „mert a főegyütthatók hányadosa”.</p>'
          r'<p>A $16$ a gyökjel <b>alatt</b> van: a főtag nem $16n$, hanem $\sqrt{16n^2}=4n$. A gyök '
          r'alatti együtthatóból is gyököt kell vonni — ezért lesz az eredmény $\frac43$.</p>'),

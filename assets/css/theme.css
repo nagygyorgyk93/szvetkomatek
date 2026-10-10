@@ -886,6 +886,13 @@ html{scrollbar-color:var(--kampusz-uveg-keret) var(--papir);scrollbar-width:thin
 .interaktiv:not(.iv-kesz) :is(.iv-vezerlo,.iv-al-cimke,.iv-al-adat){display:none;}
 .interaktiv .iv-statikus{color:#334155;text-align:center;font-size:.9rem;margin:.5rem auto;max-width:36rem;}
 .interaktiv.iv-kesz .iv-statikus{display:none;}
+/* Az I1 modellek hosszabb címkéi és választói telefonon is a világos kártyán maradnak. */
+.iv-modell .iv-vezerlo{flex-wrap:wrap;}
+.iv-modell .iv-vezerlo label{white-space:normal;}
+.iv-modell .iv-vezerlo select{max-width:100%;min-width:0;}
+.iv-modell .iv-vezerlo input[type=range]{min-width:0;flex-basis:12rem;min-height:2rem;}
+.iv-modell input[type=range]:focus-visible{outline:2px solid #2563eb;outline-offset:2px;}
+.iv-modell .iv-leiras{color:#334155;text-align:left;font-size:.9rem;margin:.65rem auto 0;}
 /* ---- interaktív: szimulátor és adatlabor (4e/06, 2026-09-29) — gombok, választó, szövegmező, mutatótábla a világos lapon */
 .interaktiv .iv-gombsor{flex-wrap:wrap;gap:.45rem;max-width:36rem;}
 .interaktiv .iv-gombsor button{font:inherit;font-size:.9rem;font-weight:600;padding:.28rem .7rem;border-radius:8px;

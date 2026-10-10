@@ -19,6 +19,9 @@
  *   adatlabor  — leíró statisztika (abra_stat.svg_adatlabor, 2026-09-29): adatsor-választó + szövegmező, élő
  *            mutatók (a kvartilis az alsó és a felső fél mediánja; 1/n-es szórásnégyzet — ugyanúgy, mint a
  *            Python-oldali abra_stat.mutatok), pont- és dobozdiagram
+ *   homotecia — a meglévő háromszög képe: k előjele, |k|, hossz- és területarány
+ *   exponencialis — az aˣ alapgrafikonja, külön 0 < a < 1 és a > 1 tartománnyal
+ *   sorozat — aₙ = 2 + 1/n, nyílt ε-sáv és látható tagszám; a sávhatár egész számokkal ellenőrizve
  * A függvény polinom: data-poly="a0,a1,a2,…" (a0 + a1·x + a2·x² + …) — nincs eval.
  * Koordináták: data-xr="x0,x1", data-yr="y0,y1", data-w, data-h (a svg_fuggvenyek() margóival).
  */
@@ -277,11 +280,135 @@
     return true;
   }
 
+  // ------------------------------------------------------------ az I1 első három szemléltetése
+  function pontosFmt(v) {                    // a negyedes arány négyzete is pontosan kiírható
+    return v.toFixed(4).replace(/\.?0+$/, "").replace(".", ",").replace("-", "−");
+  }
+  function visszaallit(doboz, alap) {
+    var gomb = doboz.querySelector(".iv-alaphelyzet");
+    if (gomb) gomb.addEventListener("click", alap);
+  }
+  function homotecia(doboz) {
+    var arany = doboz.querySelector(".iv-homo-arany"), oldal = doboz.querySelector(".iv-homo-oldal");
+    var svg = doboz.querySelector("svg"), eredeti = doboz.querySelector(".iv-homo-eredeti");
+    var kep = doboz.querySelector(".iv-homo-kep"), O = doboz.querySelector(".iv-homo-O");
+    var A1 = doboz.querySelector(".iv-homo-A1-pont"), cim = doboz.querySelector(".iv-homo-A1");
+    var Acim = doboz.querySelector(".iv-homo-A"), kiir = doboz.querySelector(".iv-homo-ertek");
+    var kijelzo = doboz.querySelector(".iv-kijelzo");
+    if (!(arany && oldal && svg && eredeti && kep && O && A1 && cim && Acim && kiir && kijelzo)) return;
+    var ox = Number(O.getAttribute("cx")), oy = Number(O.getAttribute("cy"));
+    var pontok = eredeti.getAttribute("points").trim().split(/\s+/).map(szamok);
+    function frissit() {
+      var meret = Number(arany.value), k = meret * Number(oldal.value);
+      var kepPontok = pontok.map(function (p) { return [ox + k * (p[0] - ox), oy + k * (p[1] - oy)]; });
+      kep.setAttribute("points", kepPontok.map(function (p) { return p[0].toFixed(2) + "," + p[1].toFixed(2); }).join(" "));
+      A1.setAttribute("cx", kepPontok[0][0].toFixed(2)); A1.setAttribute("cy", kepPontok[0][1].toFixed(2));
+      cim.setAttribute("x", (kepPontok[0][0] + 7).toFixed(2)); cim.setAttribute("y", (kepPontok[0][1] - 9).toFixed(2));
+      cim.textContent = k === 1 ? "A = A₁" : "A₁";
+      Acim.setAttribute("visibility", k === 1 ? "hidden" : "visible");
+      kiir.textContent = pontosFmt(meret);
+      arany.setAttribute("aria-valuetext", "Az arány nagysága: " + pontosFmt(meret));
+      var hely = k > 0 ? "azonos" : "ellenkező";
+      kijelzo.textContent = "A homotécia aránya " + pontosFmt(k) + ". A képpontok a középpontból induló " + hely
+        + " félegyenesre kerülnek. A megfelelő oldalak és a kerületek aránya " + pontosFmt(meret)
+        + ", a területek aránya " + pontosFmt(k * k) + "."
+        + (k === 1 ? " Minden pont a helyén marad: a két háromszög egybeesik." : (k === -1 ? " Középpontos tükrözés; a méret megmarad." : ""));
+      svg.setAttribute("aria-label", "Az O középpontú, k = " + pontosFmt(k) + " arányú homotécia: F és F₁");
+    }
+    arany.addEventListener("input", frissit); oldal.addEventListener("change", frissit);
+    visszaallit(doboz, function () { oldal.value = "1"; arany.value = arany.defaultValue; frissit(); });
+    frissit(); return true;
+  }
+  function exponencialis(doboz) {
+    var alap = doboz.querySelector(".iv-exp-alap"), tipus = doboz.querySelector(".iv-exp-tipus");
+    var gorbe = doboz.querySelector(".iv-exp-gorbe"), cim = doboz.querySelector(".iv-exp-cimke");
+    var kiir = doboz.querySelector(".iv-exp-ertek"), kijelzo = doboz.querySelector(".iv-kijelzo");
+    var svg = doboz.querySelector("svg");
+    if (!(alap && tipus && gorbe && cim && kiir && kijelzo && svg)) return;
+    var xr = szamok(doboz.getAttribute("data-xr")), yr = szamok(doboz.getAttribute("data-yr"));
+    var w = Number(doboz.getAttribute("data-w")), h = Number(doboz.getAttribute("data-h"));
+    function X(x) { return BAL + (x - xr[0]) / (xr[1] - xr[0]) * (w - BAL - JOBB); }
+    function Y(y) { return FENT + (yr[1] - y) / (yr[1] - yr[0]) * (h - FENT - LENT); }
+    function frissit() {
+      var a = Number(alap.value) / 100, lo = xr[0], hi = xr[1], d = [];
+      var felsoX = Math.log(yr[1]) / Math.log(a);
+      if (a > 1) hi = Math.min(hi, felsoX); else lo = Math.max(lo, felsoX);
+      for (var i = 0; i <= 160; i++) {
+        var x = lo + (hi - lo) * i / 160;
+        d.push((i ? "L" : "M") + X(x).toFixed(2) + "," + Y(Math.pow(a, x)).toFixed(2));
+      }
+      gorbe.setAttribute("d", d.join(" ")); gorbe.setAttribute("stroke", a > 1 ? "#047857" : "#dc2626");
+      cim.textContent = "y = " + (a < 1 ? "(" + pontosFmt(a) + ")" : pontosFmt(a)) + "ˣ";
+      kiir.textContent = pontosFmt(a); alap.setAttribute("aria-valuetext", "Az exponenciális függvény alapja: " + pontosFmt(a));
+      kijelzo.textContent = "Az alap " + pontosFmt(a) + ": a függvény szigorúan " + (a > 1 ? "növekvő" : "csökkenő")
+        + ". Az értéke −1-nél közelítőleg " + pontosFmt(1 / a) + "; 0-nál 1; 1-nél " + pontosFmt(a) + ".";
+      svg.setAttribute("aria-label", "Az y = aˣ exponenciális függvény alapgrafikonja, a = " + pontosFmt(a));
+    }
+    function tartomany() {
+      var no = tipus.value === "no";
+      alap.min = no ? "101" : "10"; alap.max = no ? "500" : "99";
+      alap.value = no ? "200" : "50";
+      frissit();
+    }
+    alap.addEventListener("input", frissit); tipus.addEventListener("change", tartomany);
+    visszaallit(doboz, function () { tipus.value = "no"; tartomany(); });
+    frissit(); return true;
+  }
+  function sorozat(doboz) {
+    var szelesseg = doboz.querySelector(".iv-sor-szelesseg"), tagszam = doboz.querySelector(".iv-sor-tagszam");
+    var sav = doboz.querySelector(".iv-sor-sav"), also = doboz.querySelector(".iv-sor-also"), felso = doboz.querySelector(".iv-sor-felso");
+    var pontok = doboz.querySelector(".iv-sor-pontok"), racs = doboz.querySelector(".iv-sor-racs"), tengely = doboz.querySelector(".iv-sor-tengely");
+    var kiEps = doboz.querySelector(".iv-sor-eps"), kiDb = doboz.querySelector(".iv-sor-db"), kijelzo = doboz.querySelector(".iv-kijelzo");
+    var svg = doboz.querySelector("svg");
+    if (!(szelesseg && tagszam && sav && also && felso && pontok && racs && tengely && kiEps && kiDb && kijelzo && svg)) return;
+    var w = Number(doboz.getAttribute("data-w")), h = Number(doboz.getAttribute("data-h"));
+    var yr = szamok(doboz.getAttribute("data-yr")), px = w - BAL - JOBB, py = h - FENT - LENT;
+    function Y(y) { return FENT + (yr[1] - y) / (yr[1] - yr[0]) * py; }
+    function frissit() {
+      var szazad = Number(szelesseg.value), eps = szazad / 100, db = Number(tagszam.value);
+      var elso = Math.floor(100 / szazad) + 1, belul = 0, hataron = 0, kivul = 0;
+      function X(n) { return BAL + n / (db + 1) * px; }
+      sav.setAttribute("y", Y(2 + eps).toFixed(2)); sav.setAttribute("height", (Y(2 - eps) - Y(2 + eps)).toFixed(2));
+      also.setAttribute("y1", Y(2 - eps).toFixed(2)); also.setAttribute("y2", Y(2 - eps).toFixed(2));
+      felso.setAttribute("y1", Y(2 + eps).toFixed(2)); felso.setAttribute("y2", Y(2 + eps).toFixed(2));
+      urit(pontok); urit(racs); urit(tengely);
+      for (var n = 1; n <= db; n++) {
+        // 1/n < ε pontosan akkor, ha n · ε_század > 100: a határ nem kerekítési döntés.
+        var hely = n * szazad > 100 ? "belul" : (n * szazad === 100 ? "hatar" : "kivul");
+        if (hely === "belul") belul++; else if (hely === "hatar") hataron++; else kivul++;
+        pontok.appendChild(elem("circle", { "data-n": n, "data-hely": hely,
+          cx: X(n).toFixed(2), cy: Y(2 + 1 / n).toFixed(2), r: db > 35 ? "2.5" : "4",
+          fill: hely === "hatar" ? "#ffffff" : (hely === "belul" ? "#047857" : "#dc2626"),
+          stroke: hely === "hatar" ? "#b45309" : "none", "stroke-width": "2" }));
+      }
+      for (var y = 1; y <= 3; y++) racs.appendChild(elem("line", {x1: BAL, y1: Y(y), x2: w - JOBB, y2: Y(y), stroke: "#cbd5e1", "stroke-width": ".6"}));
+      var lepes = Math.ceil(db / 6);
+      for (var t = lepes; t <= db; t += lepes) {
+        racs.appendChild(elem("line", {x1: X(t), y1: FENT, x2: X(t), y2: Y(0), stroke: "#cbd5e1", "stroke-width": ".6"}));
+        var cim = elem("text", {x: X(t), y: Y(0) + 14, "font-size": "11", fill: "#475569", "text-anchor": "middle"});
+        cim.textContent = String(t); tengely.appendChild(cim);
+      }
+      kiEps.textContent = pontosFmt(eps); kiDb.textContent = String(db);
+      szelesseg.setAttribute("aria-valuetext", "A sáv félszélessége: " + pontosFmt(eps));
+      kijelzo.textContent = "A sáv félszélessége " + pontosFmt(eps) + ": a nyílt sáv " + pontosFmt(2 - eps) + " és " + pontosFmt(2 + eps)
+        + " között van. A " + elso + ". tagtól kezdve minden további tag benne van. Az első " + db + " tagból "
+        + belul + " belül, " + (kivul + hataron) + " kívül van; " + (hataron ? "a " + (100 / szazad) + ". tag a határra esik, ezért kívül marad." : "határra eső tag nincs.")
+        + (!belul ? " Növeld a látható tagok számát: a sávba eső tagok még nem látszanak." : "");
+      svg.setAttribute("aria-label", "Az aₙ = 2 + 1/n sorozat első " + db + " tagja, a 2 körüli nyílt sáv félszélessége " + pontosFmt(eps));
+    }
+    szelesseg.addEventListener("input", frissit); tagszam.addEventListener("input", frissit);
+    visszaallit(doboz, function () { szelesseg.value = szelesseg.defaultValue; tagszam.value = tagszam.defaultValue; frissit(); });
+    frissit(); return true;
+  }
+
   function indit(doboz) {
     var mod = doboz.getAttribute("data-mod");
     if (mod === "pascal") return pascal(doboz);
     if (mod === "szimulacio") return szimulacio(doboz);
     if (mod === "adatlabor") return adatlabor(doboz);
+    if (mod === "homotecia") return homotecia(doboz);
+    if (mod === "exponencialis") return exponencialis(doboz);
+    if (mod === "sorozat") return sorozat(doboz);
     var a = szamok(doboz.getAttribute("data-poly"));
     var d1 = derival(a), d2 = derival(d1);
     var xr = szamok(doboz.getAttribute("data-xr")), yr = szamok(doboz.getAttribute("data-yr"));

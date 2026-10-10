@@ -40,7 +40,39 @@ __all__ = ["svg_szamegyenes", "svg_haromszog", "svg_venn",
            "svg_terelem", "svg_halo", "svg_platoni", "svg_sikidom",
            "svg_henger", "svg_kup", "svg_csonkakup", "svg_gomb",
            "svg_forgatas", "svg_osszetett", "svg_sarrus", "svg_harom_sik",
-           "svg_vektorok_sik", "svg_vetulet", "svg_ter_koord", "svg_vektorialis"]
+           "svg_vektorok_sik", "svg_vetulet", "svg_ter_koord", "svg_vektorialis", "svg_homotecia"]
+
+
+def svg_homotecia(k=2):
+    """A korábbi 1e-ábra háromszöge, mindkét előjelű homotéciához elegendő hellyel."""
+    if not 0 < abs(k) <= 2.5:
+        raise ValueError("A homotécia aránya nem nulla, és az ábra tartományába esik.")
+    ox, oy, skala = 260, 165, 70
+    # A korábbi ábrán O = (30; 180); ezek az eredeti csúcsvektorok századrészei.
+    pontok = [(1.1, 0.7), (0.7, 0.15), (0.6, 0.55)]
+    def pont(x, y, arany=1):
+        return ox + skala * arany * x, oy - skala * arany * y
+    def sor(arany):
+        return ' '.join(f'{x:.1f},{y:.1f}' for x, y in (pont(a, b, arany) for a, b in pontok))
+    ki = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 330" role="img" '
+          'aria-label="Az O középpontú homotécia: az eredeti F és a képként kapott F₁ háromszög">']
+    for x, y in pontok:
+        p, q = pont(x, y, -2.5), pont(x, y, 2.5)
+        ki.append(f'<line x1="{p[0]:.1f}" y1="{p[1]:.1f}" x2="{q[0]:.1f}" y2="{q[1]:.1f}" '
+                  f'stroke="{HALVANY}" stroke-width="1"/>')
+    ki += [f'<polygon class="iv-homo-eredeti" points="{sor(1)}" fill="#dbeafe" fill-opacity=".45" '
+           'stroke="#2563eb" stroke-width="2.5"/>',
+           f'<polygon class="iv-homo-kep" points="{sor(k)}" fill="#fef3c7" fill-opacity=".4" '
+           'stroke="#b45309" stroke-width="2.5" stroke-dasharray="6 3"/>',
+           f'<circle class="iv-homo-O" cx="{ox}" cy="{oy}" r="4" fill="{TINTA}"/>',
+           f'<text x="{ox-18}" y="{oy+5}" font-size="14" fill="{TINTA}">O</text>']
+    a, a1 = pont(*pontok[0]), pont(*pontok[0], k)
+    ki += [f'<circle cx="{a[0]:.1f}" cy="{a[1]:.1f}" r="4" fill="#2563eb"/>',
+           f'<text class="iv-homo-A" x="{a[0]+7:.1f}" y="{a[1]+17:.1f}" font-size="14" fill="#1d4ed8">A</text>',
+           f'<circle class="iv-homo-A1-pont" cx="{a1[0]:.1f}" cy="{a1[1]:.1f}" r="4" fill="#b45309"/>',
+           f'<text class="iv-homo-A1" x="{a1[0]+7:.1f}" y="{a1[1]-9:.1f}" font-size="14" fill="#92400e">A₁</text>',
+           '</svg>']
+    return '\n'.join(ki)
 
 
 def _fej(w: int, h: int, leiras: str) -> list[str]:

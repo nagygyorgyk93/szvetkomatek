@@ -50,19 +50,28 @@
       <p class="cim"><span class="ikon">📗</span> Homotécia (középpontos hasonlóság)</p>
       <p>Adott egy <span class="math inline">\(O\)</span> középpont és egy <span class="math inline">\(k\neq 0\)</span> valós szám. A homotécia minden <span class="math inline">\(M\)</span> ponthoz azt az <span class="math inline">\(M_1\)</span> pontot rendeli, amelyre <span class="math inline">\(\overrightarrow{OM_1}=k\cdot\overrightarrow{OM}\)</span>. A <span class="math inline">\(k\)</span> a homotécia <b>aránya</b> — ez lehet negatív is. A keletkező <b>hasonlóság</b> aránya viszont mindig a pozitív <span class="math inline">\(|k|\)</span>.</p>
     </div>
-    <div class="svgwrap svgcard">
-      <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-describedby="abra-homotecia-es-hasonlosag-1" aria-label="Homotécia: az O középpontból kétszeresére nagyított háromszög">
-        <line x1="30" y1="180" x2="250" y2="40" stroke="#cbd5e1" stroke-width="1"/>
-        <line x1="30" y1="180" x2="170" y2="150" stroke="#cbd5e1" stroke-width="1"/>
-        <line x1="30" y1="180" x2="150" y2="70" stroke="#cbd5e1" stroke-width="1"/>
-        <polygon points="140,110 100,165 90,125" fill="none" stroke="#3b82f6" stroke-width="2"/>
-        <polygon points="250,40 170,150 150,70" fill="none" stroke="#f59e0b" stroke-width="2"/>
-        <circle cx="30" cy="180" r="3.5" fill="#0f172a"/><text x="16" y="184" font-size="12" fill="#0f172a">O</text>
-        <text x="96" y="128" font-size="11" fill="#3b82f6">F</text>
-        <text x="196" y="96" font-size="11" fill="#b45309">F₁ (k = 2)</text>
-      </svg>
-      <p class="cap" id="abra-homotecia-es-hasonlosag-1">Az \(O\) középpontú, \(k=2\) arányú homotécia a kék \(F\) háromszöget a narancssárga \(F_1\)-be viszi. A megfelelő csúcsok ugyanazon az \(O\)-ból induló félegyenesen vannak; a képcsúcsok \(O\)-tól mért távolsága kétszeres. A megfelelő oldalak hossza és a kerület kétszeres, a terület négyszeres, a szögek változatlanok.</p>
+    <div class="svgcard interaktiv iv-modell" data-mod="homotecia" >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 330" role="img" aria-describedby="iv-homotecia-kijelzo abra-homotecia-es-hasonlosag-1" aria-label="Az O középpontú homotécia: az eredeti F és a képként kapott F₁ háromszög">
+    <line x1="67.5" y1="287.5" x2="452.5" y2="42.5" stroke="#cbd5e1" stroke-width="1"/>
+    <line x1="137.5" y1="191.2" x2="382.5" y2="138.8" stroke="#cbd5e1" stroke-width="1"/>
+    <line x1="155.0" y1="261.2" x2="365.0" y2="68.7" stroke="#cbd5e1" stroke-width="1"/>
+    <polygon class="iv-homo-eredeti" points="337.0,116.0 309.0,154.5 302.0,126.5" fill="#dbeafe" fill-opacity=".45" stroke="#2563eb" stroke-width="2.5"/>
+    <polygon class="iv-homo-kep" points="414.0,67.0 358.0,144.0 344.0,88.0" fill="#fef3c7" fill-opacity=".4" stroke="#b45309" stroke-width="2.5" stroke-dasharray="6 3"/>
+    <circle class="iv-homo-O" cx="260" cy="165" r="4" fill="#0f172a"/>
+    <text x="242" y="170" font-size="14" fill="#0f172a">O</text>
+    <circle cx="337.0" cy="116.0" r="4" fill="#2563eb"/>
+    <text class="iv-homo-A" x="344.0" y="133.0" font-size="14" fill="#1d4ed8">A</text>
+    <circle class="iv-homo-A1-pont" cx="414.0" cy="67.0" r="4" fill="#b45309"/>
+    <text class="iv-homo-A1" x="421.0" y="58.0" font-size="14" fill="#92400e">A₁</text>
+    </svg>
+    <p class="iv-statikus">Az ábra kezdőállapotát látod. Az interaktív vezérléshez JavaScript szükséges.</p>
+    <div class="iv-vezerlo"><label for="iv-homotecia-oldal">A kép helye</label><select id="iv-homotecia-oldal" class="iv-homo-oldal" aria-describedby="iv-homotecia-kijelzo"><option value="1">Pozitív arány: azonos félegyenes</option><option value="-1">Negatív arány: ellenkező félegyenes</option></select></div>
+    <div class="iv-vezerlo"><label for="iv-homotecia-arany"><span class="math inline">\(|k|\)</span> = <span class="iv-homo-ertek">2</span></label><input id="iv-homotecia-arany" class="iv-homo-arany" type="range" min="0.25" max="2.5" step="0.25" value="2" aria-valuetext="Az arány nagysága: 2" aria-describedby="iv-homotecia-kijelzo"></div>
+    <div class="iv-vezerlo iv-gombsor"><button type="button" class="iv-alaphelyzet">Kezdőállapot</button></div>
+    <p class="iv-kijelzo" id="iv-homotecia-kijelzo" aria-live="polite" aria-atomic="true">A homotécia aránya 2. A képpontok a középpontból induló azonos félegyenesre kerülnek. A megfelelő oldalak és a kerületek aránya 2, a területek aránya 4.</p>
+    <p class="cap iv-leiras" id="abra-homotecia-es-hasonlosag-1">A kék <span class="math inline">\(F\)</span> az eredeti háromszög, a narancssárga, szaggatott <span class="math inline">\(F_1\)</span> a képe. Változtasd az arány nagyságát és előjelét! Figyeld az <span class="math inline">\(A\)</span> és <span class="math inline">\(A_1\)</span> pont helyét: <span class="math inline">\(OA_1 = |k|\cdot OA\)</span>. A szögek változatlanok; a hossz- és kerületarány <span class="math inline">\(|k|\)</span>, a területarány <span class="math inline">\(k^2\)</span>.</p>
     </div>
+    <script src="../../assets/js/interaktiv.js" defer></script>
     <div class="doboz tetel" id="tetel-homotecia">
       <p class="cim"><span class="ikon">📘</span> A homotécia tulajdonságai</p>
       <p>A középponton átmenő egyenes képe önmaga. A többi egyenes képe párhuzamos vele; \(k=1\) esetén minden egyenes változatlan marad. A szakaszok hossza \(|k|\)-szorosára változik: \(0&lt;|k|&lt;1\) esetén kicsinyítünk, \(|k|&gt;1\) esetén nagyítunk. A szögek nagysága megmarad.</p><p>Az \(O\)-tól különböző pont képe \(k&gt;0\) esetén ugyanazon az \(O\)-ból induló félegyenesen van, mint az eredeti pont. Ha \(k&lt;0\), a kép az ellenkező félegyenesre kerül; az \(O\)-tól mért távolság \(|k|\)-szoros lesz. A megfelelő vektorokra \(\overrightarrow{A_1B_1}=k\cdot\overrightarrow{AB}\).</p><p>Ha \(k=1\), minden pont a helyén marad: ez az <b>identikus leképezés</b>. Ha \(k=-1\), az \(O\) körüli <b>középpontos tükrözést</b> kapjuk.</p>
@@ -71,7 +80,7 @@
     <h2 id="s2">A hasonlóság fogalma</h2>
     <div class="doboz definicio" id="def-hasonlosag">
       <p class="cim"><span class="ikon">📗</span> Hasonló alakzatok</p>
-      <p>Két alakzat <b>hasonló</b> (\(\sim\)), ha az egyik a másikból középpontos nagyítással vagy kicsinyítéssel és egybevágósági transzformációval — eltolással, forgatással vagy tükrözéssel — megkapható. A hosszakat szorzó, <b>pozitív hasonlósági arányt</b> itt \(k\)-val jelöljük. Ha \(k=1\), a méret is megmarad: az alakzatok <b>egybevágók</b>.</p><p>Hasonló sokszögeknél a megfelelő szögek egyenlők, a megfelelő oldalak aránya állandó. Például \(\triangle ABC\sim\triangle A_1B_1C_1\) esetén, az \(ABC\)-ről az \(A_1B_1C_1\)-re haladva, \[\frac{A_1B_1}{AB}=\frac{B_1C_1}{BC}=\frac{A_1C_1}{AC}=k.\] Fordított irányban az arány \(1/k\).</p>
+      <p>Két alakzat <b>hasonló</b> (\(\sim\)), ha az egyik a másikból középpontos hasonlósággal és egybevágósági transzformációval — eltolással, forgatással vagy tükrözéssel — megkapható. A hosszakat szorzó, <b>pozitív hasonlósági arányt</b> itt \(k\)-val jelöljük. Ha \(k=1\), a méret is megmarad: az alakzatok <b>egybevágók</b>.</p><p>Hasonló sokszögeknél a megfelelő szögek egyenlők, a megfelelő oldalak aránya állandó. Például \(\triangle ABC\sim\triangle A_1B_1C_1\) esetén, az \(ABC\)-ről az \(A_1B_1C_1\)-re haladva, \[\frac{A_1B_1}{AB}=\frac{B_1C_1}{BC}=\frac{A_1C_1}{AC}=k.\] Fordított irányban az arány \(1/k\).</p>
     </div>
 
     
