@@ -3,7 +3,7 @@
 Mentor: Crni Grom (Meduza tolmacsol). Kuldetes: A Kiralyi Iranyitotu."""
 import sys, os, math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra
+from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_vektorszoro_interaktiv
 from abra_common import (svg_vektorok_sik, svg_vetulet, svg_ter_koord,
                          KEK, BOROSTYAN, ZOLD, PIROS, SZURKE, HALVANY, TINTA, LILA)
 
@@ -265,9 +265,7 @@ A1 = [
          r'<p>Két nem nullvektor pontosan akkor <b>párhuzamos</b> (kollineáris), ha az egyik '
          r'a másik számszorosa: $\vec b=\lambda\vec a$.</p>',
          hid="def-skalarral-szorzas"),
-   abra(SVG_SKALAR, 'Az $\\vec a$, a $2\\vec a$ (kétszer olyan hosszú, azonos irányítású) és '
-        'a $-1{,}5\\vec a$ (másfélszer olyan hosszú, ellentétes irányítású). Mindhárom '
-        'párhuzamos.'),
+   svg_vektorszoro_interaktiv(),
    doboz("tetel", "A vektorműveletek tulajdonságai",
          r'<p>Bármely $\vec a$, $\vec b$, $\vec c$ vektorra és $\lambda$, $\mu$ valós számra:</p>'
          r'<ul><li>$\vec a+\vec b=\vec b+\vec a$ <i>(kommutativitás)</i></li>'

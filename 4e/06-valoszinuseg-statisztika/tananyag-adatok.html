@@ -289,8 +289,9 @@
 
     <p class="lead">Egy grafikon adatai lehetnek pontosak, a kép mégis félrevezethet.</p>
 
-    <div class="svgcard">
-    <svg viewBox="0 0 300 230" width="300" height="230" role="img" aria-label="Félrevezető oszlopdiagram: a függőleges tengely 120 000-nél kezdődik, ezért a 2022-es oszlop a 2011-esnek kevesebb mint ötöde" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+    <div class="svgcard interaktiv iv-modell" data-mod="oszloptengely" data-ertekek="141554,123952">
+    <div class="iv-oszlop-nezet" data-ymin="120000">
+    <svg viewBox="0 0 300 230" width="300" height="230" role="img" aria-describedby="iv-oszloptengely-kijelzo abra-oszloptengely-leiras" aria-label="Félrevezető oszlopdiagram: a függőleges tengely 120 000-nél kezdődik, ezért a 2022-es oszlop a 2011-esnek kevesebb mint ötöde" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
       <line x1="52" y1="204.0" x2="290" y2="204.0" stroke="#cbd5e1" stroke-width=".7"/>
       <text x="47.0" y="207.8" font-size="10.5" fill="#475569" text-anchor="end">120 000</text>
       <line x1="52" y1="167.6" x2="290" y2="167.6" stroke="#cbd5e1" stroke-width=".7"/>
@@ -312,11 +313,10 @@
       <text x="230.5" y="171.2" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">123 952</text>
       <text x="230.5" y="218.0" font-size="11" fill="#0f172a" text-anchor="middle">2022</text>
     </svg>
-    </div>
     <p class="cap">Mr. Szürreál ábrája: a függőleges tengely 120 000-nél kezdődik.</p>
-
-    <div class="svgcard">
-    <svg viewBox="0 0 300 230" width="300" height="230" role="img" aria-label="Helyes oszlopdiagram: a függőleges tengely 0-tól indul, a két oszlop magassága alig tér el" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+    </div>
+    <div class="iv-oszlop-nezet" data-ymin="0">
+    <svg viewBox="0 0 300 230" width="300" height="230" role="img" aria-describedby="iv-oszloptengely-kijelzo abra-oszloptengely-leiras" aria-label="Helyes oszlopdiagram: a függőleges tengely 0-tól indul, a két oszlop magassága alig tér el" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
       <line x1="52" y1="204.0" x2="290" y2="204.0" stroke="#cbd5e1" stroke-width=".7"/>
       <text x="47.0" y="207.8" font-size="10.5" fill="#475569" text-anchor="end">0</text>
       <line x1="52" y1="167.6" x2="290" y2="167.6" stroke="#cbd5e1" stroke-width=".7"/>
@@ -338,8 +338,15 @@
       <text x="230.5" y="49.6" font-size="10.5" fill="#0f172a" text-anchor="middle" font-weight="600">123 952</text>
       <text x="230.5" y="218.0" font-size="11" fill="#0f172a" text-anchor="middle">2022</text>
     </svg>
-    </div>
     <p class="cap">Ugyanezek az adatok helyesen: a tengely 0-tól indul.</p>
+    </div>
+    <p class="iv-statikus">Az ábra kezdőállapotát látod. Az interaktív vezérléshez JavaScript szükséges.</p>
+    <div class="iv-vezerlo"><label for="iv-oszlop-tengely">Függőleges tengely</label><select id="iv-oszlop-tengely" class="iv-oszlop-tengely" aria-describedby="iv-oszloptengely-kijelzo"><option value="120000">Levágott: 120 000–145 000 fő</option><option value="0">Teljes: 0–150 000 fő</option></select></div>
+    <div class="iv-vezerlo iv-gombsor"><button type="button" class="iv-alaphelyzet">Kezdőállapot</button></div>
+    <p class="iv-kijelzo" id="iv-oszloptengely-kijelzo" aria-live="polite" aria-atomic="true">Két népszámlálás: 141 554 → 123 952 fő. Tényleges csökkenés: 17 602 fő (12,4%). Függőleges tengely: 120 000–145 000 fő. A 2022-es oszlop látható magassága a 2011-es 18,3%-a; a lakosság viszont a 2011-es érték 87,6%-ára csökkent.</p>
+    <p class="cap iv-leiras" id="abra-oszloptengely-leiras">Válts a két meglévő ábra között. Az adatok és a tényleges csökkenés változatlanok; a függőleges tengely skálája változik. Figyeld meg, mennyire eltérő változást sugallhat a kép! A lakosság aránya és az oszlopok látható magasságának aránya csak a 0-tól induló tengelynél egyezik meg. JavaScript nélkül mindkét állókép látszik.</p>
+    </div>
+    <script src="../../assets/js/interaktiv.js" defer></script>
 
     <p class="cap">Forrás: <a href="https://popis2022.stat.gov.rs/sr-latn/popisni-podaci-eksel-tabele/">Republički zavod za statistiku (RZS): Popis stanovništva, domaćinstava i stanova 2022, Excel-táblák</a></p>
 

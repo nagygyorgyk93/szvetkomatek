@@ -7,7 +7,7 @@ Valos adatok: adat_4e_06.py (forrasokkal). Tiltott adatok: tiltott_4e_06 — len
 import sys, os
 from fractions import Fraction as Fr
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, _fmt, GYOKER
+from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, _fmt, GYOKER, svg_oszloptengely_interaktiv
 from abra_stat import (svg_oszlop, svg_hisztogram, svg_kor, svg_vonal, svg_doboz, svg_adatlabor, mutatok, ezres,
                        tized, diagram_adatok)
 import adat_4e_06 as ADAT
@@ -298,8 +298,7 @@ B1 = [
  ]),
  ("Félrevezető grafikonok", [
    '<p class="lead">Egy grafikon adatai lehetnek pontosak, a kép mégis félrevezethet.</p>',
-   abra(SVG_ROSSZ, "Mr. Szürreál ábrája: a függőleges tengely 120 000-nél kezdődik."),
-   abra(SVG_JO, "Ugyanezek az adatok helyesen: a tengely 0-tól indul."),
+   svg_oszloptengely_interaktiv(SVG_ROSSZ, SVG_JO, [sz11, sz22]),
    FORRAS("popis"),
    doboz("pelda", "I.V.H. Akták — mennyit csökkent?",
          r'<p>A népszámlálások szerint Szabadka lakossága 2011-ben $' + E3(sz11) + r'$, 2022-ben $' + E3(sz22)

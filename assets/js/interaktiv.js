@@ -33,6 +33,8 @@
  *   nyildiagram — a két eredeti hozzárendelés, kiválasztott bemenet nyilaival
  *   eltolas — a meglévő háromszög eltolása, vízszintes és függőleges komponenssel
  *   felegyenes — változó határpont és relációjel a számegyenesen
+ *   vektorszoro — az eredeti vektor és változó valós számszorosa, nullvektorral is
+ *   oszloptengely — két meglévő tengelybeállítás, változatlan népességadatokkal
  * A függvény polinom: data-poly="a0,a1,a2,…" (a0 + a1·x + a2·x² + …) — nincs eval.
  * Koordináták: data-xr="x0,x1", data-yr="y0,y1", data-w, data-h (a svg_fuggvenyek() margóival).
  */
@@ -793,11 +795,52 @@
   }
 
 
+  // A vektor számszorosa és a két meglévő oszlopdiagram összevetése.
+  function vektorszoro(doboz) {
+    var r=doboz.querySelector('.iv-vekt-szorzo'), kep=doboz.querySelector('.iv-vekt-kep');
+    var nulla=doboz.querySelector('.iv-vekt-null'), kijelzo=doboz.querySelector('.iv-kijelzo'), svg=doboz.querySelector('svg');
+    if (!(r && kep && nulla && kijelzo && svg)) return;
+    var sik=ivSik(doboz);
+    function frissit() {
+      var k=Number(r.value)/4, x=2*k, y=k;
+      ivVonal(kep,sik.P(0,0),sik.P(x,y));kep.style.display=k===0?'none':'';nulla.style.display=k===0?'':'none';
+      doboz.querySelector('.iv-vekt-ertek').textContent=pontosFmt(k);r.setAttribute('aria-valuetext','Szorzó: '+pontosFmt(k));
+      doboz.querySelector('.iv-vekt-cim').textContent=k===0?'Nullvektor: λa = (0; 0)':'Szaggatott: λa = ('+pontosFmt(x)+'; '+pontosFmt(y)+')';
+      kijelzo.textContent='λ = '+pontosFmt(k)+'; λa = ('+pontosFmt(x)+'; '+pontosFmt(y)+'). '
+        +(k===0?'Nullvektor: intenzitása 0, nincs iránya és irányítása.':'Az új vektor intenzitása '+pontosFmt(Math.abs(k))+' · |a|, irányítása '+(k>0?'azonos':'ellentétes')+' az eredetivel.');
+      svg.setAttribute('aria-label',kijelzo.textContent);
+    }
+    r.addEventListener('input',frissit);visszaallit(doboz,function () {r.value=8;frissit();});frissit();return true;
+  }
+
+  function oszloptengely(doboz) {
+    var valaszto=doboz.querySelector('.iv-oszlop-tengely'), nezetek=doboz.querySelectorAll('.iv-oszlop-nezet');
+    var kijelzo=doboz.querySelector('.iv-kijelzo'), adatok=szamok(doboz.getAttribute('data-ertekek'));
+    if (!(valaszto && nezetek.length===2 && kijelzo && adatok.length===2)) return;
+    function szazalek(a,b) {return pontosFmt(Math.round(a*1000/b)/10);}
+    function frissit() {
+      var min=Number(valaszto.value), regi=adatok[0], uj=adatok[1], max=min?145000:150000;
+      var szoveg='Két népszámlálás: '+ezres(regi)+' → '+ezres(uj)+' fő. Tényleges csökkenés: '+ezres(regi-uj)+' fő ('+szazalek(regi-uj,regi)+'%). '
+        +'Függőleges tengely: '+ezres(min)+'–'+ezres(max)+' fő. A 2022-es oszlop látható magassága a 2011-es '+szazalek(uj-min,regi-min)+'%-a; '
+        +(min?'a lakosság viszont a 2011-es érték '+szazalek(uj,regi)+'%-ára csökkent.':'ez megegyezik a lakosság arányával.');
+      kijelzo.textContent=szoveg;
+      for (var i=0;i<nezetek.length;i++) {
+        var aktiv=Number(nezetek[i].getAttribute('data-ymin'))===min;
+        nezetek[i].style.display=aktiv?'':'none';
+        if (aktiv) nezetek[i].querySelector('svg').setAttribute('aria-label',szoveg);
+      }
+    }
+    valaszto.addEventListener('change',frissit);visszaallit(doboz,function () {valaszto.value='120000';frissit();});frissit();return true;
+  }
+
+
   function indit(doboz) {
     var mod = doboz.getAttribute("data-mod");
     if (mod === "nyildiagram") return nyildiagram(doboz);
     if (mod === "eltolas") return eltolas(doboz);
     if (mod === "felegyenes") return felegyenes(doboz);
+    if (mod === "vektorszoro") return vektorszoro(doboz);
+    if (mod === "oszloptengely") return oszloptengely(doboz);
     if (mod === "pascal") return pascal(doboz);
     if (mod === "szimulacio") return szimulacio(doboz);
     if (mod === "adatlabor") return adatlabor(doboz);

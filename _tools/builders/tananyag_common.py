@@ -797,6 +797,54 @@ def svg_felegyenes_interaktiv():
         cap_id='abra-egyenlotlensegek-1')
 
 
+
+def svg_vektorszoro_interaktiv():
+    """A meglévő a, 2a és −1,5a vektor közül az utóbbi kettő is beállítható."""
+    from abra_common import svg_vektorszoro
+    controls=(r'<div class="iv-vezerlo"><label for="iv-vekt-szorzo">Szorzó, $\lambda$ = '
+              '<span class="iv-vekt-ertek">2</span></label><input id="iv-vekt-szorzo" '
+              'class="iv-vekt-szorzo" type="range" min="-12" max="12" step="1" value="8" '
+              'aria-valuetext="Szorzó: 2" aria-describedby="iv-vektorszoro-kijelzo"></div>\n')
+    return _iv_modell_keret('vektorszoro',svg_vektorszoro(),controls,
+        'λ = 2; λa = (4; 2). Az új vektor intenzitása 2 · |a|, irányítása azonos az eredetivel.',
+        r'A kék, folytonos nyíl az eredeti $\vec a=(2;1)$; a szaggatott nyíl a $\lambda\vec a$ vektort jelöli. '
+        'A két nyíl külön kezdőpontból indul, hogy az 1-es szorzónál is látszódjon mindkettő. '
+        r'A korábbi $2\vec a$ és $-1{,}5\vec a$ is beállítható. Pozitív szorzó azonos, negatív '
+        r'ellentétes irányítást ad; az intenzitás $|\lambda|$-szoros. Nullánál a pont nullvektort '
+        'jelöl: nincs iránya és irányítása. A négyzetrács skálája rögzített.',
+        cap_id='abra-vektor-szamszoros',attr='data-xr="-7,7" data-yr="-6,7" data-unit="22" data-par="22" data-h="320"')
+
+
+def svg_oszloptengely_interaktiv(rossz, jo, ertekek):
+    """A builder két meglévő SVG-je és népességadata; JS nélkül mindkét ábra olvasható."""
+    from decimal import Decimal, ROUND_HALF_UP
+    from abra_stat import ezres
+    def szazalek(a,b):
+        return str((Decimal(a)*100/Decimal(b)).quantize(Decimal('0.1'),rounding=ROUND_HALF_UP)).replace('.',',')
+    regi,uj=ertekek
+    statikus=(f'Két népszámlálás: {ezres(regi)} → {ezres(uj)} fő. Tényleges csökkenés: '
+              f'{ezres(regi-uj)} fő ({szazalek(regi-uj,regi)}%). Függőleges tengely: 120 000–145 000 fő. '
+              f'A 2022-es oszlop látható magassága a 2011-es {szazalek(uj-120000,regi-120000)}%-a; '
+              f'a lakosság viszont a 2011-es érték {szazalek(uj,regi)}%-ára csökkent.')
+    svg=''
+    for ymin,image,caption in [(120000,rossz,'Mr. Szürreál ábrája: a függőleges tengely 120 000-nél kezdődik.'),
+                               (0,jo,'Ugyanezek az adatok helyesen: a tengely 0-tól indul.')]:
+        image=image.replace('role="img"','role="img" aria-describedby="iv-oszloptengely-kijelzo abra-oszloptengely-leiras"',1)
+        svg+=f'<div class="iv-oszlop-nezet" data-ymin="{ymin}">\n{image}\n<p class="cap">{caption}</p>\n</div>\n'
+    # A közös keret a saját szöveges leírást is hozzáadná az első SVG-hez.
+    svg=svg.replace(' aria-describedby="iv-oszloptengely-kijelzo abra-oszloptengely-leiras"','',1)
+    controls=('<div class="iv-vezerlo"><label for="iv-oszlop-tengely">Függőleges tengely</label>'
+              '<select id="iv-oszlop-tengely" class="iv-oszlop-tengely" aria-describedby="iv-oszloptengely-kijelzo">'
+              '<option value="120000">Levágott: 120 000–145 000 fő</option>'
+              '<option value="0">Teljes: 0–150 000 fő</option></select></div>\n')
+    return _iv_modell_keret('oszloptengely',svg.rstrip(),controls,statikus,
+        'Válts a két meglévő ábra között. Az adatok és a tényleges csökkenés változatlanok; '
+        'a függőleges tengely skálája változik. Figyeld meg, mennyire eltérő változást '
+        'sugallhat a kép! A lakosság aránya és az oszlopok látható magasságának aránya '
+        'csak a 0-tól induló tengelynél egyezik meg. JavaScript nélkül mindkét állókép látszik.',
+        cap_id='abra-oszloptengely-leiras',attr=f'data-ertekek="{regi},{uj}"')
+
+
 def svg_interaktiv(mod, poly, *, xr, yr, x0=0.0, csuszka=(-2.0, 2.0, 0.01, 1.0), w=360, h=250,
                    gorbe_cimke="f", f2=False, felirat="", leiras="Interaktív függvényábra",
                    pont_cimke="P", szin="#2563eb", ab=(0.0, 1.0), pontos="", sereg_c=(-2, -1, 1, 2)):

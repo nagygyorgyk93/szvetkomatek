@@ -655,6 +655,8 @@ vektorösszeadás; kör és egyenes kölcsönös helyzete; sorozat ε-sávja.
 | ◐ Harmadik megvalósítás helyben kész, 2026-10-10 | — | — | — | ◐ I1-14 határérték/pontérték; I1-15 előjeles integrál/terület |
 | ☑ Negyedik megvalósítás kész, 2026-10-11 | — | ☑ I1-05 komplex; I1-07 rendszer; I1-08 szinuszegyenlet | — | — |
 | ☑ Ötödik megvalósítás kész, 2026-10-11 | ☑ I1-01 nyíldiagram; I1-02 eltolás; I1-03 félegyenes | — | — | — |
+| ☑ Hatodik megvalósítás kész, 2026-10-11 | — | — | ☑ I1-10 vektor számszorosa | ☑ I1-16 oszlopdiagram tengelye |
+| ☑ Jelöltlista teljesült, 2026-10-11 | ☑ 4/4 | ☑ 4/4 | ☑ 4/4 | ☑ 4/4 |
 
 A 16 jelölt rangsora és kimenetkapcsolata: [I1 interaktív jelöltlista](I1_interaktiv_jeloltlista.md).
 A tanár jóváhagyta az első három modell elkészítését; [az első adag](I1_elso_adag.md)
@@ -663,7 +665,8 @@ A folytatásban [a 3e három geometriai modellje](I1_masodik_adag.md) is elkész
 I1-09, I1-11, I1-12. [A harmadik adagban](I1_harmadik_adag.md) I1-14 és I1-15 is kész.
 [A negyedik adagban](I1_negyedik_adag.md) I1-05, I1-07 és I1-08 készült el a 2e-ben.
 [Az ötödik adagban](I1_otodik_adag.md) I1-01, I1-02 és I1-03 készült el az 1e-ben.
-Összesen 14/16 jelölt kész, 2 terv maradt (I1-10, I1-16); négy további ötlet a meglévő GeoGebra cseréjére. Az elkészült modellekhez nincs nyitott döntés.
+[A hatodik adagban](I1_hatodik_adag.md) I1-10 és I1-16 is elkészült.
+Összesen **16/16 jelölt kész**; négy további ötlet a meglévő GeoGebra cseréjére. Az elkészült modellekhez nincs nyitott döntés.
 Tanári kérésre helyi mainen dolgozunk, új ág nélkül; minden lezárt, ellenőrzött adag feltöltése engedélyezett.
 
 ---

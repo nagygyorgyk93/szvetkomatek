@@ -3117,3 +3117,22 @@ def svg_felegyenes():
                   _iv_sik_elem('circle',{'class':'iv-fel-hatar','cx':X(2),'cy':56,'r':5,'fill':'white','stroke':ZOLD,'stroke-width':2}),
                   _iv_sik_elem('text',{'class':'iv-fel-b-cim','x':X(2),'y':30,'text-anchor':'middle','font-size':13,'fill':TINTA},'b = 2')])
     return svg+'\n'+'\n'.join(extra)+'\n</svg>'
+
+def svg_vektorszoro():
+    """Az eredeti (2; 1) vektor és a kétszerese, külön kezdőponttal."""
+    svg='\n'.join(_fej(352,320,'A vektor (2; 1), a kétszerese (4; 2); azonos irányítás, kétszeres intenzitás.'))
+    svg=svg.replace('id="nyil"','id="iv-vekt-alap"')
+    P=lambda x,y:(176+22*x,166-22*y)
+    extra=['<defs><marker id="iv-vekt-kek" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#2563eb"/></marker><marker id="iv-vekt-lila" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#7c3aed"/></marker></defs>']
+    for k in range(-7,8):extra.append(_iv_sik_elem('line',{'x1':P(k,0)[0],'y1':55,'x2':P(k,0)[0],'y2':270,'stroke':'#cbd5e1','stroke-width':.6}))
+    for k in range(-4,6):extra.append(_iv_sik_elem('line',{'x1':22,'y1':P(0,k)[1],'x2':330,'y2':P(0,k)[1],'stroke':'#cbd5e1','stroke-width':.6}))
+    for cls,a,b,col,marker,dash in [('iv-vekt-eredeti',(0,2),(2,3),'#2563eb','kek',''),('iv-vekt-kep',(0,0),(4,2),'#7c3aed','lila','5 3')]:
+        u,v=P(*a),P(*b)
+        extra.append(_iv_sik_elem('line',{'class':cls,'x1':u[0],'y1':u[1],'x2':v[0],'y2':v[1],'stroke':col,'stroke-width':2.8,'stroke-dasharray':dash,'marker-end':'url(#iv-vekt-'+marker+')'}))
+        extra.append(_iv_sik_elem('circle',{'cx':u[0],'cy':u[1],'r':3,'fill':TINTA}))
+    extra.extend([_iv_sik_elem('circle',{'class':'iv-vekt-null','cx':P(0,0)[0],'cy':P(0,0)[1],'r':7,'stroke':'#7c3aed','stroke-width':2,'fill':'white','style':'display:none'}),
+                  _iv_sik_elem('text',{'x':22,'y':18,'font-size':13,'fill':'#2563eb'},'Folytonos: a = (2; 1)'),
+                  _iv_sik_elem('text',{'class':'iv-vekt-cim','x':22,'y':39,'font-size':13,'fill':'#7c3aed'},'Szaggatott: λa = (4; 2)'),
+                  _iv_sik_elem('line',{'x1':22,'y1':299,'x2':44,'y2':299,'stroke':TINTA,'stroke-width':2}),
+                  _iv_sik_elem('text',{'x':52,'y':303,'font-size':12,'fill':TINTA},'1 egység')])
+    return svg+'\n'+'\n'.join(extra)+'\n</svg>'
