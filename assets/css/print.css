@@ -21,7 +21,7 @@
 
   /* --- képernyő-only elemek --- */
   #progress,.fejlec,.toc,.kereso-mini,.kereso-nagy,.lapozo,.gyakorolj,.kviz,
-  .morzsa,.matek-dekor,.savok,.video-panel,.hang-gomb,
+  .morzsa,.matek-dekor,.savok,.video-panel,
   .mobil-toc-gomb,.mobil-toc-ablak,.folytatas,.naplo-chip,.egyseg-kesz,.fel-pipa,.effekt-reteg,.gyuru,.naplo-eszkoz,.tetejere,.tartalomra{display:none !important;}
   .brief::after{display:none !important;}
   /* interaktív vezérlők (szimulátor, adatlabor): papíron csak a kép és a mutatótábla marad */
@@ -34,6 +34,8 @@
   body{font-size:11pt;line-height:1.45;display:block !important;min-height:0 !important;}
   .lap{display:block;max-width:none;padding:0;}
   .lap.toc-os{grid-template-columns:none;}
+  .fogado{display:block;}
+  .fogado .racs{grid-template-columns:repeat(2,minmax(0,1fr));}
   .hero{padding:0 0 .5rem;}
   .hero-nagy{border:0;}
   .hero-nagy h1{font-size:1.9rem;}

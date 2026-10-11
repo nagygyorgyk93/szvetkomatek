@@ -42,60 +42,71 @@
 <main class="lap">
   <div class="tartalom">
     <div class="fogado">
-      <div class="brief szveti">
-        <img class="avatar" src="assets/img/svetozar.webp" alt="SZVETI — a Szvetkó-kampusz mesterséges intelligenciája" width="640" height="640" loading="lazy">
-        <p>📡 <b>SZVETI:</b> Üdv a kampuszon, kadét! <b>Kán</b> hamis állításokkal
-        tágítja a valóság szakadását — a te fegyvered a <b>tiszta gondolkodás és a pontos számítás</b>.
-        Válaszd ki a kiképzési szintedet, és kezdheted is. A mentoraid — Ikol, Dr. Bizarr,
-        Petar Pauk, Barton Kálmán… — már várnak.</p>
+      <div class="fogado-valasztas">
+        <div class="brief szveti">
+          <img class="avatar" src="assets/img/svetozar.webp" alt="SZVETI — a Szvetkó-kampusz mesterséges intelligenciája" width="640" height="640" loading="lazy">
+          <p>📡 <b>SZVETI:</b> Üdv a kampuszon, kadét! <b>Kán</b> hamis állításokkal
+          tágítja a valóság szakadását — a te fegyvered a <b>tiszta gondolkodás és a pontos számítás</b>.
+          Válaszd ki a kiképzési szintedet, és kezdheted is. A mentoraid — Ikol, Dr. Bizarr,
+          Petar Pauk, Barton Kálmán… — már várnak.</p>
+        </div>
+
+        <h2>🎖️ Válaszd ki az osztályodat</h2>
+        <div class="racs">
+          <a class="kartya" href="1e/index.html" style="--kartya-szin:#10b981">
+            <span class="sorszam">1e</span>
+            <h3>Első osztály</h3>
+            <p class="le">társadalmi-nyelvi tagozat</p>
+            <div class="sor"><span class="chip ora">heti 4 óra</span></div>
+          </a>
+          <a class="kartya" href="2e/index.html" style="--kartya-szin:#14b8a6">
+            <span class="sorszam">2e</span>
+            <h3>Második osztály</h3>
+            <p class="le">társadalmi-nyelvi tagozat</p>
+            <div class="sor"><span class="chip ora">heti 3 óra</span></div>
+          </a>
+          <a class="kartya" href="3e/index.html" style="--kartya-szin:#06b6d4">
+            <span class="sorszam">3e</span>
+            <h3>Harmadik osztály</h3>
+            <p class="le">társadalmi-nyelvi tagozat</p>
+            <div class="sor"><span class="chip ora">heti 3 óra</span></div>
+          </a>
+          <a class="kartya" href="4e/index.html" style="--kartya-szin:#84cc16">
+            <span class="sorszam">4e</span>
+            <h3>Negyedik osztály</h3>
+            <p class="le">társadalmi-nyelvi tagozat · érettségi évfolyam</p>
+            <div class="sor"><span class="chip ora">heti 3 óra</span></div>
+          </a>
+        </div>
       </div>
 
       <figure class="video-panel">
-        <video id="udv-video" controls playsinline muted loop preload="metadata"
-               poster="assets/img/welcome-poster.webp" width="540" height="960">
-          <source src="assets/img/welcome.webm" type="video/webm">
-          <source src="assets/img/welcome.mp4" type="video/mp4">
-          <track kind="captions" src="assets/img/welcome-hu.vtt" srclang="hu" label="Magyar" default>
-        </video>
-        <button type="button" class="hang-gomb" data-video="udv-video" hidden>🔊 Hang be</button>
-        <figcaption>Kiképzőtiszti fogadás</figcaption>
+        <div class="video-kep">
+          <video id="udv-video" controls playsinline muted loop preload="metadata"
+                 poster="assets/img/welcome-poster.webp" width="540" height="960"
+                 aria-describedby="udv-video-felirat">
+            <source src="assets/img/welcome.webm" type="video/webm">
+            <source src="assets/img/welcome.mp4" type="video/mp4">
+            <track kind="captions" src="assets/img/welcome-hu.vtt" srclang="hu" label="Magyar" default>
+          </video>
+          <div class="video-vezerlok" role="group" aria-label="A köszöntővideó vezérlői" hidden>
+            <button type="button" class="video-gomb video-hang" data-hang="ki"
+                    aria-label="Hang bekapcsolása" title="Hang bekapcsolása" aria-controls="udv-video">
+              <svg class="ikon-hang-ki" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11 5 6 9H3v6h3l5 4V5Z M16 9l5 6m0-6-5 6"/></svg>
+              <svg class="ikon-hang-be" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11 5 6 9H3v6h3l5 4V5Z M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></svg>
+            </button>
+            <button type="button" class="video-gomb video-lejatszas" data-lejatszas="all"
+                    aria-label="Videó indítása" title="Videó indítása" aria-controls="udv-video">
+              <svg class="ikon-lejatszas" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m8 5 11 7-11 7V5Z" fill="currentColor" stroke="none"/></svg>
+              <svg class="ikon-szunet" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 5h3v14H7zm7 0h3v14h-3z" fill="currentColor" stroke="none"/></svg>
+            </button>
+          </div>
+        </div>
+        <figcaption>Kiképzőtiszti fogadás
+          <p class="video-felirat" id="udv-video-felirat">„Üdv, kadét! Kezdődik a kiképzés.
+            Húzd ki magad, és villantsd a matekot!”</p>
+        </figcaption>
       </figure>
-    </div>
-
-    <details class="video-leirat">
-      <summary>A köszöntővideó szövege</summary>
-      <div class="bel">
-        <p><b>A kiképzőtiszt:</b> „Üdv, kadét! Kezdődik a kiképzés. Húzd ki magad,
-        és villantsd a matekot!”</p>
-      </div>
-    </details>
-
-    <h2>🎖️ Válaszd ki az osztályodat</h2>
-    <div class="racs">
-      <a class="kartya" href="1e/index.html" style="--kartya-szin:#10b981">
-        <span class="sorszam">1e</span>
-        <h3>Első osztály</h3>
-        <p class="le">társadalmi-nyelvi tagozat</p>
-        <div class="sor"><span class="chip ora">heti 4 óra</span></div>
-      </a>
-      <a class="kartya" href="2e/index.html" style="--kartya-szin:#14b8a6">
-        <span class="sorszam">2e</span>
-        <h3>Második osztály</h3>
-        <p class="le">társadalmi-nyelvi tagozat</p>
-        <div class="sor"><span class="chip ora">heti 3 óra</span></div>
-      </a>
-      <a class="kartya" href="3e/index.html" style="--kartya-szin:#06b6d4">
-        <span class="sorszam">3e</span>
-        <h3>Harmadik osztály</h3>
-        <p class="le">társadalmi-nyelvi tagozat</p>
-        <div class="sor"><span class="chip ora">heti 3 óra</span></div>
-      </a>
-      <a class="kartya" href="4e/index.html" style="--kartya-szin:#84cc16">
-        <span class="sorszam">4e</span>
-        <h3>Negyedik osztály</h3>
-        <p class="le">társadalmi-nyelvi tagozat · érettségi évfolyam</p>
-        <div class="sor"><span class="chip ora">heti 3 óra</span></div>
-      </a>
     </div>
 
     <div class="mentor-sor">

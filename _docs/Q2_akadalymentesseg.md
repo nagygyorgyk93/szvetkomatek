@@ -689,3 +689,21 @@ számegyenes nyílfejei, szolgáltatói médiafelületek, képes hátterek telje
 kézi kontrasztja és JS nélküli képlet-felolvasás hátra van.
 Más böngészőt és teljes PDF-oldaltördelést nem minősítünk.
 **Tanári döntés kell: nincs új tartalmi kérdés.**
+
+
+## Főoldali fogadás — két ikon és tömörebb elrendezés (2026-10-11)
+
+Tanári kérésre a köszöntő és az osztályválasztó egy bal oldali csoportba került,
+a videó külön jobb oldali oszlopba. Mobilon a választó után a videó; a nagy
+üres rész megszűnt. A három szöveges gomb helyett két 20 px-es ikon, 44×44 px
+érintési területtel, magyar névvel és billentyűzetes fókusszal. Az ikonok a
+tényleges hang/lejátszás állapotát követik. A hang kapcsolása nem kezdi újra
+a videót. A külön leiratdoboz megszűnt; a jóváhagyott teljes szöveg a videó alatt maradt.
+
+Edge: 6 képernyőszélesség/0 túlcsordulás; axe2/0; 30 médiaállapot,
+2 gomb Space/Enter próbája, 7 érintéses tap, 2 JS nélküli és 8 nyomtatási eset.
+Két név a hozzáférhetőségi fában; kereső/folytatás/mobil TOC és kvíz rendben.
+Kánon/link310/0, sáv tiszta; index308, csak a főoldal változott.
+Valódi telefon, hangkimenet és képernyőolvasó nincs próbálva. A Q2 további
+ábraleírásai és korábbi nyílfej-ellenőrzései külön folytatás maradnak.
+Részletek: [főoldali fogadás](Fooldal_fogadas.md). Tanári döntés kell: nincs.

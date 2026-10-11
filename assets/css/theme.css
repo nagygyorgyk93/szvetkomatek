@@ -537,8 +537,12 @@ svg[role="img"] [stroke="#0ea5e9"]{stroke:#0369a1;}
 .brief a{color:#60a5fa;text-shadow:0 0 5px rgba(59, 130, 246, 0.4);}
 
 /* ---------- Fogadó blokk: SZVETI-eligazítás + üdvözlő videó ---------- */
-.fogado{display:flex;gap:1.4rem;align-items:flex-start;flex-wrap:wrap;margin:.4rem 0 1.6rem;}
-.fogado .brief{flex:1 1 22rem;margin:0;}
+.fogado{display:grid;grid-template-columns:minmax(0,1fr) 12rem;gap:2rem;align-items:start;margin:.4rem 0 1.6rem;}
+.fogado-valasztas{min-width:0;}
+.fogado .brief{margin:0;}
+.fogado .racs{grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:0;}
+@media(max-width:900px){.fogado{grid-template-columns:minmax(0,1fr);gap:1.4rem;}}
+@media(max-width:640px){.fogado .racs{grid-template-columns:minmax(0,1fr);}}
 .brief.szveti,.brief.karakter{display:flex;gap:1rem;align-items:flex-start;}
 /* Karakter-eligazítás nagyban: a mentor teljes alakja banner-ként az s0 brief tetején */
 .brief.karakter-nagy{padding:0;overflow:hidden;}
@@ -560,20 +564,13 @@ svg[role="img"] [stroke="#0ea5e9"]{stroke:#0369a1;}
    a figura „lebeg" az oldalon. Ha a böngésző nem tudja a VP9-alfát (pl. Safari), az
    ui.js `nincs-alfa` osztályt tesz a panelre: a `screen` keverés a sötét lapon akkor is
    eltünteti a fekete hátteret. */
-.video-panel{flex:0 0 15rem;max-width:15rem;margin:0;position:relative;padding:.5rem;
+.video-panel{width:12rem;max-width:100%;margin:0 auto;position:relative;padding:0;
   background:transparent;border:0;box-shadow:none;}
 .video-panel video{display:block;width:100%;height:auto;
   filter:drop-shadow(0 0 18px rgba(0,255,102,.22));}
 .video-panel.nincs-alfa video{mix-blend-mode:screen;filter:none;}
 .video-panel figcaption{margin-top:.35rem;font-size:.8rem;color:var(--szurke-600);text-align:center;}
-.hang-gomb{position:absolute;right:.9rem;bottom:2.6rem;border:1px solid var(--kampusz-neon);
-  border-radius:999px;padding:.28rem .8rem;background:rgba(10,41,24,.85);color:var(--kampusz-neon);
-  font:inherit;font-size:.8rem;font-weight:700;letter-spacing:.02em;cursor:pointer;transition:all .3s ease;
-  box-shadow:0 0 8px rgba(0,255,102,.3);backdrop-filter:blur(6px);}
-.hang-gomb:hover{background:var(--kampusz-neon);color:var(--kampusz-sotet);box-shadow:var(--kampusz-fenylés);}
-.hang-gomb[disabled]{opacity:.55;cursor:default;}
 @media(max-width:640px){
-  .video-panel{flex:1 1 100%;max-width:13rem;margin:0 auto;}
   .brief .avatar,.mentor-sor .avatar{width:4rem;height:4rem;}
   .brief.karakter-nagy .portre{height:8rem;}
 }
@@ -801,13 +798,21 @@ html.anim-be .brief.lathato::after{content:'';position:absolute;inset:0;pointer-
 .tartalomra:focus{transform:none;}
 .felolvasas{position:absolute;top:0;left:0;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
   clip-path:inset(50%);white-space:nowrap;border:0;}
-.video-vezerlok{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem;margin-top:.5rem;}
-.video-vezerlok .hang-gomb{position:static;min-height:44px;background:var(--kampusz-sotet);}
-.szunet-gomb,.felirat-gomb{min-height:44px;padding:.4rem .7rem;border:1px solid var(--kampusz-neon);
-  border-radius:999px;background:var(--kampusz-sotet);color:var(--kampusz-neon);font:inherit;font-size:.8rem;cursor:pointer;}
-.felirat-gomb[aria-pressed="false"]{color:var(--szurke-600);border-color:var(--szurke-600);}
-.video-felirat{min-height:4.2em;margin:.4rem 0 0;padding:.4rem .35rem;border-radius:8px;
-  background:#0a2918;color:#f8fafc;font-size:.85rem;line-height:1.4;text-align:center;white-space:pre-line;}
+.video-kep{position:relative;}
+.video-vezerlok{position:absolute;bottom:.6rem;left:50%;transform:translateX(-50%);
+  display:flex;gap:.25rem;padding:.2rem;border-radius:999px;background:#0f172a;
+  border:1px solid var(--kampusz-uveg-keret);box-shadow:0 3px 14px rgba(0,0,0,.3);}
+.video-vezerlok[hidden]{display:none;}
+.video-gomb{display:grid;place-items:center;width:44px;height:44px;padding:0;
+  border:0;border-radius:50%;background:transparent;color:#f8fafc;cursor:pointer;}
+.video-gomb:hover{background:#1e293b;color:var(--kampusz-neon);}
+.video-gomb svg{display:block;width:20px;height:20px;fill:none;stroke:currentColor;
+  stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;pointer-events:none;}
+.video-gomb .ikon-hang-be,.video-gomb .ikon-szunet{display:none;}
+.video-hang[data-hang="be"] .ikon-hang-be,.video-lejatszas[data-lejatszas="fut"] .ikon-szunet{display:block;}
+.video-hang[data-hang="be"] .ikon-hang-ki,.video-lejatszas[data-lejatszas="fut"] .ikon-lejatszas{display:none;}
+.video-felirat{margin:.65rem 0 0;padding:.6rem .65rem;border-radius:10px;
+  background:#0a2918;color:#f8fafc;font-size:.85rem;line-height:1.5;text-align:center;}
 .svgcard :focus-visible{outline-color:#2563eb;}
 /* A rendszer mozgáscsökkentő beállítása alapból mindent lefog — DE ha a kadét a
    Küldetésnaplóban bekapcsolva hagyta a látványelemeket (html.effekt-be), akkor

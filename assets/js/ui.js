@@ -316,103 +316,64 @@
     nyitottak = [];
   });
 
-  /* Üdvözlő videó: néma automata lejátszás + „Hang be” (egyszer, hanggal).
-     A böngészők a hangos automata indítást tiltják, ezért a hang mindig
-     felhasználói kattintásra szólal meg; utána visszaáll a néma ismétlésre. */
-  document.querySelectorAll('.hang-gomb').forEach(function(gomb){
-    var v = document.getElementById(gomb.getAttribute('data-video'));
-    if(!v){ gomb.hidden = true; return; }
-    /* JS nélkül a videó saját vezérlői és magyar feliratsávja használhatók. */
-    v.controls = false; gomb.hidden = false;
+  /* Köszöntővideó: két állapotváltó ikon; a hangkapcsoló nem indítja újra a videót. */
+  document.querySelectorAll('.video-panel').forEach(function(panel){
+    var v = panel.querySelector('video');
+    var vezerlok = panel.querySelector('.video-vezerlok');
+    var hang = panel.querySelector('.video-hang');
+    var lejatszas = panel.querySelector('.video-lejatszas');
+    if(!(v && vezerlok && hang && lejatszas)) return;
+    /* JS nélkül a natív vezérlők és a magyar feliratsáv maradnak elérhetők.
+       A teljes, jóváhagyott szöveg mindig olvasható a videó alatt. */
+    v.controls = false; vezerlok.hidden = false;
     var lassit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var vezerlok = document.createElement('div'); vezerlok.className = 'video-vezerlok';
-    gomb.parentNode.insertBefore(vezerlok, gomb); vezerlok.appendChild(gomb);
-    var szunet = document.createElement('button');
-    szunet.type = 'button'; szunet.className = 'szunet-gomb';
-    szunet.setAttribute('aria-controls', v.id); vezerlok.appendChild(szunet);
     var feliratsav = v.querySelector('track[kind="captions"]');
-    if(feliratsav && feliratsav.track){
-      /* A felirat külön dobozban marad kontrasztos: a videó átlátszósági
-         tartaléka (screen-keverés) így nem érinti a szöveg hátterét. A teljes
-         leirat felolvasható; az időzített másolat nem élő régió. */
-      var felirat = document.createElement('p'); felirat.className = 'video-felirat';
-      felirat.setAttribute('aria-hidden', 'true');
-      v.parentNode.insertBefore(felirat, vezerlok);
-      var feliratGomb = document.createElement('button');
-      feliratGomb.type = 'button'; feliratGomb.className = 'felirat-gomb';
-      feliratGomb.textContent = 'Magyar felirat'; feliratGomb.setAttribute('aria-pressed', 'true');
-      felirat.id = v.id + '-felirat'; feliratGomb.setAttribute('aria-controls', felirat.id);
-      vezerlok.appendChild(feliratGomb);
-      var sav = feliratsav.track; sav.mode = 'hidden';
-      function feliratFrissit(){
-        felirat.textContent = Array.prototype.map.call(sav.activeCues || [], function(c){ return c.text; }).join('\n');
-      }
-      sav.addEventListener('cuechange', feliratFrissit);
-      feliratsav.addEventListener('load', feliratFrissit); feliratFrissit();
-      feliratGomb.addEventListener('click', function(){
-        felirat.hidden = !felirat.hidden;
-        feliratGomb.setAttribute('aria-pressed', String(!felirat.hidden));
-      });
-      feliratsav.addEventListener('error', function(){
-        felirat.hidden = true; feliratGomb.hidden = true;
-      });
+    if(feliratsav && feliratsav.track) feliratsav.track.mode = 'hidden';
+
+    function hangFrissit(){
+      var nema = v.muted || v.volume === 0;
+      hang.setAttribute('data-hang', nema ? 'ki' : 'be');
+      var nev = nema ? 'Hang bekapcsolása' : 'Hang kikapcsolása';
+      hang.setAttribute('aria-label', nev); hang.title = nev;
     }
-    function szunetFrissit(){ szunet.textContent = v.paused ? 'Videó folytatása' : 'Videó szüneteltetése'; }
-    szunet.addEventListener('click', function(){
-      if(v.paused){ var p = v.play(); if(p && p.catch) p.catch(function(){}); }
-      else v.pause();
+    function lejatszasFrissit(){
+      var all = v.paused || v.ended;
+      lejatszas.setAttribute('data-lejatszas', all ? 'all' : 'fut');
+      var nev = all ? 'Videó indítása' : 'Videó szüneteltetése';
+      lejatszas.setAttribute('aria-label', nev); lejatszas.title = nev;
+    }
+    function indit(){
+      var p = v.play(); lejatszasFrissit();
+      if(p && p.catch) p.catch(lejatszasFrissit);
+    }
+    hang.addEventListener('click', function(){
+      var nema = v.muted || v.volume === 0;
+      if(nema && v.volume === 0) v.volume = 1;
+      v.muted = !nema; hangFrissit();
     });
-    v.addEventListener('play', szunetFrissit); v.addEventListener('pause', szunetFrissit);
+    lejatszas.addEventListener('click', function(){
+      if(v.paused || v.ended) indit();
+      else { v.pause(); lejatszasFrissit(); }
+    });
+    v.addEventListener('volumechange', hangFrissit);
+    ['play','pause','ended','emptied'].forEach(function(e){ v.addEventListener(e, lejatszasFrissit); });
+    v.muted = true; v.defaultMuted = true;
     if(lassit){ v.loop = false; v.autoplay = false; v.pause(); }
-    v.muted = true; v.defaultMuted = true;   /* a néma automata indítás feltétele */
-    if(!lassit) nemaInditas();
-    szunetFrissit();
+    else indit(); /* Ha a böngésző nem engedi, a lejátszásikonról indítható. */
+    hangFrissit(); lejatszasFrissit();
 
-    function nemaInditas(){
-      var p = v.play();
-      if(p && p.catch) p.catch(function(){
-        /* a böngésző blokkolta (energiatakarékos mód, beállítás, iOS): az első
-           felhasználói mozdulatra újrapróbáljuk */
-        var esem = ['pointerdown','keydown','touchstart','scroll'];
-        var ujra = function(){
-          esem.forEach(function(e){ window.removeEventListener(e, ujra, true); });
-          v.muted = true;
-          var q = v.play(); if(q && q.catch) q.catch(function(){});
-        };
-        esem.forEach(function(e){ window.addEventListener(e, ujra, {capture:true, passive:true}); });
-      });
-    }
-
-    /* Átlátszóság-teszt: a videó sarka átlátszó-e? Ha a böngésző nem tudja a VP9-alfát
-       (pl. Safari), a keret `nincs-alfa` osztályt kap → CSS-ből screen-keverés. */
+    /* Az alfa nélküli böngészőkben a sötét videóhátteret a keverés eltünteti. */
     v.addEventListener('loadeddata', function proba(){
       v.removeEventListener('loadeddata', proba);
       try{
         var c = document.createElement('canvas'); c.width = 8; c.height = 8;
-        var cx = c.getContext('2d');
-        cx.clearRect(0, 0, 8, 8);
+        var cx = c.getContext('2d'); cx.clearRect(0, 0, 8, 8);
         cx.drawImage(v, 0, 0, 8, 8);
-        if(cx.getImageData(0, 0, 1, 1).data[3] > 250 && v.parentNode)
-          v.parentNode.classList.add('nincs-alfa');
-      }catch(e){ /* ha bármi gond van, marad az alapértelmezett megjelenés */ }
+        if(cx.getImageData(0, 0, 1, 1).data[3] > 250) panel.classList.add('nincs-alfa');
+      }catch(e){ /* A videó képe keverés nélkül is használható. */ }
     });
-
-    var eredetiSzoveg = gomb.textContent;
-    gomb.addEventListener('click', function(){
-      v.muted = false; v.loop = false; v.currentTime = 0;
-      gomb.disabled = true; gomb.textContent = '🔊 Szól…';
-      var p2 = v.play();
-      if(p2 && p2.catch) p2.catch(function(){ vissza(); });
-    });
-    function vissza(){
-      v.muted = true;
-      if(!lassit) v.loop = true;
-      gomb.disabled = false; gomb.textContent = eredetiSzoveg;
-      if(lassit) v.pause();
-      else { var p3 = v.play(); if(p3 && p3.catch) p3.catch(function(){}); }
-    }
-    v.addEventListener('ended', function(){ if(!v.loop) vissza(); });
   });
+
 
   /* „Vissza a tetejére” rakéta — hosszú lapokon, 600 px görgetés után */
   (function(){
