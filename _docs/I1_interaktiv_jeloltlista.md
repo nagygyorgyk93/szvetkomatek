@@ -1,13 +1,13 @@
 # I1 — Interaktív ábrák jelöltlistája
 
-## Állapot — 2026-10-10
+## Állapot — 2026-10-11
 
 **A négy évfolyam jelöltlistája helyben elkészült.** Kiindulás: `c4059b2`, tiszta
 helyi `main`, az `origin/main` helyi referenciájával azonos; távoli frissítés nem történt.
 A tanár az I1-listát választotta, majd jóváhagyta az első három modell elkészítését.
-**I1-04, I1-06, I1-09, I1-11, I1-12, I1-13, I1-14 és I1-15 helyben megvalósult és ellenőrizve van.**
-A további 8 jelölt terv. Részletek: [első adag](I1_elso_adag.md), [3e geometriai adag](I1_masodik_adag.md),
-[4e fogalmi adag](I1_harmadik_adag.md).
+**I1-04, I1-05, I1-06, I1-07, I1-08, I1-09, I1-11, I1-12, I1-13, I1-14 és I1-15 megvalósult és ellenőrizve van.**
+A további 5 jelölt terv. Részletek: [első adag](I1_elso_adag.md), [3e geometriai adag](I1_masodik_adag.md),
+[4e fogalmi adag](I1_harmadik_adag.md), [2e három új modell](I1_negyedik_adag.md).
 
 A 161 tananyaglap ábráinak és médiáinak leltárából **16 jelöltet** választottam,
 évfolyamonként négyet. **P1:** elsőként érdemes megvalósítani; **P2:** későbbi,
@@ -29,8 +29,8 @@ mind a négy médiakatalógus. A listán szereplő konkrét szakaszok szövegét
 
 ## A jelöltlista induló leltára
 
-Az alábbi számok az első megvalósítás előtti állapotot rögzítik. A három megvalósítási adag
-után 16 saját interaktív ábra van (1e: 1, 2e: 1, 3e: 3, 4e: 11);
+Az alábbi számok az első megvalósítás előtti állapotot rögzítik. A négy megvalósítási adag
+után 19 saját interaktív ábra van (1e: 1, 2e: 4, 3e: 3, 4e: 11);
 a matematikai SVG-k száma és a GeoGebra-lefedettség megmaradt.
 
 Csak a tananyaglapok matematikai, `role="img"` jelölésű SVG-it számoltam.
@@ -51,8 +51,8 @@ jelenti. Az appletek mostani külső működését ebben a dokumentációs adagb
 ## Jelöltek évfolyamonként
 
 A link az ábra tényleges tananyagszakaszára vezet. A javasolt vezérlő és a kijelzett
-értékek a többi 8 jelöltnél tervként szerepelnek. I1-04, I1-06, I1-09, I1-11,
-I1-12, I1-13, I1-14 és I1-15 helyben elkészült; ezek kezelése és matematikai szélső esetei ellenőrizve vannak.
+értékek a többi 5 jelöltnél tervként szerepelnek. I1-04, I1-05, I1-06, I1-07,
+I1-08, I1-09, I1-11, I1-12, I1-13, I1-14 és I1-15 elkészült; ezek kezelése és matematikai szélső esetei ellenőrizve vannak.
 
 ### 1e
 
@@ -67,10 +67,10 @@ I1-12, I1-13, I1-14 és I1-15 helyben elkészült; ezek kezelése és matematika
 
 | Azonosító · sorrend | Lap és meglévő ábra | Mit állítana a vezérlő? | Tanulási haszon | Kimenet |
 |---|---|---|---|---|
-| **I1-05 · P2** | [A komplex szám fogalma](../2e/01-hatvanyozas-gyokvonas-komplex-szamok/tananyag-komplex-szam-fogalma.html#s3) — Komplex szám, konjugált és modulusz a Gauss-síkon | Valós és képzetes rész állítása; a pont és a konjugált együtt mozog. | A szám algebrai alakja, koordinátái, tükrözése és modulusza összekapcsolódik. | `MAT.A.SO.S.1.1 (1.1, 1.5)` |
+| **I1-05 · P2 · kész** | [A komplex szám fogalma](../2e/01-hatvanyozas-gyokvonas-komplex-szamok/tananyag-komplex-szam-fogalma.html#s3) — Komplex szám, konjugált és modulusz a Gauss-síkon | Valós és képzetes rész állítása; a pont és a konjugált együtt mozog. | A szám algebrai alakja, koordinátái, tükrözése és modulusza összekapcsolódik. | `MAT.A.SO.S.1.1 (1.1, 1.5)` |
 | **I1-06 · P1 · helyben kész** | [Az exponenciális függvény](../2e/03-exponencialis-es-logaritmus-fuggveny/tananyag-exponencialis-fuggveny.html#s2) — Növekvő és csökkenő exponenciális alapgrafikon | Az a alap változtatása a megengedett két tartományban. | Megmutatja a monotonitás különbségét és a közös tengelymetszetet. | `MAT.F.SO.O.1.8 (8.2, 8.4)` |
-| **I1-07 · P2** | [Másodfokú és lineáris egyenletből álló rendszer](../2e/02-masodfoku-egyenletek-es-fuggvenyek/tananyag-masodfoku-linearis-rendszer.html#s1) — Parabola és egyenes metszéspontjai | A meglévő parabola mellett az egyenes eltolása; később a meredeksége is. | A rendszer megoldáspárjai közös pontként jelennek meg; látszik a nulla/egy/két megoldás. | `MAT.A.SO.S.1.2 (2.9)` |
-| **I1-08 · P1** | [Trigonometrikus egyenletek és egyenlőtlenségek](../2e/04-trigonometrikus-fuggvenyek/tananyag-trigonometrikus-egyenletek.html#s1) — Szinuszgörbe és vízszintes egyenes | A sin x = b egyenlet b értéke; a [0; 2π] intervallum megoldásai kiemelve. | A két gyök, az érintési határeset és a megoldás nélküli eset közvetlenül összevethető. | `MAT.A.SO.S.1.2 (2.4)` |
+| **I1-07 · P2 · kész** | [Másodfokú és lineáris egyenletből álló rendszer](../2e/02-masodfoku-egyenletek-es-fuggvenyek/tananyag-masodfoku-linearis-rendszer.html#s1) — Parabola és egyenes metszéspontjai | A rögzített parabola mellett az y = x + c egyenes eltolása; a meredekség 1 marad. | A rendszer megoldáspárjai közös pontként jelennek meg; látszik a nulla/egy/két megoldás. | `MAT.A.SO.S.1.2 (2.9)` |
+| **I1-08 · P1 · kész** | [Trigonometrikus egyenletek és egyenlőtlenségek](../2e/04-trigonometrikus-fuggvenyek/tananyag-trigonometrikus-egyenletek.html#s1) — Szinuszgörbe és vízszintes egyenes | A sin x = b egyenlet b értéke; a [0; 2π] intervallum megoldásai kiemelve. | A két gyök, az érintési határeset és a megoldás nélküli eset közvetlenül összevethető. | `MAT.A.SO.S.1.2 (2.4)` |
 
 ### 3e
 
@@ -116,6 +116,17 @@ mindig pozitív. A meglévő x² − 4x példában a jobb határ 0–6 között 
 az integrál és a terület pontos törtértéke együtt látszik. A kezdő b = 5
 megfelel a szöveges példának. Próba és korlát: [harmadik adag](I1_harmadik_adag.md).
 
+## Megvalósított negyedik adag — 2e
+
+**I1-05 — komplex szám és konjugált; I1-07 — parabola–egyenes rendszer;
+I1-08 — szinuszegyenlet.** A két komplex rész negyedegységgel mozog,
+a modulusz pontos gyökös alakban is látszik. A parabola rögzített;
+az eltolási csúszka az érintést is eléri. A szinuszmodell a zárt [0;2π]
+intervallum összes megoldását jelöli, b = 0-nál mindhárom szöget.
+Próba és korlát: [negyedik adag](I1_negyedik_adag.md).
+A tanár minden lezárt, ellenőrzött adag feltöltését engedélyezte;
+helyi mainen dolgozunk, új ág nélkül.
+
 ## Meglévő modellekhez kötődő cserejavaslatok
 
 Ezeket külön kell mérlegelni, mert azonos célt szolgáló GeoGebra már van a lapon.
@@ -138,8 +149,8 @@ a meglévő pozitív görbe alatti téglalapos közelítés más kérdést szeml
 A 4e-ben a szelő/derivált, monotonitás/érintő, konvexitás, primitív függvénysereg,
 téglalapos integrálközelítés, Pascal-háromszög, érme- és kockaszimulátor, valamint
 adatlabor már működő saját modell. A két érintős ábra azonos módra épül:
-**nyolc ábra, hét működési mód**. Az I1 három adaga további nyolc
-ábrát és nyolc módot adott: összesen 16 ábra, 15 mód. A jelöltlista ezeket
+**nyolc ábra, hét működési mód**. Az I1 négy adaga további tizenegy
+ábrát és tizenegy módot adott: összesen 19 ábra, 18 mód. A jelöltlista ezeket
 megvalósult lefedettségként kezeli.
 
 A szinusz/koszinusz egységkörből való kirajzolása, az ellipszis és a parabola

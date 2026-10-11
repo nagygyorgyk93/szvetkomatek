@@ -2976,3 +2976,79 @@ def svg_integral_terulet():
             'fill':'#b45309','font-size':13,'font-weight':600,'text-anchor':'end'},'b'),
         _iv_sik_elem('text',{'x':368,'y':295,'font-size':13,'text-anchor':'end','fill':TINTA},'f(x) = x² − 4x')]
     return svg.replace('</svg>','\n'.join(extra)+'\n</svg>')
+
+def svg_komplex_konjugalt():
+    """Az eredeti 3+2i példa; azonos hosszúságú egység a két tengelyen."""
+    svg='\n'.join(_fej(360,360,'A z = 3 + 2i szám és konjugáltja a komplex számsíkon; a helyvektor hossza √13.'))
+    svg=svg.replace('id="nyil"','id="iv-komplex-nyil"')
+    P=lambda x,y:(180+33*x,180-33*y)
+    extra=[]
+    for k in range(-4,5):
+        if k:
+            extra.extend([_iv_sik_elem('line',{'x1':P(k,0)[0],'y1':25,'x2':P(k,0)[0],'y2':335,'stroke':'#cbd5e1','stroke-width':.6}),
+                          _iv_sik_elem('line',{'x1':25,'y1':P(0,k)[1],'x2':335,'y2':P(0,k)[1],'stroke':'#cbd5e1','stroke-width':.6})])
+    extra.extend([_iv_sik_elem('line',{'x1':25,'y1':180,'x2':338,'y2':180,'stroke':TINTA,'stroke-width':1.4,'marker-end':'url(#iv-komplex-nyil)'}),
+                  _iv_sik_elem('line',{'x1':180,'y1':335,'x2':180,'y2':22,'stroke':TINTA,'stroke-width':1.4,'marker-end':'url(#iv-komplex-nyil)'}),
+                  _iv_sik_elem('text',{'x':340,'y':201,'text-anchor':'end','fill':TINTA,'font-size':12},'Re'),
+                  _iv_sik_elem('text',{'x':169,'y':22,'text-anchor':'end','fill':TINTA,'font-size':12},'Im'),
+                  _iv_sik_elem('text',{'x':213,'y':200,'text-anchor':'middle','fill':TINTA,'font-size':11},'1'),
+                  _iv_sik_elem('text',{'x':170,'y':151,'text-anchor':'end','fill':TINTA,'font-size':11},'1')])
+    z,c=P(3,2),P(3,-2)
+    extra.extend([_iv_sik_elem('line',{'class':'iv-kom-tukor','x1':z[0],'y1':z[1],'x2':c[0],'y2':c[1],'stroke':'#b45309','stroke-width':1.6,'stroke-dasharray':'4 3'}),
+                  _iv_sik_elem('line',{'class':'iv-kom-vektor','x1':180,'y1':180,'x2':z[0],'y2':z[1],'stroke':ZOLD,'stroke-width':2.3}),
+                  _iv_sik_elem('circle',{'class':'iv-kom-C','cx':c[0],'cy':c[1],'r':5,'fill':'white','stroke':TINTA,'stroke-width':2}),
+                  _iv_sik_elem('circle',{'class':'iv-kom-Z','cx':z[0],'cy':z[1],'r':4,'fill':ZOLD}),
+                  _iv_sik_elem('text',{'class':'iv-kom-z-cim','x':z[0]+10,'y':z[1]-12,'fill':ZOLD,'font-size':13},'z'),
+                  _iv_sik_elem('text',{'class':'iv-kom-c-cim','x':c[0]+10,'y':c[1]+20,'fill':TINTA,'font-size':13},'z̄')])
+    return svg+'\n'+'\n'.join(extra)+'\n</svg>'
+
+
+def svg_parabola_egyenes():
+    """Az eredeti y=x²−2x és y=x−2 példa; az egyenes meredeksége rögzített."""
+    svg,P=_iv_grafikon_alap('iv-rendszer',(-1,4.5),(-2,8),380,280,
+        'A parabola y = x² − 2x, az egyenes y = x − 2. Két közös pontjuk (1; −1) és (2; 0).')
+    curve=' '.join(('M' if k==0 else 'L')+f'{P(x,x*x-2*x)[0]:.3f},{P(x,x*x-2*x)[1]:.3f}'
+                   for k,x in enumerate(-1+5.5*j/240 for j in range(241)))
+    a,b=P(-1,-3),P(4.5,2.5)
+    extra=['<g clip-path="url(#iv-rendszer-ablak)">',
+           _iv_sik_elem('path',{'class':'iv-rend-parabola','d':curve,'fill':'none','stroke':ZOLD,'stroke-width':2.3}),
+           _iv_sik_elem('line',{'class':'iv-rend-egyenes','x1':a[0],'y1':a[1],'x2':b[0],'y2':b[1],'stroke':'#2563eb','stroke-width':2,'stroke-dasharray':'6 3'}),
+           '<g class="iv-rend-pontok">']
+    for x,y in [(1,-1),(2,0)]:
+        p=P(x,y);extra.append(_iv_sik_elem('circle',{'cx':p[0],'cy':p[1],'r':4.5,'fill':'white','stroke':'#7c3aed','stroke-width':2,'data-x':x,'data-y':y}))
+    extra.extend(['</g></g>',_iv_sik_elem('text',{'x':32,'y':12,'font-size':12,'fill':ZOLD},'y = x² − 2x'),
+                  _iv_sik_elem('text',{'x':245,'y':12,'font-size':12,'fill':'#2563eb'},'y = x + c')])
+    return svg.replace('</svg>','\n'.join(extra)+'\n</svg>')
+
+
+def svg_szinusz_egyenlet():
+    """A szinuszgörbe csak a zárt [0;2π] intervallumon; radiános tengelyfeliratok."""
+    import math
+    xr=(-.32,2*math.pi+.32);yr=(-1.75,1.75)
+    P=lambda x,y:(26+(x-xr[0])/(xr[1]-xr[0])*342,14+(yr[1]-y)/(yr[1]-yr[0])*244)
+    svg='\n'.join(_fej(380,280,'A sin x = 1/2 egyenlet megoldásai a zárt [0; 2π] intervallumon: π/6 és 5π/6.'))
+    svg=svg.replace('id="nyil"','id="iv-szinusz-nyil"')
+    extra=['<defs><clipPath id="iv-szinusz-ablak"><rect x="26" y="14" width="342" height="244"/></clipPath></defs>']
+    for x,t in [(0,'0'),(math.pi/2,'π/2'),(math.pi,'π'),(3*math.pi/2,'3π/2'),(2*math.pi,'2π')]:
+        p=P(x,0)
+        extra.extend([_iv_sik_elem('line',{'x1':p[0],'y1':14,'x2':p[0],'y2':258,'stroke':'#cbd5e1','stroke-width':.7}),
+                      _iv_sik_elem('text',{'x':p[0],'y':p[1]+21,'font-size':12,'text-anchor':'middle','fill':TINTA},t)])
+    for y in [-1,1]:
+        p=P(0,y)
+        extra.extend([_iv_sik_elem('line',{'x1':26,'y1':p[1],'x2':368,'y2':p[1],'stroke':'#cbd5e1','stroke-width':.7}),
+                      _iv_sik_elem('text',{'x':p[0]-7,'y':p[1]+4,'font-size':11,'text-anchor':'end','fill':TINTA},str(y).replace('-','−'))])
+    extra.extend([_iv_sik_elem('line',{'x1':26,'y1':P(0,0)[1],'x2':368,'y2':P(0,0)[1],'stroke':TINTA,'stroke-width':1.3,'marker-end':'url(#iv-szinusz-nyil)'}),
+                  _iv_sik_elem('line',{'x1':P(0,0)[0],'y1':258,'x2':P(0,0)[0],'y2':14,'stroke':TINTA,'stroke-width':1.3,'marker-end':'url(#iv-szinusz-nyil)'}),
+                  _iv_sik_elem('text',{'x':31,'y':12,'font-size':12,'fill':ZOLD},'y = sin x'),
+                  _iv_sik_elem('text',{'x':285,'y':12,'font-size':12,'fill':'#b91c1c'},'y = b'),
+                  '<g clip-path="url(#iv-szinusz-ablak)">'])
+    curve=' '.join(('M' if k==0 else 'L')+f'{P(x,math.sin(x))[0]:.3f},{P(x,math.sin(x))[1]:.3f}'
+                   for k,x in enumerate(2*math.pi*j/240 for j in range(241)))
+    a,b=P(xr[0],.5),P(xr[1],.5)
+    extra.extend([_iv_sik_elem('path',{'class':'iv-szin-gorbe','d':curve,'fill':'none','stroke':ZOLD,'stroke-width':2.3}),
+                  _iv_sik_elem('line',{'class':'iv-szin-egyenes','x1':a[0],'y1':a[1],'x2':b[0],'y2':b[1],'stroke':'#b91c1c','stroke-width':2,'stroke-dasharray':'6 3'}),
+                  '<g class="iv-szin-pontok">'])
+    for x in [math.pi/6,5*math.pi/6]:
+        p=P(x,.5);extra.append(_iv_sik_elem('circle',{'cx':p[0],'cy':p[1],'r':4.5,'fill':'white','stroke':'#7c3aed','stroke-width':2,'data-x':x,'data-y':.5}))
+    extra.append('</g></g>')
+    return svg+'\n'+'\n'.join(extra)+'\n</svg>'

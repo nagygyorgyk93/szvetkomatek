@@ -3,7 +3,7 @@
 Mentor: Küklopsz."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_fuggvenyek
+from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_fuggvenyek, svg_rendszer_interaktiv
 
 T = dict(tagozat="2e", mappa="02-masodfoku-egyenletek-es-fuggvenyek",
          temakor="Másodfokú egyenletek és függvények")
@@ -34,13 +34,6 @@ SVG_EGYENL = svg_fuggvenyek(
     xr=(-0.6, 5.4), yr=(-1.6, 4.4), w=380, h=250,
     leiras="Az y = x² − 5x + 6 parabola: a 2 és a 3 között a tengely alatt, azon kívül fölötte",
     pontok=[(2, 0, "2", "#ef4444", -4, -8), (3, 0, "3", "#ef4444", 4, -8)])
-
-SVG_RENDSZER = svg_fuggvenyek(
-    [(lambda u: u**2-2*u, "#047857", "y = x² − 2x", [(-1.3, 3.3)]),
-     (lambda u: u-2, "#3b82f6", "y = x − 2", [(-1.5, 4.0)])],
-    xr=(-1.8, 4.2), yr=(-3.4, 4.2), w=380, h=270,
-    leiras="Az y = x² − 2x parabola és az y = x − 2 egyenes két metszéspontja",
-    pontok=[(1, -1, "(1; −1)", "#8b5cf6", -50, 16), (2, 0, "(2; 0)", "#8b5cf6", 8, -8)])
 
 # ===================================================================== C1
 
@@ -147,8 +140,8 @@ C1 = [
 C2 = [
  ("📡 Küldetés-eligazítás", [
    brief(('<b>Küklopsz:</b> Két feltétel, két egyenlet. Az egyik <b>lineáris</b>, a másik <b>másodfokú</b>. '
- 'Tavaly két egyenes metszéspontját kerested — most egy egyenes és egy parabola találkozási '
- 'pontjait. A módszer ugyanaz, mint akkor: <b>behelyettesítés</b>. A különbség csak annyi, hogy '
+ 'Tavaly két egyenes metszéspontját kerested. Az első példában egy egyenes és egy parabola '
+ 'közös pontjait keressük. A módszer ugyanaz, mint akkor: <b>behelyettesítés</b>. A különbség csak annyi, hogy '
  'behelyettesítés után rendszerint másodfokú egyenletet kapsz — és így akár <b>két</b> megoldás is '
  'lehet.')),
  ]),
@@ -173,8 +166,7 @@ C2 = [
                   '<p>Visszahelyettesítve a <b>lineáris</b> egyenletbe: '
                   '$y_{1}=1-2=-1$ és $y_{2}=2-2=0$.</p>'
                   '<p><b>Megoldás:</b> $(1;-1)$ és $(2;0)$.</p>')),
-   abra(SVG_RENDSZER, "A rendszer megoldásai a két görbe <b>metszéspontjai</b>. "
-                      "Az algebrai számolás és a kép ugyanazt mondja."),
+   svg_rendszer_interaktiv(),
  ]),
 
  ("Hány megoldás lehet?", [

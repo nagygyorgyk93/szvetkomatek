@@ -664,6 +664,69 @@ def svg_terulet_interaktiv():
         attr='data-xr="-.8,6.6" data-yr="-5.2,14.2" data-w="380" data-h="300"')
 
 
+
+def svg_komplex_interaktiv():
+    """A két rész mozgatása, konjugálás és modulusz; az eredeti képaláírás horgonya megmarad."""
+    from abra_common import svg_komplex_konjugalt
+    controls=''
+    for key,title,value in [('x','Valós rész',12),('y','Képzetes rész',8)]:
+        controls+=(f'<div class="iv-vezerlo"><label for="iv-kom-{key}">{title} = '
+                   f'<span class="iv-kom-{key}-ertek">{value//4}</span></label>'
+                   f'<input id="iv-kom-{key}" class="iv-kom-{key}" type="range" min="-16" max="16" step="1" '
+                   f'value="{value}" aria-valuetext="{title}: {value//4}" aria-describedby="iv-komplex-kijelzo"></div>\n')
+    return _iv_modell_keret('komplex',svg_komplex_konjugalt(),controls,
+        'z = 3 + 2i, pontja (3; 2). Konjugáltja z̄ = 3 − 2i, pontja (3; −2). '
+        '|z| = √13 ≈ 3,6056. A két pont a valós tengelyre nézve egymás tükörképe.',
+        r'A kezdőállapot $z=3+2i$: pontja $(3;2)$, konjugáltja $3-2i$, pontja $(3;-2)$. '
+        'A két csúszka a valós és a képzetes részt változtatja −4 és 4 között, negyedegységgel. '
+        'A teli pont a számot, a körvonalas pont a konjugáltját jelöli. '
+        r'A két tengelyen az egységnyi hossz azonos; az origót a teli ponttal összekötő '
+        r'szakasz hossza a modulusz: $|z|=\sqrt{x^2+y^2}$. A gyökös alak pontos, '
+        'a ≈ jel utáni érték kerekített. Ha a képzetes rész nulla, a két pont egybeesik; '
+        'nagyon közeli pontok a képen összemosódhatnak, a kijelző külön megadja őket.',
+        cap_id='abra-komplex-sik-leiras',
+        attr='data-xr="-4.5,4.5" data-yr="-4.5,4.5" data-unit="33" data-par="31.5" data-h="360"')
+
+
+def svg_rendszer_interaktiv():
+    """A parabola változatlan, az egyenes eltolását egyetlen csúszka állítja."""
+    from abra_common import svg_parabola_egyenes
+    controls=('<div class="iv-vezerlo"><label for="iv-rend-c">Az egyenes eltolása, $c$ = '
+              '<span class="iv-rend-c-ertek">−2</span></label>'
+              '<input id="iv-rend-c" class="iv-rend-c" type="range" min="-16" max="8" step="1" '
+              'value="-8" aria-valuetext="Az egyenes eltolása: −2" aria-describedby="iv-rendszer-kijelzo"></div>\n')
+    return _iv_modell_keret('rendszer',svg_parabola_egyenes(),controls,
+        'Az egyenes y = x − 2. Két közös pont, két megoldáspár: (1; −1) és (2; 0).',
+        r'A parabola rögzített: $y=x^2-2x$. A csúszka az $y=x+c$ egyenest tolja el '
+        '−4 és 2 között, negyedegységgel; a meredeksége végig 1. '
+        r'A körök a közös pontokat, vagyis a rendszer megoldáspárjait jelölik. '
+        'A zöld folytonos görbe a parabola, a kék szaggatott az egyenes. '
+        r'A kezdő $c=-2$ az eredeti szöveges példa; annak megoldása erre az állásra vonatkozik. '
+        'A ≈ jel a kerekített koordinátákat jelöli. Érintéskor egy közös pont van; '
+        'ha nincs közös pont, a rendszernek nincs valós megoldása.',
+        attr='data-xr="-1,4.5" data-yr="-2,8" data-w="380" data-h="280"')
+
+
+def svg_szinusz_interaktiv():
+    """A sin x = b megoldáshalmaza a zárt intervallumon, a végpontokkal együtt."""
+    from abra_common import svg_szinusz_egyenlet
+    import math
+    controls=('<div class="iv-vezerlo"><label for="iv-szin-b">A keresett szinuszérték, $b$ = '
+              '<span class="iv-szin-b-ertek">0,5</span></label>'
+              '<input id="iv-szin-b" class="iv-szin-b" type="range" min="-30" max="30" step="1" '
+              'value="10" aria-valuetext="A keresett szinuszérték: 0,5" aria-describedby="iv-szinusz-kijelzo"></div>\n')
+    return _iv_modell_keret('szinusz',svg_szinusz_egyenlet(),controls,
+        'sin x = 0,5 a zárt [0; 2π] intervallumon. Két megoldás: x = π/6 vagy x = 5π/6.',
+        r'A csúszka a $\sin x=b$ egyenlet jobb oldalát változtatja −1,5 és 1,5 között, '
+        r'0,05-ös lépéssel. Csak a <b>zárt $[0;2\pi]$ intervallumon</b> keressük a megoldásokat; '
+        'a tengelyen a szögek radiánban szerepelnek. A lila körök a megoldásokat jelölik. '
+        'A zöld folytonos görbe a szinusz, a piros szaggatott egyenes a keresett érték. '
+        r'A kezdő $b=\tfrac12$ a szöveges példa. A kijelző a jellegzetes szögeket '
+        'pontosan adja meg, a többi megoldást ≈ jellel, radiánban, kerekítve. '
+        r'$b=0$ esetén $0$, $\pi$ és $2\pi$ is megoldás: a két végpont külön szám. '
+        'A szöveges példa megoldása a kezdőállapotra vonatkozik.',
+        attr=f'data-xr="-.32,{2*math.pi+.32}" data-yr="-1.75,1.75" data-w="380" data-h="280"')
+
 def svg_interaktiv(mod, poly, *, xr, yr, x0=0.0, csuszka=(-2.0, 2.0, 0.01, 1.0), w=360, h=250,
                    gorbe_cimke="f", f2=False, felirat="", leiras="Interaktív függvényábra",
                    pont_cimke="P", szin="#2563eb", ab=(0.0, 1.0), pontos="", sereg_c=(-2, -1, 1, 2)):

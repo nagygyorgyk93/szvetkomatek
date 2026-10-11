@@ -3,66 +3,11 @@
 i hatványai és egyenletek (C3). Mentor: X. Károly professzor."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra
+from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_komplex_interaktiv
 
 T = dict(tagozat="2e", mappa="01-hatvanyozas-gyokvonas-komplex-szamok",
          temakor="Hatványozás, gyökvonás, komplex számok")
 FGY = "feladatok-komplex-szamok.html"
-
-# ------------------------------------------------------------- Gauss-sík SVG
-
-def gauss_sik():
-    ox, oy, e = 148, 132, 34          # origó és egységnyi hossz
-    zx, zy = ox + 3 * e, oy - 2 * e   # z = 3 + 2i
-    kx, ky = ox + 3 * e, oy + 2 * e   # konjugált
-    r = []
-    r.append(('<svg viewBox="0 0 360 262" width="360" height="262" role="img" '
- 'aria-describedby="abra-komplex-sik-leiras" aria-label="A z = 3 + 2i komplex szám és konjugáltja '
- 'a Gauss-síkon, a modulussal mint helyvektor-hosszal">'))
-    r.append('  <defs><marker id="ny2" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" '
-             'markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker>'
-             '<marker id="ny3" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" '
-             'markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#047857"/></marker></defs>')
-    r.append('  <g stroke="#cbd5e1" stroke-width=".6">')
-    for k in range(-3, 6):
-        if k:
-            r.append(f'    <line x1="{ox + k * e}" y1="18" x2="{ox + k * e}" y2="246"/>')
-    for k in range(-3, 4):
-        if k:
-            r.append(f'    <line x1="16" y1="{oy + k * e}" x2="344" y2="{oy + k * e}"/>')
-    r.append('  </g>')
-    r.append(f'  <line x1="16" y1="{oy}" x2="344" y2="{oy}" stroke="#0f172a" stroke-width="1.4" '
-             'marker-end="url(#ny2)"/>')
-    r.append(f'  <line x1="{ox}" y1="246" x2="{ox}" y2="18" stroke="#0f172a" stroke-width="1.4" '
-             'marker-end="url(#ny2)"/>')
-    r.append(f'  <text x="338" y="{oy + 16}" font-size="11" fill="#0f172a" text-anchor="end">Re</text>')
-    r.append(f'  <text x="{ox - 8}" y="28" font-size="11" fill="#0f172a" text-anchor="end">Im</text>')
-    for k in (1, 2, 3, 4):
-        r.append(f'  <text x="{ox + k * e}" y="{oy + 14}" font-size="10" fill="#475569" '
-                 f'text-anchor="middle">{k}</text>')
-    for k, cim in ((1, "1"), (2, "2"), (-2, "−2")):
-        r.append(f'  <text x="{ox - 6}" y="{oy - k * e + 4}" font-size="10" fill="#475569" '
-                 f'text-anchor="end">{cim}</text>')
-    # segédvonalak
-    r.append(f'  <line x1="{zx}" y1="{zy}" x2="{zx}" y2="{oy}" stroke="#94a3b8" stroke-width="1" '
-             'stroke-dasharray="4 3"/>')
-    r.append(f'  <line x1="{zx}" y1="{zy}" x2="{ox}" y2="{zy}" stroke="#94a3b8" stroke-width="1" '
-             'stroke-dasharray="4 3"/>')
-    r.append(f'  <line x1="{zx}" y1="{zy}" x2="{kx}" y2="{ky}" stroke="#f59e0b" stroke-width="1.2" '
-             'stroke-dasharray="3 3"/>')
-    # helyvektor
-    r.append(f'  <line x1="{ox}" y1="{oy}" x2="{zx}" y2="{zy}" stroke="#047857" stroke-width="2.2" '
-             'marker-end="url(#ny3)"/>')
-    r.append(f'  <circle cx="{zx}" cy="{zy}" r="4" fill="#047857"/>')
-    r.append(f'  <circle cx="{kx}" cy="{ky}" r="4" fill="#0f172a" fill-opacity=".55"/>')
-    r.append(f'  <text x="{zx + 9}" y="{zy - 6}" font-size="12" fill="#047857" '
-             'font-weight="600">z = 3 + 2i</text>')
-    r.append(f'  <text x="{kx + 9}" y="{ky + 16}" font-size="12" fill="#334155">z̄ = 3 − 2i</text>')
-    r.append(f'  <text x="{ox + 34}" y="{oy - 40}" font-size="12" fill="#047857" '
-             'font-style="italic">|z| = √13</text>')
-    r.append('</svg>')
-    return "\n".join(r)
-
 
 # =====================================================================  C1
 
@@ -130,11 +75,7 @@ C1 = [
    'Két adat pedig természetes módon egy <b>pontot</b> jelöl ki a síkon. Ezt a szemléltetést '
    '<b>Gauss-síknak</b> vagy komplex számsíknak hívjuk: a vízszintes tengelyen a valós rész, '
    'a függőlegesen a képzetes rész.',
-   abra(gauss_sik(),
-        ('<span id="abra-komplex-sik-leiras">A $z=3+2i$ szám a $(3;2)$ pontnak felel meg; a vízszintes '
- 'tengely a valós, a függőleges a képzetes részt mutatja. A konjugált $3-2i$, pontja $(3;-2)$: az '
- 'eredeti pont valós tengelyre vett tükörképe. Az origóból a $z$ pontjába mutató helyvektor hossza '
- 'a <b>modulusz</b>: $|z|=\\sqrt{13}$.</span>')),
+   svg_komplex_interaktiv(),
    doboz("pelda", "Vészterem-szimuláció",
          '<p>Hol helyezkednek el a Gauss-síkon a $z_{1}=2$, $z_{2}=-3i$ és $z_{3}=-1+i$ számok?</p>',
          lenyilo=("Megoldás",

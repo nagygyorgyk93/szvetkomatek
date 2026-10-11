@@ -3,7 +3,7 @@
 egyszeru trigonometrikus egyenletek (C3). Mentor: Szürke Janka."""
 import sys, os, math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra
+from tananyag_common import lap, doboz, brief, kviz, gyakorolj, abra, svg_szinusz_interaktiv
 
 T = dict(tagozat="2e", mappa="04-trigonometrikus-fuggvenyek",
          temakor="Trigonometrikus függvények")
@@ -156,12 +156,6 @@ SVG_FAZIS = svg_hullam(
      (lambda x: 2*math.sin(x - math.pi/3) + 1, "#ef4444", "y = 2sin(x − π/3) + 1")],
     xr=(-0.6*P2, 2.3*P2), yr=(-2.4, 3.4), h=260,
     leiras="Fáziseltolás és függőleges eltolás az alapgörbéhez képest")
-
-SVG_EGY = svg_hullam(
-    [(math.sin, "#047857", "y = sin x"), (lambda x: 0.5, "#ef4444", "y = ½")],
-    xr=(-0.4*P2, 2.3*P2), yr=(-1.5, 1.9), h=230,
-    leiras="A sin x egyenlő fél egyenlet megoldásai: a görbe és a vízszintes egyenes "
-           "metszéspontjai")
 
 # ===================================================================== C1
 
@@ -381,8 +375,7 @@ C3 = [
    'Ekkor $\\sin x=\\tfrac12$; a kör I. és II. negyedében '
    '$x=\\tfrac{\\pi}{6}$ vagy $x=\\tfrac{5\\pi}{6}$. '
    'A megadott intervallumon csak ezt a két szöget kell megadni.</p>',
-   abra(SVG_EGY, "A $\\sin x=\\tfrac12$ egyenlet megoldásai ott vannak, ahol a "
-                 "hullám metszi az $y=\\tfrac12$ egyenest — <b>periódusonként kétszer</b>."),
+   svg_szinusz_interaktiv(),
    doboz("tetel", "A három alaptípus",
          (
              '<p>Legyen $\\alpha$ az az első negyedbeli <b>alapszög</b> ($0\\le\\alpha\\le\\tfrac{\\pi}{2}$), amelynél '
@@ -483,8 +476,8 @@ C3 = [
              '<ol><li>Keresd meg a <b>határszögeket</b>: oldd meg az egyenlőséget ($\\sin '
              'x=\\tfrac12$).</li><li>Nézd meg a <b>trigonometrikus körön</b> (vagy a grafikonon), a két határ '
              '<b>melyik oldalán</b> teljesül az egyenlőtlenség.</li><li>Írd fel a megadott intervallumon belüli '
-             'megoldást. Csak az összes valós megoldás keresésekor told el <b>periódusonként</b>: $+k\\cdot '
-             '360^\\circ$, ahol $k\\in\\mathbb{Z}$.</li></ol><p>Az egyenlőséget adó határszög szigorú '
+             'megoldást. Csak az összes valós megoldás keresésekor told el <b>periódusonként</b>: radiánban '
+             '$+2k\\pi$, fokban $+k\\cdot360^\\circ$, ahol $k\\in\\mathbb{Z}$.</li></ol><p>Az egyenlőséget adó határszög szigorú '
              'egyenlőtlenségnél kimarad, $\\le$ vagy $\\ge$ esetén beletartozik. A megadott vizsgálati intervallum '
              'végpontjait külön ellenőrizd.</p>'
          ),

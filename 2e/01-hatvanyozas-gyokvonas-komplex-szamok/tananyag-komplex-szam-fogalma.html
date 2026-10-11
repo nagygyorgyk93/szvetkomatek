@@ -97,48 +97,46 @@
 
     Egy komplex számot <b>két</b> valós adat határoz meg: a valós és a képzetes része. Két adat pedig természetes módon egy <b>pontot</b> jelöl ki a síkon. Ezt a szemléltetést <b>Gauss-síknak</b> vagy komplex számsíknak hívjuk: a vízszintes tengelyen a valós rész, a függőlegesen a képzetes rész.
 
-    <div class="svgcard">
-    <svg viewBox="0 0 360 262" width="360" height="262" role="img" aria-describedby="abra-komplex-sik-leiras" aria-label="A z = 3 + 2i komplex szám és konjugáltja a Gauss-síkon, a modulussal mint helyvektor-hosszal">
-      <defs><marker id="ny2" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker><marker id="ny3" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#047857"/></marker></defs>
-      <g stroke="#cbd5e1" stroke-width=".6">
-        <line x1="46" y1="18" x2="46" y2="246"/>
-        <line x1="80" y1="18" x2="80" y2="246"/>
-        <line x1="114" y1="18" x2="114" y2="246"/>
-        <line x1="182" y1="18" x2="182" y2="246"/>
-        <line x1="216" y1="18" x2="216" y2="246"/>
-        <line x1="250" y1="18" x2="250" y2="246"/>
-        <line x1="284" y1="18" x2="284" y2="246"/>
-        <line x1="318" y1="18" x2="318" y2="246"/>
-        <line x1="16" y1="30" x2="344" y2="30"/>
-        <line x1="16" y1="64" x2="344" y2="64"/>
-        <line x1="16" y1="98" x2="344" y2="98"/>
-        <line x1="16" y1="166" x2="344" y2="166"/>
-        <line x1="16" y1="200" x2="344" y2="200"/>
-        <line x1="16" y1="234" x2="344" y2="234"/>
-      </g>
-      <line x1="16" y1="132" x2="344" y2="132" stroke="#0f172a" stroke-width="1.4" marker-end="url(#ny2)"/>
-      <line x1="148" y1="246" x2="148" y2="18" stroke="#0f172a" stroke-width="1.4" marker-end="url(#ny2)"/>
-      <text x="338" y="148" font-size="11" fill="#0f172a" text-anchor="end">Re</text>
-      <text x="140" y="28" font-size="11" fill="#0f172a" text-anchor="end">Im</text>
-      <text x="182" y="146" font-size="10" fill="#475569" text-anchor="middle">1</text>
-      <text x="216" y="146" font-size="10" fill="#475569" text-anchor="middle">2</text>
-      <text x="250" y="146" font-size="10" fill="#475569" text-anchor="middle">3</text>
-      <text x="284" y="146" font-size="10" fill="#475569" text-anchor="middle">4</text>
-      <text x="142" y="102" font-size="10" fill="#475569" text-anchor="end">1</text>
-      <text x="142" y="68" font-size="10" fill="#475569" text-anchor="end">2</text>
-      <text x="142" y="204" font-size="10" fill="#475569" text-anchor="end">−2</text>
-      <line x1="250" y1="64" x2="250" y2="132" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/>
-      <line x1="250" y1="64" x2="148" y2="64" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/>
-      <line x1="250" y1="64" x2="250" y2="200" stroke="#f59e0b" stroke-width="1.2" stroke-dasharray="3 3"/>
-      <line x1="148" y1="132" x2="250" y2="64" stroke="#047857" stroke-width="2.2" marker-end="url(#ny3)"/>
-      <circle cx="250" cy="64" r="4" fill="#047857"/>
-      <circle cx="250" cy="200" r="4" fill="#0f172a" fill-opacity=".55"/>
-      <text x="259" y="58" font-size="12" fill="#047857" font-weight="600">z = 3 + 2i</text>
-      <text x="259" y="216" font-size="12" fill="#334155">z̄ = 3 − 2i</text>
-      <text x="182" y="92" font-size="12" fill="#047857" font-style="italic">|z| = √13</text>
+    <div class="svgcard interaktiv iv-modell" data-mod="komplex" data-xr="-4.5,4.5" data-yr="-4.5,4.5" data-unit="33" data-par="31.5" data-h="360">
+    <svg viewBox="0 0 360 360" width="360" height="360" role="img" aria-describedby="iv-komplex-kijelzo abra-komplex-sik-leiras" aria-label="A z = 3 + 2i szám és konjugáltja a komplex számsíkon; a helyvektor hossza √13.">
+      <defs><marker id="iv-komplex-nyil" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0f172a"/></marker></defs>
+    <line x1="48" y1="25" x2="48" y2="335" stroke="#cbd5e1" stroke-width="0.6"></line>
+    <line x1="25" y1="312" x2="335" y2="312" stroke="#cbd5e1" stroke-width="0.6"></line>
+    <line x1="81" y1="25" x2="81" y2="335" stroke="#cbd5e1" stroke-width="0.6"></line>
+    <line x1="25" y1="279" x2="335" y2="279" stroke="#cbd5e1" stroke-width="0.6"></line>
+    <line x1="114" y1="25" x2="114" y2="335" stroke="#cbd5e1" stroke-width="0.6"></line>
+    <line x1="25" y1="246" x2="335" y2="246" stroke="#cbd5e1" stroke-width="0.6"></line>
+    <line x1="147" y1="25" x2="147" y2="335" stroke="#cbd5e1" stroke-width="0.6"></line>
+    <line x1="25" y1="213" x2="335" y2="213" stroke="#cbd5e1" stroke-width="0.6"></line>
+    <line x1="213" y1="25" x2="213" y2="335" stroke="#cbd5e1" stroke-width="0.6"></line>
+    <line x1="25" y1="147" x2="335" y2="147" stroke="#cbd5e1" stroke-width="0.6"></line>
+    <line x1="246" y1="25" x2="246" y2="335" stroke="#cbd5e1" stroke-width="0.6"></line>
+    <line x1="25" y1="114" x2="335" y2="114" stroke="#cbd5e1" stroke-width="0.6"></line>
+    <line x1="279" y1="25" x2="279" y2="335" stroke="#cbd5e1" stroke-width="0.6"></line>
+    <line x1="25" y1="81" x2="335" y2="81" stroke="#cbd5e1" stroke-width="0.6"></line>
+    <line x1="312" y1="25" x2="312" y2="335" stroke="#cbd5e1" stroke-width="0.6"></line>
+    <line x1="25" y1="48" x2="335" y2="48" stroke="#cbd5e1" stroke-width="0.6"></line>
+    <line x1="25" y1="180" x2="338" y2="180" stroke="#0f172a" stroke-width="1.4" marker-end="url(#iv-komplex-nyil)"></line>
+    <line x1="180" y1="335" x2="180" y2="22" stroke="#0f172a" stroke-width="1.4" marker-end="url(#iv-komplex-nyil)"></line>
+    <text x="340" y="201" text-anchor="end" fill="#0f172a" font-size="12">Re</text>
+    <text x="169" y="22" text-anchor="end" fill="#0f172a" font-size="12">Im</text>
+    <text x="213" y="200" text-anchor="middle" fill="#0f172a" font-size="11">1</text>
+    <text x="170" y="151" text-anchor="end" fill="#0f172a" font-size="11">1</text>
+    <line class="iv-kom-tukor" x1="279" y1="114" x2="279" y2="246" stroke="#b45309" stroke-width="1.6" stroke-dasharray="4 3"></line>
+    <line class="iv-kom-vektor" x1="180" y1="180" x2="279" y2="114" stroke="#047857" stroke-width="2.3"></line>
+    <circle class="iv-kom-C" cx="279" cy="246" r="5" fill="white" stroke="#0f172a" stroke-width="2"></circle>
+    <circle class="iv-kom-Z" cx="279" cy="114" r="4" fill="#047857"></circle>
+    <text class="iv-kom-z-cim" x="289" y="102" fill="#047857" font-size="13">z</text>
+    <text class="iv-kom-c-cim" x="289" y="266" fill="#0f172a" font-size="13">z̄</text>
     </svg>
+    <p class="iv-statikus">Az ábra kezdőállapotát látod. Az interaktív vezérléshez JavaScript szükséges.</p>
+    <div class="iv-vezerlo"><label for="iv-kom-x">Valós rész = <span class="iv-kom-x-ertek">3</span></label><input id="iv-kom-x" class="iv-kom-x" type="range" min="-16" max="16" step="1" value="12" aria-valuetext="Valós rész: 3" aria-describedby="iv-komplex-kijelzo"></div>
+    <div class="iv-vezerlo"><label for="iv-kom-y">Képzetes rész = <span class="iv-kom-y-ertek">2</span></label><input id="iv-kom-y" class="iv-kom-y" type="range" min="-16" max="16" step="1" value="8" aria-valuetext="Képzetes rész: 2" aria-describedby="iv-komplex-kijelzo"></div>
+    <div class="iv-vezerlo iv-gombsor"><button type="button" class="iv-alaphelyzet">Kezdőállapot</button></div>
+    <p class="iv-kijelzo" id="iv-komplex-kijelzo" aria-live="polite" aria-atomic="true">z = 3 + 2i, pontja (3; 2). Konjugáltja z̄ = 3 − 2i, pontja (3; −2). |z| = √13 ≈ 3,6056. A két pont a valós tengelyre nézve egymás tükörképe.</p>
+    <p class="cap iv-leiras" id="abra-komplex-sik-leiras">A kezdőállapot <span class="math inline">\(z=3+2i\)</span>: pontja <span class="math inline">\((3;2)\)</span>, konjugáltja <span class="math inline">\(3-2i\)</span>, pontja <span class="math inline">\((3;-2)\)</span>. A két csúszka a valós és a képzetes részt változtatja −4 és 4 között, negyedegységgel. A teli pont a számot, a körvonalas pont a konjugáltját jelöli. A két tengelyen az egységnyi hossz azonos; az origót a teli ponttal összekötő szakasz hossza a modulusz: <span class="math inline">\(|z|=\sqrt{x^2+y^2}\)</span>. A gyökös alak pontos, a ≈ jel utáni érték kerekített. Ha a képzetes rész nulla, a két pont egybeesik; nagyon közeli pontok a képen összemosódhatnak, a kijelző külön megadja őket.</p>
     </div>
-    <p class="cap"><span id="abra-komplex-sik-leiras">A <span class="math inline">\(z=3+2i\)</span> szám a <span class="math inline">\((3;2)\)</span> pontnak felel meg; a vízszintes tengely a valós, a függőleges a képzetes részt mutatja. A konjugált <span class="math inline">\(3-2i\)</span>, pontja <span class="math inline">\((3;-2)\)</span>: az eredeti pont valós tengelyre vett tükörképe. Az origóból a <span class="math inline">\(z\)</span> pontjába mutató helyvektor hossza a <b>modulusz</b>: <span class="math inline">\(|z|=\sqrt{13}\)</span>.</span></p>
+    <script src="../../assets/js/interaktiv.js" defer></script>
 
     <div class="doboz pelda">
       <p class="cim"><span class="ikon">✏️</span> Vészterem-szimuláció</p>

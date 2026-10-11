@@ -27,6 +27,12 @@ Jelenleg nincs ilyen tétel. (A 4e-s pilot `meret` mezőjét a tanár engedély�
 
 ---
 
+## Aktuális helyi munkarend — 2026-10-11
+
+A tanár engedélye alapján **minden lezárt, ellenőrzött adag után pusholunk**.
+Helyi `main` az alapértelmezett; új ág nem készül. A korábbi bejegyzésekben
+szereplő „push nélkül” az akkori állapotot rögzíti.
+
 ## M — Média
 
 ### M1 · Oktatóvideók (MNT Távoktatás) a tananyag-egységekhez
@@ -647,14 +653,16 @@ vektorösszeadás; kör és egyenes kölcsönös helyzete; sorozat ε-sávja.
 | ◐ Első megvalósítás helyben kész, 2026-10-10 | ◐ I1-04 homotécia | ◐ I1-06 exponenciális alap | — | ◐ I1-13 sorozat/ε-sáv |
 | ◐ Második megvalósítás helyben kész, 2026-10-10 | — | — | ◐ I1-09 gúla; I1-11 távolság; I1-12 kör–egyenes | — |
 | ◐ Harmadik megvalósítás helyben kész, 2026-10-10 | — | — | — | ◐ I1-14 határérték/pontérték; I1-15 előjeles integrál/terület |
+| ☑ Negyedik megvalósítás kész, 2026-10-11 | — | ☑ I1-05 komplex; I1-07 rendszer; I1-08 szinuszegyenlet | — | — |
 
 A 16 jelölt rangsora és kimenetkapcsolata: [I1 interaktív jelöltlista](I1_interaktiv_jeloltlista.md).
 A tanár jóváhagyta az első három modell elkészítését; [az első adag](I1_elso_adag.md)
 helyben megvalósult, matematikai/mobilos/billentyűzetes és nyomtatási próbái rendben.
 A folytatásban [a 3e három geometriai modellje](I1_masodik_adag.md) is elkészült:
 I1-09, I1-11, I1-12. [A harmadik adagban](I1_harmadik_adag.md) I1-14 és I1-15 is kész.
-Összesen 8/16 jelölt kész, 8 terv maradt; négy további ötlet a meglévő GeoGebra cseréjére. Az elkészült modellekhez nincs nyitott döntés.
-Tanári kérésre helyi mainen dolgozunk, új ág nélkül; push csak külön kérésre.
+[A negyedik adagban](I1_negyedik_adag.md) I1-05, I1-07 és I1-08 készült el a 2e-ben.
+Összesen 11/16 jelölt kész, 5 terv maradt; négy további ötlet a meglévő GeoGebra cseréjére. Az elkészült modellekhez nincs nyitott döntés.
+Tanári kérésre helyi mainen dolgozunk, új ág nélkül; minden lezárt, ellenőrzött adag feltöltése engedélyezett.
 
 ---
 

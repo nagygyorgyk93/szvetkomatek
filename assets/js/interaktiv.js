@@ -27,6 +27,9 @@
  *   kor — kör és párhuzamosan eltolt egyenes; távolság és közös pontok
  *   hatarertek — közelítés balról/jobbról, külön rögzített lyukkal és pontbeli értékkel
  *   terulet — változó jobb határ; előjeles integrál és nemnegatív terület pontos törtértékekkel
+ *   komplex — valós/képzetes rész, konjugált és pontos modulusz
+ *   rendszer — rögzített parabola és eltolt egyenes közös pontjai
+ *   szinusz — sin x = b a zárt [0;2π] intervallumon, a végpontokkal együtt
  * A függvény polinom: data-poly="a0,a1,a2,…" (a0 + a1·x + a2·x² + …) — nincs eval.
  * Koordináták: data-xr="x0,x1", data-yr="y0,y1", data-w, data-h (a svg_fuggvenyek() margóival).
  */
@@ -605,6 +608,96 @@
     frissit();return true;
   }
 
+  // ------------------------------------------------------------ a 2e fogalmi szemléltetései
+  function ivKomplexAlak(x,y) {
+    if(!y)return pontosFmt(x);
+    var tag=(Math.abs(y)===1?'':pontosFmt(Math.abs(y)))+'i';
+    return x?pontosFmt(x)+(y<0?' − ':' + ')+tag:(y<0?'−':'')+tag;
+  }
+  function ivGyokNegyed(n) {
+    if(!n)return '0';
+    var a=1;for(var j=2;j*j<=n;j++)if(n%(j*j)===0)a=j;
+    var rad=n/(a*a),oszto=1;for(var k=1;k<=4;k++)if(a%k===0&&4%k===0)oszto=k;
+    a/=oszto;var den=4/oszto;
+    if(rad===1)return pontosFmt(a/den);
+    return (a===1?'':a)+'√'+rad+(den===1?'':'/'+den);
+  }
+  function komplex(doboz) {
+    var sx=doboz.querySelector('.iv-kom-x'),sy=doboz.querySelector('.iv-kom-y'),svg=doboz.querySelector('svg');
+    if(!(sx&&sy&&svg))return;
+    var P=ivSik(doboz).P,Z=doboz.querySelector('.iv-kom-Z'),C=doboz.querySelector('.iv-kom-C');
+    var zc=doboz.querySelector('.iv-kom-z-cim'),cc=doboz.querySelector('.iv-kom-c-cim');
+    function frissit(){
+      var ix=Number(sx.value),iy=Number(sy.value),x=ix/4,y=iy/4,z=P(x,y),c=P(x,-y),n=ix*ix+iy*iy;
+      ivPont(Z,z,x,y);ivPont(C,c,x,-y);C.style.display=y?'':'none';
+      ivVonal(doboz.querySelector('.iv-kom-vektor'),P(0,0),z);
+      ivVonal(doboz.querySelector('.iv-kom-tukor'),z,c);
+      var dx=x>3?-10:10,felso=-13,also=Math.abs(y)<.5?33:23;
+      // A tengely egységjelölése és a felső Im felirat mellett szabad helyet hagyunk.
+      if(x>=-1&&x<=-.5&&Math.abs(y)<=1)dx=30;
+      if(Math.abs(y)>3.5){felso=23;also=-13;}
+      zc.setAttribute('text-anchor',x>3?'end':'start');cc.setAttribute('text-anchor',x>3?'end':'start');
+      ivFelirat(zc,z,dx,y<0?also:felso,y?'z':'z = z̄');
+      ivFelirat(cc,c,dx,y<0?felso:also,'z̄');cc.style.display=y?'':'none';
+      for(var item of [[sx,'x','Valós rész',x],[sy,'y','Képzetes rész',y]]){
+        doboz.querySelector('.iv-kom-'+item[1]+'-ertek').textContent=pontosFmt(item[3]);
+        item[0].setAttribute('aria-valuetext',item[2]+': '+pontosFmt(item[3]));
+      }
+      var root=ivGyokNegyed(n),norm=Math.sqrt(n)/4;
+      var status='z = '+ivKomplexAlak(x,y)+', pontja ('+pontosFmt(x)+'; '+pontosFmt(y)+'). '+
+        'Konjugáltja z̄ = '+ivKomplexAlak(x,-y)+', pontja ('+pontosFmt(x)+'; '+pontosFmt(-y)+'). '+
+        '|z| = '+root+(root.includes('√')?' ≈ '+pontosFmt(norm):'')+'. '+
+        (y?'A két pont a valós tengelyre nézve egymás tükörképe.':'A két pont egybeesik a valós tengelyen.');
+      doboz.querySelector('.iv-kijelzo').textContent=status;svg.setAttribute('aria-label',status);
+      doboz.dataset.normaSzamlalo=n;
+    }
+    sx.addEventListener('input',frissit);sy.addEventListener('input',frissit);
+    visszaallit(doboz,function(){sx.value='12';sy.value='8';frissit();});frissit();return true;
+  }
+
+  function rendszer(doboz) {
+    var r=doboz.querySelector('.iv-rend-c'),g=doboz.querySelector('.iv-rend-pontok');if(!(r&&g))return;
+    var P=ivGrafikon(doboz).P;
+    function frissit(){
+      var tick=Number(r.value),c=tick/4,D=9+tick,roots=D<0?[]:(D===0?[1.5]:[(3-Math.sqrt(D))/2,(3+Math.sqrt(D))/2]);
+      ivVonal(doboz.querySelector('.iv-rend-egyenes'),P(-1,-1+c),P(4.5,4.5+c));
+      g.replaceChildren();roots.forEach(function(x){var y=x+c,p=P(x,y);
+        g.appendChild(ivSvgElem('circle',{cx:p[0],cy:p[1],r:4.5,fill:'white',stroke:'#7c3aed','stroke-width':2,'data-x':x,'data-y':y}));});
+      var desc=D<0?'Nincs közös pont: a rendszernek nincs valós megoldása.':
+        (D===0?'Érintés, egy közös pont, egy megoldáspár: ':'Két közös pont, két megoldáspár: ')+
+        (Number.isInteger(Math.sqrt(D))?'':'≈ ')+roots.map(function(x){return '('+pontosFmt(x)+'; '+pontosFmt(x+c)+')';}).join(' és ')+'.';
+      var status='Az egyenes y = x'+(c? (c<0?' − ':' + ')+pontosFmt(Math.abs(c)):'')+'. '+desc;
+      doboz.querySelector('.iv-rend-c-ertek').textContent=pontosFmt(c);
+      r.setAttribute('aria-valuetext','Az egyenes eltolása: '+pontosFmt(c));
+      doboz.querySelector('.iv-kijelzo').textContent=status;doboz.querySelector('svg').setAttribute('aria-label',status);
+      doboz.dataset.diszkriminans=D;
+    }
+    r.addEventListener('input',frissit);visszaallit(doboz,function(){r.value='-8';frissit();});frissit();return true;
+  }
+
+  function szinusz(doboz) {
+    var r=doboz.querySelector('.iv-szin-b'),g=doboz.querySelector('.iv-szin-pontok');if(!(r&&g))return;
+    var P=ivGrafikon(doboz).P,xr=szamok(doboz.getAttribute('data-xr'));
+    function frissit(){
+      var tick=Number(r.value),b=tick/20,roots=[],exact;
+      if(tick===0){roots=[0,Math.PI,2*Math.PI];exact='0, π vagy 2π';}
+      else if(tick===20){roots=[Math.PI/2];exact='π/2';}
+      else if(tick===-20){roots=[3*Math.PI/2];exact='3π/2';}
+      else if(Math.abs(tick)<20){var alpha=Math.asin(b);roots=b>0?[alpha,Math.PI-alpha]:[Math.PI-alpha,2*Math.PI+alpha];
+        if(tick===10)exact='π/6 vagy 5π/6';if(tick===-10)exact='7π/6 vagy 11π/6';}
+      g.replaceChildren();roots.forEach(function(x){var p=P(x,b);g.appendChild(ivSvgElem('circle',
+        {cx:p[0],cy:p[1],r:4.5,fill:'white',stroke:'#7c3aed','stroke-width':2,'data-x':x,'data-y':b}));});
+      ivVonal(doboz.querySelector('.iv-szin-egyenes'),P(xr[0],b),P(xr[1],b));
+      var count=roots.length,words=['','Egy megoldás','Két megoldás','Három megoldás'];
+      var desc=count?words[count]+': '+(exact?'x = '+exact: 'x ≈ '+roots.map(pontosFmt).join(' vagy ')+' radián')+'.':
+        'Nincs megoldás, mert a szinusz értéke −1 és 1 közé esik.';
+      var status='sin x = '+pontosFmt(b)+' a zárt [0; 2π] intervallumon. '+desc;
+      doboz.querySelector('.iv-szin-b-ertek').textContent=pontosFmt(b);r.setAttribute('aria-valuetext','A keresett szinuszérték: '+pontosFmt(b));
+      doboz.querySelector('.iv-kijelzo').textContent=status;doboz.querySelector('svg').setAttribute('aria-label',status);
+    }
+    r.addEventListener('input',frissit);visszaallit(doboz,function(){r.value='10';frissit();});frissit();return true;
+  }
+
   function indit(doboz) {
     var mod = doboz.getAttribute("data-mod");
     if (mod === "pascal") return pascal(doboz);
@@ -615,6 +708,9 @@
     if (mod === "sorozat") return sorozat(doboz);
     if (mod === "hatarertek") return hatarertek(doboz);
     if (mod === "terulet") return terulet(doboz);
+    if (mod === "komplex") return komplex(doboz);
+    if (mod === "rendszer") return rendszer(doboz);
+    if (mod === "szinusz") return szinusz(doboz);
     if (mod === "gula") return gula(doboz);
     if (mod === "tavolsag") return tavolsag(doboz);
     if (mod === "kor") return kor(doboz);
