@@ -30,6 +30,9 @@
  *   komplex — valós/képzetes rész, konjugált és pontos modulusz
  *   rendszer — rögzített parabola és eltolt egyenes közös pontjai
  *   szinusz — sin x = b a zárt [0;2π] intervallumon, a végpontokkal együtt
+ *   nyildiagram — a két eredeti hozzárendelés, kiválasztott bemenet nyilaival
+ *   eltolas — a meglévő háromszög eltolása, vízszintes és függőleges komponenssel
+ *   felegyenes — változó határpont és relációjel a számegyenesen
  * A függvény polinom: data-poly="a0,a1,a2,…" (a0 + a1·x + a2·x² + …) — nincs eval.
  * Koordináták: data-xr="x0,x1", data-yr="y0,y1", data-w, data-h (a svg_fuggvenyek() margóival).
  */
@@ -698,8 +701,103 @@
     r.addEventListener('input',frissit);visszaallit(doboz,function(){r.value='10';frissit();});frissit();return true;
   }
 
+  // Az 1e három meglévő ábrájának állítható változata.
+  function nyildiagram(doboz) {
+    var eset = doboz.querySelector('.iv-nyil-eset'), bemenet = doboz.querySelector('.iv-nyil-bemenet');
+    var elek = doboz.querySelector('.iv-nyil-elek'), kiemeles = doboz.querySelector('.iv-nyil-kiemeles');
+    var kijelzo = doboz.querySelector('.iv-kijelzo'), svg = doboz.querySelector('svg');
+    if (!(eset && bemenet && elek && kiemeles && kijelzo && svg)) return;
+    var hozzarendeles = {f: [[1,'a'],[2,'b'],[3,'b']], r: [[1,'a'],[1,'b'],[3,'c']]};
+    var y = {a:79, b:140, c:201};
+    function frissit() {
+      var n = Number(bemenet.value), parok = hozzarendeles[eset.value], kepek = [];
+      urit(elek); urit(kiemeles);
+      kiemeles.appendChild(ivSvgElem('circle', {cx:70, cy:85+(n-1)*55, r:12, fill:'#fde68a'}));
+      parok.forEach(function (par) {
+        var aktiv = par[0] === n;
+        elek.appendChild(ivSvgElem('line', {x1:75, y1:85+(par[0]-1)*55, x2:283, y2:y[par[1]],
+          stroke:aktiv?'#7c3aed':SZURKE, 'stroke-width':aktiv?3:1.6, 'stroke-dasharray':aktiv?'':'4 3',
+          'marker-end':'url(#iv-nyil-'+(aktiv?'aktiv':'halvany')+')', 'data-from':par[0], 'data-to':par[1], 'data-active':aktiv}));
+        if (aktiv) {
+          kepek.push(par[1]);
+          kiemeles.appendChild(ivSvgElem('circle', {cx:290, cy:y[par[1]], r:11, fill:'none', stroke:'#7c3aed', 'stroke-width':2}));
+        }
+      });
+      var teljes = eset.value === 'f' ? 'A teljes hozzárendelés függvény: minden bemenetnek pontosan egy képe van. '
+        : 'A teljes hozzárendelés nem függvény: az 1-hez két elem tartozik, a 2-höz egy sem. ';
+      var resz = kepek.length === 0 ? 'A kiemelt '+n+' bemenethez nem tartozik kép.'
+        : kepek.length === 1 ? 'A kiemelt '+n+' bemenet képe '+kepek[0]+(eset.value === 'f'?'; f('+n+') = '+kepek[0]: '')+'.'
+        : 'A kiemelt '+n+' bemenethez két kép tartozik: '+kepek.join(' és ')+'.';
+      kijelzo.textContent = teljes + resz; svg.setAttribute('aria-label', teljes + resz);
+    }
+    eset.addEventListener('change', frissit); bemenet.addEventListener('change', frissit);
+    visszaallit(doboz, function () { eset.value='f'; bemenet.value='1'; frissit(); });
+    frissit(); return true;
+  }
+
+  function eltolas(doboz) {
+    var sx = doboz.querySelector('.iv-elt-x'), sy = doboz.querySelector('.iv-elt-y');
+    var kep = doboz.querySelector('.iv-elt-kep'), nyilak = doboz.querySelector('.iv-elt-nyilak');
+    var kijelzo = doboz.querySelector('.iv-kijelzo'), svg = doboz.querySelector('svg');
+    if (!(sx && sy && kep && nyilak && kijelzo && svg)) return;
+    var alap = [[-2,2.6],[0,-1.2],[-2.6,-.8]], sik = ivSik(doboz);
+    function frissit() {
+      var x = Number(sx.value)/5, y = Number(sy.value)/5;
+      var pontok = alap.map(function (p) { return sik.P(p[0]+x,p[1]+y); });
+      kep.setAttribute('points',pontok.map(function (p) { return p.join(','); }).join(' '));
+      var vonalak = nyilak.querySelectorAll('line');
+      alap.forEach(function (p,i) { ivVonal(vonalak[i],sik.P(p[0],p[1]),pontok[i]); });
+      nyilak.style.display = x===0 && y===0 ? 'none' : '';
+      [sx,sy].forEach(function (r,i) {
+        var v=i?y:x, key=i?'y':'x', title=i?'Függőleges eltolás':'Vízszintes eltolás';
+        doboz.querySelector('.iv-elt-'+key+'-ertek').textContent=pontosFmt(v);
+        r.setAttribute('aria-valuetext',title+': '+pontosFmt(v));
+      });
+      var vektor = 'v = ('+pontosFmt(x)+'; '+pontosFmt(y)+')';
+      doboz.querySelector('.iv-elt-v-cim').textContent=vektor;
+      var irany = [];
+      if (x) irany.push(pontosFmt(Math.abs(x))+' egységgel '+(x>0?'jobbra':'balra'));
+      if (y) irany.push(pontosFmt(Math.abs(y))+' egységgel '+(y>0?'felfelé':'lefelé'));
+      kijelzo.textContent='Az eltolásvektor '+vektor+'. '+(irany.length?'Minden csúcs '+irany.join(' és ')+ ' mozdul. ':'Nullvektor: minden pont helyben marad. ')
+        +'Az oldalak hossza, a szögek és a körüljárás iránya megmarad.';
+      svg.setAttribute('aria-label',kijelzo.textContent);
+    }
+    sx.addEventListener('input',frissit); sy.addEventListener('input',frissit);
+    visszaallit(doboz,function () { sx.value=24; sy.value=-5; frissit(); });
+    frissit(); return true;
+  }
+
+  function felegyenes(doboz) {
+    var jel = doboz.querySelector('.iv-fel-jel'), csuszka = doboz.querySelector('.iv-fel-b');
+    var hatar = doboz.querySelector('.iv-fel-hatar'), sugar = doboz.querySelector('.iv-fel-sugar');
+    var nyil = doboz.querySelector('.iv-fel-nyil'), vet = doboz.querySelector('.iv-fel-vet');
+    var kijelzo = doboz.querySelector('.iv-kijelzo'), svg = doboz.querySelector('svg');
+    if (!(jel && csuszka && hatar && sugar && nyil && vet && kijelzo && svg)) return;
+    function frissit() {
+      var b=Number(csuszka.value)/4, jobb=jel.value==='gt'||jel.value==='ge', zart=jel.value==='ge'||jel.value==='le';
+      var x=26+(b+5)*32.8, s=pontosFmt(b), jeloles={gt:'>',ge:'≥',lt:'<',le:'≤'}[jel.value];
+      ivVonal(sugar,[x,56],[jobb?354:26,56]);
+      nyil.setAttribute('points',jobb?'354,56 344,51 344,61':'26,56 36,51 36,61');
+      ivVonal(vet,[x,64],[x,83]); hatar.setAttribute('cx',x); hatar.setAttribute('fill',zart?ZOLD:'white');
+      ivFelirat(doboz.querySelector('.iv-fel-b-cim'),[x,30],0,0,'b = '+s);
+      doboz.querySelector('.iv-fel-b-ertek').textContent=s; csuszka.setAttribute('aria-valuetext','Határpont: '+s);
+      var intervallum=jobb?(zart?'[':'(')+s+'; +∞)':'(−∞; '+s+(zart?']':')');
+      kijelzo.textContent='x '+jeloles+' '+s+'. Megoldáshalmaz: '+intervallum+'. '
+        +(zart?'Zárt határpont: a '+s+' megoldás. ':'Nyílt határpont: a '+s+' nem megoldás. ')
+        +'A félegyenes '+(jobb?'jobbra':'balra')+' halad.';
+      svg.setAttribute('aria-label',kijelzo.textContent);
+    }
+    jel.addEventListener('change',frissit); csuszka.addEventListener('input',frissit);
+    visszaallit(doboz,function () { jel.value='gt'; csuszka.value=8; frissit(); });
+    frissit(); return true;
+  }
+
+
   function indit(doboz) {
     var mod = doboz.getAttribute("data-mod");
+    if (mod === "nyildiagram") return nyildiagram(doboz);
+    if (mod === "eltolas") return eltolas(doboz);
+    if (mod === "felegyenes") return felegyenes(doboz);
     if (mod === "pascal") return pascal(doboz);
     if (mod === "szimulacio") return szimulacio(doboz);
     if (mod === "adatlabor") return adatlabor(doboz);

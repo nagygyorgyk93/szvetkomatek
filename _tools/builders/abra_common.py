@@ -3052,3 +3052,68 @@ def svg_szinusz_egyenlet():
         p=P(x,.5);extra.append(_iv_sik_elem('circle',{'cx':p[0],'cy':p[1],'r':4.5,'fill':'white','stroke':'#7c3aed','stroke-width':2,'data-x':x,'data-y':.5}))
     extra.append('</g></g>')
     return svg+'\n'+'\n'.join(extra)+'\n</svg>'
+
+def svg_nyildiagram():
+    """A meglévő függvényes példa, kiemelt 1 bemenettel; a másik reláció JS-ből választható."""
+    svg='\n'.join(_fej(360,250,'Függvény: 1 képe a, 2 és 3 képe b. A kiemelt bemenet 1, képe a.'))
+    svg=svg.replace('id="nyil"','id="iv-nyil-alap"')
+    extra=['<defs><marker id="iv-nyil-aktiv" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#7c3aed"/></marker><marker id="iv-nyil-halvany" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#64748b"/></marker></defs>',
+           _iv_sik_elem('ellipse',{'cx':70,'cy':137,'rx':48,'ry':99,'fill':'#eff6ff','stroke':'#2563eb','stroke-width':1.8}),
+           _iv_sik_elem('ellipse',{'cx':290,'cy':137,'rx':48,'ry':99,'fill':'#ecfdf5','stroke':ZOLD,'stroke-width':1.8}),
+           _iv_sik_elem('text',{'x':70,'y':28,'text-anchor':'middle','font-size':15,'fill':TINTA},'A'),
+           _iv_sik_elem('text',{'x':290,'y':28,'text-anchor':'middle','font-size':15,'fill':TINTA},'B'),
+           '<g class="iv-nyil-kiemeles"><circle cx="70" cy="85" r="12" fill="#fde68a"/><circle cx="290" cy="79" r="11" fill="none" stroke="#7c3aed" stroke-width="2"/></g>']
+    for k,y in enumerate([85,140,195],1):
+        extra.extend([_iv_sik_elem('circle',{'cx':70,'cy':y,'r':4,'fill':TINTA}),_iv_sik_elem('text',{'x':52,'y':y+5,'font-size':15,'fill':TINTA},str(k))])
+    for t,y in zip('abc',[79,140,201]):
+        extra.extend([_iv_sik_elem('circle',{'cx':290,'cy':y,'r':4,'fill':TINTA}),_iv_sik_elem('text',{'x':305,'y':y+5,'font-size':15,'fill':TINTA},t)])
+    extra.append('<g class="iv-nyil-elek">')
+    for x,t,y in [(1,'a',79),(2,'b',140),(3,'b',140)]:
+        aktiv=x==1
+        extra.append(_iv_sik_elem('line',{'x1':75,'y1':85+(x-1)*55,'x2':283,'y2':y,'stroke':'#7c3aed' if aktiv else '#64748b','stroke-width':3 if aktiv else 1.6,'stroke-dasharray':'' if aktiv else '4 3','marker-end':'url(#iv-nyil-'+('aktiv' if aktiv else 'halvany')+')','data-from':x,'data-to':t,'data-active':str(aktiv).lower()}))
+    extra.append('</g>')
+    return svg+'\n'+'\n'.join(extra)+'\n</svg>'
+
+
+def svg_eltolas():
+    """Az eredeti háromszög arányait és a kezdő eltolását őrzi meg, négyzetrácson."""
+    svg='\n'.join(_fej(360,320,'A kitöltött háromszög eltolt képe szaggatott; az eltolásvektor (4,8; −1).'))
+    svg=svg.replace('id="nyil"','id="iv-elt-nyil"').replace('url(#nyil)','url(#iv-elt-nyil)').replace(f'fill="{TINTA}"', 'fill="#7c3aed"', 1)
+    P=lambda x,y:(190+20*x,180-20*y)
+    extra=[]
+    for k in range(-8,8):
+        extra.append(_iv_sik_elem('line',{'x1':P(k,0)[0],'y1':50,'x2':P(k,0)[0],'y2':280,'stroke':'#cbd5e1','stroke-width':.6}))
+    for k in range(-5,7):
+        extra.append(_iv_sik_elem('line',{'x1':25,'y1':P(0,k)[1],'x2':335,'y2':P(0,k)[1],'stroke':'#cbd5e1','stroke-width':.6}))
+    base=[(-2,2.6),(0,-1.2),(-2.6,-.8)]
+    polygon=lambda pts:' '.join(f'{P(x,y)[0]:.3f},{P(x,y)[1]:.3f}' for x,y in pts)
+    image=[(x+4.8,y-1) for x,y in base]
+    extra.extend([_iv_sik_elem('polygon',{'class':'iv-elt-eredeti','points':polygon(base),'fill':'#d1fae5','fill-opacity':.7,'stroke':ZOLD,'stroke-width':2.3}),
+                  _iv_sik_elem('polygon',{'class':'iv-elt-kep','points':polygon(image),'fill':'none','stroke':'#b45309','stroke-width':2.3,'stroke-dasharray':'5 3'}),
+                  '<g class="iv-elt-nyilak">'])
+    for (x,y),(u,v) in zip(base,image):
+        a,b=P(x,y),P(u,v)
+        extra.append(_iv_sik_elem('line',{'x1':a[0],'y1':a[1],'x2':b[0],'y2':b[1],'stroke':'#7c3aed','stroke-width':1.5,'marker-end':'url(#iv-elt-nyil)'}))
+    extra.extend(['</g>',_iv_sik_elem('text',{'x':25,'y':18,'font-size':13,'fill':ZOLD},'Kitöltött: eredeti'),
+                  _iv_sik_elem('text',{'x':200,'y':18,'font-size':13,'fill':'#b45309'},'Szaggatott: kép'),
+                  _iv_sik_elem('text',{'class':'iv-elt-v-cim','x':25,'y':39,'font-size':13,'fill':'#7c3aed'},'v = (4,8; −1)'),
+                  _iv_sik_elem('line',{'x1':25,'y1':299,'x2':45,'y2':299,'stroke':TINTA,'stroke-width':2}),
+                  _iv_sik_elem('text',{'x':53,'y':303,'font-size':12,'fill':TINTA},'1 egység')])
+    return svg+'\n'+'\n'.join(extra)+'\n</svg>'
+
+
+def svg_felegyenes():
+    """x > 2 kezdőállapot; a számegyenes skálája a későbbi mozgatásnál rögzített."""
+    svg='\n'.join(_fej(380,142,'Az x > 2 megoldáshalmaza (2; +∞), a határpont nyílt.'))
+    svg=svg.replace('id="nyil"','id="iv-fel-nyil"')
+    X=lambda x:26+(x+5)*32.8
+    extra=[_iv_sik_elem('line',{'x1':14,'y1':90,'x2':366,'y2':90,'stroke':TINTA,'stroke-width':1.4,'marker-end':'url(#iv-fel-nyil)'})]
+    for k in range(-5,6):
+        extra.extend([_iv_sik_elem('line',{'x1':X(k),'y1':85,'x2':X(k),'y2':95,'stroke':TINTA,'stroke-width':1}),
+                      _iv_sik_elem('text',{'x':X(k),'y':115,'font-size':11,'fill':TINTA,'text-anchor':'middle'},str(k).replace('-','−'))])
+    extra.extend([_iv_sik_elem('line',{'class':'iv-fel-sugar','x1':X(2),'y1':56,'x2':354,'y2':56,'stroke':ZOLD,'stroke-width':3.4}),
+                  _iv_sik_elem('polygon',{'class':'iv-fel-nyil','points':'354,56 344,51 344,61','fill':ZOLD}),
+                  _iv_sik_elem('line',{'class':'iv-fel-vet','x1':X(2),'y1':64,'x2':X(2),'y2':83,'stroke':'#64748b','stroke-width':1,'stroke-dasharray':'3 3'}),
+                  _iv_sik_elem('circle',{'class':'iv-fel-hatar','cx':X(2),'cy':56,'r':5,'fill':'white','stroke':ZOLD,'stroke-width':2}),
+                  _iv_sik_elem('text',{'class':'iv-fel-b-cim','x':X(2),'y':30,'text-anchor':'middle','font-size':13,'fill':TINTA},'b = 2')])
+    return svg+'\n'+'\n'.join(extra)+'\n</svg>'

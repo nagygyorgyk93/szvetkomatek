@@ -727,6 +727,76 @@ def svg_szinusz_interaktiv():
         'A szöveges példa megoldása a kezdőállapotra vonatkozik.',
         attr=f'data-xr="-.32,{2*math.pi+.32}" data-yr="-1.75,1.75" data-w="380" data-h="280"')
 
+
+def svg_nyildiagram_interaktiv():
+    """A két eredeti hozzárendelés választható; a kiválasztott bemenet nyilai kiemelve."""
+    from abra_common import svg_nyildiagram
+    controls=('<div class="iv-vezerlo"><label for="iv-nyil-eset">Hozzárendelés</label>'
+              '<select id="iv-nyil-eset" class="iv-nyil-eset" aria-describedby="iv-nyildiagram-kijelzo">'
+              '<option value="f">Függvény</option><option value="r">Nem függvény</option></select></div>\n'
+              '<div class="iv-vezerlo"><label for="iv-nyil-bemenet">Kiemelt bemenet</label>'
+              '<select id="iv-nyil-bemenet" class="iv-nyil-bemenet" aria-describedby="iv-nyildiagram-kijelzo">'
+              '<option value="1">1</option><option value="2">2</option><option value="3">3</option></select></div>\n')
+    return _iv_modell_keret('nyildiagram',svg_nyildiagram(),controls,
+        'A teljes hozzárendelés függvény: minden bemenetnek pontosan egy képe van. '
+        'A kiemelt 1 bemenet képe a; f(1) = a.',
+        r'A két eredeti példa közül választhatsz, majd kiemelheted az $A$ halmaz egyik elemét. '
+        'Az erős, folytonos nyilak a kiemelt bemenettől indulnak; a többi szaggatott. '
+        'A kijelző a teljes hozzárendelésről és a kiemelt bemenetről külön ad visszajelzést. '
+        r'<br><b>Függvény:</b> $A=\{1,2,3\}$, $B=\{a,b,c\}$; $1\mapsto a$, $2\mapsto b$, '
+        r'$3\mapsto b$. Minden bemenetnek pontosan egy képe van; a $c$ egyik bemenetnek sem képe. '
+        r'<br><span id="abra-nem-fuggveny-leiras"><b>Nem függvény:</b> ugyanazon halmazok között '
+        r'az $1$-hez $a$-t és $b$-t is rendelünk, a $2$-höz semmit, a $3$-hoz $c$-t. '
+        r'Az $1$-nek két képe van, a $2$-nek egy sincs.</span>',
+        cap_id='abra-fuggveny-leiras')
+
+
+def svg_eltolas_interaktiv():
+    """A kezdő eltolás az eredeti kép irányát és arányait adja vissza."""
+    from abra_common import svg_eltolas
+    controls=''
+    for key,title,value,limit in [('x','Vízszintes eltolás',24,25),('y','Függőleges eltolás',-5,15)]:
+        shown=str(value/5).rstrip('0').rstrip('.').replace('.',',').replace('-','−')
+        controls+=(f'<div class="iv-vezerlo"><label for="iv-elt-{key}">{title} = '
+                   f'<span class="iv-elt-{key}-ertek">{shown}</span></label>'
+                   f'<input id="iv-elt-{key}" class="iv-elt-{key}" type="range" min="{-limit}" max="{limit}" '
+                   f'step="1" value="{value}" aria-valuetext="{title}: {shown}" aria-describedby="iv-eltolas-kijelzo"></div>\n')
+    return _iv_modell_keret('eltolas',svg_eltolas(),controls,
+        'Az eltolásvektor v = (4,8; −1). Minden csúcs 4,8 egységgel jobbra és 1 egységgel lefelé mozdul. '
+        'Az oldalak hossza, a szögek és a körüljárás iránya megmarad.',
+        'A kitöltött háromszög az eredeti, a szaggatott az eltolt kép. A három nyíl '
+        r'ugyanazt a $\vec v$ eltolásvektort mutatja a megfelelő csúcspárok között. '
+        'A pozitív vízszintes érték jobbra, a negatív balra tol; a pozitív függőleges '
+        'felfelé, a negatív lefelé. A lépés 0,2 egység; a négyzetrács skálája rögzített. '
+        'A kezdőállapot az eredeti ábra jobbra és lefelé történő eltolását mutatja. '
+        'Nullvektornál minden pont helyben marad. Kis eltolásnál a két alakzat a képen '
+        'összemosódhat; a kijelző az eltolást külön megadja.',
+        cap_id='abra-transzformaciok-1',
+        attr='data-xr="-8.5,7.5" data-yr="-6,8" data-unit="20" data-par="20" data-h="320"')
+
+
+def svg_felegyenes_interaktiv():
+    """A példa első számegyenese változtatható; a három szöveges válasz az eredeti esetre szól."""
+    from abra_common import svg_felegyenes
+    controls=('<div class="iv-vezerlo"><label for="iv-fel-jel">Relációjel</label>'
+              '<select id="iv-fel-jel" class="iv-fel-jel" aria-describedby="iv-felegyenes-kijelzo">'
+              '<option value="gt">x &gt; b</option><option value="ge">x ≥ b</option>'
+              '<option value="lt">x &lt; b</option><option value="le">x ≤ b</option></select></div>\n'
+              '<div class="iv-vezerlo"><label for="iv-fel-b">Határpont, $b$ = '
+              '<span class="iv-fel-b-ertek">2</span></label><input id="iv-fel-b" class="iv-fel-b" '
+              'type="range" min="-16" max="16" step="1" value="8" aria-valuetext="Határpont: 2" '
+              'aria-describedby="iv-felegyenes-kijelzo"></div>\n')
+    return _iv_modell_keret('felegyenes',svg_felegyenes(),controls,
+        'x > 2. Megoldáshalmaz: (2; +∞). Nyílt határpont: a 2 nem megoldás. A félegyenes jobbra halad.',
+        r'A kezdőállapot az első szöveges példa: $x>2$, megoldáshalmaza $(2;+\infty)$. '
+        'A csúszka a határpontot −4 és 4 között, negyedegységgel mozgatja; a választó '
+        'a relációjelet állítja. Az üres karika kizárja a határpontot, a teli karika jelzi, hogy a határpont is megoldás. '
+        'A színes nyíl a félegyenes korlátlan folytatását jelöli; a végtelennél az '
+        'intervallum mindig nyílt. A következő két állókép és a lenyíló megoldás '
+        'az eredeti szöveges példákra vonatkozik.',
+        cap_id='abra-egyenlotlensegek-1')
+
+
 def svg_interaktiv(mod, poly, *, xr, yr, x0=0.0, csuszka=(-2.0, 2.0, 0.01, 1.0), w=360, h=250,
                    gorbe_cimke="f", f2=False, felirat="", leiras="Interaktív függvényábra",
                    pont_cimke="P", szin="#2563eb", ab=(0.0, 1.0), pontos="", sereg_c=(-2, -1, 1, 2)):

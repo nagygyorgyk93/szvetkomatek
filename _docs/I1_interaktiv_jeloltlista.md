@@ -5,9 +5,9 @@
 **A négy évfolyam jelöltlistája helyben elkészült.** Kiindulás: `c4059b2`, tiszta
 helyi `main`, az `origin/main` helyi referenciájával azonos; távoli frissítés nem történt.
 A tanár az I1-listát választotta, majd jóváhagyta az első három modell elkészítését.
-**I1-04, I1-05, I1-06, I1-07, I1-08, I1-09, I1-11, I1-12, I1-13, I1-14 és I1-15 megvalósult és ellenőrizve van.**
-A további 5 jelölt terv. Részletek: [első adag](I1_elso_adag.md), [3e geometriai adag](I1_masodik_adag.md),
-[4e fogalmi adag](I1_harmadik_adag.md), [2e három új modell](I1_negyedik_adag.md).
+**I1-01, I1-02, I1-03, I1-04, I1-05, I1-06, I1-07, I1-08, I1-09, I1-11, I1-12, I1-13, I1-14 és I1-15 megvalósult és ellenőrizve van.**
+A további 2 jelölt terv. Részletek: [első adag](I1_elso_adag.md), [3e geometriai adag](I1_masodik_adag.md),
+[4e fogalmi adag](I1_harmadik_adag.md), [2e három új modell](I1_negyedik_adag.md), [1e három további modell](I1_otodik_adag.md).
 
 A 161 tananyaglap ábráinak és médiáinak leltárából **16 jelöltet** választottam,
 évfolyamonként négyet. **P1:** elsőként érdemes megvalósítani; **P2:** későbbi,
@@ -29,9 +29,10 @@ mind a négy médiakatalógus. A listán szereplő konkrét szakaszok szövegét
 
 ## A jelöltlista induló leltára
 
-Az alábbi számok az első megvalósítás előtti állapotot rögzítik. A négy megvalósítási adag
-után 19 saját interaktív ábra van (1e: 1, 2e: 4, 3e: 3, 4e: 11);
-a matematikai SVG-k száma és a GeoGebra-lefedettség megmaradt.
+Az alábbi számok az első megvalósítás előtti állapotot rögzítik. Az öt megvalósítási adag
+után 22 saját interaktív ábra van (1e: 4, 2e: 4, 3e: 3, 4e: 11).
+A matematikai SVG-k száma 285: a két nyíldiagram egy választható ábrába került,
+mindkét eredeti hozzárendelés megmaradt. A GeoGebra-lefedettség változatlan.
 
 Csak a tananyaglapok matematikai, `role="img"` jelölésű SVG-it számoltam.
 A 286 SVG-ből 8 saját interaktív ábra kezdőképe, 278 állókép. A JPEG-eket
@@ -51,16 +52,16 @@ jelenti. Az appletek mostani külső működését ebben a dokumentációs adagb
 ## Jelöltek évfolyamonként
 
 A link az ábra tényleges tananyagszakaszára vezet. A javasolt vezérlő és a kijelzett
-értékek a többi 5 jelöltnél tervként szerepelnek. I1-04, I1-05, I1-06, I1-07,
+értékek a többi 2 jelöltnél tervként szerepelnek. I1-01, I1-02, I1-03, I1-04, I1-05, I1-06, I1-07,
 I1-08, I1-09, I1-11, I1-12, I1-13, I1-14 és I1-15 elkészült; ezek kezelése és matematikai szélső esetei ellenőrizve vannak.
 
 ### 1e
 
 | Azonosító · sorrend | Lap és meglévő ábra | Mit állítana a vezérlő? | Tanulási haszon | Kimenet |
 |---|---|---|---|---|
-| **I1-01 · P2** | [A függvény fogalma és megadása](../1e/01-logika-halmazok-fuggvenyek/tananyag-fuggveny-fogalma.html#s1) — Függvény és nem függvény nyíldiagramja | Bemenet és a meglévő két példa kiválasztása; a hozzá tartozó nyilak és képek kiemelése. | Megkülönbözteti a „mindenhez tartozik” és a „pontosan egy tartozik” feltételt. | `MAT.F.SO.O.1.8 (8.1)` |
-| **I1-02 · P2** | [Egybevágósági transzformációk](../1e/05-geometria/tananyag-transzformaciok.html#s1) — Eltolt háromszög; később a tükrözés és forgatás ábrája is | Az eltolásvektor két komponense; a többi transzformáció külön nézetben. | Látszik, hogy a hely változik, az oldalak és szögek megmaradnak. | `MAT.G.SO.O.1.5 (5.3)` |
-| **I1-03 · P2** | [Lineáris egyenlőtlenségek](../1e/07-linearis-egyenletek-es-rendszerek/tananyag-egyenlotlensegek.html#s2) — Nyílt/zárt határpont és félegyenes | Határpont mozgatása; <, ≤, >, ≥ közötti választás. | Összeköti az egyenlőtlenséget, a számegyenest és az intervallumjelölést. | `MAT.A.SO.O.1.2 (2.2–2.3)` |
+| **I1-01 · P2 · kész** | [A függvény fogalma és megadása](../1e/01-logika-halmazok-fuggvenyek/tananyag-fuggveny-fogalma.html#s1) — Függvény és nem függvény nyíldiagramja | Bemenet és a meglévő két példa kiválasztása; a hozzá tartozó nyilak és képek kiemelése. | Megkülönbözteti a „mindenhez tartozik” és a „pontosan egy tartozik” feltételt. | `MAT.F.SO.O.1.8 (8.1)` |
+| **I1-02 · P2 · kész** | [Egybevágósági transzformációk](../1e/05-geometria/tananyag-transzformaciok.html#s1) — Eltolt háromszög | Az eltolásvektor két komponense; a többi transzformáció eredeti állóképe megmarad. | Látszik, hogy a hely változik, az oldalak és szögek megmaradnak. | `MAT.G.SO.O.1.5 (5.3)` |
+| **I1-03 · P2 · kész** | [Lineáris egyenlőtlenségek](../1e/07-linearis-egyenletek-es-rendszerek/tananyag-egyenlotlensegek.html#s2) — Nyílt/zárt határpont és félegyenes | Határpont mozgatása; <, ≤, >, ≥ közötti választás. | Összeköti az egyenlőtlenséget, a számegyenest és az intervallumjelölést. | `MAT.A.SO.O.1.2 (2.2–2.3)` |
 | **I1-04 · P1 · helyben kész** | [Homotécia és hasonlóság](../1e/08-hasonlosag/tananyag-homotecia-es-hasonlosag.html#s1) — Az O középpontú homotécia | A k arány állítása; megfelelő csúcspárok és sugarak kiemelése. | Együtt követhető a hossz- és kerületarány, valamint a területarány. | `MAT.G.SO.O.1.5 (5.2); MAT.G.SO.S.1.6 (6.2)` |
 
 ### 2e
@@ -127,6 +128,15 @@ Próba és korlát: [negyedik adag](I1_negyedik_adag.md).
 A tanár minden lezárt, ellenőrzött adag feltöltését engedélyezte;
 helyi mainen dolgozunk, új ág nélkül.
 
+## Megvalósított ötödik adag — 1e
+
+**I1-01 — függvényes nyíldiagram; I1-02 — eltolás; I1-03 — félegyenes.**
+A két eredeti hozzárendelés és bármely bemenet kiemelhető. Az eltolás
+mindkét komponense állítható, a nullvektor is. A félegyenes négy relációjele
+és határpontja együtt frissíti a rajzot és az intervallumot.
+Próbák és korlátok: [ötödik adag](I1_otodik_adag.md).
+Az 1e négy jelöltje elkészült; összesen 14/16 kész. I1-10 és I1-16 maradt.
+
 ## Meglévő modellekhez kötődő cserejavaslatok
 
 Ezeket külön kell mérlegelni, mert azonos célt szolgáló GeoGebra már van a lapon.
@@ -149,8 +159,8 @@ a meglévő pozitív görbe alatti téglalapos közelítés más kérdést szeml
 A 4e-ben a szelő/derivált, monotonitás/érintő, konvexitás, primitív függvénysereg,
 téglalapos integrálközelítés, Pascal-háromszög, érme- és kockaszimulátor, valamint
 adatlabor már működő saját modell. A két érintős ábra azonos módra épül:
-**nyolc ábra, hét működési mód**. Az I1 négy adaga további tizenegy
-ábrát és tizenegy módot adott: összesen 19 ábra, 18 mód. A jelöltlista ezeket
+**nyolc ábra, hét működési mód**. Az I1 öt adaga további tizennégy
+ábrát és tizennégy módot adott: összesen 22 ábra, 21 mód. A jelöltlista ezeket
 megvalósult lefedettségként kezeli.
 
 A szinusz/koszinusz egységkörből való kirajzolása, az ellipszis és a parabola
