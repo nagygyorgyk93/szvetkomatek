@@ -695,6 +695,9 @@ sáv tiszta, index308 (csak index.html változott), naplótérkép azonos.
 Részletek: [Fooldal_fogadas.md](Fooldal_fogadas.md). Helyi main, új ág nélkül,
 push az általános engedély alapján. Tanári döntés kell: nincs.
 
+Utólagos tanári pontosítás: a videó alatti „Kiképzőtiszti fogadás” cím
+törölve; a többi rész változatlan. Kánon/link 310/0, index308.
+
 ### Q3 helyi lezárás — 2026-10-09
 
 A „Legutóbb megnyitott oldal” kártya a főoldalon a legfrissebb, az osztályoldalon

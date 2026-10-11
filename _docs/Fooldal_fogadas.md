@@ -59,3 +59,13 @@ az Edge hozzáférhetőségi fáját ellenőriztem. Más böngésző és teljes 
 nincs minősítve. Az axe-próba nem teljes WCAG-minősítés. Új sebességmérés nincs.
 
 **Tanári döntés kell:** nincs a kért főoldali változtatáshoz.
+
+## Tanári pontosítás — 2026-10-11
+
+A tanár kérésére a videó alatti „Kiképzőtiszti fogadás” cím megszűnt.
+A jóváhagyott köszöntőszöveg, az ikonok és az elrendezés változatlan.
+A keresőindex újraépült: 308 bejegyzés, csak a főoldali változott;
+a naplótérkép azonos. Kánon és linkek: 310 oldal, 0 hiba.
+A főoldali forrásban pontosan a kért cím törlődött; új böngészős
+és matematikai próba ehhez az egyszerű törléshez nem futott.
+Tanári döntés kell: nincs. A publikálás eredménye az élő állapotnaplóban.
